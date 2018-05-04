@@ -63,6 +63,7 @@ public class HttpJsonRegionAutoscalerStub extends RegionAutoscalerStub {
               .setHttpMethod(HttpMethods.DELETE)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<DeleteRegionAutoscalerHttpRequest>newBuilder()
+                      .setRequestInstance(DeleteRegionAutoscalerHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/regions/{region}/autoscalers/{autoscaler}"))
@@ -84,6 +85,7 @@ public class HttpJsonRegionAutoscalerStub extends RegionAutoscalerStub {
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<GetRegionAutoscalerHttpRequest>newBuilder()
+                      .setRequestInstance(GetRegionAutoscalerHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/regions/{region}/autoscalers/{autoscaler}"))
@@ -105,6 +107,7 @@ public class HttpJsonRegionAutoscalerStub extends RegionAutoscalerStub {
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<InsertRegionAutoscalerHttpRequest>newBuilder()
+                      .setRequestInstance(InsertRegionAutoscalerHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create("{project}/regions/{region}/autoscalers"))
                       .setQueryParams(Sets.<String>newHashSet("requestId"))
@@ -125,6 +128,7 @@ public class HttpJsonRegionAutoscalerStub extends RegionAutoscalerStub {
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<ListRegionAutoscalersHttpRequest>newBuilder()
+                      .setRequestInstance(ListRegionAutoscalersHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create("{project}/regions/{region}/autoscalers"))
                       .setQueryParams(
@@ -146,6 +150,7 @@ public class HttpJsonRegionAutoscalerStub extends RegionAutoscalerStub {
               .setHttpMethod(HttpMethods.PATCH)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<PatchRegionAutoscalerHttpRequest>newBuilder()
+                      .setRequestInstance(PatchRegionAutoscalerHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create("{project}/regions/{region}/autoscalers"))
                       .setQueryParams(Sets.<String>newHashSet("autoscaler", "requestId"))
@@ -166,6 +171,7 @@ public class HttpJsonRegionAutoscalerStub extends RegionAutoscalerStub {
               .setHttpMethod(HttpMethods.PUT)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<UpdateRegionAutoscalerHttpRequest>newBuilder()
+                      .setRequestInstance(UpdateRegionAutoscalerHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create("{project}/regions/{region}/autoscalers"))
                       .setQueryParams(Sets.<String>newHashSet("autoscaler", "requestId"))

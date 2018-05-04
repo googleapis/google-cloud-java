@@ -91,6 +91,7 @@ public class HttpJsonInstanceStub extends InstanceStub {
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<AddAccessConfigInstanceHttpRequest>newBuilder()
+                      .setRequestInstance(AddAccessConfigInstanceHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/zones/{zone}/instances/{instance}/addAccessConfig"))
@@ -114,6 +115,7 @@ public class HttpJsonInstanceStub extends InstanceStub {
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<AggregatedListInstancesHttpRequest>newBuilder()
+                      .setRequestInstance(AggregatedListInstancesHttpRequest.getDefaultInstance())
                       .setPathTemplate(PathTemplate.create("{project}/aggregated/instances"))
                       .setQueryParams(
                           Sets.<String>newHashSet("filter", "maxResults", "orderBy", "pageToken"))
@@ -134,6 +136,7 @@ public class HttpJsonInstanceStub extends InstanceStub {
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<AttachDiskInstanceHttpRequest>newBuilder()
+                      .setRequestInstance(AttachDiskInstanceHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/zones/{zone}/instances/{instance}/attachDisk"))
@@ -155,6 +158,7 @@ public class HttpJsonInstanceStub extends InstanceStub {
               .setHttpMethod(HttpMethods.DELETE)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<DeleteInstanceHttpRequest>newBuilder()
+                      .setRequestInstance(DeleteInstanceHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create("{project}/zones/{zone}/instances/{instance}"))
                       .setQueryParams(Sets.<String>newHashSet("requestId"))
@@ -175,6 +179,8 @@ public class HttpJsonInstanceStub extends InstanceStub {
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<DeleteAccessConfigInstanceHttpRequest>newBuilder()
+                      .setRequestInstance(
+                          DeleteAccessConfigInstanceHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/zones/{zone}/instances/{instance}/deleteAccessConfig"))
@@ -197,6 +203,7 @@ public class HttpJsonInstanceStub extends InstanceStub {
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<DetachDiskInstanceHttpRequest>newBuilder()
+                      .setRequestInstance(DetachDiskInstanceHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/zones/{zone}/instances/{instance}/detachDisk"))
@@ -218,6 +225,7 @@ public class HttpJsonInstanceStub extends InstanceStub {
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<GetInstanceHttpRequest>newBuilder()
+                      .setRequestInstance(GetInstanceHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create("{project}/zones/{zone}/instances/{instance}"))
                       .setQueryParams(Sets.<String>newHashSet())
@@ -239,6 +247,8 @@ public class HttpJsonInstanceStub extends InstanceStub {
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter
                       .<GetSerialPortOutputInstanceHttpRequest>newBuilder()
+                      .setRequestInstance(
+                          GetSerialPortOutputInstanceHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/zones/{zone}/instances/{instance}/serialPort"))
@@ -260,6 +270,7 @@ public class HttpJsonInstanceStub extends InstanceStub {
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<InsertInstanceHttpRequest>newBuilder()
+                      .setRequestInstance(InsertInstanceHttpRequest.getDefaultInstance())
                       .setPathTemplate(PathTemplate.create("{project}/zones/{zone}/instances"))
                       .setQueryParams(
                           Sets.<String>newHashSet("requestId", "sourceInstanceTemplate"))
@@ -280,6 +291,7 @@ public class HttpJsonInstanceStub extends InstanceStub {
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<ListInstancesHttpRequest>newBuilder()
+                      .setRequestInstance(ListInstancesHttpRequest.getDefaultInstance())
                       .setPathTemplate(PathTemplate.create("{project}/zones/{zone}/instances"))
                       .setQueryParams(
                           Sets.<String>newHashSet("filter", "maxResults", "orderBy", "pageToken"))
@@ -300,6 +312,7 @@ public class HttpJsonInstanceStub extends InstanceStub {
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<ListReferrersInstancesHttpRequest>newBuilder()
+                      .setRequestInstance(ListReferrersInstancesHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/zones/{zone}/instances/{instance}/referrers"))
@@ -322,6 +335,7 @@ public class HttpJsonInstanceStub extends InstanceStub {
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<ResetInstanceHttpRequest>newBuilder()
+                      .setRequestInstance(ResetInstanceHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create("{project}/zones/{zone}/instances/{instance}/reset"))
                       .setQueryParams(Sets.<String>newHashSet("requestId"))
@@ -343,6 +357,8 @@ public class HttpJsonInstanceStub extends InstanceStub {
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter
                       .<SetDeletionProtectionInstanceHttpRequest>newBuilder()
+                      .setRequestInstance(
+                          SetDeletionProtectionInstanceHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/zones/{zone}/instances/{resource}/setDeletionProtection"))
@@ -364,6 +380,7 @@ public class HttpJsonInstanceStub extends InstanceStub {
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<SetDiskAutoDeleteInstanceHttpRequest>newBuilder()
+                      .setRequestInstance(SetDiskAutoDeleteInstanceHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/zones/{zone}/instances/{instance}/setDiskAutoDelete"))
@@ -386,6 +403,7 @@ public class HttpJsonInstanceStub extends InstanceStub {
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<SetLabelsInstanceHttpRequest>newBuilder()
+                      .setRequestInstance(SetLabelsInstanceHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/zones/{zone}/instances/{instance}/setLabels"))
@@ -408,6 +426,8 @@ public class HttpJsonInstanceStub extends InstanceStub {
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter
                       .<SetMachineResourcesInstanceHttpRequest>newBuilder()
+                      .setRequestInstance(
+                          SetMachineResourcesInstanceHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/zones/{zone}/instances/{instance}/setMachineResources"))
@@ -429,6 +449,7 @@ public class HttpJsonInstanceStub extends InstanceStub {
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<SetMachineTypeInstanceHttpRequest>newBuilder()
+                      .setRequestInstance(SetMachineTypeInstanceHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/zones/{zone}/instances/{instance}/setMachineType"))
@@ -450,6 +471,7 @@ public class HttpJsonInstanceStub extends InstanceStub {
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<SetMetadataInstanceHttpRequest>newBuilder()
+                      .setRequestInstance(SetMetadataInstanceHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/zones/{zone}/instances/{instance}/setMetadata"))
@@ -471,6 +493,7 @@ public class HttpJsonInstanceStub extends InstanceStub {
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<SetMinCpuPlatformInstanceHttpRequest>newBuilder()
+                      .setRequestInstance(SetMinCpuPlatformInstanceHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/zones/{zone}/instances/{instance}/setMinCpuPlatform"))
@@ -492,6 +515,7 @@ public class HttpJsonInstanceStub extends InstanceStub {
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<SetSchedulingInstanceHttpRequest>newBuilder()
+                      .setRequestInstance(SetSchedulingInstanceHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/zones/{zone}/instances/{instance}/setScheduling"))
@@ -513,6 +537,7 @@ public class HttpJsonInstanceStub extends InstanceStub {
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<SetServiceAccountInstanceHttpRequest>newBuilder()
+                      .setRequestInstance(SetServiceAccountInstanceHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/zones/{zone}/instances/{instance}/setServiceAccount"))
@@ -534,6 +559,7 @@ public class HttpJsonInstanceStub extends InstanceStub {
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<SetTagsInstanceHttpRequest>newBuilder()
+                      .setRequestInstance(SetTagsInstanceHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/zones/{zone}/instances/{instance}/setTags"))
@@ -555,6 +581,7 @@ public class HttpJsonInstanceStub extends InstanceStub {
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<StartInstanceHttpRequest>newBuilder()
+                      .setRequestInstance(StartInstanceHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create("{project}/zones/{zone}/instances/{instance}/start"))
                       .setQueryParams(Sets.<String>newHashSet("requestId"))
@@ -576,6 +603,8 @@ public class HttpJsonInstanceStub extends InstanceStub {
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter
                       .<StartWithEncryptionKeyInstanceHttpRequest>newBuilder()
+                      .setRequestInstance(
+                          StartWithEncryptionKeyInstanceHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/zones/{zone}/instances/{instance}/startWithEncryptionKey"))
@@ -597,6 +626,7 @@ public class HttpJsonInstanceStub extends InstanceStub {
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<StopInstanceHttpRequest>newBuilder()
+                      .setRequestInstance(StopInstanceHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create("{project}/zones/{zone}/instances/{instance}/stop"))
                       .setQueryParams(Sets.<String>newHashSet("requestId"))
@@ -617,6 +647,8 @@ public class HttpJsonInstanceStub extends InstanceStub {
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<UpdateAccessConfigInstanceHttpRequest>newBuilder()
+                      .setRequestInstance(
+                          UpdateAccessConfigInstanceHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/zones/{zone}/instances/{instance}/updateAccessConfig"))
@@ -639,6 +671,8 @@ public class HttpJsonInstanceStub extends InstanceStub {
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter
                       .<UpdateNetworkInterfaceInstanceHttpRequest>newBuilder()
+                      .setRequestInstance(
+                          UpdateNetworkInterfaceInstanceHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/zones/{zone}/instances/{instance}/updateNetworkInterface"))

@@ -17,9 +17,14 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
+import com.google.common.collect.ImmutableList;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
+import java.util.Set;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
 
@@ -50,18 +55,44 @@ public final class UrlMapValidationResult implements ApiMessage {
   }
 
   @Override
-  public Object getFieldValue(String fieldName) {
+  public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
+    Map<String, List<String>> fieldMap = new HashMap<>();
+    if (fieldNames.contains("loadErrors") && loadErrors != null) {
+      ImmutableList.Builder stringList = ImmutableList.builder();
+      for (String item : loadErrors) {
+        stringList.add(item.toString());
+      }
+      fieldMap.put("loadErrors", stringList.build());
+    }
+    if (fieldNames.contains("loadSucceeded") && loadSucceeded != null) {
+      fieldMap.put("loadSucceeded", Collections.singletonList(String.valueOf(loadSucceeded)));
+    }
+    if (fieldNames.contains("testFailures") && testFailures != null) {
+      ImmutableList.Builder stringList = ImmutableList.builder();
+      for (TestFailure item : testFailures) {
+        stringList.add(item.toString());
+      }
+      fieldMap.put("testFailures", stringList.build());
+    }
+    if (fieldNames.contains("testPassed") && testPassed != null) {
+      fieldMap.put("testPassed", Collections.singletonList(String.valueOf(testPassed)));
+    }
+    return fieldMap;
+  }
+
+  @Override
+  public String getFieldStringValue(String fieldName) {
     if (fieldName.equals("loadErrors")) {
-      return loadErrors;
+      return String.valueOf(loadErrors);
     }
     if (fieldName.equals("loadSucceeded")) {
-      return loadSucceeded;
+      return String.valueOf(loadSucceeded);
     }
     if (fieldName.equals("testFailures")) {
-      return testFailures;
+      return String.valueOf(testFailures);
     }
     if (fieldName.equals("testPassed")) {
-      return testPassed;
+      return String.valueOf(testPassed);
     }
     return null;
   }
@@ -69,12 +100,6 @@ public final class UrlMapValidationResult implements ApiMessage {
   @Nullable
   @Override
   public ApiMessage getApiMessageRequestBody() {
-    return null;
-  }
-
-  @Nullable
-  @Override
-  public List<String> getFieldMask() {
     return null;
   }
 

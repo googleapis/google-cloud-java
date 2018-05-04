@@ -17,9 +17,14 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
+import com.google.common.collect.ImmutableList;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
+import java.util.Set;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
 
@@ -66,30 +71,64 @@ public final class InterconnectOutageNotification implements ApiMessage {
   }
 
   @Override
-  public Object getFieldValue(String fieldName) {
+  public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
+    Map<String, List<String>> fieldMap = new HashMap<>();
+    if (fieldNames.contains("affectedCircuits") && affectedCircuits != null) {
+      ImmutableList.Builder stringList = ImmutableList.builder();
+      for (String item : affectedCircuits) {
+        stringList.add(item.toString());
+      }
+      fieldMap.put("affectedCircuits", stringList.build());
+    }
+    if (fieldNames.contains("description") && description != null) {
+      fieldMap.put("description", Collections.singletonList(String.valueOf(description)));
+    }
+    if (fieldNames.contains("endTime") && endTime != null) {
+      fieldMap.put("endTime", Collections.singletonList(String.valueOf(endTime)));
+    }
+    if (fieldNames.contains("issueType") && issueType != null) {
+      fieldMap.put("issueType", Collections.singletonList(String.valueOf(issueType)));
+    }
+    if (fieldNames.contains("name") && name != null) {
+      fieldMap.put("name", Collections.singletonList(String.valueOf(name)));
+    }
+    if (fieldNames.contains("source") && source != null) {
+      fieldMap.put("source", Collections.singletonList(String.valueOf(source)));
+    }
+    if (fieldNames.contains("startTime") && startTime != null) {
+      fieldMap.put("startTime", Collections.singletonList(String.valueOf(startTime)));
+    }
+    if (fieldNames.contains("state") && state != null) {
+      fieldMap.put("state", Collections.singletonList(String.valueOf(state)));
+    }
+    return fieldMap;
+  }
+
+  @Override
+  public String getFieldStringValue(String fieldName) {
     if (fieldName.equals("affectedCircuits")) {
-      return affectedCircuits;
+      return String.valueOf(affectedCircuits);
     }
     if (fieldName.equals("description")) {
-      return description;
+      return String.valueOf(description);
     }
     if (fieldName.equals("endTime")) {
-      return endTime;
+      return String.valueOf(endTime);
     }
     if (fieldName.equals("issueType")) {
-      return issueType;
+      return String.valueOf(issueType);
     }
     if (fieldName.equals("name")) {
-      return name;
+      return String.valueOf(name);
     }
     if (fieldName.equals("source")) {
-      return source;
+      return String.valueOf(source);
     }
     if (fieldName.equals("startTime")) {
-      return startTime;
+      return String.valueOf(startTime);
     }
     if (fieldName.equals("state")) {
-      return state;
+      return String.valueOf(state);
     }
     return null;
   }
@@ -97,12 +136,6 @@ public final class InterconnectOutageNotification implements ApiMessage {
   @Nullable
   @Override
   public ApiMessage getApiMessageRequestBody() {
-    return null;
-  }
-
-  @Nullable
-  @Override
-  public List<String> getFieldMask() {
     return null;
   }
 

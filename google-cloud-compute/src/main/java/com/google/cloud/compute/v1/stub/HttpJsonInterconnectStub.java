@@ -62,6 +62,7 @@ public class HttpJsonInterconnectStub extends InterconnectStub {
               .setHttpMethod(HttpMethods.DELETE)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<DeleteInterconnectHttpRequest>newBuilder()
+                      .setRequestInstance(DeleteInterconnectHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create("{project}/global/interconnects/{interconnect}"))
                       .setQueryParams(Sets.<String>newHashSet("requestId"))
@@ -82,6 +83,7 @@ public class HttpJsonInterconnectStub extends InterconnectStub {
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<GetInterconnectHttpRequest>newBuilder()
+                      .setRequestInstance(GetInterconnectHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create("{project}/global/interconnects/{interconnect}"))
                       .setQueryParams(Sets.<String>newHashSet())
@@ -102,6 +104,7 @@ public class HttpJsonInterconnectStub extends InterconnectStub {
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<InsertInterconnectHttpRequest>newBuilder()
+                      .setRequestInstance(InsertInterconnectHttpRequest.getDefaultInstance())
                       .setPathTemplate(PathTemplate.create("{project}/global/interconnects"))
                       .setQueryParams(Sets.<String>newHashSet("requestId"))
                       .setResourceNameFactory(ProjectName.newFactory())
@@ -121,6 +124,7 @@ public class HttpJsonInterconnectStub extends InterconnectStub {
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<ListInterconnectsHttpRequest>newBuilder()
+                      .setRequestInstance(ListInterconnectsHttpRequest.getDefaultInstance())
                       .setPathTemplate(PathTemplate.create("{project}/global/interconnects"))
                       .setQueryParams(
                           Sets.<String>newHashSet("filter", "maxResults", "orderBy", "pageToken"))
@@ -141,6 +145,7 @@ public class HttpJsonInterconnectStub extends InterconnectStub {
               .setHttpMethod(HttpMethods.PATCH)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<PatchInterconnectHttpRequest>newBuilder()
+                      .setRequestInstance(PatchInterconnectHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create("{project}/global/interconnects/{interconnect}"))
                       .setQueryParams(Sets.<String>newHashSet("requestId"))

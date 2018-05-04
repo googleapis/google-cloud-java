@@ -17,10 +17,14 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
+import com.google.common.collect.ImmutableList;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Set;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
 
@@ -131,78 +135,174 @@ public final class Instance implements ApiMessage {
   }
 
   @Override
-  public Object getFieldValue(String fieldName) {
+  public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
+    Map<String, List<String>> fieldMap = new HashMap<>();
+    if (fieldNames.contains("canIpForward") && canIpForward != null) {
+      fieldMap.put("canIpForward", Collections.singletonList(String.valueOf(canIpForward)));
+    }
+    if (fieldNames.contains("cpuPlatform") && cpuPlatform != null) {
+      fieldMap.put("cpuPlatform", Collections.singletonList(String.valueOf(cpuPlatform)));
+    }
+    if (fieldNames.contains("creationTimestamp") && creationTimestamp != null) {
+      fieldMap.put(
+          "creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
+    }
+    if (fieldNames.contains("deletionProtection") && deletionProtection != null) {
+      fieldMap.put(
+          "deletionProtection", Collections.singletonList(String.valueOf(deletionProtection)));
+    }
+    if (fieldNames.contains("description") && description != null) {
+      fieldMap.put("description", Collections.singletonList(String.valueOf(description)));
+    }
+    if (fieldNames.contains("disks") && disks != null) {
+      ImmutableList.Builder stringList = ImmutableList.builder();
+      for (AttachedDisk item : disks) {
+        stringList.add(item.toString());
+      }
+      fieldMap.put("disks", stringList.build());
+    }
+    if (fieldNames.contains("guestAccelerators") && guestAccelerators != null) {
+      ImmutableList.Builder stringList = ImmutableList.builder();
+      for (AcceleratorConfig item : guestAccelerators) {
+        stringList.add(item.toString());
+      }
+      fieldMap.put("guestAccelerators", stringList.build());
+    }
+    if (fieldNames.contains("id") && id != null) {
+      fieldMap.put("id", Collections.singletonList(String.valueOf(id)));
+    }
+    if (fieldNames.contains("kind") && kind != null) {
+      fieldMap.put("kind", Collections.singletonList(String.valueOf(kind)));
+    }
+    if (fieldNames.contains("labelFingerprint") && labelFingerprint != null) {
+      fieldMap.put("labelFingerprint", Collections.singletonList(String.valueOf(labelFingerprint)));
+    }
+    if (fieldNames.contains("labels") && labels != null) {
+      fieldMap.put("labels", Collections.singletonList(String.valueOf(labels)));
+    }
+    if (fieldNames.contains("machineType") && machineType != null) {
+      fieldMap.put("machineType", Collections.singletonList(String.valueOf(machineType)));
+    }
+    if (fieldNames.contains("metadata") && metadata != null) {
+      fieldMap.put("metadata", Collections.singletonList(String.valueOf(metadata)));
+    }
+    if (fieldNames.contains("minCpuPlatform") && minCpuPlatform != null) {
+      fieldMap.put("minCpuPlatform", Collections.singletonList(String.valueOf(minCpuPlatform)));
+    }
+    if (fieldNames.contains("name") && name != null) {
+      fieldMap.put("name", Collections.singletonList(String.valueOf(name)));
+    }
+    if (fieldNames.contains("networkInterfaces") && networkInterfaces != null) {
+      ImmutableList.Builder stringList = ImmutableList.builder();
+      for (NetworkInterface item : networkInterfaces) {
+        stringList.add(item.toString());
+      }
+      fieldMap.put("networkInterfaces", stringList.build());
+    }
+    if (fieldNames.contains("scheduling") && scheduling != null) {
+      fieldMap.put("scheduling", Collections.singletonList(String.valueOf(scheduling)));
+    }
+    if (fieldNames.contains("selfLink") && selfLink != null) {
+      fieldMap.put("selfLink", Collections.singletonList(String.valueOf(selfLink)));
+    }
+    if (fieldNames.contains("serviceAccounts") && serviceAccounts != null) {
+      ImmutableList.Builder stringList = ImmutableList.builder();
+      for (ServiceAccount item : serviceAccounts) {
+        stringList.add(item.toString());
+      }
+      fieldMap.put("serviceAccounts", stringList.build());
+    }
+    if (fieldNames.contains("startRestricted") && startRestricted != null) {
+      fieldMap.put("startRestricted", Collections.singletonList(String.valueOf(startRestricted)));
+    }
+    if (fieldNames.contains("status") && status != null) {
+      fieldMap.put("status", Collections.singletonList(String.valueOf(status)));
+    }
+    if (fieldNames.contains("statusMessage") && statusMessage != null) {
+      fieldMap.put("statusMessage", Collections.singletonList(String.valueOf(statusMessage)));
+    }
+    if (fieldNames.contains("tags") && tags != null) {
+      fieldMap.put("tags", Collections.singletonList(String.valueOf(tags)));
+    }
+    if (fieldNames.contains("zone") && zone != null) {
+      fieldMap.put("zone", Collections.singletonList(String.valueOf(zone)));
+    }
+    return fieldMap;
+  }
+
+  @Override
+  public String getFieldStringValue(String fieldName) {
     if (fieldName.equals("canIpForward")) {
-      return canIpForward;
+      return String.valueOf(canIpForward);
     }
     if (fieldName.equals("cpuPlatform")) {
-      return cpuPlatform;
+      return String.valueOf(cpuPlatform);
     }
     if (fieldName.equals("creationTimestamp")) {
-      return creationTimestamp;
+      return String.valueOf(creationTimestamp);
     }
     if (fieldName.equals("deletionProtection")) {
-      return deletionProtection;
+      return String.valueOf(deletionProtection);
     }
     if (fieldName.equals("description")) {
-      return description;
+      return String.valueOf(description);
     }
     if (fieldName.equals("disks")) {
-      return disks;
+      return String.valueOf(disks);
     }
     if (fieldName.equals("guestAccelerators")) {
-      return guestAccelerators;
+      return String.valueOf(guestAccelerators);
     }
     if (fieldName.equals("id")) {
-      return id;
+      return String.valueOf(id);
     }
     if (fieldName.equals("kind")) {
-      return kind;
+      return String.valueOf(kind);
     }
     if (fieldName.equals("labelFingerprint")) {
-      return labelFingerprint;
+      return String.valueOf(labelFingerprint);
     }
     if (fieldName.equals("labels")) {
-      return labels;
+      return String.valueOf(labels);
     }
     if (fieldName.equals("machineType")) {
-      return machineType;
+      return String.valueOf(machineType);
     }
     if (fieldName.equals("metadata")) {
-      return metadata;
+      return String.valueOf(metadata);
     }
     if (fieldName.equals("minCpuPlatform")) {
-      return minCpuPlatform;
+      return String.valueOf(minCpuPlatform);
     }
     if (fieldName.equals("name")) {
-      return name;
+      return String.valueOf(name);
     }
     if (fieldName.equals("networkInterfaces")) {
-      return networkInterfaces;
+      return String.valueOf(networkInterfaces);
     }
     if (fieldName.equals("scheduling")) {
-      return scheduling;
+      return String.valueOf(scheduling);
     }
     if (fieldName.equals("selfLink")) {
-      return selfLink;
+      return String.valueOf(selfLink);
     }
     if (fieldName.equals("serviceAccounts")) {
-      return serviceAccounts;
+      return String.valueOf(serviceAccounts);
     }
     if (fieldName.equals("startRestricted")) {
-      return startRestricted;
+      return String.valueOf(startRestricted);
     }
     if (fieldName.equals("status")) {
-      return status;
+      return String.valueOf(status);
     }
     if (fieldName.equals("statusMessage")) {
-      return statusMessage;
+      return String.valueOf(statusMessage);
     }
     if (fieldName.equals("tags")) {
-      return tags;
+      return String.valueOf(tags);
     }
     if (fieldName.equals("zone")) {
-      return zone;
+      return String.valueOf(zone);
     }
     return null;
   }
@@ -210,12 +310,6 @@ public final class Instance implements ApiMessage {
   @Nullable
   @Override
   public ApiMessage getApiMessageRequestBody() {
-    return null;
-  }
-
-  @Nullable
-  @Override
-  public List<String> getFieldMask() {
     return null;
   }
 

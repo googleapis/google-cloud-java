@@ -17,8 +17,12 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
+import java.util.Set;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
 
@@ -39,12 +43,24 @@ public final class LicenseCodeLicenseAlias implements ApiMessage {
   }
 
   @Override
-  public Object getFieldValue(String fieldName) {
+  public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
+    Map<String, List<String>> fieldMap = new HashMap<>();
+    if (fieldNames.contains("description") && description != null) {
+      fieldMap.put("description", Collections.singletonList(String.valueOf(description)));
+    }
+    if (fieldNames.contains("selfLink") && selfLink != null) {
+      fieldMap.put("selfLink", Collections.singletonList(String.valueOf(selfLink)));
+    }
+    return fieldMap;
+  }
+
+  @Override
+  public String getFieldStringValue(String fieldName) {
     if (fieldName.equals("description")) {
-      return description;
+      return String.valueOf(description);
     }
     if (fieldName.equals("selfLink")) {
-      return selfLink;
+      return String.valueOf(selfLink);
     }
     return null;
   }
@@ -52,12 +68,6 @@ public final class LicenseCodeLicenseAlias implements ApiMessage {
   @Nullable
   @Override
   public ApiMessage getApiMessageRequestBody() {
-    return null;
-  }
-
-  @Nullable
-  @Override
-  public List<String> getFieldMask() {
     return null;
   }
 

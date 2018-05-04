@@ -67,6 +67,8 @@ public class HttpJsonRegionCommitmentStub extends RegionCommitmentStub {
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter
                       .<AggregatedListRegionCommitmentsHttpRequest>newBuilder()
+                      .setRequestInstance(
+                          AggregatedListRegionCommitmentsHttpRequest.getDefaultInstance())
                       .setPathTemplate(PathTemplate.create("{project}/aggregated/commitments"))
                       .setQueryParams(
                           Sets.<String>newHashSet("filter", "maxResults", "orderBy", "pageToken"))
@@ -87,6 +89,7 @@ public class HttpJsonRegionCommitmentStub extends RegionCommitmentStub {
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<GetRegionCommitmentHttpRequest>newBuilder()
+                      .setRequestInstance(GetRegionCommitmentHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/regions/{region}/commitments/{commitment}"))
@@ -108,6 +111,7 @@ public class HttpJsonRegionCommitmentStub extends RegionCommitmentStub {
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<InsertRegionCommitmentHttpRequest>newBuilder()
+                      .setRequestInstance(InsertRegionCommitmentHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create("{project}/regions/{region}/commitments"))
                       .setQueryParams(Sets.<String>newHashSet("requestId"))
@@ -128,6 +132,7 @@ public class HttpJsonRegionCommitmentStub extends RegionCommitmentStub {
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<ListRegionCommitmentsHttpRequest>newBuilder()
+                      .setRequestInstance(ListRegionCommitmentsHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create("{project}/regions/{region}/commitments"))
                       .setQueryParams(

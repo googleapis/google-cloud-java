@@ -17,8 +17,12 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
+import java.util.Set;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
 
@@ -29,8 +33,8 @@ public final class HealthCheck implements ApiMessage {
   private final String creationTimestamp;
   private final String description;
   private final Integer healthyThreshold;
-  private final HTTPHealthCheck httpHealthCheck;
-  private final HTTPSHealthCheck httpsHealthCheck;
+  private final HttpHealthCheck httpHealthCheck;
+  private final HttpSHealthCheck httpsHealthCheck;
   private final String id;
   private final String kind;
   private final String name;
@@ -64,8 +68,8 @@ public final class HealthCheck implements ApiMessage {
       String creationTimestamp,
       String description,
       Integer healthyThreshold,
-      HTTPHealthCheck httpHealthCheck,
-      HTTPSHealthCheck httpsHealthCheck,
+      HttpHealthCheck httpHealthCheck,
+      HttpSHealthCheck httpsHealthCheck,
       String id,
       String kind,
       String name,
@@ -93,51 +97,104 @@ public final class HealthCheck implements ApiMessage {
   }
 
   @Override
-  public Object getFieldValue(String fieldName) {
+  public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
+    Map<String, List<String>> fieldMap = new HashMap<>();
+    if (fieldNames.contains("checkIntervalSec") && checkIntervalSec != null) {
+      fieldMap.put("checkIntervalSec", Collections.singletonList(String.valueOf(checkIntervalSec)));
+    }
+    if (fieldNames.contains("creationTimestamp") && creationTimestamp != null) {
+      fieldMap.put(
+          "creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
+    }
+    if (fieldNames.contains("description") && description != null) {
+      fieldMap.put("description", Collections.singletonList(String.valueOf(description)));
+    }
+    if (fieldNames.contains("healthyThreshold") && healthyThreshold != null) {
+      fieldMap.put("healthyThreshold", Collections.singletonList(String.valueOf(healthyThreshold)));
+    }
+    if (fieldNames.contains("httpHealthCheck") && httpHealthCheck != null) {
+      fieldMap.put("httpHealthCheck", Collections.singletonList(String.valueOf(httpHealthCheck)));
+    }
+    if (fieldNames.contains("httpsHealthCheck") && httpsHealthCheck != null) {
+      fieldMap.put("httpsHealthCheck", Collections.singletonList(String.valueOf(httpsHealthCheck)));
+    }
+    if (fieldNames.contains("id") && id != null) {
+      fieldMap.put("id", Collections.singletonList(String.valueOf(id)));
+    }
+    if (fieldNames.contains("kind") && kind != null) {
+      fieldMap.put("kind", Collections.singletonList(String.valueOf(kind)));
+    }
+    if (fieldNames.contains("name") && name != null) {
+      fieldMap.put("name", Collections.singletonList(String.valueOf(name)));
+    }
+    if (fieldNames.contains("selfLink") && selfLink != null) {
+      fieldMap.put("selfLink", Collections.singletonList(String.valueOf(selfLink)));
+    }
+    if (fieldNames.contains("sslHealthCheck") && sslHealthCheck != null) {
+      fieldMap.put("sslHealthCheck", Collections.singletonList(String.valueOf(sslHealthCheck)));
+    }
+    if (fieldNames.contains("tcpHealthCheck") && tcpHealthCheck != null) {
+      fieldMap.put("tcpHealthCheck", Collections.singletonList(String.valueOf(tcpHealthCheck)));
+    }
+    if (fieldNames.contains("timeoutSec") && timeoutSec != null) {
+      fieldMap.put("timeoutSec", Collections.singletonList(String.valueOf(timeoutSec)));
+    }
+    if (fieldNames.contains("type") && type != null) {
+      fieldMap.put("type", Collections.singletonList(String.valueOf(type)));
+    }
+    if (fieldNames.contains("unhealthyThreshold") && unhealthyThreshold != null) {
+      fieldMap.put(
+          "unhealthyThreshold", Collections.singletonList(String.valueOf(unhealthyThreshold)));
+    }
+    return fieldMap;
+  }
+
+  @Override
+  public String getFieldStringValue(String fieldName) {
     if (fieldName.equals("checkIntervalSec")) {
-      return checkIntervalSec;
+      return String.valueOf(checkIntervalSec);
     }
     if (fieldName.equals("creationTimestamp")) {
-      return creationTimestamp;
+      return String.valueOf(creationTimestamp);
     }
     if (fieldName.equals("description")) {
-      return description;
+      return String.valueOf(description);
     }
     if (fieldName.equals("healthyThreshold")) {
-      return healthyThreshold;
+      return String.valueOf(healthyThreshold);
     }
     if (fieldName.equals("httpHealthCheck")) {
-      return httpHealthCheck;
+      return String.valueOf(httpHealthCheck);
     }
     if (fieldName.equals("httpsHealthCheck")) {
-      return httpsHealthCheck;
+      return String.valueOf(httpsHealthCheck);
     }
     if (fieldName.equals("id")) {
-      return id;
+      return String.valueOf(id);
     }
     if (fieldName.equals("kind")) {
-      return kind;
+      return String.valueOf(kind);
     }
     if (fieldName.equals("name")) {
-      return name;
+      return String.valueOf(name);
     }
     if (fieldName.equals("selfLink")) {
-      return selfLink;
+      return String.valueOf(selfLink);
     }
     if (fieldName.equals("sslHealthCheck")) {
-      return sslHealthCheck;
+      return String.valueOf(sslHealthCheck);
     }
     if (fieldName.equals("tcpHealthCheck")) {
-      return tcpHealthCheck;
+      return String.valueOf(tcpHealthCheck);
     }
     if (fieldName.equals("timeoutSec")) {
-      return timeoutSec;
+      return String.valueOf(timeoutSec);
     }
     if (fieldName.equals("type")) {
-      return type;
+      return String.valueOf(type);
     }
     if (fieldName.equals("unhealthyThreshold")) {
-      return unhealthyThreshold;
+      return String.valueOf(unhealthyThreshold);
     }
     return null;
   }
@@ -145,12 +202,6 @@ public final class HealthCheck implements ApiMessage {
   @Nullable
   @Override
   public ApiMessage getApiMessageRequestBody() {
-    return null;
-  }
-
-  @Nullable
-  @Override
-  public List<String> getFieldMask() {
     return null;
   }
 
@@ -170,11 +221,11 @@ public final class HealthCheck implements ApiMessage {
     return healthyThreshold;
   }
 
-  public HTTPHealthCheck getHttpHealthCheck() {
+  public HttpHealthCheck getHttpHealthCheck() {
     return httpHealthCheck;
   }
 
-  public HTTPSHealthCheck getHttpsHealthCheck() {
+  public HttpSHealthCheck getHttpsHealthCheck() {
     return httpsHealthCheck;
   }
 
@@ -241,8 +292,8 @@ public final class HealthCheck implements ApiMessage {
     private String creationTimestamp;
     private String description;
     private Integer healthyThreshold;
-    private HTTPHealthCheck httpHealthCheck;
-    private HTTPSHealthCheck httpsHealthCheck;
+    private HttpHealthCheck httpHealthCheck;
+    private HttpSHealthCheck httpsHealthCheck;
     private String id;
     private String kind;
     private String name;
@@ -359,20 +410,20 @@ public final class HealthCheck implements ApiMessage {
       return this;
     }
 
-    public HTTPHealthCheck getHttpHealthCheck() {
+    public HttpHealthCheck getHttpHealthCheck() {
       return httpHealthCheck;
     }
 
-    public Builder setHttpHealthCheck(HTTPHealthCheck httpHealthCheck) {
+    public Builder setHttpHealthCheck(HttpHealthCheck httpHealthCheck) {
       this.httpHealthCheck = httpHealthCheck;
       return this;
     }
 
-    public HTTPSHealthCheck getHttpsHealthCheck() {
+    public HttpSHealthCheck getHttpsHealthCheck() {
       return httpsHealthCheck;
     }
 
-    public Builder setHttpsHealthCheck(HTTPSHealthCheck httpsHealthCheck) {
+    public Builder setHttpsHealthCheck(HttpSHealthCheck httpsHealthCheck) {
       this.httpsHealthCheck = httpsHealthCheck;
       return this;
     }

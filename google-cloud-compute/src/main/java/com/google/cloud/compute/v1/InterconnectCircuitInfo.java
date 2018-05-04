@@ -17,8 +17,12 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
+import java.util.Set;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
 
@@ -43,15 +47,30 @@ public final class InterconnectCircuitInfo implements ApiMessage {
   }
 
   @Override
-  public Object getFieldValue(String fieldName) {
+  public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
+    Map<String, List<String>> fieldMap = new HashMap<>();
+    if (fieldNames.contains("customerDemarcId") && customerDemarcId != null) {
+      fieldMap.put("customerDemarcId", Collections.singletonList(String.valueOf(customerDemarcId)));
+    }
+    if (fieldNames.contains("googleCircuitId") && googleCircuitId != null) {
+      fieldMap.put("googleCircuitId", Collections.singletonList(String.valueOf(googleCircuitId)));
+    }
+    if (fieldNames.contains("googleDemarcId") && googleDemarcId != null) {
+      fieldMap.put("googleDemarcId", Collections.singletonList(String.valueOf(googleDemarcId)));
+    }
+    return fieldMap;
+  }
+
+  @Override
+  public String getFieldStringValue(String fieldName) {
     if (fieldName.equals("customerDemarcId")) {
-      return customerDemarcId;
+      return String.valueOf(customerDemarcId);
     }
     if (fieldName.equals("googleCircuitId")) {
-      return googleCircuitId;
+      return String.valueOf(googleCircuitId);
     }
     if (fieldName.equals("googleDemarcId")) {
-      return googleDemarcId;
+      return String.valueOf(googleDemarcId);
     }
     return null;
   }
@@ -59,12 +78,6 @@ public final class InterconnectCircuitInfo implements ApiMessage {
   @Nullable
   @Override
   public ApiMessage getApiMessageRequestBody() {
-    return null;
-  }
-
-  @Nullable
-  @Override
-  public List<String> getFieldMask() {
     return null;
   }
 

@@ -17,9 +17,14 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
+import com.google.common.collect.ImmutableList;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
+import java.util.Set;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
 
@@ -54,21 +59,51 @@ public final class CacheKeyPolicy implements ApiMessage {
   }
 
   @Override
-  public Object getFieldValue(String fieldName) {
+  public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
+    Map<String, List<String>> fieldMap = new HashMap<>();
+    if (fieldNames.contains("includeHost") && includeHost != null) {
+      fieldMap.put("includeHost", Collections.singletonList(String.valueOf(includeHost)));
+    }
+    if (fieldNames.contains("includeProtocol") && includeProtocol != null) {
+      fieldMap.put("includeProtocol", Collections.singletonList(String.valueOf(includeProtocol)));
+    }
+    if (fieldNames.contains("includeQueryString") && includeQueryString != null) {
+      fieldMap.put(
+          "includeQueryString", Collections.singletonList(String.valueOf(includeQueryString)));
+    }
+    if (fieldNames.contains("queryStringBlacklist") && queryStringBlacklist != null) {
+      ImmutableList.Builder stringList = ImmutableList.builder();
+      for (String item : queryStringBlacklist) {
+        stringList.add(item.toString());
+      }
+      fieldMap.put("queryStringBlacklist", stringList.build());
+    }
+    if (fieldNames.contains("queryStringWhitelist") && queryStringWhitelist != null) {
+      ImmutableList.Builder stringList = ImmutableList.builder();
+      for (String item : queryStringWhitelist) {
+        stringList.add(item.toString());
+      }
+      fieldMap.put("queryStringWhitelist", stringList.build());
+    }
+    return fieldMap;
+  }
+
+  @Override
+  public String getFieldStringValue(String fieldName) {
     if (fieldName.equals("includeHost")) {
-      return includeHost;
+      return String.valueOf(includeHost);
     }
     if (fieldName.equals("includeProtocol")) {
-      return includeProtocol;
+      return String.valueOf(includeProtocol);
     }
     if (fieldName.equals("includeQueryString")) {
-      return includeQueryString;
+      return String.valueOf(includeQueryString);
     }
     if (fieldName.equals("queryStringBlacklist")) {
-      return queryStringBlacklist;
+      return String.valueOf(queryStringBlacklist);
     }
     if (fieldName.equals("queryStringWhitelist")) {
-      return queryStringWhitelist;
+      return String.valueOf(queryStringWhitelist);
     }
     return null;
   }
@@ -76,12 +111,6 @@ public final class CacheKeyPolicy implements ApiMessage {
   @Nullable
   @Override
   public ApiMessage getApiMessageRequestBody() {
-    return null;
-  }
-
-  @Nullable
-  @Override
-  public List<String> getFieldMask() {
     return null;
   }
 

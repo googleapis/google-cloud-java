@@ -64,6 +64,7 @@ public class HttpJsonLicenseStub extends LicenseStub {
               .setHttpMethod(HttpMethods.DELETE)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<DeleteLicenseHttpRequest>newBuilder()
+                      .setRequestInstance(DeleteLicenseHttpRequest.getDefaultInstance())
                       .setPathTemplate(PathTemplate.create("{project}/global/licenses/{license}"))
                       .setQueryParams(Sets.<String>newHashSet("requestId"))
                       .setResourceNameFactory(ProjectGlobalLicenseName.newFactory())
@@ -83,6 +84,7 @@ public class HttpJsonLicenseStub extends LicenseStub {
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<GetLicenseHttpRequest>newBuilder()
+                      .setRequestInstance(GetLicenseHttpRequest.getDefaultInstance())
                       .setPathTemplate(PathTemplate.create("{project}/global/licenses/{license}"))
                       .setQueryParams(Sets.<String>newHashSet())
                       .setResourceNameFactory(ProjectGlobalLicenseName.newFactory())
@@ -102,6 +104,7 @@ public class HttpJsonLicenseStub extends LicenseStub {
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<InsertLicenseHttpRequest>newBuilder()
+                      .setRequestInstance(InsertLicenseHttpRequest.getDefaultInstance())
                       .setPathTemplate(PathTemplate.create("{project}/global/licenses"))
                       .setQueryParams(Sets.<String>newHashSet("requestId"))
                       .setResourceNameFactory(ProjectName.newFactory())
@@ -121,6 +124,7 @@ public class HttpJsonLicenseStub extends LicenseStub {
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<ListLicensesHttpRequest>newBuilder()
+                      .setRequestInstance(ListLicensesHttpRequest.getDefaultInstance())
                       .setPathTemplate(PathTemplate.create("{project}/global/licenses"))
                       .setQueryParams(
                           Sets.<String>newHashSet("filter", "maxResults", "orderBy", "pageToken"))
@@ -143,6 +147,7 @@ public class HttpJsonLicenseStub extends LicenseStub {
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<TestIamPermissionsLicenseHttpRequest>newBuilder()
+                      .setRequestInstance(TestIamPermissionsLicenseHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/global/licenses/{resource}/testIamPermissions"))

@@ -17,9 +17,14 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
+import com.google.common.collect.ImmutableList;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
+import java.util.Set;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
 
@@ -74,36 +79,76 @@ public final class RouterStatusBgpPeerStatus implements ApiMessage {
   }
 
   @Override
-  public Object getFieldValue(String fieldName) {
+  public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
+    Map<String, List<String>> fieldMap = new HashMap<>();
+    if (fieldNames.contains("advertisedRoutes") && advertisedRoutes != null) {
+      ImmutableList.Builder stringList = ImmutableList.builder();
+      for (Route item : advertisedRoutes) {
+        stringList.add(item.toString());
+      }
+      fieldMap.put("advertisedRoutes", stringList.build());
+    }
+    if (fieldNames.contains("ipAddress") && ipAddress != null) {
+      fieldMap.put("ipAddress", Collections.singletonList(String.valueOf(ipAddress)));
+    }
+    if (fieldNames.contains("linkedVpnTunnel") && linkedVpnTunnel != null) {
+      fieldMap.put("linkedVpnTunnel", Collections.singletonList(String.valueOf(linkedVpnTunnel)));
+    }
+    if (fieldNames.contains("name") && name != null) {
+      fieldMap.put("name", Collections.singletonList(String.valueOf(name)));
+    }
+    if (fieldNames.contains("numLearnedRoutes") && numLearnedRoutes != null) {
+      fieldMap.put("numLearnedRoutes", Collections.singletonList(String.valueOf(numLearnedRoutes)));
+    }
+    if (fieldNames.contains("peerIpAddress") && peerIpAddress != null) {
+      fieldMap.put("peerIpAddress", Collections.singletonList(String.valueOf(peerIpAddress)));
+    }
+    if (fieldNames.contains("state") && state != null) {
+      fieldMap.put("state", Collections.singletonList(String.valueOf(state)));
+    }
+    if (fieldNames.contains("status") && status != null) {
+      fieldMap.put("status", Collections.singletonList(String.valueOf(status)));
+    }
+    if (fieldNames.contains("uptime") && uptime != null) {
+      fieldMap.put("uptime", Collections.singletonList(String.valueOf(uptime)));
+    }
+    if (fieldNames.contains("uptimeSeconds") && uptimeSeconds != null) {
+      fieldMap.put("uptimeSeconds", Collections.singletonList(String.valueOf(uptimeSeconds)));
+    }
+    return fieldMap;
+  }
+
+  @Override
+  public String getFieldStringValue(String fieldName) {
     if (fieldName.equals("advertisedRoutes")) {
-      return advertisedRoutes;
+      return String.valueOf(advertisedRoutes);
     }
     if (fieldName.equals("ipAddress")) {
-      return ipAddress;
+      return String.valueOf(ipAddress);
     }
     if (fieldName.equals("linkedVpnTunnel")) {
-      return linkedVpnTunnel;
+      return String.valueOf(linkedVpnTunnel);
     }
     if (fieldName.equals("name")) {
-      return name;
+      return String.valueOf(name);
     }
     if (fieldName.equals("numLearnedRoutes")) {
-      return numLearnedRoutes;
+      return String.valueOf(numLearnedRoutes);
     }
     if (fieldName.equals("peerIpAddress")) {
-      return peerIpAddress;
+      return String.valueOf(peerIpAddress);
     }
     if (fieldName.equals("state")) {
-      return state;
+      return String.valueOf(state);
     }
     if (fieldName.equals("status")) {
-      return status;
+      return String.valueOf(status);
     }
     if (fieldName.equals("uptime")) {
-      return uptime;
+      return String.valueOf(uptime);
     }
     if (fieldName.equals("uptimeSeconds")) {
-      return uptimeSeconds;
+      return String.valueOf(uptimeSeconds);
     }
     return null;
   }
@@ -111,12 +156,6 @@ public final class RouterStatusBgpPeerStatus implements ApiMessage {
   @Nullable
   @Override
   public ApiMessage getApiMessageRequestBody() {
-    return null;
-  }
-
-  @Nullable
-  @Override
-  public List<String> getFieldMask() {
     return null;
   }
 

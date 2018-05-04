@@ -68,6 +68,8 @@ public class HttpJsonTargetInstanceStub extends TargetInstanceStub {
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter
                       .<AggregatedListTargetInstancesHttpRequest>newBuilder()
+                      .setRequestInstance(
+                          AggregatedListTargetInstancesHttpRequest.getDefaultInstance())
                       .setPathTemplate(PathTemplate.create("{project}/aggregated/targetInstances"))
                       .setQueryParams(
                           Sets.<String>newHashSet("filter", "maxResults", "orderBy", "pageToken"))
@@ -88,6 +90,7 @@ public class HttpJsonTargetInstanceStub extends TargetInstanceStub {
               .setHttpMethod(HttpMethods.DELETE)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<DeleteTargetInstanceHttpRequest>newBuilder()
+                      .setRequestInstance(DeleteTargetInstanceHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/zones/{zone}/targetInstances/{targetInstance}"))
@@ -109,6 +112,7 @@ public class HttpJsonTargetInstanceStub extends TargetInstanceStub {
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<GetTargetInstanceHttpRequest>newBuilder()
+                      .setRequestInstance(GetTargetInstanceHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/zones/{zone}/targetInstances/{targetInstance}"))
@@ -130,6 +134,7 @@ public class HttpJsonTargetInstanceStub extends TargetInstanceStub {
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<InsertTargetInstanceHttpRequest>newBuilder()
+                      .setRequestInstance(InsertTargetInstanceHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create("{project}/zones/{zone}/targetInstances"))
                       .setQueryParams(Sets.<String>newHashSet("requestId"))
@@ -150,6 +155,7 @@ public class HttpJsonTargetInstanceStub extends TargetInstanceStub {
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<ListTargetInstancesHttpRequest>newBuilder()
+                      .setRequestInstance(ListTargetInstancesHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create("{project}/zones/{zone}/targetInstances"))
                       .setQueryParams(

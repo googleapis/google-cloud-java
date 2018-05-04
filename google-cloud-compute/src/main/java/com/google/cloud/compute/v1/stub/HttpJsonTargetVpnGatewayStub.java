@@ -69,6 +69,8 @@ public class HttpJsonTargetVpnGatewayStub extends TargetVpnGatewayStub {
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter
                       .<AggregatedListTargetVpnGatewaysHttpRequest>newBuilder()
+                      .setRequestInstance(
+                          AggregatedListTargetVpnGatewaysHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create("{project}/aggregated/targetVpnGateways"))
                       .setQueryParams(
@@ -90,6 +92,7 @@ public class HttpJsonTargetVpnGatewayStub extends TargetVpnGatewayStub {
               .setHttpMethod(HttpMethods.DELETE)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<DeleteTargetVpnGatewayHttpRequest>newBuilder()
+                      .setRequestInstance(DeleteTargetVpnGatewayHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/regions/{region}/targetVpnGateways/{targetVpnGateway}"))
@@ -111,6 +114,7 @@ public class HttpJsonTargetVpnGatewayStub extends TargetVpnGatewayStub {
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<GetTargetVpnGatewayHttpRequest>newBuilder()
+                      .setRequestInstance(GetTargetVpnGatewayHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/regions/{region}/targetVpnGateways/{targetVpnGateway}"))
@@ -132,6 +136,7 @@ public class HttpJsonTargetVpnGatewayStub extends TargetVpnGatewayStub {
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<InsertTargetVpnGatewayHttpRequest>newBuilder()
+                      .setRequestInstance(InsertTargetVpnGatewayHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create("{project}/regions/{region}/targetVpnGateways"))
                       .setQueryParams(Sets.<String>newHashSet("requestId"))
@@ -152,6 +157,7 @@ public class HttpJsonTargetVpnGatewayStub extends TargetVpnGatewayStub {
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<ListTargetVpnGatewaysHttpRequest>newBuilder()
+                      .setRequestInstance(ListTargetVpnGatewaysHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create("{project}/regions/{region}/targetVpnGateways"))
                       .setQueryParams(

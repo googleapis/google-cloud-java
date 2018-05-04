@@ -17,8 +17,12 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
+import java.util.Set;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
 
@@ -27,7 +31,6 @@ import javax.annotation.Nullable;
 public final class PatchInterconnectHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;
-  private final List<String> fieldMask;
   private final String fields;
   private final String interconnect;
   private final Interconnect interconnectResource;
@@ -40,7 +43,6 @@ public final class PatchInterconnectHttpRequest implements ApiMessage {
   private PatchInterconnectHttpRequest() {
     this.access_token = null;
     this.callback = null;
-    this.fieldMask = null;
     this.fields = null;
     this.interconnect = null;
     this.interconnectResource = null;
@@ -54,7 +56,6 @@ public final class PatchInterconnectHttpRequest implements ApiMessage {
   private PatchInterconnectHttpRequest(
       String access_token,
       String callback,
-      List<String> fieldMask,
       String fields,
       String interconnect,
       Interconnect interconnectResource,
@@ -65,7 +66,6 @@ public final class PatchInterconnectHttpRequest implements ApiMessage {
       String userIp) {
     this.access_token = access_token;
     this.callback = callback;
-    this.fieldMask = fieldMask;
     this.fields = fields;
     this.interconnect = interconnect;
     this.interconnectResource = interconnectResource;
@@ -77,39 +77,73 @@ public final class PatchInterconnectHttpRequest implements ApiMessage {
   }
 
   @Override
-  public Object getFieldValue(String fieldName) {
+  public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
+    Map<String, List<String>> fieldMap = new HashMap<>();
+    if (fieldNames.contains("access_token") && access_token != null) {
+      fieldMap.put("access_token", Collections.singletonList(String.valueOf(access_token)));
+    }
+    if (fieldNames.contains("callback") && callback != null) {
+      fieldMap.put("callback", Collections.singletonList(String.valueOf(callback)));
+    }
+    if (fieldNames.contains("fields") && fields != null) {
+      fieldMap.put("fields", Collections.singletonList(String.valueOf(fields)));
+    }
+    if (fieldNames.contains("interconnect") && interconnect != null) {
+      fieldMap.put("interconnect", Collections.singletonList(String.valueOf(interconnect)));
+    }
+    if (fieldNames.contains("interconnectResource") && interconnectResource != null) {
+      fieldMap.put(
+          "interconnectResource", Collections.singletonList(String.valueOf(interconnectResource)));
+    }
+    if (fieldNames.contains("key") && key != null) {
+      fieldMap.put("key", Collections.singletonList(String.valueOf(key)));
+    }
+    if (fieldNames.contains("prettyPrint") && prettyPrint != null) {
+      fieldMap.put("prettyPrint", Collections.singletonList(String.valueOf(prettyPrint)));
+    }
+    if (fieldNames.contains("quotaUser") && quotaUser != null) {
+      fieldMap.put("quotaUser", Collections.singletonList(String.valueOf(quotaUser)));
+    }
+    if (fieldNames.contains("requestId") && requestId != null) {
+      fieldMap.put("requestId", Collections.singletonList(String.valueOf(requestId)));
+    }
+    if (fieldNames.contains("userIp") && userIp != null) {
+      fieldMap.put("userIp", Collections.singletonList(String.valueOf(userIp)));
+    }
+    return fieldMap;
+  }
+
+  @Override
+  public String getFieldStringValue(String fieldName) {
     if (fieldName.equals("access_token")) {
-      return access_token;
+      return String.valueOf(access_token);
     }
     if (fieldName.equals("callback")) {
-      return callback;
-    }
-    if (fieldName.equals("fieldMask")) {
-      return fieldMask;
+      return String.valueOf(callback);
     }
     if (fieldName.equals("fields")) {
-      return fields;
+      return String.valueOf(fields);
     }
     if (fieldName.equals("interconnect")) {
-      return interconnect;
+      return String.valueOf(interconnect);
     }
     if (fieldName.equals("interconnectResource")) {
-      return interconnectResource;
+      return String.valueOf(interconnectResource);
     }
     if (fieldName.equals("key")) {
-      return key;
+      return String.valueOf(key);
     }
     if (fieldName.equals("prettyPrint")) {
-      return prettyPrint;
+      return String.valueOf(prettyPrint);
     }
     if (fieldName.equals("quotaUser")) {
-      return quotaUser;
+      return String.valueOf(quotaUser);
     }
     if (fieldName.equals("requestId")) {
-      return requestId;
+      return String.valueOf(requestId);
     }
     if (fieldName.equals("userIp")) {
-      return userIp;
+      return String.valueOf(userIp);
     }
     return null;
   }
@@ -118,12 +152,6 @@ public final class PatchInterconnectHttpRequest implements ApiMessage {
   @Override
   public Interconnect getApiMessageRequestBody() {
     return interconnectResource;
-  }
-
-  @Nullable
-  @Override
-  public List<String> getFieldMask() {
-    return fieldMask;
   }
 
   public String getAccessToken() {
@@ -191,7 +219,6 @@ public final class PatchInterconnectHttpRequest implements ApiMessage {
   public static class Builder {
     private String access_token;
     private String callback;
-    private List<String> fieldMask;
     private String fields;
     private String interconnect;
     private Interconnect interconnectResource;
@@ -210,9 +237,6 @@ public final class PatchInterconnectHttpRequest implements ApiMessage {
       }
       if (other.getCallback() != null) {
         this.callback = other.callback;
-      }
-      if (other.getFieldMask() != null) {
-        this.fieldMask = other.fieldMask;
       }
       if (other.getFields() != null) {
         this.fields = other.fields;
@@ -244,7 +268,6 @@ public final class PatchInterconnectHttpRequest implements ApiMessage {
     Builder(PatchInterconnectHttpRequest source) {
       this.access_token = source.access_token;
       this.callback = source.callback;
-      this.fieldMask = source.fieldMask;
       this.fields = source.fields;
       this.interconnect = source.interconnect;
       this.interconnectResource = source.interconnectResource;
@@ -270,15 +293,6 @@ public final class PatchInterconnectHttpRequest implements ApiMessage {
 
     public Builder setCallback(String callback) {
       this.callback = callback;
-      return this;
-    }
-
-    public List<String> getFieldMask() {
-      return fieldMask;
-    }
-
-    public Builder setFieldMask(List<String> fieldMask) {
-      this.fieldMask = fieldMask;
       return this;
     }
 
@@ -367,7 +381,6 @@ public final class PatchInterconnectHttpRequest implements ApiMessage {
       return new PatchInterconnectHttpRequest(
           access_token,
           callback,
-          fieldMask,
           fields,
           interconnect,
           interconnectResource,
@@ -382,7 +395,6 @@ public final class PatchInterconnectHttpRequest implements ApiMessage {
       Builder newBuilder = new Builder();
       newBuilder.setAccessToken(this.access_token);
       newBuilder.setCallback(this.callback);
-      newBuilder.setFieldMask(this.fieldMask);
       newBuilder.setFields(this.fields);
       newBuilder.setInterconnect(this.interconnect);
       newBuilder.setInterconnectResource(this.interconnectResource);
@@ -403,9 +415,6 @@ public final class PatchInterconnectHttpRequest implements ApiMessage {
         + ", "
         + "callback="
         + callback
-        + ", "
-        + "fieldMask="
-        + fieldMask
         + ", "
         + "fields="
         + fields
@@ -442,7 +451,6 @@ public final class PatchInterconnectHttpRequest implements ApiMessage {
       PatchInterconnectHttpRequest that = (PatchInterconnectHttpRequest) o;
       return Objects.equals(this.access_token, that.getAccessToken())
           && Objects.equals(this.callback, that.getCallback())
-          && Objects.equals(this.fieldMask, that.getFieldMask())
           && Objects.equals(this.fields, that.getFields())
           && Objects.equals(this.interconnect, that.getInterconnect())
           && Objects.equals(this.interconnectResource, that.getInterconnectResource())
@@ -460,7 +468,6 @@ public final class PatchInterconnectHttpRequest implements ApiMessage {
     return Objects.hash(
         access_token,
         callback,
-        fieldMask,
         fields,
         interconnect,
         interconnectResource,

@@ -61,6 +61,7 @@ public class HttpJsonInstanceTemplateStub extends InstanceTemplateStub {
               .setHttpMethod(HttpMethods.DELETE)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<DeleteInstanceTemplateHttpRequest>newBuilder()
+                      .setRequestInstance(DeleteInstanceTemplateHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/global/instanceTemplates/{instanceTemplate}"))
@@ -82,6 +83,7 @@ public class HttpJsonInstanceTemplateStub extends InstanceTemplateStub {
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<GetInstanceTemplateHttpRequest>newBuilder()
+                      .setRequestInstance(GetInstanceTemplateHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/global/instanceTemplates/{instanceTemplate}"))
@@ -103,6 +105,7 @@ public class HttpJsonInstanceTemplateStub extends InstanceTemplateStub {
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<InsertInstanceTemplateHttpRequest>newBuilder()
+                      .setRequestInstance(InsertInstanceTemplateHttpRequest.getDefaultInstance())
                       .setPathTemplate(PathTemplate.create("{project}/global/instanceTemplates"))
                       .setQueryParams(Sets.<String>newHashSet("requestId"))
                       .setResourceNameFactory(ProjectName.newFactory())
@@ -122,6 +125,7 @@ public class HttpJsonInstanceTemplateStub extends InstanceTemplateStub {
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<ListInstanceTemplatesHttpRequest>newBuilder()
+                      .setRequestInstance(ListInstanceTemplatesHttpRequest.getDefaultInstance())
                       .setPathTemplate(PathTemplate.create("{project}/global/instanceTemplates"))
                       .setQueryParams(
                           Sets.<String>newHashSet("filter", "maxResults", "orderBy", "pageToken"))

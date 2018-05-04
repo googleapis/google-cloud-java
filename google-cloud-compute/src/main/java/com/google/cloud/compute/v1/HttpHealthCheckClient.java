@@ -291,7 +291,7 @@ public class HttpHealthCheckClient implements BackgroundResource {
    * <pre><code>
    * try (HttpHealthCheckClient httpHealthCheckClient = HttpHealthCheckClient.create()) {
    *   ProjectGlobalHttpHealthCheckName httpHealthCheck = ProjectGlobalHttpHealthCheckName.of("[PROJECT]", "[HTTP_HEALTH_CHECK]");
-   *   HttpHealthCheck response = httpHealthCheckClient.getHttpHealthCheck(httpHealthCheck);
+   *   HttpHealthCheck2 response = httpHealthCheckClient.getHttpHealthCheck(httpHealthCheck);
    * }
    * </code></pre>
    *
@@ -299,7 +299,7 @@ public class HttpHealthCheckClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final HttpHealthCheck getHttpHealthCheck(
+  public final HttpHealthCheck2 getHttpHealthCheck(
       ProjectGlobalHttpHealthCheckName httpHealthCheck) {
 
     GetHttpHealthCheckHttpRequest request =
@@ -319,7 +319,7 @@ public class HttpHealthCheckClient implements BackgroundResource {
    * <pre><code>
    * try (HttpHealthCheckClient httpHealthCheckClient = HttpHealthCheckClient.create()) {
    *   ProjectGlobalHttpHealthCheckName httpHealthCheck = ProjectGlobalHttpHealthCheckName.of("[PROJECT]", "[HTTP_HEALTH_CHECK]");
-   *   HttpHealthCheck response = httpHealthCheckClient.getHttpHealthCheck(httpHealthCheck.toString());
+   *   HttpHealthCheck2 response = httpHealthCheckClient.getHttpHealthCheck(httpHealthCheck.toString());
    * }
    * </code></pre>
    *
@@ -327,7 +327,7 @@ public class HttpHealthCheckClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final HttpHealthCheck getHttpHealthCheck(String httpHealthCheck) {
+  public final HttpHealthCheck2 getHttpHealthCheck(String httpHealthCheck) {
 
     GetHttpHealthCheckHttpRequest request =
         GetHttpHealthCheckHttpRequest.newBuilder().setHttpHealthCheck(httpHealthCheck).build();
@@ -347,7 +347,7 @@ public class HttpHealthCheckClient implements BackgroundResource {
    *   GetHttpHealthCheckHttpRequest request = GetHttpHealthCheckHttpRequest.newBuilder()
    *     .setHttpHealthCheck(httpHealthCheck.toString())
    *     .build();
-   *   HttpHealthCheck response = httpHealthCheckClient.getHttpHealthCheck(request);
+   *   HttpHealthCheck2 response = httpHealthCheckClient.getHttpHealthCheck(request);
    * }
    * </code></pre>
    *
@@ -355,7 +355,7 @@ public class HttpHealthCheckClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final HttpHealthCheck getHttpHealthCheck(GetHttpHealthCheckHttpRequest request) {
+  public final HttpHealthCheck2 getHttpHealthCheck(GetHttpHealthCheckHttpRequest request) {
     return getHttpHealthCheckCallable().call(request);
   }
 
@@ -372,14 +372,14 @@ public class HttpHealthCheckClient implements BackgroundResource {
    *   GetHttpHealthCheckHttpRequest request = GetHttpHealthCheckHttpRequest.newBuilder()
    *     .setHttpHealthCheck(httpHealthCheck.toString())
    *     .build();
-   *   ApiFuture&lt;HttpHealthCheck&gt; future = httpHealthCheckClient.getHttpHealthCheckCallable().futureCall(request);
+   *   ApiFuture&lt;HttpHealthCheck2&gt; future = httpHealthCheckClient.getHttpHealthCheckCallable().futureCall(request);
    *   // Do something
-   *   HttpHealthCheck response = future.get();
+   *   HttpHealthCheck2 response = future.get();
    * }
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<GetHttpHealthCheckHttpRequest, HttpHealthCheck>
+  public final UnaryCallable<GetHttpHealthCheckHttpRequest, HttpHealthCheck2>
       getHttpHealthCheckCallable() {
     return stub.getHttpHealthCheckCallable();
   }
@@ -395,7 +395,7 @@ public class HttpHealthCheckClient implements BackgroundResource {
    * try (HttpHealthCheckClient httpHealthCheckClient = HttpHealthCheckClient.create()) {
    *   String requestId = "";
    *   ProjectName project = ProjectName.of("[PROJECT]");
-   *   HttpHealthCheck httpHealthCheckResource = HttpHealthCheck.newBuilder().build();
+   *   HttpHealthCheck2 httpHealthCheckResource = HttpHealthCheck2.newBuilder().build();
    *   Operation response = httpHealthCheckClient.insertHttpHealthCheck(requestId, project, httpHealthCheckResource);
    * }
    * </code></pre>
@@ -416,7 +416,7 @@ public class HttpHealthCheckClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation insertHttpHealthCheck(
-      String requestId, ProjectName project, HttpHealthCheck httpHealthCheckResource) {
+      String requestId, ProjectName project, HttpHealthCheck2 httpHealthCheckResource) {
 
     InsertHttpHealthCheckHttpRequest request =
         InsertHttpHealthCheckHttpRequest.newBuilder()
@@ -438,7 +438,7 @@ public class HttpHealthCheckClient implements BackgroundResource {
    * try (HttpHealthCheckClient httpHealthCheckClient = HttpHealthCheckClient.create()) {
    *   String requestId = "";
    *   ProjectName project = ProjectName.of("[PROJECT]");
-   *   HttpHealthCheck httpHealthCheckResource = HttpHealthCheck.newBuilder().build();
+   *   HttpHealthCheck2 httpHealthCheckResource = HttpHealthCheck2.newBuilder().build();
    *   Operation response = httpHealthCheckClient.insertHttpHealthCheck(requestId, project.toString(), httpHealthCheckResource);
    * }
    * </code></pre>
@@ -459,7 +459,7 @@ public class HttpHealthCheckClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation insertHttpHealthCheck(
-      String requestId, String project, HttpHealthCheck httpHealthCheckResource) {
+      String requestId, String project, HttpHealthCheck2 httpHealthCheckResource) {
 
     InsertHttpHealthCheckHttpRequest request =
         InsertHttpHealthCheckHttpRequest.newBuilder()
@@ -481,7 +481,7 @@ public class HttpHealthCheckClient implements BackgroundResource {
    * try (HttpHealthCheckClient httpHealthCheckClient = HttpHealthCheckClient.create()) {
    *   String requestId = "";
    *   ProjectName project = ProjectName.of("[PROJECT]");
-   *   HttpHealthCheck httpHealthCheckResource = HttpHealthCheck.newBuilder().build();
+   *   HttpHealthCheck2 httpHealthCheckResource = HttpHealthCheck2.newBuilder().build();
    *   InsertHttpHealthCheckHttpRequest request = InsertHttpHealthCheckHttpRequest.newBuilder()
    *     .setRequestId(requestId)
    *     .setProject(project.toString())
@@ -510,7 +510,7 @@ public class HttpHealthCheckClient implements BackgroundResource {
    * try (HttpHealthCheckClient httpHealthCheckClient = HttpHealthCheckClient.create()) {
    *   String requestId = "";
    *   ProjectName project = ProjectName.of("[PROJECT]");
-   *   HttpHealthCheck httpHealthCheckResource = HttpHealthCheck.newBuilder().build();
+   *   HttpHealthCheck2 httpHealthCheckResource = HttpHealthCheck2.newBuilder().build();
    *   InsertHttpHealthCheckHttpRequest request = InsertHttpHealthCheckHttpRequest.newBuilder()
    *     .setRequestId(requestId)
    *     .setProject(project.toString())
@@ -537,7 +537,7 @@ public class HttpHealthCheckClient implements BackgroundResource {
    * <pre><code>
    * try (HttpHealthCheckClient httpHealthCheckClient = HttpHealthCheckClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
-   *   for (HttpHealthCheck element : httpHealthCheckClient.listHttpHealthChecks(project).iterateAll()) {
+   *   for (HttpHealthCheck2 element : httpHealthCheckClient.listHttpHealthChecks(project).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -564,7 +564,7 @@ public class HttpHealthCheckClient implements BackgroundResource {
    * <pre><code>
    * try (HttpHealthCheckClient httpHealthCheckClient = HttpHealthCheckClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
-   *   for (HttpHealthCheck element : httpHealthCheckClient.listHttpHealthChecks(project.toString()).iterateAll()) {
+   *   for (HttpHealthCheck2 element : httpHealthCheckClient.listHttpHealthChecks(project.toString()).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -592,7 +592,7 @@ public class HttpHealthCheckClient implements BackgroundResource {
    *   ListHttpHealthChecksHttpRequest request = ListHttpHealthChecksHttpRequest.newBuilder()
    *     .setProject(project.toString())
    *     .build();
-   *   for (HttpHealthCheck element : httpHealthCheckClient.listHttpHealthChecks(request).iterateAll()) {
+   *   for (HttpHealthCheck2 element : httpHealthCheckClient.listHttpHealthChecks(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -621,7 +621,7 @@ public class HttpHealthCheckClient implements BackgroundResource {
    *     .build();
    *   ApiFuture&lt;ListHttpHealthChecksPagedResponse&gt; future = httpHealthCheckClient.listHttpHealthChecksPagedCallable().futureCall(request);
    *   // Do something
-   *   for (HttpHealthCheck element : future.get().iterateAll()) {
+   *   for (HttpHealthCheck2 element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -647,7 +647,7 @@ public class HttpHealthCheckClient implements BackgroundResource {
    *     .build();
    *   while (true) {
    *     HttpHealthCheckList response = httpHealthCheckClient.listHttpHealthChecksCallable().call(request);
-   *     for (HttpHealthCheck element : response.getItemsList()) {
+   *     for (HttpHealthCheck2 element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -678,7 +678,7 @@ public class HttpHealthCheckClient implements BackgroundResource {
    * try (HttpHealthCheckClient httpHealthCheckClient = HttpHealthCheckClient.create()) {
    *   String requestId = "";
    *   ProjectGlobalHttpHealthCheckName httpHealthCheck = ProjectGlobalHttpHealthCheckName.of("[PROJECT]", "[HTTP_HEALTH_CHECK]");
-   *   HttpHealthCheck httpHealthCheckResource = HttpHealthCheck.newBuilder().build();
+   *   HttpHealthCheck2 httpHealthCheckResource = HttpHealthCheck2.newBuilder().build();
    *   Operation response = httpHealthCheckClient.patchHttpHealthCheck(requestId, httpHealthCheck, httpHealthCheckResource);
    * }
    * </code></pre>
@@ -701,7 +701,7 @@ public class HttpHealthCheckClient implements BackgroundResource {
   public final Operation patchHttpHealthCheck(
       String requestId,
       ProjectGlobalHttpHealthCheckName httpHealthCheck,
-      HttpHealthCheck httpHealthCheckResource) {
+      HttpHealthCheck2 httpHealthCheckResource) {
 
     PatchHttpHealthCheckHttpRequest request =
         PatchHttpHealthCheckHttpRequest.newBuilder()
@@ -724,7 +724,7 @@ public class HttpHealthCheckClient implements BackgroundResource {
    * try (HttpHealthCheckClient httpHealthCheckClient = HttpHealthCheckClient.create()) {
    *   String requestId = "";
    *   ProjectGlobalHttpHealthCheckName httpHealthCheck = ProjectGlobalHttpHealthCheckName.of("[PROJECT]", "[HTTP_HEALTH_CHECK]");
-   *   HttpHealthCheck httpHealthCheckResource = HttpHealthCheck.newBuilder().build();
+   *   HttpHealthCheck2 httpHealthCheckResource = HttpHealthCheck2.newBuilder().build();
    *   Operation response = httpHealthCheckClient.patchHttpHealthCheck(requestId, httpHealthCheck.toString(), httpHealthCheckResource);
    * }
    * </code></pre>
@@ -745,7 +745,7 @@ public class HttpHealthCheckClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation patchHttpHealthCheck(
-      String requestId, String httpHealthCheck, HttpHealthCheck httpHealthCheckResource) {
+      String requestId, String httpHealthCheck, HttpHealthCheck2 httpHealthCheckResource) {
 
     PatchHttpHealthCheckHttpRequest request =
         PatchHttpHealthCheckHttpRequest.newBuilder()
@@ -768,7 +768,7 @@ public class HttpHealthCheckClient implements BackgroundResource {
    * try (HttpHealthCheckClient httpHealthCheckClient = HttpHealthCheckClient.create()) {
    *   String requestId = "";
    *   ProjectGlobalHttpHealthCheckName httpHealthCheck = ProjectGlobalHttpHealthCheckName.of("[PROJECT]", "[HTTP_HEALTH_CHECK]");
-   *   HttpHealthCheck httpHealthCheckResource = HttpHealthCheck.newBuilder().build();
+   *   HttpHealthCheck2 httpHealthCheckResource = HttpHealthCheck2.newBuilder().build();
    *   PatchHttpHealthCheckHttpRequest request = PatchHttpHealthCheckHttpRequest.newBuilder()
    *     .setRequestId(requestId)
    *     .setHttpHealthCheck(httpHealthCheck.toString())
@@ -798,7 +798,7 @@ public class HttpHealthCheckClient implements BackgroundResource {
    * try (HttpHealthCheckClient httpHealthCheckClient = HttpHealthCheckClient.create()) {
    *   String requestId = "";
    *   ProjectGlobalHttpHealthCheckName httpHealthCheck = ProjectGlobalHttpHealthCheckName.of("[PROJECT]", "[HTTP_HEALTH_CHECK]");
-   *   HttpHealthCheck httpHealthCheckResource = HttpHealthCheck.newBuilder().build();
+   *   HttpHealthCheck2 httpHealthCheckResource = HttpHealthCheck2.newBuilder().build();
    *   PatchHttpHealthCheckHttpRequest request = PatchHttpHealthCheckHttpRequest.newBuilder()
    *     .setRequestId(requestId)
    *     .setHttpHealthCheck(httpHealthCheck.toString())
@@ -827,7 +827,7 @@ public class HttpHealthCheckClient implements BackgroundResource {
    * try (HttpHealthCheckClient httpHealthCheckClient = HttpHealthCheckClient.create()) {
    *   String requestId = "";
    *   ProjectGlobalHttpHealthCheckName httpHealthCheck = ProjectGlobalHttpHealthCheckName.of("[PROJECT]", "[HTTP_HEALTH_CHECK]");
-   *   HttpHealthCheck httpHealthCheckResource = HttpHealthCheck.newBuilder().build();
+   *   HttpHealthCheck2 httpHealthCheckResource = HttpHealthCheck2.newBuilder().build();
    *   Operation response = httpHealthCheckClient.updateHttpHealthCheck(requestId, httpHealthCheck, httpHealthCheckResource);
    * }
    * </code></pre>
@@ -850,7 +850,7 @@ public class HttpHealthCheckClient implements BackgroundResource {
   public final Operation updateHttpHealthCheck(
       String requestId,
       ProjectGlobalHttpHealthCheckName httpHealthCheck,
-      HttpHealthCheck httpHealthCheckResource) {
+      HttpHealthCheck2 httpHealthCheckResource) {
 
     UpdateHttpHealthCheckHttpRequest request =
         UpdateHttpHealthCheckHttpRequest.newBuilder()
@@ -872,7 +872,7 @@ public class HttpHealthCheckClient implements BackgroundResource {
    * try (HttpHealthCheckClient httpHealthCheckClient = HttpHealthCheckClient.create()) {
    *   String requestId = "";
    *   ProjectGlobalHttpHealthCheckName httpHealthCheck = ProjectGlobalHttpHealthCheckName.of("[PROJECT]", "[HTTP_HEALTH_CHECK]");
-   *   HttpHealthCheck httpHealthCheckResource = HttpHealthCheck.newBuilder().build();
+   *   HttpHealthCheck2 httpHealthCheckResource = HttpHealthCheck2.newBuilder().build();
    *   Operation response = httpHealthCheckClient.updateHttpHealthCheck(requestId, httpHealthCheck.toString(), httpHealthCheckResource);
    * }
    * </code></pre>
@@ -893,7 +893,7 @@ public class HttpHealthCheckClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation updateHttpHealthCheck(
-      String requestId, String httpHealthCheck, HttpHealthCheck httpHealthCheckResource) {
+      String requestId, String httpHealthCheck, HttpHealthCheck2 httpHealthCheckResource) {
 
     UpdateHttpHealthCheckHttpRequest request =
         UpdateHttpHealthCheckHttpRequest.newBuilder()
@@ -915,7 +915,7 @@ public class HttpHealthCheckClient implements BackgroundResource {
    * try (HttpHealthCheckClient httpHealthCheckClient = HttpHealthCheckClient.create()) {
    *   String requestId = "";
    *   ProjectGlobalHttpHealthCheckName httpHealthCheck = ProjectGlobalHttpHealthCheckName.of("[PROJECT]", "[HTTP_HEALTH_CHECK]");
-   *   HttpHealthCheck httpHealthCheckResource = HttpHealthCheck.newBuilder().build();
+   *   HttpHealthCheck2 httpHealthCheckResource = HttpHealthCheck2.newBuilder().build();
    *   UpdateHttpHealthCheckHttpRequest request = UpdateHttpHealthCheckHttpRequest.newBuilder()
    *     .setRequestId(requestId)
    *     .setHttpHealthCheck(httpHealthCheck.toString())
@@ -944,7 +944,7 @@ public class HttpHealthCheckClient implements BackgroundResource {
    * try (HttpHealthCheckClient httpHealthCheckClient = HttpHealthCheckClient.create()) {
    *   String requestId = "";
    *   ProjectGlobalHttpHealthCheckName httpHealthCheck = ProjectGlobalHttpHealthCheckName.of("[PROJECT]", "[HTTP_HEALTH_CHECK]");
-   *   HttpHealthCheck httpHealthCheckResource = HttpHealthCheck.newBuilder().build();
+   *   HttpHealthCheck2 httpHealthCheckResource = HttpHealthCheck2.newBuilder().build();
    *   UpdateHttpHealthCheckHttpRequest request = UpdateHttpHealthCheckHttpRequest.newBuilder()
    *     .setRequestId(requestId)
    *     .setHttpHealthCheck(httpHealthCheck.toString())
@@ -994,11 +994,11 @@ public class HttpHealthCheckClient implements BackgroundResource {
 
   public static class ListHttpHealthChecksPagedResponse
       extends AbstractPagedListResponse<
-          ListHttpHealthChecksHttpRequest, HttpHealthCheckList, HttpHealthCheck,
+          ListHttpHealthChecksHttpRequest, HttpHealthCheckList, HttpHealthCheck2,
           ListHttpHealthChecksPage, ListHttpHealthChecksFixedSizeCollection> {
 
     public static ApiFuture<ListHttpHealthChecksPagedResponse> createAsync(
-        PageContext<ListHttpHealthChecksHttpRequest, HttpHealthCheckList, HttpHealthCheck> context,
+        PageContext<ListHttpHealthChecksHttpRequest, HttpHealthCheckList, HttpHealthCheck2> context,
         ApiFuture<HttpHealthCheckList> futureResponse) {
       ApiFuture<ListHttpHealthChecksPage> futurePage =
           ListHttpHealthChecksPage.createEmptyPage().createPageAsync(context, futureResponse);
@@ -1019,11 +1019,11 @@ public class HttpHealthCheckClient implements BackgroundResource {
 
   public static class ListHttpHealthChecksPage
       extends AbstractPage<
-          ListHttpHealthChecksHttpRequest, HttpHealthCheckList, HttpHealthCheck,
+          ListHttpHealthChecksHttpRequest, HttpHealthCheckList, HttpHealthCheck2,
           ListHttpHealthChecksPage> {
 
     private ListHttpHealthChecksPage(
-        PageContext<ListHttpHealthChecksHttpRequest, HttpHealthCheckList, HttpHealthCheck> context,
+        PageContext<ListHttpHealthChecksHttpRequest, HttpHealthCheckList, HttpHealthCheck2> context,
         HttpHealthCheckList response) {
       super(context, response);
     }
@@ -1034,14 +1034,14 @@ public class HttpHealthCheckClient implements BackgroundResource {
 
     @Override
     protected ListHttpHealthChecksPage createPage(
-        PageContext<ListHttpHealthChecksHttpRequest, HttpHealthCheckList, HttpHealthCheck> context,
+        PageContext<ListHttpHealthChecksHttpRequest, HttpHealthCheckList, HttpHealthCheck2> context,
         HttpHealthCheckList response) {
       return new ListHttpHealthChecksPage(context, response);
     }
 
     @Override
     public ApiFuture<ListHttpHealthChecksPage> createPageAsync(
-        PageContext<ListHttpHealthChecksHttpRequest, HttpHealthCheckList, HttpHealthCheck> context,
+        PageContext<ListHttpHealthChecksHttpRequest, HttpHealthCheckList, HttpHealthCheck2> context,
         ApiFuture<HttpHealthCheckList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1049,7 +1049,7 @@ public class HttpHealthCheckClient implements BackgroundResource {
 
   public static class ListHttpHealthChecksFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListHttpHealthChecksHttpRequest, HttpHealthCheckList, HttpHealthCheck,
+          ListHttpHealthChecksHttpRequest, HttpHealthCheckList, HttpHealthCheck2,
           ListHttpHealthChecksPage, ListHttpHealthChecksFixedSizeCollection> {
 
     private ListHttpHealthChecksFixedSizeCollection(

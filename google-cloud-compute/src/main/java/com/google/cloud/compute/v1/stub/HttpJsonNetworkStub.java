@@ -65,6 +65,7 @@ public class HttpJsonNetworkStub extends NetworkStub {
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<AddPeeringNetworkHttpRequest>newBuilder()
+                      .setRequestInstance(AddPeeringNetworkHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create("{project}/global/networks/{network}/addPeering"))
                       .setQueryParams(Sets.<String>newHashSet("requestId"))
@@ -85,6 +86,7 @@ public class HttpJsonNetworkStub extends NetworkStub {
               .setHttpMethod(HttpMethods.DELETE)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<DeleteNetworkHttpRequest>newBuilder()
+                      .setRequestInstance(DeleteNetworkHttpRequest.getDefaultInstance())
                       .setPathTemplate(PathTemplate.create("{project}/global/networks/{network}"))
                       .setQueryParams(Sets.<String>newHashSet("requestId"))
                       .setResourceNameFactory(ProjectGlobalNetworkName.newFactory())
@@ -104,6 +106,7 @@ public class HttpJsonNetworkStub extends NetworkStub {
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<GetNetworkHttpRequest>newBuilder()
+                      .setRequestInstance(GetNetworkHttpRequest.getDefaultInstance())
                       .setPathTemplate(PathTemplate.create("{project}/global/networks/{network}"))
                       .setQueryParams(Sets.<String>newHashSet())
                       .setResourceNameFactory(ProjectGlobalNetworkName.newFactory())
@@ -123,6 +126,7 @@ public class HttpJsonNetworkStub extends NetworkStub {
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<InsertNetworkHttpRequest>newBuilder()
+                      .setRequestInstance(InsertNetworkHttpRequest.getDefaultInstance())
                       .setPathTemplate(PathTemplate.create("{project}/global/networks"))
                       .setQueryParams(Sets.<String>newHashSet("requestId"))
                       .setResourceNameFactory(ProjectName.newFactory())
@@ -142,6 +146,7 @@ public class HttpJsonNetworkStub extends NetworkStub {
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<ListNetworksHttpRequest>newBuilder()
+                      .setRequestInstance(ListNetworksHttpRequest.getDefaultInstance())
                       .setPathTemplate(PathTemplate.create("{project}/global/networks"))
                       .setQueryParams(
                           Sets.<String>newHashSet("filter", "maxResults", "orderBy", "pageToken"))
@@ -162,6 +167,7 @@ public class HttpJsonNetworkStub extends NetworkStub {
               .setHttpMethod(HttpMethods.PATCH)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<PatchNetworkHttpRequest>newBuilder()
+                      .setRequestInstance(PatchNetworkHttpRequest.getDefaultInstance())
                       .setPathTemplate(PathTemplate.create("{project}/global/networks/{network}"))
                       .setQueryParams(Sets.<String>newHashSet("requestId"))
                       .setResourceNameFactory(ProjectGlobalNetworkName.newFactory())
@@ -181,6 +187,7 @@ public class HttpJsonNetworkStub extends NetworkStub {
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<RemovePeeringNetworkHttpRequest>newBuilder()
+                      .setRequestInstance(RemovePeeringNetworkHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create("{project}/global/networks/{network}/removePeering"))
                       .setQueryParams(Sets.<String>newHashSet("requestId"))
@@ -201,6 +208,7 @@ public class HttpJsonNetworkStub extends NetworkStub {
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<SwitchToCustomModeNetworkHttpRequest>newBuilder()
+                      .setRequestInstance(SwitchToCustomModeNetworkHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/global/networks/{network}/switchToCustomMode"))

@@ -64,6 +64,7 @@ public class HttpJsonSslPolicyStub extends SslPolicyStub {
               .setHttpMethod(HttpMethods.DELETE)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<DeleteSslPolicyHttpRequest>newBuilder()
+                      .setRequestInstance(DeleteSslPolicyHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create("{project}/global/sslPolicies/{sslPolicy}"))
                       .setQueryParams(Sets.<String>newHashSet("requestId"))
@@ -84,6 +85,7 @@ public class HttpJsonSslPolicyStub extends SslPolicyStub {
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<GetSslPolicyHttpRequest>newBuilder()
+                      .setRequestInstance(GetSslPolicyHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create("{project}/global/sslPolicies/{sslPolicy}"))
                       .setQueryParams(Sets.<String>newHashSet())
@@ -104,6 +106,7 @@ public class HttpJsonSslPolicyStub extends SslPolicyStub {
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<InsertSslPolicyHttpRequest>newBuilder()
+                      .setRequestInstance(InsertSslPolicyHttpRequest.getDefaultInstance())
                       .setPathTemplate(PathTemplate.create("{project}/global/sslPolicies"))
                       .setQueryParams(Sets.<String>newHashSet("requestId"))
                       .setResourceNameFactory(ProjectName.newFactory())
@@ -123,6 +126,7 @@ public class HttpJsonSslPolicyStub extends SslPolicyStub {
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<ListSslPoliciesHttpRequest>newBuilder()
+                      .setRequestInstance(ListSslPoliciesHttpRequest.getDefaultInstance())
                       .setPathTemplate(PathTemplate.create("{project}/global/sslPolicies"))
                       .setQueryParams(
                           Sets.<String>newHashSet("filter", "maxResults", "orderBy", "pageToken"))
@@ -148,6 +152,8 @@ public class HttpJsonSslPolicyStub extends SslPolicyStub {
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter
                       .<ListAvailableFeaturesSslPoliciesHttpRequest>newBuilder()
+                      .setRequestInstance(
+                          ListAvailableFeaturesSslPoliciesHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create("{project}/global/sslPolicies/listAvailableFeatures"))
                       .setQueryParams(
@@ -171,6 +177,7 @@ public class HttpJsonSslPolicyStub extends SslPolicyStub {
               .setHttpMethod(HttpMethods.PATCH)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<PatchSslPolicyHttpRequest>newBuilder()
+                      .setRequestInstance(PatchSslPolicyHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create("{project}/global/sslPolicies/{sslPolicy}"))
                       .setQueryParams(Sets.<String>newHashSet("requestId"))

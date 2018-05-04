@@ -69,6 +69,7 @@ public class HttpJsonAutoscalerStub extends AutoscalerStub {
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<AggregatedListAutoscalersHttpRequest>newBuilder()
+                      .setRequestInstance(AggregatedListAutoscalersHttpRequest.getDefaultInstance())
                       .setPathTemplate(PathTemplate.create("{project}/aggregated/autoscalers"))
                       .setQueryParams(
                           Sets.<String>newHashSet("filter", "maxResults", "orderBy", "pageToken"))
@@ -89,6 +90,7 @@ public class HttpJsonAutoscalerStub extends AutoscalerStub {
               .setHttpMethod(HttpMethods.DELETE)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<DeleteAutoscalerHttpRequest>newBuilder()
+                      .setRequestInstance(DeleteAutoscalerHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create("{project}/zones/{zone}/autoscalers/{autoscaler}"))
                       .setQueryParams(Sets.<String>newHashSet("requestId"))
@@ -109,6 +111,7 @@ public class HttpJsonAutoscalerStub extends AutoscalerStub {
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<GetAutoscalerHttpRequest>newBuilder()
+                      .setRequestInstance(GetAutoscalerHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create("{project}/zones/{zone}/autoscalers/{autoscaler}"))
                       .setQueryParams(Sets.<String>newHashSet())
@@ -129,6 +132,7 @@ public class HttpJsonAutoscalerStub extends AutoscalerStub {
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<InsertAutoscalerHttpRequest>newBuilder()
+                      .setRequestInstance(InsertAutoscalerHttpRequest.getDefaultInstance())
                       .setPathTemplate(PathTemplate.create("{project}/zones/{zone}/autoscalers"))
                       .setQueryParams(Sets.<String>newHashSet("requestId"))
                       .setResourceNameFactory(ProjectZoneName.newFactory())
@@ -148,6 +152,7 @@ public class HttpJsonAutoscalerStub extends AutoscalerStub {
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<ListAutoscalersHttpRequest>newBuilder()
+                      .setRequestInstance(ListAutoscalersHttpRequest.getDefaultInstance())
                       .setPathTemplate(PathTemplate.create("{project}/zones/{zone}/autoscalers"))
                       .setQueryParams(
                           Sets.<String>newHashSet("filter", "maxResults", "orderBy", "pageToken"))
@@ -168,6 +173,7 @@ public class HttpJsonAutoscalerStub extends AutoscalerStub {
               .setHttpMethod(HttpMethods.PATCH)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<PatchAutoscalerHttpRequest>newBuilder()
+                      .setRequestInstance(PatchAutoscalerHttpRequest.getDefaultInstance())
                       .setPathTemplate(PathTemplate.create("{project}/zones/{zone}/autoscalers"))
                       .setQueryParams(Sets.<String>newHashSet("autoscaler", "requestId"))
                       .setResourceNameFactory(ProjectZoneName.newFactory())
@@ -187,6 +193,7 @@ public class HttpJsonAutoscalerStub extends AutoscalerStub {
               .setHttpMethod(HttpMethods.PUT)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<UpdateAutoscalerHttpRequest>newBuilder()
+                      .setRequestInstance(UpdateAutoscalerHttpRequest.getDefaultInstance())
                       .setPathTemplate(PathTemplate.create("{project}/zones/{zone}/autoscalers"))
                       .setQueryParams(Sets.<String>newHashSet("autoscaler", "requestId"))
                       .setResourceNameFactory(ProjectZoneName.newFactory())

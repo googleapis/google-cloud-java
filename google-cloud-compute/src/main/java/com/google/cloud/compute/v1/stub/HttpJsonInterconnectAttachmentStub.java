@@ -70,6 +70,8 @@ public class HttpJsonInterconnectAttachmentStub extends InterconnectAttachmentSt
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter
                       .<AggregatedListInterconnectAttachmentsHttpRequest>newBuilder()
+                      .setRequestInstance(
+                          AggregatedListInterconnectAttachmentsHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create("{project}/aggregated/interconnectAttachments"))
                       .setQueryParams(
@@ -93,6 +95,8 @@ public class HttpJsonInterconnectAttachmentStub extends InterconnectAttachmentSt
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter
                       .<DeleteInterconnectAttachmentHttpRequest>newBuilder()
+                      .setRequestInstance(
+                          DeleteInterconnectAttachmentHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/regions/{region}/interconnectAttachments/{interconnectAttachment}"))
@@ -116,6 +120,7 @@ public class HttpJsonInterconnectAttachmentStub extends InterconnectAttachmentSt
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<GetInterconnectAttachmentHttpRequest>newBuilder()
+                      .setRequestInstance(GetInterconnectAttachmentHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/regions/{region}/interconnectAttachments/{interconnectAttachment}"))
@@ -138,6 +143,8 @@ public class HttpJsonInterconnectAttachmentStub extends InterconnectAttachmentSt
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter
                       .<InsertInterconnectAttachmentHttpRequest>newBuilder()
+                      .setRequestInstance(
+                          InsertInterconnectAttachmentHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create("{project}/regions/{region}/interconnectAttachments"))
                       .setQueryParams(Sets.<String>newHashSet("requestId"))
@@ -161,6 +168,8 @@ public class HttpJsonInterconnectAttachmentStub extends InterconnectAttachmentSt
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter
                       .<ListInterconnectAttachmentsHttpRequest>newBuilder()
+                      .setRequestInstance(
+                          ListInterconnectAttachmentsHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create("{project}/regions/{region}/interconnectAttachments"))
                       .setQueryParams(

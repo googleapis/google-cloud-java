@@ -58,6 +58,7 @@ public class HttpJsonInterconnectLocationStub extends InterconnectLocationStub {
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<GetInterconnectLocationHttpRequest>newBuilder()
+                      .setRequestInstance(GetInterconnectLocationHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/global/interconnectLocations/{interconnectLocation}"))
@@ -81,6 +82,7 @@ public class HttpJsonInterconnectLocationStub extends InterconnectLocationStub {
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<ListInterconnectLocationsHttpRequest>newBuilder()
+                      .setRequestInstance(ListInterconnectLocationsHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create("{project}/global/interconnectLocations"))
                       .setQueryParams(

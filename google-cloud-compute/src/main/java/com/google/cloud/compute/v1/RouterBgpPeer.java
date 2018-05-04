@@ -17,9 +17,14 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
+import com.google.common.collect.ImmutableList;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
+import java.util.Set;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
 
@@ -70,33 +75,76 @@ public final class RouterBgpPeer implements ApiMessage {
   }
 
   @Override
-  public Object getFieldValue(String fieldName) {
+  public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
+    Map<String, List<String>> fieldMap = new HashMap<>();
+    if (fieldNames.contains("advertiseMode") && advertiseMode != null) {
+      fieldMap.put("advertiseMode", Collections.singletonList(String.valueOf(advertiseMode)));
+    }
+    if (fieldNames.contains("advertisedGroups") && advertisedGroups != null) {
+      ImmutableList.Builder stringList = ImmutableList.builder();
+      for (String item : advertisedGroups) {
+        stringList.add(item.toString());
+      }
+      fieldMap.put("advertisedGroups", stringList.build());
+    }
+    if (fieldNames.contains("advertisedIpRanges") && advertisedIpRanges != null) {
+      ImmutableList.Builder stringList = ImmutableList.builder();
+      for (RouterAdvertisedIpRange item : advertisedIpRanges) {
+        stringList.add(item.toString());
+      }
+      fieldMap.put("advertisedIpRanges", stringList.build());
+    }
+    if (fieldNames.contains("advertisedRoutePriority") && advertisedRoutePriority != null) {
+      fieldMap.put(
+          "advertisedRoutePriority",
+          Collections.singletonList(String.valueOf(advertisedRoutePriority)));
+    }
+    if (fieldNames.contains("interfaceName") && interfaceName != null) {
+      fieldMap.put("interfaceName", Collections.singletonList(String.valueOf(interfaceName)));
+    }
+    if (fieldNames.contains("ipAddress") && ipAddress != null) {
+      fieldMap.put("ipAddress", Collections.singletonList(String.valueOf(ipAddress)));
+    }
+    if (fieldNames.contains("name") && name != null) {
+      fieldMap.put("name", Collections.singletonList(String.valueOf(name)));
+    }
+    if (fieldNames.contains("peerAsn") && peerAsn != null) {
+      fieldMap.put("peerAsn", Collections.singletonList(String.valueOf(peerAsn)));
+    }
+    if (fieldNames.contains("peerIpAddress") && peerIpAddress != null) {
+      fieldMap.put("peerIpAddress", Collections.singletonList(String.valueOf(peerIpAddress)));
+    }
+    return fieldMap;
+  }
+
+  @Override
+  public String getFieldStringValue(String fieldName) {
     if (fieldName.equals("advertiseMode")) {
-      return advertiseMode;
+      return String.valueOf(advertiseMode);
     }
     if (fieldName.equals("advertisedGroups")) {
-      return advertisedGroups;
+      return String.valueOf(advertisedGroups);
     }
     if (fieldName.equals("advertisedIpRanges")) {
-      return advertisedIpRanges;
+      return String.valueOf(advertisedIpRanges);
     }
     if (fieldName.equals("advertisedRoutePriority")) {
-      return advertisedRoutePriority;
+      return String.valueOf(advertisedRoutePriority);
     }
     if (fieldName.equals("interfaceName")) {
-      return interfaceName;
+      return String.valueOf(interfaceName);
     }
     if (fieldName.equals("ipAddress")) {
-      return ipAddress;
+      return String.valueOf(ipAddress);
     }
     if (fieldName.equals("name")) {
-      return name;
+      return String.valueOf(name);
     }
     if (fieldName.equals("peerAsn")) {
-      return peerAsn;
+      return String.valueOf(peerAsn);
     }
     if (fieldName.equals("peerIpAddress")) {
-      return peerIpAddress;
+      return String.valueOf(peerIpAddress);
     }
     return null;
   }
@@ -104,12 +152,6 @@ public final class RouterBgpPeer implements ApiMessage {
   @Nullable
   @Override
   public ApiMessage getApiMessageRequestBody() {
-    return null;
-  }
-
-  @Nullable
-  @Override
-  public List<String> getFieldMask() {
     return null;
   }
 

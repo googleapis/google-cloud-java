@@ -17,9 +17,14 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
+import com.google.common.collect.ImmutableList;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
+import java.util.Set;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
 
@@ -126,75 +131,157 @@ public final class Operation implements ApiMessage {
   }
 
   @Override
-  public Object getFieldValue(String fieldName) {
+  public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
+    Map<String, List<String>> fieldMap = new HashMap<>();
+    if (fieldNames.contains("clientOperationId") && clientOperationId != null) {
+      fieldMap.put(
+          "clientOperationId", Collections.singletonList(String.valueOf(clientOperationId)));
+    }
+    if (fieldNames.contains("creationTimestamp") && creationTimestamp != null) {
+      fieldMap.put(
+          "creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
+    }
+    if (fieldNames.contains("description") && description != null) {
+      fieldMap.put("description", Collections.singletonList(String.valueOf(description)));
+    }
+    if (fieldNames.contains("endTime") && endTime != null) {
+      fieldMap.put("endTime", Collections.singletonList(String.valueOf(endTime)));
+    }
+    if (fieldNames.contains("error") && error != null) {
+      fieldMap.put("error", Collections.singletonList(String.valueOf(error)));
+    }
+    if (fieldNames.contains("httpErrorMessage") && httpErrorMessage != null) {
+      fieldMap.put("httpErrorMessage", Collections.singletonList(String.valueOf(httpErrorMessage)));
+    }
+    if (fieldNames.contains("httpErrorStatusCode") && httpErrorStatusCode != null) {
+      fieldMap.put(
+          "httpErrorStatusCode", Collections.singletonList(String.valueOf(httpErrorStatusCode)));
+    }
+    if (fieldNames.contains("id") && id != null) {
+      fieldMap.put("id", Collections.singletonList(String.valueOf(id)));
+    }
+    if (fieldNames.contains("insertTime") && insertTime != null) {
+      fieldMap.put("insertTime", Collections.singletonList(String.valueOf(insertTime)));
+    }
+    if (fieldNames.contains("kind") && kind != null) {
+      fieldMap.put("kind", Collections.singletonList(String.valueOf(kind)));
+    }
+    if (fieldNames.contains("name") && name != null) {
+      fieldMap.put("name", Collections.singletonList(String.valueOf(name)));
+    }
+    if (fieldNames.contains("operationType") && operationType != null) {
+      fieldMap.put("operationType", Collections.singletonList(String.valueOf(operationType)));
+    }
+    if (fieldNames.contains("progress") && progress != null) {
+      fieldMap.put("progress", Collections.singletonList(String.valueOf(progress)));
+    }
+    if (fieldNames.contains("region") && region != null) {
+      fieldMap.put("region", Collections.singletonList(String.valueOf(region)));
+    }
+    if (fieldNames.contains("selfLink") && selfLink != null) {
+      fieldMap.put("selfLink", Collections.singletonList(String.valueOf(selfLink)));
+    }
+    if (fieldNames.contains("startTime") && startTime != null) {
+      fieldMap.put("startTime", Collections.singletonList(String.valueOf(startTime)));
+    }
+    if (fieldNames.contains("status") && status != null) {
+      fieldMap.put("status", Collections.singletonList(String.valueOf(status)));
+    }
+    if (fieldNames.contains("statusMessage") && statusMessage != null) {
+      fieldMap.put("statusMessage", Collections.singletonList(String.valueOf(statusMessage)));
+    }
+    if (fieldNames.contains("targetId") && targetId != null) {
+      fieldMap.put("targetId", Collections.singletonList(String.valueOf(targetId)));
+    }
+    if (fieldNames.contains("targetLink") && targetLink != null) {
+      fieldMap.put("targetLink", Collections.singletonList(String.valueOf(targetLink)));
+    }
+    if (fieldNames.contains("user") && user != null) {
+      fieldMap.put("user", Collections.singletonList(String.valueOf(user)));
+    }
+    if (fieldNames.contains("warnings") && warnings != null) {
+      ImmutableList.Builder stringList = ImmutableList.builder();
+      for (Warnings item : warnings) {
+        stringList.add(item.toString());
+      }
+      fieldMap.put("warnings", stringList.build());
+    }
+    if (fieldNames.contains("zone") && zone != null) {
+      fieldMap.put("zone", Collections.singletonList(String.valueOf(zone)));
+    }
+    return fieldMap;
+  }
+
+  @Override
+  public String getFieldStringValue(String fieldName) {
     if (fieldName.equals("clientOperationId")) {
-      return clientOperationId;
+      return String.valueOf(clientOperationId);
     }
     if (fieldName.equals("creationTimestamp")) {
-      return creationTimestamp;
+      return String.valueOf(creationTimestamp);
     }
     if (fieldName.equals("description")) {
-      return description;
+      return String.valueOf(description);
     }
     if (fieldName.equals("endTime")) {
-      return endTime;
+      return String.valueOf(endTime);
     }
     if (fieldName.equals("error")) {
-      return error;
+      return String.valueOf(error);
     }
     if (fieldName.equals("httpErrorMessage")) {
-      return httpErrorMessage;
+      return String.valueOf(httpErrorMessage);
     }
     if (fieldName.equals("httpErrorStatusCode")) {
-      return httpErrorStatusCode;
+      return String.valueOf(httpErrorStatusCode);
     }
     if (fieldName.equals("id")) {
-      return id;
+      return String.valueOf(id);
     }
     if (fieldName.equals("insertTime")) {
-      return insertTime;
+      return String.valueOf(insertTime);
     }
     if (fieldName.equals("kind")) {
-      return kind;
+      return String.valueOf(kind);
     }
     if (fieldName.equals("name")) {
-      return name;
+      return String.valueOf(name);
     }
     if (fieldName.equals("operationType")) {
-      return operationType;
+      return String.valueOf(operationType);
     }
     if (fieldName.equals("progress")) {
-      return progress;
+      return String.valueOf(progress);
     }
     if (fieldName.equals("region")) {
-      return region;
+      return String.valueOf(region);
     }
     if (fieldName.equals("selfLink")) {
-      return selfLink;
+      return String.valueOf(selfLink);
     }
     if (fieldName.equals("startTime")) {
-      return startTime;
+      return String.valueOf(startTime);
     }
     if (fieldName.equals("status")) {
-      return status;
+      return String.valueOf(status);
     }
     if (fieldName.equals("statusMessage")) {
-      return statusMessage;
+      return String.valueOf(statusMessage);
     }
     if (fieldName.equals("targetId")) {
-      return targetId;
+      return String.valueOf(targetId);
     }
     if (fieldName.equals("targetLink")) {
-      return targetLink;
+      return String.valueOf(targetLink);
     }
     if (fieldName.equals("user")) {
-      return user;
+      return String.valueOf(user);
     }
     if (fieldName.equals("warnings")) {
-      return warnings;
+      return String.valueOf(warnings);
     }
     if (fieldName.equals("zone")) {
-      return zone;
+      return String.valueOf(zone);
     }
     return null;
   }
@@ -202,12 +289,6 @@ public final class Operation implements ApiMessage {
   @Nullable
   @Override
   public ApiMessage getApiMessageRequestBody() {
-    return null;
-  }
-
-  @Nullable
-  @Override
-  public List<String> getFieldMask() {
     return null;
   }
 

@@ -17,8 +17,12 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
+import java.util.Set;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
 
@@ -65,30 +69,62 @@ public final class InstanceGroupManagerActionsSummary implements ApiMessage {
   }
 
   @Override
-  public Object getFieldValue(String fieldName) {
+  public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
+    Map<String, List<String>> fieldMap = new HashMap<>();
+    if (fieldNames.contains("abandoning") && abandoning != null) {
+      fieldMap.put("abandoning", Collections.singletonList(String.valueOf(abandoning)));
+    }
+    if (fieldNames.contains("creating") && creating != null) {
+      fieldMap.put("creating", Collections.singletonList(String.valueOf(creating)));
+    }
+    if (fieldNames.contains("creatingWithoutRetries") && creatingWithoutRetries != null) {
+      fieldMap.put(
+          "creatingWithoutRetries",
+          Collections.singletonList(String.valueOf(creatingWithoutRetries)));
+    }
+    if (fieldNames.contains("deleting") && deleting != null) {
+      fieldMap.put("deleting", Collections.singletonList(String.valueOf(deleting)));
+    }
+    if (fieldNames.contains("none") && none != null) {
+      fieldMap.put("none", Collections.singletonList(String.valueOf(none)));
+    }
+    if (fieldNames.contains("recreating") && recreating != null) {
+      fieldMap.put("recreating", Collections.singletonList(String.valueOf(recreating)));
+    }
+    if (fieldNames.contains("refreshing") && refreshing != null) {
+      fieldMap.put("refreshing", Collections.singletonList(String.valueOf(refreshing)));
+    }
+    if (fieldNames.contains("restarting") && restarting != null) {
+      fieldMap.put("restarting", Collections.singletonList(String.valueOf(restarting)));
+    }
+    return fieldMap;
+  }
+
+  @Override
+  public String getFieldStringValue(String fieldName) {
     if (fieldName.equals("abandoning")) {
-      return abandoning;
+      return String.valueOf(abandoning);
     }
     if (fieldName.equals("creating")) {
-      return creating;
+      return String.valueOf(creating);
     }
     if (fieldName.equals("creatingWithoutRetries")) {
-      return creatingWithoutRetries;
+      return String.valueOf(creatingWithoutRetries);
     }
     if (fieldName.equals("deleting")) {
-      return deleting;
+      return String.valueOf(deleting);
     }
     if (fieldName.equals("none")) {
-      return none;
+      return String.valueOf(none);
     }
     if (fieldName.equals("recreating")) {
-      return recreating;
+      return String.valueOf(recreating);
     }
     if (fieldName.equals("refreshing")) {
-      return refreshing;
+      return String.valueOf(refreshing);
     }
     if (fieldName.equals("restarting")) {
-      return restarting;
+      return String.valueOf(restarting);
     }
     return null;
   }
@@ -96,12 +132,6 @@ public final class InstanceGroupManagerActionsSummary implements ApiMessage {
   @Nullable
   @Override
   public ApiMessage getApiMessageRequestBody() {
-    return null;
-  }
-
-  @Nullable
-  @Override
-  public List<String> getFieldMask() {
     return null;
   }
 

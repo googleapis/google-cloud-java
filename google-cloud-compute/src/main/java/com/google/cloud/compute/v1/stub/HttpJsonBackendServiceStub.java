@@ -71,6 +71,8 @@ public class HttpJsonBackendServiceStub extends BackendServiceStub {
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter
                       .<AggregatedListBackendServicesHttpRequest>newBuilder()
+                      .setRequestInstance(
+                          AggregatedListBackendServicesHttpRequest.getDefaultInstance())
                       .setPathTemplate(PathTemplate.create("{project}/aggregated/backendServices"))
                       .setQueryParams(
                           Sets.<String>newHashSet("filter", "maxResults", "orderBy", "pageToken"))
@@ -91,6 +93,7 @@ public class HttpJsonBackendServiceStub extends BackendServiceStub {
               .setHttpMethod(HttpMethods.DELETE)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<DeleteBackendServiceHttpRequest>newBuilder()
+                      .setRequestInstance(DeleteBackendServiceHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create("{project}/global/backendServices/{backendService}"))
                       .setQueryParams(Sets.<String>newHashSet("requestId"))
@@ -111,6 +114,7 @@ public class HttpJsonBackendServiceStub extends BackendServiceStub {
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<GetBackendServiceHttpRequest>newBuilder()
+                      .setRequestInstance(GetBackendServiceHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create("{project}/global/backendServices/{backendService}"))
                       .setQueryParams(Sets.<String>newHashSet())
@@ -133,6 +137,7 @@ public class HttpJsonBackendServiceStub extends BackendServiceStub {
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<GetHealthBackendServiceHttpRequest>newBuilder()
+                      .setRequestInstance(GetHealthBackendServiceHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/global/backendServices/{backendService}/getHealth"))
@@ -154,6 +159,7 @@ public class HttpJsonBackendServiceStub extends BackendServiceStub {
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<InsertBackendServiceHttpRequest>newBuilder()
+                      .setRequestInstance(InsertBackendServiceHttpRequest.getDefaultInstance())
                       .setPathTemplate(PathTemplate.create("{project}/global/backendServices"))
                       .setQueryParams(Sets.<String>newHashSet("requestId"))
                       .setResourceNameFactory(ProjectName.newFactory())
@@ -173,6 +179,7 @@ public class HttpJsonBackendServiceStub extends BackendServiceStub {
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<ListBackendServicesHttpRequest>newBuilder()
+                      .setRequestInstance(ListBackendServicesHttpRequest.getDefaultInstance())
                       .setPathTemplate(PathTemplate.create("{project}/global/backendServices"))
                       .setQueryParams(
                           Sets.<String>newHashSet("filter", "maxResults", "orderBy", "pageToken"))
@@ -193,6 +200,7 @@ public class HttpJsonBackendServiceStub extends BackendServiceStub {
               .setHttpMethod(HttpMethods.PATCH)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<PatchBackendServiceHttpRequest>newBuilder()
+                      .setRequestInstance(PatchBackendServiceHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create("{project}/global/backendServices/{backendService}"))
                       .setQueryParams(Sets.<String>newHashSet("requestId"))
@@ -213,6 +221,7 @@ public class HttpJsonBackendServiceStub extends BackendServiceStub {
               .setHttpMethod(HttpMethods.PUT)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<UpdateBackendServiceHttpRequest>newBuilder()
+                      .setRequestInstance(UpdateBackendServiceHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create("{project}/global/backendServices/{backendService}"))
                       .setQueryParams(Sets.<String>newHashSet("requestId"))

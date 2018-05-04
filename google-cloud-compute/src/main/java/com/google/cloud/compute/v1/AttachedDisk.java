@@ -17,9 +17,14 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
+import com.google.common.collect.ImmutableList;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
+import java.util.Set;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
 
@@ -86,45 +91,99 @@ public final class AttachedDisk implements ApiMessage {
   }
 
   @Override
-  public Object getFieldValue(String fieldName) {
+  public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
+    Map<String, List<String>> fieldMap = new HashMap<>();
+    if (fieldNames.contains("autoDelete") && autoDelete != null) {
+      fieldMap.put("autoDelete", Collections.singletonList(String.valueOf(autoDelete)));
+    }
+    if (fieldNames.contains("boot") && boot != null) {
+      fieldMap.put("boot", Collections.singletonList(String.valueOf(boot)));
+    }
+    if (fieldNames.contains("deviceName") && deviceName != null) {
+      fieldMap.put("deviceName", Collections.singletonList(String.valueOf(deviceName)));
+    }
+    if (fieldNames.contains("diskEncryptionKey") && diskEncryptionKey != null) {
+      fieldMap.put(
+          "diskEncryptionKey", Collections.singletonList(String.valueOf(diskEncryptionKey)));
+    }
+    if (fieldNames.contains("guestOsFeatures") && guestOsFeatures != null) {
+      ImmutableList.Builder stringList = ImmutableList.builder();
+      for (GuestOsFeature item : guestOsFeatures) {
+        stringList.add(item.toString());
+      }
+      fieldMap.put("guestOsFeatures", stringList.build());
+    }
+    if (fieldNames.contains("index") && index != null) {
+      fieldMap.put("index", Collections.singletonList(String.valueOf(index)));
+    }
+    if (fieldNames.contains("initializeParams") && initializeParams != null) {
+      fieldMap.put("initializeParams", Collections.singletonList(String.valueOf(initializeParams)));
+    }
+    if (fieldNames.contains("interface2") && interface2 != null) {
+      fieldMap.put("interface2", Collections.singletonList(String.valueOf(interface2)));
+    }
+    if (fieldNames.contains("kind") && kind != null) {
+      fieldMap.put("kind", Collections.singletonList(String.valueOf(kind)));
+    }
+    if (fieldNames.contains("licenses") && licenses != null) {
+      ImmutableList.Builder stringList = ImmutableList.builder();
+      for (String item : licenses) {
+        stringList.add(item.toString());
+      }
+      fieldMap.put("licenses", stringList.build());
+    }
+    if (fieldNames.contains("mode") && mode != null) {
+      fieldMap.put("mode", Collections.singletonList(String.valueOf(mode)));
+    }
+    if (fieldNames.contains("source") && source != null) {
+      fieldMap.put("source", Collections.singletonList(String.valueOf(source)));
+    }
+    if (fieldNames.contains("type") && type != null) {
+      fieldMap.put("type", Collections.singletonList(String.valueOf(type)));
+    }
+    return fieldMap;
+  }
+
+  @Override
+  public String getFieldStringValue(String fieldName) {
     if (fieldName.equals("autoDelete")) {
-      return autoDelete;
+      return String.valueOf(autoDelete);
     }
     if (fieldName.equals("boot")) {
-      return boot;
+      return String.valueOf(boot);
     }
     if (fieldName.equals("deviceName")) {
-      return deviceName;
+      return String.valueOf(deviceName);
     }
     if (fieldName.equals("diskEncryptionKey")) {
-      return diskEncryptionKey;
+      return String.valueOf(diskEncryptionKey);
     }
     if (fieldName.equals("guestOsFeatures")) {
-      return guestOsFeatures;
+      return String.valueOf(guestOsFeatures);
     }
     if (fieldName.equals("index")) {
-      return index;
+      return String.valueOf(index);
     }
     if (fieldName.equals("initializeParams")) {
-      return initializeParams;
+      return String.valueOf(initializeParams);
     }
     if (fieldName.equals("interface2")) {
-      return interface2;
+      return String.valueOf(interface2);
     }
     if (fieldName.equals("kind")) {
-      return kind;
+      return String.valueOf(kind);
     }
     if (fieldName.equals("licenses")) {
-      return licenses;
+      return String.valueOf(licenses);
     }
     if (fieldName.equals("mode")) {
-      return mode;
+      return String.valueOf(mode);
     }
     if (fieldName.equals("source")) {
-      return source;
+      return String.valueOf(source);
     }
     if (fieldName.equals("type")) {
-      return type;
+      return String.valueOf(type);
     }
     return null;
   }
@@ -132,12 +191,6 @@ public final class AttachedDisk implements ApiMessage {
   @Nullable
   @Override
   public ApiMessage getApiMessageRequestBody() {
-    return null;
-  }
-
-  @Nullable
-  @Override
-  public List<String> getFieldMask() {
     return null;
   }
 

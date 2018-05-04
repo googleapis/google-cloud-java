@@ -17,10 +17,14 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
+import com.google.common.collect.ImmutableList;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Set;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
 
@@ -139,84 +143,192 @@ public final class Disk implements ApiMessage {
   }
 
   @Override
-  public Object getFieldValue(String fieldName) {
+  public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
+    Map<String, List<String>> fieldMap = new HashMap<>();
+    if (fieldNames.contains("creationTimestamp") && creationTimestamp != null) {
+      fieldMap.put(
+          "creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
+    }
+    if (fieldNames.contains("description") && description != null) {
+      fieldMap.put("description", Collections.singletonList(String.valueOf(description)));
+    }
+    if (fieldNames.contains("diskEncryptionKey") && diskEncryptionKey != null) {
+      fieldMap.put(
+          "diskEncryptionKey", Collections.singletonList(String.valueOf(diskEncryptionKey)));
+    }
+    if (fieldNames.contains("guestOsFeatures") && guestOsFeatures != null) {
+      ImmutableList.Builder stringList = ImmutableList.builder();
+      for (GuestOsFeature item : guestOsFeatures) {
+        stringList.add(item.toString());
+      }
+      fieldMap.put("guestOsFeatures", stringList.build());
+    }
+    if (fieldNames.contains("id") && id != null) {
+      fieldMap.put("id", Collections.singletonList(String.valueOf(id)));
+    }
+    if (fieldNames.contains("kind") && kind != null) {
+      fieldMap.put("kind", Collections.singletonList(String.valueOf(kind)));
+    }
+    if (fieldNames.contains("labelFingerprint") && labelFingerprint != null) {
+      fieldMap.put("labelFingerprint", Collections.singletonList(String.valueOf(labelFingerprint)));
+    }
+    if (fieldNames.contains("labels") && labels != null) {
+      fieldMap.put("labels", Collections.singletonList(String.valueOf(labels)));
+    }
+    if (fieldNames.contains("lastAttachTimestamp") && lastAttachTimestamp != null) {
+      fieldMap.put(
+          "lastAttachTimestamp", Collections.singletonList(String.valueOf(lastAttachTimestamp)));
+    }
+    if (fieldNames.contains("lastDetachTimestamp") && lastDetachTimestamp != null) {
+      fieldMap.put(
+          "lastDetachTimestamp", Collections.singletonList(String.valueOf(lastDetachTimestamp)));
+    }
+    if (fieldNames.contains("licenseCodes") && licenseCodes != null) {
+      ImmutableList.Builder stringList = ImmutableList.builder();
+      for (String item : licenseCodes) {
+        stringList.add(item.toString());
+      }
+      fieldMap.put("licenseCodes", stringList.build());
+    }
+    if (fieldNames.contains("licenses") && licenses != null) {
+      ImmutableList.Builder stringList = ImmutableList.builder();
+      for (String item : licenses) {
+        stringList.add(item.toString());
+      }
+      fieldMap.put("licenses", stringList.build());
+    }
+    if (fieldNames.contains("name") && name != null) {
+      fieldMap.put("name", Collections.singletonList(String.valueOf(name)));
+    }
+    if (fieldNames.contains("options") && options != null) {
+      fieldMap.put("options", Collections.singletonList(String.valueOf(options)));
+    }
+    if (fieldNames.contains("selfLink") && selfLink != null) {
+      fieldMap.put("selfLink", Collections.singletonList(String.valueOf(selfLink)));
+    }
+    if (fieldNames.contains("sizeGb") && sizeGb != null) {
+      fieldMap.put("sizeGb", Collections.singletonList(String.valueOf(sizeGb)));
+    }
+    if (fieldNames.contains("sourceImage") && sourceImage != null) {
+      fieldMap.put("sourceImage", Collections.singletonList(String.valueOf(sourceImage)));
+    }
+    if (fieldNames.contains("sourceImageEncryptionKey") && sourceImageEncryptionKey != null) {
+      fieldMap.put(
+          "sourceImageEncryptionKey",
+          Collections.singletonList(String.valueOf(sourceImageEncryptionKey)));
+    }
+    if (fieldNames.contains("sourceImageId") && sourceImageId != null) {
+      fieldMap.put("sourceImageId", Collections.singletonList(String.valueOf(sourceImageId)));
+    }
+    if (fieldNames.contains("sourceSnapshot") && sourceSnapshot != null) {
+      fieldMap.put("sourceSnapshot", Collections.singletonList(String.valueOf(sourceSnapshot)));
+    }
+    if (fieldNames.contains("sourceSnapshotEncryptionKey") && sourceSnapshotEncryptionKey != null) {
+      fieldMap.put(
+          "sourceSnapshotEncryptionKey",
+          Collections.singletonList(String.valueOf(sourceSnapshotEncryptionKey)));
+    }
+    if (fieldNames.contains("sourceSnapshotId") && sourceSnapshotId != null) {
+      fieldMap.put("sourceSnapshotId", Collections.singletonList(String.valueOf(sourceSnapshotId)));
+    }
+    if (fieldNames.contains("status") && status != null) {
+      fieldMap.put("status", Collections.singletonList(String.valueOf(status)));
+    }
+    if (fieldNames.contains("type") && type != null) {
+      fieldMap.put("type", Collections.singletonList(String.valueOf(type)));
+    }
+    if (fieldNames.contains("users") && users != null) {
+      ImmutableList.Builder stringList = ImmutableList.builder();
+      for (String item : users) {
+        stringList.add(item.toString());
+      }
+      fieldMap.put("users", stringList.build());
+    }
+    if (fieldNames.contains("zone") && zone != null) {
+      fieldMap.put("zone", Collections.singletonList(String.valueOf(zone)));
+    }
+    return fieldMap;
+  }
+
+  @Override
+  public String getFieldStringValue(String fieldName) {
     if (fieldName.equals("creationTimestamp")) {
-      return creationTimestamp;
+      return String.valueOf(creationTimestamp);
     }
     if (fieldName.equals("description")) {
-      return description;
+      return String.valueOf(description);
     }
     if (fieldName.equals("diskEncryptionKey")) {
-      return diskEncryptionKey;
+      return String.valueOf(diskEncryptionKey);
     }
     if (fieldName.equals("guestOsFeatures")) {
-      return guestOsFeatures;
+      return String.valueOf(guestOsFeatures);
     }
     if (fieldName.equals("id")) {
-      return id;
+      return String.valueOf(id);
     }
     if (fieldName.equals("kind")) {
-      return kind;
+      return String.valueOf(kind);
     }
     if (fieldName.equals("labelFingerprint")) {
-      return labelFingerprint;
+      return String.valueOf(labelFingerprint);
     }
     if (fieldName.equals("labels")) {
-      return labels;
+      return String.valueOf(labels);
     }
     if (fieldName.equals("lastAttachTimestamp")) {
-      return lastAttachTimestamp;
+      return String.valueOf(lastAttachTimestamp);
     }
     if (fieldName.equals("lastDetachTimestamp")) {
-      return lastDetachTimestamp;
+      return String.valueOf(lastDetachTimestamp);
     }
     if (fieldName.equals("licenseCodes")) {
-      return licenseCodes;
+      return String.valueOf(licenseCodes);
     }
     if (fieldName.equals("licenses")) {
-      return licenses;
+      return String.valueOf(licenses);
     }
     if (fieldName.equals("name")) {
-      return name;
+      return String.valueOf(name);
     }
     if (fieldName.equals("options")) {
-      return options;
+      return String.valueOf(options);
     }
     if (fieldName.equals("selfLink")) {
-      return selfLink;
+      return String.valueOf(selfLink);
     }
     if (fieldName.equals("sizeGb")) {
-      return sizeGb;
+      return String.valueOf(sizeGb);
     }
     if (fieldName.equals("sourceImage")) {
-      return sourceImage;
+      return String.valueOf(sourceImage);
     }
     if (fieldName.equals("sourceImageEncryptionKey")) {
-      return sourceImageEncryptionKey;
+      return String.valueOf(sourceImageEncryptionKey);
     }
     if (fieldName.equals("sourceImageId")) {
-      return sourceImageId;
+      return String.valueOf(sourceImageId);
     }
     if (fieldName.equals("sourceSnapshot")) {
-      return sourceSnapshot;
+      return String.valueOf(sourceSnapshot);
     }
     if (fieldName.equals("sourceSnapshotEncryptionKey")) {
-      return sourceSnapshotEncryptionKey;
+      return String.valueOf(sourceSnapshotEncryptionKey);
     }
     if (fieldName.equals("sourceSnapshotId")) {
-      return sourceSnapshotId;
+      return String.valueOf(sourceSnapshotId);
     }
     if (fieldName.equals("status")) {
-      return status;
+      return String.valueOf(status);
     }
     if (fieldName.equals("type")) {
-      return type;
+      return String.valueOf(type);
     }
     if (fieldName.equals("users")) {
-      return users;
+      return String.valueOf(users);
     }
     if (fieldName.equals("zone")) {
-      return zone;
+      return String.valueOf(zone);
     }
     return null;
   }
@@ -224,12 +336,6 @@ public final class Disk implements ApiMessage {
   @Nullable
   @Override
   public ApiMessage getApiMessageRequestBody() {
-    return null;
-  }
-
-  @Nullable
-  @Override
-  public List<String> getFieldMask() {
     return null;
   }
 

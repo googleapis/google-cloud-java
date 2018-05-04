@@ -63,6 +63,7 @@ public class HttpJsonBackendBucketStub extends BackendBucketStub {
               .setHttpMethod(HttpMethods.DELETE)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<DeleteBackendBucketHttpRequest>newBuilder()
+                      .setRequestInstance(DeleteBackendBucketHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create("{project}/global/backendBuckets/{backendBucket}"))
                       .setQueryParams(Sets.<String>newHashSet("requestId"))
@@ -83,6 +84,7 @@ public class HttpJsonBackendBucketStub extends BackendBucketStub {
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<GetBackendBucketHttpRequest>newBuilder()
+                      .setRequestInstance(GetBackendBucketHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create("{project}/global/backendBuckets/{backendBucket}"))
                       .setQueryParams(Sets.<String>newHashSet())
@@ -103,6 +105,7 @@ public class HttpJsonBackendBucketStub extends BackendBucketStub {
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<InsertBackendBucketHttpRequest>newBuilder()
+                      .setRequestInstance(InsertBackendBucketHttpRequest.getDefaultInstance())
                       .setPathTemplate(PathTemplate.create("{project}/global/backendBuckets"))
                       .setQueryParams(Sets.<String>newHashSet("requestId"))
                       .setResourceNameFactory(ProjectName.newFactory())
@@ -122,6 +125,7 @@ public class HttpJsonBackendBucketStub extends BackendBucketStub {
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<ListBackendBucketsHttpRequest>newBuilder()
+                      .setRequestInstance(ListBackendBucketsHttpRequest.getDefaultInstance())
                       .setPathTemplate(PathTemplate.create("{project}/global/backendBuckets"))
                       .setQueryParams(
                           Sets.<String>newHashSet("filter", "maxResults", "orderBy", "pageToken"))
@@ -142,6 +146,7 @@ public class HttpJsonBackendBucketStub extends BackendBucketStub {
               .setHttpMethod(HttpMethods.PATCH)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<PatchBackendBucketHttpRequest>newBuilder()
+                      .setRequestInstance(PatchBackendBucketHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create("{project}/global/backendBuckets/{backendBucket}"))
                       .setQueryParams(Sets.<String>newHashSet("requestId"))
@@ -162,6 +167,7 @@ public class HttpJsonBackendBucketStub extends BackendBucketStub {
               .setHttpMethod(HttpMethods.PUT)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<UpdateBackendBucketHttpRequest>newBuilder()
+                      .setRequestInstance(UpdateBackendBucketHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create("{project}/global/backendBuckets/{backendBucket}"))
                       .setQueryParams(Sets.<String>newHashSet("requestId"))

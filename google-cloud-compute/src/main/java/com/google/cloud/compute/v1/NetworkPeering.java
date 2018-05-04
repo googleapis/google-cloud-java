@@ -17,8 +17,12 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
+import java.util.Set;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
 
@@ -49,21 +53,42 @@ public final class NetworkPeering implements ApiMessage {
   }
 
   @Override
-  public Object getFieldValue(String fieldName) {
+  public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
+    Map<String, List<String>> fieldMap = new HashMap<>();
+    if (fieldNames.contains("autoCreateRoutes") && autoCreateRoutes != null) {
+      fieldMap.put("autoCreateRoutes", Collections.singletonList(String.valueOf(autoCreateRoutes)));
+    }
+    if (fieldNames.contains("name") && name != null) {
+      fieldMap.put("name", Collections.singletonList(String.valueOf(name)));
+    }
+    if (fieldNames.contains("network") && network != null) {
+      fieldMap.put("network", Collections.singletonList(String.valueOf(network)));
+    }
+    if (fieldNames.contains("state") && state != null) {
+      fieldMap.put("state", Collections.singletonList(String.valueOf(state)));
+    }
+    if (fieldNames.contains("stateDetails") && stateDetails != null) {
+      fieldMap.put("stateDetails", Collections.singletonList(String.valueOf(stateDetails)));
+    }
+    return fieldMap;
+  }
+
+  @Override
+  public String getFieldStringValue(String fieldName) {
     if (fieldName.equals("autoCreateRoutes")) {
-      return autoCreateRoutes;
+      return String.valueOf(autoCreateRoutes);
     }
     if (fieldName.equals("name")) {
-      return name;
+      return String.valueOf(name);
     }
     if (fieldName.equals("network")) {
-      return network;
+      return String.valueOf(network);
     }
     if (fieldName.equals("state")) {
-      return state;
+      return String.valueOf(state);
     }
     if (fieldName.equals("stateDetails")) {
-      return stateDetails;
+      return String.valueOf(stateDetails);
     }
     return null;
   }
@@ -71,12 +96,6 @@ public final class NetworkPeering implements ApiMessage {
   @Nullable
   @Override
   public ApiMessage getApiMessageRequestBody() {
-    return null;
-  }
-
-  @Nullable
-  @Override
-  public List<String> getFieldMask() {
     return null;
   }
 

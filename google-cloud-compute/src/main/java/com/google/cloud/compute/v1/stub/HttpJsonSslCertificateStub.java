@@ -61,6 +61,7 @@ public class HttpJsonSslCertificateStub extends SslCertificateStub {
               .setHttpMethod(HttpMethods.DELETE)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<DeleteSslCertificateHttpRequest>newBuilder()
+                      .setRequestInstance(DeleteSslCertificateHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create("{project}/global/sslCertificates/{sslCertificate}"))
                       .setQueryParams(Sets.<String>newHashSet("requestId"))
@@ -81,6 +82,7 @@ public class HttpJsonSslCertificateStub extends SslCertificateStub {
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<GetSslCertificateHttpRequest>newBuilder()
+                      .setRequestInstance(GetSslCertificateHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create("{project}/global/sslCertificates/{sslCertificate}"))
                       .setQueryParams(Sets.<String>newHashSet())
@@ -101,6 +103,7 @@ public class HttpJsonSslCertificateStub extends SslCertificateStub {
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<InsertSslCertificateHttpRequest>newBuilder()
+                      .setRequestInstance(InsertSslCertificateHttpRequest.getDefaultInstance())
                       .setPathTemplate(PathTemplate.create("{project}/global/sslCertificates"))
                       .setQueryParams(Sets.<String>newHashSet("requestId"))
                       .setResourceNameFactory(ProjectName.newFactory())
@@ -120,6 +123,7 @@ public class HttpJsonSslCertificateStub extends SslCertificateStub {
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<ListSslCertificatesHttpRequest>newBuilder()
+                      .setRequestInstance(ListSslCertificatesHttpRequest.getDefaultInstance())
                       .setPathTemplate(PathTemplate.create("{project}/global/sslCertificates"))
                       .setQueryParams(
                           Sets.<String>newHashSet("filter", "maxResults", "orderBy", "pageToken"))

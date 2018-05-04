@@ -17,9 +17,14 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
+import com.google.common.collect.ImmutableList;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
+import java.util.Set;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
 
@@ -58,24 +63,52 @@ public final class RegionInstanceGroupManagerList implements ApiMessage {
   }
 
   @Override
-  public Object getFieldValue(String fieldName) {
+  public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
+    Map<String, List<String>> fieldMap = new HashMap<>();
+    if (fieldNames.contains("id") && id != null) {
+      fieldMap.put("id", Collections.singletonList(String.valueOf(id)));
+    }
+    if (fieldNames.contains("items") && items != null) {
+      ImmutableList.Builder stringList = ImmutableList.builder();
+      for (InstanceGroupManager item : items) {
+        stringList.add(item.toString());
+      }
+      fieldMap.put("items", stringList.build());
+    }
+    if (fieldNames.contains("kind") && kind != null) {
+      fieldMap.put("kind", Collections.singletonList(String.valueOf(kind)));
+    }
+    if (fieldNames.contains("nextPageToken") && nextPageToken != null) {
+      fieldMap.put("nextPageToken", Collections.singletonList(String.valueOf(nextPageToken)));
+    }
+    if (fieldNames.contains("selfLink") && selfLink != null) {
+      fieldMap.put("selfLink", Collections.singletonList(String.valueOf(selfLink)));
+    }
+    if (fieldNames.contains("warning") && warning != null) {
+      fieldMap.put("warning", Collections.singletonList(String.valueOf(warning)));
+    }
+    return fieldMap;
+  }
+
+  @Override
+  public String getFieldStringValue(String fieldName) {
     if (fieldName.equals("id")) {
-      return id;
+      return String.valueOf(id);
     }
     if (fieldName.equals("items")) {
-      return items;
+      return String.valueOf(items);
     }
     if (fieldName.equals("kind")) {
-      return kind;
+      return String.valueOf(kind);
     }
     if (fieldName.equals("nextPageToken")) {
-      return nextPageToken;
+      return String.valueOf(nextPageToken);
     }
     if (fieldName.equals("selfLink")) {
-      return selfLink;
+      return String.valueOf(selfLink);
     }
     if (fieldName.equals("warning")) {
-      return warning;
+      return String.valueOf(warning);
     }
     return null;
   }
@@ -83,12 +116,6 @@ public final class RegionInstanceGroupManagerList implements ApiMessage {
   @Nullable
   @Override
   public ApiMessage getApiMessageRequestBody() {
-    return null;
-  }
-
-  @Nullable
-  @Override
-  public List<String> getFieldMask() {
     return null;
   }
 

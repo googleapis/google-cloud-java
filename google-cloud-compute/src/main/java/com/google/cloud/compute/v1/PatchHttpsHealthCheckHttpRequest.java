@@ -17,8 +17,12 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
+import java.util.Set;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
 
@@ -27,10 +31,9 @@ import javax.annotation.Nullable;
 public final class PatchHttpsHealthCheckHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;
-  private final List<String> fieldMask;
   private final String fields;
   private final String httpsHealthCheck;
-  private final HttpsHealthCheck httpsHealthCheckResource;
+  private final HttpsHealthCheck2 httpsHealthCheckResource;
   private final String key;
   private final String prettyPrint;
   private final String quotaUser;
@@ -40,7 +43,6 @@ public final class PatchHttpsHealthCheckHttpRequest implements ApiMessage {
   private PatchHttpsHealthCheckHttpRequest() {
     this.access_token = null;
     this.callback = null;
-    this.fieldMask = null;
     this.fields = null;
     this.httpsHealthCheck = null;
     this.httpsHealthCheckResource = null;
@@ -54,10 +56,9 @@ public final class PatchHttpsHealthCheckHttpRequest implements ApiMessage {
   private PatchHttpsHealthCheckHttpRequest(
       String access_token,
       String callback,
-      List<String> fieldMask,
       String fields,
       String httpsHealthCheck,
-      HttpsHealthCheck httpsHealthCheckResource,
+      HttpsHealthCheck2 httpsHealthCheckResource,
       String key,
       String prettyPrint,
       String quotaUser,
@@ -65,7 +66,6 @@ public final class PatchHttpsHealthCheckHttpRequest implements ApiMessage {
       String userIp) {
     this.access_token = access_token;
     this.callback = callback;
-    this.fieldMask = fieldMask;
     this.fields = fields;
     this.httpsHealthCheck = httpsHealthCheck;
     this.httpsHealthCheckResource = httpsHealthCheckResource;
@@ -77,53 +77,82 @@ public final class PatchHttpsHealthCheckHttpRequest implements ApiMessage {
   }
 
   @Override
-  public Object getFieldValue(String fieldName) {
+  public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
+    Map<String, List<String>> fieldMap = new HashMap<>();
+    if (fieldNames.contains("access_token") && access_token != null) {
+      fieldMap.put("access_token", Collections.singletonList(String.valueOf(access_token)));
+    }
+    if (fieldNames.contains("callback") && callback != null) {
+      fieldMap.put("callback", Collections.singletonList(String.valueOf(callback)));
+    }
+    if (fieldNames.contains("fields") && fields != null) {
+      fieldMap.put("fields", Collections.singletonList(String.valueOf(fields)));
+    }
+    if (fieldNames.contains("httpsHealthCheck") && httpsHealthCheck != null) {
+      fieldMap.put("httpsHealthCheck", Collections.singletonList(String.valueOf(httpsHealthCheck)));
+    }
+    if (fieldNames.contains("httpsHealthCheckResource") && httpsHealthCheckResource != null) {
+      fieldMap.put(
+          "httpsHealthCheckResource",
+          Collections.singletonList(String.valueOf(httpsHealthCheckResource)));
+    }
+    if (fieldNames.contains("key") && key != null) {
+      fieldMap.put("key", Collections.singletonList(String.valueOf(key)));
+    }
+    if (fieldNames.contains("prettyPrint") && prettyPrint != null) {
+      fieldMap.put("prettyPrint", Collections.singletonList(String.valueOf(prettyPrint)));
+    }
+    if (fieldNames.contains("quotaUser") && quotaUser != null) {
+      fieldMap.put("quotaUser", Collections.singletonList(String.valueOf(quotaUser)));
+    }
+    if (fieldNames.contains("requestId") && requestId != null) {
+      fieldMap.put("requestId", Collections.singletonList(String.valueOf(requestId)));
+    }
+    if (fieldNames.contains("userIp") && userIp != null) {
+      fieldMap.put("userIp", Collections.singletonList(String.valueOf(userIp)));
+    }
+    return fieldMap;
+  }
+
+  @Override
+  public String getFieldStringValue(String fieldName) {
     if (fieldName.equals("access_token")) {
-      return access_token;
+      return String.valueOf(access_token);
     }
     if (fieldName.equals("callback")) {
-      return callback;
-    }
-    if (fieldName.equals("fieldMask")) {
-      return fieldMask;
+      return String.valueOf(callback);
     }
     if (fieldName.equals("fields")) {
-      return fields;
+      return String.valueOf(fields);
     }
     if (fieldName.equals("httpsHealthCheck")) {
-      return httpsHealthCheck;
+      return String.valueOf(httpsHealthCheck);
     }
     if (fieldName.equals("httpsHealthCheckResource")) {
-      return httpsHealthCheckResource;
+      return String.valueOf(httpsHealthCheckResource);
     }
     if (fieldName.equals("key")) {
-      return key;
+      return String.valueOf(key);
     }
     if (fieldName.equals("prettyPrint")) {
-      return prettyPrint;
+      return String.valueOf(prettyPrint);
     }
     if (fieldName.equals("quotaUser")) {
-      return quotaUser;
+      return String.valueOf(quotaUser);
     }
     if (fieldName.equals("requestId")) {
-      return requestId;
+      return String.valueOf(requestId);
     }
     if (fieldName.equals("userIp")) {
-      return userIp;
+      return String.valueOf(userIp);
     }
     return null;
   }
 
   @Nullable
   @Override
-  public HttpsHealthCheck getApiMessageRequestBody() {
+  public HttpsHealthCheck2 getApiMessageRequestBody() {
     return httpsHealthCheckResource;
-  }
-
-  @Nullable
-  @Override
-  public List<String> getFieldMask() {
-    return fieldMask;
   }
 
   public String getAccessToken() {
@@ -142,7 +171,7 @@ public final class PatchHttpsHealthCheckHttpRequest implements ApiMessage {
     return httpsHealthCheck;
   }
 
-  public HttpsHealthCheck getHttpsHealthCheckResource() {
+  public HttpsHealthCheck2 getHttpsHealthCheckResource() {
     return httpsHealthCheckResource;
   }
 
@@ -191,10 +220,9 @@ public final class PatchHttpsHealthCheckHttpRequest implements ApiMessage {
   public static class Builder {
     private String access_token;
     private String callback;
-    private List<String> fieldMask;
     private String fields;
     private String httpsHealthCheck;
-    private HttpsHealthCheck httpsHealthCheckResource;
+    private HttpsHealthCheck2 httpsHealthCheckResource;
     private String key;
     private String prettyPrint;
     private String quotaUser;
@@ -210,9 +238,6 @@ public final class PatchHttpsHealthCheckHttpRequest implements ApiMessage {
       }
       if (other.getCallback() != null) {
         this.callback = other.callback;
-      }
-      if (other.getFieldMask() != null) {
-        this.fieldMask = other.fieldMask;
       }
       if (other.getFields() != null) {
         this.fields = other.fields;
@@ -244,7 +269,6 @@ public final class PatchHttpsHealthCheckHttpRequest implements ApiMessage {
     Builder(PatchHttpsHealthCheckHttpRequest source) {
       this.access_token = source.access_token;
       this.callback = source.callback;
-      this.fieldMask = source.fieldMask;
       this.fields = source.fields;
       this.httpsHealthCheck = source.httpsHealthCheck;
       this.httpsHealthCheckResource = source.httpsHealthCheckResource;
@@ -273,15 +297,6 @@ public final class PatchHttpsHealthCheckHttpRequest implements ApiMessage {
       return this;
     }
 
-    public List<String> getFieldMask() {
-      return fieldMask;
-    }
-
-    public Builder setFieldMask(List<String> fieldMask) {
-      this.fieldMask = fieldMask;
-      return this;
-    }
-
     public String getFields() {
       return fields;
     }
@@ -300,11 +315,11 @@ public final class PatchHttpsHealthCheckHttpRequest implements ApiMessage {
       return this;
     }
 
-    public HttpsHealthCheck getHttpsHealthCheckResource() {
+    public HttpsHealthCheck2 getHttpsHealthCheckResource() {
       return httpsHealthCheckResource;
     }
 
-    public Builder setHttpsHealthCheckResource(HttpsHealthCheck httpsHealthCheckResource) {
+    public Builder setHttpsHealthCheckResource(HttpsHealthCheck2 httpsHealthCheckResource) {
       this.httpsHealthCheckResource = httpsHealthCheckResource;
       return this;
     }
@@ -367,7 +382,6 @@ public final class PatchHttpsHealthCheckHttpRequest implements ApiMessage {
       return new PatchHttpsHealthCheckHttpRequest(
           access_token,
           callback,
-          fieldMask,
           fields,
           httpsHealthCheck,
           httpsHealthCheckResource,
@@ -382,7 +396,6 @@ public final class PatchHttpsHealthCheckHttpRequest implements ApiMessage {
       Builder newBuilder = new Builder();
       newBuilder.setAccessToken(this.access_token);
       newBuilder.setCallback(this.callback);
-      newBuilder.setFieldMask(this.fieldMask);
       newBuilder.setFields(this.fields);
       newBuilder.setHttpsHealthCheck(this.httpsHealthCheck);
       newBuilder.setHttpsHealthCheckResource(this.httpsHealthCheckResource);
@@ -403,9 +416,6 @@ public final class PatchHttpsHealthCheckHttpRequest implements ApiMessage {
         + ", "
         + "callback="
         + callback
-        + ", "
-        + "fieldMask="
-        + fieldMask
         + ", "
         + "fields="
         + fields
@@ -442,7 +452,6 @@ public final class PatchHttpsHealthCheckHttpRequest implements ApiMessage {
       PatchHttpsHealthCheckHttpRequest that = (PatchHttpsHealthCheckHttpRequest) o;
       return Objects.equals(this.access_token, that.getAccessToken())
           && Objects.equals(this.callback, that.getCallback())
-          && Objects.equals(this.fieldMask, that.getFieldMask())
           && Objects.equals(this.fields, that.getFields())
           && Objects.equals(this.httpsHealthCheck, that.getHttpsHealthCheck())
           && Objects.equals(this.httpsHealthCheckResource, that.getHttpsHealthCheckResource())
@@ -460,7 +469,6 @@ public final class PatchHttpsHealthCheckHttpRequest implements ApiMessage {
     return Objects.hash(
         access_token,
         callback,
-        fieldMask,
         fields,
         httpsHealthCheck,
         httpsHealthCheckResource,

@@ -17,9 +17,14 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
+import com.google.common.collect.ImmutableList;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
+import java.util.Set;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
 
@@ -102,57 +107,123 @@ public final class Route implements ApiMessage {
   }
 
   @Override
-  public Object getFieldValue(String fieldName) {
+  public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
+    Map<String, List<String>> fieldMap = new HashMap<>();
+    if (fieldNames.contains("creationTimestamp") && creationTimestamp != null) {
+      fieldMap.put(
+          "creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
+    }
+    if (fieldNames.contains("description") && description != null) {
+      fieldMap.put("description", Collections.singletonList(String.valueOf(description)));
+    }
+    if (fieldNames.contains("destRange") && destRange != null) {
+      fieldMap.put("destRange", Collections.singletonList(String.valueOf(destRange)));
+    }
+    if (fieldNames.contains("id") && id != null) {
+      fieldMap.put("id", Collections.singletonList(String.valueOf(id)));
+    }
+    if (fieldNames.contains("kind") && kind != null) {
+      fieldMap.put("kind", Collections.singletonList(String.valueOf(kind)));
+    }
+    if (fieldNames.contains("name") && name != null) {
+      fieldMap.put("name", Collections.singletonList(String.valueOf(name)));
+    }
+    if (fieldNames.contains("network") && network != null) {
+      fieldMap.put("network", Collections.singletonList(String.valueOf(network)));
+    }
+    if (fieldNames.contains("nextHopGateway") && nextHopGateway != null) {
+      fieldMap.put("nextHopGateway", Collections.singletonList(String.valueOf(nextHopGateway)));
+    }
+    if (fieldNames.contains("nextHopInstance") && nextHopInstance != null) {
+      fieldMap.put("nextHopInstance", Collections.singletonList(String.valueOf(nextHopInstance)));
+    }
+    if (fieldNames.contains("nextHopIp") && nextHopIp != null) {
+      fieldMap.put("nextHopIp", Collections.singletonList(String.valueOf(nextHopIp)));
+    }
+    if (fieldNames.contains("nextHopNetwork") && nextHopNetwork != null) {
+      fieldMap.put("nextHopNetwork", Collections.singletonList(String.valueOf(nextHopNetwork)));
+    }
+    if (fieldNames.contains("nextHopPeering") && nextHopPeering != null) {
+      fieldMap.put("nextHopPeering", Collections.singletonList(String.valueOf(nextHopPeering)));
+    }
+    if (fieldNames.contains("nextHopVpnTunnel") && nextHopVpnTunnel != null) {
+      fieldMap.put("nextHopVpnTunnel", Collections.singletonList(String.valueOf(nextHopVpnTunnel)));
+    }
+    if (fieldNames.contains("priority") && priority != null) {
+      fieldMap.put("priority", Collections.singletonList(String.valueOf(priority)));
+    }
+    if (fieldNames.contains("selfLink") && selfLink != null) {
+      fieldMap.put("selfLink", Collections.singletonList(String.valueOf(selfLink)));
+    }
+    if (fieldNames.contains("tags") && tags != null) {
+      ImmutableList.Builder stringList = ImmutableList.builder();
+      for (String item : tags) {
+        stringList.add(item.toString());
+      }
+      fieldMap.put("tags", stringList.build());
+    }
+    if (fieldNames.contains("warnings") && warnings != null) {
+      ImmutableList.Builder stringList = ImmutableList.builder();
+      for (Warnings item : warnings) {
+        stringList.add(item.toString());
+      }
+      fieldMap.put("warnings", stringList.build());
+    }
+    return fieldMap;
+  }
+
+  @Override
+  public String getFieldStringValue(String fieldName) {
     if (fieldName.equals("creationTimestamp")) {
-      return creationTimestamp;
+      return String.valueOf(creationTimestamp);
     }
     if (fieldName.equals("description")) {
-      return description;
+      return String.valueOf(description);
     }
     if (fieldName.equals("destRange")) {
-      return destRange;
+      return String.valueOf(destRange);
     }
     if (fieldName.equals("id")) {
-      return id;
+      return String.valueOf(id);
     }
     if (fieldName.equals("kind")) {
-      return kind;
+      return String.valueOf(kind);
     }
     if (fieldName.equals("name")) {
-      return name;
+      return String.valueOf(name);
     }
     if (fieldName.equals("network")) {
-      return network;
+      return String.valueOf(network);
     }
     if (fieldName.equals("nextHopGateway")) {
-      return nextHopGateway;
+      return String.valueOf(nextHopGateway);
     }
     if (fieldName.equals("nextHopInstance")) {
-      return nextHopInstance;
+      return String.valueOf(nextHopInstance);
     }
     if (fieldName.equals("nextHopIp")) {
-      return nextHopIp;
+      return String.valueOf(nextHopIp);
     }
     if (fieldName.equals("nextHopNetwork")) {
-      return nextHopNetwork;
+      return String.valueOf(nextHopNetwork);
     }
     if (fieldName.equals("nextHopPeering")) {
-      return nextHopPeering;
+      return String.valueOf(nextHopPeering);
     }
     if (fieldName.equals("nextHopVpnTunnel")) {
-      return nextHopVpnTunnel;
+      return String.valueOf(nextHopVpnTunnel);
     }
     if (fieldName.equals("priority")) {
-      return priority;
+      return String.valueOf(priority);
     }
     if (fieldName.equals("selfLink")) {
-      return selfLink;
+      return String.valueOf(selfLink);
     }
     if (fieldName.equals("tags")) {
-      return tags;
+      return String.valueOf(tags);
     }
     if (fieldName.equals("warnings")) {
-      return warnings;
+      return String.valueOf(warnings);
     }
     return null;
   }
@@ -160,12 +231,6 @@ public final class Route implements ApiMessage {
   @Nullable
   @Override
   public ApiMessage getApiMessageRequestBody() {
-    return null;
-  }
-
-  @Nullable
-  @Override
-  public List<String> getFieldMask() {
     return null;
   }
 

@@ -17,9 +17,14 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
+import com.google.common.collect.ImmutableList;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
+import java.util.Set;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
 
@@ -118,69 +123,150 @@ public final class BackendService implements ApiMessage {
   }
 
   @Override
-  public Object getFieldValue(String fieldName) {
+  public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
+    Map<String, List<String>> fieldMap = new HashMap<>();
+    if (fieldNames.contains("affinityCookieTtlSec") && affinityCookieTtlSec != null) {
+      fieldMap.put(
+          "affinityCookieTtlSec", Collections.singletonList(String.valueOf(affinityCookieTtlSec)));
+    }
+    if (fieldNames.contains("backends") && backends != null) {
+      ImmutableList.Builder stringList = ImmutableList.builder();
+      for (Backend item : backends) {
+        stringList.add(item.toString());
+      }
+      fieldMap.put("backends", stringList.build());
+    }
+    if (fieldNames.contains("cdnPolicy") && cdnPolicy != null) {
+      fieldMap.put("cdnPolicy", Collections.singletonList(String.valueOf(cdnPolicy)));
+    }
+    if (fieldNames.contains("connectionDraining") && connectionDraining != null) {
+      fieldMap.put(
+          "connectionDraining", Collections.singletonList(String.valueOf(connectionDraining)));
+    }
+    if (fieldNames.contains("creationTimestamp") && creationTimestamp != null) {
+      fieldMap.put(
+          "creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
+    }
+    if (fieldNames.contains("description") && description != null) {
+      fieldMap.put("description", Collections.singletonList(String.valueOf(description)));
+    }
+    if (fieldNames.contains("enableCDN") && enableCDN != null) {
+      fieldMap.put("enableCDN", Collections.singletonList(String.valueOf(enableCDN)));
+    }
+    if (fieldNames.contains("fingerprint") && fingerprint != null) {
+      fieldMap.put("fingerprint", Collections.singletonList(String.valueOf(fingerprint)));
+    }
+    if (fieldNames.contains("healthChecks") && healthChecks != null) {
+      ImmutableList.Builder stringList = ImmutableList.builder();
+      for (String item : healthChecks) {
+        stringList.add(item.toString());
+      }
+      fieldMap.put("healthChecks", stringList.build());
+    }
+    if (fieldNames.contains("iap") && iap != null) {
+      fieldMap.put("iap", Collections.singletonList(String.valueOf(iap)));
+    }
+    if (fieldNames.contains("id") && id != null) {
+      fieldMap.put("id", Collections.singletonList(String.valueOf(id)));
+    }
+    if (fieldNames.contains("kind") && kind != null) {
+      fieldMap.put("kind", Collections.singletonList(String.valueOf(kind)));
+    }
+    if (fieldNames.contains("loadBalancingScheme") && loadBalancingScheme != null) {
+      fieldMap.put(
+          "loadBalancingScheme", Collections.singletonList(String.valueOf(loadBalancingScheme)));
+    }
+    if (fieldNames.contains("name") && name != null) {
+      fieldMap.put("name", Collections.singletonList(String.valueOf(name)));
+    }
+    if (fieldNames.contains("port") && port != null) {
+      fieldMap.put("port", Collections.singletonList(String.valueOf(port)));
+    }
+    if (fieldNames.contains("portName") && portName != null) {
+      fieldMap.put("portName", Collections.singletonList(String.valueOf(portName)));
+    }
+    if (fieldNames.contains("protocol") && protocol != null) {
+      fieldMap.put("protocol", Collections.singletonList(String.valueOf(protocol)));
+    }
+    if (fieldNames.contains("region") && region != null) {
+      fieldMap.put("region", Collections.singletonList(String.valueOf(region)));
+    }
+    if (fieldNames.contains("selfLink") && selfLink != null) {
+      fieldMap.put("selfLink", Collections.singletonList(String.valueOf(selfLink)));
+    }
+    if (fieldNames.contains("sessionAffinity") && sessionAffinity != null) {
+      fieldMap.put("sessionAffinity", Collections.singletonList(String.valueOf(sessionAffinity)));
+    }
+    if (fieldNames.contains("timeoutSec") && timeoutSec != null) {
+      fieldMap.put("timeoutSec", Collections.singletonList(String.valueOf(timeoutSec)));
+    }
+    return fieldMap;
+  }
+
+  @Override
+  public String getFieldStringValue(String fieldName) {
     if (fieldName.equals("affinityCookieTtlSec")) {
-      return affinityCookieTtlSec;
+      return String.valueOf(affinityCookieTtlSec);
     }
     if (fieldName.equals("backends")) {
-      return backends;
+      return String.valueOf(backends);
     }
     if (fieldName.equals("cdnPolicy")) {
-      return cdnPolicy;
+      return String.valueOf(cdnPolicy);
     }
     if (fieldName.equals("connectionDraining")) {
-      return connectionDraining;
+      return String.valueOf(connectionDraining);
     }
     if (fieldName.equals("creationTimestamp")) {
-      return creationTimestamp;
+      return String.valueOf(creationTimestamp);
     }
     if (fieldName.equals("description")) {
-      return description;
+      return String.valueOf(description);
     }
     if (fieldName.equals("enableCDN")) {
-      return enableCDN;
+      return String.valueOf(enableCDN);
     }
     if (fieldName.equals("fingerprint")) {
-      return fingerprint;
+      return String.valueOf(fingerprint);
     }
     if (fieldName.equals("healthChecks")) {
-      return healthChecks;
+      return String.valueOf(healthChecks);
     }
     if (fieldName.equals("iap")) {
-      return iap;
+      return String.valueOf(iap);
     }
     if (fieldName.equals("id")) {
-      return id;
+      return String.valueOf(id);
     }
     if (fieldName.equals("kind")) {
-      return kind;
+      return String.valueOf(kind);
     }
     if (fieldName.equals("loadBalancingScheme")) {
-      return loadBalancingScheme;
+      return String.valueOf(loadBalancingScheme);
     }
     if (fieldName.equals("name")) {
-      return name;
+      return String.valueOf(name);
     }
     if (fieldName.equals("port")) {
-      return port;
+      return String.valueOf(port);
     }
     if (fieldName.equals("portName")) {
-      return portName;
+      return String.valueOf(portName);
     }
     if (fieldName.equals("protocol")) {
-      return protocol;
+      return String.valueOf(protocol);
     }
     if (fieldName.equals("region")) {
-      return region;
+      return String.valueOf(region);
     }
     if (fieldName.equals("selfLink")) {
-      return selfLink;
+      return String.valueOf(selfLink);
     }
     if (fieldName.equals("sessionAffinity")) {
-      return sessionAffinity;
+      return String.valueOf(sessionAffinity);
     }
     if (fieldName.equals("timeoutSec")) {
-      return timeoutSec;
+      return String.valueOf(timeoutSec);
     }
     return null;
   }
@@ -188,12 +274,6 @@ public final class BackendService implements ApiMessage {
   @Nullable
   @Override
   public ApiMessage getApiMessageRequestBody() {
-    return null;
-  }
-
-  @Nullable
-  @Override
-  public List<String> getFieldMask() {
     return null;
   }
 

@@ -17,9 +17,14 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
+import com.google.common.collect.ImmutableList;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
+import java.util.Set;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
 
@@ -98,54 +103,117 @@ public final class InstanceGroupManager implements ApiMessage {
   }
 
   @Override
-  public Object getFieldValue(String fieldName) {
+  public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
+    Map<String, List<String>> fieldMap = new HashMap<>();
+    if (fieldNames.contains("baseInstanceName") && baseInstanceName != null) {
+      fieldMap.put("baseInstanceName", Collections.singletonList(String.valueOf(baseInstanceName)));
+    }
+    if (fieldNames.contains("creationTimestamp") && creationTimestamp != null) {
+      fieldMap.put(
+          "creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
+    }
+    if (fieldNames.contains("currentActions") && currentActions != null) {
+      fieldMap.put("currentActions", Collections.singletonList(String.valueOf(currentActions)));
+    }
+    if (fieldNames.contains("description") && description != null) {
+      fieldMap.put("description", Collections.singletonList(String.valueOf(description)));
+    }
+    if (fieldNames.contains("fingerprint") && fingerprint != null) {
+      fieldMap.put("fingerprint", Collections.singletonList(String.valueOf(fingerprint)));
+    }
+    if (fieldNames.contains("id") && id != null) {
+      fieldMap.put("id", Collections.singletonList(String.valueOf(id)));
+    }
+    if (fieldNames.contains("instanceGroup") && instanceGroup != null) {
+      fieldMap.put("instanceGroup", Collections.singletonList(String.valueOf(instanceGroup)));
+    }
+    if (fieldNames.contains("instanceTemplate") && instanceTemplate != null) {
+      fieldMap.put("instanceTemplate", Collections.singletonList(String.valueOf(instanceTemplate)));
+    }
+    if (fieldNames.contains("kind") && kind != null) {
+      fieldMap.put("kind", Collections.singletonList(String.valueOf(kind)));
+    }
+    if (fieldNames.contains("name") && name != null) {
+      fieldMap.put("name", Collections.singletonList(String.valueOf(name)));
+    }
+    if (fieldNames.contains("namedPorts") && namedPorts != null) {
+      ImmutableList.Builder stringList = ImmutableList.builder();
+      for (NamedPort item : namedPorts) {
+        stringList.add(item.toString());
+      }
+      fieldMap.put("namedPorts", stringList.build());
+    }
+    if (fieldNames.contains("region") && region != null) {
+      fieldMap.put("region", Collections.singletonList(String.valueOf(region)));
+    }
+    if (fieldNames.contains("selfLink") && selfLink != null) {
+      fieldMap.put("selfLink", Collections.singletonList(String.valueOf(selfLink)));
+    }
+    if (fieldNames.contains("targetPools") && targetPools != null) {
+      ImmutableList.Builder stringList = ImmutableList.builder();
+      for (String item : targetPools) {
+        stringList.add(item.toString());
+      }
+      fieldMap.put("targetPools", stringList.build());
+    }
+    if (fieldNames.contains("targetSize") && targetSize != null) {
+      fieldMap.put("targetSize", Collections.singletonList(String.valueOf(targetSize)));
+    }
+    if (fieldNames.contains("zone") && zone != null) {
+      fieldMap.put("zone", Collections.singletonList(String.valueOf(zone)));
+    }
+    return fieldMap;
+  }
+
+  @Override
+  public String getFieldStringValue(String fieldName) {
     if (fieldName.equals("baseInstanceName")) {
-      return baseInstanceName;
+      return String.valueOf(baseInstanceName);
     }
     if (fieldName.equals("creationTimestamp")) {
-      return creationTimestamp;
+      return String.valueOf(creationTimestamp);
     }
     if (fieldName.equals("currentActions")) {
-      return currentActions;
+      return String.valueOf(currentActions);
     }
     if (fieldName.equals("description")) {
-      return description;
+      return String.valueOf(description);
     }
     if (fieldName.equals("fingerprint")) {
-      return fingerprint;
+      return String.valueOf(fingerprint);
     }
     if (fieldName.equals("id")) {
-      return id;
+      return String.valueOf(id);
     }
     if (fieldName.equals("instanceGroup")) {
-      return instanceGroup;
+      return String.valueOf(instanceGroup);
     }
     if (fieldName.equals("instanceTemplate")) {
-      return instanceTemplate;
+      return String.valueOf(instanceTemplate);
     }
     if (fieldName.equals("kind")) {
-      return kind;
+      return String.valueOf(kind);
     }
     if (fieldName.equals("name")) {
-      return name;
+      return String.valueOf(name);
     }
     if (fieldName.equals("namedPorts")) {
-      return namedPorts;
+      return String.valueOf(namedPorts);
     }
     if (fieldName.equals("region")) {
-      return region;
+      return String.valueOf(region);
     }
     if (fieldName.equals("selfLink")) {
-      return selfLink;
+      return String.valueOf(selfLink);
     }
     if (fieldName.equals("targetPools")) {
-      return targetPools;
+      return String.valueOf(targetPools);
     }
     if (fieldName.equals("targetSize")) {
-      return targetSize;
+      return String.valueOf(targetSize);
     }
     if (fieldName.equals("zone")) {
-      return zone;
+      return String.valueOf(zone);
     }
     return null;
   }
@@ -153,12 +221,6 @@ public final class InstanceGroupManager implements ApiMessage {
   @Nullable
   @Override
   public ApiMessage getApiMessageRequestBody() {
-    return null;
-  }
-
-  @Nullable
-  @Override
-  public List<String> getFieldMask() {
     return null;
   }
 

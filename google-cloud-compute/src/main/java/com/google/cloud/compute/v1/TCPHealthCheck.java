@@ -17,8 +17,12 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
+import java.util.Set;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
 
@@ -49,21 +53,42 @@ public final class TCPHealthCheck implements ApiMessage {
   }
 
   @Override
-  public Object getFieldValue(String fieldName) {
+  public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
+    Map<String, List<String>> fieldMap = new HashMap<>();
+    if (fieldNames.contains("port") && port != null) {
+      fieldMap.put("port", Collections.singletonList(String.valueOf(port)));
+    }
+    if (fieldNames.contains("portName") && portName != null) {
+      fieldMap.put("portName", Collections.singletonList(String.valueOf(portName)));
+    }
+    if (fieldNames.contains("proxyHeader") && proxyHeader != null) {
+      fieldMap.put("proxyHeader", Collections.singletonList(String.valueOf(proxyHeader)));
+    }
+    if (fieldNames.contains("request") && request != null) {
+      fieldMap.put("request", Collections.singletonList(String.valueOf(request)));
+    }
+    if (fieldNames.contains("response") && response != null) {
+      fieldMap.put("response", Collections.singletonList(String.valueOf(response)));
+    }
+    return fieldMap;
+  }
+
+  @Override
+  public String getFieldStringValue(String fieldName) {
     if (fieldName.equals("port")) {
-      return port;
+      return String.valueOf(port);
     }
     if (fieldName.equals("portName")) {
-      return portName;
+      return String.valueOf(portName);
     }
     if (fieldName.equals("proxyHeader")) {
-      return proxyHeader;
+      return String.valueOf(proxyHeader);
     }
     if (fieldName.equals("request")) {
-      return request;
+      return String.valueOf(request);
     }
     if (fieldName.equals("response")) {
-      return response;
+      return String.valueOf(response);
     }
     return null;
   }
@@ -71,12 +96,6 @@ public final class TCPHealthCheck implements ApiMessage {
   @Nullable
   @Override
   public ApiMessage getApiMessageRequestBody() {
-    return null;
-  }
-
-  @Nullable
-  @Override
-  public List<String> getFieldMask() {
     return null;
   }
 

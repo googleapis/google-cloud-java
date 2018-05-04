@@ -17,8 +17,12 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
+import java.util.Set;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
 
@@ -39,12 +43,24 @@ public final class CustomerEncryptionKey implements ApiMessage {
   }
 
   @Override
-  public Object getFieldValue(String fieldName) {
+  public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
+    Map<String, List<String>> fieldMap = new HashMap<>();
+    if (fieldNames.contains("rawKey") && rawKey != null) {
+      fieldMap.put("rawKey", Collections.singletonList(String.valueOf(rawKey)));
+    }
+    if (fieldNames.contains("sha256") && sha256 != null) {
+      fieldMap.put("sha256", Collections.singletonList(String.valueOf(sha256)));
+    }
+    return fieldMap;
+  }
+
+  @Override
+  public String getFieldStringValue(String fieldName) {
     if (fieldName.equals("rawKey")) {
-      return rawKey;
+      return String.valueOf(rawKey);
     }
     if (fieldName.equals("sha256")) {
-      return sha256;
+      return String.valueOf(sha256);
     }
     return null;
   }
@@ -52,12 +68,6 @@ public final class CustomerEncryptionKey implements ApiMessage {
   @Nullable
   @Override
   public ApiMessage getApiMessageRequestBody() {
-    return null;
-  }
-
-  @Nullable
-  @Override
-  public List<String> getFieldMask() {
     return null;
   }
 

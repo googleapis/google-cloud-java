@@ -66,6 +66,8 @@ public class HttpJsonAcceleratorTypeStub extends AcceleratorTypeStub {
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter
                       .<AggregatedListAcceleratorTypesHttpRequest>newBuilder()
+                      .setRequestInstance(
+                          AggregatedListAcceleratorTypesHttpRequest.getDefaultInstance())
                       .setPathTemplate(PathTemplate.create("{project}/aggregated/acceleratorTypes"))
                       .setQueryParams(
                           Sets.<String>newHashSet("filter", "maxResults", "orderBy", "pageToken"))
@@ -86,6 +88,7 @@ public class HttpJsonAcceleratorTypeStub extends AcceleratorTypeStub {
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<GetAcceleratorTypeHttpRequest>newBuilder()
+                      .setRequestInstance(GetAcceleratorTypeHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/zones/{zone}/acceleratorTypes/{acceleratorType}"))
@@ -107,6 +110,7 @@ public class HttpJsonAcceleratorTypeStub extends AcceleratorTypeStub {
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<ListAcceleratorTypesHttpRequest>newBuilder()
+                      .setRequestInstance(ListAcceleratorTypesHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create("{project}/zones/{zone}/acceleratorTypes"))
                       .setQueryParams(

@@ -17,9 +17,14 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
+import com.google.common.collect.ImmutableList;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
+import java.util.Set;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
 
@@ -90,48 +95,104 @@ public final class InterconnectLocation implements ApiMessage {
   }
 
   @Override
-  public Object getFieldValue(String fieldName) {
+  public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
+    Map<String, List<String>> fieldMap = new HashMap<>();
+    if (fieldNames.contains("address") && address != null) {
+      fieldMap.put("address", Collections.singletonList(String.valueOf(address)));
+    }
+    if (fieldNames.contains("availabilityZone") && availabilityZone != null) {
+      fieldMap.put("availabilityZone", Collections.singletonList(String.valueOf(availabilityZone)));
+    }
+    if (fieldNames.contains("city") && city != null) {
+      fieldMap.put("city", Collections.singletonList(String.valueOf(city)));
+    }
+    if (fieldNames.contains("continent") && continent != null) {
+      fieldMap.put("continent", Collections.singletonList(String.valueOf(continent)));
+    }
+    if (fieldNames.contains("creationTimestamp") && creationTimestamp != null) {
+      fieldMap.put(
+          "creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
+    }
+    if (fieldNames.contains("description") && description != null) {
+      fieldMap.put("description", Collections.singletonList(String.valueOf(description)));
+    }
+    if (fieldNames.contains("facilityProvider") && facilityProvider != null) {
+      fieldMap.put("facilityProvider", Collections.singletonList(String.valueOf(facilityProvider)));
+    }
+    if (fieldNames.contains("facilityProviderFacilityId") && facilityProviderFacilityId != null) {
+      fieldMap.put(
+          "facilityProviderFacilityId",
+          Collections.singletonList(String.valueOf(facilityProviderFacilityId)));
+    }
+    if (fieldNames.contains("id") && id != null) {
+      fieldMap.put("id", Collections.singletonList(String.valueOf(id)));
+    }
+    if (fieldNames.contains("kind") && kind != null) {
+      fieldMap.put("kind", Collections.singletonList(String.valueOf(kind)));
+    }
+    if (fieldNames.contains("name") && name != null) {
+      fieldMap.put("name", Collections.singletonList(String.valueOf(name)));
+    }
+    if (fieldNames.contains("peeringdbFacilityId") && peeringdbFacilityId != null) {
+      fieldMap.put(
+          "peeringdbFacilityId", Collections.singletonList(String.valueOf(peeringdbFacilityId)));
+    }
+    if (fieldNames.contains("regionInfos") && regionInfos != null) {
+      ImmutableList.Builder stringList = ImmutableList.builder();
+      for (InterconnectLocationRegionInfo item : regionInfos) {
+        stringList.add(item.toString());
+      }
+      fieldMap.put("regionInfos", stringList.build());
+    }
+    if (fieldNames.contains("selfLink") && selfLink != null) {
+      fieldMap.put("selfLink", Collections.singletonList(String.valueOf(selfLink)));
+    }
+    return fieldMap;
+  }
+
+  @Override
+  public String getFieldStringValue(String fieldName) {
     if (fieldName.equals("address")) {
-      return address;
+      return String.valueOf(address);
     }
     if (fieldName.equals("availabilityZone")) {
-      return availabilityZone;
+      return String.valueOf(availabilityZone);
     }
     if (fieldName.equals("city")) {
-      return city;
+      return String.valueOf(city);
     }
     if (fieldName.equals("continent")) {
-      return continent;
+      return String.valueOf(continent);
     }
     if (fieldName.equals("creationTimestamp")) {
-      return creationTimestamp;
+      return String.valueOf(creationTimestamp);
     }
     if (fieldName.equals("description")) {
-      return description;
+      return String.valueOf(description);
     }
     if (fieldName.equals("facilityProvider")) {
-      return facilityProvider;
+      return String.valueOf(facilityProvider);
     }
     if (fieldName.equals("facilityProviderFacilityId")) {
-      return facilityProviderFacilityId;
+      return String.valueOf(facilityProviderFacilityId);
     }
     if (fieldName.equals("id")) {
-      return id;
+      return String.valueOf(id);
     }
     if (fieldName.equals("kind")) {
-      return kind;
+      return String.valueOf(kind);
     }
     if (fieldName.equals("name")) {
-      return name;
+      return String.valueOf(name);
     }
     if (fieldName.equals("peeringdbFacilityId")) {
-      return peeringdbFacilityId;
+      return String.valueOf(peeringdbFacilityId);
     }
     if (fieldName.equals("regionInfos")) {
-      return regionInfos;
+      return String.valueOf(regionInfos);
     }
     if (fieldName.equals("selfLink")) {
-      return selfLink;
+      return String.valueOf(selfLink);
     }
     return null;
   }
@@ -139,12 +200,6 @@ public final class InterconnectLocation implements ApiMessage {
   @Nullable
   @Override
   public ApiMessage getApiMessageRequestBody() {
-    return null;
-  }
-
-  @Nullable
-  @Override
-  public List<String> getFieldMask() {
     return null;
   }
 

@@ -17,9 +17,14 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
+import com.google.common.collect.ImmutableList;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
+import java.util.Set;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
 
@@ -102,57 +107,147 @@ public final class Firewall implements ApiMessage {
   }
 
   @Override
-  public Object getFieldValue(String fieldName) {
+  public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
+    Map<String, List<String>> fieldMap = new HashMap<>();
+    if (fieldNames.contains("allowed") && allowed != null) {
+      ImmutableList.Builder stringList = ImmutableList.builder();
+      for (Allowed item : allowed) {
+        stringList.add(item.toString());
+      }
+      fieldMap.put("allowed", stringList.build());
+    }
+    if (fieldNames.contains("creationTimestamp") && creationTimestamp != null) {
+      fieldMap.put(
+          "creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
+    }
+    if (fieldNames.contains("denied") && denied != null) {
+      ImmutableList.Builder stringList = ImmutableList.builder();
+      for (Denied item : denied) {
+        stringList.add(item.toString());
+      }
+      fieldMap.put("denied", stringList.build());
+    }
+    if (fieldNames.contains("description") && description != null) {
+      fieldMap.put("description", Collections.singletonList(String.valueOf(description)));
+    }
+    if (fieldNames.contains("destinationRanges") && destinationRanges != null) {
+      ImmutableList.Builder stringList = ImmutableList.builder();
+      for (String item : destinationRanges) {
+        stringList.add(item.toString());
+      }
+      fieldMap.put("destinationRanges", stringList.build());
+    }
+    if (fieldNames.contains("direction") && direction != null) {
+      fieldMap.put("direction", Collections.singletonList(String.valueOf(direction)));
+    }
+    if (fieldNames.contains("id") && id != null) {
+      fieldMap.put("id", Collections.singletonList(String.valueOf(id)));
+    }
+    if (fieldNames.contains("kind") && kind != null) {
+      fieldMap.put("kind", Collections.singletonList(String.valueOf(kind)));
+    }
+    if (fieldNames.contains("name") && name != null) {
+      fieldMap.put("name", Collections.singletonList(String.valueOf(name)));
+    }
+    if (fieldNames.contains("network") && network != null) {
+      fieldMap.put("network", Collections.singletonList(String.valueOf(network)));
+    }
+    if (fieldNames.contains("priority") && priority != null) {
+      fieldMap.put("priority", Collections.singletonList(String.valueOf(priority)));
+    }
+    if (fieldNames.contains("selfLink") && selfLink != null) {
+      fieldMap.put("selfLink", Collections.singletonList(String.valueOf(selfLink)));
+    }
+    if (fieldNames.contains("sourceRanges") && sourceRanges != null) {
+      ImmutableList.Builder stringList = ImmutableList.builder();
+      for (String item : sourceRanges) {
+        stringList.add(item.toString());
+      }
+      fieldMap.put("sourceRanges", stringList.build());
+    }
+    if (fieldNames.contains("sourceServiceAccounts") && sourceServiceAccounts != null) {
+      ImmutableList.Builder stringList = ImmutableList.builder();
+      for (String item : sourceServiceAccounts) {
+        stringList.add(item.toString());
+      }
+      fieldMap.put("sourceServiceAccounts", stringList.build());
+    }
+    if (fieldNames.contains("sourceTags") && sourceTags != null) {
+      ImmutableList.Builder stringList = ImmutableList.builder();
+      for (String item : sourceTags) {
+        stringList.add(item.toString());
+      }
+      fieldMap.put("sourceTags", stringList.build());
+    }
+    if (fieldNames.contains("targetServiceAccounts") && targetServiceAccounts != null) {
+      ImmutableList.Builder stringList = ImmutableList.builder();
+      for (String item : targetServiceAccounts) {
+        stringList.add(item.toString());
+      }
+      fieldMap.put("targetServiceAccounts", stringList.build());
+    }
+    if (fieldNames.contains("targetTags") && targetTags != null) {
+      ImmutableList.Builder stringList = ImmutableList.builder();
+      for (String item : targetTags) {
+        stringList.add(item.toString());
+      }
+      fieldMap.put("targetTags", stringList.build());
+    }
+    return fieldMap;
+  }
+
+  @Override
+  public String getFieldStringValue(String fieldName) {
     if (fieldName.equals("allowed")) {
-      return allowed;
+      return String.valueOf(allowed);
     }
     if (fieldName.equals("creationTimestamp")) {
-      return creationTimestamp;
+      return String.valueOf(creationTimestamp);
     }
     if (fieldName.equals("denied")) {
-      return denied;
+      return String.valueOf(denied);
     }
     if (fieldName.equals("description")) {
-      return description;
+      return String.valueOf(description);
     }
     if (fieldName.equals("destinationRanges")) {
-      return destinationRanges;
+      return String.valueOf(destinationRanges);
     }
     if (fieldName.equals("direction")) {
-      return direction;
+      return String.valueOf(direction);
     }
     if (fieldName.equals("id")) {
-      return id;
+      return String.valueOf(id);
     }
     if (fieldName.equals("kind")) {
-      return kind;
+      return String.valueOf(kind);
     }
     if (fieldName.equals("name")) {
-      return name;
+      return String.valueOf(name);
     }
     if (fieldName.equals("network")) {
-      return network;
+      return String.valueOf(network);
     }
     if (fieldName.equals("priority")) {
-      return priority;
+      return String.valueOf(priority);
     }
     if (fieldName.equals("selfLink")) {
-      return selfLink;
+      return String.valueOf(selfLink);
     }
     if (fieldName.equals("sourceRanges")) {
-      return sourceRanges;
+      return String.valueOf(sourceRanges);
     }
     if (fieldName.equals("sourceServiceAccounts")) {
-      return sourceServiceAccounts;
+      return String.valueOf(sourceServiceAccounts);
     }
     if (fieldName.equals("sourceTags")) {
-      return sourceTags;
+      return String.valueOf(sourceTags);
     }
     if (fieldName.equals("targetServiceAccounts")) {
-      return targetServiceAccounts;
+      return String.valueOf(targetServiceAccounts);
     }
     if (fieldName.equals("targetTags")) {
-      return targetTags;
+      return String.valueOf(targetTags);
     }
     return null;
   }
@@ -160,12 +255,6 @@ public final class Firewall implements ApiMessage {
   @Nullable
   @Override
   public ApiMessage getApiMessageRequestBody() {
-    return null;
-  }
-
-  @Nullable
-  @Override
-  public List<String> getFieldMask() {
     return null;
   }
 

@@ -17,8 +17,12 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
+import java.util.Set;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
 
@@ -42,15 +46,30 @@ public final class RawDisk implements ApiMessage {
   }
 
   @Override
-  public Object getFieldValue(String fieldName) {
+  public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
+    Map<String, List<String>> fieldMap = new HashMap<>();
+    if (fieldNames.contains("containerType") && containerType != null) {
+      fieldMap.put("containerType", Collections.singletonList(String.valueOf(containerType)));
+    }
+    if (fieldNames.contains("sha1Checksum") && sha1Checksum != null) {
+      fieldMap.put("sha1Checksum", Collections.singletonList(String.valueOf(sha1Checksum)));
+    }
+    if (fieldNames.contains("source") && source != null) {
+      fieldMap.put("source", Collections.singletonList(String.valueOf(source)));
+    }
+    return fieldMap;
+  }
+
+  @Override
+  public String getFieldStringValue(String fieldName) {
     if (fieldName.equals("containerType")) {
-      return containerType;
+      return String.valueOf(containerType);
     }
     if (fieldName.equals("sha1Checksum")) {
-      return sha1Checksum;
+      return String.valueOf(sha1Checksum);
     }
     if (fieldName.equals("source")) {
-      return source;
+      return String.valueOf(source);
     }
     return null;
   }
@@ -58,12 +77,6 @@ public final class RawDisk implements ApiMessage {
   @Nullable
   @Override
   public ApiMessage getApiMessageRequestBody() {
-    return null;
-  }
-
-  @Nullable
-  @Override
-  public List<String> getFieldMask() {
     return null;
   }
 

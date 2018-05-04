@@ -61,6 +61,7 @@ public class HttpJsonRouteStub extends RouteStub {
               .setHttpMethod(HttpMethods.DELETE)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<DeleteRouteHttpRequest>newBuilder()
+                      .setRequestInstance(DeleteRouteHttpRequest.getDefaultInstance())
                       .setPathTemplate(PathTemplate.create("{project}/global/routes/{route}"))
                       .setQueryParams(Sets.<String>newHashSet("requestId"))
                       .setResourceNameFactory(ProjectGlobalRouteName.newFactory())
@@ -79,6 +80,7 @@ public class HttpJsonRouteStub extends RouteStub {
           .setHttpMethod(HttpMethods.GET)
           .setRequestFormatter(
               ApiMessageHttpRequestFormatter.<GetRouteHttpRequest>newBuilder()
+                  .setRequestInstance(GetRouteHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/global/routes/{route}"))
                   .setQueryParams(Sets.<String>newHashSet())
                   .setResourceNameFactory(ProjectGlobalRouteName.newFactory())
@@ -98,6 +100,7 @@ public class HttpJsonRouteStub extends RouteStub {
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<InsertRouteHttpRequest>newBuilder()
+                      .setRequestInstance(InsertRouteHttpRequest.getDefaultInstance())
                       .setPathTemplate(PathTemplate.create("{project}/global/routes"))
                       .setQueryParams(Sets.<String>newHashSet("requestId"))
                       .setResourceNameFactory(ProjectName.newFactory())
@@ -117,6 +120,7 @@ public class HttpJsonRouteStub extends RouteStub {
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<ListRoutesHttpRequest>newBuilder()
+                      .setRequestInstance(ListRoutesHttpRequest.getDefaultInstance())
                       .setPathTemplate(PathTemplate.create("{project}/global/routes"))
                       .setQueryParams(
                           Sets.<String>newHashSet("filter", "maxResults", "orderBy", "pageToken"))

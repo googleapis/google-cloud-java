@@ -17,8 +17,12 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
+import java.util.Set;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
 
@@ -27,7 +31,6 @@ import javax.annotation.Nullable;
 public final class PatchRouterHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;
-  private final List<String> fieldMask;
   private final String fields;
   private final String key;
   private final String prettyPrint;
@@ -40,7 +43,6 @@ public final class PatchRouterHttpRequest implements ApiMessage {
   private PatchRouterHttpRequest() {
     this.access_token = null;
     this.callback = null;
-    this.fieldMask = null;
     this.fields = null;
     this.key = null;
     this.prettyPrint = null;
@@ -54,7 +56,6 @@ public final class PatchRouterHttpRequest implements ApiMessage {
   private PatchRouterHttpRequest(
       String access_token,
       String callback,
-      List<String> fieldMask,
       String fields,
       String key,
       String prettyPrint,
@@ -65,7 +66,6 @@ public final class PatchRouterHttpRequest implements ApiMessage {
       String userIp) {
     this.access_token = access_token;
     this.callback = callback;
-    this.fieldMask = fieldMask;
     this.fields = fields;
     this.key = key;
     this.prettyPrint = prettyPrint;
@@ -77,39 +77,72 @@ public final class PatchRouterHttpRequest implements ApiMessage {
   }
 
   @Override
-  public Object getFieldValue(String fieldName) {
+  public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
+    Map<String, List<String>> fieldMap = new HashMap<>();
+    if (fieldNames.contains("access_token") && access_token != null) {
+      fieldMap.put("access_token", Collections.singletonList(String.valueOf(access_token)));
+    }
+    if (fieldNames.contains("callback") && callback != null) {
+      fieldMap.put("callback", Collections.singletonList(String.valueOf(callback)));
+    }
+    if (fieldNames.contains("fields") && fields != null) {
+      fieldMap.put("fields", Collections.singletonList(String.valueOf(fields)));
+    }
+    if (fieldNames.contains("key") && key != null) {
+      fieldMap.put("key", Collections.singletonList(String.valueOf(key)));
+    }
+    if (fieldNames.contains("prettyPrint") && prettyPrint != null) {
+      fieldMap.put("prettyPrint", Collections.singletonList(String.valueOf(prettyPrint)));
+    }
+    if (fieldNames.contains("quotaUser") && quotaUser != null) {
+      fieldMap.put("quotaUser", Collections.singletonList(String.valueOf(quotaUser)));
+    }
+    if (fieldNames.contains("requestId") && requestId != null) {
+      fieldMap.put("requestId", Collections.singletonList(String.valueOf(requestId)));
+    }
+    if (fieldNames.contains("router") && router != null) {
+      fieldMap.put("router", Collections.singletonList(String.valueOf(router)));
+    }
+    if (fieldNames.contains("routerResource") && routerResource != null) {
+      fieldMap.put("routerResource", Collections.singletonList(String.valueOf(routerResource)));
+    }
+    if (fieldNames.contains("userIp") && userIp != null) {
+      fieldMap.put("userIp", Collections.singletonList(String.valueOf(userIp)));
+    }
+    return fieldMap;
+  }
+
+  @Override
+  public String getFieldStringValue(String fieldName) {
     if (fieldName.equals("access_token")) {
-      return access_token;
+      return String.valueOf(access_token);
     }
     if (fieldName.equals("callback")) {
-      return callback;
-    }
-    if (fieldName.equals("fieldMask")) {
-      return fieldMask;
+      return String.valueOf(callback);
     }
     if (fieldName.equals("fields")) {
-      return fields;
+      return String.valueOf(fields);
     }
     if (fieldName.equals("key")) {
-      return key;
+      return String.valueOf(key);
     }
     if (fieldName.equals("prettyPrint")) {
-      return prettyPrint;
+      return String.valueOf(prettyPrint);
     }
     if (fieldName.equals("quotaUser")) {
-      return quotaUser;
+      return String.valueOf(quotaUser);
     }
     if (fieldName.equals("requestId")) {
-      return requestId;
+      return String.valueOf(requestId);
     }
     if (fieldName.equals("router")) {
-      return router;
+      return String.valueOf(router);
     }
     if (fieldName.equals("routerResource")) {
-      return routerResource;
+      return String.valueOf(routerResource);
     }
     if (fieldName.equals("userIp")) {
-      return userIp;
+      return String.valueOf(userIp);
     }
     return null;
   }
@@ -118,12 +151,6 @@ public final class PatchRouterHttpRequest implements ApiMessage {
   @Override
   public Router getApiMessageRequestBody() {
     return routerResource;
-  }
-
-  @Nullable
-  @Override
-  public List<String> getFieldMask() {
-    return fieldMask;
   }
 
   public String getAccessToken() {
@@ -191,7 +218,6 @@ public final class PatchRouterHttpRequest implements ApiMessage {
   public static class Builder {
     private String access_token;
     private String callback;
-    private List<String> fieldMask;
     private String fields;
     private String key;
     private String prettyPrint;
@@ -210,9 +236,6 @@ public final class PatchRouterHttpRequest implements ApiMessage {
       }
       if (other.getCallback() != null) {
         this.callback = other.callback;
-      }
-      if (other.getFieldMask() != null) {
-        this.fieldMask = other.fieldMask;
       }
       if (other.getFields() != null) {
         this.fields = other.fields;
@@ -244,7 +267,6 @@ public final class PatchRouterHttpRequest implements ApiMessage {
     Builder(PatchRouterHttpRequest source) {
       this.access_token = source.access_token;
       this.callback = source.callback;
-      this.fieldMask = source.fieldMask;
       this.fields = source.fields;
       this.key = source.key;
       this.prettyPrint = source.prettyPrint;
@@ -270,15 +292,6 @@ public final class PatchRouterHttpRequest implements ApiMessage {
 
     public Builder setCallback(String callback) {
       this.callback = callback;
-      return this;
-    }
-
-    public List<String> getFieldMask() {
-      return fieldMask;
-    }
-
-    public Builder setFieldMask(List<String> fieldMask) {
-      this.fieldMask = fieldMask;
       return this;
     }
 
@@ -367,7 +380,6 @@ public final class PatchRouterHttpRequest implements ApiMessage {
       return new PatchRouterHttpRequest(
           access_token,
           callback,
-          fieldMask,
           fields,
           key,
           prettyPrint,
@@ -382,7 +394,6 @@ public final class PatchRouterHttpRequest implements ApiMessage {
       Builder newBuilder = new Builder();
       newBuilder.setAccessToken(this.access_token);
       newBuilder.setCallback(this.callback);
-      newBuilder.setFieldMask(this.fieldMask);
       newBuilder.setFields(this.fields);
       newBuilder.setKey(this.key);
       newBuilder.setPrettyPrint(this.prettyPrint);
@@ -403,9 +414,6 @@ public final class PatchRouterHttpRequest implements ApiMessage {
         + ", "
         + "callback="
         + callback
-        + ", "
-        + "fieldMask="
-        + fieldMask
         + ", "
         + "fields="
         + fields
@@ -442,7 +450,6 @@ public final class PatchRouterHttpRequest implements ApiMessage {
       PatchRouterHttpRequest that = (PatchRouterHttpRequest) o;
       return Objects.equals(this.access_token, that.getAccessToken())
           && Objects.equals(this.callback, that.getCallback())
-          && Objects.equals(this.fieldMask, that.getFieldMask())
           && Objects.equals(this.fields, that.getFields())
           && Objects.equals(this.key, that.getKey())
           && Objects.equals(this.prettyPrint, that.getPrettyPrint())
@@ -460,7 +467,6 @@ public final class PatchRouterHttpRequest implements ApiMessage {
     return Objects.hash(
         access_token,
         callback,
-        fieldMask,
         fields,
         key,
         prettyPrint,

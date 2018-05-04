@@ -65,6 +65,8 @@ public class HttpJsonRegionBackendServiceStub extends RegionBackendServiceStub {
               .setHttpMethod(HttpMethods.DELETE)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<DeleteRegionBackendServiceHttpRequest>newBuilder()
+                      .setRequestInstance(
+                          DeleteRegionBackendServiceHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/regions/{region}/backendServices/{backendService}"))
@@ -86,6 +88,7 @@ public class HttpJsonRegionBackendServiceStub extends RegionBackendServiceStub {
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<GetRegionBackendServiceHttpRequest>newBuilder()
+                      .setRequestInstance(GetRegionBackendServiceHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/regions/{region}/backendServices/{backendService}"))
@@ -110,6 +113,8 @@ public class HttpJsonRegionBackendServiceStub extends RegionBackendServiceStub {
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter
                       .<GetHealthRegionBackendServiceHttpRequest>newBuilder()
+                      .setRequestInstance(
+                          GetHealthRegionBackendServiceHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/regions/{region}/backendServices/{backendService}/getHealth"))
@@ -131,6 +136,8 @@ public class HttpJsonRegionBackendServiceStub extends RegionBackendServiceStub {
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<InsertRegionBackendServiceHttpRequest>newBuilder()
+                      .setRequestInstance(
+                          InsertRegionBackendServiceHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create("{project}/regions/{region}/backendServices"))
                       .setQueryParams(Sets.<String>newHashSet("requestId"))
@@ -151,6 +158,7 @@ public class HttpJsonRegionBackendServiceStub extends RegionBackendServiceStub {
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<ListRegionBackendServicesHttpRequest>newBuilder()
+                      .setRequestInstance(ListRegionBackendServicesHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create("{project}/regions/{region}/backendServices"))
                       .setQueryParams(
@@ -172,6 +180,7 @@ public class HttpJsonRegionBackendServiceStub extends RegionBackendServiceStub {
               .setHttpMethod(HttpMethods.PATCH)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<PatchRegionBackendServiceHttpRequest>newBuilder()
+                      .setRequestInstance(PatchRegionBackendServiceHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/regions/{region}/backendServices/{backendService}"))
@@ -193,6 +202,8 @@ public class HttpJsonRegionBackendServiceStub extends RegionBackendServiceStub {
               .setHttpMethod(HttpMethods.PUT)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<UpdateRegionBackendServiceHttpRequest>newBuilder()
+                      .setRequestInstance(
+                          UpdateRegionBackendServiceHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/regions/{region}/backendServices/{backendService}"))

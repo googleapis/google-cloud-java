@@ -17,9 +17,14 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
+import com.google.common.collect.ImmutableList;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
+import java.util.Set;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
 
@@ -86,45 +91,95 @@ public final class Commitment implements ApiMessage {
   }
 
   @Override
-  public Object getFieldValue(String fieldName) {
+  public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
+    Map<String, List<String>> fieldMap = new HashMap<>();
+    if (fieldNames.contains("creationTimestamp") && creationTimestamp != null) {
+      fieldMap.put(
+          "creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
+    }
+    if (fieldNames.contains("description") && description != null) {
+      fieldMap.put("description", Collections.singletonList(String.valueOf(description)));
+    }
+    if (fieldNames.contains("endTimestamp") && endTimestamp != null) {
+      fieldMap.put("endTimestamp", Collections.singletonList(String.valueOf(endTimestamp)));
+    }
+    if (fieldNames.contains("id") && id != null) {
+      fieldMap.put("id", Collections.singletonList(String.valueOf(id)));
+    }
+    if (fieldNames.contains("kind") && kind != null) {
+      fieldMap.put("kind", Collections.singletonList(String.valueOf(kind)));
+    }
+    if (fieldNames.contains("name") && name != null) {
+      fieldMap.put("name", Collections.singletonList(String.valueOf(name)));
+    }
+    if (fieldNames.contains("plan") && plan != null) {
+      fieldMap.put("plan", Collections.singletonList(String.valueOf(plan)));
+    }
+    if (fieldNames.contains("region") && region != null) {
+      fieldMap.put("region", Collections.singletonList(String.valueOf(region)));
+    }
+    if (fieldNames.contains("resources") && resources != null) {
+      ImmutableList.Builder stringList = ImmutableList.builder();
+      for (ResourceCommitment item : resources) {
+        stringList.add(item.toString());
+      }
+      fieldMap.put("resources", stringList.build());
+    }
+    if (fieldNames.contains("selfLink") && selfLink != null) {
+      fieldMap.put("selfLink", Collections.singletonList(String.valueOf(selfLink)));
+    }
+    if (fieldNames.contains("startTimestamp") && startTimestamp != null) {
+      fieldMap.put("startTimestamp", Collections.singletonList(String.valueOf(startTimestamp)));
+    }
+    if (fieldNames.contains("status") && status != null) {
+      fieldMap.put("status", Collections.singletonList(String.valueOf(status)));
+    }
+    if (fieldNames.contains("statusMessage") && statusMessage != null) {
+      fieldMap.put("statusMessage", Collections.singletonList(String.valueOf(statusMessage)));
+    }
+    return fieldMap;
+  }
+
+  @Override
+  public String getFieldStringValue(String fieldName) {
     if (fieldName.equals("creationTimestamp")) {
-      return creationTimestamp;
+      return String.valueOf(creationTimestamp);
     }
     if (fieldName.equals("description")) {
-      return description;
+      return String.valueOf(description);
     }
     if (fieldName.equals("endTimestamp")) {
-      return endTimestamp;
+      return String.valueOf(endTimestamp);
     }
     if (fieldName.equals("id")) {
-      return id;
+      return String.valueOf(id);
     }
     if (fieldName.equals("kind")) {
-      return kind;
+      return String.valueOf(kind);
     }
     if (fieldName.equals("name")) {
-      return name;
+      return String.valueOf(name);
     }
     if (fieldName.equals("plan")) {
-      return plan;
+      return String.valueOf(plan);
     }
     if (fieldName.equals("region")) {
-      return region;
+      return String.valueOf(region);
     }
     if (fieldName.equals("resources")) {
-      return resources;
+      return String.valueOf(resources);
     }
     if (fieldName.equals("selfLink")) {
-      return selfLink;
+      return String.valueOf(selfLink);
     }
     if (fieldName.equals("startTimestamp")) {
-      return startTimestamp;
+      return String.valueOf(startTimestamp);
     }
     if (fieldName.equals("status")) {
-      return status;
+      return String.valueOf(status);
     }
     if (fieldName.equals("statusMessage")) {
-      return statusMessage;
+      return String.valueOf(statusMessage);
     }
     return null;
   }
@@ -132,12 +187,6 @@ public final class Commitment implements ApiMessage {
   @Nullable
   @Override
   public ApiMessage getApiMessageRequestBody() {
-    return null;
-  }
-
-  @Nullable
-  @Override
-  public List<String> getFieldMask() {
     return null;
   }
 

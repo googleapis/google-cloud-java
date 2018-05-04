@@ -17,8 +17,12 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
+import java.util.Set;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
 
@@ -53,21 +57,42 @@ public final class ManagedInstance implements ApiMessage {
   }
 
   @Override
-  public Object getFieldValue(String fieldName) {
+  public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
+    Map<String, List<String>> fieldMap = new HashMap<>();
+    if (fieldNames.contains("currentAction") && currentAction != null) {
+      fieldMap.put("currentAction", Collections.singletonList(String.valueOf(currentAction)));
+    }
+    if (fieldNames.contains("id") && id != null) {
+      fieldMap.put("id", Collections.singletonList(String.valueOf(id)));
+    }
+    if (fieldNames.contains("instance") && instance != null) {
+      fieldMap.put("instance", Collections.singletonList(String.valueOf(instance)));
+    }
+    if (fieldNames.contains("instanceStatus") && instanceStatus != null) {
+      fieldMap.put("instanceStatus", Collections.singletonList(String.valueOf(instanceStatus)));
+    }
+    if (fieldNames.contains("lastAttempt") && lastAttempt != null) {
+      fieldMap.put("lastAttempt", Collections.singletonList(String.valueOf(lastAttempt)));
+    }
+    return fieldMap;
+  }
+
+  @Override
+  public String getFieldStringValue(String fieldName) {
     if (fieldName.equals("currentAction")) {
-      return currentAction;
+      return String.valueOf(currentAction);
     }
     if (fieldName.equals("id")) {
-      return id;
+      return String.valueOf(id);
     }
     if (fieldName.equals("instance")) {
-      return instance;
+      return String.valueOf(instance);
     }
     if (fieldName.equals("instanceStatus")) {
-      return instanceStatus;
+      return String.valueOf(instanceStatus);
     }
     if (fieldName.equals("lastAttempt")) {
-      return lastAttempt;
+      return String.valueOf(lastAttempt);
     }
     return null;
   }
@@ -75,12 +100,6 @@ public final class ManagedInstance implements ApiMessage {
   @Nullable
   @Override
   public ApiMessage getApiMessageRequestBody() {
-    return null;
-  }
-
-  @Nullable
-  @Override
-  public List<String> getFieldMask() {
     return null;
   }
 

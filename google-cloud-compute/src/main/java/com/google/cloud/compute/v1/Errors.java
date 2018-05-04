@@ -17,8 +17,12 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
+import java.util.Set;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
 
@@ -42,15 +46,30 @@ public final class Errors implements ApiMessage {
   }
 
   @Override
-  public Object getFieldValue(String fieldName) {
+  public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
+    Map<String, List<String>> fieldMap = new HashMap<>();
+    if (fieldNames.contains("code") && code != null) {
+      fieldMap.put("code", Collections.singletonList(String.valueOf(code)));
+    }
+    if (fieldNames.contains("location") && location != null) {
+      fieldMap.put("location", Collections.singletonList(String.valueOf(location)));
+    }
+    if (fieldNames.contains("message") && message != null) {
+      fieldMap.put("message", Collections.singletonList(String.valueOf(message)));
+    }
+    return fieldMap;
+  }
+
+  @Override
+  public String getFieldStringValue(String fieldName) {
     if (fieldName.equals("code")) {
-      return code;
+      return String.valueOf(code);
     }
     if (fieldName.equals("location")) {
-      return location;
+      return String.valueOf(location);
     }
     if (fieldName.equals("message")) {
-      return message;
+      return String.valueOf(message);
     }
     return null;
   }
@@ -58,12 +77,6 @@ public final class Errors implements ApiMessage {
   @Nullable
   @Override
   public ApiMessage getApiMessageRequestBody() {
-    return null;
-  }
-
-  @Nullable
-  @Override
-  public List<String> getFieldMask() {
     return null;
   }
 

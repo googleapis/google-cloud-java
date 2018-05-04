@@ -17,9 +17,14 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
+import com.google.common.collect.ImmutableList;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
+import java.util.Set;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
 
@@ -74,36 +79,77 @@ public final class TargetSslProxy implements ApiMessage {
   }
 
   @Override
-  public Object getFieldValue(String fieldName) {
+  public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
+    Map<String, List<String>> fieldMap = new HashMap<>();
+    if (fieldNames.contains("creationTimestamp") && creationTimestamp != null) {
+      fieldMap.put(
+          "creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
+    }
+    if (fieldNames.contains("description") && description != null) {
+      fieldMap.put("description", Collections.singletonList(String.valueOf(description)));
+    }
+    if (fieldNames.contains("id") && id != null) {
+      fieldMap.put("id", Collections.singletonList(String.valueOf(id)));
+    }
+    if (fieldNames.contains("kind") && kind != null) {
+      fieldMap.put("kind", Collections.singletonList(String.valueOf(kind)));
+    }
+    if (fieldNames.contains("name") && name != null) {
+      fieldMap.put("name", Collections.singletonList(String.valueOf(name)));
+    }
+    if (fieldNames.contains("proxyHeader") && proxyHeader != null) {
+      fieldMap.put("proxyHeader", Collections.singletonList(String.valueOf(proxyHeader)));
+    }
+    if (fieldNames.contains("selfLink") && selfLink != null) {
+      fieldMap.put("selfLink", Collections.singletonList(String.valueOf(selfLink)));
+    }
+    if (fieldNames.contains("service") && service != null) {
+      fieldMap.put("service", Collections.singletonList(String.valueOf(service)));
+    }
+    if (fieldNames.contains("sslCertificates") && sslCertificates != null) {
+      ImmutableList.Builder stringList = ImmutableList.builder();
+      for (String item : sslCertificates) {
+        stringList.add(item.toString());
+      }
+      fieldMap.put("sslCertificates", stringList.build());
+    }
+    if (fieldNames.contains("sslPolicy") && sslPolicy != null) {
+      fieldMap.put("sslPolicy", Collections.singletonList(String.valueOf(sslPolicy)));
+    }
+    return fieldMap;
+  }
+
+  @Override
+  public String getFieldStringValue(String fieldName) {
     if (fieldName.equals("creationTimestamp")) {
-      return creationTimestamp;
+      return String.valueOf(creationTimestamp);
     }
     if (fieldName.equals("description")) {
-      return description;
+      return String.valueOf(description);
     }
     if (fieldName.equals("id")) {
-      return id;
+      return String.valueOf(id);
     }
     if (fieldName.equals("kind")) {
-      return kind;
+      return String.valueOf(kind);
     }
     if (fieldName.equals("name")) {
-      return name;
+      return String.valueOf(name);
     }
     if (fieldName.equals("proxyHeader")) {
-      return proxyHeader;
+      return String.valueOf(proxyHeader);
     }
     if (fieldName.equals("selfLink")) {
-      return selfLink;
+      return String.valueOf(selfLink);
     }
     if (fieldName.equals("service")) {
-      return service;
+      return String.valueOf(service);
     }
     if (fieldName.equals("sslCertificates")) {
-      return sslCertificates;
+      return String.valueOf(sslCertificates);
     }
     if (fieldName.equals("sslPolicy")) {
-      return sslPolicy;
+      return String.valueOf(sslPolicy);
     }
     return null;
   }
@@ -111,12 +157,6 @@ public final class TargetSslProxy implements ApiMessage {
   @Nullable
   @Override
   public ApiMessage getApiMessageRequestBody() {
-    return null;
-  }
-
-  @Nullable
-  @Override
-  public List<String> getFieldMask() {
     return null;
   }
 

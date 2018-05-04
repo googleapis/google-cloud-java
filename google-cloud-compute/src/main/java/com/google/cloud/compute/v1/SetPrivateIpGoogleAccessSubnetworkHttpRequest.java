@@ -17,8 +17,12 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
+import java.util.Set;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
 
@@ -75,36 +79,76 @@ public final class SetPrivateIpGoogleAccessSubnetworkHttpRequest implements ApiM
   }
 
   @Override
-  public Object getFieldValue(String fieldName) {
+  public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
+    Map<String, List<String>> fieldMap = new HashMap<>();
+    if (fieldNames.contains("access_token") && access_token != null) {
+      fieldMap.put("access_token", Collections.singletonList(String.valueOf(access_token)));
+    }
+    if (fieldNames.contains("callback") && callback != null) {
+      fieldMap.put("callback", Collections.singletonList(String.valueOf(callback)));
+    }
+    if (fieldNames.contains("fields") && fields != null) {
+      fieldMap.put("fields", Collections.singletonList(String.valueOf(fields)));
+    }
+    if (fieldNames.contains("key") && key != null) {
+      fieldMap.put("key", Collections.singletonList(String.valueOf(key)));
+    }
+    if (fieldNames.contains("prettyPrint") && prettyPrint != null) {
+      fieldMap.put("prettyPrint", Collections.singletonList(String.valueOf(prettyPrint)));
+    }
+    if (fieldNames.contains("quotaUser") && quotaUser != null) {
+      fieldMap.put("quotaUser", Collections.singletonList(String.valueOf(quotaUser)));
+    }
+    if (fieldNames.contains("requestId") && requestId != null) {
+      fieldMap.put("requestId", Collections.singletonList(String.valueOf(requestId)));
+    }
+    if (fieldNames.contains("subnetwork") && subnetwork != null) {
+      fieldMap.put("subnetwork", Collections.singletonList(String.valueOf(subnetwork)));
+    }
+    if (fieldNames.contains("subnetworksSetPrivateIpGoogleAccessRequestResource")
+        && subnetworksSetPrivateIpGoogleAccessRequestResource != null) {
+      fieldMap.put(
+          "subnetworksSetPrivateIpGoogleAccessRequestResource",
+          Collections.singletonList(
+              String.valueOf(subnetworksSetPrivateIpGoogleAccessRequestResource)));
+    }
+    if (fieldNames.contains("userIp") && userIp != null) {
+      fieldMap.put("userIp", Collections.singletonList(String.valueOf(userIp)));
+    }
+    return fieldMap;
+  }
+
+  @Override
+  public String getFieldStringValue(String fieldName) {
     if (fieldName.equals("access_token")) {
-      return access_token;
+      return String.valueOf(access_token);
     }
     if (fieldName.equals("callback")) {
-      return callback;
+      return String.valueOf(callback);
     }
     if (fieldName.equals("fields")) {
-      return fields;
+      return String.valueOf(fields);
     }
     if (fieldName.equals("key")) {
-      return key;
+      return String.valueOf(key);
     }
     if (fieldName.equals("prettyPrint")) {
-      return prettyPrint;
+      return String.valueOf(prettyPrint);
     }
     if (fieldName.equals("quotaUser")) {
-      return quotaUser;
+      return String.valueOf(quotaUser);
     }
     if (fieldName.equals("requestId")) {
-      return requestId;
+      return String.valueOf(requestId);
     }
     if (fieldName.equals("subnetwork")) {
-      return subnetwork;
+      return String.valueOf(subnetwork);
     }
     if (fieldName.equals("subnetworksSetPrivateIpGoogleAccessRequestResource")) {
-      return subnetworksSetPrivateIpGoogleAccessRequestResource;
+      return String.valueOf(subnetworksSetPrivateIpGoogleAccessRequestResource);
     }
     if (fieldName.equals("userIp")) {
-      return userIp;
+      return String.valueOf(userIp);
     }
     return null;
   }
@@ -113,12 +157,6 @@ public final class SetPrivateIpGoogleAccessSubnetworkHttpRequest implements ApiM
   @Override
   public SubnetworksSetPrivateIpGoogleAccessRequest getApiMessageRequestBody() {
     return subnetworksSetPrivateIpGoogleAccessRequestResource;
-  }
-
-  @Nullable
-  @Override
-  public List<String> getFieldMask() {
-    return null;
   }
 
   public String getAccessToken() {

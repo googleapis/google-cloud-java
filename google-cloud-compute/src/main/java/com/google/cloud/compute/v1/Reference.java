@@ -17,8 +17,12 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
+import java.util.Set;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
 
@@ -45,18 +49,36 @@ public final class Reference implements ApiMessage {
   }
 
   @Override
-  public Object getFieldValue(String fieldName) {
+  public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
+    Map<String, List<String>> fieldMap = new HashMap<>();
+    if (fieldNames.contains("kind") && kind != null) {
+      fieldMap.put("kind", Collections.singletonList(String.valueOf(kind)));
+    }
+    if (fieldNames.contains("referenceType") && referenceType != null) {
+      fieldMap.put("referenceType", Collections.singletonList(String.valueOf(referenceType)));
+    }
+    if (fieldNames.contains("referrer") && referrer != null) {
+      fieldMap.put("referrer", Collections.singletonList(String.valueOf(referrer)));
+    }
+    if (fieldNames.contains("target") && target != null) {
+      fieldMap.put("target", Collections.singletonList(String.valueOf(target)));
+    }
+    return fieldMap;
+  }
+
+  @Override
+  public String getFieldStringValue(String fieldName) {
     if (fieldName.equals("kind")) {
-      return kind;
+      return String.valueOf(kind);
     }
     if (fieldName.equals("referenceType")) {
-      return referenceType;
+      return String.valueOf(referenceType);
     }
     if (fieldName.equals("referrer")) {
-      return referrer;
+      return String.valueOf(referrer);
     }
     if (fieldName.equals("target")) {
-      return target;
+      return String.valueOf(target);
     }
     return null;
   }
@@ -64,12 +86,6 @@ public final class Reference implements ApiMessage {
   @Nullable
   @Override
   public ApiMessage getApiMessageRequestBody() {
-    return null;
-  }
-
-  @Nullable
-  @Override
-  public List<String> getFieldMask() {
     return null;
   }
 
