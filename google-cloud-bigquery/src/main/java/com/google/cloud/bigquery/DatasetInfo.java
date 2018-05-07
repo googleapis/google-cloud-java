@@ -318,6 +318,20 @@ public class DatasetInfo implements Serializable {
   /**
    * Returns the dataset's access control configuration.
    *
+   * <p>Update the ACLs for a dataset.
+   * <pre> {@code
+   * Dataset dataset = bigquery.getDataset(DatasetId.of("my_dataset"));
+   * List<Acl> beforeAcls = dataset.getAcl();
+   * 
+   * // Make a copy of the ACLs so that they can be modified.
+   * ArrayList<Acl> acls = new ArrayList<>(beforeAcls);
+   * acls.add(Acl.of(new Acl.User("sample.bigquery.dev@gmail.com"), Acl.Role.READER));
+   * Dataset.Builder builder = dataset.toBuilder();
+   * builder.setAcl(acls);
+   * 
+   * bigquery.update(builder.build());  // API request.
+   * }</pre>
+   *
    * @see <a href="https://cloud.google.com/bigquery/access-control">Access Control</a>
    */
   public List<Acl> getAcl() {
@@ -341,6 +355,18 @@ public class DatasetInfo implements Serializable {
    * will be deleted automatically. If a table's expirationTime is modified or removed before the
    * table expires, or if you provide an explicit expirationTime when creating a table, that value
    * takes precedence over the default expiration time indicated by this property.
+   *
+   * <p>Update the default table expiration time for a dataset.
+   * <pre> {@code
+   * Dataset dataset = bigquery.getDataset(DatasetId.of("my_dataset"));
+   * Long beforeExpiration = dataset.getDefaultTableLifetime();
+   * 
+   * Long oneDayMilliseconds = 24 * 60 * 60 * 1000L;
+   * Dataset.Builder builder = dataset.toBuilder();
+   * builder.setDefaultTableLifetime(oneDayMilliseconds);
+   * bigquery.update(builder.build());  // API request.
+   * }</pre>
+   *
    */
   public Long getDefaultTableLifetime() {
     return defaultTableLifetime;
