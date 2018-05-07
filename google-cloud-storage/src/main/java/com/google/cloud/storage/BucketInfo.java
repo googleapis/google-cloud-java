@@ -31,6 +31,7 @@ import com.google.api.services.storage.model.Bucket.Lifecycle.Rule;
 import com.google.api.services.storage.model.Bucket.Owner;
 import com.google.api.services.storage.model.Bucket.Versioning;
 import com.google.api.services.storage.model.Bucket.Website;
+import com.google.cloud.GcpLaunchStage;
 import com.google.cloud.storage.Acl.Entity;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
@@ -428,6 +429,7 @@ public class BucketInfo implements Serializable {
     /**
      * Sets the default Cloud KMS key name for this bucket.
      */
+    @GcpLaunchStage.Beta
     public abstract Builder setDefaultKmsKeyName(String defaultKmsKeyName);
 
     /**
@@ -593,6 +595,7 @@ public class BucketInfo implements Serializable {
       return this;
     }
 
+    @GcpLaunchStage.Beta
     @Override
     public Builder setDefaultKmsKeyName(String defaultKmsKeyName) {
       this.defaultKmsKeyName = defaultKmsKeyName != null
@@ -782,6 +785,7 @@ public class BucketInfo implements Serializable {
   /**
    * Returns the default Cloud KMS key to be applied to newly inserted objects in this bucket.
    */
+  @GcpLaunchStage.Beta
   public String getDefaultKmsKeyName() {
     return defaultKmsKeyName;
   }

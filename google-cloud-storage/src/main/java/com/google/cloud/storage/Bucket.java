@@ -612,6 +612,7 @@ public class Bucket extends BucketInfo {
       return this;
     }
 
+    @GcpLaunchStage.Beta
     @Override
     public Builder setDefaultKmsKeyName(String defaultKmsKeyName) {
       infoBuilder.setDefaultKmsKeyName(defaultKmsKeyName);

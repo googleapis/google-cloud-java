@@ -24,6 +24,7 @@ import com.google.api.client.util.DateTime;
 import com.google.api.services.storage.model.ObjectAccessControl;
 import com.google.api.services.storage.model.StorageObject;
 import com.google.api.services.storage.model.StorageObject.Owner;
+import com.google.cloud.GcpLaunchStage;
 import com.google.cloud.storage.Blob.Builder;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
@@ -271,6 +272,7 @@ public class BlobInfo implements Serializable {
      *
      * Sets the blob's kmsKeyName.
      */
+    @GcpLaunchStage.Beta
     public abstract Builder setKmsKeyName(String kmsKeyName);
 
     /**
@@ -484,6 +486,7 @@ public class BlobInfo implements Serializable {
       return this;
     }
 
+    @GcpLaunchStage.Beta
     @Override
     public Builder setKmsKeyName(String kmsKeyName) {
       this.kmsKeyName = kmsKeyName;
@@ -756,6 +759,7 @@ public class BlobInfo implements Serializable {
   /**
    * Returns the Cloud KMS key used to encrypt the blob, if any.
    */
+  @GcpLaunchStage.Beta
   public String getKmsKeyName() {
     return kmsKeyName;
   }

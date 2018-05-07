@@ -29,7 +29,6 @@
     <dependency>
       <groupId>com.google.apis</groupId>
       <artifactId>google-api-services-storage</artifactId>
-      <version>v1-rev125-1.23.0</version>
       <scope>compile</scope>
       <exclusions>
         <exclusion>
