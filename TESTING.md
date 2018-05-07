@@ -200,6 +200,10 @@ try {
 }
 ```
 
+### Testing code that uses Redis
+
+Currently, there isn't an emulator for Redis. An alternative is to create a test project.
+
 ### Testing code that uses Resource Manager
 
 #### On your machine
