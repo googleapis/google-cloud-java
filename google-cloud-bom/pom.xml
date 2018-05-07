@@ -151,6 +151,7 @@
     <notification.version>0.46.1-beta-SNAPSHOT</notification.version><!-- {x-version-update:google-cloud-notification:current} -->
     <os-login.version>0.46.1-alpha-SNAPSHOT</os-login.version><!-- {x-version-update:google-cloud-os-login:current} -->
     <pubsub.version>0.46.1-beta-SNAPSHOT</pubsub.version><!-- {x-version-update:google-cloud-pubsub:current} -->
+    <redis.version>0.46.1-alpha-SNAPSHOT</redis.version><!-- {x-version-update:google-cloud-redis:current} -->
     <resourcemanager.version>0.46.1-alpha-SNAPSHOT</resourcemanager.version><!-- {x-version-update:google-cloud-resourcemanager:current} -->
     <spanner.version>0.46.1-beta-SNAPSHOT</spanner.version><!-- {x-version-update:google-cloud-spanner:current} -->
     <speech.version>0.46.1-alpha-SNAPSHOT</speech.version><!-- {x-version-update:google-cloud-speech:current} -->
@@ -173,8 +174,8 @@
     <gax.version>1.25.0</gax.version>
     <gax-grpc.version>1.25.0</gax-grpc.version>
     <gax-httpjson.version>0.42.0</gax-httpjson.version>
-    <generated-proto-beta.version>0.11.0</generated-proto-beta.version>
-    <generated-proto-ga.version>1.10.0</generated-proto-ga.version>
+    <generated-proto-beta.version>0.12.0</generated-proto-beta.version>
+    <generated-proto-ga.version>1.11.0</generated-proto-ga.version>
   </properties>
   <dependencyManagement>
     <dependencies>
@@ -622,6 +623,27 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-pubsub-v1</artifactId>
+        <version>${generated-proto-beta.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-redis</artifactId>
+        <version>${redis.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-redis</artifactId>
+        <version>${redis.version}</version>
+        <type>test-jar</type>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-redis-v1beta1</artifactId>
+        <version>${generated-proto-beta.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-redis-v1beta1</artifactId>
         <version>${generated-proto-beta.version}</version>
       </dependency>
       <dependency>
