@@ -561,8 +561,6 @@ public class StorageImplTest {
     assertEquals(-1, byteStream.read(streamBytes));
   }
 
-  // TODO: Add tests for KMS Key name
-
   @Test
   public void testCreateBlobFromStream() throws IOException {
     Capture<ByteArrayInputStream> capturedStream = Capture.newInstance();

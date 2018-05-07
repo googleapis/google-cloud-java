@@ -81,6 +81,8 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+
+import jdk.nashorn.internal.runtime.regexp.joni.exception.ValueException;
 import org.apache.http.HttpStatus;
 
 public class HttpStorageRpc implements StorageRpc {
@@ -426,7 +428,6 @@ public class HttpStorageRpc implements StorageRpc {
   public Bucket patch(Bucket bucket, Map<Option, ?> options) {
     Span span = startSpan(HttpStorageRpcSpans.SPAN_NAME_PATCH_BUCKET);
     Scope scope = tracer.withSpan(span);
-
     try {
       return storage.buckets()
           .patch(bucket.getName(), bucket)
@@ -790,11 +791,7 @@ public class HttpStorageRpc implements StorageRpc {
       if (userProject == null) {
         userProject = Option.USER_PROJECT.getString(req.targetOptions);
       }
-
-      String kmsKeyName = Option.KMS_KEY_NAME.getString(req.targetOptions);
-      if (kmsKeyName == null) {
-        kmsKeyName = req.target.getKmsKeyName();
-      }
+      String kmsKeyName = req.target.getKmsKeyName();
 
       Long maxBytesRewrittenPerCall = req.megabytesRewrittenPerCall != null
           ? req.megabytesRewrittenPerCall * MEGABYTE : null;
@@ -816,7 +813,6 @@ public class HttpStorageRpc implements StorageRpc {
           .setIfGenerationNotMatch(Option.IF_GENERATION_NOT_MATCH.getLong(req.targetOptions))
           .setUserProject(userProject)
           .setDestinationKmsKeyName(kmsKeyName);
-
       HttpHeaders requestHeaders = rewrite.getRequestHeaders();
       setEncryptionHeaders(requestHeaders, SOURCE_ENCRYPTION_KEY_PREFIX, req.sourceOptions);
       setEncryptionHeaders(requestHeaders, ENCRYPTION_KEY_PREFIX, req.targetOptions);

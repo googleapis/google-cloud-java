@@ -91,7 +91,6 @@ public class BlobTest {
   private static final String KEY_SHA256 = "keySha";
   private static final BlobInfo.CustomerEncryption CUSTOMER_ENCRYPTION =
       new BlobInfo.CustomerEncryption(ENCRYPTION_ALGORITHM, KEY_SHA256);
-  // TODO: Figure out CMEK + CSEK world
   private static final BlobInfo FULL_BLOB_INFO = BlobInfo.newBuilder("b", "n", GENERATION)
       .setAcl(ACLS)
       .setComponentCount(COMPONENT_COUNT)

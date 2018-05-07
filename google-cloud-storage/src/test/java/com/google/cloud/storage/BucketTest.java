@@ -41,7 +41,6 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Lists;
 import com.google.common.io.BaseEncoding;
 
-import com.sun.net.ssl.KeyManagerFactorySpi;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
@@ -135,12 +134,12 @@ public class BucketTest {
     replay(serviceMockReturnsOptions);
     expectedBucket = new Bucket(serviceMockReturnsOptions, new BucketInfo.BuilderImpl(BUCKET_INFO));
     blobResults = ImmutableList.of(
-            new Blob(serviceMockReturnsOptions,
-                    new BlobInfo.BuilderImpl(BlobInfo.newBuilder("b", "n1").build())),
-            new Blob(serviceMockReturnsOptions,
-                    new BlobInfo.BuilderImpl(BlobInfo.newBuilder("b", "n2").build())),
-            new Blob(serviceMockReturnsOptions,
-                    new BlobInfo.BuilderImpl(BlobInfo.newBuilder("b", "n3").build())));
+        new Blob(serviceMockReturnsOptions,
+            new BlobInfo.BuilderImpl(BlobInfo.newBuilder("b", "n1").build())),
+        new Blob(serviceMockReturnsOptions,
+            new BlobInfo.BuilderImpl(BlobInfo.newBuilder("b", "n2").build())),
+        new Blob(serviceMockReturnsOptions,
+            new BlobInfo.BuilderImpl(BlobInfo.newBuilder("b", "n3").build())));
   }
 
   private void initializeBucket() {
