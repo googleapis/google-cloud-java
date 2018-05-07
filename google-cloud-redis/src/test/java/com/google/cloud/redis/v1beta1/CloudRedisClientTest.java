@@ -95,9 +95,9 @@ public class CloudRedisClientTest {
             .build();
     mockCloudRedis.addResponse(expectedResponse);
 
-    String formattedParent = CloudRedisClient.formatLocationName("[PROJECT]", "[LOCATION]");
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
 
-    ListInstancesPagedResponse pagedListResponse = client.listInstances(formattedParent);
+    ListInstancesPagedResponse pagedListResponse = client.listInstances(parent);
 
     List<Instance> resources = Lists.newArrayList(pagedListResponse.iterateAll());
     Assert.assertEquals(1, resources.size());
@@ -107,7 +107,7 @@ public class CloudRedisClientTest {
     Assert.assertEquals(1, actualRequests.size());
     ListInstancesRequest actualRequest = (ListInstancesRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedParent, actualRequest.getParent());
+    Assert.assertEquals(parent, LocationName.parse(actualRequest.getParent()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -121,9 +121,9 @@ public class CloudRedisClientTest {
     mockCloudRedis.addException(exception);
 
     try {
-      String formattedParent = CloudRedisClient.formatLocationName("[PROJECT]", "[LOCATION]");
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
 
-      client.listInstances(formattedParent);
+      client.listInstances(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -162,17 +162,16 @@ public class CloudRedisClientTest {
             .build();
     mockCloudRedis.addResponse(expectedResponse);
 
-    String formattedName =
-        CloudRedisClient.formatInstanceName("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+    InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
 
-    Instance actualResponse = client.getInstance(formattedName);
+    Instance actualResponse = client.getInstance(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<GeneratedMessageV3> actualRequests = mockCloudRedis.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetInstanceRequest actualRequest = (GetInstanceRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedName, actualRequest.getName());
+    Assert.assertEquals(name, InstanceName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -186,10 +185,9 @@ public class CloudRedisClientTest {
     mockCloudRedis.addException(exception);
 
     try {
-      String formattedName =
-          CloudRedisClient.formatInstanceName("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+      InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
 
-      client.getInstance(formattedName);
+      client.getInstance(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -234,21 +232,20 @@ public class CloudRedisClientTest {
             .build();
     mockCloudRedis.addResponse(resultOperation);
 
-    String formattedParent = CloudRedisClient.formatLocationName("[PROJECT]", "[LOCATION]");
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
     String instanceId = "test_instance";
     Instance.Tier tier = Instance.Tier.BASIC;
     int memorySizeGb = 1;
     Instance instance = Instance.newBuilder().setTier(tier).setMemorySizeGb(memorySizeGb).build();
 
-    Instance actualResponse =
-        client.createInstanceAsync(formattedParent, instanceId, instance).get();
+    Instance actualResponse = client.createInstanceAsync(parent, instanceId, instance).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<GeneratedMessageV3> actualRequests = mockCloudRedis.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     CreateInstanceRequest actualRequest = (CreateInstanceRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedParent, actualRequest.getParent());
+    Assert.assertEquals(parent, LocationName.parse(actualRequest.getParent()));
     Assert.assertEquals(instanceId, actualRequest.getInstanceId());
     Assert.assertEquals(instance, actualRequest.getInstance());
     Assert.assertTrue(
@@ -264,13 +261,13 @@ public class CloudRedisClientTest {
     mockCloudRedis.addException(exception);
 
     try {
-      String formattedParent = CloudRedisClient.formatLocationName("[PROJECT]", "[LOCATION]");
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
       String instanceId = "test_instance";
       Instance.Tier tier = Instance.Tier.BASIC;
       int memorySizeGb = 1;
       Instance instance = Instance.newBuilder().setTier(tier).setMemorySizeGb(memorySizeGb).build();
 
-      client.createInstanceAsync(formattedParent, instanceId, instance).get();
+      client.createInstanceAsync(parent, instanceId, instance).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
@@ -378,17 +375,16 @@ public class CloudRedisClientTest {
             .build();
     mockCloudRedis.addResponse(resultOperation);
 
-    String formattedName =
-        CloudRedisClient.formatInstanceName("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+    InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
 
-    Empty actualResponse = client.deleteInstanceAsync(formattedName).get();
+    Empty actualResponse = client.deleteInstanceAsync(name).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<GeneratedMessageV3> actualRequests = mockCloudRedis.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     DeleteInstanceRequest actualRequest = (DeleteInstanceRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedName, actualRequest.getName());
+    Assert.assertEquals(name, InstanceName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -402,10 +398,9 @@ public class CloudRedisClientTest {
     mockCloudRedis.addException(exception);
 
     try {
-      String formattedName =
-          CloudRedisClient.formatInstanceName("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+      InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
 
-      client.deleteInstanceAsync(formattedName).get();
+      client.deleteInstanceAsync(name).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());

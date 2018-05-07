@@ -40,8 +40,8 @@
  * <pre>
  * <code>
  * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
- *   String formattedName = CloudRedisClient.formatInstanceName("[PROJECT]", "[LOCATION]", "[INSTANCE]");
- *   Instance response = cloudRedisClient.getInstance(formattedName);
+ *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+ *   Instance response = cloudRedisClient.getInstance(name);
  * }
  * </code>
  * </pre>

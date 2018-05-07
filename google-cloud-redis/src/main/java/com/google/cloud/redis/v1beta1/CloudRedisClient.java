@@ -27,7 +27,6 @@ import com.google.api.gax.paging.AbstractPagedListResponse;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.redis.v1beta1.stub.CloudRedisStub;
 import com.google.cloud.redis.v1beta1.stub.CloudRedisStubSettings;
 import com.google.longrunning.Operation;
@@ -62,8 +61,8 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
- *   String formattedName = CloudRedisClient.formatInstanceName("[PROJECT]", "[LOCATION]", "[INSTANCE]");
- *   Instance response = cloudRedisClient.getInstance(formattedName);
+ *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+ *   Instance response = cloudRedisClient.getInstance(name);
  * }
  * </code>
  * </pre>
@@ -124,63 +123,6 @@ public class CloudRedisClient implements BackgroundResource {
   private final CloudRedisSettings settings;
   private final CloudRedisStub stub;
   private final OperationsClient operationsClient;
-
-  private static final PathTemplate LOCATION_PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}/locations/{location}");
-
-  private static final PathTemplate INSTANCE_PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding(
-          "projects/{project}/locations/{location}/instances/{instance}");
-
-  /** Formats a string containing the fully-qualified path to represent a location resource. */
-  public static final String formatLocationName(String project, String location) {
-    return LOCATION_PATH_TEMPLATE.instantiate(
-        "project", project,
-        "location", location);
-  }
-
-  /** Formats a string containing the fully-qualified path to represent a instance resource. */
-  public static final String formatInstanceName(String project, String location, String instance) {
-    return INSTANCE_PATH_TEMPLATE.instantiate(
-        "project", project,
-        "location", location,
-        "instance", instance);
-  }
-
-  /**
-   * Parses the project from the given fully-qualified path which represents a location resource.
-   */
-  public static final String parseProjectFromLocationName(String locationName) {
-    return LOCATION_PATH_TEMPLATE.parse(locationName).get("project");
-  }
-
-  /**
-   * Parses the location from the given fully-qualified path which represents a location resource.
-   */
-  public static final String parseLocationFromLocationName(String locationName) {
-    return LOCATION_PATH_TEMPLATE.parse(locationName).get("location");
-  }
-
-  /**
-   * Parses the project from the given fully-qualified path which represents a instance resource.
-   */
-  public static final String parseProjectFromInstanceName(String instanceName) {
-    return INSTANCE_PATH_TEMPLATE.parse(instanceName).get("project");
-  }
-
-  /**
-   * Parses the location from the given fully-qualified path which represents a instance resource.
-   */
-  public static final String parseLocationFromInstanceName(String instanceName) {
-    return INSTANCE_PATH_TEMPLATE.parse(instanceName).get("location");
-  }
-
-  /**
-   * Parses the instance from the given fully-qualified path which represents a instance resource.
-   */
-  public static final String parseInstanceFromInstanceName(String instanceName) {
-    return INSTANCE_PATH_TEMPLATE.parse(instanceName).get("instance");
-  }
 
   /** Constructs an instance of CloudRedisClient with default settings. */
   public static final CloudRedisClient create() throws IOException {
@@ -253,8 +195,42 @@ public class CloudRedisClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
-   *   String formattedParent = CloudRedisClient.formatLocationName("[PROJECT]", "[LOCATION]");
-   *   for (Instance element : cloudRedisClient.listInstances(formattedParent).iterateAll()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (Instance element : cloudRedisClient.listInstances(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The resource name of the instance location using the form:
+   *     `projects/{project_id}/locations/{location_id}` where `location_id` refers to a GCP region
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListInstancesPagedResponse listInstances(LocationName parent) {
+    ListInstancesRequest request =
+        ListInstancesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listInstances(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists all Redis instances owned by a project in either the specified location (region) or all
+   * locations.
+   *
+   * <p>The location should have the following format: &#42;
+   * `projects/{project_id}/locations/{location_id}`
+   *
+   * <p>If `location_id` is specified as `-` (wildcard), then all regions available to the project
+   * are queried, and the results are aggregated.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (Instance element : cloudRedisClient.listInstances(parent.toString()).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -265,7 +241,6 @@ public class CloudRedisClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListInstancesPagedResponse listInstances(String parent) {
-    LOCATION_PATH_TEMPLATE.validate(parent, "listInstances");
     ListInstancesRequest request = ListInstancesRequest.newBuilder().setParent(parent).build();
     return listInstances(request);
   }
@@ -285,9 +260,9 @@ public class CloudRedisClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
-   *   String formattedParent = CloudRedisClient.formatLocationName("[PROJECT]", "[LOCATION]");
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   ListInstancesRequest request = ListInstancesRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .build();
    *   for (Instance element : cloudRedisClient.listInstances(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -317,9 +292,9 @@ public class CloudRedisClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
-   *   String formattedParent = CloudRedisClient.formatLocationName("[PROJECT]", "[LOCATION]");
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   ListInstancesRequest request = ListInstancesRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .build();
    *   ApiFuture&lt;ListInstancesPagedResponse&gt; future = cloudRedisClient.listInstancesPagedCallable().futureCall(request);
    *   // Do something
@@ -349,9 +324,9 @@ public class CloudRedisClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
-   *   String formattedParent = CloudRedisClient.formatLocationName("[PROJECT]", "[LOCATION]");
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   ListInstancesRequest request = ListInstancesRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .build();
    *   while (true) {
    *     ListInstancesResponse response = cloudRedisClient.listInstancesCallable().call(request);
@@ -380,8 +355,33 @@ public class CloudRedisClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
-   *   String formattedName = CloudRedisClient.formatInstanceName("[PROJECT]", "[LOCATION]", "[INSTANCE]");
-   *   Instance response = cloudRedisClient.getInstance(formattedName);
+   *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+   *   Instance response = cloudRedisClient.getInstance(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Redis instance resource name using the form:
+   *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}` where `location_id`
+   *     refers to a GCP region
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Instance getInstance(InstanceName name) {
+
+    GetInstanceRequest request =
+        GetInstanceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getInstance(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets the details of a specific Redis instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
+   *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+   *   Instance response = cloudRedisClient.getInstance(name.toString());
    * }
    * </code></pre>
    *
@@ -391,7 +391,7 @@ public class CloudRedisClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Instance getInstance(String name) {
-    INSTANCE_PATH_TEMPLATE.validate(name, "getInstance");
+
     GetInstanceRequest request = GetInstanceRequest.newBuilder().setName(name).build();
     return getInstance(request);
   }
@@ -404,9 +404,9 @@ public class CloudRedisClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
-   *   String formattedName = CloudRedisClient.formatInstanceName("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+   *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
    *   GetInstanceRequest request = GetInstanceRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name.toString())
    *     .build();
    *   Instance response = cloudRedisClient.getInstance(request);
    * }
@@ -427,9 +427,9 @@ public class CloudRedisClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
-   *   String formattedName = CloudRedisClient.formatInstanceName("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+   *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
    *   GetInstanceRequest request = GetInstanceRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name.toString())
    *     .build();
    *   ApiFuture&lt;Instance&gt; future = cloudRedisClient.getInstanceCallable().futureCall(request);
    *   // Do something
@@ -460,7 +460,7 @@ public class CloudRedisClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
-   *   String formattedParent = CloudRedisClient.formatLocationName("[PROJECT]", "[LOCATION]");
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   String instanceId = "test_instance";
    *   Instance.Tier tier = Instance.Tier.BASIC;
    *   int memorySizeGb = 1;
@@ -468,7 +468,60 @@ public class CloudRedisClient implements BackgroundResource {
    *     .setTier(tier)
    *     .setMemorySizeGb(memorySizeGb)
    *     .build();
-   *   Instance response = cloudRedisClient.createInstanceAsync(formattedParent, instanceId, instance).get();
+   *   Instance response = cloudRedisClient.createInstanceAsync(parent, instanceId, instance).get();
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The resource name of the instance location using the form:
+   *     `projects/{project_id}/locations/{location_id}` where `location_id` refers to a GCP region
+   * @param instanceId Required. The logical name of the Redis instance in the customer project with
+   *     the following restrictions:
+   *     <p>&#42; Must contain only lowercase letters, numbers, and hyphens. &#42; Must start with a
+   *     letter. &#42; Must be between 1-40 characters. &#42; Must end with a number or a letter.
+   *     &#42; Must be unique within the customer project / location
+   * @param instance Required. A Redis [Instance] resource
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Instance, Any> createInstanceAsync(
+      LocationName parent, String instanceId, Instance instance) {
+
+    CreateInstanceRequest request =
+        CreateInstanceRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setInstanceId(instanceId)
+            .setInstance(instance)
+            .build();
+    return createInstanceAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a Redis instance based on the specified tier and memory size.
+   *
+   * <p>By default, the instance is peered to the project's [default
+   * network](/compute/docs/networks-and-firewalls#networks).
+   *
+   * <p>The creation is executed asynchronously and callers may check the returned operation to
+   * track its progress. Once the operation is completed the Redis instance will be fully
+   * functional. Completed longrunning.Operation will contain the new instance object in the
+   * response field.
+   *
+   * <p>The returned operation is automatically deleted after a few hours, so there is no need to
+   * call DeleteOperation.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   String instanceId = "test_instance";
+   *   Instance.Tier tier = Instance.Tier.BASIC;
+   *   int memorySizeGb = 1;
+   *   Instance instance = Instance.newBuilder()
+   *     .setTier(tier)
+   *     .setMemorySizeGb(memorySizeGb)
+   *     .build();
+   *   Instance response = cloudRedisClient.createInstanceAsync(parent.toString(), instanceId, instance).get();
    * }
    * </code></pre>
    *
@@ -484,7 +537,7 @@ public class CloudRedisClient implements BackgroundResource {
    */
   public final OperationFuture<Instance, Any> createInstanceAsync(
       String parent, String instanceId, Instance instance) {
-    LOCATION_PATH_TEMPLATE.validate(parent, "createInstance");
+
     CreateInstanceRequest request =
         CreateInstanceRequest.newBuilder()
             .setParent(parent)
@@ -513,7 +566,7 @@ public class CloudRedisClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
-   *   String formattedParent = CloudRedisClient.formatLocationName("[PROJECT]", "[LOCATION]");
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   String instanceId = "test_instance";
    *   Instance.Tier tier = Instance.Tier.BASIC;
    *   int memorySizeGb = 1;
@@ -522,7 +575,7 @@ public class CloudRedisClient implements BackgroundResource {
    *     .setMemorySizeGb(memorySizeGb)
    *     .build();
    *   CreateInstanceRequest request = CreateInstanceRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .setInstanceId(instanceId)
    *     .setInstance(instance)
    *     .build();
@@ -556,7 +609,7 @@ public class CloudRedisClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
-   *   String formattedParent = CloudRedisClient.formatLocationName("[PROJECT]", "[LOCATION]");
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   String instanceId = "test_instance";
    *   Instance.Tier tier = Instance.Tier.BASIC;
    *   int memorySizeGb = 1;
@@ -565,7 +618,7 @@ public class CloudRedisClient implements BackgroundResource {
    *     .setMemorySizeGb(memorySizeGb)
    *     .build();
    *   CreateInstanceRequest request = CreateInstanceRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .setInstanceId(instanceId)
    *     .setInstance(instance)
    *     .build();
@@ -599,7 +652,7 @@ public class CloudRedisClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
-   *   String formattedParent = CloudRedisClient.formatLocationName("[PROJECT]", "[LOCATION]");
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   String instanceId = "test_instance";
    *   Instance.Tier tier = Instance.Tier.BASIC;
    *   int memorySizeGb = 1;
@@ -608,7 +661,7 @@ public class CloudRedisClient implements BackgroundResource {
    *     .setMemorySizeGb(memorySizeGb)
    *     .build();
    *   CreateInstanceRequest request = CreateInstanceRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .setInstanceId(instanceId)
    *     .setInstance(instance)
    *     .build();
@@ -789,8 +842,33 @@ public class CloudRedisClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
-   *   String formattedName = CloudRedisClient.formatInstanceName("[PROJECT]", "[LOCATION]", "[INSTANCE]");
-   *   Empty response = cloudRedisClient.deleteInstanceAsync(formattedName).get();
+   *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+   *   Empty response = cloudRedisClient.deleteInstanceAsync(name).get();
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Redis instance resource name using the form:
+   *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}` where `location_id`
+   *     refers to a GCP region
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, Any> deleteInstanceAsync(InstanceName name) {
+
+    DeleteInstanceRequest request =
+        DeleteInstanceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return deleteInstanceAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a specific Redis instance. Instance stops serving and data is deleted.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
+   *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+   *   Empty response = cloudRedisClient.deleteInstanceAsync(name.toString()).get();
    * }
    * </code></pre>
    *
@@ -800,7 +878,7 @@ public class CloudRedisClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, Any> deleteInstanceAsync(String name) {
-    INSTANCE_PATH_TEMPLATE.validate(name, "deleteInstance");
+
     DeleteInstanceRequest request = DeleteInstanceRequest.newBuilder().setName(name).build();
     return deleteInstanceAsync(request);
   }
@@ -813,9 +891,9 @@ public class CloudRedisClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
-   *   String formattedName = CloudRedisClient.formatInstanceName("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+   *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
    *   DeleteInstanceRequest request = DeleteInstanceRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name.toString())
    *     .build();
    *   Empty response = cloudRedisClient.deleteInstanceAsync(request).get();
    * }
@@ -836,9 +914,9 @@ public class CloudRedisClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
-   *   String formattedName = CloudRedisClient.formatInstanceName("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+   *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
    *   DeleteInstanceRequest request = DeleteInstanceRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name.toString())
    *     .build();
    *   OperationFuture&lt;Operation&gt; future = cloudRedisClient.deleteInstanceOperationCallable().futureCall(request);
    *   // Do something
@@ -859,9 +937,9 @@ public class CloudRedisClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
-   *   String formattedName = CloudRedisClient.formatInstanceName("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+   *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
    *   DeleteInstanceRequest request = DeleteInstanceRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name.toString())
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = cloudRedisClient.deleteInstanceCallable().futureCall(request);
    *   // Do something
