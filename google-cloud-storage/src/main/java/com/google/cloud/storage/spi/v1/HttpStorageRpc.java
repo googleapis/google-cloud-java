@@ -426,6 +426,7 @@ public class HttpStorageRpc implements StorageRpc {
   public Bucket patch(Bucket bucket, Map<Option, ?> options) {
     Span span = startSpan(HttpStorageRpcSpans.SPAN_NAME_PATCH_BUCKET);
     Scope scope = tracer.withSpan(span);
+
     try {
       return storage.buckets()
           .patch(bucket.getName(), bucket)
@@ -790,6 +791,11 @@ public class HttpStorageRpc implements StorageRpc {
         userProject = Option.USER_PROJECT.getString(req.targetOptions);
       }
 
+      String kmsKeyName = Option.KMS_KEY_NAME.getString(req.targetOptions);
+      if (kmsKeyName == null) {
+        kmsKeyName = req.target.getKmsKeyName();
+      }
+
       Long maxBytesRewrittenPerCall = req.megabytesRewrittenPerCall != null
           ? req.megabytesRewrittenPerCall * MEGABYTE : null;
       Storage.Objects.Rewrite rewrite = storage.objects()
@@ -808,7 +814,9 @@ public class HttpStorageRpc implements StorageRpc {
           .setIfMetagenerationNotMatch(Option.IF_METAGENERATION_NOT_MATCH.getLong(req.targetOptions))
           .setIfGenerationMatch(Option.IF_GENERATION_MATCH.getLong(req.targetOptions))
           .setIfGenerationNotMatch(Option.IF_GENERATION_NOT_MATCH.getLong(req.targetOptions))
-          .setUserProject(userProject);
+          .setUserProject(userProject)
+          .setDestinationKmsKeyName(kmsKeyName);
+
       HttpHeaders requestHeaders = rewrite.getRequestHeaders();
       setEncryptionHeaders(requestHeaders, SOURCE_ENCRYPTION_KEY_PREFIX, req.sourceOptions);
       setEncryptionHeaders(requestHeaders, ENCRYPTION_KEY_PREFIX, req.targetOptions);

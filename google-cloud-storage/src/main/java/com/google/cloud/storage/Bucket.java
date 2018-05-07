@@ -190,6 +190,9 @@ public class Bucket extends BucketInfo {
         case USER_PROJECT:
           return Tuple.of(blobInfo,
               Storage.BlobTargetOption.userProject((String) getValue()));
+        case KMS_KEY_NAME:
+          return Tuple.of(blobInfo,
+              Storage.BlobTargetOption.kmsKeyName((String) getValue()));
         default:
           throw new AssertionError("Unexpected enum value");
       }
@@ -274,6 +277,13 @@ public class Bucket extends BucketInfo {
       return new BlobTargetOption(StorageRpc.Option.USER_PROJECT, userProject);
     }
 
+    /**
+     * Returns an option for blob's kms key name.
+     */
+    public static BlobTargetOption kmsKeyName(String kmsKeyName) {
+      return new BlobTargetOption(StorageRpc.Option.KMS_KEY_NAME, kmsKeyName);
+    }
+
     static Tuple<BlobInfo, Storage.BlobTargetOption[]> toTargetOptions(
         BlobInfo info, BlobTargetOption... options) {
       Set<StorageRpc.Option> optionSet =
@@ -345,6 +355,8 @@ public class Bucket extends BucketInfo {
               Storage.BlobWriteOption.encryptionKey((String) value));
         case USER_PROJECT:
           return Tuple.of(blobInfo, Storage.BlobWriteOption.userProject((String) value));
+        case KMS_KEY_NAME:
+          return Tuple.of(blobInfo, Storage.BlobWriteOption.kmsKeyName((String) value));
         default:
           throw new AssertionError("Unexpected enum value");
       }
@@ -468,6 +480,13 @@ public class Bucket extends BucketInfo {
      */
     public static BlobWriteOption userProject(String userProject) {
       return new BlobWriteOption(Storage.BlobWriteOption.Option.USER_PROJECT, userProject);
+    }
+
+    /**
+     * Returns an option for blob's kms key name.
+     */
+    public static BlobWriteOption kmsKeyName(String kmsKeyName) {
+      return new BlobWriteOption(Storage.BlobWriteOption.Option.KMS_KEY_NAME, kmsKeyName);
     }
 
     static Tuple<BlobInfo, Storage.BlobWriteOption[]> toWriteOptions(

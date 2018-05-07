@@ -27,11 +27,7 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import com.google.api.gax.paging.Page;
-import com.google.cloud.Identity;
-import com.google.cloud.Policy;
-import com.google.cloud.ReadChannel;
-import com.google.cloud.RestorableState;
-import com.google.cloud.WriteChannel;
+import com.google.cloud.*;
 import com.google.cloud.storage.Acl;
 import com.google.cloud.storage.Acl.Role;
 import com.google.cloud.storage.Acl.User;
@@ -107,8 +103,8 @@ public class ITStorageTest {
   private static final byte[] COMPRESSED_CONTENT = BaseEncoding.base64()
       .decode("H4sIAAAAAAAAAPNIzcnJV3DPz0/PSVVwzskvTVEILskvSkxPVQQA/LySchsAAAA=");
   private static final Map<String, String> BUCKET_LABELS = ImmutableMap.of("label1", "value1");
-  private static final String SERVICE_ACCOUNT_EMAIL = "gcloud-devel@gs-project-accounts.iam.gserviceaccount.com";
-  private static final String KMS_KEY_NAME = ""; // use real KMS KEY associated to the test project.
+  private static final String SERVICE_ACCOUNT_EMAIL = "spec-test-ruby-samples@gs-project-accounts.iam.gserviceaccount.com";
+  private static final String KMS_KEY_NAME = "projects/spec-test-ruby-samples/locations/global/keyRings/a-key-ring-list-spec-test-ruby-samples/cryptoKeys/test"; // use real KMS KEY associated to the test project.
 
   @BeforeClass
   public static void beforeClass() throws NoSuchAlgorithmException, InvalidKeySpecException {
@@ -185,13 +181,26 @@ public class ITStorageTest {
 
     try {
       assertEquals(KMS_KEY_NAME, remoteBucket.getDefaultKmsKeyName());
-      remoteBucket = remoteBucket.toBuilder().setDefaultKmsKeyName(null).build();
-      Bucket updatedBucket = storage.update(remoteBucket);
-      assertEquals(null, updatedBucket.getDefaultKmsKeyName());
+      Bucket updatedBucket = remoteBucket.toBuilder().setDefaultKmsKeyName(null).build().update();
+      assertNull(updatedBucket.getDefaultKmsKeyName());
     } finally {
       RemoteStorageHelper.forceDelete(storage, bucketName, 5, TimeUnit.SECONDS);
     }
   }
+
+//  @Test
+//  public void testClearBucketDefaultKmsKeyNameTargetOptions() throws ExecutionException, InterruptedException {
+//    String bucketName = RemoteStorageHelper.generateBucketName();
+//    Bucket remoteBucket = storage.create(BucketInfo.newBuilder(bucketName).setDefaultKmsKeyName(KMS_KEY_NAME).build());
+//
+//    try {
+//      assertEquals(KMS_KEY_NAME, remoteBucket.getDefaultKmsKeyName());
+//      Bucket updatedBucket = remoteBucket.toBuilder().build().update();
+//      assertNull(updatedBucket.getDefaultKmsKeyName());
+//    } finally {
+//      RemoteStorageHelper.forceDelete(storage, bucketName, 5, TimeUnit.SECONDS);
+//    }
+//  }
 
   @Test
   public void testCreateBlob() {
@@ -228,7 +237,7 @@ public class ITStorageTest {
     assertNotNull(remoteBlob);
     assertEquals(blob.getBucket(), remoteBlob.getBucket());
     assertEquals(blob.getName(), remoteBlob.getName());
-    assertEquals(blob.getKmsKeyName(), remoteBlob.getKmsKeyName());
+    assertTrue(remoteBlob.getKmsKeyName().startsWith(blob.getKmsKeyName()));
     byte[] readBytes = storage.readAllBytes(BUCKET, blobName);
     assertArrayEquals(BLOB_BYTE_CONTENT, readBytes);
   }
@@ -237,6 +246,7 @@ public class ITStorageTest {
   public void testCreateBlobWithDefaultKmsKeyName() throws ExecutionException, InterruptedException {
     String bucketName = RemoteStorageHelper.generateBucketName();
     Bucket bucket = storage.create(BucketInfo.newBuilder(bucketName).setDefaultKmsKeyName(KMS_KEY_NAME).build());
+    assertEquals(bucket.getDefaultKmsKeyName(), KMS_KEY_NAME);
 
     try {
       String blobName = "test-create-with-default-kms-key-name-blob";
@@ -245,8 +255,9 @@ public class ITStorageTest {
       assertNotNull(remoteBlob);
       assertEquals(blob.getBucket(), remoteBlob.getBucket());
       assertEquals(blob.getName(), remoteBlob.getName());
-      assertEquals(blob.getKmsKeyName(), remoteBlob.getKmsKeyName());
-      byte[] readBytes = storage.readAllBytes(BUCKET, blobName);
+      assertNotNull(remoteBlob.getKmsKeyName());
+      assertTrue(remoteBlob.getKmsKeyName().startsWith(KMS_KEY_NAME));
+      byte[] readBytes = storage.readAllBytes(bucketName, blobName);
       assertArrayEquals(BLOB_BYTE_CONTENT, readBytes);
     } finally {
       RemoteStorageHelper.forceDelete(storage, bucketName, 5, TimeUnit.SECONDS);
@@ -455,7 +466,7 @@ public class ITStorageTest {
       Blob remoteBlob = iterator.next();
       assertEquals(BUCKET, remoteBlob.getBucket());
       assertTrue(blobSet.contains(remoteBlob.getName()));
-      assertEquals(KMS_KEY_NAME, remoteBlob.getKmsKeyName());
+      assertTrue(remoteBlob.getKmsKeyName().startsWith(KMS_KEY_NAME));
       assertNull(remoteBlob.getContentType());
     }
   }
@@ -918,7 +929,8 @@ public class ITStorageTest {
     assertEquals(BUCKET, copyWriter.getResult().getBucket());
     assertEquals(targetBlobName, copyWriter.getResult().getName());
     assertEquals(CONTENT_TYPE, copyWriter.getResult().getContentType());
-    assertEquals(KMS_KEY_NAME, copyWriter.getResult().getKmsKeyName());
+    assertNotNull(copyWriter.getResult().getKmsKeyName());
+    assertTrue(copyWriter.getResult().getKmsKeyName().startsWith(KMS_KEY_NAME));
     assertArrayEquals(BLOB_BYTE_CONTENT, copyWriter.getResult().getContent());
     assertEquals(metadata, copyWriter.getResult().getMetadata());
     assertTrue(copyWriter.isDone());
@@ -949,7 +961,7 @@ public class ITStorageTest {
   }
 
   //Re-enable this test when it stops failing
-  //@Test
+  @Test
   public void testCopyBlobUpdateStorageClass() {
     String sourceBlobName = "test-copy-blob-update-storage-class-source";
     BlobId source = BlobId.of(BUCKET, sourceBlobName);
@@ -964,6 +976,7 @@ public class ITStorageTest {
         .newBuilder(BUCKET, targetBlobName).setStorageClass(StorageClass.COLDLINE).build();
     Storage.CopyRequest req = Storage.CopyRequest.of(source, targetInfo);
     CopyWriter copyWriter = storage.copy(req);
+    Blob test = storage.get(source);
     assertEquals(BUCKET, copyWriter.getResult().getBucket());
     assertEquals(targetBlobName, copyWriter.getResult().getName());
     assertEquals(StorageClass.COLDLINE, copyWriter.getResult().getStorageClass());
@@ -1228,6 +1241,32 @@ public class ITStorageTest {
     }
     assertArrayEquals(BLOB_BYTE_CONTENT, readBytes.array());
     assertEquals(BLOB_STRING_CONTENT, new String(readStringBytes.array(), UTF_8));
+    assertTrue(storage.delete(BUCKET, blobName));
+  }
+
+  @Test
+  public void testReadAndWriteChannelWithKmsKey() throws IOException {
+    String blobName = "test-read-write-channel-with-customer-kms-key-blob";
+    BlobInfo blob = BlobInfo.newBuilder(BUCKET, blobName).build();
+    byte[] stringBytes;
+    try (WriteChannel writer = storage.writer(blob,
+            Storage.BlobWriteOption.kmsKeyName(KMS_KEY_NAME))) {
+      stringBytes = BLOB_STRING_CONTENT.getBytes(UTF_8);
+      writer.write(ByteBuffer.wrap(BLOB_BYTE_CONTENT));
+      writer.write(ByteBuffer.wrap(stringBytes));
+    }
+    ByteBuffer readBytes;
+    ByteBuffer readStringBytes;
+    try (ReadChannel reader =
+                 storage.reader(blob.getBlobId())) {
+      readBytes = ByteBuffer.allocate(BLOB_BYTE_CONTENT.length);
+      readStringBytes = ByteBuffer.allocate(stringBytes.length);
+      reader.read(readBytes);
+      reader.read(readStringBytes);
+    }
+    assertArrayEquals(BLOB_BYTE_CONTENT, readBytes.array());
+    assertEquals(BLOB_STRING_CONTENT, new String(readStringBytes.array(), UTF_8));
+    assertTrue(storage.get(blob.getBlobId()).getKmsKeyName().startsWith(KMS_KEY_NAME));
     assertTrue(storage.delete(BUCKET, blobName));
   }
 

@@ -69,8 +69,6 @@ public class BlobInfoTest {
   private static final String KMS_KEY_NAME = "projects/p/locations/kr-loc/keyRings/kr/cryptoKeys/key";
   private static final StorageClass STORAGE_CLASS = StorageClass.COLDLINE;
 
-  // Unit tests include Customer Supplied encryption which may be confusing with the KMS KEY NAME
-  // as both can't be set at the same time. At least not right now.
   private static final BlobInfo BLOB_INFO = BlobInfo.newBuilder("b", "n", GENERATION)
       .setAcl(ACL)
       .setComponentCount(COMPONENT_COUNT)

@@ -595,7 +595,8 @@ public class BucketInfo implements Serializable {
 
     @Override
     public Builder setDefaultKmsKeyName(String defaultKmsKeyName) {
-      this.defaultKmsKeyName = defaultKmsKeyName;
+      this.defaultKmsKeyName = defaultKmsKeyName != null
+              ? new String(defaultKmsKeyName) : Data.<String>nullOf(String.class);
       return this;
     }
 
@@ -880,9 +881,9 @@ public class BucketInfo implements Serializable {
     if (labels != null) {
       bucketPb.setLabels(labels);
     }
-    // default kms key name can be null.
-    bucketPb.setEncryption(new Encryption().setDefaultKmsKeyName(defaultKmsKeyName));
-
+    if (defaultKmsKeyName != null) {
+      bucketPb.setEncryption(new Encryption().setDefaultKmsKeyName(defaultKmsKeyName));
+    }
     return bucketPb;
   }
 

@@ -19,6 +19,7 @@ package com.google.cloud.storage;
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.api.client.util.Data;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.paging.Page;
 import com.google.auth.ServiceAccountSigner;
@@ -94,7 +95,7 @@ public interface Storage extends Service<StorageOptions> {
     CORS("cors"),
     STORAGE_CLASS("storageClass"),
     ETAG("etag"),
-    DEFAULT_KMS_KEY_NAME("defaultKmsKeyName"),
+    ENCRYPTION("encryption"),
     BILLING("billing");
 
     static final List<? extends FieldSelector> REQUIRED_FIELDS = ImmutableList.of(NAME);
@@ -207,6 +208,15 @@ public interface Storage extends Service<StorageOptions> {
     public static BucketTargetOption userProject(String userProject) {
       return new BucketTargetOption(StorageRpc.Option.USER_PROJECT, userProject);
     }
+
+//    /**
+//     * Returns an option to define the defaultKmsKeyName.
+//     */
+//    public static BucketTargetOption defaultKmsKeyName(String defaultKmsKeyName) {
+//      defaultKmsKeyName = defaultKmsKeyName != null
+//              ? new String(defaultKmsKeyName) : Data.<String>nullOf(String.class);
+//      return new BucketTargetOption(StorageRpc.Option.KMS_KEY_NAME, defaultKmsKeyName);
+//    }
   }
 
   /**
@@ -384,6 +394,15 @@ public interface Storage extends Service<StorageOptions> {
       return new BlobTargetOption(StorageRpc.Option.CUSTOMER_SUPPLIED_KEY, key);
     }
 
+    /**
+     * Returns an option to set a KMS key resource name of the blob.
+     *
+     * @param kmsKeyName the KMS crypto key resource name
+     */
+      public static BlobTargetOption kmsKeyName(String kmsKeyName) {
+          return new BlobTargetOption(StorageRpc.Option.KMS_KEY_NAME, kmsKeyName);
+      }
+
     static Tuple<BlobInfo, BlobTargetOption[]> convert(BlobInfo info, BlobWriteOption... options) {
       BlobInfo.Builder infoBuilder = info.toBuilder().setCrc32c(null).setMd5(null);
       List<BlobTargetOption> targetOptions = Lists.newArrayListWithCapacity(options.length);
@@ -417,7 +436,7 @@ public interface Storage extends Service<StorageOptions> {
 
     enum Option {
       PREDEFINED_ACL, IF_GENERATION_MATCH, IF_GENERATION_NOT_MATCH, IF_METAGENERATION_MATCH,
-      IF_METAGENERATION_NOT_MATCH, IF_MD5_MATCH, IF_CRC32C_MATCH, CUSTOMER_SUPPLIED_KEY, USER_PROJECT;
+      IF_METAGENERATION_NOT_MATCH, IF_MD5_MATCH, IF_CRC32C_MATCH, CUSTOMER_SUPPLIED_KEY, USER_PROJECT, KMS_KEY_NAME;
 
       StorageRpc.Option toRpcOption() {
         return StorageRpc.Option.valueOf(this.name());
@@ -541,6 +560,10 @@ public interface Storage extends Service<StorageOptions> {
      */
     public static BlobWriteOption userProject(String userProject) {
       return new BlobWriteOption(Option.USER_PROJECT, userProject);
+    }
+
+    public static BlobWriteOption kmsKeyName(String kmsKeyName) {
+      return new BlobWriteOption(Option.KMS_KEY_NAME, kmsKeyName);
     }
   }
 

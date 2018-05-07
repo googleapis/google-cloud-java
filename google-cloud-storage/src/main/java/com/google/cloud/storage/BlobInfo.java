@@ -832,9 +832,8 @@ public class BlobInfo implements Serializable {
     if (customerEncryption != null) {
       storageObject.setCustomerEncryption(customerEncryption.toPb());
     }
-    if (kmsKeyName != null) {
-      storageObject.setKmsKeyName(kmsKeyName);
-    }
+
+    storageObject.setKmsKeyName(kmsKeyName);
     storageObject.setMetadata(pbMetadata);
     storageObject.setCacheControl(cacheControl);
     storageObject.setContentEncoding(contentEncoding);
