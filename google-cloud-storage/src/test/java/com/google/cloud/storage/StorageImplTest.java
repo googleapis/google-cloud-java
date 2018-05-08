@@ -567,6 +567,40 @@ public class StorageImplTest {
   }
 
   @Test
+  public void testCreateBlobWithKmsKeyName() throws IOException {
+    Capture<ByteArrayInputStream> capturedStream = Capture.newInstance();
+    EasyMock.expect(
+            storageRpcMock.create(
+                    EasyMock.eq(
+                            BLOB_INFO1
+                                    .toBuilder()
+                                    .setMd5(CONTENT_MD5)
+                                    .setCrc32c(CONTENT_CRC32C)
+                                    .build()
+                                    .toPb()),
+                    EasyMock.capture(capturedStream),
+                    EasyMock.eq(KMS_KEY_NAME_OPTIONS)))
+            .andReturn(BLOB_INFO1.toPb())
+            .times(2);
+    EasyMock.replay(storageRpcMock);
+    initializeService();
+    Blob blob = storage.create(BLOB_INFO1, BLOB_CONTENT, BlobTargetOption.kmsKeyName(KMS_KEY_NAME));
+    assertEquals(expectedBlob1, blob);
+    ByteArrayInputStream byteStream = capturedStream.getValue();
+    byte[] streamBytes = new byte[BLOB_CONTENT.length];
+    assertEquals(BLOB_CONTENT.length, byteStream.read(streamBytes));
+    assertArrayEquals(BLOB_CONTENT, streamBytes);
+    assertEquals(-1, byteStream.read(streamBytes));
+    blob = storage.create(BLOB_INFO1, BLOB_CONTENT, BlobTargetOption.kmsKeyName(KMS_KEY_NAME));
+    assertEquals(expectedBlob1, blob);
+    byteStream = capturedStream.getValue();
+    streamBytes = new byte[BLOB_CONTENT.length];
+    assertEquals(BLOB_CONTENT.length, byteStream.read(streamBytes));
+    assertArrayEquals(BLOB_CONTENT, streamBytes);
+    assertEquals(-1, byteStream.read(streamBytes));
+  }
+
+  @Test
   public void testCreateBlobFromStream() throws IOException {
     Capture<ByteArrayInputStream> capturedStream = Capture.newInstance();
 
@@ -1244,6 +1278,43 @@ public class StorageImplTest {
   }
 
   @Test
+  public void testCopyFromEncryptionKeyToKmsKeyName() {
+    CopyRequest request =
+            Storage.CopyRequest.newBuilder()
+                    .setSource(BLOB_INFO2.getBlobId())
+                    .setSourceOptions(BlobSourceOption.decryptionKey(KEY))
+                    .setTarget(BLOB_INFO1, BlobTargetOption.kmsKeyName(KMS_KEY_NAME))
+                    .build();
+    StorageRpc.RewriteRequest rpcRequest =
+            new StorageRpc.RewriteRequest(
+                    request.getSource().toPb(),
+                    ENCRYPTION_KEY_OPTIONS,
+                    true,
+                    request.getTarget().toPb(),
+                    KMS_KEY_NAME_OPTIONS,
+                    null);
+    StorageRpc.RewriteResponse rpcResponse =
+            new StorageRpc.RewriteResponse(rpcRequest, null, 42L, false, "token", 21L);
+    EasyMock.expect(storageRpcMock.openRewrite(rpcRequest)).andReturn(rpcResponse).times(2);
+    EasyMock.replay(storageRpcMock);
+    initializeService();
+    CopyWriter writer = storage.copy(request);
+    assertEquals(42L, writer.getBlobSize());
+    assertEquals(21L, writer.getTotalBytesCopied());
+    assertTrue(!writer.isDone());
+    request =
+            Storage.CopyRequest.newBuilder()
+                    .setSource(BLOB_INFO2.getBlobId())
+                    .setSourceOptions(BlobSourceOption.decryptionKey(BASE64_KEY))
+                    .setTarget(BLOB_INFO1, BlobTargetOption.kmsKeyName(KMS_KEY_NAME))
+                    .build();
+    writer = storage.copy(request);
+    assertEquals(42L, writer.getBlobSize());
+    assertEquals(21L, writer.getTotalBytesCopied());
+    assertTrue(!writer.isDone());
+  }
+
+  @Test
   public void testCopyWithOptionsFromBlobId() {
     CopyRequest request =
         Storage.CopyRequest.newBuilder()
@@ -1490,6 +1561,22 @@ public class StorageImplTest {
     assertNotNull(channel);
     assertTrue(channel.isOpen());
     channel = storage.writer(info, BlobWriteOption.encryptionKey(BASE64_KEY));
+    assertNotNull(channel);
+    assertTrue(channel.isOpen());
+  }
+
+  @Test
+  public void testWriterWithKmsKeyName() {
+    BlobInfo info = BLOB_INFO1.toBuilder().setMd5(null).setCrc32c(null).build();
+    EasyMock.expect(storageRpcMock.open(info.toPb(), KMS_KEY_NAME_OPTIONS))
+            .andReturn("upload-id")
+            .times(2);
+    EasyMock.replay(storageRpcMock);
+    initializeService();
+    WriteChannel channel = storage.writer(info, BlobWriteOption.kmsKeyName(KMS_KEY_NAME));
+    assertNotNull(channel);
+    assertTrue(channel.isOpen());
+    channel = storage.writer(info, BlobWriteOption.kmsKeyName(KMS_KEY_NAME));
     assertNotNull(channel);
     assertTrue(channel.isOpen());
   }

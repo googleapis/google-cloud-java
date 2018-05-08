@@ -368,6 +368,18 @@ public class BlobTest {
   }
 
   @Test
+  public void testWriterWithKmsKeyName() throws Exception {
+    initializeExpectedBlob(2);
+    BlobWriteChannel channel = createMock(BlobWriteChannel.class);
+    expect(storage.getOptions()).andReturn(mockOptions);
+    expect(storage.writer(eq(expectedBlob), eq(BlobWriteOption.kmsKeyName(KMS_KEY_NAME))))
+            .andReturn(channel);
+    replay(storage);
+    initializeBlob();
+    assertSame(channel, blob.writer(BlobWriteOption.kmsKeyName(KMS_KEY_NAME)));
+  }
+
+  @Test
   public void testSignUrl() throws Exception {
     initializeExpectedBlob(2);
     URL url = new URL("http://localhost:123/bla");

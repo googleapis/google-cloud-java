@@ -367,6 +367,22 @@ public class BucketTest {
   }
 
   @Test
+  public void testCreateWithKmsKeyName() throws Exception {
+    initializeExpectedBucket(5);
+    BlobInfo info = BlobInfo.newBuilder(BlobId.of("b", "n")).setContentType(CONTENT_TYPE).build();
+    Blob expectedBlob = new Blob(serviceMockReturnsOptions, new BlobInfo.BuilderImpl(info));
+    byte[] content = {0xD, 0xE, 0xA, 0xD};
+    expect(storage.getOptions()).andReturn(mockOptions);
+    expect(storage.create(info, content, Storage.BlobTargetOption.kmsKeyName(DEFAULT_KMS_KEY_NAME)))
+            .andReturn(expectedBlob);
+    replay(storage);
+    initializeBucket();
+    Blob blob =
+            bucket.create("n", content, CONTENT_TYPE, Bucket.BlobTargetOption.kmsKeyName(DEFAULT_KMS_KEY_NAME));
+    assertEquals(expectedBlob, blob);
+  }
+
+  @Test
   public void testCreateNotExists() throws Exception {
     initializeExpectedBucket(5);
     BlobInfo info =
