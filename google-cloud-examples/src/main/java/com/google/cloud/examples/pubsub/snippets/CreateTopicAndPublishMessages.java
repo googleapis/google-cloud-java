@@ -91,7 +91,7 @@ public class CreateTopicAndPublishMessages {
 
       List<String> messages = Arrays.asList("first message", "second message");
 
-      for (String message : messages) {
+      for (final String message : messages) {
         ByteString data = ByteString.copyFromUtf8(message);
         PubsubMessage pubsubMessage = PubsubMessage.newBuilder().setData(data).build();
 
