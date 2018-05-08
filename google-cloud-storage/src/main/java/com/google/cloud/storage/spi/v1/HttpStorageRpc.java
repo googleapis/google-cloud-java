@@ -286,6 +286,7 @@ public class HttpStorageRpc implements StorageRpc {
           .setIfGenerationMatch(Option.IF_GENERATION_MATCH.getLong(options))
           .setIfGenerationNotMatch(Option.IF_GENERATION_NOT_MATCH.getLong(options))
           .setUserProject(Option.USER_PROJECT.getString(options))
+          .setKmsKeyName(Option.KMS_KEY_NAME.getString(options))
           .execute();
     } catch (IOException ex) {
       span.setStatus(Status.UNKNOWN.withDescription(ex.getMessage()));
@@ -790,7 +791,7 @@ public class HttpStorageRpc implements StorageRpc {
       if (userProject == null) {
         userProject = Option.USER_PROJECT.getString(req.targetOptions);
       }
-      String kmsKeyName = req.target.getKmsKeyName();
+      String kmsKeyName = Option.KMS_KEY_NAME.getString(req.targetOptions);
 
       Long maxBytesRewrittenPerCall = req.megabytesRewrittenPerCall != null
           ? req.megabytesRewrittenPerCall * MEGABYTE : null;

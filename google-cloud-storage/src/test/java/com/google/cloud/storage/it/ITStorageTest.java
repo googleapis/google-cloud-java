@@ -239,12 +239,13 @@ public class ITStorageTest {
   @Test
   public void testCreateBlobWithKmsKeyName() {
     String blobName = "test-create-with-kms-key-name-blob";
-    BlobInfo blob = BlobInfo.newBuilder(BUCKET, blobName).setKmsKeyName(KMS_KEY_NAME_1).build();
-    Blob remoteBlob = storage.create(blob, BLOB_BYTE_CONTENT);
+    BlobInfo blob = BlobInfo.newBuilder(BUCKET, blobName).build();
+    Blob remoteBlob = storage.create(blob, BLOB_BYTE_CONTENT, Storage.BlobTargetOption.kmsKeyName(KMS_KEY_NAME_1));
     assertNotNull(remoteBlob);
     assertEquals(blob.getBucket(), remoteBlob.getBucket());
     assertEquals(blob.getName(), remoteBlob.getName());
-    assertTrue(remoteBlob.getKmsKeyName().startsWith(blob.getKmsKeyName()));
+    assertNotNull(remoteBlob.getKmsKeyName());
+    assertTrue(remoteBlob.getKmsKeyName().startsWith(KMS_KEY_NAME_1));
     byte[] readBytes = storage.readAllBytes(BUCKET, blobName);
     assertArrayEquals(BLOB_BYTE_CONTENT, readBytes);
   }
@@ -253,8 +254,9 @@ public class ITStorageTest {
   public void testCreateBlobWithKmsKeyNameAndCustomerSuppliedKey() {
     try {
       String blobName = "test-create-with-kms-key-name-blob";
-      BlobInfo blob = BlobInfo.newBuilder(BUCKET, blobName).setKmsKeyName(KMS_KEY_NAME_1).build();
-      storage.create(blob, BLOB_BYTE_CONTENT, Storage.BlobTargetOption.encryptionKey(KEY));
+      BlobInfo blob = BlobInfo.newBuilder(BUCKET, blobName).build();
+      storage.create(blob, BLOB_BYTE_CONTENT, Storage.BlobTargetOption.encryptionKey(KEY),
+              Storage.BlobTargetOption.kmsKeyName(KMS_KEY_NAME_1));
       fail("StorageException was expected"); // can't supply both.
     } catch (StorageException ex) {
       // expected
@@ -368,6 +370,20 @@ public class ITStorageTest {
   }
 
   @Test
+  public void testGetBlobKmsKeyNameField() {
+    String blobName = "test-get-selected-kms-key-name-field-blob";
+    BlobInfo blob = BlobInfo.newBuilder(BUCKET, blobName)
+            .setContentType(CONTENT_TYPE)
+            .build();
+    assertNotNull(storage.create(blob, Storage.BlobTargetOption.kmsKeyName(KMS_KEY_NAME_1)));
+    Blob remoteBlob = storage.get(blob.getBlobId(), Storage.BlobGetOption.fields(
+            BlobField.KMS_KEY_NAME));
+    assertEquals(blob.getBlobId(), remoteBlob.getBlobId());
+    assertTrue(remoteBlob.getKmsKeyName().startsWith(KMS_KEY_NAME_1));
+    assertNull(remoteBlob.getContentType());
+  }
+
+  @Test
   public void testGetBlobAllSelectedFields() {
     String blobName = "test-get-all-selected-fields-blob";
     BlobInfo blob = BlobInfo.newBuilder(BUCKET, blobName)
@@ -459,14 +475,12 @@ public class ITStorageTest {
             "test-list-blobs-selected-field-kms-key-name-blob2"};
     BlobInfo blob1 = BlobInfo.newBuilder(BUCKET, blobNames[0])
             .setContentType(CONTENT_TYPE)
-            .setKmsKeyName(KMS_KEY_NAME_1)
             .build();
     BlobInfo blob2 = BlobInfo.newBuilder(BUCKET, blobNames[1])
             .setContentType(CONTENT_TYPE)
-            .setKmsKeyName(KMS_KEY_NAME_1)
             .build();
-    Blob remoteBlob1 = storage.create(blob1);
-    Blob remoteBlob2 = storage.create(blob2);
+    Blob remoteBlob1 = storage.create(blob1, Storage.BlobTargetOption.kmsKeyName(KMS_KEY_NAME_1));
+    Blob remoteBlob2 = storage.create(blob2, Storage.BlobTargetOption.kmsKeyName(KMS_KEY_NAME_1));
     assertNotNull(remoteBlob1);
     assertNotNull(remoteBlob2);
     Page<Blob> page = storage.list(BUCKET,
@@ -936,12 +950,11 @@ public class ITStorageTest {
     BlobInfo target = BlobInfo.newBuilder(BUCKET, targetBlobName)
             .setContentType(CONTENT_TYPE)
             .setMetadata(metadata)
-            .setKmsKeyName(KMS_KEY_NAME_1)
             .build();
     Storage.CopyRequest req = Storage.CopyRequest.newBuilder()
             .setSource(source)
             .setSourceOptions(Storage.BlobSourceOption.decryptionKey(BASE64_KEY))
-            .setTarget(target)
+            .setTarget(target, Storage.BlobTargetOption.kmsKeyName(KMS_KEY_NAME_1))
             .build();
     CopyWriter copyWriter = storage.copy(req);
     assertEquals(BUCKET, copyWriter.getResult().getBucket());
@@ -967,13 +980,13 @@ public class ITStorageTest {
     BlobInfo target = BlobInfo.newBuilder(BUCKET, targetBlobName)
             .setContentType(CONTENT_TYPE)
             .setMetadata(metadata)
-            .setKmsKeyName(KMS_KEY_NAME_1)
             .build();
     try {
       Storage.CopyRequest req = Storage.CopyRequest.newBuilder()
               .setSource(source)
               .setSourceOptions(Storage.BlobSourceOption.decryptionKey(BASE64_KEY))
-              .setTarget(target, Storage.BlobTargetOption.encryptionKey(KEY))
+              .setTarget(target, Storage.BlobTargetOption.encryptionKey(KEY),
+                      Storage.BlobTargetOption.kmsKeyName(KMS_KEY_NAME_1))
               .build();
       storage.copy(req);
       fail("StorageException was expected");
@@ -981,7 +994,6 @@ public class ITStorageTest {
       // expected
     }
   }
-
 
   @Test
   public void testCopyBlobUpdateMetadata() {
@@ -1844,6 +1856,29 @@ public class ITStorageTest {
       assertTrue(remoteBucket.getName().startsWith(BUCKET));
       assertNull(remoteBucket.getCreateTime());
       assertNull(remoteBucket.getSelfLink());
+    }
+  }
+
+  @Test
+  public void testListBucketDefaultKmsKeyName() throws InterruptedException {
+    Bucket remoteBucket = storage.get(BUCKET, Storage.BucketGetOption.fields(BucketField.ENCRYPTION));
+    assertNull(remoteBucket.getDefaultKmsKeyName());
+    remoteBucket = remoteBucket.toBuilder().setDefaultKmsKeyName(KMS_KEY_NAME_1).build().update();
+    assertTrue(remoteBucket.getDefaultKmsKeyName().startsWith(KMS_KEY_NAME_1));
+    Iterator<Bucket> bucketIterator = storage.list(Storage.BucketListOption.prefix(BUCKET),
+            Storage.BucketListOption.fields(BucketField.ENCRYPTION)).iterateAll().iterator();
+    while (!bucketIterator.hasNext()) {
+      Thread.sleep(500);
+      bucketIterator = storage.list(Storage.BucketListOption.prefix(BUCKET),
+              Storage.BucketListOption.fields(BucketField.ENCRYPTION)).iterateAll().iterator();
+    }
+    while (bucketIterator.hasNext()) {
+      Bucket bucket = bucketIterator.next();
+      assertTrue(bucket.getName().startsWith(BUCKET));
+      assertNotNull(bucket.getDefaultKmsKeyName());
+      assertTrue(bucket.getDefaultKmsKeyName().startsWith(KMS_KEY_NAME_1));
+      assertNull(bucket.getCreateTime());
+      assertNull(bucket.getSelfLink());
     }
   }
 

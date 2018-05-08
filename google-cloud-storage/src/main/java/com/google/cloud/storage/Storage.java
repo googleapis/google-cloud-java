@@ -19,19 +19,11 @@ package com.google.cloud.storage;
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
-import com.google.api.client.util.Data;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.paging.Page;
 import com.google.auth.ServiceAccountSigner;
 import com.google.auth.ServiceAccountSigner.SigningException;
-import com.google.cloud.FieldSelector;
+import com.google.cloud.*;
 import com.google.cloud.FieldSelector.Helper;
-import com.google.cloud.GcpLaunchStage;
-import com.google.cloud.Policy;
-import com.google.cloud.ReadChannel;
-import com.google.cloud.Service;
-import com.google.cloud.Tuple;
-import com.google.cloud.WriteChannel;
 import com.google.cloud.storage.Acl.Entity;
 import com.google.cloud.storage.spi.v1.StorageRpc;
 import com.google.common.collect.ImmutableList;
@@ -385,6 +377,14 @@ public interface Storage extends Service<StorageOptions> {
       return new BlobTargetOption(StorageRpc.Option.CUSTOMER_SUPPLIED_KEY, key);
     }
 
+    /**
+     * Returns an option to set a customer-managed key for server-side encryption of the blob.
+     */
+    @GcpLaunchStage.Beta
+    public static BlobTargetOption kmsKeyName(String kmsKeyName) {
+      return new BlobTargetOption(StorageRpc.Option.KMS_KEY_NAME, kmsKeyName);
+    }
+
     static Tuple<BlobInfo, BlobTargetOption[]> convert(BlobInfo info, BlobWriteOption... options) {
       BlobInfo.Builder infoBuilder = info.toBuilder().setCrc32c(null).setMd5(null);
       List<BlobTargetOption> targetOptions = Lists.newArrayListWithCapacity(options.length);
@@ -418,7 +418,7 @@ public interface Storage extends Service<StorageOptions> {
 
     enum Option {
       PREDEFINED_ACL, IF_GENERATION_MATCH, IF_GENERATION_NOT_MATCH, IF_METAGENERATION_MATCH,
-      IF_METAGENERATION_NOT_MATCH, IF_MD5_MATCH, IF_CRC32C_MATCH, CUSTOMER_SUPPLIED_KEY, USER_PROJECT;
+      IF_METAGENERATION_NOT_MATCH, IF_MD5_MATCH, IF_CRC32C_MATCH, CUSTOMER_SUPPLIED_KEY, KMS_KEY_NAME, USER_PROJECT;
 
       StorageRpc.Option toRpcOption() {
         return StorageRpc.Option.valueOf(this.name());
@@ -534,6 +534,17 @@ public interface Storage extends Service<StorageOptions> {
      */
     public static BlobWriteOption encryptionKey(String key) {
       return new BlobWriteOption(Option.CUSTOMER_SUPPLIED_KEY, key);
+    }
+
+    /**
+     * Returns an option to set a customer-managed KMS key for server-side encryption of the
+     * blob.
+     *
+     * @param kmsKeyName the KMS key resource id
+     */
+    @GcpLaunchStage.Beta
+    public static BlobWriteOption kmsKeyName(String kmsKeyName) {
+      return new BlobWriteOption(Option.KMS_KEY_NAME, kmsKeyName);
     }
 
     /**

@@ -273,7 +273,7 @@ public class BlobInfo implements Serializable {
      * Sets the blob's kmsKeyName.
      */
     @GcpLaunchStage.Beta
-    public abstract Builder setKmsKeyName(String kmsKeyName);
+    abstract Builder setKmsKeyName(String kmsKeyName);
 
     /**
      * Creates a {@code BlobInfo} object.

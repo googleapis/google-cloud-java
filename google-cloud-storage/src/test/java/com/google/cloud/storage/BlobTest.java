@@ -91,6 +91,7 @@ public class BlobTest {
   private static final String KEY_SHA256 = "keySha";
   private static final BlobInfo.CustomerEncryption CUSTOMER_ENCRYPTION =
       new BlobInfo.CustomerEncryption(ENCRYPTION_ALGORITHM, KEY_SHA256);
+  private static final String KMS_KEY_NAME = "projects/p/locations/kr-loc/keyRings/kr/cryptoKeys/key";
   private static final BlobInfo FULL_BLOB_INFO = BlobInfo.newBuilder("b", "n", GENERATION)
       .setAcl(ACLS)
       .setComponentCount(COMPONENT_COUNT)
@@ -113,6 +114,7 @@ public class BlobTest {
       .setUpdateTime(UPDATE_TIME)
       .setCreateTime(CREATE_TIME)
       .setCustomerEncryption(CUSTOMER_ENCRYPTION)
+      .setKmsKeyName(KMS_KEY_NAME)
       .build();
   private static final BlobInfo BLOB_INFO = BlobInfo.newBuilder("b", "n")
       .setMetageneration(42L)
@@ -457,6 +459,7 @@ public class BlobTest {
         .setCrc32c(CRC32)
         .setCreateTime(CREATE_TIME)
         .setCustomerEncryption(CUSTOMER_ENCRYPTION)
+        .setKmsKeyName(KMS_KEY_NAME)
         .setDeleteTime(DELETE_TIME)
         .setEtag(ETAG)
         .setGeneratedId(GENERATED_ID)
@@ -511,6 +514,7 @@ public class BlobTest {
     assertNull(blob.getCrc32c());
     assertNull(blob.getCreateTime());
     assertNull(blob.getCustomerEncryption());
+    assertNull(blob.getKmsKeyName());
     assertNull(blob.getDeleteTime());
     assertNull(blob.getEtag());
     assertNull(blob.getGeneratedId());

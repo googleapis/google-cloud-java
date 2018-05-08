@@ -102,6 +102,8 @@ public class StorageImplTest {
   private static final String BASE64_KEY = "JVzfVl8NLD9FjedFuStegjRfES5ll5zc59CIXw572OA=";
   private static final Key KEY =
       new SecretKeySpec(BaseEncoding.base64().decode(BASE64_KEY), "AES256");
+  private static final String KMS_KEY_NAME =
+      "projects/gcloud-devel/locations/us/keyRings/gcs_kms_key_ring_us/cryptoKeys/key";
 
   // BucketInfo objects
   private static final BucketInfo BUCKET_INFO1 =
@@ -245,6 +247,9 @@ public class StorageImplTest {
   private static final Map<StorageRpc.Option, ?> ENCRYPTION_KEY_OPTIONS =
       ImmutableMap.of(StorageRpc.Option.CUSTOMER_SUPPLIED_KEY, BASE64_KEY);
 
+  // Customer managed encryption key options
+  private static final Map<StorageRpc.Option, ?> KMS_KEY_NAME_OPTIONS =
+      ImmutableMap.of(StorageRpc.Option.KMS_KEY_NAME, KMS_KEY_NAME);
   // IAM policies
   private static final String POLICY_ETAG1 = "CAE=";
   private static final String POLICY_ETAG2 = "CAI=";
