@@ -35,7 +35,11 @@ public class TableResult implements Page<FieldValueList>, Serializable {
   private final long totalRows;
   private final Page<FieldValueList> pageNoSchema;
 
-  TableResult(Schema schema, long totalRows, Page<FieldValueList> pageNoSchema) {
+  /**
+   * If {@code schema} is non-null, {@code TableResult} adds the schema to {@code FieldValueList}s
+   * when iterating through them. {@code pageNoSchema} must not be null.
+   */
+  public TableResult(Schema schema, long totalRows, Page<FieldValueList> pageNoSchema) {
     this.schema = schema;
     this.totalRows = totalRows;
     this.pageNoSchema = checkNotNull(pageNoSchema);
