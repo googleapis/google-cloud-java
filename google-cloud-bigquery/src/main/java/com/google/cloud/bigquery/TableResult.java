@@ -18,6 +18,7 @@ package com.google.cloud.bigquery;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.api.core.InternalApi;
 import com.google.api.gax.paging.Page;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
@@ -39,6 +40,7 @@ public class TableResult implements Page<FieldValueList>, Serializable {
    * If {@code schema} is non-null, {@code TableResult} adds the schema to {@code FieldValueList}s
    * when iterating through them. {@code pageNoSchema} must not be null.
    */
+  @InternalApi("Exposed for testing")
   public TableResult(Schema schema, long totalRows, Page<FieldValueList> pageNoSchema) {
     this.schema = schema;
     this.totalRows = totalRows;
