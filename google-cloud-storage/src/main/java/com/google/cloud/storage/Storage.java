@@ -93,6 +93,7 @@ public interface Storage extends Service<StorageOptions> {
     CORS("cors"),
     STORAGE_CLASS("storageClass"),
     ETAG("etag"),
+    @GcpLaunchStage.Beta
     ENCRYPTION("encryption"),
     BILLING("billing");
 
@@ -135,6 +136,7 @@ public interface Storage extends Service<StorageOptions> {
     SIZE("size"),
     STORAGE_CLASS("storageClass"),
     TIME_DELETED("timeDeleted"),
+    @GcpLaunchStage.Beta
     KMS_KEY_NAME("kmsKeyName"),
     UPDATED("updated");
 
