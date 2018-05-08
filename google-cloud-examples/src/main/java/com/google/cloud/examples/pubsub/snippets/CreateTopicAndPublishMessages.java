@@ -99,7 +99,7 @@ public class CreateTopicAndPublishMessages {
         ApiFuture<String> future = publisher.publish(pubsubMessage);
 
         // Add an asynchronous callback to handle success / failure
-        ApiFuture.addCallback(future, new ApiFutureCallback<String>() {
+        ApiFutures.addCallback(future, new ApiFutureCallback<String>() {
 
           @Override
           public void onFailure(Throwable throwable) {
