@@ -597,7 +597,7 @@ final class SessionPool {
         }
       }
       for (PooledSession sess : sessionsToClose) {
-        logger.log(Level.FINE, "Closing session %s", sess.getName());
+        logger.log(Level.FINE, "Closing session {0}", sess.getName());
         closeSession(sess);
       }
     }
