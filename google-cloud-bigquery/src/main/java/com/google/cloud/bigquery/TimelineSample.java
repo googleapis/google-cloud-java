@@ -77,7 +77,7 @@ public abstract class TimelineSample {
   public abstract Long getSlotMillis();
 
   /**
-   * return a builder for the {@TimelineSample} object.
+   * return a builder for the {@code TimelineSample} object.
    */
   public abstract Builder toBuilder();
 
