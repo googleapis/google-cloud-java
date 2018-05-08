@@ -81,7 +81,6 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-
 import org.apache.http.HttpStatus;
 
 public class HttpStorageRpc implements StorageRpc {

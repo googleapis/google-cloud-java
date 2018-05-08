@@ -488,7 +488,7 @@ public class BlobInfo implements Serializable {
 
     @GcpLaunchStage.Beta
     @Override
-    public Builder setKmsKeyName(String kmsKeyName) {
+    Builder setKmsKeyName(String kmsKeyName) {
       this.kmsKeyName = kmsKeyName;
       return this;
     }

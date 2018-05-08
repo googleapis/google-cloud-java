@@ -404,7 +404,7 @@ public class Blob extends BlobInfo {
 
     @GcpLaunchStage.Beta
     @Override
-    public Builder setKmsKeyName(String kmsKeyName) {
+    Builder setKmsKeyName(String kmsKeyName) {
       infoBuilder.setKmsKeyName(kmsKeyName);
       return this;
     }
