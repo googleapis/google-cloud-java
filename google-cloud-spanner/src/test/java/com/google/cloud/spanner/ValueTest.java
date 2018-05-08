@@ -20,18 +20,16 @@ import static com.google.common.testing.SerializableTester.reserializeAndAssert;
 import static com.google.common.truth.Truth.assertThat;
 
 import com.google.cloud.ByteArray;
-import com.google.cloud.Date;
 import com.google.cloud.Timestamp;
 import com.google.common.collect.ForwardingList;
 import com.google.common.collect.Lists;
 import com.google.common.testing.EqualsTester;
-
 import java.io.IOException;
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
+import org.joda.time.LocalDate;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
@@ -281,7 +279,7 @@ public class ValueTest {
   @Test
   public void date() {
     String date = "2016-09-15";
-    Date t = Date.parseDate(date);
+    LocalDate t = SpannerImpl.parseLocalDate(date);
     Value v = Value.date(t);
     assertThat(v.getType()).isEqualTo(Type.date());
     assertThat(v.isNull()).isFalse();
@@ -582,10 +580,12 @@ public class ValueTest {
     String d1 = "2016-09-15";
     String d2 = "2016-09-14";
 
-    Value v = Value.dateArray(Arrays.asList(Date.parseDate(d1), null, Date.parseDate(d2)));
+    Value v =
+        Value.dateArray(
+            Arrays.asList(SpannerImpl.parseLocalDate(d1), null, SpannerImpl.parseLocalDate(d2)));
     assertThat(v.isNull()).isFalse();
     assertThat(v.getDateArray())
-        .containsExactly(Date.parseDate(d1), null, Date.parseDate(d2))
+        .containsExactly(SpannerImpl.parseLocalDate(d1), null, SpannerImpl.parseLocalDate(d2))
         .inOrder();
     assertThat(v.toString()).isEqualTo("[" + d1 + ",NULL," + d2 + "]");
   }
@@ -688,10 +688,8 @@ public class ValueTest {
 
     tester.addEqualityGroup(Value.date(null), Value.date(null));
     tester.addEqualityGroup(
-        Value.date(Date.fromYearMonthDay(2018, 2, 26)),
-        Value.date(Date.fromYearMonthDay(2018, 2, 26)));
-    tester.addEqualityGroup(
-        Value.date(Date.fromYearMonthDay(2018, 2, 27)));
+        Value.date(new LocalDate(2018, 2, 26)), Value.date(new LocalDate(2018, 2, 26)));
+    tester.addEqualityGroup(Value.date(new LocalDate(2018, 2, 27)));
 
     tester.addEqualityGroup(
         Value.boolArray(Arrays.asList(false, true)),
@@ -733,10 +731,8 @@ public class ValueTest {
     tester.addEqualityGroup(Value.timestampArray(null));
 
     tester.addEqualityGroup(
-        Value.dateArray(
-            Arrays.asList(null, Date.fromYearMonthDay(2018, 2, 26))),
-        Value.dateArray(
-            Arrays.asList(null, Date.fromYearMonthDay(2018, 2, 26))));
+        Value.dateArray(Arrays.asList(null, new LocalDate(2018, 2, 26))),
+        Value.dateArray(Arrays.asList(null, new LocalDate(2018, 2, 26))));
     tester.addEqualityGroup(Value.dateArray(null));
 
 
@@ -780,9 +776,8 @@ public class ValueTest {
     reserializeAndAssert(Value.timestampArray(Arrays.asList(null, Timestamp.now())));
 
     reserializeAndAssert(Value.date(null));
-    reserializeAndAssert(Value.date(Date.fromYearMonthDay(2018, 2, 26)));
-    reserializeAndAssert(Value.dateArray(Arrays.asList(null,
-        Date.fromYearMonthDay(2018, 2, 26))));
+    reserializeAndAssert(Value.date(new LocalDate(2018, 2, 26)));
+    reserializeAndAssert(Value.dateArray(Arrays.asList(null, new LocalDate(2018, 2, 26))));
 
     BrokenSerializationList<String> of = BrokenSerializationList.of("a", "b");
     reserializeAndAssert(Value.stringArray(of));

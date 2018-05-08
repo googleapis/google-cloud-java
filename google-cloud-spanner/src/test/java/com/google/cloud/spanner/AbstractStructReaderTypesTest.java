@@ -22,7 +22,6 @@ import static org.junit.Assert.fail;
 import static org.junit.runners.Parameterized.Parameter;
 
 import com.google.cloud.ByteArray;
-import com.google.cloud.Date;
 import com.google.cloud.Timestamp;
 import com.google.common.base.Throwables;
 import java.lang.reflect.InvocationTargetException;
@@ -31,6 +30,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 import javax.annotation.Nullable;
+import org.joda.time.LocalDate;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -74,7 +74,7 @@ public class AbstractStructReaderTypesTest {
     }
 
     @Override
-    protected Date getDateInternal(int columnIndex) {
+    protected LocalDate getDateInternal(int columnIndex) {
       return null;
     }
 
@@ -124,7 +124,7 @@ public class AbstractStructReaderTypesTest {
     }
 
     @Override
-    protected List<Date> getDateListInternal(int columnIndex) {
+    protected List<LocalDate> getDateListInternal(int columnIndex) {
       return null;
     }
 
@@ -163,7 +163,13 @@ public class AbstractStructReaderTypesTest {
             "getTimestamp",
             null
           },
-          {Type.date(), "getDateInternal", Date.parseDate("2015-09-15"), "getDate", null},
+          {
+            Type.date(),
+            "getDateInternal",
+            SpannerImpl.parseLocalDate("2015-09-15"),
+            "getDate",
+            null
+          },
           {
             Type.array(Type.bool()),
             "getBooleanArrayInternal",
@@ -233,7 +239,8 @@ public class AbstractStructReaderTypesTest {
           {
             Type.array(Type.date()),
             "getDateListInternal",
-            Arrays.asList(Date.parseDate("2015-09-15"), Date.parseDate("2015-09-14")),
+            Arrays.asList(
+                SpannerImpl.parseLocalDate("2015-09-15"), SpannerImpl.parseLocalDate("2015-09-14")),
             "getDateList",
             null,
           },

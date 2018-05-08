@@ -19,18 +19,17 @@ package com.google.cloud.spanner;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.cloud.ByteArray;
-import com.google.cloud.Date;
 import com.google.cloud.Timestamp;
 import com.google.common.base.Joiner;
 import com.google.protobuf.ListValue;
 import com.google.protobuf.NullValue;
 import com.google.protobuf.Value;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import javax.annotation.Nullable;
+import org.joda.time.LocalDate;
 
 /**
  * Represents a row key in a Cloud Spanner table or index. A key is a tuple of values constrained to
@@ -150,7 +149,7 @@ public final class Key implements Serializable {
     }
 
     /** Appends a {@code DATE} value to the key */
-    public Builder append(@Nullable Date value) {
+    public Builder append(@Nullable LocalDate value) {
       buffer.add(value);
       return this;
     }
@@ -179,8 +178,8 @@ public final class Key implements Serializable {
         append((ByteArray) value);
       } else if (value instanceof Timestamp) {
         append((Timestamp) value);
-      } else if (value instanceof Date) {
-        append((Date) value);
+      } else if (value instanceof LocalDate) {
+        append((LocalDate) value);
       } else {
         throw new IllegalArgumentException(
             "Unsupported type ["
@@ -219,7 +218,7 @@ public final class Key implements Serializable {
    *   <li>{@code STRING} is represented by {@code String}
    *   <li>{@code BYTES} is represented by {@link ByteArray}
    *   <li>{@code TIMESTAMP} is represented by {@link Timestamp}
-   *   <li>{@code DATE} is represented by {@link Date}
+   *   <li>{@code DATE} is represented by {@link Localdate}
    * </ul>
    *
    * @return an unmodifiable list containing the key parts

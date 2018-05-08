@@ -18,11 +18,9 @@ package com.google.cloud.spanner;
 
 import static com.google.cloud.spanner.SpannerMatchers.isSpannerException;
 import static com.google.common.testing.SerializableTester.reserialize;
-import static com.google.common.testing.SerializableTester.reserializeAndAssert;
 import static com.google.common.truth.Truth.assertThat;
 
 import com.google.cloud.ByteArray;
-import com.google.cloud.Date;
 import com.google.cloud.Timestamp;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import com.google.common.base.Function;
@@ -41,6 +39,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import javax.annotation.Nullable;
+import org.joda.time.LocalDate;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -600,7 +599,8 @@ public class GrpcResultSetTest {
 
   @Test
   public void serialization() throws Exception {
-    verifySerialization(Value.string("a"),
+    verifySerialization(
+        Value.string("a"),
         Value.string(null),
         Value.bool(true),
         Value.bool(null),
@@ -612,20 +612,18 @@ public class GrpcResultSetTest {
         Value.bytes(null),
         Value.timestamp(Timestamp.ofTimeSecondsAndNanos(1, 2)),
         Value.timestamp(null),
-        Value.date(Date.fromYearMonthDay(2017, 04, 17)),
+        Value.date(new LocalDate(2017, 04, 17)),
         Value.date(null),
         Value.stringArray(ImmutableList.of("one", "two")),
         Value.stringArray(null),
-        Value.boolArray(new boolean[]{true, false}),
+        Value.boolArray(new boolean[] {true, false}),
         Value.boolArray((boolean[]) null),
-        Value.int64Array(new long[]{1, 2, 3}),
+        Value.int64Array(new long[] {1, 2, 3}),
         Value.int64Array((long[]) null),
         Value.timestampArray(ImmutableList.of(Timestamp.MAX_VALUE, Timestamp.MAX_VALUE)),
         Value.timestampArray(null),
-        Value.dateArray(ImmutableList.of(
-            Date.fromYearMonthDay(2017, 4, 17), Date.fromYearMonthDay(2017, 5, 18))),
-        Value.dateArray(null)
-    );
+        Value.dateArray(ImmutableList.of(new LocalDate(2017, 4, 17), new LocalDate(2017, 5, 18))),
+        Value.dateArray(null));
   }
 
   @Test

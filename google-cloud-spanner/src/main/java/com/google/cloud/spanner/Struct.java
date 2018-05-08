@@ -20,19 +20,18 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import static com.google.common.base.Preconditions.checkState;
 
 import com.google.cloud.ByteArray;
-import com.google.cloud.Date;
 import com.google.cloud.Timestamp;
 import com.google.common.collect.ImmutableList;
 import com.google.common.primitives.Booleans;
 import com.google.common.primitives.Doubles;
 import com.google.common.primitives.Longs;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import javax.annotation.Nullable;
 import javax.annotation.concurrent.Immutable;
+import org.joda.time.LocalDate;
 
 /**
  * Represents a value of {@link Type.Code#STRUCT}. Such values are a tuple of named and typed
@@ -162,7 +161,7 @@ public abstract class Struct extends AbstractStructReader implements Serializabl
     }
 
     @Override
-    protected Date getDateInternal(int columnIndex) {
+    protected LocalDate getDateInternal(int columnIndex) {
       return values.get(columnIndex).getDate();
     }
 
@@ -212,7 +211,7 @@ public abstract class Struct extends AbstractStructReader implements Serializabl
     }
 
     @Override
-    protected List<Date> getDateListInternal(int columnIndex) {
+    protected List<LocalDate> getDateListInternal(int columnIndex) {
       return values.get(columnIndex).getDateArray();
     }
 

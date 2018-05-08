@@ -17,9 +17,9 @@
 package com.google.cloud.spanner;
 
 import com.google.cloud.ByteArray;
-import com.google.cloud.Date;
 import com.google.cloud.Timestamp;
 import java.util.List;
+import org.joda.time.LocalDate;
 
 /**
  * A base interface for reading the fields of a {@code STRUCT}. The Cloud Spanner yields {@code
@@ -120,10 +120,10 @@ public interface StructReader {
   Timestamp getTimestamp(String columnName);
 
   /** Returns the value of a non-{@code NULL} column with type {@link Type#date()}. */
-  Date getDate(int columnIndex);
+  LocalDate getDate(int columnIndex);
 
   /** Returns the value of a non-{@code NULL} column with type {@link Type#date()}. */
-  Date getDate(String columnName);
+  LocalDate getDate(String columnName);
 
   /**
    * Returns the value of a non-{@code NULL} column with type {@code Type.array(Type.bool())}.
@@ -218,10 +218,10 @@ public interface StructReader {
   List<Timestamp> getTimestampList(String columnName);
 
   /** Returns the value of a non-{@code NULL} column with type {@code Type.array(Type.date())}. */
-  List<Date> getDateList(int columnIndex);
+  List<LocalDate> getDateList(int columnIndex);
 
   /** Returns the value of a non-{@code NULL} column with type {@code Type.array(Type.date())}. */
-  List<Date> getDateList(String columnName);
+  List<LocalDate> getDateList(String columnName);
 
   /**
    * Returns the value of a non-{@code NULL} column with type {@code Type.array(Type.struct(...))}.

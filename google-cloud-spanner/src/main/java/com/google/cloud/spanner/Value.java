@@ -17,7 +17,6 @@
 package com.google.cloud.spanner;
 
 import com.google.cloud.ByteArray;
-import com.google.cloud.Date;
 import com.google.cloud.Timestamp;
 import com.google.common.base.Joiner;
 import com.google.common.base.Preconditions;
@@ -35,6 +34,7 @@ import java.util.List;
 import java.util.Objects;
 import javax.annotation.Nullable;
 import javax.annotation.concurrent.Immutable;
+import org.joda.time.LocalDate;
 
 /**
  * Represents a value to be consumed by the Cloud Spanner API. A value can be {@code NULL} or
@@ -148,7 +148,7 @@ public abstract class Value implements Serializable {
    * cloud spanner dates. A write to a date column is rejected if the value is outside of that
    * interval.
    */
-  public static Value date(@Nullable Date v) {
+  public static Value date(@Nullable LocalDate v) {
     return new DateImpl(v == null, v);
   }
 
@@ -295,7 +295,7 @@ public abstract class Value implements Serializable {
    * @param v the source of element values. This may be {@code null} to produce a value for which
    *     {@code isNull()} is {@code true}. Individual elements may also be {@code null}.
    */
-  public static Value dateArray(@Nullable Iterable<Date> v) {
+  public static Value dateArray(@Nullable Iterable<LocalDate> v) {
     return new DateArrayImpl(v == null, v == null ? null : immutableCopyOf(v));
   }
 
@@ -358,7 +358,7 @@ public abstract class Value implements Serializable {
    *
    * @throws IllegalStateException if {@code isNull()} or the value is not of the expected type
    */
-  public abstract Date getDate();
+  public abstract LocalDate getDate();
 
   /**
    * Returns the value of an {@code ARRAY<BOOL>}-typed instance. While the returned list itself will
@@ -414,7 +414,7 @@ public abstract class Value implements Serializable {
    *
    * @throws IllegalStateException if {@code isNull()} or the value is not of the expected type
    */
-  public abstract List<Date> getDateArray();
+  public abstract List<LocalDate> getDateArray();
 
   @Override
   public String toString() {
@@ -634,7 +634,7 @@ public abstract class Value implements Serializable {
     }
 
     @Override
-    public Date getDate() {
+    public LocalDate getDate() {
       throw defaultGetter(Type.date());
     }
 
@@ -669,7 +669,7 @@ public abstract class Value implements Serializable {
     }
 
     @Override
-    public List<Date> getDateArray() {
+    public List<LocalDate> getDateArray() {
       throw defaultGetter(Type.array(Type.date()));
     }
 
@@ -1014,14 +1014,14 @@ public abstract class Value implements Serializable {
     }
   }
 
-  private static class DateImpl extends AbstractObjectValue<Date> {
+  private static class DateImpl extends AbstractObjectValue<LocalDate> {
 
-    private DateImpl(boolean isNull, Date value) {
+    private DateImpl(boolean isNull, LocalDate value) {
       super(isNull, Type.date(), value);
     }
 
     @Override
-    public Date getDate() {
+    public LocalDate getDate() {
       checkType(Type.date());
       checkNotNull();
       return value;
@@ -1324,21 +1324,21 @@ public abstract class Value implements Serializable {
     }
   }
 
-  private static class DateArrayImpl extends AbstractArrayValue<Date> {
+  private static class DateArrayImpl extends AbstractArrayValue<LocalDate> {
 
-    private DateArrayImpl(boolean isNull, @Nullable List<Date> values) {
+    private DateArrayImpl(boolean isNull, @Nullable List<LocalDate> values) {
       super(isNull, Type.date(), values);
     }
 
     @Override
-    public List<Date> getDateArray() {
+    public List<LocalDate> getDateArray() {
       checkType(getType());
       checkNotNull();
       return value;
     }
 
     @Override
-    void appendElement(StringBuilder b, Date element) {
+    void appendElement(StringBuilder b, LocalDate element) {
       b.append(element);
     }
   }

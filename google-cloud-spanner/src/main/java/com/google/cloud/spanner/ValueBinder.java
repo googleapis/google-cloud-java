@@ -17,9 +17,9 @@
 package com.google.cloud.spanner;
 
 import com.google.cloud.ByteArray;
-import com.google.cloud.Date;
 import com.google.cloud.Timestamp;
 import javax.annotation.Nullable;
+import org.joda.time.LocalDate;
 
 /**
  * An interface for binding a {@link Value} in some context. Users of the Cloud Spanner client
@@ -95,7 +95,7 @@ public abstract class ValueBinder<R> {
   }
 
   /** Binds to {@code Value.date(value)} */
-  public R to(@Nullable Date value) {
+  public R to(@Nullable LocalDate value) {
     return handle(Value.date(value));
   }
 
@@ -160,7 +160,7 @@ public abstract class ValueBinder<R> {
   }
 
   /** Binds to {@code Value.dateArray(values)} */
-  public R toDateArray(@Nullable Iterable<Date> values) {
+  public R toDateArray(@Nullable Iterable<LocalDate> values) {
     return handle(Value.dateArray(values));
   }
 }

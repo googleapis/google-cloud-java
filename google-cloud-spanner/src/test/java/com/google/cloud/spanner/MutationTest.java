@@ -20,7 +20,6 @@ import static com.google.common.testing.SerializableTester.reserializeAndAssert;
 import static com.google.common.truth.Truth.assertThat;
 
 import com.google.cloud.ByteArray;
-import com.google.cloud.Date;
 import com.google.cloud.Timestamp;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -30,6 +29,7 @@ import java.util.Arrays;
 import java.util.List;
 import org.hamcrest.Matcher;
 import org.hamcrest.MatcherAssert;
+import org.joda.time.LocalDate;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
@@ -420,7 +420,7 @@ public class MutationTest {
                 2.3,
                 ByteArray.fromBase64("abcd"),
                 Timestamp.ofTimeSecondsAndNanos(1, 2),
-                Date.fromYearMonthDay(2017, 04, 17))));
+                new LocalDate(2017, 04, 17))));
     reserializeAndAssert(Mutation.delete("test", KeySet.all()));
     reserializeAndAssert(
         Mutation.delete(
@@ -485,9 +485,9 @@ public class MutationTest {
         .set("timestampNull")
         .to((Timestamp) null)
         .set("date")
-        .to(Date.fromYearMonthDay(2017, 04, 17))
+        .to(new LocalDate(2017, 04, 17))
         .set("dateNull")
-        .to((Date) null)
+        .to((LocalDate) null)
         .set("stringArr")
         .toStringArray(ImmutableList.of("one", "two"))
         .set("stringArrNull")
@@ -497,9 +497,7 @@ public class MutationTest {
         .set("timestampArrNull")
         .toTimestampArray(null)
         .set("dateArr")
-        .toDateArray(
-            ImmutableList.of(
-                Date.fromYearMonthDay(2017, 04, 17), Date.fromYearMonthDay(2017, 04, 18)))
+        .toDateArray(ImmutableList.of(new LocalDate(2017, 04, 17), new LocalDate(2017, 04, 18)))
         .set("dateArrNull")
         .toDateArray(null);
   }

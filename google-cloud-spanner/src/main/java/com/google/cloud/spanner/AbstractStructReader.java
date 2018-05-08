@@ -19,9 +19,9 @@ package com.google.cloud.spanner;
 import static com.google.common.base.Preconditions.checkState;
 
 import com.google.cloud.ByteArray;
-import com.google.cloud.Date;
 import com.google.cloud.Timestamp;
 import java.util.List;
+import org.joda.time.LocalDate;
 
 /**
  * Base class for assisting {@link StructReader} implementations.
@@ -44,7 +44,7 @@ public abstract class AbstractStructReader implements StructReader {
 
   protected abstract Timestamp getTimestampInternal(int columnIndex);
 
-  protected abstract Date getDateInternal(int columnIndex);
+  protected abstract LocalDate getDateInternal(int columnIndex);
 
   protected abstract boolean[] getBooleanArrayInternal(int columnIndex);
 
@@ -64,7 +64,7 @@ public abstract class AbstractStructReader implements StructReader {
 
   protected abstract List<Timestamp> getTimestampListInternal(int columnIndex);
 
-  protected abstract List<Date> getDateListInternal(int columnIndex);
+  protected abstract List<LocalDate> getDateListInternal(int columnIndex);
 
   protected abstract List<Struct> getStructListInternal(int columnIndex);
 
@@ -167,13 +167,13 @@ public abstract class AbstractStructReader implements StructReader {
   }
 
   @Override
-  public Date getDate(int columnIndex) {
+  public LocalDate getDate(int columnIndex) {
     checkNonNullOfType(columnIndex, Type.date(), columnIndex);
     return getDateInternal(columnIndex);
   }
 
   @Override
-  public Date getDate(String columnName) {
+  public LocalDate getDate(String columnName) {
     int columnIndex = getColumnIndex(columnName);
     checkNonNullOfType(columnIndex, Type.date(), columnName);
     return getDateInternal(columnIndex);
@@ -297,13 +297,13 @@ public abstract class AbstractStructReader implements StructReader {
   }
 
   @Override
-  public List<Date> getDateList(int columnIndex) {
+  public List<LocalDate> getDateList(int columnIndex) {
     checkNonNullOfType(columnIndex, Type.array(Type.date()), columnIndex);
     return getDateListInternal(columnIndex);
   }
 
   @Override
-  public List<Date> getDateList(String columnName) {
+  public List<LocalDate> getDateList(String columnName) {
     int columnIndex = getColumnIndex(columnName);
     checkNonNullOfType(columnIndex, Type.array(Type.date()), columnName);
     return getDateListInternal(columnIndex);
