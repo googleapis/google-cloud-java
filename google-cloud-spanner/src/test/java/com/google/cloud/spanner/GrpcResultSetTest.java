@@ -39,13 +39,13 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import javax.annotation.Nullable;
-import org.joda.time.LocalDate;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
+import org.threeten.bp.LocalDate;
 
 /** Unit tests for {@link com.google.cloud.spanner.SpannerImpl.GrpcResultSet}. */
 @RunWith(JUnit4.class)
@@ -612,7 +612,7 @@ public class GrpcResultSetTest {
         Value.bytes(null),
         Value.timestamp(Timestamp.ofTimeSecondsAndNanos(1, 2)),
         Value.timestamp(null),
-        Value.date(new LocalDate(2017, 04, 17)),
+        Value.date(LocalDate.of(2017, 04, 17)),
         Value.date(null),
         Value.stringArray(ImmutableList.of("one", "two")),
         Value.stringArray(null),
@@ -622,7 +622,7 @@ public class GrpcResultSetTest {
         Value.int64Array((long[]) null),
         Value.timestampArray(ImmutableList.of(Timestamp.MAX_VALUE, Timestamp.MAX_VALUE)),
         Value.timestampArray(null),
-        Value.dateArray(ImmutableList.of(new LocalDate(2017, 4, 17), new LocalDate(2017, 5, 18))),
+        Value.dateArray(ImmutableList.of(LocalDate.of(2017, 4, 17), LocalDate.of(2017, 5, 18))),
         Value.dateArray(null));
   }
 

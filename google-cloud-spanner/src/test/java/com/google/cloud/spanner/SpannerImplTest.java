@@ -17,13 +17,10 @@
 package com.google.cloud.spanner;
 
 import static com.google.common.truth.Truth.assertThat;
-import static org.junit.Assert.fail;
 
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
-
 import java.util.HashMap;
 import java.util.Map;
-import org.joda.time.LocalDate;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -71,29 +68,5 @@ public class SpannerImplTest {
     session.close();
     // The same channelHint is passed for deleteSession (contained in "options").
     Mockito.verify(rpc).deleteSession(sessionName, options.getValue());
-  }
-
-  @Test
-  public void testParseLocalDate() {
-    String dateStr = "2016-09-18";
-    LocalDate date = SpannerImpl.parseLocalDate(dateStr);
-    assertThat(date.getYear()).isEqualTo(2016);
-    assertThat(date.getMonthOfYear()).isEqualTo(9);
-    assertThat(date.getDayOfMonth()).isEqualTo(18);
-    assertThat(date.toString()).isEqualTo(dateStr);
-
-    try {
-      SpannerImpl.parseLocalDate("2016-09-xy");
-      fail();
-    } catch (IllegalArgumentException e) {
-      // expected
-    }
-
-    try {
-      SpannerImpl.parseLocalDate("2016-13-99");
-      fail();
-    } catch (IllegalArgumentException e) {
-      // expected
-    }
   }
 }

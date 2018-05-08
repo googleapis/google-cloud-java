@@ -24,10 +24,10 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.util.Arrays;
-import org.joda.time.LocalDate;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
+import org.threeten.bp.LocalDate;
 
 /** Unit tests for {@link com.google.cloud.spanner.ValueBinder}. */
 @RunWith(JUnit4.class)
@@ -142,7 +142,7 @@ public class ValueBinderTest {
     }
 
     public static LocalDate defaultDate() {
-      return new LocalDate(2016, 9, 15);
+      return LocalDate.of(2016, 9, 15);
     }
 
     public static boolean[] defaultBooleanArray() {
@@ -183,7 +183,7 @@ public class ValueBinderTest {
     }
 
     public static Iterable<LocalDate> defaultDateIterable() {
-      return Arrays.asList(new LocalDate(2016, 9, 15), new LocalDate(2016, 9, 14));
+      return Arrays.asList(LocalDate.of(2016, 9, 15), LocalDate.of(2016, 9, 14));
     }
 
     static Object getDefault(java.lang.reflect.Type type)

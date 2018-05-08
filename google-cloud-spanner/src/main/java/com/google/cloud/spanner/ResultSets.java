@@ -22,7 +22,7 @@ import com.google.common.base.Preconditions;
 import com.google.common.collect.Lists;
 import com.google.spanner.v1.ResultSetStats;
 import java.util.List;
-import org.joda.time.LocalDate;
+import org.threeten.bp.LocalDate;
 
 /** Utility methods for working with {@link com.google.cloud.spanner.ResultSet}. */
 public final class ResultSets {

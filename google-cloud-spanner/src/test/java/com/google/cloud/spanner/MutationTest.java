@@ -29,12 +29,12 @@ import java.util.Arrays;
 import java.util.List;
 import org.hamcrest.Matcher;
 import org.hamcrest.MatcherAssert;
-import org.joda.time.LocalDate;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
+import org.threeten.bp.LocalDate;
 
 /** Unit tests for {@link com.google.cloud.spanner.Mutation}. */
 @RunWith(JUnit4.class)
@@ -420,7 +420,7 @@ public class MutationTest {
                 2.3,
                 ByteArray.fromBase64("abcd"),
                 Timestamp.ofTimeSecondsAndNanos(1, 2),
-                new LocalDate(2017, 04, 17))));
+                LocalDate.of(2017, 04, 17))));
     reserializeAndAssert(Mutation.delete("test", KeySet.all()));
     reserializeAndAssert(
         Mutation.delete(
@@ -485,7 +485,7 @@ public class MutationTest {
         .set("timestampNull")
         .to((Timestamp) null)
         .set("date")
-        .to(new LocalDate(2017, 04, 17))
+        .to(LocalDate.of(2017, 04, 17))
         .set("dateNull")
         .to((LocalDate) null)
         .set("stringArr")
@@ -497,7 +497,7 @@ public class MutationTest {
         .set("timestampArrNull")
         .toTimestampArray(null)
         .set("dateArr")
-        .toDateArray(ImmutableList.of(new LocalDate(2017, 04, 17), new LocalDate(2017, 04, 18)))
+        .toDateArray(ImmutableList.of(LocalDate.of(2017, 04, 17), LocalDate.of(2017, 04, 18)))
         .set("dateArrNull")
         .toDateArray(null);
   }

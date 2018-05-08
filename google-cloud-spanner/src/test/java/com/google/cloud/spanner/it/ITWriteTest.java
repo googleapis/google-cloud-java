@@ -45,7 +45,6 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import org.hamcrest.MatcherAssert;
-import org.joda.time.LocalDate;
 import org.junit.BeforeClass;
 import org.junit.ClassRule;
 import org.junit.Ignore;
@@ -55,6 +54,7 @@ import org.junit.experimental.categories.Category;
 import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
+import org.threeten.bp.LocalDate;
 
 /** Integration test for writing data to Cloud Spanner. */
 @Category(IntegrationTest.class)
@@ -306,7 +306,7 @@ public class ITWriteTest {
 
   @Test
   public void writeDate() {
-    LocalDate date = new LocalDate(2016, 9, 15);
+    LocalDate date = LocalDate.of(2016, 9, 15);
     write(baseInsert().set("DateValue").to(date).build());
     Struct row = readLastRow("DateValue");
     assertThat(row.isNull(0)).isFalse();
@@ -527,8 +527,8 @@ public class ITWriteTest {
 
   @Test
   public void writeDateArray() {
-    LocalDate d1 = new LocalDate(2016, 9, 18);
-    LocalDate d2 = new LocalDate(2016, 9, 19);
+    LocalDate d1 = LocalDate.of(2016, 9, 18);
+    LocalDate d2 = LocalDate.of(2016, 9, 19);
     write(baseInsert().set("DateArrayValue").toDateArray(Arrays.asList(d1, null, d2)).build());
     Struct row = readLastRow("DateArrayValue");
     assertThat(row.isNull(0)).isFalse();

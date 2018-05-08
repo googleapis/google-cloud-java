@@ -34,7 +34,7 @@ import java.util.List;
 import java.util.Objects;
 import javax.annotation.Nullable;
 import javax.annotation.concurrent.Immutable;
-import org.joda.time.LocalDate;
+import org.threeten.bp.LocalDate;
 
 /**
  * Represents a value to be consumed by the Cloud Spanner API. A value can be {@code NULL} or

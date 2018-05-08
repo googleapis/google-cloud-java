@@ -30,7 +30,6 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 import javax.annotation.Nullable;
-import org.joda.time.LocalDate;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -38,6 +37,7 @@ import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.mockito.Mockito;
+import org.threeten.bp.LocalDate;
 
 /** Unit tests for {@link AbstractStructReader} that cover all type combinations. */
 @RunWith(Parameterized.class)
@@ -163,13 +163,7 @@ public class AbstractStructReaderTypesTest {
             "getTimestamp",
             null
           },
-          {
-            Type.date(),
-            "getDateInternal",
-            SpannerImpl.parseLocalDate("2015-09-15"),
-            "getDate",
-            null
-          },
+          {Type.date(), "getDateInternal", LocalDate.parse("2015-09-15"), "getDate", null},
           {
             Type.array(Type.bool()),
             "getBooleanArrayInternal",
@@ -239,8 +233,7 @@ public class AbstractStructReaderTypesTest {
           {
             Type.array(Type.date()),
             "getDateListInternal",
-            Arrays.asList(
-                SpannerImpl.parseLocalDate("2015-09-15"), SpannerImpl.parseLocalDate("2015-09-14")),
+            Arrays.asList(LocalDate.parse("2015-09-15"), LocalDate.parse("2015-09-14")),
             "getDateList",
             null,
           },

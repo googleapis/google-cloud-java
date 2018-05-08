@@ -29,7 +29,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import javax.annotation.Nullable;
-import org.joda.time.LocalDate;
+import org.threeten.bp.LocalDate;
 
 /**
  * Represents a row key in a Cloud Spanner table or index. A key is a tuple of values constrained to

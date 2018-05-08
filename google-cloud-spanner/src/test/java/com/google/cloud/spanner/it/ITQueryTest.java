@@ -40,7 +40,6 @@ import com.google.spanner.v1.ResultSetStats;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-import org.joda.time.LocalDate;
 import org.junit.BeforeClass;
 import org.junit.ClassRule;
 import org.junit.Ignore;
@@ -50,6 +49,7 @@ import org.junit.experimental.categories.Category;
 import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
+import org.threeten.bp.LocalDate;
 
 /** Integration tests for query execution. */
 @Category(IntegrationTest.class)
@@ -250,7 +250,7 @@ public class ITQueryTest {
 
   @Test
   public void bindDate() {
-    LocalDate d = new LocalDate(2016, 9, 18);
+    LocalDate d = LocalDate.of(2016, 9, 18);
     Struct row = execute(Statement.newBuilder("SELECT @v").bind("v").to(d), Type.date());
     assertThat(row.isNull(0)).isFalse();
     assertThat(row.getDate(0)).isEqualTo(d);
@@ -465,8 +465,8 @@ public class ITQueryTest {
 
   @Test
   public void bindDateArray() {
-    LocalDate d1 = new LocalDate(2016, 9, 18);
-    LocalDate d2 = new LocalDate(2016, 9, 19);
+    LocalDate d1 = LocalDate.of(2016, 9, 18);
+    LocalDate d2 = LocalDate.of(2016, 9, 19);
 
     Struct row =
         execute(

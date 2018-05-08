@@ -21,7 +21,7 @@ import static com.google.common.base.Preconditions.checkState;
 import com.google.cloud.ByteArray;
 import com.google.cloud.Timestamp;
 import java.util.List;
-import org.joda.time.LocalDate;
+import org.threeten.bp.LocalDate;
 
 /**
  * Base class for assisting {@link StructReader} implementations.

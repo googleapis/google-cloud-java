@@ -20,7 +20,7 @@ import com.google.cloud.ByteArray;
 import com.google.cloud.Timestamp;
 import com.google.common.base.Preconditions;
 import java.util.List;
-import org.joda.time.LocalDate;
+import org.threeten.bp.LocalDate;
 
 /** Forwarding implements of StructReader */
 public class ForwardingStructReader implements StructReader {

@@ -31,7 +31,7 @@ import java.util.List;
 import java.util.Objects;
 import javax.annotation.Nullable;
 import javax.annotation.concurrent.Immutable;
-import org.joda.time.LocalDate;
+import org.threeten.bp.LocalDate;
 
 /**
  * Represents a value of {@link Type.Code#STRUCT}. Such values are a tuple of named and typed

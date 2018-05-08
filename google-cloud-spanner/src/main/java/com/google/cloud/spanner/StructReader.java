@@ -19,7 +19,7 @@ package com.google.cloud.spanner;
 import com.google.cloud.ByteArray;
 import com.google.cloud.Timestamp;
 import java.util.List;
-import org.joda.time.LocalDate;
+import org.threeten.bp.LocalDate;
 
 /**
  * A base interface for reading the fields of a {@code STRUCT}. The Cloud Spanner yields {@code

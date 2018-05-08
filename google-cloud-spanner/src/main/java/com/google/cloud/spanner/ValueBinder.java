@@ -19,7 +19,7 @@ package com.google.cloud.spanner;
 import com.google.cloud.ByteArray;
 import com.google.cloud.Timestamp;
 import javax.annotation.Nullable;
-import org.joda.time.LocalDate;
+import org.threeten.bp.LocalDate;
 
 /**
  * An interface for binding a {@link Value} in some context. Users of the Cloud Spanner client

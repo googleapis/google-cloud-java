@@ -24,7 +24,6 @@ import static com.google.common.base.Preconditions.checkState;
 
 import com.google.api.client.util.BackOff;
 import com.google.api.client.util.ExponentialBackOff;
-import com.google.api.core.InternalApi;
 import com.google.api.gax.paging.Page;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.BaseService;
@@ -106,7 +105,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.Nullable;
 import javax.annotation.concurrent.GuardedBy;
-import org.joda.time.LocalDate;
+import org.threeten.bp.LocalDate;
 
 /** Default implementation of the Cloud Spanner interface. */
 class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
@@ -2035,7 +2034,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
           return Timestamp.parseTimestamp(proto.getStringValue());
         case DATE:
           checkType(fieldType, proto, KindCase.STRING_VALUE);
-          return parseLocalDate(proto.getStringValue());
+          return LocalDate.parse(proto.getStringValue());
         case ARRAY:
           checkType(fieldType, proto, KindCase.LIST_VALUE);
           ListValue listValue = proto.getListValue();
@@ -2105,7 +2104,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
               list.add(
                   value.getKindCase() == KindCase.NULL_VALUE
                       ? null
-                      : parseLocalDate(value.getStringValue()));
+                      : LocalDate.parse(value.getStringValue()));
             }
             return list;
           }
@@ -2703,17 +2702,6 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
   private static NullPointerException throwNotNull(int columnIndex) {
     throw new NullPointerException(
         "Cannot call array getter for column " + columnIndex + " with null elements");
-  }
-
-  /** Parses the date in "YYYY-MM-DD" format. */
-  @InternalApi("visible for testing")
-  static LocalDate parseLocalDate(String dateString) {
-    String[] components = dateString.split("-");
-    Preconditions.checkArgument(components.length == 3, "want date in YYYY-MM-DD format");
-    return new LocalDate(
-        Integer.parseInt(components[0]),
-        Integer.parseInt(components[1]),
-        Integer.parseInt(components[2]));
   }
 
   /**
