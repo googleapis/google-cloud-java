@@ -97,7 +97,7 @@ public class CreateTopicAndPublishMessages {
         ApiFuture<String> future = publisher.publish(pubsubMessage);
 
         // Add an asynchronous callback to handle success / failure
-        ApiFuture.addCallback(future, newApiFutureCallback<String>()) {
+        ApiFuture.addCallback(future, new ApiFutureCallback<String>() {
 
           @Override
           public void onFailure(Throwable throwable) {
@@ -115,7 +115,7 @@ public class CreateTopicAndPublishMessages {
             // Once published, returns server-assigned message ids (unique within the topic)
             System.out.println(messageId);
           }
-        }
+        });
       }
     } finally {
       if (publisher != null) {
