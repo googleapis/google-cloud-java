@@ -24,6 +24,7 @@ import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.GrpcCallContext;
 import com.google.api.gax.grpc.GrpcTransportChannel;
+import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.FixedTransportChannelProvider;
 import com.google.api.gax.rpc.HeaderProvider;
@@ -50,8 +51,9 @@ import com.google.cloud.spanner.v1.stub.SpannerStubSettings;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableSet;
 import com.google.longrunning.GetOperationRequest;
-import com.google.longrunning.Operation;
+import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
+import com.google.spanner.admin.database.v1.CreateDatabaseMetadata;
 import com.google.spanner.admin.database.v1.CreateDatabaseRequest;
 import com.google.spanner.admin.database.v1.Database;
 import com.google.spanner.admin.database.v1.DropDatabaseRequest;
@@ -59,7 +61,9 @@ import com.google.spanner.admin.database.v1.GetDatabaseDdlRequest;
 import com.google.spanner.admin.database.v1.GetDatabaseRequest;
 import com.google.spanner.admin.database.v1.ListDatabasesRequest;
 import com.google.spanner.admin.database.v1.ListDatabasesResponse;
+import com.google.spanner.admin.database.v1.UpdateDatabaseDdlMetadata;
 import com.google.spanner.admin.database.v1.UpdateDatabaseDdlRequest;
+import com.google.spanner.admin.instance.v1.CreateInstanceMetadata;
 import com.google.spanner.admin.instance.v1.CreateInstanceRequest;
 import com.google.spanner.admin.instance.v1.DeleteInstanceRequest;
 import com.google.spanner.admin.instance.v1.GetInstanceConfigRequest;
@@ -70,6 +74,7 @@ import com.google.spanner.admin.instance.v1.ListInstanceConfigsRequest;
 import com.google.spanner.admin.instance.v1.ListInstanceConfigsResponse;
 import com.google.spanner.admin.instance.v1.ListInstancesRequest;
 import com.google.spanner.admin.instance.v1.ListInstancesResponse;
+import com.google.spanner.admin.instance.v1.UpdateInstanceMetadata;
 import com.google.spanner.admin.instance.v1.UpdateInstanceRequest;
 import com.google.spanner.v1.BeginTransactionRequest;
 import com.google.spanner.v1.CommitRequest;
@@ -93,6 +98,8 @@ import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 import javax.annotation.Nullable;
+
+import com.google.longrunning.Operation;
 
 /** Implementation of Cloud Spanner remote calls using Gapic libraries. */
 public class GapicSpannerRpc implements SpannerRpc {
@@ -249,26 +256,25 @@ public class GapicSpannerRpc implements SpannerRpc {
   }
 
   @Override
-  public Operation createInstance(String parent, String instanceId, Instance instance)
-      throws SpannerException {
+  public OperationFuture<Instance, CreateInstanceMetadata> createInstance(
+      String parent, String instanceId, Instance instance) throws SpannerException {
     CreateInstanceRequest request =
         CreateInstanceRequest.newBuilder()
             .setParent(parent)
             .setInstanceId(instanceId)
             .setInstance(instance)
             .build();
-
     GrpcCallContext context = newCallContext(null, parent);
-    return get(instanceStub.createInstanceCallable().futureCall(request, context));
+    return instanceStub.createInstanceOperationCallable().futureCall(request, context);
   }
 
   @Override
-  public Operation updateInstance(Instance instance, FieldMask fieldMask) throws SpannerException {
+  public OperationFuture<Instance, UpdateInstanceMetadata> updateInstance(
+      Instance instance, FieldMask fieldMask) throws SpannerException {
     UpdateInstanceRequest request =
         UpdateInstanceRequest.newBuilder().setInstance(instance).setFieldMask(fieldMask).build();
-    
     GrpcCallContext context = newCallContext(null, instance.getName());
-    return get(instanceStub.updateInstanceCallable().futureCall(request, context));
+    return instanceStub.updateInstanceOperationCallable().futureCall(request, context);
   }
 
   @Override
@@ -306,8 +312,8 @@ public class GapicSpannerRpc implements SpannerRpc {
   }
 
   @Override
-  public Operation createDatabase(String instanceName, String createDatabaseStatement,
-      Iterable<String> additionalStatements) throws SpannerException {
+  public OperationFuture<Database, CreateDatabaseMetadata> createDatabase(
+      String instanceName, String createDatabaseStatement, Iterable<String> additionalStatements) throws SpannerException {
     CreateDatabaseRequest request =
         CreateDatabaseRequest.newBuilder()
             .setParent(instanceName)
@@ -315,12 +321,12 @@ public class GapicSpannerRpc implements SpannerRpc {
             .addAllExtraStatements(additionalStatements)
             .build();
     GrpcCallContext context = newCallContext(null, instanceName);
-    return get(databaseStub.createDatabaseCallable().futureCall(request, context));
+    return databaseStub.createDatabaseOperationCallable().futureCall(request, context);
   }
 
   @Override
-  public Operation updateDatabaseDdl(String databaseName, Iterable<String> updateDatabaseStatements,
-      @Nullable String updateId) throws SpannerException {
+  public OperationFuture<Empty, UpdateDatabaseDdlMetadata> updateDatabaseDdl(
+      String databaseName, Iterable<String> updateDatabaseStatements, @Nullable String updateId) throws SpannerException {
     UpdateDatabaseDdlRequest request =
         UpdateDatabaseDdlRequest.newBuilder()
             .setDatabase(databaseName)
@@ -328,7 +334,7 @@ public class GapicSpannerRpc implements SpannerRpc {
             .setOperationId(MoreObjects.firstNonNull(updateId, ""))
             .build();
     GrpcCallContext context = newCallContext(null, databaseName);
-    return get(databaseStub.updateDatabaseDdlCallable().futureCall(request, context));
+    return databaseStub.updateDatabaseDdlOperationCallable().futureCall(request, context);
   }
 
   @Override

@@ -18,10 +18,12 @@ package com.google.cloud.spanner;
 
 import static com.google.common.base.Preconditions.checkState;
 
+import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.RetryOption;
 import com.google.cloud.spanner.testing.RemoteSpannerHelper;
 import com.google.common.collect.Iterators;
 import com.google.spanner.admin.instance.v1.CreateInstanceMetadata;
+import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.junit.rules.ExternalResource;
@@ -113,9 +115,13 @@ public class IntegrationTestEnv extends ExternalResource {
             .setDisplayName("Test instance")
             .setInstanceConfigId(configId)
             .build();
-    Operation<Instance, CreateInstanceMetadata> op = instanceAdminClient.createInstance(instance);
-    op = op.waitFor(RetryOption.initialRetryDelay(Duration.ofMillis(500L)));
-    Instance createdInstance = op.getResult();
+    OperationFuture<Instance, CreateInstanceMetadata> op = instanceAdminClient.createInstance(instance);
+    Instance createdInstance;
+    try {
+      createdInstance = op.get(500L, TimeUnit.MILLISECONDS);
+    } catch (Exception e) {
+      throw SpannerExceptionFactory.newSpannerException(e);
+    }
     logger.log(Level.INFO, "Created test instance: {0}", createdInstance.getId());
   }
 

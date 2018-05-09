@@ -22,17 +22,19 @@
 
 package com.google.cloud.examples.spanner.snippets;
 
+import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.Page;
 import com.google.common.collect.Iterables;
 import com.google.cloud.spanner.DatabaseAdminClient;
 import com.google.cloud.spanner.Options;
 import com.google.cloud.spanner.Database;
-import com.google.cloud.spanner.Operation;
+import com.google.cloud.spanner.SpannerExceptionFactory;
 import com.google.spanner.admin.database.v1.CreateDatabaseMetadata;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 
 /**
  * This class contains snippets for {@link DatabaseAdminClient} interface.
@@ -53,7 +55,7 @@ public class DatabaseAdminClientSnippets {
   // [VARIABLE my_database_id]
   public Database createDatabase(String instanceId, String databaseId) {
     // [START createDatabase]
-    Operation<Database, CreateDatabaseMetadata> op = dbAdminClient
+    OperationFuture<Database, CreateDatabaseMetadata> op = dbAdminClient
         .createDatabase(
             instanceId,
             databaseId,
@@ -70,9 +72,13 @@ public class DatabaseAdminClientSnippets {
                     + "  AlbumTitle   STRING(MAX)\n"
                     + ") PRIMARY KEY (SingerId, AlbumId),\n"
                     + "  INTERLEAVE IN PARENT Singers ON DELETE CASCADE"));
-    Database db = op.waitFor().getResult();
-    // [END createDatabase]
-    return db;
+    try {
+      return op.get();
+      // [END createDatabase]
+    } catch (ExecutionException | InterruptedException e) {
+      // DO error handing
+    }
+    return null;
   }
 
   /**
@@ -96,10 +102,14 @@ public class DatabaseAdminClientSnippets {
   // [VARIABLE my_database_id]
   public void updateDatabaseDdl(String instanceId, String databaseId) {
     // [START updateDatabaseDdl]
-    dbAdminClient.updateDatabaseDdl(instanceId, 
+    try {
+      dbAdminClient.updateDatabaseDdl(instanceId, 
         databaseId, 
         Arrays.asList("ALTER TABLE Albums ADD COLUMN MarketingBudget INT64"), 
-        null).waitFor();
+        null).get();
+    } catch (ExecutionException | InterruptedException e) {
+      // DO error handling
+    }
     // [END updateDatabaseDdl]
   }
 

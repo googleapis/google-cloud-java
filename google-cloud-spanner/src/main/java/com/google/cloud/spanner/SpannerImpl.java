@@ -24,6 +24,11 @@ import static com.google.common.base.Preconditions.checkState;
 
 import com.google.api.client.util.BackOff;
 import com.google.api.client.util.ExponentialBackOff;
+import com.google.api.core.ApiFunction;
+import com.google.api.gax.grpc.ProtoOperationTransformers;
+import com.google.api.gax.longrunning.OperationFuture;
+import com.google.api.gax.longrunning.OperationFutureImpl;
+import com.google.api.gax.longrunning.OperationSnapshot;
 import com.google.api.gax.paging.Page;
 import com.google.api.gax.rpc.ServerStream;
 import com.google.api.pathtemplate.PathTemplate;
@@ -33,11 +38,9 @@ import com.google.cloud.Date;
 import com.google.cloud.PageImpl;
 import com.google.cloud.PageImpl.NextPageFetcher;
 import com.google.cloud.Timestamp;
-import com.google.cloud.spanner.Operation.Parser;
 import com.google.cloud.spanner.Options.ListOption;
 import com.google.cloud.spanner.Options.QueryOption;
 import com.google.cloud.spanner.Options.ReadOption;
-import com.google.cloud.spanner.spi.v1.GapicSpannerRpc;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import com.google.cloud.spanner.spi.v1.SpannerRpc.Paginated;
 import com.google.common.annotations.VisibleForTesting;
@@ -53,6 +56,7 @@ import com.google.common.util.concurrent.ListenableFuture;
 import com.google.common.util.concurrent.Uninterruptibles;
 import com.google.protobuf.Any;
 import com.google.protobuf.ByteString;
+import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import com.google.protobuf.InvalidProtocolBufferException;
 import com.google.protobuf.ListValue;
@@ -440,27 +444,31 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     }
 
     @Override
-    public Operation<Database, CreateDatabaseMetadata> createDatabase(
+    public OperationFuture<Database, CreateDatabaseMetadata> createDatabase(
         String instanceId, String databaseId, Iterable<String> statements) throws SpannerException {
       // CreateDatabase() is not idempotent, so we're not retrying this request.
       String instanceName = getInstanceName(instanceId);
       String createStatement = "CREATE DATABASE `" + databaseId + "`";
-      com.google.longrunning.Operation op =
-          rpc.createDatabase(instanceName, createStatement, statements);
-      return Operation.create(
-          rpc,
-          op,
-          new Parser<Database, CreateDatabaseMetadata>() {
+      OperationFuture<com.google.spanner.admin.database.v1.Database, CreateDatabaseMetadata>
+          rawOperationFuture = rpc.createDatabase(instanceName, createStatement, statements);
+      return new OperationFutureImpl(
+          rawOperationFuture.getPollingFuture(),
+          rawOperationFuture.getInitialFuture(),
+          new ApiFunction<OperationSnapshot, Database>() {
             @Override
-            public Database parseResult(Any response) {
+            public Database apply(OperationSnapshot snapshot) {
               return Database.fromProto(
-                  unpack(response, com.google.spanner.admin.database.v1.Database.class),
+                  ProtoOperationTransformers.ResponseTransformer.create(
+                      com.google.spanner.admin.database.v1.Database.class)
+                          .apply(snapshot),
                   DatabaseAdminClientImpl.this);
             }
-
+          },
+          ProtoOperationTransformers.MetadataTransformer.create(CreateDatabaseMetadata.class),
+          new ApiFunction<Exception, Database>() {
             @Override
-            public CreateDatabaseMetadata parseMetadata(Any metadata) {
-              return unpack(metadata, CreateDatabaseMetadata.class);
+            public Database apply(Exception e) {
+              throw SpannerExceptionFactory.newSpannerException(e);
             }
           });
     }
@@ -479,7 +487,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     }
 
     @Override
-    public Operation<Void, UpdateDatabaseDdlMetadata> updateDatabaseDdl(
+    public OperationFuture<Void, UpdateDatabaseDdlMetadata> updateDatabaseDdl(
         final String instanceId,
         final String databaseId,
         final Iterable<String> statements,
@@ -487,48 +495,29 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
         throws SpannerException {
       final String dbName = getDatabaseName(instanceId, databaseId);
       final String opId = operationId != null ? operationId : randomOperationId();
-      Callable<Operation<Void, UpdateDatabaseDdlMetadata>> callable =
-          new Callable<Operation<Void, UpdateDatabaseDdlMetadata>>() {
+      // TODO(hzyi)
+      // Spanner checks the exception and if the error code is ALREADY_EXISTS
+      // it creates a new Operation instead of throwing the exception. This
+      // feature is not implemented in this PR but will come later
+      OperationFuture<Empty, UpdateDatabaseDdlMetadata> rawOperationFuture =
+          rpc.updateDatabaseDdl(dbName, statements, opId);
+      return new OperationFutureImpl(
+          rawOperationFuture.getPollingFuture(),
+          rawOperationFuture.getInitialFuture(),
+          new ApiFunction<OperationSnapshot, Void>() {
             @Override
-            public Operation<Void, UpdateDatabaseDdlMetadata> call() {
-              com.google.longrunning.Operation op = null;
-              try {
-                op = rpc.updateDatabaseDdl(dbName, statements, opId);
-              } catch (SpannerException e) {
-                if (e.getErrorCode() == ErrorCode.ALREADY_EXISTS) {
-                  String opName =
-                      OP_NAME_TEMPLATE.instantiate(
-                          "project",
-                          projectId,
-                          "instance",
-                          instanceId,
-                          "database",
-                          databaseId,
-                          "operation",
-                          opId);
-                  op = com.google.longrunning.Operation.newBuilder().setName(opName).build();
-                } else {
-                  throw e;
-                }
-              }
-              return Operation.create(
-                  rpc,
-                  op,
-                  new Parser<Void, UpdateDatabaseDdlMetadata>() {
-                    @Override
-                    public Void parseResult(Any response) {
-                      return null;
-                    }
-
-                    @Override
-                    public UpdateDatabaseDdlMetadata parseMetadata(Any metadata) {
-                      return unpack(metadata, UpdateDatabaseDdlMetadata.class);
-                    }
-                  });
+            public Void apply(OperationSnapshot snapshot) {
+              return null;
             }
-          };
-      return runWithRetries(callable);
-    }
+          },
+          ProtoOperationTransformers.MetadataTransformer.create(UpdateDatabaseDdlMetadata.class),
+          new ApiFunction<Exception, Database>() {
+            @Override
+            public Database apply(Exception e) {
+              throw SpannerExceptionFactory.newSpannerException(e);
+            }
+          });
+    }  
 
     @Override
     public void dropDatabase(String instanceId, String databaseId) throws SpannerException {
@@ -643,26 +632,31 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     }
 
     @Override
-    public Operation<Instance, CreateInstanceMetadata> createInstance(InstanceInfo instance)
+    public OperationFuture<Instance, CreateInstanceMetadata> createInstance(InstanceInfo instance)
         throws SpannerException {
       String projectName = PROJECT_NAME_TEMPLATE.instantiate("project", projectId);
-      com.google.longrunning.Operation op =
+      OperationFuture<com.google.spanner.admin.instance.v1.Instance, CreateInstanceMetadata> rawOperationFuture =
           rpc.createInstance(projectName, instance.getId().getInstance(), instance.toProto());
-      return Operation.create(
-          rpc,
-          op,
-          new Parser<Instance, CreateInstanceMetadata>() {
+      
+      return new OperationFutureImpl<Instance, CreateInstanceMetadata>(
+          rawOperationFuture.getPollingFuture(),
+          rawOperationFuture.getInitialFuture(),
+          new ApiFunction<OperationSnapshot, Instance>() {
             @Override
-            public Instance parseResult(Any response) {
+            public Instance apply(OperationSnapshot snapshot) {
               return Instance.fromProto(
-                  unpack(response, com.google.spanner.admin.instance.v1.Instance.class),
+                  ProtoOperationTransformers.ResponseTransformer.create(
+                      com.google.spanner.admin.instance.v1.Instance.class)
+                          .apply(snapshot),
                   InstanceAdminClientImpl.this,
                   dbClient);
             }
-
+          },
+          ProtoOperationTransformers.MetadataTransformer.create(CreateInstanceMetadata.class),
+          new ApiFunction<Exception, Instance>() {
             @Override
-            public CreateInstanceMetadata parseMetadata(Any metadata) {
-              return unpack(metadata, CreateInstanceMetadata.class);
+            public Instance apply(Exception e) {
+              throw SpannerExceptionFactory.newSpannerException(e);
             }
           });
     }
@@ -717,28 +711,34 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     }
 
     @Override
-    public Operation<Instance, UpdateInstanceMetadata> updateInstance(
+    public OperationFuture<Instance, UpdateInstanceMetadata> updateInstance(
         InstanceInfo instance, InstanceInfo.InstanceField... fieldsToUpdate) {
       FieldMask fieldMask =
           fieldsToUpdate.length == 0
               ? InstanceInfo.InstanceField.toFieldMask(InstanceInfo.InstanceField.values())
               : InstanceInfo.InstanceField.toFieldMask(fieldsToUpdate);
-      com.google.longrunning.Operation op = rpc.updateInstance(instance.toProto(), fieldMask);
-      return Operation.create(
-          rpc,
-          op,
-          new Parser<Instance, UpdateInstanceMetadata>() {
+
+      OperationFuture<com.google.spanner.admin.instance.v1.Instance, UpdateInstanceMetadata>
+          rawOperationFuture = rpc.updateInstance(instance.toProto(), fieldMask);
+      return new OperationFutureImpl<Instance, UpdateInstanceMetadata>(
+          rawOperationFuture.getPollingFuture(),
+          rawOperationFuture.getInitialFuture(),
+          new ApiFunction<OperationSnapshot, Instance>() {
             @Override
-            public Instance parseResult(Any response) {
+            public Instance apply(OperationSnapshot snapshot) {
               return Instance.fromProto(
-                  unpack(response, com.google.spanner.admin.instance.v1.Instance.class),
+                  ProtoOperationTransformers.ResponseTransformer.create(
+                      com.google.spanner.admin.instance.v1.Instance.class)
+                          .apply(snapshot),
                   InstanceAdminClientImpl.this,
                   dbClient);
             }
-
+          },
+          ProtoOperationTransformers.MetadataTransformer.create(UpdateInstanceMetadata.class),
+          new ApiFunction<Exception, Instance>() {
             @Override
-            public UpdateInstanceMetadata parseMetadata(Any metadata) {
-              return unpack(metadata, UpdateInstanceMetadata.class);
+            public Instance apply(Exception e) {
+              throw SpannerExceptionFactory.newSpannerException(e);
             }
           });
     }

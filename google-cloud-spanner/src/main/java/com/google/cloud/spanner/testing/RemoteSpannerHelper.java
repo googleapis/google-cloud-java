@@ -16,6 +16,7 @@
 
 package com.google.cloud.spanner.testing;
 
+import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.spanner.BatchClient;
 import com.google.cloud.spanner.Database;
 import com.google.cloud.spanner.DatabaseClient;
@@ -23,6 +24,7 @@ import com.google.cloud.spanner.InstanceId;
 import com.google.cloud.spanner.Operation;
 import com.google.cloud.spanner.Spanner;
 import com.google.cloud.spanner.SpannerException;
+import com.google.cloud.spanner.SpannerExceptionFactory;
 import com.google.cloud.spanner.SpannerOptions;
 import com.google.spanner.admin.database.v1.CreateDatabaseMetadata;
 import java.util.ArrayList;
@@ -95,13 +97,16 @@ public class RemoteSpannerHelper {
    */
   public Database createTestDatabase(Iterable<String> statements) throws SpannerException {
     String dbId = getUniqueDatabaseId();
-    Operation<Database, CreateDatabaseMetadata> op =
+    try {
+      OperationFuture<Database, CreateDatabaseMetadata> op =
         client.getDatabaseAdminClient().createDatabase(instanceId.getInstance(), dbId, statements);
-    op = op.waitFor();
-    Database db = op.getResult();
-    logger.log(Level.FINE, "Created test database {0}", db.getId());
-    dbs.add(db);
+      Database db = op.get();
+      logger.log(Level.FINE, "Created test database {0}", db.getId());
+      dbs.add(db);
     return db;
+    } catch (Exception e) {
+      throw SpannerExceptionFactory.newSpannerException(e);
+    }
   }
 
   /** Deletes all the databases created via {@code createTestDatabase}. Shuts down the client. */

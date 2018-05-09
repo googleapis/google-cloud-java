@@ -16,6 +16,7 @@
 
 package com.google.cloud.spanner;
 
+import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.Page;
 import com.google.cloud.spanner.Options.ListOption;
 import com.google.spanner.admin.instance.v1.CreateInstanceMetadata;
@@ -59,7 +60,7 @@ public interface InstanceAdminClient {
    *   <li> The instance's allocated resource levels are readable via the
    * </ul>
    */
-  Operation<Instance, CreateInstanceMetadata> createInstance(InstanceInfo instance)
+  OperationFuture<Instance, CreateInstanceMetadata> createInstance(InstanceInfo instance)
       throws SpannerException;
 
   /** Gets an instance. */
@@ -113,7 +114,7 @@ public interface InstanceAdminClient {
    *   <li> The instance's new resource levels are readable via the API.
    * </ul>
    */
-  Operation<Instance, UpdateInstanceMetadata> updateInstance(
+  OperationFuture<Instance, UpdateInstanceMetadata> updateInstance(
       InstanceInfo instance, InstanceInfo.InstanceField... fieldsToUpdate);
 
   /** Returns a builder for {@code Instance} object with the given id. */

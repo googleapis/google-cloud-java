@@ -16,6 +16,7 @@
 
 package com.google.cloud.spanner;
 
+import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.Page;
 import com.google.cloud.spanner.Options.ListOption;
 import com.google.spanner.admin.database.v1.CreateDatabaseMetadata;
@@ -58,7 +59,7 @@ public interface DatabaseAdminClient {
    * @param statements DDL statements to run while creating the database, for example {@code CREATE
    *     TABLE MyTable ( ... )}. This should not include {@code CREATE DATABASE} statement.
    */
-  Operation<Database, CreateDatabaseMetadata> createDatabase(
+  OperationFuture<Database, CreateDatabaseMetadata> createDatabase(
       String instanceId, String databaseId, Iterable<String> statements) throws SpannerException;
 
   /** 
@@ -97,7 +98,7 @@ public interface DatabaseAdminClient {
    *     one. This must be unique within a database abd must be a valid identifier
    *     [a-zA-Z][a-zA-Z0-9_]*.
    */
-  Operation<Void, UpdateDatabaseDdlMetadata> updateDatabaseDdl(
+  OperationFuture<Void, UpdateDatabaseDdlMetadata> updateDatabaseDdl(
       String instanceId,
       String databaseId,
       Iterable<String> statements,
