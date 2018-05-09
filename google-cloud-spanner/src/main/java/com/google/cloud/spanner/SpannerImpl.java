@@ -38,11 +38,9 @@ import com.google.cloud.Date;
 import com.google.cloud.PageImpl;
 import com.google.cloud.PageImpl.NextPageFetcher;
 import com.google.cloud.Timestamp;
-import com.google.cloud.spanner.Operation.Parser;
 import com.google.cloud.spanner.Options.ListOption;
 import com.google.cloud.spanner.Options.QueryOption;
 import com.google.cloud.spanner.Options.ReadOption;
-import com.google.cloud.spanner.spi.v1.GapicSpannerRpc;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import com.google.cloud.spanner.spi.v1.SpannerRpc.Paginated;
 import com.google.common.annotations.VisibleForTesting;
@@ -497,11 +495,12 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
         throws SpannerException {
       final String dbName = getDatabaseName(instanceId, databaseId);
       final String opId = operationId != null ? operationId : randomOperationId();
-      // TODO(hzyi) 
+      // TODO(hzyi)
       // Spanner checks the exception and if the error code is ALREADY_EXISTS
       // it creates a new Operation instead of throwing the exception. This
       // feature is not implemented in this PR but will come later
-      OperationFuture rawOperationFuture = rpc.updateDatabaseDdl(dbName, statements, opId);
+      OperationFuture<Empty, UpdateDatabaseDdlMetadata> rawOperationFuture =
+          rpc.updateDatabaseDdl(dbName, statements, opId);
       return new OperationFutureImpl(
           rawOperationFuture.getPollingFuture(),
           rawOperationFuture.getInitialFuture(),

@@ -249,11 +249,6 @@ class OperationFutureUtil {
 
       @Override
       public ResponseT get() throws ExecutionException, InterruptedException {
-        // if (completedSnapshot.getErrorCode().getCode().equals(StatusCode.Code.OK)) {
-        // return (ResponseT) completedSnapshot.getResponse();
-        // }
-        // throw new ExecutionException(
-        //     new ApiException(null, completedSnapshot.getErrorCode(), false));
         return (ResponseT) pollingFuture.get().getResponse();
       }
 

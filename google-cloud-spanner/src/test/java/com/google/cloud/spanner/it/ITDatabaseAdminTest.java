@@ -110,6 +110,7 @@ public class ITDatabaseAdminTest {
 
   @Ignore("More work needs to be done")
   @Test
+  // TODO(hzyi)
   // Changing the surface to OperationFuture breaks updateDatabaseDdl in the case
   // that there is already a longrunning operation running. Disabling this test for 
   // this PR and I will fix this in the next PR. 
