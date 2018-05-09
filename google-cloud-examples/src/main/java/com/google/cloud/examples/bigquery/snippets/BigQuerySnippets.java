@@ -168,9 +168,9 @@ public class BigQuerySnippets {
    */
   // [TARGET delete(String, DatasetDeleteOption...)]
   // [VARIABLE "my_dataset_name"]
-  public Boolean deleteDataset(String datasetName) {
+  public boolean deleteDataset(String datasetName) {
     // [START ]
-    Boolean deleted = bigquery.delete(datasetName, DatasetDeleteOption.deleteContents());
+    boolean deleted = bigquery.delete(datasetName, DatasetDeleteOption.deleteContents());
     if (deleted) {
       // the dataset was deleted
     } else {
@@ -186,10 +186,10 @@ public class BigQuerySnippets {
   // [TARGET delete(DatasetId, DatasetDeleteOption...)]
   // [VARIABLE "my_project_id"]
   // [VARIABLE "my_dataset_name"]
-  public Boolean deleteDatasetFromId(String projectId, String datasetName) {
+  public boolean deleteDatasetFromId(String projectId, String datasetName) {
     // [START bigquery_delete_dataset]
     DatasetId datasetId = DatasetId.of(projectId, datasetName);
-    Boolean deleted = bigquery.delete(datasetId, DatasetDeleteOption.deleteContents());
+    boolean deleted = bigquery.delete(datasetId, DatasetDeleteOption.deleteContents());
     if (deleted) {
       // the dataset was deleted
     } else {
@@ -205,9 +205,9 @@ public class BigQuerySnippets {
   // [TARGET delete(String, String)]
   // [VARIABLE "my_dataset_name"]
   // [VARIABLE "my_table_name"]
-  public Boolean deleteTable(String datasetName, String tableName) {
+  public boolean deleteTable(String datasetName, String tableName) {
     // [START ]
-    Boolean deleted = bigquery.delete(datasetName, tableName);
+    boolean deleted = bigquery.delete(datasetName, tableName);
     if (deleted) {
       // the table was deleted
     } else {
@@ -224,10 +224,10 @@ public class BigQuerySnippets {
   // [VARIABLE "my_project_id"]
   // [VARIABLE "my_dataset_name"]
   // [VARIABLE "my_table_name"]
-  public Boolean deleteTableFromId(String projectId, String datasetName, String tableName) {
+  public boolean deleteTableFromId(String projectId, String datasetName, String tableName) {
     // [START bigquery_delete_table]
     TableId tableId = TableId.of(projectId, datasetName, tableName);
-    Boolean deleted = bigquery.delete(tableId);
+    boolean deleted = bigquery.delete(tableId);
     if (deleted) {
       // the table was deleted
     } else {

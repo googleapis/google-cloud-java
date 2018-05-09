@@ -671,7 +671,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * <p>Example of deleting a dataset from its id, even if non-empty.
    * <pre> {@code
    * String datasetName = "my_dataset_name";
-   * Boolean deleted = bigquery.delete(datasetName, DatasetDeleteOption.deleteContents());
+   * boolean deleted = bigquery.delete(datasetName, DatasetDeleteOption.deleteContents());
    * if (deleted) {
    *   // the dataset was deleted
    * } else {
@@ -692,7 +692,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * String projectId = "my_project_id";
    * String datasetName = "my_dataset_name";
    * DatasetId datasetId = DatasetId.of(projectId, datasetName);
-   * Boolean deleted = bigquery.delete(datasetId, DatasetDeleteOption.deleteContents());
+   * boolean deleted = bigquery.delete(datasetId, DatasetDeleteOption.deleteContents());
    * if (deleted) {
    *   // the dataset was deleted
    * } else {
@@ -712,7 +712,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * <pre> {@code
    * String datasetName = "my_dataset_name";
    * String tableName = "my_table_name";
-   * Boolean deleted = bigquery.delete(datasetName, tableName);
+   * boolean deleted = bigquery.delete(datasetName, tableName);
    * if (deleted) {
    *   // the table was deleted
    * } else {
@@ -734,7 +734,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * String datasetName = "my_dataset_name";
    * String tableName = "my_table_name";
    * TableId tableId = TableId.of(projectId, datasetName, tableName);
-   * Boolean deleted = bigquery.delete(tableId);
+   * boolean deleted = bigquery.delete(tableId);
    * if (deleted) {
    *   // the table was deleted
    * } else {
