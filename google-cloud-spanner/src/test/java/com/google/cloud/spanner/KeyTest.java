@@ -20,12 +20,12 @@ import static com.google.common.testing.SerializableTester.reserializeAndAssert;
 import static com.google.common.truth.Truth.assertThat;
 
 import com.google.cloud.ByteArray;
-import com.google.cloud.Date;
 import com.google.cloud.Timestamp;
 import com.google.common.testing.EqualsTester;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
+import org.threeten.bp.LocalDate;
 
 /** Unit tests for {@link com.google.cloud.spanner.Key}. */
 @RunWith(JUnit4.class)
@@ -58,7 +58,7 @@ public class KeyTest {
             "x",
             ByteArray.copyFrom("y"),
             Timestamp.parseTimestamp(timestamp),
-            Date.parseDate(date));
+            LocalDate.parse(date));
     assertThat(k.size()).isEqualTo(10);
     assertThat(k.getParts())
         .containsExactly(
@@ -71,7 +71,7 @@ public class KeyTest {
             "x",
             ByteArray.copyFrom("y"),
             Timestamp.parseTimestamp(timestamp),
-            Date.parseDate(date))
+            LocalDate.parse(date))
         .inOrder();
 
     // Singleton null key.
@@ -95,7 +95,7 @@ public class KeyTest {
             .append("x")
             .append(ByteArray.copyFrom("y"))
             .append(Timestamp.parseTimestamp(timestamp))
-            .append(Date.parseDate(date))
+            .append(LocalDate.parse(date))
             .build();
     assertThat(k.size()).isEqualTo(10);
     assertThat(k.getParts())
@@ -109,7 +109,7 @@ public class KeyTest {
             "x",
             ByteArray.copyFrom("y"),
             Timestamp.parseTimestamp(timestamp),
-            Date.parseDate(date))
+            LocalDate.parse(date))
         .inOrder();
   }
 
@@ -134,7 +134,7 @@ public class KeyTest {
     assertThat(Key.of(Timestamp.parseTimestamp(timestamp)).toString())
         .isEqualTo("[" + timestamp + "]");
     String date = "2015-09-15";
-    assertThat(Key.of(Date.parseDate(date)).toString()).isEqualTo("[" + date + "]");
+    assertThat(Key.of(LocalDate.parse(date)).toString()).isEqualTo("[" + date + "]");
     assertThat(Key.of(1, 2, 3).toString()).isEqualTo("[1,2,3]");
   }
 
@@ -153,7 +153,7 @@ public class KeyTest {
         Key.newBuilder().append((String) null).build(),
         Key.newBuilder().append((ByteArray) null).build(),
         Key.newBuilder().append((Timestamp) null).build(),
-        Key.newBuilder().append((Date) null).build(),
+        Key.newBuilder().append((LocalDate) null).build(),
         Key.newBuilder().appendObject(null).build());
 
     tester.addEqualityGroup(Key.of(true), Key.newBuilder().append(true).build());
@@ -169,7 +169,7 @@ public class KeyTest {
         Key.of(ByteArray.copyFrom("a")), Key.newBuilder().append(ByteArray.copyFrom("a")).build());
     Timestamp t = Timestamp.parseTimestamp("2015-09-15T00:00:00Z");
     tester.addEqualityGroup(Key.of(t), Key.newBuilder().append(t).build());
-    Date d = Date.parseDate("2016-09-15");
+    LocalDate d = LocalDate.parse("2016-09-15");
     tester.addEqualityGroup(Key.of(d), Key.newBuilder().append(d).build());
     tester.addEqualityGroup(Key.of("a", 2, null));
 
@@ -186,7 +186,7 @@ public class KeyTest {
     reserializeAndAssert(Key.of("xyz"));
     reserializeAndAssert(Key.of(ByteArray.copyFrom("xyz")));
     reserializeAndAssert(Key.of(Timestamp.parseTimestamp("2015-09-15T00:00:00Z")));
-    reserializeAndAssert(Key.of(Date.parseDate("2015-09-15")));
+    reserializeAndAssert(Key.of(LocalDate.parse("2015-09-15")));
     reserializeAndAssert(Key.of(1, 2, 3));
   }
 }

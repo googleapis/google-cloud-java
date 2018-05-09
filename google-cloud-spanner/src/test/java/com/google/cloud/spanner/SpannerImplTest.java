@@ -19,7 +19,6 @@ package com.google.cloud.spanner;
 import static com.google.common.truth.Truth.assertThat;
 
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
-
 import java.util.HashMap;
 import java.util.Map;
 import org.junit.Before;

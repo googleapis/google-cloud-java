@@ -28,7 +28,6 @@ import com.google.api.gax.paging.Page;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.BaseService;
 import com.google.cloud.ByteArray;
-import com.google.cloud.Date;
 import com.google.cloud.PageImpl;
 import com.google.cloud.PageImpl.NextPageFetcher;
 import com.google.cloud.Timestamp;
@@ -81,7 +80,6 @@ import io.opencensus.trace.AttributeValue;
 import io.opencensus.trace.Span;
 import io.opencensus.trace.Tracer;
 import io.opencensus.trace.Tracing;
-
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.AbstractList;
@@ -107,6 +105,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.Nullable;
 import javax.annotation.concurrent.GuardedBy;
+import org.threeten.bp.LocalDate;
 
 /** Default implementation of the Cloud Spanner interface. */
 class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
@@ -1768,7 +1767,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     }
 
     @Override
-    protected Date getDateInternal(int columnIndex) {
+    protected LocalDate getDateInternal(int columnIndex) {
       return currRow().getDateInternal(columnIndex);
     }
 
@@ -1818,7 +1817,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     }
 
     @Override
-    protected List<Date> getDateListInternal(int columnIndex) {
+    protected List<LocalDate> getDateListInternal(int columnIndex) {
       return currRow().getDateListInternal(columnIndex);
     }
 
@@ -1947,7 +1946,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
             builder.set(fieldName).to((Timestamp) value);
             break;
           case DATE:
-            builder.set(fieldName).to((Date) value);
+            builder.set(fieldName).to((LocalDate) value);
             break;
           case ARRAY:
             switch (fieldType.getArrayElementType().getCode()) {
@@ -1970,7 +1969,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
                 builder.set(fieldName).toTimestampArray((Iterable<Timestamp>) value);
                 break;
               case DATE:
-                builder.set(fieldName).toDateArray((Iterable<Date>) value);
+                builder.set(fieldName).toDateArray((Iterable<LocalDate>) value);
                 break;
               case STRUCT:
                 builder.add(fieldName, fieldType.getArrayElementType().getStructFields(), (Iterable<Struct>) value);
@@ -2035,7 +2034,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
           return Timestamp.parseTimestamp(proto.getStringValue());
         case DATE:
           checkType(fieldType, proto, KindCase.STRING_VALUE);
-          return Date.parseDate(proto.getStringValue());
+          return LocalDate.parse(proto.getStringValue());
         case ARRAY:
           checkType(fieldType, proto, KindCase.LIST_VALUE);
           ListValue listValue = proto.getListValue();
@@ -2105,7 +2104,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
               list.add(
                   value.getKindCase() == KindCase.NULL_VALUE
                       ? null
-                      : Date.parseDate(value.getStringValue()));
+                      : LocalDate.parse(value.getStringValue()));
             }
             return list;
           }
@@ -2195,8 +2194,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     }
 
     @Override
-    protected Date getDateInternal(int columnIndex) {
-      return (Date) rowData.get(columnIndex);
+    protected LocalDate getDateInternal(int columnIndex) {
+      return (LocalDate) rowData.get(columnIndex);
     }
 
     @Override
@@ -2258,9 +2257,9 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     }
 
     @Override
-    @SuppressWarnings("unchecked") // We know ARRAY<DATE> produces a List<Date>.
-    protected List<Date> getDateListInternal(int columnIndex) {
-      return Collections.unmodifiableList((List<Date>) rowData.get(columnIndex));
+    @SuppressWarnings("unchecked") // We know ARRAY<DATE> produces a List<LocalDate>.
+    protected List<LocalDate> getDateListInternal(int columnIndex) {
+      return Collections.unmodifiableList((List<LocalDate>) rowData.get(columnIndex));
     }
 
     @Override

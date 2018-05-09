@@ -19,7 +19,6 @@ package com.google.cloud.spanner;
 import static com.google.common.truth.Truth.assertThat;
 
 import com.google.cloud.ByteArray;
-import com.google.cloud.Date;
 import com.google.cloud.Timestamp;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -28,6 +27,7 @@ import java.util.Arrays;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
+import org.threeten.bp.LocalDate;
 
 /** Unit tests for {@link com.google.cloud.spanner.ValueBinder}. */
 @RunWith(JUnit4.class)
@@ -141,8 +141,8 @@ public class ValueBinderTest {
       return Timestamp.ofTimeSecondsAndNanos(0, 0);
     }
 
-    public static Date defaultDate() {
-      return Date.fromYearMonthDay(2016, 9, 15);
+    public static LocalDate defaultDate() {
+      return LocalDate.of(2016, 9, 15);
     }
 
     public static boolean[] defaultBooleanArray() {
@@ -182,8 +182,8 @@ public class ValueBinderTest {
           Timestamp.ofTimeSecondsAndNanos(0, 0), Timestamp.ofTimeSecondsAndNanos(0, 1));
     }
 
-    public static Iterable<Date> defaultDateIterable() {
-      return Arrays.asList(Date.fromYearMonthDay(2016, 9, 15), Date.fromYearMonthDay(2016, 9, 14));
+    public static Iterable<LocalDate> defaultDateIterable() {
+      return Arrays.asList(LocalDate.of(2016, 9, 15), LocalDate.of(2016, 9, 14));
     }
 
     static Object getDefault(java.lang.reflect.Type type)

@@ -17,10 +17,10 @@
 package com.google.cloud.spanner;
 
 import com.google.cloud.ByteArray;
-import com.google.cloud.Date;
 import com.google.cloud.Timestamp;
 import com.google.common.base.Preconditions;
 import java.util.List;
+import org.threeten.bp.LocalDate;
 
 /** Forwarding implements of StructReader */
 public class ForwardingStructReader implements StructReader {
@@ -127,12 +127,12 @@ public class ForwardingStructReader implements StructReader {
   }
 
   @Override
-  public Date getDate(int columnIndex) {
+  public LocalDate getDate(int columnIndex) {
     return delegate.getDate(columnIndex);
   }
 
   @Override
-  public Date getDate(String columnName) {
+  public LocalDate getDate(String columnName) {
     return delegate.getDate(columnName);
   }
 
@@ -227,12 +227,12 @@ public class ForwardingStructReader implements StructReader {
   }
 
   @Override
-  public List<Date> getDateList(int columnIndex) {
+  public List<LocalDate> getDateList(int columnIndex) {
     return delegate.getDateList(columnIndex);
   }
 
   @Override
-  public List<Date> getDateList(String columnName) {
+  public List<LocalDate> getDateList(String columnName) {
     return delegate.getDateList(columnName);
   }
 

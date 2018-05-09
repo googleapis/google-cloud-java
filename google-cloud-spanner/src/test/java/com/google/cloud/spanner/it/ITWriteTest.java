@@ -20,7 +20,6 @@ import static com.google.cloud.spanner.SpannerMatchers.isSpannerException;
 import static com.google.common.truth.Truth.assertThat;
 
 import com.google.cloud.ByteArray;
-import com.google.cloud.Date;
 import com.google.cloud.Timestamp;
 import com.google.cloud.spanner.Database;
 import com.google.cloud.spanner.DatabaseClient;
@@ -37,6 +36,7 @@ import com.google.cloud.spanner.TimestampBound;
 import com.google.cloud.spanner.Value;
 import io.grpc.Context;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -54,6 +54,7 @@ import org.junit.experimental.categories.Category;
 import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
+import org.threeten.bp.LocalDate;
 
 /** Integration test for writing data to Cloud Spanner. */
 @Category(IntegrationTest.class)
@@ -305,7 +306,7 @@ public class ITWriteTest {
 
   @Test
   public void writeDate() {
-    Date date = Date.parseDate("2016-09-15");
+    LocalDate date = LocalDate.of(2016, 9, 15);
     write(baseInsert().set("DateValue").to(date).build());
     Struct row = readLastRow("DateValue");
     assertThat(row.isNull(0)).isFalse();
@@ -314,7 +315,7 @@ public class ITWriteTest {
 
   @Test
   public void writeDateNull() {
-    write(baseInsert().set("DateValue").to((Date) null).build());
+    write(baseInsert().set("DateValue").to((LocalDate) null).build());
     Struct row = readLastRow("DateValue");
     assertThat(row.isNull(0)).isTrue();
   }
@@ -517,7 +518,8 @@ public class ITWriteTest {
 
   @Test
   public void writeDateArrayEmpty() {
-    write(baseInsert().set("DateArrayValue").toDateArray(Arrays.<Date>asList()).build());
+    write(
+        baseInsert().set("DateArrayValue").toDateArray(Collections.<LocalDate>emptyList()).build());
     Struct row = readLastRow("DateArrayValue");
     assertThat(row.isNull(0)).isFalse();
     assertThat(row.getDateList(0)).containsExactly();
@@ -525,8 +527,8 @@ public class ITWriteTest {
 
   @Test
   public void writeDateArray() {
-    Date d1 = Date.parseDate("2016-09-18");
-    Date d2 = Date.parseDate("2016-09-19");
+    LocalDate d1 = LocalDate.of(2016, 9, 18);
+    LocalDate d2 = LocalDate.of(2016, 9, 19);
     write(baseInsert().set("DateArrayValue").toDateArray(Arrays.asList(d1, null, d2)).build());
     Struct row = readLastRow("DateArrayValue");
     assertThat(row.isNull(0)).isFalse();

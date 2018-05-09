@@ -21,7 +21,6 @@ import static com.google.cloud.spanner.Type.StructField;
 import static com.google.common.truth.Truth.assertThat;
 
 import com.google.cloud.ByteArray;
-import com.google.cloud.Date;
 import com.google.cloud.Timestamp;
 import com.google.cloud.spanner.Database;
 import com.google.cloud.spanner.DatabaseClient;
@@ -39,6 +38,7 @@ import com.google.common.base.Joiner;
 import com.google.common.collect.Iterables;
 import com.google.spanner.v1.ResultSetStats;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import org.junit.BeforeClass;
 import org.junit.ClassRule;
@@ -49,6 +49,7 @@ import org.junit.experimental.categories.Category;
 import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
+import org.threeten.bp.LocalDate;
 
 /** Integration tests for query execution. */
 @Category(IntegrationTest.class)
@@ -249,7 +250,7 @@ public class ITQueryTest {
 
   @Test
   public void bindDate() {
-    Date d = Date.parseDate("2016-09-18");
+    LocalDate d = LocalDate.of(2016, 9, 18);
     Struct row = execute(Statement.newBuilder("SELECT @v").bind("v").to(d), Type.date());
     assertThat(row.isNull(0)).isFalse();
     assertThat(row.getDate(0)).isEqualTo(d);
@@ -257,7 +258,8 @@ public class ITQueryTest {
 
   @Test
   public void bindDateNull() {
-    Struct row = execute(Statement.newBuilder("SELECT @v").bind("v").to((Date) null), Type.date());
+    Struct row =
+        execute(Statement.newBuilder("SELECT @v").bind("v").to((LocalDate) null), Type.date());
     assertThat(row.isNull(0)).isTrue();
   }
 
@@ -463,8 +465,8 @@ public class ITQueryTest {
 
   @Test
   public void bindDateArray() {
-    Date d1 = Date.parseDate("2016-09-18");
-    Date d2 = Date.parseDate("2016-09-19");
+    LocalDate d1 = LocalDate.of(2016, 9, 18);
+    LocalDate d2 = LocalDate.of(2016, 9, 19);
 
     Struct row =
         execute(
@@ -478,7 +480,9 @@ public class ITQueryTest {
   public void bindDateArrayEmpty() {
     Struct row =
         execute(
-            Statement.newBuilder("SELECT @v").bind("v").toDateArray(Arrays.<Date>asList()),
+            Statement.newBuilder("SELECT @v")
+                .bind("v")
+                .toDateArray(Collections.<LocalDate>emptyList()),
             Type.array(Type.date()));
     assertThat(row.isNull(0)).isFalse();
     assertThat(row.getDateList(0)).containsExactly();

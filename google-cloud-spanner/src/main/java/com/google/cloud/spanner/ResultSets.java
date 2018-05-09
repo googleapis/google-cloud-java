@@ -17,12 +17,12 @@
 package com.google.cloud.spanner;
 
 import com.google.cloud.ByteArray;
-import com.google.cloud.Date;
 import com.google.cloud.Timestamp;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.Lists;
 import com.google.spanner.v1.ResultSetStats;
 import java.util.List;
+import org.threeten.bp.LocalDate;
 
 /** Utility methods for working with {@link com.google.cloud.spanner.ResultSet}. */
 public final class ResultSets {
@@ -182,12 +182,12 @@ public final class ResultSets {
     }
 
     @Override
-    public Date getDate(int columnIndex) {
+    public LocalDate getDate(int columnIndex) {
       return getCurrentRowAsStruct().getDate(columnIndex);
     }
 
     @Override
-    public Date getDate(String columnName) {
+    public LocalDate getDate(String columnName) {
       return getCurrentRowAsStruct().getDate(columnName);
     }
 
@@ -282,12 +282,12 @@ public final class ResultSets {
     }
 
     @Override
-    public List<Date> getDateList(int columnIndex) {
+    public List<LocalDate> getDateList(int columnIndex) {
       return getCurrentRowAsStruct().getDateList(columnIndex);
     }
 
     @Override
-    public List<Date> getDateList(String columnName) {
+    public List<LocalDate> getDateList(String columnName) {
       return getCurrentRowAsStruct().getDateList(columnName);
     }
 

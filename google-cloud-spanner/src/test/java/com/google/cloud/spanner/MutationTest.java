@@ -20,7 +20,6 @@ import static com.google.common.testing.SerializableTester.reserializeAndAssert;
 import static com.google.common.truth.Truth.assertThat;
 
 import com.google.cloud.ByteArray;
-import com.google.cloud.Date;
 import com.google.cloud.Timestamp;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -35,6 +34,7 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
+import org.threeten.bp.LocalDate;
 
 /** Unit tests for {@link com.google.cloud.spanner.Mutation}. */
 @RunWith(JUnit4.class)
@@ -420,7 +420,7 @@ public class MutationTest {
                 2.3,
                 ByteArray.fromBase64("abcd"),
                 Timestamp.ofTimeSecondsAndNanos(1, 2),
-                Date.fromYearMonthDay(2017, 04, 17))));
+                LocalDate.of(2017, 04, 17))));
     reserializeAndAssert(Mutation.delete("test", KeySet.all()));
     reserializeAndAssert(
         Mutation.delete(
@@ -485,9 +485,9 @@ public class MutationTest {
         .set("timestampNull")
         .to((Timestamp) null)
         .set("date")
-        .to(Date.fromYearMonthDay(2017, 04, 17))
+        .to(LocalDate.of(2017, 04, 17))
         .set("dateNull")
-        .to((Date) null)
+        .to((LocalDate) null)
         .set("stringArr")
         .toStringArray(ImmutableList.of("one", "two"))
         .set("stringArrNull")
@@ -497,9 +497,7 @@ public class MutationTest {
         .set("timestampArrNull")
         .toTimestampArray(null)
         .set("dateArr")
-        .toDateArray(
-            ImmutableList.of(
-                Date.fromYearMonthDay(2017, 04, 17), Date.fromYearMonthDay(2017, 04, 18)))
+        .toDateArray(ImmutableList.of(LocalDate.of(2017, 04, 17), LocalDate.of(2017, 04, 18)))
         .set("dateArrNull")
         .toDateArray(null);
   }
