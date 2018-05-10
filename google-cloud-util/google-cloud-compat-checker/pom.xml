@@ -21,6 +21,7 @@
     <dependency>
       <groupId>io.netty</groupId>
       <artifactId>netty-tcnative-boringssl-static</artifactId>
+      <version>2.0.7.Final</version>
     </dependency>
     <dependency>
       <!-- It may look weird to have a compile dependency on a plugin,
@@ -59,6 +60,14 @@
           <target>1.7</target>
           <encoding>UTF-8</encoding>
           <compilerArgument>-Xlint:unchecked</compilerArgument>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-site-plugin</artifactId>
+        <version>3.4</version>
+        <configuration>
+          <skip>true</skip>
         </configuration>
       </plugin>
       <plugin>

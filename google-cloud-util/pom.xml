@@ -10,12 +10,19 @@
   <description>
     Package that contains utility modules for Google Cloud Java.
   </description>
-  <parent>
-    <groupId>com.google.cloud</groupId>
-    <artifactId>google-cloud-pom</artifactId>
-    <version>0.47.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-pom:current} -->
-  </parent>
   <modules>
     <module>google-cloud-compat-checker</module>
   </modules>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-site-plugin</artifactId>
+        <version>3.4</version>
+        <configuration>
+          <skip>true</skip>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 </project>

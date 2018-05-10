@@ -46,16 +46,6 @@
 
     <dependency>
       <groupId>${project.groupId}</groupId>
-      <artifactId>google-cloud-examples</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>${project.groupId}</groupId>
-      <artifactId>google-cloud-examples</artifactId>
-      <type>test-jar</type>
-    </dependency>
-
-    <dependency>
-      <groupId>${project.groupId}</groupId>
       <artifactId>google-cloud-core</artifactId>
     </dependency>
     <dependency>
