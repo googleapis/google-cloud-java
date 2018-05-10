@@ -28,7 +28,7 @@ import java.util.List;
 public class EnvironmentContextName implements ResourceName {
 
   private static final PathTemplate PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}/agent/sessions/{environment}/users/{user}/{session}/contexts/{context}");
+      PathTemplate.createWithoutUrlEncoding("projects/{project}/agent/environments/{environment}/users/{user}/sessions/{session}/contexts/{context}");
 
   private volatile Map<String, String> fieldValuesMap;
 

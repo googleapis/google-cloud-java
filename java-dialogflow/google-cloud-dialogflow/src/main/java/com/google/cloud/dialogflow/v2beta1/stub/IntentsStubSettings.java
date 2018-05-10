@@ -1,0 +1,581 @@
+/*
+ * Copyright 2018 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package com.google.cloud.dialogflow.v2beta1.stub;
+
+import static com.google.cloud.dialogflow.v2beta1.IntentsClient.ListIntentsPagedResponse;
+
+import com.google.api.core.ApiFunction;
+import com.google.api.core.ApiFuture;
+import com.google.api.core.BetaApi;
+import com.google.api.gax.core.GaxProperties;
+import com.google.api.gax.core.GoogleCredentialsProvider;
+import com.google.api.gax.core.InstantiatingExecutorProvider;
+import com.google.api.gax.grpc.GaxGrpcProperties;
+import com.google.api.gax.grpc.GrpcTransportChannel;
+import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
+import com.google.api.gax.grpc.ProtoOperationTransformers;
+import com.google.api.gax.longrunning.OperationSnapshot;
+import com.google.api.gax.longrunning.OperationTimedPollAlgorithm;
+import com.google.api.gax.retrying.RetrySettings;
+import com.google.api.gax.rpc.ApiCallContext;
+import com.google.api.gax.rpc.ApiClientHeaderProvider;
+import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallSettings;
+import com.google.api.gax.rpc.PageContext;
+import com.google.api.gax.rpc.PagedCallSettings;
+import com.google.api.gax.rpc.PagedListDescriptor;
+import com.google.api.gax.rpc.PagedListResponseFactory;
+import com.google.api.gax.rpc.StatusCode;
+import com.google.api.gax.rpc.StubSettings;
+import com.google.api.gax.rpc.TransportChannelProvider;
+import com.google.api.gax.rpc.UnaryCallSettings;
+import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.dialogflow.v2beta1.BatchDeleteIntentsRequest;
+import com.google.cloud.dialogflow.v2beta1.BatchUpdateIntentsRequest;
+import com.google.cloud.dialogflow.v2beta1.BatchUpdateIntentsResponse;
+import com.google.cloud.dialogflow.v2beta1.CreateIntentRequest;
+import com.google.cloud.dialogflow.v2beta1.DeleteIntentRequest;
+import com.google.cloud.dialogflow.v2beta1.GetIntentRequest;
+import com.google.cloud.dialogflow.v2beta1.Intent;
+import com.google.cloud.dialogflow.v2beta1.ListIntentsRequest;
+import com.google.cloud.dialogflow.v2beta1.ListIntentsResponse;
+import com.google.cloud.dialogflow.v2beta1.UpdateIntentRequest;
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.ImmutableSet;
+import com.google.common.collect.Lists;
+import com.google.longrunning.Operation;
+import com.google.protobuf.Empty;
+import com.google.protobuf.Struct;
+import java.io.IOException;
+import java.util.List;
+import javax.annotation.Generated;
+import org.threeten.bp.Duration;
+
+// AUTO-GENERATED DOCUMENTATION AND CLASS
+/**
+ * Settings class to configure an instance of {@link IntentsStub}.
+ *
+ * <p>The default instance has everything set to sensible defaults:
+ *
+ * <ul>
+ *   <li>The default service address (dialogflow.googleapis.com) and default port (443) are used.
+ *   <li>Credentials are acquired automatically through Application Default Credentials.
+ *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ * </ul>
+ *
+ * <p>The builder of this class is recursive, so contained classes are themselves builders. When
+ * build() is called, the tree of builders is called to create the complete settings object. For
+ * example, to set the total timeout of getIntent to 30 seconds:
+ *
+ * <pre>
+ * <code>
+ * IntentsStubSettings.Builder intentsSettingsBuilder =
+ *     IntentsStubSettings.newBuilder();
+ * intentsSettingsBuilder.getIntentSettings().getRetrySettings().toBuilder()
+ *     .setTotalTimeout(Duration.ofSeconds(30));
+ * IntentsStubSettings intentsSettings = intentsSettingsBuilder.build();
+ * </code>
+ * </pre>
+ */
+@Generated("by gapic-generator")
+@BetaApi
+public class IntentsStubSettings extends StubSettings<IntentsStubSettings> {
+  /** The default scopes of the service. */
+  private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
+      ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
+
+  private final PagedCallSettings<ListIntentsRequest, ListIntentsResponse, ListIntentsPagedResponse>
+      listIntentsSettings;
+  private final UnaryCallSettings<GetIntentRequest, Intent> getIntentSettings;
+  private final UnaryCallSettings<CreateIntentRequest, Intent> createIntentSettings;
+  private final UnaryCallSettings<UpdateIntentRequest, Intent> updateIntentSettings;
+  private final UnaryCallSettings<DeleteIntentRequest, Empty> deleteIntentSettings;
+  private final UnaryCallSettings<BatchUpdateIntentsRequest, Operation> batchUpdateIntentsSettings;
+  private final OperationCallSettings<BatchUpdateIntentsRequest, BatchUpdateIntentsResponse, Struct>
+      batchUpdateIntentsOperationSettings;
+  private final UnaryCallSettings<BatchDeleteIntentsRequest, Operation> batchDeleteIntentsSettings;
+  private final OperationCallSettings<BatchDeleteIntentsRequest, Empty, Struct>
+      batchDeleteIntentsOperationSettings;
+
+  /** Returns the object with the settings used for calls to listIntents. */
+  public PagedCallSettings<ListIntentsRequest, ListIntentsResponse, ListIntentsPagedResponse>
+      listIntentsSettings() {
+    return listIntentsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getIntent. */
+  public UnaryCallSettings<GetIntentRequest, Intent> getIntentSettings() {
+    return getIntentSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createIntent. */
+  public UnaryCallSettings<CreateIntentRequest, Intent> createIntentSettings() {
+    return createIntentSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateIntent. */
+  public UnaryCallSettings<UpdateIntentRequest, Intent> updateIntentSettings() {
+    return updateIntentSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteIntent. */
+  public UnaryCallSettings<DeleteIntentRequest, Empty> deleteIntentSettings() {
+    return deleteIntentSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchUpdateIntents. */
+  public UnaryCallSettings<BatchUpdateIntentsRequest, Operation> batchUpdateIntentsSettings() {
+    return batchUpdateIntentsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchUpdateIntents. */
+  public OperationCallSettings<BatchUpdateIntentsRequest, BatchUpdateIntentsResponse, Struct>
+      batchUpdateIntentsOperationSettings() {
+    return batchUpdateIntentsOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchDeleteIntents. */
+  public UnaryCallSettings<BatchDeleteIntentsRequest, Operation> batchDeleteIntentsSettings() {
+    return batchDeleteIntentsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchDeleteIntents. */
+  public OperationCallSettings<BatchDeleteIntentsRequest, Empty, Struct>
+      batchDeleteIntentsOperationSettings() {
+    return batchDeleteIntentsOperationSettings;
+  }
+
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+  public IntentsStub createStub() throws IOException {
+    if (getTransportChannelProvider()
+        .getTransportName()
+        .equals(GrpcTransportChannel.getGrpcTransportName())) {
+      return GrpcIntentsStub.create(this);
+    } else {
+      throw new UnsupportedOperationException(
+          "Transport not supported: " + getTransportChannelProvider().getTransportName());
+    }
+  }
+
+  /** Returns a builder for the default ExecutorProvider for this service. */
+  public static InstantiatingExecutorProvider.Builder defaultExecutorProviderBuilder() {
+    return InstantiatingExecutorProvider.newBuilder();
+  }
+
+  /** Returns the default service endpoint. */
+  public static String getDefaultEndpoint() {
+    return "dialogflow.googleapis.com:443";
+  }
+
+  /** Returns the default service scopes. */
+  public static List<String> getDefaultServiceScopes() {
+    return DEFAULT_SERVICE_SCOPES;
+  }
+
+  /** Returns a builder for the default credentials for this service. */
+  public static GoogleCredentialsProvider.Builder defaultCredentialsProviderBuilder() {
+    return GoogleCredentialsProvider.newBuilder().setScopesToApply(DEFAULT_SERVICE_SCOPES);
+  }
+
+  /** Returns a builder for the default ChannelProvider for this service. */
+  public static InstantiatingGrpcChannelProvider.Builder defaultGrpcTransportProviderBuilder() {
+    return InstantiatingGrpcChannelProvider.newBuilder();
+  }
+
+  public static TransportChannelProvider defaultTransportChannelProvider() {
+    return defaultGrpcTransportProviderBuilder().build();
+  }
+
+  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
+  public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
+    return ApiClientHeaderProvider.newBuilder()
+        .setGeneratedLibToken("gapic", GaxProperties.getLibraryVersion(IntentsStubSettings.class))
+        .setTransportToken(
+            GaxGrpcProperties.getGrpcTokenName(), GaxGrpcProperties.getGrpcVersion());
+  }
+
+  /** Returns a new builder for this class. */
+  public static Builder newBuilder() {
+    return Builder.createDefault();
+  }
+
+  /** Returns a new builder for this class. */
+  public static Builder newBuilder(ClientContext clientContext) {
+    return new Builder(clientContext);
+  }
+
+  /** Returns a builder containing all the values of this settings class. */
+  public Builder toBuilder() {
+    return new Builder(this);
+  }
+
+  protected IntentsStubSettings(Builder settingsBuilder) throws IOException {
+    super(settingsBuilder);
+
+    listIntentsSettings = settingsBuilder.listIntentsSettings().build();
+    getIntentSettings = settingsBuilder.getIntentSettings().build();
+    createIntentSettings = settingsBuilder.createIntentSettings().build();
+    updateIntentSettings = settingsBuilder.updateIntentSettings().build();
+    deleteIntentSettings = settingsBuilder.deleteIntentSettings().build();
+    batchUpdateIntentsSettings = settingsBuilder.batchUpdateIntentsSettings().build();
+    batchUpdateIntentsOperationSettings =
+        settingsBuilder.batchUpdateIntentsOperationSettings().build();
+    batchDeleteIntentsSettings = settingsBuilder.batchDeleteIntentsSettings().build();
+    batchDeleteIntentsOperationSettings =
+        settingsBuilder.batchDeleteIntentsOperationSettings().build();
+  }
+
+  private static final PagedListDescriptor<ListIntentsRequest, ListIntentsResponse, Intent>
+      LIST_INTENTS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListIntentsRequest, ListIntentsResponse, Intent>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListIntentsRequest injectToken(ListIntentsRequest payload, String token) {
+              return ListIntentsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListIntentsRequest injectPageSize(ListIntentsRequest payload, int pageSize) {
+              return ListIntentsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListIntentsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListIntentsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Intent> extractResources(ListIntentsResponse payload) {
+              return payload.getIntentsList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListIntentsRequest, ListIntentsResponse, ListIntentsPagedResponse>
+      LIST_INTENTS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListIntentsRequest, ListIntentsResponse, ListIntentsPagedResponse>() {
+            @Override
+            public ApiFuture<ListIntentsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListIntentsRequest, ListIntentsResponse> callable,
+                ListIntentsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListIntentsResponse> futureResponse) {
+              PageContext<ListIntentsRequest, ListIntentsResponse, Intent> pageContext =
+                  PageContext.create(callable, LIST_INTENTS_PAGE_STR_DESC, request, context);
+              return ListIntentsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  /** Builder for IntentsStubSettings. */
+  public static class Builder extends StubSettings.Builder<IntentsStubSettings, Builder> {
+    private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
+
+    private final PagedCallSettings.Builder<
+            ListIntentsRequest, ListIntentsResponse, ListIntentsPagedResponse>
+        listIntentsSettings;
+    private final UnaryCallSettings.Builder<GetIntentRequest, Intent> getIntentSettings;
+    private final UnaryCallSettings.Builder<CreateIntentRequest, Intent> createIntentSettings;
+    private final UnaryCallSettings.Builder<UpdateIntentRequest, Intent> updateIntentSettings;
+    private final UnaryCallSettings.Builder<DeleteIntentRequest, Empty> deleteIntentSettings;
+    private final UnaryCallSettings.Builder<BatchUpdateIntentsRequest, Operation>
+        batchUpdateIntentsSettings;
+    private final OperationCallSettings.Builder<
+            BatchUpdateIntentsRequest, BatchUpdateIntentsResponse, Struct>
+        batchUpdateIntentsOperationSettings;
+    private final UnaryCallSettings.Builder<BatchDeleteIntentsRequest, Operation>
+        batchDeleteIntentsSettings;
+    private final OperationCallSettings.Builder<BatchDeleteIntentsRequest, Empty, Struct>
+        batchDeleteIntentsOperationSettings;
+
+    private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
+        RETRYABLE_CODE_DEFINITIONS;
+
+    static {
+      ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
+          ImmutableMap.builder();
+      definitions.put(
+          "idempotent",
+          ImmutableSet.copyOf(
+              Lists.<StatusCode.Code>newArrayList(
+                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
+      definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      RETRYABLE_CODE_DEFINITIONS = definitions.build();
+    }
+
+    private static final ImmutableMap<String, RetrySettings> RETRY_PARAM_DEFINITIONS;
+
+    static {
+      ImmutableMap.Builder<String, RetrySettings> definitions = ImmutableMap.builder();
+      RetrySettings settings = null;
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setRetryDelayMultiplier(1.3)
+              .setMaxRetryDelay(Duration.ofMillis(60000L))
+              .setInitialRpcTimeout(Duration.ofMillis(20000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(20000L))
+              .setTotalTimeout(Duration.ofMillis(600000L))
+              .build();
+      definitions.put("default", settings);
+      RETRY_PARAM_DEFINITIONS = definitions.build();
+    }
+
+    protected Builder() {
+      this((ClientContext) null);
+    }
+
+    protected Builder(ClientContext clientContext) {
+      super(clientContext);
+
+      listIntentsSettings = PagedCallSettings.newBuilder(LIST_INTENTS_PAGE_STR_FACT);
+
+      getIntentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      createIntentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      updateIntentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      deleteIntentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      batchUpdateIntentsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      batchUpdateIntentsOperationSettings = OperationCallSettings.newBuilder();
+
+      batchDeleteIntentsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      batchDeleteIntentsOperationSettings = OperationCallSettings.newBuilder();
+
+      unaryMethodSettingsBuilders =
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              listIntentsSettings,
+              getIntentSettings,
+              createIntentSettings,
+              updateIntentSettings,
+              deleteIntentSettings,
+              batchUpdateIntentsSettings,
+              batchDeleteIntentsSettings);
+
+      initDefaults(this);
+    }
+
+    private static Builder createDefault() {
+      Builder builder = new Builder((ClientContext) null);
+      builder.setTransportChannelProvider(defaultTransportChannelProvider());
+      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
+      builder.setEndpoint(getDefaultEndpoint());
+      return initDefaults(builder);
+    }
+
+    private static Builder initDefaults(Builder builder) {
+
+      builder
+          .listIntentsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .getIntentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .createIntentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .updateIntentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .deleteIntentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .batchUpdateIntentsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .batchDeleteIntentsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+      builder
+          .batchUpdateIntentsOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<BatchUpdateIntentsRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(
+                  BatchUpdateIntentsResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Struct.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRpcTimeout(Duration.ZERO) // ignored
+                      .setRpcTimeoutMultiplier(1.0) // ignored
+                      .setMaxRpcTimeout(Duration.ZERO) // ignored
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+      builder
+          .batchDeleteIntentsOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<BatchDeleteIntentsRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Struct.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRpcTimeout(Duration.ZERO) // ignored
+                      .setRpcTimeoutMultiplier(1.0) // ignored
+                      .setMaxRpcTimeout(Duration.ZERO) // ignored
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      return builder;
+    }
+
+    protected Builder(IntentsStubSettings settings) {
+      super(settings);
+
+      listIntentsSettings = settings.listIntentsSettings.toBuilder();
+      getIntentSettings = settings.getIntentSettings.toBuilder();
+      createIntentSettings = settings.createIntentSettings.toBuilder();
+      updateIntentSettings = settings.updateIntentSettings.toBuilder();
+      deleteIntentSettings = settings.deleteIntentSettings.toBuilder();
+      batchUpdateIntentsSettings = settings.batchUpdateIntentsSettings.toBuilder();
+      batchUpdateIntentsOperationSettings =
+          settings.batchUpdateIntentsOperationSettings.toBuilder();
+      batchDeleteIntentsSettings = settings.batchDeleteIntentsSettings.toBuilder();
+      batchDeleteIntentsOperationSettings =
+          settings.batchDeleteIntentsOperationSettings.toBuilder();
+
+      unaryMethodSettingsBuilders =
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              listIntentsSettings,
+              getIntentSettings,
+              createIntentSettings,
+              updateIntentSettings,
+              deleteIntentSettings,
+              batchUpdateIntentsSettings,
+              batchDeleteIntentsSettings);
+    }
+
+    // NEXT_MAJOR_VER: remove 'throws Exception'
+    /**
+     * Applies the given settings updater function to all of the unary API methods in this service.
+     *
+     * <p>Note: This method does not support applying settings to streaming methods.
+     */
+    public Builder applyToAllUnaryMethods(
+        ApiFunction<UnaryCallSettings.Builder<?, ?>, Void> settingsUpdater) throws Exception {
+      super.applyToAllUnaryMethods(unaryMethodSettingsBuilders, settingsUpdater);
+      return this;
+    }
+
+    public ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders() {
+      return unaryMethodSettingsBuilders;
+    }
+
+    /** Returns the builder for the settings used for calls to listIntents. */
+    public PagedCallSettings.Builder<
+            ListIntentsRequest, ListIntentsResponse, ListIntentsPagedResponse>
+        listIntentsSettings() {
+      return listIntentsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getIntent. */
+    public UnaryCallSettings.Builder<GetIntentRequest, Intent> getIntentSettings() {
+      return getIntentSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createIntent. */
+    public UnaryCallSettings.Builder<CreateIntentRequest, Intent> createIntentSettings() {
+      return createIntentSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateIntent. */
+    public UnaryCallSettings.Builder<UpdateIntentRequest, Intent> updateIntentSettings() {
+      return updateIntentSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteIntent. */
+    public UnaryCallSettings.Builder<DeleteIntentRequest, Empty> deleteIntentSettings() {
+      return deleteIntentSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchUpdateIntents. */
+    public UnaryCallSettings.Builder<BatchUpdateIntentsRequest, Operation>
+        batchUpdateIntentsSettings() {
+      return batchUpdateIntentsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchUpdateIntents. */
+    public OperationCallSettings.Builder<
+            BatchUpdateIntentsRequest, BatchUpdateIntentsResponse, Struct>
+        batchUpdateIntentsOperationSettings() {
+      return batchUpdateIntentsOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchDeleteIntents. */
+    public UnaryCallSettings.Builder<BatchDeleteIntentsRequest, Operation>
+        batchDeleteIntentsSettings() {
+      return batchDeleteIntentsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchDeleteIntents. */
+    public OperationCallSettings.Builder<BatchDeleteIntentsRequest, Empty, Struct>
+        batchDeleteIntentsOperationSettings() {
+      return batchDeleteIntentsOperationSettings;
+    }
+
+    @Override
+    public IntentsStubSettings build() throws IOException {
+      return new IntentsStubSettings(this);
+    }
+  }
+}
