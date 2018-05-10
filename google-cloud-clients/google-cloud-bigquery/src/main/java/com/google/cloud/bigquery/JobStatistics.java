@@ -320,8 +320,16 @@ public abstract class JobStatistics implements Serializable {
 
     private final Integer billingTier;
     private final Boolean cacheHit;
+    private final String ddlOperationPerformed;
+    private final TableId ddlTargetTable;
+    private final Long estimatedBytesProcessed;
+    private final Long numDmlAffectedRows;
+    private final List<TableId> referencedTables;
+    private final String statementType;
     private final Long totalBytesBilled;
     private final Long totalBytesProcessed;
+    private final Long totalPartitionsProcessed;
+    private final Long totalSlotMs;
     private final List<QueryStage> queryPlan;
     private final List<TimelineSample> timeline;
     private final Schema schema;
@@ -330,8 +338,16 @@ public abstract class JobStatistics implements Serializable {
 
       private Integer billingTier;
       private Boolean cacheHit;
+      private String ddlOperationPerformed;
+      private TableId ddlTargetTable;
+      private Long estimatedBytesProcessed;
+      private Long numDmlAffectedRows;
+      private List<TableId> referencedTables;
+      private String statementType;
       private Long totalBytesBilled;
       private Long totalBytesProcessed;
+      private Long totalPartitionsProcessed;
+      private Long totalSlotMs;
       private List<QueryStage> queryPlan;
       private List<TimelineSample> timeline;
       private Schema schema;
@@ -343,8 +359,22 @@ public abstract class JobStatistics implements Serializable {
         if (statisticsPb.getQuery() != null) {
           this.billingTier = statisticsPb.getQuery().getBillingTier();
           this.cacheHit = statisticsPb.getQuery().getCacheHit();
+          this.ddlOperationPerformed = statisticsPb.getQuery().getDdlOperationPerformed();
+          if (statisticsPb.getQuery().getDdlTargetTable() != null) {
+            this.ddlTargetTable = TableId.fromPb(statisticsPb.getQuery().getDdlTargetTable());
+          }
+          this.estimatedBytesProcessed = statisticsPb.getQuery().getEstimatedBytesProcessed();
+          this.numDmlAffectedRows = statisticsPb.getQuery().getNumDmlAffectedRows();
+          this.statementType = statisticsPb.getQuery().getStatementType();
           this.totalBytesBilled = statisticsPb.getQuery().getTotalBytesBilled();
           this.totalBytesProcessed = statisticsPb.getQuery().getTotalBytesProcessed();
+          this.totalPartitionsProcessed = statisticsPb.getQuery().getTotalPartitionsProcessed();
+          this.totalSlotMs = statisticsPb.getQuery().getTotalSlotMs();
+          if (statisticsPb.getQuery().getReferencedTables() != null) {
+            this.referencedTables =
+                Lists.transform(
+                    statisticsPb.getQuery().getReferencedTables(), TableId.FROM_PB_FUNCTION);
+          }
           if (statisticsPb.getQuery().getQueryPlan() != null) {
             this.queryPlan =
                 Lists.transform(
@@ -371,6 +401,36 @@ public abstract class JobStatistics implements Serializable {
         return self();
       }
 
+      Builder setDDLOperationPerformed(String ddlOperationPerformed) {
+        this.ddlOperationPerformed = ddlOperationPerformed;
+        return self();
+      }
+
+      Builder setDDLTargetTable(TableId ddlTargetTable) {
+        this.ddlTargetTable = ddlTargetTable;
+        return self();
+      }
+
+      Builder setEstimatedBytesProcessed(Long estimatedBytesProcessed) {
+        this.estimatedBytesProcessed = estimatedBytesProcessed;
+        return self();
+      }
+
+      Builder setNumDmlAffectedRows(Long numDmlAffectedRows) {
+        this.numDmlAffectedRows = numDmlAffectedRows;
+        return self();
+      }
+
+      Builder setReferenceTables(List<TableId> referencedTables) {
+        this.referencedTables = referencedTables;
+        return self();
+      }
+
+      Builder setStatementType(String statementType) {
+        this.statementType = statementType;
+        return self();
+      }
+
       Builder setTotalBytesBilled(Long totalBytesBilled) {
         this.totalBytesBilled = totalBytesBilled;
         return self();
@@ -378,6 +438,16 @@ public abstract class JobStatistics implements Serializable {
 
       Builder setTotalBytesProcessed(Long totalBytesProcessed) {
         this.totalBytesProcessed = totalBytesProcessed;
+        return self();
+      }
+
+      Builder setTotalPartitionsProcessed(Long totalPartitionsProcessed) {
+        this.totalPartitionsProcessed = totalPartitionsProcessed;
+        return self();
+      }
+
+      Builder setTotalSlotMs(Long totalSlotMs) {
+        this.totalSlotMs = totalSlotMs;
         return self();
       }
 
@@ -406,8 +476,16 @@ public abstract class JobStatistics implements Serializable {
       super(builder);
       this.billingTier = builder.billingTier;
       this.cacheHit = builder.cacheHit;
+      this.ddlOperationPerformed = builder.ddlOperationPerformed;
+      this.ddlTargetTable = builder.ddlTargetTable;
+      this.estimatedBytesProcessed = builder.estimatedBytesProcessed;
+      this.numDmlAffectedRows = builder.numDmlAffectedRows;
+      this.referencedTables = builder.referencedTables;
+      this.statementType = builder.statementType;
       this.totalBytesBilled = builder.totalBytesBilled;
       this.totalBytesProcessed = builder.totalBytesProcessed;
+      this.totalPartitionsProcessed = builder.totalPartitionsProcessed;
+      this.totalSlotMs = builder.totalSlotMs;
       this.queryPlan = builder.queryPlan;
       this.timeline = builder.timeline;
       this.schema = builder.schema;
@@ -432,6 +510,47 @@ public abstract class JobStatistics implements Serializable {
       return cacheHit;
     }
 
+    /**
+     * [BETA] For DDL queries, returns the operation applied to the DDL target table.
+     */
+    public String getDdlOperationPerformed() { return ddlOperationPerformed; }
+
+    /**
+     * [BETA] For DDL queries, returns the TableID of the targeted table.
+     */
+    public TableId getDdlTargetTable() { return ddlTargetTable; }
+
+    /**
+     * The original estimate of bytes processed for the job.
+     */
+    public Long getEstimatedBytesProcessed() { return estimatedBytesProcessed; }
+
+    /**
+     * The number of rows affected by a DML statement.
+     * Present only for DML statements INSERT, UPDATE or DELETE.
+     */
+    public Long getNumDmlAffectedRows() { return numDmlAffectedRows; }
+
+    /**
+     * Referenced tables for the job.
+     * Queries that reference more than 50 tables will not have a complete list.
+     */
+    public List<TableId> getReferencedTables() { return referencedTables; }
+
+    /**
+     * [BETA] The type of query statement, if valid.
+     * Possible values include:
+     * SELECT
+     * INSERT
+     * UPDATE
+     * DELETE
+     * CREATE_TABLE
+     * CREATE_TABLE_AS_SELECT
+     * DROP_TABLE
+     * CREATE_VIEW
+     * DROP_VIEW
+     */
+    public String getStatementType() { return statementType; }
 
     /**
      * Returns the total number of bytes billed for the job.
@@ -448,6 +567,15 @@ public abstract class JobStatistics implements Serializable {
       return totalBytesProcessed;
     }
 
+    /**
+     * Total number of partitions processed from all partitioned tables referenced in the job.
+     */
+    public Long getTotalPartitionsProcessed() { return totalPartitionsProcessed; }
+
+    /**
+     * Returns the slot-milliseconds consumed by the query.
+     */
+    public Long getTotalSlotMs() { return totalSlotMs; }
 
     /**
      * Returns the query plan as a list of stages or {@code null} if a query plan is not available.
