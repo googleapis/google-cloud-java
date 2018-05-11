@@ -42,8 +42,8 @@ grpc-google-cloud-vision-v1:1.11.0:1.11.1-SNAPSHOT
 grpc-google-cloud-vision-v1p1beta1:0.12.0:0.12.1-SNAPSHOT
 grpc-google-cloud-vision-v1p2beta1:1.11.0:1.11.1-SNAPSHOT
 grpc-google-cloud-cloudiot-v1:0.12.0:0.12.1-SNAPSHOT
-grpc-google-cloud-redis-v1beta1:10.12.0:0.12.1-SNAPSHOT
-grpc-google-cloud-websecurityscanner-v1alpha:10.12.0:0.12.1-SNAPSHOT
+grpc-google-cloud-redis-v1beta1:0.12.0:0.12.1-SNAPSHOT
+grpc-google-cloud-websecurityscanner-v1alpha:0.12.0:0.12.1-SNAPSHOT
 proto-google-cloud-bigquerydatatransfer-v1:0.12.0:0.12.1-SNAPSHOT
 proto-google-cloud-bigtable-admin-v2:0.12.0:0.12.1-SNAPSHOT
 proto-google-cloud-bigtable-v2:0.12.0:0.12.1-SNAPSHOT
@@ -79,8 +79,8 @@ proto-google-cloud-vision-v1:1.11.0:1.11.1-SNAPSHOT
 proto-google-cloud-vision-v1p1beta1:0.12.0:0.12.1-SNAPSHOT
 proto-google-cloud-vision-v1p2beta1:1.11.0:1.11.1-SNAPSHOT
 proto-google-cloud-cloudiot-v1:0.12.0:0.12.1-SNAPSHOT
-proto-google-cloud-redis-v1beta1:10.12.0:0.12.1-SNAPSHOT
-proto-google-cloud-websecurityscanner-v1alpha:10.12.0:0.12.1-SNAPSHOT
+proto-google-cloud-redis-v1beta1:0.12.0:0.12.1-SNAPSHOT
+proto-google-cloud-websecurityscanner-v1alpha:0.12.0:0.12.1-SNAPSHOT
 
 #
 # google-cloud-clients versions
