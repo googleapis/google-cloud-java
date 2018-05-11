@@ -18,11 +18,11 @@ package com.google.cloud.translate;
 
 import com.google.cloud.Service;
 import com.google.cloud.translate.spi.v2.TranslateRpc;
-
 import java.util.List;
 
 /**
- * An interface for Google Translation.
+ * An interface for Google Translation. {@code Translate} and its {@code Option} classes can be used
+ * concurrently without external synchronizations.
  *
  * @see <a href="https://cloud.google.com/translate/docs">Google Translation</a>
  */
