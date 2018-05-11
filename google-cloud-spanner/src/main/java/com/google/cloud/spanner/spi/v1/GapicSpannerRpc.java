@@ -24,6 +24,7 @@ import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.GrpcCallContext;
 import com.google.api.gax.grpc.GrpcTransportChannel;
+import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.FixedTransportChannelProvider;
@@ -106,7 +107,8 @@ public class GapicSpannerRpc implements SpannerRpc {
 
   private static final PathTemplate PROJECT_NAME_TEMPLATE =
       PathTemplate.create("projects/{project}");
-
+  private static final int MAX_MESSAGE_SIZE = 100 * 1024 * 1024;
+  
   private final SpannerStub stub;
   private final InstanceAdminStub instanceStub;
   private final DatabaseAdminStub databaseStub;
@@ -143,17 +145,18 @@ public class GapicSpannerRpc implements SpannerRpc {
             mergedHeaderProvider.getHeaders(),
             internalHeaderProviderBuilder.getResourceHeaderKey());
 
-    // TODO(pongad): make channel pool work
-
     // TODO(pongad): make RPC logging work (formerly LoggingInterceptor)
     // TODO(pongad): add watchdog
     // TODO(pongad): make error augmentation work (formerly SpannerErrorInterceptor)
 
     TransportChannelProvider channelProvider =
-        FixedTransportChannelProvider.create(
-            GrpcTransportChannel.newBuilder()
-                .setManagedChannel(options.getRpcChannels().get(0))
-                .build());
+        InstantiatingGrpcChannelProvider
+            .newBuilder()
+            .setEndpoint(options.getEndpoint())
+            .setMaxInboundMessageSize(MAX_MESSAGE_SIZE)
+            .setPoolSize(options.getNumChannels())
+            .build();
+
     CredentialsProvider credentialsProvider =
         GrpcTransportOptions.setUpCredentialsProvider(options);
     

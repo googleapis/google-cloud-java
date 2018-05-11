@@ -16,15 +16,15 @@
 
 package com.google.cloud.spanner;
 
-import com.google.cloud.grpc.GrpcTransportOptions;
 import com.google.cloud.ServiceDefaults;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.ServiceRpc;
 import com.google.cloud.TransportOptions;
+import com.google.cloud.grpc.GrpcTransportOptions;
+import com.google.cloud.spanner.spi.SpannerRpcFactory;
 import com.google.cloud.spanner.spi.v1.GapicSpannerRpc;
 import com.google.cloud.spanner.spi.v1.GrpcSpannerRpc;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
-import com.google.cloud.spanner.spi.SpannerRpcFactory;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
@@ -218,6 +218,10 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     return rpcChannels;
   }
 
+  public int getNumChannels() {
+    return numChannels;
+  }
+
   public SessionPoolOptions getSessionPoolOptions() {
     return sessionPoolOptions;
   }
@@ -352,5 +356,16 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   @Override
   public Builder toBuilder() {
     return new Builder(this);
+  }
+
+  public String getEndpoint() {
+    URL url;
+    try {
+      url = new URL(getHost());
+    } catch (MalformedURLException e) {
+      throw new IllegalArgumentException("Invalid host: " + getHost(), e);
+    }
+    return String.format(
+        "%s:%s", url.getHost(), url.getPort() < 0 ? url.getDefaultPort() : url.getPort());
   }
 }
