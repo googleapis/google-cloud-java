@@ -1,0 +1,20 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>google-cloud-resource-name-common</artifactId>
+  <version>0.12.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-resource-name-common:current} -->
+  <name>Google Cloud Common Resource Name</name>
+  <description>Common resource names used by Google Cloud libraries</description>
+  <parent>
+    <groupId>com.google.api.grpc</groupId>
+    <artifactId>google-api-grpc</artifactId>
+    <version>0.12.1-SNAPSHOT</version><!-- {x-version-update:google-api-grpc:current} -->
+  </parent>
+  <dependencies>
+    <dependency>
+      <groupId>com.google.api</groupId>
+      <artifactId>api-common</artifactId>
+    </dependency>
+  </dependencies>
+</project>
