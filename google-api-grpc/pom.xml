@@ -496,11 +496,6 @@
         <artifactId>grpc-google-cloud-websecurityscanner-v1alpha</artifactId>
         <version>0.12.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-websecurityscanner-v1alpha:current} -->
       </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>google-cloud-resource-name-common</artifactId>
-        <version>0.12.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-resource-name-common:current} -->
-      </dependency>
     </dependencies>
   </dependencyManagement>
 
@@ -578,7 +573,6 @@
     <module>proto-google-cloud-cloudiot-v1</module>
     <module>proto-google-cloud-redis-v1beta1</module>
     <module>proto-google-cloud-websecurityscanner-v1alpha</module>
-    <module>google-cloud-resource-name-common</module>
   </modules>
 
   <build>
