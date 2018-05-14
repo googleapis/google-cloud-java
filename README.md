@@ -23,6 +23,7 @@ This library supports the following Google Cloud Platform services with clients 
 
 This library supports the following Google Cloud Platform services with clients at a [Beta](#versioning) quality level:
 
+-  [BigQuery Data Transfer](google-cloud-clients/google-cloud-bigquerydatatransfer) (Beta)
 -  [Cloud Data Loss Prevention](google-cloud-dlp) (Beta)
 -  [Stackdriver Error Reporting](google-cloud-errorreporting) (Beta)
 -  [Cloud Firestore](google-cloud-firestore) (Beta)
@@ -38,6 +39,7 @@ This library supports the following Google Cloud Platform services with clients 
 -  [Cloud Dataproc](google-cloud-dataproc) (Alpha)
 -  [Cloud DNS](google-cloud-dns) (Alpha)
 -  [Cloud OS Login](google-cloud-os-login) (Alpha)
+-  [Cloud Redis](google-cloud-clients/google-cloud-redis) (Alpha)
 -  [Cloud Resource Manager](google-cloud-resourcemanager) (Alpha)
 -  [Cloud Speech](google-cloud-speech) (Alpha)
 -  [Dialogflow](google-cloud-dialogflow) (Alpha)
