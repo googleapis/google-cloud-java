@@ -46,7 +46,7 @@ This library supports the following Google Cloud Platform services with clients 
 
 These libraries are deprecated and no longer receive updates:
 
--  [Cloud Compute](google-cloud-compute) (Deprecated)
+-  [Cloud Compute](google-cloud-clients/google-cloud-compute) (Deprecated)
 
 Quickstart
 ----------
