@@ -269,6 +269,7 @@ public class JobStatisticsTest {
     assertEquals(expected.getCacheHit(), value.getCacheHit());
     assertEquals(expected.getDdlOperationPerformed(), value.getDdlOperationPerformed());
     assertEquals(expected.getDdlTargetTable(), value.getDdlTargetTable());
+    assertEquals(expected.getEstimatedBytesProcessed(), value.getEstimatedBytesProcessed());
     assertEquals(expected.getTotalBytesBilled(), value.getTotalBytesBilled());
     assertEquals(expected.getTotalBytesProcessed(), value.getTotalBytesProcessed());
     assertEquals(expected.getTotalPartitionsProcessed(), value.getTotalPartitionsProcessed());
