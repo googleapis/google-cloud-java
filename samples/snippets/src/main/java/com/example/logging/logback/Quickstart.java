@@ -16,7 +16,7 @@
 
 package com.example.logging.logback;
 
-// [START logback_quickstart]
+// [START logging_logback_quickstart]
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -29,4 +29,4 @@ public class Quickstart {
     logger.error("Logging ERROR with Logback");
   }
 }
-// [END logback_quickstart]
+// [END logging_logback_quickstart]

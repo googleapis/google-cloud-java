@@ -13,7 +13,7 @@
   See the License for the specific language governing permissions and
   limitations under the License.
 -->
-<!-- [START logback_config] -->
+<!-- [START logging_logback_config] -->
 <configuration>
   <appender name="CLOUD" class="com.google.cloud.logging.logback.LoggingAppender">
     <!-- Optional : filter logs at or above a level -->
@@ -30,4 +30,4 @@
     <appender-ref ref="CLOUD" />
   </root>
 </configuration>
-<!-- [END logback_config] -->
+<!-- [END logging_logback_config] -->
