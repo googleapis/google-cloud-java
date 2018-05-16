@@ -708,6 +708,7 @@ public abstract class JobStatistics implements Serializable {
       queryStatisticsPb.setBillingTier(billingTier);
       queryStatisticsPb.setCacheHit(cacheHit);
       queryStatisticsPb.setDdlOperationPerformed(ddlOperationPerformed);
+      queryStatisticsPb.setEstimatedBytesProcessed(estimatedBytesProcessed);
       queryStatisticsPb.setTotalBytesBilled(totalBytesBilled);
       queryStatisticsPb.setTotalBytesProcessed(totalBytesProcessed);
       queryStatisticsPb.setTotalPartitionsProcessed(totalPartitionsProcessed);
