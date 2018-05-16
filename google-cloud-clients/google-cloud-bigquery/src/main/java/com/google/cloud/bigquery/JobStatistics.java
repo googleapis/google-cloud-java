@@ -21,7 +21,6 @@ import com.google.api.services.bigquery.model.JobConfiguration;
 import com.google.api.services.bigquery.model.JobStatistics2;
 import com.google.api.services.bigquery.model.JobStatistics3;
 import com.google.api.services.bigquery.model.JobStatistics4;
-import com.google.api.services.bigquery.model.TableReference;
 import com.google.cloud.StringEnumType;
 import com.google.cloud.StringEnumValue;
 import com.google.common.base.MoreObjects;
