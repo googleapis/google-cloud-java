@@ -112,7 +112,6 @@ Apache 2.0 - See [LICENSE] for more information.
 [LICENSE]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/LICENSE
 [TESTING]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/TESTING.md#testing-code-that-uses-redis
 
-<!-- TODO: Update links when doc becomes available. -->
-[cloud-redis]: https://cloud.google.com/
-[redis-product-docs]: https://cloud.google.com/
+[cloud-redis]: https://cloud.google.com/memorystore/
+[redis-product-docs]: https://cloud.google.com/memorystore/docs/redis/
 [redis-client-lib-docs]: https://googlecloudplatform.github.io/google-cloud-java/latest/apidocs/index.html?com/google/cloud/redis/v1/package-summary.html

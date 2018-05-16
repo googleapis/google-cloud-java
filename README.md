@@ -13,38 +13,40 @@ Java idiomatic client for [Google Cloud Platform][cloud-platform] services.
 - [Client Library Documentation][client-lib-docs]
 
 This library supports the following Google Cloud Platform services with clients at a [GA](#versioning) quality level:
--  [BigQuery](google-cloud-bigquery) (GA)
--  [Stackdriver Logging](google-cloud-logging) (GA)
--  [Cloud Datastore](google-cloud-datastore) (GA)
--  [Cloud Natural Language](google-cloud-language) (GA)
--  [Cloud Storage](google-cloud-storage) (GA)
--  [Cloud Translation](google-cloud-translate) (GA)
--  [Cloud Vision](google-cloud-vision) (GA)
+-  [BigQuery](google-cloud-clients/google-cloud-bigquery) (GA)
+-  [Stackdriver Logging](google-cloud-clients/google-cloud-logging) (GA)
+-  [Cloud Datastore](google-cloud-clients/google-cloud-datastore) (GA)
+-  [Cloud Natural Language](google-cloud-clients/google-cloud-language) (GA)
+-  [Cloud Storage](google-cloud-clients/google-cloud-storage) (GA)
+-  [Cloud Translation](google-cloud-clients/google-cloud-translate) (GA)
+-  [Cloud Vision](google-cloud-clients/google-cloud-vision) (GA)
 
 This library supports the following Google Cloud Platform services with clients at a [Beta](#versioning) quality level:
 
--  [Cloud Data Loss Prevention](google-cloud-dlp) (Beta)
--  [Stackdriver Error Reporting](google-cloud-errorreporting) (Beta)
--  [Cloud Firestore](google-cloud-firestore) (Beta)
--  [Stackdriver Monitoring](google-cloud-monitoring) (Beta)
--  [Cloud Pub/Sub](google-cloud-pubsub) (Beta)
--  [Cloud Spanner](google-cloud-spanner) (Beta)
--  [Cloud Video Intelligence](google-cloud-video-intelligence) (Beta)
--  [Stackdriver Trace](google-cloud-trace) (Beta)
--  [Text-to-Speech](google-cloud-texttospeech) (Beta)
+-  [BigQuery Data Transfer](google-cloud-clients/google-cloud-bigquerydatatransfer) (Beta)
+-  [Cloud Data Loss Prevention](google-cloud-clients/google-cloud-dlp) (Beta)
+-  [Stackdriver Error Reporting](google-cloud-clients/google-cloud-errorreporting) (Beta)
+-  [Cloud Firestore](google-cloud-clients/google-cloud-firestore) (Beta)
+-  [Stackdriver Monitoring](google-cloud-clients/google-cloud-monitoring) (Beta)
+-  [Cloud Pub/Sub](google-cloud-clients/google-cloud-pubsub) (Beta)
+-  [Cloud Spanner](google-cloud-clients/google-cloud-spanner) (Beta)
+-  [Cloud Video Intelligence](google-cloud-clients/google-cloud-video-intelligence) (Beta)
+-  [Stackdriver Trace](google-cloud-clients/google-cloud-trace) (Beta)
+-  [Text-to-Speech](google-cloud-clients/google-cloud-texttospeech) (Beta)
 
 This library supports the following Google Cloud Platform services with clients at an [Alpha](#versioning) quality level:
 
--  [Cloud Dataproc](google-cloud-dataproc) (Alpha)
--  [Cloud DNS](google-cloud-dns) (Alpha)
--  [Cloud OS Login](google-cloud-os-login) (Alpha)
--  [Cloud Resource Manager](google-cloud-resourcemanager) (Alpha)
--  [Cloud Speech](google-cloud-speech) (Alpha)
--  [Dialogflow](google-cloud-dialogflow) (Alpha)
+-  [Cloud Dataproc](google-cloud-clients/google-cloud-dataproc) (Alpha)
+-  [Cloud DNS](google-cloud-clients/google-cloud-dns) (Alpha)
+-  [Cloud OS Login](google-cloud-clients/google-cloud-os-login) (Alpha)
+-  [Cloud Redis](google-cloud-clients/google-cloud-redis) (Alpha)
+-  [Cloud Resource Manager](google-cloud-clients/google-cloud-resourcemanager) (Alpha)
+-  [Cloud Speech](google-cloud-clients/google-cloud-speech) (Alpha)
+-  [Dialogflow](google-cloud-clients/google-cloud-dialogflow) (Alpha)
 
 These libraries are deprecated and no longer receive updates:
 
--  [Cloud Compute](google-cloud-compute) (Deprecated)
+-  [Cloud Compute](google-cloud-clients/google-cloud-compute) (Deprecated)
 
 Quickstart
 ----------
