@@ -153,7 +153,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <github.global.server>github</github.global.server>
-    <site.installationModule>google-cloud</site.installationModule>
+    <site.installationModule>google-cloud-clients</site.installationModule>
     <bom.version>0.47.1-alpha-SNAPSHOT</bom.version><!-- {x-version-update:google-cloud-bom:current} -->
     <api-client.version>1.23.0</api-client.version>
     <gax.version>1.25.0</gax.version>

@@ -80,7 +80,7 @@
     <site>
       <id>github-pages-site</id>
       <name>Deployment through GitHub's site deployment plugin</name>
-      <url>site</url>
+      <url>site/google-api-grpc</url>
     </site>
   </distributionManagement>
   <licenses>
