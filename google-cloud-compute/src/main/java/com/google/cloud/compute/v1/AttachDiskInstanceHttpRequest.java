@@ -33,6 +33,7 @@ public final class AttachDiskInstanceHttpRequest implements ApiMessage {
   private final AttachedDisk attachedDiskResource;
   private final String callback;
   private final String fields;
+  private final Boolean forceAttach;
   private final String instance;
   private final String key;
   private final String prettyPrint;
@@ -45,6 +46,7 @@ public final class AttachDiskInstanceHttpRequest implements ApiMessage {
     this.attachedDiskResource = null;
     this.callback = null;
     this.fields = null;
+    this.forceAttach = null;
     this.instance = null;
     this.key = null;
     this.prettyPrint = null;
@@ -58,6 +60,7 @@ public final class AttachDiskInstanceHttpRequest implements ApiMessage {
       AttachedDisk attachedDiskResource,
       String callback,
       String fields,
+      Boolean forceAttach,
       String instance,
       String key,
       String prettyPrint,
@@ -68,6 +71,7 @@ public final class AttachDiskInstanceHttpRequest implements ApiMessage {
     this.attachedDiskResource = attachedDiskResource;
     this.callback = callback;
     this.fields = fields;
+    this.forceAttach = forceAttach;
     this.instance = instance;
     this.key = key;
     this.prettyPrint = prettyPrint;
@@ -91,6 +95,9 @@ public final class AttachDiskInstanceHttpRequest implements ApiMessage {
     }
     if (fieldNames.contains("fields") && fields != null) {
       fieldMap.put("fields", Collections.singletonList(String.valueOf(fields)));
+    }
+    if (fieldNames.contains("forceAttach") && forceAttach != null) {
+      fieldMap.put("forceAttach", Collections.singletonList(String.valueOf(forceAttach)));
     }
     if (fieldNames.contains("instance") && instance != null) {
       fieldMap.put("instance", Collections.singletonList(String.valueOf(instance)));
@@ -126,6 +133,9 @@ public final class AttachDiskInstanceHttpRequest implements ApiMessage {
     }
     if (fieldName.equals("fields")) {
       return String.valueOf(fields);
+    }
+    if (fieldName.equals("forceAttach")) {
+      return String.valueOf(forceAttach);
     }
     if (fieldName.equals("instance")) {
       return String.valueOf(instance);
@@ -168,6 +178,10 @@ public final class AttachDiskInstanceHttpRequest implements ApiMessage {
 
   public String getFields() {
     return fields;
+  }
+
+  public Boolean getForceAttach() {
+    return forceAttach;
   }
 
   public String getInstance() {
@@ -221,6 +235,7 @@ public final class AttachDiskInstanceHttpRequest implements ApiMessage {
     private AttachedDisk attachedDiskResource;
     private String callback;
     private String fields;
+    private Boolean forceAttach;
     private String instance;
     private String key;
     private String prettyPrint;
@@ -243,6 +258,9 @@ public final class AttachDiskInstanceHttpRequest implements ApiMessage {
       }
       if (other.getFields() != null) {
         this.fields = other.fields;
+      }
+      if (other.getForceAttach() != null) {
+        this.forceAttach = other.forceAttach;
       }
       if (other.getInstance() != null) {
         this.instance = other.instance;
@@ -270,6 +288,7 @@ public final class AttachDiskInstanceHttpRequest implements ApiMessage {
       this.attachedDiskResource = source.attachedDiskResource;
       this.callback = source.callback;
       this.fields = source.fields;
+      this.forceAttach = source.forceAttach;
       this.instance = source.instance;
       this.key = source.key;
       this.prettyPrint = source.prettyPrint;
@@ -311,6 +330,15 @@ public final class AttachDiskInstanceHttpRequest implements ApiMessage {
 
     public Builder setFields(String fields) {
       this.fields = fields;
+      return this;
+    }
+
+    public Boolean getForceAttach() {
+      return forceAttach;
+    }
+
+    public Builder setForceAttach(Boolean forceAttach) {
+      this.forceAttach = forceAttach;
       return this;
     }
 
@@ -383,6 +411,7 @@ public final class AttachDiskInstanceHttpRequest implements ApiMessage {
           attachedDiskResource,
           callback,
           fields,
+          forceAttach,
           instance,
           key,
           prettyPrint,
@@ -397,6 +426,7 @@ public final class AttachDiskInstanceHttpRequest implements ApiMessage {
       newBuilder.setAttachedDiskResource(this.attachedDiskResource);
       newBuilder.setCallback(this.callback);
       newBuilder.setFields(this.fields);
+      newBuilder.setForceAttach(this.forceAttach);
       newBuilder.setInstance(this.instance);
       newBuilder.setKey(this.key);
       newBuilder.setPrettyPrint(this.prettyPrint);
@@ -421,6 +451,9 @@ public final class AttachDiskInstanceHttpRequest implements ApiMessage {
         + ", "
         + "fields="
         + fields
+        + ", "
+        + "forceAttach="
+        + forceAttach
         + ", "
         + "instance="
         + instance
@@ -453,6 +486,7 @@ public final class AttachDiskInstanceHttpRequest implements ApiMessage {
           && Objects.equals(this.attachedDiskResource, that.getAttachedDiskResource())
           && Objects.equals(this.callback, that.getCallback())
           && Objects.equals(this.fields, that.getFields())
+          && Objects.equals(this.forceAttach, that.getForceAttach())
           && Objects.equals(this.instance, that.getInstance())
           && Objects.equals(this.key, that.getKey())
           && Objects.equals(this.prettyPrint, that.getPrettyPrint())
@@ -470,6 +504,7 @@ public final class AttachDiskInstanceHttpRequest implements ApiMessage {
         attachedDiskResource,
         callback,
         fields,
+        forceAttach,
         instance,
         key,
         prettyPrint,

@@ -283,7 +283,7 @@ public class GlobalForwardingRuleClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified GlobalForwardingRule resource. Get a list of available forwarding rules
+   * Returns the specified GlobalForwardingRule resource. Gets a list of available forwarding rules
    * by making a list() request.
    *
    * <p>Sample code:
@@ -311,7 +311,7 @@ public class GlobalForwardingRuleClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified GlobalForwardingRule resource. Get a list of available forwarding rules
+   * Returns the specified GlobalForwardingRule resource. Gets a list of available forwarding rules
    * by making a list() request.
    *
    * <p>Sample code:
@@ -336,7 +336,7 @@ public class GlobalForwardingRuleClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified GlobalForwardingRule resource. Get a list of available forwarding rules
+   * Returns the specified GlobalForwardingRule resource. Gets a list of available forwarding rules
    * by making a list() request.
    *
    * <p>Sample code:
@@ -361,7 +361,7 @@ public class GlobalForwardingRuleClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified GlobalForwardingRule resource. Get a list of available forwarding rules
+   * Returns the specified GlobalForwardingRule resource. Gets a list of available forwarding rules
    * by making a list() request.
    *
    * <p>Sample code:

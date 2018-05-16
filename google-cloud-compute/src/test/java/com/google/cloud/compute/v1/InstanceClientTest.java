@@ -345,9 +345,11 @@ public class InstanceClientTest {
     ProjectZoneInstanceName instance =
         ProjectZoneInstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
     String requestId = "requestId37109963";
+    Boolean forceAttach = false;
     AttachedDisk attachedDiskResource = AttachedDisk.newBuilder().build();
 
-    Operation actualResponse = client.attachDiskInstance(instance, requestId, attachedDiskResource);
+    Operation actualResponse =
+        client.attachDiskInstance(instance, requestId, forceAttach, attachedDiskResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -377,9 +379,10 @@ public class InstanceClientTest {
       ProjectZoneInstanceName instance =
           ProjectZoneInstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
       String requestId = "requestId37109963";
+      Boolean forceAttach = false;
       AttachedDisk attachedDiskResource = AttachedDisk.newBuilder().build();
 
-      client.attachDiskInstance(instance, requestId, attachedDiskResource);
+      client.attachDiskInstance(instance, requestId, forceAttach, attachedDiskResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

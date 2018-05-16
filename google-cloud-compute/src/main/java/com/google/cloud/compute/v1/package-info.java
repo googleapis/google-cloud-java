@@ -515,6 +515,38 @@
  * </code>
  * </pre>
  *
+ * ==================== RegionDiskTypeClient ====================
+ *
+ * <p>Service Description: Creates and runs virtual machines on Google Cloud Platform.
+ *
+ * <p>Sample for RegionDiskTypeClient:
+ *
+ * <pre>
+ * <code>
+ * try (RegionDiskTypeClient regionDiskTypeClient = RegionDiskTypeClient.create()) {
+ *   ProjectRegionDiskTypeName diskType = ProjectRegionDiskTypeName.of("[PROJECT]", "[REGION]", "[DISK_TYPE]");
+ *   DiskType response = regionDiskTypeClient.getRegionDiskType(diskType);
+ * }
+ * </code>
+ * </pre>
+ *
+ * ================ RegionDiskClient ================
+ *
+ * <p>Service Description: Creates and runs virtual machines on Google Cloud Platform.
+ *
+ * <p>Sample for RegionDiskClient:
+ *
+ * <pre>
+ * <code>
+ * try (RegionDiskClient regionDiskClient = RegionDiskClient.create()) {
+ *   ProjectRegionDiskName disk = ProjectRegionDiskName.of("[PROJECT]", "[REGION]", "[DISK]");
+ *   String requestId = "";
+ *   Snapshot snapshotResource = Snapshot.newBuilder().build();
+ *   Operation response = regionDiskClient.createSnapshotRegionDisk(disk, requestId, snapshotResource);
+ * }
+ * </code>
+ * </pre>
+ *
  * ================================ RegionInstanceGroupManagerClient
  * ================================
  *

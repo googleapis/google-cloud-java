@@ -428,7 +428,7 @@ public class BackendServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified BackendService resource. Get a list of available backend services by
+   * Returns the specified BackendService resource. Gets a list of available backend services by
    * making a list() request.
    *
    * <p>Sample code:
@@ -455,7 +455,7 @@ public class BackendServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified BackendService resource. Get a list of available backend services by
+   * Returns the specified BackendService resource. Gets a list of available backend services by
    * making a list() request.
    *
    * <p>Sample code:
@@ -480,7 +480,7 @@ public class BackendServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified BackendService resource. Get a list of available backend services by
+   * Returns the specified BackendService resource. Gets a list of available backend services by
    * making a list() request.
    *
    * <p>Sample code:
@@ -505,7 +505,7 @@ public class BackendServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified BackendService resource. Get a list of available backend services by
+   * Returns the specified BackendService resource. Gets a list of available backend services by
    * making a list() request.
    *
    * <p>Sample code:

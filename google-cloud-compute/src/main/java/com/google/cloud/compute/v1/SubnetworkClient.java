@@ -564,7 +564,7 @@ public class SubnetworkClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified subnetwork. Get a list of available subnetworks list() request.
+   * Returns the specified subnetwork. Gets a list of available subnetworks list() request.
    *
    * <p>Sample code:
    *
@@ -590,7 +590,7 @@ public class SubnetworkClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified subnetwork. Get a list of available subnetworks list() request.
+   * Returns the specified subnetwork. Gets a list of available subnetworks list() request.
    *
    * <p>Sample code:
    *
@@ -614,7 +614,7 @@ public class SubnetworkClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified subnetwork. Get a list of available subnetworks list() request.
+   * Returns the specified subnetwork. Gets a list of available subnetworks list() request.
    *
    * <p>Sample code:
    *
@@ -638,7 +638,7 @@ public class SubnetworkClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified subnetwork. Get a list of available subnetworks list() request.
+   * Returns the specified subnetwork. Gets a list of available subnetworks list() request.
    *
    * <p>Sample code:
    *

@@ -417,7 +417,7 @@ public class NetworkClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified network. Get a list of available networks by making a list() request.
+   * Returns the specified network. Gets a list of available networks by making a list() request.
    *
    * <p>Sample code:
    *
@@ -443,7 +443,7 @@ public class NetworkClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified network. Get a list of available networks by making a list() request.
+   * Returns the specified network. Gets a list of available networks by making a list() request.
    *
    * <p>Sample code:
    *
@@ -466,7 +466,7 @@ public class NetworkClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified network. Get a list of available networks by making a list() request.
+   * Returns the specified network. Gets a list of available networks by making a list() request.
    *
    * <p>Sample code:
    *
@@ -490,7 +490,7 @@ public class NetworkClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified network. Get a list of available networks by making a list() request.
+   * Returns the specified network. Gets a list of available networks by making a list() request.
    *
    * <p>Sample code:
    *

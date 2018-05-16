@@ -283,8 +283,8 @@ public class HttpsHealthCheckClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified HttpsHealthCheck resource. Get a list of available HTTPS health checks by
-   * making a list() request.
+   * Returns the specified HttpsHealthCheck resource. Gets a list of available HTTPS health checks
+   * by making a list() request.
    *
    * <p>Sample code:
    *
@@ -311,8 +311,8 @@ public class HttpsHealthCheckClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified HttpsHealthCheck resource. Get a list of available HTTPS health checks by
-   * making a list() request.
+   * Returns the specified HttpsHealthCheck resource. Gets a list of available HTTPS health checks
+   * by making a list() request.
    *
    * <p>Sample code:
    *
@@ -336,8 +336,8 @@ public class HttpsHealthCheckClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified HttpsHealthCheck resource. Get a list of available HTTPS health checks by
-   * making a list() request.
+   * Returns the specified HttpsHealthCheck resource. Gets a list of available HTTPS health checks
+   * by making a list() request.
    *
    * <p>Sample code:
    *
@@ -361,8 +361,8 @@ public class HttpsHealthCheckClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified HttpsHealthCheck resource. Get a list of available HTTPS health checks by
-   * making a list() request.
+   * Returns the specified HttpsHealthCheck resource. Gets a list of available HTTPS health checks
+   * by making a list() request.
    *
    * <p>Sample code:
    *

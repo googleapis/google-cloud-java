@@ -275,7 +275,7 @@ public class UrlMapClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified UrlMap resource. Get a list of available URL maps by making a list()
+   * Returns the specified UrlMap resource. Gets a list of available URL maps by making a list()
    * request.
    *
    * <p>Sample code:
@@ -302,7 +302,7 @@ public class UrlMapClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified UrlMap resource. Get a list of available URL maps by making a list()
+   * Returns the specified UrlMap resource. Gets a list of available URL maps by making a list()
    * request.
    *
    * <p>Sample code:
@@ -326,7 +326,7 @@ public class UrlMapClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified UrlMap resource. Get a list of available URL maps by making a list()
+   * Returns the specified UrlMap resource. Gets a list of available URL maps by making a list()
    * request.
    *
    * <p>Sample code:
@@ -351,7 +351,7 @@ public class UrlMapClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified UrlMap resource. Get a list of available URL maps by making a list()
+   * Returns the specified UrlMap resource. Gets a list of available URL maps by making a list()
    * request.
    *
    * <p>Sample code:

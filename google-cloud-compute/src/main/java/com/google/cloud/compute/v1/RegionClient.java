@@ -152,7 +152,7 @@ public class RegionClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified Region resource. Get a list of available regions by making a list()
+   * Returns the specified Region resource. Gets a list of available regions by making a list()
    * request.
    *
    * <p>Sample code:
@@ -179,7 +179,7 @@ public class RegionClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified Region resource. Get a list of available regions by making a list()
+   * Returns the specified Region resource. Gets a list of available regions by making a list()
    * request.
    *
    * <p>Sample code:
@@ -203,7 +203,7 @@ public class RegionClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified Region resource. Get a list of available regions by making a list()
+   * Returns the specified Region resource. Gets a list of available regions by making a list()
    * request.
    *
    * <p>Sample code:
@@ -228,7 +228,7 @@ public class RegionClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified Region resource. Get a list of available regions by making a list()
+   * Returns the specified Region resource. Gets a list of available regions by making a list()
    * request.
    *
    * <p>Sample code:

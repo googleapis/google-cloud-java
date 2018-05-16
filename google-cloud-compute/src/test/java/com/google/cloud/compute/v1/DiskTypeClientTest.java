@@ -157,6 +157,7 @@ public class DiskTypeClientTest {
     String description = "description-1724546052";
     String id = "id3355";
     String validDiskSize = "validDiskSize-1653521184";
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String selfLink = "selfLink-1691268851";
     DiskType expectedResponse =
         DiskType.newBuilder()
@@ -168,6 +169,7 @@ public class DiskTypeClientTest {
             .setDescription(description)
             .setId(id)
             .setValidDiskSize(validDiskSize)
+            .setRegion(region.toString())
             .setSelfLink(selfLink)
             .build();
     mockService.addResponse(expectedResponse);

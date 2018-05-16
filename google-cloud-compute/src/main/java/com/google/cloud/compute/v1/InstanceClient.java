@@ -460,8 +460,9 @@ public class InstanceClient implements BackgroundResource {
    * try (InstanceClient instanceClient = InstanceClient.create()) {
    *   ProjectZoneInstanceName instance = ProjectZoneInstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
    *   String requestId = "";
+   *   Boolean forceAttach = false;
    *   AttachedDisk attachedDiskResource = AttachedDisk.newBuilder().build();
-   *   Operation response = instanceClient.attachDiskInstance(instance, requestId, attachedDiskResource);
+   *   Operation response = instanceClient.attachDiskInstance(instance, requestId, forceAttach, attachedDiskResource);
    * }
    * </code></pre>
    *
@@ -475,17 +476,23 @@ public class InstanceClient implements BackgroundResource {
    *     request. This prevents clients from accidentally creating duplicate commitments.
    *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
    *     (00000000-0000-0000-0000-000000000000).
+   * @param forceAttach Whether to force attach the disk even if it's currently attached to another
+   *     instance. This is only available for regional disks.
    * @param attachedDiskResource An instance-attached disk resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation attachDiskInstance(
-      ProjectZoneInstanceName instance, String requestId, AttachedDisk attachedDiskResource) {
+      ProjectZoneInstanceName instance,
+      String requestId,
+      Boolean forceAttach,
+      AttachedDisk attachedDiskResource) {
 
     AttachDiskInstanceHttpRequest request =
         AttachDiskInstanceHttpRequest.newBuilder()
             .setInstance(instance == null ? null : instance.toString())
             .setRequestId(requestId)
+            .setForceAttach(forceAttach)
             .setAttachedDiskResource(attachedDiskResource)
             .build();
     return attachDiskInstance(request);
@@ -503,8 +510,9 @@ public class InstanceClient implements BackgroundResource {
    * try (InstanceClient instanceClient = InstanceClient.create()) {
    *   ProjectZoneInstanceName instance = ProjectZoneInstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
    *   String requestId = "";
+   *   Boolean forceAttach = false;
    *   AttachedDisk attachedDiskResource = AttachedDisk.newBuilder().build();
-   *   Operation response = instanceClient.attachDiskInstance(instance.toString(), requestId, attachedDiskResource);
+   *   Operation response = instanceClient.attachDiskInstance(instance.toString(), requestId, forceAttach, attachedDiskResource);
    * }
    * </code></pre>
    *
@@ -518,17 +526,20 @@ public class InstanceClient implements BackgroundResource {
    *     request. This prevents clients from accidentally creating duplicate commitments.
    *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
    *     (00000000-0000-0000-0000-000000000000).
+   * @param forceAttach Whether to force attach the disk even if it's currently attached to another
+   *     instance. This is only available for regional disks.
    * @param attachedDiskResource An instance-attached disk resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation attachDiskInstance(
-      String instance, String requestId, AttachedDisk attachedDiskResource) {
+      String instance, String requestId, Boolean forceAttach, AttachedDisk attachedDiskResource) {
 
     AttachDiskInstanceHttpRequest request =
         AttachDiskInstanceHttpRequest.newBuilder()
             .setInstance(instance)
             .setRequestId(requestId)
+            .setForceAttach(forceAttach)
             .setAttachedDiskResource(attachedDiskResource)
             .build();
     return attachDiskInstance(request);
@@ -546,10 +557,12 @@ public class InstanceClient implements BackgroundResource {
    * try (InstanceClient instanceClient = InstanceClient.create()) {
    *   ProjectZoneInstanceName instance = ProjectZoneInstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
    *   String requestId = "";
+   *   Boolean forceAttach = false;
    *   AttachedDisk attachedDiskResource = AttachedDisk.newBuilder().build();
    *   AttachDiskInstanceHttpRequest request = AttachDiskInstanceHttpRequest.newBuilder()
    *     .setInstance(instance.toString())
    *     .setRequestId(requestId)
+   *     .setForceAttach(forceAttach)
    *     .setAttachedDiskResource(attachedDiskResource)
    *     .build();
    *   Operation response = instanceClient.attachDiskInstance(request);
@@ -576,10 +589,12 @@ public class InstanceClient implements BackgroundResource {
    * try (InstanceClient instanceClient = InstanceClient.create()) {
    *   ProjectZoneInstanceName instance = ProjectZoneInstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
    *   String requestId = "";
+   *   Boolean forceAttach = false;
    *   AttachedDisk attachedDiskResource = AttachedDisk.newBuilder().build();
    *   AttachDiskInstanceHttpRequest request = AttachDiskInstanceHttpRequest.newBuilder()
    *     .setInstance(instance.toString())
    *     .setRequestId(requestId)
+   *     .setForceAttach(forceAttach)
    *     .setAttachedDiskResource(attachedDiskResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = instanceClient.attachDiskInstanceCallable().futureCall(request);
@@ -1013,7 +1028,7 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified Instance resource. Get a list of available instances by making a list()
+   * Returns the specified Instance resource. Gets a list of available instances by making a list()
    * request.
    *
    * <p>Sample code:
@@ -1040,7 +1055,7 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified Instance resource. Get a list of available instances by making a list()
+   * Returns the specified Instance resource. Gets a list of available instances by making a list()
    * request.
    *
    * <p>Sample code:
@@ -1065,7 +1080,7 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified Instance resource. Get a list of available instances by making a list()
+   * Returns the specified Instance resource. Gets a list of available instances by making a list()
    * request.
    *
    * <p>Sample code:
@@ -1090,7 +1105,7 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified Instance resource. Get a list of available instances by making a list()
+   * Returns the specified Instance resource. Gets a list of available instances by making a list()
    * request.
    *
    * <p>Sample code:
@@ -3230,8 +3245,8 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Starts an instance that was stopped using the using the instances().stop method. For more
-   * information, see Restart an instance.
+   * Starts an instance that was stopped using the instances().stop method. For more information,
+   * see Restart an instance.
    *
    * <p>Sample code:
    *
@@ -3268,8 +3283,8 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Starts an instance that was stopped using the using the instances().stop method. For more
-   * information, see Restart an instance.
+   * Starts an instance that was stopped using the instances().stop method. For more information,
+   * see Restart an instance.
    *
    * <p>Sample code:
    *
@@ -3303,8 +3318,8 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Starts an instance that was stopped using the using the instances().stop method. For more
-   * information, see Restart an instance.
+   * Starts an instance that was stopped using the instances().stop method. For more information,
+   * see Restart an instance.
    *
    * <p>Sample code:
    *
@@ -3330,8 +3345,8 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Starts an instance that was stopped using the using the instances().stop method. For more
-   * information, see Restart an instance.
+   * Starts an instance that was stopped using the instances().stop method. For more information,
+   * see Restart an instance.
    *
    * <p>Sample code:
    *
@@ -3356,8 +3371,8 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Starts an instance that was stopped using the using the instances().stop method. For more
-   * information, see Restart an instance.
+   * Starts an instance that was stopped using the instances().stop method. For more information,
+   * see Restart an instance.
    *
    * <p>Sample code:
    *
@@ -3401,8 +3416,8 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Starts an instance that was stopped using the using the instances().stop method. For more
-   * information, see Restart an instance.
+   * Starts an instance that was stopped using the instances().stop method. For more information,
+   * see Restart an instance.
    *
    * <p>Sample code:
    *
@@ -3446,8 +3461,8 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Starts an instance that was stopped using the using the instances().stop method. For more
-   * information, see Restart an instance.
+   * Starts an instance that was stopped using the instances().stop method. For more information,
+   * see Restart an instance.
    *
    * <p>Sample code:
    *
@@ -3476,8 +3491,8 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Starts an instance that was stopped using the using the instances().stop method. For more
-   * information, see Restart an instance.
+   * Starts an instance that was stopped using the instances().stop method. For more information,
+   * see Restart an instance.
    *
    * <p>Sample code:
    *

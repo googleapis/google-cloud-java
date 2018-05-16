@@ -282,7 +282,7 @@ public class TargetSslProxyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified TargetSslProxy resource. Get a list of available target SSL proxies by
+   * Returns the specified TargetSslProxy resource. Gets a list of available target SSL proxies by
    * making a list() request.
    *
    * <p>Sample code:
@@ -309,7 +309,7 @@ public class TargetSslProxyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified TargetSslProxy resource. Get a list of available target SSL proxies by
+   * Returns the specified TargetSslProxy resource. Gets a list of available target SSL proxies by
    * making a list() request.
    *
    * <p>Sample code:
@@ -334,7 +334,7 @@ public class TargetSslProxyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified TargetSslProxy resource. Get a list of available target SSL proxies by
+   * Returns the specified TargetSslProxy resource. Gets a list of available target SSL proxies by
    * making a list() request.
    *
    * <p>Sample code:
@@ -359,7 +359,7 @@ public class TargetSslProxyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified TargetSslProxy resource. Get a list of available target SSL proxies by
+   * Returns the specified TargetSslProxy resource. Gets a list of available target SSL proxies by
    * making a list() request.
    *
    * <p>Sample code:

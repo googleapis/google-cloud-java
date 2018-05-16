@@ -155,7 +155,7 @@ public class InterconnectLocationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the details for the specified interconnect location. Get a list of available
+   * Returns the details for the specified interconnect location. Gets a list of available
    * interconnect locations by making a list() request.
    *
    * <p>Sample code:
@@ -184,7 +184,7 @@ public class InterconnectLocationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the details for the specified interconnect location. Get a list of available
+   * Returns the details for the specified interconnect location. Gets a list of available
    * interconnect locations by making a list() request.
    *
    * <p>Sample code:
@@ -211,7 +211,7 @@ public class InterconnectLocationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the details for the specified interconnect location. Get a list of available
+   * Returns the details for the specified interconnect location. Gets a list of available
    * interconnect locations by making a list() request.
    *
    * <p>Sample code:
@@ -237,7 +237,7 @@ public class InterconnectLocationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the details for the specified interconnect location. Get a list of available
+   * Returns the details for the specified interconnect location. Gets a list of available
    * interconnect locations by making a list() request.
    *
    * <p>Sample code:

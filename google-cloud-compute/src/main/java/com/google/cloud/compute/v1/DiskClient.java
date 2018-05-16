@@ -573,7 +573,7 @@ public class DiskClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns a specified persistent disk. Get a list of available persistent disks by making a
+   * Returns a specified persistent disk. Gets a list of available persistent disks by making a
    * list() request.
    *
    * <p>Sample code:
@@ -598,7 +598,7 @@ public class DiskClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns a specified persistent disk. Get a list of available persistent disks by making a
+   * Returns a specified persistent disk. Gets a list of available persistent disks by making a
    * list() request.
    *
    * <p>Sample code:
@@ -622,7 +622,7 @@ public class DiskClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns a specified persistent disk. Get a list of available persistent disks by making a
+   * Returns a specified persistent disk. Gets a list of available persistent disks by making a
    * list() request.
    *
    * <p>Sample code:
@@ -647,7 +647,7 @@ public class DiskClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns a specified persistent disk. Get a list of available persistent disks by making a
+   * Returns a specified persistent disk. Gets a list of available persistent disks by making a
    * list() request.
    *
    * <p>Sample code:

@@ -140,7 +140,7 @@ public class HttpJsonInstanceStub extends InstanceStub {
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/zones/{zone}/instances/{instance}/attachDisk"))
-                      .setQueryParams(Sets.<String>newHashSet("requestId"))
+                      .setQueryParams(Sets.<String>newHashSet("forceAttach", "requestId"))
                       .setResourceNameFactory(ProjectZoneInstanceName.newFactory())
                       .setResourceNameField("instance")
                       .build())

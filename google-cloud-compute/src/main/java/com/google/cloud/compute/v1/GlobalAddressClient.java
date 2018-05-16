@@ -281,7 +281,7 @@ public class GlobalAddressClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified address resource. Get a list of available addresses by making a list()
+   * Returns the specified address resource. Gets a list of available addresses by making a list()
    * request.
    *
    * <p>Sample code:
@@ -308,7 +308,7 @@ public class GlobalAddressClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified address resource. Get a list of available addresses by making a list()
+   * Returns the specified address resource. Gets a list of available addresses by making a list()
    * request.
    *
    * <p>Sample code:
@@ -333,7 +333,7 @@ public class GlobalAddressClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified address resource. Get a list of available addresses by making a list()
+   * Returns the specified address resource. Gets a list of available addresses by making a list()
    * request.
    *
    * <p>Sample code:
@@ -358,7 +358,7 @@ public class GlobalAddressClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified address resource. Get a list of available addresses by making a list()
+   * Returns the specified address resource. Gets a list of available addresses by making a list()
    * request.
    *
    * <p>Sample code:

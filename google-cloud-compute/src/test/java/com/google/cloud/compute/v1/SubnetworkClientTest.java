@@ -355,6 +355,7 @@ public class SubnetworkClientTest {
     String description = "description-1724546052";
     ProjectGlobalNetworkName network = ProjectGlobalNetworkName.of("[PROJECT]", "[NETWORK]");
     String selfLink = "selfLink-1691268851";
+    Boolean enableFlowLogs = true;
     String creationTimestamp = "creationTimestamp567396278";
     String fingerprint = "fingerprint-1375934236";
     String name = "name3373707";
@@ -369,6 +370,7 @@ public class SubnetworkClientTest {
             .setDescription(description)
             .setNetwork(network.toString())
             .setSelfLink(selfLink)
+            .setEnableFlowLogs(enableFlowLogs)
             .setCreationTimestamp(creationTimestamp)
             .setFingerprint(fingerprint)
             .setName(name)

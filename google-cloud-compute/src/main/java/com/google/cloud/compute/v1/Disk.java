@@ -45,6 +45,8 @@ public final class Disk implements ApiMessage {
   private final List<String> licenses;
   private final String name;
   private final String options;
+  private final String region;
+  private final List<String> replicaZones;
   private final String selfLink;
   private final String sizeGb;
   private final String sourceImage;
@@ -73,6 +75,8 @@ public final class Disk implements ApiMessage {
     this.licenses = null;
     this.name = null;
     this.options = null;
+    this.region = null;
+    this.replicaZones = null;
     this.selfLink = null;
     this.sizeGb = null;
     this.sourceImage = null;
@@ -102,6 +106,8 @@ public final class Disk implements ApiMessage {
       List<String> licenses,
       String name,
       String options,
+      String region,
+      List<String> replicaZones,
       String selfLink,
       String sizeGb,
       String sourceImage,
@@ -128,6 +134,8 @@ public final class Disk implements ApiMessage {
     this.licenses = licenses;
     this.name = name;
     this.options = options;
+    this.region = region;
+    this.replicaZones = replicaZones;
     this.selfLink = selfLink;
     this.sizeGb = sizeGb;
     this.sourceImage = sourceImage;
@@ -202,6 +210,16 @@ public final class Disk implements ApiMessage {
     }
     if (fieldNames.contains("options") && options != null) {
       fieldMap.put("options", Collections.singletonList(String.valueOf(options)));
+    }
+    if (fieldNames.contains("region") && region != null) {
+      fieldMap.put("region", Collections.singletonList(String.valueOf(region)));
+    }
+    if (fieldNames.contains("replicaZones") && replicaZones != null) {
+      ImmutableList.Builder stringList = ImmutableList.builder();
+      for (String item : replicaZones) {
+        stringList.add(item.toString());
+      }
+      fieldMap.put("replicaZones", stringList.build());
     }
     if (fieldNames.contains("selfLink") && selfLink != null) {
       fieldMap.put("selfLink", Collections.singletonList(String.valueOf(selfLink)));
@@ -293,6 +311,12 @@ public final class Disk implements ApiMessage {
     }
     if (fieldName.equals("options")) {
       return String.valueOf(options);
+    }
+    if (fieldName.equals("region")) {
+      return String.valueOf(region);
+    }
+    if (fieldName.equals("replicaZones")) {
+      return String.valueOf(replicaZones);
     }
     if (fieldName.equals("selfLink")) {
       return String.valueOf(selfLink);
@@ -395,6 +419,14 @@ public final class Disk implements ApiMessage {
     return options;
   }
 
+  public String getRegion() {
+    return region;
+  }
+
+  public List<String> getReplicaZonesList() {
+    return replicaZones;
+  }
+
   public String getSelfLink() {
     return selfLink;
   }
@@ -480,6 +512,8 @@ public final class Disk implements ApiMessage {
     private List<String> licenses;
     private String name;
     private String options;
+    private String region;
+    private List<String> replicaZones;
     private String selfLink;
     private String sizeGb;
     private String sourceImage;
@@ -539,6 +573,12 @@ public final class Disk implements ApiMessage {
       if (other.getOptions() != null) {
         this.options = other.options;
       }
+      if (other.getRegion() != null) {
+        this.region = other.region;
+      }
+      if (other.getReplicaZonesList() != null) {
+        this.replicaZones = other.replicaZones;
+      }
       if (other.getSelfLink() != null) {
         this.selfLink = other.selfLink;
       }
@@ -593,6 +633,8 @@ public final class Disk implements ApiMessage {
       this.licenses = source.licenses;
       this.name = source.name;
       this.options = source.options;
+      this.region = source.region;
+      this.replicaZones = source.replicaZones;
       this.selfLink = source.selfLink;
       this.sizeGb = source.sizeGb;
       this.sourceImage = source.sourceImage;
@@ -757,6 +799,32 @@ public final class Disk implements ApiMessage {
       return this;
     }
 
+    public String getRegion() {
+      return region;
+    }
+
+    public Builder setRegion(String region) {
+      this.region = region;
+      return this;
+    }
+
+    public List<String> getReplicaZonesList() {
+      return replicaZones;
+    }
+
+    public Builder addAllReplicaZones(List<String> replicaZones) {
+      if (this.replicaZones == null) {
+        this.replicaZones = new ArrayList<>(replicaZones.size());
+      }
+      this.replicaZones.addAll(replicaZones);
+      return this;
+    }
+
+    public Builder addReplicaZones(String replicaZones) {
+      this.replicaZones.add(replicaZones);
+      return this;
+    }
+
     public String getSelfLink() {
       return selfLink;
     }
@@ -891,6 +959,8 @@ public final class Disk implements ApiMessage {
           licenses,
           name,
           options,
+          region,
+          replicaZones,
           selfLink,
           sizeGb,
           sourceImage,
@@ -921,6 +991,8 @@ public final class Disk implements ApiMessage {
       newBuilder.addAllLicenses(this.licenses);
       newBuilder.setName(this.name);
       newBuilder.setOptions(this.options);
+      newBuilder.setRegion(this.region);
+      newBuilder.addAllReplicaZones(this.replicaZones);
       newBuilder.setSelfLink(this.selfLink);
       newBuilder.setSizeGb(this.sizeGb);
       newBuilder.setSourceImage(this.sourceImage);
@@ -982,6 +1054,12 @@ public final class Disk implements ApiMessage {
         + "options="
         + options
         + ", "
+        + "region="
+        + region
+        + ", "
+        + "replicaZones="
+        + replicaZones
+        + ", "
         + "selfLink="
         + selfLink
         + ", "
@@ -1041,6 +1119,8 @@ public final class Disk implements ApiMessage {
           && Objects.equals(this.licenses, that.getLicensesList())
           && Objects.equals(this.name, that.getName())
           && Objects.equals(this.options, that.getOptions())
+          && Objects.equals(this.region, that.getRegion())
+          && Objects.equals(this.replicaZones, that.getReplicaZonesList())
           && Objects.equals(this.selfLink, that.getSelfLink())
           && Objects.equals(this.sizeGb, that.getSizeGb())
           && Objects.equals(this.sourceImage, that.getSourceImage())
@@ -1074,6 +1154,8 @@ public final class Disk implements ApiMessage {
         licenses,
         name,
         options,
+        region,
+        replicaZones,
         selfLink,
         sizeGb,
         sourceImage,

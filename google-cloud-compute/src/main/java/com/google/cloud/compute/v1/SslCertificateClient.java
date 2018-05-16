@@ -282,7 +282,7 @@ public class SslCertificateClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified SslCertificate resource. Get a list of available SSL certificates by
+   * Returns the specified SslCertificate resource. Gets a list of available SSL certificates by
    * making a list() request.
    *
    * <p>Sample code:
@@ -309,7 +309,7 @@ public class SslCertificateClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified SslCertificate resource. Get a list of available SSL certificates by
+   * Returns the specified SslCertificate resource. Gets a list of available SSL certificates by
    * making a list() request.
    *
    * <p>Sample code:
@@ -334,7 +334,7 @@ public class SslCertificateClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified SslCertificate resource. Get a list of available SSL certificates by
+   * Returns the specified SslCertificate resource. Gets a list of available SSL certificates by
    * making a list() request.
    *
    * <p>Sample code:
@@ -359,7 +359,7 @@ public class SslCertificateClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified SslCertificate resource. Get a list of available SSL certificates by
+   * Returns the specified SslCertificate resource. Gets a list of available SSL certificates by
    * making a list() request.
    *
    * <p>Sample code:

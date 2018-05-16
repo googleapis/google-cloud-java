@@ -383,7 +383,7 @@ public class SslPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified SSL policy resource. Get a list of available SSL policies by making a
+   * Returns the specified SSL policy resource. Gets a list of available SSL policies by making a
    * list() request.
    *
    * <p>Sample code:
@@ -428,7 +428,7 @@ public class SslPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified SSL policy resource. Get a list of available SSL policies by making a
+   * Returns the specified SSL policy resource. Gets a list of available SSL policies by making a
    * list() request.
    *
    * <p>Sample code:
@@ -473,7 +473,7 @@ public class SslPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified SSL policy resource. Get a list of available SSL policies by making a
+   * Returns the specified SSL policy resource. Gets a list of available SSL policies by making a
    * list() request.
    *
    * <p>Sample code:
@@ -502,7 +502,7 @@ public class SslPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified SSL policy resource. Get a list of available SSL policies by making a
+   * Returns the specified SSL policy resource. Gets a list of available SSL policies by making a
    * list() request.
    *
    * <p>Sample code:

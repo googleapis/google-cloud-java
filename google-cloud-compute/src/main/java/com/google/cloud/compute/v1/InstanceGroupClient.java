@@ -578,7 +578,7 @@ public class InstanceGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified instance group. Get a list of available instance groups by making a
+   * Returns the specified instance group. Gets a list of available instance groups by making a
    * list() request.
    *
    * <p>Sample code:
@@ -605,7 +605,7 @@ public class InstanceGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified instance group. Get a list of available instance groups by making a
+   * Returns the specified instance group. Gets a list of available instance groups by making a
    * list() request.
    *
    * <p>Sample code:
@@ -630,7 +630,7 @@ public class InstanceGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified instance group. Get a list of available instance groups by making a
+   * Returns the specified instance group. Gets a list of available instance groups by making a
    * list() request.
    *
    * <p>Sample code:
@@ -655,7 +655,7 @@ public class InstanceGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified instance group. Get a list of available instance groups by making a
+   * Returns the specified instance group. Gets a list of available instance groups by making a
    * list() request.
    *
    * <p>Sample code:

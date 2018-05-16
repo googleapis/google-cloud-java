@@ -420,7 +420,7 @@ public class ImageClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified image. Get a list of available images by making a list() request.
+   * Returns the specified image. Gets a list of available images by making a list() request.
    *
    * <p>Sample code:
    *
@@ -444,7 +444,7 @@ public class ImageClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified image. Get a list of available images by making a list() request.
+   * Returns the specified image. Gets a list of available images by making a list() request.
    *
    * <p>Sample code:
    *
@@ -467,7 +467,7 @@ public class ImageClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified image. Get a list of available images by making a list() request.
+   * Returns the specified image. Gets a list of available images by making a list() request.
    *
    * <p>Sample code:
    *
@@ -491,7 +491,7 @@ public class ImageClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified image. Get a list of available images by making a list() request.
+   * Returns the specified image. Gets a list of available images by making a list() request.
    *
    * <p>Sample code:
    *

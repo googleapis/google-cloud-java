@@ -360,6 +360,7 @@ public class DiskClientTest {
     String selfLink = "selfLink-1691268851";
     String name = "name3373707";
     String sourceImage = "sourceImage1661056055";
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String status = "status-892481550";
     Disk expectedResponse =
         Disk.newBuilder()
@@ -380,6 +381,7 @@ public class DiskClientTest {
             .setSelfLink(selfLink)
             .setName(name)
             .setSourceImage(sourceImage)
+            .setRegion(region.toString())
             .setStatus(status)
             .build();
     mockService.addResponse(expectedResponse);

@@ -280,7 +280,7 @@ public class HealthCheckClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified HealthCheck resource. Get a list of available health checks by making a
+   * Returns the specified HealthCheck resource. Gets a list of available health checks by making a
    * list() request.
    *
    * <p>Sample code:
@@ -307,7 +307,7 @@ public class HealthCheckClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified HealthCheck resource. Get a list of available health checks by making a
+   * Returns the specified HealthCheck resource. Gets a list of available health checks by making a
    * list() request.
    *
    * <p>Sample code:
@@ -332,7 +332,7 @@ public class HealthCheckClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified HealthCheck resource. Get a list of available health checks by making a
+   * Returns the specified HealthCheck resource. Gets a list of available health checks by making a
    * list() request.
    *
    * <p>Sample code:
@@ -357,7 +357,7 @@ public class HealthCheckClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified HealthCheck resource. Get a list of available health checks by making a
+   * Returns the specified HealthCheck resource. Gets a list of available health checks by making a
    * list() request.
    *
    * <p>Sample code:

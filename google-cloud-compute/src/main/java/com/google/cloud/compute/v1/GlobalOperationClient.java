@@ -394,7 +394,7 @@ public class GlobalOperationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the specified Operations resource. Get a list of operations by making a list()
+   * Retrieves the specified Operations resource. Gets a list of operations by making a list()
    * request.
    *
    * <p>Sample code:
@@ -421,7 +421,7 @@ public class GlobalOperationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the specified Operations resource. Get a list of operations by making a list()
+   * Retrieves the specified Operations resource. Gets a list of operations by making a list()
    * request.
    *
    * <p>Sample code:
@@ -446,7 +446,7 @@ public class GlobalOperationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the specified Operations resource. Get a list of operations by making a list()
+   * Retrieves the specified Operations resource. Gets a list of operations by making a list()
    * request.
    *
    * <p>Sample code:
@@ -471,7 +471,7 @@ public class GlobalOperationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the specified Operations resource. Get a list of operations by making a list()
+   * Retrieves the specified Operations resource. Gets a list of operations by making a list()
    * request.
    *
    * <p>Sample code:

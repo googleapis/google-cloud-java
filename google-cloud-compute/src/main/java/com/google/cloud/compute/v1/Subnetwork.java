@@ -33,6 +33,7 @@ import javax.annotation.Nullable;
 public final class Subnetwork implements ApiMessage {
   private final String creationTimestamp;
   private final String description;
+  private final Boolean enableFlowLogs;
   private final String fingerprint;
   private final String gatewayAddress;
   private final String id;
@@ -48,6 +49,7 @@ public final class Subnetwork implements ApiMessage {
   private Subnetwork() {
     this.creationTimestamp = null;
     this.description = null;
+    this.enableFlowLogs = null;
     this.fingerprint = null;
     this.gatewayAddress = null;
     this.id = null;
@@ -64,6 +66,7 @@ public final class Subnetwork implements ApiMessage {
   private Subnetwork(
       String creationTimestamp,
       String description,
+      Boolean enableFlowLogs,
       String fingerprint,
       String gatewayAddress,
       String id,
@@ -77,6 +80,7 @@ public final class Subnetwork implements ApiMessage {
       String selfLink) {
     this.creationTimestamp = creationTimestamp;
     this.description = description;
+    this.enableFlowLogs = enableFlowLogs;
     this.fingerprint = fingerprint;
     this.gatewayAddress = gatewayAddress;
     this.id = id;
@@ -99,6 +103,9 @@ public final class Subnetwork implements ApiMessage {
     }
     if (fieldNames.contains("description") && description != null) {
       fieldMap.put("description", Collections.singletonList(String.valueOf(description)));
+    }
+    if (fieldNames.contains("enableFlowLogs") && enableFlowLogs != null) {
+      fieldMap.put("enableFlowLogs", Collections.singletonList(String.valueOf(enableFlowLogs)));
     }
     if (fieldNames.contains("fingerprint") && fingerprint != null) {
       fieldMap.put("fingerprint", Collections.singletonList(String.valueOf(fingerprint)));
@@ -150,6 +157,9 @@ public final class Subnetwork implements ApiMessage {
     if (fieldName.equals("description")) {
       return String.valueOf(description);
     }
+    if (fieldName.equals("enableFlowLogs")) {
+      return String.valueOf(enableFlowLogs);
+    }
     if (fieldName.equals("fingerprint")) {
       return String.valueOf(fingerprint);
     }
@@ -198,6 +208,10 @@ public final class Subnetwork implements ApiMessage {
 
   public String getDescription() {
     return description;
+  }
+
+  public Boolean getEnableFlowLogs() {
+    return enableFlowLogs;
   }
 
   public String getFingerprint() {
@@ -269,6 +283,7 @@ public final class Subnetwork implements ApiMessage {
   public static class Builder {
     private String creationTimestamp;
     private String description;
+    private Boolean enableFlowLogs;
     private String fingerprint;
     private String gatewayAddress;
     private String id;
@@ -290,6 +305,9 @@ public final class Subnetwork implements ApiMessage {
       }
       if (other.getDescription() != null) {
         this.description = other.description;
+      }
+      if (other.getEnableFlowLogs() != null) {
+        this.enableFlowLogs = other.enableFlowLogs;
       }
       if (other.getFingerprint() != null) {
         this.fingerprint = other.fingerprint;
@@ -330,6 +348,7 @@ public final class Subnetwork implements ApiMessage {
     Builder(Subnetwork source) {
       this.creationTimestamp = source.creationTimestamp;
       this.description = source.description;
+      this.enableFlowLogs = source.enableFlowLogs;
       this.fingerprint = source.fingerprint;
       this.gatewayAddress = source.gatewayAddress;
       this.id = source.id;
@@ -358,6 +377,15 @@ public final class Subnetwork implements ApiMessage {
 
     public Builder setDescription(String description) {
       this.description = description;
+      return this;
+    }
+
+    public Boolean getEnableFlowLogs() {
+      return enableFlowLogs;
+    }
+
+    public Builder setEnableFlowLogs(Boolean enableFlowLogs) {
+      this.enableFlowLogs = enableFlowLogs;
       return this;
     }
 
@@ -473,6 +501,7 @@ public final class Subnetwork implements ApiMessage {
       return new Subnetwork(
           creationTimestamp,
           description,
+          enableFlowLogs,
           fingerprint,
           gatewayAddress,
           id,
@@ -490,6 +519,7 @@ public final class Subnetwork implements ApiMessage {
       Builder newBuilder = new Builder();
       newBuilder.setCreationTimestamp(this.creationTimestamp);
       newBuilder.setDescription(this.description);
+      newBuilder.setEnableFlowLogs(this.enableFlowLogs);
       newBuilder.setFingerprint(this.fingerprint);
       newBuilder.setGatewayAddress(this.gatewayAddress);
       newBuilder.setId(this.id);
@@ -513,6 +543,9 @@ public final class Subnetwork implements ApiMessage {
         + ", "
         + "description="
         + description
+        + ", "
+        + "enableFlowLogs="
+        + enableFlowLogs
         + ", "
         + "fingerprint="
         + fingerprint
@@ -558,6 +591,7 @@ public final class Subnetwork implements ApiMessage {
       Subnetwork that = (Subnetwork) o;
       return Objects.equals(this.creationTimestamp, that.getCreationTimestamp())
           && Objects.equals(this.description, that.getDescription())
+          && Objects.equals(this.enableFlowLogs, that.getEnableFlowLogs())
           && Objects.equals(this.fingerprint, that.getFingerprint())
           && Objects.equals(this.gatewayAddress, that.getGatewayAddress())
           && Objects.equals(this.id, that.getId())
@@ -578,6 +612,7 @@ public final class Subnetwork implements ApiMessage {
     return Objects.hash(
         creationTimestamp,
         description,
+        enableFlowLogs,
         fingerprint,
         gatewayAddress,
         id,
