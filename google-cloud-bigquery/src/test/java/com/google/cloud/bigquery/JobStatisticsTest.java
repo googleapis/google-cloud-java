@@ -23,6 +23,7 @@ import com.google.cloud.bigquery.JobStatistics.CopyStatistics;
 import com.google.cloud.bigquery.JobStatistics.ExtractStatistics;
 import com.google.cloud.bigquery.JobStatistics.LoadStatistics;
 import com.google.cloud.bigquery.JobStatistics.QueryStatistics;
+import com.google.cloud.bigquery.JobStatistics.QueryStatistics.StatementType;
 import com.google.cloud.bigquery.QueryStage.QueryStep;
 import com.google.common.collect.ImmutableList;
 import java.util.List;
@@ -36,7 +37,7 @@ public class JobStatisticsTest {
   private static final TableId DDL_TARGET_TABLE = TableId.of("foo", "bar", "baz");
   private static final Long ESTIMATE_BYTES_PROCESSED = 101L;
   private static final Long NUM_DML_AFFECTED_ROWS = 88L;
-  private static final String STATEMENT_TYPE = "SELECT";
+  private static final QueryStatistics.StatementType STATEMENT_TYPE = QueryStatistics.StatementType.SELECT;
   private static final Long TOTAL_BYTES_BILLED = 24L;
   private static final Long TOTAL_BYTES_PROCESSED = 42L;
   private static final Long TOTAL_PARTITION_PROCESSED = 63L;
@@ -194,7 +195,6 @@ public class JobStatisticsTest {
     assertEquals(null, QUERY_STATISTICS_INCOMPLETE.getDdlTargetTable());
     assertEquals(null, QUERY_STATISTICS_INCOMPLETE.getEstimatedBytesProcessed());
     assertEquals(null, QUERY_STATISTICS_INCOMPLETE.getNumDmlAffectedRows());
-    assertEquals(null, QUERY_STATISTICS_INCOMPLETE.getStatementType());
     assertEquals(null, QUERY_STATISTICS_INCOMPLETE.getTotalBytesBilled());
     assertEquals(null, QUERY_STATISTICS_INCOMPLETE.getTotalBytesProcessed());
     assertEquals(null, QUERY_STATISTICS_INCOMPLETE.getTotalPartitionsProcessed());
@@ -268,10 +268,17 @@ public class JobStatisticsTest {
     compareStatistics(expected, value);
     assertEquals(expected.getBillingTier(), value.getBillingTier());
     assertEquals(expected.getCacheHit(), value.getCacheHit());
+    assertEquals(expected.getDdlOperationPerformed(), value.getDdlOperationPerformed());
+    assertEquals(expected.getDdlTargetTable(), value.getDdlTargetTable());
     assertEquals(expected.getTotalBytesBilled(), value.getTotalBytesBilled());
     assertEquals(expected.getTotalBytesProcessed(), value.getTotalBytesProcessed());
+    assertEquals(expected.getTotalPartitionsProcessed(), value.getTotalPartitionsProcessed());
+    assertEquals(expected.getTotalSlotMs(), value.getTotalSlotMs());
     assertEquals(expected.getQueryPlan(), value.getQueryPlan());
+    assertEquals(expected.getReferencedTables(), value.getReferencedTables());
     assertEquals(expected.getSchema(), value.getSchema());
+    assertEquals(expected.getStatementType(), value.getStatementType());
+    assertEquals(expected.getTimeline(), value.getTimeline());
   }
 
   private void compareStatistics(JobStatistics expected, JobStatistics value) {

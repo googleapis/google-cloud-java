@@ -16,10 +16,14 @@
 
 package com.google.cloud.bigquery;
 
+import com.google.api.core.ApiFunction;
 import com.google.api.services.bigquery.model.JobConfiguration;
 import com.google.api.services.bigquery.model.JobStatistics2;
 import com.google.api.services.bigquery.model.JobStatistics3;
 import com.google.api.services.bigquery.model.JobStatistics4;
+import com.google.api.services.bigquery.model.TableReference;
+import com.google.cloud.StringEnumType;
+import com.google.cloud.StringEnumValue;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.MoreObjects.ToStringHelper;
 import com.google.common.collect.Lists;
@@ -311,6 +315,7 @@ public abstract class JobStatistics implements Serializable {
     }
   }
 
+
   /**
    * A Google BigQuery Query Job statistics.
    */
@@ -325,7 +330,7 @@ public abstract class JobStatistics implements Serializable {
     private final Long estimatedBytesProcessed;
     private final Long numDmlAffectedRows;
     private final List<TableId> referencedTables;
-    private final String statementType;
+    private final StatementType statementType;
     private final Long totalBytesBilled;
     private final Long totalBytesProcessed;
     private final Long totalPartitionsProcessed;
@@ -333,6 +338,64 @@ public abstract class JobStatistics implements Serializable {
     private final List<QueryStage> queryPlan;
     private final List<TimelineSample> timeline;
     private final Schema schema;
+
+
+    /**
+     * StatementType represents possible types of SQL statements reported as part of the
+     * QueryStatistics of a BigQuery job.
+     */
+    public static final class StatementType extends StringEnumValue {
+      private static final long serialVersionUID = 818920627219751204L;
+
+      private static final ApiFunction<String, StatementType> CONSTRUCTOR =
+          new ApiFunction<String, StatementType>() {
+            @Override
+            public StatementType apply(String constant) {
+              return new StatementType(constant);
+            }
+          };
+
+      private static final StringEnumType<StatementType> type = new StringEnumType(
+          StatementType.class,
+          CONSTRUCTOR);
+
+      public static final StatementType SELECT = type.createAndRegister("SELECT");
+      public static final StatementType UPDATE = type.createAndRegister("UPDATE");
+      public static final StatementType INSERT = type.createAndRegister("INSERT");
+      public static final StatementType DELETE = type.createAndRegister("DELETE");
+      public static final StatementType CREATE_TABLE = type.createAndRegister("CREATE_TABLE");
+      public static final StatementType CREATE_TABLE_AS_SELECT = type.createAndRegister("CREATE_TABLE_AS_SELECT");
+      public static final StatementType CREATE_VIEW = type.createAndRegister("CREATE_VIEW");
+      public static final StatementType DROP_TABLE = type.createAndRegister("DROP_TABLE");
+      public static final StatementType DROP_VIEW = type.createAndRegister("DROP_VIEW");
+      public static final StatementType MERGE = type.createAndRegister("MERGE");
+
+      private StatementType(String constant) {
+        super(constant);
+      }
+
+      /**
+       * Get the StatementType for the given String constant, and throw an exception if the constant is
+       * not recognized.
+       */
+      public static StatementType valueOfStrict(String constant) {
+        return type.valueOfStrict(constant);
+      }
+
+      /**
+       * Get the State for the given String constant, and allow unrecognized values.
+       */
+      public static StatementType valueOf(String constant) {
+        return type.valueOf(constant);
+      }
+
+      /**
+       * Return the known values for State.
+       */
+      public static StatementType[] values() {
+        return type.values();
+      }
+    }
 
     static final class Builder extends JobStatistics.Builder<QueryStatistics, Builder> {
 
@@ -343,7 +406,7 @@ public abstract class JobStatistics implements Serializable {
       private Long estimatedBytesProcessed;
       private Long numDmlAffectedRows;
       private List<TableId> referencedTables;
-      private String statementType;
+      private StatementType statementType;
       private Long totalBytesBilled;
       private Long totalBytesProcessed;
       private Long totalPartitionsProcessed;
@@ -365,11 +428,14 @@ public abstract class JobStatistics implements Serializable {
           }
           this.estimatedBytesProcessed = statisticsPb.getQuery().getEstimatedBytesProcessed();
           this.numDmlAffectedRows = statisticsPb.getQuery().getNumDmlAffectedRows();
-          this.statementType = statisticsPb.getQuery().getStatementType();
           this.totalBytesBilled = statisticsPb.getQuery().getTotalBytesBilled();
           this.totalBytesProcessed = statisticsPb.getQuery().getTotalBytesProcessed();
           this.totalPartitionsProcessed = statisticsPb.getQuery().getTotalPartitionsProcessed();
           this.totalSlotMs = statisticsPb.getQuery().getTotalSlotMs();
+          if (statisticsPb.getQuery().getStatementType() != null) {
+            this.statementType = StatementType.valueOf(statisticsPb.getQuery().getStatementType());
+          }
+
           if (statisticsPb.getQuery().getReferencedTables() != null) {
             this.referencedTables =
                 Lists.transform(
@@ -426,8 +492,13 @@ public abstract class JobStatistics implements Serializable {
         return self();
       }
 
-      Builder setStatementType(String statementType) {
+      Builder setStatementType(StatementType statementType) {
         this.statementType = statementType;
+        return self();
+      }
+
+      Builder setStatementType(String strStatementType) {
+        this.statementType = StatementType.valueOf(strStatementType);
         return self();
       }
 
@@ -550,7 +621,7 @@ public abstract class JobStatistics implements Serializable {
      * CREATE_VIEW
      * DROP_VIEW
      */
-    public String getStatementType() { return statementType; }
+    public StatementType getStatementType() { return statementType; }
 
     /**
      * Returns the total number of bytes billed for the job.
@@ -637,8 +708,21 @@ public abstract class JobStatistics implements Serializable {
       JobStatistics2 queryStatisticsPb = new JobStatistics2();
       queryStatisticsPb.setBillingTier(billingTier);
       queryStatisticsPb.setCacheHit(cacheHit);
+      queryStatisticsPb.setDdlOperationPerformed(ddlOperationPerformed);
       queryStatisticsPb.setTotalBytesBilled(totalBytesBilled);
       queryStatisticsPb.setTotalBytesProcessed(totalBytesProcessed);
+      queryStatisticsPb.setTotalPartitionsProcessed(totalPartitionsProcessed);
+      queryStatisticsPb.setTotalSlotMs(totalSlotMs);
+      if (ddlTargetTable != null) {
+        queryStatisticsPb.setDdlTargetTable(ddlTargetTable.toPb());
+      }
+
+      if (referencedTables != null) {
+        queryStatisticsPb.setReferencedTables(Lists.transform(referencedTables, TableId.TO_PB_FUNCTION));
+      }
+      if (statementType != null) {
+        queryStatisticsPb.setStatementType(statementType.toString());
+      }
       if (queryPlan != null) {
         queryStatisticsPb.setQueryPlan(Lists.transform(queryPlan, QueryStage.TO_PB_FUNCTION));
       }
