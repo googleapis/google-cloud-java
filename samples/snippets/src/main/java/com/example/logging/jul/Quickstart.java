@@ -16,7 +16,7 @@
 
 package com.example.logging.jul;
 
-// [START jul_quickstart]
+// [START logging_jul_quickstart]
 
 import java.util.logging.Logger;
 
@@ -28,4 +28,4 @@ public class Quickstart {
     logger.severe("Logging ERROR with java.util.logging");
   }
 }
-// [END jul_quickstart]
+// [END logging_jul_quickstart]
