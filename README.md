@@ -74,7 +74,7 @@ If you are using Maven, add this to your pom.xml file
   <dependencies>
     <dependency>
       <groupId>com.google.cloud</groupId>
-      <artifactId>google-cloud</artifactId>
+      <artifactId>google-cloud-bom</artifactId>
     </dependency>
     <!-- other dependencies of your project...-->
   </dependencies>
