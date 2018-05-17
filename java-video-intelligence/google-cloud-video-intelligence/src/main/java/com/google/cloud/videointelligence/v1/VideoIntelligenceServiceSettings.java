@@ -69,6 +69,8 @@ public class VideoIntelligenceServiceSettings
   }
 
   /** Returns the object with the settings used for calls to annotateVideo. */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<AnnotateVideoRequest, AnnotateVideoResponse, AnnotateVideoProgress>
       annotateVideoOperationSettings() {
     return ((VideoIntelligenceServiceStubSettings) getStubSettings())
@@ -179,6 +181,8 @@ public class VideoIntelligenceServiceSettings
     }
 
     /** Returns the builder for the settings used for calls to annotateVideo. */
+    @BetaApi(
+        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             AnnotateVideoRequest, AnnotateVideoResponse, AnnotateVideoProgress>
         annotateVideoOperationSettings() {
