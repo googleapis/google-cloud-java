@@ -47,6 +47,7 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class IntentsStub implements BackgroundResource {
 
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationsStub getOperationsStub() {
     throw new UnsupportedOperationException("Not implemented: getOperationsStub()");
   }
@@ -75,6 +76,7 @@ public abstract class IntentsStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: deleteIntentCallable()");
   }
 
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<BatchUpdateIntentsRequest, BatchUpdateIntentsResponse, Struct>
       batchUpdateIntentsOperationCallable() {
     throw new UnsupportedOperationException(
@@ -85,6 +87,7 @@ public abstract class IntentsStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: batchUpdateIntentsCallable()");
   }
 
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<BatchDeleteIntentsRequest, Empty, Struct>
       batchDeleteIntentsOperationCallable() {
     throw new UnsupportedOperationException(

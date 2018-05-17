@@ -136,6 +136,7 @@ public class DatabaseAdminStubSettings extends StubSettings<DatabaseAdminStubSet
   }
 
   /** Returns the object with the settings used for calls to createDatabase. */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallSettings<CreateDatabaseRequest, Database, CreateDatabaseMetadata>
       createDatabaseOperationSettings() {
     return createDatabaseOperationSettings;
@@ -152,6 +153,7 @@ public class DatabaseAdminStubSettings extends StubSettings<DatabaseAdminStubSet
   }
 
   /** Returns the object with the settings used for calls to updateDatabaseDdl. */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallSettings<UpdateDatabaseDdlRequest, Empty, UpdateDatabaseDdlMetadata>
       updateDatabaseDdlOperationSettings() {
     return updateDatabaseDdlOperationSettings;
@@ -583,6 +585,8 @@ public class DatabaseAdminStubSettings extends StubSettings<DatabaseAdminStubSet
     }
 
     /** Returns the builder for the settings used for calls to createDatabase. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateDatabaseRequest, Database, CreateDatabaseMetadata>
         createDatabaseOperationSettings() {
       return createDatabaseOperationSettings;
@@ -600,6 +604,8 @@ public class DatabaseAdminStubSettings extends StubSettings<DatabaseAdminStubSet
     }
 
     /** Returns the builder for the settings used for calls to updateDatabaseDdl. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateDatabaseDdlRequest, Empty, UpdateDatabaseDdlMetadata>
         updateDatabaseDdlOperationSettings() {
       return updateDatabaseDdlOperationSettings;

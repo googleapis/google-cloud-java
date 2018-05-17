@@ -195,6 +195,8 @@ public class BigtableTableAdminClient implements BackgroundResource {
    * Returns the OperationsClient that can be used to query the status of a long-running operation
    * returned by another API method call.
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationsClient getOperationsClient() {
     return operationsClient;
   }
@@ -352,6 +354,8 @@ public class BigtableTableAdminClient implements BackgroundResource {
    *     `projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/&lt;cluster&gt;/snapshots/&lt;snapshot&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Table, CreateTableFromSnapshotMetadata> createTableFromSnapshotAsync(
       InstanceName parent, String tableId, SnapshotName sourceSnapshot) {
 
@@ -394,6 +398,8 @@ public class BigtableTableAdminClient implements BackgroundResource {
    *     `projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/&lt;cluster&gt;/snapshots/&lt;snapshot&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Table, CreateTableFromSnapshotMetadata> createTableFromSnapshotAsync(
       String parent, String tableId, String sourceSnapshot) {
 
@@ -435,6 +441,8 @@ public class BigtableTableAdminClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Table, CreateTableFromSnapshotMetadata> createTableFromSnapshotAsync(
       CreateTableFromSnapshotRequest request) {
     return createTableFromSnapshotOperationCallable().futureCall(request);
@@ -468,6 +476,7 @@ public class BigtableTableAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<
           CreateTableFromSnapshotRequest, Table, CreateTableFromSnapshotMetadata>
       createTableFromSnapshotOperationCallable() {
@@ -1277,6 +1286,8 @@ public class BigtableTableAdminClient implements BackgroundResource {
    * @param description Description of the snapshot.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Snapshot, SnapshotTableMetadata> snapshotTableAsync(
       TableName name, ClusterName cluster, SnapshotName snapshotId, String description) {
 
@@ -1322,6 +1333,8 @@ public class BigtableTableAdminClient implements BackgroundResource {
    * @param description Description of the snapshot.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Snapshot, SnapshotTableMetadata> snapshotTableAsync(
       String name, String cluster, String snapshotId, String description) {
 
@@ -1366,6 +1379,8 @@ public class BigtableTableAdminClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Snapshot, SnapshotTableMetadata> snapshotTableAsync(
       SnapshotTableRequest request) {
     return snapshotTableOperationCallable().futureCall(request);
@@ -1401,6 +1416,7 @@ public class BigtableTableAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<SnapshotTableRequest, Snapshot, SnapshotTableMetadata>
       snapshotTableOperationCallable() {
     return stub.snapshotTableOperationCallable();

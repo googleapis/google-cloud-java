@@ -16,7 +16,6 @@ grpc-google-cloud-dataproc-v1:0.12.0:0.12.1-SNAPSHOT
 grpc-google-cloud-dialogflow-v2:0.12.0:0.12.1-SNAPSHOT
 grpc-google-cloud-dialogflow-v2beta1:0.12.0:0.12.1-SNAPSHOT
 grpc-google-cloud-dlp-v2:0.12.0:0.12.1-SNAPSHOT
-grpc-google-cloud-dlp-v2beta1:0.12.0:0.12.1-SNAPSHOT
 grpc-google-cloud-error-reporting-v1beta1:0.12.0:0.12.1-SNAPSHOT
 grpc-google-cloud-firestore-v1beta1:0.12.0:0.12.1-SNAPSHOT
 grpc-google-cloud-language-v1:1.11.0:1.11.1-SNAPSHOT
@@ -41,7 +40,7 @@ grpc-google-cloud-video-intelligence-v1p1beta1:0.12.0:0.12.1-SNAPSHOT
 grpc-google-cloud-vision-v1:1.11.0:1.11.1-SNAPSHOT
 grpc-google-cloud-vision-v1p1beta1:0.12.0:0.12.1-SNAPSHOT
 grpc-google-cloud-vision-v1p2beta1:1.11.0:1.11.1-SNAPSHOT
-grpc-google-cloud-cloudiot-v1:0.12.0:0.12.1-SNAPSHOT
+grpc-google-cloud-iot-v1:0.12.0:0.12.1-SNAPSHOT
 grpc-google-cloud-redis-v1beta1:0.12.0:0.12.1-SNAPSHOT
 grpc-google-cloud-websecurityscanner-v1alpha:0.12.0:0.12.1-SNAPSHOT
 proto-google-cloud-bigquerydatatransfer-v1:0.12.0:0.12.1-SNAPSHOT
@@ -53,7 +52,6 @@ proto-google-cloud-datastore-v1:0.12.0:0.12.1-SNAPSHOT
 proto-google-cloud-dialogflow-v2:0.12.0:0.12.1-SNAPSHOT
 proto-google-cloud-dialogflow-v2beta1:0.12.0:0.12.1-SNAPSHOT
 proto-google-cloud-dlp-v2:0.12.0:0.12.1-SNAPSHOT
-proto-google-cloud-dlp-v2beta1:0.12.0:0.12.1-SNAPSHOT
 proto-google-cloud-error-reporting-v1beta1:0.12.0:0.12.1-SNAPSHOT
 proto-google-cloud-firestore-v1beta1:0.12.0:0.12.1-SNAPSHOT
 proto-google-cloud-language-v1:1.11.0:1.11.1-SNAPSHOT
@@ -78,7 +76,7 @@ proto-google-cloud-video-intelligence-v1p1beta1:0.12.0:0.12.1-SNAPSHOT
 proto-google-cloud-vision-v1:1.11.0:1.11.1-SNAPSHOT
 proto-google-cloud-vision-v1p1beta1:0.12.0:0.12.1-SNAPSHOT
 proto-google-cloud-vision-v1p2beta1:1.11.0:1.11.1-SNAPSHOT
-proto-google-cloud-cloudiot-v1:0.12.0:0.12.1-SNAPSHOT
+proto-google-cloud-iot-v1:0.12.0:0.12.1-SNAPSHOT
 proto-google-cloud-redis-v1beta1:0.12.0:0.12.1-SNAPSHOT
 proto-google-cloud-websecurityscanner-v1alpha:0.12.0:0.12.1-SNAPSHOT
 
@@ -134,3 +132,5 @@ google-cloud-translate:1.29.0:1.29.1-SNAPSHOT
 google-cloud-util:0.47.0-alpha:0.47.1-alpha-SNAPSHOT
 google-cloud-video-intelligence:0.47.0-beta:0.47.1-beta-SNAPSHOT
 google-cloud-vision:1.29.0:1.29.1-SNAPSHOT
+google-cloud-iot:0.47.0-beta:0.47.1-beta-SNAPSHOT
+google-cloud-websecurityscanner:0.47.0-alpha:0.47.1-alpha-SNAPSHOT

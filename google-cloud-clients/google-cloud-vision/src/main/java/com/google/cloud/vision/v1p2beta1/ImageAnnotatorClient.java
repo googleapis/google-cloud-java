@@ -157,6 +157,8 @@ public class ImageAnnotatorClient implements BackgroundResource {
    * Returns the OperationsClient that can be used to query the status of a long-running operation
    * returned by another API method call.
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationsClient getOperationsClient() {
     return operationsClient;
   }
@@ -252,6 +254,8 @@ public class ImageAnnotatorClient implements BackgroundResource {
    * @param requests Individual async file annotation requests for this batch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<AsyncBatchAnnotateFilesResponse, OperationMetadata>
       asyncBatchAnnotateFilesAsync(List<AsyncAnnotateFileRequest> requests) {
 
@@ -283,6 +287,8 @@ public class ImageAnnotatorClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   private final OperationFuture<AsyncBatchAnnotateFilesResponse, OperationMetadata>
       asyncBatchAnnotateFilesAsync(AsyncBatchAnnotateFilesRequest request) {
     return asyncBatchAnnotateFilesOperationCallable().futureCall(request);
@@ -310,6 +316,7 @@ public class ImageAnnotatorClient implements BackgroundResource {
    * }
    * </code></pre>
    */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<
           AsyncBatchAnnotateFilesRequest, AsyncBatchAnnotateFilesResponse, OperationMetadata>
       asyncBatchAnnotateFilesOperationCallable() {

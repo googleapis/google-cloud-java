@@ -188,16 +188,6 @@
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-cloud-dlp-v2beta1</artifactId>
-        <version>0.12.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-dlp-v2beta1:current} -->
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-cloud-dlp-v2beta1</artifactId>
-        <version>0.12.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-dlp-v2beta1:current} -->
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-dlp-v2</artifactId>
         <version>0.12.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-dlp-v2:current} -->
       </dependency>
@@ -468,13 +458,13 @@
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-cloud-cloudiot-v1</artifactId>
-        <version>0.12.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-cloudiot-v1:current} -->
+        <artifactId>proto-google-cloud-iot-v1</artifactId>
+        <version>0.12.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-iot-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-cloud-cloudiot-v1</artifactId>
-        <version>0.12.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-cloudiot-v1:current} -->
+        <artifactId>grpc-google-cloud-iot-v1</artifactId>
+        <version>0.12.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-iot-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
@@ -508,7 +498,6 @@
     <module>grpc-google-cloud-dialogflow-v2</module>
     <module>grpc-google-cloud-dialogflow-v2beta1</module>
     <module>grpc-google-cloud-dlp-v2</module>
-    <module>grpc-google-cloud-dlp-v2beta1</module>
     <module>grpc-google-cloud-error-reporting-v1beta1</module>
     <module>grpc-google-cloud-firestore-v1beta1</module>
     <module>grpc-google-cloud-language-v1</module>
@@ -533,7 +522,7 @@
     <module>grpc-google-cloud-vision-v1</module>
     <module>grpc-google-cloud-vision-v1p1beta1</module>
     <module>grpc-google-cloud-vision-v1p2beta1</module>
-    <module>grpc-google-cloud-cloudiot-v1</module>
+    <module>grpc-google-cloud-iot-v1</module>
     <module>grpc-google-cloud-redis-v1beta1</module>
     <module>grpc-google-cloud-websecurityscanner-v1alpha</module>
     <module>proto-google-cloud-bigquerydatatransfer-v1</module>
@@ -545,7 +534,6 @@
     <module>proto-google-cloud-dialogflow-v2</module>
     <module>proto-google-cloud-dialogflow-v2beta1</module>
     <module>proto-google-cloud-dlp-v2</module>
-    <module>proto-google-cloud-dlp-v2beta1</module>
     <module>proto-google-cloud-error-reporting-v1beta1</module>
     <module>proto-google-cloud-firestore-v1beta1</module>
     <module>proto-google-cloud-language-v1</module>
@@ -570,7 +558,7 @@
     <module>proto-google-cloud-vision-v1</module>
     <module>proto-google-cloud-vision-v1p1beta1</module>
     <module>proto-google-cloud-vision-v1p2beta1</module>
-    <module>proto-google-cloud-cloudiot-v1</module>
+    <module>proto-google-cloud-iot-v1</module>
     <module>proto-google-cloud-redis-v1beta1</module>
     <module>proto-google-cloud-websecurityscanner-v1alpha</module>
   </modules>
@@ -647,7 +635,7 @@
                 <quiet>true</quiet>
                 <dependencyDetailsEnabled>true</dependencyDetailsEnabled>
                 <dependencyLocationsEnabled>true</dependencyLocationsEnabled>
-                <artifactId>google-cloud-bom</artifactId>
+                <artifactId>${project.artifactId}</artifactId>
                 <packaging>jar</packaging>
               </configuration>
             </plugin>

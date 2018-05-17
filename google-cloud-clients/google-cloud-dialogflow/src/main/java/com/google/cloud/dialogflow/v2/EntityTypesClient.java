@@ -189,6 +189,8 @@ public class EntityTypesClient implements BackgroundResource {
    * Returns the OperationsClient that can be used to query the status of a long-running operation
    * returned by another API method call.
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationsClient getOperationsClient() {
     return operationsClient;
   }
@@ -935,6 +937,8 @@ public class EntityTypesClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<BatchUpdateEntityTypesResponse, Struct> batchUpdateEntityTypesAsync(
       BatchUpdateEntityTypesRequest request) {
     return batchUpdateEntityTypesOperationCallable().futureCall(request);
@@ -962,6 +966,7 @@ public class EntityTypesClient implements BackgroundResource {
    * }
    * </code></pre>
    */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<
           BatchUpdateEntityTypesRequest, BatchUpdateEntityTypesResponse, Struct>
       batchUpdateEntityTypesOperationCallable() {
@@ -1018,6 +1023,8 @@ public class EntityTypesClient implements BackgroundResource {
    *     same agent as `parent`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, Struct> batchDeleteEntityTypesAsync(
       ProjectAgentName parent, List<String> entityTypeNames) {
 
@@ -1052,6 +1059,8 @@ public class EntityTypesClient implements BackgroundResource {
    *     same agent as `parent`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, Struct> batchDeleteEntityTypesAsync(
       String parent, List<String> entityTypeNames) {
 
@@ -1087,6 +1096,8 @@ public class EntityTypesClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, Struct> batchDeleteEntityTypesAsync(
       BatchDeleteEntityTypesRequest request) {
     return batchDeleteEntityTypesOperationCallable().futureCall(request);
@@ -1115,6 +1126,7 @@ public class EntityTypesClient implements BackgroundResource {
    * }
    * </code></pre>
    */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<BatchDeleteEntityTypesRequest, Empty, Struct>
       batchDeleteEntityTypesOperationCallable() {
     return stub.batchDeleteEntityTypesOperationCallable();
@@ -1170,6 +1182,8 @@ public class EntityTypesClient implements BackgroundResource {
    * @param entities Required. The collection of entities to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, Struct> batchCreateEntitiesAsync(
       EntityTypeName parent, List<EntityType.Entity> entities) {
 
@@ -1203,6 +1217,8 @@ public class EntityTypesClient implements BackgroundResource {
    * @param entities Required. The collection of entities to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, Struct> batchCreateEntitiesAsync(
       String parent, List<EntityType.Entity> entities) {
 
@@ -1238,6 +1254,8 @@ public class EntityTypesClient implements BackgroundResource {
    *     must be enabled in the agent, before they can be used.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, Struct> batchCreateEntitiesAsync(
       EntityTypeName parent, List<EntityType.Entity> entities, String languageCode) {
 
@@ -1277,6 +1295,8 @@ public class EntityTypesClient implements BackgroundResource {
    *     must be enabled in the agent, before they can be used.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, Struct> batchCreateEntitiesAsync(
       String parent, List<EntityType.Entity> entities, String languageCode) {
 
@@ -1313,6 +1333,8 @@ public class EntityTypesClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, Struct> batchCreateEntitiesAsync(
       BatchCreateEntitiesRequest request) {
     return batchCreateEntitiesOperationCallable().futureCall(request);
@@ -1341,6 +1363,7 @@ public class EntityTypesClient implements BackgroundResource {
    * }
    * </code></pre>
    */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<BatchCreateEntitiesRequest, Empty, Struct>
       batchCreateEntitiesOperationCallable() {
     return stub.batchCreateEntitiesOperationCallable();
@@ -1395,6 +1418,8 @@ public class EntityTypesClient implements BackgroundResource {
    * @param entities Required. The collection of new entities to replace the existing entities.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, Struct> batchUpdateEntitiesAsync(
       EntityTypeName parent, List<EntityType.Entity> entities) {
 
@@ -1428,6 +1453,8 @@ public class EntityTypesClient implements BackgroundResource {
    * @param entities Required. The collection of new entities to replace the existing entities.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, Struct> batchUpdateEntitiesAsync(
       String parent, List<EntityType.Entity> entities) {
 
@@ -1463,6 +1490,8 @@ public class EntityTypesClient implements BackgroundResource {
    *     must be enabled in the agent, before they can be used.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, Struct> batchUpdateEntitiesAsync(
       EntityTypeName parent, List<EntityType.Entity> entities, String languageCode) {
 
@@ -1502,6 +1531,8 @@ public class EntityTypesClient implements BackgroundResource {
    *     must be enabled in the agent, before they can be used.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, Struct> batchUpdateEntitiesAsync(
       String parent, List<EntityType.Entity> entities, String languageCode) {
 
@@ -1538,6 +1569,8 @@ public class EntityTypesClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, Struct> batchUpdateEntitiesAsync(
       BatchUpdateEntitiesRequest request) {
     return batchUpdateEntitiesOperationCallable().futureCall(request);
@@ -1566,6 +1599,7 @@ public class EntityTypesClient implements BackgroundResource {
    * }
    * </code></pre>
    */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<BatchUpdateEntitiesRequest, Empty, Struct>
       batchUpdateEntitiesOperationCallable() {
     return stub.batchUpdateEntitiesOperationCallable();
@@ -1621,6 +1655,8 @@ public class EntityTypesClient implements BackgroundResource {
    *     are not fully-qualified names, i.e. they don't start with `projects/&lt;Project ID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, Struct> batchDeleteEntitiesAsync(
       EntityTypeName parent, List<String> entityValues) {
 
@@ -1655,6 +1691,8 @@ public class EntityTypesClient implements BackgroundResource {
    *     are not fully-qualified names, i.e. they don't start with `projects/&lt;Project ID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, Struct> batchDeleteEntitiesAsync(
       String parent, List<String> entityValues) {
 
@@ -1694,6 +1732,8 @@ public class EntityTypesClient implements BackgroundResource {
    *     must be enabled in the agent, before they can be used.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, Struct> batchDeleteEntitiesAsync(
       EntityTypeName parent, List<String> entityValues, String languageCode) {
 
@@ -1734,6 +1774,8 @@ public class EntityTypesClient implements BackgroundResource {
    *     must be enabled in the agent, before they can be used.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, Struct> batchDeleteEntitiesAsync(
       String parent, List<String> entityValues, String languageCode) {
 
@@ -1770,6 +1812,8 @@ public class EntityTypesClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, Struct> batchDeleteEntitiesAsync(
       BatchDeleteEntitiesRequest request) {
     return batchDeleteEntitiesOperationCallable().futureCall(request);
@@ -1798,6 +1842,7 @@ public class EntityTypesClient implements BackgroundResource {
    * }
    * </code></pre>
    */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<BatchDeleteEntitiesRequest, Empty, Struct>
       batchDeleteEntitiesOperationCallable() {
     return stub.batchDeleteEntitiesOperationCallable();

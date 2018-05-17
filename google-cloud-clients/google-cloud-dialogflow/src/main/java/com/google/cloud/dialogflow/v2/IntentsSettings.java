@@ -98,6 +98,8 @@ public class IntentsSettings extends ClientSettings<IntentsSettings> {
   }
 
   /** Returns the object with the settings used for calls to batchUpdateIntents. */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<BatchUpdateIntentsRequest, BatchUpdateIntentsResponse, Struct>
       batchUpdateIntentsOperationSettings() {
     return ((IntentsStubSettings) getStubSettings()).batchUpdateIntentsOperationSettings();
@@ -109,6 +111,8 @@ public class IntentsSettings extends ClientSettings<IntentsSettings> {
   }
 
   /** Returns the object with the settings used for calls to batchDeleteIntents. */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<BatchDeleteIntentsRequest, Empty, Struct>
       batchDeleteIntentsOperationSettings() {
     return ((IntentsStubSettings) getStubSettings()).batchDeleteIntentsOperationSettings();
@@ -244,6 +248,8 @@ public class IntentsSettings extends ClientSettings<IntentsSettings> {
     }
 
     /** Returns the builder for the settings used for calls to batchUpdateIntents. */
+    @BetaApi(
+        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             BatchUpdateIntentsRequest, BatchUpdateIntentsResponse, Struct>
         batchUpdateIntentsOperationSettings() {
@@ -257,6 +263,8 @@ public class IntentsSettings extends ClientSettings<IntentsSettings> {
     }
 
     /** Returns the builder for the settings used for calls to batchDeleteIntents. */
+    @BetaApi(
+        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<BatchDeleteIntentsRequest, Empty, Struct>
         batchDeleteIntentsOperationSettings() {
       return getStubSettingsBuilder().batchDeleteIntentsOperationSettings();

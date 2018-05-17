@@ -396,16 +396,6 @@
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-cloud-dlp-v2beta1</artifactId>
-        <version>0.12.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-dlp-v2beta1:current} -->
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-cloud-dlp-v2beta1</artifactId>
-        <version>0.12.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-dlp-v2beta1:current} -->
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-dlp-v2</artifactId>
         <version>0.12.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-dlp-v2:current} -->
       </dependency>
@@ -901,13 +891,13 @@
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-cloud-cloudiot-v1</artifactId>
-        <version>0.12.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-cloudiot-v1:current} -->
+        <artifactId>proto-google-cloud-iot-v1</artifactId>
+        <version>0.12.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-iot-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-cloud-cloudiot-v1</artifactId>
-        <version>0.12.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-cloudiot-v1:current} -->
+        <artifactId>grpc-google-cloud-iot-v1</artifactId>
+        <version>0.12.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-iot-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>

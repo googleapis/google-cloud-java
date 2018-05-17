@@ -17,6 +17,7 @@ package com.google.cloud.vision.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.cloud.vision.v1.ImageAnnotatorGrpc.ImageAnnotatorImplBase;
+import com.google.longrunning.Operation;
 import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.stub.StreamObserver;
 import java.util.ArrayList;
@@ -64,6 +65,21 @@ public class MockImageAnnotatorImpl extends ImageAnnotatorImplBase {
     if (response instanceof BatchAnnotateImagesResponse) {
       requests.add(request);
       responseObserver.onNext((BatchAnnotateImagesResponse) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void asyncBatchAnnotateFiles(
+      AsyncBatchAnnotateFilesRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext((Operation) response);
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
       responseObserver.onError((Exception) response);

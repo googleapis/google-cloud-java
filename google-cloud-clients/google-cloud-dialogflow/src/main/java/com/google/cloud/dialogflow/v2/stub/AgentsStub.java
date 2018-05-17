@@ -46,6 +46,7 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class AgentsStub implements BackgroundResource {
 
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationsStub getOperationsStub() {
     throw new UnsupportedOperationException("Not implemented: getOperationsStub()");
   }
@@ -62,6 +63,7 @@ public abstract class AgentsStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: searchAgentsCallable()");
   }
 
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<TrainAgentRequest, Empty, Struct> trainAgentOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: trainAgentOperationCallable()");
   }
@@ -70,6 +72,7 @@ public abstract class AgentsStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: trainAgentCallable()");
   }
 
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<ExportAgentRequest, ExportAgentResponse, Struct>
       exportAgentOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: exportAgentOperationCallable()");
@@ -79,6 +82,7 @@ public abstract class AgentsStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: exportAgentCallable()");
   }
 
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<ImportAgentRequest, Empty, Struct> importAgentOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: importAgentOperationCallable()");
   }
@@ -87,6 +91,7 @@ public abstract class AgentsStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: importAgentCallable()");
   }
 
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<RestoreAgentRequest, Empty, Struct> restoreAgentOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: restoreAgentOperationCallable()");
   }

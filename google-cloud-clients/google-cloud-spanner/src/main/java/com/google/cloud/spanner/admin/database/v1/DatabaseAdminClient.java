@@ -185,6 +185,8 @@ public class DatabaseAdminClient implements BackgroundResource {
    * Returns the OperationsClient that can be used to query the status of a long-running operation
    * returned by another API method call.
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationsClient getOperationsClient() {
     return operationsClient;
   }
@@ -350,6 +352,8 @@ public class DatabaseAdminClient implements BackgroundResource {
    *     in backticks (`` ` ``).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Database, CreateDatabaseMetadata> createDatabaseAsync(
       InstanceName parent, String createStatement) {
 
@@ -390,6 +394,8 @@ public class DatabaseAdminClient implements BackgroundResource {
    *     in backticks (`` ` ``).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Database, CreateDatabaseMetadata> createDatabaseAsync(
       String parent, String createStatement) {
 
@@ -428,6 +434,8 @@ public class DatabaseAdminClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Database, CreateDatabaseMetadata> createDatabaseAsync(
       CreateDatabaseRequest request) {
     return createDatabaseOperationCallable().futureCall(request);
@@ -459,6 +467,7 @@ public class DatabaseAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<CreateDatabaseRequest, Database, CreateDatabaseMetadata>
       createDatabaseOperationCallable() {
     return stub.createDatabaseOperationCallable();
@@ -610,6 +619,8 @@ public class DatabaseAdminClient implements BackgroundResource {
    * @param statements DDL statements to be applied to the database.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, UpdateDatabaseDdlMetadata> updateDatabaseDdlAsync(
       DatabaseName database, List<String> statements) {
 
@@ -645,6 +656,8 @@ public class DatabaseAdminClient implements BackgroundResource {
    * @param statements DDL statements to be applied to the database.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, UpdateDatabaseDdlMetadata> updateDatabaseDdlAsync(
       String database, List<String> statements) {
 
@@ -683,6 +696,8 @@ public class DatabaseAdminClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, UpdateDatabaseDdlMetadata> updateDatabaseDdlAsync(
       UpdateDatabaseDdlRequest request) {
     return updateDatabaseDdlOperationCallable().futureCall(request);
@@ -714,6 +729,7 @@ public class DatabaseAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<UpdateDatabaseDdlRequest, Empty, UpdateDatabaseDdlMetadata>
       updateDatabaseDdlOperationCallable() {
     return stub.updateDatabaseDdlOperationCallable();

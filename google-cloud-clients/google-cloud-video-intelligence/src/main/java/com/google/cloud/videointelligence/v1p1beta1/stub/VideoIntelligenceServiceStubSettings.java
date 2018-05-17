@@ -93,6 +93,7 @@ public class VideoIntelligenceServiceStubSettings
   }
 
   /** Returns the object with the settings used for calls to annotateVideo. */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallSettings<AnnotateVideoRequest, AnnotateVideoResponse, AnnotateVideoProgress>
       annotateVideoOperationSettings() {
     return annotateVideoOperationSettings;
@@ -305,6 +306,8 @@ public class VideoIntelligenceServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to annotateVideo. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             AnnotateVideoRequest, AnnotateVideoResponse, AnnotateVideoProgress>
         annotateVideoOperationSettings() {

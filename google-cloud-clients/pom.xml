@@ -428,6 +428,7 @@
     <module>google-cloud-dns</module>
     <module>google-cloud-errorreporting</module>
     <module>google-cloud-firestore</module>
+    <module>google-cloud-iot</module>
     <module>google-cloud-language</module>
     <module>google-cloud-logging</module>
     <module>google-cloud-monitoring</module>
@@ -444,6 +445,7 @@
     <module>google-cloud-translate</module>
     <module>google-cloud-vision</module>
     <module>google-cloud-video-intelligence</module>
+    <module>google-cloud-websecurityscanner</module>
   </modules>
   <pluginRepositories>
     <pluginRepository>

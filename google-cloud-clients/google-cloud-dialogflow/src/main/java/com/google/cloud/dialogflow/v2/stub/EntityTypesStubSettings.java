@@ -164,6 +164,7 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
   }
 
   /** Returns the object with the settings used for calls to batchUpdateEntityTypes. */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallSettings<
           BatchUpdateEntityTypesRequest, BatchUpdateEntityTypesResponse, Struct>
       batchUpdateEntityTypesOperationSettings() {
@@ -177,6 +178,7 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
   }
 
   /** Returns the object with the settings used for calls to batchDeleteEntityTypes. */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallSettings<BatchDeleteEntityTypesRequest, Empty, Struct>
       batchDeleteEntityTypesOperationSettings() {
     return batchDeleteEntityTypesOperationSettings;
@@ -188,6 +190,7 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
   }
 
   /** Returns the object with the settings used for calls to batchCreateEntities. */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallSettings<BatchCreateEntitiesRequest, Empty, Struct>
       batchCreateEntitiesOperationSettings() {
     return batchCreateEntitiesOperationSettings;
@@ -199,6 +202,7 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
   }
 
   /** Returns the object with the settings used for calls to batchUpdateEntities. */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallSettings<BatchUpdateEntitiesRequest, Empty, Struct>
       batchUpdateEntitiesOperationSettings() {
     return batchUpdateEntitiesOperationSettings;
@@ -210,6 +214,7 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
   }
 
   /** Returns the object with the settings used for calls to batchDeleteEntities. */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallSettings<BatchDeleteEntitiesRequest, Empty, Struct>
       batchDeleteEntitiesOperationSettings() {
     return batchDeleteEntitiesOperationSettings;
@@ -752,6 +757,8 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
     }
 
     /** Returns the builder for the settings used for calls to batchUpdateEntityTypes. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             BatchUpdateEntityTypesRequest, BatchUpdateEntityTypesResponse, Struct>
         batchUpdateEntityTypesOperationSettings() {
@@ -765,6 +772,8 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
     }
 
     /** Returns the builder for the settings used for calls to batchDeleteEntityTypes. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<BatchDeleteEntityTypesRequest, Empty, Struct>
         batchDeleteEntityTypesOperationSettings() {
       return batchDeleteEntityTypesOperationSettings;
@@ -777,6 +786,8 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
     }
 
     /** Returns the builder for the settings used for calls to batchCreateEntities. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<BatchCreateEntitiesRequest, Empty, Struct>
         batchCreateEntitiesOperationSettings() {
       return batchCreateEntitiesOperationSettings;
@@ -789,6 +800,8 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
     }
 
     /** Returns the builder for the settings used for calls to batchUpdateEntities. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<BatchUpdateEntitiesRequest, Empty, Struct>
         batchUpdateEntitiesOperationSettings() {
       return batchUpdateEntitiesOperationSettings;
@@ -801,6 +814,8 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
     }
 
     /** Returns the builder for the settings used for calls to batchDeleteEntities. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<BatchDeleteEntitiesRequest, Empty, Struct>
         batchDeleteEntitiesOperationSettings() {
       return batchDeleteEntitiesOperationSettings;

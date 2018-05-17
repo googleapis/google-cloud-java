@@ -55,6 +55,7 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class InstanceAdminStub implements BackgroundResource {
 
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationsStub getOperationsStub() {
     throw new UnsupportedOperationException("Not implemented: getOperationsStub()");
   }
@@ -86,6 +87,7 @@ public abstract class InstanceAdminStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: getInstanceCallable()");
   }
 
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<CreateInstanceRequest, Instance, CreateInstanceMetadata>
       createInstanceOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: createInstanceOperationCallable()");
@@ -95,6 +97,7 @@ public abstract class InstanceAdminStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: createInstanceCallable()");
   }
 
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<UpdateInstanceRequest, Instance, UpdateInstanceMetadata>
       updateInstanceOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: updateInstanceOperationCallable()");

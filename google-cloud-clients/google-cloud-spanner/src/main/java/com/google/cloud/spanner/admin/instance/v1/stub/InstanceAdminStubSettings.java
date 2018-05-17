@@ -159,6 +159,7 @@ public class InstanceAdminStubSettings extends StubSettings<InstanceAdminStubSet
   }
 
   /** Returns the object with the settings used for calls to createInstance. */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallSettings<CreateInstanceRequest, Instance, CreateInstanceMetadata>
       createInstanceOperationSettings() {
     return createInstanceOperationSettings;
@@ -170,6 +171,7 @@ public class InstanceAdminStubSettings extends StubSettings<InstanceAdminStubSet
   }
 
   /** Returns the object with the settings used for calls to updateInstance. */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallSettings<UpdateInstanceRequest, Instance, UpdateInstanceMetadata>
       updateInstanceOperationSettings() {
     return updateInstanceOperationSettings;
@@ -687,6 +689,8 @@ public class InstanceAdminStubSettings extends StubSettings<InstanceAdminStubSet
     }
 
     /** Returns the builder for the settings used for calls to createInstance. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateInstanceRequest, Instance, CreateInstanceMetadata>
         createInstanceOperationSettings() {
       return createInstanceOperationSettings;
@@ -698,6 +702,8 @@ public class InstanceAdminStubSettings extends StubSettings<InstanceAdminStubSet
     }
 
     /** Returns the builder for the settings used for calls to updateInstance. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateInstanceRequest, Instance, UpdateInstanceMetadata>
         updateInstanceOperationSettings() {
       return updateInstanceOperationSettings;

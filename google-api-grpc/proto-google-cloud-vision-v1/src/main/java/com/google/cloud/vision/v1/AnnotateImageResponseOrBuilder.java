@@ -391,4 +391,32 @@ public interface AnnotateImageResponseOrBuilder extends
    * <code>.google.rpc.Status error = 9;</code>
    */
   com.google.rpc.StatusOrBuilder getErrorOrBuilder();
+
+  /**
+   * <pre>
+   * If present, contextual information is needed to understand where this image
+   * comes from.
+   * </pre>
+   *
+   * <code>.google.cloud.vision.v1.ImageAnnotationContext context = 21;</code>
+   */
+  boolean hasContext();
+  /**
+   * <pre>
+   * If present, contextual information is needed to understand where this image
+   * comes from.
+   * </pre>
+   *
+   * <code>.google.cloud.vision.v1.ImageAnnotationContext context = 21;</code>
+   */
+  com.google.cloud.vision.v1.ImageAnnotationContext getContext();
+  /**
+   * <pre>
+   * If present, contextual information is needed to understand where this image
+   * comes from.
+   * </pre>
+   *
+   * <code>.google.cloud.vision.v1.ImageAnnotationContext context = 21;</code>
+   */
+  com.google.cloud.vision.v1.ImageAnnotationContextOrBuilder getContextOrBuilder();
 }
