@@ -215,6 +215,7 @@ public class GrpcCloudRedisStub extends CloudRedisStub {
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public GrpcOperationsStub getOperationsStub() {
     return operationsStub;
   }
@@ -232,6 +233,7 @@ public class GrpcCloudRedisStub extends CloudRedisStub {
     return getInstanceCallable;
   }
 
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<CreateInstanceRequest, Instance, Any> createInstanceOperationCallable() {
     return createInstanceOperationCallable;
   }
@@ -240,6 +242,7 @@ public class GrpcCloudRedisStub extends CloudRedisStub {
     return createInstanceCallable;
   }
 
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<UpdateInstanceRequest, Instance, Any> updateInstanceOperationCallable() {
     return updateInstanceOperationCallable;
   }
@@ -248,6 +251,7 @@ public class GrpcCloudRedisStub extends CloudRedisStub {
     return updateInstanceCallable;
   }
 
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<DeleteInstanceRequest, Empty, Any> deleteInstanceOperationCallable() {
     return deleteInstanceOperationCallable;
   }

@@ -44,6 +44,7 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class CloudRedisStub implements BackgroundResource {
 
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationsStub getOperationsStub() {
     throw new UnsupportedOperationException("Not implemented: getOperationsStub()");
   }
@@ -61,6 +62,7 @@ public abstract class CloudRedisStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: getInstanceCallable()");
   }
 
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<CreateInstanceRequest, Instance, Any> createInstanceOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: createInstanceOperationCallable()");
   }
@@ -69,6 +71,7 @@ public abstract class CloudRedisStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: createInstanceCallable()");
   }
 
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<UpdateInstanceRequest, Instance, Any> updateInstanceOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: updateInstanceOperationCallable()");
   }
@@ -77,6 +80,7 @@ public abstract class CloudRedisStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: updateInstanceCallable()");
   }
 
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<DeleteInstanceRequest, Empty, Any> deleteInstanceOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteInstanceOperationCallable()");
   }
