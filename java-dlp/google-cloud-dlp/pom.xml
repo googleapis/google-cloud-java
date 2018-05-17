@@ -15,7 +15,7 @@
     <version>0.47.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-clients:current} -->
   </parent>
   <properties>
-    <site.installationModule>google-cloud-dlp-v2beta1</site.installationModule>
+    <site.installationModule>google-cloud-dlp</site.installationModule>
   </properties>
   <dependencies>
     <dependency>
@@ -25,10 +25,6 @@
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>google-cloud-core-grpc</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>com.google.api.grpc</groupId>
-      <artifactId>proto-google-cloud-dlp-v2beta1</artifactId>
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
@@ -65,11 +61,6 @@
     <dependency>
       <groupId>org.objenesis</groupId>
       <artifactId>objenesis</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.google.api.grpc</groupId>
-      <artifactId>grpc-google-cloud-dlp-v2beta1</artifactId>
       <scope>test</scope>
     </dependency>
     <dependency>
