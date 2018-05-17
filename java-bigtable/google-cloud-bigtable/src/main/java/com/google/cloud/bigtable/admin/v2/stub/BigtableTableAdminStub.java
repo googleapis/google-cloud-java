@@ -58,6 +58,7 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class BigtableTableAdminStub implements BackgroundResource {
 
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationsStub getOperationsStub() {
     throw new UnsupportedOperationException("Not implemented: getOperationsStub()");
   }
@@ -66,6 +67,7 @@ public abstract class BigtableTableAdminStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: createTableCallable()");
   }
 
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<CreateTableFromSnapshotRequest, Table, CreateTableFromSnapshotMetadata>
       createTableFromSnapshotOperationCallable() {
     throw new UnsupportedOperationException(
@@ -111,6 +113,7 @@ public abstract class BigtableTableAdminStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: checkConsistencyCallable()");
   }
 
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<SnapshotTableRequest, Snapshot, SnapshotTableMetadata>
       snapshotTableOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: snapshotTableOperationCallable()");

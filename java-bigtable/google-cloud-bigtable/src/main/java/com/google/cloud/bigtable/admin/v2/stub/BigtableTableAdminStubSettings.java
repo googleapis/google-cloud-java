@@ -156,6 +156,7 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
   }
 
   /** Returns the object with the settings used for calls to createTableFromSnapshot. */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallSettings<
           CreateTableFromSnapshotRequest, Table, CreateTableFromSnapshotMetadata>
       createTableFromSnapshotOperationSettings() {
@@ -206,6 +207,7 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
   }
 
   /** Returns the object with the settings used for calls to snapshotTable. */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallSettings<SnapshotTableRequest, Snapshot, SnapshotTableMetadata>
       snapshotTableOperationSettings() {
     return snapshotTableOperationSettings;
@@ -754,6 +756,8 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
     }
 
     /** Returns the builder for the settings used for calls to createTableFromSnapshot. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateTableFromSnapshotRequest, Table, CreateTableFromSnapshotMetadata>
         createTableFromSnapshotOperationSettings() {
@@ -806,6 +810,8 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
     }
 
     /** Returns the builder for the settings used for calls to snapshotTable. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<SnapshotTableRequest, Snapshot, SnapshotTableMetadata>
         snapshotTableOperationSettings() {
       return snapshotTableOperationSettings;

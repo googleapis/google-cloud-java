@@ -99,6 +99,8 @@ public class BigtableTableAdminSettings extends ClientSettings<BigtableTableAdmi
   }
 
   /** Returns the object with the settings used for calls to createTableFromSnapshot. */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<
           CreateTableFromSnapshotRequest, Table, CreateTableFromSnapshotMetadata>
       createTableFromSnapshotOperationSettings() {
@@ -150,6 +152,8 @@ public class BigtableTableAdminSettings extends ClientSettings<BigtableTableAdmi
   }
 
   /** Returns the object with the settings used for calls to snapshotTable. */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<SnapshotTableRequest, Snapshot, SnapshotTableMetadata>
       snapshotTableOperationSettings() {
     return ((BigtableTableAdminStubSettings) getStubSettings()).snapshotTableOperationSettings();
@@ -280,6 +284,8 @@ public class BigtableTableAdminSettings extends ClientSettings<BigtableTableAdmi
     }
 
     /** Returns the builder for the settings used for calls to createTableFromSnapshot. */
+    @BetaApi(
+        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateTableFromSnapshotRequest, Table, CreateTableFromSnapshotMetadata>
         createTableFromSnapshotOperationSettings() {
@@ -332,6 +338,8 @@ public class BigtableTableAdminSettings extends ClientSettings<BigtableTableAdmi
     }
 
     /** Returns the builder for the settings used for calls to snapshotTable. */
+    @BetaApi(
+        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<SnapshotTableRequest, Snapshot, SnapshotTableMetadata>
         snapshotTableOperationSettings() {
       return getStubSettingsBuilder().snapshotTableOperationSettings();

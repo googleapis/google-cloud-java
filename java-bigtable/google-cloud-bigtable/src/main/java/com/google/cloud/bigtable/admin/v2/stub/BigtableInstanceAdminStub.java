@@ -66,10 +66,12 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class BigtableInstanceAdminStub implements BackgroundResource {
 
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationsStub getOperationsStub() {
     throw new UnsupportedOperationException("Not implemented: getOperationsStub()");
   }
 
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<CreateInstanceRequest, Instance, CreateInstanceMetadata>
       createInstanceOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: createInstanceOperationCallable()");
@@ -87,6 +89,7 @@ public abstract class BigtableInstanceAdminStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: listInstancesCallable()");
   }
 
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<PartialUpdateInstanceRequest, Instance, UpdateInstanceMetadata>
       partialUpdateInstanceOperationCallable() {
     throw new UnsupportedOperationException(
@@ -101,6 +104,7 @@ public abstract class BigtableInstanceAdminStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: deleteInstanceCallable()");
   }
 
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<CreateClusterRequest, Cluster, CreateClusterMetadata>
       createClusterOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: createClusterOperationCallable()");
@@ -118,6 +122,7 @@ public abstract class BigtableInstanceAdminStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: listClustersCallable()");
   }
 
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<Cluster, Cluster, UpdateClusterMetadata>
       updateClusterOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: updateClusterOperationCallable()");
@@ -148,6 +153,7 @@ public abstract class BigtableInstanceAdminStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: listAppProfilesCallable()");
   }
 
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<UpdateAppProfileRequest, AppProfile, UpdateAppProfileMetadata>
       updateAppProfileOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: updateAppProfileOperationCallable()");

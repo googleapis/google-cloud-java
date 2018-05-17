@@ -169,6 +169,7 @@ public class BigtableInstanceAdminStubSettings
   }
 
   /** Returns the object with the settings used for calls to createInstance. */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallSettings<CreateInstanceRequest, Instance, CreateInstanceMetadata>
       createInstanceOperationSettings() {
     return createInstanceOperationSettings;
@@ -191,6 +192,7 @@ public class BigtableInstanceAdminStubSettings
   }
 
   /** Returns the object with the settings used for calls to partialUpdateInstance. */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallSettings<PartialUpdateInstanceRequest, Instance, UpdateInstanceMetadata>
       partialUpdateInstanceOperationSettings() {
     return partialUpdateInstanceOperationSettings;
@@ -207,6 +209,7 @@ public class BigtableInstanceAdminStubSettings
   }
 
   /** Returns the object with the settings used for calls to createCluster. */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallSettings<CreateClusterRequest, Cluster, CreateClusterMetadata>
       createClusterOperationSettings() {
     return createClusterOperationSettings;
@@ -228,6 +231,7 @@ public class BigtableInstanceAdminStubSettings
   }
 
   /** Returns the object with the settings used for calls to updateCluster. */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallSettings<Cluster, Cluster, UpdateClusterMetadata>
       updateClusterOperationSettings() {
     return updateClusterOperationSettings;
@@ -261,6 +265,7 @@ public class BigtableInstanceAdminStubSettings
   }
 
   /** Returns the object with the settings used for calls to updateAppProfile. */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallSettings<UpdateAppProfileRequest, AppProfile, UpdateAppProfileMetadata>
       updateAppProfileOperationSettings() {
     return updateAppProfileOperationSettings;
@@ -888,6 +893,8 @@ public class BigtableInstanceAdminStubSettings
     }
 
     /** Returns the builder for the settings used for calls to createInstance. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateInstanceRequest, Instance, CreateInstanceMetadata>
         createInstanceOperationSettings() {
       return createInstanceOperationSettings;
@@ -911,6 +918,8 @@ public class BigtableInstanceAdminStubSettings
     }
 
     /** Returns the builder for the settings used for calls to partialUpdateInstance. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             PartialUpdateInstanceRequest, Instance, UpdateInstanceMetadata>
         partialUpdateInstanceOperationSettings() {
@@ -928,6 +937,8 @@ public class BigtableInstanceAdminStubSettings
     }
 
     /** Returns the builder for the settings used for calls to createCluster. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateClusterRequest, Cluster, CreateClusterMetadata>
         createClusterOperationSettings() {
       return createClusterOperationSettings;
@@ -950,6 +961,8 @@ public class BigtableInstanceAdminStubSettings
     }
 
     /** Returns the builder for the settings used for calls to updateCluster. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<Cluster, Cluster, UpdateClusterMetadata>
         updateClusterOperationSettings() {
       return updateClusterOperationSettings;
@@ -985,6 +998,8 @@ public class BigtableInstanceAdminStubSettings
     }
 
     /** Returns the builder for the settings used for calls to updateAppProfile. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             UpdateAppProfileRequest, AppProfile, UpdateAppProfileMetadata>
         updateAppProfileOperationSettings() {
