@@ -23,9 +23,11 @@ import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.vision.v1.stub.ImageAnnotatorStubSettings;
+import com.google.longrunning.Operation;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
@@ -62,6 +64,20 @@ public class ImageAnnotatorSettings extends ClientSettings<ImageAnnotatorSetting
   public UnaryCallSettings<BatchAnnotateImagesRequest, BatchAnnotateImagesResponse>
       batchAnnotateImagesSettings() {
     return ((ImageAnnotatorStubSettings) getStubSettings()).batchAnnotateImagesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to asyncBatchAnnotateFiles. */
+  public UnaryCallSettings<AsyncBatchAnnotateFilesRequest, Operation>
+      asyncBatchAnnotateFilesSettings() {
+    return ((ImageAnnotatorStubSettings) getStubSettings()).asyncBatchAnnotateFilesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to asyncBatchAnnotateFiles. */
+  public OperationCallSettings<
+          AsyncBatchAnnotateFilesRequest, AsyncBatchAnnotateFilesResponse, OperationMetadata>
+      asyncBatchAnnotateFilesOperationSettings() {
+    return ((ImageAnnotatorStubSettings) getStubSettings())
+        .asyncBatchAnnotateFilesOperationSettings();
   }
 
   public static final ImageAnnotatorSettings create(ImageAnnotatorStubSettings stub)
@@ -165,6 +181,19 @@ public class ImageAnnotatorSettings extends ClientSettings<ImageAnnotatorSetting
     public UnaryCallSettings.Builder<BatchAnnotateImagesRequest, BatchAnnotateImagesResponse>
         batchAnnotateImagesSettings() {
       return getStubSettingsBuilder().batchAnnotateImagesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to asyncBatchAnnotateFiles. */
+    public UnaryCallSettings.Builder<AsyncBatchAnnotateFilesRequest, Operation>
+        asyncBatchAnnotateFilesSettings() {
+      return getStubSettingsBuilder().asyncBatchAnnotateFilesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to asyncBatchAnnotateFiles. */
+    public OperationCallSettings.Builder<
+            AsyncBatchAnnotateFilesRequest, AsyncBatchAnnotateFilesResponse, OperationMetadata>
+        asyncBatchAnnotateFilesOperationSettings() {
+      return getStubSettingsBuilder().asyncBatchAnnotateFilesOperationSettings();
     }
 
     @Override

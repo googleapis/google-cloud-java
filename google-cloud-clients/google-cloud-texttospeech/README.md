@@ -76,7 +76,7 @@ Versioning
 
 This library follows [Semantic Versioning](http://semver.org/).
 
-It is currently in major version zero (``0.y.z``), which means that anything may change at any time and the public API should not be considered stable.
+It is currently in major version zero (``0.y.z``), which means that anything may change at any time and the public API should not be considered stable.d
 
 Contributing
 ------------
