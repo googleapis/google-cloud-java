@@ -300,6 +300,8 @@ public class SpeechClient implements BackgroundResource {
    * @param audio &#42;Required&#42; The audio data to be recognized.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<AsyncRecognizeResponse, AsyncRecognizeMetadata> asyncRecognizeAsync(
       RecognitionConfig config, RecognitionAudio audio) {
 
@@ -340,6 +342,8 @@ public class SpeechClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<AsyncRecognizeResponse, AsyncRecognizeMetadata> asyncRecognizeAsync(
       AsyncRecognizeRequest request) {
     return asyncRecognizeOperationCallable().futureCall(request);
@@ -376,6 +380,7 @@ public class SpeechClient implements BackgroundResource {
    * }
    * </code></pre>
    */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<
           AsyncRecognizeRequest, AsyncRecognizeResponse, AsyncRecognizeMetadata>
       asyncRecognizeOperationCallable() {

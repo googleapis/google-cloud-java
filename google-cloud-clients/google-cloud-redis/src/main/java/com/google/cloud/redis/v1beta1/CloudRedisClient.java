@@ -482,6 +482,8 @@ public class CloudRedisClient implements BackgroundResource {
    * @param instance Required. A Redis [Instance] resource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Instance, Any> createInstanceAsync(
       LocationName parent, String instanceId, Instance instance) {
 
@@ -535,6 +537,8 @@ public class CloudRedisClient implements BackgroundResource {
    * @param instance Required. A Redis [Instance] resource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Instance, Any> createInstanceAsync(
       String parent, String instanceId, Instance instance) {
 
@@ -586,6 +590,8 @@ public class CloudRedisClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Instance, Any> createInstanceAsync(CreateInstanceRequest request) {
     return createInstanceOperationCallable().futureCall(request);
   }
@@ -628,6 +634,7 @@ public class CloudRedisClient implements BackgroundResource {
    * }
    * </code></pre>
    */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<CreateInstanceRequest, Instance, Any>
       createInstanceOperationCallable() {
     return stub.createInstanceOperationCallable();
@@ -710,6 +717,8 @@ public class CloudRedisClient implements BackgroundResource {
    * @param instance Required. Update description. Only fields specified in update_mask are updated.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Instance, Any> updateInstanceAsync(
       FieldMask updateMask, Instance instance) {
 
@@ -753,6 +762,8 @@ public class CloudRedisClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Instance, Any> updateInstanceAsync(UpdateInstanceRequest request) {
     return updateInstanceOperationCallable().futureCall(request);
   }
@@ -791,6 +802,7 @@ public class CloudRedisClient implements BackgroundResource {
    * }
    * </code></pre>
    */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<UpdateInstanceRequest, Instance, Any>
       updateInstanceOperationCallable() {
     return stub.updateInstanceOperationCallable();
@@ -852,6 +864,8 @@ public class CloudRedisClient implements BackgroundResource {
    *     refers to a GCP region
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, Any> deleteInstanceAsync(InstanceName name) {
 
     DeleteInstanceRequest request =
@@ -877,6 +891,8 @@ public class CloudRedisClient implements BackgroundResource {
    *     refers to a GCP region
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, Any> deleteInstanceAsync(String name) {
 
     DeleteInstanceRequest request = DeleteInstanceRequest.newBuilder().setName(name).build();
@@ -902,6 +918,8 @@ public class CloudRedisClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   private final OperationFuture<Empty, Any> deleteInstanceAsync(DeleteInstanceRequest request) {
     return deleteInstanceOperationCallable().futureCall(request);
   }
@@ -924,6 +942,7 @@ public class CloudRedisClient implements BackgroundResource {
    * }
    * </code></pre>
    */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<DeleteInstanceRequest, Empty, Any>
       deleteInstanceOperationCallable() {
     return stub.deleteInstanceOperationCallable();

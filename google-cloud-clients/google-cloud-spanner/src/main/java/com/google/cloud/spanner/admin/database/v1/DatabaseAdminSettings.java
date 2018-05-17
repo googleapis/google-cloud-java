@@ -93,6 +93,8 @@ public class DatabaseAdminSettings extends ClientSettings<DatabaseAdminSettings>
   }
 
   /** Returns the object with the settings used for calls to createDatabase. */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<CreateDatabaseRequest, Database, CreateDatabaseMetadata>
       createDatabaseOperationSettings() {
     return ((DatabaseAdminStubSettings) getStubSettings()).createDatabaseOperationSettings();
@@ -109,6 +111,8 @@ public class DatabaseAdminSettings extends ClientSettings<DatabaseAdminSettings>
   }
 
   /** Returns the object with the settings used for calls to updateDatabaseDdl. */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<UpdateDatabaseDdlRequest, Empty, UpdateDatabaseDdlMetadata>
       updateDatabaseDdlOperationSettings() {
     return ((DatabaseAdminStubSettings) getStubSettings()).updateDatabaseDdlOperationSettings();
@@ -250,6 +254,8 @@ public class DatabaseAdminSettings extends ClientSettings<DatabaseAdminSettings>
     }
 
     /** Returns the builder for the settings used for calls to createDatabase. */
+    @BetaApi(
+        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateDatabaseRequest, Database, CreateDatabaseMetadata>
         createDatabaseOperationSettings() {
       return getStubSettingsBuilder().createDatabaseOperationSettings();
@@ -267,6 +273,8 @@ public class DatabaseAdminSettings extends ClientSettings<DatabaseAdminSettings>
     }
 
     /** Returns the builder for the settings used for calls to updateDatabaseDdl. */
+    @BetaApi(
+        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateDatabaseDdlRequest, Empty, UpdateDatabaseDdlMetadata>
         updateDatabaseDdlOperationSettings() {
       return getStubSettingsBuilder().updateDatabaseDdlOperationSettings();

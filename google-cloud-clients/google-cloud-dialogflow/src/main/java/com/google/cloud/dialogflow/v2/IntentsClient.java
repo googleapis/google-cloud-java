@@ -945,6 +945,8 @@ public class IntentsClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<BatchUpdateIntentsResponse, Struct> batchUpdateIntentsAsync(
       BatchUpdateIntentsRequest request) {
     return batchUpdateIntentsOperationCallable().futureCall(request);
@@ -973,6 +975,7 @@ public class IntentsClient implements BackgroundResource {
    * }
    * </code></pre>
    */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<BatchUpdateIntentsRequest, BatchUpdateIntentsResponse, Struct>
       batchUpdateIntentsOperationCallable() {
     return stub.batchUpdateIntentsOperationCallable();
@@ -1027,6 +1030,8 @@ public class IntentsClient implements BackgroundResource {
    *     in.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, Struct> batchDeleteIntentsAsync(
       ProjectAgentName parent, List<Intent> intents) {
 
@@ -1060,6 +1065,8 @@ public class IntentsClient implements BackgroundResource {
    *     in.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, Struct> batchDeleteIntentsAsync(
       String parent, List<Intent> intents) {
 
@@ -1091,6 +1098,8 @@ public class IntentsClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, Struct> batchDeleteIntentsAsync(
       BatchDeleteIntentsRequest request) {
     return batchDeleteIntentsOperationCallable().futureCall(request);
@@ -1118,6 +1127,7 @@ public class IntentsClient implements BackgroundResource {
    * }
    * </code></pre>
    */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<BatchDeleteIntentsRequest, Empty, Struct>
       batchDeleteIntentsOperationCallable() {
     return stub.batchDeleteIntentsOperationCallable();

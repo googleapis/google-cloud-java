@@ -73,6 +73,8 @@ public class ImageAnnotatorSettings extends ClientSettings<ImageAnnotatorSetting
   }
 
   /** Returns the object with the settings used for calls to asyncBatchAnnotateFiles. */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<
           AsyncBatchAnnotateFilesRequest, AsyncBatchAnnotateFilesResponse, OperationMetadata>
       asyncBatchAnnotateFilesOperationSettings() {
@@ -190,6 +192,8 @@ public class ImageAnnotatorSettings extends ClientSettings<ImageAnnotatorSetting
     }
 
     /** Returns the builder for the settings used for calls to asyncBatchAnnotateFiles. */
+    @BetaApi(
+        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             AsyncBatchAnnotateFilesRequest, AsyncBatchAnnotateFilesResponse, OperationMetadata>
         asyncBatchAnnotateFilesOperationSettings() {

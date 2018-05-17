@@ -113,6 +113,8 @@ public class InstanceAdminSettings extends ClientSettings<InstanceAdminSettings>
   }
 
   /** Returns the object with the settings used for calls to createInstance. */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<CreateInstanceRequest, Instance, CreateInstanceMetadata>
       createInstanceOperationSettings() {
     return ((InstanceAdminStubSettings) getStubSettings()).createInstanceOperationSettings();
@@ -124,6 +126,8 @@ public class InstanceAdminSettings extends ClientSettings<InstanceAdminSettings>
   }
 
   /** Returns the object with the settings used for calls to updateInstance. */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<UpdateInstanceRequest, Instance, UpdateInstanceMetadata>
       updateInstanceOperationSettings() {
     return ((InstanceAdminStubSettings) getStubSettings()).updateInstanceOperationSettings();
@@ -279,6 +283,8 @@ public class InstanceAdminSettings extends ClientSettings<InstanceAdminSettings>
     }
 
     /** Returns the builder for the settings used for calls to createInstance. */
+    @BetaApi(
+        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateInstanceRequest, Instance, CreateInstanceMetadata>
         createInstanceOperationSettings() {
       return getStubSettingsBuilder().createInstanceOperationSettings();
@@ -290,6 +296,8 @@ public class InstanceAdminSettings extends ClientSettings<InstanceAdminSettings>
     }
 
     /** Returns the builder for the settings used for calls to updateInstance. */
+    @BetaApi(
+        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateInstanceRequest, Instance, UpdateInstanceMetadata>
         updateInstanceOperationSettings() {
       return getStubSettingsBuilder().updateInstanceOperationSettings();

@@ -341,6 +341,7 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public GrpcOperationsStub getOperationsStub() {
     return operationsStub;
   }
@@ -370,6 +371,7 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
     return deleteEntityTypeCallable;
   }
 
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<BatchUpdateEntityTypesRequest, BatchUpdateEntityTypesResponse, Struct>
       batchUpdateEntityTypesOperationCallable() {
     return batchUpdateEntityTypesOperationCallable;
@@ -379,6 +381,7 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
     return batchUpdateEntityTypesCallable;
   }
 
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<BatchDeleteEntityTypesRequest, Empty, Struct>
       batchDeleteEntityTypesOperationCallable() {
     return batchDeleteEntityTypesOperationCallable;
@@ -388,6 +391,7 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
     return batchDeleteEntityTypesCallable;
   }
 
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<BatchCreateEntitiesRequest, Empty, Struct>
       batchCreateEntitiesOperationCallable() {
     return batchCreateEntitiesOperationCallable;
@@ -397,6 +401,7 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
     return batchCreateEntitiesCallable;
   }
 
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<BatchUpdateEntitiesRequest, Empty, Struct>
       batchUpdateEntitiesOperationCallable() {
     return batchUpdateEntitiesOperationCallable;
@@ -406,6 +411,7 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
     return batchUpdateEntitiesCallable;
   }
 
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<BatchDeleteEntitiesRequest, Empty, Struct>
       batchDeleteEntitiesOperationCallable() {
     return batchDeleteEntitiesOperationCallable;

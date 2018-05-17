@@ -105,6 +105,7 @@ public class SpeechStubSettings extends StubSettings<SpeechStubSettings> {
   }
 
   /** Returns the object with the settings used for calls to asyncRecognize. */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallSettings<
           AsyncRecognizeRequest, AsyncRecognizeResponse, AsyncRecognizeMetadata>
       asyncRecognizeOperationSettings() {
@@ -349,6 +350,8 @@ public class SpeechStubSettings extends StubSettings<SpeechStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to asyncRecognize. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             AsyncRecognizeRequest, AsyncRecognizeResponse, AsyncRecognizeMetadata>
         asyncRecognizeOperationSettings() {

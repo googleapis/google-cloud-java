@@ -52,6 +52,7 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class DatabaseAdminStub implements BackgroundResource {
 
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationsStub getOperationsStub() {
     throw new UnsupportedOperationException("Not implemented: getOperationsStub()");
   }
@@ -65,6 +66,7 @@ public abstract class DatabaseAdminStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: listDatabasesCallable()");
   }
 
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<CreateDatabaseRequest, Database, CreateDatabaseMetadata>
       createDatabaseOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: createDatabaseOperationCallable()");
@@ -78,6 +80,7 @@ public abstract class DatabaseAdminStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: getDatabaseCallable()");
   }
 
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<UpdateDatabaseDdlRequest, Empty, UpdateDatabaseDdlMetadata>
       updateDatabaseDdlOperationCallable() {
     throw new UnsupportedOperationException(

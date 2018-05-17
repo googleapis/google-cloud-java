@@ -234,6 +234,8 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
    *     must be left blank. Currently exactly one cluster must be specified.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Instance, CreateInstanceMetadata> createInstanceAsync(
       ProjectName parent, String instanceId, Instance instance, Map<String, Cluster> clusters) {
 
@@ -274,6 +276,8 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
    *     must be left blank. Currently exactly one cluster must be specified.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Instance, CreateInstanceMetadata> createInstanceAsync(
       String parent, String instanceId, Instance instance, Map<String, Cluster> clusters) {
 
@@ -312,6 +316,8 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Instance, CreateInstanceMetadata> createInstanceAsync(
       CreateInstanceRequest request) {
     return createInstanceOperationCallable().futureCall(request);
@@ -341,6 +347,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<CreateInstanceRequest, Instance, CreateInstanceMetadata>
       createInstanceOperationCallable() {
     return stub.createInstanceOperationCallable();
@@ -579,6 +586,8 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
    *     set.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Instance, UpdateInstanceMetadata> partialUpdateInstanceAsync(
       Instance instance, FieldMask updateMask) {
 
@@ -611,6 +620,8 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Instance, UpdateInstanceMetadata> partialUpdateInstanceAsync(
       PartialUpdateInstanceRequest request) {
     return partialUpdateInstanceOperationCallable().futureCall(request);
@@ -636,6 +647,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<PartialUpdateInstanceRequest, Instance, UpdateInstanceMetadata>
       partialUpdateInstanceOperationCallable() {
     return stub.partialUpdateInstanceOperationCallable();
@@ -780,6 +792,8 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
    * @param cluster The cluster to be created. Fields marked `OutputOnly` must be left blank.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Cluster, CreateClusterMetadata> createClusterAsync(
       InstanceName parent, String clusterId, Cluster cluster) {
 
@@ -814,6 +828,8 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
    * @param cluster The cluster to be created. Fields marked `OutputOnly` must be left blank.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Cluster, CreateClusterMetadata> createClusterAsync(
       String parent, String clusterId, Cluster cluster) {
 
@@ -849,6 +865,8 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Cluster, CreateClusterMetadata> createClusterAsync(
       CreateClusterRequest request) {
     return createClusterOperationCallable().futureCall(request);
@@ -876,6 +894,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<CreateClusterRequest, Cluster, CreateClusterMetadata>
       createClusterOperationCallable() {
     return stub.createClusterOperationCallable();
@@ -1120,6 +1139,8 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Cluster, UpdateClusterMetadata> updateClusterAsync(Cluster request) {
     return updateClusterOperationCallable().futureCall(request);
   }
@@ -1146,6 +1167,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<Cluster, Cluster, UpdateClusterMetadata>
       updateClusterOperationCallable() {
     return stub.updateClusterOperationCallable();
@@ -1706,6 +1728,8 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
    *     fields will be replaced.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<AppProfile, UpdateAppProfileMetadata> updateAppProfileAsync(
       AppProfile appProfile, FieldMask updateMask) {
 
@@ -1743,6 +1767,8 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<AppProfile, UpdateAppProfileMetadata> updateAppProfileAsync(
       UpdateAppProfileRequest request) {
     return updateAppProfileOperationCallable().futureCall(request);
@@ -1773,6 +1799,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<UpdateAppProfileRequest, AppProfile, UpdateAppProfileMetadata>
       updateAppProfileOperationCallable() {
     return stub.updateAppProfileOperationCallable();

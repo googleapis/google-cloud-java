@@ -647,10 +647,12 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public GrpcOperationsStub getOperationsStub() {
     return operationsStub;
   }
 
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<CreateInstanceRequest, Instance, CreateInstanceMetadata>
       createInstanceOperationCallable() {
     return createInstanceOperationCallable;
@@ -668,6 +670,7 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
     return listInstancesCallable;
   }
 
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<PartialUpdateInstanceRequest, Instance, UpdateInstanceMetadata>
       partialUpdateInstanceOperationCallable() {
     return partialUpdateInstanceOperationCallable;
@@ -681,6 +684,7 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
     return deleteInstanceCallable;
   }
 
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<CreateClusterRequest, Cluster, CreateClusterMetadata>
       createClusterOperationCallable() {
     return createClusterOperationCallable;
@@ -698,6 +702,7 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
     return listClustersCallable;
   }
 
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<Cluster, Cluster, UpdateClusterMetadata>
       updateClusterOperationCallable() {
     return updateClusterOperationCallable;
@@ -728,6 +733,7 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
     return listAppProfilesCallable;
   }
 
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<UpdateAppProfileRequest, AppProfile, UpdateAppProfileMetadata>
       updateAppProfileOperationCallable() {
     return updateAppProfileOperationCallable;

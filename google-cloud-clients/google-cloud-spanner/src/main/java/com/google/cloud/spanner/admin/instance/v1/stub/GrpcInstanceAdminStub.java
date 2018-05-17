@@ -320,6 +320,7 @@ public class GrpcInstanceAdminStub extends InstanceAdminStub {
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public GrpcOperationsStub getOperationsStub() {
     return operationsStub;
   }
@@ -351,6 +352,7 @@ public class GrpcInstanceAdminStub extends InstanceAdminStub {
     return getInstanceCallable;
   }
 
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<CreateInstanceRequest, Instance, CreateInstanceMetadata>
       createInstanceOperationCallable() {
     return createInstanceOperationCallable;
@@ -360,6 +362,7 @@ public class GrpcInstanceAdminStub extends InstanceAdminStub {
     return createInstanceCallable;
   }
 
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<UpdateInstanceRequest, Instance, UpdateInstanceMetadata>
       updateInstanceOperationCallable() {
     return updateInstanceOperationCallable;
