@@ -83,8 +83,11 @@ public class CreateTopicAndPublishMessages {
   public static void publishMessagesWithErrorHandler() throws Exception {
     // [START pubsub_publish_error_handler]
     ProjectTopicName topicName = ProjectTopicName.of("my-project-id", "my-topic-id");
+    Publisher publisher = null;
 
-    try (Publisher publisher = Publisher.newBuilder(topicName).build()) {
+    try {
+      // Create a publisher instance with default settings bound to the topic
+      publisher = Publisher.newBuilder(topicName).build();
 
       List<String> messages = Arrays.asList("first message", "second message");
 
@@ -116,6 +119,11 @@ public class CreateTopicAndPublishMessages {
           }
         });
       }
+    } finally {
+      if (publisher != null) {
+        // When finished with the publisher, shutdown to free up resources.
+        publisher.shutdown();
+      }
     }
     // [END pubsub_publish_error_handler]
   }
@@ -123,6 +131,5 @@ public class CreateTopicAndPublishMessages {
   public static void main(String... args) throws Exception {
     createTopic();
     publishMessages();
-    publishMessagesWithErrorHandler();
   }
 }
