@@ -71,6 +71,8 @@ public class ClusterControllerSettings extends ClientSettings<ClusterControllerS
   }
 
   /** Returns the object with the settings used for calls to createCluster. */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<CreateClusterRequest, Cluster, ClusterOperationMetadata>
       createClusterOperationSettings() {
     return ((ClusterControllerStubSettings) getStubSettings()).createClusterOperationSettings();
@@ -82,6 +84,8 @@ public class ClusterControllerSettings extends ClientSettings<ClusterControllerS
   }
 
   /** Returns the object with the settings used for calls to updateCluster. */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<UpdateClusterRequest, Cluster, ClusterOperationMetadata>
       updateClusterOperationSettings() {
     return ((ClusterControllerStubSettings) getStubSettings()).updateClusterOperationSettings();
@@ -93,6 +97,8 @@ public class ClusterControllerSettings extends ClientSettings<ClusterControllerS
   }
 
   /** Returns the object with the settings used for calls to deleteCluster. */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<DeleteClusterRequest, Empty, ClusterOperationMetadata>
       deleteClusterOperationSettings() {
     return ((ClusterControllerStubSettings) getStubSettings()).deleteClusterOperationSettings();
@@ -115,6 +121,8 @@ public class ClusterControllerSettings extends ClientSettings<ClusterControllerS
   }
 
   /** Returns the object with the settings used for calls to diagnoseCluster. */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<DiagnoseClusterRequest, Empty, DiagnoseClusterResults>
       diagnoseClusterOperationSettings() {
     return ((ClusterControllerStubSettings) getStubSettings()).diagnoseClusterOperationSettings();
@@ -223,6 +231,8 @@ public class ClusterControllerSettings extends ClientSettings<ClusterControllerS
     }
 
     /** Returns the builder for the settings used for calls to createCluster. */
+    @BetaApi(
+        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateClusterRequest, Cluster, ClusterOperationMetadata>
         createClusterOperationSettings() {
       return getStubSettingsBuilder().createClusterOperationSettings();
@@ -234,6 +244,8 @@ public class ClusterControllerSettings extends ClientSettings<ClusterControllerS
     }
 
     /** Returns the builder for the settings used for calls to updateCluster. */
+    @BetaApi(
+        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateClusterRequest, Cluster, ClusterOperationMetadata>
         updateClusterOperationSettings() {
       return getStubSettingsBuilder().updateClusterOperationSettings();
@@ -245,6 +257,8 @@ public class ClusterControllerSettings extends ClientSettings<ClusterControllerS
     }
 
     /** Returns the builder for the settings used for calls to deleteCluster. */
+    @BetaApi(
+        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteClusterRequest, Empty, ClusterOperationMetadata>
         deleteClusterOperationSettings() {
       return getStubSettingsBuilder().deleteClusterOperationSettings();
@@ -268,6 +282,8 @@ public class ClusterControllerSettings extends ClientSettings<ClusterControllerS
     }
 
     /** Returns the builder for the settings used for calls to diagnoseCluster. */
+    @BetaApi(
+        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DiagnoseClusterRequest, Empty, DiagnoseClusterResults>
         diagnoseClusterOperationSettings() {
       return getStubSettingsBuilder().diagnoseClusterOperationSettings();

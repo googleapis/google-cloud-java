@@ -46,10 +46,12 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class ClusterControllerStub implements BackgroundResource {
 
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationsStub getOperationsStub() {
     throw new UnsupportedOperationException("Not implemented: getOperationsStub()");
   }
 
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<CreateClusterRequest, Cluster, ClusterOperationMetadata>
       createClusterOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: createClusterOperationCallable()");
@@ -59,6 +61,7 @@ public abstract class ClusterControllerStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: createClusterCallable()");
   }
 
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<UpdateClusterRequest, Cluster, ClusterOperationMetadata>
       updateClusterOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: updateClusterOperationCallable()");
@@ -68,6 +71,7 @@ public abstract class ClusterControllerStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: updateClusterCallable()");
   }
 
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<DeleteClusterRequest, Empty, ClusterOperationMetadata>
       deleteClusterOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteClusterOperationCallable()");
@@ -89,6 +93,7 @@ public abstract class ClusterControllerStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: listClustersCallable()");
   }
 
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<DiagnoseClusterRequest, Empty, DiagnoseClusterResults>
       diagnoseClusterOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: diagnoseClusterOperationCallable()");
