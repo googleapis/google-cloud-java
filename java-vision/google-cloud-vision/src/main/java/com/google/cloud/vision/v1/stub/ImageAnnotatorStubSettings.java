@@ -23,19 +23,27 @@ import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.GrpcTransportChannel;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
+import com.google.api.gax.grpc.ProtoOperationTransformers;
+import com.google.api.gax.longrunning.OperationSnapshot;
+import com.google.api.gax.longrunning.OperationTimedPollAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
+import com.google.cloud.vision.v1.AsyncBatchAnnotateFilesRequest;
+import com.google.cloud.vision.v1.AsyncBatchAnnotateFilesResponse;
 import com.google.cloud.vision.v1.BatchAnnotateImagesRequest;
 import com.google.cloud.vision.v1.BatchAnnotateImagesResponse;
+import com.google.cloud.vision.v1.OperationMetadata;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
+import com.google.longrunning.Operation;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
@@ -78,11 +86,30 @@ public class ImageAnnotatorStubSettings extends StubSettings<ImageAnnotatorStubS
 
   private final UnaryCallSettings<BatchAnnotateImagesRequest, BatchAnnotateImagesResponse>
       batchAnnotateImagesSettings;
+  private final UnaryCallSettings<AsyncBatchAnnotateFilesRequest, Operation>
+      asyncBatchAnnotateFilesSettings;
+  private final OperationCallSettings<
+          AsyncBatchAnnotateFilesRequest, AsyncBatchAnnotateFilesResponse, OperationMetadata>
+      asyncBatchAnnotateFilesOperationSettings;
 
   /** Returns the object with the settings used for calls to batchAnnotateImages. */
   public UnaryCallSettings<BatchAnnotateImagesRequest, BatchAnnotateImagesResponse>
       batchAnnotateImagesSettings() {
     return batchAnnotateImagesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to asyncBatchAnnotateFiles. */
+  public UnaryCallSettings<AsyncBatchAnnotateFilesRequest, Operation>
+      asyncBatchAnnotateFilesSettings() {
+    return asyncBatchAnnotateFilesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to asyncBatchAnnotateFiles. */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallSettings<
+          AsyncBatchAnnotateFilesRequest, AsyncBatchAnnotateFilesResponse, OperationMetadata>
+      asyncBatchAnnotateFilesOperationSettings() {
+    return asyncBatchAnnotateFilesOperationSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -154,6 +181,9 @@ public class ImageAnnotatorStubSettings extends StubSettings<ImageAnnotatorStubS
     super(settingsBuilder);
 
     batchAnnotateImagesSettings = settingsBuilder.batchAnnotateImagesSettings().build();
+    asyncBatchAnnotateFilesSettings = settingsBuilder.asyncBatchAnnotateFilesSettings().build();
+    asyncBatchAnnotateFilesOperationSettings =
+        settingsBuilder.asyncBatchAnnotateFilesOperationSettings().build();
   }
 
   /** Builder for ImageAnnotatorStubSettings. */
@@ -162,6 +192,11 @@ public class ImageAnnotatorStubSettings extends StubSettings<ImageAnnotatorStubS
 
     private final UnaryCallSettings.Builder<BatchAnnotateImagesRequest, BatchAnnotateImagesResponse>
         batchAnnotateImagesSettings;
+    private final UnaryCallSettings.Builder<AsyncBatchAnnotateFilesRequest, Operation>
+        asyncBatchAnnotateFilesSettings;
+    private final OperationCallSettings.Builder<
+            AsyncBatchAnnotateFilesRequest, AsyncBatchAnnotateFilesResponse, OperationMetadata>
+        asyncBatchAnnotateFilesOperationSettings;
 
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
@@ -206,8 +241,13 @@ public class ImageAnnotatorStubSettings extends StubSettings<ImageAnnotatorStubS
 
       batchAnnotateImagesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      asyncBatchAnnotateFilesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      asyncBatchAnnotateFilesOperationSettings = OperationCallSettings.newBuilder();
+
       unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(batchAnnotateImagesSettings);
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              batchAnnotateImagesSettings, asyncBatchAnnotateFilesSettings);
 
       initDefaults(this);
     }
@@ -228,6 +268,35 @@ public class ImageAnnotatorStubSettings extends StubSettings<ImageAnnotatorStubS
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
+      builder
+          .asyncBatchAnnotateFilesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+      builder
+          .asyncBatchAnnotateFilesOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<AsyncBatchAnnotateFilesRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(
+                  AsyncBatchAnnotateFilesResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(20000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO) // ignored
+                      .setRpcTimeoutMultiplier(1.0) // ignored
+                      .setMaxRpcTimeout(Duration.ZERO) // ignored
+                      .setTotalTimeout(Duration.ofMillis(86400000L))
+                      .build()));
+
       return builder;
     }
 
@@ -235,9 +304,13 @@ public class ImageAnnotatorStubSettings extends StubSettings<ImageAnnotatorStubS
       super(settings);
 
       batchAnnotateImagesSettings = settings.batchAnnotateImagesSettings.toBuilder();
+      asyncBatchAnnotateFilesSettings = settings.asyncBatchAnnotateFilesSettings.toBuilder();
+      asyncBatchAnnotateFilesOperationSettings =
+          settings.asyncBatchAnnotateFilesOperationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(batchAnnotateImagesSettings);
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              batchAnnotateImagesSettings, asyncBatchAnnotateFilesSettings);
     }
 
     // NEXT_MAJOR_VER: remove 'throws Exception'
@@ -260,6 +333,21 @@ public class ImageAnnotatorStubSettings extends StubSettings<ImageAnnotatorStubS
     public UnaryCallSettings.Builder<BatchAnnotateImagesRequest, BatchAnnotateImagesResponse>
         batchAnnotateImagesSettings() {
       return batchAnnotateImagesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to asyncBatchAnnotateFiles. */
+    public UnaryCallSettings.Builder<AsyncBatchAnnotateFilesRequest, Operation>
+        asyncBatchAnnotateFilesSettings() {
+      return asyncBatchAnnotateFilesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to asyncBatchAnnotateFiles. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            AsyncBatchAnnotateFilesRequest, AsyncBatchAnnotateFilesResponse, OperationMetadata>
+        asyncBatchAnnotateFilesOperationSettings() {
+      return asyncBatchAnnotateFilesOperationSettings;
     }
 
     @Override

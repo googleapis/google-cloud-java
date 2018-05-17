@@ -17,9 +17,13 @@ package com.google.cloud.vision.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.longrunning.OperationFuture;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.vision.v1.stub.ImageAnnotatorStub;
 import com.google.cloud.vision.v1.stub.ImageAnnotatorStubSettings;
+import com.google.longrunning.Operation;
+import com.google.longrunning.OperationsClient;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -97,6 +101,7 @@ import javax.annotation.Generated;
 public class ImageAnnotatorClient implements BackgroundResource {
   private final ImageAnnotatorSettings settings;
   private final ImageAnnotatorStub stub;
+  private final OperationsClient operationsClient;
 
   /** Constructs an instance of ImageAnnotatorClient with default settings. */
   public static final ImageAnnotatorClient create() throws IOException {
@@ -129,12 +134,14 @@ public class ImageAnnotatorClient implements BackgroundResource {
   protected ImageAnnotatorClient(ImageAnnotatorSettings settings) throws IOException {
     this.settings = settings;
     this.stub = ((ImageAnnotatorStubSettings) settings.getStubSettings()).createStub();
+    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected ImageAnnotatorClient(ImageAnnotatorStub stub) {
     this.settings = null;
     this.stub = stub;
+    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
   public final ImageAnnotatorSettings getSettings() {
@@ -144,6 +151,16 @@ public class ImageAnnotatorClient implements BackgroundResource {
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ImageAnnotatorStub getStub() {
     return stub;
+  }
+
+  /**
+   * Returns the OperationsClient that can be used to query the status of a long-running operation
+   * returned by another API method call.
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationsClient getOperationsClient() {
+    return operationsClient;
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -215,6 +232,122 @@ public class ImageAnnotatorClient implements BackgroundResource {
   public final UnaryCallable<BatchAnnotateImagesRequest, BatchAnnotateImagesResponse>
       batchAnnotateImagesCallable() {
     return stub.batchAnnotateImagesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Run asynchronous image detection and annotation for a list of generic files, such as PDF files,
+   * which may contain multiple pages and multiple images per page. Progress and results can be
+   * retrieved through the `google.longrunning.Operations` interface. `Operation.metadata` contains
+   * `OperationMetadata` (metadata). `Operation.response` contains `AsyncBatchAnnotateFilesResponse`
+   * (results).
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ImageAnnotatorClient imageAnnotatorClient = ImageAnnotatorClient.create()) {
+   *   List&lt;AsyncAnnotateFileRequest&gt; requests = new ArrayList&lt;&gt;();
+   *   AsyncBatchAnnotateFilesResponse response = imageAnnotatorClient.asyncBatchAnnotateFilesAsync(requests).get();
+   * }
+   * </code></pre>
+   *
+   * @param requests Individual async file annotation requests for this batch.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<AsyncBatchAnnotateFilesResponse, OperationMetadata>
+      asyncBatchAnnotateFilesAsync(List<AsyncAnnotateFileRequest> requests) {
+
+    AsyncBatchAnnotateFilesRequest request =
+        AsyncBatchAnnotateFilesRequest.newBuilder().addAllRequests(requests).build();
+    return asyncBatchAnnotateFilesAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Run asynchronous image detection and annotation for a list of generic files, such as PDF files,
+   * which may contain multiple pages and multiple images per page. Progress and results can be
+   * retrieved through the `google.longrunning.Operations` interface. `Operation.metadata` contains
+   * `OperationMetadata` (metadata). `Operation.response` contains `AsyncBatchAnnotateFilesResponse`
+   * (results).
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ImageAnnotatorClient imageAnnotatorClient = ImageAnnotatorClient.create()) {
+   *   List&lt;AsyncAnnotateFileRequest&gt; requests = new ArrayList&lt;&gt;();
+   *   AsyncBatchAnnotateFilesRequest request = AsyncBatchAnnotateFilesRequest.newBuilder()
+   *     .addAllRequests(requests)
+   *     .build();
+   *   AsyncBatchAnnotateFilesResponse response = imageAnnotatorClient.asyncBatchAnnotateFilesAsync(request).get();
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  private final OperationFuture<AsyncBatchAnnotateFilesResponse, OperationMetadata>
+      asyncBatchAnnotateFilesAsync(AsyncBatchAnnotateFilesRequest request) {
+    return asyncBatchAnnotateFilesOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Run asynchronous image detection and annotation for a list of generic files, such as PDF files,
+   * which may contain multiple pages and multiple images per page. Progress and results can be
+   * retrieved through the `google.longrunning.Operations` interface. `Operation.metadata` contains
+   * `OperationMetadata` (metadata). `Operation.response` contains `AsyncBatchAnnotateFilesResponse`
+   * (results).
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ImageAnnotatorClient imageAnnotatorClient = ImageAnnotatorClient.create()) {
+   *   List&lt;AsyncAnnotateFileRequest&gt; requests = new ArrayList&lt;&gt;();
+   *   AsyncBatchAnnotateFilesRequest request = AsyncBatchAnnotateFilesRequest.newBuilder()
+   *     .addAllRequests(requests)
+   *     .build();
+   *   OperationFuture&lt;Operation&gt; future = imageAnnotatorClient.asyncBatchAnnotateFilesOperationCallable().futureCall(request);
+   *   // Do something
+   *   AsyncBatchAnnotateFilesResponse response = future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public final OperationCallable<
+          AsyncBatchAnnotateFilesRequest, AsyncBatchAnnotateFilesResponse, OperationMetadata>
+      asyncBatchAnnotateFilesOperationCallable() {
+    return stub.asyncBatchAnnotateFilesOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Run asynchronous image detection and annotation for a list of generic files, such as PDF files,
+   * which may contain multiple pages and multiple images per page. Progress and results can be
+   * retrieved through the `google.longrunning.Operations` interface. `Operation.metadata` contains
+   * `OperationMetadata` (metadata). `Operation.response` contains `AsyncBatchAnnotateFilesResponse`
+   * (results).
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ImageAnnotatorClient imageAnnotatorClient = ImageAnnotatorClient.create()) {
+   *   List&lt;AsyncAnnotateFileRequest&gt; requests = new ArrayList&lt;&gt;();
+   *   AsyncBatchAnnotateFilesRequest request = AsyncBatchAnnotateFilesRequest.newBuilder()
+   *     .addAllRequests(requests)
+   *     .build();
+   *   ApiFuture&lt;Operation&gt; future = imageAnnotatorClient.asyncBatchAnnotateFilesCallable().futureCall(request);
+   *   // Do something
+   *   Operation response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<AsyncBatchAnnotateFilesRequest, Operation>
+      asyncBatchAnnotateFilesCallable() {
+    return stub.asyncBatchAnnotateFilesCallable();
   }
 
   @Override
