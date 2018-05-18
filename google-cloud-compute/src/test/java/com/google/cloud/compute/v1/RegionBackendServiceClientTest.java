@@ -139,11 +139,10 @@ public class RegionBackendServiceClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String requestId = "requestId37109963";
     ProjectRegionBackendServiceName backendService =
         ProjectRegionBackendServiceName.of("[PROJECT]", "[REGION]", "[BACKEND_SERVICE]");
 
-    Operation actualResponse = client.deleteRegionBackendService(requestId, backendService);
+    Operation actualResponse = client.deleteRegionBackendService(backendService);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -170,11 +169,10 @@ public class RegionBackendServiceClientTest {
     mockService.addException(exception);
 
     try {
-      String requestId = "requestId37109963";
       ProjectRegionBackendServiceName backendService =
           ProjectRegionBackendServiceName.of("[PROJECT]", "[REGION]", "[BACKEND_SERVICE]");
 
-      client.deleteRegionBackendService(requestId, backendService);
+      client.deleteRegionBackendService(backendService);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -364,12 +362,10 @@ public class RegionBackendServiceClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String requestId = "requestId37109963";
     ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     BackendService backendServiceResource = BackendService.newBuilder().build();
 
-    Operation actualResponse =
-        client.insertRegionBackendService(requestId, region, backendServiceResource);
+    Operation actualResponse = client.insertRegionBackendService(region, backendServiceResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -396,11 +392,10 @@ public class RegionBackendServiceClientTest {
     mockService.addException(exception);
 
     try {
-      String requestId = "requestId37109963";
       ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
       BackendService backendServiceResource = BackendService.newBuilder().build();
 
-      client.insertRegionBackendService(requestId, region, backendServiceResource);
+      client.insertRegionBackendService(region, backendServiceResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -518,13 +513,12 @@ public class RegionBackendServiceClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String requestId = "requestId37109963";
     ProjectRegionBackendServiceName backendService =
         ProjectRegionBackendServiceName.of("[PROJECT]", "[REGION]", "[BACKEND_SERVICE]");
     BackendService backendServiceResource = BackendService.newBuilder().build();
 
     Operation actualResponse =
-        client.patchRegionBackendService(requestId, backendService, backendServiceResource);
+        client.patchRegionBackendService(backendService, backendServiceResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -551,12 +545,11 @@ public class RegionBackendServiceClientTest {
     mockService.addException(exception);
 
     try {
-      String requestId = "requestId37109963";
       ProjectRegionBackendServiceName backendService =
           ProjectRegionBackendServiceName.of("[PROJECT]", "[REGION]", "[BACKEND_SERVICE]");
       BackendService backendServiceResource = BackendService.newBuilder().build();
 
-      client.patchRegionBackendService(requestId, backendService, backendServiceResource);
+      client.patchRegionBackendService(backendService, backendServiceResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -613,13 +606,12 @@ public class RegionBackendServiceClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String requestId = "requestId37109963";
     ProjectRegionBackendServiceName backendService =
         ProjectRegionBackendServiceName.of("[PROJECT]", "[REGION]", "[BACKEND_SERVICE]");
     BackendService backendServiceResource = BackendService.newBuilder().build();
 
     Operation actualResponse =
-        client.updateRegionBackendService(requestId, backendService, backendServiceResource);
+        client.updateRegionBackendService(backendService, backendServiceResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -646,12 +638,11 @@ public class RegionBackendServiceClientTest {
     mockService.addException(exception);
 
     try {
-      String requestId = "requestId37109963";
       ProjectRegionBackendServiceName backendService =
           ProjectRegionBackendServiceName.of("[PROJECT]", "[REGION]", "[BACKEND_SERVICE]");
       BackendService backendServiceResource = BackendService.newBuilder().build();
 
-      client.updateRegionBackendService(requestId, backendService, backendServiceResource);
+      client.updateRegionBackendService(backendService, backendServiceResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

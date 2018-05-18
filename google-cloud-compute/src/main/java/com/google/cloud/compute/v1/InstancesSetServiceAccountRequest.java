@@ -17,14 +17,9 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
-import java.util.Set;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
 
@@ -45,28 +40,12 @@ public final class InstancesSetServiceAccountRequest implements ApiMessage {
   }
 
   @Override
-  public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
-    Map<String, List<String>> fieldMap = new HashMap<>();
-    if (fieldNames.contains("email") && email != null) {
-      fieldMap.put("email", Collections.singletonList(String.valueOf(email)));
-    }
-    if (fieldNames.contains("scopes") && scopes != null) {
-      ImmutableList.Builder stringList = ImmutableList.builder();
-      for (String item : scopes) {
-        stringList.add(item.toString());
-      }
-      fieldMap.put("scopes", stringList.build());
-    }
-    return fieldMap;
-  }
-
-  @Override
-  public String getFieldStringValue(String fieldName) {
+  public Object getFieldValue(String fieldName) {
     if (fieldName.equals("email")) {
-      return String.valueOf(email);
+      return email;
     }
     if (fieldName.equals("scopes")) {
-      return String.valueOf(scopes);
+      return scopes;
     }
     return null;
   }
@@ -74,6 +53,12 @@ public final class InstancesSetServiceAccountRequest implements ApiMessage {
   @Nullable
   @Override
   public ApiMessage getApiMessageRequestBody() {
+    return null;
+  }
+
+  @Nullable
+  @Override
+  public List<String> getFieldMask() {
     return null;
   }
 

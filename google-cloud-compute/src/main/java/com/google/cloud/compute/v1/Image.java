@@ -17,14 +17,10 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.util.Set;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
 
@@ -151,200 +147,90 @@ public final class Image implements ApiMessage {
   }
 
   @Override
-  public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
-    Map<String, List<String>> fieldMap = new HashMap<>();
-    if (fieldNames.contains("archiveSizeBytes") && archiveSizeBytes != null) {
-      fieldMap.put("archiveSizeBytes", Collections.singletonList(String.valueOf(archiveSizeBytes)));
-    }
-    if (fieldNames.contains("creationTimestamp") && creationTimestamp != null) {
-      fieldMap.put(
-          "creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
-    }
-    if (fieldNames.contains("deprecated") && deprecated != null) {
-      fieldMap.put("deprecated", Collections.singletonList(String.valueOf(deprecated)));
-    }
-    if (fieldNames.contains("description") && description != null) {
-      fieldMap.put("description", Collections.singletonList(String.valueOf(description)));
-    }
-    if (fieldNames.contains("diskSizeGb") && diskSizeGb != null) {
-      fieldMap.put("diskSizeGb", Collections.singletonList(String.valueOf(diskSizeGb)));
-    }
-    if (fieldNames.contains("family") && family != null) {
-      fieldMap.put("family", Collections.singletonList(String.valueOf(family)));
-    }
-    if (fieldNames.contains("guestOsFeatures") && guestOsFeatures != null) {
-      ImmutableList.Builder stringList = ImmutableList.builder();
-      for (GuestOsFeature item : guestOsFeatures) {
-        stringList.add(item.toString());
-      }
-      fieldMap.put("guestOsFeatures", stringList.build());
-    }
-    if (fieldNames.contains("id") && id != null) {
-      fieldMap.put("id", Collections.singletonList(String.valueOf(id)));
-    }
-    if (fieldNames.contains("imageEncryptionKey") && imageEncryptionKey != null) {
-      fieldMap.put(
-          "imageEncryptionKey", Collections.singletonList(String.valueOf(imageEncryptionKey)));
-    }
-    if (fieldNames.contains("kind") && kind != null) {
-      fieldMap.put("kind", Collections.singletonList(String.valueOf(kind)));
-    }
-    if (fieldNames.contains("labelFingerprint") && labelFingerprint != null) {
-      fieldMap.put("labelFingerprint", Collections.singletonList(String.valueOf(labelFingerprint)));
-    }
-    if (fieldNames.contains("labels") && labels != null) {
-      fieldMap.put("labels", Collections.singletonList(String.valueOf(labels)));
-    }
-    if (fieldNames.contains("licenseCodes") && licenseCodes != null) {
-      ImmutableList.Builder stringList = ImmutableList.builder();
-      for (String item : licenseCodes) {
-        stringList.add(item.toString());
-      }
-      fieldMap.put("licenseCodes", stringList.build());
-    }
-    if (fieldNames.contains("licenses") && licenses != null) {
-      ImmutableList.Builder stringList = ImmutableList.builder();
-      for (String item : licenses) {
-        stringList.add(item.toString());
-      }
-      fieldMap.put("licenses", stringList.build());
-    }
-    if (fieldNames.contains("name") && name != null) {
-      fieldMap.put("name", Collections.singletonList(String.valueOf(name)));
-    }
-    if (fieldNames.contains("rawDisk") && rawDisk != null) {
-      fieldMap.put("rawDisk", Collections.singletonList(String.valueOf(rawDisk)));
-    }
-    if (fieldNames.contains("selfLink") && selfLink != null) {
-      fieldMap.put("selfLink", Collections.singletonList(String.valueOf(selfLink)));
-    }
-    if (fieldNames.contains("sourceDisk") && sourceDisk != null) {
-      fieldMap.put("sourceDisk", Collections.singletonList(String.valueOf(sourceDisk)));
-    }
-    if (fieldNames.contains("sourceDiskEncryptionKey") && sourceDiskEncryptionKey != null) {
-      fieldMap.put(
-          "sourceDiskEncryptionKey",
-          Collections.singletonList(String.valueOf(sourceDiskEncryptionKey)));
-    }
-    if (fieldNames.contains("sourceDiskId") && sourceDiskId != null) {
-      fieldMap.put("sourceDiskId", Collections.singletonList(String.valueOf(sourceDiskId)));
-    }
-    if (fieldNames.contains("sourceImage") && sourceImage != null) {
-      fieldMap.put("sourceImage", Collections.singletonList(String.valueOf(sourceImage)));
-    }
-    if (fieldNames.contains("sourceImageEncryptionKey") && sourceImageEncryptionKey != null) {
-      fieldMap.put(
-          "sourceImageEncryptionKey",
-          Collections.singletonList(String.valueOf(sourceImageEncryptionKey)));
-    }
-    if (fieldNames.contains("sourceImageId") && sourceImageId != null) {
-      fieldMap.put("sourceImageId", Collections.singletonList(String.valueOf(sourceImageId)));
-    }
-    if (fieldNames.contains("sourceSnapshot") && sourceSnapshot != null) {
-      fieldMap.put("sourceSnapshot", Collections.singletonList(String.valueOf(sourceSnapshot)));
-    }
-    if (fieldNames.contains("sourceSnapshotEncryptionKey") && sourceSnapshotEncryptionKey != null) {
-      fieldMap.put(
-          "sourceSnapshotEncryptionKey",
-          Collections.singletonList(String.valueOf(sourceSnapshotEncryptionKey)));
-    }
-    if (fieldNames.contains("sourceSnapshotId") && sourceSnapshotId != null) {
-      fieldMap.put("sourceSnapshotId", Collections.singletonList(String.valueOf(sourceSnapshotId)));
-    }
-    if (fieldNames.contains("sourceType") && sourceType != null) {
-      fieldMap.put("sourceType", Collections.singletonList(String.valueOf(sourceType)));
-    }
-    if (fieldNames.contains("status") && status != null) {
-      fieldMap.put("status", Collections.singletonList(String.valueOf(status)));
-    }
-    return fieldMap;
-  }
-
-  @Override
-  public String getFieldStringValue(String fieldName) {
+  public Object getFieldValue(String fieldName) {
     if (fieldName.equals("archiveSizeBytes")) {
-      return String.valueOf(archiveSizeBytes);
+      return archiveSizeBytes;
     }
     if (fieldName.equals("creationTimestamp")) {
-      return String.valueOf(creationTimestamp);
+      return creationTimestamp;
     }
     if (fieldName.equals("deprecated")) {
-      return String.valueOf(deprecated);
+      return deprecated;
     }
     if (fieldName.equals("description")) {
-      return String.valueOf(description);
+      return description;
     }
     if (fieldName.equals("diskSizeGb")) {
-      return String.valueOf(diskSizeGb);
+      return diskSizeGb;
     }
     if (fieldName.equals("family")) {
-      return String.valueOf(family);
+      return family;
     }
     if (fieldName.equals("guestOsFeatures")) {
-      return String.valueOf(guestOsFeatures);
+      return guestOsFeatures;
     }
     if (fieldName.equals("id")) {
-      return String.valueOf(id);
+      return id;
     }
     if (fieldName.equals("imageEncryptionKey")) {
-      return String.valueOf(imageEncryptionKey);
+      return imageEncryptionKey;
     }
     if (fieldName.equals("kind")) {
-      return String.valueOf(kind);
+      return kind;
     }
     if (fieldName.equals("labelFingerprint")) {
-      return String.valueOf(labelFingerprint);
+      return labelFingerprint;
     }
     if (fieldName.equals("labels")) {
-      return String.valueOf(labels);
+      return labels;
     }
     if (fieldName.equals("licenseCodes")) {
-      return String.valueOf(licenseCodes);
+      return licenseCodes;
     }
     if (fieldName.equals("licenses")) {
-      return String.valueOf(licenses);
+      return licenses;
     }
     if (fieldName.equals("name")) {
-      return String.valueOf(name);
+      return name;
     }
     if (fieldName.equals("rawDisk")) {
-      return String.valueOf(rawDisk);
+      return rawDisk;
     }
     if (fieldName.equals("selfLink")) {
-      return String.valueOf(selfLink);
+      return selfLink;
     }
     if (fieldName.equals("sourceDisk")) {
-      return String.valueOf(sourceDisk);
+      return sourceDisk;
     }
     if (fieldName.equals("sourceDiskEncryptionKey")) {
-      return String.valueOf(sourceDiskEncryptionKey);
+      return sourceDiskEncryptionKey;
     }
     if (fieldName.equals("sourceDiskId")) {
-      return String.valueOf(sourceDiskId);
+      return sourceDiskId;
     }
     if (fieldName.equals("sourceImage")) {
-      return String.valueOf(sourceImage);
+      return sourceImage;
     }
     if (fieldName.equals("sourceImageEncryptionKey")) {
-      return String.valueOf(sourceImageEncryptionKey);
+      return sourceImageEncryptionKey;
     }
     if (fieldName.equals("sourceImageId")) {
-      return String.valueOf(sourceImageId);
+      return sourceImageId;
     }
     if (fieldName.equals("sourceSnapshot")) {
-      return String.valueOf(sourceSnapshot);
+      return sourceSnapshot;
     }
     if (fieldName.equals("sourceSnapshotEncryptionKey")) {
-      return String.valueOf(sourceSnapshotEncryptionKey);
+      return sourceSnapshotEncryptionKey;
     }
     if (fieldName.equals("sourceSnapshotId")) {
-      return String.valueOf(sourceSnapshotId);
+      return sourceSnapshotId;
     }
     if (fieldName.equals("sourceType")) {
-      return String.valueOf(sourceType);
+      return sourceType;
     }
     if (fieldName.equals("status")) {
-      return String.valueOf(status);
+      return status;
     }
     return null;
   }
@@ -352,6 +238,12 @@ public final class Image implements ApiMessage {
   @Nullable
   @Override
   public ApiMessage getApiMessageRequestBody() {
+    return null;
+  }
+
+  @Nullable
+  @Override
+  public List<String> getFieldMask() {
     return null;
   }
 

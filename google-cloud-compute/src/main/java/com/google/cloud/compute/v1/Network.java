@@ -17,14 +17,9 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
-import java.util.Set;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
 
@@ -87,95 +82,42 @@ public final class Network implements ApiMessage {
   }
 
   @Override
-  public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
-    Map<String, List<String>> fieldMap = new HashMap<>();
-    if (fieldNames.contains("autoCreateSubnetworks") && autoCreateSubnetworks != null) {
-      fieldMap.put(
-          "autoCreateSubnetworks",
-          Collections.singletonList(String.valueOf(autoCreateSubnetworks)));
-    }
-    if (fieldNames.contains("creationTimestamp") && creationTimestamp != null) {
-      fieldMap.put(
-          "creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
-    }
-    if (fieldNames.contains("description") && description != null) {
-      fieldMap.put("description", Collections.singletonList(String.valueOf(description)));
-    }
-    if (fieldNames.contains("gatewayIPv4") && gatewayIPv4 != null) {
-      fieldMap.put("gatewayIPv4", Collections.singletonList(String.valueOf(gatewayIPv4)));
-    }
-    if (fieldNames.contains("iPv4Range") && iPv4Range != null) {
-      fieldMap.put("iPv4Range", Collections.singletonList(String.valueOf(iPv4Range)));
-    }
-    if (fieldNames.contains("id") && id != null) {
-      fieldMap.put("id", Collections.singletonList(String.valueOf(id)));
-    }
-    if (fieldNames.contains("kind") && kind != null) {
-      fieldMap.put("kind", Collections.singletonList(String.valueOf(kind)));
-    }
-    if (fieldNames.contains("name") && name != null) {
-      fieldMap.put("name", Collections.singletonList(String.valueOf(name)));
-    }
-    if (fieldNames.contains("peerings") && peerings != null) {
-      ImmutableList.Builder stringList = ImmutableList.builder();
-      for (NetworkPeering item : peerings) {
-        stringList.add(item.toString());
-      }
-      fieldMap.put("peerings", stringList.build());
-    }
-    if (fieldNames.contains("routingConfig") && routingConfig != null) {
-      fieldMap.put("routingConfig", Collections.singletonList(String.valueOf(routingConfig)));
-    }
-    if (fieldNames.contains("selfLink") && selfLink != null) {
-      fieldMap.put("selfLink", Collections.singletonList(String.valueOf(selfLink)));
-    }
-    if (fieldNames.contains("subnetworks") && subnetworks != null) {
-      ImmutableList.Builder stringList = ImmutableList.builder();
-      for (String item : subnetworks) {
-        stringList.add(item.toString());
-      }
-      fieldMap.put("subnetworks", stringList.build());
-    }
-    return fieldMap;
-  }
-
-  @Override
-  public String getFieldStringValue(String fieldName) {
+  public Object getFieldValue(String fieldName) {
     if (fieldName.equals("autoCreateSubnetworks")) {
-      return String.valueOf(autoCreateSubnetworks);
+      return autoCreateSubnetworks;
     }
     if (fieldName.equals("creationTimestamp")) {
-      return String.valueOf(creationTimestamp);
+      return creationTimestamp;
     }
     if (fieldName.equals("description")) {
-      return String.valueOf(description);
+      return description;
     }
     if (fieldName.equals("gatewayIPv4")) {
-      return String.valueOf(gatewayIPv4);
+      return gatewayIPv4;
     }
     if (fieldName.equals("iPv4Range")) {
-      return String.valueOf(iPv4Range);
+      return iPv4Range;
     }
     if (fieldName.equals("id")) {
-      return String.valueOf(id);
+      return id;
     }
     if (fieldName.equals("kind")) {
-      return String.valueOf(kind);
+      return kind;
     }
     if (fieldName.equals("name")) {
-      return String.valueOf(name);
+      return name;
     }
     if (fieldName.equals("peerings")) {
-      return String.valueOf(peerings);
+      return peerings;
     }
     if (fieldName.equals("routingConfig")) {
-      return String.valueOf(routingConfig);
+      return routingConfig;
     }
     if (fieldName.equals("selfLink")) {
-      return String.valueOf(selfLink);
+      return selfLink;
     }
     if (fieldName.equals("subnetworks")) {
-      return String.valueOf(subnetworks);
+      return subnetworks;
     }
     return null;
   }
@@ -183,6 +125,12 @@ public final class Network implements ApiMessage {
   @Nullable
   @Override
   public ApiMessage getApiMessageRequestBody() {
+    return null;
+  }
+
+  @Nullable
+  @Override
+  public List<String> getFieldMask() {
     return null;
   }
 

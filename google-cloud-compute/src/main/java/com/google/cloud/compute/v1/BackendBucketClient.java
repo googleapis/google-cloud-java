@@ -43,8 +43,7 @@ import javax.annotation.Generated;
  * <code>
  * try (BackendBucketClient backendBucketClient = BackendBucketClient.create()) {
  *   ProjectGlobalBackendBucketName backendBucket = ProjectGlobalBackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
- *   String requestId = "";
- *   Operation response = backendBucketClient.deleteBackendBucket(backendBucket, requestId);
+ *   Operation response = backendBucketClient.deleteBackendBucket(backendBucket);
  * }
  * </code>
  * </pre>
@@ -162,31 +161,19 @@ public class BackendBucketClient implements BackgroundResource {
    * <pre><code>
    * try (BackendBucketClient backendBucketClient = BackendBucketClient.create()) {
    *   ProjectGlobalBackendBucketName backendBucket = ProjectGlobalBackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
-   *   String requestId = "";
-   *   Operation response = backendBucketClient.deleteBackendBucket(backendBucket, requestId);
+   *   Operation response = backendBucketClient.deleteBackendBucket(backendBucket);
    * }
    * </code></pre>
    *
    * @param backendBucket Name of the BackendBucket resource to delete.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteBackendBucket(
-      ProjectGlobalBackendBucketName backendBucket, String requestId) {
+  public final Operation deleteBackendBucket(ProjectGlobalBackendBucketName backendBucket) {
 
     DeleteBackendBucketHttpRequest request =
         DeleteBackendBucketHttpRequest.newBuilder()
             .setBackendBucket(backendBucket == null ? null : backendBucket.toString())
-            .setRequestId(requestId)
             .build();
     return deleteBackendBucket(request);
   }
@@ -200,31 +187,18 @@ public class BackendBucketClient implements BackgroundResource {
    * <pre><code>
    * try (BackendBucketClient backendBucketClient = BackendBucketClient.create()) {
    *   ProjectGlobalBackendBucketName backendBucket = ProjectGlobalBackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
-   *   String requestId = "";
-   *   Operation response = backendBucketClient.deleteBackendBucket(backendBucket.toString(), requestId);
+   *   Operation response = backendBucketClient.deleteBackendBucket(backendBucket.toString());
    * }
    * </code></pre>
    *
    * @param backendBucket Name of the BackendBucket resource to delete.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteBackendBucket(String backendBucket, String requestId) {
+  public final Operation deleteBackendBucket(String backendBucket) {
 
     DeleteBackendBucketHttpRequest request =
-        DeleteBackendBucketHttpRequest.newBuilder()
-            .setBackendBucket(backendBucket)
-            .setRequestId(requestId)
-            .build();
+        DeleteBackendBucketHttpRequest.newBuilder().setBackendBucket(backendBucket).build();
     return deleteBackendBucket(request);
   }
 
@@ -237,10 +211,8 @@ public class BackendBucketClient implements BackgroundResource {
    * <pre><code>
    * try (BackendBucketClient backendBucketClient = BackendBucketClient.create()) {
    *   ProjectGlobalBackendBucketName backendBucket = ProjectGlobalBackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
-   *   String requestId = "";
    *   DeleteBackendBucketHttpRequest request = DeleteBackendBucketHttpRequest.newBuilder()
    *     .setBackendBucket(backendBucket.toString())
-   *     .setRequestId(requestId)
    *     .build();
    *   Operation response = backendBucketClient.deleteBackendBucket(request);
    * }
@@ -263,10 +235,8 @@ public class BackendBucketClient implements BackgroundResource {
    * <pre><code>
    * try (BackendBucketClient backendBucketClient = BackendBucketClient.create()) {
    *   ProjectGlobalBackendBucketName backendBucket = ProjectGlobalBackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
-   *   String requestId = "";
    *   DeleteBackendBucketHttpRequest request = DeleteBackendBucketHttpRequest.newBuilder()
    *     .setBackendBucket(backendBucket.toString())
-   *     .setRequestId(requestId)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = backendBucketClient.deleteBackendBucketCallable().futureCall(request);
    *   // Do something
@@ -391,22 +361,12 @@ public class BackendBucketClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BackendBucketClient backendBucketClient = BackendBucketClient.create()) {
-   *   String requestId = "";
    *   ProjectName project = ProjectName.of("[PROJECT]");
    *   BackendBucket backendBucketResource = BackendBucket.newBuilder().build();
-   *   Operation response = backendBucketClient.insertBackendBucket(requestId, project, backendBucketResource);
+   *   Operation response = backendBucketClient.insertBackendBucket(project, backendBucketResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param project Project ID for this request.
    * @param backendBucketResource A BackendBucket resource. This resource defines a Cloud Storage
    *     bucket.
@@ -414,11 +374,10 @@ public class BackendBucketClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation insertBackendBucket(
-      String requestId, ProjectName project, BackendBucket backendBucketResource) {
+      ProjectName project, BackendBucket backendBucketResource) {
 
     InsertBackendBucketHttpRequest request =
         InsertBackendBucketHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setProject(project == null ? null : project.toString())
             .setBackendBucketResource(backendBucketResource)
             .build();
@@ -434,34 +393,22 @@ public class BackendBucketClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BackendBucketClient backendBucketClient = BackendBucketClient.create()) {
-   *   String requestId = "";
    *   ProjectName project = ProjectName.of("[PROJECT]");
    *   BackendBucket backendBucketResource = BackendBucket.newBuilder().build();
-   *   Operation response = backendBucketClient.insertBackendBucket(requestId, project.toString(), backendBucketResource);
+   *   Operation response = backendBucketClient.insertBackendBucket(project.toString(), backendBucketResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param project Project ID for this request.
    * @param backendBucketResource A BackendBucket resource. This resource defines a Cloud Storage
    *     bucket.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation insertBackendBucket(
-      String requestId, String project, BackendBucket backendBucketResource) {
+  public final Operation insertBackendBucket(String project, BackendBucket backendBucketResource) {
 
     InsertBackendBucketHttpRequest request =
         InsertBackendBucketHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setProject(project)
             .setBackendBucketResource(backendBucketResource)
             .build();
@@ -477,11 +424,9 @@ public class BackendBucketClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BackendBucketClient backendBucketClient = BackendBucketClient.create()) {
-   *   String requestId = "";
    *   ProjectName project = ProjectName.of("[PROJECT]");
    *   BackendBucket backendBucketResource = BackendBucket.newBuilder().build();
    *   InsertBackendBucketHttpRequest request = InsertBackendBucketHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setProject(project.toString())
    *     .setBackendBucketResource(backendBucketResource)
    *     .build();
@@ -506,11 +451,9 @@ public class BackendBucketClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BackendBucketClient backendBucketClient = BackendBucketClient.create()) {
-   *   String requestId = "";
    *   ProjectName project = ProjectName.of("[PROJECT]");
    *   BackendBucket backendBucketResource = BackendBucket.newBuilder().build();
    *   InsertBackendBucketHttpRequest request = InsertBackendBucketHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setProject(project.toString())
    *     .setBackendBucketResource(backendBucketResource)
    *     .build();
@@ -674,36 +617,23 @@ public class BackendBucketClient implements BackgroundResource {
    * <pre><code>
    * try (BackendBucketClient backendBucketClient = BackendBucketClient.create()) {
    *   ProjectGlobalBackendBucketName backendBucket = ProjectGlobalBackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
-   *   String requestId = "";
    *   BackendBucket backendBucketResource = BackendBucket.newBuilder().build();
-   *   Operation response = backendBucketClient.patchBackendBucket(backendBucket, requestId, backendBucketResource);
+   *   Operation response = backendBucketClient.patchBackendBucket(backendBucket, backendBucketResource);
    * }
    * </code></pre>
    *
    * @param backendBucket Name of the BackendBucket resource to patch.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param backendBucketResource A BackendBucket resource. This resource defines a Cloud Storage
    *     bucket.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation patchBackendBucket(
-      ProjectGlobalBackendBucketName backendBucket,
-      String requestId,
-      BackendBucket backendBucketResource) {
+      ProjectGlobalBackendBucketName backendBucket, BackendBucket backendBucketResource) {
 
     PatchBackendBucketHttpRequest request =
         PatchBackendBucketHttpRequest.newBuilder()
             .setBackendBucket(backendBucket == null ? null : backendBucket.toString())
-            .setRequestId(requestId)
             .setBackendBucketResource(backendBucketResource)
             .build();
     return patchBackendBucket(request);
@@ -719,34 +649,23 @@ public class BackendBucketClient implements BackgroundResource {
    * <pre><code>
    * try (BackendBucketClient backendBucketClient = BackendBucketClient.create()) {
    *   ProjectGlobalBackendBucketName backendBucket = ProjectGlobalBackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
-   *   String requestId = "";
    *   BackendBucket backendBucketResource = BackendBucket.newBuilder().build();
-   *   Operation response = backendBucketClient.patchBackendBucket(backendBucket.toString(), requestId, backendBucketResource);
+   *   Operation response = backendBucketClient.patchBackendBucket(backendBucket.toString(), backendBucketResource);
    * }
    * </code></pre>
    *
    * @param backendBucket Name of the BackendBucket resource to patch.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param backendBucketResource A BackendBucket resource. This resource defines a Cloud Storage
    *     bucket.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation patchBackendBucket(
-      String backendBucket, String requestId, BackendBucket backendBucketResource) {
+      String backendBucket, BackendBucket backendBucketResource) {
 
     PatchBackendBucketHttpRequest request =
         PatchBackendBucketHttpRequest.newBuilder()
             .setBackendBucket(backendBucket)
-            .setRequestId(requestId)
             .setBackendBucketResource(backendBucketResource)
             .build();
     return patchBackendBucket(request);
@@ -762,11 +681,9 @@ public class BackendBucketClient implements BackgroundResource {
    * <pre><code>
    * try (BackendBucketClient backendBucketClient = BackendBucketClient.create()) {
    *   ProjectGlobalBackendBucketName backendBucket = ProjectGlobalBackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
-   *   String requestId = "";
    *   BackendBucket backendBucketResource = BackendBucket.newBuilder().build();
    *   PatchBackendBucketHttpRequest request = PatchBackendBucketHttpRequest.newBuilder()
    *     .setBackendBucket(backendBucket.toString())
-   *     .setRequestId(requestId)
    *     .setBackendBucketResource(backendBucketResource)
    *     .build();
    *   Operation response = backendBucketClient.patchBackendBucket(request);
@@ -791,11 +708,9 @@ public class BackendBucketClient implements BackgroundResource {
    * <pre><code>
    * try (BackendBucketClient backendBucketClient = BackendBucketClient.create()) {
    *   ProjectGlobalBackendBucketName backendBucket = ProjectGlobalBackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
-   *   String requestId = "";
    *   BackendBucket backendBucketResource = BackendBucket.newBuilder().build();
    *   PatchBackendBucketHttpRequest request = PatchBackendBucketHttpRequest.newBuilder()
    *     .setBackendBucket(backendBucket.toString())
-   *     .setRequestId(requestId)
    *     .setBackendBucketResource(backendBucketResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = backendBucketClient.patchBackendBucketCallable().futureCall(request);
@@ -819,36 +734,23 @@ public class BackendBucketClient implements BackgroundResource {
    * <pre><code>
    * try (BackendBucketClient backendBucketClient = BackendBucketClient.create()) {
    *   ProjectGlobalBackendBucketName backendBucket = ProjectGlobalBackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
-   *   String requestId = "";
    *   BackendBucket backendBucketResource = BackendBucket.newBuilder().build();
-   *   Operation response = backendBucketClient.updateBackendBucket(backendBucket, requestId, backendBucketResource);
+   *   Operation response = backendBucketClient.updateBackendBucket(backendBucket, backendBucketResource);
    * }
    * </code></pre>
    *
    * @param backendBucket Name of the BackendBucket resource to update.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param backendBucketResource A BackendBucket resource. This resource defines a Cloud Storage
    *     bucket.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation updateBackendBucket(
-      ProjectGlobalBackendBucketName backendBucket,
-      String requestId,
-      BackendBucket backendBucketResource) {
+      ProjectGlobalBackendBucketName backendBucket, BackendBucket backendBucketResource) {
 
     UpdateBackendBucketHttpRequest request =
         UpdateBackendBucketHttpRequest.newBuilder()
             .setBackendBucket(backendBucket == null ? null : backendBucket.toString())
-            .setRequestId(requestId)
             .setBackendBucketResource(backendBucketResource)
             .build();
     return updateBackendBucket(request);
@@ -863,34 +765,23 @@ public class BackendBucketClient implements BackgroundResource {
    * <pre><code>
    * try (BackendBucketClient backendBucketClient = BackendBucketClient.create()) {
    *   ProjectGlobalBackendBucketName backendBucket = ProjectGlobalBackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
-   *   String requestId = "";
    *   BackendBucket backendBucketResource = BackendBucket.newBuilder().build();
-   *   Operation response = backendBucketClient.updateBackendBucket(backendBucket.toString(), requestId, backendBucketResource);
+   *   Operation response = backendBucketClient.updateBackendBucket(backendBucket.toString(), backendBucketResource);
    * }
    * </code></pre>
    *
    * @param backendBucket Name of the BackendBucket resource to update.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param backendBucketResource A BackendBucket resource. This resource defines a Cloud Storage
    *     bucket.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation updateBackendBucket(
-      String backendBucket, String requestId, BackendBucket backendBucketResource) {
+      String backendBucket, BackendBucket backendBucketResource) {
 
     UpdateBackendBucketHttpRequest request =
         UpdateBackendBucketHttpRequest.newBuilder()
             .setBackendBucket(backendBucket)
-            .setRequestId(requestId)
             .setBackendBucketResource(backendBucketResource)
             .build();
     return updateBackendBucket(request);
@@ -905,11 +796,9 @@ public class BackendBucketClient implements BackgroundResource {
    * <pre><code>
    * try (BackendBucketClient backendBucketClient = BackendBucketClient.create()) {
    *   ProjectGlobalBackendBucketName backendBucket = ProjectGlobalBackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
-   *   String requestId = "";
    *   BackendBucket backendBucketResource = BackendBucket.newBuilder().build();
    *   UpdateBackendBucketHttpRequest request = UpdateBackendBucketHttpRequest.newBuilder()
    *     .setBackendBucket(backendBucket.toString())
-   *     .setRequestId(requestId)
    *     .setBackendBucketResource(backendBucketResource)
    *     .build();
    *   Operation response = backendBucketClient.updateBackendBucket(request);
@@ -933,11 +822,9 @@ public class BackendBucketClient implements BackgroundResource {
    * <pre><code>
    * try (BackendBucketClient backendBucketClient = BackendBucketClient.create()) {
    *   ProjectGlobalBackendBucketName backendBucket = ProjectGlobalBackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
-   *   String requestId = "";
    *   BackendBucket backendBucketResource = BackendBucket.newBuilder().build();
    *   UpdateBackendBucketHttpRequest request = UpdateBackendBucketHttpRequest.newBuilder()
    *     .setBackendBucket(backendBucket.toString())
-   *     .setRequestId(requestId)
    *     .setBackendBucketResource(backendBucketResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = backendBucketClient.updateBackendBucketCallable().futureCall(request);

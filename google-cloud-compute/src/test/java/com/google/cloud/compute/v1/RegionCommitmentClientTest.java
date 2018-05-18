@@ -270,11 +270,10 @@ public class RegionCommitmentClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String requestId = "requestId37109963";
     ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     Commitment commitmentResource = Commitment.newBuilder().build();
 
-    Operation actualResponse = client.insertRegionCommitment(requestId, region, commitmentResource);
+    Operation actualResponse = client.insertRegionCommitment(region, commitmentResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -301,11 +300,10 @@ public class RegionCommitmentClientTest {
     mockService.addException(exception);
 
     try {
-      String requestId = "requestId37109963";
       ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
       Commitment commitmentResource = Commitment.newBuilder().build();
 
-      client.insertRegionCommitment(requestId, region, commitmentResource);
+      client.insertRegionCommitment(region, commitmentResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

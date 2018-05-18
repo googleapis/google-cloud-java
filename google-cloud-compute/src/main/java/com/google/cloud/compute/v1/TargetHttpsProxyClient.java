@@ -43,8 +43,7 @@ import javax.annotation.Generated;
  * <code>
  * try (TargetHttpsProxyClient targetHttpsProxyClient = TargetHttpsProxyClient.create()) {
  *   ProjectGlobalTargetHttpsProxyName targetHttpsProxy = ProjectGlobalTargetHttpsProxyName.of("[PROJECT]", "[TARGET_HTTPS_PROXY]");
- *   String requestId = "";
- *   Operation response = targetHttpsProxyClient.deleteTargetHttpsProxy(targetHttpsProxy, requestId);
+ *   Operation response = targetHttpsProxyClient.deleteTargetHttpsProxy(targetHttpsProxy);
  * }
  * </code>
  * </pre>
@@ -163,31 +162,20 @@ public class TargetHttpsProxyClient implements BackgroundResource {
    * <pre><code>
    * try (TargetHttpsProxyClient targetHttpsProxyClient = TargetHttpsProxyClient.create()) {
    *   ProjectGlobalTargetHttpsProxyName targetHttpsProxy = ProjectGlobalTargetHttpsProxyName.of("[PROJECT]", "[TARGET_HTTPS_PROXY]");
-   *   String requestId = "";
-   *   Operation response = targetHttpsProxyClient.deleteTargetHttpsProxy(targetHttpsProxy, requestId);
+   *   Operation response = targetHttpsProxyClient.deleteTargetHttpsProxy(targetHttpsProxy);
    * }
    * </code></pre>
    *
    * @param targetHttpsProxy Name of the TargetHttpsProxy resource to delete.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation deleteTargetHttpsProxy(
-      ProjectGlobalTargetHttpsProxyName targetHttpsProxy, String requestId) {
+      ProjectGlobalTargetHttpsProxyName targetHttpsProxy) {
 
     DeleteTargetHttpsProxyHttpRequest request =
         DeleteTargetHttpsProxyHttpRequest.newBuilder()
             .setTargetHttpsProxy(targetHttpsProxy == null ? null : targetHttpsProxy.toString())
-            .setRequestId(requestId)
             .build();
     return deleteTargetHttpsProxy(request);
   }
@@ -201,30 +189,19 @@ public class TargetHttpsProxyClient implements BackgroundResource {
    * <pre><code>
    * try (TargetHttpsProxyClient targetHttpsProxyClient = TargetHttpsProxyClient.create()) {
    *   ProjectGlobalTargetHttpsProxyName targetHttpsProxy = ProjectGlobalTargetHttpsProxyName.of("[PROJECT]", "[TARGET_HTTPS_PROXY]");
-   *   String requestId = "";
-   *   Operation response = targetHttpsProxyClient.deleteTargetHttpsProxy(targetHttpsProxy.toString(), requestId);
+   *   Operation response = targetHttpsProxyClient.deleteTargetHttpsProxy(targetHttpsProxy.toString());
    * }
    * </code></pre>
    *
    * @param targetHttpsProxy Name of the TargetHttpsProxy resource to delete.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteTargetHttpsProxy(String targetHttpsProxy, String requestId) {
+  public final Operation deleteTargetHttpsProxy(String targetHttpsProxy) {
 
     DeleteTargetHttpsProxyHttpRequest request =
         DeleteTargetHttpsProxyHttpRequest.newBuilder()
             .setTargetHttpsProxy(targetHttpsProxy)
-            .setRequestId(requestId)
             .build();
     return deleteTargetHttpsProxy(request);
   }
@@ -238,10 +215,8 @@ public class TargetHttpsProxyClient implements BackgroundResource {
    * <pre><code>
    * try (TargetHttpsProxyClient targetHttpsProxyClient = TargetHttpsProxyClient.create()) {
    *   ProjectGlobalTargetHttpsProxyName targetHttpsProxy = ProjectGlobalTargetHttpsProxyName.of("[PROJECT]", "[TARGET_HTTPS_PROXY]");
-   *   String requestId = "";
    *   DeleteTargetHttpsProxyHttpRequest request = DeleteTargetHttpsProxyHttpRequest.newBuilder()
    *     .setTargetHttpsProxy(targetHttpsProxy.toString())
-   *     .setRequestId(requestId)
    *     .build();
    *   Operation response = targetHttpsProxyClient.deleteTargetHttpsProxy(request);
    * }
@@ -264,10 +239,8 @@ public class TargetHttpsProxyClient implements BackgroundResource {
    * <pre><code>
    * try (TargetHttpsProxyClient targetHttpsProxyClient = TargetHttpsProxyClient.create()) {
    *   ProjectGlobalTargetHttpsProxyName targetHttpsProxy = ProjectGlobalTargetHttpsProxyName.of("[PROJECT]", "[TARGET_HTTPS_PROXY]");
-   *   String requestId = "";
    *   DeleteTargetHttpsProxyHttpRequest request = DeleteTargetHttpsProxyHttpRequest.newBuilder()
    *     .setTargetHttpsProxy(targetHttpsProxy.toString())
-   *     .setRequestId(requestId)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = targetHttpsProxyClient.deleteTargetHttpsProxyCallable().futureCall(request);
    *   // Do something
@@ -393,22 +366,12 @@ public class TargetHttpsProxyClient implements BackgroundResource {
    *
    * <pre><code>
    * try (TargetHttpsProxyClient targetHttpsProxyClient = TargetHttpsProxyClient.create()) {
-   *   String requestId = "";
    *   ProjectName project = ProjectName.of("[PROJECT]");
    *   TargetHttpsProxy targetHttpsProxyResource = TargetHttpsProxy.newBuilder().build();
-   *   Operation response = targetHttpsProxyClient.insertTargetHttpsProxy(requestId, project, targetHttpsProxyResource);
+   *   Operation response = targetHttpsProxyClient.insertTargetHttpsProxy(project, targetHttpsProxyResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param project Project ID for this request.
    * @param targetHttpsProxyResource A TargetHttpsProxy resource. This resource defines an HTTPS
    *     proxy. (== resource_for beta.targetHttpsProxies ==) (== resource_for v1.targetHttpsProxies
@@ -417,11 +380,10 @@ public class TargetHttpsProxyClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation insertTargetHttpsProxy(
-      String requestId, ProjectName project, TargetHttpsProxy targetHttpsProxyResource) {
+      ProjectName project, TargetHttpsProxy targetHttpsProxyResource) {
 
     InsertTargetHttpsProxyHttpRequest request =
         InsertTargetHttpsProxyHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setProject(project == null ? null : project.toString())
             .setTargetHttpsProxyResource(targetHttpsProxyResource)
             .build();
@@ -437,22 +399,12 @@ public class TargetHttpsProxyClient implements BackgroundResource {
    *
    * <pre><code>
    * try (TargetHttpsProxyClient targetHttpsProxyClient = TargetHttpsProxyClient.create()) {
-   *   String requestId = "";
    *   ProjectName project = ProjectName.of("[PROJECT]");
    *   TargetHttpsProxy targetHttpsProxyResource = TargetHttpsProxy.newBuilder().build();
-   *   Operation response = targetHttpsProxyClient.insertTargetHttpsProxy(requestId, project.toString(), targetHttpsProxyResource);
+   *   Operation response = targetHttpsProxyClient.insertTargetHttpsProxy(project.toString(), targetHttpsProxyResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param project Project ID for this request.
    * @param targetHttpsProxyResource A TargetHttpsProxy resource. This resource defines an HTTPS
    *     proxy. (== resource_for beta.targetHttpsProxies ==) (== resource_for v1.targetHttpsProxies
@@ -461,11 +413,10 @@ public class TargetHttpsProxyClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation insertTargetHttpsProxy(
-      String requestId, String project, TargetHttpsProxy targetHttpsProxyResource) {
+      String project, TargetHttpsProxy targetHttpsProxyResource) {
 
     InsertTargetHttpsProxyHttpRequest request =
         InsertTargetHttpsProxyHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setProject(project)
             .setTargetHttpsProxyResource(targetHttpsProxyResource)
             .build();
@@ -481,11 +432,9 @@ public class TargetHttpsProxyClient implements BackgroundResource {
    *
    * <pre><code>
    * try (TargetHttpsProxyClient targetHttpsProxyClient = TargetHttpsProxyClient.create()) {
-   *   String requestId = "";
    *   ProjectName project = ProjectName.of("[PROJECT]");
    *   TargetHttpsProxy targetHttpsProxyResource = TargetHttpsProxy.newBuilder().build();
    *   InsertTargetHttpsProxyHttpRequest request = InsertTargetHttpsProxyHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setProject(project.toString())
    *     .setTargetHttpsProxyResource(targetHttpsProxyResource)
    *     .build();
@@ -510,11 +459,9 @@ public class TargetHttpsProxyClient implements BackgroundResource {
    *
    * <pre><code>
    * try (TargetHttpsProxyClient targetHttpsProxyClient = TargetHttpsProxyClient.create()) {
-   *   String requestId = "";
    *   ProjectName project = ProjectName.of("[PROJECT]");
    *   TargetHttpsProxy targetHttpsProxyResource = TargetHttpsProxy.newBuilder().build();
    *   InsertTargetHttpsProxyHttpRequest request = InsertTargetHttpsProxyHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setProject(project.toString())
    *     .setTargetHttpsProxyResource(targetHttpsProxyResource)
    *     .build();
@@ -677,37 +624,25 @@ public class TargetHttpsProxyClient implements BackgroundResource {
    * <pre><code>
    * try (TargetHttpsProxyClient targetHttpsProxyClient = TargetHttpsProxyClient.create()) {
    *   ProjectTargetHttpsProxyName targetHttpsProxy = ProjectTargetHttpsProxyName.of("[PROJECT]", "[TARGET_HTTPS_PROXY]");
-   *   String requestId = "";
    *   TargetHttpsProxiesSetSslCertificatesRequest targetHttpsProxiesSetSslCertificatesRequestResource = TargetHttpsProxiesSetSslCertificatesRequest.newBuilder().build();
-   *   Operation response = targetHttpsProxyClient.setSslCertificatesTargetHttpsProxy(targetHttpsProxy, requestId, targetHttpsProxiesSetSslCertificatesRequestResource);
+   *   Operation response = targetHttpsProxyClient.setSslCertificatesTargetHttpsProxy(targetHttpsProxy, targetHttpsProxiesSetSslCertificatesRequestResource);
    * }
    * </code></pre>
    *
    * @param targetHttpsProxy Name of the TargetHttpsProxy resource to set an SslCertificates
    *     resource for.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param targetHttpsProxiesSetSslCertificatesRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation setSslCertificatesTargetHttpsProxy(
       ProjectTargetHttpsProxyName targetHttpsProxy,
-      String requestId,
       TargetHttpsProxiesSetSslCertificatesRequest
           targetHttpsProxiesSetSslCertificatesRequestResource) {
 
     SetSslCertificatesTargetHttpsProxyHttpRequest request =
         SetSslCertificatesTargetHttpsProxyHttpRequest.newBuilder()
             .setTargetHttpsProxy(targetHttpsProxy == null ? null : targetHttpsProxy.toString())
-            .setRequestId(requestId)
             .setTargetHttpsProxiesSetSslCertificatesRequestResource(
                 targetHttpsProxiesSetSslCertificatesRequestResource)
             .build();
@@ -723,37 +658,25 @@ public class TargetHttpsProxyClient implements BackgroundResource {
    * <pre><code>
    * try (TargetHttpsProxyClient targetHttpsProxyClient = TargetHttpsProxyClient.create()) {
    *   ProjectTargetHttpsProxyName targetHttpsProxy = ProjectTargetHttpsProxyName.of("[PROJECT]", "[TARGET_HTTPS_PROXY]");
-   *   String requestId = "";
    *   TargetHttpsProxiesSetSslCertificatesRequest targetHttpsProxiesSetSslCertificatesRequestResource = TargetHttpsProxiesSetSslCertificatesRequest.newBuilder().build();
-   *   Operation response = targetHttpsProxyClient.setSslCertificatesTargetHttpsProxy(targetHttpsProxy.toString(), requestId, targetHttpsProxiesSetSslCertificatesRequestResource);
+   *   Operation response = targetHttpsProxyClient.setSslCertificatesTargetHttpsProxy(targetHttpsProxy.toString(), targetHttpsProxiesSetSslCertificatesRequestResource);
    * }
    * </code></pre>
    *
    * @param targetHttpsProxy Name of the TargetHttpsProxy resource to set an SslCertificates
    *     resource for.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param targetHttpsProxiesSetSslCertificatesRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation setSslCertificatesTargetHttpsProxy(
       String targetHttpsProxy,
-      String requestId,
       TargetHttpsProxiesSetSslCertificatesRequest
           targetHttpsProxiesSetSslCertificatesRequestResource) {
 
     SetSslCertificatesTargetHttpsProxyHttpRequest request =
         SetSslCertificatesTargetHttpsProxyHttpRequest.newBuilder()
             .setTargetHttpsProxy(targetHttpsProxy)
-            .setRequestId(requestId)
             .setTargetHttpsProxiesSetSslCertificatesRequestResource(
                 targetHttpsProxiesSetSslCertificatesRequestResource)
             .build();
@@ -769,11 +692,9 @@ public class TargetHttpsProxyClient implements BackgroundResource {
    * <pre><code>
    * try (TargetHttpsProxyClient targetHttpsProxyClient = TargetHttpsProxyClient.create()) {
    *   ProjectTargetHttpsProxyName targetHttpsProxy = ProjectTargetHttpsProxyName.of("[PROJECT]", "[TARGET_HTTPS_PROXY]");
-   *   String requestId = "";
    *   TargetHttpsProxiesSetSslCertificatesRequest targetHttpsProxiesSetSslCertificatesRequestResource = TargetHttpsProxiesSetSslCertificatesRequest.newBuilder().build();
    *   SetSslCertificatesTargetHttpsProxyHttpRequest request = SetSslCertificatesTargetHttpsProxyHttpRequest.newBuilder()
    *     .setTargetHttpsProxy(targetHttpsProxy.toString())
-   *     .setRequestId(requestId)
    *     .setTargetHttpsProxiesSetSslCertificatesRequestResource(targetHttpsProxiesSetSslCertificatesRequestResource)
    *     .build();
    *   Operation response = targetHttpsProxyClient.setSslCertificatesTargetHttpsProxy(request);
@@ -798,11 +719,9 @@ public class TargetHttpsProxyClient implements BackgroundResource {
    * <pre><code>
    * try (TargetHttpsProxyClient targetHttpsProxyClient = TargetHttpsProxyClient.create()) {
    *   ProjectTargetHttpsProxyName targetHttpsProxy = ProjectTargetHttpsProxyName.of("[PROJECT]", "[TARGET_HTTPS_PROXY]");
-   *   String requestId = "";
    *   TargetHttpsProxiesSetSslCertificatesRequest targetHttpsProxiesSetSslCertificatesRequestResource = TargetHttpsProxiesSetSslCertificatesRequest.newBuilder().build();
    *   SetSslCertificatesTargetHttpsProxyHttpRequest request = SetSslCertificatesTargetHttpsProxyHttpRequest.newBuilder()
    *     .setTargetHttpsProxy(targetHttpsProxy.toString())
-   *     .setRequestId(requestId)
    *     .setTargetHttpsProxiesSetSslCertificatesRequestResource(targetHttpsProxiesSetSslCertificatesRequestResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = targetHttpsProxyClient.setSslCertificatesTargetHttpsProxyCallable().futureCall(request);
@@ -828,36 +747,24 @@ public class TargetHttpsProxyClient implements BackgroundResource {
    * <pre><code>
    * try (TargetHttpsProxyClient targetHttpsProxyClient = TargetHttpsProxyClient.create()) {
    *   ProjectGlobalTargetHttpsProxyName targetHttpsProxy = ProjectGlobalTargetHttpsProxyName.of("[PROJECT]", "[TARGET_HTTPS_PROXY]");
-   *   String requestId = "";
    *   SslPolicyReference sslPolicyReferenceResource = SslPolicyReference.newBuilder().build();
-   *   Operation response = targetHttpsProxyClient.setSslPolicyTargetHttpsProxy(targetHttpsProxy, requestId, sslPolicyReferenceResource);
+   *   Operation response = targetHttpsProxyClient.setSslPolicyTargetHttpsProxy(targetHttpsProxy, sslPolicyReferenceResource);
    * }
    * </code></pre>
    *
    * @param targetHttpsProxy Name of the TargetHttpsProxy resource whose SSL policy is to be set.
    *     The name must be 1-63 characters long, and comply with RFC1035.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param sslPolicyReferenceResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation setSslPolicyTargetHttpsProxy(
       ProjectGlobalTargetHttpsProxyName targetHttpsProxy,
-      String requestId,
       SslPolicyReference sslPolicyReferenceResource) {
 
     SetSslPolicyTargetHttpsProxyHttpRequest request =
         SetSslPolicyTargetHttpsProxyHttpRequest.newBuilder()
             .setTargetHttpsProxy(targetHttpsProxy == null ? null : targetHttpsProxy.toString())
-            .setRequestId(requestId)
             .setSslPolicyReferenceResource(sslPolicyReferenceResource)
             .build();
     return setSslPolicyTargetHttpsProxy(request);
@@ -874,34 +781,23 @@ public class TargetHttpsProxyClient implements BackgroundResource {
    * <pre><code>
    * try (TargetHttpsProxyClient targetHttpsProxyClient = TargetHttpsProxyClient.create()) {
    *   ProjectGlobalTargetHttpsProxyName targetHttpsProxy = ProjectGlobalTargetHttpsProxyName.of("[PROJECT]", "[TARGET_HTTPS_PROXY]");
-   *   String requestId = "";
    *   SslPolicyReference sslPolicyReferenceResource = SslPolicyReference.newBuilder().build();
-   *   Operation response = targetHttpsProxyClient.setSslPolicyTargetHttpsProxy(targetHttpsProxy.toString(), requestId, sslPolicyReferenceResource);
+   *   Operation response = targetHttpsProxyClient.setSslPolicyTargetHttpsProxy(targetHttpsProxy.toString(), sslPolicyReferenceResource);
    * }
    * </code></pre>
    *
    * @param targetHttpsProxy Name of the TargetHttpsProxy resource whose SSL policy is to be set.
    *     The name must be 1-63 characters long, and comply with RFC1035.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param sslPolicyReferenceResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation setSslPolicyTargetHttpsProxy(
-      String targetHttpsProxy, String requestId, SslPolicyReference sslPolicyReferenceResource) {
+      String targetHttpsProxy, SslPolicyReference sslPolicyReferenceResource) {
 
     SetSslPolicyTargetHttpsProxyHttpRequest request =
         SetSslPolicyTargetHttpsProxyHttpRequest.newBuilder()
             .setTargetHttpsProxy(targetHttpsProxy)
-            .setRequestId(requestId)
             .setSslPolicyReferenceResource(sslPolicyReferenceResource)
             .build();
     return setSslPolicyTargetHttpsProxy(request);
@@ -918,11 +814,9 @@ public class TargetHttpsProxyClient implements BackgroundResource {
    * <pre><code>
    * try (TargetHttpsProxyClient targetHttpsProxyClient = TargetHttpsProxyClient.create()) {
    *   ProjectGlobalTargetHttpsProxyName targetHttpsProxy = ProjectGlobalTargetHttpsProxyName.of("[PROJECT]", "[TARGET_HTTPS_PROXY]");
-   *   String requestId = "";
    *   SslPolicyReference sslPolicyReferenceResource = SslPolicyReference.newBuilder().build();
    *   SetSslPolicyTargetHttpsProxyHttpRequest request = SetSslPolicyTargetHttpsProxyHttpRequest.newBuilder()
    *     .setTargetHttpsProxy(targetHttpsProxy.toString())
-   *     .setRequestId(requestId)
    *     .setSslPolicyReferenceResource(sslPolicyReferenceResource)
    *     .build();
    *   Operation response = targetHttpsProxyClient.setSslPolicyTargetHttpsProxy(request);
@@ -949,11 +843,9 @@ public class TargetHttpsProxyClient implements BackgroundResource {
    * <pre><code>
    * try (TargetHttpsProxyClient targetHttpsProxyClient = TargetHttpsProxyClient.create()) {
    *   ProjectGlobalTargetHttpsProxyName targetHttpsProxy = ProjectGlobalTargetHttpsProxyName.of("[PROJECT]", "[TARGET_HTTPS_PROXY]");
-   *   String requestId = "";
    *   SslPolicyReference sslPolicyReferenceResource = SslPolicyReference.newBuilder().build();
    *   SetSslPolicyTargetHttpsProxyHttpRequest request = SetSslPolicyTargetHttpsProxyHttpRequest.newBuilder()
    *     .setTargetHttpsProxy(targetHttpsProxy.toString())
-   *     .setRequestId(requestId)
    *     .setSslPolicyReferenceResource(sslPolicyReferenceResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = targetHttpsProxyClient.setSslPolicyTargetHttpsProxyCallable().futureCall(request);
@@ -977,35 +869,22 @@ public class TargetHttpsProxyClient implements BackgroundResource {
    * <pre><code>
    * try (TargetHttpsProxyClient targetHttpsProxyClient = TargetHttpsProxyClient.create()) {
    *   ProjectTargetHttpsProxyName targetHttpsProxy = ProjectTargetHttpsProxyName.of("[PROJECT]", "[TARGET_HTTPS_PROXY]");
-   *   String requestId = "";
    *   UrlMapReference urlMapReferenceResource = UrlMapReference.newBuilder().build();
-   *   Operation response = targetHttpsProxyClient.setUrlMapTargetHttpsProxy(targetHttpsProxy, requestId, urlMapReferenceResource);
+   *   Operation response = targetHttpsProxyClient.setUrlMapTargetHttpsProxy(targetHttpsProxy, urlMapReferenceResource);
    * }
    * </code></pre>
    *
    * @param targetHttpsProxy Name of the TargetHttpsProxy resource whose URL map is to be set.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param urlMapReferenceResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation setUrlMapTargetHttpsProxy(
-      ProjectTargetHttpsProxyName targetHttpsProxy,
-      String requestId,
-      UrlMapReference urlMapReferenceResource) {
+      ProjectTargetHttpsProxyName targetHttpsProxy, UrlMapReference urlMapReferenceResource) {
 
     SetUrlMapTargetHttpsProxyHttpRequest request =
         SetUrlMapTargetHttpsProxyHttpRequest.newBuilder()
             .setTargetHttpsProxy(targetHttpsProxy == null ? null : targetHttpsProxy.toString())
-            .setRequestId(requestId)
             .setUrlMapReferenceResource(urlMapReferenceResource)
             .build();
     return setUrlMapTargetHttpsProxy(request);
@@ -1020,33 +899,22 @@ public class TargetHttpsProxyClient implements BackgroundResource {
    * <pre><code>
    * try (TargetHttpsProxyClient targetHttpsProxyClient = TargetHttpsProxyClient.create()) {
    *   ProjectTargetHttpsProxyName targetHttpsProxy = ProjectTargetHttpsProxyName.of("[PROJECT]", "[TARGET_HTTPS_PROXY]");
-   *   String requestId = "";
    *   UrlMapReference urlMapReferenceResource = UrlMapReference.newBuilder().build();
-   *   Operation response = targetHttpsProxyClient.setUrlMapTargetHttpsProxy(targetHttpsProxy.toString(), requestId, urlMapReferenceResource);
+   *   Operation response = targetHttpsProxyClient.setUrlMapTargetHttpsProxy(targetHttpsProxy.toString(), urlMapReferenceResource);
    * }
    * </code></pre>
    *
    * @param targetHttpsProxy Name of the TargetHttpsProxy resource whose URL map is to be set.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param urlMapReferenceResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation setUrlMapTargetHttpsProxy(
-      String targetHttpsProxy, String requestId, UrlMapReference urlMapReferenceResource) {
+      String targetHttpsProxy, UrlMapReference urlMapReferenceResource) {
 
     SetUrlMapTargetHttpsProxyHttpRequest request =
         SetUrlMapTargetHttpsProxyHttpRequest.newBuilder()
             .setTargetHttpsProxy(targetHttpsProxy)
-            .setRequestId(requestId)
             .setUrlMapReferenceResource(urlMapReferenceResource)
             .build();
     return setUrlMapTargetHttpsProxy(request);
@@ -1061,11 +929,9 @@ public class TargetHttpsProxyClient implements BackgroundResource {
    * <pre><code>
    * try (TargetHttpsProxyClient targetHttpsProxyClient = TargetHttpsProxyClient.create()) {
    *   ProjectTargetHttpsProxyName targetHttpsProxy = ProjectTargetHttpsProxyName.of("[PROJECT]", "[TARGET_HTTPS_PROXY]");
-   *   String requestId = "";
    *   UrlMapReference urlMapReferenceResource = UrlMapReference.newBuilder().build();
    *   SetUrlMapTargetHttpsProxyHttpRequest request = SetUrlMapTargetHttpsProxyHttpRequest.newBuilder()
    *     .setTargetHttpsProxy(targetHttpsProxy.toString())
-   *     .setRequestId(requestId)
    *     .setUrlMapReferenceResource(urlMapReferenceResource)
    *     .build();
    *   Operation response = targetHttpsProxyClient.setUrlMapTargetHttpsProxy(request);
@@ -1089,11 +955,9 @@ public class TargetHttpsProxyClient implements BackgroundResource {
    * <pre><code>
    * try (TargetHttpsProxyClient targetHttpsProxyClient = TargetHttpsProxyClient.create()) {
    *   ProjectTargetHttpsProxyName targetHttpsProxy = ProjectTargetHttpsProxyName.of("[PROJECT]", "[TARGET_HTTPS_PROXY]");
-   *   String requestId = "";
    *   UrlMapReference urlMapReferenceResource = UrlMapReference.newBuilder().build();
    *   SetUrlMapTargetHttpsProxyHttpRequest request = SetUrlMapTargetHttpsProxyHttpRequest.newBuilder()
    *     .setTargetHttpsProxy(targetHttpsProxy.toString())
-   *     .setRequestId(requestId)
    *     .setUrlMapReferenceResource(urlMapReferenceResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = targetHttpsProxyClient.setUrlMapTargetHttpsProxyCallable().futureCall(request);

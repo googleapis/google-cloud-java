@@ -147,7 +147,6 @@ public class RegionInstanceGroupManagerClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String requestId = "requestId37109963";
     ProjectRegionInstanceGroupManagerName instanceGroupManager =
         ProjectRegionInstanceGroupManagerName.of(
             "[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
@@ -157,9 +156,7 @@ public class RegionInstanceGroupManagerClientTest {
 
     Operation actualResponse =
         client.abandonInstancesRegionInstanceGroupManager(
-            requestId,
-            instanceGroupManager,
-            regionInstanceGroupManagersAbandonInstancesRequestResource);
+            instanceGroupManager, regionInstanceGroupManagersAbandonInstancesRequestResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -186,7 +183,6 @@ public class RegionInstanceGroupManagerClientTest {
     mockService.addException(exception);
 
     try {
-      String requestId = "requestId37109963";
       ProjectRegionInstanceGroupManagerName instanceGroupManager =
           ProjectRegionInstanceGroupManagerName.of(
               "[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
@@ -195,9 +191,7 @@ public class RegionInstanceGroupManagerClientTest {
               RegionInstanceGroupManagersAbandonInstancesRequest.newBuilder().build();
 
       client.abandonInstancesRegionInstanceGroupManager(
-          requestId,
-          instanceGroupManager,
-          regionInstanceGroupManagersAbandonInstancesRequestResource);
+          instanceGroupManager, regionInstanceGroupManagersAbandonInstancesRequestResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -254,13 +248,11 @@ public class RegionInstanceGroupManagerClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String requestId = "requestId37109963";
     ProjectRegionInstanceGroupManagerName instanceGroupManager =
         ProjectRegionInstanceGroupManagerName.of(
             "[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
 
-    Operation actualResponse =
-        client.deleteRegionInstanceGroupManager(requestId, instanceGroupManager);
+    Operation actualResponse = client.deleteRegionInstanceGroupManager(instanceGroupManager);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -287,12 +279,11 @@ public class RegionInstanceGroupManagerClientTest {
     mockService.addException(exception);
 
     try {
-      String requestId = "requestId37109963";
       ProjectRegionInstanceGroupManagerName instanceGroupManager =
           ProjectRegionInstanceGroupManagerName.of(
               "[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
 
-      client.deleteRegionInstanceGroupManager(requestId, instanceGroupManager);
+      client.deleteRegionInstanceGroupManager(instanceGroupManager);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -349,7 +340,6 @@ public class RegionInstanceGroupManagerClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String requestId = "requestId37109963";
     ProjectRegionInstanceGroupManagerName instanceGroupManager =
         ProjectRegionInstanceGroupManagerName.of(
             "[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
@@ -359,9 +349,7 @@ public class RegionInstanceGroupManagerClientTest {
 
     Operation actualResponse =
         client.deleteInstancesRegionInstanceGroupManager(
-            requestId,
-            instanceGroupManager,
-            regionInstanceGroupManagersDeleteInstancesRequestResource);
+            instanceGroupManager, regionInstanceGroupManagersDeleteInstancesRequestResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -388,7 +376,6 @@ public class RegionInstanceGroupManagerClientTest {
     mockService.addException(exception);
 
     try {
-      String requestId = "requestId37109963";
       ProjectRegionInstanceGroupManagerName instanceGroupManager =
           ProjectRegionInstanceGroupManagerName.of(
               "[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
@@ -397,9 +384,7 @@ public class RegionInstanceGroupManagerClientTest {
               RegionInstanceGroupManagersDeleteInstancesRequest.newBuilder().build();
 
       client.deleteInstancesRegionInstanceGroupManager(
-          requestId,
-          instanceGroupManager,
-          regionInstanceGroupManagersDeleteInstancesRequestResource);
+          instanceGroupManager, regionInstanceGroupManagersDeleteInstancesRequestResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -535,12 +520,11 @@ public class RegionInstanceGroupManagerClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String requestId = "requestId37109963";
     ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     InstanceGroupManager instanceGroupManagerResource = InstanceGroupManager.newBuilder().build();
 
     Operation actualResponse =
-        client.insertRegionInstanceGroupManager(requestId, region, instanceGroupManagerResource);
+        client.insertRegionInstanceGroupManager(region, instanceGroupManagerResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -567,11 +551,10 @@ public class RegionInstanceGroupManagerClientTest {
     mockService.addException(exception);
 
     try {
-      String requestId = "requestId37109963";
       ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
       InstanceGroupManager instanceGroupManagerResource = InstanceGroupManager.newBuilder().build();
 
-      client.insertRegionInstanceGroupManager(requestId, region, instanceGroupManagerResource);
+      client.insertRegionInstanceGroupManager(region, instanceGroupManagerResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -739,7 +722,6 @@ public class RegionInstanceGroupManagerClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String requestId = "requestId37109963";
     ProjectRegionInstanceGroupManagerName instanceGroupManager =
         ProjectRegionInstanceGroupManagerName.of(
             "[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
@@ -748,7 +730,7 @@ public class RegionInstanceGroupManagerClientTest {
 
     Operation actualResponse =
         client.recreateInstancesRegionInstanceGroupManager(
-            requestId, instanceGroupManager, regionInstanceGroupManagersRecreateRequestResource);
+            instanceGroupManager, regionInstanceGroupManagersRecreateRequestResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -775,7 +757,6 @@ public class RegionInstanceGroupManagerClientTest {
     mockService.addException(exception);
 
     try {
-      String requestId = "requestId37109963";
       ProjectRegionInstanceGroupManagerName instanceGroupManager =
           ProjectRegionInstanceGroupManagerName.of(
               "[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
@@ -784,7 +765,7 @@ public class RegionInstanceGroupManagerClientTest {
               RegionInstanceGroupManagersRecreateRequest.newBuilder().build();
 
       client.recreateInstancesRegionInstanceGroupManager(
-          requestId, instanceGroupManager, regionInstanceGroupManagersRecreateRequestResource);
+          instanceGroupManager, regionInstanceGroupManagersRecreateRequestResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -842,13 +823,11 @@ public class RegionInstanceGroupManagerClientTest {
     mockService.addResponse(expectedResponse);
 
     Integer size = 3530753;
-    String requestId = "requestId37109963";
     ProjectRegionInstanceGroupManagerName instanceGroupManager =
         ProjectRegionInstanceGroupManagerName.of(
             "[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
 
-    Operation actualResponse =
-        client.resizeRegionInstanceGroupManager(size, requestId, instanceGroupManager);
+    Operation actualResponse = client.resizeRegionInstanceGroupManager(size, instanceGroupManager);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -876,12 +855,11 @@ public class RegionInstanceGroupManagerClientTest {
 
     try {
       Integer size = 3530753;
-      String requestId = "requestId37109963";
       ProjectRegionInstanceGroupManagerName instanceGroupManager =
           ProjectRegionInstanceGroupManagerName.of(
               "[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
 
-      client.resizeRegionInstanceGroupManager(size, requestId, instanceGroupManager);
+      client.resizeRegionInstanceGroupManager(size, instanceGroupManager);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -938,7 +916,6 @@ public class RegionInstanceGroupManagerClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String requestId = "requestId37109963";
     ProjectRegionInstanceGroupManagerName instanceGroupManager =
         ProjectRegionInstanceGroupManagerName.of(
             "[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
@@ -948,7 +925,7 @@ public class RegionInstanceGroupManagerClientTest {
 
     Operation actualResponse =
         client.setInstanceTemplateRegionInstanceGroupManager(
-            requestId, instanceGroupManager, regionInstanceGroupManagersSetTemplateRequestResource);
+            instanceGroupManager, regionInstanceGroupManagersSetTemplateRequestResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -975,7 +952,6 @@ public class RegionInstanceGroupManagerClientTest {
     mockService.addException(exception);
 
     try {
-      String requestId = "requestId37109963";
       ProjectRegionInstanceGroupManagerName instanceGroupManager =
           ProjectRegionInstanceGroupManagerName.of(
               "[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
@@ -984,7 +960,7 @@ public class RegionInstanceGroupManagerClientTest {
               RegionInstanceGroupManagersSetTemplateRequest.newBuilder().build();
 
       client.setInstanceTemplateRegionInstanceGroupManager(
-          requestId, instanceGroupManager, regionInstanceGroupManagersSetTemplateRequestResource);
+          instanceGroupManager, regionInstanceGroupManagersSetTemplateRequestResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -1041,7 +1017,6 @@ public class RegionInstanceGroupManagerClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String requestId = "requestId37109963";
     ProjectRegionInstanceGroupManagerName instanceGroupManager =
         ProjectRegionInstanceGroupManagerName.of(
             "[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
@@ -1051,9 +1026,7 @@ public class RegionInstanceGroupManagerClientTest {
 
     Operation actualResponse =
         client.setTargetPoolsRegionInstanceGroupManager(
-            requestId,
-            instanceGroupManager,
-            regionInstanceGroupManagersSetTargetPoolsRequestResource);
+            instanceGroupManager, regionInstanceGroupManagersSetTargetPoolsRequestResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -1080,7 +1053,6 @@ public class RegionInstanceGroupManagerClientTest {
     mockService.addException(exception);
 
     try {
-      String requestId = "requestId37109963";
       ProjectRegionInstanceGroupManagerName instanceGroupManager =
           ProjectRegionInstanceGroupManagerName.of(
               "[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
@@ -1089,9 +1061,7 @@ public class RegionInstanceGroupManagerClientTest {
               RegionInstanceGroupManagersSetTargetPoolsRequest.newBuilder().build();
 
       client.setTargetPoolsRegionInstanceGroupManager(
-          requestId,
-          instanceGroupManager,
-          regionInstanceGroupManagersSetTargetPoolsRequestResource);
+          instanceGroupManager, regionInstanceGroupManagersSetTargetPoolsRequestResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

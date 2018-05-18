@@ -76,8 +76,6 @@ public class HttpJsonInstanceGroupManagerStub extends InstanceGroupManagerStub {
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter
                       .<AbandonInstancesInstanceGroupManagerHttpRequest>newBuilder()
-                      .setRequestInstance(
-                          AbandonInstancesInstanceGroupManagerHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/zones/{zone}/instanceGroupManagers/{instanceGroupManager}/abandonInstances"))
@@ -103,8 +101,6 @@ public class HttpJsonInstanceGroupManagerStub extends InstanceGroupManagerStub {
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter
                       .<AggregatedListInstanceGroupManagersHttpRequest>newBuilder()
-                      .setRequestInstance(
-                          AggregatedListInstanceGroupManagersHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create("{project}/aggregated/instanceGroupManagers"))
                       .setQueryParams(
@@ -126,8 +122,6 @@ public class HttpJsonInstanceGroupManagerStub extends InstanceGroupManagerStub {
               .setHttpMethod(HttpMethods.DELETE)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<DeleteInstanceGroupManagerHttpRequest>newBuilder()
-                      .setRequestInstance(
-                          DeleteInstanceGroupManagerHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/zones/{zone}/instanceGroupManagers/{instanceGroupManager}"))
@@ -151,8 +145,6 @@ public class HttpJsonInstanceGroupManagerStub extends InstanceGroupManagerStub {
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter
                       .<DeleteInstancesInstanceGroupManagerHttpRequest>newBuilder()
-                      .setRequestInstance(
-                          DeleteInstancesInstanceGroupManagerHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/zones/{zone}/instanceGroupManagers/{instanceGroupManager}/deleteInstances"))
@@ -174,7 +166,6 @@ public class HttpJsonInstanceGroupManagerStub extends InstanceGroupManagerStub {
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<GetInstanceGroupManagerHttpRequest>newBuilder()
-                      .setRequestInstance(GetInstanceGroupManagerHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/zones/{zone}/instanceGroupManagers/{instanceGroupManager}"))
@@ -196,8 +187,6 @@ public class HttpJsonInstanceGroupManagerStub extends InstanceGroupManagerStub {
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<InsertInstanceGroupManagerHttpRequest>newBuilder()
-                      .setRequestInstance(
-                          InsertInstanceGroupManagerHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create("{project}/zones/{zone}/instanceGroupManagers"))
                       .setQueryParams(Sets.<String>newHashSet("requestId"))
@@ -220,7 +209,6 @@ public class HttpJsonInstanceGroupManagerStub extends InstanceGroupManagerStub {
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<ListInstanceGroupManagersHttpRequest>newBuilder()
-                      .setRequestInstance(ListInstanceGroupManagersHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create("{project}/zones/{zone}/instanceGroupManagers"))
                       .setQueryParams(
@@ -248,8 +236,6 @@ public class HttpJsonInstanceGroupManagerStub extends InstanceGroupManagerStub {
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter
                       .<ListManagedInstancesInstanceGroupManagersHttpRequest>newBuilder()
-                      .setRequestInstance(
-                          ListManagedInstancesInstanceGroupManagersHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/zones/{zone}/instanceGroupManagers/{instanceGroupManager}/listManagedInstances"))
@@ -277,8 +263,6 @@ public class HttpJsonInstanceGroupManagerStub extends InstanceGroupManagerStub {
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter
                       .<RecreateInstancesInstanceGroupManagerHttpRequest>newBuilder()
-                      .setRequestInstance(
-                          RecreateInstancesInstanceGroupManagerHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/zones/{zone}/instanceGroupManagers/{instanceGroupManager}/recreateInstances"))
@@ -300,8 +284,6 @@ public class HttpJsonInstanceGroupManagerStub extends InstanceGroupManagerStub {
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<ResizeInstanceGroupManagerHttpRequest>newBuilder()
-                      .setRequestInstance(
-                          ResizeInstanceGroupManagerHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/zones/{zone}/instanceGroupManagers/{instanceGroupManager}/resize"))
@@ -326,8 +308,6 @@ public class HttpJsonInstanceGroupManagerStub extends InstanceGroupManagerStub {
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter
                       .<SetInstanceTemplateInstanceGroupManagerHttpRequest>newBuilder()
-                      .setRequestInstance(
-                          SetInstanceTemplateInstanceGroupManagerHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/zones/{zone}/instanceGroupManagers/{instanceGroupManager}/setInstanceTemplate"))
@@ -350,8 +330,6 @@ public class HttpJsonInstanceGroupManagerStub extends InstanceGroupManagerStub {
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter
                       .<SetTargetPoolsInstanceGroupManagerHttpRequest>newBuilder()
-                      .setRequestInstance(
-                          SetTargetPoolsInstanceGroupManagerHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/zones/{zone}/instanceGroupManagers/{instanceGroupManager}/setTargetPools"))

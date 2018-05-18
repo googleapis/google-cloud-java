@@ -17,12 +17,8 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
-import java.util.Set;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
 
@@ -53,39 +49,18 @@ public final class BackendServiceIAP implements ApiMessage {
   }
 
   @Override
-  public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
-    Map<String, List<String>> fieldMap = new HashMap<>();
-    if (fieldNames.contains("enabled") && enabled != null) {
-      fieldMap.put("enabled", Collections.singletonList(String.valueOf(enabled)));
-    }
-    if (fieldNames.contains("oauth2ClientId") && oauth2ClientId != null) {
-      fieldMap.put("oauth2ClientId", Collections.singletonList(String.valueOf(oauth2ClientId)));
-    }
-    if (fieldNames.contains("oauth2ClientSecret") && oauth2ClientSecret != null) {
-      fieldMap.put(
-          "oauth2ClientSecret", Collections.singletonList(String.valueOf(oauth2ClientSecret)));
-    }
-    if (fieldNames.contains("oauth2ClientSecretSha256") && oauth2ClientSecretSha256 != null) {
-      fieldMap.put(
-          "oauth2ClientSecretSha256",
-          Collections.singletonList(String.valueOf(oauth2ClientSecretSha256)));
-    }
-    return fieldMap;
-  }
-
-  @Override
-  public String getFieldStringValue(String fieldName) {
+  public Object getFieldValue(String fieldName) {
     if (fieldName.equals("enabled")) {
-      return String.valueOf(enabled);
+      return enabled;
     }
     if (fieldName.equals("oauth2ClientId")) {
-      return String.valueOf(oauth2ClientId);
+      return oauth2ClientId;
     }
     if (fieldName.equals("oauth2ClientSecret")) {
-      return String.valueOf(oauth2ClientSecret);
+      return oauth2ClientSecret;
     }
     if (fieldName.equals("oauth2ClientSecretSha256")) {
-      return String.valueOf(oauth2ClientSecretSha256);
+      return oauth2ClientSecretSha256;
     }
     return null;
   }
@@ -93,6 +68,12 @@ public final class BackendServiceIAP implements ApiMessage {
   @Nullable
   @Override
   public ApiMessage getApiMessageRequestBody() {
+    return null;
+  }
+
+  @Nullable
+  @Override
+  public List<String> getFieldMask() {
     return null;
   }
 

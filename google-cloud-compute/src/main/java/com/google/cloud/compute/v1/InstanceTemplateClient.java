@@ -43,8 +43,7 @@ import javax.annotation.Generated;
  * <code>
  * try (InstanceTemplateClient instanceTemplateClient = InstanceTemplateClient.create()) {
  *   ProjectGlobalInstanceTemplateName instanceTemplate = ProjectGlobalInstanceTemplateName.of("[PROJECT]", "[INSTANCE_TEMPLATE]");
- *   String requestId = "";
- *   Operation response = instanceTemplateClient.deleteInstanceTemplate(instanceTemplate, requestId);
+ *   Operation response = instanceTemplateClient.deleteInstanceTemplate(instanceTemplate);
  * }
  * </code>
  * </pre>
@@ -164,31 +163,20 @@ public class InstanceTemplateClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceTemplateClient instanceTemplateClient = InstanceTemplateClient.create()) {
    *   ProjectGlobalInstanceTemplateName instanceTemplate = ProjectGlobalInstanceTemplateName.of("[PROJECT]", "[INSTANCE_TEMPLATE]");
-   *   String requestId = "";
-   *   Operation response = instanceTemplateClient.deleteInstanceTemplate(instanceTemplate, requestId);
+   *   Operation response = instanceTemplateClient.deleteInstanceTemplate(instanceTemplate);
    * }
    * </code></pre>
    *
    * @param instanceTemplate The name of the instance template to delete.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation deleteInstanceTemplate(
-      ProjectGlobalInstanceTemplateName instanceTemplate, String requestId) {
+      ProjectGlobalInstanceTemplateName instanceTemplate) {
 
     DeleteInstanceTemplateHttpRequest request =
         DeleteInstanceTemplateHttpRequest.newBuilder()
             .setInstanceTemplate(instanceTemplate == null ? null : instanceTemplate.toString())
-            .setRequestId(requestId)
             .build();
     return deleteInstanceTemplate(request);
   }
@@ -203,30 +191,19 @@ public class InstanceTemplateClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceTemplateClient instanceTemplateClient = InstanceTemplateClient.create()) {
    *   ProjectGlobalInstanceTemplateName instanceTemplate = ProjectGlobalInstanceTemplateName.of("[PROJECT]", "[INSTANCE_TEMPLATE]");
-   *   String requestId = "";
-   *   Operation response = instanceTemplateClient.deleteInstanceTemplate(instanceTemplate.toString(), requestId);
+   *   Operation response = instanceTemplateClient.deleteInstanceTemplate(instanceTemplate.toString());
    * }
    * </code></pre>
    *
    * @param instanceTemplate The name of the instance template to delete.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteInstanceTemplate(String instanceTemplate, String requestId) {
+  public final Operation deleteInstanceTemplate(String instanceTemplate) {
 
     DeleteInstanceTemplateHttpRequest request =
         DeleteInstanceTemplateHttpRequest.newBuilder()
             .setInstanceTemplate(instanceTemplate)
-            .setRequestId(requestId)
             .build();
     return deleteInstanceTemplate(request);
   }
@@ -241,10 +218,8 @@ public class InstanceTemplateClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceTemplateClient instanceTemplateClient = InstanceTemplateClient.create()) {
    *   ProjectGlobalInstanceTemplateName instanceTemplate = ProjectGlobalInstanceTemplateName.of("[PROJECT]", "[INSTANCE_TEMPLATE]");
-   *   String requestId = "";
    *   DeleteInstanceTemplateHttpRequest request = DeleteInstanceTemplateHttpRequest.newBuilder()
    *     .setInstanceTemplate(instanceTemplate.toString())
-   *     .setRequestId(requestId)
    *     .build();
    *   Operation response = instanceTemplateClient.deleteInstanceTemplate(request);
    * }
@@ -268,10 +243,8 @@ public class InstanceTemplateClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceTemplateClient instanceTemplateClient = InstanceTemplateClient.create()) {
    *   ProjectGlobalInstanceTemplateName instanceTemplate = ProjectGlobalInstanceTemplateName.of("[PROJECT]", "[INSTANCE_TEMPLATE]");
-   *   String requestId = "";
    *   DeleteInstanceTemplateHttpRequest request = DeleteInstanceTemplateHttpRequest.newBuilder()
    *     .setInstanceTemplate(instanceTemplate.toString())
-   *     .setRequestId(requestId)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = instanceTemplateClient.deleteInstanceTemplateCallable().futureCall(request);
    *   // Do something
@@ -399,22 +372,12 @@ public class InstanceTemplateClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceTemplateClient instanceTemplateClient = InstanceTemplateClient.create()) {
-   *   String requestId = "";
    *   ProjectName project = ProjectName.of("[PROJECT]");
    *   InstanceTemplate instanceTemplateResource = InstanceTemplate.newBuilder().build();
-   *   Operation response = instanceTemplateClient.insertInstanceTemplate(requestId, project, instanceTemplateResource);
+   *   Operation response = instanceTemplateClient.insertInstanceTemplate(project, instanceTemplateResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param project Project ID for this request.
    * @param instanceTemplateResource An Instance Template resource. (== resource_for
    *     beta.instanceTemplates ==) (== resource_for v1.instanceTemplates ==)
@@ -422,11 +385,10 @@ public class InstanceTemplateClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation insertInstanceTemplate(
-      String requestId, ProjectName project, InstanceTemplate instanceTemplateResource) {
+      ProjectName project, InstanceTemplate instanceTemplateResource) {
 
     InsertInstanceTemplateHttpRequest request =
         InsertInstanceTemplateHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setProject(project == null ? null : project.toString())
             .setInstanceTemplateResource(instanceTemplateResource)
             .build();
@@ -444,22 +406,12 @@ public class InstanceTemplateClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceTemplateClient instanceTemplateClient = InstanceTemplateClient.create()) {
-   *   String requestId = "";
    *   ProjectName project = ProjectName.of("[PROJECT]");
    *   InstanceTemplate instanceTemplateResource = InstanceTemplate.newBuilder().build();
-   *   Operation response = instanceTemplateClient.insertInstanceTemplate(requestId, project.toString(), instanceTemplateResource);
+   *   Operation response = instanceTemplateClient.insertInstanceTemplate(project.toString(), instanceTemplateResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param project Project ID for this request.
    * @param instanceTemplateResource An Instance Template resource. (== resource_for
    *     beta.instanceTemplates ==) (== resource_for v1.instanceTemplates ==)
@@ -467,11 +419,10 @@ public class InstanceTemplateClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation insertInstanceTemplate(
-      String requestId, String project, InstanceTemplate instanceTemplateResource) {
+      String project, InstanceTemplate instanceTemplateResource) {
 
     InsertInstanceTemplateHttpRequest request =
         InsertInstanceTemplateHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setProject(project)
             .setInstanceTemplateResource(instanceTemplateResource)
             .build();
@@ -489,11 +440,9 @@ public class InstanceTemplateClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceTemplateClient instanceTemplateClient = InstanceTemplateClient.create()) {
-   *   String requestId = "";
    *   ProjectName project = ProjectName.of("[PROJECT]");
    *   InstanceTemplate instanceTemplateResource = InstanceTemplate.newBuilder().build();
    *   InsertInstanceTemplateHttpRequest request = InsertInstanceTemplateHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setProject(project.toString())
    *     .setInstanceTemplateResource(instanceTemplateResource)
    *     .build();
@@ -520,11 +469,9 @@ public class InstanceTemplateClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceTemplateClient instanceTemplateClient = InstanceTemplateClient.create()) {
-   *   String requestId = "";
    *   ProjectName project = ProjectName.of("[PROJECT]");
    *   InstanceTemplate instanceTemplateResource = InstanceTemplate.newBuilder().build();
    *   InsertInstanceTemplateHttpRequest request = InsertInstanceTemplateHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setProject(project.toString())
    *     .setInstanceTemplateResource(instanceTemplateResource)
    *     .build();

@@ -42,9 +42,8 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (RegionBackendServiceClient regionBackendServiceClient = RegionBackendServiceClient.create()) {
- *   String requestId = "";
  *   ProjectRegionBackendServiceName backendService = ProjectRegionBackendServiceName.of("[PROJECT]", "[REGION]", "[BACKEND_SERVICE]");
- *   Operation response = regionBackendServiceClient.deleteRegionBackendService(requestId, backendService);
+ *   Operation response = regionBackendServiceClient.deleteRegionBackendService(backendService);
  * }
  * </code>
  * </pre>
@@ -162,31 +161,20 @@ public class RegionBackendServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionBackendServiceClient regionBackendServiceClient = RegionBackendServiceClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionBackendServiceName backendService = ProjectRegionBackendServiceName.of("[PROJECT]", "[REGION]", "[BACKEND_SERVICE]");
-   *   Operation response = regionBackendServiceClient.deleteRegionBackendService(requestId, backendService);
+   *   Operation response = regionBackendServiceClient.deleteRegionBackendService(backendService);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param backendService Name of the BackendService resource to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation deleteRegionBackendService(
-      String requestId, ProjectRegionBackendServiceName backendService) {
+      ProjectRegionBackendServiceName backendService) {
 
     DeleteRegionBackendServiceHttpRequest request =
         DeleteRegionBackendServiceHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setBackendService(backendService == null ? null : backendService.toString())
             .build();
     return deleteRegionBackendService(request);
@@ -200,30 +188,19 @@ public class RegionBackendServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionBackendServiceClient regionBackendServiceClient = RegionBackendServiceClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionBackendServiceName backendService = ProjectRegionBackendServiceName.of("[PROJECT]", "[REGION]", "[BACKEND_SERVICE]");
-   *   Operation response = regionBackendServiceClient.deleteRegionBackendService(requestId, backendService.toString());
+   *   Operation response = regionBackendServiceClient.deleteRegionBackendService(backendService.toString());
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param backendService Name of the BackendService resource to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteRegionBackendService(String requestId, String backendService) {
+  public final Operation deleteRegionBackendService(String backendService) {
 
     DeleteRegionBackendServiceHttpRequest request =
         DeleteRegionBackendServiceHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setBackendService(backendService)
             .build();
     return deleteRegionBackendService(request);
@@ -237,10 +214,8 @@ public class RegionBackendServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionBackendServiceClient regionBackendServiceClient = RegionBackendServiceClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionBackendServiceName backendService = ProjectRegionBackendServiceName.of("[PROJECT]", "[REGION]", "[BACKEND_SERVICE]");
    *   DeleteRegionBackendServiceHttpRequest request = DeleteRegionBackendServiceHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setBackendService(backendService.toString())
    *     .build();
    *   Operation response = regionBackendServiceClient.deleteRegionBackendService(request);
@@ -263,10 +238,8 @@ public class RegionBackendServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionBackendServiceClient regionBackendServiceClient = RegionBackendServiceClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionBackendServiceName backendService = ProjectRegionBackendServiceName.of("[PROJECT]", "[REGION]", "[BACKEND_SERVICE]");
    *   DeleteRegionBackendServiceHttpRequest request = DeleteRegionBackendServiceHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setBackendService(backendService.toString())
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = regionBackendServiceClient.deleteRegionBackendServiceCallable().futureCall(request);
@@ -504,22 +477,12 @@ public class RegionBackendServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionBackendServiceClient regionBackendServiceClient = RegionBackendServiceClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   BackendService backendServiceResource = BackendService.newBuilder().build();
-   *   Operation response = regionBackendServiceClient.insertRegionBackendService(requestId, region, backendServiceResource);
+   *   Operation response = regionBackendServiceClient.insertRegionBackendService(region, backendServiceResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param region Name of the region scoping this request.
    * @param backendServiceResource A BackendService resource. This resource defines a group of
    *     backend virtual machines and their serving capacity. (== resource_for v1.backendService ==)
@@ -528,11 +491,10 @@ public class RegionBackendServiceClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation insertRegionBackendService(
-      String requestId, ProjectRegionName region, BackendService backendServiceResource) {
+      ProjectRegionName region, BackendService backendServiceResource) {
 
     InsertRegionBackendServiceHttpRequest request =
         InsertRegionBackendServiceHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setRegion(region == null ? null : region.toString())
             .setBackendServiceResource(backendServiceResource)
             .build();
@@ -549,22 +511,12 @@ public class RegionBackendServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionBackendServiceClient regionBackendServiceClient = RegionBackendServiceClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   BackendService backendServiceResource = BackendService.newBuilder().build();
-   *   Operation response = regionBackendServiceClient.insertRegionBackendService(requestId, region.toString(), backendServiceResource);
+   *   Operation response = regionBackendServiceClient.insertRegionBackendService(region.toString(), backendServiceResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param region Name of the region scoping this request.
    * @param backendServiceResource A BackendService resource. This resource defines a group of
    *     backend virtual machines and their serving capacity. (== resource_for v1.backendService ==)
@@ -573,11 +525,10 @@ public class RegionBackendServiceClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation insertRegionBackendService(
-      String requestId, String region, BackendService backendServiceResource) {
+      String region, BackendService backendServiceResource) {
 
     InsertRegionBackendServiceHttpRequest request =
         InsertRegionBackendServiceHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setRegion(region)
             .setBackendServiceResource(backendServiceResource)
             .build();
@@ -594,11 +545,9 @@ public class RegionBackendServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionBackendServiceClient regionBackendServiceClient = RegionBackendServiceClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   BackendService backendServiceResource = BackendService.newBuilder().build();
    *   InsertRegionBackendServiceHttpRequest request = InsertRegionBackendServiceHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setRegion(region.toString())
    *     .setBackendServiceResource(backendServiceResource)
    *     .build();
@@ -624,11 +573,9 @@ public class RegionBackendServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionBackendServiceClient regionBackendServiceClient = RegionBackendServiceClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   BackendService backendServiceResource = BackendService.newBuilder().build();
    *   InsertRegionBackendServiceHttpRequest request = InsertRegionBackendServiceHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setRegion(region.toString())
    *     .setBackendServiceResource(backendServiceResource)
    *     .build();
@@ -800,22 +747,12 @@ public class RegionBackendServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionBackendServiceClient regionBackendServiceClient = RegionBackendServiceClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionBackendServiceName backendService = ProjectRegionBackendServiceName.of("[PROJECT]", "[REGION]", "[BACKEND_SERVICE]");
    *   BackendService backendServiceResource = BackendService.newBuilder().build();
-   *   Operation response = regionBackendServiceClient.patchRegionBackendService(requestId, backendService, backendServiceResource);
+   *   Operation response = regionBackendServiceClient.patchRegionBackendService(backendService, backendServiceResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param backendService Name of the BackendService resource to patch.
    * @param backendServiceResource A BackendService resource. This resource defines a group of
    *     backend virtual machines and their serving capacity. (== resource_for v1.backendService ==)
@@ -824,13 +761,10 @@ public class RegionBackendServiceClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation patchRegionBackendService(
-      String requestId,
-      ProjectRegionBackendServiceName backendService,
-      BackendService backendServiceResource) {
+      ProjectRegionBackendServiceName backendService, BackendService backendServiceResource) {
 
     PatchRegionBackendServiceHttpRequest request =
         PatchRegionBackendServiceHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setBackendService(backendService == null ? null : backendService.toString())
             .setBackendServiceResource(backendServiceResource)
             .build();
@@ -848,22 +782,12 @@ public class RegionBackendServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionBackendServiceClient regionBackendServiceClient = RegionBackendServiceClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionBackendServiceName backendService = ProjectRegionBackendServiceName.of("[PROJECT]", "[REGION]", "[BACKEND_SERVICE]");
    *   BackendService backendServiceResource = BackendService.newBuilder().build();
-   *   Operation response = regionBackendServiceClient.patchRegionBackendService(requestId, backendService.toString(), backendServiceResource);
+   *   Operation response = regionBackendServiceClient.patchRegionBackendService(backendService.toString(), backendServiceResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param backendService Name of the BackendService resource to patch.
    * @param backendServiceResource A BackendService resource. This resource defines a group of
    *     backend virtual machines and their serving capacity. (== resource_for v1.backendService ==)
@@ -872,11 +796,10 @@ public class RegionBackendServiceClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation patchRegionBackendService(
-      String requestId, String backendService, BackendService backendServiceResource) {
+      String backendService, BackendService backendServiceResource) {
 
     PatchRegionBackendServiceHttpRequest request =
         PatchRegionBackendServiceHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setBackendService(backendService)
             .setBackendServiceResource(backendServiceResource)
             .build();
@@ -894,11 +817,9 @@ public class RegionBackendServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionBackendServiceClient regionBackendServiceClient = RegionBackendServiceClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionBackendServiceName backendService = ProjectRegionBackendServiceName.of("[PROJECT]", "[REGION]", "[BACKEND_SERVICE]");
    *   BackendService backendServiceResource = BackendService.newBuilder().build();
    *   PatchRegionBackendServiceHttpRequest request = PatchRegionBackendServiceHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setBackendService(backendService.toString())
    *     .setBackendServiceResource(backendServiceResource)
    *     .build();
@@ -925,11 +846,9 @@ public class RegionBackendServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionBackendServiceClient regionBackendServiceClient = RegionBackendServiceClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionBackendServiceName backendService = ProjectRegionBackendServiceName.of("[PROJECT]", "[REGION]", "[BACKEND_SERVICE]");
    *   BackendService backendServiceResource = BackendService.newBuilder().build();
    *   PatchRegionBackendServiceHttpRequest request = PatchRegionBackendServiceHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setBackendService(backendService.toString())
    *     .setBackendServiceResource(backendServiceResource)
    *     .build();
@@ -955,22 +874,12 @@ public class RegionBackendServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionBackendServiceClient regionBackendServiceClient = RegionBackendServiceClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionBackendServiceName backendService = ProjectRegionBackendServiceName.of("[PROJECT]", "[REGION]", "[BACKEND_SERVICE]");
    *   BackendService backendServiceResource = BackendService.newBuilder().build();
-   *   Operation response = regionBackendServiceClient.updateRegionBackendService(requestId, backendService, backendServiceResource);
+   *   Operation response = regionBackendServiceClient.updateRegionBackendService(backendService, backendServiceResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param backendService Name of the BackendService resource to update.
    * @param backendServiceResource A BackendService resource. This resource defines a group of
    *     backend virtual machines and their serving capacity. (== resource_for v1.backendService ==)
@@ -979,13 +888,10 @@ public class RegionBackendServiceClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation updateRegionBackendService(
-      String requestId,
-      ProjectRegionBackendServiceName backendService,
-      BackendService backendServiceResource) {
+      ProjectRegionBackendServiceName backendService, BackendService backendServiceResource) {
 
     UpdateRegionBackendServiceHttpRequest request =
         UpdateRegionBackendServiceHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setBackendService(backendService == null ? null : backendService.toString())
             .setBackendServiceResource(backendServiceResource)
             .build();
@@ -1002,22 +908,12 @@ public class RegionBackendServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionBackendServiceClient regionBackendServiceClient = RegionBackendServiceClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionBackendServiceName backendService = ProjectRegionBackendServiceName.of("[PROJECT]", "[REGION]", "[BACKEND_SERVICE]");
    *   BackendService backendServiceResource = BackendService.newBuilder().build();
-   *   Operation response = regionBackendServiceClient.updateRegionBackendService(requestId, backendService.toString(), backendServiceResource);
+   *   Operation response = regionBackendServiceClient.updateRegionBackendService(backendService.toString(), backendServiceResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param backendService Name of the BackendService resource to update.
    * @param backendServiceResource A BackendService resource. This resource defines a group of
    *     backend virtual machines and their serving capacity. (== resource_for v1.backendService ==)
@@ -1026,11 +922,10 @@ public class RegionBackendServiceClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation updateRegionBackendService(
-      String requestId, String backendService, BackendService backendServiceResource) {
+      String backendService, BackendService backendServiceResource) {
 
     UpdateRegionBackendServiceHttpRequest request =
         UpdateRegionBackendServiceHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setBackendService(backendService)
             .setBackendServiceResource(backendServiceResource)
             .build();
@@ -1047,11 +942,9 @@ public class RegionBackendServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionBackendServiceClient regionBackendServiceClient = RegionBackendServiceClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionBackendServiceName backendService = ProjectRegionBackendServiceName.of("[PROJECT]", "[REGION]", "[BACKEND_SERVICE]");
    *   BackendService backendServiceResource = BackendService.newBuilder().build();
    *   UpdateRegionBackendServiceHttpRequest request = UpdateRegionBackendServiceHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setBackendService(backendService.toString())
    *     .setBackendServiceResource(backendServiceResource)
    *     .build();
@@ -1077,11 +970,9 @@ public class RegionBackendServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionBackendServiceClient regionBackendServiceClient = RegionBackendServiceClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionBackendServiceName backendService = ProjectRegionBackendServiceName.of("[PROJECT]", "[REGION]", "[BACKEND_SERVICE]");
    *   BackendService backendServiceResource = BackendService.newBuilder().build();
    *   UpdateRegionBackendServiceHttpRequest request = UpdateRegionBackendServiceHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setBackendService(backendService.toString())
    *     .setBackendServiceResource(backendServiceResource)
    *     .build();

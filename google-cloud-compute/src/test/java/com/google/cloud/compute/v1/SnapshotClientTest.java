@@ -132,10 +132,9 @@ public class SnapshotClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String requestId = "requestId37109963";
     ProjectGlobalSnapshotName snapshot = ProjectGlobalSnapshotName.of("[PROJECT]", "[SNAPSHOT]");
 
-    Operation actualResponse = client.deleteSnapshot(requestId, snapshot);
+    Operation actualResponse = client.deleteSnapshot(snapshot);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -162,10 +161,9 @@ public class SnapshotClientTest {
     mockService.addException(exception);
 
     try {
-      String requestId = "requestId37109963";
       ProjectGlobalSnapshotName snapshot = ProjectGlobalSnapshotName.of("[PROJECT]", "[SNAPSHOT]");
 
-      client.deleteSnapshot(requestId, snapshot);
+      client.deleteSnapshot(snapshot);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

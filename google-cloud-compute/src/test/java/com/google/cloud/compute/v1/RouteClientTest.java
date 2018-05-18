@@ -133,9 +133,8 @@ public class RouteClientTest {
     mockService.addResponse(expectedResponse);
 
     ProjectGlobalRouteName route = ProjectGlobalRouteName.of("[PROJECT]", "[ROUTE]");
-    String requestId = "requestId37109963";
 
-    Operation actualResponse = client.deleteRoute(route, requestId);
+    Operation actualResponse = client.deleteRoute(route);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -163,9 +162,8 @@ public class RouteClientTest {
 
     try {
       ProjectGlobalRouteName route = ProjectGlobalRouteName.of("[PROJECT]", "[ROUTE]");
-      String requestId = "requestId37109963";
 
-      client.deleteRoute(route, requestId);
+      client.deleteRoute(route);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -298,11 +296,10 @@ public class RouteClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String requestId = "requestId37109963";
     ProjectName project = ProjectName.of("[PROJECT]");
     Route routeResource = Route.newBuilder().build();
 
-    Operation actualResponse = client.insertRoute(requestId, project, routeResource);
+    Operation actualResponse = client.insertRoute(project, routeResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -329,11 +326,10 @@ public class RouteClientTest {
     mockService.addException(exception);
 
     try {
-      String requestId = "requestId37109963";
       ProjectName project = ProjectName.of("[PROJECT]");
       Route routeResource = Route.newBuilder().build();
 
-      client.insertRoute(requestId, project, routeResource);
+      client.insertRoute(project, routeResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

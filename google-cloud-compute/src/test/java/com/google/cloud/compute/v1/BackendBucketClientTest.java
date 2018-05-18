@@ -138,9 +138,8 @@ public class BackendBucketClientTest {
 
     ProjectGlobalBackendBucketName backendBucket =
         ProjectGlobalBackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
-    String requestId = "requestId37109963";
 
-    Operation actualResponse = client.deleteBackendBucket(backendBucket, requestId);
+    Operation actualResponse = client.deleteBackendBucket(backendBucket);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -169,9 +168,8 @@ public class BackendBucketClientTest {
     try {
       ProjectGlobalBackendBucketName backendBucket =
           ProjectGlobalBackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
-      String requestId = "requestId37109963";
 
-      client.deleteBackendBucket(backendBucket, requestId);
+      client.deleteBackendBucket(backendBucket);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -292,12 +290,10 @@ public class BackendBucketClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String requestId = "requestId37109963";
     ProjectName project = ProjectName.of("[PROJECT]");
     BackendBucket backendBucketResource = BackendBucket.newBuilder().build();
 
-    Operation actualResponse =
-        client.insertBackendBucket(requestId, project, backendBucketResource);
+    Operation actualResponse = client.insertBackendBucket(project, backendBucketResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -324,11 +320,10 @@ public class BackendBucketClientTest {
     mockService.addException(exception);
 
     try {
-      String requestId = "requestId37109963";
       ProjectName project = ProjectName.of("[PROJECT]");
       BackendBucket backendBucketResource = BackendBucket.newBuilder().build();
 
-      client.insertBackendBucket(requestId, project, backendBucketResource);
+      client.insertBackendBucket(project, backendBucketResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -447,11 +442,9 @@ public class BackendBucketClientTest {
 
     ProjectGlobalBackendBucketName backendBucket =
         ProjectGlobalBackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
-    String requestId = "requestId37109963";
     BackendBucket backendBucketResource = BackendBucket.newBuilder().build();
 
-    Operation actualResponse =
-        client.patchBackendBucket(backendBucket, requestId, backendBucketResource);
+    Operation actualResponse = client.patchBackendBucket(backendBucket, backendBucketResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -480,10 +473,9 @@ public class BackendBucketClientTest {
     try {
       ProjectGlobalBackendBucketName backendBucket =
           ProjectGlobalBackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
-      String requestId = "requestId37109963";
       BackendBucket backendBucketResource = BackendBucket.newBuilder().build();
 
-      client.patchBackendBucket(backendBucket, requestId, backendBucketResource);
+      client.patchBackendBucket(backendBucket, backendBucketResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -542,11 +534,9 @@ public class BackendBucketClientTest {
 
     ProjectGlobalBackendBucketName backendBucket =
         ProjectGlobalBackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
-    String requestId = "requestId37109963";
     BackendBucket backendBucketResource = BackendBucket.newBuilder().build();
 
-    Operation actualResponse =
-        client.updateBackendBucket(backendBucket, requestId, backendBucketResource);
+    Operation actualResponse = client.updateBackendBucket(backendBucket, backendBucketResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -575,10 +565,9 @@ public class BackendBucketClientTest {
     try {
       ProjectGlobalBackendBucketName backendBucket =
           ProjectGlobalBackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
-      String requestId = "requestId37109963";
       BackendBucket backendBucketResource = BackendBucket.newBuilder().build();
 
-      client.updateBackendBucket(backendBucket, requestId, backendBucketResource);
+      client.updateBackendBucket(backendBucket, backendBucketResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

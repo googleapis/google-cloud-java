@@ -17,12 +17,8 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
-import java.util.Set;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
 
@@ -53,42 +49,21 @@ public final class HttpSHealthCheck implements ApiMessage {
   }
 
   @Override
-  public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
-    Map<String, List<String>> fieldMap = new HashMap<>();
-    if (fieldNames.contains("host") && host != null) {
-      fieldMap.put("host", Collections.singletonList(String.valueOf(host)));
-    }
-    if (fieldNames.contains("port") && port != null) {
-      fieldMap.put("port", Collections.singletonList(String.valueOf(port)));
-    }
-    if (fieldNames.contains("portName") && portName != null) {
-      fieldMap.put("portName", Collections.singletonList(String.valueOf(portName)));
-    }
-    if (fieldNames.contains("proxyHeader") && proxyHeader != null) {
-      fieldMap.put("proxyHeader", Collections.singletonList(String.valueOf(proxyHeader)));
-    }
-    if (fieldNames.contains("requestPath") && requestPath != null) {
-      fieldMap.put("requestPath", Collections.singletonList(String.valueOf(requestPath)));
-    }
-    return fieldMap;
-  }
-
-  @Override
-  public String getFieldStringValue(String fieldName) {
+  public Object getFieldValue(String fieldName) {
     if (fieldName.equals("host")) {
-      return String.valueOf(host);
+      return host;
     }
     if (fieldName.equals("port")) {
-      return String.valueOf(port);
+      return port;
     }
     if (fieldName.equals("portName")) {
-      return String.valueOf(portName);
+      return portName;
     }
     if (fieldName.equals("proxyHeader")) {
-      return String.valueOf(proxyHeader);
+      return proxyHeader;
     }
     if (fieldName.equals("requestPath")) {
-      return String.valueOf(requestPath);
+      return requestPath;
     }
     return null;
   }
@@ -96,6 +71,12 @@ public final class HttpSHealthCheck implements ApiMessage {
   @Nullable
   @Override
   public ApiMessage getApiMessageRequestBody() {
+    return null;
+  }
+
+  @Nullable
+  @Override
+  public List<String> getFieldMask() {
     return null;
   }
 

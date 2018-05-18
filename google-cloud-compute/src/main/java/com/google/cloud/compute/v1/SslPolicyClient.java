@@ -42,9 +42,8 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (SslPolicyClient sslPolicyClient = SslPolicyClient.create()) {
- *   String requestId = "";
  *   ProjectGlobalSslPolicyName sslPolicy = ProjectGlobalSslPolicyName.of("[PROJECT]", "[SSL_POLICY]");
- *   Operation response = sslPolicyClient.deleteSslPolicy(requestId, sslPolicy);
+ *   Operation response = sslPolicyClient.deleteSslPolicy(sslPolicy);
  * }
  * </code>
  * </pre>
@@ -160,31 +159,20 @@ public class SslPolicyClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SslPolicyClient sslPolicyClient = SslPolicyClient.create()) {
-   *   String requestId = "";
    *   ProjectGlobalSslPolicyName sslPolicy = ProjectGlobalSslPolicyName.of("[PROJECT]", "[SSL_POLICY]");
-   *   Operation response = sslPolicyClient.deleteSslPolicy(requestId, sslPolicy);
+   *   Operation response = sslPolicyClient.deleteSslPolicy(sslPolicy);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param sslPolicy Name of the SSL policy to delete. The name must be 1-63 characters long, and
    *     comply with RFC1035.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteSslPolicy(String requestId, ProjectGlobalSslPolicyName sslPolicy) {
+  public final Operation deleteSslPolicy(ProjectGlobalSslPolicyName sslPolicy) {
 
     DeleteSslPolicyHttpRequest request =
         DeleteSslPolicyHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setSslPolicy(sslPolicy == null ? null : sslPolicy.toString())
             .build();
     return deleteSslPolicy(request);
@@ -199,33 +187,20 @@ public class SslPolicyClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SslPolicyClient sslPolicyClient = SslPolicyClient.create()) {
-   *   String requestId = "";
    *   ProjectGlobalSslPolicyName sslPolicy = ProjectGlobalSslPolicyName.of("[PROJECT]", "[SSL_POLICY]");
-   *   Operation response = sslPolicyClient.deleteSslPolicy(requestId, sslPolicy.toString());
+   *   Operation response = sslPolicyClient.deleteSslPolicy(sslPolicy.toString());
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param sslPolicy Name of the SSL policy to delete. The name must be 1-63 characters long, and
    *     comply with RFC1035.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteSslPolicy(String requestId, String sslPolicy) {
+  public final Operation deleteSslPolicy(String sslPolicy) {
 
     DeleteSslPolicyHttpRequest request =
-        DeleteSslPolicyHttpRequest.newBuilder()
-            .setRequestId(requestId)
-            .setSslPolicy(sslPolicy)
-            .build();
+        DeleteSslPolicyHttpRequest.newBuilder().setSslPolicy(sslPolicy).build();
     return deleteSslPolicy(request);
   }
 
@@ -238,10 +213,8 @@ public class SslPolicyClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SslPolicyClient sslPolicyClient = SslPolicyClient.create()) {
-   *   String requestId = "";
    *   ProjectGlobalSslPolicyName sslPolicy = ProjectGlobalSslPolicyName.of("[PROJECT]", "[SSL_POLICY]");
    *   DeleteSslPolicyHttpRequest request = DeleteSslPolicyHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setSslPolicy(sslPolicy.toString())
    *     .build();
    *   Operation response = sslPolicyClient.deleteSslPolicy(request);
@@ -265,10 +238,8 @@ public class SslPolicyClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SslPolicyClient sslPolicyClient = SslPolicyClient.create()) {
-   *   String requestId = "";
    *   ProjectGlobalSslPolicyName sslPolicy = ProjectGlobalSslPolicyName.of("[PROJECT]", "[SSL_POLICY]");
    *   DeleteSslPolicyHttpRequest request = DeleteSslPolicyHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setSslPolicy(sslPolicy.toString())
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = sslPolicyClient.deleteSslPolicyCallable().futureCall(request);
@@ -390,22 +361,12 @@ public class SslPolicyClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SslPolicyClient sslPolicyClient = SslPolicyClient.create()) {
-   *   String requestId = "";
    *   ProjectName project = ProjectName.of("[PROJECT]");
    *   SslPolicy sslPolicyResource = SslPolicy.newBuilder().build();
-   *   Operation response = sslPolicyClient.insertSslPolicy(requestId, project, sslPolicyResource);
+   *   Operation response = sslPolicyClient.insertSslPolicy(project, sslPolicyResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param project Project ID for this request.
    * @param sslPolicyResource A SSL policy specifies the server-side support for SSL features. This
    *     can be attached to a TargetHttpsProxy or a TargetSslProxy. This affects connections between
@@ -414,12 +375,10 @@ public class SslPolicyClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation insertSslPolicy(
-      String requestId, ProjectName project, SslPolicy sslPolicyResource) {
+  public final Operation insertSslPolicy(ProjectName project, SslPolicy sslPolicyResource) {
 
     InsertSslPolicyHttpRequest request =
         InsertSslPolicyHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setProject(project == null ? null : project.toString())
             .setSslPolicyResource(sslPolicyResource)
             .build();
@@ -435,22 +394,12 @@ public class SslPolicyClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SslPolicyClient sslPolicyClient = SslPolicyClient.create()) {
-   *   String requestId = "";
    *   ProjectName project = ProjectName.of("[PROJECT]");
    *   SslPolicy sslPolicyResource = SslPolicy.newBuilder().build();
-   *   Operation response = sslPolicyClient.insertSslPolicy(requestId, project.toString(), sslPolicyResource);
+   *   Operation response = sslPolicyClient.insertSslPolicy(project.toString(), sslPolicyResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param project Project ID for this request.
    * @param sslPolicyResource A SSL policy specifies the server-side support for SSL features. This
    *     can be attached to a TargetHttpsProxy or a TargetSslProxy. This affects connections between
@@ -459,12 +408,10 @@ public class SslPolicyClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation insertSslPolicy(
-      String requestId, String project, SslPolicy sslPolicyResource) {
+  public final Operation insertSslPolicy(String project, SslPolicy sslPolicyResource) {
 
     InsertSslPolicyHttpRequest request =
         InsertSslPolicyHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setProject(project)
             .setSslPolicyResource(sslPolicyResource)
             .build();
@@ -480,11 +427,9 @@ public class SslPolicyClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SslPolicyClient sslPolicyClient = SslPolicyClient.create()) {
-   *   String requestId = "";
    *   ProjectName project = ProjectName.of("[PROJECT]");
    *   SslPolicy sslPolicyResource = SslPolicy.newBuilder().build();
    *   InsertSslPolicyHttpRequest request = InsertSslPolicyHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setProject(project.toString())
    *     .setSslPolicyResource(sslPolicyResource)
    *     .build();
@@ -509,11 +454,9 @@ public class SslPolicyClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SslPolicyClient sslPolicyClient = SslPolicyClient.create()) {
-   *   String requestId = "";
    *   ProjectName project = ProjectName.of("[PROJECT]");
    *   SslPolicy sslPolicyResource = SslPolicy.newBuilder().build();
    *   InsertSslPolicyHttpRequest request = InsertSslPolicyHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setProject(project.toString())
    *     .setSslPolicyResource(sslPolicyResource)
    *     .build();
@@ -775,22 +718,12 @@ public class SslPolicyClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SslPolicyClient sslPolicyClient = SslPolicyClient.create()) {
-   *   String requestId = "";
    *   ProjectGlobalSslPolicyName sslPolicy = ProjectGlobalSslPolicyName.of("[PROJECT]", "[SSL_POLICY]");
    *   SslPolicy sslPolicyResource = SslPolicy.newBuilder().build();
-   *   Operation response = sslPolicyClient.patchSslPolicy(requestId, sslPolicy, sslPolicyResource);
+   *   Operation response = sslPolicyClient.patchSslPolicy(sslPolicy, sslPolicyResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param sslPolicy Name of the SSL policy to update. The name must be 1-63 characters long, and
    *     comply with RFC1035.
    * @param sslPolicyResource A SSL policy specifies the server-side support for SSL features. This
@@ -801,11 +734,10 @@ public class SslPolicyClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation patchSslPolicy(
-      String requestId, ProjectGlobalSslPolicyName sslPolicy, SslPolicy sslPolicyResource) {
+      ProjectGlobalSslPolicyName sslPolicy, SslPolicy sslPolicyResource) {
 
     PatchSslPolicyHttpRequest request =
         PatchSslPolicyHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setSslPolicy(sslPolicy == null ? null : sslPolicy.toString())
             .setSslPolicyResource(sslPolicyResource)
             .build();
@@ -820,22 +752,12 @@ public class SslPolicyClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SslPolicyClient sslPolicyClient = SslPolicyClient.create()) {
-   *   String requestId = "";
    *   ProjectGlobalSslPolicyName sslPolicy = ProjectGlobalSslPolicyName.of("[PROJECT]", "[SSL_POLICY]");
    *   SslPolicy sslPolicyResource = SslPolicy.newBuilder().build();
-   *   Operation response = sslPolicyClient.patchSslPolicy(requestId, sslPolicy.toString(), sslPolicyResource);
+   *   Operation response = sslPolicyClient.patchSslPolicy(sslPolicy.toString(), sslPolicyResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param sslPolicy Name of the SSL policy to update. The name must be 1-63 characters long, and
    *     comply with RFC1035.
    * @param sslPolicyResource A SSL policy specifies the server-side support for SSL features. This
@@ -845,12 +767,10 @@ public class SslPolicyClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation patchSslPolicy(
-      String requestId, String sslPolicy, SslPolicy sslPolicyResource) {
+  public final Operation patchSslPolicy(String sslPolicy, SslPolicy sslPolicyResource) {
 
     PatchSslPolicyHttpRequest request =
         PatchSslPolicyHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setSslPolicy(sslPolicy)
             .setSslPolicyResource(sslPolicyResource)
             .build();
@@ -865,11 +785,9 @@ public class SslPolicyClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SslPolicyClient sslPolicyClient = SslPolicyClient.create()) {
-   *   String requestId = "";
    *   ProjectGlobalSslPolicyName sslPolicy = ProjectGlobalSslPolicyName.of("[PROJECT]", "[SSL_POLICY]");
    *   SslPolicy sslPolicyResource = SslPolicy.newBuilder().build();
    *   PatchSslPolicyHttpRequest request = PatchSslPolicyHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setSslPolicy(sslPolicy.toString())
    *     .setSslPolicyResource(sslPolicyResource)
    *     .build();
@@ -893,11 +811,9 @@ public class SslPolicyClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SslPolicyClient sslPolicyClient = SslPolicyClient.create()) {
-   *   String requestId = "";
    *   ProjectGlobalSslPolicyName sslPolicy = ProjectGlobalSslPolicyName.of("[PROJECT]", "[SSL_POLICY]");
    *   SslPolicy sslPolicyResource = SslPolicy.newBuilder().build();
    *   PatchSslPolicyHttpRequest request = PatchSslPolicyHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setSslPolicy(sslPolicy.toString())
    *     .setSslPolicyResource(sslPolicyResource)
    *     .build();

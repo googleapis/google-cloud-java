@@ -136,11 +136,10 @@ public class TargetTcpProxyClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String requestId = "requestId37109963";
     ProjectGlobalTargetTcpProxyName targetTcpProxy =
         ProjectGlobalTargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
 
-    Operation actualResponse = client.deleteTargetTcpProxy(requestId, targetTcpProxy);
+    Operation actualResponse = client.deleteTargetTcpProxy(targetTcpProxy);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -167,11 +166,10 @@ public class TargetTcpProxyClientTest {
     mockService.addException(exception);
 
     try {
-      String requestId = "requestId37109963";
       ProjectGlobalTargetTcpProxyName targetTcpProxy =
           ProjectGlobalTargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
 
-      client.deleteTargetTcpProxy(requestId, targetTcpProxy);
+      client.deleteTargetTcpProxy(targetTcpProxy);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -292,12 +290,10 @@ public class TargetTcpProxyClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String requestId = "requestId37109963";
     ProjectName project = ProjectName.of("[PROJECT]");
     TargetTcpProxy targetTcpProxyResource = TargetTcpProxy.newBuilder().build();
 
-    Operation actualResponse =
-        client.insertTargetTcpProxy(requestId, project, targetTcpProxyResource);
+    Operation actualResponse = client.insertTargetTcpProxy(project, targetTcpProxyResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -324,11 +320,10 @@ public class TargetTcpProxyClientTest {
     mockService.addException(exception);
 
     try {
-      String requestId = "requestId37109963";
       ProjectName project = ProjectName.of("[PROJECT]");
       TargetTcpProxy targetTcpProxyResource = TargetTcpProxy.newBuilder().build();
 
-      client.insertTargetTcpProxy(requestId, project, targetTcpProxyResource);
+      client.insertTargetTcpProxy(project, targetTcpProxyResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -445,7 +440,6 @@ public class TargetTcpProxyClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String requestId = "requestId37109963";
     ProjectGlobalTargetTcpProxyName targetTcpProxy =
         ProjectGlobalTargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
     TargetTcpProxiesSetBackendServiceRequest targetTcpProxiesSetBackendServiceRequestResource =
@@ -453,7 +447,7 @@ public class TargetTcpProxyClientTest {
 
     Operation actualResponse =
         client.setBackendServiceTargetTcpProxy(
-            requestId, targetTcpProxy, targetTcpProxiesSetBackendServiceRequestResource);
+            targetTcpProxy, targetTcpProxiesSetBackendServiceRequestResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -480,14 +474,13 @@ public class TargetTcpProxyClientTest {
     mockService.addException(exception);
 
     try {
-      String requestId = "requestId37109963";
       ProjectGlobalTargetTcpProxyName targetTcpProxy =
           ProjectGlobalTargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
       TargetTcpProxiesSetBackendServiceRequest targetTcpProxiesSetBackendServiceRequestResource =
           TargetTcpProxiesSetBackendServiceRequest.newBuilder().build();
 
       client.setBackendServiceTargetTcpProxy(
-          requestId, targetTcpProxy, targetTcpProxiesSetBackendServiceRequestResource);
+          targetTcpProxy, targetTcpProxiesSetBackendServiceRequestResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -544,7 +537,6 @@ public class TargetTcpProxyClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String requestId = "requestId37109963";
     ProjectGlobalTargetTcpProxyName targetTcpProxy =
         ProjectGlobalTargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
     TargetTcpProxiesSetProxyHeaderRequest targetTcpProxiesSetProxyHeaderRequestResource =
@@ -552,7 +544,7 @@ public class TargetTcpProxyClientTest {
 
     Operation actualResponse =
         client.setProxyHeaderTargetTcpProxy(
-            requestId, targetTcpProxy, targetTcpProxiesSetProxyHeaderRequestResource);
+            targetTcpProxy, targetTcpProxiesSetProxyHeaderRequestResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -579,14 +571,13 @@ public class TargetTcpProxyClientTest {
     mockService.addException(exception);
 
     try {
-      String requestId = "requestId37109963";
       ProjectGlobalTargetTcpProxyName targetTcpProxy =
           ProjectGlobalTargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
       TargetTcpProxiesSetProxyHeaderRequest targetTcpProxiesSetProxyHeaderRequestResource =
           TargetTcpProxiesSetProxyHeaderRequest.newBuilder().build();
 
       client.setProxyHeaderTargetTcpProxy(
-          requestId, targetTcpProxy, targetTcpProxiesSetProxyHeaderRequestResource);
+          targetTcpProxy, targetTcpProxiesSetProxyHeaderRequestResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

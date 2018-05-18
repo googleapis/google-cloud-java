@@ -135,9 +135,8 @@ public class LicenseClientTest {
     mockService.addResponse(expectedResponse);
 
     ProjectGlobalLicenseName license = ProjectGlobalLicenseName.of("[PROJECT]", "[LICENSE]");
-    String requestId = "requestId37109963";
 
-    Operation actualResponse = client.deleteLicense(license, requestId);
+    Operation actualResponse = client.deleteLicense(license);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -165,9 +164,8 @@ public class LicenseClientTest {
 
     try {
       ProjectGlobalLicenseName license = ProjectGlobalLicenseName.of("[PROJECT]", "[LICENSE]");
-      String requestId = "requestId37109963";
 
-      client.deleteLicense(license, requestId);
+      client.deleteLicense(license);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -289,11 +287,10 @@ public class LicenseClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String requestId = "requestId37109963";
     ProjectName project = ProjectName.of("[PROJECT]");
     License licenseResource = License.newBuilder().build();
 
-    Operation actualResponse = client.insertLicense(requestId, project, licenseResource);
+    Operation actualResponse = client.insertLicense(project, licenseResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -320,11 +317,10 @@ public class LicenseClientTest {
     mockService.addException(exception);
 
     try {
-      String requestId = "requestId37109963";
       ProjectName project = ProjectName.of("[PROJECT]");
       License licenseResource = License.newBuilder().build();
 
-      client.insertLicense(requestId, project, licenseResource);
+      client.insertLicense(project, licenseResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

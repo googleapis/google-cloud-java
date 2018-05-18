@@ -42,9 +42,8 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (InterconnectAttachmentClient interconnectAttachmentClient = InterconnectAttachmentClient.create()) {
- *   String requestId = "";
  *   ProjectRegionInterconnectAttachmentName interconnectAttachment = ProjectRegionInterconnectAttachmentName.of("[PROJECT]", "[REGION]", "[INTERCONNECT_ATTACHMENT]");
- *   Operation response = interconnectAttachmentClient.deleteInterconnectAttachment(requestId, interconnectAttachment);
+ *   Operation response = interconnectAttachmentClient.deleteInterconnectAttachment(interconnectAttachment);
  * }
  * </code>
  * </pre>
@@ -307,31 +306,20 @@ public class InterconnectAttachmentClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InterconnectAttachmentClient interconnectAttachmentClient = InterconnectAttachmentClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionInterconnectAttachmentName interconnectAttachment = ProjectRegionInterconnectAttachmentName.of("[PROJECT]", "[REGION]", "[INTERCONNECT_ATTACHMENT]");
-   *   Operation response = interconnectAttachmentClient.deleteInterconnectAttachment(requestId, interconnectAttachment);
+   *   Operation response = interconnectAttachmentClient.deleteInterconnectAttachment(interconnectAttachment);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param interconnectAttachment Name of the interconnect attachment to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation deleteInterconnectAttachment(
-      String requestId, ProjectRegionInterconnectAttachmentName interconnectAttachment) {
+      ProjectRegionInterconnectAttachmentName interconnectAttachment) {
 
     DeleteInterconnectAttachmentHttpRequest request =
         DeleteInterconnectAttachmentHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setInterconnectAttachment(
                 interconnectAttachment == null ? null : interconnectAttachment.toString())
             .build();
@@ -346,31 +334,19 @@ public class InterconnectAttachmentClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InterconnectAttachmentClient interconnectAttachmentClient = InterconnectAttachmentClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionInterconnectAttachmentName interconnectAttachment = ProjectRegionInterconnectAttachmentName.of("[PROJECT]", "[REGION]", "[INTERCONNECT_ATTACHMENT]");
-   *   Operation response = interconnectAttachmentClient.deleteInterconnectAttachment(requestId, interconnectAttachment.toString());
+   *   Operation response = interconnectAttachmentClient.deleteInterconnectAttachment(interconnectAttachment.toString());
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param interconnectAttachment Name of the interconnect attachment to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteInterconnectAttachment(
-      String requestId, String interconnectAttachment) {
+  public final Operation deleteInterconnectAttachment(String interconnectAttachment) {
 
     DeleteInterconnectAttachmentHttpRequest request =
         DeleteInterconnectAttachmentHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setInterconnectAttachment(interconnectAttachment)
             .build();
     return deleteInterconnectAttachment(request);
@@ -384,10 +360,8 @@ public class InterconnectAttachmentClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InterconnectAttachmentClient interconnectAttachmentClient = InterconnectAttachmentClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionInterconnectAttachmentName interconnectAttachment = ProjectRegionInterconnectAttachmentName.of("[PROJECT]", "[REGION]", "[INTERCONNECT_ATTACHMENT]");
    *   DeleteInterconnectAttachmentHttpRequest request = DeleteInterconnectAttachmentHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setInterconnectAttachment(interconnectAttachment.toString())
    *     .build();
    *   Operation response = interconnectAttachmentClient.deleteInterconnectAttachment(request);
@@ -411,10 +385,8 @@ public class InterconnectAttachmentClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InterconnectAttachmentClient interconnectAttachmentClient = InterconnectAttachmentClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionInterconnectAttachmentName interconnectAttachment = ProjectRegionInterconnectAttachmentName.of("[PROJECT]", "[REGION]", "[INTERCONNECT_ATTACHMENT]");
    *   DeleteInterconnectAttachmentHttpRequest request = DeleteInterconnectAttachmentHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setInterconnectAttachment(interconnectAttachment.toString())
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = interconnectAttachmentClient.deleteInterconnectAttachmentCallable().futureCall(request);
@@ -541,22 +513,12 @@ public class InterconnectAttachmentClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InterconnectAttachmentClient interconnectAttachmentClient = InterconnectAttachmentClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   InterconnectAttachment interconnectAttachmentResource = InterconnectAttachment.newBuilder().build();
-   *   Operation response = interconnectAttachmentClient.insertInterconnectAttachment(requestId, region, interconnectAttachmentResource);
+   *   Operation response = interconnectAttachmentClient.insertInterconnectAttachment(region, interconnectAttachmentResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param region Name of the region for this request.
    * @param interconnectAttachmentResource Represents an InterconnectAttachment (VLAN attachment)
    *     resource. For more information, see Creating VLAN Attachments. (== resource_for
@@ -565,13 +527,10 @@ public class InterconnectAttachmentClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation insertInterconnectAttachment(
-      String requestId,
-      ProjectRegionName region,
-      InterconnectAttachment interconnectAttachmentResource) {
+      ProjectRegionName region, InterconnectAttachment interconnectAttachmentResource) {
 
     InsertInterconnectAttachmentHttpRequest request =
         InsertInterconnectAttachmentHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setRegion(region == null ? null : region.toString())
             .setInterconnectAttachmentResource(interconnectAttachmentResource)
             .build();
@@ -587,22 +546,12 @@ public class InterconnectAttachmentClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InterconnectAttachmentClient interconnectAttachmentClient = InterconnectAttachmentClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   InterconnectAttachment interconnectAttachmentResource = InterconnectAttachment.newBuilder().build();
-   *   Operation response = interconnectAttachmentClient.insertInterconnectAttachment(requestId, region.toString(), interconnectAttachmentResource);
+   *   Operation response = interconnectAttachmentClient.insertInterconnectAttachment(region.toString(), interconnectAttachmentResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param region Name of the region for this request.
    * @param interconnectAttachmentResource Represents an InterconnectAttachment (VLAN attachment)
    *     resource. For more information, see Creating VLAN Attachments. (== resource_for
@@ -611,11 +560,10 @@ public class InterconnectAttachmentClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation insertInterconnectAttachment(
-      String requestId, String region, InterconnectAttachment interconnectAttachmentResource) {
+      String region, InterconnectAttachment interconnectAttachmentResource) {
 
     InsertInterconnectAttachmentHttpRequest request =
         InsertInterconnectAttachmentHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setRegion(region)
             .setInterconnectAttachmentResource(interconnectAttachmentResource)
             .build();
@@ -631,11 +579,9 @@ public class InterconnectAttachmentClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InterconnectAttachmentClient interconnectAttachmentClient = InterconnectAttachmentClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   InterconnectAttachment interconnectAttachmentResource = InterconnectAttachment.newBuilder().build();
    *   InsertInterconnectAttachmentHttpRequest request = InsertInterconnectAttachmentHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setRegion(region.toString())
    *     .setInterconnectAttachmentResource(interconnectAttachmentResource)
    *     .build();
@@ -661,11 +607,9 @@ public class InterconnectAttachmentClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InterconnectAttachmentClient interconnectAttachmentClient = InterconnectAttachmentClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   InterconnectAttachment interconnectAttachmentResource = InterconnectAttachment.newBuilder().build();
    *   InsertInterconnectAttachmentHttpRequest request = InsertInterconnectAttachmentHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setRegion(region.toString())
    *     .setInterconnectAttachmentResource(interconnectAttachmentResource)
    *     .build();

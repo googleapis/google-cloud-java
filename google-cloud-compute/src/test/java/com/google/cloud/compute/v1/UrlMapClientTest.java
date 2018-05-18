@@ -141,9 +141,8 @@ public class UrlMapClientTest {
     mockService.addResponse(expectedResponse);
 
     ProjectGlobalUrlMapName urlMap = ProjectGlobalUrlMapName.of("[PROJECT]", "[URL_MAP]");
-    String requestId = "requestId37109963";
 
-    Operation actualResponse = client.deleteUrlMap(urlMap, requestId);
+    Operation actualResponse = client.deleteUrlMap(urlMap);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -171,9 +170,8 @@ public class UrlMapClientTest {
 
     try {
       ProjectGlobalUrlMapName urlMap = ProjectGlobalUrlMapName.of("[PROJECT]", "[URL_MAP]");
-      String requestId = "requestId37109963";
 
-      client.deleteUrlMap(urlMap, requestId);
+      client.deleteUrlMap(urlMap);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -292,11 +290,10 @@ public class UrlMapClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String requestId = "requestId37109963";
     ProjectName project = ProjectName.of("[PROJECT]");
     UrlMap urlMapResource = UrlMap.newBuilder().build();
 
-    Operation actualResponse = client.insertUrlMap(requestId, project, urlMapResource);
+    Operation actualResponse = client.insertUrlMap(project, urlMapResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -323,11 +320,10 @@ public class UrlMapClientTest {
     mockService.addException(exception);
 
     try {
-      String requestId = "requestId37109963";
       ProjectName project = ProjectName.of("[PROJECT]");
       UrlMap urlMapResource = UrlMap.newBuilder().build();
 
-      client.insertUrlMap(requestId, project, urlMapResource);
+      client.insertUrlMap(project, urlMapResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -385,12 +381,10 @@ public class UrlMapClientTest {
     mockService.addResponse(expectedResponse);
 
     ProjectGlobalUrlMapName urlMap = ProjectGlobalUrlMapName.of("[PROJECT]", "[URL_MAP]");
-    String requestId = "requestId37109963";
     CacheInvalidationRule cacheInvalidationRuleResource =
         CacheInvalidationRule.newBuilder().build();
 
-    Operation actualResponse =
-        client.invalidateCacheUrlMap(urlMap, requestId, cacheInvalidationRuleResource);
+    Operation actualResponse = client.invalidateCacheUrlMap(urlMap, cacheInvalidationRuleResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -418,11 +412,10 @@ public class UrlMapClientTest {
 
     try {
       ProjectGlobalUrlMapName urlMap = ProjectGlobalUrlMapName.of("[PROJECT]", "[URL_MAP]");
-      String requestId = "requestId37109963";
       CacheInvalidationRule cacheInvalidationRuleResource =
           CacheInvalidationRule.newBuilder().build();
 
-      client.invalidateCacheUrlMap(urlMap, requestId, cacheInvalidationRuleResource);
+      client.invalidateCacheUrlMap(urlMap, cacheInvalidationRuleResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -540,10 +533,9 @@ public class UrlMapClientTest {
     mockService.addResponse(expectedResponse);
 
     ProjectGlobalUrlMapName urlMap = ProjectGlobalUrlMapName.of("[PROJECT]", "[URL_MAP]");
-    String requestId = "requestId37109963";
     UrlMap urlMapResource = UrlMap.newBuilder().build();
 
-    Operation actualResponse = client.patchUrlMap(urlMap, requestId, urlMapResource);
+    Operation actualResponse = client.patchUrlMap(urlMap, urlMapResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -571,10 +563,9 @@ public class UrlMapClientTest {
 
     try {
       ProjectGlobalUrlMapName urlMap = ProjectGlobalUrlMapName.of("[PROJECT]", "[URL_MAP]");
-      String requestId = "requestId37109963";
       UrlMap urlMapResource = UrlMap.newBuilder().build();
 
-      client.patchUrlMap(urlMap, requestId, urlMapResource);
+      client.patchUrlMap(urlMap, urlMapResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -632,10 +623,9 @@ public class UrlMapClientTest {
     mockService.addResponse(expectedResponse);
 
     ProjectGlobalUrlMapName urlMap = ProjectGlobalUrlMapName.of("[PROJECT]", "[URL_MAP]");
-    String requestId = "requestId37109963";
     UrlMap urlMapResource = UrlMap.newBuilder().build();
 
-    Operation actualResponse = client.updateUrlMap(urlMap, requestId, urlMapResource);
+    Operation actualResponse = client.updateUrlMap(urlMap, urlMapResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -663,10 +653,9 @@ public class UrlMapClientTest {
 
     try {
       ProjectGlobalUrlMapName urlMap = ProjectGlobalUrlMapName.of("[PROJECT]", "[URL_MAP]");
-      String requestId = "requestId37109963";
       UrlMap urlMapResource = UrlMap.newBuilder().build();
 
-      client.updateUrlMap(urlMap, requestId, urlMapResource);
+      client.updateUrlMap(urlMap, urlMapResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

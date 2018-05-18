@@ -209,9 +209,8 @@ public class RouterClientTest {
 
     ProjectRegionRouterName router =
         ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
-    String requestId = "requestId37109963";
 
-    Operation actualResponse = client.deleteRouter(router, requestId);
+    Operation actualResponse = client.deleteRouter(router);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -240,9 +239,8 @@ public class RouterClientTest {
     try {
       ProjectRegionRouterName router =
           ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
-      String requestId = "requestId37109963";
 
-      client.deleteRouter(router, requestId);
+      client.deleteRouter(router);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -410,11 +408,10 @@ public class RouterClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String requestId = "requestId37109963";
     ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     Router routerResource = Router.newBuilder().build();
 
-    Operation actualResponse = client.insertRouter(requestId, region, routerResource);
+    Operation actualResponse = client.insertRouter(region, routerResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -441,11 +438,10 @@ public class RouterClientTest {
     mockService.addException(exception);
 
     try {
-      String requestId = "requestId37109963";
       ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
       Router routerResource = Router.newBuilder().build();
 
-      client.insertRouter(requestId, region, routerResource);
+      client.insertRouter(region, routerResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -564,10 +560,9 @@ public class RouterClientTest {
 
     ProjectRegionRouterName router =
         ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
-    String requestId = "requestId37109963";
     Router routerResource = Router.newBuilder().build();
 
-    Operation actualResponse = client.patchRouter(router, requestId, routerResource);
+    Operation actualResponse = client.patchRouter(router, routerResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -596,10 +591,9 @@ public class RouterClientTest {
     try {
       ProjectRegionRouterName router =
           ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
-      String requestId = "requestId37109963";
       Router routerResource = Router.newBuilder().build();
 
-      client.patchRouter(router, requestId, routerResource);
+      client.patchRouter(router, routerResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -706,10 +700,9 @@ public class RouterClientTest {
 
     ProjectRegionRouterName router =
         ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
-    String requestId = "requestId37109963";
     Router routerResource = Router.newBuilder().build();
 
-    Operation actualResponse = client.updateRouter(router, requestId, routerResource);
+    Operation actualResponse = client.updateRouter(router, routerResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -738,10 +731,9 @@ public class RouterClientTest {
     try {
       ProjectRegionRouterName router =
           ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
-      String requestId = "requestId37109963";
       Router routerResource = Router.newBuilder().build();
 
-      client.updateRouter(router, requestId, routerResource);
+      client.updateRouter(router, routerResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

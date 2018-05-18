@@ -62,7 +62,6 @@ public class HttpJsonSnapshotStub extends SnapshotStub {
               .setHttpMethod(HttpMethods.DELETE)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<DeleteSnapshotHttpRequest>newBuilder()
-                      .setRequestInstance(DeleteSnapshotHttpRequest.getDefaultInstance())
                       .setPathTemplate(PathTemplate.create("{project}/global/snapshots/{snapshot}"))
                       .setQueryParams(Sets.<String>newHashSet("requestId"))
                       .setResourceNameFactory(ProjectGlobalSnapshotName.newFactory())
@@ -82,7 +81,6 @@ public class HttpJsonSnapshotStub extends SnapshotStub {
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<GetSnapshotHttpRequest>newBuilder()
-                      .setRequestInstance(GetSnapshotHttpRequest.getDefaultInstance())
                       .setPathTemplate(PathTemplate.create("{project}/global/snapshots/{snapshot}"))
                       .setQueryParams(Sets.<String>newHashSet())
                       .setResourceNameFactory(ProjectGlobalSnapshotName.newFactory())
@@ -102,7 +100,6 @@ public class HttpJsonSnapshotStub extends SnapshotStub {
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<ListSnapshotsHttpRequest>newBuilder()
-                      .setRequestInstance(ListSnapshotsHttpRequest.getDefaultInstance())
                       .setPathTemplate(PathTemplate.create("{project}/global/snapshots"))
                       .setQueryParams(
                           Sets.<String>newHashSet("filter", "maxResults", "orderBy", "pageToken"))
@@ -123,7 +120,6 @@ public class HttpJsonSnapshotStub extends SnapshotStub {
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<SetLabelsSnapshotHttpRequest>newBuilder()
-                      .setRequestInstance(SetLabelsSnapshotHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create("{project}/global/snapshots/{resource}/setLabels"))
                       .setQueryParams(Sets.<String>newHashSet())

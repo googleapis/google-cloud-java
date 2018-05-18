@@ -69,8 +69,6 @@ public class HttpJsonForwardingRuleStub extends ForwardingRuleStub {
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter
                       .<AggregatedListForwardingRulesHttpRequest>newBuilder()
-                      .setRequestInstance(
-                          AggregatedListForwardingRulesHttpRequest.getDefaultInstance())
                       .setPathTemplate(PathTemplate.create("{project}/aggregated/forwardingRules"))
                       .setQueryParams(
                           Sets.<String>newHashSet("filter", "maxResults", "orderBy", "pageToken"))
@@ -91,7 +89,6 @@ public class HttpJsonForwardingRuleStub extends ForwardingRuleStub {
               .setHttpMethod(HttpMethods.DELETE)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<DeleteForwardingRuleHttpRequest>newBuilder()
-                      .setRequestInstance(DeleteForwardingRuleHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/regions/{region}/forwardingRules/{forwardingRule}"))
@@ -113,7 +110,6 @@ public class HttpJsonForwardingRuleStub extends ForwardingRuleStub {
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<GetForwardingRuleHttpRequest>newBuilder()
-                      .setRequestInstance(GetForwardingRuleHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/regions/{region}/forwardingRules/{forwardingRule}"))
@@ -135,7 +131,6 @@ public class HttpJsonForwardingRuleStub extends ForwardingRuleStub {
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<InsertForwardingRuleHttpRequest>newBuilder()
-                      .setRequestInstance(InsertForwardingRuleHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create("{project}/regions/{region}/forwardingRules"))
                       .setQueryParams(Sets.<String>newHashSet("requestId"))
@@ -156,7 +151,6 @@ public class HttpJsonForwardingRuleStub extends ForwardingRuleStub {
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<ListForwardingRulesHttpRequest>newBuilder()
-                      .setRequestInstance(ListForwardingRulesHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create("{project}/regions/{region}/forwardingRules"))
                       .setQueryParams(
@@ -178,7 +172,6 @@ public class HttpJsonForwardingRuleStub extends ForwardingRuleStub {
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<SetTargetForwardingRuleHttpRequest>newBuilder()
-                      .setRequestInstance(SetTargetForwardingRuleHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/regions/{region}/forwardingRules/{forwardingRule}/setTarget"))

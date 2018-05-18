@@ -43,8 +43,7 @@ import javax.annotation.Generated;
  * <code>
  * try (FirewallClient firewallClient = FirewallClient.create()) {
  *   ProjectGlobalFirewallName firewall = ProjectGlobalFirewallName.of("[PROJECT]", "[FIREWALL]");
- *   String requestId = "";
- *   Operation response = firewallClient.deleteFirewall(firewall, requestId);
+ *   Operation response = firewallClient.deleteFirewall(firewall);
  * }
  * </code>
  * </pre>
@@ -160,30 +159,19 @@ public class FirewallClient implements BackgroundResource {
    * <pre><code>
    * try (FirewallClient firewallClient = FirewallClient.create()) {
    *   ProjectGlobalFirewallName firewall = ProjectGlobalFirewallName.of("[PROJECT]", "[FIREWALL]");
-   *   String requestId = "";
-   *   Operation response = firewallClient.deleteFirewall(firewall, requestId);
+   *   Operation response = firewallClient.deleteFirewall(firewall);
    * }
    * </code></pre>
    *
    * @param firewall Name of the firewall rule to delete.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteFirewall(ProjectGlobalFirewallName firewall, String requestId) {
+  public final Operation deleteFirewall(ProjectGlobalFirewallName firewall) {
 
     DeleteFirewallHttpRequest request =
         DeleteFirewallHttpRequest.newBuilder()
             .setFirewall(firewall == null ? null : firewall.toString())
-            .setRequestId(requestId)
             .build();
     return deleteFirewall(request);
   }
@@ -197,31 +185,18 @@ public class FirewallClient implements BackgroundResource {
    * <pre><code>
    * try (FirewallClient firewallClient = FirewallClient.create()) {
    *   ProjectGlobalFirewallName firewall = ProjectGlobalFirewallName.of("[PROJECT]", "[FIREWALL]");
-   *   String requestId = "";
-   *   Operation response = firewallClient.deleteFirewall(firewall.toString(), requestId);
+   *   Operation response = firewallClient.deleteFirewall(firewall.toString());
    * }
    * </code></pre>
    *
    * @param firewall Name of the firewall rule to delete.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteFirewall(String firewall, String requestId) {
+  public final Operation deleteFirewall(String firewall) {
 
     DeleteFirewallHttpRequest request =
-        DeleteFirewallHttpRequest.newBuilder()
-            .setFirewall(firewall)
-            .setRequestId(requestId)
-            .build();
+        DeleteFirewallHttpRequest.newBuilder().setFirewall(firewall).build();
     return deleteFirewall(request);
   }
 
@@ -234,10 +209,8 @@ public class FirewallClient implements BackgroundResource {
    * <pre><code>
    * try (FirewallClient firewallClient = FirewallClient.create()) {
    *   ProjectGlobalFirewallName firewall = ProjectGlobalFirewallName.of("[PROJECT]", "[FIREWALL]");
-   *   String requestId = "";
    *   DeleteFirewallHttpRequest request = DeleteFirewallHttpRequest.newBuilder()
    *     .setFirewall(firewall.toString())
-   *     .setRequestId(requestId)
    *     .build();
    *   Operation response = firewallClient.deleteFirewall(request);
    * }
@@ -260,10 +233,8 @@ public class FirewallClient implements BackgroundResource {
    * <pre><code>
    * try (FirewallClient firewallClient = FirewallClient.create()) {
    *   ProjectGlobalFirewallName firewall = ProjectGlobalFirewallName.of("[PROJECT]", "[FIREWALL]");
-   *   String requestId = "";
    *   DeleteFirewallHttpRequest request = DeleteFirewallHttpRequest.newBuilder()
    *     .setFirewall(firewall.toString())
-   *     .setRequestId(requestId)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = firewallClient.deleteFirewallCallable().futureCall(request);
    *   // Do something
@@ -381,33 +352,21 @@ public class FirewallClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirewallClient firewallClient = FirewallClient.create()) {
-   *   String requestId = "";
    *   ProjectName project = ProjectName.of("[PROJECT]");
    *   Firewall firewallResource = Firewall.newBuilder().build();
-   *   Operation response = firewallClient.insertFirewall(requestId, project, firewallResource);
+   *   Operation response = firewallClient.insertFirewall(project, firewallResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param project Project ID for this request.
    * @param firewallResource Represents a Firewall resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation insertFirewall(
-      String requestId, ProjectName project, Firewall firewallResource) {
+  public final Operation insertFirewall(ProjectName project, Firewall firewallResource) {
 
     InsertFirewallHttpRequest request =
         InsertFirewallHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setProject(project == null ? null : project.toString())
             .setFirewallResource(firewallResource)
             .build();
@@ -422,33 +381,21 @@ public class FirewallClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirewallClient firewallClient = FirewallClient.create()) {
-   *   String requestId = "";
    *   ProjectName project = ProjectName.of("[PROJECT]");
    *   Firewall firewallResource = Firewall.newBuilder().build();
-   *   Operation response = firewallClient.insertFirewall(requestId, project.toString(), firewallResource);
+   *   Operation response = firewallClient.insertFirewall(project.toString(), firewallResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param project Project ID for this request.
    * @param firewallResource Represents a Firewall resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation insertFirewall(
-      String requestId, String project, Firewall firewallResource) {
+  public final Operation insertFirewall(String project, Firewall firewallResource) {
 
     InsertFirewallHttpRequest request =
         InsertFirewallHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setProject(project)
             .setFirewallResource(firewallResource)
             .build();
@@ -463,11 +410,9 @@ public class FirewallClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirewallClient firewallClient = FirewallClient.create()) {
-   *   String requestId = "";
    *   ProjectName project = ProjectName.of("[PROJECT]");
    *   Firewall firewallResource = Firewall.newBuilder().build();
    *   InsertFirewallHttpRequest request = InsertFirewallHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setProject(project.toString())
    *     .setFirewallResource(firewallResource)
    *     .build();
@@ -491,11 +436,9 @@ public class FirewallClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirewallClient firewallClient = FirewallClient.create()) {
-   *   String requestId = "";
    *   ProjectName project = ProjectName.of("[PROJECT]");
    *   Firewall firewallResource = Firewall.newBuilder().build();
    *   InsertFirewallHttpRequest request = InsertFirewallHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setProject(project.toString())
    *     .setFirewallResource(firewallResource)
    *     .build();
@@ -656,33 +599,22 @@ public class FirewallClient implements BackgroundResource {
    * <pre><code>
    * try (FirewallClient firewallClient = FirewallClient.create()) {
    *   ProjectGlobalFirewallName firewall = ProjectGlobalFirewallName.of("[PROJECT]", "[FIREWALL]");
-   *   String requestId = "";
    *   Firewall firewallResource = Firewall.newBuilder().build();
-   *   Operation response = firewallClient.patchFirewall(firewall, requestId, firewallResource);
+   *   Operation response = firewallClient.patchFirewall(firewall, firewallResource);
    * }
    * </code></pre>
    *
    * @param firewall Name of the firewall rule to patch.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param firewallResource Represents a Firewall resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation patchFirewall(
-      ProjectGlobalFirewallName firewall, String requestId, Firewall firewallResource) {
+      ProjectGlobalFirewallName firewall, Firewall firewallResource) {
 
     PatchFirewallHttpRequest request =
         PatchFirewallHttpRequest.newBuilder()
             .setFirewall(firewall == null ? null : firewall.toString())
-            .setRequestId(requestId)
             .setFirewallResource(firewallResource)
             .build();
     return patchFirewall(request);
@@ -698,33 +630,21 @@ public class FirewallClient implements BackgroundResource {
    * <pre><code>
    * try (FirewallClient firewallClient = FirewallClient.create()) {
    *   ProjectGlobalFirewallName firewall = ProjectGlobalFirewallName.of("[PROJECT]", "[FIREWALL]");
-   *   String requestId = "";
    *   Firewall firewallResource = Firewall.newBuilder().build();
-   *   Operation response = firewallClient.patchFirewall(firewall.toString(), requestId, firewallResource);
+   *   Operation response = firewallClient.patchFirewall(firewall.toString(), firewallResource);
    * }
    * </code></pre>
    *
    * @param firewall Name of the firewall rule to patch.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param firewallResource Represents a Firewall resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation patchFirewall(
-      String firewall, String requestId, Firewall firewallResource) {
+  public final Operation patchFirewall(String firewall, Firewall firewallResource) {
 
     PatchFirewallHttpRequest request =
         PatchFirewallHttpRequest.newBuilder()
             .setFirewall(firewall)
-            .setRequestId(requestId)
             .setFirewallResource(firewallResource)
             .build();
     return patchFirewall(request);
@@ -740,11 +660,9 @@ public class FirewallClient implements BackgroundResource {
    * <pre><code>
    * try (FirewallClient firewallClient = FirewallClient.create()) {
    *   ProjectGlobalFirewallName firewall = ProjectGlobalFirewallName.of("[PROJECT]", "[FIREWALL]");
-   *   String requestId = "";
    *   Firewall firewallResource = Firewall.newBuilder().build();
    *   PatchFirewallHttpRequest request = PatchFirewallHttpRequest.newBuilder()
    *     .setFirewall(firewall.toString())
-   *     .setRequestId(requestId)
    *     .setFirewallResource(firewallResource)
    *     .build();
    *   Operation response = firewallClient.patchFirewall(request);
@@ -769,11 +687,9 @@ public class FirewallClient implements BackgroundResource {
    * <pre><code>
    * try (FirewallClient firewallClient = FirewallClient.create()) {
    *   ProjectGlobalFirewallName firewall = ProjectGlobalFirewallName.of("[PROJECT]", "[FIREWALL]");
-   *   String requestId = "";
    *   Firewall firewallResource = Firewall.newBuilder().build();
    *   PatchFirewallHttpRequest request = PatchFirewallHttpRequest.newBuilder()
    *     .setFirewall(firewall.toString())
-   *     .setRequestId(requestId)
    *     .setFirewallResource(firewallResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = firewallClient.patchFirewallCallable().futureCall(request);
@@ -798,33 +714,22 @@ public class FirewallClient implements BackgroundResource {
    * <pre><code>
    * try (FirewallClient firewallClient = FirewallClient.create()) {
    *   ProjectGlobalFirewallName firewall = ProjectGlobalFirewallName.of("[PROJECT]", "[FIREWALL]");
-   *   String requestId = "";
    *   Firewall firewallResource = Firewall.newBuilder().build();
-   *   Operation response = firewallClient.updateFirewall(firewall, requestId, firewallResource);
+   *   Operation response = firewallClient.updateFirewall(firewall, firewallResource);
    * }
    * </code></pre>
    *
    * @param firewall Name of the firewall rule to update.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param firewallResource Represents a Firewall resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation updateFirewall(
-      ProjectGlobalFirewallName firewall, String requestId, Firewall firewallResource) {
+      ProjectGlobalFirewallName firewall, Firewall firewallResource) {
 
     UpdateFirewallHttpRequest request =
         UpdateFirewallHttpRequest.newBuilder()
             .setFirewall(firewall == null ? null : firewall.toString())
-            .setRequestId(requestId)
             .setFirewallResource(firewallResource)
             .build();
     return updateFirewall(request);
@@ -841,33 +746,21 @@ public class FirewallClient implements BackgroundResource {
    * <pre><code>
    * try (FirewallClient firewallClient = FirewallClient.create()) {
    *   ProjectGlobalFirewallName firewall = ProjectGlobalFirewallName.of("[PROJECT]", "[FIREWALL]");
-   *   String requestId = "";
    *   Firewall firewallResource = Firewall.newBuilder().build();
-   *   Operation response = firewallClient.updateFirewall(firewall.toString(), requestId, firewallResource);
+   *   Operation response = firewallClient.updateFirewall(firewall.toString(), firewallResource);
    * }
    * </code></pre>
    *
    * @param firewall Name of the firewall rule to update.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param firewallResource Represents a Firewall resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation updateFirewall(
-      String firewall, String requestId, Firewall firewallResource) {
+  public final Operation updateFirewall(String firewall, Firewall firewallResource) {
 
     UpdateFirewallHttpRequest request =
         UpdateFirewallHttpRequest.newBuilder()
             .setFirewall(firewall)
-            .setRequestId(requestId)
             .setFirewallResource(firewallResource)
             .build();
     return updateFirewall(request);
@@ -884,11 +777,9 @@ public class FirewallClient implements BackgroundResource {
    * <pre><code>
    * try (FirewallClient firewallClient = FirewallClient.create()) {
    *   ProjectGlobalFirewallName firewall = ProjectGlobalFirewallName.of("[PROJECT]", "[FIREWALL]");
-   *   String requestId = "";
    *   Firewall firewallResource = Firewall.newBuilder().build();
    *   UpdateFirewallHttpRequest request = UpdateFirewallHttpRequest.newBuilder()
    *     .setFirewall(firewall.toString())
-   *     .setRequestId(requestId)
    *     .setFirewallResource(firewallResource)
    *     .build();
    *   Operation response = firewallClient.updateFirewall(request);
@@ -914,11 +805,9 @@ public class FirewallClient implements BackgroundResource {
    * <pre><code>
    * try (FirewallClient firewallClient = FirewallClient.create()) {
    *   ProjectGlobalFirewallName firewall = ProjectGlobalFirewallName.of("[PROJECT]", "[FIREWALL]");
-   *   String requestId = "";
    *   Firewall firewallResource = Firewall.newBuilder().build();
    *   UpdateFirewallHttpRequest request = UpdateFirewallHttpRequest.newBuilder()
    *     .setFirewall(firewall.toString())
-   *     .setRequestId(requestId)
    *     .setFirewallResource(firewallResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = firewallClient.updateFirewallCallable().futureCall(request);

@@ -404,22 +404,12 @@ public class RegionCommitmentClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionCommitmentClient regionCommitmentClient = RegionCommitmentClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   Commitment commitmentResource = Commitment.newBuilder().build();
-   *   Operation response = regionCommitmentClient.insertRegionCommitment(requestId, region, commitmentResource);
+   *   Operation response = regionCommitmentClient.insertRegionCommitment(region, commitmentResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param region Name of the region for this request.
    * @param commitmentResource Represents a Commitment resource. Creating a Commitment resource
    *     means that you are purchasing a committed use contract with an explicit start and end time.
@@ -433,11 +423,10 @@ public class RegionCommitmentClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation insertRegionCommitment(
-      String requestId, ProjectRegionName region, Commitment commitmentResource) {
+      ProjectRegionName region, Commitment commitmentResource) {
 
     InsertRegionCommitmentHttpRequest request =
         InsertRegionCommitmentHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setRegion(region == null ? null : region.toString())
             .setCommitmentResource(commitmentResource)
             .build();
@@ -452,22 +441,12 @@ public class RegionCommitmentClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionCommitmentClient regionCommitmentClient = RegionCommitmentClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   Commitment commitmentResource = Commitment.newBuilder().build();
-   *   Operation response = regionCommitmentClient.insertRegionCommitment(requestId, region.toString(), commitmentResource);
+   *   Operation response = regionCommitmentClient.insertRegionCommitment(region.toString(), commitmentResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param region Name of the region for this request.
    * @param commitmentResource Represents a Commitment resource. Creating a Commitment resource
    *     means that you are purchasing a committed use contract with an explicit start and end time.
@@ -480,12 +459,10 @@ public class RegionCommitmentClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation insertRegionCommitment(
-      String requestId, String region, Commitment commitmentResource) {
+  public final Operation insertRegionCommitment(String region, Commitment commitmentResource) {
 
     InsertRegionCommitmentHttpRequest request =
         InsertRegionCommitmentHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setRegion(region)
             .setCommitmentResource(commitmentResource)
             .build();
@@ -500,11 +477,9 @@ public class RegionCommitmentClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionCommitmentClient regionCommitmentClient = RegionCommitmentClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   Commitment commitmentResource = Commitment.newBuilder().build();
    *   InsertRegionCommitmentHttpRequest request = InsertRegionCommitmentHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setRegion(region.toString())
    *     .setCommitmentResource(commitmentResource)
    *     .build();
@@ -528,11 +503,9 @@ public class RegionCommitmentClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionCommitmentClient regionCommitmentClient = RegionCommitmentClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   Commitment commitmentResource = Commitment.newBuilder().build();
    *   InsertRegionCommitmentHttpRequest request = InsertRegionCommitmentHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setRegion(region.toString())
    *     .setCommitmentResource(commitmentResource)
    *     .build();

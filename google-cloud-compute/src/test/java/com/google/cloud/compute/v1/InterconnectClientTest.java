@@ -134,11 +134,10 @@ public class InterconnectClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String requestId = "requestId37109963";
     ProjectGlobalInterconnectName interconnect =
         ProjectGlobalInterconnectName.of("[PROJECT]", "[INTERCONNECT]");
 
-    Operation actualResponse = client.deleteInterconnect(requestId, interconnect);
+    Operation actualResponse = client.deleteInterconnect(interconnect);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -165,11 +164,10 @@ public class InterconnectClientTest {
     mockService.addException(exception);
 
     try {
-      String requestId = "requestId37109963";
       ProjectGlobalInterconnectName interconnect =
           ProjectGlobalInterconnectName.of("[PROJECT]", "[INTERCONNECT]");
 
-      client.deleteInterconnect(requestId, interconnect);
+      client.deleteInterconnect(interconnect);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -310,11 +308,10 @@ public class InterconnectClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String requestId = "requestId37109963";
     ProjectName project = ProjectName.of("[PROJECT]");
     Interconnect interconnectResource = Interconnect.newBuilder().build();
 
-    Operation actualResponse = client.insertInterconnect(requestId, project, interconnectResource);
+    Operation actualResponse = client.insertInterconnect(project, interconnectResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -341,11 +338,10 @@ public class InterconnectClientTest {
     mockService.addException(exception);
 
     try {
-      String requestId = "requestId37109963";
       ProjectName project = ProjectName.of("[PROJECT]");
       Interconnect interconnectResource = Interconnect.newBuilder().build();
 
-      client.insertInterconnect(requestId, project, interconnectResource);
+      client.insertInterconnect(project, interconnectResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -462,13 +458,11 @@ public class InterconnectClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String requestId = "requestId37109963";
     ProjectGlobalInterconnectName interconnect =
         ProjectGlobalInterconnectName.of("[PROJECT]", "[INTERCONNECT]");
     Interconnect interconnectResource = Interconnect.newBuilder().build();
 
-    Operation actualResponse =
-        client.patchInterconnect(requestId, interconnect, interconnectResource);
+    Operation actualResponse = client.patchInterconnect(interconnect, interconnectResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -495,12 +489,11 @@ public class InterconnectClientTest {
     mockService.addException(exception);
 
     try {
-      String requestId = "requestId37109963";
       ProjectGlobalInterconnectName interconnect =
           ProjectGlobalInterconnectName.of("[PROJECT]", "[INTERCONNECT]");
       Interconnect interconnectResource = Interconnect.newBuilder().build();
 
-      client.patchInterconnect(requestId, interconnect, interconnectResource);
+      client.patchInterconnect(interconnect, interconnectResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

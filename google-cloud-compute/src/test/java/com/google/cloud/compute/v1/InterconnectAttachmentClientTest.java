@@ -203,13 +203,11 @@ public class InterconnectAttachmentClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String requestId = "requestId37109963";
     ProjectRegionInterconnectAttachmentName interconnectAttachment =
         ProjectRegionInterconnectAttachmentName.of(
             "[PROJECT]", "[REGION]", "[INTERCONNECT_ATTACHMENT]");
 
-    Operation actualResponse =
-        client.deleteInterconnectAttachment(requestId, interconnectAttachment);
+    Operation actualResponse = client.deleteInterconnectAttachment(interconnectAttachment);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -236,12 +234,11 @@ public class InterconnectAttachmentClientTest {
     mockService.addException(exception);
 
     try {
-      String requestId = "requestId37109963";
       ProjectRegionInterconnectAttachmentName interconnectAttachment =
           ProjectRegionInterconnectAttachmentName.of(
               "[PROJECT]", "[REGION]", "[INTERCONNECT_ATTACHMENT]");
 
-      client.deleteInterconnectAttachment(requestId, interconnectAttachment);
+      client.deleteInterconnectAttachment(interconnectAttachment);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -377,13 +374,12 @@ public class InterconnectAttachmentClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String requestId = "requestId37109963";
     ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     InterconnectAttachment interconnectAttachmentResource =
         InterconnectAttachment.newBuilder().build();
 
     Operation actualResponse =
-        client.insertInterconnectAttachment(requestId, region, interconnectAttachmentResource);
+        client.insertInterconnectAttachment(region, interconnectAttachmentResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -410,12 +406,11 @@ public class InterconnectAttachmentClientTest {
     mockService.addException(exception);
 
     try {
-      String requestId = "requestId37109963";
       ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
       InterconnectAttachment interconnectAttachmentResource =
           InterconnectAttachment.newBuilder().build();
 
-      client.insertInterconnectAttachment(requestId, region, interconnectAttachmentResource);
+      client.insertInterconnectAttachment(region, interconnectAttachmentResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

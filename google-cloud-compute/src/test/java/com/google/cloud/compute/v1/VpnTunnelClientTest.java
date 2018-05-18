@@ -200,11 +200,10 @@ public class VpnTunnelClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String requestId = "requestId37109963";
     ProjectRegionVpnTunnelName vpnTunnel =
         ProjectRegionVpnTunnelName.of("[PROJECT]", "[REGION]", "[VPN_TUNNEL]");
 
-    Operation actualResponse = client.deleteVpnTunnel(requestId, vpnTunnel);
+    Operation actualResponse = client.deleteVpnTunnel(vpnTunnel);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -231,11 +230,10 @@ public class VpnTunnelClientTest {
     mockService.addException(exception);
 
     try {
-      String requestId = "requestId37109963";
       ProjectRegionVpnTunnelName vpnTunnel =
           ProjectRegionVpnTunnelName.of("[PROJECT]", "[REGION]", "[VPN_TUNNEL]");
 
-      client.deleteVpnTunnel(requestId, vpnTunnel);
+      client.deleteVpnTunnel(vpnTunnel);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -372,11 +370,10 @@ public class VpnTunnelClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String requestId = "requestId37109963";
     ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     VpnTunnel vpnTunnelResource = VpnTunnel.newBuilder().build();
 
-    Operation actualResponse = client.insertVpnTunnel(requestId, region, vpnTunnelResource);
+    Operation actualResponse = client.insertVpnTunnel(region, vpnTunnelResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -403,11 +400,10 @@ public class VpnTunnelClientTest {
     mockService.addException(exception);
 
     try {
-      String requestId = "requestId37109963";
       ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
       VpnTunnel vpnTunnelResource = VpnTunnel.newBuilder().build();
 
-      client.insertVpnTunnel(requestId, region, vpnTunnelResource);
+      client.insertVpnTunnel(region, vpnTunnelResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

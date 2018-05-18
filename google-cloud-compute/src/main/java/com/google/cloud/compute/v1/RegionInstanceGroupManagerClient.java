@@ -42,10 +42,9 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
- *   String requestId = "";
  *   ProjectRegionInstanceGroupManagerName instanceGroupManager = ProjectRegionInstanceGroupManagerName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
  *   RegionInstanceGroupManagersAbandonInstancesRequest regionInstanceGroupManagersAbandonInstancesRequestResource = RegionInstanceGroupManagersAbandonInstancesRequest.newBuilder().build();
- *   Operation response = regionInstanceGroupManagerClient.abandonInstancesRegionInstanceGroupManager(requestId, instanceGroupManager, regionInstanceGroupManagersAbandonInstancesRequestResource);
+ *   Operation response = regionInstanceGroupManagerClient.abandonInstancesRegionInstanceGroupManager(instanceGroupManager, regionInstanceGroupManagersAbandonInstancesRequestResource);
  * }
  * </code>
  * </pre>
@@ -177,36 +176,24 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionInstanceGroupManagerName instanceGroupManager = ProjectRegionInstanceGroupManagerName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
    *   RegionInstanceGroupManagersAbandonInstancesRequest regionInstanceGroupManagersAbandonInstancesRequestResource = RegionInstanceGroupManagersAbandonInstancesRequest.newBuilder().build();
-   *   Operation response = regionInstanceGroupManagerClient.abandonInstancesRegionInstanceGroupManager(requestId, instanceGroupManager, regionInstanceGroupManagersAbandonInstancesRequestResource);
+   *   Operation response = regionInstanceGroupManagerClient.abandonInstancesRegionInstanceGroupManager(instanceGroupManager, regionInstanceGroupManagersAbandonInstancesRequestResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param instanceGroupManager Name of the managed instance group.
    * @param regionInstanceGroupManagersAbandonInstancesRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation abandonInstancesRegionInstanceGroupManager(
-      String requestId,
       ProjectRegionInstanceGroupManagerName instanceGroupManager,
       RegionInstanceGroupManagersAbandonInstancesRequest
           regionInstanceGroupManagersAbandonInstancesRequestResource) {
 
     AbandonInstancesRegionInstanceGroupManagerHttpRequest request =
         AbandonInstancesRegionInstanceGroupManagerHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setInstanceGroupManager(
                 instanceGroupManager == null ? null : instanceGroupManager.toString())
             .setRegionInstanceGroupManagersAbandonInstancesRequestResource(
@@ -235,36 +222,24 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionInstanceGroupManagerName instanceGroupManager = ProjectRegionInstanceGroupManagerName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
    *   RegionInstanceGroupManagersAbandonInstancesRequest regionInstanceGroupManagersAbandonInstancesRequestResource = RegionInstanceGroupManagersAbandonInstancesRequest.newBuilder().build();
-   *   Operation response = regionInstanceGroupManagerClient.abandonInstancesRegionInstanceGroupManager(requestId, instanceGroupManager.toString(), regionInstanceGroupManagersAbandonInstancesRequestResource);
+   *   Operation response = regionInstanceGroupManagerClient.abandonInstancesRegionInstanceGroupManager(instanceGroupManager.toString(), regionInstanceGroupManagersAbandonInstancesRequestResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param instanceGroupManager Name of the managed instance group.
    * @param regionInstanceGroupManagersAbandonInstancesRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation abandonInstancesRegionInstanceGroupManager(
-      String requestId,
       String instanceGroupManager,
       RegionInstanceGroupManagersAbandonInstancesRequest
           regionInstanceGroupManagersAbandonInstancesRequestResource) {
 
     AbandonInstancesRegionInstanceGroupManagerHttpRequest request =
         AbandonInstancesRegionInstanceGroupManagerHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setInstanceGroupManager(instanceGroupManager)
             .setRegionInstanceGroupManagersAbandonInstancesRequestResource(
                 regionInstanceGroupManagersAbandonInstancesRequestResource)
@@ -292,11 +267,9 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionInstanceGroupManagerName instanceGroupManager = ProjectRegionInstanceGroupManagerName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
    *   RegionInstanceGroupManagersAbandonInstancesRequest regionInstanceGroupManagersAbandonInstancesRequestResource = RegionInstanceGroupManagersAbandonInstancesRequest.newBuilder().build();
    *   AbandonInstancesRegionInstanceGroupManagerHttpRequest request = AbandonInstancesRegionInstanceGroupManagerHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setInstanceGroupManager(instanceGroupManager.toString())
    *     .setRegionInstanceGroupManagersAbandonInstancesRequestResource(regionInstanceGroupManagersAbandonInstancesRequestResource)
    *     .build();
@@ -333,11 +306,9 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionInstanceGroupManagerName instanceGroupManager = ProjectRegionInstanceGroupManagerName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
    *   RegionInstanceGroupManagersAbandonInstancesRequest regionInstanceGroupManagersAbandonInstancesRequestResource = RegionInstanceGroupManagersAbandonInstancesRequest.newBuilder().build();
    *   AbandonInstancesRegionInstanceGroupManagerHttpRequest request = AbandonInstancesRegionInstanceGroupManagerHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setInstanceGroupManager(instanceGroupManager.toString())
    *     .setRegionInstanceGroupManagersAbandonInstancesRequestResource(regionInstanceGroupManagersAbandonInstancesRequestResource)
    *     .build();
@@ -361,31 +332,20 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionInstanceGroupManagerName instanceGroupManager = ProjectRegionInstanceGroupManagerName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
-   *   Operation response = regionInstanceGroupManagerClient.deleteRegionInstanceGroupManager(requestId, instanceGroupManager);
+   *   Operation response = regionInstanceGroupManagerClient.deleteRegionInstanceGroupManager(instanceGroupManager);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param instanceGroupManager Name of the managed instance group to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation deleteRegionInstanceGroupManager(
-      String requestId, ProjectRegionInstanceGroupManagerName instanceGroupManager) {
+      ProjectRegionInstanceGroupManagerName instanceGroupManager) {
 
     DeleteRegionInstanceGroupManagerHttpRequest request =
         DeleteRegionInstanceGroupManagerHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setInstanceGroupManager(
                 instanceGroupManager == null ? null : instanceGroupManager.toString())
             .build();
@@ -400,31 +360,19 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionInstanceGroupManagerName instanceGroupManager = ProjectRegionInstanceGroupManagerName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
-   *   Operation response = regionInstanceGroupManagerClient.deleteRegionInstanceGroupManager(requestId, instanceGroupManager.toString());
+   *   Operation response = regionInstanceGroupManagerClient.deleteRegionInstanceGroupManager(instanceGroupManager.toString());
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param instanceGroupManager Name of the managed instance group to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteRegionInstanceGroupManager(
-      String requestId, String instanceGroupManager) {
+  public final Operation deleteRegionInstanceGroupManager(String instanceGroupManager) {
 
     DeleteRegionInstanceGroupManagerHttpRequest request =
         DeleteRegionInstanceGroupManagerHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setInstanceGroupManager(instanceGroupManager)
             .build();
     return deleteRegionInstanceGroupManager(request);
@@ -438,10 +386,8 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionInstanceGroupManagerName instanceGroupManager = ProjectRegionInstanceGroupManagerName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
    *   DeleteRegionInstanceGroupManagerHttpRequest request = DeleteRegionInstanceGroupManagerHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setInstanceGroupManager(instanceGroupManager.toString())
    *     .build();
    *   Operation response = regionInstanceGroupManagerClient.deleteRegionInstanceGroupManager(request);
@@ -465,10 +411,8 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionInstanceGroupManagerName instanceGroupManager = ProjectRegionInstanceGroupManagerName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
    *   DeleteRegionInstanceGroupManagerHttpRequest request = DeleteRegionInstanceGroupManagerHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setInstanceGroupManager(instanceGroupManager.toString())
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = regionInstanceGroupManagerClient.deleteRegionInstanceGroupManagerCallable().futureCall(request);
@@ -502,36 +446,24 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionInstanceGroupManagerName instanceGroupManager = ProjectRegionInstanceGroupManagerName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
    *   RegionInstanceGroupManagersDeleteInstancesRequest regionInstanceGroupManagersDeleteInstancesRequestResource = RegionInstanceGroupManagersDeleteInstancesRequest.newBuilder().build();
-   *   Operation response = regionInstanceGroupManagerClient.deleteInstancesRegionInstanceGroupManager(requestId, instanceGroupManager, regionInstanceGroupManagersDeleteInstancesRequestResource);
+   *   Operation response = regionInstanceGroupManagerClient.deleteInstancesRegionInstanceGroupManager(instanceGroupManager, regionInstanceGroupManagersDeleteInstancesRequestResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param instanceGroupManager Name of the managed instance group.
    * @param regionInstanceGroupManagersDeleteInstancesRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation deleteInstancesRegionInstanceGroupManager(
-      String requestId,
       ProjectRegionInstanceGroupManagerName instanceGroupManager,
       RegionInstanceGroupManagersDeleteInstancesRequest
           regionInstanceGroupManagersDeleteInstancesRequestResource) {
 
     DeleteInstancesRegionInstanceGroupManagerHttpRequest request =
         DeleteInstancesRegionInstanceGroupManagerHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setInstanceGroupManager(
                 instanceGroupManager == null ? null : instanceGroupManager.toString())
             .setRegionInstanceGroupManagersDeleteInstancesRequestResource(
@@ -559,36 +491,24 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionInstanceGroupManagerName instanceGroupManager = ProjectRegionInstanceGroupManagerName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
    *   RegionInstanceGroupManagersDeleteInstancesRequest regionInstanceGroupManagersDeleteInstancesRequestResource = RegionInstanceGroupManagersDeleteInstancesRequest.newBuilder().build();
-   *   Operation response = regionInstanceGroupManagerClient.deleteInstancesRegionInstanceGroupManager(requestId, instanceGroupManager.toString(), regionInstanceGroupManagersDeleteInstancesRequestResource);
+   *   Operation response = regionInstanceGroupManagerClient.deleteInstancesRegionInstanceGroupManager(instanceGroupManager.toString(), regionInstanceGroupManagersDeleteInstancesRequestResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param instanceGroupManager Name of the managed instance group.
    * @param regionInstanceGroupManagersDeleteInstancesRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation deleteInstancesRegionInstanceGroupManager(
-      String requestId,
       String instanceGroupManager,
       RegionInstanceGroupManagersDeleteInstancesRequest
           regionInstanceGroupManagersDeleteInstancesRequestResource) {
 
     DeleteInstancesRegionInstanceGroupManagerHttpRequest request =
         DeleteInstancesRegionInstanceGroupManagerHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setInstanceGroupManager(instanceGroupManager)
             .setRegionInstanceGroupManagersDeleteInstancesRequestResource(
                 regionInstanceGroupManagersDeleteInstancesRequestResource)
@@ -615,11 +535,9 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionInstanceGroupManagerName instanceGroupManager = ProjectRegionInstanceGroupManagerName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
    *   RegionInstanceGroupManagersDeleteInstancesRequest regionInstanceGroupManagersDeleteInstancesRequestResource = RegionInstanceGroupManagersDeleteInstancesRequest.newBuilder().build();
    *   DeleteInstancesRegionInstanceGroupManagerHttpRequest request = DeleteInstancesRegionInstanceGroupManagerHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setInstanceGroupManager(instanceGroupManager.toString())
    *     .setRegionInstanceGroupManagersDeleteInstancesRequestResource(regionInstanceGroupManagersDeleteInstancesRequestResource)
    *     .build();
@@ -655,11 +573,9 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionInstanceGroupManagerName instanceGroupManager = ProjectRegionInstanceGroupManagerName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
    *   RegionInstanceGroupManagersDeleteInstancesRequest regionInstanceGroupManagersDeleteInstancesRequestResource = RegionInstanceGroupManagersDeleteInstancesRequest.newBuilder().build();
    *   DeleteInstancesRegionInstanceGroupManagerHttpRequest request = DeleteInstancesRegionInstanceGroupManagerHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setInstanceGroupManager(instanceGroupManager.toString())
    *     .setRegionInstanceGroupManagersDeleteInstancesRequestResource(regionInstanceGroupManagersDeleteInstancesRequestResource)
    *     .build();
@@ -792,22 +708,12 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   InstanceGroupManager instanceGroupManagerResource = InstanceGroupManager.newBuilder().build();
-   *   Operation response = regionInstanceGroupManagerClient.insertRegionInstanceGroupManager(requestId, region, instanceGroupManagerResource);
+   *   Operation response = regionInstanceGroupManagerClient.insertRegionInstanceGroupManager(region, instanceGroupManagerResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param region Name of the region scoping this request.
    * @param instanceGroupManagerResource An Instance Group Manager resource. (== resource_for
    *     beta.instanceGroupManagers ==) (== resource_for v1.instanceGroupManagers ==) (==
@@ -817,13 +723,10 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation insertRegionInstanceGroupManager(
-      String requestId,
-      ProjectRegionName region,
-      InstanceGroupManager instanceGroupManagerResource) {
+      ProjectRegionName region, InstanceGroupManager instanceGroupManagerResource) {
 
     InsertRegionInstanceGroupManagerHttpRequest request =
         InsertRegionInstanceGroupManagerHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setRegion(region == null ? null : region.toString())
             .setInstanceGroupManagerResource(instanceGroupManagerResource)
             .build();
@@ -844,22 +747,12 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   InstanceGroupManager instanceGroupManagerResource = InstanceGroupManager.newBuilder().build();
-   *   Operation response = regionInstanceGroupManagerClient.insertRegionInstanceGroupManager(requestId, region.toString(), instanceGroupManagerResource);
+   *   Operation response = regionInstanceGroupManagerClient.insertRegionInstanceGroupManager(region.toString(), instanceGroupManagerResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param region Name of the region scoping this request.
    * @param instanceGroupManagerResource An Instance Group Manager resource. (== resource_for
    *     beta.instanceGroupManagers ==) (== resource_for v1.instanceGroupManagers ==) (==
@@ -869,11 +762,10 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation insertRegionInstanceGroupManager(
-      String requestId, String region, InstanceGroupManager instanceGroupManagerResource) {
+      String region, InstanceGroupManager instanceGroupManagerResource) {
 
     InsertRegionInstanceGroupManagerHttpRequest request =
         InsertRegionInstanceGroupManagerHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setRegion(region)
             .setInstanceGroupManagerResource(instanceGroupManagerResource)
             .build();
@@ -894,11 +786,9 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   InstanceGroupManager instanceGroupManagerResource = InstanceGroupManager.newBuilder().build();
    *   InsertRegionInstanceGroupManagerHttpRequest request = InsertRegionInstanceGroupManagerHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setRegion(region.toString())
    *     .setInstanceGroupManagerResource(instanceGroupManagerResource)
    *     .build();
@@ -929,11 +819,9 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   InstanceGroupManager instanceGroupManagerResource = InstanceGroupManager.newBuilder().build();
    *   InsertRegionInstanceGroupManagerHttpRequest request = InsertRegionInstanceGroupManagerHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setRegion(region.toString())
    *     .setInstanceGroupManagerResource(instanceGroupManagerResource)
    *     .build();
@@ -1221,36 +1109,24 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionInstanceGroupManagerName instanceGroupManager = ProjectRegionInstanceGroupManagerName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
    *   RegionInstanceGroupManagersRecreateRequest regionInstanceGroupManagersRecreateRequestResource = RegionInstanceGroupManagersRecreateRequest.newBuilder().build();
-   *   Operation response = regionInstanceGroupManagerClient.recreateInstancesRegionInstanceGroupManager(requestId, instanceGroupManager, regionInstanceGroupManagersRecreateRequestResource);
+   *   Operation response = regionInstanceGroupManagerClient.recreateInstancesRegionInstanceGroupManager(instanceGroupManager, regionInstanceGroupManagersRecreateRequestResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param instanceGroupManager Name of the managed instance group.
    * @param regionInstanceGroupManagersRecreateRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation recreateInstancesRegionInstanceGroupManager(
-      String requestId,
       ProjectRegionInstanceGroupManagerName instanceGroupManager,
       RegionInstanceGroupManagersRecreateRequest
           regionInstanceGroupManagersRecreateRequestResource) {
 
     RecreateInstancesRegionInstanceGroupManagerHttpRequest request =
         RecreateInstancesRegionInstanceGroupManagerHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setInstanceGroupManager(
                 instanceGroupManager == null ? null : instanceGroupManager.toString())
             .setRegionInstanceGroupManagersRecreateRequestResource(
@@ -1277,36 +1153,24 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionInstanceGroupManagerName instanceGroupManager = ProjectRegionInstanceGroupManagerName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
    *   RegionInstanceGroupManagersRecreateRequest regionInstanceGroupManagersRecreateRequestResource = RegionInstanceGroupManagersRecreateRequest.newBuilder().build();
-   *   Operation response = regionInstanceGroupManagerClient.recreateInstancesRegionInstanceGroupManager(requestId, instanceGroupManager.toString(), regionInstanceGroupManagersRecreateRequestResource);
+   *   Operation response = regionInstanceGroupManagerClient.recreateInstancesRegionInstanceGroupManager(instanceGroupManager.toString(), regionInstanceGroupManagersRecreateRequestResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param instanceGroupManager Name of the managed instance group.
    * @param regionInstanceGroupManagersRecreateRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation recreateInstancesRegionInstanceGroupManager(
-      String requestId,
       String instanceGroupManager,
       RegionInstanceGroupManagersRecreateRequest
           regionInstanceGroupManagersRecreateRequestResource) {
 
     RecreateInstancesRegionInstanceGroupManagerHttpRequest request =
         RecreateInstancesRegionInstanceGroupManagerHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setInstanceGroupManager(instanceGroupManager)
             .setRegionInstanceGroupManagersRecreateRequestResource(
                 regionInstanceGroupManagersRecreateRequestResource)
@@ -1332,11 +1196,9 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionInstanceGroupManagerName instanceGroupManager = ProjectRegionInstanceGroupManagerName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
    *   RegionInstanceGroupManagersRecreateRequest regionInstanceGroupManagersRecreateRequestResource = RegionInstanceGroupManagersRecreateRequest.newBuilder().build();
    *   RecreateInstancesRegionInstanceGroupManagerHttpRequest request = RecreateInstancesRegionInstanceGroupManagerHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setInstanceGroupManager(instanceGroupManager.toString())
    *     .setRegionInstanceGroupManagersRecreateRequestResource(regionInstanceGroupManagersRecreateRequestResource)
    *     .build();
@@ -1371,11 +1233,9 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionInstanceGroupManagerName instanceGroupManager = ProjectRegionInstanceGroupManagerName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
    *   RegionInstanceGroupManagersRecreateRequest regionInstanceGroupManagersRecreateRequestResource = RegionInstanceGroupManagersRecreateRequest.newBuilder().build();
    *   RecreateInstancesRegionInstanceGroupManagerHttpRequest request = RecreateInstancesRegionInstanceGroupManagerHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setInstanceGroupManager(instanceGroupManager.toString())
    *     .setRegionInstanceGroupManagersRecreateRequestResource(regionInstanceGroupManagersRecreateRequestResource)
    *     .build();
@@ -1409,33 +1269,22 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    * <pre><code>
    * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
    *   Integer size = 0;
-   *   String requestId = "";
    *   ProjectRegionInstanceGroupManagerName instanceGroupManager = ProjectRegionInstanceGroupManagerName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
-   *   Operation response = regionInstanceGroupManagerClient.resizeRegionInstanceGroupManager(size, requestId, instanceGroupManager);
+   *   Operation response = regionInstanceGroupManagerClient.resizeRegionInstanceGroupManager(size, instanceGroupManager);
    * }
    * </code></pre>
    *
    * @param size Number of instances that should exist in this instance group manager.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param instanceGroupManager Name of the managed instance group.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation resizeRegionInstanceGroupManager(
-      Integer size, String requestId, ProjectRegionInstanceGroupManagerName instanceGroupManager) {
+      Integer size, ProjectRegionInstanceGroupManagerName instanceGroupManager) {
 
     ResizeRegionInstanceGroupManagerHttpRequest request =
         ResizeRegionInstanceGroupManagerHttpRequest.newBuilder()
             .setSize(size)
-            .setRequestId(requestId)
             .setInstanceGroupManager(
                 instanceGroupManager == null ? null : instanceGroupManager.toString())
             .build();
@@ -1460,33 +1309,22 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    * <pre><code>
    * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
    *   Integer size = 0;
-   *   String requestId = "";
    *   ProjectRegionInstanceGroupManagerName instanceGroupManager = ProjectRegionInstanceGroupManagerName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
-   *   Operation response = regionInstanceGroupManagerClient.resizeRegionInstanceGroupManager(size, requestId, instanceGroupManager.toString());
+   *   Operation response = regionInstanceGroupManagerClient.resizeRegionInstanceGroupManager(size, instanceGroupManager.toString());
    * }
    * </code></pre>
    *
    * @param size Number of instances that should exist in this instance group manager.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param instanceGroupManager Name of the managed instance group.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation resizeRegionInstanceGroupManager(
-      Integer size, String requestId, String instanceGroupManager) {
+      Integer size, String instanceGroupManager) {
 
     ResizeRegionInstanceGroupManagerHttpRequest request =
         ResizeRegionInstanceGroupManagerHttpRequest.newBuilder()
             .setSize(size)
-            .setRequestId(requestId)
             .setInstanceGroupManager(instanceGroupManager)
             .build();
     return resizeRegionInstanceGroupManager(request);
@@ -1510,11 +1348,9 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    * <pre><code>
    * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
    *   Integer size = 0;
-   *   String requestId = "";
    *   ProjectRegionInstanceGroupManagerName instanceGroupManager = ProjectRegionInstanceGroupManagerName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
    *   ResizeRegionInstanceGroupManagerHttpRequest request = ResizeRegionInstanceGroupManagerHttpRequest.newBuilder()
    *     .setSize(size)
-   *     .setRequestId(requestId)
    *     .setInstanceGroupManager(instanceGroupManager.toString())
    *     .build();
    *   Operation response = regionInstanceGroupManagerClient.resizeRegionInstanceGroupManager(request);
@@ -1548,11 +1384,9 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    * <pre><code>
    * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
    *   Integer size = 0;
-   *   String requestId = "";
    *   ProjectRegionInstanceGroupManagerName instanceGroupManager = ProjectRegionInstanceGroupManagerName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
    *   ResizeRegionInstanceGroupManagerHttpRequest request = ResizeRegionInstanceGroupManagerHttpRequest.newBuilder()
    *     .setSize(size)
-   *     .setRequestId(requestId)
    *     .setInstanceGroupManager(instanceGroupManager.toString())
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = regionInstanceGroupManagerClient.resizeRegionInstanceGroupManagerCallable().futureCall(request);
@@ -1576,36 +1410,24 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionInstanceGroupManagerName instanceGroupManager = ProjectRegionInstanceGroupManagerName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
    *   RegionInstanceGroupManagersSetTemplateRequest regionInstanceGroupManagersSetTemplateRequestResource = RegionInstanceGroupManagersSetTemplateRequest.newBuilder().build();
-   *   Operation response = regionInstanceGroupManagerClient.setInstanceTemplateRegionInstanceGroupManager(requestId, instanceGroupManager, regionInstanceGroupManagersSetTemplateRequestResource);
+   *   Operation response = regionInstanceGroupManagerClient.setInstanceTemplateRegionInstanceGroupManager(instanceGroupManager, regionInstanceGroupManagersSetTemplateRequestResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param instanceGroupManager The name of the managed instance group.
    * @param regionInstanceGroupManagersSetTemplateRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation setInstanceTemplateRegionInstanceGroupManager(
-      String requestId,
       ProjectRegionInstanceGroupManagerName instanceGroupManager,
       RegionInstanceGroupManagersSetTemplateRequest
           regionInstanceGroupManagersSetTemplateRequestResource) {
 
     SetInstanceTemplateRegionInstanceGroupManagerHttpRequest request =
         SetInstanceTemplateRegionInstanceGroupManagerHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setInstanceGroupManager(
                 instanceGroupManager == null ? null : instanceGroupManager.toString())
             .setRegionInstanceGroupManagersSetTemplateRequestResource(
@@ -1623,36 +1445,24 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionInstanceGroupManagerName instanceGroupManager = ProjectRegionInstanceGroupManagerName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
    *   RegionInstanceGroupManagersSetTemplateRequest regionInstanceGroupManagersSetTemplateRequestResource = RegionInstanceGroupManagersSetTemplateRequest.newBuilder().build();
-   *   Operation response = regionInstanceGroupManagerClient.setInstanceTemplateRegionInstanceGroupManager(requestId, instanceGroupManager.toString(), regionInstanceGroupManagersSetTemplateRequestResource);
+   *   Operation response = regionInstanceGroupManagerClient.setInstanceTemplateRegionInstanceGroupManager(instanceGroupManager.toString(), regionInstanceGroupManagersSetTemplateRequestResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param instanceGroupManager The name of the managed instance group.
    * @param regionInstanceGroupManagersSetTemplateRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation setInstanceTemplateRegionInstanceGroupManager(
-      String requestId,
       String instanceGroupManager,
       RegionInstanceGroupManagersSetTemplateRequest
           regionInstanceGroupManagersSetTemplateRequestResource) {
 
     SetInstanceTemplateRegionInstanceGroupManagerHttpRequest request =
         SetInstanceTemplateRegionInstanceGroupManagerHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setInstanceGroupManager(instanceGroupManager)
             .setRegionInstanceGroupManagersSetTemplateRequestResource(
                 regionInstanceGroupManagersSetTemplateRequestResource)
@@ -1669,11 +1479,9 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionInstanceGroupManagerName instanceGroupManager = ProjectRegionInstanceGroupManagerName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
    *   RegionInstanceGroupManagersSetTemplateRequest regionInstanceGroupManagersSetTemplateRequestResource = RegionInstanceGroupManagersSetTemplateRequest.newBuilder().build();
    *   SetInstanceTemplateRegionInstanceGroupManagerHttpRequest request = SetInstanceTemplateRegionInstanceGroupManagerHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setInstanceGroupManager(instanceGroupManager.toString())
    *     .setRegionInstanceGroupManagersSetTemplateRequestResource(regionInstanceGroupManagersSetTemplateRequestResource)
    *     .build();
@@ -1699,11 +1507,9 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionInstanceGroupManagerName instanceGroupManager = ProjectRegionInstanceGroupManagerName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
    *   RegionInstanceGroupManagersSetTemplateRequest regionInstanceGroupManagersSetTemplateRequestResource = RegionInstanceGroupManagersSetTemplateRequest.newBuilder().build();
    *   SetInstanceTemplateRegionInstanceGroupManagerHttpRequest request = SetInstanceTemplateRegionInstanceGroupManagerHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setInstanceGroupManager(instanceGroupManager.toString())
    *     .setRegionInstanceGroupManagersSetTemplateRequestResource(regionInstanceGroupManagersSetTemplateRequestResource)
    *     .build();
@@ -1728,36 +1534,24 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionInstanceGroupManagerName instanceGroupManager = ProjectRegionInstanceGroupManagerName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
    *   RegionInstanceGroupManagersSetTargetPoolsRequest regionInstanceGroupManagersSetTargetPoolsRequestResource = RegionInstanceGroupManagersSetTargetPoolsRequest.newBuilder().build();
-   *   Operation response = regionInstanceGroupManagerClient.setTargetPoolsRegionInstanceGroupManager(requestId, instanceGroupManager, regionInstanceGroupManagersSetTargetPoolsRequestResource);
+   *   Operation response = regionInstanceGroupManagerClient.setTargetPoolsRegionInstanceGroupManager(instanceGroupManager, regionInstanceGroupManagersSetTargetPoolsRequestResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param instanceGroupManager Name of the managed instance group.
    * @param regionInstanceGroupManagersSetTargetPoolsRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation setTargetPoolsRegionInstanceGroupManager(
-      String requestId,
       ProjectRegionInstanceGroupManagerName instanceGroupManager,
       RegionInstanceGroupManagersSetTargetPoolsRequest
           regionInstanceGroupManagersSetTargetPoolsRequestResource) {
 
     SetTargetPoolsRegionInstanceGroupManagerHttpRequest request =
         SetTargetPoolsRegionInstanceGroupManagerHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setInstanceGroupManager(
                 instanceGroupManager == null ? null : instanceGroupManager.toString())
             .setRegionInstanceGroupManagersSetTargetPoolsRequestResource(
@@ -1775,36 +1569,24 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionInstanceGroupManagerName instanceGroupManager = ProjectRegionInstanceGroupManagerName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
    *   RegionInstanceGroupManagersSetTargetPoolsRequest regionInstanceGroupManagersSetTargetPoolsRequestResource = RegionInstanceGroupManagersSetTargetPoolsRequest.newBuilder().build();
-   *   Operation response = regionInstanceGroupManagerClient.setTargetPoolsRegionInstanceGroupManager(requestId, instanceGroupManager.toString(), regionInstanceGroupManagersSetTargetPoolsRequestResource);
+   *   Operation response = regionInstanceGroupManagerClient.setTargetPoolsRegionInstanceGroupManager(instanceGroupManager.toString(), regionInstanceGroupManagersSetTargetPoolsRequestResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param instanceGroupManager Name of the managed instance group.
    * @param regionInstanceGroupManagersSetTargetPoolsRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation setTargetPoolsRegionInstanceGroupManager(
-      String requestId,
       String instanceGroupManager,
       RegionInstanceGroupManagersSetTargetPoolsRequest
           regionInstanceGroupManagersSetTargetPoolsRequestResource) {
 
     SetTargetPoolsRegionInstanceGroupManagerHttpRequest request =
         SetTargetPoolsRegionInstanceGroupManagerHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setInstanceGroupManager(instanceGroupManager)
             .setRegionInstanceGroupManagersSetTargetPoolsRequestResource(
                 regionInstanceGroupManagersSetTargetPoolsRequestResource)
@@ -1821,11 +1603,9 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionInstanceGroupManagerName instanceGroupManager = ProjectRegionInstanceGroupManagerName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
    *   RegionInstanceGroupManagersSetTargetPoolsRequest regionInstanceGroupManagersSetTargetPoolsRequestResource = RegionInstanceGroupManagersSetTargetPoolsRequest.newBuilder().build();
    *   SetTargetPoolsRegionInstanceGroupManagerHttpRequest request = SetTargetPoolsRegionInstanceGroupManagerHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setInstanceGroupManager(instanceGroupManager.toString())
    *     .setRegionInstanceGroupManagersSetTargetPoolsRequestResource(regionInstanceGroupManagersSetTargetPoolsRequestResource)
    *     .build();
@@ -1851,11 +1631,9 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionInstanceGroupManagerName instanceGroupManager = ProjectRegionInstanceGroupManagerName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
    *   RegionInstanceGroupManagersSetTargetPoolsRequest regionInstanceGroupManagersSetTargetPoolsRequestResource = RegionInstanceGroupManagersSetTargetPoolsRequest.newBuilder().build();
    *   SetTargetPoolsRegionInstanceGroupManagerHttpRequest request = SetTargetPoolsRegionInstanceGroupManagerHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setInstanceGroupManager(instanceGroupManager.toString())
    *     .setRegionInstanceGroupManagersSetTargetPoolsRequestResource(regionInstanceGroupManagersSetTargetPoolsRequestResource)
    *     .build();

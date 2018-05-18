@@ -135,11 +135,10 @@ public class GlobalForwardingRuleClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String requestId = "requestId37109963";
     ProjectGlobalForwardingRuleName forwardingRule =
         ProjectGlobalForwardingRuleName.of("[PROJECT]", "[FORWARDING_RULE]");
 
-    Operation actualResponse = client.deleteGlobalForwardingRule(requestId, forwardingRule);
+    Operation actualResponse = client.deleteGlobalForwardingRule(forwardingRule);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -166,11 +165,10 @@ public class GlobalForwardingRuleClientTest {
     mockService.addException(exception);
 
     try {
-      String requestId = "requestId37109963";
       ProjectGlobalForwardingRuleName forwardingRule =
           ProjectGlobalForwardingRuleName.of("[PROJECT]", "[FORWARDING_RULE]");
 
-      client.deleteGlobalForwardingRule(requestId, forwardingRule);
+      client.deleteGlobalForwardingRule(forwardingRule);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -309,12 +307,10 @@ public class GlobalForwardingRuleClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String requestId = "requestId37109963";
     ProjectName project = ProjectName.of("[PROJECT]");
     ForwardingRule forwardingRuleResource = ForwardingRule.newBuilder().build();
 
-    Operation actualResponse =
-        client.insertGlobalForwardingRule(requestId, project, forwardingRuleResource);
+    Operation actualResponse = client.insertGlobalForwardingRule(project, forwardingRuleResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -341,11 +337,10 @@ public class GlobalForwardingRuleClientTest {
     mockService.addException(exception);
 
     try {
-      String requestId = "requestId37109963";
       ProjectName project = ProjectName.of("[PROJECT]");
       ForwardingRule forwardingRuleResource = ForwardingRule.newBuilder().build();
 
-      client.insertGlobalForwardingRule(requestId, project, forwardingRuleResource);
+      client.insertGlobalForwardingRule(project, forwardingRuleResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -463,13 +458,12 @@ public class GlobalForwardingRuleClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String requestId = "requestId37109963";
     ProjectGlobalForwardingRuleName forwardingRule =
         ProjectGlobalForwardingRuleName.of("[PROJECT]", "[FORWARDING_RULE]");
     TargetReference targetReferenceResource = TargetReference.newBuilder().build();
 
     Operation actualResponse =
-        client.setTargetGlobalForwardingRule(requestId, forwardingRule, targetReferenceResource);
+        client.setTargetGlobalForwardingRule(forwardingRule, targetReferenceResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -496,12 +490,11 @@ public class GlobalForwardingRuleClientTest {
     mockService.addException(exception);
 
     try {
-      String requestId = "requestId37109963";
       ProjectGlobalForwardingRuleName forwardingRule =
           ProjectGlobalForwardingRuleName.of("[PROJECT]", "[FORWARDING_RULE]");
       TargetReference targetReferenceResource = TargetReference.newBuilder().build();
 
-      client.setTargetGlobalForwardingRule(requestId, forwardingRule, targetReferenceResource);
+      client.setTargetGlobalForwardingRule(forwardingRule, targetReferenceResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

@@ -134,9 +134,8 @@ public class InstanceTemplateClientTest {
 
     ProjectGlobalInstanceTemplateName instanceTemplate =
         ProjectGlobalInstanceTemplateName.of("[PROJECT]", "[INSTANCE_TEMPLATE]");
-    String requestId = "requestId37109963";
 
-    Operation actualResponse = client.deleteInstanceTemplate(instanceTemplate, requestId);
+    Operation actualResponse = client.deleteInstanceTemplate(instanceTemplate);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -165,9 +164,8 @@ public class InstanceTemplateClientTest {
     try {
       ProjectGlobalInstanceTemplateName instanceTemplate =
           ProjectGlobalInstanceTemplateName.of("[PROJECT]", "[INSTANCE_TEMPLATE]");
-      String requestId = "requestId37109963";
 
-      client.deleteInstanceTemplate(instanceTemplate, requestId);
+      client.deleteInstanceTemplate(instanceTemplate);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -284,12 +282,10 @@ public class InstanceTemplateClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String requestId = "requestId37109963";
     ProjectName project = ProjectName.of("[PROJECT]");
     InstanceTemplate instanceTemplateResource = InstanceTemplate.newBuilder().build();
 
-    Operation actualResponse =
-        client.insertInstanceTemplate(requestId, project, instanceTemplateResource);
+    Operation actualResponse = client.insertInstanceTemplate(project, instanceTemplateResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -316,11 +312,10 @@ public class InstanceTemplateClientTest {
     mockService.addException(exception);
 
     try {
-      String requestId = "requestId37109963";
       ProjectName project = ProjectName.of("[PROJECT]");
       InstanceTemplate instanceTemplateResource = InstanceTemplate.newBuilder().build();
 
-      client.insertInstanceTemplate(requestId, project, instanceTemplateResource);
+      client.insertInstanceTemplate(project, instanceTemplateResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

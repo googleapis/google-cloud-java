@@ -43,8 +43,7 @@ import javax.annotation.Generated;
  * <code>
  * try (HttpsHealthCheckClient httpsHealthCheckClient = HttpsHealthCheckClient.create()) {
  *   ProjectGlobalHttpsHealthCheckName httpsHealthCheck = ProjectGlobalHttpsHealthCheckName.of("[PROJECT]", "[HTTPS_HEALTH_CHECK]");
- *   String requestId = "";
- *   Operation response = httpsHealthCheckClient.deleteHttpsHealthCheck(httpsHealthCheck, requestId);
+ *   Operation response = httpsHealthCheckClient.deleteHttpsHealthCheck(httpsHealthCheck);
  * }
  * </code>
  * </pre>
@@ -163,31 +162,20 @@ public class HttpsHealthCheckClient implements BackgroundResource {
    * <pre><code>
    * try (HttpsHealthCheckClient httpsHealthCheckClient = HttpsHealthCheckClient.create()) {
    *   ProjectGlobalHttpsHealthCheckName httpsHealthCheck = ProjectGlobalHttpsHealthCheckName.of("[PROJECT]", "[HTTPS_HEALTH_CHECK]");
-   *   String requestId = "";
-   *   Operation response = httpsHealthCheckClient.deleteHttpsHealthCheck(httpsHealthCheck, requestId);
+   *   Operation response = httpsHealthCheckClient.deleteHttpsHealthCheck(httpsHealthCheck);
    * }
    * </code></pre>
    *
    * @param httpsHealthCheck Name of the HttpsHealthCheck resource to delete.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation deleteHttpsHealthCheck(
-      ProjectGlobalHttpsHealthCheckName httpsHealthCheck, String requestId) {
+      ProjectGlobalHttpsHealthCheckName httpsHealthCheck) {
 
     DeleteHttpsHealthCheckHttpRequest request =
         DeleteHttpsHealthCheckHttpRequest.newBuilder()
             .setHttpsHealthCheck(httpsHealthCheck == null ? null : httpsHealthCheck.toString())
-            .setRequestId(requestId)
             .build();
     return deleteHttpsHealthCheck(request);
   }
@@ -201,30 +189,19 @@ public class HttpsHealthCheckClient implements BackgroundResource {
    * <pre><code>
    * try (HttpsHealthCheckClient httpsHealthCheckClient = HttpsHealthCheckClient.create()) {
    *   ProjectGlobalHttpsHealthCheckName httpsHealthCheck = ProjectGlobalHttpsHealthCheckName.of("[PROJECT]", "[HTTPS_HEALTH_CHECK]");
-   *   String requestId = "";
-   *   Operation response = httpsHealthCheckClient.deleteHttpsHealthCheck(httpsHealthCheck.toString(), requestId);
+   *   Operation response = httpsHealthCheckClient.deleteHttpsHealthCheck(httpsHealthCheck.toString());
    * }
    * </code></pre>
    *
    * @param httpsHealthCheck Name of the HttpsHealthCheck resource to delete.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteHttpsHealthCheck(String httpsHealthCheck, String requestId) {
+  public final Operation deleteHttpsHealthCheck(String httpsHealthCheck) {
 
     DeleteHttpsHealthCheckHttpRequest request =
         DeleteHttpsHealthCheckHttpRequest.newBuilder()
             .setHttpsHealthCheck(httpsHealthCheck)
-            .setRequestId(requestId)
             .build();
     return deleteHttpsHealthCheck(request);
   }
@@ -238,10 +215,8 @@ public class HttpsHealthCheckClient implements BackgroundResource {
    * <pre><code>
    * try (HttpsHealthCheckClient httpsHealthCheckClient = HttpsHealthCheckClient.create()) {
    *   ProjectGlobalHttpsHealthCheckName httpsHealthCheck = ProjectGlobalHttpsHealthCheckName.of("[PROJECT]", "[HTTPS_HEALTH_CHECK]");
-   *   String requestId = "";
    *   DeleteHttpsHealthCheckHttpRequest request = DeleteHttpsHealthCheckHttpRequest.newBuilder()
    *     .setHttpsHealthCheck(httpsHealthCheck.toString())
-   *     .setRequestId(requestId)
    *     .build();
    *   Operation response = httpsHealthCheckClient.deleteHttpsHealthCheck(request);
    * }
@@ -264,10 +239,8 @@ public class HttpsHealthCheckClient implements BackgroundResource {
    * <pre><code>
    * try (HttpsHealthCheckClient httpsHealthCheckClient = HttpsHealthCheckClient.create()) {
    *   ProjectGlobalHttpsHealthCheckName httpsHealthCheck = ProjectGlobalHttpsHealthCheckName.of("[PROJECT]", "[HTTPS_HEALTH_CHECK]");
-   *   String requestId = "";
    *   DeleteHttpsHealthCheckHttpRequest request = DeleteHttpsHealthCheckHttpRequest.newBuilder()
    *     .setHttpsHealthCheck(httpsHealthCheck.toString())
-   *     .setRequestId(requestId)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = httpsHealthCheckClient.deleteHttpsHealthCheckCallable().futureCall(request);
    *   // Do something
@@ -393,22 +366,12 @@ public class HttpsHealthCheckClient implements BackgroundResource {
    *
    * <pre><code>
    * try (HttpsHealthCheckClient httpsHealthCheckClient = HttpsHealthCheckClient.create()) {
-   *   String requestId = "";
    *   ProjectName project = ProjectName.of("[PROJECT]");
    *   HttpsHealthCheck2 httpsHealthCheckResource = HttpsHealthCheck2.newBuilder().build();
-   *   Operation response = httpsHealthCheckClient.insertHttpsHealthCheck(requestId, project, httpsHealthCheckResource);
+   *   Operation response = httpsHealthCheckClient.insertHttpsHealthCheck(project, httpsHealthCheckResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param project Project ID for this request.
    * @param httpsHealthCheckResource An HttpsHealthCheck resource. This resource defines a template
    *     for how individual instances should be checked for health, via HTTPS.
@@ -416,11 +379,10 @@ public class HttpsHealthCheckClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation insertHttpsHealthCheck(
-      String requestId, ProjectName project, HttpsHealthCheck2 httpsHealthCheckResource) {
+      ProjectName project, HttpsHealthCheck2 httpsHealthCheckResource) {
 
     InsertHttpsHealthCheckHttpRequest request =
         InsertHttpsHealthCheckHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setProject(project == null ? null : project.toString())
             .setHttpsHealthCheckResource(httpsHealthCheckResource)
             .build();
@@ -436,22 +398,12 @@ public class HttpsHealthCheckClient implements BackgroundResource {
    *
    * <pre><code>
    * try (HttpsHealthCheckClient httpsHealthCheckClient = HttpsHealthCheckClient.create()) {
-   *   String requestId = "";
    *   ProjectName project = ProjectName.of("[PROJECT]");
    *   HttpsHealthCheck2 httpsHealthCheckResource = HttpsHealthCheck2.newBuilder().build();
-   *   Operation response = httpsHealthCheckClient.insertHttpsHealthCheck(requestId, project.toString(), httpsHealthCheckResource);
+   *   Operation response = httpsHealthCheckClient.insertHttpsHealthCheck(project.toString(), httpsHealthCheckResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param project Project ID for this request.
    * @param httpsHealthCheckResource An HttpsHealthCheck resource. This resource defines a template
    *     for how individual instances should be checked for health, via HTTPS.
@@ -459,11 +411,10 @@ public class HttpsHealthCheckClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation insertHttpsHealthCheck(
-      String requestId, String project, HttpsHealthCheck2 httpsHealthCheckResource) {
+      String project, HttpsHealthCheck2 httpsHealthCheckResource) {
 
     InsertHttpsHealthCheckHttpRequest request =
         InsertHttpsHealthCheckHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setProject(project)
             .setHttpsHealthCheckResource(httpsHealthCheckResource)
             .build();
@@ -479,11 +430,9 @@ public class HttpsHealthCheckClient implements BackgroundResource {
    *
    * <pre><code>
    * try (HttpsHealthCheckClient httpsHealthCheckClient = HttpsHealthCheckClient.create()) {
-   *   String requestId = "";
    *   ProjectName project = ProjectName.of("[PROJECT]");
    *   HttpsHealthCheck2 httpsHealthCheckResource = HttpsHealthCheck2.newBuilder().build();
    *   InsertHttpsHealthCheckHttpRequest request = InsertHttpsHealthCheckHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setProject(project.toString())
    *     .setHttpsHealthCheckResource(httpsHealthCheckResource)
    *     .build();
@@ -508,11 +457,9 @@ public class HttpsHealthCheckClient implements BackgroundResource {
    *
    * <pre><code>
    * try (HttpsHealthCheckClient httpsHealthCheckClient = HttpsHealthCheckClient.create()) {
-   *   String requestId = "";
    *   ProjectName project = ProjectName.of("[PROJECT]");
    *   HttpsHealthCheck2 httpsHealthCheckResource = HttpsHealthCheck2.newBuilder().build();
    *   InsertHttpsHealthCheckHttpRequest request = InsertHttpsHealthCheckHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setProject(project.toString())
    *     .setHttpsHealthCheckResource(httpsHealthCheckResource)
    *     .build();
@@ -677,22 +624,12 @@ public class HttpsHealthCheckClient implements BackgroundResource {
    * <pre><code>
    * try (HttpsHealthCheckClient httpsHealthCheckClient = HttpsHealthCheckClient.create()) {
    *   ProjectGlobalHttpsHealthCheckName httpsHealthCheck = ProjectGlobalHttpsHealthCheckName.of("[PROJECT]", "[HTTPS_HEALTH_CHECK]");
-   *   String requestId = "";
    *   HttpsHealthCheck2 httpsHealthCheckResource = HttpsHealthCheck2.newBuilder().build();
-   *   Operation response = httpsHealthCheckClient.patchHttpsHealthCheck(httpsHealthCheck, requestId, httpsHealthCheckResource);
+   *   Operation response = httpsHealthCheckClient.patchHttpsHealthCheck(httpsHealthCheck, httpsHealthCheckResource);
    * }
    * </code></pre>
    *
    * @param httpsHealthCheck Name of the HttpsHealthCheck resource to patch.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param httpsHealthCheckResource An HttpsHealthCheck resource. This resource defines a template
    *     for how individual instances should be checked for health, via HTTPS.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -700,13 +637,11 @@ public class HttpsHealthCheckClient implements BackgroundResource {
   @BetaApi
   public final Operation patchHttpsHealthCheck(
       ProjectGlobalHttpsHealthCheckName httpsHealthCheck,
-      String requestId,
       HttpsHealthCheck2 httpsHealthCheckResource) {
 
     PatchHttpsHealthCheckHttpRequest request =
         PatchHttpsHealthCheckHttpRequest.newBuilder()
             .setHttpsHealthCheck(httpsHealthCheck == null ? null : httpsHealthCheck.toString())
-            .setRequestId(requestId)
             .setHttpsHealthCheckResource(httpsHealthCheckResource)
             .build();
     return patchHttpsHealthCheck(request);
@@ -723,34 +658,23 @@ public class HttpsHealthCheckClient implements BackgroundResource {
    * <pre><code>
    * try (HttpsHealthCheckClient httpsHealthCheckClient = HttpsHealthCheckClient.create()) {
    *   ProjectGlobalHttpsHealthCheckName httpsHealthCheck = ProjectGlobalHttpsHealthCheckName.of("[PROJECT]", "[HTTPS_HEALTH_CHECK]");
-   *   String requestId = "";
    *   HttpsHealthCheck2 httpsHealthCheckResource = HttpsHealthCheck2.newBuilder().build();
-   *   Operation response = httpsHealthCheckClient.patchHttpsHealthCheck(httpsHealthCheck.toString(), requestId, httpsHealthCheckResource);
+   *   Operation response = httpsHealthCheckClient.patchHttpsHealthCheck(httpsHealthCheck.toString(), httpsHealthCheckResource);
    * }
    * </code></pre>
    *
    * @param httpsHealthCheck Name of the HttpsHealthCheck resource to patch.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param httpsHealthCheckResource An HttpsHealthCheck resource. This resource defines a template
    *     for how individual instances should be checked for health, via HTTPS.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation patchHttpsHealthCheck(
-      String httpsHealthCheck, String requestId, HttpsHealthCheck2 httpsHealthCheckResource) {
+      String httpsHealthCheck, HttpsHealthCheck2 httpsHealthCheckResource) {
 
     PatchHttpsHealthCheckHttpRequest request =
         PatchHttpsHealthCheckHttpRequest.newBuilder()
             .setHttpsHealthCheck(httpsHealthCheck)
-            .setRequestId(requestId)
             .setHttpsHealthCheckResource(httpsHealthCheckResource)
             .build();
     return patchHttpsHealthCheck(request);
@@ -767,11 +691,9 @@ public class HttpsHealthCheckClient implements BackgroundResource {
    * <pre><code>
    * try (HttpsHealthCheckClient httpsHealthCheckClient = HttpsHealthCheckClient.create()) {
    *   ProjectGlobalHttpsHealthCheckName httpsHealthCheck = ProjectGlobalHttpsHealthCheckName.of("[PROJECT]", "[HTTPS_HEALTH_CHECK]");
-   *   String requestId = "";
    *   HttpsHealthCheck2 httpsHealthCheckResource = HttpsHealthCheck2.newBuilder().build();
    *   PatchHttpsHealthCheckHttpRequest request = PatchHttpsHealthCheckHttpRequest.newBuilder()
    *     .setHttpsHealthCheck(httpsHealthCheck.toString())
-   *     .setRequestId(requestId)
    *     .setHttpsHealthCheckResource(httpsHealthCheckResource)
    *     .build();
    *   Operation response = httpsHealthCheckClient.patchHttpsHealthCheck(request);
@@ -797,11 +719,9 @@ public class HttpsHealthCheckClient implements BackgroundResource {
    * <pre><code>
    * try (HttpsHealthCheckClient httpsHealthCheckClient = HttpsHealthCheckClient.create()) {
    *   ProjectGlobalHttpsHealthCheckName httpsHealthCheck = ProjectGlobalHttpsHealthCheckName.of("[PROJECT]", "[HTTPS_HEALTH_CHECK]");
-   *   String requestId = "";
    *   HttpsHealthCheck2 httpsHealthCheckResource = HttpsHealthCheck2.newBuilder().build();
    *   PatchHttpsHealthCheckHttpRequest request = PatchHttpsHealthCheckHttpRequest.newBuilder()
    *     .setHttpsHealthCheck(httpsHealthCheck.toString())
-   *     .setRequestId(requestId)
    *     .setHttpsHealthCheckResource(httpsHealthCheckResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = httpsHealthCheckClient.patchHttpsHealthCheckCallable().futureCall(request);
@@ -826,22 +746,12 @@ public class HttpsHealthCheckClient implements BackgroundResource {
    * <pre><code>
    * try (HttpsHealthCheckClient httpsHealthCheckClient = HttpsHealthCheckClient.create()) {
    *   ProjectGlobalHttpsHealthCheckName httpsHealthCheck = ProjectGlobalHttpsHealthCheckName.of("[PROJECT]", "[HTTPS_HEALTH_CHECK]");
-   *   String requestId = "";
    *   HttpsHealthCheck2 httpsHealthCheckResource = HttpsHealthCheck2.newBuilder().build();
-   *   Operation response = httpsHealthCheckClient.updateHttpsHealthCheck(httpsHealthCheck, requestId, httpsHealthCheckResource);
+   *   Operation response = httpsHealthCheckClient.updateHttpsHealthCheck(httpsHealthCheck, httpsHealthCheckResource);
    * }
    * </code></pre>
    *
    * @param httpsHealthCheck Name of the HttpsHealthCheck resource to update.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param httpsHealthCheckResource An HttpsHealthCheck resource. This resource defines a template
    *     for how individual instances should be checked for health, via HTTPS.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -849,13 +759,11 @@ public class HttpsHealthCheckClient implements BackgroundResource {
   @BetaApi
   public final Operation updateHttpsHealthCheck(
       ProjectGlobalHttpsHealthCheckName httpsHealthCheck,
-      String requestId,
       HttpsHealthCheck2 httpsHealthCheckResource) {
 
     UpdateHttpsHealthCheckHttpRequest request =
         UpdateHttpsHealthCheckHttpRequest.newBuilder()
             .setHttpsHealthCheck(httpsHealthCheck == null ? null : httpsHealthCheck.toString())
-            .setRequestId(requestId)
             .setHttpsHealthCheckResource(httpsHealthCheckResource)
             .build();
     return updateHttpsHealthCheck(request);
@@ -871,34 +779,23 @@ public class HttpsHealthCheckClient implements BackgroundResource {
    * <pre><code>
    * try (HttpsHealthCheckClient httpsHealthCheckClient = HttpsHealthCheckClient.create()) {
    *   ProjectGlobalHttpsHealthCheckName httpsHealthCheck = ProjectGlobalHttpsHealthCheckName.of("[PROJECT]", "[HTTPS_HEALTH_CHECK]");
-   *   String requestId = "";
    *   HttpsHealthCheck2 httpsHealthCheckResource = HttpsHealthCheck2.newBuilder().build();
-   *   Operation response = httpsHealthCheckClient.updateHttpsHealthCheck(httpsHealthCheck.toString(), requestId, httpsHealthCheckResource);
+   *   Operation response = httpsHealthCheckClient.updateHttpsHealthCheck(httpsHealthCheck.toString(), httpsHealthCheckResource);
    * }
    * </code></pre>
    *
    * @param httpsHealthCheck Name of the HttpsHealthCheck resource to update.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param httpsHealthCheckResource An HttpsHealthCheck resource. This resource defines a template
    *     for how individual instances should be checked for health, via HTTPS.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation updateHttpsHealthCheck(
-      String httpsHealthCheck, String requestId, HttpsHealthCheck2 httpsHealthCheckResource) {
+      String httpsHealthCheck, HttpsHealthCheck2 httpsHealthCheckResource) {
 
     UpdateHttpsHealthCheckHttpRequest request =
         UpdateHttpsHealthCheckHttpRequest.newBuilder()
             .setHttpsHealthCheck(httpsHealthCheck)
-            .setRequestId(requestId)
             .setHttpsHealthCheckResource(httpsHealthCheckResource)
             .build();
     return updateHttpsHealthCheck(request);
@@ -914,11 +811,9 @@ public class HttpsHealthCheckClient implements BackgroundResource {
    * <pre><code>
    * try (HttpsHealthCheckClient httpsHealthCheckClient = HttpsHealthCheckClient.create()) {
    *   ProjectGlobalHttpsHealthCheckName httpsHealthCheck = ProjectGlobalHttpsHealthCheckName.of("[PROJECT]", "[HTTPS_HEALTH_CHECK]");
-   *   String requestId = "";
    *   HttpsHealthCheck2 httpsHealthCheckResource = HttpsHealthCheck2.newBuilder().build();
    *   UpdateHttpsHealthCheckHttpRequest request = UpdateHttpsHealthCheckHttpRequest.newBuilder()
    *     .setHttpsHealthCheck(httpsHealthCheck.toString())
-   *     .setRequestId(requestId)
    *     .setHttpsHealthCheckResource(httpsHealthCheckResource)
    *     .build();
    *   Operation response = httpsHealthCheckClient.updateHttpsHealthCheck(request);
@@ -943,11 +838,9 @@ public class HttpsHealthCheckClient implements BackgroundResource {
    * <pre><code>
    * try (HttpsHealthCheckClient httpsHealthCheckClient = HttpsHealthCheckClient.create()) {
    *   ProjectGlobalHttpsHealthCheckName httpsHealthCheck = ProjectGlobalHttpsHealthCheckName.of("[PROJECT]", "[HTTPS_HEALTH_CHECK]");
-   *   String requestId = "";
    *   HttpsHealthCheck2 httpsHealthCheckResource = HttpsHealthCheck2.newBuilder().build();
    *   UpdateHttpsHealthCheckHttpRequest request = UpdateHttpsHealthCheckHttpRequest.newBuilder()
    *     .setHttpsHealthCheck(httpsHealthCheck.toString())
-   *     .setRequestId(requestId)
    *     .setHttpsHealthCheckResource(httpsHealthCheckResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = httpsHealthCheckClient.updateHttpsHealthCheckCallable().futureCall(request);

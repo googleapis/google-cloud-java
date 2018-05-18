@@ -42,9 +42,8 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (ForwardingRuleClient forwardingRuleClient = ForwardingRuleClient.create()) {
- *   String requestId = "";
  *   ProjectRegionForwardingRuleName forwardingRule = ProjectRegionForwardingRuleName.of("[PROJECT]", "[REGION]", "[FORWARDING_RULE]");
- *   Operation response = forwardingRuleClient.deleteForwardingRule(requestId, forwardingRule);
+ *   Operation response = forwardingRuleClient.deleteForwardingRule(forwardingRule);
  * }
  * </code>
  * </pre>
@@ -302,31 +301,19 @@ public class ForwardingRuleClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ForwardingRuleClient forwardingRuleClient = ForwardingRuleClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionForwardingRuleName forwardingRule = ProjectRegionForwardingRuleName.of("[PROJECT]", "[REGION]", "[FORWARDING_RULE]");
-   *   Operation response = forwardingRuleClient.deleteForwardingRule(requestId, forwardingRule);
+   *   Operation response = forwardingRuleClient.deleteForwardingRule(forwardingRule);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param forwardingRule Name of the ForwardingRule resource to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteForwardingRule(
-      String requestId, ProjectRegionForwardingRuleName forwardingRule) {
+  public final Operation deleteForwardingRule(ProjectRegionForwardingRuleName forwardingRule) {
 
     DeleteForwardingRuleHttpRequest request =
         DeleteForwardingRuleHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setForwardingRule(forwardingRule == null ? null : forwardingRule.toString())
             .build();
     return deleteForwardingRule(request);
@@ -340,32 +327,19 @@ public class ForwardingRuleClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ForwardingRuleClient forwardingRuleClient = ForwardingRuleClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionForwardingRuleName forwardingRule = ProjectRegionForwardingRuleName.of("[PROJECT]", "[REGION]", "[FORWARDING_RULE]");
-   *   Operation response = forwardingRuleClient.deleteForwardingRule(requestId, forwardingRule.toString());
+   *   Operation response = forwardingRuleClient.deleteForwardingRule(forwardingRule.toString());
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param forwardingRule Name of the ForwardingRule resource to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteForwardingRule(String requestId, String forwardingRule) {
+  public final Operation deleteForwardingRule(String forwardingRule) {
 
     DeleteForwardingRuleHttpRequest request =
-        DeleteForwardingRuleHttpRequest.newBuilder()
-            .setRequestId(requestId)
-            .setForwardingRule(forwardingRule)
-            .build();
+        DeleteForwardingRuleHttpRequest.newBuilder().setForwardingRule(forwardingRule).build();
     return deleteForwardingRule(request);
   }
 
@@ -377,10 +351,8 @@ public class ForwardingRuleClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ForwardingRuleClient forwardingRuleClient = ForwardingRuleClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionForwardingRuleName forwardingRule = ProjectRegionForwardingRuleName.of("[PROJECT]", "[REGION]", "[FORWARDING_RULE]");
    *   DeleteForwardingRuleHttpRequest request = DeleteForwardingRuleHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setForwardingRule(forwardingRule.toString())
    *     .build();
    *   Operation response = forwardingRuleClient.deleteForwardingRule(request);
@@ -403,10 +375,8 @@ public class ForwardingRuleClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ForwardingRuleClient forwardingRuleClient = ForwardingRuleClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionForwardingRuleName forwardingRule = ProjectRegionForwardingRuleName.of("[PROJECT]", "[REGION]", "[FORWARDING_RULE]");
    *   DeleteForwardingRuleHttpRequest request = DeleteForwardingRuleHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setForwardingRule(forwardingRule.toString())
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = forwardingRuleClient.deleteForwardingRuleCallable().futureCall(request);
@@ -528,22 +498,12 @@ public class ForwardingRuleClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ForwardingRuleClient forwardingRuleClient = ForwardingRuleClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   ForwardingRule forwardingRuleResource = ForwardingRule.newBuilder().build();
-   *   Operation response = forwardingRuleClient.insertForwardingRule(requestId, region, forwardingRuleResource);
+   *   Operation response = forwardingRuleClient.insertForwardingRule(region, forwardingRuleResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param region Name of the region scoping this request.
    * @param forwardingRuleResource A ForwardingRule resource. A ForwardingRule resource specifies
    *     which pool of target virtual machines to forward a packet to if it matches the given
@@ -555,11 +515,10 @@ public class ForwardingRuleClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation insertForwardingRule(
-      String requestId, ProjectRegionName region, ForwardingRule forwardingRuleResource) {
+      ProjectRegionName region, ForwardingRule forwardingRuleResource) {
 
     InsertForwardingRuleHttpRequest request =
         InsertForwardingRuleHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setRegion(region == null ? null : region.toString())
             .setForwardingRuleResource(forwardingRuleResource)
             .build();
@@ -575,22 +534,12 @@ public class ForwardingRuleClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ForwardingRuleClient forwardingRuleClient = ForwardingRuleClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   ForwardingRule forwardingRuleResource = ForwardingRule.newBuilder().build();
-   *   Operation response = forwardingRuleClient.insertForwardingRule(requestId, region.toString(), forwardingRuleResource);
+   *   Operation response = forwardingRuleClient.insertForwardingRule(region.toString(), forwardingRuleResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param region Name of the region scoping this request.
    * @param forwardingRuleResource A ForwardingRule resource. A ForwardingRule resource specifies
    *     which pool of target virtual machines to forward a packet to if it matches the given
@@ -602,11 +551,10 @@ public class ForwardingRuleClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation insertForwardingRule(
-      String requestId, String region, ForwardingRule forwardingRuleResource) {
+      String region, ForwardingRule forwardingRuleResource) {
 
     InsertForwardingRuleHttpRequest request =
         InsertForwardingRuleHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setRegion(region)
             .setForwardingRuleResource(forwardingRuleResource)
             .build();
@@ -622,11 +570,9 @@ public class ForwardingRuleClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ForwardingRuleClient forwardingRuleClient = ForwardingRuleClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   ForwardingRule forwardingRuleResource = ForwardingRule.newBuilder().build();
    *   InsertForwardingRuleHttpRequest request = InsertForwardingRuleHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setRegion(region.toString())
    *     .setForwardingRuleResource(forwardingRuleResource)
    *     .build();
@@ -651,11 +597,9 @@ public class ForwardingRuleClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ForwardingRuleClient forwardingRuleClient = ForwardingRuleClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   ForwardingRule forwardingRuleResource = ForwardingRule.newBuilder().build();
    *   InsertForwardingRuleHttpRequest request = InsertForwardingRuleHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setRegion(region.toString())
    *     .setForwardingRuleResource(forwardingRuleResource)
    *     .build();
@@ -818,35 +762,22 @@ public class ForwardingRuleClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ForwardingRuleClient forwardingRuleClient = ForwardingRuleClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionForwardingRuleName forwardingRule = ProjectRegionForwardingRuleName.of("[PROJECT]", "[REGION]", "[FORWARDING_RULE]");
    *   TargetReference targetReferenceResource = TargetReference.newBuilder().build();
-   *   Operation response = forwardingRuleClient.setTargetForwardingRule(requestId, forwardingRule, targetReferenceResource);
+   *   Operation response = forwardingRuleClient.setTargetForwardingRule(forwardingRule, targetReferenceResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param forwardingRule Name of the ForwardingRule resource in which target is to be set.
    * @param targetReferenceResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation setTargetForwardingRule(
-      String requestId,
-      ProjectRegionForwardingRuleName forwardingRule,
-      TargetReference targetReferenceResource) {
+      ProjectRegionForwardingRuleName forwardingRule, TargetReference targetReferenceResource) {
 
     SetTargetForwardingRuleHttpRequest request =
         SetTargetForwardingRuleHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setForwardingRule(forwardingRule == null ? null : forwardingRule.toString())
             .setTargetReferenceResource(targetReferenceResource)
             .build();
@@ -862,33 +793,22 @@ public class ForwardingRuleClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ForwardingRuleClient forwardingRuleClient = ForwardingRuleClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionForwardingRuleName forwardingRule = ProjectRegionForwardingRuleName.of("[PROJECT]", "[REGION]", "[FORWARDING_RULE]");
    *   TargetReference targetReferenceResource = TargetReference.newBuilder().build();
-   *   Operation response = forwardingRuleClient.setTargetForwardingRule(requestId, forwardingRule.toString(), targetReferenceResource);
+   *   Operation response = forwardingRuleClient.setTargetForwardingRule(forwardingRule.toString(), targetReferenceResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param forwardingRule Name of the ForwardingRule resource in which target is to be set.
    * @param targetReferenceResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation setTargetForwardingRule(
-      String requestId, String forwardingRule, TargetReference targetReferenceResource) {
+      String forwardingRule, TargetReference targetReferenceResource) {
 
     SetTargetForwardingRuleHttpRequest request =
         SetTargetForwardingRuleHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setForwardingRule(forwardingRule)
             .setTargetReferenceResource(targetReferenceResource)
             .build();
@@ -904,11 +824,9 @@ public class ForwardingRuleClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ForwardingRuleClient forwardingRuleClient = ForwardingRuleClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionForwardingRuleName forwardingRule = ProjectRegionForwardingRuleName.of("[PROJECT]", "[REGION]", "[FORWARDING_RULE]");
    *   TargetReference targetReferenceResource = TargetReference.newBuilder().build();
    *   SetTargetForwardingRuleHttpRequest request = SetTargetForwardingRuleHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setForwardingRule(forwardingRule.toString())
    *     .setTargetReferenceResource(targetReferenceResource)
    *     .build();
@@ -933,11 +851,9 @@ public class ForwardingRuleClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ForwardingRuleClient forwardingRuleClient = ForwardingRuleClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionForwardingRuleName forwardingRule = ProjectRegionForwardingRuleName.of("[PROJECT]", "[REGION]", "[FORWARDING_RULE]");
    *   TargetReference targetReferenceResource = TargetReference.newBuilder().build();
    *   SetTargetForwardingRuleHttpRequest request = SetTargetForwardingRuleHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setForwardingRule(forwardingRule.toString())
    *     .setTargetReferenceResource(targetReferenceResource)
    *     .build();

@@ -206,9 +206,8 @@ public class AutoscalerClientTest {
 
     ProjectZoneAutoscalerName autoscaler =
         ProjectZoneAutoscalerName.of("[PROJECT]", "[ZONE]", "[AUTOSCALER]");
-    String requestId = "requestId37109963";
 
-    Operation actualResponse = client.deleteAutoscaler(autoscaler, requestId);
+    Operation actualResponse = client.deleteAutoscaler(autoscaler);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -237,9 +236,8 @@ public class AutoscalerClientTest {
     try {
       ProjectZoneAutoscalerName autoscaler =
           ProjectZoneAutoscalerName.of("[PROJECT]", "[ZONE]", "[AUTOSCALER]");
-      String requestId = "requestId37109963";
 
-      client.deleteAutoscaler(autoscaler, requestId);
+      client.deleteAutoscaler(autoscaler);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -365,10 +363,9 @@ public class AutoscalerClientTest {
     mockService.addResponse(expectedResponse);
 
     ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
-    String requestId = "requestId37109963";
     Autoscaler autoscalerResource = Autoscaler.newBuilder().build();
 
-    Operation actualResponse = client.insertAutoscaler(zone, requestId, autoscalerResource);
+    Operation actualResponse = client.insertAutoscaler(zone, autoscalerResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -396,10 +393,9 @@ public class AutoscalerClientTest {
 
     try {
       ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
-      String requestId = "requestId37109963";
       Autoscaler autoscalerResource = Autoscaler.newBuilder().build();
 
-      client.insertAutoscaler(zone, requestId, autoscalerResource);
+      client.insertAutoscaler(zone, autoscalerResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -518,11 +514,9 @@ public class AutoscalerClientTest {
 
     String autoscaler = "autoscaler517258967";
     ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
-    String requestId = "requestId37109963";
     Autoscaler autoscalerResource = Autoscaler.newBuilder().build();
 
-    Operation actualResponse =
-        client.patchAutoscaler(autoscaler, zone, requestId, autoscalerResource);
+    Operation actualResponse = client.patchAutoscaler(autoscaler, zone, autoscalerResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -551,10 +545,9 @@ public class AutoscalerClientTest {
     try {
       String autoscaler = "autoscaler517258967";
       ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
-      String requestId = "requestId37109963";
       Autoscaler autoscalerResource = Autoscaler.newBuilder().build();
 
-      client.patchAutoscaler(autoscaler, zone, requestId, autoscalerResource);
+      client.patchAutoscaler(autoscaler, zone, autoscalerResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -613,11 +606,9 @@ public class AutoscalerClientTest {
 
     String autoscaler = "autoscaler517258967";
     ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
-    String requestId = "requestId37109963";
     Autoscaler autoscalerResource = Autoscaler.newBuilder().build();
 
-    Operation actualResponse =
-        client.updateAutoscaler(autoscaler, zone, requestId, autoscalerResource);
+    Operation actualResponse = client.updateAutoscaler(autoscaler, zone, autoscalerResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -646,10 +637,9 @@ public class AutoscalerClientTest {
     try {
       String autoscaler = "autoscaler517258967";
       ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
-      String requestId = "requestId37109963";
       Autoscaler autoscalerResource = Autoscaler.newBuilder().build();
 
-      client.updateAutoscaler(autoscaler, zone, requestId, autoscalerResource);
+      client.updateAutoscaler(autoscaler, zone, autoscalerResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

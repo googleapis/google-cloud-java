@@ -71,7 +71,6 @@ public class HttpJsonRouterStub extends RouterStub {
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<AggregatedListRoutersHttpRequest>newBuilder()
-                      .setRequestInstance(AggregatedListRoutersHttpRequest.getDefaultInstance())
                       .setPathTemplate(PathTemplate.create("{project}/aggregated/routers"))
                       .setQueryParams(
                           Sets.<String>newHashSet("filter", "maxResults", "orderBy", "pageToken"))
@@ -92,7 +91,6 @@ public class HttpJsonRouterStub extends RouterStub {
               .setHttpMethod(HttpMethods.DELETE)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<DeleteRouterHttpRequest>newBuilder()
-                      .setRequestInstance(DeleteRouterHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create("{project}/regions/{region}/routers/{router}"))
                       .setQueryParams(Sets.<String>newHashSet("requestId"))
@@ -112,7 +110,6 @@ public class HttpJsonRouterStub extends RouterStub {
           .setHttpMethod(HttpMethods.GET)
           .setRequestFormatter(
               ApiMessageHttpRequestFormatter.<GetRouterHttpRequest>newBuilder()
-                  .setRequestInstance(GetRouterHttpRequest.getDefaultInstance())
                   .setPathTemplate(
                       PathTemplate.create("{project}/regions/{region}/routers/{router}"))
                   .setQueryParams(Sets.<String>newHashSet())
@@ -133,7 +130,6 @@ public class HttpJsonRouterStub extends RouterStub {
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<GetRouterStatusRouterHttpRequest>newBuilder()
-                      .setRequestInstance(GetRouterStatusRouterHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/regions/{region}/routers/{router}/getRouterStatus"))
@@ -155,7 +151,6 @@ public class HttpJsonRouterStub extends RouterStub {
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<InsertRouterHttpRequest>newBuilder()
-                      .setRequestInstance(InsertRouterHttpRequest.getDefaultInstance())
                       .setPathTemplate(PathTemplate.create("{project}/regions/{region}/routers"))
                       .setQueryParams(Sets.<String>newHashSet("requestId"))
                       .setResourceNameFactory(ProjectRegionName.newFactory())
@@ -175,7 +170,6 @@ public class HttpJsonRouterStub extends RouterStub {
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<ListRoutersHttpRequest>newBuilder()
-                      .setRequestInstance(ListRoutersHttpRequest.getDefaultInstance())
                       .setPathTemplate(PathTemplate.create("{project}/regions/{region}/routers"))
                       .setQueryParams(
                           Sets.<String>newHashSet("filter", "maxResults", "orderBy", "pageToken"))
@@ -196,7 +190,6 @@ public class HttpJsonRouterStub extends RouterStub {
               .setHttpMethod(HttpMethods.PATCH)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<PatchRouterHttpRequest>newBuilder()
-                      .setRequestInstance(PatchRouterHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create("{project}/regions/{region}/routers/{router}"))
                       .setQueryParams(Sets.<String>newHashSet("requestId"))
@@ -217,7 +210,6 @@ public class HttpJsonRouterStub extends RouterStub {
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<PreviewRouterHttpRequest>newBuilder()
-                      .setRequestInstance(PreviewRouterHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/regions/{region}/routers/{router}/preview"))
@@ -239,7 +231,6 @@ public class HttpJsonRouterStub extends RouterStub {
               .setHttpMethod(HttpMethods.PUT)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<UpdateRouterHttpRequest>newBuilder()
-                      .setRequestInstance(UpdateRouterHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create("{project}/regions/{region}/routers/{router}"))
                       .setQueryParams(Sets.<String>newHashSet("requestId"))

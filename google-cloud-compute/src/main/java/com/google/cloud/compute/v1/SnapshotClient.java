@@ -42,9 +42,8 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (SnapshotClient snapshotClient = SnapshotClient.create()) {
- *   String requestId = "";
  *   ProjectGlobalSnapshotName snapshot = ProjectGlobalSnapshotName.of("[PROJECT]", "[SNAPSHOT]");
- *   Operation response = snapshotClient.deleteSnapshot(requestId, snapshot);
+ *   Operation response = snapshotClient.deleteSnapshot(snapshot);
  * }
  * </code>
  * </pre>
@@ -164,30 +163,19 @@ public class SnapshotClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SnapshotClient snapshotClient = SnapshotClient.create()) {
-   *   String requestId = "";
    *   ProjectGlobalSnapshotName snapshot = ProjectGlobalSnapshotName.of("[PROJECT]", "[SNAPSHOT]");
-   *   Operation response = snapshotClient.deleteSnapshot(requestId, snapshot);
+   *   Operation response = snapshotClient.deleteSnapshot(snapshot);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param snapshot Name of the Snapshot resource to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteSnapshot(String requestId, ProjectGlobalSnapshotName snapshot) {
+  public final Operation deleteSnapshot(ProjectGlobalSnapshotName snapshot) {
 
     DeleteSnapshotHttpRequest request =
         DeleteSnapshotHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setSnapshot(snapshot == null ? null : snapshot.toString())
             .build();
     return deleteSnapshot(request);
@@ -206,32 +194,19 @@ public class SnapshotClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SnapshotClient snapshotClient = SnapshotClient.create()) {
-   *   String requestId = "";
    *   ProjectGlobalSnapshotName snapshot = ProjectGlobalSnapshotName.of("[PROJECT]", "[SNAPSHOT]");
-   *   Operation response = snapshotClient.deleteSnapshot(requestId, snapshot.toString());
+   *   Operation response = snapshotClient.deleteSnapshot(snapshot.toString());
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param snapshot Name of the Snapshot resource to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteSnapshot(String requestId, String snapshot) {
+  public final Operation deleteSnapshot(String snapshot) {
 
     DeleteSnapshotHttpRequest request =
-        DeleteSnapshotHttpRequest.newBuilder()
-            .setRequestId(requestId)
-            .setSnapshot(snapshot)
-            .build();
+        DeleteSnapshotHttpRequest.newBuilder().setSnapshot(snapshot).build();
     return deleteSnapshot(request);
   }
 
@@ -248,10 +223,8 @@ public class SnapshotClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SnapshotClient snapshotClient = SnapshotClient.create()) {
-   *   String requestId = "";
    *   ProjectGlobalSnapshotName snapshot = ProjectGlobalSnapshotName.of("[PROJECT]", "[SNAPSHOT]");
    *   DeleteSnapshotHttpRequest request = DeleteSnapshotHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setSnapshot(snapshot.toString())
    *     .build();
    *   Operation response = snapshotClient.deleteSnapshot(request);
@@ -279,10 +252,8 @@ public class SnapshotClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SnapshotClient snapshotClient = SnapshotClient.create()) {
-   *   String requestId = "";
    *   ProjectGlobalSnapshotName snapshot = ProjectGlobalSnapshotName.of("[PROJECT]", "[SNAPSHOT]");
    *   DeleteSnapshotHttpRequest request = DeleteSnapshotHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setSnapshot(snapshot.toString())
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = snapshotClient.deleteSnapshotCallable().futureCall(request);

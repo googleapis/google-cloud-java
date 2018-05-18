@@ -17,12 +17,8 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
-import java.util.Set;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
 
@@ -47,30 +43,15 @@ public final class InterconnectLocationRegionInfo implements ApiMessage {
   }
 
   @Override
-  public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
-    Map<String, List<String>> fieldMap = new HashMap<>();
-    if (fieldNames.contains("expectedRttMs") && expectedRttMs != null) {
-      fieldMap.put("expectedRttMs", Collections.singletonList(String.valueOf(expectedRttMs)));
-    }
-    if (fieldNames.contains("locationPresence") && locationPresence != null) {
-      fieldMap.put("locationPresence", Collections.singletonList(String.valueOf(locationPresence)));
-    }
-    if (fieldNames.contains("region") && region != null) {
-      fieldMap.put("region", Collections.singletonList(String.valueOf(region)));
-    }
-    return fieldMap;
-  }
-
-  @Override
-  public String getFieldStringValue(String fieldName) {
+  public Object getFieldValue(String fieldName) {
     if (fieldName.equals("expectedRttMs")) {
-      return String.valueOf(expectedRttMs);
+      return expectedRttMs;
     }
     if (fieldName.equals("locationPresence")) {
-      return String.valueOf(locationPresence);
+      return locationPresence;
     }
     if (fieldName.equals("region")) {
-      return String.valueOf(region);
+      return region;
     }
     return null;
   }
@@ -78,6 +59,12 @@ public final class InterconnectLocationRegionInfo implements ApiMessage {
   @Nullable
   @Override
   public ApiMessage getApiMessageRequestBody() {
+    return null;
+  }
+
+  @Nullable
+  @Override
+  public List<String> getFieldMask() {
     return null;
   }
 

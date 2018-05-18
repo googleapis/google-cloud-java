@@ -42,9 +42,8 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (InterconnectClient interconnectClient = InterconnectClient.create()) {
- *   String requestId = "";
  *   ProjectGlobalInterconnectName interconnect = ProjectGlobalInterconnectName.of("[PROJECT]", "[INTERCONNECT]");
- *   Operation response = interconnectClient.deleteInterconnect(requestId, interconnect);
+ *   Operation response = interconnectClient.deleteInterconnect(interconnect);
  * }
  * </code>
  * </pre>
@@ -160,31 +159,19 @@ public class InterconnectClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InterconnectClient interconnectClient = InterconnectClient.create()) {
-   *   String requestId = "";
    *   ProjectGlobalInterconnectName interconnect = ProjectGlobalInterconnectName.of("[PROJECT]", "[INTERCONNECT]");
-   *   Operation response = interconnectClient.deleteInterconnect(requestId, interconnect);
+   *   Operation response = interconnectClient.deleteInterconnect(interconnect);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param interconnect Name of the interconnect to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteInterconnect(
-      String requestId, ProjectGlobalInterconnectName interconnect) {
+  public final Operation deleteInterconnect(ProjectGlobalInterconnectName interconnect) {
 
     DeleteInterconnectHttpRequest request =
         DeleteInterconnectHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setInterconnect(interconnect == null ? null : interconnect.toString())
             .build();
     return deleteInterconnect(request);
@@ -198,32 +185,19 @@ public class InterconnectClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InterconnectClient interconnectClient = InterconnectClient.create()) {
-   *   String requestId = "";
    *   ProjectGlobalInterconnectName interconnect = ProjectGlobalInterconnectName.of("[PROJECT]", "[INTERCONNECT]");
-   *   Operation response = interconnectClient.deleteInterconnect(requestId, interconnect.toString());
+   *   Operation response = interconnectClient.deleteInterconnect(interconnect.toString());
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param interconnect Name of the interconnect to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteInterconnect(String requestId, String interconnect) {
+  public final Operation deleteInterconnect(String interconnect) {
 
     DeleteInterconnectHttpRequest request =
-        DeleteInterconnectHttpRequest.newBuilder()
-            .setRequestId(requestId)
-            .setInterconnect(interconnect)
-            .build();
+        DeleteInterconnectHttpRequest.newBuilder().setInterconnect(interconnect).build();
     return deleteInterconnect(request);
   }
 
@@ -235,10 +209,8 @@ public class InterconnectClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InterconnectClient interconnectClient = InterconnectClient.create()) {
-   *   String requestId = "";
    *   ProjectGlobalInterconnectName interconnect = ProjectGlobalInterconnectName.of("[PROJECT]", "[INTERCONNECT]");
    *   DeleteInterconnectHttpRequest request = DeleteInterconnectHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setInterconnect(interconnect.toString())
    *     .build();
    *   Operation response = interconnectClient.deleteInterconnect(request);
@@ -261,10 +233,8 @@ public class InterconnectClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InterconnectClient interconnectClient = InterconnectClient.create()) {
-   *   String requestId = "";
    *   ProjectGlobalInterconnectName interconnect = ProjectGlobalInterconnectName.of("[PROJECT]", "[INTERCONNECT]");
    *   DeleteInterconnectHttpRequest request = DeleteInterconnectHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setInterconnect(interconnect.toString())
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = interconnectClient.deleteInterconnectCallable().futureCall(request);
@@ -388,22 +358,12 @@ public class InterconnectClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InterconnectClient interconnectClient = InterconnectClient.create()) {
-   *   String requestId = "";
    *   ProjectName project = ProjectName.of("[PROJECT]");
    *   Interconnect interconnectResource = Interconnect.newBuilder().build();
-   *   Operation response = interconnectClient.insertInterconnect(requestId, project, interconnectResource);
+   *   Operation response = interconnectClient.insertInterconnect(project, interconnectResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param project Project ID for this request.
    * @param interconnectResource Represents an Interconnects resource. The Interconnects resource is
    *     a dedicated connection between Google's network and your on-premises network. For more
@@ -413,11 +373,10 @@ public class InterconnectClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation insertInterconnect(
-      String requestId, ProjectName project, Interconnect interconnectResource) {
+      ProjectName project, Interconnect interconnectResource) {
 
     InsertInterconnectHttpRequest request =
         InsertInterconnectHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setProject(project == null ? null : project.toString())
             .setInterconnectResource(interconnectResource)
             .build();
@@ -432,22 +391,12 @@ public class InterconnectClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InterconnectClient interconnectClient = InterconnectClient.create()) {
-   *   String requestId = "";
    *   ProjectName project = ProjectName.of("[PROJECT]");
    *   Interconnect interconnectResource = Interconnect.newBuilder().build();
-   *   Operation response = interconnectClient.insertInterconnect(requestId, project.toString(), interconnectResource);
+   *   Operation response = interconnectClient.insertInterconnect(project.toString(), interconnectResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param project Project ID for this request.
    * @param interconnectResource Represents an Interconnects resource. The Interconnects resource is
    *     a dedicated connection between Google's network and your on-premises network. For more
@@ -456,12 +405,10 @@ public class InterconnectClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation insertInterconnect(
-      String requestId, String project, Interconnect interconnectResource) {
+  public final Operation insertInterconnect(String project, Interconnect interconnectResource) {
 
     InsertInterconnectHttpRequest request =
         InsertInterconnectHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setProject(project)
             .setInterconnectResource(interconnectResource)
             .build();
@@ -476,11 +423,9 @@ public class InterconnectClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InterconnectClient interconnectClient = InterconnectClient.create()) {
-   *   String requestId = "";
    *   ProjectName project = ProjectName.of("[PROJECT]");
    *   Interconnect interconnectResource = Interconnect.newBuilder().build();
    *   InsertInterconnectHttpRequest request = InsertInterconnectHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setProject(project.toString())
    *     .setInterconnectResource(interconnectResource)
    *     .build();
@@ -504,11 +449,9 @@ public class InterconnectClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InterconnectClient interconnectClient = InterconnectClient.create()) {
-   *   String requestId = "";
    *   ProjectName project = ProjectName.of("[PROJECT]");
    *   Interconnect interconnectResource = Interconnect.newBuilder().build();
    *   InsertInterconnectHttpRequest request = InsertInterconnectHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setProject(project.toString())
    *     .setInterconnectResource(interconnectResource)
    *     .build();
@@ -671,22 +614,12 @@ public class InterconnectClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InterconnectClient interconnectClient = InterconnectClient.create()) {
-   *   String requestId = "";
    *   ProjectGlobalInterconnectName interconnect = ProjectGlobalInterconnectName.of("[PROJECT]", "[INTERCONNECT]");
    *   Interconnect interconnectResource = Interconnect.newBuilder().build();
-   *   Operation response = interconnectClient.patchInterconnect(requestId, interconnect, interconnectResource);
+   *   Operation response = interconnectClient.patchInterconnect(interconnect, interconnectResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param interconnect Name of the interconnect to update.
    * @param interconnectResource Represents an Interconnects resource. The Interconnects resource is
    *     a dedicated connection between Google's network and your on-premises network. For more
@@ -696,13 +629,10 @@ public class InterconnectClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation patchInterconnect(
-      String requestId,
-      ProjectGlobalInterconnectName interconnect,
-      Interconnect interconnectResource) {
+      ProjectGlobalInterconnectName interconnect, Interconnect interconnectResource) {
 
     PatchInterconnectHttpRequest request =
         PatchInterconnectHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setInterconnect(interconnect == null ? null : interconnect.toString())
             .setInterconnectResource(interconnectResource)
             .build();
@@ -718,22 +648,12 @@ public class InterconnectClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InterconnectClient interconnectClient = InterconnectClient.create()) {
-   *   String requestId = "";
    *   ProjectGlobalInterconnectName interconnect = ProjectGlobalInterconnectName.of("[PROJECT]", "[INTERCONNECT]");
    *   Interconnect interconnectResource = Interconnect.newBuilder().build();
-   *   Operation response = interconnectClient.patchInterconnect(requestId, interconnect.toString(), interconnectResource);
+   *   Operation response = interconnectClient.patchInterconnect(interconnect.toString(), interconnectResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param interconnect Name of the interconnect to update.
    * @param interconnectResource Represents an Interconnects resource. The Interconnects resource is
    *     a dedicated connection between Google's network and your on-premises network. For more
@@ -742,12 +662,10 @@ public class InterconnectClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation patchInterconnect(
-      String requestId, String interconnect, Interconnect interconnectResource) {
+  public final Operation patchInterconnect(String interconnect, Interconnect interconnectResource) {
 
     PatchInterconnectHttpRequest request =
         PatchInterconnectHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setInterconnect(interconnect)
             .setInterconnectResource(interconnectResource)
             .build();
@@ -763,11 +681,9 @@ public class InterconnectClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InterconnectClient interconnectClient = InterconnectClient.create()) {
-   *   String requestId = "";
    *   ProjectGlobalInterconnectName interconnect = ProjectGlobalInterconnectName.of("[PROJECT]", "[INTERCONNECT]");
    *   Interconnect interconnectResource = Interconnect.newBuilder().build();
    *   PatchInterconnectHttpRequest request = PatchInterconnectHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setInterconnect(interconnect.toString())
    *     .setInterconnectResource(interconnectResource)
    *     .build();
@@ -792,11 +708,9 @@ public class InterconnectClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InterconnectClient interconnectClient = InterconnectClient.create()) {
-   *   String requestId = "";
    *   ProjectGlobalInterconnectName interconnect = ProjectGlobalInterconnectName.of("[PROJECT]", "[INTERCONNECT]");
    *   Interconnect interconnectResource = Interconnect.newBuilder().build();
    *   PatchInterconnectHttpRequest request = PatchInterconnectHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setInterconnect(interconnect.toString())
    *     .setInterconnectResource(interconnectResource)
    *     .build();

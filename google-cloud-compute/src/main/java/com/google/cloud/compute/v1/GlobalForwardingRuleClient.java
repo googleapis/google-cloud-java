@@ -42,9 +42,8 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (GlobalForwardingRuleClient globalForwardingRuleClient = GlobalForwardingRuleClient.create()) {
- *   String requestId = "";
  *   ProjectGlobalForwardingRuleName forwardingRule = ProjectGlobalForwardingRuleName.of("[PROJECT]", "[FORWARDING_RULE]");
- *   Operation response = globalForwardingRuleClient.deleteGlobalForwardingRule(requestId, forwardingRule);
+ *   Operation response = globalForwardingRuleClient.deleteGlobalForwardingRule(forwardingRule);
  * }
  * </code>
  * </pre>
@@ -162,31 +161,20 @@ public class GlobalForwardingRuleClient implements BackgroundResource {
    *
    * <pre><code>
    * try (GlobalForwardingRuleClient globalForwardingRuleClient = GlobalForwardingRuleClient.create()) {
-   *   String requestId = "";
    *   ProjectGlobalForwardingRuleName forwardingRule = ProjectGlobalForwardingRuleName.of("[PROJECT]", "[FORWARDING_RULE]");
-   *   Operation response = globalForwardingRuleClient.deleteGlobalForwardingRule(requestId, forwardingRule);
+   *   Operation response = globalForwardingRuleClient.deleteGlobalForwardingRule(forwardingRule);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param forwardingRule Name of the ForwardingRule resource to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation deleteGlobalForwardingRule(
-      String requestId, ProjectGlobalForwardingRuleName forwardingRule) {
+      ProjectGlobalForwardingRuleName forwardingRule) {
 
     DeleteGlobalForwardingRuleHttpRequest request =
         DeleteGlobalForwardingRuleHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setForwardingRule(forwardingRule == null ? null : forwardingRule.toString())
             .build();
     return deleteGlobalForwardingRule(request);
@@ -200,30 +188,19 @@ public class GlobalForwardingRuleClient implements BackgroundResource {
    *
    * <pre><code>
    * try (GlobalForwardingRuleClient globalForwardingRuleClient = GlobalForwardingRuleClient.create()) {
-   *   String requestId = "";
    *   ProjectGlobalForwardingRuleName forwardingRule = ProjectGlobalForwardingRuleName.of("[PROJECT]", "[FORWARDING_RULE]");
-   *   Operation response = globalForwardingRuleClient.deleteGlobalForwardingRule(requestId, forwardingRule.toString());
+   *   Operation response = globalForwardingRuleClient.deleteGlobalForwardingRule(forwardingRule.toString());
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param forwardingRule Name of the ForwardingRule resource to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteGlobalForwardingRule(String requestId, String forwardingRule) {
+  public final Operation deleteGlobalForwardingRule(String forwardingRule) {
 
     DeleteGlobalForwardingRuleHttpRequest request =
         DeleteGlobalForwardingRuleHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setForwardingRule(forwardingRule)
             .build();
     return deleteGlobalForwardingRule(request);
@@ -237,10 +214,8 @@ public class GlobalForwardingRuleClient implements BackgroundResource {
    *
    * <pre><code>
    * try (GlobalForwardingRuleClient globalForwardingRuleClient = GlobalForwardingRuleClient.create()) {
-   *   String requestId = "";
    *   ProjectGlobalForwardingRuleName forwardingRule = ProjectGlobalForwardingRuleName.of("[PROJECT]", "[FORWARDING_RULE]");
    *   DeleteGlobalForwardingRuleHttpRequest request = DeleteGlobalForwardingRuleHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setForwardingRule(forwardingRule.toString())
    *     .build();
    *   Operation response = globalForwardingRuleClient.deleteGlobalForwardingRule(request);
@@ -263,10 +238,8 @@ public class GlobalForwardingRuleClient implements BackgroundResource {
    *
    * <pre><code>
    * try (GlobalForwardingRuleClient globalForwardingRuleClient = GlobalForwardingRuleClient.create()) {
-   *   String requestId = "";
    *   ProjectGlobalForwardingRuleName forwardingRule = ProjectGlobalForwardingRuleName.of("[PROJECT]", "[FORWARDING_RULE]");
    *   DeleteGlobalForwardingRuleHttpRequest request = DeleteGlobalForwardingRuleHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setForwardingRule(forwardingRule.toString())
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = globalForwardingRuleClient.deleteGlobalForwardingRuleCallable().futureCall(request);
@@ -393,22 +366,12 @@ public class GlobalForwardingRuleClient implements BackgroundResource {
    *
    * <pre><code>
    * try (GlobalForwardingRuleClient globalForwardingRuleClient = GlobalForwardingRuleClient.create()) {
-   *   String requestId = "";
    *   ProjectName project = ProjectName.of("[PROJECT]");
    *   ForwardingRule forwardingRuleResource = ForwardingRule.newBuilder().build();
-   *   Operation response = globalForwardingRuleClient.insertGlobalForwardingRule(requestId, project, forwardingRuleResource);
+   *   Operation response = globalForwardingRuleClient.insertGlobalForwardingRule(project, forwardingRuleResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param project Project ID for this request.
    * @param forwardingRuleResource A ForwardingRule resource. A ForwardingRule resource specifies
    *     which pool of target virtual machines to forward a packet to if it matches the given
@@ -420,11 +383,10 @@ public class GlobalForwardingRuleClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation insertGlobalForwardingRule(
-      String requestId, ProjectName project, ForwardingRule forwardingRuleResource) {
+      ProjectName project, ForwardingRule forwardingRuleResource) {
 
     InsertGlobalForwardingRuleHttpRequest request =
         InsertGlobalForwardingRuleHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setProject(project == null ? null : project.toString())
             .setForwardingRuleResource(forwardingRuleResource)
             .build();
@@ -440,22 +402,12 @@ public class GlobalForwardingRuleClient implements BackgroundResource {
    *
    * <pre><code>
    * try (GlobalForwardingRuleClient globalForwardingRuleClient = GlobalForwardingRuleClient.create()) {
-   *   String requestId = "";
    *   ProjectName project = ProjectName.of("[PROJECT]");
    *   ForwardingRule forwardingRuleResource = ForwardingRule.newBuilder().build();
-   *   Operation response = globalForwardingRuleClient.insertGlobalForwardingRule(requestId, project.toString(), forwardingRuleResource);
+   *   Operation response = globalForwardingRuleClient.insertGlobalForwardingRule(project.toString(), forwardingRuleResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param project Project ID for this request.
    * @param forwardingRuleResource A ForwardingRule resource. A ForwardingRule resource specifies
    *     which pool of target virtual machines to forward a packet to if it matches the given
@@ -467,11 +419,10 @@ public class GlobalForwardingRuleClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation insertGlobalForwardingRule(
-      String requestId, String project, ForwardingRule forwardingRuleResource) {
+      String project, ForwardingRule forwardingRuleResource) {
 
     InsertGlobalForwardingRuleHttpRequest request =
         InsertGlobalForwardingRuleHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setProject(project)
             .setForwardingRuleResource(forwardingRuleResource)
             .build();
@@ -487,11 +438,9 @@ public class GlobalForwardingRuleClient implements BackgroundResource {
    *
    * <pre><code>
    * try (GlobalForwardingRuleClient globalForwardingRuleClient = GlobalForwardingRuleClient.create()) {
-   *   String requestId = "";
    *   ProjectName project = ProjectName.of("[PROJECT]");
    *   ForwardingRule forwardingRuleResource = ForwardingRule.newBuilder().build();
    *   InsertGlobalForwardingRuleHttpRequest request = InsertGlobalForwardingRuleHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setProject(project.toString())
    *     .setForwardingRuleResource(forwardingRuleResource)
    *     .build();
@@ -516,11 +465,9 @@ public class GlobalForwardingRuleClient implements BackgroundResource {
    *
    * <pre><code>
    * try (GlobalForwardingRuleClient globalForwardingRuleClient = GlobalForwardingRuleClient.create()) {
-   *   String requestId = "";
    *   ProjectName project = ProjectName.of("[PROJECT]");
    *   ForwardingRule forwardingRuleResource = ForwardingRule.newBuilder().build();
    *   InsertGlobalForwardingRuleHttpRequest request = InsertGlobalForwardingRuleHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setProject(project.toString())
    *     .setForwardingRuleResource(forwardingRuleResource)
    *     .build();
@@ -685,35 +632,22 @@ public class GlobalForwardingRuleClient implements BackgroundResource {
    *
    * <pre><code>
    * try (GlobalForwardingRuleClient globalForwardingRuleClient = GlobalForwardingRuleClient.create()) {
-   *   String requestId = "";
    *   ProjectGlobalForwardingRuleName forwardingRule = ProjectGlobalForwardingRuleName.of("[PROJECT]", "[FORWARDING_RULE]");
    *   TargetReference targetReferenceResource = TargetReference.newBuilder().build();
-   *   Operation response = globalForwardingRuleClient.setTargetGlobalForwardingRule(requestId, forwardingRule, targetReferenceResource);
+   *   Operation response = globalForwardingRuleClient.setTargetGlobalForwardingRule(forwardingRule, targetReferenceResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param forwardingRule Name of the ForwardingRule resource in which target is to be set.
    * @param targetReferenceResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation setTargetGlobalForwardingRule(
-      String requestId,
-      ProjectGlobalForwardingRuleName forwardingRule,
-      TargetReference targetReferenceResource) {
+      ProjectGlobalForwardingRuleName forwardingRule, TargetReference targetReferenceResource) {
 
     SetTargetGlobalForwardingRuleHttpRequest request =
         SetTargetGlobalForwardingRuleHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setForwardingRule(forwardingRule == null ? null : forwardingRule.toString())
             .setTargetReferenceResource(targetReferenceResource)
             .build();
@@ -729,33 +663,22 @@ public class GlobalForwardingRuleClient implements BackgroundResource {
    *
    * <pre><code>
    * try (GlobalForwardingRuleClient globalForwardingRuleClient = GlobalForwardingRuleClient.create()) {
-   *   String requestId = "";
    *   ProjectGlobalForwardingRuleName forwardingRule = ProjectGlobalForwardingRuleName.of("[PROJECT]", "[FORWARDING_RULE]");
    *   TargetReference targetReferenceResource = TargetReference.newBuilder().build();
-   *   Operation response = globalForwardingRuleClient.setTargetGlobalForwardingRule(requestId, forwardingRule.toString(), targetReferenceResource);
+   *   Operation response = globalForwardingRuleClient.setTargetGlobalForwardingRule(forwardingRule.toString(), targetReferenceResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param forwardingRule Name of the ForwardingRule resource in which target is to be set.
    * @param targetReferenceResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation setTargetGlobalForwardingRule(
-      String requestId, String forwardingRule, TargetReference targetReferenceResource) {
+      String forwardingRule, TargetReference targetReferenceResource) {
 
     SetTargetGlobalForwardingRuleHttpRequest request =
         SetTargetGlobalForwardingRuleHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setForwardingRule(forwardingRule)
             .setTargetReferenceResource(targetReferenceResource)
             .build();
@@ -771,11 +694,9 @@ public class GlobalForwardingRuleClient implements BackgroundResource {
    *
    * <pre><code>
    * try (GlobalForwardingRuleClient globalForwardingRuleClient = GlobalForwardingRuleClient.create()) {
-   *   String requestId = "";
    *   ProjectGlobalForwardingRuleName forwardingRule = ProjectGlobalForwardingRuleName.of("[PROJECT]", "[FORWARDING_RULE]");
    *   TargetReference targetReferenceResource = TargetReference.newBuilder().build();
    *   SetTargetGlobalForwardingRuleHttpRequest request = SetTargetGlobalForwardingRuleHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setForwardingRule(forwardingRule.toString())
    *     .setTargetReferenceResource(targetReferenceResource)
    *     .build();
@@ -801,11 +722,9 @@ public class GlobalForwardingRuleClient implements BackgroundResource {
    *
    * <pre><code>
    * try (GlobalForwardingRuleClient globalForwardingRuleClient = GlobalForwardingRuleClient.create()) {
-   *   String requestId = "";
    *   ProjectGlobalForwardingRuleName forwardingRule = ProjectGlobalForwardingRuleName.of("[PROJECT]", "[FORWARDING_RULE]");
    *   TargetReference targetReferenceResource = TargetReference.newBuilder().build();
    *   SetTargetGlobalForwardingRuleHttpRequest request = SetTargetGlobalForwardingRuleHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setForwardingRule(forwardingRule.toString())
    *     .setTargetReferenceResource(targetReferenceResource)
    *     .build();

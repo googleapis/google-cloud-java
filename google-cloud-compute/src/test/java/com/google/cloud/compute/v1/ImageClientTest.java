@@ -139,9 +139,8 @@ public class ImageClientTest {
     mockService.addResponse(expectedResponse);
 
     ProjectGlobalImageName image = ProjectGlobalImageName.of("[PROJECT]", "[IMAGE]");
-    String requestId = "requestId37109963";
 
-    Operation actualResponse = client.deleteImage(image, requestId);
+    Operation actualResponse = client.deleteImage(image);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -169,9 +168,8 @@ public class ImageClientTest {
 
     try {
       ProjectGlobalImageName image = ProjectGlobalImageName.of("[PROJECT]", "[IMAGE]");
-      String requestId = "requestId37109963";
 
-      client.deleteImage(image, requestId);
+      client.deleteImage(image);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -229,10 +227,9 @@ public class ImageClientTest {
     mockService.addResponse(expectedResponse);
 
     ProjectGlobalImageName image = ProjectGlobalImageName.of("[PROJECT]", "[IMAGE]");
-    String requestId = "requestId37109963";
     DeprecationStatus deprecationStatusResource = DeprecationStatus.newBuilder().build();
 
-    Operation actualResponse = client.deprecateImage(image, requestId, deprecationStatusResource);
+    Operation actualResponse = client.deprecateImage(image, deprecationStatusResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -260,10 +257,9 @@ public class ImageClientTest {
 
     try {
       ProjectGlobalImageName image = ProjectGlobalImageName.of("[PROJECT]", "[IMAGE]");
-      String requestId = "requestId37109963";
       DeprecationStatus deprecationStatusResource = DeprecationStatus.newBuilder().build();
 
-      client.deprecateImage(image, requestId, deprecationStatusResource);
+      client.deprecateImage(image, deprecationStatusResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -486,11 +482,10 @@ public class ImageClientTest {
     mockService.addResponse(expectedResponse);
 
     Boolean forceCreate = true;
-    String requestId = "requestId37109963";
     ProjectName project = ProjectName.of("[PROJECT]");
     Image imageResource = Image.newBuilder().build();
 
-    Operation actualResponse = client.insertImage(forceCreate, requestId, project, imageResource);
+    Operation actualResponse = client.insertImage(forceCreate, project, imageResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -518,11 +513,10 @@ public class ImageClientTest {
 
     try {
       Boolean forceCreate = true;
-      String requestId = "requestId37109963";
       ProjectName project = ProjectName.of("[PROJECT]");
       Image imageResource = Image.newBuilder().build();
 
-      client.insertImage(forceCreate, requestId, project, imageResource);
+      client.insertImage(forceCreate, project, imageResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

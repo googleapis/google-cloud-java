@@ -142,9 +142,8 @@ public class TargetSslProxyClientTest {
 
     ProjectGlobalTargetSslProxyName targetSslProxy =
         ProjectGlobalTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
-    String requestId = "requestId37109963";
 
-    Operation actualResponse = client.deleteTargetSslProxy(targetSslProxy, requestId);
+    Operation actualResponse = client.deleteTargetSslProxy(targetSslProxy);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -173,9 +172,8 @@ public class TargetSslProxyClientTest {
     try {
       ProjectGlobalTargetSslProxyName targetSslProxy =
           ProjectGlobalTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
-      String requestId = "requestId37109963";
 
-      client.deleteTargetSslProxy(targetSslProxy, requestId);
+      client.deleteTargetSslProxy(targetSslProxy);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -299,12 +297,10 @@ public class TargetSslProxyClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String requestId = "requestId37109963";
     ProjectName project = ProjectName.of("[PROJECT]");
     TargetSslProxy targetSslProxyResource = TargetSslProxy.newBuilder().build();
 
-    Operation actualResponse =
-        client.insertTargetSslProxy(requestId, project, targetSslProxyResource);
+    Operation actualResponse = client.insertTargetSslProxy(project, targetSslProxyResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -331,11 +327,10 @@ public class TargetSslProxyClientTest {
     mockService.addException(exception);
 
     try {
-      String requestId = "requestId37109963";
       ProjectName project = ProjectName.of("[PROJECT]");
       TargetSslProxy targetSslProxyResource = TargetSslProxy.newBuilder().build();
 
-      client.insertTargetSslProxy(requestId, project, targetSslProxyResource);
+      client.insertTargetSslProxy(project, targetSslProxyResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -454,13 +449,12 @@ public class TargetSslProxyClientTest {
 
     ProjectGlobalTargetSslProxyName targetSslProxy =
         ProjectGlobalTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
-    String requestId = "requestId37109963";
     TargetSslProxiesSetBackendServiceRequest targetSslProxiesSetBackendServiceRequestResource =
         TargetSslProxiesSetBackendServiceRequest.newBuilder().build();
 
     Operation actualResponse =
         client.setBackendServiceTargetSslProxy(
-            targetSslProxy, requestId, targetSslProxiesSetBackendServiceRequestResource);
+            targetSslProxy, targetSslProxiesSetBackendServiceRequestResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -489,12 +483,11 @@ public class TargetSslProxyClientTest {
     try {
       ProjectGlobalTargetSslProxyName targetSslProxy =
           ProjectGlobalTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
-      String requestId = "requestId37109963";
       TargetSslProxiesSetBackendServiceRequest targetSslProxiesSetBackendServiceRequestResource =
           TargetSslProxiesSetBackendServiceRequest.newBuilder().build();
 
       client.setBackendServiceTargetSslProxy(
-          targetSslProxy, requestId, targetSslProxiesSetBackendServiceRequestResource);
+          targetSslProxy, targetSslProxiesSetBackendServiceRequestResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -553,13 +546,12 @@ public class TargetSslProxyClientTest {
 
     ProjectGlobalTargetSslProxyName targetSslProxy =
         ProjectGlobalTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
-    String requestId = "requestId37109963";
     TargetSslProxiesSetProxyHeaderRequest targetSslProxiesSetProxyHeaderRequestResource =
         TargetSslProxiesSetProxyHeaderRequest.newBuilder().build();
 
     Operation actualResponse =
         client.setProxyHeaderTargetSslProxy(
-            targetSslProxy, requestId, targetSslProxiesSetProxyHeaderRequestResource);
+            targetSslProxy, targetSslProxiesSetProxyHeaderRequestResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -588,12 +580,11 @@ public class TargetSslProxyClientTest {
     try {
       ProjectGlobalTargetSslProxyName targetSslProxy =
           ProjectGlobalTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
-      String requestId = "requestId37109963";
       TargetSslProxiesSetProxyHeaderRequest targetSslProxiesSetProxyHeaderRequestResource =
           TargetSslProxiesSetProxyHeaderRequest.newBuilder().build();
 
       client.setProxyHeaderTargetSslProxy(
-          targetSslProxy, requestId, targetSslProxiesSetProxyHeaderRequestResource);
+          targetSslProxy, targetSslProxiesSetProxyHeaderRequestResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -652,13 +643,12 @@ public class TargetSslProxyClientTest {
 
     ProjectGlobalTargetSslProxyName targetSslProxy =
         ProjectGlobalTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
-    String requestId = "requestId37109963";
     TargetSslProxiesSetSslCertificatesRequest targetSslProxiesSetSslCertificatesRequestResource =
         TargetSslProxiesSetSslCertificatesRequest.newBuilder().build();
 
     Operation actualResponse =
         client.setSslCertificatesTargetSslProxy(
-            targetSslProxy, requestId, targetSslProxiesSetSslCertificatesRequestResource);
+            targetSslProxy, targetSslProxiesSetSslCertificatesRequestResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -687,12 +677,11 @@ public class TargetSslProxyClientTest {
     try {
       ProjectGlobalTargetSslProxyName targetSslProxy =
           ProjectGlobalTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
-      String requestId = "requestId37109963";
       TargetSslProxiesSetSslCertificatesRequest targetSslProxiesSetSslCertificatesRequestResource =
           TargetSslProxiesSetSslCertificatesRequest.newBuilder().build();
 
       client.setSslCertificatesTargetSslProxy(
-          targetSslProxy, requestId, targetSslProxiesSetSslCertificatesRequestResource);
+          targetSslProxy, targetSslProxiesSetSslCertificatesRequestResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -751,11 +740,10 @@ public class TargetSslProxyClientTest {
 
     ProjectGlobalTargetSslProxyName targetSslProxy =
         ProjectGlobalTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
-    String requestId = "requestId37109963";
     SslPolicyReference sslPolicyReferenceResource = SslPolicyReference.newBuilder().build();
 
     Operation actualResponse =
-        client.setSslPolicyTargetSslProxy(targetSslProxy, requestId, sslPolicyReferenceResource);
+        client.setSslPolicyTargetSslProxy(targetSslProxy, sslPolicyReferenceResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -784,10 +772,9 @@ public class TargetSslProxyClientTest {
     try {
       ProjectGlobalTargetSslProxyName targetSslProxy =
           ProjectGlobalTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
-      String requestId = "requestId37109963";
       SslPolicyReference sslPolicyReferenceResource = SslPolicyReference.newBuilder().build();
 
-      client.setSslPolicyTargetSslProxy(targetSslProxy, requestId, sslPolicyReferenceResource);
+      client.setSslPolicyTargetSslProxy(targetSslProxy, sslPolicyReferenceResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

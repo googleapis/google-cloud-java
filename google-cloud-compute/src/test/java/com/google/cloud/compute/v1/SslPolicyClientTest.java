@@ -136,11 +136,10 @@ public class SslPolicyClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String requestId = "requestId37109963";
     ProjectGlobalSslPolicyName sslPolicy =
         ProjectGlobalSslPolicyName.of("[PROJECT]", "[SSL_POLICY]");
 
-    Operation actualResponse = client.deleteSslPolicy(requestId, sslPolicy);
+    Operation actualResponse = client.deleteSslPolicy(sslPolicy);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -167,11 +166,10 @@ public class SslPolicyClientTest {
     mockService.addException(exception);
 
     try {
-      String requestId = "requestId37109963";
       ProjectGlobalSslPolicyName sslPolicy =
           ProjectGlobalSslPolicyName.of("[PROJECT]", "[SSL_POLICY]");
 
-      client.deleteSslPolicy(requestId, sslPolicy);
+      client.deleteSslPolicy(sslPolicy);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -294,11 +292,10 @@ public class SslPolicyClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String requestId = "requestId37109963";
     ProjectName project = ProjectName.of("[PROJECT]");
     SslPolicy sslPolicyResource = SslPolicy.newBuilder().build();
 
-    Operation actualResponse = client.insertSslPolicy(requestId, project, sslPolicyResource);
+    Operation actualResponse = client.insertSslPolicy(project, sslPolicyResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -325,11 +322,10 @@ public class SslPolicyClientTest {
     mockService.addException(exception);
 
     try {
-      String requestId = "requestId37109963";
       ProjectName project = ProjectName.of("[PROJECT]");
       SslPolicy sslPolicyResource = SslPolicy.newBuilder().build();
 
-      client.insertSslPolicy(requestId, project, sslPolicyResource);
+      client.insertSslPolicy(project, sslPolicyResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -492,12 +488,11 @@ public class SslPolicyClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String requestId = "requestId37109963";
     ProjectGlobalSslPolicyName sslPolicy =
         ProjectGlobalSslPolicyName.of("[PROJECT]", "[SSL_POLICY]");
     SslPolicy sslPolicyResource = SslPolicy.newBuilder().build();
 
-    Operation actualResponse = client.patchSslPolicy(requestId, sslPolicy, sslPolicyResource);
+    Operation actualResponse = client.patchSslPolicy(sslPolicy, sslPolicyResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -524,12 +519,11 @@ public class SslPolicyClientTest {
     mockService.addException(exception);
 
     try {
-      String requestId = "requestId37109963";
       ProjectGlobalSslPolicyName sslPolicy =
           ProjectGlobalSslPolicyName.of("[PROJECT]", "[SSL_POLICY]");
       SslPolicy sslPolicyResource = SslPolicy.newBuilder().build();
 
-      client.patchSslPolicy(requestId, sslPolicy, sslPolicyResource);
+      client.patchSslPolicy(sslPolicy, sslPolicyResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

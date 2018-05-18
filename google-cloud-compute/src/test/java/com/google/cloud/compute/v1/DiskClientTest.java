@@ -206,12 +206,10 @@ public class DiskClientTest {
     mockService.addResponse(expectedResponse);
 
     ProjectZoneDiskName disk = ProjectZoneDiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
-    String requestId = "requestId37109963";
     Boolean guestFlush = false;
     Snapshot snapshotResource = Snapshot.newBuilder().build();
 
-    Operation actualResponse =
-        client.createSnapshotDisk(disk, requestId, guestFlush, snapshotResource);
+    Operation actualResponse = client.createSnapshotDisk(disk, guestFlush, snapshotResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -239,11 +237,10 @@ public class DiskClientTest {
 
     try {
       ProjectZoneDiskName disk = ProjectZoneDiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
-      String requestId = "requestId37109963";
       Boolean guestFlush = false;
       Snapshot snapshotResource = Snapshot.newBuilder().build();
 
-      client.createSnapshotDisk(disk, requestId, guestFlush, snapshotResource);
+      client.createSnapshotDisk(disk, guestFlush, snapshotResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -301,9 +298,8 @@ public class DiskClientTest {
     mockService.addResponse(expectedResponse);
 
     ProjectZoneDiskName disk = ProjectZoneDiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
-    String requestId = "requestId37109963";
 
-    Operation actualResponse = client.deleteDisk(disk, requestId);
+    Operation actualResponse = client.deleteDisk(disk);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -331,9 +327,8 @@ public class DiskClientTest {
 
     try {
       ProjectZoneDiskName disk = ProjectZoneDiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
-      String requestId = "requestId37109963";
 
-      client.deleteDisk(disk, requestId);
+      client.deleteDisk(disk);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -475,11 +470,9 @@ public class DiskClientTest {
     mockService.addResponse(expectedResponse);
 
     ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
-    String requestId = "requestId37109963";
-    String sourceImage = "sourceImage1661056055";
     Disk diskResource = Disk.newBuilder().build();
 
-    Operation actualResponse = client.insertDisk(zone, requestId, sourceImage, diskResource);
+    Operation actualResponse = client.insertDisk(zone, diskResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -507,11 +500,9 @@ public class DiskClientTest {
 
     try {
       ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
-      String requestId = "requestId37109963";
-      String sourceImage = "sourceImage1661056055";
       Disk diskResource = Disk.newBuilder().build();
 
-      client.insertDisk(zone, requestId, sourceImage, diskResource);
+      client.insertDisk(zone, diskResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -629,10 +620,9 @@ public class DiskClientTest {
     mockService.addResponse(expectedResponse);
 
     ProjectZoneDiskName disk = ProjectZoneDiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
-    String requestId = "requestId37109963";
     DisksResizeRequest disksResizeRequestResource = DisksResizeRequest.newBuilder().build();
 
-    Operation actualResponse = client.resizeDisk(disk, requestId, disksResizeRequestResource);
+    Operation actualResponse = client.resizeDisk(disk, disksResizeRequestResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -660,10 +650,9 @@ public class DiskClientTest {
 
     try {
       ProjectZoneDiskName disk = ProjectZoneDiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
-      String requestId = "requestId37109963";
       DisksResizeRequest disksResizeRequestResource = DisksResizeRequest.newBuilder().build();
 
-      client.resizeDisk(disk, requestId, disksResizeRequestResource);
+      client.resizeDisk(disk, disksResizeRequestResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -722,11 +711,9 @@ public class DiskClientTest {
 
     ProjectZoneDiskResourceName resource =
         ProjectZoneDiskResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
-    String requestId = "requestId37109963";
     ZoneSetLabelsRequest zoneSetLabelsRequestResource = ZoneSetLabelsRequest.newBuilder().build();
 
-    Operation actualResponse =
-        client.setLabelsDisk(resource, requestId, zoneSetLabelsRequestResource);
+    Operation actualResponse = client.setLabelsDisk(resource, zoneSetLabelsRequestResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -755,10 +742,9 @@ public class DiskClientTest {
     try {
       ProjectZoneDiskResourceName resource =
           ProjectZoneDiskResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
-      String requestId = "requestId37109963";
       ZoneSetLabelsRequest zoneSetLabelsRequestResource = ZoneSetLabelsRequest.newBuilder().build();
 
-      client.setLabelsDisk(resource, requestId, zoneSetLabelsRequestResource);
+      client.setLabelsDisk(resource, zoneSetLabelsRequestResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

@@ -57,7 +57,6 @@ public class HttpJsonZoneStub extends ZoneStub {
           .setHttpMethod(HttpMethods.GET)
           .setRequestFormatter(
               ApiMessageHttpRequestFormatter.<GetZoneHttpRequest>newBuilder()
-                  .setRequestInstance(GetZoneHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/zones/{zone}"))
                   .setQueryParams(Sets.<String>newHashSet())
                   .setResourceNameFactory(ProjectZoneName.newFactory())
@@ -77,7 +76,6 @@ public class HttpJsonZoneStub extends ZoneStub {
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<ListZonesHttpRequest>newBuilder()
-                      .setRequestInstance(ListZonesHttpRequest.getDefaultInstance())
                       .setPathTemplate(PathTemplate.create("{project}/zones"))
                       .setQueryParams(
                           Sets.<String>newHashSet("filter", "maxResults", "orderBy", "pageToken"))

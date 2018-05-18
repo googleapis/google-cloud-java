@@ -42,9 +42,8 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (TargetVpnGatewayClient targetVpnGatewayClient = TargetVpnGatewayClient.create()) {
- *   String requestId = "";
  *   ProjectRegionTargetVpnGatewayName targetVpnGateway = ProjectRegionTargetVpnGatewayName.of("[PROJECT]", "[REGION]", "[TARGET_VPN_GATEWAY]");
- *   Operation response = targetVpnGatewayClient.deleteTargetVpnGateway(requestId, targetVpnGateway);
+ *   Operation response = targetVpnGatewayClient.deleteTargetVpnGateway(targetVpnGateway);
  * }
  * </code>
  * </pre>
@@ -304,31 +303,20 @@ public class TargetVpnGatewayClient implements BackgroundResource {
    *
    * <pre><code>
    * try (TargetVpnGatewayClient targetVpnGatewayClient = TargetVpnGatewayClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionTargetVpnGatewayName targetVpnGateway = ProjectRegionTargetVpnGatewayName.of("[PROJECT]", "[REGION]", "[TARGET_VPN_GATEWAY]");
-   *   Operation response = targetVpnGatewayClient.deleteTargetVpnGateway(requestId, targetVpnGateway);
+   *   Operation response = targetVpnGatewayClient.deleteTargetVpnGateway(targetVpnGateway);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param targetVpnGateway Name of the target VPN gateway to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation deleteTargetVpnGateway(
-      String requestId, ProjectRegionTargetVpnGatewayName targetVpnGateway) {
+      ProjectRegionTargetVpnGatewayName targetVpnGateway) {
 
     DeleteTargetVpnGatewayHttpRequest request =
         DeleteTargetVpnGatewayHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setTargetVpnGateway(targetVpnGateway == null ? null : targetVpnGateway.toString())
             .build();
     return deleteTargetVpnGateway(request);
@@ -342,30 +330,19 @@ public class TargetVpnGatewayClient implements BackgroundResource {
    *
    * <pre><code>
    * try (TargetVpnGatewayClient targetVpnGatewayClient = TargetVpnGatewayClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionTargetVpnGatewayName targetVpnGateway = ProjectRegionTargetVpnGatewayName.of("[PROJECT]", "[REGION]", "[TARGET_VPN_GATEWAY]");
-   *   Operation response = targetVpnGatewayClient.deleteTargetVpnGateway(requestId, targetVpnGateway.toString());
+   *   Operation response = targetVpnGatewayClient.deleteTargetVpnGateway(targetVpnGateway.toString());
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param targetVpnGateway Name of the target VPN gateway to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteTargetVpnGateway(String requestId, String targetVpnGateway) {
+  public final Operation deleteTargetVpnGateway(String targetVpnGateway) {
 
     DeleteTargetVpnGatewayHttpRequest request =
         DeleteTargetVpnGatewayHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setTargetVpnGateway(targetVpnGateway)
             .build();
     return deleteTargetVpnGateway(request);
@@ -379,10 +356,8 @@ public class TargetVpnGatewayClient implements BackgroundResource {
    *
    * <pre><code>
    * try (TargetVpnGatewayClient targetVpnGatewayClient = TargetVpnGatewayClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionTargetVpnGatewayName targetVpnGateway = ProjectRegionTargetVpnGatewayName.of("[PROJECT]", "[REGION]", "[TARGET_VPN_GATEWAY]");
    *   DeleteTargetVpnGatewayHttpRequest request = DeleteTargetVpnGatewayHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setTargetVpnGateway(targetVpnGateway.toString())
    *     .build();
    *   Operation response = targetVpnGatewayClient.deleteTargetVpnGateway(request);
@@ -405,10 +380,8 @@ public class TargetVpnGatewayClient implements BackgroundResource {
    *
    * <pre><code>
    * try (TargetVpnGatewayClient targetVpnGatewayClient = TargetVpnGatewayClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionTargetVpnGatewayName targetVpnGateway = ProjectRegionTargetVpnGatewayName.of("[PROJECT]", "[REGION]", "[TARGET_VPN_GATEWAY]");
    *   DeleteTargetVpnGatewayHttpRequest request = DeleteTargetVpnGatewayHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setTargetVpnGateway(targetVpnGateway.toString())
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = targetVpnGatewayClient.deleteTargetVpnGatewayCallable().futureCall(request);
@@ -535,22 +508,12 @@ public class TargetVpnGatewayClient implements BackgroundResource {
    *
    * <pre><code>
    * try (TargetVpnGatewayClient targetVpnGatewayClient = TargetVpnGatewayClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   TargetVpnGateway targetVpnGatewayResource = TargetVpnGateway.newBuilder().build();
-   *   Operation response = targetVpnGatewayClient.insertTargetVpnGateway(requestId, region, targetVpnGatewayResource);
+   *   Operation response = targetVpnGatewayClient.insertTargetVpnGateway(region, targetVpnGatewayResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param region Name of the region for this request.
    * @param targetVpnGatewayResource Represents a Target VPN gateway resource. (== resource_for
    *     beta.targetVpnGateways ==) (== resource_for v1.targetVpnGateways ==)
@@ -558,11 +521,10 @@ public class TargetVpnGatewayClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation insertTargetVpnGateway(
-      String requestId, ProjectRegionName region, TargetVpnGateway targetVpnGatewayResource) {
+      ProjectRegionName region, TargetVpnGateway targetVpnGatewayResource) {
 
     InsertTargetVpnGatewayHttpRequest request =
         InsertTargetVpnGatewayHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setRegion(region == null ? null : region.toString())
             .setTargetVpnGatewayResource(targetVpnGatewayResource)
             .build();
@@ -578,22 +540,12 @@ public class TargetVpnGatewayClient implements BackgroundResource {
    *
    * <pre><code>
    * try (TargetVpnGatewayClient targetVpnGatewayClient = TargetVpnGatewayClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   TargetVpnGateway targetVpnGatewayResource = TargetVpnGateway.newBuilder().build();
-   *   Operation response = targetVpnGatewayClient.insertTargetVpnGateway(requestId, region.toString(), targetVpnGatewayResource);
+   *   Operation response = targetVpnGatewayClient.insertTargetVpnGateway(region.toString(), targetVpnGatewayResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param region Name of the region for this request.
    * @param targetVpnGatewayResource Represents a Target VPN gateway resource. (== resource_for
    *     beta.targetVpnGateways ==) (== resource_for v1.targetVpnGateways ==)
@@ -601,11 +553,10 @@ public class TargetVpnGatewayClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation insertTargetVpnGateway(
-      String requestId, String region, TargetVpnGateway targetVpnGatewayResource) {
+      String region, TargetVpnGateway targetVpnGatewayResource) {
 
     InsertTargetVpnGatewayHttpRequest request =
         InsertTargetVpnGatewayHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setRegion(region)
             .setTargetVpnGatewayResource(targetVpnGatewayResource)
             .build();
@@ -621,11 +572,9 @@ public class TargetVpnGatewayClient implements BackgroundResource {
    *
    * <pre><code>
    * try (TargetVpnGatewayClient targetVpnGatewayClient = TargetVpnGatewayClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   TargetVpnGateway targetVpnGatewayResource = TargetVpnGateway.newBuilder().build();
    *   InsertTargetVpnGatewayHttpRequest request = InsertTargetVpnGatewayHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setRegion(region.toString())
    *     .setTargetVpnGatewayResource(targetVpnGatewayResource)
    *     .build();
@@ -650,11 +599,9 @@ public class TargetVpnGatewayClient implements BackgroundResource {
    *
    * <pre><code>
    * try (TargetVpnGatewayClient targetVpnGatewayClient = TargetVpnGatewayClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   TargetVpnGateway targetVpnGatewayResource = TargetVpnGateway.newBuilder().build();
    *   InsertTargetVpnGatewayHttpRequest request = InsertTargetVpnGatewayHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setRegion(region.toString())
    *     .setTargetVpnGatewayResource(targetVpnGatewayResource)
    *     .build();

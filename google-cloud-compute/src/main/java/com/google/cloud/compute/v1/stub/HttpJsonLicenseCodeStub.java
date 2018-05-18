@@ -56,7 +56,6 @@ public class HttpJsonLicenseCodeStub extends LicenseCodeStub {
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<GetLicenseCodeHttpRequest>newBuilder()
-                      .setRequestInstance(GetLicenseCodeHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create("{project}/global/licenseCodes/{licenseCode}"))
                       .setQueryParams(Sets.<String>newHashSet())
@@ -80,8 +79,6 @@ public class HttpJsonLicenseCodeStub extends LicenseCodeStub {
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter
                       .<TestIamPermissionsLicenseCodeHttpRequest>newBuilder()
-                      .setRequestInstance(
-                          TestIamPermissionsLicenseCodeHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/global/licenseCodes/{resource}/testIamPermissions"))

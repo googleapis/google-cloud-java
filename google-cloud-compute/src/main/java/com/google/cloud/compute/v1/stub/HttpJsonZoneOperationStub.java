@@ -59,7 +59,6 @@ public class HttpJsonZoneOperationStub extends ZoneOperationStub {
               .setHttpMethod(HttpMethods.DELETE)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<DeleteZoneOperationHttpRequest>newBuilder()
-                      .setRequestInstance(DeleteZoneOperationHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create("{project}/zones/{zone}/operations/{operation}"))
                       .setQueryParams(Sets.<String>newHashSet())
@@ -76,7 +75,6 @@ public class HttpJsonZoneOperationStub extends ZoneOperationStub {
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<GetZoneOperationHttpRequest>newBuilder()
-                      .setRequestInstance(GetZoneOperationHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create("{project}/zones/{zone}/operations/{operation}"))
                       .setQueryParams(Sets.<String>newHashSet())
@@ -97,7 +95,6 @@ public class HttpJsonZoneOperationStub extends ZoneOperationStub {
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<ListZoneOperationsHttpRequest>newBuilder()
-                      .setRequestInstance(ListZoneOperationsHttpRequest.getDefaultInstance())
                       .setPathTemplate(PathTemplate.create("{project}/zones/{zone}/operations"))
                       .setQueryParams(
                           Sets.<String>newHashSet("filter", "maxResults", "orderBy", "pageToken"))

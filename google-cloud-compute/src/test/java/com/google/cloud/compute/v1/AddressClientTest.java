@@ -202,9 +202,8 @@ public class AddressClientTest {
 
     ProjectRegionAddressName address =
         ProjectRegionAddressName.of("[PROJECT]", "[REGION]", "[ADDRESS]");
-    String requestId = "requestId37109963";
 
-    Operation actualResponse = client.deleteAddress(address, requestId);
+    Operation actualResponse = client.deleteAddress(address);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -233,9 +232,8 @@ public class AddressClientTest {
     try {
       ProjectRegionAddressName address =
           ProjectRegionAddressName.of("[PROJECT]", "[REGION]", "[ADDRESS]");
-      String requestId = "requestId37109963";
 
-      client.deleteAddress(address, requestId);
+      client.deleteAddress(address);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -365,11 +363,10 @@ public class AddressClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String requestId = "requestId37109963";
     ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     Address addressResource = Address.newBuilder().build();
 
-    Operation actualResponse = client.insertAddress(requestId, region, addressResource);
+    Operation actualResponse = client.insertAddress(region, addressResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -396,11 +393,10 @@ public class AddressClientTest {
     mockService.addException(exception);
 
     try {
-      String requestId = "requestId37109963";
       ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
       Address addressResource = Address.newBuilder().build();
 
-      client.insertAddress(requestId, region, addressResource);
+      client.insertAddress(region, addressResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

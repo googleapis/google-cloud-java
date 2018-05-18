@@ -17,12 +17,8 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
-import java.util.Set;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
 
@@ -43,24 +39,12 @@ public final class SubnetworkSecondaryRange implements ApiMessage {
   }
 
   @Override
-  public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
-    Map<String, List<String>> fieldMap = new HashMap<>();
-    if (fieldNames.contains("ipCidrRange") && ipCidrRange != null) {
-      fieldMap.put("ipCidrRange", Collections.singletonList(String.valueOf(ipCidrRange)));
-    }
-    if (fieldNames.contains("rangeName") && rangeName != null) {
-      fieldMap.put("rangeName", Collections.singletonList(String.valueOf(rangeName)));
-    }
-    return fieldMap;
-  }
-
-  @Override
-  public String getFieldStringValue(String fieldName) {
+  public Object getFieldValue(String fieldName) {
     if (fieldName.equals("ipCidrRange")) {
-      return String.valueOf(ipCidrRange);
+      return ipCidrRange;
     }
     if (fieldName.equals("rangeName")) {
-      return String.valueOf(rangeName);
+      return rangeName;
     }
     return null;
   }
@@ -68,6 +52,12 @@ public final class SubnetworkSecondaryRange implements ApiMessage {
   @Nullable
   @Override
   public ApiMessage getApiMessageRequestBody() {
+    return null;
+  }
+
+  @Nullable
+  @Override
+  public List<String> getFieldMask() {
     return null;
   }
 

@@ -17,14 +17,9 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
-import java.util.Set;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
 
@@ -83,91 +78,39 @@ public final class UrlMap implements ApiMessage {
   }
 
   @Override
-  public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
-    Map<String, List<String>> fieldMap = new HashMap<>();
-    if (fieldNames.contains("creationTimestamp") && creationTimestamp != null) {
-      fieldMap.put(
-          "creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
-    }
-    if (fieldNames.contains("defaultService") && defaultService != null) {
-      fieldMap.put("defaultService", Collections.singletonList(String.valueOf(defaultService)));
-    }
-    if (fieldNames.contains("description") && description != null) {
-      fieldMap.put("description", Collections.singletonList(String.valueOf(description)));
-    }
-    if (fieldNames.contains("fingerprint") && fingerprint != null) {
-      fieldMap.put("fingerprint", Collections.singletonList(String.valueOf(fingerprint)));
-    }
-    if (fieldNames.contains("hostRules") && hostRules != null) {
-      ImmutableList.Builder stringList = ImmutableList.builder();
-      for (HostRule item : hostRules) {
-        stringList.add(item.toString());
-      }
-      fieldMap.put("hostRules", stringList.build());
-    }
-    if (fieldNames.contains("id") && id != null) {
-      fieldMap.put("id", Collections.singletonList(String.valueOf(id)));
-    }
-    if (fieldNames.contains("kind") && kind != null) {
-      fieldMap.put("kind", Collections.singletonList(String.valueOf(kind)));
-    }
-    if (fieldNames.contains("name") && name != null) {
-      fieldMap.put("name", Collections.singletonList(String.valueOf(name)));
-    }
-    if (fieldNames.contains("pathMatchers") && pathMatchers != null) {
-      ImmutableList.Builder stringList = ImmutableList.builder();
-      for (PathMatcher item : pathMatchers) {
-        stringList.add(item.toString());
-      }
-      fieldMap.put("pathMatchers", stringList.build());
-    }
-    if (fieldNames.contains("selfLink") && selfLink != null) {
-      fieldMap.put("selfLink", Collections.singletonList(String.valueOf(selfLink)));
-    }
-    if (fieldNames.contains("tests") && tests != null) {
-      ImmutableList.Builder stringList = ImmutableList.builder();
-      for (UrlMapTest item : tests) {
-        stringList.add(item.toString());
-      }
-      fieldMap.put("tests", stringList.build());
-    }
-    return fieldMap;
-  }
-
-  @Override
-  public String getFieldStringValue(String fieldName) {
+  public Object getFieldValue(String fieldName) {
     if (fieldName.equals("creationTimestamp")) {
-      return String.valueOf(creationTimestamp);
+      return creationTimestamp;
     }
     if (fieldName.equals("defaultService")) {
-      return String.valueOf(defaultService);
+      return defaultService;
     }
     if (fieldName.equals("description")) {
-      return String.valueOf(description);
+      return description;
     }
     if (fieldName.equals("fingerprint")) {
-      return String.valueOf(fingerprint);
+      return fingerprint;
     }
     if (fieldName.equals("hostRules")) {
-      return String.valueOf(hostRules);
+      return hostRules;
     }
     if (fieldName.equals("id")) {
-      return String.valueOf(id);
+      return id;
     }
     if (fieldName.equals("kind")) {
-      return String.valueOf(kind);
+      return kind;
     }
     if (fieldName.equals("name")) {
-      return String.valueOf(name);
+      return name;
     }
     if (fieldName.equals("pathMatchers")) {
-      return String.valueOf(pathMatchers);
+      return pathMatchers;
     }
     if (fieldName.equals("selfLink")) {
-      return String.valueOf(selfLink);
+      return selfLink;
     }
     if (fieldName.equals("tests")) {
-      return String.valueOf(tests);
+      return tests;
     }
     return null;
   }
@@ -175,6 +118,12 @@ public final class UrlMap implements ApiMessage {
   @Nullable
   @Override
   public ApiMessage getApiMessageRequestBody() {
+    return null;
+  }
+
+  @Nullable
+  @Override
+  public List<String> getFieldMask() {
     return null;
   }
 

@@ -17,12 +17,8 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
-import java.util.Set;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
 
@@ -46,30 +42,15 @@ public final class NetworksAddPeeringRequest implements ApiMessage {
   }
 
   @Override
-  public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
-    Map<String, List<String>> fieldMap = new HashMap<>();
-    if (fieldNames.contains("autoCreateRoutes") && autoCreateRoutes != null) {
-      fieldMap.put("autoCreateRoutes", Collections.singletonList(String.valueOf(autoCreateRoutes)));
-    }
-    if (fieldNames.contains("name") && name != null) {
-      fieldMap.put("name", Collections.singletonList(String.valueOf(name)));
-    }
-    if (fieldNames.contains("peerNetwork") && peerNetwork != null) {
-      fieldMap.put("peerNetwork", Collections.singletonList(String.valueOf(peerNetwork)));
-    }
-    return fieldMap;
-  }
-
-  @Override
-  public String getFieldStringValue(String fieldName) {
+  public Object getFieldValue(String fieldName) {
     if (fieldName.equals("autoCreateRoutes")) {
-      return String.valueOf(autoCreateRoutes);
+      return autoCreateRoutes;
     }
     if (fieldName.equals("name")) {
-      return String.valueOf(name);
+      return name;
     }
     if (fieldName.equals("peerNetwork")) {
-      return String.valueOf(peerNetwork);
+      return peerNetwork;
     }
     return null;
   }
@@ -77,6 +58,12 @@ public final class NetworksAddPeeringRequest implements ApiMessage {
   @Nullable
   @Override
   public ApiMessage getApiMessageRequestBody() {
+    return null;
+  }
+
+  @Nullable
+  @Override
+  public List<String> getFieldMask() {
     return null;
   }
 

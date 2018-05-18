@@ -17,12 +17,9 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.util.Set;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
 
@@ -61,50 +58,24 @@ public final class AttachedDiskInitializeParams implements ApiMessage {
   }
 
   @Override
-  public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
-    Map<String, List<String>> fieldMap = new HashMap<>();
-    if (fieldNames.contains("diskName") && diskName != null) {
-      fieldMap.put("diskName", Collections.singletonList(String.valueOf(diskName)));
-    }
-    if (fieldNames.contains("diskSizeGb") && diskSizeGb != null) {
-      fieldMap.put("diskSizeGb", Collections.singletonList(String.valueOf(diskSizeGb)));
-    }
-    if (fieldNames.contains("diskType") && diskType != null) {
-      fieldMap.put("diskType", Collections.singletonList(String.valueOf(diskType)));
-    }
-    if (fieldNames.contains("labels") && labels != null) {
-      fieldMap.put("labels", Collections.singletonList(String.valueOf(labels)));
-    }
-    if (fieldNames.contains("sourceImage") && sourceImage != null) {
-      fieldMap.put("sourceImage", Collections.singletonList(String.valueOf(sourceImage)));
-    }
-    if (fieldNames.contains("sourceImageEncryptionKey") && sourceImageEncryptionKey != null) {
-      fieldMap.put(
-          "sourceImageEncryptionKey",
-          Collections.singletonList(String.valueOf(sourceImageEncryptionKey)));
-    }
-    return fieldMap;
-  }
-
-  @Override
-  public String getFieldStringValue(String fieldName) {
+  public Object getFieldValue(String fieldName) {
     if (fieldName.equals("diskName")) {
-      return String.valueOf(diskName);
+      return diskName;
     }
     if (fieldName.equals("diskSizeGb")) {
-      return String.valueOf(diskSizeGb);
+      return diskSizeGb;
     }
     if (fieldName.equals("diskType")) {
-      return String.valueOf(diskType);
+      return diskType;
     }
     if (fieldName.equals("labels")) {
-      return String.valueOf(labels);
+      return labels;
     }
     if (fieldName.equals("sourceImage")) {
-      return String.valueOf(sourceImage);
+      return sourceImage;
     }
     if (fieldName.equals("sourceImageEncryptionKey")) {
-      return String.valueOf(sourceImageEncryptionKey);
+      return sourceImageEncryptionKey;
     }
     return null;
   }
@@ -112,6 +83,12 @@ public final class AttachedDiskInitializeParams implements ApiMessage {
   @Nullable
   @Override
   public ApiMessage getApiMessageRequestBody() {
+    return null;
+  }
+
+  @Nullable
+  @Override
+  public List<String> getFieldMask() {
     return null;
   }
 

@@ -138,9 +138,8 @@ public class RegionAutoscalerClientTest {
 
     ProjectRegionAutoscalerName autoscaler =
         ProjectRegionAutoscalerName.of("[PROJECT]", "[REGION]", "[AUTOSCALER]");
-    String requestId = "requestId37109963";
 
-    Operation actualResponse = client.deleteRegionAutoscaler(autoscaler, requestId);
+    Operation actualResponse = client.deleteRegionAutoscaler(autoscaler);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -169,9 +168,8 @@ public class RegionAutoscalerClientTest {
     try {
       ProjectRegionAutoscalerName autoscaler =
           ProjectRegionAutoscalerName.of("[PROJECT]", "[REGION]", "[AUTOSCALER]");
-      String requestId = "requestId37109963";
 
-      client.deleteRegionAutoscaler(autoscaler, requestId);
+      client.deleteRegionAutoscaler(autoscaler);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -296,11 +294,10 @@ public class RegionAutoscalerClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String requestId = "requestId37109963";
     ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     Autoscaler autoscalerResource = Autoscaler.newBuilder().build();
 
-    Operation actualResponse = client.insertRegionAutoscaler(requestId, region, autoscalerResource);
+    Operation actualResponse = client.insertRegionAutoscaler(region, autoscalerResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -327,11 +324,10 @@ public class RegionAutoscalerClientTest {
     mockService.addException(exception);
 
     try {
-      String requestId = "requestId37109963";
       ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
       Autoscaler autoscalerResource = Autoscaler.newBuilder().build();
 
-      client.insertRegionAutoscaler(requestId, region, autoscalerResource);
+      client.insertRegionAutoscaler(region, autoscalerResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -449,12 +445,10 @@ public class RegionAutoscalerClientTest {
     mockService.addResponse(expectedResponse);
 
     String autoscaler = "autoscaler517258967";
-    String requestId = "requestId37109963";
     ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     Autoscaler autoscalerResource = Autoscaler.newBuilder().build();
 
-    Operation actualResponse =
-        client.patchRegionAutoscaler(autoscaler, requestId, region, autoscalerResource);
+    Operation actualResponse = client.patchRegionAutoscaler(autoscaler, region, autoscalerResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -482,11 +476,10 @@ public class RegionAutoscalerClientTest {
 
     try {
       String autoscaler = "autoscaler517258967";
-      String requestId = "requestId37109963";
       ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
       Autoscaler autoscalerResource = Autoscaler.newBuilder().build();
 
-      client.patchRegionAutoscaler(autoscaler, requestId, region, autoscalerResource);
+      client.patchRegionAutoscaler(autoscaler, region, autoscalerResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -544,12 +537,11 @@ public class RegionAutoscalerClientTest {
     mockService.addResponse(expectedResponse);
 
     String autoscaler = "autoscaler517258967";
-    String requestId = "requestId37109963";
     ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     Autoscaler autoscalerResource = Autoscaler.newBuilder().build();
 
     Operation actualResponse =
-        client.updateRegionAutoscaler(autoscaler, requestId, region, autoscalerResource);
+        client.updateRegionAutoscaler(autoscaler, region, autoscalerResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -577,11 +569,10 @@ public class RegionAutoscalerClientTest {
 
     try {
       String autoscaler = "autoscaler517258967";
-      String requestId = "requestId37109963";
       ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
       Autoscaler autoscalerResource = Autoscaler.newBuilder().build();
 
-      client.updateRegionAutoscaler(autoscaler, requestId, region, autoscalerResource);
+      client.updateRegionAutoscaler(autoscaler, region, autoscalerResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

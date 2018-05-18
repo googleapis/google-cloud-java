@@ -17,12 +17,8 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
-import java.util.Set;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
 
@@ -49,36 +45,18 @@ public final class TestFailure implements ApiMessage {
   }
 
   @Override
-  public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
-    Map<String, List<String>> fieldMap = new HashMap<>();
-    if (fieldNames.contains("actualService") && actualService != null) {
-      fieldMap.put("actualService", Collections.singletonList(String.valueOf(actualService)));
-    }
-    if (fieldNames.contains("expectedService") && expectedService != null) {
-      fieldMap.put("expectedService", Collections.singletonList(String.valueOf(expectedService)));
-    }
-    if (fieldNames.contains("host") && host != null) {
-      fieldMap.put("host", Collections.singletonList(String.valueOf(host)));
-    }
-    if (fieldNames.contains("path") && path != null) {
-      fieldMap.put("path", Collections.singletonList(String.valueOf(path)));
-    }
-    return fieldMap;
-  }
-
-  @Override
-  public String getFieldStringValue(String fieldName) {
+  public Object getFieldValue(String fieldName) {
     if (fieldName.equals("actualService")) {
-      return String.valueOf(actualService);
+      return actualService;
     }
     if (fieldName.equals("expectedService")) {
-      return String.valueOf(expectedService);
+      return expectedService;
     }
     if (fieldName.equals("host")) {
-      return String.valueOf(host);
+      return host;
     }
     if (fieldName.equals("path")) {
-      return String.valueOf(path);
+      return path;
     }
     return null;
   }
@@ -86,6 +64,12 @@ public final class TestFailure implements ApiMessage {
   @Nullable
   @Override
   public ApiMessage getApiMessageRequestBody() {
+    return null;
+  }
+
+  @Nullable
+  @Override
+  public List<String> getFieldMask() {
     return null;
   }
 

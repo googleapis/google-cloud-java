@@ -63,7 +63,6 @@ public class HttpJsonFirewallStub extends FirewallStub {
               .setHttpMethod(HttpMethods.DELETE)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<DeleteFirewallHttpRequest>newBuilder()
-                      .setRequestInstance(DeleteFirewallHttpRequest.getDefaultInstance())
                       .setPathTemplate(PathTemplate.create("{project}/global/firewalls/{firewall}"))
                       .setQueryParams(Sets.<String>newHashSet("requestId"))
                       .setResourceNameFactory(ProjectGlobalFirewallName.newFactory())
@@ -83,7 +82,6 @@ public class HttpJsonFirewallStub extends FirewallStub {
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<GetFirewallHttpRequest>newBuilder()
-                      .setRequestInstance(GetFirewallHttpRequest.getDefaultInstance())
                       .setPathTemplate(PathTemplate.create("{project}/global/firewalls/{firewall}"))
                       .setQueryParams(Sets.<String>newHashSet())
                       .setResourceNameFactory(ProjectGlobalFirewallName.newFactory())
@@ -103,7 +101,6 @@ public class HttpJsonFirewallStub extends FirewallStub {
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<InsertFirewallHttpRequest>newBuilder()
-                      .setRequestInstance(InsertFirewallHttpRequest.getDefaultInstance())
                       .setPathTemplate(PathTemplate.create("{project}/global/firewalls"))
                       .setQueryParams(Sets.<String>newHashSet("requestId"))
                       .setResourceNameFactory(ProjectName.newFactory())
@@ -123,7 +120,6 @@ public class HttpJsonFirewallStub extends FirewallStub {
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<ListFirewallsHttpRequest>newBuilder()
-                      .setRequestInstance(ListFirewallsHttpRequest.getDefaultInstance())
                       .setPathTemplate(PathTemplate.create("{project}/global/firewalls"))
                       .setQueryParams(
                           Sets.<String>newHashSet("filter", "maxResults", "orderBy", "pageToken"))
@@ -144,7 +140,6 @@ public class HttpJsonFirewallStub extends FirewallStub {
               .setHttpMethod(HttpMethods.PATCH)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<PatchFirewallHttpRequest>newBuilder()
-                      .setRequestInstance(PatchFirewallHttpRequest.getDefaultInstance())
                       .setPathTemplate(PathTemplate.create("{project}/global/firewalls/{firewall}"))
                       .setQueryParams(Sets.<String>newHashSet("requestId"))
                       .setResourceNameFactory(ProjectGlobalFirewallName.newFactory())
@@ -164,7 +159,6 @@ public class HttpJsonFirewallStub extends FirewallStub {
               .setHttpMethod(HttpMethods.PUT)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<UpdateFirewallHttpRequest>newBuilder()
-                      .setRequestInstance(UpdateFirewallHttpRequest.getDefaultInstance())
                       .setPathTemplate(PathTemplate.create("{project}/global/firewalls/{firewall}"))
                       .setQueryParams(Sets.<String>newHashSet("requestId"))
                       .setResourceNameFactory(ProjectGlobalFirewallName.newFactory())

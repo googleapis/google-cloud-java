@@ -65,7 +65,6 @@ public class HttpJsonTargetSslProxyStub extends TargetSslProxyStub {
               .setHttpMethod(HttpMethods.DELETE)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<DeleteTargetSslProxyHttpRequest>newBuilder()
-                      .setRequestInstance(DeleteTargetSslProxyHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create("{project}/global/targetSslProxies/{targetSslProxy}"))
                       .setQueryParams(Sets.<String>newHashSet("requestId"))
@@ -86,7 +85,6 @@ public class HttpJsonTargetSslProxyStub extends TargetSslProxyStub {
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<GetTargetSslProxyHttpRequest>newBuilder()
-                      .setRequestInstance(GetTargetSslProxyHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create("{project}/global/targetSslProxies/{targetSslProxy}"))
                       .setQueryParams(Sets.<String>newHashSet())
@@ -107,7 +105,6 @@ public class HttpJsonTargetSslProxyStub extends TargetSslProxyStub {
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<InsertTargetSslProxyHttpRequest>newBuilder()
-                      .setRequestInstance(InsertTargetSslProxyHttpRequest.getDefaultInstance())
                       .setPathTemplate(PathTemplate.create("{project}/global/targetSslProxies"))
                       .setQueryParams(Sets.<String>newHashSet("requestId"))
                       .setResourceNameFactory(ProjectName.newFactory())
@@ -127,7 +124,6 @@ public class HttpJsonTargetSslProxyStub extends TargetSslProxyStub {
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<ListTargetSslProxiesHttpRequest>newBuilder()
-                      .setRequestInstance(ListTargetSslProxiesHttpRequest.getDefaultInstance())
                       .setPathTemplate(PathTemplate.create("{project}/global/targetSslProxies"))
                       .setQueryParams(
                           Sets.<String>newHashSet("filter", "maxResults", "orderBy", "pageToken"))
@@ -149,8 +145,6 @@ public class HttpJsonTargetSslProxyStub extends TargetSslProxyStub {
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter
                       .<SetBackendServiceTargetSslProxyHttpRequest>newBuilder()
-                      .setRequestInstance(
-                          SetBackendServiceTargetSslProxyHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/global/targetSslProxies/{targetSslProxy}/setBackendService"))
@@ -173,8 +167,6 @@ public class HttpJsonTargetSslProxyStub extends TargetSslProxyStub {
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter
                       .<SetProxyHeaderTargetSslProxyHttpRequest>newBuilder()
-                      .setRequestInstance(
-                          SetProxyHeaderTargetSslProxyHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/global/targetSslProxies/{targetSslProxy}/setProxyHeader"))
@@ -197,8 +189,6 @@ public class HttpJsonTargetSslProxyStub extends TargetSslProxyStub {
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter
                       .<SetSslCertificatesTargetSslProxyHttpRequest>newBuilder()
-                      .setRequestInstance(
-                          SetSslCertificatesTargetSslProxyHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/global/targetSslProxies/{targetSslProxy}/setSslCertificates"))
@@ -220,8 +210,6 @@ public class HttpJsonTargetSslProxyStub extends TargetSslProxyStub {
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<SetSslPolicyTargetSslProxyHttpRequest>newBuilder()
-                      .setRequestInstance(
-                          SetSslPolicyTargetSslProxyHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/global/targetSslProxies/{targetSslProxy}/setSslPolicy"))

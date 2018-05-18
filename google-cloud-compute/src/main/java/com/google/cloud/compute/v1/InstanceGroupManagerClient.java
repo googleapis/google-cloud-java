@@ -42,10 +42,9 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (InstanceGroupManagerClient instanceGroupManagerClient = InstanceGroupManagerClient.create()) {
- *   String requestId = "";
  *   ProjectZoneInstanceGroupManagerName instanceGroupManager = ProjectZoneInstanceGroupManagerName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP_MANAGER]");
  *   InstanceGroupManagersAbandonInstancesRequest instanceGroupManagersAbandonInstancesRequestResource = InstanceGroupManagersAbandonInstancesRequest.newBuilder().build();
- *   Operation response = instanceGroupManagerClient.abandonInstancesInstanceGroupManager(requestId, instanceGroupManager, instanceGroupManagersAbandonInstancesRequestResource);
+ *   Operation response = instanceGroupManagerClient.abandonInstancesInstanceGroupManager(instanceGroupManager, instanceGroupManagersAbandonInstancesRequestResource);
  * }
  * </code>
  * </pre>
@@ -175,36 +174,24 @@ public class InstanceGroupManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupManagerClient instanceGroupManagerClient = InstanceGroupManagerClient.create()) {
-   *   String requestId = "";
    *   ProjectZoneInstanceGroupManagerName instanceGroupManager = ProjectZoneInstanceGroupManagerName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP_MANAGER]");
    *   InstanceGroupManagersAbandonInstancesRequest instanceGroupManagersAbandonInstancesRequestResource = InstanceGroupManagersAbandonInstancesRequest.newBuilder().build();
-   *   Operation response = instanceGroupManagerClient.abandonInstancesInstanceGroupManager(requestId, instanceGroupManager, instanceGroupManagersAbandonInstancesRequestResource);
+   *   Operation response = instanceGroupManagerClient.abandonInstancesInstanceGroupManager(instanceGroupManager, instanceGroupManagersAbandonInstancesRequestResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param instanceGroupManager The name of the managed instance group.
    * @param instanceGroupManagersAbandonInstancesRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation abandonInstancesInstanceGroupManager(
-      String requestId,
       ProjectZoneInstanceGroupManagerName instanceGroupManager,
       InstanceGroupManagersAbandonInstancesRequest
           instanceGroupManagersAbandonInstancesRequestResource) {
 
     AbandonInstancesInstanceGroupManagerHttpRequest request =
         AbandonInstancesInstanceGroupManagerHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setInstanceGroupManager(
                 instanceGroupManager == null ? null : instanceGroupManager.toString())
             .setInstanceGroupManagersAbandonInstancesRequestResource(
@@ -233,36 +220,24 @@ public class InstanceGroupManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupManagerClient instanceGroupManagerClient = InstanceGroupManagerClient.create()) {
-   *   String requestId = "";
    *   ProjectZoneInstanceGroupManagerName instanceGroupManager = ProjectZoneInstanceGroupManagerName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP_MANAGER]");
    *   InstanceGroupManagersAbandonInstancesRequest instanceGroupManagersAbandonInstancesRequestResource = InstanceGroupManagersAbandonInstancesRequest.newBuilder().build();
-   *   Operation response = instanceGroupManagerClient.abandonInstancesInstanceGroupManager(requestId, instanceGroupManager.toString(), instanceGroupManagersAbandonInstancesRequestResource);
+   *   Operation response = instanceGroupManagerClient.abandonInstancesInstanceGroupManager(instanceGroupManager.toString(), instanceGroupManagersAbandonInstancesRequestResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param instanceGroupManager The name of the managed instance group.
    * @param instanceGroupManagersAbandonInstancesRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation abandonInstancesInstanceGroupManager(
-      String requestId,
       String instanceGroupManager,
       InstanceGroupManagersAbandonInstancesRequest
           instanceGroupManagersAbandonInstancesRequestResource) {
 
     AbandonInstancesInstanceGroupManagerHttpRequest request =
         AbandonInstancesInstanceGroupManagerHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setInstanceGroupManager(instanceGroupManager)
             .setInstanceGroupManagersAbandonInstancesRequestResource(
                 instanceGroupManagersAbandonInstancesRequestResource)
@@ -290,11 +265,9 @@ public class InstanceGroupManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupManagerClient instanceGroupManagerClient = InstanceGroupManagerClient.create()) {
-   *   String requestId = "";
    *   ProjectZoneInstanceGroupManagerName instanceGroupManager = ProjectZoneInstanceGroupManagerName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP_MANAGER]");
    *   InstanceGroupManagersAbandonInstancesRequest instanceGroupManagersAbandonInstancesRequestResource = InstanceGroupManagersAbandonInstancesRequest.newBuilder().build();
    *   AbandonInstancesInstanceGroupManagerHttpRequest request = AbandonInstancesInstanceGroupManagerHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setInstanceGroupManager(instanceGroupManager.toString())
    *     .setInstanceGroupManagersAbandonInstancesRequestResource(instanceGroupManagersAbandonInstancesRequestResource)
    *     .build();
@@ -331,11 +304,9 @@ public class InstanceGroupManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupManagerClient instanceGroupManagerClient = InstanceGroupManagerClient.create()) {
-   *   String requestId = "";
    *   ProjectZoneInstanceGroupManagerName instanceGroupManager = ProjectZoneInstanceGroupManagerName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP_MANAGER]");
    *   InstanceGroupManagersAbandonInstancesRequest instanceGroupManagersAbandonInstancesRequestResource = InstanceGroupManagersAbandonInstancesRequest.newBuilder().build();
    *   AbandonInstancesInstanceGroupManagerHttpRequest request = AbandonInstancesInstanceGroupManagerHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setInstanceGroupManager(instanceGroupManager.toString())
    *     .setInstanceGroupManagersAbandonInstancesRequestResource(instanceGroupManagersAbandonInstancesRequestResource)
    *     .build();
@@ -504,31 +475,20 @@ public class InstanceGroupManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupManagerClient instanceGroupManagerClient = InstanceGroupManagerClient.create()) {
-   *   String requestId = "";
    *   ProjectZoneInstanceGroupManagerName instanceGroupManager = ProjectZoneInstanceGroupManagerName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP_MANAGER]");
-   *   Operation response = instanceGroupManagerClient.deleteInstanceGroupManager(requestId, instanceGroupManager);
+   *   Operation response = instanceGroupManagerClient.deleteInstanceGroupManager(instanceGroupManager);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param instanceGroupManager The name of the managed instance group to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation deleteInstanceGroupManager(
-      String requestId, ProjectZoneInstanceGroupManagerName instanceGroupManager) {
+      ProjectZoneInstanceGroupManagerName instanceGroupManager) {
 
     DeleteInstanceGroupManagerHttpRequest request =
         DeleteInstanceGroupManagerHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setInstanceGroupManager(
                 instanceGroupManager == null ? null : instanceGroupManager.toString())
             .build();
@@ -545,30 +505,19 @@ public class InstanceGroupManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupManagerClient instanceGroupManagerClient = InstanceGroupManagerClient.create()) {
-   *   String requestId = "";
    *   ProjectZoneInstanceGroupManagerName instanceGroupManager = ProjectZoneInstanceGroupManagerName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP_MANAGER]");
-   *   Operation response = instanceGroupManagerClient.deleteInstanceGroupManager(requestId, instanceGroupManager.toString());
+   *   Operation response = instanceGroupManagerClient.deleteInstanceGroupManager(instanceGroupManager.toString());
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param instanceGroupManager The name of the managed instance group to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteInstanceGroupManager(String requestId, String instanceGroupManager) {
+  public final Operation deleteInstanceGroupManager(String instanceGroupManager) {
 
     DeleteInstanceGroupManagerHttpRequest request =
         DeleteInstanceGroupManagerHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setInstanceGroupManager(instanceGroupManager)
             .build();
     return deleteInstanceGroupManager(request);
@@ -584,10 +533,8 @@ public class InstanceGroupManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupManagerClient instanceGroupManagerClient = InstanceGroupManagerClient.create()) {
-   *   String requestId = "";
    *   ProjectZoneInstanceGroupManagerName instanceGroupManager = ProjectZoneInstanceGroupManagerName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP_MANAGER]");
    *   DeleteInstanceGroupManagerHttpRequest request = DeleteInstanceGroupManagerHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setInstanceGroupManager(instanceGroupManager.toString())
    *     .build();
    *   Operation response = instanceGroupManagerClient.deleteInstanceGroupManager(request);
@@ -612,10 +559,8 @@ public class InstanceGroupManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupManagerClient instanceGroupManagerClient = InstanceGroupManagerClient.create()) {
-   *   String requestId = "";
    *   ProjectZoneInstanceGroupManagerName instanceGroupManager = ProjectZoneInstanceGroupManagerName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP_MANAGER]");
    *   DeleteInstanceGroupManagerHttpRequest request = DeleteInstanceGroupManagerHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setInstanceGroupManager(instanceGroupManager.toString())
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = instanceGroupManagerClient.deleteInstanceGroupManagerCallable().futureCall(request);
@@ -649,36 +594,24 @@ public class InstanceGroupManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupManagerClient instanceGroupManagerClient = InstanceGroupManagerClient.create()) {
-   *   String requestId = "";
    *   ProjectZoneInstanceGroupManagerName instanceGroupManager = ProjectZoneInstanceGroupManagerName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP_MANAGER]");
    *   InstanceGroupManagersDeleteInstancesRequest instanceGroupManagersDeleteInstancesRequestResource = InstanceGroupManagersDeleteInstancesRequest.newBuilder().build();
-   *   Operation response = instanceGroupManagerClient.deleteInstancesInstanceGroupManager(requestId, instanceGroupManager, instanceGroupManagersDeleteInstancesRequestResource);
+   *   Operation response = instanceGroupManagerClient.deleteInstancesInstanceGroupManager(instanceGroupManager, instanceGroupManagersDeleteInstancesRequestResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param instanceGroupManager The name of the managed instance group.
    * @param instanceGroupManagersDeleteInstancesRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation deleteInstancesInstanceGroupManager(
-      String requestId,
       ProjectZoneInstanceGroupManagerName instanceGroupManager,
       InstanceGroupManagersDeleteInstancesRequest
           instanceGroupManagersDeleteInstancesRequestResource) {
 
     DeleteInstancesInstanceGroupManagerHttpRequest request =
         DeleteInstancesInstanceGroupManagerHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setInstanceGroupManager(
                 instanceGroupManager == null ? null : instanceGroupManager.toString())
             .setInstanceGroupManagersDeleteInstancesRequestResource(
@@ -706,36 +639,24 @@ public class InstanceGroupManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupManagerClient instanceGroupManagerClient = InstanceGroupManagerClient.create()) {
-   *   String requestId = "";
    *   ProjectZoneInstanceGroupManagerName instanceGroupManager = ProjectZoneInstanceGroupManagerName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP_MANAGER]");
    *   InstanceGroupManagersDeleteInstancesRequest instanceGroupManagersDeleteInstancesRequestResource = InstanceGroupManagersDeleteInstancesRequest.newBuilder().build();
-   *   Operation response = instanceGroupManagerClient.deleteInstancesInstanceGroupManager(requestId, instanceGroupManager.toString(), instanceGroupManagersDeleteInstancesRequestResource);
+   *   Operation response = instanceGroupManagerClient.deleteInstancesInstanceGroupManager(instanceGroupManager.toString(), instanceGroupManagersDeleteInstancesRequestResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param instanceGroupManager The name of the managed instance group.
    * @param instanceGroupManagersDeleteInstancesRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation deleteInstancesInstanceGroupManager(
-      String requestId,
       String instanceGroupManager,
       InstanceGroupManagersDeleteInstancesRequest
           instanceGroupManagersDeleteInstancesRequestResource) {
 
     DeleteInstancesInstanceGroupManagerHttpRequest request =
         DeleteInstancesInstanceGroupManagerHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setInstanceGroupManager(instanceGroupManager)
             .setInstanceGroupManagersDeleteInstancesRequestResource(
                 instanceGroupManagersDeleteInstancesRequestResource)
@@ -762,11 +683,9 @@ public class InstanceGroupManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupManagerClient instanceGroupManagerClient = InstanceGroupManagerClient.create()) {
-   *   String requestId = "";
    *   ProjectZoneInstanceGroupManagerName instanceGroupManager = ProjectZoneInstanceGroupManagerName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP_MANAGER]");
    *   InstanceGroupManagersDeleteInstancesRequest instanceGroupManagersDeleteInstancesRequestResource = InstanceGroupManagersDeleteInstancesRequest.newBuilder().build();
    *   DeleteInstancesInstanceGroupManagerHttpRequest request = DeleteInstancesInstanceGroupManagerHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setInstanceGroupManager(instanceGroupManager.toString())
    *     .setInstanceGroupManagersDeleteInstancesRequestResource(instanceGroupManagersDeleteInstancesRequestResource)
    *     .build();
@@ -802,11 +721,9 @@ public class InstanceGroupManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupManagerClient instanceGroupManagerClient = InstanceGroupManagerClient.create()) {
-   *   String requestId = "";
    *   ProjectZoneInstanceGroupManagerName instanceGroupManager = ProjectZoneInstanceGroupManagerName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP_MANAGER]");
    *   InstanceGroupManagersDeleteInstancesRequest instanceGroupManagersDeleteInstancesRequestResource = InstanceGroupManagersDeleteInstancesRequest.newBuilder().build();
    *   DeleteInstancesInstanceGroupManagerHttpRequest request = DeleteInstancesInstanceGroupManagerHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setInstanceGroupManager(instanceGroupManager.toString())
    *     .setInstanceGroupManagersDeleteInstancesRequestResource(instanceGroupManagersDeleteInstancesRequestResource)
    *     .build();
@@ -945,22 +862,12 @@ public class InstanceGroupManagerClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceGroupManagerClient instanceGroupManagerClient = InstanceGroupManagerClient.create()) {
    *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
-   *   String requestId = "";
    *   InstanceGroupManager instanceGroupManagerResource = InstanceGroupManager.newBuilder().build();
-   *   Operation response = instanceGroupManagerClient.insertInstanceGroupManager(zone, requestId, instanceGroupManagerResource);
+   *   Operation response = instanceGroupManagerClient.insertInstanceGroupManager(zone, instanceGroupManagerResource);
    * }
    * </code></pre>
    *
    * @param zone The name of the zone where you want to create the managed instance group.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param instanceGroupManagerResource An Instance Group Manager resource. (== resource_for
    *     beta.instanceGroupManagers ==) (== resource_for v1.instanceGroupManagers ==) (==
    *     resource_for beta.regionInstanceGroupManagers ==) (== resource_for
@@ -969,12 +876,11 @@ public class InstanceGroupManagerClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation insertInstanceGroupManager(
-      ProjectZoneName zone, String requestId, InstanceGroupManager instanceGroupManagerResource) {
+      ProjectZoneName zone, InstanceGroupManager instanceGroupManagerResource) {
 
     InsertInstanceGroupManagerHttpRequest request =
         InsertInstanceGroupManagerHttpRequest.newBuilder()
             .setZone(zone == null ? null : zone.toString())
-            .setRequestId(requestId)
             .setInstanceGroupManagerResource(instanceGroupManagerResource)
             .build();
     return insertInstanceGroupManager(request);
@@ -996,22 +902,12 @@ public class InstanceGroupManagerClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceGroupManagerClient instanceGroupManagerClient = InstanceGroupManagerClient.create()) {
    *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
-   *   String requestId = "";
    *   InstanceGroupManager instanceGroupManagerResource = InstanceGroupManager.newBuilder().build();
-   *   Operation response = instanceGroupManagerClient.insertInstanceGroupManager(zone.toString(), requestId, instanceGroupManagerResource);
+   *   Operation response = instanceGroupManagerClient.insertInstanceGroupManager(zone.toString(), instanceGroupManagerResource);
    * }
    * </code></pre>
    *
    * @param zone The name of the zone where you want to create the managed instance group.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param instanceGroupManagerResource An Instance Group Manager resource. (== resource_for
    *     beta.instanceGroupManagers ==) (== resource_for v1.instanceGroupManagers ==) (==
    *     resource_for beta.regionInstanceGroupManagers ==) (== resource_for
@@ -1020,12 +916,11 @@ public class InstanceGroupManagerClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation insertInstanceGroupManager(
-      String zone, String requestId, InstanceGroupManager instanceGroupManagerResource) {
+      String zone, InstanceGroupManager instanceGroupManagerResource) {
 
     InsertInstanceGroupManagerHttpRequest request =
         InsertInstanceGroupManagerHttpRequest.newBuilder()
             .setZone(zone)
-            .setRequestId(requestId)
             .setInstanceGroupManagerResource(instanceGroupManagerResource)
             .build();
     return insertInstanceGroupManager(request);
@@ -1047,11 +942,9 @@ public class InstanceGroupManagerClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceGroupManagerClient instanceGroupManagerClient = InstanceGroupManagerClient.create()) {
    *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
-   *   String requestId = "";
    *   InstanceGroupManager instanceGroupManagerResource = InstanceGroupManager.newBuilder().build();
    *   InsertInstanceGroupManagerHttpRequest request = InsertInstanceGroupManagerHttpRequest.newBuilder()
    *     .setZone(zone.toString())
-   *     .setRequestId(requestId)
    *     .setInstanceGroupManagerResource(instanceGroupManagerResource)
    *     .build();
    *   Operation response = instanceGroupManagerClient.insertInstanceGroupManager(request);
@@ -1082,11 +975,9 @@ public class InstanceGroupManagerClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceGroupManagerClient instanceGroupManagerClient = InstanceGroupManagerClient.create()) {
    *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
-   *   String requestId = "";
    *   InstanceGroupManager instanceGroupManagerResource = InstanceGroupManager.newBuilder().build();
    *   InsertInstanceGroupManagerHttpRequest request = InsertInstanceGroupManagerHttpRequest.newBuilder()
    *     .setZone(zone.toString())
-   *     .setRequestId(requestId)
    *     .setInstanceGroupManagerResource(instanceGroupManagerResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = instanceGroupManagerClient.insertInstanceGroupManagerCallable().futureCall(request);
@@ -1384,36 +1275,24 @@ public class InstanceGroupManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupManagerClient instanceGroupManagerClient = InstanceGroupManagerClient.create()) {
-   *   String requestId = "";
    *   ProjectZoneInstanceGroupManagerName instanceGroupManager = ProjectZoneInstanceGroupManagerName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP_MANAGER]");
    *   InstanceGroupManagersRecreateInstancesRequest instanceGroupManagersRecreateInstancesRequestResource = InstanceGroupManagersRecreateInstancesRequest.newBuilder().build();
-   *   Operation response = instanceGroupManagerClient.recreateInstancesInstanceGroupManager(requestId, instanceGroupManager, instanceGroupManagersRecreateInstancesRequestResource);
+   *   Operation response = instanceGroupManagerClient.recreateInstancesInstanceGroupManager(instanceGroupManager, instanceGroupManagersRecreateInstancesRequestResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param instanceGroupManager The name of the managed instance group.
    * @param instanceGroupManagersRecreateInstancesRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation recreateInstancesInstanceGroupManager(
-      String requestId,
       ProjectZoneInstanceGroupManagerName instanceGroupManager,
       InstanceGroupManagersRecreateInstancesRequest
           instanceGroupManagersRecreateInstancesRequestResource) {
 
     RecreateInstancesInstanceGroupManagerHttpRequest request =
         RecreateInstancesInstanceGroupManagerHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setInstanceGroupManager(
                 instanceGroupManager == null ? null : instanceGroupManager.toString())
             .setInstanceGroupManagersRecreateInstancesRequestResource(
@@ -1440,36 +1319,24 @@ public class InstanceGroupManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupManagerClient instanceGroupManagerClient = InstanceGroupManagerClient.create()) {
-   *   String requestId = "";
    *   ProjectZoneInstanceGroupManagerName instanceGroupManager = ProjectZoneInstanceGroupManagerName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP_MANAGER]");
    *   InstanceGroupManagersRecreateInstancesRequest instanceGroupManagersRecreateInstancesRequestResource = InstanceGroupManagersRecreateInstancesRequest.newBuilder().build();
-   *   Operation response = instanceGroupManagerClient.recreateInstancesInstanceGroupManager(requestId, instanceGroupManager.toString(), instanceGroupManagersRecreateInstancesRequestResource);
+   *   Operation response = instanceGroupManagerClient.recreateInstancesInstanceGroupManager(instanceGroupManager.toString(), instanceGroupManagersRecreateInstancesRequestResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param instanceGroupManager The name of the managed instance group.
    * @param instanceGroupManagersRecreateInstancesRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation recreateInstancesInstanceGroupManager(
-      String requestId,
       String instanceGroupManager,
       InstanceGroupManagersRecreateInstancesRequest
           instanceGroupManagersRecreateInstancesRequestResource) {
 
     RecreateInstancesInstanceGroupManagerHttpRequest request =
         RecreateInstancesInstanceGroupManagerHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setInstanceGroupManager(instanceGroupManager)
             .setInstanceGroupManagersRecreateInstancesRequestResource(
                 instanceGroupManagersRecreateInstancesRequestResource)
@@ -1495,11 +1362,9 @@ public class InstanceGroupManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupManagerClient instanceGroupManagerClient = InstanceGroupManagerClient.create()) {
-   *   String requestId = "";
    *   ProjectZoneInstanceGroupManagerName instanceGroupManager = ProjectZoneInstanceGroupManagerName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP_MANAGER]");
    *   InstanceGroupManagersRecreateInstancesRequest instanceGroupManagersRecreateInstancesRequestResource = InstanceGroupManagersRecreateInstancesRequest.newBuilder().build();
    *   RecreateInstancesInstanceGroupManagerHttpRequest request = RecreateInstancesInstanceGroupManagerHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setInstanceGroupManager(instanceGroupManager.toString())
    *     .setInstanceGroupManagersRecreateInstancesRequestResource(instanceGroupManagersRecreateInstancesRequestResource)
    *     .build();
@@ -1534,11 +1399,9 @@ public class InstanceGroupManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupManagerClient instanceGroupManagerClient = InstanceGroupManagerClient.create()) {
-   *   String requestId = "";
    *   ProjectZoneInstanceGroupManagerName instanceGroupManager = ProjectZoneInstanceGroupManagerName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP_MANAGER]");
    *   InstanceGroupManagersRecreateInstancesRequest instanceGroupManagersRecreateInstancesRequestResource = InstanceGroupManagersRecreateInstancesRequest.newBuilder().build();
    *   RecreateInstancesInstanceGroupManagerHttpRequest request = RecreateInstancesInstanceGroupManagerHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setInstanceGroupManager(instanceGroupManager.toString())
    *     .setInstanceGroupManagersRecreateInstancesRequestResource(instanceGroupManagersRecreateInstancesRequestResource)
    *     .build();
@@ -1571,35 +1434,24 @@ public class InstanceGroupManagerClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceGroupManagerClient instanceGroupManagerClient = InstanceGroupManagerClient.create()) {
    *   Integer size = 0;
-   *   String requestId = "";
    *   ProjectZoneInstanceGroupManagerName instanceGroupManager = ProjectZoneInstanceGroupManagerName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP_MANAGER]");
-   *   Operation response = instanceGroupManagerClient.resizeInstanceGroupManager(size, requestId, instanceGroupManager);
+   *   Operation response = instanceGroupManagerClient.resizeInstanceGroupManager(size, instanceGroupManager);
    * }
    * </code></pre>
    *
    * @param size The number of running instances that the managed instance group should maintain at
    *     any given time. The group automatically adds or removes instances to maintain the number of
    *     instances specified by this parameter.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param instanceGroupManager The name of the managed instance group.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation resizeInstanceGroupManager(
-      Integer size, String requestId, ProjectZoneInstanceGroupManagerName instanceGroupManager) {
+      Integer size, ProjectZoneInstanceGroupManagerName instanceGroupManager) {
 
     ResizeInstanceGroupManagerHttpRequest request =
         ResizeInstanceGroupManagerHttpRequest.newBuilder()
             .setSize(size)
-            .setRequestId(requestId)
             .setInstanceGroupManager(
                 instanceGroupManager == null ? null : instanceGroupManager.toString())
             .build();
@@ -1623,35 +1475,23 @@ public class InstanceGroupManagerClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceGroupManagerClient instanceGroupManagerClient = InstanceGroupManagerClient.create()) {
    *   Integer size = 0;
-   *   String requestId = "";
    *   ProjectZoneInstanceGroupManagerName instanceGroupManager = ProjectZoneInstanceGroupManagerName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP_MANAGER]");
-   *   Operation response = instanceGroupManagerClient.resizeInstanceGroupManager(size, requestId, instanceGroupManager.toString());
+   *   Operation response = instanceGroupManagerClient.resizeInstanceGroupManager(size, instanceGroupManager.toString());
    * }
    * </code></pre>
    *
    * @param size The number of running instances that the managed instance group should maintain at
    *     any given time. The group automatically adds or removes instances to maintain the number of
    *     instances specified by this parameter.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param instanceGroupManager The name of the managed instance group.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation resizeInstanceGroupManager(
-      Integer size, String requestId, String instanceGroupManager) {
+  public final Operation resizeInstanceGroupManager(Integer size, String instanceGroupManager) {
 
     ResizeInstanceGroupManagerHttpRequest request =
         ResizeInstanceGroupManagerHttpRequest.newBuilder()
             .setSize(size)
-            .setRequestId(requestId)
             .setInstanceGroupManager(instanceGroupManager)
             .build();
     return resizeInstanceGroupManager(request);
@@ -1674,11 +1514,9 @@ public class InstanceGroupManagerClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceGroupManagerClient instanceGroupManagerClient = InstanceGroupManagerClient.create()) {
    *   Integer size = 0;
-   *   String requestId = "";
    *   ProjectZoneInstanceGroupManagerName instanceGroupManager = ProjectZoneInstanceGroupManagerName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP_MANAGER]");
    *   ResizeInstanceGroupManagerHttpRequest request = ResizeInstanceGroupManagerHttpRequest.newBuilder()
    *     .setSize(size)
-   *     .setRequestId(requestId)
    *     .setInstanceGroupManager(instanceGroupManager.toString())
    *     .build();
    *   Operation response = instanceGroupManagerClient.resizeInstanceGroupManager(request);
@@ -1710,11 +1548,9 @@ public class InstanceGroupManagerClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceGroupManagerClient instanceGroupManagerClient = InstanceGroupManagerClient.create()) {
    *   Integer size = 0;
-   *   String requestId = "";
    *   ProjectZoneInstanceGroupManagerName instanceGroupManager = ProjectZoneInstanceGroupManagerName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP_MANAGER]");
    *   ResizeInstanceGroupManagerHttpRequest request = ResizeInstanceGroupManagerHttpRequest.newBuilder()
    *     .setSize(size)
-   *     .setRequestId(requestId)
    *     .setInstanceGroupManager(instanceGroupManager.toString())
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = instanceGroupManagerClient.resizeInstanceGroupManagerCallable().futureCall(request);
@@ -1738,36 +1574,24 @@ public class InstanceGroupManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupManagerClient instanceGroupManagerClient = InstanceGroupManagerClient.create()) {
-   *   String requestId = "";
    *   ProjectZoneInstanceGroupManagerName instanceGroupManager = ProjectZoneInstanceGroupManagerName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP_MANAGER]");
    *   InstanceGroupManagersSetInstanceTemplateRequest instanceGroupManagersSetInstanceTemplateRequestResource = InstanceGroupManagersSetInstanceTemplateRequest.newBuilder().build();
-   *   Operation response = instanceGroupManagerClient.setInstanceTemplateInstanceGroupManager(requestId, instanceGroupManager, instanceGroupManagersSetInstanceTemplateRequestResource);
+   *   Operation response = instanceGroupManagerClient.setInstanceTemplateInstanceGroupManager(instanceGroupManager, instanceGroupManagersSetInstanceTemplateRequestResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param instanceGroupManager The name of the managed instance group.
    * @param instanceGroupManagersSetInstanceTemplateRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation setInstanceTemplateInstanceGroupManager(
-      String requestId,
       ProjectZoneInstanceGroupManagerName instanceGroupManager,
       InstanceGroupManagersSetInstanceTemplateRequest
           instanceGroupManagersSetInstanceTemplateRequestResource) {
 
     SetInstanceTemplateInstanceGroupManagerHttpRequest request =
         SetInstanceTemplateInstanceGroupManagerHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setInstanceGroupManager(
                 instanceGroupManager == null ? null : instanceGroupManager.toString())
             .setInstanceGroupManagersSetInstanceTemplateRequestResource(
@@ -1785,36 +1609,24 @@ public class InstanceGroupManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupManagerClient instanceGroupManagerClient = InstanceGroupManagerClient.create()) {
-   *   String requestId = "";
    *   ProjectZoneInstanceGroupManagerName instanceGroupManager = ProjectZoneInstanceGroupManagerName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP_MANAGER]");
    *   InstanceGroupManagersSetInstanceTemplateRequest instanceGroupManagersSetInstanceTemplateRequestResource = InstanceGroupManagersSetInstanceTemplateRequest.newBuilder().build();
-   *   Operation response = instanceGroupManagerClient.setInstanceTemplateInstanceGroupManager(requestId, instanceGroupManager.toString(), instanceGroupManagersSetInstanceTemplateRequestResource);
+   *   Operation response = instanceGroupManagerClient.setInstanceTemplateInstanceGroupManager(instanceGroupManager.toString(), instanceGroupManagersSetInstanceTemplateRequestResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param instanceGroupManager The name of the managed instance group.
    * @param instanceGroupManagersSetInstanceTemplateRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation setInstanceTemplateInstanceGroupManager(
-      String requestId,
       String instanceGroupManager,
       InstanceGroupManagersSetInstanceTemplateRequest
           instanceGroupManagersSetInstanceTemplateRequestResource) {
 
     SetInstanceTemplateInstanceGroupManagerHttpRequest request =
         SetInstanceTemplateInstanceGroupManagerHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setInstanceGroupManager(instanceGroupManager)
             .setInstanceGroupManagersSetInstanceTemplateRequestResource(
                 instanceGroupManagersSetInstanceTemplateRequestResource)
@@ -1831,11 +1643,9 @@ public class InstanceGroupManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupManagerClient instanceGroupManagerClient = InstanceGroupManagerClient.create()) {
-   *   String requestId = "";
    *   ProjectZoneInstanceGroupManagerName instanceGroupManager = ProjectZoneInstanceGroupManagerName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP_MANAGER]");
    *   InstanceGroupManagersSetInstanceTemplateRequest instanceGroupManagersSetInstanceTemplateRequestResource = InstanceGroupManagersSetInstanceTemplateRequest.newBuilder().build();
    *   SetInstanceTemplateInstanceGroupManagerHttpRequest request = SetInstanceTemplateInstanceGroupManagerHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setInstanceGroupManager(instanceGroupManager.toString())
    *     .setInstanceGroupManagersSetInstanceTemplateRequestResource(instanceGroupManagersSetInstanceTemplateRequestResource)
    *     .build();
@@ -1861,11 +1671,9 @@ public class InstanceGroupManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupManagerClient instanceGroupManagerClient = InstanceGroupManagerClient.create()) {
-   *   String requestId = "";
    *   ProjectZoneInstanceGroupManagerName instanceGroupManager = ProjectZoneInstanceGroupManagerName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP_MANAGER]");
    *   InstanceGroupManagersSetInstanceTemplateRequest instanceGroupManagersSetInstanceTemplateRequestResource = InstanceGroupManagersSetInstanceTemplateRequest.newBuilder().build();
    *   SetInstanceTemplateInstanceGroupManagerHttpRequest request = SetInstanceTemplateInstanceGroupManagerHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setInstanceGroupManager(instanceGroupManager.toString())
    *     .setInstanceGroupManagersSetInstanceTemplateRequestResource(instanceGroupManagersSetInstanceTemplateRequestResource)
    *     .build();
@@ -1893,36 +1701,24 @@ public class InstanceGroupManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupManagerClient instanceGroupManagerClient = InstanceGroupManagerClient.create()) {
-   *   String requestId = "";
    *   ProjectZoneInstanceGroupManagerName instanceGroupManager = ProjectZoneInstanceGroupManagerName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP_MANAGER]");
    *   InstanceGroupManagersSetTargetPoolsRequest instanceGroupManagersSetTargetPoolsRequestResource = InstanceGroupManagersSetTargetPoolsRequest.newBuilder().build();
-   *   Operation response = instanceGroupManagerClient.setTargetPoolsInstanceGroupManager(requestId, instanceGroupManager, instanceGroupManagersSetTargetPoolsRequestResource);
+   *   Operation response = instanceGroupManagerClient.setTargetPoolsInstanceGroupManager(instanceGroupManager, instanceGroupManagersSetTargetPoolsRequestResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param instanceGroupManager The name of the managed instance group.
    * @param instanceGroupManagersSetTargetPoolsRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation setTargetPoolsInstanceGroupManager(
-      String requestId,
       ProjectZoneInstanceGroupManagerName instanceGroupManager,
       InstanceGroupManagersSetTargetPoolsRequest
           instanceGroupManagersSetTargetPoolsRequestResource) {
 
     SetTargetPoolsInstanceGroupManagerHttpRequest request =
         SetTargetPoolsInstanceGroupManagerHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setInstanceGroupManager(
                 instanceGroupManager == null ? null : instanceGroupManager.toString())
             .setInstanceGroupManagersSetTargetPoolsRequestResource(
@@ -1943,36 +1739,24 @@ public class InstanceGroupManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupManagerClient instanceGroupManagerClient = InstanceGroupManagerClient.create()) {
-   *   String requestId = "";
    *   ProjectZoneInstanceGroupManagerName instanceGroupManager = ProjectZoneInstanceGroupManagerName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP_MANAGER]");
    *   InstanceGroupManagersSetTargetPoolsRequest instanceGroupManagersSetTargetPoolsRequestResource = InstanceGroupManagersSetTargetPoolsRequest.newBuilder().build();
-   *   Operation response = instanceGroupManagerClient.setTargetPoolsInstanceGroupManager(requestId, instanceGroupManager.toString(), instanceGroupManagersSetTargetPoolsRequestResource);
+   *   Operation response = instanceGroupManagerClient.setTargetPoolsInstanceGroupManager(instanceGroupManager.toString(), instanceGroupManagersSetTargetPoolsRequestResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param instanceGroupManager The name of the managed instance group.
    * @param instanceGroupManagersSetTargetPoolsRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation setTargetPoolsInstanceGroupManager(
-      String requestId,
       String instanceGroupManager,
       InstanceGroupManagersSetTargetPoolsRequest
           instanceGroupManagersSetTargetPoolsRequestResource) {
 
     SetTargetPoolsInstanceGroupManagerHttpRequest request =
         SetTargetPoolsInstanceGroupManagerHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setInstanceGroupManager(instanceGroupManager)
             .setInstanceGroupManagersSetTargetPoolsRequestResource(
                 instanceGroupManagersSetTargetPoolsRequestResource)
@@ -1992,11 +1776,9 @@ public class InstanceGroupManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupManagerClient instanceGroupManagerClient = InstanceGroupManagerClient.create()) {
-   *   String requestId = "";
    *   ProjectZoneInstanceGroupManagerName instanceGroupManager = ProjectZoneInstanceGroupManagerName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP_MANAGER]");
    *   InstanceGroupManagersSetTargetPoolsRequest instanceGroupManagersSetTargetPoolsRequestResource = InstanceGroupManagersSetTargetPoolsRequest.newBuilder().build();
    *   SetTargetPoolsInstanceGroupManagerHttpRequest request = SetTargetPoolsInstanceGroupManagerHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setInstanceGroupManager(instanceGroupManager.toString())
    *     .setInstanceGroupManagersSetTargetPoolsRequestResource(instanceGroupManagersSetTargetPoolsRequestResource)
    *     .build();
@@ -2025,11 +1807,9 @@ public class InstanceGroupManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupManagerClient instanceGroupManagerClient = InstanceGroupManagerClient.create()) {
-   *   String requestId = "";
    *   ProjectZoneInstanceGroupManagerName instanceGroupManager = ProjectZoneInstanceGroupManagerName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP_MANAGER]");
    *   InstanceGroupManagersSetTargetPoolsRequest instanceGroupManagersSetTargetPoolsRequestResource = InstanceGroupManagersSetTargetPoolsRequest.newBuilder().build();
    *   SetTargetPoolsInstanceGroupManagerHttpRequest request = SetTargetPoolsInstanceGroupManagerHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setInstanceGroupManager(instanceGroupManager.toString())
    *     .setInstanceGroupManagersSetTargetPoolsRequestResource(instanceGroupManagersSetTargetPoolsRequestResource)
    *     .build();

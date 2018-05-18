@@ -42,9 +42,8 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (VpnTunnelClient vpnTunnelClient = VpnTunnelClient.create()) {
- *   String requestId = "";
  *   ProjectRegionVpnTunnelName vpnTunnel = ProjectRegionVpnTunnelName.of("[PROJECT]", "[REGION]", "[VPN_TUNNEL]");
- *   Operation response = vpnTunnelClient.deleteVpnTunnel(requestId, vpnTunnel);
+ *   Operation response = vpnTunnelClient.deleteVpnTunnel(vpnTunnel);
  * }
  * </code>
  * </pre>
@@ -298,30 +297,19 @@ public class VpnTunnelClient implements BackgroundResource {
    *
    * <pre><code>
    * try (VpnTunnelClient vpnTunnelClient = VpnTunnelClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionVpnTunnelName vpnTunnel = ProjectRegionVpnTunnelName.of("[PROJECT]", "[REGION]", "[VPN_TUNNEL]");
-   *   Operation response = vpnTunnelClient.deleteVpnTunnel(requestId, vpnTunnel);
+   *   Operation response = vpnTunnelClient.deleteVpnTunnel(vpnTunnel);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param vpnTunnel Name of the VpnTunnel resource to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteVpnTunnel(String requestId, ProjectRegionVpnTunnelName vpnTunnel) {
+  public final Operation deleteVpnTunnel(ProjectRegionVpnTunnelName vpnTunnel) {
 
     DeleteVpnTunnelHttpRequest request =
         DeleteVpnTunnelHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setVpnTunnel(vpnTunnel == null ? null : vpnTunnel.toString())
             .build();
     return deleteVpnTunnel(request);
@@ -335,32 +323,19 @@ public class VpnTunnelClient implements BackgroundResource {
    *
    * <pre><code>
    * try (VpnTunnelClient vpnTunnelClient = VpnTunnelClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionVpnTunnelName vpnTunnel = ProjectRegionVpnTunnelName.of("[PROJECT]", "[REGION]", "[VPN_TUNNEL]");
-   *   Operation response = vpnTunnelClient.deleteVpnTunnel(requestId, vpnTunnel.toString());
+   *   Operation response = vpnTunnelClient.deleteVpnTunnel(vpnTunnel.toString());
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param vpnTunnel Name of the VpnTunnel resource to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteVpnTunnel(String requestId, String vpnTunnel) {
+  public final Operation deleteVpnTunnel(String vpnTunnel) {
 
     DeleteVpnTunnelHttpRequest request =
-        DeleteVpnTunnelHttpRequest.newBuilder()
-            .setRequestId(requestId)
-            .setVpnTunnel(vpnTunnel)
-            .build();
+        DeleteVpnTunnelHttpRequest.newBuilder().setVpnTunnel(vpnTunnel).build();
     return deleteVpnTunnel(request);
   }
 
@@ -372,10 +347,8 @@ public class VpnTunnelClient implements BackgroundResource {
    *
    * <pre><code>
    * try (VpnTunnelClient vpnTunnelClient = VpnTunnelClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionVpnTunnelName vpnTunnel = ProjectRegionVpnTunnelName.of("[PROJECT]", "[REGION]", "[VPN_TUNNEL]");
    *   DeleteVpnTunnelHttpRequest request = DeleteVpnTunnelHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setVpnTunnel(vpnTunnel.toString())
    *     .build();
    *   Operation response = vpnTunnelClient.deleteVpnTunnel(request);
@@ -398,10 +371,8 @@ public class VpnTunnelClient implements BackgroundResource {
    *
    * <pre><code>
    * try (VpnTunnelClient vpnTunnelClient = VpnTunnelClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionVpnTunnelName vpnTunnel = ProjectRegionVpnTunnelName.of("[PROJECT]", "[REGION]", "[VPN_TUNNEL]");
    *   DeleteVpnTunnelHttpRequest request = DeleteVpnTunnelHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setVpnTunnel(vpnTunnel.toString())
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = vpnTunnelClient.deleteVpnTunnelCallable().futureCall(request);
@@ -525,34 +496,22 @@ public class VpnTunnelClient implements BackgroundResource {
    *
    * <pre><code>
    * try (VpnTunnelClient vpnTunnelClient = VpnTunnelClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   VpnTunnel vpnTunnelResource = VpnTunnel.newBuilder().build();
-   *   Operation response = vpnTunnelClient.insertVpnTunnel(requestId, region, vpnTunnelResource);
+   *   Operation response = vpnTunnelClient.insertVpnTunnel(region, vpnTunnelResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param region Name of the region for this request.
    * @param vpnTunnelResource VPN tunnel resource. (== resource_for beta.vpnTunnels ==) (==
    *     resource_for v1.vpnTunnels ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation insertVpnTunnel(
-      String requestId, ProjectRegionName region, VpnTunnel vpnTunnelResource) {
+  public final Operation insertVpnTunnel(ProjectRegionName region, VpnTunnel vpnTunnelResource) {
 
     InsertVpnTunnelHttpRequest request =
         InsertVpnTunnelHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setRegion(region == null ? null : region.toString())
             .setVpnTunnelResource(vpnTunnelResource)
             .build();
@@ -568,34 +527,22 @@ public class VpnTunnelClient implements BackgroundResource {
    *
    * <pre><code>
    * try (VpnTunnelClient vpnTunnelClient = VpnTunnelClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   VpnTunnel vpnTunnelResource = VpnTunnel.newBuilder().build();
-   *   Operation response = vpnTunnelClient.insertVpnTunnel(requestId, region.toString(), vpnTunnelResource);
+   *   Operation response = vpnTunnelClient.insertVpnTunnel(region.toString(), vpnTunnelResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param region Name of the region for this request.
    * @param vpnTunnelResource VPN tunnel resource. (== resource_for beta.vpnTunnels ==) (==
    *     resource_for v1.vpnTunnels ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation insertVpnTunnel(
-      String requestId, String region, VpnTunnel vpnTunnelResource) {
+  public final Operation insertVpnTunnel(String region, VpnTunnel vpnTunnelResource) {
 
     InsertVpnTunnelHttpRequest request =
         InsertVpnTunnelHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setRegion(region)
             .setVpnTunnelResource(vpnTunnelResource)
             .build();
@@ -611,11 +558,9 @@ public class VpnTunnelClient implements BackgroundResource {
    *
    * <pre><code>
    * try (VpnTunnelClient vpnTunnelClient = VpnTunnelClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   VpnTunnel vpnTunnelResource = VpnTunnel.newBuilder().build();
    *   InsertVpnTunnelHttpRequest request = InsertVpnTunnelHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setRegion(region.toString())
    *     .setVpnTunnelResource(vpnTunnelResource)
    *     .build();
@@ -640,11 +585,9 @@ public class VpnTunnelClient implements BackgroundResource {
    *
    * <pre><code>
    * try (VpnTunnelClient vpnTunnelClient = VpnTunnelClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   VpnTunnel vpnTunnelResource = VpnTunnel.newBuilder().build();
    *   InsertVpnTunnelHttpRequest request = InsertVpnTunnelHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setRegion(region.toString())
    *     .setVpnTunnelResource(vpnTunnelResource)
    *     .build();

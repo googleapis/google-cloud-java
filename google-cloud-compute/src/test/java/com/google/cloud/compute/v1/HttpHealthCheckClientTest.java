@@ -136,11 +136,10 @@ public class HttpHealthCheckClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String requestId = "requestId37109963";
     ProjectGlobalHttpHealthCheckName httpHealthCheck =
         ProjectGlobalHttpHealthCheckName.of("[PROJECT]", "[HTTP_HEALTH_CHECK]");
 
-    Operation actualResponse = client.deleteHttpHealthCheck(requestId, httpHealthCheck);
+    Operation actualResponse = client.deleteHttpHealthCheck(httpHealthCheck);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -167,11 +166,10 @@ public class HttpHealthCheckClientTest {
     mockService.addException(exception);
 
     try {
-      String requestId = "requestId37109963";
       ProjectGlobalHttpHealthCheckName httpHealthCheck =
           ProjectGlobalHttpHealthCheckName.of("[PROJECT]", "[HTTP_HEALTH_CHECK]");
 
-      client.deleteHttpHealthCheck(requestId, httpHealthCheck);
+      client.deleteHttpHealthCheck(httpHealthCheck);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -302,12 +300,10 @@ public class HttpHealthCheckClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String requestId = "requestId37109963";
     ProjectName project = ProjectName.of("[PROJECT]");
     HttpHealthCheck2 httpHealthCheckResource = HttpHealthCheck2.newBuilder().build();
 
-    Operation actualResponse =
-        client.insertHttpHealthCheck(requestId, project, httpHealthCheckResource);
+    Operation actualResponse = client.insertHttpHealthCheck(project, httpHealthCheckResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -334,11 +330,10 @@ public class HttpHealthCheckClientTest {
     mockService.addException(exception);
 
     try {
-      String requestId = "requestId37109963";
       ProjectName project = ProjectName.of("[PROJECT]");
       HttpHealthCheck2 httpHealthCheckResource = HttpHealthCheck2.newBuilder().build();
 
-      client.insertHttpHealthCheck(requestId, project, httpHealthCheckResource);
+      client.insertHttpHealthCheck(project, httpHealthCheckResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -455,13 +450,12 @@ public class HttpHealthCheckClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String requestId = "requestId37109963";
     ProjectGlobalHttpHealthCheckName httpHealthCheck =
         ProjectGlobalHttpHealthCheckName.of("[PROJECT]", "[HTTP_HEALTH_CHECK]");
     HttpHealthCheck2 httpHealthCheckResource = HttpHealthCheck2.newBuilder().build();
 
     Operation actualResponse =
-        client.patchHttpHealthCheck(requestId, httpHealthCheck, httpHealthCheckResource);
+        client.patchHttpHealthCheck(httpHealthCheck, httpHealthCheckResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -488,12 +482,11 @@ public class HttpHealthCheckClientTest {
     mockService.addException(exception);
 
     try {
-      String requestId = "requestId37109963";
       ProjectGlobalHttpHealthCheckName httpHealthCheck =
           ProjectGlobalHttpHealthCheckName.of("[PROJECT]", "[HTTP_HEALTH_CHECK]");
       HttpHealthCheck2 httpHealthCheckResource = HttpHealthCheck2.newBuilder().build();
 
-      client.patchHttpHealthCheck(requestId, httpHealthCheck, httpHealthCheckResource);
+      client.patchHttpHealthCheck(httpHealthCheck, httpHealthCheckResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -550,13 +543,12 @@ public class HttpHealthCheckClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String requestId = "requestId37109963";
     ProjectGlobalHttpHealthCheckName httpHealthCheck =
         ProjectGlobalHttpHealthCheckName.of("[PROJECT]", "[HTTP_HEALTH_CHECK]");
     HttpHealthCheck2 httpHealthCheckResource = HttpHealthCheck2.newBuilder().build();
 
     Operation actualResponse =
-        client.updateHttpHealthCheck(requestId, httpHealthCheck, httpHealthCheckResource);
+        client.updateHttpHealthCheck(httpHealthCheck, httpHealthCheckResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -583,12 +575,11 @@ public class HttpHealthCheckClientTest {
     mockService.addException(exception);
 
     try {
-      String requestId = "requestId37109963";
       ProjectGlobalHttpHealthCheckName httpHealthCheck =
           ProjectGlobalHttpHealthCheckName.of("[PROJECT]", "[HTTP_HEALTH_CHECK]");
       HttpHealthCheck2 httpHealthCheckResource = HttpHealthCheck2.newBuilder().build();
 
-      client.updateHttpHealthCheck(requestId, httpHealthCheck, httpHealthCheckResource);
+      client.updateHttpHealthCheck(httpHealthCheck, httpHealthCheckResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

@@ -42,9 +42,8 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (SubnetworkClient subnetworkClient = SubnetworkClient.create()) {
- *   String requestId = "";
  *   ProjectRegionSubnetworkName subnetwork = ProjectRegionSubnetworkName.of("[PROJECT]", "[REGION]", "[SUBNETWORK]");
- *   Operation response = subnetworkClient.deleteSubnetwork(requestId, subnetwork);
+ *   Operation response = subnetworkClient.deleteSubnetwork(subnetwork);
  * }
  * </code>
  * </pre>
@@ -299,31 +298,19 @@ public class SubnetworkClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SubnetworkClient subnetworkClient = SubnetworkClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionSubnetworkName subnetwork = ProjectRegionSubnetworkName.of("[PROJECT]", "[REGION]", "[SUBNETWORK]");
-   *   Operation response = subnetworkClient.deleteSubnetwork(requestId, subnetwork);
+   *   Operation response = subnetworkClient.deleteSubnetwork(subnetwork);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param subnetwork Name of the Subnetwork resource to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteSubnetwork(
-      String requestId, ProjectRegionSubnetworkName subnetwork) {
+  public final Operation deleteSubnetwork(ProjectRegionSubnetworkName subnetwork) {
 
     DeleteSubnetworkHttpRequest request =
         DeleteSubnetworkHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setSubnetwork(subnetwork == null ? null : subnetwork.toString())
             .build();
     return deleteSubnetwork(request);
@@ -337,32 +324,19 @@ public class SubnetworkClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SubnetworkClient subnetworkClient = SubnetworkClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionSubnetworkName subnetwork = ProjectRegionSubnetworkName.of("[PROJECT]", "[REGION]", "[SUBNETWORK]");
-   *   Operation response = subnetworkClient.deleteSubnetwork(requestId, subnetwork.toString());
+   *   Operation response = subnetworkClient.deleteSubnetwork(subnetwork.toString());
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param subnetwork Name of the Subnetwork resource to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteSubnetwork(String requestId, String subnetwork) {
+  public final Operation deleteSubnetwork(String subnetwork) {
 
     DeleteSubnetworkHttpRequest request =
-        DeleteSubnetworkHttpRequest.newBuilder()
-            .setRequestId(requestId)
-            .setSubnetwork(subnetwork)
-            .build();
+        DeleteSubnetworkHttpRequest.newBuilder().setSubnetwork(subnetwork).build();
     return deleteSubnetwork(request);
   }
 
@@ -374,10 +348,8 @@ public class SubnetworkClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SubnetworkClient subnetworkClient = SubnetworkClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionSubnetworkName subnetwork = ProjectRegionSubnetworkName.of("[PROJECT]", "[REGION]", "[SUBNETWORK]");
    *   DeleteSubnetworkHttpRequest request = DeleteSubnetworkHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setSubnetwork(subnetwork.toString())
    *     .build();
    *   Operation response = subnetworkClient.deleteSubnetwork(request);
@@ -400,10 +372,8 @@ public class SubnetworkClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SubnetworkClient subnetworkClient = SubnetworkClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionSubnetworkName subnetwork = ProjectRegionSubnetworkName.of("[PROJECT]", "[REGION]", "[SUBNETWORK]");
    *   DeleteSubnetworkHttpRequest request = DeleteSubnetworkHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setSubnetwork(subnetwork.toString())
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = subnetworkClient.deleteSubnetworkCallable().futureCall(request);
@@ -425,35 +395,23 @@ public class SubnetworkClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SubnetworkClient subnetworkClient = SubnetworkClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionSubnetworkName subnetwork = ProjectRegionSubnetworkName.of("[PROJECT]", "[REGION]", "[SUBNETWORK]");
    *   SubnetworksExpandIpCidrRangeRequest subnetworksExpandIpCidrRangeRequestResource = SubnetworksExpandIpCidrRangeRequest.newBuilder().build();
-   *   Operation response = subnetworkClient.expandIpCidrRangeSubnetwork(requestId, subnetwork, subnetworksExpandIpCidrRangeRequestResource);
+   *   Operation response = subnetworkClient.expandIpCidrRangeSubnetwork(subnetwork, subnetworksExpandIpCidrRangeRequestResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param subnetwork Name of the Subnetwork resource to update.
    * @param subnetworksExpandIpCidrRangeRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation expandIpCidrRangeSubnetwork(
-      String requestId,
       ProjectRegionSubnetworkName subnetwork,
       SubnetworksExpandIpCidrRangeRequest subnetworksExpandIpCidrRangeRequestResource) {
 
     ExpandIpCidrRangeSubnetworkHttpRequest request =
         ExpandIpCidrRangeSubnetworkHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setSubnetwork(subnetwork == null ? null : subnetwork.toString())
             .setSubnetworksExpandIpCidrRangeRequestResource(
                 subnetworksExpandIpCidrRangeRequestResource)
@@ -469,35 +427,23 @@ public class SubnetworkClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SubnetworkClient subnetworkClient = SubnetworkClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionSubnetworkName subnetwork = ProjectRegionSubnetworkName.of("[PROJECT]", "[REGION]", "[SUBNETWORK]");
    *   SubnetworksExpandIpCidrRangeRequest subnetworksExpandIpCidrRangeRequestResource = SubnetworksExpandIpCidrRangeRequest.newBuilder().build();
-   *   Operation response = subnetworkClient.expandIpCidrRangeSubnetwork(requestId, subnetwork.toString(), subnetworksExpandIpCidrRangeRequestResource);
+   *   Operation response = subnetworkClient.expandIpCidrRangeSubnetwork(subnetwork.toString(), subnetworksExpandIpCidrRangeRequestResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param subnetwork Name of the Subnetwork resource to update.
    * @param subnetworksExpandIpCidrRangeRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation expandIpCidrRangeSubnetwork(
-      String requestId,
       String subnetwork,
       SubnetworksExpandIpCidrRangeRequest subnetworksExpandIpCidrRangeRequestResource) {
 
     ExpandIpCidrRangeSubnetworkHttpRequest request =
         ExpandIpCidrRangeSubnetworkHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setSubnetwork(subnetwork)
             .setSubnetworksExpandIpCidrRangeRequestResource(
                 subnetworksExpandIpCidrRangeRequestResource)
@@ -513,11 +459,9 @@ public class SubnetworkClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SubnetworkClient subnetworkClient = SubnetworkClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionSubnetworkName subnetwork = ProjectRegionSubnetworkName.of("[PROJECT]", "[REGION]", "[SUBNETWORK]");
    *   SubnetworksExpandIpCidrRangeRequest subnetworksExpandIpCidrRangeRequestResource = SubnetworksExpandIpCidrRangeRequest.newBuilder().build();
    *   ExpandIpCidrRangeSubnetworkHttpRequest request = ExpandIpCidrRangeSubnetworkHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setSubnetwork(subnetwork.toString())
    *     .setSubnetworksExpandIpCidrRangeRequestResource(subnetworksExpandIpCidrRangeRequestResource)
    *     .build();
@@ -542,11 +486,9 @@ public class SubnetworkClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SubnetworkClient subnetworkClient = SubnetworkClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionSubnetworkName subnetwork = ProjectRegionSubnetworkName.of("[PROJECT]", "[REGION]", "[SUBNETWORK]");
    *   SubnetworksExpandIpCidrRangeRequest subnetworksExpandIpCidrRangeRequestResource = SubnetworksExpandIpCidrRangeRequest.newBuilder().build();
    *   ExpandIpCidrRangeSubnetworkHttpRequest request = ExpandIpCidrRangeSubnetworkHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setSubnetwork(subnetwork.toString())
    *     .setSubnetworksExpandIpCidrRangeRequestResource(subnetworksExpandIpCidrRangeRequestResource)
    *     .build();
@@ -667,34 +609,22 @@ public class SubnetworkClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SubnetworkClient subnetworkClient = SubnetworkClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   Subnetwork subnetworkResource = Subnetwork.newBuilder().build();
-   *   Operation response = subnetworkClient.insertSubnetwork(requestId, region, subnetworkResource);
+   *   Operation response = subnetworkClient.insertSubnetwork(region, subnetworkResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param region Name of the region scoping this request.
    * @param subnetworkResource A Subnetwork resource. (== resource_for beta.subnetworks ==) (==
    *     resource_for v1.subnetworks ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation insertSubnetwork(
-      String requestId, ProjectRegionName region, Subnetwork subnetworkResource) {
+  public final Operation insertSubnetwork(ProjectRegionName region, Subnetwork subnetworkResource) {
 
     InsertSubnetworkHttpRequest request =
         InsertSubnetworkHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setRegion(region == null ? null : region.toString())
             .setSubnetworkResource(subnetworkResource)
             .build();
@@ -709,34 +639,22 @@ public class SubnetworkClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SubnetworkClient subnetworkClient = SubnetworkClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   Subnetwork subnetworkResource = Subnetwork.newBuilder().build();
-   *   Operation response = subnetworkClient.insertSubnetwork(requestId, region.toString(), subnetworkResource);
+   *   Operation response = subnetworkClient.insertSubnetwork(region.toString(), subnetworkResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param region Name of the region scoping this request.
    * @param subnetworkResource A Subnetwork resource. (== resource_for beta.subnetworks ==) (==
    *     resource_for v1.subnetworks ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation insertSubnetwork(
-      String requestId, String region, Subnetwork subnetworkResource) {
+  public final Operation insertSubnetwork(String region, Subnetwork subnetworkResource) {
 
     InsertSubnetworkHttpRequest request =
         InsertSubnetworkHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setRegion(region)
             .setSubnetworkResource(subnetworkResource)
             .build();
@@ -751,11 +669,9 @@ public class SubnetworkClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SubnetworkClient subnetworkClient = SubnetworkClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   Subnetwork subnetworkResource = Subnetwork.newBuilder().build();
    *   InsertSubnetworkHttpRequest request = InsertSubnetworkHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setRegion(region.toString())
    *     .setSubnetworkResource(subnetworkResource)
    *     .build();
@@ -779,11 +695,9 @@ public class SubnetworkClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SubnetworkClient subnetworkClient = SubnetworkClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   Subnetwork subnetworkResource = Subnetwork.newBuilder().build();
    *   InsertSubnetworkHttpRequest request = InsertSubnetworkHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setRegion(region.toString())
    *     .setSubnetworkResource(subnetworkResource)
    *     .build();
@@ -945,22 +859,12 @@ public class SubnetworkClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SubnetworkClient subnetworkClient = SubnetworkClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionSubnetworkName subnetwork = ProjectRegionSubnetworkName.of("[PROJECT]", "[REGION]", "[SUBNETWORK]");
    *   Subnetwork subnetworkResource = Subnetwork.newBuilder().build();
-   *   Operation response = subnetworkClient.patchSubnetwork(requestId, subnetwork, subnetworkResource);
+   *   Operation response = subnetworkClient.patchSubnetwork(subnetwork, subnetworkResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param subnetwork Name of the Subnetwork resource to patch.
    * @param subnetworkResource A Subnetwork resource. (== resource_for beta.subnetworks ==) (==
    *     resource_for v1.subnetworks ==)
@@ -968,11 +872,10 @@ public class SubnetworkClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation patchSubnetwork(
-      String requestId, ProjectRegionSubnetworkName subnetwork, Subnetwork subnetworkResource) {
+      ProjectRegionSubnetworkName subnetwork, Subnetwork subnetworkResource) {
 
     PatchSubnetworkHttpRequest request =
         PatchSubnetworkHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setSubnetwork(subnetwork == null ? null : subnetwork.toString())
             .setSubnetworkResource(subnetworkResource)
             .build();
@@ -990,34 +893,22 @@ public class SubnetworkClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SubnetworkClient subnetworkClient = SubnetworkClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionSubnetworkName subnetwork = ProjectRegionSubnetworkName.of("[PROJECT]", "[REGION]", "[SUBNETWORK]");
    *   Subnetwork subnetworkResource = Subnetwork.newBuilder().build();
-   *   Operation response = subnetworkClient.patchSubnetwork(requestId, subnetwork.toString(), subnetworkResource);
+   *   Operation response = subnetworkClient.patchSubnetwork(subnetwork.toString(), subnetworkResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param subnetwork Name of the Subnetwork resource to patch.
    * @param subnetworkResource A Subnetwork resource. (== resource_for beta.subnetworks ==) (==
    *     resource_for v1.subnetworks ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation patchSubnetwork(
-      String requestId, String subnetwork, Subnetwork subnetworkResource) {
+  public final Operation patchSubnetwork(String subnetwork, Subnetwork subnetworkResource) {
 
     PatchSubnetworkHttpRequest request =
         PatchSubnetworkHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setSubnetwork(subnetwork)
             .setSubnetworkResource(subnetworkResource)
             .build();
@@ -1035,11 +926,9 @@ public class SubnetworkClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SubnetworkClient subnetworkClient = SubnetworkClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionSubnetworkName subnetwork = ProjectRegionSubnetworkName.of("[PROJECT]", "[REGION]", "[SUBNETWORK]");
    *   Subnetwork subnetworkResource = Subnetwork.newBuilder().build();
    *   PatchSubnetworkHttpRequest request = PatchSubnetworkHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setSubnetwork(subnetwork.toString())
    *     .setSubnetworkResource(subnetworkResource)
    *     .build();
@@ -1066,11 +955,9 @@ public class SubnetworkClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SubnetworkClient subnetworkClient = SubnetworkClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionSubnetworkName subnetwork = ProjectRegionSubnetworkName.of("[PROJECT]", "[REGION]", "[SUBNETWORK]");
    *   Subnetwork subnetworkResource = Subnetwork.newBuilder().build();
    *   PatchSubnetworkHttpRequest request = PatchSubnetworkHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setSubnetwork(subnetwork.toString())
    *     .setSubnetworkResource(subnetworkResource)
    *     .build();
@@ -1094,36 +981,24 @@ public class SubnetworkClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SubnetworkClient subnetworkClient = SubnetworkClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionSubnetworkName subnetwork = ProjectRegionSubnetworkName.of("[PROJECT]", "[REGION]", "[SUBNETWORK]");
    *   SubnetworksSetPrivateIpGoogleAccessRequest subnetworksSetPrivateIpGoogleAccessRequestResource = SubnetworksSetPrivateIpGoogleAccessRequest.newBuilder().build();
-   *   Operation response = subnetworkClient.setPrivateIpGoogleAccessSubnetwork(requestId, subnetwork, subnetworksSetPrivateIpGoogleAccessRequestResource);
+   *   Operation response = subnetworkClient.setPrivateIpGoogleAccessSubnetwork(subnetwork, subnetworksSetPrivateIpGoogleAccessRequestResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param subnetwork Name of the Subnetwork resource.
    * @param subnetworksSetPrivateIpGoogleAccessRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation setPrivateIpGoogleAccessSubnetwork(
-      String requestId,
       ProjectRegionSubnetworkName subnetwork,
       SubnetworksSetPrivateIpGoogleAccessRequest
           subnetworksSetPrivateIpGoogleAccessRequestResource) {
 
     SetPrivateIpGoogleAccessSubnetworkHttpRequest request =
         SetPrivateIpGoogleAccessSubnetworkHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setSubnetwork(subnetwork == null ? null : subnetwork.toString())
             .setSubnetworksSetPrivateIpGoogleAccessRequestResource(
                 subnetworksSetPrivateIpGoogleAccessRequestResource)
@@ -1140,36 +1015,24 @@ public class SubnetworkClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SubnetworkClient subnetworkClient = SubnetworkClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionSubnetworkName subnetwork = ProjectRegionSubnetworkName.of("[PROJECT]", "[REGION]", "[SUBNETWORK]");
    *   SubnetworksSetPrivateIpGoogleAccessRequest subnetworksSetPrivateIpGoogleAccessRequestResource = SubnetworksSetPrivateIpGoogleAccessRequest.newBuilder().build();
-   *   Operation response = subnetworkClient.setPrivateIpGoogleAccessSubnetwork(requestId, subnetwork.toString(), subnetworksSetPrivateIpGoogleAccessRequestResource);
+   *   Operation response = subnetworkClient.setPrivateIpGoogleAccessSubnetwork(subnetwork.toString(), subnetworksSetPrivateIpGoogleAccessRequestResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param subnetwork Name of the Subnetwork resource.
    * @param subnetworksSetPrivateIpGoogleAccessRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation setPrivateIpGoogleAccessSubnetwork(
-      String requestId,
       String subnetwork,
       SubnetworksSetPrivateIpGoogleAccessRequest
           subnetworksSetPrivateIpGoogleAccessRequestResource) {
 
     SetPrivateIpGoogleAccessSubnetworkHttpRequest request =
         SetPrivateIpGoogleAccessSubnetworkHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setSubnetwork(subnetwork)
             .setSubnetworksSetPrivateIpGoogleAccessRequestResource(
                 subnetworksSetPrivateIpGoogleAccessRequestResource)
@@ -1186,11 +1049,9 @@ public class SubnetworkClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SubnetworkClient subnetworkClient = SubnetworkClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionSubnetworkName subnetwork = ProjectRegionSubnetworkName.of("[PROJECT]", "[REGION]", "[SUBNETWORK]");
    *   SubnetworksSetPrivateIpGoogleAccessRequest subnetworksSetPrivateIpGoogleAccessRequestResource = SubnetworksSetPrivateIpGoogleAccessRequest.newBuilder().build();
    *   SetPrivateIpGoogleAccessSubnetworkHttpRequest request = SetPrivateIpGoogleAccessSubnetworkHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setSubnetwork(subnetwork.toString())
    *     .setSubnetworksSetPrivateIpGoogleAccessRequestResource(subnetworksSetPrivateIpGoogleAccessRequestResource)
    *     .build();
@@ -1216,11 +1077,9 @@ public class SubnetworkClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SubnetworkClient subnetworkClient = SubnetworkClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionSubnetworkName subnetwork = ProjectRegionSubnetworkName.of("[PROJECT]", "[REGION]", "[SUBNETWORK]");
    *   SubnetworksSetPrivateIpGoogleAccessRequest subnetworksSetPrivateIpGoogleAccessRequestResource = SubnetworksSetPrivateIpGoogleAccessRequest.newBuilder().build();
    *   SetPrivateIpGoogleAccessSubnetworkHttpRequest request = SetPrivateIpGoogleAccessSubnetworkHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setSubnetwork(subnetwork.toString())
    *     .setSubnetworksSetPrivateIpGoogleAccessRequestResource(subnetworksSetPrivateIpGoogleAccessRequestResource)
    *     .build();

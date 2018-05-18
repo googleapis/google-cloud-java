@@ -43,8 +43,7 @@ import javax.annotation.Generated;
  * <code>
  * try (RouteClient routeClient = RouteClient.create()) {
  *   ProjectGlobalRouteName route = ProjectGlobalRouteName.of("[PROJECT]", "[ROUTE]");
- *   String requestId = "";
- *   Operation response = routeClient.deleteRoute(route, requestId);
+ *   Operation response = routeClient.deleteRoute(route);
  * }
  * </code>
  * </pre>
@@ -160,30 +159,19 @@ public class RouteClient implements BackgroundResource {
    * <pre><code>
    * try (RouteClient routeClient = RouteClient.create()) {
    *   ProjectGlobalRouteName route = ProjectGlobalRouteName.of("[PROJECT]", "[ROUTE]");
-   *   String requestId = "";
-   *   Operation response = routeClient.deleteRoute(route, requestId);
+   *   Operation response = routeClient.deleteRoute(route);
    * }
    * </code></pre>
    *
    * @param route Name of the Route resource to delete.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteRoute(ProjectGlobalRouteName route, String requestId) {
+  public final Operation deleteRoute(ProjectGlobalRouteName route) {
 
     DeleteRouteHttpRequest request =
         DeleteRouteHttpRequest.newBuilder()
             .setRoute(route == null ? null : route.toString())
-            .setRequestId(requestId)
             .build();
     return deleteRoute(request);
   }
@@ -197,28 +185,17 @@ public class RouteClient implements BackgroundResource {
    * <pre><code>
    * try (RouteClient routeClient = RouteClient.create()) {
    *   ProjectGlobalRouteName route = ProjectGlobalRouteName.of("[PROJECT]", "[ROUTE]");
-   *   String requestId = "";
-   *   Operation response = routeClient.deleteRoute(route.toString(), requestId);
+   *   Operation response = routeClient.deleteRoute(route.toString());
    * }
    * </code></pre>
    *
    * @param route Name of the Route resource to delete.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteRoute(String route, String requestId) {
+  public final Operation deleteRoute(String route) {
 
-    DeleteRouteHttpRequest request =
-        DeleteRouteHttpRequest.newBuilder().setRoute(route).setRequestId(requestId).build();
+    DeleteRouteHttpRequest request = DeleteRouteHttpRequest.newBuilder().setRoute(route).build();
     return deleteRoute(request);
   }
 
@@ -231,10 +208,8 @@ public class RouteClient implements BackgroundResource {
    * <pre><code>
    * try (RouteClient routeClient = RouteClient.create()) {
    *   ProjectGlobalRouteName route = ProjectGlobalRouteName.of("[PROJECT]", "[ROUTE]");
-   *   String requestId = "";
    *   DeleteRouteHttpRequest request = DeleteRouteHttpRequest.newBuilder()
    *     .setRoute(route.toString())
-   *     .setRequestId(requestId)
    *     .build();
    *   Operation response = routeClient.deleteRoute(request);
    * }
@@ -257,10 +232,8 @@ public class RouteClient implements BackgroundResource {
    * <pre><code>
    * try (RouteClient routeClient = RouteClient.create()) {
    *   ProjectGlobalRouteName route = ProjectGlobalRouteName.of("[PROJECT]", "[ROUTE]");
-   *   String requestId = "";
    *   DeleteRouteHttpRequest request = DeleteRouteHttpRequest.newBuilder()
    *     .setRoute(route.toString())
-   *     .setRequestId(requestId)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = routeClient.deleteRouteCallable().futureCall(request);
    *   // Do something
@@ -379,22 +352,12 @@ public class RouteClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RouteClient routeClient = RouteClient.create()) {
-   *   String requestId = "";
    *   ProjectName project = ProjectName.of("[PROJECT]");
    *   Route routeResource = Route.newBuilder().build();
-   *   Operation response = routeClient.insertRoute(requestId, project, routeResource);
+   *   Operation response = routeClient.insertRoute(project, routeResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param project Project ID for this request.
    * @param routeResource Represents a Route resource. A route specifies how certain packets should
    *     be handled by the network. Routes are associated with instances by tags and the set of
@@ -412,11 +375,10 @@ public class RouteClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation insertRoute(String requestId, ProjectName project, Route routeResource) {
+  public final Operation insertRoute(ProjectName project, Route routeResource) {
 
     InsertRouteHttpRequest request =
         InsertRouteHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setProject(project == null ? null : project.toString())
             .setRouteResource(routeResource)
             .build();
@@ -431,22 +393,12 @@ public class RouteClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RouteClient routeClient = RouteClient.create()) {
-   *   String requestId = "";
    *   ProjectName project = ProjectName.of("[PROJECT]");
    *   Route routeResource = Route.newBuilder().build();
-   *   Operation response = routeClient.insertRoute(requestId, project.toString(), routeResource);
+   *   Operation response = routeClient.insertRoute(project.toString(), routeResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param project Project ID for this request.
    * @param routeResource Represents a Route resource. A route specifies how certain packets should
    *     be handled by the network. Routes are associated with instances by tags and the set of
@@ -464,11 +416,10 @@ public class RouteClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation insertRoute(String requestId, String project, Route routeResource) {
+  public final Operation insertRoute(String project, Route routeResource) {
 
     InsertRouteHttpRequest request =
         InsertRouteHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setProject(project)
             .setRouteResource(routeResource)
             .build();
@@ -483,11 +434,9 @@ public class RouteClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RouteClient routeClient = RouteClient.create()) {
-   *   String requestId = "";
    *   ProjectName project = ProjectName.of("[PROJECT]");
    *   Route routeResource = Route.newBuilder().build();
    *   InsertRouteHttpRequest request = InsertRouteHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setProject(project.toString())
    *     .setRouteResource(routeResource)
    *     .build();
@@ -511,11 +460,9 @@ public class RouteClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RouteClient routeClient = RouteClient.create()) {
-   *   String requestId = "";
    *   ProjectName project = ProjectName.of("[PROJECT]");
    *   Route routeResource = Route.newBuilder().build();
    *   InsertRouteHttpRequest request = InsertRouteHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setProject(project.toString())
    *     .setRouteResource(routeResource)
    *     .build();

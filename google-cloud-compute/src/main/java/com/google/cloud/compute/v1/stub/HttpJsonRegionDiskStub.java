@@ -67,7 +67,6 @@ public class HttpJsonRegionDiskStub extends RegionDiskStub {
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<CreateSnapshotRegionDiskHttpRequest>newBuilder()
-                      .setRequestInstance(CreateSnapshotRegionDiskHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/regions/{region}/disks/{disk}/createSnapshot"))
@@ -89,7 +88,6 @@ public class HttpJsonRegionDiskStub extends RegionDiskStub {
               .setHttpMethod(HttpMethods.DELETE)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<DeleteRegionDiskHttpRequest>newBuilder()
-                      .setRequestInstance(DeleteRegionDiskHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create("{project}/regions/{region}/disks/{disk}"))
                       .setQueryParams(Sets.<String>newHashSet("requestId"))
@@ -110,7 +108,6 @@ public class HttpJsonRegionDiskStub extends RegionDiskStub {
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<GetRegionDiskHttpRequest>newBuilder()
-                      .setRequestInstance(GetRegionDiskHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create("{project}/regions/{region}/disks/{disk}"))
                       .setQueryParams(Sets.<String>newHashSet())
@@ -131,7 +128,6 @@ public class HttpJsonRegionDiskStub extends RegionDiskStub {
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<InsertRegionDiskHttpRequest>newBuilder()
-                      .setRequestInstance(InsertRegionDiskHttpRequest.getDefaultInstance())
                       .setPathTemplate(PathTemplate.create("{project}/regions/{region}/disks"))
                       .setQueryParams(Sets.<String>newHashSet("requestId", "sourceImage"))
                       .setResourceNameFactory(ProjectRegionName.newFactory())
@@ -151,7 +147,6 @@ public class HttpJsonRegionDiskStub extends RegionDiskStub {
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<ListRegionDisksHttpRequest>newBuilder()
-                      .setRequestInstance(ListRegionDisksHttpRequest.getDefaultInstance())
                       .setPathTemplate(PathTemplate.create("{project}/regions/{region}/disks"))
                       .setQueryParams(
                           Sets.<String>newHashSet("filter", "maxResults", "orderBy", "pageToken"))
@@ -172,7 +167,6 @@ public class HttpJsonRegionDiskStub extends RegionDiskStub {
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<ResizeRegionDiskHttpRequest>newBuilder()
-                      .setRequestInstance(ResizeRegionDiskHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create("{project}/regions/{region}/disks/{disk}/resize"))
                       .setQueryParams(Sets.<String>newHashSet("requestId"))
@@ -193,7 +187,6 @@ public class HttpJsonRegionDiskStub extends RegionDiskStub {
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<SetLabelsRegionDiskHttpRequest>newBuilder()
-                      .setRequestInstance(SetLabelsRegionDiskHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/regions/{region}/disks/{resource}/setLabels"))
@@ -218,8 +211,6 @@ public class HttpJsonRegionDiskStub extends RegionDiskStub {
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter
                       .<TestIamPermissionsRegionDiskHttpRequest>newBuilder()
-                      .setRequestInstance(
-                          TestIamPermissionsRegionDiskHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/regions/{region}/disks/{resource}/testIamPermissions"))

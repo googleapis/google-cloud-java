@@ -43,9 +43,8 @@ import javax.annotation.Generated;
  * <code>
  * try (RegionDiskClient regionDiskClient = RegionDiskClient.create()) {
  *   ProjectRegionDiskName disk = ProjectRegionDiskName.of("[PROJECT]", "[REGION]", "[DISK]");
- *   String requestId = "";
  *   Snapshot snapshotResource = Snapshot.newBuilder().build();
- *   Operation response = regionDiskClient.createSnapshotRegionDisk(disk, requestId, snapshotResource);
+ *   Operation response = regionDiskClient.createSnapshotRegionDisk(disk, snapshotResource);
  * }
  * </code>
  * </pre>
@@ -161,34 +160,23 @@ public class RegionDiskClient implements BackgroundResource {
    * <pre><code>
    * try (RegionDiskClient regionDiskClient = RegionDiskClient.create()) {
    *   ProjectRegionDiskName disk = ProjectRegionDiskName.of("[PROJECT]", "[REGION]", "[DISK]");
-   *   String requestId = "";
    *   Snapshot snapshotResource = Snapshot.newBuilder().build();
-   *   Operation response = regionDiskClient.createSnapshotRegionDisk(disk, requestId, snapshotResource);
+   *   Operation response = regionDiskClient.createSnapshotRegionDisk(disk, snapshotResource);
    * }
    * </code></pre>
    *
    * @param disk Name of the regional persistent disk to snapshot.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param snapshotResource A persistent disk snapshot resource. (== resource_for beta.snapshots
    *     ==) (== resource_for v1.snapshots ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation createSnapshotRegionDisk(
-      ProjectRegionDiskName disk, String requestId, Snapshot snapshotResource) {
+      ProjectRegionDiskName disk, Snapshot snapshotResource) {
 
     CreateSnapshotRegionDiskHttpRequest request =
         CreateSnapshotRegionDiskHttpRequest.newBuilder()
             .setDisk(disk == null ? null : disk.toString())
-            .setRequestId(requestId)
             .setSnapshotResource(snapshotResource)
             .build();
     return createSnapshotRegionDisk(request);
@@ -203,34 +191,22 @@ public class RegionDiskClient implements BackgroundResource {
    * <pre><code>
    * try (RegionDiskClient regionDiskClient = RegionDiskClient.create()) {
    *   ProjectRegionDiskName disk = ProjectRegionDiskName.of("[PROJECT]", "[REGION]", "[DISK]");
-   *   String requestId = "";
    *   Snapshot snapshotResource = Snapshot.newBuilder().build();
-   *   Operation response = regionDiskClient.createSnapshotRegionDisk(disk.toString(), requestId, snapshotResource);
+   *   Operation response = regionDiskClient.createSnapshotRegionDisk(disk.toString(), snapshotResource);
    * }
    * </code></pre>
    *
    * @param disk Name of the regional persistent disk to snapshot.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param snapshotResource A persistent disk snapshot resource. (== resource_for beta.snapshots
    *     ==) (== resource_for v1.snapshots ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation createSnapshotRegionDisk(
-      String disk, String requestId, Snapshot snapshotResource) {
+  public final Operation createSnapshotRegionDisk(String disk, Snapshot snapshotResource) {
 
     CreateSnapshotRegionDiskHttpRequest request =
         CreateSnapshotRegionDiskHttpRequest.newBuilder()
             .setDisk(disk)
-            .setRequestId(requestId)
             .setSnapshotResource(snapshotResource)
             .build();
     return createSnapshotRegionDisk(request);
@@ -245,11 +221,9 @@ public class RegionDiskClient implements BackgroundResource {
    * <pre><code>
    * try (RegionDiskClient regionDiskClient = RegionDiskClient.create()) {
    *   ProjectRegionDiskName disk = ProjectRegionDiskName.of("[PROJECT]", "[REGION]", "[DISK]");
-   *   String requestId = "";
    *   Snapshot snapshotResource = Snapshot.newBuilder().build();
    *   CreateSnapshotRegionDiskHttpRequest request = CreateSnapshotRegionDiskHttpRequest.newBuilder()
    *     .setDisk(disk.toString())
-   *     .setRequestId(requestId)
    *     .setSnapshotResource(snapshotResource)
    *     .build();
    *   Operation response = regionDiskClient.createSnapshotRegionDisk(request);
@@ -273,11 +247,9 @@ public class RegionDiskClient implements BackgroundResource {
    * <pre><code>
    * try (RegionDiskClient regionDiskClient = RegionDiskClient.create()) {
    *   ProjectRegionDiskName disk = ProjectRegionDiskName.of("[PROJECT]", "[REGION]", "[DISK]");
-   *   String requestId = "";
    *   Snapshot snapshotResource = Snapshot.newBuilder().build();
    *   CreateSnapshotRegionDiskHttpRequest request = CreateSnapshotRegionDiskHttpRequest.newBuilder()
    *     .setDisk(disk.toString())
-   *     .setRequestId(requestId)
    *     .setSnapshotResource(snapshotResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = regionDiskClient.createSnapshotRegionDiskCallable().futureCall(request);
@@ -303,30 +275,19 @@ public class RegionDiskClient implements BackgroundResource {
    * <pre><code>
    * try (RegionDiskClient regionDiskClient = RegionDiskClient.create()) {
    *   ProjectRegionDiskName disk = ProjectRegionDiskName.of("[PROJECT]", "[REGION]", "[DISK]");
-   *   String requestId = "";
-   *   Operation response = regionDiskClient.deleteRegionDisk(disk, requestId);
+   *   Operation response = regionDiskClient.deleteRegionDisk(disk);
    * }
    * </code></pre>
    *
    * @param disk Name of the regional persistent disk to delete.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteRegionDisk(ProjectRegionDiskName disk, String requestId) {
+  public final Operation deleteRegionDisk(ProjectRegionDiskName disk) {
 
     DeleteRegionDiskHttpRequest request =
         DeleteRegionDiskHttpRequest.newBuilder()
             .setDisk(disk == null ? null : disk.toString())
-            .setRequestId(requestId)
             .build();
     return deleteRegionDisk(request);
   }
@@ -342,28 +303,18 @@ public class RegionDiskClient implements BackgroundResource {
    * <pre><code>
    * try (RegionDiskClient regionDiskClient = RegionDiskClient.create()) {
    *   ProjectRegionDiskName disk = ProjectRegionDiskName.of("[PROJECT]", "[REGION]", "[DISK]");
-   *   String requestId = "";
-   *   Operation response = regionDiskClient.deleteRegionDisk(disk.toString(), requestId);
+   *   Operation response = regionDiskClient.deleteRegionDisk(disk.toString());
    * }
    * </code></pre>
    *
    * @param disk Name of the regional persistent disk to delete.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteRegionDisk(String disk, String requestId) {
+  public final Operation deleteRegionDisk(String disk) {
 
     DeleteRegionDiskHttpRequest request =
-        DeleteRegionDiskHttpRequest.newBuilder().setDisk(disk).setRequestId(requestId).build();
+        DeleteRegionDiskHttpRequest.newBuilder().setDisk(disk).build();
     return deleteRegionDisk(request);
   }
 
@@ -378,10 +329,8 @@ public class RegionDiskClient implements BackgroundResource {
    * <pre><code>
    * try (RegionDiskClient regionDiskClient = RegionDiskClient.create()) {
    *   ProjectRegionDiskName disk = ProjectRegionDiskName.of("[PROJECT]", "[REGION]", "[DISK]");
-   *   String requestId = "";
    *   DeleteRegionDiskHttpRequest request = DeleteRegionDiskHttpRequest.newBuilder()
    *     .setDisk(disk.toString())
-   *     .setRequestId(requestId)
    *     .build();
    *   Operation response = regionDiskClient.deleteRegionDisk(request);
    * }
@@ -406,10 +355,8 @@ public class RegionDiskClient implements BackgroundResource {
    * <pre><code>
    * try (RegionDiskClient regionDiskClient = RegionDiskClient.create()) {
    *   ProjectRegionDiskName disk = ProjectRegionDiskName.of("[PROJECT]", "[REGION]", "[DISK]");
-   *   String requestId = "";
    *   DeleteRegionDiskHttpRequest request = DeleteRegionDiskHttpRequest.newBuilder()
    *     .setDisk(disk.toString())
-   *     .setRequestId(requestId)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = regionDiskClient.deleteRegionDiskCallable().futureCall(request);
    *   // Do something
@@ -527,37 +474,22 @@ public class RegionDiskClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionDiskClient regionDiskClient = RegionDiskClient.create()) {
-   *   String requestId = "";
-   *   String sourceImage = "";
    *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   Disk diskResource = Disk.newBuilder().build();
-   *   Operation response = regionDiskClient.insertRegionDisk(requestId, sourceImage, region, diskResource);
+   *   Operation response = regionDiskClient.insertRegionDisk(region, diskResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
-   * @param sourceImage Optional. Source image to restore onto a disk.
    * @param region Name of the region for this request.
    * @param diskResource A Disk resource. (== resource_for beta.disks ==) (== resource_for v1.disks
    *     ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation insertRegionDisk(
-      String requestId, String sourceImage, ProjectRegionName region, Disk diskResource) {
+  public final Operation insertRegionDisk(ProjectRegionName region, Disk diskResource) {
 
     InsertRegionDiskHttpRequest request =
         InsertRegionDiskHttpRequest.newBuilder()
-            .setRequestId(requestId)
-            .setSourceImage(sourceImage)
             .setRegion(region == null ? null : region.toString())
             .setDiskResource(diskResource)
             .build();
@@ -573,37 +505,22 @@ public class RegionDiskClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionDiskClient regionDiskClient = RegionDiskClient.create()) {
-   *   String requestId = "";
-   *   String sourceImage = "";
    *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   Disk diskResource = Disk.newBuilder().build();
-   *   Operation response = regionDiskClient.insertRegionDisk(requestId, sourceImage, region.toString(), diskResource);
+   *   Operation response = regionDiskClient.insertRegionDisk(region.toString(), diskResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
-   * @param sourceImage Optional. Source image to restore onto a disk.
    * @param region Name of the region for this request.
    * @param diskResource A Disk resource. (== resource_for beta.disks ==) (== resource_for v1.disks
    *     ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation insertRegionDisk(
-      String requestId, String sourceImage, String region, Disk diskResource) {
+  public final Operation insertRegionDisk(String region, Disk diskResource) {
 
     InsertRegionDiskHttpRequest request =
         InsertRegionDiskHttpRequest.newBuilder()
-            .setRequestId(requestId)
-            .setSourceImage(sourceImage)
             .setRegion(region)
             .setDiskResource(diskResource)
             .build();
@@ -619,13 +536,9 @@ public class RegionDiskClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionDiskClient regionDiskClient = RegionDiskClient.create()) {
-   *   String requestId = "";
-   *   String sourceImage = "";
    *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   Disk diskResource = Disk.newBuilder().build();
    *   InsertRegionDiskHttpRequest request = InsertRegionDiskHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
-   *     .setSourceImage(sourceImage)
    *     .setRegion(region.toString())
    *     .setDiskResource(diskResource)
    *     .build();
@@ -650,13 +563,9 @@ public class RegionDiskClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionDiskClient regionDiskClient = RegionDiskClient.create()) {
-   *   String requestId = "";
-   *   String sourceImage = "";
    *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   Disk diskResource = Disk.newBuilder().build();
    *   InsertRegionDiskHttpRequest request = InsertRegionDiskHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
-   *     .setSourceImage(sourceImage)
    *     .setRegion(region.toString())
    *     .setDiskResource(diskResource)
    *     .build();
@@ -816,35 +725,22 @@ public class RegionDiskClient implements BackgroundResource {
    * <pre><code>
    * try (RegionDiskClient regionDiskClient = RegionDiskClient.create()) {
    *   ProjectRegionDiskName disk = ProjectRegionDiskName.of("[PROJECT]", "[REGION]", "[DISK]");
-   *   String requestId = "";
    *   RegionDisksResizeRequest regionDisksResizeRequestResource = RegionDisksResizeRequest.newBuilder().build();
-   *   Operation response = regionDiskClient.resizeRegionDisk(disk, requestId, regionDisksResizeRequestResource);
+   *   Operation response = regionDiskClient.resizeRegionDisk(disk, regionDisksResizeRequestResource);
    * }
    * </code></pre>
    *
    * @param disk Name of the regional persistent disk.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param regionDisksResizeRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation resizeRegionDisk(
-      ProjectRegionDiskName disk,
-      String requestId,
-      RegionDisksResizeRequest regionDisksResizeRequestResource) {
+      ProjectRegionDiskName disk, RegionDisksResizeRequest regionDisksResizeRequestResource) {
 
     ResizeRegionDiskHttpRequest request =
         ResizeRegionDiskHttpRequest.newBuilder()
             .setDisk(disk == null ? null : disk.toString())
-            .setRequestId(requestId)
             .setRegionDisksResizeRequestResource(regionDisksResizeRequestResource)
             .build();
     return resizeRegionDisk(request);
@@ -859,33 +755,22 @@ public class RegionDiskClient implements BackgroundResource {
    * <pre><code>
    * try (RegionDiskClient regionDiskClient = RegionDiskClient.create()) {
    *   ProjectRegionDiskName disk = ProjectRegionDiskName.of("[PROJECT]", "[REGION]", "[DISK]");
-   *   String requestId = "";
    *   RegionDisksResizeRequest regionDisksResizeRequestResource = RegionDisksResizeRequest.newBuilder().build();
-   *   Operation response = regionDiskClient.resizeRegionDisk(disk.toString(), requestId, regionDisksResizeRequestResource);
+   *   Operation response = regionDiskClient.resizeRegionDisk(disk.toString(), regionDisksResizeRequestResource);
    * }
    * </code></pre>
    *
    * @param disk Name of the regional persistent disk.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param regionDisksResizeRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation resizeRegionDisk(
-      String disk, String requestId, RegionDisksResizeRequest regionDisksResizeRequestResource) {
+      String disk, RegionDisksResizeRequest regionDisksResizeRequestResource) {
 
     ResizeRegionDiskHttpRequest request =
         ResizeRegionDiskHttpRequest.newBuilder()
             .setDisk(disk)
-            .setRequestId(requestId)
             .setRegionDisksResizeRequestResource(regionDisksResizeRequestResource)
             .build();
     return resizeRegionDisk(request);
@@ -900,11 +785,9 @@ public class RegionDiskClient implements BackgroundResource {
    * <pre><code>
    * try (RegionDiskClient regionDiskClient = RegionDiskClient.create()) {
    *   ProjectRegionDiskName disk = ProjectRegionDiskName.of("[PROJECT]", "[REGION]", "[DISK]");
-   *   String requestId = "";
    *   RegionDisksResizeRequest regionDisksResizeRequestResource = RegionDisksResizeRequest.newBuilder().build();
    *   ResizeRegionDiskHttpRequest request = ResizeRegionDiskHttpRequest.newBuilder()
    *     .setDisk(disk.toString())
-   *     .setRequestId(requestId)
    *     .setRegionDisksResizeRequestResource(regionDisksResizeRequestResource)
    *     .build();
    *   Operation response = regionDiskClient.resizeRegionDisk(request);
@@ -928,11 +811,9 @@ public class RegionDiskClient implements BackgroundResource {
    * <pre><code>
    * try (RegionDiskClient regionDiskClient = RegionDiskClient.create()) {
    *   ProjectRegionDiskName disk = ProjectRegionDiskName.of("[PROJECT]", "[REGION]", "[DISK]");
-   *   String requestId = "";
    *   RegionDisksResizeRequest regionDisksResizeRequestResource = RegionDisksResizeRequest.newBuilder().build();
    *   ResizeRegionDiskHttpRequest request = ResizeRegionDiskHttpRequest.newBuilder()
    *     .setDisk(disk.toString())
-   *     .setRequestId(requestId)
    *     .setRegionDisksResizeRequestResource(regionDisksResizeRequestResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = regionDiskClient.resizeRegionDiskCallable().futureCall(request);
@@ -955,35 +836,23 @@ public class RegionDiskClient implements BackgroundResource {
    * <pre><code>
    * try (RegionDiskClient regionDiskClient = RegionDiskClient.create()) {
    *   ProjectRegionDiskResourceName resource = ProjectRegionDiskResourceName.of("[PROJECT]", "[REGION]", "[RESOURCE]");
-   *   String requestId = "";
    *   RegionSetLabelsRequest regionSetLabelsRequestResource = RegionSetLabelsRequest.newBuilder().build();
-   *   Operation response = regionDiskClient.setLabelsRegionDisk(resource, requestId, regionSetLabelsRequestResource);
+   *   Operation response = regionDiskClient.setLabelsRegionDisk(resource, regionSetLabelsRequestResource);
    * }
    * </code></pre>
    *
    * @param resource Name of the resource for this request.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param regionSetLabelsRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation setLabelsRegionDisk(
       ProjectRegionDiskResourceName resource,
-      String requestId,
       RegionSetLabelsRequest regionSetLabelsRequestResource) {
 
     SetLabelsRegionDiskHttpRequest request =
         SetLabelsRegionDiskHttpRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
-            .setRequestId(requestId)
             .setRegionSetLabelsRequestResource(regionSetLabelsRequestResource)
             .build();
     return setLabelsRegionDisk(request);
@@ -998,33 +867,22 @@ public class RegionDiskClient implements BackgroundResource {
    * <pre><code>
    * try (RegionDiskClient regionDiskClient = RegionDiskClient.create()) {
    *   ProjectRegionDiskResourceName resource = ProjectRegionDiskResourceName.of("[PROJECT]", "[REGION]", "[RESOURCE]");
-   *   String requestId = "";
    *   RegionSetLabelsRequest regionSetLabelsRequestResource = RegionSetLabelsRequest.newBuilder().build();
-   *   Operation response = regionDiskClient.setLabelsRegionDisk(resource.toString(), requestId, regionSetLabelsRequestResource);
+   *   Operation response = regionDiskClient.setLabelsRegionDisk(resource.toString(), regionSetLabelsRequestResource);
    * }
    * </code></pre>
    *
    * @param resource Name of the resource for this request.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param regionSetLabelsRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation setLabelsRegionDisk(
-      String resource, String requestId, RegionSetLabelsRequest regionSetLabelsRequestResource) {
+      String resource, RegionSetLabelsRequest regionSetLabelsRequestResource) {
 
     SetLabelsRegionDiskHttpRequest request =
         SetLabelsRegionDiskHttpRequest.newBuilder()
             .setResource(resource)
-            .setRequestId(requestId)
             .setRegionSetLabelsRequestResource(regionSetLabelsRequestResource)
             .build();
     return setLabelsRegionDisk(request);
@@ -1039,11 +897,9 @@ public class RegionDiskClient implements BackgroundResource {
    * <pre><code>
    * try (RegionDiskClient regionDiskClient = RegionDiskClient.create()) {
    *   ProjectRegionDiskResourceName resource = ProjectRegionDiskResourceName.of("[PROJECT]", "[REGION]", "[RESOURCE]");
-   *   String requestId = "";
    *   RegionSetLabelsRequest regionSetLabelsRequestResource = RegionSetLabelsRequest.newBuilder().build();
    *   SetLabelsRegionDiskHttpRequest request = SetLabelsRegionDiskHttpRequest.newBuilder()
    *     .setResource(resource.toString())
-   *     .setRequestId(requestId)
    *     .setRegionSetLabelsRequestResource(regionSetLabelsRequestResource)
    *     .build();
    *   Operation response = regionDiskClient.setLabelsRegionDisk(request);
@@ -1067,11 +923,9 @@ public class RegionDiskClient implements BackgroundResource {
    * <pre><code>
    * try (RegionDiskClient regionDiskClient = RegionDiskClient.create()) {
    *   ProjectRegionDiskResourceName resource = ProjectRegionDiskResourceName.of("[PROJECT]", "[REGION]", "[RESOURCE]");
-   *   String requestId = "";
    *   RegionSetLabelsRequest regionSetLabelsRequestResource = RegionSetLabelsRequest.newBuilder().build();
    *   SetLabelsRegionDiskHttpRequest request = SetLabelsRegionDiskHttpRequest.newBuilder()
    *     .setResource(resource.toString())
-   *     .setRequestId(requestId)
    *     .setRegionSetLabelsRequestResource(regionSetLabelsRequestResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = regionDiskClient.setLabelsRegionDiskCallable().futureCall(request);

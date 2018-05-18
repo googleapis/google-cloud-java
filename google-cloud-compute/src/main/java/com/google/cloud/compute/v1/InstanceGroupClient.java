@@ -42,10 +42,9 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (InstanceGroupClient instanceGroupClient = InstanceGroupClient.create()) {
- *   String requestId = "";
  *   ProjectZoneInstanceGroupName instanceGroup = ProjectZoneInstanceGroupName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP]");
  *   InstanceGroupsAddInstancesRequest instanceGroupsAddInstancesRequestResource = InstanceGroupsAddInstancesRequest.newBuilder().build();
- *   Operation response = instanceGroupClient.addInstancesInstanceGroup(requestId, instanceGroup, instanceGroupsAddInstancesRequestResource);
+ *   Operation response = instanceGroupClient.addInstancesInstanceGroup(instanceGroup, instanceGroupsAddInstancesRequestResource);
  * }
  * </code>
  * </pre>
@@ -163,35 +162,23 @@ public class InstanceGroupClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupClient instanceGroupClient = InstanceGroupClient.create()) {
-   *   String requestId = "";
    *   ProjectZoneInstanceGroupName instanceGroup = ProjectZoneInstanceGroupName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP]");
    *   InstanceGroupsAddInstancesRequest instanceGroupsAddInstancesRequestResource = InstanceGroupsAddInstancesRequest.newBuilder().build();
-   *   Operation response = instanceGroupClient.addInstancesInstanceGroup(requestId, instanceGroup, instanceGroupsAddInstancesRequestResource);
+   *   Operation response = instanceGroupClient.addInstancesInstanceGroup(instanceGroup, instanceGroupsAddInstancesRequestResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param instanceGroup The name of the instance group where you are adding instances.
    * @param instanceGroupsAddInstancesRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation addInstancesInstanceGroup(
-      String requestId,
       ProjectZoneInstanceGroupName instanceGroup,
       InstanceGroupsAddInstancesRequest instanceGroupsAddInstancesRequestResource) {
 
     AddInstancesInstanceGroupHttpRequest request =
         AddInstancesInstanceGroupHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setInstanceGroup(instanceGroup == null ? null : instanceGroup.toString())
             .setInstanceGroupsAddInstancesRequestResource(instanceGroupsAddInstancesRequestResource)
             .build();
@@ -207,35 +194,23 @@ public class InstanceGroupClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupClient instanceGroupClient = InstanceGroupClient.create()) {
-   *   String requestId = "";
    *   ProjectZoneInstanceGroupName instanceGroup = ProjectZoneInstanceGroupName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP]");
    *   InstanceGroupsAddInstancesRequest instanceGroupsAddInstancesRequestResource = InstanceGroupsAddInstancesRequest.newBuilder().build();
-   *   Operation response = instanceGroupClient.addInstancesInstanceGroup(requestId, instanceGroup.toString(), instanceGroupsAddInstancesRequestResource);
+   *   Operation response = instanceGroupClient.addInstancesInstanceGroup(instanceGroup.toString(), instanceGroupsAddInstancesRequestResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param instanceGroup The name of the instance group where you are adding instances.
    * @param instanceGroupsAddInstancesRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation addInstancesInstanceGroup(
-      String requestId,
       String instanceGroup,
       InstanceGroupsAddInstancesRequest instanceGroupsAddInstancesRequestResource) {
 
     AddInstancesInstanceGroupHttpRequest request =
         AddInstancesInstanceGroupHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setInstanceGroup(instanceGroup)
             .setInstanceGroupsAddInstancesRequestResource(instanceGroupsAddInstancesRequestResource)
             .build();
@@ -251,11 +226,9 @@ public class InstanceGroupClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupClient instanceGroupClient = InstanceGroupClient.create()) {
-   *   String requestId = "";
    *   ProjectZoneInstanceGroupName instanceGroup = ProjectZoneInstanceGroupName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP]");
    *   InstanceGroupsAddInstancesRequest instanceGroupsAddInstancesRequestResource = InstanceGroupsAddInstancesRequest.newBuilder().build();
    *   AddInstancesInstanceGroupHttpRequest request = AddInstancesInstanceGroupHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setInstanceGroup(instanceGroup.toString())
    *     .setInstanceGroupsAddInstancesRequestResource(instanceGroupsAddInstancesRequestResource)
    *     .build();
@@ -280,11 +253,9 @@ public class InstanceGroupClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupClient instanceGroupClient = InstanceGroupClient.create()) {
-   *   String requestId = "";
    *   ProjectZoneInstanceGroupName instanceGroup = ProjectZoneInstanceGroupName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP]");
    *   InstanceGroupsAddInstancesRequest instanceGroupsAddInstancesRequestResource = InstanceGroupsAddInstancesRequest.newBuilder().build();
    *   AddInstancesInstanceGroupHttpRequest request = AddInstancesInstanceGroupHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setInstanceGroup(instanceGroup.toString())
    *     .setInstanceGroupsAddInstancesRequestResource(instanceGroupsAddInstancesRequestResource)
    *     .build();
@@ -451,31 +422,19 @@ public class InstanceGroupClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupClient instanceGroupClient = InstanceGroupClient.create()) {
-   *   String requestId = "";
    *   ProjectZoneInstanceGroupName instanceGroup = ProjectZoneInstanceGroupName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP]");
-   *   Operation response = instanceGroupClient.deleteInstanceGroup(requestId, instanceGroup);
+   *   Operation response = instanceGroupClient.deleteInstanceGroup(instanceGroup);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param instanceGroup The name of the instance group to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteInstanceGroup(
-      String requestId, ProjectZoneInstanceGroupName instanceGroup) {
+  public final Operation deleteInstanceGroup(ProjectZoneInstanceGroupName instanceGroup) {
 
     DeleteInstanceGroupHttpRequest request =
         DeleteInstanceGroupHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setInstanceGroup(instanceGroup == null ? null : instanceGroup.toString())
             .build();
     return deleteInstanceGroup(request);
@@ -491,32 +450,19 @@ public class InstanceGroupClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupClient instanceGroupClient = InstanceGroupClient.create()) {
-   *   String requestId = "";
    *   ProjectZoneInstanceGroupName instanceGroup = ProjectZoneInstanceGroupName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP]");
-   *   Operation response = instanceGroupClient.deleteInstanceGroup(requestId, instanceGroup.toString());
+   *   Operation response = instanceGroupClient.deleteInstanceGroup(instanceGroup.toString());
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param instanceGroup The name of the instance group to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteInstanceGroup(String requestId, String instanceGroup) {
+  public final Operation deleteInstanceGroup(String instanceGroup) {
 
     DeleteInstanceGroupHttpRequest request =
-        DeleteInstanceGroupHttpRequest.newBuilder()
-            .setRequestId(requestId)
-            .setInstanceGroup(instanceGroup)
-            .build();
+        DeleteInstanceGroupHttpRequest.newBuilder().setInstanceGroup(instanceGroup).build();
     return deleteInstanceGroup(request);
   }
 
@@ -530,10 +476,8 @@ public class InstanceGroupClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupClient instanceGroupClient = InstanceGroupClient.create()) {
-   *   String requestId = "";
    *   ProjectZoneInstanceGroupName instanceGroup = ProjectZoneInstanceGroupName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP]");
    *   DeleteInstanceGroupHttpRequest request = DeleteInstanceGroupHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setInstanceGroup(instanceGroup.toString())
    *     .build();
    *   Operation response = instanceGroupClient.deleteInstanceGroup(request);
@@ -558,10 +502,8 @@ public class InstanceGroupClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupClient instanceGroupClient = InstanceGroupClient.create()) {
-   *   String requestId = "";
    *   ProjectZoneInstanceGroupName instanceGroup = ProjectZoneInstanceGroupName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP]");
    *   DeleteInstanceGroupHttpRequest request = DeleteInstanceGroupHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setInstanceGroup(instanceGroup.toString())
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = instanceGroupClient.deleteInstanceGroupCallable().futureCall(request);
@@ -688,22 +630,12 @@ public class InstanceGroupClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceGroupClient instanceGroupClient = InstanceGroupClient.create()) {
    *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
-   *   String requestId = "";
    *   InstanceGroup instanceGroupResource = InstanceGroup.newBuilder().build();
-   *   Operation response = instanceGroupClient.insertInstanceGroup(zone, requestId, instanceGroupResource);
+   *   Operation response = instanceGroupClient.insertInstanceGroup(zone, instanceGroupResource);
    * }
    * </code></pre>
    *
    * @param zone The name of the zone where you want to create the instance group.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param instanceGroupResource InstanceGroups (== resource_for beta.instanceGroups ==) (==
    *     resource_for v1.instanceGroups ==) (== resource_for beta.regionInstanceGroups ==) (==
    *     resource_for v1.regionInstanceGroups ==)
@@ -711,12 +643,11 @@ public class InstanceGroupClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation insertInstanceGroup(
-      ProjectZoneName zone, String requestId, InstanceGroup instanceGroupResource) {
+      ProjectZoneName zone, InstanceGroup instanceGroupResource) {
 
     InsertInstanceGroupHttpRequest request =
         InsertInstanceGroupHttpRequest.newBuilder()
             .setZone(zone == null ? null : zone.toString())
-            .setRequestId(requestId)
             .setInstanceGroupResource(instanceGroupResource)
             .build();
     return insertInstanceGroup(request);
@@ -732,35 +663,23 @@ public class InstanceGroupClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceGroupClient instanceGroupClient = InstanceGroupClient.create()) {
    *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
-   *   String requestId = "";
    *   InstanceGroup instanceGroupResource = InstanceGroup.newBuilder().build();
-   *   Operation response = instanceGroupClient.insertInstanceGroup(zone.toString(), requestId, instanceGroupResource);
+   *   Operation response = instanceGroupClient.insertInstanceGroup(zone.toString(), instanceGroupResource);
    * }
    * </code></pre>
    *
    * @param zone The name of the zone where you want to create the instance group.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param instanceGroupResource InstanceGroups (== resource_for beta.instanceGroups ==) (==
    *     resource_for v1.instanceGroups ==) (== resource_for beta.regionInstanceGroups ==) (==
    *     resource_for v1.regionInstanceGroups ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation insertInstanceGroup(
-      String zone, String requestId, InstanceGroup instanceGroupResource) {
+  public final Operation insertInstanceGroup(String zone, InstanceGroup instanceGroupResource) {
 
     InsertInstanceGroupHttpRequest request =
         InsertInstanceGroupHttpRequest.newBuilder()
             .setZone(zone)
-            .setRequestId(requestId)
             .setInstanceGroupResource(instanceGroupResource)
             .build();
     return insertInstanceGroup(request);
@@ -776,11 +695,9 @@ public class InstanceGroupClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceGroupClient instanceGroupClient = InstanceGroupClient.create()) {
    *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
-   *   String requestId = "";
    *   InstanceGroup instanceGroupResource = InstanceGroup.newBuilder().build();
    *   InsertInstanceGroupHttpRequest request = InsertInstanceGroupHttpRequest.newBuilder()
    *     .setZone(zone.toString())
-   *     .setRequestId(requestId)
    *     .setInstanceGroupResource(instanceGroupResource)
    *     .build();
    *   Operation response = instanceGroupClient.insertInstanceGroup(request);
@@ -805,11 +722,9 @@ public class InstanceGroupClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceGroupClient instanceGroupClient = InstanceGroupClient.create()) {
    *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
-   *   String requestId = "";
    *   InstanceGroup instanceGroupResource = InstanceGroup.newBuilder().build();
    *   InsertInstanceGroupHttpRequest request = InsertInstanceGroupHttpRequest.newBuilder()
    *     .setZone(zone.toString())
-   *     .setRequestId(requestId)
    *     .setInstanceGroupResource(instanceGroupResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = instanceGroupClient.insertInstanceGroupCallable().futureCall(request);
@@ -1136,22 +1051,12 @@ public class InstanceGroupClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupClient instanceGroupClient = InstanceGroupClient.create()) {
-   *   String requestId = "";
    *   ProjectZoneInstanceGroupName instanceGroup = ProjectZoneInstanceGroupName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP]");
    *   InstanceGroupsRemoveInstancesRequest instanceGroupsRemoveInstancesRequestResource = InstanceGroupsRemoveInstancesRequest.newBuilder().build();
-   *   Operation response = instanceGroupClient.removeInstancesInstanceGroup(requestId, instanceGroup, instanceGroupsRemoveInstancesRequestResource);
+   *   Operation response = instanceGroupClient.removeInstancesInstanceGroup(instanceGroup, instanceGroupsRemoveInstancesRequestResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param instanceGroup The name of the instance group where the specified instances will be
    *     removed.
    * @param instanceGroupsRemoveInstancesRequestResource
@@ -1159,13 +1064,11 @@ public class InstanceGroupClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation removeInstancesInstanceGroup(
-      String requestId,
       ProjectZoneInstanceGroupName instanceGroup,
       InstanceGroupsRemoveInstancesRequest instanceGroupsRemoveInstancesRequestResource) {
 
     RemoveInstancesInstanceGroupHttpRequest request =
         RemoveInstancesInstanceGroupHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setInstanceGroup(instanceGroup == null ? null : instanceGroup.toString())
             .setInstanceGroupsRemoveInstancesRequestResource(
                 instanceGroupsRemoveInstancesRequestResource)
@@ -1186,22 +1089,12 @@ public class InstanceGroupClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupClient instanceGroupClient = InstanceGroupClient.create()) {
-   *   String requestId = "";
    *   ProjectZoneInstanceGroupName instanceGroup = ProjectZoneInstanceGroupName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP]");
    *   InstanceGroupsRemoveInstancesRequest instanceGroupsRemoveInstancesRequestResource = InstanceGroupsRemoveInstancesRequest.newBuilder().build();
-   *   Operation response = instanceGroupClient.removeInstancesInstanceGroup(requestId, instanceGroup.toString(), instanceGroupsRemoveInstancesRequestResource);
+   *   Operation response = instanceGroupClient.removeInstancesInstanceGroup(instanceGroup.toString(), instanceGroupsRemoveInstancesRequestResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param instanceGroup The name of the instance group where the specified instances will be
    *     removed.
    * @param instanceGroupsRemoveInstancesRequestResource
@@ -1209,13 +1102,11 @@ public class InstanceGroupClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation removeInstancesInstanceGroup(
-      String requestId,
       String instanceGroup,
       InstanceGroupsRemoveInstancesRequest instanceGroupsRemoveInstancesRequestResource) {
 
     RemoveInstancesInstanceGroupHttpRequest request =
         RemoveInstancesInstanceGroupHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setInstanceGroup(instanceGroup)
             .setInstanceGroupsRemoveInstancesRequestResource(
                 instanceGroupsRemoveInstancesRequestResource)
@@ -1236,11 +1127,9 @@ public class InstanceGroupClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupClient instanceGroupClient = InstanceGroupClient.create()) {
-   *   String requestId = "";
    *   ProjectZoneInstanceGroupName instanceGroup = ProjectZoneInstanceGroupName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP]");
    *   InstanceGroupsRemoveInstancesRequest instanceGroupsRemoveInstancesRequestResource = InstanceGroupsRemoveInstancesRequest.newBuilder().build();
    *   RemoveInstancesInstanceGroupHttpRequest request = RemoveInstancesInstanceGroupHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setInstanceGroup(instanceGroup.toString())
    *     .setInstanceGroupsRemoveInstancesRequestResource(instanceGroupsRemoveInstancesRequestResource)
    *     .build();
@@ -1270,11 +1159,9 @@ public class InstanceGroupClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupClient instanceGroupClient = InstanceGroupClient.create()) {
-   *   String requestId = "";
    *   ProjectZoneInstanceGroupName instanceGroup = ProjectZoneInstanceGroupName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP]");
    *   InstanceGroupsRemoveInstancesRequest instanceGroupsRemoveInstancesRequestResource = InstanceGroupsRemoveInstancesRequest.newBuilder().build();
    *   RemoveInstancesInstanceGroupHttpRequest request = RemoveInstancesInstanceGroupHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setInstanceGroup(instanceGroup.toString())
    *     .setInstanceGroupsRemoveInstancesRequestResource(instanceGroupsRemoveInstancesRequestResource)
    *     .build();
@@ -1298,35 +1185,23 @@ public class InstanceGroupClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupClient instanceGroupClient = InstanceGroupClient.create()) {
-   *   String requestId = "";
    *   ProjectZoneInstanceGroupName instanceGroup = ProjectZoneInstanceGroupName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP]");
    *   InstanceGroupsSetNamedPortsRequest instanceGroupsSetNamedPortsRequestResource = InstanceGroupsSetNamedPortsRequest.newBuilder().build();
-   *   Operation response = instanceGroupClient.setNamedPortsInstanceGroup(requestId, instanceGroup, instanceGroupsSetNamedPortsRequestResource);
+   *   Operation response = instanceGroupClient.setNamedPortsInstanceGroup(instanceGroup, instanceGroupsSetNamedPortsRequestResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param instanceGroup The name of the instance group where the named ports are updated.
    * @param instanceGroupsSetNamedPortsRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation setNamedPortsInstanceGroup(
-      String requestId,
       ProjectZoneInstanceGroupName instanceGroup,
       InstanceGroupsSetNamedPortsRequest instanceGroupsSetNamedPortsRequestResource) {
 
     SetNamedPortsInstanceGroupHttpRequest request =
         SetNamedPortsInstanceGroupHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setInstanceGroup(instanceGroup == null ? null : instanceGroup.toString())
             .setInstanceGroupsSetNamedPortsRequestResource(
                 instanceGroupsSetNamedPortsRequestResource)
@@ -1342,35 +1217,23 @@ public class InstanceGroupClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupClient instanceGroupClient = InstanceGroupClient.create()) {
-   *   String requestId = "";
    *   ProjectZoneInstanceGroupName instanceGroup = ProjectZoneInstanceGroupName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP]");
    *   InstanceGroupsSetNamedPortsRequest instanceGroupsSetNamedPortsRequestResource = InstanceGroupsSetNamedPortsRequest.newBuilder().build();
-   *   Operation response = instanceGroupClient.setNamedPortsInstanceGroup(requestId, instanceGroup.toString(), instanceGroupsSetNamedPortsRequestResource);
+   *   Operation response = instanceGroupClient.setNamedPortsInstanceGroup(instanceGroup.toString(), instanceGroupsSetNamedPortsRequestResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param instanceGroup The name of the instance group where the named ports are updated.
    * @param instanceGroupsSetNamedPortsRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation setNamedPortsInstanceGroup(
-      String requestId,
       String instanceGroup,
       InstanceGroupsSetNamedPortsRequest instanceGroupsSetNamedPortsRequestResource) {
 
     SetNamedPortsInstanceGroupHttpRequest request =
         SetNamedPortsInstanceGroupHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setInstanceGroup(instanceGroup)
             .setInstanceGroupsSetNamedPortsRequestResource(
                 instanceGroupsSetNamedPortsRequestResource)
@@ -1386,11 +1249,9 @@ public class InstanceGroupClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupClient instanceGroupClient = InstanceGroupClient.create()) {
-   *   String requestId = "";
    *   ProjectZoneInstanceGroupName instanceGroup = ProjectZoneInstanceGroupName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP]");
    *   InstanceGroupsSetNamedPortsRequest instanceGroupsSetNamedPortsRequestResource = InstanceGroupsSetNamedPortsRequest.newBuilder().build();
    *   SetNamedPortsInstanceGroupHttpRequest request = SetNamedPortsInstanceGroupHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setInstanceGroup(instanceGroup.toString())
    *     .setInstanceGroupsSetNamedPortsRequestResource(instanceGroupsSetNamedPortsRequestResource)
    *     .build();
@@ -1414,11 +1275,9 @@ public class InstanceGroupClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupClient instanceGroupClient = InstanceGroupClient.create()) {
-   *   String requestId = "";
    *   ProjectZoneInstanceGroupName instanceGroup = ProjectZoneInstanceGroupName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP]");
    *   InstanceGroupsSetNamedPortsRequest instanceGroupsSetNamedPortsRequestResource = InstanceGroupsSetNamedPortsRequest.newBuilder().build();
    *   SetNamedPortsInstanceGroupHttpRequest request = SetNamedPortsInstanceGroupHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setInstanceGroup(instanceGroup.toString())
    *     .setInstanceGroupsSetNamedPortsRequestResource(instanceGroupsSetNamedPortsRequestResource)
    *     .build();

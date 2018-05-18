@@ -200,11 +200,10 @@ public class TargetInstanceClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String requestId = "requestId37109963";
     ProjectZoneTargetInstanceName targetInstance =
         ProjectZoneTargetInstanceName.of("[PROJECT]", "[ZONE]", "[TARGET_INSTANCE]");
 
-    Operation actualResponse = client.deleteTargetInstance(requestId, targetInstance);
+    Operation actualResponse = client.deleteTargetInstance(targetInstance);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -231,11 +230,10 @@ public class TargetInstanceClientTest {
     mockService.addException(exception);
 
     try {
-      String requestId = "requestId37109963";
       ProjectZoneTargetInstanceName targetInstance =
           ProjectZoneTargetInstanceName.of("[PROJECT]", "[ZONE]", "[TARGET_INSTANCE]");
 
-      client.deleteTargetInstance(requestId, targetInstance);
+      client.deleteTargetInstance(targetInstance);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -360,10 +358,9 @@ public class TargetInstanceClientTest {
     mockService.addResponse(expectedResponse);
 
     ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
-    String requestId = "requestId37109963";
     TargetInstance targetInstanceResource = TargetInstance.newBuilder().build();
 
-    Operation actualResponse = client.insertTargetInstance(zone, requestId, targetInstanceResource);
+    Operation actualResponse = client.insertTargetInstance(zone, targetInstanceResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -391,10 +388,9 @@ public class TargetInstanceClientTest {
 
     try {
       ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
-      String requestId = "requestId37109963";
       TargetInstance targetInstanceResource = TargetInstance.newBuilder().build();
 
-      client.insertTargetInstance(zone, requestId, targetInstanceResource);
+      client.insertTargetInstance(zone, targetInstanceResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

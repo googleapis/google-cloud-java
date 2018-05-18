@@ -137,9 +137,8 @@ public class FirewallClientTest {
     mockService.addResponse(expectedResponse);
 
     ProjectGlobalFirewallName firewall = ProjectGlobalFirewallName.of("[PROJECT]", "[FIREWALL]");
-    String requestId = "requestId37109963";
 
-    Operation actualResponse = client.deleteFirewall(firewall, requestId);
+    Operation actualResponse = client.deleteFirewall(firewall);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -167,9 +166,8 @@ public class FirewallClientTest {
 
     try {
       ProjectGlobalFirewallName firewall = ProjectGlobalFirewallName.of("[PROJECT]", "[FIREWALL]");
-      String requestId = "requestId37109963";
 
-      client.deleteFirewall(firewall, requestId);
+      client.deleteFirewall(firewall);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -290,11 +288,10 @@ public class FirewallClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String requestId = "requestId37109963";
     ProjectName project = ProjectName.of("[PROJECT]");
     Firewall firewallResource = Firewall.newBuilder().build();
 
-    Operation actualResponse = client.insertFirewall(requestId, project, firewallResource);
+    Operation actualResponse = client.insertFirewall(project, firewallResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -321,11 +318,10 @@ public class FirewallClientTest {
     mockService.addException(exception);
 
     try {
-      String requestId = "requestId37109963";
       ProjectName project = ProjectName.of("[PROJECT]");
       Firewall firewallResource = Firewall.newBuilder().build();
 
-      client.insertFirewall(requestId, project, firewallResource);
+      client.insertFirewall(project, firewallResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -443,10 +439,9 @@ public class FirewallClientTest {
     mockService.addResponse(expectedResponse);
 
     ProjectGlobalFirewallName firewall = ProjectGlobalFirewallName.of("[PROJECT]", "[FIREWALL]");
-    String requestId = "requestId37109963";
     Firewall firewallResource = Firewall.newBuilder().build();
 
-    Operation actualResponse = client.patchFirewall(firewall, requestId, firewallResource);
+    Operation actualResponse = client.patchFirewall(firewall, firewallResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -474,10 +469,9 @@ public class FirewallClientTest {
 
     try {
       ProjectGlobalFirewallName firewall = ProjectGlobalFirewallName.of("[PROJECT]", "[FIREWALL]");
-      String requestId = "requestId37109963";
       Firewall firewallResource = Firewall.newBuilder().build();
 
-      client.patchFirewall(firewall, requestId, firewallResource);
+      client.patchFirewall(firewall, firewallResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -535,10 +529,9 @@ public class FirewallClientTest {
     mockService.addResponse(expectedResponse);
 
     ProjectGlobalFirewallName firewall = ProjectGlobalFirewallName.of("[PROJECT]", "[FIREWALL]");
-    String requestId = "requestId37109963";
     Firewall firewallResource = Firewall.newBuilder().build();
 
-    Operation actualResponse = client.updateFirewall(firewall, requestId, firewallResource);
+    Operation actualResponse = client.updateFirewall(firewall, firewallResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -566,10 +559,9 @@ public class FirewallClientTest {
 
     try {
       ProjectGlobalFirewallName firewall = ProjectGlobalFirewallName.of("[PROJECT]", "[FIREWALL]");
-      String requestId = "requestId37109963";
       Firewall firewallResource = Firewall.newBuilder().build();
 
-      client.updateFirewall(firewall, requestId, firewallResource);
+      client.updateFirewall(firewall, firewallResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

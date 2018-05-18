@@ -133,9 +133,8 @@ public class GlobalAddressClientTest {
     mockService.addResponse(expectedResponse);
 
     ProjectGlobalAddressName address = ProjectGlobalAddressName.of("[PROJECT]", "[ADDRESS]");
-    String requestId = "requestId37109963";
 
-    Operation actualResponse = client.deleteGlobalAddress(address, requestId);
+    Operation actualResponse = client.deleteGlobalAddress(address);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -163,9 +162,8 @@ public class GlobalAddressClientTest {
 
     try {
       ProjectGlobalAddressName address = ProjectGlobalAddressName.of("[PROJECT]", "[ADDRESS]");
-      String requestId = "requestId37109963";
 
-      client.deleteGlobalAddress(address, requestId);
+      client.deleteGlobalAddress(address);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -293,11 +291,10 @@ public class GlobalAddressClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String requestId = "requestId37109963";
     ProjectName project = ProjectName.of("[PROJECT]");
     Address addressResource = Address.newBuilder().build();
 
-    Operation actualResponse = client.insertGlobalAddress(requestId, project, addressResource);
+    Operation actualResponse = client.insertGlobalAddress(project, addressResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -324,11 +321,10 @@ public class GlobalAddressClientTest {
     mockService.addException(exception);
 
     try {
-      String requestId = "requestId37109963";
       ProjectName project = ProjectName.of("[PROJECT]");
       Address addressResource = Address.newBuilder().build();
 
-      client.insertGlobalAddress(requestId, project, addressResource);
+      client.insertGlobalAddress(project, addressResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

@@ -17,14 +17,9 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
-import java.util.Set;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
 
@@ -123,155 +118,69 @@ public final class Interconnect implements ApiMessage {
   }
 
   @Override
-  public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
-    Map<String, List<String>> fieldMap = new HashMap<>();
-    if (fieldNames.contains("adminEnabled") && adminEnabled != null) {
-      fieldMap.put("adminEnabled", Collections.singletonList(String.valueOf(adminEnabled)));
-    }
-    if (fieldNames.contains("circuitInfos") && circuitInfos != null) {
-      ImmutableList.Builder stringList = ImmutableList.builder();
-      for (InterconnectCircuitInfo item : circuitInfos) {
-        stringList.add(item.toString());
-      }
-      fieldMap.put("circuitInfos", stringList.build());
-    }
-    if (fieldNames.contains("creationTimestamp") && creationTimestamp != null) {
-      fieldMap.put(
-          "creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
-    }
-    if (fieldNames.contains("customerName") && customerName != null) {
-      fieldMap.put("customerName", Collections.singletonList(String.valueOf(customerName)));
-    }
-    if (fieldNames.contains("description") && description != null) {
-      fieldMap.put("description", Collections.singletonList(String.valueOf(description)));
-    }
-    if (fieldNames.contains("expectedOutages") && expectedOutages != null) {
-      ImmutableList.Builder stringList = ImmutableList.builder();
-      for (InterconnectOutageNotification item : expectedOutages) {
-        stringList.add(item.toString());
-      }
-      fieldMap.put("expectedOutages", stringList.build());
-    }
-    if (fieldNames.contains("googleIpAddress") && googleIpAddress != null) {
-      fieldMap.put("googleIpAddress", Collections.singletonList(String.valueOf(googleIpAddress)));
-    }
-    if (fieldNames.contains("googleReferenceId") && googleReferenceId != null) {
-      fieldMap.put(
-          "googleReferenceId", Collections.singletonList(String.valueOf(googleReferenceId)));
-    }
-    if (fieldNames.contains("id") && id != null) {
-      fieldMap.put("id", Collections.singletonList(String.valueOf(id)));
-    }
-    if (fieldNames.contains("interconnectAttachments") && interconnectAttachments != null) {
-      ImmutableList.Builder stringList = ImmutableList.builder();
-      for (String item : interconnectAttachments) {
-        stringList.add(item.toString());
-      }
-      fieldMap.put("interconnectAttachments", stringList.build());
-    }
-    if (fieldNames.contains("interconnectType") && interconnectType != null) {
-      fieldMap.put("interconnectType", Collections.singletonList(String.valueOf(interconnectType)));
-    }
-    if (fieldNames.contains("kind") && kind != null) {
-      fieldMap.put("kind", Collections.singletonList(String.valueOf(kind)));
-    }
-    if (fieldNames.contains("linkType") && linkType != null) {
-      fieldMap.put("linkType", Collections.singletonList(String.valueOf(linkType)));
-    }
-    if (fieldNames.contains("location") && location != null) {
-      fieldMap.put("location", Collections.singletonList(String.valueOf(location)));
-    }
-    if (fieldNames.contains("name") && name != null) {
-      fieldMap.put("name", Collections.singletonList(String.valueOf(name)));
-    }
-    if (fieldNames.contains("nocContactEmail") && nocContactEmail != null) {
-      fieldMap.put("nocContactEmail", Collections.singletonList(String.valueOf(nocContactEmail)));
-    }
-    if (fieldNames.contains("operationalStatus") && operationalStatus != null) {
-      fieldMap.put(
-          "operationalStatus", Collections.singletonList(String.valueOf(operationalStatus)));
-    }
-    if (fieldNames.contains("peerIpAddress") && peerIpAddress != null) {
-      fieldMap.put("peerIpAddress", Collections.singletonList(String.valueOf(peerIpAddress)));
-    }
-    if (fieldNames.contains("provisionedLinkCount") && provisionedLinkCount != null) {
-      fieldMap.put(
-          "provisionedLinkCount", Collections.singletonList(String.valueOf(provisionedLinkCount)));
-    }
-    if (fieldNames.contains("requestedLinkCount") && requestedLinkCount != null) {
-      fieldMap.put(
-          "requestedLinkCount", Collections.singletonList(String.valueOf(requestedLinkCount)));
-    }
-    if (fieldNames.contains("selfLink") && selfLink != null) {
-      fieldMap.put("selfLink", Collections.singletonList(String.valueOf(selfLink)));
-    }
-    return fieldMap;
-  }
-
-  @Override
-  public String getFieldStringValue(String fieldName) {
+  public Object getFieldValue(String fieldName) {
     if (fieldName.equals("adminEnabled")) {
-      return String.valueOf(adminEnabled);
+      return adminEnabled;
     }
     if (fieldName.equals("circuitInfos")) {
-      return String.valueOf(circuitInfos);
+      return circuitInfos;
     }
     if (fieldName.equals("creationTimestamp")) {
-      return String.valueOf(creationTimestamp);
+      return creationTimestamp;
     }
     if (fieldName.equals("customerName")) {
-      return String.valueOf(customerName);
+      return customerName;
     }
     if (fieldName.equals("description")) {
-      return String.valueOf(description);
+      return description;
     }
     if (fieldName.equals("expectedOutages")) {
-      return String.valueOf(expectedOutages);
+      return expectedOutages;
     }
     if (fieldName.equals("googleIpAddress")) {
-      return String.valueOf(googleIpAddress);
+      return googleIpAddress;
     }
     if (fieldName.equals("googleReferenceId")) {
-      return String.valueOf(googleReferenceId);
+      return googleReferenceId;
     }
     if (fieldName.equals("id")) {
-      return String.valueOf(id);
+      return id;
     }
     if (fieldName.equals("interconnectAttachments")) {
-      return String.valueOf(interconnectAttachments);
+      return interconnectAttachments;
     }
     if (fieldName.equals("interconnectType")) {
-      return String.valueOf(interconnectType);
+      return interconnectType;
     }
     if (fieldName.equals("kind")) {
-      return String.valueOf(kind);
+      return kind;
     }
     if (fieldName.equals("linkType")) {
-      return String.valueOf(linkType);
+      return linkType;
     }
     if (fieldName.equals("location")) {
-      return String.valueOf(location);
+      return location;
     }
     if (fieldName.equals("name")) {
-      return String.valueOf(name);
+      return name;
     }
     if (fieldName.equals("nocContactEmail")) {
-      return String.valueOf(nocContactEmail);
+      return nocContactEmail;
     }
     if (fieldName.equals("operationalStatus")) {
-      return String.valueOf(operationalStatus);
+      return operationalStatus;
     }
     if (fieldName.equals("peerIpAddress")) {
-      return String.valueOf(peerIpAddress);
+      return peerIpAddress;
     }
     if (fieldName.equals("provisionedLinkCount")) {
-      return String.valueOf(provisionedLinkCount);
+      return provisionedLinkCount;
     }
     if (fieldName.equals("requestedLinkCount")) {
-      return String.valueOf(requestedLinkCount);
+      return requestedLinkCount;
     }
     if (fieldName.equals("selfLink")) {
-      return String.valueOf(selfLink);
+      return selfLink;
     }
     return null;
   }
@@ -279,6 +188,12 @@ public final class Interconnect implements ApiMessage {
   @Nullable
   @Override
   public ApiMessage getApiMessageRequestBody() {
+    return null;
+  }
+
+  @Nullable
+  @Override
+  public List<String> getFieldMask() {
     return null;
   }
 

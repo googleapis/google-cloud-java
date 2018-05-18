@@ -140,13 +140,11 @@ public class NetworkClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String requestId = "requestId37109963";
     ProjectGlobalNetworkName network = ProjectGlobalNetworkName.of("[PROJECT]", "[NETWORK]");
     NetworksAddPeeringRequest networksAddPeeringRequestResource =
         NetworksAddPeeringRequest.newBuilder().build();
 
-    Operation actualResponse =
-        client.addPeeringNetwork(requestId, network, networksAddPeeringRequestResource);
+    Operation actualResponse = client.addPeeringNetwork(network, networksAddPeeringRequestResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -173,12 +171,11 @@ public class NetworkClientTest {
     mockService.addException(exception);
 
     try {
-      String requestId = "requestId37109963";
       ProjectGlobalNetworkName network = ProjectGlobalNetworkName.of("[PROJECT]", "[NETWORK]");
       NetworksAddPeeringRequest networksAddPeeringRequestResource =
           NetworksAddPeeringRequest.newBuilder().build();
 
-      client.addPeeringNetwork(requestId, network, networksAddPeeringRequestResource);
+      client.addPeeringNetwork(network, networksAddPeeringRequestResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -235,10 +232,9 @@ public class NetworkClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String requestId = "requestId37109963";
     ProjectGlobalNetworkName network = ProjectGlobalNetworkName.of("[PROJECT]", "[NETWORK]");
 
-    Operation actualResponse = client.deleteNetwork(requestId, network);
+    Operation actualResponse = client.deleteNetwork(network);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -265,10 +261,9 @@ public class NetworkClientTest {
     mockService.addException(exception);
 
     try {
-      String requestId = "requestId37109963";
       ProjectGlobalNetworkName network = ProjectGlobalNetworkName.of("[PROJECT]", "[NETWORK]");
 
-      client.deleteNetwork(requestId, network);
+      client.deleteNetwork(network);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -389,11 +384,10 @@ public class NetworkClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String requestId = "requestId37109963";
     ProjectName project = ProjectName.of("[PROJECT]");
     Network networkResource = Network.newBuilder().build();
 
-    Operation actualResponse = client.insertNetwork(requestId, project, networkResource);
+    Operation actualResponse = client.insertNetwork(project, networkResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -420,11 +414,10 @@ public class NetworkClientTest {
     mockService.addException(exception);
 
     try {
-      String requestId = "requestId37109963";
       ProjectName project = ProjectName.of("[PROJECT]");
       Network networkResource = Network.newBuilder().build();
 
-      client.insertNetwork(requestId, project, networkResource);
+      client.insertNetwork(project, networkResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -541,11 +534,10 @@ public class NetworkClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String requestId = "requestId37109963";
     ProjectGlobalNetworkName network = ProjectGlobalNetworkName.of("[PROJECT]", "[NETWORK]");
     Network networkResource = Network.newBuilder().build();
 
-    Operation actualResponse = client.patchNetwork(requestId, network, networkResource);
+    Operation actualResponse = client.patchNetwork(network, networkResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -572,11 +564,10 @@ public class NetworkClientTest {
     mockService.addException(exception);
 
     try {
-      String requestId = "requestId37109963";
       ProjectGlobalNetworkName network = ProjectGlobalNetworkName.of("[PROJECT]", "[NETWORK]");
       Network networkResource = Network.newBuilder().build();
 
-      client.patchNetwork(requestId, network, networkResource);
+      client.patchNetwork(network, networkResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -633,13 +624,12 @@ public class NetworkClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String requestId = "requestId37109963";
     ProjectGlobalNetworkName network = ProjectGlobalNetworkName.of("[PROJECT]", "[NETWORK]");
     NetworksRemovePeeringRequest networksRemovePeeringRequestResource =
         NetworksRemovePeeringRequest.newBuilder().build();
 
     Operation actualResponse =
-        client.removePeeringNetwork(requestId, network, networksRemovePeeringRequestResource);
+        client.removePeeringNetwork(network, networksRemovePeeringRequestResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -666,12 +656,11 @@ public class NetworkClientTest {
     mockService.addException(exception);
 
     try {
-      String requestId = "requestId37109963";
       ProjectGlobalNetworkName network = ProjectGlobalNetworkName.of("[PROJECT]", "[NETWORK]");
       NetworksRemovePeeringRequest networksRemovePeeringRequestResource =
           NetworksRemovePeeringRequest.newBuilder().build();
 
-      client.removePeeringNetwork(requestId, network, networksRemovePeeringRequestResource);
+      client.removePeeringNetwork(network, networksRemovePeeringRequestResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -728,10 +717,9 @@ public class NetworkClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String requestId = "requestId37109963";
     ProjectGlobalNetworkName network = ProjectGlobalNetworkName.of("[PROJECT]", "[NETWORK]");
 
-    Operation actualResponse = client.switchToCustomModeNetwork(requestId, network);
+    Operation actualResponse = client.switchToCustomModeNetwork(network);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -758,10 +746,9 @@ public class NetworkClientTest {
     mockService.addException(exception);
 
     try {
-      String requestId = "requestId37109963";
       ProjectGlobalNetworkName network = ProjectGlobalNetworkName.of("[PROJECT]", "[NETWORK]");
 
-      client.switchToCustomModeNetwork(requestId, network);
+      client.switchToCustomModeNetwork(network);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

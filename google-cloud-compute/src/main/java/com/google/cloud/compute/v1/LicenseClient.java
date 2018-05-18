@@ -43,8 +43,7 @@ import javax.annotation.Generated;
  * <code>
  * try (LicenseClient licenseClient = LicenseClient.create()) {
  *   ProjectGlobalLicenseName license = ProjectGlobalLicenseName.of("[PROJECT]", "[LICENSE]");
- *   String requestId = "";
- *   Operation response = licenseClient.deleteLicense(license, requestId);
+ *   Operation response = licenseClient.deleteLicense(license);
  * }
  * </code>
  * </pre>
@@ -160,30 +159,19 @@ public class LicenseClient implements BackgroundResource {
    * <pre><code>
    * try (LicenseClient licenseClient = LicenseClient.create()) {
    *   ProjectGlobalLicenseName license = ProjectGlobalLicenseName.of("[PROJECT]", "[LICENSE]");
-   *   String requestId = "";
-   *   Operation response = licenseClient.deleteLicense(license, requestId);
+   *   Operation response = licenseClient.deleteLicense(license);
    * }
    * </code></pre>
    *
    * @param license Name of the license resource to delete.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteLicense(ProjectGlobalLicenseName license, String requestId) {
+  public final Operation deleteLicense(ProjectGlobalLicenseName license) {
 
     DeleteLicenseHttpRequest request =
         DeleteLicenseHttpRequest.newBuilder()
             .setLicense(license == null ? null : license.toString())
-            .setRequestId(requestId)
             .build();
     return deleteLicense(request);
   }
@@ -197,28 +185,18 @@ public class LicenseClient implements BackgroundResource {
    * <pre><code>
    * try (LicenseClient licenseClient = LicenseClient.create()) {
    *   ProjectGlobalLicenseName license = ProjectGlobalLicenseName.of("[PROJECT]", "[LICENSE]");
-   *   String requestId = "";
-   *   Operation response = licenseClient.deleteLicense(license.toString(), requestId);
+   *   Operation response = licenseClient.deleteLicense(license.toString());
    * }
    * </code></pre>
    *
    * @param license Name of the license resource to delete.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteLicense(String license, String requestId) {
+  public final Operation deleteLicense(String license) {
 
     DeleteLicenseHttpRequest request =
-        DeleteLicenseHttpRequest.newBuilder().setLicense(license).setRequestId(requestId).build();
+        DeleteLicenseHttpRequest.newBuilder().setLicense(license).build();
     return deleteLicense(request);
   }
 
@@ -231,10 +209,8 @@ public class LicenseClient implements BackgroundResource {
    * <pre><code>
    * try (LicenseClient licenseClient = LicenseClient.create()) {
    *   ProjectGlobalLicenseName license = ProjectGlobalLicenseName.of("[PROJECT]", "[LICENSE]");
-   *   String requestId = "";
    *   DeleteLicenseHttpRequest request = DeleteLicenseHttpRequest.newBuilder()
    *     .setLicense(license.toString())
-   *     .setRequestId(requestId)
    *     .build();
    *   Operation response = licenseClient.deleteLicense(request);
    * }
@@ -257,10 +233,8 @@ public class LicenseClient implements BackgroundResource {
    * <pre><code>
    * try (LicenseClient licenseClient = LicenseClient.create()) {
    *   ProjectGlobalLicenseName license = ProjectGlobalLicenseName.of("[PROJECT]", "[LICENSE]");
-   *   String requestId = "";
    *   DeleteLicenseHttpRequest request = DeleteLicenseHttpRequest.newBuilder()
    *     .setLicense(license.toString())
-   *     .setRequestId(requestId)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = licenseClient.deleteLicenseCallable().futureCall(request);
    *   // Do something
@@ -377,33 +351,21 @@ public class LicenseClient implements BackgroundResource {
    *
    * <pre><code>
    * try (LicenseClient licenseClient = LicenseClient.create()) {
-   *   String requestId = "";
    *   ProjectName project = ProjectName.of("[PROJECT]");
    *   License licenseResource = License.newBuilder().build();
-   *   Operation response = licenseClient.insertLicense(requestId, project, licenseResource);
+   *   Operation response = licenseClient.insertLicense(project, licenseResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param project Project ID for this request.
    * @param licenseResource A license resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation insertLicense(
-      String requestId, ProjectName project, License licenseResource) {
+  public final Operation insertLicense(ProjectName project, License licenseResource) {
 
     InsertLicenseHttpRequest request =
         InsertLicenseHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setProject(project == null ? null : project.toString())
             .setLicenseResource(licenseResource)
             .build();
@@ -418,32 +380,21 @@ public class LicenseClient implements BackgroundResource {
    *
    * <pre><code>
    * try (LicenseClient licenseClient = LicenseClient.create()) {
-   *   String requestId = "";
    *   ProjectName project = ProjectName.of("[PROJECT]");
    *   License licenseResource = License.newBuilder().build();
-   *   Operation response = licenseClient.insertLicense(requestId, project.toString(), licenseResource);
+   *   Operation response = licenseClient.insertLicense(project.toString(), licenseResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param project Project ID for this request.
    * @param licenseResource A license resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation insertLicense(String requestId, String project, License licenseResource) {
+  public final Operation insertLicense(String project, License licenseResource) {
 
     InsertLicenseHttpRequest request =
         InsertLicenseHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setProject(project)
             .setLicenseResource(licenseResource)
             .build();
@@ -458,11 +409,9 @@ public class LicenseClient implements BackgroundResource {
    *
    * <pre><code>
    * try (LicenseClient licenseClient = LicenseClient.create()) {
-   *   String requestId = "";
    *   ProjectName project = ProjectName.of("[PROJECT]");
    *   License licenseResource = License.newBuilder().build();
    *   InsertLicenseHttpRequest request = InsertLicenseHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setProject(project.toString())
    *     .setLicenseResource(licenseResource)
    *     .build();
@@ -486,11 +435,9 @@ public class LicenseClient implements BackgroundResource {
    *
    * <pre><code>
    * try (LicenseClient licenseClient = LicenseClient.create()) {
-   *   String requestId = "";
    *   ProjectName project = ProjectName.of("[PROJECT]");
    *   License licenseResource = License.newBuilder().build();
    *   InsertLicenseHttpRequest request = InsertLicenseHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setProject(project.toString())
    *     .setLicenseResource(licenseResource)
    *     .build();

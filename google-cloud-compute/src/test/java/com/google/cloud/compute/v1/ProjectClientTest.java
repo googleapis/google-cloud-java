@@ -149,10 +149,9 @@ public class ProjectClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String requestId = "requestId37109963";
     ProjectName project = ProjectName.of("[PROJECT]");
 
-    Operation actualResponse = client.disableXpnHostProject(requestId, project);
+    Operation actualResponse = client.disableXpnHostProject(project);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -179,10 +178,9 @@ public class ProjectClientTest {
     mockService.addException(exception);
 
     try {
-      String requestId = "requestId37109963";
       ProjectName project = ProjectName.of("[PROJECT]");
 
-      client.disableXpnHostProject(requestId, project);
+      client.disableXpnHostProject(project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -239,14 +237,12 @@ public class ProjectClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String requestId = "requestId37109963";
     ProjectName project = ProjectName.of("[PROJECT]");
     ProjectsDisableXpnResourceRequest projectsDisableXpnResourceRequestResource =
         ProjectsDisableXpnResourceRequest.newBuilder().build();
 
     Operation actualResponse =
-        client.disableXpnResourceProject(
-            requestId, project, projectsDisableXpnResourceRequestResource);
+        client.disableXpnResourceProject(project, projectsDisableXpnResourceRequestResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -273,13 +269,11 @@ public class ProjectClientTest {
     mockService.addException(exception);
 
     try {
-      String requestId = "requestId37109963";
       ProjectName project = ProjectName.of("[PROJECT]");
       ProjectsDisableXpnResourceRequest projectsDisableXpnResourceRequestResource =
           ProjectsDisableXpnResourceRequest.newBuilder().build();
 
-      client.disableXpnResourceProject(
-          requestId, project, projectsDisableXpnResourceRequestResource);
+      client.disableXpnResourceProject(project, projectsDisableXpnResourceRequestResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -336,10 +330,9 @@ public class ProjectClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String requestId = "requestId37109963";
     ProjectName project = ProjectName.of("[PROJECT]");
 
-    Operation actualResponse = client.enableXpnHostProject(requestId, project);
+    Operation actualResponse = client.enableXpnHostProject(project);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -366,10 +359,9 @@ public class ProjectClientTest {
     mockService.addException(exception);
 
     try {
-      String requestId = "requestId37109963";
       ProjectName project = ProjectName.of("[PROJECT]");
 
-      client.enableXpnHostProject(requestId, project);
+      client.enableXpnHostProject(project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -426,14 +418,12 @@ public class ProjectClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String requestId = "requestId37109963";
     ProjectName project = ProjectName.of("[PROJECT]");
     ProjectsEnableXpnResourceRequest projectsEnableXpnResourceRequestResource =
         ProjectsEnableXpnResourceRequest.newBuilder().build();
 
     Operation actualResponse =
-        client.enableXpnResourceProject(
-            requestId, project, projectsEnableXpnResourceRequestResource);
+        client.enableXpnResourceProject(project, projectsEnableXpnResourceRequestResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -460,12 +450,11 @@ public class ProjectClientTest {
     mockService.addException(exception);
 
     try {
-      String requestId = "requestId37109963";
       ProjectName project = ProjectName.of("[PROJECT]");
       ProjectsEnableXpnResourceRequest projectsEnableXpnResourceRequestResource =
           ProjectsEnableXpnResourceRequest.newBuilder().build();
 
-      client.enableXpnResourceProject(requestId, project, projectsEnableXpnResourceRequestResource);
+      client.enableXpnResourceProject(project, projectsEnableXpnResourceRequestResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -768,11 +757,10 @@ public class ProjectClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String requestId = "requestId37109963";
     ProjectName project = ProjectName.of("[PROJECT]");
     DiskMoveRequest diskMoveRequestResource = DiskMoveRequest.newBuilder().build();
 
-    Operation actualResponse = client.moveDiskProject(requestId, project, diskMoveRequestResource);
+    Operation actualResponse = client.moveDiskProject(project, diskMoveRequestResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -799,11 +787,10 @@ public class ProjectClientTest {
     mockService.addException(exception);
 
     try {
-      String requestId = "requestId37109963";
       ProjectName project = ProjectName.of("[PROJECT]");
       DiskMoveRequest diskMoveRequestResource = DiskMoveRequest.newBuilder().build();
 
-      client.moveDiskProject(requestId, project, diskMoveRequestResource);
+      client.moveDiskProject(project, diskMoveRequestResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -860,12 +847,10 @@ public class ProjectClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String requestId = "requestId37109963";
     ProjectName project = ProjectName.of("[PROJECT]");
     InstanceMoveRequest instanceMoveRequestResource = InstanceMoveRequest.newBuilder().build();
 
-    Operation actualResponse =
-        client.moveInstanceProject(requestId, project, instanceMoveRequestResource);
+    Operation actualResponse = client.moveInstanceProject(project, instanceMoveRequestResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -892,11 +877,10 @@ public class ProjectClientTest {
     mockService.addException(exception);
 
     try {
-      String requestId = "requestId37109963";
       ProjectName project = ProjectName.of("[PROJECT]");
       InstanceMoveRequest instanceMoveRequestResource = InstanceMoveRequest.newBuilder().build();
 
-      client.moveInstanceProject(requestId, project, instanceMoveRequestResource);
+      client.moveInstanceProject(project, instanceMoveRequestResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -953,12 +937,10 @@ public class ProjectClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String requestId = "requestId37109963";
     ProjectName project = ProjectName.of("[PROJECT]");
     Metadata metadataResource = Metadata.newBuilder().build();
 
-    Operation actualResponse =
-        client.setCommonInstanceMetadataProject(requestId, project, metadataResource);
+    Operation actualResponse = client.setCommonInstanceMetadataProject(project, metadataResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -985,11 +967,10 @@ public class ProjectClientTest {
     mockService.addException(exception);
 
     try {
-      String requestId = "requestId37109963";
       ProjectName project = ProjectName.of("[PROJECT]");
       Metadata metadataResource = Metadata.newBuilder().build();
 
-      client.setCommonInstanceMetadataProject(requestId, project, metadataResource);
+      client.setCommonInstanceMetadataProject(project, metadataResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -1046,12 +1027,11 @@ public class ProjectClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String requestId = "requestId37109963";
     ProjectName project = ProjectName.of("[PROJECT]");
     UsageExportLocation usageExportLocationResource = UsageExportLocation.newBuilder().build();
 
     Operation actualResponse =
-        client.setUsageExportBucketProject(requestId, project, usageExportLocationResource);
+        client.setUsageExportBucketProject(project, usageExportLocationResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -1078,11 +1058,10 @@ public class ProjectClientTest {
     mockService.addException(exception);
 
     try {
-      String requestId = "requestId37109963";
       ProjectName project = ProjectName.of("[PROJECT]");
       UsageExportLocation usageExportLocationResource = UsageExportLocation.newBuilder().build();
 
-      client.setUsageExportBucketProject(requestId, project, usageExportLocationResource);
+      client.setUsageExportBucketProject(project, usageExportLocationResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

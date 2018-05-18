@@ -336,7 +336,6 @@ public class RegionInstanceGroupClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String requestId = "requestId37109963";
     ProjectRegionInstanceGroupName instanceGroup =
         ProjectRegionInstanceGroupName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP]");
     RegionInstanceGroupsSetNamedPortsRequest regionInstanceGroupsSetNamedPortsRequestResource =
@@ -344,7 +343,7 @@ public class RegionInstanceGroupClientTest {
 
     Operation actualResponse =
         client.setNamedPortsRegionInstanceGroup(
-            requestId, instanceGroup, regionInstanceGroupsSetNamedPortsRequestResource);
+            instanceGroup, regionInstanceGroupsSetNamedPortsRequestResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -371,14 +370,13 @@ public class RegionInstanceGroupClientTest {
     mockService.addException(exception);
 
     try {
-      String requestId = "requestId37109963";
       ProjectRegionInstanceGroupName instanceGroup =
           ProjectRegionInstanceGroupName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP]");
       RegionInstanceGroupsSetNamedPortsRequest regionInstanceGroupsSetNamedPortsRequestResource =
           RegionInstanceGroupsSetNamedPortsRequest.newBuilder().build();
 
       client.setNamedPortsRegionInstanceGroup(
-          requestId, instanceGroup, regionInstanceGroupsSetNamedPortsRequestResource);
+          instanceGroup, regionInstanceGroupsSetNamedPortsRequestResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

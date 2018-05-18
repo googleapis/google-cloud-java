@@ -151,13 +151,11 @@ public class TargetPoolClientTest {
 
     ProjectRegionTargetPoolName targetPool =
         ProjectRegionTargetPoolName.of("[PROJECT]", "[REGION]", "[TARGET_POOL]");
-    String requestId = "requestId37109963";
     TargetPoolsAddHealthCheckRequest targetPoolsAddHealthCheckRequestResource =
         TargetPoolsAddHealthCheckRequest.newBuilder().build();
 
     Operation actualResponse =
-        client.addHealthCheckTargetPool(
-            targetPool, requestId, targetPoolsAddHealthCheckRequestResource);
+        client.addHealthCheckTargetPool(targetPool, targetPoolsAddHealthCheckRequestResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -186,12 +184,10 @@ public class TargetPoolClientTest {
     try {
       ProjectRegionTargetPoolName targetPool =
           ProjectRegionTargetPoolName.of("[PROJECT]", "[REGION]", "[TARGET_POOL]");
-      String requestId = "requestId37109963";
       TargetPoolsAddHealthCheckRequest targetPoolsAddHealthCheckRequestResource =
           TargetPoolsAddHealthCheckRequest.newBuilder().build();
 
-      client.addHealthCheckTargetPool(
-          targetPool, requestId, targetPoolsAddHealthCheckRequestResource);
+      client.addHealthCheckTargetPool(targetPool, targetPoolsAddHealthCheckRequestResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -250,12 +246,11 @@ public class TargetPoolClientTest {
 
     ProjectRegionTargetPoolName targetPool =
         ProjectRegionTargetPoolName.of("[PROJECT]", "[REGION]", "[TARGET_POOL]");
-    String requestId = "requestId37109963";
     TargetPoolsAddInstanceRequest targetPoolsAddInstanceRequestResource =
         TargetPoolsAddInstanceRequest.newBuilder().build();
 
     Operation actualResponse =
-        client.addInstanceTargetPool(targetPool, requestId, targetPoolsAddInstanceRequestResource);
+        client.addInstanceTargetPool(targetPool, targetPoolsAddInstanceRequestResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -284,11 +279,10 @@ public class TargetPoolClientTest {
     try {
       ProjectRegionTargetPoolName targetPool =
           ProjectRegionTargetPoolName.of("[PROJECT]", "[REGION]", "[TARGET_POOL]");
-      String requestId = "requestId37109963";
       TargetPoolsAddInstanceRequest targetPoolsAddInstanceRequestResource =
           TargetPoolsAddInstanceRequest.newBuilder().build();
 
-      client.addInstanceTargetPool(targetPool, requestId, targetPoolsAddInstanceRequestResource);
+      client.addInstanceTargetPool(targetPool, targetPoolsAddInstanceRequestResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -410,9 +404,8 @@ public class TargetPoolClientTest {
 
     ProjectRegionTargetPoolName targetPool =
         ProjectRegionTargetPoolName.of("[PROJECT]", "[REGION]", "[TARGET_POOL]");
-    String requestId = "requestId37109963";
 
-    Operation actualResponse = client.deleteTargetPool(targetPool, requestId);
+    Operation actualResponse = client.deleteTargetPool(targetPool);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -441,9 +434,8 @@ public class TargetPoolClientTest {
     try {
       ProjectRegionTargetPoolName targetPool =
           ProjectRegionTargetPoolName.of("[PROJECT]", "[REGION]", "[TARGET_POOL]");
-      String requestId = "requestId37109963";
 
-      client.deleteTargetPool(targetPool, requestId);
+      client.deleteTargetPool(targetPool);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -619,11 +611,10 @@ public class TargetPoolClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String requestId = "requestId37109963";
     ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     TargetPool targetPoolResource = TargetPool.newBuilder().build();
 
-    Operation actualResponse = client.insertTargetPool(requestId, region, targetPoolResource);
+    Operation actualResponse = client.insertTargetPool(region, targetPoolResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -650,11 +641,10 @@ public class TargetPoolClientTest {
     mockService.addException(exception);
 
     try {
-      String requestId = "requestId37109963";
       ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
       TargetPool targetPoolResource = TargetPool.newBuilder().build();
 
-      client.insertTargetPool(requestId, region, targetPoolResource);
+      client.insertTargetPool(region, targetPoolResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -773,13 +763,11 @@ public class TargetPoolClientTest {
 
     ProjectRegionTargetPoolName targetPool =
         ProjectRegionTargetPoolName.of("[PROJECT]", "[REGION]", "[TARGET_POOL]");
-    String requestId = "requestId37109963";
     TargetPoolsRemoveHealthCheckRequest targetPoolsRemoveHealthCheckRequestResource =
         TargetPoolsRemoveHealthCheckRequest.newBuilder().build();
 
     Operation actualResponse =
-        client.removeHealthCheckTargetPool(
-            targetPool, requestId, targetPoolsRemoveHealthCheckRequestResource);
+        client.removeHealthCheckTargetPool(targetPool, targetPoolsRemoveHealthCheckRequestResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -808,12 +796,10 @@ public class TargetPoolClientTest {
     try {
       ProjectRegionTargetPoolName targetPool =
           ProjectRegionTargetPoolName.of("[PROJECT]", "[REGION]", "[TARGET_POOL]");
-      String requestId = "requestId37109963";
       TargetPoolsRemoveHealthCheckRequest targetPoolsRemoveHealthCheckRequestResource =
           TargetPoolsRemoveHealthCheckRequest.newBuilder().build();
 
-      client.removeHealthCheckTargetPool(
-          targetPool, requestId, targetPoolsRemoveHealthCheckRequestResource);
+      client.removeHealthCheckTargetPool(targetPool, targetPoolsRemoveHealthCheckRequestResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -872,13 +858,11 @@ public class TargetPoolClientTest {
 
     ProjectRegionTargetPoolName targetPool =
         ProjectRegionTargetPoolName.of("[PROJECT]", "[REGION]", "[TARGET_POOL]");
-    String requestId = "requestId37109963";
     TargetPoolsRemoveInstanceRequest targetPoolsRemoveInstanceRequestResource =
         TargetPoolsRemoveInstanceRequest.newBuilder().build();
 
     Operation actualResponse =
-        client.removeInstanceTargetPool(
-            targetPool, requestId, targetPoolsRemoveInstanceRequestResource);
+        client.removeInstanceTargetPool(targetPool, targetPoolsRemoveInstanceRequestResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -907,12 +891,10 @@ public class TargetPoolClientTest {
     try {
       ProjectRegionTargetPoolName targetPool =
           ProjectRegionTargetPoolName.of("[PROJECT]", "[REGION]", "[TARGET_POOL]");
-      String requestId = "requestId37109963";
       TargetPoolsRemoveInstanceRequest targetPoolsRemoveInstanceRequestResource =
           TargetPoolsRemoveInstanceRequest.newBuilder().build();
 
-      client.removeInstanceTargetPool(
-          targetPool, requestId, targetPoolsRemoveInstanceRequestResource);
+      client.removeInstanceTargetPool(targetPool, targetPoolsRemoveInstanceRequestResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -971,12 +953,11 @@ public class TargetPoolClientTest {
 
     ProjectRegionTargetPoolName targetPool =
         ProjectRegionTargetPoolName.of("[PROJECT]", "[REGION]", "[TARGET_POOL]");
-    String requestId = "requestId37109963";
     Float failoverRatio = -8.6107481E7F;
     TargetReference targetReferenceResource = TargetReference.newBuilder().build();
 
     Operation actualResponse =
-        client.setBackupTargetPool(targetPool, requestId, failoverRatio, targetReferenceResource);
+        client.setBackupTargetPool(targetPool, failoverRatio, targetReferenceResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -1005,11 +986,10 @@ public class TargetPoolClientTest {
     try {
       ProjectRegionTargetPoolName targetPool =
           ProjectRegionTargetPoolName.of("[PROJECT]", "[REGION]", "[TARGET_POOL]");
-      String requestId = "requestId37109963";
       Float failoverRatio = -8.6107481E7F;
       TargetReference targetReferenceResource = TargetReference.newBuilder().build();
 
-      client.setBackupTargetPool(targetPool, requestId, failoverRatio, targetReferenceResource);
+      client.setBackupTargetPool(targetPool, failoverRatio, targetReferenceResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

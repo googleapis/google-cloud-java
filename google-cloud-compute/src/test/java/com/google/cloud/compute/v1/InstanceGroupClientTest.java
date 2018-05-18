@@ -146,15 +146,13 @@ public class InstanceGroupClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String requestId = "requestId37109963";
     ProjectZoneInstanceGroupName instanceGroup =
         ProjectZoneInstanceGroupName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP]");
     InstanceGroupsAddInstancesRequest instanceGroupsAddInstancesRequestResource =
         InstanceGroupsAddInstancesRequest.newBuilder().build();
 
     Operation actualResponse =
-        client.addInstancesInstanceGroup(
-            requestId, instanceGroup, instanceGroupsAddInstancesRequestResource);
+        client.addInstancesInstanceGroup(instanceGroup, instanceGroupsAddInstancesRequestResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -181,14 +179,12 @@ public class InstanceGroupClientTest {
     mockService.addException(exception);
 
     try {
-      String requestId = "requestId37109963";
       ProjectZoneInstanceGroupName instanceGroup =
           ProjectZoneInstanceGroupName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP]");
       InstanceGroupsAddInstancesRequest instanceGroupsAddInstancesRequestResource =
           InstanceGroupsAddInstancesRequest.newBuilder().build();
 
-      client.addInstancesInstanceGroup(
-          requestId, instanceGroup, instanceGroupsAddInstancesRequestResource);
+      client.addInstancesInstanceGroup(instanceGroup, instanceGroupsAddInstancesRequestResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -308,11 +304,10 @@ public class InstanceGroupClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String requestId = "requestId37109963";
     ProjectZoneInstanceGroupName instanceGroup =
         ProjectZoneInstanceGroupName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP]");
 
-    Operation actualResponse = client.deleteInstanceGroup(requestId, instanceGroup);
+    Operation actualResponse = client.deleteInstanceGroup(instanceGroup);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -339,11 +334,10 @@ public class InstanceGroupClientTest {
     mockService.addException(exception);
 
     try {
-      String requestId = "requestId37109963";
       ProjectZoneInstanceGroupName instanceGroup =
           ProjectZoneInstanceGroupName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP]");
 
-      client.deleteInstanceGroup(requestId, instanceGroup);
+      client.deleteInstanceGroup(instanceGroup);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -474,10 +468,9 @@ public class InstanceGroupClientTest {
     mockService.addResponse(expectedResponse);
 
     ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
-    String requestId = "requestId37109963";
     InstanceGroup instanceGroupResource = InstanceGroup.newBuilder().build();
 
-    Operation actualResponse = client.insertInstanceGroup(zone, requestId, instanceGroupResource);
+    Operation actualResponse = client.insertInstanceGroup(zone, instanceGroupResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -505,10 +498,9 @@ public class InstanceGroupClientTest {
 
     try {
       ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
-      String requestId = "requestId37109963";
       InstanceGroup instanceGroupResource = InstanceGroup.newBuilder().build();
 
-      client.insertInstanceGroup(zone, requestId, instanceGroupResource);
+      client.insertInstanceGroup(zone, instanceGroupResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -693,7 +685,6 @@ public class InstanceGroupClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String requestId = "requestId37109963";
     ProjectZoneInstanceGroupName instanceGroup =
         ProjectZoneInstanceGroupName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP]");
     InstanceGroupsRemoveInstancesRequest instanceGroupsRemoveInstancesRequestResource =
@@ -701,7 +692,7 @@ public class InstanceGroupClientTest {
 
     Operation actualResponse =
         client.removeInstancesInstanceGroup(
-            requestId, instanceGroup, instanceGroupsRemoveInstancesRequestResource);
+            instanceGroup, instanceGroupsRemoveInstancesRequestResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -728,14 +719,13 @@ public class InstanceGroupClientTest {
     mockService.addException(exception);
 
     try {
-      String requestId = "requestId37109963";
       ProjectZoneInstanceGroupName instanceGroup =
           ProjectZoneInstanceGroupName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP]");
       InstanceGroupsRemoveInstancesRequest instanceGroupsRemoveInstancesRequestResource =
           InstanceGroupsRemoveInstancesRequest.newBuilder().build();
 
       client.removeInstancesInstanceGroup(
-          requestId, instanceGroup, instanceGroupsRemoveInstancesRequestResource);
+          instanceGroup, instanceGroupsRemoveInstancesRequestResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -792,7 +782,6 @@ public class InstanceGroupClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String requestId = "requestId37109963";
     ProjectZoneInstanceGroupName instanceGroup =
         ProjectZoneInstanceGroupName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP]");
     InstanceGroupsSetNamedPortsRequest instanceGroupsSetNamedPortsRequestResource =
@@ -800,7 +789,7 @@ public class InstanceGroupClientTest {
 
     Operation actualResponse =
         client.setNamedPortsInstanceGroup(
-            requestId, instanceGroup, instanceGroupsSetNamedPortsRequestResource);
+            instanceGroup, instanceGroupsSetNamedPortsRequestResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -827,14 +816,12 @@ public class InstanceGroupClientTest {
     mockService.addException(exception);
 
     try {
-      String requestId = "requestId37109963";
       ProjectZoneInstanceGroupName instanceGroup =
           ProjectZoneInstanceGroupName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP]");
       InstanceGroupsSetNamedPortsRequest instanceGroupsSetNamedPortsRequestResource =
           InstanceGroupsSetNamedPortsRequest.newBuilder().build();
 
-      client.setNamedPortsInstanceGroup(
-          requestId, instanceGroup, instanceGroupsSetNamedPortsRequestResource);
+      client.setNamedPortsInstanceGroup(instanceGroup, instanceGroupsSetNamedPortsRequestResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

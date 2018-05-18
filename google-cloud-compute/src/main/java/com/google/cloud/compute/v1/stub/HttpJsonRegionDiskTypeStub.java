@@ -58,7 +58,6 @@ public class HttpJsonRegionDiskTypeStub extends RegionDiskTypeStub {
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<GetRegionDiskTypeHttpRequest>newBuilder()
-                      .setRequestInstance(GetRegionDiskTypeHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create("{project}/regions/{region}/diskTypes/{diskType}"))
                       .setQueryParams(Sets.<String>newHashSet())
@@ -79,7 +78,6 @@ public class HttpJsonRegionDiskTypeStub extends RegionDiskTypeStub {
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<ListRegionDiskTypesHttpRequest>newBuilder()
-                      .setRequestInstance(ListRegionDiskTypesHttpRequest.getDefaultInstance())
                       .setPathTemplate(PathTemplate.create("{project}/regions/{region}/diskTypes"))
                       .setQueryParams(
                           Sets.<String>newHashSet("filter", "maxResults", "orderBy", "pageToken"))

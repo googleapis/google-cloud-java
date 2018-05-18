@@ -17,14 +17,10 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.util.Set;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
 
@@ -87,100 +83,42 @@ public final class InstanceProperties implements ApiMessage {
   }
 
   @Override
-  public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
-    Map<String, List<String>> fieldMap = new HashMap<>();
-    if (fieldNames.contains("canIpForward") && canIpForward != null) {
-      fieldMap.put("canIpForward", Collections.singletonList(String.valueOf(canIpForward)));
-    }
-    if (fieldNames.contains("description") && description != null) {
-      fieldMap.put("description", Collections.singletonList(String.valueOf(description)));
-    }
-    if (fieldNames.contains("disks") && disks != null) {
-      ImmutableList.Builder stringList = ImmutableList.builder();
-      for (AttachedDisk item : disks) {
-        stringList.add(item.toString());
-      }
-      fieldMap.put("disks", stringList.build());
-    }
-    if (fieldNames.contains("guestAccelerators") && guestAccelerators != null) {
-      ImmutableList.Builder stringList = ImmutableList.builder();
-      for (AcceleratorConfig item : guestAccelerators) {
-        stringList.add(item.toString());
-      }
-      fieldMap.put("guestAccelerators", stringList.build());
-    }
-    if (fieldNames.contains("labels") && labels != null) {
-      fieldMap.put("labels", Collections.singletonList(String.valueOf(labels)));
-    }
-    if (fieldNames.contains("machineType") && machineType != null) {
-      fieldMap.put("machineType", Collections.singletonList(String.valueOf(machineType)));
-    }
-    if (fieldNames.contains("metadata") && metadata != null) {
-      fieldMap.put("metadata", Collections.singletonList(String.valueOf(metadata)));
-    }
-    if (fieldNames.contains("minCpuPlatform") && minCpuPlatform != null) {
-      fieldMap.put("minCpuPlatform", Collections.singletonList(String.valueOf(minCpuPlatform)));
-    }
-    if (fieldNames.contains("networkInterfaces") && networkInterfaces != null) {
-      ImmutableList.Builder stringList = ImmutableList.builder();
-      for (NetworkInterface item : networkInterfaces) {
-        stringList.add(item.toString());
-      }
-      fieldMap.put("networkInterfaces", stringList.build());
-    }
-    if (fieldNames.contains("scheduling") && scheduling != null) {
-      fieldMap.put("scheduling", Collections.singletonList(String.valueOf(scheduling)));
-    }
-    if (fieldNames.contains("serviceAccounts") && serviceAccounts != null) {
-      ImmutableList.Builder stringList = ImmutableList.builder();
-      for (ServiceAccount item : serviceAccounts) {
-        stringList.add(item.toString());
-      }
-      fieldMap.put("serviceAccounts", stringList.build());
-    }
-    if (fieldNames.contains("tags") && tags != null) {
-      fieldMap.put("tags", Collections.singletonList(String.valueOf(tags)));
-    }
-    return fieldMap;
-  }
-
-  @Override
-  public String getFieldStringValue(String fieldName) {
+  public Object getFieldValue(String fieldName) {
     if (fieldName.equals("canIpForward")) {
-      return String.valueOf(canIpForward);
+      return canIpForward;
     }
     if (fieldName.equals("description")) {
-      return String.valueOf(description);
+      return description;
     }
     if (fieldName.equals("disks")) {
-      return String.valueOf(disks);
+      return disks;
     }
     if (fieldName.equals("guestAccelerators")) {
-      return String.valueOf(guestAccelerators);
+      return guestAccelerators;
     }
     if (fieldName.equals("labels")) {
-      return String.valueOf(labels);
+      return labels;
     }
     if (fieldName.equals("machineType")) {
-      return String.valueOf(machineType);
+      return machineType;
     }
     if (fieldName.equals("metadata")) {
-      return String.valueOf(metadata);
+      return metadata;
     }
     if (fieldName.equals("minCpuPlatform")) {
-      return String.valueOf(minCpuPlatform);
+      return minCpuPlatform;
     }
     if (fieldName.equals("networkInterfaces")) {
-      return String.valueOf(networkInterfaces);
+      return networkInterfaces;
     }
     if (fieldName.equals("scheduling")) {
-      return String.valueOf(scheduling);
+      return scheduling;
     }
     if (fieldName.equals("serviceAccounts")) {
-      return String.valueOf(serviceAccounts);
+      return serviceAccounts;
     }
     if (fieldName.equals("tags")) {
-      return String.valueOf(tags);
+      return tags;
     }
     return null;
   }
@@ -188,6 +126,12 @@ public final class InstanceProperties implements ApiMessage {
   @Nullable
   @Override
   public ApiMessage getApiMessageRequestBody() {
+    return null;
+  }
+
+  @Nullable
+  @Override
+  public List<String> getFieldMask() {
     return null;
   }
 

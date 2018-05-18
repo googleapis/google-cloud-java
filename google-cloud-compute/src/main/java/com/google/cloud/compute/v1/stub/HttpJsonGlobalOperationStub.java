@@ -65,8 +65,6 @@ public class HttpJsonGlobalOperationStub extends GlobalOperationStub {
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter
                       .<AggregatedListGlobalOperationsHttpRequest>newBuilder()
-                      .setRequestInstance(
-                          AggregatedListGlobalOperationsHttpRequest.getDefaultInstance())
                       .setPathTemplate(PathTemplate.create("{project}/aggregated/operations"))
                       .setQueryParams(
                           Sets.<String>newHashSet("filter", "maxResults", "orderBy", "pageToken"))
@@ -87,7 +85,6 @@ public class HttpJsonGlobalOperationStub extends GlobalOperationStub {
               .setHttpMethod(HttpMethods.DELETE)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<DeleteGlobalOperationHttpRequest>newBuilder()
-                      .setRequestInstance(DeleteGlobalOperationHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create("{project}/global/operations/{operation}"))
                       .setQueryParams(Sets.<String>newHashSet())
@@ -104,7 +101,6 @@ public class HttpJsonGlobalOperationStub extends GlobalOperationStub {
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<GetGlobalOperationHttpRequest>newBuilder()
-                      .setRequestInstance(GetGlobalOperationHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create("{project}/global/operations/{operation}"))
                       .setQueryParams(Sets.<String>newHashSet())
@@ -125,7 +121,6 @@ public class HttpJsonGlobalOperationStub extends GlobalOperationStub {
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<ListGlobalOperationsHttpRequest>newBuilder()
-                      .setRequestInstance(ListGlobalOperationsHttpRequest.getDefaultInstance())
                       .setPathTemplate(PathTemplate.create("{project}/global/operations"))
                       .setQueryParams(
                           Sets.<String>newHashSet("filter", "maxResults", "orderBy", "pageToken"))

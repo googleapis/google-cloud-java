@@ -70,7 +70,6 @@ public class HttpJsonSubnetworkStub extends SubnetworkStub {
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<AggregatedListSubnetworksHttpRequest>newBuilder()
-                      .setRequestInstance(AggregatedListSubnetworksHttpRequest.getDefaultInstance())
                       .setPathTemplate(PathTemplate.create("{project}/aggregated/subnetworks"))
                       .setQueryParams(
                           Sets.<String>newHashSet("filter", "maxResults", "orderBy", "pageToken"))
@@ -91,7 +90,6 @@ public class HttpJsonSubnetworkStub extends SubnetworkStub {
               .setHttpMethod(HttpMethods.DELETE)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<DeleteSubnetworkHttpRequest>newBuilder()
-                      .setRequestInstance(DeleteSubnetworkHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/regions/{region}/subnetworks/{subnetwork}"))
@@ -114,8 +112,6 @@ public class HttpJsonSubnetworkStub extends SubnetworkStub {
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter
                       .<ExpandIpCidrRangeSubnetworkHttpRequest>newBuilder()
-                      .setRequestInstance(
-                          ExpandIpCidrRangeSubnetworkHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/regions/{region}/subnetworks/{subnetwork}/expandIpCidrRange"))
@@ -137,7 +133,6 @@ public class HttpJsonSubnetworkStub extends SubnetworkStub {
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<GetSubnetworkHttpRequest>newBuilder()
-                      .setRequestInstance(GetSubnetworkHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/regions/{region}/subnetworks/{subnetwork}"))
@@ -159,7 +154,6 @@ public class HttpJsonSubnetworkStub extends SubnetworkStub {
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<InsertSubnetworkHttpRequest>newBuilder()
-                      .setRequestInstance(InsertSubnetworkHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create("{project}/regions/{region}/subnetworks"))
                       .setQueryParams(Sets.<String>newHashSet("requestId"))
@@ -180,7 +174,6 @@ public class HttpJsonSubnetworkStub extends SubnetworkStub {
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<ListSubnetworksHttpRequest>newBuilder()
-                      .setRequestInstance(ListSubnetworksHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create("{project}/regions/{region}/subnetworks"))
                       .setQueryParams(
@@ -202,7 +195,6 @@ public class HttpJsonSubnetworkStub extends SubnetworkStub {
               .setHttpMethod(HttpMethods.PATCH)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<PatchSubnetworkHttpRequest>newBuilder()
-                      .setRequestInstance(PatchSubnetworkHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/regions/{region}/subnetworks/{subnetwork}"))
@@ -225,8 +217,6 @@ public class HttpJsonSubnetworkStub extends SubnetworkStub {
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter
                       .<SetPrivateIpGoogleAccessSubnetworkHttpRequest>newBuilder()
-                      .setRequestInstance(
-                          SetPrivateIpGoogleAccessSubnetworkHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/regions/{region}/subnetworks/{subnetwork}/setPrivateIpGoogleAccess"))

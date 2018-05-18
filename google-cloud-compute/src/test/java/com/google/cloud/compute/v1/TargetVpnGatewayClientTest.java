@@ -201,11 +201,10 @@ public class TargetVpnGatewayClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String requestId = "requestId37109963";
     ProjectRegionTargetVpnGatewayName targetVpnGateway =
         ProjectRegionTargetVpnGatewayName.of("[PROJECT]", "[REGION]", "[TARGET_VPN_GATEWAY]");
 
-    Operation actualResponse = client.deleteTargetVpnGateway(requestId, targetVpnGateway);
+    Operation actualResponse = client.deleteTargetVpnGateway(targetVpnGateway);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -232,11 +231,10 @@ public class TargetVpnGatewayClientTest {
     mockService.addException(exception);
 
     try {
-      String requestId = "requestId37109963";
       ProjectRegionTargetVpnGatewayName targetVpnGateway =
           ProjectRegionTargetVpnGatewayName.of("[PROJECT]", "[REGION]", "[TARGET_VPN_GATEWAY]");
 
-      client.deleteTargetVpnGateway(requestId, targetVpnGateway);
+      client.deleteTargetVpnGateway(targetVpnGateway);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -359,12 +357,10 @@ public class TargetVpnGatewayClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String requestId = "requestId37109963";
     ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     TargetVpnGateway targetVpnGatewayResource = TargetVpnGateway.newBuilder().build();
 
-    Operation actualResponse =
-        client.insertTargetVpnGateway(requestId, region, targetVpnGatewayResource);
+    Operation actualResponse = client.insertTargetVpnGateway(region, targetVpnGatewayResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -391,11 +387,10 @@ public class TargetVpnGatewayClientTest {
     mockService.addException(exception);
 
     try {
-      String requestId = "requestId37109963";
       ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
       TargetVpnGateway targetVpnGatewayResource = TargetVpnGateway.newBuilder().build();
 
-      client.insertTargetVpnGateway(requestId, region, targetVpnGatewayResource);
+      client.insertTargetVpnGateway(region, targetVpnGatewayResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

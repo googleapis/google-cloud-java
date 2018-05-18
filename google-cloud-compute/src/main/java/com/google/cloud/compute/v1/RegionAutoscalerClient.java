@@ -43,8 +43,7 @@ import javax.annotation.Generated;
  * <code>
  * try (RegionAutoscalerClient regionAutoscalerClient = RegionAutoscalerClient.create()) {
  *   ProjectRegionAutoscalerName autoscaler = ProjectRegionAutoscalerName.of("[PROJECT]", "[REGION]", "[AUTOSCALER]");
- *   String requestId = "";
- *   Operation response = regionAutoscalerClient.deleteRegionAutoscaler(autoscaler, requestId);
+ *   Operation response = regionAutoscalerClient.deleteRegionAutoscaler(autoscaler);
  * }
  * </code>
  * </pre>
@@ -163,31 +162,19 @@ public class RegionAutoscalerClient implements BackgroundResource {
    * <pre><code>
    * try (RegionAutoscalerClient regionAutoscalerClient = RegionAutoscalerClient.create()) {
    *   ProjectRegionAutoscalerName autoscaler = ProjectRegionAutoscalerName.of("[PROJECT]", "[REGION]", "[AUTOSCALER]");
-   *   String requestId = "";
-   *   Operation response = regionAutoscalerClient.deleteRegionAutoscaler(autoscaler, requestId);
+   *   Operation response = regionAutoscalerClient.deleteRegionAutoscaler(autoscaler);
    * }
    * </code></pre>
    *
    * @param autoscaler Name of the autoscaler to delete.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteRegionAutoscaler(
-      ProjectRegionAutoscalerName autoscaler, String requestId) {
+  public final Operation deleteRegionAutoscaler(ProjectRegionAutoscalerName autoscaler) {
 
     DeleteRegionAutoscalerHttpRequest request =
         DeleteRegionAutoscalerHttpRequest.newBuilder()
             .setAutoscaler(autoscaler == null ? null : autoscaler.toString())
-            .setRequestId(requestId)
             .build();
     return deleteRegionAutoscaler(request);
   }
@@ -201,31 +188,18 @@ public class RegionAutoscalerClient implements BackgroundResource {
    * <pre><code>
    * try (RegionAutoscalerClient regionAutoscalerClient = RegionAutoscalerClient.create()) {
    *   ProjectRegionAutoscalerName autoscaler = ProjectRegionAutoscalerName.of("[PROJECT]", "[REGION]", "[AUTOSCALER]");
-   *   String requestId = "";
-   *   Operation response = regionAutoscalerClient.deleteRegionAutoscaler(autoscaler.toString(), requestId);
+   *   Operation response = regionAutoscalerClient.deleteRegionAutoscaler(autoscaler.toString());
    * }
    * </code></pre>
    *
    * @param autoscaler Name of the autoscaler to delete.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteRegionAutoscaler(String autoscaler, String requestId) {
+  public final Operation deleteRegionAutoscaler(String autoscaler) {
 
     DeleteRegionAutoscalerHttpRequest request =
-        DeleteRegionAutoscalerHttpRequest.newBuilder()
-            .setAutoscaler(autoscaler)
-            .setRequestId(requestId)
-            .build();
+        DeleteRegionAutoscalerHttpRequest.newBuilder().setAutoscaler(autoscaler).build();
     return deleteRegionAutoscaler(request);
   }
 
@@ -238,10 +212,8 @@ public class RegionAutoscalerClient implements BackgroundResource {
    * <pre><code>
    * try (RegionAutoscalerClient regionAutoscalerClient = RegionAutoscalerClient.create()) {
    *   ProjectRegionAutoscalerName autoscaler = ProjectRegionAutoscalerName.of("[PROJECT]", "[REGION]", "[AUTOSCALER]");
-   *   String requestId = "";
    *   DeleteRegionAutoscalerHttpRequest request = DeleteRegionAutoscalerHttpRequest.newBuilder()
    *     .setAutoscaler(autoscaler.toString())
-   *     .setRequestId(requestId)
    *     .build();
    *   Operation response = regionAutoscalerClient.deleteRegionAutoscaler(request);
    * }
@@ -264,10 +236,8 @@ public class RegionAutoscalerClient implements BackgroundResource {
    * <pre><code>
    * try (RegionAutoscalerClient regionAutoscalerClient = RegionAutoscalerClient.create()) {
    *   ProjectRegionAutoscalerName autoscaler = ProjectRegionAutoscalerName.of("[PROJECT]", "[REGION]", "[AUTOSCALER]");
-   *   String requestId = "";
    *   DeleteRegionAutoscalerHttpRequest request = DeleteRegionAutoscalerHttpRequest.newBuilder()
    *     .setAutoscaler(autoscaler.toString())
-   *     .setRequestId(requestId)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = regionAutoscalerClient.deleteRegionAutoscalerCallable().futureCall(request);
    *   // Do something
@@ -387,22 +357,12 @@ public class RegionAutoscalerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionAutoscalerClient regionAutoscalerClient = RegionAutoscalerClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   Autoscaler autoscalerResource = Autoscaler.newBuilder().build();
-   *   Operation response = regionAutoscalerClient.insertRegionAutoscaler(requestId, region, autoscalerResource);
+   *   Operation response = regionAutoscalerClient.insertRegionAutoscaler(region, autoscalerResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param region Name of the region scoping this request.
    * @param autoscalerResource Represents an Autoscaler resource. Autoscalers allow you to
    *     automatically scale virtual machine instances in managed instance groups according to an
@@ -413,11 +373,10 @@ public class RegionAutoscalerClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation insertRegionAutoscaler(
-      String requestId, ProjectRegionName region, Autoscaler autoscalerResource) {
+      ProjectRegionName region, Autoscaler autoscalerResource) {
 
     InsertRegionAutoscalerHttpRequest request =
         InsertRegionAutoscalerHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setRegion(region == null ? null : region.toString())
             .setAutoscalerResource(autoscalerResource)
             .build();
@@ -432,22 +391,12 @@ public class RegionAutoscalerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionAutoscalerClient regionAutoscalerClient = RegionAutoscalerClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   Autoscaler autoscalerResource = Autoscaler.newBuilder().build();
-   *   Operation response = regionAutoscalerClient.insertRegionAutoscaler(requestId, region.toString(), autoscalerResource);
+   *   Operation response = regionAutoscalerClient.insertRegionAutoscaler(region.toString(), autoscalerResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param region Name of the region scoping this request.
    * @param autoscalerResource Represents an Autoscaler resource. Autoscalers allow you to
    *     automatically scale virtual machine instances in managed instance groups according to an
@@ -457,12 +406,10 @@ public class RegionAutoscalerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation insertRegionAutoscaler(
-      String requestId, String region, Autoscaler autoscalerResource) {
+  public final Operation insertRegionAutoscaler(String region, Autoscaler autoscalerResource) {
 
     InsertRegionAutoscalerHttpRequest request =
         InsertRegionAutoscalerHttpRequest.newBuilder()
-            .setRequestId(requestId)
             .setRegion(region)
             .setAutoscalerResource(autoscalerResource)
             .build();
@@ -477,11 +424,9 @@ public class RegionAutoscalerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionAutoscalerClient regionAutoscalerClient = RegionAutoscalerClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   Autoscaler autoscalerResource = Autoscaler.newBuilder().build();
    *   InsertRegionAutoscalerHttpRequest request = InsertRegionAutoscalerHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setRegion(region.toString())
    *     .setAutoscalerResource(autoscalerResource)
    *     .build();
@@ -505,11 +450,9 @@ public class RegionAutoscalerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionAutoscalerClient regionAutoscalerClient = RegionAutoscalerClient.create()) {
-   *   String requestId = "";
    *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   Autoscaler autoscalerResource = Autoscaler.newBuilder().build();
    *   InsertRegionAutoscalerHttpRequest request = InsertRegionAutoscalerHttpRequest.newBuilder()
-   *     .setRequestId(requestId)
    *     .setRegion(region.toString())
    *     .setAutoscalerResource(autoscalerResource)
    *     .build();
@@ -673,23 +616,13 @@ public class RegionAutoscalerClient implements BackgroundResource {
    * <pre><code>
    * try (RegionAutoscalerClient regionAutoscalerClient = RegionAutoscalerClient.create()) {
    *   String autoscaler = "";
-   *   String requestId = "";
    *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   Autoscaler autoscalerResource = Autoscaler.newBuilder().build();
-   *   Operation response = regionAutoscalerClient.patchRegionAutoscaler(autoscaler, requestId, region, autoscalerResource);
+   *   Operation response = regionAutoscalerClient.patchRegionAutoscaler(autoscaler, region, autoscalerResource);
    * }
    * </code></pre>
    *
    * @param autoscaler Name of the autoscaler to patch.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param region Name of the region scoping this request.
    * @param autoscalerResource Represents an Autoscaler resource. Autoscalers allow you to
    *     automatically scale virtual machine instances in managed instance groups according to an
@@ -700,15 +633,11 @@ public class RegionAutoscalerClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation patchRegionAutoscaler(
-      String autoscaler,
-      String requestId,
-      ProjectRegionName region,
-      Autoscaler autoscalerResource) {
+      String autoscaler, ProjectRegionName region, Autoscaler autoscalerResource) {
 
     PatchRegionAutoscalerHttpRequest request =
         PatchRegionAutoscalerHttpRequest.newBuilder()
             .setAutoscaler(autoscaler)
-            .setRequestId(requestId)
             .setRegion(region == null ? null : region.toString())
             .setAutoscalerResource(autoscalerResource)
             .build();
@@ -725,23 +654,13 @@ public class RegionAutoscalerClient implements BackgroundResource {
    * <pre><code>
    * try (RegionAutoscalerClient regionAutoscalerClient = RegionAutoscalerClient.create()) {
    *   String autoscaler = "";
-   *   String requestId = "";
    *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   Autoscaler autoscalerResource = Autoscaler.newBuilder().build();
-   *   Operation response = regionAutoscalerClient.patchRegionAutoscaler(autoscaler, requestId, region.toString(), autoscalerResource);
+   *   Operation response = regionAutoscalerClient.patchRegionAutoscaler(autoscaler, region.toString(), autoscalerResource);
    * }
    * </code></pre>
    *
    * @param autoscaler Name of the autoscaler to patch.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param region Name of the region scoping this request.
    * @param autoscalerResource Represents an Autoscaler resource. Autoscalers allow you to
    *     automatically scale virtual machine instances in managed instance groups according to an
@@ -752,12 +671,11 @@ public class RegionAutoscalerClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation patchRegionAutoscaler(
-      String autoscaler, String requestId, String region, Autoscaler autoscalerResource) {
+      String autoscaler, String region, Autoscaler autoscalerResource) {
 
     PatchRegionAutoscalerHttpRequest request =
         PatchRegionAutoscalerHttpRequest.newBuilder()
             .setAutoscaler(autoscaler)
-            .setRequestId(requestId)
             .setRegion(region)
             .setAutoscalerResource(autoscalerResource)
             .build();
@@ -774,12 +692,10 @@ public class RegionAutoscalerClient implements BackgroundResource {
    * <pre><code>
    * try (RegionAutoscalerClient regionAutoscalerClient = RegionAutoscalerClient.create()) {
    *   String autoscaler = "";
-   *   String requestId = "";
    *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   Autoscaler autoscalerResource = Autoscaler.newBuilder().build();
    *   PatchRegionAutoscalerHttpRequest request = PatchRegionAutoscalerHttpRequest.newBuilder()
    *     .setAutoscaler(autoscaler)
-   *     .setRequestId(requestId)
    *     .setRegion(region.toString())
    *     .setAutoscalerResource(autoscalerResource)
    *     .build();
@@ -805,12 +721,10 @@ public class RegionAutoscalerClient implements BackgroundResource {
    * <pre><code>
    * try (RegionAutoscalerClient regionAutoscalerClient = RegionAutoscalerClient.create()) {
    *   String autoscaler = "";
-   *   String requestId = "";
    *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   Autoscaler autoscalerResource = Autoscaler.newBuilder().build();
    *   PatchRegionAutoscalerHttpRequest request = PatchRegionAutoscalerHttpRequest.newBuilder()
    *     .setAutoscaler(autoscaler)
-   *     .setRequestId(requestId)
    *     .setRegion(region.toString())
    *     .setAutoscalerResource(autoscalerResource)
    *     .build();
@@ -835,23 +749,13 @@ public class RegionAutoscalerClient implements BackgroundResource {
    * <pre><code>
    * try (RegionAutoscalerClient regionAutoscalerClient = RegionAutoscalerClient.create()) {
    *   String autoscaler = "";
-   *   String requestId = "";
    *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   Autoscaler autoscalerResource = Autoscaler.newBuilder().build();
-   *   Operation response = regionAutoscalerClient.updateRegionAutoscaler(autoscaler, requestId, region, autoscalerResource);
+   *   Operation response = regionAutoscalerClient.updateRegionAutoscaler(autoscaler, region, autoscalerResource);
    * }
    * </code></pre>
    *
    * @param autoscaler Name of the autoscaler to update.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param region Name of the region scoping this request.
    * @param autoscalerResource Represents an Autoscaler resource. Autoscalers allow you to
    *     automatically scale virtual machine instances in managed instance groups according to an
@@ -862,15 +766,11 @@ public class RegionAutoscalerClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation updateRegionAutoscaler(
-      String autoscaler,
-      String requestId,
-      ProjectRegionName region,
-      Autoscaler autoscalerResource) {
+      String autoscaler, ProjectRegionName region, Autoscaler autoscalerResource) {
 
     UpdateRegionAutoscalerHttpRequest request =
         UpdateRegionAutoscalerHttpRequest.newBuilder()
             .setAutoscaler(autoscaler)
-            .setRequestId(requestId)
             .setRegion(region == null ? null : region.toString())
             .setAutoscalerResource(autoscalerResource)
             .build();
@@ -886,23 +786,13 @@ public class RegionAutoscalerClient implements BackgroundResource {
    * <pre><code>
    * try (RegionAutoscalerClient regionAutoscalerClient = RegionAutoscalerClient.create()) {
    *   String autoscaler = "";
-   *   String requestId = "";
    *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   Autoscaler autoscalerResource = Autoscaler.newBuilder().build();
-   *   Operation response = regionAutoscalerClient.updateRegionAutoscaler(autoscaler, requestId, region.toString(), autoscalerResource);
+   *   Operation response = regionAutoscalerClient.updateRegionAutoscaler(autoscaler, region.toString(), autoscalerResource);
    * }
    * </code></pre>
    *
    * @param autoscaler Name of the autoscaler to update.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
-   *     that if you must retry your request, the server will know to ignore the request if it has
-   *     already been completed.
-   *     <p>For example, consider a situation where you make an initial request and the request
-   *     times out. If you make the request again with the same request ID, the server can check if
-   *     original operation with the same request ID was received, and if so, will ignore the second
-   *     request. This prevents clients from accidentally creating duplicate commitments.
-   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
-   *     (00000000-0000-0000-0000-000000000000).
    * @param region Name of the region scoping this request.
    * @param autoscalerResource Represents an Autoscaler resource. Autoscalers allow you to
    *     automatically scale virtual machine instances in managed instance groups according to an
@@ -913,12 +803,11 @@ public class RegionAutoscalerClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation updateRegionAutoscaler(
-      String autoscaler, String requestId, String region, Autoscaler autoscalerResource) {
+      String autoscaler, String region, Autoscaler autoscalerResource) {
 
     UpdateRegionAutoscalerHttpRequest request =
         UpdateRegionAutoscalerHttpRequest.newBuilder()
             .setAutoscaler(autoscaler)
-            .setRequestId(requestId)
             .setRegion(region)
             .setAutoscalerResource(autoscalerResource)
             .build();
@@ -934,12 +823,10 @@ public class RegionAutoscalerClient implements BackgroundResource {
    * <pre><code>
    * try (RegionAutoscalerClient regionAutoscalerClient = RegionAutoscalerClient.create()) {
    *   String autoscaler = "";
-   *   String requestId = "";
    *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   Autoscaler autoscalerResource = Autoscaler.newBuilder().build();
    *   UpdateRegionAutoscalerHttpRequest request = UpdateRegionAutoscalerHttpRequest.newBuilder()
    *     .setAutoscaler(autoscaler)
-   *     .setRequestId(requestId)
    *     .setRegion(region.toString())
    *     .setAutoscalerResource(autoscalerResource)
    *     .build();
@@ -964,12 +851,10 @@ public class RegionAutoscalerClient implements BackgroundResource {
    * <pre><code>
    * try (RegionAutoscalerClient regionAutoscalerClient = RegionAutoscalerClient.create()) {
    *   String autoscaler = "";
-   *   String requestId = "";
    *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   Autoscaler autoscalerResource = Autoscaler.newBuilder().build();
    *   UpdateRegionAutoscalerHttpRequest request = UpdateRegionAutoscalerHttpRequest.newBuilder()
    *     .setAutoscaler(autoscaler)
-   *     .setRequestId(requestId)
    *     .setRegion(region.toString())
    *     .setAutoscalerResource(autoscalerResource)
    *     .build();
