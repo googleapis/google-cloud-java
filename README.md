@@ -79,7 +79,7 @@ each client for instructions.
 
 If you're using IntelliJ or Eclipse, you can add client libraries to your project using these IDE plugins: 
 * [Cloud Tools for IntelliJ](https://cloud.google.com/tools/intellij/docs/client-libraries?utm_source=github&utm_medium=google-cloud-java&utm_campaign=ToolsforIntelliJ)
-* [Cloud Tools for Eclipse](https://cloud.google.com/tools/intellij/docs/client-libraries utm_source=github&utm_medium=google-cloud-java&utm_campaign=ToolsforEclipse)
+* [Cloud Tools for Eclipse](https://cloud.google.com/tools/intellij/docs/client-libraries?utm_source=github&utm_medium=google-cloud-java&utm_campaign=ToolsforEclipse)
 
 Besides adding client libraries, the plugins provide additional functionality, such as service account key management. Refer to the documentation for each plugin for more details.
 
