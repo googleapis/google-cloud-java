@@ -3,7 +3,7 @@ Google Cloud Java Client for Cloud Pub/Sub Notifications
 
 
 -  [Product Documentation](https://cloud.google.com/storage/docs/pubsub-notifications)
--  [Client Library Documentation](https://googlecloudplatform.github.io/google-cloud-java/latest/apidocs/index.html?com/google/cloud/notification/package-summary.html)
+-  [Client Library Documentation](https://googlecloudplatform.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/notification/package-summary.html)
 
 Quickstart
 ----------

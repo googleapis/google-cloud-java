@@ -394,4 +394,4 @@ Apache 2.0 - See [LICENSE] for more information.
 [cloud-dns]: https://cloud.google.com/dns/
 [cloud-dns-activate]: https://cloud.google.com/dns/getting-started#prerequisites
 [dns-product-docs]: https://cloud.google.com/dns/docs/
-[dns-client-lib-docs]: https://googlecloudplatform.github.io/google-cloud-java/latest/apidocs/index.html?com/google/cloud/dns/package-summary.html
+[dns-client-lib-docs]: https://googlecloudplatform.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/dns/package-summary.html

@@ -204,4 +204,4 @@ Apache 2.0 - See [LICENSE] for more information.
 [cloud-translate]: https://cloud.google.com/translate/
 [cloud-translate-quickstart]: https://cloud.google.com/translate/v2/quickstart
 [translate-product-docs]: https://cloud.google.com/translate/docs/
-[translate-client-lib-docs]: https://googlecloudplatform.github.io/google-cloud-java/latest/apidocs/index.html?com/google/cloud/translate/package-summary.html
+[translate-client-lib-docs]: https://googlecloudplatform.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/translate/package-summary.html

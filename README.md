@@ -33,6 +33,7 @@ This library supports the following Google Cloud Platform services with clients 
 -  [Cloud Video Intelligence](google-cloud-clients/google-cloud-video-intelligence) (Beta)
 -  [Stackdriver Trace](google-cloud-clients/google-cloud-trace) (Beta)
 -  [Text-to-Speech](google-cloud-clients/google-cloud-texttospeech) (Beta)
+-  [IoT](google-cloud-clients/google-cloud-iot) (Beta)
 
 This library supports the following Google Cloud Platform services with clients at an [Alpha](#versioning) quality level:
 
@@ -43,6 +44,7 @@ This library supports the following Google Cloud Platform services with clients 
 -  [Cloud Resource Manager](google-cloud-clients/google-cloud-resourcemanager) (Alpha)
 -  [Cloud Speech](google-cloud-clients/google-cloud-speech) (Alpha)
 -  [Dialogflow](google-cloud-clients/google-cloud-dialogflow) (Alpha)
+-  [Web Security Scanner](google-cloud-clients/google-cloud-websecurityscanner) (Alpha)
 
 These libraries are deprecated and no longer receive updates:
 
@@ -51,31 +53,26 @@ These libraries are deprecated and no longer receive updates:
 Quickstart
 ----------
 
-The easy way to get started is to add the umbrella package which pulls in all of the supported clients as
-dependencies. Note that even though the version of the umbrella package is Alpha, the individual clients are
-at different support levels (Alpha, Beta, and GA).
+To call any of the supported Google Cloud Services simply add a corresponding client library artifact as a dependency to your project. The following instructions use `google-cloud-storage` as an example (specific instructions can be found in the README of each client).
 
-[//]: # ({x-version-update-start:google-cloud:released})
+[//]: # ({x-version-update-start:google-cloud-storage:released})
 If you are using Maven, add this to your pom.xml file
 ```xml
 <dependency>
   <groupId>com.google.cloud</groupId>
-  <artifactId>google-cloud</artifactId>
-  <version>0.48.0-alpha</version>
+  <artifactId>google-cloud-storage</artifactId>
+  <version>1.30.0</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud:0.48.0-alpha'
+compile 'com.google.cloud:google-cloud-storage:1.30.0'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud" % "0.48.0-alpha"
+libraryDependencies += "com.google.cloud" % "google-cloud-storage" % "1.30.0"
 ```
 [//]: # ({x-version-update-end})
-
-It also works just as well to declare a dependency only on the specific clients that you need. See the README of
-each client for instructions.
 
 If you're using IntelliJ or Eclipse, you can add client libraries to your project using these IDE plugins: 
 * [Cloud Tools for IntelliJ](https://cloud.google.com/tools/intellij/docs/client-libraries)
@@ -361,4 +358,4 @@ Apache 2.0 - See [LICENSE] for more information.
 
 [cloud-platform]: https://cloud.google.com/
 [cloud-platform-docs]: https://cloud.google.com/docs/
-[client-lib-docs]: http://googlecloudplatform.github.io/google-cloud-java/latest/apidocs/
+[client-lib-docs]: https://googlecloudplatform.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html

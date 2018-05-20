@@ -117,4 +117,4 @@ Apache 2.0 - See [LICENSE] for more information.
 [cloud-container]: https://cloud.google.com/kubernetes-engine/
 [cloud-container-quickstart]: https://cloud.google.com/kubernetes-engine/docs/quickstart
 [container-product-docs]: https://cloud.google.com/kubernetes-engine/docs/
-[container-client-lib-docs]: https://googlecloudplatform.github.io/google-cloud-java/latest/apidocs/index.html?com/google/cloud/container/v1/package-summary.html
+[container-client-lib-docs]: https://googlecloudplatform.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/container/v1/package-summary.html

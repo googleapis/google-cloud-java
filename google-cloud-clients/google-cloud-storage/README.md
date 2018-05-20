@@ -37,7 +37,7 @@ libraryDependencies += "com.google.cloud" % "google-cloud-storage" % "1.30.0"
 Example Applications
 -------------------
 
-- [`StorageExample`](../google-cloud-examples/src/main/java/com/google/cloud/examples/storage/StorageExample.java) is a simple command line interface that provides some of Cloud Storage's functionality.  Read more about using the application on the [`StorageExample` docs page](https://googlecloudplatform.github.io/google-cloud-java/latest/apidocs/?com/google/cloud/examples/storage/StorageExample.html).
+- [`StorageExample`](../google-cloud-examples/src/main/java/com/google/cloud/examples/storage/StorageExample.java) is a simple command line interface that provides some of Cloud Storage's functionality.  Read more about using the application on the [`StorageExample` docs page](https://googlecloudplatform.github.io/google-cloud-java/google-cloud-clients/apidocs/?com/google/cloud/examples/storage/StorageExample.html).
 - [`Bookshelf`](https://github.com/GoogleCloudPlatform/getting-started-java/tree/master/bookshelf) - An App Engine app that manages a virtual bookshelf.
   - This app uses `google-cloud` to interface with Cloud Datastore and Cloud Storage. It also uses Cloud SQL, another Google Cloud Platform service.
 - [`Flexible Environment/Storage example`](https://github.com/GoogleCloudPlatform/java-docs-samples/tree/master/flexible/cloudstorage) - An app that uploads files to a public Cloud Storage bucket on the App Engine Flexible Environment runtime.
@@ -223,4 +223,4 @@ Apache 2.0 - See [LICENSE] for more information.
 [cloud-storage-create-bucket]: https://cloud.google.com/storage/docs/cloud-console#_creatingbuckets
 [cloud-storage-activation]:https://cloud.google.com/storage/docs/signup?hl=en
 [storage-product-docs]: https://cloud.google.com/storage/docs/
-[storage-client-lib-docs]: https://googlecloudplatform.github.io/google-cloud-java/latest/apidocs/index.html?com/google/cloud/storage/package-summary.html
+[storage-client-lib-docs]: https://googlecloudplatform.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/storage/package-summary.html
