@@ -143,40 +143,40 @@ public class ConceptsTest {
 
   @Test
   public void testIncompleteKey() {
-    // [START incomplete_key]
+    // [START datastore_incomplete_key]
     KeyFactory keyFactory = datastore.newKeyFactory().setKind("Task");
     Key taskKey = datastore.allocateId(keyFactory.newKey());
-    // [END incomplete_key]
+    // [END datastore_incomplete_key]
     assertValidKey(taskKey);
   }
 
   @Test
   public void testNamedKey() {
-    // [START named_key]
+    // [START datastore_named_key]
     Key taskKey = datastore.newKeyFactory().setKind("Task").newKey("sampleTask");
-    // [END named_key]
+    // [END datastore_named_key]
     assertValidKey(taskKey);
   }
 
   @Test
   public void testKeyWithParent() {
-    // [START key_with_parent]
+    // [START datastore_key_with_parent]
     Key taskKey = datastore.newKeyFactory()
         .addAncestors(PathElement.of("TaskList", "default"))
         .setKind("Task")
         .newKey("sampleTask");
-    // [END key_with_parent]
+    // [END datastore_key_with_parent]
     assertValidKey(taskKey);
   }
 
   @Test
   public void testKeyWithMultilevelParent() {
-    // [START key_with_multilevel_parent]
+    // [START datastore_key_with_multilevel_parent]
     KeyFactory keyFactory = datastore.newKeyFactory()
         .addAncestors(PathElement.of("User", "Alice"), PathElement.of("TaskList", "default"))
         .setKind("Task");
     Key taskKey = keyFactory.newKey("sampleTask");
-    // [END key_with_multilevel_parent]
+    // [END datastore_key_with_multilevel_parent]
     assertValidKey(taskKey);
   }
 
@@ -187,7 +187,7 @@ public class ConceptsTest {
 
   @Test
   public void testEntityWithParent() {
-    // [START entity_with_parent]
+    // [START datastore_entity_with_parent]
     Key taskKey = datastore.newKeyFactory()
         .addAncestors(PathElement.of("TaskList", "default"))
         .setKind("Task")
@@ -198,13 +198,13 @@ public class ConceptsTest {
         .set("priority", 4)
         .set("description", "Learn Cloud Datastore")
         .build();
-    // [END entity_with_parent]
+    // [END datastore_entity_with_parent]
     assertValidEntity(task);
   }
 
   @Test
   public void testProperties() {
-    // [START properties]
+    // [START datastore_properties]
     Entity task = Entity.newBuilder(taskKey)
         .set("category", "Personal")
         .set("created", Timestamp.now())
@@ -214,76 +214,76 @@ public class ConceptsTest {
         .set("description",
           StringValue.newBuilder("Learn Cloud Datastore").setExcludeFromIndexes(true).build())
         .build();
-    // [END properties]
+    // [END datastore_properties]
     assertValidEntity(task);
   }
 
   @Test
   public void testArrayValue() {
-    // [START array_value]
+    // [START datastore_array_value]
     Entity task = Entity.newBuilder(taskKey)
         .set("tags", "fun", "programming")
         .set("collaborators", "alice", "bob")
         .build();
-    // [END array_value]
+    // [END datastore_array_value]
     assertValidEntity(task);
   }
 
   @Test
   public void testBasicEntity() {
-    // [START basic_entity]
+    // [START datastore_basic_entity]
     Entity task = Entity.newBuilder(taskKey)
         .set("category", "Personal")
         .set("done", false)
         .set("priority", 4)
         .set("description", "Learn Cloud Datastore")
         .build();
-    // [END basic_entity]
+    // [END datastore_basic_entity]
     assertValidEntity(task);
   }
 
   @Test
   public void testUpsert() {
-    // [START upsert]
+    // [START datastore_upsert]
     Entity task = Entity.newBuilder(keyFactory.newKey("sampleTask")).build();
     datastore.put(task);
-    // [END upsert]
+    // [END datastore_upsert]
     assertEquals(task, datastore.get(task.getKey()));
   }
 
   @Test
   public void testInsert() {
-    // [START insert]
+    // [START datastore_insert]
     Key taskKey = datastore.add(FullEntity.newBuilder(keyFactory.newKey()).build()).getKey();
-    // [END insert]
+    // [END datastore_insert]
     assertEquals(FullEntity.newBuilder(taskKey).build(), datastore.get(taskKey));
   }
 
   @Test
   public void testLookup() {
     datastore.put(testEntity);
-    // [START lookup]
+    // [START datastore_lookup]
     Entity task = datastore.get(taskKey);
-    // [END lookup]
+    // [END datastore_lookup]
     assertEquals(testEntity, task);
   }
 
   @Test
   public void testUpdate() {
     datastore.put(testEntity);
-    // [START update]
+    // [START datastore_update]
     Entity task = Entity.newBuilder(datastore.get(taskKey)).set("priority", 5).build();
     datastore.update(task);
-    // [END update]
+    // [END datastore_update]
     assertEquals(task, datastore.get(taskKey));
   }
 
   @Test
   public void testDelete() {
     datastore.put(testEntity);
-    // [START delete]
+    // [START datastore_delete]
     datastore.delete(taskKey);
-    // [END delete]
+    // [END datastore_delete]
     assertNull(datastore.get(taskKey));
   }
 
@@ -306,7 +306,7 @@ public class ConceptsTest {
 
   @Test
   public void testBatchUpsert() {
-    // [START batch_upsert]
+    // [START datastore_batch_upsert]
     FullEntity<IncompleteKey> task1 = FullEntity.newBuilder(keyFactory.newKey())
         .set("category", "Personal")
         .set("done", false)
@@ -322,7 +322,7 @@ public class ConceptsTest {
     List<Entity> tasks = datastore.add(task1, task2);
     Key taskKey1 = tasks.get(0).getKey();
     Key taskKey2 = tasks.get(1).getKey();
-    // [END batch_upsert]
+    // [END datastore_batch_upsert]
     assertEquals(Entity.newBuilder(taskKey1, task1).build(), datastore.get(taskKey1));
     assertEquals(Entity.newBuilder(taskKey2, task2).build(), datastore.get(taskKey2));
   }
@@ -332,9 +332,9 @@ public class ConceptsTest {
     Key taskKey1 = keyFactory.newKey(1);
     Key taskKey2 = keyFactory.newKey(2);
     List<Entity> expectedTasks = setUpBatchTests(taskKey1, taskKey2);
-    // [START batch_lookup]
+    // [START datastore_batch_lookup]
     Iterator<Entity> tasks = datastore.get(taskKey1, taskKey2);
-    // [END batch_lookup]
+    // [END datastore_batch_lookup]
     assertEquals(expectedTasks.get(0), tasks.next());
     assertEquals(expectedTasks.get(1), tasks.next());
   }
@@ -344,9 +344,9 @@ public class ConceptsTest {
     Key taskKey1 = keyFactory.newKey(1);
     Key taskKey2 = keyFactory.newKey(2);
     setUpBatchTests(taskKey1, taskKey2);
-    // [START batch_delete]
+    // [START datastore_batch_delete]
     datastore.delete(taskKey1, taskKey2);
-    // [END batch_delete]
+    // [END datastore_batch_delete]
     assertNull(datastore.get(taskKey1));
     assertNull(datastore.get(taskKey2));
   }
@@ -384,14 +384,14 @@ public class ConceptsTest {
   @Test
   public void testBasicQuery() {
     setUpQueryTests();
-    // [START basic_query]
+    // [START datastore_basic_query]
     Query<Entity> query = Query.newEntityQueryBuilder()
         .setKind("Task")
         .setFilter(CompositeFilter.and(
             PropertyFilter.eq("done", false), PropertyFilter.ge("priority", 4)))
         .setOrderBy(OrderBy.desc("priority"))
         .build();
-    // [END basic_query]
+    // [END datastore_basic_query]
     assertValidQuery(query);
   }
 
@@ -399,9 +399,9 @@ public class ConceptsTest {
   public void testRunQuery() {
     setUpQueryTests();
     Query<Entity> query = Query.newEntityQueryBuilder().setKind("Task").build();
-    // [START run_query]
+    // [START datastore_run_query]
     QueryResults<Entity> tasks = datastore.run(query);
-    // [END run_query]
+    // [END datastore_run_query]
     assertNotNull(tasks.next());
     assertFalse(tasks.hasNext());
   }
@@ -409,68 +409,68 @@ public class ConceptsTest {
   @Test
   public void testPropertyFilter() {
     setUpQueryTests();
-    // [START property_filter]
+    // [START datastore_property_filter]
     Query<Entity> query =
         Query.newEntityQueryBuilder().setKind("Task").setFilter(PropertyFilter.eq("done", false))
         .build();
-    // [END property_filter]
+    // [END datastore_property_filter]
     assertValidQuery(query);
   }
 
   @Test
   public void testCompositeFilter() {
     setUpQueryTests();
-    // [START composite_filter]
+    // [START datastore_composite_filter]
     Query<Entity> query = Query.newEntityQueryBuilder()
         .setKind("Task")
         .setFilter(
             CompositeFilter.and(PropertyFilter.eq("done", false), PropertyFilter.eq("priority", 4)))
         .build();
-    // [END composite_filter]
+    // [END datastore_composite_filter]
     assertValidQuery(query);
   }
 
   @Test
   public void testKeyFilter() {
     setUpQueryTests();
-    // [START key_filter]
+    // [START datastore_key_filter]
     Query<Entity> query = Query.newEntityQueryBuilder()
         .setKind("Task")
         .setFilter(PropertyFilter.gt("__key__", keyFactory.newKey("someTask")))
         .build();
-    // [END key_filter]
+    // [END datastore_key_filter]
     assertValidQuery(query);
   }
 
   @Test
   public void testAscendingSort() {
     setUpQueryTests();
-    // [START ascending_sort]
+    // [START datastore_ascending_sort]
     Query<Entity> query =
         Query.newEntityQueryBuilder().setKind("Task").setOrderBy(OrderBy.asc("created")).build();
-    // [END ascending_sort]
+    // [END datastore_ascending_sort]
     assertValidQuery(query);
   }
 
   @Test
   public void testDescendingSort() {
     setUpQueryTests();
-    // [START descending_sort]
+    // [START datastore_descending_sort]
     Query<Entity> query =
         Query.newEntityQueryBuilder().setKind("Task").setOrderBy(OrderBy.desc("created")).build();
-    // [END descending_sort]
+    // [END datastore_descending_sort]
     assertValidQuery(query);
   }
 
   @Test
   public void testMultiSort() {
     setUpQueryTests();
-    // [START multi_sort]
+    // [START datastore_multi_sort]
     Query<Entity> query = Query.newEntityQueryBuilder()
         .setKind("Task")
         .setOrderBy(OrderBy.desc("priority"), OrderBy.asc("created"))
         .build();
-    // [END multi_sort]
+    // [END datastore_multi_sort]
     assertValidQuery(query);
   }
 
@@ -478,35 +478,35 @@ public class ConceptsTest {
   public void testKindlessQuery() {
     Key lastSeenKey = keyFactory.newKey("a");
     setUpQueryTests();
-    // [START kindless_query]
+    // [START datastore_kindless_query]
     Query<Entity> query =
         Query.newEntityQueryBuilder().setFilter(PropertyFilter.gt("__key__", lastSeenKey)).build();
-    // [END kindless_query]
+    // [END datastore_kindless_query]
     assertValidQuery(query);
   }
 
   @Test
   public void testAncestorQuery() {
     setUpQueryTests();
-    // [START ancestor_query]
+    // [START datastore_ancestor_query]
     Query<Entity> query = Query.newEntityQueryBuilder()
         .setKind("Task")
         .setFilter(PropertyFilter.hasAncestor(
             datastore.newKeyFactory().setKind("TaskList").newKey("default")))
         .build();
-    // [END ancestor_query]
+    // [END datastore_ancestor_query]
     assertValidQuery(query);
   }
 
   @Test
   public void testProjectionQuery() {
     setUpQueryTests();
-    // [START projection_query]
+    // [START datastore_projection_query]
     Query<ProjectionEntity> query = Query.newProjectionEntityQueryBuilder()
         .setKind("Task")
         .setProjection("priority", "percent_complete")
         .build();
-    // [END projection_query]
+    // [END datastore_projection_query]
     assertValidQuery(query);
   }
 
@@ -517,7 +517,7 @@ public class ConceptsTest {
         .setKind("Task")
         .setProjection("priority", "percent_complete")
         .build();
-    // [START run_query_projection]
+    // [START datastore_run_query_projection]
     List<Long> priorities = new LinkedList<>();
     List<Double> percentCompletes = new LinkedList<>();
     QueryResults<ProjectionEntity> tasks = datastore.run(query);
@@ -526,7 +526,7 @@ public class ConceptsTest {
       priorities.add(task.getLong("priority"));
       percentCompletes.add(task.getDouble("percent_complete"));
     }
-    // [END run_query_projection]
+    // [END datastore_run_query_projection]
     assertEquals(ImmutableList.of(4L), priorities);
     assertEquals(ImmutableList.of(10.0), percentCompletes);
   }
@@ -534,9 +534,9 @@ public class ConceptsTest {
   @Test
   public void testKeysOnlyQuery() {
     setUpQueryTests();
-    // [START keys_only_query]
+    // [START datastore_keys_only_query]
     Query<Key> query = Query.newKeyQueryBuilder().setKind("Task").build();
-    // [END keys_only_query]
+    // [END datastore_keys_only_query]
     assertValidQuery(query);
   }
 
@@ -544,9 +544,9 @@ public class ConceptsTest {
   public void testRunKeysOnlyQuery() {
     setUpQueryTests();
     Query<Key> query = Query.newKeyQueryBuilder().setKind("Task").build();
-    // [START run_keys_only_query]
+    // [START datastore_run_keys_only_query]
     QueryResults<Key> taskKeys = datastore.run(query);
-    // [END run_keys_only_query]
+    // [END datastore_run_keys_only_query]
     assertNotNull(taskKeys.next());
     assertFalse(taskKeys.hasNext());
   }
@@ -554,41 +554,41 @@ public class ConceptsTest {
   @Test
   public void testDistinctQuery() {
     setUpQueryTests();
-    // [START distinct_query]
+    // [START datastore_distinct_query]
     Query<ProjectionEntity> query = Query.newProjectionEntityQueryBuilder()
         .setKind("Task")
         .setProjection("category", "priority")
         .setDistinctOn("category", "priority")
         .setOrderBy(OrderBy.asc("category"), OrderBy.asc("priority"))
         .build();
-    // [END distinct_query]
+    // [END datastore_distinct_query]
     assertValidQuery(query);
   }
 
   @Test
   public void testDistinctOnQuery() {
     setUpQueryTests();
-    // [START distinct_on_query]
+    // [START datastore_distinct_on_query]
     Query<ProjectionEntity> query = Query.newProjectionEntityQueryBuilder()
         .setKind("Task")
         .setProjection("category", "priority")
         .setDistinctOn("category")
         .setOrderBy(OrderBy.asc("category"), OrderBy.asc("priority"))
         .build();
-    // [END distinct_on_query]
+    // [END datastore_distinct_on_query]
     assertValidQuery(query);
   }
 
   @Test
   public void testArrayValueInequalityRange() {
     setUpQueryTests();
-    // [START array_value_inequality_range]
+    // [START datastore_array_value_inequality_range]
     Query<Entity> query = Query.newEntityQueryBuilder()
         .setKind("Task")
         .setFilter(CompositeFilter.and(
             PropertyFilter.gt("tag", "learn"), PropertyFilter.lt("tag", "math")))
         .build();
-    // [END array_value_inequality_range]
+    // [END datastore_array_value_inequality_range]
     QueryResults<Entity> results = datastore.run(query);
     assertFalse(results.hasNext());
   }
@@ -596,97 +596,97 @@ public class ConceptsTest {
   @Test
   public void testArrayValueEquality() {
     setUpQueryTests();
-    // [START array_value_equality]
+    // [START datastore_array_value_equality]
     Query<Entity> query = Query.newEntityQueryBuilder()
         .setKind("Task")
         .setFilter(CompositeFilter.and(
             PropertyFilter.eq("tag", "fun"), PropertyFilter.eq("tag", "programming")))
         .build();
-    // [END array_value_equality]
+    // [END datastore_array_value_equality]
     assertValidQuery(query);
   }
 
   @Test
   public void testInequalityRange() {
     setUpQueryTests();
-    // [START inequality_range]
+    // [START datastore_inequality_range]
     Query<Entity> query = Query.newEntityQueryBuilder()
         .setKind("Task")
         .setFilter(CompositeFilter.and(
             PropertyFilter.gt("created", startDate), PropertyFilter.lt("created", endDate)))
         .build();
-    // [END inequality_range]
+    // [END datastore_inequality_range]
     assertValidQuery(query);
   }
 
   @Test
   public void testInequalityInvalid() {
-    // [START inequality_invalid]
+    // [START datastore_inequality_invalid]
     Query<Entity> query = Query.newEntityQueryBuilder()
         .setKind("Task")
         .setFilter(CompositeFilter.and(
             PropertyFilter.gt("created", startDate), PropertyFilter.gt("priority", 3)))
         .build();
-    // [END inequality_invalid]
+    // [END datastore_inequality_invalid]
     assertInvalidQuery(query);
   }
 
   @Test
   public void testEqualAndInequalityRange() {
     setUpQueryTests();
-    // [START equal_and_inequality_range]
+    // [START datastore_equal_and_inequality_range]
     Query<Entity> query = Query.newEntityQueryBuilder()
         .setKind("Task")
         .setFilter(CompositeFilter.and(PropertyFilter.eq("priority", 4),
             PropertyFilter.gt("created", startDate), PropertyFilter.lt("created", endDate)))
         .build();
-    // [END equal_and_inequality_range]
+    // [END datastore_equal_and_inequality_range]
     assertValidQuery(query);
   }
 
   @Test
   public void testInequalitySort() {
     setUpQueryTests();
-    // [START inequality_sort]
+    // [START datastore_inequality_sort]
     Query<Entity> query = Query.newEntityQueryBuilder()
         .setKind("Task")
         .setFilter(PropertyFilter.gt("priority", 3))
         .setOrderBy(OrderBy.asc("priority"), OrderBy.asc("created"))
         .build();
-    // [END inequality_sort]
+    // [END datastore_inequality_sort]
     assertValidQuery(query);
   }
 
   @Test
   public void testInequalitySortInvalidNotSame() {
-    // [START inequality_sort_invalid_not_same]
+    // [START datastore_inequality_sort_invalid_not_same]
     Query<Entity> query = Query.newEntityQueryBuilder()
         .setKind("Task")
         .setFilter(PropertyFilter.gt("priority", 3))
         .setOrderBy(OrderBy.asc("created"))
         .build();
-    // [END inequality_sort_invalid_not_same]
+    // [END datastore_inequality_sort_invalid_not_same]
     assertInvalidQuery(query);
   }
 
   @Test
   public void testInequalitySortInvalidNotFirst() {
-    // [START inequality_sort_invalid_not_first]
+    // [START datastore_inequality_sort_invalid_not_first]
     Query<Entity> query = Query.newEntityQueryBuilder()
         .setKind("Task")
         .setFilter(PropertyFilter.gt("priority", 3))
         .setOrderBy(OrderBy.asc("created"), OrderBy.asc("priority"))
         .build();
-    // [END inequality_sort_invalid_not_first]
+    // [END datastore_inequality_sort_invalid_not_first]
     assertInvalidQuery(query);
   }
 
   @Test
   public void testLimit() {
     setUpQueryTests();
-    // [START limit]
+    // [START datastore_limit]
     Query<Entity> query = Query.newEntityQueryBuilder().setKind("Task").setLimit(5).build();
-    // [END limit]
+    // [END datastore_limit]
     assertValidQuery(query);
   }
 
@@ -701,7 +701,7 @@ public class ConceptsTest {
   }
 
   private Cursor cursorPaging(int pageSize, Cursor pageCursor) {
-    // [START cursor_paging]
+    // [START datastore_cursor_paging]
     EntityQuery.Builder queryBuilder = Query.newEntityQueryBuilder().setKind("Task")
         .setLimit(pageSize);
     if (pageCursor != null) {
@@ -713,46 +713,46 @@ public class ConceptsTest {
       // do something with the task
     }
     Cursor nextPageCursor = tasks.getCursorAfter();
-    // [END cursor_paging]
+    // [END datastore_cursor_paging]
     return nextPageCursor;
   }
 
   @Test
   public void testEventualConsistentQuery() {
     setUpQueryTests();
-    // [START eventual_consistent_query]
+    // [START datastore_eventual_consistent_query]
     Query<Entity> query = Query.newEntityQueryBuilder()
         .setKind("Task")
         .setFilter(PropertyFilter.hasAncestor(
             datastore.newKeyFactory().setKind("TaskList").newKey("default")))
         .build();
     datastore.run(query, ReadOption.eventualConsistency());
-    // [END eventual_consistent_query]
+    // [END datastore_eventual_consistent_query]
     assertValidQuery(query);
   }
 
   @Test
   public void testUnindexedPropertyQuery() {
     setUpQueryTests();
-    // [START unindexed_property_query]
+    // [START datastore_unindexed_property_query]
     Query<Entity> query = Query.newEntityQueryBuilder()
         .setKind("Task")
         .setFilter(PropertyFilter.eq("description", "A task description"))
         .build();
-    // [END unindexed_property_query]
+    // [END datastore_unindexed_property_query]
     QueryResults<Entity> results = datastore.run(query);
     assertFalse(results.hasNext());
   }
 
   @Test
   public void testExplodingProperties() {
-    // [START exploding_properties]
+    // [START datastore_exploding_properties]
     Entity task = Entity.newBuilder(taskKey)
         .set("tags", "fun", "programming", "learn")
         .set("collaborators", "alice", "bob", "charlie")
         .set("created", Timestamp.now())
         .build();
-    // [END exploding_properties]
+    // [END datastore_exploding_properties]
     assertValidEntity(task);
   }
 
@@ -777,7 +777,7 @@ public class ConceptsTest {
     assertSuccessfulTransfer(keys.get(0), keys.get(1));
   }
 
-  // [START transactional_update]
+  // [START datastore_transactional_update]
   void transferFunds(Key fromKey, Key toKey, long amount) {
     Transaction txn = datastore.newTransaction();
     try {
@@ -796,14 +796,14 @@ public class ConceptsTest {
       }
     }
   }
-  // [END transactional_update]
+  // [END datastore_transactional_update]
 
   @Test
   public void testTransactionalRetry() {
     List<Key> keys = setUpTransferTests();
     Key fromKey = keys.get(0);
     Key toKey = keys.get(1);
-    // [START transactional_retry]
+    // [START datastore_transactional_retry]
     int retries = 5;
     while (true) {
       try {
@@ -817,13 +817,13 @@ public class ConceptsTest {
       }
     }
     // Retry handling can also be configured and automatically applied using google-cloud-java.
-    // [END transactional_retry]
+    // [END datastore_transactional_retry]
     assertSuccessfulTransfer(keys.get(0), keys.get(1));
   }
 
   @Test
   public void testTransactionalGetOrCreate() {
-    // [START transactional_get_or_create]
+    // [START datastore_transactional_get_or_create]
     Entity task;
     Transaction txn = datastore.newTransaction();
     try {
@@ -838,7 +838,7 @@ public class ConceptsTest {
         txn.rollback();
       }
     }
-    // [END transactional_get_or_create]
+    // [END datastore_transactional_get_or_create]
     assertEquals(task, datastore.get(taskKey));
   }
 
@@ -848,7 +848,7 @@ public class ConceptsTest {
     Key taskListKey = datastore.newKeyFactory().setKind("TaskList").newKey("default");
     Entity taskListEntity = Entity.newBuilder(taskListKey).build();
     datastore.put(taskListEntity);
-    // [START transactional_single_entity_group_read_only]
+    // [START datastore_transactional_single_entity_group_read_only]
     Entity taskList;
     QueryResults<Entity> tasks;
     Transaction txn = datastore.newTransaction();
@@ -865,7 +865,7 @@ public class ConceptsTest {
         txn.rollback();
       }
     }
-    // [END transactional_single_entity_group_read_only]
+    // [END datastore_transactional_single_entity_group_read_only]
     assertEquals(taskListEntity, taskList);
     assertNotNull(tasks.next());
     assertFalse(tasks.hasNext());
@@ -874,7 +874,7 @@ public class ConceptsTest {
   @Test
   public void testNamespaceRunQuery() {
     setUpQueryTests();
-    // [START namespace_run_query]
+    // [START datastore_namespace_run_query]
     KeyFactory keyFactory = datastore.newKeyFactory().setKind("__namespace__");
     Key startNamespace = keyFactory.newKey("g");
     Key endNamespace = keyFactory.newKey("h");
@@ -889,28 +889,28 @@ public class ConceptsTest {
     while (results.hasNext()) {
       namespaces.add(results.next().getName());
     }
-    // [END namespace_run_query]
+    // [END datastore_namespace_run_query]
     assertEquals(ImmutableList.of("ghijklmnop"), namespaces);
   }
 
   @Test
   public void testKindRunQuery() {
     setUpQueryTests();
-    // [START kind_run_query]
+    // [START datastore_kind_run_query]
     Query<Key> query = Query.newKeyQueryBuilder().setKind("__kind__").build();
     List<String> kinds = new ArrayList<>();
     QueryResults<Key> results = datastore.run(query);
     while (results.hasNext()) {
       kinds.add(results.next().getName());
     }
-    // [END kind_run_query]
+    // [END datastore_kind_run_query]
     assertEquals(ImmutableList.of("Task"), kinds);
   }
 
   @Test
   public void testPropertyRunQuery() {
     setUpQueryTests();
-    // [START property_run_query]
+    // [START datastore_property_run_query]
     Query<Key> query = Query.newKeyQueryBuilder().setKind("__property__").build();
     QueryResults<Key> keys = datastore.run(query);
     Map<String, Collection<String>> propertiesByKind = new HashMap<>();
@@ -925,7 +925,7 @@ public class ConceptsTest {
       }
       properties.add(propertyName);
     }
-    // [END property_run_query]
+    // [END datastore_property_run_query]
     Map<String, ImmutableSet<String>> expected = ImmutableMap.of("Task", ImmutableSet.of(
         "done", "category", "done", "completed", "priority", "created", "percent_complete", "tag"));
     assertEquals(expected, propertiesByKind);
@@ -934,7 +934,7 @@ public class ConceptsTest {
   @Test
   public void testPropertyByKindRunQuery() {
     setUpQueryTests();
-    // [START property_by_kind_run_query]
+    // [START datastore_property_by_kind_run_query]
     Key key = datastore.newKeyFactory().setKind("__kind__").newKey("Task");
     Query<Entity> query = Query.newEntityQueryBuilder()
         .setKind("__property__")
@@ -955,7 +955,7 @@ public class ConceptsTest {
         currentRepresentations.add(value.get());
       }
     }
-    // [END property_by_kind_run_query]
+    // [END datastore_property_by_kind_run_query]
     Map<String, Collection<String>> expected = ImmutableMap.<String, Collection<String>>builder()
         .put("category", Collections.singleton("STRING"))
         .put("done", Collections.singleton("BOOLEAN"))
@@ -971,7 +971,7 @@ public class ConceptsTest {
   @Test
   public void testPropertyFilteringRunQuery() {
     setUpQueryTests();
-    // [START property_filtering_run_query]
+    // [START datastore_property_filtering_run_query]
     Key startKey = datastore.newKeyFactory()
         .setKind("__property__")
         .addAncestors(PathElement.of("__kind__", "Task"))
@@ -993,7 +993,7 @@ public class ConceptsTest {
       }
       properties.add(propertyName);
     }
-    // [END property_filtering_run_query]
+    // [END datastore_property_filtering_run_query]
     Map<String, ImmutableSet<String>> expected =
         ImmutableMap.of("Task", ImmutableSet.of("priority", "tag"));
     assertEquals(expected, propertiesByKind);
@@ -1002,17 +1002,17 @@ public class ConceptsTest {
   @Test
   public void testGqlRunQuery() {
     setUpQueryTests();
-    // [START gql_run_query]
+    // [START datastore_gql_run_query]
     Query<Entity> query = Query.newGqlQueryBuilder(
         ResultType.ENTITY, "select * from Task order by created asc").build();
-    // [END gql_run_query]
+    // [END datastore_gql_run_query]
     assertValidQuery(query);
   }
 
   @Test
   public void testGqlNamedBindingQuery() {
     setUpQueryTests();
-    // [START gql_named_binding_query]
+    // [START datastore_gql_named_binding_query]
     Query<Entity> query =
         Query.newGqlQueryBuilder(
             ResultType.ENTITY,
@@ -1020,32 +1020,32 @@ public class ConceptsTest {
         .setBinding("completed", false)
         .setBinding("priority", 4)
         .build();
-    // [END gql_named_binding_query]
+    // [END datastore_gql_named_binding_query]
     assertValidQuery(query);
   }
 
   @Test
   public void testGqlPositionalBindingQuery() {
     setUpQueryTests();
-    // [START gql_positional_binding_query]
+    // [START datastore_gql_positional_binding_query]
     Query<Entity> query = Query.newGqlQueryBuilder(
           ResultType.ENTITY, "select * from Task where completed = @1 and priority = @2")
         .addBinding(false)
         .addBinding(4)
         .build();
-    // [END gql_positional_binding_query]
+    // [END datastore_gql_positional_binding_query]
     assertValidQuery(query);
   }
 
   @Test
   public void testGqlLiteralQuery() {
     setUpQueryTests();
-    // [START gql_literal_query]
+    // [START datastore_gql_literal_query]
     Query<Entity> query = Query.newGqlQueryBuilder(
             ResultType.ENTITY, "select * from Task where completed = false and priority = 4")
         .setAllowLiteral(true)
         .build();
-    // [END gql_literal_query]
+    // [END datastore_gql_literal_query]
     assertValidQuery(query);
   }
 }
