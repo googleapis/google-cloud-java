@@ -98,7 +98,7 @@ This script checks out `gh-pages` branch of the repository, builds the documenta
 
 10. Run `mvn nexus-staging:release` to release the artifacts. 
 
-11. Go to `tmp_gh-pages` directory and push the previously generated docs (step 8) by running `git push`.
+11. Run `cd tmp_gh-pages && git push && cd ..` to push the previously generated docs (step 8).
 
 12. Run `rm -rf tmp_gh-pages` to remove the generated docs directory from your local machine. 
 
