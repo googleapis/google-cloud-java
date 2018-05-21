@@ -103,4 +103,4 @@ Apache 2.0 - See [LICENSE] for more information.
 [cloud-platform]: https://cloud.google.com/
 [cloud-video-intelligence]: https://cloud.google.com/video-intelligence/
 [video-product-docs]: https://cloud.google.com/video-intelligence/docs/
-[video-client-lib-docs]: https://googlecloudplatform.github.io/google-cloud-java/latest/apidocs/index.html?com/google/cloud/videointelligence/v1/package-summary.html
+[video-client-lib-docs]: https://googlecloudplatform.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/videointelligence/v1/package-summary.html
