@@ -24,6 +24,7 @@ import com.google.api.client.util.DateTime;
 import com.google.api.services.storage.model.ObjectAccessControl;
 import com.google.api.services.storage.model.StorageObject;
 import com.google.api.services.storage.model.StorageObject.Owner;
+import com.google.cloud.GcpLaunchStage;
 import com.google.cloud.storage.Blob.Builder;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
@@ -83,6 +84,7 @@ public class BlobInfo implements Serializable {
   private final Integer componentCount;
   private final boolean isDirectory;
   private final CustomerEncryption customerEncryption;
+  private final String kmsKeyName;
 
   /**
    * This class is meant for internal use only. Users are discouraged from using this class.
@@ -267,6 +269,13 @@ public class BlobInfo implements Serializable {
     abstract Builder setCustomerEncryption(CustomerEncryption customerEncryption);
 
     /**
+     *
+     * Sets the blob's kmsKeyName.
+     */
+    @GcpLaunchStage.Beta
+    abstract Builder setKmsKeyName(String kmsKeyName);
+
+    /**
      * Creates a {@code BlobInfo} object.
      */
     public abstract BlobInfo build();
@@ -298,6 +307,7 @@ public class BlobInfo implements Serializable {
     private Boolean isDirectory;
     private CustomerEncryption customerEncryption;
     private StorageClass storageClass;
+    private String kmsKeyName;
 
     BuilderImpl(BlobId blobId) {
       this.blobId = blobId;
@@ -328,6 +338,7 @@ public class BlobInfo implements Serializable {
       createTime = blobInfo.createTime;
       isDirectory = blobInfo.isDirectory;
       storageClass = blobInfo.storageClass;
+      kmsKeyName = blobInfo.kmsKeyName;
     }
 
     @Override
@@ -475,6 +486,13 @@ public class BlobInfo implements Serializable {
       return this;
     }
 
+    @GcpLaunchStage.Beta
+    @Override
+    Builder setKmsKeyName(String kmsKeyName) {
+      this.kmsKeyName = kmsKeyName;
+      return this;
+    }
+
     @Override
     public BlobInfo build() {
       checkNotNull(blobId);
@@ -507,6 +525,7 @@ public class BlobInfo implements Serializable {
     createTime = builder.createTime;
     isDirectory = firstNonNull(builder.isDirectory, Boolean.FALSE);
     storageClass = builder.storageClass;
+    kmsKeyName = builder.kmsKeyName;
   }
 
     /**
@@ -738,6 +757,14 @@ public class BlobInfo implements Serializable {
   }
 
   /**
+   * Returns the Cloud KMS key used to encrypt the blob, if any.
+   */
+  @GcpLaunchStage.Beta
+  public String getKmsKeyName() {
+    return kmsKeyName;
+  }
+
+  /**
    * Returns a builder for the current blob.
    */
   public Builder toBuilder() {
@@ -809,6 +836,8 @@ public class BlobInfo implements Serializable {
     if (customerEncryption != null) {
       storageObject.setCustomerEncryption(customerEncryption.toPb());
     }
+
+    storageObject.setKmsKeyName(kmsKeyName);
     storageObject.setMetadata(pbMetadata);
     storageObject.setCacheControl(cacheControl);
     storageObject.setContentEncoding(contentEncoding);
@@ -938,6 +967,9 @@ public class BlobInfo implements Serializable {
     }
     if (storageObject.getStorageClass() != null) {
       builder.setStorageClass(StorageClass.valueOf(storageObject.getStorageClass()));
+    }
+    if (storageObject.getKmsKeyName() != null) {
+      builder.setKmsKeyName(storageObject.getKmsKeyName());
     }
     return builder.build();
   }

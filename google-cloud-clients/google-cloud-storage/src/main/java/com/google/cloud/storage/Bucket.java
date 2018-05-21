@@ -118,7 +118,6 @@ public class Bucket extends BucketInfo {
      * Returns an option for blob's billing user project. This option is only used by the buckets with
      * 'requester_pays' flag.
      */
-    @GcpLaunchStage.Alpha
     public static BucketSourceOption userProject(String userProject) {
       return new BucketSourceOption(StorageRpc.Option.USER_PROJECT, userProject);
     }
@@ -188,6 +187,9 @@ public class Bucket extends BucketInfo {
         case CUSTOMER_SUPPLIED_KEY:
           return Tuple.of(blobInfo,
               Storage.BlobTargetOption.encryptionKey((String) getValue()));
+        case KMS_KEY_NAME:
+          return Tuple.of(blobInfo,
+                  Storage.BlobTargetOption.kmsKeyName((String) getValue()));
         case USER_PROJECT:
           return Tuple.of(blobInfo,
               Storage.BlobTargetOption.userProject((String) getValue()));
@@ -268,10 +270,19 @@ public class Bucket extends BucketInfo {
     }
 
     /**
+     * Returns an option to set a customer-managed KMS key for server-side encryption of the
+     * blob.
+     *
+     * @param kmsKeyName the KMS key resource id
+     */
+    public static BlobTargetOption kmsKeyName(String kmsKeyName) {
+      return new BlobTargetOption(StorageRpc.Option.KMS_KEY_NAME, kmsKeyName);
+    }
+
+    /**
      * Returns an option for blob's billing user project. This option is only used by the buckets with
      * 'requester_pays' flag.
      */
-    @GcpLaunchStage.Alpha
     public static BlobTargetOption userProject(String userProject) {
       return new BlobTargetOption(StorageRpc.Option.USER_PROJECT, userProject);
     }
@@ -345,6 +356,9 @@ public class Bucket extends BucketInfo {
         case CUSTOMER_SUPPLIED_KEY:
           return Tuple.of(blobInfo,
               Storage.BlobWriteOption.encryptionKey((String) value));
+        case KMS_KEY_NAME:
+          return Tuple.of(blobInfo,
+                  Storage.BlobWriteOption.kmsKeyName((String) value));
         case USER_PROJECT:
           return Tuple.of(blobInfo, Storage.BlobWriteOption.userProject((String) value));
         default:
@@ -468,7 +482,6 @@ public class Bucket extends BucketInfo {
      * Returns an option for blob's billing user project. This option is only used by the buckets with
      * 'requester_pays' flag.
      */
-    @GcpLaunchStage.Alpha
     public static BlobWriteOption userProject(String userProject) {
       return new BlobWriteOption(Storage.BlobWriteOption.Option.USER_PROJECT, userProject);
     }
@@ -612,6 +625,13 @@ public class Bucket extends BucketInfo {
     @Override
     public Builder setLabels(Map<String, String> labels) {
       infoBuilder.setLabels(labels);
+      return this;
+    }
+
+    @GcpLaunchStage.Beta
+    @Override
+    public Builder setDefaultKmsKeyName(String defaultKmsKeyName) {
+      infoBuilder.setDefaultKmsKeyName(defaultKmsKeyName);
       return this;
     }
 

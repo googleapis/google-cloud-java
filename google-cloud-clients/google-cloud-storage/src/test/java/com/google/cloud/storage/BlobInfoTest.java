@@ -66,6 +66,7 @@ public class BlobInfoTest {
   private static final String KEY_SHA256 = "keySha";
   private static final CustomerEncryption CUSTOMER_ENCRYPTION =
       new CustomerEncryption(ENCRYPTION_ALGORITHM, KEY_SHA256);
+  private static final String KMS_KEY_NAME = "projects/p/locations/kr-loc/keyRings/kr/cryptoKeys/key";
   private static final StorageClass STORAGE_CLASS = StorageClass.COLDLINE;
 
   private static final BlobInfo BLOB_INFO = BlobInfo.newBuilder("b", "n", GENERATION)
@@ -91,6 +92,7 @@ public class BlobInfoTest {
       .setUpdateTime(UPDATE_TIME)
       .setCreateTime(CREATE_TIME)
       .setStorageClass(STORAGE_CLASS)
+      .setKmsKeyName(KMS_KEY_NAME)
       .build();
   private static final BlobInfo DIRECTORY_INFO = BlobInfo.newBuilder("b", "n/")
       .setSize(0L)
@@ -153,6 +155,7 @@ public class BlobInfoTest {
     assertEquals(UPDATE_TIME, BLOB_INFO.getUpdateTime());
     assertEquals(CREATE_TIME, BLOB_INFO.getCreateTime());
     assertEquals(STORAGE_CLASS, BLOB_INFO.getStorageClass());
+    assertEquals(KMS_KEY_NAME, BLOB_INFO.getKmsKeyName());
     assertFalse(BLOB_INFO.isDirectory());
     assertEquals("b", DIRECTORY_INFO.getBucket());
     assertEquals("n/", DIRECTORY_INFO.getName());
@@ -208,6 +211,7 @@ public class BlobInfoTest {
     assertEquals(expected.getSize(), value.getSize());
     assertEquals(expected.getUpdateTime(), value.getUpdateTime());
     assertEquals(expected.getStorageClass(), value.getStorageClass());
+    assertEquals(expected.getKmsKeyName(), value.getKmsKeyName());
   }
 
   private void compareCustomerEncryptions(CustomerEncryption expected, CustomerEncryption value) {
@@ -255,6 +259,7 @@ public class BlobInfoTest {
     assertEquals(0L, (long) blobInfo.getSize());
     assertNull(blobInfo.getUpdateTime());
     assertNull(blobInfo.getStorageClass());
+    assertNull(blobInfo.getKmsKeyName());
     assertTrue(blobInfo.isDirectory());
   }
 

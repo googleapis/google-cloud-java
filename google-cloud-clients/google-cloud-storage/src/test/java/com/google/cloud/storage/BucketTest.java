@@ -77,6 +77,7 @@ public class BucketTest {
   private static final String NOT_FOUND_PAGE = "error.html";
   private static final String LOCATION = "ASIA";
   private static final StorageClass STORAGE_CLASS = StorageClass.STANDARD;
+  private static final String DEFAULT_KMS_KEY_NAME = "projects/p/locations/kr-loc/keyRings/kr/cryptoKeys/key";
   private static final Boolean VERSIONING_ENABLED = true;
   private static final Map<String, String> BUCKET_LABELS = ImmutableMap.of("label1", "value1");
   private static final Boolean REQUESTER_PAYS = true;
@@ -99,6 +100,7 @@ public class BucketTest {
       .setVersioningEnabled(VERSIONING_ENABLED)
       .setLabels(BUCKET_LABELS)
       .setRequesterPays(REQUESTER_PAYS)
+      .setDefaultKmsKeyName(DEFAULT_KMS_KEY_NAME)
       .build();
   private static final BucketInfo BUCKET_INFO =
       BucketInfo.newBuilder("b").setMetageneration(42L).build();
@@ -361,6 +363,22 @@ public class BucketTest {
     initializeBucket();
     Blob blob =
         bucket.create("n", content, CONTENT_TYPE, Bucket.BlobTargetOption.encryptionKey(KEY));
+    assertEquals(expectedBlob, blob);
+  }
+
+  @Test
+  public void testCreateWithKmsKeyName() throws Exception {
+    initializeExpectedBucket(5);
+    BlobInfo info = BlobInfo.newBuilder(BlobId.of("b", "n")).setContentType(CONTENT_TYPE).build();
+    Blob expectedBlob = new Blob(serviceMockReturnsOptions, new BlobInfo.BuilderImpl(info));
+    byte[] content = {0xD, 0xE, 0xA, 0xD};
+    expect(storage.getOptions()).andReturn(mockOptions);
+    expect(storage.create(info, content, Storage.BlobTargetOption.kmsKeyName(DEFAULT_KMS_KEY_NAME)))
+            .andReturn(expectedBlob);
+    replay(storage);
+    initializeBucket();
+    Blob blob =
+            bucket.create("n", content, CONTENT_TYPE, Bucket.BlobTargetOption.kmsKeyName(DEFAULT_KMS_KEY_NAME));
     assertEquals(expectedBlob, blob);
   }
 
@@ -675,6 +693,7 @@ public class BucketTest {
         .setVersioningEnabled(VERSIONING_ENABLED)
         .setLabels(BUCKET_LABELS)
         .setRequesterPays(REQUESTER_PAYS)
+        .setDefaultKmsKeyName(DEFAULT_KMS_KEY_NAME)
         .build();
     assertEquals("b", bucket.getName());
     assertEquals(ACLS, bucket.getAcl());
@@ -694,6 +713,7 @@ public class BucketTest {
     assertEquals(VERSIONING_ENABLED, bucket.versioningEnabled());
     assertEquals(BUCKET_LABELS, bucket.getLabels());
     assertEquals(REQUESTER_PAYS, bucket.requesterPays());
+    assertEquals(DEFAULT_KMS_KEY_NAME, bucket.getDefaultKmsKeyName());
     assertEquals(storage.getOptions(), bucket.getStorage().getOptions());
   }
 }

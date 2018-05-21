@@ -60,6 +60,7 @@ public class BucketInfoTest {
   private static final String NOT_FOUND_PAGE = "error.html";
   private static final String LOCATION = "ASIA";
   private static final StorageClass STORAGE_CLASS = StorageClass.STANDARD;
+  private static final String DEFAULT_KMS_KEY_NAME = "projects/p/locations/kr-loc/keyRings/kr/cryptoKeys/key";
   private static final Boolean VERSIONING_ENABLED = true;
   private static final Map<String, String> BUCKET_LABELS = ImmutableMap.of("label1", "value1");
   private static final Boolean REQUESTER_PAYS = true;
@@ -81,6 +82,7 @@ public class BucketInfoTest {
       .setVersioningEnabled(VERSIONING_ENABLED)
       .setLabels(BUCKET_LABELS)
       .setRequesterPays(REQUESTER_PAYS)
+      .setDefaultKmsKeyName(DEFAULT_KMS_KEY_NAME)
       .build();
 
   @Test
@@ -122,6 +124,7 @@ public class BucketInfoTest {
     assertEquals(NOT_FOUND_PAGE, BUCKET_INFO.getNotFoundPage());
     assertEquals(LOCATION, BUCKET_INFO.getLocation());
     assertEquals(STORAGE_CLASS, BUCKET_INFO.getStorageClass());
+    assertEquals(DEFAULT_KMS_KEY_NAME, BUCKET_INFO.getDefaultKmsKeyName());
     assertEquals(VERSIONING_ENABLED, BUCKET_INFO.versioningEnabled());
     assertEquals(BUCKET_LABELS, BUCKET_INFO.getLabels());
     assertEquals(REQUESTER_PAYS, BUCKET_INFO.requesterPays());
@@ -151,6 +154,7 @@ public class BucketInfoTest {
     assertEquals(expected.getNotFoundPage(), value.getNotFoundPage());
     assertEquals(expected.getLocation(), value.getLocation());
     assertEquals(expected.getStorageClass(), value.getStorageClass());
+    assertEquals(expected.getDefaultKmsKeyName(), value.getDefaultKmsKeyName());
     assertEquals(expected.versioningEnabled(), value.versioningEnabled());
     assertEquals(expected.getLabels(), value.getLabels());
     assertEquals(expected.requesterPays(), value.requesterPays());

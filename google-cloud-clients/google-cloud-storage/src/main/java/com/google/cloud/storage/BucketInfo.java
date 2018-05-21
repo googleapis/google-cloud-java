@@ -25,11 +25,13 @@ import com.google.api.client.util.Data;
 import com.google.api.client.util.DateTime;
 import com.google.api.services.storage.model.*;
 import com.google.api.services.storage.model.Bucket;
+import com.google.api.services.storage.model.Bucket.Encryption;
 import com.google.api.services.storage.model.Bucket.Lifecycle;
 import com.google.api.services.storage.model.Bucket.Lifecycle.Rule;
 import com.google.api.services.storage.model.Bucket.Owner;
 import com.google.api.services.storage.model.Bucket.Versioning;
 import com.google.api.services.storage.model.Bucket.Website;
+import com.google.cloud.GcpLaunchStage;
 import com.google.cloud.storage.Acl.Entity;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
@@ -85,6 +87,7 @@ public class BucketInfo implements Serializable {
   private final String location;
   private final StorageClass storageClass;
   private final Map<String, String> labels;
+  private final String defaultKmsKeyName;
 
   /**
    * Base class for bucket's delete rules. Allows to configure automatic deletion of blobs and blobs
@@ -424,6 +427,12 @@ public class BucketInfo implements Serializable {
     public abstract Builder setLabels(Map<String, String> labels);
 
     /**
+     * Sets the default Cloud KMS key name for this bucket.
+     */
+    @GcpLaunchStage.Beta
+    public abstract Builder setDefaultKmsKeyName(String defaultKmsKeyName);
+
+    /**
      * Creates a {@code BucketInfo} object.
      */
     public abstract BucketInfo build();
@@ -449,6 +458,7 @@ public class BucketInfo implements Serializable {
     private List<Acl> acl;
     private List<Acl> defaultAcl;
     private Map<String, String> labels;
+    private String defaultKmsKeyName;
 
     BuilderImpl(String name) {
       this.name = name;
@@ -473,6 +483,7 @@ public class BucketInfo implements Serializable {
       deleteRules = bucketInfo.deleteRules;
       labels = bucketInfo.labels;
       requesterPays = bucketInfo.requesterPays;
+      defaultKmsKeyName = bucketInfo.defaultKmsKeyName;
     }
 
     @Override
@@ -584,6 +595,14 @@ public class BucketInfo implements Serializable {
       return this;
     }
 
+    @GcpLaunchStage.Beta
+    @Override
+    public Builder setDefaultKmsKeyName(String defaultKmsKeyName) {
+      this.defaultKmsKeyName = defaultKmsKeyName != null
+              ? defaultKmsKeyName : Data.<String>nullOf(String.class);
+      return this;
+    }
+
     @Override
     public BucketInfo build() {
       checkNotNull(name);
@@ -610,6 +629,7 @@ public class BucketInfo implements Serializable {
     deleteRules = builder.deleteRules;
     labels = builder.labels;
     requesterPays = builder.requesterPays;
+    defaultKmsKeyName = builder.defaultKmsKeyName;
   }
 
   /**
@@ -763,6 +783,14 @@ public class BucketInfo implements Serializable {
   }
 
   /**
+   * Returns the default Cloud KMS key to be applied to newly inserted objects in this bucket.
+   */
+  @GcpLaunchStage.Beta
+  public String getDefaultKmsKeyName() {
+    return defaultKmsKeyName;
+  }
+
+  /**
    * Returns a builder for the current bucket.
    */
   public Builder toBuilder() {
@@ -857,7 +885,9 @@ public class BucketInfo implements Serializable {
     if (labels != null) {
       bucketPb.setLabels(labels);
     }
-
+    if (defaultKmsKeyName != null) {
+      bucketPb.setEncryption(new Encryption().setDefaultKmsKeyName(defaultKmsKeyName));
+    }
     return bucketPb;
   }
 
@@ -944,6 +974,10 @@ public class BucketInfo implements Serializable {
     Bucket.Billing billing = bucketPb.getBilling();
     if (billing != null) {
       builder.setRequesterPays(billing.getRequesterPays());
+    }
+    Encryption encryption = bucketPb.getEncryption();
+    if (encryption != null && encryption.getDefaultKmsKeyName() != null && !encryption.getDefaultKmsKeyName().isEmpty()) {
+      builder.setDefaultKmsKeyName(encryption.getDefaultKmsKeyName());
     }
     return builder.build();
   }
