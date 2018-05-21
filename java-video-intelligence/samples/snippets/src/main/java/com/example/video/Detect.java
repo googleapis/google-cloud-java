@@ -91,7 +91,7 @@ public class Detect {
    * @param gcsUri the path to the video file to analyze.
    */
   public static void analyzeLabels(String gcsUri) throws Exception {
-    // [START detect_labels_gcs]
+    // [START video_analyze_labels_gcs]
     // Instantiate a com.google.cloud.videointelligence.v1.VideoIntelligenceServiceClient
     try (VideoIntelligenceServiceClient client = VideoIntelligenceServiceClient.create()) {
       // Provide path to file hosted on GCS as "gs://bucket-name/..."
@@ -164,7 +164,7 @@ public class Detect {
         }
       }
     }
-    // [END detect_labels_gcs]
+    // [END video_analyze_labels_gcs]
   }
 
   /**
@@ -173,7 +173,7 @@ public class Detect {
    * @param filePath the path to the video file to analyze.
    */
   public static void analyzeLabelsFile(String filePath) throws Exception {
-    // [START detect_labels_file]
+    // [START video_analyze_labels_local]
     // Instantiate a com.google.cloud.videointelligence.v1.VideoIntelligenceServiceClient
     try (VideoIntelligenceServiceClient client = VideoIntelligenceServiceClient.create()) {
       // Read file and encode into Base64
@@ -251,7 +251,7 @@ public class Detect {
         }
       }
     }
-    // [END detect_labels_file]
+    // [END video_analyze_labels_local]
   }
 
   /**
@@ -260,7 +260,7 @@ public class Detect {
    * @param gcsUri the path to the video file to analyze.
    */
   public static void analyzeShots(String gcsUri) throws Exception {
-    // [START detect_shots]
+    // [START video_analyze_shots]
     // Instantiate a com.google.cloud.videointelligence.v1.VideoIntelligenceServiceClient
     try (VideoIntelligenceServiceClient client = VideoIntelligenceServiceClient.create()) {
       // Provide path to file hosted on GCS as "gs://bucket-name/..."
@@ -290,7 +290,7 @@ public class Detect {
         }
       }
     }
-    // [END detect_shots]
+    // [END video_analyze_shots]
   }
 
   /**
@@ -299,7 +299,7 @@ public class Detect {
    * @param gcsUri the path to the video file to analyze.
    */
   public static void analyzeExplicitContent(String gcsUri) throws Exception {
-    // [START detect_explicit_content]
+    // [START video_analyze_explicit_content]
     // Instantiate a com.google.cloud.videointelligence.v1.VideoIntelligenceServiceClient
     try (VideoIntelligenceServiceClient client = VideoIntelligenceServiceClient.create()) {
       // Create an operation that will contain the response when the operation completes.
@@ -321,7 +321,7 @@ public class Detect {
           System.out.println("Adult: " + frame.getPornographyLikelihood());
         }
       }
-      // [END detect_explicit_content]
+      // [END video_analyze_explicit_content]
     }
   }
 }
