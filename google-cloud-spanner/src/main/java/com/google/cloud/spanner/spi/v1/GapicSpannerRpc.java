@@ -149,6 +149,7 @@ public class GapicSpannerRpc implements SpannerRpc {
     // TODO(pongad): add watchdog
     // TODO(pongad): make error augmentation work (formerly SpannerErrorInterceptor)
 
+    // TODO(hzyi): make this channelProvider configurable through SpannerOptions
     TransportChannelProvider channelProvider =
         InstantiatingGrpcChannelProvider
             .newBuilder()
