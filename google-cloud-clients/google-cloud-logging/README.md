@@ -229,4 +229,4 @@ Apache 2.0 - See [LICENSE] for more information.
 [stackdriver-logging]: https://cloud.google.com/logging/
 [stackdriver-logging-quickstart]: https://cloud.google.com/logging/docs/quickstart-sdk
 [logging-product-docs]: https://cloud.google.com/logging/docs/
-[logging-client-lib-docs]: https://googlecloudplatform.github.io/google-cloud-java/latest/apidocs/index.html?com/google/cloud/logging/package-summary.html
+[logging-client-lib-docs]: https://googlecloudplatform.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/logging/package-summary.html

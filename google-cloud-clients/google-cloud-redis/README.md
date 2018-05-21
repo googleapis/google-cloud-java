@@ -114,4 +114,4 @@ Apache 2.0 - See [LICENSE] for more information.
 
 [cloud-redis]: https://cloud.google.com/memorystore/
 [redis-product-docs]: https://cloud.google.com/memorystore/docs/redis/
-[redis-client-lib-docs]: https://googlecloudplatform.github.io/google-cloud-java/latest/apidocs/index.html?com/google/cloud/redis/v1/package-summary.html
+[redis-client-lib-docs]: https://googlecloudplatform.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/redis/v1/package-summary.html

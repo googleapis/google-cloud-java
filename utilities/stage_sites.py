@@ -52,5 +52,5 @@ def _run(command, cwd=None):
 
 if __name__ == '__main__':
   stage_sites(['google-api-grpc', 'google-cloud-clients'], 'tmp_gh-pages',
-              'https://github.com/GoogleCloudPlatform/google-cloud-java',
+              'git@github.com:GoogleCloudPlatform/google-cloud-java.git',
               'https://googlecloudplatform.github.io/google-cloud-java')

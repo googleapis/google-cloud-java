@@ -245,4 +245,4 @@ Apache 2.0 - See [LICENSE] for more information.
 [cloud-bigquery]: https://cloud.google.com/bigquery/
 [cloud-storage]: https://cloud.google.com/storage/
 [bigquery-product-docs]: https://cloud.google.com/bigquery/docs/
-[bigquery-client-lib-docs]: https://googlecloudplatform.github.io/google-cloud-java/latest/apidocs/index.html?com/google/cloud/bigquery/package-summary.html
+[bigquery-client-lib-docs]: https://googlecloudplatform.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/bigquery/package-summary.html

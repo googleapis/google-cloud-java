@@ -145,4 +145,4 @@ Apache 2.0 - See [LICENSE] for more information.
 [cloud-platform]: https://cloud.google.com/
 [cloud-spanner]: https://cloud.google.com/spanner/
 [spanner-product-docs]: https://cloud.google.com/spanner/docs/
-[spanner-client-lib-docs]: https://googlecloudplatform.github.io/google-cloud-java/latest/apidocs/index.html?com/google/cloud/spanner/package-summary.html
+[spanner-client-lib-docs]: https://googlecloudplatform.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/spanner/package-summary.html

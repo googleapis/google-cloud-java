@@ -101,4 +101,4 @@ Apache 2.0 - See [LICENSE] for more information.
 [dialogflow]: https://dialogflow.com/
 [dialogflow-standard-product-docs]: https://dialogflow.com/docs
 [dialogflow-enterprise-product-docs]: https://cloud.google.com/dialogflow-enterprise/docs/
-[dialogflow-client-lib-docs]: https://googlecloudplatform.github.io/google-cloud-java/latest/apidocs/index.html?com/google/cloud/dialogflow/v2beta1/package-summary.html
+[dialogflow-client-lib-docs]: https://googlecloudplatform.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/dialogflow/v2beta1/package-summary.html
