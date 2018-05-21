@@ -36,7 +36,7 @@ libraryDependencies += "com.google.cloud" % "google-cloud-datastore" % "1.30.0"
 
 Example Applications
 --------------------
-- [`DatastoreExample`](../google-cloud-examples/src/main/java/com/google/cloud/examples/datastore/DatastoreExample.java) is a simple command line interface for the Cloud Datastore.  Read more about using the application on the [`DatastoreExample` docs page](https://googlecloudplatform.github.io/google-cloud-java/latest/apidocs/?com/google/cloud/examples/datastore/DatastoreExample.html).
+- [`DatastoreExample`](../google-cloud-examples/src/main/java/com/google/cloud/examples/datastore/DatastoreExample.java) is a simple command line interface for the Cloud Datastore.  Read more about using the application on the [`DatastoreExample` docs page](https://googlecloudplatform.github.io/google-cloud-java/google-cloud-clients/apidocs/?com/google/cloud/examples/datastore/DatastoreExample.html).
 - [`Bookshelf`](https://github.com/GoogleCloudPlatform/getting-started-java/tree/master/bookshelf) - An App Engine app that manages a virtual bookshelf.
   - This app uses `google-cloud` to interface with Cloud Datastore and Cloud Storage. It also uses Cloud SQL, another Google Cloud Platform service.
 - [`Flexible Environment/Datastore example`](https://github.com/GoogleCloudPlatform/java-docs-samples/tree/master/flexible/datastore) - A simple app that uses Cloud Datastore to list the last 10 IP addresses that visited your site.
@@ -226,4 +226,4 @@ Apache 2.0 - See [LICENSE] for more information.
 [cloud-datastore-activation]: https://cloud.google.com/datastore/docs/activate
 [cloud-datastore]: https://cloud.google.com/datastore/
 [datastore-product-docs]: https://cloud.google.com/datastore/docs/
-[datastore-client-lib-docs]: https://googlecloudplatform.github.io/google-cloud-java/latest/apidocs/index.html?com/google/cloud/datastore/package-summary.html
+[datastore-client-lib-docs]: https://googlecloudplatform.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/datastore/package-summary.html
