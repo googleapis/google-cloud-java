@@ -599,7 +599,7 @@ public class BucketInfo implements Serializable {
     @Override
     public Builder setDefaultKmsKeyName(String defaultKmsKeyName) {
       this.defaultKmsKeyName = defaultKmsKeyName != null
-              ? new String(defaultKmsKeyName) : Data.<String>nullOf(String.class);
+              ? defaultKmsKeyName : Data.<String>nullOf(String.class);
       return this;
     }
 
