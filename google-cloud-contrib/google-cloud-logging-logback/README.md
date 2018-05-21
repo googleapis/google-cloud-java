@@ -7,7 +7,7 @@ Logback appender `com.google.cloud.logging.logback.LoggingAppender` for
 This library allows you to use [Logback](https://logback.qos.ch/) configuration and the [Slf4j](https://www.slf4j.org/) interface to log via Google Cloud logging.
 
 -  [Homepage](https://googlecloudplatform.github.io/google-cloud-java/)
--  [API Documentation](https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/logging/logback/LoggingAppender.html)
+-  [API Documentation](https://googlecloudplatform.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/logging/logback/LoggingAppender.html)
 
 > Note: This client is a work-in-progress, and may occasionally
 > make backwards-incompatible changes.
