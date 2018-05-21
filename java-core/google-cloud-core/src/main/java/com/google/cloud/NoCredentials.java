@@ -40,9 +40,11 @@ public class NoCredentials extends OAuth2Credentials {
 
   @Override
   public boolean equals(Object obj) {
-    if (!(obj instanceof NoCredentials)) {
-      return false;
-    }
     return this == obj;
+  }
+
+  @Override
+  public int hashCode() {
+    return System.identityHashCode(this);
   }
 }
