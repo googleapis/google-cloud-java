@@ -78,7 +78,7 @@ import org.threeten.bp.Duration;
  * </code>
  * </pre>
  */
-@Generated("by GAPIC v0.0.5")
+@Generated("by gapic-generator")
 @BetaApi
 public class SpeechStubSettings extends StubSettings<SpeechStubSettings> {
   /** The default scopes of the service. */
@@ -105,6 +105,7 @@ public class SpeechStubSettings extends StubSettings<SpeechStubSettings> {
   }
 
   /** Returns the object with the settings used for calls to longRunningRecognize. */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallSettings<
           LongRunningRecognizeRequest, LongRunningRecognizeResponse, LongRunningRecognizeMetadata>
       longRunningRecognizeOperationSettings() {
@@ -352,6 +353,8 @@ public class SpeechStubSettings extends StubSettings<SpeechStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to longRunningRecognize. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             LongRunningRecognizeRequest, LongRunningRecognizeResponse, LongRunningRecognizeMetadata>
         longRunningRecognizeOperationSettings() {

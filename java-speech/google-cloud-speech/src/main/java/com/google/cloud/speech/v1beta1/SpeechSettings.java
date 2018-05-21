@@ -59,7 +59,7 @@ import javax.annotation.Generated;
  * </code>
  * </pre>
  */
-@Generated("by GAPIC v0.0.5")
+@Generated("by gapic-generator")
 @BetaApi
 public class SpeechSettings extends ClientSettings<SpeechSettings> {
   /** Returns the object with the settings used for calls to syncRecognize. */
@@ -73,6 +73,8 @@ public class SpeechSettings extends ClientSettings<SpeechSettings> {
   }
 
   /** Returns the object with the settings used for calls to asyncRecognize. */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<
           AsyncRecognizeRequest, AsyncRecognizeResponse, AsyncRecognizeMetadata>
       asyncRecognizeOperationSettings() {
@@ -193,6 +195,8 @@ public class SpeechSettings extends ClientSettings<SpeechSettings> {
     }
 
     /** Returns the builder for the settings used for calls to asyncRecognize. */
+    @BetaApi(
+        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             AsyncRecognizeRequest, AsyncRecognizeResponse, AsyncRecognizeMetadata>
         asyncRecognizeOperationSettings() {
