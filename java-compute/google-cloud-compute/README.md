@@ -276,4 +276,4 @@ Apache 2.0 - See [LICENSE] for more information.
 
 [cloud-compute]: https://cloud.google.com/compute/
 [compute-product-docs]: https://cloud.google.com/compute/docs/
-[compute-client-lib-docs]: https://googlecloudplatform.github.io/google-cloud-java/latest/apidocs/index.html?com/google/cloud/compute/package-summary.html
+[compute-client-lib-docs]: https://googlecloudplatform.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/compute/deprecated/package-summary.html
