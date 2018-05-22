@@ -84,6 +84,7 @@ import com.google.common.collect.Iterables;
 import com.google.common.collect.Sets;
 import com.google.common.io.BaseEncoding;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;
 import java.util.Collections;
@@ -164,9 +165,14 @@ public class ITBigQueryTest {
           .setMode(Field.Mode.NULLABLE)
           .setDescription("FloatDescription")
           .build();
+  private static final Field NUMERIC_FIELD_SCHEMA =
+      Field.newBuilder("NumericField", LegacySQLTypeName.NUMERIC)
+          .setMode(Field.Mode.NULLABLE)
+          .setDescription("NumericDescription")
+          .build();
   private static final Schema TABLE_SCHEMA = Schema.of(TIMESTAMP_FIELD_SCHEMA, STRING_FIELD_SCHEMA,
       INTEGER_ARRAY_FIELD_SCHEMA, BOOLEAN_FIELD_SCHEMA, BYTES_FIELD_SCHEMA, RECORD_FIELD_SCHEMA,
-      INTEGER_FIELD_SCHEMA, FLOAT_FIELD_SCHEMA);
+      INTEGER_FIELD_SCHEMA, FLOAT_FIELD_SCHEMA, NUMERIC_FIELD_SCHEMA);
   private static final Schema SIMPLE_SCHEMA = Schema.of(STRING_FIELD_SCHEMA);
   private static final Schema QUERY_RESULT_SCHEMA = Schema.of(
       Field.newBuilder("TimestampField", LegacySQLTypeName.TIMESTAMP)
@@ -198,7 +204,8 @@ public class ITBigQueryTest {
       + "    \"BytesField\": \"" + BYTES_BASE64 + "\""
       + "  },"
       + "  \"IntegerField\": \"3\","
-      + "  \"FloatField\": \"1.2\""
+      + "  \"FloatField\": \"1.2\","
+      + "  \"NumericField\": \"3.14\""
       + "}\n"
       + "{"
       + "  \"TimestampField\": \"2014-08-19 07:41:35.220 -05:00\","
@@ -214,7 +221,8 @@ public class ITBigQueryTest {
       + "    \"BytesField\": \"" + BYTES_BASE64 + "\""
       + "  },"
       + "  \"IntegerField\": \"3\","
-      + "  \"FloatField\": \"1.2\""
+      + "  \"FloatField\": \"1.2\","
+      + "  \"NumericField\": \"123456.789012345\""
       + "}";
 
   private static final Set<String> PUBLIC_DATASETS = ImmutableSet.of("github_repos", "hacker_news",
@@ -642,6 +650,7 @@ public class ITBigQueryTest {
         "BytesField", BYTES_BASE64));
     builder1.put("IntegerField", 5);
     builder1.put("FloatField", 1.2);
+    builder1.put("NumericField", new BigDecimal("123456789.123456789"));
     ImmutableMap.Builder<String, Object> builder2 = ImmutableMap.builder();
     builder2.put("TimestampField", "2014-08-19 07:41:35.220 -05:00");
     builder2.put("StringField", "stringValue");
@@ -655,6 +664,7 @@ public class ITBigQueryTest {
         "BytesField", BYTES_BASE64));
     builder2.put("IntegerField", 5);
     builder2.put("FloatField", 1.2);
+    builder2.put("NumericField", new BigDecimal("123456789.123456789"));
     InsertAllRequest request = InsertAllRequest.newBuilder(tableInfo.getTableId())
         .addRow(builder1.build())
         .addRow(builder2.build())
@@ -684,6 +694,7 @@ public class ITBigQueryTest {
         "BytesField", BYTES_BASE64));
     builder1.put("IntegerField", 5);
     builder1.put("FloatField", 1.2);
+    builder1.put("NumericField", new BigDecimal("123456789.123456789"));
     ImmutableMap.Builder<String, Object> builder2 = ImmutableMap.builder();
     builder2.put("TimestampField", "2014-08-19 07:41:35.220 -05:00");
     builder2.put("StringField", "stringValue");
@@ -697,6 +708,7 @@ public class ITBigQueryTest {
         "BytesField", BYTES_BASE64));
     builder2.put("IntegerField", 5);
     builder2.put("FloatField", 1.2);
+    builder2.put("NumericField", new BigDecimal("123456789.123456789"));
     InsertAllRequest request = InsertAllRequest.newBuilder(tableInfo.getTableId())
         .addRow(builder1.build())
         .addRow(builder2.build())
@@ -735,6 +747,7 @@ public class ITBigQueryTest {
         "BytesField", BYTES_BASE64));
     builder1.put("IntegerField", 5);
     builder1.put("FloatField", 1.2);
+    builder1.put("NumericField", new BigDecimal("123456789.123456789"));
     ImmutableMap.Builder<String, Object> builder2 = ImmutableMap.builder();
     builder2.put("TimestampField", "invalidDate");
     builder2.put("StringField", "stringValue");
@@ -748,6 +761,7 @@ public class ITBigQueryTest {
         "BytesField", BYTES_BASE64));
     builder2.put("IntegerField", 5);
     builder2.put("FloatField", 1.2);
+    builder2.put("NumericField", new BigDecimal("123456789.123456789"));
     ImmutableMap.Builder<String, Object> builder3 = ImmutableMap.builder();
     builder3.put("TimestampField", "2014-08-19 07:41:35.220 -05:00");
     builder3.put("StringField", "stringValue");
@@ -781,6 +795,7 @@ public class ITBigQueryTest {
       FieldValue recordCell = row.get(5);
       FieldValue integerCell = row.get(6);
       FieldValue floatCell = row.get(7);
+      FieldValue numericCell = row.get(8);
       assertEquals(FieldValue.Attribute.PRIMITIVE, timestampCell.getAttribute());
       assertEquals(FieldValue.Attribute.PRIMITIVE, stringCell.getAttribute());
       assertEquals(FieldValue.Attribute.REPEATED, integerArrayCell.getAttribute());
@@ -789,6 +804,7 @@ public class ITBigQueryTest {
       assertEquals(FieldValue.Attribute.RECORD, recordCell.getAttribute());
       assertEquals(FieldValue.Attribute.PRIMITIVE, integerCell.getAttribute());
       assertEquals(FieldValue.Attribute.PRIMITIVE, floatCell.getAttribute());
+      assertEquals(FieldValue.Attribute.PRIMITIVE, numericCell.getAttribute());
       assertEquals(1408452095220000L, timestampCell.getTimestampValue());
       assertEquals("stringValue", stringCell.getStringValue());
       assertEquals(0, integerArrayCell.getRepeatedValue().get(0).getLongValue());
@@ -802,6 +818,7 @@ public class ITBigQueryTest {
       assertEquals(true, recordCell.getRecordValue().get(3).getBooleanValue());
       assertEquals(3, integerCell.getLongValue());
       assertEquals(1.2, floatCell.getDoubleValue(), 0.0001);
+      assertEquals(new BigDecimal("123456789.123456789"), numericCell.getNumericValue());
       rowCount++;
     }
     assertEquals(2, rowCount);
@@ -849,7 +866,8 @@ public class ITBigQueryTest {
         " AND TimestampField > ?" +
         " AND IntegerField IN UNNEST(?)" +
         " AND IntegerField < ?" +
-        " AND FloatField > ?";
+        " AND FloatField > ?" +
+        " AND NumericField < ?";
     QueryParameterValue stringParameter = QueryParameterValue.string("stringValue");
     QueryParameterValue timestampParameter =
         QueryParameterValue.timestamp("2014-01-01 07:00:00.000000+00:00");
@@ -857,6 +875,8 @@ public class ITBigQueryTest {
         QueryParameterValue.array(new Integer[] {3, 4}, Integer.class);
     QueryParameterValue int64Parameter = QueryParameterValue.int64(5);
     QueryParameterValue float64Parameter = QueryParameterValue.float64(0.5);
+    QueryParameterValue numericParameter =
+        QueryParameterValue.numeric(new BigDecimal("234567890.123456"));
     QueryJobConfiguration config = QueryJobConfiguration.newBuilder(query)
         .setDefaultDataset(DatasetId.of(DATASET))
         .setUseLegacySql(false)
@@ -865,6 +885,7 @@ public class ITBigQueryTest {
         .addPositionalParameter(intArrayParameter)
         .addPositionalParameter(int64Parameter)
         .addPositionalParameter(float64Parameter)
+        .addPositionalParameter(numericParameter)
         .build();
     TableResult result = bigquery.query(config);
     assertEquals(QUERY_RESULT_SCHEMA, result.getSchema());
@@ -1191,6 +1212,7 @@ public class ITBigQueryTest {
       FieldValue recordCell = row.get(5);
       FieldValue integerCell = row.get(6);
       FieldValue floatCell = row.get(7);
+      FieldValue numericCell = row.get(8);
       assertEquals(FieldValue.Attribute.PRIMITIVE, timestampCell.getAttribute());
       assertEquals(FieldValue.Attribute.PRIMITIVE, stringCell.getAttribute());
       assertEquals(FieldValue.Attribute.REPEATED, integerArrayCell.getAttribute());
@@ -1199,6 +1221,7 @@ public class ITBigQueryTest {
       assertEquals(FieldValue.Attribute.RECORD, recordCell.getAttribute());
       assertEquals(FieldValue.Attribute.PRIMITIVE, integerCell.getAttribute());
       assertEquals(FieldValue.Attribute.PRIMITIVE, floatCell.getAttribute());
+      assertEquals(FieldValue.Attribute.PRIMITIVE, numericCell.getAttribute());
       assertEquals(1408452095220000L, timestampCell.getTimestampValue());
       assertEquals("stringValue", stringCell.getStringValue());
       assertEquals(0, integerArrayCell.getRepeatedValue().get(0).getLongValue());
@@ -1212,6 +1235,7 @@ public class ITBigQueryTest {
       assertEquals(true, recordCell.getRecordValue().get(3).getBooleanValue());
       assertEquals(3, integerCell.getLongValue());
       assertEquals(1.2, floatCell.getDoubleValue(), 0.0001);
+      assertEquals(new BigDecimal("123456789.123456789"), floatCell.getNumericValue());
       rowCount++;
     }
     assertEquals(2, rowCount);
