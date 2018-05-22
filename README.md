@@ -75,8 +75,8 @@ libraryDependencies += "com.google.cloud" % "google-cloud-storage" % "1.30.0"
 [//]: # ({x-version-update-end})
 
 If you're using IntelliJ or Eclipse, you can add client libraries to your project using these IDE plugins: 
-* [Cloud Tools for IntelliJ](https://cloud.google.com/tools/intellij/docs/client-libraries)
-* [Cloud Tools for Eclipse](https://cloud.google.com/eclipse/docs/libraries)
+* [Cloud Tools for IntelliJ](https://cloud.google.com/tools/intellij/docs/client-libraries?utm_source=github&utm_medium=google-cloud-java&utm_campaign=ToolsforIntelliJ)
+* [Cloud Tools for Eclipse](https://cloud.google.com/eclipse/docs/libraries?utm_source=github&utm_medium=google-cloud-java&utm_campaign=ToolsforEclipse)
 
 Besides adding client libraries, the plugins provide additional functionality, such as service account key management. Refer to the documentation for each plugin for more details.
 
