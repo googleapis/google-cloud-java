@@ -146,7 +146,7 @@ public class SubscriberSnippets {
   }
 
   private Subscriber createSingleThreadedSubscriber() throws Exception {
-    // [START pubsub_subscriber_single_threaded]
+    // [START pubsub_subscriber_concurrency_control]
     // provide a separate executor service for polling
     ExecutorProvider executorProvider =
         InstantiatingExecutorProvider.newBuilder().setExecutorThreadCount(1).build();
@@ -155,7 +155,7 @@ public class SubscriberSnippets {
         Subscriber.newBuilder(subscriptionName, receiver)
             .setExecutorProvider(executorProvider)
             .build();
-    // [END pubsub_subscriber_single_threaded]
+    // [END pubsub_subscriber_concurrency_control]
     return subscriber;
   }
 
