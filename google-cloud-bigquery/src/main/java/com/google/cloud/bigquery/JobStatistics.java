@@ -16,10 +16,13 @@
 
 package com.google.cloud.bigquery;
 
+import com.google.api.core.ApiFunction;
 import com.google.api.services.bigquery.model.JobConfiguration;
 import com.google.api.services.bigquery.model.JobStatistics2;
 import com.google.api.services.bigquery.model.JobStatistics3;
 import com.google.api.services.bigquery.model.JobStatistics4;
+import com.google.cloud.StringEnumType;
+import com.google.cloud.StringEnumValue;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.MoreObjects.ToStringHelper;
 import com.google.common.collect.Lists;
@@ -311,6 +314,7 @@ public abstract class JobStatistics implements Serializable {
     }
   }
 
+
   /**
    * A Google BigQuery Query Job statistics.
    */
@@ -320,18 +324,92 @@ public abstract class JobStatistics implements Serializable {
 
     private final Integer billingTier;
     private final Boolean cacheHit;
+    private final String ddlOperationPerformed;
+    private final TableId ddlTargetTable;
+    private final Long estimatedBytesProcessed;
+    private final Long numDmlAffectedRows;
+    private final List<TableId> referencedTables;
+    private final StatementType statementType;
     private final Long totalBytesBilled;
     private final Long totalBytesProcessed;
+    private final Long totalPartitionsProcessed;
+    private final Long totalSlotMs;
     private final List<QueryStage> queryPlan;
     private final List<TimelineSample> timeline;
     private final Schema schema;
+
+
+    /**
+     * StatementType represents possible types of SQL statements reported as part of the
+     * QueryStatistics of a BigQuery job.
+     */
+    public static final class StatementType extends StringEnumValue {
+      private static final long serialVersionUID = 818920627219751204L;
+
+      private static final ApiFunction<String, StatementType> CONSTRUCTOR =
+          new ApiFunction<String, StatementType>() {
+            @Override
+            public StatementType apply(String constant) {
+              return new StatementType(constant);
+            }
+          };
+
+      private static final StringEnumType<StatementType> type = new StringEnumType(
+          StatementType.class,
+          CONSTRUCTOR);
+
+      public static final StatementType SELECT = type.createAndRegister("SELECT");
+      public static final StatementType UPDATE = type.createAndRegister("UPDATE");
+      public static final StatementType INSERT = type.createAndRegister("INSERT");
+      public static final StatementType DELETE = type.createAndRegister("DELETE");
+      public static final StatementType CREATE_TABLE = type.createAndRegister("CREATE_TABLE");
+      public static final StatementType CREATE_TABLE_AS_SELECT = type.createAndRegister("CREATE_TABLE_AS_SELECT");
+      public static final StatementType CREATE_VIEW = type.createAndRegister("CREATE_VIEW");
+      public static final StatementType DROP_TABLE = type.createAndRegister("DROP_TABLE");
+      public static final StatementType DROP_VIEW = type.createAndRegister("DROP_VIEW");
+      public static final StatementType MERGE = type.createAndRegister("MERGE");
+
+      private StatementType(String constant) {
+        super(constant);
+      }
+
+      /**
+       * Get the StatementType for the given String constant, and throw an exception if the constant is
+       * not recognized.
+       */
+      public static StatementType valueOfStrict(String constant) {
+        return type.valueOfStrict(constant);
+      }
+
+      /**
+       * Get the State for the given String constant, and allow unrecognized values.
+       */
+      public static StatementType valueOf(String constant) {
+        return type.valueOf(constant);
+      }
+
+      /**
+       * Return the known values for State.
+       */
+      public static StatementType[] values() {
+        return type.values();
+      }
+    }
 
     static final class Builder extends JobStatistics.Builder<QueryStatistics, Builder> {
 
       private Integer billingTier;
       private Boolean cacheHit;
+      private String ddlOperationPerformed;
+      private TableId ddlTargetTable;
+      private Long estimatedBytesProcessed;
+      private Long numDmlAffectedRows;
+      private List<TableId> referencedTables;
+      private StatementType statementType;
       private Long totalBytesBilled;
       private Long totalBytesProcessed;
+      private Long totalPartitionsProcessed;
+      private Long totalSlotMs;
       private List<QueryStage> queryPlan;
       private List<TimelineSample> timeline;
       private Schema schema;
@@ -343,8 +421,25 @@ public abstract class JobStatistics implements Serializable {
         if (statisticsPb.getQuery() != null) {
           this.billingTier = statisticsPb.getQuery().getBillingTier();
           this.cacheHit = statisticsPb.getQuery().getCacheHit();
+          this.ddlOperationPerformed = statisticsPb.getQuery().getDdlOperationPerformed();
+          if (statisticsPb.getQuery().getDdlTargetTable() != null) {
+            this.ddlTargetTable = TableId.fromPb(statisticsPb.getQuery().getDdlTargetTable());
+          }
+          this.estimatedBytesProcessed = statisticsPb.getQuery().getEstimatedBytesProcessed();
+          this.numDmlAffectedRows = statisticsPb.getQuery().getNumDmlAffectedRows();
           this.totalBytesBilled = statisticsPb.getQuery().getTotalBytesBilled();
           this.totalBytesProcessed = statisticsPb.getQuery().getTotalBytesProcessed();
+          this.totalPartitionsProcessed = statisticsPb.getQuery().getTotalPartitionsProcessed();
+          this.totalSlotMs = statisticsPb.getQuery().getTotalSlotMs();
+          if (statisticsPb.getQuery().getStatementType() != null) {
+            this.statementType = StatementType.valueOf(statisticsPb.getQuery().getStatementType());
+          }
+
+          if (statisticsPb.getQuery().getReferencedTables() != null) {
+            this.referencedTables =
+                Lists.transform(
+                    statisticsPb.getQuery().getReferencedTables(), TableId.FROM_PB_FUNCTION);
+          }
           if (statisticsPb.getQuery().getQueryPlan() != null) {
             this.queryPlan =
                 Lists.transform(
@@ -371,6 +466,41 @@ public abstract class JobStatistics implements Serializable {
         return self();
       }
 
+      Builder setDDLOperationPerformed(String ddlOperationPerformed) {
+        this.ddlOperationPerformed = ddlOperationPerformed;
+        return self();
+      }
+
+      Builder setDDLTargetTable(TableId ddlTargetTable) {
+        this.ddlTargetTable = ddlTargetTable;
+        return self();
+      }
+
+      Builder setEstimatedBytesProcessed(Long estimatedBytesProcessed) {
+        this.estimatedBytesProcessed = estimatedBytesProcessed;
+        return self();
+      }
+
+      Builder setNumDmlAffectedRows(Long numDmlAffectedRows) {
+        this.numDmlAffectedRows = numDmlAffectedRows;
+        return self();
+      }
+
+      Builder setReferenceTables(List<TableId> referencedTables) {
+        this.referencedTables = referencedTables;
+        return self();
+      }
+
+      Builder setStatementType(StatementType statementType) {
+        this.statementType = statementType;
+        return self();
+      }
+
+      Builder setStatementType(String strStatementType) {
+        this.statementType = StatementType.valueOf(strStatementType);
+        return self();
+      }
+
       Builder setTotalBytesBilled(Long totalBytesBilled) {
         this.totalBytesBilled = totalBytesBilled;
         return self();
@@ -378,6 +508,16 @@ public abstract class JobStatistics implements Serializable {
 
       Builder setTotalBytesProcessed(Long totalBytesProcessed) {
         this.totalBytesProcessed = totalBytesProcessed;
+        return self();
+      }
+
+      Builder setTotalPartitionsProcessed(Long totalPartitionsProcessed) {
+        this.totalPartitionsProcessed = totalPartitionsProcessed;
+        return self();
+      }
+
+      Builder setTotalSlotMs(Long totalSlotMs) {
+        this.totalSlotMs = totalSlotMs;
         return self();
       }
 
@@ -406,8 +546,16 @@ public abstract class JobStatistics implements Serializable {
       super(builder);
       this.billingTier = builder.billingTier;
       this.cacheHit = builder.cacheHit;
+      this.ddlOperationPerformed = builder.ddlOperationPerformed;
+      this.ddlTargetTable = builder.ddlTargetTable;
+      this.estimatedBytesProcessed = builder.estimatedBytesProcessed;
+      this.numDmlAffectedRows = builder.numDmlAffectedRows;
+      this.referencedTables = builder.referencedTables;
+      this.statementType = builder.statementType;
       this.totalBytesBilled = builder.totalBytesBilled;
       this.totalBytesProcessed = builder.totalBytesProcessed;
+      this.totalPartitionsProcessed = builder.totalPartitionsProcessed;
+      this.totalSlotMs = builder.totalSlotMs;
       this.queryPlan = builder.queryPlan;
       this.timeline = builder.timeline;
       this.schema = builder.schema;
@@ -432,6 +580,47 @@ public abstract class JobStatistics implements Serializable {
       return cacheHit;
     }
 
+    /**
+     * [BETA] For DDL queries, returns the operation applied to the DDL target table.
+     */
+    public String getDdlOperationPerformed() { return ddlOperationPerformed; }
+
+    /**
+     * [BETA] For DDL queries, returns the TableID of the targeted table.
+     */
+    public TableId getDdlTargetTable() { return ddlTargetTable; }
+
+    /**
+     * The original estimate of bytes processed for the job.
+     */
+    public Long getEstimatedBytesProcessed() { return estimatedBytesProcessed; }
+
+    /**
+     * The number of rows affected by a DML statement.
+     * Present only for DML statements INSERT, UPDATE or DELETE.
+     */
+    public Long getNumDmlAffectedRows() { return numDmlAffectedRows; }
+
+    /**
+     * Referenced tables for the job.
+     * Queries that reference more than 50 tables will not have a complete list.
+     */
+    public List<TableId> getReferencedTables() { return referencedTables; }
+
+    /**
+     * [BETA] The type of query statement, if valid.
+     * Possible values include:
+     * SELECT
+     * INSERT
+     * UPDATE
+     * DELETE
+     * CREATE_TABLE
+     * CREATE_TABLE_AS_SELECT
+     * DROP_TABLE
+     * CREATE_VIEW
+     * DROP_VIEW
+     */
+    public StatementType getStatementType() { return statementType; }
 
     /**
      * Returns the total number of bytes billed for the job.
@@ -448,6 +637,15 @@ public abstract class JobStatistics implements Serializable {
       return totalBytesProcessed;
     }
 
+    /**
+     * Total number of partitions processed from all partitioned tables referenced in the job.
+     */
+    public Long getTotalPartitionsProcessed() { return totalPartitionsProcessed; }
+
+    /**
+     * Returns the slot-milliseconds consumed by the query.
+     */
+    public Long getTotalSlotMs() { return totalSlotMs; }
 
     /**
      * Returns the query plan as a list of stages or {@code null} if a query plan is not available.
@@ -509,8 +707,22 @@ public abstract class JobStatistics implements Serializable {
       JobStatistics2 queryStatisticsPb = new JobStatistics2();
       queryStatisticsPb.setBillingTier(billingTier);
       queryStatisticsPb.setCacheHit(cacheHit);
+      queryStatisticsPb.setDdlOperationPerformed(ddlOperationPerformed);
+      queryStatisticsPb.setEstimatedBytesProcessed(estimatedBytesProcessed);
       queryStatisticsPb.setTotalBytesBilled(totalBytesBilled);
       queryStatisticsPb.setTotalBytesProcessed(totalBytesProcessed);
+      queryStatisticsPb.setTotalPartitionsProcessed(totalPartitionsProcessed);
+      queryStatisticsPb.setTotalSlotMs(totalSlotMs);
+      if (ddlTargetTable != null) {
+        queryStatisticsPb.setDdlTargetTable(ddlTargetTable.toPb());
+      }
+
+      if (referencedTables != null) {
+        queryStatisticsPb.setReferencedTables(Lists.transform(referencedTables, TableId.TO_PB_FUNCTION));
+      }
+      if (statementType != null) {
+        queryStatisticsPb.setStatementType(statementType.toString());
+      }
       if (queryPlan != null) {
         queryStatisticsPb.setQueryPlan(Lists.transform(queryPlan, QueryStage.TO_PB_FUNCTION));
       }
