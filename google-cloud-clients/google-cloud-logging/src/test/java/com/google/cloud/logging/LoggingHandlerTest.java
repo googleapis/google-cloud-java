@@ -191,6 +191,13 @@ public class LoggingHandlerTest {
     }
   }
 
+  static final class TestLoggingEnhancerTrace implements LoggingEnhancer {
+    @Override
+    public void enhanceLogEntry(LogEntry.Builder builder) {
+      builder.setTrace("projects/projectId/traces/traceId");
+    }
+  }
+
   @Before
   public void setUp() {
     logging = EasyMock.createMock(Logging.class);
@@ -305,6 +312,7 @@ public class LoggingHandlerTest {
       @Override
       public void enhanceLogEntry(Builder builder) {
         builder.addLabel("enhanced", "true");
+        builder.setTrace("projects/projectId/traces/traceId");
       }
     };
     Handler handler =
