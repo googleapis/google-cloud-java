@@ -205,7 +205,7 @@ public class ITBigQueryTest {
       + "  },"
       + "  \"IntegerField\": \"3\","
       + "  \"FloatField\": \"1.2\","
-      + "  \"NumericField\": \"3.14\""
+      + "  \"NumericField\": \"123456.789012345\""
       + "}\n"
       + "{"
       + "  \"TimestampField\": \"2014-08-19 07:41:35.220 -05:00\","
@@ -818,7 +818,7 @@ public class ITBigQueryTest {
       assertEquals(true, recordCell.getRecordValue().get(3).getBooleanValue());
       assertEquals(3, integerCell.getLongValue());
       assertEquals(1.2, floatCell.getDoubleValue(), 0.0001);
-      assertEquals(new BigDecimal("123456789.123456789"), numericCell.getNumericValue());
+      assertEquals(new BigDecimal("123456.789012345"), numericCell.getNumericValue());
       rowCount++;
     }
     assertEquals(2, rowCount);
@@ -1235,7 +1235,7 @@ public class ITBigQueryTest {
       assertEquals(true, recordCell.getRecordValue().get(3).getBooleanValue());
       assertEquals(3, integerCell.getLongValue());
       assertEquals(1.2, floatCell.getDoubleValue(), 0.0001);
-      assertEquals(new BigDecimal("123456789.123456789"), floatCell.getNumericValue());
+      assertEquals(new BigDecimal("123456.789012345"), numericCell.getNumericValue());
       rowCount++;
     }
     assertEquals(2, rowCount);
