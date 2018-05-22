@@ -58,7 +58,7 @@ public class TraceLoggingEnhancer implements LoggingEnhancer {
   public void enhanceLogEntry(com.google.cloud.logging.LogEntry.Builder builder) {
     String traceId = getCurrentTraceId();
     if (traceId != null) {
-      builder.addLabel(traceIdLabel, traceId);
+      builder.setTrace(traceId);
     }
   }
 }
