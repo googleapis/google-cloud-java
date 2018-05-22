@@ -1860,25 +1860,30 @@ public class ITStorageTest {
   }
 
   @Test
-  public void testListBucketDefaultKmsKeyName() throws InterruptedException {
-    Bucket remoteBucket = storage.get(BUCKET, Storage.BucketGetOption.fields(BucketField.ENCRYPTION));
-    assertNull(remoteBucket.getDefaultKmsKeyName());
-    remoteBucket = remoteBucket.toBuilder().setDefaultKmsKeyName(KMS_KEY_NAME_1).build().update();
+  public void testListBucketDefaultKmsKeyName() throws ExecutionException, InterruptedException {
+    String bucketName = RemoteStorageHelper.generateBucketName();
+    Bucket remoteBucket = storage.create(BucketInfo.newBuilder(bucketName)
+            .setDefaultKmsKeyName(KMS_KEY_NAME_1).setLocation("US").build());
+    assertNotNull(remoteBucket);
     assertTrue(remoteBucket.getDefaultKmsKeyName().startsWith(KMS_KEY_NAME_1));
-    Iterator<Bucket> bucketIterator = storage.list(Storage.BucketListOption.prefix(BUCKET),
-            Storage.BucketListOption.fields(BucketField.ENCRYPTION)).iterateAll().iterator();
-    while (!bucketIterator.hasNext()) {
-      Thread.sleep(500);
-      bucketIterator = storage.list(Storage.BucketListOption.prefix(BUCKET),
+    try {
+      Iterator<Bucket> bucketIterator = storage.list(Storage.BucketListOption.prefix(bucketName),
               Storage.BucketListOption.fields(BucketField.ENCRYPTION)).iterateAll().iterator();
-    }
-    while (bucketIterator.hasNext()) {
-      Bucket bucket = bucketIterator.next();
-      assertTrue(bucket.getName().startsWith(BUCKET));
-      assertNotNull(bucket.getDefaultKmsKeyName());
-      assertTrue(bucket.getDefaultKmsKeyName().startsWith(KMS_KEY_NAME_1));
-      assertNull(bucket.getCreateTime());
-      assertNull(bucket.getSelfLink());
+      while (!bucketIterator.hasNext()) {
+        Thread.sleep(500);
+        bucketIterator = storage.list(Storage.BucketListOption.prefix(bucketName),
+                Storage.BucketListOption.fields(BucketField.ENCRYPTION)).iterateAll().iterator();
+      }
+      while (bucketIterator.hasNext()) {
+        Bucket bucket = bucketIterator.next();
+        assertTrue(bucket.getName().startsWith(bucketName));
+        assertNotNull(bucket.getDefaultKmsKeyName());
+        assertTrue(bucket.getDefaultKmsKeyName().startsWith(KMS_KEY_NAME_1));
+        assertNull(bucket.getCreateTime());
+        assertNull(bucket.getSelfLink());
+      }
+    } finally {
+      RemoteStorageHelper.forceDelete(storage, bucketName, 5, TimeUnit.SECONDS);
     }
   }
 
