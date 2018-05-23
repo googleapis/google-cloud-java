@@ -131,6 +131,13 @@ public class LoggingHandlerTest {
       .addLabel("levelValue", String.valueOf(LoggingLevel.EMERGENCY.intValue()))
       .setTimestamp(123456789L)
       .build();
+  private static final LogEntry TRACE_ENTRY = LogEntry.newBuilder(StringPayload.of(MESSAGE))
+      .setSeverity(Severity.DEBUG)
+      .addLabel("levelName", "FINEST")
+      .addLabel("levelValue", String.valueOf(Level.FINEST.intValue()))
+      .setTrace("projects/projectId/traces/traceId")
+      .setTimestamp(123456789L)
+      .build();
   private static final String CONFIG_NAMESPACE = "com.google.cloud.logging.LoggingHandler";
   private static final ImmutableMap<String, String> CONFIG_MAP =
       ImmutableMap.<String, String>builder()
@@ -188,13 +195,6 @@ public class LoggingHandlerTest {
     @Override
     public void enhanceLogEntry(LogEntry.Builder builder) {
       builder.addLabel("enhanced", "true");
-    }
-  }
-
-  static final class TestLoggingEnhancerTrace implements LoggingEnhancer {
-    @Override
-    public void enhanceLogEntry(LogEntry.Builder builder) {
-      builder.setTrace("projects/projectId/traces/traceId");
     }
   }
 
@@ -312,9 +312,33 @@ public class LoggingHandlerTest {
       @Override
       public void enhanceLogEntry(Builder builder) {
         builder.addLabel("enhanced", "true");
-        builder.setTrace("projects/projectId/traces/traceId");
       }
     };
+    Handler handler =
+        new LoggingHandler(LOG_NAME, options, resource, Collections.singletonList(enhancer));
+    handler.setLevel(Level.ALL);
+    handler.setFormatter(new TestFormatter());
+    handler.publish(newLogRecord(Level.FINEST, MESSAGE));
+  }
+
+  @Test
+  public void testTraceEnhancedLogEntry() {
+    expect(options.getProjectId()).andReturn(PROJECT).anyTimes();
+    expect(options.getService()).andReturn(logging);
+    MonitoredResource resource = MonitoredResource.of("custom", ImmutableMap.<String, String>of());
+    logging.setFlushSeverity(Severity.ERROR);
+    expectLastCall().once();
+    logging.setWriteSynchronicity(Synchronicity.ASYNC);
+    expectLastCall().once();
+    logging.write(
+        ImmutableList.of(TRACE_ENTRY),
+        WriteOption.logName(LOG_NAME),
+        WriteOption.resource(resource),
+        WriteOption.labels(BASE_SEVERITY_MAP));
+    expectLastCall().once();
+    replay(options, logging);
+    LoggingEnhancer enhancer = new TraceLoggingEnhancer();
+    TraceLoggingEnhancer.setCurrentTraceId("projects/projectId/traces/traceId");
     Handler handler =
         new LoggingHandler(LOG_NAME, options, resource, Collections.singletonList(enhancer));
     handler.setLevel(Level.ALL);
