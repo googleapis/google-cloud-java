@@ -24,16 +24,16 @@ Add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-pubsub</artifactId>
-  <version>1.30.0</version>
+  <version>0.48.0-beta</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-pubsub:1.30.0'
+compile 'com.google.cloud:google-cloud-pubsub:0.48.0-beta'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-pubsub" % "1.30.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-pubsub" % "0.48.0-beta"
 ```
 [//]: # ({x-version-update-end})
 
