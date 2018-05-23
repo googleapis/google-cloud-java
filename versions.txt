@@ -23,7 +23,7 @@ grpc-google-cloud-language-v1beta2:0.13.0:0.13.1-SNAPSHOT
 grpc-google-cloud-logging-v2:0.13.0:0.13.1-SNAPSHOT
 grpc-google-cloud-monitoring-v3:0.13.0:0.13.1-SNAPSHOT
 grpc-google-cloud-os-login-v1:0.13.0:0.13.1-SNAPSHOT
-grpc-google-cloud-pubsub-v1:0.13.0:0.13.1-SNAPSHOT
+grpc-google-cloud-pubsub-v1:1.12.0:1.12.1-SNAPSHOT
 grpc-google-cloud-spanner-admin-database-v1:0.13.0:0.13.1-SNAPSHOT
 grpc-google-cloud-spanner-admin-instance-v1:0.13.0:0.13.1-SNAPSHOT
 grpc-google-cloud-spanner-v1:0.13.0:0.13.1-SNAPSHOT
@@ -59,7 +59,7 @@ proto-google-cloud-language-v1beta2:0.13.0:0.13.1-SNAPSHOT
 proto-google-cloud-logging-v2:0.13.0:0.13.1-SNAPSHOT
 proto-google-cloud-monitoring-v3:0.13.0:0.13.1-SNAPSHOT
 proto-google-cloud-os-login-v1:0.13.0:0.13.1-SNAPSHOT
-proto-google-cloud-pubsub-v1:0.13.0:0.13.1-SNAPSHOT
+proto-google-cloud-pubsub-v1:1.12.0:1.12.1-SNAPSHOT
 proto-google-cloud-spanner-admin-database-v1:0.13.0:0.13.1-SNAPSHOT
 proto-google-cloud-spanner-admin-instance-v1:0.13.0:0.13.1-SNAPSHOT
 proto-google-cloud-spanner-v1:0.13.0:0.13.1-SNAPSHOT
@@ -119,7 +119,7 @@ google-cloud-nio:0.48.0-alpha:0.48.1-alpha-SNAPSHOT
 google-cloud-nio-examples:0.48.0-alpha:0.48.1-alpha-SNAPSHOT
 google-cloud-notification:0.48.0-beta:0.48.1-beta-SNAPSHOT
 google-cloud-os-login:0.48.0-alpha:0.48.1-alpha-SNAPSHOT
-google-cloud-pubsub:0.48.0-beta:0.48.1-beta-SNAPSHOT
+google-cloud-pubsub:1.30.0:1.30.1-SNAPSHOT
 google-cloud-redis:0.48.0-alpha:0.48.1-alpha-SNAPSHOT
 google-cloud-resourcemanager:0.48.0-alpha:0.48.1-alpha-SNAPSHOT
 google-cloud-spanner:0.48.0-beta:0.48.1-beta-SNAPSHOT
