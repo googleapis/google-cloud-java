@@ -81,4 +81,24 @@ public interface CloudStorageOptionsOrBuilder extends
    * <code>repeated .google.privacy.dlp.v2.FileType file_types = 5;</code>
    */
   int getFileTypesValue(int index);
+
+  /**
+   * <code>.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod sample_method = 6;</code>
+   */
+  int getSampleMethodValue();
+  /**
+   * <code>.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod sample_method = 6;</code>
+   */
+  com.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod getSampleMethod();
+
+  /**
+   * <pre>
+   * Limits the number of files to scan to this percentage of the input FileSet.
+   * Number of files scanned is rounded down. Must be between 0 and 100,
+   * inclusively. Both 0 and 100 means no limit. Defaults to 0.
+   * </pre>
+   *
+   * <code>int32 files_limit_percent = 7;</code>
+   */
+  int getFilesLimitPercent();
 }

@@ -23,6 +23,8 @@ private static final long serialVersionUID = 0L;
   private CloudStorageOptions() {
     bytesLimitPerFile_ = 0L;
     fileTypes_ = java.util.Collections.emptyList();
+    sampleMethod_ = 0;
+    filesLimitPercent_ = 0;
   }
 
   @java.lang.Override
@@ -97,6 +99,17 @@ private static final long serialVersionUID = 0L;
             input.popLimit(oldLimit);
             break;
           }
+          case 48: {
+            int rawValue = input.readEnum();
+
+            sampleMethod_ = rawValue;
+            break;
+          }
+          case 56: {
+
+            filesLimitPercent_ = input.readInt32();
+            break;
+          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -122,6 +135,137 @@ private static final long serialVersionUID = 0L;
     return com.google.privacy.dlp.v2.DlpStorage.internal_static_google_privacy_dlp_v2_CloudStorageOptions_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.privacy.dlp.v2.CloudStorageOptions.class, com.google.privacy.dlp.v2.CloudStorageOptions.Builder.class);
+  }
+
+  /**
+   * <pre>
+   * How to sample bytes if not all bytes are scanned. Meaningful only when used
+   * in conjunction with bytes_limit_per_file. If not specified, scanning would
+   * start from the top.
+   * </pre>
+   *
+   * Protobuf enum {@code google.privacy.dlp.v2.CloudStorageOptions.SampleMethod}
+   */
+  public enum SampleMethod
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>SAMPLE_METHOD_UNSPECIFIED = 0;</code>
+     */
+    SAMPLE_METHOD_UNSPECIFIED(0),
+    /**
+     * <pre>
+     * Scan from the top (default).
+     * </pre>
+     *
+     * <code>TOP = 1;</code>
+     */
+    TOP(1),
+    /**
+     * <pre>
+     * For each file larger than bytes_limit_per_file, randomly pick the offset
+     * to start scanning. The scanned bytes are contiguous.
+     * </pre>
+     *
+     * <code>RANDOM_START = 2;</code>
+     */
+    RANDOM_START(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <code>SAMPLE_METHOD_UNSPECIFIED = 0;</code>
+     */
+    public static final int SAMPLE_METHOD_UNSPECIFIED_VALUE = 0;
+    /**
+     * <pre>
+     * Scan from the top (default).
+     * </pre>
+     *
+     * <code>TOP = 1;</code>
+     */
+    public static final int TOP_VALUE = 1;
+    /**
+     * <pre>
+     * For each file larger than bytes_limit_per_file, randomly pick the offset
+     * to start scanning. The scanned bytes are contiguous.
+     * </pre>
+     *
+     * <code>RANDOM_START = 2;</code>
+     */
+    public static final int RANDOM_START_VALUE = 2;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static SampleMethod valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static SampleMethod forNumber(int value) {
+      switch (value) {
+        case 0: return SAMPLE_METHOD_UNSPECIFIED;
+        case 1: return TOP;
+        case 2: return RANDOM_START;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<SampleMethod>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        SampleMethod> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<SampleMethod>() {
+            public SampleMethod findValueByNumber(int number) {
+              return SampleMethod.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.google.privacy.dlp.v2.CloudStorageOptions.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final SampleMethod[] VALUES = values();
+
+    public static SampleMethod valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private SampleMethod(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.privacy.dlp.v2.CloudStorageOptions.SampleMethod)
   }
 
   public interface FileSetOrBuilder extends
@@ -813,6 +957,37 @@ private static final long serialVersionUID = 0L;
   }
   private int fileTypesMemoizedSerializedSize;
 
+  public static final int SAMPLE_METHOD_FIELD_NUMBER = 6;
+  private int sampleMethod_;
+  /**
+   * <code>.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod sample_method = 6;</code>
+   */
+  public int getSampleMethodValue() {
+    return sampleMethod_;
+  }
+  /**
+   * <code>.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod sample_method = 6;</code>
+   */
+  public com.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod getSampleMethod() {
+    com.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod result = com.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod.valueOf(sampleMethod_);
+    return result == null ? com.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod.UNRECOGNIZED : result;
+  }
+
+  public static final int FILES_LIMIT_PERCENT_FIELD_NUMBER = 7;
+  private int filesLimitPercent_;
+  /**
+   * <pre>
+   * Limits the number of files to scan to this percentage of the input FileSet.
+   * Number of files scanned is rounded down. Must be between 0 and 100,
+   * inclusively. Both 0 and 100 means no limit. Defaults to 0.
+   * </pre>
+   *
+   * <code>int32 files_limit_percent = 7;</code>
+   */
+  public int getFilesLimitPercent() {
+    return filesLimitPercent_;
+  }
+
   private byte memoizedIsInitialized = -1;
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -838,6 +1013,12 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < fileTypes_.size(); i++) {
       output.writeEnumNoTag(fileTypes_.get(i));
+    }
+    if (sampleMethod_ != com.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod.SAMPLE_METHOD_UNSPECIFIED.getNumber()) {
+      output.writeEnum(6, sampleMethod_);
+    }
+    if (filesLimitPercent_ != 0) {
+      output.writeInt32(7, filesLimitPercent_);
     }
     unknownFields.writeTo(output);
   }
@@ -867,6 +1048,14 @@ private static final long serialVersionUID = 0L;
           .computeUInt32SizeNoTag(dataSize);
       }fileTypesMemoizedSerializedSize = dataSize;
     }
+    if (sampleMethod_ != com.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod.SAMPLE_METHOD_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(6, sampleMethod_);
+    }
+    if (filesLimitPercent_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(7, filesLimitPercent_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -891,6 +1080,9 @@ private static final long serialVersionUID = 0L;
     result = result && (getBytesLimitPerFile()
         == other.getBytesLimitPerFile());
     result = result && fileTypes_.equals(other.fileTypes_);
+    result = result && sampleMethod_ == other.sampleMethod_;
+    result = result && (getFilesLimitPercent()
+        == other.getFilesLimitPercent());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -913,6 +1105,10 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + FILE_TYPES_FIELD_NUMBER;
       hash = (53 * hash) + fileTypes_.hashCode();
     }
+    hash = (37 * hash) + SAMPLE_METHOD_FIELD_NUMBER;
+    hash = (53 * hash) + sampleMethod_;
+    hash = (37 * hash) + FILES_LIMIT_PERCENT_FIELD_NUMBER;
+    hash = (53 * hash) + getFilesLimitPercent();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1057,6 +1253,10 @@ private static final long serialVersionUID = 0L;
 
       fileTypes_ = java.util.Collections.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
+      sampleMethod_ = 0;
+
+      filesLimitPercent_ = 0;
+
       return this;
     }
 
@@ -1092,6 +1292,8 @@ private static final long serialVersionUID = 0L;
         bitField0_ = (bitField0_ & ~0x00000004);
       }
       result.fileTypes_ = fileTypes_;
+      result.sampleMethod_ = sampleMethod_;
+      result.filesLimitPercent_ = filesLimitPercent_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -1149,6 +1351,12 @@ private static final long serialVersionUID = 0L;
           fileTypes_.addAll(other.fileTypes_);
         }
         onChanged();
+      }
+      if (other.sampleMethod_ != 0) {
+        setSampleMethodValue(other.getSampleMethodValue());
+      }
+      if (other.getFilesLimitPercent() != 0) {
+        setFilesLimitPercent(other.getFilesLimitPercent());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1522,6 +1730,94 @@ private static final long serialVersionUID = 0L;
       for (int value : values) {
         fileTypes_.add(value);
       }
+      onChanged();
+      return this;
+    }
+
+    private int sampleMethod_ = 0;
+    /**
+     * <code>.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod sample_method = 6;</code>
+     */
+    public int getSampleMethodValue() {
+      return sampleMethod_;
+    }
+    /**
+     * <code>.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod sample_method = 6;</code>
+     */
+    public Builder setSampleMethodValue(int value) {
+      sampleMethod_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod sample_method = 6;</code>
+     */
+    public com.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod getSampleMethod() {
+      com.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod result = com.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod.valueOf(sampleMethod_);
+      return result == null ? com.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod.UNRECOGNIZED : result;
+    }
+    /**
+     * <code>.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod sample_method = 6;</code>
+     */
+    public Builder setSampleMethod(com.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      sampleMethod_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod sample_method = 6;</code>
+     */
+    public Builder clearSampleMethod() {
+      
+      sampleMethod_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int filesLimitPercent_ ;
+    /**
+     * <pre>
+     * Limits the number of files to scan to this percentage of the input FileSet.
+     * Number of files scanned is rounded down. Must be between 0 and 100,
+     * inclusively. Both 0 and 100 means no limit. Defaults to 0.
+     * </pre>
+     *
+     * <code>int32 files_limit_percent = 7;</code>
+     */
+    public int getFilesLimitPercent() {
+      return filesLimitPercent_;
+    }
+    /**
+     * <pre>
+     * Limits the number of files to scan to this percentage of the input FileSet.
+     * Number of files scanned is rounded down. Must be between 0 and 100,
+     * inclusively. Both 0 and 100 means no limit. Defaults to 0.
+     * </pre>
+     *
+     * <code>int32 files_limit_percent = 7;</code>
+     */
+    public Builder setFilesLimitPercent(int value) {
+      
+      filesLimitPercent_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Limits the number of files to scan to this percentage of the input FileSet.
+     * Number of files scanned is rounded down. Must be between 0 and 100,
+     * inclusively. Both 0 and 100 means no limit. Defaults to 0.
+     * </pre>
+     *
+     * <code>int32 files_limit_percent = 7;</code>
+     */
+    public Builder clearFilesLimitPercent() {
+      
+      filesLimitPercent_ = 0;
       onChanged();
       return this;
     }
