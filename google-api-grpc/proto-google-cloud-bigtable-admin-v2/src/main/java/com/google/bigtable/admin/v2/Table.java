@@ -287,11 +287,6 @@ private static final long serialVersionUID = 0L;
     SCHEMA_VIEW(2),
     /**
      * <pre>
-     * This is a private alpha release of Cloud Bigtable replication. This
-     * feature is not currently available to most Cloud Bigtable customers. This
-     * feature might be changed in backward-incompatible ways and is not
-     * recommended for production use. It is not subject to any SLA or
-     * deprecation policy.
      * Only populates `name` and fields related to the table's
      * replication state.
      * </pre>
@@ -336,11 +331,6 @@ private static final long serialVersionUID = 0L;
     public static final int SCHEMA_VIEW_VALUE = 2;
     /**
      * <pre>
-     * This is a private alpha release of Cloud Bigtable replication. This
-     * feature is not currently available to most Cloud Bigtable customers. This
-     * feature might be changed in backward-incompatible ways and is not
-     * recommended for production use. It is not subject to any SLA or
-     * deprecation policy.
      * Only populates `name` and fields related to the table's
      * replication state.
      * </pre>
@@ -458,10 +448,6 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * This is a private alpha release of Cloud Bigtable replication. This feature
-   * is not currently available to most Cloud Bigtable customers. This feature
-   * might be changed in backward-incompatible ways and is not recommended for
-   * production use. It is not subject to any SLA or deprecation policy.
    * The state of a table's data in a particular cluster.
    * </pre>
    *
@@ -562,8 +548,7 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * The cluster was recently created, and the table must finish copying
        * over pre-existing data from other clusters before it can begin
-       * receiving live replication updates and serving
-       * [Data API][google.bigtable.v2.Bigtable] requests.
+       * receiving live replication updates and serving Data API requests.
        * </pre>
        *
        * <code>INITIALIZING = 1;</code>
@@ -571,8 +556,7 @@ private static final long serialVersionUID = 0L;
       INITIALIZING(1),
       /**
        * <pre>
-       * The table is temporarily unable to serve
-       * [Data API][google.bigtable.v2.Bigtable] requests from this
+       * The table is temporarily unable to serve Data API requests from this
        * cluster due to planned internal maintenance.
        * </pre>
        *
@@ -581,8 +565,7 @@ private static final long serialVersionUID = 0L;
       PLANNED_MAINTENANCE(2),
       /**
        * <pre>
-       * The table is temporarily unable to serve
-       * [Data API][google.bigtable.v2.Bigtable] requests from this
+       * The table is temporarily unable to serve Data API requests from this
        * cluster due to unplanned or emergency maintenance.
        * </pre>
        *
@@ -591,10 +574,9 @@ private static final long serialVersionUID = 0L;
       UNPLANNED_MAINTENANCE(3),
       /**
        * <pre>
-       * The table can serve
-       * [Data API][google.bigtable.v2.Bigtable] requests from this
-       * cluster. Depending on replication delay, reads may not immediately
-       * reflect the state of the table in other clusters.
+       * The table can serve Data API requests from this cluster. Depending on
+       * replication delay, reads may not immediately reflect the state of the
+       * table in other clusters.
        * </pre>
        *
        * <code>READY = 4;</code>
@@ -615,8 +597,7 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * The cluster was recently created, and the table must finish copying
        * over pre-existing data from other clusters before it can begin
-       * receiving live replication updates and serving
-       * [Data API][google.bigtable.v2.Bigtable] requests.
+       * receiving live replication updates and serving Data API requests.
        * </pre>
        *
        * <code>INITIALIZING = 1;</code>
@@ -624,8 +605,7 @@ private static final long serialVersionUID = 0L;
       public static final int INITIALIZING_VALUE = 1;
       /**
        * <pre>
-       * The table is temporarily unable to serve
-       * [Data API][google.bigtable.v2.Bigtable] requests from this
+       * The table is temporarily unable to serve Data API requests from this
        * cluster due to planned internal maintenance.
        * </pre>
        *
@@ -634,8 +614,7 @@ private static final long serialVersionUID = 0L;
       public static final int PLANNED_MAINTENANCE_VALUE = 2;
       /**
        * <pre>
-       * The table is temporarily unable to serve
-       * [Data API][google.bigtable.v2.Bigtable] requests from this
+       * The table is temporarily unable to serve Data API requests from this
        * cluster due to unplanned or emergency maintenance.
        * </pre>
        *
@@ -644,10 +623,9 @@ private static final long serialVersionUID = 0L;
       public static final int UNPLANNED_MAINTENANCE_VALUE = 3;
       /**
        * <pre>
-       * The table can serve
-       * [Data API][google.bigtable.v2.Bigtable] requests from this
-       * cluster. Depending on replication delay, reads may not immediately
-       * reflect the state of the table in other clusters.
+       * The table can serve Data API requests from this cluster. Depending on
+       * replication delay, reads may not immediately reflect the state of the
+       * table in other clusters.
        * </pre>
        *
        * <code>READY = 4;</code>
@@ -908,10 +886,6 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * This is a private alpha release of Cloud Bigtable replication. This feature
-     * is not currently available to most Cloud Bigtable customers. This feature
-     * might be changed in backward-incompatible ways and is not recommended for
-     * production use. It is not subject to any SLA or deprecation policy.
      * The state of a table's data in a particular cluster.
      * </pre>
      *
@@ -1171,7 +1145,7 @@ private static final long serialVersionUID = 0L;
    * (`OutputOnly`)
    * The unique name of the table. Values are of the form
    * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/[_a-zA-Z0-9][-_.a-zA-Z0-9]*`.
-   * Views: `NAME_ONLY`, `SCHEMA_VIEW`, `FULL`
+   * Views: `NAME_ONLY`, `SCHEMA_VIEW`, `REPLICATION_VIEW`, `FULL`
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -1193,7 +1167,7 @@ private static final long serialVersionUID = 0L;
    * (`OutputOnly`)
    * The unique name of the table. Values are of the form
    * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/[_a-zA-Z0-9][-_.a-zA-Z0-9]*`.
-   * Views: `NAME_ONLY`, `SCHEMA_VIEW`, `FULL`
+   * Views: `NAME_ONLY`, `SCHEMA_VIEW`, `REPLICATION_VIEW`, `FULL`
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -1240,16 +1214,12 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * This is a private alpha release of Cloud Bigtable replication. This feature
-   * is not currently available to most Cloud Bigtable customers. This feature
-   * might be changed in backward-incompatible ways and is not recommended for
-   * production use. It is not subject to any SLA or deprecation policy.
    * (`OutputOnly`)
    * Map from cluster ID to per-cluster table state.
    * If it could not be determined whether or not the table has data in a
    * particular cluster (for example, if its zone is unavailable), then
    * there will be an entry for the cluster with UNKNOWN `replication_status`.
-   * Views: `FULL`
+   * Views: `REPLICATION_VIEW`, `FULL`
    * </pre>
    *
    * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;</code>
@@ -1269,16 +1239,12 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * This is a private alpha release of Cloud Bigtable replication. This feature
-   * is not currently available to most Cloud Bigtable customers. This feature
-   * might be changed in backward-incompatible ways and is not recommended for
-   * production use. It is not subject to any SLA or deprecation policy.
    * (`OutputOnly`)
    * Map from cluster ID to per-cluster table state.
    * If it could not be determined whether or not the table has data in a
    * particular cluster (for example, if its zone is unavailable), then
    * there will be an entry for the cluster with UNKNOWN `replication_status`.
-   * Views: `FULL`
+   * Views: `REPLICATION_VIEW`, `FULL`
    * </pre>
    *
    * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;</code>
@@ -1289,16 +1255,12 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * This is a private alpha release of Cloud Bigtable replication. This feature
-   * is not currently available to most Cloud Bigtable customers. This feature
-   * might be changed in backward-incompatible ways and is not recommended for
-   * production use. It is not subject to any SLA or deprecation policy.
    * (`OutputOnly`)
    * Map from cluster ID to per-cluster table state.
    * If it could not be determined whether or not the table has data in a
    * particular cluster (for example, if its zone is unavailable), then
    * there will be an entry for the cluster with UNKNOWN `replication_status`.
-   * Views: `FULL`
+   * Views: `REPLICATION_VIEW`, `FULL`
    * </pre>
    *
    * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;</code>
@@ -1314,16 +1276,12 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * This is a private alpha release of Cloud Bigtable replication. This feature
-   * is not currently available to most Cloud Bigtable customers. This feature
-   * might be changed in backward-incompatible ways and is not recommended for
-   * production use. It is not subject to any SLA or deprecation policy.
    * (`OutputOnly`)
    * Map from cluster ID to per-cluster table state.
    * If it could not be determined whether or not the table has data in a
    * particular cluster (for example, if its zone is unavailable), then
    * there will be an entry for the cluster with UNKNOWN `replication_status`.
-   * Views: `FULL`
+   * Views: `REPLICATION_VIEW`, `FULL`
    * </pre>
    *
    * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;</code>
@@ -1445,7 +1403,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * (`CreationOnly`)
-   * The granularity (e.g. `MILLIS`, `MICROS`) at which timestamps are stored in
+   * The granularity (i.e. `MILLIS`) at which timestamps are stored in
    * this table. Timestamps not matching the granularity will be rejected.
    * If unspecified at creation time, the value will be set to `MILLIS`.
    * Views: `SCHEMA_VIEW`, `FULL`
@@ -1459,7 +1417,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * (`CreationOnly`)
-   * The granularity (e.g. `MILLIS`, `MICROS`) at which timestamps are stored in
+   * The granularity (i.e. `MILLIS`) at which timestamps are stored in
    * this table. Timestamps not matching the granularity will be rejected.
    * If unspecified at creation time, the value will be set to `MILLIS`.
    * Views: `SCHEMA_VIEW`, `FULL`
@@ -1866,7 +1824,7 @@ private static final long serialVersionUID = 0L;
      * (`OutputOnly`)
      * The unique name of the table. Values are of the form
      * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/[_a-zA-Z0-9][-_.a-zA-Z0-9]*`.
-     * Views: `NAME_ONLY`, `SCHEMA_VIEW`, `FULL`
+     * Views: `NAME_ONLY`, `SCHEMA_VIEW`, `REPLICATION_VIEW`, `FULL`
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1888,7 +1846,7 @@ private static final long serialVersionUID = 0L;
      * (`OutputOnly`)
      * The unique name of the table. Values are of the form
      * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/[_a-zA-Z0-9][-_.a-zA-Z0-9]*`.
-     * Views: `NAME_ONLY`, `SCHEMA_VIEW`, `FULL`
+     * Views: `NAME_ONLY`, `SCHEMA_VIEW`, `REPLICATION_VIEW`, `FULL`
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1911,7 +1869,7 @@ private static final long serialVersionUID = 0L;
      * (`OutputOnly`)
      * The unique name of the table. Values are of the form
      * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/[_a-zA-Z0-9][-_.a-zA-Z0-9]*`.
-     * Views: `NAME_ONLY`, `SCHEMA_VIEW`, `FULL`
+     * Views: `NAME_ONLY`, `SCHEMA_VIEW`, `REPLICATION_VIEW`, `FULL`
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1931,7 +1889,7 @@ private static final long serialVersionUID = 0L;
      * (`OutputOnly`)
      * The unique name of the table. Values are of the form
      * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/[_a-zA-Z0-9][-_.a-zA-Z0-9]*`.
-     * Views: `NAME_ONLY`, `SCHEMA_VIEW`, `FULL`
+     * Views: `NAME_ONLY`, `SCHEMA_VIEW`, `REPLICATION_VIEW`, `FULL`
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1947,7 +1905,7 @@ private static final long serialVersionUID = 0L;
      * (`OutputOnly`)
      * The unique name of the table. Values are of the form
      * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/[_a-zA-Z0-9][-_.a-zA-Z0-9]*`.
-     * Views: `NAME_ONLY`, `SCHEMA_VIEW`, `FULL`
+     * Views: `NAME_ONLY`, `SCHEMA_VIEW`, `REPLICATION_VIEW`, `FULL`
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1992,16 +1950,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * This is a private alpha release of Cloud Bigtable replication. This feature
-     * is not currently available to most Cloud Bigtable customers. This feature
-     * might be changed in backward-incompatible ways and is not recommended for
-     * production use. It is not subject to any SLA or deprecation policy.
      * (`OutputOnly`)
      * Map from cluster ID to per-cluster table state.
      * If it could not be determined whether or not the table has data in a
      * particular cluster (for example, if its zone is unavailable), then
      * there will be an entry for the cluster with UNKNOWN `replication_status`.
-     * Views: `FULL`
+     * Views: `REPLICATION_VIEW`, `FULL`
      * </pre>
      *
      * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;</code>
@@ -2021,16 +1975,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * This is a private alpha release of Cloud Bigtable replication. This feature
-     * is not currently available to most Cloud Bigtable customers. This feature
-     * might be changed in backward-incompatible ways and is not recommended for
-     * production use. It is not subject to any SLA or deprecation policy.
      * (`OutputOnly`)
      * Map from cluster ID to per-cluster table state.
      * If it could not be determined whether or not the table has data in a
      * particular cluster (for example, if its zone is unavailable), then
      * there will be an entry for the cluster with UNKNOWN `replication_status`.
-     * Views: `FULL`
+     * Views: `REPLICATION_VIEW`, `FULL`
      * </pre>
      *
      * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;</code>
@@ -2041,16 +1991,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * This is a private alpha release of Cloud Bigtable replication. This feature
-     * is not currently available to most Cloud Bigtable customers. This feature
-     * might be changed in backward-incompatible ways and is not recommended for
-     * production use. It is not subject to any SLA or deprecation policy.
      * (`OutputOnly`)
      * Map from cluster ID to per-cluster table state.
      * If it could not be determined whether or not the table has data in a
      * particular cluster (for example, if its zone is unavailable), then
      * there will be an entry for the cluster with UNKNOWN `replication_status`.
-     * Views: `FULL`
+     * Views: `REPLICATION_VIEW`, `FULL`
      * </pre>
      *
      * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;</code>
@@ -2066,16 +2012,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * This is a private alpha release of Cloud Bigtable replication. This feature
-     * is not currently available to most Cloud Bigtable customers. This feature
-     * might be changed in backward-incompatible ways and is not recommended for
-     * production use. It is not subject to any SLA or deprecation policy.
      * (`OutputOnly`)
      * Map from cluster ID to per-cluster table state.
      * If it could not be determined whether or not the table has data in a
      * particular cluster (for example, if its zone is unavailable), then
      * there will be an entry for the cluster with UNKNOWN `replication_status`.
-     * Views: `FULL`
+     * Views: `REPLICATION_VIEW`, `FULL`
      * </pre>
      *
      * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;</code>
@@ -2099,16 +2041,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * This is a private alpha release of Cloud Bigtable replication. This feature
-     * is not currently available to most Cloud Bigtable customers. This feature
-     * might be changed in backward-incompatible ways and is not recommended for
-     * production use. It is not subject to any SLA or deprecation policy.
      * (`OutputOnly`)
      * Map from cluster ID to per-cluster table state.
      * If it could not be determined whether or not the table has data in a
      * particular cluster (for example, if its zone is unavailable), then
      * there will be an entry for the cluster with UNKNOWN `replication_status`.
-     * Views: `FULL`
+     * Views: `REPLICATION_VIEW`, `FULL`
      * </pre>
      *
      * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;</code>
@@ -2131,16 +2069,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * This is a private alpha release of Cloud Bigtable replication. This feature
-     * is not currently available to most Cloud Bigtable customers. This feature
-     * might be changed in backward-incompatible ways and is not recommended for
-     * production use. It is not subject to any SLA or deprecation policy.
      * (`OutputOnly`)
      * Map from cluster ID to per-cluster table state.
      * If it could not be determined whether or not the table has data in a
      * particular cluster (for example, if its zone is unavailable), then
      * there will be an entry for the cluster with UNKNOWN `replication_status`.
-     * Views: `FULL`
+     * Views: `REPLICATION_VIEW`, `FULL`
      * </pre>
      *
      * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;</code>
@@ -2156,16 +2090,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * This is a private alpha release of Cloud Bigtable replication. This feature
-     * is not currently available to most Cloud Bigtable customers. This feature
-     * might be changed in backward-incompatible ways and is not recommended for
-     * production use. It is not subject to any SLA or deprecation policy.
      * (`OutputOnly`)
      * Map from cluster ID to per-cluster table state.
      * If it could not be determined whether or not the table has data in a
      * particular cluster (for example, if its zone is unavailable), then
      * there will be an entry for the cluster with UNKNOWN `replication_status`.
-     * Views: `FULL`
+     * Views: `REPLICATION_VIEW`, `FULL`
      * </pre>
      *
      * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;</code>
@@ -2347,7 +2277,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * (`CreationOnly`)
-     * The granularity (e.g. `MILLIS`, `MICROS`) at which timestamps are stored in
+     * The granularity (i.e. `MILLIS`) at which timestamps are stored in
      * this table. Timestamps not matching the granularity will be rejected.
      * If unspecified at creation time, the value will be set to `MILLIS`.
      * Views: `SCHEMA_VIEW`, `FULL`
@@ -2361,7 +2291,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * (`CreationOnly`)
-     * The granularity (e.g. `MILLIS`, `MICROS`) at which timestamps are stored in
+     * The granularity (i.e. `MILLIS`) at which timestamps are stored in
      * this table. Timestamps not matching the granularity will be rejected.
      * If unspecified at creation time, the value will be set to `MILLIS`.
      * Views: `SCHEMA_VIEW`, `FULL`
@@ -2377,7 +2307,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * (`CreationOnly`)
-     * The granularity (e.g. `MILLIS`, `MICROS`) at which timestamps are stored in
+     * The granularity (i.e. `MILLIS`) at which timestamps are stored in
      * this table. Timestamps not matching the granularity will be rejected.
      * If unspecified at creation time, the value will be set to `MILLIS`.
      * Views: `SCHEMA_VIEW`, `FULL`
@@ -2392,7 +2322,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * (`CreationOnly`)
-     * The granularity (e.g. `MILLIS`, `MICROS`) at which timestamps are stored in
+     * The granularity (i.e. `MILLIS`) at which timestamps are stored in
      * this table. Timestamps not matching the granularity will be rejected.
      * If unspecified at creation time, the value will be set to `MILLIS`.
      * Views: `SCHEMA_VIEW`, `FULL`
@@ -2412,7 +2342,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * (`CreationOnly`)
-     * The granularity (e.g. `MILLIS`, `MICROS`) at which timestamps are stored in
+     * The granularity (i.e. `MILLIS`) at which timestamps are stored in
      * this table. Timestamps not matching the granularity will be rejected.
      * If unspecified at creation time, the value will be set to `MILLIS`.
      * Views: `SCHEMA_VIEW`, `FULL`

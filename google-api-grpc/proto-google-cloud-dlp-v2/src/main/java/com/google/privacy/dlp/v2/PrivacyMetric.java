@@ -4204,6 +4204,7 @@ private static final long serialVersionUID = 0L;
    * using publicly available data (like the US Census), or using a custom
    * statistical model (indicated as one or several BigQuery tables), or by
    * extrapolating from the distribution of values in the input dataset.
+   * A column with a semantic tag attached.
    * </pre>
    *
    * Protobuf type {@code google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig}
@@ -4427,10 +4428,6 @@ private static final long serialVersionUID = 0L;
       public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField.TagCase getTagCase();
     }
     /**
-     * <pre>
-     * A column with a semantic tag attached.
-     * </pre>
-     *
      * Protobuf type {@code google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField}
      */
     public  static final class TaggedField extends
@@ -4978,10 +4975,6 @@ private static final long serialVersionUID = 0L;
         return builder;
       }
       /**
-       * <pre>
-       * A column with a semantic tag attached.
-       * </pre>
-       *
        * Protobuf type {@code google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField}
        */
       public static final class Builder extends
@@ -8390,6 +8383,7 @@ private static final long serialVersionUID = 0L;
      * using publicly available data (like the US Census), or using a custom
      * statistical model (indicated as one or several BigQuery tables), or by
      * extrapolating from the distribution of values in the input dataset.
+     * A column with a semantic tag attached.
      * </pre>
      *
      * Protobuf type {@code google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig}
