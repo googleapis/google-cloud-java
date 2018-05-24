@@ -173,10 +173,6 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object appProfileId_;
   /**
    * <pre>
-   * This is a private alpha release of Cloud Bigtable replication. This feature
-   * is not currently available to most Cloud Bigtable customers. This feature
-   * might be changed in backward-incompatible ways and is not recommended for
-   * production use. It is not subject to any SLA or deprecation policy.
    * This value specifies routing for replication. If not specified, the
    * "default" application profile will be used.
    * </pre>
@@ -197,10 +193,6 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * This is a private alpha release of Cloud Bigtable replication. This feature
-   * is not currently available to most Cloud Bigtable customers. This feature
-   * might be changed in backward-incompatible ways and is not recommended for
-   * production use. It is not subject to any SLA or deprecation policy.
    * This value specifies routing for replication. If not specified, the
    * "default" application profile will be used.
    * </pre>
@@ -788,10 +780,6 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object appProfileId_ = "";
     /**
      * <pre>
-     * This is a private alpha release of Cloud Bigtable replication. This feature
-     * is not currently available to most Cloud Bigtable customers. This feature
-     * might be changed in backward-incompatible ways and is not recommended for
-     * production use. It is not subject to any SLA or deprecation policy.
      * This value specifies routing for replication. If not specified, the
      * "default" application profile will be used.
      * </pre>
@@ -812,10 +800,6 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * This is a private alpha release of Cloud Bigtable replication. This feature
-     * is not currently available to most Cloud Bigtable customers. This feature
-     * might be changed in backward-incompatible ways and is not recommended for
-     * production use. It is not subject to any SLA or deprecation policy.
      * This value specifies routing for replication. If not specified, the
      * "default" application profile will be used.
      * </pre>
@@ -837,10 +821,6 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * This is a private alpha release of Cloud Bigtable replication. This feature
-     * is not currently available to most Cloud Bigtable customers. This feature
-     * might be changed in backward-incompatible ways and is not recommended for
-     * production use. It is not subject to any SLA or deprecation policy.
      * This value specifies routing for replication. If not specified, the
      * "default" application profile will be used.
      * </pre>
@@ -859,10 +839,6 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * This is a private alpha release of Cloud Bigtable replication. This feature
-     * is not currently available to most Cloud Bigtable customers. This feature
-     * might be changed in backward-incompatible ways and is not recommended for
-     * production use. It is not subject to any SLA or deprecation policy.
      * This value specifies routing for replication. If not specified, the
      * "default" application profile will be used.
      * </pre>
@@ -877,10 +853,6 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * This is a private alpha release of Cloud Bigtable replication. This feature
-     * is not currently available to most Cloud Bigtable customers. This feature
-     * might be changed in backward-incompatible ways and is not recommended for
-     * production use. It is not subject to any SLA or deprecation policy.
      * This value specifies routing for replication. If not specified, the
      * "default" application profile will be used.
      * </pre>

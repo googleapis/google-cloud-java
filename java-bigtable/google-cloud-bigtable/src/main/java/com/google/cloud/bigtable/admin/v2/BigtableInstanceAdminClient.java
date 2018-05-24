@@ -1295,12 +1295,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * This is a private alpha release of Cloud Bigtable replication. This feature is not currently
-   * available to most Cloud Bigtable customers. This feature might be changed in
-   * backward-incompatible ways and is not recommended for production use. It is not subject to any
-   * SLA or deprecation policy.
-   *
-   * <p>Creates an app profile within an instance.
+   * Creates an app profile within an instance.
    *
    * <p>Sample code:
    *
@@ -1335,12 +1330,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * This is a private alpha release of Cloud Bigtable replication. This feature is not currently
-   * available to most Cloud Bigtable customers. This feature might be changed in
-   * backward-incompatible ways and is not recommended for production use. It is not subject to any
-   * SLA or deprecation policy.
-   *
-   * <p>Creates an app profile within an instance.
+   * Creates an app profile within an instance.
    *
    * <p>Sample code:
    *
@@ -1375,12 +1365,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * This is a private alpha release of Cloud Bigtable replication. This feature is not currently
-   * available to most Cloud Bigtable customers. This feature might be changed in
-   * backward-incompatible ways and is not recommended for production use. It is not subject to any
-   * SLA or deprecation policy.
-   *
-   * <p>Creates an app profile within an instance.
+   * Creates an app profile within an instance.
    *
    * <p>Sample code:
    *
@@ -1407,12 +1392,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * This is a private alpha release of Cloud Bigtable replication. This feature is not currently
-   * available to most Cloud Bigtable customers. This feature might be changed in
-   * backward-incompatible ways and is not recommended for production use. It is not subject to any
-   * SLA or deprecation policy.
-   *
-   * <p>Creates an app profile within an instance.
+   * Creates an app profile within an instance.
    *
    * <p>Sample code:
    *
@@ -1438,12 +1418,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * This is a private alpha release of Cloud Bigtable replication. This feature is not currently
-   * available to most Cloud Bigtable customers. This feature might be changed in
-   * backward-incompatible ways and is not recommended for production use. It is not subject to any
-   * SLA or deprecation policy.
-   *
-   * <p>Gets information about an app profile.
+   * Gets information about an app profile.
    *
    * <p>Sample code:
    *
@@ -1467,12 +1442,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * This is a private alpha release of Cloud Bigtable replication. This feature is not currently
-   * available to most Cloud Bigtable customers. This feature might be changed in
-   * backward-incompatible ways and is not recommended for production use. It is not subject to any
-   * SLA or deprecation policy.
-   *
-   * <p>Gets information about an app profile.
+   * Gets information about an app profile.
    *
    * <p>Sample code:
    *
@@ -1495,12 +1465,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * This is a private alpha release of Cloud Bigtable replication. This feature is not currently
-   * available to most Cloud Bigtable customers. This feature might be changed in
-   * backward-incompatible ways and is not recommended for production use. It is not subject to any
-   * SLA or deprecation policy.
-   *
-   * <p>Gets information about an app profile.
+   * Gets information about an app profile.
    *
    * <p>Sample code:
    *
@@ -1523,12 +1488,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * This is a private alpha release of Cloud Bigtable replication. This feature is not currently
-   * available to most Cloud Bigtable customers. This feature might be changed in
-   * backward-incompatible ways and is not recommended for production use. It is not subject to any
-   * SLA or deprecation policy.
-   *
-   * <p>Gets information about an app profile.
+   * Gets information about an app profile.
    *
    * <p>Sample code:
    *
@@ -1550,12 +1510,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * This is a private alpha release of Cloud Bigtable replication. This feature is not currently
-   * available to most Cloud Bigtable customers. This feature might be changed in
-   * backward-incompatible ways and is not recommended for production use. It is not subject to any
-   * SLA or deprecation policy.
-   *
-   * <p>Lists information about app profiles in an instance.
+   * Lists information about app profiles in an instance.
    *
    * <p>Sample code:
    *
@@ -1582,12 +1537,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * This is a private alpha release of Cloud Bigtable replication. This feature is not currently
-   * available to most Cloud Bigtable customers. This feature might be changed in
-   * backward-incompatible ways and is not recommended for production use. It is not subject to any
-   * SLA or deprecation policy.
-   *
-   * <p>Lists information about app profiles in an instance.
+   * Lists information about app profiles in an instance.
    *
    * <p>Sample code:
    *
@@ -1611,12 +1561,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * This is a private alpha release of Cloud Bigtable replication. This feature is not currently
-   * available to most Cloud Bigtable customers. This feature might be changed in
-   * backward-incompatible ways and is not recommended for production use. It is not subject to any
-   * SLA or deprecation policy.
-   *
-   * <p>Lists information about app profiles in an instance.
+   * Lists information about app profiles in an instance.
    *
    * <p>Sample code:
    *
@@ -1641,12 +1586,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * This is a private alpha release of Cloud Bigtable replication. This feature is not currently
-   * available to most Cloud Bigtable customers. This feature might be changed in
-   * backward-incompatible ways and is not recommended for production use. It is not subject to any
-   * SLA or deprecation policy.
-   *
-   * <p>Lists information about app profiles in an instance.
+   * Lists information about app profiles in an instance.
    *
    * <p>Sample code:
    *
@@ -1671,12 +1611,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * This is a private alpha release of Cloud Bigtable replication. This feature is not currently
-   * available to most Cloud Bigtable customers. This feature might be changed in
-   * backward-incompatible ways and is not recommended for production use. It is not subject to any
-   * SLA or deprecation policy.
-   *
-   * <p>Lists information about app profiles in an instance.
+   * Lists information about app profiles in an instance.
    *
    * <p>Sample code:
    *
@@ -1708,12 +1643,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * This is a private alpha release of Cloud Bigtable replication. This feature is not currently
-   * available to most Cloud Bigtable customers. This feature might be changed in
-   * backward-incompatible ways and is not recommended for production use. It is not subject to any
-   * SLA or deprecation policy.
-   *
-   * <p>Updates an app profile within an instance.
+   * Updates an app profile within an instance.
    *
    * <p>Sample code:
    *
@@ -1745,12 +1675,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * This is a private alpha release of Cloud Bigtable replication. This feature is not currently
-   * available to most Cloud Bigtable customers. This feature might be changed in
-   * backward-incompatible ways and is not recommended for production use. It is not subject to any
-   * SLA or deprecation policy.
-   *
-   * <p>Updates an app profile within an instance.
+   * Updates an app profile within an instance.
    *
    * <p>Sample code:
    *
@@ -1778,12 +1703,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * This is a private alpha release of Cloud Bigtable replication. This feature is not currently
-   * available to most Cloud Bigtable customers. This feature might be changed in
-   * backward-incompatible ways and is not recommended for production use. It is not subject to any
-   * SLA or deprecation policy.
-   *
-   * <p>Updates an app profile within an instance.
+   * Updates an app profile within an instance.
    *
    * <p>Sample code:
    *
@@ -1809,12 +1729,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * This is a private alpha release of Cloud Bigtable replication. This feature is not currently
-   * available to most Cloud Bigtable customers. This feature might be changed in
-   * backward-incompatible ways and is not recommended for production use. It is not subject to any
-   * SLA or deprecation policy.
-   *
-   * <p>Updates an app profile within an instance.
+   * Updates an app profile within an instance.
    *
    * <p>Sample code:
    *
@@ -1838,12 +1753,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * This is a private alpha release of Cloud Bigtable replication. This feature is not currently
-   * available to most Cloud Bigtable customers. This feature might be changed in
-   * backward-incompatible ways and is not recommended for production use. It is not subject to any
-   * SLA or deprecation policy.
-   *
-   * <p>Deletes an app profile from an instance.
+   * Deletes an app profile from an instance.
    *
    * <p>Sample code:
    *
@@ -1867,12 +1777,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * This is a private alpha release of Cloud Bigtable replication. This feature is not currently
-   * available to most Cloud Bigtable customers. This feature might be changed in
-   * backward-incompatible ways and is not recommended for production use. It is not subject to any
-   * SLA or deprecation policy.
-   *
-   * <p>Deletes an app profile from an instance.
+   * Deletes an app profile from an instance.
    *
    * <p>Sample code:
    *
@@ -1895,12 +1800,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * This is a private alpha release of Cloud Bigtable replication. This feature is not currently
-   * available to most Cloud Bigtable customers. This feature might be changed in
-   * backward-incompatible ways and is not recommended for production use. It is not subject to any
-   * SLA or deprecation policy.
-   *
-   * <p>Deletes an app profile from an instance.
+   * Deletes an app profile from an instance.
    *
    * <p>Sample code:
    *
@@ -1925,12 +1825,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * This is a private alpha release of Cloud Bigtable replication. This feature is not currently
-   * available to most Cloud Bigtable customers. This feature might be changed in
-   * backward-incompatible ways and is not recommended for production use. It is not subject to any
-   * SLA or deprecation policy.
-   *
-   * <p>Deletes an app profile from an instance.
+   * Deletes an app profile from an instance.
    *
    * <p>Sample code:
    *
@@ -1954,13 +1849,8 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * This is a private alpha release of Cloud Bigtable instance level permissions. This feature is
-   * not currently available to most Cloud Bigtable customers. This feature might be changed in
-   * backward-incompatible ways and is not recommended for production use. It is not subject to any
-   * SLA or deprecation policy.
-   *
-   * <p>Gets the access control policy for an instance resource. Returns an empty policy if an
-   * instance exists but does not have a policy set.
+   * Gets the access control policy for an instance resource. Returns an empty policy if an instance
+   * exists but does not have a policy set.
    *
    * <p>Sample code:
    *
@@ -1984,13 +1874,8 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * This is a private alpha release of Cloud Bigtable instance level permissions. This feature is
-   * not currently available to most Cloud Bigtable customers. This feature might be changed in
-   * backward-incompatible ways and is not recommended for production use. It is not subject to any
-   * SLA or deprecation policy.
-   *
-   * <p>Gets the access control policy for an instance resource. Returns an empty policy if an
-   * instance exists but does not have a policy set.
+   * Gets the access control policy for an instance resource. Returns an empty policy if an instance
+   * exists but does not have a policy set.
    *
    * <p>Sample code:
    *
@@ -2013,13 +1898,8 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * This is a private alpha release of Cloud Bigtable instance level permissions. This feature is
-   * not currently available to most Cloud Bigtable customers. This feature might be changed in
-   * backward-incompatible ways and is not recommended for production use. It is not subject to any
-   * SLA or deprecation policy.
-   *
-   * <p>Gets the access control policy for an instance resource. Returns an empty policy if an
-   * instance exists but does not have a policy set.
+   * Gets the access control policy for an instance resource. Returns an empty policy if an instance
+   * exists but does not have a policy set.
    *
    * <p>Sample code:
    *
@@ -2041,12 +1921,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * This is a private alpha release of Cloud Bigtable instance level permissions. This feature is
-   * not currently available to most Cloud Bigtable customers. This feature might be changed in
-   * backward-incompatible ways and is not recommended for production use. It is not subject to any
-   * SLA or deprecation policy.
-   *
-   * <p>Sets the access control policy on an instance resource. Replaces any existing policy.
+   * Sets the access control policy on an instance resource. Replaces any existing policy.
    *
    * <p>Sample code:
    *
@@ -2075,12 +1950,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * This is a private alpha release of Cloud Bigtable instance level permissions. This feature is
-   * not currently available to most Cloud Bigtable customers. This feature might be changed in
-   * backward-incompatible ways and is not recommended for production use. It is not subject to any
-   * SLA or deprecation policy.
-   *
-   * <p>Sets the access control policy on an instance resource. Replaces any existing policy.
+   * Sets the access control policy on an instance resource. Replaces any existing policy.
    *
    * <p>Sample code:
    *
@@ -2105,12 +1975,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * This is a private alpha release of Cloud Bigtable instance level permissions. This feature is
-   * not currently available to most Cloud Bigtable customers. This feature might be changed in
-   * backward-incompatible ways and is not recommended for production use. It is not subject to any
-   * SLA or deprecation policy.
-   *
-   * <p>Sets the access control policy on an instance resource. Replaces any existing policy.
+   * Sets the access control policy on an instance resource. Replaces any existing policy.
    *
    * <p>Sample code:
    *
@@ -2134,12 +1999,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * This is a private alpha release of Cloud Bigtable instance level permissions. This feature is
-   * not currently available to most Cloud Bigtable customers. This feature might be changed in
-   * backward-incompatible ways and is not recommended for production use. It is not subject to any
-   * SLA or deprecation policy.
-   *
-   * <p>Returns permissions that the caller has on the specified instance resource.
+   * Returns permissions that the caller has on the specified instance resource.
    *
    * <p>Sample code:
    *
@@ -2172,12 +2032,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * This is a private alpha release of Cloud Bigtable instance level permissions. This feature is
-   * not currently available to most Cloud Bigtable customers. This feature might be changed in
-   * backward-incompatible ways and is not recommended for production use. It is not subject to any
-   * SLA or deprecation policy.
-   *
-   * <p>Returns permissions that the caller has on the specified instance resource.
+   * Returns permissions that the caller has on the specified instance resource.
    *
    * <p>Sample code:
    *
@@ -2202,12 +2057,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * This is a private alpha release of Cloud Bigtable instance level permissions. This feature is
-   * not currently available to most Cloud Bigtable customers. This feature might be changed in
-   * backward-incompatible ways and is not recommended for production use. It is not subject to any
-   * SLA or deprecation policy.
-   *
-   * <p>Returns permissions that the caller has on the specified instance resource.
+   * Returns permissions that the caller has on the specified instance resource.
    *
    * <p>Sample code:
    *

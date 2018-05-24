@@ -5,11 +5,11 @@ package com.google.bigtable.admin.v2;
 
 /**
  * <pre>
- * This is a private alpha release of Cloud Bigtable snapshots. This feature
- * is not currently available to most Cloud Bigtable customers. This feature
- * might be changed in backward-incompatible ways and is not recommended for
- * production use. It is not subject to any SLA or deprecation policy.
  * The metadata for the Operation returned by CreateTableFromSnapshot.
+ * Note: This is a private alpha release of Cloud Bigtable snapshots. This
+ * feature is not currently available to most Cloud Bigtable customers. This
+ * feature might be changed in backward-incompatible ways and is not recommended
+ * for production use. It is not subject to any SLA or deprecation policy.
  * </pre>
  *
  * Protobuf type {@code google.bigtable.admin.v2.CreateTableFromSnapshotMetadata}
@@ -412,11 +412,11 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * This is a private alpha release of Cloud Bigtable snapshots. This feature
-   * is not currently available to most Cloud Bigtable customers. This feature
-   * might be changed in backward-incompatible ways and is not recommended for
-   * production use. It is not subject to any SLA or deprecation policy.
    * The metadata for the Operation returned by CreateTableFromSnapshot.
+   * Note: This is a private alpha release of Cloud Bigtable snapshots. This
+   * feature is not currently available to most Cloud Bigtable customers. This
+   * feature might be changed in backward-incompatible ways and is not recommended
+   * for production use. It is not subject to any SLA or deprecation policy.
    * </pre>
    *
    * Protobuf type {@code google.bigtable.admin.v2.CreateTableFromSnapshotMetadata}
