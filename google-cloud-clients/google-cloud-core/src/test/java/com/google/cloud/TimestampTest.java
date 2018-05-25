@@ -21,8 +21,10 @@ import static com.google.common.truth.Truth.assertThat;
 
 import com.google.common.testing.EqualsTester;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.TimeZone;
+import java.util.concurrent.TimeUnit;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
@@ -35,6 +37,9 @@ public class TimestampTest {
   private static final String TEST_TIME_ISO = "2015-10-12T15:14:54Z";
   private static final long TEST_TIME_SECONDS = 1444662894L;
   private static final long TEST_TIME_MICROSECONDS = 10000100L;
+  private static final long TEST_TIME_MILLISECONDS =
+      TimeUnit.SECONDS.toMillis(1444662894L) + TimeUnit.MICROSECONDS.toMillis(1234);
+  private static final Date TEST_DATE = new Date(TEST_TIME_MILLISECONDS);
 
   @Rule public ExpectedException expectedException = ExpectedException.none();
 
@@ -62,6 +67,24 @@ public class TimestampTest {
     Timestamp timestamp = Timestamp.ofTimeMicroseconds(TEST_TIME_MICROSECONDS);
     assertThat(timestamp.getSeconds()).isEqualTo(TEST_TIME_MICROSECONDS / 1000000L);
     assertThat(timestamp.getNanos()).isEqualTo(TEST_TIME_MICROSECONDS % 1000000L * 1000);
+  }
+
+  @Test
+  public void ofDate() {
+    Timestamp timestamp = Timestamp.of(TEST_DATE);
+    Long expectedSeconds = TimeUnit.MILLISECONDS.toSeconds(TEST_TIME_MILLISECONDS);
+    Long expectedNanos =
+        TimeUnit.MILLISECONDS.toNanos(TEST_TIME_MILLISECONDS)
+            - TimeUnit.SECONDS.toNanos(expectedSeconds);
+    assertThat(timestamp.getSeconds()).isEqualTo(expectedSeconds);
+    assertThat(timestamp.getNanos()).isEqualTo(expectedNanos);
+  }
+
+  @Test
+  public void toDate() {
+    Timestamp timestamp = Timestamp.ofTimeSecondsAndNanos(TEST_TIME_SECONDS, 1234 * 1000);
+    Date date = timestamp.toDate();
+    assertThat(TEST_TIME_MILLISECONDS).isEqualTo(date.getTime());
   }
 
   @Test

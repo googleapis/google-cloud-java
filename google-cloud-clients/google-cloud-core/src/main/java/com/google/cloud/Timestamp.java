@@ -130,6 +130,18 @@ public final class Timestamp implements Comparable<Timestamp>, Serializable {
     return ts;
   }
 
+  /**
+   * Returns a new {@code java.util.Date} corresponding to this {@code timestamp}. Any
+   * sub-millisecond precision will be stripped.
+   *
+   * @return An approximate {@code java.util.Date} representation of this {@code timestamp}.
+   */
+  public Date toDate() {
+    long secondsInMilliseconds = TimeUnit.SECONDS.toMillis(this.seconds);
+    long nanosInMilliseconds = TimeUnit.NANOSECONDS.toMillis(this.nanos);
+    return new Date(secondsInMilliseconds + nanosInMilliseconds);
+  }
+
   @Override
   public int compareTo(Timestamp other) {
     int r = Long.compare(seconds, other.seconds);
