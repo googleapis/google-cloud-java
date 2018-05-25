@@ -132,7 +132,7 @@ public class DeIdentification {
       System.out.println("Error in deidentifyWithMask: " + e.getMessage());
     }
   }
-  // [END dlp_deidentify_mask]
+  // [END dlp_deidentify_masking]
 
   // [START dlp_deidentify_fpe]
   /**
