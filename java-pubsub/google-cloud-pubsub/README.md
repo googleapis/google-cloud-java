@@ -12,9 +12,6 @@ Java idiomatic client for [Google Cloud Pub/Sub][cloud-pubsub].
 - [Product Documentation][pubsub-product-docs]
 - [Client Library Documentation][pubsub-client-lib-docs]
 
-> Note: This client is a work-in-progress, and may occasionally
-> make backwards-incompatible changes.
-
 Quickstart
 ----------
 
