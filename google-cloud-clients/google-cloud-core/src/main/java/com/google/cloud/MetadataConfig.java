@@ -57,7 +57,7 @@ public class MetadataConfig {
     return getAttribute("instance/attributes/cluster-name");
   }
 
-  private static String getAttribute(String attributeName) {
+  public static String getAttribute(String attributeName) {
     try {
       URL url = new URL(METADATA_URL + attributeName);
       HttpURLConnection connection = (HttpURLConnection) url.openConnection();
