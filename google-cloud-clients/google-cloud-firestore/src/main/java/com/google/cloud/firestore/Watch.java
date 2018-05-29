@@ -23,6 +23,7 @@ import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.retrying.TimedAttemptSettings;
 import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.ApiStreamObserver;
+import com.google.cloud.Timestamp;
 import com.google.cloud.firestore.DocumentChange.Type;
 import com.google.common.base.Preconditions;
 import com.google.firestore.v1beta1.Document;
@@ -32,7 +33,6 @@ import com.google.firestore.v1beta1.Target;
 import com.google.firestore.v1beta1.Target.QueryTarget;
 import com.google.firestore.v1beta1.TargetChange;
 import com.google.protobuf.ByteString;
-import com.google.protobuf.Timestamp;
 import io.grpc.Status;
 import io.grpc.Status.Code;
 import io.grpc.StatusException;
@@ -50,7 +50,6 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import javax.annotation.Nullable;
 import org.threeten.bp.Duration;
-import org.threeten.bp.Instant;
 
 /**
  * Watch provides listen functionality and exposes snapshot listeners. It can be used with any valid
@@ -192,7 +191,7 @@ class Watch implements ApiStreamObserver<ListenResponse> {
             if (noTargetIds && change.hasReadTime() && current) {
               // This means everything is up-to-date, so emit the current set of docs as a snapshot,
               // if there were changes.
-              pushSnapshot(change.getReadTime(), change.getResumeToken());
+              pushSnapshot(Timestamp.fromProto(change.getReadTime()), change.getResumeToken());
             }
             break;
           case ADD:
@@ -319,7 +318,7 @@ class Watch implements ApiStreamObserver<ListenResponse> {
    * Returns the current count of all documents, including the changes from the current changeMap.
    */
   private int currentSize() {
-    ChangeSet changeSet = extractChanges(Timestamp.getDefaultInstance());
+    ChangeSet changeSet = extractChanges(Timestamp.now());
     return documentSet.size() + changeSet.adds.size() - changeSet.deletes.size();
   }
 
@@ -468,11 +467,7 @@ class Watch implements ApiStreamObserver<ListenResponse> {
     final List<DocumentChange> changes = computeSnapshot(readTime);
     if (!hasPushed || !changes.isEmpty()) {
       final QuerySnapshot querySnapshot =
-          QuerySnapshot.withChanges(
-              query,
-              Instant.ofEpochSecond(readTime.getSeconds(), readTime.getNanos()),
-              documentSet,
-              changes);
+          QuerySnapshot.withChanges(query, readTime, documentSet, changes);
       userCallbackExecutor.execute(
           new Runnable() {
             @Override

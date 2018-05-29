@@ -40,9 +40,11 @@ public final class FirestoreOptions extends ServiceOptions<Firestore, FirestoreO
           .build();
   private static final String DEFAULT_HOST = FirestoreSettings.getDefaultEndpoint();
   private static final String DEFAULT_DATABASE_ID = "(default)";
+  private static final boolean DEFAULT_TIMESTAMPS_IN_SNAPSHOTS_ENABLED = false;
   private static final long serialVersionUID = -5853552236134770088L;
 
   private final String databaseId;
+  private final boolean timestampsInSnapshotsEnabled;
 
   public static class DefaultFirestoreFactory implements FirestoreFactory {
 
@@ -92,11 +94,13 @@ public final class FirestoreOptions extends ServiceOptions<Firestore, FirestoreO
   public static class Builder extends ServiceOptions.Builder<Firestore, FirestoreOptions, Builder> {
 
     private String databaseId = DEFAULT_DATABASE_ID;
+    private boolean timestampsInSnapshotsEnabled = DEFAULT_TIMESTAMPS_IN_SNAPSHOTS_ENABLED;
 
     private Builder() {}
 
     private Builder(FirestoreOptions options) {
       super(options);
+      timestampsInSnapshotsEnabled = options.timestampsInSnapshotsEnabled;
     }
 
     @Nonnull
@@ -106,18 +110,47 @@ public final class FirestoreOptions extends ServiceOptions<Firestore, FirestoreO
         throw new IllegalArgumentException(
             "Only grpc transport is allowed for " + API_SHORT_NAME + ".");
       }
-      return super.setTransportOptions(transportOptions);
+      super.setTransportOptions(transportOptions);
+      return this;
+    }
+
+    /**
+     * Enables the use of {@link com.google.cloud.Timestamp Timestamps} for timestamp fields in
+     * {@link DocumentSnapshot DocumentSnapshots}.
+     *
+     * <p>Currently, Firestore returns timestamp fields as {@link java.util.Date} but {@link
+     * java.util.Date Date} only supports millisecond precision, which leads to truncation and
+     * causes unexpected behavior when using a timestamp from a snapshot as a part of a subsequent
+     * query.
+     *
+     * <p>Setting {@code setTimestampsInSnapshotsEnabled(true)} will cause Firestore to return
+     * {@link com.google.cloud.Timestamp Timestamp} values instead of {@link java.util.Date Date},
+     * avoiding this kind of problem. To make this work you must also change any code that uses
+     * {@link java.util.Date Date} to use {@link com.google.cloud.Timestamp Timestamp} instead.
+     *
+     * <p>NOTE: in the future {@link FirestoreOptions#areTimestampsInSnapshotsEnabled} will default
+     * to true and this option will be removed so you should change your code to use Timestamp now
+     * and opt-in to this new behavior as soon as you can.
+     *
+     * @return A settings object on which the return type for timestamp fields is configured as
+     *     specified by the given {@code value}.
+     */
+    @Nonnull
+    public Builder setTimestampsInSnapshotsEnabled(boolean value) {
+      this.timestampsInSnapshotsEnabled = value;
+      return this;
+    }
+
+    @Nonnull
+    public Builder setDatabaseId(@Nonnull String databaseId) {
+      this.databaseId = databaseId;
+      return this;
     }
 
     @Override
     @Nonnull
     public FirestoreOptions build() {
       return new FirestoreOptions(this);
-    }
-
-    public Builder setDatabaseId(String databaseId) {
-      this.databaseId = databaseId;
-      return this;
     }
   }
 
@@ -126,6 +159,7 @@ public final class FirestoreOptions extends ServiceOptions<Firestore, FirestoreO
     super(FirestoreFactory.class, FirestoreRpcFactory.class, builder, new FirestoreDefaults());
 
     this.databaseId = builder.databaseId;
+    this.timestampsInSnapshotsEnabled = builder.timestampsInSnapshotsEnabled;
   }
 
   private static class FirestoreDefaults implements ServiceDefaults<Firestore, FirestoreOptions> {
@@ -152,6 +186,14 @@ public final class FirestoreOptions extends ServiceOptions<Firestore, FirestoreO
   @Nonnull
   public static GrpcTransportOptions getDefaultGrpcTransportOptions() {
     return GrpcTransportOptions.newBuilder().build();
+  }
+
+  /**
+   * Returns whether or not {@link DocumentSnapshot DocumentSnapshots} return timestamp fields as
+   * {@link com.google.cloud.Timestamp Timestamps}.
+   */
+  public boolean areTimestampsInSnapshotsEnabled() {
+    return timestampsInSnapshotsEnabled;
   }
 
   @Override

@@ -30,6 +30,7 @@ import com.google.api.gax.rpc.ApiStreamObserver;
 import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.Timestamp;
 import com.google.cloud.firestore.Query.Direction;
 import com.google.cloud.firestore.conformance.TestDefinition;
 import com.google.cloud.firestore.conformance.TestDefinition.Clause;
@@ -91,7 +92,6 @@ import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
-import org.threeten.bp.Instant;
 
 @RunWith(AllTests.class)
 public class ConformanceTest {
@@ -130,7 +130,11 @@ public class ConformanceTest {
     firestoreMock =
         Mockito.spy(
             new FirestoreImpl(
-                FirestoreOptions.newBuilder().setProjectId("projectID").build(), firestoreRpc));
+                FirestoreOptions.newBuilder()
+                    .setProjectId("projectID")
+                    .setTimestampsInSnapshotsEnabled(true)
+                    .build(),
+                firestoreRpc));
     watchQuery = collection("projects/projectID/databases/(default)/documents/C").orderBy("a");
   }
 
@@ -166,9 +170,7 @@ public class ConformanceTest {
         return com.google.cloud.firestore.Precondition.exists(precondition.getExists());
       case UPDATE_TIME:
         return com.google.cloud.firestore.Precondition.updatedAt(
-            Instant.ofEpochSecond(
-                precondition.getUpdateTime().getSeconds(),
-                precondition.getUpdateTime().getNanos()));
+            Timestamp.fromProto(precondition.getUpdateTime()));
       default:
         return com.google.cloud.firestore.Precondition.NONE;
     }
@@ -273,15 +275,14 @@ public class ConformanceTest {
 
   /** Converts a test snapshot to its API representation. */
   private QuerySnapshot convertQuerySnapshot(Snapshot testSnapshot) {
-    Instant readTime =
-        Instant.ofEpochSecond(
-            testSnapshot.getReadTime().getSeconds(), testSnapshot.getReadTime().getNanos());
+    Timestamp readTime = Timestamp.fromProto(testSnapshot.getReadTime());
 
     final List<QueryDocumentSnapshot> documentSnapshots = new ArrayList<>();
 
     for (Document document : testSnapshot.getDocsList()) {
       documentSnapshots.add(
-          QueryDocumentSnapshot.fromDocument(firestoreMock, testSnapshot.getReadTime(), document));
+          QueryDocumentSnapshot.fromDocument(
+              firestoreMock, Timestamp.fromProto(testSnapshot.getReadTime()), document));
     }
 
     DocumentSet documentSet =
@@ -314,7 +315,9 @@ public class ConformanceTest {
     for (DocChange documentChange : testSnapshot.getChangesList()) {
       QueryDocumentSnapshot documentSnapshot =
           QueryDocumentSnapshot.fromDocument(
-              firestoreMock, testSnapshot.getReadTime(), documentChange.getDoc());
+              firestoreMock,
+              Timestamp.fromProto(testSnapshot.getReadTime()),
+              documentChange.getDoc());
       DocumentChange.Type changeType = convertKind(documentChange.getKind());
       documentChanges.add(
           new DocumentChange(

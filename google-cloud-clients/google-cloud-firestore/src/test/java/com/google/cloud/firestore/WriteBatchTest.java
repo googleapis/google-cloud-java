@@ -27,11 +27,11 @@ import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.doReturn;
 
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.Timestamp;
 import com.google.cloud.firestore.spi.v1beta1.FirestoreRpc;
 import com.google.firestore.v1beta1.CommitRequest;
 import com.google.firestore.v1beta1.CommitResponse;
 import com.google.firestore.v1beta1.Write;
-import com.google.protobuf.Timestamp;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -45,7 +45,6 @@ import org.mockito.Matchers;
 import org.mockito.Mockito;
 import org.mockito.Spy;
 import org.mockito.runners.MockitoJUnitRunner;
-import org.threeten.bp.Instant;
 
 @RunWith(MockitoJUnitRunner.class)
 public class WriteBatchTest {
@@ -53,7 +52,10 @@ public class WriteBatchTest {
   @Spy
   private FirestoreImpl firestoreMock =
       new FirestoreImpl(
-          FirestoreOptions.newBuilder().setProjectId("test-project").build(),
+          FirestoreOptions.newBuilder()
+              .setProjectId("test-project")
+              .setTimestampsInSnapshotsEnabled(true)
+              .build(),
           Mockito.mock(FirestoreRpc.class));
 
   @Captor private ArgumentCaptor<CommitRequest> commitCapture;
@@ -79,13 +81,13 @@ public class WriteBatchTest {
             com.google.firestore.v1beta1.Precondition.newBuilder().setExists(true).build(),
             com.google.firestore.v1beta1.Precondition.newBuilder().setExists(true).build(),
             com.google.firestore.v1beta1.Precondition.newBuilder()
-                .setUpdateTime(Timestamp.getDefaultInstance())
+                .setUpdateTime(com.google.protobuf.Timestamp.getDefaultInstance())
                 .build(),
             com.google.firestore.v1beta1.Precondition.newBuilder()
-                .setUpdateTime(Timestamp.getDefaultInstance())
+                .setUpdateTime(com.google.protobuf.Timestamp.getDefaultInstance())
                 .build());
 
-    Precondition updateTime = Precondition.updatedAt(Instant.ofEpochSecond(0, 0));
+    Precondition updateTime = Precondition.updatedAt(Timestamp.ofTimeSecondsAndNanos(0, 0));
 
     batch.update(documentReference, LocalFirestoreHelper.SINGLE_FIELD_MAP);
     batch.update(documentReference, "foo", "bar");
@@ -96,7 +98,7 @@ public class WriteBatchTest {
     List<Write> writes = new ArrayList<>();
 
     for (int i = 0; i < writeResults.size(); ++i) {
-      assertEquals(Instant.ofEpochSecond(i, i), writeResults.get(i).getUpdateTime());
+      assertEquals(Timestamp.ofTimeSecondsAndNanos(i, i), writeResults.get(i).getUpdateTime());
       writes.add(
           update(
               LocalFirestoreHelper.SINGLE_FIELD_PROTO,
@@ -129,7 +131,7 @@ public class WriteBatchTest {
 
     List<WriteResult> writeResults = batch.commit().get();
     for (int i = 0; i < writeResults.size(); ++i) {
-      assertEquals(Instant.ofEpochSecond(i, i), writeResults.get(i).getUpdateTime());
+      assertEquals(Timestamp.ofTimeSecondsAndNanos(i, i), writeResults.get(i).getUpdateTime());
     }
 
     CommitRequest commitRequest = commitCapture.getValue();
@@ -164,7 +166,7 @@ public class WriteBatchTest {
     List<Write> writes = new ArrayList<>();
 
     for (int i = 0; i < writeResults.size(); ++i) {
-      assertEquals(Instant.ofEpochSecond(i, i), writeResults.get(i).getUpdateTime());
+      assertEquals(Timestamp.ofTimeSecondsAndNanos(i, i), writeResults.get(i).getUpdateTime());
       writes.add(create(LocalFirestoreHelper.SINGLE_FIELD_PROTO));
     }
 
@@ -183,7 +185,7 @@ public class WriteBatchTest {
     batch.delete(documentReference);
     writes.add(delete());
 
-    batch.delete(documentReference, Precondition.updatedAt(Instant.ofEpochSecond(1, 2)));
+    batch.delete(documentReference, Precondition.updatedAt(Timestamp.ofTimeSecondsAndNanos(1, 2)));
     com.google.firestore.v1beta1.Precondition.Builder precondition =
         com.google.firestore.v1beta1.Precondition.newBuilder();
     precondition.getUpdateTimeBuilder().setSeconds(1).setNanos(2);
@@ -192,7 +194,7 @@ public class WriteBatchTest {
     List<WriteResult> writeResults = batch.commit().get();
 
     for (int i = 0; i < writeResults.size(); ++i) {
-      assertEquals(Instant.ofEpochSecond(i, i), writeResults.get(i).getUpdateTime());
+      assertEquals(Timestamp.ofTimeSecondsAndNanos(i, i), writeResults.get(i).getUpdateTime());
     }
 
     CommitRequest commitRequest = commitCapture.getValue();

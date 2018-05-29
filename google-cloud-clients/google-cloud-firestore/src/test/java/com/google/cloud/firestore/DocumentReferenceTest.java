@@ -34,6 +34,7 @@ import static com.google.cloud.firestore.LocalFirestoreHelper.SINGLE_FIELD_MAP;
 import static com.google.cloud.firestore.LocalFirestoreHelper.SINGLE_FIELD_OBJECT;
 import static com.google.cloud.firestore.LocalFirestoreHelper.SINGLE_FIELD_PROTO;
 import static com.google.cloud.firestore.LocalFirestoreHelper.SINGLE_WRITE_COMMIT_RESPONSE;
+import static com.google.cloud.firestore.LocalFirestoreHelper.TIMESTAMP;
 import static com.google.cloud.firestore.LocalFirestoreHelper.UPDATE_PRECONDITION;
 import static com.google.cloud.firestore.LocalFirestoreHelper.assertCommitEquals;
 import static com.google.cloud.firestore.LocalFirestoreHelper.commit;
@@ -60,6 +61,7 @@ import static org.mockito.Mockito.doReturn;
 import com.google.api.gax.rpc.ApiStreamObserver;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.Timestamp;
 import com.google.cloud.firestore.spi.v1beta1.FirestoreRpc;
 import com.google.common.collect.ImmutableList;
 import com.google.firestore.v1beta1.BatchGetDocumentsRequest;
@@ -67,7 +69,6 @@ import com.google.firestore.v1beta1.BatchGetDocumentsResponse;
 import com.google.firestore.v1beta1.CommitRequest;
 import com.google.firestore.v1beta1.CommitResponse;
 import com.google.firestore.v1beta1.Value;
-import com.google.protobuf.Timestamp;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -83,7 +84,6 @@ import org.mockito.Matchers;
 import org.mockito.Mockito;
 import org.mockito.Spy;
 import org.mockito.runners.MockitoJUnitRunner;
-import org.threeten.bp.Instant;
 
 @RunWith(MockitoJUnitRunner.class)
 public class DocumentReferenceTest {
@@ -91,7 +91,10 @@ public class DocumentReferenceTest {
   @Spy
   private FirestoreImpl firestoreMock =
       new FirestoreImpl(
-          FirestoreOptions.newBuilder().setProjectId("test-project").build(),
+          FirestoreOptions.newBuilder()
+              .setProjectId("test-project")
+              .setTimestampsInSnapshotsEnabled(true)
+              .build(),
           Mockito.mock(FirestoreRpc.class));
 
   @Captor private ArgumentCaptor<CommitRequest> commitCapture;
@@ -171,6 +174,8 @@ public class DocumentReferenceTest {
             streamObserverCapture.capture(),
             Matchers.<ServerStreamingCallable>any());
 
+    doReturn(true).when(firestoreMock).areTimestampsInSnapshotsEnabled();
+
     DocumentSnapshot snapshot = documentReference.get().get();
     assertEquals(snapshot.getData(), ALL_SUPPORTED_TYPES_MAP);
 
@@ -191,6 +196,7 @@ public class DocumentReferenceTest {
     assertEquals((Long) 0L, snapshot.getLong("longValue"));
     assertEquals(true, snapshot.getBoolean("trueValue"));
     assertEquals(DATE, snapshot.getDate("dateValue"));
+    assertEquals(TIMESTAMP, snapshot.getTimestamp("timestampValue"));
 
     assertEquals(BLOB, snapshot.getBlob("bytesValue"));
     assertEquals(BLOB.hashCode(), snapshot.getBlob("bytesValue").hashCode());
@@ -208,9 +214,9 @@ public class DocumentReferenceTest {
     assertFalse(snapshot.contains("objectValue.bar"));
     assertTrue(snapshot.exists());
 
-    assertEquals(Instant.ofEpochSecond(1, 2), snapshot.getCreateTime());
-    assertEquals(Instant.ofEpochSecond(3, 4), snapshot.getUpdateTime());
-    assertEquals(Instant.ofEpochSecond(5, 6), snapshot.getReadTime());
+    assertEquals(Timestamp.ofTimeSecondsAndNanos(1, 2), snapshot.getCreateTime());
+    assertEquals(Timestamp.ofTimeSecondsAndNanos(3, 4), snapshot.getUpdateTime());
+    assertEquals(Timestamp.ofTimeSecondsAndNanos(5, 6), snapshot.getReadTime());
 
     assertEquals(get(), getAllCapture.getValue());
   }
@@ -232,11 +238,38 @@ public class DocumentReferenceTest {
   }
 
   @Test
+  public void deserializesDates() throws Exception {
+    doAnswer(getAllResponse(ALL_SUPPORTED_TYPES_PROTO))
+        .when(firestoreMock)
+        .streamRequest(
+            getAllCapture.capture(),
+            streamObserverCapture.capture(),
+            Matchers.<ServerStreamingCallable>any());
+
+    DocumentSnapshot snapshot = documentReference.get().get();
+
+    doReturn(false).when(firestoreMock).areTimestampsInSnapshotsEnabled();
+
+    assertEquals(DATE, snapshot.get("dateValue"));
+    assertEquals(TIMESTAMP.toDate(), snapshot.get("timestampValue"));
+    assertEquals(DATE, snapshot.getData().get("dateValue"));
+    assertEquals(TIMESTAMP.toDate(), snapshot.getData().get("timestampValue"));
+
+    doReturn(true).when(firestoreMock).areTimestampsInSnapshotsEnabled();
+
+    assertEquals(Timestamp.of(DATE), snapshot.get("dateValue"));
+    assertEquals(TIMESTAMP, snapshot.get("timestampValue"));
+    assertEquals(Timestamp.of(DATE), snapshot.getData().get("dateValue"));
+    assertEquals(TIMESTAMP, snapshot.getData().get("timestampValue"));
+  }
+
+  @Test
   public void notFound() throws Exception {
     final BatchGetDocumentsResponse.Builder getDocumentResponse =
         BatchGetDocumentsResponse.newBuilder();
     getDocumentResponse.setMissing(DOCUMENT_NAME);
-    getDocumentResponse.setReadTime(Timestamp.newBuilder().setSeconds(5).setNanos(6));
+    getDocumentResponse.setReadTime(
+        com.google.protobuf.Timestamp.newBuilder().setSeconds(5).setNanos(6));
 
     doAnswer(streamingResponse(getDocumentResponse.build()))
         .when(firestoreMock)
@@ -248,7 +281,7 @@ public class DocumentReferenceTest {
     DocumentSnapshot snapshot = documentReference.get().get();
     assertEquals(documentReference, snapshot.getReference());
     assertFalse(snapshot.exists());
-    assertEquals(snapshot.getReadTime(), Instant.ofEpochSecond(5, 6));
+    assertEquals(snapshot.getReadTime(), Timestamp.ofTimeSecondsAndNanos(5, 6));
     assertNull(snapshot.getData());
   }
 
@@ -261,7 +294,7 @@ public class DocumentReferenceTest {
 
     documentReference.delete().get();
     documentReference
-        .delete(Precondition.updatedAt(Instant.ofEpochSecond(479978400, 123000000)))
+        .delete(Precondition.updatedAt(Timestamp.ofTimeSecondsAndNanos(479978400, 123000000)))
         .get();
 
     List<CommitRequest> commitRequests = commitCapture.getAllValues();
@@ -565,6 +598,7 @@ public class DocumentReferenceTest {
             "second.negInfValue",
             "second.nullValue",
             "second.objectValue.foo",
+            "second.timestampValue",
             "second.trueValue");
 
     CommitRequest expectedCommit = commit(set(nestedUpdate, updateMask));
@@ -737,7 +771,8 @@ public class DocumentReferenceTest {
         .sendRequest(
             commitCapture.capture(), Matchers.<UnaryCallable<CommitRequest, CommitResponse>>any());
 
-    Precondition options = Precondition.updatedAt(Instant.ofEpochSecond(479978400, 123000000));
+    Precondition options =
+        Precondition.updatedAt(Timestamp.ofTimeSecondsAndNanos(479978400, 123000000));
 
     documentReference.update(SINGLE_FIELD_MAP, options).get();
     documentReference.update(options, "foo", "bar").get();
