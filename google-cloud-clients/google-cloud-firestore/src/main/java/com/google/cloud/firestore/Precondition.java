@@ -26,8 +26,8 @@ public final class Precondition {
   /** An empty Precondition that adds no enforcements */
   public static final Precondition NONE = new Precondition(null, null);
 
-  private Boolean exists;
-  private Timestamp updateTime;
+  private final Boolean exists;
+  private final Timestamp updateTime;
 
   private Precondition(Boolean exists, Timestamp updateTime) {
     this.exists = exists;

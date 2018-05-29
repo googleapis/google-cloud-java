@@ -49,9 +49,9 @@ public class DocumentSnapshot {
   private final FirestoreImpl firestore;
   private final DocumentReference docRef;
   @Nullable private final Map<String, Value> fields;
-  @Nullable private Timestamp readTime;
-  @Nullable private Timestamp updateTime;
-  @Nullable private Timestamp createTime;
+  @Nullable private final Timestamp readTime;
+  @Nullable private final Timestamp updateTime;
+  @Nullable private final Timestamp createTime;
 
   DocumentSnapshot(
       FirestoreImpl firestore,

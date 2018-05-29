@@ -201,6 +201,19 @@ public class ITSystemTest {
   }
 
   @Test
+  public void updateMicrosecondTimestamp() throws Exception {
+    DocumentReference documentReference = addDocument("time", Timestamp.ofTimeSecondsAndNanos(0, 123000));
+    DocumentSnapshot documentSnapshot = documentReference.get().get();
+
+    Timestamp timestamp = documentSnapshot.getTimestamp("time");
+    documentReference.update("time", timestamp);
+
+    documentSnapshot = documentReference.get().get();
+    timestamp = documentSnapshot.getTimestamp("time");
+    assertEquals(123000, timestamp.getNanos());
+  }
+
+  @Test
   public void fieldDelete() throws Exception {
     Map<String, Object> fields = new HashMap<>();
     fields.put("foo1", "bar1");
@@ -243,25 +256,6 @@ public class ITSystemTest {
     Iterator<QueryDocumentSnapshot> documents = querySnapshot.iterator();
     assertEquals("bar", documents.next().get("foo"));
     assertEquals("bar", documents.next().get("foo"));
-  }
-
-  @Test
-  public void queryForServerTimestamps() throws Exception {
-    DocumentReference documentReference = addDocument("serverTime", FieldValue.serverTimestamp());
-    DocumentSnapshot documentSnapshot = documentReference.get().get();
-    Timestamp serverTime = documentSnapshot.getTimestamp("serverTime");
-
-    if (TimeUnit.NANOSECONDS.toMicros(serverTime.getNanos()) > 0) {
-      // If serverTime has a microsecond component, this query produces no results as `getDate()`
-      // truncates to milliseconds.
-      Query query = randomColl.whereEqualTo("foo", documentSnapshot.getDate("serverTime"));
-      QuerySnapshot querySnapshot = query.get().get();
-      assertEquals(0, querySnapshot.size());
-    }
-
-    Query query = randomColl.whereEqualTo("serverTime", serverTime);
-    QuerySnapshot querySnapshot = query.get().get();
-    assertEquals(1, querySnapshot.size());
   }
 
   @Test

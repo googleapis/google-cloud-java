@@ -699,7 +699,7 @@ public final class LocalFirestoreHelper {
                     .setTimestampValue(
                         com.google.protobuf.Timestamp.newBuilder()
                             .setSeconds(479978400)
-                            .setNanos(123000000))
+                            .setNanos(123000000))  // Dates only support millisecond precision.
                     .build())
             .put(
                 "timestampValue",
@@ -707,7 +707,7 @@ public final class LocalFirestoreHelper {
                     .setTimestampValue(
                         com.google.protobuf.Timestamp.newBuilder()
                             .setSeconds(479978400)
-                            .setNanos(123000))
+                            .setNanos(123000))  // Timestamps supports microsecond precision.
                     .build())
             .put(
                 "arrayValue",
