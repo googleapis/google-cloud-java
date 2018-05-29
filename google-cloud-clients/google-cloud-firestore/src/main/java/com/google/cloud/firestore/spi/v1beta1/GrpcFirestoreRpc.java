@@ -21,7 +21,6 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.grpc.GrpcCallContext;
 import com.google.api.gax.grpc.GrpcTransportChannel;
-import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.HeaderProvider;
@@ -105,11 +104,8 @@ public class GrpcFirestoreRpc implements FirestoreRpc {
         DatabaseRootName databaseName =
             DatabaseRootName.of(options.getProjectId(), options.getDatabaseId());
 
-        settingsBuilder.setCredentialsProvider(
-            GrpcTransportOptions.setUpCredentialsProvider(options));
-        settingsBuilder.setTransportChannelProvider(
-            GrpcTransportOptions.setUpChannelProvider(
-                FirestoreSettings.defaultGrpcTransportProviderBuilder(), options));
+        settingsBuilder.setCredentialsProvider(options.getCredentialsProvider());
+        settingsBuilder.setTransportChannelProvider(options.getTransportChannelProvider());
 
         HeaderProvider internalHeaderProvider =
             FirestoreSettings.defaultApiClientHeaderProviderBuilder()
