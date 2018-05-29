@@ -80,7 +80,7 @@ If you're using IntelliJ or Eclipse, you can add client libraries to your projec
 
 Besides adding client libraries, the plugins provide additional functionality, such as service account key management. Refer to the documentation for each plugin for more details.
 
-These client libraries can be used on App Engine standard for Java 8 runtime, App Engine flexible (including the Compat runtime).  Most of the libraries do not work on the App Engine standard for Java 7 runtime. However, Datastore, Storage, and Bigquery should work.
+These client libraries can be used on App Engine standard for Java 8 runtime and App Engine flexible (including the Compat runtime).  Most of the libraries do not work on the App Engine standard for Java 7 runtime. However, Datastore, Storage, and Bigquery should work.
 
 If you are running into problems with version conflicts, see [Version Management](#version-management).
 
