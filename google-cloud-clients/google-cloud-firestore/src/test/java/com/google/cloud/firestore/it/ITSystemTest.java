@@ -201,7 +201,7 @@ public class ITSystemTest {
   }
 
   @Test
-  public void updateMicrosecondTimestamp() throws Exception {
+  public void timestampDoesntGetTruncatedDuringUpdate() throws Exception {
     DocumentReference documentReference = addDocument("time", Timestamp.ofTimeSecondsAndNanos(0, 123000));
     DocumentSnapshot documentSnapshot = documentReference.get().get();
 
@@ -263,6 +263,23 @@ public class ITSystemTest {
     QuerySnapshot querySnapshot = randomColl.get().get();
     assertTrue(querySnapshot.isEmpty());
     assertNotNull(querySnapshot.getReadTime());
+  }
+
+  @Test
+  public void queryWithMicrosecondPrecision() throws Exception {
+    Timestamp microsecondTimestamp = Timestamp.ofTimeSecondsAndNanos(0, 123000);
+
+    DocumentReference documentReference = addDocument("time",  microsecondTimestamp);
+    DocumentSnapshot documentSnapshot = documentReference.get().get();
+
+    Query query = randomColl.whereEqualTo("time", microsecondTimestamp);
+    QuerySnapshot querySnapshot = query.get().get();
+    assertEquals(1, querySnapshot.size());
+
+    // Using `.toDate()` truncates to millseconds, and hence the query doesn't match.
+    query = randomColl.whereEqualTo("time", microsecondTimestamp.toDate());
+    querySnapshot = query.get().get();
+    assertEquals(0, querySnapshot.size());
   }
 
   @Test
