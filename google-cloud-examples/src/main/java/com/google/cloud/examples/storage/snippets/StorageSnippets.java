@@ -1154,7 +1154,6 @@ public class StorageSnippets {
     // Get specific file from specified bucket
     Blob blob = storage.get(BlobId.of(bucketName, srcFilename));
 
-
     // Download file to specified path
     blob.downloadTo(destFilePath, Blob.BlobSourceOption.userProject(projectId));
     // [END storage_download_file_requester_pays]
