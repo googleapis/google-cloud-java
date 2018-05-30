@@ -717,8 +717,10 @@ public class HttpStorageRpc implements StorageRpc {
       GenericUrl url = req.buildHttpRequest().getUrl();
       String scheme = url.getScheme();
       String host = url.getHost();
+      int port = url.getPort();
+      port = port < 0 ? port : url.toURL().getDefaultPort();
       String path = "/upload" + url.getRawPath();
-      url = new GenericUrl(scheme + "://" + host + path);
+      url = new GenericUrl(scheme + "://" + host + ":" + port + path);
       url.set("uploadType", "resumable");
       url.set("name", object.getName());
       for (Option option : options.keySet()) {
