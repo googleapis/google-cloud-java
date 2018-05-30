@@ -72,6 +72,8 @@ public class ITStorageSnippets {
   private static final String USER_EMAIL = "google-cloud-java-tests@"
       + "java-docs-samples-tests.iam.gserviceaccount.com";
 
+  private static final String KMS_KEY_NAME = ""; //TODO: Supply KMS_KEY_NAME?
+
   private static Storage storage;
   private static StorageSnippets storageSnippets;
   private static List<String> bucketsToCleanUp;
@@ -176,6 +178,16 @@ public class ITStorageSnippets {
     assertEquals("Hello, World!", new String(encryptedContent));
     blob = storageSnippets.getBlobFromId(BUCKET, blobName);
     assertEquals("text/plain", blob.getContentType());
+  }
+
+  @Test
+  public void testCreateKMSEncryptedBlob() {
+    String kmsKeyName = "";
+    String blobName = "kms-encrypted-blob";
+
+    Blob blob = storageSnippets.createKmsEncrpytedBlob(BUCKET, blobName, kmsKeyName);
+
+    assertNotNull(blob);
   }
 
   @Test
@@ -428,5 +440,13 @@ public class ITStorageSnippets {
     assertArrayEquals(BLOB_BYTE_CONTENT, readBytes);
     bucket = storageSnippets.disableRequesterPays(BUCKET);
     assertFalse(bucket.requesterPays());
+  }
+
+  @Test
+  public void testDefaultKMSKey(){
+    Bucket bucket = storageSnippets.setDefaultKMSKey(BUCKET, KMS_KEY_NAME);
+    assertTrue(KMS_KEY_NAME.equals(bucket.getDefaultKmsKeyName()));
+    // Remove default key
+    storageSnippets.setDefaultKMSKey(BUCKET,"");
   }
 }

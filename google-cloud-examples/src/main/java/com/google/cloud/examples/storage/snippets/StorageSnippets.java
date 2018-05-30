@@ -180,6 +180,27 @@ public class StorageSnippets {
   }
 
   /**
+   * Example of uploading a blob encrypted by a KMS-key.
+   */
+  // [TARGET create(BlobInfo, InputStream, BlobWriteOption...)]
+  // [VARIABLE "my_unique_bucket"]
+  // [VARIABLE "my_blob_name"]
+  // [VARIABLE "kms_key_name"]
+  public Blob createKmsEncrpytedBlob(String bucketName, String blobName, String kmsKeyName) {
+    // [START storage_upload_with_kms_key]
+    InputStream content = new ByteArrayInputStream("Hello, World!".getBytes(UTF_8));
+
+    BlobId blobId = BlobId.of(bucketName, blobName);
+    BlobInfo blobInfo = BlobInfo.newBuilder(blobId)
+        .setContentType("text/plain")
+        .build();
+    Blob blob = storage.create(blobInfo, content, BlobWriteOption.kmsKeyName(kmsKeyName));
+    // [END storage_upload_with_kms_key]
+
+    return blob;
+  }
+
+  /**
    * Example of getting information on a bucket, only if its metageneration matches a value,
    * otherwise a {@link StorageException} is thrown.
    */
@@ -1133,8 +1154,34 @@ public class StorageSnippets {
     // Get specific file from specified bucket
     Blob blob = storage.get(BlobId.of(bucketName, srcFilename));
 
+
     // Download file to specified path
     blob.downloadTo(destFilePath, Blob.BlobSourceOption.userProject(projectId));
     // [END storage_download_file_requester_pays]
+  }
+
+
+  /**
+   * Example of retrieving Requester pays status on a bucket.
+   */
+  public Bucket setDefaultKMSKey(String bucketName, String kmsKeyName) throws StorageException {
+    // [START storage_set_bucket_default_kms_key]
+    // Instantiate a Google Cloud Storage client
+    Storage storage = StorageOptions.getDefaultInstance().getService();
+
+    // The name of the KMS-key to use as a default
+    // Key names are provided in the following format:
+    // 'projects/<PROJECT>/locations/<LOCATION>/keyRings/<RING_NAME>/cryptoKeys/<KEY_NAME>'
+    // String kmsKeyname = ""
+
+    BucketInfo bucketInfo = BucketInfo.newBuilder(bucketName)
+        .setDefaultKmsKeyName(kmsKeyName)
+        .build();
+
+    Bucket bucket = storage.update(bucketInfo);
+
+    System.out.println("Default KMS Key Name: " + bucket.getDefaultKmsKeyName());
+    // [END storage_set_bucket_default_kms_key]
+    return bucket;
   }
 }
