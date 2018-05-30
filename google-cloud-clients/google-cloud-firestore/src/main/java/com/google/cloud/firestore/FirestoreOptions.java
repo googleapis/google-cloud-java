@@ -155,15 +155,11 @@ public final class FirestoreOptions extends ServiceOptions<Firestore, FirestoreO
     /**
      * Sets the {@link CredentialsProvider} to use with this Firestore client.
      *
-     * @param credentialsProvider A GoogleCredentialsProvider object that defines the credential
-     * provider for this client.
+     * @param credentialsProvider A CredentialsProvider object that defines the credential provider
+     * for this client.
      */
     @Nonnull
     public Builder setCredentialsProvider(@Nonnull CredentialsProvider credentialsProvider) {
-      if (!(credentialsProvider instanceof GoogleCredentialsProvider)) {
-        throw new IllegalArgumentException(
-            "Only Google credentials are allowed for " + API_SHORT_NAME + ".");
-      }
       this.credentialsProvider = credentialsProvider;
       return this;
     }
