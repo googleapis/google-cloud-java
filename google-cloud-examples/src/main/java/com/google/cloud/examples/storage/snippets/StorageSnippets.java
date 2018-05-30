@@ -168,13 +168,13 @@ public class StorageSnippets {
   // [VARIABLE "my_encryption_key"]
   public Blob createEncryptedBlob(String bucketName, String blobName, String encryptionKey) {
     // [START storageUploadEncryptedFile]
-    InputStream content = new ByteArrayInputStream("Hello, World!".getBytes(UTF_8));
+    byte[] data = "Hello, World!".getBytes(UTF_8);
 
     BlobId blobId = BlobId.of(bucketName, blobName);
     BlobInfo blobInfo = BlobInfo.newBuilder(blobId)
         .setContentType("text/plain")
         .build();
-    Blob blob = storage.create(blobInfo, content, BlobWriteOption.encryptionKey(encryptionKey));
+    Blob blob = storage.create(blobInfo, data, BlobTargetOption.encryptionKey(encryptionKey));
     // [END storageUploadEncryptedFile]
     return blob;
   }
@@ -188,13 +188,13 @@ public class StorageSnippets {
   // [VARIABLE "kms_key_name"]
   public Blob createKmsEncrpytedBlob(String bucketName, String blobName, String kmsKeyName) {
     // [START storage_upload_with_kms_key]
-    InputStream content = new ByteArrayInputStream("Hello, World!".getBytes(UTF_8));
+    byte[] data = "Hello, World!".getBytes(UTF_8);
 
     BlobId blobId = BlobId.of(bucketName, blobName);
     BlobInfo blobInfo = BlobInfo.newBuilder(blobId)
         .setContentType("text/plain")
         .build();
-    Blob blob = storage.create(blobInfo, content, BlobWriteOption.kmsKeyName(kmsKeyName));
+    Blob blob = storage.create(blobInfo, data, BlobTargetOption.kmsKeyName(kmsKeyName));
     // [END storage_upload_with_kms_key]
 
     return blob;
