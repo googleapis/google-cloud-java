@@ -72,7 +72,8 @@ public class ITStorageSnippets {
   private static final String USER_EMAIL = "google-cloud-java-tests@"
       + "java-docs-samples-tests.iam.gserviceaccount.com";
 
-  private static final String KMS_KEY_NAME = ""; //TODO: Supply KMS_KEY_NAME?
+  private static final String KMS_KEY_NAME = "projects/gcloud-devel/locations/us/"
+      + "keyRings/gcs_kms_key_ring_us/cryptoKeys/key";
 
   private static Storage storage;
   private static StorageSnippets storageSnippets;
@@ -447,6 +448,6 @@ public class ITStorageSnippets {
     Bucket bucket = storageSnippets.setDefaultKmsKey(BUCKET, KMS_KEY_NAME);
     assertTrue(KMS_KEY_NAME.equals(bucket.getDefaultKmsKeyName()));
     // Remove default key
-    storageSnippets.setDefaultKmsKey(BUCKET,"");
+    storageSnippets.setDefaultKmsKey(BUCKET,null);
   }
 }

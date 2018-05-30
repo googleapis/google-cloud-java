@@ -180,13 +180,13 @@ public class StorageSnippets {
   }
 
   /**
-   * Example of uploading a blob encrypted by a KMS-key.
+   * Example of uploading a blob encrypted service side with a Cloud KMS key.
    */
   public Blob createKmsEncrpytedBlob(String bucketName, String blobName, String kmsKeyName) {
     // [START storage_upload_with_kms_key]
     byte[] data = "Hello, World!".getBytes(UTF_8);
 
-    // The name of the existing bucket to enable requester-paying for, e.g. "my-bucket"
+    // The name of the existing bucket to set a default KMS key for, e.g. "my-bucket"
     // String bucketName = "my-bucket"
 
     // The name of the KMS-key to use as a default
@@ -1164,14 +1164,14 @@ public class StorageSnippets {
 
 
   /**
-   * Example of retrieving Requester pays status on a bucket.
+   * Example of setting a default KMS key on a bucket.
    */
   public Bucket setDefaultKmsKey(String bucketName, String kmsKeyName) throws StorageException {
     // [START storage_set_bucket_default_kms_key]
     // Instantiate a Google Cloud Storage client
     Storage storage = StorageOptions.getDefaultInstance().getService();
 
-    // The name of the existing bucket to enable requester-paying for, e.g. "my-bucket"
+    // The name of the existing bucket to set a default KMS key for, e.g. "my-bucket"
     // String bucketName = "my-bucket"
 
     // The name of the KMS-key to use as a default
