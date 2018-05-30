@@ -444,9 +444,9 @@ public class ITStorageSnippets {
 
   @Test
   public void testDefaultKMSKey(){
-    Bucket bucket = storageSnippets.setDefaultKMSKey(BUCKET, KMS_KEY_NAME);
+    Bucket bucket = storageSnippets.setDefaultKmsKey(BUCKET, KMS_KEY_NAME);
     assertTrue(KMS_KEY_NAME.equals(bucket.getDefaultKmsKeyName()));
     // Remove default key
-    storageSnippets.setDefaultKMSKey(BUCKET,"");
+    storageSnippets.setDefaultKmsKey(BUCKET,"");
   }
 }
