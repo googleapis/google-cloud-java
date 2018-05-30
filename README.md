@@ -165,7 +165,7 @@ Storage storage = StorageOptions.getDefaultInstance().getService();
   case, the access token will not be automatically refreshed):
   ```java
   Storage storage = StorageOptions.newBuilder()
-      .setCredentials(new GoogleCredentials(new AccessToken(accessToken, expirationTime)))
+      .setCredentials(GoogleCredentials.create(new AccessToken(accessToken, expirationTime)))
       .build()
       .getService();
   ```
