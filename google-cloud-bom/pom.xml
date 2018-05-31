@@ -756,6 +756,16 @@
         <version>0.14.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-texttospeech-v1beta1:current} -->
       </dependency>
       <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-texttospeech-v1</artifactId>
+        <version>0.14.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-texttospeech-v1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-texttospeech-v1</artifactId>
+        <version>0.14.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-texttospeech-v1:current} -->
+      </dependency>
+      <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-trace</artifactId>
         <version>0.49.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-trace:current} -->
