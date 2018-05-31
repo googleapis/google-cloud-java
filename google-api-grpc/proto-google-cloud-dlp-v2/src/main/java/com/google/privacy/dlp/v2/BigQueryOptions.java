@@ -22,6 +22,7 @@ private static final long serialVersionUID = 0L;
   private BigQueryOptions() {
     identifyingFields_ = java.util.Collections.emptyList();
     rowsLimit_ = 0L;
+    sampleMethod_ = 0;
   }
 
   @java.lang.Override
@@ -82,6 +83,12 @@ private static final long serialVersionUID = 0L;
             rowsLimit_ = input.readInt64();
             break;
           }
+          case 32: {
+            int rawValue = input.readEnum();
+
+            sampleMethod_ = rawValue;
+            break;
+          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -107,6 +114,135 @@ private static final long serialVersionUID = 0L;
     return com.google.privacy.dlp.v2.DlpStorage.internal_static_google_privacy_dlp_v2_BigQueryOptions_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.privacy.dlp.v2.BigQueryOptions.class, com.google.privacy.dlp.v2.BigQueryOptions.Builder.class);
+  }
+
+  /**
+   * <pre>
+   * How to sample rows if not all rows are scanned. Meaningful only when used
+   * in conjunction with rows_limit. If not specified, scanning would start
+   * from the top.
+   * </pre>
+   *
+   * Protobuf enum {@code google.privacy.dlp.v2.BigQueryOptions.SampleMethod}
+   */
+  public enum SampleMethod
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>SAMPLE_METHOD_UNSPECIFIED = 0;</code>
+     */
+    SAMPLE_METHOD_UNSPECIFIED(0),
+    /**
+     * <pre>
+     * Scan from the top (default).
+     * </pre>
+     *
+     * <code>TOP = 1;</code>
+     */
+    TOP(1),
+    /**
+     * <pre>
+     * Randomly pick the row to start scanning. The scanned rows are contiguous.
+     * </pre>
+     *
+     * <code>RANDOM_START = 2;</code>
+     */
+    RANDOM_START(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <code>SAMPLE_METHOD_UNSPECIFIED = 0;</code>
+     */
+    public static final int SAMPLE_METHOD_UNSPECIFIED_VALUE = 0;
+    /**
+     * <pre>
+     * Scan from the top (default).
+     * </pre>
+     *
+     * <code>TOP = 1;</code>
+     */
+    public static final int TOP_VALUE = 1;
+    /**
+     * <pre>
+     * Randomly pick the row to start scanning. The scanned rows are contiguous.
+     * </pre>
+     *
+     * <code>RANDOM_START = 2;</code>
+     */
+    public static final int RANDOM_START_VALUE = 2;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static SampleMethod valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static SampleMethod forNumber(int value) {
+      switch (value) {
+        case 0: return SAMPLE_METHOD_UNSPECIFIED;
+        case 1: return TOP;
+        case 2: return RANDOM_START;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<SampleMethod>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        SampleMethod> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<SampleMethod>() {
+            public SampleMethod findValueByNumber(int number) {
+              return SampleMethod.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.google.privacy.dlp.v2.BigQueryOptions.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final SampleMethod[] VALUES = values();
+
+    public static SampleMethod valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private SampleMethod(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.privacy.dlp.v2.BigQueryOptions.SampleMethod)
   }
 
   private int bitField0_;
@@ -218,6 +354,22 @@ private static final long serialVersionUID = 0L;
     return rowsLimit_;
   }
 
+  public static final int SAMPLE_METHOD_FIELD_NUMBER = 4;
+  private int sampleMethod_;
+  /**
+   * <code>.google.privacy.dlp.v2.BigQueryOptions.SampleMethod sample_method = 4;</code>
+   */
+  public int getSampleMethodValue() {
+    return sampleMethod_;
+  }
+  /**
+   * <code>.google.privacy.dlp.v2.BigQueryOptions.SampleMethod sample_method = 4;</code>
+   */
+  public com.google.privacy.dlp.v2.BigQueryOptions.SampleMethod getSampleMethod() {
+    com.google.privacy.dlp.v2.BigQueryOptions.SampleMethod result = com.google.privacy.dlp.v2.BigQueryOptions.SampleMethod.valueOf(sampleMethod_);
+    return result == null ? com.google.privacy.dlp.v2.BigQueryOptions.SampleMethod.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -239,6 +391,9 @@ private static final long serialVersionUID = 0L;
     if (rowsLimit_ != 0L) {
       output.writeInt64(3, rowsLimit_);
     }
+    if (sampleMethod_ != com.google.privacy.dlp.v2.BigQueryOptions.SampleMethod.SAMPLE_METHOD_UNSPECIFIED.getNumber()) {
+      output.writeEnum(4, sampleMethod_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -258,6 +413,10 @@ private static final long serialVersionUID = 0L;
     if (rowsLimit_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(3, rowsLimit_);
+    }
+    if (sampleMethod_ != com.google.privacy.dlp.v2.BigQueryOptions.SampleMethod.SAMPLE_METHOD_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(4, sampleMethod_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -284,6 +443,7 @@ private static final long serialVersionUID = 0L;
         .equals(other.getIdentifyingFieldsList());
     result = result && (getRowsLimit()
         == other.getRowsLimit());
+    result = result && sampleMethod_ == other.sampleMethod_;
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -306,6 +466,8 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + ROWS_LIMIT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getRowsLimit());
+    hash = (37 * hash) + SAMPLE_METHOD_FIELD_NUMBER;
+    hash = (53 * hash) + sampleMethod_;
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -454,6 +616,8 @@ private static final long serialVersionUID = 0L;
       }
       rowsLimit_ = 0L;
 
+      sampleMethod_ = 0;
+
       return this;
     }
 
@@ -493,6 +657,7 @@ private static final long serialVersionUID = 0L;
         result.identifyingFields_ = identifyingFieldsBuilder_.build();
       }
       result.rowsLimit_ = rowsLimit_;
+      result.sampleMethod_ = sampleMethod_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -566,6 +731,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getRowsLimit() != 0L) {
         setRowsLimit(other.getRowsLimit());
+      }
+      if (other.sampleMethod_ != 0) {
+        setSampleMethodValue(other.getSampleMethodValue());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1118,6 +1286,50 @@ private static final long serialVersionUID = 0L;
     public Builder clearRowsLimit() {
       
       rowsLimit_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private int sampleMethod_ = 0;
+    /**
+     * <code>.google.privacy.dlp.v2.BigQueryOptions.SampleMethod sample_method = 4;</code>
+     */
+    public int getSampleMethodValue() {
+      return sampleMethod_;
+    }
+    /**
+     * <code>.google.privacy.dlp.v2.BigQueryOptions.SampleMethod sample_method = 4;</code>
+     */
+    public Builder setSampleMethodValue(int value) {
+      sampleMethod_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.privacy.dlp.v2.BigQueryOptions.SampleMethod sample_method = 4;</code>
+     */
+    public com.google.privacy.dlp.v2.BigQueryOptions.SampleMethod getSampleMethod() {
+      com.google.privacy.dlp.v2.BigQueryOptions.SampleMethod result = com.google.privacy.dlp.v2.BigQueryOptions.SampleMethod.valueOf(sampleMethod_);
+      return result == null ? com.google.privacy.dlp.v2.BigQueryOptions.SampleMethod.UNRECOGNIZED : result;
+    }
+    /**
+     * <code>.google.privacy.dlp.v2.BigQueryOptions.SampleMethod sample_method = 4;</code>
+     */
+    public Builder setSampleMethod(com.google.privacy.dlp.v2.BigQueryOptions.SampleMethod value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      sampleMethod_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.privacy.dlp.v2.BigQueryOptions.SampleMethod sample_method = 4;</code>
+     */
+    public Builder clearSampleMethod() {
+      
+      sampleMethod_ = 0;
       onChanged();
       return this;
     }

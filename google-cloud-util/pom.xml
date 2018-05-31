@@ -3,19 +3,34 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-util</artifactId>
-  <version>0.46.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-util:current} -->
+  <version>0.49.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-util:current} -->
   <packaging>pom</packaging>
   <name>Google Cloud Util</name>
   <url>https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-util</url>
   <description>
     Package that contains utility modules for Google Cloud Java.
   </description>
-  <parent>
-    <groupId>com.google.cloud</groupId>
-    <artifactId>google-cloud-pom</artifactId>
-    <version>0.46.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-pom:current} -->
-  </parent>
   <modules>
     <module>google-cloud-compat-checker</module>
   </modules>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-site-plugin</artifactId>
+        <version>3.4</version>
+        <configuration>
+          <skip>true</skip>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-deploy-plugin</artifactId>
+        <version>2.7</version>
+        <configuration>
+          <skip>true</skip>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 </project>

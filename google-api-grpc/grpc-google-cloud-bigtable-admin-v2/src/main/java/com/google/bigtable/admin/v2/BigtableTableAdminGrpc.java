@@ -560,12 +560,13 @@ public final class BigtableTableAdminGrpc {
 
     /**
      * <pre>
-     * This is a private alpha release of Cloud Bigtable snapshots. This feature
-     * is not currently available to most Cloud Bigtable customers. This feature
-     * might be changed in backward-incompatible ways and is not recommended for
-     * production use. It is not subject to any SLA or deprecation policy.
      * Creates a new table from the specified snapshot. The target table must
      * not exist. The snapshot and the table must be in the same instance.
+     * Note: This is a private alpha release of Cloud Bigtable snapshots. This
+     * feature is not currently available to most Cloud Bigtable customers. This
+     * feature might be changed in backward-incompatible ways and is not
+     * recommended for production use. It is not subject to any SLA or deprecation
+     * policy.
      * </pre>
      */
     public void createTableFromSnapshot(com.google.bigtable.admin.v2.CreateTableFromSnapshotRequest request,
@@ -630,10 +631,6 @@ public final class BigtableTableAdminGrpc {
 
     /**
      * <pre>
-     * This is a private alpha release of Cloud Bigtable replication. This feature
-     * is not currently available to most Cloud Bigtable customers. This feature
-     * might be changed in backward-incompatible ways and is not recommended for
-     * production use. It is not subject to any SLA or deprecation policy.
      * Generates a consistency token for a Table, which can be used in
      * CheckConsistency to check whether mutations to the table that finished
      * before this call started have been replicated. The tokens will be available
@@ -647,10 +644,6 @@ public final class BigtableTableAdminGrpc {
 
     /**
      * <pre>
-     * This is a private alpha release of Cloud Bigtable replication. This feature
-     * is not currently available to most Cloud Bigtable customers. This feature
-     * might be changed in backward-incompatible ways and is not recommended for
-     * production use. It is not subject to any SLA or deprecation policy.
      * Checks replication consistency based on a consistency token, that is, if
      * replication has caught up based on the conditions specified in the token
      * and the check request.
@@ -663,12 +656,13 @@ public final class BigtableTableAdminGrpc {
 
     /**
      * <pre>
-     * This is a private alpha release of Cloud Bigtable snapshots. This feature
-     * is not currently available to most Cloud Bigtable customers. This feature
-     * might be changed in backward-incompatible ways and is not recommended for
-     * production use. It is not subject to any SLA or deprecation policy.
      * Creates a new snapshot in the specified cluster from the specified
      * source table. The cluster and the table must be in the same instance.
+     * Note: This is a private alpha release of Cloud Bigtable snapshots. This
+     * feature is not currently available to most Cloud Bigtable customers. This
+     * feature might be changed in backward-incompatible ways and is not
+     * recommended for production use. It is not subject to any SLA or deprecation
+     * policy.
      * </pre>
      */
     public void snapshotTable(com.google.bigtable.admin.v2.SnapshotTableRequest request,
@@ -678,11 +672,12 @@ public final class BigtableTableAdminGrpc {
 
     /**
      * <pre>
-     * This is a private alpha release of Cloud Bigtable snapshots. This feature
-     * is not currently available to most Cloud Bigtable customers. This feature
-     * might be changed in backward-incompatible ways and is not recommended for
-     * production use. It is not subject to any SLA or deprecation policy.
      * Gets metadata information about the specified snapshot.
+     * Note: This is a private alpha release of Cloud Bigtable snapshots. This
+     * feature is not currently available to most Cloud Bigtable customers. This
+     * feature might be changed in backward-incompatible ways and is not
+     * recommended for production use. It is not subject to any SLA or deprecation
+     * policy.
      * </pre>
      */
     public void getSnapshot(com.google.bigtable.admin.v2.GetSnapshotRequest request,
@@ -692,11 +687,12 @@ public final class BigtableTableAdminGrpc {
 
     /**
      * <pre>
-     * This is a private alpha release of Cloud Bigtable snapshots. This feature
-     * is not currently available to most Cloud Bigtable customers. This feature
-     * might be changed in backward-incompatible ways and is not recommended for
-     * production use. It is not subject to any SLA or deprecation policy.
      * Lists all snapshots associated with the specified cluster.
+     * Note: This is a private alpha release of Cloud Bigtable snapshots. This
+     * feature is not currently available to most Cloud Bigtable customers. This
+     * feature might be changed in backward-incompatible ways and is not
+     * recommended for production use. It is not subject to any SLA or deprecation
+     * policy.
      * </pre>
      */
     public void listSnapshots(com.google.bigtable.admin.v2.ListSnapshotsRequest request,
@@ -706,11 +702,12 @@ public final class BigtableTableAdminGrpc {
 
     /**
      * <pre>
-     * This is a private alpha release of Cloud Bigtable snapshots. This feature
-     * is not currently available to most Cloud Bigtable customers. This feature
-     * might be changed in backward-incompatible ways and is not recommended for
-     * production use. It is not subject to any SLA or deprecation policy.
      * Permanently deletes the specified snapshot.
+     * Note: This is a private alpha release of Cloud Bigtable snapshots. This
+     * feature is not currently available to most Cloud Bigtable customers. This
+     * feature might be changed in backward-incompatible ways and is not
+     * recommended for production use. It is not subject to any SLA or deprecation
+     * policy.
      * </pre>
      */
     public void deleteSnapshot(com.google.bigtable.admin.v2.DeleteSnapshotRequest request,
@@ -853,12 +850,13 @@ public final class BigtableTableAdminGrpc {
 
     /**
      * <pre>
-     * This is a private alpha release of Cloud Bigtable snapshots. This feature
-     * is not currently available to most Cloud Bigtable customers. This feature
-     * might be changed in backward-incompatible ways and is not recommended for
-     * production use. It is not subject to any SLA or deprecation policy.
      * Creates a new table from the specified snapshot. The target table must
      * not exist. The snapshot and the table must be in the same instance.
+     * Note: This is a private alpha release of Cloud Bigtable snapshots. This
+     * feature is not currently available to most Cloud Bigtable customers. This
+     * feature might be changed in backward-incompatible ways and is not
+     * recommended for production use. It is not subject to any SLA or deprecation
+     * policy.
      * </pre>
      */
     public void createTableFromSnapshot(com.google.bigtable.admin.v2.CreateTableFromSnapshotRequest request,
@@ -929,10 +927,6 @@ public final class BigtableTableAdminGrpc {
 
     /**
      * <pre>
-     * This is a private alpha release of Cloud Bigtable replication. This feature
-     * is not currently available to most Cloud Bigtable customers. This feature
-     * might be changed in backward-incompatible ways and is not recommended for
-     * production use. It is not subject to any SLA or deprecation policy.
      * Generates a consistency token for a Table, which can be used in
      * CheckConsistency to check whether mutations to the table that finished
      * before this call started have been replicated. The tokens will be available
@@ -947,10 +941,6 @@ public final class BigtableTableAdminGrpc {
 
     /**
      * <pre>
-     * This is a private alpha release of Cloud Bigtable replication. This feature
-     * is not currently available to most Cloud Bigtable customers. This feature
-     * might be changed in backward-incompatible ways and is not recommended for
-     * production use. It is not subject to any SLA or deprecation policy.
      * Checks replication consistency based on a consistency token, that is, if
      * replication has caught up based on the conditions specified in the token
      * and the check request.
@@ -964,12 +954,13 @@ public final class BigtableTableAdminGrpc {
 
     /**
      * <pre>
-     * This is a private alpha release of Cloud Bigtable snapshots. This feature
-     * is not currently available to most Cloud Bigtable customers. This feature
-     * might be changed in backward-incompatible ways and is not recommended for
-     * production use. It is not subject to any SLA or deprecation policy.
      * Creates a new snapshot in the specified cluster from the specified
      * source table. The cluster and the table must be in the same instance.
+     * Note: This is a private alpha release of Cloud Bigtable snapshots. This
+     * feature is not currently available to most Cloud Bigtable customers. This
+     * feature might be changed in backward-incompatible ways and is not
+     * recommended for production use. It is not subject to any SLA or deprecation
+     * policy.
      * </pre>
      */
     public void snapshotTable(com.google.bigtable.admin.v2.SnapshotTableRequest request,
@@ -980,11 +971,12 @@ public final class BigtableTableAdminGrpc {
 
     /**
      * <pre>
-     * This is a private alpha release of Cloud Bigtable snapshots. This feature
-     * is not currently available to most Cloud Bigtable customers. This feature
-     * might be changed in backward-incompatible ways and is not recommended for
-     * production use. It is not subject to any SLA or deprecation policy.
      * Gets metadata information about the specified snapshot.
+     * Note: This is a private alpha release of Cloud Bigtable snapshots. This
+     * feature is not currently available to most Cloud Bigtable customers. This
+     * feature might be changed in backward-incompatible ways and is not
+     * recommended for production use. It is not subject to any SLA or deprecation
+     * policy.
      * </pre>
      */
     public void getSnapshot(com.google.bigtable.admin.v2.GetSnapshotRequest request,
@@ -995,11 +987,12 @@ public final class BigtableTableAdminGrpc {
 
     /**
      * <pre>
-     * This is a private alpha release of Cloud Bigtable snapshots. This feature
-     * is not currently available to most Cloud Bigtable customers. This feature
-     * might be changed in backward-incompatible ways and is not recommended for
-     * production use. It is not subject to any SLA or deprecation policy.
      * Lists all snapshots associated with the specified cluster.
+     * Note: This is a private alpha release of Cloud Bigtable snapshots. This
+     * feature is not currently available to most Cloud Bigtable customers. This
+     * feature might be changed in backward-incompatible ways and is not
+     * recommended for production use. It is not subject to any SLA or deprecation
+     * policy.
      * </pre>
      */
     public void listSnapshots(com.google.bigtable.admin.v2.ListSnapshotsRequest request,
@@ -1010,11 +1003,12 @@ public final class BigtableTableAdminGrpc {
 
     /**
      * <pre>
-     * This is a private alpha release of Cloud Bigtable snapshots. This feature
-     * is not currently available to most Cloud Bigtable customers. This feature
-     * might be changed in backward-incompatible ways and is not recommended for
-     * production use. It is not subject to any SLA or deprecation policy.
      * Permanently deletes the specified snapshot.
+     * Note: This is a private alpha release of Cloud Bigtable snapshots. This
+     * feature is not currently available to most Cloud Bigtable customers. This
+     * feature might be changed in backward-incompatible ways and is not
+     * recommended for production use. It is not subject to any SLA or deprecation
+     * policy.
      * </pre>
      */
     public void deleteSnapshot(com.google.bigtable.admin.v2.DeleteSnapshotRequest request,
@@ -1061,12 +1055,13 @@ public final class BigtableTableAdminGrpc {
 
     /**
      * <pre>
-     * This is a private alpha release of Cloud Bigtable snapshots. This feature
-     * is not currently available to most Cloud Bigtable customers. This feature
-     * might be changed in backward-incompatible ways and is not recommended for
-     * production use. It is not subject to any SLA or deprecation policy.
      * Creates a new table from the specified snapshot. The target table must
      * not exist. The snapshot and the table must be in the same instance.
+     * Note: This is a private alpha release of Cloud Bigtable snapshots. This
+     * feature is not currently available to most Cloud Bigtable customers. This
+     * feature might be changed in backward-incompatible ways and is not
+     * recommended for production use. It is not subject to any SLA or deprecation
+     * policy.
      * </pre>
      */
     public com.google.longrunning.Operation createTableFromSnapshot(com.google.bigtable.admin.v2.CreateTableFromSnapshotRequest request) {
@@ -1131,10 +1126,6 @@ public final class BigtableTableAdminGrpc {
 
     /**
      * <pre>
-     * This is a private alpha release of Cloud Bigtable replication. This feature
-     * is not currently available to most Cloud Bigtable customers. This feature
-     * might be changed in backward-incompatible ways and is not recommended for
-     * production use. It is not subject to any SLA or deprecation policy.
      * Generates a consistency token for a Table, which can be used in
      * CheckConsistency to check whether mutations to the table that finished
      * before this call started have been replicated. The tokens will be available
@@ -1148,10 +1139,6 @@ public final class BigtableTableAdminGrpc {
 
     /**
      * <pre>
-     * This is a private alpha release of Cloud Bigtable replication. This feature
-     * is not currently available to most Cloud Bigtable customers. This feature
-     * might be changed in backward-incompatible ways and is not recommended for
-     * production use. It is not subject to any SLA or deprecation policy.
      * Checks replication consistency based on a consistency token, that is, if
      * replication has caught up based on the conditions specified in the token
      * and the check request.
@@ -1164,12 +1151,13 @@ public final class BigtableTableAdminGrpc {
 
     /**
      * <pre>
-     * This is a private alpha release of Cloud Bigtable snapshots. This feature
-     * is not currently available to most Cloud Bigtable customers. This feature
-     * might be changed in backward-incompatible ways and is not recommended for
-     * production use. It is not subject to any SLA or deprecation policy.
      * Creates a new snapshot in the specified cluster from the specified
      * source table. The cluster and the table must be in the same instance.
+     * Note: This is a private alpha release of Cloud Bigtable snapshots. This
+     * feature is not currently available to most Cloud Bigtable customers. This
+     * feature might be changed in backward-incompatible ways and is not
+     * recommended for production use. It is not subject to any SLA or deprecation
+     * policy.
      * </pre>
      */
     public com.google.longrunning.Operation snapshotTable(com.google.bigtable.admin.v2.SnapshotTableRequest request) {
@@ -1179,11 +1167,12 @@ public final class BigtableTableAdminGrpc {
 
     /**
      * <pre>
-     * This is a private alpha release of Cloud Bigtable snapshots. This feature
-     * is not currently available to most Cloud Bigtable customers. This feature
-     * might be changed in backward-incompatible ways and is not recommended for
-     * production use. It is not subject to any SLA or deprecation policy.
      * Gets metadata information about the specified snapshot.
+     * Note: This is a private alpha release of Cloud Bigtable snapshots. This
+     * feature is not currently available to most Cloud Bigtable customers. This
+     * feature might be changed in backward-incompatible ways and is not
+     * recommended for production use. It is not subject to any SLA or deprecation
+     * policy.
      * </pre>
      */
     public com.google.bigtable.admin.v2.Snapshot getSnapshot(com.google.bigtable.admin.v2.GetSnapshotRequest request) {
@@ -1193,11 +1182,12 @@ public final class BigtableTableAdminGrpc {
 
     /**
      * <pre>
-     * This is a private alpha release of Cloud Bigtable snapshots. This feature
-     * is not currently available to most Cloud Bigtable customers. This feature
-     * might be changed in backward-incompatible ways and is not recommended for
-     * production use. It is not subject to any SLA or deprecation policy.
      * Lists all snapshots associated with the specified cluster.
+     * Note: This is a private alpha release of Cloud Bigtable snapshots. This
+     * feature is not currently available to most Cloud Bigtable customers. This
+     * feature might be changed in backward-incompatible ways and is not
+     * recommended for production use. It is not subject to any SLA or deprecation
+     * policy.
      * </pre>
      */
     public com.google.bigtable.admin.v2.ListSnapshotsResponse listSnapshots(com.google.bigtable.admin.v2.ListSnapshotsRequest request) {
@@ -1207,11 +1197,12 @@ public final class BigtableTableAdminGrpc {
 
     /**
      * <pre>
-     * This is a private alpha release of Cloud Bigtable snapshots. This feature
-     * is not currently available to most Cloud Bigtable customers. This feature
-     * might be changed in backward-incompatible ways and is not recommended for
-     * production use. It is not subject to any SLA or deprecation policy.
      * Permanently deletes the specified snapshot.
+     * Note: This is a private alpha release of Cloud Bigtable snapshots. This
+     * feature is not currently available to most Cloud Bigtable customers. This
+     * feature might be changed in backward-incompatible ways and is not
+     * recommended for production use. It is not subject to any SLA or deprecation
+     * policy.
      * </pre>
      */
     public com.google.protobuf.Empty deleteSnapshot(com.google.bigtable.admin.v2.DeleteSnapshotRequest request) {
@@ -1258,12 +1249,13 @@ public final class BigtableTableAdminGrpc {
 
     /**
      * <pre>
-     * This is a private alpha release of Cloud Bigtable snapshots. This feature
-     * is not currently available to most Cloud Bigtable customers. This feature
-     * might be changed in backward-incompatible ways and is not recommended for
-     * production use. It is not subject to any SLA or deprecation policy.
      * Creates a new table from the specified snapshot. The target table must
      * not exist. The snapshot and the table must be in the same instance.
+     * Note: This is a private alpha release of Cloud Bigtable snapshots. This
+     * feature is not currently available to most Cloud Bigtable customers. This
+     * feature might be changed in backward-incompatible ways and is not
+     * recommended for production use. It is not subject to any SLA or deprecation
+     * policy.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> createTableFromSnapshot(
@@ -1334,10 +1326,6 @@ public final class BigtableTableAdminGrpc {
 
     /**
      * <pre>
-     * This is a private alpha release of Cloud Bigtable replication. This feature
-     * is not currently available to most Cloud Bigtable customers. This feature
-     * might be changed in backward-incompatible ways and is not recommended for
-     * production use. It is not subject to any SLA or deprecation policy.
      * Generates a consistency token for a Table, which can be used in
      * CheckConsistency to check whether mutations to the table that finished
      * before this call started have been replicated. The tokens will be available
@@ -1352,10 +1340,6 @@ public final class BigtableTableAdminGrpc {
 
     /**
      * <pre>
-     * This is a private alpha release of Cloud Bigtable replication. This feature
-     * is not currently available to most Cloud Bigtable customers. This feature
-     * might be changed in backward-incompatible ways and is not recommended for
-     * production use. It is not subject to any SLA or deprecation policy.
      * Checks replication consistency based on a consistency token, that is, if
      * replication has caught up based on the conditions specified in the token
      * and the check request.
@@ -1369,12 +1353,13 @@ public final class BigtableTableAdminGrpc {
 
     /**
      * <pre>
-     * This is a private alpha release of Cloud Bigtable snapshots. This feature
-     * is not currently available to most Cloud Bigtable customers. This feature
-     * might be changed in backward-incompatible ways and is not recommended for
-     * production use. It is not subject to any SLA or deprecation policy.
      * Creates a new snapshot in the specified cluster from the specified
      * source table. The cluster and the table must be in the same instance.
+     * Note: This is a private alpha release of Cloud Bigtable snapshots. This
+     * feature is not currently available to most Cloud Bigtable customers. This
+     * feature might be changed in backward-incompatible ways and is not
+     * recommended for production use. It is not subject to any SLA or deprecation
+     * policy.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> snapshotTable(
@@ -1385,11 +1370,12 @@ public final class BigtableTableAdminGrpc {
 
     /**
      * <pre>
-     * This is a private alpha release of Cloud Bigtable snapshots. This feature
-     * is not currently available to most Cloud Bigtable customers. This feature
-     * might be changed in backward-incompatible ways and is not recommended for
-     * production use. It is not subject to any SLA or deprecation policy.
      * Gets metadata information about the specified snapshot.
+     * Note: This is a private alpha release of Cloud Bigtable snapshots. This
+     * feature is not currently available to most Cloud Bigtable customers. This
+     * feature might be changed in backward-incompatible ways and is not
+     * recommended for production use. It is not subject to any SLA or deprecation
+     * policy.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.bigtable.admin.v2.Snapshot> getSnapshot(
@@ -1400,11 +1386,12 @@ public final class BigtableTableAdminGrpc {
 
     /**
      * <pre>
-     * This is a private alpha release of Cloud Bigtable snapshots. This feature
-     * is not currently available to most Cloud Bigtable customers. This feature
-     * might be changed in backward-incompatible ways and is not recommended for
-     * production use. It is not subject to any SLA or deprecation policy.
      * Lists all snapshots associated with the specified cluster.
+     * Note: This is a private alpha release of Cloud Bigtable snapshots. This
+     * feature is not currently available to most Cloud Bigtable customers. This
+     * feature might be changed in backward-incompatible ways and is not
+     * recommended for production use. It is not subject to any SLA or deprecation
+     * policy.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.bigtable.admin.v2.ListSnapshotsResponse> listSnapshots(
@@ -1415,11 +1402,12 @@ public final class BigtableTableAdminGrpc {
 
     /**
      * <pre>
-     * This is a private alpha release of Cloud Bigtable snapshots. This feature
-     * is not currently available to most Cloud Bigtable customers. This feature
-     * might be changed in backward-incompatible ways and is not recommended for
-     * production use. It is not subject to any SLA or deprecation policy.
      * Permanently deletes the specified snapshot.
+     * Note: This is a private alpha release of Cloud Bigtable snapshots. This
+     * feature is not currently available to most Cloud Bigtable customers. This
+     * feature might be changed in backward-incompatible ways and is not
+     * recommended for production use. It is not subject to any SLA or deprecation
+     * policy.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteSnapshot(

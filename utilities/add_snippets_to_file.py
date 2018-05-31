@@ -330,6 +330,9 @@ class LineNumbers(object):
             for match in pattern.finditer(data):
                 line_number = len(NEWLINE_PATTERN.findall(data[:match.start()])) + 1
                 signature = method.signature
+                if signature in self.line_numbers:
+                    LOGGER.warning('Method %s duplicate at line %d.', signature, line_number)
+                    continue
                 LOGGER.info('Method %s found at line %d.', signature, line_number)
                 self.line_numbers[signature] = line_number
 

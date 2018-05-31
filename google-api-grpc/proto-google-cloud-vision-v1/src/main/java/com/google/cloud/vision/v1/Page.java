@@ -159,7 +159,8 @@ private static final long serialVersionUID = 0L;
   private int width_;
   /**
    * <pre>
-   * Page width in pixels.
+   * Page width. For PDFs the unit is points. For images (including
+   * TIFFs) the unit is pixels.
    * </pre>
    *
    * <code>int32 width = 2;</code>
@@ -172,7 +173,8 @@ private static final long serialVersionUID = 0L;
   private int height_;
   /**
    * <pre>
-   * Page height in pixels.
+   * Page height. For PDFs the unit is points. For images (including
+   * TIFFs) the unit is pixels.
    * </pre>
    *
    * <code>int32 height = 3;</code>
@@ -818,7 +820,8 @@ private static final long serialVersionUID = 0L;
     private int width_ ;
     /**
      * <pre>
-     * Page width in pixels.
+     * Page width. For PDFs the unit is points. For images (including
+     * TIFFs) the unit is pixels.
      * </pre>
      *
      * <code>int32 width = 2;</code>
@@ -828,7 +831,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Page width in pixels.
+     * Page width. For PDFs the unit is points. For images (including
+     * TIFFs) the unit is pixels.
      * </pre>
      *
      * <code>int32 width = 2;</code>
@@ -841,7 +845,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Page width in pixels.
+     * Page width. For PDFs the unit is points. For images (including
+     * TIFFs) the unit is pixels.
      * </pre>
      *
      * <code>int32 width = 2;</code>
@@ -856,7 +861,8 @@ private static final long serialVersionUID = 0L;
     private int height_ ;
     /**
      * <pre>
-     * Page height in pixels.
+     * Page height. For PDFs the unit is points. For images (including
+     * TIFFs) the unit is pixels.
      * </pre>
      *
      * <code>int32 height = 3;</code>
@@ -866,7 +872,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Page height in pixels.
+     * Page height. For PDFs the unit is points. For images (including
+     * TIFFs) the unit is pixels.
      * </pre>
      *
      * <code>int32 height = 3;</code>
@@ -879,7 +886,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Page height in pixels.
+     * Page height. For PDFs the unit is points. For images (including
+     * TIFFs) the unit is pixels.
      * </pre>
      *
      * <code>int32 height = 3;</code>

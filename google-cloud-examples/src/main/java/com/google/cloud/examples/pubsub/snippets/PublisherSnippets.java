@@ -122,13 +122,13 @@ public class PublisherSnippets {
   }
 
   public Publisher getSingleThreadedPublisher(ProjectTopicName topicName) throws Exception {
-    // [START pubsub_publisher_single_threaded]
+    // [START pubsub_publisher_concurrency_control]
     // create a publisher with a single threaded executor
     ExecutorProvider executorProvider = InstantiatingExecutorProvider.newBuilder()
         .setExecutorThreadCount(1).build();
     Publisher publisher = Publisher.newBuilder(topicName)
         .setExecutorProvider(executorProvider).build();
-    // [END pubsub_publisher_single_threaded]
+    // [END pubsub_publisher_concurrency_control]
     return publisher;
   }
 

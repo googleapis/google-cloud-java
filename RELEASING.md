@@ -91,27 +91,27 @@ To push a release version
 
 7. To ensure a clean build, remove *all* Maven targets (including subdirectories not handled by `mvn clean`) by running `rm -rf target */target`.
 
-8. Run `utilities/stage_release.sh`.
-This script builds and stages the release artifact on the Maven Central Repository, updates the README.md files with the release version + commits them locally, and finally generates a new site version for the gh-pages branch under a temporary directory named `tmp_gh-pages`. If you haven't run the release process before, it's worth verifying everything; check the staged release on the Sonatype website, and verify that the local commits have the right version updates.
+8. Run `python utilities/stage_sites.py`.
+This script checks out `gh-pages` branch of the repository, builds the documentation site and javadocs, copies them to the branch and commits it. This script does not push the docs and it must be done manually on the later step. The script assumes that there is no directory called `tmp_gh-pages` in the repository root, remove that directory, if exists, before running the script.
 
-If you experience failures, you may need to:
-- repeat the clean step above
-- remove the temporary directory created to store docs by running `rm -rf tmp_gh-pages`
-- remove staged repositories from Sonatype (to prevent them from being released in subsequent steps): if a staged repository appears [here](https://oss.sonatype.org/#nexus-search;quick~com.google.cloud), remove it by running `mvn nexus-staging:drop`.
+9. Check that you are not trying to release a SNAPSHOT build (the artifacts versions do not have "-SNAPSHOT" suffix) and then run `mvn clean deploy -DskipTests=true --settings ~/.m2/settings.xml -P release` command. It will build and deploy artifacts to the staging repository. 
 
-9. Run `utilities/finalize_release.sh`.
-This script will release the staged artifact on the Maven Central Repository and push the README.md and gh-pages updates to github.
+10. Run `mvn nexus-staging:release` to release the artifacts. 
 
-10. Publish a release on Github manually.
+11. Run `cd tmp_gh-pages && git push && cd ..` to push the previously generated docs (step 8).
+
+12. Run `rm -rf tmp_gh-pages` to remove the generated docs directory from your local machine. 
+
+13. Publish a release on Github manually.
 Go to the [releases page](https://github.com/GoogleCloudPlatform/google-cloud-java/releases) and open the appropriate release draft. Make sure the "Tag Version" is `vX.Y.Z` and the "Release Title" is `X.Y.Z`, where `X.Y.Z` is the release version as listed in the `pom.xml` files. 
   
   Add the commits since the last release into the release draft. Try to group them into sections with related changes. Anything that is a breaking change needs to be marked with `*breaking change*`. Such changes are only allowed for alpha/beta modules and `@BetaApi` features.
 
   Ensure that the format is consistent with previous releases (for an example, see the [0.1.0 release](https://github.com/GoogleCloudPlatform/google-cloud-java/releases/tag/v0.1.0)).  After adding any missing updates and reformatting as necessary, publish the draft.
 
-11. Run `python utilities/bump_versions.py next_snapshot patch` to include "-SNAPSHOT" in the current project version (Alternatively, update the versions in `versions.txt` to the correct versions for the next release.). Then, run `python utilities/replace_versions.py` to update the `pom.xml` files. (If you see updates in `README.md` files at this step, you probably did something wrong.)
+14. Run `python utilities/bump_versions.py next_snapshot patch` to include "-SNAPSHOT" in the current project version (Alternatively, update the versions in `versions.txt` to the correct versions for the next release.). Then, run `python utilities/replace_versions.py` to update the `pom.xml` files. (If you see updates in `README.md` files at this step, you probably did something wrong.)
 
-13. Create and merge in another PR to reflect the updated project version.
+15. Create and merge in another PR to reflect the updated project version.
 
 Improvements
 ============
