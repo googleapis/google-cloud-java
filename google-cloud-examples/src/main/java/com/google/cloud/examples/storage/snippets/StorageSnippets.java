@@ -1162,7 +1162,6 @@ public class StorageSnippets {
     // [END storage_download_file_requester_pays]
   }
 
-
   /**
    * Example of setting a default KMS key on a bucket.
    */

@@ -183,11 +183,8 @@ public class ITStorageSnippets {
 
   @Test
   public void testCreateKMSEncryptedBlob() {
-    String kmsKeyName = "";
     String blobName = "kms-encrypted-blob";
-
-    Blob blob = storageSnippets.createKmsEncrpytedBlob(BUCKET, blobName, kmsKeyName);
-
+    Blob blob = storageSnippets.createKmsEncrpytedBlob(BUCKET, blobName, KMS_KEY_NAME);
     assertNotNull(blob);
   }
 
