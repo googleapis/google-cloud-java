@@ -60,7 +60,7 @@ stable.
 See also
 --------
 
- * [google-cloud-examples](../google-cloud-examples) for an example of how to use NIO normally.
+ * [google-cloud-examples](../../google-cloud-examples) for an example of how to use NIO normally.
 
 Contributing
 ------------
