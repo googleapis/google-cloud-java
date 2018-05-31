@@ -396,22 +396,22 @@ public class ITStorageSnippets {
     assertNull(storageSnippets.getBlobAcl(BUCKET, blobName, createdBlob.getGeneration()));
     // test non-existing blob
     String nonExistingBlob = "test-blob-acl";
-    assertNull(storageSnippets.getBlobAcl(BUCKET, nonExistingBlob, -1L));
-    assertFalse(storageSnippets.deleteBlobAcl(BUCKET, nonExistingBlob, -1L));
+    assertNull(storageSnippets.getBlobAcl(BUCKET, nonExistingBlob, 1L));
+    assertFalse(storageSnippets.deleteBlobAcl(BUCKET, nonExistingBlob, 1L));
     try {
-      storageSnippets.createBlobAcl(BUCKET, nonExistingBlob, -1L);
+      storageSnippets.createBlobAcl(BUCKET, nonExistingBlob, 1L);
       fail("Expected StorageException");
     } catch (StorageException ex) {
       // expected
     }
     try {
-      storageSnippets.updateBlobAcl(BUCKET, nonExistingBlob, -1L);
+      storageSnippets.updateBlobAcl(BUCKET, nonExistingBlob, 1L);
       fail("Expected StorageException");
     } catch (StorageException ex) {
       // expected
     }
     try {
-      storageSnippets.listBlobAcls(BUCKET, nonExistingBlob, -1L);
+      storageSnippets.listBlobAcls(BUCKET, nonExistingBlob, 1L);
       fail("Expected StorageException");
     } catch (StorageException ex) {
       // expected
