@@ -15,7 +15,6 @@
 package com.google.pubsub.v1;
 
 import com.google.api.resourcenames.ResourceName;
-import com.google.api.resourcenames.ResourceNameType;
 import com.google.common.collect.ImmutableMap;
 import java.util.Map;
 
@@ -50,14 +49,6 @@ public class DeletedTopic extends TopicName {
    */
   public String getFieldValue(String fieldName) {
     return valueMap.get(fieldName);
-  }
-
-  /**
-   * @deprecated This method is only present to satisfy the ResourceName interface.
-   */
-  @Deprecated
-  public ResourceNameType getType() {
-    throw new UnsupportedOperationException("DeletedTopic.getType() not supported");
   }
 
   @Override

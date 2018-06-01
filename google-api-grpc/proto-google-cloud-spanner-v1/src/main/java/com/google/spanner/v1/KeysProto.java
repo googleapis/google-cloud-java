@@ -42,7 +42,7 @@ public final class KeysProto {
       " \001(\0132\032.google.protobuf.ListValueH\001\022.\n\010en" +
       "d_open\030\004 \001(\0132\032.google.protobuf.ListValue" +
       "H\001B\020\n\016start_key_typeB\016\n\014end_key_type\"l\n\006" +
-      "KeySet\022(\n\004keys\030\001 \003(\0132\032.google.protobuf.L" +
+      "KeySet\022(\n\004keys\030\001 \003(\0132\032.google.protobuf.L",
       "istValue\022+\n\006ranges\030\002 \003(\0132\033.google.spanne" +
       "r.v1.KeyRange\022\013\n\003all\030\003 \001(\010B\222\001\n\025com.googl" +
       "e.spanner.v1B\tKeysProtoP\001Z8google.golang" +

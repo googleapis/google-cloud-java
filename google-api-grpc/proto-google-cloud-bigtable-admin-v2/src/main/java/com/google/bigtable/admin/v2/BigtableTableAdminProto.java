@@ -137,7 +137,7 @@ public final class BigtableTableAdminProto {
       "proto\032\037google/protobuf/timestamp.proto\"\310" +
       "\001\n\022CreateTableRequest\022\016\n\006parent\030\001 \001(\t\022\020\n" +
       "\010table_id\030\002 \001(\t\022.\n\005table\030\003 \001(\0132\037.google." +
-      "bigtable.admin.v2.Table\022J\n\016initial_split" +
+      "bigtable.admin.v2.Table\022J\n\016initial_split",
       "s\030\004 \003(\01322.google.bigtable.admin.v2.Creat" +
       "eTableRequest.Split\032\024\n\005Split\022\013\n\003key\030\001 \001(" +
       "\014\"[\n\036CreateTableFromSnapshotRequest\022\016\n\006p" +
@@ -147,7 +147,7 @@ public final class BigtableTableAdminProto {
       "\032delete_all_data_from_table\030\003 \001(\010H\000B\010\n\006t" +
       "arget\"k\n\021ListTablesRequest\022\016\n\006parent\030\001 \001" +
       "(\t\0222\n\004view\030\002 \001(\0162$.google.bigtable.admin" +
-      ".v2.Table.View\022\022\n\npage_token\030\003 \001(\t\"^\n\022Li" +
+      ".v2.Table.View\022\022\n\npage_token\030\003 \001(\t\"^\n\022Li",
       "stTablesResponse\022/\n\006tables\030\001 \003(\0132\037.googl" +
       "e.bigtable.admin.v2.Table\022\027\n\017next_page_t" +
       "oken\030\002 \001(\t\"S\n\017GetTableRequest\022\014\n\004name\030\001 " +
@@ -157,7 +157,7 @@ public final class BigtableTableAdminProto {
       "est\022\014\n\004name\030\001 \001(\t\022Y\n\rmodifications\030\002 \003(\013" +
       "2B.google.bigtable.admin.v2.ModifyColumn" +
       "FamiliesRequest.Modification\032\245\001\n\014Modific" +
-      "ation\022\n\n\002id\030\001 \001(\t\0228\n\006create\030\002 \001(\0132&.goog" +
+      "ation\022\n\n\002id\030\001 \001(\t\0228\n\006create\030\002 \001(\0132&.goog",
       "le.bigtable.admin.v2.ColumnFamilyH\000\0228\n\006u" +
       "pdate\030\003 \001(\0132&.google.bigtable.admin.v2.C" +
       "olumnFamilyH\000\022\016\n\004drop\030\004 \001(\010H\000B\005\n\003mod\"/\n\037" +
@@ -167,7 +167,7 @@ public final class BigtableTableAdminProto {
       "sistencyRequest\022\014\n\004name\030\001 \001(\t\022\031\n\021consist" +
       "ency_token\030\002 \001(\t\".\n\030CheckConsistencyResp" +
       "onse\022\022\n\nconsistent\030\001 \001(\010\"\207\001\n\024SnapshotTab" +
-      "leRequest\022\014\n\004name\030\001 \001(\t\022\017\n\007cluster\030\002 \001(\t" +
+      "leRequest\022\014\n\004name\030\001 \001(\t\022\017\n\007cluster\030\002 \001(\t",
       "\022\023\n\013snapshot_id\030\003 \001(\t\022&\n\003ttl\030\004 \001(\0132\031.goo" +
       "gle.protobuf.Duration\022\023\n\013description\030\005 \001" +
       "(\t\"\"\n\022GetSnapshotRequest\022\014\n\004name\030\001 \001(\t\"M" +
@@ -177,7 +177,7 @@ public final class BigtableTableAdminProto {
       "\0132\".google.bigtable.admin.v2.Snapshot\022\027\n" +
       "\017next_page_token\030\002 \001(\t\"%\n\025DeleteSnapshot" +
       "Request\022\014\n\004name\030\001 \001(\t\"\304\001\n\025SnapshotTableM" +
-      "etadata\022H\n\020original_request\030\001 \001(\0132..goog" +
+      "etadata\022H\n\020original_request\030\001 \001(\0132..goog",
       "le.bigtable.admin.v2.SnapshotTableReques" +
       "t\0220\n\014request_time\030\002 \001(\0132\032.google.protobu" +
       "f.Timestamp\022/\n\013finish_time\030\003 \001(\0132\032.googl" +
@@ -187,7 +187,7 @@ public final class BigtableTableAdminProto {
       "eFromSnapshotRequest\0220\n\014request_time\030\002 \001" +
       "(\0132\032.google.protobuf.Timestamp\022/\n\013finish" +
       "_time\030\003 \001(\0132\032.google.protobuf.Timestamp2" +
-      "\267\021\n\022BigtableTableAdmin\022\223\001\n\013CreateTable\022," +
+      "\267\021\n\022BigtableTableAdmin\022\223\001\n\013CreateTable\022,",
       ".google.bigtable.admin.v2.CreateTableReq" +
       "uest\032\037.google.bigtable.admin.v2.Table\"5\202" +
       "\323\344\223\002/\"*/v2/{parent=projects/*/instances/" +
@@ -197,7 +197,7 @@ public final class BigtableTableAdminProto {
       "Operation\"H\202\323\344\223\002B\"=/v2/{parent=projects/" +
       "*/instances/*}/tables:createFromSnapshot" +
       ":\001*\022\233\001\n\nListTables\022+.google.bigtable.adm" +
-      "in.v2.ListTablesRequest\032,.google.bigtabl" +
+      "in.v2.ListTablesRequest\032,.google.bigtabl",
       "e.admin.v2.ListTablesResponse\"2\202\323\344\223\002,\022*/" +
       "v2/{parent=projects/*/instances/*}/table" +
       "s\022\212\001\n\010GetTable\022).google.bigtable.admin.v" +
@@ -207,7 +207,7 @@ public final class BigtableTableAdminProto {
       ".google.bigtable.admin.v2.DeleteTableReq" +
       "uest\032\026.google.protobuf.Empty\"2\202\323\344\223\002,**/v" +
       "2/{name=projects/*/instances/*/tables/*}" +
-      "\022\272\001\n\024ModifyColumnFamilies\0225.google.bigta" +
+      "\022\272\001\n\024ModifyColumnFamilies\0225.google.bigta",
       "ble.admin.v2.ModifyColumnFamiliesRequest" +
       "\032\037.google.bigtable.admin.v2.Table\"J\202\323\344\223\002" +
       "D\"?/v2/{name=projects/*/instances/*/tabl" +
@@ -217,7 +217,7 @@ public final class BigtableTableAdminProto {
       "\323\344\223\002<\"7/v2/{name=projects/*/instances/*/" +
       "tables/*}:dropRowRange:\001*\022\341\001\n\030GenerateCo" +
       "nsistencyToken\0229.google.bigtable.admin.v" +
-      "2.GenerateConsistencyTokenRequest\032:.goog" +
+      "2.GenerateConsistencyTokenRequest\032:.goog",
       "le.bigtable.admin.v2.GenerateConsistency" +
       "TokenResponse\"N\202\323\344\223\002H\"C/v2/{name=project" +
       "s/*/instances/*/tables/*}:generateConsis" +
@@ -227,7 +227,7 @@ public final class BigtableTableAdminProto {
       "nsistencyResponse\"F\202\323\344\223\002@\";/v2/{name=pro" +
       "jects/*/instances/*/tables/*}:checkConsi" +
       "stency:\001*\022\236\001\n\rSnapshotTable\022..google.big" +
-      "table.admin.v2.SnapshotTableRequest\032\035.go" +
+      "table.admin.v2.SnapshotTableRequest\032\035.go",
       "ogle.longrunning.Operation\">\202\323\344\223\0028\"3/v2/" +
       "{name=projects/*/instances/*/tables/*}:s" +
       "napshot:\001*\022\241\001\n\013GetSnapshot\022,.google.bigt" +
@@ -237,7 +237,7 @@ public final class BigtableTableAdminProto {
       "*/snapshots/*}\022\262\001\n\rListSnapshots\022..googl" +
       "e.bigtable.admin.v2.ListSnapshotsRequest" +
       "\032/.google.bigtable.admin.v2.ListSnapshot" +
-      "sResponse\"@\202\323\344\223\002:\0228/v2/{parent=projects/" +
+      "sResponse\"@\202\323\344\223\002:\0228/v2/{parent=projects/",
       "*/instances/*/clusters/*}/snapshots\022\233\001\n\016" +
       "DeleteSnapshot\022/.google.bigtable.admin.v" +
       "2.DeleteSnapshotRequest\032\026.google.protobu" +

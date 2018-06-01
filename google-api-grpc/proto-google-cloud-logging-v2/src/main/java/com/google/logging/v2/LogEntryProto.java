@@ -52,7 +52,7 @@ public final class LogEntryProto {
       "tobuf/struct.proto\032\037google/protobuf/time" +
       "stamp.proto\"\272\005\n\010LogEntry\022\020\n\010log_name\030\014 \001" +
       "(\t\022/\n\010resource\030\010 \001(\0132\035.google.api.Monito" +
-      "redResource\022-\n\rproto_payload\030\002 \001(\0132\024.goo" +
+      "redResource\022-\n\rproto_payload\030\002 \001(\0132\024.goo",
       "gle.protobuf.AnyH\000\022\026\n\014text_payload\030\003 \001(\t" +
       "H\000\022/\n\014json_payload\030\006 \001(\0132\027.google.protob" +
       "uf.StructH\000\022-\n\ttimestamp\030\t \001(\0132\032.google." +
@@ -62,7 +62,7 @@ public final class LogEntryProto {
       "erity\022\021\n\tinsert_id\030\004 \001(\t\0226\n\014http_request" +
       "\030\007 \001(\0132 .google.logging.type.HttpRequest" +
       "\0227\n\006labels\030\013 \003(\0132\'.google.logging.v2.Log" +
-      "Entry.LabelsEntry\0227\n\toperation\030\017 \001(\0132$.g" +
+      "Entry.LabelsEntry\0227\n\toperation\030\017 \001(\0132$.g",
       "oogle.logging.v2.LogEntryOperation\022\r\n\005tr" +
       "ace\030\026 \001(\t\022\017\n\007span_id\030\033 \001(\t\022B\n\017source_loc" +
       "ation\030\027 \001(\0132).google.logging.v2.LogEntry" +
@@ -72,7 +72,7 @@ public final class LogEntryProto {
       "\001(\t\022\r\n\005first\030\003 \001(\010\022\014\n\004last\030\004 \001(\010\"F\n\026LogE" +
       "ntrySourceLocation\022\014\n\004file\030\001 \001(\t\022\014\n\004line" +
       "\030\002 \001(\003\022\020\n\010function\030\003 \001(\tB\231\001\n\025com.google." +
-      "logging.v2B\rLogEntryProtoP\001Z8google.gola" +
+      "logging.v2B\rLogEntryProtoP\001Z8google.gola",
       "ng.org/genproto/googleapis/logging/v2;lo" +
       "gging\370\001\001\252\002\027Google.Cloud.Logging.V2\312\002\027Goo" +
       "gle\\Cloud\\Logging\\V2b\006proto3"

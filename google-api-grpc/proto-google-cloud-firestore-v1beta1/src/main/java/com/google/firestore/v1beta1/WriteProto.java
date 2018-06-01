@@ -72,7 +72,7 @@ public final class WriteProto {
       "le.firestore.v1beta1.DocumentH\000\022\020\n\006delet" +
       "e\030\002 \001(\tH\000\022@\n\ttransform\030\006 \001(\0132+.google.fi" +
       "restore.v1beta1.DocumentTransformH\000\022;\n\013u" +
-      "pdate_mask\030\003 \001(\0132&.google.firestore.v1be" +
+      "pdate_mask\030\003 \001(\0132&.google.firestore.v1be",
       "ta1.DocumentMask\022@\n\020current_document\030\004 \001" +
       "(\0132&.google.firestore.v1beta1.Preconditi" +
       "onB\013\n\toperation\"\332\002\n\021DocumentTransform\022\020\n" +
@@ -82,7 +82,7 @@ public final class WriteProto {
       "\022\022\n\nfield_path\030\001 \001(\t\022e\n\023set_to_server_va" +
       "lue\030\002 \001(\0162F.google.firestore.v1beta1.Doc" +
       "umentTransform.FieldTransform.ServerValu" +
-      "eH\000\"=\n\013ServerValue\022\034\n\030SERVER_VALUE_UNSPE" +
+      "eH\000\"=\n\013ServerValue\022\034\n\030SERVER_VALUE_UNSPE",
       "CIFIED\020\000\022\020\n\014REQUEST_TIME\020\001B\020\n\016transform_" +
       "type\"z\n\013WriteResult\022/\n\013update_time\030\001 \001(\013" +
       "2\032.google.protobuf.Timestamp\022:\n\021transfor" +
@@ -92,7 +92,7 @@ public final class WriteProto {
       "\022\022\n\ntarget_ids\030\005 \003(\005\022\032\n\022removed_target_i" +
       "ds\030\006 \003(\005\"m\n\016DocumentDelete\022\020\n\010document\030\001" +
       " \001(\t\022\032\n\022removed_target_ids\030\006 \003(\005\022-\n\tread" +
-      "_time\030\004 \001(\0132\032.google.protobuf.Timestamp\"" +
+      "_time\030\004 \001(\0132\032.google.protobuf.Timestamp\"",
       "m\n\016DocumentRemove\022\020\n\010document\030\001 \001(\t\022\032\n\022r" +
       "emoved_target_ids\030\002 \003(\005\022-\n\tread_time\030\004 \001" +
       "(\0132\032.google.protobuf.Timestamp\"3\n\017Existe" +

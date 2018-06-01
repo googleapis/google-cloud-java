@@ -47,7 +47,7 @@ public final class WebhookProto {
       "sion.proto\032\034google/protobuf/struct.proto" +
       "\"\340\001\n\016WebhookRequest\022\017\n\007session\030\004 \001(\t\022\023\n\013" +
       "response_id\030\001 \001(\t\022B\n\014query_result\030\002 \001(\0132" +
-      ",.google.cloud.dialogflow.v2beta1.QueryR" +
+      ",.google.cloud.dialogflow.v2beta1.QueryR",
       "esult\022d\n\036original_detect_intent_request\030" +
       "\003 \001(\0132<.google.cloud.dialogflow.v2beta1." +
       "OriginalDetectIntentRequest\"\302\002\n\017WebhookR" +
@@ -57,7 +57,7 @@ public final class WebhookProto {
       "ce\030\003 \001(\t\022(\n\007payload\030\004 \001(\0132\027.google.proto" +
       "buf.Struct\022A\n\017output_contexts\030\005 \003(\0132(.go" +
       "ogle.cloud.dialogflow.v2beta1.Context\022I\n" +
-      "\024followup_event_input\030\006 \001(\0132+.google.clo" +
+      "\024followup_event_input\030\006 \001(\0132+.google.clo",
       "ud.dialogflow.v2beta1.EventInput\"W\n\033Orig" +
       "inalDetectIntentRequest\022\016\n\006source\030\001 \001(\t\022" +
       "(\n\007payload\030\003 \001(\0132\027.google.protobuf.Struc" +
