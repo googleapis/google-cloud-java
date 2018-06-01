@@ -67,7 +67,7 @@ public final class AlertProto {
       "olicy\022\014\n\004name\030\001 \001(\t\022\024\n\014display_name\030\002 \001(" +
       "\t\022F\n\rdocumentation\030\r \001(\0132/.google.monito" +
       "ring.v3.AlertPolicy.Documentation\022F\n\013use" +
-      "r_labels\030\020 \003(\01321.google.monitoring.v3.Al" +
+      "r_labels\030\020 \003(\01321.google.monitoring.v3.Al",
       "ertPolicy.UserLabelsEntry\022?\n\nconditions\030" +
       "\014 \003(\0132+.google.monitoring.v3.AlertPolicy" +
       ".Condition\022I\n\010combiner\030\006 \001(\01627.google.mo" +
@@ -77,7 +77,7 @@ public final class AlertProto {
       "\t\022=\n\017creation_record\030\n \001(\0132$.google.moni" +
       "toring.v3.MutationRecord\022=\n\017mutation_rec" +
       "ord\030\013 \001(\0132$.google.monitoring.v3.Mutatio" +
-      "nRecord\0323\n\rDocumentation\022\017\n\007content\030\001 \001(" +
+      "nRecord\0323\n\rDocumentation\022\017\n\007content\030\001 \001(",
       "\t\022\021\n\tmime_type\030\002 \001(\t\032\370\006\n\tCondition\022\014\n\004na" +
       "me\030\014 \001(\t\022\024\n\014display_name\030\006 \001(\t\022Z\n\023condit" +
       "ion_threshold\030\001 \001(\0132;.google.monitoring." +
@@ -87,7 +87,7 @@ public final class AlertProto {
       "AbsenceH\000\0325\n\007Trigger\022\017\n\005count\030\001 \001(\005H\000\022\021\n" +
       "\007percent\030\002 \001(\001H\000B\006\n\004type\032\201\003\n\017MetricThres" +
       "hold\022\016\n\006filter\030\002 \001(\t\0227\n\014aggregations\030\010 \003" +
-      "(\0132!.google.monitoring.v3.Aggregation\022\032\n" +
+      "(\0132!.google.monitoring.v3.Aggregation\022\032\n",
       "\022denominator_filter\030\t \001(\t\022C\n\030denominator" +
       "_aggregations\030\n \003(\0132!.google.monitoring." +
       "v3.Aggregation\0228\n\ncomparison\030\004 \001(\0162$.goo" +
@@ -97,7 +97,7 @@ public final class AlertProto {
       "3.google.monitoring.v3.AlertPolicy.Condi" +
       "tion.Trigger\032\313\001\n\rMetricAbsence\022\016\n\006filter" +
       "\030\001 \001(\t\0227\n\014aggregations\030\005 \003(\0132!.google.mo" +
-      "nitoring.v3.Aggregation\022+\n\010duration\030\002 \001(" +
+      "nitoring.v3.Aggregation\022+\n\010duration\030\002 \001(",
       "\0132\031.google.protobuf.Duration\022D\n\007trigger\030" +
       "\003 \001(\01323.google.monitoring.v3.AlertPolicy" +
       ".Condition.TriggerB\013\n\tcondition\0321\n\017UserL" +
@@ -107,7 +107,7 @@ public final class AlertProto {
       "H_MATCHING_RESOURCE\020\003B\242\001\n\030com.google.mon" +
       "itoring.v3B\nAlertProtoP\001Z>google.golang." +
       "org/genproto/googleapis/monitoring/v3;mo" +
-      "nitoring\252\002\032Google.Cloud.Monitoring.V3\312\002\032" +
+      "nitoring\252\002\032Google.Cloud.Monitoring.V3\312\002\032",
       "Google\\Cloud\\Monitoring\\V3b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =

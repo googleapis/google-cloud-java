@@ -87,7 +87,7 @@ public final class SpannerDatabaseAdminProto {
       "f/empty.proto\032\037google/protobuf/timestamp" +
       ".proto\"\222\001\n\010Database\022\014\n\004name\030\001 \001(\t\022?\n\005sta" +
       "te\030\002 \001(\01620.google.spanner.admin.database" +
-      ".v1.Database.State\"7\n\005State\022\025\n\021STATE_UNS" +
+      ".v1.Database.State\"7\n\005State\022\025\n\021STATE_UNS",
       "PECIFIED\020\000\022\014\n\010CREATING\020\001\022\t\n\005READY\020\002\"M\n\024L" +
       "istDatabasesRequest\022\016\n\006parent\030\001 \001(\t\022\021\n\tp" +
       "age_size\030\003 \001(\005\022\022\n\npage_token\030\004 \001(\t\"o\n\025Li" +
@@ -97,7 +97,7 @@ public final class SpannerDatabaseAdminProto {
       "abaseRequest\022\016\n\006parent\030\001 \001(\t\022\030\n\020create_s" +
       "tatement\030\002 \001(\t\022\030\n\020extra_statements\030\003 \003(\t" +
       "\"*\n\026CreateDatabaseMetadata\022\020\n\010database\030\001" +
-      " \001(\t\"\"\n\022GetDatabaseRequest\022\014\n\004name\030\001 \001(\t" +
+      " \001(\t\"\"\n\022GetDatabaseRequest\022\014\n\004name\030\001 \001(\t",
       "\"V\n\030UpdateDatabaseDdlRequest\022\020\n\010database" +
       "\030\001 \001(\t\022\022\n\nstatements\030\002 \003(\t\022\024\n\014operation_" +
       "id\030\003 \001(\t\"x\n\031UpdateDatabaseDdlMetadata\022\020\n" +
@@ -107,7 +107,7 @@ public final class SpannerDatabaseAdminProto {
       "abase\030\001 \001(\t\")\n\025GetDatabaseDdlRequest\022\020\n\010" +
       "database\030\001 \001(\t\",\n\026GetDatabaseDdlResponse" +
       "\022\022\n\nstatements\030\001 \003(\t2\225\014\n\rDatabaseAdmin\022\267" +
-      "\001\n\rListDatabases\0226.google.spanner.admin." +
+      "\001\n\rListDatabases\0226.google.spanner.admin.",
       "database.v1.ListDatabasesRequest\0327.googl" +
       "e.spanner.admin.database.v1.ListDatabase" +
       "sResponse\"5\202\323\344\223\002/\022-/v1/{parent=projects/" +
@@ -117,7 +117,7 @@ public final class SpannerDatabaseAdminProto {
       "g.Operation\"8\202\323\344\223\0022\"-/v1/{parent=project" +
       "s/*/instances/*}/databases:\001*\022\246\001\n\013GetDat" +
       "abase\0224.google.spanner.admin.database.v1" +
-      ".GetDatabaseRequest\032*.google.spanner.adm" +
+      ".GetDatabaseRequest\032*.google.spanner.adm",
       "in.database.v1.Database\"5\202\323\344\223\002/\022-/v1/{na" +
       "me=projects/*/instances/*/databases/*}\022\260" +
       "\001\n\021UpdateDatabaseDdl\022:.google.spanner.ad" +
@@ -127,7 +127,7 @@ public final class SpannerDatabaseAdminProto {
       "tabases/*}/ddl:\001*\022\230\001\n\014DropDatabase\0225.goo" +
       "gle.spanner.admin.database.v1.DropDataba" +
       "seRequest\032\026.google.protobuf.Empty\"9\202\323\344\223\002" +
-      "3*1/v1/{database=projects/*/instances/*/" +
+      "3*1/v1/{database=projects/*/instances/*/",
       "databases/*}\022\302\001\n\016GetDatabaseDdl\0227.google" +
       ".spanner.admin.database.v1.GetDatabaseDd" +
       "lRequest\0328.google.spanner.admin.database" +
@@ -137,7 +137,7 @@ public final class SpannerDatabaseAdminProto {
       "v1.SetIamPolicyRequest\032\025.google.iam.v1.P" +
       "olicy\"I\202\323\344\223\002C\">/v1/{resource=projects/*/" +
       "instances/*/databases/*}:setIamPolicy:\001*" +
-      "\022\224\001\n\014GetIamPolicy\022\".google.iam.v1.GetIam" +
+      "\022\224\001\n\014GetIamPolicy\022\".google.iam.v1.GetIam",
       "PolicyRequest\032\025.google.iam.v1.Policy\"I\202\323" +
       "\344\223\002C\">/v1/{resource=projects/*/instances" +
       "/*/databases/*}:getIamPolicy:\001*\022\272\001\n\022Test" +
@@ -147,7 +147,7 @@ public final class SpannerDatabaseAdminProto {
       "ce=projects/*/instances/*/databases/*}:t" +
       "estIamPermissions:\001*B\337\001\n$com.google.span" +
       "ner.admin.database.v1B\031SpannerDatabaseAd" +
-      "minProtoP\001ZHgoogle.golang.org/genproto/g" +
+      "minProtoP\001ZHgoogle.golang.org/genproto/g",
       "oogleapis/spanner/admin/database/v1;data" +
       "base\252\002&Google.Cloud.Spanner.Admin.Databa" +
       "se.V1\312\002&Google\\Cloud\\Spanner\\Admin\\Datab" +

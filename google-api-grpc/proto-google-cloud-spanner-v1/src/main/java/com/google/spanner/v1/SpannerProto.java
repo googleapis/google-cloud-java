@@ -132,7 +132,7 @@ public final class SpannerProto {
       "google/spanner/v1/result_set.proto\032#goog" +
       "le/spanner/v1/transaction.proto\032\034google/" +
       "spanner/v1/type.proto\"U\n\024CreateSessionRe" +
-      "quest\022\020\n\010database\030\001 \001(\t\022+\n\007session\030\002 \001(\013" +
+      "quest\022\020\n\010database\030\001 \001(\t\022+\n\007session\030\002 \001(\013",
       "2\032.google.spanner.v1.Session\"\356\001\n\007Session" +
       "\022\014\n\004name\030\001 \001(\t\0226\n\006labels\030\002 \003(\0132&.google." +
       "spanner.v1.Session.LabelsEntry\022/\n\013create" +
@@ -142,7 +142,7 @@ public final class SpannerProto {
       "\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"!\n\021GetSess" +
       "ionRequest\022\014\n\004name\030\001 \001(\t\"^\n\023ListSessions" +
       "Request\022\020\n\010database\030\001 \001(\t\022\021\n\tpage_size\030\002" +
-      " \001(\005\022\022\n\npage_token\030\003 \001(\t\022\016\n\006filter\030\004 \001(\t" +
+      " \001(\005\022\022\n\npage_token\030\003 \001(\t\022\016\n\006filter\030\004 \001(\t",
       "\"]\n\024ListSessionsResponse\022,\n\010sessions\030\001 \003" +
       "(\0132\032.google.spanner.v1.Session\022\027\n\017next_p" +
       "age_token\030\002 \001(\t\"$\n\024DeleteSessionRequest\022" +
@@ -152,7 +152,7 @@ public final class SpannerProto {
       "\030\003 \001(\t\022\'\n\006params\030\004 \001(\0132\027.google.protobuf" +
       ".Struct\022I\n\013param_types\030\005 \003(\01324.google.sp" +
       "anner.v1.ExecuteSqlRequest.ParamTypesEnt" +
-      "ry\022\024\n\014resume_token\030\006 \001(\014\022B\n\nquery_mode\030\007" +
+      "ry\022\024\n\014resume_token\030\006 \001(\014\022B\n\nquery_mode\030\007",
       " \001(\0162..google.spanner.v1.ExecuteSqlReque" +
       "st.QueryMode\022\027\n\017partition_token\030\010 \001(\014\032J\n" +
       "\017ParamTypesEntry\022\013\n\003key\030\001 \001(\t\022&\n\005value\030\002" +
@@ -162,7 +162,7 @@ public final class SpannerProto {
       "bytes\030\001 \001(\003\022\026\n\016max_partitions\030\002 \001(\003\"\366\002\n\025" +
       "PartitionQueryRequest\022\017\n\007session\030\001 \001(\t\022;" +
       "\n\013transaction\030\002 \001(\0132&.google.spanner.v1." +
-      "TransactionSelector\022\013\n\003sql\030\003 \001(\t\022\'\n\006para" +
+      "TransactionSelector\022\013\n\003sql\030\003 \001(\t\022\'\n\006para",
       "ms\030\004 \001(\0132\027.google.protobuf.Struct\022M\n\013par" +
       "am_types\030\005 \003(\01328.google.spanner.v1.Parti" +
       "tionQueryRequest.ParamTypesEntry\022>\n\021part" +
@@ -172,7 +172,7 @@ public final class SpannerProto {
       ".v1.Type:\0028\001\"\377\001\n\024PartitionReadRequest\022\017\n" +
       "\007session\030\001 \001(\t\022;\n\013transaction\030\002 \001(\0132&.go" +
       "ogle.spanner.v1.TransactionSelector\022\r\n\005t" +
-      "able\030\003 \001(\t\022\r\n\005index\030\004 \001(\t\022\017\n\007columns\030\005 \003" +
+      "able\030\003 \001(\t\022\r\n\005index\030\004 \001(\t\022\017\n\007columns\030\005 \003",
       "(\t\022*\n\007key_set\030\006 \001(\0132\031.google.spanner.v1." +
       "KeySet\022>\n\021partition_options\030\t \001(\0132#.goog" +
       "le.spanner.v1.PartitionOptions\"$\n\tPartit" +
@@ -182,7 +182,7 @@ public final class SpannerProto {
       "2\036.google.spanner.v1.Transaction\"\364\001\n\013Rea" +
       "dRequest\022\017\n\007session\030\001 \001(\t\022;\n\013transaction" +
       "\030\002 \001(\0132&.google.spanner.v1.TransactionSe" +
-      "lector\022\r\n\005table\030\003 \001(\t\022\r\n\005index\030\004 \001(\t\022\017\n\007" +
+      "lector\022\r\n\005table\030\003 \001(\t\022\r\n\005index\030\004 \001(\t\022\017\n\007",
       "columns\030\005 \003(\t\022*\n\007key_set\030\006 \001(\0132\031.google." +
       "spanner.v1.KeySet\022\r\n\005limit\030\010 \001(\003\022\024\n\014resu" +
       "me_token\030\t \001(\014\022\027\n\017partition_token\030\n \001(\014\"" +
@@ -192,7 +192,7 @@ public final class SpannerProto {
       "\007session\030\001 \001(\t\022\030\n\016transaction_id\030\002 \001(\014H\000" +
       "\022G\n\026single_use_transaction\030\003 \001(\0132%.googl" +
       "e.spanner.v1.TransactionOptionsH\000\022.\n\tmut" +
-      "ations\030\004 \003(\0132\033.google.spanner.v1.Mutatio" +
+      "ations\030\004 \003(\0132\033.google.spanner.v1.Mutatio",
       "nB\r\n\013transaction\"F\n\016CommitResponse\0224\n\020co" +
       "mmit_timestamp\030\001 \001(\0132\032.google.protobuf.T" +
       "imestamp\":\n\017RollbackRequest\022\017\n\007session\030\001" +
@@ -202,7 +202,7 @@ public final class SpannerProto {
       "Session\"E\202\323\344\223\002?\":/v1/{database=projects/" +
       "*/instances/*/databases/*}/sessions:\001*\022\220" +
       "\001\n\nGetSession\022$.google.spanner.v1.GetSes" +
-      "sionRequest\032\032.google.spanner.v1.Session\"" +
+      "sionRequest\032\032.google.spanner.v1.Session\"",
       "@\202\323\344\223\002:\0228/v1/{name=projects/*/instances/" +
       "*/databases/*/sessions/*}\022\243\001\n\014ListSessio" +
       "ns\022&.google.spanner.v1.ListSessionsReque" +
@@ -212,7 +212,7 @@ public final class SpannerProto {
       "teSession\022\'.google.spanner.v1.DeleteSess" +
       "ionRequest\032\026.google.protobuf.Empty\"@\202\323\344\223" +
       "\002:*8/v1/{name=projects/*/instances/*/dat" +
-      "abases/*/sessions/*}\022\243\001\n\nExecuteSql\022$.go" +
+      "abases/*/sessions/*}\022\243\001\n\nExecuteSql\022$.go",
       "ogle.spanner.v1.ExecuteSqlRequest\032\034.goog" +
       "le.spanner.v1.ResultSet\"Q\202\323\344\223\002K\"F/v1/{se" +
       "ssion=projects/*/instances/*/databases/*" +
@@ -222,7 +222,7 @@ public final class SpannerProto {
       "ltSet\"Z\202\323\344\223\002T\"O/v1/{session=projects/*/i" +
       "nstances/*/databases/*/sessions/*}:execu" +
       "teStreamingSql:\001*0\001\022\221\001\n\004Read\022\036.google.sp" +
-      "anner.v1.ReadRequest\032\034.google.spanner.v1" +
+      "anner.v1.ReadRequest\032\034.google.spanner.v1",
       ".ResultSet\"K\202\323\344\223\002E\"@/v1/{session=project" +
       "s/*/instances/*/databases/*/sessions/*}:" +
       "read:\001*\022\254\001\n\rStreamingRead\022\036.google.spann" +
@@ -232,7 +232,7 @@ public final class SpannerProto {
       "/*}:streamingRead:\001*0\001\022\267\001\n\020BeginTransact" +
       "ion\022*.google.spanner.v1.BeginTransaction" +
       "Request\032\036.google.spanner.v1.Transaction\"" +
-      "W\202\323\344\223\002Q\"L/v1/{session=projects/*/instanc" +
+      "W\202\323\344\223\002Q\"L/v1/{session=projects/*/instanc",
       "es/*/databases/*/sessions/*}:beginTransa" +
       "ction:\001*\022\234\001\n\006Commit\022 .google.spanner.v1." +
       "CommitRequest\032!.google.spanner.v1.Commit" +
@@ -242,7 +242,7 @@ public final class SpannerProto {
       ".RollbackRequest\032\026.google.protobuf.Empty" +
       "\"O\202\323\344\223\002I\"D/v1/{session=projects/*/instan" +
       "ces/*/databases/*/sessions/*}:rollback:\001" +
-      "*\022\267\001\n\016PartitionQuery\022(.google.spanner.v1" +
+      "*\022\267\001\n\016PartitionQuery\022(.google.spanner.v1",
       ".PartitionQueryRequest\032$.google.spanner." +
       "v1.PartitionResponse\"U\202\323\344\223\002O\"J/v1/{sessi" +
       "on=projects/*/instances/*/databases/*/se" +
@@ -252,7 +252,7 @@ public final class SpannerProto {
       "onse\"T\202\323\344\223\002N\"I/v1/{session=projects/*/in" +
       "stances/*/databases/*/sessions/*}:partit" +
       "ionRead:\001*B\225\001\n\025com.google.spanner.v1B\014Sp" +
-      "annerProtoP\001Z8google.golang.org/genproto" +
+      "annerProtoP\001Z8google.golang.org/genproto",
       "/googleapis/spanner/v1;spanner\252\002\027Google." +
       "Cloud.Spanner.V1\312\002\027Google\\Cloud\\Spanner\\" +
       "V1b\006proto3"
