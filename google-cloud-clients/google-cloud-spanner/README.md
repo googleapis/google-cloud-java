@@ -101,7 +101,7 @@ try {
 
 #### Complete source code
 
-In [DatabaseSelect.java](../google-cloud-examples/src/main/java/com/google/cloud/examples/spanner/snippets/DatabaseSelect.java) we put together all the code shown above in a single program.
+In [DatabaseSelect.java](../../google-cloud-examples/src/main/java/com/google/cloud/examples/spanner/snippets/DatabaseSelect.java) we put together all the code shown above in a single program.
 
 ## Troubleshooting
 

@@ -57,7 +57,7 @@ public final class QueryPlanProto {
       "gle.spanner.v1.PlanNode.ChildLink\022M\n\024sho" +
       "rt_representation\030\005 \001(\0132/.google.spanner" +
       ".v1.PlanNode.ShortRepresentation\022)\n\010meta" +
-      "data\030\006 \001(\0132\027.google.protobuf.Struct\0220\n\017e" +
+      "data\030\006 \001(\0132\027.google.protobuf.Struct\0220\n\017e",
       "xecution_stats\030\007 \001(\0132\027.google.protobuf.S" +
       "truct\032@\n\tChildLink\022\023\n\013child_index\030\001 \001(\005\022" +
       "\014\n\004type\030\002 \001(\t\022\020\n\010variable\030\003 \001(\t\032\262\001\n\023Shor" +
@@ -67,7 +67,7 @@ public final class QueryPlanProto {
       "y\0321\n\017SubqueriesEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005val" +
       "ue\030\002 \001(\005:\0028\001\"8\n\004Kind\022\024\n\020KIND_UNSPECIFIED" +
       "\020\000\022\016\n\nRELATIONAL\020\001\022\n\n\006SCALAR\020\002\"<\n\tQueryP" +
-      "lan\022/\n\nplan_nodes\030\001 \003(\0132\033.google.spanner" +
+      "lan\022/\n\nplan_nodes\030\001 \003(\0132\033.google.spanner",
       ".v1.PlanNodeB\227\001\n\025com.google.spanner.v1B\016" +
       "QueryPlanProtoP\001Z8google.golang.org/genp" +
       "roto/googleapis/spanner/v1;spanner\252\002\027Goo" +

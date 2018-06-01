@@ -42,7 +42,7 @@ public final class MetricProto {
       "e.monitoring.v3.TypedValue\"\210\002\n\nTimeSerie" +
       "s\022\"\n\006metric\030\001 \001(\0132\022.google.api.Metric\022/\n" +
       "\010resource\030\002 \001(\0132\035.google.api.MonitoredRe" +
-      "source\022<\n\013metric_kind\030\003 \001(\0162\'.google.api" +
+      "source\022<\n\013metric_kind\030\003 \001(\0162\'.google.api",
       ".MetricDescriptor.MetricKind\022:\n\nvalue_ty" +
       "pe\030\004 \001(\0162&.google.api.MetricDescriptor.V" +
       "alueType\022+\n\006points\030\005 \003(\0132\033.google.monito" +

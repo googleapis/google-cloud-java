@@ -37,7 +37,7 @@ public final class FindingProto {
       "ogle.cloud.websecurityscanner.v1alpha.Fi" +
       "nding.FindingType\022\023\n\013http_method\030\003 \001(\t\022\022" +
       "\n\nfuzzed_url\030\004 \001(\t\022\014\n\004body\030\005 \001(\t\022\023\n\013desc" +
-      "ription\030\006 \001(\t\022\030\n\020reproduction_url\030\007 \001(\t\022" +
+      "ription\030\006 \001(\t\022\030\n\020reproduction_url\030\007 \001(\t\022",
       "\021\n\tframe_url\030\010 \001(\t\022\021\n\tfinal_url\030\t \001(\t\022\023\n" +
       "\013tracking_id\030\n \001(\t\022R\n\020outdated_library\030\013" +
       " \001(\01328.google.cloud.websecurityscanner.v" +
@@ -47,7 +47,7 @@ public final class FindingProto {
       "able_parameters\030\r \001(\0132=.google.cloud.web" +
       "securityscanner.v1alpha.VulnerableParame" +
       "ters\0229\n\003xss\030\016 \001(\0132,.google.cloud.websecu" +
-      "rityscanner.v1alpha.Xss\"\241\001\n\013FindingType\022" +
+      "rityscanner.v1alpha.Xss\"\241\001\n\013FindingType\022",
       "\034\n\030FINDING_TYPE_UNSPECIFIED\020\000\022\021\n\rMIXED_C" +
       "ONTENT\020\001\022\024\n\020OUTDATED_LIBRARY\020\002\022\021\n\rROSETT" +
       "A_FLASH\020\005\022\020\n\014XSS_CALLBACK\020\003\022\r\n\tXSS_ERROR" +

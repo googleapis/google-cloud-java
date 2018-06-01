@@ -77,7 +77,7 @@ public final class UptimeProto {
       "rceH\000\022O\n\016resource_group\030\004 \001(\01325.google.m" +
       "onitoring.v3.UptimeCheckConfig.ResourceG" +
       "roupH\000\022G\n\nhttp_check\030\005 \001(\01321.google.moni" +
-      "toring.v3.UptimeCheckConfig.HttpCheckH\001\022" +
+      "toring.v3.UptimeCheckConfig.HttpCheckH\001\022",
       "E\n\ttcp_check\030\006 \001(\01320.google.monitoring.v" +
       "3.UptimeCheckConfig.TcpCheckH\001\022)\n\006period" +
       "\030\007 \001(\0132\031.google.protobuf.Duration\022*\n\007tim" +
@@ -87,7 +87,7 @@ public final class UptimeProto {
       "A\n\020selected_regions\030\n \003(\0162\'.google.monit" +
       "oring.v3.UptimeCheckRegion\022R\n\021internal_c" +
       "heckers\030\016 \003(\01327.google.monitoring.v3.Upt" +
-      "imeCheckConfig.InternalChecker\032a\n\rResour" +
+      "imeCheckConfig.InternalChecker\032a\n\rResour",
       "ceGroup\022\020\n\010group_id\030\001 \001(\t\022>\n\rresource_ty" +
       "pe\030\002 \001(\0162\'.google.monitoring.v3.GroupRes" +
       "ourceType\032\344\002\n\tHttpCheck\022\017\n\007use_ssl\030\001 \001(\010" +
@@ -97,7 +97,7 @@ public final class UptimeProto {
       "\n\014mask_headers\030\005 \001(\010\022O\n\007headers\030\006 \003(\0132>." +
       "google.monitoring.v3.UptimeCheckConfig.H" +
       "ttpCheck.HeadersEntry\0329\n\023BasicAuthentica" +
-      "tion\022\020\n\010username\030\001 \001(\t\022\020\n\010password\030\002 \001(\t" +
+      "tion\022\020\n\010username\030\001 \001(\t\022\020\n\010password\030\002 \001(\t",
       "\032.\n\014HeadersEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002" +
       " \001(\t:\0028\001\032\030\n\010TcpCheck\022\014\n\004port\030\001 \001(\005\032!\n\016Co" +
       "ntentMatcher\022\017\n\007content\030\001 \001(\t\032r\n\017Interna" +
@@ -107,7 +107,7 @@ public final class UptimeProto {
       "\022check_request_type\"n\n\rUptimeCheckIp\0227\n\006" +
       "region\030\001 \001(\0162\'.google.monitoring.v3.Upti" +
       "meCheckRegion\022\020\n\010location\030\002 \001(\t\022\022\n\nip_ad" +
-      "dress\030\003 \001(\t*e\n\021UptimeCheckRegion\022\026\n\022REGI" +
+      "dress\030\003 \001(\t*e\n\021UptimeCheckRegion\022\026\n\022REGI",
       "ON_UNSPECIFIED\020\000\022\007\n\003USA\020\001\022\n\n\006EUROPE\020\002\022\021\n" +
       "\rSOUTH_AMERICA\020\003\022\020\n\014ASIA_PACIFIC\020\004*[\n\021Gr" +
       "oupResourceType\022\035\n\031RESOURCE_TYPE_UNSPECI" +

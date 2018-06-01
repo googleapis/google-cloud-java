@@ -85,7 +85,7 @@ for (String text : texts) {
 
 #### Complete source code
 
-In [AnalyzeSentiment.java](../google-cloud-examples/src/main/java/com/google/cloud/examples/language/snippets/AnalyzeSentiment.java) we put the code shown above into a complete program.
+In [AnalyzeSentiment.java](../../google-cloud-examples/src/main/java/com/google/cloud/examples/language/snippets/AnalyzeSentiment.java) we put the code shown above into a complete program.
 
 Troubleshooting
 ---------------

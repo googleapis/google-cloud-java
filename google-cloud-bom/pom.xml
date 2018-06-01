@@ -150,28 +150,28 @@
       <dependency>
         <groupId>com.google.api</groupId>
         <artifactId>gax</artifactId>
-        <version>1.26.0</version>
+        <version>1.27.0</version>
       </dependency>
       <dependency>
         <groupId>com.google.api</groupId>
         <artifactId>gax-grpc</artifactId>
-        <version>1.26.0</version>
+        <version>1.27.0</version>
       </dependency>
       <dependency>
         <groupId>com.google.api</groupId>
         <artifactId>gax-grpc</artifactId>
-        <version>1.26.0</version>
+        <version>1.27.0</version>
         <classifier>testlib</classifier>
       </dependency>
       <dependency>
         <groupId>com.google.api</groupId>
         <artifactId>gax-httpjson</artifactId>
-        <version>0.43.0</version>
+        <version>0.44.0</version>
       </dependency>
       <dependency>
         <groupId>com.google.api</groupId>
         <artifactId>gax-httpjson</artifactId>
-        <version>0.43.0</version>
+        <version>0.44.0</version>
         <classifier>testlib</classifier>
       </dependency>
       <dependency>
@@ -754,6 +754,16 @@
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-texttospeech-v1beta1</artifactId>
         <version>0.14.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-texttospeech-v1beta1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-texttospeech-v1</artifactId>
+        <version>0.14.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-texttospeech-v1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-texttospeech-v1</artifactId>
+        <version>0.14.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-texttospeech-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>

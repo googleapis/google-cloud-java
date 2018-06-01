@@ -99,4 +99,4 @@ Apache 2.0 - See [LICENSE] for more information.
 [cloud-platform]: https://cloud.google.com/
 [cloud-texttospeech]: https://cloud.google.com/texttospeech
 [texttospeech-product-docs]: https://cloud.google.com/texttospeech/docs
-[texttospeech-client-lib-docs]: https://googlecloudplatform.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/texttospeech/v1beta1/package-summary.html
+[texttospeech-client-lib-docs]: https://googlecloudplatform.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/texttospeech/v1/package-summary.html

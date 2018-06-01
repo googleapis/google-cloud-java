@@ -67,7 +67,7 @@ public final class CommonProto {
       "p_id\030\002 \001(\t\022S\n\017tracking_issues\030\003 \003(\0132:.go" +
       "ogle.devtools.clouderrorreporting.v1beta" +
       "1.TrackingIssue\"\034\n\rTrackingIssue\022\013\n\003url\030" +
-      "\001 \001(\t\"\357\001\n\nErrorEvent\022.\n\nevent_time\030\001 \001(\013" +
+      "\001 \001(\t\"\357\001\n\nErrorEvent\022.\n\nevent_time\030\001 \001(\013",
       "2\032.google.protobuf.Timestamp\022T\n\017service_" +
       "context\030\002 \001(\0132;.google.devtools.clouderr" +
       "orreporting.v1beta1.ServiceContext\022\017\n\007me" +
@@ -77,7 +77,7 @@ public final class CommonProto {
       "(\t\022\017\n\007version\030\003 \001(\t\022\025\n\rresource_type\030\004 \001" +
       "(\t\"\311\001\n\014ErrorContext\022U\n\014http_request\030\001 \001(" +
       "\0132?.google.devtools.clouderrorreporting." +
-      "v1beta1.HttpRequestContext\022\014\n\004user\030\002 \001(\t" +
+      "v1beta1.HttpRequestContext\022\014\n\004user\030\002 \001(\t",
       "\022T\n\017report_location\030\003 \001(\0132;.google.devto" +
       "ols.clouderrorreporting.v1beta1.SourceLo" +
       "cation\"\210\001\n\022HttpRequestContext\022\016\n\006method\030" +
@@ -87,7 +87,7 @@ public final class CommonProto {
       "ion\022\021\n\tfile_path\030\001 \001(\t\022\023\n\013line_number\030\002 " +
       "\001(\005\022\025\n\rfunction_name\030\004 \001(\tB\354\001\n/com.googl" +
       "e.devtools.clouderrorreporting.v1beta1B\013" +
-      "CommonProtoP\001Z^google.golang.org/genprot" +
+      "CommonProtoP\001Z^google.golang.org/genprot",
       "o/googleapis/devtools/clouderrorreportin" +
       "g/v1beta1;clouderrorreporting\252\002#Google.C" +
       "loud.ErrorReporting.V1Beta1\312\002#Google\\Clo" +

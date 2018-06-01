@@ -37,7 +37,7 @@ public final class TracingProto {
       "\004name\030\001 \001(\t\0222\n\005spans\030\002 \003(\0132#.google.devt" +
       "ools.cloudtrace.v2.Span2\257\002\n\014TraceService" +
       "\022\224\001\n\017BatchWriteSpans\0225.google.devtools.c" +
-      "loudtrace.v2.BatchWriteSpansRequest\032\026.go" +
+      "loudtrace.v2.BatchWriteSpansRequest\032\026.go",
       "ogle.protobuf.Empty\"2\202\323\344\223\002,\"\'/v2/{name=p" +
       "rojects/*}/traces:batchWrite:\001*\022\207\001\n\nCrea" +
       "teSpan\022#.google.devtools.cloudtrace.v2.S" +
