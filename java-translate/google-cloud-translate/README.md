@@ -37,7 +37,7 @@ libraryDependencies += "com.google.cloud" % "google-cloud-translate" % "1.31.0"
 Example Application
 -------------------
 
-[`TranslateExample`](../google-cloud-examples/src/main/java/com/google/cloud/examples/translate/TranslateExample.java) is a simple command line interface that provides some of Google Translation's functionality.  Read more about using the application on the [`TranslateExample` docs page](https://googlecloudplatform.github.io/google-cloud-java/apidocs/?com/google/cloud/examples/translate/TranslateExample.html).
+[`TranslateExample`](../../google-cloud-examples/src/main/java/com/google/cloud/examples/translate/TranslateExample.java) is a simple command line interface that provides some of Google Translation's functionality.  Read more about using the application on the [`TranslateExample` docs page](https://googlecloudplatform.github.io/google-cloud-java/apidocs/?com/google/cloud/examples/translate/TranslateExample.html).
 
 Authentication
 --------------
@@ -147,7 +147,7 @@ Translation translation = translate.translate(
 #### Complete source code
 
 In
-[DetectLanguageAndTranslate.java](../google-cloud-examples/src/main/java/com/google/cloud/examples/translate/snippets/DetectLanguageAndTranslate.java)
+[DetectLanguageAndTranslate.java](../../google-cloud-examples/src/main/java/com/google/cloud/examples/translate/snippets/DetectLanguageAndTranslate.java)
 we put together all the code shown above into one program. The program assumes that either Application
 Default Credentials or a valid API key are available.
 
