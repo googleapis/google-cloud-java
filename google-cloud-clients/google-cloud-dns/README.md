@@ -40,7 +40,7 @@ libraryDependencies += "com.google.cloud" % "google-cloud-dns" % "0.49.0-alpha"
 Example Application
 -------------------
 
-[`DnsExample`](../google-cloud-examples/src/main/java/com/google/cloud/examples/dns/DnsExample.java)
+[`DnsExample`](../../google-cloud-examples/src/main/java/com/google/cloud/examples/dns/DnsExample.java)
 is a simple command line interface that provides some of Google Cloud DNS's functionality.  Read
 more about using the application on the
 [`DnsExample` docs page](https://googlecloudplatform.github.io/google-cloud-java/apidocs/?com/google/cloud/examples/dns/DnsExample.html).
@@ -330,11 +330,11 @@ if (result) {
 #### Complete Source Code
 
 We composed some of the aforementioned snippets into complete executable code samples. In
-[CreateZone.java](../google-cloud-examples/src/main/java/com/google/cloud/examples/dns/snippets/CreateZone.java)
-we create a zone. In [CreateOrUpdateRecordSets.java](../google-cloud-examples/src/main/java/com/google/cloud/examples/dns/snippets/CreateOrUpdateRecordSets.java)
+[CreateZone.java](../../google-cloud-examples/src/main/java/com/google/cloud/examples/dns/snippets/CreateZone.java)
+we create a zone. In [CreateOrUpdateRecordSets.java](../../google-cloud-examples/src/main/java/com/google/cloud/examples/dns/snippets/CreateOrUpdateRecordSets.java)
 we create a type A record set for a zone, or update an existing type A record set to a new IP address. We
-demonstrate how to delete a zone in [DeleteZone.java](../google-cloud-examples/src/main/java/com/google/cloud/examples/dns/snippets/DeleteZone.java).
-Finally, in [ManipulateZonesAndRecordSets.java](../google-cloud-examples/src/main/java/com/google/cloud/examples/dns/snippets/ManipulateZonesAndRecordSets.java)
+demonstrate how to delete a zone in [DeleteZone.java](../../google-cloud-examples/src/main/java/com/google/cloud/examples/dns/snippets/DeleteZone.java).
+Finally, in [ManipulateZonesAndRecordSets.java](../../google-cloud-examples/src/main/java/com/google/cloud/examples/dns/snippets/ManipulateZonesAndRecordSets.java)
 we assemble all the code snippets together and create zone, create or update a record set, list zones, list record sets, list changes, and
 delete a zone. The applications assume that they are running on Compute Engine or from your own desktop. To run any of these examples on App
 Engine, simply move the code from the main method to your application's servlet class and change the

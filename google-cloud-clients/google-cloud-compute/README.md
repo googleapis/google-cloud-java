@@ -41,7 +41,7 @@ libraryDependencies += "com.google.cloud" % "google-cloud-compute" % "0.49.0-alp
 Example Application
 -------------------
 
-[`ComputeExample`](../google-cloud-examples/src/main/java/com/google/cloud/examples/compute/ComputeExample.java)
+[`ComputeExample`](../../google-cloud-examples/src/main/java/com/google/cloud/examples/compute/ComputeExample.java)
 is a simple command line interface that provides some of Google Cloud Compute Engine's
 functionality. Read more about using the application on the
 [`ComputeExample` docs page](https://googlecloudplatform.github.io/google-cloud-java/apidocs/?com/google/cloud/examples/compute/ComputeExample.html).
@@ -211,7 +211,7 @@ if (operation.getErrors() == null) {
 #### Complete source code
 
 In
-[CreateAddressDiskAndInstance.java](../google-cloud-examples/src/main/java/com/google/cloud/examples/compute/snippets/CreateAddressDiskAndInstance.java)
+[CreateAddressDiskAndInstance.java](../../google-cloud-examples/src/main/java/com/google/cloud/examples/compute/snippets/CreateAddressDiskAndInstance.java)
 we put together all the code shown above into one program. The program assumes that you are
 running on Compute Engine or from your own desktop. To run the example on App Engine, simply move
 the code from the main method to your application's servlet class and change the print statements to
@@ -221,9 +221,9 @@ display on your webpage.
 
 Other examples are available too:
 
-- [CreateSnapshot.java](../google-cloud-examples/src/main/java/com/google/cloud/examples/compute/snippets/CreateSnapshot.java) shows
+- [CreateSnapshot.java](../../google-cloud-examples/src/main/java/com/google/cloud/examples/compute/snippets/CreateSnapshot.java) shows
 how to create a snapshot from an existing disk
-- [CreateInstance.java](../google-cloud-examples/src/main/java/com/google/cloud/examples/compute/snippets/CreateInstance.java) shows
+- [CreateInstance.java](../../google-cloud-examples/src/main/java/com/google/cloud/examples/compute/snippets/CreateInstance.java) shows
 how to create a virtual machine instance (shorter sample than the one above)
 
 Troubleshooting

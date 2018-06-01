@@ -44,10 +44,10 @@ libraryDependencies += "com.google.cloud" % "google-cloud-nio" % "0.49.0-alpha"
 Example Applications
 -------------------
 
-* [`Stat`](../../google-cloud-examples/src/main/java/com/google/cloud/examples/nio/Stat.java)
+* [`Stat`](../../../google-cloud-examples/src/main/java/com/google/cloud/examples/nio/Stat.java)
 shows how to get started with NIO.
 
-* [`ParallelCountBytes`](../../google-cloud-examples/src/main/java/com/google/cloud/examples/nio/ParallelCountBytes.java)
+* [`ParallelCountBytes`](../../../google-cloud-examples/src/main/java/com/google/cloud/examples/nio/ParallelCountBytes.java)
 efficiently downloads a file from Google Cloud Storage.
 
 * [`ListFileSystems`](../google-cloud-nio-examples/README.md) illustrates how
@@ -162,7 +162,7 @@ system implementation. You can disable this feature with
 
 #### Complete source code
 
-There are examples in [google-cloud-examples](../google-cloud-examples/src/main/java/com/google/cloud/examples/nio/)
+There are examples in [google-cloud-examples](../../google-cloud-examples/src/main/java/com/google/cloud/examples/nio/)
 for your perusal.
 
 Java Versions
