@@ -72,7 +72,7 @@ public final class TextToSpeechProto {
       "\"\231\001\n\005Voice\022\026\n\016language_codes\030\001 \003(\t\022\014\n\004na" +
       "me\030\002 \001(\t\022G\n\013ssml_gender\030\003 \001(\01622.google.c" +
       "loud.texttospeech.v1beta1.SsmlVoiceGende" +
-      "r\022!\n\031natural_sample_rate_hertz\030\004 \001(\005\"\351\001\n" +
+      "r\022!\n\031natural_sample_rate_hertz\030\004 \001(\005\"\351\001\n",
       "\027SynthesizeSpeechRequest\022@\n\005input\030\001 \001(\0132" +
       "1.google.cloud.texttospeech.v1beta1.Synt" +
       "hesisInput\022F\n\005voice\030\002 \001(\01327.google.cloud" +
@@ -82,7 +82,7 @@ public final class TextToSpeechProto {
       "hesisInput\022\016\n\004text\030\001 \001(\tH\000\022\016\n\004ssml\030\002 \001(\t" +
       "H\000B\016\n\014input_source\"\204\001\n\024VoiceSelectionPar" +
       "ams\022\025\n\rlanguage_code\030\001 \001(\t\022\014\n\004name\030\002 \001(\t" +
-      "\022G\n\013ssml_gender\030\003 \001(\01622.google.cloud.tex" +
+      "\022G\n\013ssml_gender\030\003 \001(\01622.google.cloud.tex",
       "ttospeech.v1beta1.SsmlVoiceGender\"\260\001\n\013Au" +
       "dioConfig\022H\n\016audio_encoding\030\001 \001(\01620.goog" +
       "le.cloud.texttospeech.v1beta1.AudioEncod" +
@@ -92,7 +92,7 @@ public final class TextToSpeechProto {
       "\022\025\n\raudio_content\030\001 \001(\014*W\n\017SsmlVoiceGend" +
       "er\022!\n\035SSML_VOICE_GENDER_UNSPECIFIED\020\000\022\010\n" +
       "\004MALE\020\001\022\n\n\006FEMALE\020\002\022\013\n\007NEUTRAL\020\003*T\n\rAudi" +
-      "oEncoding\022\036\n\032AUDIO_ENCODING_UNSPECIFIED\020" +
+      "oEncoding\022\036\n\032AUDIO_ENCODING_UNSPECIFIED\020",
       "\000\022\014\n\010LINEAR16\020\001\022\007\n\003MP3\020\002\022\014\n\010OGG_OPUS\020\0032\326" +
       "\002\n\014TextToSpeech\022\222\001\n\nListVoices\0224.google." +
       "cloud.texttospeech.v1beta1.ListVoicesReq" +
@@ -102,7 +102,7 @@ public final class TextToSpeechProto {
       ".texttospeech.v1beta1.SynthesizeSpeechRe" +
       "quest\032;.google.cloud.texttospeech.v1beta" +
       "1.SynthesizeSpeechResponse\"#\202\323\344\223\002\035\"\030/v1b" +
-      "eta1/text:synthesize:\001*B\216\001\n%com.google.c" +
+      "eta1/text:synthesize:\001*B\216\001\n%com.google.c",
       "loud.texttospeech.v1beta1B\021TextToSpeechP" +
       "rotoP\001ZMgoogle.golang.org/genproto/googl" +
       "eapis/cloud/texttospeech/v1beta1;texttos" +
