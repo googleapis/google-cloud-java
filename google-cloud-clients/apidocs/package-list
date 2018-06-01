@@ -99,6 +99,8 @@ com.google.cloud.storage.spi
 com.google.cloud.storage.spi.v1
 com.google.cloud.storage.testing
 com.google.cloud.testing
+com.google.cloud.texttospeech.v1
+com.google.cloud.texttospeech.v1.stub
 com.google.cloud.texttospeech.v1beta1
 com.google.cloud.texttospeech.v1beta1.stub
 com.google.cloud.trace.v1
