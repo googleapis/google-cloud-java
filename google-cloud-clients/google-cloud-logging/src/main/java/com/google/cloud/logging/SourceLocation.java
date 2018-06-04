@@ -33,6 +33,14 @@ public final class SourceLocation implements Serializable {
   private final Long line;
   private final String function;
 
+  public static Builder newBuilder() {
+    return new Builder();
+  }
+
+  public static Builder newBuilder(SourceLocation sourceLocation) {
+    return new Builder(sourceLocation);
+  }
+
   /**
    * A builder for {@code SourceLocation} objects.
    */
