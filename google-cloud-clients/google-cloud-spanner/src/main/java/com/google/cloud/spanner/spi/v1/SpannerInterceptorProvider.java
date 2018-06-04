@@ -23,7 +23,9 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * For internal use only.
+ * For internal use only. 
+ * An interceptor provider that provides a list of grpc interceptors for {@code GapicSpannerRpc}
+ * to handle logging and error augmentation by intercepting grpc calls.
  */
 class SpannerInterceptorProvider implements GrpcInterceptorProvider {
 
