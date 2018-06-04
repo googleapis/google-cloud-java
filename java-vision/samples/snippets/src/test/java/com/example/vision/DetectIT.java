@@ -244,7 +244,7 @@ public class DetectIT {
 
     // Assert
     String got = bout.toString();
-    assertThat(got).contains("Landmark");
+    assertThat(got).contains("History");
     assertThat(got).contains("Best guess label: palace of fine arts");
   }
 
@@ -256,7 +256,7 @@ public class DetectIT {
 
     // Assert
     String got = bout.toString();
-    assertThat(got).contains("Landmark");
+    assertThat(got).contains("History");
     assertThat(got).contains("Best guess label: palace of fine arts");
   }
 
