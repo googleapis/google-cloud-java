@@ -188,7 +188,7 @@ public class HttpStorageRpc implements StorageRpc {
           // TODO(hailongwen@): instrument 'google-api-java-client' to further break down the span.
           // Here we only add a annotation to at least know how much time each batch takes.
           span.addAnnotation("Execute batch request");
-          batch.setBatchUrl(new GenericUrl("https://www.googleapis.com/batch/storage/v1"));
+          batch.setBatchUrl(new GenericUrl(String.format("%s/batch/storage/v1", options.getHost())));
           batch.execute();
         }
       } catch (IOException ex) {
