@@ -37,10 +37,6 @@ public final class SourceLocation implements Serializable {
     return new Builder();
   }
 
-  public static Builder newBuilder(SourceLocation sourceLocation) {
-    return new Builder(sourceLocation);
-  }
-
   /**
    * A builder for {@code SourceLocation} objects.
    */
