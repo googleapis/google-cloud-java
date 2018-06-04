@@ -5,10 +5,6 @@ package com.google.bigtable.admin.v2;
 
 /**
  * <pre>
- * This is a private alpha release of Cloud Bigtable replication. This feature
- * is not currently available to most Cloud Bigtable customers. This feature
- * might be changed in backward-incompatible ways and is not recommended for
- * production use. It is not subject to any SLA or deprecation policy.
  * A configuration object describing how Cloud Bigtable should treat traffic
  * from a particular end user application.
  * </pre>
@@ -40,9 +36,6 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -167,9 +160,6 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -513,7 +503,7 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new MultiClusterRoutingUseAny(input, extensionRegistry);
+          return new MultiClusterRoutingUseAny(input, extensionRegistry);
       }
     };
 
@@ -598,9 +588,6 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -1180,7 +1167,7 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SingleClusterRouting(input, extensionRegistry);
+          return new SingleClusterRouting(input, extensionRegistry);
       }
     };
 
@@ -1670,10 +1657,6 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * This is a private alpha release of Cloud Bigtable replication. This feature
-   * is not currently available to most Cloud Bigtable customers. This feature
-   * might be changed in backward-incompatible ways and is not recommended for
-   * production use. It is not subject to any SLA or deprecation policy.
    * A configuration object describing how Cloud Bigtable should treat traffic
    * from a particular end user application.
    * </pre>
@@ -2554,7 +2537,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new AppProfile(input, extensionRegistry);
+        return new AppProfile(input, extensionRegistry);
     }
   };
 

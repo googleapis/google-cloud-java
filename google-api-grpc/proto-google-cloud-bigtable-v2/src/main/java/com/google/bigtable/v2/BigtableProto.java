@@ -107,7 +107,7 @@ public final class BigtableProto {
       "\004rows\030\002 \001(\0132\032.google.bigtable.v2.RowSet\022" +
       "-\n\006filter\030\003 \001(\0132\035.google.bigtable.v2.Row" +
       "Filter\022\022\n\nrows_limit\030\004 \001(\003\"\370\002\n\020ReadRowsR" +
-      "esponse\022>\n\006chunks\030\001 \003(\0132..google.bigtabl" +
+      "esponse\022>\n\006chunks\030\001 \003(\0132..google.bigtabl",
       "e.v2.ReadRowsResponse.CellChunk\022\034\n\024last_" +
       "scanned_row_key\030\002 \001(\014\032\205\002\n\tCellChunk\022\017\n\007r" +
       "ow_key\030\001 \001(\014\0221\n\013family_name\030\002 \001(\0132\034.goog" +
@@ -117,7 +117,7 @@ public final class BigtableProto {
       "ue\030\006 \001(\014\022\022\n\nvalue_size\030\007 \001(\005\022\023\n\treset_ro" +
       "w\030\010 \001(\010H\000\022\024\n\ncommit_row\030\t \001(\010H\000B\014\n\nrow_s" +
       "tatus\"B\n\024SampleRowKeysRequest\022\022\n\ntable_n" +
-      "ame\030\001 \001(\t\022\026\n\016app_profile_id\030\002 \001(\t\">\n\025Sam" +
+      "ame\030\001 \001(\t\022\026\n\016app_profile_id\030\002 \001(\t\">\n\025Sam",
       "pleRowKeysResponse\022\017\n\007row_key\030\001 \001(\014\022\024\n\014o" +
       "ffset_bytes\030\002 \001(\003\"\200\001\n\020MutateRowRequest\022\022" +
       "\n\ntable_name\030\001 \001(\t\022\026\n\016app_profile_id\030\004 \001" +
@@ -127,7 +127,7 @@ public final class BigtableProto {
       "_name\030\001 \001(\t\022\026\n\016app_profile_id\030\003 \001(\t\022<\n\007e" +
       "ntries\030\002 \003(\0132+.google.bigtable.v2.Mutate" +
       "RowsRequest.Entry\032I\n\005Entry\022\017\n\007row_key\030\001 " +
-      "\001(\014\022/\n\tmutations\030\002 \003(\0132\034.google.bigtable" +
+      "\001(\014\022/\n\tmutations\030\002 \003(\0132\034.google.bigtable",
       ".v2.Mutation\"\217\001\n\022MutateRowsResponse\022=\n\007e" +
       "ntries\030\001 \003(\0132,.google.bigtable.v2.Mutate" +
       "RowsResponse.Entry\032:\n\005Entry\022\r\n\005index\030\001 \001" +
@@ -137,7 +137,7 @@ public final class BigtableProto {
       "ey\030\002 \001(\014\0227\n\020predicate_filter\030\006 \001(\0132\035.goo" +
       "gle.bigtable.v2.RowFilter\0224\n\016true_mutati" +
       "ons\030\004 \003(\0132\034.google.bigtable.v2.Mutation\022" +
-      "5\n\017false_mutations\030\005 \003(\0132\034.google.bigtab" +
+      "5\n\017false_mutations\030\005 \003(\0132\034.google.bigtab",
       "le.v2.Mutation\"6\n\031CheckAndMutateRowRespo" +
       "nse\022\031\n\021predicate_matched\030\001 \001(\010\"\220\001\n\031ReadM" +
       "odifyWriteRowRequest\022\022\n\ntable_name\030\001 \001(\t" +
@@ -147,7 +147,7 @@ public final class BigtableProto {
       "esponse\022$\n\003row\030\001 \001(\0132\027.google.bigtable.v" +
       "2.Row2\255\010\n\010Bigtable\022\235\001\n\010ReadRows\022#.google" +
       ".bigtable.v2.ReadRowsRequest\032$.google.bi" +
-      "gtable.v2.ReadRowsResponse\"D\202\323\344\223\002>\"9/v2/" +
+      "gtable.v2.ReadRowsResponse\"D\202\323\344\223\002>\"9/v2/",
       "{table_name=projects/*/instances/*/table" +
       "s/*}:readRows:\001*0\001\022\256\001\n\rSampleRowKeys\022(.g" +
       "oogle.bigtable.v2.SampleRowKeysRequest\032)" +
@@ -157,7 +157,7 @@ public final class BigtableProto {
       "MutateRow\022$.google.bigtable.v2.MutateRow" +
       "Request\032%.google.bigtable.v2.MutateRowRe" +
       "sponse\"E\202\323\344\223\002?\":/v2/{table_name=projects" +
-      "/*/instances/*/tables/*}:mutateRow:\001*\022\245\001" +
+      "/*/instances/*/tables/*}:mutateRow:\001*\022\245\001",
       "\n\nMutateRows\022%.google.bigtable.v2.Mutate" +
       "RowsRequest\032&.google.bigtable.v2.MutateR" +
       "owsResponse\"F\202\323\344\223\002@\";/v2/{table_name=pro" +
@@ -167,7 +167,7 @@ public final class BigtableProto {
       "le.bigtable.v2.CheckAndMutateRowResponse" +
       "\"M\202\323\344\223\002G\"B/v2/{table_name=projects/*/ins" +
       "tances/*/tables/*}:checkAndMutateRow:\001*\022" +
-      "\303\001\n\022ReadModifyWriteRow\022-.google.bigtable" +
+      "\303\001\n\022ReadModifyWriteRow\022-.google.bigtable",
       ".v2.ReadModifyWriteRowRequest\032..google.b" +
       "igtable.v2.ReadModifyWriteRowResponse\"N\202" +
       "\323\344\223\002H\"C/v2/{table_name=projects/*/instan" +

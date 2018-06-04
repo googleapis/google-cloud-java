@@ -91,4 +91,13 @@ public interface BigQueryOptionsOrBuilder extends
    * <code>int64 rows_limit = 3;</code>
    */
   long getRowsLimit();
+
+  /**
+   * <code>.google.privacy.dlp.v2.BigQueryOptions.SampleMethod sample_method = 4;</code>
+   */
+  int getSampleMethodValue();
+  /**
+   * <code>.google.privacy.dlp.v2.BigQueryOptions.SampleMethod sample_method = 4;</code>
+   */
+  com.google.privacy.dlp.v2.BigQueryOptions.SampleMethod getSampleMethod();
 }

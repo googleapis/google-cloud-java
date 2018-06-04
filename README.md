@@ -13,75 +13,74 @@ Java idiomatic client for [Google Cloud Platform][cloud-platform] services.
 - [Client Library Documentation][client-lib-docs]
 
 This library supports the following Google Cloud Platform services with clients at a [GA](#versioning) quality level:
--  [BigQuery](google-cloud-bigquery) (GA)
--  [Stackdriver Logging](google-cloud-logging) (GA)
--  [Cloud Datastore](google-cloud-datastore) (GA)
--  [Cloud Natural Language](google-cloud-language) (GA)
--  [Cloud Storage](google-cloud-storage) (GA)
--  [Cloud Translation](google-cloud-translate) (GA)
--  [Cloud Vision](google-cloud-vision) (GA)
+-  [BigQuery](google-cloud-clients/google-cloud-bigquery) (GA)
+-  [Stackdriver Logging](google-cloud-clients/google-cloud-logging) (GA)
+-  [Cloud Datastore](google-cloud-clients/google-cloud-datastore) (GA)
+-  [Cloud Natural Language](google-cloud-clients/google-cloud-language) (GA)
+-  [Cloud Pub/Sub](google-cloud-clients/google-cloud-pubsub) (GA)
+-  [Cloud Storage](google-cloud-clients/google-cloud-storage) (GA)
+-  [Cloud Translation](google-cloud-clients/google-cloud-translate) (GA)
+-  [Cloud Vision](google-cloud-clients/google-cloud-vision) (GA)
 
 This library supports the following Google Cloud Platform services with clients at a [Beta](#versioning) quality level:
 
--  [Cloud Data Loss Prevention](google-cloud-dlp) (Beta)
--  [Stackdriver Error Reporting](google-cloud-errorreporting) (Beta)
--  [Cloud Firestore](google-cloud-firestore) (Beta)
--  [Stackdriver Monitoring](google-cloud-monitoring) (Beta)
--  [Cloud Pub/Sub](google-cloud-pubsub) (Beta)
--  [Cloud Spanner](google-cloud-spanner) (Beta)
--  [Cloud Video Intelligence](google-cloud-video-intelligence) (Beta)
--  [Stackdriver Trace](google-cloud-trace) (Beta)
--  [Text-to-Speech](google-cloud-texttospeech) (Beta)
+-  [BigQuery Data Transfer](google-cloud-clients/google-cloud-bigquerydatatransfer) (Beta)
+-  [Cloud Data Loss Prevention](google-cloud-clients/google-cloud-dlp) (Beta)
+-  [Stackdriver Error Reporting](google-cloud-clients/google-cloud-errorreporting) (Beta)
+-  [Cloud Firestore](google-cloud-clients/google-cloud-firestore) (Beta)
+-  [Stackdriver Monitoring](google-cloud-clients/google-cloud-monitoring) (Beta)
+-  [Cloud Spanner](google-cloud-clients/google-cloud-spanner) (Beta)
+-  [Cloud Video Intelligence](google-cloud-clients/google-cloud-video-intelligence) (Beta)
+-  [Stackdriver Trace](google-cloud-clients/google-cloud-trace) (Beta)
+-  [Text-to-Speech](google-cloud-clients/google-cloud-texttospeech) (Beta)
+-  [IoT](google-cloud-clients/google-cloud-iot) (Beta)
 
 This library supports the following Google Cloud Platform services with clients at an [Alpha](#versioning) quality level:
 
--  [Cloud Dataproc](google-cloud-dataproc) (Alpha)
--  [Cloud DNS](google-cloud-dns) (Alpha)
--  [Cloud OS Login](google-cloud-os-login) (Alpha)
--  [Cloud Resource Manager](google-cloud-resourcemanager) (Alpha)
--  [Cloud Speech](google-cloud-speech) (Alpha)
--  [Dialogflow](google-cloud-dialogflow) (Alpha)
+-  [Cloud Dataproc](google-cloud-clients/google-cloud-dataproc) (Alpha)
+-  [Cloud DNS](google-cloud-clients/google-cloud-dns) (Alpha)
+-  [Cloud OS Login](google-cloud-clients/google-cloud-os-login) (Alpha)
+-  [Cloud Redis](google-cloud-clients/google-cloud-redis) (Alpha)
+-  [Cloud Resource Manager](google-cloud-clients/google-cloud-resourcemanager) (Alpha)
+-  [Cloud Speech](google-cloud-clients/google-cloud-speech) (Alpha)
+-  [Dialogflow](google-cloud-clients/google-cloud-dialogflow) (Alpha)
+-  [Web Security Scanner](google-cloud-clients/google-cloud-websecurityscanner) (Alpha)
 
 These libraries are deprecated and no longer receive updates:
 
--  [Cloud Compute](google-cloud-compute) (Deprecated)
+-  [Cloud Compute](google-cloud-clients/google-cloud-compute) (Deprecated)
 
 Quickstart
 ----------
 
-The easy way to get started is to add the umbrella package which pulls in all of the supported clients as
-dependencies. Note that even though the version of the umbrella package is Alpha, the individual clients are
-at different support levels (Alpha, Beta, and GA).
+To call any of the supported Google Cloud Services simply add a corresponding client library artifact as a dependency to your project. The following instructions use `google-cloud-storage` as an example (specific instructions can be found in the README of each client).
 
-[//]: # ({x-version-update-start:google-cloud:released})
+[//]: # ({x-version-update-start:google-cloud-storage:released})
 If you are using Maven, add this to your pom.xml file
 ```xml
 <dependency>
   <groupId>com.google.cloud</groupId>
-  <artifactId>google-cloud</artifactId>
-  <version>0.46.0-alpha</version>
+  <artifactId>google-cloud-storage</artifactId>
+  <version>1.31.0</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud:0.46.0-alpha'
+compile 'com.google.cloud:google-cloud-storage:1.31.0'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud" % "0.46.0-alpha"
+libraryDependencies += "com.google.cloud" % "google-cloud-storage" % "1.31.0"
 ```
 [//]: # ({x-version-update-end})
 
-It also works just as well to declare a dependency only on the specific clients that you need. See the README of
-each client for instructions.
-
 If you're using IntelliJ or Eclipse, you can add client libraries to your project using these IDE plugins: 
-* [Cloud Tools for IntelliJ](https://cloud.google.com/tools/intellij/docs/client-libraries)
-* [Cloud Tools for Eclipse](https://cloud.google.com/eclipse/docs/libraries)
+* [Cloud Tools for IntelliJ](https://cloud.google.com/tools/intellij/docs/client-libraries?utm_source=github&utm_medium=google-cloud-java&utm_campaign=ToolsforIntelliJ)
+* [Cloud Tools for Eclipse](https://cloud.google.com/eclipse/docs/libraries?utm_source=github&utm_medium=google-cloud-java&utm_campaign=ToolsforEclipse)
 
 Besides adding client libraries, the plugins provide additional functionality, such as service account key management. Refer to the documentation for each plugin for more details.
 
-These client libraries can be used on App Engine standard for Java 8 runtime, App Engine flexible (including the Compat runtime).  Most of the libraries do not work on the App Engine standard for Java 7 runtime, however, Datastore, Storage, and Bigquery should work.
+These client libraries can be used on App Engine standard for Java 8 runtime and App Engine flexible (including the Compat runtime).  Most of the libraries do not work on the App Engine standard for Java 7 runtime. However, Datastore, Storage, and Bigquery should work.
 
 If you are running into problems with version conflicts, see [Version Management](#version-management).
 
@@ -166,7 +165,7 @@ Storage storage = StorageOptions.getDefaultInstance().getService();
   case, the access token will not be automatically refreshed):
   ```java
   Storage storage = StorageOptions.newBuilder()
-      .setCredentials(new GoogleCredentials(new AccessToken(accessToken, expirationTime)))
+      .setCredentials(GoogleCredentials.create(new AccessToken(accessToken, expirationTime)))
       .build()
       .getService();
   ```
@@ -292,7 +291,7 @@ The easiest way to solve version conflicts is to use google-cloud's BOM. In Mave
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-bom</artifactId>
-        <version>0.46.0-alpha</version>
+        <version>0.49.0-alpha</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -359,4 +358,4 @@ Apache 2.0 - See [LICENSE] for more information.
 
 [cloud-platform]: https://cloud.google.com/
 [cloud-platform-docs]: https://cloud.google.com/docs/
-[client-lib-docs]: http://googlecloudplatform.github.io/google-cloud-java/latest/apidocs/
+[client-lib-docs]: https://googlecloudplatform.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html

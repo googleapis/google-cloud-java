@@ -16,7 +16,6 @@ package com.google.privacy.dlp.v2;
 
 import com.google.common.base.Preconditions;
 import com.google.api.resourcenames.ResourceName;
-import com.google.api.resourcenames.ResourceNameType;
 import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
@@ -78,14 +77,6 @@ public class UntypedDeidentifyTemplateName extends DeidentifyTemplateName {
    */
   public String getFieldValue(String fieldName) {
     return valueMap.get(fieldName);
-  }
-
-  /**
-   * @deprecated This method is only present to satisfy the ResourceName interface.
-   */
-  @Deprecated
-  public ResourceNameType getType() {
-    throw new UnsupportedOperationException("UntypedDeidentifyTemplateName.getType() not supported");
   }
 
   @Override

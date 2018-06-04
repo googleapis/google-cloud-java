@@ -36,9 +36,6 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -159,7 +156,8 @@ private static final long serialVersionUID = 0L;
   private int width_;
   /**
    * <pre>
-   * Page width in pixels.
+   * Page width. For PDFs the unit is points. For images (including
+   * TIFFs) the unit is pixels.
    * </pre>
    *
    * <code>int32 width = 2;</code>
@@ -172,7 +170,8 @@ private static final long serialVersionUID = 0L;
   private int height_;
   /**
    * <pre>
-   * Page height in pixels.
+   * Page height. For PDFs the unit is points. For images (including
+   * TIFFs) the unit is pixels.
    * </pre>
    *
    * <code>int32 height = 3;</code>
@@ -818,7 +817,8 @@ private static final long serialVersionUID = 0L;
     private int width_ ;
     /**
      * <pre>
-     * Page width in pixels.
+     * Page width. For PDFs the unit is points. For images (including
+     * TIFFs) the unit is pixels.
      * </pre>
      *
      * <code>int32 width = 2;</code>
@@ -828,7 +828,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Page width in pixels.
+     * Page width. For PDFs the unit is points. For images (including
+     * TIFFs) the unit is pixels.
      * </pre>
      *
      * <code>int32 width = 2;</code>
@@ -841,7 +842,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Page width in pixels.
+     * Page width. For PDFs the unit is points. For images (including
+     * TIFFs) the unit is pixels.
      * </pre>
      *
      * <code>int32 width = 2;</code>
@@ -856,7 +858,8 @@ private static final long serialVersionUID = 0L;
     private int height_ ;
     /**
      * <pre>
-     * Page height in pixels.
+     * Page height. For PDFs the unit is points. For images (including
+     * TIFFs) the unit is pixels.
      * </pre>
      *
      * <code>int32 height = 3;</code>
@@ -866,7 +869,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Page height in pixels.
+     * Page height. For PDFs the unit is points. For images (including
+     * TIFFs) the unit is pixels.
      * </pre>
      *
      * <code>int32 height = 3;</code>
@@ -879,7 +883,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Page height in pixels.
+     * Page height. For PDFs the unit is points. For images (including
+     * TIFFs) the unit is pixels.
      * </pre>
      *
      * <code>int32 height = 3;</code>
@@ -1270,7 +1275,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new Page(input, extensionRegistry);
+        return new Page(input, extensionRegistry);
     }
   };
 

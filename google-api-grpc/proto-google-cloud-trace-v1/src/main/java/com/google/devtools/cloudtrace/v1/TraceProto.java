@@ -72,7 +72,7 @@ public final class TraceProto {
       "vtools.cloudtrace.v1.TraceSpan\">\n\006Traces" +
       "\0224\n\006traces\030\001 \003(\0132$.google.devtools.cloud" +
       "trace.v1.Trace\"\235\003\n\tTraceSpan\022\017\n\007span_id\030" +
-      "\001 \001(\006\022?\n\004kind\030\002 \001(\01621.google.devtools.cl" +
+      "\001 \001(\006\022?\n\004kind\030\002 \001(\01621.google.devtools.cl",
       "oudtrace.v1.TraceSpan.SpanKind\022\014\n\004name\030\003" +
       " \001(\t\022.\n\nstart_time\030\004 \001(\0132\032.google.protob" +
       "uf.Timestamp\022,\n\010end_time\030\005 \001(\0132\032.google." +
@@ -82,7 +82,7 @@ public final class TraceProto {
       "lsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"" +
       "E\n\010SpanKind\022\031\n\025SPAN_KIND_UNSPECIFIED\020\000\022\016" +
       "\n\nRPC_SERVER\020\001\022\016\n\nRPC_CLIENT\020\002\"\347\002\n\021ListT" +
-      "racesRequest\022\022\n\nproject_id\030\001 \001(\t\022G\n\004view" +
+      "racesRequest\022\022\n\nproject_id\030\001 \001(\t\022G\n\004view",
       "\030\002 \001(\01629.google.devtools.cloudtrace.v1.L" +
       "istTracesRequest.ViewType\022\021\n\tpage_size\030\003" +
       " \001(\005\022\022\n\npage_token\030\004 \001(\t\022.\n\nstart_time\030\005" +
@@ -92,7 +92,7 @@ public final class TraceProto {
       "Type\022\031\n\025VIEW_TYPE_UNSPECIFIED\020\000\022\013\n\007MINIM" +
       "AL\020\001\022\014\n\010ROOTSPAN\020\002\022\014\n\010COMPLETE\020\003\"c\n\022List" +
       "TracesResponse\0224\n\006traces\030\001 \003(\0132$.google." +
-      "devtools.cloudtrace.v1.Trace\022\027\n\017next_pag" +
+      "devtools.cloudtrace.v1.Trace\022\027\n\017next_pag",
       "e_token\030\002 \001(\t\"7\n\017GetTraceRequest\022\022\n\nproj" +
       "ect_id\030\001 \001(\t\022\020\n\010trace_id\030\002 \001(\t\"_\n\022PatchT" +
       "racesRequest\022\022\n\nproject_id\030\001 \001(\t\0225\n\006trac" +
@@ -102,7 +102,7 @@ public final class TraceProto {
       "esRequest\0321.google.devtools.cloudtrace.v" +
       "1.ListTracesResponse\"(\202\323\344\223\002\"\022 /v1/projec" +
       "ts/{project_id}/traces\022\225\001\n\010GetTrace\022..go" +
-      "ogle.devtools.cloudtrace.v1.GetTraceRequ" +
+      "ogle.devtools.cloudtrace.v1.GetTraceRequ",
       "est\032$.google.devtools.cloudtrace.v1.Trac" +
       "e\"3\202\323\344\223\002-\022+/v1/projects/{project_id}/tra" +
       "ces/{trace_id}\022\212\001\n\013PatchTraces\0221.google." +
@@ -112,7 +112,7 @@ public final class TraceProto {
       "com.google.devtools.cloudtrace.v1B\nTrace" +
       "ProtoP\001ZGgoogle.golang.org/genproto/goog" +
       "leapis/devtools/cloudtrace/v1;cloudtrace" +
-      "\252\002\025Google.Cloud.Trace.V1\312\002\025Google\\Cloud\\" +
+      "\252\002\025Google.Cloud.Trace.V1\312\002\025Google\\Cloud\\",
       "Trace\\V1b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =

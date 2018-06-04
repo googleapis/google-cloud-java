@@ -53,9 +53,6 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -543,9 +540,6 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -867,9 +861,6 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
         int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -1786,7 +1777,7 @@ private static final long serialVersionUID = 0L;
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Part(input, extensionRegistry);
+            return new Part(input, extensionRegistry);
         }
       };
 
@@ -2905,7 +2896,7 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new TrainingPhrase(input, extensionRegistry);
+          return new TrainingPhrase(input, extensionRegistry);
       }
     };
 
@@ -3134,9 +3125,6 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -4713,7 +4701,7 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Parameter(input, extensionRegistry);
+          return new Parameter(input, extensionRegistry);
       }
     };
 
@@ -5066,9 +5054,6 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -5697,9 +5682,6 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
         int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -6264,7 +6246,7 @@ private static final long serialVersionUID = 0L;
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Text(input, extensionRegistry);
+            return new Text(input, extensionRegistry);
         }
       };
 
@@ -6356,9 +6338,6 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
         int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -7015,7 +6994,7 @@ private static final long serialVersionUID = 0L;
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Image(input, extensionRegistry);
+            return new Image(input, extensionRegistry);
         }
       };
 
@@ -7122,9 +7101,6 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
         int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -7846,7 +7822,7 @@ private static final long serialVersionUID = 0L;
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new QuickReplies(input, extensionRegistry);
+            return new QuickReplies(input, extensionRegistry);
         }
       };
 
@@ -8000,9 +7976,6 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
         int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -8148,9 +8121,6 @@ private static final long serialVersionUID = 0L;
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
           this();
-          if (extensionRegistry == null) {
-            throw new java.lang.NullPointerException();
-          }
           int mutable_bitField0_ = 0;
           com.google.protobuf.UnknownFieldSet.Builder unknownFields =
               com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -8807,7 +8777,7 @@ private static final long serialVersionUID = 0L;
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new Button(input, extensionRegistry);
+              return new Button(input, extensionRegistry);
           }
         };
 
@@ -9996,7 +9966,7 @@ private static final long serialVersionUID = 0L;
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Card(input, extensionRegistry);
+            return new Card(input, extensionRegistry);
         }
       };
 
@@ -10111,9 +10081,6 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
         int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -10938,7 +10905,7 @@ private static final long serialVersionUID = 0L;
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new SimpleResponse(input, extensionRegistry);
+            return new SimpleResponse(input, extensionRegistry);
         }
       };
 
@@ -11038,9 +11005,6 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
         int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -11821,7 +11785,7 @@ private static final long serialVersionUID = 0L;
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new SimpleResponses(input, extensionRegistry);
+            return new SimpleResponses(input, extensionRegistry);
         }
       };
 
@@ -12000,9 +11964,6 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
         int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -12165,9 +12126,6 @@ private static final long serialVersionUID = 0L;
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
           this();
-          if (extensionRegistry == null) {
-            throw new java.lang.NullPointerException();
-          }
           int mutable_bitField0_ = 0;
           com.google.protobuf.UnknownFieldSet.Builder unknownFields =
               com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -12281,9 +12239,6 @@ private static final long serialVersionUID = 0L;
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
             this();
-            if (extensionRegistry == null) {
-              throw new java.lang.NullPointerException();
-            }
             int mutable_bitField0_ = 0;
             com.google.protobuf.UnknownFieldSet.Builder unknownFields =
                 com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -12779,7 +12734,7 @@ private static final long serialVersionUID = 0L;
                 com.google.protobuf.CodedInputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-              return new OpenUriAction(input, extensionRegistry);
+                return new OpenUriAction(input, extensionRegistry);
             }
           };
 
@@ -13461,7 +13416,7 @@ private static final long serialVersionUID = 0L;
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new Button(input, extensionRegistry);
+              return new Button(input, extensionRegistry);
           }
         };
 
@@ -14866,7 +14821,7 @@ private static final long serialVersionUID = 0L;
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new BasicCard(input, extensionRegistry);
+            return new BasicCard(input, extensionRegistry);
         }
       };
 
@@ -14938,9 +14893,6 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
         int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -15437,7 +15389,7 @@ private static final long serialVersionUID = 0L;
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Suggestion(input, extensionRegistry);
+            return new Suggestion(input, extensionRegistry);
         }
       };
 
@@ -15534,9 +15486,6 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
         int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -16314,7 +16263,7 @@ private static final long serialVersionUID = 0L;
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Suggestions(input, extensionRegistry);
+            return new Suggestions(input, extensionRegistry);
         }
       };
 
@@ -16407,9 +16356,6 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
         int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -17067,7 +17013,7 @@ private static final long serialVersionUID = 0L;
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new LinkOutSuggestion(input, extensionRegistry);
+            return new LinkOutSuggestion(input, extensionRegistry);
         }
       };
 
@@ -17183,9 +17129,6 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
         int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -17367,9 +17310,6 @@ private static final long serialVersionUID = 0L;
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
           this();
-          if (extensionRegistry == null) {
-            throw new java.lang.NullPointerException();
-          }
           int mutable_bitField0_ = 0;
           com.google.protobuf.UnknownFieldSet.Builder unknownFields =
               com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -18477,7 +18417,7 @@ private static final long serialVersionUID = 0L;
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new Item(input, extensionRegistry);
+              return new Item(input, extensionRegistry);
           }
         };
 
@@ -19370,7 +19310,7 @@ private static final long serialVersionUID = 0L;
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ListSelect(input, extensionRegistry);
+            return new ListSelect(input, extensionRegistry);
         }
       };
 
@@ -19467,9 +19407,6 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
         int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -19645,9 +19582,6 @@ private static final long serialVersionUID = 0L;
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
           this();
-          if (extensionRegistry == null) {
-            throw new java.lang.NullPointerException();
-          }
           int mutable_bitField0_ = 0;
           com.google.protobuf.UnknownFieldSet.Builder unknownFields =
               com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -20755,7 +20689,7 @@ private static final long serialVersionUID = 0L;
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new Item(input, extensionRegistry);
+              return new Item(input, extensionRegistry);
           }
         };
 
@@ -21497,7 +21431,7 @@ private static final long serialVersionUID = 0L;
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new CarouselSelect(input, extensionRegistry);
+            return new CarouselSelect(input, extensionRegistry);
         }
       };
 
@@ -21611,9 +21545,6 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
         int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -22356,7 +22287,7 @@ private static final long serialVersionUID = 0L;
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new SelectItemInfo(input, extensionRegistry);
+            return new SelectItemInfo(input, extensionRegistry);
         }
       };
 
@@ -25488,7 +25419,7 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Message(input, extensionRegistry);
+          return new Message(input, extensionRegistry);
       }
     };
 
@@ -25582,9 +25513,6 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -26248,7 +26176,7 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new FollowupIntentInfo(input, extensionRegistry);
+          return new FollowupIntentInfo(input, extensionRegistry);
       }
     };
 
@@ -30908,7 +30836,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new Intent(input, extensionRegistry);
+        return new Intent(input, extensionRegistry);
     }
   };
 

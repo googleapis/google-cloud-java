@@ -32,9 +32,6 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -209,9 +206,6 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -795,7 +789,7 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new NumericalStatsConfig(input, extensionRegistry);
+          return new NumericalStatsConfig(input, extensionRegistry);
       }
     };
 
@@ -882,9 +876,6 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -1492,7 +1483,7 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CategoricalStatsConfig(input, extensionRegistry);
+          return new CategoricalStatsConfig(input, extensionRegistry);
       }
     };
 
@@ -1658,9 +1649,6 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -2858,7 +2846,7 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new KAnonymityConfig(input, extensionRegistry);
+          return new KAnonymityConfig(input, extensionRegistry);
       }
     };
 
@@ -2990,9 +2978,6 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -4048,7 +4033,7 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new LDiversityConfig(input, extensionRegistry);
+          return new LDiversityConfig(input, extensionRegistry);
       }
     };
 
@@ -4204,6 +4189,7 @@ private static final long serialVersionUID = 0L;
    * using publicly available data (like the US Census), or using a custom
    * statistical model (indicated as one or several BigQuery tables), or by
    * extrapolating from the distribution of values in the input dataset.
+   * A column with a semantic tag attached.
    * </pre>
    *
    * Protobuf type {@code google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig}
@@ -4233,9 +4219,6 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -4427,10 +4410,6 @@ private static final long serialVersionUID = 0L;
       public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField.TagCase getTagCase();
     }
     /**
-     * <pre>
-     * A column with a semantic tag attached.
-     * </pre>
-     *
      * Protobuf type {@code google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField}
      */
     public  static final class TaggedField extends
@@ -4455,9 +4434,6 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
         int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -4978,10 +4954,6 @@ private static final long serialVersionUID = 0L;
         return builder;
       }
       /**
-       * <pre>
-       * A column with a semantic tag attached.
-       * </pre>
-       *
        * Protobuf type {@code google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField}
        */
       public static final class Builder extends
@@ -5856,7 +5828,7 @@ private static final long serialVersionUID = 0L;
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new TaggedField(input, extensionRegistry);
+            return new TaggedField(input, extensionRegistry);
         }
       };
 
@@ -6015,9 +5987,6 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
         int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -6156,9 +6125,6 @@ private static final long serialVersionUID = 0L;
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
           this();
-          if (extensionRegistry == null) {
-            throw new java.lang.NullPointerException();
-          }
           int mutable_bitField0_ = 0;
           com.google.protobuf.UnknownFieldSet.Builder unknownFields =
               com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -6808,7 +6774,7 @@ private static final long serialVersionUID = 0L;
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new QuasiIdField(input, extensionRegistry);
+              return new QuasiIdField(input, extensionRegistry);
           }
         };
 
@@ -8015,7 +7981,7 @@ private static final long serialVersionUID = 0L;
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new AuxiliaryTable(input, extensionRegistry);
+            return new AuxiliaryTable(input, extensionRegistry);
         }
       };
 
@@ -8390,6 +8356,7 @@ private static final long serialVersionUID = 0L;
      * using publicly available data (like the US Census), or using a custom
      * statistical model (indicated as one or several BigQuery tables), or by
      * extrapolating from the distribution of values in the input dataset.
+     * A column with a semantic tag attached.
      * </pre>
      *
      * Protobuf type {@code google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig}
@@ -9418,7 +9385,7 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new KMapEstimationConfig(input, extensionRegistry);
+          return new KMapEstimationConfig(input, extensionRegistry);
       }
     };
 
@@ -10754,7 +10721,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new PrivacyMetric(input, extensionRegistry);
+        return new PrivacyMetric(input, extensionRegistry);
     }
   };
 

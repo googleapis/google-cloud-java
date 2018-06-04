@@ -102,7 +102,7 @@ public final class SpannerInstanceAdminProto {
       "f/empty.proto\032 google/protobuf/field_mas" +
       "k.proto\032\037google/protobuf/timestamp.proto" +
       "\"4\n\016InstanceConfig\022\014\n\004name\030\001 \001(\t\022\024\n\014disp" +
-      "lay_name\030\002 \001(\t\"\303\002\n\010Instance\022\014\n\004name\030\001 \001(" +
+      "lay_name\030\002 \001(\t\"\303\002\n\010Instance\022\014\n\004name\030\001 \001(",
       "\t\022\016\n\006config\030\002 \001(\t\022\024\n\014display_name\030\003 \001(\t\022" +
       "\022\n\nnode_count\030\005 \001(\005\022?\n\005state\030\006 \001(\01620.goo" +
       "gle.spanner.admin.instance.v1.Instance.S" +
@@ -112,7 +112,7 @@ public final class SpannerInstanceAdminProto {
       "\0028\001\"7\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\014\n\010C" +
       "REATING\020\001\022\t\n\005READY\020\002\"S\n\032ListInstanceConf" +
       "igsRequest\022\016\n\006parent\030\001 \001(\t\022\021\n\tpage_size\030" +
-      "\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"\202\001\n\033ListInstan" +
+      "\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"\202\001\n\033ListInstan",
       "ceConfigsResponse\022J\n\020instance_configs\030\001 " +
       "\003(\01320.google.spanner.admin.instance.v1.I" +
       "nstanceConfig\022\027\n\017next_page_token\030\002 \001(\t\"(" +
@@ -122,7 +122,7 @@ public final class SpannerInstanceAdminProto {
       "\013instance_id\030\002 \001(\t\022<\n\010instance\030\003 \001(\0132*.g" +
       "oogle.spanner.admin.instance.v1.Instance" +
       "\"]\n\024ListInstancesRequest\022\016\n\006parent\030\001 \001(\t" +
-      "\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022" +
+      "\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022",
       "\016\n\006filter\030\004 \001(\t\"o\n\025ListInstancesResponse" +
       "\022=\n\tinstances\030\001 \003(\0132*.google.spanner.adm" +
       "in.instance.v1.Instance\022\027\n\017next_page_tok" +
@@ -132,7 +132,7 @@ public final class SpannerInstanceAdminProto {
       "oogle.protobuf.FieldMask\"%\n\025DeleteInstan" +
       "ceRequest\022\014\n\004name\030\001 \001(\t\"\345\001\n\026CreateInstan" +
       "ceMetadata\022<\n\010instance\030\001 \001(\0132*.google.sp" +
-      "anner.admin.instance.v1.Instance\022.\n\nstar" +
+      "anner.admin.instance.v1.Instance\022.\n\nstar",
       "t_time\030\002 \001(\0132\032.google.protobuf.Timestamp" +
       "\022/\n\013cancel_time\030\003 \001(\0132\032.google.protobuf." +
       "Timestamp\022,\n\010end_time\030\004 \001(\0132\032.google.pro" +
@@ -142,7 +142,7 @@ public final class SpannerInstanceAdminProto {
       " \001(\0132\032.google.protobuf.Timestamp\022/\n\013canc" +
       "el_time\030\003 \001(\0132\032.google.protobuf.Timestam" +
       "p\022,\n\010end_time\030\004 \001(\0132\032.google.protobuf.Ti" +
-      "mestamp2\346\014\n\rInstanceAdmin\022\303\001\n\023ListInstan" +
+      "mestamp2\346\014\n\rInstanceAdmin\022\303\001\n\023ListInstan",
       "ceConfigs\022<.google.spanner.admin.instanc" +
       "e.v1.ListInstanceConfigsRequest\032=.google" +
       ".spanner.admin.instance.v1.ListInstanceC" +
@@ -152,7 +152,7 @@ public final class SpannerInstanceAdminProto {
       ".GetInstanceConfigRequest\0320.google.spann" +
       "er.admin.instance.v1.InstanceConfig\"/\202\323\344" +
       "\223\002)\022\'/v1/{name=projects/*/instanceConfig" +
-      "s/*}\022\253\001\n\rListInstances\0226.google.spanner." +
+      "s/*}\022\253\001\n\rListInstances\0226.google.spanner.",
       "admin.instance.v1.ListInstancesRequest\0327" +
       ".google.spanner.admin.instance.v1.ListIn" +
       "stancesResponse\")\202\323\344\223\002#\022!/v1/{parent=pro" +
@@ -162,7 +162,7 @@ public final class SpannerInstanceAdminProto {
       ".v1.Instance\")\202\323\344\223\002#\022!/v1/{name=projects" +
       "/*/instances/*}\022\226\001\n\016CreateInstance\0227.goo" +
       "gle.spanner.admin.instance.v1.CreateInst" +
-      "anceRequest\032\035.google.longrunning.Operati" +
+      "anceRequest\032\035.google.longrunning.Operati",
       "on\",\202\323\344\223\002&\"!/v1/{parent=projects/*}/inst" +
       "ances:\001*\022\237\001\n\016UpdateInstance\0227.google.spa" +
       "nner.admin.instance.v1.UpdateInstanceReq" +
@@ -172,7 +172,7 @@ public final class SpannerInstanceAdminProto {
       "panner.admin.instance.v1.DeleteInstanceR" +
       "equest\032\026.google.protobuf.Empty\")\202\323\344\223\002#*!" +
       "/v1/{name=projects/*/instances/*}\022\210\001\n\014Se" +
-      "tIamPolicy\022\".google.iam.v1.SetIamPolicyR" +
+      "tIamPolicy\022\".google.iam.v1.SetIamPolicyR",
       "equest\032\025.google.iam.v1.Policy\"=\202\323\344\223\0027\"2/" +
       "v1/{resource=projects/*/instances/*}:set" +
       "IamPolicy:\001*\022\210\001\n\014GetIamPolicy\022\".google.i" +
@@ -182,7 +182,7 @@ public final class SpannerInstanceAdminProto {
       "IamPermissions\022(.google.iam.v1.TestIamPe" +
       "rmissionsRequest\032).google.iam.v1.TestIam" +
       "PermissionsResponse\"C\202\323\344\223\002=\"8/v1/{resour" +
-      "ce=projects/*/instances/*}:testIamPermis" +
+      "ce=projects/*/instances/*}:testIamPermis",
       "sions:\001*B\337\001\n$com.google.spanner.admin.in" +
       "stance.v1B\031SpannerInstanceAdminProtoP\001ZH" +
       "google.golang.org/genproto/googleapis/sp" +

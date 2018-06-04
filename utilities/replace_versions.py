@@ -104,7 +104,7 @@ def replace_versions_all(target):
                     replace_versions(version_map, file_path)
 
 def main():
-    parser = argparse.ArgumentParser(description='Add snippets to Javadoc.')
+    parser = argparse.ArgumentParser(description='Replace version numbers in poms and READMEs.')
     parser.add_argument('target', nargs='?', help='File to update - all files scanned if omitted')
     args = parser.parse_args()
 

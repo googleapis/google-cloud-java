@@ -18,7 +18,6 @@ import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.resourcenames.ResourceName;
-import com.google.api.resourcenames.ResourceNameType;
 import java.util.Map;
 import java.util.ArrayList;
 import java.util.List;
@@ -28,7 +27,7 @@ import java.util.List;
 public class EnvironmentContextName implements ResourceName {
 
   private static final PathTemplate PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}/agent/sessions/{environment}/users/{user}/{session}/contexts/{context}");
+      PathTemplate.createWithoutUrlEncoding("projects/{project}/agent/environments/{environment}/users/{user}/sessions/{session}/contexts/{context}");
 
   private volatile Map<String, String> fieldValuesMap;
 
@@ -147,14 +146,6 @@ public class EnvironmentContextName implements ResourceName {
 
   public String getFieldValue(String fieldName) {
     return getFieldValuesMap().get(fieldName);
-  }
-
-  /**
-   * @deprecated This method is only present to satisfy the ResourceName interface.
-   */
-  @Deprecated
-  public ResourceNameType getType() {
-    throw new UnsupportedOperationException("EnvironmentContextName.getType() not supported");
   }
 
   @Override

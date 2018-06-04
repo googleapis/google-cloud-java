@@ -37,9 +37,6 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -177,6 +174,19 @@ private static final long serialVersionUID = 0L;
             if (subBuilder != null) {
               subBuilder.mergeFrom(webDetection_);
               webDetection_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 170: {
+            com.google.cloud.vision.v1.ImageAnnotationContext.Builder subBuilder = null;
+            if (context_ != null) {
+              subBuilder = context_.toBuilder();
+            }
+            context_ = input.readMessage(com.google.cloud.vision.v1.ImageAnnotationContext.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(context_);
+              context_ = subBuilder.buildPartial();
             }
 
             break;
@@ -709,6 +719,42 @@ private static final long serialVersionUID = 0L;
     return getError();
   }
 
+  public static final int CONTEXT_FIELD_NUMBER = 21;
+  private com.google.cloud.vision.v1.ImageAnnotationContext context_;
+  /**
+   * <pre>
+   * If present, contextual information is needed to understand where this image
+   * comes from.
+   * </pre>
+   *
+   * <code>.google.cloud.vision.v1.ImageAnnotationContext context = 21;</code>
+   */
+  public boolean hasContext() {
+    return context_ != null;
+  }
+  /**
+   * <pre>
+   * If present, contextual information is needed to understand where this image
+   * comes from.
+   * </pre>
+   *
+   * <code>.google.cloud.vision.v1.ImageAnnotationContext context = 21;</code>
+   */
+  public com.google.cloud.vision.v1.ImageAnnotationContext getContext() {
+    return context_ == null ? com.google.cloud.vision.v1.ImageAnnotationContext.getDefaultInstance() : context_;
+  }
+  /**
+   * <pre>
+   * If present, contextual information is needed to understand where this image
+   * comes from.
+   * </pre>
+   *
+   * <code>.google.cloud.vision.v1.ImageAnnotationContext context = 21;</code>
+   */
+  public com.google.cloud.vision.v1.ImageAnnotationContextOrBuilder getContextOrBuilder() {
+    return getContext();
+  }
+
   private byte memoizedIsInitialized = -1;
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -753,6 +799,9 @@ private static final long serialVersionUID = 0L;
     }
     if (webDetection_ != null) {
       output.writeMessage(13, getWebDetection());
+    }
+    if (context_ != null) {
+      output.writeMessage(21, getContext());
     }
     unknownFields.writeTo(output);
   }
@@ -805,6 +854,10 @@ private static final long serialVersionUID = 0L;
     if (webDetection_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(13, getWebDetection());
+    }
+    if (context_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(21, getContext());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -862,6 +915,11 @@ private static final long serialVersionUID = 0L;
       result = result && getError()
           .equals(other.getError());
     }
+    result = result && (hasContext() == other.hasContext());
+    if (hasContext()) {
+      result = result && getContext()
+          .equals(other.getContext());
+    }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -916,6 +974,10 @@ private static final long serialVersionUID = 0L;
     if (hasError()) {
       hash = (37 * hash) + ERROR_FIELD_NUMBER;
       hash = (53 * hash) + getError().hashCode();
+    }
+    if (hasContext()) {
+      hash = (37 * hash) + CONTEXT_FIELD_NUMBER;
+      hash = (53 * hash) + getContext().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -1121,6 +1183,12 @@ private static final long serialVersionUID = 0L;
         error_ = null;
         errorBuilder_ = null;
       }
+      if (contextBuilder_ == null) {
+        context_ = null;
+      } else {
+        context_ = null;
+        contextBuilder_ = null;
+      }
       return this;
     }
 
@@ -1219,6 +1287,11 @@ private static final long serialVersionUID = 0L;
         result.error_ = error_;
       } else {
         result.error_ = errorBuilder_.build();
+      }
+      if (contextBuilder_ == null) {
+        result.context_ = context_;
+      } else {
+        result.context_ = contextBuilder_.build();
       }
       result.bitField0_ = to_bitField0_;
       onBuilt();
@@ -1409,6 +1482,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasError()) {
         mergeError(other.getError());
+      }
+      if (other.hasContext()) {
+        mergeContext(other.getContext());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -3960,6 +4036,168 @@ private static final long serialVersionUID = 0L;
       }
       return errorBuilder_;
     }
+
+    private com.google.cloud.vision.v1.ImageAnnotationContext context_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.vision.v1.ImageAnnotationContext, com.google.cloud.vision.v1.ImageAnnotationContext.Builder, com.google.cloud.vision.v1.ImageAnnotationContextOrBuilder> contextBuilder_;
+    /**
+     * <pre>
+     * If present, contextual information is needed to understand where this image
+     * comes from.
+     * </pre>
+     *
+     * <code>.google.cloud.vision.v1.ImageAnnotationContext context = 21;</code>
+     */
+    public boolean hasContext() {
+      return contextBuilder_ != null || context_ != null;
+    }
+    /**
+     * <pre>
+     * If present, contextual information is needed to understand where this image
+     * comes from.
+     * </pre>
+     *
+     * <code>.google.cloud.vision.v1.ImageAnnotationContext context = 21;</code>
+     */
+    public com.google.cloud.vision.v1.ImageAnnotationContext getContext() {
+      if (contextBuilder_ == null) {
+        return context_ == null ? com.google.cloud.vision.v1.ImageAnnotationContext.getDefaultInstance() : context_;
+      } else {
+        return contextBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * If present, contextual information is needed to understand where this image
+     * comes from.
+     * </pre>
+     *
+     * <code>.google.cloud.vision.v1.ImageAnnotationContext context = 21;</code>
+     */
+    public Builder setContext(com.google.cloud.vision.v1.ImageAnnotationContext value) {
+      if (contextBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        context_ = value;
+        onChanged();
+      } else {
+        contextBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * If present, contextual information is needed to understand where this image
+     * comes from.
+     * </pre>
+     *
+     * <code>.google.cloud.vision.v1.ImageAnnotationContext context = 21;</code>
+     */
+    public Builder setContext(
+        com.google.cloud.vision.v1.ImageAnnotationContext.Builder builderForValue) {
+      if (contextBuilder_ == null) {
+        context_ = builderForValue.build();
+        onChanged();
+      } else {
+        contextBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * If present, contextual information is needed to understand where this image
+     * comes from.
+     * </pre>
+     *
+     * <code>.google.cloud.vision.v1.ImageAnnotationContext context = 21;</code>
+     */
+    public Builder mergeContext(com.google.cloud.vision.v1.ImageAnnotationContext value) {
+      if (contextBuilder_ == null) {
+        if (context_ != null) {
+          context_ =
+            com.google.cloud.vision.v1.ImageAnnotationContext.newBuilder(context_).mergeFrom(value).buildPartial();
+        } else {
+          context_ = value;
+        }
+        onChanged();
+      } else {
+        contextBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * If present, contextual information is needed to understand where this image
+     * comes from.
+     * </pre>
+     *
+     * <code>.google.cloud.vision.v1.ImageAnnotationContext context = 21;</code>
+     */
+    public Builder clearContext() {
+      if (contextBuilder_ == null) {
+        context_ = null;
+        onChanged();
+      } else {
+        context_ = null;
+        contextBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * If present, contextual information is needed to understand where this image
+     * comes from.
+     * </pre>
+     *
+     * <code>.google.cloud.vision.v1.ImageAnnotationContext context = 21;</code>
+     */
+    public com.google.cloud.vision.v1.ImageAnnotationContext.Builder getContextBuilder() {
+      
+      onChanged();
+      return getContextFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * If present, contextual information is needed to understand where this image
+     * comes from.
+     * </pre>
+     *
+     * <code>.google.cloud.vision.v1.ImageAnnotationContext context = 21;</code>
+     */
+    public com.google.cloud.vision.v1.ImageAnnotationContextOrBuilder getContextOrBuilder() {
+      if (contextBuilder_ != null) {
+        return contextBuilder_.getMessageOrBuilder();
+      } else {
+        return context_ == null ?
+            com.google.cloud.vision.v1.ImageAnnotationContext.getDefaultInstance() : context_;
+      }
+    }
+    /**
+     * <pre>
+     * If present, contextual information is needed to understand where this image
+     * comes from.
+     * </pre>
+     *
+     * <code>.google.cloud.vision.v1.ImageAnnotationContext context = 21;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.vision.v1.ImageAnnotationContext, com.google.cloud.vision.v1.ImageAnnotationContext.Builder, com.google.cloud.vision.v1.ImageAnnotationContextOrBuilder> 
+        getContextFieldBuilder() {
+      if (contextBuilder_ == null) {
+        contextBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.vision.v1.ImageAnnotationContext, com.google.cloud.vision.v1.ImageAnnotationContext.Builder, com.google.cloud.vision.v1.ImageAnnotationContextOrBuilder>(
+                getContext(),
+                getParentForChildren(),
+                isClean());
+        context_ = null;
+      }
+      return contextBuilder_;
+    }
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
@@ -3990,7 +4228,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new AnnotateImageResponse(input, extensionRegistry);
+        return new AnnotateImageResponse(input, extensionRegistry);
     }
   };
 

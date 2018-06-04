@@ -62,7 +62,7 @@ public final class InstanceProto {
       "te\0225\n\004type\030\004 \001(\0162\'.google.bigtable.admin" +
       ".v2.Instance.Type\022>\n\006labels\030\005 \003(\0132..goog" +
       "le.bigtable.admin.v2.Instance.LabelsEntr" +
-      "y\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002" +
+      "y\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002",
       " \001(\t:\0028\001\"5\n\005State\022\023\n\017STATE_NOT_KNOWN\020\000\022\t" +
       "\n\005READY\020\001\022\014\n\010CREATING\020\002\"=\n\004Type\022\024\n\020TYPE_" +
       "UNSPECIFIED\020\000\022\016\n\nPRODUCTION\020\001\022\017\n\013DEVELOP" +
@@ -72,7 +72,7 @@ public final class InstanceProto {
       "s\030\004 \001(\005\022C\n\024default_storage_type\030\005 \001(\0162%." +
       "google.bigtable.admin.v2.StorageType\"Q\n\005" +
       "State\022\023\n\017STATE_NOT_KNOWN\020\000\022\t\n\005READY\020\001\022\014\n" +
-      "\010CREATING\020\002\022\014\n\010RESIZING\020\003\022\014\n\010DISABLED\020\004\"" +
+      "\010CREATING\020\002\022\014\n\010RESIZING\020\003\022\014\n\010DISABLED\020\004\"",
       "\202\003\n\nAppProfile\022\014\n\004name\030\001 \001(\t\022\014\n\004etag\030\002 \001" +
       "(\t\022\023\n\013description\030\003 \001(\t\022g\n\035multi_cluster" +
       "_routing_use_any\030\005 \001(\0132>.google.bigtable" +
@@ -82,7 +82,7 @@ public final class InstanceProto {
       "ingleClusterRoutingH\000\032\033\n\031MultiClusterRou" +
       "tingUseAny\032N\n\024SingleClusterRouting\022\022\n\ncl" +
       "uster_id\030\001 \001(\t\022\"\n\032allow_transactional_wr" +
-      "ites\030\002 \001(\010B\020\n\016routing_policyB\260\001\n\034com.goo" +
+      "ites\030\002 \001(\010B\020\n\016routing_policyB\260\001\n\034com.goo",
       "gle.bigtable.admin.v2B\rInstanceProtoP\001Z=" +
       "google.golang.org/genproto/googleapis/bi" +
       "gtable/admin/v2;admin\252\002\036Google.Cloud.Big" +

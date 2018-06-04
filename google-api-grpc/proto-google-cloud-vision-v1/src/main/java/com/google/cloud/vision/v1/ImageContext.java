@@ -33,9 +33,6 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -134,7 +131,7 @@ private static final long serialVersionUID = 0L;
   private com.google.cloud.vision.v1.LatLongRect latLongRect_;
   /**
    * <pre>
-   * lat/long rectangle that specifies the location of the image.
+   * Not used.
    * </pre>
    *
    * <code>.google.cloud.vision.v1.LatLongRect lat_long_rect = 1;</code>
@@ -144,7 +141,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * lat/long rectangle that specifies the location of the image.
+   * Not used.
    * </pre>
    *
    * <code>.google.cloud.vision.v1.LatLongRect lat_long_rect = 1;</code>
@@ -154,7 +151,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * lat/long rectangle that specifies the location of the image.
+   * Not used.
    * </pre>
    *
    * <code>.google.cloud.vision.v1.LatLongRect lat_long_rect = 1;</code>
@@ -705,7 +702,7 @@ private static final long serialVersionUID = 0L;
         com.google.cloud.vision.v1.LatLongRect, com.google.cloud.vision.v1.LatLongRect.Builder, com.google.cloud.vision.v1.LatLongRectOrBuilder> latLongRectBuilder_;
     /**
      * <pre>
-     * lat/long rectangle that specifies the location of the image.
+     * Not used.
      * </pre>
      *
      * <code>.google.cloud.vision.v1.LatLongRect lat_long_rect = 1;</code>
@@ -715,7 +712,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * lat/long rectangle that specifies the location of the image.
+     * Not used.
      * </pre>
      *
      * <code>.google.cloud.vision.v1.LatLongRect lat_long_rect = 1;</code>
@@ -729,7 +726,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * lat/long rectangle that specifies the location of the image.
+     * Not used.
      * </pre>
      *
      * <code>.google.cloud.vision.v1.LatLongRect lat_long_rect = 1;</code>
@@ -749,7 +746,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * lat/long rectangle that specifies the location of the image.
+     * Not used.
      * </pre>
      *
      * <code>.google.cloud.vision.v1.LatLongRect lat_long_rect = 1;</code>
@@ -767,7 +764,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * lat/long rectangle that specifies the location of the image.
+     * Not used.
      * </pre>
      *
      * <code>.google.cloud.vision.v1.LatLongRect lat_long_rect = 1;</code>
@@ -789,7 +786,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * lat/long rectangle that specifies the location of the image.
+     * Not used.
      * </pre>
      *
      * <code>.google.cloud.vision.v1.LatLongRect lat_long_rect = 1;</code>
@@ -807,7 +804,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * lat/long rectangle that specifies the location of the image.
+     * Not used.
      * </pre>
      *
      * <code>.google.cloud.vision.v1.LatLongRect lat_long_rect = 1;</code>
@@ -819,7 +816,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * lat/long rectangle that specifies the location of the image.
+     * Not used.
      * </pre>
      *
      * <code>.google.cloud.vision.v1.LatLongRect lat_long_rect = 1;</code>
@@ -834,7 +831,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * lat/long rectangle that specifies the location of the image.
+     * Not used.
      * </pre>
      *
      * <code>.google.cloud.vision.v1.LatLongRect lat_long_rect = 1;</code>
@@ -1381,7 +1378,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new ImageContext(input, extensionRegistry);
+        return new ImageContext(input, extensionRegistry);
     }
   };
 
