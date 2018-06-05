@@ -43,16 +43,16 @@ public final class DiskTypeId extends ResourceId {
     }
   };
 
-  private static final String REGEX = ResourceId.REGEX + "zones/([^/]+)/diskTypes/([^/]+)";
+  private static final String REGEX = ResourceId.REGEX + "regions/([^/]+)/diskTypes/([^/]+)";
   private static final Pattern PATTERN = Pattern.compile(REGEX);
   private static final long serialVersionUID = 7337881474103686219L;
 
-  private final String zone;
+  private final String region;
   private final String type;
 
-  private DiskTypeId(String project, String zone, String type) {
+  private DiskTypeId(String project, String region, String type) {
     super(project);
-    this.zone = checkNotNull(zone);
+    this.region = checkNotNull(region);
     this.type = checkNotNull(type);
   }
 
@@ -64,32 +64,32 @@ public final class DiskTypeId extends ResourceId {
   }
 
   /**
-   * Returns the name of the zone this disk type belongs to.
+   * Returns the name of the region this disk type belongs to.
    */
   public String getZone() {
-    return zone;
+    return region;
   }
 
   /**
-   * Returns the identity of the zone this disk type belongs to.
+   * Returns the identity of the region this disk type belongs to.
    */
   public ZoneId getZoneId() {
-    return ZoneId.of(getProject(), zone);
+    return ZoneId.of(getProject(), region);
   }
 
   @Override
   public String getSelfLink() {
-    return super.getSelfLink() + "/zones/" + zone + "/diskTypes/" + type;
+    return super.getSelfLink() + "/regions/" + region + "/diskTypes/" + type;
   }
 
   @Override
   MoreObjects.ToStringHelper toStringHelper() {
-    return super.toStringHelper().add("zone", zone).add("type", type);
+    return super.toStringHelper().add("region", region).add("type", type);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(super.baseHashCode(), zone, type);
+    return Objects.hash(super.baseHashCode(), region, type);
   }
 
   @Override
@@ -102,7 +102,7 @@ public final class DiskTypeId extends ResourceId {
     }
     DiskTypeId other = (DiskTypeId) obj;
     return baseEquals(other)
-        && Objects.equals(zone, other.zone)
+        && Objects.equals(region, other.region)
         && Objects.equals(type, other.type);
   }
 
@@ -111,28 +111,28 @@ public final class DiskTypeId extends ResourceId {
     if (getProject() != null) {
       return this;
     }
-    return DiskTypeId.of(projectId, zone, type);
+    return DiskTypeId.of(projectId, region, type);
   }
 
   /**
-   * Returns a disk type identity given the zone identity and the disk type name.
+   * Returns a disk type identity given the region identity and the disk type name.
    */
   public static DiskTypeId of(ZoneId zoneId, String type) {
     return new DiskTypeId(zoneId.getProject(), zoneId.getZone(), type);
   }
 
   /**
-   * Returns a disk type identity given the zone and disk type names.
+   * Returns a disk type identity given the region and disk type names.
    */
-  public static DiskTypeId of(String zone, String type) {
-    return of(ZoneId.of(null, zone), type);
+  public static DiskTypeId of(String region, String type) {
+    return of(ZoneId.of(null, region), type);
   }
 
   /**
-   * Returns a disk type identity given project disk, zone and disk type names.
+   * Returns a disk type identity given project disk, region and disk type names.
    */
-  public static DiskTypeId of(String project, String zone, String type) {
-    return of(ZoneId.of(project, zone), type);
+  public static DiskTypeId of(String project, String region, String type) {
+    return of(ZoneId.of(project, region), type);
   }
 
   /**
