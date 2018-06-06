@@ -16,15 +16,13 @@
 
 package com.google.cloud.bigquery;
 
-import static com.google.common.base.Preconditions.checkNotNull;
+import static com.google.common.base.MoreObjects.firstNonNull;
 
+import com.google.api.client.util.Data;
 import com.google.api.core.BetaApi;
 import com.google.auto.value.AutoValue;
-import com.google.common.base.MoreObjects;
-
-import javax.annotation.Nullable;
 import java.io.Serializable;
-import java.util.Objects;
+import javax.annotation.Nullable;
 
 /**
  * Objects of this class allow to configure table partitioning based on time. By dividing a large
@@ -63,7 +61,7 @@ public abstract class TimePartitioning implements Serializable {
 
   /**
    * Returns the number of milliseconds for which to keep the storage for a partition. When expired,
-   * the storage for the partition is reclaimed.
+   * the storage for the partition is reclaimed. If null, the partion does not expire.
    */
   @Nullable
   public abstract Long getExpirationMs();
@@ -115,7 +113,7 @@ public abstract class TimePartitioning implements Serializable {
   /**
    * Returns a {@code TimePartitioning} object given the time partitioning type. Currently, the only
    * type supported is {@link Type#DAY}, which will generate one partition per day based on data
-   * loading time.
+   * loading time. The partitions will not expire.
    */
   public static TimePartitioning of(Type type) {
     return newBuilder(type).build();
@@ -137,7 +135,7 @@ public abstract class TimePartitioning implements Serializable {
     com.google.api.services.bigquery.model.TimePartitioning partitioningPb =
         new com.google.api.services.bigquery.model.TimePartitioning();
     partitioningPb.setType(getType().name());
-    partitioningPb.setExpirationMs(getExpirationMs());
+    partitioningPb.setExpirationMs(firstNonNull(getExpirationMs(), Data.NULL_LONG));
     partitioningPb.setRequirePartitionFilter(getRequirePartitionFilter());
     partitioningPb.setField(getField());
     return partitioningPb;
@@ -145,10 +143,14 @@ public abstract class TimePartitioning implements Serializable {
 
   static TimePartitioning fromPb(
       com.google.api.services.bigquery.model.TimePartitioning partitioningPb) {
+    Long expirationMs = partitioningPb.getExpirationMs();
+    if (Data.isNull(expirationMs)) {
+      expirationMs = null;
+    }
     return newBuilder(Type.valueOf(partitioningPb.getType()))
-            .setExpirationMs(partitioningPb.getExpirationMs())
-            .setField(partitioningPb.getField())
-            .setRequirePartitionFilter(partitioningPb.getRequirePartitionFilter())
-            .build();
+        .setExpirationMs(expirationMs)
+        .setField(partitioningPb.getField())
+        .setRequirePartitionFilter(partitioningPb.getRequirePartitionFilter())
+        .build();
   }
 }
