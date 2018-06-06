@@ -42,7 +42,6 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintStream;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -105,7 +104,8 @@ public class AlertSample {
       "backup", BACKUP_OPTIONS,
       "restore", BACKUP_OPTIONS,
       "replace-channels", REPLACE_CHANNELS_OPTIONS,
-      "enable", ENABLE_OPTIONS
+      "enable", ENABLE_OPTIONS,
+      "disable", ENABLE_OPTIONS
   );
 
   private static final CommandLineParser PARSER = new DefaultParser();
@@ -122,26 +122,23 @@ public class AlertSample {
 
   private AlertPolicyServiceClient alertPolicyClient;
   private NotificationChannelServiceClient notificationChannelClient;
-  private PrintStream outputStream;
   private Gson gson = new Gson();
 
   private AlertSample() throws IOException {
-    this(AlertPolicyServiceClient.create(), NotificationChannelServiceClient.create(), System.out);
+    this(AlertPolicyServiceClient.create(), NotificationChannelServiceClient.create());
   }
 
   AlertSample(AlertPolicyServiceClient alertPolicyClient,
-              NotificationChannelServiceClient notificationChannelClient,
-              PrintStream os) {
+              NotificationChannelServiceClient notificationChannelClient) {
     this.alertPolicyClient = checkNotNull(alertPolicyClient);
     this.notificationChannelClient = notificationChannelClient;
-    outputStream = checkNotNull(os);
   }
 
   public static void main(String[] args) throws IOException {
     AlertSample sample = createAlertSample();
 
     if (args.length == 0) {
-      usage(System.out, null);
+      usage(null);
       return;
     }
     String command = args[0];
@@ -151,16 +148,15 @@ public class AlertSample {
 
     String projectId = cl.hasOption(PROJECT_ID_OPTION.getOpt())
         ? cl.getOptionValue(PROJECT_ID_OPTION.getOpt())
-        : System.getenv("GOOGLE_PROJECT_ID");
+        : System.getenv("GOOGLE_CLOUD_PROJECT");
 
     if (Strings.isNullOrEmpty(projectId)) {
       projectId = System.getenv("DEVSHELL_PROJECT_ID");
     }
 
     if (Strings.isNullOrEmpty(projectId)) {
-      usage(sample.outputStream,
-          "Error: --project-id arg required unless provided by the GOOGLE_PROJECT_ID "
-              + "or DEVSHELL_PROJECT_ID environment variables.");
+      usage("Error: --project-id arg required unless provided by the GOOGLE_CLOUD_PROJECT "
+          + "or DEVSHELL_PROJECT_ID environment variables.");
       return;
     }
 
@@ -190,7 +186,7 @@ public class AlertSample {
             cl.getOptionValue(FILTER_OPTION.getOpt()), false);
         break;
       default:
-        usage(sample.outputStream, null);
+        usage(null);
     }
   }
 
@@ -199,7 +195,7 @@ public class AlertSample {
     try {
       cl = PARSER.parse(expectedOptions, args);
     } catch (ParseException pe) {
-      usage(System.out, "Exception parsing command line arguments.");
+      usage("Exception parsing command line arguments.");
       throw new RuntimeException("Exception parsing command line arguments.", pe);
     }
     return cl;
@@ -210,7 +206,7 @@ public class AlertSample {
     try {
       sample = new AlertSample();
     } catch (Exception e) {
-      usage(System.out, "Exception creating alert sample.");
+      usage("Exception creating alert sample.");
       throw e;
     }
     return sample;
@@ -221,10 +217,19 @@ public class AlertSample {
     ListAlertPoliciesPagedResponse response = alertPolicyClient.listAlertPolicies(ProjectName.of(
         projectId));
 
+    System.out.println("Alert Policies:");
     for (AlertPolicy policy : response.iterateAll()) {
-      outputStream.println(policy.getDisplayName());
+      System.out.println(
+          String.format("\nPolicy %s\nalert-id: %s", policy.getDisplayName(), policy.getName()));
+      int channels = policy.getNotificationChannelsCount();
+      if (channels > 0) {
+        System.out.println("notification-channels:");
+        for (int i = 0; i < channels; i++) {
+          System.out.println("\t" + policy.getNotificationChannels(i));
+        }
+      }
       if (policy.hasDocumentation() && policy.getDocumentation().getContent() != null) {
-        outputStream.println(policy.getDocumentation().getContent());
+        System.out.println(policy.getDocumentation().getContent());
       }
     }
   }
@@ -235,7 +240,7 @@ public class AlertSample {
     List<AlertPolicy> alertPolicies = getAlertPolicies(projectId);
     List<NotificationChannel> notificationChannels = getNotificationChannels(projectId);
     writePoliciesBackupFile(projectId, filePath, alertPolicies, notificationChannels);
-    outputStream.println(String.format("Saved policies to %s", filePath));
+    System.out.println(String.format("Saved policies to %s", filePath));
   }
 
   private List<AlertPolicy> getAlertPolicies(String projectId) {
@@ -351,7 +356,7 @@ public class AlertSample {
               policy.toBuilder().clearName().build());
         }
       }
-      outputStream.println(String.format("Restored %s", policy.getName()));
+      System.out.println(String.format("Restored %s", policy.getName()));
     }
   }
   // [END monitoring_alert_create_policy]
@@ -400,7 +405,7 @@ public class AlertSample {
   }
   // [END monitoring_alert_create_channel]
   // [END monitoring_alert_update_channel]
-  
+
   private JsonObject getPolicyJsonContents(String filePath, BufferedReader content, Gson gson) {
     try {
       return gson.fromJson(content, JsonObject.class);
@@ -421,7 +426,7 @@ public class AlertSample {
     }
     AlertPolicy result = alertPolicyClient.updateAlertPolicy(
         FieldMask.newBuilder().addPaths("notification_channels").build(), policyBuilder.build());
-    outputStream.println(String.format("Updated %s", result.getName()));
+    System.out.println(String.format("Updated %s", result.getName()));
   }
   // [END monitoring_alert_replace_channels]
 
@@ -432,38 +437,37 @@ public class AlertSample {
                       boolean enable) {
     ListAlertPoliciesPagedResponse response = alertPolicyClient
         .listAlertPolicies(ListAlertPoliciesRequest.newBuilder()
-            .setName(projectId)
+            .setName(ProjectName.of(projectId).toString())
             .setFilter(filter)
             .build());
 
     for (AlertPolicy policy : response.iterateAll()) {
       if (policy.getEnabled().getValue() == enable) {
-        outputStream.println(String.format("Policy %s is already %b.", policy.getName(), enable));
+        System.out.println(String.format(
+            "Policy %s is already %b.", policy.getName(), enable ? "enabled" : "disabled"));
         continue;
       }
       AlertPolicy updatedPolicy = AlertPolicy
           .newBuilder()
-          .setName(AlertPolicyName.of(projectId, policy.getName()).toString())
+          .setName(policy.getName())
           .setEnabled(BoolValue.newBuilder().setValue(enable))
           .build();
       AlertPolicy result = alertPolicyClient.updateAlertPolicy(
           FieldMask.newBuilder().addPaths("enabled").build(), updatedPolicy);
-      outputStream.println(String.format(
-          "%s %s", result.getName(), result.getEnabled().getValue() ? "Enabled" : "Disabled"));
+      System.out.println(String.format(
+          "%s %s",
+          result.getDisplayName(),
+          result.getEnabled().getValue() ? "enabled" : "disabled"));
     }
 
   }
   // [END monitoring_alert_enable_policies]
   // [END monitoring_alert_disable_policies]
 
-  private static void usage(PrintStream ps) {
-    usage(ps, null);
-  }
-
-  private static void usage(PrintStream ps, String message) {
-    Optional.ofNullable(message).ifPresent(ps::println);
-    ps.println("Usage:");
-    ps.printf(
+  private static void usage(String message) {
+    Optional.ofNullable(message).ifPresent(System.out::println);
+    System.out.println("Usage:");
+    System.out.printf(
         "\tjava %s \"<command>\" \"<args>\"\n"
             + "Args:\n"
             + "\t%s\n"
