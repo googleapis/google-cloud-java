@@ -25,6 +25,7 @@ private static final long serialVersionUID = 0L;
     pitch_ = 0D;
     volumeGainDb_ = 0D;
     sampleRateHertz_ = 0;
+    effectsProfileId_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
@@ -37,6 +38,9 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -81,6 +85,15 @@ private static final long serialVersionUID = 0L;
             sampleRateHertz_ = input.readInt32();
             break;
           }
+          case 50: {
+            java.lang.String s = input.readStringRequireUtf8();
+            if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+              effectsProfileId_ = new com.google.protobuf.LazyStringArrayList();
+              mutable_bitField0_ |= 0x00000020;
+            }
+            effectsProfileId_.add(s);
+            break;
+          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -89,6 +102,9 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+        effectsProfileId_ = effectsProfileId_.getUnmodifiableView();
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -105,6 +121,7 @@ private static final long serialVersionUID = 0L;
             com.google.cloud.texttospeech.v1beta1.AudioConfig.class, com.google.cloud.texttospeech.v1beta1.AudioConfig.Builder.class);
   }
 
+  private int bitField0_;
   public static final int AUDIO_ENCODING_FIELD_NUMBER = 1;
   private int audioEncoding_;
   /**
@@ -198,6 +215,59 @@ private static final long serialVersionUID = 0L;
     return sampleRateHertz_;
   }
 
+  public static final int EFFECTS_PROFILE_ID_FIELD_NUMBER = 6;
+  private com.google.protobuf.LazyStringList effectsProfileId_;
+  /**
+   * <pre>
+   * An identifier which selects 'audio effects' profiles that are applied on
+   * (post synthesized) text to speech.
+   * Effects are applied on top of each other in the order they are given.
+   * </pre>
+   *
+   * <code>repeated string effects_profile_id = 6;</code>
+   */
+  public com.google.protobuf.ProtocolStringList
+      getEffectsProfileIdList() {
+    return effectsProfileId_;
+  }
+  /**
+   * <pre>
+   * An identifier which selects 'audio effects' profiles that are applied on
+   * (post synthesized) text to speech.
+   * Effects are applied on top of each other in the order they are given.
+   * </pre>
+   *
+   * <code>repeated string effects_profile_id = 6;</code>
+   */
+  public int getEffectsProfileIdCount() {
+    return effectsProfileId_.size();
+  }
+  /**
+   * <pre>
+   * An identifier which selects 'audio effects' profiles that are applied on
+   * (post synthesized) text to speech.
+   * Effects are applied on top of each other in the order they are given.
+   * </pre>
+   *
+   * <code>repeated string effects_profile_id = 6;</code>
+   */
+  public java.lang.String getEffectsProfileId(int index) {
+    return effectsProfileId_.get(index);
+  }
+  /**
+   * <pre>
+   * An identifier which selects 'audio effects' profiles that are applied on
+   * (post synthesized) text to speech.
+   * Effects are applied on top of each other in the order they are given.
+   * </pre>
+   *
+   * <code>repeated string effects_profile_id = 6;</code>
+   */
+  public com.google.protobuf.ByteString
+      getEffectsProfileIdBytes(int index) {
+    return effectsProfileId_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -224,6 +294,9 @@ private static final long serialVersionUID = 0L;
     }
     if (sampleRateHertz_ != 0) {
       output.writeInt32(5, sampleRateHertz_);
+    }
+    for (int i = 0; i < effectsProfileId_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, effectsProfileId_.getRaw(i));
     }
     unknownFields.writeTo(output);
   }
@@ -252,6 +325,14 @@ private static final long serialVersionUID = 0L;
     if (sampleRateHertz_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(5, sampleRateHertz_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < effectsProfileId_.size(); i++) {
+        dataSize += computeStringSizeNoTag(effectsProfileId_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getEffectsProfileIdList().size();
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -284,6 +365,8 @@ private static final long serialVersionUID = 0L;
             other.getVolumeGainDb()));
     result = result && (getSampleRateHertz()
         == other.getSampleRateHertz());
+    result = result && getEffectsProfileIdList()
+        .equals(other.getEffectsProfileIdList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -308,6 +391,10 @@ private static final long serialVersionUID = 0L;
         java.lang.Double.doubleToLongBits(getVolumeGainDb()));
     hash = (37 * hash) + SAMPLE_RATE_HERTZ_FIELD_NUMBER;
     hash = (53 * hash) + getSampleRateHertz();
+    if (getEffectsProfileIdCount() > 0) {
+      hash = (37 * hash) + EFFECTS_PROFILE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getEffectsProfileIdList().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -451,6 +538,8 @@ private static final long serialVersionUID = 0L;
 
       sampleRateHertz_ = 0;
 
+      effectsProfileId_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000020);
       return this;
     }
 
@@ -473,11 +562,19 @@ private static final long serialVersionUID = 0L;
 
     public com.google.cloud.texttospeech.v1beta1.AudioConfig buildPartial() {
       com.google.cloud.texttospeech.v1beta1.AudioConfig result = new com.google.cloud.texttospeech.v1beta1.AudioConfig(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       result.audioEncoding_ = audioEncoding_;
       result.speakingRate_ = speakingRate_;
       result.pitch_ = pitch_;
       result.volumeGainDb_ = volumeGainDb_;
       result.sampleRateHertz_ = sampleRateHertz_;
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        effectsProfileId_ = effectsProfileId_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000020);
+      }
+      result.effectsProfileId_ = effectsProfileId_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -534,6 +631,16 @@ private static final long serialVersionUID = 0L;
       if (other.getSampleRateHertz() != 0) {
         setSampleRateHertz(other.getSampleRateHertz());
       }
+      if (!other.effectsProfileId_.isEmpty()) {
+        if (effectsProfileId_.isEmpty()) {
+          effectsProfileId_ = other.effectsProfileId_;
+          bitField0_ = (bitField0_ & ~0x00000020);
+        } else {
+          ensureEffectsProfileIdIsMutable();
+          effectsProfileId_.addAll(other.effectsProfileId_);
+        }
+        onChanged();
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -560,6 +667,7 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0_;
 
     private int audioEncoding_ = 0;
     /**
@@ -827,6 +935,154 @@ private static final long serialVersionUID = 0L;
       onChanged();
       return this;
     }
+
+    private com.google.protobuf.LazyStringList effectsProfileId_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureEffectsProfileIdIsMutable() {
+      if (!((bitField0_ & 0x00000020) == 0x00000020)) {
+        effectsProfileId_ = new com.google.protobuf.LazyStringArrayList(effectsProfileId_);
+        bitField0_ |= 0x00000020;
+       }
+    }
+    /**
+     * <pre>
+     * An identifier which selects 'audio effects' profiles that are applied on
+     * (post synthesized) text to speech.
+     * Effects are applied on top of each other in the order they are given.
+     * </pre>
+     *
+     * <code>repeated string effects_profile_id = 6;</code>
+     */
+    public com.google.protobuf.ProtocolStringList
+        getEffectsProfileIdList() {
+      return effectsProfileId_.getUnmodifiableView();
+    }
+    /**
+     * <pre>
+     * An identifier which selects 'audio effects' profiles that are applied on
+     * (post synthesized) text to speech.
+     * Effects are applied on top of each other in the order they are given.
+     * </pre>
+     *
+     * <code>repeated string effects_profile_id = 6;</code>
+     */
+    public int getEffectsProfileIdCount() {
+      return effectsProfileId_.size();
+    }
+    /**
+     * <pre>
+     * An identifier which selects 'audio effects' profiles that are applied on
+     * (post synthesized) text to speech.
+     * Effects are applied on top of each other in the order they are given.
+     * </pre>
+     *
+     * <code>repeated string effects_profile_id = 6;</code>
+     */
+    public java.lang.String getEffectsProfileId(int index) {
+      return effectsProfileId_.get(index);
+    }
+    /**
+     * <pre>
+     * An identifier which selects 'audio effects' profiles that are applied on
+     * (post synthesized) text to speech.
+     * Effects are applied on top of each other in the order they are given.
+     * </pre>
+     *
+     * <code>repeated string effects_profile_id = 6;</code>
+     */
+    public com.google.protobuf.ByteString
+        getEffectsProfileIdBytes(int index) {
+      return effectsProfileId_.getByteString(index);
+    }
+    /**
+     * <pre>
+     * An identifier which selects 'audio effects' profiles that are applied on
+     * (post synthesized) text to speech.
+     * Effects are applied on top of each other in the order they are given.
+     * </pre>
+     *
+     * <code>repeated string effects_profile_id = 6;</code>
+     */
+    public Builder setEffectsProfileId(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureEffectsProfileIdIsMutable();
+      effectsProfileId_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * An identifier which selects 'audio effects' profiles that are applied on
+     * (post synthesized) text to speech.
+     * Effects are applied on top of each other in the order they are given.
+     * </pre>
+     *
+     * <code>repeated string effects_profile_id = 6;</code>
+     */
+    public Builder addEffectsProfileId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureEffectsProfileIdIsMutable();
+      effectsProfileId_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * An identifier which selects 'audio effects' profiles that are applied on
+     * (post synthesized) text to speech.
+     * Effects are applied on top of each other in the order they are given.
+     * </pre>
+     *
+     * <code>repeated string effects_profile_id = 6;</code>
+     */
+    public Builder addAllEffectsProfileId(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureEffectsProfileIdIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, effectsProfileId_);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * An identifier which selects 'audio effects' profiles that are applied on
+     * (post synthesized) text to speech.
+     * Effects are applied on top of each other in the order they are given.
+     * </pre>
+     *
+     * <code>repeated string effects_profile_id = 6;</code>
+     */
+    public Builder clearEffectsProfileId() {
+      effectsProfileId_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * An identifier which selects 'audio effects' profiles that are applied on
+     * (post synthesized) text to speech.
+     * Effects are applied on top of each other in the order they are given.
+     * </pre>
+     *
+     * <code>repeated string effects_profile_id = 6;</code>
+     */
+    public Builder addEffectsProfileIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      ensureEffectsProfileIdIsMutable();
+      effectsProfileId_.add(value);
+      onChanged();
+      return this;
+    }
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
@@ -857,7 +1113,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-        return new AudioConfig(input, extensionRegistry);
+      return new AudioConfig(input, extensionRegistry);
     }
   };
 

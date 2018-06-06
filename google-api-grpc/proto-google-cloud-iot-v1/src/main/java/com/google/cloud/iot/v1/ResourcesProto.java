@@ -102,7 +102,7 @@ public final class ResourcesProto {
       "v1.DeviceCredential\0227\n\023last_heartbeat_ti" +
       "me\030\007 \001(\0132\032.google.protobuf.Timestamp\0223\n\017" +
       "last_event_time\030\010 \001(\0132\032.google.protobuf." +
-      "Timestamp\0223\n\017last_state_time\030\024 \001(\0132\032.goo",
+      "Timestamp\0223\n\017last_state_time\030\024 \001(\0132\032.goo" +
       "gle.protobuf.Timestamp\0228\n\024last_config_ac" +
       "k_time\030\016 \001(\0132\032.google.protobuf.Timestamp" +
       "\0229\n\025last_config_send_time\030\022 \001(\0132\032.google" +
@@ -112,7 +112,7 @@ public final class ResourcesProto {
       "oogle.rpc.Status\0221\n\006config\030\r \001(\0132!.googl" +
       "e.cloud.iot.v1.DeviceConfig\022/\n\005state\030\020 \001" +
       "(\0132 .google.cloud.iot.v1.DeviceState\022;\n\010" +
-      "metadata\030\021 \003(\0132).google.cloud.iot.v1.Dev",
+      "metadata\030\021 \003(\0132).google.cloud.iot.v1.Dev" +
       "ice.MetadataEntry\032/\n\rMetadataEntry\022\013\n\003ke" +
       "y\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\367\002\n\016DeviceReg" +
       "istry\022\n\n\002id\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022P\n\032event" +
@@ -122,7 +122,7 @@ public final class ResourcesProto {
       "oud.iot.v1.StateNotificationConfig\0224\n\013mq" +
       "tt_config\030\004 \001(\0132\037.google.cloud.iot.v1.Mq" +
       "ttConfig\0224\n\013http_config\030\t \001(\0132\037.google.c" +
-      "loud.iot.v1.HttpConfig\022<\n\013credentials\030\010 ",
+      "loud.iot.v1.HttpConfig\022<\n\013credentials\030\010 " +
       "\003(\0132\'.google.cloud.iot.v1.RegistryCreden" +
       "tial\"H\n\nMqttConfig\022:\n\022mqtt_enabled_state" +
       "\030\001 \001(\0162\036.google.cloud.iot.v1.MqttState\"H" +
@@ -132,7 +132,7 @@ public final class ResourcesProto {
       "\030\002 \001(\t\022\031\n\021pubsub_topic_name\030\001 \001(\t\"4\n\027Sta" +
       "teNotificationConfig\022\031\n\021pubsub_topic_nam" +
       "e\030\001 \001(\t\"o\n\022RegistryCredential\022K\n\026public_" +
-      "key_certificate\030\001 \001(\0132).google.cloud.iot",
+      "key_certificate\030\001 \001(\0132).google.cloud.iot" +
       ".v1.PublicKeyCertificateH\000B\014\n\ncredential" +
       "\"\320\001\n\026X509CertificateDetails\022\016\n\006issuer\030\001 " +
       "\001(\t\022\017\n\007subject\030\002 \001(\t\022.\n\nstart_time\030\003 \001(\013" +
@@ -142,7 +142,7 @@ public final class ResourcesProto {
       "_type\030\006 \001(\t\"\257\001\n\024PublicKeyCertificate\022?\n\006" +
       "format\030\001 \001(\0162/.google.cloud.iot.v1.Publi" +
       "cKeyCertificateFormat\022\023\n\013certificate\030\002 \001" +
-      "(\t\022A\n\014x509_details\030\003 \001(\0132+.google.cloud.",
+      "(\t\022A\n\014x509_details\030\003 \001(\0132+.google.cloud." +
       "iot.v1.X509CertificateDetails\"\225\001\n\020Device" +
       "Credential\022>\n\npublic_key\030\002 \001(\0132(.google." +
       "cloud.iot.v1.PublicKeyCredentialH\000\0223\n\017ex" +
@@ -152,7 +152,7 @@ public final class ResourcesProto {
       "v1.PublicKeyFormat\022\013\n\003key\030\002 \001(\t\"\240\001\n\014Devi" +
       "ceConfig\022\017\n\007version\030\001 \001(\003\0225\n\021cloud_updat" +
       "e_time\030\002 \001(\0132\032.google.protobuf.Timestamp" +
-      "\0223\n\017device_ack_time\030\003 \001(\0132\032.google.proto",
+      "\0223\n\017device_ack_time\030\003 \001(\0132\032.google.proto" +
       "buf.Timestamp\022\023\n\013binary_data\030\004 \001(\014\"S\n\013De" +
       "viceState\022/\n\013update_time\030\001 \001(\0132\032.google." +
       "protobuf.Timestamp\022\023\n\013binary_data\030\002 \001(\014*" +
@@ -162,7 +162,7 @@ public final class ResourcesProto {
       "\n\014HTTP_ENABLED\020\001\022\021\n\rHTTP_DISABLED\020\002*e\n\032P" +
       "ublicKeyCertificateFormat\022-\n)UNSPECIFIED" +
       "_PUBLIC_KEY_CERTIFICATE_FORMAT\020\000\022\030\n\024X509" +
-      "_CERTIFICATE_PEM\020\001*v\n\017PublicKeyFormat\022!\n",
+      "_CERTIFICATE_PEM\020\001*v\n\017PublicKeyFormat\022!\n" +
       "\035UNSPECIFIED_PUBLIC_KEY_FORMAT\020\000\022\013\n\007RSA_" +
       "PEM\020\003\022\020\n\014RSA_X509_PEM\020\001\022\r\n\tES256_PEM\020\002\022\022" +
       "\n\016ES256_X509_PEM\020\004Bf\n\027com.google.cloud.i" +

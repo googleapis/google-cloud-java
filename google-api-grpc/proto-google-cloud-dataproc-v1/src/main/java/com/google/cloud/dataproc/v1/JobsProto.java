@@ -192,7 +192,7 @@ public final class JobsProto {
       "gle.cloud.dataproc.v1.LoggingConfig.Driv" +
       "erLogLevelsEntry\032e\n\024DriverLogLevelsEntry" +
       "\022\013\n\003key\030\001 \001(\t\022<\n\005value\030\002 \001(\0162-.google.cl" +
-      "oud.dataproc.v1.LoggingConfig.Level:\0028\001\"",
+      "oud.dataproc.v1.LoggingConfig.Level:\0028\001\"" +
       "p\n\005Level\022\025\n\021LEVEL_UNSPECIFIED\020\000\022\007\n\003ALL\020\001" +
       "\022\t\n\005TRACE\020\002\022\t\n\005DEBUG\020\003\022\010\n\004INFO\020\004\022\010\n\004WARN" +
       "\020\005\022\t\n\005ERROR\020\006\022\t\n\005FATAL\020\007\022\007\n\003OFF\020\010\"\323\002\n\tHa" +
@@ -202,7 +202,7 @@ public final class JobsProto {
       "chive_uris\030\006 \003(\t\022G\n\nproperties\030\007 \003(\01323.g" +
       "oogle.cloud.dataproc.v1.HadoopJob.Proper" +
       "tiesEntry\022?\n\016logging_config\030\010 \001(\0132\'.goog" +
-      "le.cloud.dataproc.v1.LoggingConfig\0321\n\017Pr",
+      "le.cloud.dataproc.v1.LoggingConfig\0321\n\017Pr" +
       "opertiesEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(" +
       "\t:\0028\001B\010\n\006driver\"\321\002\n\010SparkJob\022\033\n\021main_jar" +
       "_file_uri\030\001 \001(\tH\000\022\024\n\nmain_class\030\002 \001(\tH\000\022" +
@@ -212,7 +212,7 @@ public final class JobsProto {
       "c.v1.SparkJob.PropertiesEntry\022?\n\016logging" +
       "_config\030\010 \001(\0132\'.google.cloud.dataproc.v1" +
       ".LoggingConfig\0321\n\017PropertiesEntry\022\013\n\003key" +
-      "\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B\010\n\006driver\"\320\002\n\n",
+      "\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B\010\n\006driver\"\320\002\n\n" +
       "PySparkJob\022\034\n\024main_python_file_uri\030\001 \001(\t" +
       "\022\014\n\004args\030\002 \003(\t\022\030\n\020python_file_uris\030\003 \003(\t" +
       "\022\025\n\rjar_file_uris\030\004 \003(\t\022\021\n\tfile_uris\030\005 \003" +
@@ -222,7 +222,7 @@ public final class JobsProto {
       "(\0132\'.google.cloud.dataproc.v1.LoggingCon" +
       "fig\0321\n\017PropertiesEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005v" +
       "alue\030\002 \001(\t:\0028\001\"\034\n\tQueryList\022\017\n\007queries\030\001" +
-      " \003(\t\"\241\003\n\007HiveJob\022\030\n\016query_file_uri\030\001 \001(\t",
+      " \003(\t\"\241\003\n\007HiveJob\022\030\n\016query_file_uri\030\001 \001(\t" +
       "H\000\0229\n\nquery_list\030\002 \001(\0132#.google.cloud.da" +
       "taproc.v1.QueryListH\000\022\033\n\023continue_on_fai" +
       "lure\030\003 \001(\010\022P\n\020script_variables\030\004 \003(\01326.g" +
@@ -232,7 +232,7 @@ public final class JobsProto {
       "try\022\025\n\rjar_file_uris\030\006 \003(\t\0326\n\024ScriptVari" +
       "ablesEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\002" +
       "8\001\0321\n\017PropertiesEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005va" +
-      "lue\030\002 \001(\t:\0028\001B\t\n\007queries\"\321\003\n\013SparkSqlJob",
+      "lue\030\002 \001(\t:\0028\001B\t\n\007queries\"\321\003\n\013SparkSqlJob" +
       "\022\030\n\016query_file_uri\030\001 \001(\tH\000\0229\n\nquery_list" +
       "\030\002 \001(\0132#.google.cloud.dataproc.v1.QueryL" +
       "istH\000\022T\n\020script_variables\030\003 \003(\0132:.google" +
@@ -242,7 +242,7 @@ public final class JobsProto {
       "sEntry\022\025\n\rjar_file_uris\0308 \003(\t\022?\n\016logging" +
       "_config\030\006 \001(\0132\'.google.cloud.dataproc.v1" +
       ".LoggingConfig\0326\n\024ScriptVariablesEntry\022\013" +
-      "\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\0321\n\017Proper",
+      "\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\0321\n\017Proper" +
       "tiesEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028" +
       "\001B\t\n\007queries\"\337\003\n\006PigJob\022\030\n\016query_file_ur" +
       "i\030\001 \001(\tH\000\0229\n\nquery_list\030\002 \001(\0132#.google.c" +
@@ -252,7 +252,7 @@ public final class JobsProto {
       "riptVariablesEntry\022D\n\nproperties\030\005 \003(\01320" +
       ".google.cloud.dataproc.v1.PigJob.Propert" +
       "iesEntry\022\025\n\rjar_file_uris\030\006 \003(\t\022?\n\016loggi" +
-      "ng_config\030\007 \001(\0132\'.google.cloud.dataproc.",
+      "ng_config\030\007 \001(\0132\'.google.cloud.dataproc." +
       "v1.LoggingConfig\0326\n\024ScriptVariablesEntry" +
       "\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\0321\n\017Prop" +
       "ertiesEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:" +
@@ -262,7 +262,7 @@ public final class JobsProto {
       "ataproc.v1.JobStatus.State\022\017\n\007details\030\002 " +
       "\001(\t\0224\n\020state_start_time\030\006 \001(\0132\032.google.p" +
       "rotobuf.Timestamp\022>\n\010substate\030\007 \001(\0162,.go" +
-      "ogle.cloud.dataproc.v1.JobStatus.Substat",
+      "ogle.cloud.dataproc.v1.JobStatus.Substat" +
       "e\"\251\001\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\013\n\007PE" +
       "NDING\020\001\022\016\n\nSETUP_DONE\020\010\022\013\n\007RUNNING\020\002\022\022\n\016" +
       "CANCEL_PENDING\020\003\022\022\n\016CANCEL_STARTED\020\007\022\r\n\t" +
@@ -272,7 +272,7 @@ public final class JobsProto {
       "TATUS\020\003\"2\n\014JobReference\022\022\n\nproject_id\030\001 " +
       "\001(\t\022\016\n\006job_id\030\002 \001(\t\"\221\002\n\017YarnApplication\022" +
       "\014\n\004name\030\001 \001(\t\022>\n\005state\030\002 \001(\0162/.google.cl" +
-      "oud.dataproc.v1.YarnApplication.State\022\020\n",
+      "oud.dataproc.v1.YarnApplication.State\022\020\n" +
       "\010progress\030\003 \001(\002\022\024\n\014tracking_url\030\004 \001(\t\"\207\001" +
       "\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\007\n\003NEW\020\001\022" +
       "\016\n\nNEW_SAVING\020\002\022\r\n\tSUBMITTED\020\003\022\014\n\010ACCEPT" +
@@ -282,7 +282,7 @@ public final class JobsProto {
       "ce\0229\n\tplacement\030\002 \001(\0132&.google.cloud.dat" +
       "aproc.v1.JobPlacement\0229\n\nhadoop_job\030\003 \001(" +
       "\0132#.google.cloud.dataproc.v1.HadoopJobH\000" +
-      "\0227\n\tspark_job\030\004 \001(\0132\".google.cloud.datap",
+      "\0227\n\tspark_job\030\004 \001(\0132\".google.cloud.datap" +
       "roc.v1.SparkJobH\000\022;\n\013pyspark_job\030\005 \001(\0132$" +
       ".google.cloud.dataproc.v1.PySparkJobH\000\0225" +
       "\n\010hive_job\030\006 \001(\0132!.google.cloud.dataproc" +
@@ -292,7 +292,7 @@ public final class JobsProto {
       "rkSqlJobH\000\0223\n\006status\030\010 \001(\0132#.google.clou" +
       "d.dataproc.v1.JobStatus\022;\n\016status_histor" +
       "y\030\r \003(\0132#.google.cloud.dataproc.v1.JobSt" +
-      "atus\022D\n\021yarn_applications\030\t \003(\0132).google",
+      "atus\022D\n\021yarn_applications\030\t \003(\0132).google" +
       ".cloud.dataproc.v1.YarnApplication\022\"\n\032dr" +
       "iver_output_resource_uri\030\021 \001(\t\022 \n\030driver" +
       "_control_files_uri\030\017 \001(\t\0229\n\006labels\030\022 \003(\013" +
@@ -302,7 +302,7 @@ public final class JobsProto {
       "\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B\n\n\010type_" +
       "job\".\n\rJobScheduling\022\035\n\025max_failures_per" +
       "_hour\030\001 \001(\005\"b\n\020SubmitJobRequest\022\022\n\nproje" +
-      "ct_id\030\001 \001(\t\022\016\n\006region\030\003 \001(\t\022*\n\003job\030\002 \001(\013",
+      "ct_id\030\001 \001(\t\022\016\n\006region\030\003 \001(\t\022*\n\003job\030\002 \001(\013" +
       "2\035.google.cloud.dataproc.v1.Job\"C\n\rGetJo" +
       "bRequest\022\022\n\nproject_id\030\001 \001(\t\022\016\n\006region\030\003" +
       " \001(\t\022\016\n\006job_id\030\002 \001(\t\"\220\002\n\017ListJobsRequest" +
@@ -312,7 +312,7 @@ public final class JobsProto {
       " \001(\01629.google.cloud.dataproc.v1.ListJobs" +
       "Request.JobStateMatcher\022\016\n\006filter\030\007 \001(\t\"" +
       "6\n\017JobStateMatcher\022\007\n\003ALL\020\000\022\n\n\006ACTIVE\020\001\022" +
-      "\016\n\nNON_ACTIVE\020\002\"\243\001\n\020UpdateJobRequest\022\022\n\n",
+      "\016\n\nNON_ACTIVE\020\002\"\243\001\n\020UpdateJobRequest\022\022\n\n" +
       "project_id\030\001 \001(\t\022\016\n\006region\030\002 \001(\t\022\016\n\006job_" +
       "id\030\003 \001(\t\022*\n\003job\030\004 \001(\0132\035.google.cloud.dat" +
       "aproc.v1.Job\022/\n\013update_mask\030\005 \001(\0132\032.goog" +
@@ -322,7 +322,7 @@ public final class JobsProto {
       "lJobRequest\022\022\n\nproject_id\030\001 \001(\t\022\016\n\006regio" +
       "n\030\003 \001(\t\022\016\n\006job_id\030\002 \001(\t\"F\n\020DeleteJobRequ" +
       "est\022\022\n\nproject_id\030\001 \001(\t\022\016\n\006region\030\003 \001(\t\022" +
-      "\016\n\006job_id\030\002 \001(\t2\266\007\n\rJobController\022\231\001\n\tSu",
+      "\016\n\006job_id\030\002 \001(\t2\266\007\n\rJobController\022\231\001\n\tSu" +
       "bmitJob\022*.google.cloud.dataproc.v1.Submi" +
       "tJobRequest\032\035.google.cloud.dataproc.v1.J" +
       "ob\"A\202\323\344\223\002;\"6/v1/projects/{project_id}/re" +
@@ -332,7 +332,7 @@ public final class JobsProto {
       "\0228/v1/projects/{project_id}/regions/{reg" +
       "ion}/jobs/{job_id}\022\232\001\n\010ListJobs\022).google" +
       ".cloud.dataproc.v1.ListJobsRequest\032*.goo" +
-      "gle.cloud.dataproc.v1.ListJobsResponse\"7",
+      "gle.cloud.dataproc.v1.ListJobsResponse\"7" +
       "\202\323\344\223\0021\022//v1/projects/{project_id}/region" +
       "s/{region}/jobs\022\235\001\n\tUpdateJob\022*.google.c" +
       "loud.dataproc.v1.UpdateJobRequest\032\035.goog" +
@@ -342,7 +342,7 @@ public final class JobsProto {
       "loud.dataproc.v1.CancelJobRequest\032\035.goog" +
       "le.cloud.dataproc.v1.Job\"J\202\323\344\223\002D\"?/v1/pr" +
       "ojects/{project_id}/regions/{region}/job" +
-      "s/{job_id}:cancel:\001*\022\221\001\n\tDeleteJob\022*.goo",
+      "s/{job_id}:cancel:\001*\022\221\001\n\tDeleteJob\022*.goo" +
       "gle.cloud.dataproc.v1.DeleteJobRequest\032\026" +
       ".google.protobuf.Empty\"@\202\323\344\223\002:*8/v1/proj" +
       "ects/{project_id}/regions/{region}/jobs/" +

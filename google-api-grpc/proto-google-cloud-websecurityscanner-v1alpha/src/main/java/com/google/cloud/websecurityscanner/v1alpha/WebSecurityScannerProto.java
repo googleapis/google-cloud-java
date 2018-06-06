@@ -122,7 +122,7 @@ public final class WebSecurityScannerProto {
       "finding.proto\032@google/cloud/websecuritys" +
       "canner/v1alpha/finding_type_stats.proto\032" +
       "9google/cloud/websecurityscanner/v1alpha" +
-      "/scan_config.proto\0326google/cloud/websecu",
+      "/scan_config.proto\0326google/cloud/websecu" +
       "rityscanner/v1alpha/scan_run.proto\032\033goog" +
       "le/protobuf/empty.proto\032 google/protobuf" +
       "/field_mask.proto\"s\n\027CreateScanConfigReq" +
@@ -132,7 +132,7 @@ public final class WebSecurityScannerProto {
       "t\022\014\n\004name\030\001 \001(\t\"$\n\024GetScanConfigRequest\022" +
       "\014\n\004name\030\001 \001(\t\"O\n\026ListScanConfigsRequest\022" +
       "\016\n\006parent\030\001 \001(\t\022\022\n\npage_token\030\002 \001(\t\022\021\n\tp" +
-      "age_size\030\003 \001(\005\"\224\001\n\027UpdateScanConfigReque",
+      "age_size\030\003 \001(\005\"\224\001\n\027UpdateScanConfigReque" +
       "st\022H\n\013scan_config\030\002 \001(\01323.google.cloud.w" +
       "ebsecurityscanner.v1alpha.ScanConfig\022/\n\013" +
       "update_mask\030\003 \001(\0132\032.google.protobuf.Fiel" +
@@ -142,7 +142,7 @@ public final class WebSecurityScannerProto {
       "_token\030\002 \001(\t\"#\n\023StartScanRunRequest\022\014\n\004n" +
       "ame\030\001 \001(\t\"!\n\021GetScanRunRequest\022\014\n\004name\030\001" +
       " \001(\t\"L\n\023ListScanRunsRequest\022\016\n\006parent\030\001 " +
-      "\001(\t\022\022\n\npage_token\030\002 \001(\t\022\021\n\tpage_size\030\003 \001",
+      "\001(\t\022\022\n\npage_token\030\002 \001(\t\022\021\n\tpage_size\030\003 \001" +
       "(\005\"t\n\024ListScanRunsResponse\022C\n\tscan_runs\030" +
       "\001 \003(\01320.google.cloud.websecurityscanner." +
       "v1alpha.ScanRun\022\027\n\017next_page_token\030\002 \001(\t" +
@@ -152,7 +152,7 @@ public final class WebSecurityScannerProto {
       "\027ListCrawledUrlsResponse\022I\n\014crawled_urls" +
       "\030\001 \003(\01323.google.cloud.websecurityscanner" +
       ".v1alpha.CrawledUrl\022\027\n\017next_page_token\030\002" +
-      " \001(\t\"!\n\021GetFindingRequest\022\014\n\004name\030\001 \001(\t\"",
+      " \001(\t\"!\n\021GetFindingRequest\022\014\n\004name\030\001 \001(\t\"" +
       "\\\n\023ListFindingsRequest\022\016\n\006parent\030\001 \001(\t\022\016" +
       "\n\006filter\030\002 \001(\t\022\022\n\npage_token\030\003 \001(\t\022\021\n\tpa" +
       "ge_size\030\004 \001(\005\"s\n\024ListFindingsResponse\022B\n" +
@@ -162,7 +162,7 @@ public final class WebSecurityScannerProto {
       "t\022\016\n\006parent\030\001 \001(\t\"u\n\034ListFindingTypeStat" +
       "sResponse\022U\n\022finding_type_stats\030\001 \003(\01329." +
       "google.cloud.websecurityscanner.v1alpha." +
-      "FindingTypeStats2\320\024\n\022WebSecurityScanner\022",
+      "FindingTypeStats2\320\024\n\022WebSecurityScanner\022" +
       "\310\001\n\020CreateScanConfig\022@.google.cloud.webs" +
       "ecurityscanner.v1alpha.CreateScanConfigR" +
       "equest\0323.google.cloud.websecurityscanner" +
@@ -172,7 +172,7 @@ public final class WebSecurityScannerProto {
       "ebsecurityscanner.v1alpha.DeleteScanConf" +
       "igRequest\032\026.google.protobuf.Empty\"0\202\323\344\223\002" +
       "**(/v1alpha/{name=projects/*/scanConfigs" +
-      "/*}\022\265\001\n\rGetScanConfig\022=.google.cloud.web",
+      "/*}\022\265\001\n\rGetScanConfig\022=.google.cloud.web" +
       "securityscanner.v1alpha.GetScanConfigReq" +
       "uest\0323.google.cloud.websecurityscanner.v" +
       "1alpha.ScanConfig\"0\202\323\344\223\002*\022(/v1alpha/{nam" +
@@ -182,7 +182,7 @@ public final class WebSecurityScannerProto {
       "e.cloud.websecurityscanner.v1alpha.ListS" +
       "canConfigsResponse\"0\202\323\344\223\002*\022(/v1alpha/{pa" +
       "rent=projects/*}/scanConfigs\022\324\001\n\020UpdateS" +
-      "canConfig\022@.google.cloud.websecurityscan",
+      "canConfig\022@.google.cloud.websecurityscan" +
       "ner.v1alpha.UpdateScanConfigRequest\0323.go" +
       "ogle.cloud.websecurityscanner.v1alpha.Sc" +
       "anConfig\"I\202\323\344\223\002C24/v1alpha/{scan_config." +
@@ -192,7 +192,7 @@ public final class WebSecurityScannerProto {
       "st\0320.google.cloud.websecurityscanner.v1a" +
       "lpha.ScanRun\"9\202\323\344\223\0023\"./v1alpha/{name=pro" +
       "jects/*/scanConfigs/*}:start:\001*\022\267\001\n\nGetS" +
-      "canRun\022:.google.cloud.websecurityscanner",
+      "canRun\022:.google.cloud.websecurityscanner" +
       ".v1alpha.GetScanRunRequest\0320.google.clou" +
       "d.websecurityscanner.v1alpha.ScanRun\";\202\323" +
       "\344\223\0025\0223/v1alpha/{name=projects/*/scanConf" +
@@ -202,7 +202,7 @@ public final class WebSecurityScannerProto {
       "ityscanner.v1alpha.ListScanRunsResponse\"" +
       ";\202\323\344\223\0025\0223/v1alpha/{parent=projects/*/sca" +
       "nConfigs/*}/scanRuns\022\301\001\n\013StopScanRun\022;.g" +
-      "oogle.cloud.websecurityscanner.v1alpha.S",
+      "oogle.cloud.websecurityscanner.v1alpha.S" +
       "topScanRunRequest\0320.google.cloud.websecu" +
       "rityscanner.v1alpha.ScanRun\"C\202\323\344\223\002=\"8/v1" +
       "alpha/{name=projects/*/scanConfigs/*/sca" +
@@ -212,7 +212,7 @@ public final class WebSecurityScannerProto {
       "securityscanner.v1alpha.ListCrawledUrlsR" +
       "esponse\"I\202\323\344\223\002C\022A/v1alpha/{parent=projec" +
       "ts/*/scanConfigs/*/scanRuns/*}/crawledUr" +
-      "ls\022\302\001\n\nGetFinding\022:.google.cloud.websecu",
+      "ls\022\302\001\n\nGetFinding\022:.google.cloud.websecu" +
       "rityscanner.v1alpha.GetFindingRequest\0320." +
       "google.cloud.websecurityscanner.v1alpha." +
       "Finding\"F\202\323\344\223\002@\022>/v1alpha/{name=projects" +
@@ -222,7 +222,7 @@ public final class WebSecurityScannerProto {
       ".google.cloud.websecurityscanner.v1alpha" +
       ".ListFindingsResponse\"F\202\323\344\223\002@\022>/v1alpha/" +
       "{parent=projects/*/scanConfigs/*/scanRun" +
-      "s/*}/findings\022\363\001\n\024ListFindingTypeStats\022D",
+      "s/*}/findings\022\363\001\n\024ListFindingTypeStats\022D" +
       ".google.cloud.websecurityscanner.v1alpha" +
       ".ListFindingTypeStatsRequest\032E.google.cl" +
       "oud.websecurityscanner.v1alpha.ListFindi" +

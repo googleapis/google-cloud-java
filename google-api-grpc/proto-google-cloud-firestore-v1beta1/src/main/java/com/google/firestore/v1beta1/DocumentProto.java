@@ -62,7 +62,7 @@ public final class DocumentProto {
       "irestore.v1beta1.Document.FieldsEntry\022/\n" +
       "\013create_time\030\003 \001(\0132\032.google.protobuf.Tim" +
       "estamp\022/\n\013update_time\030\004 \001(\0132\032.google.pro" +
-      "tobuf.Timestamp\032N\n\013FieldsEntry\022\013\n\003key\030\001 ",
+      "tobuf.Timestamp\032N\n\013FieldsEntry\022\013\n\003key\030\001 " +
       "\001(\t\022.\n\005value\030\002 \001(\0132\037.google.firestore.v1" +
       "beta1.Value:\0028\001\"\270\003\n\005Value\0220\n\nnull_value\030" +
       "\013 \001(\0162\032.google.protobuf.NullValueH\000\022\027\n\rb" +
@@ -72,7 +72,7 @@ public final class DocumentProto {
       "mpH\000\022\026\n\014string_value\030\021 \001(\tH\000\022\025\n\013bytes_va" +
       "lue\030\022 \001(\014H\000\022\031\n\017reference_value\030\005 \001(\tH\000\022." +
       "\n\017geo_point_value\030\010 \001(\0132\023.google.type.La" +
-      "tLngH\000\022;\n\013array_value\030\t \001(\0132$.google.fir",
+      "tLngH\000\022;\n\013array_value\030\t \001(\0132$.google.fir" +
       "estore.v1beta1.ArrayValueH\000\0227\n\tmap_value" +
       "\030\006 \001(\0132\".google.firestore.v1beta1.MapVal" +
       "ueH\000B\014\n\nvalue_type\"=\n\nArrayValue\022/\n\006valu" +
@@ -82,7 +82,7 @@ public final class DocumentProto {
       "\n\013FieldsEntry\022\013\n\003key\030\001 \001(\t\022.\n\005value\030\002 \001(" +
       "\0132\037.google.firestore.v1beta1.Value:\0028\001B\273" +
       "\001\n\034com.google.firestore.v1beta1B\rDocumen" +
-      "tProtoP\001ZAgoogle.golang.org/genproto/goo",
+      "tProtoP\001ZAgoogle.golang.org/genproto/goo" +
       "gleapis/firestore/v1beta1;firestore\242\002\004GC" +
       "FS\252\002\036Google.Cloud.Firestore.V1Beta1\312\002\036Go" +
       "ogle\\Cloud\\Firestore\\V1beta1b\006proto3"

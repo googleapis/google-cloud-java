@@ -52,7 +52,7 @@ public final class FindingAddonProto {
       "content_type\030\001 \001(\t\022\024\n\014resource_url\030\002 \001(\t" +
       "\"/\n\024VulnerableParameters\022\027\n\017parameter_na" +
       "mes\030\001 \003(\t\"2\n\003Xss\022\024\n\014stack_traces\030\001 \003(\t\022\025" +
-      "\n\rerror_message\030\002 \001(\tB\235\001\n+com.google.clo",
+      "\n\rerror_message\030\002 \001(\tB\235\001\n+com.google.clo" +
       "ud.websecurityscanner.v1alphaB\021FindingAd" +
       "donProtoP\001ZYgoogle.golang.org/genproto/g" +
       "oogleapis/cloud/websecurityscanner/v1alp" +

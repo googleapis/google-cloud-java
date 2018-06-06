@@ -92,7 +92,7 @@ public final class LoggingProto {
       "mp.proto\032\027google/rpc/status.proto\"$\n\020Del" +
       "eteLogRequest\022\020\n\010log_name\030\001 \001(\t\"\230\002\n\026Writ" +
       "eLogEntriesRequest\022\020\n\010log_name\030\001 \001(\t\022/\n\010" +
-      "resource\030\002 \001(\0132\035.google.api.MonitoredRes",
+      "resource\030\002 \001(\0132\035.google.api.MonitoredRes" +
       "ource\022E\n\006labels\030\003 \003(\01325.google.logging.v" +
       "2.WriteLogEntriesRequest.LabelsEntry\022,\n\007" +
       "entries\030\004 \003(\0132\033.google.logging.v2.LogEnt" +
@@ -102,7 +102,7 @@ public final class LoggingProto {
       "sPartialErrors\022]\n\020log_entry_errors\030\001 \003(\013" +
       "2C.google.logging.v2.WriteLogEntriesPart" +
       "ialErrors.LogEntryErrorsEntry\032I\n\023LogEntr" +
-      "yErrorsEntry\022\013\n\003key\030\001 \001(\005\022!\n\005value\030\002 \001(\013",
+      "yErrorsEntry\022\013\n\003key\030\001 \001(\005\022!\n\005value\030\002 \001(\013" +
       "2\022.google.rpc.Status:\0028\001\"\215\001\n\025ListLogEntr" +
       "iesRequest\022\023\n\013project_ids\030\001 \003(\t\022\026\n\016resou" +
       "rce_names\030\010 \003(\t\022\016\n\006filter\030\002 \001(\t\022\020\n\010order" +
@@ -112,7 +112,7 @@ public final class LoggingProto {
       "\022\027\n\017next_page_token\030\002 \001(\t\"P\n\'ListMonitor" +
       "edResourceDescriptorsRequest\022\021\n\tpage_siz" +
       "e\030\001 \001(\005\022\022\n\npage_token\030\002 \001(\t\"\212\001\n(ListMoni" +
-      "toredResourceDescriptorsResponse\022E\n\024reso",
+      "toredResourceDescriptorsResponse\022E\n\024reso" +
       "urce_descriptors\030\001 \003(\0132\'.google.api.Moni" +
       "toredResourceDescriptor\022\027\n\017next_page_tok" +
       "en\030\002 \001(\t\"H\n\017ListLogsRequest\022\016\n\006parent\030\001 " +
@@ -122,7 +122,7 @@ public final class LoggingProto {
       "rviceV2\022w\n\tDeleteLog\022#.google.logging.v2" +
       ".DeleteLogRequest\032\026.google.protobuf.Empt" +
       "y\"-\202\323\344\223\002\'*%/v2beta1/{log_name=projects/*" +
-      "/logs/*}\022\206\001\n\017WriteLogEntries\022).google.lo",
+      "/logs/*}\022\206\001\n\017WriteLogEntries\022).google.lo" +
       "gging.v2.WriteLogEntriesRequest\032*.google" +
       ".logging.v2.WriteLogEntriesResponse\"\034\202\323\344" +
       "\223\002\026\"\021/v2/entries:write:\001*\022\202\001\n\016ListLogEnt" +
@@ -132,7 +132,7 @@ public final class LoggingProto {
       "\001\n ListMonitoredResourceDescriptors\022:.go" +
       "ogle.logging.v2.ListMonitoredResourceDes" +
       "criptorsRequest\032;.google.logging.v2.List" +
-      "MonitoredResourceDescriptorsResponse\"(\202\323",
+      "MonitoredResourceDescriptorsResponse\"(\202\323" +
       "\344\223\002\"\022 /v2/monitoredResourceDescriptors\022r" +
       "\n\010ListLogs\022\".google.logging.v2.ListLogsR" +
       "equest\032#.google.logging.v2.ListLogsRespo" +
