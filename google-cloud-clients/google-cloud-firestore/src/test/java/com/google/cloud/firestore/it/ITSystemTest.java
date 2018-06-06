@@ -26,6 +26,7 @@ import static org.junit.Assert.fail;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
+import com.google.cloud.Timestamp;
 import com.google.cloud.firestore.CollectionReference;
 import com.google.cloud.firestore.DocumentChange.Type;
 import com.google.cloud.firestore.DocumentReference;
@@ -52,7 +53,6 @@ import com.google.common.collect.ImmutableList;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -60,6 +60,7 @@ import java.util.Map;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Semaphore;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import javax.annotation.Nullable;
 import org.junit.After;
@@ -67,7 +68,6 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
-import org.threeten.bp.Instant;
 
 public class ITSystemTest {
 
@@ -86,7 +86,9 @@ public class ITSystemTest {
 
   @Before
   public void before() {
-    firestore = FirestoreOptions.getDefaultInstance().getService();
+    FirestoreOptions firestoreOptions =
+        FirestoreOptions.newBuilder().setTimestampsInSnapshotsEnabled(true).build();
+    firestore = firestoreOptions.getService();
     randomColl =
         firestore.collection(
             String.format("java-%s-%s", testName.getMethodName(), LocalFirestoreHelper.autoId()));
@@ -199,6 +201,19 @@ public class ITSystemTest {
   }
 
   @Test
+  public void timestampDoesntGetTruncatedDuringUpdate() throws Exception {
+    DocumentReference documentReference = addDocument("time", Timestamp.ofTimeSecondsAndNanos(0, 123000));
+    DocumentSnapshot documentSnapshot = documentReference.get().get();
+
+    Timestamp timestamp = documentSnapshot.getTimestamp("time");
+    documentReference.update("time", timestamp);
+
+    documentSnapshot = documentReference.get().get();
+    timestamp = documentSnapshot.getTimestamp("time");
+    assertEquals(123000, timestamp.getNanos());
+  }
+
+  @Test
   public void fieldDelete() throws Exception {
     Map<String, Object> fields = new HashMap<>();
     fields.put("foo1", "bar1");
@@ -219,7 +234,7 @@ public class ITSystemTest {
     randomDoc.delete().get();
     WriteResult writeResult = randomDoc.set(ALL_SUPPORTED_TYPES_MAP).get();
     try {
-      randomDoc.delete(Precondition.updatedAt(Instant.ofEpochSecond(1))).get();
+      randomDoc.delete(Precondition.updatedAt(Timestamp.ofTimeSecondsAndNanos(1, 0))).get();
       fail();
     } catch (ExecutionException e) {
       assertTrue(e.getMessage().contains("FAILED_PRECONDITION"));
@@ -227,11 +242,11 @@ public class ITSystemTest {
     writeResult = randomDoc.delete(Precondition.updatedAt(writeResult.getUpdateTime())).get();
     DocumentSnapshot documentSnapshot = randomDoc.get().get();
     assertFalse(documentSnapshot.exists());
-    assertTrue(writeResult.getUpdateTime().getEpochSecond() > 0);
+    assertTrue(writeResult.getUpdateTime().getSeconds() > 0);
   }
 
   @Test
-  public void emptyQuery() throws Exception {
+  public void defaultQuery() throws Exception {
     addDocument("foo", "bar");
     addDocument("foo", "bar");
 
@@ -248,6 +263,23 @@ public class ITSystemTest {
     QuerySnapshot querySnapshot = randomColl.get().get();
     assertTrue(querySnapshot.isEmpty());
     assertNotNull(querySnapshot.getReadTime());
+  }
+
+  @Test
+  public void queryWithMicrosecondPrecision() throws Exception {
+    Timestamp microsecondTimestamp = Timestamp.ofTimeSecondsAndNanos(0, 123000);
+
+    DocumentReference documentReference = addDocument("time",  microsecondTimestamp);
+    DocumentSnapshot documentSnapshot = documentReference.get().get();
+
+    Query query = randomColl.whereEqualTo("time", microsecondTimestamp);
+    QuerySnapshot querySnapshot = query.get().get();
+    assertEquals(1, querySnapshot.size());
+
+    // Using `.toDate()` truncates to millseconds, and hence the query doesn't match.
+    query = randomColl.whereEqualTo("time", microsecondTimestamp.toDate());
+    querySnapshot = query.get().get();
+    assertEquals(0, querySnapshot.size());
   }
 
   @Test
@@ -652,7 +684,7 @@ public class ITSystemTest {
         .create(
             map("time", FieldValue.serverTimestamp(), "a", map("b", FieldValue.serverTimestamp())))
         .get();
-    Date time = (Date) getData().get("time");
+    Timestamp time = (Timestamp) getData().get("time");
     expected.put("time", time);
     expected.put("a", map("b", time));
     assertEquals(expected, getData());
@@ -697,9 +729,9 @@ public class ITSystemTest {
     assertEquals(expected, getData());
   }
 
-  private Date updateTime(Map<String, Object> dataWithTime)
+  private Timestamp updateTime(Map<String, Object> dataWithTime)
       throws ExecutionException, InterruptedException {
-    Date time = (Date) getData().get("time");
+    Timestamp time = (Timestamp) getData().get("time");
     dataWithTime.put("time", time);
     return time;
   }

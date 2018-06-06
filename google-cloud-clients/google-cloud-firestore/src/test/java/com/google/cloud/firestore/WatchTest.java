@@ -97,7 +97,11 @@ public class WatchTest {
   @Spy
   private FirestoreImpl firestoreMock =
       new FirestoreImpl(
-          FirestoreOptions.newBuilder().setProjectId("test-project").build(), firestoreRpc);
+          FirestoreOptions.newBuilder()
+              .setProjectId("test-project")
+              .setTimestampsInSnapshotsEnabled(true)
+              .build(),
+          firestoreRpc);
 
   @Captor private ArgumentCaptor<ApiStreamObserver<ListenResponse>> streamObserverCapture;
 

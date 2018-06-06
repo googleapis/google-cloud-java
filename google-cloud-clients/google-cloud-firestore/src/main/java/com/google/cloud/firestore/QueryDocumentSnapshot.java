@@ -16,13 +16,12 @@
 
 package com.google.cloud.firestore;
 
+import com.google.cloud.Timestamp;
 import com.google.common.base.Preconditions;
 import com.google.firestore.v1beta1.Document;
 import com.google.firestore.v1beta1.Value;
-import com.google.protobuf.Timestamp;
 import java.util.Map;
 import javax.annotation.Nonnull;
-import org.threeten.bp.Instant;
 
 /**
  * A QueryDocumentSnapshot contains data read from a document in a Firestore database as part of a
@@ -42,23 +41,21 @@ public class QueryDocumentSnapshot extends DocumentSnapshot {
       FirestoreImpl firestore,
       DocumentReference docRef,
       Map<String, Value> fields,
-      Instant readTime,
-      Instant updateTime,
-      Instant createTime) {
+      Timestamp readTime,
+      Timestamp updateTime,
+      Timestamp createTime) {
     super(firestore, docRef, fields, readTime, updateTime, createTime);
   }
 
   static QueryDocumentSnapshot fromDocument(
       FirestoreImpl firestore, Timestamp readTime, Document document) {
-    Timestamp updateTime = document.getUpdateTime();
-    Timestamp createTime = document.getCreateTime();
     return new QueryDocumentSnapshot(
         firestore,
         new DocumentReference(firestore, ResourcePath.create(document.getName())),
         document.getFieldsMap(),
-        Instant.ofEpochSecond(readTime.getSeconds(), readTime.getNanos()),
-        Instant.ofEpochSecond(updateTime.getSeconds(), updateTime.getNanos()),
-        Instant.ofEpochSecond(createTime.getSeconds(), createTime.getNanos()));
+        readTime,
+        Timestamp.fromProto(document.getUpdateTime()),
+        Timestamp.fromProto(document.getCreateTime()));
   }
 
   /**

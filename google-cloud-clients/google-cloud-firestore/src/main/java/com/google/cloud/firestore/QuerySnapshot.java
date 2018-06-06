@@ -16,6 +16,7 @@
 
 package com.google.cloud.firestore;
 
+import com.google.cloud.Timestamp;
 import com.google.cloud.firestore.DocumentChange.Type;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -23,7 +24,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Objects;
 import javax.annotation.Nonnull;
-import org.threeten.bp.Instant;
 
 /**
  * A QuerySnapshot contains the results of a query. It can contain zero or more DocumentSnapshot
@@ -32,16 +32,16 @@ import org.threeten.bp.Instant;
 public abstract class QuerySnapshot implements Iterable<QueryDocumentSnapshot> {
 
   private final Query query;
-  private final Instant readTime;
+  private final Timestamp readTime;
 
-  private QuerySnapshot(Query query, Instant readTime) {
+  private QuerySnapshot(Query query, Timestamp readTime) {
     this.query = query;
     this.readTime = readTime;
   }
 
   /** Creates a new QuerySnapshot representing the results of a Query with added documents. */
   public static QuerySnapshot withDocuments(
-      final Query query, Instant readTime, final List<QueryDocumentSnapshot> documents) {
+      final Query query, Timestamp readTime, final List<QueryDocumentSnapshot> documents) {
     return new QuerySnapshot(query, readTime) {
       volatile List<DocumentChange> documentChanges;
 
@@ -96,7 +96,7 @@ public abstract class QuerySnapshot implements Iterable<QueryDocumentSnapshot> {
   /** Creates a new QuerySnapshot representing a snapshot of a Query with changed documents. */
   public static QuerySnapshot withChanges(
       final Query query,
-      Instant readTime,
+      Timestamp readTime,
       final DocumentSet documentSet,
       final List<DocumentChange> documentChanges) {
     return new QuerySnapshot(query, readTime) {
@@ -163,7 +163,7 @@ public abstract class QuerySnapshot implements Iterable<QueryDocumentSnapshot> {
    * @return The read time of this snapshot.
    */
   @Nonnull
-  public Instant getReadTime() {
+  public Timestamp getReadTime() {
     return readTime;
   }
 

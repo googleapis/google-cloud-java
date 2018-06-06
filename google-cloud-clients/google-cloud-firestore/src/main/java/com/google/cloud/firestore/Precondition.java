@@ -16,10 +16,9 @@
 
 package com.google.cloud.firestore;
 
-import com.google.protobuf.Timestamp;
+import com.google.cloud.Timestamp;
 import java.util.Objects;
 import javax.annotation.Nonnull;
-import org.threeten.bp.Instant;
 
 /** Preconditions that can be used to restrict update() calls. */
 public final class Precondition {
@@ -27,10 +26,10 @@ public final class Precondition {
   /** An empty Precondition that adds no enforcements */
   public static final Precondition NONE = new Precondition(null, null);
 
-  private Boolean exists;
-  private Instant updateTime;
+  private final Boolean exists;
+  private final Timestamp updateTime;
 
-  private Precondition(Boolean exists, Instant updateTime) {
+  private Precondition(Boolean exists, Timestamp updateTime) {
     this.exists = exists;
     this.updateTime = updateTime;
   }
@@ -55,7 +54,7 @@ public final class Precondition {
    * @return A new Precondition
    */
   @Nonnull
-  public static Precondition updatedAt(Instant updateTime) {
+  public static Precondition updatedAt(Timestamp updateTime) {
     return new Precondition(null, updateTime);
   }
 
@@ -76,10 +75,7 @@ public final class Precondition {
     }
 
     if (updateTime != null) {
-      Timestamp.Builder timestamp = Timestamp.newBuilder();
-      timestamp.setSeconds(updateTime.getEpochSecond());
-      timestamp.setNanos(updateTime.getNano());
-      precondition.setUpdateTime(timestamp.build());
+      precondition.setUpdateTime(updateTime.toProto());
     }
 
     return precondition.build();
