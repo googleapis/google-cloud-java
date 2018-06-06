@@ -592,6 +592,59 @@ public class ITBigQueryTest {
   }
 
   @Test
+  public void testUpdateTimePartitioning() {
+    String tableName = "testUpdateTimePartitioning";
+    TableId tableId = TableId.of(DATASET, tableName);
+    StandardTableDefinition tableDefinition =
+        StandardTableDefinition.newBuilder()
+            .setSchema(TABLE_SCHEMA)
+            .setTimePartitioning(TimePartitioning.of(Type.DAY))
+            .build();
+
+    Table table = bigquery.create(TableInfo.of(tableId, tableDefinition));
+    assertThat(table.getDefinition()).isInstanceOf(StandardTableDefinition.class);
+    assertThat(
+            ((StandardTableDefinition) table.getDefinition())
+                .getTimePartitioning()
+                .getExpirationMs())
+        .isNull();
+
+    table =
+        table
+            .toBuilder()
+            .setDefinition(
+                tableDefinition
+                    .toBuilder()
+                    .setTimePartitioning(TimePartitioning.of(Type.DAY, 42L))
+                    .build())
+            .build()
+            .update(BigQuery.TableOption.fields(BigQuery.TableField.TIME_PARTITIONING));
+    assertThat(
+            ((StandardTableDefinition) table.getDefinition())
+                .getTimePartitioning()
+                .getExpirationMs())
+        .isEqualTo(42L);
+
+    table =
+        table
+            .toBuilder()
+            .setDefinition(
+                tableDefinition
+                    .toBuilder()
+                    .setTimePartitioning(TimePartitioning.of(Type.DAY))
+                    .build())
+            .build()
+            .update(BigQuery.TableOption.fields(BigQuery.TableField.TIME_PARTITIONING));
+    assertThat(
+            ((StandardTableDefinition) table.getDefinition())
+                .getTimePartitioning()
+                .getExpirationMs())
+        .isNull();
+
+    table.delete();
+  }
+
+  @Test
   public void testUpdateTableWithSelectedFields() {
     String tableName = "test_update_with_selected_fields_table";
     StandardTableDefinition tableDefinition = StandardTableDefinition.of(TABLE_SCHEMA);
