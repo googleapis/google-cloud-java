@@ -52,7 +52,7 @@ See the [Web Security Scanner client library docs][websecurityscanner-client-lib
 Getting Started
 ---------------
 #### Prerequisites
-You will need a [Google Developers Console](https://console.developers.google.com/) project with the Text-to-Speech API enabled. [Follow these instructions](https://cloud.google.com/docs/authentication#preparation) to get your project set up. You will also need to set up the local development environment by [installing the Google Cloud SDK](https://cloud.google.com/sdk/) and running the following commands in command line: `gcloud auth login` and `gcloud config set project [YOUR PROJECT ID]`.
+You will need a [Google Developers Console](https://console.developers.google.com/) project with the Web Security Scanner API enabled. [Follow these instructions](https://cloud.google.com/docs/authentication#preparation) to get your project set up. You will also need to set up the local development environment by [installing the Google Cloud SDK](https://cloud.google.com/sdk/) and running the following commands in command line: `gcloud auth login` and `gcloud config set project [YOUR PROJECT ID]`.
 
 #### Installation and setup
 You'll need to obtain the `google-cloud-websecurityscanner` library.  See the [Quickstart](#quickstart) section to add `google-cloud-websecurityscanner` as a dependency in your code.
@@ -64,7 +64,7 @@ To get help, follow the instructions in the [shared Troubleshooting document](ht
 
 Transport
 ---------
-Text-to-Speech uses gRPC for the transport layer.
+Web Security Scanner uses gRPC for the transport layer.
 
 Java Versions
 -------------
