@@ -199,6 +199,7 @@ public class ITComputeTest {
     }
   }
 
+  @Ignore("Aggregate list method returns region scope instead of zone scope #3312")
   @Test
   public void testAggregatedListDiskTypes() {
     Page<DiskType> diskPage = compute.listDiskTypes();
@@ -215,6 +216,7 @@ public class ITComputeTest {
     }
   }
 
+  @Ignore("Aggregate list method returns region scope instead of zone scope #3312")
   @Test
   public void testAggregatedListDiskTypesWithFilter() {
     Page<DiskType> diskPage = compute.listDiskTypes(Compute.DiskTypeAggregatedListOption.filter(
