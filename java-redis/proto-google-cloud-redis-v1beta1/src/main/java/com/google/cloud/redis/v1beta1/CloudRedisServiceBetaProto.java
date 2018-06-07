@@ -92,7 +92,7 @@ public final class CloudRedisServiceBetaProto {
       "isplay_name\030\002 \001(\t\022@\n\006labels\030\003 \003(\01320.goog" +
       "le.cloud.redis.v1beta1.Instance.LabelsEn" +
       "try\022\023\n\013location_id\030\004 \001(\t\022\037\n\027alternative_" +
-      "location_id\030\005 \001(\t\022\025\n\rredis_version\030\007 \001(\t",
+      "location_id\030\005 \001(\t\022\025\n\rredis_version\030\007 \001(\t" +
       "\022\031\n\021reserved_ip_range\030\t \001(\t\022\014\n\004host\030\n \001(" +
       "\t\022\014\n\004port\030\013 \001(\005\022\033\n\023current_location_id\030\014" +
       " \001(\t\022/\n\013create_time\030\r \001(\0132\032.google.proto" +
@@ -102,7 +102,7 @@ public final class CloudRedisServiceBetaProto {
       "6.google.cloud.redis.v1beta1.Instance.Re" +
       "disConfigsEntry\0227\n\004tier\030\021 \001(\0162).google.c" +
       "loud.redis.v1beta1.Instance.Tier\022\026\n\016memo" +
-      "ry_size_gb\030\022 \001(\005\022\032\n\022authorized_network\030\024",
+      "ry_size_gb\030\022 \001(\005\022\032\n\022authorized_network\030\024" +
       " \001(\t\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005valu" +
       "e\030\002 \001(\t:\0028\001\0323\n\021RedisConfigsEntry\022\013\n\003key\030" +
       "\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"s\n\005State\022\025\n\021STA" +
@@ -112,7 +112,7 @@ public final class CloudRedisServiceBetaProto {
       "SPECIFIED\020\000\022\t\n\005BASIC\020\001\022\017\n\013STANDARD_HA\020\003\"" +
       "M\n\024ListInstancesRequest\022\016\n\006parent\030\001 \001(\t\022" +
       "\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"i" +
-      "\n\025ListInstancesResponse\0227\n\tinstances\030\001 \003",
+      "\n\025ListInstancesResponse\0227\n\tinstances\030\001 \003" +
       "(\0132$.google.cloud.redis.v1beta1.Instance" +
       "\022\027\n\017next_page_token\030\002 \001(\t\"\"\n\022GetInstance" +
       "Request\022\014\n\004name\030\001 \001(\t\"t\n\025CreateInstanceR" +
@@ -122,7 +122,7 @@ public final class CloudRedisServiceBetaProto {
       "quest\022/\n\013update_mask\030\001 \001(\0132\032.google.prot" +
       "obuf.FieldMask\0226\n\010instance\030\002 \001(\0132$.googl" +
       "e.cloud.redis.v1beta1.Instance\"%\n\025Delete" +
-      "InstanceRequest\022\014\n\004name\030\001 \001(\t\"\316\001\n\020Locati",
+      "InstanceRequest\022\014\n\004name\030\001 \001(\t\"\316\001\n\020Locati" +
       "onMetadata\022Y\n\017available_zones\030\001 \003(\0132@.go" +
       "ogle.cloud.redis.v1beta1.LocationMetadat" +
       "a.AvailableZonesEntry\032_\n\023AvailableZonesE" +
@@ -132,7 +132,7 @@ public final class CloudRedisServiceBetaProto {
       "stances\0220.google.cloud.redis.v1beta1.Lis" +
       "tInstancesRequest\0321.google.cloud.redis.v" +
       "1beta1.ListInstancesResponse\":\202\323\344\223\0024\0222/v" +
-      "1beta1/{parent=projects/*/locations/*}/i",
+      "1beta1/{parent=projects/*/locations/*}/i" +
       "nstances\022\237\001\n\013GetInstance\022..google.cloud." +
       "redis.v1beta1.GetInstanceRequest\032$.googl" +
       "e.cloud.redis.v1beta1.Instance\":\202\323\344\223\0024\0222" +
@@ -142,7 +142,7 @@ public final class CloudRedisServiceBetaProto {
       "\032\035.google.longrunning.Operation\"D\202\323\344\223\002>\"" +
       "2/v1beta1/{parent=projects/*/locations/*" +
       "}/instances:\010instance\022\261\001\n\016UpdateInstance" +
-      "\0221.google.cloud.redis.v1beta1.UpdateInst",
+      "\0221.google.cloud.redis.v1beta1.UpdateInst" +
       "anceRequest\032\035.google.longrunning.Operati" +
       "on\"M\202\323\344\223\002G2;/v1beta1/{instance.name=proj" +
       "ects/*/locations/*/instances/*}:\010instanc" +
@@ -152,7 +152,7 @@ public final class CloudRedisServiceBetaProto {
       "/{name=projects/*/locations/*/instances/" +
       "*}B\177\n\036com.google.cloud.redis.v1beta1B\032Cl" +
       "oudRedisServiceBetaProtoP\001Z?google.golan" +
-      "g.org/genproto/googleapis/cloud/redis/v1",
+      "g.org/genproto/googleapis/cloud/redis/v1" +
       "beta1;redisb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
