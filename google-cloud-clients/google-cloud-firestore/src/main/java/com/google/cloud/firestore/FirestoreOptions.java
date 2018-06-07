@@ -107,9 +107,9 @@ public final class FirestoreOptions extends ServiceOptions<Firestore, FirestoreO
 
     private String databaseId = FirestoreDefaults.INSTANCE.getDatabaseId();
     private TransportChannelProvider channelProvider =
-        FirestoreDefaults.INSTANCE.getTransportChannelProvider();
+        FirestoreDefaults.INSTANCE.getDefaultTransportChannelProvider();
     private CredentialsProvider credentialsProvider =
-        FirestoreDefaults.INSTANCE.getCredentialsProvider();
+        FirestoreDefaults.INSTANCE.getDefaultCredentialsProvider();
 
     private Builder() {}
 
@@ -203,6 +203,16 @@ public final class FirestoreOptions extends ServiceOptions<Firestore, FirestoreO
         getDefaultCredentialsProviderBuilder().build();
 
     @Nonnull
+    String getHost() {
+      return HOST;
+    }
+
+    @Nonnull
+    String getDatabaseId() {
+      return DATABASE_ID;
+    }
+
+    @Nonnull
     @Override
     public FirestoreFactory getDefaultServiceFactory() {
       return DefaultFirestoreFactory.INSTANCE;
@@ -221,22 +231,12 @@ public final class FirestoreOptions extends ServiceOptions<Firestore, FirestoreO
     }
 
     @Nonnull
-    TransportChannelProvider getTransportChannelProvider() {
+    TransportChannelProvider getDefaultTransportChannelProvider() {
       return CHANNEL_PROVIDER;
     }
 
     @Nonnull
-    String getHost() {
-      return HOST;
-    }
-
-    @Nonnull
-    String getDatabaseId() {
-      return DATABASE_ID;
-    }
-
-    @Nonnull
-    CredentialsProvider getCredentialsProvider() {
+    CredentialsProvider getDefaultCredentialsProvider() {
       return CREDENTIALS_PROVIDER;
     }
   }
