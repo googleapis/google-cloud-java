@@ -107,7 +107,7 @@ public final class EntityTypeProto {
       "roto\"\323\003\n\nEntityType\022\014\n\004name\030\001 \001(\t\022\024\n\014dis" +
       "play_name\030\002 \001(\t\022>\n\004kind\030\003 \001(\01620.google.c" +
       "loud.dialogflow.v2beta1.EntityType.Kind\022" +
-      "Z\n\023auto_expansion_mode\030\004 \001(\0162=.google.cl",
+      "Z\n\023auto_expansion_mode\030\004 \001(\0162=.google.cl" +
       "oud.dialogflow.v2beta1.EntityType.AutoEx" +
       "pansionMode\022D\n\010entities\030\006 \003(\01322.google.c" +
       "loud.dialogflow.v2beta1.EntityType.Entit" +
@@ -117,7 +117,7 @@ public final class EntityTypeProto {
       "Mode\022#\n\037AUTO_EXPANSION_MODE_UNSPECIFIED\020" +
       "\000\022\037\n\033AUTO_EXPANSION_MODE_DEFAULT\020\001\"f\n\026Li" +
       "stEntityTypesRequest\022\016\n\006parent\030\001 \001(\t\022\025\n\r" +
-      "language_code\030\002 \001(\t\022\021\n\tpage_size\030\003 \001(\005\022\022",
+      "language_code\030\002 \001(\t\022\021\n\tpage_size\030\003 \001(\005\022\022" +
       "\n\npage_token\030\004 \001(\t\"u\n\027ListEntityTypesRes" +
       "ponse\022A\n\014entity_types\030\001 \003(\0132+.google.clo" +
       "ud.dialogflow.v2beta1.EntityType\022\027\n\017next" +
@@ -127,7 +127,7 @@ public final class EntityTypeProto {
       "(\t\022@\n\013entity_type\030\002 \001(\0132+.google.cloud.d" +
       "ialogflow.v2beta1.EntityType\022\025\n\rlanguage" +
       "_code\030\003 \001(\t\"\243\001\n\027UpdateEntityTypeRequest\022" +
-      "@\n\013entity_type\030\001 \001(\0132+.google.cloud.dial",
+      "@\n\013entity_type\030\001 \001(\0132+.google.cloud.dial" +
       "ogflow.v2beta1.EntityType\022\025\n\rlanguage_co" +
       "de\030\002 \001(\t\022/\n\013update_mask\030\003 \001(\0132\032.google.p" +
       "rotobuf.FieldMask\"\'\n\027DeleteEntityTypeReq" +
@@ -137,7 +137,7 @@ public final class EntityTypeProto {
       "ch_inline\030\003 \001(\01320.google.cloud.dialogflo" +
       "w.v2beta1.EntityTypeBatchH\000\022\025\n\rlanguage_" +
       "code\030\004 \001(\t\022/\n\013update_mask\030\005 \001(\0132\032.google" +
-      ".protobuf.FieldMaskB\023\n\021entity_type_batch",
+      ".protobuf.FieldMaskB\023\n\021entity_type_batch" +
       "\"c\n\036BatchUpdateEntityTypesResponse\022A\n\014en" +
       "tity_types\030\001 \003(\0132+.google.cloud.dialogfl" +
       "ow.v2beta1.EntityType\"J\n\035BatchDeleteEnti" +
@@ -147,7 +147,7 @@ public final class EntityTypeProto {
       "(\01322.google.cloud.dialogflow.v2beta1.Ent" +
       "ityType.Entity\022\025\n\rlanguage_code\030\003 \001(\t\"\272\001" +
       "\n\032BatchUpdateEntitiesRequest\022\016\n\006parent\030\001" +
-      " \001(\t\022D\n\010entities\030\002 \003(\01322.google.cloud.di",
+      " \001(\t\022D\n\010entities\030\002 \003(\01322.google.cloud.di" +
       "alogflow.v2beta1.EntityType.Entity\022\025\n\rla" +
       "nguage_code\030\003 \001(\t\022/\n\013update_mask\030\004 \001(\0132\032" +
       ".google.protobuf.FieldMask\"Z\n\032BatchDelet" +
@@ -157,7 +157,7 @@ public final class EntityTypeProto {
       "+.google.cloud.dialogflow.v2beta1.Entity" +
       "Type2\373\016\n\013EntityTypes\022\274\001\n\017ListEntityTypes" +
       "\0227.google.cloud.dialogflow.v2beta1.ListE" +
-      "ntityTypesRequest\0328.google.cloud.dialogf",
+      "ntityTypesRequest\0328.google.cloud.dialogf" +
       "low.v2beta1.ListEntityTypesResponse\"6\202\323\344" +
       "\223\0020\022./v2beta1/{parent=projects/*/agent}/" +
       "entityTypes\022\253\001\n\rGetEntityType\0225.google.c" +
@@ -167,7 +167,7 @@ public final class EntityTypeProto {
       "ts/*/agent/entityTypes/*}\022\276\001\n\020CreateEnti" +
       "tyType\0228.google.cloud.dialogflow.v2beta1" +
       ".CreateEntityTypeRequest\032+.google.cloud." +
-      "dialogflow.v2beta1.EntityType\"C\202\323\344\223\002=\"./",
+      "dialogflow.v2beta1.EntityType\"C\202\323\344\223\002=\"./" +
       "v2beta1/{parent=projects/*/agent}/entity" +
       "Types:\013entity_type\022\312\001\n\020UpdateEntityType\022" +
       "8.google.cloud.dialogflow.v2beta1.Update" +
@@ -177,7 +177,7 @@ public final class EntityTypeProto {
       "tyTypes/*}:\013entity_type\022\234\001\n\020DeleteEntity" +
       "Type\0228.google.cloud.dialogflow.v2beta1.D" +
       "eleteEntityTypeRequest\032\026.google.protobuf" +
-      ".Empty\"6\202\323\344\223\0020*./v2beta1/{name=projects/",
+      ".Empty\"6\202\323\344\223\0020*./v2beta1/{name=projects/" +
       "*/agent/entityTypes/*}\022\276\001\n\026BatchUpdateEn" +
       "tityTypes\022>.google.cloud.dialogflow.v2be" +
       "ta1.BatchUpdateEntityTypesRequest\032\035.goog" +
@@ -187,7 +187,7 @@ public final class EntityTypeProto {
       "es\022>.google.cloud.dialogflow.v2beta1.Bat" +
       "chDeleteEntityTypesRequest\032\035.google.long" +
       "running.Operation\"E\202\323\344\223\002?\":/v2beta1/{par" +
-      "ent=projects/*/agent}/entityTypes:batchD",
+      "ent=projects/*/agent}/entityTypes:batchD" +
       "elete:\001*\022\303\001\n\023BatchCreateEntities\022;.googl" +
       "e.cloud.dialogflow.v2beta1.BatchCreateEn" +
       "titiesRequest\032\035.google.longrunning.Opera" +
@@ -197,7 +197,7 @@ public final class EntityTypeProto {
       "cloud.dialogflow.v2beta1.BatchUpdateEnti" +
       "tiesRequest\032\035.google.longrunning.Operati" +
       "on\"P\202\323\344\223\002J\"E/v2beta1/{parent=projects/*/" +
-      "agent/entityTypes/*}/entities:batchUpdat",
+      "agent/entityTypes/*}/entities:batchUpdat" +
       "e:\001*\022\303\001\n\023BatchDeleteEntities\022;.google.cl" +
       "oud.dialogflow.v2beta1.BatchDeleteEntiti" +
       "esRequest\032\035.google.longrunning.Operation" +

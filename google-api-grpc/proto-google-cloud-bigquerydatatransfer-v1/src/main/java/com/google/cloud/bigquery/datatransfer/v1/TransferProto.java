@@ -47,7 +47,7 @@ public final class TransferProto {
       " \001(\t\022\036\n\026destination_dataset_id\030\002 \001(\t\022\024\n\014" +
       "display_name\030\003 \001(\t\022\026\n\016data_source_id\030\005 \001" +
       "(\t\022\'\n\006params\030\t \001(\0132\027.google.protobuf.Str" +
-      "uct\022\020\n\010schedule\030\007 \001(\t\022 \n\030data_refresh_wi",
+      "uct\022\020\n\010schedule\030\007 \001(\t\022 \n\030data_refresh_wi" +
       "ndow_days\030\014 \001(\005\022\020\n\010disabled\030\r \001(\010\022/\n\013upd" +
       "ate_time\030\004 \001(\0132\032.google.protobuf.Timesta" +
       "mp\0221\n\rnext_run_time\030\010 \001(\0132\032.google.proto" +
@@ -57,7 +57,7 @@ public final class TransferProto {
       "\001(\t\"\376\003\n\013TransferRun\022\014\n\004name\030\001 \001(\t\0221\n\rsch" +
       "edule_time\030\003 \001(\0132\032.google.protobuf.Times" +
       "tamp\022,\n\010run_time\030\n \001(\0132\032.google.protobuf" +
-      ".Timestamp\022(\n\014error_status\030\025 \001(\0132\022.googl",
+      ".Timestamp\022(\n\014error_status\030\025 \001(\0132\022.googl" +
       "e.rpc.Status\022.\n\nstart_time\030\004 \001(\0132\032.googl" +
       "e.protobuf.Timestamp\022,\n\010end_time\030\005 \001(\0132\032" +
       ".google.protobuf.Timestamp\022/\n\013update_tim" +
@@ -67,7 +67,7 @@ public final class TransferProto {
       "rce_id\030\007 \001(\t\022C\n\005state\030\010 \001(\01624.google.clo" +
       "ud.bigquery.datatransfer.v1.TransferStat" +
       "e\022\017\n\007user_id\030\013 \001(\003\022\020\n\010schedule\030\014 \001(\t\"\212\002\n" +
-      "\017TransferMessage\0220\n\014message_time\030\001 \001(\0132\032",
+      "\017TransferMessage\0220\n\014message_time\030\001 \001(\0132\032" +
       ".google.protobuf.Timestamp\022X\n\010severity\030\002" +
       " \001(\0162F.google.cloud.bigquery.datatransfe" +
       "r.v1.TransferMessage.MessageSeverity\022\024\n\014" +
@@ -77,7 +77,7 @@ public final class TransferProto {
       "e\022\035\n\031TRANSFER_TYPE_UNSPECIFIED\020\000\022\t\n\005BATC" +
       "H\020\001\022\r\n\tSTREAMING\020\002*s\n\rTransferState\022\036\n\032T" +
       "RANSFER_STATE_UNSPECIFIED\020\000\022\013\n\007PENDING\020\002" +
-      "\022\013\n\007RUNNING\020\003\022\r\n\tSUCCEEDED\020\004\022\n\n\006FAILED\020\005",
+      "\022\013\n\007RUNNING\020\003\022\r\n\tSUCCEEDED\020\004\022\n\n\006FAILED\020\005" +
       "\022\r\n\tCANCELLED\020\006B\347\001\n)com.google.cloud.big" +
       "query.datatransfer.v1B\rTransferProtoP\001ZQ" +
       "google.golang.org/genproto/googleapis/cl" +

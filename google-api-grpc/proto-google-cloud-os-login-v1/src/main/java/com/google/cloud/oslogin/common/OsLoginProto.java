@@ -193,6 +193,9 @@ public final class OsLoginProto {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -1687,7 +1690,7 @@ public final class OsLoginProto {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new PosixAccount(input, extensionRegistry);
+        return new PosixAccount(input, extensionRegistry);
       }
     };
 
@@ -1791,6 +1794,9 @@ public final class OsLoginProto {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -2528,7 +2534,7 @@ public final class OsLoginProto {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new SshPublicKey(input, extensionRegistry);
+        return new SshPublicKey(input, extensionRegistry);
       }
     };
 
@@ -2575,7 +2581,7 @@ public final class OsLoginProto {
       "tem_id\030\010 \001(\t\022\022\n\naccount_id\030\t \001(\t\"N\n\014SshP" +
       "ublicKey\022\013\n\003key\030\001 \001(\t\022\034\n\024expiration_time" +
       "_usec\030\002 \001(\003\022\023\n\013fingerprint\030\003 \001(\tB\256\001\n\037com" +
-      ".google.cloud.oslogin.commonB\014OsLoginPro",
+      ".google.cloud.oslogin.commonB\014OsLoginPro" +
       "toZAgoogle.golang.org/genproto/googleapi" +
       "s/cloud/oslogin/common;common\252\002\033Google.C" +
       "loud.OsLogin.Common\312\002\033Google\\Cloud\\OsLog" +

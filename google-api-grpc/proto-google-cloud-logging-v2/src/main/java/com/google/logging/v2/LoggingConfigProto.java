@@ -102,7 +102,7 @@ public final class LoggingConfigProto {
       "er\030\005 \001(\t\022G\n\025output_version_format\030\006 \001(\0162" +
       "(.google.logging.v2.LogSink.VersionForma" +
       "t\022\027\n\017writer_identity\030\010 \001(\t\022\030\n\020include_ch" +
-      "ildren\030\t \001(\010\022.\n\nstart_time\030\n \001(\0132\032.googl",
+      "ildren\030\t \001(\010\022.\n\nstart_time\030\n \001(\0132\032.googl" +
       "e.protobuf.Timestamp\022,\n\010end_time\030\013 \001(\0132\032" +
       ".google.protobuf.Timestamp\"?\n\rVersionFor" +
       "mat\022\036\n\032VERSION_FORMAT_UNSPECIFIED\020\000\022\006\n\002V" +
@@ -112,7 +112,7 @@ public final class LoggingConfigProto {
       "(\0132\032.google.logging.v2.LogSink\022\027\n\017next_p" +
       "age_token\030\002 \001(\t\"#\n\016GetSinkRequest\022\021\n\tsin" +
       "k_name\030\001 \001(\t\"m\n\021CreateSinkRequest\022\016\n\006par" +
-      "ent\030\001 \001(\t\022(\n\004sink\030\002 \001(\0132\032.google.logging",
+      "ent\030\001 \001(\t\022(\n\004sink\030\002 \001(\0132\032.google.logging" +
       ".v2.LogSink\022\036\n\026unique_writer_identity\030\003 " +
       "\001(\010\"\241\001\n\021UpdateSinkRequest\022\021\n\tsink_name\030\001" +
       " \001(\t\022(\n\004sink\030\002 \001(\0132\032.google.logging.v2.L" +
@@ -122,7 +122,7 @@ public final class LoggingConfigProto {
       "e\030\001 \001(\t\"S\n\014LogExclusion\022\014\n\004name\030\001 \001(\t\022\023\n" +
       "\013description\030\002 \001(\t\022\016\n\006filter\030\003 \001(\t\022\020\n\010di" +
       "sabled\030\004 \001(\010\"N\n\025ListExclusionsRequest\022\016\n" +
-      "\006parent\030\001 \001(\t\022\022\n\npage_token\030\002 \001(\t\022\021\n\tpag",
+      "\006parent\030\001 \001(\t\022\022\n\npage_token\030\002 \001(\t\022\021\n\tpag" +
       "e_size\030\003 \001(\005\"f\n\026ListExclusionsResponse\0223" +
       "\n\nexclusions\030\001 \003(\0132\037.google.logging.v2.L" +
       "ogExclusion\022\027\n\017next_page_token\030\002 \001(\t\"#\n\023" +
@@ -132,7 +132,7 @@ public final class LoggingConfigProto {
       "clusion\"\213\001\n\026UpdateExclusionRequest\022\014\n\004na" +
       "me\030\001 \001(\t\0222\n\texclusion\030\002 \001(\0132\037.google.log" +
       "ging.v2.LogExclusion\022/\n\013update_mask\030\003 \001(" +
-      "\0132\032.google.protobuf.FieldMask\"&\n\026DeleteE",
+      "\0132\032.google.protobuf.FieldMask\"&\n\026DeleteE" +
       "xclusionRequest\022\014\n\004name\030\001 \001(\t2\200\n\n\017Config" +
       "ServiceV2\022v\n\tListSinks\022#.google.logging." +
       "v2.ListSinksRequest\032$.google.logging.v2." +
@@ -142,7 +142,7 @@ public final class LoggingConfigProto {
       "ink\"#\202\323\344\223\002\035\022\033/v2/{sink_name=*/*/sinks/*}" +
       "\022t\n\nCreateSink\022$.google.logging.v2.Creat" +
       "eSinkRequest\032\032.google.logging.v2.LogSink" +
-      "\"$\202\323\344\223\002\036\"\026/v2/{parent=*/*}/sinks:\004sink\022y",
+      "\"$\202\323\344\223\002\036\"\026/v2/{parent=*/*}/sinks:\004sink\022y" +
       "\n\nUpdateSink\022$.google.logging.v2.UpdateS" +
       "inkRequest\032\032.google.logging.v2.LogSink\")" +
       "\202\323\344\223\002#\032\033/v2/{sink_name=*/*/sinks/*}:\004sin" +
@@ -152,7 +152,7 @@ public final class LoggingConfigProto {
       "istExclusions\022(.google.logging.v2.ListEx" +
       "clusionsRequest\032).google.logging.v2.List" +
       "ExclusionsResponse\"#\202\323\344\223\002\035\022\033/v2/{parent=" +
-      "*/*}/exclusions\022|\n\014GetExclusion\022&.google",
+      "*/*}/exclusions\022|\n\014GetExclusion\022&.google" +
       ".logging.v2.GetExclusionRequest\032\037.google" +
       ".logging.v2.LogExclusion\"#\202\323\344\223\002\035\022\033/v2/{n" +
       "ame=*/*/exclusions/*}\022\215\001\n\017CreateExclusio" +
@@ -162,7 +162,7 @@ public final class LoggingConfigProto {
       "usion\022\215\001\n\017UpdateExclusion\022).google.loggi" +
       "ng.v2.UpdateExclusionRequest\032\037.google.lo" +
       "gging.v2.LogExclusion\".\202\323\344\223\002(2\033/v2/{name" +
-      "=*/*/exclusions/*}:\texclusion\022y\n\017DeleteE",
+      "=*/*/exclusions/*}:\texclusion\022y\n\017DeleteE" +
       "xclusion\022).google.logging.v2.DeleteExclu" +
       "sionRequest\032\026.google.protobuf.Empty\"#\202\323\344" +
       "\223\002\035*\033/v2/{name=*/*/exclusions/*}B\236\001\n\025com" +

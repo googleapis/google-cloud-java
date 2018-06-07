@@ -152,7 +152,7 @@ public final class ClustersProto {
       "oto\032\037google/protobuf/timestamp.proto\"\245\003\n" +
       "\007Cluster\022\022\n\nproject_id\030\001 \001(\t\022\024\n\014cluster_" +
       "name\030\002 \001(\t\0227\n\006config\030\003 \001(\0132\'.google.clou" +
-      "d.dataproc.v1.ClusterConfig\022=\n\006labels\030\010 ",
+      "d.dataproc.v1.ClusterConfig\022=\n\006labels\030\010 " +
       "\003(\0132-.google.cloud.dataproc.v1.Cluster.L" +
       "abelsEntry\0227\n\006status\030\004 \001(\0132\'.google.clou" +
       "d.dataproc.v1.ClusterStatus\022?\n\016status_hi" +
@@ -162,7 +162,7 @@ public final class ClustersProto {
       "lusterMetrics\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(" +
       "\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\341\003\n\rClusterConfig\022\025" +
       "\n\rconfig_bucket\030\001 \001(\t\022F\n\022gce_cluster_con" +
-      "fig\030\010 \001(\0132*.google.cloud.dataproc.v1.Gce",
+      "fig\030\010 \001(\0132*.google.cloud.dataproc.v1.Gce" +
       "ClusterConfig\022D\n\rmaster_config\030\t \001(\0132-.g" +
       "oogle.cloud.dataproc.v1.InstanceGroupCon" +
       "fig\022D\n\rworker_config\030\n \001(\0132-.google.clou" +
@@ -172,7 +172,7 @@ public final class ClustersProto {
       "tware_config\030\r \001(\0132(.google.cloud.datapr" +
       "oc.v1.SoftwareConfig\022R\n\026initialization_a" +
       "ctions\030\013 \003(\01322.google.cloud.dataproc.v1." +
-      "NodeInitializationAction\"\257\002\n\020GceClusterC",
+      "NodeInitializationAction\"\257\002\n\020GceClusterC" +
       "onfig\022\020\n\010zone_uri\030\001 \001(\t\022\023\n\013network_uri\030\002" +
       " \001(\t\022\026\n\016subnetwork_uri\030\006 \001(\t\022\030\n\020internal" +
       "_ip_only\030\007 \001(\010\022\027\n\017service_account\030\010 \001(\t\022" +
@@ -182,7 +182,7 @@ public final class ClustersProto {
       "y\032/\n\rMetadataEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value" +
       "\030\002 \001(\t:\0028\001\"\323\002\n\023InstanceGroupConfig\022\025\n\rnu" +
       "m_instances\030\001 \001(\005\022\026\n\016instance_names\030\002 \003(" +
-      "\t\022\021\n\timage_uri\030\003 \001(\t\022\030\n\020machine_type_uri",
+      "\t\022\021\n\timage_uri\030\003 \001(\t\022\030\n\020machine_type_uri" +
       "\030\004 \001(\t\0229\n\013disk_config\030\005 \001(\0132$.google.clo" +
       "ud.dataproc.v1.DiskConfig\022\026\n\016is_preempti" +
       "ble\030\006 \001(\010\022J\n\024managed_group_config\030\007 \001(\0132" +
@@ -192,7 +192,7 @@ public final class ClustersProto {
       "gedGroupConfig\022\036\n\026instance_template_name" +
       "\030\001 \001(\t\022#\n\033instance_group_manager_name\030\002 " +
       "\001(\t\"L\n\021AcceleratorConfig\022\034\n\024accelerator_" +
-      "type_uri\030\001 \001(\t\022\031\n\021accelerator_count\030\002 \001(",
+      "type_uri\030\001 \001(\t\022\031\n\021accelerator_count\030\002 \001(" +
       "\005\"?\n\nDiskConfig\022\031\n\021boot_disk_size_gb\030\001 \001" +
       "(\005\022\026\n\016num_local_ssds\030\002 \001(\005\"i\n\030NodeInitia" +
       "lizationAction\022\027\n\017executable_file\030\001 \001(\t\022" +
@@ -202,7 +202,7 @@ public final class ClustersProto {
       "rStatus.State\022\016\n\006detail\030\002 \001(\t\0224\n\020state_s" +
       "tart_time\030\003 \001(\0132\032.google.protobuf.Timest" +
       "amp\022B\n\010substate\030\004 \001(\01620.google.cloud.dat" +
-      "aproc.v1.ClusterStatus.Substate\"V\n\005State",
+      "aproc.v1.ClusterStatus.Substate\"V\n\005State" +
       "\022\013\n\007UNKNOWN\020\000\022\014\n\010CREATING\020\001\022\013\n\007RUNNING\020\002" +
       "\022\t\n\005ERROR\020\003\022\014\n\010DELETING\020\004\022\014\n\010UPDATING\020\005\"" +
       "<\n\010Substate\022\017\n\013UNSPECIFIED\020\000\022\r\n\tUNHEALTH" +
@@ -212,7 +212,7 @@ public final class ClustersProto {
       "onfig.PropertiesEntry\0321\n\017PropertiesEntry" +
       "\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\232\002\n\016Clu" +
       "sterMetrics\022O\n\014hdfs_metrics\030\001 \003(\01329.goog" +
-      "le.cloud.dataproc.v1.ClusterMetrics.Hdfs",
+      "le.cloud.dataproc.v1.ClusterMetrics.Hdfs" +
       "MetricsEntry\022O\n\014yarn_metrics\030\002 \003(\01329.goo" +
       "gle.cloud.dataproc.v1.ClusterMetrics.Yar" +
       "nMetricsEntry\0322\n\020HdfsMetricsEntry\022\013\n\003key" +
@@ -222,7 +222,7 @@ public final class ClustersProto {
       "\t\022\016\n\006region\030\003 \001(\t\0222\n\007cluster\030\002 \001(\0132!.goo" +
       "gle.cloud.dataproc.v1.Cluster\"\265\001\n\024Update" +
       "ClusterRequest\022\022\n\nproject_id\030\001 \001(\t\022\016\n\006re" +
-      "gion\030\005 \001(\t\022\024\n\014cluster_name\030\002 \001(\t\0222\n\007clus",
+      "gion\030\005 \001(\t\022\024\n\014cluster_name\030\002 \001(\t\0222\n\007clus" +
       "ter\030\003 \001(\0132!.google.cloud.dataproc.v1.Clu" +
       "ster\022/\n\013update_mask\030\004 \001(\0132\032.google.proto" +
       "buf.FieldMask\"P\n\024DeleteClusterRequest\022\022\n" +
@@ -232,7 +232,7 @@ public final class ClustersProto {
       "ter_name\030\002 \001(\t\"p\n\023ListClustersRequest\022\022\n" +
       "\nproject_id\030\001 \001(\t\022\016\n\006region\030\004 \001(\t\022\016\n\006fil" +
       "ter\030\005 \001(\t\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_tok" +
-      "en\030\003 \001(\t\"d\n\024ListClustersResponse\0223\n\010clus",
+      "en\030\003 \001(\t\"d\n\024ListClustersResponse\0223\n\010clus" +
       "ters\030\001 \003(\0132!.google.cloud.dataproc.v1.Cl" +
       "uster\022\027\n\017next_page_token\030\002 \001(\t\"R\n\026Diagno" +
       "seClusterRequest\022\022\n\nproject_id\030\001 \001(\t\022\016\n\006" +
@@ -242,7 +242,7 @@ public final class ClustersProto {
       "\022..google.cloud.dataproc.v1.CreateCluste" +
       "rRequest\032\035.google.longrunning.Operation\"" +
       "D\202\323\344\223\002>\"3/v1/projects/{project_id}/regio" +
-      "ns/{region}/clusters:\007cluster\022\263\001\n\rUpdate",
+      "ns/{region}/clusters:\007cluster\022\263\001\n\rUpdate" +
       "Cluster\022..google.cloud.dataproc.v1.Updat" +
       "eClusterRequest\032\035.google.longrunning.Ope" +
       "ration\"S\202\323\344\223\002M2B/v1/projects/{project_id" +
@@ -252,7 +252,7 @@ public final class ClustersProto {
       "google.longrunning.Operation\"J\202\323\344\223\002D*B/v" +
       "1/projects/{project_id}/regions/{region}" +
       "/clusters/{cluster_name}\022\250\001\n\nGetCluster\022" +
-      "+.google.cloud.dataproc.v1.GetClusterReq",
+      "+.google.cloud.dataproc.v1.GetClusterReq" +
       "uest\032!.google.cloud.dataproc.v1.Cluster\"" +
       "J\202\323\344\223\002D\022B/v1/projects/{project_id}/regio" +
       "ns/{region}/clusters/{cluster_name}\022\252\001\n\014" +
@@ -262,7 +262,7 @@ public final class ClustersProto {
       "/projects/{project_id}/regions/{region}/" +
       "clusters\022\272\001\n\017DiagnoseCluster\0220.google.cl" +
       "oud.dataproc.v1.DiagnoseClusterRequest\032\035" +
-      ".google.longrunning.Operation\"V\202\323\344\223\002P\"K/",
+      ".google.longrunning.Operation\"V\202\323\344\223\002P\"K/" +
       "v1/projects/{project_id}/regions/{region" +
       "}/clusters/{cluster_name}:diagnose:\001*Bq\n" +
       "\034com.google.cloud.dataproc.v1B\rClustersP" +

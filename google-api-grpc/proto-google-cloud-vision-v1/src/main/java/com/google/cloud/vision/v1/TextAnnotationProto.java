@@ -77,7 +77,7 @@ public final class TextAnnotationProto {
       "\rlanguage_code\030\001 \001(\t\022\022\n\nconfidence\030\002 \001(\002" +
       "\032\325\001\n\rDetectedBreak\022L\n\004type\030\001 \001(\0162>.googl" +
       "e.cloud.vision.v1.TextAnnotation.Detecte" +
-      "dBreak.BreakType\022\021\n\tis_prefix\030\002 \001(\010\"c\n\tB",
+      "dBreak.BreakType\022\021\n\tis_prefix\030\002 \001(\010\"c\n\tB" +
       "reakType\022\013\n\007UNKNOWN\020\000\022\t\n\005SPACE\020\001\022\016\n\nSURE" +
       "_SPACE\020\002\022\022\n\016EOL_SURE_SPACE\020\003\022\n\n\006HYPHEN\020\004" +
       "\022\016\n\nLINE_BREAK\020\005\032\261\001\n\014TextProperty\022S\n\022det" +
@@ -87,7 +87,7 @@ public final class TextAnnotationProto {
       "sion.v1.TextAnnotation.DetectedBreak\"\257\001\n" +
       "\004Page\022E\n\010property\030\001 \001(\01323.google.cloud.v" +
       "ision.v1.TextAnnotation.TextProperty\022\r\n\005" +
-      "width\030\002 \001(\005\022\016\n\006height\030\003 \001(\005\022-\n\006blocks\030\004 ",
+      "width\030\002 \001(\005\022\016\n\006height\030\003 \001(\005\022-\n\006blocks\030\004 " +
       "\003(\0132\035.google.cloud.vision.v1.Block\022\022\n\nco" +
       "nfidence\030\005 \001(\002\"\346\002\n\005Block\022E\n\010property\030\001 \001" +
       "(\01323.google.cloud.vision.v1.TextAnnotati" +
@@ -97,7 +97,7 @@ public final class TextAnnotationProto {
       ".Paragraph\022;\n\nblock_type\030\004 \001(\0162\'.google." +
       "cloud.vision.v1.Block.BlockType\022\022\n\nconfi" +
       "dence\030\005 \001(\002\"R\n\tBlockType\022\013\n\007UNKNOWN\020\000\022\010\n" +
-      "\004TEXT\020\001\022\t\n\005TABLE\020\002\022\013\n\007PICTURE\020\003\022\t\n\005RULER",
+      "\004TEXT\020\001\022\t\n\005TABLE\020\002\022\013\n\007PICTURE\020\003\022\t\n\005RULER" +
       "\020\004\022\013\n\007BARCODE\020\005\"\317\001\n\tParagraph\022E\n\010propert" +
       "y\030\001 \001(\01323.google.cloud.vision.v1.TextAnn" +
       "otation.TextProperty\022:\n\014bounding_box\030\002 \001" +
@@ -107,7 +107,7 @@ public final class TextAnnotationProto {
       "operty\030\001 \001(\01323.google.cloud.vision.v1.Te" +
       "xtAnnotation.TextProperty\022:\n\014bounding_bo" +
       "x\030\002 \001(\0132$.google.cloud.vision.v1.Boundin" +
-      "gPoly\022/\n\007symbols\030\003 \003(\0132\036.google.cloud.vi",
+      "gPoly\022/\n\007symbols\030\003 \003(\0132\036.google.cloud.vi" +
       "sion.v1.Symbol\022\022\n\nconfidence\030\004 \001(\002\"\255\001\n\006S" +
       "ymbol\022E\n\010property\030\001 \001(\01323.google.cloud.v" +
       "ision.v1.TextAnnotation.TextProperty\022:\n\014" +

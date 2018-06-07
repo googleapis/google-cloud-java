@@ -47,7 +47,7 @@ public final class MutationProto {
       "er.v1.Mutation.WriteH\000\022=\n\020insert_or_upda" +
       "te\030\003 \001(\0132!.google.spanner.v1.Mutation.Wr" +
       "iteH\000\0224\n\007replace\030\004 \001(\0132!.google.spanner." +
-      "v1.Mutation.WriteH\000\0224\n\006delete\030\005 \001(\0132\".go",
+      "v1.Mutation.WriteH\000\0224\n\006delete\030\005 \001(\0132\".go" +
       "ogle.spanner.v1.Mutation.DeleteH\000\032S\n\005Wri" +
       "te\022\r\n\005table\030\001 \001(\t\022\017\n\007columns\030\002 \003(\t\022*\n\006va" +
       "lues\030\003 \003(\0132\032.google.protobuf.ListValue\032C" +

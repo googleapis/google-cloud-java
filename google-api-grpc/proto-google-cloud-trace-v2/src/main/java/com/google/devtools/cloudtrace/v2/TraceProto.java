@@ -107,7 +107,7 @@ public final class TraceProto {
       "rent_span_id\030\003 \001(\t\022F\n\014display_name\030\004 \001(\013" +
       "20.google.devtools.cloudtrace.v2.Truncat" +
       "ableString\022.\n\nstart_time\030\005 \001(\0132\032.google." +
-      "protobuf.Timestamp\022,\n\010end_time\030\006 \001(\0132\032.g",
+      "protobuf.Timestamp\022,\n\010end_time\030\006 \001(\0132\032.g" +
       "oogle.protobuf.Timestamp\022B\n\nattributes\030\007" +
       " \001(\0132..google.devtools.cloudtrace.v2.Spa" +
       "n.Attributes\022>\n\013stack_trace\030\010 \001(\0132).goog" +
@@ -117,7 +117,7 @@ public final class TraceProto {
       "2).google.devtools.cloudtrace.v2.Span.Li" +
       "nks\022\"\n\006status\030\013 \001(\0132\022.google.rpc.Status\022" +
       "?\n\033same_process_as_parent_span\030\014 \001(\0132\032.g" +
-      "oogle.protobuf.BoolValue\0225\n\020child_span_c",
+      "oogle.protobuf.BoolValue\0225\n\020child_span_c" +
       "ount\030\r \001(\0132\033.google.protobuf.Int32Value\032" +
       "\353\001\n\nAttributes\022W\n\rattribute_map\030\001 \003(\0132@." +
       "google.devtools.cloudtrace.v2.Span.Attri" +
@@ -127,7 +127,7 @@ public final class TraceProto {
       "ools.cloudtrace.v2.AttributeValue:\0028\001\032\337\004" +
       "\n\tTimeEvent\022(\n\004time\030\001 \001(\0132\032.google.proto" +
       "buf.Timestamp\022N\n\nannotation\030\002 \001(\01328.goog" +
-      "le.devtools.cloudtrace.v2.Span.TimeEvent",
+      "le.devtools.cloudtrace.v2.Span.TimeEvent" +
       ".AnnotationH\000\022S\n\rmessage_event\030\003 \001(\0132:.g" +
       "oogle.devtools.cloudtrace.v2.Span.TimeEv" +
       "ent.MessageEventH\000\032\227\001\n\nAnnotation\022E\n\013des" +
@@ -137,7 +137,7 @@ public final class TraceProto {
       "n.Attributes\032\337\001\n\014MessageEvent\022M\n\004type\030\001 " +
       "\001(\0162?.google.devtools.cloudtrace.v2.Span" +
       ".TimeEvent.MessageEvent.Type\022\n\n\002id\030\002 \001(\003" +
-      "\022\037\n\027uncompressed_size_bytes\030\003 \001(\003\022\035\n\025com",
+      "\022\037\n\027uncompressed_size_bytes\030\003 \001(\003\022\035\n\025com" +
       "pressed_size_bytes\030\004 \001(\003\"4\n\004Type\022\024\n\020TYPE" +
       "_UNSPECIFIED\020\000\022\010\n\004SENT\020\001\022\014\n\010RECEIVED\020\002B\007" +
       "\n\005value\032\230\001\n\nTimeEvents\022A\n\ntime_event\030\001 \003" +
@@ -147,7 +147,7 @@ public final class TraceProto {
       "(\005\032\367\001\n\004Link\022\020\n\010trace_id\030\001 \001(\t\022\017\n\007span_id" +
       "\030\002 \001(\t\022;\n\004type\030\003 \001(\0162-.google.devtools.c" +
       "loudtrace.v2.Span.Link.Type\022B\n\nattribute" +
-      "s\030\004 \001(\0132..google.devtools.cloudtrace.v2.",
+      "s\030\004 \001(\0132..google.devtools.cloudtrace.v2." +
       "Span.Attributes\"K\n\004Type\022\024\n\020TYPE_UNSPECIF" +
       "IED\020\000\022\025\n\021CHILD_LINKED_SPAN\020\001\022\026\n\022PARENT_L" +
       "INKED_SPAN\020\002\032\\\n\005Links\0226\n\004link\030\001 \003(\0132(.go" +
@@ -157,7 +157,7 @@ public final class TraceProto {
       "tools.cloudtrace.v2.TruncatableStringH\000\022" +
       "\023\n\tint_value\030\002 \001(\003H\000\022\024\n\nbool_value\030\003 \001(\010" +
       "H\000B\007\n\005value\"\211\005\n\nStackTrace\022K\n\014stack_fram" +
-      "es\030\001 \001(\01325.google.devtools.cloudtrace.v2",
+      "es\030\001 \001(\01325.google.devtools.cloudtrace.v2" +
       ".StackTrace.StackFrames\022\033\n\023stack_trace_h" +
       "ash_id\030\002 \001(\003\032\236\003\n\nStackFrame\022G\n\rfunction_" +
       "name\030\001 \001(\01320.google.devtools.cloudtrace." +
@@ -167,7 +167,7 @@ public final class TraceProto {
       "\01320.google.devtools.cloudtrace.v2.Trunca" +
       "tableString\022\023\n\013line_number\030\004 \001(\003\022\025\n\rcolu" +
       "mn_number\030\005 \001(\003\022:\n\013load_module\030\006 \001(\0132%.g" +
-      "oogle.devtools.cloudtrace.v2.Module\022H\n\016s",
+      "oogle.devtools.cloudtrace.v2.Module\022H\n\016s" +
       "ource_version\030\007 \001(\01320.google.devtools.cl" +
       "oudtrace.v2.TruncatableString\032p\n\013StackFr" +
       "ames\022C\n\005frame\030\001 \003(\01324.google.devtools.cl" +
@@ -177,7 +177,7 @@ public final class TraceProto {
       "v2.TruncatableString\022B\n\010build_id\030\002 \001(\01320" +
       ".google.devtools.cloudtrace.v2.Truncatab" +
       "leString\"@\n\021TruncatableString\022\r\n\005value\030\001" +
-      " \001(\t\022\034\n\024truncated_byte_count\030\002 \001(\005B\252\001\n!c",
+      " \001(\t\022\034\n\024truncated_byte_count\030\002 \001(\005B\252\001\n!c" +
       "om.google.devtools.cloudtrace.v2B\nTraceP" +
       "rotoP\001ZGgoogle.golang.org/genproto/googl" +
       "eapis/devtools/cloudtrace/v2;cloudtrace\252" +

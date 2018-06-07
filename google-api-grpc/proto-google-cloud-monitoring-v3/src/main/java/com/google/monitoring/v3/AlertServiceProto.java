@@ -62,7 +62,7 @@ public final class AlertServiceProto {
       "rt_policy\030\002 \001(\0132!.google.monitoring.v3.A" +
       "lertPolicy\"%\n\025GetAlertPolicyRequest\022\014\n\004n" +
       "ame\030\003 \001(\t\"q\n\030ListAlertPoliciesRequest\022\014\n" +
-      "\004name\030\004 \001(\t\022\016\n\006filter\030\005 \001(\t\022\020\n\010order_by\030",
+      "\004name\030\004 \001(\t\022\016\n\006filter\030\005 \001(\t\022\020\n\010order_by\030" +
       "\006 \001(\t\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003" +
       " \001(\t\"o\n\031ListAlertPoliciesResponse\0229\n\016ale" +
       "rt_policies\030\003 \003(\0132!.google.monitoring.v3" +
@@ -72,7 +72,7 @@ public final class AlertServiceProto {
       "lert_policy\030\003 \001(\0132!.google.monitoring.v3" +
       ".AlertPolicy\"(\n\030DeleteAlertPolicyRequest" +
       "\022\014\n\004name\030\003 \001(\t2\256\006\n\022AlertPolicyService\022\241\001" +
-      "\n\021ListAlertPolicies\022..google.monitoring.",
+      "\n\021ListAlertPolicies\022..google.monitoring." +
       "v3.ListAlertPoliciesRequest\032/.google.mon" +
       "itoring.v3.ListAlertPoliciesResponse\"+\202\323" +
       "\344\223\002%\022#/v3/{name=projects/*}/alertPolicie" +
@@ -82,7 +82,7 @@ public final class AlertServiceProto {
       "projects/*/alertPolicies/*}\022\241\001\n\021CreateAl" +
       "ertPolicy\022..google.monitoring.v3.CreateA" +
       "lertPolicyRequest\032!.google.monitoring.v3" +
-      ".AlertPolicy\"9\202\323\344\223\0023\"#/v3/{name=projects",
+      ".AlertPolicy\"9\202\323\344\223\0023\"#/v3/{name=projects" +
       "/*}/alertPolicies:\014alert_policy\022\212\001\n\021Dele" +
       "teAlertPolicy\022..google.monitoring.v3.Del" +
       "eteAlertPolicyRequest\032\026.google.protobuf." +
@@ -92,7 +92,7 @@ public final class AlertServiceProto {
       "st\032!.google.monitoring.v3.AlertPolicy\"H\202" +
       "\323\344\223\002B22/v3/{alert_policy.name=projects/*" +
       "/alertPolicies/*}:\014alert_policyB\251\001\n\030com." +
-      "google.monitoring.v3B\021AlertServiceProtoP",
+      "google.monitoring.v3B\021AlertServiceProtoP" +
       "\001Z>google.golang.org/genproto/googleapis" +
       "/monitoring/v3;monitoring\252\002\032Google.Cloud" +
       ".Monitoring.V3\312\002\032Google\\Cloud\\Monitoring" +
