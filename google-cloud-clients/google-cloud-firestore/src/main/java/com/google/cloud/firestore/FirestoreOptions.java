@@ -170,16 +170,6 @@ public final class FirestoreOptions extends ServiceOptions<Firestore, FirestoreO
     }
 
     /**
-     * Sets the database ID to use with this Firestore client.
-     *
-     * @param databaseId The Firestore database ID to use with this client.
-     */
-    public Builder setDatabaseId(@Nonnull String databaseId) {
-      this.databaseId = databaseId;
-      return this;
-    }
-
-    /**
      * Enables the use of {@link com.google.cloud.Timestamp Timestamps} for timestamp fields in
      * {@link DocumentSnapshot DocumentSnapshots}.
      *
@@ -206,6 +196,17 @@ public final class FirestoreOptions extends ServiceOptions<Firestore, FirestoreO
       return this;
     }
 
+    /**
+     * Sets the database ID to use with this Firestore client.
+     *
+     * @param databaseId The Firestore database ID to use with this client.
+     */
+    @Nonnull
+    public Builder setDatabaseId(@Nonnull String databaseId) {
+      this.databaseId = databaseId;
+      return this;
+    }
+
     @Override
     @Nonnull
     public FirestoreOptions build() {
@@ -218,9 +219,9 @@ public final class FirestoreOptions extends ServiceOptions<Firestore, FirestoreO
     super(FirestoreFactory.class, FirestoreRpcFactory.class, builder, new FirestoreDefaults());
 
     this.databaseId = builder.databaseId;
+    this.timestampsInSnapshotsEnabled = builder.timestampsInSnapshotsEnabled;
     this.channelProvider = builder.channelProvider;
     this.credentialsProvider = builder.credentialsProvider;
-    this.timestampsInSnapshotsEnabled = builder.timestampsInSnapshotsEnabled;
   }
 
   private static class FirestoreDefaults implements ServiceDefaults<Firestore, FirestoreOptions> {
@@ -317,12 +318,19 @@ public final class FirestoreOptions extends ServiceOptions<Firestore, FirestoreO
     FirestoreOptions that = (FirestoreOptions) o;
     return Objects.equals(databaseId, that.databaseId)
         && Objects.equals(channelProvider, that.channelProvider)
+        && Objects.equals(credentialsProvider, that.credentialsProvider)
+        && Objects.equals(timestampsInSnapshotsEnabled, that.timestampsInSnapshotsEnabled)
         && baseEquals(that);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(databaseId, channelProvider, baseHashCode());
+    return Objects.hash(
+        databaseId,
+        channelProvider,
+        credentialsProvider,
+        timestampsInSnapshotsEnabled,
+        baseHashCode());
   }
 
   @Nonnull
