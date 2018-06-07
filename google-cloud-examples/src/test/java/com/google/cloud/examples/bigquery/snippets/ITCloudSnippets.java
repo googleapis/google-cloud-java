@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.cloud.examples.bigquery.cloudsnippets;
+package com.google.cloud.examples.bigquery.snippets;
 
 import static org.junit.Assert.assertTrue;
 
@@ -118,5 +118,13 @@ public class ITCloudSnippets {
     cloudSnippets.runQueryWithTimestampParameters();
     String got = bout.toString();
     assertTrue(got.contains("2016-12-07T09:00:00Z"));
+  }
+
+  @Test
+  public void testLoadTableGcsParquet() throws InterruptedException {
+    cloudSnippets.loadTableGcsParquet(DATASET);
+    String got = bout.toString();
+    assertTrue(got.contains("DONE"));
+    assertTrue(got.contains("Loaded 50 rows."));
   }
 }

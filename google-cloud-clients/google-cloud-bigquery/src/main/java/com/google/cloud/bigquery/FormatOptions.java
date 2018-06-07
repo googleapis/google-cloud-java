@@ -34,6 +34,7 @@ public class FormatOptions implements Serializable {
   static final String DATASTORE_BACKUP = "DATASTORE_BACKUP";
   static final String AVRO = "AVRO";
   static final String GOOGLE_SHEETS = "GOOGLE_SHEETS";
+  static final String PARQUET = "PARQUET";
   private static final long serialVersionUID = -443376052020423691L;
 
   private final String type;
@@ -104,8 +105,15 @@ public class FormatOptions implements Serializable {
   }
 
   /**
-   * Default options for the provided format.
+   * Default options for PARQUET format.
    */
+  public static FormatOptions parquet() {
+    return new FormatOptions(PARQUET);
+  }
+
+    /**
+     * Default options for the provided format.
+     */
   public static FormatOptions of(String format) {
     if (checkNotNull(format).equals(CSV)) {
       return csv();

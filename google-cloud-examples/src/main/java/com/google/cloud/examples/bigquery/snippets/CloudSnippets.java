@@ -14,13 +14,18 @@
  * limitations under the License.
  */
 
-package com.google.cloud.examples.bigquery.cloudsnippets;
+package com.google.cloud.examples.bigquery.snippets;
 
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.FieldValue;
 import com.google.cloud.bigquery.FieldValueList;
+import com.google.cloud.bigquery.FormatOptions;
+import com.google.cloud.bigquery.Job;
+import com.google.cloud.bigquery.JobInfo;
+import com.google.cloud.bigquery.LoadJobConfiguration;
 import com.google.cloud.bigquery.QueryJobConfiguration;
 import com.google.cloud.bigquery.QueryParameterValue;
+import com.google.cloud.bigquery.StandardTableDefinition;
 import com.google.cloud.bigquery.TableId;
 import java.util.concurrent.TimeoutException;
 import org.joda.time.DateTime;
@@ -282,5 +287,26 @@ public class CloudSnippets {
       System.out.printf("\n");
     }
     // [END bigquery_query_params_timestamps]
+  }
+
+  /**
+   * Example of loading a parquet file from GCS to a table.
+   */
+  public void loadTableGcsParquet(String datasetName) throws InterruptedException {
+    // [START bigquery_load_table_gcs_parquet]
+    String sourceUri = "gs://cloud-samples-data/bigquery/us-states/us-states.parquet";
+    TableId tableId = TableId.of(datasetName, "us_states");
+    LoadJobConfiguration configuration =
+            LoadJobConfiguration.builder(tableId, sourceUri)
+                    .setFormatOptions(FormatOptions.parquet())
+                    .build();
+    // Load the table
+    Job remoteLoadJob = bigquery.create(JobInfo.of(configuration));
+    remoteLoadJob = remoteLoadJob.waitFor();
+    // Check the table
+    StandardTableDefinition destinationTable = bigquery.getTable(tableId).getDefinition();
+    System.out.println("State: " + remoteLoadJob.getStatus().getState());
+    System.out.printf("Loaded %d rows.\n", destinationTable.getNumRows());
+    // [END bigquery_load_table_gcs_parquet]
   }
 }
