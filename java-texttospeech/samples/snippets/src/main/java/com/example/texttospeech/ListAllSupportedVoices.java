@@ -17,10 +17,10 @@
 package com.example.texttospeech;
 
 // Imports the Google Cloud client library
-import com.google.cloud.texttospeech.v1beta1.ListVoicesRequest;
-import com.google.cloud.texttospeech.v1beta1.ListVoicesResponse;
-import com.google.cloud.texttospeech.v1beta1.TextToSpeechClient;
-import com.google.cloud.texttospeech.v1beta1.Voice;
+import com.google.cloud.texttospeech.v1.ListVoicesRequest;
+import com.google.cloud.texttospeech.v1.ListVoicesResponse;
+import com.google.cloud.texttospeech.v1.TextToSpeechClient;
+import com.google.cloud.texttospeech.v1.Voice;
 import com.google.protobuf.ByteString;
 
 import java.util.List;
