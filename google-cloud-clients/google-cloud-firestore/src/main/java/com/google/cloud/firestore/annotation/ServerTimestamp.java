@@ -22,9 +22,9 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Annotation used to mark a field as being populated via Server Timestamps. If a POJO being written
- * contains null for a @ServerTimestamp annotated field, it will be replaced with a server-generated
- * timestamp.
+ * Annotation used to mark a timestamp field as being populated via Server Timestamps. If a POJO
+ * being written contains null for a @ServerTimestamp annotated field, it will be replaced with a
+ * server-generated timestamp.
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.METHOD, ElementType.FIELD})

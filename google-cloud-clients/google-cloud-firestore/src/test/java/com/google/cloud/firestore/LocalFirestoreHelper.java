@@ -21,6 +21,7 @@ import static org.junit.Assert.assertEquals;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.gax.rpc.ApiStreamObserver;
+import com.google.cloud.Timestamp;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.firestore.v1beta1.ArrayValue;
@@ -50,7 +51,6 @@ import com.google.firestore.v1beta1.Write;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
 import com.google.protobuf.NullValue;
-import com.google.protobuf.Timestamp;
 import com.google.type.LatLng;
 import java.nio.charset.Charset;
 import java.text.ParseException;
@@ -64,10 +64,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.concurrent.TimeUnit;
 import javax.annotation.Nullable;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
-import org.threeten.bp.Instant;
 
 public final class LocalFirestoreHelper {
 
@@ -104,6 +104,7 @@ public final class LocalFirestoreHelper {
   public static final ApiFuture<CommitResponse> SERVER_TIMESTAMP_COMMIT_RESPONSE;
 
   public static final Date DATE;
+  public static final Timestamp TIMESTAMP;
   public static final GeoPoint GEO_POINT;
   public static final Blob BLOB;
 
@@ -171,9 +172,13 @@ public final class LocalFirestoreHelper {
         name += i + 1;
       }
       BatchGetDocumentsResponse.Builder response = BatchGetDocumentsResponse.newBuilder();
-      response.getFoundBuilder().setCreateTime(Timestamp.newBuilder().setSeconds(1).setNanos(2));
-      response.getFoundBuilder().setUpdateTime(Timestamp.newBuilder().setSeconds(3).setNanos(4));
-      response.setReadTime(Timestamp.newBuilder().setSeconds(5).setNanos(6));
+      response
+          .getFoundBuilder()
+          .setCreateTime(com.google.protobuf.Timestamp.newBuilder().setSeconds(1).setNanos(2));
+      response
+          .getFoundBuilder()
+          .setUpdateTime(com.google.protobuf.Timestamp.newBuilder().setSeconds(3).setNanos(4));
+      response.setReadTime(com.google.protobuf.Timestamp.newBuilder().setSeconds(5).setNanos(6));
       response.getFoundBuilder().setName(name).putAllFields(fields[i]);
       responses[i] = response.build();
     }
@@ -196,7 +201,8 @@ public final class LocalFirestoreHelper {
       final RunQueryResponse.Builder runQueryResponse = RunQueryResponse.newBuilder();
       runQueryResponse.setDocument(
           Document.newBuilder().setName(documentNames[i]).putAllFields(SINGLE_FIELD_PROTO));
-      runQueryResponse.setReadTime(Timestamp.newBuilder().setSeconds(1).setNanos(2));
+      runQueryResponse.setReadTime(
+          com.google.protobuf.Timestamp.newBuilder().setSeconds(1).setNanos(2));
       responses[i] = runQueryResponse.build();
     }
     return streamingResponse(responses);
@@ -568,6 +574,7 @@ public final class LocalFirestoreHelper {
     public boolean falseValue = false;
     public SingleField objectValue = new SingleField();
     public Date dateValue = DATE;
+    public Timestamp timestampValue = TIMESTAMP;
     public List<String> arrayValue = ImmutableList.of("foo");
     public String nullValue = null;
     public Blob bytesValue = BLOB;
@@ -592,6 +599,7 @@ public final class LocalFirestoreHelper {
           && Objects.equals(doubleValue, that.doubleValue)
           && Objects.equals(objectValue, that.objectValue)
           && Objects.equals(dateValue, that.dateValue)
+          && Objects.equals(timestampValue, that.timestampValue)
           && Objects.equals(arrayValue, that.arrayValue)
           && Objects.equals(nullValue, that.nullValue)
           && Objects.equals(bytesValue, that.bytesValue)
@@ -608,6 +616,10 @@ public final class LocalFirestoreHelper {
       throw new RuntimeException("Failed to parse date", e);
     }
 
+    TIMESTAMP =
+        Timestamp.ofTimeSecondsAndNanos(
+            TimeUnit.MILLISECONDS.toSeconds(DATE.getTime()),
+            123000); // Firestore truncates to microsecond precision.
     GEO_POINT = new GeoPoint(50.1430847, -122.9477780);
     BLOB = Blob.fromBytes(new byte[] {1, 2, 3});
 
@@ -630,9 +642,9 @@ public final class LocalFirestoreHelper {
                     DatabaseRootName.of("test-project", "(default)"),
                     ImmutableList.of("coll", "doc"))),
             SINGLE_FIELD_PROTO,
-            Instant.ofEpochSecond(5, 6),
-            Instant.ofEpochSecond(3, 4),
-            Instant.ofEpochSecond(1, 2));
+            Timestamp.ofTimeSecondsAndNanos(5, 6),
+            Timestamp.ofTimeSecondsAndNanos(3, 4),
+            Timestamp.ofTimeSecondsAndNanos(1, 2));
 
     UPDATED_FIELD_MAP = map("foo", (Object) "foobar");
     UPDATED_FIELD_PROTO = map("foo", Value.newBuilder().setStringValue("foobar").build());
@@ -659,7 +671,8 @@ public final class LocalFirestoreHelper {
     ALL_SUPPORTED_TYPES_MAP.put("trueValue", true);
     ALL_SUPPORTED_TYPES_MAP.put("falseValue", false);
     ALL_SUPPORTED_TYPES_MAP.put("objectValue", map("foo", (Object) "bar"));
-    ALL_SUPPORTED_TYPES_MAP.put("dateValue", DATE);
+    ALL_SUPPORTED_TYPES_MAP.put("dateValue", Timestamp.of(DATE));
+    ALL_SUPPORTED_TYPES_MAP.put("timestampValue", TIMESTAMP);
     ALL_SUPPORTED_TYPES_MAP.put("arrayValue", ImmutableList.of("foo"));
     ALL_SUPPORTED_TYPES_MAP.put("nullValue", null);
     ALL_SUPPORTED_TYPES_MAP.put("bytesValue", BLOB);
@@ -684,7 +697,17 @@ public final class LocalFirestoreHelper {
                 "dateValue",
                 Value.newBuilder()
                     .setTimestampValue(
-                        Timestamp.newBuilder().setSeconds(479978400).setNanos(123000000))
+                        com.google.protobuf.Timestamp.newBuilder()
+                            .setSeconds(479978400)
+                            .setNanos(123000000))  // Dates only support millisecond precision.
+                    .build())
+            .put(
+                "timestampValue",
+                Value.newBuilder()
+                    .setTimestampValue(
+                        com.google.protobuf.Timestamp.newBuilder()
+                            .setSeconds(479978400)
+                            .setNanos(123000))  // Timestamps supports microsecond precision.
                     .build())
             .put(
                 "arrayValue",

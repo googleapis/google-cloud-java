@@ -16,12 +16,12 @@
 
 package com.google.cloud.firestore;
 
+import com.google.cloud.Timestamp;
 import com.google.common.base.Preconditions;
 import com.google.firestore.v1beta1.ArrayValue;
 import com.google.firestore.v1beta1.MapValue;
 import com.google.firestore.v1beta1.Value;
 import com.google.protobuf.NullValue;
-import com.google.protobuf.Timestamp;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -91,10 +91,14 @@ class UserDataConverter {
       Date date = (Date) sanitizedObject;
       long epochSeconds = TimeUnit.MILLISECONDS.toSeconds(date.getTime());
       long msOffset = date.getTime() - TimeUnit.SECONDS.toMillis(epochSeconds);
-      Timestamp.Builder timestampBuilder = Timestamp.newBuilder();
+      com.google.protobuf.Timestamp.Builder timestampBuilder =
+          com.google.protobuf.Timestamp.newBuilder();
       timestampBuilder.setSeconds(epochSeconds);
       timestampBuilder.setNanos((int) TimeUnit.MILLISECONDS.toNanos(msOffset));
       return Value.newBuilder().setTimestampValue(timestampBuilder.build()).build();
+    } else if (sanitizedObject instanceof Timestamp) {
+      Timestamp timestamp = (Timestamp) sanitizedObject;
+      return Value.newBuilder().setTimestampValue(timestamp.toProto()).build();
     } else if (sanitizedObject instanceof List) {
       ArrayValue.Builder res = ArrayValue.newBuilder();
       int i = 0;

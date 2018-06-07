@@ -16,12 +16,12 @@
 
 package com.google.cloud.firestore;
 
+import com.google.cloud.Timestamp;
 import com.google.cloud.firestore.UserDataConverter.EncodingOptions;
 import com.google.common.base.Preconditions;
 import com.google.firestore.v1beta1.Document;
 import com.google.firestore.v1beta1.Value;
 import com.google.firestore.v1beta1.Write;
-import com.google.protobuf.Timestamp;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -29,10 +29,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.util.concurrent.TimeUnit;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
-import org.threeten.bp.Instant;
 
 /**
  * A DocumentSnapshot contains data read from a document in a Firestore database. The data can be
@@ -51,17 +49,17 @@ public class DocumentSnapshot {
   private final FirestoreImpl firestore;
   private final DocumentReference docRef;
   @Nullable private final Map<String, Value> fields;
-  @Nullable private Instant readTime;
-  @Nullable private Instant updateTime;
-  @Nullable private Instant createTime;
+  @Nullable private final Timestamp readTime;
+  @Nullable private final Timestamp updateTime;
+  @Nullable private final Timestamp createTime;
 
   DocumentSnapshot(
       FirestoreImpl firestore,
       DocumentReference docRef,
       @Nullable Map<String, Value> fields,
-      @Nullable Instant readTime,
-      @Nullable Instant updateTime,
-      @Nullable Instant createTime) {
+      @Nullable Timestamp readTime,
+      @Nullable Timestamp updateTime,
+      @Nullable Timestamp createTime) {
     this.firestore = firestore;
     this.docRef = docRef;
     this.fields = fields;
@@ -98,19 +96,17 @@ public class DocumentSnapshot {
 
   static DocumentSnapshot fromDocument(
       FirestoreImpl firestore, Timestamp readTime, Document document) {
-    Timestamp updateTime = document.getUpdateTime();
-    Timestamp createTime = document.getCreateTime();
     return new DocumentSnapshot(
         firestore,
         new DocumentReference(firestore, ResourcePath.create(document.getName())),
         document.getFieldsMap(),
-        Instant.ofEpochSecond(readTime.getSeconds(), readTime.getNanos()),
-        Instant.ofEpochSecond(updateTime.getSeconds(), updateTime.getNanos()),
-        Instant.ofEpochSecond(createTime.getSeconds(), createTime.getNanos()));
+        readTime,
+        Timestamp.fromProto(document.getUpdateTime()),
+        Timestamp.fromProto(document.getCreateTime()));
   }
 
   static DocumentSnapshot fromMissing(
-      FirestoreImpl firestore, DocumentReference documentReference, Instant readTime) {
+      FirestoreImpl firestore, DocumentReference documentReference, Timestamp readTime) {
     return new DocumentSnapshot(firestore, documentReference, null, readTime, null, null);
   }
 
@@ -126,11 +122,7 @@ public class DocumentSnapshot {
       case DOUBLE_VALUE:
         return v.getDoubleValue();
       case TIMESTAMP_VALUE:
-        Timestamp timestamp = v.getTimestampValue();
-        long milliseconds =
-            TimeUnit.SECONDS.toMillis(timestamp.getSeconds())
-                + TimeUnit.NANOSECONDS.toMillis(timestamp.getNanos());
-        return new Date(milliseconds);
+        return Timestamp.fromProto(v.getTimestampValue());
       case STRING_VALUE:
         return v.getStringValue();
       case BYTES_VALUE:
@@ -166,7 +158,7 @@ public class DocumentSnapshot {
    * @return The read time of this snapshot.
    */
   @Nullable
-  public Instant getReadTime() {
+  public Timestamp getReadTime() {
     return readTime;
   }
 
@@ -178,7 +170,7 @@ public class DocumentSnapshot {
    *     exist.
    */
   @Nullable
-  public Instant getUpdateTime() {
+  public Timestamp getUpdateTime() {
     return updateTime;
   }
 
@@ -189,7 +181,7 @@ public class DocumentSnapshot {
    *     exist.
    */
   @Nullable
-  public Instant getCreateTime() {
+  public Timestamp getCreateTime() {
     return createTime;
   }
 
@@ -222,7 +214,9 @@ public class DocumentSnapshot {
 
     Map<String, Object> decodedFields = new HashMap<>();
     for (Map.Entry<String, Value> entry : fields.entrySet()) {
-      decodedFields.put(entry.getKey(), decodeValue(entry.getValue()));
+      Object decodedValue = decodeValue(entry.getValue());
+      decodedValue = convertToDateIfNecessary(decodedValue);
+      decodedFields.put(entry.getKey(), decodedValue);
     }
     return decodedFields;
   }
@@ -287,7 +281,17 @@ public class DocumentSnapshot {
       return null;
     }
 
-    return decodeValue(value);
+    Object decodedValue = decodeValue(value);
+    return convertToDateIfNecessary(decodedValue);
+  }
+
+  private Object convertToDateIfNecessary(Object decodedValue) {
+    if (decodedValue instanceof Timestamp) {
+      if (!this.firestore.areTimestampsInSnapshotsEnabled()) {
+        decodedValue = ((Timestamp) decodedValue).toDate();
+      }
+    }
+    return decodedValue;
   }
 
   /** Returns the Value Proto at 'fieldPath'. Returns null if the field was not found. */
@@ -363,13 +367,31 @@ public class DocumentSnapshot {
   /**
    * Returns the value of the field as a Date.
    *
+   * <p>This method ignores the global setting {@link
+   * FirestoreOptions#areTimestampsInSnapshotsEnabled}.
+   *
    * @param field The path to the field.
    * @throws RuntimeException if the value is not a Date.
    * @return The value of the field.
    */
   @Nullable
   public Date getDate(@Nonnull String field) {
-    return (Date) get(field);
+    return ((Timestamp) get(field)).toDate();
+  }
+
+  /**
+   * Returns the value of the field as a {@link Timestamp}.
+   *
+   * <p>This method ignores the global setting {@link
+   * FirestoreOptions#areTimestampsInSnapshotsEnabled}.
+   *
+   * @param field The path to the field.
+   * @throws RuntimeException if the value is not a Date.
+   * @return The value of the field.
+   */
+  @Nullable
+  public Timestamp getTimestamp(@Nonnull String field) {
+    return (Timestamp) get(field);
   }
 
   /**

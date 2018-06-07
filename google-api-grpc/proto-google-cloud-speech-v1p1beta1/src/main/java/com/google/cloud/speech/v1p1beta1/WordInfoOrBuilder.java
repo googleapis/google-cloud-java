@@ -104,32 +104,4 @@ public interface WordInfoOrBuilder extends
    */
   com.google.protobuf.ByteString
       getWordBytes();
-
-  /**
-   * <pre>
-   * Output only. The confidence estimate between 0.0 and 1.0. A higher number
-   * indicates an estimated greater likelihood that the recognized words are
-   * correct. This field is set only for the top alternative of a non-streaming
-   * result or, of a streaming result where `is_final=true`.
-   * This field is not guaranteed to be accurate and users should not rely on it
-   * to be always provided.
-   * The default of 0.0 is a sentinel value indicating `confidence` was not set.
-   * </pre>
-   *
-   * <code>float confidence = 4;</code>
-   */
-  float getConfidence();
-
-  /**
-   * <pre>
-   * Output only. A distinct integer value is assigned for every speaker within
-   * the audio. This field specifies which one of those speakers was detected to
-   * have spoken this word. Value ranges from '1' to diarization_speaker_count.
-   * speaker_tag is set if enable_speaker_diarization = 'true' and only in the
-   * top alternative.
-   * </pre>
-   *
-   * <code>int32 speaker_tag = 5;</code>
-   */
-  int getSpeakerTag();
 }

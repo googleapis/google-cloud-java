@@ -25,6 +25,7 @@ import static com.google.firestore.v1beta1.StructuredQuery.FieldFilter.Operator.
 import com.google.api.core.ApiFuture;
 import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.rpc.ApiStreamObserver;
+import com.google.cloud.Timestamp;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
 import com.google.firestore.v1beta1.Cursor;
@@ -49,7 +50,6 @@ import java.util.Objects;
 import java.util.concurrent.Executor;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
-import org.threeten.bp.Instant;
 
 /**
  * A Query which you can read or listen to. You can also construct refined Query objects by adding
@@ -903,14 +903,14 @@ public class Query {
   private abstract static class QuerySnapshotObserver
       implements ApiStreamObserver<QueryDocumentSnapshot> {
 
-    private Instant readTime;
+    private Timestamp readTime;
 
-    void onCompleted(Instant readTime) {
+    void onCompleted(Timestamp readTime) {
       this.readTime = readTime;
       this.onCompleted();
     }
 
-    Instant getReadTime() {
+    Timestamp getReadTime() {
       return readTime;
     }
   }
@@ -933,7 +933,7 @@ public class Query {
 
     ApiStreamObserver<RunQueryResponse> observer =
         new ApiStreamObserver<RunQueryResponse>() {
-          Instant readTime;
+          Timestamp readTime;
           boolean firstResponse;
           int numDocuments;
 
@@ -952,14 +952,13 @@ public class Query {
               }
               Document document = response.getDocument();
               QueryDocumentSnapshot documentSnapshot =
-                  QueryDocumentSnapshot.fromDocument(firestore, response.getReadTime(), document);
+                  QueryDocumentSnapshot.fromDocument(
+                      firestore, Timestamp.fromProto(response.getReadTime()), document);
               documentObserver.onNext(documentSnapshot);
             }
 
             if (readTime == null) {
-              readTime =
-                  Instant.ofEpochSecond(
-                      response.getReadTime().getSeconds(), response.getReadTime().getNanos());
+              readTime = Timestamp.fromProto(response.getReadTime());
             }
           }
 

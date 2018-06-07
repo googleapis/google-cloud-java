@@ -61,16 +61,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-storage</artifactId>
-  <version>1.31.0</version>
+  <version>1.32.0</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-storage:1.31.0'
+compile 'com.google.cloud:google-cloud-storage:1.32.0'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-storage" % "1.31.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-storage" % "1.32.0"
 ```
 [//]: # ({x-version-update-end})
 
@@ -80,7 +80,7 @@ If you're using IntelliJ or Eclipse, you can add client libraries to your projec
 
 Besides adding client libraries, the plugins provide additional functionality, such as service account key management. Refer to the documentation for each plugin for more details.
 
-These client libraries can be used on App Engine standard for Java 8 runtime, App Engine flexible (including the Compat runtime).  Most of the libraries do not work on the App Engine standard for Java 7 runtime, however, Datastore, Storage, and Bigquery should work.
+These client libraries can be used on App Engine standard for Java 8 runtime and App Engine flexible (including the Compat runtime).  Most of the libraries do not work on the App Engine standard for Java 7 runtime. However, Datastore, Storage, and Bigquery should work.
 
 If you are running into problems with version conflicts, see [Version Management](#version-management).
 
@@ -165,7 +165,7 @@ Storage storage = StorageOptions.getDefaultInstance().getService();
   case, the access token will not be automatically refreshed):
   ```java
   Storage storage = StorageOptions.newBuilder()
-      .setCredentials(new GoogleCredentials(new AccessToken(accessToken, expirationTime)))
+      .setCredentials(GoogleCredentials.create(new AccessToken(accessToken, expirationTime)))
       .build()
       .getService();
   ```
@@ -291,7 +291,7 @@ The easiest way to solve version conflicts is to use google-cloud's BOM. In Mave
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-bom</artifactId>
-        <version>0.49.0-alpha</version>
+        <version>0.50.0-alpha</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>

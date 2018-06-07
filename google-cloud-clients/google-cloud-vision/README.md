@@ -21,16 +21,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-vision</artifactId>
-  <version>1.31.0</version>
+  <version>1.32.0</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-vision:1.31.0'
+compile 'com.google.cloud:google-cloud-vision:1.32.0'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-vision" % "1.31.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-vision" % "1.32.0"
 ```
 [//]: # ({x-version-update-end})
 
@@ -56,7 +56,7 @@ You'll need to obtain the `google-cloud-vision` library.  See the [Quickstart](#
 
 #### Complete working example
 
-In [AnnotateImage.java](../google-cloud-examples/src/main/java/com/google/cloud/examples/vision/snippets/AnnotateImage.java) we put a quick start example, which shows how you can use the Google Vision API to automatically annotate an image (like "cat", "whiskers", "mammal" for a picture of a cat).
+In [AnnotateImage.java](../../google-cloud-examples/src/main/java/com/google/cloud/examples/vision/snippets/AnnotateImage.java) we put a quick start example, which shows how you can use the Google Vision API to automatically annotate an image (like "cat", "whiskers", "mammal" for a picture of a cat).
 
 For an example picture file, you can use the [wakeupcat.jpg](https://github.com/GoogleCloudPlatform/java-docs-samples/blob/master/vision/cloud-client/resources/wakeupcat.jpg) image from the samples repository.
 

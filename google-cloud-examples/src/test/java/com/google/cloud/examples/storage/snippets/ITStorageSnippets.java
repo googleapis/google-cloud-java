@@ -72,6 +72,9 @@ public class ITStorageSnippets {
   private static final String USER_EMAIL = "google-cloud-java-tests@"
       + "java-docs-samples-tests.iam.gserviceaccount.com";
 
+  private static final String KMS_KEY_NAME = "projects/gcloud-devel/locations/us/"
+      + "keyRings/gcs_kms_key_ring_us/cryptoKeys/key";
+
   private static Storage storage;
   private static StorageSnippets storageSnippets;
   private static List<String> bucketsToCleanUp;
@@ -176,6 +179,13 @@ public class ITStorageSnippets {
     assertEquals("Hello, World!", new String(encryptedContent));
     blob = storageSnippets.getBlobFromId(BUCKET, blobName);
     assertEquals("text/plain", blob.getContentType());
+  }
+
+  @Test
+  public void testCreateKMSEncryptedBlob() {
+    String blobName = "kms-encrypted-blob";
+    Blob blob = storageSnippets.createKmsEncrpytedBlob(BUCKET, blobName, KMS_KEY_NAME);
+    assertNotNull(blob);
   }
 
   @Test
@@ -383,22 +393,22 @@ public class ITStorageSnippets {
     assertNull(storageSnippets.getBlobAcl(BUCKET, blobName, createdBlob.getGeneration()));
     // test non-existing blob
     String nonExistingBlob = "test-blob-acl";
-    assertNull(storageSnippets.getBlobAcl(BUCKET, nonExistingBlob, -1L));
-    assertFalse(storageSnippets.deleteBlobAcl(BUCKET, nonExistingBlob, -1L));
+    assertNull(storageSnippets.getBlobAcl(BUCKET, nonExistingBlob, 1L));
+    assertFalse(storageSnippets.deleteBlobAcl(BUCKET, nonExistingBlob, 1L));
     try {
-      storageSnippets.createBlobAcl(BUCKET, nonExistingBlob, -1L);
+      storageSnippets.createBlobAcl(BUCKET, nonExistingBlob, 1L);
       fail("Expected StorageException");
     } catch (StorageException ex) {
       // expected
     }
     try {
-      storageSnippets.updateBlobAcl(BUCKET, nonExistingBlob, -1L);
+      storageSnippets.updateBlobAcl(BUCKET, nonExistingBlob, 1L);
       fail("Expected StorageException");
     } catch (StorageException ex) {
       // expected
     }
     try {
-      storageSnippets.listBlobAcls(BUCKET, nonExistingBlob, -1L);
+      storageSnippets.listBlobAcls(BUCKET, nonExistingBlob, 1L);
       fail("Expected StorageException");
     } catch (StorageException ex) {
       // expected
@@ -428,5 +438,13 @@ public class ITStorageSnippets {
     assertArrayEquals(BLOB_BYTE_CONTENT, readBytes);
     bucket = storageSnippets.disableRequesterPays(BUCKET);
     assertFalse(bucket.requesterPays());
+  }
+
+  @Test
+  public void testDefaultKMSKey(){
+    Bucket bucket = storageSnippets.setDefaultKmsKey(BUCKET, KMS_KEY_NAME);
+    assertEquals(KMS_KEY_NAME, bucket.getDefaultKmsKeyName());
+    // Remove default key
+    storageSnippets.setDefaultKmsKey(BUCKET,null);
   }
 }

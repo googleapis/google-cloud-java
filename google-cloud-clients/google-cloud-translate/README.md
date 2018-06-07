@@ -21,23 +21,23 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-translate</artifactId>
-  <version>1.31.0</version>
+  <version>1.32.0</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-translate:1.31.0'
+compile 'com.google.cloud:google-cloud-translate:1.32.0'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-translate" % "1.31.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-translate" % "1.32.0"
 ```
 [//]: # ({x-version-update-end})
 
 Example Application
 -------------------
 
-[`TranslateExample`](../google-cloud-examples/src/main/java/com/google/cloud/examples/translate/TranslateExample.java) is a simple command line interface that provides some of Google Translation's functionality.  Read more about using the application on the [`TranslateExample` docs page](https://googlecloudplatform.github.io/google-cloud-java/apidocs/?com/google/cloud/examples/translate/TranslateExample.html).
+[`TranslateExample`](../../google-cloud-examples/src/main/java/com/google/cloud/examples/translate/TranslateExample.java) is a simple command line interface that provides some of Google Translation's functionality.  Read more about using the application on the [`TranslateExample` docs page](https://googlecloudplatform.github.io/google-cloud-java/apidocs/?com/google/cloud/examples/translate/TranslateExample.html).
 
 Authentication
 --------------
@@ -147,7 +147,7 @@ Translation translation = translate.translate(
 #### Complete source code
 
 In
-[DetectLanguageAndTranslate.java](../google-cloud-examples/src/main/java/com/google/cloud/examples/translate/snippets/DetectLanguageAndTranslate.java)
+[DetectLanguageAndTranslate.java](../../google-cloud-examples/src/main/java/com/google/cloud/examples/translate/snippets/DetectLanguageAndTranslate.java)
 we put together all the code shown above into one program. The program assumes that either Application
 Default Credentials or a valid API key are available.
 

@@ -43,10 +43,12 @@ public final class FirestoreOptions extends ServiceOptions<Firestore, FirestoreO
           .add("https://www.googleapis.com/auth/cloud-platform")
           .add("https://www.googleapis.com/auth/datastore")
           .build();
+  private static final boolean DEFAULT_TIMESTAMPS_IN_SNAPSHOTS_ENABLED = false;
 
-  private static final long serialVersionUID = -5853552236134770089L;
+  private static final long serialVersionUID = -5853552236134770090L;
 
   private final String databaseId;
+  private final boolean timestampsInSnapshotsEnabled;
   private final TransportChannelProvider channelProvider;
   private final CredentialsProvider credentialsProvider;
 
@@ -106,6 +108,7 @@ public final class FirestoreOptions extends ServiceOptions<Firestore, FirestoreO
   public static class Builder extends ServiceOptions.Builder<Firestore, FirestoreOptions, Builder> {
 
     private String databaseId = FirestoreDefaults.INSTANCE.getDatabaseId();
+    private boolean timestampsInSnapshotsEnabled = DEFAULT_TIMESTAMPS_IN_SNAPSHOTS_ENABLED;
     private TransportChannelProvider channelProvider =
         FirestoreDefaults.INSTANCE.getDefaultTransportChannelProvider();
     private CredentialsProvider credentialsProvider =
@@ -116,6 +119,7 @@ public final class FirestoreOptions extends ServiceOptions<Firestore, FirestoreO
     private Builder(FirestoreOptions options) {
       super(options);
       this.databaseId = options.databaseId;
+      this.timestampsInSnapshotsEnabled = options.timestampsInSnapshotsEnabled;
       this.channelProvider = options.channelProvider;
       this.credentialsProvider = options.credentialsProvider;
     }
@@ -124,7 +128,7 @@ public final class FirestoreOptions extends ServiceOptions<Firestore, FirestoreO
      * Sets the {@link TransportOptions} to use with this Firestore client.
      *
      * @param transportOptions A GrpcTransportOptions object that defines the transport options for
-     * this client.
+     *     this client.
      */
     @Nonnull
     @Override
@@ -133,14 +137,15 @@ public final class FirestoreOptions extends ServiceOptions<Firestore, FirestoreO
         throw new IllegalArgumentException(
             "Only GRPC transport is allowed for " + API_SHORT_NAME + ".");
       }
-      return super.setTransportOptions(transportOptions);
+      super.setTransportOptions(transportOptions);
+      return this;
     }
 
     /**
      * Sets the {@link TransportChannelProvider} to use with this Firestore client.
      *
      * @param channelProvider A InstantiatingGrpcChannelProvider object that defines the transport
-     * provider for this client.
+     *     provider for this client.
      */
     @Nonnull
     public Builder setChannelProvider(@Nonnull TransportChannelProvider channelProvider) {
@@ -156,7 +161,7 @@ public final class FirestoreOptions extends ServiceOptions<Firestore, FirestoreO
      * Sets the {@link CredentialsProvider} to use with this Firestore client.
      *
      * @param credentialsProvider A CredentialsProvider object that defines the credential provider
-     * for this client.
+     *     for this client.
      */
     @Nonnull
     public Builder setCredentialsProvider(@Nonnull CredentialsProvider credentialsProvider) {
@@ -169,8 +174,35 @@ public final class FirestoreOptions extends ServiceOptions<Firestore, FirestoreO
      *
      * @param databaseId The Firestore database ID to use with this client.
      */
-    public Builder setDatabaseId(String databaseId) {
+    public Builder setDatabaseId(@Nonnull String databaseId) {
       this.databaseId = databaseId;
+      return this;
+    }
+
+    /**
+     * Enables the use of {@link com.google.cloud.Timestamp Timestamps} for timestamp fields in
+     * {@link DocumentSnapshot DocumentSnapshots}.
+     *
+     * <p>Currently, Firestore returns timestamp fields as {@link java.util.Date} but {@link
+     * java.util.Date Date} only supports millisecond precision, which leads to truncation and
+     * causes unexpected behavior when using a timestamp from a snapshot as a part of a subsequent
+     * query.
+     *
+     * <p>Setting {@code setTimestampsInSnapshotsEnabled(true)} will cause Firestore to return
+     * {@link com.google.cloud.Timestamp Timestamp} values instead of {@link java.util.Date Date},
+     * avoiding this kind of problem. To make this work you must also change any code that uses
+     * {@link java.util.Date Date} to use {@link com.google.cloud.Timestamp Timestamp} instead.
+     *
+     * <p>NOTE: in the future {@link FirestoreOptions#areTimestampsInSnapshotsEnabled} will default
+     * to true and this option will be removed so you should change your code to use Timestamp now
+     * and opt-in to this new behavior as soon as you can.
+     *
+     * @return A settings object on which the return type for timestamp fields is configured as
+     *     specified by the given {@code value}.
+     */
+    @Nonnull
+    public Builder setTimestampsInSnapshotsEnabled(boolean value) {
+      this.timestampsInSnapshotsEnabled = value;
       return this;
     }
 
@@ -188,6 +220,7 @@ public final class FirestoreOptions extends ServiceOptions<Firestore, FirestoreO
     this.databaseId = builder.databaseId;
     this.channelProvider = builder.channelProvider;
     this.credentialsProvider = builder.credentialsProvider;
+    this.timestampsInSnapshotsEnabled = builder.timestampsInSnapshotsEnabled;
   }
 
   private static class FirestoreDefaults implements ServiceDefaults<Firestore, FirestoreOptions> {
@@ -195,8 +228,7 @@ public final class FirestoreOptions extends ServiceOptions<Firestore, FirestoreO
 
     private final String HOST = FirestoreSettings.getDefaultEndpoint();
     private final String DATABASE_ID = "(default)";
-    private final TransportOptions TRANSPORT_OPTIONS =
-        getDefaultTransportOptionsBuilder().build();
+    private final TransportOptions TRANSPORT_OPTIONS = getDefaultTransportOptionsBuilder().build();
     private final TransportChannelProvider CHANNEL_PROVIDER =
         getDefaultTransportChannelProviderBuilder().build();
     private final CredentialsProvider CREDENTIALS_PROVIDER =
@@ -255,6 +287,14 @@ public final class FirestoreOptions extends ServiceOptions<Firestore, FirestoreO
   @Nonnull
   public static GoogleCredentialsProvider.Builder getDefaultCredentialsProviderBuilder() {
     return FirestoreSettings.defaultCredentialsProviderBuilder();
+  }
+
+  /**
+   * Returns whether or not {@link DocumentSnapshot DocumentSnapshots} return timestamp fields as
+   * {@link com.google.cloud.Timestamp Timestamps}.
+   */
+  public boolean areTimestampsInSnapshotsEnabled() {
+    return timestampsInSnapshotsEnabled;
   }
 
   @Override

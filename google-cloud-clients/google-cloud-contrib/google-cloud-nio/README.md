@@ -28,26 +28,26 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-nio</artifactId>
-  <version>0.49.0-alpha</version>
+  <version>0.50.0-alpha</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-nio:0.49.0-alpha'
+compile 'com.google.cloud:google-cloud-nio:0.50.0-alpha'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-nio" % "0.49.0-alpha"
+libraryDependencies += "com.google.cloud" % "google-cloud-nio" % "0.50.0-alpha"
 ```
 [//]: # ({x-version-update-end})
 
 Example Applications
 -------------------
 
-* [`Stat`](../../google-cloud-examples/src/main/java/com/google/cloud/examples/nio/Stat.java)
+* [`Stat`](../../../google-cloud-examples/src/main/java/com/google/cloud/examples/nio/Stat.java)
 shows how to get started with NIO.
 
-* [`ParallelCountBytes`](../../google-cloud-examples/src/main/java/com/google/cloud/examples/nio/ParallelCountBytes.java)
+* [`ParallelCountBytes`](../../../google-cloud-examples/src/main/java/com/google/cloud/examples/nio/ParallelCountBytes.java)
 efficiently downloads a file from Google Cloud Storage.
 
 * [`ListFileSystems`](../google-cloud-nio-examples/README.md) illustrates how
@@ -162,7 +162,7 @@ system implementation. You can disable this feature with
 
 #### Complete source code
 
-There are examples in [google-cloud-examples](../google-cloud-examples/src/main/java/com/google/cloud/examples/nio/)
+There are examples in [google-cloud-examples](../../google-cloud-examples/src/main/java/com/google/cloud/examples/nio/)
 for your perusal.
 
 Java Versions

@@ -35,6 +35,7 @@ import static org.mockito.Mockito.doAnswer;
 
 import com.google.api.gax.rpc.ApiStreamObserver;
 import com.google.api.gax.rpc.ServerStreamingCallable;
+import com.google.cloud.Timestamp;
 import com.google.cloud.firestore.spi.v1beta1.FirestoreRpc;
 import com.google.firestore.v1beta1.RunQueryRequest;
 import com.google.firestore.v1beta1.StructuredQuery;
@@ -53,7 +54,6 @@ import org.mockito.Matchers;
 import org.mockito.Mockito;
 import org.mockito.Spy;
 import org.mockito.runners.MockitoJUnitRunner;
-import org.threeten.bp.Instant;
 
 @RunWith(MockitoJUnitRunner.class)
 public class QueryTest {
@@ -61,7 +61,10 @@ public class QueryTest {
   @Spy
   private FirestoreImpl firestoreMock =
       new FirestoreImpl(
-          FirestoreOptions.newBuilder().setProjectId("test-project").build(),
+          FirestoreOptions.newBuilder()
+              .setProjectId("test-project")
+              .setTimestampsInSnapshotsEnabled(true)
+              .build(),
           Mockito.mock(FirestoreRpc.class));
 
   @Captor private ArgumentCaptor<RunQueryRequest> runQuery;
@@ -549,7 +552,7 @@ public class QueryTest {
 
     assertFalse(changeIterator.hasNext());
 
-    assertEquals(Instant.ofEpochSecond(1, 2), result.getReadTime());
+    assertEquals(Timestamp.ofTimeSecondsAndNanos(1, 2), result.getReadTime());
 
     assertEquals(
         Arrays.asList(

@@ -188,7 +188,7 @@ public class HttpStorageRpc implements StorageRpc {
           // TODO(hailongwen@): instrument 'google-api-java-client' to further break down the span.
           // Here we only add a annotation to at least know how much time each batch takes.
           span.addAnnotation("Execute batch request");
-          batch.setBatchUrl(new GenericUrl("https://www.googleapis.com/batch/storage/v1"));
+          batch.setBatchUrl(new GenericUrl(String.format("%s/batch/storage/v1", options.getHost())));
           batch.execute();
         }
       } catch (IOException ex) {
@@ -717,8 +717,10 @@ public class HttpStorageRpc implements StorageRpc {
       GenericUrl url = req.buildHttpRequest().getUrl();
       String scheme = url.getScheme();
       String host = url.getHost();
+      int port = url.getPort();
+      port = port < 0 ? port : url.toURL().getDefaultPort();
       String path = "/upload" + url.getRawPath();
-      url = new GenericUrl(scheme + "://" + host + path);
+      url = new GenericUrl(scheme + "://" + host + ":" + port + path);
       url.set("uploadType", "resumable");
       url.set("name", object.getName());
       for (Option option : options.keySet()) {

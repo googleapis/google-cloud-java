@@ -21,22 +21,22 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-datastore</artifactId>
-  <version>1.31.0</version>
+  <version>1.32.0</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-datastore:1.31.0'
+compile 'com.google.cloud:google-cloud-datastore:1.32.0'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-datastore" % "1.31.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-datastore" % "1.32.0"
 ```
 [//]: # ({x-version-update-end})
 
 Example Applications
 --------------------
-- [`DatastoreExample`](../google-cloud-examples/src/main/java/com/google/cloud/examples/datastore/DatastoreExample.java) is a simple command line interface for the Cloud Datastore.  Read more about using the application on the [`DatastoreExample` docs page](https://googlecloudplatform.github.io/google-cloud-java/google-cloud-clients/apidocs/?com/google/cloud/examples/datastore/DatastoreExample.html).
+- [`DatastoreExample`](../../google-cloud-examples/src/main/java/com/google/cloud/examples/datastore/DatastoreExample.java) is a simple command line interface for the Cloud Datastore.  Read more about using the application on the [`DatastoreExample` docs page](https://googlecloudplatform.github.io/google-cloud-java/google-cloud-clients/apidocs/?com/google/cloud/examples/datastore/DatastoreExample.html).
 - [`Bookshelf`](https://github.com/GoogleCloudPlatform/getting-started-java/tree/master/bookshelf) - An App Engine app that manages a virtual bookshelf.
   - This app uses `google-cloud` to interface with Cloud Datastore and Cloud Storage. It also uses Cloud SQL, another Google Cloud Platform service.
 - [`Flexible Environment/Datastore example`](https://github.com/GoogleCloudPlatform/java-docs-samples/tree/master/flexible/datastore) - A simple app that uses Cloud Datastore to list the last 10 IP addresses that visited your site.
@@ -164,12 +164,12 @@ if (entity != null) {
 ```
 
 The complete source code can be found at
-[UpdateEntity.java](../google-cloud-examples/src/main/java/com/google/cloud/examples/datastore/snippets/UpdateEntity.java).
+[UpdateEntity.java](../../google-cloud-examples/src/main/java/com/google/cloud/examples/datastore/snippets/UpdateEntity.java).
 
 #### Complete source code
 
 In
-[AddEntitiesAndRunQuery.java](../google-cloud-examples/src/main/java/com/google/cloud/examples/datastore/snippets/AddEntitiesAndRunQuery.java)
+[AddEntitiesAndRunQuery.java](../../google-cloud-examples/src/main/java/com/google/cloud/examples/datastore/snippets/AddEntitiesAndRunQuery.java)
 we put together all the code to store data and run queries into one program. The program assumes that you are
 running on Compute Engine or from your own desktop. To run the example on App Engine, simply move
 the code from the main method to your application's servlet class and change the print statements to

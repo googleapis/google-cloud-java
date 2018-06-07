@@ -91,39 +91,4 @@ public interface StreamingRecognitionResultOrBuilder extends
    * <code>float stability = 3;</code>
    */
   float getStability();
-
-  /**
-   * <pre>
-   * For multi-channel audio, this is the channel number corresponding to the
-   * recognized result for the audio from that channel.
-   * For audio_channel_count = N, its output values can range from '1' to 'N'.
-   * </pre>
-   *
-   * <code>int32 channel_tag = 5;</code>
-   */
-  int getChannelTag();
-
-  /**
-   * <pre>
-   * Output only. The
-   * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag of the
-   * language in this result. This language code was detected to have the most
-   * likelihood of being spoken in the audio.
-   * </pre>
-   *
-   * <code>string language_code = 6;</code>
-   */
-  java.lang.String getLanguageCode();
-  /**
-   * <pre>
-   * Output only. The
-   * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag of the
-   * language in this result. This language code was detected to have the most
-   * likelihood of being spoken in the audio.
-   * </pre>
-   *
-   * <code>string language_code = 6;</code>
-   */
-  com.google.protobuf.ByteString
-      getLanguageCodeBytes();
 }

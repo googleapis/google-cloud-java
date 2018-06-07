@@ -22,16 +22,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-spanner</artifactId>
-  <version>0.49.0-beta</version>
+  <version>0.50.0-beta</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-spanner:0.49.0-beta'
+compile 'com.google.cloud:google-cloud-spanner:0.50.0-beta'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-spanner" % "0.49.0-beta"
+libraryDependencies += "com.google.cloud" % "google-cloud-spanner" % "0.50.0-beta"
 ```
 [//]: # ({x-version-update-end})
 
@@ -101,7 +101,7 @@ try {
 
 #### Complete source code
 
-In [DatabaseSelect.java](../google-cloud-examples/src/main/java/com/google/cloud/examples/spanner/snippets/DatabaseSelect.java) we put together all the code shown above in a single program.
+In [DatabaseSelect.java](../../google-cloud-examples/src/main/java/com/google/cloud/examples/spanner/snippets/DatabaseSelect.java) we put together all the code shown above in a single program.
 
 ## Troubleshooting
 

@@ -25,6 +25,7 @@ import com.google.api.gax.rpc.ApiStreamObserver;
 import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.Timestamp;
 import com.google.cloud.firestore.spi.v1beta1.FirestoreRpc;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
@@ -45,9 +46,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 import java.util.concurrent.Executor;
+import java.util.logging.Logger;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
-import org.threeten.bp.Instant;
 
 /**
  * Main implementation of the Firestore client. This is the entry point for all Firestore
@@ -60,6 +61,7 @@ class FirestoreImpl implements Firestore {
   private static final String AUTO_ID_ALPHABET =
       "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
+  private static final Logger LOGGER = Logger.getLogger("Firestore");
   private static final Tracer tracer = Tracing.getTracer();
   private static final io.opencensus.trace.Status TOO_MANY_RETRIES_STATUS =
       io.opencensus.trace.Status.ABORTED.withDescription("too many retries");
@@ -83,6 +85,34 @@ class FirestoreImpl implements Firestore {
             + "Please explicitly set your Project ID in FirestoreOptions.");
     this.databasePath =
         ResourcePath.create(DatabaseRootName.of(options.getProjectId(), options.getDatabaseId()));
+
+    if (!options.areTimestampsInSnapshotsEnabled()) {
+      LOGGER.warning(
+          "The behavior for java.util.Date objects stored in Firestore is going to change "
+              + "AND YOUR APP MAY BREAK.\n"
+              + "To hide this warning and ensure your app does not break, you need to add "
+              + "the following code to your app before calling any other Cloud Firestore "
+              + "methods:\n"
+              + "\n"
+              + "FirestoreOptions options = \n"
+              + "  FirestoreOptions.newBuilder().setTimestampsInSnapshotsEnabled(true).build();\n"
+              + "Firestore firestore = options.getService();\n"
+              + "\n"
+              + "With this change, timestamps stored in Cloud Firestore will be read back as "
+              + "com.google.cloud.Timestamp objects instead of as system java.util.Date "
+              + "objects. So you will also need to update code expecting a java.util.Date to "
+              + "instead expect a Timestamp. For example:\n"
+              + "\n"
+              + "// Old:\n"
+              + "java.util.Date date = (java.util.Date) snapshot.get(\"created_at\");\n"
+              + "// New:\n"
+              + "Timestamp timestamp = (Timestamp) snapshot.get(\"created_at\");\n"
+              + "java.util.Date date = timestamp.toDate();\n"
+              + "\n"
+              + "Please audit all existing usages of java.util.Date when you enable the new "
+              + "behavior. In a future release, the behavior will be changed to the new "
+              + "behavior, so if you do not follow these steps, YOUR APP MAY BREAK.");
+    }
   }
 
   /** Creates a pseudo-random 20-character ID that can be used for Firestore documents. */
@@ -159,7 +189,9 @@ class FirestoreImpl implements Firestore {
                         FirestoreImpl.this, ResourcePath.create(response.getFound().getName()));
                 documentSnapshot =
                     DocumentSnapshot.fromDocument(
-                        FirestoreImpl.this, response.getReadTime(), response.getFound());
+                        FirestoreImpl.this,
+                        Timestamp.fromProto(response.getReadTime()),
+                        response.getFound());
                 break;
               case MISSING:
                 documentReference =
@@ -169,9 +201,7 @@ class FirestoreImpl implements Firestore {
                     DocumentSnapshot.fromMissing(
                         FirestoreImpl.this,
                         documentReference,
-                        Instant.ofEpochSecond(
-                            response.getReadTime().getSeconds(),
-                            response.getReadTime().getNanos()));
+                        Timestamp.fromProto(response.getReadTime()));
                 break;
               default:
                 return;
@@ -367,6 +397,11 @@ class FirestoreImpl implements Firestore {
             }
           }
         });
+  }
+
+  /** Returns whether the user has opted into receiving dates as com.google.cloud.Timestamp. */
+  boolean areTimestampsInSnapshotsEnabled() {
+    return this.firestoreOptions.areTimestampsInSnapshotsEnabled();
   }
 
   /** Returns the name of the Firestore project associated with this client. */
