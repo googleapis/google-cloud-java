@@ -47,7 +47,7 @@ public final class CommonProto {
       "\003H\000\022\026\n\014double_value\030\003 \001(\001H\000\022\026\n\014string_va" +
       "lue\030\004 \001(\tH\000\0226\n\022distribution_value\030\005 \001(\0132" +
       "\030.google.api.DistributionH\000B\007\n\005value\"l\n\014" +
-      "TimeInterval\022,\n\010end_time\030\002 \001(\0132\032.google.",
+      "TimeInterval\022,\n\010end_time\030\002 \001(\0132\032.google." +
       "protobuf.Timestamp\022.\n\nstart_time\030\001 \001(\0132\032" +
       ".google.protobuf.Timestamp\"\255\007\n\013Aggregati" +
       "on\0223\n\020alignment_period\030\001 \001(\0132\031.google.pr" +
@@ -57,7 +57,7 @@ public final class CommonProto {
       "oogle.monitoring.v3.Aggregation.Reducer\022" +
       "\027\n\017group_by_fields\030\005 \003(\t\"\213\003\n\007Aligner\022\016\n\n" +
       "ALIGN_NONE\020\000\022\017\n\013ALIGN_DELTA\020\001\022\016\n\nALIGN_R" +
-      "ATE\020\002\022\025\n\021ALIGN_INTERPOLATE\020\003\022\024\n\020ALIGN_NE",
+      "ATE\020\002\022\025\n\021ALIGN_INTERPOLATE\020\003\022\024\n\020ALIGN_NE" +
       "XT_OLDER\020\004\022\r\n\tALIGN_MIN\020\n\022\r\n\tALIGN_MAX\020\013" +
       "\022\016\n\nALIGN_MEAN\020\014\022\017\n\013ALIGN_COUNT\020\r\022\r\n\tALI" +
       "GN_SUM\020\016\022\020\n\014ALIGN_STDDEV\020\017\022\024\n\020ALIGN_COUN" +
@@ -67,7 +67,7 @@ public final class CommonProto {
       "ENTILE_50\020\024\022\027\n\023ALIGN_PERCENTILE_05\020\025\022\030\n\024" +
       "ALIGN_PERCENT_CHANGE\020\027\"\261\002\n\007Reducer\022\017\n\013RE" +
       "DUCE_NONE\020\000\022\017\n\013REDUCE_MEAN\020\001\022\016\n\nREDUCE_M" +
-      "IN\020\002\022\016\n\nREDUCE_MAX\020\003\022\016\n\nREDUCE_SUM\020\004\022\021\n\r",
+      "IN\020\002\022\016\n\nREDUCE_MAX\020\003\022\016\n\nREDUCE_SUM\020\004\022\021\n\r" +
       "REDUCE_STDDEV\020\005\022\020\n\014REDUCE_COUNT\020\006\022\025\n\021RED" +
       "UCE_COUNT_TRUE\020\007\022\026\n\022REDUCE_COUNT_FALSE\020\017" +
       "\022\030\n\024REDUCE_FRACTION_TRUE\020\010\022\030\n\024REDUCE_PER" +
@@ -77,7 +77,7 @@ public final class CommonProto {
       "SON_UNSPECIFIED\020\000\022\021\n\rCOMPARISON_GT\020\001\022\021\n\r" +
       "COMPARISON_GE\020\002\022\021\n\rCOMPARISON_LT\020\003\022\021\n\rCO" +
       "MPARISON_LE\020\004\022\021\n\rCOMPARISON_EQ\020\005\022\021\n\rCOMP" +
-      "ARISON_NE\020\006*]\n\013ServiceTier\022\034\n\030SERVICE_TI",
+      "ARISON_NE\020\006*]\n\013ServiceTier\022\034\n\030SERVICE_TI" +
       "ER_UNSPECIFIED\020\000\022\026\n\022SERVICE_TIER_BASIC\020\001" +
       "\022\030\n\024SERVICE_TIER_PREMIUM\020\002B\243\001\n\030com.googl" +
       "e.monitoring.v3B\013CommonProtoP\001Z>google.g" +
