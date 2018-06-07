@@ -72,7 +72,7 @@ public final class LoggingMetricsProto {
       "\013description\030\002 \001(\t\022\016\n\006filter\030\003 \001(\t\0227\n\021me" +
       "tric_descriptor\030\005 \001(\0132\034.google.api.Metri" +
       "cDescriptor\022\027\n\017value_extractor\030\006 \001(\t\022K\n\020" +
-      "label_extractors\030\007 \003(\01321.google.logging.",
+      "label_extractors\030\007 \003(\01321.google.logging." +
       "v2.LogMetric.LabelExtractorsEntry\022>\n\016buc" +
       "ket_options\030\010 \001(\0132&.google.api.Distribut" +
       "ion.BucketOptions\0228\n\007version\030\004 \001(\0162\'.goo" +
@@ -82,7 +82,7 @@ public final class LoggingMetricsProto {
       "\001\"N\n\025ListLogMetricsRequest\022\016\n\006parent\030\001 \001" +
       "(\t\022\022\n\npage_token\030\002 \001(\t\022\021\n\tpage_size\030\003 \001(" +
       "\005\"`\n\026ListLogMetricsResponse\022-\n\007metrics\030\001" +
-      " \003(\0132\034.google.logging.v2.LogMetric\022\027\n\017ne",
+      " \003(\0132\034.google.logging.v2.LogMetric\022\027\n\017ne" +
       "xt_page_token\030\002 \001(\t\"*\n\023GetLogMetricReque" +
       "st\022\023\n\013metric_name\030\001 \001(\t\"V\n\026CreateLogMetr" +
       "icRequest\022\016\n\006parent\030\001 \001(\t\022,\n\006metric\030\002 \001(" +
@@ -92,7 +92,7 @@ public final class LoggingMetricsProto {
       "tric\"-\n\026DeleteLogMetricRequest\022\023\n\013metric" +
       "_name\030\001 \001(\t2\324\005\n\020MetricsServiceV2\022\216\001\n\016Lis" +
       "tLogMetrics\022(.google.logging.v2.ListLogM" +
-      "etricsRequest\032).google.logging.v2.ListLo",
+      "etricsRequest\032).google.logging.v2.ListLo" +
       "gMetricsResponse\"\'\202\323\344\223\002!\022\037/v2/{parent=pr" +
       "ojects/*}/metrics\022\204\001\n\014GetLogMetric\022&.goo" +
       "gle.logging.v2.GetLogMetricRequest\032\034.goo" +
@@ -102,7 +102,7 @@ public final class LoggingMetricsProto {
       "ogMetricRequest\032\034.google.logging.v2.LogM" +
       "etric\"/\202\323\344\223\002)\"\037/v2/{parent=projects/*}/m" +
       "etrics:\006metric\022\222\001\n\017UpdateLogMetric\022).goo" +
-      "gle.logging.v2.UpdateLogMetricRequest\032\034.",
+      "gle.logging.v2.UpdateLogMetricRequest\032\034." +
       "google.logging.v2.LogMetric\"6\202\323\344\223\0020\032&/v2" +
       "/{metric_name=projects/*/metrics/*}:\006met" +
       "ric\022\204\001\n\017DeleteLogMetric\022).google.logging" +
