@@ -301,11 +301,11 @@ public class CloudSnippets {
                     .setFormatOptions(FormatOptions.parquet())
                     .build();
     // Load the table
-    Job remoteLoadJob = bigquery.create(JobInfo.of(configuration));
-    remoteLoadJob = remoteLoadJob.waitFor();
+    Job loadJob = bigquery.create(JobInfo.of(configuration));
+    loadJob = loadJob.waitFor();
     // Check the table
     StandardTableDefinition destinationTable = bigquery.getTable(tableId).getDefinition();
-    System.out.println("State: " + remoteLoadJob.getStatus().getState());
+    System.out.println("State: " + loadJob.getStatus().getState());
     System.out.printf("Loaded %d rows.\n", destinationTable.getNumRows());
     // [END bigquery_load_table_gcs_parquet]
   }

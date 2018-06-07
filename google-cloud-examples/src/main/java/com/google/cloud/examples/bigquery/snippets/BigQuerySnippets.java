@@ -438,10 +438,10 @@ public class BigQuerySnippets {
             .setSchema(schema)
             .build();
     // Load the table
-    Job remoteLoadJob = bigquery.create(JobInfo.of(configuration));
-    remoteLoadJob = remoteLoadJob.waitFor();
+    Job loadJob = bigquery.create(JobInfo.of(configuration));
+    loadJob = loadJob.waitFor();
     // Check the table
-    System.out.println("State: " + remoteLoadJob.getStatus().getState());
+    System.out.println("State: " + loadJob.getStatus().getState());
     return ((StandardTableDefinition) bigquery.getTable(tableId).getDefinition()).getNumRows();
     // [END bigquery_load_table_gcs_json]
   }
