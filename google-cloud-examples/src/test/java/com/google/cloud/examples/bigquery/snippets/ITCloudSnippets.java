@@ -96,7 +96,7 @@ public class ITCloudSnippets {
   public void testRunBatchQuery() throws TimeoutException, InterruptedException {
     cloudSnippets.runBatchQuery();
     String got = bout.toString();
-    assertTrue(got.contains("romeoandjuliet"));
+    assertTrue(got.contains("in location US currently in state:"));
   }
 
   @Test

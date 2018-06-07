@@ -21,6 +21,7 @@ import com.google.cloud.bigquery.FieldValue;
 import com.google.cloud.bigquery.FieldValueList;
 import com.google.cloud.bigquery.FormatOptions;
 import com.google.cloud.bigquery.Job;
+import com.google.cloud.bigquery.JobId;
 import com.google.cloud.bigquery.JobInfo;
 import com.google.cloud.bigquery.LoadJobConfiguration;
 import com.google.cloud.bigquery.QueryJobConfiguration;
@@ -177,18 +178,26 @@ public class CloudSnippets {
     QueryJobConfiguration queryConfig =
         QueryJobConfiguration.newBuilder(query)
             // Run at batch priority, which won't count toward concurrent rate
-            // limit. See:
-            // https://cloud.google.com/bigquery/docs/running-queries#batch
+            // limit.
             .setPriority(QueryJobConfiguration.Priority.BATCH)
             .build();
 
-    // Print the results.
-    for (FieldValueList row : bigquery.query(queryConfig).iterateAll()) {
-      for (FieldValue val : row) {
-        System.out.printf("%s,", val.toString());
-      }
-      System.out.printf("\n");
-    }
+    // Location must match that of the dataset(s) referenced in the query.
+    JobId jobId = JobId.newBuilder().setRandomJob().setLocation("US").build();
+    String jobIdString = jobId.getJob();
+
+    // API request - starts the query.
+    bigquery.create(JobInfo.newBuilder(queryConfig).setJobId(jobId).build());
+
+    // Check on the progress by getting the job's updated state. Once the state
+    // is `DONE`, the results are ready.
+    Job queryJob = bigquery.getJob(
+        JobId.newBuilder().setJob(jobIdString).setLocation("US").build());
+    System.out.printf(
+        "Job %s in location %s currently in state: %s%n",
+        queryJob.getJobId().getJob(),
+        queryJob.getJobId().getLocation(),
+        queryJob.getStatus().getState().toString());
     // [END bigquery_query_batch]
   }
 
