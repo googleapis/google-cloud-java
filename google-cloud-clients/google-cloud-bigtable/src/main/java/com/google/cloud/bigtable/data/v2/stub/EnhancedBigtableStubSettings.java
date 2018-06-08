@@ -19,6 +19,7 @@ import com.google.api.core.InternalApi;
 import com.google.api.gax.batching.BatchingSettings;
 import com.google.api.gax.batching.FlowControlSettings;
 import com.google.api.gax.batching.FlowController.LimitExceededBehavior;
+import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.BatchingCallSettings;
@@ -35,6 +36,7 @@ import com.google.cloud.bigtable.data.v2.models.ReadModifyWriteRow;
 import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import com.google.common.base.Preconditions;
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import java.util.List;
 import java.util.Set;
@@ -92,6 +94,19 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
           .setTotalTimeout(Duration.ofMillis(600000L))
           .build();
 
+  /**
+   * Scopes that are equivalent to JWT's audience.
+   *
+   * <p>When the credentials provider contains any of these scopes (default behavior) and the
+   * application default credentials point to a service account, then OAuth2 tokens will be replaced
+   * with JWT tokens. This removes the need for access token refreshes. */
+  private static final ImmutableList<String> JWT_ENABLED_SCOPES =
+      ImmutableList.<String>builder()
+          .add("https://www.googleapis.com/auth/bigtable.data")
+          .add("https://www.googleapis.com/auth/cloud-bigtable.data")
+          .add("https://www.googleapis.com/auth/cloud-platform")
+          .build();
+
   private final InstanceName instanceName;
   private final String appProfileId;
 
@@ -129,6 +144,12 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
   /** Returns the configured AppProfile to use */
   public String getAppProfileId() {
     return appProfileId;
+  }
+
+  /** Returns a builder for the default credentials for this service. */
+  public static GoogleCredentialsProvider.Builder defaultCredentialsProviderBuilder() {
+    return BigtableStubSettings.defaultCredentialsProviderBuilder()
+        .setJwtEnabledScopes(JWT_ENABLED_SCOPES);
   }
 
   /** Returns the object with the settings used for calls to ReadRows. */
@@ -195,12 +216,12 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
      */
     private Builder() {
       this.appProfileId = SERVER_DEFAULT_APP_PROFILE_ID;
+      setCredentialsProvider(defaultCredentialsProviderBuilder().build());
 
       // Defaults provider
       BigtableStubSettings.Builder baseDefaults = BigtableStubSettings.newBuilder();
 
       setEndpoint(baseDefaults.getEndpoint());
-      setCredentialsProvider(baseDefaults.getCredentialsProvider());
       setTransportChannelProvider(
           InstantiatingGrpcChannelProvider.newBuilder()
               // TODO: tune channels
