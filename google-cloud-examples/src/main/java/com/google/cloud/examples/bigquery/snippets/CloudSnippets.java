@@ -32,7 +32,6 @@ import com.google.cloud.bigquery.TableId;
 import java.util.Arrays;
 import java.util.concurrent.TimeoutException;
 
-import com.google.cloud.bigquery.TableResult;
 import com.google.datastore.v1.Query;
 import org.joda.time.DateTime;
 import org.joda.time.DateTimeZone;
