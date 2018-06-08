@@ -1,15 +1,28 @@
+/*
+ * Copyright 2018 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License. You may obtain a copy of the License at
+ *
+ * https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under the License
+ * is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
+ * or implied. See the License for the specific language governing permissions and limitations under
+ * the License.
+ */
 package com.google.cloud.bigtable.admin.v2.models;
 
+import java.util.concurrent.TimeUnit;
 import javax.annotation.Nonnull;
+import org.threeten.bp.Duration;
 import com.google.bigtable.admin.v2.GcRule;
-import com.google.common.base.Preconditions;
-import com.google.protobuf.Duration;
 
 public final class GCRules {
   public static final GCRules GCRULES = new GCRules();
-  
+
   private GCRules() {}
-  
+
   public IntersectionRule intersection() {
     return new IntersectionRule();
   }
@@ -18,26 +31,36 @@ public final class GCRules {
     return new UnionRule();
   }
 
-  public VersionRule versions() {
-    return new VersionRule();
+  public VersionRule maxVersions(int maxVersion) {
+    return new VersionRule(maxVersion);
   }
-  
-  public DurationRule age() {
-    return new DurationRule();
+
+  public DurationRule maxAge(long maxAge, TimeUnit timeUnit) {
+    Duration duration = Duration.ZERO;
+    TimeUnit.SECONDS.convert(maxAge, timeUnit);
+    return maxAge(duration);
+  }
+
+  public DurationRule maxAge(Duration duration) {
+    return new DurationRule(duration);
+  }
+
+  public DefaultRule defaulRule() {
+    return new DefaultRule();
   }
 
   public static final class IntersectionRule implements GCRule {
     private GcRule.Intersection.Builder builder;
-    
+
     private IntersectionRule() {
       this.builder = GcRule.Intersection.newBuilder();
     }
-    
+
     public IntersectionRule rule(@Nonnull GCRule rule) {
       builder.addRules(rule.toProto());
       return this;
     }
-    
+
     @Override
     public GcRule toProto() {
       switch (builder.getRulesCount()) {
@@ -50,14 +73,14 @@ public final class GCRules {
       }
     }
   }
-  
+
   public static final class UnionRule implements GCRule {
     private GcRule.Union.Builder builder;
-    
+
     private UnionRule() {
       this.builder = GcRule.Union.newBuilder();
     }
-    
+
     public UnionRule rule(@Nonnull GCRule rule) {
       builder.addRules(rule.toProto());
       return this;
@@ -77,16 +100,11 @@ public final class GCRules {
   }
 
   public static final class VersionRule implements GCRule {
-    private GcRule.Builder builder ;
-    
-    private VersionRule() {
-     this.builder = GcRule.newBuilder();
-    }
-    
-    public VersionRule maxNum(int value) {
-      Preconditions.checkNotNull(value);
-      builder.setMaxNumVersions(value);
-      return this;
+    private GcRule.Builder builder;
+
+    private VersionRule(int maxVersion) {
+      this.builder = GcRule.newBuilder();
+      builder.setMaxNumVersions(maxVersion);
     }
 
     @Override
@@ -96,22 +114,13 @@ public final class GCRules {
   }
 
   public static final class DurationRule implements GCRule {
-    private Duration.Builder builder;
-    
-    private DurationRule() {
-      this.builder = Duration.newBuilder();
-    }
-    
-    public DurationRule seconds(long value) {
-      Preconditions.checkNotNull(value);
-      builder.setSeconds(value);
-      return this;
-    }
+    private com.google.protobuf.Duration.Builder builder;
 
-    public DurationRule nanos(int value) {
-      Preconditions.checkNotNull(value);
-      builder.setNanos(value);
-      return this;
+    private DurationRule(Duration duration) {
+      this.builder =
+          com.google.protobuf.Duration.newBuilder()
+              .setSeconds(duration.getSeconds())
+              .setNanos(duration.getNano());
     }
 
     @Override
@@ -120,7 +129,16 @@ public final class GCRules {
     }
   }
 
-  interface GCRule extends Cloneable {
+  public static final class DefaultRule implements GCRule {
+    private DefaultRule() {}
+
+    @Override
+    public GcRule toProto() {
+      return GcRule.getDefaultInstance();
+    }
+  }
+
+  interface GCRule {
     GcRule toProto();
   }
 }

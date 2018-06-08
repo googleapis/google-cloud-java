@@ -1,3 +1,16 @@
+/*
+ * Copyright 2018 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License. You may obtain a copy of the License at
+ *
+ * https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under the License
+ * is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
+ * or implied. See the License for the specific language governing permissions and limitations under
+ * the License.
+ */
 package com.google.cloud.bigtable.admin.v2;
 
 import java.io.IOException;
@@ -22,6 +35,8 @@ import com.google.bigtable.admin.v2.Table;
 import com.google.bigtable.admin.v2.TableName;
 import com.google.cloud.bigtable.admin.v2.models.TableAdminRequests.CreateTable;
 import com.google.cloud.bigtable.admin.v2.models.TableAdminRequests.ModifyFamilies;
+import com.google.cloud.bigtable.admin.v2.models.TableAdminResponses;
+import com.google.cloud.bigtable.admin.v2.models.TableAdminResponses.TableResponse;
 import com.google.cloud.bigtable.admin.v2.stub.BigtableTableAdminStub;
 import com.google.cloud.bigtable.admin.v2.stub.BigtableTableAdminStubSettings;
 import com.google.common.annotations.VisibleForTesting;
@@ -29,6 +44,7 @@ import com.google.common.base.Preconditions;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
 
+/** Table admin client for creating and configuring Bigtable tables. */
 public class TableAdminClient implements AutoCloseable {
   private final BigtableTableAdminStub stub;
   private final InstanceName instanceName;
@@ -37,8 +53,8 @@ public class TableAdminClient implements AutoCloseable {
     return new TableAdminClient(instanceName, BigtableTableAdminSettings.newBuilder().build());
   }
 
-  public static TableAdminClient create(InstanceName instanceName,
-      BigtableTableAdminSettings adminSettings) throws IOException {
+  public static TableAdminClient create(
+      InstanceName instanceName, BigtableTableAdminSettings adminSettings) throws IOException {
     return new TableAdminClient(instanceName, adminSettings);
   }
 
@@ -47,23 +63,19 @@ public class TableAdminClient implements AutoCloseable {
     return new TableAdminClient(instanceName, stub);
   }
 
-  public TableAdminClient(InstanceName instanceName, BigtableTableAdminSettings adminSettings)
+  private TableAdminClient(InstanceName instanceName, BigtableTableAdminSettings adminSettings)
       throws IOException {
-    this(instanceName,
-         ((BigtableTableAdminStubSettings) adminSettings.getStubSettings()).createStub());
+    this(
+        instanceName,
+        ((BigtableTableAdminStubSettings) adminSettings.getStubSettings()).createStub());
   }
 
-  public TableAdminClient(InstanceName instanceName, BigtableTableAdminStub stub)
+  private TableAdminClient(InstanceName instanceName, BigtableTableAdminStub stub)
       throws IOException {
     Preconditions.checkNotNull(instanceName);
     Preconditions.checkNotNull(stub);
     this.instanceName = instanceName;
     this.stub = stub;
-  }
-
-  @SuppressWarnings("unused")
-  private BigtableTableAdminStub getTableAdminStub() {
-    return stub;
   }
 
   public InstanceName getInstanceName() {
@@ -75,84 +87,112 @@ public class TableAdminClient implements AutoCloseable {
     stub.close();
   }
 
-  public Table createTable(CreateTable createTable) {
-    return this.stub.createTableCallable().call(createTable.toProto(instanceName.toString()));
+  public TableResponse createTable(CreateTable createTable) {
+    Table table = this.stub.createTableCallable().call(createTable.toProto(instanceName));
+    return TableAdminResponses.convertTable(table);
   }
 
-  public ApiFuture<Table> createTableAsync(CreateTable createTable) {
-    return this.stub.createTableCallable().futureCall(createTable.toProto(instanceName.toString()));
+  public ApiFuture<TableResponse> createTableAsync(CreateTable createTable) {
+    return transformToTableResponse(
+        this.stub.createTableCallable().futureCall(createTable.toProto(instanceName)));
   }
 
-  public Table modifyFamilies(ModifyFamilies modifyFamily) {
+  public TableResponse modifyFamilies(ModifyFamilies modifyFamily) {
     ModifyColumnFamiliesRequest modReq =
-        modifyFamily.toProto(getUniqueTableName(modifyFamily.getTableId()));
-    return this.stub.modifyColumnFamiliesCallable().call(modReq);
+        modifyFamily.toProto(getTableName(modifyFamily.getTableId()));
+    Table table = this.stub.modifyColumnFamiliesCallable().call(modReq);
+    return TableAdminResponses.convertTable(table);
   }
 
-  public ApiFuture<Table> modifyFamiliesAsync(ModifyFamilies modifyFamily) {
+  public ApiFuture<TableResponse> modifyFamiliesAsync(ModifyFamilies modifyFamily) {
     ModifyColumnFamiliesRequest modReq =
-        modifyFamily.toProto(getUniqueTableName(modifyFamily.getTableId()));
-    return this.stub.modifyColumnFamiliesCallable().futureCall(modReq);
+        modifyFamily.toProto(getTableName(modifyFamily.getTableId()));
+    return transformToTableResponse(this.stub.modifyColumnFamiliesCallable().futureCall(modReq));
   }
 
   public void deleteTable(String tableId) {
-    this.stub.deleteTableCallable().call(getDeleteTableRequest(tableId));
+    this.stub.deleteTableCallable().call(composeDeleteTableRequest(tableId));
   }
 
-  public ApiFuture<Empty> deleteTableAsync(String tableId) {
-    return this.stub.deleteTableCallable().futureCall(getDeleteTableRequest(tableId));
+  public ApiFuture<Void> deleteTableAsync(String tableId) {
+    return transformToVoid(
+        this.stub.deleteTableCallable().futureCall(composeDeleteTableRequest(tableId)));
   }
 
-  public Table getTable(String tableId) {
-    return this.stub.getTableCallable().call(getGetTableRequest(tableId));
+  public TableResponse getTable(String tableId) {
+    Table table = this.stub.getTableCallable().call(composeGetTableRequest(tableId));
+    return TableAdminResponses.convertTable(table);
   }
 
-  public ApiFuture<Table> getTableAsync(String tableId) {
-    return this.stub.getTableCallable().futureCall(getGetTableRequest(tableId));
+  public ApiFuture<TableResponse> getTableAsync(String tableId) {
+    return transformToTableResponse(
+        this.stub.getTableCallable().futureCall(composeGetTableRequest(tableId)));
   }
 
   public List<TableName> listTables() {
-    ListTablesResponse listResp = this.stub.listTablesCallable().call(getListTableRequest());
-    return convert(listResp);
+    ListTablesResponse listResp = this.stub.listTablesCallable().call(composeListTableRequest());
+    return convertToTableNames(listResp);
   }
 
   public ApiFuture<List<TableName>> listTablesAsync() {
     ApiFuture<ListTablesResponse> listResp =
-        this.stub.listTablesCallable().futureCall(getListTableRequest());
+        this.stub.listTablesCallable().futureCall(composeListTableRequest());
 
-    return ApiFutures.transform(listResp, new ApiFunction<ListTablesResponse, List<TableName>>() {
-      @Override
-      public List<TableName> apply(ListTablesResponse input) {
-        return convert(input);
-      }
-    });
+    return ApiFutures.transform(
+        listResp,
+        new ApiFunction<ListTablesResponse, List<TableName>>() {
+          @Override
+          public List<TableName> apply(ListTablesResponse input) {
+            return convertToTableNames(input);
+          }
+        });
   }
 
-  /**
-   * Drops rows by prefix. If prefix is "*" drops all data
-   * 
-   * @param tableId
-   * @param rowKeyPrefix
-   */
   public void dropRowRange(String tableId, String rowKeyPrefix) {
-    this.stub.dropRowRangeCallable().call(getDropRowRangeRequest(tableId, rowKeyPrefix));
+    dropRowRange(tableId, ByteString.copyFromUtf8(rowKeyPrefix));
   }
 
-  public ApiFuture<Empty> dropRowRangeAsync(String tableId, String rowKeyPrefix) {
-    return this.stub.dropRowRangeCallable()
-                    .futureCall(getDropRowRangeRequest(tableId, rowKeyPrefix));
+  public ApiFuture<Void> dropRowRangeAsync(String tableId, String rowKeyPrefix) {
+    return dropRowRangeAsync(tableId, ByteString.copyFromUtf8(rowKeyPrefix));
   }
 
-  public String GenerateConsistencyToken(String tableId) {
-    return this.stub.generateConsistencyTokenCallable().call(getGenConsistencyToken(tableId))
-                    .getConsistencyToken();
+  public void dropAllData(String tableId) {
+    this.stub.dropRowRangeCallable().call(composeDropRowRangeRequest(tableId, null, true));
+  }
+
+  public ApiFuture<Void> dropAllDataAsync(String tableId) {
+    return transformToVoid(
+        this.stub
+            .dropRowRangeCallable()
+            .futureCall(composeDropRowRangeRequest(tableId, null, true)));
+  }
+
+  public void dropRowRange(String tableId, ByteString rowKeyPrefix) {
+    this.stub.dropRowRangeCallable().call(composeDropRowRangeRequest(tableId, rowKeyPrefix, false));
+  }
+
+  public ApiFuture<Void> dropRowRangeAsync(String tableId, ByteString rowKeyPrefix) {
+    return transformToVoid(
+        this.stub
+            .dropRowRangeCallable()
+            .futureCall(composeDropRowRangeRequest(tableId, rowKeyPrefix, false)));
+  }
+
+  public String generateConsistencyToken(String tableId) {
+    return this.stub
+        .generateConsistencyTokenCallable()
+        .call(composeGenerateConsistencyTokenRequest(tableId))
+        .getConsistencyToken();
   }
 
   public ApiFuture<String> generateConsistencyTokenAsync(String tableId) {
     ApiFuture<GenerateConsistencyTokenResponse> tokenResp =
-        this.stub.generateConsistencyTokenCallable().futureCall(getGenConsistencyToken(tableId));
+        this.stub
+            .generateConsistencyTokenCallable()
+            .futureCall(composeGenerateConsistencyTokenRequest(tableId));
 
-    return ApiFutures.transform(tokenResp,
+    return ApiFutures.transform(
+        tokenResp,
         new ApiFunction<GenerateConsistencyTokenResponse, String>() {
           @Override
           public String apply(GenerateConsistencyTokenResponse input) {
@@ -162,15 +202,17 @@ public class TableAdminClient implements AutoCloseable {
   }
 
   public boolean isConsistent(String tableId, String token) {
-    return stub.checkConsistencyCallable().call(getCheckConsistencyRequest(tableId, token))
-               .getConsistent();
+    return stub.checkConsistencyCallable()
+        .call(composeCheckConsistencyRequest(tableId, token))
+        .getConsistent();
   }
 
   public ApiFuture<Boolean> isConsistentAsync(String tableId, String token) {
     ApiFuture<CheckConsistencyResponse> CheckConsResp =
-        stub.checkConsistencyCallable().futureCall(getCheckConsistencyRequest(tableId, token));
+        stub.checkConsistencyCallable().futureCall(composeCheckConsistencyRequest(tableId, token));
 
-    return ApiFutures.transform(CheckConsResp,
+    return ApiFutures.transform(
+        CheckConsResp,
         new ApiFunction<CheckConsistencyResponse, Boolean>() {
           @Override
           public Boolean apply(CheckConsistencyResponse input) {
@@ -180,58 +222,82 @@ public class TableAdminClient implements AutoCloseable {
   }
 
   @VisibleForTesting
-  String getUniqueTableName(String tableId) {
+  String getTableName(String tableId) {
     return TableName.of(instanceName.getProject(), instanceName.getInstance(), tableId).toString();
   }
 
   @VisibleForTesting
-  ListTablesRequest getListTableRequest() {
+  ListTablesRequest composeListTableRequest() {
     return ListTablesRequest.newBuilder().setParent(instanceName.toString()).build();
   }
 
   @VisibleForTesting
-  GetTableRequest getGetTableRequest(String tableId) {
-    return GetTableRequest.newBuilder().setName(getUniqueTableName(tableId)).build();
+  GetTableRequest composeGetTableRequest(String tableId) {
+    return GetTableRequest.newBuilder().setName(getTableName(tableId)).build();
   }
 
   @VisibleForTesting
-  DeleteTableRequest getDeleteTableRequest(String tableId) {
-    return DeleteTableRequest.newBuilder().setName(getUniqueTableName(tableId)).build();
+  DeleteTableRequest composeDeleteTableRequest(String tableId) {
+    return DeleteTableRequest.newBuilder().setName(getTableName(tableId)).build();
   }
 
   @VisibleForTesting
-  DropRowRangeRequest getDropRowRangeRequest(String tableId, String rowKeyPrefix) {
-    Builder dropRowReq = DropRowRangeRequest.newBuilder().setName(getUniqueTableName(tableId));
+  DropRowRangeRequest composeDropRowRangeRequest(
+      String tableId, ByteString rowKeyPrefix, boolean dropAll) {
+    Builder dropRowReq = DropRowRangeRequest.newBuilder().setName(getTableName(tableId));
 
-    // TODO: verify if Utf8String and ByteString are equivalent
-    // and if using "*" prefix as special case to invoke deletAll approach is reasonable
-    if ("*".equals(rowKeyPrefix)) {
+    if (dropAll) {
       dropRowReq.setDeleteAllDataFromTable(true);
     } else {
-      dropRowReq.setRowKeyPrefix(ByteString.copyFromUtf8(rowKeyPrefix));
+      dropRowReq.setRowKeyPrefix(rowKeyPrefix);
     }
     return dropRowReq.build();
   }
 
   @VisibleForTesting
-  GenerateConsistencyTokenRequest getGenConsistencyToken(String tableId) {
-    return GenerateConsistencyTokenRequest.newBuilder().setName(getUniqueTableName(tableId))
-                                          .build();
+  GenerateConsistencyTokenRequest composeGenerateConsistencyTokenRequest(String tableId) {
+    return GenerateConsistencyTokenRequest.newBuilder().setName(getTableName(tableId)).build();
   }
 
   @VisibleForTesting
-  CheckConsistencyRequest getCheckConsistencyRequest(String tableId, String token) {
-    return CheckConsistencyRequest.newBuilder().setName(getUniqueTableName(tableId))
-                                  .setConsistencyToken(token).build();
+  CheckConsistencyRequest composeCheckConsistencyRequest(String tableId, String token) {
+    return CheckConsistencyRequest.newBuilder()
+        .setName(getTableName(tableId))
+        .setConsistencyToken(token)
+        .build();
   }
 
   @VisibleForTesting
-  static List<TableName> convert(ListTablesResponse listTablesResponse) {
+  static List<TableName> convertToTableNames(ListTablesResponse listTablesResponse) {
     List<TableName> tableNames = new ArrayList<>();
 
     for (Table table : listTablesResponse.getTablesList()) {
       tableNames.add(TableName.parse(table.getName()));
     }
     return tableNames;
+  }
+
+  @VisibleForTesting
+  static ApiFuture<TableResponse> transformToTableResponse(ApiFuture<Table> future) {
+    return ApiFutures.transform(
+        future,
+        new ApiFunction<Table, TableResponse>() {
+          @Override
+          public TableResponse apply(Table table) {
+            return TableAdminResponses.convertTable(table);
+          }
+        });
+  }
+
+  @VisibleForTesting
+  static ApiFuture<Void> transformToVoid(ApiFuture<Empty> future) {
+    return ApiFutures.transform(
+        future,
+        new ApiFunction<Empty, Void>() {
+          @Override
+          public Void apply(Empty empty) {
+            return null;
+          }
+        });
   }
 }
