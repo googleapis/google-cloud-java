@@ -16,6 +16,9 @@
 
 package com.google.cloud.spanner;
 
+import com.google.api.gax.grpc.GrpcInterceptorProvider;
+import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
+import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.cloud.ServiceDefaults;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.ServiceRpc;
@@ -23,7 +26,6 @@ import com.google.cloud.TransportOptions;
 import com.google.cloud.grpc.GrpcTransportOptions;
 import com.google.cloud.spanner.spi.SpannerRpcFactory;
 import com.google.cloud.spanner.spi.v1.GapicSpannerRpc;
-import com.google.cloud.spanner.spi.v1.GrpcSpannerRpc;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
@@ -53,7 +55,8 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
           "https://www.googleapis.com/auth/spanner.admin",
           "https://www.googleapis.com/auth/spanner.data");
   private static final int MAX_CHANNELS = 256;
-  private static final RpcChannelFactory DEFAULT_RPC_CHANNEL_FACTORY = new NettyRpcChannelFactory();
+  private static final int MAX_MESSAGE_SIZE = 100 * 1024 * 1024;
+  private static final int MAX_HEADER_LIST_SIZE = 32 * 1024; //bytes
 
   /** Default implementation of {@code SpannerFactory}. */
   private static class DefaultSpannerFactory implements SpannerFactory {
@@ -71,11 +74,12 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
 
     @Override
     public ServiceRpc create(SpannerOptions options) {
-      return new GrpcSpannerRpc(options);
+      return new GapicSpannerRpc(options);
     }
   }
 
-  private final List<ManagedChannel> rpcChannels;
+  private final TransportChannelProvider channelProvider;
+  private final GrpcInterceptorProvider interceptorProvider;
   private final SessionPoolOptions sessionPoolOptions;
   private final int prefetchChunks;
   private final int numChannels;
@@ -83,17 +87,15 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
 
   private SpannerOptions(Builder builder) {
     super(SpannerFactory.class, SpannerRpcFactory.class, builder, new SpannerDefaults());
-    numChannels = builder.numChannels;
-    String userAgent = getUserAgent();
-    RpcChannelFactory defaultRpcChannelFactory =
-        userAgent == null
-            ? DEFAULT_RPC_CHANNEL_FACTORY
-            : new NettyRpcChannelFactory(userAgent);
-    rpcChannels =
-        createChannels(
-            getHost(),
-            MoreObjects.firstNonNull(builder.rpcChannelFactory, defaultRpcChannelFactory),
-            numChannels);
+      numChannels = builder.numChannels;
+      Preconditions.checkArgument(
+        numChannels >= 1 && numChannels <= MAX_CHANNELS,
+        "Number of channels must fall in the range [1, %s], found: %s",
+        MAX_CHANNELS,
+        numChannels);
+
+    channelProvider = builder.channelProvider;
+    interceptorProvider = builder.interceptorProvider;
     sessionPoolOptions =
         builder.sessionPoolOptions != null
             ? builder.sessionPoolOptions
@@ -107,10 +109,11 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
       extends ServiceOptions.Builder<
       Spanner, SpannerOptions, SpannerOptions.Builder> {
     private static final int DEFAULT_PREFETCH_CHUNKS = 4;
-    private RpcChannelFactory rpcChannelFactory;
+    private TransportChannelProvider channelProvider;
+    private GrpcInterceptorProvider interceptorProvider;
+
     /** By default, we create 4 channels per {@link SpannerOptions} */
     private int numChannels = 4;
-
     private int prefetchChunks = DEFAULT_PREFETCH_CHUNKS;
     private SessionPoolOptions sessionPoolOptions;
     private ImmutableMap<String, String> sessionLabels;
@@ -123,6 +126,8 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
       this.sessionPoolOptions = options.sessionPoolOptions;
       this.prefetchChunks = options.prefetchChunks;
       this.sessionLabels = options.sessionLabels;
+      this.channelProvider = options.channelProvider;
+      this.interceptorProvider = options.interceptorProvider;
     }
 
     @Override
@@ -134,9 +139,21 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
       return super.setTransportOptions(transportOptions);
     }
 
-    /** Sets the factory for creating gRPC channels. If not set, a default will be used. */
-    public Builder setRpcChannelFactory(RpcChannelFactory factory) {
-      this.rpcChannelFactory = factory;
+    /**
+     * Sets the {@code ChannelProvider}. {@link GapicSpannerRpc} would create a default 
+     * one if none is provided.
+     */
+    public Builder setChannelProvider(TransportChannelProvider channelProvider) {
+      this.channelProvider = channelProvider;
+      return this;
+    }
+
+    /**
+     * Sets the {@code GrpcInterceptorProvider}. {@link GapicSpannerRpc} would create 
+     * a default one if none is provided.
+     */
+    public Builder setInterceptorProvider(GrpcInterceptorProvider interceptorProvider) {
+      this.interceptorProvider = interceptorProvider;
       return this;
     }
 
@@ -197,14 +214,6 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     }
   }
 
-  /**
-   * Interface for gRPC channel creation. Most users won't need to use this, as the default covers
-   * typical deployment scenarios.
-   */
-  public interface RpcChannelFactory {
-    ManagedChannel newChannel(String host, int port);
-  }
-
   /** Returns default instance of {@code SpannerOptions}. */
   public static SpannerOptions getDefaultInstance() {
     return newBuilder().build();
@@ -214,8 +223,12 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     return new Builder();
   }
 
-  public List<ManagedChannel> getRpcChannels() {
-    return rpcChannels;
+  public TransportChannelProvider getChannelProvider() {
+    return channelProvider;
+  }
+
+  public GrpcInterceptorProvider getInterceptorProvider() {
+    return interceptorProvider;
   }
 
   public int getNumChannels() {
@@ -238,86 +251,9 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     return GrpcTransportOptions.newBuilder().build();
   }
 
-  /**
-   * Returns the default RPC channel factory used when none is specified. This may be useful for
-   * callers that wish to add interceptors to gRPC channels used by the Cloud Spanner client
-   * library.
-   */
-  public static RpcChannelFactory getDefaultRpcChannelFactory() {
-    return DEFAULT_RPC_CHANNEL_FACTORY;
-  }
-
   @Override
   protected String getDefaultHost() {
     return DEFAULT_HOST;
-  }
-
-  private static List<ManagedChannel> createChannels(
-      String rootUrl, RpcChannelFactory factory, int numChannels) {
-    Preconditions.checkArgument(
-        numChannels >= 1 && numChannels <= MAX_CHANNELS,
-        "Number of channels must fall in the range [1, %s], found: %s",
-        MAX_CHANNELS,
-        numChannels);
-    ImmutableList.Builder<ManagedChannel> builder = ImmutableList.builder();
-    for (int i = 0; i < numChannels; i++) {
-      builder.add(createChannel(rootUrl, factory));
-    }
-    return builder.build();
-  }
-
-  private static ManagedChannel createChannel(String rootUrl, RpcChannelFactory factory) {
-    URL url;
-    try {
-      url = new URL(rootUrl);
-    } catch (MalformedURLException e) {
-      throw new IllegalArgumentException("Invalid host: " + rootUrl, e);
-    }
-    ManagedChannel channel =
-        factory.newChannel(url.getHost(), url.getPort() > 0 ? url.getPort() : url.getDefaultPort());
-    return channel;
-  }
-
-  static class NettyRpcChannelFactory implements RpcChannelFactory {
-    private static final int MAX_MESSAGE_SIZE = 100 * 1024 * 1024;
-    private static final int MAX_HEADER_LIST_SIZE = 32 * 1024; //bytes
-    private final String userAgent;
-    private final List<ClientInterceptor> interceptors;
-
-    NettyRpcChannelFactory() {
-      this(null);
-    }
-
-    NettyRpcChannelFactory(String userAgent) {
-      this(userAgent, ImmutableList.<ClientInterceptor>of());
-    }
-
-    NettyRpcChannelFactory(String userAgent, List<ClientInterceptor> interceptors) {
-      this.userAgent = userAgent;
-      this.interceptors = interceptors;
-    }
-
-    @Override
-    public ManagedChannel newChannel(String host, int port) {
-      NettyChannelBuilder builder =
-          NettyChannelBuilder.forAddress(host, port)
-            .sslContext(newSslContext())
-            .intercept(interceptors)
-            .maxHeaderListSize(MAX_HEADER_LIST_SIZE)
-            .maxMessageSize(MAX_MESSAGE_SIZE);
-      if (userAgent != null) {
-        builder.userAgent(userAgent);
-      }
-      return builder.build();
-    }
-
-    private static SslContext newSslContext() {
-      try {
-        return GrpcSslContexts.forClient().ciphers(null).build();
-      } catch (SSLException e) {
-        throw new RuntimeException("SSL configuration failed: " + e.getMessage(), e);
-      }
-    }
   }
 
   private static class SpannerDefaults implements
@@ -346,10 +282,6 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
 
   protected SpannerRpc getSpannerRpcV1() {
     return (SpannerRpc) getRpc();
-  }
-
-  protected SpannerRpc getGapicSpannerRpc() {
-    return GapicSpannerRpc.create(this);
   }
 
   @SuppressWarnings("unchecked")

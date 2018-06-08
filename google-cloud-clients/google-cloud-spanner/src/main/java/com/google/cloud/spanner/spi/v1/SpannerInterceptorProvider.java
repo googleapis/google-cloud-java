@@ -16,6 +16,7 @@
 package com.google.cloud.spanner.spi.v1;
 
 import com.google.api.gax.grpc.GrpcInterceptorProvider;
+import com.google.common.annotations.VisibleForTesting;
 import com.google.common.collect.ImmutableList;
 import io.grpc.ClientInterceptor;
 import java.util.List;
@@ -23,20 +24,39 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * For internal use only. 
- * An interceptor provider that provides a list of grpc interceptors for {@code GapicSpannerRpc}
- * to handle logging and error augmentation by intercepting grpc calls.
+ * For internal use only. An interceptor provider that provides a list of grpc interceptors for
+ * {@code GapicSpannerRpc} to handle logging and error augmentation by intercepting grpc calls.
  */
-class SpannerInterceptorProvider implements GrpcInterceptorProvider {
+@VisibleForTesting
+public class SpannerInterceptorProvider implements GrpcInterceptorProvider {
 
-  private static final List<ClientInterceptor> clientInterceptors =
+  private static final List<ClientInterceptor> defaultInterceptors =
       ImmutableList.of(
           new SpannerErrorInterceptor(),
-          new LoggingInterceptor(Logger.getLogger(GrpcSpannerRpc.class.getName()), Level.FINER));
+          new LoggingInterceptor(Logger.getLogger(GapicSpannerRpc.class.getName()), Level.FINER),
+          WatchdogInterceptor.newDefaultWatchdogInterceptor());
+
+  private final List<ClientInterceptor> clientInterceptors;
+
+  private SpannerInterceptorProvider(List<ClientInterceptor> clientInterceptors) {
+    this.clientInterceptors = clientInterceptors;
+  }
+
+  public static SpannerInterceptorProvider createDefault() {
+    return new SpannerInterceptorProvider(defaultInterceptors);
+  }
+
+  public SpannerInterceptorProvider with(ClientInterceptor clientInterceptor) {
+    List<ClientInterceptor> interceptors =
+        ImmutableList.<ClientInterceptor>builder()
+            .addAll(this.clientInterceptors)
+            .add(clientInterceptor)
+            .build();
+    return new SpannerInterceptorProvider(interceptors);
+  }
 
   @Override
   public List<ClientInterceptor> getInterceptors() {
     return clientInterceptors;
   }
-
 }

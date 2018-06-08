@@ -39,14 +39,6 @@ public class SpannerOptionsTest {
   @Rule
   public ExpectedException thrown = ExpectedException.none();
 
-  private static class TestChannelFactory implements SpannerOptions.RpcChannelFactory {
-    @Override
-    public ManagedChannel newChannel(String host, int port) {
-      // Disable SSL to avoid a dependency on ALPN/NPN.
-      return NettyChannelBuilder.forAddress(host, port).usePlaintext(true).build();
-    }
-  }
-
   @Test
   public void defaultBuilder() {
     // We need to set the project id since in test environment we cannot obtain a default project
@@ -54,7 +46,6 @@ public class SpannerOptionsTest {
     SpannerOptions options =
         SpannerOptions.newBuilder()
             .setProjectId("test-project")
-            .setRpcChannelFactory(new TestChannelFactory())
             .build();
     assertThat(options.getHost()).isEqualTo("https://spanner.googleapis.com");
     assertThat(options.getPrefetchChunks()).isEqualTo(4);
@@ -69,7 +60,6 @@ public class SpannerOptionsTest {
     labels.put("env", "dev");
     SpannerOptions options =
         SpannerOptions.newBuilder()
-            .setRpcChannelFactory(new TestChannelFactory())
             .setHost(host)
             .setProjectId(projectId)
             .setPrefetchChunks(2)
