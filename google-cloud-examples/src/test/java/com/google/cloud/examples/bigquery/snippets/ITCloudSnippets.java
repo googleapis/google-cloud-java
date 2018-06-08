@@ -127,4 +127,18 @@ public class ITCloudSnippets {
     assertTrue(got.contains("DONE"));
     assertTrue(got.contains("Loaded 50 rows."));
   }
+
+  @Test
+  public void testCopyTables() throws InterruptedException {
+    cloudSnippets.copyTables(DATASET, "copytablesdestination");
+    String got = bout.toString();
+    assertTrue(got.contains("DONE"));
+  }
+
+  @Test
+  public void testUndeleteTable() throws InterruptedException {
+    cloudSnippets.undeleteTable(DATASET);
+    String got = bout.toString();
+    assertTrue(got.contains("DONE"));
+  }
 }

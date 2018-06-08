@@ -17,6 +17,7 @@
 package com.google.cloud.examples.bigquery.snippets;
 
 import com.google.cloud.bigquery.BigQuery;
+import com.google.cloud.bigquery.CopyJobConfiguration;
 import com.google.cloud.bigquery.FieldValue;
 import com.google.cloud.bigquery.FieldValueList;
 import com.google.cloud.bigquery.FormatOptions;
@@ -27,9 +28,13 @@ import com.google.cloud.bigquery.QueryJobConfiguration;
 import com.google.cloud.bigquery.QueryParameterValue;
 import com.google.cloud.bigquery.StandardTableDefinition;
 import com.google.cloud.bigquery.TableId;
+
+import java.util.Arrays;
 import java.util.concurrent.TimeoutException;
+
 import org.joda.time.DateTime;
 import org.joda.time.DateTimeZone;
+import org.joda.time.Instant;
 import org.joda.time.format.DateTimeFormatter;
 import org.joda.time.format.ISODateTimeFormat;
 
@@ -308,5 +313,85 @@ public class CloudSnippets {
     System.out.println("State: " + loadJob.getStatus().getState());
     System.out.printf("Loaded %d rows.\n", destinationTable.getNumRows());
     // [END bigquery_load_table_gcs_parquet]
+  }
+
+  private void generateTableWithDdl(String datasetId, String tableId) throws InterruptedException {
+    String sql = String.format(
+        "CREATE TABLE %s.%s " +
+        "AS " +
+        "SELECT " +
+        "2000 + CAST(18 * RAND() as INT64) AS year, " +
+        "IF(RAND() > 0.5,\"foo\",\"bar\") AS token " +
+        "FROM " +
+        "UNNEST(GENERATE_ARRAY(0,5,1)) AS r", datasetId, tableId);
+    Job job = bigquery.create(JobInfo.of(QueryJobConfiguration.newBuilder(sql).build()));
+    job.waitFor();
+  }
+
+  /**
+   * Example of copying multiple tables to a destination.
+   */
+  public void copyTables(String datasetId, String destinationTableId) throws InterruptedException {
+    generateTableWithDdl(datasetId, "table1");
+    generateTableWithDdl(datasetId, "table2");
+
+    // [START bigquery_copy_table_multiple_source]
+    TableId destinationTable = TableId.of(datasetId, destinationTableId);
+    CopyJobConfiguration configuration =
+        CopyJobConfiguration.newBuilder(
+            destinationTable,
+            Arrays.asList(
+                TableId.of(datasetId, "table1"),
+                TableId.of(datasetId, "table2")))
+        .build();
+
+    // Copy the tables.
+    Job job = bigquery.create(JobInfo.of(configuration));
+    job = job.waitFor();
+
+    // Check the table
+    StandardTableDefinition table = bigquery.getTable(destinationTable).getDefinition();
+    System.out.println("State: " + job.getStatus().getState());
+    System.out.printf("Copied %d rows.\n", table.getNumRows());
+    // [END bigquery_copy_table_multiple_source]
+  }
+
+  /**
+   * Example of undeleting a table.
+   */
+  public void undeleteTable(String datasetId) throws InterruptedException {
+    generateTableWithDdl(datasetId, "oops_undelete_me");
+
+    // [START bigquery_undelete_table]
+    // String datasetId = "my_dataset";
+    String tableId = "oops_undelete_me";
+
+    // Record the current time.  We'll use this as the snapshot time
+    // for recovering the table.
+    long snapTime = Instant.now().getMillis();
+
+    // "Accidentally" delete the table.
+    bigquery.delete(TableId.of(datasetId, tableId));
+
+    // Construct the restore-from tableID using a snapshot decorator.
+    String snapshotTableId = String.format("%s@%d", tableId, snapTime);
+    // Choose a new table ID for the recovered table data.
+    String recoverTableId = String.format("%s_recovered", tableId);
+
+    // Construct and run a copy job.
+    CopyJobConfiguration configuration =
+        CopyJobConfiguration.newBuilder(
+            TableId.of(datasetId, recoverTableId),
+            TableId.of(datasetId, snapshotTableId))
+        .build();
+    Job job = bigquery.create(JobInfo.of(configuration));
+    job = job.waitFor();
+
+    // Check the table
+    StandardTableDefinition table = bigquery.getTable(
+            TableId.of(datasetId, recoverTableId)).getDefinition();
+    System.out.println("State: " + job.getStatus().getState());
+    System.out.printf("Recovered %d rows.\n", table.getNumRows());
+    // [END bigquery_undelete_table]
   }
 }
