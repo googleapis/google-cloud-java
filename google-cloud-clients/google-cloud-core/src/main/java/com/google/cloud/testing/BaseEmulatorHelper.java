@@ -404,8 +404,13 @@ public abstract class BaseEmulatorHelper<T extends ServiceOptions> {
           log.fine("Unzipping emulator");
         }
         ZipEntry entry = zipIn.getNextEntry();
-        while (entry != null) {
-          File filePath = new File(emulatorPath.toFile(), entry.getName());
+        while (entry != null) { 
+          File filePath = new File(emulatorFolder, entry.getName());
+          String canonicalEmulatorFolderPath = emulatorFolder.getCanonicalPath();
+          String canonicalFilePath = filePath.getCanonicalPath();
+          if (!canonicalFilePath.startsWith(canonicalEmulatorFolderPath + File.separator)) {
+            throw new IllegalStateException("Entry is outside of the target dir: " + entry.getName());
+          }
           if (!entry.isDirectory()) {
             extractFile(zipIn, filePath);
           } else {
