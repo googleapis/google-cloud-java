@@ -49,6 +49,11 @@ public abstract class ValueBinder<R> {
    */
   abstract R handle(Value value);
 
+  /** Binds a {@link Value} */
+  public R to(Value value) {
+    return handle(value);
+  }
+
   /** Binds to {@code Value.bool(value)} */
   public R to(boolean value) {
     return handle(Value.bool(value));
@@ -97,6 +102,19 @@ public abstract class ValueBinder<R> {
   /** Binds to {@code Value.date(value)} */
   public R to(@Nullable Date value) {
     return handle(Value.date(value));
+  }
+
+  /** Binds a non-{@code NULL} struct value to {@code Value.struct(value)} */
+  public R to(Struct value) {
+    return handle(Value.struct(value));
+  }
+
+  /**
+   * Binds a nullable {@code Struct} reference with given {@code Type} to {@code
+   * Value.struct(type,value}
+   */
+  public R to(Type type, @Nullable Struct value) {
+    return handle(Value.struct(type, value));
   }
 
   /** Binds to {@code Value.boolArray(values)} */
@@ -162,5 +180,10 @@ public abstract class ValueBinder<R> {
   /** Binds to {@code Value.dateArray(values)} */
   public R toDateArray(@Nullable Iterable<Date> values) {
     return handle(Value.dateArray(values));
+  }
+
+  /** Binds to {@code Value.structArray(fieldTypes, values)} */
+  public R toStructArray(Type elementType, @Nullable Iterable<Struct> values) {
+    return handle(Value.structArray(elementType, values));
   }
 }

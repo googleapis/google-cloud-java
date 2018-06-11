@@ -1973,14 +1973,22 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
                 builder.set(fieldName).toDateArray((Iterable<Date>) value);
                 break;
               case STRUCT:
-                builder.add(fieldName, fieldType.getArrayElementType().getStructFields(), (Iterable<Struct>) value);
+                builder
+                    .set(fieldName)
+                    .toStructArray(fieldType.getArrayElementType(), (Iterable<Struct>) value);
                 break;
               default:
                 throw new AssertionError(
                     "Unhandled array type code: " + fieldType.getArrayElementType());
             }
             break;
-          case STRUCT: // Not a legal top-level field type.
+          case STRUCT:
+            if (value == null) {
+              builder.set(fieldName).to(fieldType, null);
+            } else {
+              builder.set(fieldName).to((Struct) value);
+            }
+            break;
           default:
             throw new AssertionError("Unhandled type code: " + fieldType.getCode());
         }
@@ -1992,6 +2000,11 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     GrpcStruct(Type type, List<Object> rowData) {
       this.type = type;
       this.rowData = rowData;
+    }
+
+    @Override
+    public String toString() {
+      return this.rowData.toString();
     }
 
     boolean consumeRow(Iterator<com.google.protobuf.Value> iterator) {
@@ -2040,10 +2053,26 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
           checkType(fieldType, proto, KindCase.LIST_VALUE);
           ListValue listValue = proto.getListValue();
           return decodeArrayValue(fieldType.getArrayElementType(), listValue);
-        case STRUCT: // Not a legal top-level field type.
+        case STRUCT:
+          checkType(fieldType, proto, KindCase.LIST_VALUE);
+          ListValue structValue = proto.getListValue();
+          return decodeStructValue(fieldType, structValue);
         default:
           throw new AssertionError("Unhandled type code: " + fieldType.getCode());
       }
+    }
+
+    private static Struct decodeStructValue(Type structType, ListValue structValue) {
+      List<Type.StructField> fieldTypes = structType.getStructFields();
+      checkArgument(
+          structValue.getValuesCount() == fieldTypes.size(),
+          "Size mismatch between type descriptor and actual values.");
+      List<Object> fields = new ArrayList<>(fieldTypes.size());
+      List<com.google.protobuf.Value> fieldValues = structValue.getValuesList();
+      for (int i = 0; i < fieldTypes.size(); ++i) {
+        fields.add(decodeValue(fieldTypes.get(i).getType(), fieldValues.get(i)));
+      }
+      return new GrpcStruct(structType, fields);
     }
 
     private static Object decodeArrayValue(Type elementType, ListValue listValue) {
@@ -2117,16 +2146,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
               if (value.getKindCase() == KindCase.NULL_VALUE) {
                 list.add(null);
               } else {
-                List<Type.StructField> fieldTypes = elementType.getStructFields();
-                List<Object> fields = new ArrayList<>(fieldTypes.size());
-                ListValue structValues = value.getListValue();
-                checkArgument(
-                    structValues.getValuesCount() == fieldTypes.size(),
-                    "Size mismatch between type descriptor and actual values.");
-                for (int i = 0; i < fieldTypes.size(); ++i) {
-                  fields.add(decodeValue(fieldTypes.get(i).getType(), structValues.getValues(i)));
-                }
-                list.add(new GrpcStruct(elementType, fields));
+                ListValue structValue = value.getListValue();
+                list.add(decodeStructValue(elementType, structValue));
               }
             }
             return list;
@@ -2197,6 +2218,11 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     @Override
     protected Date getDateInternal(int columnIndex) {
       return (Date) rowData.get(columnIndex);
+    }
+
+    @Override
+    protected Struct getStructInternal(int columnIndex) {
+      return (Struct) rowData.get(columnIndex);
     }
 
     @Override

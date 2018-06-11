@@ -56,17 +56,71 @@ public class ValueBinderTest {
       Method binderMethod = findBinderMethod(method);
       assertThat(binderMethod).named("Binder for " + method.toString()).isNotNull();
 
-      if (binderMethod.getParameterTypes().length == 1) {
+      if (method.getName().toLowerCase().contains("struct")) {
+        // Struct / Array-of-struct binding methods.
+        Struct struct = Struct.newBuilder().set("f1").to("abc").build();
+        Type structType = struct.getType();
+
+        if (binderMethod.getName().equals("toStructArray")) {
+          // Array of structs.
+          assertThat(binderMethod.getParameterTypes()).hasLength(2);
+
+          Value expected = (Value) method.invoke(Value.class, structType, Arrays.asList(struct));
+          assertThat(binderMethod.invoke(binder, structType, Arrays.asList(struct)))
+              .isEqualTo(lastReturnValue);
+          assertThat(lastValue).isEqualTo(expected);
+
+          // Test ValueBinder.to(value)
+          assertThat(binder.to(expected)).isEqualTo(lastReturnValue);
+          assertThat(lastValue).isEqualTo(expected);
+
+          // Null Array-of-structs
+          Value expectedNull = (Value) method.invoke(Value.class, structType, null);
+          assertThat(binderMethod.invoke(binder, structType, null)).isEqualTo(lastReturnValue);
+          assertThat(lastValue).isEqualTo(expectedNull);
+
+          assertThat(binder.to(expectedNull)).isEqualTo(lastReturnValue);
+          assertThat(lastValue).isEqualTo(expectedNull);
+        } else if (binderMethod.getParameterTypes().length == 2) {
+          // NULL struct.
+          assertThat(binderMethod.getParameterTypes()[0]).isEqualTo(Type.class);
+          assertThat(binderMethod.getParameterTypes()[1]).isEqualTo(Struct.class);
+
+          Value expectedNull = (Value) method.invoke(Value.class, structType, null);
+          assertThat(binderMethod.invoke(binder, structType, null)).isEqualTo(lastReturnValue);
+          assertThat(lastValue).isEqualTo(expectedNull);
+
+          assertThat(binder.to(expectedNull)).isEqualTo(lastReturnValue);
+          assertThat(lastValue).isEqualTo(expectedNull);
+        } else {
+          // non-NULL struct.
+          assertThat(binderMethod.getParameterTypes()).hasLength(1);
+          assertThat(binderMethod.getParameterTypes()[0]).isEqualTo(Struct.class);
+
+          Value expected = (Value) method.invoke(Value.class, struct);
+          assertThat(binderMethod.invoke(binder, struct)).isEqualTo(lastReturnValue);
+          assertThat(lastValue).isEqualTo(expected);
+
+          assertThat(binder.to(expected)).isEqualTo(lastReturnValue);
+          assertThat(lastValue).isEqualTo(expected);
+        }
+      } else if (binderMethod.getParameterTypes().length == 1) {
         // Test unary null.
         if (!binderMethod.getParameterTypes()[0].isPrimitive()) {
           Value expected = (Value) method.invoke(Value.class, (Object) null);
           assertThat(binderMethod.invoke(binder, (Object) null)).isEqualTo(lastReturnValue);
+          assertThat(lastValue).isEqualTo(expected);
+
+          assertThat(binder.to(expected)).isEqualTo(lastReturnValue);
           assertThat(lastValue).isEqualTo(expected);
         }
         // Test unary non-null.
         Object defaultObject = DefaultValues.getDefault(method.getGenericParameterTypes()[0]);
         Value expected = (Value) method.invoke(Value.class, defaultObject);
         assertThat(binderMethod.invoke(binder, defaultObject)).isEqualTo(lastReturnValue);
+        assertThat(lastValue).isEqualTo(expected);
+
+        assertThat(binder.to(expected)).isEqualTo(lastReturnValue);
         assertThat(lastValue).isEqualTo(expected);
       } else {
         // Array slice method: depends on DefaultValues returning arrays of length 2.

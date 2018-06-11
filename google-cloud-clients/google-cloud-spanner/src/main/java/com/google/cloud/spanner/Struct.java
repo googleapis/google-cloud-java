@@ -22,41 +22,53 @@ import static com.google.common.base.Preconditions.checkState;
 import com.google.cloud.ByteArray;
 import com.google.cloud.Date;
 import com.google.cloud.Timestamp;
+import com.google.cloud.spanner.Type.Code;
+import com.google.cloud.spanner.Type.StructField;
 import com.google.common.collect.ImmutableList;
 import com.google.common.primitives.Booleans;
 import com.google.common.primitives.Doubles;
 import com.google.common.primitives.Longs;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-import javax.annotation.Nullable;
 import javax.annotation.concurrent.Immutable;
 
 /**
- * Represents a value of {@link Type.Code#STRUCT}. Such values are a tuple of named and typed
- * columns, where individual columns may be null. Individual rows from a read or query operation can
- * be considered as structs; {@link ResultSet#getCurrentRowAsStruct()} allows an immutable struct to
- * be created from the row that the result set is currently positioned over.
+ * Represents a non-{@code NULL} value of {@link Type.Code#STRUCT}. Such values are a tuple of named
+ * and typed columns, where individual columns may be null. Individual rows from a read or query
+ * operation can be considered as structs; {@link ResultSet#getCurrentRowAsStruct()} allows an
+ * immutable struct to be created from the row that the result set is currently positioned over.
  *
  * <p>{@code Struct} instances are immutable.
+ *
+ * <p>This class does not support representing typed {@code NULL} {@code Struct} values.
+ *
+ * <p>However, struct values <em>inside</em> SQL queries are always typed and can be externally
+ * supplied to a query only in the form of struct/array-of-struct query parameter values for which
+ * typed {@code NULL} struct values can be specified in the following ways:
+ *
+ * <p>1. As a standalone {@code NULL} struct value or as a nested struct field value, constructed
+ * using {@link ValueBinder#to(Type, Struct)} or {@link Value#struct(Type, Struct)}.
+ *
+ * <p>2. As as a null {@code Struct} reference representing a {@code NULL} struct typed element
+ * value inside an array/list of '{@code Struct}' references, that is used to construct an
+ * array-of-struct value using {@link Value#structArray(Type, Iterable)} or {@link
+ * ValueBinder#toStructArray(Type, Iterable)}. In this case, the type of the {@code NULL} struct
+ * value is assumed to be the same as the explicitly specified struct element type of the
+ * array/list.
  */
 @Immutable
 public abstract class Struct extends AbstractStructReader implements Serializable {
   // Only implementations within the package are allowed.
   Struct() {}
 
-  /**
-   * Returns a builder for creating a {@code Struct} instance. This is intended mainly for test
-   * purposes: the library implementation is typically responsible for creating {@code Struct}
-   * instances.
-   */
+  /** Returns a builder for creating a non-{@code NULL} {@code Struct} instance. */
   public static Builder newBuilder() {
     return new Builder();
   }
 
-  /** Builder for {@code Struct} instances. */
+  /** Builder for constructing non-{@code NULL} {@code Struct} instances. */
   public static final class Builder {
     private final List<Type.StructField> types = new ArrayList<>();
     private final List<Value> values = new ArrayList<>();
@@ -76,30 +88,23 @@ public abstract class Struct extends AbstractStructReader implements Serializabl
           };
     }
 
-    /** Returns a binder to set the value of a new field in the struct named {@code fieldName}. */
+    /**
+     * Returns a binder to set the value of a new field in the struct named {@code fieldName}.
+     *
+     * @param fieldName name of the field to set. Can be empty or the same as an existing field name
+     *     in the {@code STRUCT}
+     */
     public ValueBinder<Builder> set(String fieldName) {
       checkBindingInProgress(false);
       currentField = checkNotNull(fieldName);
       return binder;
     }
 
-    /** Adds a new field named {@code fieldName} with the given value. */
-    public Builder add(String fieldName, Value value) {
+    /** Adds a new unnamed field {@code fieldName} with the given value. */
+    public Builder add(Value value) {
       checkBindingInProgress(false);
-      addInternal(fieldName, value);
+      addInternal("", value);
       return this;
-    }
-
-    /**
-     * Adds a new field of type {@code ARRAY<STRUCT<fieldTypes>>} named {@code fieldName} with the
-     * given element values. {@code elements} may be null, as may any member of {@code elements}.
-     * All non-null members of {@code elements} must be of type {@code STRUCT<fieldTypes>}
-     */
-    public Builder add(
-        String fieldName,
-        Iterable<Type.StructField> fieldTypes,
-        @Nullable Iterable<Struct> elements) {
-      return add(fieldName, Value.structArray(fieldTypes, elements));
     }
 
     public Struct build() {
@@ -121,12 +126,42 @@ public abstract class Struct extends AbstractStructReader implements Serializabl
     }
   }
 
-  /** Default implementation for test value structs produced by {@link Builder}. */
+  /**
+   * TODO(user) : Consider moving these methods to the StructReader interface once STRUCT-typed
+   * columns are supported in {@link ResultSet}.
+   */
+
+  /* Public methods for accessing struct-typed fields */
+  public Struct getStruct(int columnIndex) {
+    checkNonNullStruct(columnIndex, columnIndex);
+    return getStructInternal(columnIndex);
+  }
+
+  public Struct getStruct(String columnName) {
+    int columnIndex = getColumnIndex(columnName);
+    checkNonNullStruct(columnIndex, columnName);
+    return getStructInternal(columnIndex);
+  }
+
+  /* Sub-classes must implement this method */
+  protected abstract Struct getStructInternal(int columnIndex);
+
+  private void checkNonNullStruct(int columnIndex, Object columnNameForError) {
+    Type actualType = getColumnType(columnIndex);
+    checkState(
+        actualType.getCode() == Code.STRUCT,
+        "Column %s is not of correct type: expected STRUCT<...> but was %s",
+        columnNameForError,
+        actualType);
+    checkNonNull(columnIndex, columnNameForError);
+  }
+
+  /** Default implementation for value structs produced by {@link Builder}. */
   private static class ValueListStruct extends Struct {
     private final Type type;
     private final List<Value> values;
 
-    private ValueListStruct(List<Type.StructField> types, List<Value> values) {
+    private ValueListStruct(Iterable<StructField> types, Iterable<Value> values) {
       this.type = Type.struct(types);
       this.values = ImmutableList.copyOf(values);
     }
@@ -164,6 +199,11 @@ public abstract class Struct extends AbstractStructReader implements Serializabl
     @Override
     protected Date getDateInternal(int columnIndex) {
       return values.get(columnIndex).getDate();
+    }
+
+    @Override
+    protected Struct getStructInternal(int columnIndex) {
+      return values.get(columnIndex).getStruct();
     }
 
     @Override
@@ -289,6 +329,8 @@ public abstract class Struct extends AbstractStructReader implements Serializabl
         return getTimestampInternal(columnIndex);
       case DATE:
         return getDateInternal(columnIndex);
+      case STRUCT:
+        return getStructInternal(columnIndex);
       case ARRAY:
         switch (type.getArrayElementType().getCode()) {
           case BOOL:
