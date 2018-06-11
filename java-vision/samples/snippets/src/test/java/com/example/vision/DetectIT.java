@@ -18,6 +18,11 @@ package com.example.vision;
 
 import static com.google.common.truth.Truth.assertThat;
 
+import com.google.api.gax.paging.Page;
+import com.google.cloud.storage.Blob;
+import com.google.cloud.storage.Storage;
+import com.google.cloud.storage.Storage.BlobListOption;
+import com.google.cloud.storage.StorageOptions;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
@@ -36,6 +41,7 @@ public class DetectIT {
   private PrintStream out;
   private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
   private static final String BUCKET = PROJECT_ID;
+  private static final  String OUTPUT_PREFIX = "OCR_PDF_TEST_OUTPUT";
 
   @Before
   public void setUp() throws IOException {
@@ -345,5 +351,26 @@ public class DetectIT {
     assertThat(got).contains("After preparation is complete, the ");
     assertThat(got).contains("37%");
     assertThat(got).contains("Word text: class (confidence:");
+  }
+
+  @Test
+  public void testDetectDocumentsGcs() throws Exception {
+    // Act
+    String[] args = {"ocr", "gs://" + BUCKET + "/vision/HodgeConj.pdf",
+        "gs://" + BUCKET + "/" + OUTPUT_PREFIX + "/"};
+    Detect.argsHelper(args, out);
+
+    // Assert
+    String got = bout.toString();
+    assertThat(got).contains("HODGE'S GENERAL CONJECTURE");
+
+    Storage storage = StorageOptions.getDefaultInstance().getService();
+
+    Page<Blob> blobs = storage.list(BUCKET, BlobListOption.currentDirectory(),
+        BlobListOption.prefix(OUTPUT_PREFIX + "/"));
+
+    for (Blob blob : blobs.iterateAll()) {
+      blob.delete();
+    }
   }
 }
