@@ -21,7 +21,7 @@ grpc-google-cloud-firestore-v1beta1:0.16.0:0.16.1-SNAPSHOT
 grpc-google-cloud-language-v1:1.15.0:1.15.1-SNAPSHOT
 grpc-google-cloud-language-v1beta2:0.16.0:0.16.1-SNAPSHOT
 grpc-google-cloud-logging-v2:0.16.0:0.16.1-SNAPSHOT
-grpc-google-cloud-monitoring-v3:0.16.0:0.16.1-SNAPSHOT
+grpc-google-cloud-monitoring-v3:1.15.0:1.15.1-SNAPSHOT
 grpc-google-cloud-os-login-v1:0.16.0:0.16.1-SNAPSHOT
 grpc-google-cloud-pubsub-v1:1.15.0:1.15.1-SNAPSHOT
 grpc-google-cloud-spanner-admin-database-v1:0.16.0:0.16.1-SNAPSHOT
@@ -58,7 +58,7 @@ proto-google-cloud-firestore-v1beta1:0.16.0:0.16.1-SNAPSHOT
 proto-google-cloud-language-v1:1.15.0:1.15.1-SNAPSHOT
 proto-google-cloud-language-v1beta2:0.16.0:0.16.1-SNAPSHOT
 proto-google-cloud-logging-v2:0.16.0:0.16.1-SNAPSHOT
-proto-google-cloud-monitoring-v3:0.16.0:0.16.1-SNAPSHOT
+proto-google-cloud-monitoring-v3:1.15.0:1.15.1-SNAPSHOT
 proto-google-cloud-os-login-v1:0.16.0:0.16.1-SNAPSHOT
 proto-google-cloud-pubsub-v1:1.15.0:1.15.1-SNAPSHOT
 proto-google-cloud-spanner-admin-database-v1:0.16.0:0.16.1-SNAPSHOT
@@ -116,7 +116,7 @@ google-cloud-language:1.33.0:1.33.1-SNAPSHOT
 google-cloud-logging:1.33.0:1.33.1-SNAPSHOT
 google-cloud-logging-logback:0.51.0-alpha:0.51.1-alpha-SNAPSHOT
 google-cloud-managedtest:0.51.0-alpha:0.51.1-alpha-SNAPSHOT
-google-cloud-monitoring:0.51.0-beta:0.51.1-beta-SNAPSHOT
+google-cloud-monitoring:1.33.0:1.33.1-SNAPSHOT
 google-cloud-nio:0.51.0-alpha:0.51.1-alpha-SNAPSHOT
 google-cloud-nio-examples:0.51.0-alpha:0.51.1-alpha-SNAPSHOT
 google-cloud-notification:0.51.0-beta:0.51.1-beta-SNAPSHOT
