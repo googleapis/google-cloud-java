@@ -72,27 +72,6 @@ public class CloudSnippets {
   }
 
   /**
-   * Example of running a query with Standard SQL explicitly set.
-   */
-  public void runStandardSqlQuery() throws InterruptedException {
-    // [START bigquery_query_standard]
-    // BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
-    String query = "SELECT corpus FROM `bigquery-public-data.samples.shakespeare` GROUP BY corpus;";
-    QueryJobConfiguration queryConfig =
-        // Note that setUseLegacySql is set to false by default
-        QueryJobConfiguration.newBuilder(query).setUseLegacySql(false).build();
-
-    // Print the results.
-    for (FieldValueList row : bigquery.query(queryConfig).iterateAll()) {
-      for (FieldValue val : row) {
-        System.out.printf("%s,", val.toString());
-      }
-      System.out.printf("\n");
-    }
-    // [END bigquery_query_standard]
-  }
-
-  /**
    * Example of running a query and saving the results to a table.
    */
   public void runQueryPermanentTable(String destinationDataset, String destinationTable)

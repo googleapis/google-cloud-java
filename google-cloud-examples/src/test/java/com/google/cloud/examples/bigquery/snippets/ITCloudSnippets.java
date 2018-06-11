@@ -63,13 +63,6 @@ public class ITCloudSnippets {
   }
 
   @Test
-  public void testRunStandardSqlQuery() throws InterruptedException {
-    cloudSnippets.runStandardSqlQuery();
-    String got = bout.toString();
-    assertTrue(got.contains("romeoandjuliet"));
-  }
-
-  @Test
   public void testRunQueryPermanentTable() throws InterruptedException {
     String tableName = "test_destination_table";
     cloudSnippets.runQueryPermanentTable(DATASET, tableName);
