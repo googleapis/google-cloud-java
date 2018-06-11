@@ -154,6 +154,12 @@
       </dependency>
       <dependency>
         <groupId>com.google.api</groupId>
+        <artifactId>gax</artifactId>
+        <version>1.27.0</version>
+        <classifier>testlib</classifier>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api</groupId>
         <artifactId>gax-grpc</artifactId>
         <version>1.27.0</version>
       </dependency>
