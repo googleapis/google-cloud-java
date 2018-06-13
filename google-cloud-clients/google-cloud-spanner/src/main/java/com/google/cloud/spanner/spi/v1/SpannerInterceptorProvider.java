@@ -15,8 +15,8 @@
  */
 package com.google.cloud.spanner.spi.v1;
 
+import com.google.api.core.InternalApi;
 import com.google.api.gax.grpc.GrpcInterceptorProvider;
-import com.google.common.annotations.VisibleForTesting;
 import com.google.common.collect.ImmutableList;
 import io.grpc.ClientInterceptor;
 import java.util.List;
@@ -27,7 +27,7 @@ import java.util.logging.Logger;
  * For internal use only. An interceptor provider that provides a list of grpc interceptors for
  * {@code GapicSpannerRpc} to handle logging and error augmentation by intercepting grpc calls.
  */
-@VisibleForTesting
+@InternalApi("Exposed for testing")
 public class SpannerInterceptorProvider implements GrpcInterceptorProvider {
 
   private static final List<ClientInterceptor> defaultInterceptors =
