@@ -45,10 +45,7 @@ This library supports the following Google Cloud Platform services with clients 
 -  [Cloud Speech](google-cloud-clients/google-cloud-speech) (Alpha)
 -  [Dialogflow](google-cloud-clients/google-cloud-dialogflow) (Alpha)
 -  [Web Security Scanner](google-cloud-clients/google-cloud-websecurityscanner) (Alpha)
-
-These libraries are deprecated and no longer receive updates:
-
--  [Cloud Compute](google-cloud-clients/google-cloud-compute) (Deprecated)
+-  [Cloud Compute](google-cloud-clients/google-cloud-compute) (Alpha)
 
 Quickstart
 ----------

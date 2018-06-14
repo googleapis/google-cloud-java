@@ -12,7 +12,6 @@ Java idiomatic client for [Google Cloud Compute][cloud-compute].
 - [Product Documentation][compute-product-docs]
 - [Client Library Documentation][compute-client-lib-docs]
 
-> Note: This client is no longer receiving updates; new features in the Compute API will not be added to this client.
 Check https://cloud.google.com/compute/docs/api/libraries for the recommended Java client library to use for
 accessing Compute.
 
@@ -276,4 +275,4 @@ Apache 2.0 - See [LICENSE] for more information.
 
 [cloud-compute]: https://cloud.google.com/compute/
 [compute-product-docs]: https://cloud.google.com/compute/docs/
-[compute-client-lib-docs]: https://googlecloudplatform.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/compute/deprecated/package-summary.html
+[compute-client-lib-docs]: https://googlecloudplatform.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/compute/v1/package-summary.html
