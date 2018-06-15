@@ -125,6 +125,12 @@ public class GapicSpannerRpc implements SpannerRpc {
     this.projectId = options.getProjectId();
     this.projectName = PROJECT_NAME_TEMPLATE.instantiate("project", this.projectId);
 
+    // TODO(hzyi): inject userAgent to headerProvider so that it
+    // can be picked up by ChannelProvider
+
+    // create a metadataProvider which combines both internal headers and
+    // per-method-call extra headers for channelProvider to inject the headers
+    // for rpc calls
     ApiClientHeaderProvider.Builder internalHeaderProviderBuilder =
         ApiClientHeaderProvider.newBuilder();
     ApiClientHeaderProvider internalHeaderProvider =
@@ -528,6 +534,9 @@ public class GapicSpannerRpc implements SpannerRpc {
 
     @Override
     public void onStart(StreamController controller) {
+
+      // Disable the auto flow control to allow client library
+      // set the number of messages it prefers to request
       controller.disableAutoInboundFlowControl();
       this.controller = controller;
     }
