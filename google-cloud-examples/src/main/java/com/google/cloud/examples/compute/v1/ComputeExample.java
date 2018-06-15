@@ -18,52 +18,26 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 
 /**
- * Use gax-java and generated message type to List Addresses in a test GCP Compute project.
+ * Working example code to make live calls on Addresses resources in a GCP Compute project.
  */
 public class ComputeExample {
-  private static String PROJECT_NAME = "gapic-test";
+
+  // Replace the following String values with your Project and Region ids.
+  private static String PROJECT_NAME = "my-project-id";
   private static String REGION = "us-central1";
 
-  public static void main(String[] args) {
-    try {
-      AddressClient addressClient = createCredentialedClient();
-      runExampleWithGapicGen(addressClient);
-      System.out.println("-------------------------------------------------------");
-      runExampleWithGapicGenResourceName(addressClient);
-    } catch (IOException e) {
-      e.printStackTrace();
-    }
-  }
+  /** List addresses, Insert an address, and then delete the address.
+   *  Use ResourceNames in the request objects.
+   */
+  public static void main(String[] args) throws IOException {
+    AddressClient client = createCredentialedClient();
 
-  private static AddressClient createCredentialedClient() throws IOException {
-    Credentials myCredentials = GoogleCredentials.getApplicationDefault();
-    String myEndpoint = AddressSettings.getDefaultEndpoint();
-
-    // Begin samplegen code. This combines the "customize credentials" and "customize the endpoint" samples.
-    AddressSettings addressSettings =
-        AddressSettings.newBuilder()
-            .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
-            .setTransportChannelProvider(
-                AddressSettings.defaultHttpJsonTransportProviderBuilder()
-                   .setEndpoint(myEndpoint).build()).build();
-    AddressClient addressClient =
-        AddressClient.create(addressSettings);
-    // End samplegen code.
-
-    return addressClient;
-  }
-
-  // A basic List Address example.
-  private static void runExampleWithGapicGen(AddressClient client) {
     System.out.println("Running with Gapic Client.");
     AddressClient.ListAddressesPagedResponse listResponse = listAddresses(client);
     verifyListAddressWithGets(client, listResponse);
-  }
 
-  // Insert an address, and then delete the address. Use ResourceNames in the request objects.
-  private static void runExampleWithGapicGenResourceName(AddressClient client) {
     System.out.println("Running with Gapic Client and Resource Name.");
-    String newAddressName = "usseaparkview";
+    String newAddressName = "new_address_name";
     System.out.println("Inserting address:");
 
     insertNewAddressJustClient(client, newAddressName);
@@ -85,6 +59,19 @@ public class ComputeExample {
     listAddresses(client);
   }
 
+  private static AddressClient createCredentialedClient() throws IOException {
+    Credentials myCredentials = GoogleCredentials.getApplicationDefault();
+    String myEndpoint = AddressSettings.getDefaultEndpoint();
+
+    AddressSettings addressSettings =
+        AddressSettings.newBuilder()
+            .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
+            .setTransportChannelProvider(
+                AddressSettings.defaultHttpJsonTransportProviderBuilder()
+                   .setEndpoint(myEndpoint).build()).build();
+    return AddressClient.create(addressSettings);
+  }
+
   private static void insertNewAddressJustClient(AddressClient client, String newAddressName) {
     // Begin samplegen code for insertAddress().
     Address newAddress = Address.newBuilder().setName(newAddressName).build();
@@ -94,6 +81,7 @@ public class ComputeExample {
     System.out.format("Result of insert: %s\n", response.toString());
   }
 
+  /** Use an InsertAddressHttpRequest object to make an addresses.insert method call. */
   private static void insertNewAddressUsingRequest(AddressClient client, String newAddressName)
       throws InterruptedException, ExecutionException {
     // Begin samplegen code for insertAddress().
@@ -110,6 +98,7 @@ public class ComputeExample {
     System.out.format("Result of insert: %s\n", response.toString());
   }
 
+  /** Use an callable object to make an addresses.insert method call. */
   private static void insertAddressUsingCallable(AddressClient client, String newAddressName)
       throws InterruptedException, ExecutionException {
     // Begin samplegen code for insertAddress().
@@ -127,6 +116,7 @@ public class ComputeExample {
     System.out.format("Result of insert: %s\n", response.toString());
   }
 
+  /** List Addresses in the under the project PROJECT_NAME and region REGION. */
   private static AddressClient.ListAddressesPagedResponse listAddresses(AddressClient client) {
     System.out.println("Listing addresses:");
     ProjectRegionName regionName = ProjectRegionName.newBuilder().setRegion(REGION).setProject(PROJECT_NAME).build();
