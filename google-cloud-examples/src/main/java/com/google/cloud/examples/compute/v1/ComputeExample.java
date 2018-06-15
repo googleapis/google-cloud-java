@@ -4,8 +4,15 @@ import com.google.api.core.ApiFuture;
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.Credentials;
 import com.google.auth.oauth2.GoogleCredentials;
-import com.google.cloud.compute.v1.*;
 
+import com.google.cloud.compute.v1.Address;
+import com.google.cloud.compute.v1.AddressClient;
+import com.google.cloud.compute.v1.AddressSettings;
+import com.google.cloud.compute.v1.InsertAddressHttpRequest;
+import com.google.cloud.compute.v1.ListAddressesHttpRequest;
+import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.ProjectRegionAddressName;
+import com.google.cloud.compute.v1.ProjectRegionName;
 import java.io.IOException;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
