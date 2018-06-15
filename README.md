@@ -37,6 +37,7 @@ This library supports the following Google Cloud Platform services with clients 
 
 This library supports the following Google Cloud Platform services with clients at an [Alpha](#versioning) quality level:
 
+-  [Cloud Compute](google-cloud-clients/google-cloud-compute) (Alpha)
 -  [Cloud Dataproc](google-cloud-clients/google-cloud-dataproc) (Alpha)
 -  [Cloud DNS](google-cloud-clients/google-cloud-dns) (Alpha)
 -  [Cloud OS Login](google-cloud-clients/google-cloud-os-login) (Alpha)
@@ -45,7 +46,6 @@ This library supports the following Google Cloud Platform services with clients 
 -  [Cloud Speech](google-cloud-clients/google-cloud-speech) (Alpha)
 -  [Dialogflow](google-cloud-clients/google-cloud-dialogflow) (Alpha)
 -  [Web Security Scanner](google-cloud-clients/google-cloud-websecurityscanner) (Alpha)
--  [Cloud Compute](google-cloud-clients/google-cloud-compute) (Alpha)
 
 Quickstart
 ----------
