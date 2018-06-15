@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.cloud.examples.compute;
+package com.google.cloud.examples.compute.deprecated;
 
 import com.google.api.gax.paging.Page;
 import com.google.cloud.Tuple;
