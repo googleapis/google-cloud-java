@@ -6,6 +6,7 @@ import com.google.common.base.MoreObjects;
 import com.google.common.collect.Lists;
 import java.io.Serializable;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * List of column families to expose in the table schema along with their types. This list restricts
@@ -138,6 +139,7 @@ public class BigtableColumnFamily implements Serializable {
     }
   }
 
+
   BigtableColumnFamily(Builder builder) {
     familyID = builder.familyID;
     columns = builder.columns;
@@ -157,6 +159,37 @@ public class BigtableColumnFamily implements Serializable {
         .add("type", type)
         .toString();
   }
+
+  @Override
+  public final int hashCode() {
+    return Objects.hash(
+        familyID,
+        columns,
+        encoding,
+        onlyReadLatest,
+        type);
+  }
+
+  @Override
+  public final boolean equals(Object obj) {
+    if (obj == this) {
+      return true;
+    }
+    if (obj == null || !obj.getClass().equals(BigtableColumnFamily.class)) {
+      return false;
+    }
+    BigtableColumnFamily other = (BigtableColumnFamily) obj;
+    return familyID == other.familyID
+        && encoding == other.encoding
+        && onlyReadLatest == other.onlyReadLatest
+        && type == other.type
+        && Objects.equals(columns, other.columns);
+  }
+
+  static Builder newBuilder() {
+    return new Builder();
+  }
+
 
   static BigtableColumnFamily fromPb(
       com.google.api.services.bigquery.model.BigtableColumnFamily columnFamily) {

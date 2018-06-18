@@ -4,6 +4,7 @@ import com.google.common.base.MoreObjects;
 import com.google.common.collect.Lists;
 import java.io.Serializable;
 import java.util.List;
+import java.util.Objects;
 
 
 public class BigtableOptions implements Serializable {
@@ -89,6 +90,29 @@ public class BigtableOptions implements Serializable {
         .add("readRowkeyAsString", readRowkeyAsString)
         .add("columnFamilies", columnFamilies)
         .toString();
+  }
+
+  @Override
+  public final int hashCode() {
+    return Objects.hash(ignoreUnspecifiedColumnFamilies, readRowkeyAsString, columnFamilies);
+  }
+
+  @Override
+  public final boolean equals(Object obj) {
+    if (obj == this) {
+      return true;
+    }
+    if (obj == null || !obj.getClass().equals(BigtableOptions.class)) {
+      return false;
+    }
+    BigtableOptions other = (BigtableOptions) obj;
+    return ignoreUnspecifiedColumnFamilies == other.ignoreUnspecifiedColumnFamilies
+        && readRowkeyAsString == other.readRowkeyAsString
+        && Objects.equals(columnFamilies, other.columnFamilies);
+  }
+
+  static Builder newBuilder() {
+    return new Builder();
   }
 
   static BigtableOptions fromPb(com.google.api.services.bigquery.model.BigtableOptions options) {

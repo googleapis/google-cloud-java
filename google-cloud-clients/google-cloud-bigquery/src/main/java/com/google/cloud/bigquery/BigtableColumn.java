@@ -4,6 +4,7 @@ package com.google.cloud.bigquery;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 import java.io.Serializable;
+import java.util.Objects;
 
 public class BigtableColumn implements Serializable {
 
@@ -133,6 +134,36 @@ public class BigtableColumn implements Serializable {
         .add("encoding", encoding)
         .add("type", type)
         .toString();
+  }
+
+  @Override
+  public final int hashCode() {
+    return Objects.hash(
+        qualifierEncoded,
+        fieldName,
+        onlyReadLatest,
+        encoding,
+        type);
+  }
+
+  @Override
+  public final boolean equals(Object obj) {
+    if (obj == this) {
+      return true;
+    }
+    if (obj == null || !obj.getClass().equals(BigtableColumn.class)) {
+      return false;
+    }
+    BigtableColumn other = (BigtableColumn) obj;
+    return qualifierEncoded == other.qualifierEncoded
+        && fieldName == other.fieldName
+        && onlyReadLatest == other.onlyReadLatest
+        && encoding == other.encoding
+        && type == other.type;
+  }
+
+  static Builder newBuilder() {
+    return new Builder();
   }
 
   static BigtableColumn fromPb(com.google.api.services.bigquery.model.BigtableColumn column) {
