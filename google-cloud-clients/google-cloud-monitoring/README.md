@@ -12,9 +12,6 @@ Java idiomatic client for [Stackdriver Monitoring][stackdriver-monitoring].
 - [Product Documentation][monitoring-product-docs]
 - [Client Library Documentation][monitoring-client-lib-docs]
 
-> Note: This client is a work-in-progress, and may occasionally
-> make backwards-incompatible changes.
-
 Quickstart
 ----------
 
