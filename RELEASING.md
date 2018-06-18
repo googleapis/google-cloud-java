@@ -91,7 +91,7 @@ To push a release version
 
 6. Create and merge in a PR to reflect the updated project version.
 
-7. Put the repo in a clean state: a) `mvn clean`, then b) `git clean -x -f -d`.
+7. Run `git clean -x -f -d` to put the repo in a clean state.
 
 8. Locally build the repo by running `mvn install -DskipTests`.
 
