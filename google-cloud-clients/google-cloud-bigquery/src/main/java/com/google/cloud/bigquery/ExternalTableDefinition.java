@@ -64,7 +64,15 @@ public abstract class ExternalTableDefinition extends TableDefinition {
      * bucket's name. Size limits related to load jobs apply to external data sources, plus an
      * additional limit of 10 GB maximum size across all URIs.
      *
+     * For Google Cloud Bigtable URIs:
+     *   Exactly one URI can be specified and it has be a fully specified and valid
+     *   HTTPS URL for a Google Cloud Bigtable table.
+     *
+     * For Google Cloud Datastore backup URIs:
+     *   Exactly one URI can be specified. Also, the '*' wildcard character is not allowed.
+     *
      * @see <a href="https://cloud.google.com/bigquery/loading-data-into-bigquery#quota">Quota</a>
+     *
      */
     public Builder setSourceUris(List<String> sourceUris) {
       return setSourceUrisImmut(ImmutableList.copyOf(sourceUris));
