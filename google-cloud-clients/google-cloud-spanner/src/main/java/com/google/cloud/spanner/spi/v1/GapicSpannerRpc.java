@@ -110,6 +110,7 @@ public class GapicSpannerRpc implements SpannerRpc {
       PathTemplate.create("projects/{project}");
   private static final int MAX_MESSAGE_SIZE = 100 * 1024 * 1024;
   
+  // TODO(hzyi): change the stub names to be more intuitive
   private final SpannerStub stub;
   private final InstanceAdminStub instanceStub;
   private final DatabaseAdminStub databaseStub;

@@ -1179,11 +1179,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
                           : request.toBuilder().setResumeToken(resumeToken).build(),
                       stream.consumer(),
                       session.options);
-              // StreamController does not auto-request 1 message. Kick it off mannually
-              call.request(1);
-              if (prefetchChunks > 1) {
-                call.request(prefetchChunks - 1);
-              }
+              call.request(prefetchChunks);
               stream.setCall(call);
               return stream;
             }
