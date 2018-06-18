@@ -110,7 +110,9 @@ public class FormatOptions implements Serializable {
   /**
    * Default options for BIGTABLE format.
    */
-  public static FormatOptions bigtable() { return new FormatOptions(BIGTABLE); }
+  public static FormatOptions bigtable() {
+    return BigtableOptions.newBuilder().build();
+  }
 
   /**
    * Default options for GOOGLE_SHEETS format.
@@ -141,6 +143,8 @@ public class FormatOptions implements Serializable {
       return datastoreBackup();
     } else if (format.equals(GOOGLE_SHEETS)) {
       return googleSheets();
+    } else if (format.equals(BIGTABLE)) {
+      return bigtable();
     }
     return new FormatOptions(format);
   }

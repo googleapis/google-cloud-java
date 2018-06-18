@@ -247,6 +247,9 @@ public abstract class ExternalTableDefinition extends TableDefinition {
     if (getFormatOptions() != null && FormatOptions.GOOGLE_SHEETS.equals(getFormatOptions().getType())) {
       externalConfigurationPb.setGoogleSheetsOptions(((GoogleSheetsOptions) getFormatOptions()).toPb());
     }
+    if (getFormatOptions() != null && FormatOptions.BIGTABLE.equals(getFormatOptions().getType())) {
+      externalConfigurationPb.setBigtableOptions(((BigtableOptions) getFormatOptions()).toPb());
+    }
     if (getAutodetect() != null) {
       externalConfigurationPb.setAutodetect(getAutodetect());
     }
@@ -354,6 +357,9 @@ public abstract class ExternalTableDefinition extends TableDefinition {
       if (externalDataConfiguration.getGoogleSheetsOptions() != null) {
         builder.setFormatOptions(GoogleSheetsOptions.fromPb(externalDataConfiguration.getGoogleSheetsOptions()));
       }
+      if (externalDataConfiguration.getBigtableOptions() != null) {
+        builder.setFormatOptions(BigtableOptions.fromPb(externalDataConfiguration.getBigtableOptions()));
+      }
       builder.setMaxBadRecords(externalDataConfiguration.getMaxBadRecords());
       builder.setAutodetect(externalDataConfiguration.getAutodetect());
     }
@@ -383,6 +389,9 @@ public abstract class ExternalTableDefinition extends TableDefinition {
     }
     if (externalDataConfiguration.getGoogleSheetsOptions() != null) {
       builder.setFormatOptions(GoogleSheetsOptions.fromPb(externalDataConfiguration.getGoogleSheetsOptions()));
+    }
+    if (externalDataConfiguration.getBigtableOptions() != null) {
+      builder.setFormatOptions(BigtableOptions.fromPb(externalDataConfiguration.getBigtableOptions()));
     }
     if (externalDataConfiguration.getMaxBadRecords() != null) {
       builder.setMaxBadRecords(externalDataConfiguration.getMaxBadRecords());

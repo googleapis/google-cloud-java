@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Objects;
 
 
-public class BigtableOptions implements Serializable {
+public class BigtableOptions extends FormatOptions {
 
 
   private static final long serialVersionUID = 1L;
@@ -34,7 +34,12 @@ public class BigtableOptions implements Serializable {
     private Boolean readRowkeyAsString;
     private List<BigtableColumnFamily> columnFamilies;
 
-    private Builder() {
+    private Builder() {}
+
+    private Builder(BigtableOptions bigtableOptions) {
+      this.ignoreUnspecifiedColumnFamilies = bigtableOptions.ignoreUnspecifiedColumnFamilies;
+      this.readRowkeyAsString = bigtableOptions.readRowkeyAsString;
+      this.columnFamilies = bigtableOptions.columnFamilies;
     }
 
     /**
@@ -78,6 +83,7 @@ public class BigtableOptions implements Serializable {
   }
 
   BigtableOptions(Builder builder) {
+    super(FormatOptions.BIGTABLE);
     ignoreUnspecifiedColumnFamilies = builder.ignoreUnspecifiedColumnFamilies;
     readRowkeyAsString = builder.readRowkeyAsString;
     columnFamilies = builder.columnFamilies;
@@ -111,12 +117,12 @@ public class BigtableOptions implements Serializable {
         && Objects.equals(columnFamilies, other.columnFamilies);
   }
 
-  static Builder newBuilder() {
+  public static Builder newBuilder() {
     return new Builder();
   }
 
   static BigtableOptions fromPb(com.google.api.services.bigquery.model.BigtableOptions options) {
-    Builder builder = new BigtableOptions.Builder();
+    Builder builder = newBuilder();
     builder.setIgnoreUnspecifiedColumnFamilies(options.getIgnoreUnspecifiedColumnFamilies());
     builder.setReadRowkeyAsString(options.getReadRowkeyAsString());
     builder.setColumnFamilies(Lists.transform(options.getColumnFamilies(), BigtableColumnFamily.FROM_PB_FUNCTION));
