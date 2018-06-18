@@ -357,6 +357,10 @@ public final class UpdateFirewallHttpRequest implements ApiMessage {
     public UpdateFirewallHttpRequest build() {
       String missing = "";
 
+      if (fieldMask == null) {
+        missing += " fieldMask";
+      }
+
       if (firewall == null) {
         missing += " firewall";
       }

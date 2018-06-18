@@ -357,6 +357,10 @@ public final class UpdateHealthCheckHttpRequest implements ApiMessage {
     public UpdateHealthCheckHttpRequest build() {
       String missing = "";
 
+      if (fieldMask == null) {
+        missing += " fieldMask";
+      }
+
       if (healthCheck == null) {
         missing += " healthCheck";
       }

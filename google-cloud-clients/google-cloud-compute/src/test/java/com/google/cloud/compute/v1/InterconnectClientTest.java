@@ -193,6 +193,7 @@ public class InterconnectClientTest {
     String location = "location1901043637";
     Integer provisionedLinkCount = 1199724171;
     String id = "id3355";
+    String state = "state109757585";
     String googleIpAddress = "googleIpAddress1516847778";
     String nocContactEmail = "nocContactEmail1087814656";
     Interconnect expectedResponse =
@@ -213,6 +214,7 @@ public class InterconnectClientTest {
             .setLocation(location)
             .setProvisionedLinkCount(provisionedLinkCount)
             .setId(id)
+            .setState(state)
             .setGoogleIpAddress(googleIpAddress)
             .setNocContactEmail(nocContactEmail)
             .build();

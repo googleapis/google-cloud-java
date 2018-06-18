@@ -361,6 +361,10 @@ public final class PatchBackendBucketHttpRequest implements ApiMessage {
         missing += " backendBucket";
       }
 
+      if (fieldMask == null) {
+        missing += " fieldMask";
+      }
+
       if (!missing.isEmpty()) {
         throw new IllegalStateException("Missing required properties:" + missing);
       }

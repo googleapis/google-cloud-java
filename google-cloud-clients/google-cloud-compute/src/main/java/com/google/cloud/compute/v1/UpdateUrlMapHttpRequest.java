@@ -357,6 +357,10 @@ public final class UpdateUrlMapHttpRequest implements ApiMessage {
     public UpdateUrlMapHttpRequest build() {
       String missing = "";
 
+      if (fieldMask == null) {
+        missing += " fieldMask";
+      }
+
       if (urlMap == null) {
         missing += " urlMap";
       }

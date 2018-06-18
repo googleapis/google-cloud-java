@@ -357,6 +357,10 @@ public final class PatchRouterHttpRequest implements ApiMessage {
     public PatchRouterHttpRequest build() {
       String missing = "";
 
+      if (fieldMask == null) {
+        missing += " fieldMask";
+      }
+
       if (router == null) {
         missing += " router";
       }

@@ -382,6 +382,10 @@ public final class UpdateRegionAutoscalerHttpRequest implements ApiMessage {
     public UpdateRegionAutoscalerHttpRequest build() {
       String missing = "";
 
+      if (fieldMask == null) {
+        missing += " fieldMask";
+      }
+
       if (region == null) {
         missing += " region";
       }

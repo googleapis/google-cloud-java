@@ -189,6 +189,7 @@ public class TargetHttpsProxyClientTest {
     String name = "name3373707";
     String description = "description-1724546052";
     String id = "id3355";
+    String quicOverride = "quicOverride2067189933";
     String selfLink = "selfLink-1691268851";
     TargetHttpsProxy expectedResponse =
         TargetHttpsProxy.newBuilder()
@@ -199,6 +200,7 @@ public class TargetHttpsProxyClientTest {
             .setName(name)
             .setDescription(description)
             .setId(id)
+            .setQuicOverride(quicOverride)
             .setSelfLink(selfLink)
             .build();
     mockService.addResponse(expectedResponse);

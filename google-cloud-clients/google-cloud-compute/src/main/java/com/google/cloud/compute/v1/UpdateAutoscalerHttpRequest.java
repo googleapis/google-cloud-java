@@ -382,6 +382,10 @@ public final class UpdateAutoscalerHttpRequest implements ApiMessage {
     public UpdateAutoscalerHttpRequest build() {
       String missing = "";
 
+      if (fieldMask == null) {
+        missing += " fieldMask";
+      }
+
       if (zone == null) {
         missing += " zone";
       }

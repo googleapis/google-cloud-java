@@ -382,6 +382,10 @@ public final class PatchAutoscalerHttpRequest implements ApiMessage {
     public PatchAutoscalerHttpRequest build() {
       String missing = "";
 
+      if (fieldMask == null) {
+        missing += " fieldMask";
+      }
+
       if (zone == null) {
         missing += " zone";
       }

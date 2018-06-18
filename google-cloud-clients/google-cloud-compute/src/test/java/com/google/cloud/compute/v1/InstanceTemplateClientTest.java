@@ -175,6 +175,7 @@ public class InstanceTemplateClientTest {
   @Test
   @SuppressWarnings("all")
   public void getInstanceTemplateTest() {
+    String sourceInstance = "sourceInstance-677426119";
     String kind = "kind3292052";
     String creationTimestamp = "creationTimestamp567396278";
     String name = "name3373707";
@@ -183,6 +184,7 @@ public class InstanceTemplateClientTest {
     String selfLink = "selfLink-1691268851";
     InstanceTemplate expectedResponse =
         InstanceTemplate.newBuilder()
+            .setSourceInstance(sourceInstance)
             .setKind(kind)
             .setCreationTimestamp(creationTimestamp)
             .setName(name)

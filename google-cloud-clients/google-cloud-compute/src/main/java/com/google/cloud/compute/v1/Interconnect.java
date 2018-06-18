@@ -47,6 +47,7 @@ public final class Interconnect implements ApiMessage {
   private final Integer provisionedLinkCount;
   private final Integer requestedLinkCount;
   private final String selfLink;
+  private final String state;
 
   private Interconnect() {
     this.adminEnabled = null;
@@ -70,6 +71,7 @@ public final class Interconnect implements ApiMessage {
     this.provisionedLinkCount = null;
     this.requestedLinkCount = null;
     this.selfLink = null;
+    this.state = null;
   }
 
   private Interconnect(
@@ -93,7 +95,8 @@ public final class Interconnect implements ApiMessage {
       String peerIpAddress,
       Integer provisionedLinkCount,
       Integer requestedLinkCount,
-      String selfLink) {
+      String selfLink,
+      String state) {
     this.adminEnabled = adminEnabled;
     this.circuitInfos = circuitInfos;
     this.creationTimestamp = creationTimestamp;
@@ -115,6 +118,7 @@ public final class Interconnect implements ApiMessage {
     this.provisionedLinkCount = provisionedLinkCount;
     this.requestedLinkCount = requestedLinkCount;
     this.selfLink = selfLink;
+    this.state = state;
   }
 
   @Override
@@ -181,6 +185,9 @@ public final class Interconnect implements ApiMessage {
     }
     if (fieldName.equals("selfLink")) {
       return selfLink;
+    }
+    if (fieldName.equals("state")) {
+      return state;
     }
     return null;
   }
@@ -281,6 +288,10 @@ public final class Interconnect implements ApiMessage {
     return selfLink;
   }
 
+  public String getState() {
+    return state;
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
@@ -325,6 +336,7 @@ public final class Interconnect implements ApiMessage {
     private Integer provisionedLinkCount;
     private Integer requestedLinkCount;
     private String selfLink;
+    private String state;
 
     Builder() {}
 
@@ -393,6 +405,9 @@ public final class Interconnect implements ApiMessage {
       if (other.getSelfLink() != null) {
         this.selfLink = other.selfLink;
       }
+      if (other.getState() != null) {
+        this.state = other.state;
+      }
       return this;
     }
 
@@ -418,6 +433,7 @@ public final class Interconnect implements ApiMessage {
       this.provisionedLinkCount = source.provisionedLinkCount;
       this.requestedLinkCount = source.requestedLinkCount;
       this.selfLink = source.selfLink;
+      this.state = source.state;
     }
 
     public Boolean getAdminEnabled() {
@@ -633,6 +649,15 @@ public final class Interconnect implements ApiMessage {
       return this;
     }
 
+    public String getState() {
+      return state;
+    }
+
+    public Builder setState(String state) {
+      this.state = state;
+      return this;
+    }
+
     public Interconnect build() {
 
       return new Interconnect(
@@ -656,7 +681,8 @@ public final class Interconnect implements ApiMessage {
           peerIpAddress,
           provisionedLinkCount,
           requestedLinkCount,
-          selfLink);
+          selfLink,
+          state);
     }
 
     public Builder clone() {
@@ -682,6 +708,7 @@ public final class Interconnect implements ApiMessage {
       newBuilder.setProvisionedLinkCount(this.provisionedLinkCount);
       newBuilder.setRequestedLinkCount(this.requestedLinkCount);
       newBuilder.setSelfLink(this.selfLink);
+      newBuilder.setState(this.state);
       return newBuilder;
     }
   }
@@ -751,6 +778,9 @@ public final class Interconnect implements ApiMessage {
         + ", "
         + "selfLink="
         + selfLink
+        + ", "
+        + "state="
+        + state
         + "}";
   }
 
@@ -781,7 +811,8 @@ public final class Interconnect implements ApiMessage {
           && Objects.equals(this.peerIpAddress, that.getPeerIpAddress())
           && Objects.equals(this.provisionedLinkCount, that.getProvisionedLinkCount())
           && Objects.equals(this.requestedLinkCount, that.getRequestedLinkCount())
-          && Objects.equals(this.selfLink, that.getSelfLink());
+          && Objects.equals(this.selfLink, that.getSelfLink())
+          && Objects.equals(this.state, that.getState());
     }
     return false;
   }
@@ -809,6 +840,7 @@ public final class Interconnect implements ApiMessage {
         peerIpAddress,
         provisionedLinkCount,
         requestedLinkCount,
-        selfLink);
+        selfLink,
+        state);
   }
 }

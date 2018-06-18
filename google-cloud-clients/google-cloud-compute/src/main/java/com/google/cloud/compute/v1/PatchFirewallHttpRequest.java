@@ -357,6 +357,10 @@ public final class PatchFirewallHttpRequest implements ApiMessage {
     public PatchFirewallHttpRequest build() {
       String missing = "";
 
+      if (fieldMask == null) {
+        missing += " fieldMask";
+      }
+
       if (firewall == null) {
         missing += " firewall";
       }
