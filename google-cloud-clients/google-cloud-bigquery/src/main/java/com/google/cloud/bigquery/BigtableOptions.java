@@ -17,13 +17,10 @@ package com.google.cloud.bigquery;
 
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.Lists;
-import java.io.Serializable;
 import java.util.List;
 import java.util.Objects;
 
-
 public class BigtableOptions extends FormatOptions {
-
 
   private static final long serialVersionUID = 1L;
 
@@ -43,15 +40,14 @@ public class BigtableOptions extends FormatOptions {
     return columnFamilies;
   }
 
-
-
   static final class Builder {
 
     private Boolean ignoreUnspecifiedColumnFamilies;
     private Boolean readRowkeyAsString;
     private List<BigtableColumnFamily> columnFamilies;
 
-    private Builder() {}
+    private Builder() {
+    }
 
     private Builder(BigtableOptions bigtableOptions) {
       this.ignoreUnspecifiedColumnFamilies = bigtableOptions.ignoreUnspecifiedColumnFamilies;
@@ -142,7 +138,8 @@ public class BigtableOptions extends FormatOptions {
     Builder builder = newBuilder();
     builder.setIgnoreUnspecifiedColumnFamilies(options.getIgnoreUnspecifiedColumnFamilies());
     builder.setReadRowkeyAsString(options.getReadRowkeyAsString());
-    builder.setColumnFamilies(Lists.transform(options.getColumnFamilies(), BigtableColumnFamily.FROM_PB_FUNCTION));
+    builder.setColumnFamilies(
+        Lists.transform(options.getColumnFamilies(), BigtableColumnFamily.FROM_PB_FUNCTION));
     return builder.build();
   }
 
@@ -151,7 +148,8 @@ public class BigtableOptions extends FormatOptions {
         .setIgnoreUnspecifiedColumnFamilies(ignoreUnspecifiedColumnFamilies)
         .setReadRowkeyAsString(readRowkeyAsString);
     if (columnFamilies != null) {
-      options.setColumnFamilies(Lists.transform(columnFamilies, BigtableColumnFamily.TO_PB_FUNCTION));
+      options
+          .setColumnFamilies(Lists.transform(columnFamilies, BigtableColumnFamily.TO_PB_FUNCTION));
     }
     return options;
   }

@@ -15,10 +15,10 @@
  */
 package com.google.cloud.bigquery;
 
-
 import com.google.common.base.Function;
 import com.google.common.collect.Lists;
 import com.google.auto.value.AutoValue;
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -32,8 +32,7 @@ import java.util.List;
  */
 
 @AutoValue
-public abstract class BigtableColumnFamily {
-
+public abstract class BigtableColumnFamily implements Serializable {
 
   private static final long serialVersionUID = 1L;
 
@@ -97,7 +96,6 @@ public abstract class BigtableColumnFamily {
   static Builder newBuilder() {
     return new AutoValue_BigtableColumnFamily.Builder();
   }
-
 
   static BigtableColumnFamily fromPb(
       com.google.api.services.bigquery.model.BigtableColumnFamily columnFamily) {

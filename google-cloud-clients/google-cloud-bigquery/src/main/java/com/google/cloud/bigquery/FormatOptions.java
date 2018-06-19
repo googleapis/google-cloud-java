@@ -27,12 +27,11 @@ import java.util.Objects;
  * Base class for Google BigQuery format options. These class define the format of external data
  * used by BigQuery, for either federated tables or load jobs.
  *
- * Load jobs support the following formats:
- * AVRO, CSV, DATASTORE_BACKUP, GOOGLE_SHEETS, JSON, ORC, PARQUET
+ * Load jobs support the following formats: AVRO, CSV, DATASTORE_BACKUP, GOOGLE_SHEETS, JSON, ORC,
+ * PARQUET
  *
- * Federated tables can be defined against following formats:
- * AVRO, BIGTABLE, CSV, DATASTORE_BACKUP, GOOGLE_SHEETS, JSON
- *
+ * Federated tables can be defined against following formats: AVRO, BIGTABLE, CSV, DATASTORE_BACKUP,
+ * GOOGLE_SHEETS, JSON
  */
 public class FormatOptions implements Serializable {
 
@@ -52,7 +51,6 @@ public class FormatOptions implements Serializable {
   FormatOptions(String type) {
     this.type = type;
   }
-
 
   /**
    * Returns the external data format, as a string.
@@ -131,11 +129,13 @@ public class FormatOptions implements Serializable {
   /**
    * Default options for the ORC format.
    */
-  public static FormatOptions orc() { return new FormatOptions(ORC); }
+  public static FormatOptions orc() {
+    return new FormatOptions(ORC);
+  }
 
   /**
-     * Default options for the provided format.
-     */
+   * Default options for the provided format.
+   */
   public static FormatOptions of(String format) {
     if (checkNotNull(format).equals(CSV)) {
       return csv();

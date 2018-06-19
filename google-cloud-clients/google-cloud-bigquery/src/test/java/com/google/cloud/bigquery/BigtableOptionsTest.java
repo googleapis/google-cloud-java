@@ -15,6 +15,7 @@
  */
 package com.google.cloud.bigquery;
 
+import static com.google.common.truth.Truth.assertThat;
 import static junit.framework.TestCase.assertEquals;
 import static junit.framework.TestCase.assertTrue;
 
@@ -22,7 +23,6 @@ import com.google.common.collect.ImmutableList;
 import org.junit.Test;
 
 public class BigtableOptionsTest {
-
 
   private static final BigtableColumn COL1 = BigtableColumn.newBuilder()
       .setQualifierEncoded("aaa")
@@ -51,28 +51,26 @@ public class BigtableOptionsTest {
       .setColumnFamilies(ImmutableList.of(TESTFAMILY))
       .build();
 
-
   @Test
   public void testConstructors() {
-
     // column
-    assertEquals(COL1.getQualifierEncoded(), "aaa");
-    assertEquals(COL1.getFieldName(), "field1");
-    assertTrue(COL1.getOnlyReadLatest());
-    assertEquals(COL1.getEncoding(), "BINARY");
-    assertEquals(COL1.getType(), "BYTES");
+    assertThat(COL1.getQualifierEncoded()).isEqualTo("aaa");
+    assertThat(COL1.getFieldName()).isEqualTo("field1");
+    assertThat(COL1.getOnlyReadLatest()).isEqualTo(true);
+    assertThat(COL1.getEncoding()).isEqualTo("BINARY");
+    assertThat(COL1.getType()).isEqualTo("BYTES");
 
     // family
-    assertEquals(TESTFAMILY.getFamilyID(), "fooFamily");
-    assertEquals(TESTFAMILY.getEncoding(), "TEXT");
-    assertTrue(TESTFAMILY.getOnlyReadLatest());
-    assertEquals(TESTFAMILY.getType(), "INTEGER");
-    assertEquals(TESTFAMILY.getColumns(), ImmutableList.of(COL1, COL2));
+    assertThat(TESTFAMILY.getFamilyID()).isEqualTo("fooFamily");
+    assertThat(TESTFAMILY.getEncoding()).isEqualTo("TEXT");
+    assertThat(TESTFAMILY.getOnlyReadLatest()).isEqualTo(true);
+    assertThat(TESTFAMILY.getType()).isEqualTo("INTEGER");
+    assertThat(TESTFAMILY.getColumns()).isEqualTo(ImmutableList.of(COL1, COL2));
 
     // options
-    assertTrue(OPTIONS.getIgnoreUnspecifiedColumnFamilies());
-    assertTrue(OPTIONS.getReadRowkeyAsString());
-    assertEquals(OPTIONS.getColumnFamilies(), ImmutableList.of(TESTFAMILY));
+    assertThat(OPTIONS.getIgnoreUnspecifiedColumnFamilies()).isEqualTo(true);
+    assertThat(OPTIONS.getReadRowkeyAsString()).isEqualTo(true);
+    assertThat(OPTIONS.getColumnFamilies()).isEqualTo(ImmutableList.of(TESTFAMILY));
   }
 
   @Test
@@ -90,25 +88,30 @@ public class BigtableOptionsTest {
   }
 
   private void compareBigtableColumn(BigtableColumn expected, BigtableColumn value) {
-    assertEquals(expected.getEncoding(), value.getEncoding());
-    assertEquals(expected.getFieldName(), value.getFieldName());
-    assertEquals(expected.getQualifierEncoded(), value.getQualifierEncoded());
-    assertEquals(expected.getOnlyReadLatest(), value.getOnlyReadLatest());
-    assertEquals(expected.getType(), value.getType());
+    assertThat(expected).isEqualTo(value);
+    assertThat(expected.getEncoding()).isEqualTo(value.getEncoding());
+    assertThat(expected.getFieldName()).isEqualTo(value.getFieldName());
+    assertThat(expected.getQualifierEncoded()).isEqualTo(value.getQualifierEncoded());
+    assertThat(expected.getOnlyReadLatest()).isEqualTo(value.getOnlyReadLatest());
+    assertThat(expected.getType()).isEqualTo(value.getType());
   }
 
-  private void compareBigtableColumnFamily(BigtableColumnFamily expected, BigtableColumnFamily value) {
-    assertEquals(expected, value);
-    assertEquals(expected.getFamilyID(), value.getFamilyID());
-    assertEquals(expected.getOnlyReadLatest(), value.getOnlyReadLatest());
-    assertEquals(expected.getColumns(), value.getColumns());
-    assertEquals(expected.getEncoding(), value.getEncoding());
-    assertEquals(expected.getType(), value.getType());
+  private void compareBigtableColumnFamily(BigtableColumnFamily expected,
+      BigtableColumnFamily value) {
+    assertThat(expected).isEqualTo(value);
+    assertThat(expected.getFamilyID()).isEqualTo(value.getFamilyID());
+    assertThat(expected.getOnlyReadLatest()).isEqualTo(value.getOnlyReadLatest());
+    assertThat(expected.getColumns()).isEqualTo(value.getColumns());
+    assertThat(expected.getEncoding()).isEqualTo(value.getEncoding());
+    assertThat(expected.getType()).isEqualTo(value.getType());
+
   }
 
   private void compareBigtableOptions(BigtableOptions expected, BigtableOptions value) {
-    assertEquals(expected.getIgnoreUnspecifiedColumnFamilies(), value.getIgnoreUnspecifiedColumnFamilies());
-    assertEquals(expected.getReadRowkeyAsString(), value.getReadRowkeyAsString());
-    assertEquals(expected.getColumnFamilies(), value.getColumnFamilies());
+    assertThat(expected).isEqualTo(value);
+    assertThat(expected.getIgnoreUnspecifiedColumnFamilies())
+        .isEqualTo(value.getIgnoreUnspecifiedColumnFamilies());
+    assertThat(expected.getReadRowkeyAsString()).isEqualTo(value.getReadRowkeyAsString());
+    assertThat(expected.getColumnFamilies()).isEqualTo(value.getColumnFamilies());
   }
 }
