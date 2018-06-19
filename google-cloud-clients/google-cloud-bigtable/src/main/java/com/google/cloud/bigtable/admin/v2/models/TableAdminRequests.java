@@ -1,15 +1,17 @@
 /*
  * Copyright 2018 Google LLC
  *
- * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
- * in compliance with the License. You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- * https://www.apache.org/licenses/LICENSE-2.0
+ *     https://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing, software distributed under the License
- * is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
- * or implied. See the License for the specific language governing permissions and limitations under
- * the License.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
 package com.google.cloud.bigtable.admin.v2.models;
 
@@ -29,18 +31,14 @@ import com.google.cloud.bigtable.admin.v2.models.GCRules.GCRule;
 import com.google.common.base.Preconditions;
 import com.google.protobuf.ByteString;
 
-/** 
- * 
- * Fluent DSL models to build Bigtable Table admin requests 
- * 
- */
+/** Fluent DSL models to build Bigtable Table admin requests */
 @BetaApi
 public final class TableAdminRequests {
   private TableAdminRequests() {}
 
   /**
    * Factory method to get an instance of CreateTable
-   * 
+   *
    * @param tableId - the id of the table to create
    * @return CreateTable
    */
@@ -50,7 +48,7 @@ public final class TableAdminRequests {
 
   /**
    * Factory method to get an instance of ModifyFamilies
-   * 
+   *
    * @param tableId - the id of the table to create
    * @return ModifyFamilies
    */
@@ -60,13 +58,13 @@ public final class TableAdminRequests {
 
   /**
    * Fluent wrapper for {@link CreateTableRequest}
-   * 
-   * <pre> 
-   * Allows for creating table with 
-   *    - optional columnFamilies, including optional {@link GCRule} 
+   *
+   * <pre>
+   * Allows for creating table with
+   *    - optional columnFamilies, including optional {@link GCRule}
    *    - optional granularity
    *    - and optional split points
-   * </pre>    
+   * </pre>
    */
   public static final class CreateTable {
     private final CreateTableRequest.Builder createTableRequest = CreateTableRequest.newBuilder();
@@ -74,7 +72,7 @@ public final class TableAdminRequests {
 
     /**
      * Configures table with the specified id
-     * 
+     *
      * @param tableId
      */
     private CreateTable(String tableId) {
@@ -83,7 +81,7 @@ public final class TableAdminRequests {
 
     /**
      * Configures table with the specified granularity
-     *  
+     *
      * @param granularity
      */
     public CreateTable withGranularity(TimestampGranularity granularity) {
@@ -94,7 +92,7 @@ public final class TableAdminRequests {
 
     /**
      * Adds a new columnFamily to the configuration
-     * 
+     *
      * @param familyId
      */
     public CreateTable addColumnFamily(String familyId) {
@@ -105,7 +103,7 @@ public final class TableAdminRequests {
 
     /**
      * Adds a new columnFamily with {@link GCRule} to the configuration
-     *  
+     *
      * @param familyId
      * @param gcRule
      */
@@ -118,7 +116,7 @@ public final class TableAdminRequests {
 
     /**
      * Adds split at the specified key to the configuration
-     * 
+     *
      * @param key
      */
     public CreateTable addSplit(ByteString key) {
@@ -129,7 +127,7 @@ public final class TableAdminRequests {
 
     /**
      * Adds the specified number of uniform splits to the configuration
-     * 
+     *
      * @param key
      * @param numSplits
      */
@@ -151,13 +149,13 @@ public final class TableAdminRequests {
 
   /**
    * Fluent wrapper for {@link ModifyColumnFamiliesRequest}
-   * 
-   * <pre> 
-   * Allows the following ColumnFamily modifications 
-   *    - create family, optionally with {@link GCRule} 
+   *
+   * <pre>
+   * Allows the following ColumnFamily modifications
+   *    - create family, optionally with {@link GCRule}
    *    - update existing family {@link GCRule}
    *    - drop an existing family
-   * </pre>    
+   * </pre>
    */
   public static final class ModifyFamilies {
     private final ModifyColumnFamiliesRequest.Builder modFamilyRequest =
@@ -166,7 +164,7 @@ public final class TableAdminRequests {
 
     /**
      * Configures the tableId to execute the modifications
-     * 
+     *
      * @param tableId
      */
     private ModifyFamilies(String tableId) {
@@ -176,6 +174,7 @@ public final class TableAdminRequests {
 
     /**
      * Configures the name of the new ColumnFamily to be created
+     *
      * @param familyId
      * @return
      */
@@ -185,7 +184,7 @@ public final class TableAdminRequests {
 
     /**
      * Configures the name and GcRule of the new ColumnFamily to be created
-     * 
+     *
      * @param familyId
      * @param gcRule
      * @return
@@ -200,7 +199,7 @@ public final class TableAdminRequests {
 
     /**
      * Updates the GCRule of existing ColumnFamily
-     * 
+     *
      * @param familyId
      * @param gcRule
      * @return
@@ -215,7 +214,7 @@ public final class TableAdminRequests {
 
     /**
      * Drops the specified ColumnFamily
-     * 
+     *
      * @param familyId
      * @return
      */
@@ -229,7 +228,8 @@ public final class TableAdminRequests {
     @InternalApi
     public ModifyColumnFamiliesRequest toProto(InstanceName instanceName) {
       Preconditions.checkNotNull(instanceName);
-      String tableName = TableName.of(instanceName.getProject(), instanceName.getInstance(), tableId).toString();
+      String tableName =
+          TableName.of(instanceName.getProject(), instanceName.getInstance(), tableId).toString();
       return modFamilyRequest.setName(tableName).build();
     }
   }

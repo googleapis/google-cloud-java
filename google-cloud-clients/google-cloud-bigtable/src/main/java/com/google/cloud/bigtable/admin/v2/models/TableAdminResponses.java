@@ -1,15 +1,17 @@
 /*
  * Copyright 2018 Google LLC
  *
- * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
- * in compliance with the License. You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- * https://www.apache.org/licenses/LICENSE-2.0
+ *     https://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing, software distributed under the License
- * is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
- * or implied. See the License for the specific language governing permissions and limitations under
- * the License.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
 package com.google.cloud.bigtable.admin.v2.models;
 
@@ -36,18 +38,14 @@ import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
 
-/** 
- * 
- * Bigtable Table admin response wrappers
- * 
- */
+/** Bigtable Table admin response wrappers */
 @BetaApi
 public class TableAdminResponses {
   private TableAdminResponses() {}
 
   /**
    * Converts the protocol buffer table to a simpler Table model with only the required elements
-   * 
+   *
    * @param com.google.bigtable.admin.v2.Table - Protobuf table
    * @return Table - Table response wrapper
    */
@@ -57,20 +55,18 @@ public class TableAdminResponses {
   }
 
   /**
-   * Converts the protocol buffer response to a simpler ConsistencyToken which can be passed back as is. 
-   * 
+   * Converts the protocol buffer response to a simpler ConsistencyToken which can be passed back as
+   * is.
+   *
    * @param GenerateConsistencyTokenResponse - Protobuf ConsistencyTokenResponse
-   * @return ConsistencyToken - ConsistencyToken response wrapper 
+   * @return ConsistencyToken - ConsistencyToken response wrapper
    */
   public static ConsistencyToken convertTokenResponse(
       GenerateConsistencyTokenResponse tokenResponse) {
     return new ConsistencyToken(tokenResponse);
   }
 
-  /** 
-   * Wrapper for {@link Table} protocol buffer object 
-   * 
-   */
+  /** Wrapper for {@link Table} protocol buffer object */
   public static final class Table {
     private TableName tableName;
     private TimestampGranularity timestampGranularity;
@@ -82,24 +78,26 @@ public class TableAdminResponses {
       this.tableName = TableName.parse(table.getName());
       this.timestampGranularity = table.getGranularity();
 
-      Map<String, com.google.bigtable.admin.v2.Table.ClusterState> clusterStatesMap = table.getClusterStatesMap();
-      for (Entry<String, com.google.bigtable.admin.v2.Table.ClusterState> entry : clusterStatesMap.entrySet()) {
-        clusterStates.put(
-            entry.getKey(), new ClusterState(entry.getKey(), entry.getValue()));
+      Map<String, com.google.bigtable.admin.v2.Table.ClusterState> clusterStatesMap =
+          table.getClusterStatesMap();
+      for (Entry<String, com.google.bigtable.admin.v2.Table.ClusterState> entry :
+          clusterStatesMap.entrySet()) {
+        clusterStates.put(entry.getKey(), new ClusterState(entry.getKey(), entry.getValue()));
       }
 
-      Map<String, com.google.bigtable.admin.v2.ColumnFamily> columnFamiliesMap = table.getColumnFamiliesMap();
-      for (Entry<String, com.google.bigtable.admin.v2.ColumnFamily> entry : columnFamiliesMap.entrySet()) {
-        columnFamilies.put(
-            entry.getKey(), new ColumnFamily(entry.getKey(), entry.getValue()));
+      Map<String, com.google.bigtable.admin.v2.ColumnFamily> columnFamiliesMap =
+          table.getColumnFamiliesMap();
+      for (Entry<String, com.google.bigtable.admin.v2.ColumnFamily> entry :
+          columnFamiliesMap.entrySet()) {
+        columnFamilies.put(entry.getKey(), new ColumnFamily(entry.getKey(), entry.getValue()));
       }
     }
 
     /**
      * Gets the unique name of the table in the format:
      * projects/{project}/instances/{instance}/tables/{tableId}
-     * 
-     * @return TableName 
+     *
+     * @return TableName
      */
     public TableName getTableName() {
       return tableName;
@@ -107,7 +105,7 @@ public class TableAdminResponses {
 
     /**
      * Gets the timestampGranularity of the table
-     * 
+     *
      * @return TimestampGranularity
      */
     public TimestampGranularity getTimestampGranularity() {
@@ -115,8 +113,9 @@ public class TableAdminResponses {
     }
 
     /**
-     * Returns state of the table by clusters in the instance as map of clusterId and {@link ClusterState}
-     * 
+     * Returns state of the table by clusters in the instance as map of clusterId and {@link
+     * ClusterState}
+     *
      * @return Map<String, ClusterState>
      */
     public Map<String, ClusterState> getClusterStatesMap() {
@@ -125,7 +124,7 @@ public class TableAdminResponses {
 
     /**
      * Returns a map of columfamilies in the table keyed by columnfamily and name
-     * 
+     *
      * @return Map<String, ColumnFamily>
      */
     public Map<String, ColumnFamily> getColumnFamiliesMap() {
@@ -134,7 +133,7 @@ public class TableAdminResponses {
 
     /**
      * Returns state of the table by clusters in the instance as a Collection
-     * 
+     *
      * @return Collection<ClusterState>
      */
     public Collection<ClusterState> getClusterStates() {
@@ -143,7 +142,7 @@ public class TableAdminResponses {
 
     /**
      * Returns all columnfamilies in the table as a Collection
-     * 
+     *
      * @return
      */
     public Collection<ColumnFamily> getColumnFamiles() {
@@ -161,9 +160,7 @@ public class TableAdminResponses {
     }
   }
 
-  /** 
-   * Wrapper for {@link ClusterState} protocol buffer object 
-   */
+  /** Wrapper for {@link ClusterState} protocol buffer object */
   public static final class ClusterState {
     private String id;
     private ReplicationState replicationState;
@@ -175,7 +172,7 @@ public class TableAdminResponses {
 
     /**
      * Gets the cluster Id
-     * 
+     *
      * @return String
      */
     public String getId() {
@@ -184,7 +181,7 @@ public class TableAdminResponses {
 
     /**
      * Gets the ReplicationState of the table for this cluster
-     * 
+     *
      * @return ReplicationState
      */
     public ReplicationState getReplicationState() {
@@ -217,6 +214,7 @@ public class TableAdminResponses {
 
     /**
      * Gets the columnfamily name
+     *
      * @return String
      */
     public String getId() {
@@ -225,7 +223,7 @@ public class TableAdminResponses {
 
     /**
      * Get's the GCRule configured for the columnfamily
-     * 
+     *
      * @return GCRule
      */
     public GCRule getGCRule() {
@@ -234,6 +232,7 @@ public class TableAdminResponses {
 
     /**
      * Returns true if a GCRule has been configured for the family
+     *
      * @return
      */
     public boolean hasGcRule() {
@@ -242,10 +241,7 @@ public class TableAdminResponses {
 
     @Override
     public String toString() {
-      return MoreObjects.toStringHelper(this)
-          .add("id", id)
-          .add("gCRule", gCRule)
-          .toString();
+      return MoreObjects.toStringHelper(this).add("id", id).add("gCRule", gCRule).toString();
     }
 
     private GCRule convertGcRule(GcRule source) {
@@ -277,9 +273,11 @@ public class TableAdminResponses {
     }
   }
 
-  /** 
+  /**
    * Wrapper for {@link GenerateConsistencyTokenResponse#getConsistencyToken()} 
-   * Cannot be created, they are obtained by invoking {@link TableAdminClient#generateConsistencyToken(String)} 
+   * 
+   * <p>Cannot be created.
+   * They are obtained by invoking {@link TableAdminClient#generateConsistencyToken(String)}
    */
   public static final class ConsistencyToken {
     private String token;
@@ -290,10 +288,12 @@ public class TableAdminResponses {
 
     @InternalApi
     public CheckConsistencyRequest toProto(String tableName) {
-      return CheckConsistencyRequest.newBuilder().setName(tableName).setConsistencyToken(token)
-                                    .build();
+      return CheckConsistencyRequest.newBuilder()
+          .setName(tableName)
+          .setConsistencyToken(token)
+          .build();
     }
-    
+
     @VisibleForTesting
     String getToken() {
       return token;

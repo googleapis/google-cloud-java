@@ -1,3 +1,18 @@
+/*
+ * Copyright 2018 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package com.google.cloud.bigtable.admin.v2;
 
 import static com.google.common.truth.Truth.assertThat;
@@ -234,17 +249,15 @@ public class TableAdminClientTest {
     ConsistencyToken consistencyToken = adminClient.generateConsistencyToken("tableId");
     Mockito.verify(mockGenerateConsistencyTokenCallable)
         .call(adminClient.composeGenerateConsistencyTokenRequest("tableId"));
-    
-    ArgumentCaptor<CheckConsistencyRequest> requestCaptor = ArgumentCaptor.forClass(CheckConsistencyRequest.class);
+
+    ArgumentCaptor<CheckConsistencyRequest> requestCaptor =
+        ArgumentCaptor.forClass(CheckConsistencyRequest.class);
     CheckConsistencyResponse consistencyResp = CheckConsistencyResponse.newBuilder().build();
-    Mockito.when(
-            mockCheckConsistencyCallable.call(
-                any(CheckConsistencyRequest.class)))
+    Mockito.when(mockCheckConsistencyCallable.call(any(CheckConsistencyRequest.class)))
         .thenReturn(consistencyResp);
 
     adminClient.isConsistent("tableId", consistencyToken);
-    Mockito.verify(mockCheckConsistencyCallable)
-        .call(requestCaptor.capture());
+    Mockito.verify(mockCheckConsistencyCallable).call(requestCaptor.capture());
   }
 
   @Test
@@ -256,21 +269,20 @@ public class TableAdminClientTest {
                 adminClient.composeGenerateConsistencyTokenRequest("tableId")))
         .thenReturn(genResp);
 
-    ApiFuture<ConsistencyToken> consistencyTokenFuture = adminClient.generateConsistencyTokenAsync("tableId");
+    ApiFuture<ConsistencyToken> consistencyTokenFuture =
+        adminClient.generateConsistencyTokenAsync("tableId");
     Mockito.verify(mockGenerateConsistencyTokenCallable)
         .futureCall(adminClient.composeGenerateConsistencyTokenRequest("tableId"));
-    
-    ArgumentCaptor<CheckConsistencyRequest> requestCaptor = ArgumentCaptor.forClass(CheckConsistencyRequest.class);
+
+    ArgumentCaptor<CheckConsistencyRequest> requestCaptor =
+        ArgumentCaptor.forClass(CheckConsistencyRequest.class);
     ApiFuture<CheckConsistencyResponse> consistencyResp =
         ApiFutures.immediateFuture(CheckConsistencyResponse.newBuilder().build());
-    Mockito.when(
-            mockCheckConsistencyCallable.futureCall(
-                any(CheckConsistencyRequest.class)))
+    Mockito.when(mockCheckConsistencyCallable.futureCall(any(CheckConsistencyRequest.class)))
         .thenReturn(consistencyResp);
 
     adminClient.isConsistentAsync("tableId", consistencyTokenFuture.get());
-    Mockito.verify(mockCheckConsistencyCallable)
-        .futureCall(requestCaptor.capture());
+    Mockito.verify(mockCheckConsistencyCallable).futureCall(requestCaptor.capture());
   }
 
   @Test

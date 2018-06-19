@@ -1,15 +1,17 @@
 /*
  * Copyright 2018 Google LLC
  *
- * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
- * in compliance with the License. You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- * https://www.apache.org/licenses/LICENSE-2.0
+ *     https://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing, software distributed under the License
- * is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
- * or implied. See the License for the specific language governing permissions and limitations under
- * the License.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
 package com.google.cloud.bigtable.admin.v2.models;
 
@@ -134,21 +136,51 @@ public class TableAdminResponsesTest {
             .build();
 
     Table tableResponse = TableAdminResponses.convertTable(table);
-    assertThat(actual).isEqualTo(tableResponse.getColumnFamiliesMap().get("cf3").getGCRule().toProto());
+    assertThat(actual)
+        .isEqualTo(tableResponse.getColumnFamiliesMap().get("cf3").getGCRule().toProto());
     assertTrue(tableResponse.getColumnFamiliesMap().get("cf3").hasGcRule());
-    
+
     GCRule parentUnion = tableResponse.getColumnFamiliesMap().get("cf3").getGCRule();
     assertEquals(2, parentUnion.getUnionOrThow().getRulesList().size());
 
-    IntersectionRule intersectionRule = parentUnion.getUnionOrThow().getRulesList().get(0).getIntersectionOrThow();
+    IntersectionRule intersectionRule =
+        parentUnion.getUnionOrThow().getRulesList().get(0).getIntersectionOrThow();
     assertEquals(2, intersectionRule.getIntersectionOrThow().getRulesList().size());
-    assertEquals(1, intersectionRule.getIntersectionOrThow().getRulesList().get(0).getVersionOrThow().getMaxVersions());
-    assertEquals(Duration.ofSeconds(1, 0), intersectionRule.getIntersectionOrThow().getRulesList().get(1).getDurationOrThow().getMaxAge());
-    
+    assertEquals(
+        1,
+        intersectionRule
+            .getIntersectionOrThow()
+            .getRulesList()
+            .get(0)
+            .getVersionOrThow()
+            .getMaxVersions());
+    assertEquals(
+        Duration.ofSeconds(1, 0),
+        intersectionRule
+            .getIntersectionOrThow()
+            .getRulesList()
+            .get(1)
+            .getDurationOrThow()
+            .getMaxAge());
+
     intersectionRule = parentUnion.getUnionOrThow().getRulesList().get(1).getIntersectionOrThow();
     assertEquals(2, intersectionRule.getIntersectionOrThow().getRulesList().size());
-    assertEquals(1, intersectionRule.getIntersectionOrThow().getRulesList().get(0).getVersionOrThow().getMaxVersions());
-    assertEquals(Duration.ofSeconds(1, 0), intersectionRule.getIntersectionOrThow().getRulesList().get(1).getDurationOrThow().getMaxAge());
+    assertEquals(
+        1,
+        intersectionRule
+            .getIntersectionOrThow()
+            .getRulesList()
+            .get(0)
+            .getVersionOrThow()
+            .getMaxVersions());
+    assertEquals(
+        Duration.ofSeconds(1, 0),
+        intersectionRule
+            .getIntersectionOrThow()
+            .getRulesList()
+            .get(1)
+            .getDurationOrThow()
+            .getMaxAge());
   }
 
   @Test
@@ -192,12 +224,14 @@ public class TableAdminResponsesTest {
             .build();
 
     Table tableResponse = TableAdminResponses.convertTable(table);
-    assertThat(actual).isEqualTo(tableResponse.getColumnFamiliesMap().get("cf3").getGCRule().toProto());
+    assertThat(actual)
+        .isEqualTo(tableResponse.getColumnFamiliesMap().get("cf3").getGCRule().toProto());
   }
 
   @Test
   public void convertTable_Empty() {
-    Table tableResponse = TableAdminResponses.convertTable(com.google.bigtable.admin.v2.Table.newBuilder().build());
+    Table tableResponse =
+        TableAdminResponses.convertTable(com.google.bigtable.admin.v2.Table.newBuilder().build());
 
     assertNotNull(tableResponse);
     assertEquals(

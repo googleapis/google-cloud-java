@@ -69,7 +69,13 @@ public class TableAdminClientIT {
       assertFalse(tableResponse.getColumnFamiliesMap().get("cf1").hasGcRule());
       assertTrue(tableResponse.getColumnFamiliesMap().get("cf2").hasGcRule());
       assertEquals(
-          10, tableResponse.getColumnFamiliesMap().get("cf2").getGCRule().getVersionOrThow().getMaxVersions());
+          10,
+          tableResponse
+              .getColumnFamiliesMap()
+              .get("cf2")
+              .getGCRule()
+              .getVersionOrThow()
+              .getMaxVersions());
       assertEquals(TimestampGranularity.MILLIS, tableResponse.getTimestampGranularity());
       // TODO: is there a way to test splits here?
     } finally {
@@ -84,8 +90,7 @@ public class TableAdminClientIT {
     Duration.ofSeconds(1000);
     modifyFamiliesReq
         .create("mf1")
-        .createWithGCRule(
-            "mf2", GCRULES.maxAge(Duration.ofSeconds(1000, 20000)))
+        .createWithGCRule("mf2", GCRULES.maxAge(Duration.ofSeconds(1000, 20000)))
         .updateWithGCRule(
             "mf1",
             GCRULES
@@ -112,15 +117,51 @@ public class TableAdminClientIT {
       assertEquals(5, tableResponse.getColumnFamiles().size());
       assertNotNull(tableResponse.getColumnFamiliesMap().get("mf1"));
       assertNotNull(tableResponse.getColumnFamiliesMap().get("mf2"));
-      assertEquals(2, tableResponse.getColumnFamiliesMap().get("mf1").getGCRule().getUnionOrThow().getRulesList().size());
+      assertEquals(
+          2,
+          tableResponse
+              .getColumnFamiliesMap()
+              .get("mf1")
+              .getGCRule()
+              .getUnionOrThow()
+              .getRulesList()
+              .size());
       assertEquals(
           1000,
-          tableResponse.getColumnFamiliesMap().get("mf2").getGCRule().getDurationOrThow().getMaxAge().getSeconds());
+          tableResponse
+              .getColumnFamiliesMap()
+              .get("mf2")
+              .getGCRule()
+              .getDurationOrThow()
+              .getMaxAge()
+              .getSeconds());
       assertEquals(
           20000,
-          tableResponse.getColumnFamiliesMap().get("mf2").getGCRule().getDurationOrThow().getMaxAge().getNano());
-      assertEquals(2, tableResponse.getColumnFamiliesMap().get("mf3").getGCRule().getIntersectionOrThow().getRulesList().size());
-      assertEquals(360, tableResponse.getColumnFamiliesMap().get("mf4").getGCRule().getDurationOrThow().getMaxAge().getSeconds());
+          tableResponse
+              .getColumnFamiliesMap()
+              .get("mf2")
+              .getGCRule()
+              .getDurationOrThow()
+              .getMaxAge()
+              .getNano());
+      assertEquals(
+          2,
+          tableResponse
+              .getColumnFamiliesMap()
+              .get("mf3")
+              .getGCRule()
+              .getIntersectionOrThow()
+              .getRulesList()
+              .size());
+      assertEquals(
+          360,
+          tableResponse
+              .getColumnFamiliesMap()
+              .get("mf4")
+              .getGCRule()
+              .getDurationOrThow()
+              .getMaxAge()
+              .getSeconds());
       assertNotNull(tableResponse.getColumnFamiliesMap().get("mf7"));
     } finally {
       tableAdmin.deleteTable(tableId);

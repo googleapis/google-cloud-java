@@ -1,15 +1,17 @@
 /*
  * Copyright 2018 Google LLC
  *
- * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
- * in compliance with the License. You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- * https://www.apache.org/licenses/LICENSE-2.0
+ *     https://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing, software distributed under the License
- * is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
- * or implied. See the License for the specific language governing permissions and limitations under
- * the License.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
 package com.google.cloud.bigtable.admin.v2.models;
 
@@ -25,9 +27,7 @@ import com.google.bigtable.admin.v2.GcRule.Intersection;
 import com.google.bigtable.admin.v2.GcRule.Union;
 import com.google.common.base.MoreObjects;
 
-/**
- * Wraps {@link GcRule} protocol buffer object and exposes a simpler Fluent DSL model 
- */
+/** Wraps {@link GcRule} protocol buffer object and exposes a simpler Fluent DSL model */
 @BetaApi
 public final class GCRules {
   /** Factory method to create GCRules - entry point into the DSL. */
@@ -37,7 +37,7 @@ public final class GCRules {
 
   /**
    * Creates a new instance of the IntersectionRule
-   * 
+   *
    * @return IntersectionRule
    */
   public IntersectionRule intersection() {
@@ -46,7 +46,7 @@ public final class GCRules {
 
   /**
    * Creates a new instance of the IntersectionRule
-   * 
+   *
    * @return UnionRule
    */
   public UnionRule union() {
@@ -55,7 +55,7 @@ public final class GCRules {
 
   /**
    * Creates a new instance of the VersionRule
-   * 
+   *
    * @param maxVersion - maximum number of cell versions to keep
    * @return VersionRule
    */
@@ -65,7 +65,7 @@ public final class GCRules {
 
   /**
    * Creates a new instance of the DurationRule
-   * 
+   *
    * @param maxAge - maximum age of the cell to keep
    * @param timeUnit - timeunit for the age
    * @return DurationRule
@@ -78,7 +78,7 @@ public final class GCRules {
 
   /**
    * Creates a new instance of the DurationRule
-   * 
+   *
    * @param duration - age expressed as duration
    * @return DurationRule
    */
@@ -88,7 +88,7 @@ public final class GCRules {
 
   /**
    * Creates an empty default rule
-   * 
+   *
    * @return DefaultRule
    */
   public DefaultRule defaulRule() {
@@ -96,20 +96,20 @@ public final class GCRules {
   }
 
   /**
-   * Fluent wrapper for {@link Intersection} rule. 
-   * Allows far adding an hierarchy of rules with intersection as the root
+   * Fluent wrapper for {@link Intersection} rule. Allows far adding an hierarchy of rules with
+   * intersection as the root
    */
   public static final class IntersectionRule extends BaseRule {
     private GcRule.Intersection.Builder builder;
     private List<GCRule> rulesList = new ArrayList<>();
-    
+
     private IntersectionRule() {
       this.builder = GcRule.Intersection.newBuilder();
     }
 
     /**
      * Adds a new GCRule
-     * 
+     *
      * @param rule
      * @return IntersectionRule
      */
@@ -121,20 +121,18 @@ public final class GCRules {
 
     /**
      * Gets the list of child rules
-     * 
+     *
      * @return List<GCRule>
      */
     public List<GCRule> getRulesList() {
       return rulesList;
     }
-    
+
     @Override
     public String toString() {
-      return MoreObjects.toStringHelper(this)
-          .add("rulesList", rulesList)
-          .toString();
+      return MoreObjects.toStringHelper(this).add("rulesList", rulesList).toString();
     }
-    
+
     @InternalApi
     @Override
     public GcRule toProto() {
@@ -150,20 +148,20 @@ public final class GCRules {
   }
 
   /**
-   * Fluent wrapper for {@link Union} rule. 
-   * Allows far adding an hierarchy of rules with union as the root
+   * Fluent wrapper for {@link Union} rule. Allows far adding an hierarchy of rules with union as
+   * the root
    */
   public static final class UnionRule extends BaseRule {
     private GcRule.Union.Builder builder;
     private List<GCRule> rulesList = new ArrayList<>();
-    
+
     private UnionRule() {
       this.builder = GcRule.Union.newBuilder();
     }
 
     /**
      * Adds a new GCRule
-     * 
+     *
      * @param rule
      * @return UnionRule
      */
@@ -175,18 +173,16 @@ public final class GCRules {
 
     /**
      * Gets the list of child rules
-     * 
+     *
      * @return List<GCRule>
      */
     public List<GCRule> getRulesList() {
       return rulesList;
     }
-    
+
     @Override
     public String toString() {
-      return MoreObjects.toStringHelper(this)
-          .add("rulesList", rulesList)
-          .toString();
+      return MoreObjects.toStringHelper(this).add("rulesList", rulesList).toString();
     }
 
     @InternalApi
@@ -203,9 +199,7 @@ public final class GCRules {
     }
   }
 
-  /**
-   * Wrapper for building max versions rule
-   */
+  /** Wrapper for building max versions rule */
   public static final class VersionRule extends BaseRule {
     private GcRule.Builder builder;
 
@@ -214,18 +208,14 @@ public final class GCRules {
       builder.setMaxNumVersions(maxVersion);
     }
 
-    /**
-     * Gets the configured maximum versions 
-     */
+    /** Gets the configured maximum versions */
     public int getMaxVersions() {
       return toProto().getMaxNumVersions();
     }
-    
+
     @Override
     public String toString() {
-      return MoreObjects.toStringHelper(this)
-          .add("maxNumVersions", getMaxVersions())
-          .toString();
+      return MoreObjects.toStringHelper(this).add("maxNumVersions", getMaxVersions()).toString();
     }
 
     @InternalApi
@@ -235,9 +225,7 @@ public final class GCRules {
     }
   }
 
-  /**
-   * Wrapper for building max duration rule
-   */
+  /** Wrapper for building max duration rule */
   public static final class DurationRule extends BaseRule {
     private com.google.protobuf.Duration.Builder builder;
 
@@ -247,23 +235,21 @@ public final class GCRules {
               .setSeconds(duration.getSeconds())
               .setNanos(duration.getNano());
     }
-    
+
     /**
      * Gets the configured maximum age
-     * 
+     *
      * @return Duration
      */
     public Duration getMaxAge() {
       long seconds = toProto().getMaxAge().getSeconds();
       int nanos = toProto().getMaxAge().getNanos();
-      return Duration.ofSeconds(seconds, nanos); 
+      return Duration.ofSeconds(seconds, nanos);
     }
 
     @Override
     public String toString() {
-      return MoreObjects.toStringHelper(this)
-          .add("maxAge", getMaxAge())
-          .toString();
+      return MoreObjects.toStringHelper(this).add("maxAge", getMaxAge()).toString();
     }
 
     @InternalApi
@@ -273,10 +259,7 @@ public final class GCRules {
     }
   }
 
-  /**
-   * Wrapper for building a empty rule
-   *
-   */
+  /** Wrapper for building a empty rule */
   public static final class DefaultRule extends BaseRule {
     private DefaultRule() {}
 
@@ -285,63 +268,47 @@ public final class GCRules {
     public GcRule toProto() {
       return GcRule.getDefaultInstance();
     }
-    
+
     @Override
     public String toString() {
-      return MoreObjects.toStringHelper(this)
-          .toString();
+      return MoreObjects.toStringHelper(this).toString();
     }
   }
 
-  /**
-   * Helpers to support casting rules the Type, when the Type is known  
-   */
-  public static abstract class BaseRule implements GCRule {
-    
-    /**
-     * Casts the rule to DurationRule. 
-     * On failure throws a ClassCastException
-     */
+  /** Helpers to support casting rules the Type, when the Type is known */
+  public abstract static class BaseRule implements GCRule {
+
+    /** Casts the rule to DurationRule. On failure throws a ClassCastException */
     public DurationRule getDurationOrThow() {
       return (DurationRule) this;
     }
 
-    /**
-     * Casts the rule to VersionRule. 
-     * On failure throws a ClassCastException
-     */
+    /** Casts the rule to VersionRule. On failure throws a ClassCastException */
     public VersionRule getVersionOrThow() {
       return (VersionRule) this;
     }
 
-    /**
-     * Casts the rule to UnionRule. 
-     * On failure throws a ClassCastException
-     */
+    /** Casts the rule to UnionRule. On failure throws a ClassCastException */
     public UnionRule getUnionOrThow() {
       return (UnionRule) this;
     }
 
-    /**
-     * Casts the rule to IntersectionRule. 
-     * On failure throws a ClassCastException
-     */
+    /** Casts the rule to IntersectionRule. On failure throws a ClassCastException */
     public IntersectionRule getIntersectionOrThow() {
       return (IntersectionRule) this;
     }
   }
-  
-  /**
-   * 
-   * interface for fluent GcRule wrappers
-   *
-   */
+
+  /** interface for fluent GcRule wrappers */
   public interface GCRule {
     DurationRule getDurationOrThow();
+
     VersionRule getVersionOrThow();
+
     UnionRule getUnionOrThow();
+
     IntersectionRule getIntersectionOrThow();
-    
+
     @InternalApi
     GcRule toProto();
   }
