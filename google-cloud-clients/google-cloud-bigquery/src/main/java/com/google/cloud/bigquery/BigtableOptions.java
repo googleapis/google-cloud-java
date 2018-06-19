@@ -27,6 +27,10 @@ public class BigtableOptions extends FormatOptions {
 
   private static final long serialVersionUID = 1L;
 
+  private final Boolean ignoreUnspecifiedColumnFamilies;
+  private final Boolean readRowkeyAsString;
+  private final List<BigtableColumnFamily> columnFamilies;
+
   public Boolean getIgnoreUnspecifiedColumnFamilies() {
     return ignoreUnspecifiedColumnFamilies;
   }
@@ -39,9 +43,7 @@ public class BigtableOptions extends FormatOptions {
     return columnFamilies;
   }
 
-  private final Boolean ignoreUnspecifiedColumnFamilies;
-  private final Boolean readRowkeyAsString;
-  private final List<BigtableColumnFamily> columnFamilies;
+
 
   static final class Builder {
 

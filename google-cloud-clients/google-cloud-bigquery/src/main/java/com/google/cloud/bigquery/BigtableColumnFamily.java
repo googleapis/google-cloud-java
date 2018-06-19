@@ -17,12 +17,9 @@ package com.google.cloud.bigquery;
 
 
 import com.google.common.base.Function;
-import com.google.common.base.MoreObjects;
 import com.google.common.collect.Lists;
 import com.google.auto.value.AutoValue;
-import java.io.Serializable;
 import java.util.List;
-import java.util.Objects;
 
 /**
  * List of column families to expose in the table schema along with their types. This list restricts

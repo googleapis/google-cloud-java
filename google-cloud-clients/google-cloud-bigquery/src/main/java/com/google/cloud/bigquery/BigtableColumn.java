@@ -17,10 +17,7 @@ package com.google.cloud.bigquery;
 
 
 import com.google.common.base.Function;
-import com.google.common.base.MoreObjects;
 import com.google.auto.value.AutoValue;
-import java.io.Serializable;
-import java.util.Objects;
 import javax.annotation.Nullable;
 
 @AutoValue
