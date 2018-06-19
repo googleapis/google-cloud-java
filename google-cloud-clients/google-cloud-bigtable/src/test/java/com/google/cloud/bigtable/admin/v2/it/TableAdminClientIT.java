@@ -33,7 +33,8 @@ import com.google.cloud.bigtable.admin.v2.TableAdminClient;
 import com.google.cloud.bigtable.admin.v2.models.TableAdminRequests;
 import com.google.cloud.bigtable.admin.v2.models.TableAdminRequests.CreateTable;
 import com.google.cloud.bigtable.admin.v2.models.TableAdminRequests.ModifyFamilies;
-import com.google.cloud.bigtable.admin.v2.models.TableAdminResponses.TableResponse;
+import com.google.cloud.bigtable.admin.v2.models.TableAdminResponses.ConsistencyToken;
+import com.google.cloud.bigtable.admin.v2.models.TableAdminResponses.Table;
 import com.google.protobuf.ByteString;
 
 public class TableAdminClientIT {
@@ -61,14 +62,14 @@ public class TableAdminClientIT {
             .addSplit(ByteString.copyFromUtf8("q"));
 
     try {
-      TableResponse tableResponse = tableAdmin.createTable(createTableReq);
+      Table tableResponse = tableAdmin.createTable(createTableReq);
       assertNotNull(tableResponse);
       assertEquals(tableId, tableResponse.getTableName().getTable());
       assertEquals(2, tableResponse.getColumnFamiles().size());
       assertFalse(tableResponse.getColumnFamiliesMap().get("cf1").hasGcRule());
       assertTrue(tableResponse.getColumnFamiliesMap().get("cf2").hasGcRule());
       assertEquals(
-          10, tableResponse.getColumnFamiliesMap().get("cf2").getGcRule().getMaxNumVersions());
+          10, tableResponse.getColumnFamiliesMap().get("cf2").getGCRule().getVersionOrThow().getMaxVersions());
       assertEquals(TimestampGranularity.MILLIS, tableResponse.getTimestampGranularity());
       // TODO: is there a way to test splits here?
     } finally {
@@ -84,7 +85,7 @@ public class TableAdminClientIT {
     modifyFamiliesReq
         .create("mf1")
         .createWithGCRule(
-            "mf2", GCRULES.maxAge(Duration.ofSeconds(1000, 20000))) // .seconds(1000).nanos(20000)
+            "mf2", GCRULES.maxAge(Duration.ofSeconds(1000, 20000)))
         .updateWithGCRule(
             "mf1",
             GCRULES
@@ -107,20 +108,19 @@ public class TableAdminClientIT {
 
     try {
       tableAdmin.createTable(TableAdminRequests.createTable(tableId));
-      TableResponse tableResponse = tableAdmin.modifyFamilies(modifyFamiliesReq);
+      Table tableResponse = tableAdmin.modifyFamilies(modifyFamiliesReq);
       assertEquals(5, tableResponse.getColumnFamiles().size());
       assertNotNull(tableResponse.getColumnFamiliesMap().get("mf1"));
       assertNotNull(tableResponse.getColumnFamiliesMap().get("mf2"));
-      assertTrue(tableResponse.getColumnFamiliesMap().get("mf1").getGcRule().hasUnion());
+      assertEquals(2, tableResponse.getColumnFamiliesMap().get("mf1").getGCRule().getUnionOrThow().getRulesList().size());
       assertEquals(
           1000,
-          tableResponse.getColumnFamiliesMap().get("mf2").getGcRule().getMaxAge().getSeconds());
+          tableResponse.getColumnFamiliesMap().get("mf2").getGCRule().getDurationOrThow().getMaxAge().getSeconds());
       assertEquals(
           20000,
-          tableResponse.getColumnFamiliesMap().get("mf2").getGcRule().getMaxAge().getNanos());
-      assertTrue(tableResponse.getColumnFamiliesMap().get("mf3").getGcRule().hasIntersection());
-      assertFalse(tableResponse.getColumnFamiliesMap().get("mf4").getGcRule().hasIntersection());
-      assertTrue(tableResponse.getColumnFamiliesMap().get("mf4").getGcRule().hasMaxAge());
+          tableResponse.getColumnFamiliesMap().get("mf2").getGCRule().getDurationOrThow().getMaxAge().getNano());
+      assertEquals(2, tableResponse.getColumnFamiliesMap().get("mf3").getGCRule().getIntersectionOrThow().getRulesList().size());
+      assertEquals(360, tableResponse.getColumnFamiliesMap().get("mf4").getGCRule().getDurationOrThow().getMaxAge().getSeconds());
       assertNotNull(tableResponse.getColumnFamiliesMap().get("mf7"));
     } finally {
       tableAdmin.deleteTable(tableId);
@@ -140,7 +140,7 @@ public class TableAdminClientIT {
 
     try {
       tableAdmin.createTable(TableAdminRequests.createTable(tableId));
-      TableResponse tableResponse = tableAdmin.getTable(tableId);
+      Table tableResponse = tableAdmin.getTable(tableId);
       assertNotNull(tableResponse);
       assertEquals(tableId, tableResponse.getTableName().getTable());
     } finally {
@@ -195,9 +195,9 @@ public class TableAdminClientIT {
 
     try {
       tableAdmin.createTable(TableAdminRequests.createTable(tableId));
-      String token = tableAdmin.generateConsistencyToken(tableId);
-      boolean consistent = tableAdmin.isConsistent(tableId, token);
-      assertNotNull(token);
+      ConsistencyToken consistencyToken = tableAdmin.generateConsistencyToken(tableId);
+      assertNotNull(consistencyToken);
+      boolean consistent = tableAdmin.isConsistent(tableId, consistencyToken);
       assertTrue(consistent);
     } finally {
       tableAdmin.deleteTable(tableId);

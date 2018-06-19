@@ -7,6 +7,7 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.runners.MockitoJUnitRunner;
@@ -30,6 +31,7 @@ import com.google.bigtable.admin.v2.TableName;
 import com.google.cloud.bigtable.admin.v2.models.TableAdminRequests;
 import com.google.cloud.bigtable.admin.v2.models.TableAdminRequests.CreateTable;
 import com.google.cloud.bigtable.admin.v2.models.TableAdminRequests.ModifyFamilies;
+import com.google.cloud.bigtable.admin.v2.models.TableAdminResponses.ConsistencyToken;
 import com.google.cloud.bigtable.admin.v2.stub.BigtableTableAdminStub;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
@@ -109,7 +111,7 @@ public class TableAdminClientTest {
     ModifyFamilies modifyFamReq = TableAdminRequests.modifyFamilies("tableId");
     adminClient.modifyFamilies(modifyFamReq);
     Mockito.verify(mockModifyTableCallable)
-        .call(modifyFamReq.toProto(adminClient.getTableName("tableId")));
+        .call(modifyFamReq.toProto(adminClient.getInstanceName()));
   }
 
   @Test
@@ -117,7 +119,7 @@ public class TableAdminClientTest {
     ModifyFamilies modifyFamReq = TableAdminRequests.modifyFamilies("tableId");
     adminClient.modifyFamiliesAsync(modifyFamReq);
     Mockito.verify(mockModifyTableCallable)
-        .futureCall(modifyFamReq.toProto(adminClient.getTableName("tableId")));
+        .futureCall(modifyFamReq.toProto(adminClient.getInstanceName()));
   }
 
   @Test
@@ -221,7 +223,7 @@ public class TableAdminClientTest {
   }
 
   @Test
-  public void generateConsistencyToken() {
+  public void generateAndCheckConsistency() {
     GenerateConsistencyTokenResponse genResp =
         GenerateConsistencyTokenResponse.newBuilder().build();
     Mockito.when(
@@ -229,13 +231,24 @@ public class TableAdminClientTest {
                 adminClient.composeGenerateConsistencyTokenRequest("tableId")))
         .thenReturn(genResp);
 
-    adminClient.generateConsistencyToken("tableId");
+    ConsistencyToken consistencyToken = adminClient.generateConsistencyToken("tableId");
     Mockito.verify(mockGenerateConsistencyTokenCallable)
         .call(adminClient.composeGenerateConsistencyTokenRequest("tableId"));
+    
+    ArgumentCaptor<CheckConsistencyRequest> requestCaptor = ArgumentCaptor.forClass(CheckConsistencyRequest.class);
+    CheckConsistencyResponse consistencyResp = CheckConsistencyResponse.newBuilder().build();
+    Mockito.when(
+            mockCheckConsistencyCallable.call(
+                any(CheckConsistencyRequest.class)))
+        .thenReturn(consistencyResp);
+
+    adminClient.isConsistent("tableId", consistencyToken);
+    Mockito.verify(mockCheckConsistencyCallable)
+        .call(requestCaptor.capture());
   }
 
   @Test
-  public void generateConsistencyTokenAsync() {
+  public void generateAndCheckConsistencyAsync() throws Exception {
     ApiFuture<GenerateConsistencyTokenResponse> genResp =
         ApiFutures.immediateFuture(GenerateConsistencyTokenResponse.newBuilder().build());
     Mockito.when(
@@ -243,36 +256,21 @@ public class TableAdminClientTest {
                 adminClient.composeGenerateConsistencyTokenRequest("tableId")))
         .thenReturn(genResp);
 
-    adminClient.generateConsistencyTokenAsync("tableId");
+    ApiFuture<ConsistencyToken> consistencyTokenFuture = adminClient.generateConsistencyTokenAsync("tableId");
     Mockito.verify(mockGenerateConsistencyTokenCallable)
         .futureCall(adminClient.composeGenerateConsistencyTokenRequest("tableId"));
-  }
-
-  @Test
-  public void isConsistent() {
-    CheckConsistencyResponse consistencyResp = CheckConsistencyResponse.newBuilder().build();
-    Mockito.when(
-            mockCheckConsistencyCallable.call(
-                adminClient.composeCheckConsistencyRequest("tableId", "token")))
-        .thenReturn(consistencyResp);
-
-    adminClient.isConsistent("tableId", "token");
-    Mockito.verify(mockCheckConsistencyCallable)
-        .call(adminClient.composeCheckConsistencyRequest("tableId", "token"));
-  }
-
-  @Test
-  public void isConsistentAsync() {
+    
+    ArgumentCaptor<CheckConsistencyRequest> requestCaptor = ArgumentCaptor.forClass(CheckConsistencyRequest.class);
     ApiFuture<CheckConsistencyResponse> consistencyResp =
         ApiFutures.immediateFuture(CheckConsistencyResponse.newBuilder().build());
     Mockito.when(
             mockCheckConsistencyCallable.futureCall(
-                adminClient.composeCheckConsistencyRequest("tableId", "token")))
+                any(CheckConsistencyRequest.class)))
         .thenReturn(consistencyResp);
 
-    adminClient.isConsistentAsync("tableId", "token");
+    adminClient.isConsistentAsync("tableId", consistencyTokenFuture.get());
     Mockito.verify(mockCheckConsistencyCallable)
-        .futureCall(adminClient.composeCheckConsistencyRequest("tableId", "token"));
+        .futureCall(requestCaptor.capture());
   }
 
   @Test

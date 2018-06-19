@@ -19,7 +19,9 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import com.google.bigtable.admin.v2.ColumnFamily;
 import com.google.bigtable.admin.v2.CreateTableRequest;
+import com.google.bigtable.admin.v2.GcRule;
 import com.google.bigtable.admin.v2.Table;
+import com.google.bigtable.admin.v2.TableName;
 import com.google.bigtable.admin.v2.CreateTableRequest.Split;
 import com.google.bigtable.admin.v2.InstanceName;
 import com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest;
@@ -29,23 +31,24 @@ import com.google.protobuf.ByteString;
 
 @RunWith(JUnit4.class)
 public class TableAdminRequestsTest {
+ private final InstanceName instanceName = InstanceName.of("project", "instance");
 
   @Test
   public void createTable() {
     CreateTableRequest actual =
         TableAdminRequests.createTable("tableId")
-            .withGranularity(TimestampGranularity.MILLIS)
+           .withGranularity(TimestampGranularity.MILLIS)
             .addColumnFamily("cf1")
             .addColumnFamily("cf2", GCRules.GCRULES.maxVersions(1))
             .addSplit(ByteString.copyFromUtf8("c"))
-            .toProto(InstanceName.of("project", "instance"));
+            .toProto(instanceName);
 
     CreateTableRequest expected =
         CreateTableRequest.newBuilder()
             .setTableId("tableId")
-            .setParent(InstanceName.of("project", "instance").getInstance())
+            .setParent(InstanceName.of("project", "instance").toString())
             .addInitialSplits(Split.newBuilder().setKey(ByteString.copyFromUtf8("c")))
-            .setTable(
+          .setTable(
                 Table.newBuilder()
                     .setGranularity(TimestampGranularity.MILLIS)
                     .putColumnFamilies("cf1", ColumnFamily.newBuilder().build())
@@ -61,7 +64,7 @@ public class TableAdminRequestsTest {
 
   @Test(expected = NullPointerException.class)
   public void createTable_RequiredTableId() {
-    TableAdminRequests.createTable(null).toProto(InstanceName.of("project", "instance"));
+    TableAdminRequests.createTable(null).toProto(instanceName);
   }
 
   @Test(expected = NullPointerException.class)
@@ -77,14 +80,14 @@ public class TableAdminRequestsTest {
             .createWithGCRule("cf2", GCRules.GCRULES.maxVersions(1))
             .create("cf3")
             .updateWithGCRule("cf1", GCRules.GCRULES.maxVersions(5))
-            .drop("cf3")
-            .toProto("uniqueTableName");
+            .drop("cf3") 
+            .toProto(instanceName);
 
     ModifyColumnFamiliesRequest expected =
         ModifyColumnFamiliesRequest.newBuilder()
-            .setName("uniqueTableName")
+            .setName(TableName.of(instanceName.getProject(), instanceName.getInstance(), "tableId").toString())
             .addModifications(
-                Modification.newBuilder().setId("cf1").setCreate(ColumnFamily.newBuilder()))
+                Modification.newBuilder().setId("cf1").setCreate(ColumnFamily.newBuilder().setGcRule(GcRule.getDefaultInstance())))
             .addModifications(
                 Modification.newBuilder()
                     .setId("cf2")
@@ -92,25 +95,21 @@ public class TableAdminRequestsTest {
                         ColumnFamily.newBuilder()
                             .setGcRule(GCRules.GCRULES.maxVersions(1).toProto())))
             .addModifications(
-                Modification.newBuilder().setId("cf3").setCreate(ColumnFamily.newBuilder()))
-            /*
-             * .addModifications( Modification.newBuilder().setId("cf2")
-             * .setUpdate(ColumnFamily.newBuilder()))
-             */
+                Modification.newBuilder().setId("cf3").setCreate(ColumnFamily.newBuilder().setGcRule(GcRule.getDefaultInstance())))
             .addModifications(
                 Modification.newBuilder()
                     .setId("cf1")
                     .setUpdate(
                         ColumnFamily.newBuilder()
                             .setGcRule(GCRules.GCRULES.maxVersions(5).toProto())))
-            .addModifications(Modification.newBuilder().setId("cf3").setDrop(true))
+            .addModifications(Modification.newBuilder().setId("cf3").setDrop(true)) 
             .build();
     assertThat(actual).isEqualTo(expected);
   }
 
   @Test(expected = NullPointerException.class)
   public void modifyFamilies_RequiredTableId() {
-    TableAdminRequests.modifyFamilies(null).toProto("uniqueTableName");
+    TableAdminRequests.modifyFamilies(null).toProto(instanceName);
   }
 
   @Test(expected = NullPointerException.class)
