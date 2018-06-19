@@ -16,8 +16,6 @@
 package com.google.cloud.bigquery;
 
 import static com.google.common.truth.Truth.assertThat;
-import static junit.framework.TestCase.assertEquals;
-import static junit.framework.TestCase.assertTrue;
 
 import com.google.common.collect.ImmutableList;
 import org.junit.Test;
