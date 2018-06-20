@@ -222,7 +222,7 @@ public class TableAdminResponses {
 
   /** Wrapper for {@link ColumnFamily} protocol buffer object */
   public static final class ColumnFamily {
-    private String id;
+    private final String id;
     private GCRule gCRule = GCRULES.defaulRule();
 
     private ColumnFamily(String id, com.google.bigtable.admin.v2.ColumnFamily cf) {

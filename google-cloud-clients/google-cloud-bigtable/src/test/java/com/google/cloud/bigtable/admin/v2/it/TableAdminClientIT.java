@@ -41,12 +41,12 @@ public class TableAdminClientIT {
   static TableAdminClient tableAdmin;
 
   @BeforeClass
-  public static void setUp() throws IOException {
+  public static void createClient() throws IOException {
     tableAdmin = TableAdminClient.create(InstanceName.of("sduskis-hello-shakespear", "beam-test"));
   }
 
   @AfterClass
-  public static void cleanUp() throws Exception {
+  public static void closeClient() throws Exception {
     tableAdmin.close();
   }
 

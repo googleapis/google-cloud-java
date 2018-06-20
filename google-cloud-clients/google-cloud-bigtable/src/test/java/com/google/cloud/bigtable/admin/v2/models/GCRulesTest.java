@@ -154,7 +154,6 @@ public class GCRulesTest {
   public void intersectionOne() {
     GcRule actual = GCRULES.intersection().rule(GCRULES.maxVersions(1)).toProto();
     GcRule expected = buildVersionsRule(1);
-    ;
     assertThat(actual).isEqualTo(expected);
   }
 

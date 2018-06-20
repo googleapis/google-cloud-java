@@ -129,13 +129,12 @@ public final class TableAdminRequests {
      *
      * @param key
      * @param numSplits
-     */
-    public CreateTable addUniformSplits(ByteString key, int numSplits) {
-      Preconditions.checkNotNull(key);
+    public CreateTable addUniformSplits(int numSplits) {
       // TODO: add implementation
       throw new UnsupportedOperationException();
     }
-
+    */
+    
     @InternalApi
     public CreateTableRequest toProto(InstanceName instanceName) {
       Preconditions.checkNotNull(instanceName);
