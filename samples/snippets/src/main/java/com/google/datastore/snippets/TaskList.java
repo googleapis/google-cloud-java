@@ -114,7 +114,6 @@ public class TaskList {
   }
   // [END datastore_delete_entity]
 
-  // [START datastore_format_results]
   /**
    * Converts a list of task entities to a list of formatted task strings.
    *
@@ -135,7 +134,6 @@ public class TaskList {
     }
     return strings;
   }
-  // [END datastore_format_results]
 
   /**
    * Handles a single command.

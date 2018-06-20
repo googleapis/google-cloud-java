@@ -541,31 +541,6 @@ public class ConceptsTest {
   }
 
   @Test
-  public void testRunKeysOnlyQuery() {
-    setUpQueryTests();
-    Query<Key> query = Query.newKeyQueryBuilder().setKind("Task").build();
-    // [START datastore_run_keys_only_query]
-    QueryResults<Key> taskKeys = datastore.run(query);
-    // [END datastore_run_keys_only_query]
-    assertNotNull(taskKeys.next());
-    assertFalse(taskKeys.hasNext());
-  }
-
-  @Test
-  public void testDistinctQuery() {
-    setUpQueryTests();
-    // [START datastore_distinct_query]
-    Query<ProjectionEntity> query = Query.newProjectionEntityQueryBuilder()
-        .setKind("Task")
-        .setProjection("category", "priority")
-        .setDistinctOn("category", "priority")
-        .setOrderBy(OrderBy.asc("category"), OrderBy.asc("priority"))
-        .build();
-    // [END datastore_distinct_query]
-    assertValidQuery(query);
-  }
-
-  @Test
   public void testDistinctOnQuery() {
     setUpQueryTests();
     // [START datastore_distinct_on_query]
@@ -997,55 +972,5 @@ public class ConceptsTest {
     Map<String, ImmutableSet<String>> expected =
         ImmutableMap.of("Task", ImmutableSet.of("priority", "tag"));
     assertEquals(expected, propertiesByKind);
-  }
-
-  @Test
-  public void testGqlRunQuery() {
-    setUpQueryTests();
-    // [START datastore_gql_run_query]
-    Query<Entity> query = Query.newGqlQueryBuilder(
-        ResultType.ENTITY, "select * from Task order by created asc").build();
-    // [END datastore_gql_run_query]
-    assertValidQuery(query);
-  }
-
-  @Test
-  public void testGqlNamedBindingQuery() {
-    setUpQueryTests();
-    // [START datastore_gql_named_binding_query]
-    Query<Entity> query =
-        Query.newGqlQueryBuilder(
-            ResultType.ENTITY,
-            "select * from Task where completed = @completed and priority = @priority")
-        .setBinding("completed", false)
-        .setBinding("priority", 4)
-        .build();
-    // [END datastore_gql_named_binding_query]
-    assertValidQuery(query);
-  }
-
-  @Test
-  public void testGqlPositionalBindingQuery() {
-    setUpQueryTests();
-    // [START datastore_gql_positional_binding_query]
-    Query<Entity> query = Query.newGqlQueryBuilder(
-          ResultType.ENTITY, "select * from Task where completed = @1 and priority = @2")
-        .addBinding(false)
-        .addBinding(4)
-        .build();
-    // [END datastore_gql_positional_binding_query]
-    assertValidQuery(query);
-  }
-
-  @Test
-  public void testGqlLiteralQuery() {
-    setUpQueryTests();
-    // [START datastore_gql_literal_query]
-    Query<Entity> query = Query.newGqlQueryBuilder(
-            ResultType.ENTITY, "select * from Task where completed = false and priority = 4")
-        .setAllowLiteral(true)
-        .build();
-    // [END datastore_gql_literal_query]
-    assertValidQuery(query);
   }
 }
