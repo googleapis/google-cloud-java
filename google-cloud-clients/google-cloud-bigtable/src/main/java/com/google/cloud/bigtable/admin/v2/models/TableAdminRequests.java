@@ -24,7 +24,6 @@ import com.google.bigtable.admin.v2.InstanceName;
 import com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest;
 import com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification;
 import com.google.bigtable.admin.v2.Table;
-import com.google.bigtable.admin.v2.Table.TimestampGranularity;
 import com.google.bigtable.admin.v2.TableName;
 import com.google.cloud.bigtable.admin.v2.models.GCRules.GCRule;
 import com.google.common.base.Preconditions;
@@ -58,11 +57,12 @@ public final class TableAdminRequests {
   /**
    * Fluent wrapper for {@link CreateTableRequest}
    *
-   * <p> Allows for creating table with:
+   * <p>Allows for creating table with:
+   *
    * <ul>
-   * <li> optional columnFamilies, including optional {@link GCRule}
-   * <li> optional granularity
-   * <li> and optional split points
+   *   <li>optional columnFamilies, including optional {@link GCRule}
+   *   <li>optional granularity
+   *   <li>and optional split points
    * </ul>
    */
   public static final class CreateTable {
@@ -76,17 +76,6 @@ public final class TableAdminRequests {
      */
     private CreateTable(String tableId) {
       createTableRequest.setTableId(tableId);
-    }
-
-    /**
-     * Configures table with the specified granularity
-     *
-     * @param granularity
-     */
-    public CreateTable withGranularity(TimestampGranularity granularity) {
-      Preconditions.checkNotNull(granularity);
-      tableRequest.setGranularity(granularity);
-      return this;
     }
 
     /**
@@ -124,17 +113,6 @@ public final class TableAdminRequests {
       return this;
     }
 
-    /**
-     * Adds the specified number of uniform splits to the configuration
-     *
-     * @param key
-     * @param numSplits
-    public CreateTable addUniformSplits(int numSplits) {
-      // TODO: add implementation
-      throw new UnsupportedOperationException();
-    }
-    */
-    
     @InternalApi
     public CreateTableRequest toProto(InstanceName instanceName) {
       Preconditions.checkNotNull(instanceName);
@@ -148,11 +126,12 @@ public final class TableAdminRequests {
   /**
    * Fluent wrapper for {@link ModifyColumnFamiliesRequest}
    *
-   * <p> Allows for the following ColumnFamily modifications:
-   * <ul> 
-   * <li> create family, optionally with {@link GCRule}
-   * <li> update existing family {@link GCRule}
-   * <li> drop an existing family
+   * <p>Allows for the following ColumnFamily modifications:
+   *
+   * <ul>
+   *   <li>create family, optionally with {@link GCRule}
+   *   <li>update existing family {@link GCRule}
+   *   <li>drop an existing family
    * </ul>
    */
   public static final class ModifyFamilies {
@@ -176,8 +155,8 @@ public final class TableAdminRequests {
      * @param familyId
      * @return
      */
-    public ModifyFamilies create(String familyId) {
-      return create(familyId, GCRules.GCRULES.defaulRule());
+    public ModifyFamilies addFamily(String familyId) {
+      return addFamily(familyId, GCRules.GCRULES.defaulRule());
     }
 
     /**
@@ -187,7 +166,7 @@ public final class TableAdminRequests {
      * @param gcRule
      * @return
      */
-    public ModifyFamilies create(String familyId, GCRule gcRule) {
+    public ModifyFamilies addFamily(String familyId, GCRule gcRule) {
       Modification.Builder modification = Modification.newBuilder().setId(familyId);
       Preconditions.checkNotNull(gcRule);
       modification.setCreate(ColumnFamily.newBuilder().setGcRule(gcRule.toProto()));
@@ -202,7 +181,7 @@ public final class TableAdminRequests {
      * @param gcRule
      * @return
      */
-    public ModifyFamilies update(String familyId, GCRule gcRule) {
+    public ModifyFamilies updateFamily(String familyId, GCRule gcRule) {
       Modification.Builder modification = Modification.newBuilder().setId(familyId);
       Preconditions.checkNotNull(gcRule);
       modification.setUpdate(ColumnFamily.newBuilder().setGcRule(gcRule.toProto()));
@@ -216,7 +195,7 @@ public final class TableAdminRequests {
      * @param familyId
      * @return
      */
-    public ModifyFamilies drop(String familyId) {
+    public ModifyFamilies dropFamily(String familyId) {
       Modification.Builder modification = Modification.newBuilder().setId(familyId);
       modification.setId(familyId).setDrop(true);
       modFamilyRequest.addModifications(modification.build());

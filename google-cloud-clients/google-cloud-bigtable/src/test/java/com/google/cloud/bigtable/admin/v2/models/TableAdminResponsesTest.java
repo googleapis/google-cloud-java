@@ -26,8 +26,10 @@ import com.google.bigtable.admin.v2.Table.ClusterState;
 import com.google.bigtable.admin.v2.Table.ClusterState.ReplicationState;
 import com.google.bigtable.admin.v2.Table.TimestampGranularity;
 import com.google.bigtable.admin.v2.TableName;
-import com.google.cloud.bigtable.admin.v2.models.GCRules.GCRule;
+import com.google.cloud.bigtable.admin.v2.models.GCRules.DurationRule;
 import com.google.cloud.bigtable.admin.v2.models.GCRules.IntersectionRule;
+import com.google.cloud.bigtable.admin.v2.models.GCRules.UnionRule;
+import com.google.cloud.bigtable.admin.v2.models.GCRules.VersionRule;
 import com.google.cloud.bigtable.admin.v2.models.TableAdminResponses.ConsistencyToken;
 import com.google.cloud.bigtable.admin.v2.models.TableAdminResponses.Table;
 import com.google.bigtable.admin.v2.GcRule.Intersection;
@@ -75,7 +77,6 @@ public class TableAdminResponsesTest {
     Table tableResponse = TableAdminResponses.convertTable(table);
     assertNotNull(tableResponse);
     assertEquals(testName, tableResponse.getTableName());
-    assertEquals(TimestampGranularity.MILLIS, tableResponse.getTimestampGranularity());
     assertEquals(2, tableResponse.getClusterStates().size());
     assertEquals(
         ReplicationState.READY,
@@ -140,47 +141,23 @@ public class TableAdminResponsesTest {
         .isEqualTo(tableResponse.getColumnFamiliesMap().get("cf3").getGCRule().toProto());
     assertTrue(tableResponse.getColumnFamiliesMap().get("cf3").hasGcRule());
 
-    GCRule parentUnion = tableResponse.getColumnFamiliesMap().get("cf3").getGCRule();
-    assertEquals(2, parentUnion.getUnionOrThow().getRulesList().size());
+    UnionRule parentUnion =
+        ((UnionRule) tableResponse.getColumnFamiliesMap().get("cf3").getGCRule());
+    assertEquals(2, parentUnion.getRulesList().size());
 
-    IntersectionRule intersectionRule =
-        parentUnion.getUnionOrThow().getRulesList().get(0).getIntersectionOrThow();
-    assertEquals(2, intersectionRule.getIntersectionOrThow().getRulesList().size());
-    assertEquals(
-        1,
-        intersectionRule
-            .getIntersectionOrThow()
-            .getRulesList()
-            .get(0)
-            .getVersionOrThow()
-            .getMaxVersions());
+    IntersectionRule intersectionRule = ((IntersectionRule) parentUnion.getRulesList().get(0));
+    assertEquals(2, intersectionRule.getRulesList().size());
+    assertEquals(1, ((VersionRule) intersectionRule.getRulesList().get(0)).getMaxVersions());
     assertEquals(
         Duration.ofSeconds(1, 0),
-        intersectionRule
-            .getIntersectionOrThow()
-            .getRulesList()
-            .get(1)
-            .getDurationOrThow()
-            .getMaxAge());
+        ((DurationRule) intersectionRule.getRulesList().get(1)).getMaxAge());
 
-    intersectionRule = parentUnion.getUnionOrThow().getRulesList().get(1).getIntersectionOrThow();
-    assertEquals(2, intersectionRule.getIntersectionOrThow().getRulesList().size());
-    assertEquals(
-        1,
-        intersectionRule
-            .getIntersectionOrThow()
-            .getRulesList()
-            .get(0)
-            .getVersionOrThow()
-            .getMaxVersions());
+    intersectionRule = ((IntersectionRule) parentUnion.getRulesList().get(1));
+    assertEquals(2, intersectionRule.getRulesList().size());
+    assertEquals(1, ((VersionRule) intersectionRule.getRulesList().get(0)).getMaxVersions());
     assertEquals(
         Duration.ofSeconds(1, 0),
-        intersectionRule
-            .getIntersectionOrThow()
-            .getRulesList()
-            .get(1)
-            .getDurationOrThow()
-            .getMaxAge());
+        ((DurationRule) intersectionRule.getRulesList().get(1)).getMaxAge());
   }
 
   @Test
@@ -234,9 +211,6 @@ public class TableAdminResponsesTest {
         TableAdminResponses.convertTable(com.google.bigtable.admin.v2.Table.newBuilder().build());
 
     assertNotNull(tableResponse);
-    assertEquals(
-        TimestampGranularity.TIMESTAMP_GRANULARITY_UNSPECIFIED,
-        tableResponse.getTimestampGranularity());
     assertEquals(0, tableResponse.getClusterStates().size());
     assertEquals(0, tableResponse.getColumnFamiles().size());
   }

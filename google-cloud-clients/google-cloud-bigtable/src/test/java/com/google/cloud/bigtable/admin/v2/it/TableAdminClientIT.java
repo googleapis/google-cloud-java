@@ -27,9 +27,12 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import org.threeten.bp.Duration;
 import com.google.bigtable.admin.v2.InstanceName;
-import com.google.bigtable.admin.v2.Table.TimestampGranularity;
 import com.google.bigtable.admin.v2.TableName;
 import com.google.cloud.bigtable.admin.v2.TableAdminClient;
+import com.google.cloud.bigtable.admin.v2.models.GCRules.DurationRule;
+import com.google.cloud.bigtable.admin.v2.models.GCRules.IntersectionRule;
+import com.google.cloud.bigtable.admin.v2.models.GCRules.UnionRule;
+import com.google.cloud.bigtable.admin.v2.models.GCRules.VersionRule;
 import com.google.cloud.bigtable.admin.v2.models.TableAdminRequests;
 import com.google.cloud.bigtable.admin.v2.models.TableAdminRequests.CreateTable;
 import com.google.cloud.bigtable.admin.v2.models.TableAdminRequests.ModifyFamilies;
@@ -57,7 +60,6 @@ public class TableAdminClientIT {
         TableAdminRequests.createTable(tableId)
             .addColumnFamily("cf1")
             .addColumnFamily("cf2", GCRULES.maxVersions(10))
-            .withGranularity(TimestampGranularity.MILLIS)
             .addSplit(ByteString.copyFromUtf8("b"))
             .addSplit(ByteString.copyFromUtf8("q"));
 
@@ -70,14 +72,8 @@ public class TableAdminClientIT {
       assertTrue(tableResponse.getColumnFamiliesMap().get("cf2").hasGcRule());
       assertEquals(
           10,
-          tableResponse
-              .getColumnFamiliesMap()
-              .get("cf2")
-              .getGCRule()
-              .getVersionOrThow()
+          ((VersionRule) tableResponse.getColumnFamiliesMap().get("cf2").getGCRule())
               .getMaxVersions());
-      assertEquals(TimestampGranularity.MILLIS, tableResponse.getTimestampGranularity());
-      // TODO: is there a way to test splits here?
     } finally {
       tableAdmin.deleteTable(tableId);
     }
@@ -89,27 +85,26 @@ public class TableAdminClientIT {
     ModifyFamilies modifyFamiliesReq = TableAdminRequests.modifyFamilies(tableId);
     Duration.ofSeconds(1000);
     modifyFamiliesReq
-        .create("mf1")
-        .create("mf2", GCRULES.maxAge(Duration.ofSeconds(1000, 20000)))
-        .update(
+        .addFamily("mf1")
+        .addFamily("mf2", GCRULES.maxAge(Duration.ofSeconds(1000, 20000)))
+        .updateFamily(
             "mf1",
             GCRULES
                 .union()
                 .rule(GCRULES.maxAge(Duration.ofSeconds(100)))
                 .rule(GCRULES.maxVersions(1)))
-        .create(
+        .addFamily(
             "mf3",
             GCRULES
                 .intersection()
                 .rule(GCRULES.maxAge(Duration.ofSeconds(2000)))
                 .rule(GCRULES.maxVersions(10)))
-        .create(
-            "mf4", GCRULES.intersection().rule(GCRULES.maxAge(Duration.ofSeconds(360))))
-        .create("mf5")
-        .create("mf6")
-        .drop("mf5")
-        .drop("mf6")
-        .create("mf7");
+        .addFamily("mf4", GCRULES.intersection().rule(GCRULES.maxAge(Duration.ofSeconds(360))))
+        .addFamily("mf5")
+        .addFamily("mf6")
+        .dropFamily("mf5")
+        .dropFamily("mf6")
+        .addFamily("mf7");
 
     try {
       tableAdmin.createTable(TableAdminRequests.createTable(tableId));
@@ -119,47 +114,27 @@ public class TableAdminClientIT {
       assertNotNull(tableResponse.getColumnFamiliesMap().get("mf2"));
       assertEquals(
           2,
-          tableResponse
-              .getColumnFamiliesMap()
-              .get("mf1")
-              .getGCRule()
-              .getUnionOrThow()
+          ((UnionRule) tableResponse.getColumnFamiliesMap().get("mf1").getGCRule())
               .getRulesList()
               .size());
       assertEquals(
           1000,
-          tableResponse
-              .getColumnFamiliesMap()
-              .get("mf2")
-              .getGCRule()
-              .getDurationOrThow()
+          ((DurationRule) tableResponse.getColumnFamiliesMap().get("mf2").getGCRule())
               .getMaxAge()
               .getSeconds());
       assertEquals(
           20000,
-          tableResponse
-              .getColumnFamiliesMap()
-              .get("mf2")
-              .getGCRule()
-              .getDurationOrThow()
+          ((DurationRule) tableResponse.getColumnFamiliesMap().get("mf2").getGCRule())
               .getMaxAge()
               .getNano());
       assertEquals(
           2,
-          tableResponse
-              .getColumnFamiliesMap()
-              .get("mf3")
-              .getGCRule()
-              .getIntersectionOrThow()
+          ((IntersectionRule) tableResponse.getColumnFamiliesMap().get("mf3").getGCRule())
               .getRulesList()
               .size());
       assertEquals(
           360,
-          tableResponse
-              .getColumnFamiliesMap()
-              .get("mf4")
-              .getGCRule()
-              .getDurationOrThow()
+          ((DurationRule) tableResponse.getColumnFamiliesMap().get("mf4").getGCRule())
               .getMaxAge()
               .getSeconds());
       assertNotNull(tableResponse.getColumnFamiliesMap().get("mf7"));

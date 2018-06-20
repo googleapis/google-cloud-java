@@ -21,14 +21,13 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 import org.threeten.bp.Duration;
-import com.google.bigtable.admin.v2.Table.ClusterState.ReplicationState;
-import com.google.bigtable.admin.v2.Table.TimestampGranularity;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.bigtable.admin.v2.CheckConsistencyRequest;
 import com.google.bigtable.admin.v2.GcRule;
 import com.google.bigtable.admin.v2.GcRule.RuleCase;
 import com.google.bigtable.admin.v2.GenerateConsistencyTokenResponse;
+import com.google.bigtable.admin.v2.Table.ClusterState.ReplicationState;
 import com.google.bigtable.admin.v2.TableName;
 import com.google.cloud.bigtable.admin.v2.TableAdminClient;
 import com.google.cloud.bigtable.admin.v2.models.GCRules.GCRule;
@@ -68,25 +67,28 @@ public class TableAdminResponses {
   }
 
   /**
-   * Converts the protocol buffer response to a simpler ClusterState model with only required elements
-   * 
+   * Converts the protocol buffer response to a simpler ClusterState model with only required
+   * elements
+   *
    * @param clusterStatesMap - Protobuf clusterStatesMap
-   * @return Map<String, ClusterState> 
+   * @return Map<String, ClusterState>
    */
   @InternalApi
   public static Map<String, ClusterState> convertClusterStates(
       Map<String, com.google.bigtable.admin.v2.Table.ClusterState> clusterStatesMap) {
     Map<String, ClusterState> clusterStates = new HashMap<>();
 
-    for (Entry<String, com.google.bigtable.admin.v2.Table.ClusterState> entry : clusterStatesMap.entrySet()) {
+    for (Entry<String, com.google.bigtable.admin.v2.Table.ClusterState> entry :
+        clusterStatesMap.entrySet()) {
       clusterStates.put(entry.getKey(), new ClusterState(entry.getKey(), entry.getValue()));
     }
     return clusterStates;
   }
 
   /**
-   * Converts the protocol buffer response to a simpler ColumnFamily model with only required elements
-   * 
+   * Converts the protocol buffer response to a simpler ColumnFamily model with only required
+   * elements
+   *
    * @param columnFamiliesMap - Protobuf columnFamiliesMap
    * @return Map<String, ColumnFamily>
    */
@@ -95,7 +97,8 @@ public class TableAdminResponses {
       Map<String, com.google.bigtable.admin.v2.ColumnFamily> columnFamiliesMap) {
     Map<String, ColumnFamily> columnFamilies = new HashMap<>();
 
-    for (Entry<String, com.google.bigtable.admin.v2.ColumnFamily> entry : columnFamiliesMap.entrySet()) {
+    for (Entry<String, com.google.bigtable.admin.v2.ColumnFamily> entry :
+        columnFamiliesMap.entrySet()) {
       columnFamilies.put(entry.getKey(), new ColumnFamily(entry.getKey(), entry.getValue()));
     }
     return columnFamilies;
@@ -104,14 +107,12 @@ public class TableAdminResponses {
   /** Wrapper for {@link Table} protocol buffer object */
   public static final class Table {
     private final TableName tableName;
-    private final TimestampGranularity timestampGranularity;
     private final Map<String, ClusterState> clusterStates;
     private final Map<String, ColumnFamily> columnFamilies;
 
     private Table(com.google.bigtable.admin.v2.Table table) {
       Preconditions.checkNotNull(table);
       this.tableName = TableName.parse(table.getName());
-      this.timestampGranularity = table.getGranularity();
       this.clusterStates = convertClusterStates(table.getClusterStatesMap());
       this.columnFamilies = convertColumnFamilies(table.getColumnFamiliesMap());
     }
@@ -124,15 +125,6 @@ public class TableAdminResponses {
      */
     public TableName getTableName() {
       return tableName;
-    }
-
-    /**
-     * Gets the timestampGranularity of the table
-     *
-     * @return TimestampGranularity
-     */
-    public TimestampGranularity getTimestampGranularity() {
-      return timestampGranularity;
     }
 
     /**
@@ -176,7 +168,6 @@ public class TableAdminResponses {
     public String toString() {
       return MoreObjects.toStringHelper(this)
           .add("tableName", tableName)
-          .add("timestampGranularity", timestampGranularity)
           .add("clusterStates", getClusterStates())
           .add("columnFamiles", getColumnFamiles())
           .toString();
@@ -297,10 +288,10 @@ public class TableAdminResponses {
   }
 
   /**
-   * Wrapper for {@link GenerateConsistencyTokenResponse#getConsistencyToken()} 
-   * 
-   * <p>Cannot be created.
-   * They are obtained by invoking {@link TableAdminClient#generateConsistencyToken(String)}
+   * Wrapper for {@link GenerateConsistencyTokenResponse#getConsistencyToken()}
+   *
+   * <p>Cannot be created. They are obtained by invoking {@link
+   * TableAdminClient#generateConsistencyToken(String)}
    */
   public static final class ConsistencyToken {
     private final String token;

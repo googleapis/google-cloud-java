@@ -56,15 +56,16 @@ import com.google.protobuf.Empty;
  * <p>Sample code to get started:
  *
  * <pre>{@code
- *  try(TableAdminClient client =  TableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
- *     CreateTable createTableReq =
- *         TableAdminRequests.createTable("tableId")
- *             .addColumnFamily("cf1")
- *             .addColumnFamily("cf2", GCRULES.maxVersions(10))
- *             .addSplit(ByteString.copyFromUtf8("b"))
- *             .addSplit(ByteString.copyFromUtf8("q"));
- *     client.createTable(createTableReq);
- *   }</pre>
+ * try(TableAdminClient client =  TableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
+ *   CreateTable createTableReq =
+ *     TableAdminRequests.createTable("tableId")
+ *       .addColumnFamily("cf1")
+ *       .addColumnFamily("cf2", GCRULES.maxVersions(10))
+ *       .addSplit(ByteString.copyFromUtf8("b"))
+ *       .addSplit(ByteString.copyFromUtf8("q"));
+ *   client.createTable(createTableReq);
+ *  }
+ *  }</pre>
  *
  * <p>Note: close() needs to be called on the bigtableTableAdminClient object to clean up resources
  * such as threads. In the example above, try-with-resources is used, which automatically calls
@@ -77,9 +78,9 @@ import com.google.protobuf.Empty;
  *
  * <pre>{@code
  * BigtableTableAdminSettings bigtableTableAdminSettings =
- *     BigtableTableAdminSettings.newBuilder()
- *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
- *         .build();
+ *   BigtableTableAdminSettings.newBuilder()
+ *   .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
+ *     .build();
  * TableAdminClient client =
  * TableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"), bigtableTableAdminSettings);
  * }</pre>
@@ -169,14 +170,12 @@ public class TableAdminClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre>{@code
-   *  try(TableAdminClient client =  TableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
-   *     CreateTable createTableReq =
-   *         TableAdminRequests.createTable("tableId")
-   *             .addColumnFamily("cf2", GCRULES.maxVersions(10))
-   *             .withGranularity(TimestampGranularity.MILLIS);
-   *
-   *     client.createTable(createTableReq);
-   *   }
+   * try(TableAdminClient client =  TableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
+   *   CreateTable createTableReq =
+   *     TableAdminRequests.createTable("tableId")
+   *       .addColumnFamily("cf2", GCRULES.maxVersions(10))
+   *   client.createTable(createTableReq);
+   * }
    * }</pre>
    *
    * @param createTable
@@ -191,16 +190,17 @@ public class TableAdminClient implements AutoCloseable {
 
   /**
    * Creates a new table with the specified configuration asynchronously
+   * 
    * <p>Sample code:
+   * 
    * <pre>{@code
    *  try(TableAdminClient client =  TableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
-   *     CreateTable createTableReq =
-   *         TableAdminRequests.createTable("tableId")
-   *             .addColumnFamily("cf2", GCRULES.maxVersions(10))
-   *             .withGranularity(TimestampGranularity.MILLIS);
+   *    CreateTable createTableReq =
+   *      TableAdminRequests.createTable("tableId")
+   *        .addColumnFamily("cf2", GCRULES.maxVersions(10))
    *
-   *     client.createTableAsync(createTableReq);
-   *   }
+   *    client.createTableAsync(createTableReq);
+   *  }
    *  }</pre>
    *
    * @param createTable
@@ -213,37 +213,36 @@ public class TableAdminClient implements AutoCloseable {
   }
 
   /**
-   * Creates, Updates and drops ColumnFamilies as per the request. 
+   * Creates, Updates and drops ColumnFamilies as per the request.
    *
    * <p>Sample code:
    *
    * <pre>{@code
-   *  try(TableAdminClient client =  TableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
-   *     ModifyFamilies modifyFamiliesReq = TableAdminRequests.modifyFamilies(tableId)
-   *        .create("mf1")
-   *        .createWithGCRule(
-   *            "mf2", GCRULES.maxAge(Duration.ofSeconds(1000, 20000)))
-   *        .updateWithGCRule(
-   *            "mf1",
-   *            GCRULES
-   *                .union()
-   *                .rule(GCRULES.maxAge(Duration.ofSeconds(100)))
-   *                .rule(GCRULES.maxVersions(1)))
-   *                .createWithGCRule(
-   *            "mf3",
-   *            GCRULES
-   *                .intersection()
-   *                .rule(GCRULES.maxAge(Duration.ofSeconds(2000)))
-   *                .rule(GCRULES.maxVersions(10)))
-   *                .drop("mf1")
-   *                
-   *     client.modifyFamilies(modifyFamiliesReq);
-   *   }
+   * try(TableAdminClient client =  TableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
+   *   ModifyFamilies modifyFamiliesReq = TableAdminRequests.modifyFamilies(tableId)
+   *     .addFamily("mf1")
+   *     .addFamily(
+   *       "mf2", GCRULES.maxAge(Duration.ofSeconds(1000, 20000)))
+   *     .updateFamily(
+   *       "mf1",
+   *          GCRULES
+   *            .union()
+   *              .rule(GCRULES.maxAge(Duration.ofSeconds(100)))
+   *              .rule(GCRULES.maxVersions(1)))
+   *     .addFamily(
+   *       "mf3",
+   *         GCRULES
+   *           .intersection()
+   *           .rule(GCRULES.maxAge(Duration.ofSeconds(2000)))
+   *           .rule(GCRULES.maxVersions(10)))
+   *     .dropFamily("mf1")
+   *    client.modifyFamilies(modifyFamiliesReq);
+   * }
    * }</pre>
    *
    * @param modifyFamily
    * @return Table - Modified table
-   * @see ModifyFamilies for modifyFamily options.
+   * @see ModifyFamilies for modifyFamily options
    */
   public Table modifyFamilies(ModifyFamilies modifyFamily) {
     ModifyColumnFamiliesRequest modReq = modifyFamily.toProto(instanceName);
@@ -258,32 +257,31 @@ public class TableAdminClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre>{@code
-   *  try(TableAdminClient client =  TableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
-   *     ModifyFamilies modifyFamiliesReq = TableAdminRequests.modifyFamilies(tableId)
-   *        .create("mf1")
-   *        .createWithGCRule(
-   *            "mf2", GCRULES.maxAge(Duration.ofSeconds(1000, 20000)))
-   *        .updateWithGCRule(
-   *            "mf1",
-   *            GCRULES
-   *                 .union()
-   *                .rule(GCRULES.maxAge(Duration.ofSeconds(100)))
-   *                .rule(GCRULES.maxVersions(1)))
-   *                .createWithGCRule(
-   *            "mf3",
-   *            GCRULES
-   *                 .intersection()
-   *                .rule(GCRULES.maxAge(Duration.ofSeconds(2000)))
-   *                .rule(GCRULES.maxVersions(10)))
-   *                .drop("mf1")
-   *                
-   *     client.modifyFamiliesAsync(modifyFamiliesReq);
-   *   }
+   * try(TableAdminClient client =  TableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
+   *   ModifyFamilies modifyFamiliesReq = TableAdminRequests.modifyFamilies(tableId)
+   *     .addFamily("mf1")
+   *     .addFamily(
+   *       "mf2", GCRULES.maxAge(Duration.ofSeconds(1000, 20000)))
+   *     .updateFamily(
+   *       "mf1",
+   *          GCRULES
+   *            .union()
+   *              .rule(GCRULES.maxAge(Duration.ofSeconds(100)))
+   *              .rule(GCRULES.maxVersions(1)))
+   *     .addFamily(
+   *       "mf3",
+   *         GCRULES
+   *           .intersection()
+   *           .rule(GCRULES.maxAge(Duration.ofSeconds(2000)))
+   *           .rule(GCRULES.maxVersions(10)))
+   *     .dropFamily("mf1")
+   *    client.modifyFamilies(modifyFamiliesReq);
+   * }
    * }</pre>
    *
    * @param modifyFamily
-   * @return Table - Modified table
-   * @see ModifyFamilies for modifyFamily options.
+   * @return ApiFuture<Table> - Modified table
+   * @see ModifyFamilies for modifyFamily options
    */
   public ApiFuture<Table> modifyFamiliesAsync(ModifyFamilies modifyFamily) {
     ModifyColumnFamiliesRequest modReq = modifyFamily.toProto(instanceName);
@@ -296,9 +294,9 @@ public class TableAdminClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre>{@code
-   *  try(TableAdminClient client =  TableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
-   *        client.deleteTable("tableId");
-   *   }
+   * try(TableAdminClient client =  TableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
+   *   client.deleteTable("tableId");
+   * }
    * }</pre>
    *
    * @param tableId
@@ -313,9 +311,9 @@ public class TableAdminClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre>{@code
-   *  try(TableAdminClient client =  TableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
-   *        client.deleteTableAsync("tableId");
-   *   }
+   * try(TableAdminClient client =  TableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
+   *   client.deleteTableAsync("tableId");
+   * }
    * }</pre>
    *
    * @param tableId
@@ -331,9 +329,9 @@ public class TableAdminClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre>{@code
-   *  try(TableAdminClient client =  TableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
-   *        client.getTable("tableId");
-   *   }
+   * try(TableAdminClient client =  TableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
+   *   client.getTable("tableId");
+   * }
    * }</pre>
    *
    * @param tableId
@@ -349,10 +347,11 @@ public class TableAdminClient implements AutoCloseable {
    * Gets the Table by tableId
    *
    * <p>Sample code:
+   * 
    * <pre>{@code
-   *  try(TableAdminClient client =  TableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
-   *        client.getTableAsync("tableId");
-   *   }
+   * try(TableAdminClient client =  TableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
+   *   client.getTableAsync("tableId");
+   * }
    * }</pre>
    *
    * @param tableId
@@ -369,9 +368,9 @@ public class TableAdminClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre>{@code
-   *  try(TableAdminClient client =  TableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
-   *        client.listTables();
-   *   }
+   * try(TableAdminClient client =  TableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
+   *   client.listTables();
+   * }
    * }</pre>
    *
    * @param tableId
@@ -388,9 +387,9 @@ public class TableAdminClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre>{@code
-   *  try(TableAdminClient client =  TableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
-   *        client.listTablesAsync();
-   *   }
+   * try(TableAdminClient client =  TableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
+   *   client.listTablesAsync();
+   * }
    * }</pre>
    *
    * @param tableId
@@ -416,9 +415,9 @@ public class TableAdminClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre>{@code
-   *  try(TableAdminClient client =  TableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
-   *        client.dropRowRange("tableId");
-   *   }
+   * try(TableAdminClient client =  TableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
+   *   client.dropRowRange("tableId");
+   * }
    * }</pre>
    *
    * @param tableId
@@ -434,9 +433,9 @@ public class TableAdminClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre>{@code
-   *  try(TableAdminClient client =  TableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
-   *        client.dropRowRangeAsync("tableId");
-   *   }
+   * try(TableAdminClient client =  TableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
+   *   client.dropRowRangeAsync("tableId");
+   * }
    * }</pre>
    *
    * @param tableId
@@ -452,9 +451,9 @@ public class TableAdminClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre>{@code
-   *  try(TableAdminClient client =  TableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
-   *        client.dropRowRange("tableId");
-   *   }
+   * try(TableAdminClient client =  TableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
+   *   client.dropRowRange("tableId");
+   * }
    * }</pre>
    *
    * @param tableId
@@ -470,9 +469,9 @@ public class TableAdminClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre>{@code
-   *  try(TableAdminClient client =  TableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
-   *        client.dropRowRangeAsync("tableId");
-   *   }
+   * try(TableAdminClient client =  TableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
+   *   client.dropRowRangeAsync("tableId");
+   * }
    * }</pre>
    *
    * @param tableId
@@ -491,9 +490,9 @@ public class TableAdminClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre>{@code
-   *  try(TableAdminClient client =  TableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
-   *        client.dropAllRows("tableId");
-   *   }
+   * try(TableAdminClient client =  TableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
+   *   client.dropAllRows("tableId");
+   * }
    * }</pre>
    *
    * @param tableId
@@ -508,9 +507,9 @@ public class TableAdminClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre>{@code
-   *  try(TableAdminClient client =  TableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
-   *        client.dropAllRowsAsync("tableId");
-   *   }
+   * try(TableAdminClient client =  TableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
+   *   client.dropAllRowsAsync("tableId");
+   * }
    * }</pre>
    *
    * @param tableId
@@ -530,9 +529,9 @@ public class TableAdminClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre>{@code
-   *  try(TableAdminClient client =  TableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
-   *        ConsistencyToken consistencyToken = client.generateConsistencyToken("tableId");
-   *   }
+   * try(TableAdminClient client =  TableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
+   *   ConsistencyToken consistencyToken = client.generateConsistencyToken("tableId");
+   * }
    * }</pre>
    *
    * @param tableId
@@ -552,9 +551,9 @@ public class TableAdminClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre>{@code
-   *  try(TableAdminClient client =  TableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
-   *        ConsistencyToken consistencyToken = client.generateConsistencyToken("tableId");
-   *   }
+   * try(TableAdminClient client =  TableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
+   *   ConsistencyToken consistencyToken = client.generateConsistencyToken("tableId");
+   * }
    * }</pre>
    *
    * @param tableId
@@ -582,9 +581,9 @@ public class TableAdminClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre>{@code
-   *  try(TableAdminClient client =  TableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
-   *        boolean consistent = client.isConsistent("tableId", token);
-   *   }
+   * try(TableAdminClient client =  TableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
+   *   boolean consistent = client.isConsistent("tableId", token);
+   * }
    * }</pre>
    *
    * @param tableId
@@ -603,9 +602,9 @@ public class TableAdminClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre>{@code
-   *  try(TableAdminClient client =  TableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
-   *        boolean consistent = client.isConsistentAsync("tableId", token);
-   *   }
+   * try(TableAdminClient client =  TableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
+   *   boolean consistent = client.isConsistentAsync("tableId", token);
+   * }
    * }</pre>
    *
    * @param tableId

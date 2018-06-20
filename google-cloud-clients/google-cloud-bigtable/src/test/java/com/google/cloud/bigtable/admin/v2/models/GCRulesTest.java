@@ -15,9 +15,10 @@
  */
 package com.google.cloud.bigtable.admin.v2.models;
 
-import static org.junit.Assert.*;
 import static com.google.cloud.bigtable.admin.v2.models.GCRules.GCRULES;
 import static com.google.common.truth.Truth.assertThat;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 import java.util.concurrent.TimeUnit;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -26,16 +27,19 @@ import org.threeten.bp.Duration;
 import com.google.bigtable.admin.v2.GcRule;
 import com.google.bigtable.admin.v2.GcRule.Intersection;
 import com.google.bigtable.admin.v2.GcRule.Union;
-import com.google.cloud.bigtable.admin.v2.models.GCRules.GCRule;
+import com.google.cloud.bigtable.admin.v2.models.GCRules.DurationRule;
+import com.google.cloud.bigtable.admin.v2.models.GCRules.IntersectionRule;
+import com.google.cloud.bigtable.admin.v2.models.GCRules.UnionRule;
+import com.google.cloud.bigtable.admin.v2.models.GCRules.VersionRule;
 
 @RunWith(JUnit4.class)
 public class GCRulesTest {
 
   @Test
   public void duration() {
-    GCRule actual = GCRULES.maxAge(Duration.ofSeconds(61, 9));
+    DurationRule actual = GCRULES.maxAge(Duration.ofSeconds(61, 9));
     GcRule expected = buildAgeRule(61, 9);
-    assertNotNull(actual.getDurationOrThow().getMaxAge());
+    assertNotNull(actual.getMaxAge());
     assertThat(actual.toProto()).isEqualTo(expected);
   }
 
@@ -56,10 +60,10 @@ public class GCRulesTest {
   @Test
   public void durationTimeUnitSeconds() {
     GcRule actual = GCRULES.maxAge(1, TimeUnit.DAYS).toProto();
-    GcRule expected = buildAgeRule(3600*24, 0);
+    GcRule expected = buildAgeRule(3600 * 24, 0);
     assertThat(actual).isEqualTo(expected);
   }
-  
+
   @Test
   public void durationTimeUnitMinutes() {
     GcRule actual = GCRULES.maxAge(1, TimeUnit.MINUTES).toProto();
@@ -83,9 +87,9 @@ public class GCRulesTest {
 
   @Test
   public void versions() {
-    GCRule actual = GCRULES.maxVersions(10);
+    VersionRule actual = GCRULES.maxVersions(10);
     GcRule expected = buildVersionsRule(10);
-    assertNotNull(actual.getVersionOrThow().getMaxVersions());
+    assertNotNull(actual.getMaxVersions());
     assertThat(actual.toProto()).isEqualTo(expected);
   }
 
@@ -201,7 +205,7 @@ public class GCRulesTest {
 
   @Test
   public void unionOfIntersections() {
-    GCRule actual =
+    UnionRule actual =
         GCRULES
             .union()
             .rule(
@@ -233,13 +237,13 @@ public class GCRulesTest {
                                     .addRules(buildAgeRule(1, 0)))))
             .build();
 
-    assertEquals(2, actual.getUnionOrThow().getRulesList().size());
+    assertEquals(2, actual.getRulesList().size());
     assertThat(actual.toProto()).isEqualTo(expected);
   }
 
   @Test
   public void intersectionOfUnions() {
-    GCRule actual =
+    IntersectionRule actual =
         GCRULES
             .intersection()
             .rule(
@@ -271,28 +275,8 @@ public class GCRulesTest {
                                     .addRules(buildAgeRule(1, 0)))))
             .build();
 
-    assertEquals(2, actual.getIntersectionOrThow().getRulesList().size());
+    assertEquals(2, actual.getRulesList().size());
     assertThat(actual.toProto()).isEqualTo(expected);
-  }
-  
-  @Test(expected=ClassCastException.class)
-  public void getDurationOrThow() {
-    GCRULES.defaulRule().getDurationOrThow();
-  }
-  
-  @Test(expected=ClassCastException.class)
-  public void getVersionOrThow() {
-    GCRULES.intersection().getVersionOrThow();
-  }
-  
-  @Test(expected=ClassCastException.class)
-  public void getIntersectionOrThow() {
-    GCRULES.union().getIntersectionOrThow();
-  }
-  
-  @Test(expected=ClassCastException.class)
-  public void getUnionOrThow() {
-    GCRULES.defaulRule().getUnionOrThow();
   }
 
   public static GcRule buildAgeRule(long seconds, int nanos) {

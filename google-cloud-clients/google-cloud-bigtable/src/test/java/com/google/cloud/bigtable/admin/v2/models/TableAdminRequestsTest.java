@@ -39,7 +39,6 @@ public class TableAdminRequestsTest {
   public void createTable() {
     CreateTableRequest actual =
         TableAdminRequests.createTable("tableId")
-            .withGranularity(TimestampGranularity.MILLIS)
             .addColumnFamily("cf1")
             .addColumnFamily("cf2", GCRules.GCRULES.maxVersions(1))
             .addSplit(ByteString.copyFromUtf8("c"))
@@ -78,11 +77,11 @@ public class TableAdminRequestsTest {
   public void modifyFamilies() {
     ModifyColumnFamiliesRequest actual =
         TableAdminRequests.modifyFamilies("tableId")
-            .create("cf1")
-            .create("cf2", GCRules.GCRULES.maxVersions(1))
-            .create("cf3")
-            .update("cf1", GCRules.GCRULES.maxVersions(5))
-            .drop("cf3")
+            .addFamily("cf1")
+            .addFamily("cf2", GCRules.GCRULES.maxVersions(1))
+            .addFamily("cf3")
+            .updateFamily("cf1", GCRules.GCRULES.maxVersions(5))
+            .dropFamily("cf3")
             .toProto(instanceName);
 
     ModifyColumnFamiliesRequest expected =

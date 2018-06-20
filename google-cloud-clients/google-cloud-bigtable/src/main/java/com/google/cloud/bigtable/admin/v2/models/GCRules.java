@@ -97,7 +97,7 @@ public final class GCRules {
    * Fluent wrapper for {@link Intersection} rule. Allows far adding an hierarchy of rules with
    * intersection as the root
    */
-  public static final class IntersectionRule extends BaseRule {
+  public static final class IntersectionRule implements GCRule {
     private final List<GCRule> rulesList;
 
     private IntersectionRule() {
@@ -139,9 +139,8 @@ public final class GCRules {
           return rulesList.get(0).toProto();
         default:
           return GcRule.newBuilder()
-                       .setIntersection(
-                           Intersection.newBuilder().addAllRules(convertToGcRules(rulesList)))
-                       .build();
+              .setIntersection(Intersection.newBuilder().addAllRules(convertToGcRules(rulesList)))
+              .build();
       }
     }
   }
@@ -150,7 +149,7 @@ public final class GCRules {
    * Fluent wrapper for {@link Union} rule. Allows far adding an hierarchy of rules with union as
    * the root
    */
-  public static final class UnionRule extends BaseRule {
+  public static final class UnionRule implements GCRule {
     private final List<GCRule> rulesList;
 
     private UnionRule() {
@@ -192,15 +191,14 @@ public final class GCRules {
           return rulesList.get(0).toProto();
         default:
           return GcRule.newBuilder()
-              .setUnion(
-                  Union.newBuilder().addAllRules(convertToGcRules(rulesList)))
+              .setUnion(Union.newBuilder().addAllRules(convertToGcRules(rulesList)))
               .build();
       }
     }
   }
 
   /** Wrapper for building max versions rule */
-  public static final class VersionRule extends BaseRule {
+  public static final class VersionRule implements GCRule {
     private final GcRule.Builder builder;
 
     private VersionRule(int maxVersion) {
@@ -226,7 +224,7 @@ public final class GCRules {
   }
 
   /** Wrapper for building max duration rule */
-  public static final class DurationRule extends BaseRule {
+  public static final class DurationRule implements GCRule {
     private final com.google.protobuf.Duration.Builder builder;
 
     private DurationRule(Duration duration) {
@@ -260,7 +258,7 @@ public final class GCRules {
   }
 
   /** Wrapper for building a empty rule */
-  public static final class DefaultRule extends BaseRule {
+  public static final class DefaultRule implements GCRule {
     private DefaultRule() {}
 
     @InternalApi
@@ -275,44 +273,12 @@ public final class GCRules {
     }
   }
 
-  /** Helpers to support casting rules the Type, when the Type is known */
-  public abstract static class BaseRule implements GCRule {
-
-    /** Casts the rule to DurationRule. On failure throws a ClassCastException */
-    public DurationRule getDurationOrThow() {
-      return (DurationRule) this;
-    }
-
-    /** Casts the rule to VersionRule. On failure throws a ClassCastException */
-    public VersionRule getVersionOrThow() {
-      return (VersionRule) this;
-    }
-
-    /** Casts the rule to UnionRule. On failure throws a ClassCastException */
-    public UnionRule getUnionOrThow() {
-      return (UnionRule) this;
-    }
-
-    /** Casts the rule to IntersectionRule. On failure throws a ClassCastException */
-    public IntersectionRule getIntersectionOrThow() {
-      return (IntersectionRule) this;
-    }
-  }
-
   /** interface for fluent GcRule wrappers */
   public interface GCRule {
-    DurationRule getDurationOrThow();
-
-    VersionRule getVersionOrThow();
-
-    UnionRule getUnionOrThow();
-
-    IntersectionRule getIntersectionOrThow();
-
     @InternalApi
     GcRule toProto();
   }
-  
+
   private static List<GcRule> convertToGcRules(List<GCRule> rules) {
     List<GcRule> gcRules = new ArrayList<>(rules.size());
 
