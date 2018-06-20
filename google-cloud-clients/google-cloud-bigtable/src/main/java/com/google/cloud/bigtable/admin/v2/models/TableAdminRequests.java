@@ -19,14 +19,13 @@ import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.bigtable.admin.v2.ColumnFamily;
 import com.google.bigtable.admin.v2.CreateTableRequest;
-import com.google.bigtable.admin.v2.Table;
-import com.google.bigtable.admin.v2.TableName;
-import com.google.bigtable.admin.v2.Table.TimestampGranularity;
 import com.google.bigtable.admin.v2.CreateTableRequest.Split;
-import com.google.bigtable.admin.v2.GcRule;
 import com.google.bigtable.admin.v2.InstanceName;
 import com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest;
 import com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification;
+import com.google.bigtable.admin.v2.Table;
+import com.google.bigtable.admin.v2.Table.TimestampGranularity;
+import com.google.bigtable.admin.v2.TableName;
 import com.google.cloud.bigtable.admin.v2.models.GCRules.GCRule;
 import com.google.common.base.Preconditions;
 import com.google.protobuf.ByteString;
@@ -59,12 +58,12 @@ public final class TableAdminRequests {
   /**
    * Fluent wrapper for {@link CreateTableRequest}
    *
-   * <pre>
-   * Allows for creating table with
-   *    - optional columnFamilies, including optional {@link GCRule}
-   *    - optional granularity
-   *    - and optional split points
-   * </pre>
+   * <p> Allows for creating table with:
+   * <ul>
+   * <li> optional columnFamilies, including optional {@link GCRule}
+   * <li> optional granularity
+   * <li> and optional split points
+   * </ul>
    */
   public static final class CreateTable {
     private final CreateTableRequest.Builder createTableRequest = CreateTableRequest.newBuilder();
@@ -150,17 +149,17 @@ public final class TableAdminRequests {
   /**
    * Fluent wrapper for {@link ModifyColumnFamiliesRequest}
    *
-   * <pre>
-   * Allows the following ColumnFamily modifications
-   *    - create family, optionally with {@link GCRule}
-   *    - update existing family {@link GCRule}
-   *    - drop an existing family
-   * </pre>
+   * <p> Allows for the following ColumnFamily modifications:
+   * <ul> 
+   * <li> create family, optionally with {@link GCRule}
+   * <li> update existing family {@link GCRule}
+   * <li> drop an existing family
+   * </ul>
    */
   public static final class ModifyFamilies {
     private final ModifyColumnFamiliesRequest.Builder modFamilyRequest =
         ModifyColumnFamiliesRequest.newBuilder();
-    private String tableId;
+    private final String tableId;
 
     /**
      * Configures the tableId to execute the modifications
@@ -179,7 +178,7 @@ public final class TableAdminRequests {
      * @return
      */
     public ModifyFamilies create(String familyId) {
-      return createWithGCRule(familyId, null);
+      return create(familyId, GCRules.GCRULES.defaulRule());
     }
 
     /**
@@ -189,10 +188,10 @@ public final class TableAdminRequests {
      * @param gcRule
      * @return
      */
-    public ModifyFamilies createWithGCRule(String familyId, GCRule gcRule) {
+    public ModifyFamilies create(String familyId, GCRule gcRule) {
       Modification.Builder modification = Modification.newBuilder().setId(familyId);
-      GcRule grule = (gcRule == null) ? GcRule.getDefaultInstance() : gcRule.toProto();
-      modification.setCreate(ColumnFamily.newBuilder().setGcRule(grule));
+      Preconditions.checkNotNull(gcRule);
+      modification.setCreate(ColumnFamily.newBuilder().setGcRule(gcRule.toProto()));
       modFamilyRequest.addModifications(modification.build());
       return this;
     }
@@ -204,7 +203,7 @@ public final class TableAdminRequests {
      * @param gcRule
      * @return
      */
-    public ModifyFamilies updateWithGCRule(String familyId, GCRule gcRule) {
+    public ModifyFamilies update(String familyId, GCRule gcRule) {
       Modification.Builder modification = Modification.newBuilder().setId(familyId);
       Preconditions.checkNotNull(gcRule);
       modification.setUpdate(ColumnFamily.newBuilder().setGcRule(gcRule.toProto()));

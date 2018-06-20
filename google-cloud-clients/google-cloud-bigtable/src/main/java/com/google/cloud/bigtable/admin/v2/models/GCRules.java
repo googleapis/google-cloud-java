@@ -71,9 +71,7 @@ public final class GCRules {
    * @return DurationRule
    */
   public DurationRule maxAge(long maxAge, TimeUnit timeUnit) {
-    Duration duration = Duration.ZERO;
-    TimeUnit.SECONDS.convert(maxAge, timeUnit);
-    return maxAge(duration);
+    return maxAge(Duration.ofNanos(TimeUnit.NANOSECONDS.convert(maxAge, timeUnit)));
   }
 
   /**
@@ -100,11 +98,10 @@ public final class GCRules {
    * intersection as the root
    */
   public static final class IntersectionRule extends BaseRule {
-    private GcRule.Intersection.Builder builder;
-    private List<GCRule> rulesList = new ArrayList<>();
+    private final List<GCRule> rulesList;
 
     private IntersectionRule() {
-      this.builder = GcRule.Intersection.newBuilder();
+      rulesList = new ArrayList<>();
     }
 
     /**
@@ -115,7 +112,6 @@ public final class GCRules {
      */
     public IntersectionRule rule(@Nonnull GCRule rule) {
       rulesList.add(rule);
-      builder.addRules(rule.toProto());
       return this;
     }
 
@@ -136,13 +132,16 @@ public final class GCRules {
     @InternalApi
     @Override
     public GcRule toProto() {
-      switch (builder.getRulesCount()) {
+      switch (rulesList.size()) {
         case 0:
           return GcRule.newBuilder().build();
         case 1:
-          return builder.getRules(0);
+          return rulesList.get(0).toProto();
         default:
-          return GcRule.newBuilder().setIntersection(builder.build()).build();
+          return GcRule.newBuilder()
+                       .setIntersection(
+                           Intersection.newBuilder().addAllRules(convertToGcRules(rulesList)))
+                       .build();
       }
     }
   }
@@ -152,11 +151,10 @@ public final class GCRules {
    * the root
    */
   public static final class UnionRule extends BaseRule {
-    private GcRule.Union.Builder builder;
-    private List<GCRule> rulesList = new ArrayList<>();
+    private final List<GCRule> rulesList;
 
     private UnionRule() {
-      this.builder = GcRule.Union.newBuilder();
+      rulesList = new ArrayList<>();
     }
 
     /**
@@ -167,7 +165,6 @@ public final class GCRules {
      */
     public UnionRule rule(@Nonnull GCRule rule) {
       rulesList.add(rule);
-      builder.addRules(rule.toProto());
       return this;
     }
 
@@ -188,20 +185,23 @@ public final class GCRules {
     @InternalApi
     @Override
     public GcRule toProto() {
-      switch (builder.getRulesCount()) {
+      switch (rulesList.size()) {
         case 0:
           return GcRule.newBuilder().build();
         case 1:
-          return builder.getRules(0);
+          return rulesList.get(0).toProto();
         default:
-          return GcRule.newBuilder().setUnion(builder.build()).build();
+          return GcRule.newBuilder()
+              .setUnion(
+                  Union.newBuilder().addAllRules(convertToGcRules(rulesList)))
+              .build();
       }
     }
   }
 
   /** Wrapper for building max versions rule */
   public static final class VersionRule extends BaseRule {
-    private GcRule.Builder builder;
+    private final GcRule.Builder builder;
 
     private VersionRule(int maxVersion) {
       this.builder = GcRule.newBuilder();
@@ -227,7 +227,7 @@ public final class GCRules {
 
   /** Wrapper for building max duration rule */
   public static final class DurationRule extends BaseRule {
-    private com.google.protobuf.Duration.Builder builder;
+    private final com.google.protobuf.Duration.Builder builder;
 
     private DurationRule(Duration duration) {
       this.builder =
@@ -311,5 +311,14 @@ public final class GCRules {
 
     @InternalApi
     GcRule toProto();
+  }
+  
+  private static List<GcRule> convertToGcRules(List<GCRule> rules) {
+    List<GcRule> gcRules = new ArrayList<>(rules.size());
+
+    for (GCRule rule : rules) {
+      gcRules.add(rule.toProto());
+    }
+    return gcRules;
   }
 }

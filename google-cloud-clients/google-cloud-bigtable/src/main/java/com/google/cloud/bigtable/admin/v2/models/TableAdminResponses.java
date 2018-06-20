@@ -46,7 +46,7 @@ public class TableAdminResponses {
   /**
    * Converts the protocol buffer table to a simpler Table model with only the required elements
    *
-   * @param com.google.bigtable.admin.v2.Table - Protobuf table
+   * @param table - Protobuf table
    * @return Table - Table response wrapper
    */
   @InternalApi
@@ -58,39 +58,62 @@ public class TableAdminResponses {
    * Converts the protocol buffer response to a simpler ConsistencyToken which can be passed back as
    * is.
    *
-   * @param GenerateConsistencyTokenResponse - Protobuf ConsistencyTokenResponse
+   * @param tokenResponse - Protobuf ConsistencyTokenResponse
    * @return ConsistencyToken - ConsistencyToken response wrapper
    */
+  @InternalApi
   public static ConsistencyToken convertTokenResponse(
       GenerateConsistencyTokenResponse tokenResponse) {
     return new ConsistencyToken(tokenResponse);
   }
 
+  /**
+   * Converts the protocol buffer response to a simpler ClusterState model with only required elements
+   * 
+   * @param clusterStatesMap - Protobuf clusterStatesMap
+   * @return Map<String, ClusterState> 
+   */
+  @InternalApi
+  public static Map<String, ClusterState> convertClusterStates(
+      Map<String, com.google.bigtable.admin.v2.Table.ClusterState> clusterStatesMap) {
+    Map<String, ClusterState> clusterStates = new HashMap<>();
+
+    for (Entry<String, com.google.bigtable.admin.v2.Table.ClusterState> entry : clusterStatesMap.entrySet()) {
+      clusterStates.put(entry.getKey(), new ClusterState(entry.getKey(), entry.getValue()));
+    }
+    return clusterStates;
+  }
+
+  /**
+   * Converts the protocol buffer response to a simpler ColumnFamily model with only required elements
+   * 
+   * @param columnFamiliesMap - Protobuf columnFamiliesMap
+   * @return Map<String, ColumnFamily>
+   */
+  @InternalApi
+  public static Map<String, ColumnFamily> convertColumnFamilies(
+      Map<String, com.google.bigtable.admin.v2.ColumnFamily> columnFamiliesMap) {
+    Map<String, ColumnFamily> columnFamilies = new HashMap<>();
+
+    for (Entry<String, com.google.bigtable.admin.v2.ColumnFamily> entry : columnFamiliesMap.entrySet()) {
+      columnFamilies.put(entry.getKey(), new ColumnFamily(entry.getKey(), entry.getValue()));
+    }
+    return columnFamilies;
+  }
+
   /** Wrapper for {@link Table} protocol buffer object */
   public static final class Table {
-    private TableName tableName;
-    private TimestampGranularity timestampGranularity;
-    private Map<String, ClusterState> clusterStates = new HashMap<>();
-    private Map<String, ColumnFamily> columnFamilies = new HashMap<>();
+    private final TableName tableName;
+    private final TimestampGranularity timestampGranularity;
+    private final Map<String, ClusterState> clusterStates;
+    private final Map<String, ColumnFamily> columnFamilies;
 
     private Table(com.google.bigtable.admin.v2.Table table) {
       Preconditions.checkNotNull(table);
       this.tableName = TableName.parse(table.getName());
       this.timestampGranularity = table.getGranularity();
-
-      Map<String, com.google.bigtable.admin.v2.Table.ClusterState> clusterStatesMap =
-          table.getClusterStatesMap();
-      for (Entry<String, com.google.bigtable.admin.v2.Table.ClusterState> entry :
-          clusterStatesMap.entrySet()) {
-        clusterStates.put(entry.getKey(), new ClusterState(entry.getKey(), entry.getValue()));
-      }
-
-      Map<String, com.google.bigtable.admin.v2.ColumnFamily> columnFamiliesMap =
-          table.getColumnFamiliesMap();
-      for (Entry<String, com.google.bigtable.admin.v2.ColumnFamily> entry :
-          columnFamiliesMap.entrySet()) {
-        columnFamilies.put(entry.getKey(), new ColumnFamily(entry.getKey(), entry.getValue()));
-      }
+      this.clusterStates = convertClusterStates(table.getClusterStatesMap());
+      this.columnFamilies = convertColumnFamilies(table.getColumnFamiliesMap());
     }
 
     /**
@@ -162,8 +185,8 @@ public class TableAdminResponses {
 
   /** Wrapper for {@link ClusterState} protocol buffer object */
   public static final class ClusterState {
-    private String id;
-    private ReplicationState replicationState;
+    private final String id;
+    private final ReplicationState replicationState;
 
     private ClusterState(String id, com.google.bigtable.admin.v2.Table.ClusterState clusterState) {
       this.id = id;
@@ -280,7 +303,7 @@ public class TableAdminResponses {
    * They are obtained by invoking {@link TableAdminClient#generateConsistencyToken(String)}
    */
   public static final class ConsistencyToken {
-    private String token;
+    private final String token;
 
     private ConsistencyToken(GenerateConsistencyTokenResponse resp) {
       this.token = resp.getConsistencyToken();

@@ -96,7 +96,7 @@ public class TableAdminResponsesTest {
   }
 
   @Test
-  public void convertTable_unionOfIntersections() {
+  public void convertTableUnionOfIntersections() {
     GcRule expected =
         GcRule.newBuilder()
             .setUnion(
@@ -184,7 +184,7 @@ public class TableAdminResponsesTest {
   }
 
   @Test
-  public void convertTable_intersectionOfUnions() {
+  public void convertTableIntersectionOfUnions() {
     GcRule actual =
         GcRule.newBuilder()
             .setIntersection(
@@ -229,7 +229,7 @@ public class TableAdminResponsesTest {
   }
 
   @Test
-  public void convertTable_Empty() {
+  public void convertTableEmpty() {
     Table tableResponse =
         TableAdminResponses.convertTable(com.google.bigtable.admin.v2.Table.newBuilder().build());
 

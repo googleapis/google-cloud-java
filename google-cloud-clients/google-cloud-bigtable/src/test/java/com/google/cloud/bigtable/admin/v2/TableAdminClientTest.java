@@ -212,7 +212,7 @@ public class TableAdminClientTest {
   }
 
   @Test
-  public void getDropRowRangeRequest_dropAllData() {
+  public void getDropRowRangeRequestDropAllData() {
     DropRowRangeRequest actual = adminClient.composeDropRowRangeRequest("tableId", null, true);
 
     DropRowRangeRequest expected =

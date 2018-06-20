@@ -41,12 +41,12 @@ public class TableAdminClientIT {
   static TableAdminClient tableAdmin;
 
   @BeforeClass
-  public static void setup() throws IOException {
+  public static void setUp() throws IOException {
     tableAdmin = TableAdminClient.create(InstanceName.of("sduskis-hello-shakespear", "beam-test"));
   }
 
   @AfterClass
-  public static void cleanup() throws Exception {
+  public static void cleanUp() throws Exception {
     tableAdmin.close();
   }
 
@@ -90,20 +90,20 @@ public class TableAdminClientIT {
     Duration.ofSeconds(1000);
     modifyFamiliesReq
         .create("mf1")
-        .createWithGCRule("mf2", GCRULES.maxAge(Duration.ofSeconds(1000, 20000)))
-        .updateWithGCRule(
+        .create("mf2", GCRULES.maxAge(Duration.ofSeconds(1000, 20000)))
+        .update(
             "mf1",
             GCRULES
                 .union()
                 .rule(GCRULES.maxAge(Duration.ofSeconds(100)))
                 .rule(GCRULES.maxVersions(1)))
-        .createWithGCRule(
+        .create(
             "mf3",
             GCRULES
                 .intersection()
                 .rule(GCRULES.maxAge(Duration.ofSeconds(2000)))
                 .rule(GCRULES.maxVersions(10)))
-        .createWithGCRule(
+        .create(
             "mf4", GCRULES.intersection().rule(GCRULES.maxAge(Duration.ofSeconds(360))))
         .create("mf5")
         .create("mf6")
@@ -224,7 +224,7 @@ public class TableAdminClientIT {
     try {
       tableAdmin.createTable(TableAdminRequests.createTable(tableId));
       tableAdmin.dropRowRange(tableId, "rowPrefix");
-      tableAdmin.dropAllData(tableId);
+      tableAdmin.dropAllRows(tableId);
     } finally {
       tableAdmin.deleteTable(tableId);
     }

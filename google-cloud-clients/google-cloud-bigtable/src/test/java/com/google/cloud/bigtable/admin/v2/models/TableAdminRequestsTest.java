@@ -65,12 +65,12 @@ public class TableAdminRequestsTest {
   }
 
   @Test(expected = NullPointerException.class)
-  public void createTable_RequiredTableId() {
+  public void createTableRequiredTableId() {
     TableAdminRequests.createTable(null).toProto(instanceName);
   }
 
   @Test(expected = NullPointerException.class)
-  public void createTable_RequiredParent() {
+  public void createTableRequiredParent() {
     TableAdminRequests.createTable("tableId").toProto(null);
   }
 
@@ -79,9 +79,9 @@ public class TableAdminRequestsTest {
     ModifyColumnFamiliesRequest actual =
         TableAdminRequests.modifyFamilies("tableId")
             .create("cf1")
-            .createWithGCRule("cf2", GCRules.GCRULES.maxVersions(1))
+            .create("cf2", GCRules.GCRULES.maxVersions(1))
             .create("cf3")
-            .updateWithGCRule("cf1", GCRules.GCRULES.maxVersions(5))
+            .update("cf1", GCRules.GCRULES.maxVersions(5))
             .drop("cf3")
             .toProto(instanceName);
 
@@ -116,12 +116,12 @@ public class TableAdminRequestsTest {
   }
 
   @Test(expected = NullPointerException.class)
-  public void modifyFamilies_RequiredTableId() {
+  public void modifyFamiliesRequiredTableId() {
     TableAdminRequests.modifyFamilies(null).toProto(instanceName);
   }
 
   @Test(expected = NullPointerException.class)
-  public void modifyFamilies_RequiredParent() {
+  public void modifyFamiliesRequiredParent() {
     TableAdminRequests.modifyFamilies("tableId").toProto(null);
   }
 }
