@@ -107,7 +107,7 @@ private static final long serialVersionUID = 0L;
   private com.google.pubsub.v1.Topic topic_;
   /**
    * <pre>
-   * The topic to update.
+   * The updated topic object.
    * </pre>
    *
    * <code>.google.pubsub.v1.Topic topic = 1;</code>
@@ -117,7 +117,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The topic to update.
+   * The updated topic object.
    * </pre>
    *
    * <code>.google.pubsub.v1.Topic topic = 1;</code>
@@ -127,7 +127,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The topic to update.
+   * The updated topic object.
    * </pre>
    *
    * <code>.google.pubsub.v1.Topic topic = 1;</code>
@@ -140,8 +140,11 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.FieldMask updateMask_;
   /**
    * <pre>
-   * Indicates which fields in the provided topic to update.
-   * Must be specified and non-empty.
+   * Indicates which fields in the provided topic to update. Must be specified
+   * and non-empty. Note that if `update_mask` contains
+   * "message_storage_policy" then the new value will be determined based on the
+   * policy configured at the project or organization level. The
+   * `message_storage_policy` must not be set in the `topic` provided above.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -151,8 +154,11 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Indicates which fields in the provided topic to update.
-   * Must be specified and non-empty.
+   * Indicates which fields in the provided topic to update. Must be specified
+   * and non-empty. Note that if `update_mask` contains
+   * "message_storage_policy" then the new value will be determined based on the
+   * policy configured at the project or organization level. The
+   * `message_storage_policy` must not be set in the `topic` provided above.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -162,8 +168,11 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Indicates which fields in the provided topic to update.
-   * Must be specified and non-empty.
+   * Indicates which fields in the provided topic to update. Must be specified
+   * and non-empty. Note that if `update_mask` contains
+   * "message_storage_policy" then the new value will be determined based on the
+   * policy configured at the project or organization level. The
+   * `message_storage_policy` must not be set in the `topic` provided above.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -507,7 +516,7 @@ private static final long serialVersionUID = 0L;
         com.google.pubsub.v1.Topic, com.google.pubsub.v1.Topic.Builder, com.google.pubsub.v1.TopicOrBuilder> topicBuilder_;
     /**
      * <pre>
-     * The topic to update.
+     * The updated topic object.
      * </pre>
      *
      * <code>.google.pubsub.v1.Topic topic = 1;</code>
@@ -517,7 +526,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The topic to update.
+     * The updated topic object.
      * </pre>
      *
      * <code>.google.pubsub.v1.Topic topic = 1;</code>
@@ -531,7 +540,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The topic to update.
+     * The updated topic object.
      * </pre>
      *
      * <code>.google.pubsub.v1.Topic topic = 1;</code>
@@ -551,7 +560,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The topic to update.
+     * The updated topic object.
      * </pre>
      *
      * <code>.google.pubsub.v1.Topic topic = 1;</code>
@@ -569,7 +578,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The topic to update.
+     * The updated topic object.
      * </pre>
      *
      * <code>.google.pubsub.v1.Topic topic = 1;</code>
@@ -591,7 +600,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The topic to update.
+     * The updated topic object.
      * </pre>
      *
      * <code>.google.pubsub.v1.Topic topic = 1;</code>
@@ -609,7 +618,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The topic to update.
+     * The updated topic object.
      * </pre>
      *
      * <code>.google.pubsub.v1.Topic topic = 1;</code>
@@ -621,7 +630,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The topic to update.
+     * The updated topic object.
      * </pre>
      *
      * <code>.google.pubsub.v1.Topic topic = 1;</code>
@@ -636,7 +645,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The topic to update.
+     * The updated topic object.
      * </pre>
      *
      * <code>.google.pubsub.v1.Topic topic = 1;</code>
@@ -660,8 +669,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.FieldMask, com.google.protobuf.FieldMask.Builder, com.google.protobuf.FieldMaskOrBuilder> updateMaskBuilder_;
     /**
      * <pre>
-     * Indicates which fields in the provided topic to update.
-     * Must be specified and non-empty.
+     * Indicates which fields in the provided topic to update. Must be specified
+     * and non-empty. Note that if `update_mask` contains
+     * "message_storage_policy" then the new value will be determined based on the
+     * policy configured at the project or organization level. The
+     * `message_storage_policy` must not be set in the `topic` provided above.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -671,8 +683,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Indicates which fields in the provided topic to update.
-     * Must be specified and non-empty.
+     * Indicates which fields in the provided topic to update. Must be specified
+     * and non-empty. Note that if `update_mask` contains
+     * "message_storage_policy" then the new value will be determined based on the
+     * policy configured at the project or organization level. The
+     * `message_storage_policy` must not be set in the `topic` provided above.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -686,8 +701,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Indicates which fields in the provided topic to update.
-     * Must be specified and non-empty.
+     * Indicates which fields in the provided topic to update. Must be specified
+     * and non-empty. Note that if `update_mask` contains
+     * "message_storage_policy" then the new value will be determined based on the
+     * policy configured at the project or organization level. The
+     * `message_storage_policy` must not be set in the `topic` provided above.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -707,8 +725,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Indicates which fields in the provided topic to update.
-     * Must be specified and non-empty.
+     * Indicates which fields in the provided topic to update. Must be specified
+     * and non-empty. Note that if `update_mask` contains
+     * "message_storage_policy" then the new value will be determined based on the
+     * policy configured at the project or organization level. The
+     * `message_storage_policy` must not be set in the `topic` provided above.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -726,8 +747,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Indicates which fields in the provided topic to update.
-     * Must be specified and non-empty.
+     * Indicates which fields in the provided topic to update. Must be specified
+     * and non-empty. Note that if `update_mask` contains
+     * "message_storage_policy" then the new value will be determined based on the
+     * policy configured at the project or organization level. The
+     * `message_storage_policy` must not be set in the `topic` provided above.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -749,8 +773,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Indicates which fields in the provided topic to update.
-     * Must be specified and non-empty.
+     * Indicates which fields in the provided topic to update. Must be specified
+     * and non-empty. Note that if `update_mask` contains
+     * "message_storage_policy" then the new value will be determined based on the
+     * policy configured at the project or organization level. The
+     * `message_storage_policy` must not be set in the `topic` provided above.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -768,8 +795,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Indicates which fields in the provided topic to update.
-     * Must be specified and non-empty.
+     * Indicates which fields in the provided topic to update. Must be specified
+     * and non-empty. Note that if `update_mask` contains
+     * "message_storage_policy" then the new value will be determined based on the
+     * policy configured at the project or organization level. The
+     * `message_storage_policy` must not be set in the `topic` provided above.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -781,8 +811,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Indicates which fields in the provided topic to update.
-     * Must be specified and non-empty.
+     * Indicates which fields in the provided topic to update. Must be specified
+     * and non-empty. Note that if `update_mask` contains
+     * "message_storage_policy" then the new value will be determined based on the
+     * policy configured at the project or organization level. The
+     * `message_storage_policy` must not be set in the `topic` provided above.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -797,8 +830,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Indicates which fields in the provided topic to update.
-     * Must be specified and non-empty.
+     * Indicates which fields in the provided topic to update. Must be specified
+     * and non-empty. Note that if `update_mask` contains
+     * "message_storage_policy" then the new value will be determined based on the
+     * policy configured at the project or organization level. The
+     * `message_storage_policy` must not be set in the `topic` provided above.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>

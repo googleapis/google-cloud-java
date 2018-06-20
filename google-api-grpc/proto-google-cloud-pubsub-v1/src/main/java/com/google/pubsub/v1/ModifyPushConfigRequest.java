@@ -149,7 +149,7 @@ private static final long serialVersionUID = 0L;
    * An empty `pushConfig` indicates that the Pub/Sub system should
    * stop pushing messages from the given subscription and allow
    * messages to be pulled and acknowledged - effectively pausing
-   * the subscription if `Pull` is not called.
+   * the subscription if `Pull` or `StreamingPull` is not called.
    * </pre>
    *
    * <code>.google.pubsub.v1.PushConfig push_config = 2;</code>
@@ -163,7 +163,7 @@ private static final long serialVersionUID = 0L;
    * An empty `pushConfig` indicates that the Pub/Sub system should
    * stop pushing messages from the given subscription and allow
    * messages to be pulled and acknowledged - effectively pausing
-   * the subscription if `Pull` is not called.
+   * the subscription if `Pull` or `StreamingPull` is not called.
    * </pre>
    *
    * <code>.google.pubsub.v1.PushConfig push_config = 2;</code>
@@ -177,7 +177,7 @@ private static final long serialVersionUID = 0L;
    * An empty `pushConfig` indicates that the Pub/Sub system should
    * stop pushing messages from the given subscription and allow
    * messages to be pulled and acknowledged - effectively pausing
-   * the subscription if `Pull` is not called.
+   * the subscription if `Pull` or `StreamingPull` is not called.
    * </pre>
    *
    * <code>.google.pubsub.v1.PushConfig push_config = 2;</code>
@@ -606,7 +606,7 @@ private static final long serialVersionUID = 0L;
      * An empty `pushConfig` indicates that the Pub/Sub system should
      * stop pushing messages from the given subscription and allow
      * messages to be pulled and acknowledged - effectively pausing
-     * the subscription if `Pull` is not called.
+     * the subscription if `Pull` or `StreamingPull` is not called.
      * </pre>
      *
      * <code>.google.pubsub.v1.PushConfig push_config = 2;</code>
@@ -620,7 +620,7 @@ private static final long serialVersionUID = 0L;
      * An empty `pushConfig` indicates that the Pub/Sub system should
      * stop pushing messages from the given subscription and allow
      * messages to be pulled and acknowledged - effectively pausing
-     * the subscription if `Pull` is not called.
+     * the subscription if `Pull` or `StreamingPull` is not called.
      * </pre>
      *
      * <code>.google.pubsub.v1.PushConfig push_config = 2;</code>
@@ -638,7 +638,7 @@ private static final long serialVersionUID = 0L;
      * An empty `pushConfig` indicates that the Pub/Sub system should
      * stop pushing messages from the given subscription and allow
      * messages to be pulled and acknowledged - effectively pausing
-     * the subscription if `Pull` is not called.
+     * the subscription if `Pull` or `StreamingPull` is not called.
      * </pre>
      *
      * <code>.google.pubsub.v1.PushConfig push_config = 2;</code>
@@ -662,7 +662,7 @@ private static final long serialVersionUID = 0L;
      * An empty `pushConfig` indicates that the Pub/Sub system should
      * stop pushing messages from the given subscription and allow
      * messages to be pulled and acknowledged - effectively pausing
-     * the subscription if `Pull` is not called.
+     * the subscription if `Pull` or `StreamingPull` is not called.
      * </pre>
      *
      * <code>.google.pubsub.v1.PushConfig push_config = 2;</code>
@@ -684,7 +684,7 @@ private static final long serialVersionUID = 0L;
      * An empty `pushConfig` indicates that the Pub/Sub system should
      * stop pushing messages from the given subscription and allow
      * messages to be pulled and acknowledged - effectively pausing
-     * the subscription if `Pull` is not called.
+     * the subscription if `Pull` or `StreamingPull` is not called.
      * </pre>
      *
      * <code>.google.pubsub.v1.PushConfig push_config = 2;</code>
@@ -710,7 +710,7 @@ private static final long serialVersionUID = 0L;
      * An empty `pushConfig` indicates that the Pub/Sub system should
      * stop pushing messages from the given subscription and allow
      * messages to be pulled and acknowledged - effectively pausing
-     * the subscription if `Pull` is not called.
+     * the subscription if `Pull` or `StreamingPull` is not called.
      * </pre>
      *
      * <code>.google.pubsub.v1.PushConfig push_config = 2;</code>
@@ -732,7 +732,7 @@ private static final long serialVersionUID = 0L;
      * An empty `pushConfig` indicates that the Pub/Sub system should
      * stop pushing messages from the given subscription and allow
      * messages to be pulled and acknowledged - effectively pausing
-     * the subscription if `Pull` is not called.
+     * the subscription if `Pull` or `StreamingPull` is not called.
      * </pre>
      *
      * <code>.google.pubsub.v1.PushConfig push_config = 2;</code>
@@ -748,7 +748,7 @@ private static final long serialVersionUID = 0L;
      * An empty `pushConfig` indicates that the Pub/Sub system should
      * stop pushing messages from the given subscription and allow
      * messages to be pulled and acknowledged - effectively pausing
-     * the subscription if `Pull` is not called.
+     * the subscription if `Pull` or `StreamingPull` is not called.
      * </pre>
      *
      * <code>.google.pubsub.v1.PushConfig push_config = 2;</code>
@@ -767,7 +767,7 @@ private static final long serialVersionUID = 0L;
      * An empty `pushConfig` indicates that the Pub/Sub system should
      * stop pushing messages from the given subscription and allow
      * messages to be pulled and acknowledged - effectively pausing
-     * the subscription if `Pull` is not called.
+     * the subscription if `Pull` or `StreamingPull` is not called.
      * </pre>
      *
      * <code>.google.pubsub.v1.PushConfig push_config = 2;</code>

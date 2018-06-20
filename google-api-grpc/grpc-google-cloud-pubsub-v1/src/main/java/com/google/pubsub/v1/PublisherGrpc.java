@@ -254,6 +254,43 @@ public final class PublisherGrpc {
      return getListTopicSubscriptionsMethod;
   }
   @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getListTopicSnapshotsMethod()} instead. 
+  public static final io.grpc.MethodDescriptor<com.google.pubsub.v1.ListTopicSnapshotsRequest,
+      com.google.pubsub.v1.ListTopicSnapshotsResponse> METHOD_LIST_TOPIC_SNAPSHOTS = getListTopicSnapshotsMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<com.google.pubsub.v1.ListTopicSnapshotsRequest,
+      com.google.pubsub.v1.ListTopicSnapshotsResponse> getListTopicSnapshotsMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<com.google.pubsub.v1.ListTopicSnapshotsRequest,
+      com.google.pubsub.v1.ListTopicSnapshotsResponse> getListTopicSnapshotsMethod() {
+    return getListTopicSnapshotsMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<com.google.pubsub.v1.ListTopicSnapshotsRequest,
+      com.google.pubsub.v1.ListTopicSnapshotsResponse> getListTopicSnapshotsMethodHelper() {
+    io.grpc.MethodDescriptor<com.google.pubsub.v1.ListTopicSnapshotsRequest, com.google.pubsub.v1.ListTopicSnapshotsResponse> getListTopicSnapshotsMethod;
+    if ((getListTopicSnapshotsMethod = PublisherGrpc.getListTopicSnapshotsMethod) == null) {
+      synchronized (PublisherGrpc.class) {
+        if ((getListTopicSnapshotsMethod = PublisherGrpc.getListTopicSnapshotsMethod) == null) {
+          PublisherGrpc.getListTopicSnapshotsMethod = getListTopicSnapshotsMethod = 
+              io.grpc.MethodDescriptor.<com.google.pubsub.v1.ListTopicSnapshotsRequest, com.google.pubsub.v1.ListTopicSnapshotsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "google.pubsub.v1.Publisher", "ListTopicSnapshots"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.pubsub.v1.ListTopicSnapshotsRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.pubsub.v1.ListTopicSnapshotsResponse.getDefaultInstance()))
+                  .setSchemaDescriptor(new PublisherMethodDescriptorSupplier("ListTopicSnapshots"))
+                  .build();
+          }
+        }
+     }
+     return getListTopicSnapshotsMethod;
+  }
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
   @java.lang.Deprecated // Use {@link #getDeleteTopicMethod()} instead. 
   public static final io.grpc.MethodDescriptor<com.google.pubsub.v1.DeleteTopicRequest,
       com.google.protobuf.Empty> METHOD_DELETE_TOPIC = getDeleteTopicMethodHelper();
@@ -324,7 +361,8 @@ public final class PublisherGrpc {
 
     /**
      * <pre>
-     * Creates the given topic with the given name.
+     * Creates the given topic with the given name. See the
+     * &lt;a href="/pubsub/docs/admin#resource_names"&gt; resource name rules&lt;/a&gt;.
      * </pre>
      */
     public void createTopic(com.google.pubsub.v1.Topic request,
@@ -334,12 +372,8 @@ public final class PublisherGrpc {
 
     /**
      * <pre>
-     * Updates an existing topic. Note that certain properties of a topic are not
-     * modifiable.  Options settings follow the style guide:
-     * NOTE:  The style guide requires body: "topic" instead of body: "*".
-     * Keeping the latter for internal consistency in V1, however it should be
-     * corrected in V2.  See
-     * https://cloud.google.com/apis/design/standard_methods#update for details.
+     * Updates an existing topic. Note that certain properties of a
+     * topic are not modifiable.
      * </pre>
      */
     public void updateTopic(com.google.pubsub.v1.UpdateTopicRequest request,
@@ -381,12 +415,25 @@ public final class PublisherGrpc {
 
     /**
      * <pre>
-     * Lists the name of the subscriptions for this topic.
+     * Lists the names of the subscriptions on this topic.
      * </pre>
      */
     public void listTopicSubscriptions(com.google.pubsub.v1.ListTopicSubscriptionsRequest request,
         io.grpc.stub.StreamObserver<com.google.pubsub.v1.ListTopicSubscriptionsResponse> responseObserver) {
       asyncUnimplementedUnaryCall(getListTopicSubscriptionsMethodHelper(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Lists the names of the snapshots on this topic.&lt;br&gt;&lt;br&gt;
+     * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
+     * changed in backward-incompatible ways and is not recommended for production
+     * use. It is not subject to any SLA or deprecation policy.
+     * </pre>
+     */
+    public void listTopicSnapshots(com.google.pubsub.v1.ListTopicSnapshotsRequest request,
+        io.grpc.stub.StreamObserver<com.google.pubsub.v1.ListTopicSnapshotsResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getListTopicSnapshotsMethodHelper(), responseObserver);
     }
 
     /**
@@ -448,6 +495,13 @@ public final class PublisherGrpc {
                 com.google.pubsub.v1.ListTopicSubscriptionsResponse>(
                   this, METHODID_LIST_TOPIC_SUBSCRIPTIONS)))
           .addMethod(
+            getListTopicSnapshotsMethodHelper(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.google.pubsub.v1.ListTopicSnapshotsRequest,
+                com.google.pubsub.v1.ListTopicSnapshotsResponse>(
+                  this, METHODID_LIST_TOPIC_SNAPSHOTS)))
+          .addMethod(
             getDeleteTopicMethodHelper(),
             asyncUnaryCall(
               new MethodHandlers<
@@ -482,7 +536,8 @@ public final class PublisherGrpc {
 
     /**
      * <pre>
-     * Creates the given topic with the given name.
+     * Creates the given topic with the given name. See the
+     * &lt;a href="/pubsub/docs/admin#resource_names"&gt; resource name rules&lt;/a&gt;.
      * </pre>
      */
     public void createTopic(com.google.pubsub.v1.Topic request,
@@ -493,12 +548,8 @@ public final class PublisherGrpc {
 
     /**
      * <pre>
-     * Updates an existing topic. Note that certain properties of a topic are not
-     * modifiable.  Options settings follow the style guide:
-     * NOTE:  The style guide requires body: "topic" instead of body: "*".
-     * Keeping the latter for internal consistency in V1, however it should be
-     * corrected in V2.  See
-     * https://cloud.google.com/apis/design/standard_methods#update for details.
+     * Updates an existing topic. Note that certain properties of a
+     * topic are not modifiable.
      * </pre>
      */
     public void updateTopic(com.google.pubsub.v1.UpdateTopicRequest request,
@@ -544,13 +595,27 @@ public final class PublisherGrpc {
 
     /**
      * <pre>
-     * Lists the name of the subscriptions for this topic.
+     * Lists the names of the subscriptions on this topic.
      * </pre>
      */
     public void listTopicSubscriptions(com.google.pubsub.v1.ListTopicSubscriptionsRequest request,
         io.grpc.stub.StreamObserver<com.google.pubsub.v1.ListTopicSubscriptionsResponse> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getListTopicSubscriptionsMethodHelper(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Lists the names of the snapshots on this topic.&lt;br&gt;&lt;br&gt;
+     * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
+     * changed in backward-incompatible ways and is not recommended for production
+     * use. It is not subject to any SLA or deprecation policy.
+     * </pre>
+     */
+    public void listTopicSnapshots(com.google.pubsub.v1.ListTopicSnapshotsRequest request,
+        io.grpc.stub.StreamObserver<com.google.pubsub.v1.ListTopicSnapshotsResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getListTopicSnapshotsMethodHelper(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -593,7 +658,8 @@ public final class PublisherGrpc {
 
     /**
      * <pre>
-     * Creates the given topic with the given name.
+     * Creates the given topic with the given name. See the
+     * &lt;a href="/pubsub/docs/admin#resource_names"&gt; resource name rules&lt;/a&gt;.
      * </pre>
      */
     public com.google.pubsub.v1.Topic createTopic(com.google.pubsub.v1.Topic request) {
@@ -603,12 +669,8 @@ public final class PublisherGrpc {
 
     /**
      * <pre>
-     * Updates an existing topic. Note that certain properties of a topic are not
-     * modifiable.  Options settings follow the style guide:
-     * NOTE:  The style guide requires body: "topic" instead of body: "*".
-     * Keeping the latter for internal consistency in V1, however it should be
-     * corrected in V2.  See
-     * https://cloud.google.com/apis/design/standard_methods#update for details.
+     * Updates an existing topic. Note that certain properties of a
+     * topic are not modifiable.
      * </pre>
      */
     public com.google.pubsub.v1.Topic updateTopic(com.google.pubsub.v1.UpdateTopicRequest request) {
@@ -650,12 +712,25 @@ public final class PublisherGrpc {
 
     /**
      * <pre>
-     * Lists the name of the subscriptions for this topic.
+     * Lists the names of the subscriptions on this topic.
      * </pre>
      */
     public com.google.pubsub.v1.ListTopicSubscriptionsResponse listTopicSubscriptions(com.google.pubsub.v1.ListTopicSubscriptionsRequest request) {
       return blockingUnaryCall(
           getChannel(), getListTopicSubscriptionsMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Lists the names of the snapshots on this topic.&lt;br&gt;&lt;br&gt;
+     * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
+     * changed in backward-incompatible ways and is not recommended for production
+     * use. It is not subject to any SLA or deprecation policy.
+     * </pre>
+     */
+    public com.google.pubsub.v1.ListTopicSnapshotsResponse listTopicSnapshots(com.google.pubsub.v1.ListTopicSnapshotsRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getListTopicSnapshotsMethodHelper(), getCallOptions(), request);
     }
 
     /**
@@ -697,7 +772,8 @@ public final class PublisherGrpc {
 
     /**
      * <pre>
-     * Creates the given topic with the given name.
+     * Creates the given topic with the given name. See the
+     * &lt;a href="/pubsub/docs/admin#resource_names"&gt; resource name rules&lt;/a&gt;.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.pubsub.v1.Topic> createTopic(
@@ -708,12 +784,8 @@ public final class PublisherGrpc {
 
     /**
      * <pre>
-     * Updates an existing topic. Note that certain properties of a topic are not
-     * modifiable.  Options settings follow the style guide:
-     * NOTE:  The style guide requires body: "topic" instead of body: "*".
-     * Keeping the latter for internal consistency in V1, however it should be
-     * corrected in V2.  See
-     * https://cloud.google.com/apis/design/standard_methods#update for details.
+     * Updates an existing topic. Note that certain properties of a
+     * topic are not modifiable.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.pubsub.v1.Topic> updateTopic(
@@ -759,13 +831,27 @@ public final class PublisherGrpc {
 
     /**
      * <pre>
-     * Lists the name of the subscriptions for this topic.
+     * Lists the names of the subscriptions on this topic.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.pubsub.v1.ListTopicSubscriptionsResponse> listTopicSubscriptions(
         com.google.pubsub.v1.ListTopicSubscriptionsRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getListTopicSubscriptionsMethodHelper(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Lists the names of the snapshots on this topic.&lt;br&gt;&lt;br&gt;
+     * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
+     * changed in backward-incompatible ways and is not recommended for production
+     * use. It is not subject to any SLA or deprecation policy.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.pubsub.v1.ListTopicSnapshotsResponse> listTopicSnapshots(
+        com.google.pubsub.v1.ListTopicSnapshotsRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getListTopicSnapshotsMethodHelper(), getCallOptions()), request);
     }
 
     /**
@@ -790,7 +876,8 @@ public final class PublisherGrpc {
   private static final int METHODID_GET_TOPIC = 3;
   private static final int METHODID_LIST_TOPICS = 4;
   private static final int METHODID_LIST_TOPIC_SUBSCRIPTIONS = 5;
-  private static final int METHODID_DELETE_TOPIC = 6;
+  private static final int METHODID_LIST_TOPIC_SNAPSHOTS = 6;
+  private static final int METHODID_DELETE_TOPIC = 7;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -832,6 +919,10 @@ public final class PublisherGrpc {
         case METHODID_LIST_TOPIC_SUBSCRIPTIONS:
           serviceImpl.listTopicSubscriptions((com.google.pubsub.v1.ListTopicSubscriptionsRequest) request,
               (io.grpc.stub.StreamObserver<com.google.pubsub.v1.ListTopicSubscriptionsResponse>) responseObserver);
+          break;
+        case METHODID_LIST_TOPIC_SNAPSHOTS:
+          serviceImpl.listTopicSnapshots((com.google.pubsub.v1.ListTopicSnapshotsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.pubsub.v1.ListTopicSnapshotsResponse>) responseObserver);
           break;
         case METHODID_DELETE_TOPIC:
           serviceImpl.deleteTopic((com.google.pubsub.v1.DeleteTopicRequest) request,
@@ -904,6 +995,7 @@ public final class PublisherGrpc {
               .addMethod(getGetTopicMethodHelper())
               .addMethod(getListTopicsMethodHelper())
               .addMethod(getListTopicSubscriptionsMethodHelper())
+              .addMethod(getListTopicSnapshotsMethodHelper())
               .addMethod(getDeleteTopicMethodHelper())
               .build();
         }
