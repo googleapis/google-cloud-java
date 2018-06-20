@@ -28,7 +28,6 @@ import com.google.bigtable.admin.v2.CreateTableRequest.Split;
 import com.google.bigtable.admin.v2.InstanceName;
 import com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest;
 import com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification;
-import com.google.bigtable.admin.v2.Table.TimestampGranularity;
 import com.google.protobuf.ByteString;
 
 @RunWith(JUnit4.class)
@@ -51,7 +50,6 @@ public class TableAdminRequestsTest {
             .addInitialSplits(Split.newBuilder().setKey(ByteString.copyFromUtf8("c")))
             .setTable(
                 Table.newBuilder()
-                    .setGranularity(TimestampGranularity.MILLIS)
                     .putColumnFamilies("cf1", ColumnFamily.newBuilder().build())
                     .putColumnFamilies(
                         "cf2",
