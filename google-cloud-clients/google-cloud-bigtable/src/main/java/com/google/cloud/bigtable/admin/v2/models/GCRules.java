@@ -208,7 +208,7 @@ public final class GCRules {
 
     /** Gets the configured maximum versions */
     public int getMaxVersions() {
-      return toProto().getMaxNumVersions();
+      return builder.getMaxNumVersions();
     }
 
     @Override
@@ -240,9 +240,7 @@ public final class GCRules {
      * @return Duration
      */
     public Duration getMaxAge() {
-      long seconds = toProto().getMaxAge().getSeconds();
-      int nanos = toProto().getMaxAge().getNanos();
-      return Duration.ofSeconds(seconds, nanos);
+      return Duration.ofSeconds(builder.getSeconds(), builder.getNanos());
     }
 
     @Override

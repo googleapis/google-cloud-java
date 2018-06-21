@@ -59,8 +59,8 @@ import com.google.protobuf.Empty;
  * try(TableAdminClient client =  TableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
  *   CreateTable createTableReq =
  *     TableAdminRequests.createTable("tableId")
- *       .addColumnFamily("cf1")
- *       .addColumnFamily("cf2", GCRULES.maxVersions(10))
+ *       .addFamily("cf1")
+ *       .addFamily("cf2", GCRULES.maxVersions(10))
  *       .addSplit(ByteString.copyFromUtf8("b"))
  *       .addSplit(ByteString.copyFromUtf8("q"));
  *   client.createTable(createTableReq);
@@ -80,9 +80,9 @@ import com.google.protobuf.Empty;
  * BigtableTableAdminSettings bigtableTableAdminSettings =
  *   BigtableTableAdminSettings.newBuilder()
  *   .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
- *     .build();
+ *   .build();
  * TableAdminClient client =
- * TableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"), bigtableTableAdminSettings);
+ *   TableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"), bigtableTableAdminSettings);
  * }</pre>
  *
  * To customize the endpoint:
@@ -91,7 +91,7 @@ import com.google.protobuf.Empty;
  * BigtableTableAdminSettings bigtableTableAdminSettings =
  *     BigtableTableAdminSettings.newBuilder().setEndpoint(myEndpoint).build();
  * TableAdminClient client =
- * TableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"), bigtableTableAdminSettings);
+ *   TableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"), bigtableTableAdminSettings);
  * }</pre>
  */
 @BetaApi
@@ -173,7 +173,7 @@ public class TableAdminClient implements AutoCloseable {
    * try(TableAdminClient client =  TableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
    *   CreateTable createTableReq =
    *     TableAdminRequests.createTable("tableId")
-   *       .addColumnFamily("cf2", GCRULES.maxVersions(10))
+   *       .addFamily("cf2", GCRULES.maxVersions(10))
    *   client.createTable(createTableReq);
    * }
    * }</pre>
@@ -197,8 +197,7 @@ public class TableAdminClient implements AutoCloseable {
    *  try(TableAdminClient client =  TableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
    *    CreateTable createTableReq =
    *      TableAdminRequests.createTable("tableId")
-   *        .addColumnFamily("cf2", GCRULES.maxVersions(10))
-   *
+   *        .addFamily("cf2", GCRULES.maxVersions(10))
    *    client.createTableAsync(createTableReq);
    *  }
    *  }</pre>
@@ -612,11 +611,11 @@ public class TableAdminClient implements AutoCloseable {
    * @return ApiFuture<Boolean>
    */
   public ApiFuture<Boolean> isConsistentAsync(String tableId, ConsistencyToken token) {
-    ApiFuture<CheckConsistencyResponse> CheckConsResp =
+    ApiFuture<CheckConsistencyResponse> checkConsResp =
         stub.checkConsistencyCallable().futureCall(token.toProto(getTableName(tableId)));
 
     return ApiFutures.transform(
-        CheckConsResp,
+        checkConsResp,
         new ApiFunction<CheckConsistencyResponse, Boolean>() {
           @Override
           public Boolean apply(CheckConsistencyResponse input) {

@@ -58,8 +58,8 @@ public class TableAdminClientIT {
     String tableId = "adminCreateTest";
     CreateTable createTableReq =
         TableAdminRequests.createTable(tableId)
-            .addColumnFamily("cf1")
-            .addColumnFamily("cf2", GCRULES.maxVersions(10))
+            .addFamily("cf1")
+            .addFamily("cf2", GCRULES.maxVersions(10))
             .addSplit(ByteString.copyFromUtf8("b"))
             .addSplit(ByteString.copyFromUtf8("q"));
 

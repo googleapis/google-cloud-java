@@ -38,8 +38,8 @@ public class TableAdminRequestsTest {
   public void createTable() {
     CreateTableRequest actual =
         TableAdminRequests.createTable("tableId")
-            .addColumnFamily("cf1")
-            .addColumnFamily("cf2", GCRules.GCRULES.maxVersions(1))
+            .addFamily("cf1")
+            .addFamily("cf2", GCRules.GCRULES.maxVersions(1))
             .addSplit(ByteString.copyFromUtf8("c"))
             .toProto(instanceName);
 

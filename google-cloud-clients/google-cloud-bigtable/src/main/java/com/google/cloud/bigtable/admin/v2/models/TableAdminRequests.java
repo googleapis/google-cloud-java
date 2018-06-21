@@ -83,7 +83,7 @@ public final class TableAdminRequests {
      *
      * @param familyId
      */
-    public CreateTable addColumnFamily(String familyId) {
+    public CreateTable addFamily(String familyId) {
       Preconditions.checkNotNull(familyId);
       tableRequest.putColumnFamilies(familyId, ColumnFamily.newBuilder().build());
       return this;
@@ -95,7 +95,7 @@ public final class TableAdminRequests {
      * @param familyId
      * @param gcRule
      */
-    public CreateTable addColumnFamily(String familyId, GCRule gcRule) {
+    public CreateTable addFamily(String familyId, GCRule gcRule) {
       Preconditions.checkNotNull(familyId);
       tableRequest.putColumnFamilies(
           familyId, ColumnFamily.newBuilder().setGcRule(gcRule.toProto()).build());
