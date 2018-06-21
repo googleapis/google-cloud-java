@@ -692,24 +692,6 @@ public class SpannerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SpannerClient spannerClient = SpannerClient.create()) {
-   *   ApiStreamObserver&lt;PartialResultSet&gt; responseObserver =
-   *       new ApiStreamObserver&lt;PartialResultSet&gt;() {
-   *         {@literal @}Override
-   *         public void onNext(PartialResultSet response) {
-   *           // Do something when receive a response
-   *         }
-   *
-   *         {@literal @}Override
-   *         public void onError(Throwable t) {
-   *           // Add error-handling
-   *         }
-   *
-   *         {@literal @}Override
-   *         public void onCompleted() {
-   *           // Do something when complete.
-   *         }
-   *       };
-   *
    *   SessionName session = SessionName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]", "[SESSION]");
    *   String sql = "";
    *   ExecuteSqlRequest request = ExecuteSqlRequest.newBuilder()
@@ -717,7 +699,10 @@ public class SpannerClient implements BackgroundResource {
    *     .setSql(sql)
    *     .build();
    *
-   *   spannerClient.executeStreamingSqlCallable().serverStreamingCall(request, responseObserver));
+   *   ServerStream&lt;PartialResultSet&gt; stream = spannerClient.executeStreamingSqlCallable().call(request);
+   *   for (PartialResultSet response : stream) {
+   *     // Do something when receive a response
+   *   }
    * }
    * </code></pre>
    */
@@ -814,24 +799,6 @@ public class SpannerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SpannerClient spannerClient = SpannerClient.create()) {
-   *   ApiStreamObserver&lt;PartialResultSet&gt; responseObserver =
-   *       new ApiStreamObserver&lt;PartialResultSet&gt;() {
-   *         {@literal @}Override
-   *         public void onNext(PartialResultSet response) {
-   *           // Do something when receive a response
-   *         }
-   *
-   *         {@literal @}Override
-   *         public void onError(Throwable t) {
-   *           // Add error-handling
-   *         }
-   *
-   *         {@literal @}Override
-   *         public void onCompleted() {
-   *           // Do something when complete.
-   *         }
-   *       };
-   *
    *   SessionName session = SessionName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]", "[SESSION]");
    *   String table = "";
    *   List&lt;String&gt; columns = new ArrayList&lt;&gt;();
@@ -843,7 +810,10 @@ public class SpannerClient implements BackgroundResource {
    *     .setKeySet(keySet)
    *     .build();
    *
-   *   spannerClient.streamingReadCallable().serverStreamingCall(request, responseObserver));
+   *   ServerStream&lt;PartialResultSet&gt; stream = spannerClient.streamingReadCallable().call(request);
+   *   for (PartialResultSet response : stream) {
+   *     // Do something when receive a response
+   *   }
    * }
    * </code></pre>
    */
