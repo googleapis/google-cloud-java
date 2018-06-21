@@ -61,16 +61,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-storage</artifactId>
-  <version>1.34.0</version>
+  <version>1.35.0</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-storage:1.34.0'
+compile 'com.google.cloud:google-cloud-storage:1.35.0'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-storage" % "1.34.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-storage" % "1.35.0"
 ```
 [//]: # ({x-version-update-end})
 
@@ -291,7 +291,7 @@ The easiest way to solve version conflicts is to use google-cloud's BOM. In Mave
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-bom</artifactId>
-        <version>0.52.0-alpha</version>
+        <version>0.53.0-alpha</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
