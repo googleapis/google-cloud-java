@@ -177,30 +177,15 @@ public class BaseBigtableDataClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BaseBigtableDataClient baseBigtableDataClient = BaseBigtableDataClient.create()) {
-   *   ApiStreamObserver&lt;ReadRowsResponse&gt; responseObserver =
-   *       new ApiStreamObserver&lt;ReadRowsResponse&gt;() {
-   *         {@literal @}Override
-   *         public void onNext(ReadRowsResponse response) {
-   *           // Do something when receive a response
-   *         }
-   *
-   *         {@literal @}Override
-   *         public void onError(Throwable t) {
-   *           // Add error-handling
-   *         }
-   *
-   *         {@literal @}Override
-   *         public void onCompleted() {
-   *           // Do something when complete.
-   *         }
-   *       };
-   *
    *   TableName tableName = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
    *   ReadRowsRequest request = ReadRowsRequest.newBuilder()
    *     .setTableName(tableName.toString())
    *     .build();
    *
-   *   baseBigtableDataClient.readRowsCallable().serverStreamingCall(request, responseObserver));
+   *   ServerStream&lt;ReadRowsResponse&gt; stream = baseBigtableDataClient.readRowsCallable().call(request);
+   *   for (ReadRowsResponse response : stream) {
+   *     // Do something when receive a response
+   *   }
    * }
    * </code></pre>
    */
@@ -218,30 +203,15 @@ public class BaseBigtableDataClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BaseBigtableDataClient baseBigtableDataClient = BaseBigtableDataClient.create()) {
-   *   ApiStreamObserver&lt;SampleRowKeysResponse&gt; responseObserver =
-   *       new ApiStreamObserver&lt;SampleRowKeysResponse&gt;() {
-   *         {@literal @}Override
-   *         public void onNext(SampleRowKeysResponse response) {
-   *           // Do something when receive a response
-   *         }
-   *
-   *         {@literal @}Override
-   *         public void onError(Throwable t) {
-   *           // Add error-handling
-   *         }
-   *
-   *         {@literal @}Override
-   *         public void onCompleted() {
-   *           // Do something when complete.
-   *         }
-   *       };
-   *
    *   TableName tableName = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
    *   SampleRowKeysRequest request = SampleRowKeysRequest.newBuilder()
    *     .setTableName(tableName.toString())
    *     .build();
    *
-   *   baseBigtableDataClient.sampleRowKeysCallable().serverStreamingCall(request, responseObserver));
+   *   ServerStream&lt;SampleRowKeysResponse&gt; stream = baseBigtableDataClient.sampleRowKeysCallable().call(request);
+   *   for (SampleRowKeysResponse response : stream) {
+   *     // Do something when receive a response
+   *   }
    * }
    * </code></pre>
    */
@@ -386,24 +356,6 @@ public class BaseBigtableDataClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BaseBigtableDataClient baseBigtableDataClient = BaseBigtableDataClient.create()) {
-   *   ApiStreamObserver&lt;MutateRowsResponse&gt; responseObserver =
-   *       new ApiStreamObserver&lt;MutateRowsResponse&gt;() {
-   *         {@literal @}Override
-   *         public void onNext(MutateRowsResponse response) {
-   *           // Do something when receive a response
-   *         }
-   *
-   *         {@literal @}Override
-   *         public void onError(Throwable t) {
-   *           // Add error-handling
-   *         }
-   *
-   *         {@literal @}Override
-   *         public void onCompleted() {
-   *           // Do something when complete.
-   *         }
-   *       };
-   *
    *   TableName tableName = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
    *   List&lt;MutateRowsRequest.Entry&gt; entries = new ArrayList&lt;&gt;();
    *   MutateRowsRequest request = MutateRowsRequest.newBuilder()
@@ -411,7 +363,10 @@ public class BaseBigtableDataClient implements BackgroundResource {
    *     .addAllEntries(entries)
    *     .build();
    *
-   *   baseBigtableDataClient.mutateRowsCallable().serverStreamingCall(request, responseObserver));
+   *   ServerStream&lt;MutateRowsResponse&gt; stream = baseBigtableDataClient.mutateRowsCallable().call(request);
+   *   for (MutateRowsResponse response : stream) {
+   *     // Do something when receive a response
+   *   }
    * }
    * </code></pre>
    */
