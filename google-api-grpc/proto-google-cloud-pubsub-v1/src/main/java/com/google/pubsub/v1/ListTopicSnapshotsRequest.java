@@ -5,25 +5,25 @@ package com.google.pubsub.v1;
 
 /**
  * <pre>
- * Request for the `ListSnapshots` method.&lt;br&gt;&lt;br&gt;
+ * Request for the `ListTopicSnapshots` method.&lt;br&gt;&lt;br&gt;
  * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
  * changed in backward-incompatible ways and is not recommended for production
  * use. It is not subject to any SLA or deprecation policy.
  * </pre>
  *
- * Protobuf type {@code google.pubsub.v1.ListSnapshotsRequest}
+ * Protobuf type {@code google.pubsub.v1.ListTopicSnapshotsRequest}
  */
-public  final class ListSnapshotsRequest extends
+public  final class ListTopicSnapshotsRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:google.pubsub.v1.ListSnapshotsRequest)
-    ListSnapshotsRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.pubsub.v1.ListTopicSnapshotsRequest)
+    ListTopicSnapshotsRequestOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use ListSnapshotsRequest.newBuilder() to construct.
-  private ListSnapshotsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use ListTopicSnapshotsRequest.newBuilder() to construct.
+  private ListTopicSnapshotsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private ListSnapshotsRequest() {
-    project_ = "";
+  private ListTopicSnapshotsRequest() {
+    topic_ = "";
     pageSize_ = 0;
     pageToken_ = "";
   }
@@ -33,7 +33,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private ListSnapshotsRequest(
+  private ListTopicSnapshotsRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -62,7 +62,7 @@ private static final long serialVersionUID = 0L;
           case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            project_ = s;
+            topic_ = s;
             break;
           }
           case 16: {
@@ -90,54 +90,54 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.google.pubsub.v1.PubsubProto.internal_static_google_pubsub_v1_ListSnapshotsRequest_descriptor;
+    return com.google.pubsub.v1.PubsubProto.internal_static_google_pubsub_v1_ListTopicSnapshotsRequest_descriptor;
   }
 
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.pubsub.v1.PubsubProto.internal_static_google_pubsub_v1_ListSnapshotsRequest_fieldAccessorTable
+    return com.google.pubsub.v1.PubsubProto.internal_static_google_pubsub_v1_ListTopicSnapshotsRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.pubsub.v1.ListSnapshotsRequest.class, com.google.pubsub.v1.ListSnapshotsRequest.Builder.class);
+            com.google.pubsub.v1.ListTopicSnapshotsRequest.class, com.google.pubsub.v1.ListTopicSnapshotsRequest.Builder.class);
   }
 
-  public static final int PROJECT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object project_;
+  public static final int TOPIC_FIELD_NUMBER = 1;
+  private volatile java.lang.Object topic_;
   /**
    * <pre>
-   * The name of the cloud project that snapshots belong to.
-   * Format is `projects/{project}`.
+   * The name of the topic that snapshots are attached to.
+   * Format is `projects/{project}/topics/{topic}`.
    * </pre>
    *
-   * <code>string project = 1;</code>
+   * <code>string topic = 1;</code>
    */
-  public java.lang.String getProject() {
-    java.lang.Object ref = project_;
+  public java.lang.String getTopic() {
+    java.lang.Object ref = topic_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      project_ = s;
+      topic_ = s;
       return s;
     }
   }
   /**
    * <pre>
-   * The name of the cloud project that snapshots belong to.
-   * Format is `projects/{project}`.
+   * The name of the topic that snapshots are attached to.
+   * Format is `projects/{project}/topics/{topic}`.
    * </pre>
    *
-   * <code>string project = 1;</code>
+   * <code>string topic = 1;</code>
    */
   public com.google.protobuf.ByteString
-      getProjectBytes() {
-    java.lang.Object ref = project_;
+      getTopicBytes() {
+    java.lang.Object ref = topic_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      project_ = b;
+      topic_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -148,7 +148,7 @@ private static final long serialVersionUID = 0L;
   private int pageSize_;
   /**
    * <pre>
-   * Maximum number of snapshots to return.
+   * Maximum number of snapshot names to return.
    * </pre>
    *
    * <code>int32 page_size = 2;</code>
@@ -161,9 +161,9 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object pageToken_;
   /**
    * <pre>
-   * The value returned by the last `ListSnapshotsResponse`; indicates that this
-   * is a continuation of a prior `ListSnapshots` call, and that the system
-   * should return the next page of data.
+   * The value returned by the last `ListTopicSnapshotsResponse`; indicates
+   * that this is a continuation of a prior `ListTopicSnapshots` call, and
+   * that the system should return the next page of data.
    * </pre>
    *
    * <code>string page_token = 3;</code>
@@ -182,9 +182,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The value returned by the last `ListSnapshotsResponse`; indicates that this
-   * is a continuation of a prior `ListSnapshots` call, and that the system
-   * should return the next page of data.
+   * The value returned by the last `ListTopicSnapshotsResponse`; indicates
+   * that this is a continuation of a prior `ListTopicSnapshots` call, and
+   * that the system should return the next page of data.
    * </pre>
    *
    * <code>string page_token = 3;</code>
@@ -215,8 +215,8 @@ private static final long serialVersionUID = 0L;
 
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getProjectBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, project_);
+    if (!getTopicBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, topic_);
     }
     if (pageSize_ != 0) {
       output.writeInt32(2, pageSize_);
@@ -232,8 +232,8 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getProjectBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, project_);
+    if (!getTopicBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, topic_);
     }
     if (pageSize_ != 0) {
       size += com.google.protobuf.CodedOutputStream
@@ -252,14 +252,14 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.google.pubsub.v1.ListSnapshotsRequest)) {
+    if (!(obj instanceof com.google.pubsub.v1.ListTopicSnapshotsRequest)) {
       return super.equals(obj);
     }
-    com.google.pubsub.v1.ListSnapshotsRequest other = (com.google.pubsub.v1.ListSnapshotsRequest) obj;
+    com.google.pubsub.v1.ListTopicSnapshotsRequest other = (com.google.pubsub.v1.ListTopicSnapshotsRequest) obj;
 
     boolean result = true;
-    result = result && getProject()
-        .equals(other.getProject());
+    result = result && getTopic()
+        .equals(other.getTopic());
     result = result && (getPageSize()
         == other.getPageSize());
     result = result && getPageToken()
@@ -275,8 +275,8 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + PROJECT_FIELD_NUMBER;
-    hash = (53 * hash) + getProject().hashCode();
+    hash = (37 * hash) + TOPIC_FIELD_NUMBER;
+    hash = (53 * hash) + getTopic().hashCode();
     hash = (37 * hash) + PAGE_SIZE_FIELD_NUMBER;
     hash = (53 * hash) + getPageSize();
     hash = (37 * hash) + PAGE_TOKEN_FIELD_NUMBER;
@@ -286,69 +286,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.pubsub.v1.ListSnapshotsRequest parseFrom(
+  public static com.google.pubsub.v1.ListTopicSnapshotsRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.google.pubsub.v1.ListSnapshotsRequest parseFrom(
+  public static com.google.pubsub.v1.ListTopicSnapshotsRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.pubsub.v1.ListSnapshotsRequest parseFrom(
+  public static com.google.pubsub.v1.ListTopicSnapshotsRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.google.pubsub.v1.ListSnapshotsRequest parseFrom(
+  public static com.google.pubsub.v1.ListTopicSnapshotsRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.pubsub.v1.ListSnapshotsRequest parseFrom(byte[] data)
+  public static com.google.pubsub.v1.ListTopicSnapshotsRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.google.pubsub.v1.ListSnapshotsRequest parseFrom(
+  public static com.google.pubsub.v1.ListTopicSnapshotsRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.pubsub.v1.ListSnapshotsRequest parseFrom(java.io.InputStream input)
+  public static com.google.pubsub.v1.ListTopicSnapshotsRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.google.pubsub.v1.ListSnapshotsRequest parseFrom(
+  public static com.google.pubsub.v1.ListTopicSnapshotsRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.google.pubsub.v1.ListSnapshotsRequest parseDelimitedFrom(java.io.InputStream input)
+  public static com.google.pubsub.v1.ListTopicSnapshotsRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.google.pubsub.v1.ListSnapshotsRequest parseDelimitedFrom(
+  public static com.google.pubsub.v1.ListTopicSnapshotsRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.google.pubsub.v1.ListSnapshotsRequest parseFrom(
+  public static com.google.pubsub.v1.ListTopicSnapshotsRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.google.pubsub.v1.ListSnapshotsRequest parseFrom(
+  public static com.google.pubsub.v1.ListTopicSnapshotsRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -360,7 +360,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.google.pubsub.v1.ListSnapshotsRequest prototype) {
+  public static Builder newBuilder(com.google.pubsub.v1.ListTopicSnapshotsRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   public Builder toBuilder() {
@@ -376,31 +376,31 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Request for the `ListSnapshots` method.&lt;br&gt;&lt;br&gt;
+   * Request for the `ListTopicSnapshots` method.&lt;br&gt;&lt;br&gt;
    * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
    * changed in backward-incompatible ways and is not recommended for production
    * use. It is not subject to any SLA or deprecation policy.
    * </pre>
    *
-   * Protobuf type {@code google.pubsub.v1.ListSnapshotsRequest}
+   * Protobuf type {@code google.pubsub.v1.ListTopicSnapshotsRequest}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:google.pubsub.v1.ListSnapshotsRequest)
-      com.google.pubsub.v1.ListSnapshotsRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.pubsub.v1.ListTopicSnapshotsRequest)
+      com.google.pubsub.v1.ListTopicSnapshotsRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.google.pubsub.v1.PubsubProto.internal_static_google_pubsub_v1_ListSnapshotsRequest_descriptor;
+      return com.google.pubsub.v1.PubsubProto.internal_static_google_pubsub_v1_ListTopicSnapshotsRequest_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.pubsub.v1.PubsubProto.internal_static_google_pubsub_v1_ListSnapshotsRequest_fieldAccessorTable
+      return com.google.pubsub.v1.PubsubProto.internal_static_google_pubsub_v1_ListTopicSnapshotsRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.pubsub.v1.ListSnapshotsRequest.class, com.google.pubsub.v1.ListSnapshotsRequest.Builder.class);
+              com.google.pubsub.v1.ListTopicSnapshotsRequest.class, com.google.pubsub.v1.ListTopicSnapshotsRequest.Builder.class);
     }
 
-    // Construct using com.google.pubsub.v1.ListSnapshotsRequest.newBuilder()
+    // Construct using com.google.pubsub.v1.ListTopicSnapshotsRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -417,7 +417,7 @@ private static final long serialVersionUID = 0L;
     }
     public Builder clear() {
       super.clear();
-      project_ = "";
+      topic_ = "";
 
       pageSize_ = 0;
 
@@ -428,24 +428,24 @@ private static final long serialVersionUID = 0L;
 
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.google.pubsub.v1.PubsubProto.internal_static_google_pubsub_v1_ListSnapshotsRequest_descriptor;
+      return com.google.pubsub.v1.PubsubProto.internal_static_google_pubsub_v1_ListTopicSnapshotsRequest_descriptor;
     }
 
-    public com.google.pubsub.v1.ListSnapshotsRequest getDefaultInstanceForType() {
-      return com.google.pubsub.v1.ListSnapshotsRequest.getDefaultInstance();
+    public com.google.pubsub.v1.ListTopicSnapshotsRequest getDefaultInstanceForType() {
+      return com.google.pubsub.v1.ListTopicSnapshotsRequest.getDefaultInstance();
     }
 
-    public com.google.pubsub.v1.ListSnapshotsRequest build() {
-      com.google.pubsub.v1.ListSnapshotsRequest result = buildPartial();
+    public com.google.pubsub.v1.ListTopicSnapshotsRequest build() {
+      com.google.pubsub.v1.ListTopicSnapshotsRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    public com.google.pubsub.v1.ListSnapshotsRequest buildPartial() {
-      com.google.pubsub.v1.ListSnapshotsRequest result = new com.google.pubsub.v1.ListSnapshotsRequest(this);
-      result.project_ = project_;
+    public com.google.pubsub.v1.ListTopicSnapshotsRequest buildPartial() {
+      com.google.pubsub.v1.ListTopicSnapshotsRequest result = new com.google.pubsub.v1.ListTopicSnapshotsRequest(this);
+      result.topic_ = topic_;
       result.pageSize_ = pageSize_;
       result.pageToken_ = pageToken_;
       onBuilt();
@@ -479,18 +479,18 @@ private static final long serialVersionUID = 0L;
       return (Builder) super.addRepeatedField(field, value);
     }
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.pubsub.v1.ListSnapshotsRequest) {
-        return mergeFrom((com.google.pubsub.v1.ListSnapshotsRequest)other);
+      if (other instanceof com.google.pubsub.v1.ListTopicSnapshotsRequest) {
+        return mergeFrom((com.google.pubsub.v1.ListTopicSnapshotsRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.pubsub.v1.ListSnapshotsRequest other) {
-      if (other == com.google.pubsub.v1.ListSnapshotsRequest.getDefaultInstance()) return this;
-      if (!other.getProject().isEmpty()) {
-        project_ = other.project_;
+    public Builder mergeFrom(com.google.pubsub.v1.ListTopicSnapshotsRequest other) {
+      if (other == com.google.pubsub.v1.ListTopicSnapshotsRequest.getDefaultInstance()) return this;
+      if (!other.getTopic().isEmpty()) {
+        topic_ = other.topic_;
         onChanged();
       }
       if (other.getPageSize() != 0) {
@@ -513,11 +513,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.pubsub.v1.ListSnapshotsRequest parsedMessage = null;
+      com.google.pubsub.v1.ListTopicSnapshotsRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.pubsub.v1.ListSnapshotsRequest) e.getUnfinishedMessage();
+        parsedMessage = (com.google.pubsub.v1.ListTopicSnapshotsRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -527,22 +527,22 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object project_ = "";
+    private java.lang.Object topic_ = "";
     /**
      * <pre>
-     * The name of the cloud project that snapshots belong to.
-     * Format is `projects/{project}`.
+     * The name of the topic that snapshots are attached to.
+     * Format is `projects/{project}/topics/{topic}`.
      * </pre>
      *
-     * <code>string project = 1;</code>
+     * <code>string topic = 1;</code>
      */
-    public java.lang.String getProject() {
-      java.lang.Object ref = project_;
+    public java.lang.String getTopic() {
+      java.lang.Object ref = topic_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        project_ = s;
+        topic_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -550,20 +550,20 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The name of the cloud project that snapshots belong to.
-     * Format is `projects/{project}`.
+     * The name of the topic that snapshots are attached to.
+     * Format is `projects/{project}/topics/{topic}`.
      * </pre>
      *
-     * <code>string project = 1;</code>
+     * <code>string topic = 1;</code>
      */
     public com.google.protobuf.ByteString
-        getProjectBytes() {
-      java.lang.Object ref = project_;
+        getTopicBytes() {
+      java.lang.Object ref = topic_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        project_ = b;
+        topic_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -571,52 +571,52 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The name of the cloud project that snapshots belong to.
-     * Format is `projects/{project}`.
+     * The name of the topic that snapshots are attached to.
+     * Format is `projects/{project}/topics/{topic}`.
      * </pre>
      *
-     * <code>string project = 1;</code>
+     * <code>string topic = 1;</code>
      */
-    public Builder setProject(
+    public Builder setTopic(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      project_ = value;
+      topic_ = value;
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * The name of the cloud project that snapshots belong to.
-     * Format is `projects/{project}`.
+     * The name of the topic that snapshots are attached to.
+     * Format is `projects/{project}/topics/{topic}`.
      * </pre>
      *
-     * <code>string project = 1;</code>
+     * <code>string topic = 1;</code>
      */
-    public Builder clearProject() {
+    public Builder clearTopic() {
       
-      project_ = getDefaultInstance().getProject();
+      topic_ = getDefaultInstance().getTopic();
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * The name of the cloud project that snapshots belong to.
-     * Format is `projects/{project}`.
+     * The name of the topic that snapshots are attached to.
+     * Format is `projects/{project}/topics/{topic}`.
      * </pre>
      *
-     * <code>string project = 1;</code>
+     * <code>string topic = 1;</code>
      */
-    public Builder setProjectBytes(
+    public Builder setTopicBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      project_ = value;
+      topic_ = value;
       onChanged();
       return this;
     }
@@ -624,7 +624,7 @@ private static final long serialVersionUID = 0L;
     private int pageSize_ ;
     /**
      * <pre>
-     * Maximum number of snapshots to return.
+     * Maximum number of snapshot names to return.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>
@@ -634,7 +634,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Maximum number of snapshots to return.
+     * Maximum number of snapshot names to return.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>
@@ -647,7 +647,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Maximum number of snapshots to return.
+     * Maximum number of snapshot names to return.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>
@@ -662,9 +662,9 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object pageToken_ = "";
     /**
      * <pre>
-     * The value returned by the last `ListSnapshotsResponse`; indicates that this
-     * is a continuation of a prior `ListSnapshots` call, and that the system
-     * should return the next page of data.
+     * The value returned by the last `ListTopicSnapshotsResponse`; indicates
+     * that this is a continuation of a prior `ListTopicSnapshots` call, and
+     * that the system should return the next page of data.
      * </pre>
      *
      * <code>string page_token = 3;</code>
@@ -683,9 +683,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The value returned by the last `ListSnapshotsResponse`; indicates that this
-     * is a continuation of a prior `ListSnapshots` call, and that the system
-     * should return the next page of data.
+     * The value returned by the last `ListTopicSnapshotsResponse`; indicates
+     * that this is a continuation of a prior `ListTopicSnapshots` call, and
+     * that the system should return the next page of data.
      * </pre>
      *
      * <code>string page_token = 3;</code>
@@ -705,9 +705,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The value returned by the last `ListSnapshotsResponse`; indicates that this
-     * is a continuation of a prior `ListSnapshots` call, and that the system
-     * should return the next page of data.
+     * The value returned by the last `ListTopicSnapshotsResponse`; indicates
+     * that this is a continuation of a prior `ListTopicSnapshots` call, and
+     * that the system should return the next page of data.
      * </pre>
      *
      * <code>string page_token = 3;</code>
@@ -724,9 +724,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The value returned by the last `ListSnapshotsResponse`; indicates that this
-     * is a continuation of a prior `ListSnapshots` call, and that the system
-     * should return the next page of data.
+     * The value returned by the last `ListTopicSnapshotsResponse`; indicates
+     * that this is a continuation of a prior `ListTopicSnapshots` call, and
+     * that the system should return the next page of data.
      * </pre>
      *
      * <code>string page_token = 3;</code>
@@ -739,9 +739,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The value returned by the last `ListSnapshotsResponse`; indicates that this
-     * is a continuation of a prior `ListSnapshots` call, and that the system
-     * should return the next page of data.
+     * The value returned by the last `ListTopicSnapshotsResponse`; indicates
+     * that this is a continuation of a prior `ListTopicSnapshots` call, and
+     * that the system should return the next page of data.
      * </pre>
      *
      * <code>string page_token = 3;</code>
@@ -768,39 +768,39 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:google.pubsub.v1.ListSnapshotsRequest)
+    // @@protoc_insertion_point(builder_scope:google.pubsub.v1.ListTopicSnapshotsRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:google.pubsub.v1.ListSnapshotsRequest)
-  private static final com.google.pubsub.v1.ListSnapshotsRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.pubsub.v1.ListTopicSnapshotsRequest)
+  private static final com.google.pubsub.v1.ListTopicSnapshotsRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.google.pubsub.v1.ListSnapshotsRequest();
+    DEFAULT_INSTANCE = new com.google.pubsub.v1.ListTopicSnapshotsRequest();
   }
 
-  public static com.google.pubsub.v1.ListSnapshotsRequest getDefaultInstance() {
+  public static com.google.pubsub.v1.ListTopicSnapshotsRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ListSnapshotsRequest>
-      PARSER = new com.google.protobuf.AbstractParser<ListSnapshotsRequest>() {
-    public ListSnapshotsRequest parsePartialFrom(
+  private static final com.google.protobuf.Parser<ListTopicSnapshotsRequest>
+      PARSER = new com.google.protobuf.AbstractParser<ListTopicSnapshotsRequest>() {
+    public ListTopicSnapshotsRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new ListSnapshotsRequest(input, extensionRegistry);
+      return new ListTopicSnapshotsRequest(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<ListSnapshotsRequest> parser() {
+  public static com.google.protobuf.Parser<ListTopicSnapshotsRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<ListSnapshotsRequest> getParserForType() {
+  public com.google.protobuf.Parser<ListTopicSnapshotsRequest> getParserForType() {
     return PARSER;
   }
 
-  public com.google.pubsub.v1.ListSnapshotsRequest getDefaultInstanceForType() {
+  public com.google.pubsub.v1.ListTopicSnapshotsRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

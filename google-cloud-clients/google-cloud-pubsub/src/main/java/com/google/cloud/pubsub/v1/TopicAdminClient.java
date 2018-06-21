@@ -177,7 +177,8 @@ public class TopicAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates the given topic with the given name.
+   * Creates the given topic with the given name. See the &lt;a
+   * href="/pubsub/docs/admin#resource_names"&gt; resource name rules&lt;/a&gt;.
    *
    * <p>Sample code:
    *
@@ -203,7 +204,8 @@ public class TopicAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates the given topic with the given name.
+   * Creates the given topic with the given name. See the &lt;a
+   * href="/pubsub/docs/admin#resource_names"&gt; resource name rules&lt;/a&gt;.
    *
    * <p>Sample code:
    *
@@ -229,7 +231,8 @@ public class TopicAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates the given topic with the given name.
+   * Creates the given topic with the given name. See the &lt;a
+   * href="/pubsub/docs/admin#resource_names"&gt; resource name rules&lt;/a&gt;.
    *
    * <p>Sample code:
    *
@@ -252,7 +255,8 @@ public class TopicAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates the given topic with the given name.
+   * Creates the given topic with the given name. See the &lt;a
+   * href="/pubsub/docs/admin#resource_names"&gt; resource name rules&lt;/a&gt;.
    *
    * <p>Sample code:
    *
@@ -274,10 +278,7 @@ public class TopicAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates an existing topic. Note that certain properties of a topic are not modifiable. Options
-   * settings follow the style guide: NOTE: The style guide requires body: "topic" instead of body:
-   * "&#42;". Keeping the latter for internal consistency in V1, however it should be corrected in
-   * V2. See https://cloud.google.com/apis/design/standard_methods#update for details.
+   * Updates an existing topic. Note that certain properties of a topic are not modifiable.
    *
    * <p>Sample code:
    *
@@ -302,10 +303,7 @@ public class TopicAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates an existing topic. Note that certain properties of a topic are not modifiable. Options
-   * settings follow the style guide: NOTE: The style guide requires body: "topic" instead of body:
-   * "&#42;". Keeping the latter for internal consistency in V1, however it should be corrected in
-   * V2. See https://cloud.google.com/apis/design/standard_methods#update for details.
+   * Updates an existing topic. Note that certain properties of a topic are not modifiable.
    *
    * <p>Sample code:
    *
@@ -679,7 +677,7 @@ public class TopicAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists the name of the subscriptions for this topic.
+   * Lists the names of the subscriptions on this topic.
    *
    * <p>Sample code:
    *
@@ -706,7 +704,7 @@ public class TopicAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists the name of the subscriptions for this topic.
+   * Lists the names of the subscriptions on this topic.
    *
    * <p>Sample code:
    *
@@ -731,7 +729,7 @@ public class TopicAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists the name of the subscriptions for this topic.
+   * Lists the names of the subscriptions on this topic.
    *
    * <p>Sample code:
    *
@@ -757,7 +755,7 @@ public class TopicAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists the name of the subscriptions for this topic.
+   * Lists the names of the subscriptions on this topic.
    *
    * <p>Sample code:
    *
@@ -782,7 +780,7 @@ public class TopicAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists the name of the subscriptions for this topic.
+   * Lists the names of the subscriptions on this topic.
    *
    * <p>Sample code:
    *

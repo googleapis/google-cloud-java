@@ -18,7 +18,8 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 /**
  * <pre>
  * The service that an application uses to manipulate subscriptions and to
- * consume messages from a subscription via the `Pull` method.
+ * consume messages from a subscription via the `Pull` method or by
+ * establishing a bi-directional stream using the `StreamingPull` method.
  * </pre>
  */
 @javax.annotation.Generated(
@@ -402,6 +403,43 @@ public final class SubscriberGrpc {
      return getModifyPushConfigMethod;
   }
   @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getGetSnapshotMethod()} instead. 
+  public static final io.grpc.MethodDescriptor<com.google.pubsub.v1.GetSnapshotRequest,
+      com.google.pubsub.v1.Snapshot> METHOD_GET_SNAPSHOT = getGetSnapshotMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<com.google.pubsub.v1.GetSnapshotRequest,
+      com.google.pubsub.v1.Snapshot> getGetSnapshotMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<com.google.pubsub.v1.GetSnapshotRequest,
+      com.google.pubsub.v1.Snapshot> getGetSnapshotMethod() {
+    return getGetSnapshotMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<com.google.pubsub.v1.GetSnapshotRequest,
+      com.google.pubsub.v1.Snapshot> getGetSnapshotMethodHelper() {
+    io.grpc.MethodDescriptor<com.google.pubsub.v1.GetSnapshotRequest, com.google.pubsub.v1.Snapshot> getGetSnapshotMethod;
+    if ((getGetSnapshotMethod = SubscriberGrpc.getGetSnapshotMethod) == null) {
+      synchronized (SubscriberGrpc.class) {
+        if ((getGetSnapshotMethod = SubscriberGrpc.getGetSnapshotMethod) == null) {
+          SubscriberGrpc.getGetSnapshotMethod = getGetSnapshotMethod = 
+              io.grpc.MethodDescriptor.<com.google.pubsub.v1.GetSnapshotRequest, com.google.pubsub.v1.Snapshot>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "google.pubsub.v1.Subscriber", "GetSnapshot"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.pubsub.v1.GetSnapshotRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.pubsub.v1.Snapshot.getDefaultInstance()))
+                  .setSchemaDescriptor(new SubscriberMethodDescriptorSupplier("GetSnapshot"))
+                  .build();
+          }
+        }
+     }
+     return getGetSnapshotMethod;
+  }
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
   @java.lang.Deprecated // Use {@link #getListSnapshotsMethod()} instead. 
   public static final io.grpc.MethodDescriptor<com.google.pubsub.v1.ListSnapshotsRequest,
       com.google.pubsub.v1.ListSnapshotsResponse> METHOD_LIST_SNAPSHOTS = getListSnapshotsMethodHelper();
@@ -613,14 +651,16 @@ public final class SubscriberGrpc {
   /**
    * <pre>
    * The service that an application uses to manipulate subscriptions and to
-   * consume messages from a subscription via the `Pull` method.
+   * consume messages from a subscription via the `Pull` method or by
+   * establishing a bi-directional stream using the `StreamingPull` method.
    * </pre>
    */
   public static abstract class SubscriberImplBase implements io.grpc.BindableService {
 
     /**
      * <pre>
-     * Creates a subscription to a given topic.
+     * Creates a subscription to a given topic. See the
+     * &lt;a href="/pubsub/docs/admin#resource_names"&gt; resource name rules&lt;/a&gt;.
      * If the subscription already exists, returns `ALREADY_EXISTS`.
      * If the corresponding topic doesn't exist, returns `NOT_FOUND`.
      * If the name is not provided in the request, the server will assign a random
@@ -650,10 +690,6 @@ public final class SubscriberGrpc {
      * <pre>
      * Updates an existing subscription. Note that certain properties of a
      * subscription, such as its topic, are not modifiable.
-     * NOTE:  The style guide requires body: "subscription" instead of body: "*".
-     * Keeping the latter for internal consistency in V1, however it should be
-     * corrected in V2.  See
-     * https://cloud.google.com/apis/design/standard_methods#update for details.
      * </pre>
      */
     public void updateSubscription(com.google.pubsub.v1.UpdateSubscriptionRequest request,
@@ -729,17 +765,13 @@ public final class SubscriberGrpc {
 
     /**
      * <pre>
-     * (EXPERIMENTAL) StreamingPull is an experimental feature. This RPC will
-     * respond with UNIMPLEMENTED errors unless you have been invited to test
-     * this feature. Contact cloud-pubsub&#64;google.com with any questions.
      * Establishes a stream with the server, which sends messages down to the
      * client. The client streams acknowledgements and ack deadline modifications
      * back to the server. The server will close the stream and return the status
-     * on any error. The server may close the stream with status `OK` to reassign
-     * server-side resources, in which case, the client should re-establish the
-     * stream. `UNAVAILABLE` may also be returned in the case of a transient error
-     * (e.g., a server restart). These should also be retried by the client. Flow
-     * control can be achieved by configuring the underlying RPC channel.
+     * on any error. The server may close the stream with status `UNAVAILABLE` to
+     * reassign server-side resources, in which case, the client should
+     * re-establish the stream. Flow control can be achieved by configuring the
+     * underlying RPC channel.
      * </pre>
      */
     public io.grpc.stub.StreamObserver<com.google.pubsub.v1.StreamingPullRequest> streamingPull(
@@ -763,7 +795,23 @@ public final class SubscriberGrpc {
 
     /**
      * <pre>
-     * Lists the existing snapshots.
+     * Gets the configuration details of a snapshot.&lt;br&gt;&lt;br&gt;
+     * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
+     * changed in backward-incompatible ways and is not recommended for production
+     * use. It is not subject to any SLA or deprecation policy.
+     * </pre>
+     */
+    public void getSnapshot(com.google.pubsub.v1.GetSnapshotRequest request,
+        io.grpc.stub.StreamObserver<com.google.pubsub.v1.Snapshot> responseObserver) {
+      asyncUnimplementedUnaryCall(getGetSnapshotMethodHelper(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Lists the existing snapshots.&lt;br&gt;&lt;br&gt;
+     * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
+     * changed in backward-incompatible ways and is not recommended for production
+     * use. It is not subject to any SLA or deprecation policy.
      * </pre>
      */
     public void listSnapshots(com.google.pubsub.v1.ListSnapshotsRequest request,
@@ -773,15 +821,21 @@ public final class SubscriberGrpc {
 
     /**
      * <pre>
-     * Creates a snapshot from the requested subscription.
+     * Creates a snapshot from the requested subscription.&lt;br&gt;&lt;br&gt;
+     * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
+     * changed in backward-incompatible ways and is not recommended for production
+     * use. It is not subject to any SLA or deprecation policy.
      * If the snapshot already exists, returns `ALREADY_EXISTS`.
      * If the requested subscription doesn't exist, returns `NOT_FOUND`.
-     * If the name is not provided in the request, the server will assign a random
+     * If the backlog in the subscription is too old -- and the resulting snapshot
+     * would expire in less than 1 hour -- then `FAILED_PRECONDITION` is returned.
+     * See also the `Snapshot.expire_time` field. If the name is not provided in
+     * the request, the server will assign a random
      * name for this snapshot on the same project as the subscription, conforming
-     * to the
-     * [resource name format](https://cloud.google.com/pubsub/docs/overview#names).
-     * The generated name is populated in the returned Snapshot object.
-     * Note that for REST API requests, you must specify a name in the request.
+     * to the [resource name format](https://cloud.google.com/pubsub/docs/overview#names).
+     * The generated
+     * name is populated in the returned Snapshot object. Note that for REST API
+     * requests, you must specify a name in the request.
      * </pre>
      */
     public void createSnapshot(com.google.pubsub.v1.CreateSnapshotRequest request,
@@ -791,12 +845,11 @@ public final class SubscriberGrpc {
 
     /**
      * <pre>
-     * Updates an existing snapshot. Note that certain properties of a snapshot
-     * are not modifiable.
-     * NOTE:  The style guide requires body: "snapshot" instead of body: "*".
-     * Keeping the latter for internal consistency in V1, however it should be
-     * corrected in V2.  See
-     * https://cloud.google.com/apis/design/standard_methods#update for details.
+     * Updates an existing snapshot.&lt;br&gt;&lt;br&gt;
+     * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
+     * changed in backward-incompatible ways and is not recommended for production
+     * use. It is not subject to any SLA or deprecation policy.
+     * Note that certain properties of a snapshot are not modifiable.
      * </pre>
      */
     public void updateSnapshot(com.google.pubsub.v1.UpdateSnapshotRequest request,
@@ -806,7 +859,11 @@ public final class SubscriberGrpc {
 
     /**
      * <pre>
-     * Removes an existing snapshot. All messages retained in the snapshot
+     * Removes an existing snapshot. &lt;br&gt;&lt;br&gt;
+     * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
+     * changed in backward-incompatible ways and is not recommended for production
+     * use. It is not subject to any SLA or deprecation policy.
+     * When the snapshot is deleted, all messages retained in the snapshot
      * are immediately dropped. After a snapshot is deleted, a new one may be
      * created with the same name, but the new one has no association with the old
      * snapshot or its subscription, unless the same subscription is specified.
@@ -820,7 +877,10 @@ public final class SubscriberGrpc {
     /**
      * <pre>
      * Seeks an existing subscription to a point in time or to a given snapshot,
-     * whichever is provided in the request.
+     * whichever is provided in the request.&lt;br&gt;&lt;br&gt;
+     * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
+     * changed in backward-incompatible ways and is not recommended for production
+     * use. It is not subject to any SLA or deprecation policy.
      * </pre>
      */
     public void seek(com.google.pubsub.v1.SeekRequest request,
@@ -901,6 +961,13 @@ public final class SubscriberGrpc {
                 com.google.protobuf.Empty>(
                   this, METHODID_MODIFY_PUSH_CONFIG)))
           .addMethod(
+            getGetSnapshotMethodHelper(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.google.pubsub.v1.GetSnapshotRequest,
+                com.google.pubsub.v1.Snapshot>(
+                  this, METHODID_GET_SNAPSHOT)))
+          .addMethod(
             getListSnapshotsMethodHelper(),
             asyncUnaryCall(
               new MethodHandlers<
@@ -942,7 +1009,8 @@ public final class SubscriberGrpc {
   /**
    * <pre>
    * The service that an application uses to manipulate subscriptions and to
-   * consume messages from a subscription via the `Pull` method.
+   * consume messages from a subscription via the `Pull` method or by
+   * establishing a bi-directional stream using the `StreamingPull` method.
    * </pre>
    */
   public static final class SubscriberStub extends io.grpc.stub.AbstractStub<SubscriberStub> {
@@ -963,7 +1031,8 @@ public final class SubscriberGrpc {
 
     /**
      * <pre>
-     * Creates a subscription to a given topic.
+     * Creates a subscription to a given topic. See the
+     * &lt;a href="/pubsub/docs/admin#resource_names"&gt; resource name rules&lt;/a&gt;.
      * If the subscription already exists, returns `ALREADY_EXISTS`.
      * If the corresponding topic doesn't exist, returns `NOT_FOUND`.
      * If the name is not provided in the request, the server will assign a random
@@ -995,10 +1064,6 @@ public final class SubscriberGrpc {
      * <pre>
      * Updates an existing subscription. Note that certain properties of a
      * subscription, such as its topic, are not modifiable.
-     * NOTE:  The style guide requires body: "subscription" instead of body: "*".
-     * Keeping the latter for internal consistency in V1, however it should be
-     * corrected in V2.  See
-     * https://cloud.google.com/apis/design/standard_methods#update for details.
      * </pre>
      */
     public void updateSubscription(com.google.pubsub.v1.UpdateSubscriptionRequest request,
@@ -1080,17 +1145,13 @@ public final class SubscriberGrpc {
 
     /**
      * <pre>
-     * (EXPERIMENTAL) StreamingPull is an experimental feature. This RPC will
-     * respond with UNIMPLEMENTED errors unless you have been invited to test
-     * this feature. Contact cloud-pubsub&#64;google.com with any questions.
      * Establishes a stream with the server, which sends messages down to the
      * client. The client streams acknowledgements and ack deadline modifications
      * back to the server. The server will close the stream and return the status
-     * on any error. The server may close the stream with status `OK` to reassign
-     * server-side resources, in which case, the client should re-establish the
-     * stream. `UNAVAILABLE` may also be returned in the case of a transient error
-     * (e.g., a server restart). These should also be retried by the client. Flow
-     * control can be achieved by configuring the underlying RPC channel.
+     * on any error. The server may close the stream with status `UNAVAILABLE` to
+     * reassign server-side resources, in which case, the client should
+     * re-establish the stream. Flow control can be achieved by configuring the
+     * underlying RPC channel.
      * </pre>
      */
     public io.grpc.stub.StreamObserver<com.google.pubsub.v1.StreamingPullRequest> streamingPull(
@@ -1116,7 +1177,24 @@ public final class SubscriberGrpc {
 
     /**
      * <pre>
-     * Lists the existing snapshots.
+     * Gets the configuration details of a snapshot.&lt;br&gt;&lt;br&gt;
+     * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
+     * changed in backward-incompatible ways and is not recommended for production
+     * use. It is not subject to any SLA or deprecation policy.
+     * </pre>
+     */
+    public void getSnapshot(com.google.pubsub.v1.GetSnapshotRequest request,
+        io.grpc.stub.StreamObserver<com.google.pubsub.v1.Snapshot> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getGetSnapshotMethodHelper(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Lists the existing snapshots.&lt;br&gt;&lt;br&gt;
+     * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
+     * changed in backward-incompatible ways and is not recommended for production
+     * use. It is not subject to any SLA or deprecation policy.
      * </pre>
      */
     public void listSnapshots(com.google.pubsub.v1.ListSnapshotsRequest request,
@@ -1127,15 +1205,21 @@ public final class SubscriberGrpc {
 
     /**
      * <pre>
-     * Creates a snapshot from the requested subscription.
+     * Creates a snapshot from the requested subscription.&lt;br&gt;&lt;br&gt;
+     * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
+     * changed in backward-incompatible ways and is not recommended for production
+     * use. It is not subject to any SLA or deprecation policy.
      * If the snapshot already exists, returns `ALREADY_EXISTS`.
      * If the requested subscription doesn't exist, returns `NOT_FOUND`.
-     * If the name is not provided in the request, the server will assign a random
+     * If the backlog in the subscription is too old -- and the resulting snapshot
+     * would expire in less than 1 hour -- then `FAILED_PRECONDITION` is returned.
+     * See also the `Snapshot.expire_time` field. If the name is not provided in
+     * the request, the server will assign a random
      * name for this snapshot on the same project as the subscription, conforming
-     * to the
-     * [resource name format](https://cloud.google.com/pubsub/docs/overview#names).
-     * The generated name is populated in the returned Snapshot object.
-     * Note that for REST API requests, you must specify a name in the request.
+     * to the [resource name format](https://cloud.google.com/pubsub/docs/overview#names).
+     * The generated
+     * name is populated in the returned Snapshot object. Note that for REST API
+     * requests, you must specify a name in the request.
      * </pre>
      */
     public void createSnapshot(com.google.pubsub.v1.CreateSnapshotRequest request,
@@ -1146,12 +1230,11 @@ public final class SubscriberGrpc {
 
     /**
      * <pre>
-     * Updates an existing snapshot. Note that certain properties of a snapshot
-     * are not modifiable.
-     * NOTE:  The style guide requires body: "snapshot" instead of body: "*".
-     * Keeping the latter for internal consistency in V1, however it should be
-     * corrected in V2.  See
-     * https://cloud.google.com/apis/design/standard_methods#update for details.
+     * Updates an existing snapshot.&lt;br&gt;&lt;br&gt;
+     * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
+     * changed in backward-incompatible ways and is not recommended for production
+     * use. It is not subject to any SLA or deprecation policy.
+     * Note that certain properties of a snapshot are not modifiable.
      * </pre>
      */
     public void updateSnapshot(com.google.pubsub.v1.UpdateSnapshotRequest request,
@@ -1162,7 +1245,11 @@ public final class SubscriberGrpc {
 
     /**
      * <pre>
-     * Removes an existing snapshot. All messages retained in the snapshot
+     * Removes an existing snapshot. &lt;br&gt;&lt;br&gt;
+     * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
+     * changed in backward-incompatible ways and is not recommended for production
+     * use. It is not subject to any SLA or deprecation policy.
+     * When the snapshot is deleted, all messages retained in the snapshot
      * are immediately dropped. After a snapshot is deleted, a new one may be
      * created with the same name, but the new one has no association with the old
      * snapshot or its subscription, unless the same subscription is specified.
@@ -1177,7 +1264,10 @@ public final class SubscriberGrpc {
     /**
      * <pre>
      * Seeks an existing subscription to a point in time or to a given snapshot,
-     * whichever is provided in the request.
+     * whichever is provided in the request.&lt;br&gt;&lt;br&gt;
+     * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
+     * changed in backward-incompatible ways and is not recommended for production
+     * use. It is not subject to any SLA or deprecation policy.
      * </pre>
      */
     public void seek(com.google.pubsub.v1.SeekRequest request,
@@ -1190,7 +1280,8 @@ public final class SubscriberGrpc {
   /**
    * <pre>
    * The service that an application uses to manipulate subscriptions and to
-   * consume messages from a subscription via the `Pull` method.
+   * consume messages from a subscription via the `Pull` method or by
+   * establishing a bi-directional stream using the `StreamingPull` method.
    * </pre>
    */
   public static final class SubscriberBlockingStub extends io.grpc.stub.AbstractStub<SubscriberBlockingStub> {
@@ -1211,7 +1302,8 @@ public final class SubscriberGrpc {
 
     /**
      * <pre>
-     * Creates a subscription to a given topic.
+     * Creates a subscription to a given topic. See the
+     * &lt;a href="/pubsub/docs/admin#resource_names"&gt; resource name rules&lt;/a&gt;.
      * If the subscription already exists, returns `ALREADY_EXISTS`.
      * If the corresponding topic doesn't exist, returns `NOT_FOUND`.
      * If the name is not provided in the request, the server will assign a random
@@ -1241,10 +1333,6 @@ public final class SubscriberGrpc {
      * <pre>
      * Updates an existing subscription. Note that certain properties of a
      * subscription, such as its topic, are not modifiable.
-     * NOTE:  The style guide requires body: "subscription" instead of body: "*".
-     * Keeping the latter for internal consistency in V1, however it should be
-     * corrected in V2.  See
-     * https://cloud.google.com/apis/design/standard_methods#update for details.
      * </pre>
      */
     public com.google.pubsub.v1.Subscription updateSubscription(com.google.pubsub.v1.UpdateSubscriptionRequest request) {
@@ -1334,7 +1422,23 @@ public final class SubscriberGrpc {
 
     /**
      * <pre>
-     * Lists the existing snapshots.
+     * Gets the configuration details of a snapshot.&lt;br&gt;&lt;br&gt;
+     * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
+     * changed in backward-incompatible ways and is not recommended for production
+     * use. It is not subject to any SLA or deprecation policy.
+     * </pre>
+     */
+    public com.google.pubsub.v1.Snapshot getSnapshot(com.google.pubsub.v1.GetSnapshotRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getGetSnapshotMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Lists the existing snapshots.&lt;br&gt;&lt;br&gt;
+     * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
+     * changed in backward-incompatible ways and is not recommended for production
+     * use. It is not subject to any SLA or deprecation policy.
      * </pre>
      */
     public com.google.pubsub.v1.ListSnapshotsResponse listSnapshots(com.google.pubsub.v1.ListSnapshotsRequest request) {
@@ -1344,15 +1448,21 @@ public final class SubscriberGrpc {
 
     /**
      * <pre>
-     * Creates a snapshot from the requested subscription.
+     * Creates a snapshot from the requested subscription.&lt;br&gt;&lt;br&gt;
+     * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
+     * changed in backward-incompatible ways and is not recommended for production
+     * use. It is not subject to any SLA or deprecation policy.
      * If the snapshot already exists, returns `ALREADY_EXISTS`.
      * If the requested subscription doesn't exist, returns `NOT_FOUND`.
-     * If the name is not provided in the request, the server will assign a random
+     * If the backlog in the subscription is too old -- and the resulting snapshot
+     * would expire in less than 1 hour -- then `FAILED_PRECONDITION` is returned.
+     * See also the `Snapshot.expire_time` field. If the name is not provided in
+     * the request, the server will assign a random
      * name for this snapshot on the same project as the subscription, conforming
-     * to the
-     * [resource name format](https://cloud.google.com/pubsub/docs/overview#names).
-     * The generated name is populated in the returned Snapshot object.
-     * Note that for REST API requests, you must specify a name in the request.
+     * to the [resource name format](https://cloud.google.com/pubsub/docs/overview#names).
+     * The generated
+     * name is populated in the returned Snapshot object. Note that for REST API
+     * requests, you must specify a name in the request.
      * </pre>
      */
     public com.google.pubsub.v1.Snapshot createSnapshot(com.google.pubsub.v1.CreateSnapshotRequest request) {
@@ -1362,12 +1472,11 @@ public final class SubscriberGrpc {
 
     /**
      * <pre>
-     * Updates an existing snapshot. Note that certain properties of a snapshot
-     * are not modifiable.
-     * NOTE:  The style guide requires body: "snapshot" instead of body: "*".
-     * Keeping the latter for internal consistency in V1, however it should be
-     * corrected in V2.  See
-     * https://cloud.google.com/apis/design/standard_methods#update for details.
+     * Updates an existing snapshot.&lt;br&gt;&lt;br&gt;
+     * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
+     * changed in backward-incompatible ways and is not recommended for production
+     * use. It is not subject to any SLA or deprecation policy.
+     * Note that certain properties of a snapshot are not modifiable.
      * </pre>
      */
     public com.google.pubsub.v1.Snapshot updateSnapshot(com.google.pubsub.v1.UpdateSnapshotRequest request) {
@@ -1377,7 +1486,11 @@ public final class SubscriberGrpc {
 
     /**
      * <pre>
-     * Removes an existing snapshot. All messages retained in the snapshot
+     * Removes an existing snapshot. &lt;br&gt;&lt;br&gt;
+     * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
+     * changed in backward-incompatible ways and is not recommended for production
+     * use. It is not subject to any SLA or deprecation policy.
+     * When the snapshot is deleted, all messages retained in the snapshot
      * are immediately dropped. After a snapshot is deleted, a new one may be
      * created with the same name, but the new one has no association with the old
      * snapshot or its subscription, unless the same subscription is specified.
@@ -1391,7 +1504,10 @@ public final class SubscriberGrpc {
     /**
      * <pre>
      * Seeks an existing subscription to a point in time or to a given snapshot,
-     * whichever is provided in the request.
+     * whichever is provided in the request.&lt;br&gt;&lt;br&gt;
+     * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
+     * changed in backward-incompatible ways and is not recommended for production
+     * use. It is not subject to any SLA or deprecation policy.
      * </pre>
      */
     public com.google.pubsub.v1.SeekResponse seek(com.google.pubsub.v1.SeekRequest request) {
@@ -1403,7 +1519,8 @@ public final class SubscriberGrpc {
   /**
    * <pre>
    * The service that an application uses to manipulate subscriptions and to
-   * consume messages from a subscription via the `Pull` method.
+   * consume messages from a subscription via the `Pull` method or by
+   * establishing a bi-directional stream using the `StreamingPull` method.
    * </pre>
    */
   public static final class SubscriberFutureStub extends io.grpc.stub.AbstractStub<SubscriberFutureStub> {
@@ -1424,7 +1541,8 @@ public final class SubscriberGrpc {
 
     /**
      * <pre>
-     * Creates a subscription to a given topic.
+     * Creates a subscription to a given topic. See the
+     * &lt;a href="/pubsub/docs/admin#resource_names"&gt; resource name rules&lt;/a&gt;.
      * If the subscription already exists, returns `ALREADY_EXISTS`.
      * If the corresponding topic doesn't exist, returns `NOT_FOUND`.
      * If the name is not provided in the request, the server will assign a random
@@ -1456,10 +1574,6 @@ public final class SubscriberGrpc {
      * <pre>
      * Updates an existing subscription. Note that certain properties of a
      * subscription, such as its topic, are not modifiable.
-     * NOTE:  The style guide requires body: "subscription" instead of body: "*".
-     * Keeping the latter for internal consistency in V1, however it should be
-     * corrected in V2.  See
-     * https://cloud.google.com/apis/design/standard_methods#update for details.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.pubsub.v1.Subscription> updateSubscription(
@@ -1556,7 +1670,24 @@ public final class SubscriberGrpc {
 
     /**
      * <pre>
-     * Lists the existing snapshots.
+     * Gets the configuration details of a snapshot.&lt;br&gt;&lt;br&gt;
+     * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
+     * changed in backward-incompatible ways and is not recommended for production
+     * use. It is not subject to any SLA or deprecation policy.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.pubsub.v1.Snapshot> getSnapshot(
+        com.google.pubsub.v1.GetSnapshotRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getGetSnapshotMethodHelper(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Lists the existing snapshots.&lt;br&gt;&lt;br&gt;
+     * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
+     * changed in backward-incompatible ways and is not recommended for production
+     * use. It is not subject to any SLA or deprecation policy.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.pubsub.v1.ListSnapshotsResponse> listSnapshots(
@@ -1567,15 +1698,21 @@ public final class SubscriberGrpc {
 
     /**
      * <pre>
-     * Creates a snapshot from the requested subscription.
+     * Creates a snapshot from the requested subscription.&lt;br&gt;&lt;br&gt;
+     * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
+     * changed in backward-incompatible ways and is not recommended for production
+     * use. It is not subject to any SLA or deprecation policy.
      * If the snapshot already exists, returns `ALREADY_EXISTS`.
      * If the requested subscription doesn't exist, returns `NOT_FOUND`.
-     * If the name is not provided in the request, the server will assign a random
+     * If the backlog in the subscription is too old -- and the resulting snapshot
+     * would expire in less than 1 hour -- then `FAILED_PRECONDITION` is returned.
+     * See also the `Snapshot.expire_time` field. If the name is not provided in
+     * the request, the server will assign a random
      * name for this snapshot on the same project as the subscription, conforming
-     * to the
-     * [resource name format](https://cloud.google.com/pubsub/docs/overview#names).
-     * The generated name is populated in the returned Snapshot object.
-     * Note that for REST API requests, you must specify a name in the request.
+     * to the [resource name format](https://cloud.google.com/pubsub/docs/overview#names).
+     * The generated
+     * name is populated in the returned Snapshot object. Note that for REST API
+     * requests, you must specify a name in the request.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.pubsub.v1.Snapshot> createSnapshot(
@@ -1586,12 +1723,11 @@ public final class SubscriberGrpc {
 
     /**
      * <pre>
-     * Updates an existing snapshot. Note that certain properties of a snapshot
-     * are not modifiable.
-     * NOTE:  The style guide requires body: "snapshot" instead of body: "*".
-     * Keeping the latter for internal consistency in V1, however it should be
-     * corrected in V2.  See
-     * https://cloud.google.com/apis/design/standard_methods#update for details.
+     * Updates an existing snapshot.&lt;br&gt;&lt;br&gt;
+     * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
+     * changed in backward-incompatible ways and is not recommended for production
+     * use. It is not subject to any SLA or deprecation policy.
+     * Note that certain properties of a snapshot are not modifiable.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.pubsub.v1.Snapshot> updateSnapshot(
@@ -1602,7 +1738,11 @@ public final class SubscriberGrpc {
 
     /**
      * <pre>
-     * Removes an existing snapshot. All messages retained in the snapshot
+     * Removes an existing snapshot. &lt;br&gt;&lt;br&gt;
+     * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
+     * changed in backward-incompatible ways and is not recommended for production
+     * use. It is not subject to any SLA or deprecation policy.
+     * When the snapshot is deleted, all messages retained in the snapshot
      * are immediately dropped. After a snapshot is deleted, a new one may be
      * created with the same name, but the new one has no association with the old
      * snapshot or its subscription, unless the same subscription is specified.
@@ -1617,7 +1757,10 @@ public final class SubscriberGrpc {
     /**
      * <pre>
      * Seeks an existing subscription to a point in time or to a given snapshot,
-     * whichever is provided in the request.
+     * whichever is provided in the request.&lt;br&gt;&lt;br&gt;
+     * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
+     * changed in backward-incompatible ways and is not recommended for production
+     * use. It is not subject to any SLA or deprecation policy.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.pubsub.v1.SeekResponse> seek(
@@ -1636,12 +1779,13 @@ public final class SubscriberGrpc {
   private static final int METHODID_ACKNOWLEDGE = 6;
   private static final int METHODID_PULL = 7;
   private static final int METHODID_MODIFY_PUSH_CONFIG = 8;
-  private static final int METHODID_LIST_SNAPSHOTS = 9;
-  private static final int METHODID_CREATE_SNAPSHOT = 10;
-  private static final int METHODID_UPDATE_SNAPSHOT = 11;
-  private static final int METHODID_DELETE_SNAPSHOT = 12;
-  private static final int METHODID_SEEK = 13;
-  private static final int METHODID_STREAMING_PULL = 14;
+  private static final int METHODID_GET_SNAPSHOT = 9;
+  private static final int METHODID_LIST_SNAPSHOTS = 10;
+  private static final int METHODID_CREATE_SNAPSHOT = 11;
+  private static final int METHODID_UPDATE_SNAPSHOT = 12;
+  private static final int METHODID_DELETE_SNAPSHOT = 13;
+  private static final int METHODID_SEEK = 14;
+  private static final int METHODID_STREAMING_PULL = 15;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1695,6 +1839,10 @@ public final class SubscriberGrpc {
         case METHODID_MODIFY_PUSH_CONFIG:
           serviceImpl.modifyPushConfig((com.google.pubsub.v1.ModifyPushConfigRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_GET_SNAPSHOT:
+          serviceImpl.getSnapshot((com.google.pubsub.v1.GetSnapshotRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.pubsub.v1.Snapshot>) responseObserver);
           break;
         case METHODID_LIST_SNAPSHOTS:
           serviceImpl.listSnapshots((com.google.pubsub.v1.ListSnapshotsRequest) request,
@@ -1790,6 +1938,7 @@ public final class SubscriberGrpc {
               .addMethod(getPullMethodHelper())
               .addMethod(getStreamingPullMethodHelper())
               .addMethod(getModifyPushConfigMethodHelper())
+              .addMethod(getGetSnapshotMethodHelper())
               .addMethod(getListSnapshotsMethodHelper())
               .addMethod(getCreateSnapshotMethodHelper())
               .addMethod(getUpdateSnapshotMethodHelper())
