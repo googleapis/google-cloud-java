@@ -24,6 +24,7 @@ private static final long serialVersionUID = 0L;
     maxAlternatives_ = 0;
     filterProfanity_ = false;
     speechContexts_ = java.util.Collections.emptyList();
+    enableAutomaticPunctuation_ = false;
     audioTracks_ = java.util.Collections.emptyList();
   }
 
@@ -83,10 +84,15 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.google.cloud.videointelligence.v1p1beta1.SpeechContext.parser(), extensionRegistry));
             break;
           }
+          case 40: {
+
+            enableAutomaticPunctuation_ = input.readBool();
+            break;
+          }
           case 48: {
-            if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+            if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
               audioTracks_ = new java.util.ArrayList<java.lang.Integer>();
-              mutable_bitField0_ |= 0x00000010;
+              mutable_bitField0_ |= 0x00000020;
             }
             audioTracks_.add(input.readInt32());
             break;
@@ -94,9 +100,9 @@ private static final long serialVersionUID = 0L;
           case 50: {
             int length = input.readRawVarint32();
             int limit = input.pushLimit(length);
-            if (!((mutable_bitField0_ & 0x00000010) == 0x00000010) && input.getBytesUntilLimit() > 0) {
+            if (!((mutable_bitField0_ & 0x00000020) == 0x00000020) && input.getBytesUntilLimit() > 0) {
               audioTracks_ = new java.util.ArrayList<java.lang.Integer>();
-              mutable_bitField0_ |= 0x00000010;
+              mutable_bitField0_ |= 0x00000020;
             }
             while (input.getBytesUntilLimit() > 0) {
               audioTracks_.add(input.readInt32());
@@ -115,7 +121,7 @@ private static final long serialVersionUID = 0L;
       if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
         speechContexts_ = java.util.Collections.unmodifiableList(speechContexts_);
       }
-      if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+      if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
         audioTracks_ = java.util.Collections.unmodifiableList(audioTracks_);
       }
       this.unknownFields = unknownFields.build();
@@ -273,6 +279,24 @@ private static final long serialVersionUID = 0L;
     return speechContexts_.get(index);
   }
 
+  public static final int ENABLE_AUTOMATIC_PUNCTUATION_FIELD_NUMBER = 5;
+  private boolean enableAutomaticPunctuation_;
+  /**
+   * <pre>
+   * *Optional* If 'true', adds punctuation to recognition result hypotheses.
+   * This feature is only available in select languages. Setting this for
+   * requests in other languages has no effect at all. The default 'false' value
+   * does not add punctuation to result hypotheses. NOTE: "This is currently
+   * offered as an experimental service, complimentary to all users. In the
+   * future this may be exclusively available as a premium feature."
+   * </pre>
+   *
+   * <code>bool enable_automatic_punctuation = 5;</code>
+   */
+  public boolean getEnableAutomaticPunctuation() {
+    return enableAutomaticPunctuation_;
+  }
+
   public static final int AUDIO_TRACKS_FIELD_NUMBER = 6;
   private java.util.List<java.lang.Integer> audioTracks_;
   /**
@@ -336,6 +360,9 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < speechContexts_.size(); i++) {
       output.writeMessage(4, speechContexts_.get(i));
     }
+    if (enableAutomaticPunctuation_ != false) {
+      output.writeBool(5, enableAutomaticPunctuation_);
+    }
     if (getAudioTracksList().size() > 0) {
       output.writeUInt32NoTag(50);
       output.writeUInt32NoTag(audioTracksMemoizedSerializedSize);
@@ -365,6 +392,10 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < speechContexts_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(4, speechContexts_.get(i));
+    }
+    if (enableAutomaticPunctuation_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(5, enableAutomaticPunctuation_);
     }
     {
       int dataSize = 0;
@@ -404,6 +435,8 @@ private static final long serialVersionUID = 0L;
         == other.getFilterProfanity());
     result = result && getSpeechContextsList()
         .equals(other.getSpeechContextsList());
+    result = result && (getEnableAutomaticPunctuation()
+        == other.getEnableAutomaticPunctuation());
     result = result && getAudioTracksList()
         .equals(other.getAudioTracksList());
     result = result && unknownFields.equals(other.unknownFields);
@@ -428,6 +461,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + SPEECH_CONTEXTS_FIELD_NUMBER;
       hash = (53 * hash) + getSpeechContextsList().hashCode();
     }
+    hash = (37 * hash) + ENABLE_AUTOMATIC_PUNCTUATION_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getEnableAutomaticPunctuation());
     if (getAudioTracksCount() > 0) {
       hash = (37 * hash) + AUDIO_TRACKS_FIELD_NUMBER;
       hash = (53 * hash) + getAudioTracksList().hashCode();
@@ -578,8 +614,10 @@ private static final long serialVersionUID = 0L;
       } else {
         speechContextsBuilder_.clear();
       }
+      enableAutomaticPunctuation_ = false;
+
       audioTracks_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       return this;
     }
 
@@ -616,9 +654,10 @@ private static final long serialVersionUID = 0L;
       } else {
         result.speechContexts_ = speechContextsBuilder_.build();
       }
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+      result.enableAutomaticPunctuation_ = enableAutomaticPunctuation_;
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
         audioTracks_ = java.util.Collections.unmodifiableList(audioTracks_);
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000020);
       }
       result.audioTracks_ = audioTracks_;
       result.bitField0_ = to_bitField0_;
@@ -699,10 +738,13 @@ private static final long serialVersionUID = 0L;
           }
         }
       }
+      if (other.getEnableAutomaticPunctuation() != false) {
+        setEnableAutomaticPunctuation(other.getEnableAutomaticPunctuation());
+      }
       if (!other.audioTracks_.isEmpty()) {
         if (audioTracks_.isEmpty()) {
           audioTracks_ = other.audioTracks_;
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000020);
         } else {
           ensureAudioTracksIsMutable();
           audioTracks_.addAll(other.audioTracks_);
@@ -1255,11 +1297,64 @@ private static final long serialVersionUID = 0L;
       return speechContextsBuilder_;
     }
 
+    private boolean enableAutomaticPunctuation_ ;
+    /**
+     * <pre>
+     * *Optional* If 'true', adds punctuation to recognition result hypotheses.
+     * This feature is only available in select languages. Setting this for
+     * requests in other languages has no effect at all. The default 'false' value
+     * does not add punctuation to result hypotheses. NOTE: "This is currently
+     * offered as an experimental service, complimentary to all users. In the
+     * future this may be exclusively available as a premium feature."
+     * </pre>
+     *
+     * <code>bool enable_automatic_punctuation = 5;</code>
+     */
+    public boolean getEnableAutomaticPunctuation() {
+      return enableAutomaticPunctuation_;
+    }
+    /**
+     * <pre>
+     * *Optional* If 'true', adds punctuation to recognition result hypotheses.
+     * This feature is only available in select languages. Setting this for
+     * requests in other languages has no effect at all. The default 'false' value
+     * does not add punctuation to result hypotheses. NOTE: "This is currently
+     * offered as an experimental service, complimentary to all users. In the
+     * future this may be exclusively available as a premium feature."
+     * </pre>
+     *
+     * <code>bool enable_automatic_punctuation = 5;</code>
+     */
+    public Builder setEnableAutomaticPunctuation(boolean value) {
+      
+      enableAutomaticPunctuation_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * *Optional* If 'true', adds punctuation to recognition result hypotheses.
+     * This feature is only available in select languages. Setting this for
+     * requests in other languages has no effect at all. The default 'false' value
+     * does not add punctuation to result hypotheses. NOTE: "This is currently
+     * offered as an experimental service, complimentary to all users. In the
+     * future this may be exclusively available as a premium feature."
+     * </pre>
+     *
+     * <code>bool enable_automatic_punctuation = 5;</code>
+     */
+    public Builder clearEnableAutomaticPunctuation() {
+      
+      enableAutomaticPunctuation_ = false;
+      onChanged();
+      return this;
+    }
+
     private java.util.List<java.lang.Integer> audioTracks_ = java.util.Collections.emptyList();
     private void ensureAudioTracksIsMutable() {
-      if (!((bitField0_ & 0x00000010) == 0x00000010)) {
+      if (!((bitField0_ & 0x00000020) == 0x00000020)) {
         audioTracks_ = new java.util.ArrayList<java.lang.Integer>(audioTracks_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
        }
     }
     /**
@@ -1351,7 +1446,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearAudioTracks() {
       audioTracks_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }

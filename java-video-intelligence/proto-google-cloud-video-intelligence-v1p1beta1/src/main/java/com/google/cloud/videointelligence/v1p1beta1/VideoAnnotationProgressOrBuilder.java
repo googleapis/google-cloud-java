@@ -9,7 +9,7 @@ public interface VideoAnnotationProgressOrBuilder extends
 
   /**
    * <pre>
-   * Video file location in
+   * Output only. Video file location in
    * [Google Cloud Storage](https://cloud.google.com/storage/).
    * </pre>
    *
@@ -18,7 +18,7 @@ public interface VideoAnnotationProgressOrBuilder extends
   java.lang.String getInputUri();
   /**
    * <pre>
-   * Video file location in
+   * Output only. Video file location in
    * [Google Cloud Storage](https://cloud.google.com/storage/).
    * </pre>
    *
@@ -29,8 +29,8 @@ public interface VideoAnnotationProgressOrBuilder extends
 
   /**
    * <pre>
-   * Approximate percentage processed thus far.
-   * Guaranteed to be 100 when fully processed.
+   * Output only. Approximate percentage processed thus far. Guaranteed to be
+   * 100 when fully processed.
    * </pre>
    *
    * <code>int32 progress_percent = 2;</code>
@@ -39,7 +39,7 @@ public interface VideoAnnotationProgressOrBuilder extends
 
   /**
    * <pre>
-   * Time when the request was received.
+   * Output only. Time when the request was received.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 3;</code>
@@ -47,7 +47,7 @@ public interface VideoAnnotationProgressOrBuilder extends
   boolean hasStartTime();
   /**
    * <pre>
-   * Time when the request was received.
+   * Output only. Time when the request was received.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 3;</code>
@@ -55,7 +55,7 @@ public interface VideoAnnotationProgressOrBuilder extends
   com.google.protobuf.Timestamp getStartTime();
   /**
    * <pre>
-   * Time when the request was received.
+   * Output only. Time when the request was received.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 3;</code>
@@ -64,7 +64,7 @@ public interface VideoAnnotationProgressOrBuilder extends
 
   /**
    * <pre>
-   * Time of the most recent update.
+   * Output only. Time of the most recent update.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 4;</code>
@@ -72,7 +72,7 @@ public interface VideoAnnotationProgressOrBuilder extends
   boolean hasUpdateTime();
   /**
    * <pre>
-   * Time of the most recent update.
+   * Output only. Time of the most recent update.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 4;</code>
@@ -80,7 +80,7 @@ public interface VideoAnnotationProgressOrBuilder extends
   com.google.protobuf.Timestamp getUpdateTime();
   /**
    * <pre>
-   * Time of the most recent update.
+   * Output only. Time of the most recent update.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 4;</code>
