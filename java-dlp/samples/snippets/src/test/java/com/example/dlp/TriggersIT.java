@@ -39,17 +39,13 @@ public class TriggersIT {
   //CHECKSTYLE ON: AbbreviationAsWordInName
 
   private ByteArrayOutputStream bout;
-  private PrintStream out;
 
   private String bucketName = System.getenv("GOOGLE_CLOUD_PROJECT") + "/dlp";
-  private String topicId = "dlp-tests";
-  private String subscriptionId = "dlp-test";
 
   @Before
   public void setUp() {
     bout = new ByteArrayOutputStream();
-    out = new PrintStream(bout);
-    System.setOut(out);
+    System.setOut(new PrintStream(bout));
     assertNotNull(System.getenv("GOOGLE_APPLICATION_CREDENTIALS"));
   }
 
@@ -74,6 +70,7 @@ public class TriggersIT {
           bucketName,
           "-fileName",
           "test.txt",
+          "-autoPopulateTimespan",
           "-scanPeriod",
           "1"
         });

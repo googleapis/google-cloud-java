@@ -31,6 +31,7 @@ import com.google.privacy.dlp.v2.ProjectJobTriggerName;
 import com.google.privacy.dlp.v2.ProjectName;
 import com.google.privacy.dlp.v2.Schedule;
 import com.google.privacy.dlp.v2.StorageConfig;
+import com.google.privacy.dlp.v2.StorageConfig.TimespanConfig;
 import com.google.protobuf.Duration;
 import java.util.ArrayList;
 import java.util.List;
@@ -52,6 +53,7 @@ public class Triggers {
    * @param triggerId (Optional) name of the trigger to be created
    * @param displayName (Optional) display name for the trigger to be created
    * @param description (Optional) description for the trigger to be created
+   * @param autoPopulateTimespan If true, limits scans to new content only.
    * @param scanPeriod How often to wait between scans, in days (minimum = 1 day)
    * @param infoTypes infoTypes of information to match eg. InfoType.PHONE_NUMBER,
    *     InfoType.EMAIL_ADDRESS
@@ -65,6 +67,7 @@ public class Triggers {
       String description,
       String bucketName,
       String fileName,
+      boolean autoPopulateTimespan,
       int scanPeriod,
       List<InfoType> infoTypes,
       Likelihood minLikelihood,
@@ -82,8 +85,13 @@ public class Triggers {
                   CloudStorageOptions.FileSet.newBuilder()
                       .setUrl("gs://" + bucketName + "/" + fileName))
               .build();
+
+      TimespanConfig timespanConfig = TimespanConfig.newBuilder()
+          .setEnableAutoPopulationOfTimespanConfig(autoPopulateTimespan).build();
+
       StorageConfig storageConfig =
-          StorageConfig.newBuilder().setCloudStorageOptions(cloudStorageOptions).build();
+          StorageConfig.newBuilder().setCloudStorageOptions(cloudStorageOptions)
+              .setTimespanConfig(timespanConfig).build();
 
       InspectConfig.FindingLimits findingLimits =
           InspectConfig.FindingLimits.newBuilder().setMaxFindingsPerRequest(maxFindings).build();
@@ -216,6 +224,10 @@ public class Triggers {
     Option gcsFileNameOption = Option.builder("fileName").hasArg(true).required(false).build();
     commandLineOptions.addOption(gcsFileNameOption);
 
+    Option autoPopulateTimespanOption = Option.builder("autoPopulateTimespan").required(false)
+        .build();
+    commandLineOptions.addOption(autoPopulateTimespanOption);
+
     Option minLikelihoodOption =
         Option.builder("minLikelihood").hasArg(true).required(false).build();
 
@@ -268,6 +280,8 @@ public class Triggers {
       String description = cmd.getOptionValue(descriptionOption.getOpt(), "");
       String bucketName = cmd.getOptionValue(bucketNameOption.getOpt());
       String fileName = cmd.getOptionValue(gcsFileNameOption.getOpt());
+      boolean autoPopulateTimespan = Boolean
+          .valueOf(cmd.getOptionValue(autoPopulateTimespanOption.getOpt()));
       int scanPeriod = Integer.valueOf(cmd.getOptionValue(scanPeriodOption.getOpt()));
       List<InfoType> infoTypesList = new ArrayList<>();
       if (cmd.hasOption(infoTypesOption.getOpt())) {
@@ -283,6 +297,7 @@ public class Triggers {
           description,
           bucketName,
           fileName,
+          autoPopulateTimespan,
           scanPeriod,
           infoTypesList,
           minLikelihood,
