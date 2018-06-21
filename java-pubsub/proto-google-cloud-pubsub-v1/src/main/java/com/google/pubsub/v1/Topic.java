@@ -73,6 +73,19 @@ private static final long serialVersionUID = 0L;
                 labels__.getKey(), labels__.getValue());
             break;
           }
+          case 26: {
+            com.google.pubsub.v1.MessageStoragePolicy.Builder subBuilder = null;
+            if (messageStoragePolicy_ != null) {
+              subBuilder = messageStoragePolicy_.toBuilder();
+            }
+            messageStoragePolicy_ = input.readMessage(com.google.pubsub.v1.MessageStoragePolicy.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(messageStoragePolicy_);
+              messageStoragePolicy_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -253,6 +266,54 @@ private static final long serialVersionUID = 0L;
     return map.get(key);
   }
 
+  public static final int MESSAGE_STORAGE_POLICY_FIELD_NUMBER = 3;
+  private com.google.pubsub.v1.MessageStoragePolicy messageStoragePolicy_;
+  /**
+   * <pre>
+   * Policy constraining how messages published to the topic may be stored. It
+   * is determined when the topic is created based on the policy configured at
+   * the project level. It must not be set by the caller in the request to
+   * CreateTopic or to UpdateTopic. This field will be populated in the
+   * responses for GetTopic, CreateTopic, and UpdateTopic: if not present in the
+   * response, then no constraints are in effect.
+   * </pre>
+   *
+   * <code>.google.pubsub.v1.MessageStoragePolicy message_storage_policy = 3;</code>
+   */
+  public boolean hasMessageStoragePolicy() {
+    return messageStoragePolicy_ != null;
+  }
+  /**
+   * <pre>
+   * Policy constraining how messages published to the topic may be stored. It
+   * is determined when the topic is created based on the policy configured at
+   * the project level. It must not be set by the caller in the request to
+   * CreateTopic or to UpdateTopic. This field will be populated in the
+   * responses for GetTopic, CreateTopic, and UpdateTopic: if not present in the
+   * response, then no constraints are in effect.
+   * </pre>
+   *
+   * <code>.google.pubsub.v1.MessageStoragePolicy message_storage_policy = 3;</code>
+   */
+  public com.google.pubsub.v1.MessageStoragePolicy getMessageStoragePolicy() {
+    return messageStoragePolicy_ == null ? com.google.pubsub.v1.MessageStoragePolicy.getDefaultInstance() : messageStoragePolicy_;
+  }
+  /**
+   * <pre>
+   * Policy constraining how messages published to the topic may be stored. It
+   * is determined when the topic is created based on the policy configured at
+   * the project level. It must not be set by the caller in the request to
+   * CreateTopic or to UpdateTopic. This field will be populated in the
+   * responses for GetTopic, CreateTopic, and UpdateTopic: if not present in the
+   * response, then no constraints are in effect.
+   * </pre>
+   *
+   * <code>.google.pubsub.v1.MessageStoragePolicy message_storage_policy = 3;</code>
+   */
+  public com.google.pubsub.v1.MessageStoragePolicyOrBuilder getMessageStoragePolicyOrBuilder() {
+    return getMessageStoragePolicy();
+  }
+
   private byte memoizedIsInitialized = -1;
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -274,6 +335,9 @@ private static final long serialVersionUID = 0L;
         internalGetLabels(),
         LabelsDefaultEntryHolder.defaultEntry,
         2);
+    if (messageStoragePolicy_ != null) {
+      output.writeMessage(3, getMessageStoragePolicy());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -295,6 +359,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, labels__);
     }
+    if (messageStoragePolicy_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(3, getMessageStoragePolicy());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -315,6 +383,11 @@ private static final long serialVersionUID = 0L;
         .equals(other.getName());
     result = result && internalGetLabels().equals(
         other.internalGetLabels());
+    result = result && (hasMessageStoragePolicy() == other.hasMessageStoragePolicy());
+    if (hasMessageStoragePolicy()) {
+      result = result && getMessageStoragePolicy()
+          .equals(other.getMessageStoragePolicy());
+    }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -331,6 +404,10 @@ private static final long serialVersionUID = 0L;
     if (!internalGetLabels().getMap().isEmpty()) {
       hash = (37 * hash) + LABELS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetLabels().hashCode();
+    }
+    if (hasMessageStoragePolicy()) {
+      hash = (37 * hash) + MESSAGE_STORAGE_POLICY_FIELD_NUMBER;
+      hash = (53 * hash) + getMessageStoragePolicy().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -490,6 +567,12 @@ private static final long serialVersionUID = 0L;
       name_ = "";
 
       internalGetMutableLabels().clear();
+      if (messageStoragePolicyBuilder_ == null) {
+        messageStoragePolicy_ = null;
+      } else {
+        messageStoragePolicy_ = null;
+        messageStoragePolicyBuilder_ = null;
+      }
       return this;
     }
 
@@ -517,6 +600,11 @@ private static final long serialVersionUID = 0L;
       result.name_ = name_;
       result.labels_ = internalGetLabels();
       result.labels_.makeImmutable();
+      if (messageStoragePolicyBuilder_ == null) {
+        result.messageStoragePolicy_ = messageStoragePolicy_;
+      } else {
+        result.messageStoragePolicy_ = messageStoragePolicyBuilder_.build();
+      }
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -565,6 +653,9 @@ private static final long serialVersionUID = 0L;
       }
       internalGetMutableLabels().mergeFrom(
           other.internalGetLabels());
+      if (other.hasMessageStoragePolicy()) {
+        mergeMessageStoragePolicy(other.getMessageStoragePolicy());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -856,6 +947,204 @@ private static final long serialVersionUID = 0L;
       internalGetMutableLabels().getMutableMap()
           .putAll(values);
       return this;
+    }
+
+    private com.google.pubsub.v1.MessageStoragePolicy messageStoragePolicy_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.pubsub.v1.MessageStoragePolicy, com.google.pubsub.v1.MessageStoragePolicy.Builder, com.google.pubsub.v1.MessageStoragePolicyOrBuilder> messageStoragePolicyBuilder_;
+    /**
+     * <pre>
+     * Policy constraining how messages published to the topic may be stored. It
+     * is determined when the topic is created based on the policy configured at
+     * the project level. It must not be set by the caller in the request to
+     * CreateTopic or to UpdateTopic. This field will be populated in the
+     * responses for GetTopic, CreateTopic, and UpdateTopic: if not present in the
+     * response, then no constraints are in effect.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.MessageStoragePolicy message_storage_policy = 3;</code>
+     */
+    public boolean hasMessageStoragePolicy() {
+      return messageStoragePolicyBuilder_ != null || messageStoragePolicy_ != null;
+    }
+    /**
+     * <pre>
+     * Policy constraining how messages published to the topic may be stored. It
+     * is determined when the topic is created based on the policy configured at
+     * the project level. It must not be set by the caller in the request to
+     * CreateTopic or to UpdateTopic. This field will be populated in the
+     * responses for GetTopic, CreateTopic, and UpdateTopic: if not present in the
+     * response, then no constraints are in effect.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.MessageStoragePolicy message_storage_policy = 3;</code>
+     */
+    public com.google.pubsub.v1.MessageStoragePolicy getMessageStoragePolicy() {
+      if (messageStoragePolicyBuilder_ == null) {
+        return messageStoragePolicy_ == null ? com.google.pubsub.v1.MessageStoragePolicy.getDefaultInstance() : messageStoragePolicy_;
+      } else {
+        return messageStoragePolicyBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Policy constraining how messages published to the topic may be stored. It
+     * is determined when the topic is created based on the policy configured at
+     * the project level. It must not be set by the caller in the request to
+     * CreateTopic or to UpdateTopic. This field will be populated in the
+     * responses for GetTopic, CreateTopic, and UpdateTopic: if not present in the
+     * response, then no constraints are in effect.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.MessageStoragePolicy message_storage_policy = 3;</code>
+     */
+    public Builder setMessageStoragePolicy(com.google.pubsub.v1.MessageStoragePolicy value) {
+      if (messageStoragePolicyBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        messageStoragePolicy_ = value;
+        onChanged();
+      } else {
+        messageStoragePolicyBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Policy constraining how messages published to the topic may be stored. It
+     * is determined when the topic is created based on the policy configured at
+     * the project level. It must not be set by the caller in the request to
+     * CreateTopic or to UpdateTopic. This field will be populated in the
+     * responses for GetTopic, CreateTopic, and UpdateTopic: if not present in the
+     * response, then no constraints are in effect.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.MessageStoragePolicy message_storage_policy = 3;</code>
+     */
+    public Builder setMessageStoragePolicy(
+        com.google.pubsub.v1.MessageStoragePolicy.Builder builderForValue) {
+      if (messageStoragePolicyBuilder_ == null) {
+        messageStoragePolicy_ = builderForValue.build();
+        onChanged();
+      } else {
+        messageStoragePolicyBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Policy constraining how messages published to the topic may be stored. It
+     * is determined when the topic is created based on the policy configured at
+     * the project level. It must not be set by the caller in the request to
+     * CreateTopic or to UpdateTopic. This field will be populated in the
+     * responses for GetTopic, CreateTopic, and UpdateTopic: if not present in the
+     * response, then no constraints are in effect.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.MessageStoragePolicy message_storage_policy = 3;</code>
+     */
+    public Builder mergeMessageStoragePolicy(com.google.pubsub.v1.MessageStoragePolicy value) {
+      if (messageStoragePolicyBuilder_ == null) {
+        if (messageStoragePolicy_ != null) {
+          messageStoragePolicy_ =
+            com.google.pubsub.v1.MessageStoragePolicy.newBuilder(messageStoragePolicy_).mergeFrom(value).buildPartial();
+        } else {
+          messageStoragePolicy_ = value;
+        }
+        onChanged();
+      } else {
+        messageStoragePolicyBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Policy constraining how messages published to the topic may be stored. It
+     * is determined when the topic is created based on the policy configured at
+     * the project level. It must not be set by the caller in the request to
+     * CreateTopic or to UpdateTopic. This field will be populated in the
+     * responses for GetTopic, CreateTopic, and UpdateTopic: if not present in the
+     * response, then no constraints are in effect.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.MessageStoragePolicy message_storage_policy = 3;</code>
+     */
+    public Builder clearMessageStoragePolicy() {
+      if (messageStoragePolicyBuilder_ == null) {
+        messageStoragePolicy_ = null;
+        onChanged();
+      } else {
+        messageStoragePolicy_ = null;
+        messageStoragePolicyBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Policy constraining how messages published to the topic may be stored. It
+     * is determined when the topic is created based on the policy configured at
+     * the project level. It must not be set by the caller in the request to
+     * CreateTopic or to UpdateTopic. This field will be populated in the
+     * responses for GetTopic, CreateTopic, and UpdateTopic: if not present in the
+     * response, then no constraints are in effect.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.MessageStoragePolicy message_storage_policy = 3;</code>
+     */
+    public com.google.pubsub.v1.MessageStoragePolicy.Builder getMessageStoragePolicyBuilder() {
+      
+      onChanged();
+      return getMessageStoragePolicyFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Policy constraining how messages published to the topic may be stored. It
+     * is determined when the topic is created based on the policy configured at
+     * the project level. It must not be set by the caller in the request to
+     * CreateTopic or to UpdateTopic. This field will be populated in the
+     * responses for GetTopic, CreateTopic, and UpdateTopic: if not present in the
+     * response, then no constraints are in effect.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.MessageStoragePolicy message_storage_policy = 3;</code>
+     */
+    public com.google.pubsub.v1.MessageStoragePolicyOrBuilder getMessageStoragePolicyOrBuilder() {
+      if (messageStoragePolicyBuilder_ != null) {
+        return messageStoragePolicyBuilder_.getMessageOrBuilder();
+      } else {
+        return messageStoragePolicy_ == null ?
+            com.google.pubsub.v1.MessageStoragePolicy.getDefaultInstance() : messageStoragePolicy_;
+      }
+    }
+    /**
+     * <pre>
+     * Policy constraining how messages published to the topic may be stored. It
+     * is determined when the topic is created based on the policy configured at
+     * the project level. It must not be set by the caller in the request to
+     * CreateTopic or to UpdateTopic. This field will be populated in the
+     * responses for GetTopic, CreateTopic, and UpdateTopic: if not present in the
+     * response, then no constraints are in effect.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.MessageStoragePolicy message_storage_policy = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.pubsub.v1.MessageStoragePolicy, com.google.pubsub.v1.MessageStoragePolicy.Builder, com.google.pubsub.v1.MessageStoragePolicyOrBuilder> 
+        getMessageStoragePolicyFieldBuilder() {
+      if (messageStoragePolicyBuilder_ == null) {
+        messageStoragePolicyBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.pubsub.v1.MessageStoragePolicy, com.google.pubsub.v1.MessageStoragePolicy.Builder, com.google.pubsub.v1.MessageStoragePolicyOrBuilder>(
+                getMessageStoragePolicy(),
+                getParentForChildren(),
+                isClean());
+        messageStoragePolicy_ = null;
+      }
+      return messageStoragePolicyBuilder_;
     }
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {

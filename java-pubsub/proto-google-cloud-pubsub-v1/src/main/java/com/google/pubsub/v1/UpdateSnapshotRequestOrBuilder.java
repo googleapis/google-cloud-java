@@ -9,7 +9,7 @@ public interface UpdateSnapshotRequestOrBuilder extends
 
   /**
    * <pre>
-   * The updated snpashot object.
+   * The updated snapshot object.
    * </pre>
    *
    * <code>.google.pubsub.v1.Snapshot snapshot = 1;</code>
@@ -17,7 +17,7 @@ public interface UpdateSnapshotRequestOrBuilder extends
   boolean hasSnapshot();
   /**
    * <pre>
-   * The updated snpashot object.
+   * The updated snapshot object.
    * </pre>
    *
    * <code>.google.pubsub.v1.Snapshot snapshot = 1;</code>
@@ -25,7 +25,7 @@ public interface UpdateSnapshotRequestOrBuilder extends
   com.google.pubsub.v1.Snapshot getSnapshot();
   /**
    * <pre>
-   * The updated snpashot object.
+   * The updated snapshot object.
    * </pre>
    *
    * <code>.google.pubsub.v1.Snapshot snapshot = 1;</code>

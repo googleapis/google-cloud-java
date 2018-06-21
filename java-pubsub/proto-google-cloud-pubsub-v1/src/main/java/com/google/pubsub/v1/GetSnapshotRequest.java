@@ -5,24 +5,24 @@ package com.google.pubsub.v1;
 
 /**
  * <pre>
- * Request for the `DeleteSnapshot` method.&lt;br&gt;&lt;br&gt;
+ * Request for the GetSnapshot method.&lt;br&gt;&lt;br&gt;
  * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
  * changed in backward-incompatible ways and is not recommended for production
  * use. It is not subject to any SLA or deprecation policy.
  * </pre>
  *
- * Protobuf type {@code google.pubsub.v1.DeleteSnapshotRequest}
+ * Protobuf type {@code google.pubsub.v1.GetSnapshotRequest}
  */
-public  final class DeleteSnapshotRequest extends
+public  final class GetSnapshotRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:google.pubsub.v1.DeleteSnapshotRequest)
-    DeleteSnapshotRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.pubsub.v1.GetSnapshotRequest)
+    GetSnapshotRequestOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use DeleteSnapshotRequest.newBuilder() to construct.
-  private DeleteSnapshotRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use GetSnapshotRequest.newBuilder() to construct.
+  private GetSnapshotRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private DeleteSnapshotRequest() {
+  private GetSnapshotRequest() {
     snapshot_ = "";
   }
 
@@ -31,7 +31,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private DeleteSnapshotRequest(
+  private GetSnapshotRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -77,21 +77,21 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.google.pubsub.v1.PubsubProto.internal_static_google_pubsub_v1_DeleteSnapshotRequest_descriptor;
+    return com.google.pubsub.v1.PubsubProto.internal_static_google_pubsub_v1_GetSnapshotRequest_descriptor;
   }
 
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.pubsub.v1.PubsubProto.internal_static_google_pubsub_v1_DeleteSnapshotRequest_fieldAccessorTable
+    return com.google.pubsub.v1.PubsubProto.internal_static_google_pubsub_v1_GetSnapshotRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.pubsub.v1.DeleteSnapshotRequest.class, com.google.pubsub.v1.DeleteSnapshotRequest.Builder.class);
+            com.google.pubsub.v1.GetSnapshotRequest.class, com.google.pubsub.v1.GetSnapshotRequest.Builder.class);
   }
 
   public static final int SNAPSHOT_FIELD_NUMBER = 1;
   private volatile java.lang.Object snapshot_;
   /**
    * <pre>
-   * The name of the snapshot to delete.
+   * The name of the snapshot to get.
    * Format is `projects/{project}/snapshots/{snap}`.
    * </pre>
    *
@@ -111,7 +111,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The name of the snapshot to delete.
+   * The name of the snapshot to get.
    * Format is `projects/{project}/snapshots/{snap}`.
    * </pre>
    *
@@ -167,10 +167,10 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.google.pubsub.v1.DeleteSnapshotRequest)) {
+    if (!(obj instanceof com.google.pubsub.v1.GetSnapshotRequest)) {
       return super.equals(obj);
     }
-    com.google.pubsub.v1.DeleteSnapshotRequest other = (com.google.pubsub.v1.DeleteSnapshotRequest) obj;
+    com.google.pubsub.v1.GetSnapshotRequest other = (com.google.pubsub.v1.GetSnapshotRequest) obj;
 
     boolean result = true;
     result = result && getSnapshot()
@@ -193,69 +193,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.pubsub.v1.DeleteSnapshotRequest parseFrom(
+  public static com.google.pubsub.v1.GetSnapshotRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.google.pubsub.v1.DeleteSnapshotRequest parseFrom(
+  public static com.google.pubsub.v1.GetSnapshotRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.pubsub.v1.DeleteSnapshotRequest parseFrom(
+  public static com.google.pubsub.v1.GetSnapshotRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.google.pubsub.v1.DeleteSnapshotRequest parseFrom(
+  public static com.google.pubsub.v1.GetSnapshotRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.pubsub.v1.DeleteSnapshotRequest parseFrom(byte[] data)
+  public static com.google.pubsub.v1.GetSnapshotRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.google.pubsub.v1.DeleteSnapshotRequest parseFrom(
+  public static com.google.pubsub.v1.GetSnapshotRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.pubsub.v1.DeleteSnapshotRequest parseFrom(java.io.InputStream input)
+  public static com.google.pubsub.v1.GetSnapshotRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.google.pubsub.v1.DeleteSnapshotRequest parseFrom(
+  public static com.google.pubsub.v1.GetSnapshotRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.google.pubsub.v1.DeleteSnapshotRequest parseDelimitedFrom(java.io.InputStream input)
+  public static com.google.pubsub.v1.GetSnapshotRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.google.pubsub.v1.DeleteSnapshotRequest parseDelimitedFrom(
+  public static com.google.pubsub.v1.GetSnapshotRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.google.pubsub.v1.DeleteSnapshotRequest parseFrom(
+  public static com.google.pubsub.v1.GetSnapshotRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.google.pubsub.v1.DeleteSnapshotRequest parseFrom(
+  public static com.google.pubsub.v1.GetSnapshotRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -267,7 +267,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.google.pubsub.v1.DeleteSnapshotRequest prototype) {
+  public static Builder newBuilder(com.google.pubsub.v1.GetSnapshotRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   public Builder toBuilder() {
@@ -283,31 +283,31 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Request for the `DeleteSnapshot` method.&lt;br&gt;&lt;br&gt;
+   * Request for the GetSnapshot method.&lt;br&gt;&lt;br&gt;
    * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
    * changed in backward-incompatible ways and is not recommended for production
    * use. It is not subject to any SLA or deprecation policy.
    * </pre>
    *
-   * Protobuf type {@code google.pubsub.v1.DeleteSnapshotRequest}
+   * Protobuf type {@code google.pubsub.v1.GetSnapshotRequest}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:google.pubsub.v1.DeleteSnapshotRequest)
-      com.google.pubsub.v1.DeleteSnapshotRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.pubsub.v1.GetSnapshotRequest)
+      com.google.pubsub.v1.GetSnapshotRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.google.pubsub.v1.PubsubProto.internal_static_google_pubsub_v1_DeleteSnapshotRequest_descriptor;
+      return com.google.pubsub.v1.PubsubProto.internal_static_google_pubsub_v1_GetSnapshotRequest_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.pubsub.v1.PubsubProto.internal_static_google_pubsub_v1_DeleteSnapshotRequest_fieldAccessorTable
+      return com.google.pubsub.v1.PubsubProto.internal_static_google_pubsub_v1_GetSnapshotRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.pubsub.v1.DeleteSnapshotRequest.class, com.google.pubsub.v1.DeleteSnapshotRequest.Builder.class);
+              com.google.pubsub.v1.GetSnapshotRequest.class, com.google.pubsub.v1.GetSnapshotRequest.Builder.class);
     }
 
-    // Construct using com.google.pubsub.v1.DeleteSnapshotRequest.newBuilder()
+    // Construct using com.google.pubsub.v1.GetSnapshotRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -331,23 +331,23 @@ private static final long serialVersionUID = 0L;
 
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.google.pubsub.v1.PubsubProto.internal_static_google_pubsub_v1_DeleteSnapshotRequest_descriptor;
+      return com.google.pubsub.v1.PubsubProto.internal_static_google_pubsub_v1_GetSnapshotRequest_descriptor;
     }
 
-    public com.google.pubsub.v1.DeleteSnapshotRequest getDefaultInstanceForType() {
-      return com.google.pubsub.v1.DeleteSnapshotRequest.getDefaultInstance();
+    public com.google.pubsub.v1.GetSnapshotRequest getDefaultInstanceForType() {
+      return com.google.pubsub.v1.GetSnapshotRequest.getDefaultInstance();
     }
 
-    public com.google.pubsub.v1.DeleteSnapshotRequest build() {
-      com.google.pubsub.v1.DeleteSnapshotRequest result = buildPartial();
+    public com.google.pubsub.v1.GetSnapshotRequest build() {
+      com.google.pubsub.v1.GetSnapshotRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    public com.google.pubsub.v1.DeleteSnapshotRequest buildPartial() {
-      com.google.pubsub.v1.DeleteSnapshotRequest result = new com.google.pubsub.v1.DeleteSnapshotRequest(this);
+    public com.google.pubsub.v1.GetSnapshotRequest buildPartial() {
+      com.google.pubsub.v1.GetSnapshotRequest result = new com.google.pubsub.v1.GetSnapshotRequest(this);
       result.snapshot_ = snapshot_;
       onBuilt();
       return result;
@@ -380,16 +380,16 @@ private static final long serialVersionUID = 0L;
       return (Builder) super.addRepeatedField(field, value);
     }
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.pubsub.v1.DeleteSnapshotRequest) {
-        return mergeFrom((com.google.pubsub.v1.DeleteSnapshotRequest)other);
+      if (other instanceof com.google.pubsub.v1.GetSnapshotRequest) {
+        return mergeFrom((com.google.pubsub.v1.GetSnapshotRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.pubsub.v1.DeleteSnapshotRequest other) {
-      if (other == com.google.pubsub.v1.DeleteSnapshotRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.google.pubsub.v1.GetSnapshotRequest other) {
+      if (other == com.google.pubsub.v1.GetSnapshotRequest.getDefaultInstance()) return this;
       if (!other.getSnapshot().isEmpty()) {
         snapshot_ = other.snapshot_;
         onChanged();
@@ -407,11 +407,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.pubsub.v1.DeleteSnapshotRequest parsedMessage = null;
+      com.google.pubsub.v1.GetSnapshotRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.pubsub.v1.DeleteSnapshotRequest) e.getUnfinishedMessage();
+        parsedMessage = (com.google.pubsub.v1.GetSnapshotRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -424,7 +424,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object snapshot_ = "";
     /**
      * <pre>
-     * The name of the snapshot to delete.
+     * The name of the snapshot to get.
      * Format is `projects/{project}/snapshots/{snap}`.
      * </pre>
      *
@@ -444,7 +444,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The name of the snapshot to delete.
+     * The name of the snapshot to get.
      * Format is `projects/{project}/snapshots/{snap}`.
      * </pre>
      *
@@ -465,7 +465,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The name of the snapshot to delete.
+     * The name of the snapshot to get.
      * Format is `projects/{project}/snapshots/{snap}`.
      * </pre>
      *
@@ -483,7 +483,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The name of the snapshot to delete.
+     * The name of the snapshot to get.
      * Format is `projects/{project}/snapshots/{snap}`.
      * </pre>
      *
@@ -497,7 +497,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The name of the snapshot to delete.
+     * The name of the snapshot to get.
      * Format is `projects/{project}/snapshots/{snap}`.
      * </pre>
      *
@@ -525,39 +525,39 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:google.pubsub.v1.DeleteSnapshotRequest)
+    // @@protoc_insertion_point(builder_scope:google.pubsub.v1.GetSnapshotRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:google.pubsub.v1.DeleteSnapshotRequest)
-  private static final com.google.pubsub.v1.DeleteSnapshotRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.pubsub.v1.GetSnapshotRequest)
+  private static final com.google.pubsub.v1.GetSnapshotRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.google.pubsub.v1.DeleteSnapshotRequest();
+    DEFAULT_INSTANCE = new com.google.pubsub.v1.GetSnapshotRequest();
   }
 
-  public static com.google.pubsub.v1.DeleteSnapshotRequest getDefaultInstance() {
+  public static com.google.pubsub.v1.GetSnapshotRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<DeleteSnapshotRequest>
-      PARSER = new com.google.protobuf.AbstractParser<DeleteSnapshotRequest>() {
-    public DeleteSnapshotRequest parsePartialFrom(
+  private static final com.google.protobuf.Parser<GetSnapshotRequest>
+      PARSER = new com.google.protobuf.AbstractParser<GetSnapshotRequest>() {
+    public GetSnapshotRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new DeleteSnapshotRequest(input, extensionRegistry);
+      return new GetSnapshotRequest(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<DeleteSnapshotRequest> parser() {
+  public static com.google.protobuf.Parser<GetSnapshotRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<DeleteSnapshotRequest> getParserForType() {
+  public com.google.protobuf.Parser<GetSnapshotRequest> getParserForType() {
     return PARSER;
   }
 
-  public com.google.pubsub.v1.DeleteSnapshotRequest getDefaultInstanceForType() {
+  public com.google.pubsub.v1.GetSnapshotRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

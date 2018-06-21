@@ -40,7 +40,8 @@
  * ======================= SubscriptionAdminClient =======================
  *
  * <p>Service Description: The service that an application uses to manipulate subscriptions and to
- * consume messages from a subscription via the `Pull` method.
+ * consume messages from a subscription via the `Pull` method or by establishing a bi-directional
+ * stream using the `StreamingPull` method.
  *
  * <p>To retrieve messages from a subscription, see the Subscriber class.
  *
