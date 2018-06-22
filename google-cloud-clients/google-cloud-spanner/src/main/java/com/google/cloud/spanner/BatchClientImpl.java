@@ -69,7 +69,7 @@ public class BatchClientImpl implements BatchClient {
       super(
           checkNotNull(session),
           checkNotNull(bound),
-          checkNotNull(spanner).getOptions().getGapicSpannerRpc(),
+          checkNotNull(spanner).getOptions().getSpannerRpcV1(),
           spanner.getOptions().getPrefetchChunks());
       this.sessionName = session.getName();
       this.options = session.getOptions();
@@ -82,7 +82,7 @@ public class BatchClientImpl implements BatchClient {
           checkNotNull(session),
           checkNotNull(batchTransactionId).getTransactionId(),
           batchTransactionId.getTimestamp(),
-          checkNotNull(spanner).getOptions().getGapicSpannerRpc(),
+          checkNotNull(spanner).getOptions().getSpannerRpcV1(),
           spanner.getOptions().getPrefetchChunks());
       this.sessionName = session.getName();
       this.options = session.getOptions();

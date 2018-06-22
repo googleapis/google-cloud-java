@@ -18,19 +18,24 @@ package com.google.cloud.spanner.spi.v1;
 
 import static com.google.cloud.spanner.SpannerExceptionFactory.newSpannerException;
 
+import com.google.common.base.Preconditions;
 import com.google.api.core.ApiFunction;
 import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.core.GaxProperties;
+import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.GrpcCallContext;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
+import com.google.api.gax.rpc.FixedTransportChannelProvider;
 import com.google.api.gax.rpc.HeaderProvider;
 import com.google.api.gax.rpc.ServerStream;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
+import com.google.api.gax.rpc.ResponseObserver;
+import com.google.api.gax.rpc.StreamController;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.grpc.GrpcTransportOptions;
@@ -91,7 +96,6 @@ import com.google.spanner.v1.RollbackRequest;
 import com.google.spanner.v1.Session;
 import com.google.spanner.v1.Transaction;
 import io.grpc.Context;
-import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.CancellationException;
@@ -106,6 +110,7 @@ public class GapicSpannerRpc implements SpannerRpc {
       PathTemplate.create("projects/{project}");
   private static final int MAX_MESSAGE_SIZE = 100 * 1024 * 1024;
   
+  // TODO(hzyi): change the stub names to be more intuitive
   private final SpannerStub stub;
   private final InstanceAdminStub instanceStub;
   private final DatabaseAdminStub databaseStub;
@@ -114,17 +119,19 @@ public class GapicSpannerRpc implements SpannerRpc {
   private final SpannerMetadataProvider metadataProvider;
 
   public static GapicSpannerRpc create(SpannerOptions options) {
-    try {
-      return new GapicSpannerRpc(options);
-    } catch (IOException e) {
-      throw new IllegalStateException(e);
-    }
+    return new GapicSpannerRpc(options);
   }
 
-  public GapicSpannerRpc(SpannerOptions options) throws IOException {
+  public GapicSpannerRpc(SpannerOptions options) {
     this.projectId = options.getProjectId();
     this.projectName = PROJECT_NAME_TEMPLATE.instantiate("project", this.projectId);
 
+    // TODO(hzyi): inject userAgent to headerProvider so that it
+    // can be picked up by ChannelProvider
+
+    // create a metadataProvider which combines both internal headers and
+    // per-method-call extra headers for channelProvider to inject the headers
+    // for rpc calls
     ApiClientHeaderProvider.Builder internalHeaderProviderBuilder =
         ApiClientHeaderProvider.newBuilder();
     ApiClientHeaderProvider internalHeaderProvider =
@@ -142,17 +149,24 @@ public class GapicSpannerRpc implements SpannerRpc {
             mergedHeaderProvider.getHeaders(),
             internalHeaderProviderBuilder.getResourceHeaderKey());
 
-    // TODO(pongad): add watchdog
-
-    // TODO(hzyi): make this channelProvider configurable through SpannerOptions
+    // First check if SpannerOptions provides a TransportChannerProvider. Create one
+    // with information gathered from SpannerOptions if none is provided
     TransportChannelProvider channelProvider =
-        InstantiatingGrpcChannelProvider
-            .newBuilder()
-            .setEndpoint(options.getEndpoint())
-            .setMaxInboundMessageSize(MAX_MESSAGE_SIZE)
-            .setPoolSize(options.getNumChannels())
-            .setInterceptorProvider(new SpannerInterceptorProvider())
-            .build();
+        MoreObjects.firstNonNull(
+            options.getChannelProvider(),
+            InstantiatingGrpcChannelProvider.newBuilder()
+                .setEndpoint(options.getEndpoint())
+                .setMaxInboundMessageSize(MAX_MESSAGE_SIZE)
+                .setPoolSize(options.getNumChannels())
+
+                // Then check if SpannerOptions provides an InterceptorProvider. Create a default
+                // SpannerInterceptorProvider if none is provided
+                .setInterceptorProvider(
+                    MoreObjects.firstNonNull(
+                        options.getInterceptorProvider(), SpannerInterceptorProvider.createDefault()))
+                .setHeaderProvider(mergedHeaderProvider)
+                .setExecutorProvider(InstantiatingExecutorProvider.newBuilder().build())
+                .build());
 
     CredentialsProvider credentialsProvider =
         GrpcTransportOptions.setUpCredentialsProvider(options);
@@ -399,17 +413,47 @@ public class GapicSpannerRpc implements SpannerRpc {
   }
 
   @Override
-  public ServerStream<PartialResultSet> read(
+  public StreamingCall read(
       ReadRequest request, ResultStreamConsumer consumer, @Nullable Map<Option, ?> options) {
     GrpcCallContext context = newCallContext(options, request.getSession());
-    return stub.streamingReadCallable().call(request, context);
+    SpannerResponseObserver responseObserver = new SpannerResponseObserver(consumer);
+    stub.streamingReadCallable().call(request, responseObserver, context);
+    final StreamController controller = responseObserver.getController();
+    return new StreamingCall() {
+      @Override
+      public void request(int numMessage) {
+        controller.request(numMessage);
+      }
+
+      // TODO(hzyi): streamController currently does not support cancel with message. Add
+      // this in gax and update this method later
+      @Override
+      public void cancel(String message) {
+        controller.cancel();
+      }
+    };
   }
 
   @Override
-  public ServerStream<PartialResultSet> executeQuery(
+  public StreamingCall executeQuery(
       ExecuteSqlRequest request, ResultStreamConsumer consumer, @Nullable Map<Option, ?> options) {
     GrpcCallContext context = newCallContext(options, request.getSession());
-    return stub.executeStreamingSqlCallable().call(request, context);
+    SpannerResponseObserver responseObserver = new SpannerResponseObserver(consumer);
+    stub.executeStreamingSqlCallable().call(request, responseObserver, context);
+    final StreamController controller = responseObserver.getController();
+    return new StreamingCall() {
+      @Override
+      public void request(int numMessage) {
+        controller.request(numMessage);
+      }
+
+      // TODO(hzyi): streamController currently does not support cancel with message. Add
+      // this in gax and update this method later
+      @Override
+      public void cancel(String message) {
+        controller.cancel();
+      }
+    };
   }
 
   @Override
@@ -470,4 +514,52 @@ public class GapicSpannerRpc implements SpannerRpc {
         metadataProvider.newExtraHeaders(resource, projectName));
     return context;
   }
+
+  public void shutdown() {
+    this.stub.close();
+    this.instanceStub.close();
+    this.databaseStub.close();
+  }
+
+  /** 
+   * A {@code ResponseObserver} that exposes the {@code StreamController} and delegates callbacks
+   * to the {@link ResultStreamConsumer}.
+   */
+  private static class SpannerResponseObserver implements ResponseObserver<PartialResultSet> {
+    private StreamController controller;
+    private ResultStreamConsumer consumer;
+
+    public SpannerResponseObserver(ResultStreamConsumer consumer) {
+      this.consumer = consumer;
+    }
+
+    @Override
+    public void onStart(StreamController controller) {
+
+      // Disable the auto flow control to allow client library
+      // set the number of messages it prefers to request
+      controller.disableAutoInboundFlowControl();
+      this.controller = controller;
+    }
+
+    @Override
+    public void onResponse(PartialResultSet response) {
+      consumer.onPartialResultSet(response);
+    }
+
+    @Override
+    public void onError(Throwable t) {
+      consumer.onError(SpannerExceptionFactory.newSpannerException(t));
+    }
+
+    @Override
+    public void onComplete() {
+      consumer.onCompleted();
+    }
+
+    StreamController getController() {
+      return Preconditions.checkNotNull(this.controller);
+    }
+  }
+
 }

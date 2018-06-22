@@ -18,7 +18,7 @@ package com.google.cloud.spanner;
 
 import static com.google.common.base.Preconditions.checkState;
 
-import com.google.common.collect.ImmutableList;
+import com.google.cloud.spanner.spi.v1.SpannerInterceptorProvider;
 import io.grpc.CallOptions;
 import io.grpc.Channel;
 import io.grpc.ClientCall;
@@ -55,10 +55,9 @@ public class GceTestEnvConfig implements TestEnvConfig {
     }
     options =
         builder
-            .setRpcChannelFactory(
-                new SpannerOptions.NettyRpcChannelFactory(
-                    null,
-                    ImmutableList.<ClientInterceptor>of(new GrpcErrorInjector(errorProbability))))
+            .setInterceptorProvider(
+                SpannerInterceptorProvider.createDefault()
+                    .with(new GrpcErrorInjector(errorProbability)))
             .build();
   }
 

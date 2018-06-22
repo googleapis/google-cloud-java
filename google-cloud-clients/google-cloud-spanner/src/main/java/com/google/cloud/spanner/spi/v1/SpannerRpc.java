@@ -204,10 +204,10 @@ public interface SpannerRpc extends ServiceRpc {
 
   void deleteSession(String sessionName, @Nullable Map<Option, ?> options) throws SpannerException;
 
-  ServerStream<PartialResultSet> read(
+  StreamingCall read(
       ReadRequest request, ResultStreamConsumer consumer, @Nullable Map<Option, ?> options);
 
-  ServerStream<PartialResultSet> executeQuery(
+  StreamingCall executeQuery(
       ExecuteSqlRequest request, ResultStreamConsumer consumer, @Nullable Map<Option, ?> options);
 
   Transaction beginTransaction(BeginTransactionRequest request, @Nullable Map<Option, ?> options)
@@ -225,4 +225,6 @@ public interface SpannerRpc extends ServiceRpc {
   PartitionResponse partitionRead(
       PartitionReadRequest request, @Nullable Map<Option, ?> options)
       throws SpannerException;
+
+  public void shutdown();
 }

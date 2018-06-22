@@ -71,7 +71,7 @@ public class SessionImplTest {
   @Before
   public void setUp() {
     MockitoAnnotations.initMocks(this);
-    SpannerImpl spanner = new SpannerImpl(rpc, rpc, 1, spannerOptions);
+    SpannerImpl spanner = new SpannerImpl(rpc, 1, spannerOptions);
     String dbName = "projects/p1/instances/i1/databases/d1";
     String sessionName = dbName + "/sessions/s1";
     DatabaseId db = DatabaseId.of(dbName);
@@ -282,15 +282,18 @@ public class SessionImplTest {
   }
 
   private void mockRead(final PartialResultSet myResultSet) {
-    ServerStreamingCallable<ReadRequest, PartialResultSet> serverStreamingCallable =
-        new ServerStreamingStashCallable(Arrays.<PartialResultSet>asList(myResultSet));
-    final ServerStream<PartialResultSet> mockServerStream = serverStreamingCallable.call(null);
-    Mockito.when(
-        rpc.read(
-            Mockito.<ReadRequest>any(),
-            Mockito.<SpannerRpc.ResultStreamConsumer>any(),
-            Mockito.eq(options)))
-        .thenReturn(mockServerStream);
+    final ArgumentCaptor<SpannerRpc.ResultStreamConsumer> consumer =
+        ArgumentCaptor.forClass(SpannerRpc.ResultStreamConsumer.class);
+    Mockito.when(rpc.read(Mockito.<ReadRequest>any(), consumer.capture(), Mockito.eq(options)))
+        .then(
+            new Answer<SpannerRpc.StreamingCall>() {
+              @Override
+              public SpannerRpc.StreamingCall answer(InvocationOnMock invocation) throws Throwable {
+                consumer.getValue().onPartialResultSet(myResultSet);
+                consumer.getValue().onCompleted();
+                return new NoOpStreamingCall();
+              }
+            });
   }
 
   @Test

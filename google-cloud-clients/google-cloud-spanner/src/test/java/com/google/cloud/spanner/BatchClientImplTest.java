@@ -48,7 +48,6 @@ public final class BatchClientImplTest {
   private static final ByteString TXN_ID = ByteString.copyFromUtf8("my-txn");
   private static final String TIMESTAMP = "2017-11-15T10:54:20Z";
 
-  @Mock private SpannerRpc rawGrpcRpc;
   @Mock private SpannerRpc gapicRpc;
   @Mock private SpannerOptions spannerOptions;
   @Captor private ArgumentCaptor<Map<SpannerRpc.Option, Object>> optionsCaptor;
@@ -60,7 +59,7 @@ public final class BatchClientImplTest {
   public void setUp() {
     initMocks(this);
     DatabaseId db = DatabaseId.of(DB_NAME);
-    SpannerImpl spanner = new SpannerImpl(rawGrpcRpc, gapicRpc, 1, spannerOptions);
+    SpannerImpl spanner = new SpannerImpl(gapicRpc, 1, spannerOptions);
     client = new BatchClientImpl(db, spanner);
   }
 
@@ -72,7 +71,7 @@ public final class BatchClientImplTest {
     com.google.protobuf.Timestamp timestamp = Timestamps.parse(TIMESTAMP);
     Transaction txnMetadata =
         Transaction.newBuilder().setId(TXN_ID).setReadTimestamp(timestamp).build();
-    when(spannerOptions.getGapicSpannerRpc()).thenReturn(gapicRpc);
+    when(spannerOptions.getSpannerRpcV1()).thenReturn(gapicRpc);
     when(gapicRpc.beginTransaction(Mockito.<BeginTransactionRequest>any(), optionsCaptor.capture()))
         .thenReturn(txnMetadata);
 

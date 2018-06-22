@@ -43,7 +43,7 @@ public class SpannerImplTest {
   @Before
   public void setUp() {
     MockitoAnnotations.initMocks(this);
-    impl = new SpannerImpl(rpc, rpc, 1, spannerOptions);
+    impl = new SpannerImpl(rpc, 1, spannerOptions);
   }
 
   @Test

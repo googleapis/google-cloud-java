@@ -139,7 +139,6 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
   }
 
   private final Random random = new Random();
-  private final SpannerRpc rawGrpcRpc;
   private final SpannerRpc gapicRpc;
   private final int defaultPrefetchChunks;
 
@@ -153,12 +152,10 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
   private boolean spannerIsClosed = false;
 
   SpannerImpl(
-      SpannerRpc rawGrpcRpc,
       SpannerRpc gapicRpc,
       int defaultPrefetchChunks,
       SpannerOptions options) {
     super(options);
-    this.rawGrpcRpc = rawGrpcRpc;
     this.gapicRpc = gapicRpc;
     this.defaultPrefetchChunks = defaultPrefetchChunks;
     this.dbAdminClient = new DatabaseAdminClientImpl(options.getProjectId(), gapicRpc);
@@ -169,7 +166,6 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
   SpannerImpl(SpannerOptions options) {
     this(
         options.getSpannerRpcV1(),
-        options.getGapicSpannerRpc(),
         options.getPrefetchChunks(),
         options);
   }
@@ -336,12 +332,10 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     } catch (InterruptedException | ExecutionException e) {
       throw SpannerExceptionFactory.newSpannerException(e);
     }
-    for (ManagedChannel channel : getOptions().getRpcChannels()) {
-      try {
-        channel.shutdown();
-      } catch (RuntimeException e) {
-        logger.log(Level.WARNING, "Failed to close channel", e);
-      }
+    try {
+      gapicRpc.shutdown();
+    } catch (RuntimeException e) {
+      logger.log(Level.WARNING, "Failed to close channels", e);
     }
   }
 
@@ -1067,18 +1061,17 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
           new ResumableStreamIterator(MAX_BUFFERED_CHUNKS, QUERY) {
             @Override
             CloseableIterator<PartialResultSet> startStream(@Nullable ByteString resumeToken) {
-              return new CloseableServerStreamIterator<PartialResultSet>(
+              GrpcStreamIterator stream = new GrpcStreamIterator(prefetchChunks);
+              SpannerRpc.StreamingCall call =
                   rpc.executeQuery(
                       resumeToken == null
                           ? request
                           : request.toBuilder().setResumeToken(resumeToken).build(),
-                      null,
-                      session.options));
-
-              // TODO(hzyi): make resume work
-              // Let resume fail for now. Gapic has its own resume, but in order not 
-              // to introduce too much change at a time, we decide to plumb up
-              // ServerStream first and then figure out how to make resume work
+                      stream.consumer(),
+                      session.options);
+              call.request(prefetchChunks);
+              stream.setCall(call);
+              return stream;
             }
           };
       return new GrpcResultSet(stream, this, queryMode);
@@ -1178,18 +1171,17 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
           new ResumableStreamIterator(MAX_BUFFERED_CHUNKS, READ) {
             @Override
             CloseableIterator<PartialResultSet> startStream(@Nullable ByteString resumeToken) {
-              return new CloseableServerStreamIterator<PartialResultSet>(
+              GrpcStreamIterator stream = new GrpcStreamIterator(prefetchChunks);
+              SpannerRpc.StreamingCall call =
                   rpc.read(
                       resumeToken == null
                           ? request
                           : request.toBuilder().setResumeToken(resumeToken).build(),
-                      null,
-                      session.options));
-              
-              // TODO(hzyi): make resume work
-              // Let resume fail for now. Gapic has its own resume, but in order not 
-              // to introduce too much change at a time, we decide to plumb up
-              // ServerStream first and then figure out how to make resume work
+                      stream.consumer(),
+                      session.options);
+              call.request(prefetchChunks);
+              stream.setCall(call);
+              return stream;
             }
           };
       GrpcResultSet resultSet =
