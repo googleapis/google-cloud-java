@@ -108,12 +108,7 @@ public class ITDatabaseAdminTest {
     db = dbAdminClient.getDatabase(testHelper.getInstanceId().getInstance(), dbId);
   }
 
-  @Ignore("More work needs to be done")
   @Test
-  // TODO(hzyi)
-  // Changing the surface to OperationFuture breaks updateDatabaseDdl in the case
-  // that there is already a longrunning operation running. Disabling this test for 
-  // this PR and I will fix this in the next PR. 
   public void updateDdlRetry() throws Exception {
     String dbId = testHelper.getUniqueDatabaseId();
     String instanceId = testHelper.getInstanceId().getInstance();
@@ -127,6 +122,8 @@ public class ITDatabaseAdminTest {
         dbAdminClient.updateDatabaseDdl(instanceId, dbId, ImmutableList.of(statement2), "myop");
     OperationFuture<Void, UpdateDatabaseDdlMetadata> op2 =
         dbAdminClient.updateDatabaseDdl(instanceId, dbId, ImmutableList.of(statement2), "myop");
+    op1.get();
+    op2.get();
     assertThat(op1.getMetadata().get()).isEqualTo(op2.getMetadata().get());
   }
 
