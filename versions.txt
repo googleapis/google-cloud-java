@@ -125,7 +125,7 @@ google-cloud-pubsub:1.35.0:1.35.1-SNAPSHOT
 google-cloud-redis:0.53.0-alpha:0.53.1-alpha-SNAPSHOT
 google-cloud-resourcemanager:0.53.0-alpha:0.53.1-alpha-SNAPSHOT
 google-cloud-spanner:0.53.0-beta:0.53.1-beta-SNAPSHOT
-google-cloud-speech:0.53.0-alpha:0.53.1-alpha-SNAPSHOT
+google-cloud-speech:0.53.0-beta:0.53.1-beta-SNAPSHOT
 google-cloud-storage:1.35.0:1.35.1-SNAPSHOT
 google-cloud-texttospeech:0.53.0-beta:0.53.1-beta-SNAPSHOT
 google-cloud-testing:0.53.0-alpha:0.53.1-alpha-SNAPSHOT
