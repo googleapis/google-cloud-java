@@ -657,8 +657,6 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
 
     final CloudStorageRetryHandler retryHandler = new CloudStorageRetryHandler(CloudStorageUtil.getMaxChannelReopensFromPath(path));
     // Loop will terminate via an exception if all retries are exhausted
-    BlobGetOption[] options;
-
     while (true) {
       try {
         CloudStoragePath cloudPath = CloudStorageUtil.checkPath(path);

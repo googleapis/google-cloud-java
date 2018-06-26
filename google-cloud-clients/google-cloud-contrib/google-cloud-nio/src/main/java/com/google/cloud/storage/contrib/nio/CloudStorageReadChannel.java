@@ -97,7 +97,7 @@ final class CloudStorageReadChannel implements SeekableByteChannel {
     if (!userProject.isEmpty()) {
       options.add(BlobSourceOption.userProject(userProject));
     }
-    this.blobSourceOptions = (BlobSourceOption[]) options.toArray(new BlobSourceOption[0]);
+    this.blobSourceOptions = (BlobSourceOption[]) options.toArray(new BlobSourceOption[options.size()]);
 
     // innerOpen checks that it sees the same generation as fetchSize did,
     // which ensure the file hasn't changed.
