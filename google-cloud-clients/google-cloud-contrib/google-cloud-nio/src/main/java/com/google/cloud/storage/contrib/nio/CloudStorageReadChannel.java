@@ -20,9 +20,15 @@ import com.google.cloud.ReadChannel;
 import com.google.cloud.storage.BlobId;
 import com.google.cloud.storage.BlobInfo;
 import com.google.cloud.storage.Storage;
+import com.google.cloud.storage.Storage.BlobSourceOption;
 import com.google.cloud.storage.StorageException;
 import com.google.common.annotations.VisibleForTesting;
 
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.Lists;
+
+import java.util.ArrayList;
+import java.util.List;
 import javax.annotation.CheckReturnValue;
 import javax.annotation.concurrent.ThreadSafe;
 import java.io.IOException;
@@ -54,6 +60,8 @@ final class CloudStorageReadChannel implements SeekableByteChannel {
   final int maxChannelReopens;
   // max # of times we may retry a GCS operation
   final int maxRetries;
+  // open options, we keep them around for reopens.
+  final BlobSourceOption[] blobSourceOptions;
   private ReadChannel channel;
   private long position;
   private long size;
@@ -62,33 +70,49 @@ final class CloudStorageReadChannel implements SeekableByteChannel {
   private Long generation;
 
   /**
-   * @param maxChannelReopens max number of times to try re-opening the channel if it closes on us unexpectedly.
+   * @param maxChannelReopens max number of times to try re-opening the channel if it closes on us
+   *    unexpectedly.
+   * @param blobSourceOptions BlobSourceOption.userProject if you want to pay the charges (required
+   *    for requester-pays buckets). Note:
+   *      Buckets that have Requester Pays disabled still accept requests that include a billing
+   *      project, and charges are applied to the billing project supplied in the request.
+   *      Consider any billing implications prior to including a billing project in all of your
+   *      requests.
+   *      Source: https://cloud.google.com/storage/docs/requester-pays
+   * @param userProject: the project you want billed (set this for requester-pays buckets). Leave
+   *      empty otherwise.
    */
   @CheckReturnValue
   @SuppressWarnings("resource")
-  static CloudStorageReadChannel create(Storage gcsStorage, BlobId file, long position, int maxChannelReopens)
+  static CloudStorageReadChannel create(Storage gcsStorage, BlobId file, long position, int maxChannelReopens, String userProject, BlobSourceOption... blobSourceOptions)
       throws IOException {
-    return new CloudStorageReadChannel(gcsStorage, file, position, maxChannelReopens);
+    return new CloudStorageReadChannel(gcsStorage, file, position, maxChannelReopens, userProject, blobSourceOptions);
   }
 
-  private CloudStorageReadChannel(Storage gcsStorage, BlobId file, long position, int maxChannelReopens) throws IOException {
+  private CloudStorageReadChannel(Storage gcsStorage, BlobId file, long position, int maxChannelReopens, String userProject, BlobSourceOption... blobSourceOptions) throws IOException {
     this.gcsStorage = gcsStorage;
     this.file = file;
     this.position = position;
     this.maxChannelReopens = maxChannelReopens;
     this.maxRetries = Math.max(3, maxChannelReopens);
-    fetchSize(gcsStorage, file);
+    // get the generation, enshrine that in our options
+    fetchSize(gcsStorage, userProject, file);
+    List options = Lists.newArrayList(blobSourceOptions);
+    if (null != generation) {
+      options.add(Storage.BlobSourceOption.generationMatch(generation));
+    }
+    if (!userProject.isEmpty()) {
+      options.add(BlobSourceOption.userProject(userProject));
+    }
+    this.blobSourceOptions = (BlobSourceOption[]) options.toArray(new BlobSourceOption[0]);
+
     // innerOpen checks that it sees the same generation as fetchSize did,
     // which ensure the file hasn't changed.
     innerOpen();
   }
 
   private void innerOpen() throws IOException {
-    if (null != generation) {
-      this.channel = gcsStorage.reader(file, Storage.BlobSourceOption.generationMatch(generation));
-    } else {
-      this.channel = gcsStorage.reader(file);
-    }
+    this.channel = gcsStorage.reader(file, blobSourceOptions);
     if (position > 0) {
       channel.seek(position);
     }
@@ -183,12 +207,17 @@ final class CloudStorageReadChannel implements SeekableByteChannel {
     }
   }
 
-  private long fetchSize(Storage gcsStorage, BlobId file) throws IOException {
+  private long fetchSize(Storage gcsStorage, String userProject, BlobId file) throws IOException {
     final CloudStorageRetryHandler retryHandler = new CloudStorageRetryHandler(maxRetries, maxChannelReopens);
 
     while (true) {
       try {
-        BlobInfo blobInfo = gcsStorage.get(file, Storage.BlobGetOption.fields(Storage.BlobField.GENERATION, Storage.BlobField.SIZE));
+        BlobInfo blobInfo;
+        if (userProject.isEmpty()) {
+          blobInfo = gcsStorage.get(file, Storage.BlobGetOption.fields(Storage.BlobField.GENERATION, Storage.BlobField.SIZE));
+        } else {
+          blobInfo = gcsStorage.get(file, Storage.BlobGetOption.fields(Storage.BlobField.GENERATION, Storage.BlobField.SIZE), Storage.BlobGetOption.userProject(userProject));
+        }
         if ( blobInfo == null ) {
           throw new NoSuchFileException(String.format("gs://%s/%s", file.getBucket(), file.getName()));
         }

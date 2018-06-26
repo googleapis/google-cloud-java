@@ -33,6 +33,7 @@ import java.nio.file.PathMatcher;
 import java.nio.file.WatchService;
 import java.nio.file.attribute.FileTime;
 import java.nio.file.attribute.UserPrincipalLookupService;
+import java.util.HashMap;
 import java.util.Objects;
 import java.util.Set;
 
@@ -112,8 +113,9 @@ public final class CloudStorageFileSystem extends FileSystem {
   public static CloudStorageFileSystem forBucket(String bucket, CloudStorageConfiguration config) {
     checkArgument(
         !bucket.startsWith(URI_SCHEME + ":"), "Bucket name must not have schema: %s", bucket);
+    checkNotNull(config);
     return new CloudStorageFileSystem(
-        new CloudStorageFileSystemProvider(), bucket, checkNotNull(config));
+        new CloudStorageFileSystemProvider(config.userProject()), bucket, config);
   }
 
   /**
@@ -136,15 +138,29 @@ public final class CloudStorageFileSystem extends FileSystem {
       @Nullable StorageOptions storageOptions) {
     checkArgument(!bucket.startsWith(URI_SCHEME + ":"),
         "Bucket name must not have schema: %s", bucket);
-    return new CloudStorageFileSystem(new CloudStorageFileSystemProvider(storageOptions),
+    return new CloudStorageFileSystem(new CloudStorageFileSystemProvider(config.userProject(), storageOptions),
         bucket, checkNotNull(config));
   }
 
   CloudStorageFileSystem(
       CloudStorageFileSystemProvider provider, String bucket, CloudStorageConfiguration config) {
     checkArgument(!bucket.isEmpty(), "bucket");
-    this.provider = provider;
     this.bucket = bucket;
+    if (config.autoDetectRequesterPays()) {
+      if (config.userProject().isEmpty()) {
+        throw new IllegalArgumentException("If autoDetectRequesterPays is set, then userProject must be set too.");
+      }
+      // detect whether we want to pay for these accesses or not.
+      if (!provider.isRequesterPays(bucket)) {
+        // update config (just to ease debugging, we're not actually using config.userProject later.
+        HashMap<String, String> disableUserProject = new HashMap<>();
+        disableUserProject.put("userProject", "");
+        config = CloudStorageConfiguration.fromMap(config, disableUserProject);
+        // update the provider (this is the most important bit)
+        provider = provider.disableRequesterPays();
+      }
+    }
+    this.provider = provider;
     this.config = config;
   }
 
