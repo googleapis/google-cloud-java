@@ -38,7 +38,6 @@ import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.grpc.GrpcTransportOptions;
-import com.google.cloud.spanner.ErrorCode;
 import com.google.cloud.spanner.SpannerException;
 import com.google.cloud.spanner.SpannerExceptionFactory;
 import com.google.cloud.spanner.SpannerOptions;
@@ -109,8 +108,10 @@ public class GapicSpannerRpc implements SpannerRpc {
 
   private static final PathTemplate PROJECT_NAME_TEMPLATE =
       PathTemplate.create("projects/{project}");
+  private static final PathTemplate OPERATION_NAME_TEMPLATE =
+      PathTemplate.create("{database=projects/*/instances/*/databases/*}/operations/{operation}");
   private static final int MAX_MESSAGE_SIZE = 100 * 1024 * 1024;
-  
+
   private final SpannerStub spannerStub;
   private final InstanceAdminStub instanceAdminStub;
   private final DatabaseAdminStub databaseAdminStub;
@@ -350,11 +351,12 @@ public class GapicSpannerRpc implements SpannerRpc {
     try {
       operationFuture.getInitialFuture().get();
     } catch (InterruptedException e) {
-      // The error would be handled in SpannerImpl, swallow it here
+      throw SpannerExceptionFactory.newSpannerException(e);
     } catch (ExecutionException e) {
       Throwable t = e.getCause();
       if (t instanceof AlreadyExistsException) {
-        String operationName = String.format("%s/operations/%s", databaseName, updateId);
+        String operationName =
+            OPERATION_NAME_TEMPLATE.instantiate("database", databaseName, "operation", updateId);
         return callable.resumeFutureCall(operationName, context);
       }
     }
