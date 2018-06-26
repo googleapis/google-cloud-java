@@ -89,7 +89,7 @@ public final class GCRules {
    *
    * @return DefaultRule
    */
-  public DefaultRule defaulRule() {
+  public DefaultRule defaultRule() {
     return new DefaultRule();
   }
 

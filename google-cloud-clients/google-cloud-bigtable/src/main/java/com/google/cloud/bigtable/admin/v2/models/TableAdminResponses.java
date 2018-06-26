@@ -214,7 +214,7 @@ public class TableAdminResponses {
   /** Wrapper for {@link ColumnFamily} protocol buffer object */
   public static final class ColumnFamily {
     private final String id;
-    private GCRule gCRule = GCRULES.defaulRule();
+    private GCRule gCRule = GCRULES.defaultRule();
 
     private ColumnFamily(String id, com.google.bigtable.admin.v2.ColumnFamily cf) {
       Preconditions.checkNotNull(id);
@@ -282,7 +282,7 @@ public class TableAdminResponses {
           return union;
 
         default:
-          return GCRULES.defaulRule();
+          return GCRULES.defaultRule();
       }
     }
   }

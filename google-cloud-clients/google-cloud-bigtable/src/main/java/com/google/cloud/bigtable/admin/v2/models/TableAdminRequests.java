@@ -156,7 +156,7 @@ public final class TableAdminRequests {
      * @return
      */
     public ModifyFamilies addFamily(String familyId) {
-      return addFamily(familyId, GCRules.GCRULES.defaulRule());
+      return addFamily(familyId, GCRules.GCRULES.defaultRule());
     }
 
     /**

@@ -88,7 +88,7 @@ public class TableAdminResponsesTest {
     assertNotNull("cf1", tableResponse.getColumnFamiliesMap().get("cf1").getId());
     assertFalse(tableResponse.getColumnFamiliesMap().get("cf1").hasGcRule());
 
-    assertThat(GCRULES.defaulRule().toProto())
+    assertThat(GCRULES.defaultRule().toProto())
         .isEqualTo(tableResponse.getColumnFamiliesMap().get("cf1").getGCRule().toProto());
     assertThat(GCRULES.maxVersions(1).toProto())
         .isEqualTo(tableResponse.getColumnFamiliesMap().get("cf2").getGCRule().toProto());
