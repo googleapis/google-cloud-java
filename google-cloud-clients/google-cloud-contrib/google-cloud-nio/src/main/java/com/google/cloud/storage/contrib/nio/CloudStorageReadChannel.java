@@ -24,10 +24,8 @@ import com.google.cloud.storage.Storage.BlobSourceOption;
 import com.google.cloud.storage.StorageException;
 import com.google.common.annotations.VisibleForTesting;
 
-import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 
-import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.CheckReturnValue;
 import javax.annotation.concurrent.ThreadSafe;
@@ -37,11 +35,6 @@ import java.nio.channels.ClosedChannelException;
 import java.nio.channels.NonWritableChannelException;
 import java.nio.channels.SeekableByteChannel;
 import java.nio.file.NoSuchFileException;
-
-import javax.net.ssl.SSLException;
-import java.io.EOFException;
-import java.net.SocketException;
-import java.net.SocketTimeoutException;
 
 import static com.google.common.base.Preconditions.checkArgument;
 

@@ -21,7 +21,6 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 
 import com.google.api.client.http.HttpResponseException;
 import com.google.cloud.storage.Storage.BlobTargetOption;
-import com.google.cloud.storage.Storage.BucketGetOption;
 import com.google.cloud.storage.StorageException;
 import com.google.cloud.storage.contrib.nio.CloudStorageConfiguration;
 import com.google.cloud.storage.contrib.nio.CloudStorageFileSystem;
@@ -48,7 +47,6 @@ import java.io.PrintWriter;
 import java.nio.ByteBuffer;
 import java.nio.channels.ReadableByteChannel;
 import java.nio.channels.SeekableByteChannel;
-import java.nio.file.CopyOption;
 import java.nio.file.FileSystem;
 import java.nio.file.FileVisitResult;
 import java.nio.file.Files;
@@ -73,7 +71,8 @@ import java.util.logging.Logger;
  * <p>This test actually talks to Google Cloud Storage (you need an account) and tests both reading
  * and writing. You *must* set the {@code GOOGLE_APPLICATION_CREDENTIALS} environment variable for
  * this test to work. It must contain the name of a local file that contains your Service Account
- * JSON Key.
+ * JSON Key. You also *must* set the PROJECT environment variable to the name of the project you
+ * want to use.
  *
  * <p>See <a href="https://cloud.google.com/storage/docs/authentication?hl=en#service_accounts">
  * Service Accounts</a> for instructions on how to get the Service Account JSON Key.
@@ -101,7 +100,7 @@ public class ITGcsNio {
   private static final String BIG_FILE = "tmp-test-big-file.txt"; // it's big, relatively speaking.
   private static final int BIG_SIZE = 2 * 1024 * 1024 - 50; // arbitrary size that's not too round.
   private static final String PREFIX = "tmp-test-file";
-  private static final String PROJECT = "jps-testing-project";
+  private static final String PROJECT = System.getenv("PROJECT");
   private static Storage storage;
   private static StorageOptions storageOptions;
 
@@ -111,6 +110,7 @@ public class ITGcsNio {
   public static void beforeClass() throws IOException {
     // loads the credentials from local disk as par README
     RemoteStorageHelper gcsHelper = RemoteStorageHelper.create();
+    System.out.println("Using project: " + PROJECT);
     storageOptions = gcsHelper.getOptions();
     storage = storageOptions.getService();
     // create and populate test bucket
@@ -228,7 +228,9 @@ public class ITGcsNio {
     for (int s=0; s<2; s++) {
       for (int d=0; d<2; d++) {
         // normal to normal is out of scope of RP testing.
-        if (s==0 && d==0) continue;
+        if (s==0 && d==0) {
+          continue;
+        }
         String sdesc = (s==0?"normal bucket":"requester-pays bucket");
         String ddesc = (d==0?"normal bucket":"requester-pays bucket");
         try {

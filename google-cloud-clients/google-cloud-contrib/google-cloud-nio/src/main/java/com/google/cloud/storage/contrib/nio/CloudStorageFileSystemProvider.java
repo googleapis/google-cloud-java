@@ -336,7 +336,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
         0,
         maxChannelReopens,
         userProject,
-        blobSourceOptions.toArray(new BlobSourceOption[0]));
+        blobSourceOptions.toArray(new BlobSourceOption[blobSourceOptions.size()]));
   }
 
   private SeekableByteChannel newWriteChannel(Path path, Set<? extends OpenOption> options)
