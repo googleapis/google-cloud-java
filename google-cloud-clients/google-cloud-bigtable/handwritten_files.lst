@@ -74,3 +74,11 @@ src/main/java/com/google/cloud/bigtable/data/v2/internal/ByteStringComparator.ja
 src/main/java/com/google/cloud/bigtable/data/v2/internal/DummyBatchingDescriptor.java
 src/main/java/com/google/cloud/bigtable/data/v2/internal/RequestContext.java
 src/main/java/com/google/cloud/bigtable/data/v2/internal/RegexUtil.java
+src/main/java/com/google/cloud/bigtable/admin/v2/TableAdminClient.java
+src/main/java/com/google/cloud/bigtable/admin/v2/models/GCRules.java
+src/main/java/com/google/cloud/bigtable/admin/v2/models/TableAdminRequests.java
+src/main/java/com/google/cloud/bigtable/admin/v2/models/TableAdminResponses.java
+src/test/java/com/google/cloud/bigtable/admin/v2/TableAdminClientTest.java
+src/test/java/com/google/cloud/bigtable/admin/v2/it/TableAdminClientIT.java
+src/test/java/com/google/cloud/bigtable/admin/v2/models/TableAdminRequestsTest.java
+src/test/java/com/google/cloud/bigtable/admin/v2/models/TableAdminResponsesTest.java
