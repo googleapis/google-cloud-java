@@ -37,4 +37,29 @@ public interface RedactImageResponseOrBuilder extends
    */
   com.google.protobuf.ByteString
       getExtractedTextBytes();
+
+  /**
+   * <pre>
+   * The findings. Populated when include_findings in the request is true.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.InspectResult inspect_result = 3;</code>
+   */
+  boolean hasInspectResult();
+  /**
+   * <pre>
+   * The findings. Populated when include_findings in the request is true.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.InspectResult inspect_result = 3;</code>
+   */
+  com.google.privacy.dlp.v2.InspectResult getInspectResult();
+  /**
+   * <pre>
+   * The findings. Populated when include_findings in the request is true.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.InspectResult inspect_result = 3;</code>
+   */
+  com.google.privacy.dlp.v2.InspectResultOrBuilder getInspectResultOrBuilder();
 }

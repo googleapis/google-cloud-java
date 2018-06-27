@@ -449,9 +449,9 @@ private static final long serialVersionUID = 0L;
    * entries.  The v2 format is used by default and cannot be changed.
    * </pre>
    *
-   * <code>.google.logging.v2.LogSink.VersionFormat output_version_format = 6;</code>
+   * <code>.google.logging.v2.LogSink.VersionFormat output_version_format = 6 [deprecated = true];</code>
    */
-  public int getOutputVersionFormatValue() {
+  @java.lang.Deprecated public int getOutputVersionFormatValue() {
     return outputVersionFormat_;
   }
   /**
@@ -460,9 +460,9 @@ private static final long serialVersionUID = 0L;
    * entries.  The v2 format is used by default and cannot be changed.
    * </pre>
    *
-   * <code>.google.logging.v2.LogSink.VersionFormat output_version_format = 6;</code>
+   * <code>.google.logging.v2.LogSink.VersionFormat output_version_format = 6 [deprecated = true];</code>
    */
-  public com.google.logging.v2.LogSink.VersionFormat getOutputVersionFormat() {
+  @java.lang.Deprecated public com.google.logging.v2.LogSink.VersionFormat getOutputVersionFormat() {
     com.google.logging.v2.LogSink.VersionFormat result = com.google.logging.v2.LogSink.VersionFormat.valueOf(outputVersionFormat_);
     return result == null ? com.google.logging.v2.LogSink.VersionFormat.UNRECOGNIZED : result;
   }
@@ -564,9 +564,9 @@ private static final long serialVersionUID = 0L;
    * Deprecated. This field is ignored when creating or updating sinks.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp start_time = 10;</code>
+   * <code>.google.protobuf.Timestamp start_time = 10 [deprecated = true];</code>
    */
-  public boolean hasStartTime() {
+  @java.lang.Deprecated public boolean hasStartTime() {
     return startTime_ != null;
   }
   /**
@@ -574,9 +574,9 @@ private static final long serialVersionUID = 0L;
    * Deprecated. This field is ignored when creating or updating sinks.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp start_time = 10;</code>
+   * <code>.google.protobuf.Timestamp start_time = 10 [deprecated = true];</code>
    */
-  public com.google.protobuf.Timestamp getStartTime() {
+  @java.lang.Deprecated public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
   /**
@@ -584,9 +584,9 @@ private static final long serialVersionUID = 0L;
    * Deprecated. This field is ignored when creating or updating sinks.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp start_time = 10;</code>
+   * <code>.google.protobuf.Timestamp start_time = 10 [deprecated = true];</code>
    */
-  public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
+  @java.lang.Deprecated public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
     return getStartTime();
   }
 
@@ -597,9 +597,9 @@ private static final long serialVersionUID = 0L;
    * Deprecated. This field is ignored when creating or updating sinks.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp end_time = 11;</code>
+   * <code>.google.protobuf.Timestamp end_time = 11 [deprecated = true];</code>
    */
-  public boolean hasEndTime() {
+  @java.lang.Deprecated public boolean hasEndTime() {
     return endTime_ != null;
   }
   /**
@@ -607,9 +607,9 @@ private static final long serialVersionUID = 0L;
    * Deprecated. This field is ignored when creating or updating sinks.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp end_time = 11;</code>
+   * <code>.google.protobuf.Timestamp end_time = 11 [deprecated = true];</code>
    */
-  public com.google.protobuf.Timestamp getEndTime() {
+  @java.lang.Deprecated public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
   /**
@@ -617,9 +617,9 @@ private static final long serialVersionUID = 0L;
    * Deprecated. This field is ignored when creating or updating sinks.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp end_time = 11;</code>
+   * <code>.google.protobuf.Timestamp end_time = 11 [deprecated = true];</code>
    */
-  public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
+  @java.lang.Deprecated public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
     return getEndTime();
   }
 
@@ -1408,9 +1408,9 @@ private static final long serialVersionUID = 0L;
      * entries.  The v2 format is used by default and cannot be changed.
      * </pre>
      *
-     * <code>.google.logging.v2.LogSink.VersionFormat output_version_format = 6;</code>
+     * <code>.google.logging.v2.LogSink.VersionFormat output_version_format = 6 [deprecated = true];</code>
      */
-    public int getOutputVersionFormatValue() {
+    @java.lang.Deprecated public int getOutputVersionFormatValue() {
       return outputVersionFormat_;
     }
     /**
@@ -1419,9 +1419,9 @@ private static final long serialVersionUID = 0L;
      * entries.  The v2 format is used by default and cannot be changed.
      * </pre>
      *
-     * <code>.google.logging.v2.LogSink.VersionFormat output_version_format = 6;</code>
+     * <code>.google.logging.v2.LogSink.VersionFormat output_version_format = 6 [deprecated = true];</code>
      */
-    public Builder setOutputVersionFormatValue(int value) {
+    @java.lang.Deprecated public Builder setOutputVersionFormatValue(int value) {
       outputVersionFormat_ = value;
       onChanged();
       return this;
@@ -1432,9 +1432,9 @@ private static final long serialVersionUID = 0L;
      * entries.  The v2 format is used by default and cannot be changed.
      * </pre>
      *
-     * <code>.google.logging.v2.LogSink.VersionFormat output_version_format = 6;</code>
+     * <code>.google.logging.v2.LogSink.VersionFormat output_version_format = 6 [deprecated = true];</code>
      */
-    public com.google.logging.v2.LogSink.VersionFormat getOutputVersionFormat() {
+    @java.lang.Deprecated public com.google.logging.v2.LogSink.VersionFormat getOutputVersionFormat() {
       com.google.logging.v2.LogSink.VersionFormat result = com.google.logging.v2.LogSink.VersionFormat.valueOf(outputVersionFormat_);
       return result == null ? com.google.logging.v2.LogSink.VersionFormat.UNRECOGNIZED : result;
     }
@@ -1444,9 +1444,9 @@ private static final long serialVersionUID = 0L;
      * entries.  The v2 format is used by default and cannot be changed.
      * </pre>
      *
-     * <code>.google.logging.v2.LogSink.VersionFormat output_version_format = 6;</code>
+     * <code>.google.logging.v2.LogSink.VersionFormat output_version_format = 6 [deprecated = true];</code>
      */
-    public Builder setOutputVersionFormat(com.google.logging.v2.LogSink.VersionFormat value) {
+    @java.lang.Deprecated public Builder setOutputVersionFormat(com.google.logging.v2.LogSink.VersionFormat value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -1461,9 +1461,9 @@ private static final long serialVersionUID = 0L;
      * entries.  The v2 format is used by default and cannot be changed.
      * </pre>
      *
-     * <code>.google.logging.v2.LogSink.VersionFormat output_version_format = 6;</code>
+     * <code>.google.logging.v2.LogSink.VersionFormat output_version_format = 6 [deprecated = true];</code>
      */
-    public Builder clearOutputVersionFormat() {
+    @java.lang.Deprecated public Builder clearOutputVersionFormat() {
       
       outputVersionFormat_ = 0;
       onChanged();
@@ -1698,9 +1698,9 @@ private static final long serialVersionUID = 0L;
      * Deprecated. This field is ignored when creating or updating sinks.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp start_time = 10;</code>
+     * <code>.google.protobuf.Timestamp start_time = 10 [deprecated = true];</code>
      */
-    public boolean hasStartTime() {
+    @java.lang.Deprecated public boolean hasStartTime() {
       return startTimeBuilder_ != null || startTime_ != null;
     }
     /**
@@ -1708,9 +1708,9 @@ private static final long serialVersionUID = 0L;
      * Deprecated. This field is ignored when creating or updating sinks.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp start_time = 10;</code>
+     * <code>.google.protobuf.Timestamp start_time = 10 [deprecated = true];</code>
      */
-    public com.google.protobuf.Timestamp getStartTime() {
+    @java.lang.Deprecated public com.google.protobuf.Timestamp getStartTime() {
       if (startTimeBuilder_ == null) {
         return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
       } else {
@@ -1722,9 +1722,9 @@ private static final long serialVersionUID = 0L;
      * Deprecated. This field is ignored when creating or updating sinks.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp start_time = 10;</code>
+     * <code>.google.protobuf.Timestamp start_time = 10 [deprecated = true];</code>
      */
-    public Builder setStartTime(com.google.protobuf.Timestamp value) {
+    @java.lang.Deprecated public Builder setStartTime(com.google.protobuf.Timestamp value) {
       if (startTimeBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1742,9 +1742,9 @@ private static final long serialVersionUID = 0L;
      * Deprecated. This field is ignored when creating or updating sinks.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp start_time = 10;</code>
+     * <code>.google.protobuf.Timestamp start_time = 10 [deprecated = true];</code>
      */
-    public Builder setStartTime(
+    @java.lang.Deprecated public Builder setStartTime(
         com.google.protobuf.Timestamp.Builder builderForValue) {
       if (startTimeBuilder_ == null) {
         startTime_ = builderForValue.build();
@@ -1760,9 +1760,9 @@ private static final long serialVersionUID = 0L;
      * Deprecated. This field is ignored when creating or updating sinks.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp start_time = 10;</code>
+     * <code>.google.protobuf.Timestamp start_time = 10 [deprecated = true];</code>
      */
-    public Builder mergeStartTime(com.google.protobuf.Timestamp value) {
+    @java.lang.Deprecated public Builder mergeStartTime(com.google.protobuf.Timestamp value) {
       if (startTimeBuilder_ == null) {
         if (startTime_ != null) {
           startTime_ =
@@ -1782,9 +1782,9 @@ private static final long serialVersionUID = 0L;
      * Deprecated. This field is ignored when creating or updating sinks.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp start_time = 10;</code>
+     * <code>.google.protobuf.Timestamp start_time = 10 [deprecated = true];</code>
      */
-    public Builder clearStartTime() {
+    @java.lang.Deprecated public Builder clearStartTime() {
       if (startTimeBuilder_ == null) {
         startTime_ = null;
         onChanged();
@@ -1800,9 +1800,9 @@ private static final long serialVersionUID = 0L;
      * Deprecated. This field is ignored when creating or updating sinks.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp start_time = 10;</code>
+     * <code>.google.protobuf.Timestamp start_time = 10 [deprecated = true];</code>
      */
-    public com.google.protobuf.Timestamp.Builder getStartTimeBuilder() {
+    @java.lang.Deprecated public com.google.protobuf.Timestamp.Builder getStartTimeBuilder() {
       
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
@@ -1812,9 +1812,9 @@ private static final long serialVersionUID = 0L;
      * Deprecated. This field is ignored when creating or updating sinks.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp start_time = 10;</code>
+     * <code>.google.protobuf.Timestamp start_time = 10 [deprecated = true];</code>
      */
-    public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
+    @java.lang.Deprecated public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
       if (startTimeBuilder_ != null) {
         return startTimeBuilder_.getMessageOrBuilder();
       } else {
@@ -1827,7 +1827,7 @@ private static final long serialVersionUID = 0L;
      * Deprecated. This field is ignored when creating or updating sinks.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp start_time = 10;</code>
+     * <code>.google.protobuf.Timestamp start_time = 10 [deprecated = true];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
@@ -1851,9 +1851,9 @@ private static final long serialVersionUID = 0L;
      * Deprecated. This field is ignored when creating or updating sinks.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp end_time = 11;</code>
+     * <code>.google.protobuf.Timestamp end_time = 11 [deprecated = true];</code>
      */
-    public boolean hasEndTime() {
+    @java.lang.Deprecated public boolean hasEndTime() {
       return endTimeBuilder_ != null || endTime_ != null;
     }
     /**
@@ -1861,9 +1861,9 @@ private static final long serialVersionUID = 0L;
      * Deprecated. This field is ignored when creating or updating sinks.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp end_time = 11;</code>
+     * <code>.google.protobuf.Timestamp end_time = 11 [deprecated = true];</code>
      */
-    public com.google.protobuf.Timestamp getEndTime() {
+    @java.lang.Deprecated public com.google.protobuf.Timestamp getEndTime() {
       if (endTimeBuilder_ == null) {
         return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
       } else {
@@ -1875,9 +1875,9 @@ private static final long serialVersionUID = 0L;
      * Deprecated. This field is ignored when creating or updating sinks.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp end_time = 11;</code>
+     * <code>.google.protobuf.Timestamp end_time = 11 [deprecated = true];</code>
      */
-    public Builder setEndTime(com.google.protobuf.Timestamp value) {
+    @java.lang.Deprecated public Builder setEndTime(com.google.protobuf.Timestamp value) {
       if (endTimeBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1895,9 +1895,9 @@ private static final long serialVersionUID = 0L;
      * Deprecated. This field is ignored when creating or updating sinks.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp end_time = 11;</code>
+     * <code>.google.protobuf.Timestamp end_time = 11 [deprecated = true];</code>
      */
-    public Builder setEndTime(
+    @java.lang.Deprecated public Builder setEndTime(
         com.google.protobuf.Timestamp.Builder builderForValue) {
       if (endTimeBuilder_ == null) {
         endTime_ = builderForValue.build();
@@ -1913,9 +1913,9 @@ private static final long serialVersionUID = 0L;
      * Deprecated. This field is ignored when creating or updating sinks.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp end_time = 11;</code>
+     * <code>.google.protobuf.Timestamp end_time = 11 [deprecated = true];</code>
      */
-    public Builder mergeEndTime(com.google.protobuf.Timestamp value) {
+    @java.lang.Deprecated public Builder mergeEndTime(com.google.protobuf.Timestamp value) {
       if (endTimeBuilder_ == null) {
         if (endTime_ != null) {
           endTime_ =
@@ -1935,9 +1935,9 @@ private static final long serialVersionUID = 0L;
      * Deprecated. This field is ignored when creating or updating sinks.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp end_time = 11;</code>
+     * <code>.google.protobuf.Timestamp end_time = 11 [deprecated = true];</code>
      */
-    public Builder clearEndTime() {
+    @java.lang.Deprecated public Builder clearEndTime() {
       if (endTimeBuilder_ == null) {
         endTime_ = null;
         onChanged();
@@ -1953,9 +1953,9 @@ private static final long serialVersionUID = 0L;
      * Deprecated. This field is ignored when creating or updating sinks.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp end_time = 11;</code>
+     * <code>.google.protobuf.Timestamp end_time = 11 [deprecated = true];</code>
      */
-    public com.google.protobuf.Timestamp.Builder getEndTimeBuilder() {
+    @java.lang.Deprecated public com.google.protobuf.Timestamp.Builder getEndTimeBuilder() {
       
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
@@ -1965,9 +1965,9 @@ private static final long serialVersionUID = 0L;
      * Deprecated. This field is ignored when creating or updating sinks.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp end_time = 11;</code>
+     * <code>.google.protobuf.Timestamp end_time = 11 [deprecated = true];</code>
      */
-    public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
+    @java.lang.Deprecated public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
       if (endTimeBuilder_ != null) {
         return endTimeBuilder_.getMessageOrBuilder();
       } else {
@@ -1980,7 +1980,7 @@ private static final long serialVersionUID = 0L;
      * Deprecated. This field is ignored when creating or updating sinks.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp end_time = 11;</code>
+     * <code>.google.protobuf.Timestamp end_time = 11 [deprecated = true];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 

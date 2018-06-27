@@ -782,9 +782,9 @@ private static final long serialVersionUID = 0L;
    * The v2 format is used by default and cannot be changed.
    * </pre>
    *
-   * <code>.google.logging.v2.LogMetric.ApiVersion version = 4;</code>
+   * <code>.google.logging.v2.LogMetric.ApiVersion version = 4 [deprecated = true];</code>
    */
-  public int getVersionValue() {
+  @java.lang.Deprecated public int getVersionValue() {
     return version_;
   }
   /**
@@ -793,9 +793,9 @@ private static final long serialVersionUID = 0L;
    * The v2 format is used by default and cannot be changed.
    * </pre>
    *
-   * <code>.google.logging.v2.LogMetric.ApiVersion version = 4;</code>
+   * <code>.google.logging.v2.LogMetric.ApiVersion version = 4 [deprecated = true];</code>
    */
-  public com.google.logging.v2.LogMetric.ApiVersion getVersion() {
+  @java.lang.Deprecated public com.google.logging.v2.LogMetric.ApiVersion getVersion() {
     com.google.logging.v2.LogMetric.ApiVersion result = com.google.logging.v2.LogMetric.ApiVersion.valueOf(version_);
     return result == null ? com.google.logging.v2.LogMetric.ApiVersion.UNRECOGNIZED : result;
   }
@@ -2491,9 +2491,9 @@ private static final long serialVersionUID = 0L;
      * The v2 format is used by default and cannot be changed.
      * </pre>
      *
-     * <code>.google.logging.v2.LogMetric.ApiVersion version = 4;</code>
+     * <code>.google.logging.v2.LogMetric.ApiVersion version = 4 [deprecated = true];</code>
      */
-    public int getVersionValue() {
+    @java.lang.Deprecated public int getVersionValue() {
       return version_;
     }
     /**
@@ -2502,9 +2502,9 @@ private static final long serialVersionUID = 0L;
      * The v2 format is used by default and cannot be changed.
      * </pre>
      *
-     * <code>.google.logging.v2.LogMetric.ApiVersion version = 4;</code>
+     * <code>.google.logging.v2.LogMetric.ApiVersion version = 4 [deprecated = true];</code>
      */
-    public Builder setVersionValue(int value) {
+    @java.lang.Deprecated public Builder setVersionValue(int value) {
       version_ = value;
       onChanged();
       return this;
@@ -2515,9 +2515,9 @@ private static final long serialVersionUID = 0L;
      * The v2 format is used by default and cannot be changed.
      * </pre>
      *
-     * <code>.google.logging.v2.LogMetric.ApiVersion version = 4;</code>
+     * <code>.google.logging.v2.LogMetric.ApiVersion version = 4 [deprecated = true];</code>
      */
-    public com.google.logging.v2.LogMetric.ApiVersion getVersion() {
+    @java.lang.Deprecated public com.google.logging.v2.LogMetric.ApiVersion getVersion() {
       com.google.logging.v2.LogMetric.ApiVersion result = com.google.logging.v2.LogMetric.ApiVersion.valueOf(version_);
       return result == null ? com.google.logging.v2.LogMetric.ApiVersion.UNRECOGNIZED : result;
     }
@@ -2527,9 +2527,9 @@ private static final long serialVersionUID = 0L;
      * The v2 format is used by default and cannot be changed.
      * </pre>
      *
-     * <code>.google.logging.v2.LogMetric.ApiVersion version = 4;</code>
+     * <code>.google.logging.v2.LogMetric.ApiVersion version = 4 [deprecated = true];</code>
      */
-    public Builder setVersion(com.google.logging.v2.LogMetric.ApiVersion value) {
+    @java.lang.Deprecated public Builder setVersion(com.google.logging.v2.LogMetric.ApiVersion value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -2544,9 +2544,9 @@ private static final long serialVersionUID = 0L;
      * The v2 format is used by default and cannot be changed.
      * </pre>
      *
-     * <code>.google.logging.v2.LogMetric.ApiVersion version = 4;</code>
+     * <code>.google.logging.v2.LogMetric.ApiVersion version = 4 [deprecated = true];</code>
      */
-    public Builder clearVersion() {
+    @java.lang.Deprecated public Builder clearVersion() {
       
       version_ = 0;
       onChanged();

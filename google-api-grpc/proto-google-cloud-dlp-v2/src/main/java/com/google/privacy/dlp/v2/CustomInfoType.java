@@ -2490,7 +2490,7 @@ private static final long serialVersionUID = 0L;
    * These types of transformations are
    * those that perform pseudonymization, thereby producing a "surrogate" as
    * output. This should be used in conjunction with a field on the
-   * transformation such as `surrogate_info_type`. This custom info type does
+   * transformation such as `surrogate_info_type`. This CustomInfoType does
    * not support the use of `detection_rules`.
    * </pre>
    *
@@ -2710,7 +2710,7 @@ private static final long serialVersionUID = 0L;
      * These types of transformations are
      * those that perform pseudonymization, thereby producing a "surrogate" as
      * output. This should be used in conjunction with a field on the
-     * transformation such as `surrogate_info_type`. This custom info type does
+     * transformation such as `surrogate_info_type`. This CustomInfoType does
      * not support the use of `detection_rules`.
      * </pre>
      *
@@ -2920,7 +2920,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Rule for modifying a custom info type to alter behavior under certain
+   * Rule for modifying a CustomInfoType to alter behavior under certain
    * circumstances, depending on the specific details of the rule. Not supported
    * for the `surrogate_type` custom info type.
    * </pre>
@@ -4328,7 +4328,7 @@ private static final long serialVersionUID = 0L;
 
       /**
        * <pre>
-       * Regex pattern defining what qualifies as a hotword.
+       * Regular expression pattern defining what qualifies as a hotword.
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.CustomInfoType.Regex hotword_regex = 1;</code>
@@ -4336,7 +4336,7 @@ private static final long serialVersionUID = 0L;
       boolean hasHotwordRegex();
       /**
        * <pre>
-       * Regex pattern defining what qualifies as a hotword.
+       * Regular expression pattern defining what qualifies as a hotword.
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.CustomInfoType.Regex hotword_regex = 1;</code>
@@ -4344,7 +4344,7 @@ private static final long serialVersionUID = 0L;
       com.google.privacy.dlp.v2.CustomInfoType.Regex getHotwordRegex();
       /**
        * <pre>
-       * Regex pattern defining what qualifies as a hotword.
+       * Regular expression pattern defining what qualifies as a hotword.
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.CustomInfoType.Regex hotword_regex = 1;</code>
@@ -4424,7 +4424,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Detection rule that adjusts the likelihood of findings within a certain
+     * The rule that adjusts the likelihood of findings within a certain
      * proximity of hotwords.
      * </pre>
      *
@@ -4540,7 +4540,7 @@ private static final long serialVersionUID = 0L;
       private com.google.privacy.dlp.v2.CustomInfoType.Regex hotwordRegex_;
       /**
        * <pre>
-       * Regex pattern defining what qualifies as a hotword.
+       * Regular expression pattern defining what qualifies as a hotword.
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.CustomInfoType.Regex hotword_regex = 1;</code>
@@ -4550,7 +4550,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Regex pattern defining what qualifies as a hotword.
+       * Regular expression pattern defining what qualifies as a hotword.
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.CustomInfoType.Regex hotword_regex = 1;</code>
@@ -4560,7 +4560,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Regex pattern defining what qualifies as a hotword.
+       * Regular expression pattern defining what qualifies as a hotword.
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.CustomInfoType.Regex hotword_regex = 1;</code>
@@ -4846,7 +4846,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Detection rule that adjusts the likelihood of findings within a certain
+       * The rule that adjusts the likelihood of findings within a certain
        * proximity of hotwords.
        * </pre>
        *
@@ -5022,7 +5022,7 @@ private static final long serialVersionUID = 0L;
             com.google.privacy.dlp.v2.CustomInfoType.Regex, com.google.privacy.dlp.v2.CustomInfoType.Regex.Builder, com.google.privacy.dlp.v2.CustomInfoType.RegexOrBuilder> hotwordRegexBuilder_;
         /**
          * <pre>
-         * Regex pattern defining what qualifies as a hotword.
+         * Regular expression pattern defining what qualifies as a hotword.
          * </pre>
          *
          * <code>.google.privacy.dlp.v2.CustomInfoType.Regex hotword_regex = 1;</code>
@@ -5032,7 +5032,7 @@ private static final long serialVersionUID = 0L;
         }
         /**
          * <pre>
-         * Regex pattern defining what qualifies as a hotword.
+         * Regular expression pattern defining what qualifies as a hotword.
          * </pre>
          *
          * <code>.google.privacy.dlp.v2.CustomInfoType.Regex hotword_regex = 1;</code>
@@ -5046,7 +5046,7 @@ private static final long serialVersionUID = 0L;
         }
         /**
          * <pre>
-         * Regex pattern defining what qualifies as a hotword.
+         * Regular expression pattern defining what qualifies as a hotword.
          * </pre>
          *
          * <code>.google.privacy.dlp.v2.CustomInfoType.Regex hotword_regex = 1;</code>
@@ -5066,7 +5066,7 @@ private static final long serialVersionUID = 0L;
         }
         /**
          * <pre>
-         * Regex pattern defining what qualifies as a hotword.
+         * Regular expression pattern defining what qualifies as a hotword.
          * </pre>
          *
          * <code>.google.privacy.dlp.v2.CustomInfoType.Regex hotword_regex = 1;</code>
@@ -5084,7 +5084,7 @@ private static final long serialVersionUID = 0L;
         }
         /**
          * <pre>
-         * Regex pattern defining what qualifies as a hotword.
+         * Regular expression pattern defining what qualifies as a hotword.
          * </pre>
          *
          * <code>.google.privacy.dlp.v2.CustomInfoType.Regex hotword_regex = 1;</code>
@@ -5106,7 +5106,7 @@ private static final long serialVersionUID = 0L;
         }
         /**
          * <pre>
-         * Regex pattern defining what qualifies as a hotword.
+         * Regular expression pattern defining what qualifies as a hotword.
          * </pre>
          *
          * <code>.google.privacy.dlp.v2.CustomInfoType.Regex hotword_regex = 1;</code>
@@ -5124,7 +5124,7 @@ private static final long serialVersionUID = 0L;
         }
         /**
          * <pre>
-         * Regex pattern defining what qualifies as a hotword.
+         * Regular expression pattern defining what qualifies as a hotword.
          * </pre>
          *
          * <code>.google.privacy.dlp.v2.CustomInfoType.Regex hotword_regex = 1;</code>
@@ -5136,7 +5136,7 @@ private static final long serialVersionUID = 0L;
         }
         /**
          * <pre>
-         * Regex pattern defining what qualifies as a hotword.
+         * Regular expression pattern defining what qualifies as a hotword.
          * </pre>
          *
          * <code>.google.privacy.dlp.v2.CustomInfoType.Regex hotword_regex = 1;</code>
@@ -5151,7 +5151,7 @@ private static final long serialVersionUID = 0L;
         }
         /**
          * <pre>
-         * Regex pattern defining what qualifies as a hotword.
+         * Regular expression pattern defining what qualifies as a hotword.
          * </pre>
          *
          * <code>.google.privacy.dlp.v2.CustomInfoType.Regex hotword_regex = 1;</code>
@@ -5829,7 +5829,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Rule for modifying a custom info type to alter behavior under certain
+     * Rule for modifying a CustomInfoType to alter behavior under certain
      * circumstances, depending on the specific details of the rule. Not supported
      * for the `surrogate_type` custom info type.
      * </pre>
@@ -6258,8 +6258,8 @@ private static final long serialVersionUID = 0L;
   private com.google.privacy.dlp.v2.InfoType infoType_;
   /**
    * <pre>
-   * Info type configuration. All custom info types must have configurations
-   * that do not conflict with built-in info types or other custom info types.
+   * All CustomInfoTypes must have a name
+   * that does not conflict with built-in InfoTypes or other CustomInfoTypes.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
@@ -6269,8 +6269,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Info type configuration. All custom info types must have configurations
-   * that do not conflict with built-in info types or other custom info types.
+   * All CustomInfoTypes must have a name
+   * that does not conflict with built-in InfoTypes or other CustomInfoTypes.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
@@ -6280,8 +6280,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Info type configuration. All custom info types must have configurations
-   * that do not conflict with built-in info types or other custom info types.
+   * All CustomInfoTypes must have a name
+   * that does not conflict with built-in InfoTypes or other CustomInfoTypes.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
@@ -6294,7 +6294,7 @@ private static final long serialVersionUID = 0L;
   private int likelihood_;
   /**
    * <pre>
-   * Likelihood to return for this custom info type. This base value can be
+   * Likelihood to return for this CustomInfoType. This base value can be
    * altered by a detection rule if the finding meets the criteria specified by
    * the rule. Defaults to `VERY_LIKELY` if not specified.
    * </pre>
@@ -6306,7 +6306,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Likelihood to return for this custom info type. This base value can be
+   * Likelihood to return for this CustomInfoType. This base value can be
    * altered by a detection rule if the finding meets the criteria specified by
    * the rule. Defaults to `VERY_LIKELY` if not specified.
    * </pre>
@@ -6321,7 +6321,7 @@ private static final long serialVersionUID = 0L;
   public static final int DICTIONARY_FIELD_NUMBER = 2;
   /**
    * <pre>
-   * Dictionary-based custom info type.
+   * A list of phrases to detect as a CustomInfoType.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CustomInfoType.Dictionary dictionary = 2;</code>
@@ -6331,7 +6331,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Dictionary-based custom info type.
+   * A list of phrases to detect as a CustomInfoType.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CustomInfoType.Dictionary dictionary = 2;</code>
@@ -6344,7 +6344,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Dictionary-based custom info type.
+   * A list of phrases to detect as a CustomInfoType.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CustomInfoType.Dictionary dictionary = 2;</code>
@@ -6359,7 +6359,7 @@ private static final long serialVersionUID = 0L;
   public static final int REGEX_FIELD_NUMBER = 3;
   /**
    * <pre>
-   * Regex-based custom info type.
+   * Regular expression based CustomInfoType.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CustomInfoType.Regex regex = 3;</code>
@@ -6369,7 +6369,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Regex-based custom info type.
+   * Regular expression based CustomInfoType.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CustomInfoType.Regex regex = 3;</code>
@@ -6382,7 +6382,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Regex-based custom info type.
+   * Regular expression based CustomInfoType.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CustomInfoType.Regex regex = 3;</code>
@@ -6397,7 +6397,8 @@ private static final long serialVersionUID = 0L;
   public static final int SURROGATE_TYPE_FIELD_NUMBER = 4;
   /**
    * <pre>
-   * Surrogate info type.
+   * Message for detecting output from deidentification transformations that
+   * support reversing.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CustomInfoType.SurrogateType surrogate_type = 4;</code>
@@ -6407,7 +6408,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Surrogate info type.
+   * Message for detecting output from deidentification transformations that
+   * support reversing.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CustomInfoType.SurrogateType surrogate_type = 4;</code>
@@ -6420,7 +6422,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Surrogate info type.
+   * Message for detecting output from deidentification transformations that
+   * support reversing.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CustomInfoType.SurrogateType surrogate_type = 4;</code>
@@ -6436,9 +6439,9 @@ private static final long serialVersionUID = 0L;
   private java.util.List<com.google.privacy.dlp.v2.CustomInfoType.DetectionRule> detectionRules_;
   /**
    * <pre>
-   * Set of detection rules to apply to all findings of this custom info type.
+   * Set of detection rules to apply to all findings of this CustomInfoType.
    * Rules are applied in order that they are specified. Not supported for the
-   * `surrogate_type` custom info type.
+   * `surrogate_type` CustomInfoType.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;</code>
@@ -6448,9 +6451,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Set of detection rules to apply to all findings of this custom info type.
+   * Set of detection rules to apply to all findings of this CustomInfoType.
    * Rules are applied in order that they are specified. Not supported for the
-   * `surrogate_type` custom info type.
+   * `surrogate_type` CustomInfoType.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;</code>
@@ -6461,9 +6464,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Set of detection rules to apply to all findings of this custom info type.
+   * Set of detection rules to apply to all findings of this CustomInfoType.
    * Rules are applied in order that they are specified. Not supported for the
-   * `surrogate_type` custom info type.
+   * `surrogate_type` CustomInfoType.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;</code>
@@ -6473,9 +6476,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Set of detection rules to apply to all findings of this custom info type.
+   * Set of detection rules to apply to all findings of this CustomInfoType.
    * Rules are applied in order that they are specified. Not supported for the
-   * `surrogate_type` custom info type.
+   * `surrogate_type` CustomInfoType.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;</code>
@@ -6485,9 +6488,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Set of detection rules to apply to all findings of this custom info type.
+   * Set of detection rules to apply to all findings of this CustomInfoType.
    * Rules are applied in order that they are specified. Not supported for the
-   * `surrogate_type` custom info type.
+   * `surrogate_type` CustomInfoType.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;</code>
@@ -6990,8 +6993,8 @@ private static final long serialVersionUID = 0L;
         com.google.privacy.dlp.v2.InfoType, com.google.privacy.dlp.v2.InfoType.Builder, com.google.privacy.dlp.v2.InfoTypeOrBuilder> infoTypeBuilder_;
     /**
      * <pre>
-     * Info type configuration. All custom info types must have configurations
-     * that do not conflict with built-in info types or other custom info types.
+     * All CustomInfoTypes must have a name
+     * that does not conflict with built-in InfoTypes or other CustomInfoTypes.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
@@ -7001,8 +7004,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Info type configuration. All custom info types must have configurations
-     * that do not conflict with built-in info types or other custom info types.
+     * All CustomInfoTypes must have a name
+     * that does not conflict with built-in InfoTypes or other CustomInfoTypes.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
@@ -7016,8 +7019,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Info type configuration. All custom info types must have configurations
-     * that do not conflict with built-in info types or other custom info types.
+     * All CustomInfoTypes must have a name
+     * that does not conflict with built-in InfoTypes or other CustomInfoTypes.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
@@ -7037,8 +7040,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Info type configuration. All custom info types must have configurations
-     * that do not conflict with built-in info types or other custom info types.
+     * All CustomInfoTypes must have a name
+     * that does not conflict with built-in InfoTypes or other CustomInfoTypes.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
@@ -7056,8 +7059,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Info type configuration. All custom info types must have configurations
-     * that do not conflict with built-in info types or other custom info types.
+     * All CustomInfoTypes must have a name
+     * that does not conflict with built-in InfoTypes or other CustomInfoTypes.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
@@ -7079,8 +7082,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Info type configuration. All custom info types must have configurations
-     * that do not conflict with built-in info types or other custom info types.
+     * All CustomInfoTypes must have a name
+     * that does not conflict with built-in InfoTypes or other CustomInfoTypes.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
@@ -7098,8 +7101,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Info type configuration. All custom info types must have configurations
-     * that do not conflict with built-in info types or other custom info types.
+     * All CustomInfoTypes must have a name
+     * that does not conflict with built-in InfoTypes or other CustomInfoTypes.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
@@ -7111,8 +7114,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Info type configuration. All custom info types must have configurations
-     * that do not conflict with built-in info types or other custom info types.
+     * All CustomInfoTypes must have a name
+     * that does not conflict with built-in InfoTypes or other CustomInfoTypes.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
@@ -7127,8 +7130,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Info type configuration. All custom info types must have configurations
-     * that do not conflict with built-in info types or other custom info types.
+     * All CustomInfoTypes must have a name
+     * that does not conflict with built-in InfoTypes or other CustomInfoTypes.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
@@ -7150,7 +7153,7 @@ private static final long serialVersionUID = 0L;
     private int likelihood_ = 0;
     /**
      * <pre>
-     * Likelihood to return for this custom info type. This base value can be
+     * Likelihood to return for this CustomInfoType. This base value can be
      * altered by a detection rule if the finding meets the criteria specified by
      * the rule. Defaults to `VERY_LIKELY` if not specified.
      * </pre>
@@ -7162,7 +7165,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Likelihood to return for this custom info type. This base value can be
+     * Likelihood to return for this CustomInfoType. This base value can be
      * altered by a detection rule if the finding meets the criteria specified by
      * the rule. Defaults to `VERY_LIKELY` if not specified.
      * </pre>
@@ -7176,7 +7179,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Likelihood to return for this custom info type. This base value can be
+     * Likelihood to return for this CustomInfoType. This base value can be
      * altered by a detection rule if the finding meets the criteria specified by
      * the rule. Defaults to `VERY_LIKELY` if not specified.
      * </pre>
@@ -7189,7 +7192,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Likelihood to return for this custom info type. This base value can be
+     * Likelihood to return for this CustomInfoType. This base value can be
      * altered by a detection rule if the finding meets the criteria specified by
      * the rule. Defaults to `VERY_LIKELY` if not specified.
      * </pre>
@@ -7207,7 +7210,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Likelihood to return for this custom info type. This base value can be
+     * Likelihood to return for this CustomInfoType. This base value can be
      * altered by a detection rule if the finding meets the criteria specified by
      * the rule. Defaults to `VERY_LIKELY` if not specified.
      * </pre>
@@ -7225,7 +7228,7 @@ private static final long serialVersionUID = 0L;
         com.google.privacy.dlp.v2.CustomInfoType.Dictionary, com.google.privacy.dlp.v2.CustomInfoType.Dictionary.Builder, com.google.privacy.dlp.v2.CustomInfoType.DictionaryOrBuilder> dictionaryBuilder_;
     /**
      * <pre>
-     * Dictionary-based custom info type.
+     * A list of phrases to detect as a CustomInfoType.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.Dictionary dictionary = 2;</code>
@@ -7235,7 +7238,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Dictionary-based custom info type.
+     * A list of phrases to detect as a CustomInfoType.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.Dictionary dictionary = 2;</code>
@@ -7255,7 +7258,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Dictionary-based custom info type.
+     * A list of phrases to detect as a CustomInfoType.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.Dictionary dictionary = 2;</code>
@@ -7275,7 +7278,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Dictionary-based custom info type.
+     * A list of phrases to detect as a CustomInfoType.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.Dictionary dictionary = 2;</code>
@@ -7293,7 +7296,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Dictionary-based custom info type.
+     * A list of phrases to detect as a CustomInfoType.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.Dictionary dictionary = 2;</code>
@@ -7319,7 +7322,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Dictionary-based custom info type.
+     * A list of phrases to detect as a CustomInfoType.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.Dictionary dictionary = 2;</code>
@@ -7342,7 +7345,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Dictionary-based custom info type.
+     * A list of phrases to detect as a CustomInfoType.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.Dictionary dictionary = 2;</code>
@@ -7352,7 +7355,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Dictionary-based custom info type.
+     * A list of phrases to detect as a CustomInfoType.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.Dictionary dictionary = 2;</code>
@@ -7369,7 +7372,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Dictionary-based custom info type.
+     * A list of phrases to detect as a CustomInfoType.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.Dictionary dictionary = 2;</code>
@@ -7397,7 +7400,7 @@ private static final long serialVersionUID = 0L;
         com.google.privacy.dlp.v2.CustomInfoType.Regex, com.google.privacy.dlp.v2.CustomInfoType.Regex.Builder, com.google.privacy.dlp.v2.CustomInfoType.RegexOrBuilder> regexBuilder_;
     /**
      * <pre>
-     * Regex-based custom info type.
+     * Regular expression based CustomInfoType.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.Regex regex = 3;</code>
@@ -7407,7 +7410,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Regex-based custom info type.
+     * Regular expression based CustomInfoType.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.Regex regex = 3;</code>
@@ -7427,7 +7430,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Regex-based custom info type.
+     * Regular expression based CustomInfoType.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.Regex regex = 3;</code>
@@ -7447,7 +7450,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Regex-based custom info type.
+     * Regular expression based CustomInfoType.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.Regex regex = 3;</code>
@@ -7465,7 +7468,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Regex-based custom info type.
+     * Regular expression based CustomInfoType.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.Regex regex = 3;</code>
@@ -7491,7 +7494,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Regex-based custom info type.
+     * Regular expression based CustomInfoType.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.Regex regex = 3;</code>
@@ -7514,7 +7517,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Regex-based custom info type.
+     * Regular expression based CustomInfoType.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.Regex regex = 3;</code>
@@ -7524,7 +7527,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Regex-based custom info type.
+     * Regular expression based CustomInfoType.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.Regex regex = 3;</code>
@@ -7541,7 +7544,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Regex-based custom info type.
+     * Regular expression based CustomInfoType.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.Regex regex = 3;</code>
@@ -7569,7 +7572,8 @@ private static final long serialVersionUID = 0L;
         com.google.privacy.dlp.v2.CustomInfoType.SurrogateType, com.google.privacy.dlp.v2.CustomInfoType.SurrogateType.Builder, com.google.privacy.dlp.v2.CustomInfoType.SurrogateTypeOrBuilder> surrogateTypeBuilder_;
     /**
      * <pre>
-     * Surrogate info type.
+     * Message for detecting output from deidentification transformations that
+     * support reversing.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.SurrogateType surrogate_type = 4;</code>
@@ -7579,7 +7583,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Surrogate info type.
+     * Message for detecting output from deidentification transformations that
+     * support reversing.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.SurrogateType surrogate_type = 4;</code>
@@ -7599,7 +7604,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Surrogate info type.
+     * Message for detecting output from deidentification transformations that
+     * support reversing.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.SurrogateType surrogate_type = 4;</code>
@@ -7619,7 +7625,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Surrogate info type.
+     * Message for detecting output from deidentification transformations that
+     * support reversing.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.SurrogateType surrogate_type = 4;</code>
@@ -7637,7 +7644,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Surrogate info type.
+     * Message for detecting output from deidentification transformations that
+     * support reversing.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.SurrogateType surrogate_type = 4;</code>
@@ -7663,7 +7671,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Surrogate info type.
+     * Message for detecting output from deidentification transformations that
+     * support reversing.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.SurrogateType surrogate_type = 4;</code>
@@ -7686,7 +7695,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Surrogate info type.
+     * Message for detecting output from deidentification transformations that
+     * support reversing.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.SurrogateType surrogate_type = 4;</code>
@@ -7696,7 +7706,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Surrogate info type.
+     * Message for detecting output from deidentification transformations that
+     * support reversing.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.SurrogateType surrogate_type = 4;</code>
@@ -7713,7 +7724,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Surrogate info type.
+     * Message for detecting output from deidentification transformations that
+     * support reversing.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.SurrogateType surrogate_type = 4;</code>
@@ -7751,9 +7763,9 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * Set of detection rules to apply to all findings of this custom info type.
+     * Set of detection rules to apply to all findings of this CustomInfoType.
      * Rules are applied in order that they are specified. Not supported for the
-     * `surrogate_type` custom info type.
+     * `surrogate_type` CustomInfoType.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;</code>
@@ -7767,9 +7779,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Set of detection rules to apply to all findings of this custom info type.
+     * Set of detection rules to apply to all findings of this CustomInfoType.
      * Rules are applied in order that they are specified. Not supported for the
-     * `surrogate_type` custom info type.
+     * `surrogate_type` CustomInfoType.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;</code>
@@ -7783,9 +7795,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Set of detection rules to apply to all findings of this custom info type.
+     * Set of detection rules to apply to all findings of this CustomInfoType.
      * Rules are applied in order that they are specified. Not supported for the
-     * `surrogate_type` custom info type.
+     * `surrogate_type` CustomInfoType.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;</code>
@@ -7799,9 +7811,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Set of detection rules to apply to all findings of this custom info type.
+     * Set of detection rules to apply to all findings of this CustomInfoType.
      * Rules are applied in order that they are specified. Not supported for the
-     * `surrogate_type` custom info type.
+     * `surrogate_type` CustomInfoType.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;</code>
@@ -7822,9 +7834,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Set of detection rules to apply to all findings of this custom info type.
+     * Set of detection rules to apply to all findings of this CustomInfoType.
      * Rules are applied in order that they are specified. Not supported for the
-     * `surrogate_type` custom info type.
+     * `surrogate_type` CustomInfoType.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;</code>
@@ -7842,9 +7854,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Set of detection rules to apply to all findings of this custom info type.
+     * Set of detection rules to apply to all findings of this CustomInfoType.
      * Rules are applied in order that they are specified. Not supported for the
-     * `surrogate_type` custom info type.
+     * `surrogate_type` CustomInfoType.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;</code>
@@ -7864,9 +7876,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Set of detection rules to apply to all findings of this custom info type.
+     * Set of detection rules to apply to all findings of this CustomInfoType.
      * Rules are applied in order that they are specified. Not supported for the
-     * `surrogate_type` custom info type.
+     * `surrogate_type` CustomInfoType.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;</code>
@@ -7887,9 +7899,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Set of detection rules to apply to all findings of this custom info type.
+     * Set of detection rules to apply to all findings of this CustomInfoType.
      * Rules are applied in order that they are specified. Not supported for the
-     * `surrogate_type` custom info type.
+     * `surrogate_type` CustomInfoType.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;</code>
@@ -7907,9 +7919,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Set of detection rules to apply to all findings of this custom info type.
+     * Set of detection rules to apply to all findings of this CustomInfoType.
      * Rules are applied in order that they are specified. Not supported for the
-     * `surrogate_type` custom info type.
+     * `surrogate_type` CustomInfoType.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;</code>
@@ -7927,9 +7939,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Set of detection rules to apply to all findings of this custom info type.
+     * Set of detection rules to apply to all findings of this CustomInfoType.
      * Rules are applied in order that they are specified. Not supported for the
-     * `surrogate_type` custom info type.
+     * `surrogate_type` CustomInfoType.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;</code>
@@ -7948,9 +7960,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Set of detection rules to apply to all findings of this custom info type.
+     * Set of detection rules to apply to all findings of this CustomInfoType.
      * Rules are applied in order that they are specified. Not supported for the
-     * `surrogate_type` custom info type.
+     * `surrogate_type` CustomInfoType.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;</code>
@@ -7967,9 +7979,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Set of detection rules to apply to all findings of this custom info type.
+     * Set of detection rules to apply to all findings of this CustomInfoType.
      * Rules are applied in order that they are specified. Not supported for the
-     * `surrogate_type` custom info type.
+     * `surrogate_type` CustomInfoType.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;</code>
@@ -7986,9 +7998,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Set of detection rules to apply to all findings of this custom info type.
+     * Set of detection rules to apply to all findings of this CustomInfoType.
      * Rules are applied in order that they are specified. Not supported for the
-     * `surrogate_type` custom info type.
+     * `surrogate_type` CustomInfoType.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;</code>
@@ -7999,9 +8011,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Set of detection rules to apply to all findings of this custom info type.
+     * Set of detection rules to apply to all findings of this CustomInfoType.
      * Rules are applied in order that they are specified. Not supported for the
-     * `surrogate_type` custom info type.
+     * `surrogate_type` CustomInfoType.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;</code>
@@ -8015,9 +8027,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Set of detection rules to apply to all findings of this custom info type.
+     * Set of detection rules to apply to all findings of this CustomInfoType.
      * Rules are applied in order that they are specified. Not supported for the
-     * `surrogate_type` custom info type.
+     * `surrogate_type` CustomInfoType.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;</code>
@@ -8032,9 +8044,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Set of detection rules to apply to all findings of this custom info type.
+     * Set of detection rules to apply to all findings of this CustomInfoType.
      * Rules are applied in order that they are specified. Not supported for the
-     * `surrogate_type` custom info type.
+     * `surrogate_type` CustomInfoType.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;</code>
@@ -8045,9 +8057,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Set of detection rules to apply to all findings of this custom info type.
+     * Set of detection rules to apply to all findings of this CustomInfoType.
      * Rules are applied in order that they are specified. Not supported for the
-     * `surrogate_type` custom info type.
+     * `surrogate_type` CustomInfoType.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;</code>
@@ -8059,9 +8071,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Set of detection rules to apply to all findings of this custom info type.
+     * Set of detection rules to apply to all findings of this CustomInfoType.
      * Rules are applied in order that they are specified. Not supported for the
-     * `surrogate_type` custom info type.
+     * `surrogate_type` CustomInfoType.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;</code>
