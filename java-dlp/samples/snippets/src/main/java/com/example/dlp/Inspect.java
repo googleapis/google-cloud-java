@@ -27,6 +27,10 @@ import com.google.privacy.dlp.v2.ByteContentItem;
 import com.google.privacy.dlp.v2.CloudStorageOptions;
 import com.google.privacy.dlp.v2.ContentItem;
 import com.google.privacy.dlp.v2.CreateDlpJobRequest;
+import com.google.privacy.dlp.v2.CustomInfoType;
+import com.google.privacy.dlp.v2.CustomInfoType.Dictionary;
+import com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList;
+import com.google.privacy.dlp.v2.CustomInfoType.Regex;
 import com.google.privacy.dlp.v2.DatastoreOptions;
 import com.google.privacy.dlp.v2.DlpJob;
 import com.google.privacy.dlp.v2.Finding;
@@ -52,6 +56,7 @@ import java.net.URLConnection;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -82,6 +87,7 @@ public class Inspect {
       Likelihood minLikelihood,
       int maxFindings,
       List<InfoType> infoTypes,
+      List<CustomInfoType> customInfoTypes,
       boolean includeQuote,
       String projectId) {
     // instantiate a client
@@ -91,6 +97,7 @@ public class Inspect {
       InspectConfig inspectConfig =
           InspectConfig.newBuilder()
               .addAllInfoTypes(infoTypes)
+              .addAllCustomInfoTypes(customInfoTypes)
               .setMinLikelihood(minLikelihood)
               .setLimits(findingLimits)
               .setIncludeQuote(includeQuote)
@@ -146,6 +153,7 @@ public class Inspect {
       Likelihood minLikelihood,
       int maxFindings,
       List<InfoType> infoTypes,
+      List<CustomInfoType> customInfoTypes,
       boolean includeQuote,
       String projectId) {
     // Instantiates a client
@@ -189,6 +197,7 @@ public class Inspect {
       InspectConfig inspectConfig =
           InspectConfig.newBuilder()
               .addAllInfoTypes(infoTypes)
+              .addAllCustomInfoTypes(customInfoTypes)
               .setMinLikelihood(minLikelihood)
               .setLimits(findingLimits)
               .setIncludeQuote(includeQuote)
@@ -242,6 +251,7 @@ public class Inspect {
       String fileName,
       Likelihood minLikelihood,
       List<InfoType> infoTypes,
+      List<CustomInfoType> customInfoTypes,
       int maxFindings,
       String topicId,
       String subscriptionId,
@@ -266,6 +276,7 @@ public class Inspect {
       InspectConfig inspectConfig =
           InspectConfig.newBuilder()
               .addAllInfoTypes(infoTypes)
+              .addAllCustomInfoTypes(customInfoTypes)
               .setMinLikelihood(minLikelihood)
               .setLimits(findingLimits)
               .build();
@@ -363,6 +374,7 @@ public class Inspect {
       String kind,
       Likelihood minLikelihood,
       List<InfoType> infoTypes,
+      List<CustomInfoType> customInfoTypes,
       int maxFindings,
       String topicId,
       String subscriptionId) {
@@ -388,6 +400,7 @@ public class Inspect {
       InspectConfig inspectConfig =
           InspectConfig.newBuilder()
               .addAllInfoTypes(infoTypes)
+              .addAllCustomInfoTypes(customInfoTypes)
               .setMinLikelihood(minLikelihood)
               .setLimits(findingLimits)
               .build();
@@ -486,6 +499,7 @@ public class Inspect {
       String tableId,
       Likelihood minLikelihood,
       List<InfoType> infoTypes,
+      List<CustomInfoType> customInfoTypes,
       int maxFindings,
       String topicId,
       String subscriptionId) {
@@ -511,6 +525,7 @@ public class Inspect {
       InspectConfig inspectConfig =
           InspectConfig.newBuilder()
               .addAllInfoTypes(infoTypes)
+              .addAllCustomInfoTypes(customInfoTypes)
               .setMinLikelihood(minLikelihood)
               .setLimits(findingLimits)
               .build();
@@ -629,6 +644,16 @@ public class Inspect {
     infoTypesOption.setArgs(Option.UNLIMITED_VALUES);
     commandLineOptions.addOption(infoTypesOption);
 
+    Option customDictionariesOption =
+        Option.builder("customDictionaries").hasArg(true).required(false).build();
+    customDictionariesOption.setArgs(Option.UNLIMITED_VALUES);
+    commandLineOptions.addOption(customDictionariesOption);
+
+    Option customRegexesOption =
+        Option.builder("customRegexes").hasArg(true).required(false).build();
+    customRegexesOption.setArgs(Option.UNLIMITED_VALUES);
+    commandLineOptions.addOption(customRegexesOption);
+
     Option includeQuoteOption = Option.builder("includeQuote").hasArg(true).required(false).build();
     commandLineOptions.addOption(includeQuoteOption);
 
@@ -695,13 +720,62 @@ public class Inspect {
         infoTypesList.add(InfoType.newBuilder().setName(infoType).build());
       }
     }
+
+    List<CustomInfoType> customInfoTypesList = new ArrayList<>();
+    if (cmd.hasOption(customDictionariesOption.getOpt())) {
+      String[] dictionaryStrings = cmd.getOptionValues(customDictionariesOption.getOpt());
+      for (int i = 0; i < dictionaryStrings.length; i++) {
+        String[] dictionaryWords = dictionaryStrings[i].split(",");
+        CustomInfoType customInfoType =
+            CustomInfoType
+                .newBuilder()
+                .setInfoType(
+                    InfoType.newBuilder().setName(String.format("CUSTOM_DICTIONARY_%s", i)))
+                .setDictionary(
+                    Dictionary
+                        .newBuilder()
+                        .setWordList(
+                            WordList
+                                .newBuilder()
+                                .addAllWords(Arrays.<String>asList(dictionaryWords))))
+                .build();
+        customInfoTypesList.add(customInfoType);
+      }
+    }
+    if (cmd.hasOption(customRegexesOption.getOpt())) {
+      String[] patterns = cmd.getOptionValues(customRegexesOption.getOpt());
+      for (int i = 0; i < patterns.length; i++) {
+        CustomInfoType customInfoType =
+            CustomInfoType
+                .newBuilder()
+                .setInfoType(InfoType.newBuilder().setName(String.format("CUSTOM_REGEX_%s", i)))
+                .setRegex(Regex.newBuilder().setPattern(patterns[i]))
+                .build();
+        customInfoTypesList.add(customInfoType);
+      }
+    }
+
     // string inspection
     if (cmd.hasOption("s")) {
       String val = cmd.getOptionValue(stringOption.getOpt());
-      inspectString(val, minLikelihood, maxFindings, infoTypesList, includeQuote, projectId);
+      inspectString(
+          val,
+          minLikelihood,
+          maxFindings,
+          infoTypesList,
+          customInfoTypesList,
+          includeQuote,
+          projectId);
     } else if (cmd.hasOption("f")) {
       String filePath = cmd.getOptionValue(fileOption.getOpt());
-      inspectFile(filePath, minLikelihood, maxFindings, infoTypesList, includeQuote, projectId);
+      inspectFile(
+          filePath,
+          minLikelihood,
+          maxFindings,
+          infoTypesList,
+          customInfoTypesList,
+          includeQuote,
+          projectId);
       // gcs file inspection
     } else if (cmd.hasOption("gcs")) {
       String bucketName = cmd.getOptionValue(bucketNameOption.getOpt());
@@ -711,6 +785,7 @@ public class Inspect {
           fileName,
           minLikelihood,
           infoTypesList,
+          customInfoTypesList,
           maxFindings,
           topicId,
           subscriptionId,
@@ -726,6 +801,7 @@ public class Inspect {
           kind,
           minLikelihood,
           infoTypesList,
+          customInfoTypesList,
           maxFindings,
           topicId,
           subscriptionId);
@@ -739,6 +815,7 @@ public class Inspect {
           tableId,
           minLikelihood,
           infoTypesList,
+          customInfoTypesList,
           maxFindings,
           topicId,
           subscriptionId);

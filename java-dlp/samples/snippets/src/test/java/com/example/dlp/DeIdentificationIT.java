@@ -63,6 +63,7 @@ public class DeIdentificationIT {
     DeIdentification.main(
         new String[] {
           "-m", text,
+          "-infoTypes", "US_SOCIAL_SECURITY_NUMBER",
           "-maskingCharacter", "x",
           "-numberToMask", "5"
         });
@@ -79,6 +80,8 @@ public class DeIdentificationIT {
         new String[] {
           "-f",
           "\"" + text + "\"",
+          "-infoTypes",
+          "US_SOCIAL_SECURITY_NUMBER",
           "-wrappedKey",
           wrappedKey,
           "-keyName",

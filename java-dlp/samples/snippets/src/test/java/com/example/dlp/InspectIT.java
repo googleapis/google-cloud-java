@@ -65,14 +65,49 @@ public class InspectIT {
   }
 
   @Test
+  public void testStringInspectionReturnsCustomInfoTypes() throws Exception {
+    String text =
+        "\"My phone number is (234) 456-7890 and my email address is gary@somedomain.com\"";
+    Inspect.main(
+        new String[] {
+            "-s",
+            text,
+            "-customDictionaries",
+            "gary@somedomain.com",
+            "-customRegexes",
+            "\\(\\d{3}\\) \\d{3}-\\d{4}"
+        });
+    String output = bout.toString();
+
+    assertThat(output, containsString("CUSTOM_DICTIONARY_0"));
+    assertThat(output, containsString("CUSTOM_REGEX_0"));
+  }
+
+  @Test
   public void testTextFileInspectionReturnsInfoTypes() throws Exception {
     Inspect.main(
         new String[] {
-          "-f", "src/test/resources/test.txt", "-infoTypes", "PHONE_NUMBER", "EMAIL_ADDRESS"
+            "-f", "src/test/resources/test.txt", "-infoTypes", "PHONE_NUMBER", "EMAIL_ADDRESS"
         });
     String output = bout.toString();
     assertThat(output, containsString("PHONE_NUMBER"));
     assertThat(output, containsString("EMAIL_ADDRESS"));
+  }
+
+  @Test
+  public void testTextFileInspectionReturnsCustomInfoTypes() throws Exception {
+    Inspect.main(
+        new String[] {
+            "-f",
+            "src/test/resources/test.txt",
+            "-customDictionaries",
+            "gary@somedomain.com",
+            "-customRegexes",
+            "\\(\\d{3}\\) \\d{3}-\\d{4}"
+        });
+    String output = bout.toString();
+    assertThat(output, containsString("CUSTOM_DICTIONARY_0"));
+    assertThat(output, containsString("CUSTOM_REGEX_0"));
   }
 
   @Test

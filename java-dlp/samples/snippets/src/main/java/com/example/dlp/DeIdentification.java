@@ -57,6 +57,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 import org.apache.commons.cli.CommandLine;
@@ -81,7 +82,11 @@ public class DeIdentification {
    * @param projectId ID of Google Cloud project to run the API under.
    */
   private static void deIdentifyWithMask(
-      String string, Character maskingCharacter, int numberToMask, String projectId) {
+      String string,
+      List<InfoType> infoTypes,
+      Character maskingCharacter,
+      int numberToMask,
+      String projectId) {
 
     // instantiate a client
     try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
@@ -108,6 +113,11 @@ public class DeIdentification {
               .addTransformations(infoTypeTransformationObject)
               .build();
 
+      InspectConfig inspectConfig =
+          InspectConfig.newBuilder()
+              .addAllInfoTypes(infoTypes)
+              .build();
+
       DeidentifyConfig deidentifyConfig =
           DeidentifyConfig.newBuilder()
               .setInfoTypeTransformations(infoTypeTransformationArray)
@@ -117,6 +127,7 @@ public class DeIdentification {
       DeidentifyContentRequest request =
           DeidentifyContentRequest.newBuilder()
               .setParent(ProjectName.of(projectId).toString())
+              .setInspectConfig(inspectConfig)
               .setDeidentifyConfig(deidentifyConfig)
               .setItem(contentItem)
               .build();
@@ -147,6 +158,7 @@ public class DeIdentification {
    */
   private static void deIdentifyWithFpe(
       String string,
+      List<InfoType> infoTypes,
       FfxCommonNativeAlphabet alphabet,
       String keyName,
       String wrappedKey,
@@ -188,6 +200,11 @@ public class DeIdentification {
               .addTransformations(infoTypeTransformationObject)
               .build();
 
+      InspectConfig inspectConfig =
+          InspectConfig.newBuilder()
+              .addAllInfoTypes(infoTypes)
+              .build();
+
       // Create the deidentification request object
       DeidentifyConfig deidentifyConfig =
           DeidentifyConfig.newBuilder()
@@ -197,6 +214,7 @@ public class DeIdentification {
       DeidentifyContentRequest request =
           DeidentifyContentRequest.newBuilder()
               .setParent(ProjectName.of(projectId).toString())
+              .setInspectConfig(inspectConfig)
               .setDeidentifyConfig(deidentifyConfig)
               .setItem(contentItem)
               .build();
@@ -513,6 +531,10 @@ public class DeIdentification {
     Options commandLineOptions = new Options();
     commandLineOptions.addOptionGroup(optionsGroup);
 
+    Option infoTypesOption = Option.builder("infoTypes").hasArg(true).required(false).build();
+    infoTypesOption.setArgs(Option.UNLIMITED_VALUES);
+    commandLineOptions.addOption(infoTypesOption);
+
     Option maskingCharacterOption =
         Option.builder("maskingCharacter").hasArg(true).required(false).build();
     commandLineOptions.addOption(maskingCharacterOption);
@@ -575,12 +597,21 @@ public class DeIdentification {
     String projectId =
         cmd.getOptionValue(projectIdOption.getOpt(), ServiceOptions.getDefaultProjectId());
 
+    List<InfoType> infoTypesList = Collections.emptyList();
+    if (cmd.hasOption(infoTypesOption.getOpt())) {
+      infoTypesList = new ArrayList<>();
+      String[] infoTypes = cmd.getOptionValues(infoTypesOption.getOpt());
+      for (String infoType : infoTypes) {
+        infoTypesList.add(InfoType.newBuilder().setName(infoType).build());
+      }
+    }
+
     if (cmd.hasOption("m")) {
       // deidentification with character masking
       int numberToMask = Integer.parseInt(cmd.getOptionValue(numberToMaskOption.getOpt(), "0"));
       char maskingCharacter = cmd.getOptionValue(maskingCharacterOption.getOpt(), "*").charAt(0);
       String val = cmd.getOptionValue(deidentifyMaskingOption.getOpt());
-      deIdentifyWithMask(val, maskingCharacter, numberToMask, projectId);
+      deIdentifyWithMask(val, infoTypesList, maskingCharacter, numberToMask, projectId);
     } else if (cmd.hasOption("f")) {
       // deidentification with FPE
       String wrappedKey = cmd.getOptionValue(wrappedKeyOption.getOpt());
@@ -591,7 +622,8 @@ public class DeIdentification {
           FfxCommonNativeAlphabet.valueOf(
               cmd.getOptionValue(
                   alphabetOption.getOpt(), FfxCommonNativeAlphabet.ALPHA_NUMERIC.name()));
-      deIdentifyWithFpe(val, alphabet, keyName, wrappedKey, projectId, surrogateType);
+      deIdentifyWithFpe(
+          val, infoTypesList, alphabet, keyName, wrappedKey, projectId, surrogateType);
     } else if (cmd.hasOption("d")) {
       //deidentify with date shift
       String inputCsv = cmd.getOptionValue(inputCsvPathOption.getOpt());
