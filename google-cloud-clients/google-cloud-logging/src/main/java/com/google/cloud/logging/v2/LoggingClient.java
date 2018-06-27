@@ -15,7 +15,6 @@
  */
 package com.google.cloud.logging.v2;
 
-import com.google.api.MonitoredResource;
 import com.google.api.MonitoredResourceDescriptor;
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
@@ -44,7 +43,6 @@ import com.google.logging.v2.WriteLogEntriesResponse;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -274,151 +272,11 @@ public class LoggingClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * ## Log entry resources
-   *
-   * <p>Writes log entries to Stackdriver Logging. This API method is the only way to send log
-   * entries to Stackdriver Logging. This method is used, directly or indirectly, by the Stackdriver
-   * Logging agent (fluentd) and all logging libraries configured to use Stackdriver Logging.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (LoggingClient loggingClient = LoggingClient.create()) {
-   *   LogName logName = ProjectLogName.of("[PROJECT]", "[LOG]");
-   *   MonitoredResource resource = MonitoredResource.newBuilder().build();
-   *   Map&lt;String, String&gt; labels = new HashMap&lt;&gt;();
-   *   List&lt;LogEntry&gt; entries = new ArrayList&lt;&gt;();
-   *   WriteLogEntriesResponse response = loggingClient.writeLogEntries(logName, resource, labels, entries);
-   * }
-   * </code></pre>
-   *
-   * @param logName Optional. A default log resource name that is assigned to all log entries in
-   *     `entries` that do not specify a value for `log_name`:
-   *     <p>"projects/[PROJECT_ID]/logs/[LOG_ID]" "organizations/[ORGANIZATION_ID]/logs/[LOG_ID]"
-   *     "billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]" "folders/[FOLDER_ID]/logs/[LOG_ID]"
-   *     <p>`[LOG_ID]` must be URL-encoded. For example, `"projects/my-project-id/logs/syslog"` or
-   *     `"organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"`. For more
-   *     information about log names, see [LogEntry][google.logging.v2.LogEntry].
-   * @param resource Optional. A default monitored resource object that is assigned to all log
-   *     entries in `entries` that do not specify a value for `resource`. Example:
-   *     <p>{ "type": "gce_instance", "labels": { "zone": "us-central1-a", "instance_id":
-   *     "00000000000000000000" }}
-   *     <p>See [LogEntry][google.logging.v2.LogEntry].
-   * @param labels Optional. Default labels that are added to the `labels` field of all log entries
-   *     in `entries`. If a log entry already has a label with the same key as a label in this
-   *     parameter, then the log entry's label is not changed. See
-   *     [LogEntry][google.logging.v2.LogEntry].
-   * @param entries Required. The log entries to send to Stackdriver Logging. The order of log
-   *     entries in this list does not matter. Values supplied in this method's `log_name`,
-   *     `resource`, and `labels` fields are copied into those log entries in this list that do not
-   *     include values for their corresponding fields. For more information, see the
-   *     [LogEntry][google.logging.v2.LogEntry] type.
-   *     <p>If the `timestamp` or `insert_id` fields are missing in log entries, then this method
-   *     supplies the current time or a unique identifier, respectively. The supplied values are
-   *     chosen so that, among the log entries that did not supply their own values, the entries
-   *     earlier in the list will sort before the entries later in the list. See the `entries.list`
-   *     method.
-   *     <p>Log entries with timestamps that are more than the [logs retention
-   *     period](/logging/quota-policy) in the past or more than 24 hours in the future might be
-   *     discarded. Discarding does not return an error.
-   *     <p>To improve throughput and to avoid exceeding the [quota limit](/logging/quota-policy)
-   *     for calls to `entries.write`, you should try to include several log entries in this list,
-   *     rather than calling this method for each individual log entry.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final WriteLogEntriesResponse writeLogEntries(
-      LogName logName,
-      MonitoredResource resource,
-      Map<String, String> labels,
-      List<LogEntry> entries) {
-
-    WriteLogEntriesRequest request =
-        WriteLogEntriesRequest.newBuilder()
-            .setLogName(logName == null ? null : logName.toString())
-            .setResource(resource)
-            .putAllLabels(labels)
-            .addAllEntries(entries)
-            .build();
-    return writeLogEntries(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * ## Log entry resources
-   *
-   * <p>Writes log entries to Stackdriver Logging. This API method is the only way to send log
-   * entries to Stackdriver Logging. This method is used, directly or indirectly, by the Stackdriver
-   * Logging agent (fluentd) and all logging libraries configured to use Stackdriver Logging.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (LoggingClient loggingClient = LoggingClient.create()) {
-   *   LogName logName = ProjectLogName.of("[PROJECT]", "[LOG]");
-   *   MonitoredResource resource = MonitoredResource.newBuilder().build();
-   *   Map&lt;String, String&gt; labels = new HashMap&lt;&gt;();
-   *   List&lt;LogEntry&gt; entries = new ArrayList&lt;&gt;();
-   *   WriteLogEntriesResponse response = loggingClient.writeLogEntries(logName.toString(), resource, labels, entries);
-   * }
-   * </code></pre>
-   *
-   * @param logName Optional. A default log resource name that is assigned to all log entries in
-   *     `entries` that do not specify a value for `log_name`:
-   *     <p>"projects/[PROJECT_ID]/logs/[LOG_ID]" "organizations/[ORGANIZATION_ID]/logs/[LOG_ID]"
-   *     "billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]" "folders/[FOLDER_ID]/logs/[LOG_ID]"
-   *     <p>`[LOG_ID]` must be URL-encoded. For example, `"projects/my-project-id/logs/syslog"` or
-   *     `"organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"`. For more
-   *     information about log names, see [LogEntry][google.logging.v2.LogEntry].
-   * @param resource Optional. A default monitored resource object that is assigned to all log
-   *     entries in `entries` that do not specify a value for `resource`. Example:
-   *     <p>{ "type": "gce_instance", "labels": { "zone": "us-central1-a", "instance_id":
-   *     "00000000000000000000" }}
-   *     <p>See [LogEntry][google.logging.v2.LogEntry].
-   * @param labels Optional. Default labels that are added to the `labels` field of all log entries
-   *     in `entries`. If a log entry already has a label with the same key as a label in this
-   *     parameter, then the log entry's label is not changed. See
-   *     [LogEntry][google.logging.v2.LogEntry].
-   * @param entries Required. The log entries to send to Stackdriver Logging. The order of log
-   *     entries in this list does not matter. Values supplied in this method's `log_name`,
-   *     `resource`, and `labels` fields are copied into those log entries in this list that do not
-   *     include values for their corresponding fields. For more information, see the
-   *     [LogEntry][google.logging.v2.LogEntry] type.
-   *     <p>If the `timestamp` or `insert_id` fields are missing in log entries, then this method
-   *     supplies the current time or a unique identifier, respectively. The supplied values are
-   *     chosen so that, among the log entries that did not supply their own values, the entries
-   *     earlier in the list will sort before the entries later in the list. See the `entries.list`
-   *     method.
-   *     <p>Log entries with timestamps that are more than the [logs retention
-   *     period](/logging/quota-policy) in the past or more than 24 hours in the future might be
-   *     discarded. Discarding does not return an error.
-   *     <p>To improve throughput and to avoid exceeding the [quota limit](/logging/quota-policy)
-   *     for calls to `entries.write`, you should try to include several log entries in this list,
-   *     rather than calling this method for each individual log entry.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final WriteLogEntriesResponse writeLogEntries(
-      String logName,
-      MonitoredResource resource,
-      Map<String, String> labels,
-      List<LogEntry> entries) {
-
-    WriteLogEntriesRequest request =
-        WriteLogEntriesRequest.newBuilder()
-            .setLogName(logName)
-            .setResource(resource)
-            .putAllLabels(labels)
-            .addAllEntries(entries)
-            .build();
-    return writeLogEntries(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * ## Log entry resources
-   *
-   * <p>Writes log entries to Stackdriver Logging. This API method is the only way to send log
-   * entries to Stackdriver Logging. This method is used, directly or indirectly, by the Stackdriver
-   * Logging agent (fluentd) and all logging libraries configured to use Stackdriver Logging.
+   * Writes log entries to Stackdriver Logging. This API method is the only way to send log entries
+   * to Stackdriver Logging. This method is used, directly or indirectly, by the Stackdriver Logging
+   * agent (fluentd) and all logging libraries configured to use Stackdriver Logging. A single
+   * request may contain log entries for a maximum of 1000 different resources (projects,
+   * organizations, billing accounts or folders)
    *
    * <p>Sample code:
    *
@@ -441,11 +299,11 @@ public class LoggingClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * ## Log entry resources
-   *
-   * <p>Writes log entries to Stackdriver Logging. This API method is the only way to send log
-   * entries to Stackdriver Logging. This method is used, directly or indirectly, by the Stackdriver
-   * Logging agent (fluentd) and all logging libraries configured to use Stackdriver Logging.
+   * Writes log entries to Stackdriver Logging. This API method is the only way to send log entries
+   * to Stackdriver Logging. This method is used, directly or indirectly, by the Stackdriver Logging
+   * agent (fluentd) and all logging libraries configured to use Stackdriver Logging. A single
+   * request may contain log entries for a maximum of 1000 different resources (projects,
+   * organizations, billing accounts or folders)
    *
    * <p>Sample code:
    *
@@ -475,10 +333,58 @@ public class LoggingClient implements BackgroundResource {
    *
    * <pre><code>
    * try (LoggingClient loggingClient = LoggingClient.create()) {
-   *   List&lt;String&gt; resourceNames = new ArrayList&lt;&gt;();
+   *   List&lt;ParentName&gt; resourceNames = new ArrayList&lt;&gt;();
    *   String filter = "";
    *   String orderBy = "";
    *   for (LogEntry element : loggingClient.listLogEntries(resourceNames, filter, orderBy).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param resourceNames Required. Names of one or more parent resources from which to retrieve log
+   *     entries:
+   *     <p>"projects/[PROJECT_ID]" "organizations/[ORGANIZATION_ID]"
+   *     "billingAccounts/[BILLING_ACCOUNT_ID]" "folders/[FOLDER_ID]"
+   *     <p>Projects listed in the `project_ids` field are added to this list.
+   * @param filter Optional. A filter that chooses which log entries to return. See [Advanced Logs
+   *     Filters](/logging/docs/view/advanced_filters). Only log entries that match the filter are
+   *     returned. An empty filter matches all log entries in the resources listed in
+   *     `resource_names`. Referencing a parent resource that is not listed in `resource_names` will
+   *     cause the filter to return no results. The maximum length of the filter is 20000
+   *     characters.
+   * @param orderBy Optional. How the results should be sorted. Presently, the only permitted values
+   *     are `"timestamp asc"` (default) and `"timestamp desc"`. The first option returns entries in
+   *     order of increasing values of `LogEntry.timestamp` (oldest first), and the second option
+   *     returns entries in order of decreasing timestamps (newest first). Entries with equal
+   *     timestamps are returned in order of their `insert_id` values.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListLogEntriesPagedResponse listLogEntries(
+      List<ParentName> resourceNames, String filter, String orderBy) {
+    ListLogEntriesRequest request =
+        ListLogEntriesRequest.newBuilder()
+            .addAllResourceNames(
+                resourceNames == null ? null : ParentName.toStringList(resourceNames))
+            .setFilter(filter)
+            .setOrderBy(orderBy)
+            .build();
+    return listLogEntries(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists log entries. Use this method to retrieve log entries from Stackdriver Logging. For ways
+   * to export log entries, see [Exporting Logs](/logging/docs/export).
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (LoggingClient loggingClient = LoggingClient.create()) {
+   *   List&lt;ParentName&gt; resourceNames = new ArrayList&lt;&gt;();
+   *   String filter = "";
+   *   String orderBy = "";
+   *   for (LogEntry element : loggingClient.listLogEntries(ParentName.toStringList(resourceNames), filter, orderBy).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -522,9 +428,9 @@ public class LoggingClient implements BackgroundResource {
    *
    * <pre><code>
    * try (LoggingClient loggingClient = LoggingClient.create()) {
-   *   List&lt;String&gt; resourceNames = new ArrayList&lt;&gt;();
+   *   List&lt;ParentName&gt; resourceNames = new ArrayList&lt;&gt;();
    *   ListLogEntriesRequest request = ListLogEntriesRequest.newBuilder()
-   *     .addAllResourceNames(resourceNames)
+   *     .addAllResourceNames(ParentName.toStringList(resourceNames))
    *     .build();
    *   for (LogEntry element : loggingClient.listLogEntries(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -548,9 +454,9 @@ public class LoggingClient implements BackgroundResource {
    *
    * <pre><code>
    * try (LoggingClient loggingClient = LoggingClient.create()) {
-   *   List&lt;String&gt; resourceNames = new ArrayList&lt;&gt;();
+   *   List&lt;ParentName&gt; resourceNames = new ArrayList&lt;&gt;();
    *   ListLogEntriesRequest request = ListLogEntriesRequest.newBuilder()
-   *     .addAllResourceNames(resourceNames)
+   *     .addAllResourceNames(ParentName.toStringList(resourceNames))
    *     .build();
    *   ApiFuture&lt;ListLogEntriesPagedResponse&gt; future = loggingClient.listLogEntriesPagedCallable().futureCall(request);
    *   // Do something
@@ -574,9 +480,9 @@ public class LoggingClient implements BackgroundResource {
    *
    * <pre><code>
    * try (LoggingClient loggingClient = LoggingClient.create()) {
-   *   List&lt;String&gt; resourceNames = new ArrayList&lt;&gt;();
+   *   List&lt;ParentName&gt; resourceNames = new ArrayList&lt;&gt;();
    *   ListLogEntriesRequest request = ListLogEntriesRequest.newBuilder()
-   *     .addAllResourceNames(resourceNames)
+   *     .addAllResourceNames(ParentName.toStringList(resourceNames))
    *     .build();
    *   while (true) {
    *     ListLogEntriesResponse response = loggingClient.listLogEntriesCallable().call(request);
