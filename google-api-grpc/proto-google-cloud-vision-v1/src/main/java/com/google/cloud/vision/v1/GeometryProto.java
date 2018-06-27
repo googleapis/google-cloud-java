@@ -51,9 +51,10 @@ public final class GeometryProto {
       "rtex\022E\n\023normalized_vertices\030\002 \003(\0132(.goog" +
       "le.cloud.vision.v1.NormalizedVertex\"+\n\010P" +
       "osition\022\t\n\001x\030\001 \001(\002\022\t\n\001y\030\002 \001(\002\022\t\n\001z\030\003 \001(\002" +
-      "Bn\n\032com.google.cloud.vision.v1B\rGeometry" +
+      "Bu\n\032com.google.cloud.vision.v1B\rGeometry" +
       "ProtoP\001Z<google.golang.org/genproto/goog" +
-      "leapis/cloud/vision/v1;vision\370\001\001b\006proto3"
+      "leapis/cloud/vision/v1;vision\370\001\001\242\002\004GCVNb" +
+      "\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

@@ -207,6 +207,19 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 202: {
+            com.google.api.MonitoredResourceMetadata.Builder subBuilder = null;
+            if (metadata_ != null) {
+              subBuilder = metadata_.toBuilder();
+            }
+            metadata_ = input.readMessage(com.google.api.MonitoredResourceMetadata.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(metadata_);
+              metadata_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           case 218: {
             java.lang.String s = input.readStringRequireUtf8();
 
@@ -369,7 +382,7 @@ private static final long serialVersionUID = 0L;
   private com.google.api.MonitoredResource resource_;
   /**
    * <pre>
-   * Required. The monitored resource associated with this log entry.
+   * Required. The primary monitored resource associated with this log entry.
    * Example: a log entry that reports a database error would be
    * associated with the monitored resource designating the particular
    * database that reported the error.
@@ -382,7 +395,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The monitored resource associated with this log entry.
+   * Required. The primary monitored resource associated with this log entry.
    * Example: a log entry that reports a database error would be
    * associated with the monitored resource designating the particular
    * database that reported the error.
@@ -395,7 +408,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The monitored resource associated with this log entry.
+   * Required. The primary monitored resource associated with this log entry.
    * Example: a log entry that reports a database error would be
    * associated with the monitored resource designating the particular
    * database that reported the error.
@@ -551,10 +564,14 @@ private static final long serialVersionUID = 0L;
    * This time is used to compute the log entry's age and to enforce
    * the logs retention period. If this field is omitted in a new log
    * entry, then Stackdriver Logging assigns it the current time.
+   * Timestamps have nanosecond accuracy, but trailing zeros in the fractional
+   * seconds might be omitted when the timestamp is displayed.
    * Incoming log entries should have timestamps that are no more than
-   * the [logs retention period](/logging/quota-policy) in the past,
-   * and no more than 24 hours in the future.
-   * See the `entries.write` API method for more information.
+   * the [logs retention period](/logging/quotas) in the past,
+   * and no more than 24 hours in the future. Log entries outside those time
+   * boundaries will not be available when calling `entries.list`, but
+   * those log entries can still be exported with
+   * [LogSinks](/logging/docs/api/tasks/exporting-logs).
    * </pre>
    *
    * <code>.google.protobuf.Timestamp timestamp = 9;</code>
@@ -568,10 +585,14 @@ private static final long serialVersionUID = 0L;
    * This time is used to compute the log entry's age and to enforce
    * the logs retention period. If this field is omitted in a new log
    * entry, then Stackdriver Logging assigns it the current time.
+   * Timestamps have nanosecond accuracy, but trailing zeros in the fractional
+   * seconds might be omitted when the timestamp is displayed.
    * Incoming log entries should have timestamps that are no more than
-   * the [logs retention period](/logging/quota-policy) in the past,
-   * and no more than 24 hours in the future.
-   * See the `entries.write` API method for more information.
+   * the [logs retention period](/logging/quotas) in the past,
+   * and no more than 24 hours in the future. Log entries outside those time
+   * boundaries will not be available when calling `entries.list`, but
+   * those log entries can still be exported with
+   * [LogSinks](/logging/docs/api/tasks/exporting-logs).
    * </pre>
    *
    * <code>.google.protobuf.Timestamp timestamp = 9;</code>
@@ -585,10 +606,14 @@ private static final long serialVersionUID = 0L;
    * This time is used to compute the log entry's age and to enforce
    * the logs retention period. If this field is omitted in a new log
    * entry, then Stackdriver Logging assigns it the current time.
+   * Timestamps have nanosecond accuracy, but trailing zeros in the fractional
+   * seconds might be omitted when the timestamp is displayed.
    * Incoming log entries should have timestamps that are no more than
-   * the [logs retention period](/logging/quota-policy) in the past,
-   * and no more than 24 hours in the future.
-   * See the `entries.write` API method for more information.
+   * the [logs retention period](/logging/quotas) in the past,
+   * and no more than 24 hours in the future. Log entries outside those time
+   * boundaries will not be available when calling `entries.list`, but
+   * those log entries can still be exported with
+   * [LogSinks](/logging/docs/api/tasks/exporting-logs).
    * </pre>
    *
    * <code>.google.protobuf.Timestamp timestamp = 9;</code>
@@ -840,6 +865,45 @@ private static final long serialVersionUID = 0L;
     return map.get(key);
   }
 
+  public static final int METADATA_FIELD_NUMBER = 25;
+  private com.google.api.MonitoredResourceMetadata metadata_;
+  /**
+   * <pre>
+   * Output only. Additional metadata about the monitored resource.
+   * Only `k8s_container`, `k8s_pod`, and `k8s_node` MonitoredResources have
+   * this field populated.
+   * </pre>
+   *
+   * <code>.google.api.MonitoredResourceMetadata metadata = 25;</code>
+   */
+  public boolean hasMetadata() {
+    return metadata_ != null;
+  }
+  /**
+   * <pre>
+   * Output only. Additional metadata about the monitored resource.
+   * Only `k8s_container`, `k8s_pod`, and `k8s_node` MonitoredResources have
+   * this field populated.
+   * </pre>
+   *
+   * <code>.google.api.MonitoredResourceMetadata metadata = 25;</code>
+   */
+  public com.google.api.MonitoredResourceMetadata getMetadata() {
+    return metadata_ == null ? com.google.api.MonitoredResourceMetadata.getDefaultInstance() : metadata_;
+  }
+  /**
+   * <pre>
+   * Output only. Additional metadata about the monitored resource.
+   * Only `k8s_container`, `k8s_pod`, and `k8s_node` MonitoredResources have
+   * this field populated.
+   * </pre>
+   *
+   * <code>.google.api.MonitoredResourceMetadata metadata = 25;</code>
+   */
+  public com.google.api.MonitoredResourceMetadataOrBuilder getMetadataOrBuilder() {
+    return getMetadata();
+  }
+
   public static final int OPERATION_FIELD_NUMBER = 15;
   private com.google.logging.v2.LogEntryOperation operation_;
   /**
@@ -928,11 +992,10 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object spanId_;
   /**
    * <pre>
-   * Optional. Id of the span within the trace associated with the log entry.
-   * e.g. "0000000000000042"
-   * For Stackdriver trace spans, this is the same format that the Stackdriver
-   * trace API uses.
-   * The ID is a 16-character hexadecimal encoding of an 8-byte array.
+   * Optional. The span ID within the trace associated with the log entry. For
+   * Stackdriver Trace spans, this is the same format that the Stackdriver Trace
+   * API v2 uses: a 16-character hexadecimal encoding of an 8-byte array, such
+   * as &lt;code&gt;"000000000000004a"&lt;/code&gt;.
    * </pre>
    *
    * <code>string span_id = 27;</code>
@@ -951,11 +1014,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. Id of the span within the trace associated with the log entry.
-   * e.g. "0000000000000042"
-   * For Stackdriver trace spans, this is the same format that the Stackdriver
-   * trace API uses.
-   * The ID is a 16-character hexadecimal encoding of an 8-byte array.
+   * Optional. The span ID within the trace associated with the log entry. For
+   * Stackdriver Trace spans, this is the same format that the Stackdriver Trace
+   * API v2 uses: a 16-character hexadecimal encoding of an 8-byte array, such
+   * as &lt;code&gt;"000000000000004a"&lt;/code&gt;.
    * </pre>
    *
    * <code>string span_id = 27;</code>
@@ -1067,6 +1129,9 @@ private static final long serialVersionUID = 0L;
     if (receiveTimestamp_ != null) {
       output.writeMessage(24, getReceiveTimestamp());
     }
+    if (metadata_ != null) {
+      output.writeMessage(25, getMetadata());
+    }
     if (!getSpanIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 27, spanId_);
     }
@@ -1136,6 +1201,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(24, getReceiveTimestamp());
     }
+    if (metadata_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(25, getMetadata());
+    }
     if (!getSpanIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(27, spanId_);
     }
@@ -1182,6 +1251,11 @@ private static final long serialVersionUID = 0L;
     }
     result = result && internalGetLabels().equals(
         other.internalGetLabels());
+    result = result && (hasMetadata() == other.hasMetadata());
+    if (hasMetadata()) {
+      result = result && getMetadata()
+          .equals(other.getMetadata());
+    }
     result = result && (hasOperation() == other.hasOperation());
     if (hasOperation()) {
       result = result && getOperation()
@@ -1251,6 +1325,10 @@ private static final long serialVersionUID = 0L;
     if (!internalGetLabels().getMap().isEmpty()) {
       hash = (37 * hash) + LABELS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetLabels().hashCode();
+    }
+    if (hasMetadata()) {
+      hash = (37 * hash) + METADATA_FIELD_NUMBER;
+      hash = (53 * hash) + getMetadata().hashCode();
     }
     if (hasOperation()) {
       hash = (37 * hash) + OPERATION_FIELD_NUMBER;
@@ -1466,6 +1544,12 @@ private static final long serialVersionUID = 0L;
         httpRequestBuilder_ = null;
       }
       internalGetMutableLabels().clear();
+      if (metadataBuilder_ == null) {
+        metadata_ = null;
+      } else {
+        metadata_ = null;
+        metadataBuilder_ = null;
+      }
       if (operationBuilder_ == null) {
         operation_ = null;
       } else {
@@ -1550,6 +1634,11 @@ private static final long serialVersionUID = 0L;
       }
       result.labels_ = internalGetLabels();
       result.labels_.makeImmutable();
+      if (metadataBuilder_ == null) {
+        result.metadata_ = metadata_;
+      } else {
+        result.metadata_ = metadataBuilder_.build();
+      }
       if (operationBuilder_ == null) {
         result.operation_ = operation_;
       } else {
@@ -1630,6 +1719,9 @@ private static final long serialVersionUID = 0L;
       }
       internalGetMutableLabels().mergeFrom(
           other.internalGetLabels());
+      if (other.hasMetadata()) {
+        mergeMetadata(other.getMetadata());
+      }
       if (other.hasOperation()) {
         mergeOperation(other.getOperation());
       }
@@ -1885,7 +1977,7 @@ private static final long serialVersionUID = 0L;
         com.google.api.MonitoredResource, com.google.api.MonitoredResource.Builder, com.google.api.MonitoredResourceOrBuilder> resourceBuilder_;
     /**
      * <pre>
-     * Required. The monitored resource associated with this log entry.
+     * Required. The primary monitored resource associated with this log entry.
      * Example: a log entry that reports a database error would be
      * associated with the monitored resource designating the particular
      * database that reported the error.
@@ -1898,7 +1990,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The monitored resource associated with this log entry.
+     * Required. The primary monitored resource associated with this log entry.
      * Example: a log entry that reports a database error would be
      * associated with the monitored resource designating the particular
      * database that reported the error.
@@ -1915,7 +2007,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The monitored resource associated with this log entry.
+     * Required. The primary monitored resource associated with this log entry.
      * Example: a log entry that reports a database error would be
      * associated with the monitored resource designating the particular
      * database that reported the error.
@@ -1938,7 +2030,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The monitored resource associated with this log entry.
+     * Required. The primary monitored resource associated with this log entry.
      * Example: a log entry that reports a database error would be
      * associated with the monitored resource designating the particular
      * database that reported the error.
@@ -1959,7 +2051,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The monitored resource associated with this log entry.
+     * Required. The primary monitored resource associated with this log entry.
      * Example: a log entry that reports a database error would be
      * associated with the monitored resource designating the particular
      * database that reported the error.
@@ -1984,7 +2076,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The monitored resource associated with this log entry.
+     * Required. The primary monitored resource associated with this log entry.
      * Example: a log entry that reports a database error would be
      * associated with the monitored resource designating the particular
      * database that reported the error.
@@ -2005,7 +2097,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The monitored resource associated with this log entry.
+     * Required. The primary monitored resource associated with this log entry.
      * Example: a log entry that reports a database error would be
      * associated with the monitored resource designating the particular
      * database that reported the error.
@@ -2020,7 +2112,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The monitored resource associated with this log entry.
+     * Required. The primary monitored resource associated with this log entry.
      * Example: a log entry that reports a database error would be
      * associated with the monitored resource designating the particular
      * database that reported the error.
@@ -2038,7 +2130,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The monitored resource associated with this log entry.
+     * Required. The primary monitored resource associated with this log entry.
      * Example: a log entry that reports a database error would be
      * associated with the monitored resource designating the particular
      * database that reported the error.
@@ -2540,10 +2632,14 @@ private static final long serialVersionUID = 0L;
      * This time is used to compute the log entry's age and to enforce
      * the logs retention period. If this field is omitted in a new log
      * entry, then Stackdriver Logging assigns it the current time.
+     * Timestamps have nanosecond accuracy, but trailing zeros in the fractional
+     * seconds might be omitted when the timestamp is displayed.
      * Incoming log entries should have timestamps that are no more than
-     * the [logs retention period](/logging/quota-policy) in the past,
-     * and no more than 24 hours in the future.
-     * See the `entries.write` API method for more information.
+     * the [logs retention period](/logging/quotas) in the past,
+     * and no more than 24 hours in the future. Log entries outside those time
+     * boundaries will not be available when calling `entries.list`, but
+     * those log entries can still be exported with
+     * [LogSinks](/logging/docs/api/tasks/exporting-logs).
      * </pre>
      *
      * <code>.google.protobuf.Timestamp timestamp = 9;</code>
@@ -2557,10 +2653,14 @@ private static final long serialVersionUID = 0L;
      * This time is used to compute the log entry's age and to enforce
      * the logs retention period. If this field is omitted in a new log
      * entry, then Stackdriver Logging assigns it the current time.
+     * Timestamps have nanosecond accuracy, but trailing zeros in the fractional
+     * seconds might be omitted when the timestamp is displayed.
      * Incoming log entries should have timestamps that are no more than
-     * the [logs retention period](/logging/quota-policy) in the past,
-     * and no more than 24 hours in the future.
-     * See the `entries.write` API method for more information.
+     * the [logs retention period](/logging/quotas) in the past,
+     * and no more than 24 hours in the future. Log entries outside those time
+     * boundaries will not be available when calling `entries.list`, but
+     * those log entries can still be exported with
+     * [LogSinks](/logging/docs/api/tasks/exporting-logs).
      * </pre>
      *
      * <code>.google.protobuf.Timestamp timestamp = 9;</code>
@@ -2578,10 +2678,14 @@ private static final long serialVersionUID = 0L;
      * This time is used to compute the log entry's age and to enforce
      * the logs retention period. If this field is omitted in a new log
      * entry, then Stackdriver Logging assigns it the current time.
+     * Timestamps have nanosecond accuracy, but trailing zeros in the fractional
+     * seconds might be omitted when the timestamp is displayed.
      * Incoming log entries should have timestamps that are no more than
-     * the [logs retention period](/logging/quota-policy) in the past,
-     * and no more than 24 hours in the future.
-     * See the `entries.write` API method for more information.
+     * the [logs retention period](/logging/quotas) in the past,
+     * and no more than 24 hours in the future. Log entries outside those time
+     * boundaries will not be available when calling `entries.list`, but
+     * those log entries can still be exported with
+     * [LogSinks](/logging/docs/api/tasks/exporting-logs).
      * </pre>
      *
      * <code>.google.protobuf.Timestamp timestamp = 9;</code>
@@ -2605,10 +2709,14 @@ private static final long serialVersionUID = 0L;
      * This time is used to compute the log entry's age and to enforce
      * the logs retention period. If this field is omitted in a new log
      * entry, then Stackdriver Logging assigns it the current time.
+     * Timestamps have nanosecond accuracy, but trailing zeros in the fractional
+     * seconds might be omitted when the timestamp is displayed.
      * Incoming log entries should have timestamps that are no more than
-     * the [logs retention period](/logging/quota-policy) in the past,
-     * and no more than 24 hours in the future.
-     * See the `entries.write` API method for more information.
+     * the [logs retention period](/logging/quotas) in the past,
+     * and no more than 24 hours in the future. Log entries outside those time
+     * boundaries will not be available when calling `entries.list`, but
+     * those log entries can still be exported with
+     * [LogSinks](/logging/docs/api/tasks/exporting-logs).
      * </pre>
      *
      * <code>.google.protobuf.Timestamp timestamp = 9;</code>
@@ -2630,10 +2738,14 @@ private static final long serialVersionUID = 0L;
      * This time is used to compute the log entry's age and to enforce
      * the logs retention period. If this field is omitted in a new log
      * entry, then Stackdriver Logging assigns it the current time.
+     * Timestamps have nanosecond accuracy, but trailing zeros in the fractional
+     * seconds might be omitted when the timestamp is displayed.
      * Incoming log entries should have timestamps that are no more than
-     * the [logs retention period](/logging/quota-policy) in the past,
-     * and no more than 24 hours in the future.
-     * See the `entries.write` API method for more information.
+     * the [logs retention period](/logging/quotas) in the past,
+     * and no more than 24 hours in the future. Log entries outside those time
+     * boundaries will not be available when calling `entries.list`, but
+     * those log entries can still be exported with
+     * [LogSinks](/logging/docs/api/tasks/exporting-logs).
      * </pre>
      *
      * <code>.google.protobuf.Timestamp timestamp = 9;</code>
@@ -2659,10 +2771,14 @@ private static final long serialVersionUID = 0L;
      * This time is used to compute the log entry's age and to enforce
      * the logs retention period. If this field is omitted in a new log
      * entry, then Stackdriver Logging assigns it the current time.
+     * Timestamps have nanosecond accuracy, but trailing zeros in the fractional
+     * seconds might be omitted when the timestamp is displayed.
      * Incoming log entries should have timestamps that are no more than
-     * the [logs retention period](/logging/quota-policy) in the past,
-     * and no more than 24 hours in the future.
-     * See the `entries.write` API method for more information.
+     * the [logs retention period](/logging/quotas) in the past,
+     * and no more than 24 hours in the future. Log entries outside those time
+     * boundaries will not be available when calling `entries.list`, but
+     * those log entries can still be exported with
+     * [LogSinks](/logging/docs/api/tasks/exporting-logs).
      * </pre>
      *
      * <code>.google.protobuf.Timestamp timestamp = 9;</code>
@@ -2684,10 +2800,14 @@ private static final long serialVersionUID = 0L;
      * This time is used to compute the log entry's age and to enforce
      * the logs retention period. If this field is omitted in a new log
      * entry, then Stackdriver Logging assigns it the current time.
+     * Timestamps have nanosecond accuracy, but trailing zeros in the fractional
+     * seconds might be omitted when the timestamp is displayed.
      * Incoming log entries should have timestamps that are no more than
-     * the [logs retention period](/logging/quota-policy) in the past,
-     * and no more than 24 hours in the future.
-     * See the `entries.write` API method for more information.
+     * the [logs retention period](/logging/quotas) in the past,
+     * and no more than 24 hours in the future. Log entries outside those time
+     * boundaries will not be available when calling `entries.list`, but
+     * those log entries can still be exported with
+     * [LogSinks](/logging/docs/api/tasks/exporting-logs).
      * </pre>
      *
      * <code>.google.protobuf.Timestamp timestamp = 9;</code>
@@ -2703,10 +2823,14 @@ private static final long serialVersionUID = 0L;
      * This time is used to compute the log entry's age and to enforce
      * the logs retention period. If this field is omitted in a new log
      * entry, then Stackdriver Logging assigns it the current time.
+     * Timestamps have nanosecond accuracy, but trailing zeros in the fractional
+     * seconds might be omitted when the timestamp is displayed.
      * Incoming log entries should have timestamps that are no more than
-     * the [logs retention period](/logging/quota-policy) in the past,
-     * and no more than 24 hours in the future.
-     * See the `entries.write` API method for more information.
+     * the [logs retention period](/logging/quotas) in the past,
+     * and no more than 24 hours in the future. Log entries outside those time
+     * boundaries will not be available when calling `entries.list`, but
+     * those log entries can still be exported with
+     * [LogSinks](/logging/docs/api/tasks/exporting-logs).
      * </pre>
      *
      * <code>.google.protobuf.Timestamp timestamp = 9;</code>
@@ -2725,10 +2849,14 @@ private static final long serialVersionUID = 0L;
      * This time is used to compute the log entry's age and to enforce
      * the logs retention period. If this field is omitted in a new log
      * entry, then Stackdriver Logging assigns it the current time.
+     * Timestamps have nanosecond accuracy, but trailing zeros in the fractional
+     * seconds might be omitted when the timestamp is displayed.
      * Incoming log entries should have timestamps that are no more than
-     * the [logs retention period](/logging/quota-policy) in the past,
-     * and no more than 24 hours in the future.
-     * See the `entries.write` API method for more information.
+     * the [logs retention period](/logging/quotas) in the past,
+     * and no more than 24 hours in the future. Log entries outside those time
+     * boundaries will not be available when calling `entries.list`, but
+     * those log entries can still be exported with
+     * [LogSinks](/logging/docs/api/tasks/exporting-logs).
      * </pre>
      *
      * <code>.google.protobuf.Timestamp timestamp = 9;</code>
@@ -3403,6 +3531,177 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private com.google.api.MonitoredResourceMetadata metadata_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.api.MonitoredResourceMetadata, com.google.api.MonitoredResourceMetadata.Builder, com.google.api.MonitoredResourceMetadataOrBuilder> metadataBuilder_;
+    /**
+     * <pre>
+     * Output only. Additional metadata about the monitored resource.
+     * Only `k8s_container`, `k8s_pod`, and `k8s_node` MonitoredResources have
+     * this field populated.
+     * </pre>
+     *
+     * <code>.google.api.MonitoredResourceMetadata metadata = 25;</code>
+     */
+    public boolean hasMetadata() {
+      return metadataBuilder_ != null || metadata_ != null;
+    }
+    /**
+     * <pre>
+     * Output only. Additional metadata about the monitored resource.
+     * Only `k8s_container`, `k8s_pod`, and `k8s_node` MonitoredResources have
+     * this field populated.
+     * </pre>
+     *
+     * <code>.google.api.MonitoredResourceMetadata metadata = 25;</code>
+     */
+    public com.google.api.MonitoredResourceMetadata getMetadata() {
+      if (metadataBuilder_ == null) {
+        return metadata_ == null ? com.google.api.MonitoredResourceMetadata.getDefaultInstance() : metadata_;
+      } else {
+        return metadataBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Output only. Additional metadata about the monitored resource.
+     * Only `k8s_container`, `k8s_pod`, and `k8s_node` MonitoredResources have
+     * this field populated.
+     * </pre>
+     *
+     * <code>.google.api.MonitoredResourceMetadata metadata = 25;</code>
+     */
+    public Builder setMetadata(com.google.api.MonitoredResourceMetadata value) {
+      if (metadataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        metadata_ = value;
+        onChanged();
+      } else {
+        metadataBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. Additional metadata about the monitored resource.
+     * Only `k8s_container`, `k8s_pod`, and `k8s_node` MonitoredResources have
+     * this field populated.
+     * </pre>
+     *
+     * <code>.google.api.MonitoredResourceMetadata metadata = 25;</code>
+     */
+    public Builder setMetadata(
+        com.google.api.MonitoredResourceMetadata.Builder builderForValue) {
+      if (metadataBuilder_ == null) {
+        metadata_ = builderForValue.build();
+        onChanged();
+      } else {
+        metadataBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. Additional metadata about the monitored resource.
+     * Only `k8s_container`, `k8s_pod`, and `k8s_node` MonitoredResources have
+     * this field populated.
+     * </pre>
+     *
+     * <code>.google.api.MonitoredResourceMetadata metadata = 25;</code>
+     */
+    public Builder mergeMetadata(com.google.api.MonitoredResourceMetadata value) {
+      if (metadataBuilder_ == null) {
+        if (metadata_ != null) {
+          metadata_ =
+            com.google.api.MonitoredResourceMetadata.newBuilder(metadata_).mergeFrom(value).buildPartial();
+        } else {
+          metadata_ = value;
+        }
+        onChanged();
+      } else {
+        metadataBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. Additional metadata about the monitored resource.
+     * Only `k8s_container`, `k8s_pod`, and `k8s_node` MonitoredResources have
+     * this field populated.
+     * </pre>
+     *
+     * <code>.google.api.MonitoredResourceMetadata metadata = 25;</code>
+     */
+    public Builder clearMetadata() {
+      if (metadataBuilder_ == null) {
+        metadata_ = null;
+        onChanged();
+      } else {
+        metadata_ = null;
+        metadataBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. Additional metadata about the monitored resource.
+     * Only `k8s_container`, `k8s_pod`, and `k8s_node` MonitoredResources have
+     * this field populated.
+     * </pre>
+     *
+     * <code>.google.api.MonitoredResourceMetadata metadata = 25;</code>
+     */
+    public com.google.api.MonitoredResourceMetadata.Builder getMetadataBuilder() {
+      
+      onChanged();
+      return getMetadataFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Output only. Additional metadata about the monitored resource.
+     * Only `k8s_container`, `k8s_pod`, and `k8s_node` MonitoredResources have
+     * this field populated.
+     * </pre>
+     *
+     * <code>.google.api.MonitoredResourceMetadata metadata = 25;</code>
+     */
+    public com.google.api.MonitoredResourceMetadataOrBuilder getMetadataOrBuilder() {
+      if (metadataBuilder_ != null) {
+        return metadataBuilder_.getMessageOrBuilder();
+      } else {
+        return metadata_ == null ?
+            com.google.api.MonitoredResourceMetadata.getDefaultInstance() : metadata_;
+      }
+    }
+    /**
+     * <pre>
+     * Output only. Additional metadata about the monitored resource.
+     * Only `k8s_container`, `k8s_pod`, and `k8s_node` MonitoredResources have
+     * this field populated.
+     * </pre>
+     *
+     * <code>.google.api.MonitoredResourceMetadata metadata = 25;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.api.MonitoredResourceMetadata, com.google.api.MonitoredResourceMetadata.Builder, com.google.api.MonitoredResourceMetadataOrBuilder> 
+        getMetadataFieldBuilder() {
+      if (metadataBuilder_ == null) {
+        metadataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.api.MonitoredResourceMetadata, com.google.api.MonitoredResourceMetadata.Builder, com.google.api.MonitoredResourceMetadataOrBuilder>(
+                getMetadata(),
+                getParentForChildren(),
+                isClean());
+        metadata_ = null;
+      }
+      return metadataBuilder_;
+    }
+
     private com.google.logging.v2.LogEntryOperation operation_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.logging.v2.LogEntryOperation, com.google.logging.v2.LogEntryOperation.Builder, com.google.logging.v2.LogEntryOperationOrBuilder> operationBuilder_;
@@ -3672,11 +3971,10 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object spanId_ = "";
     /**
      * <pre>
-     * Optional. Id of the span within the trace associated with the log entry.
-     * e.g. "0000000000000042"
-     * For Stackdriver trace spans, this is the same format that the Stackdriver
-     * trace API uses.
-     * The ID is a 16-character hexadecimal encoding of an 8-byte array.
+     * Optional. The span ID within the trace associated with the log entry. For
+     * Stackdriver Trace spans, this is the same format that the Stackdriver Trace
+     * API v2 uses: a 16-character hexadecimal encoding of an 8-byte array, such
+     * as &lt;code&gt;"000000000000004a"&lt;/code&gt;.
      * </pre>
      *
      * <code>string span_id = 27;</code>
@@ -3695,11 +3993,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Id of the span within the trace associated with the log entry.
-     * e.g. "0000000000000042"
-     * For Stackdriver trace spans, this is the same format that the Stackdriver
-     * trace API uses.
-     * The ID is a 16-character hexadecimal encoding of an 8-byte array.
+     * Optional. The span ID within the trace associated with the log entry. For
+     * Stackdriver Trace spans, this is the same format that the Stackdriver Trace
+     * API v2 uses: a 16-character hexadecimal encoding of an 8-byte array, such
+     * as &lt;code&gt;"000000000000004a"&lt;/code&gt;.
      * </pre>
      *
      * <code>string span_id = 27;</code>
@@ -3719,11 +4016,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Id of the span within the trace associated with the log entry.
-     * e.g. "0000000000000042"
-     * For Stackdriver trace spans, this is the same format that the Stackdriver
-     * trace API uses.
-     * The ID is a 16-character hexadecimal encoding of an 8-byte array.
+     * Optional. The span ID within the trace associated with the log entry. For
+     * Stackdriver Trace spans, this is the same format that the Stackdriver Trace
+     * API v2 uses: a 16-character hexadecimal encoding of an 8-byte array, such
+     * as &lt;code&gt;"000000000000004a"&lt;/code&gt;.
      * </pre>
      *
      * <code>string span_id = 27;</code>
@@ -3740,11 +4036,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Id of the span within the trace associated with the log entry.
-     * e.g. "0000000000000042"
-     * For Stackdriver trace spans, this is the same format that the Stackdriver
-     * trace API uses.
-     * The ID is a 16-character hexadecimal encoding of an 8-byte array.
+     * Optional. The span ID within the trace associated with the log entry. For
+     * Stackdriver Trace spans, this is the same format that the Stackdriver Trace
+     * API v2 uses: a 16-character hexadecimal encoding of an 8-byte array, such
+     * as &lt;code&gt;"000000000000004a"&lt;/code&gt;.
      * </pre>
      *
      * <code>string span_id = 27;</code>
@@ -3757,11 +4052,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Id of the span within the trace associated with the log entry.
-     * e.g. "0000000000000042"
-     * For Stackdriver trace spans, this is the same format that the Stackdriver
-     * trace API uses.
-     * The ID is a 16-character hexadecimal encoding of an 8-byte array.
+     * Optional. The span ID within the trace associated with the log entry. For
+     * Stackdriver Trace spans, this is the same format that the Stackdriver Trace
+     * API v2 uses: a 16-character hexadecimal encoding of an 8-byte array, such
+     * as &lt;code&gt;"000000000000004a"&lt;/code&gt;.
      * </pre>
      *
      * <code>string span_id = 27;</code>

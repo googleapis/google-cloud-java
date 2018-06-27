@@ -9,7 +9,7 @@ public interface ListJobTriggersRequestOrBuilder extends
 
   /**
    * <pre>
-   * The parent resource name, for example projects/my-project-id.
+   * The parent resource name, for example `projects/my-project-id`.
    * </pre>
    *
    * <code>string parent = 1;</code>
@@ -17,7 +17,7 @@ public interface ListJobTriggersRequestOrBuilder extends
   java.lang.String getParent();
   /**
    * <pre>
-   * The parent resource name, for example projects/my-project-id.
+   * The parent resource name, for example `projects/my-project-id`.
    * </pre>
    *
    * <code>string parent = 1;</code>
@@ -28,8 +28,8 @@ public interface ListJobTriggersRequestOrBuilder extends
   /**
    * <pre>
    * Optional page token to continue retrieval. Comes from previous call
-   * to ListJobTriggers. `order_by` and `filter` should not change for
-   * subsequent calls, but can be omitted if token is specified.
+   * to ListJobTriggers. `order_by` field must not
+   * change for subsequent calls.
    * </pre>
    *
    * <code>string page_token = 2;</code>
@@ -38,8 +38,8 @@ public interface ListJobTriggersRequestOrBuilder extends
   /**
    * <pre>
    * Optional page token to continue retrieval. Comes from previous call
-   * to ListJobTriggers. `order_by` and `filter` should not change for
-   * subsequent calls, but can be omitted if token is specified.
+   * to ListJobTriggers. `order_by` field must not
+   * change for subsequent calls.
    * </pre>
    *
    * <code>string page_token = 2;</code>
@@ -59,15 +59,14 @@ public interface ListJobTriggersRequestOrBuilder extends
   /**
    * <pre>
    * Optional comma separated list of triggeredJob fields to order by,
-   * followed by 'asc/desc' postfix, i.e.
-   * `"create_time asc,name desc,schedule_mode asc"`. This list is
-   * case-insensitive.
-   * Example: `"name asc,schedule_mode desc, status desc"`
-   * Supported filters keys and values are:
+   * followed by `asc` or `desc` postfix. This list is case-insensitive,
+   * default sorting order is ascending, redundant space characters are
+   * insignificant.
+   * Example: `name asc,update_time, create_time desc`
+   * Supported fields are:
    * - `create_time`: corresponds to time the triggeredJob was created.
    * - `update_time`: corresponds to time the triggeredJob was last updated.
-   * - `name`: corresponds to JobTrigger's display name.
-   * - `status`: corresponds to the triggeredJob status.
+   * - `name`: corresponds to JobTrigger's name.
    * </pre>
    *
    * <code>string order_by = 4;</code>
@@ -76,15 +75,14 @@ public interface ListJobTriggersRequestOrBuilder extends
   /**
    * <pre>
    * Optional comma separated list of triggeredJob fields to order by,
-   * followed by 'asc/desc' postfix, i.e.
-   * `"create_time asc,name desc,schedule_mode asc"`. This list is
-   * case-insensitive.
-   * Example: `"name asc,schedule_mode desc, status desc"`
-   * Supported filters keys and values are:
+   * followed by `asc` or `desc` postfix. This list is case-insensitive,
+   * default sorting order is ascending, redundant space characters are
+   * insignificant.
+   * Example: `name asc,update_time, create_time desc`
+   * Supported fields are:
    * - `create_time`: corresponds to time the triggeredJob was created.
    * - `update_time`: corresponds to time the triggeredJob was last updated.
-   * - `name`: corresponds to JobTrigger's display name.
-   * - `status`: corresponds to the triggeredJob status.
+   * - `name`: corresponds to JobTrigger's name.
    * </pre>
    *
    * <code>string order_by = 4;</code>

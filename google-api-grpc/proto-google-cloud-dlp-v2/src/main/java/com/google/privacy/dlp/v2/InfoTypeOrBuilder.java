@@ -9,7 +9,10 @@ public interface InfoTypeOrBuilder extends
 
   /**
    * <pre>
-   * Name of the information type.
+   * Name of the information type. Either a name of your choosing when
+   * creating a CustomInfoType, or one of the names listed
+   * at https://cloud.google.com/dlp/docs/infotypes-reference when specifying
+   * a built-in type.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -17,7 +20,10 @@ public interface InfoTypeOrBuilder extends
   java.lang.String getName();
   /**
    * <pre>
-   * Name of the information type.
+   * Name of the information type. Either a name of your choosing when
+   * creating a CustomInfoType, or one of the names listed
+   * at https://cloud.google.com/dlp/docs/infotypes-reference when specifying
+   * a built-in type.
    * </pre>
    *
    * <code>string name = 1;</code>
