@@ -2,10 +2,10 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <artifactId>grpc-google-cloud-texttospeech-v1</artifactId>
-  <version>0.18.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-texttospeech-v1:current} -->
-  <name>grpc-google-cloud-texttospeech-v1</name>
-  <description>GRPC library for grpc-google-cloud-texttospeech-v1</description>
+  <artifactId>grpc-google-cloud-tasks-v2beta2</artifactId>
+  <version>0.18.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-tasks-v2beta2:current} -->
+  <name>grpc-google-cloud-tasks-v2beta2</name>
+  <description>GRPC library for grpc-google-cloud-tasks-v2beta2</description>
   <parent>
     <groupId>com.google.api.grpc</groupId>
     <artifactId>google-api-grpc</artifactId>
@@ -24,7 +24,7 @@
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
-      <artifactId>proto-google-cloud-texttospeech-v1</artifactId>
+      <artifactId>proto-google-cloud-tasks-v2beta2</artifactId>
       <scope>compile</scope>
     </dependency>
   </dependencies>
