@@ -277,8 +277,9 @@ public class ConfigClientTest {
 
     SinkName sinkName = ProjectSinkName.of("[PROJECT]", "[SINK]");
     LogSink sink = LogSink.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
 
-    LogSink actualResponse = client.updateSink(sinkName, sink);
+    LogSink actualResponse = client.updateSink(sinkName, sink, updateMask);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<GeneratedMessageV3> actualRequests = mockConfigServiceV2.getRequests();
@@ -287,6 +288,7 @@ public class ConfigClientTest {
 
     Assert.assertEquals(sinkName, SinkNames.parse(actualRequest.getSinkName()));
     Assert.assertEquals(sink, actualRequest.getSink());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -302,8 +304,9 @@ public class ConfigClientTest {
     try {
       SinkName sinkName = ProjectSinkName.of("[PROJECT]", "[SINK]");
       LogSink sink = LogSink.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
 
-      client.updateSink(sinkName, sink);
+      client.updateSink(sinkName, sink, updateMask);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

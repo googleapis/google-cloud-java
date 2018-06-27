@@ -18,7 +18,6 @@ package com.google.cloud.logging.v2;
 import static com.google.cloud.logging.v2.LoggingClient.ListLogEntriesPagedResponse;
 import static com.google.cloud.logging.v2.LoggingClient.ListLogsPagedResponse;
 
-import com.google.api.MonitoredResource;
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.testing.LocalChannelProvider;
@@ -39,8 +38,6 @@ import com.google.logging.v2.ParentName;
 import com.google.logging.v2.ParentNames;
 import com.google.logging.v2.ProjectLogName;
 import com.google.logging.v2.ProjectName;
-import com.google.logging.v2.WriteLogEntriesRequest;
-import com.google.logging.v2.WriteLogEntriesResponse;
 import com.google.protobuf.Empty;
 import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.Status;
@@ -48,9 +45,7 @@ import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -141,54 +136,6 @@ public class LoggingClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void writeLogEntriesTest() {
-    WriteLogEntriesResponse expectedResponse = WriteLogEntriesResponse.newBuilder().build();
-    mockLoggingServiceV2.addResponse(expectedResponse);
-
-    LogName logName = ProjectLogName.of("[PROJECT]", "[LOG]");
-    MonitoredResource resource = MonitoredResource.newBuilder().build();
-    Map<String, String> labels = new HashMap<>();
-    List<LogEntry> entries = new ArrayList<>();
-
-    WriteLogEntriesResponse actualResponse =
-        client.writeLogEntries(logName, resource, labels, entries);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<GeneratedMessageV3> actualRequests = mockLoggingServiceV2.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    WriteLogEntriesRequest actualRequest = (WriteLogEntriesRequest) actualRequests.get(0);
-
-    Assert.assertEquals(logName, LogNames.parse(actualRequest.getLogName()));
-    Assert.assertEquals(resource, actualRequest.getResource());
-    Assert.assertEquals(labels, actualRequest.getLabelsMap());
-    Assert.assertEquals(entries, actualRequest.getEntriesList());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void writeLogEntriesExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockLoggingServiceV2.addException(exception);
-
-    try {
-      LogName logName = ProjectLogName.of("[PROJECT]", "[LOG]");
-      MonitoredResource resource = MonitoredResource.newBuilder().build();
-      Map<String, String> labels = new HashMap<>();
-      List<LogEntry> entries = new ArrayList<>();
-
-      client.writeLogEntries(logName, resource, labels, entries);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
   public void listLogEntriesTest() {
     String nextPageToken = "";
     LogEntry entriesElement = LogEntry.newBuilder().build();
@@ -200,7 +147,7 @@ public class LoggingClientTest {
             .build();
     mockLoggingServiceV2.addResponse(expectedResponse);
 
-    List<String> resourceNames = new ArrayList<>();
+    List<ParentName> resourceNames = new ArrayList<>();
     String filter = "filter-1274492040";
     String orderBy = "orderBy1234304744";
 
@@ -215,7 +162,7 @@ public class LoggingClientTest {
     Assert.assertEquals(1, actualRequests.size());
     ListLogEntriesRequest actualRequest = (ListLogEntriesRequest) actualRequests.get(0);
 
-    Assert.assertEquals(resourceNames, actualRequest.getResourceNamesList());
+    Assert.assertEquals(resourceNames, ParentName.parseList(actualRequest.getResourceNamesList()));
     Assert.assertEquals(filter, actualRequest.getFilter());
     Assert.assertEquals(orderBy, actualRequest.getOrderBy());
     Assert.assertTrue(
@@ -231,7 +178,7 @@ public class LoggingClientTest {
     mockLoggingServiceV2.addException(exception);
 
     try {
-      List<String> resourceNames = new ArrayList<>();
+      List<ParentName> resourceNames = new ArrayList<>();
       String filter = "filter-1274492040";
       String orderBy = "orderBy1234304744";
 
