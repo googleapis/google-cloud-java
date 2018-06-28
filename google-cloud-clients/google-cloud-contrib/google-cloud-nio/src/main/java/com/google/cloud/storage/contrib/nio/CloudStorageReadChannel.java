@@ -24,10 +24,12 @@ import com.google.cloud.storage.Storage.BlobSourceOption;
 import com.google.cloud.storage.StorageException;
 import com.google.common.annotations.VisibleForTesting;
 
+import com.google.common.base.Strings;
 import com.google.common.collect.Lists;
 
 import java.util.List;
 import javax.annotation.CheckReturnValue;
+import javax.annotation.Nullable;
 import javax.annotation.concurrent.ThreadSafe;
 import java.io.IOException;
 import java.nio.ByteBuffer;
@@ -77,12 +79,12 @@ final class CloudStorageReadChannel implements SeekableByteChannel {
    */
   @CheckReturnValue
   @SuppressWarnings("resource")
-  static CloudStorageReadChannel create(Storage gcsStorage, BlobId file, long position, int maxChannelReopens, String userProject, BlobSourceOption... blobSourceOptions)
+  static CloudStorageReadChannel create(Storage gcsStorage, BlobId file, long position, int maxChannelReopens, @Nullable String userProject, BlobSourceOption... blobSourceOptions)
       throws IOException {
     return new CloudStorageReadChannel(gcsStorage, file, position, maxChannelReopens, userProject, blobSourceOptions);
   }
 
-  private CloudStorageReadChannel(Storage gcsStorage, BlobId file, long position, int maxChannelReopens, String userProject, BlobSourceOption... blobSourceOptions) throws IOException {
+  private CloudStorageReadChannel(Storage gcsStorage, BlobId file, long position, int maxChannelReopens, @Nullable String userProject, BlobSourceOption... blobSourceOptions) throws IOException {
     this.gcsStorage = gcsStorage;
     this.file = file;
     this.position = position;
@@ -94,7 +96,7 @@ final class CloudStorageReadChannel implements SeekableByteChannel {
     if (null != generation) {
       options.add(Storage.BlobSourceOption.generationMatch(generation));
     }
-    if (!userProject.isEmpty()) {
+    if (!Strings.isNullOrEmpty(userProject)) {
       options.add(BlobSourceOption.userProject(userProject));
     }
     this.blobSourceOptions = (BlobSourceOption[]) options.toArray(new BlobSourceOption[options.size()]);
@@ -200,13 +202,13 @@ final class CloudStorageReadChannel implements SeekableByteChannel {
     }
   }
 
-  private long fetchSize(Storage gcsStorage, String userProject, BlobId file) throws IOException {
+  private long fetchSize(Storage gcsStorage, @Nullable String userProject, BlobId file) throws IOException {
     final CloudStorageRetryHandler retryHandler = new CloudStorageRetryHandler(maxRetries, maxChannelReopens);
 
     while (true) {
       try {
         BlobInfo blobInfo;
-        if (userProject.isEmpty()) {
+        if (Strings.isNullOrEmpty(userProject)) {
           blobInfo = gcsStorage.get(file, Storage.BlobGetOption.fields(Storage.BlobField.GENERATION, Storage.BlobField.SIZE));
         } else {
           blobInfo = gcsStorage.get(file, Storage.BlobGetOption.fields(Storage.BlobField.GENERATION, Storage.BlobField.SIZE), Storage.BlobGetOption.userProject(userProject));

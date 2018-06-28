@@ -71,8 +71,7 @@ import java.util.logging.Logger;
  * <p>This test actually talks to Google Cloud Storage (you need an account) and tests both reading
  * and writing. You *must* set the {@code GOOGLE_APPLICATION_CREDENTIALS} environment variable for
  * this test to work. It must contain the name of a local file that contains your Service Account
- * JSON Key. You also *must* set the PROJECT environment variable to the name of the project you
- * want to use.
+ * JSON Key. We use the project in those credentials.
  *
  * <p>See <a href="https://cloud.google.com/storage/docs/authentication?hl=en#service_accounts">
  * Service Accounts</a> for instructions on how to get the Service Account JSON Key.
@@ -100,7 +99,7 @@ public class ITGcsNio {
   private static final String BIG_FILE = "tmp-test-big-file.txt"; // it's big, relatively speaking.
   private static final int BIG_SIZE = 2 * 1024 * 1024 - 50; // arbitrary size that's not too round.
   private static final String PREFIX = "tmp-test-file";
-  private static final String PROJECT = System.getenv("PROJECT");
+  private static String PROJECT;
   private static Storage storage;
   private static StorageOptions storageOptions;
 
@@ -110,13 +109,14 @@ public class ITGcsNio {
   public static void beforeClass() throws IOException {
     // loads the credentials from local disk as par README
     RemoteStorageHelper gcsHelper = RemoteStorageHelper.create();
-    System.out.println("Using project: " + PROJECT);
     storageOptions = gcsHelper.getOptions();
+    PROJECT = storageOptions.getProjectId();
+    System.out.println("Using project: " + PROJECT);
     storage = storageOptions.getService();
     // create and populate test bucket
     storage.create(BucketInfo.of(BUCKET));
-    fillFile(BUCKET, storage, SML_FILE, SML_SIZE);
-    fillFile(BUCKET, storage, BIG_FILE, BIG_SIZE);
+    fillFile(storage, BUCKET, SML_FILE, SML_SIZE);
+    fillFile(storage, BUCKET, BIG_FILE, BIG_SIZE);
     BucketInfo requesterPaysBucket = BucketInfo.newBuilder(REQUESTER_PAYS_BUCKET).setRequesterPays(true).build();
     storage.create(requesterPaysBucket);
     fillRequesterPaysFile(storage, SML_FILE, SML_SIZE);
@@ -136,7 +136,7 @@ public class ITGcsNio {
     return bytes;
   }
 
-  private static void fillFile(String bucket, Storage storage, String fname, int size) throws IOException {
+  private static void fillFile(Storage storage, String bucket, String fname, int size) throws IOException {
     storage.create(BlobInfo.newBuilder(bucket, fname).build(), randomContents(size));
   }
 
@@ -145,8 +145,7 @@ public class ITGcsNio {
         BlobTargetOption.userProject(PROJECT));
   }
 
-  // -----------------------------------------------------------------------------------
-  // Tests related to the "requester pays" feature
+  // Start of tests related to the "requester pays" feature
 
   @Test
   public void testFileExistsRequesterPaysNoUserProject() throws IOException {
@@ -254,10 +253,10 @@ public class ITGcsNio {
   public void testCanCopyWithUserProject() throws IOException {
     CloudStorageFileSystem testRPBucket = getRequesterPaysBucket(false, PROJECT);
     CloudStorageFileSystem testBucket = getTestBucket();
-    CloudStoragePath[] sources = new CloudStoragePath[] { testBucket.getPath(SML_FILE), testRPBucket.getPath(SML_FILE) };
-    CloudStoragePath[] dests = new CloudStoragePath[] {testBucket.getPath(TMP_FILE), testRPBucket.getPath(TMP_FILE) };
-    for (int s=0; s<2; s++) {
-      for (int d=0; d<2; d++) {
+    CloudStoragePath[] sources = new CloudStoragePath[] {testBucket.getPath(SML_FILE), testRPBucket.getPath(SML_FILE)};
+    CloudStoragePath[] dests = new CloudStoragePath[] {testBucket.getPath(TMP_FILE), testRPBucket.getPath(TMP_FILE)};
+    for (int s = 0; s < 2; s++) {
+      for (int d = 0; d < 2; d++) {
         // normal to normal is out of scope of RP testing.
         if (s == 0 && d == 0) continue;
         String sdesc = (s == 0 ? "normal bucket" : "requester-pays bucket");
@@ -290,7 +289,6 @@ public class ITGcsNio {
   }
 
   // End of tests related to the "requester pays" feature
-  // -----------------------------------------------------------------------------------
 
   @Test
   public void testFileExists() throws IOException {
@@ -511,7 +509,7 @@ public class ITGcsNio {
       paths.addAll(goodPaths);
       goodPaths.add(fs.getPath("dir/dir2/"));
       for (Path path : paths) {
-        fillFile(BUCKET, storage, path.toString(), SML_SIZE);
+        fillFile(storage, BUCKET, path.toString(), SML_SIZE);
       }
 
       List<Path> got = new ArrayList<>();

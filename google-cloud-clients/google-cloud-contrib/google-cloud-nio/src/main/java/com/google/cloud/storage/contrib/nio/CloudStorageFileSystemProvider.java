@@ -34,6 +34,7 @@ import com.google.cloud.storage.StorageException;
 import com.google.cloud.storage.StorageOptions;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.MoreObjects;
+import com.google.common.base.Strings;
 import com.google.common.collect.AbstractIterator;
 import com.google.common.net.UrlEscapers;
 import com.google.common.primitives.Ints;
@@ -91,8 +92,8 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
 
   private Storage storage;
   final private StorageOptions storageOptions;
-  // if non-empty, we pay via this one (TODO)
-  final private String userProject;
+  // if non-null, we pay via this project.
+  final private @Nullable String userProject;
 
   // used only when we create a new instance of CloudStorageFileSystemProvider.
   private static StorageOptions futureStorageOptions;
@@ -178,7 +179,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
   /**
    * Internal constructor to use the user-provided default config, and a given userProject setting.
    */
-  CloudStorageFileSystemProvider(String userProject) {
+  CloudStorageFileSystemProvider(@Nullable String userProject) {
     this(userProject, futureStorageOptions);
   }
 
@@ -186,7 +187,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
    * Internal constructor, fully configurable. Note that null options means
    * to use the system defaults (NOT the user-provided ones).
    */
-  CloudStorageFileSystemProvider(String userProject, @Nullable StorageOptions gcsStorageOptions) {
+  CloudStorageFileSystemProvider(@Nullable String userProject, @Nullable StorageOptions gcsStorageOptions) {
     this.storageOptions = gcsStorageOptions;
     this.userProject = userProject;
   }
@@ -396,7 +397,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
         throw new UnsupportedOperationException(option.toString());
       }
     }
-    if (!userProject.isEmpty()) {
+    if (!Strings.isNullOrEmpty(userProject)) {
       writeOptions.add(Storage.BlobWriteOption.userProject(userProject));
     }
 
@@ -451,7 +452,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
     // Loop will terminate via an exception if all retries are exhausted
     while (true) {
       try {
-        if (userProject.isEmpty()) {
+        if (Strings.isNullOrEmpty(userProject)) {
           return storage.delete(cloudPath.getBlobId());
         } else {
           return storage.delete(cloudPath.getBlobId(), Storage.BlobSourceOption.userProject(userProject));
@@ -575,7 +576,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
       try {
         if ( wantCopyAttributes ) {
           BlobInfo blobInfo;
-          if (userProject.isEmpty()) {
+          if (Strings.isNullOrEmpty(userProject)) {
             blobInfo = storage.get(fromPath.getBlobId());
           } else {
             blobInfo = storage.get(fromPath.getBlobId(), BlobGetOption.userProject(userProject));
@@ -607,9 +608,9 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
         } else {
           copyReqBuilder = copyReqBuilder.setTarget(tgtInfo, Storage.BlobTargetOption.doesNotExist());
         }
-        if (!fromPath.getFileSystem().config().userProject().isEmpty()) {
+        if (!Strings.isNullOrEmpty(fromPath.getFileSystem().config().userProject())) {
           copyReqBuilder = copyReqBuilder.setSourceOptions(BlobSourceOption.userProject(fromPath.getFileSystem().config().userProject()));
-        } else if (!toPath.getFileSystem().config().userProject().isEmpty()) {
+        } else if (!Strings.isNullOrEmpty(toPath.getFileSystem().config().userProject())) {
           copyReqBuilder = copyReqBuilder.setSourceOptions(BlobSourceOption.userProject(toPath.getFileSystem().config().userProject()));
         }
         CopyWriter copyWriter = storage.copy(copyReqBuilder.build());
@@ -664,7 +665,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
           return;
         }
         boolean nullId;
-        if (userProject.isEmpty()) {
+        if (Strings.isNullOrEmpty(userProject)) {
           nullId = storage.get(
               cloudPath.getBlobId(),
               Storage.BlobGetOption.fields(Storage.BlobField.ID))
@@ -709,7 +710,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
           return result;
         }
         BlobInfo blobInfo;
-        if (userProject.isEmpty()) {
+        if (Strings.isNullOrEmpty(userProject)) {
           blobInfo = storage.get(cloudPath.getBlobId());
         } else {
           blobInfo = storage.get(cloudPath.getBlobId(), BlobGetOption.userProject(userProject));
@@ -775,7 +776,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
       try {
         final String prefix = cloudPath.toRealPath().toString();
         Page<Blob> dirList;
-        if (userProject.isEmpty()) {
+        if (Strings.isNullOrEmpty(userProject)) {
           dirList = storage.list(cloudPath.bucket(),
               Storage.BlobListOption.prefix(prefix), Storage.BlobListOption.currentDirectory(),
               Storage.BlobListOption.fields());
@@ -839,10 +840,10 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
   }
 
   /**
-   * @param bucketName - the name of the bucket to check
+   * @param bucketName the name of the bucket to check
    * @return whether requester pays is enabled for that bucket
    */
-  public boolean isRequesterPays(String bucketName) {
+  public boolean requesterPays(String bucketName) {
     initStorage();
     try {
       // instead of true/false, this method returns true/null.
@@ -858,12 +859,12 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
 
   /**
    * Returns a NEW CloudStorageFileSystemProvider identical to this one, but with
-   * requester pays disabled.
+   * userProject removed.
    *
    * Perhaps you want to call this is you realize you'll be working on a bucket that is
    * not requester-pays.
    */
-  public CloudStorageFileSystemProvider disableRequesterPays() {
+  public CloudStorageFileSystemProvider withNoUserProject() {
     return new CloudStorageFileSystemProvider("", this.storageOptions);
   }
 

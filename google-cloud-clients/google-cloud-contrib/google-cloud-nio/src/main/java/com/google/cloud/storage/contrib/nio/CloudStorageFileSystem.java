@@ -20,6 +20,7 @@ import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.cloud.storage.StorageOptions;
+import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableSet;
 
 import java.io.IOException;
@@ -147,17 +148,17 @@ public final class CloudStorageFileSystem extends FileSystem {
     checkArgument(!bucket.isEmpty(), "bucket");
     this.bucket = bucket;
     if (config.autoDetectRequesterPays()) {
-      if (config.userProject().isEmpty()) {
+      if (Strings.isNullOrEmpty(config.userProject())) {
         throw new IllegalArgumentException("If autoDetectRequesterPays is set, then userProject must be set too.");
       }
       // detect whether we want to pay for these accesses or not.
-      if (!provider.isRequesterPays(bucket)) {
+      if (!provider.requesterPays(bucket)) {
         // update config (just to ease debugging, we're not actually using config.userProject later.
         HashMap<String, String> disableUserProject = new HashMap<>();
         disableUserProject.put("userProject", "");
         config = CloudStorageConfiguration.fromMap(config, disableUserProject);
         // update the provider (this is the most important bit)
-        provider = provider.disableRequesterPays();
+        provider = provider.withNoUserProject();
       }
     }
     this.provider = provider;

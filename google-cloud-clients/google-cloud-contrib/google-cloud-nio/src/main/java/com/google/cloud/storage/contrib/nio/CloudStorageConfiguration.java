@@ -21,6 +21,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.auto.value.AutoValue;
 
+import javax.annotation.Nullable;
 import java.util.Map;
 
 /**
@@ -71,7 +72,7 @@ public abstract class CloudStorageConfiguration {
    * set to bill that project (project you own) for all accesses. This is required for accessing
    * requester-pays buckets. This value cannot be null.
    */
-  public abstract String userProject();
+  public abstract @Nullable String userProject();
 
   /**
    * Returns whether userProject will be ignored for non-requester-pays buckets. That is,
@@ -110,7 +111,7 @@ public abstract class CloudStorageConfiguration {
     private boolean usePseudoDirectories = true;
     private int blockSize = CloudStorageFileSystem.BLOCK_SIZE_DEFAULT;
     private int maxChannelReopens = 0;
-    private String userProject="";
+    private @Nullable String userProject=null;
     private boolean autoDetectRequesterPays=false;
 
     /**
@@ -171,7 +172,7 @@ public abstract class CloudStorageConfiguration {
     }
 
     public Builder userProject(String value) {
-      userProject = checkNotNull(value);
+      userProject = value;
       return this;
     }
 
