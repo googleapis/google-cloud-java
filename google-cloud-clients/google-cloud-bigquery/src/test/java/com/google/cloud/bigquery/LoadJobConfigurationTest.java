@@ -21,6 +21,7 @@ import static org.junit.Assert.assertEquals;
 import com.google.cloud.bigquery.JobInfo.CreateDisposition;
 import com.google.cloud.bigquery.JobInfo.WriteDisposition;
 import com.google.cloud.bigquery.JobInfo.SchemaUpdateOption;
+import com.google.cloud.bigquery.TimePartitioning.Type;
 import com.google.common.collect.ImmutableList;
 
 import org.junit.Test;
@@ -53,6 +54,8 @@ public class LoadJobConfigurationTest {
   private static final Boolean AUTODETECT = true;
   private static final EncryptionConfiguration JOB_ENCRYPTION_CONFIGURATION =
       EncryptionConfiguration.newBuilder().setKmsKeyName("KMS_KEY_1").build();
+  private static final TimePartitioning TIME_PARTITIONING = TimePartitioning.of(Type.DAY);
+  private static final Clustering CLUSTERING = Clustering.newBuilder().setFields(ImmutableList.of("Foo", "Bar")).build();
   private static final LoadJobConfiguration LOAD_CONFIGURATION_CSV =
       LoadJobConfiguration.newBuilder(TABLE_ID, SOURCE_URIS)
           .setCreateDisposition(CREATE_DISPOSITION)
@@ -64,6 +67,8 @@ public class LoadJobConfigurationTest {
           .setSchemaUpdateOptions(SCHEMA_UPDATE_OPTIONS)
           .setAutodetect(AUTODETECT)
           .setDestinationEncryptionConfiguration(JOB_ENCRYPTION_CONFIGURATION)
+          .setTimePartitioning(TIME_PARTITIONING)
+          .setClustering(CLUSTERING)
           .build();
   private static final DatastoreBackupOptions BACKUP_OPTIONS = DatastoreBackupOptions.newBuilder()
       .setProjectionFields(ImmutableList.of("field_1", "field_2"))
@@ -163,5 +168,7 @@ public class LoadJobConfigurationTest {
     assertEquals(expected.getAutodetect(), value.getAutodetect());
     assertEquals(expected.getSchemaUpdateOptions(), value.getSchemaUpdateOptions());
     assertEquals(expected.getDestinationEncryptionConfiguration(), value.getDestinationEncryptionConfiguration());
+    assertEquals(expected.getTimePartitioning(), value.getTimePartitioning());
+    assertEquals(expected.getClustering(), value.getClustering());
   }
 }

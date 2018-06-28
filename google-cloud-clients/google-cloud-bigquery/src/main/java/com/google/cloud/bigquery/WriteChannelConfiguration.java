@@ -27,6 +27,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.primitives.Ints;
 
 import java.io.Serializable;
+import java.sql.Time;
 import java.util.List;
 import java.util.Objects;
 
@@ -50,6 +51,8 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
   private final List<SchemaUpdateOption> schemaUpdateOptions;
   private final Boolean autodetect;
   private final EncryptionConfiguration destinationEncryptionConfiguration;
+  private final TimePartitioning timePartitioning;
+  private final Clustering clustering;
 
   public static final class Builder implements LoadConfiguration.Builder {
 
@@ -64,6 +67,8 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
     private List<SchemaUpdateOption> schemaUpdateOptions;
     private Boolean autodetect;
     private EncryptionConfiguration destinationEncryptionConfiguration;
+    private TimePartitioning timePartitioning;
+    private Clustering clustering;
 
     private Builder() {}
 
@@ -79,6 +84,8 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
       this.schemaUpdateOptions = writeChannelConfiguration.schemaUpdateOptions;
       this.autodetect = writeChannelConfiguration.autodetect;
       this.destinationEncryptionConfiguration = writeChannelConfiguration.destinationEncryptionConfiguration;
+      this.timePartitioning = writeChannelConfiguration.timePartitioning;
+      this.clustering = writeChannelConfiguration.clustering;
     }
 
     private Builder(com.google.api.services.bigquery.model.JobConfiguration configurationPb) {
@@ -139,6 +146,12 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
       if (loadConfigurationPb.getDestinationEncryptionConfiguration() != null) {
         this.destinationEncryptionConfiguration = new EncryptionConfiguration.Builder(
             configurationPb.getLoad().getDestinationEncryptionConfiguration()).build();
+      }
+      if (loadConfigurationPb.getTimePartitioning() != null) {
+        this.timePartitioning = TimePartitioning.fromPb(loadConfigurationPb.getTimePartitioning());
+      }
+      if (loadConfigurationPb.getClustering() != null) {
+        this.clustering = Clustering.fromPb(loadConfigurationPb.getClustering());
       }
     }
 
@@ -219,6 +232,18 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
     }
 
     @Override
+    public Builder setTimePartitioning(TimePartitioning timePartitioning) {
+      this.timePartitioning = timePartitioning;
+      return this;
+    }
+
+    @Override
+    public Builder setClustering(Clustering clustering) {
+      this.clustering = clustering;
+      return this;
+    }
+
+    @Override
     public WriteChannelConfiguration build() {
       return new WriteChannelConfiguration(this);
     }
@@ -236,6 +261,8 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
     this.schemaUpdateOptions = builder.schemaUpdateOptions;
     this.autodetect = builder.autodetect;
     this.destinationEncryptionConfiguration = builder.destinationEncryptionConfiguration;
+    this.timePartitioning = builder.timePartitioning;
+    this.clustering = builder.clustering;
   }
 
 
@@ -314,6 +341,12 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
   }
 
   @Override
+  public TimePartitioning getTimePartitioning() { return timePartitioning; }
+
+  @Override
+  public Clustering getClustering() { return clustering; }
+
+  @Override
   public Builder toBuilder() {
     return new Builder(this);
   }
@@ -330,7 +363,9 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
         .add("schema", schema)
         .add("ignoreUnknownValue", ignoreUnknownValues)
         .add("schemaUpdateOptions", schemaUpdateOptions)
-        .add("autodetect", autodetect);
+        .add("autodetect", autodetect)
+        .add("timePartitioning", timePartitioning)
+        .add("clustering", clustering);
   }
 
   @Override
@@ -348,7 +383,7 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
   @Override
   public int hashCode() {
     return Objects.hash(destinationTable, createDisposition, writeDisposition, formatOptions,
-        nullMarker, maxBadRecords, schema, ignoreUnknownValues, schemaUpdateOptions, autodetect);
+        nullMarker, maxBadRecords, schema, ignoreUnknownValues, schemaUpdateOptions, autodetect, timePartitioning, clustering);
   }
 
   WriteChannelConfiguration setProjectId(String projectId) {
@@ -402,6 +437,12 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
     if (destinationEncryptionConfiguration != null) {
       loadConfigurationPb.setDestinationEncryptionConfiguration(
           destinationEncryptionConfiguration.toPb());
+    }
+    if (timePartitioning != null) {
+      loadConfigurationPb.setTimePartitioning(timePartitioning.toPb());
+    }
+    if (clustering != null) {
+      loadConfigurationPb.setClustering(clustering.toPb());
     }
     return new com.google.api.services.bigquery.model.JobConfiguration()
         .setLoad(loadConfigurationPb);
