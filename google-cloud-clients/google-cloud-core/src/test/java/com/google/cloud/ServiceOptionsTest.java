@@ -314,6 +314,24 @@ public class ServiceOptionsTest {
   }
 
   @Test
+  public void testBuilderServiceAccount_explicitSetProjectIdBefore() {
+    TestServiceOptions options = TestServiceOptions.newBuilder()
+        .setProjectId("override-project-id")
+        .setCredentials(credentialsWithProjectId)
+        .build();
+    assertEquals("override-project-id", options.getProjectId());
+  }
+
+  @Test
+  public void testBuilderServiceAccount_explicitSetProjectIdAfter() {
+    TestServiceOptions options = TestServiceOptions.newBuilder()
+        .setCredentials(credentialsWithProjectId)
+        .setProjectId("override-project-id")
+        .build();
+    assertEquals("override-project-id", options.getProjectId());
+  }
+
+  @Test
   public void testGetProjectIdRequired() {
     assertTrue(OPTIONS.projectIdRequired());
   }

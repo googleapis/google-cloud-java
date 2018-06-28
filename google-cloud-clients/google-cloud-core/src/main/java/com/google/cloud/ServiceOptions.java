@@ -206,7 +206,8 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
     public B setCredentials(Credentials credentials) {
       this.credentials = checkNotNull(credentials);
       // set project id if available
-      if (credentials instanceof ServiceAccountCredentials) {
+      if (this.projectId == null &&
+          credentials instanceof ServiceAccountCredentials) {
         this.projectId = ((ServiceAccountCredentials) credentials).getProjectId();
       }
       return self();
