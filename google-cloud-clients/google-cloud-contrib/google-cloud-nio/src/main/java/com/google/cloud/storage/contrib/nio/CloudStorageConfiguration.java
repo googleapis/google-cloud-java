@@ -110,13 +110,10 @@ public abstract class CloudStorageConfiguration {
     private boolean stripPrefixSlash = true;
     private boolean usePseudoDirectories = true;
     private int blockSize = CloudStorageFileSystem.BLOCK_SIZE_DEFAULT;
-    // default: 0
-    private int maxChannelReopens;
-    // default: null
-    private @Nullable String userProject;
+    private int maxChannelReopens = 0;
+    private @Nullable String userProject = null;
     // This of this as "clear userProject if not RequesterPays"
-    // default: false
-    private boolean useUserProjectOnlyForRequesterPaysBuckets;
+    private boolean useUserProjectOnlyForRequesterPaysBuckets = false;
 
     /**
      * Changes current working directory for new filesystem. This defaults to the root directory.

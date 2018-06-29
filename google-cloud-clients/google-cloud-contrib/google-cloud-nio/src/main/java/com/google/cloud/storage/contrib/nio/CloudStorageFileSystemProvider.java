@@ -34,7 +34,6 @@ import com.google.cloud.storage.StorageException;
 import com.google.cloud.storage.StorageOptions;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.MoreObjects;
-import com.google.common.base.Strings;
 import com.google.common.collect.AbstractIterator;
 import com.google.common.net.UrlEscapers;
 import com.google.common.primitives.Ints;
