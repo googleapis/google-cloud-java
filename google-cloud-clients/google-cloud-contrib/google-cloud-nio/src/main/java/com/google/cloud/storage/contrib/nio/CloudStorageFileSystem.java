@@ -147,9 +147,9 @@ public final class CloudStorageFileSystem extends FileSystem {
       CloudStorageFileSystemProvider provider, String bucket, CloudStorageConfiguration config) {
     checkArgument(!bucket.isEmpty(), "bucket");
     this.bucket = bucket;
-    if (config.autoDetectRequesterPays()) {
+    if (config.useUserProjectOnlyForRequesterPaysBuckets()) {
       if (Strings.isNullOrEmpty(config.userProject())) {
-        throw new IllegalArgumentException("If autoDetectRequesterPays is set, then userProject must be set too.");
+        throw new IllegalArgumentException("If useUserProjectOnlyForRequesterPaysBuckets is set, then userProject must be set too.");
       }
       // detect whether we want to pay for these accesses or not.
       if (!provider.requesterPays(bucket)) {

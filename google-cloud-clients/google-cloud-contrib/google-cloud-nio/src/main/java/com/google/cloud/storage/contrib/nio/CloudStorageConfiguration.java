@@ -75,7 +75,7 @@ public abstract class CloudStorageConfiguration {
   public abstract @Nullable String userProject();
 
   /**
-   * Returns whether userProject will be ignored for non-requester-pays buckets. That is,
+   * Returns whether userProject will be cleared for non-requester-pays buckets. That is,
    * if false (the default value), setting userProject causes that project to be billed
    * regardless of whether the bucket is requester-pays or not. If true, setting
    * userProject will only cause that project to be billed when the project is requester-pays.
@@ -83,7 +83,7 @@ public abstract class CloudStorageConfiguration {
    * Setting this will cause the bucket to be accessed when the CloudStorageFileSystem object
    * is created.
    */
-  public abstract boolean autoDetectRequesterPays();
+  public abstract boolean useUserProjectOnlyForRequesterPaysBuckets();
 
 
   /**
@@ -110,9 +110,13 @@ public abstract class CloudStorageConfiguration {
     private boolean stripPrefixSlash = true;
     private boolean usePseudoDirectories = true;
     private int blockSize = CloudStorageFileSystem.BLOCK_SIZE_DEFAULT;
-    private int maxChannelReopens = 0;
-    private @Nullable String userProject=null;
-    private boolean autoDetectRequesterPays=false;
+    // default: 0
+    private int maxChannelReopens;
+    // default: null
+    private @Nullable String userProject;
+    // This of this as "clear userProject if not RequesterPays"
+    // default: false
+    private boolean useUserProjectOnlyForRequesterPaysBuckets;
 
     /**
      * Changes current working directory for new filesystem. This defaults to the root directory.
@@ -177,7 +181,7 @@ public abstract class CloudStorageConfiguration {
     }
 
     public Builder autoDetectRequesterPays(boolean value) {
-      autoDetectRequesterPays = value;
+      useUserProjectOnlyForRequesterPaysBuckets = value;
       return this;
     }
 
@@ -193,7 +197,7 @@ public abstract class CloudStorageConfiguration {
           blockSize,
           maxChannelReopens,
           userProject,
-          autoDetectRequesterPays);
+          useUserProjectOnlyForRequesterPaysBuckets);
     }
 
     Builder(CloudStorageConfiguration toModify) {
@@ -204,7 +208,7 @@ public abstract class CloudStorageConfiguration {
       blockSize = toModify.blockSize();
       maxChannelReopens = toModify.maxChannelReopens();
       userProject = toModify.userProject();
-      autoDetectRequesterPays = toModify.autoDetectRequesterPays();
+      useUserProjectOnlyForRequesterPaysBuckets = toModify.useUserProjectOnlyForRequesterPaysBuckets();
     }
 
     Builder() {}
@@ -242,7 +246,7 @@ public abstract class CloudStorageConfiguration {
         case "userProject":
           builder.userProject((String) entry.getValue());
           break;
-        case "autoDetectRequesterPays":
+        case "useUserProjectOnlyForRequesterPaysBuckets":
           builder.autoDetectRequesterPays((Boolean) entry.getValue());
           break;
         default:

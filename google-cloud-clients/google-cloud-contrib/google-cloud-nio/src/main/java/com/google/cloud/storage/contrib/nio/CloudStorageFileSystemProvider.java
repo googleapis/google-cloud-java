@@ -397,7 +397,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
         throw new UnsupportedOperationException(option.toString());
       }
     }
-    if (!Strings.isNullOrEmpty(userProject)) {
+    if (!isNullOrEmpty(userProject)) {
       writeOptions.add(Storage.BlobWriteOption.userProject(userProject));
     }
 
@@ -452,7 +452,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
     // Loop will terminate via an exception if all retries are exhausted
     while (true) {
       try {
-        if (Strings.isNullOrEmpty(userProject)) {
+        if (isNullOrEmpty(userProject)) {
           return storage.delete(cloudPath.getBlobId());
         } else {
           return storage.delete(cloudPath.getBlobId(), Storage.BlobSourceOption.userProject(userProject));
@@ -576,7 +576,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
       try {
         if ( wantCopyAttributes ) {
           BlobInfo blobInfo;
-          if (Strings.isNullOrEmpty(userProject)) {
+          if (isNullOrEmpty(userProject)) {
             blobInfo = storage.get(fromPath.getBlobId());
           } else {
             blobInfo = storage.get(fromPath.getBlobId(), BlobGetOption.userProject(userProject));
@@ -608,9 +608,9 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
         } else {
           copyReqBuilder = copyReqBuilder.setTarget(tgtInfo, Storage.BlobTargetOption.doesNotExist());
         }
-        if (!Strings.isNullOrEmpty(fromPath.getFileSystem().config().userProject())) {
+        if (!isNullOrEmpty(fromPath.getFileSystem().config().userProject())) {
           copyReqBuilder = copyReqBuilder.setSourceOptions(BlobSourceOption.userProject(fromPath.getFileSystem().config().userProject()));
-        } else if (!Strings.isNullOrEmpty(toPath.getFileSystem().config().userProject())) {
+        } else if (!isNullOrEmpty(toPath.getFileSystem().config().userProject())) {
           copyReqBuilder = copyReqBuilder.setSourceOptions(BlobSourceOption.userProject(toPath.getFileSystem().config().userProject()));
         }
         CopyWriter copyWriter = storage.copy(copyReqBuilder.build());
@@ -665,7 +665,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
           return;
         }
         boolean nullId;
-        if (Strings.isNullOrEmpty(userProject)) {
+        if (isNullOrEmpty(userProject)) {
           nullId = storage.get(
               cloudPath.getBlobId(),
               Storage.BlobGetOption.fields(Storage.BlobField.ID))
@@ -710,7 +710,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
           return result;
         }
         BlobInfo blobInfo;
-        if (Strings.isNullOrEmpty(userProject)) {
+        if (isNullOrEmpty(userProject)) {
           blobInfo = storage.get(cloudPath.getBlobId());
         } else {
           blobInfo = storage.get(cloudPath.getBlobId(), BlobGetOption.userProject(userProject));
@@ -776,7 +776,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
       try {
         final String prefix = cloudPath.toRealPath().toString();
         Page<Blob> dirList;
-        if (Strings.isNullOrEmpty(userProject)) {
+        if (isNullOrEmpty(userProject)) {
           dirList = storage.list(cloudPath.bucket(),
               Storage.BlobListOption.prefix(prefix), Storage.BlobListOption.currentDirectory(),
               Storage.BlobListOption.fields());
