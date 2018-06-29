@@ -43,6 +43,7 @@ import com.google.api.gax.rpc.HeaderProvider;
 import com.google.api.gax.rpc.NoHeaderProvider;
 import com.google.auth.Credentials;
 import com.google.auth.oauth2.GoogleCredentials;
+import com.google.auth.oauth2.ServiceAccountCredentials;
 import com.google.cloud.spi.ServiceRpcFactory;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Iterables;
@@ -204,6 +205,11 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
      */
     public B setCredentials(Credentials credentials) {
       this.credentials = checkNotNull(credentials);
+      // set project id if available
+      if (this.projectId == null &&
+          credentials instanceof ServiceAccountCredentials) {
+        this.projectId = ((ServiceAccountCredentials) credentials).getProjectId();
+      }
       return self();
     }
 
