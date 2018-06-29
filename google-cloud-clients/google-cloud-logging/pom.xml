@@ -10,7 +10,6 @@
     Java idiomatic client for Stackdriver Logging.
   </description>
   <parent>
-
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-clients</artifactId>
     <version>0.53.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-clients:current} -->
