@@ -115,21 +115,25 @@ public class DatabaseAdminClientImplTest {
     assertThat(op.getName()).isEqualTo(opName);
   }
 
-  @Ignore("More work needs to be done")
   @Test
-  // TODO(hzyi)
-  // Changing the surface to OperationFuture breaks updateDatabaseDdl in the case
-  // that there is already a longrunning operation running. Disabling this test for 
-  // this PR and I will fix this in the next PR. 
   public void updateDatabaseDdlOpAlreadyExists() throws Exception {
-    String opName = DB_NAME + "/operations/myop";
-    String opId = "myop";
+    String originalOpName = DB_NAME + "/operations/originalop";
+    String originalOpId = "originalop";
     List<String> ddl = ImmutableList.of();
-    when(rpc.updateDatabaseDdl(DB_NAME, ddl, opId))
-        .thenThrow(SpannerExceptionFactory.newSpannerException(ErrorCode.ALREADY_EXISTS, ""));
+    OperationFuture<Empty, UpdateDatabaseDdlMetadata> originalOp =
+        OperationFutureUtil.immediateOperationFuture(
+            originalOpName, Empty.getDefaultInstance(), UpdateDatabaseDdlMetadata.getDefaultInstance());
+    
+    String newOpName = DB_NAME + "/operations/newop";
+    String newOpId = "newop";
+    OperationFuture<Empty, UpdateDatabaseDdlMetadata> newop =
+        OperationFutureUtil.immediateOperationFuture(
+            newOpName, Empty.getDefaultInstance(), UpdateDatabaseDdlMetadata.getDefaultInstance());
+
+    when(rpc.updateDatabaseDdl(DB_NAME, ddl, newOpId)).thenReturn(originalOp);
     OperationFuture<Void, UpdateDatabaseDdlMetadata> op =
-        client.updateDatabaseDdl(INSTANCE_ID, DB_ID, ddl, opId);
-    assertThat(op.getName()).isEqualTo(opName);
+        client.updateDatabaseDdl(INSTANCE_ID, DB_ID, ddl, newOpId);
+    assertThat(op.getName()).isEqualTo(originalOpName);
   }
 
   @Test
