@@ -1,7 +1,7 @@
 Google Cloud Java Client for Text-to-Speech
 ======================================
 
-Java idiomatic client for [Text-to-Speech][cloud-texttospeech].
+Java idiomatic client for [Text-to-Speech][https://cloud.google.com/text-to-speech/].
 
 [![CircleCI](https://circleci.com/gh/GoogleCloudPlatform/google-cloud-java/tree/master.svg?style=shield)](https://circleci.com/gh/GoogleCloudPlatform/google-cloud-java/tree/master)
 [![Coverage Status](https://coveralls.io/repos/GoogleCloudPlatform/google-cloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/google-cloud-java?branch=master)
