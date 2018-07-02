@@ -147,7 +147,7 @@ public class LoggingClientTest {
             .build();
     mockLoggingServiceV2.addResponse(expectedResponse);
 
-    List<ParentName> resourceNames = new ArrayList<>();
+    List<String> resourceNames = new ArrayList<>();
     String filter = "filter-1274492040";
     String orderBy = "orderBy1234304744";
 
@@ -162,7 +162,7 @@ public class LoggingClientTest {
     Assert.assertEquals(1, actualRequests.size());
     ListLogEntriesRequest actualRequest = (ListLogEntriesRequest) actualRequests.get(0);
 
-    Assert.assertEquals(resourceNames, ParentName.parseList(actualRequest.getResourceNamesList()));
+    Assert.assertEquals(resourceNames, actualRequest.getResourceNamesList());
     Assert.assertEquals(filter, actualRequest.getFilter());
     Assert.assertEquals(orderBy, actualRequest.getOrderBy());
     Assert.assertTrue(
@@ -178,7 +178,7 @@ public class LoggingClientTest {
     mockLoggingServiceV2.addException(exception);
 
     try {
-      List<ParentName> resourceNames = new ArrayList<>();
+      List<String> resourceNames = new ArrayList<>();
       String filter = "filter-1274492040";
       String orderBy = "orderBy1234304744";
 

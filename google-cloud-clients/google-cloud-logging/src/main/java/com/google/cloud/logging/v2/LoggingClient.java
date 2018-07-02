@@ -333,58 +333,10 @@ public class LoggingClient implements BackgroundResource {
    *
    * <pre><code>
    * try (LoggingClient loggingClient = LoggingClient.create()) {
-   *   List&lt;ParentName&gt; resourceNames = new ArrayList&lt;&gt;();
+   *   List&lt;String&gt; resourceNames = new ArrayList&lt;&gt;();
    *   String filter = "";
    *   String orderBy = "";
    *   for (LogEntry element : loggingClient.listLogEntries(resourceNames, filter, orderBy).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
-   *
-   * @param resourceNames Required. Names of one or more parent resources from which to retrieve log
-   *     entries:
-   *     <p>"projects/[PROJECT_ID]" "organizations/[ORGANIZATION_ID]"
-   *     "billingAccounts/[BILLING_ACCOUNT_ID]" "folders/[FOLDER_ID]"
-   *     <p>Projects listed in the `project_ids` field are added to this list.
-   * @param filter Optional. A filter that chooses which log entries to return. See [Advanced Logs
-   *     Filters](/logging/docs/view/advanced_filters). Only log entries that match the filter are
-   *     returned. An empty filter matches all log entries in the resources listed in
-   *     `resource_names`. Referencing a parent resource that is not listed in `resource_names` will
-   *     cause the filter to return no results. The maximum length of the filter is 20000
-   *     characters.
-   * @param orderBy Optional. How the results should be sorted. Presently, the only permitted values
-   *     are `"timestamp asc"` (default) and `"timestamp desc"`. The first option returns entries in
-   *     order of increasing values of `LogEntry.timestamp` (oldest first), and the second option
-   *     returns entries in order of decreasing timestamps (newest first). Entries with equal
-   *     timestamps are returned in order of their `insert_id` values.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ListLogEntriesPagedResponse listLogEntries(
-      List<ParentName> resourceNames, String filter, String orderBy) {
-    ListLogEntriesRequest request =
-        ListLogEntriesRequest.newBuilder()
-            .addAllResourceNames(
-                resourceNames == null ? null : ParentName.toStringList(resourceNames))
-            .setFilter(filter)
-            .setOrderBy(orderBy)
-            .build();
-    return listLogEntries(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Lists log entries. Use this method to retrieve log entries from Stackdriver Logging. For ways
-   * to export log entries, see [Exporting Logs](/logging/docs/export).
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (LoggingClient loggingClient = LoggingClient.create()) {
-   *   List&lt;ParentName&gt; resourceNames = new ArrayList&lt;&gt;();
-   *   String filter = "";
-   *   String orderBy = "";
-   *   for (LogEntry element : loggingClient.listLogEntries(ParentName.toStringList(resourceNames), filter, orderBy).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -428,9 +380,9 @@ public class LoggingClient implements BackgroundResource {
    *
    * <pre><code>
    * try (LoggingClient loggingClient = LoggingClient.create()) {
-   *   List&lt;ParentName&gt; resourceNames = new ArrayList&lt;&gt;();
+   *   List&lt;String&gt; resourceNames = new ArrayList&lt;&gt;();
    *   ListLogEntriesRequest request = ListLogEntriesRequest.newBuilder()
-   *     .addAllResourceNames(ParentName.toStringList(resourceNames))
+   *     .addAllResourceNames(resourceNames)
    *     .build();
    *   for (LogEntry element : loggingClient.listLogEntries(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -454,9 +406,9 @@ public class LoggingClient implements BackgroundResource {
    *
    * <pre><code>
    * try (LoggingClient loggingClient = LoggingClient.create()) {
-   *   List&lt;ParentName&gt; resourceNames = new ArrayList&lt;&gt;();
+   *   List&lt;String&gt; resourceNames = new ArrayList&lt;&gt;();
    *   ListLogEntriesRequest request = ListLogEntriesRequest.newBuilder()
-   *     .addAllResourceNames(ParentName.toStringList(resourceNames))
+   *     .addAllResourceNames(resourceNames)
    *     .build();
    *   ApiFuture&lt;ListLogEntriesPagedResponse&gt; future = loggingClient.listLogEntriesPagedCallable().futureCall(request);
    *   // Do something
@@ -480,9 +432,9 @@ public class LoggingClient implements BackgroundResource {
    *
    * <pre><code>
    * try (LoggingClient loggingClient = LoggingClient.create()) {
-   *   List&lt;ParentName&gt; resourceNames = new ArrayList&lt;&gt;();
+   *   List&lt;String&gt; resourceNames = new ArrayList&lt;&gt;();
    *   ListLogEntriesRequest request = ListLogEntriesRequest.newBuilder()
-   *     .addAllResourceNames(ParentName.toStringList(resourceNames))
+   *     .addAllResourceNames(resourceNames)
    *     .build();
    *   while (true) {
    *     ListLogEntriesResponse response = loggingClient.listLogEntriesCallable().call(request);
