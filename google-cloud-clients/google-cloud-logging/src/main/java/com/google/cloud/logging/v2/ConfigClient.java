@@ -633,11 +633,80 @@ public class ConfigClient implements BackgroundResource {
    * try (ConfigClient configClient = ConfigClient.create()) {
    *   SinkName sinkName = ProjectSinkName.of("[PROJECT]", "[SINK]");
    *   LogSink sink = LogSink.newBuilder().build();
-   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   LogSink response = configClient.updateSink(sinkName, sink);
+   * }
+   * </code></pre>
+   *
+   * @param sinkName Required. The full resource name of the sink to update, including the parent
+   *     resource and the sink identifier:
+   *     <p>"projects/[PROJECT_ID]/sinks/[SINK_ID]"
+   *     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
+   *     "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]"
+   *     "folders/[FOLDER_ID]/sinks/[SINK_ID]"
+   *     <p>Example: `"projects/my-project-id/sinks/my-sink-id"`.
+   * @param sink Required. The updated sink, whose name is the same identifier that appears as part
+   *     of `sink_name`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final LogSink updateSink(SinkName sinkName, LogSink sink) {
+
+    UpdateSinkRequest request =
+        UpdateSinkRequest.newBuilder()
+            .setSinkName(sinkName == null ? null : sinkName.toString())
+            .setSink(sink)
+            .build();
+    return updateSink(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates a sink. This method replaces the following fields in the existing sink with values from
+   * the new sink: `destination`, and `filter`. The updated sink might also have a new
+   * `writer_identity`; see the `unique_writer_identity` field.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   SinkName sinkName = ProjectSinkName.of("[PROJECT]", "[SINK]");
+   *   LogSink sink = LogSink.newBuilder().build();
+   *   LogSink response = configClient.updateSink(sinkName.toString(), sink);
+   * }
+   * </code></pre>
+   *
+   * @param sinkName Required. The full resource name of the sink to update, including the parent
+   *     resource and the sink identifier:
+   *     <p>"projects/[PROJECT_ID]/sinks/[SINK_ID]"
+   *     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
+   *     "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]"
+   *     "folders/[FOLDER_ID]/sinks/[SINK_ID]"
+   *     <p>Example: `"projects/my-project-id/sinks/my-sink-id"`.
+   * @param sink Required. The updated sink, whose name is the same identifier that appears as part
+   *     of `sink_name`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final LogSink updateSink(String sinkName, LogSink sink) {
+
+    UpdateSinkRequest request =
+        UpdateSinkRequest.newBuilder().setSinkName(sinkName).setSink(sink).build();
+    return updateSink(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates a sink. This method replaces the following fields in the existing sink with values from
+   * the new sink: `destination`, and `filter`. The updated sink might also have a new
+   * `writer_identity`; see the `unique_writer_identity` field.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   SinkName sinkName = ProjectSinkName.of("[PROJECT]", "[SINK]");
+   *   LogSink sink = LogSink.newBuilder().build();
    *   UpdateSinkRequest request = UpdateSinkRequest.newBuilder()
    *     .setSinkName(sinkName.toString())
    *     .setSink(sink)
-   *     .setUpdateMask(updateMask)
    *     .build();
    *   LogSink response = configClient.updateSink(request);
    * }
@@ -662,11 +731,9 @@ public class ConfigClient implements BackgroundResource {
    * try (ConfigClient configClient = ConfigClient.create()) {
    *   SinkName sinkName = ProjectSinkName.of("[PROJECT]", "[SINK]");
    *   LogSink sink = LogSink.newBuilder().build();
-   *   FieldMask updateMask = FieldMask.newBuilder().build();
    *   UpdateSinkRequest request = UpdateSinkRequest.newBuilder()
    *     .setSinkName(sinkName.toString())
    *     .setSink(sink)
-   *     .setUpdateMask(updateMask)
    *     .build();
    *   ApiFuture&lt;LogSink&gt; future = configClient.updateSinkCallable().futureCall(request);
    *   // Do something

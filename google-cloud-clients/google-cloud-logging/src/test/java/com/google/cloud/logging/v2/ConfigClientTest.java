@@ -315,6 +315,59 @@ public class ConfigClientTest {
 
   @Test
   @SuppressWarnings("all")
+  public void updateSinkTest2() {
+    String name = "name3373707";
+    ResourceName destination = ProjectName.of("[PROJECT]");
+    String filter = "filter-1274492040";
+    String writerIdentity = "writerIdentity775638794";
+    boolean includeChildren = true;
+    LogSink expectedResponse =
+        LogSink.newBuilder()
+            .setName(name)
+            .setDestination(destination.toString())
+            .setFilter(filter)
+            .setWriterIdentity(writerIdentity)
+            .setIncludeChildren(includeChildren)
+            .build();
+    mockConfigServiceV2.addResponse(expectedResponse);
+
+    SinkName sinkName = ProjectSinkName.of("[PROJECT]", "[SINK]");
+    LogSink sink = LogSink.newBuilder().build();
+
+    LogSink actualResponse = client.updateSink(sinkName, sink);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<GeneratedMessageV3> actualRequests = mockConfigServiceV2.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateSinkRequest actualRequest = (UpdateSinkRequest) actualRequests.get(0);
+
+    Assert.assertEquals(sinkName, SinkNames.parse(actualRequest.getSinkName()));
+    Assert.assertEquals(sink, actualRequest.getSink());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void updateSinkExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockConfigServiceV2.addException(exception);
+
+    try {
+      SinkName sinkName = ProjectSinkName.of("[PROJECT]", "[SINK]");
+      LogSink sink = LogSink.newBuilder().build();
+
+      client.updateSink(sinkName, sink);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void deleteSinkTest() {
     Empty expectedResponse = Empty.newBuilder().build();
     mockConfigServiceV2.addResponse(expectedResponse);
