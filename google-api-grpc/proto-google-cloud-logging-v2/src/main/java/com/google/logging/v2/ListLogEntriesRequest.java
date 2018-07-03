@@ -142,9 +142,9 @@ private static final long serialVersionUID = 0L;
    * `resource_names`.
    * </pre>
    *
-   * <code>repeated string project_ids = 1;</code>
+   * <code>repeated string project_ids = 1 [deprecated = true];</code>
    */
-  public com.google.protobuf.ProtocolStringList
+  @java.lang.Deprecated public com.google.protobuf.ProtocolStringList
       getProjectIdsList() {
     return projectIds_;
   }
@@ -157,9 +157,9 @@ private static final long serialVersionUID = 0L;
    * `resource_names`.
    * </pre>
    *
-   * <code>repeated string project_ids = 1;</code>
+   * <code>repeated string project_ids = 1 [deprecated = true];</code>
    */
-  public int getProjectIdsCount() {
+  @java.lang.Deprecated public int getProjectIdsCount() {
     return projectIds_.size();
   }
   /**
@@ -171,9 +171,9 @@ private static final long serialVersionUID = 0L;
    * `resource_names`.
    * </pre>
    *
-   * <code>repeated string project_ids = 1;</code>
+   * <code>repeated string project_ids = 1 [deprecated = true];</code>
    */
-  public java.lang.String getProjectIds(int index) {
+  @java.lang.Deprecated public java.lang.String getProjectIds(int index) {
     return projectIds_.get(index);
   }
   /**
@@ -185,9 +185,9 @@ private static final long serialVersionUID = 0L;
    * `resource_names`.
    * </pre>
    *
-   * <code>repeated string project_ids = 1;</code>
+   * <code>repeated string project_ids = 1 [deprecated = true];</code>
    */
-  public com.google.protobuf.ByteString
+  @java.lang.Deprecated public com.google.protobuf.ByteString
       getProjectIdsBytes(int index) {
     return projectIds_.getByteString(index);
   }
@@ -856,9 +856,9 @@ private static final long serialVersionUID = 0L;
      * `resource_names`.
      * </pre>
      *
-     * <code>repeated string project_ids = 1;</code>
+     * <code>repeated string project_ids = 1 [deprecated = true];</code>
      */
-    public com.google.protobuf.ProtocolStringList
+    @java.lang.Deprecated public com.google.protobuf.ProtocolStringList
         getProjectIdsList() {
       return projectIds_.getUnmodifiableView();
     }
@@ -871,9 +871,9 @@ private static final long serialVersionUID = 0L;
      * `resource_names`.
      * </pre>
      *
-     * <code>repeated string project_ids = 1;</code>
+     * <code>repeated string project_ids = 1 [deprecated = true];</code>
      */
-    public int getProjectIdsCount() {
+    @java.lang.Deprecated public int getProjectIdsCount() {
       return projectIds_.size();
     }
     /**
@@ -885,9 +885,9 @@ private static final long serialVersionUID = 0L;
      * `resource_names`.
      * </pre>
      *
-     * <code>repeated string project_ids = 1;</code>
+     * <code>repeated string project_ids = 1 [deprecated = true];</code>
      */
-    public java.lang.String getProjectIds(int index) {
+    @java.lang.Deprecated public java.lang.String getProjectIds(int index) {
       return projectIds_.get(index);
     }
     /**
@@ -899,9 +899,9 @@ private static final long serialVersionUID = 0L;
      * `resource_names`.
      * </pre>
      *
-     * <code>repeated string project_ids = 1;</code>
+     * <code>repeated string project_ids = 1 [deprecated = true];</code>
      */
-    public com.google.protobuf.ByteString
+    @java.lang.Deprecated public com.google.protobuf.ByteString
         getProjectIdsBytes(int index) {
       return projectIds_.getByteString(index);
     }
@@ -914,9 +914,9 @@ private static final long serialVersionUID = 0L;
      * `resource_names`.
      * </pre>
      *
-     * <code>repeated string project_ids = 1;</code>
+     * <code>repeated string project_ids = 1 [deprecated = true];</code>
      */
-    public Builder setProjectIds(
+    @java.lang.Deprecated public Builder setProjectIds(
         int index, java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
@@ -935,9 +935,9 @@ private static final long serialVersionUID = 0L;
      * `resource_names`.
      * </pre>
      *
-     * <code>repeated string project_ids = 1;</code>
+     * <code>repeated string project_ids = 1 [deprecated = true];</code>
      */
-    public Builder addProjectIds(
+    @java.lang.Deprecated public Builder addProjectIds(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
@@ -956,9 +956,9 @@ private static final long serialVersionUID = 0L;
      * `resource_names`.
      * </pre>
      *
-     * <code>repeated string project_ids = 1;</code>
+     * <code>repeated string project_ids = 1 [deprecated = true];</code>
      */
-    public Builder addAllProjectIds(
+    @java.lang.Deprecated public Builder addAllProjectIds(
         java.lang.Iterable<java.lang.String> values) {
       ensureProjectIdsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -975,9 +975,9 @@ private static final long serialVersionUID = 0L;
      * `resource_names`.
      * </pre>
      *
-     * <code>repeated string project_ids = 1;</code>
+     * <code>repeated string project_ids = 1 [deprecated = true];</code>
      */
-    public Builder clearProjectIds() {
+    @java.lang.Deprecated public Builder clearProjectIds() {
       projectIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
@@ -992,9 +992,9 @@ private static final long serialVersionUID = 0L;
      * `resource_names`.
      * </pre>
      *
-     * <code>repeated string project_ids = 1;</code>
+     * <code>repeated string project_ids = 1 [deprecated = true];</code>
      */
-    public Builder addProjectIdsBytes(
+    @java.lang.Deprecated public Builder addProjectIdsBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();

@@ -6,6 +6,7 @@ package com.google.privacy.dlp.v2;
 /**
  * <pre>
  * The DeidentifyTemplates contains instructions on how to deidentify content.
+ * See https://cloud.google.com/dlp/docs/concepts-templates to learn more.
  * </pre>
  *
  * Protobuf type {@code google.privacy.dlp.v2.DeidentifyTemplate}
@@ -589,6 +590,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The DeidentifyTemplates contains instructions on how to deidentify content.
+   * See https://cloud.google.com/dlp/docs/concepts-templates to learn more.
    * </pre>
    *
    * Protobuf type {@code google.privacy.dlp.v2.DeidentifyTemplate}

@@ -59,7 +59,7 @@
  * <pre>
  * <code>
  * try (MetricsClient metricsClient = MetricsClient.create()) {
- *   MetricName metricName = ProjectMetricName.of("[PROJECT]", "[METRIC]");
+ *   ProjectMetricName metricName = ProjectMetricName.of("[PROJECT]", "[METRIC]");
  *   LogMetric response = metricsClient.getLogMetric(metricName);
  * }
  * </code>

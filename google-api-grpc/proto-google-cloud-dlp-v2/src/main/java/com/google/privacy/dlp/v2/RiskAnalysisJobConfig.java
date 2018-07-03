@@ -5,7 +5,8 @@ package com.google.privacy.dlp.v2;
 
 /**
  * <pre>
- * Configuration for a risk analysis job.
+ * Configuration for a risk analysis job. See
+ * https://cloud.google.com/dlp/docs/concepts-risk-analysis to learn more.
  * </pre>
  *
  * Protobuf type {@code google.privacy.dlp.v2.RiskAnalysisJobConfig}
@@ -430,7 +431,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Configuration for a risk analysis job.
+   * Configuration for a risk analysis job. See
+   * https://cloud.google.com/dlp/docs/concepts-risk-analysis to learn more.
    * </pre>
    *
    * Protobuf type {@code google.privacy.dlp.v2.RiskAnalysisJobConfig}
