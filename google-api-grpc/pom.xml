@@ -358,6 +358,16 @@
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-tasks-v2beta2</artifactId>
+        <version>0.18.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-tasks-v2beta2:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-tasks-v2beta2</artifactId>
+        <version>0.18.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-tasks-v2beta2:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-texttospeech-v1</artifactId>
         <version>0.18.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-texttospeech-v1:current} -->
       </dependency>
@@ -522,6 +532,7 @@
     <module>grpc-google-cloud-speech-v1</module>
     <module>grpc-google-cloud-speech-v1beta1</module>
     <module>grpc-google-cloud-speech-v1p1beta1</module>
+    <module>grpc-google-cloud-tasks-v2beta2</module>
     <module>grpc-google-cloud-texttospeech-v1</module>
     <module>grpc-google-cloud-texttospeech-v1beta1</module>
     <module>grpc-google-cloud-trace-v1</module>
@@ -559,6 +570,7 @@
     <module>proto-google-cloud-speech-v1</module>
     <module>proto-google-cloud-speech-v1beta1</module>
     <module>proto-google-cloud-speech-v1p1beta1</module>
+    <module>proto-google-cloud-tasks-v2beta2</module>
     <module>proto-google-cloud-texttospeech-v1</module>
     <module>proto-google-cloud-texttospeech-v1beta1</module>
     <module>proto-google-cloud-trace-v1</module>
