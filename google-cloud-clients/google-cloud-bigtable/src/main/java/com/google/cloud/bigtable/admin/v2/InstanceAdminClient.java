@@ -11,6 +11,7 @@ import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.bigtable.admin.v2.AppProfileName;
 import com.google.bigtable.admin.v2.ClusterName;
+import com.google.bigtable.admin.v2.CreateAppProfileRequest;
 import com.google.bigtable.admin.v2.CreateClusterMetadata;
 import com.google.bigtable.admin.v2.CreateClusterRequest;
 import com.google.bigtable.admin.v2.CreateInstanceMetadata;
@@ -33,13 +34,16 @@ import com.google.bigtable.admin.v2.UpdateAppProfileMetadata;
 import com.google.bigtable.admin.v2.UpdateAppProfileRequest;
 import com.google.bigtable.admin.v2.UpdateClusterMetadata;
 import com.google.bigtable.admin.v2.UpdateInstanceMetadata;
+import com.google.cloud.bigtable.admin.v2.models.FailedLocationException;
 import com.google.cloud.bigtable.admin.v2.models.InstanceAdminRequests;
 import com.google.cloud.bigtable.admin.v2.models.InstanceAdminRequests.AppProfile;
+import com.google.cloud.bigtable.admin.v2.models.InstanceAdminRequests.AppProfile.UpdateAppProfile;
 import com.google.cloud.bigtable.admin.v2.models.InstanceAdminRequests.Cluster;
-import com.google.cloud.bigtable.admin.v2.models.InstanceAdminRequests.CreateAppProfile;
 import com.google.cloud.bigtable.admin.v2.models.InstanceAdminRequests.CreateInstance;
 import com.google.cloud.bigtable.admin.v2.models.InstanceAdminRequests.Instance;
 import com.google.cloud.bigtable.admin.v2.models.InstanceAdminRequests.Policy;
+import com.google.cloud.bigtable.admin.v2.models.InstanceAdminRequests.UpdateCluster;
+import com.google.cloud.bigtable.admin.v2.models.InstanceAdminRequests.UpdateInstance;
 import com.google.cloud.bigtable.admin.v2.stub.BigtableInstanceAdminStub;
 import com.google.cloud.bigtable.admin.v2.stub.BigtableInstanceAdminStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
@@ -77,13 +81,34 @@ public class InstanceAdminClient implements AutoCloseable {
     stub.close();
   }
 
-  /** Discuss: need for CreateInstance wrapper */
+  /**
+   * 
+   * <pre>
+   * {@code 
+   * try(InstanceAdminClient instanceAdmin = InstanceAdminClient.create()) {
+   *   CreateInstance request =
+   *     InstanceAdminRequests.createInstance(
+   *         ProjectName.of("project"),
+   *         Instance.ofNewProdInstance("instanceid", "displayname"),
+   *         Cluster.ofNewProdCluster(
+   *           "clusterone", Location.of("project", "zone"), 3))
+   *       .addCluster(
+   *         Cluster.ofNewProdCluster(
+   *           "clustertwo", Location.of("project", "us-east1-c"), 4));
+   *
+   *    Instance createdInstance = instanceAdmin.createInstanceAsync(request).get();
+   * }
+   * }
+   * </pre>
+   * 
+   * @param createInstance
+   * @return
+   */
   public ApiFuture<Instance> createInstanceAsync(CreateInstance createInstance) {
     final OperationFuture<com.google.bigtable.admin.v2.Instance, CreateInstanceMetadata> future =
         stub.createInstanceOperationCallable().futureCall(createInstance.toProto());
 
-    return transfromOperationFuture(
-        future,
+    return transfromOperationFuture(future,
         new ApiFunction<com.google.bigtable.admin.v2.Instance, Instance>() {
           @Override
           public Instance apply(com.google.bigtable.admin.v2.Instance input) {
@@ -102,13 +127,32 @@ public class InstanceAdminClient implements AutoCloseable {
         stub.listInstancesCallable().call(composeListInstanceRequest(projectName)));
   }
 
-  public ApiFuture<Instance> updateInstance(Instance updatedInstance) {
+  /**
+   *
+   * <pre>
+   * {@code 
+   * try(InstanceAdminClient instanceAdmin = InstanceAdminClient.create()) {
+   *    Instance devInstance = instanceAdmin.getInstance(
+   *        InstanceName.of("project", "instance"));
+   *    
+   *    instanceAdmin.updateInstance(
+   *      Instance.ofUpdateInstance(devInstance)
+   *        .updateDisplayName("display")
+   *        .upgradeType()
+   *        .updateLabels(updatedLabels));
+   * }
+   * }
+   * </pre>
+   * 
+   * @param updatedInstance
+   * @return
+   */
+  public ApiFuture<Instance> updateInstance(UpdateInstance updatedInstance) {
     OperationFuture<com.google.bigtable.admin.v2.Instance, UpdateInstanceMetadata> future =
         stub.partialUpdateInstanceOperationCallable()
             .futureCall(composePartialUpdateInstanceCallable(updatedInstance));
 
-    return transfromOperationFuture(
-        future,
+    return transfromOperationFuture(future,
         new ApiFunction<com.google.bigtable.admin.v2.Instance, Instance>() {
           @Override
           public Instance apply(com.google.bigtable.admin.v2.Instance input) {
@@ -126,8 +170,7 @@ public class InstanceAdminClient implements AutoCloseable {
         stub.createClusterOperationCallable()
             .futureCall(composeCreateClusterRequest(instanceName, cluster));
 
-    return transfromOperationFuture(
-        future,
+    return transfromOperationFuture(future,
         new ApiFunction<com.google.bigtable.admin.v2.Cluster, Cluster>() {
           @Override
           public Cluster apply(com.google.bigtable.admin.v2.Cluster input) {
@@ -146,12 +189,29 @@ public class InstanceAdminClient implements AutoCloseable {
         stub.listClustersCallable().call(composeListClustersRequest(instanceName)));
   }
 
-  public ApiFuture<Cluster> updateCluster(Cluster updatedCluster) {
+  /**
+   * 
+   * <pre>
+   * {@code 
+   * try(InstanceAdminClient instanceAdmin = InstanceAdminClient.create()) {
+   *   Cluster prodCluster = instanceAdmin.getCluster(
+   *     ClusterName.of("project", "instance", "cluster"));
+   *    
+   *   instanceAdmin.updateCluster(
+   *     Cluster.ofUpdateCluster(prodCluster)
+   *       .updateNumNodes(5));
+   * }
+   * }
+   * </pre>
+   *
+   * @param updatedCluster
+   * @return
+   */
+  public ApiFuture<Cluster> updateCluster(UpdateCluster updatedCluster) {
     OperationFuture<com.google.bigtable.admin.v2.Cluster, UpdateClusterMetadata> future =
-        stub.updateClusterOperationCallable().futureCall(updatedCluster.toUpdateProto());
+        stub.updateClusterOperationCallable().futureCall(updatedCluster.toProto());
 
-    return transfromOperationFuture(
-        future,
+    return transfromOperationFuture(future,
         new ApiFunction<com.google.bigtable.admin.v2.Cluster, Cluster>() {
           @Override
           public Cluster apply(com.google.bigtable.admin.v2.Cluster input) {
@@ -164,10 +224,26 @@ public class InstanceAdminClient implements AutoCloseable {
     stub.deleteClusterCallable().call(composeDeleteClusterRequest(clusterName));
   }
 
-  /** Discuss: need for CreateAppProfile wrapper */
-  public AppProfile createAppProfile(CreateAppProfile createAppProfile) {
-    return InstanceAdminRequests.convertToAppProfile(
-        stub.createAppProfileCallable().call(createAppProfile.toProto()));
+  /**
+   * 
+   * <pre>
+   * {@code 
+   * try(InstanceAdminClient instanceAdmin = InstanceAdminClient.create()) {
+   *   instanceAdmin.createAppProfile(
+   *     InstanceName.of("project", "instance"),
+   *     AppProfile.ofNewAppProfile("roundRobin")
+   *       .routeToAny());
+   * }
+   * }
+   * </pre>
+   *
+   * @param instanceName
+   * @param appProfile
+   * @return
+   */
+  public AppProfile createAppProfile(InstanceName instanceName, AppProfile appProfile) {
+    return InstanceAdminRequests.convertToAppProfile(stub.createAppProfileCallable().call(
+        composeCreateAppProfileRequest(instanceName, appProfile)));
   }
 
   public AppProfile getAppProfile(AppProfileName appProfileName) {
@@ -180,13 +256,32 @@ public class InstanceAdminClient implements AutoCloseable {
         stub.listAppProfilesCallable().call(composeListAppProfilesRequest(instanceName)));
   }
 
-  public ApiFuture<AppProfile> updateAppProfile(AppProfile appProfile) {
+  /**
+   * 
+   * <pre>
+   * {@code 
+   * try(InstanceAdminClient instanceAdmin = InstanceAdminClient.create()) {
+   *   AppProfile appProfileAny = instanceAdmin.getAppProfile(
+   *       AppProfileName.of("project", "instance", "profile"));
+   *   
+   *   AppProfile appProfileCluster = instanceAdmin.updateAppProfile(
+   *       AppProfile.ofUpdateAppProfile(appProfileAny)
+   *         .updateDescription("newDescription")
+   *         .updateRouteToCluster("clusterToUse", false))
+   *         .get();
+   * }
+   * }
+   * </pre>
+   * 
+   * @param updateAppProfile
+   * @return
+   */
+  public ApiFuture<AppProfile> updateAppProfile(UpdateAppProfile updateAppProfile) {
     OperationFuture<com.google.bigtable.admin.v2.AppProfile, UpdateAppProfileMetadata> future =
         stub.updateAppProfileOperationCallable()
-            .futureCall(composeUpdateAppProfileRequest(appProfile));
+            .futureCall(composeUpdateAppProfileRequest(updateAppProfile));
 
-    return transfromOperationFuture(
-        future,
+    return transfromOperationFuture(future,
         new ApiFunction<com.google.bigtable.admin.v2.AppProfile, AppProfile>() {
           @Override
           public AppProfile apply(com.google.bigtable.admin.v2.AppProfile input) {
@@ -212,8 +307,8 @@ public class InstanceAdminClient implements AutoCloseable {
 
   public List<String> testIamPermissions(InstanceName instanceName, List<String> permissions) {
     return stub.testIamPermissionsCallable()
-        .call(composeTestIamPermissionsRequest(instanceName, permissions))
-        .getPermissionsList();
+               .call(composeTestIamPermissionsRequest(instanceName, permissions))
+               .getPermissionsList();
   }
 
   /** compose proto request helpers * */
@@ -226,24 +321,20 @@ public class InstanceAdminClient implements AutoCloseable {
   }
 
   private static PartialUpdateInstanceRequest composePartialUpdateInstanceCallable(
-      Instance updatedInstance) {
-    return PartialUpdateInstanceRequest.newBuilder()
-        .setInstance(updatedInstance.toUpdateProto())
-        .setUpdateMask(updatedInstance.getPartialUpdateFieldMask())
-        .build();
+      UpdateInstance updatedInstance) {
+    return PartialUpdateInstanceRequest.newBuilder().setInstance(updatedInstance.toProto())
+                                       .setUpdateMask(updatedInstance.getPartialUpdateFieldMask())
+                                       .build();
   }
 
   private static DeleteInstanceRequest composeDeleteInstanceRequest(InstanceName instanceName) {
     return DeleteInstanceRequest.newBuilder().setName(instanceName.toString()).build();
   }
 
-  private static CreateClusterRequest composeCreateClusterRequest(
-      InstanceName instanceName, Cluster cluster) {
-    return CreateClusterRequest.newBuilder()
-        .setParent(instanceName.toString())
-        .setClusterId(cluster.getId())
-        .setCluster(cluster.toProto())
-        .build();
+  private static CreateClusterRequest composeCreateClusterRequest(InstanceName instanceName,
+      Cluster cluster) {
+    return CreateClusterRequest.newBuilder().setParent(instanceName.toString())
+                               .setClusterId(cluster.getId()).setCluster(cluster.toProto()).build();
   }
 
   private static GetClusterRequest composeGetClusterRequest(ClusterName clusterName) {
@@ -258,6 +349,13 @@ public class InstanceAdminClient implements AutoCloseable {
     return DeleteClusterRequest.newBuilder().setName(clusterName.toString()).build();
   }
 
+  private static CreateAppProfileRequest composeCreateAppProfileRequest(InstanceName instanceName,
+      AppProfile appProfile) {
+    return CreateAppProfileRequest.newBuilder().setParent(instanceName.toString())
+                                  .setAppProfileId(appProfile.getId())
+                                  .setAppProfile(appProfile.toProto()).build();
+  }
+
   private static GetAppProfileRequest composeGetAppProfileRequest(AppProfileName appProfileName) {
     return GetAppProfileRequest.newBuilder().setName(appProfileName.toString()).build();
   }
@@ -266,63 +364,63 @@ public class InstanceAdminClient implements AutoCloseable {
     return ListAppProfilesRequest.newBuilder().setParent(instanceName.toString()).build();
   }
 
-  private static UpdateAppProfileRequest composeUpdateAppProfileRequest(AppProfile appProfile) {
-    return UpdateAppProfileRequest.newBuilder()
-        .setAppProfile(appProfile.toUpdateProto())
-        .setUpdateMask(appProfile.getPartialUpdateFieldMask())
-        .build();
+  private static UpdateAppProfileRequest composeUpdateAppProfileRequest(
+      UpdateAppProfile updateAppProfile) {
+    return UpdateAppProfileRequest.newBuilder().setAppProfile(updateAppProfile.toProto())
+                                  .setUpdateMask(updateAppProfile.getPartialUpdateFieldMask())
+                                  .build();
   }
 
   private static DeleteAppProfileRequest composeDeleteAppProfileRequest(
       AppProfileName appProfileName, boolean ignoreWarnings) {
-    return DeleteAppProfileRequest.newBuilder()
-        .setName(appProfileName.toString())
-        .setIgnoreWarnings(ignoreWarnings)
-        .build();
+    return DeleteAppProfileRequest.newBuilder().setName(appProfileName.toString())
+                                  .setIgnoreWarnings(ignoreWarnings).build();
   }
 
   private static GetIamPolicyRequest composeGetIamPolicyRequest(InstanceName instanceName) {
     return GetIamPolicyRequest.newBuilder().setResource(instanceName.toString()).build();
   }
 
-  private static SetIamPolicyRequest composeSetIamPolicyRequest(
-      InstanceName instanceName, Policy policy) {
-    return SetIamPolicyRequest.newBuilder()
-        .setResource(instanceName.toString())
-        .setPolicy(policy.toProto())
-        .build();
+  private static SetIamPolicyRequest composeSetIamPolicyRequest(InstanceName instanceName,
+      Policy policy) {
+    return SetIamPolicyRequest.newBuilder().setResource(instanceName.toString())
+                              .setPolicy(policy.toProto()).build();
   }
 
   private static TestIamPermissionsRequest composeTestIamPermissionsRequest(
       InstanceName instanceName, List<String> permissions) {
-    return TestIamPermissionsRequest.newBuilder()
-        .setResource(instanceName.toString())
-        .addAllPermissions(permissions)
-        .build();
+    return TestIamPermissionsRequest.newBuilder().setResource(instanceName.toString())
+                                    .addAllPermissions(permissions).build();
   }
 
   private static List<Instance> convertToInstances(ListInstancesResponse listInstancesResponse) {
     List<Instance> instances = new ArrayList<>();
-
-    for (com.google.bigtable.admin.v2.Instance instance :
-        listInstancesResponse.getInstancesList()) {
+    List<String> succeededLocations = new ArrayList<>();
+    for (com.google.bigtable.admin.v2.Instance instance : listInstancesResponse.getInstancesList()) {
       instances.add(InstanceAdminRequests.convertToInstance(instance));
     }
-    // TODO: handle failed_locations
+
+    if (listInstancesResponse.getFailedLocationsList().size() > 0) {
+      throw new FailedLocationException("Failed to list all locations", succeededLocations,
+                                        listInstancesResponse.getFailedLocationsList());
+    }
+
     return instances;
   }
 
   private static List<Cluster> convertToClusters(ListClustersResponse listClustersResponse) {
     List<Cluster> clusters = new ArrayList<>();
-
+    List<String> succeededLocations = new ArrayList<>();
     for (com.google.bigtable.admin.v2.Cluster cluster : listClustersResponse.getClustersList()) {
       clusters.add(InstanceAdminRequests.convertToCluster(cluster));
+      succeededLocations.add(cluster.getLocation());
     }
 
-    // TODO: Trying a simple approach to handle these for now
-    for (String failedLocation : listClustersResponse.getFailedLocationsList()) {
-      clusters.add(InstanceAdminRequests.convertToFailedCluster(failedLocation));
+    if (listClustersResponse.getFailedLocationsList().size() > 0) {
+      throw new FailedLocationException("Failed to list all locations", succeededLocations,
+                                        listClustersResponse.getFailedLocationsList());
     }
+
     return clusters;
   }
 
@@ -330,8 +428,7 @@ public class InstanceAdminClient implements AutoCloseable {
       ListAppProfilesResponse listAppProfilesResponse) {
     List<AppProfile> appProfiles = new ArrayList<>();
 
-    for (com.google.bigtable.admin.v2.AppProfile profile :
-        listAppProfilesResponse.getAppProfilesList()) {
+    for (com.google.bigtable.admin.v2.AppProfile profile : listAppProfilesResponse.getAppProfilesList()) {
       appProfiles.add(InstanceAdminRequests.convertToAppProfile(profile));
     }
     return appProfiles;
@@ -342,18 +439,16 @@ public class InstanceAdminClient implements AutoCloseable {
       final OperationFuture<? extends V, M> future,
       final ApiFunction<? super V, ? extends X> function) {
     final SettableApiFuture<X> result = SettableApiFuture.create();
-    future.addListener(
-        new Runnable() {
-          @Override
-          public void run() {
-            try {
-              result.set(function.apply(future.get()));
-            } catch (InterruptedException | ExecutionException e) {
-              result.setException(e);
-            }
-          }
-        },
-        MoreExecutors.directExecutor());
+    future.addListener(new Runnable() {
+      @Override
+      public void run() {
+        try {
+          result.set(function.apply(future.get()));
+        } catch (InterruptedException | ExecutionException e) {
+          result.setException(e);
+        }
+      }
+    }, MoreExecutors.directExecutor());
     return result;
   }
 }

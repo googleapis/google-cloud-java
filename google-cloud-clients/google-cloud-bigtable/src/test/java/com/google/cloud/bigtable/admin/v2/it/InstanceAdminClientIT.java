@@ -9,6 +9,7 @@ import java.util.Map;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import com.google.bigtable.admin.v2.AppProfile.RoutingPolicyCase;
 import com.google.bigtable.admin.v2.AppProfileName;
 import com.google.bigtable.admin.v2.ClusterName;
 import com.google.bigtable.admin.v2.Instance.State;
@@ -19,8 +20,8 @@ import com.google.bigtable.admin.v2.StorageType;
 import com.google.cloud.bigtable.admin.v2.InstanceAdminClient;
 import com.google.cloud.bigtable.admin.v2.models.InstanceAdminRequests;
 import com.google.cloud.bigtable.admin.v2.models.InstanceAdminRequests.AppProfile;
-import com.google.cloud.bigtable.admin.v2.models.InstanceAdminRequests.AppProfile.MultiClusterRoutingUseAny;
 import com.google.cloud.bigtable.admin.v2.models.InstanceAdminRequests.Cluster;
+import com.google.cloud.bigtable.admin.v2.models.InstanceAdminRequests.CreateInstance;
 import com.google.cloud.bigtable.admin.v2.models.InstanceAdminRequests.Instance;
 import com.google.cloud.bigtable.admin.v2.models.InstanceAdminRequests.Location;
 import com.google.cloud.bigtable.admin.v2.models.InstanceAdminRequests.Policy;
@@ -37,7 +38,7 @@ public class InstanceAdminClientIT {
   public static void createClient() throws Exception {
     instanceAdmin = InstanceAdminClient.create();
   }
-
+  
   @AfterClass
   public static void closeClient() throws Exception {
     instanceAdmin.close();
@@ -45,66 +46,77 @@ public class InstanceAdminClientIT {
 
   @Test
   public void createInstanceHarness() throws Exception {
-    Instance rawinstance =
-        InstanceAdminRequests.Instance.of(
-            TEST_PROD_INST_ID, TEST_PROD_INST_ID + "disp", Type.PRODUCTION);
+    Instance newProdInstance = Instance.ofNewProdInstance(TEST_PROD_INST_ID, "disp");
 
-    Cluster rawcluster =
-        InstanceAdminRequests.Cluster.ofProd(
+    Cluster newCluster =
+        Cluster.ofNewProdCluster(
             TEST_PROD_INST_ID + "us-east1-c",
-            Location.of(TEST_PROJECT, "us-east1-c"),
-            StorageType.HDD,
+            Location.of(TEST_PROJECT.getProject(), "us-east1-c"),
             PROD_CLUSTER_SIZE);
 
     try {
       // Instance tests
       int numInstances = instanceAdmin.listInstances(TEST_PROJECT).size();
-      Instance actualInstance = createInstanceAsync(TEST_PROJECT, rawinstance, rawcluster);
+      Instance createdInstance = createInstance(TEST_PROJECT, newProdInstance, newCluster);
       listInstances(numInstances + 1);
-      getInstance(actualInstance);
-      updateInstance(actualInstance);
-      partialUpdateInstance(actualInstance);
+      getInstance(createdInstance);
+      updateInstance(createdInstance);
+      partialUpdateInstance(createdInstance);
 
       // Cluster tests
-      getClusterFromRaw(actualInstance.getName(), rawcluster);
-      listClusters(actualInstance.getName(), 1);
+      getCluster(
+          newCluster,
+          ClusterName.of(TEST_PROJECT.getProject(), TEST_PROD_INST_ID, newCluster.getId()));
+      listClusters(createdInstance.getName(), 1);
 
       Exception cannotMixClusterType = null;
       try {
-        createCluster(actualInstance, "us-east1-d", Type.DEVELOPMENT);
+        createCluster(
+            createdInstance,
+            Cluster.ofNewDevCluster(
+                TEST_DEV_INST_ID + "us-east1-d",
+                Location.of(TEST_PROJECT.getProject(), "us-east1-d")));
       } catch (Exception ex) {
         cannotMixClusterType = ex;
       }
       assertNotNull(cannotMixClusterType);
 
-      Cluster actualCluster2 = createCluster(actualInstance, "us-east1-d", Type.PRODUCTION);
-      getCluster(actualCluster2);
-      updateCluster(actualCluster2);
-      listClusters(actualInstance.getName(), 2);
-      deleteCluster(actualCluster2);
-      listClusters(actualInstance.getName(), 1);
+      Cluster createdCluster2 =
+          createCluster(
+              createdInstance,
+              Cluster.ofNewProdCluster(
+                  TEST_PROD_INST_ID + "us-east1-d",
+                  Location.of(TEST_PROJECT.getProject(), "us-east1-d"),
+                  PROD_CLUSTER_SIZE + 1));
+      getCluster(createdCluster2);
+      updateCluster(createdCluster2);
+      listClusters(createdInstance.getName(), 2);
 
       // AppProfile tests
-      AppProfile rawMulti = AppProfile.of("roundRobin", MultiClusterRoutingUseAny.of());
-      AppProfile actualMulti = createAppProfile(actualInstance.getName(), rawMulti);
-      getAppProfile(actualMulti);
-      updateAppProfileSwitchToSingle(actualMulti, rawcluster.getId());
-      listAppProfiles(actualInstance.getName(), 2); // +1 for default appProfile
-      deleteAppProfile(actualMulti.getName());
+      AppProfile createdAny =
+          createAppProfile(
+              createdInstance.getName(), AppProfile.ofNewAppProfile("roundRobin").routeToAny());
+      getAppProfile(createdAny);
+      updateAppProfileToSingle(createdAny, createdCluster2.getId());
+      listAppProfiles(createdInstance.getName(), 2); // +1 for default appProfile
+      deleteAppProfile(createdAny.getName());
 
       // IamPolicy tests
-      // TODO: Needs Iam permissions to test this. Doesn't look like I have them
+      // TODO: Needs Iam permissions to test this.
       // Policy rawPolicy = Policy.of(1, Role.owner(),
-      // Arrays.asList("user:spollaplly@udbhavinc.com"));
-      // Policy actualPolicy = instanceAdmin.setIamPolicy(actualInstance.getName(), rawPolicy);
+      // Arrays.asList("user:user@domain.com"));
+      // Policy actualPolicy = instanceAdmin.setIamPolicy(createdInstance.getName(), rawPolicy);
 
-      Policy iamPolicy = instanceAdmin.getIamPolicy(actualInstance.getName());
+      Policy iamPolicy = instanceAdmin.getIamPolicy(createdInstance.getName());
       assertNotNull(iamPolicy);
 
       List<String> actualPermissions =
           instanceAdmin.testIamPermissions(
-              actualInstance.getName(), Arrays.asList("bigtable.tables.checkConsistency"));
+              createdInstance.getName(), Arrays.asList("bigtable.tables.checkConsistency"));
       assertEquals(Arrays.asList("bigtable.tables.checkConsistency"), actualPermissions);
+
+      deleteCluster(createdCluster2);
+      listClusters(createdInstance.getName(), 1);
     } finally {
       instanceAdmin.deleteInstanceRequest(
           InstanceName.of(TEST_PROJECT.getProject(), TEST_PROD_INST_ID));
@@ -112,41 +124,53 @@ public class InstanceAdminClientIT {
   }
 
   @Test
+  public void createInstanceMultiCluster() throws Exception {
+    CreateInstance request =
+        InstanceAdminRequests.createInstance(
+                TEST_PROJECT,
+                Instance.ofNewProdInstance("multitest", "twoclusters"),
+                Cluster.ofNewProdCluster(
+                    "clusterone", Location.of(TEST_PROJECT.getProject(), "us-east1-c"), 3))
+            .addCluster(
+                Cluster.ofNewProdCluster(
+                    "clustertwo", Location.of(TEST_PROJECT.getProject(), "us-east1-c"), 4));
+
+    try {
+      Instance createdInstance = instanceAdmin.createInstanceAsync(request).get();
+      getInstance(createdInstance);
+      listClusters(createdInstance.getName(), 2);
+    } finally {
+      instanceAdmin.deleteInstanceRequest(InstanceName.of(TEST_PROJECT.getProject(), "multitest"));
+    }
+  }
+
+  @Test
   public void createInstanceUpgradeHarness() throws Exception {
-    Instance rawinstance =
-        InstanceAdminRequests.Instance.of(
-                TEST_DEV_INST_ID, TEST_DEV_INST_ID + "disp", Type.DEVELOPMENT)
+    Instance newDevInstance =
+        Instance.ofNewDevInstance(TEST_DEV_INST_ID, TEST_DEV_INST_ID + "disp")
             .addLabel("label_name_1", "label_value_1")
             .addLabel("label_name_2", "label_value_2");
 
-    Cluster rawcluster1 =
-        InstanceAdminRequests.Cluster.ofDev(
-            TEST_DEV_INST_ID + "us-east1-c",
-            Location.of(TEST_PROJECT, "us-east1-c"),
-            StorageType.HDD);
-    /*
-     * Cluster rawcluster2 = InstanceAdminRequests.Cluster.ofDev(TEST_DEV_INST_ID + "us-east1-b",
-     * Location.of(TEST_PROJECT, "us-east1-b"), StorageType.HDD);
-     */
-
+    Cluster newDevCluster =
+        Cluster.ofNewDevCluster(
+            TEST_DEV_INST_ID + "us-east1-c", Location.of(TEST_PROJECT.getProject(), "us-east1-c"));
     try {
-      Instance actualInstance =
+      Instance createdInstance =
           instanceAdmin
               .createInstanceAsync(
-                  InstanceAdminRequests.createInstance(TEST_PROJECT, rawinstance, rawcluster1)
-                  // TODO: Test fails with instance not found. Verify if more than one cluster on
-                  // creation is
-                  // a valid case
-                  // .addCluster(rawcluster2)
-                  )
+                  InstanceAdminRequests.createInstance(TEST_PROJECT, newDevInstance, newDevCluster))
               .get();
-      assertInstanceEquals(rawinstance, actualInstance);
+      assertInstanceEquals(newDevInstance, createdInstance);
 
-      listClusters(actualInstance.getName(), 1);
-      getClusterFromRaw(actualInstance.getName(), rawcluster1);
-      // getClusterFromRaw(actualInstance.getName(), rawcluster2);
+      listClusters(createdInstance.getName(), 1);
+      getCluster(
+          newDevCluster,
+          ClusterName.of(TEST_PROJECT.getProject(), TEST_DEV_INST_ID, newDevCluster.getId()));
 
-      Instance upgradedInstance = instanceAdmin.updateInstance(actualInstance.upgradeType()).get();
+      Instance upgradedInstance =
+          instanceAdmin
+              .updateInstance(Instance.ofUpdateInstance(createdInstance).upgradeType())
+              .get();
       assertEquals(Type.PRODUCTION, upgradedInstance.getType());
     } finally {
       instanceAdmin.deleteInstanceRequest(
@@ -154,48 +178,15 @@ public class InstanceAdminClientIT {
     }
   }
 
-  @Test
-  public void iamPolicyHarness() throws Exception {
-    Instance rawinstance =
-        InstanceAdminRequests.Instance.of(
-            TEST_PROD_INST_ID, TEST_PROD_INST_ID + "disp", Type.PRODUCTION);
-
-    Cluster rawcluster =
-        InstanceAdminRequests.Cluster.ofProd(
-            TEST_PROD_INST_ID + "us-east1-c",
-            Location.of(TEST_PROJECT, "us-east1-c"),
-            StorageType.HDD,
-            PROD_CLUSTER_SIZE);
-
-    try {
-      Instance actualInstance = createInstanceAsync(TEST_PROJECT, rawinstance, rawcluster);
-
-      // TODO: Needs Iam permissions to test this. Doesn't look like I have them
-      // Policy rawPolicy = Policy.of(1, Role.owner(),
-      // Arrays.asList("user:spollaplly@udbhavinc.com"));
-      // Policy actualPolicy = instanceAdmin.setIamPolicy(actualInstance.getName(), rawPolicy);
-
-      Policy iamPolicy = instanceAdmin.getIamPolicy(actualInstance.getName());
-      assertNotNull(iamPolicy);
-
-      List<String> actualPermissions =
-          instanceAdmin.testIamPermissions(
-              actualInstance.getName(), Arrays.asList("bigtable.tables.checkConsistency"));
-      assertEquals(Arrays.asList("bigtable.tables.checkConsistency"), actualPermissions);
-    } finally {
-      instanceAdmin.deleteInstanceRequest(
-          InstanceName.of(TEST_PROJECT.getProject(), TEST_PROD_INST_ID));
-    }
-  }
-
-  private Instance createInstanceAsync(
-      ProjectName projectName, Instance rawinstance, Cluster rawcluster) throws Exception {
+  /** helpers to execute and assert * */
+  private Instance createInstance(ProjectName projectName, Instance newInstance, Cluster newCluster)
+      throws Exception {
     Instance actualInstance =
         instanceAdmin
             .createInstanceAsync(
-                InstanceAdminRequests.createInstance(projectName, rawinstance, rawcluster))
+                InstanceAdminRequests.createInstance(projectName, newInstance, newCluster))
             .get();
-    assertInstanceEquals(rawinstance, actualInstance);
+    assertInstanceEquals(newInstance, actualInstance);
     return actualInstance;
   }
 
@@ -206,11 +197,10 @@ public class InstanceAdminClientIT {
 
   private void updateInstance(Instance instance) throws Exception {
     Map<String, String> updatedLabels = ImmutableMap.of("team", "team1", "subteam", "subteam1");
-
     Instance updatedInstance =
         instanceAdmin
             .updateInstance(
-                instance
+                Instance.ofUpdateInstance(instance)
                     .updateDisplayName(TEST_DEV_INST_ID + "upddisp")
                     .updateLabels(updatedLabels))
             .get();
@@ -221,40 +211,27 @@ public class InstanceAdminClientIT {
 
   private void partialUpdateInstance(Instance instance) throws Exception {
     Instance updatedInstance =
-        instanceAdmin.updateInstance(instance.updateDisplayName(TEST_PROD_INST_ID + "disp")).get();
+        instanceAdmin
+            .updateInstance(
+                Instance.ofUpdateInstance(instance).updateDisplayName(TEST_PROD_INST_ID + "disp"))
+            .get();
 
     assertEquals(TEST_PROD_INST_ID + "disp", updatedInstance.getDisplayName());
     assertEquals(instance.getLabelsMap(), updatedInstance.getLabelsMap());
   }
 
-  private void getClusterFromRaw(InstanceName instanceName, Cluster raw) {
-    ClusterName clusterName =
-        ClusterName.of(instanceName.getProject(), instanceName.getInstance(), raw.getId());
+  private void getCluster(Cluster raw, ClusterName clusterName) {
     Cluster actual = instanceAdmin.getCluster(clusterName);
     assertClusterEquals(raw, actual, clusterName);
   }
 
-  private Cluster createCluster(Instance instance, String zone, Type type) throws Exception {
-    Cluster raw;
-
-    if (type.equals(Type.PRODUCTION)) {
-      raw =
-          Cluster.ofProd(
-              instance.getid() + zone,
-              Location.of(TEST_PROJECT, zone),
-              StorageType.HDD,
-              PROD_CLUSTER_SIZE);
-    } else {
-      raw =
-          Cluster.ofDev(instance.getid() + zone, Location.of(TEST_PROJECT, zone), StorageType.HDD);
-    }
-
-    Cluster actual = instanceAdmin.createCluster(instance.getName(), raw).get();
+  private Cluster createCluster(Instance instance, Cluster rawCluster) throws Exception {
+    Cluster actual = instanceAdmin.createCluster(instance.getName(), rawCluster).get();
     assertClusterEquals(
-        raw,
+        rawCluster,
         actual,
         ClusterName.of(
-            instance.getName().getProject(), instance.getName().getInstance(), raw.getId()));
+            instance.getName().getProject(), instance.getName().getInstance(), rawCluster.getId()));
     return actual;
   }
 
@@ -265,8 +242,11 @@ public class InstanceAdminClientIT {
 
   private void updateCluster(Cluster cluster) throws Exception {
     Cluster updatedCluster =
-        instanceAdmin.updateCluster(cluster.updateNumNodes(PROD_CLUSTER_SIZE + 1)).get();
-    assertEquals(cluster.getServerNodes(), updatedCluster.getServerNodes());
+        instanceAdmin
+            .updateCluster(
+                Cluster.ofUpdateCluster(cluster).updateNumNodes(cluster.getServerNodes() + 1))
+            .get();
+    assertEquals(cluster.getServerNodes() + 1, updatedCluster.getServerNodes());
   }
 
   private void deleteCluster(Cluster cluster) {
@@ -274,17 +254,25 @@ public class InstanceAdminClientIT {
   }
 
   private void listInstances(int expectedSize) {
-    assertEquals(expectedSize, instanceAdmin.listInstances(TEST_PROJECT).size());
+    List<Instance> instances = instanceAdmin.listInstances(TEST_PROJECT);
+    assertEquals(expectedSize, instances.size());
+
+    for (Instance instance : instances) {
+      getInstance(instance);
+    }
   }
 
   private void listClusters(InstanceName instanceName, int expectedSize) {
-    assertEquals(expectedSize, instanceAdmin.listClusters(instanceName).size());
+    List<Cluster> clusters = instanceAdmin.listClusters(instanceName);
+    assertEquals(expectedSize, clusters.size());
+
+    for (Cluster cluster : clusters) {
+      getCluster(cluster);
+    }
   }
 
   private AppProfile createAppProfile(InstanceName instanceName, AppProfile rawProfile) {
-    AppProfile actual =
-        instanceAdmin.createAppProfile(
-            InstanceAdminRequests.createAppProfile(instanceName, rawProfile, true));
+    AppProfile actual = instanceAdmin.createAppProfile(instanceName, rawProfile);
     assertAppProfileEquals(
         rawProfile,
         actual,
@@ -298,23 +286,26 @@ public class InstanceAdminClientIT {
   }
 
   private void listAppProfiles(InstanceName instanceName, int expectedSize) {
-    assertEquals(expectedSize, instanceAdmin.listAppProfiles(instanceName).size());
+    List<AppProfile> appProfiles = instanceAdmin.listAppProfiles(instanceName);
+    assertEquals(expectedSize, appProfiles.size());
+
+    for (AppProfile appProfile : appProfiles) {
+      getAppProfile(appProfile);
+    }
   }
 
-  private void updateAppProfileSwitchToSingle(AppProfile original, String singleClusterId)
+  private void updateAppProfileToSingle(AppProfile original, String singleClusterId)
       throws Exception {
-    // SingleClusterRouting singlePolicy = SingleClusterRouting.of(singleClusterId, true);
     AppProfile updated =
         instanceAdmin
             .updateAppProfile(
-                original.updateDescription("newDescription")
-                // TODO fix policy switch failing test
-                // .updateRoutingPolicy(singlePolicy))
-                )
+                AppProfile.ofUpdateAppProfile(original)
+                    .updateDescription("newDescription")
+                    .updateRouteToCluster(singleClusterId, false))
             .get();
 
     assertEquals("newDescription", updated.getDescription());
-    // assertEquals(singlePolicy.toString(), updated.getRoutingPolicy().toString());
+    assertEquals(RoutingPolicyCase.SINGLE_CLUSTER_ROUTING, updated.getRoutingPolicy().name());
   }
 
   private void deleteAppProfile(AppProfileName appProfileName) {
@@ -341,10 +332,11 @@ public class InstanceAdminClientIT {
   private void assertClusterEquals(Cluster exptected, Cluster actual, ClusterName expectedName) {
     assertEquals(com.google.bigtable.admin.v2.Cluster.State.READY, actual.getState());
     assertEquals(expectedName, actual.getName());
+    assertEquals(exptected.getId(), actual.getId());
 
     assertEquals(exptected.getLocation(), actual.getLocation());
     assertEquals(exptected.getServerNodes(), actual.getServerNodes());
-    assertEquals(exptected.getDefaultStorageType(), actual.getDefaultStorageType());
+    assertEquals(StorageType.SSD, actual.getDefaultStorageType());
   }
 
   private void assertAppProfileEquals(

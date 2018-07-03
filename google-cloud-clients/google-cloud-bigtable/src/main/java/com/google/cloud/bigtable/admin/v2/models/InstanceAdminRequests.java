@@ -9,7 +9,6 @@ import com.google.api.core.InternalApi;
 import com.google.bigtable.admin.v2.AppProfile.RoutingPolicyCase;
 import com.google.bigtable.admin.v2.AppProfileName;
 import com.google.bigtable.admin.v2.ClusterName;
-import com.google.bigtable.admin.v2.CreateAppProfileRequest;
 import com.google.bigtable.admin.v2.CreateInstanceRequest;
 import com.google.bigtable.admin.v2.Instance.State;
 import com.google.bigtable.admin.v2.Instance.Type;
@@ -31,21 +30,12 @@ public final class InstanceAdminRequests {
     return new CreateInstance(projectName, instance, cluster);
   }
 
-  public static CreateAppProfile createAppProfile(
-      InstanceName instanceName, AppProfile appProfile, boolean ignoreWarnings) {
-    return new CreateAppProfile(instanceName, appProfile, ignoreWarnings);
-  }
-
   public static Instance convertToInstance(com.google.bigtable.admin.v2.Instance protoInstance) {
     return new Instance(protoInstance);
   }
 
   public static Cluster convertToCluster(com.google.bigtable.admin.v2.Cluster protoCluster) {
     return new Cluster(protoCluster);
-  }
-
-  public static Cluster convertToFailedCluster(String location) {
-    return new Cluster(location);
   }
 
   public static AppProfile convertToAppProfile(com.google.bigtable.admin.v2.AppProfile appProfile) {
@@ -84,17 +74,20 @@ public final class InstanceAdminRequests {
   }
 
   public static final class Instance {
-    private final String DISPLAY_NAME_FIELDMASK = "display_name";
-    private final String TYPE_FIELDMASK = "type";
-    private final String LABELS_FIELDMASK = "labels";
-
     private final String id;
-    private final List<String> replacefields = new ArrayList<>();
     private com.google.bigtable.admin.v2.Instance.Builder protoInstance =
         com.google.bigtable.admin.v2.Instance.newBuilder();
 
-    public static Instance of(String instanceId, String displayName, Type instanceType) {
-      return new Instance(instanceId, displayName, instanceType);
+    public static Instance ofNewDevInstance(String instanceId, String displayName) {
+      return new Instance(instanceId, displayName, Type.DEVELOPMENT);
+    }
+
+    public static Instance ofNewProdInstance(String instanceId, String displayName) {
+      return new Instance(instanceId, displayName, Type.PRODUCTION);
+    }
+
+    public static UpdateInstance ofUpdateInstance(Instance instance) {
+      return new UpdateInstance(instance);
     }
 
     private Instance(String instanceId, String displayName, Type instanceType) {
@@ -137,39 +130,9 @@ public final class InstanceAdminRequests {
       return this;
     }
 
-    public Instance updateDisplayName(String updatedDisplayName) {
-      replacefields.add(DISPLAY_NAME_FIELDMASK);
-      protoInstance.setDisplayName(updatedDisplayName);
-      return this;
-    }
-
-    public Instance upgradeType() {
-      Preconditions.checkArgument(
-          Type.DEVELOPMENT.equals(protoInstance.getType()), "PRODUCTION type cannot be upgraded");
-      replacefields.add(TYPE_FIELDMASK);
-      protoInstance.setType(Type.PRODUCTION);
-      return this;
-    }
-
-    public Instance updateLabels(Map<String, String> updatedLabels) {
-      replacefields.add(LABELS_FIELDMASK);
-      protoInstance.putAllLabels(updatedLabels);
-      return this;
-    }
-
     @InternalApi
     public com.google.bigtable.admin.v2.Instance toProto() {
       return protoInstance.build();
-    }
-
-    @InternalApi
-    public com.google.bigtable.admin.v2.Instance toUpdateProto() {
-      return protoInstance.clone().clearState().build();
-    }
-
-    @InternalApi
-    public FieldMask getPartialUpdateFieldMask() {
-      return FieldMask.newBuilder().addAllPaths(replacefields).build();
     }
 
     @Override
@@ -184,37 +147,81 @@ public final class InstanceAdminRequests {
     }
   }
 
-  public static final class Cluster {
-    public static Cluster ofProd(
-        String clusterId, Location location, StorageType defaultStorage, int serverNodes) {
-      return new Cluster(clusterId, location, defaultStorage, serverNodes);
+  public static final class UpdateInstance {
+    private final String DISPLAY_NAME_FIELDMASK = "display_name";
+    private final String TYPE_FIELDMASK = "type";
+    private final String LABELS_FIELDMASK = "labels";
+
+    private final List<String> replacefields = new ArrayList<>();
+    private com.google.bigtable.admin.v2.Instance.Builder protoUpdateInstance =
+        com.google.bigtable.admin.v2.Instance.newBuilder();
+
+    private UpdateInstance(Instance instance) {
+      protoUpdateInstance = instance.toProto().toBuilder().clone();
     }
 
-    public static Cluster ofDev(String clusterId, Location location, StorageType defaultStorage) {
-      return new Cluster(clusterId, location, defaultStorage, 0);
+    public UpdateInstance updateDisplayName(String updatedDisplayName) {
+      replacefields.add(DISPLAY_NAME_FIELDMASK);
+      protoUpdateInstance.setDisplayName(updatedDisplayName);
+      return this;
+    }
+
+    public UpdateInstance upgradeType() {
+      Preconditions.checkArgument(
+          Type.DEVELOPMENT.equals(protoUpdateInstance.getType()),
+          "PRODUCTION type cannot be upgraded");
+      replacefields.add(TYPE_FIELDMASK);
+      protoUpdateInstance.setType(Type.PRODUCTION);
+      return this;
+    }
+
+    public UpdateInstance updateLabels(Map<String, String> updatedLabels) {
+      replacefields.add(LABELS_FIELDMASK);
+      protoUpdateInstance.putAllLabels(updatedLabels);
+      return this;
+    }
+
+    @InternalApi
+    public com.google.bigtable.admin.v2.Instance toProto() {
+      return protoUpdateInstance.clearState().build();
+    }
+
+    @InternalApi
+    public FieldMask getPartialUpdateFieldMask() {
+      return FieldMask.newBuilder().addAllPaths(replacefields).build();
+    }
+  }
+
+  public static final class Cluster {
+    public static Cluster ofNewDevCluster(String clusterId, Location location) {
+      return new Cluster(clusterId, location, 0);
+    }
+
+    public static Cluster ofNewProdCluster(String clusterId, Location location, int serverNodes) {
+      return new Cluster(clusterId, location, serverNodes);
+    }
+
+    public static UpdateCluster ofUpdateCluster(Cluster cluster) {
+      return new UpdateCluster(cluster);
     }
 
     private final String id;
     private com.google.bigtable.admin.v2.Cluster.Builder protoCluster =
         com.google.bigtable.admin.v2.Cluster.newBuilder();
 
-    private Cluster(
-        String clusterId, Location location, StorageType defaultStorage, int serverNodes) {
-      protoCluster
-          .setLocation(location.toString())
-          .setServeNodes(serverNodes)
-          .setDefaultStorageType(defaultStorage);
+    private Cluster(String clusterId, Location location, int serverNodes) {
+      protoCluster.setLocation(location.toString()).setServeNodes(serverNodes);
       this.id = clusterId;
-    }
-
-    private Cluster(String location) {
-      protoCluster.setLocation(location);
-      id = "failedlocation";
     }
 
     private Cluster(com.google.bigtable.admin.v2.Cluster cluster) {
       protoCluster = cluster.toBuilder();
       id = getName().getCluster();
+    }
+
+    public Cluster setDefaultStorage(StorageType defaultStorage) {
+      protoCluster.setDefaultStorageType(defaultStorage);
+      return this;
     }
 
     public String getId() {
@@ -241,19 +248,10 @@ public final class InstanceAdminRequests {
       return protoCluster.getDefaultStorageType();
     }
 
-    public Cluster updateNumNodes(int serverNodes) {
-      protoCluster.setServeNodes(serverNodes);
-      return this;
-    }
-
     @InternalApi
     public com.google.bigtable.admin.v2.Cluster toProto() {
+      // TODO: defaultStorage is currently optional, should we make this required?
       return protoCluster.build();
-    }
-
-    @InternalApi
-    public com.google.bigtable.admin.v2.Cluster toUpdateProto() {
-      return protoCluster.clone().clearState().clearDefaultStorageType().build();
     }
 
     @Override
@@ -268,42 +266,40 @@ public final class InstanceAdminRequests {
     }
   }
 
-  public static final class CreateAppProfile {
-    private final CreateAppProfileRequest.Builder createAppProfRequest =
-        CreateAppProfileRequest.newBuilder();
+  public static final class UpdateCluster {
+    private com.google.bigtable.admin.v2.Cluster.Builder protoUpdateCluster =
+        com.google.bigtable.admin.v2.Cluster.newBuilder();
 
-    private CreateAppProfile(
-        InstanceName instanceName, AppProfile appProfile, boolean ignoreWarnings) {
-      createAppProfRequest
-          .setParent(instanceName.toString())
-          .setAppProfileId(appProfile.getId())
-          .setAppProfile(appProfile.toProto())
-          .setIgnoreWarnings(ignoreWarnings);
+    private UpdateCluster(Cluster cluster) {
+      protoUpdateCluster = cluster.toProto().toBuilder().clone();
     }
 
-    public CreateAppProfileRequest toProto() {
-      return createAppProfRequest.build();
+    public UpdateCluster updateNumNodes(int serverNodes) {
+      protoUpdateCluster.setServeNodes(serverNodes);
+      return this;
+    }
+
+    @InternalApi
+    public com.google.bigtable.admin.v2.Cluster toProto() {
+      return protoUpdateCluster.clearState().clearDefaultStorageType().build();
     }
   }
 
   public static final class AppProfile {
-    private static final String DESCRIPTION_FIELDMASK = "description";
-    private static final String MULTI_CLUSTER_FIELDMASK = "multi_cluster_routing_use_any";
-    private static final String SINGLE_CLUSTER__FIELDMASK = "single_cluster_routing";
-
     private final String id;
-    private final List<String> replacefields = new ArrayList<>();
     private com.google.bigtable.admin.v2.AppProfile.Builder protoProfile =
         com.google.bigtable.admin.v2.AppProfile.newBuilder();
 
-    public static AppProfile of(String profileId, RoutingPolicy routingPolicy) {
-      return new AppProfile(profileId, routingPolicy);
+    public static AppProfile ofNewAppProfile(String profileId) {
+      return new AppProfile(profileId);
     }
 
-    private AppProfile(String profileId, RoutingPolicy routingPolicy) {
-      Preconditions.checkNotNull(routingPolicy);
+    public static UpdateAppProfile ofUpdateAppProfile(AppProfile appProfile) {
+      return new UpdateAppProfile(appProfile);
+    }
+
+    private AppProfile(String profileId) {
       id = profileId;
-      setRoutingPolicy(routingPolicy);
     }
 
     private AppProfile(com.google.bigtable.admin.v2.AppProfile appProfile) {
@@ -311,32 +307,29 @@ public final class InstanceAdminRequests {
       id = getName().getAppProfile();
     }
 
-    private void setRoutingPolicy(RoutingPolicy routingPolicy) {
-      if (RoutingPolicyCase.MULTI_CLUSTER_ROUTING_USE_ANY.equals(routingPolicy.name())) {
-        protoProfile.setMultiClusterRoutingUseAny(
-            com.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny.newBuilder().build());
-        protoProfile.clearSingleClusterRouting();
-        replacefields.add(MULTI_CLUSTER_FIELDMASK);
-      }
+    public AppProfile setDescription(String description) {
+      protoProfile.setDescription(description);
+      return this;
+    }
 
-      if (RoutingPolicyCase.SINGLE_CLUSTER_ROUTING.equals(routingPolicy.name())) {
-        protoProfile.setSingleClusterRouting(
-            com.google.bigtable.admin.v2.AppProfile.SingleClusterRouting.newBuilder()
-                .setClusterId(((SingleClusterRouting) routingPolicy).clusterId)
-                .setAllowTransactionalWrites(
-                    ((SingleClusterRouting) routingPolicy).allowTransactionalWrites));
-        protoProfile.clearMultiClusterRoutingUseAny();
-        replacefields.add(SINGLE_CLUSTER__FIELDMASK);
-      }
+    public AppProfile routeToAny() {
+      protoProfile.setMultiClusterRoutingUseAny(
+          com.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny.newBuilder().build());
+      protoProfile.clearSingleClusterRouting();
+      return this;
+    }
+
+    public AppProfile routeToCluster(String clusterId, boolean ignoreWarnings) {
+      protoProfile.setSingleClusterRouting(
+          com.google.bigtable.admin.v2.AppProfile.SingleClusterRouting.newBuilder()
+              .setClusterId(clusterId)
+              .setAllowTransactionalWrites(ignoreWarnings));
+      protoProfile.clearMultiClusterRoutingUseAny();
+      return this;
     }
 
     public String getId() {
       return id;
-    }
-
-    public AppProfile setDescription(String description) {
-      protoProfile.setDescription(description);
-      return this;
     }
 
     public AppProfileName getName() {
@@ -352,43 +345,28 @@ public final class InstanceAdminRequests {
     }
 
     public RoutingPolicy getRoutingPolicy() {
-      if (RoutingPolicyCase.MULTI_CLUSTER_ROUTING_USE_ANY.equals(
-          protoProfile.getRoutingPolicyCase().name())) {
+      if (RoutingPolicyCase.MULTI_CLUSTER_ROUTING_USE_ANY
+          .name()
+          .equals(protoProfile.getRoutingPolicyCase().name())) {
         return new MultiClusterRoutingUseAny();
       }
 
-      if (RoutingPolicyCase.SINGLE_CLUSTER_ROUTING.equals(
-          protoProfile.getRoutingPolicyCase().name())) {
+      if (RoutingPolicyCase.SINGLE_CLUSTER_ROUTING
+          .name()
+          .equals(protoProfile.getRoutingPolicyCase().name())) {
         return new SingleClusterRouting(protoProfile.getSingleClusterRouting());
       }
 
       return new RoutingPolicyNotSet();
     }
 
-    public AppProfile updateDescription(String updatedDescription) {
-      replacefields.add(DESCRIPTION_FIELDMASK);
-      protoProfile.setDescription(updatedDescription);
-      return this;
-    }
-
-    public AppProfile updateRoutingPolicy(RoutingPolicy routingPolicy) {
-      setRoutingPolicy(routingPolicy);
-      return this;
-    }
-
     @InternalApi
     public com.google.bigtable.admin.v2.AppProfile toProto() {
+      // TODO: should we default this to any instead?
+      Preconditions.checkState(
+          protoProfile.hasMultiClusterRoutingUseAny() || protoProfile.hasSingleClusterRouting(),
+          "Must specify a routing option");
       return protoProfile.build();
-    }
-
-    @InternalApi
-    public com.google.bigtable.admin.v2.AppProfile toUpdateProto() {
-      return protoProfile.clone().build();
-    }
-
-    @InternalApi
-    public FieldMask getPartialUpdateFieldMask() {
-      return FieldMask.newBuilder().addAllPaths(replacefields).build();
     }
 
     @Override
@@ -399,6 +377,55 @@ public final class InstanceAdminRequests {
           .add("description", getDescription())
           .add("routingPolicy", getRoutingPolicy())
           .toString();
+    }
+
+    public static class UpdateAppProfile {
+      private static final String DESCRIPTION_FIELDMASK = "description";
+      private static final String MULTI_CLUSTER_FIELDMASK = "multi_cluster_routing_use_any";
+      private static final String SINGLE_CLUSTER__FIELDMASK = "single_cluster_routing";
+
+      private final List<String> replacefields = new ArrayList<>();
+      private com.google.bigtable.admin.v2.AppProfile.Builder protoUpdateProfile =
+          com.google.bigtable.admin.v2.AppProfile.newBuilder();
+
+      private UpdateAppProfile(AppProfile appProfile) {
+        Preconditions.checkNotNull(appProfile);
+        protoUpdateProfile = appProfile.toProto().toBuilder().clone();
+      }
+
+      public UpdateAppProfile updateDescription(String updatedDescription) {
+        replacefields.add(DESCRIPTION_FIELDMASK);
+        protoUpdateProfile.setDescription(updatedDescription);
+        return this;
+      }
+
+      public UpdateAppProfile updateRouteToAny() {
+        protoUpdateProfile.setMultiClusterRoutingUseAny(
+            com.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny.newBuilder().build());
+        protoUpdateProfile.clearSingleClusterRouting();
+        replacefields.add(MULTI_CLUSTER_FIELDMASK);
+        return this;
+      }
+
+      public UpdateAppProfile updateRouteToCluster(String clusterId, boolean ignoreWarnings) {
+        protoUpdateProfile.setSingleClusterRouting(
+            com.google.bigtable.admin.v2.AppProfile.SingleClusterRouting.newBuilder()
+                .setClusterId(clusterId)
+                .setAllowTransactionalWrites(ignoreWarnings));
+        protoUpdateProfile.clearMultiClusterRoutingUseAny();
+        replacefields.add(SINGLE_CLUSTER__FIELDMASK);
+        return this;
+      }
+
+      @InternalApi
+      public com.google.bigtable.admin.v2.AppProfile toProto() {
+        return protoUpdateProfile.build();
+      }
+
+      @InternalApi
+      public FieldMask getPartialUpdateFieldMask() {
+        return FieldMask.newBuilder().addAllPaths(replacefields).build();
+      }
     }
 
     public interface RoutingPolicy {
@@ -420,10 +447,6 @@ public final class InstanceAdminRequests {
     }
 
     public static class MultiClusterRoutingUseAny implements RoutingPolicy {
-      public static MultiClusterRoutingUseAny of() {
-        return new MultiClusterRoutingUseAny();
-      }
-
       private MultiClusterRoutingUseAny() {}
 
       @Override
@@ -440,10 +463,6 @@ public final class InstanceAdminRequests {
     public static class SingleClusterRouting implements RoutingPolicy {
       private final String clusterId;
       private final boolean allowTransactionalWrites;
-
-      public static SingleClusterRouting of(String clusterId, boolean allowTransactionalWrites) {
-        return new SingleClusterRouting(clusterId, allowTransactionalWrites);
-      }
 
       private SingleClusterRouting(String clusterId, boolean allowTransactionalWrites) {
         this.clusterId = clusterId;
@@ -541,18 +560,21 @@ public final class InstanceAdminRequests {
   }
 
   public static final class Location {
-    public static Location of(ProjectName projectName, String zone) {
-      return new Location(projectName, zone);
+    public static Location of(String project, String zone) {
+      return new Location(project, zone);
     }
 
     private final String location;
 
-    private Location(ProjectName projectName, String zone) {
-      Preconditions.checkNotNull(projectName);
+    private Location(String project, String zone) {
+      Preconditions.checkNotNull(project);
       Preconditions.checkNotNull(zone);
 
       location =
-          new StringBuilder(projectName.toString()).append("/locations/").append(zone).toString();
+          new StringBuilder(ProjectName.of(project).toString())
+              .append("/locations/")
+              .append(zone)
+              .toString();
     }
 
     @Override
