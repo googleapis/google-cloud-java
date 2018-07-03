@@ -235,6 +235,12 @@ public class Table extends TableInfo {
   /**
    * Insert rows into the table.
    *
+   * <p>Streaming inserts reside temporarily in the streaming buffer, which has different
+   * availability characteristics than managed storage. Certain operations do not interact with the
+   * streaming buffer, such as {@link #list(TableDataListOption...)} and {@link #copy(TableId,
+   * JobOption...)}. As such, recent streaming data will not be present in the destination table or
+   * output.
+   *
    * <p>Example of inserting rows into the table.
    * <pre> {@code
    * String rowId1 = "rowId1";
@@ -262,6 +268,12 @@ public class Table extends TableInfo {
 
   /**
    * Insert rows into the table.
+   *
+   * <p>Streaming inserts reside temporarily in the streaming buffer, which has different
+   * availability characteristics than managed storage. Certain operations do not interact with the
+   * streaming buffer, such as {@link #list(TableDataListOption...)} and {@link #copy(TableId,
+   * JobOption...)}. As such, recent streaming data will not be present in the destination table or
+   * output.
    *
    * <p>Example of inserting rows into the table, ignoring invalid rows.
    * <pre> {@code

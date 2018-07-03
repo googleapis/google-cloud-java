@@ -12,9 +12,6 @@ Java idiomatic client for [Stackdriver Monitoring][stackdriver-monitoring].
 - [Product Documentation][monitoring-product-docs]
 - [Client Library Documentation][monitoring-client-lib-docs]
 
-> Note: This client is a work-in-progress, and may occasionally
-> make backwards-incompatible changes.
-
 Quickstart
 ----------
 
@@ -24,16 +21,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-monitoring</artifactId>
-  <version>1.34.0</version>
+  <version>1.35.0</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-monitoring:1.34.0'
+compile 'com.google.cloud:google-cloud-monitoring:1.35.0'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-monitoring" % "1.34.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-monitoring" % "1.35.0"
 ```
 [//]: # ({x-version-update-end})
 
@@ -76,7 +73,7 @@ Versioning
 
 This library follows [Semantic Versioning](http://semver.org/).
 
-It is currently in major version zero (``0.y.z``), which means that anything may change at any time and the public API should not be considered stable.
+It is currently in major version one (``1.y.z``), which means that the public API should be considered stable.
 
 Contributing
 ------------

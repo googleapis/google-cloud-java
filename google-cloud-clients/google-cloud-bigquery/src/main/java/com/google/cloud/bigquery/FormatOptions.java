@@ -26,15 +26,24 @@ import java.util.Objects;
 /**
  * Base class for Google BigQuery format options. These class define the format of external data
  * used by BigQuery, for either federated tables or load jobs.
+ *
+ * Load jobs support the following formats: AVRO, CSV, DATASTORE_BACKUP, GOOGLE_SHEETS, JSON, ORC,
+ * PARQUET
+ *
+ * Federated tables can be defined against following formats: AVRO, BIGTABLE, CSV, DATASTORE_BACKUP,
+ * GOOGLE_SHEETS, JSON
  */
 public class FormatOptions implements Serializable {
 
   static final String CSV = "CSV";
   static final String JSON = "NEWLINE_DELIMITED_JSON";
+  static final String BIGTABLE = "BIGTABLE";
   static final String DATASTORE_BACKUP = "DATASTORE_BACKUP";
   static final String AVRO = "AVRO";
   static final String GOOGLE_SHEETS = "GOOGLE_SHEETS";
   static final String PARQUET = "PARQUET";
+  static final String ORC = "ORC";
+
   private static final long serialVersionUID = -443376052020423691L;
 
   private final String type;
@@ -42,7 +51,6 @@ public class FormatOptions implements Serializable {
   FormatOptions(String type) {
     this.type = type;
   }
-
 
   /**
    * Returns the external data format, as a string.
@@ -98,6 +106,13 @@ public class FormatOptions implements Serializable {
   }
 
   /**
+   * Default options for BIGTABLE format.
+   */
+  public static FormatOptions bigtable() {
+    return BigtableOptions.newBuilder().build();
+  }
+
+  /**
    * Default options for GOOGLE_SHEETS format.
    */
   public static FormatOptions googleSheets() {
@@ -111,9 +126,16 @@ public class FormatOptions implements Serializable {
     return new FormatOptions(PARQUET);
   }
 
-    /**
-     * Default options for the provided format.
-     */
+  /**
+   * Default options for the ORC format.
+   */
+  public static FormatOptions orc() {
+    return new FormatOptions(ORC);
+  }
+
+  /**
+   * Default options for the provided format.
+   */
   public static FormatOptions of(String format) {
     if (checkNotNull(format).equals(CSV)) {
       return csv();
@@ -121,6 +143,8 @@ public class FormatOptions implements Serializable {
       return datastoreBackup();
     } else if (format.equals(GOOGLE_SHEETS)) {
       return googleSheets();
+    } else if (format.equals(BIGTABLE)) {
+      return bigtable();
     }
     return new FormatOptions(format);
   }

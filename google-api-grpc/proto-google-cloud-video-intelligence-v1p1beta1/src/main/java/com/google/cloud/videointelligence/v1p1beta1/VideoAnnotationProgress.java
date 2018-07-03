@@ -120,7 +120,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object inputUri_;
   /**
    * <pre>
-   * Video file location in
+   * Output only. Video file location in
    * [Google Cloud Storage](https://cloud.google.com/storage/).
    * </pre>
    *
@@ -140,7 +140,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Video file location in
+   * Output only. Video file location in
    * [Google Cloud Storage](https://cloud.google.com/storage/).
    * </pre>
    *
@@ -164,8 +164,8 @@ private static final long serialVersionUID = 0L;
   private int progressPercent_;
   /**
    * <pre>
-   * Approximate percentage processed thus far.
-   * Guaranteed to be 100 when fully processed.
+   * Output only. Approximate percentage processed thus far. Guaranteed to be
+   * 100 when fully processed.
    * </pre>
    *
    * <code>int32 progress_percent = 2;</code>
@@ -178,7 +178,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.Timestamp startTime_;
   /**
    * <pre>
-   * Time when the request was received.
+   * Output only. Time when the request was received.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 3;</code>
@@ -188,7 +188,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Time when the request was received.
+   * Output only. Time when the request was received.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 3;</code>
@@ -198,7 +198,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Time when the request was received.
+   * Output only. Time when the request was received.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 3;</code>
@@ -211,7 +211,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.Timestamp updateTime_;
   /**
    * <pre>
-   * Time of the most recent update.
+   * Output only. Time of the most recent update.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 4;</code>
@@ -221,7 +221,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Time of the most recent update.
+   * Output only. Time of the most recent update.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 4;</code>
@@ -231,7 +231,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Time of the most recent update.
+   * Output only. Time of the most recent update.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 4;</code>
@@ -607,7 +607,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object inputUri_ = "";
     /**
      * <pre>
-     * Video file location in
+     * Output only. Video file location in
      * [Google Cloud Storage](https://cloud.google.com/storage/).
      * </pre>
      *
@@ -627,7 +627,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Video file location in
+     * Output only. Video file location in
      * [Google Cloud Storage](https://cloud.google.com/storage/).
      * </pre>
      *
@@ -648,7 +648,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Video file location in
+     * Output only. Video file location in
      * [Google Cloud Storage](https://cloud.google.com/storage/).
      * </pre>
      *
@@ -666,7 +666,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Video file location in
+     * Output only. Video file location in
      * [Google Cloud Storage](https://cloud.google.com/storage/).
      * </pre>
      *
@@ -680,7 +680,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Video file location in
+     * Output only. Video file location in
      * [Google Cloud Storage](https://cloud.google.com/storage/).
      * </pre>
      *
@@ -701,8 +701,8 @@ private static final long serialVersionUID = 0L;
     private int progressPercent_ ;
     /**
      * <pre>
-     * Approximate percentage processed thus far.
-     * Guaranteed to be 100 when fully processed.
+     * Output only. Approximate percentage processed thus far. Guaranteed to be
+     * 100 when fully processed.
      * </pre>
      *
      * <code>int32 progress_percent = 2;</code>
@@ -712,8 +712,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Approximate percentage processed thus far.
-     * Guaranteed to be 100 when fully processed.
+     * Output only. Approximate percentage processed thus far. Guaranteed to be
+     * 100 when fully processed.
      * </pre>
      *
      * <code>int32 progress_percent = 2;</code>
@@ -726,8 +726,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Approximate percentage processed thus far.
-     * Guaranteed to be 100 when fully processed.
+     * Output only. Approximate percentage processed thus far. Guaranteed to be
+     * 100 when fully processed.
      * </pre>
      *
      * <code>int32 progress_percent = 2;</code>
@@ -744,7 +744,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> startTimeBuilder_;
     /**
      * <pre>
-     * Time when the request was received.
+     * Output only. Time when the request was received.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 3;</code>
@@ -754,7 +754,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Time when the request was received.
+     * Output only. Time when the request was received.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 3;</code>
@@ -768,7 +768,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Time when the request was received.
+     * Output only. Time when the request was received.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 3;</code>
@@ -788,7 +788,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Time when the request was received.
+     * Output only. Time when the request was received.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 3;</code>
@@ -806,7 +806,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Time when the request was received.
+     * Output only. Time when the request was received.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 3;</code>
@@ -828,7 +828,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Time when the request was received.
+     * Output only. Time when the request was received.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 3;</code>
@@ -846,7 +846,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Time when the request was received.
+     * Output only. Time when the request was received.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 3;</code>
@@ -858,7 +858,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Time when the request was received.
+     * Output only. Time when the request was received.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 3;</code>
@@ -873,7 +873,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Time when the request was received.
+     * Output only. Time when the request was received.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 3;</code>
@@ -897,7 +897,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> updateTimeBuilder_;
     /**
      * <pre>
-     * Time of the most recent update.
+     * Output only. Time of the most recent update.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 4;</code>
@@ -907,7 +907,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Time of the most recent update.
+     * Output only. Time of the most recent update.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 4;</code>
@@ -921,7 +921,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Time of the most recent update.
+     * Output only. Time of the most recent update.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 4;</code>
@@ -941,7 +941,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Time of the most recent update.
+     * Output only. Time of the most recent update.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 4;</code>
@@ -959,7 +959,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Time of the most recent update.
+     * Output only. Time of the most recent update.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 4;</code>
@@ -981,7 +981,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Time of the most recent update.
+     * Output only. Time of the most recent update.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 4;</code>
@@ -999,7 +999,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Time of the most recent update.
+     * Output only. Time of the most recent update.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 4;</code>
@@ -1011,7 +1011,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Time of the most recent update.
+     * Output only. Time of the most recent update.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 4;</code>
@@ -1026,7 +1026,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Time of the most recent update.
+     * Output only. Time of the most recent update.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 4;</code>
