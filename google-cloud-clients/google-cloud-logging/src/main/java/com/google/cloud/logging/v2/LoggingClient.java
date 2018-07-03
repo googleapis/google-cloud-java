@@ -333,10 +333,10 @@ public class LoggingClient implements BackgroundResource {
    *
    * <pre><code>
    * try (LoggingClient loggingClient = LoggingClient.create()) {
-   *   List&lt;String&gt; resourceNames = new ArrayList&lt;&gt;();
+   *   List&lt;String&gt; formattedResourceNames = new ArrayList&lt;&gt;();
    *   String filter = "";
    *   String orderBy = "";
-   *   for (LogEntry element : loggingClient.listLogEntries(resourceNames, filter, orderBy).iterateAll()) {
+   *   for (LogEntry element : loggingClient.listLogEntries(ParentName.toStringList(formattedResourceNames), filter, orderBy).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -380,9 +380,9 @@ public class LoggingClient implements BackgroundResource {
    *
    * <pre><code>
    * try (LoggingClient loggingClient = LoggingClient.create()) {
-   *   List&lt;String&gt; resourceNames = new ArrayList&lt;&gt;();
+   *   List&lt;String&gt; formattedResourceNames = new ArrayList&lt;&gt;();
    *   ListLogEntriesRequest request = ListLogEntriesRequest.newBuilder()
-   *     .addAllResourceNames(resourceNames)
+   *     .addAllResourceNames(formattedResourceNames)
    *     .build();
    *   for (LogEntry element : loggingClient.listLogEntries(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -406,9 +406,9 @@ public class LoggingClient implements BackgroundResource {
    *
    * <pre><code>
    * try (LoggingClient loggingClient = LoggingClient.create()) {
-   *   List&lt;String&gt; resourceNames = new ArrayList&lt;&gt;();
+   *   List&lt;String&gt; formattedResourceNames = new ArrayList&lt;&gt;();
    *   ListLogEntriesRequest request = ListLogEntriesRequest.newBuilder()
-   *     .addAllResourceNames(resourceNames)
+   *     .addAllResourceNames(formattedResourceNames)
    *     .build();
    *   ApiFuture&lt;ListLogEntriesPagedResponse&gt; future = loggingClient.listLogEntriesPagedCallable().futureCall(request);
    *   // Do something
@@ -432,9 +432,9 @@ public class LoggingClient implements BackgroundResource {
    *
    * <pre><code>
    * try (LoggingClient loggingClient = LoggingClient.create()) {
-   *   List&lt;String&gt; resourceNames = new ArrayList&lt;&gt;();
+   *   List&lt;String&gt; formattedResourceNames = new ArrayList&lt;&gt;();
    *   ListLogEntriesRequest request = ListLogEntriesRequest.newBuilder()
-   *     .addAllResourceNames(resourceNames)
+   *     .addAllResourceNames(formattedResourceNames)
    *     .build();
    *   while (true) {
    *     ListLogEntriesResponse response = loggingClient.listLogEntriesCallable().call(request);
