@@ -72,6 +72,9 @@ func main() {
 		if err := getSnip(file, txt, snip); err != nil {
 			log.Fatal(err)
 		}
+		if err := getCloud(file, txt, snip); err != nil {
+			log.Fatal(err)
+		}
 	}
 
 	rd := rewriteData{
@@ -93,6 +96,44 @@ func main() {
 	for key := range snip {
 		if !rd.used[key] {
 			log.Printf("unused snippet: %q", key)
+		}
+	}
+}
+
+func getCloud(file, txt string, snip map[string]string) error {
+	const cloudPrefix = "// [START "
+	const cloudSuffix = "// [END %s]"
+
+	ftxt := txt
+	for {
+		if p := strings.Index(txt, cloudPrefix); p >= 0 {
+			txt = txt[p:]
+		} else {
+			return nil
+		}
+
+		var tag string
+		if p := strings.Index(txt, "]\n"); p >= 0 {
+			// "// [START foo]" -> "foo"
+			tag = txt[10:p]
+			txt = txt[p+1:]
+		} else {
+			tag = txt
+			txt = ""
+		}
+
+		endTag := fmt.Sprintf(cloudSuffix, tag)
+		if p := strings.Index(txt, endTag); p >= 0 {
+			key := fmt.Sprintf("<!--SNIPPET %s-->", tag)
+			snipTxt := strings.Trim(txt[:p], "\n\r")
+			if _, exist := snip[key]; exist {
+				snip[key] = strings.Join([]string{snip[key], snipTxt}, "")
+			}
+
+			snip[key] = snipTxt
+			txt = txt[p+len(endTag):]
+		} else {
+			return fmt.Errorf("[START %s]:%d snippet %q not closed", file, lineNum(ftxt, txt), tag)
 		}
 	}
 }
@@ -165,18 +206,18 @@ func writeSnip(file, txt string, snip map[string]string, rd rewriteData) error {
 		if ok {
 			rd.used[key] = true
 		} else {
-			return fmt.Errorf("%s:%d snippet %q undefined", file, lineNum(ftxt, txt), key)
+			return fmt.Errorf("%s:%d snippet target %q undefined", file, lineNum(ftxt, txt), key)
 		}
 
 		if p := strings.Index(txt, key); p >= 0 {
 			buf.WriteString(key)
-			buf.WriteString("\n* <pre>{@code\n *")
-			buf.WriteString(strings.Replace(rep, "\n", "\n*", -1))
-			buf.WriteString("\n* }</pre>\n")
+			buf.WriteString("\n   * <pre>{@code\n   *")
+			buf.WriteString(strings.Replace(rep, "\n", "\n   *", -1))
+			buf.WriteString(" }</pre>\n   * ")
 			buf.WriteString(key)
 			txt = txt[p+len(key):]
 		} else {
-			return fmt.Errorf("%s:%d snippet %q not closed", file, lineNum(ftxt, txt), key)
+			return fmt.Errorf("%s:%d snippet target %q not closed", file, lineNum(ftxt, txt), key)
 		}
 	}
 }
