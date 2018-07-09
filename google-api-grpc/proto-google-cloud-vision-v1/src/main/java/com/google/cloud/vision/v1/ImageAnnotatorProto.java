@@ -365,11 +365,11 @@ public final class ImageAnnotatorProto {
       "\001*\022\231\001\n\027AsyncBatchAnnotateFiles\0226.google." +
       "cloud.vision.v1.AsyncBatchAnnotateFilesR" +
       "equest\032\035.google.longrunning.Operation\"\'\202" +
-      "\323\344\223\002!\"\034/v1/files:asyncBatchAnnotate:\001*Bt" +
+      "\323\344\223\002!\"\034/v1/files:asyncBatchAnnotate:\001*B{" +
       "\n\032com.google.cloud.vision.v1B\023ImageAnnot" +
       "atorProtoP\001Z<google.golang.org/genproto/" +
-      "googleapis/cloud/vision/v1;vision\370\001\001b\006pr" +
-      "oto3"
+      "googleapis/cloud/vision/v1;vision\370\001\001\242\002\004G" +
+      "CVNb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

@@ -6,6 +6,7 @@ package com.google.privacy.dlp.v2;
 /**
  * <pre>
  * Contains a configuration to make dlp api calls on a repeating basis.
+ * See https://cloud.google.com/dlp/docs/concepts-job-triggers to learn more.
  * </pre>
  *
  * Protobuf type {@code google.privacy.dlp.v2.JobTrigger}
@@ -1808,6 +1809,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Contains a configuration to make dlp api calls on a repeating basis.
+   * See https://cloud.google.com/dlp/docs/concepts-job-triggers to learn more.
    * </pre>
    *
    * Protobuf type {@code google.privacy.dlp.v2.JobTrigger}

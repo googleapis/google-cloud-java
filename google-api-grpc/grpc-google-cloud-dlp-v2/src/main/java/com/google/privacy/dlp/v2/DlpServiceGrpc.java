@@ -23,6 +23,8 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  * blocks or images.
  * The service also includes methods for sensitive data redaction and
  * scheduling of data scans on Google Cloud Platform based data sets.
+ * To learn more about concepts and find how-to guides see
+ * https://cloud.google.com/dlp/docs/.
  * </pre>
  */
 @javax.annotation.Generated(
@@ -992,6 +994,8 @@ public final class DlpServiceGrpc {
    * blocks or images.
    * The service also includes methods for sensitive data redaction and
    * scheduling of data scans on Google Cloud Platform based data sets.
+   * To learn more about concepts and find how-to guides see
+   * https://cloud.google.com/dlp/docs/.
    * </pre>
    */
   public static abstract class DlpServiceImplBase implements io.grpc.BindableService {
@@ -1000,8 +1004,11 @@ public final class DlpServiceGrpc {
      * <pre>
      * Finds potentially sensitive info in content.
      * This method has limits on input size, processing time, and output size.
-     * [How-to guide for text](/dlp/docs/inspecting-text), [How-to guide for
-     * images](/dlp/docs/inspecting-images)
+     * When no InfoTypes or CustomInfoTypes are specified in this request, the
+     * system will automatically choose what detectors to run. By default this may
+     * be all types, but may change over time as detectors are updated.
+     * For how to guides, see https://cloud.google.com/dlp/docs/inspecting-images
+     * and https://cloud.google.com/dlp/docs/inspecting-text,
      * </pre>
      */
     public void inspectContent(com.google.privacy.dlp.v2.InspectContentRequest request,
@@ -1013,7 +1020,11 @@ public final class DlpServiceGrpc {
      * <pre>
      * Redacts potentially sensitive info from an image.
      * This method has limits on input size, processing time, and output size.
-     * [How-to guide](/dlp/docs/redacting-sensitive-data-images)
+     * See https://cloud.google.com/dlp/docs/redacting-sensitive-data-images to
+     * learn more.
+     * When no InfoTypes or CustomInfoTypes are specified in this request, the
+     * system will automatically choose what detectors to run. By default this may
+     * be all types, but may change over time as detectors are updated.
      * </pre>
      */
     public void redactImage(com.google.privacy.dlp.v2.RedactImageRequest request,
@@ -1025,7 +1036,11 @@ public final class DlpServiceGrpc {
      * <pre>
      * De-identifies potentially sensitive info from a ContentItem.
      * This method has limits on input size and output size.
-     * [How-to guide](/dlp/docs/deidentify-sensitive-data)
+     * See https://cloud.google.com/dlp/docs/deidentify-sensitive-data to
+     * learn more.
+     * When no InfoTypes or CustomInfoTypes are specified in this request, the
+     * system will automatically choose what detectors to run. By default this may
+     * be all types, but may change over time as detectors are updated.
      * </pre>
      */
     public void deidentifyContent(com.google.privacy.dlp.v2.DeidentifyContentRequest request,
@@ -1036,6 +1051,9 @@ public final class DlpServiceGrpc {
     /**
      * <pre>
      * Re-identifies content that has been de-identified.
+     * See
+     * https://cloud.google.com/dlp/docs/pseudonymization#re-identification_in_free_text_code_example
+     * to learn more.
      * </pre>
      */
     public void reidentifyContent(com.google.privacy.dlp.v2.ReidentifyContentRequest request,
@@ -1046,8 +1064,8 @@ public final class DlpServiceGrpc {
     /**
      * <pre>
      * Returns a list of the sensitive information types that the DLP API
-     * supports. For more information, see [Listing supported predefined
-     * infoTypes](/dlp/docs/listing-infotypes).
+     * supports. See https://cloud.google.com/dlp/docs/infotypes-reference to
+     * learn more.
      * </pre>
      */
     public void listInfoTypes(com.google.privacy.dlp.v2.ListInfoTypesRequest request,
@@ -1059,6 +1077,7 @@ public final class DlpServiceGrpc {
      * <pre>
      * Creates an InspectTemplate for re-using frequently used configuration
      * for inspecting content, images, and storage.
+     * See https://cloud.google.com/dlp/docs/creating-templates to learn more.
      * </pre>
      */
     public void createInspectTemplate(com.google.privacy.dlp.v2.CreateInspectTemplateRequest request,
@@ -1069,6 +1088,7 @@ public final class DlpServiceGrpc {
     /**
      * <pre>
      * Updates the InspectTemplate.
+     * See https://cloud.google.com/dlp/docs/creating-templates to learn more.
      * </pre>
      */
     public void updateInspectTemplate(com.google.privacy.dlp.v2.UpdateInspectTemplateRequest request,
@@ -1079,6 +1099,7 @@ public final class DlpServiceGrpc {
     /**
      * <pre>
      * Gets an InspectTemplate.
+     * See https://cloud.google.com/dlp/docs/creating-templates to learn more.
      * </pre>
      */
     public void getInspectTemplate(com.google.privacy.dlp.v2.GetInspectTemplateRequest request,
@@ -1089,6 +1110,7 @@ public final class DlpServiceGrpc {
     /**
      * <pre>
      * Lists InspectTemplates.
+     * See https://cloud.google.com/dlp/docs/creating-templates to learn more.
      * </pre>
      */
     public void listInspectTemplates(com.google.privacy.dlp.v2.ListInspectTemplatesRequest request,
@@ -1099,6 +1121,7 @@ public final class DlpServiceGrpc {
     /**
      * <pre>
      * Deletes an InspectTemplate.
+     * See https://cloud.google.com/dlp/docs/creating-templates to learn more.
      * </pre>
      */
     public void deleteInspectTemplate(com.google.privacy.dlp.v2.DeleteInspectTemplateRequest request,
@@ -1110,6 +1133,8 @@ public final class DlpServiceGrpc {
      * <pre>
      * Creates a DeidentifyTemplate for re-using frequently used configuration
      * for de-identifying content, images, and storage.
+     * See https://cloud.google.com/dlp/docs/creating-templates-deid to learn
+     * more.
      * </pre>
      */
     public void createDeidentifyTemplate(com.google.privacy.dlp.v2.CreateDeidentifyTemplateRequest request,
@@ -1120,6 +1145,8 @@ public final class DlpServiceGrpc {
     /**
      * <pre>
      * Updates the DeidentifyTemplate.
+     * See https://cloud.google.com/dlp/docs/creating-templates-deid to learn
+     * more.
      * </pre>
      */
     public void updateDeidentifyTemplate(com.google.privacy.dlp.v2.UpdateDeidentifyTemplateRequest request,
@@ -1130,6 +1157,8 @@ public final class DlpServiceGrpc {
     /**
      * <pre>
      * Gets a DeidentifyTemplate.
+     * See https://cloud.google.com/dlp/docs/creating-templates-deid to learn
+     * more.
      * </pre>
      */
     public void getDeidentifyTemplate(com.google.privacy.dlp.v2.GetDeidentifyTemplateRequest request,
@@ -1140,6 +1169,8 @@ public final class DlpServiceGrpc {
     /**
      * <pre>
      * Lists DeidentifyTemplates.
+     * See https://cloud.google.com/dlp/docs/creating-templates-deid to learn
+     * more.
      * </pre>
      */
     public void listDeidentifyTemplates(com.google.privacy.dlp.v2.ListDeidentifyTemplatesRequest request,
@@ -1150,6 +1181,8 @@ public final class DlpServiceGrpc {
     /**
      * <pre>
      * Deletes a DeidentifyTemplate.
+     * See https://cloud.google.com/dlp/docs/creating-templates-deid to learn
+     * more.
      * </pre>
      */
     public void deleteDeidentifyTemplate(com.google.privacy.dlp.v2.DeleteDeidentifyTemplateRequest request,
@@ -1161,6 +1194,7 @@ public final class DlpServiceGrpc {
      * <pre>
      * Creates a job trigger to run DLP actions such as scanning storage for
      * sensitive information on a set schedule.
+     * See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
      * </pre>
      */
     public void createJobTrigger(com.google.privacy.dlp.v2.CreateJobTriggerRequest request,
@@ -1171,6 +1205,7 @@ public final class DlpServiceGrpc {
     /**
      * <pre>
      * Updates a job trigger.
+     * See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
      * </pre>
      */
     public void updateJobTrigger(com.google.privacy.dlp.v2.UpdateJobTriggerRequest request,
@@ -1181,6 +1216,7 @@ public final class DlpServiceGrpc {
     /**
      * <pre>
      * Gets a job trigger.
+     * See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
      * </pre>
      */
     public void getJobTrigger(com.google.privacy.dlp.v2.GetJobTriggerRequest request,
@@ -1191,6 +1227,7 @@ public final class DlpServiceGrpc {
     /**
      * <pre>
      * Lists job triggers.
+     * See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
      * </pre>
      */
     public void listJobTriggers(com.google.privacy.dlp.v2.ListJobTriggersRequest request,
@@ -1201,6 +1238,7 @@ public final class DlpServiceGrpc {
     /**
      * <pre>
      * Deletes a job trigger.
+     * See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
      * </pre>
      */
     public void deleteJobTrigger(com.google.privacy.dlp.v2.DeleteJobTriggerRequest request,
@@ -1211,7 +1249,11 @@ public final class DlpServiceGrpc {
     /**
      * <pre>
      * Creates a new job to inspect storage or calculate risk metrics.
-     * [How-to guide](/dlp/docs/compute-risk-analysis).
+     * See https://cloud.google.com/dlp/docs/inspecting-storage and
+     * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
+     * When no InfoTypes or CustomInfoTypes are specified in inspect jobs, the
+     * system will automatically choose what detectors to run. By default this may
+     * be all types, but may change over time as detectors are updated.
      * </pre>
      */
     public void createDlpJob(com.google.privacy.dlp.v2.CreateDlpJobRequest request,
@@ -1222,6 +1264,8 @@ public final class DlpServiceGrpc {
     /**
      * <pre>
      * Lists DlpJobs that match the specified filter in the request.
+     * See https://cloud.google.com/dlp/docs/inspecting-storage and
+     * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
      * </pre>
      */
     public void listDlpJobs(com.google.privacy.dlp.v2.ListDlpJobsRequest request,
@@ -1232,6 +1276,8 @@ public final class DlpServiceGrpc {
     /**
      * <pre>
      * Gets the latest state of a long-running DlpJob.
+     * See https://cloud.google.com/dlp/docs/inspecting-storage and
+     * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
      * </pre>
      */
     public void getDlpJob(com.google.privacy.dlp.v2.GetDlpJobRequest request,
@@ -1244,6 +1290,8 @@ public final class DlpServiceGrpc {
      * Deletes a long-running DlpJob. This method indicates that the client is
      * no longer interested in the DlpJob result. The job will be cancelled if
      * possible.
+     * See https://cloud.google.com/dlp/docs/inspecting-storage and
+     * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
      * </pre>
      */
     public void deleteDlpJob(com.google.privacy.dlp.v2.DeleteDlpJobRequest request,
@@ -1256,6 +1304,8 @@ public final class DlpServiceGrpc {
      * Starts asynchronous cancellation on a long-running DlpJob. The server
      * makes a best effort to cancel the DlpJob, but success is not
      * guaranteed.
+     * See https://cloud.google.com/dlp/docs/inspecting-storage and
+     * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
      * </pre>
      */
     public void cancelDlpJob(com.google.privacy.dlp.v2.CancelDlpJobRequest request,
@@ -1452,6 +1502,8 @@ public final class DlpServiceGrpc {
    * blocks or images.
    * The service also includes methods for sensitive data redaction and
    * scheduling of data scans on Google Cloud Platform based data sets.
+   * To learn more about concepts and find how-to guides see
+   * https://cloud.google.com/dlp/docs/.
    * </pre>
    */
   public static final class DlpServiceStub extends io.grpc.stub.AbstractStub<DlpServiceStub> {
@@ -1474,8 +1526,11 @@ public final class DlpServiceGrpc {
      * <pre>
      * Finds potentially sensitive info in content.
      * This method has limits on input size, processing time, and output size.
-     * [How-to guide for text](/dlp/docs/inspecting-text), [How-to guide for
-     * images](/dlp/docs/inspecting-images)
+     * When no InfoTypes or CustomInfoTypes are specified in this request, the
+     * system will automatically choose what detectors to run. By default this may
+     * be all types, but may change over time as detectors are updated.
+     * For how to guides, see https://cloud.google.com/dlp/docs/inspecting-images
+     * and https://cloud.google.com/dlp/docs/inspecting-text,
      * </pre>
      */
     public void inspectContent(com.google.privacy.dlp.v2.InspectContentRequest request,
@@ -1488,7 +1543,11 @@ public final class DlpServiceGrpc {
      * <pre>
      * Redacts potentially sensitive info from an image.
      * This method has limits on input size, processing time, and output size.
-     * [How-to guide](/dlp/docs/redacting-sensitive-data-images)
+     * See https://cloud.google.com/dlp/docs/redacting-sensitive-data-images to
+     * learn more.
+     * When no InfoTypes or CustomInfoTypes are specified in this request, the
+     * system will automatically choose what detectors to run. By default this may
+     * be all types, but may change over time as detectors are updated.
      * </pre>
      */
     public void redactImage(com.google.privacy.dlp.v2.RedactImageRequest request,
@@ -1501,7 +1560,11 @@ public final class DlpServiceGrpc {
      * <pre>
      * De-identifies potentially sensitive info from a ContentItem.
      * This method has limits on input size and output size.
-     * [How-to guide](/dlp/docs/deidentify-sensitive-data)
+     * See https://cloud.google.com/dlp/docs/deidentify-sensitive-data to
+     * learn more.
+     * When no InfoTypes or CustomInfoTypes are specified in this request, the
+     * system will automatically choose what detectors to run. By default this may
+     * be all types, but may change over time as detectors are updated.
      * </pre>
      */
     public void deidentifyContent(com.google.privacy.dlp.v2.DeidentifyContentRequest request,
@@ -1513,6 +1576,9 @@ public final class DlpServiceGrpc {
     /**
      * <pre>
      * Re-identifies content that has been de-identified.
+     * See
+     * https://cloud.google.com/dlp/docs/pseudonymization#re-identification_in_free_text_code_example
+     * to learn more.
      * </pre>
      */
     public void reidentifyContent(com.google.privacy.dlp.v2.ReidentifyContentRequest request,
@@ -1524,8 +1590,8 @@ public final class DlpServiceGrpc {
     /**
      * <pre>
      * Returns a list of the sensitive information types that the DLP API
-     * supports. For more information, see [Listing supported predefined
-     * infoTypes](/dlp/docs/listing-infotypes).
+     * supports. See https://cloud.google.com/dlp/docs/infotypes-reference to
+     * learn more.
      * </pre>
      */
     public void listInfoTypes(com.google.privacy.dlp.v2.ListInfoTypesRequest request,
@@ -1538,6 +1604,7 @@ public final class DlpServiceGrpc {
      * <pre>
      * Creates an InspectTemplate for re-using frequently used configuration
      * for inspecting content, images, and storage.
+     * See https://cloud.google.com/dlp/docs/creating-templates to learn more.
      * </pre>
      */
     public void createInspectTemplate(com.google.privacy.dlp.v2.CreateInspectTemplateRequest request,
@@ -1549,6 +1616,7 @@ public final class DlpServiceGrpc {
     /**
      * <pre>
      * Updates the InspectTemplate.
+     * See https://cloud.google.com/dlp/docs/creating-templates to learn more.
      * </pre>
      */
     public void updateInspectTemplate(com.google.privacy.dlp.v2.UpdateInspectTemplateRequest request,
@@ -1560,6 +1628,7 @@ public final class DlpServiceGrpc {
     /**
      * <pre>
      * Gets an InspectTemplate.
+     * See https://cloud.google.com/dlp/docs/creating-templates to learn more.
      * </pre>
      */
     public void getInspectTemplate(com.google.privacy.dlp.v2.GetInspectTemplateRequest request,
@@ -1571,6 +1640,7 @@ public final class DlpServiceGrpc {
     /**
      * <pre>
      * Lists InspectTemplates.
+     * See https://cloud.google.com/dlp/docs/creating-templates to learn more.
      * </pre>
      */
     public void listInspectTemplates(com.google.privacy.dlp.v2.ListInspectTemplatesRequest request,
@@ -1582,6 +1652,7 @@ public final class DlpServiceGrpc {
     /**
      * <pre>
      * Deletes an InspectTemplate.
+     * See https://cloud.google.com/dlp/docs/creating-templates to learn more.
      * </pre>
      */
     public void deleteInspectTemplate(com.google.privacy.dlp.v2.DeleteInspectTemplateRequest request,
@@ -1594,6 +1665,8 @@ public final class DlpServiceGrpc {
      * <pre>
      * Creates a DeidentifyTemplate for re-using frequently used configuration
      * for de-identifying content, images, and storage.
+     * See https://cloud.google.com/dlp/docs/creating-templates-deid to learn
+     * more.
      * </pre>
      */
     public void createDeidentifyTemplate(com.google.privacy.dlp.v2.CreateDeidentifyTemplateRequest request,
@@ -1605,6 +1678,8 @@ public final class DlpServiceGrpc {
     /**
      * <pre>
      * Updates the DeidentifyTemplate.
+     * See https://cloud.google.com/dlp/docs/creating-templates-deid to learn
+     * more.
      * </pre>
      */
     public void updateDeidentifyTemplate(com.google.privacy.dlp.v2.UpdateDeidentifyTemplateRequest request,
@@ -1616,6 +1691,8 @@ public final class DlpServiceGrpc {
     /**
      * <pre>
      * Gets a DeidentifyTemplate.
+     * See https://cloud.google.com/dlp/docs/creating-templates-deid to learn
+     * more.
      * </pre>
      */
     public void getDeidentifyTemplate(com.google.privacy.dlp.v2.GetDeidentifyTemplateRequest request,
@@ -1627,6 +1704,8 @@ public final class DlpServiceGrpc {
     /**
      * <pre>
      * Lists DeidentifyTemplates.
+     * See https://cloud.google.com/dlp/docs/creating-templates-deid to learn
+     * more.
      * </pre>
      */
     public void listDeidentifyTemplates(com.google.privacy.dlp.v2.ListDeidentifyTemplatesRequest request,
@@ -1638,6 +1717,8 @@ public final class DlpServiceGrpc {
     /**
      * <pre>
      * Deletes a DeidentifyTemplate.
+     * See https://cloud.google.com/dlp/docs/creating-templates-deid to learn
+     * more.
      * </pre>
      */
     public void deleteDeidentifyTemplate(com.google.privacy.dlp.v2.DeleteDeidentifyTemplateRequest request,
@@ -1650,6 +1731,7 @@ public final class DlpServiceGrpc {
      * <pre>
      * Creates a job trigger to run DLP actions such as scanning storage for
      * sensitive information on a set schedule.
+     * See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
      * </pre>
      */
     public void createJobTrigger(com.google.privacy.dlp.v2.CreateJobTriggerRequest request,
@@ -1661,6 +1743,7 @@ public final class DlpServiceGrpc {
     /**
      * <pre>
      * Updates a job trigger.
+     * See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
      * </pre>
      */
     public void updateJobTrigger(com.google.privacy.dlp.v2.UpdateJobTriggerRequest request,
@@ -1672,6 +1755,7 @@ public final class DlpServiceGrpc {
     /**
      * <pre>
      * Gets a job trigger.
+     * See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
      * </pre>
      */
     public void getJobTrigger(com.google.privacy.dlp.v2.GetJobTriggerRequest request,
@@ -1683,6 +1767,7 @@ public final class DlpServiceGrpc {
     /**
      * <pre>
      * Lists job triggers.
+     * See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
      * </pre>
      */
     public void listJobTriggers(com.google.privacy.dlp.v2.ListJobTriggersRequest request,
@@ -1694,6 +1779,7 @@ public final class DlpServiceGrpc {
     /**
      * <pre>
      * Deletes a job trigger.
+     * See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
      * </pre>
      */
     public void deleteJobTrigger(com.google.privacy.dlp.v2.DeleteJobTriggerRequest request,
@@ -1705,7 +1791,11 @@ public final class DlpServiceGrpc {
     /**
      * <pre>
      * Creates a new job to inspect storage or calculate risk metrics.
-     * [How-to guide](/dlp/docs/compute-risk-analysis).
+     * See https://cloud.google.com/dlp/docs/inspecting-storage and
+     * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
+     * When no InfoTypes or CustomInfoTypes are specified in inspect jobs, the
+     * system will automatically choose what detectors to run. By default this may
+     * be all types, but may change over time as detectors are updated.
      * </pre>
      */
     public void createDlpJob(com.google.privacy.dlp.v2.CreateDlpJobRequest request,
@@ -1717,6 +1807,8 @@ public final class DlpServiceGrpc {
     /**
      * <pre>
      * Lists DlpJobs that match the specified filter in the request.
+     * See https://cloud.google.com/dlp/docs/inspecting-storage and
+     * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
      * </pre>
      */
     public void listDlpJobs(com.google.privacy.dlp.v2.ListDlpJobsRequest request,
@@ -1728,6 +1820,8 @@ public final class DlpServiceGrpc {
     /**
      * <pre>
      * Gets the latest state of a long-running DlpJob.
+     * See https://cloud.google.com/dlp/docs/inspecting-storage and
+     * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
      * </pre>
      */
     public void getDlpJob(com.google.privacy.dlp.v2.GetDlpJobRequest request,
@@ -1741,6 +1835,8 @@ public final class DlpServiceGrpc {
      * Deletes a long-running DlpJob. This method indicates that the client is
      * no longer interested in the DlpJob result. The job will be cancelled if
      * possible.
+     * See https://cloud.google.com/dlp/docs/inspecting-storage and
+     * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
      * </pre>
      */
     public void deleteDlpJob(com.google.privacy.dlp.v2.DeleteDlpJobRequest request,
@@ -1754,6 +1850,8 @@ public final class DlpServiceGrpc {
      * Starts asynchronous cancellation on a long-running DlpJob. The server
      * makes a best effort to cancel the DlpJob, but success is not
      * guaranteed.
+     * See https://cloud.google.com/dlp/docs/inspecting-storage and
+     * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
      * </pre>
      */
     public void cancelDlpJob(com.google.privacy.dlp.v2.CancelDlpJobRequest request,
@@ -1771,6 +1869,8 @@ public final class DlpServiceGrpc {
    * blocks or images.
    * The service also includes methods for sensitive data redaction and
    * scheduling of data scans on Google Cloud Platform based data sets.
+   * To learn more about concepts and find how-to guides see
+   * https://cloud.google.com/dlp/docs/.
    * </pre>
    */
   public static final class DlpServiceBlockingStub extends io.grpc.stub.AbstractStub<DlpServiceBlockingStub> {
@@ -1793,8 +1893,11 @@ public final class DlpServiceGrpc {
      * <pre>
      * Finds potentially sensitive info in content.
      * This method has limits on input size, processing time, and output size.
-     * [How-to guide for text](/dlp/docs/inspecting-text), [How-to guide for
-     * images](/dlp/docs/inspecting-images)
+     * When no InfoTypes or CustomInfoTypes are specified in this request, the
+     * system will automatically choose what detectors to run. By default this may
+     * be all types, but may change over time as detectors are updated.
+     * For how to guides, see https://cloud.google.com/dlp/docs/inspecting-images
+     * and https://cloud.google.com/dlp/docs/inspecting-text,
      * </pre>
      */
     public com.google.privacy.dlp.v2.InspectContentResponse inspectContent(com.google.privacy.dlp.v2.InspectContentRequest request) {
@@ -1806,7 +1909,11 @@ public final class DlpServiceGrpc {
      * <pre>
      * Redacts potentially sensitive info from an image.
      * This method has limits on input size, processing time, and output size.
-     * [How-to guide](/dlp/docs/redacting-sensitive-data-images)
+     * See https://cloud.google.com/dlp/docs/redacting-sensitive-data-images to
+     * learn more.
+     * When no InfoTypes or CustomInfoTypes are specified in this request, the
+     * system will automatically choose what detectors to run. By default this may
+     * be all types, but may change over time as detectors are updated.
      * </pre>
      */
     public com.google.privacy.dlp.v2.RedactImageResponse redactImage(com.google.privacy.dlp.v2.RedactImageRequest request) {
@@ -1818,7 +1925,11 @@ public final class DlpServiceGrpc {
      * <pre>
      * De-identifies potentially sensitive info from a ContentItem.
      * This method has limits on input size and output size.
-     * [How-to guide](/dlp/docs/deidentify-sensitive-data)
+     * See https://cloud.google.com/dlp/docs/deidentify-sensitive-data to
+     * learn more.
+     * When no InfoTypes or CustomInfoTypes are specified in this request, the
+     * system will automatically choose what detectors to run. By default this may
+     * be all types, but may change over time as detectors are updated.
      * </pre>
      */
     public com.google.privacy.dlp.v2.DeidentifyContentResponse deidentifyContent(com.google.privacy.dlp.v2.DeidentifyContentRequest request) {
@@ -1829,6 +1940,9 @@ public final class DlpServiceGrpc {
     /**
      * <pre>
      * Re-identifies content that has been de-identified.
+     * See
+     * https://cloud.google.com/dlp/docs/pseudonymization#re-identification_in_free_text_code_example
+     * to learn more.
      * </pre>
      */
     public com.google.privacy.dlp.v2.ReidentifyContentResponse reidentifyContent(com.google.privacy.dlp.v2.ReidentifyContentRequest request) {
@@ -1839,8 +1953,8 @@ public final class DlpServiceGrpc {
     /**
      * <pre>
      * Returns a list of the sensitive information types that the DLP API
-     * supports. For more information, see [Listing supported predefined
-     * infoTypes](/dlp/docs/listing-infotypes).
+     * supports. See https://cloud.google.com/dlp/docs/infotypes-reference to
+     * learn more.
      * </pre>
      */
     public com.google.privacy.dlp.v2.ListInfoTypesResponse listInfoTypes(com.google.privacy.dlp.v2.ListInfoTypesRequest request) {
@@ -1852,6 +1966,7 @@ public final class DlpServiceGrpc {
      * <pre>
      * Creates an InspectTemplate for re-using frequently used configuration
      * for inspecting content, images, and storage.
+     * See https://cloud.google.com/dlp/docs/creating-templates to learn more.
      * </pre>
      */
     public com.google.privacy.dlp.v2.InspectTemplate createInspectTemplate(com.google.privacy.dlp.v2.CreateInspectTemplateRequest request) {
@@ -1862,6 +1977,7 @@ public final class DlpServiceGrpc {
     /**
      * <pre>
      * Updates the InspectTemplate.
+     * See https://cloud.google.com/dlp/docs/creating-templates to learn more.
      * </pre>
      */
     public com.google.privacy.dlp.v2.InspectTemplate updateInspectTemplate(com.google.privacy.dlp.v2.UpdateInspectTemplateRequest request) {
@@ -1872,6 +1988,7 @@ public final class DlpServiceGrpc {
     /**
      * <pre>
      * Gets an InspectTemplate.
+     * See https://cloud.google.com/dlp/docs/creating-templates to learn more.
      * </pre>
      */
     public com.google.privacy.dlp.v2.InspectTemplate getInspectTemplate(com.google.privacy.dlp.v2.GetInspectTemplateRequest request) {
@@ -1882,6 +1999,7 @@ public final class DlpServiceGrpc {
     /**
      * <pre>
      * Lists InspectTemplates.
+     * See https://cloud.google.com/dlp/docs/creating-templates to learn more.
      * </pre>
      */
     public com.google.privacy.dlp.v2.ListInspectTemplatesResponse listInspectTemplates(com.google.privacy.dlp.v2.ListInspectTemplatesRequest request) {
@@ -1892,6 +2010,7 @@ public final class DlpServiceGrpc {
     /**
      * <pre>
      * Deletes an InspectTemplate.
+     * See https://cloud.google.com/dlp/docs/creating-templates to learn more.
      * </pre>
      */
     public com.google.protobuf.Empty deleteInspectTemplate(com.google.privacy.dlp.v2.DeleteInspectTemplateRequest request) {
@@ -1903,6 +2022,8 @@ public final class DlpServiceGrpc {
      * <pre>
      * Creates a DeidentifyTemplate for re-using frequently used configuration
      * for de-identifying content, images, and storage.
+     * See https://cloud.google.com/dlp/docs/creating-templates-deid to learn
+     * more.
      * </pre>
      */
     public com.google.privacy.dlp.v2.DeidentifyTemplate createDeidentifyTemplate(com.google.privacy.dlp.v2.CreateDeidentifyTemplateRequest request) {
@@ -1913,6 +2034,8 @@ public final class DlpServiceGrpc {
     /**
      * <pre>
      * Updates the DeidentifyTemplate.
+     * See https://cloud.google.com/dlp/docs/creating-templates-deid to learn
+     * more.
      * </pre>
      */
     public com.google.privacy.dlp.v2.DeidentifyTemplate updateDeidentifyTemplate(com.google.privacy.dlp.v2.UpdateDeidentifyTemplateRequest request) {
@@ -1923,6 +2046,8 @@ public final class DlpServiceGrpc {
     /**
      * <pre>
      * Gets a DeidentifyTemplate.
+     * See https://cloud.google.com/dlp/docs/creating-templates-deid to learn
+     * more.
      * </pre>
      */
     public com.google.privacy.dlp.v2.DeidentifyTemplate getDeidentifyTemplate(com.google.privacy.dlp.v2.GetDeidentifyTemplateRequest request) {
@@ -1933,6 +2058,8 @@ public final class DlpServiceGrpc {
     /**
      * <pre>
      * Lists DeidentifyTemplates.
+     * See https://cloud.google.com/dlp/docs/creating-templates-deid to learn
+     * more.
      * </pre>
      */
     public com.google.privacy.dlp.v2.ListDeidentifyTemplatesResponse listDeidentifyTemplates(com.google.privacy.dlp.v2.ListDeidentifyTemplatesRequest request) {
@@ -1943,6 +2070,8 @@ public final class DlpServiceGrpc {
     /**
      * <pre>
      * Deletes a DeidentifyTemplate.
+     * See https://cloud.google.com/dlp/docs/creating-templates-deid to learn
+     * more.
      * </pre>
      */
     public com.google.protobuf.Empty deleteDeidentifyTemplate(com.google.privacy.dlp.v2.DeleteDeidentifyTemplateRequest request) {
@@ -1954,6 +2083,7 @@ public final class DlpServiceGrpc {
      * <pre>
      * Creates a job trigger to run DLP actions such as scanning storage for
      * sensitive information on a set schedule.
+     * See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
      * </pre>
      */
     public com.google.privacy.dlp.v2.JobTrigger createJobTrigger(com.google.privacy.dlp.v2.CreateJobTriggerRequest request) {
@@ -1964,6 +2094,7 @@ public final class DlpServiceGrpc {
     /**
      * <pre>
      * Updates a job trigger.
+     * See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
      * </pre>
      */
     public com.google.privacy.dlp.v2.JobTrigger updateJobTrigger(com.google.privacy.dlp.v2.UpdateJobTriggerRequest request) {
@@ -1974,6 +2105,7 @@ public final class DlpServiceGrpc {
     /**
      * <pre>
      * Gets a job trigger.
+     * See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
      * </pre>
      */
     public com.google.privacy.dlp.v2.JobTrigger getJobTrigger(com.google.privacy.dlp.v2.GetJobTriggerRequest request) {
@@ -1984,6 +2116,7 @@ public final class DlpServiceGrpc {
     /**
      * <pre>
      * Lists job triggers.
+     * See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
      * </pre>
      */
     public com.google.privacy.dlp.v2.ListJobTriggersResponse listJobTriggers(com.google.privacy.dlp.v2.ListJobTriggersRequest request) {
@@ -1994,6 +2127,7 @@ public final class DlpServiceGrpc {
     /**
      * <pre>
      * Deletes a job trigger.
+     * See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
      * </pre>
      */
     public com.google.protobuf.Empty deleteJobTrigger(com.google.privacy.dlp.v2.DeleteJobTriggerRequest request) {
@@ -2004,7 +2138,11 @@ public final class DlpServiceGrpc {
     /**
      * <pre>
      * Creates a new job to inspect storage or calculate risk metrics.
-     * [How-to guide](/dlp/docs/compute-risk-analysis).
+     * See https://cloud.google.com/dlp/docs/inspecting-storage and
+     * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
+     * When no InfoTypes or CustomInfoTypes are specified in inspect jobs, the
+     * system will automatically choose what detectors to run. By default this may
+     * be all types, but may change over time as detectors are updated.
      * </pre>
      */
     public com.google.privacy.dlp.v2.DlpJob createDlpJob(com.google.privacy.dlp.v2.CreateDlpJobRequest request) {
@@ -2015,6 +2153,8 @@ public final class DlpServiceGrpc {
     /**
      * <pre>
      * Lists DlpJobs that match the specified filter in the request.
+     * See https://cloud.google.com/dlp/docs/inspecting-storage and
+     * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
      * </pre>
      */
     public com.google.privacy.dlp.v2.ListDlpJobsResponse listDlpJobs(com.google.privacy.dlp.v2.ListDlpJobsRequest request) {
@@ -2025,6 +2165,8 @@ public final class DlpServiceGrpc {
     /**
      * <pre>
      * Gets the latest state of a long-running DlpJob.
+     * See https://cloud.google.com/dlp/docs/inspecting-storage and
+     * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
      * </pre>
      */
     public com.google.privacy.dlp.v2.DlpJob getDlpJob(com.google.privacy.dlp.v2.GetDlpJobRequest request) {
@@ -2037,6 +2179,8 @@ public final class DlpServiceGrpc {
      * Deletes a long-running DlpJob. This method indicates that the client is
      * no longer interested in the DlpJob result. The job will be cancelled if
      * possible.
+     * See https://cloud.google.com/dlp/docs/inspecting-storage and
+     * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
      * </pre>
      */
     public com.google.protobuf.Empty deleteDlpJob(com.google.privacy.dlp.v2.DeleteDlpJobRequest request) {
@@ -2049,6 +2193,8 @@ public final class DlpServiceGrpc {
      * Starts asynchronous cancellation on a long-running DlpJob. The server
      * makes a best effort to cancel the DlpJob, but success is not
      * guaranteed.
+     * See https://cloud.google.com/dlp/docs/inspecting-storage and
+     * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
      * </pre>
      */
     public com.google.protobuf.Empty cancelDlpJob(com.google.privacy.dlp.v2.CancelDlpJobRequest request) {
@@ -2065,6 +2211,8 @@ public final class DlpServiceGrpc {
    * blocks or images.
    * The service also includes methods for sensitive data redaction and
    * scheduling of data scans on Google Cloud Platform based data sets.
+   * To learn more about concepts and find how-to guides see
+   * https://cloud.google.com/dlp/docs/.
    * </pre>
    */
   public static final class DlpServiceFutureStub extends io.grpc.stub.AbstractStub<DlpServiceFutureStub> {
@@ -2087,8 +2235,11 @@ public final class DlpServiceGrpc {
      * <pre>
      * Finds potentially sensitive info in content.
      * This method has limits on input size, processing time, and output size.
-     * [How-to guide for text](/dlp/docs/inspecting-text), [How-to guide for
-     * images](/dlp/docs/inspecting-images)
+     * When no InfoTypes or CustomInfoTypes are specified in this request, the
+     * system will automatically choose what detectors to run. By default this may
+     * be all types, but may change over time as detectors are updated.
+     * For how to guides, see https://cloud.google.com/dlp/docs/inspecting-images
+     * and https://cloud.google.com/dlp/docs/inspecting-text,
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.privacy.dlp.v2.InspectContentResponse> inspectContent(
@@ -2101,7 +2252,11 @@ public final class DlpServiceGrpc {
      * <pre>
      * Redacts potentially sensitive info from an image.
      * This method has limits on input size, processing time, and output size.
-     * [How-to guide](/dlp/docs/redacting-sensitive-data-images)
+     * See https://cloud.google.com/dlp/docs/redacting-sensitive-data-images to
+     * learn more.
+     * When no InfoTypes or CustomInfoTypes are specified in this request, the
+     * system will automatically choose what detectors to run. By default this may
+     * be all types, but may change over time as detectors are updated.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.privacy.dlp.v2.RedactImageResponse> redactImage(
@@ -2114,7 +2269,11 @@ public final class DlpServiceGrpc {
      * <pre>
      * De-identifies potentially sensitive info from a ContentItem.
      * This method has limits on input size and output size.
-     * [How-to guide](/dlp/docs/deidentify-sensitive-data)
+     * See https://cloud.google.com/dlp/docs/deidentify-sensitive-data to
+     * learn more.
+     * When no InfoTypes or CustomInfoTypes are specified in this request, the
+     * system will automatically choose what detectors to run. By default this may
+     * be all types, but may change over time as detectors are updated.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.privacy.dlp.v2.DeidentifyContentResponse> deidentifyContent(
@@ -2126,6 +2285,9 @@ public final class DlpServiceGrpc {
     /**
      * <pre>
      * Re-identifies content that has been de-identified.
+     * See
+     * https://cloud.google.com/dlp/docs/pseudonymization#re-identification_in_free_text_code_example
+     * to learn more.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.privacy.dlp.v2.ReidentifyContentResponse> reidentifyContent(
@@ -2137,8 +2299,8 @@ public final class DlpServiceGrpc {
     /**
      * <pre>
      * Returns a list of the sensitive information types that the DLP API
-     * supports. For more information, see [Listing supported predefined
-     * infoTypes](/dlp/docs/listing-infotypes).
+     * supports. See https://cloud.google.com/dlp/docs/infotypes-reference to
+     * learn more.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.privacy.dlp.v2.ListInfoTypesResponse> listInfoTypes(
@@ -2151,6 +2313,7 @@ public final class DlpServiceGrpc {
      * <pre>
      * Creates an InspectTemplate for re-using frequently used configuration
      * for inspecting content, images, and storage.
+     * See https://cloud.google.com/dlp/docs/creating-templates to learn more.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.privacy.dlp.v2.InspectTemplate> createInspectTemplate(
@@ -2162,6 +2325,7 @@ public final class DlpServiceGrpc {
     /**
      * <pre>
      * Updates the InspectTemplate.
+     * See https://cloud.google.com/dlp/docs/creating-templates to learn more.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.privacy.dlp.v2.InspectTemplate> updateInspectTemplate(
@@ -2173,6 +2337,7 @@ public final class DlpServiceGrpc {
     /**
      * <pre>
      * Gets an InspectTemplate.
+     * See https://cloud.google.com/dlp/docs/creating-templates to learn more.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.privacy.dlp.v2.InspectTemplate> getInspectTemplate(
@@ -2184,6 +2349,7 @@ public final class DlpServiceGrpc {
     /**
      * <pre>
      * Lists InspectTemplates.
+     * See https://cloud.google.com/dlp/docs/creating-templates to learn more.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.privacy.dlp.v2.ListInspectTemplatesResponse> listInspectTemplates(
@@ -2195,6 +2361,7 @@ public final class DlpServiceGrpc {
     /**
      * <pre>
      * Deletes an InspectTemplate.
+     * See https://cloud.google.com/dlp/docs/creating-templates to learn more.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteInspectTemplate(
@@ -2207,6 +2374,8 @@ public final class DlpServiceGrpc {
      * <pre>
      * Creates a DeidentifyTemplate for re-using frequently used configuration
      * for de-identifying content, images, and storage.
+     * See https://cloud.google.com/dlp/docs/creating-templates-deid to learn
+     * more.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.privacy.dlp.v2.DeidentifyTemplate> createDeidentifyTemplate(
@@ -2218,6 +2387,8 @@ public final class DlpServiceGrpc {
     /**
      * <pre>
      * Updates the DeidentifyTemplate.
+     * See https://cloud.google.com/dlp/docs/creating-templates-deid to learn
+     * more.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.privacy.dlp.v2.DeidentifyTemplate> updateDeidentifyTemplate(
@@ -2229,6 +2400,8 @@ public final class DlpServiceGrpc {
     /**
      * <pre>
      * Gets a DeidentifyTemplate.
+     * See https://cloud.google.com/dlp/docs/creating-templates-deid to learn
+     * more.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.privacy.dlp.v2.DeidentifyTemplate> getDeidentifyTemplate(
@@ -2240,6 +2413,8 @@ public final class DlpServiceGrpc {
     /**
      * <pre>
      * Lists DeidentifyTemplates.
+     * See https://cloud.google.com/dlp/docs/creating-templates-deid to learn
+     * more.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.privacy.dlp.v2.ListDeidentifyTemplatesResponse> listDeidentifyTemplates(
@@ -2251,6 +2426,8 @@ public final class DlpServiceGrpc {
     /**
      * <pre>
      * Deletes a DeidentifyTemplate.
+     * See https://cloud.google.com/dlp/docs/creating-templates-deid to learn
+     * more.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteDeidentifyTemplate(
@@ -2263,6 +2440,7 @@ public final class DlpServiceGrpc {
      * <pre>
      * Creates a job trigger to run DLP actions such as scanning storage for
      * sensitive information on a set schedule.
+     * See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.privacy.dlp.v2.JobTrigger> createJobTrigger(
@@ -2274,6 +2452,7 @@ public final class DlpServiceGrpc {
     /**
      * <pre>
      * Updates a job trigger.
+     * See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.privacy.dlp.v2.JobTrigger> updateJobTrigger(
@@ -2285,6 +2464,7 @@ public final class DlpServiceGrpc {
     /**
      * <pre>
      * Gets a job trigger.
+     * See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.privacy.dlp.v2.JobTrigger> getJobTrigger(
@@ -2296,6 +2476,7 @@ public final class DlpServiceGrpc {
     /**
      * <pre>
      * Lists job triggers.
+     * See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.privacy.dlp.v2.ListJobTriggersResponse> listJobTriggers(
@@ -2307,6 +2488,7 @@ public final class DlpServiceGrpc {
     /**
      * <pre>
      * Deletes a job trigger.
+     * See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteJobTrigger(
@@ -2318,7 +2500,11 @@ public final class DlpServiceGrpc {
     /**
      * <pre>
      * Creates a new job to inspect storage or calculate risk metrics.
-     * [How-to guide](/dlp/docs/compute-risk-analysis).
+     * See https://cloud.google.com/dlp/docs/inspecting-storage and
+     * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
+     * When no InfoTypes or CustomInfoTypes are specified in inspect jobs, the
+     * system will automatically choose what detectors to run. By default this may
+     * be all types, but may change over time as detectors are updated.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.privacy.dlp.v2.DlpJob> createDlpJob(
@@ -2330,6 +2516,8 @@ public final class DlpServiceGrpc {
     /**
      * <pre>
      * Lists DlpJobs that match the specified filter in the request.
+     * See https://cloud.google.com/dlp/docs/inspecting-storage and
+     * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.privacy.dlp.v2.ListDlpJobsResponse> listDlpJobs(
@@ -2341,6 +2529,8 @@ public final class DlpServiceGrpc {
     /**
      * <pre>
      * Gets the latest state of a long-running DlpJob.
+     * See https://cloud.google.com/dlp/docs/inspecting-storage and
+     * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.privacy.dlp.v2.DlpJob> getDlpJob(
@@ -2354,6 +2544,8 @@ public final class DlpServiceGrpc {
      * Deletes a long-running DlpJob. This method indicates that the client is
      * no longer interested in the DlpJob result. The job will be cancelled if
      * possible.
+     * See https://cloud.google.com/dlp/docs/inspecting-storage and
+     * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteDlpJob(
@@ -2367,6 +2559,8 @@ public final class DlpServiceGrpc {
      * Starts asynchronous cancellation on a long-running DlpJob. The server
      * makes a best effort to cancel the DlpJob, but success is not
      * guaranteed.
+     * See https://cloud.google.com/dlp/docs/inspecting-storage and
+     * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> cancelDlpJob(

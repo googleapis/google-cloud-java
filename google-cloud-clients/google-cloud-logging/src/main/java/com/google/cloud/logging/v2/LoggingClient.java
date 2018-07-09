@@ -274,11 +274,11 @@ public class LoggingClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * ## Log entry resources
-   *
-   * <p>Writes log entries to Stackdriver Logging. This API method is the only way to send log
-   * entries to Stackdriver Logging. This method is used, directly or indirectly, by the Stackdriver
-   * Logging agent (fluentd) and all logging libraries configured to use Stackdriver Logging.
+   * Writes log entries to Stackdriver Logging. This API method is the only way to send log entries
+   * to Stackdriver Logging. This method is used, directly or indirectly, by the Stackdriver Logging
+   * agent (fluentd) and all logging libraries configured to use Stackdriver Logging. A single
+   * request may contain log entries for a maximum of 1000 different resources (projects,
+   * organizations, billing accounts or folders)
    *
    * <p>Sample code:
    *
@@ -319,8 +319,9 @@ public class LoggingClient implements BackgroundResource {
    *     earlier in the list will sort before the entries later in the list. See the `entries.list`
    *     method.
    *     <p>Log entries with timestamps that are more than the [logs retention
-   *     period](/logging/quota-policy) in the past or more than 24 hours in the future might be
-   *     discarded. Discarding does not return an error.
+   *     period](/logging/quota-policy) in the past or more than 24 hours in the future will not be
+   *     available when calling `entries.list`. However, those log entries can still be exported
+   *     with [LogSinks](/logging/docs/api/tasks/exporting-logs).
    *     <p>To improve throughput and to avoid exceeding the [quota limit](/logging/quota-policy)
    *     for calls to `entries.write`, you should try to include several log entries in this list,
    *     rather than calling this method for each individual log entry.
@@ -344,11 +345,11 @@ public class LoggingClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * ## Log entry resources
-   *
-   * <p>Writes log entries to Stackdriver Logging. This API method is the only way to send log
-   * entries to Stackdriver Logging. This method is used, directly or indirectly, by the Stackdriver
-   * Logging agent (fluentd) and all logging libraries configured to use Stackdriver Logging.
+   * Writes log entries to Stackdriver Logging. This API method is the only way to send log entries
+   * to Stackdriver Logging. This method is used, directly or indirectly, by the Stackdriver Logging
+   * agent (fluentd) and all logging libraries configured to use Stackdriver Logging. A single
+   * request may contain log entries for a maximum of 1000 different resources (projects,
+   * organizations, billing accounts or folders)
    *
    * <p>Sample code:
    *
@@ -389,8 +390,9 @@ public class LoggingClient implements BackgroundResource {
    *     earlier in the list will sort before the entries later in the list. See the `entries.list`
    *     method.
    *     <p>Log entries with timestamps that are more than the [logs retention
-   *     period](/logging/quota-policy) in the past or more than 24 hours in the future might be
-   *     discarded. Discarding does not return an error.
+   *     period](/logging/quota-policy) in the past or more than 24 hours in the future will not be
+   *     available when calling `entries.list`. However, those log entries can still be exported
+   *     with [LogSinks](/logging/docs/api/tasks/exporting-logs).
    *     <p>To improve throughput and to avoid exceeding the [quota limit](/logging/quota-policy)
    *     for calls to `entries.write`, you should try to include several log entries in this list,
    *     rather than calling this method for each individual log entry.
@@ -414,11 +416,11 @@ public class LoggingClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * ## Log entry resources
-   *
-   * <p>Writes log entries to Stackdriver Logging. This API method is the only way to send log
-   * entries to Stackdriver Logging. This method is used, directly or indirectly, by the Stackdriver
-   * Logging agent (fluentd) and all logging libraries configured to use Stackdriver Logging.
+   * Writes log entries to Stackdriver Logging. This API method is the only way to send log entries
+   * to Stackdriver Logging. This method is used, directly or indirectly, by the Stackdriver Logging
+   * agent (fluentd) and all logging libraries configured to use Stackdriver Logging. A single
+   * request may contain log entries for a maximum of 1000 different resources (projects,
+   * organizations, billing accounts or folders)
    *
    * <p>Sample code:
    *
@@ -441,11 +443,11 @@ public class LoggingClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * ## Log entry resources
-   *
-   * <p>Writes log entries to Stackdriver Logging. This API method is the only way to send log
-   * entries to Stackdriver Logging. This method is used, directly or indirectly, by the Stackdriver
-   * Logging agent (fluentd) and all logging libraries configured to use Stackdriver Logging.
+   * Writes log entries to Stackdriver Logging. This API method is the only way to send log entries
+   * to Stackdriver Logging. This method is used, directly or indirectly, by the Stackdriver Logging
+   * agent (fluentd) and all logging libraries configured to use Stackdriver Logging. A single
+   * request may contain log entries for a maximum of 1000 different resources (projects,
+   * organizations, billing accounts or folders)
    *
    * <p>Sample code:
    *
@@ -475,10 +477,10 @@ public class LoggingClient implements BackgroundResource {
    *
    * <pre><code>
    * try (LoggingClient loggingClient = LoggingClient.create()) {
-   *   List&lt;String&gt; resourceNames = new ArrayList&lt;&gt;();
+   *   List&lt;String&gt; formattedResourceNames = new ArrayList&lt;&gt;();
    *   String filter = "";
    *   String orderBy = "";
-   *   for (LogEntry element : loggingClient.listLogEntries(resourceNames, filter, orderBy).iterateAll()) {
+   *   for (LogEntry element : loggingClient.listLogEntries(formattedResourceNames, filter, orderBy).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -522,9 +524,9 @@ public class LoggingClient implements BackgroundResource {
    *
    * <pre><code>
    * try (LoggingClient loggingClient = LoggingClient.create()) {
-   *   List&lt;String&gt; resourceNames = new ArrayList&lt;&gt;();
+   *   List&lt;ParentName&gt; resourceNames = new ArrayList&lt;&gt;();
    *   ListLogEntriesRequest request = ListLogEntriesRequest.newBuilder()
-   *     .addAllResourceNames(resourceNames)
+   *     .addAllResourceNames(ParentName.toStringList(resourceNames))
    *     .build();
    *   for (LogEntry element : loggingClient.listLogEntries(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -548,9 +550,9 @@ public class LoggingClient implements BackgroundResource {
    *
    * <pre><code>
    * try (LoggingClient loggingClient = LoggingClient.create()) {
-   *   List&lt;String&gt; resourceNames = new ArrayList&lt;&gt;();
+   *   List&lt;ParentName&gt; resourceNames = new ArrayList&lt;&gt;();
    *   ListLogEntriesRequest request = ListLogEntriesRequest.newBuilder()
-   *     .addAllResourceNames(resourceNames)
+   *     .addAllResourceNames(ParentName.toStringList(resourceNames))
    *     .build();
    *   ApiFuture&lt;ListLogEntriesPagedResponse&gt; future = loggingClient.listLogEntriesPagedCallable().futureCall(request);
    *   // Do something
@@ -574,9 +576,9 @@ public class LoggingClient implements BackgroundResource {
    *
    * <pre><code>
    * try (LoggingClient loggingClient = LoggingClient.create()) {
-   *   List&lt;String&gt; resourceNames = new ArrayList&lt;&gt;();
+   *   List&lt;ParentName&gt; resourceNames = new ArrayList&lt;&gt;();
    *   ListLogEntriesRequest request = ListLogEntriesRequest.newBuilder()
-   *     .addAllResourceNames(resourceNames)
+   *     .addAllResourceNames(ParentName.toStringList(resourceNames))
    *     .build();
    *   while (true) {
    *     ListLogEntriesResponse response = loggingClient.listLogEntriesCallable().call(request);

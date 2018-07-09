@@ -6,7 +6,8 @@ package com.google.privacy.dlp.v2;
 /**
  * <pre>
  * Shifts dates by random number of days, with option to be consistent for the
- * same context.
+ * same context. See https://cloud.google.com/dlp/docs/concepts-date-shifting
+ * to learn more.
  * </pre>
  *
  * Protobuf type {@code google.privacy.dlp.v2.DateShiftConfig}
@@ -471,7 +472,8 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Shifts dates by random number of days, with option to be consistent for the
-   * same context.
+   * same context. See https://cloud.google.com/dlp/docs/concepts-date-shifting
+   * to learn more.
    * </pre>
    *
    * Protobuf type {@code google.privacy.dlp.v2.DateShiftConfig}

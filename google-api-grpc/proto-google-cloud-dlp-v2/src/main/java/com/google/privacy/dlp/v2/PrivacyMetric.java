@@ -123,6 +123,20 @@ private static final long serialVersionUID = 0L;
             typeCase_ = 5;
             break;
           }
+          case 50: {
+            com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig.Builder subBuilder = null;
+            if (typeCase_ == 6) {
+              subBuilder = ((com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig) type_).toBuilder();
+            }
+            type_ =
+                input.readMessage(com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig) type_);
+              type_ = subBuilder.buildPartial();
+            }
+            typeCase_ = 6;
+            break;
+          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -9431,6 +9445,1646 @@ private static final long serialVersionUID = 0L;
 
   }
 
+  public interface DeltaPresenceEstimationConfigOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * Fields considered to be quasi-identifiers. No two fields can have the
+     * same tag. [required]
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
+     */
+    java.util.List<com.google.privacy.dlp.v2.QuasiId> 
+        getQuasiIdsList();
+    /**
+     * <pre>
+     * Fields considered to be quasi-identifiers. No two fields can have the
+     * same tag. [required]
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
+     */
+    com.google.privacy.dlp.v2.QuasiId getQuasiIds(int index);
+    /**
+     * <pre>
+     * Fields considered to be quasi-identifiers. No two fields can have the
+     * same tag. [required]
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
+     */
+    int getQuasiIdsCount();
+    /**
+     * <pre>
+     * Fields considered to be quasi-identifiers. No two fields can have the
+     * same tag. [required]
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
+     */
+    java.util.List<? extends com.google.privacy.dlp.v2.QuasiIdOrBuilder> 
+        getQuasiIdsOrBuilderList();
+    /**
+     * <pre>
+     * Fields considered to be quasi-identifiers. No two fields can have the
+     * same tag. [required]
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
+     */
+    com.google.privacy.dlp.v2.QuasiIdOrBuilder getQuasiIdsOrBuilder(
+        int index);
+
+    /**
+     * <pre>
+     * ISO 3166-1 alpha-2 region code to use in the statistical modeling.
+     * Required if no column is tagged with a region-specific InfoType (like
+     * US_ZIP_5) or a region code.
+     * </pre>
+     *
+     * <code>string region_code = 2;</code>
+     */
+    java.lang.String getRegionCode();
+    /**
+     * <pre>
+     * ISO 3166-1 alpha-2 region code to use in the statistical modeling.
+     * Required if no column is tagged with a region-specific InfoType (like
+     * US_ZIP_5) or a region code.
+     * </pre>
+     *
+     * <code>string region_code = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getRegionCodeBytes();
+
+    /**
+     * <pre>
+     * Several auxiliary tables can be used in the analysis. Each custom_tag
+     * used to tag a quasi-identifiers field must appear in exactly one
+     * field of one auxiliary table.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.StatisticalTable auxiliary_tables = 3;</code>
+     */
+    java.util.List<com.google.privacy.dlp.v2.StatisticalTable> 
+        getAuxiliaryTablesList();
+    /**
+     * <pre>
+     * Several auxiliary tables can be used in the analysis. Each custom_tag
+     * used to tag a quasi-identifiers field must appear in exactly one
+     * field of one auxiliary table.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.StatisticalTable auxiliary_tables = 3;</code>
+     */
+    com.google.privacy.dlp.v2.StatisticalTable getAuxiliaryTables(int index);
+    /**
+     * <pre>
+     * Several auxiliary tables can be used in the analysis. Each custom_tag
+     * used to tag a quasi-identifiers field must appear in exactly one
+     * field of one auxiliary table.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.StatisticalTable auxiliary_tables = 3;</code>
+     */
+    int getAuxiliaryTablesCount();
+    /**
+     * <pre>
+     * Several auxiliary tables can be used in the analysis. Each custom_tag
+     * used to tag a quasi-identifiers field must appear in exactly one
+     * field of one auxiliary table.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.StatisticalTable auxiliary_tables = 3;</code>
+     */
+    java.util.List<? extends com.google.privacy.dlp.v2.StatisticalTableOrBuilder> 
+        getAuxiliaryTablesOrBuilderList();
+    /**
+     * <pre>
+     * Several auxiliary tables can be used in the analysis. Each custom_tag
+     * used to tag a quasi-identifiers field must appear in exactly one
+     * field of one auxiliary table.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.StatisticalTable auxiliary_tables = 3;</code>
+     */
+    com.google.privacy.dlp.v2.StatisticalTableOrBuilder getAuxiliaryTablesOrBuilder(
+        int index);
+  }
+  /**
+   * <pre>
+   * δ-presence metric, used to estimate how likely it is for an attacker to
+   * figure out that one given individual appears in a de-identified dataset.
+   * Similarly to the k-map metric, we cannot compute δ-presence exactly without
+   * knowing the attack dataset, so we use a statistical model instead.
+   * </pre>
+   *
+   * Protobuf type {@code google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig}
+   */
+  public  static final class DeltaPresenceEstimationConfig extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig)
+      DeltaPresenceEstimationConfigOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use DeltaPresenceEstimationConfig.newBuilder() to construct.
+    private DeltaPresenceEstimationConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private DeltaPresenceEstimationConfig() {
+      quasiIds_ = java.util.Collections.emptyList();
+      regionCode_ = "";
+      auxiliaryTables_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private DeltaPresenceEstimationConfig(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                quasiIds_ = new java.util.ArrayList<com.google.privacy.dlp.v2.QuasiId>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              quasiIds_.add(
+                  input.readMessage(com.google.privacy.dlp.v2.QuasiId.parser(), extensionRegistry));
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              regionCode_ = s;
+              break;
+            }
+            case 26: {
+              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+                auxiliaryTables_ = new java.util.ArrayList<com.google.privacy.dlp.v2.StatisticalTable>();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              auxiliaryTables_.add(
+                  input.readMessage(com.google.privacy.dlp.v2.StatisticalTable.parser(), extensionRegistry));
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+          quasiIds_ = java.util.Collections.unmodifiableList(quasiIds_);
+        }
+        if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+          auxiliaryTables_ = java.util.Collections.unmodifiableList(auxiliaryTables_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_PrivacyMetric_DeltaPresenceEstimationConfig_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_PrivacyMetric_DeltaPresenceEstimationConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig.class, com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int QUASI_IDS_FIELD_NUMBER = 1;
+    private java.util.List<com.google.privacy.dlp.v2.QuasiId> quasiIds_;
+    /**
+     * <pre>
+     * Fields considered to be quasi-identifiers. No two fields can have the
+     * same tag. [required]
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
+     */
+    public java.util.List<com.google.privacy.dlp.v2.QuasiId> getQuasiIdsList() {
+      return quasiIds_;
+    }
+    /**
+     * <pre>
+     * Fields considered to be quasi-identifiers. No two fields can have the
+     * same tag. [required]
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
+     */
+    public java.util.List<? extends com.google.privacy.dlp.v2.QuasiIdOrBuilder> 
+        getQuasiIdsOrBuilderList() {
+      return quasiIds_;
+    }
+    /**
+     * <pre>
+     * Fields considered to be quasi-identifiers. No two fields can have the
+     * same tag. [required]
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
+     */
+    public int getQuasiIdsCount() {
+      return quasiIds_.size();
+    }
+    /**
+     * <pre>
+     * Fields considered to be quasi-identifiers. No two fields can have the
+     * same tag. [required]
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
+     */
+    public com.google.privacy.dlp.v2.QuasiId getQuasiIds(int index) {
+      return quasiIds_.get(index);
+    }
+    /**
+     * <pre>
+     * Fields considered to be quasi-identifiers. No two fields can have the
+     * same tag. [required]
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
+     */
+    public com.google.privacy.dlp.v2.QuasiIdOrBuilder getQuasiIdsOrBuilder(
+        int index) {
+      return quasiIds_.get(index);
+    }
+
+    public static final int REGION_CODE_FIELD_NUMBER = 2;
+    private volatile java.lang.Object regionCode_;
+    /**
+     * <pre>
+     * ISO 3166-1 alpha-2 region code to use in the statistical modeling.
+     * Required if no column is tagged with a region-specific InfoType (like
+     * US_ZIP_5) or a region code.
+     * </pre>
+     *
+     * <code>string region_code = 2;</code>
+     */
+    public java.lang.String getRegionCode() {
+      java.lang.Object ref = regionCode_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        regionCode_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * ISO 3166-1 alpha-2 region code to use in the statistical modeling.
+     * Required if no column is tagged with a region-specific InfoType (like
+     * US_ZIP_5) or a region code.
+     * </pre>
+     *
+     * <code>string region_code = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getRegionCodeBytes() {
+      java.lang.Object ref = regionCode_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        regionCode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int AUXILIARY_TABLES_FIELD_NUMBER = 3;
+    private java.util.List<com.google.privacy.dlp.v2.StatisticalTable> auxiliaryTables_;
+    /**
+     * <pre>
+     * Several auxiliary tables can be used in the analysis. Each custom_tag
+     * used to tag a quasi-identifiers field must appear in exactly one
+     * field of one auxiliary table.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.StatisticalTable auxiliary_tables = 3;</code>
+     */
+    public java.util.List<com.google.privacy.dlp.v2.StatisticalTable> getAuxiliaryTablesList() {
+      return auxiliaryTables_;
+    }
+    /**
+     * <pre>
+     * Several auxiliary tables can be used in the analysis. Each custom_tag
+     * used to tag a quasi-identifiers field must appear in exactly one
+     * field of one auxiliary table.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.StatisticalTable auxiliary_tables = 3;</code>
+     */
+    public java.util.List<? extends com.google.privacy.dlp.v2.StatisticalTableOrBuilder> 
+        getAuxiliaryTablesOrBuilderList() {
+      return auxiliaryTables_;
+    }
+    /**
+     * <pre>
+     * Several auxiliary tables can be used in the analysis. Each custom_tag
+     * used to tag a quasi-identifiers field must appear in exactly one
+     * field of one auxiliary table.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.StatisticalTable auxiliary_tables = 3;</code>
+     */
+    public int getAuxiliaryTablesCount() {
+      return auxiliaryTables_.size();
+    }
+    /**
+     * <pre>
+     * Several auxiliary tables can be used in the analysis. Each custom_tag
+     * used to tag a quasi-identifiers field must appear in exactly one
+     * field of one auxiliary table.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.StatisticalTable auxiliary_tables = 3;</code>
+     */
+    public com.google.privacy.dlp.v2.StatisticalTable getAuxiliaryTables(int index) {
+      return auxiliaryTables_.get(index);
+    }
+    /**
+     * <pre>
+     * Several auxiliary tables can be used in the analysis. Each custom_tag
+     * used to tag a quasi-identifiers field must appear in exactly one
+     * field of one auxiliary table.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.StatisticalTable auxiliary_tables = 3;</code>
+     */
+    public com.google.privacy.dlp.v2.StatisticalTableOrBuilder getAuxiliaryTablesOrBuilder(
+        int index) {
+      return auxiliaryTables_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < quasiIds_.size(); i++) {
+        output.writeMessage(1, quasiIds_.get(i));
+      }
+      if (!getRegionCodeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, regionCode_);
+      }
+      for (int i = 0; i < auxiliaryTables_.size(); i++) {
+        output.writeMessage(3, auxiliaryTables_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < quasiIds_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, quasiIds_.get(i));
+      }
+      if (!getRegionCodeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, regionCode_);
+      }
+      for (int i = 0; i < auxiliaryTables_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, auxiliaryTables_.get(i));
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig)) {
+        return super.equals(obj);
+      }
+      com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig other = (com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig) obj;
+
+      boolean result = true;
+      result = result && getQuasiIdsList()
+          .equals(other.getQuasiIdsList());
+      result = result && getRegionCode()
+          .equals(other.getRegionCode());
+      result = result && getAuxiliaryTablesList()
+          .equals(other.getAuxiliaryTablesList());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getQuasiIdsCount() > 0) {
+        hash = (37 * hash) + QUASI_IDS_FIELD_NUMBER;
+        hash = (53 * hash) + getQuasiIdsList().hashCode();
+      }
+      hash = (37 * hash) + REGION_CODE_FIELD_NUMBER;
+      hash = (53 * hash) + getRegionCode().hashCode();
+      if (getAuxiliaryTablesCount() > 0) {
+        hash = (37 * hash) + AUXILIARY_TABLES_FIELD_NUMBER;
+        hash = (53 * hash) + getAuxiliaryTablesList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * δ-presence metric, used to estimate how likely it is for an attacker to
+     * figure out that one given individual appears in a de-identified dataset.
+     * Similarly to the k-map metric, we cannot compute δ-presence exactly without
+     * knowing the attack dataset, so we use a statistical model instead.
+     * </pre>
+     *
+     * Protobuf type {@code google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig)
+        com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_PrivacyMetric_DeltaPresenceEstimationConfig_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_PrivacyMetric_DeltaPresenceEstimationConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig.class, com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig.Builder.class);
+      }
+
+      // Construct using com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getQuasiIdsFieldBuilder();
+          getAuxiliaryTablesFieldBuilder();
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        if (quasiIdsBuilder_ == null) {
+          quasiIds_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          quasiIdsBuilder_.clear();
+        }
+        regionCode_ = "";
+
+        if (auxiliaryTablesBuilder_ == null) {
+          auxiliaryTables_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
+        } else {
+          auxiliaryTablesBuilder_.clear();
+        }
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_PrivacyMetric_DeltaPresenceEstimationConfig_descriptor;
+      }
+
+      public com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig getDefaultInstanceForType() {
+        return com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig.getDefaultInstance();
+      }
+
+      public com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig build() {
+        com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig buildPartial() {
+        com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig result = new com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (quasiIdsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+            quasiIds_ = java.util.Collections.unmodifiableList(quasiIds_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.quasiIds_ = quasiIds_;
+        } else {
+          result.quasiIds_ = quasiIdsBuilder_.build();
+        }
+        result.regionCode_ = regionCode_;
+        if (auxiliaryTablesBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) == 0x00000004)) {
+            auxiliaryTables_ = java.util.Collections.unmodifiableList(auxiliaryTables_);
+            bitField0_ = (bitField0_ & ~0x00000004);
+          }
+          result.auxiliaryTables_ = auxiliaryTables_;
+        } else {
+          result.auxiliaryTables_ = auxiliaryTablesBuilder_.build();
+        }
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig) {
+          return mergeFrom((com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig other) {
+        if (other == com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig.getDefaultInstance()) return this;
+        if (quasiIdsBuilder_ == null) {
+          if (!other.quasiIds_.isEmpty()) {
+            if (quasiIds_.isEmpty()) {
+              quasiIds_ = other.quasiIds_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureQuasiIdsIsMutable();
+              quasiIds_.addAll(other.quasiIds_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.quasiIds_.isEmpty()) {
+            if (quasiIdsBuilder_.isEmpty()) {
+              quasiIdsBuilder_.dispose();
+              quasiIdsBuilder_ = null;
+              quasiIds_ = other.quasiIds_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              quasiIdsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getQuasiIdsFieldBuilder() : null;
+            } else {
+              quasiIdsBuilder_.addAllMessages(other.quasiIds_);
+            }
+          }
+        }
+        if (!other.getRegionCode().isEmpty()) {
+          regionCode_ = other.regionCode_;
+          onChanged();
+        }
+        if (auxiliaryTablesBuilder_ == null) {
+          if (!other.auxiliaryTables_.isEmpty()) {
+            if (auxiliaryTables_.isEmpty()) {
+              auxiliaryTables_ = other.auxiliaryTables_;
+              bitField0_ = (bitField0_ & ~0x00000004);
+            } else {
+              ensureAuxiliaryTablesIsMutable();
+              auxiliaryTables_.addAll(other.auxiliaryTables_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.auxiliaryTables_.isEmpty()) {
+            if (auxiliaryTablesBuilder_.isEmpty()) {
+              auxiliaryTablesBuilder_.dispose();
+              auxiliaryTablesBuilder_ = null;
+              auxiliaryTables_ = other.auxiliaryTables_;
+              bitField0_ = (bitField0_ & ~0x00000004);
+              auxiliaryTablesBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getAuxiliaryTablesFieldBuilder() : null;
+            } else {
+              auxiliaryTablesBuilder_.addAllMessages(other.auxiliaryTables_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<com.google.privacy.dlp.v2.QuasiId> quasiIds_ =
+        java.util.Collections.emptyList();
+      private void ensureQuasiIdsIsMutable() {
+        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+          quasiIds_ = new java.util.ArrayList<com.google.privacy.dlp.v2.QuasiId>(quasiIds_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.google.privacy.dlp.v2.QuasiId, com.google.privacy.dlp.v2.QuasiId.Builder, com.google.privacy.dlp.v2.QuasiIdOrBuilder> quasiIdsBuilder_;
+
+      /**
+       * <pre>
+       * Fields considered to be quasi-identifiers. No two fields can have the
+       * same tag. [required]
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
+       */
+      public java.util.List<com.google.privacy.dlp.v2.QuasiId> getQuasiIdsList() {
+        if (quasiIdsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(quasiIds_);
+        } else {
+          return quasiIdsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * Fields considered to be quasi-identifiers. No two fields can have the
+       * same tag. [required]
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
+       */
+      public int getQuasiIdsCount() {
+        if (quasiIdsBuilder_ == null) {
+          return quasiIds_.size();
+        } else {
+          return quasiIdsBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * Fields considered to be quasi-identifiers. No two fields can have the
+       * same tag. [required]
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
+       */
+      public com.google.privacy.dlp.v2.QuasiId getQuasiIds(int index) {
+        if (quasiIdsBuilder_ == null) {
+          return quasiIds_.get(index);
+        } else {
+          return quasiIdsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * Fields considered to be quasi-identifiers. No two fields can have the
+       * same tag. [required]
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
+       */
+      public Builder setQuasiIds(
+          int index, com.google.privacy.dlp.v2.QuasiId value) {
+        if (quasiIdsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureQuasiIdsIsMutable();
+          quasiIds_.set(index, value);
+          onChanged();
+        } else {
+          quasiIdsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Fields considered to be quasi-identifiers. No two fields can have the
+       * same tag. [required]
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
+       */
+      public Builder setQuasiIds(
+          int index, com.google.privacy.dlp.v2.QuasiId.Builder builderForValue) {
+        if (quasiIdsBuilder_ == null) {
+          ensureQuasiIdsIsMutable();
+          quasiIds_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          quasiIdsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Fields considered to be quasi-identifiers. No two fields can have the
+       * same tag. [required]
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
+       */
+      public Builder addQuasiIds(com.google.privacy.dlp.v2.QuasiId value) {
+        if (quasiIdsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureQuasiIdsIsMutable();
+          quasiIds_.add(value);
+          onChanged();
+        } else {
+          quasiIdsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Fields considered to be quasi-identifiers. No two fields can have the
+       * same tag. [required]
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
+       */
+      public Builder addQuasiIds(
+          int index, com.google.privacy.dlp.v2.QuasiId value) {
+        if (quasiIdsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureQuasiIdsIsMutable();
+          quasiIds_.add(index, value);
+          onChanged();
+        } else {
+          quasiIdsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Fields considered to be quasi-identifiers. No two fields can have the
+       * same tag. [required]
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
+       */
+      public Builder addQuasiIds(
+          com.google.privacy.dlp.v2.QuasiId.Builder builderForValue) {
+        if (quasiIdsBuilder_ == null) {
+          ensureQuasiIdsIsMutable();
+          quasiIds_.add(builderForValue.build());
+          onChanged();
+        } else {
+          quasiIdsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Fields considered to be quasi-identifiers. No two fields can have the
+       * same tag. [required]
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
+       */
+      public Builder addQuasiIds(
+          int index, com.google.privacy.dlp.v2.QuasiId.Builder builderForValue) {
+        if (quasiIdsBuilder_ == null) {
+          ensureQuasiIdsIsMutable();
+          quasiIds_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          quasiIdsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Fields considered to be quasi-identifiers. No two fields can have the
+       * same tag. [required]
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
+       */
+      public Builder addAllQuasiIds(
+          java.lang.Iterable<? extends com.google.privacy.dlp.v2.QuasiId> values) {
+        if (quasiIdsBuilder_ == null) {
+          ensureQuasiIdsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, quasiIds_);
+          onChanged();
+        } else {
+          quasiIdsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Fields considered to be quasi-identifiers. No two fields can have the
+       * same tag. [required]
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
+       */
+      public Builder clearQuasiIds() {
+        if (quasiIdsBuilder_ == null) {
+          quasiIds_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          quasiIdsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Fields considered to be quasi-identifiers. No two fields can have the
+       * same tag. [required]
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
+       */
+      public Builder removeQuasiIds(int index) {
+        if (quasiIdsBuilder_ == null) {
+          ensureQuasiIdsIsMutable();
+          quasiIds_.remove(index);
+          onChanged();
+        } else {
+          quasiIdsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Fields considered to be quasi-identifiers. No two fields can have the
+       * same tag. [required]
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
+       */
+      public com.google.privacy.dlp.v2.QuasiId.Builder getQuasiIdsBuilder(
+          int index) {
+        return getQuasiIdsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * Fields considered to be quasi-identifiers. No two fields can have the
+       * same tag. [required]
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
+       */
+      public com.google.privacy.dlp.v2.QuasiIdOrBuilder getQuasiIdsOrBuilder(
+          int index) {
+        if (quasiIdsBuilder_ == null) {
+          return quasiIds_.get(index);  } else {
+          return quasiIdsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * Fields considered to be quasi-identifiers. No two fields can have the
+       * same tag. [required]
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
+       */
+      public java.util.List<? extends com.google.privacy.dlp.v2.QuasiIdOrBuilder> 
+           getQuasiIdsOrBuilderList() {
+        if (quasiIdsBuilder_ != null) {
+          return quasiIdsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(quasiIds_);
+        }
+      }
+      /**
+       * <pre>
+       * Fields considered to be quasi-identifiers. No two fields can have the
+       * same tag. [required]
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
+       */
+      public com.google.privacy.dlp.v2.QuasiId.Builder addQuasiIdsBuilder() {
+        return getQuasiIdsFieldBuilder().addBuilder(
+            com.google.privacy.dlp.v2.QuasiId.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * Fields considered to be quasi-identifiers. No two fields can have the
+       * same tag. [required]
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
+       */
+      public com.google.privacy.dlp.v2.QuasiId.Builder addQuasiIdsBuilder(
+          int index) {
+        return getQuasiIdsFieldBuilder().addBuilder(
+            index, com.google.privacy.dlp.v2.QuasiId.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * Fields considered to be quasi-identifiers. No two fields can have the
+       * same tag. [required]
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
+       */
+      public java.util.List<com.google.privacy.dlp.v2.QuasiId.Builder> 
+           getQuasiIdsBuilderList() {
+        return getQuasiIdsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.google.privacy.dlp.v2.QuasiId, com.google.privacy.dlp.v2.QuasiId.Builder, com.google.privacy.dlp.v2.QuasiIdOrBuilder> 
+          getQuasiIdsFieldBuilder() {
+        if (quasiIdsBuilder_ == null) {
+          quasiIdsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.privacy.dlp.v2.QuasiId, com.google.privacy.dlp.v2.QuasiId.Builder, com.google.privacy.dlp.v2.QuasiIdOrBuilder>(
+                  quasiIds_,
+                  ((bitField0_ & 0x00000001) == 0x00000001),
+                  getParentForChildren(),
+                  isClean());
+          quasiIds_ = null;
+        }
+        return quasiIdsBuilder_;
+      }
+
+      private java.lang.Object regionCode_ = "";
+      /**
+       * <pre>
+       * ISO 3166-1 alpha-2 region code to use in the statistical modeling.
+       * Required if no column is tagged with a region-specific InfoType (like
+       * US_ZIP_5) or a region code.
+       * </pre>
+       *
+       * <code>string region_code = 2;</code>
+       */
+      public java.lang.String getRegionCode() {
+        java.lang.Object ref = regionCode_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          regionCode_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * ISO 3166-1 alpha-2 region code to use in the statistical modeling.
+       * Required if no column is tagged with a region-specific InfoType (like
+       * US_ZIP_5) or a region code.
+       * </pre>
+       *
+       * <code>string region_code = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getRegionCodeBytes() {
+        java.lang.Object ref = regionCode_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          regionCode_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * ISO 3166-1 alpha-2 region code to use in the statistical modeling.
+       * Required if no column is tagged with a region-specific InfoType (like
+       * US_ZIP_5) or a region code.
+       * </pre>
+       *
+       * <code>string region_code = 2;</code>
+       */
+      public Builder setRegionCode(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        regionCode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * ISO 3166-1 alpha-2 region code to use in the statistical modeling.
+       * Required if no column is tagged with a region-specific InfoType (like
+       * US_ZIP_5) or a region code.
+       * </pre>
+       *
+       * <code>string region_code = 2;</code>
+       */
+      public Builder clearRegionCode() {
+        
+        regionCode_ = getDefaultInstance().getRegionCode();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * ISO 3166-1 alpha-2 region code to use in the statistical modeling.
+       * Required if no column is tagged with a region-specific InfoType (like
+       * US_ZIP_5) or a region code.
+       * </pre>
+       *
+       * <code>string region_code = 2;</code>
+       */
+      public Builder setRegionCodeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        regionCode_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<com.google.privacy.dlp.v2.StatisticalTable> auxiliaryTables_ =
+        java.util.Collections.emptyList();
+      private void ensureAuxiliaryTablesIsMutable() {
+        if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+          auxiliaryTables_ = new java.util.ArrayList<com.google.privacy.dlp.v2.StatisticalTable>(auxiliaryTables_);
+          bitField0_ |= 0x00000004;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.google.privacy.dlp.v2.StatisticalTable, com.google.privacy.dlp.v2.StatisticalTable.Builder, com.google.privacy.dlp.v2.StatisticalTableOrBuilder> auxiliaryTablesBuilder_;
+
+      /**
+       * <pre>
+       * Several auxiliary tables can be used in the analysis. Each custom_tag
+       * used to tag a quasi-identifiers field must appear in exactly one
+       * field of one auxiliary table.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.StatisticalTable auxiliary_tables = 3;</code>
+       */
+      public java.util.List<com.google.privacy.dlp.v2.StatisticalTable> getAuxiliaryTablesList() {
+        if (auxiliaryTablesBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(auxiliaryTables_);
+        } else {
+          return auxiliaryTablesBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * Several auxiliary tables can be used in the analysis. Each custom_tag
+       * used to tag a quasi-identifiers field must appear in exactly one
+       * field of one auxiliary table.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.StatisticalTable auxiliary_tables = 3;</code>
+       */
+      public int getAuxiliaryTablesCount() {
+        if (auxiliaryTablesBuilder_ == null) {
+          return auxiliaryTables_.size();
+        } else {
+          return auxiliaryTablesBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * Several auxiliary tables can be used in the analysis. Each custom_tag
+       * used to tag a quasi-identifiers field must appear in exactly one
+       * field of one auxiliary table.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.StatisticalTable auxiliary_tables = 3;</code>
+       */
+      public com.google.privacy.dlp.v2.StatisticalTable getAuxiliaryTables(int index) {
+        if (auxiliaryTablesBuilder_ == null) {
+          return auxiliaryTables_.get(index);
+        } else {
+          return auxiliaryTablesBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * Several auxiliary tables can be used in the analysis. Each custom_tag
+       * used to tag a quasi-identifiers field must appear in exactly one
+       * field of one auxiliary table.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.StatisticalTable auxiliary_tables = 3;</code>
+       */
+      public Builder setAuxiliaryTables(
+          int index, com.google.privacy.dlp.v2.StatisticalTable value) {
+        if (auxiliaryTablesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAuxiliaryTablesIsMutable();
+          auxiliaryTables_.set(index, value);
+          onChanged();
+        } else {
+          auxiliaryTablesBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Several auxiliary tables can be used in the analysis. Each custom_tag
+       * used to tag a quasi-identifiers field must appear in exactly one
+       * field of one auxiliary table.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.StatisticalTable auxiliary_tables = 3;</code>
+       */
+      public Builder setAuxiliaryTables(
+          int index, com.google.privacy.dlp.v2.StatisticalTable.Builder builderForValue) {
+        if (auxiliaryTablesBuilder_ == null) {
+          ensureAuxiliaryTablesIsMutable();
+          auxiliaryTables_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          auxiliaryTablesBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Several auxiliary tables can be used in the analysis. Each custom_tag
+       * used to tag a quasi-identifiers field must appear in exactly one
+       * field of one auxiliary table.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.StatisticalTable auxiliary_tables = 3;</code>
+       */
+      public Builder addAuxiliaryTables(com.google.privacy.dlp.v2.StatisticalTable value) {
+        if (auxiliaryTablesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAuxiliaryTablesIsMutable();
+          auxiliaryTables_.add(value);
+          onChanged();
+        } else {
+          auxiliaryTablesBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Several auxiliary tables can be used in the analysis. Each custom_tag
+       * used to tag a quasi-identifiers field must appear in exactly one
+       * field of one auxiliary table.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.StatisticalTable auxiliary_tables = 3;</code>
+       */
+      public Builder addAuxiliaryTables(
+          int index, com.google.privacy.dlp.v2.StatisticalTable value) {
+        if (auxiliaryTablesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAuxiliaryTablesIsMutable();
+          auxiliaryTables_.add(index, value);
+          onChanged();
+        } else {
+          auxiliaryTablesBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Several auxiliary tables can be used in the analysis. Each custom_tag
+       * used to tag a quasi-identifiers field must appear in exactly one
+       * field of one auxiliary table.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.StatisticalTable auxiliary_tables = 3;</code>
+       */
+      public Builder addAuxiliaryTables(
+          com.google.privacy.dlp.v2.StatisticalTable.Builder builderForValue) {
+        if (auxiliaryTablesBuilder_ == null) {
+          ensureAuxiliaryTablesIsMutable();
+          auxiliaryTables_.add(builderForValue.build());
+          onChanged();
+        } else {
+          auxiliaryTablesBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Several auxiliary tables can be used in the analysis. Each custom_tag
+       * used to tag a quasi-identifiers field must appear in exactly one
+       * field of one auxiliary table.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.StatisticalTable auxiliary_tables = 3;</code>
+       */
+      public Builder addAuxiliaryTables(
+          int index, com.google.privacy.dlp.v2.StatisticalTable.Builder builderForValue) {
+        if (auxiliaryTablesBuilder_ == null) {
+          ensureAuxiliaryTablesIsMutable();
+          auxiliaryTables_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          auxiliaryTablesBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Several auxiliary tables can be used in the analysis. Each custom_tag
+       * used to tag a quasi-identifiers field must appear in exactly one
+       * field of one auxiliary table.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.StatisticalTable auxiliary_tables = 3;</code>
+       */
+      public Builder addAllAuxiliaryTables(
+          java.lang.Iterable<? extends com.google.privacy.dlp.v2.StatisticalTable> values) {
+        if (auxiliaryTablesBuilder_ == null) {
+          ensureAuxiliaryTablesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, auxiliaryTables_);
+          onChanged();
+        } else {
+          auxiliaryTablesBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Several auxiliary tables can be used in the analysis. Each custom_tag
+       * used to tag a quasi-identifiers field must appear in exactly one
+       * field of one auxiliary table.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.StatisticalTable auxiliary_tables = 3;</code>
+       */
+      public Builder clearAuxiliaryTables() {
+        if (auxiliaryTablesBuilder_ == null) {
+          auxiliaryTables_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
+          onChanged();
+        } else {
+          auxiliaryTablesBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Several auxiliary tables can be used in the analysis. Each custom_tag
+       * used to tag a quasi-identifiers field must appear in exactly one
+       * field of one auxiliary table.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.StatisticalTable auxiliary_tables = 3;</code>
+       */
+      public Builder removeAuxiliaryTables(int index) {
+        if (auxiliaryTablesBuilder_ == null) {
+          ensureAuxiliaryTablesIsMutable();
+          auxiliaryTables_.remove(index);
+          onChanged();
+        } else {
+          auxiliaryTablesBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Several auxiliary tables can be used in the analysis. Each custom_tag
+       * used to tag a quasi-identifiers field must appear in exactly one
+       * field of one auxiliary table.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.StatisticalTable auxiliary_tables = 3;</code>
+       */
+      public com.google.privacy.dlp.v2.StatisticalTable.Builder getAuxiliaryTablesBuilder(
+          int index) {
+        return getAuxiliaryTablesFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * Several auxiliary tables can be used in the analysis. Each custom_tag
+       * used to tag a quasi-identifiers field must appear in exactly one
+       * field of one auxiliary table.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.StatisticalTable auxiliary_tables = 3;</code>
+       */
+      public com.google.privacy.dlp.v2.StatisticalTableOrBuilder getAuxiliaryTablesOrBuilder(
+          int index) {
+        if (auxiliaryTablesBuilder_ == null) {
+          return auxiliaryTables_.get(index);  } else {
+          return auxiliaryTablesBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * Several auxiliary tables can be used in the analysis. Each custom_tag
+       * used to tag a quasi-identifiers field must appear in exactly one
+       * field of one auxiliary table.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.StatisticalTable auxiliary_tables = 3;</code>
+       */
+      public java.util.List<? extends com.google.privacy.dlp.v2.StatisticalTableOrBuilder> 
+           getAuxiliaryTablesOrBuilderList() {
+        if (auxiliaryTablesBuilder_ != null) {
+          return auxiliaryTablesBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(auxiliaryTables_);
+        }
+      }
+      /**
+       * <pre>
+       * Several auxiliary tables can be used in the analysis. Each custom_tag
+       * used to tag a quasi-identifiers field must appear in exactly one
+       * field of one auxiliary table.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.StatisticalTable auxiliary_tables = 3;</code>
+       */
+      public com.google.privacy.dlp.v2.StatisticalTable.Builder addAuxiliaryTablesBuilder() {
+        return getAuxiliaryTablesFieldBuilder().addBuilder(
+            com.google.privacy.dlp.v2.StatisticalTable.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * Several auxiliary tables can be used in the analysis. Each custom_tag
+       * used to tag a quasi-identifiers field must appear in exactly one
+       * field of one auxiliary table.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.StatisticalTable auxiliary_tables = 3;</code>
+       */
+      public com.google.privacy.dlp.v2.StatisticalTable.Builder addAuxiliaryTablesBuilder(
+          int index) {
+        return getAuxiliaryTablesFieldBuilder().addBuilder(
+            index, com.google.privacy.dlp.v2.StatisticalTable.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * Several auxiliary tables can be used in the analysis. Each custom_tag
+       * used to tag a quasi-identifiers field must appear in exactly one
+       * field of one auxiliary table.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.StatisticalTable auxiliary_tables = 3;</code>
+       */
+      public java.util.List<com.google.privacy.dlp.v2.StatisticalTable.Builder> 
+           getAuxiliaryTablesBuilderList() {
+        return getAuxiliaryTablesFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.google.privacy.dlp.v2.StatisticalTable, com.google.privacy.dlp.v2.StatisticalTable.Builder, com.google.privacy.dlp.v2.StatisticalTableOrBuilder> 
+          getAuxiliaryTablesFieldBuilder() {
+        if (auxiliaryTablesBuilder_ == null) {
+          auxiliaryTablesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.privacy.dlp.v2.StatisticalTable, com.google.privacy.dlp.v2.StatisticalTable.Builder, com.google.privacy.dlp.v2.StatisticalTableOrBuilder>(
+                  auxiliaryTables_,
+                  ((bitField0_ & 0x00000004) == 0x00000004),
+                  getParentForChildren(),
+                  isClean());
+          auxiliaryTables_ = null;
+        }
+        return auxiliaryTablesBuilder_;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig)
+    private static final com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig();
+    }
+
+    public static com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<DeltaPresenceEstimationConfig>
+        PARSER = new com.google.protobuf.AbstractParser<DeltaPresenceEstimationConfig>() {
+      public DeltaPresenceEstimationConfig parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new DeltaPresenceEstimationConfig(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<DeltaPresenceEstimationConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DeltaPresenceEstimationConfig> getParserForType() {
+      return PARSER;
+    }
+
+    public com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private int typeCase_ = 0;
   private java.lang.Object type_;
   public enum TypeCase
@@ -9440,6 +11094,7 @@ private static final long serialVersionUID = 0L;
     K_ANONYMITY_CONFIG(3),
     L_DIVERSITY_CONFIG(4),
     K_MAP_ESTIMATION_CONFIG(5),
+    DELTA_PRESENCE_ESTIMATION_CONFIG(6),
     TYPE_NOT_SET(0);
     private final int value;
     private TypeCase(int value) {
@@ -9460,6 +11115,7 @@ private static final long serialVersionUID = 0L;
         case 3: return K_ANONYMITY_CONFIG;
         case 4: return L_DIVERSITY_CONFIG;
         case 5: return K_MAP_ESTIMATION_CONFIG;
+        case 6: return DELTA_PRESENCE_ESTIMATION_CONFIG;
         case 0: return TYPE_NOT_SET;
         default: return null;
       }
@@ -9605,6 +11261,32 @@ private static final long serialVersionUID = 0L;
     return com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.getDefaultInstance();
   }
 
+  public static final int DELTA_PRESENCE_ESTIMATION_CONFIG_FIELD_NUMBER = 6;
+  /**
+   * <code>.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig delta_presence_estimation_config = 6;</code>
+   */
+  public boolean hasDeltaPresenceEstimationConfig() {
+    return typeCase_ == 6;
+  }
+  /**
+   * <code>.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig delta_presence_estimation_config = 6;</code>
+   */
+  public com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig getDeltaPresenceEstimationConfig() {
+    if (typeCase_ == 6) {
+       return (com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig) type_;
+    }
+    return com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig.getDefaultInstance();
+  }
+  /**
+   * <code>.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig delta_presence_estimation_config = 6;</code>
+   */
+  public com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfigOrBuilder getDeltaPresenceEstimationConfigOrBuilder() {
+    if (typeCase_ == 6) {
+       return (com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig) type_;
+    }
+    return com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -9631,6 +11313,9 @@ private static final long serialVersionUID = 0L;
     }
     if (typeCase_ == 5) {
       output.writeMessage(5, (com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig) type_);
+    }
+    if (typeCase_ == 6) {
+      output.writeMessage(6, (com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig) type_);
     }
     unknownFields.writeTo(output);
   }
@@ -9659,6 +11344,10 @@ private static final long serialVersionUID = 0L;
     if (typeCase_ == 5) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(5, (com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig) type_);
+    }
+    if (typeCase_ == 6) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(6, (com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig) type_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -9700,6 +11389,10 @@ private static final long serialVersionUID = 0L;
         result = result && getKMapEstimationConfig()
             .equals(other.getKMapEstimationConfig());
         break;
+      case 6:
+        result = result && getDeltaPresenceEstimationConfig()
+            .equals(other.getDeltaPresenceEstimationConfig());
+        break;
       case 0:
       default:
     }
@@ -9734,6 +11427,10 @@ private static final long serialVersionUID = 0L;
       case 5:
         hash = (37 * hash) + K_MAP_ESTIMATION_CONFIG_FIELD_NUMBER;
         hash = (53 * hash) + getKMapEstimationConfig().hashCode();
+        break;
+      case 6:
+        hash = (37 * hash) + DELTA_PRESENCE_ESTIMATION_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getDeltaPresenceEstimationConfig().hashCode();
         break;
       case 0:
       default:
@@ -9930,6 +11627,13 @@ private static final long serialVersionUID = 0L;
           result.type_ = kMapEstimationConfigBuilder_.build();
         }
       }
+      if (typeCase_ == 6) {
+        if (deltaPresenceEstimationConfigBuilder_ == null) {
+          result.type_ = type_;
+        } else {
+          result.type_ = deltaPresenceEstimationConfigBuilder_.build();
+        }
+      }
       result.typeCase_ = typeCase_;
       onBuilt();
       return result;
@@ -9991,6 +11695,10 @@ private static final long serialVersionUID = 0L;
         }
         case K_MAP_ESTIMATION_CONFIG: {
           mergeKMapEstimationConfig(other.getKMapEstimationConfig());
+          break;
+        }
+        case DELTA_PRESENCE_ESTIMATION_CONFIG: {
+          mergeDeltaPresenceEstimationConfig(other.getDeltaPresenceEstimationConfig());
           break;
         }
         case TYPE_NOT_SET: {
@@ -10717,6 +12425,142 @@ private static final long serialVersionUID = 0L;
       typeCase_ = 5;
       onChanged();;
       return kMapEstimationConfigBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig, com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig.Builder, com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfigOrBuilder> deltaPresenceEstimationConfigBuilder_;
+    /**
+     * <code>.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig delta_presence_estimation_config = 6;</code>
+     */
+    public boolean hasDeltaPresenceEstimationConfig() {
+      return typeCase_ == 6;
+    }
+    /**
+     * <code>.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig delta_presence_estimation_config = 6;</code>
+     */
+    public com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig getDeltaPresenceEstimationConfig() {
+      if (deltaPresenceEstimationConfigBuilder_ == null) {
+        if (typeCase_ == 6) {
+          return (com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig) type_;
+        }
+        return com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig.getDefaultInstance();
+      } else {
+        if (typeCase_ == 6) {
+          return deltaPresenceEstimationConfigBuilder_.getMessage();
+        }
+        return com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig delta_presence_estimation_config = 6;</code>
+     */
+    public Builder setDeltaPresenceEstimationConfig(com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig value) {
+      if (deltaPresenceEstimationConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        type_ = value;
+        onChanged();
+      } else {
+        deltaPresenceEstimationConfigBuilder_.setMessage(value);
+      }
+      typeCase_ = 6;
+      return this;
+    }
+    /**
+     * <code>.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig delta_presence_estimation_config = 6;</code>
+     */
+    public Builder setDeltaPresenceEstimationConfig(
+        com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig.Builder builderForValue) {
+      if (deltaPresenceEstimationConfigBuilder_ == null) {
+        type_ = builderForValue.build();
+        onChanged();
+      } else {
+        deltaPresenceEstimationConfigBuilder_.setMessage(builderForValue.build());
+      }
+      typeCase_ = 6;
+      return this;
+    }
+    /**
+     * <code>.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig delta_presence_estimation_config = 6;</code>
+     */
+    public Builder mergeDeltaPresenceEstimationConfig(com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig value) {
+      if (deltaPresenceEstimationConfigBuilder_ == null) {
+        if (typeCase_ == 6 &&
+            type_ != com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig.getDefaultInstance()) {
+          type_ = com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig.newBuilder((com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig) type_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          type_ = value;
+        }
+        onChanged();
+      } else {
+        if (typeCase_ == 6) {
+          deltaPresenceEstimationConfigBuilder_.mergeFrom(value);
+        }
+        deltaPresenceEstimationConfigBuilder_.setMessage(value);
+      }
+      typeCase_ = 6;
+      return this;
+    }
+    /**
+     * <code>.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig delta_presence_estimation_config = 6;</code>
+     */
+    public Builder clearDeltaPresenceEstimationConfig() {
+      if (deltaPresenceEstimationConfigBuilder_ == null) {
+        if (typeCase_ == 6) {
+          typeCase_ = 0;
+          type_ = null;
+          onChanged();
+        }
+      } else {
+        if (typeCase_ == 6) {
+          typeCase_ = 0;
+          type_ = null;
+        }
+        deltaPresenceEstimationConfigBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig delta_presence_estimation_config = 6;</code>
+     */
+    public com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig.Builder getDeltaPresenceEstimationConfigBuilder() {
+      return getDeltaPresenceEstimationConfigFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig delta_presence_estimation_config = 6;</code>
+     */
+    public com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfigOrBuilder getDeltaPresenceEstimationConfigOrBuilder() {
+      if ((typeCase_ == 6) && (deltaPresenceEstimationConfigBuilder_ != null)) {
+        return deltaPresenceEstimationConfigBuilder_.getMessageOrBuilder();
+      } else {
+        if (typeCase_ == 6) {
+          return (com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig) type_;
+        }
+        return com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig delta_presence_estimation_config = 6;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig, com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig.Builder, com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfigOrBuilder> 
+        getDeltaPresenceEstimationConfigFieldBuilder() {
+      if (deltaPresenceEstimationConfigBuilder_ == null) {
+        if (!(typeCase_ == 6)) {
+          type_ = com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig.getDefaultInstance();
+        }
+        deltaPresenceEstimationConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig, com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig.Builder, com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfigOrBuilder>(
+                (com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig) type_,
+                getParentForChildren(),
+                isClean());
+        type_ = null;
+      }
+      typeCase_ = 6;
+      onChanged();;
+      return deltaPresenceEstimationConfigBuilder_;
     }
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {

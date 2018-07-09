@@ -149,7 +149,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * The content that was found. Even if the content is not textual, it
    * may be converted to a textual representation here.
-   * Provided if requested by the `InspectConfig` and the finding is
+   * Provided if `include_quote` is true and the finding is
    * less than or equal to 4096 bytes long. If the finding exceeds 4096 bytes
    * in length, the quote may be omitted.
    * </pre>
@@ -172,7 +172,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * The content that was found. Even if the content is not textual, it
    * may be converted to a textual representation here.
-   * Provided if requested by the `InspectConfig` and the finding is
+   * Provided if `include_quote` is true and the finding is
    * less than or equal to 4096 bytes long. If the finding exceeds 4096 bytes
    * in length, the quote may be omitted.
    * </pre>
@@ -198,7 +198,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The type of content that might have been found.
-   * Provided if requested by the `InspectConfig`.
+   * Provided if `excluded_types` is false.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InfoType info_type = 2;</code>
@@ -209,7 +209,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The type of content that might have been found.
-   * Provided if requested by the `InspectConfig`.
+   * Provided if `excluded_types` is false.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InfoType info_type = 2;</code>
@@ -220,7 +220,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The type of content that might have been found.
-   * Provided if requested by the `InspectConfig`.
+   * Provided if `excluded_types` is false.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InfoType info_type = 2;</code>
@@ -233,7 +233,7 @@ private static final long serialVersionUID = 0L;
   private int likelihood_;
   /**
    * <pre>
-   * Estimate of how likely it is that the `info_type` is correct.
+   * Confidence of how likely it is that the `info_type` is correct.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Likelihood likelihood = 3;</code>
@@ -243,7 +243,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Estimate of how likely it is that the `info_type` is correct.
+   * Confidence of how likely it is that the `info_type` is correct.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Likelihood likelihood = 3;</code>
@@ -786,7 +786,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The content that was found. Even if the content is not textual, it
      * may be converted to a textual representation here.
-     * Provided if requested by the `InspectConfig` and the finding is
+     * Provided if `include_quote` is true and the finding is
      * less than or equal to 4096 bytes long. If the finding exceeds 4096 bytes
      * in length, the quote may be omitted.
      * </pre>
@@ -809,7 +809,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The content that was found. Even if the content is not textual, it
      * may be converted to a textual representation here.
-     * Provided if requested by the `InspectConfig` and the finding is
+     * Provided if `include_quote` is true and the finding is
      * less than or equal to 4096 bytes long. If the finding exceeds 4096 bytes
      * in length, the quote may be omitted.
      * </pre>
@@ -833,7 +833,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The content that was found. Even if the content is not textual, it
      * may be converted to a textual representation here.
-     * Provided if requested by the `InspectConfig` and the finding is
+     * Provided if `include_quote` is true and the finding is
      * less than or equal to 4096 bytes long. If the finding exceeds 4096 bytes
      * in length, the quote may be omitted.
      * </pre>
@@ -854,7 +854,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The content that was found. Even if the content is not textual, it
      * may be converted to a textual representation here.
-     * Provided if requested by the `InspectConfig` and the finding is
+     * Provided if `include_quote` is true and the finding is
      * less than or equal to 4096 bytes long. If the finding exceeds 4096 bytes
      * in length, the quote may be omitted.
      * </pre>
@@ -871,7 +871,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The content that was found. Even if the content is not textual, it
      * may be converted to a textual representation here.
-     * Provided if requested by the `InspectConfig` and the finding is
+     * Provided if `include_quote` is true and the finding is
      * less than or equal to 4096 bytes long. If the finding exceeds 4096 bytes
      * in length, the quote may be omitted.
      * </pre>
@@ -896,7 +896,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The type of content that might have been found.
-     * Provided if requested by the `InspectConfig`.
+     * Provided if `excluded_types` is false.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InfoType info_type = 2;</code>
@@ -907,7 +907,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The type of content that might have been found.
-     * Provided if requested by the `InspectConfig`.
+     * Provided if `excluded_types` is false.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InfoType info_type = 2;</code>
@@ -922,7 +922,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The type of content that might have been found.
-     * Provided if requested by the `InspectConfig`.
+     * Provided if `excluded_types` is false.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InfoType info_type = 2;</code>
@@ -943,7 +943,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The type of content that might have been found.
-     * Provided if requested by the `InspectConfig`.
+     * Provided if `excluded_types` is false.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InfoType info_type = 2;</code>
@@ -962,7 +962,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The type of content that might have been found.
-     * Provided if requested by the `InspectConfig`.
+     * Provided if `excluded_types` is false.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InfoType info_type = 2;</code>
@@ -985,7 +985,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The type of content that might have been found.
-     * Provided if requested by the `InspectConfig`.
+     * Provided if `excluded_types` is false.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InfoType info_type = 2;</code>
@@ -1004,7 +1004,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The type of content that might have been found.
-     * Provided if requested by the `InspectConfig`.
+     * Provided if `excluded_types` is false.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InfoType info_type = 2;</code>
@@ -1017,7 +1017,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The type of content that might have been found.
-     * Provided if requested by the `InspectConfig`.
+     * Provided if `excluded_types` is false.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InfoType info_type = 2;</code>
@@ -1033,7 +1033,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The type of content that might have been found.
-     * Provided if requested by the `InspectConfig`.
+     * Provided if `excluded_types` is false.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InfoType info_type = 2;</code>
@@ -1055,7 +1055,7 @@ private static final long serialVersionUID = 0L;
     private int likelihood_ = 0;
     /**
      * <pre>
-     * Estimate of how likely it is that the `info_type` is correct.
+     * Confidence of how likely it is that the `info_type` is correct.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Likelihood likelihood = 3;</code>
@@ -1065,7 +1065,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Estimate of how likely it is that the `info_type` is correct.
+     * Confidence of how likely it is that the `info_type` is correct.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Likelihood likelihood = 3;</code>
@@ -1077,7 +1077,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Estimate of how likely it is that the `info_type` is correct.
+     * Confidence of how likely it is that the `info_type` is correct.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Likelihood likelihood = 3;</code>
@@ -1088,7 +1088,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Estimate of how likely it is that the `info_type` is correct.
+     * Confidence of how likely it is that the `info_type` is correct.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Likelihood likelihood = 3;</code>
@@ -1104,7 +1104,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Estimate of how likely it is that the `info_type` is correct.
+     * Confidence of how likely it is that the `info_type` is correct.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Likelihood likelihood = 3;</code>

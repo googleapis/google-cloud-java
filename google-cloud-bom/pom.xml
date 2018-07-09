@@ -183,12 +183,12 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-common-protos</artifactId>
-        <version>1.11.0</version>
+        <version>1.12.0</version>
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-common-protos</artifactId>
-        <version>1.11.0</version>
+        <version>1.12.0</version>
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
@@ -739,6 +739,27 @@
         <artifactId>google-cloud-storage</artifactId>
         <version>1.35.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-storage:current} -->
         <type>test-jar</type>
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-tasks</artifactId>
+        <version>>0.53.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-tasks:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-tasks</artifactId>
+        <version>>0.53.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-tasks:current} -->
+        <type>test-jar</type>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-tasks-v2beta2</artifactId>
+        <version>0.18.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-tasks-v2beta2:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-tasks-v2beta2</artifactId>
+        <version>0.18.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-tasks-v2beta2:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>

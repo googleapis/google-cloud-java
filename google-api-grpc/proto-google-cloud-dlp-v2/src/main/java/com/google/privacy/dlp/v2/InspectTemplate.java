@@ -7,7 +7,8 @@ package com.google.privacy.dlp.v2;
  * <pre>
  * The inspectTemplate contains a configuration (set of types of sensitive data
  * to be detected) to be used anywhere you otherwise would normally specify
- * InspectConfig.
+ * InspectConfig. See https://cloud.google.com/dlp/docs/concepts-templates
+ * to learn more.
  * </pre>
  *
  * Protobuf type {@code google.privacy.dlp.v2.InspectTemplate}
@@ -592,7 +593,8 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * The inspectTemplate contains a configuration (set of types of sensitive data
    * to be detected) to be used anywhere you otherwise would normally specify
-   * InspectConfig.
+   * InspectConfig. See https://cloud.google.com/dlp/docs/concepts-templates
+   * to learn more.
    * </pre>
    *
    * Protobuf type {@code google.privacy.dlp.v2.InspectTemplate}
