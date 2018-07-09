@@ -12,6 +12,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# Instructions:
+#
+# Find the artman config file the describes the API you want to generate a client for.
+#
+# $ python utilities/generate_api.py PATH_TO_ARTMAN_CONFIG_FILE
+
 import argparse
 import io
 import os
@@ -21,14 +27,27 @@ import subprocess
 from distutils import dir_util
 from ruamel import yaml
 
-def run(config_path):
-    api_dir_index = config_path.find('/google/')
-    if api_dir_index == -1:
-        raise ValueError('Didn\'t find /google/ in config file path; need absolute path to the artman config file.')
-    root_dir = config_path[0:api_dir_index]
-    api_dir = config_path[api_dir_index+1:]
 
-    subprocess.check_call(['artman', '--config', api_dir, '--local', '-v', '--root-dir', root_dir, 'generate', 'java_gapic'])
+dir_overrides = {
+    'bigtable-admin': 'google-cloud-bigtable',
+    'error-reporting': 'google-cloud-errorreporting',
+    'spanner-admin-instance': 'google-cloud-spanner',
+    'spanner-admin-database': 'google-cloud-spanner'
+}
+
+
+def run_generate_api(config_path, noisy=False):
+    googleapis_index = config_path.rfind('/google/')
+    if googleapis_index == -1:
+        raise ValueError('Didn\'t find /googleapis/ in config file path; need absolute path to the artman config file.')
+    root_dir = config_path[0:googleapis_index]
+    api_dir = config_path[googleapis_index+1:]
+
+    extra_options = []
+    if noisy:
+        extra_options = ['-v']
+
+    subprocess.check_call(['artman', '--config', api_dir, '--local', '--root-dir', root_dir] + extra_options + ['generate', 'java_gapic'])
 
     with io.open(config_path, encoding='UTF-8') as config_file:
         artman_config_data = yaml.load(config_file, Loader=yaml.Loader)
@@ -44,9 +63,6 @@ def run(config_path):
     proto_dir = os.path.join('artman-genfiles', 'java', proto_dirname)
     grpc_dir = os.path.join('artman-genfiles', 'java', grpc_dirname)
     gapic_dir = os.path.join('artman-genfiles', 'java', gapic_dirname)
-    print(proto_dir)
-    print(grpc_dir)
-    print(gapic_dir)
     if not os.path.exists(proto_dir):
         raise ValueError('generated proto dir doesn\'t exist: {}'.format(proto_dir))
     if not os.path.exists(grpc_dir):
@@ -78,24 +94,30 @@ def run(config_path):
     subprocess.call(['git', 'checkout', os.path.join(target_grpc_dir, 'pom.xml')])
 
     api_unversioned_name = '{}-{}'.format(org_name, api_name)
+    if api_name in dir_overrides:
+        api_unversioned_name = dir_overrides[api_name]
+
     target_gapic_dir = os.path.join('google-cloud-clients', api_unversioned_name)
     dir_util.copy_tree(os.path.join(gapic_dir, 'src'), os.path.join(target_gapic_dir, 'src'))
 
-    print('**** REMAINING MANUAL WORK: *****')
-    print('This script doesn\'t set up new clients. If this is a new client, you need to:')
-    print('1. Add the new proto and grpc modules into google-api-grpc/pom.xml')
-    print('3. Copy an existing client pom.xml to the new client directory, update its text')
-    print('4. Copy an existing client README.md to the new client directory, update its text')
-    print('5. Add the new proto, grpc, and client modules into versions.txt')
-    print('6. Add the new proto, grpc, and client modules into google-cloud-bom/pom.xml')
-    print('7. Run `utilities/replace_versions.py` to update the module versions')
+    if noisy:
+        print('**** REMAINING MANUAL WORK: *****')
+        print('This script doesn\'t set up new clients. If this is a new client, you need to:')
+        print('1. Add the new proto and grpc modules into google-api-grpc/pom.xml')
+        print('3. Copy an existing client pom.xml to the new client directory, update its text')
+        print('4. Copy an existing client README.md to the new client directory, update its text')
+        print('5. Add the new proto, grpc, and client modules into versions.txt')
+        print('6. Add the new proto, grpc, and client modules into google-cloud-bom/pom.xml')
+        print('7. Run `utilities/replace_versions.py` to update the module versions')
 
 def main():
     parser = argparse.ArgumentParser(description='Regenerate a single API.')
     parser.add_argument('config_file', help='The artman config file for the API')
+    parser.add_argument('--quiet', action="store_true", default=False,
+                        help='Don\'t print informational instructions')
     args = parser.parse_args()
 
-    run(args.config_file)
+    run_generate_api(args.config_file, not args.quiet)
 
 if __name__ == '__main__':
     main()
