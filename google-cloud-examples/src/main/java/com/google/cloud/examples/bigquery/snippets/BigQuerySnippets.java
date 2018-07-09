@@ -121,12 +121,12 @@ public class BigQuerySnippets {
   /**
    * Example of updating a table by changing its description.
    */
-  // [TARGET update(TableInfo, TableOption...)]
-  // [VARIABLE "my_dataset_name"]
-  // [VARIABLE "my_table_name"]
-  // [VARIABLE "new_description"]
   public Table updateTableDescription(String datasetName, String tableName, String newDescription) {
     // [START bigquery_update_table_description]
+    // String datasetName = "my_dataset_name";
+    // String tableName = "my_table_name";
+    // String newDescription = "new_description";
+
     Table beforeTable = bigquery.getTable(datasetName, tableName);
     TableInfo tableInfo = beforeTable.toBuilder()
         .setDescription(newDescription)
