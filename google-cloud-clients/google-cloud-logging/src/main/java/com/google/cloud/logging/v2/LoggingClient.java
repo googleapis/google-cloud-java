@@ -477,10 +477,10 @@ public class LoggingClient implements BackgroundResource {
    *
    * <pre><code>
    * try (LoggingClient loggingClient = LoggingClient.create()) {
-   *   List&lt;ParentName&gt; resourceNames = new ArrayList&lt;&gt;();
+   *   List&lt;String&gt; formattedResourceNames = new ArrayList&lt;&gt;();
    *   String filter = "";
    *   String orderBy = "";
-   *   for (LogEntry element : loggingClient.listLogEntries(ParentName.toStringList(resourceNames), filter, orderBy).iterateAll()) {
+   *   for (LogEntry element : loggingClient.listLogEntries(ParentName.toStringList(formattedResourceNames), filter, orderBy).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
