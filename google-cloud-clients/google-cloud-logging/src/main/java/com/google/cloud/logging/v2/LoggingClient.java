@@ -480,7 +480,7 @@ public class LoggingClient implements BackgroundResource {
    *   List&lt;String&gt; formattedResourceNames = new ArrayList&lt;&gt;();
    *   String filter = "";
    *   String orderBy = "";
-   *   for (LogEntry element : loggingClient.listLogEntries(ParentName.toStringList(formattedResourceNames), filter, orderBy).iterateAll()) {
+   *   for (LogEntry element : loggingClient.listLogEntries(formattedResourceNames, filter, orderBy).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
