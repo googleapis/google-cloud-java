@@ -12,11 +12,19 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# Instructions:
+#
+# Check out the googleapis repo somewhere locally (e.g. from
+# https://github.com/googleapis/googleapis):
+#
+# $ git checkout https://github.com/googleapis/googleapis.git
+#
+# Run this script:
+#
+# $ python utilities/batch_generate_apis.py PATH_TO_GOOGLEAPIS
+
 import argparse
-import io
 import os
-import shutil
-import subprocess
 
 import generate_api
 

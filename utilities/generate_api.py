@@ -12,6 +12,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# Instructions:
+#
+# Find the artman config file the describes the API you want to generate a client for.
+#
+# $ python utilities/generate_api.py PATH_TO_ARTMAN_CONFIG_FILE
+
 import argparse
 import io
 import os
@@ -31,18 +37,17 @@ dir_overrides = {
 
 
 def run_generate_api(config_path, noisy=False):
-    googleapis_index = config_path.find('/googleapis/')
+    googleapis_index = config_path.rfind('/google/')
     if googleapis_index == -1:
         raise ValueError('Didn\'t find /googleapis/ in config file path; need absolute path to the artman config file.')
-    api_dir_index = googleapis_index + len('/googleapis/')
-    root_dir = config_path[0:api_dir_index-1]
-    api_dir = config_path[api_dir_index:]
+    root_dir = config_path[0:googleapis_index]
+    api_dir = config_path[googleapis_index+1:]
 
     extra_options = []
     if noisy:
         extra_options = ['-v']
 
-    subprocess.check_call(['artman', '--config', api_dir, '--local', '--root-dir', root_dir, 'generate', 'java_gapic'] + extra_options)
+    subprocess.check_call(['artman', '--config', api_dir, '--local', '--root-dir', root_dir] + extra_options + ['generate', 'java_gapic'])
 
     with io.open(config_path, encoding='UTF-8') as config_file:
         artman_config_data = yaml.load(config_file, Loader=yaml.Loader)
