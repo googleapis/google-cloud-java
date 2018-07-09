@@ -22,27 +22,31 @@ import com.google.pubsub.v1.PubsubMessage;
 public interface MessageReceiver {
   /**
    * Called when a message is received by the subscriber. The implementation must arrange for {@link
-   * AckReplyConsumer#ack()} or {@link
-   * AckReplyConsumer#nack()} to be called after processing the {@code message}.
+   * AckReplyConsumer#ack()} or {@link AckReplyConsumer#nack()} to be called after processing the
+   * {@code message}.
+   * <!--SNIPPET receiveMessage-->
    *
-   * <p>This {@code MessageReceiver} passes all messages to a {@code BlockingQueue}.
-   * This method can be called concurrently from multiple threads,
-   * so it is important that the queue be thread-safe.
+   * <pre>{@code
+   * // This {@code MessageReceiver} passes all messages to a {@link BlockingQueue}. This method can
+   * // be called concurrently from multiple threads, so it is important that the queue be
+   * // thread-safe.
+   * //
+   * // This example is for illustration. Implementations may directly process messages instead of
+   * // sending them to queues.
+   * MessageReceiver receiver =
+   *     new MessageReceiver() {
+   *       public void receiveMessage(final PubsubMessage message, final AckReplyConsumer consumer) {
+   *         if (blockingQueue.offer(message)) {
+   *           consumer.ack();
+   *         } else {
+   *           consumer.nack();
+   *         }
+   *       }
+   *     };
    *
-   * This example is for illustration. Implementations may directly process messages
-   * instead of sending them to queues.
-   * <pre> {@code
-   * MessageReceiver receiver = new MessageReceiver() {
-   *   public void receiveMessage(final PubsubMessage message, final AckReplyConsumer consumer) {
-   *     if (blockingQueue.offer(message)) {
-   *       consumer.ack();
-   *     } else {
-   *       consumer.nack();
-   *     }
-   *   }
-   * };
    * }</pre>
    *
+   * <!--SNIPPET receiveMessage-->
    */
   void receiveMessage(final PubsubMessage message, final AckReplyConsumer consumer);
 }
