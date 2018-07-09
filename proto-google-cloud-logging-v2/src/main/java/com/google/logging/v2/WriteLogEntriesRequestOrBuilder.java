@@ -160,7 +160,8 @@ public interface WriteLogEntriesRequestOrBuilder extends
    * entries in this list does not matter. Values supplied in this method's
    * `log_name`, `resource`, and `labels` fields are copied into those log
    * entries in this list that do not include values for their corresponding
-   * fields. For more information, see the [LogEntry][google.logging.v2.LogEntry] type.
+   * fields. For more information, see the
+   * [LogEntry][google.logging.v2.LogEntry] type.
    * If the `timestamp` or `insert_id` fields are missing in log entries, then
    * this method supplies the current time or a unique identifier, respectively.
    * The supplied values are chosen so that, among the log entries that did not
@@ -168,8 +169,9 @@ public interface WriteLogEntriesRequestOrBuilder extends
    * the entries later in the list. See the `entries.list` method.
    * Log entries with timestamps that are more than the
    * [logs retention period](/logging/quota-policy) in the past or more than
-   * 24 hours in the future might be discarded. Discarding does not return
-   * an error.
+   * 24 hours in the future will not be available when calling `entries.list`.
+   * However, those log entries can still be exported with
+   * [LogSinks](/logging/docs/api/tasks/exporting-logs).
    * To improve throughput and to avoid exceeding the
    * [quota limit](/logging/quota-policy) for calls to `entries.write`,
    * you should try to include several log entries in this list,
@@ -186,7 +188,8 @@ public interface WriteLogEntriesRequestOrBuilder extends
    * entries in this list does not matter. Values supplied in this method's
    * `log_name`, `resource`, and `labels` fields are copied into those log
    * entries in this list that do not include values for their corresponding
-   * fields. For more information, see the [LogEntry][google.logging.v2.LogEntry] type.
+   * fields. For more information, see the
+   * [LogEntry][google.logging.v2.LogEntry] type.
    * If the `timestamp` or `insert_id` fields are missing in log entries, then
    * this method supplies the current time or a unique identifier, respectively.
    * The supplied values are chosen so that, among the log entries that did not
@@ -194,8 +197,9 @@ public interface WriteLogEntriesRequestOrBuilder extends
    * the entries later in the list. See the `entries.list` method.
    * Log entries with timestamps that are more than the
    * [logs retention period](/logging/quota-policy) in the past or more than
-   * 24 hours in the future might be discarded. Discarding does not return
-   * an error.
+   * 24 hours in the future will not be available when calling `entries.list`.
+   * However, those log entries can still be exported with
+   * [LogSinks](/logging/docs/api/tasks/exporting-logs).
    * To improve throughput and to avoid exceeding the
    * [quota limit](/logging/quota-policy) for calls to `entries.write`,
    * you should try to include several log entries in this list,
@@ -211,7 +215,8 @@ public interface WriteLogEntriesRequestOrBuilder extends
    * entries in this list does not matter. Values supplied in this method's
    * `log_name`, `resource`, and `labels` fields are copied into those log
    * entries in this list that do not include values for their corresponding
-   * fields. For more information, see the [LogEntry][google.logging.v2.LogEntry] type.
+   * fields. For more information, see the
+   * [LogEntry][google.logging.v2.LogEntry] type.
    * If the `timestamp` or `insert_id` fields are missing in log entries, then
    * this method supplies the current time or a unique identifier, respectively.
    * The supplied values are chosen so that, among the log entries that did not
@@ -219,8 +224,9 @@ public interface WriteLogEntriesRequestOrBuilder extends
    * the entries later in the list. See the `entries.list` method.
    * Log entries with timestamps that are more than the
    * [logs retention period](/logging/quota-policy) in the past or more than
-   * 24 hours in the future might be discarded. Discarding does not return
-   * an error.
+   * 24 hours in the future will not be available when calling `entries.list`.
+   * However, those log entries can still be exported with
+   * [LogSinks](/logging/docs/api/tasks/exporting-logs).
    * To improve throughput and to avoid exceeding the
    * [quota limit](/logging/quota-policy) for calls to `entries.write`,
    * you should try to include several log entries in this list,
@@ -236,7 +242,8 @@ public interface WriteLogEntriesRequestOrBuilder extends
    * entries in this list does not matter. Values supplied in this method's
    * `log_name`, `resource`, and `labels` fields are copied into those log
    * entries in this list that do not include values for their corresponding
-   * fields. For more information, see the [LogEntry][google.logging.v2.LogEntry] type.
+   * fields. For more information, see the
+   * [LogEntry][google.logging.v2.LogEntry] type.
    * If the `timestamp` or `insert_id` fields are missing in log entries, then
    * this method supplies the current time or a unique identifier, respectively.
    * The supplied values are chosen so that, among the log entries that did not
@@ -244,8 +251,9 @@ public interface WriteLogEntriesRequestOrBuilder extends
    * the entries later in the list. See the `entries.list` method.
    * Log entries with timestamps that are more than the
    * [logs retention period](/logging/quota-policy) in the past or more than
-   * 24 hours in the future might be discarded. Discarding does not return
-   * an error.
+   * 24 hours in the future will not be available when calling `entries.list`.
+   * However, those log entries can still be exported with
+   * [LogSinks](/logging/docs/api/tasks/exporting-logs).
    * To improve throughput and to avoid exceeding the
    * [quota limit](/logging/quota-policy) for calls to `entries.write`,
    * you should try to include several log entries in this list,
@@ -262,7 +270,8 @@ public interface WriteLogEntriesRequestOrBuilder extends
    * entries in this list does not matter. Values supplied in this method's
    * `log_name`, `resource`, and `labels` fields are copied into those log
    * entries in this list that do not include values for their corresponding
-   * fields. For more information, see the [LogEntry][google.logging.v2.LogEntry] type.
+   * fields. For more information, see the
+   * [LogEntry][google.logging.v2.LogEntry] type.
    * If the `timestamp` or `insert_id` fields are missing in log entries, then
    * this method supplies the current time or a unique identifier, respectively.
    * The supplied values are chosen so that, among the log entries that did not
@@ -270,8 +279,9 @@ public interface WriteLogEntriesRequestOrBuilder extends
    * the entries later in the list. See the `entries.list` method.
    * Log entries with timestamps that are more than the
    * [logs retention period](/logging/quota-policy) in the past or more than
-   * 24 hours in the future might be discarded. Discarding does not return
-   * an error.
+   * 24 hours in the future will not be available when calling `entries.list`.
+   * However, those log entries can still be exported with
+   * [LogSinks](/logging/docs/api/tasks/exporting-logs).
    * To improve throughput and to avoid exceeding the
    * [quota limit](/logging/quota-policy) for calls to `entries.write`,
    * you should try to include several log entries in this list,
@@ -295,4 +305,15 @@ public interface WriteLogEntriesRequestOrBuilder extends
    * <code>bool partial_success = 5;</code>
    */
   boolean getPartialSuccess();
+
+  /**
+   * <pre>
+   * Optional. If true, the request should expect normal response, but the
+   * entries won't be persisted nor exported. Useful for checking whether the
+   * logging API endpoints are working properly before sending valuable data.
+   * </pre>
+   *
+   * <code>bool dry_run = 6;</code>
+   */
+  boolean getDryRun();
 }
