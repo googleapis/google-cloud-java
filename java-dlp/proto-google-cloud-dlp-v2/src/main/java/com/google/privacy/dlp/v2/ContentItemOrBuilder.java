@@ -27,7 +27,9 @@ public interface ContentItemOrBuilder extends
 
   /**
    * <pre>
-   * Structured content for inspection.
+   * Structured content for inspection. See
+   * https://cloud.google.com/dlp/docs/inspecting-text#inspecting_a_table to
+   * learn more.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Table table = 4;</code>
@@ -35,7 +37,9 @@ public interface ContentItemOrBuilder extends
   boolean hasTable();
   /**
    * <pre>
-   * Structured content for inspection.
+   * Structured content for inspection. See
+   * https://cloud.google.com/dlp/docs/inspecting-text#inspecting_a_table to
+   * learn more.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Table table = 4;</code>
@@ -43,7 +47,9 @@ public interface ContentItemOrBuilder extends
   com.google.privacy.dlp.v2.Table getTable();
   /**
    * <pre>
-   * Structured content for inspection.
+   * Structured content for inspection. See
+   * https://cloud.google.com/dlp/docs/inspecting-text#inspecting_a_table to
+   * learn more.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Table table = 4;</code>
