@@ -1026,12 +1026,7 @@
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-source-plugin</artifactId>
-            <!--
-              maven-source-plugin-3.0.0 exhibits the zipping behavior on ubuntu that was seen in
-              maven-jar-plugin with version < 2.5 (https://issues.apache.org/jira/browse/MJAR-188).
-              Until that is fixed we should stick to 2.4.
-            -->
-            <version>2.4</version>
+            <version>3.0.1</version>
             <executions>
               <execution>
                 <id>attach-sources</id>
