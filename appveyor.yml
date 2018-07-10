@@ -35,14 +35,15 @@ install:
   - cmd: IF DEFINED API_KEY_SECRET (secure-file\tools\secure-file -decrypt appveyor\api_key.enc -secret %API_KEY_SECRET% -out appveyor\api_key)
   - cmd: IF DEFINED API_KEY_SECRET (SET /P GOOGLE_API_KEY=<%APPVEYOR_BUILD_FOLDER%\appveyor\api_key)
   - cmd: ECHO GOOGLE_API_KEY defined
+  - cmd: SET JAVA_OPTS=-Dhttps.protocols=TLSv1.2
 
 # build and install artifacts
 build_script:
-  - mvn clean install -DskipTests
+  - mvn clean install -DskipTests -Dhttps.protocols=TLSv1.2
 
 # verify artifacts
 test_script:
-  - mvn verify -B -DtrimStackTrace=false -fae --quiet -DskipITs
+  - mvn verify -B -DtrimStackTrace=false -fae --quiet -DskipITs -Dhttps.protocols=TLSv1.2
 
 # preserve dependencies between builds
 cache:
