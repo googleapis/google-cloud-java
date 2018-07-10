@@ -17,7 +17,7 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 import javax.annotation.Generated;
@@ -163,13 +163,16 @@ public final class RouterBgp implements ApiMessage {
 
     public Builder addAllAdvertisedGroups(List<String> advertisedGroups) {
       if (this.advertisedGroups == null) {
-        this.advertisedGroups = new ArrayList<>(advertisedGroups.size());
+        this.advertisedGroups = new LinkedList<>();
       }
       this.advertisedGroups.addAll(advertisedGroups);
       return this;
     }
 
     public Builder addAdvertisedGroups(String advertisedGroups) {
+      if (this.advertisedGroups == null) {
+        this.advertisedGroups = new LinkedList<>();
+      }
       this.advertisedGroups.add(advertisedGroups);
       return this;
     }
@@ -180,13 +183,16 @@ public final class RouterBgp implements ApiMessage {
 
     public Builder addAllAdvertisedIpRanges(List<RouterAdvertisedIpRange> advertisedIpRanges) {
       if (this.advertisedIpRanges == null) {
-        this.advertisedIpRanges = new ArrayList<>(advertisedIpRanges.size());
+        this.advertisedIpRanges = new LinkedList<>();
       }
       this.advertisedIpRanges.addAll(advertisedIpRanges);
       return this;
     }
 
     public Builder addAdvertisedIpRanges(RouterAdvertisedIpRange advertisedIpRanges) {
+      if (this.advertisedIpRanges == null) {
+        this.advertisedIpRanges = new LinkedList<>();
+      }
       this.advertisedIpRanges.add(advertisedIpRanges);
       return this;
     }

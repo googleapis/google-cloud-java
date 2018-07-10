@@ -17,6 +17,7 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 import javax.annotation.Generated;
@@ -127,12 +128,6 @@ public final class UpdateRegionAutoscalerHttpRequest implements ApiMessage {
     return autoscalerResource;
   }
 
-  @Nullable
-  @Override
-  public List<String> getFieldMask() {
-    return fieldMask;
-  }
-
   public String getAccessToken() {
     return access_token;
   }
@@ -147,6 +142,10 @@ public final class UpdateRegionAutoscalerHttpRequest implements ApiMessage {
 
   public String getCallback() {
     return callback;
+  }
+
+  public List<String> getFieldMask() {
+    return fieldMask;
   }
 
   public String getFields() {
@@ -311,8 +310,19 @@ public final class UpdateRegionAutoscalerHttpRequest implements ApiMessage {
       return fieldMask;
     }
 
-    public Builder setFieldMask(List<String> fieldMask) {
-      this.fieldMask = fieldMask;
+    public Builder addAllFieldMask(List<String> fieldMask) {
+      if (this.fieldMask == null) {
+        this.fieldMask = new LinkedList<>();
+      }
+      this.fieldMask.addAll(fieldMask);
+      return this;
+    }
+
+    public Builder addFieldMask(String fieldMask) {
+      if (this.fieldMask == null) {
+        this.fieldMask = new LinkedList<>();
+      }
+      this.fieldMask.add(fieldMask);
       return this;
     }
 
@@ -382,6 +392,10 @@ public final class UpdateRegionAutoscalerHttpRequest implements ApiMessage {
     public UpdateRegionAutoscalerHttpRequest build() {
       String missing = "";
 
+      if (fieldMask == null) {
+        missing += " fieldMask";
+      }
+
       if (region == null) {
         missing += " region";
       }
@@ -410,7 +424,7 @@ public final class UpdateRegionAutoscalerHttpRequest implements ApiMessage {
       newBuilder.setAutoscaler(this.autoscaler);
       newBuilder.setAutoscalerResource(this.autoscalerResource);
       newBuilder.setCallback(this.callback);
-      newBuilder.setFieldMask(this.fieldMask);
+      newBuilder.addAllFieldMask(this.fieldMask);
       newBuilder.setFields(this.fields);
       newBuilder.setKey(this.key);
       newBuilder.setPrettyPrint(this.prettyPrint);

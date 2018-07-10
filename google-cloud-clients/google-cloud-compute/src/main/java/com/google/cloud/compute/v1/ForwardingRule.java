@@ -17,7 +17,7 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 import javax.annotation.Generated;
@@ -470,13 +470,16 @@ public final class ForwardingRule implements ApiMessage {
 
     public Builder addAllPorts(List<String> ports) {
       if (this.ports == null) {
-        this.ports = new ArrayList<>(ports.size());
+        this.ports = new LinkedList<>();
       }
       this.ports.addAll(ports);
       return this;
     }
 
     public Builder addPorts(String ports) {
+      if (this.ports == null) {
+        this.ports = new LinkedList<>();
+      }
       this.ports.add(ports);
       return this;
     }

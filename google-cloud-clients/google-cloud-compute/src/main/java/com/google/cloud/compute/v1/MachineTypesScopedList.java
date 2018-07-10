@@ -17,7 +17,7 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 import javax.annotation.Generated;
@@ -120,13 +120,16 @@ public final class MachineTypesScopedList implements ApiMessage {
 
     public Builder addAllMachineTypes(List<MachineType> machineTypes) {
       if (this.machineTypes == null) {
-        this.machineTypes = new ArrayList<>(machineTypes.size());
+        this.machineTypes = new LinkedList<>();
       }
       this.machineTypes.addAll(machineTypes);
       return this;
     }
 
     public Builder addMachineTypes(MachineType machineTypes) {
+      if (this.machineTypes == null) {
+        this.machineTypes = new LinkedList<>();
+      }
       this.machineTypes.add(machineTypes);
       return this;
     }

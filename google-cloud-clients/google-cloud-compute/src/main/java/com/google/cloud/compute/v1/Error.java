@@ -17,7 +17,7 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 import javax.annotation.Generated;
@@ -105,13 +105,16 @@ public final class Error implements ApiMessage {
 
     public Builder addAllErrors(List<Errors> errors) {
       if (this.errors == null) {
-        this.errors = new ArrayList<>(errors.size());
+        this.errors = new LinkedList<>();
       }
       this.errors.addAll(errors);
       return this;
     }
 
     public Builder addErrors(Errors errors) {
+      if (this.errors == null) {
+        this.errors = new LinkedList<>();
+      }
       this.errors.add(errors);
       return this;
     }

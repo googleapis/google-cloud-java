@@ -17,7 +17,7 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 import javax.annotation.Generated;
@@ -105,13 +105,16 @@ public final class SslPoliciesListAvailableFeaturesResponse implements ApiMessag
 
     public Builder addAllFeatures(List<String> features) {
       if (this.features == null) {
-        this.features = new ArrayList<>(features.size());
+        this.features = new LinkedList<>();
       }
       this.features.addAll(features);
       return this;
     }
 
     public Builder addFeatures(String features) {
+      if (this.features == null) {
+        this.features = new LinkedList<>();
+      }
       this.features.add(features);
       return this;
     }

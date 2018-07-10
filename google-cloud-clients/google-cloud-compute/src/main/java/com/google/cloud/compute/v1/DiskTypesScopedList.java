@@ -17,7 +17,7 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 import javax.annotation.Generated;
@@ -120,13 +120,16 @@ public final class DiskTypesScopedList implements ApiMessage {
 
     public Builder addAllDiskTypes(List<DiskType> diskTypes) {
       if (this.diskTypes == null) {
-        this.diskTypes = new ArrayList<>(diskTypes.size());
+        this.diskTypes = new LinkedList<>();
       }
       this.diskTypes.addAll(diskTypes);
       return this;
     }
 
     public Builder addDiskTypes(DiskType diskTypes) {
+      if (this.diskTypes == null) {
+        this.diskTypes = new LinkedList<>();
+      }
       this.diskTypes.add(diskTypes);
       return this;
     }

@@ -17,7 +17,7 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 import javax.annotation.Generated;
@@ -275,13 +275,16 @@ public final class Router implements ApiMessage {
 
     public Builder addAllBgpPeers(List<RouterBgpPeer> bgpPeers) {
       if (this.bgpPeers == null) {
-        this.bgpPeers = new ArrayList<>(bgpPeers.size());
+        this.bgpPeers = new LinkedList<>();
       }
       this.bgpPeers.addAll(bgpPeers);
       return this;
     }
 
     public Builder addBgpPeers(RouterBgpPeer bgpPeers) {
+      if (this.bgpPeers == null) {
+        this.bgpPeers = new LinkedList<>();
+      }
       this.bgpPeers.add(bgpPeers);
       return this;
     }
@@ -319,13 +322,16 @@ public final class Router implements ApiMessage {
 
     public Builder addAllInterfaces(List<RouterInterface> interfaces) {
       if (this.interfaces == null) {
-        this.interfaces = new ArrayList<>(interfaces.size());
+        this.interfaces = new LinkedList<>();
       }
       this.interfaces.addAll(interfaces);
       return this;
     }
 
     public Builder addInterfaces(RouterInterface interfaces) {
+      if (this.interfaces == null) {
+        this.interfaces = new LinkedList<>();
+      }
       this.interfaces.add(interfaces);
       return this;
     }

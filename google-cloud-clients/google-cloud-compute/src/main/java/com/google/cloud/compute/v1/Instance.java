@@ -17,7 +17,7 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
@@ -520,13 +520,16 @@ public final class Instance implements ApiMessage {
 
     public Builder addAllDisks(List<AttachedDisk> disks) {
       if (this.disks == null) {
-        this.disks = new ArrayList<>(disks.size());
+        this.disks = new LinkedList<>();
       }
       this.disks.addAll(disks);
       return this;
     }
 
     public Builder addDisks(AttachedDisk disks) {
+      if (this.disks == null) {
+        this.disks = new LinkedList<>();
+      }
       this.disks.add(disks);
       return this;
     }
@@ -537,13 +540,16 @@ public final class Instance implements ApiMessage {
 
     public Builder addAllGuestAccelerators(List<AcceleratorConfig> guestAccelerators) {
       if (this.guestAccelerators == null) {
-        this.guestAccelerators = new ArrayList<>(guestAccelerators.size());
+        this.guestAccelerators = new LinkedList<>();
       }
       this.guestAccelerators.addAll(guestAccelerators);
       return this;
     }
 
     public Builder addGuestAccelerators(AcceleratorConfig guestAccelerators) {
+      if (this.guestAccelerators == null) {
+        this.guestAccelerators = new LinkedList<>();
+      }
       this.guestAccelerators.add(guestAccelerators);
       return this;
     }
@@ -626,13 +632,16 @@ public final class Instance implements ApiMessage {
 
     public Builder addAllNetworkInterfaces(List<NetworkInterface> networkInterfaces) {
       if (this.networkInterfaces == null) {
-        this.networkInterfaces = new ArrayList<>(networkInterfaces.size());
+        this.networkInterfaces = new LinkedList<>();
       }
       this.networkInterfaces.addAll(networkInterfaces);
       return this;
     }
 
     public Builder addNetworkInterfaces(NetworkInterface networkInterfaces) {
+      if (this.networkInterfaces == null) {
+        this.networkInterfaces = new LinkedList<>();
+      }
       this.networkInterfaces.add(networkInterfaces);
       return this;
     }
@@ -661,13 +670,16 @@ public final class Instance implements ApiMessage {
 
     public Builder addAllServiceAccounts(List<ServiceAccount> serviceAccounts) {
       if (this.serviceAccounts == null) {
-        this.serviceAccounts = new ArrayList<>(serviceAccounts.size());
+        this.serviceAccounts = new LinkedList<>();
       }
       this.serviceAccounts.addAll(serviceAccounts);
       return this;
     }
 
     public Builder addServiceAccounts(ServiceAccount serviceAccounts) {
+      if (this.serviceAccounts == null) {
+        this.serviceAccounts = new LinkedList<>();
+      }
       this.serviceAccounts.add(serviceAccounts);
       return this;
     }

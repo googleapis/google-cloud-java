@@ -36,6 +36,7 @@ import com.google.cloud.compute.v1.stub.InterconnectStubSettings;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import org.junit.After;
@@ -193,6 +194,7 @@ public class InterconnectClientTest {
     String location = "location1901043637";
     Integer provisionedLinkCount = 1199724171;
     String id = "id3355";
+    String state = "state109757585";
     String googleIpAddress = "googleIpAddress1516847778";
     String nocContactEmail = "nocContactEmail1087814656";
     Interconnect expectedResponse =
@@ -213,6 +215,7 @@ public class InterconnectClientTest {
             .setLocation(location)
             .setProvisionedLinkCount(provisionedLinkCount)
             .setId(id)
+            .setState(state)
             .setGoogleIpAddress(googleIpAddress)
             .setNocContactEmail(nocContactEmail)
             .build();
@@ -461,8 +464,10 @@ public class InterconnectClientTest {
     ProjectGlobalInterconnectName interconnect =
         ProjectGlobalInterconnectName.of("[PROJECT]", "[INTERCONNECT]");
     Interconnect interconnectResource = Interconnect.newBuilder().build();
+    List<String> fieldMask = new ArrayList<>();
 
-    Operation actualResponse = client.patchInterconnect(interconnect, interconnectResource);
+    Operation actualResponse =
+        client.patchInterconnect(interconnect, interconnectResource, fieldMask);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -492,8 +497,9 @@ public class InterconnectClientTest {
       ProjectGlobalInterconnectName interconnect =
           ProjectGlobalInterconnectName.of("[PROJECT]", "[INTERCONNECT]");
       Interconnect interconnectResource = Interconnect.newBuilder().build();
+      List<String> fieldMask = new ArrayList<>();
 
-      client.patchInterconnect(interconnect, interconnectResource);
+      client.patchInterconnect(interconnect, interconnectResource, fieldMask);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

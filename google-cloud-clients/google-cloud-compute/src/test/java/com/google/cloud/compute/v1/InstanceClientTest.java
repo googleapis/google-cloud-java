@@ -60,6 +60,7 @@ import com.google.cloud.compute.v1.stub.InstanceStubSettings;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -2470,9 +2471,11 @@ public class InstanceClientTest {
         ProjectZoneInstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
     String networkInterface = "networkInterface902258792";
     NetworkInterface networkInterfaceResource = NetworkInterface.newBuilder().build();
+    List<String> fieldMask = new ArrayList<>();
 
     Operation actualResponse =
-        client.updateNetworkInterfaceInstance(instance, networkInterface, networkInterfaceResource);
+        client.updateNetworkInterfaceInstance(
+            instance, networkInterface, networkInterfaceResource, fieldMask);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -2503,8 +2506,10 @@ public class InstanceClientTest {
           ProjectZoneInstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
       String networkInterface = "networkInterface902258792";
       NetworkInterface networkInterfaceResource = NetworkInterface.newBuilder().build();
+      List<String> fieldMask = new ArrayList<>();
 
-      client.updateNetworkInterfaceInstance(instance, networkInterface, networkInterfaceResource);
+      client.updateNetworkInterfaceInstance(
+          instance, networkInterface, networkInterfaceResource, fieldMask);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

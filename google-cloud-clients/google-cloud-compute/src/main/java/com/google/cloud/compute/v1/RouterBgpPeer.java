@@ -17,7 +17,7 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 import javax.annotation.Generated;
@@ -32,6 +32,7 @@ public final class RouterBgpPeer implements ApiMessage {
   private final Integer advertisedRoutePriority;
   private final String interfaceName;
   private final String ipAddress;
+  private final String managementType;
   private final String name;
   private final Integer peerAsn;
   private final String peerIpAddress;
@@ -43,6 +44,7 @@ public final class RouterBgpPeer implements ApiMessage {
     this.advertisedRoutePriority = null;
     this.interfaceName = null;
     this.ipAddress = null;
+    this.managementType = null;
     this.name = null;
     this.peerAsn = null;
     this.peerIpAddress = null;
@@ -55,6 +57,7 @@ public final class RouterBgpPeer implements ApiMessage {
       Integer advertisedRoutePriority,
       String interfaceName,
       String ipAddress,
+      String managementType,
       String name,
       Integer peerAsn,
       String peerIpAddress) {
@@ -64,6 +67,7 @@ public final class RouterBgpPeer implements ApiMessage {
     this.advertisedRoutePriority = advertisedRoutePriority;
     this.interfaceName = interfaceName;
     this.ipAddress = ipAddress;
+    this.managementType = managementType;
     this.name = name;
     this.peerAsn = peerAsn;
     this.peerIpAddress = peerIpAddress;
@@ -88,6 +92,9 @@ public final class RouterBgpPeer implements ApiMessage {
     }
     if (fieldName.equals("ipAddress")) {
       return ipAddress;
+    }
+    if (fieldName.equals("managementType")) {
+      return managementType;
     }
     if (fieldName.equals("name")) {
       return name;
@@ -137,6 +144,10 @@ public final class RouterBgpPeer implements ApiMessage {
     return ipAddress;
   }
 
+  public String getManagementType() {
+    return managementType;
+  }
+
   public String getName() {
     return name;
   }
@@ -178,6 +189,7 @@ public final class RouterBgpPeer implements ApiMessage {
     private Integer advertisedRoutePriority;
     private String interfaceName;
     private String ipAddress;
+    private String managementType;
     private String name;
     private Integer peerAsn;
     private String peerIpAddress;
@@ -204,6 +216,9 @@ public final class RouterBgpPeer implements ApiMessage {
       if (other.getIpAddress() != null) {
         this.ipAddress = other.ipAddress;
       }
+      if (other.getManagementType() != null) {
+        this.managementType = other.managementType;
+      }
       if (other.getName() != null) {
         this.name = other.name;
       }
@@ -223,6 +238,7 @@ public final class RouterBgpPeer implements ApiMessage {
       this.advertisedRoutePriority = source.advertisedRoutePriority;
       this.interfaceName = source.interfaceName;
       this.ipAddress = source.ipAddress;
+      this.managementType = source.managementType;
       this.name = source.name;
       this.peerAsn = source.peerAsn;
       this.peerIpAddress = source.peerIpAddress;
@@ -243,13 +259,16 @@ public final class RouterBgpPeer implements ApiMessage {
 
     public Builder addAllAdvertisedGroups(List<String> advertisedGroups) {
       if (this.advertisedGroups == null) {
-        this.advertisedGroups = new ArrayList<>(advertisedGroups.size());
+        this.advertisedGroups = new LinkedList<>();
       }
       this.advertisedGroups.addAll(advertisedGroups);
       return this;
     }
 
     public Builder addAdvertisedGroups(String advertisedGroups) {
+      if (this.advertisedGroups == null) {
+        this.advertisedGroups = new LinkedList<>();
+      }
       this.advertisedGroups.add(advertisedGroups);
       return this;
     }
@@ -260,13 +279,16 @@ public final class RouterBgpPeer implements ApiMessage {
 
     public Builder addAllAdvertisedIpRanges(List<RouterAdvertisedIpRange> advertisedIpRanges) {
       if (this.advertisedIpRanges == null) {
-        this.advertisedIpRanges = new ArrayList<>(advertisedIpRanges.size());
+        this.advertisedIpRanges = new LinkedList<>();
       }
       this.advertisedIpRanges.addAll(advertisedIpRanges);
       return this;
     }
 
     public Builder addAdvertisedIpRanges(RouterAdvertisedIpRange advertisedIpRanges) {
+      if (this.advertisedIpRanges == null) {
+        this.advertisedIpRanges = new LinkedList<>();
+      }
       this.advertisedIpRanges.add(advertisedIpRanges);
       return this;
     }
@@ -295,6 +317,15 @@ public final class RouterBgpPeer implements ApiMessage {
 
     public Builder setIpAddress(String ipAddress) {
       this.ipAddress = ipAddress;
+      return this;
+    }
+
+    public String getManagementType() {
+      return managementType;
+    }
+
+    public Builder setManagementType(String managementType) {
+      this.managementType = managementType;
       return this;
     }
 
@@ -334,6 +365,7 @@ public final class RouterBgpPeer implements ApiMessage {
           advertisedRoutePriority,
           interfaceName,
           ipAddress,
+          managementType,
           name,
           peerAsn,
           peerIpAddress);
@@ -347,6 +379,7 @@ public final class RouterBgpPeer implements ApiMessage {
       newBuilder.setAdvertisedRoutePriority(this.advertisedRoutePriority);
       newBuilder.setInterfaceName(this.interfaceName);
       newBuilder.setIpAddress(this.ipAddress);
+      newBuilder.setManagementType(this.managementType);
       newBuilder.setName(this.name);
       newBuilder.setPeerAsn(this.peerAsn);
       newBuilder.setPeerIpAddress(this.peerIpAddress);
@@ -375,6 +408,9 @@ public final class RouterBgpPeer implements ApiMessage {
         + "ipAddress="
         + ipAddress
         + ", "
+        + "managementType="
+        + managementType
+        + ", "
         + "name="
         + name
         + ", "
@@ -399,6 +435,7 @@ public final class RouterBgpPeer implements ApiMessage {
           && Objects.equals(this.advertisedRoutePriority, that.getAdvertisedRoutePriority())
           && Objects.equals(this.interfaceName, that.getInterfaceName())
           && Objects.equals(this.ipAddress, that.getIpAddress())
+          && Objects.equals(this.managementType, that.getManagementType())
           && Objects.equals(this.name, that.getName())
           && Objects.equals(this.peerAsn, that.getPeerAsn())
           && Objects.equals(this.peerIpAddress, that.getPeerIpAddress());
@@ -415,6 +452,7 @@ public final class RouterBgpPeer implements ApiMessage {
         advertisedRoutePriority,
         interfaceName,
         ipAddress,
+        managementType,
         name,
         peerAsn,
         peerIpAddress);

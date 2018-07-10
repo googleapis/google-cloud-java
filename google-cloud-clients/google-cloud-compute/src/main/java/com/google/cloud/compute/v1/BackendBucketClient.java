@@ -618,23 +618,28 @@ public class BackendBucketClient implements BackgroundResource {
    * try (BackendBucketClient backendBucketClient = BackendBucketClient.create()) {
    *   ProjectGlobalBackendBucketName backendBucket = ProjectGlobalBackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
    *   BackendBucket backendBucketResource = BackendBucket.newBuilder().build();
-   *   Operation response = backendBucketClient.patchBackendBucket(backendBucket, backendBucketResource);
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
+   *   Operation response = backendBucketClient.patchBackendBucket(backendBucket, backendBucketResource, fieldMask);
    * }
    * </code></pre>
    *
    * @param backendBucket Name of the BackendBucket resource to patch.
    * @param backendBucketResource A BackendBucket resource. This resource defines a Cloud Storage
    *     bucket.
+   * @param fieldMask
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation patchBackendBucket(
-      ProjectGlobalBackendBucketName backendBucket, BackendBucket backendBucketResource) {
+      ProjectGlobalBackendBucketName backendBucket,
+      BackendBucket backendBucketResource,
+      List<String> fieldMask) {
 
     PatchBackendBucketHttpRequest request =
         PatchBackendBucketHttpRequest.newBuilder()
             .setBackendBucket(backendBucket == null ? null : backendBucket.toString())
             .setBackendBucketResource(backendBucketResource)
+            .addAllFieldMask(fieldMask)
             .build();
     return patchBackendBucket(request);
   }
@@ -650,23 +655,26 @@ public class BackendBucketClient implements BackgroundResource {
    * try (BackendBucketClient backendBucketClient = BackendBucketClient.create()) {
    *   ProjectGlobalBackendBucketName backendBucket = ProjectGlobalBackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
    *   BackendBucket backendBucketResource = BackendBucket.newBuilder().build();
-   *   Operation response = backendBucketClient.patchBackendBucket(backendBucket.toString(), backendBucketResource);
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
+   *   Operation response = backendBucketClient.patchBackendBucket(backendBucket.toString(), backendBucketResource, fieldMask);
    * }
    * </code></pre>
    *
    * @param backendBucket Name of the BackendBucket resource to patch.
    * @param backendBucketResource A BackendBucket resource. This resource defines a Cloud Storage
    *     bucket.
+   * @param fieldMask
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation patchBackendBucket(
-      String backendBucket, BackendBucket backendBucketResource) {
+      String backendBucket, BackendBucket backendBucketResource, List<String> fieldMask) {
 
     PatchBackendBucketHttpRequest request =
         PatchBackendBucketHttpRequest.newBuilder()
             .setBackendBucket(backendBucket)
             .setBackendBucketResource(backendBucketResource)
+            .addAllFieldMask(fieldMask)
             .build();
     return patchBackendBucket(request);
   }
@@ -682,9 +690,11 @@ public class BackendBucketClient implements BackgroundResource {
    * try (BackendBucketClient backendBucketClient = BackendBucketClient.create()) {
    *   ProjectGlobalBackendBucketName backendBucket = ProjectGlobalBackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
    *   BackendBucket backendBucketResource = BackendBucket.newBuilder().build();
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
    *   PatchBackendBucketHttpRequest request = PatchBackendBucketHttpRequest.newBuilder()
    *     .setBackendBucket(backendBucket.toString())
    *     .setBackendBucketResource(backendBucketResource)
+   *     .addAllFieldMask(fieldMask)
    *     .build();
    *   Operation response = backendBucketClient.patchBackendBucket(request);
    * }
@@ -709,9 +719,11 @@ public class BackendBucketClient implements BackgroundResource {
    * try (BackendBucketClient backendBucketClient = BackendBucketClient.create()) {
    *   ProjectGlobalBackendBucketName backendBucket = ProjectGlobalBackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
    *   BackendBucket backendBucketResource = BackendBucket.newBuilder().build();
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
    *   PatchBackendBucketHttpRequest request = PatchBackendBucketHttpRequest.newBuilder()
    *     .setBackendBucket(backendBucket.toString())
    *     .setBackendBucketResource(backendBucketResource)
+   *     .addAllFieldMask(fieldMask)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = backendBucketClient.patchBackendBucketCallable().futureCall(request);
    *   // Do something
@@ -735,23 +747,28 @@ public class BackendBucketClient implements BackgroundResource {
    * try (BackendBucketClient backendBucketClient = BackendBucketClient.create()) {
    *   ProjectGlobalBackendBucketName backendBucket = ProjectGlobalBackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
    *   BackendBucket backendBucketResource = BackendBucket.newBuilder().build();
-   *   Operation response = backendBucketClient.updateBackendBucket(backendBucket, backendBucketResource);
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
+   *   Operation response = backendBucketClient.updateBackendBucket(backendBucket, backendBucketResource, fieldMask);
    * }
    * </code></pre>
    *
    * @param backendBucket Name of the BackendBucket resource to update.
    * @param backendBucketResource A BackendBucket resource. This resource defines a Cloud Storage
    *     bucket.
+   * @param fieldMask
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation updateBackendBucket(
-      ProjectGlobalBackendBucketName backendBucket, BackendBucket backendBucketResource) {
+      ProjectGlobalBackendBucketName backendBucket,
+      BackendBucket backendBucketResource,
+      List<String> fieldMask) {
 
     UpdateBackendBucketHttpRequest request =
         UpdateBackendBucketHttpRequest.newBuilder()
             .setBackendBucket(backendBucket == null ? null : backendBucket.toString())
             .setBackendBucketResource(backendBucketResource)
+            .addAllFieldMask(fieldMask)
             .build();
     return updateBackendBucket(request);
   }
@@ -766,23 +783,26 @@ public class BackendBucketClient implements BackgroundResource {
    * try (BackendBucketClient backendBucketClient = BackendBucketClient.create()) {
    *   ProjectGlobalBackendBucketName backendBucket = ProjectGlobalBackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
    *   BackendBucket backendBucketResource = BackendBucket.newBuilder().build();
-   *   Operation response = backendBucketClient.updateBackendBucket(backendBucket.toString(), backendBucketResource);
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
+   *   Operation response = backendBucketClient.updateBackendBucket(backendBucket.toString(), backendBucketResource, fieldMask);
    * }
    * </code></pre>
    *
    * @param backendBucket Name of the BackendBucket resource to update.
    * @param backendBucketResource A BackendBucket resource. This resource defines a Cloud Storage
    *     bucket.
+   * @param fieldMask
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation updateBackendBucket(
-      String backendBucket, BackendBucket backendBucketResource) {
+      String backendBucket, BackendBucket backendBucketResource, List<String> fieldMask) {
 
     UpdateBackendBucketHttpRequest request =
         UpdateBackendBucketHttpRequest.newBuilder()
             .setBackendBucket(backendBucket)
             .setBackendBucketResource(backendBucketResource)
+            .addAllFieldMask(fieldMask)
             .build();
     return updateBackendBucket(request);
   }
@@ -797,9 +817,11 @@ public class BackendBucketClient implements BackgroundResource {
    * try (BackendBucketClient backendBucketClient = BackendBucketClient.create()) {
    *   ProjectGlobalBackendBucketName backendBucket = ProjectGlobalBackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
    *   BackendBucket backendBucketResource = BackendBucket.newBuilder().build();
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
    *   UpdateBackendBucketHttpRequest request = UpdateBackendBucketHttpRequest.newBuilder()
    *     .setBackendBucket(backendBucket.toString())
    *     .setBackendBucketResource(backendBucketResource)
+   *     .addAllFieldMask(fieldMask)
    *     .build();
    *   Operation response = backendBucketClient.updateBackendBucket(request);
    * }
@@ -823,9 +845,11 @@ public class BackendBucketClient implements BackgroundResource {
    * try (BackendBucketClient backendBucketClient = BackendBucketClient.create()) {
    *   ProjectGlobalBackendBucketName backendBucket = ProjectGlobalBackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
    *   BackendBucket backendBucketResource = BackendBucket.newBuilder().build();
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
    *   UpdateBackendBucketHttpRequest request = UpdateBackendBucketHttpRequest.newBuilder()
    *     .setBackendBucket(backendBucket.toString())
    *     .setBackendBucketResource(backendBucketResource)
+   *     .addAllFieldMask(fieldMask)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = backendBucketClient.updateBackendBucketCallable().futureCall(request);
    *   // Do something

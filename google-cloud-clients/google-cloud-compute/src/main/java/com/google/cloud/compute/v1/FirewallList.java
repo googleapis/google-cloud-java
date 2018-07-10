@@ -17,7 +17,7 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 import javax.annotation.Generated;
@@ -195,13 +195,16 @@ public final class FirewallList implements ApiMessage {
 
     public Builder addAllItems(List<Firewall> items) {
       if (this.items == null) {
-        this.items = new ArrayList<>(items.size());
+        this.items = new LinkedList<>();
       }
       this.items.addAll(items);
       return this;
     }
 
     public Builder addItems(Firewall items) {
+      if (this.items == null) {
+        this.items = new LinkedList<>();
+      }
       this.items.add(items);
       return this;
     }

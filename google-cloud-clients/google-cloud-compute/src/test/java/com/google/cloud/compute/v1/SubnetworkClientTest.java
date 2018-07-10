@@ -40,6 +40,7 @@ import com.google.cloud.compute.v1.stub.SubnetworkStubSettings;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -618,8 +619,9 @@ public class SubnetworkClientTest {
     ProjectRegionSubnetworkName subnetwork =
         ProjectRegionSubnetworkName.of("[PROJECT]", "[REGION]", "[SUBNETWORK]");
     Subnetwork subnetworkResource = Subnetwork.newBuilder().build();
+    List<String> fieldMask = new ArrayList<>();
 
-    Operation actualResponse = client.patchSubnetwork(subnetwork, subnetworkResource);
+    Operation actualResponse = client.patchSubnetwork(subnetwork, subnetworkResource, fieldMask);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -649,8 +651,9 @@ public class SubnetworkClientTest {
       ProjectRegionSubnetworkName subnetwork =
           ProjectRegionSubnetworkName.of("[PROJECT]", "[REGION]", "[SUBNETWORK]");
       Subnetwork subnetworkResource = Subnetwork.newBuilder().build();
+      List<String> fieldMask = new ArrayList<>();
 
-      client.patchSubnetwork(subnetwork, subnetworkResource);
+      client.patchSubnetwork(subnetwork, subnetworkResource, fieldMask);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

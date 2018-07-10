@@ -17,7 +17,7 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 import javax.annotation.Generated;
@@ -422,13 +422,16 @@ public final class Subnetwork implements ApiMessage {
 
     public Builder addAllSecondaryIpRanges(List<SubnetworkSecondaryRange> secondaryIpRanges) {
       if (this.secondaryIpRanges == null) {
-        this.secondaryIpRanges = new ArrayList<>(secondaryIpRanges.size());
+        this.secondaryIpRanges = new LinkedList<>();
       }
       this.secondaryIpRanges.addAll(secondaryIpRanges);
       return this;
     }
 
     public Builder addSecondaryIpRanges(SubnetworkSecondaryRange secondaryIpRanges) {
+      if (this.secondaryIpRanges == null) {
+        this.secondaryIpRanges = new LinkedList<>();
+      }
       this.secondaryIpRanges.add(secondaryIpRanges);
       return this;
     }

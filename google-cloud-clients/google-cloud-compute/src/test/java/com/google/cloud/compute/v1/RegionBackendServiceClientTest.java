@@ -38,6 +38,7 @@ import com.google.cloud.compute.v1.stub.RegionBackendServiceStubSettings;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import org.junit.After;
@@ -516,9 +517,10 @@ public class RegionBackendServiceClientTest {
     ProjectRegionBackendServiceName backendService =
         ProjectRegionBackendServiceName.of("[PROJECT]", "[REGION]", "[BACKEND_SERVICE]");
     BackendService backendServiceResource = BackendService.newBuilder().build();
+    List<String> fieldMask = new ArrayList<>();
 
     Operation actualResponse =
-        client.patchRegionBackendService(backendService, backendServiceResource);
+        client.patchRegionBackendService(backendService, backendServiceResource, fieldMask);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -548,8 +550,9 @@ public class RegionBackendServiceClientTest {
       ProjectRegionBackendServiceName backendService =
           ProjectRegionBackendServiceName.of("[PROJECT]", "[REGION]", "[BACKEND_SERVICE]");
       BackendService backendServiceResource = BackendService.newBuilder().build();
+      List<String> fieldMask = new ArrayList<>();
 
-      client.patchRegionBackendService(backendService, backendServiceResource);
+      client.patchRegionBackendService(backendService, backendServiceResource, fieldMask);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -609,9 +612,10 @@ public class RegionBackendServiceClientTest {
     ProjectRegionBackendServiceName backendService =
         ProjectRegionBackendServiceName.of("[PROJECT]", "[REGION]", "[BACKEND_SERVICE]");
     BackendService backendServiceResource = BackendService.newBuilder().build();
+    List<String> fieldMask = new ArrayList<>();
 
     Operation actualResponse =
-        client.updateRegionBackendService(backendService, backendServiceResource);
+        client.updateRegionBackendService(backendService, backendServiceResource, fieldMask);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -641,8 +645,9 @@ public class RegionBackendServiceClientTest {
       ProjectRegionBackendServiceName backendService =
           ProjectRegionBackendServiceName.of("[PROJECT]", "[REGION]", "[BACKEND_SERVICE]");
       BackendService backendServiceResource = BackendService.newBuilder().build();
+      List<String> fieldMask = new ArrayList<>();
 
-      client.updateRegionBackendService(backendService, backendServiceResource);
+      client.updateRegionBackendService(backendService, backendServiceResource, fieldMask);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

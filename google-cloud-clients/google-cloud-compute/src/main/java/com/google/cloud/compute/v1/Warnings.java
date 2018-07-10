@@ -17,7 +17,7 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 import javax.annotation.Generated;
@@ -144,13 +144,16 @@ public final class Warnings implements ApiMessage {
 
     public Builder addAllData(List<Data> data) {
       if (this.data == null) {
-        this.data = new ArrayList<>(data.size());
+        this.data = new LinkedList<>();
       }
       this.data.addAll(data);
       return this;
     }
 
     public Builder addData(Data data) {
+      if (this.data == null) {
+        this.data = new LinkedList<>();
+      }
       this.data.add(data);
       return this;
     }

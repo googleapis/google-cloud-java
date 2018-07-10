@@ -17,7 +17,7 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 import javax.annotation.Generated;
@@ -334,13 +334,16 @@ public final class AttachedDisk implements ApiMessage {
 
     public Builder addAllGuestOsFeatures(List<GuestOsFeature> guestOsFeatures) {
       if (this.guestOsFeatures == null) {
-        this.guestOsFeatures = new ArrayList<>(guestOsFeatures.size());
+        this.guestOsFeatures = new LinkedList<>();
       }
       this.guestOsFeatures.addAll(guestOsFeatures);
       return this;
     }
 
     public Builder addGuestOsFeatures(GuestOsFeature guestOsFeatures) {
+      if (this.guestOsFeatures == null) {
+        this.guestOsFeatures = new LinkedList<>();
+      }
       this.guestOsFeatures.add(guestOsFeatures);
       return this;
     }
@@ -387,13 +390,16 @@ public final class AttachedDisk implements ApiMessage {
 
     public Builder addAllLicenses(List<String> licenses) {
       if (this.licenses == null) {
-        this.licenses = new ArrayList<>(licenses.size());
+        this.licenses = new LinkedList<>();
       }
       this.licenses.addAll(licenses);
       return this;
     }
 
     public Builder addLicenses(String licenses) {
+      if (this.licenses == null) {
+        this.licenses = new LinkedList<>();
+      }
       this.licenses.add(licenses);
       return this;
     }

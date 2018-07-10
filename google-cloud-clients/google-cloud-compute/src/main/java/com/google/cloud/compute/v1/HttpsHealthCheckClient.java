@@ -625,24 +625,28 @@ public class HttpsHealthCheckClient implements BackgroundResource {
    * try (HttpsHealthCheckClient httpsHealthCheckClient = HttpsHealthCheckClient.create()) {
    *   ProjectGlobalHttpsHealthCheckName httpsHealthCheck = ProjectGlobalHttpsHealthCheckName.of("[PROJECT]", "[HTTPS_HEALTH_CHECK]");
    *   HttpsHealthCheck2 httpsHealthCheckResource = HttpsHealthCheck2.newBuilder().build();
-   *   Operation response = httpsHealthCheckClient.patchHttpsHealthCheck(httpsHealthCheck, httpsHealthCheckResource);
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
+   *   Operation response = httpsHealthCheckClient.patchHttpsHealthCheck(httpsHealthCheck, httpsHealthCheckResource, fieldMask);
    * }
    * </code></pre>
    *
    * @param httpsHealthCheck Name of the HttpsHealthCheck resource to patch.
    * @param httpsHealthCheckResource An HttpsHealthCheck resource. This resource defines a template
    *     for how individual instances should be checked for health, via HTTPS.
+   * @param fieldMask
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation patchHttpsHealthCheck(
       ProjectGlobalHttpsHealthCheckName httpsHealthCheck,
-      HttpsHealthCheck2 httpsHealthCheckResource) {
+      HttpsHealthCheck2 httpsHealthCheckResource,
+      List<String> fieldMask) {
 
     PatchHttpsHealthCheckHttpRequest request =
         PatchHttpsHealthCheckHttpRequest.newBuilder()
             .setHttpsHealthCheck(httpsHealthCheck == null ? null : httpsHealthCheck.toString())
             .setHttpsHealthCheckResource(httpsHealthCheckResource)
+            .addAllFieldMask(fieldMask)
             .build();
     return patchHttpsHealthCheck(request);
   }
@@ -659,23 +663,26 @@ public class HttpsHealthCheckClient implements BackgroundResource {
    * try (HttpsHealthCheckClient httpsHealthCheckClient = HttpsHealthCheckClient.create()) {
    *   ProjectGlobalHttpsHealthCheckName httpsHealthCheck = ProjectGlobalHttpsHealthCheckName.of("[PROJECT]", "[HTTPS_HEALTH_CHECK]");
    *   HttpsHealthCheck2 httpsHealthCheckResource = HttpsHealthCheck2.newBuilder().build();
-   *   Operation response = httpsHealthCheckClient.patchHttpsHealthCheck(httpsHealthCheck.toString(), httpsHealthCheckResource);
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
+   *   Operation response = httpsHealthCheckClient.patchHttpsHealthCheck(httpsHealthCheck.toString(), httpsHealthCheckResource, fieldMask);
    * }
    * </code></pre>
    *
    * @param httpsHealthCheck Name of the HttpsHealthCheck resource to patch.
    * @param httpsHealthCheckResource An HttpsHealthCheck resource. This resource defines a template
    *     for how individual instances should be checked for health, via HTTPS.
+   * @param fieldMask
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation patchHttpsHealthCheck(
-      String httpsHealthCheck, HttpsHealthCheck2 httpsHealthCheckResource) {
+      String httpsHealthCheck, HttpsHealthCheck2 httpsHealthCheckResource, List<String> fieldMask) {
 
     PatchHttpsHealthCheckHttpRequest request =
         PatchHttpsHealthCheckHttpRequest.newBuilder()
             .setHttpsHealthCheck(httpsHealthCheck)
             .setHttpsHealthCheckResource(httpsHealthCheckResource)
+            .addAllFieldMask(fieldMask)
             .build();
     return patchHttpsHealthCheck(request);
   }
@@ -692,9 +699,11 @@ public class HttpsHealthCheckClient implements BackgroundResource {
    * try (HttpsHealthCheckClient httpsHealthCheckClient = HttpsHealthCheckClient.create()) {
    *   ProjectGlobalHttpsHealthCheckName httpsHealthCheck = ProjectGlobalHttpsHealthCheckName.of("[PROJECT]", "[HTTPS_HEALTH_CHECK]");
    *   HttpsHealthCheck2 httpsHealthCheckResource = HttpsHealthCheck2.newBuilder().build();
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
    *   PatchHttpsHealthCheckHttpRequest request = PatchHttpsHealthCheckHttpRequest.newBuilder()
    *     .setHttpsHealthCheck(httpsHealthCheck.toString())
    *     .setHttpsHealthCheckResource(httpsHealthCheckResource)
+   *     .addAllFieldMask(fieldMask)
    *     .build();
    *   Operation response = httpsHealthCheckClient.patchHttpsHealthCheck(request);
    * }
@@ -720,9 +729,11 @@ public class HttpsHealthCheckClient implements BackgroundResource {
    * try (HttpsHealthCheckClient httpsHealthCheckClient = HttpsHealthCheckClient.create()) {
    *   ProjectGlobalHttpsHealthCheckName httpsHealthCheck = ProjectGlobalHttpsHealthCheckName.of("[PROJECT]", "[HTTPS_HEALTH_CHECK]");
    *   HttpsHealthCheck2 httpsHealthCheckResource = HttpsHealthCheck2.newBuilder().build();
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
    *   PatchHttpsHealthCheckHttpRequest request = PatchHttpsHealthCheckHttpRequest.newBuilder()
    *     .setHttpsHealthCheck(httpsHealthCheck.toString())
    *     .setHttpsHealthCheckResource(httpsHealthCheckResource)
+   *     .addAllFieldMask(fieldMask)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = httpsHealthCheckClient.patchHttpsHealthCheckCallable().futureCall(request);
    *   // Do something
@@ -747,24 +758,28 @@ public class HttpsHealthCheckClient implements BackgroundResource {
    * try (HttpsHealthCheckClient httpsHealthCheckClient = HttpsHealthCheckClient.create()) {
    *   ProjectGlobalHttpsHealthCheckName httpsHealthCheck = ProjectGlobalHttpsHealthCheckName.of("[PROJECT]", "[HTTPS_HEALTH_CHECK]");
    *   HttpsHealthCheck2 httpsHealthCheckResource = HttpsHealthCheck2.newBuilder().build();
-   *   Operation response = httpsHealthCheckClient.updateHttpsHealthCheck(httpsHealthCheck, httpsHealthCheckResource);
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
+   *   Operation response = httpsHealthCheckClient.updateHttpsHealthCheck(httpsHealthCheck, httpsHealthCheckResource, fieldMask);
    * }
    * </code></pre>
    *
    * @param httpsHealthCheck Name of the HttpsHealthCheck resource to update.
    * @param httpsHealthCheckResource An HttpsHealthCheck resource. This resource defines a template
    *     for how individual instances should be checked for health, via HTTPS.
+   * @param fieldMask
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation updateHttpsHealthCheck(
       ProjectGlobalHttpsHealthCheckName httpsHealthCheck,
-      HttpsHealthCheck2 httpsHealthCheckResource) {
+      HttpsHealthCheck2 httpsHealthCheckResource,
+      List<String> fieldMask) {
 
     UpdateHttpsHealthCheckHttpRequest request =
         UpdateHttpsHealthCheckHttpRequest.newBuilder()
             .setHttpsHealthCheck(httpsHealthCheck == null ? null : httpsHealthCheck.toString())
             .setHttpsHealthCheckResource(httpsHealthCheckResource)
+            .addAllFieldMask(fieldMask)
             .build();
     return updateHttpsHealthCheck(request);
   }
@@ -780,23 +795,26 @@ public class HttpsHealthCheckClient implements BackgroundResource {
    * try (HttpsHealthCheckClient httpsHealthCheckClient = HttpsHealthCheckClient.create()) {
    *   ProjectGlobalHttpsHealthCheckName httpsHealthCheck = ProjectGlobalHttpsHealthCheckName.of("[PROJECT]", "[HTTPS_HEALTH_CHECK]");
    *   HttpsHealthCheck2 httpsHealthCheckResource = HttpsHealthCheck2.newBuilder().build();
-   *   Operation response = httpsHealthCheckClient.updateHttpsHealthCheck(httpsHealthCheck.toString(), httpsHealthCheckResource);
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
+   *   Operation response = httpsHealthCheckClient.updateHttpsHealthCheck(httpsHealthCheck.toString(), httpsHealthCheckResource, fieldMask);
    * }
    * </code></pre>
    *
    * @param httpsHealthCheck Name of the HttpsHealthCheck resource to update.
    * @param httpsHealthCheckResource An HttpsHealthCheck resource. This resource defines a template
    *     for how individual instances should be checked for health, via HTTPS.
+   * @param fieldMask
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation updateHttpsHealthCheck(
-      String httpsHealthCheck, HttpsHealthCheck2 httpsHealthCheckResource) {
+      String httpsHealthCheck, HttpsHealthCheck2 httpsHealthCheckResource, List<String> fieldMask) {
 
     UpdateHttpsHealthCheckHttpRequest request =
         UpdateHttpsHealthCheckHttpRequest.newBuilder()
             .setHttpsHealthCheck(httpsHealthCheck)
             .setHttpsHealthCheckResource(httpsHealthCheckResource)
+            .addAllFieldMask(fieldMask)
             .build();
     return updateHttpsHealthCheck(request);
   }
@@ -812,9 +830,11 @@ public class HttpsHealthCheckClient implements BackgroundResource {
    * try (HttpsHealthCheckClient httpsHealthCheckClient = HttpsHealthCheckClient.create()) {
    *   ProjectGlobalHttpsHealthCheckName httpsHealthCheck = ProjectGlobalHttpsHealthCheckName.of("[PROJECT]", "[HTTPS_HEALTH_CHECK]");
    *   HttpsHealthCheck2 httpsHealthCheckResource = HttpsHealthCheck2.newBuilder().build();
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
    *   UpdateHttpsHealthCheckHttpRequest request = UpdateHttpsHealthCheckHttpRequest.newBuilder()
    *     .setHttpsHealthCheck(httpsHealthCheck.toString())
    *     .setHttpsHealthCheckResource(httpsHealthCheckResource)
+   *     .addAllFieldMask(fieldMask)
    *     .build();
    *   Operation response = httpsHealthCheckClient.updateHttpsHealthCheck(request);
    * }
@@ -839,9 +859,11 @@ public class HttpsHealthCheckClient implements BackgroundResource {
    * try (HttpsHealthCheckClient httpsHealthCheckClient = HttpsHealthCheckClient.create()) {
    *   ProjectGlobalHttpsHealthCheckName httpsHealthCheck = ProjectGlobalHttpsHealthCheckName.of("[PROJECT]", "[HTTPS_HEALTH_CHECK]");
    *   HttpsHealthCheck2 httpsHealthCheckResource = HttpsHealthCheck2.newBuilder().build();
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
    *   UpdateHttpsHealthCheckHttpRequest request = UpdateHttpsHealthCheckHttpRequest.newBuilder()
    *     .setHttpsHealthCheck(httpsHealthCheck.toString())
    *     .setHttpsHealthCheckResource(httpsHealthCheckResource)
+   *     .addAllFieldMask(fieldMask)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = httpsHealthCheckClient.updateHttpsHealthCheckCallable().futureCall(request);
    *   // Do something
