@@ -17,7 +17,7 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 import javax.annotation.Generated;
@@ -492,13 +492,16 @@ public final class InterconnectAttachment implements ApiMessage {
 
     public Builder addAllCandidateSubnets(List<String> candidateSubnets) {
       if (this.candidateSubnets == null) {
-        this.candidateSubnets = new ArrayList<>(candidateSubnets.size());
+        this.candidateSubnets = new LinkedList<>();
       }
       this.candidateSubnets.addAll(candidateSubnets);
       return this;
     }
 
     public Builder addCandidateSubnets(String candidateSubnets) {
+      if (this.candidateSubnets == null) {
+        this.candidateSubnets = new LinkedList<>();
+      }
       this.candidateSubnets.add(candidateSubnets);
       return this;
     }
