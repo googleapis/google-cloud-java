@@ -753,13 +753,19 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * Updates dataset information.
    *
    * <p>Example of updating a dataset by changing its description.
-   * <pre> {@code
-   * String datasetName = "my_dataset_name";
-   * String newDescription = "some_new_description";
-   * Dataset oldDataset = bigquery.getDataset(datasetName);
-   * DatasetInfo datasetInfo = oldDataset.toBuilder().setDescription(newDescription).build();
-   * Dataset newDataset = bigquery.update(datasetInfo);
-   * }</pre>
+   * <!--SNIPPET bigquery_update_table_description-->
+   * <pre>{@code
+   *    // String datasetName = "my_dataset_name";
+   *    // String tableName = "my_table_name";
+   *    // String newDescription = "new_description";
+   *
+   *    Table beforeTable = bigquery.getTable(datasetName, tableName);
+   *    TableInfo tableInfo = beforeTable.toBuilder()
+   *        .setDescription(newDescription)
+   *        .build();
+   *    Table afterTable = bigquery.update(tableInfo);
+   *     }</pre>
+   * <!--SNIPPET bigquery_update_table_description-->
    *
    * @throws BigQueryException upon failure
    */
@@ -785,7 +791,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * String datasetName = "my_dataset_name";
    * String tableName = "my_table_name";
    * Table beforeTable = bigquery.getTable(datasetName, tableName);
-   * 
+   *
    * // Set table to expire 5 days from now.
    * long expirationMillis = DateTime.now().plusDays(5).getMillis();
    * TableInfo tableInfo = beforeTable.toBuilder()
@@ -1104,7 +1110,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * // BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
    * String query = "SELECT corpus FROM `bigquery-public-data.samples.shakespeare` GROUP BY corpus;";
    * QueryJobConfiguration queryConfig = QueryJobConfiguration.newBuilder(query).build();
-   * 
+   *
    * // Print the results.
    * for (FieldValueList row : bigquery.query(queryConfig).iterateAll()) {
    *   for (FieldValue val : row) {

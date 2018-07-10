@@ -205,7 +205,9 @@ private static final long serialVersionUID = 0L;
   public static final int TABLE_FIELD_NUMBER = 4;
   /**
    * <pre>
-   * Structured content for inspection.
+   * Structured content for inspection. See
+   * https://cloud.google.com/dlp/docs/inspecting-text#inspecting_a_table to
+   * learn more.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Table table = 4;</code>
@@ -215,7 +217,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Structured content for inspection.
+   * Structured content for inspection. See
+   * https://cloud.google.com/dlp/docs/inspecting-text#inspecting_a_table to
+   * learn more.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Table table = 4;</code>
@@ -228,7 +232,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Structured content for inspection.
+   * Structured content for inspection. See
+   * https://cloud.google.com/dlp/docs/inspecting-text#inspecting_a_table to
+   * learn more.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Table table = 4;</code>
@@ -761,7 +767,9 @@ private static final long serialVersionUID = 0L;
         com.google.privacy.dlp.v2.Table, com.google.privacy.dlp.v2.Table.Builder, com.google.privacy.dlp.v2.TableOrBuilder> tableBuilder_;
     /**
      * <pre>
-     * Structured content for inspection.
+     * Structured content for inspection. See
+     * https://cloud.google.com/dlp/docs/inspecting-text#inspecting_a_table to
+     * learn more.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Table table = 4;</code>
@@ -771,7 +779,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Structured content for inspection.
+     * Structured content for inspection. See
+     * https://cloud.google.com/dlp/docs/inspecting-text#inspecting_a_table to
+     * learn more.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Table table = 4;</code>
@@ -791,7 +801,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Structured content for inspection.
+     * Structured content for inspection. See
+     * https://cloud.google.com/dlp/docs/inspecting-text#inspecting_a_table to
+     * learn more.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Table table = 4;</code>
@@ -811,7 +823,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Structured content for inspection.
+     * Structured content for inspection. See
+     * https://cloud.google.com/dlp/docs/inspecting-text#inspecting_a_table to
+     * learn more.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Table table = 4;</code>
@@ -829,7 +843,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Structured content for inspection.
+     * Structured content for inspection. See
+     * https://cloud.google.com/dlp/docs/inspecting-text#inspecting_a_table to
+     * learn more.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Table table = 4;</code>
@@ -855,7 +871,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Structured content for inspection.
+     * Structured content for inspection. See
+     * https://cloud.google.com/dlp/docs/inspecting-text#inspecting_a_table to
+     * learn more.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Table table = 4;</code>
@@ -878,7 +896,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Structured content for inspection.
+     * Structured content for inspection. See
+     * https://cloud.google.com/dlp/docs/inspecting-text#inspecting_a_table to
+     * learn more.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Table table = 4;</code>
@@ -888,7 +908,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Structured content for inspection.
+     * Structured content for inspection. See
+     * https://cloud.google.com/dlp/docs/inspecting-text#inspecting_a_table to
+     * learn more.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Table table = 4;</code>
@@ -905,7 +927,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Structured content for inspection.
+     * Structured content for inspection. See
+     * https://cloud.google.com/dlp/docs/inspecting-text#inspecting_a_table to
+     * learn more.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Table table = 4;</code>

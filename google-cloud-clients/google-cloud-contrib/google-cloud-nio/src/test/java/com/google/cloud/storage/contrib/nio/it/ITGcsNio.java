@@ -19,8 +19,12 @@ package com.google.cloud.storage.contrib.nio.it;
 import static com.google.common.truth.Truth.assertThat;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
+import com.google.api.client.http.HttpResponseException;
+import com.google.cloud.storage.Storage.BlobTargetOption;
+import com.google.cloud.storage.StorageException;
 import com.google.cloud.storage.contrib.nio.CloudStorageConfiguration;
 import com.google.cloud.storage.contrib.nio.CloudStorageFileSystem;
+import com.google.cloud.storage.contrib.nio.CloudStoragePath;
 import com.google.common.collect.ImmutableList;
 import com.google.cloud.storage.BlobInfo;
 import com.google.cloud.storage.BucketInfo;
@@ -49,6 +53,7 @@ import java.nio.file.Files;
 import java.nio.file.NoSuchFileException;
 import java.nio.file.Path;
 import java.nio.file.SimpleFileVisitor;
+import java.nio.file.StandardCopyOption;
 import java.nio.file.StandardOpenOption;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.util.ArrayList;
@@ -66,7 +71,7 @@ import java.util.logging.Logger;
  * <p>This test actually talks to Google Cloud Storage (you need an account) and tests both reading
  * and writing. You *must* set the {@code GOOGLE_APPLICATION_CREDENTIALS} environment variable for
  * this test to work. It must contain the name of a local file that contains your Service Account
- * JSON Key.
+ * JSON Key. We use the project in those credentials.
  *
  * <p>See <a href="https://cloud.google.com/storage/docs/authentication?hl=en#service_accounts">
  * Service Accounts</a> for instructions on how to get the Service Account JSON Key.
@@ -87,11 +92,14 @@ public class ITGcsNio {
 
   private static final Logger log = Logger.getLogger(ITGcsNio.class.getName());
   private static final String BUCKET = RemoteStorageHelper.generateBucketName();
+  private static final String REQUESTER_PAYS_BUCKET = RemoteStorageHelper.generateBucketName()+"_rp";
   private static final String SML_FILE = "tmp-test-small-file.txt";
+  private static final String TMP_FILE = "tmp/tmp-test-rnd-file.txt";
   private static final int SML_SIZE = 100;
   private static final String BIG_FILE = "tmp-test-big-file.txt"; // it's big, relatively speaking.
   private static final int BIG_SIZE = 2 * 1024 * 1024 - 50; // arbitrary size that's not too round.
   private static final String PREFIX = "tmp-test-file";
+  private static String project;
   private static Storage storage;
   private static StorageOptions storageOptions;
 
@@ -102,11 +110,15 @@ public class ITGcsNio {
     // loads the credentials from local disk as par README
     RemoteStorageHelper gcsHelper = RemoteStorageHelper.create();
     storageOptions = gcsHelper.getOptions();
+    project = storageOptions.getProjectId();
     storage = storageOptions.getService();
     // create and populate test bucket
     storage.create(BucketInfo.of(BUCKET));
-    fillFile(storage, SML_FILE, SML_SIZE);
-    fillFile(storage, BIG_FILE, BIG_SIZE);
+    fillFile(storage, BUCKET, SML_FILE, SML_SIZE);
+    fillFile(storage, BUCKET, BIG_FILE, BIG_SIZE);
+    BucketInfo requesterPaysBucket = BucketInfo.newBuilder(REQUESTER_PAYS_BUCKET).setRequesterPays(true).build();
+    storage.create(requesterPaysBucket);
+    fillRequesterPaysFile(storage, SML_FILE, SML_SIZE);
   }
 
   @AfterClass
@@ -123,9 +135,163 @@ public class ITGcsNio {
     return bytes;
   }
 
-  private static void fillFile(Storage storage, String fname, int size) throws IOException {
-    storage.create(BlobInfo.newBuilder(BUCKET, fname).build(), randomContents(size));
+  private static void fillFile(Storage storage, String bucket, String fname, int size) throws IOException {
+    storage.create(BlobInfo.newBuilder(bucket, fname).build(), randomContents(size));
   }
+
+  private static void fillRequesterPaysFile(Storage storage, String fname, int size) throws IOException {
+    storage.create(BlobInfo.newBuilder(REQUESTER_PAYS_BUCKET, fname).build(), randomContents(size),
+        BlobTargetOption.userProject(project));
+  }
+
+  // Start of tests related to the "requester pays" feature
+
+  @Test
+  public void testFileExistsRequesterPaysNoUserProject() throws IOException {
+    CloudStorageFileSystem testBucket = getRequesterPaysBucket(false, "");
+    Path path = testBucket.getPath(SML_FILE);
+    try {
+      // fails because we must pay for every access, including metadata.
+      Files.exists(path);
+      Assert.fail("It should have thrown an exception.");
+    } catch (StorageException sex) {
+      assertIsRequesterPaysException("testFileExistsRequesterPaysNoUserProject", sex);
+    }
+  }
+
+  @Test
+  public void testFileExistsRequesterPays() throws IOException {
+    CloudStorageFileSystem testBucket = getRequesterPaysBucket(false, project);
+    Path path = testBucket.getPath(SML_FILE);
+    // should succeed because we specified a project
+    Files.exists(path);
+  }
+
+  @Test
+  public void testFileExistsRequesterPaysWithAutodetect() throws IOException {
+    CloudStorageFileSystem testBucket = getRequesterPaysBucket(true, project);
+    Path path = testBucket.getPath(SML_FILE);
+    // should succeed because we specified a project
+    Files.exists(path);
+  }
+
+  @Test
+  public void testCantCreateWithoutUserProject() throws IOException {
+    CloudStorageFileSystem testBucket = getRequesterPaysBucket(false, "");
+    Path path = testBucket.getPath(SML_FILE);
+    try {
+      // fails
+      Files.write(path, "I would like to write".getBytes());
+      Assert.fail("It should have thrown an exception.");
+    } catch (StorageException sex) {
+      assertIsRequesterPaysException("testCantCreateWithoutUserProject", sex);
+    }
+  }
+
+  @Test
+  public void testCanCreateWithUserProject() throws IOException {
+    CloudStorageFileSystem testBucket = getRequesterPaysBucket(false, project);
+    Path path = testBucket.getPath(TMP_FILE);
+    // should succeed because we specified a project
+    Files.write(path, "I would like to write, please?".getBytes());
+  }
+
+  @Test
+  public void testCantReadWithoutUserProject() throws IOException {
+    CloudStorageFileSystem testBucket = getRequesterPaysBucket(false, "");
+    Path path = testBucket.getPath(SML_FILE);
+    try {
+      // fails
+      Files.readAllBytes(path);
+      Assert.fail("It should have thrown an exception.");
+    } catch (StorageException sex) {
+      assertIsRequesterPaysException("testCantReadWithoutUserProject", sex);
+    }
+  }
+
+  @Test
+  public void testCanReadWithUserProject() throws IOException {
+    CloudStorageFileSystem testBucket = getRequesterPaysBucket(false, project);
+    Path path = testBucket.getPath(SML_FILE);
+    // should succeed because we specified a project
+    Files.readAllBytes(path);
+  }
+
+  @Test
+  public void testCantCopyWithoutUserProject() throws IOException {
+    CloudStorageFileSystem testRPBucket = getRequesterPaysBucket(false, "");
+    CloudStorageFileSystem testBucket = getTestBucket();
+    CloudStoragePath[] sources = new CloudStoragePath[] { testBucket.getPath(SML_FILE), testRPBucket.getPath(SML_FILE) };
+    CloudStoragePath[] dests = new CloudStoragePath[] {testBucket.getPath(TMP_FILE), testRPBucket.getPath(TMP_FILE) };
+    for (int s=0; s<2; s++) {
+      for (int d=0; d<2; d++) {
+        // normal to normal is out of scope of RP testing.
+        if (s==0 && d==0) {
+          continue;
+        }
+        innerTestCantCopyWithoutUserProject(s==0, d==0, sources[s], dests[d]);
+      }
+    }
+  }
+
+  // Try to copy the file, make sure that we were prevented.
+  private void innerTestCantCopyWithoutUserProject(boolean sourceNormal, boolean destNormal, Path source, Path dest) throws IOException {
+    String sdesc = (sourceNormal?"normal bucket":"requester-pays bucket");
+    String ddesc = (destNormal?"normal bucket":"requester-pays bucket");
+    String description = "Copying from " + sdesc + " to " + ddesc;
+    try {
+      Files.copy(source, dest);
+      Assert.fail("Shouldn't have been able to copy from " + sdesc + " to " + ddesc);
+      // for some reason this throws "GoogleJsonResponseException" instead of "StorageException"
+      // when going from requester pays bucket to requester pays bucket, but otherwise we get a
+      // normal StorageException.
+    } catch (HttpResponseException hex) {
+      Assert.assertEquals(description, hex.getStatusCode(), 400);
+      Assert.assertTrue(description, hex.getMessage().contains("Bucket is requester pays bucket but no user project provided"));
+    } catch (StorageException sex) {
+      assertIsRequesterPaysException(description, sex);
+    }
+  }
+
+  @Test
+  public void testCanCopyWithUserProject() throws IOException {
+    CloudStorageFileSystem testRPBucket = getRequesterPaysBucket(false, project);
+    CloudStorageFileSystem testBucket = getTestBucket();
+    CloudStoragePath[] sources = new CloudStoragePath[] {testBucket.getPath(SML_FILE), testRPBucket.getPath(SML_FILE)};
+    CloudStoragePath[] dests = new CloudStoragePath[] {testBucket.getPath(TMP_FILE), testRPBucket.getPath(TMP_FILE)};
+    for (int s = 0; s < 2; s++) {
+      for (int d = 0; d < 2; d++) {
+        // normal to normal is out of scope of RP testing.
+        if (s == 0 && d == 0) {
+          continue;
+        }
+        Files.copy(sources[s], dests[d], StandardCopyOption.REPLACE_EXISTING);
+      }
+    }
+  }
+
+  @Test
+  public void testAutodetectWhenRequesterPays() throws IOException {
+    CloudStorageFileSystem testRPBucket = getRequesterPaysBucket(true, project);
+    Assert.assertEquals("Autodetect should have detected the RP bucket", testRPBucket.config().userProject(), project);
+
+  }
+
+  @Test
+  public void testAutodetectWhenNotRequesterPays() throws IOException {
+    CloudStorageConfiguration config = CloudStorageConfiguration.builder()
+        .autoDetectRequesterPays(true)
+        .userProject(project).build();
+    CloudStorageFileSystem testBucket = CloudStorageFileSystem.forBucket(BUCKET, config, storageOptions);
+    Assert.assertEquals("Autodetect should have detected the bucket is not RP", testBucket.config().userProject(), "");
+  }
+
+  private void assertIsRequesterPaysException(String message, StorageException sex) {
+    Assert.assertEquals(message, sex.getCode(), 400);
+    Assert.assertTrue(message, sex.getMessage().contains("Bucket is requester pays bucket but no user project provided"));
+  }
+
+  // End of tests related to the "requester pays" feature
 
   @Test
   public void testFileExists() throws IOException {
@@ -346,7 +512,7 @@ public class ITGcsNio {
       paths.addAll(goodPaths);
       goodPaths.add(fs.getPath("dir/dir2/"));
       for (Path path : paths) {
-        fillFile(storage, path.toString(), SML_SIZE);
+        fillFile(storage, BUCKET, path.toString(), SML_SIZE);
       }
 
       List<Path> got = new ArrayList<>();
@@ -458,4 +624,12 @@ public class ITGcsNio {
         BUCKET, CloudStorageConfiguration.DEFAULT, storageOptions);
   }
 
+  // same as getTestBucket, but for the requester-pays bucket.
+  private CloudStorageFileSystem getRequesterPaysBucket(boolean autodetect, String userProject) throws IOException {
+    CloudStorageConfiguration config = CloudStorageConfiguration.builder()
+        .autoDetectRequesterPays(autodetect)
+        .userProject(userProject).build();
+    return CloudStorageFileSystem.forBucket(
+        REQUESTER_PAYS_BUCKET, config, storageOptions);
+  }
 }

@@ -113,10 +113,10 @@ public final class TextAnnotationProto {
       "ision.v1.TextAnnotation.TextProperty\022:\n\014" +
       "bounding_box\030\002 \001(\0132$.google.cloud.vision" +
       ".v1.BoundingPoly\022\014\n\004text\030\003 \001(\t\022\022\n\nconfid" +
-      "ence\030\004 \001(\002Bt\n\032com.google.cloud.vision.v1" +
+      "ence\030\004 \001(\002B{\n\032com.google.cloud.vision.v1" +
       "B\023TextAnnotationProtoP\001Z<google.golang.o" +
       "rg/genproto/googleapis/cloud/vision/v1;v" +
-      "ision\370\001\001b\006proto3"
+      "ision\370\001\001\242\002\004GCVNb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

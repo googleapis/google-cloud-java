@@ -2013,7 +2013,11 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Restricts what info_types to look for. The values must correspond to
-   * InfoType values returned by ListInfoTypes or found in documentation.
+   * InfoType values returned by ListInfoTypes or listed at
+   * https://cloud.google.com/dlp/docs/infotypes-reference.
+   * When no InfoTypes or CustomInfoTypes are specified in a request, the
+   * system may automatically choose what detectors to run. By default this may
+   * be all types, but may change over time as detectors are updated.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
@@ -2024,7 +2028,11 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Restricts what info_types to look for. The values must correspond to
-   * InfoType values returned by ListInfoTypes or found in documentation.
+   * InfoType values returned by ListInfoTypes or listed at
+   * https://cloud.google.com/dlp/docs/infotypes-reference.
+   * When no InfoTypes or CustomInfoTypes are specified in a request, the
+   * system may automatically choose what detectors to run. By default this may
+   * be all types, but may change over time as detectors are updated.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
@@ -2036,7 +2044,11 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Restricts what info_types to look for. The values must correspond to
-   * InfoType values returned by ListInfoTypes or found in documentation.
+   * InfoType values returned by ListInfoTypes or listed at
+   * https://cloud.google.com/dlp/docs/infotypes-reference.
+   * When no InfoTypes or CustomInfoTypes are specified in a request, the
+   * system may automatically choose what detectors to run. By default this may
+   * be all types, but may change over time as detectors are updated.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
@@ -2047,7 +2059,11 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Restricts what info_types to look for. The values must correspond to
-   * InfoType values returned by ListInfoTypes or found in documentation.
+   * InfoType values returned by ListInfoTypes or listed at
+   * https://cloud.google.com/dlp/docs/infotypes-reference.
+   * When no InfoTypes or CustomInfoTypes are specified in a request, the
+   * system may automatically choose what detectors to run. By default this may
+   * be all types, but may change over time as detectors are updated.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
@@ -2058,7 +2074,11 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Restricts what info_types to look for. The values must correspond to
-   * InfoType values returned by ListInfoTypes or found in documentation.
+   * InfoType values returned by ListInfoTypes or listed at
+   * https://cloud.google.com/dlp/docs/infotypes-reference.
+   * When no InfoTypes or CustomInfoTypes are specified in a request, the
+   * system may automatically choose what detectors to run. By default this may
+   * be all types, but may change over time as detectors are updated.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
@@ -2074,6 +2094,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Only returns findings equal or above this threshold. The default is
    * POSSIBLE.
+   * See https://cloud.google.com/dlp/docs/likelihood to learn more.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Likelihood min_likelihood = 2;</code>
@@ -2085,6 +2106,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Only returns findings equal or above this threshold. The default is
    * POSSIBLE.
+   * See https://cloud.google.com/dlp/docs/likelihood to learn more.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Likelihood min_likelihood = 2;</code>
@@ -2146,7 +2168,8 @@ private static final long serialVersionUID = 0L;
   private java.util.List<com.google.privacy.dlp.v2.CustomInfoType> customInfoTypes_;
   /**
    * <pre>
-   * Custom infoTypes provided by the user.
+   * CustomInfoTypes provided by the user. See
+   * https://cloud.google.com/dlp/docs/creating-custom-infotypes to learn more.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.CustomInfoType custom_info_types = 6;</code>
@@ -2156,7 +2179,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Custom infoTypes provided by the user.
+   * CustomInfoTypes provided by the user. See
+   * https://cloud.google.com/dlp/docs/creating-custom-infotypes to learn more.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.CustomInfoType custom_info_types = 6;</code>
@@ -2167,7 +2191,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Custom infoTypes provided by the user.
+   * CustomInfoTypes provided by the user. See
+   * https://cloud.google.com/dlp/docs/creating-custom-infotypes to learn more.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.CustomInfoType custom_info_types = 6;</code>
@@ -2177,7 +2202,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Custom infoTypes provided by the user.
+   * CustomInfoTypes provided by the user. See
+   * https://cloud.google.com/dlp/docs/creating-custom-infotypes to learn more.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.CustomInfoType custom_info_types = 6;</code>
@@ -2187,7 +2213,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Custom infoTypes provided by the user.
+   * CustomInfoTypes provided by the user. See
+   * https://cloud.google.com/dlp/docs/creating-custom-infotypes to learn more.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.CustomInfoType custom_info_types = 6;</code>
@@ -2792,7 +2819,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Restricts what info_types to look for. The values must correspond to
-     * InfoType values returned by ListInfoTypes or found in documentation.
+     * InfoType values returned by ListInfoTypes or listed at
+     * https://cloud.google.com/dlp/docs/infotypes-reference.
+     * When no InfoTypes or CustomInfoTypes are specified in a request, the
+     * system may automatically choose what detectors to run. By default this may
+     * be all types, but may change over time as detectors are updated.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
@@ -2807,7 +2838,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Restricts what info_types to look for. The values must correspond to
-     * InfoType values returned by ListInfoTypes or found in documentation.
+     * InfoType values returned by ListInfoTypes or listed at
+     * https://cloud.google.com/dlp/docs/infotypes-reference.
+     * When no InfoTypes or CustomInfoTypes are specified in a request, the
+     * system may automatically choose what detectors to run. By default this may
+     * be all types, but may change over time as detectors are updated.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
@@ -2822,7 +2857,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Restricts what info_types to look for. The values must correspond to
-     * InfoType values returned by ListInfoTypes or found in documentation.
+     * InfoType values returned by ListInfoTypes or listed at
+     * https://cloud.google.com/dlp/docs/infotypes-reference.
+     * When no InfoTypes or CustomInfoTypes are specified in a request, the
+     * system may automatically choose what detectors to run. By default this may
+     * be all types, but may change over time as detectors are updated.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
@@ -2837,7 +2876,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Restricts what info_types to look for. The values must correspond to
-     * InfoType values returned by ListInfoTypes or found in documentation.
+     * InfoType values returned by ListInfoTypes or listed at
+     * https://cloud.google.com/dlp/docs/infotypes-reference.
+     * When no InfoTypes or CustomInfoTypes are specified in a request, the
+     * system may automatically choose what detectors to run. By default this may
+     * be all types, but may change over time as detectors are updated.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
@@ -2859,7 +2902,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Restricts what info_types to look for. The values must correspond to
-     * InfoType values returned by ListInfoTypes or found in documentation.
+     * InfoType values returned by ListInfoTypes or listed at
+     * https://cloud.google.com/dlp/docs/infotypes-reference.
+     * When no InfoTypes or CustomInfoTypes are specified in a request, the
+     * system may automatically choose what detectors to run. By default this may
+     * be all types, but may change over time as detectors are updated.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
@@ -2878,7 +2925,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Restricts what info_types to look for. The values must correspond to
-     * InfoType values returned by ListInfoTypes or found in documentation.
+     * InfoType values returned by ListInfoTypes or listed at
+     * https://cloud.google.com/dlp/docs/infotypes-reference.
+     * When no InfoTypes or CustomInfoTypes are specified in a request, the
+     * system may automatically choose what detectors to run. By default this may
+     * be all types, but may change over time as detectors are updated.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
@@ -2899,7 +2950,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Restricts what info_types to look for. The values must correspond to
-     * InfoType values returned by ListInfoTypes or found in documentation.
+     * InfoType values returned by ListInfoTypes or listed at
+     * https://cloud.google.com/dlp/docs/infotypes-reference.
+     * When no InfoTypes or CustomInfoTypes are specified in a request, the
+     * system may automatically choose what detectors to run. By default this may
+     * be all types, but may change over time as detectors are updated.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
@@ -2921,7 +2976,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Restricts what info_types to look for. The values must correspond to
-     * InfoType values returned by ListInfoTypes or found in documentation.
+     * InfoType values returned by ListInfoTypes or listed at
+     * https://cloud.google.com/dlp/docs/infotypes-reference.
+     * When no InfoTypes or CustomInfoTypes are specified in a request, the
+     * system may automatically choose what detectors to run. By default this may
+     * be all types, but may change over time as detectors are updated.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
@@ -2940,7 +2999,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Restricts what info_types to look for. The values must correspond to
-     * InfoType values returned by ListInfoTypes or found in documentation.
+     * InfoType values returned by ListInfoTypes or listed at
+     * https://cloud.google.com/dlp/docs/infotypes-reference.
+     * When no InfoTypes or CustomInfoTypes are specified in a request, the
+     * system may automatically choose what detectors to run. By default this may
+     * be all types, but may change over time as detectors are updated.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
@@ -2959,7 +3022,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Restricts what info_types to look for. The values must correspond to
-     * InfoType values returned by ListInfoTypes or found in documentation.
+     * InfoType values returned by ListInfoTypes or listed at
+     * https://cloud.google.com/dlp/docs/infotypes-reference.
+     * When no InfoTypes or CustomInfoTypes are specified in a request, the
+     * system may automatically choose what detectors to run. By default this may
+     * be all types, but may change over time as detectors are updated.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
@@ -2979,7 +3046,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Restricts what info_types to look for. The values must correspond to
-     * InfoType values returned by ListInfoTypes or found in documentation.
+     * InfoType values returned by ListInfoTypes or listed at
+     * https://cloud.google.com/dlp/docs/infotypes-reference.
+     * When no InfoTypes or CustomInfoTypes are specified in a request, the
+     * system may automatically choose what detectors to run. By default this may
+     * be all types, but may change over time as detectors are updated.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
@@ -2997,7 +3068,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Restricts what info_types to look for. The values must correspond to
-     * InfoType values returned by ListInfoTypes or found in documentation.
+     * InfoType values returned by ListInfoTypes or listed at
+     * https://cloud.google.com/dlp/docs/infotypes-reference.
+     * When no InfoTypes or CustomInfoTypes are specified in a request, the
+     * system may automatically choose what detectors to run. By default this may
+     * be all types, but may change over time as detectors are updated.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
@@ -3015,7 +3090,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Restricts what info_types to look for. The values must correspond to
-     * InfoType values returned by ListInfoTypes or found in documentation.
+     * InfoType values returned by ListInfoTypes or listed at
+     * https://cloud.google.com/dlp/docs/infotypes-reference.
+     * When no InfoTypes or CustomInfoTypes are specified in a request, the
+     * system may automatically choose what detectors to run. By default this may
+     * be all types, but may change over time as detectors are updated.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
@@ -3027,7 +3106,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Restricts what info_types to look for. The values must correspond to
-     * InfoType values returned by ListInfoTypes or found in documentation.
+     * InfoType values returned by ListInfoTypes or listed at
+     * https://cloud.google.com/dlp/docs/infotypes-reference.
+     * When no InfoTypes or CustomInfoTypes are specified in a request, the
+     * system may automatically choose what detectors to run. By default this may
+     * be all types, but may change over time as detectors are updated.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
@@ -3042,7 +3125,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Restricts what info_types to look for. The values must correspond to
-     * InfoType values returned by ListInfoTypes or found in documentation.
+     * InfoType values returned by ListInfoTypes or listed at
+     * https://cloud.google.com/dlp/docs/infotypes-reference.
+     * When no InfoTypes or CustomInfoTypes are specified in a request, the
+     * system may automatically choose what detectors to run. By default this may
+     * be all types, but may change over time as detectors are updated.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
@@ -3058,7 +3145,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Restricts what info_types to look for. The values must correspond to
-     * InfoType values returned by ListInfoTypes or found in documentation.
+     * InfoType values returned by ListInfoTypes or listed at
+     * https://cloud.google.com/dlp/docs/infotypes-reference.
+     * When no InfoTypes or CustomInfoTypes are specified in a request, the
+     * system may automatically choose what detectors to run. By default this may
+     * be all types, but may change over time as detectors are updated.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
@@ -3070,7 +3161,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Restricts what info_types to look for. The values must correspond to
-     * InfoType values returned by ListInfoTypes or found in documentation.
+     * InfoType values returned by ListInfoTypes or listed at
+     * https://cloud.google.com/dlp/docs/infotypes-reference.
+     * When no InfoTypes or CustomInfoTypes are specified in a request, the
+     * system may automatically choose what detectors to run. By default this may
+     * be all types, but may change over time as detectors are updated.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
@@ -3083,7 +3178,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Restricts what info_types to look for. The values must correspond to
-     * InfoType values returned by ListInfoTypes or found in documentation.
+     * InfoType values returned by ListInfoTypes or listed at
+     * https://cloud.google.com/dlp/docs/infotypes-reference.
+     * When no InfoTypes or CustomInfoTypes are specified in a request, the
+     * system may automatically choose what detectors to run. By default this may
+     * be all types, but may change over time as detectors are updated.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
@@ -3112,6 +3211,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Only returns findings equal or above this threshold. The default is
      * POSSIBLE.
+     * See https://cloud.google.com/dlp/docs/likelihood to learn more.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Likelihood min_likelihood = 2;</code>
@@ -3123,6 +3223,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Only returns findings equal or above this threshold. The default is
      * POSSIBLE.
+     * See https://cloud.google.com/dlp/docs/likelihood to learn more.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Likelihood min_likelihood = 2;</code>
@@ -3136,6 +3237,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Only returns findings equal or above this threshold. The default is
      * POSSIBLE.
+     * See https://cloud.google.com/dlp/docs/likelihood to learn more.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Likelihood min_likelihood = 2;</code>
@@ -3148,6 +3250,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Only returns findings equal or above this threshold. The default is
      * POSSIBLE.
+     * See https://cloud.google.com/dlp/docs/likelihood to learn more.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Likelihood min_likelihood = 2;</code>
@@ -3165,6 +3268,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Only returns findings equal or above this threshold. The default is
      * POSSIBLE.
+     * See https://cloud.google.com/dlp/docs/likelihood to learn more.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Likelihood min_likelihood = 2;</code>
@@ -3386,7 +3490,8 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * Custom infoTypes provided by the user.
+     * CustomInfoTypes provided by the user. See
+     * https://cloud.google.com/dlp/docs/creating-custom-infotypes to learn more.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.CustomInfoType custom_info_types = 6;</code>
@@ -3400,7 +3505,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Custom infoTypes provided by the user.
+     * CustomInfoTypes provided by the user. See
+     * https://cloud.google.com/dlp/docs/creating-custom-infotypes to learn more.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.CustomInfoType custom_info_types = 6;</code>
@@ -3414,7 +3520,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Custom infoTypes provided by the user.
+     * CustomInfoTypes provided by the user. See
+     * https://cloud.google.com/dlp/docs/creating-custom-infotypes to learn more.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.CustomInfoType custom_info_types = 6;</code>
@@ -3428,7 +3535,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Custom infoTypes provided by the user.
+     * CustomInfoTypes provided by the user. See
+     * https://cloud.google.com/dlp/docs/creating-custom-infotypes to learn more.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.CustomInfoType custom_info_types = 6;</code>
@@ -3449,7 +3557,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Custom infoTypes provided by the user.
+     * CustomInfoTypes provided by the user. See
+     * https://cloud.google.com/dlp/docs/creating-custom-infotypes to learn more.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.CustomInfoType custom_info_types = 6;</code>
@@ -3467,7 +3576,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Custom infoTypes provided by the user.
+     * CustomInfoTypes provided by the user. See
+     * https://cloud.google.com/dlp/docs/creating-custom-infotypes to learn more.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.CustomInfoType custom_info_types = 6;</code>
@@ -3487,7 +3597,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Custom infoTypes provided by the user.
+     * CustomInfoTypes provided by the user. See
+     * https://cloud.google.com/dlp/docs/creating-custom-infotypes to learn more.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.CustomInfoType custom_info_types = 6;</code>
@@ -3508,7 +3619,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Custom infoTypes provided by the user.
+     * CustomInfoTypes provided by the user. See
+     * https://cloud.google.com/dlp/docs/creating-custom-infotypes to learn more.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.CustomInfoType custom_info_types = 6;</code>
@@ -3526,7 +3638,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Custom infoTypes provided by the user.
+     * CustomInfoTypes provided by the user. See
+     * https://cloud.google.com/dlp/docs/creating-custom-infotypes to learn more.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.CustomInfoType custom_info_types = 6;</code>
@@ -3544,7 +3657,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Custom infoTypes provided by the user.
+     * CustomInfoTypes provided by the user. See
+     * https://cloud.google.com/dlp/docs/creating-custom-infotypes to learn more.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.CustomInfoType custom_info_types = 6;</code>
@@ -3563,7 +3677,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Custom infoTypes provided by the user.
+     * CustomInfoTypes provided by the user. See
+     * https://cloud.google.com/dlp/docs/creating-custom-infotypes to learn more.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.CustomInfoType custom_info_types = 6;</code>
@@ -3580,7 +3695,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Custom infoTypes provided by the user.
+     * CustomInfoTypes provided by the user. See
+     * https://cloud.google.com/dlp/docs/creating-custom-infotypes to learn more.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.CustomInfoType custom_info_types = 6;</code>
@@ -3597,7 +3713,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Custom infoTypes provided by the user.
+     * CustomInfoTypes provided by the user. See
+     * https://cloud.google.com/dlp/docs/creating-custom-infotypes to learn more.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.CustomInfoType custom_info_types = 6;</code>
@@ -3608,7 +3725,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Custom infoTypes provided by the user.
+     * CustomInfoTypes provided by the user. See
+     * https://cloud.google.com/dlp/docs/creating-custom-infotypes to learn more.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.CustomInfoType custom_info_types = 6;</code>
@@ -3622,7 +3740,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Custom infoTypes provided by the user.
+     * CustomInfoTypes provided by the user. See
+     * https://cloud.google.com/dlp/docs/creating-custom-infotypes to learn more.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.CustomInfoType custom_info_types = 6;</code>
@@ -3637,7 +3756,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Custom infoTypes provided by the user.
+     * CustomInfoTypes provided by the user. See
+     * https://cloud.google.com/dlp/docs/creating-custom-infotypes to learn more.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.CustomInfoType custom_info_types = 6;</code>
@@ -3648,7 +3768,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Custom infoTypes provided by the user.
+     * CustomInfoTypes provided by the user. See
+     * https://cloud.google.com/dlp/docs/creating-custom-infotypes to learn more.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.CustomInfoType custom_info_types = 6;</code>
@@ -3660,7 +3781,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Custom infoTypes provided by the user.
+     * CustomInfoTypes provided by the user. See
+     * https://cloud.google.com/dlp/docs/creating-custom-infotypes to learn more.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.CustomInfoType custom_info_types = 6;</code>

@@ -5,8 +5,8 @@ package com.google.privacy.dlp.v2;
 
 /**
  * <pre>
- * Request to search for potentially sensitive info in a list of items
- * and replace it with a default or provided content.
+ * Request to search for potentially sensitive info in an image and redact it
+ * by covering it with a colored rectangle.
  * </pre>
  *
  * Protobuf type {@code google.privacy.dlp.v2.RedactImageRequest}
@@ -23,6 +23,7 @@ private static final long serialVersionUID = 0L;
   private RedactImageRequest() {
     parent_ = "";
     imageRedactionConfigs_ = java.util.Collections.emptyList();
+    includeFindings_ = false;
   }
 
   @java.lang.Override
@@ -82,6 +83,11 @@ private static final long serialVersionUID = 0L;
             }
             imageRedactionConfigs_.add(
                 input.readMessage(com.google.privacy.dlp.v2.RedactImageRequest.ImageRedactionConfig.parser(), extensionRegistry));
+            break;
+          }
+          case 48: {
+
+            includeFindings_ = input.readBool();
             break;
           }
           case 58: {
@@ -165,7 +171,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * If true, all text found in the image, regardless whether it matches an
-     * info_type, is redacted.
+     * info_type, is redacted. Only one should be provided.
      * </pre>
      *
      * <code>bool redact_all_text = 2;</code>
@@ -397,7 +403,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * If true, all text found in the image, regardless whether it matches an
-     * info_type, is redacted.
+     * info_type, is redacted. Only one should be provided.
      * </pre>
      *
      * <code>bool redact_all_text = 2;</code>
@@ -1032,7 +1038,7 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * If true, all text found in the image, regardless whether it matches an
-       * info_type, is redacted.
+       * info_type, is redacted. Only one should be provided.
        * </pre>
        *
        * <code>bool redact_all_text = 2;</code>
@@ -1046,7 +1052,7 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * If true, all text found in the image, regardless whether it matches an
-       * info_type, is redacted.
+       * info_type, is redacted. Only one should be provided.
        * </pre>
        *
        * <code>bool redact_all_text = 2;</code>
@@ -1060,7 +1066,7 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * If true, all text found in the image, regardless whether it matches an
-       * info_type, is redacted.
+       * info_type, is redacted. Only one should be provided.
        * </pre>
        *
        * <code>bool redact_all_text = 2;</code>
@@ -1415,6 +1421,20 @@ private static final long serialVersionUID = 0L;
     return imageRedactionConfigs_.get(index);
   }
 
+  public static final int INCLUDE_FINDINGS_FIELD_NUMBER = 6;
+  private boolean includeFindings_;
+  /**
+   * <pre>
+   * Whether the response should include findings along with the redacted
+   * image.
+   * </pre>
+   *
+   * <code>bool include_findings = 6;</code>
+   */
+  public boolean getIncludeFindings() {
+    return includeFindings_;
+  }
+
   public static final int BYTE_ITEM_FIELD_NUMBER = 7;
   private com.google.privacy.dlp.v2.ByteContentItem byteItem_;
   /**
@@ -1469,6 +1489,9 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < imageRedactionConfigs_.size(); i++) {
       output.writeMessage(5, imageRedactionConfigs_.get(i));
     }
+    if (includeFindings_ != false) {
+      output.writeBool(6, includeFindings_);
+    }
     if (byteItem_ != null) {
       output.writeMessage(7, getByteItem());
     }
@@ -1490,6 +1513,10 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < imageRedactionConfigs_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(5, imageRedactionConfigs_.get(i));
+    }
+    if (includeFindings_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(6, includeFindings_);
     }
     if (byteItem_ != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -1520,6 +1547,8 @@ private static final long serialVersionUID = 0L;
     }
     result = result && getImageRedactionConfigsList()
         .equals(other.getImageRedactionConfigsList());
+    result = result && (getIncludeFindings()
+        == other.getIncludeFindings());
     result = result && (hasByteItem() == other.hasByteItem());
     if (hasByteItem()) {
       result = result && getByteItem()
@@ -1546,6 +1575,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + IMAGE_REDACTION_CONFIGS_FIELD_NUMBER;
       hash = (53 * hash) + getImageRedactionConfigsList().hashCode();
     }
+    hash = (37 * hash) + INCLUDE_FINDINGS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getIncludeFindings());
     if (hasByteItem()) {
       hash = (37 * hash) + BYTE_ITEM_FIELD_NUMBER;
       hash = (53 * hash) + getByteItem().hashCode();
@@ -1645,8 +1677,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Request to search for potentially sensitive info in a list of items
-   * and replace it with a default or provided content.
+   * Request to search for potentially sensitive info in an image and redact it
+   * by covering it with a colored rectangle.
    * </pre>
    *
    * Protobuf type {@code google.privacy.dlp.v2.RedactImageRequest}
@@ -1699,6 +1731,8 @@ private static final long serialVersionUID = 0L;
       } else {
         imageRedactionConfigsBuilder_.clear();
       }
+      includeFindings_ = false;
+
       if (byteItemBuilder_ == null) {
         byteItem_ = null;
       } else {
@@ -1744,6 +1778,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.imageRedactionConfigs_ = imageRedactionConfigsBuilder_.build();
       }
+      result.includeFindings_ = includeFindings_;
       if (byteItemBuilder_ == null) {
         result.byteItem_ = byteItem_;
       } else {
@@ -1823,6 +1858,9 @@ private static final long serialVersionUID = 0L;
             imageRedactionConfigsBuilder_.addAllMessages(other.imageRedactionConfigs_);
           }
         }
+      }
+      if (other.getIncludeFindings() != false) {
+        setIncludeFindings(other.getIncludeFindings());
       }
       if (other.hasByteItem()) {
         mergeByteItem(other.getByteItem());
@@ -2407,6 +2445,47 @@ private static final long serialVersionUID = 0L;
         imageRedactionConfigs_ = null;
       }
       return imageRedactionConfigsBuilder_;
+    }
+
+    private boolean includeFindings_ ;
+    /**
+     * <pre>
+     * Whether the response should include findings along with the redacted
+     * image.
+     * </pre>
+     *
+     * <code>bool include_findings = 6;</code>
+     */
+    public boolean getIncludeFindings() {
+      return includeFindings_;
+    }
+    /**
+     * <pre>
+     * Whether the response should include findings along with the redacted
+     * image.
+     * </pre>
+     *
+     * <code>bool include_findings = 6;</code>
+     */
+    public Builder setIncludeFindings(boolean value) {
+      
+      includeFindings_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Whether the response should include findings along with the redacted
+     * image.
+     * </pre>
+     *
+     * <code>bool include_findings = 6;</code>
+     */
+    public Builder clearIncludeFindings() {
+      
+      includeFindings_ = false;
+      onChanged();
+      return this;
     }
 
     private com.google.privacy.dlp.v2.ByteContentItem byteItem_ = null;
