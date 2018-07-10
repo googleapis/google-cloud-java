@@ -39,7 +39,9 @@ public class TimestampTest {
   private static final long TEST_TIME_MICROSECONDS = 10000100L;
   private static final long TEST_TIME_MILLISECONDS =
       TimeUnit.SECONDS.toMillis(1444662894L) + TimeUnit.MICROSECONDS.toMillis(1234);
+  private static final long TEST_TIME_MILLISECONDS_NEGATIVE = -1000L;
   private static final Date TEST_DATE = new Date(TEST_TIME_MILLISECONDS);
+  private static final Date TEST_DATE_PRE_EPOCH = new Date(TEST_TIME_MILLISECONDS_NEGATIVE);
 
   @Rule public ExpectedException expectedException = ExpectedException.none();
 
@@ -76,6 +78,19 @@ public class TimestampTest {
     Long expectedNanos =
         TimeUnit.MILLISECONDS.toNanos(TEST_TIME_MILLISECONDS)
             - TimeUnit.SECONDS.toNanos(expectedSeconds);
+    assertThat(timestamp.getSeconds()).isEqualTo(expectedSeconds);
+    assertThat(timestamp.getNanos()).isEqualTo(expectedNanos);
+  }
+
+  @Test
+  public void ofDatePreEpoch() {
+    Timestamp timestamp = Timestamp.of(TEST_DATE_PRE_EPOCH);
+    long expectedSeconds = TEST_TIME_MILLISECONDS_NEGATIVE / 1_000;
+    int expectedNanos = (int)(TEST_TIME_MILLISECONDS_NEGATIVE % 1_000 * 1000_000);
+    if (expectedNanos < 0) {
+      expectedSeconds--;
+      expectedNanos += 1_000_000_000;
+    }
     assertThat(timestamp.getSeconds()).isEqualTo(expectedSeconds);
     assertThat(timestamp.getNanos()).isEqualTo(expectedNanos);
   }
