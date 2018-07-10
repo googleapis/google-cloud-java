@@ -17,7 +17,7 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 import javax.annotation.Generated;
@@ -438,13 +438,16 @@ public final class MachineType implements ApiMessage {
 
     public Builder addAllScratchDisks(List<ScratchDisks> scratchDisks) {
       if (this.scratchDisks == null) {
-        this.scratchDisks = new ArrayList<>(scratchDisks.size());
+        this.scratchDisks = new LinkedList<>();
       }
       this.scratchDisks.addAll(scratchDisks);
       return this;
     }
 
     public Builder addScratchDisks(ScratchDisks scratchDisks) {
+      if (this.scratchDisks == null) {
+        this.scratchDisks = new LinkedList<>();
+      }
       this.scratchDisks.add(scratchDisks);
       return this;
     }

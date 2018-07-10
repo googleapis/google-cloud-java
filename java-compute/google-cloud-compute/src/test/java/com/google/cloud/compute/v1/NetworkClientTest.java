@@ -39,6 +39,7 @@ import com.google.cloud.compute.v1.stub.NetworkStubSettings;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import org.junit.After;
@@ -536,8 +537,9 @@ public class NetworkClientTest {
 
     ProjectGlobalNetworkName network = ProjectGlobalNetworkName.of("[PROJECT]", "[NETWORK]");
     Network networkResource = Network.newBuilder().build();
+    List<String> fieldMask = new ArrayList<>();
 
-    Operation actualResponse = client.patchNetwork(network, networkResource);
+    Operation actualResponse = client.patchNetwork(network, networkResource, fieldMask);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -566,8 +568,9 @@ public class NetworkClientTest {
     try {
       ProjectGlobalNetworkName network = ProjectGlobalNetworkName.of("[PROJECT]", "[NETWORK]");
       Network networkResource = Network.newBuilder().build();
+      List<String> fieldMask = new ArrayList<>();
 
-      client.patchNetwork(network, networkResource);
+      client.patchNetwork(network, networkResource, fieldMask);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

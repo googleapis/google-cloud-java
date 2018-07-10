@@ -17,7 +17,7 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 import javax.annotation.Generated;
@@ -120,13 +120,16 @@ public final class RoutersScopedList implements ApiMessage {
 
     public Builder addAllRouters(List<Router> routers) {
       if (this.routers == null) {
-        this.routers = new ArrayList<>(routers.size());
+        this.routers = new LinkedList<>();
       }
       this.routers.addAll(routers);
       return this;
     }
 
     public Builder addRouters(Router routers) {
+      if (this.routers == null) {
+        this.routers = new LinkedList<>();
+      }
       this.routers.add(routers);
       return this;
     }

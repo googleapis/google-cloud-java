@@ -749,7 +749,8 @@ public class RegionBackendServiceClient implements BackgroundResource {
    * try (RegionBackendServiceClient regionBackendServiceClient = RegionBackendServiceClient.create()) {
    *   ProjectRegionBackendServiceName backendService = ProjectRegionBackendServiceName.of("[PROJECT]", "[REGION]", "[BACKEND_SERVICE]");
    *   BackendService backendServiceResource = BackendService.newBuilder().build();
-   *   Operation response = regionBackendServiceClient.patchRegionBackendService(backendService, backendServiceResource);
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
+   *   Operation response = regionBackendServiceClient.patchRegionBackendService(backendService, backendServiceResource, fieldMask);
    * }
    * </code></pre>
    *
@@ -757,16 +758,20 @@ public class RegionBackendServiceClient implements BackgroundResource {
    * @param backendServiceResource A BackendService resource. This resource defines a group of
    *     backend virtual machines and their serving capacity. (== resource_for v1.backendService ==)
    *     (== resource_for beta.backendService ==)
+   * @param fieldMask
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation patchRegionBackendService(
-      ProjectRegionBackendServiceName backendService, BackendService backendServiceResource) {
+      ProjectRegionBackendServiceName backendService,
+      BackendService backendServiceResource,
+      List<String> fieldMask) {
 
     PatchRegionBackendServiceHttpRequest request =
         PatchRegionBackendServiceHttpRequest.newBuilder()
             .setBackendService(backendService == null ? null : backendService.toString())
             .setBackendServiceResource(backendServiceResource)
+            .addAllFieldMask(fieldMask)
             .build();
     return patchRegionBackendService(request);
   }
@@ -784,7 +789,8 @@ public class RegionBackendServiceClient implements BackgroundResource {
    * try (RegionBackendServiceClient regionBackendServiceClient = RegionBackendServiceClient.create()) {
    *   ProjectRegionBackendServiceName backendService = ProjectRegionBackendServiceName.of("[PROJECT]", "[REGION]", "[BACKEND_SERVICE]");
    *   BackendService backendServiceResource = BackendService.newBuilder().build();
-   *   Operation response = regionBackendServiceClient.patchRegionBackendService(backendService.toString(), backendServiceResource);
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
+   *   Operation response = regionBackendServiceClient.patchRegionBackendService(backendService.toString(), backendServiceResource, fieldMask);
    * }
    * </code></pre>
    *
@@ -792,16 +798,18 @@ public class RegionBackendServiceClient implements BackgroundResource {
    * @param backendServiceResource A BackendService resource. This resource defines a group of
    *     backend virtual machines and their serving capacity. (== resource_for v1.backendService ==)
    *     (== resource_for beta.backendService ==)
+   * @param fieldMask
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation patchRegionBackendService(
-      String backendService, BackendService backendServiceResource) {
+      String backendService, BackendService backendServiceResource, List<String> fieldMask) {
 
     PatchRegionBackendServiceHttpRequest request =
         PatchRegionBackendServiceHttpRequest.newBuilder()
             .setBackendService(backendService)
             .setBackendServiceResource(backendServiceResource)
+            .addAllFieldMask(fieldMask)
             .build();
     return patchRegionBackendService(request);
   }
@@ -819,9 +827,11 @@ public class RegionBackendServiceClient implements BackgroundResource {
    * try (RegionBackendServiceClient regionBackendServiceClient = RegionBackendServiceClient.create()) {
    *   ProjectRegionBackendServiceName backendService = ProjectRegionBackendServiceName.of("[PROJECT]", "[REGION]", "[BACKEND_SERVICE]");
    *   BackendService backendServiceResource = BackendService.newBuilder().build();
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
    *   PatchRegionBackendServiceHttpRequest request = PatchRegionBackendServiceHttpRequest.newBuilder()
    *     .setBackendService(backendService.toString())
    *     .setBackendServiceResource(backendServiceResource)
+   *     .addAllFieldMask(fieldMask)
    *     .build();
    *   Operation response = regionBackendServiceClient.patchRegionBackendService(request);
    * }
@@ -848,9 +858,11 @@ public class RegionBackendServiceClient implements BackgroundResource {
    * try (RegionBackendServiceClient regionBackendServiceClient = RegionBackendServiceClient.create()) {
    *   ProjectRegionBackendServiceName backendService = ProjectRegionBackendServiceName.of("[PROJECT]", "[REGION]", "[BACKEND_SERVICE]");
    *   BackendService backendServiceResource = BackendService.newBuilder().build();
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
    *   PatchRegionBackendServiceHttpRequest request = PatchRegionBackendServiceHttpRequest.newBuilder()
    *     .setBackendService(backendService.toString())
    *     .setBackendServiceResource(backendServiceResource)
+   *     .addAllFieldMask(fieldMask)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = regionBackendServiceClient.patchRegionBackendServiceCallable().futureCall(request);
    *   // Do something
@@ -876,7 +888,8 @@ public class RegionBackendServiceClient implements BackgroundResource {
    * try (RegionBackendServiceClient regionBackendServiceClient = RegionBackendServiceClient.create()) {
    *   ProjectRegionBackendServiceName backendService = ProjectRegionBackendServiceName.of("[PROJECT]", "[REGION]", "[BACKEND_SERVICE]");
    *   BackendService backendServiceResource = BackendService.newBuilder().build();
-   *   Operation response = regionBackendServiceClient.updateRegionBackendService(backendService, backendServiceResource);
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
+   *   Operation response = regionBackendServiceClient.updateRegionBackendService(backendService, backendServiceResource, fieldMask);
    * }
    * </code></pre>
    *
@@ -884,16 +897,20 @@ public class RegionBackendServiceClient implements BackgroundResource {
    * @param backendServiceResource A BackendService resource. This resource defines a group of
    *     backend virtual machines and their serving capacity. (== resource_for v1.backendService ==)
    *     (== resource_for beta.backendService ==)
+   * @param fieldMask
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation updateRegionBackendService(
-      ProjectRegionBackendServiceName backendService, BackendService backendServiceResource) {
+      ProjectRegionBackendServiceName backendService,
+      BackendService backendServiceResource,
+      List<String> fieldMask) {
 
     UpdateRegionBackendServiceHttpRequest request =
         UpdateRegionBackendServiceHttpRequest.newBuilder()
             .setBackendService(backendService == null ? null : backendService.toString())
             .setBackendServiceResource(backendServiceResource)
+            .addAllFieldMask(fieldMask)
             .build();
     return updateRegionBackendService(request);
   }
@@ -910,7 +927,8 @@ public class RegionBackendServiceClient implements BackgroundResource {
    * try (RegionBackendServiceClient regionBackendServiceClient = RegionBackendServiceClient.create()) {
    *   ProjectRegionBackendServiceName backendService = ProjectRegionBackendServiceName.of("[PROJECT]", "[REGION]", "[BACKEND_SERVICE]");
    *   BackendService backendServiceResource = BackendService.newBuilder().build();
-   *   Operation response = regionBackendServiceClient.updateRegionBackendService(backendService.toString(), backendServiceResource);
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
+   *   Operation response = regionBackendServiceClient.updateRegionBackendService(backendService.toString(), backendServiceResource, fieldMask);
    * }
    * </code></pre>
    *
@@ -918,16 +936,18 @@ public class RegionBackendServiceClient implements BackgroundResource {
    * @param backendServiceResource A BackendService resource. This resource defines a group of
    *     backend virtual machines and their serving capacity. (== resource_for v1.backendService ==)
    *     (== resource_for beta.backendService ==)
+   * @param fieldMask
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation updateRegionBackendService(
-      String backendService, BackendService backendServiceResource) {
+      String backendService, BackendService backendServiceResource, List<String> fieldMask) {
 
     UpdateRegionBackendServiceHttpRequest request =
         UpdateRegionBackendServiceHttpRequest.newBuilder()
             .setBackendService(backendService)
             .setBackendServiceResource(backendServiceResource)
+            .addAllFieldMask(fieldMask)
             .build();
     return updateRegionBackendService(request);
   }
@@ -944,9 +964,11 @@ public class RegionBackendServiceClient implements BackgroundResource {
    * try (RegionBackendServiceClient regionBackendServiceClient = RegionBackendServiceClient.create()) {
    *   ProjectRegionBackendServiceName backendService = ProjectRegionBackendServiceName.of("[PROJECT]", "[REGION]", "[BACKEND_SERVICE]");
    *   BackendService backendServiceResource = BackendService.newBuilder().build();
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
    *   UpdateRegionBackendServiceHttpRequest request = UpdateRegionBackendServiceHttpRequest.newBuilder()
    *     .setBackendService(backendService.toString())
    *     .setBackendServiceResource(backendServiceResource)
+   *     .addAllFieldMask(fieldMask)
    *     .build();
    *   Operation response = regionBackendServiceClient.updateRegionBackendService(request);
    * }
@@ -972,9 +994,11 @@ public class RegionBackendServiceClient implements BackgroundResource {
    * try (RegionBackendServiceClient regionBackendServiceClient = RegionBackendServiceClient.create()) {
    *   ProjectRegionBackendServiceName backendService = ProjectRegionBackendServiceName.of("[PROJECT]", "[REGION]", "[BACKEND_SERVICE]");
    *   BackendService backendServiceResource = BackendService.newBuilder().build();
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
    *   UpdateRegionBackendServiceHttpRequest request = UpdateRegionBackendServiceHttpRequest.newBuilder()
    *     .setBackendService(backendService.toString())
    *     .setBackendServiceResource(backendServiceResource)
+   *     .addAllFieldMask(fieldMask)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = regionBackendServiceClient.updateRegionBackendServiceCallable().futureCall(request);
    *   // Do something

@@ -17,7 +17,7 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 import javax.annotation.Generated;
@@ -497,13 +497,16 @@ public final class Route implements ApiMessage {
 
     public Builder addAllTags(List<String> tags) {
       if (this.tags == null) {
-        this.tags = new ArrayList<>(tags.size());
+        this.tags = new LinkedList<>();
       }
       this.tags.addAll(tags);
       return this;
     }
 
     public Builder addTags(String tags) {
+      if (this.tags == null) {
+        this.tags = new LinkedList<>();
+      }
       this.tags.add(tags);
       return this;
     }
@@ -514,13 +517,16 @@ public final class Route implements ApiMessage {
 
     public Builder addAllWarnings(List<Warnings> warnings) {
       if (this.warnings == null) {
-        this.warnings = new ArrayList<>(warnings.size());
+        this.warnings = new LinkedList<>();
       }
       this.warnings.addAll(warnings);
       return this;
     }
 
     public Builder addWarnings(Warnings warnings) {
+      if (this.warnings == null) {
+        this.warnings = new LinkedList<>();
+      }
       this.warnings.add(warnings);
       return this;
     }

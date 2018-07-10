@@ -17,7 +17,7 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 import javax.annotation.Generated;
@@ -120,13 +120,16 @@ public final class ForwardingRulesScopedList implements ApiMessage {
 
     public Builder addAllForwardingRules(List<ForwardingRule> forwardingRules) {
       if (this.forwardingRules == null) {
-        this.forwardingRules = new ArrayList<>(forwardingRules.size());
+        this.forwardingRules = new LinkedList<>();
       }
       this.forwardingRules.addAll(forwardingRules);
       return this;
     }
 
     public Builder addForwardingRules(ForwardingRule forwardingRules) {
+      if (this.forwardingRules == null) {
+        this.forwardingRules = new LinkedList<>();
+      }
       this.forwardingRules.add(forwardingRules);
       return this;
     }

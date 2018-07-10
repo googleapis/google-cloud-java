@@ -17,7 +17,7 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 import javax.annotation.Generated;
@@ -318,13 +318,16 @@ public final class TargetPool implements ApiMessage {
 
     public Builder addAllHealthChecks(List<String> healthChecks) {
       if (this.healthChecks == null) {
-        this.healthChecks = new ArrayList<>(healthChecks.size());
+        this.healthChecks = new LinkedList<>();
       }
       this.healthChecks.addAll(healthChecks);
       return this;
     }
 
     public Builder addHealthChecks(String healthChecks) {
+      if (this.healthChecks == null) {
+        this.healthChecks = new LinkedList<>();
+      }
       this.healthChecks.add(healthChecks);
       return this;
     }
@@ -344,13 +347,16 @@ public final class TargetPool implements ApiMessage {
 
     public Builder addAllInstances(List<String> instances) {
       if (this.instances == null) {
-        this.instances = new ArrayList<>(instances.size());
+        this.instances = new LinkedList<>();
       }
       this.instances.addAll(instances);
       return this;
     }
 
     public Builder addInstances(String instances) {
+      if (this.instances == null) {
+        this.instances = new LinkedList<>();
+      }
       this.instances.add(instances);
       return this;
     }

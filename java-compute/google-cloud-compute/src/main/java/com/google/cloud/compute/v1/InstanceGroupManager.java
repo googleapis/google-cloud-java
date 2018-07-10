@@ -17,7 +17,7 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 import javax.annotation.Generated;
@@ -30,6 +30,7 @@ public final class InstanceGroupManager implements ApiMessage {
   private final String creationTimestamp;
   private final InstanceGroupManagerActionsSummary currentActions;
   private final String description;
+  private final DistributionPolicy distributionPolicy;
   private final String fingerprint;
   private final String id;
   private final String instanceGroup;
@@ -48,6 +49,7 @@ public final class InstanceGroupManager implements ApiMessage {
     this.creationTimestamp = null;
     this.currentActions = null;
     this.description = null;
+    this.distributionPolicy = null;
     this.fingerprint = null;
     this.id = null;
     this.instanceGroup = null;
@@ -67,6 +69,7 @@ public final class InstanceGroupManager implements ApiMessage {
       String creationTimestamp,
       InstanceGroupManagerActionsSummary currentActions,
       String description,
+      DistributionPolicy distributionPolicy,
       String fingerprint,
       String id,
       String instanceGroup,
@@ -83,6 +86,7 @@ public final class InstanceGroupManager implements ApiMessage {
     this.creationTimestamp = creationTimestamp;
     this.currentActions = currentActions;
     this.description = description;
+    this.distributionPolicy = distributionPolicy;
     this.fingerprint = fingerprint;
     this.id = id;
     this.instanceGroup = instanceGroup;
@@ -110,6 +114,9 @@ public final class InstanceGroupManager implements ApiMessage {
     }
     if (fieldName.equals("description")) {
       return description;
+    }
+    if (fieldName.equals("distributionPolicy")) {
+      return distributionPolicy;
     }
     if (fieldName.equals("fingerprint")) {
       return fingerprint;
@@ -176,6 +183,10 @@ public final class InstanceGroupManager implements ApiMessage {
 
   public String getDescription() {
     return description;
+  }
+
+  public DistributionPolicy getDistributionPolicy() {
+    return distributionPolicy;
   }
 
   public String getFingerprint() {
@@ -253,6 +264,7 @@ public final class InstanceGroupManager implements ApiMessage {
     private String creationTimestamp;
     private InstanceGroupManagerActionsSummary currentActions;
     private String description;
+    private DistributionPolicy distributionPolicy;
     private String fingerprint;
     private String id;
     private String instanceGroup;
@@ -281,6 +293,9 @@ public final class InstanceGroupManager implements ApiMessage {
       }
       if (other.getDescription() != null) {
         this.description = other.description;
+      }
+      if (other.getDistributionPolicy() != null) {
+        this.distributionPolicy = other.distributionPolicy;
       }
       if (other.getFingerprint() != null) {
         this.fingerprint = other.fingerprint;
@@ -326,6 +341,7 @@ public final class InstanceGroupManager implements ApiMessage {
       this.creationTimestamp = source.creationTimestamp;
       this.currentActions = source.currentActions;
       this.description = source.description;
+      this.distributionPolicy = source.distributionPolicy;
       this.fingerprint = source.fingerprint;
       this.id = source.id;
       this.instanceGroup = source.instanceGroup;
@@ -373,6 +389,15 @@ public final class InstanceGroupManager implements ApiMessage {
 
     public Builder setDescription(String description) {
       this.description = description;
+      return this;
+    }
+
+    public DistributionPolicy getDistributionPolicy() {
+      return distributionPolicy;
+    }
+
+    public Builder setDistributionPolicy(DistributionPolicy distributionPolicy) {
+      this.distributionPolicy = distributionPolicy;
       return this;
     }
 
@@ -436,13 +461,16 @@ public final class InstanceGroupManager implements ApiMessage {
 
     public Builder addAllNamedPorts(List<NamedPort> namedPorts) {
       if (this.namedPorts == null) {
-        this.namedPorts = new ArrayList<>(namedPorts.size());
+        this.namedPorts = new LinkedList<>();
       }
       this.namedPorts.addAll(namedPorts);
       return this;
     }
 
     public Builder addNamedPorts(NamedPort namedPorts) {
+      if (this.namedPorts == null) {
+        this.namedPorts = new LinkedList<>();
+      }
       this.namedPorts.add(namedPorts);
       return this;
     }
@@ -471,13 +499,16 @@ public final class InstanceGroupManager implements ApiMessage {
 
     public Builder addAllTargetPools(List<String> targetPools) {
       if (this.targetPools == null) {
-        this.targetPools = new ArrayList<>(targetPools.size());
+        this.targetPools = new LinkedList<>();
       }
       this.targetPools.addAll(targetPools);
       return this;
     }
 
     public Builder addTargetPools(String targetPools) {
+      if (this.targetPools == null) {
+        this.targetPools = new LinkedList<>();
+      }
       this.targetPools.add(targetPools);
       return this;
     }
@@ -507,6 +538,7 @@ public final class InstanceGroupManager implements ApiMessage {
           creationTimestamp,
           currentActions,
           description,
+          distributionPolicy,
           fingerprint,
           id,
           instanceGroup,
@@ -527,6 +559,7 @@ public final class InstanceGroupManager implements ApiMessage {
       newBuilder.setCreationTimestamp(this.creationTimestamp);
       newBuilder.setCurrentActions(this.currentActions);
       newBuilder.setDescription(this.description);
+      newBuilder.setDistributionPolicy(this.distributionPolicy);
       newBuilder.setFingerprint(this.fingerprint);
       newBuilder.setId(this.id);
       newBuilder.setInstanceGroup(this.instanceGroup);
@@ -557,6 +590,9 @@ public final class InstanceGroupManager implements ApiMessage {
         + ", "
         + "description="
         + description
+        + ", "
+        + "distributionPolicy="
+        + distributionPolicy
         + ", "
         + "fingerprint="
         + fingerprint
@@ -607,6 +643,7 @@ public final class InstanceGroupManager implements ApiMessage {
           && Objects.equals(this.creationTimestamp, that.getCreationTimestamp())
           && Objects.equals(this.currentActions, that.getCurrentActions())
           && Objects.equals(this.description, that.getDescription())
+          && Objects.equals(this.distributionPolicy, that.getDistributionPolicy())
           && Objects.equals(this.fingerprint, that.getFingerprint())
           && Objects.equals(this.id, that.getId())
           && Objects.equals(this.instanceGroup, that.getInstanceGroup())
@@ -630,6 +667,7 @@ public final class InstanceGroupManager implements ApiMessage {
         creationTimestamp,
         currentActions,
         description,
+        distributionPolicy,
         fingerprint,
         id,
         instanceGroup,

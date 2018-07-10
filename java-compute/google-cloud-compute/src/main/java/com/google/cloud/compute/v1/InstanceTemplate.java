@@ -32,6 +32,8 @@ public final class InstanceTemplate implements ApiMessage {
   private final String name;
   private final InstanceProperties properties;
   private final String selfLink;
+  private final String sourceInstance;
+  private final SourceInstanceParams sourceInstanceParams;
 
   private InstanceTemplate() {
     this.creationTimestamp = null;
@@ -41,6 +43,8 @@ public final class InstanceTemplate implements ApiMessage {
     this.name = null;
     this.properties = null;
     this.selfLink = null;
+    this.sourceInstance = null;
+    this.sourceInstanceParams = null;
   }
 
   private InstanceTemplate(
@@ -50,7 +54,9 @@ public final class InstanceTemplate implements ApiMessage {
       String kind,
       String name,
       InstanceProperties properties,
-      String selfLink) {
+      String selfLink,
+      String sourceInstance,
+      SourceInstanceParams sourceInstanceParams) {
     this.creationTimestamp = creationTimestamp;
     this.description = description;
     this.id = id;
@@ -58,6 +64,8 @@ public final class InstanceTemplate implements ApiMessage {
     this.name = name;
     this.properties = properties;
     this.selfLink = selfLink;
+    this.sourceInstance = sourceInstance;
+    this.sourceInstanceParams = sourceInstanceParams;
   }
 
   @Override
@@ -82,6 +90,12 @@ public final class InstanceTemplate implements ApiMessage {
     }
     if (fieldName.equals("selfLink")) {
       return selfLink;
+    }
+    if (fieldName.equals("sourceInstance")) {
+      return sourceInstance;
+    }
+    if (fieldName.equals("sourceInstanceParams")) {
+      return sourceInstanceParams;
     }
     return null;
   }
@@ -126,6 +140,14 @@ public final class InstanceTemplate implements ApiMessage {
     return selfLink;
   }
 
+  public String getSourceInstance() {
+    return sourceInstance;
+  }
+
+  public SourceInstanceParams getSourceInstanceParams() {
+    return sourceInstanceParams;
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
@@ -156,6 +178,8 @@ public final class InstanceTemplate implements ApiMessage {
     private String name;
     private InstanceProperties properties;
     private String selfLink;
+    private String sourceInstance;
+    private SourceInstanceParams sourceInstanceParams;
 
     Builder() {}
 
@@ -182,6 +206,12 @@ public final class InstanceTemplate implements ApiMessage {
       if (other.getSelfLink() != null) {
         this.selfLink = other.selfLink;
       }
+      if (other.getSourceInstance() != null) {
+        this.sourceInstance = other.sourceInstance;
+      }
+      if (other.getSourceInstanceParams() != null) {
+        this.sourceInstanceParams = other.sourceInstanceParams;
+      }
       return this;
     }
 
@@ -193,6 +223,8 @@ public final class InstanceTemplate implements ApiMessage {
       this.name = source.name;
       this.properties = source.properties;
       this.selfLink = source.selfLink;
+      this.sourceInstance = source.sourceInstance;
+      this.sourceInstanceParams = source.sourceInstanceParams;
     }
 
     public String getCreationTimestamp() {
@@ -258,10 +290,36 @@ public final class InstanceTemplate implements ApiMessage {
       return this;
     }
 
+    public String getSourceInstance() {
+      return sourceInstance;
+    }
+
+    public Builder setSourceInstance(String sourceInstance) {
+      this.sourceInstance = sourceInstance;
+      return this;
+    }
+
+    public SourceInstanceParams getSourceInstanceParams() {
+      return sourceInstanceParams;
+    }
+
+    public Builder setSourceInstanceParams(SourceInstanceParams sourceInstanceParams) {
+      this.sourceInstanceParams = sourceInstanceParams;
+      return this;
+    }
+
     public InstanceTemplate build() {
 
       return new InstanceTemplate(
-          creationTimestamp, description, id, kind, name, properties, selfLink);
+          creationTimestamp,
+          description,
+          id,
+          kind,
+          name,
+          properties,
+          selfLink,
+          sourceInstance,
+          sourceInstanceParams);
     }
 
     public Builder clone() {
@@ -273,6 +331,8 @@ public final class InstanceTemplate implements ApiMessage {
       newBuilder.setName(this.name);
       newBuilder.setProperties(this.properties);
       newBuilder.setSelfLink(this.selfLink);
+      newBuilder.setSourceInstance(this.sourceInstance);
+      newBuilder.setSourceInstanceParams(this.sourceInstanceParams);
       return newBuilder;
     }
   }
@@ -300,6 +360,12 @@ public final class InstanceTemplate implements ApiMessage {
         + ", "
         + "selfLink="
         + selfLink
+        + ", "
+        + "sourceInstance="
+        + sourceInstance
+        + ", "
+        + "sourceInstanceParams="
+        + sourceInstanceParams
         + "}";
   }
 
@@ -316,13 +382,24 @@ public final class InstanceTemplate implements ApiMessage {
           && Objects.equals(this.kind, that.getKind())
           && Objects.equals(this.name, that.getName())
           && Objects.equals(this.properties, that.getProperties())
-          && Objects.equals(this.selfLink, that.getSelfLink());
+          && Objects.equals(this.selfLink, that.getSelfLink())
+          && Objects.equals(this.sourceInstance, that.getSourceInstance())
+          && Objects.equals(this.sourceInstanceParams, that.getSourceInstanceParams());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(creationTimestamp, description, id, kind, name, properties, selfLink);
+    return Objects.hash(
+        creationTimestamp,
+        description,
+        id,
+        kind,
+        name,
+        properties,
+        selfLink,
+        sourceInstance,
+        sourceInstanceParams);
   }
 }

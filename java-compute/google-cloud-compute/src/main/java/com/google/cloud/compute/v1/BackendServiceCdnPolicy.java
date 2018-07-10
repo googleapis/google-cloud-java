@@ -17,6 +17,7 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 import javax.annotation.Generated;
@@ -26,19 +27,34 @@ import javax.annotation.Nullable;
 @BetaApi
 public final class BackendServiceCdnPolicy implements ApiMessage {
   private final CacheKeyPolicy cacheKeyPolicy;
+  private final String signedUrlCacheMaxAgeSec;
+  private final List<String> signedUrlKeyNames;
 
   private BackendServiceCdnPolicy() {
     this.cacheKeyPolicy = null;
+    this.signedUrlCacheMaxAgeSec = null;
+    this.signedUrlKeyNames = null;
   }
 
-  private BackendServiceCdnPolicy(CacheKeyPolicy cacheKeyPolicy) {
+  private BackendServiceCdnPolicy(
+      CacheKeyPolicy cacheKeyPolicy,
+      String signedUrlCacheMaxAgeSec,
+      List<String> signedUrlKeyNames) {
     this.cacheKeyPolicy = cacheKeyPolicy;
+    this.signedUrlCacheMaxAgeSec = signedUrlCacheMaxAgeSec;
+    this.signedUrlKeyNames = signedUrlKeyNames;
   }
 
   @Override
   public Object getFieldValue(String fieldName) {
     if (fieldName.equals("cacheKeyPolicy")) {
       return cacheKeyPolicy;
+    }
+    if (fieldName.equals("signedUrlCacheMaxAgeSec")) {
+      return signedUrlCacheMaxAgeSec;
+    }
+    if (fieldName.equals("signedUrlKeyNames")) {
+      return signedUrlKeyNames;
     }
     return null;
   }
@@ -57,6 +73,14 @@ public final class BackendServiceCdnPolicy implements ApiMessage {
 
   public CacheKeyPolicy getCacheKeyPolicy() {
     return cacheKeyPolicy;
+  }
+
+  public String getSignedUrlCacheMaxAgeSec() {
+    return signedUrlCacheMaxAgeSec;
+  }
+
+  public List<String> getSignedUrlKeyNamesList() {
+    return signedUrlKeyNames;
   }
 
   public static Builder newBuilder() {
@@ -83,6 +107,8 @@ public final class BackendServiceCdnPolicy implements ApiMessage {
 
   public static class Builder {
     private CacheKeyPolicy cacheKeyPolicy;
+    private String signedUrlCacheMaxAgeSec;
+    private List<String> signedUrlKeyNames;
 
     Builder() {}
 
@@ -91,11 +117,19 @@ public final class BackendServiceCdnPolicy implements ApiMessage {
       if (other.getCacheKeyPolicy() != null) {
         this.cacheKeyPolicy = other.cacheKeyPolicy;
       }
+      if (other.getSignedUrlCacheMaxAgeSec() != null) {
+        this.signedUrlCacheMaxAgeSec = other.signedUrlCacheMaxAgeSec;
+      }
+      if (other.getSignedUrlKeyNamesList() != null) {
+        this.signedUrlKeyNames = other.signedUrlKeyNames;
+      }
       return this;
     }
 
     Builder(BackendServiceCdnPolicy source) {
       this.cacheKeyPolicy = source.cacheKeyPolicy;
+      this.signedUrlCacheMaxAgeSec = source.signedUrlCacheMaxAgeSec;
+      this.signedUrlKeyNames = source.signedUrlKeyNames;
     }
 
     public CacheKeyPolicy getCacheKeyPolicy() {
@@ -107,20 +141,62 @@ public final class BackendServiceCdnPolicy implements ApiMessage {
       return this;
     }
 
+    public String getSignedUrlCacheMaxAgeSec() {
+      return signedUrlCacheMaxAgeSec;
+    }
+
+    public Builder setSignedUrlCacheMaxAgeSec(String signedUrlCacheMaxAgeSec) {
+      this.signedUrlCacheMaxAgeSec = signedUrlCacheMaxAgeSec;
+      return this;
+    }
+
+    public List<String> getSignedUrlKeyNamesList() {
+      return signedUrlKeyNames;
+    }
+
+    public Builder addAllSignedUrlKeyNames(List<String> signedUrlKeyNames) {
+      if (this.signedUrlKeyNames == null) {
+        this.signedUrlKeyNames = new LinkedList<>();
+      }
+      this.signedUrlKeyNames.addAll(signedUrlKeyNames);
+      return this;
+    }
+
+    public Builder addSignedUrlKeyNames(String signedUrlKeyNames) {
+      if (this.signedUrlKeyNames == null) {
+        this.signedUrlKeyNames = new LinkedList<>();
+      }
+      this.signedUrlKeyNames.add(signedUrlKeyNames);
+      return this;
+    }
+
     public BackendServiceCdnPolicy build() {
-      return new BackendServiceCdnPolicy(cacheKeyPolicy);
+
+      return new BackendServiceCdnPolicy(
+          cacheKeyPolicy, signedUrlCacheMaxAgeSec, signedUrlKeyNames);
     }
 
     public Builder clone() {
       Builder newBuilder = new Builder();
       newBuilder.setCacheKeyPolicy(this.cacheKeyPolicy);
+      newBuilder.setSignedUrlCacheMaxAgeSec(this.signedUrlCacheMaxAgeSec);
+      newBuilder.addAllSignedUrlKeyNames(this.signedUrlKeyNames);
       return newBuilder;
     }
   }
 
   @Override
   public String toString() {
-    return "BackendServiceCdnPolicy{" + "cacheKeyPolicy=" + cacheKeyPolicy + "}";
+    return "BackendServiceCdnPolicy{"
+        + "cacheKeyPolicy="
+        + cacheKeyPolicy
+        + ", "
+        + "signedUrlCacheMaxAgeSec="
+        + signedUrlCacheMaxAgeSec
+        + ", "
+        + "signedUrlKeyNames="
+        + signedUrlKeyNames
+        + "}";
   }
 
   @Override
@@ -130,13 +206,15 @@ public final class BackendServiceCdnPolicy implements ApiMessage {
     }
     if (o instanceof BackendServiceCdnPolicy) {
       BackendServiceCdnPolicy that = (BackendServiceCdnPolicy) o;
-      return Objects.equals(this.cacheKeyPolicy, that.getCacheKeyPolicy());
+      return Objects.equals(this.cacheKeyPolicy, that.getCacheKeyPolicy())
+          && Objects.equals(this.signedUrlCacheMaxAgeSec, that.getSignedUrlCacheMaxAgeSec())
+          && Objects.equals(this.signedUrlKeyNames, that.getSignedUrlKeyNamesList());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(cacheKeyPolicy);
+    return Objects.hash(cacheKeyPolicy, signedUrlCacheMaxAgeSec, signedUrlKeyNames);
   }
 }

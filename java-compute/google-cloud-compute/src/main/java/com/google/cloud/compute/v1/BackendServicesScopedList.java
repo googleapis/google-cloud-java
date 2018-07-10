@@ -17,7 +17,7 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 import javax.annotation.Generated;
@@ -120,13 +120,16 @@ public final class BackendServicesScopedList implements ApiMessage {
 
     public Builder addAllBackendServices(List<BackendService> backendServices) {
       if (this.backendServices == null) {
-        this.backendServices = new ArrayList<>(backendServices.size());
+        this.backendServices = new LinkedList<>();
       }
       this.backendServices.addAll(backendServices);
       return this;
     }
 
     public Builder addBackendServices(BackendService backendServices) {
+      if (this.backendServices == null) {
+        this.backendServices = new LinkedList<>();
+      }
       this.backendServices.add(backendServices);
       return this;
     }

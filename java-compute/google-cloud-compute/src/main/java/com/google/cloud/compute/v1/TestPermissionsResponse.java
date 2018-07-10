@@ -17,7 +17,7 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 import javax.annotation.Generated;
@@ -105,13 +105,16 @@ public final class TestPermissionsResponse implements ApiMessage {
 
     public Builder addAllPermissions(List<String> permissions) {
       if (this.permissions == null) {
-        this.permissions = new ArrayList<>(permissions.size());
+        this.permissions = new LinkedList<>();
       }
       this.permissions.addAll(permissions);
       return this;
     }
 
     public Builder addPermissions(String permissions) {
+      if (this.permissions == null) {
+        this.permissions = new LinkedList<>();
+      }
       this.permissions.add(permissions);
       return this;
     }

@@ -17,7 +17,7 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 import javax.annotation.Generated;
@@ -250,13 +250,16 @@ public final class Zone implements ApiMessage {
 
     public Builder addAllAvailableCpuPlatforms(List<String> availableCpuPlatforms) {
       if (this.availableCpuPlatforms == null) {
-        this.availableCpuPlatforms = new ArrayList<>(availableCpuPlatforms.size());
+        this.availableCpuPlatforms = new LinkedList<>();
       }
       this.availableCpuPlatforms.addAll(availableCpuPlatforms);
       return this;
     }
 
     public Builder addAvailableCpuPlatforms(String availableCpuPlatforms) {
+      if (this.availableCpuPlatforms == null) {
+        this.availableCpuPlatforms = new LinkedList<>();
+      }
       this.availableCpuPlatforms.add(availableCpuPlatforms);
       return this;
     }

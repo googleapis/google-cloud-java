@@ -40,6 +40,7 @@ import com.google.cloud.compute.v1.stub.BackendServiceStubSettings;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -582,8 +583,10 @@ public class BackendServiceClientTest {
     ProjectGlobalBackendServiceName backendService =
         ProjectGlobalBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
     BackendService backendServiceResource = BackendService.newBuilder().build();
+    List<String> fieldMask = new ArrayList<>();
 
-    Operation actualResponse = client.patchBackendService(backendService, backendServiceResource);
+    Operation actualResponse =
+        client.patchBackendService(backendService, backendServiceResource, fieldMask);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -613,8 +616,9 @@ public class BackendServiceClientTest {
       ProjectGlobalBackendServiceName backendService =
           ProjectGlobalBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
       BackendService backendServiceResource = BackendService.newBuilder().build();
+      List<String> fieldMask = new ArrayList<>();
 
-      client.patchBackendService(backendService, backendServiceResource);
+      client.patchBackendService(backendService, backendServiceResource, fieldMask);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -674,8 +678,10 @@ public class BackendServiceClientTest {
     ProjectGlobalBackendServiceName backendService =
         ProjectGlobalBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
     BackendService backendServiceResource = BackendService.newBuilder().build();
+    List<String> fieldMask = new ArrayList<>();
 
-    Operation actualResponse = client.updateBackendService(backendService, backendServiceResource);
+    Operation actualResponse =
+        client.updateBackendService(backendService, backendServiceResource, fieldMask);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -705,8 +711,9 @@ public class BackendServiceClientTest {
       ProjectGlobalBackendServiceName backendService =
           ProjectGlobalBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
       BackendService backendServiceResource = BackendService.newBuilder().build();
+      List<String> fieldMask = new ArrayList<>();
 
-      client.updateBackendService(backendService, backendServiceResource);
+      client.updateBackendService(backendService, backendServiceResource, fieldMask);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

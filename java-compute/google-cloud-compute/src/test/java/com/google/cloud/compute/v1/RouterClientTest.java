@@ -41,6 +41,7 @@ import com.google.cloud.compute.v1.stub.RouterStubSettings;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -561,8 +562,9 @@ public class RouterClientTest {
     ProjectRegionRouterName router =
         ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
     Router routerResource = Router.newBuilder().build();
+    List<String> fieldMask = new ArrayList<>();
 
-    Operation actualResponse = client.patchRouter(router, routerResource);
+    Operation actualResponse = client.patchRouter(router, routerResource, fieldMask);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -592,8 +594,9 @@ public class RouterClientTest {
       ProjectRegionRouterName router =
           ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
       Router routerResource = Router.newBuilder().build();
+      List<String> fieldMask = new ArrayList<>();
 
-      client.patchRouter(router, routerResource);
+      client.patchRouter(router, routerResource, fieldMask);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -701,8 +704,9 @@ public class RouterClientTest {
     ProjectRegionRouterName router =
         ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
     Router routerResource = Router.newBuilder().build();
+    List<String> fieldMask = new ArrayList<>();
 
-    Operation actualResponse = client.updateRouter(router, routerResource);
+    Operation actualResponse = client.updateRouter(router, routerResource, fieldMask);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -732,8 +736,9 @@ public class RouterClientTest {
       ProjectRegionRouterName router =
           ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
       Router routerResource = Router.newBuilder().build();
+      List<String> fieldMask = new ArrayList<>();
 
-      client.updateRouter(router, routerResource);
+      client.updateRouter(router, routerResource, fieldMask);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

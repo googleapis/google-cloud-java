@@ -17,7 +17,7 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 import javax.annotation.Generated;
@@ -31,6 +31,7 @@ public final class TargetHttpsProxy implements ApiMessage {
   private final String id;
   private final String kind;
   private final String name;
+  private final String quicOverride;
   private final String selfLink;
   private final List<String> sslCertificates;
   private final String sslPolicy;
@@ -42,6 +43,7 @@ public final class TargetHttpsProxy implements ApiMessage {
     this.id = null;
     this.kind = null;
     this.name = null;
+    this.quicOverride = null;
     this.selfLink = null;
     this.sslCertificates = null;
     this.sslPolicy = null;
@@ -54,6 +56,7 @@ public final class TargetHttpsProxy implements ApiMessage {
       String id,
       String kind,
       String name,
+      String quicOverride,
       String selfLink,
       List<String> sslCertificates,
       String sslPolicy,
@@ -63,6 +66,7 @@ public final class TargetHttpsProxy implements ApiMessage {
     this.id = id;
     this.kind = kind;
     this.name = name;
+    this.quicOverride = quicOverride;
     this.selfLink = selfLink;
     this.sslCertificates = sslCertificates;
     this.sslPolicy = sslPolicy;
@@ -85,6 +89,9 @@ public final class TargetHttpsProxy implements ApiMessage {
     }
     if (fieldName.equals("name")) {
       return name;
+    }
+    if (fieldName.equals("quicOverride")) {
+      return quicOverride;
     }
     if (fieldName.equals("selfLink")) {
       return selfLink;
@@ -133,6 +140,10 @@ public final class TargetHttpsProxy implements ApiMessage {
     return name;
   }
 
+  public String getQuicOverride() {
+    return quicOverride;
+  }
+
   public String getSelfLink() {
     return selfLink;
   }
@@ -177,6 +188,7 @@ public final class TargetHttpsProxy implements ApiMessage {
     private String id;
     private String kind;
     private String name;
+    private String quicOverride;
     private String selfLink;
     private List<String> sslCertificates;
     private String sslPolicy;
@@ -201,6 +213,9 @@ public final class TargetHttpsProxy implements ApiMessage {
       if (other.getName() != null) {
         this.name = other.name;
       }
+      if (other.getQuicOverride() != null) {
+        this.quicOverride = other.quicOverride;
+      }
       if (other.getSelfLink() != null) {
         this.selfLink = other.selfLink;
       }
@@ -222,6 +237,7 @@ public final class TargetHttpsProxy implements ApiMessage {
       this.id = source.id;
       this.kind = source.kind;
       this.name = source.name;
+      this.quicOverride = source.quicOverride;
       this.selfLink = source.selfLink;
       this.sslCertificates = source.sslCertificates;
       this.sslPolicy = source.sslPolicy;
@@ -273,6 +289,15 @@ public final class TargetHttpsProxy implements ApiMessage {
       return this;
     }
 
+    public String getQuicOverride() {
+      return quicOverride;
+    }
+
+    public Builder setQuicOverride(String quicOverride) {
+      this.quicOverride = quicOverride;
+      return this;
+    }
+
     public String getSelfLink() {
       return selfLink;
     }
@@ -288,13 +313,16 @@ public final class TargetHttpsProxy implements ApiMessage {
 
     public Builder addAllSslCertificates(List<String> sslCertificates) {
       if (this.sslCertificates == null) {
-        this.sslCertificates = new ArrayList<>(sslCertificates.size());
+        this.sslCertificates = new LinkedList<>();
       }
       this.sslCertificates.addAll(sslCertificates);
       return this;
     }
 
     public Builder addSslCertificates(String sslCertificates) {
+      if (this.sslCertificates == null) {
+        this.sslCertificates = new LinkedList<>();
+      }
       this.sslCertificates.add(sslCertificates);
       return this;
     }
@@ -325,6 +353,7 @@ public final class TargetHttpsProxy implements ApiMessage {
           id,
           kind,
           name,
+          quicOverride,
           selfLink,
           sslCertificates,
           sslPolicy,
@@ -338,6 +367,7 @@ public final class TargetHttpsProxy implements ApiMessage {
       newBuilder.setId(this.id);
       newBuilder.setKind(this.kind);
       newBuilder.setName(this.name);
+      newBuilder.setQuicOverride(this.quicOverride);
       newBuilder.setSelfLink(this.selfLink);
       newBuilder.addAllSslCertificates(this.sslCertificates);
       newBuilder.setSslPolicy(this.sslPolicy);
@@ -363,6 +393,9 @@ public final class TargetHttpsProxy implements ApiMessage {
         + ", "
         + "name="
         + name
+        + ", "
+        + "quicOverride="
+        + quicOverride
         + ", "
         + "selfLink="
         + selfLink
@@ -390,6 +423,7 @@ public final class TargetHttpsProxy implements ApiMessage {
           && Objects.equals(this.id, that.getId())
           && Objects.equals(this.kind, that.getKind())
           && Objects.equals(this.name, that.getName())
+          && Objects.equals(this.quicOverride, that.getQuicOverride())
           && Objects.equals(this.selfLink, that.getSelfLink())
           && Objects.equals(this.sslCertificates, that.getSslCertificatesList())
           && Objects.equals(this.sslPolicy, that.getSslPolicy())
@@ -406,6 +440,7 @@ public final class TargetHttpsProxy implements ApiMessage {
         id,
         kind,
         name,
+        quicOverride,
         selfLink,
         sslCertificates,
         sslPolicy,

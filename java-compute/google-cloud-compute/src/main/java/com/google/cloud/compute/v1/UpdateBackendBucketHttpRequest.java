@@ -17,6 +17,7 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 import javax.annotation.Generated;
@@ -120,12 +121,6 @@ public final class UpdateBackendBucketHttpRequest implements ApiMessage {
     return backendBucketResource;
   }
 
-  @Nullable
-  @Override
-  public List<String> getFieldMask() {
-    return fieldMask;
-  }
-
   public String getAccessToken() {
     return access_token;
   }
@@ -140,6 +135,10 @@ public final class UpdateBackendBucketHttpRequest implements ApiMessage {
 
   public String getCallback() {
     return callback;
+  }
+
+  public List<String> getFieldMask() {
+    return fieldMask;
   }
 
   public String getFields() {
@@ -295,8 +294,19 @@ public final class UpdateBackendBucketHttpRequest implements ApiMessage {
       return fieldMask;
     }
 
-    public Builder setFieldMask(List<String> fieldMask) {
-      this.fieldMask = fieldMask;
+    public Builder addAllFieldMask(List<String> fieldMask) {
+      if (this.fieldMask == null) {
+        this.fieldMask = new LinkedList<>();
+      }
+      this.fieldMask.addAll(fieldMask);
+      return this;
+    }
+
+    public Builder addFieldMask(String fieldMask) {
+      if (this.fieldMask == null) {
+        this.fieldMask = new LinkedList<>();
+      }
+      this.fieldMask.add(fieldMask);
       return this;
     }
 
@@ -361,6 +371,10 @@ public final class UpdateBackendBucketHttpRequest implements ApiMessage {
         missing += " backendBucket";
       }
 
+      if (fieldMask == null) {
+        missing += " fieldMask";
+      }
+
       if (!missing.isEmpty()) {
         throw new IllegalStateException("Missing required properties:" + missing);
       }
@@ -384,7 +398,7 @@ public final class UpdateBackendBucketHttpRequest implements ApiMessage {
       newBuilder.setBackendBucket(this.backendBucket);
       newBuilder.setBackendBucketResource(this.backendBucketResource);
       newBuilder.setCallback(this.callback);
-      newBuilder.setFieldMask(this.fieldMask);
+      newBuilder.addAllFieldMask(this.fieldMask);
       newBuilder.setFields(this.fields);
       newBuilder.setKey(this.key);
       newBuilder.setPrettyPrint(this.prettyPrint);

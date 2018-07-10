@@ -17,7 +17,7 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 import javax.annotation.Generated;
@@ -416,13 +416,16 @@ public final class VpnTunnel implements ApiMessage {
 
     public Builder addAllLocalTrafficSelector(List<String> localTrafficSelector) {
       if (this.localTrafficSelector == null) {
-        this.localTrafficSelector = new ArrayList<>(localTrafficSelector.size());
+        this.localTrafficSelector = new LinkedList<>();
       }
       this.localTrafficSelector.addAll(localTrafficSelector);
       return this;
     }
 
     public Builder addLocalTrafficSelector(String localTrafficSelector) {
+      if (this.localTrafficSelector == null) {
+        this.localTrafficSelector = new LinkedList<>();
+      }
       this.localTrafficSelector.add(localTrafficSelector);
       return this;
     }
@@ -460,13 +463,16 @@ public final class VpnTunnel implements ApiMessage {
 
     public Builder addAllRemoteTrafficSelector(List<String> remoteTrafficSelector) {
       if (this.remoteTrafficSelector == null) {
-        this.remoteTrafficSelector = new ArrayList<>(remoteTrafficSelector.size());
+        this.remoteTrafficSelector = new LinkedList<>();
       }
       this.remoteTrafficSelector.addAll(remoteTrafficSelector);
       return this;
     }
 
     public Builder addRemoteTrafficSelector(String remoteTrafficSelector) {
+      if (this.remoteTrafficSelector == null) {
+        this.remoteTrafficSelector = new LinkedList<>();
+      }
       this.remoteTrafficSelector.add(remoteTrafficSelector);
       return this;
     }

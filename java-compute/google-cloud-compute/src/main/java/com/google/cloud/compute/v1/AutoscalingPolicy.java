@@ -17,7 +17,7 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 import javax.annotation.Generated;
@@ -205,7 +205,7 @@ public final class AutoscalingPolicy implements ApiMessage {
     public Builder addAllCustomMetricUtilizations(
         List<AutoscalingPolicyCustomMetricUtilization> customMetricUtilizations) {
       if (this.customMetricUtilizations == null) {
-        this.customMetricUtilizations = new ArrayList<>(customMetricUtilizations.size());
+        this.customMetricUtilizations = new LinkedList<>();
       }
       this.customMetricUtilizations.addAll(customMetricUtilizations);
       return this;
@@ -213,6 +213,9 @@ public final class AutoscalingPolicy implements ApiMessage {
 
     public Builder addCustomMetricUtilizations(
         AutoscalingPolicyCustomMetricUtilization customMetricUtilizations) {
+      if (this.customMetricUtilizations == null) {
+        this.customMetricUtilizations = new LinkedList<>();
+      }
       this.customMetricUtilizations.add(customMetricUtilizations);
       return this;
     }

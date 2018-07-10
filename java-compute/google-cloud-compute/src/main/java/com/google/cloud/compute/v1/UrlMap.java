@@ -17,7 +17,7 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 import javax.annotation.Generated;
@@ -302,13 +302,16 @@ public final class UrlMap implements ApiMessage {
 
     public Builder addAllHostRules(List<HostRule> hostRules) {
       if (this.hostRules == null) {
-        this.hostRules = new ArrayList<>(hostRules.size());
+        this.hostRules = new LinkedList<>();
       }
       this.hostRules.addAll(hostRules);
       return this;
     }
 
     public Builder addHostRules(HostRule hostRules) {
+      if (this.hostRules == null) {
+        this.hostRules = new LinkedList<>();
+      }
       this.hostRules.add(hostRules);
       return this;
     }
@@ -346,13 +349,16 @@ public final class UrlMap implements ApiMessage {
 
     public Builder addAllPathMatchers(List<PathMatcher> pathMatchers) {
       if (this.pathMatchers == null) {
-        this.pathMatchers = new ArrayList<>(pathMatchers.size());
+        this.pathMatchers = new LinkedList<>();
       }
       this.pathMatchers.addAll(pathMatchers);
       return this;
     }
 
     public Builder addPathMatchers(PathMatcher pathMatchers) {
+      if (this.pathMatchers == null) {
+        this.pathMatchers = new LinkedList<>();
+      }
       this.pathMatchers.add(pathMatchers);
       return this;
     }
@@ -372,13 +378,16 @@ public final class UrlMap implements ApiMessage {
 
     public Builder addAllTests(List<UrlMapTest> tests) {
       if (this.tests == null) {
-        this.tests = new ArrayList<>(tests.size());
+        this.tests = new LinkedList<>();
       }
       this.tests.addAll(tests);
       return this;
     }
 
     public Builder addTests(UrlMapTest tests) {
+      if (this.tests == null) {
+        this.tests = new LinkedList<>();
+      }
       this.tests.add(tests);
       return this;
     }

@@ -28,20 +28,27 @@ public final class RouterInterface implements ApiMessage {
   private final String ipRange;
   private final String linkedInterconnectAttachment;
   private final String linkedVpnTunnel;
+  private final String managementType;
   private final String name;
 
   private RouterInterface() {
     this.ipRange = null;
     this.linkedInterconnectAttachment = null;
     this.linkedVpnTunnel = null;
+    this.managementType = null;
     this.name = null;
   }
 
   private RouterInterface(
-      String ipRange, String linkedInterconnectAttachment, String linkedVpnTunnel, String name) {
+      String ipRange,
+      String linkedInterconnectAttachment,
+      String linkedVpnTunnel,
+      String managementType,
+      String name) {
     this.ipRange = ipRange;
     this.linkedInterconnectAttachment = linkedInterconnectAttachment;
     this.linkedVpnTunnel = linkedVpnTunnel;
+    this.managementType = managementType;
     this.name = name;
   }
 
@@ -55,6 +62,9 @@ public final class RouterInterface implements ApiMessage {
     }
     if (fieldName.equals("linkedVpnTunnel")) {
       return linkedVpnTunnel;
+    }
+    if (fieldName.equals("managementType")) {
+      return managementType;
     }
     if (fieldName.equals("name")) {
       return name;
@@ -84,6 +94,10 @@ public final class RouterInterface implements ApiMessage {
 
   public String getLinkedVpnTunnel() {
     return linkedVpnTunnel;
+  }
+
+  public String getManagementType() {
+    return managementType;
   }
 
   public String getName() {
@@ -116,6 +130,7 @@ public final class RouterInterface implements ApiMessage {
     private String ipRange;
     private String linkedInterconnectAttachment;
     private String linkedVpnTunnel;
+    private String managementType;
     private String name;
 
     Builder() {}
@@ -131,6 +146,9 @@ public final class RouterInterface implements ApiMessage {
       if (other.getLinkedVpnTunnel() != null) {
         this.linkedVpnTunnel = other.linkedVpnTunnel;
       }
+      if (other.getManagementType() != null) {
+        this.managementType = other.managementType;
+      }
       if (other.getName() != null) {
         this.name = other.name;
       }
@@ -141,6 +159,7 @@ public final class RouterInterface implements ApiMessage {
       this.ipRange = source.ipRange;
       this.linkedInterconnectAttachment = source.linkedInterconnectAttachment;
       this.linkedVpnTunnel = source.linkedVpnTunnel;
+      this.managementType = source.managementType;
       this.name = source.name;
     }
 
@@ -171,6 +190,15 @@ public final class RouterInterface implements ApiMessage {
       return this;
     }
 
+    public String getManagementType() {
+      return managementType;
+    }
+
+    public Builder setManagementType(String managementType) {
+      this.managementType = managementType;
+      return this;
+    }
+
     public String getName() {
       return name;
     }
@@ -182,7 +210,8 @@ public final class RouterInterface implements ApiMessage {
 
     public RouterInterface build() {
 
-      return new RouterInterface(ipRange, linkedInterconnectAttachment, linkedVpnTunnel, name);
+      return new RouterInterface(
+          ipRange, linkedInterconnectAttachment, linkedVpnTunnel, managementType, name);
     }
 
     public Builder clone() {
@@ -190,6 +219,7 @@ public final class RouterInterface implements ApiMessage {
       newBuilder.setIpRange(this.ipRange);
       newBuilder.setLinkedInterconnectAttachment(this.linkedInterconnectAttachment);
       newBuilder.setLinkedVpnTunnel(this.linkedVpnTunnel);
+      newBuilder.setManagementType(this.managementType);
       newBuilder.setName(this.name);
       return newBuilder;
     }
@@ -207,6 +237,9 @@ public final class RouterInterface implements ApiMessage {
         + "linkedVpnTunnel="
         + linkedVpnTunnel
         + ", "
+        + "managementType="
+        + managementType
+        + ", "
         + "name="
         + name
         + "}";
@@ -223,6 +256,7 @@ public final class RouterInterface implements ApiMessage {
           && Objects.equals(
               this.linkedInterconnectAttachment, that.getLinkedInterconnectAttachment())
           && Objects.equals(this.linkedVpnTunnel, that.getLinkedVpnTunnel())
+          && Objects.equals(this.managementType, that.getManagementType())
           && Objects.equals(this.name, that.getName());
     }
     return false;
@@ -230,6 +264,7 @@ public final class RouterInterface implements ApiMessage {
 
   @Override
   public int hashCode() {
-    return Objects.hash(ipRange, linkedInterconnectAttachment, linkedVpnTunnel, name);
+    return Objects.hash(
+        ipRange, linkedInterconnectAttachment, linkedVpnTunnel, managementType, name);
   }
 }

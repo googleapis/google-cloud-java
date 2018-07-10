@@ -17,7 +17,7 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 import javax.annotation.Generated;
@@ -120,13 +120,16 @@ public final class BackendServiceGroupHealth implements ApiMessage {
 
     public Builder addAllHealthStatus(List<HealthStatus> healthStatus) {
       if (this.healthStatus == null) {
-        this.healthStatus = new ArrayList<>(healthStatus.size());
+        this.healthStatus = new LinkedList<>();
       }
       this.healthStatus.addAll(healthStatus);
       return this;
     }
 
     public Builder addHealthStatus(HealthStatus healthStatus) {
+      if (this.healthStatus == null) {
+        this.healthStatus = new LinkedList<>();
+      }
       this.healthStatus.add(healthStatus);
       return this;
     }

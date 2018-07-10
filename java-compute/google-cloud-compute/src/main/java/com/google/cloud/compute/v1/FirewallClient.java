@@ -600,22 +600,25 @@ public class FirewallClient implements BackgroundResource {
    * try (FirewallClient firewallClient = FirewallClient.create()) {
    *   ProjectGlobalFirewallName firewall = ProjectGlobalFirewallName.of("[PROJECT]", "[FIREWALL]");
    *   Firewall firewallResource = Firewall.newBuilder().build();
-   *   Operation response = firewallClient.patchFirewall(firewall, firewallResource);
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
+   *   Operation response = firewallClient.patchFirewall(firewall, firewallResource, fieldMask);
    * }
    * </code></pre>
    *
    * @param firewall Name of the firewall rule to patch.
    * @param firewallResource Represents a Firewall resource.
+   * @param fieldMask
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation patchFirewall(
-      ProjectGlobalFirewallName firewall, Firewall firewallResource) {
+      ProjectGlobalFirewallName firewall, Firewall firewallResource, List<String> fieldMask) {
 
     PatchFirewallHttpRequest request =
         PatchFirewallHttpRequest.newBuilder()
             .setFirewall(firewall == null ? null : firewall.toString())
             .setFirewallResource(firewallResource)
+            .addAllFieldMask(fieldMask)
             .build();
     return patchFirewall(request);
   }
@@ -631,21 +634,25 @@ public class FirewallClient implements BackgroundResource {
    * try (FirewallClient firewallClient = FirewallClient.create()) {
    *   ProjectGlobalFirewallName firewall = ProjectGlobalFirewallName.of("[PROJECT]", "[FIREWALL]");
    *   Firewall firewallResource = Firewall.newBuilder().build();
-   *   Operation response = firewallClient.patchFirewall(firewall.toString(), firewallResource);
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
+   *   Operation response = firewallClient.patchFirewall(firewall.toString(), firewallResource, fieldMask);
    * }
    * </code></pre>
    *
    * @param firewall Name of the firewall rule to patch.
    * @param firewallResource Represents a Firewall resource.
+   * @param fieldMask
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation patchFirewall(String firewall, Firewall firewallResource) {
+  public final Operation patchFirewall(
+      String firewall, Firewall firewallResource, List<String> fieldMask) {
 
     PatchFirewallHttpRequest request =
         PatchFirewallHttpRequest.newBuilder()
             .setFirewall(firewall)
             .setFirewallResource(firewallResource)
+            .addAllFieldMask(fieldMask)
             .build();
     return patchFirewall(request);
   }
@@ -661,9 +668,11 @@ public class FirewallClient implements BackgroundResource {
    * try (FirewallClient firewallClient = FirewallClient.create()) {
    *   ProjectGlobalFirewallName firewall = ProjectGlobalFirewallName.of("[PROJECT]", "[FIREWALL]");
    *   Firewall firewallResource = Firewall.newBuilder().build();
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
    *   PatchFirewallHttpRequest request = PatchFirewallHttpRequest.newBuilder()
    *     .setFirewall(firewall.toString())
    *     .setFirewallResource(firewallResource)
+   *     .addAllFieldMask(fieldMask)
    *     .build();
    *   Operation response = firewallClient.patchFirewall(request);
    * }
@@ -688,9 +697,11 @@ public class FirewallClient implements BackgroundResource {
    * try (FirewallClient firewallClient = FirewallClient.create()) {
    *   ProjectGlobalFirewallName firewall = ProjectGlobalFirewallName.of("[PROJECT]", "[FIREWALL]");
    *   Firewall firewallResource = Firewall.newBuilder().build();
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
    *   PatchFirewallHttpRequest request = PatchFirewallHttpRequest.newBuilder()
    *     .setFirewall(firewall.toString())
    *     .setFirewallResource(firewallResource)
+   *     .addAllFieldMask(fieldMask)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = firewallClient.patchFirewallCallable().futureCall(request);
    *   // Do something
@@ -715,22 +726,25 @@ public class FirewallClient implements BackgroundResource {
    * try (FirewallClient firewallClient = FirewallClient.create()) {
    *   ProjectGlobalFirewallName firewall = ProjectGlobalFirewallName.of("[PROJECT]", "[FIREWALL]");
    *   Firewall firewallResource = Firewall.newBuilder().build();
-   *   Operation response = firewallClient.updateFirewall(firewall, firewallResource);
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
+   *   Operation response = firewallClient.updateFirewall(firewall, firewallResource, fieldMask);
    * }
    * </code></pre>
    *
    * @param firewall Name of the firewall rule to update.
    * @param firewallResource Represents a Firewall resource.
+   * @param fieldMask
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation updateFirewall(
-      ProjectGlobalFirewallName firewall, Firewall firewallResource) {
+      ProjectGlobalFirewallName firewall, Firewall firewallResource, List<String> fieldMask) {
 
     UpdateFirewallHttpRequest request =
         UpdateFirewallHttpRequest.newBuilder()
             .setFirewall(firewall == null ? null : firewall.toString())
             .setFirewallResource(firewallResource)
+            .addAllFieldMask(fieldMask)
             .build();
     return updateFirewall(request);
   }
@@ -747,21 +761,25 @@ public class FirewallClient implements BackgroundResource {
    * try (FirewallClient firewallClient = FirewallClient.create()) {
    *   ProjectGlobalFirewallName firewall = ProjectGlobalFirewallName.of("[PROJECT]", "[FIREWALL]");
    *   Firewall firewallResource = Firewall.newBuilder().build();
-   *   Operation response = firewallClient.updateFirewall(firewall.toString(), firewallResource);
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
+   *   Operation response = firewallClient.updateFirewall(firewall.toString(), firewallResource, fieldMask);
    * }
    * </code></pre>
    *
    * @param firewall Name of the firewall rule to update.
    * @param firewallResource Represents a Firewall resource.
+   * @param fieldMask
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation updateFirewall(String firewall, Firewall firewallResource) {
+  public final Operation updateFirewall(
+      String firewall, Firewall firewallResource, List<String> fieldMask) {
 
     UpdateFirewallHttpRequest request =
         UpdateFirewallHttpRequest.newBuilder()
             .setFirewall(firewall)
             .setFirewallResource(firewallResource)
+            .addAllFieldMask(fieldMask)
             .build();
     return updateFirewall(request);
   }
@@ -778,9 +796,11 @@ public class FirewallClient implements BackgroundResource {
    * try (FirewallClient firewallClient = FirewallClient.create()) {
    *   ProjectGlobalFirewallName firewall = ProjectGlobalFirewallName.of("[PROJECT]", "[FIREWALL]");
    *   Firewall firewallResource = Firewall.newBuilder().build();
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
    *   UpdateFirewallHttpRequest request = UpdateFirewallHttpRequest.newBuilder()
    *     .setFirewall(firewall.toString())
    *     .setFirewallResource(firewallResource)
+   *     .addAllFieldMask(fieldMask)
    *     .build();
    *   Operation response = firewallClient.updateFirewall(request);
    * }
@@ -806,9 +826,11 @@ public class FirewallClient implements BackgroundResource {
    * try (FirewallClient firewallClient = FirewallClient.create()) {
    *   ProjectGlobalFirewallName firewall = ProjectGlobalFirewallName.of("[PROJECT]", "[FIREWALL]");
    *   Firewall firewallResource = Firewall.newBuilder().build();
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
    *   UpdateFirewallHttpRequest request = UpdateFirewallHttpRequest.newBuilder()
    *     .setFirewall(firewall.toString())
    *     .setFirewallResource(firewallResource)
+   *     .addAllFieldMask(fieldMask)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = firewallClient.updateFirewallCallable().futureCall(request);
    *   // Do something

@@ -17,7 +17,7 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 import javax.annotation.Generated;
@@ -422,13 +422,16 @@ public final class InterconnectLocation implements ApiMessage {
 
     public Builder addAllRegionInfos(List<InterconnectLocationRegionInfo> regionInfos) {
       if (this.regionInfos == null) {
-        this.regionInfos = new ArrayList<>(regionInfos.size());
+        this.regionInfos = new LinkedList<>();
       }
       this.regionInfos.addAll(regionInfos);
       return this;
     }
 
     public Builder addRegionInfos(InterconnectLocationRegionInfo regionInfos) {
+      if (this.regionInfos == null) {
+        this.regionInfos = new LinkedList<>();
+      }
       this.regionInfos.add(regionInfos);
       return this;
     }
