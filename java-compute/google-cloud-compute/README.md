@@ -12,7 +12,6 @@ Java idiomatic client for [Google Cloud Compute][cloud-compute].
 - [Product Documentation][compute-product-docs]
 - [Client Library Documentation][compute-client-lib-docs]
 
-> Note: This client is no longer receiving updates; new features in the Compute API will not be added to this client.
 Check https://cloud.google.com/compute/docs/api/libraries for the recommended Java client library to use for
 accessing Compute.
 
@@ -89,10 +88,24 @@ These credentials are automatically inferred from your environment, so you only 
 code to create your service object:
 
 ```java
-import com.google.cloud.compute.deprecated.Compute;
-import com.google.cloud.compute.deprecated.ComputeOptions;
+import com.google.api.gax.core.FixedCredentialsProvider;
+import com.google.auth.Credentials;
+import com.google.auth.oauth2.GoogleCredentials;
+import com.google.cloud.compute.v1.AddressClient;
+import com.google.cloud.compute.v1.AddressSettings;
 
-Compute compute = ComputeOptions.getDefaultInstance().getService();
+Credentials myCredentials = GoogleCredentials.getApplicationDefault();
+    String myEndpoint = AddressSettings.getDefaultEndpoint();
+
+    AddressSettings addressSettings =
+        AddressSettings.newBuilder()
+            .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
+            .setTransportChannelProvider(
+                AddressSettings.defaultHttpJsonTransportProviderBuilder()
+                    .setEndpoint(myEndpoint)
+                    .build())
+            .build();
+    return AddressClient.create(addressSettings);
 ```
 
 For other authentication options, see the [Authentication](https://github.com/GoogleCloudPlatform/google-cloud-java#authentication)
@@ -106,9 +119,9 @@ Engine. In this code snippet, we will create a new external region address.
 Add the following imports at the top of your file:
 
 ```java
-import com.google.cloud.compute.deprecated.AddressInfo;
-import com.google.cloud.compute.deprecated.Operation;
-import com.google.cloud.compute.deprecated.RegionAddressId;
+import com.google.cloud.compute.v1.InsertAddressHttpRequest;
+import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.ProjectRegionAddressName;
 ```
 
 Then add the following code to create an address. Most Compute Engine calls return an `Operation`
@@ -116,14 +129,19 @@ object that can be used to wait for operation completion and to check whether op
 succeeded:
 
 ```java
-RegionAddressId addressId = RegionAddressId.of("us-central1", "test-address");
-Operation operation = compute.create(AddressInfo.of(addressId));
-// Wait for operation to complete
-operation = operation.waitFor();
-if (operation.getErrors() == null) {
+ProjectRegionName region = ProjectRegionName.of(PROJECT_NAME, REGION);
+Address address = Address.newBuilder().build();
+InsertAddressHttpRequest request =
+    InsertAddressHttpRequest.newBuilder()
+        .setRegion(region.toString())
+        .setAddressResource(address)
+        .build();
+
+Operation response = client.insertAddress(request);
+if (operation.getError() == null) {
   System.out.println("Address " + addressId + " was successfully created");
 } else {
-  // inspect operation.getErrors()
+  // inspect operation.getError()
   throw new RuntimeException("Address creation failed");
 }
 ```
@@ -138,93 +156,41 @@ a publicly-available image.
 Add the following imports at the top of your file:
 
 ```java
-import com.google.cloud.compute.deprecated.DiskInfo;
-import com.google.cloud.compute.deprecated.DiskId;
-import com.google.cloud.compute.deprecated.ImageDiskConfiguration;
-import com.google.cloud.compute.deprecated.ImageId;
+import com.google.api.core.ApiFuture;
+import com.google.cloud.compute.v1.Disk;
+import com.google.cloud.compute.v1.DiskClient;
+import com.google.cloud.compute.v1.InsertDiskHttpRequest;
+import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.ProjectZoneName;
 ```
 
 Then add the following code to create a disk and wait for disk creation to terminate.
 
 ```java
-ImageId imageId = ImageId.of("debian-cloud", "debian-8-jessie-v20160329");
-DiskId diskId = DiskId.of("us-central1-a", "test-disk");
-ImageDiskConfiguration diskConfiguration = ImageDiskConfiguration.of(imageId);
-DiskInfo disk = DiskInfo.of(diskId, diskConfiguration);
-Operation operation = compute.create(disk);
-// Wait for operation to complete
-operation = operation.waitFor();
-if (operation.getErrors() == null) {
-  System.out.println("Disk " + diskId + " was successfully created");
-} else {
-  // inspect operation.getErrors()
+ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
+Disk diskResource = Disk.newBuilder().build();
+InsertDiskHttpRequest request = InsertDiskHttpRequest.newBuilder()
+   .setZone(zone.toString())
+       .setDiskResource(diskResource)
+       .build();
+ApiFuture<Operation> future = client.insertDiskCallable().futureCall(request);
+Operation response;
+try {
+  response = future.get();
+} catch (InterruptedException | ExecutionException e) {
+  // inspect operation.getError()
   throw new RuntimeException("Disk creation failed");
-}
-```
-
-#### Creating a virtual machine instance
-A Google Compute Engine instance is a virtual machine (VM) hosted on Google's infrastructure. An
-instance can be created given its identity, a machine type, one boot disk and a network interface.
-In this code snippet, we will create a virtual machine instance in the default network using as a
-boot disk the disk we have just created and assigning to it the just created IP address.
-
-Add the following imports at the top of your file:
-
-```java
-import com.google.cloud.compute.deprecated.AttachedDisk;
-import com.google.cloud.compute.deprecated.AttachedDisk.PersistentDiskConfiguration;
-import com.google.cloud.compute.deprecated.InstanceId;
-import com.google.cloud.compute.deprecated.InstanceInfo;
-import com.google.cloud.compute.deprecated.MachineTypeId;
-import com.google.cloud.compute.deprecated.NetworkConfiguration;
-import com.google.cloud.compute.deprecated.NetworkConfiguration.AccessConfig;
-import com.google.cloud.compute.deprecated.NetworkId;
-import com.google.cloud.compute.deprecated.NetworkInterface;
-```
-
-Then add the following code to create an instance and wait for instance creation to terminate.
-
-```java
-Address externalIp = compute.getAddress(addressId);
-InstanceId instanceId = InstanceId.of("us-central1-a", "test-instance");
-NetworkId networkId = NetworkId.of("default");
-PersistentDiskConfiguration attachConfiguration =
-    PersistentDiskConfiguration.newBuilder(diskId).setBoot(true).build();
-AttachedDisk attachedDisk = AttachedDisk.of("dev0", attachConfiguration);
-NetworkInterface networkInterface = NetworkInterface.newBuilder(networkId)
-    .setAccessConfigurations(AccessConfig.of(externalIp.getAddress()))
-    .build();
-MachineTypeId machineTypeId = MachineTypeId.of("us-central1-a", "n1-standard-1");
-InstanceInfo instance =
-    InstanceInfo.of(instanceId, machineTypeId, attachedDisk, networkInterface);
-Operation operation = compute.create(instance);
-// Wait for operation to complete
-operation = operation.waitFor();
-if (operation.getErrors() == null) {
-  System.out.println("Instance " + instanceId + " was successfully created");
-} else {
-  // inspect operation.getErrors()
-  throw new RuntimeException("Instance creation failed");
 }
 ```
 
 #### Complete source code
 
 In
-[CreateAddressDiskAndInstance.java](../../google-cloud-examples/src/main/java/com/google/cloud/examples/compute/snippets/CreateAddressDiskAndInstance.java)
+[ComputeExample.java](../../google-cloud-examples/src/main/java/com/google/cloud/examples/compute/v1/ComputeExample.java)
 we put together all the code shown above into one program. The program assumes that you are
 running on Compute Engine or from your own desktop. To run the example on App Engine, simply move
 the code from the main method to your application's servlet class and change the print statements to
 display on your webpage.
-
-#### Other examples
-
-Other examples are available too:
-
-- [CreateSnapshot.java](../../google-cloud-examples/src/main/java/com/google/cloud/examples/compute/snippets/CreateSnapshot.java) shows
-how to create a snapshot from an existing disk
-- [CreateInstance.java](../../google-cloud-examples/src/main/java/com/google/cloud/examples/compute/snippets/CreateInstance.java) shows
-how to create a virtual machine instance (shorter sample than the one above)
 
 Troubleshooting
 ---------------
@@ -276,4 +242,4 @@ Apache 2.0 - See [LICENSE] for more information.
 
 [cloud-compute]: https://cloud.google.com/compute/
 [compute-product-docs]: https://cloud.google.com/compute/docs/
-[compute-client-lib-docs]: https://googlecloudplatform.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/compute/deprecated/package-summary.html
+[compute-client-lib-docs]: https://googlecloudplatform.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/compute/v1/package-summary.html
