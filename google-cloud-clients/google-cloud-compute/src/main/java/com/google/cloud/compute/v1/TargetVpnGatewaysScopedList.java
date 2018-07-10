@@ -17,7 +17,7 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 import javax.annotation.Generated;
@@ -120,13 +120,16 @@ public final class TargetVpnGatewaysScopedList implements ApiMessage {
 
     public Builder addAllTargetVpnGateways(List<TargetVpnGateway> targetVpnGateways) {
       if (this.targetVpnGateways == null) {
-        this.targetVpnGateways = new ArrayList<>(targetVpnGateways.size());
+        this.targetVpnGateways = new LinkedList<>();
       }
       this.targetVpnGateways.addAll(targetVpnGateways);
       return this;
     }
 
     public Builder addTargetVpnGateways(TargetVpnGateway targetVpnGateways) {
+      if (this.targetVpnGateways == null) {
+        this.targetVpnGateways = new LinkedList<>();
+      }
       this.targetVpnGateways.add(targetVpnGateways);
       return this;
     }

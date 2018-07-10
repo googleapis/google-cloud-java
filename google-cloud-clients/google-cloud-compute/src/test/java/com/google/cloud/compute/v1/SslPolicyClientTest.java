@@ -37,6 +37,7 @@ import com.google.cloud.compute.v1.stub.SslPolicyStubSettings;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import org.junit.After;
@@ -491,8 +492,9 @@ public class SslPolicyClientTest {
     ProjectGlobalSslPolicyName sslPolicy =
         ProjectGlobalSslPolicyName.of("[PROJECT]", "[SSL_POLICY]");
     SslPolicy sslPolicyResource = SslPolicy.newBuilder().build();
+    List<String> fieldMask = new ArrayList<>();
 
-    Operation actualResponse = client.patchSslPolicy(sslPolicy, sslPolicyResource);
+    Operation actualResponse = client.patchSslPolicy(sslPolicy, sslPolicyResource, fieldMask);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -522,8 +524,9 @@ public class SslPolicyClientTest {
       ProjectGlobalSslPolicyName sslPolicy =
           ProjectGlobalSslPolicyName.of("[PROJECT]", "[SSL_POLICY]");
       SslPolicy sslPolicyResource = SslPolicy.newBuilder().build();
+      List<String> fieldMask = new ArrayList<>();
 
-      client.patchSslPolicy(sslPolicy, sslPolicyResource);
+      client.patchSslPolicy(sslPolicy, sslPolicyResource, fieldMask);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

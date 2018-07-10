@@ -17,7 +17,7 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 import javax.annotation.Generated;
@@ -362,13 +362,16 @@ public final class Firewall implements ApiMessage {
 
     public Builder addAllAllowed(List<Allowed> allowed) {
       if (this.allowed == null) {
-        this.allowed = new ArrayList<>(allowed.size());
+        this.allowed = new LinkedList<>();
       }
       this.allowed.addAll(allowed);
       return this;
     }
 
     public Builder addAllowed(Allowed allowed) {
+      if (this.allowed == null) {
+        this.allowed = new LinkedList<>();
+      }
       this.allowed.add(allowed);
       return this;
     }
@@ -388,13 +391,16 @@ public final class Firewall implements ApiMessage {
 
     public Builder addAllDenied(List<Denied> denied) {
       if (this.denied == null) {
-        this.denied = new ArrayList<>(denied.size());
+        this.denied = new LinkedList<>();
       }
       this.denied.addAll(denied);
       return this;
     }
 
     public Builder addDenied(Denied denied) {
+      if (this.denied == null) {
+        this.denied = new LinkedList<>();
+      }
       this.denied.add(denied);
       return this;
     }
@@ -414,13 +420,16 @@ public final class Firewall implements ApiMessage {
 
     public Builder addAllDestinationRanges(List<String> destinationRanges) {
       if (this.destinationRanges == null) {
-        this.destinationRanges = new ArrayList<>(destinationRanges.size());
+        this.destinationRanges = new LinkedList<>();
       }
       this.destinationRanges.addAll(destinationRanges);
       return this;
     }
 
     public Builder addDestinationRanges(String destinationRanges) {
+      if (this.destinationRanges == null) {
+        this.destinationRanges = new LinkedList<>();
+      }
       this.destinationRanges.add(destinationRanges);
       return this;
     }
@@ -494,13 +503,16 @@ public final class Firewall implements ApiMessage {
 
     public Builder addAllSourceRanges(List<String> sourceRanges) {
       if (this.sourceRanges == null) {
-        this.sourceRanges = new ArrayList<>(sourceRanges.size());
+        this.sourceRanges = new LinkedList<>();
       }
       this.sourceRanges.addAll(sourceRanges);
       return this;
     }
 
     public Builder addSourceRanges(String sourceRanges) {
+      if (this.sourceRanges == null) {
+        this.sourceRanges = new LinkedList<>();
+      }
       this.sourceRanges.add(sourceRanges);
       return this;
     }
@@ -511,13 +523,16 @@ public final class Firewall implements ApiMessage {
 
     public Builder addAllSourceServiceAccounts(List<String> sourceServiceAccounts) {
       if (this.sourceServiceAccounts == null) {
-        this.sourceServiceAccounts = new ArrayList<>(sourceServiceAccounts.size());
+        this.sourceServiceAccounts = new LinkedList<>();
       }
       this.sourceServiceAccounts.addAll(sourceServiceAccounts);
       return this;
     }
 
     public Builder addSourceServiceAccounts(String sourceServiceAccounts) {
+      if (this.sourceServiceAccounts == null) {
+        this.sourceServiceAccounts = new LinkedList<>();
+      }
       this.sourceServiceAccounts.add(sourceServiceAccounts);
       return this;
     }
@@ -528,13 +543,16 @@ public final class Firewall implements ApiMessage {
 
     public Builder addAllSourceTags(List<String> sourceTags) {
       if (this.sourceTags == null) {
-        this.sourceTags = new ArrayList<>(sourceTags.size());
+        this.sourceTags = new LinkedList<>();
       }
       this.sourceTags.addAll(sourceTags);
       return this;
     }
 
     public Builder addSourceTags(String sourceTags) {
+      if (this.sourceTags == null) {
+        this.sourceTags = new LinkedList<>();
+      }
       this.sourceTags.add(sourceTags);
       return this;
     }
@@ -545,13 +563,16 @@ public final class Firewall implements ApiMessage {
 
     public Builder addAllTargetServiceAccounts(List<String> targetServiceAccounts) {
       if (this.targetServiceAccounts == null) {
-        this.targetServiceAccounts = new ArrayList<>(targetServiceAccounts.size());
+        this.targetServiceAccounts = new LinkedList<>();
       }
       this.targetServiceAccounts.addAll(targetServiceAccounts);
       return this;
     }
 
     public Builder addTargetServiceAccounts(String targetServiceAccounts) {
+      if (this.targetServiceAccounts == null) {
+        this.targetServiceAccounts = new LinkedList<>();
+      }
       this.targetServiceAccounts.add(targetServiceAccounts);
       return this;
     }
@@ -562,13 +583,16 @@ public final class Firewall implements ApiMessage {
 
     public Builder addAllTargetTags(List<String> targetTags) {
       if (this.targetTags == null) {
-        this.targetTags = new ArrayList<>(targetTags.size());
+        this.targetTags = new LinkedList<>();
       }
       this.targetTags.addAll(targetTags);
       return this;
     }
 
     public Builder addTargetTags(String targetTags) {
+      if (this.targetTags == null) {
+        this.targetTags = new LinkedList<>();
+      }
       this.targetTags.add(targetTags);
       return this;
     }

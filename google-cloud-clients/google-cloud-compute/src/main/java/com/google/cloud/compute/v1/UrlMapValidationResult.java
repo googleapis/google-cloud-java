@@ -17,7 +17,7 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 import javax.annotation.Generated;
@@ -154,13 +154,16 @@ public final class UrlMapValidationResult implements ApiMessage {
 
     public Builder addAllLoadErrors(List<String> loadErrors) {
       if (this.loadErrors == null) {
-        this.loadErrors = new ArrayList<>(loadErrors.size());
+        this.loadErrors = new LinkedList<>();
       }
       this.loadErrors.addAll(loadErrors);
       return this;
     }
 
     public Builder addLoadErrors(String loadErrors) {
+      if (this.loadErrors == null) {
+        this.loadErrors = new LinkedList<>();
+      }
       this.loadErrors.add(loadErrors);
       return this;
     }
@@ -180,13 +183,16 @@ public final class UrlMapValidationResult implements ApiMessage {
 
     public Builder addAllTestFailures(List<TestFailure> testFailures) {
       if (this.testFailures == null) {
-        this.testFailures = new ArrayList<>(testFailures.size());
+        this.testFailures = new LinkedList<>();
       }
       this.testFailures.addAll(testFailures);
       return this;
     }
 
     public Builder addTestFailures(TestFailure testFailures) {
+      if (this.testFailures == null) {
+        this.testFailures = new LinkedList<>();
+      }
       this.testFailures.add(testFailures);
       return this;
     }

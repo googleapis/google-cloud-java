@@ -17,7 +17,7 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 import javax.annotation.Generated;
@@ -250,13 +250,16 @@ public final class RouterStatusBgpPeerStatus implements ApiMessage {
 
     public Builder addAllAdvertisedRoutes(List<Route> advertisedRoutes) {
       if (this.advertisedRoutes == null) {
-        this.advertisedRoutes = new ArrayList<>(advertisedRoutes.size());
+        this.advertisedRoutes = new LinkedList<>();
       }
       this.advertisedRoutes.addAll(advertisedRoutes);
       return this;
     }
 
     public Builder addAdvertisedRoutes(Route advertisedRoutes) {
+      if (this.advertisedRoutes == null) {
+        this.advertisedRoutes = new LinkedList<>();
+      }
       this.advertisedRoutes.add(advertisedRoutes);
       return this;
     }

@@ -17,7 +17,7 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 import javax.annotation.Generated;
@@ -122,13 +122,16 @@ public final class InterconnectAttachmentsScopedList implements ApiMessage {
     public Builder addAllInterconnectAttachments(
         List<InterconnectAttachment> interconnectAttachments) {
       if (this.interconnectAttachments == null) {
-        this.interconnectAttachments = new ArrayList<>(interconnectAttachments.size());
+        this.interconnectAttachments = new LinkedList<>();
       }
       this.interconnectAttachments.addAll(interconnectAttachments);
       return this;
     }
 
     public Builder addInterconnectAttachments(InterconnectAttachment interconnectAttachments) {
+      if (this.interconnectAttachments == null) {
+        this.interconnectAttachments = new LinkedList<>();
+      }
       this.interconnectAttachments.add(interconnectAttachments);
       return this;
     }

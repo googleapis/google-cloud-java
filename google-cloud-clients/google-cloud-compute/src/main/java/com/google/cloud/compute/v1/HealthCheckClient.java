@@ -610,7 +610,8 @@ public class HealthCheckClient implements BackgroundResource {
    * try (HealthCheckClient healthCheckClient = HealthCheckClient.create()) {
    *   ProjectGlobalHealthCheckName healthCheck = ProjectGlobalHealthCheckName.of("[PROJECT]", "[HEALTH_CHECK]");
    *   HealthCheck healthCheckResource = HealthCheck.newBuilder().build();
-   *   Operation response = healthCheckClient.patchHealthCheck(healthCheck, healthCheckResource);
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
+   *   Operation response = healthCheckClient.patchHealthCheck(healthCheck, healthCheckResource, fieldMask);
    * }
    * </code></pre>
    *
@@ -618,16 +619,20 @@ public class HealthCheckClient implements BackgroundResource {
    * @param healthCheckResource An HealthCheck resource. This resource defines a template for how
    *     individual virtual machines should be checked for health, via one of the supported
    *     protocols.
+   * @param fieldMask
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation patchHealthCheck(
-      ProjectGlobalHealthCheckName healthCheck, HealthCheck healthCheckResource) {
+      ProjectGlobalHealthCheckName healthCheck,
+      HealthCheck healthCheckResource,
+      List<String> fieldMask) {
 
     PatchHealthCheckHttpRequest request =
         PatchHealthCheckHttpRequest.newBuilder()
             .setHealthCheck(healthCheck == null ? null : healthCheck.toString())
             .setHealthCheckResource(healthCheckResource)
+            .addAllFieldMask(fieldMask)
             .build();
     return patchHealthCheck(request);
   }
@@ -643,7 +648,8 @@ public class HealthCheckClient implements BackgroundResource {
    * try (HealthCheckClient healthCheckClient = HealthCheckClient.create()) {
    *   ProjectGlobalHealthCheckName healthCheck = ProjectGlobalHealthCheckName.of("[PROJECT]", "[HEALTH_CHECK]");
    *   HealthCheck healthCheckResource = HealthCheck.newBuilder().build();
-   *   Operation response = healthCheckClient.patchHealthCheck(healthCheck.toString(), healthCheckResource);
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
+   *   Operation response = healthCheckClient.patchHealthCheck(healthCheck.toString(), healthCheckResource, fieldMask);
    * }
    * </code></pre>
    *
@@ -651,15 +657,18 @@ public class HealthCheckClient implements BackgroundResource {
    * @param healthCheckResource An HealthCheck resource. This resource defines a template for how
    *     individual virtual machines should be checked for health, via one of the supported
    *     protocols.
+   * @param fieldMask
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation patchHealthCheck(String healthCheck, HealthCheck healthCheckResource) {
+  public final Operation patchHealthCheck(
+      String healthCheck, HealthCheck healthCheckResource, List<String> fieldMask) {
 
     PatchHealthCheckHttpRequest request =
         PatchHealthCheckHttpRequest.newBuilder()
             .setHealthCheck(healthCheck)
             .setHealthCheckResource(healthCheckResource)
+            .addAllFieldMask(fieldMask)
             .build();
     return patchHealthCheck(request);
   }
@@ -675,9 +684,11 @@ public class HealthCheckClient implements BackgroundResource {
    * try (HealthCheckClient healthCheckClient = HealthCheckClient.create()) {
    *   ProjectGlobalHealthCheckName healthCheck = ProjectGlobalHealthCheckName.of("[PROJECT]", "[HEALTH_CHECK]");
    *   HealthCheck healthCheckResource = HealthCheck.newBuilder().build();
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
    *   PatchHealthCheckHttpRequest request = PatchHealthCheckHttpRequest.newBuilder()
    *     .setHealthCheck(healthCheck.toString())
    *     .setHealthCheckResource(healthCheckResource)
+   *     .addAllFieldMask(fieldMask)
    *     .build();
    *   Operation response = healthCheckClient.patchHealthCheck(request);
    * }
@@ -702,9 +713,11 @@ public class HealthCheckClient implements BackgroundResource {
    * try (HealthCheckClient healthCheckClient = HealthCheckClient.create()) {
    *   ProjectGlobalHealthCheckName healthCheck = ProjectGlobalHealthCheckName.of("[PROJECT]", "[HEALTH_CHECK]");
    *   HealthCheck healthCheckResource = HealthCheck.newBuilder().build();
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
    *   PatchHealthCheckHttpRequest request = PatchHealthCheckHttpRequest.newBuilder()
    *     .setHealthCheck(healthCheck.toString())
    *     .setHealthCheckResource(healthCheckResource)
+   *     .addAllFieldMask(fieldMask)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = healthCheckClient.patchHealthCheckCallable().futureCall(request);
    *   // Do something
@@ -727,7 +740,8 @@ public class HealthCheckClient implements BackgroundResource {
    * try (HealthCheckClient healthCheckClient = HealthCheckClient.create()) {
    *   ProjectGlobalHealthCheckName healthCheck = ProjectGlobalHealthCheckName.of("[PROJECT]", "[HEALTH_CHECK]");
    *   HealthCheck healthCheckResource = HealthCheck.newBuilder().build();
-   *   Operation response = healthCheckClient.updateHealthCheck(healthCheck, healthCheckResource);
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
+   *   Operation response = healthCheckClient.updateHealthCheck(healthCheck, healthCheckResource, fieldMask);
    * }
    * </code></pre>
    *
@@ -735,16 +749,20 @@ public class HealthCheckClient implements BackgroundResource {
    * @param healthCheckResource An HealthCheck resource. This resource defines a template for how
    *     individual virtual machines should be checked for health, via one of the supported
    *     protocols.
+   * @param fieldMask
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation updateHealthCheck(
-      ProjectGlobalHealthCheckName healthCheck, HealthCheck healthCheckResource) {
+      ProjectGlobalHealthCheckName healthCheck,
+      HealthCheck healthCheckResource,
+      List<String> fieldMask) {
 
     UpdateHealthCheckHttpRequest request =
         UpdateHealthCheckHttpRequest.newBuilder()
             .setHealthCheck(healthCheck == null ? null : healthCheck.toString())
             .setHealthCheckResource(healthCheckResource)
+            .addAllFieldMask(fieldMask)
             .build();
     return updateHealthCheck(request);
   }
@@ -759,7 +777,8 @@ public class HealthCheckClient implements BackgroundResource {
    * try (HealthCheckClient healthCheckClient = HealthCheckClient.create()) {
    *   ProjectGlobalHealthCheckName healthCheck = ProjectGlobalHealthCheckName.of("[PROJECT]", "[HEALTH_CHECK]");
    *   HealthCheck healthCheckResource = HealthCheck.newBuilder().build();
-   *   Operation response = healthCheckClient.updateHealthCheck(healthCheck.toString(), healthCheckResource);
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
+   *   Operation response = healthCheckClient.updateHealthCheck(healthCheck.toString(), healthCheckResource, fieldMask);
    * }
    * </code></pre>
    *
@@ -767,15 +786,18 @@ public class HealthCheckClient implements BackgroundResource {
    * @param healthCheckResource An HealthCheck resource. This resource defines a template for how
    *     individual virtual machines should be checked for health, via one of the supported
    *     protocols.
+   * @param fieldMask
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation updateHealthCheck(String healthCheck, HealthCheck healthCheckResource) {
+  public final Operation updateHealthCheck(
+      String healthCheck, HealthCheck healthCheckResource, List<String> fieldMask) {
 
     UpdateHealthCheckHttpRequest request =
         UpdateHealthCheckHttpRequest.newBuilder()
             .setHealthCheck(healthCheck)
             .setHealthCheckResource(healthCheckResource)
+            .addAllFieldMask(fieldMask)
             .build();
     return updateHealthCheck(request);
   }
@@ -790,9 +812,11 @@ public class HealthCheckClient implements BackgroundResource {
    * try (HealthCheckClient healthCheckClient = HealthCheckClient.create()) {
    *   ProjectGlobalHealthCheckName healthCheck = ProjectGlobalHealthCheckName.of("[PROJECT]", "[HEALTH_CHECK]");
    *   HealthCheck healthCheckResource = HealthCheck.newBuilder().build();
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
    *   UpdateHealthCheckHttpRequest request = UpdateHealthCheckHttpRequest.newBuilder()
    *     .setHealthCheck(healthCheck.toString())
    *     .setHealthCheckResource(healthCheckResource)
+   *     .addAllFieldMask(fieldMask)
    *     .build();
    *   Operation response = healthCheckClient.updateHealthCheck(request);
    * }
@@ -816,9 +840,11 @@ public class HealthCheckClient implements BackgroundResource {
    * try (HealthCheckClient healthCheckClient = HealthCheckClient.create()) {
    *   ProjectGlobalHealthCheckName healthCheck = ProjectGlobalHealthCheckName.of("[PROJECT]", "[HEALTH_CHECK]");
    *   HealthCheck healthCheckResource = HealthCheck.newBuilder().build();
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
    *   UpdateHealthCheckHttpRequest request = UpdateHealthCheckHttpRequest.newBuilder()
    *     .setHealthCheck(healthCheck.toString())
    *     .setHealthCheckResource(healthCheckResource)
+   *     .addAllFieldMask(fieldMask)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = healthCheckClient.updateHealthCheckCallable().futureCall(request);
    *   // Do something

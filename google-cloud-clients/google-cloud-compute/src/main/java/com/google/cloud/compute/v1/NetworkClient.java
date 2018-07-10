@@ -714,22 +714,26 @@ public class NetworkClient implements BackgroundResource {
    * try (NetworkClient networkClient = NetworkClient.create()) {
    *   ProjectGlobalNetworkName network = ProjectGlobalNetworkName.of("[PROJECT]", "[NETWORK]");
    *   Network networkResource = Network.newBuilder().build();
-   *   Operation response = networkClient.patchNetwork(network, networkResource);
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
+   *   Operation response = networkClient.patchNetwork(network, networkResource, fieldMask);
    * }
    * </code></pre>
    *
    * @param network Name of the network to update.
    * @param networkResource Represents a Network resource. Read Networks and Firewalls for more
    *     information. (== resource_for v1.networks ==) (== resource_for beta.networks ==)
+   * @param fieldMask
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation patchNetwork(ProjectGlobalNetworkName network, Network networkResource) {
+  public final Operation patchNetwork(
+      ProjectGlobalNetworkName network, Network networkResource, List<String> fieldMask) {
 
     PatchNetworkHttpRequest request =
         PatchNetworkHttpRequest.newBuilder()
             .setNetwork(network == null ? null : network.toString())
             .setNetworkResource(networkResource)
+            .addAllFieldMask(fieldMask)
             .build();
     return patchNetwork(request);
   }
@@ -745,22 +749,26 @@ public class NetworkClient implements BackgroundResource {
    * try (NetworkClient networkClient = NetworkClient.create()) {
    *   ProjectGlobalNetworkName network = ProjectGlobalNetworkName.of("[PROJECT]", "[NETWORK]");
    *   Network networkResource = Network.newBuilder().build();
-   *   Operation response = networkClient.patchNetwork(network.toString(), networkResource);
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
+   *   Operation response = networkClient.patchNetwork(network.toString(), networkResource, fieldMask);
    * }
    * </code></pre>
    *
    * @param network Name of the network to update.
    * @param networkResource Represents a Network resource. Read Networks and Firewalls for more
    *     information. (== resource_for v1.networks ==) (== resource_for beta.networks ==)
+   * @param fieldMask
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation patchNetwork(String network, Network networkResource) {
+  public final Operation patchNetwork(
+      String network, Network networkResource, List<String> fieldMask) {
 
     PatchNetworkHttpRequest request =
         PatchNetworkHttpRequest.newBuilder()
             .setNetwork(network)
             .setNetworkResource(networkResource)
+            .addAllFieldMask(fieldMask)
             .build();
     return patchNetwork(request);
   }
@@ -776,9 +784,11 @@ public class NetworkClient implements BackgroundResource {
    * try (NetworkClient networkClient = NetworkClient.create()) {
    *   ProjectGlobalNetworkName network = ProjectGlobalNetworkName.of("[PROJECT]", "[NETWORK]");
    *   Network networkResource = Network.newBuilder().build();
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
    *   PatchNetworkHttpRequest request = PatchNetworkHttpRequest.newBuilder()
    *     .setNetwork(network.toString())
    *     .setNetworkResource(networkResource)
+   *     .addAllFieldMask(fieldMask)
    *     .build();
    *   Operation response = networkClient.patchNetwork(request);
    * }
@@ -803,9 +813,11 @@ public class NetworkClient implements BackgroundResource {
    * try (NetworkClient networkClient = NetworkClient.create()) {
    *   ProjectGlobalNetworkName network = ProjectGlobalNetworkName.of("[PROJECT]", "[NETWORK]");
    *   Network networkResource = Network.newBuilder().build();
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
    *   PatchNetworkHttpRequest request = PatchNetworkHttpRequest.newBuilder()
    *     .setNetwork(network.toString())
    *     .setNetworkResource(networkResource)
+   *     .addAllFieldMask(fieldMask)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = networkClient.patchNetworkCallable().futureCall(request);
    *   // Do something

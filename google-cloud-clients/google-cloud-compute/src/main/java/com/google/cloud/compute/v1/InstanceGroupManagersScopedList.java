@@ -17,7 +17,7 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 import javax.annotation.Generated;
@@ -121,13 +121,16 @@ public final class InstanceGroupManagersScopedList implements ApiMessage {
 
     public Builder addAllInstanceGroupManagers(List<InstanceGroupManager> instanceGroupManagers) {
       if (this.instanceGroupManagers == null) {
-        this.instanceGroupManagers = new ArrayList<>(instanceGroupManagers.size());
+        this.instanceGroupManagers = new LinkedList<>();
       }
       this.instanceGroupManagers.addAll(instanceGroupManagers);
       return this;
     }
 
     public Builder addInstanceGroupManagers(InstanceGroupManager instanceGroupManagers) {
+      if (this.instanceGroupManagers == null) {
+        this.instanceGroupManagers = new LinkedList<>();
+      }
       this.instanceGroupManagers.add(instanceGroupManagers);
       return this;
     }

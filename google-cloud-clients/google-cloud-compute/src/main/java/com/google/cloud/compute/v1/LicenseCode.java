@@ -17,7 +17,7 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 import javax.annotation.Generated;
@@ -270,13 +270,16 @@ public final class LicenseCode implements ApiMessage {
 
     public Builder addAllLicenseAlias(List<LicenseCodeLicenseAlias> licenseAlias) {
       if (this.licenseAlias == null) {
-        this.licenseAlias = new ArrayList<>(licenseAlias.size());
+        this.licenseAlias = new LinkedList<>();
       }
       this.licenseAlias.addAll(licenseAlias);
       return this;
     }
 
     public Builder addLicenseAlias(LicenseCodeLicenseAlias licenseAlias) {
+      if (this.licenseAlias == null) {
+        this.licenseAlias = new LinkedList<>();
+      }
       this.licenseAlias.add(licenseAlias);
       return this;
     }

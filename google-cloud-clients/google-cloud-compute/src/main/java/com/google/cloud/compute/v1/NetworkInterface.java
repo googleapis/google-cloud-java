@@ -17,7 +17,7 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 import javax.annotation.Generated;
@@ -218,13 +218,16 @@ public final class NetworkInterface implements ApiMessage {
 
     public Builder addAllAccessConfigs(List<AccessConfig> accessConfigs) {
       if (this.accessConfigs == null) {
-        this.accessConfigs = new ArrayList<>(accessConfigs.size());
+        this.accessConfigs = new LinkedList<>();
       }
       this.accessConfigs.addAll(accessConfigs);
       return this;
     }
 
     public Builder addAccessConfigs(AccessConfig accessConfigs) {
+      if (this.accessConfigs == null) {
+        this.accessConfigs = new LinkedList<>();
+      }
       this.accessConfigs.add(accessConfigs);
       return this;
     }
@@ -235,13 +238,16 @@ public final class NetworkInterface implements ApiMessage {
 
     public Builder addAllAliasIpRanges(List<AliasIpRange> aliasIpRanges) {
       if (this.aliasIpRanges == null) {
-        this.aliasIpRanges = new ArrayList<>(aliasIpRanges.size());
+        this.aliasIpRanges = new LinkedList<>();
       }
       this.aliasIpRanges.addAll(aliasIpRanges);
       return this;
     }
 
     public Builder addAliasIpRanges(AliasIpRange aliasIpRanges) {
+      if (this.aliasIpRanges == null) {
+        this.aliasIpRanges = new LinkedList<>();
+      }
       this.aliasIpRanges.add(aliasIpRanges);
       return this;
     }

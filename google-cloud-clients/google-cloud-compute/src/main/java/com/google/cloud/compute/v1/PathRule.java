@@ -17,7 +17,7 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 import javax.annotation.Generated;
@@ -120,13 +120,16 @@ public final class PathRule implements ApiMessage {
 
     public Builder addAllPaths(List<String> paths) {
       if (this.paths == null) {
-        this.paths = new ArrayList<>(paths.size());
+        this.paths = new LinkedList<>();
       }
       this.paths.addAll(paths);
       return this;
     }
 
     public Builder addPaths(String paths) {
+      if (this.paths == null) {
+        this.paths = new LinkedList<>();
+      }
       this.paths.add(paths);
       return this;
     }

@@ -17,7 +17,7 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
@@ -442,13 +442,16 @@ public final class Snapshot implements ApiMessage {
 
     public Builder addAllLicenseCodes(List<String> licenseCodes) {
       if (this.licenseCodes == null) {
-        this.licenseCodes = new ArrayList<>(licenseCodes.size());
+        this.licenseCodes = new LinkedList<>();
       }
       this.licenseCodes.addAll(licenseCodes);
       return this;
     }
 
     public Builder addLicenseCodes(String licenseCodes) {
+      if (this.licenseCodes == null) {
+        this.licenseCodes = new LinkedList<>();
+      }
       this.licenseCodes.add(licenseCodes);
       return this;
     }
@@ -459,13 +462,16 @@ public final class Snapshot implements ApiMessage {
 
     public Builder addAllLicenses(List<String> licenses) {
       if (this.licenses == null) {
-        this.licenses = new ArrayList<>(licenses.size());
+        this.licenses = new LinkedList<>();
       }
       this.licenses.addAll(licenses);
       return this;
     }
 
     public Builder addLicenses(String licenses) {
+      if (this.licenses == null) {
+        this.licenses = new LinkedList<>();
+      }
       this.licenses.add(licenses);
       return this;
     }

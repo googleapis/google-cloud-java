@@ -17,7 +17,7 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 import javax.annotation.Generated;
@@ -131,13 +131,16 @@ public final class RegionInstanceGroupManagersSetTargetPoolsRequest implements A
 
     public Builder addAllTargetPools(List<String> targetPools) {
       if (this.targetPools == null) {
-        this.targetPools = new ArrayList<>(targetPools.size());
+        this.targetPools = new LinkedList<>();
       }
       this.targetPools.addAll(targetPools);
       return this;
     }
 
     public Builder addTargetPools(String targetPools) {
+      if (this.targetPools == null) {
+        this.targetPools = new LinkedList<>();
+      }
       this.targetPools.add(targetPools);
       return this;
     }

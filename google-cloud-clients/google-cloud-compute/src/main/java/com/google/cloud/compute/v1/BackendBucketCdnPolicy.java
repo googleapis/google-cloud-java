@@ -25,31 +25,22 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
-public final class BackendServiceCdnPolicy implements ApiMessage {
-  private final CacheKeyPolicy cacheKeyPolicy;
+public final class BackendBucketCdnPolicy implements ApiMessage {
   private final String signedUrlCacheMaxAgeSec;
   private final List<String> signedUrlKeyNames;
 
-  private BackendServiceCdnPolicy() {
-    this.cacheKeyPolicy = null;
+  private BackendBucketCdnPolicy() {
     this.signedUrlCacheMaxAgeSec = null;
     this.signedUrlKeyNames = null;
   }
 
-  private BackendServiceCdnPolicy(
-      CacheKeyPolicy cacheKeyPolicy,
-      String signedUrlCacheMaxAgeSec,
-      List<String> signedUrlKeyNames) {
-    this.cacheKeyPolicy = cacheKeyPolicy;
+  private BackendBucketCdnPolicy(String signedUrlCacheMaxAgeSec, List<String> signedUrlKeyNames) {
     this.signedUrlCacheMaxAgeSec = signedUrlCacheMaxAgeSec;
     this.signedUrlKeyNames = signedUrlKeyNames;
   }
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("cacheKeyPolicy")) {
-      return cacheKeyPolicy;
-    }
     if (fieldName.equals("signedUrlCacheMaxAgeSec")) {
       return signedUrlCacheMaxAgeSec;
     }
@@ -71,10 +62,6 @@ public final class BackendServiceCdnPolicy implements ApiMessage {
     return null;
   }
 
-  public CacheKeyPolicy getCacheKeyPolicy() {
-    return cacheKeyPolicy;
-  }
-
   public String getSignedUrlCacheMaxAgeSec() {
     return signedUrlCacheMaxAgeSec;
   }
@@ -87,7 +74,7 @@ public final class BackendServiceCdnPolicy implements ApiMessage {
     return DEFAULT_INSTANCE.toBuilder();
   }
 
-  public static Builder newBuilder(BackendServiceCdnPolicy prototype) {
+  public static Builder newBuilder(BackendBucketCdnPolicy prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -95,28 +82,24 @@ public final class BackendServiceCdnPolicy implements ApiMessage {
     return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
-  public static BackendServiceCdnPolicy getDefaultInstance() {
+  public static BackendBucketCdnPolicy getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final BackendServiceCdnPolicy DEFAULT_INSTANCE;
+  private static final BackendBucketCdnPolicy DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new BackendServiceCdnPolicy();
+    DEFAULT_INSTANCE = new BackendBucketCdnPolicy();
   }
 
   public static class Builder {
-    private CacheKeyPolicy cacheKeyPolicy;
     private String signedUrlCacheMaxAgeSec;
     private List<String> signedUrlKeyNames;
 
     Builder() {}
 
-    public Builder mergeFrom(BackendServiceCdnPolicy other) {
-      if (other == BackendServiceCdnPolicy.getDefaultInstance()) return this;
-      if (other.getCacheKeyPolicy() != null) {
-        this.cacheKeyPolicy = other.cacheKeyPolicy;
-      }
+    public Builder mergeFrom(BackendBucketCdnPolicy other) {
+      if (other == BackendBucketCdnPolicy.getDefaultInstance()) return this;
       if (other.getSignedUrlCacheMaxAgeSec() != null) {
         this.signedUrlCacheMaxAgeSec = other.signedUrlCacheMaxAgeSec;
       }
@@ -126,19 +109,9 @@ public final class BackendServiceCdnPolicy implements ApiMessage {
       return this;
     }
 
-    Builder(BackendServiceCdnPolicy source) {
-      this.cacheKeyPolicy = source.cacheKeyPolicy;
+    Builder(BackendBucketCdnPolicy source) {
       this.signedUrlCacheMaxAgeSec = source.signedUrlCacheMaxAgeSec;
       this.signedUrlKeyNames = source.signedUrlKeyNames;
-    }
-
-    public CacheKeyPolicy getCacheKeyPolicy() {
-      return cacheKeyPolicy;
-    }
-
-    public Builder setCacheKeyPolicy(CacheKeyPolicy cacheKeyPolicy) {
-      this.cacheKeyPolicy = cacheKeyPolicy;
-      return this;
     }
 
     public String getSignedUrlCacheMaxAgeSec() {
@@ -170,15 +143,13 @@ public final class BackendServiceCdnPolicy implements ApiMessage {
       return this;
     }
 
-    public BackendServiceCdnPolicy build() {
+    public BackendBucketCdnPolicy build() {
 
-      return new BackendServiceCdnPolicy(
-          cacheKeyPolicy, signedUrlCacheMaxAgeSec, signedUrlKeyNames);
+      return new BackendBucketCdnPolicy(signedUrlCacheMaxAgeSec, signedUrlKeyNames);
     }
 
     public Builder clone() {
       Builder newBuilder = new Builder();
-      newBuilder.setCacheKeyPolicy(this.cacheKeyPolicy);
       newBuilder.setSignedUrlCacheMaxAgeSec(this.signedUrlCacheMaxAgeSec);
       newBuilder.addAllSignedUrlKeyNames(this.signedUrlKeyNames);
       return newBuilder;
@@ -187,10 +158,7 @@ public final class BackendServiceCdnPolicy implements ApiMessage {
 
   @Override
   public String toString() {
-    return "BackendServiceCdnPolicy{"
-        + "cacheKeyPolicy="
-        + cacheKeyPolicy
-        + ", "
+    return "BackendBucketCdnPolicy{"
         + "signedUrlCacheMaxAgeSec="
         + signedUrlCacheMaxAgeSec
         + ", "
@@ -204,10 +172,9 @@ public final class BackendServiceCdnPolicy implements ApiMessage {
     if (o == this) {
       return true;
     }
-    if (o instanceof BackendServiceCdnPolicy) {
-      BackendServiceCdnPolicy that = (BackendServiceCdnPolicy) o;
-      return Objects.equals(this.cacheKeyPolicy, that.getCacheKeyPolicy())
-          && Objects.equals(this.signedUrlCacheMaxAgeSec, that.getSignedUrlCacheMaxAgeSec())
+    if (o instanceof BackendBucketCdnPolicy) {
+      BackendBucketCdnPolicy that = (BackendBucketCdnPolicy) o;
+      return Objects.equals(this.signedUrlCacheMaxAgeSec, that.getSignedUrlCacheMaxAgeSec())
           && Objects.equals(this.signedUrlKeyNames, that.getSignedUrlKeyNamesList());
     }
     return false;
@@ -215,6 +182,6 @@ public final class BackendServiceCdnPolicy implements ApiMessage {
 
   @Override
   public int hashCode() {
-    return Objects.hash(cacheKeyPolicy, signedUrlCacheMaxAgeSec, signedUrlKeyNames);
+    return Objects.hash(signedUrlCacheMaxAgeSec, signedUrlKeyNames);
   }
 }

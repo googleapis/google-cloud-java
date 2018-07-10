@@ -17,7 +17,7 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 import javax.annotation.Generated;
@@ -120,13 +120,16 @@ public final class OperationsScopedList implements ApiMessage {
 
     public Builder addAllOperations(List<Operation> operations) {
       if (this.operations == null) {
-        this.operations = new ArrayList<>(operations.size());
+        this.operations = new LinkedList<>();
       }
       this.operations.addAll(operations);
       return this;
     }
 
     public Builder addOperations(Operation operations) {
+      if (this.operations == null) {
+        this.operations = new LinkedList<>();
+      }
       this.operations.add(operations);
       return this;
     }

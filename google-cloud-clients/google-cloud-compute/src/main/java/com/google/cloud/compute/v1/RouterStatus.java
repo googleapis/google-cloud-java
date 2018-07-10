@@ -17,7 +17,7 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 import javax.annotation.Generated;
@@ -154,13 +154,16 @@ public final class RouterStatus implements ApiMessage {
 
     public Builder addAllBestRoutes(List<Route> bestRoutes) {
       if (this.bestRoutes == null) {
-        this.bestRoutes = new ArrayList<>(bestRoutes.size());
+        this.bestRoutes = new LinkedList<>();
       }
       this.bestRoutes.addAll(bestRoutes);
       return this;
     }
 
     public Builder addBestRoutes(Route bestRoutes) {
+      if (this.bestRoutes == null) {
+        this.bestRoutes = new LinkedList<>();
+      }
       this.bestRoutes.add(bestRoutes);
       return this;
     }
@@ -171,13 +174,16 @@ public final class RouterStatus implements ApiMessage {
 
     public Builder addAllBestRoutesForRouter(List<Route> bestRoutesForRouter) {
       if (this.bestRoutesForRouter == null) {
-        this.bestRoutesForRouter = new ArrayList<>(bestRoutesForRouter.size());
+        this.bestRoutesForRouter = new LinkedList<>();
       }
       this.bestRoutesForRouter.addAll(bestRoutesForRouter);
       return this;
     }
 
     public Builder addBestRoutesForRouter(Route bestRoutesForRouter) {
+      if (this.bestRoutesForRouter == null) {
+        this.bestRoutesForRouter = new LinkedList<>();
+      }
       this.bestRoutesForRouter.add(bestRoutesForRouter);
       return this;
     }
@@ -188,13 +194,16 @@ public final class RouterStatus implements ApiMessage {
 
     public Builder addAllBgpPeerStatus(List<RouterStatusBgpPeerStatus> bgpPeerStatus) {
       if (this.bgpPeerStatus == null) {
-        this.bgpPeerStatus = new ArrayList<>(bgpPeerStatus.size());
+        this.bgpPeerStatus = new LinkedList<>();
       }
       this.bgpPeerStatus.addAll(bgpPeerStatus);
       return this;
     }
 
     public Builder addBgpPeerStatus(RouterStatusBgpPeerStatus bgpPeerStatus) {
+      if (this.bgpPeerStatus == null) {
+        this.bgpPeerStatus = new LinkedList<>();
+      }
       this.bgpPeerStatus.add(bgpPeerStatus);
       return this;
     }

@@ -17,7 +17,7 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 import javax.annotation.Generated;
@@ -120,13 +120,16 @@ public final class CommitmentsScopedList implements ApiMessage {
 
     public Builder addAllCommitments(List<Commitment> commitments) {
       if (this.commitments == null) {
-        this.commitments = new ArrayList<>(commitments.size());
+        this.commitments = new LinkedList<>();
       }
       this.commitments.addAll(commitments);
       return this;
     }
 
     public Builder addCommitments(Commitment commitments) {
+      if (this.commitments == null) {
+        this.commitments = new LinkedList<>();
+      }
       this.commitments.add(commitments);
       return this;
     }

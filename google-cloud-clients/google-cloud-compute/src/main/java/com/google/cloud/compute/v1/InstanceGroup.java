@@ -17,7 +17,7 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 import javax.annotation.Generated;
@@ -352,13 +352,16 @@ public final class InstanceGroup implements ApiMessage {
 
     public Builder addAllNamedPorts(List<NamedPort> namedPorts) {
       if (this.namedPorts == null) {
-        this.namedPorts = new ArrayList<>(namedPorts.size());
+        this.namedPorts = new LinkedList<>();
       }
       this.namedPorts.addAll(namedPorts);
       return this;
     }
 
     public Builder addNamedPorts(NamedPort namedPorts) {
+      if (this.namedPorts == null) {
+        this.namedPorts = new LinkedList<>();
+      }
       this.namedPorts.add(namedPorts);
       return this;
     }

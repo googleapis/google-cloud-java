@@ -721,22 +721,26 @@ public class UrlMapClient implements BackgroundResource {
    * try (UrlMapClient urlMapClient = UrlMapClient.create()) {
    *   ProjectGlobalUrlMapName urlMap = ProjectGlobalUrlMapName.of("[PROJECT]", "[URL_MAP]");
    *   UrlMap urlMapResource = UrlMap.newBuilder().build();
-   *   Operation response = urlMapClient.patchUrlMap(urlMap, urlMapResource);
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
+   *   Operation response = urlMapClient.patchUrlMap(urlMap, urlMapResource, fieldMask);
    * }
    * </code></pre>
    *
    * @param urlMap Name of the UrlMap resource to patch.
    * @param urlMapResource A UrlMap resource. This resource defines the mapping from URL to the
    *     BackendService resource, based on the "longest-match" of the URL's host and path.
+   * @param fieldMask
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation patchUrlMap(ProjectGlobalUrlMapName urlMap, UrlMap urlMapResource) {
+  public final Operation patchUrlMap(
+      ProjectGlobalUrlMapName urlMap, UrlMap urlMapResource, List<String> fieldMask) {
 
     PatchUrlMapHttpRequest request =
         PatchUrlMapHttpRequest.newBuilder()
             .setUrlMap(urlMap == null ? null : urlMap.toString())
             .setUrlMapResource(urlMapResource)
+            .addAllFieldMask(fieldMask)
             .build();
     return patchUrlMap(request);
   }
@@ -752,22 +756,25 @@ public class UrlMapClient implements BackgroundResource {
    * try (UrlMapClient urlMapClient = UrlMapClient.create()) {
    *   ProjectGlobalUrlMapName urlMap = ProjectGlobalUrlMapName.of("[PROJECT]", "[URL_MAP]");
    *   UrlMap urlMapResource = UrlMap.newBuilder().build();
-   *   Operation response = urlMapClient.patchUrlMap(urlMap.toString(), urlMapResource);
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
+   *   Operation response = urlMapClient.patchUrlMap(urlMap.toString(), urlMapResource, fieldMask);
    * }
    * </code></pre>
    *
    * @param urlMap Name of the UrlMap resource to patch.
    * @param urlMapResource A UrlMap resource. This resource defines the mapping from URL to the
    *     BackendService resource, based on the "longest-match" of the URL's host and path.
+   * @param fieldMask
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation patchUrlMap(String urlMap, UrlMap urlMapResource) {
+  public final Operation patchUrlMap(String urlMap, UrlMap urlMapResource, List<String> fieldMask) {
 
     PatchUrlMapHttpRequest request =
         PatchUrlMapHttpRequest.newBuilder()
             .setUrlMap(urlMap)
             .setUrlMapResource(urlMapResource)
+            .addAllFieldMask(fieldMask)
             .build();
     return patchUrlMap(request);
   }
@@ -783,9 +790,11 @@ public class UrlMapClient implements BackgroundResource {
    * try (UrlMapClient urlMapClient = UrlMapClient.create()) {
    *   ProjectGlobalUrlMapName urlMap = ProjectGlobalUrlMapName.of("[PROJECT]", "[URL_MAP]");
    *   UrlMap urlMapResource = UrlMap.newBuilder().build();
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
    *   PatchUrlMapHttpRequest request = PatchUrlMapHttpRequest.newBuilder()
    *     .setUrlMap(urlMap.toString())
    *     .setUrlMapResource(urlMapResource)
+   *     .addAllFieldMask(fieldMask)
    *     .build();
    *   Operation response = urlMapClient.patchUrlMap(request);
    * }
@@ -810,9 +819,11 @@ public class UrlMapClient implements BackgroundResource {
    * try (UrlMapClient urlMapClient = UrlMapClient.create()) {
    *   ProjectGlobalUrlMapName urlMap = ProjectGlobalUrlMapName.of("[PROJECT]", "[URL_MAP]");
    *   UrlMap urlMapResource = UrlMap.newBuilder().build();
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
    *   PatchUrlMapHttpRequest request = PatchUrlMapHttpRequest.newBuilder()
    *     .setUrlMap(urlMap.toString())
    *     .setUrlMapResource(urlMapResource)
+   *     .addAllFieldMask(fieldMask)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = urlMapClient.patchUrlMapCallable().futureCall(request);
    *   // Do something
@@ -835,22 +846,26 @@ public class UrlMapClient implements BackgroundResource {
    * try (UrlMapClient urlMapClient = UrlMapClient.create()) {
    *   ProjectGlobalUrlMapName urlMap = ProjectGlobalUrlMapName.of("[PROJECT]", "[URL_MAP]");
    *   UrlMap urlMapResource = UrlMap.newBuilder().build();
-   *   Operation response = urlMapClient.updateUrlMap(urlMap, urlMapResource);
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
+   *   Operation response = urlMapClient.updateUrlMap(urlMap, urlMapResource, fieldMask);
    * }
    * </code></pre>
    *
    * @param urlMap Name of the UrlMap resource to update.
    * @param urlMapResource A UrlMap resource. This resource defines the mapping from URL to the
    *     BackendService resource, based on the "longest-match" of the URL's host and path.
+   * @param fieldMask
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation updateUrlMap(ProjectGlobalUrlMapName urlMap, UrlMap urlMapResource) {
+  public final Operation updateUrlMap(
+      ProjectGlobalUrlMapName urlMap, UrlMap urlMapResource, List<String> fieldMask) {
 
     UpdateUrlMapHttpRequest request =
         UpdateUrlMapHttpRequest.newBuilder()
             .setUrlMap(urlMap == null ? null : urlMap.toString())
             .setUrlMapResource(urlMapResource)
+            .addAllFieldMask(fieldMask)
             .build();
     return updateUrlMap(request);
   }
@@ -865,22 +880,26 @@ public class UrlMapClient implements BackgroundResource {
    * try (UrlMapClient urlMapClient = UrlMapClient.create()) {
    *   ProjectGlobalUrlMapName urlMap = ProjectGlobalUrlMapName.of("[PROJECT]", "[URL_MAP]");
    *   UrlMap urlMapResource = UrlMap.newBuilder().build();
-   *   Operation response = urlMapClient.updateUrlMap(urlMap.toString(), urlMapResource);
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
+   *   Operation response = urlMapClient.updateUrlMap(urlMap.toString(), urlMapResource, fieldMask);
    * }
    * </code></pre>
    *
    * @param urlMap Name of the UrlMap resource to update.
    * @param urlMapResource A UrlMap resource. This resource defines the mapping from URL to the
    *     BackendService resource, based on the "longest-match" of the URL's host and path.
+   * @param fieldMask
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation updateUrlMap(String urlMap, UrlMap urlMapResource) {
+  public final Operation updateUrlMap(
+      String urlMap, UrlMap urlMapResource, List<String> fieldMask) {
 
     UpdateUrlMapHttpRequest request =
         UpdateUrlMapHttpRequest.newBuilder()
             .setUrlMap(urlMap)
             .setUrlMapResource(urlMapResource)
+            .addAllFieldMask(fieldMask)
             .build();
     return updateUrlMap(request);
   }
@@ -895,9 +914,11 @@ public class UrlMapClient implements BackgroundResource {
    * try (UrlMapClient urlMapClient = UrlMapClient.create()) {
    *   ProjectGlobalUrlMapName urlMap = ProjectGlobalUrlMapName.of("[PROJECT]", "[URL_MAP]");
    *   UrlMap urlMapResource = UrlMap.newBuilder().build();
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
    *   UpdateUrlMapHttpRequest request = UpdateUrlMapHttpRequest.newBuilder()
    *     .setUrlMap(urlMap.toString())
    *     .setUrlMapResource(urlMapResource)
+   *     .addAllFieldMask(fieldMask)
    *     .build();
    *   Operation response = urlMapClient.updateUrlMap(request);
    * }
@@ -921,9 +942,11 @@ public class UrlMapClient implements BackgroundResource {
    * try (UrlMapClient urlMapClient = UrlMapClient.create()) {
    *   ProjectGlobalUrlMapName urlMap = ProjectGlobalUrlMapName.of("[PROJECT]", "[URL_MAP]");
    *   UrlMap urlMapResource = UrlMap.newBuilder().build();
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
    *   UpdateUrlMapHttpRequest request = UpdateUrlMapHttpRequest.newBuilder()
    *     .setUrlMap(urlMap.toString())
    *     .setUrlMapResource(urlMapResource)
+   *     .addAllFieldMask(fieldMask)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = urlMapClient.updateUrlMapCallable().futureCall(request);
    *   // Do something
