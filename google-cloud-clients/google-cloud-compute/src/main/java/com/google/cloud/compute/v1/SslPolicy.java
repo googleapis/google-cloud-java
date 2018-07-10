@@ -17,7 +17,7 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 import javax.annotation.Generated;
@@ -291,13 +291,16 @@ public final class SslPolicy implements ApiMessage {
 
     public Builder addAllCustomFeatures(List<String> customFeatures) {
       if (this.customFeatures == null) {
-        this.customFeatures = new ArrayList<>(customFeatures.size());
+        this.customFeatures = new LinkedList<>();
       }
       this.customFeatures.addAll(customFeatures);
       return this;
     }
 
     public Builder addCustomFeatures(String customFeatures) {
+      if (this.customFeatures == null) {
+        this.customFeatures = new LinkedList<>();
+      }
       this.customFeatures.add(customFeatures);
       return this;
     }
@@ -317,13 +320,16 @@ public final class SslPolicy implements ApiMessage {
 
     public Builder addAllEnabledFeatures(List<String> enabledFeatures) {
       if (this.enabledFeatures == null) {
-        this.enabledFeatures = new ArrayList<>(enabledFeatures.size());
+        this.enabledFeatures = new LinkedList<>();
       }
       this.enabledFeatures.addAll(enabledFeatures);
       return this;
     }
 
     public Builder addEnabledFeatures(String enabledFeatures) {
+      if (this.enabledFeatures == null) {
+        this.enabledFeatures = new LinkedList<>();
+      }
       this.enabledFeatures.add(enabledFeatures);
       return this;
     }
@@ -397,13 +403,16 @@ public final class SslPolicy implements ApiMessage {
 
     public Builder addAllWarnings(List<Warnings> warnings) {
       if (this.warnings == null) {
-        this.warnings = new ArrayList<>(warnings.size());
+        this.warnings = new LinkedList<>();
       }
       this.warnings.addAll(warnings);
       return this;
     }
 
     public Builder addWarnings(Warnings warnings) {
+      if (this.warnings == null) {
+        this.warnings = new LinkedList<>();
+      }
       this.warnings.add(warnings);
       return this;
     }

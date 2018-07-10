@@ -17,7 +17,7 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 import javax.annotation.Generated;
@@ -197,13 +197,16 @@ public final class CacheKeyPolicy implements ApiMessage {
 
     public Builder addAllQueryStringBlacklist(List<String> queryStringBlacklist) {
       if (this.queryStringBlacklist == null) {
-        this.queryStringBlacklist = new ArrayList<>(queryStringBlacklist.size());
+        this.queryStringBlacklist = new LinkedList<>();
       }
       this.queryStringBlacklist.addAll(queryStringBlacklist);
       return this;
     }
 
     public Builder addQueryStringBlacklist(String queryStringBlacklist) {
+      if (this.queryStringBlacklist == null) {
+        this.queryStringBlacklist = new LinkedList<>();
+      }
       this.queryStringBlacklist.add(queryStringBlacklist);
       return this;
     }
@@ -214,13 +217,16 @@ public final class CacheKeyPolicy implements ApiMessage {
 
     public Builder addAllQueryStringWhitelist(List<String> queryStringWhitelist) {
       if (this.queryStringWhitelist == null) {
-        this.queryStringWhitelist = new ArrayList<>(queryStringWhitelist.size());
+        this.queryStringWhitelist = new LinkedList<>();
       }
       this.queryStringWhitelist.addAll(queryStringWhitelist);
       return this;
     }
 
     public Builder addQueryStringWhitelist(String queryStringWhitelist) {
+      if (this.queryStringWhitelist == null) {
+        this.queryStringWhitelist = new LinkedList<>();
+      }
       this.queryStringWhitelist.add(queryStringWhitelist);
       return this;
     }

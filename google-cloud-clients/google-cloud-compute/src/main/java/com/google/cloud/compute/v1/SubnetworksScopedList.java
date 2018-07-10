@@ -17,7 +17,7 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 import javax.annotation.Generated;
@@ -120,13 +120,16 @@ public final class SubnetworksScopedList implements ApiMessage {
 
     public Builder addAllSubnetworks(List<Subnetwork> subnetworks) {
       if (this.subnetworks == null) {
-        this.subnetworks = new ArrayList<>(subnetworks.size());
+        this.subnetworks = new LinkedList<>();
       }
       this.subnetworks.addAll(subnetworks);
       return this;
     }
 
     public Builder addSubnetworks(Subnetwork subnetworks) {
+      if (this.subnetworks == null) {
+        this.subnetworks = new LinkedList<>();
+      }
       this.subnetworks.add(subnetworks);
       return this;
     }

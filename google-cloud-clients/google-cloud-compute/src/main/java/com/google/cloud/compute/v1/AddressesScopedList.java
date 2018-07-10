@@ -17,7 +17,7 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 import javax.annotation.Generated;
@@ -120,13 +120,16 @@ public final class AddressesScopedList implements ApiMessage {
 
     public Builder addAllAddresses(List<Address> addresses) {
       if (this.addresses == null) {
-        this.addresses = new ArrayList<>(addresses.size());
+        this.addresses = new LinkedList<>();
       }
       this.addresses.addAll(addresses);
       return this;
     }
 
     public Builder addAddresses(Address addresses) {
+      if (this.addresses == null) {
+        this.addresses = new LinkedList<>();
+      }
       this.addresses.add(addresses);
       return this;
     }

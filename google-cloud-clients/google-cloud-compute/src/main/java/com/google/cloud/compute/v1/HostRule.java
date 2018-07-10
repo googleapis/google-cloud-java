@@ -17,7 +17,7 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 import javax.annotation.Generated;
@@ -144,13 +144,16 @@ public final class HostRule implements ApiMessage {
 
     public Builder addAllHosts(List<String> hosts) {
       if (this.hosts == null) {
-        this.hosts = new ArrayList<>(hosts.size());
+        this.hosts = new LinkedList<>();
       }
       this.hosts.addAll(hosts);
       return this;
     }
 
     public Builder addHosts(String hosts) {
+      if (this.hosts == null) {
+        this.hosts = new LinkedList<>();
+      }
       this.hosts.add(hosts);
       return this;
     }

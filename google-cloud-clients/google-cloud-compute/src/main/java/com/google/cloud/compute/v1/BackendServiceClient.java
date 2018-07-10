@@ -889,7 +889,8 @@ public class BackendServiceClient implements BackgroundResource {
    * try (BackendServiceClient backendServiceClient = BackendServiceClient.create()) {
    *   ProjectGlobalBackendServiceName backendService = ProjectGlobalBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
    *   BackendService backendServiceResource = BackendService.newBuilder().build();
-   *   Operation response = backendServiceClient.patchBackendService(backendService, backendServiceResource);
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
+   *   Operation response = backendServiceClient.patchBackendService(backendService, backendServiceResource, fieldMask);
    * }
    * </code></pre>
    *
@@ -897,16 +898,20 @@ public class BackendServiceClient implements BackgroundResource {
    * @param backendServiceResource A BackendService resource. This resource defines a group of
    *     backend virtual machines and their serving capacity. (== resource_for v1.backendService ==)
    *     (== resource_for beta.backendService ==)
+   * @param fieldMask
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation patchBackendService(
-      ProjectGlobalBackendServiceName backendService, BackendService backendServiceResource) {
+      ProjectGlobalBackendServiceName backendService,
+      BackendService backendServiceResource,
+      List<String> fieldMask) {
 
     PatchBackendServiceHttpRequest request =
         PatchBackendServiceHttpRequest.newBuilder()
             .setBackendService(backendService == null ? null : backendService.toString())
             .setBackendServiceResource(backendServiceResource)
+            .addAllFieldMask(fieldMask)
             .build();
     return patchBackendService(request);
   }
@@ -924,7 +929,8 @@ public class BackendServiceClient implements BackgroundResource {
    * try (BackendServiceClient backendServiceClient = BackendServiceClient.create()) {
    *   ProjectGlobalBackendServiceName backendService = ProjectGlobalBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
    *   BackendService backendServiceResource = BackendService.newBuilder().build();
-   *   Operation response = backendServiceClient.patchBackendService(backendService.toString(), backendServiceResource);
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
+   *   Operation response = backendServiceClient.patchBackendService(backendService.toString(), backendServiceResource, fieldMask);
    * }
    * </code></pre>
    *
@@ -932,16 +938,18 @@ public class BackendServiceClient implements BackgroundResource {
    * @param backendServiceResource A BackendService resource. This resource defines a group of
    *     backend virtual machines and their serving capacity. (== resource_for v1.backendService ==)
    *     (== resource_for beta.backendService ==)
+   * @param fieldMask
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation patchBackendService(
-      String backendService, BackendService backendServiceResource) {
+      String backendService, BackendService backendServiceResource, List<String> fieldMask) {
 
     PatchBackendServiceHttpRequest request =
         PatchBackendServiceHttpRequest.newBuilder()
             .setBackendService(backendService)
             .setBackendServiceResource(backendServiceResource)
+            .addAllFieldMask(fieldMask)
             .build();
     return patchBackendService(request);
   }
@@ -959,9 +967,11 @@ public class BackendServiceClient implements BackgroundResource {
    * try (BackendServiceClient backendServiceClient = BackendServiceClient.create()) {
    *   ProjectGlobalBackendServiceName backendService = ProjectGlobalBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
    *   BackendService backendServiceResource = BackendService.newBuilder().build();
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
    *   PatchBackendServiceHttpRequest request = PatchBackendServiceHttpRequest.newBuilder()
    *     .setBackendService(backendService.toString())
    *     .setBackendServiceResource(backendServiceResource)
+   *     .addAllFieldMask(fieldMask)
    *     .build();
    *   Operation response = backendServiceClient.patchBackendService(request);
    * }
@@ -988,9 +998,11 @@ public class BackendServiceClient implements BackgroundResource {
    * try (BackendServiceClient backendServiceClient = BackendServiceClient.create()) {
    *   ProjectGlobalBackendServiceName backendService = ProjectGlobalBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
    *   BackendService backendServiceResource = BackendService.newBuilder().build();
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
    *   PatchBackendServiceHttpRequest request = PatchBackendServiceHttpRequest.newBuilder()
    *     .setBackendService(backendService.toString())
    *     .setBackendServiceResource(backendServiceResource)
+   *     .addAllFieldMask(fieldMask)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = backendServiceClient.patchBackendServiceCallable().futureCall(request);
    *   // Do something
@@ -1016,7 +1028,8 @@ public class BackendServiceClient implements BackgroundResource {
    * try (BackendServiceClient backendServiceClient = BackendServiceClient.create()) {
    *   ProjectGlobalBackendServiceName backendService = ProjectGlobalBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
    *   BackendService backendServiceResource = BackendService.newBuilder().build();
-   *   Operation response = backendServiceClient.updateBackendService(backendService, backendServiceResource);
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
+   *   Operation response = backendServiceClient.updateBackendService(backendService, backendServiceResource, fieldMask);
    * }
    * </code></pre>
    *
@@ -1024,16 +1037,20 @@ public class BackendServiceClient implements BackgroundResource {
    * @param backendServiceResource A BackendService resource. This resource defines a group of
    *     backend virtual machines and their serving capacity. (== resource_for v1.backendService ==)
    *     (== resource_for beta.backendService ==)
+   * @param fieldMask
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation updateBackendService(
-      ProjectGlobalBackendServiceName backendService, BackendService backendServiceResource) {
+      ProjectGlobalBackendServiceName backendService,
+      BackendService backendServiceResource,
+      List<String> fieldMask) {
 
     UpdateBackendServiceHttpRequest request =
         UpdateBackendServiceHttpRequest.newBuilder()
             .setBackendService(backendService == null ? null : backendService.toString())
             .setBackendServiceResource(backendServiceResource)
+            .addAllFieldMask(fieldMask)
             .build();
     return updateBackendService(request);
   }
@@ -1050,7 +1067,8 @@ public class BackendServiceClient implements BackgroundResource {
    * try (BackendServiceClient backendServiceClient = BackendServiceClient.create()) {
    *   ProjectGlobalBackendServiceName backendService = ProjectGlobalBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
    *   BackendService backendServiceResource = BackendService.newBuilder().build();
-   *   Operation response = backendServiceClient.updateBackendService(backendService.toString(), backendServiceResource);
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
+   *   Operation response = backendServiceClient.updateBackendService(backendService.toString(), backendServiceResource, fieldMask);
    * }
    * </code></pre>
    *
@@ -1058,16 +1076,18 @@ public class BackendServiceClient implements BackgroundResource {
    * @param backendServiceResource A BackendService resource. This resource defines a group of
    *     backend virtual machines and their serving capacity. (== resource_for v1.backendService ==)
    *     (== resource_for beta.backendService ==)
+   * @param fieldMask
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation updateBackendService(
-      String backendService, BackendService backendServiceResource) {
+      String backendService, BackendService backendServiceResource, List<String> fieldMask) {
 
     UpdateBackendServiceHttpRequest request =
         UpdateBackendServiceHttpRequest.newBuilder()
             .setBackendService(backendService)
             .setBackendServiceResource(backendServiceResource)
+            .addAllFieldMask(fieldMask)
             .build();
     return updateBackendService(request);
   }
@@ -1084,9 +1104,11 @@ public class BackendServiceClient implements BackgroundResource {
    * try (BackendServiceClient backendServiceClient = BackendServiceClient.create()) {
    *   ProjectGlobalBackendServiceName backendService = ProjectGlobalBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
    *   BackendService backendServiceResource = BackendService.newBuilder().build();
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
    *   UpdateBackendServiceHttpRequest request = UpdateBackendServiceHttpRequest.newBuilder()
    *     .setBackendService(backendService.toString())
    *     .setBackendServiceResource(backendServiceResource)
+   *     .addAllFieldMask(fieldMask)
    *     .build();
    *   Operation response = backendServiceClient.updateBackendService(request);
    * }
@@ -1112,9 +1134,11 @@ public class BackendServiceClient implements BackgroundResource {
    * try (BackendServiceClient backendServiceClient = BackendServiceClient.create()) {
    *   ProjectGlobalBackendServiceName backendService = ProjectGlobalBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
    *   BackendService backendServiceResource = BackendService.newBuilder().build();
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
    *   UpdateBackendServiceHttpRequest request = UpdateBackendServiceHttpRequest.newBuilder()
    *     .setBackendService(backendService.toString())
    *     .setBackendServiceResource(backendServiceResource)
+   *     .addAllFieldMask(fieldMask)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = backendServiceClient.updateBackendServiceCallable().futureCall(request);
    *   // Do something

@@ -17,7 +17,7 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 import javax.annotation.Generated;
@@ -318,13 +318,16 @@ public final class Project implements ApiMessage {
 
     public Builder addAllEnabledFeatures(List<String> enabledFeatures) {
       if (this.enabledFeatures == null) {
-        this.enabledFeatures = new ArrayList<>(enabledFeatures.size());
+        this.enabledFeatures = new LinkedList<>();
       }
       this.enabledFeatures.addAll(enabledFeatures);
       return this;
     }
 
     public Builder addEnabledFeatures(String enabledFeatures) {
+      if (this.enabledFeatures == null) {
+        this.enabledFeatures = new LinkedList<>();
+      }
       this.enabledFeatures.add(enabledFeatures);
       return this;
     }
@@ -362,13 +365,16 @@ public final class Project implements ApiMessage {
 
     public Builder addAllQuotas(List<Quota> quotas) {
       if (this.quotas == null) {
-        this.quotas = new ArrayList<>(quotas.size());
+        this.quotas = new LinkedList<>();
       }
       this.quotas.addAll(quotas);
       return this;
     }
 
     public Builder addQuotas(Quota quotas) {
+      if (this.quotas == null) {
+        this.quotas = new LinkedList<>();
+      }
       this.quotas.add(quotas);
       return this;
     }

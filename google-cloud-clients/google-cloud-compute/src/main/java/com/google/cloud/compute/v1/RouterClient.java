@@ -843,21 +843,25 @@ public class RouterClient implements BackgroundResource {
    * try (RouterClient routerClient = RouterClient.create()) {
    *   ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
    *   Router routerResource = Router.newBuilder().build();
-   *   Operation response = routerClient.patchRouter(router, routerResource);
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
+   *   Operation response = routerClient.patchRouter(router, routerResource, fieldMask);
    * }
    * </code></pre>
    *
    * @param router Name of the Router resource to patch.
    * @param routerResource Router resource.
+   * @param fieldMask
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation patchRouter(ProjectRegionRouterName router, Router routerResource) {
+  public final Operation patchRouter(
+      ProjectRegionRouterName router, Router routerResource, List<String> fieldMask) {
 
     PatchRouterHttpRequest request =
         PatchRouterHttpRequest.newBuilder()
             .setRouter(router == null ? null : router.toString())
             .setRouterResource(routerResource)
+            .addAllFieldMask(fieldMask)
             .build();
     return patchRouter(request);
   }
@@ -873,21 +877,24 @@ public class RouterClient implements BackgroundResource {
    * try (RouterClient routerClient = RouterClient.create()) {
    *   ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
    *   Router routerResource = Router.newBuilder().build();
-   *   Operation response = routerClient.patchRouter(router.toString(), routerResource);
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
+   *   Operation response = routerClient.patchRouter(router.toString(), routerResource, fieldMask);
    * }
    * </code></pre>
    *
    * @param router Name of the Router resource to patch.
    * @param routerResource Router resource.
+   * @param fieldMask
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation patchRouter(String router, Router routerResource) {
+  public final Operation patchRouter(String router, Router routerResource, List<String> fieldMask) {
 
     PatchRouterHttpRequest request =
         PatchRouterHttpRequest.newBuilder()
             .setRouter(router)
             .setRouterResource(routerResource)
+            .addAllFieldMask(fieldMask)
             .build();
     return patchRouter(request);
   }
@@ -903,9 +910,11 @@ public class RouterClient implements BackgroundResource {
    * try (RouterClient routerClient = RouterClient.create()) {
    *   ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
    *   Router routerResource = Router.newBuilder().build();
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
    *   PatchRouterHttpRequest request = PatchRouterHttpRequest.newBuilder()
    *     .setRouter(router.toString())
    *     .setRouterResource(routerResource)
+   *     .addAllFieldMask(fieldMask)
    *     .build();
    *   Operation response = routerClient.patchRouter(request);
    * }
@@ -930,9 +939,11 @@ public class RouterClient implements BackgroundResource {
    * try (RouterClient routerClient = RouterClient.create()) {
    *   ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
    *   Router routerResource = Router.newBuilder().build();
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
    *   PatchRouterHttpRequest request = PatchRouterHttpRequest.newBuilder()
    *     .setRouter(router.toString())
    *     .setRouterResource(routerResource)
+   *     .addAllFieldMask(fieldMask)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = routerClient.patchRouterCallable().futureCall(request);
    *   // Do something
@@ -1070,21 +1081,25 @@ public class RouterClient implements BackgroundResource {
    * try (RouterClient routerClient = RouterClient.create()) {
    *   ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
    *   Router routerResource = Router.newBuilder().build();
-   *   Operation response = routerClient.updateRouter(router, routerResource);
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
+   *   Operation response = routerClient.updateRouter(router, routerResource, fieldMask);
    * }
    * </code></pre>
    *
    * @param router Name of the Router resource to update.
    * @param routerResource Router resource.
+   * @param fieldMask
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation updateRouter(ProjectRegionRouterName router, Router routerResource) {
+  public final Operation updateRouter(
+      ProjectRegionRouterName router, Router routerResource, List<String> fieldMask) {
 
     UpdateRouterHttpRequest request =
         UpdateRouterHttpRequest.newBuilder()
             .setRouter(router == null ? null : router.toString())
             .setRouterResource(routerResource)
+            .addAllFieldMask(fieldMask)
             .build();
     return updateRouter(request);
   }
@@ -1099,21 +1114,25 @@ public class RouterClient implements BackgroundResource {
    * try (RouterClient routerClient = RouterClient.create()) {
    *   ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
    *   Router routerResource = Router.newBuilder().build();
-   *   Operation response = routerClient.updateRouter(router.toString(), routerResource);
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
+   *   Operation response = routerClient.updateRouter(router.toString(), routerResource, fieldMask);
    * }
    * </code></pre>
    *
    * @param router Name of the Router resource to update.
    * @param routerResource Router resource.
+   * @param fieldMask
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation updateRouter(String router, Router routerResource) {
+  public final Operation updateRouter(
+      String router, Router routerResource, List<String> fieldMask) {
 
     UpdateRouterHttpRequest request =
         UpdateRouterHttpRequest.newBuilder()
             .setRouter(router)
             .setRouterResource(routerResource)
+            .addAllFieldMask(fieldMask)
             .build();
     return updateRouter(request);
   }
@@ -1128,9 +1147,11 @@ public class RouterClient implements BackgroundResource {
    * try (RouterClient routerClient = RouterClient.create()) {
    *   ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
    *   Router routerResource = Router.newBuilder().build();
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
    *   UpdateRouterHttpRequest request = UpdateRouterHttpRequest.newBuilder()
    *     .setRouter(router.toString())
    *     .setRouterResource(routerResource)
+   *     .addAllFieldMask(fieldMask)
    *     .build();
    *   Operation response = routerClient.updateRouter(request);
    * }
@@ -1154,9 +1175,11 @@ public class RouterClient implements BackgroundResource {
    * try (RouterClient routerClient = RouterClient.create()) {
    *   ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
    *   Router routerResource = Router.newBuilder().build();
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
    *   UpdateRouterHttpRequest request = UpdateRouterHttpRequest.newBuilder()
    *     .setRouter(router.toString())
    *     .setRouterResource(routerResource)
+   *     .addAllFieldMask(fieldMask)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = routerClient.updateRouterCallable().futureCall(request);
    *   // Do something

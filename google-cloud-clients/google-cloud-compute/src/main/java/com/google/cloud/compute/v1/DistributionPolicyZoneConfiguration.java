@@ -17,7 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 import javax.annotation.Generated;
@@ -25,21 +24,21 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
-public final class Error implements ApiMessage {
-  private final List<Errors> errors;
+public final class DistributionPolicyZoneConfiguration implements ApiMessage {
+  private final String zone;
 
-  private Error() {
-    this.errors = null;
+  private DistributionPolicyZoneConfiguration() {
+    this.zone = null;
   }
 
-  private Error(List<Errors> errors) {
-    this.errors = errors;
+  private DistributionPolicyZoneConfiguration(String zone) {
+    this.zone = zone;
   }
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("errors")) {
-      return errors;
+    if (fieldName.equals("zone")) {
+      return zone;
     }
     return null;
   }
@@ -56,15 +55,15 @@ public final class Error implements ApiMessage {
     return null;
   }
 
-  public List<Errors> getErrorsList() {
-    return errors;
+  public String getZone() {
+    return zone;
   }
 
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
 
-  public static Builder newBuilder(Error prototype) {
+  public static Builder newBuilder(DistributionPolicyZoneConfiguration prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -72,67 +71,56 @@ public final class Error implements ApiMessage {
     return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
-  public static Error getDefaultInstance() {
+  public static DistributionPolicyZoneConfiguration getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final Error DEFAULT_INSTANCE;
+  private static final DistributionPolicyZoneConfiguration DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new Error();
+    DEFAULT_INSTANCE = new DistributionPolicyZoneConfiguration();
   }
 
   public static class Builder {
-    private List<Errors> errors;
+    private String zone;
 
     Builder() {}
 
-    public Builder mergeFrom(Error other) {
-      if (other == Error.getDefaultInstance()) return this;
-      if (other.getErrorsList() != null) {
-        this.errors = other.errors;
+    public Builder mergeFrom(DistributionPolicyZoneConfiguration other) {
+      if (other == DistributionPolicyZoneConfiguration.getDefaultInstance()) return this;
+      if (other.getZone() != null) {
+        this.zone = other.zone;
       }
       return this;
     }
 
-    Builder(Error source) {
-      this.errors = source.errors;
+    Builder(DistributionPolicyZoneConfiguration source) {
+      this.zone = source.zone;
     }
 
-    public List<Errors> getErrorsList() {
-      return errors;
+    public String getZone() {
+      return zone;
     }
 
-    public Builder addAllErrors(List<Errors> errors) {
-      if (this.errors == null) {
-        this.errors = new LinkedList<>();
-      }
-      this.errors.addAll(errors);
+    public Builder setZone(String zone) {
+      this.zone = zone;
       return this;
     }
 
-    public Builder addErrors(Errors errors) {
-      if (this.errors == null) {
-        this.errors = new LinkedList<>();
-      }
-      this.errors.add(errors);
-      return this;
-    }
-
-    public Error build() {
-      return new Error(errors);
+    public DistributionPolicyZoneConfiguration build() {
+      return new DistributionPolicyZoneConfiguration(zone);
     }
 
     public Builder clone() {
       Builder newBuilder = new Builder();
-      newBuilder.addAllErrors(this.errors);
+      newBuilder.setZone(this.zone);
       return newBuilder;
     }
   }
 
   @Override
   public String toString() {
-    return "Error{" + "errors=" + errors + "}";
+    return "DistributionPolicyZoneConfiguration{" + "zone=" + zone + "}";
   }
 
   @Override
@@ -140,15 +128,15 @@ public final class Error implements ApiMessage {
     if (o == this) {
       return true;
     }
-    if (o instanceof Error) {
-      Error that = (Error) o;
-      return Objects.equals(this.errors, that.getErrorsList());
+    if (o instanceof DistributionPolicyZoneConfiguration) {
+      DistributionPolicyZoneConfiguration that = (DistributionPolicyZoneConfiguration) o;
+      return Objects.equals(this.zone, that.getZone());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(errors);
+    return Objects.hash(zone);
   }
 }

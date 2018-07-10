@@ -37,6 +37,7 @@ import com.google.cloud.compute.v1.stub.FirewallStubSettings;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import org.junit.After;
@@ -440,8 +441,9 @@ public class FirewallClientTest {
 
     ProjectGlobalFirewallName firewall = ProjectGlobalFirewallName.of("[PROJECT]", "[FIREWALL]");
     Firewall firewallResource = Firewall.newBuilder().build();
+    List<String> fieldMask = new ArrayList<>();
 
-    Operation actualResponse = client.patchFirewall(firewall, firewallResource);
+    Operation actualResponse = client.patchFirewall(firewall, firewallResource, fieldMask);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -470,8 +472,9 @@ public class FirewallClientTest {
     try {
       ProjectGlobalFirewallName firewall = ProjectGlobalFirewallName.of("[PROJECT]", "[FIREWALL]");
       Firewall firewallResource = Firewall.newBuilder().build();
+      List<String> fieldMask = new ArrayList<>();
 
-      client.patchFirewall(firewall, firewallResource);
+      client.patchFirewall(firewall, firewallResource, fieldMask);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -530,8 +533,9 @@ public class FirewallClientTest {
 
     ProjectGlobalFirewallName firewall = ProjectGlobalFirewallName.of("[PROJECT]", "[FIREWALL]");
     Firewall firewallResource = Firewall.newBuilder().build();
+    List<String> fieldMask = new ArrayList<>();
 
-    Operation actualResponse = client.updateFirewall(firewall, firewallResource);
+    Operation actualResponse = client.updateFirewall(firewall, firewallResource, fieldMask);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -560,8 +564,9 @@ public class FirewallClientTest {
     try {
       ProjectGlobalFirewallName firewall = ProjectGlobalFirewallName.of("[PROJECT]", "[FIREWALL]");
       Firewall firewallResource = Firewall.newBuilder().build();
+      List<String> fieldMask = new ArrayList<>();
 
-      client.updateFirewall(firewall, firewallResource);
+      client.updateFirewall(firewall, firewallResource, fieldMask);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

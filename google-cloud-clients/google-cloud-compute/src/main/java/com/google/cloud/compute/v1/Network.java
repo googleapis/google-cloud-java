@@ -17,7 +17,7 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 import javax.annotation.Generated;
@@ -354,13 +354,16 @@ public final class Network implements ApiMessage {
 
     public Builder addAllPeerings(List<NetworkPeering> peerings) {
       if (this.peerings == null) {
-        this.peerings = new ArrayList<>(peerings.size());
+        this.peerings = new LinkedList<>();
       }
       this.peerings.addAll(peerings);
       return this;
     }
 
     public Builder addPeerings(NetworkPeering peerings) {
+      if (this.peerings == null) {
+        this.peerings = new LinkedList<>();
+      }
       this.peerings.add(peerings);
       return this;
     }
@@ -389,13 +392,16 @@ public final class Network implements ApiMessage {
 
     public Builder addAllSubnetworks(List<String> subnetworks) {
       if (this.subnetworks == null) {
-        this.subnetworks = new ArrayList<>(subnetworks.size());
+        this.subnetworks = new LinkedList<>();
       }
       this.subnetworks.addAll(subnetworks);
       return this;
     }
 
     public Builder addSubnetworks(String subnetworks) {
+      if (this.subnetworks == null) {
+        this.subnetworks = new LinkedList<>();
+      }
       this.subnetworks.add(subnetworks);
       return this;
     }

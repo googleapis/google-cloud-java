@@ -25,21 +25,21 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
-public final class TestPermissionsResponse implements ApiMessage {
-  private final List<String> permissions;
+public final class DistributionPolicy implements ApiMessage {
+  private final List<DistributionPolicyZoneConfiguration> zones;
 
-  private TestPermissionsResponse() {
-    this.permissions = null;
+  private DistributionPolicy() {
+    this.zones = null;
   }
 
-  private TestPermissionsResponse(List<String> permissions) {
-    this.permissions = permissions;
+  private DistributionPolicy(List<DistributionPolicyZoneConfiguration> zones) {
+    this.zones = zones;
   }
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("permissions")) {
-      return permissions;
+    if (fieldName.equals("zones")) {
+      return zones;
     }
     return null;
   }
@@ -56,15 +56,15 @@ public final class TestPermissionsResponse implements ApiMessage {
     return null;
   }
 
-  public List<String> getPermissionsList() {
-    return permissions;
+  public List<DistributionPolicyZoneConfiguration> getZonesList() {
+    return zones;
   }
 
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
 
-  public static Builder newBuilder(TestPermissionsResponse prototype) {
+  public static Builder newBuilder(DistributionPolicy prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -72,67 +72,67 @@ public final class TestPermissionsResponse implements ApiMessage {
     return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
-  public static TestPermissionsResponse getDefaultInstance() {
+  public static DistributionPolicy getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final TestPermissionsResponse DEFAULT_INSTANCE;
+  private static final DistributionPolicy DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new TestPermissionsResponse();
+    DEFAULT_INSTANCE = new DistributionPolicy();
   }
 
   public static class Builder {
-    private List<String> permissions;
+    private List<DistributionPolicyZoneConfiguration> zones;
 
     Builder() {}
 
-    public Builder mergeFrom(TestPermissionsResponse other) {
-      if (other == TestPermissionsResponse.getDefaultInstance()) return this;
-      if (other.getPermissionsList() != null) {
-        this.permissions = other.permissions;
+    public Builder mergeFrom(DistributionPolicy other) {
+      if (other == DistributionPolicy.getDefaultInstance()) return this;
+      if (other.getZonesList() != null) {
+        this.zones = other.zones;
       }
       return this;
     }
 
-    Builder(TestPermissionsResponse source) {
-      this.permissions = source.permissions;
+    Builder(DistributionPolicy source) {
+      this.zones = source.zones;
     }
 
-    public List<String> getPermissionsList() {
-      return permissions;
+    public List<DistributionPolicyZoneConfiguration> getZonesList() {
+      return zones;
     }
 
-    public Builder addAllPermissions(List<String> permissions) {
-      if (this.permissions == null) {
-        this.permissions = new LinkedList<>();
+    public Builder addAllZones(List<DistributionPolicyZoneConfiguration> zones) {
+      if (this.zones == null) {
+        this.zones = new LinkedList<>();
       }
-      this.permissions.addAll(permissions);
+      this.zones.addAll(zones);
       return this;
     }
 
-    public Builder addPermissions(String permissions) {
-      if (this.permissions == null) {
-        this.permissions = new LinkedList<>();
+    public Builder addZones(DistributionPolicyZoneConfiguration zones) {
+      if (this.zones == null) {
+        this.zones = new LinkedList<>();
       }
-      this.permissions.add(permissions);
+      this.zones.add(zones);
       return this;
     }
 
-    public TestPermissionsResponse build() {
-      return new TestPermissionsResponse(permissions);
+    public DistributionPolicy build() {
+      return new DistributionPolicy(zones);
     }
 
     public Builder clone() {
       Builder newBuilder = new Builder();
-      newBuilder.addAllPermissions(this.permissions);
+      newBuilder.addAllZones(this.zones);
       return newBuilder;
     }
   }
 
   @Override
   public String toString() {
-    return "TestPermissionsResponse{" + "permissions=" + permissions + "}";
+    return "DistributionPolicy{" + "zones=" + zones + "}";
   }
 
   @Override
@@ -140,15 +140,15 @@ public final class TestPermissionsResponse implements ApiMessage {
     if (o == this) {
       return true;
     }
-    if (o instanceof TestPermissionsResponse) {
-      TestPermissionsResponse that = (TestPermissionsResponse) o;
-      return Objects.equals(this.permissions, that.getPermissionsList());
+    if (o instanceof DistributionPolicy) {
+      DistributionPolicy that = (DistributionPolicy) o;
+      return Objects.equals(this.zones, that.getZonesList());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(permissions);
+    return Objects.hash(zones);
   }
 }

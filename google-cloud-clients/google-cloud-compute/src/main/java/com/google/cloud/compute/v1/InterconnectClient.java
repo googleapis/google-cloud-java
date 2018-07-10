@@ -616,7 +616,8 @@ public class InterconnectClient implements BackgroundResource {
    * try (InterconnectClient interconnectClient = InterconnectClient.create()) {
    *   ProjectGlobalInterconnectName interconnect = ProjectGlobalInterconnectName.of("[PROJECT]", "[INTERCONNECT]");
    *   Interconnect interconnectResource = Interconnect.newBuilder().build();
-   *   Operation response = interconnectClient.patchInterconnect(interconnect, interconnectResource);
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
+   *   Operation response = interconnectClient.patchInterconnect(interconnect, interconnectResource, fieldMask);
    * }
    * </code></pre>
    *
@@ -625,16 +626,20 @@ public class InterconnectClient implements BackgroundResource {
    *     a dedicated connection between Google's network and your on-premises network. For more
    *     information, see the Dedicated overview page. (== resource_for v1.interconnects ==) (==
    *     resource_for beta.interconnects ==)
+   * @param fieldMask
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation patchInterconnect(
-      ProjectGlobalInterconnectName interconnect, Interconnect interconnectResource) {
+      ProjectGlobalInterconnectName interconnect,
+      Interconnect interconnectResource,
+      List<String> fieldMask) {
 
     PatchInterconnectHttpRequest request =
         PatchInterconnectHttpRequest.newBuilder()
             .setInterconnect(interconnect == null ? null : interconnect.toString())
             .setInterconnectResource(interconnectResource)
+            .addAllFieldMask(fieldMask)
             .build();
     return patchInterconnect(request);
   }
@@ -650,7 +655,8 @@ public class InterconnectClient implements BackgroundResource {
    * try (InterconnectClient interconnectClient = InterconnectClient.create()) {
    *   ProjectGlobalInterconnectName interconnect = ProjectGlobalInterconnectName.of("[PROJECT]", "[INTERCONNECT]");
    *   Interconnect interconnectResource = Interconnect.newBuilder().build();
-   *   Operation response = interconnectClient.patchInterconnect(interconnect.toString(), interconnectResource);
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
+   *   Operation response = interconnectClient.patchInterconnect(interconnect.toString(), interconnectResource, fieldMask);
    * }
    * </code></pre>
    *
@@ -659,15 +665,18 @@ public class InterconnectClient implements BackgroundResource {
    *     a dedicated connection between Google's network and your on-premises network. For more
    *     information, see the Dedicated overview page. (== resource_for v1.interconnects ==) (==
    *     resource_for beta.interconnects ==)
+   * @param fieldMask
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation patchInterconnect(String interconnect, Interconnect interconnectResource) {
+  public final Operation patchInterconnect(
+      String interconnect, Interconnect interconnectResource, List<String> fieldMask) {
 
     PatchInterconnectHttpRequest request =
         PatchInterconnectHttpRequest.newBuilder()
             .setInterconnect(interconnect)
             .setInterconnectResource(interconnectResource)
+            .addAllFieldMask(fieldMask)
             .build();
     return patchInterconnect(request);
   }
@@ -683,9 +692,11 @@ public class InterconnectClient implements BackgroundResource {
    * try (InterconnectClient interconnectClient = InterconnectClient.create()) {
    *   ProjectGlobalInterconnectName interconnect = ProjectGlobalInterconnectName.of("[PROJECT]", "[INTERCONNECT]");
    *   Interconnect interconnectResource = Interconnect.newBuilder().build();
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
    *   PatchInterconnectHttpRequest request = PatchInterconnectHttpRequest.newBuilder()
    *     .setInterconnect(interconnect.toString())
    *     .setInterconnectResource(interconnectResource)
+   *     .addAllFieldMask(fieldMask)
    *     .build();
    *   Operation response = interconnectClient.patchInterconnect(request);
    * }
@@ -710,9 +721,11 @@ public class InterconnectClient implements BackgroundResource {
    * try (InterconnectClient interconnectClient = InterconnectClient.create()) {
    *   ProjectGlobalInterconnectName interconnect = ProjectGlobalInterconnectName.of("[PROJECT]", "[INTERCONNECT]");
    *   Interconnect interconnectResource = Interconnect.newBuilder().build();
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
    *   PatchInterconnectHttpRequest request = PatchInterconnectHttpRequest.newBuilder()
    *     .setInterconnect(interconnect.toString())
    *     .setInterconnectResource(interconnectResource)
+   *     .addAllFieldMask(fieldMask)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = interconnectClient.patchInterconnectCallable().futureCall(request);
    *   // Do something

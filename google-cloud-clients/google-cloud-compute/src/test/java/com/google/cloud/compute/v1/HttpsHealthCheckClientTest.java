@@ -37,6 +37,7 @@ import com.google.cloud.compute.v1.stub.HttpsHealthCheckStubSettings;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import org.junit.After;
@@ -453,9 +454,10 @@ public class HttpsHealthCheckClientTest {
     ProjectGlobalHttpsHealthCheckName httpsHealthCheck =
         ProjectGlobalHttpsHealthCheckName.of("[PROJECT]", "[HTTPS_HEALTH_CHECK]");
     HttpsHealthCheck2 httpsHealthCheckResource = HttpsHealthCheck2.newBuilder().build();
+    List<String> fieldMask = new ArrayList<>();
 
     Operation actualResponse =
-        client.patchHttpsHealthCheck(httpsHealthCheck, httpsHealthCheckResource);
+        client.patchHttpsHealthCheck(httpsHealthCheck, httpsHealthCheckResource, fieldMask);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -485,8 +487,9 @@ public class HttpsHealthCheckClientTest {
       ProjectGlobalHttpsHealthCheckName httpsHealthCheck =
           ProjectGlobalHttpsHealthCheckName.of("[PROJECT]", "[HTTPS_HEALTH_CHECK]");
       HttpsHealthCheck2 httpsHealthCheckResource = HttpsHealthCheck2.newBuilder().build();
+      List<String> fieldMask = new ArrayList<>();
 
-      client.patchHttpsHealthCheck(httpsHealthCheck, httpsHealthCheckResource);
+      client.patchHttpsHealthCheck(httpsHealthCheck, httpsHealthCheckResource, fieldMask);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -546,9 +549,10 @@ public class HttpsHealthCheckClientTest {
     ProjectGlobalHttpsHealthCheckName httpsHealthCheck =
         ProjectGlobalHttpsHealthCheckName.of("[PROJECT]", "[HTTPS_HEALTH_CHECK]");
     HttpsHealthCheck2 httpsHealthCheckResource = HttpsHealthCheck2.newBuilder().build();
+    List<String> fieldMask = new ArrayList<>();
 
     Operation actualResponse =
-        client.updateHttpsHealthCheck(httpsHealthCheck, httpsHealthCheckResource);
+        client.updateHttpsHealthCheck(httpsHealthCheck, httpsHealthCheckResource, fieldMask);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -578,8 +582,9 @@ public class HttpsHealthCheckClientTest {
       ProjectGlobalHttpsHealthCheckName httpsHealthCheck =
           ProjectGlobalHttpsHealthCheckName.of("[PROJECT]", "[HTTPS_HEALTH_CHECK]");
       HttpsHealthCheck2 httpsHealthCheckResource = HttpsHealthCheck2.newBuilder().build();
+      List<String> fieldMask = new ArrayList<>();
 
-      client.updateHttpsHealthCheck(httpsHealthCheck, httpsHealthCheckResource);
+      client.updateHttpsHealthCheck(httpsHealthCheck, httpsHealthCheckResource, fieldMask);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

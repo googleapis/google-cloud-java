@@ -17,7 +17,7 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 import javax.annotation.Generated;
@@ -304,13 +304,16 @@ public final class Region implements ApiMessage {
 
     public Builder addAllQuotas(List<Quota> quotas) {
       if (this.quotas == null) {
-        this.quotas = new ArrayList<>(quotas.size());
+        this.quotas = new LinkedList<>();
       }
       this.quotas.addAll(quotas);
       return this;
     }
 
     public Builder addQuotas(Quota quotas) {
+      if (this.quotas == null) {
+        this.quotas = new LinkedList<>();
+      }
       this.quotas.add(quotas);
       return this;
     }
@@ -339,13 +342,16 @@ public final class Region implements ApiMessage {
 
     public Builder addAllZones(List<String> zones) {
       if (this.zones == null) {
-        this.zones = new ArrayList<>(zones.size());
+        this.zones = new LinkedList<>();
       }
       this.zones.addAll(zones);
       return this;
     }
 
     public Builder addZones(String zones) {
+      if (this.zones == null) {
+        this.zones = new LinkedList<>();
+      }
       this.zones.add(zones);
       return this;
     }

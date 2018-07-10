@@ -26,6 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 public final class BackendBucket implements ApiMessage {
   private final String bucketName;
+  private final BackendBucketCdnPolicy cdnPolicy;
   private final String creationTimestamp;
   private final String description;
   private final Boolean enableCdn;
@@ -36,6 +37,7 @@ public final class BackendBucket implements ApiMessage {
 
   private BackendBucket() {
     this.bucketName = null;
+    this.cdnPolicy = null;
     this.creationTimestamp = null;
     this.description = null;
     this.enableCdn = null;
@@ -47,6 +49,7 @@ public final class BackendBucket implements ApiMessage {
 
   private BackendBucket(
       String bucketName,
+      BackendBucketCdnPolicy cdnPolicy,
       String creationTimestamp,
       String description,
       Boolean enableCdn,
@@ -55,6 +58,7 @@ public final class BackendBucket implements ApiMessage {
       String name,
       String selfLink) {
     this.bucketName = bucketName;
+    this.cdnPolicy = cdnPolicy;
     this.creationTimestamp = creationTimestamp;
     this.description = description;
     this.enableCdn = enableCdn;
@@ -68,6 +72,9 @@ public final class BackendBucket implements ApiMessage {
   public Object getFieldValue(String fieldName) {
     if (fieldName.equals("bucketName")) {
       return bucketName;
+    }
+    if (fieldName.equals("cdnPolicy")) {
+      return cdnPolicy;
     }
     if (fieldName.equals("creationTimestamp")) {
       return creationTimestamp;
@@ -107,6 +114,10 @@ public final class BackendBucket implements ApiMessage {
 
   public String getBucketName() {
     return bucketName;
+  }
+
+  public BackendBucketCdnPolicy getCdnPolicy() {
+    return cdnPolicy;
   }
 
   public String getCreationTimestamp() {
@@ -161,6 +172,7 @@ public final class BackendBucket implements ApiMessage {
 
   public static class Builder {
     private String bucketName;
+    private BackendBucketCdnPolicy cdnPolicy;
     private String creationTimestamp;
     private String description;
     private Boolean enableCdn;
@@ -175,6 +187,9 @@ public final class BackendBucket implements ApiMessage {
       if (other == BackendBucket.getDefaultInstance()) return this;
       if (other.getBucketName() != null) {
         this.bucketName = other.bucketName;
+      }
+      if (other.getCdnPolicy() != null) {
+        this.cdnPolicy = other.cdnPolicy;
       }
       if (other.getCreationTimestamp() != null) {
         this.creationTimestamp = other.creationTimestamp;
@@ -202,6 +217,7 @@ public final class BackendBucket implements ApiMessage {
 
     Builder(BackendBucket source) {
       this.bucketName = source.bucketName;
+      this.cdnPolicy = source.cdnPolicy;
       this.creationTimestamp = source.creationTimestamp;
       this.description = source.description;
       this.enableCdn = source.enableCdn;
@@ -217,6 +233,15 @@ public final class BackendBucket implements ApiMessage {
 
     public Builder setBucketName(String bucketName) {
       this.bucketName = bucketName;
+      return this;
+    }
+
+    public BackendBucketCdnPolicy getCdnPolicy() {
+      return cdnPolicy;
+    }
+
+    public Builder setCdnPolicy(BackendBucketCdnPolicy cdnPolicy) {
+      this.cdnPolicy = cdnPolicy;
       return this;
     }
 
@@ -286,12 +311,21 @@ public final class BackendBucket implements ApiMessage {
     public BackendBucket build() {
 
       return new BackendBucket(
-          bucketName, creationTimestamp, description, enableCdn, id, kind, name, selfLink);
+          bucketName,
+          cdnPolicy,
+          creationTimestamp,
+          description,
+          enableCdn,
+          id,
+          kind,
+          name,
+          selfLink);
     }
 
     public Builder clone() {
       Builder newBuilder = new Builder();
       newBuilder.setBucketName(this.bucketName);
+      newBuilder.setCdnPolicy(this.cdnPolicy);
       newBuilder.setCreationTimestamp(this.creationTimestamp);
       newBuilder.setDescription(this.description);
       newBuilder.setEnableCdn(this.enableCdn);
@@ -308,6 +342,9 @@ public final class BackendBucket implements ApiMessage {
     return "BackendBucket{"
         + "bucketName="
         + bucketName
+        + ", "
+        + "cdnPolicy="
+        + cdnPolicy
         + ", "
         + "creationTimestamp="
         + creationTimestamp
@@ -340,6 +377,7 @@ public final class BackendBucket implements ApiMessage {
     if (o instanceof BackendBucket) {
       BackendBucket that = (BackendBucket) o;
       return Objects.equals(this.bucketName, that.getBucketName())
+          && Objects.equals(this.cdnPolicy, that.getCdnPolicy())
           && Objects.equals(this.creationTimestamp, that.getCreationTimestamp())
           && Objects.equals(this.description, that.getDescription())
           && Objects.equals(this.enableCdn, that.getEnableCdn())
@@ -354,6 +392,6 @@ public final class BackendBucket implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-        bucketName, creationTimestamp, description, enableCdn, id, kind, name, selfLink);
+        bucketName, cdnPolicy, creationTimestamp, description, enableCdn, id, kind, name, selfLink);
   }
 }

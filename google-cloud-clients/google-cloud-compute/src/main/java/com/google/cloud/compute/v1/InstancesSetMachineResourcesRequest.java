@@ -17,7 +17,7 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 import javax.annotation.Generated;
@@ -105,13 +105,16 @@ public final class InstancesSetMachineResourcesRequest implements ApiMessage {
 
     public Builder addAllGuestAccelerators(List<AcceleratorConfig> guestAccelerators) {
       if (this.guestAccelerators == null) {
-        this.guestAccelerators = new ArrayList<>(guestAccelerators.size());
+        this.guestAccelerators = new LinkedList<>();
       }
       this.guestAccelerators.addAll(guestAccelerators);
       return this;
     }
 
     public Builder addGuestAccelerators(AcceleratorConfig guestAccelerators) {
+      if (this.guestAccelerators == null) {
+        this.guestAccelerators = new LinkedList<>();
+      }
       this.guestAccelerators.add(guestAccelerators);
       return this;
     }

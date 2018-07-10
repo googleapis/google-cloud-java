@@ -17,7 +17,7 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 import javax.annotation.Generated;
@@ -129,13 +129,16 @@ public final class ServiceAccount implements ApiMessage {
 
     public Builder addAllScopes(List<String> scopes) {
       if (this.scopes == null) {
-        this.scopes = new ArrayList<>(scopes.size());
+        this.scopes = new LinkedList<>();
       }
       this.scopes.addAll(scopes);
       return this;
     }
 
     public Builder addScopes(String scopes) {
+      if (this.scopes == null) {
+        this.scopes = new LinkedList<>();
+      }
       this.scopes.add(scopes);
       return this;
     }

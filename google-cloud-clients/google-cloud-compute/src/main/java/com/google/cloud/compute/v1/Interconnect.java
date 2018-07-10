@@ -17,7 +17,7 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 import javax.annotation.Generated;
@@ -451,13 +451,16 @@ public final class Interconnect implements ApiMessage {
 
     public Builder addAllCircuitInfos(List<InterconnectCircuitInfo> circuitInfos) {
       if (this.circuitInfos == null) {
-        this.circuitInfos = new ArrayList<>(circuitInfos.size());
+        this.circuitInfos = new LinkedList<>();
       }
       this.circuitInfos.addAll(circuitInfos);
       return this;
     }
 
     public Builder addCircuitInfos(InterconnectCircuitInfo circuitInfos) {
+      if (this.circuitInfos == null) {
+        this.circuitInfos = new LinkedList<>();
+      }
       this.circuitInfos.add(circuitInfos);
       return this;
     }
@@ -495,13 +498,16 @@ public final class Interconnect implements ApiMessage {
 
     public Builder addAllExpectedOutages(List<InterconnectOutageNotification> expectedOutages) {
       if (this.expectedOutages == null) {
-        this.expectedOutages = new ArrayList<>(expectedOutages.size());
+        this.expectedOutages = new LinkedList<>();
       }
       this.expectedOutages.addAll(expectedOutages);
       return this;
     }
 
     public Builder addExpectedOutages(InterconnectOutageNotification expectedOutages) {
+      if (this.expectedOutages == null) {
+        this.expectedOutages = new LinkedList<>();
+      }
       this.expectedOutages.add(expectedOutages);
       return this;
     }
@@ -539,13 +545,16 @@ public final class Interconnect implements ApiMessage {
 
     public Builder addAllInterconnectAttachments(List<String> interconnectAttachments) {
       if (this.interconnectAttachments == null) {
-        this.interconnectAttachments = new ArrayList<>(interconnectAttachments.size());
+        this.interconnectAttachments = new LinkedList<>();
       }
       this.interconnectAttachments.addAll(interconnectAttachments);
       return this;
     }
 
     public Builder addInterconnectAttachments(String interconnectAttachments) {
+      if (this.interconnectAttachments == null) {
+        this.interconnectAttachments = new LinkedList<>();
+      }
       this.interconnectAttachments.add(interconnectAttachments);
       return this;
     }

@@ -861,23 +861,28 @@ public class SubnetworkClient implements BackgroundResource {
    * try (SubnetworkClient subnetworkClient = SubnetworkClient.create()) {
    *   ProjectRegionSubnetworkName subnetwork = ProjectRegionSubnetworkName.of("[PROJECT]", "[REGION]", "[SUBNETWORK]");
    *   Subnetwork subnetworkResource = Subnetwork.newBuilder().build();
-   *   Operation response = subnetworkClient.patchSubnetwork(subnetwork, subnetworkResource);
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
+   *   Operation response = subnetworkClient.patchSubnetwork(subnetwork, subnetworkResource, fieldMask);
    * }
    * </code></pre>
    *
    * @param subnetwork Name of the Subnetwork resource to patch.
    * @param subnetworkResource A Subnetwork resource. (== resource_for beta.subnetworks ==) (==
    *     resource_for v1.subnetworks ==)
+   * @param fieldMask
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation patchSubnetwork(
-      ProjectRegionSubnetworkName subnetwork, Subnetwork subnetworkResource) {
+      ProjectRegionSubnetworkName subnetwork,
+      Subnetwork subnetworkResource,
+      List<String> fieldMask) {
 
     PatchSubnetworkHttpRequest request =
         PatchSubnetworkHttpRequest.newBuilder()
             .setSubnetwork(subnetwork == null ? null : subnetwork.toString())
             .setSubnetworkResource(subnetworkResource)
+            .addAllFieldMask(fieldMask)
             .build();
     return patchSubnetwork(request);
   }
@@ -895,22 +900,26 @@ public class SubnetworkClient implements BackgroundResource {
    * try (SubnetworkClient subnetworkClient = SubnetworkClient.create()) {
    *   ProjectRegionSubnetworkName subnetwork = ProjectRegionSubnetworkName.of("[PROJECT]", "[REGION]", "[SUBNETWORK]");
    *   Subnetwork subnetworkResource = Subnetwork.newBuilder().build();
-   *   Operation response = subnetworkClient.patchSubnetwork(subnetwork.toString(), subnetworkResource);
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
+   *   Operation response = subnetworkClient.patchSubnetwork(subnetwork.toString(), subnetworkResource, fieldMask);
    * }
    * </code></pre>
    *
    * @param subnetwork Name of the Subnetwork resource to patch.
    * @param subnetworkResource A Subnetwork resource. (== resource_for beta.subnetworks ==) (==
    *     resource_for v1.subnetworks ==)
+   * @param fieldMask
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation patchSubnetwork(String subnetwork, Subnetwork subnetworkResource) {
+  public final Operation patchSubnetwork(
+      String subnetwork, Subnetwork subnetworkResource, List<String> fieldMask) {
 
     PatchSubnetworkHttpRequest request =
         PatchSubnetworkHttpRequest.newBuilder()
             .setSubnetwork(subnetwork)
             .setSubnetworkResource(subnetworkResource)
+            .addAllFieldMask(fieldMask)
             .build();
     return patchSubnetwork(request);
   }
@@ -928,9 +937,11 @@ public class SubnetworkClient implements BackgroundResource {
    * try (SubnetworkClient subnetworkClient = SubnetworkClient.create()) {
    *   ProjectRegionSubnetworkName subnetwork = ProjectRegionSubnetworkName.of("[PROJECT]", "[REGION]", "[SUBNETWORK]");
    *   Subnetwork subnetworkResource = Subnetwork.newBuilder().build();
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
    *   PatchSubnetworkHttpRequest request = PatchSubnetworkHttpRequest.newBuilder()
    *     .setSubnetwork(subnetwork.toString())
    *     .setSubnetworkResource(subnetworkResource)
+   *     .addAllFieldMask(fieldMask)
    *     .build();
    *   Operation response = subnetworkClient.patchSubnetwork(request);
    * }
@@ -957,9 +968,11 @@ public class SubnetworkClient implements BackgroundResource {
    * try (SubnetworkClient subnetworkClient = SubnetworkClient.create()) {
    *   ProjectRegionSubnetworkName subnetwork = ProjectRegionSubnetworkName.of("[PROJECT]", "[REGION]", "[SUBNETWORK]");
    *   Subnetwork subnetworkResource = Subnetwork.newBuilder().build();
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
    *   PatchSubnetworkHttpRequest request = PatchSubnetworkHttpRequest.newBuilder()
    *     .setSubnetwork(subnetwork.toString())
    *     .setSubnetworkResource(subnetworkResource)
+   *     .addAllFieldMask(fieldMask)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = subnetworkClient.patchSubnetworkCallable().futureCall(request);
    *   // Do something

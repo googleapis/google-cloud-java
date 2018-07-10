@@ -720,7 +720,8 @@ public class SslPolicyClient implements BackgroundResource {
    * try (SslPolicyClient sslPolicyClient = SslPolicyClient.create()) {
    *   ProjectGlobalSslPolicyName sslPolicy = ProjectGlobalSslPolicyName.of("[PROJECT]", "[SSL_POLICY]");
    *   SslPolicy sslPolicyResource = SslPolicy.newBuilder().build();
-   *   Operation response = sslPolicyClient.patchSslPolicy(sslPolicy, sslPolicyResource);
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
+   *   Operation response = sslPolicyClient.patchSslPolicy(sslPolicy, sslPolicyResource, fieldMask);
    * }
    * </code></pre>
    *
@@ -730,16 +731,18 @@ public class SslPolicyClient implements BackgroundResource {
    *     can be attached to a TargetHttpsProxy or a TargetSslProxy. This affects connections between
    *     clients and the HTTPS or SSL proxy load balancer. They do not affect the connection between
    *     the load balancers and the backends.
+   * @param fieldMask
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation patchSslPolicy(
-      ProjectGlobalSslPolicyName sslPolicy, SslPolicy sslPolicyResource) {
+      ProjectGlobalSslPolicyName sslPolicy, SslPolicy sslPolicyResource, List<String> fieldMask) {
 
     PatchSslPolicyHttpRequest request =
         PatchSslPolicyHttpRequest.newBuilder()
             .setSslPolicy(sslPolicy == null ? null : sslPolicy.toString())
             .setSslPolicyResource(sslPolicyResource)
+            .addAllFieldMask(fieldMask)
             .build();
     return patchSslPolicy(request);
   }
@@ -754,7 +757,8 @@ public class SslPolicyClient implements BackgroundResource {
    * try (SslPolicyClient sslPolicyClient = SslPolicyClient.create()) {
    *   ProjectGlobalSslPolicyName sslPolicy = ProjectGlobalSslPolicyName.of("[PROJECT]", "[SSL_POLICY]");
    *   SslPolicy sslPolicyResource = SslPolicy.newBuilder().build();
-   *   Operation response = sslPolicyClient.patchSslPolicy(sslPolicy.toString(), sslPolicyResource);
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
+   *   Operation response = sslPolicyClient.patchSslPolicy(sslPolicy.toString(), sslPolicyResource, fieldMask);
    * }
    * </code></pre>
    *
@@ -764,15 +768,18 @@ public class SslPolicyClient implements BackgroundResource {
    *     can be attached to a TargetHttpsProxy or a TargetSslProxy. This affects connections between
    *     clients and the HTTPS or SSL proxy load balancer. They do not affect the connection between
    *     the load balancers and the backends.
+   * @param fieldMask
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation patchSslPolicy(String sslPolicy, SslPolicy sslPolicyResource) {
+  public final Operation patchSslPolicy(
+      String sslPolicy, SslPolicy sslPolicyResource, List<String> fieldMask) {
 
     PatchSslPolicyHttpRequest request =
         PatchSslPolicyHttpRequest.newBuilder()
             .setSslPolicy(sslPolicy)
             .setSslPolicyResource(sslPolicyResource)
+            .addAllFieldMask(fieldMask)
             .build();
     return patchSslPolicy(request);
   }
@@ -787,9 +794,11 @@ public class SslPolicyClient implements BackgroundResource {
    * try (SslPolicyClient sslPolicyClient = SslPolicyClient.create()) {
    *   ProjectGlobalSslPolicyName sslPolicy = ProjectGlobalSslPolicyName.of("[PROJECT]", "[SSL_POLICY]");
    *   SslPolicy sslPolicyResource = SslPolicy.newBuilder().build();
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
    *   PatchSslPolicyHttpRequest request = PatchSslPolicyHttpRequest.newBuilder()
    *     .setSslPolicy(sslPolicy.toString())
    *     .setSslPolicyResource(sslPolicyResource)
+   *     .addAllFieldMask(fieldMask)
    *     .build();
    *   Operation response = sslPolicyClient.patchSslPolicy(request);
    * }
@@ -813,9 +822,11 @@ public class SslPolicyClient implements BackgroundResource {
    * try (SslPolicyClient sslPolicyClient = SslPolicyClient.create()) {
    *   ProjectGlobalSslPolicyName sslPolicy = ProjectGlobalSslPolicyName.of("[PROJECT]", "[SSL_POLICY]");
    *   SslPolicy sslPolicyResource = SslPolicy.newBuilder().build();
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
    *   PatchSslPolicyHttpRequest request = PatchSslPolicyHttpRequest.newBuilder()
    *     .setSslPolicy(sslPolicy.toString())
    *     .setSslPolicyResource(sslPolicyResource)
+   *     .addAllFieldMask(fieldMask)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = sslPolicyClient.patchSslPolicyCallable().futureCall(request);
    *   // Do something

@@ -3224,26 +3224,30 @@ public class InstanceClient implements BackgroundResource {
    *   ProjectZoneInstanceName instance = ProjectZoneInstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
    *   String networkInterface = "";
    *   NetworkInterface networkInterfaceResource = NetworkInterface.newBuilder().build();
-   *   Operation response = instanceClient.updateNetworkInterfaceInstance(instance, networkInterface, networkInterfaceResource);
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
+   *   Operation response = instanceClient.updateNetworkInterfaceInstance(instance, networkInterface, networkInterfaceResource, fieldMask);
    * }
    * </code></pre>
    *
    * @param instance The instance name for this request.
    * @param networkInterface The name of the network interface to update.
    * @param networkInterfaceResource A network interface resource attached to an instance.
+   * @param fieldMask
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation updateNetworkInterfaceInstance(
       ProjectZoneInstanceName instance,
       String networkInterface,
-      NetworkInterface networkInterfaceResource) {
+      NetworkInterface networkInterfaceResource,
+      List<String> fieldMask) {
 
     UpdateNetworkInterfaceInstanceHttpRequest request =
         UpdateNetworkInterfaceInstanceHttpRequest.newBuilder()
             .setInstance(instance == null ? null : instance.toString())
             .setNetworkInterface(networkInterface)
             .setNetworkInterfaceResource(networkInterfaceResource)
+            .addAllFieldMask(fieldMask)
             .build();
     return updateNetworkInterfaceInstance(request);
   }
@@ -3259,24 +3263,30 @@ public class InstanceClient implements BackgroundResource {
    *   ProjectZoneInstanceName instance = ProjectZoneInstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
    *   String networkInterface = "";
    *   NetworkInterface networkInterfaceResource = NetworkInterface.newBuilder().build();
-   *   Operation response = instanceClient.updateNetworkInterfaceInstance(instance.toString(), networkInterface, networkInterfaceResource);
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
+   *   Operation response = instanceClient.updateNetworkInterfaceInstance(instance.toString(), networkInterface, networkInterfaceResource, fieldMask);
    * }
    * </code></pre>
    *
    * @param instance The instance name for this request.
    * @param networkInterface The name of the network interface to update.
    * @param networkInterfaceResource A network interface resource attached to an instance.
+   * @param fieldMask
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation updateNetworkInterfaceInstance(
-      String instance, String networkInterface, NetworkInterface networkInterfaceResource) {
+      String instance,
+      String networkInterface,
+      NetworkInterface networkInterfaceResource,
+      List<String> fieldMask) {
 
     UpdateNetworkInterfaceInstanceHttpRequest request =
         UpdateNetworkInterfaceInstanceHttpRequest.newBuilder()
             .setInstance(instance)
             .setNetworkInterface(networkInterface)
             .setNetworkInterfaceResource(networkInterfaceResource)
+            .addAllFieldMask(fieldMask)
             .build();
     return updateNetworkInterfaceInstance(request);
   }
@@ -3292,10 +3302,12 @@ public class InstanceClient implements BackgroundResource {
    *   ProjectZoneInstanceName instance = ProjectZoneInstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
    *   String networkInterface = "";
    *   NetworkInterface networkInterfaceResource = NetworkInterface.newBuilder().build();
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
    *   UpdateNetworkInterfaceInstanceHttpRequest request = UpdateNetworkInterfaceInstanceHttpRequest.newBuilder()
    *     .setInstance(instance.toString())
    *     .setNetworkInterface(networkInterface)
    *     .setNetworkInterfaceResource(networkInterfaceResource)
+   *     .addAllFieldMask(fieldMask)
    *     .build();
    *   Operation response = instanceClient.updateNetworkInterfaceInstance(request);
    * }
@@ -3321,10 +3333,12 @@ public class InstanceClient implements BackgroundResource {
    *   ProjectZoneInstanceName instance = ProjectZoneInstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
    *   String networkInterface = "";
    *   NetworkInterface networkInterfaceResource = NetworkInterface.newBuilder().build();
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
    *   UpdateNetworkInterfaceInstanceHttpRequest request = UpdateNetworkInterfaceInstanceHttpRequest.newBuilder()
    *     .setInstance(instance.toString())
    *     .setNetworkInterface(networkInterface)
    *     .setNetworkInterfaceResource(networkInterfaceResource)
+   *     .addAllFieldMask(fieldMask)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = instanceClient.updateNetworkInterfaceInstanceCallable().futureCall(request);
    *   // Do something

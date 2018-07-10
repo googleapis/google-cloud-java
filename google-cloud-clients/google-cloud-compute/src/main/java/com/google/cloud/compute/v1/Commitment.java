@@ -17,7 +17,7 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 import javax.annotation.Generated;
@@ -370,13 +370,16 @@ public final class Commitment implements ApiMessage {
 
     public Builder addAllResources(List<ResourceCommitment> resources) {
       if (this.resources == null) {
-        this.resources = new ArrayList<>(resources.size());
+        this.resources = new LinkedList<>();
       }
       this.resources.addAll(resources);
       return this;
     }
 
     public Builder addResources(ResourceCommitment resources) {
+      if (this.resources == null) {
+        this.resources = new LinkedList<>();
+      }
       this.resources.add(resources);
       return this;
     }
