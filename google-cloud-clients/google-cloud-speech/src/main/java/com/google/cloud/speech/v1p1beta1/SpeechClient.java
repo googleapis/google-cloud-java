@@ -445,28 +445,14 @@ public class SpeechClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SpeechClient speechClient = SpeechClient.create()) {
-   *   ApiStreamObserver&lt;StreamingRecognizeResponse&gt; responseObserver =
-   *       new ApiStreamObserver&lt;StreamingRecognizeResponse&gt;() {
-   *         {@literal @}Override
-   *         public void onNext(StreamingRecognizeResponse response) {
-   *           // Do something when receive a response
-   *         }
-   *
-   *         {@literal @}Override
-   *         public void onError(Throwable t) {
-   *           // Add error-handling
-   *         }
-   *
-   *         {@literal @}Override
-   *         public void onCompleted() {
-   *           // Do something when complete.
-   *         }
-   *       };
-   *   ApiStreamObserver&lt;StreamingRecognizeRequest&gt; requestObserver =
-   *       speechClient.streamingRecognizeCallable().bidiStreamingCall(responseObserver));
+   *   BidiStream&lt;StreamingRecognizeRequest, StreamingRecognizeResponse&gt; bidiStream =
+   *       speechClient.streamingRecognizeCallable().call();
    *
    *   StreamingRecognizeRequest request = StreamingRecognizeRequest.newBuilder().build();
-   *   requestObserver.onNext(request);
+   *   bidiStream.send(request);
+   *   for (StreamingRecognizeResponse response : bidiStream) {
+   *     // Do something when receive a response
+   *   }
    * }
    * </code></pre>
    */

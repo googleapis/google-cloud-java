@@ -104,6 +104,20 @@ public interface SpeechTranscriptionConfigOrBuilder extends
 
   /**
    * <pre>
+   * *Optional* If 'true', adds punctuation to recognition result hypotheses.
+   * This feature is only available in select languages. Setting this for
+   * requests in other languages has no effect at all. The default 'false' value
+   * does not add punctuation to result hypotheses. NOTE: "This is currently
+   * offered as an experimental service, complimentary to all users. In the
+   * future this may be exclusively available as a premium feature."
+   * </pre>
+   *
+   * <code>bool enable_automatic_punctuation = 5;</code>
+   */
+  boolean getEnableAutomaticPunctuation();
+
+  /**
+   * <pre>
    * *Optional* For file formats, such as MXF or MKV, supporting multiple audio
    * tracks, specify up to two tracks. Default: track 0.
    * </pre>

@@ -357,6 +357,10 @@ public final class PatchNetworkHttpRequest implements ApiMessage {
     public PatchNetworkHttpRequest build() {
       String missing = "";
 
+      if (fieldMask == null) {
+        missing += " fieldMask";
+      }
+
       if (network == null) {
         missing += " network";
       }

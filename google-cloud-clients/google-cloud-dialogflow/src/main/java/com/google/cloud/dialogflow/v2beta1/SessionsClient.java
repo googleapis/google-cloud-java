@@ -291,25 +291,8 @@ public class SessionsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SessionsClient sessionsClient = SessionsClient.create()) {
-   *   ApiStreamObserver&lt;StreamingDetectIntentResponse&gt; responseObserver =
-   *       new ApiStreamObserver&lt;StreamingDetectIntentResponse&gt;() {
-   *         {@literal @}Override
-   *         public void onNext(StreamingDetectIntentResponse response) {
-   *           // Do something when receive a response
-   *         }
-   *
-   *         {@literal @}Override
-   *         public void onError(Throwable t) {
-   *           // Add error-handling
-   *         }
-   *
-   *         {@literal @}Override
-   *         public void onCompleted() {
-   *           // Do something when complete.
-   *         }
-   *       };
-   *   ApiStreamObserver&lt;StreamingRecognizeRequest&gt; requestObserver =
-   *       sessionsClient.streamingDetectIntentCallable().bidiStreamingCall(responseObserver));
+   *   BidiStream&lt;StreamingDetectIntentRequest, StreamingDetectIntentResponse&gt; bidiStream =
+   *       sessionsClient.streamingDetectIntentCallable().call();
    *
    *   String session = "";
    *   QueryInput queryInput = QueryInput.newBuilder().build();
@@ -317,7 +300,10 @@ public class SessionsClient implements BackgroundResource {
    *     .setSession(session)
    *     .setQueryInput(queryInput)
    *     .build();
-   *   requestObserver.onNext(request);
+   *   bidiStream.send(request);
+   *   for (StreamingDetectIntentResponse response : bidiStream) {
+   *     // Do something when receive a response
+   *   }
    * }
    * </code></pre>
    */

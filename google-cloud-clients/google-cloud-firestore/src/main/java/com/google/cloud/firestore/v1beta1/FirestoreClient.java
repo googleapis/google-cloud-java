@@ -668,24 +668,6 @@ public class FirestoreClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
-   *   ApiStreamObserver&lt;BatchGetDocumentsResponse&gt; responseObserver =
-   *       new ApiStreamObserver&lt;BatchGetDocumentsResponse&gt;() {
-   *         {@literal @}Override
-   *         public void onNext(BatchGetDocumentsResponse response) {
-   *           // Do something when receive a response
-   *         }
-   *
-   *         {@literal @}Override
-   *         public void onError(Throwable t) {
-   *           // Add error-handling
-   *         }
-   *
-   *         {@literal @}Override
-   *         public void onCompleted() {
-   *           // Do something when complete.
-   *         }
-   *       };
-   *
    *   String formattedDatabase = FirestoreClient.formatDatabaseRootName("[PROJECT]", "[DATABASE]");
    *   List&lt;String&gt; documents = new ArrayList&lt;&gt;();
    *   BatchGetDocumentsRequest request = BatchGetDocumentsRequest.newBuilder()
@@ -693,7 +675,10 @@ public class FirestoreClient implements BackgroundResource {
    *     .addAllDocuments(documents)
    *     .build();
    *
-   *   firestoreClient.batchGetDocumentsCallable().serverStreamingCall(request, responseObserver));
+   *   ServerStream&lt;BatchGetDocumentsResponse&gt; stream = firestoreClient.batchGetDocumentsCallable().call(request);
+   *   for (BatchGetDocumentsResponse response : stream) {
+   *     // Do something when receive a response
+   *   }
    * }
    * </code></pre>
    */
@@ -931,30 +916,15 @@ public class FirestoreClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
-   *   ApiStreamObserver&lt;RunQueryResponse&gt; responseObserver =
-   *       new ApiStreamObserver&lt;RunQueryResponse&gt;() {
-   *         {@literal @}Override
-   *         public void onNext(RunQueryResponse response) {
-   *           // Do something when receive a response
-   *         }
-   *
-   *         {@literal @}Override
-   *         public void onError(Throwable t) {
-   *           // Add error-handling
-   *         }
-   *
-   *         {@literal @}Override
-   *         public void onCompleted() {
-   *           // Do something when complete.
-   *         }
-   *       };
-   *
    *   String formattedParent = FirestoreClient.formatAnyPathName("[PROJECT]", "[DATABASE]", "[DOCUMENT]", "[ANY_PATH]");
    *   RunQueryRequest request = RunQueryRequest.newBuilder()
    *     .setParent(formattedParent)
    *     .build();
    *
-   *   firestoreClient.runQueryCallable().serverStreamingCall(request, responseObserver));
+   *   ServerStream&lt;RunQueryResponse&gt; stream = firestoreClient.runQueryCallable().call(request);
+   *   for (RunQueryResponse response : stream) {
+   *     // Do something when receive a response
+   *   }
    * }
    * </code></pre>
    */
@@ -970,31 +940,17 @@ public class FirestoreClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
-   *   ApiStreamObserver&lt;WriteResponse&gt; responseObserver =
-   *       new ApiStreamObserver&lt;WriteResponse&gt;() {
-   *         {@literal @}Override
-   *         public void onNext(WriteResponse response) {
-   *           // Do something when receive a response
-   *         }
-   *
-   *         {@literal @}Override
-   *         public void onError(Throwable t) {
-   *           // Add error-handling
-   *         }
-   *
-   *         {@literal @}Override
-   *         public void onCompleted() {
-   *           // Do something when complete.
-   *         }
-   *       };
-   *   ApiStreamObserver&lt;StreamingRecognizeRequest&gt; requestObserver =
-   *       firestoreClient.writeCallable().bidiStreamingCall(responseObserver));
+   *   BidiStream&lt;WriteRequest, WriteResponse&gt; bidiStream =
+   *       firestoreClient.writeCallable().call();
    *
    *   String formattedDatabase = FirestoreClient.formatDatabaseRootName("[PROJECT]", "[DATABASE]");
    *   WriteRequest request = WriteRequest.newBuilder()
    *     .setDatabase(formattedDatabase)
    *     .build();
-   *   requestObserver.onNext(request);
+   *   bidiStream.send(request);
+   *   for (WriteResponse response : bidiStream) {
+   *     // Do something when receive a response
+   *   }
    * }
    * </code></pre>
    */
@@ -1010,31 +966,17 @@ public class FirestoreClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
-   *   ApiStreamObserver&lt;ListenResponse&gt; responseObserver =
-   *       new ApiStreamObserver&lt;ListenResponse&gt;() {
-   *         {@literal @}Override
-   *         public void onNext(ListenResponse response) {
-   *           // Do something when receive a response
-   *         }
-   *
-   *         {@literal @}Override
-   *         public void onError(Throwable t) {
-   *           // Add error-handling
-   *         }
-   *
-   *         {@literal @}Override
-   *         public void onCompleted() {
-   *           // Do something when complete.
-   *         }
-   *       };
-   *   ApiStreamObserver&lt;StreamingRecognizeRequest&gt; requestObserver =
-   *       firestoreClient.listenCallable().bidiStreamingCall(responseObserver));
+   *   BidiStream&lt;ListenRequest, ListenResponse&gt; bidiStream =
+   *       firestoreClient.listenCallable().call();
    *
    *   String formattedDatabase = FirestoreClient.formatDatabaseRootName("[PROJECT]", "[DATABASE]");
    *   ListenRequest request = ListenRequest.newBuilder()
    *     .setDatabase(formattedDatabase)
    *     .build();
-   *   requestObserver.onNext(request);
+   *   bidiStream.send(request);
+   *   for (ListenResponse response : bidiStream) {
+   *     // Do something when receive a response
+   *   }
    * }
    * </code></pre>
    */

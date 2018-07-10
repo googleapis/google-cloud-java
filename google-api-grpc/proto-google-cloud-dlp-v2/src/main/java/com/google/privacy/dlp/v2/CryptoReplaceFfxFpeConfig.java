@@ -14,7 +14,7 @@ package com.google.privacy.dlp.v2;
  * replaced with the same surrogate.
  * Identifiers must be at least two characters long.
  * In the case that the identifier is the empty string, it will be skipped.
- * See [Pseudonymization](/dlp/docs/pseudonymization) for example usage.
+ * See https://cloud.google.com/dlp/docs/pseudonymization to learn more.
  * </pre>
  *
  * Protobuf type {@code google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig}
@@ -902,7 +902,7 @@ private static final long serialVersionUID = 0L;
    * replaced with the same surrogate.
    * Identifiers must be at least two characters long.
    * In the case that the identifier is the empty string, it will be skipped.
-   * See [Pseudonymization](/dlp/docs/pseudonymization) for example usage.
+   * See https://cloud.google.com/dlp/docs/pseudonymization to learn more.
    * </pre>
    *
    * Protobuf type {@code google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig}

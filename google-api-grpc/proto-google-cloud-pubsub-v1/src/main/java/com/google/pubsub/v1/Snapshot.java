@@ -5,7 +5,10 @@ package com.google.pubsub.v1;
 
 /**
  * <pre>
- * A snapshot resource.
+ * A snapshot resource.&lt;br&gt;&lt;br&gt;
+ * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
+ * changed in backward-incompatible ways and is not recommended for production
+ * use. It is not subject to any SLA or deprecation policy.
  * </pre>
  *
  * Protobuf type {@code google.pubsub.v1.Snapshot}
@@ -225,7 +228,8 @@ private static final long serialVersionUID = 0L;
    * For example, consider a subscription whose oldest unacked message is 3 days
    * old. If a snapshot is created from this subscription, the snapshot -- which
    * will always capture this 3-day-old backlog as long as the snapshot
-   * exists -- will expire in 4 days.
+   * exists -- will expire in 4 days. The service will refuse to create a
+   * snapshot that would expire in less than 1 hour after creation.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 3;</code>
@@ -243,7 +247,8 @@ private static final long serialVersionUID = 0L;
    * For example, consider a subscription whose oldest unacked message is 3 days
    * old. If a snapshot is created from this subscription, the snapshot -- which
    * will always capture this 3-day-old backlog as long as the snapshot
-   * exists -- will expire in 4 days.
+   * exists -- will expire in 4 days. The service will refuse to create a
+   * snapshot that would expire in less than 1 hour after creation.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 3;</code>
@@ -261,7 +266,8 @@ private static final long serialVersionUID = 0L;
    * For example, consider a subscription whose oldest unacked message is 3 days
    * old. If a snapshot is created from this subscription, the snapshot -- which
    * will always capture this 3-day-old backlog as long as the snapshot
-   * exists -- will expire in 4 days.
+   * exists -- will expire in 4 days. The service will refuse to create a
+   * snapshot that would expire in less than 1 hour after creation.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 3;</code>
@@ -562,7 +568,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * A snapshot resource.
+   * A snapshot resource.&lt;br&gt;&lt;br&gt;
+   * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
+   * changed in backward-incompatible ways and is not recommended for production
+   * use. It is not subject to any SLA or deprecation policy.
    * </pre>
    *
    * Protobuf type {@code google.pubsub.v1.Snapshot}
@@ -940,7 +949,8 @@ private static final long serialVersionUID = 0L;
      * For example, consider a subscription whose oldest unacked message is 3 days
      * old. If a snapshot is created from this subscription, the snapshot -- which
      * will always capture this 3-day-old backlog as long as the snapshot
-     * exists -- will expire in 4 days.
+     * exists -- will expire in 4 days. The service will refuse to create a
+     * snapshot that would expire in less than 1 hour after creation.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expire_time = 3;</code>
@@ -958,7 +968,8 @@ private static final long serialVersionUID = 0L;
      * For example, consider a subscription whose oldest unacked message is 3 days
      * old. If a snapshot is created from this subscription, the snapshot -- which
      * will always capture this 3-day-old backlog as long as the snapshot
-     * exists -- will expire in 4 days.
+     * exists -- will expire in 4 days. The service will refuse to create a
+     * snapshot that would expire in less than 1 hour after creation.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expire_time = 3;</code>
@@ -980,7 +991,8 @@ private static final long serialVersionUID = 0L;
      * For example, consider a subscription whose oldest unacked message is 3 days
      * old. If a snapshot is created from this subscription, the snapshot -- which
      * will always capture this 3-day-old backlog as long as the snapshot
-     * exists -- will expire in 4 days.
+     * exists -- will expire in 4 days. The service will refuse to create a
+     * snapshot that would expire in less than 1 hour after creation.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expire_time = 3;</code>
@@ -1008,7 +1020,8 @@ private static final long serialVersionUID = 0L;
      * For example, consider a subscription whose oldest unacked message is 3 days
      * old. If a snapshot is created from this subscription, the snapshot -- which
      * will always capture this 3-day-old backlog as long as the snapshot
-     * exists -- will expire in 4 days.
+     * exists -- will expire in 4 days. The service will refuse to create a
+     * snapshot that would expire in less than 1 hour after creation.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expire_time = 3;</code>
@@ -1034,7 +1047,8 @@ private static final long serialVersionUID = 0L;
      * For example, consider a subscription whose oldest unacked message is 3 days
      * old. If a snapshot is created from this subscription, the snapshot -- which
      * will always capture this 3-day-old backlog as long as the snapshot
-     * exists -- will expire in 4 days.
+     * exists -- will expire in 4 days. The service will refuse to create a
+     * snapshot that would expire in less than 1 hour after creation.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expire_time = 3;</code>
@@ -1064,7 +1078,8 @@ private static final long serialVersionUID = 0L;
      * For example, consider a subscription whose oldest unacked message is 3 days
      * old. If a snapshot is created from this subscription, the snapshot -- which
      * will always capture this 3-day-old backlog as long as the snapshot
-     * exists -- will expire in 4 days.
+     * exists -- will expire in 4 days. The service will refuse to create a
+     * snapshot that would expire in less than 1 hour after creation.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expire_time = 3;</code>
@@ -1090,7 +1105,8 @@ private static final long serialVersionUID = 0L;
      * For example, consider a subscription whose oldest unacked message is 3 days
      * old. If a snapshot is created from this subscription, the snapshot -- which
      * will always capture this 3-day-old backlog as long as the snapshot
-     * exists -- will expire in 4 days.
+     * exists -- will expire in 4 days. The service will refuse to create a
+     * snapshot that would expire in less than 1 hour after creation.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expire_time = 3;</code>
@@ -1110,7 +1126,8 @@ private static final long serialVersionUID = 0L;
      * For example, consider a subscription whose oldest unacked message is 3 days
      * old. If a snapshot is created from this subscription, the snapshot -- which
      * will always capture this 3-day-old backlog as long as the snapshot
-     * exists -- will expire in 4 days.
+     * exists -- will expire in 4 days. The service will refuse to create a
+     * snapshot that would expire in less than 1 hour after creation.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expire_time = 3;</code>
@@ -1133,7 +1150,8 @@ private static final long serialVersionUID = 0L;
      * For example, consider a subscription whose oldest unacked message is 3 days
      * old. If a snapshot is created from this subscription, the snapshot -- which
      * will always capture this 3-day-old backlog as long as the snapshot
-     * exists -- will expire in 4 days.
+     * exists -- will expire in 4 days. The service will refuse to create a
+     * snapshot that would expire in less than 1 hour after creation.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expire_time = 3;</code>

@@ -9,7 +9,7 @@ public interface UpdateTopicRequestOrBuilder extends
 
   /**
    * <pre>
-   * The topic to update.
+   * The updated topic object.
    * </pre>
    *
    * <code>.google.pubsub.v1.Topic topic = 1;</code>
@@ -17,7 +17,7 @@ public interface UpdateTopicRequestOrBuilder extends
   boolean hasTopic();
   /**
    * <pre>
-   * The topic to update.
+   * The updated topic object.
    * </pre>
    *
    * <code>.google.pubsub.v1.Topic topic = 1;</code>
@@ -25,7 +25,7 @@ public interface UpdateTopicRequestOrBuilder extends
   com.google.pubsub.v1.Topic getTopic();
   /**
    * <pre>
-   * The topic to update.
+   * The updated topic object.
    * </pre>
    *
    * <code>.google.pubsub.v1.Topic topic = 1;</code>
@@ -34,8 +34,11 @@ public interface UpdateTopicRequestOrBuilder extends
 
   /**
    * <pre>
-   * Indicates which fields in the provided topic to update.
-   * Must be specified and non-empty.
+   * Indicates which fields in the provided topic to update. Must be specified
+   * and non-empty. Note that if `update_mask` contains
+   * "message_storage_policy" then the new value will be determined based on the
+   * policy configured at the project or organization level. The
+   * `message_storage_policy` must not be set in the `topic` provided above.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -43,8 +46,11 @@ public interface UpdateTopicRequestOrBuilder extends
   boolean hasUpdateMask();
   /**
    * <pre>
-   * Indicates which fields in the provided topic to update.
-   * Must be specified and non-empty.
+   * Indicates which fields in the provided topic to update. Must be specified
+   * and non-empty. Note that if `update_mask` contains
+   * "message_storage_policy" then the new value will be determined based on the
+   * policy configured at the project or organization level. The
+   * `message_storage_policy` must not be set in the `topic` provided above.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -52,8 +58,11 @@ public interface UpdateTopicRequestOrBuilder extends
   com.google.protobuf.FieldMask getUpdateMask();
   /**
    * <pre>
-   * Indicates which fields in the provided topic to update.
-   * Must be specified and non-empty.
+   * Indicates which fields in the provided topic to update. Must be specified
+   * and non-empty. Note that if `update_mask` contains
+   * "message_storage_policy" then the new value will be determined based on the
+   * policy configured at the project or organization level. The
+   * `message_storage_policy` must not be set in the `topic` provided above.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>

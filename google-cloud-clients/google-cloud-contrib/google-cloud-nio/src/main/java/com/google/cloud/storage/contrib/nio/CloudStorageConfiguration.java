@@ -17,9 +17,11 @@
 package com.google.cloud.storage.contrib.nio;
 
 import static com.google.common.base.Preconditions.checkArgument;
+import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.auto.value.AutoValue;
 
+import javax.annotation.Nullable;
 import java.util.Map;
 
 /**
@@ -66,6 +68,25 @@ public abstract class CloudStorageConfiguration {
   public abstract int maxChannelReopens();
 
   /**
+   * Returns the project to be billed when accessing buckets. Leave empty for normal semantics,
+   * set to bill that project (project you own) for all accesses. This is required for accessing
+   * requester-pays buckets. This value cannot be null.
+   */
+  public abstract @Nullable String userProject();
+
+  /**
+   * Returns whether userProject will be cleared for non-requester-pays buckets. That is,
+   * if false (the default value), setting userProject causes that project to be billed
+   * regardless of whether the bucket is requester-pays or not. If true, setting
+   * userProject will only cause that project to be billed when the project is requester-pays.
+   *
+   * Setting this will cause the bucket to be accessed when the CloudStorageFileSystem object
+   * is created.
+   */
+  public abstract boolean useUserProjectOnlyForRequesterPaysBuckets();
+
+
+  /**
    * Creates a new builder, initialized with the following settings:
    *
    * <ul>
@@ -90,6 +111,9 @@ public abstract class CloudStorageConfiguration {
     private boolean usePseudoDirectories = true;
     private int blockSize = CloudStorageFileSystem.BLOCK_SIZE_DEFAULT;
     private int maxChannelReopens = 0;
+    private @Nullable String userProject = null;
+    // This of this as "clear userProject if not RequesterPays"
+    private boolean useUserProjectOnlyForRequesterPaysBuckets = false;
 
     /**
      * Changes current working directory for new filesystem. This defaults to the root directory.
@@ -99,6 +123,7 @@ public abstract class CloudStorageConfiguration {
      * @throws IllegalArgumentException if {@code path} is not absolute.
      */
     public Builder workingDirectory(String path) {
+      checkNotNull(path);
       checkArgument(UnixPath.getPath(false, path).isAbsolute(), "not absolute: %s", path);
       workingDirectory = path;
       return this;
@@ -147,6 +172,16 @@ public abstract class CloudStorageConfiguration {
       return this;
     }
 
+    public Builder userProject(String value) {
+      userProject = value;
+      return this;
+    }
+
+    public Builder autoDetectRequesterPays(boolean value) {
+      useUserProjectOnlyForRequesterPaysBuckets = value;
+      return this;
+    }
+
     /**
      * Creates new instance without destroying builder.
      */
@@ -157,7 +192,9 @@ public abstract class CloudStorageConfiguration {
           stripPrefixSlash,
           usePseudoDirectories,
           blockSize,
-          maxChannelReopens);
+          maxChannelReopens,
+          userProject,
+          useUserProjectOnlyForRequesterPaysBuckets);
     }
 
     Builder(CloudStorageConfiguration toModify) {
@@ -167,6 +204,8 @@ public abstract class CloudStorageConfiguration {
       usePseudoDirectories = toModify.usePseudoDirectories();
       blockSize = toModify.blockSize();
       maxChannelReopens = toModify.maxChannelReopens();
+      userProject = toModify.userProject();
+      useUserProjectOnlyForRequesterPaysBuckets = toModify.useUserProjectOnlyForRequesterPaysBuckets();
     }
 
     Builder() {}
@@ -200,6 +239,12 @@ public abstract class CloudStorageConfiguration {
           break;
         case "maxChannelReopens":
           builder.maxChannelReopens((Integer) entry.getValue());
+          break;
+        case "userProject":
+          builder.userProject((String) entry.getValue());
+          break;
+        case "useUserProjectOnlyForRequesterPaysBuckets":
+          builder.autoDetectRequesterPays((Boolean) entry.getValue());
           break;
         default:
           throw new IllegalArgumentException(entry.getKey());

@@ -250,33 +250,49 @@ public class InterconnectAttachmentClientTest {
   public void getInterconnectAttachmentTest() {
     String cloudRouterIpAddress = "cloudRouterIpAddress1361134600";
     String operationalStatus = "operationalStatus1274812671";
+    String edgeAvailabilityDomain = "edgeAvailabilityDomain-1539323226";
+    Integer vlanTag8021q = 1730540572;
+    String bandwidth = "bandwidth-1965768527";
     String kind = "kind3292052";
     String googleReferenceId = "googleReferenceId534944469";
     String description = "description-1724546052";
+    String pairingKey = "pairingKey976566376";
+    String type = "type3575610";
     ProjectGlobalInterconnectName interconnect =
         ProjectGlobalInterconnectName.of("[PROJECT]", "[INTERCONNECT]");
     String customerRouterIpAddress = "customerRouterIpAddress-741266063";
     String selfLink = "selfLink-1691268851";
     ProjectRegionRouterName router =
         ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
+    String partnerAsn = "partnerAsn975037061";
+    Boolean adminEnabled = false;
     String creationTimestamp = "creationTimestamp567396278";
     String name = "name3373707";
     String id = "id3355";
+    String state = "state109757585";
     ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     InterconnectAttachment expectedResponse =
         InterconnectAttachment.newBuilder()
             .setCloudRouterIpAddress(cloudRouterIpAddress)
             .setOperationalStatus(operationalStatus)
+            .setEdgeAvailabilityDomain(edgeAvailabilityDomain)
+            .setVlanTag8021q(vlanTag8021q)
+            .setBandwidth(bandwidth)
             .setKind(kind)
             .setGoogleReferenceId(googleReferenceId)
             .setDescription(description)
+            .setPairingKey(pairingKey)
+            .setType(type)
             .setInterconnect(interconnect.toString())
             .setCustomerRouterIpAddress(customerRouterIpAddress)
             .setSelfLink(selfLink)
             .setRouter(router.toString())
+            .setPartnerAsn(partnerAsn)
+            .setAdminEnabled(adminEnabled)
             .setCreationTimestamp(creationTimestamp)
             .setName(name)
             .setId(id)
+            .setState(state)
             .setRegion(region.toString())
             .build();
     mockService.addResponse(expectedResponse);

@@ -357,6 +357,10 @@ public final class PatchInterconnectHttpRequest implements ApiMessage {
     public PatchInterconnectHttpRequest build() {
       String missing = "";
 
+      if (fieldMask == null) {
+        missing += " fieldMask";
+      }
+
       if (interconnect == null) {
         missing += " interconnect";
       }

@@ -180,7 +180,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object inputUri_;
   /**
    * <pre>
-   * Video file location in
+   * Output only. Video file location in
    * [Google Cloud Storage](https://cloud.google.com/storage/).
    * </pre>
    *
@@ -200,7 +200,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Video file location in
+   * Output only. Video file location in
    * [Google Cloud Storage](https://cloud.google.com/storage/).
    * </pre>
    *
@@ -547,8 +547,8 @@ private static final long serialVersionUID = 0L;
   private com.google.rpc.Status error_;
   /**
    * <pre>
-   * If set, indicates an error. Note that for a single `AnnotateVideoRequest`
-   * some videos may succeed and some may fail.
+   * Output only. If set, indicates an error. Note that for a single
+   * `AnnotateVideoRequest` some videos may succeed and some may fail.
    * </pre>
    *
    * <code>.google.rpc.Status error = 9;</code>
@@ -558,8 +558,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * If set, indicates an error. Note that for a single `AnnotateVideoRequest`
-   * some videos may succeed and some may fail.
+   * Output only. If set, indicates an error. Note that for a single
+   * `AnnotateVideoRequest` some videos may succeed and some may fail.
    * </pre>
    *
    * <code>.google.rpc.Status error = 9;</code>
@@ -569,8 +569,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * If set, indicates an error. Note that for a single `AnnotateVideoRequest`
-   * some videos may succeed and some may fail.
+   * Output only. If set, indicates an error. Note that for a single
+   * `AnnotateVideoRequest` some videos may succeed and some may fail.
    * </pre>
    *
    * <code>.google.rpc.Status error = 9;</code>
@@ -1208,7 +1208,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object inputUri_ = "";
     /**
      * <pre>
-     * Video file location in
+     * Output only. Video file location in
      * [Google Cloud Storage](https://cloud.google.com/storage/).
      * </pre>
      *
@@ -1228,7 +1228,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Video file location in
+     * Output only. Video file location in
      * [Google Cloud Storage](https://cloud.google.com/storage/).
      * </pre>
      *
@@ -1249,7 +1249,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Video file location in
+     * Output only. Video file location in
      * [Google Cloud Storage](https://cloud.google.com/storage/).
      * </pre>
      *
@@ -1267,7 +1267,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Video file location in
+     * Output only. Video file location in
      * [Google Cloud Storage](https://cloud.google.com/storage/).
      * </pre>
      *
@@ -1281,7 +1281,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Video file location in
+     * Output only. Video file location in
      * [Google Cloud Storage](https://cloud.google.com/storage/).
      * </pre>
      *
@@ -3071,8 +3071,8 @@ private static final long serialVersionUID = 0L;
         com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder> errorBuilder_;
     /**
      * <pre>
-     * If set, indicates an error. Note that for a single `AnnotateVideoRequest`
-     * some videos may succeed and some may fail.
+     * Output only. If set, indicates an error. Note that for a single
+     * `AnnotateVideoRequest` some videos may succeed and some may fail.
      * </pre>
      *
      * <code>.google.rpc.Status error = 9;</code>
@@ -3082,8 +3082,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * If set, indicates an error. Note that for a single `AnnotateVideoRequest`
-     * some videos may succeed and some may fail.
+     * Output only. If set, indicates an error. Note that for a single
+     * `AnnotateVideoRequest` some videos may succeed and some may fail.
      * </pre>
      *
      * <code>.google.rpc.Status error = 9;</code>
@@ -3097,8 +3097,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * If set, indicates an error. Note that for a single `AnnotateVideoRequest`
-     * some videos may succeed and some may fail.
+     * Output only. If set, indicates an error. Note that for a single
+     * `AnnotateVideoRequest` some videos may succeed and some may fail.
      * </pre>
      *
      * <code>.google.rpc.Status error = 9;</code>
@@ -3118,8 +3118,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * If set, indicates an error. Note that for a single `AnnotateVideoRequest`
-     * some videos may succeed and some may fail.
+     * Output only. If set, indicates an error. Note that for a single
+     * `AnnotateVideoRequest` some videos may succeed and some may fail.
      * </pre>
      *
      * <code>.google.rpc.Status error = 9;</code>
@@ -3137,8 +3137,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * If set, indicates an error. Note that for a single `AnnotateVideoRequest`
-     * some videos may succeed and some may fail.
+     * Output only. If set, indicates an error. Note that for a single
+     * `AnnotateVideoRequest` some videos may succeed and some may fail.
      * </pre>
      *
      * <code>.google.rpc.Status error = 9;</code>
@@ -3160,8 +3160,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * If set, indicates an error. Note that for a single `AnnotateVideoRequest`
-     * some videos may succeed and some may fail.
+     * Output only. If set, indicates an error. Note that for a single
+     * `AnnotateVideoRequest` some videos may succeed and some may fail.
      * </pre>
      *
      * <code>.google.rpc.Status error = 9;</code>
@@ -3179,8 +3179,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * If set, indicates an error. Note that for a single `AnnotateVideoRequest`
-     * some videos may succeed and some may fail.
+     * Output only. If set, indicates an error. Note that for a single
+     * `AnnotateVideoRequest` some videos may succeed and some may fail.
      * </pre>
      *
      * <code>.google.rpc.Status error = 9;</code>
@@ -3192,8 +3192,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * If set, indicates an error. Note that for a single `AnnotateVideoRequest`
-     * some videos may succeed and some may fail.
+     * Output only. If set, indicates an error. Note that for a single
+     * `AnnotateVideoRequest` some videos may succeed and some may fail.
      * </pre>
      *
      * <code>.google.rpc.Status error = 9;</code>
@@ -3208,8 +3208,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * If set, indicates an error. Note that for a single `AnnotateVideoRequest`
-     * some videos may succeed and some may fail.
+     * Output only. If set, indicates an error. Note that for a single
+     * `AnnotateVideoRequest` some videos may succeed and some may fail.
      * </pre>
      *
      * <code>.google.rpc.Status error = 9;</code>

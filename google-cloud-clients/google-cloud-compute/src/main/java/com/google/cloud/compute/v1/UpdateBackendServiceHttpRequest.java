@@ -361,6 +361,10 @@ public final class UpdateBackendServiceHttpRequest implements ApiMessage {
         missing += " backendService";
       }
 
+      if (fieldMask == null) {
+        missing += " fieldMask";
+      }
+
       if (!missing.isEmpty()) {
         throw new IllegalStateException("Missing required properties:" + missing);
       }

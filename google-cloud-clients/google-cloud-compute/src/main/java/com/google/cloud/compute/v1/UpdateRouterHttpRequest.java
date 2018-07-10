@@ -357,6 +357,10 @@ public final class UpdateRouterHttpRequest implements ApiMessage {
     public UpdateRouterHttpRequest build() {
       String missing = "";
 
+      if (fieldMask == null) {
+        missing += " fieldMask";
+      }
+
       if (router == null) {
         missing += " router";
       }

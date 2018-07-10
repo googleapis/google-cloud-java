@@ -147,13 +147,13 @@ public class MetricsClientTest {
   @Test
   @SuppressWarnings("all")
   public void getLogMetricTest() {
-    String name = "name3373707";
+    MetricName name = ProjectMetricName.of("[PROJECT]", "[METRIC]");
     String description = "description-1724546052";
     String filter = "filter-1274492040";
     String valueExtractor = "valueExtractor2047672534";
     LogMetric expectedResponse =
         LogMetric.newBuilder()
-            .setName(name)
+            .setName(name.toString())
             .setDescription(description)
             .setFilter(filter)
             .setValueExtractor(valueExtractor)
@@ -195,13 +195,13 @@ public class MetricsClientTest {
   @Test
   @SuppressWarnings("all")
   public void createLogMetricTest() {
-    String name = "name3373707";
+    MetricName name = ProjectMetricName.of("[PROJECT]", "[METRIC]");
     String description = "description-1724546052";
     String filter = "filter-1274492040";
     String valueExtractor = "valueExtractor2047672534";
     LogMetric expectedResponse =
         LogMetric.newBuilder()
-            .setName(name)
+            .setName(name.toString())
             .setDescription(description)
             .setFilter(filter)
             .setValueExtractor(valueExtractor)
@@ -246,13 +246,13 @@ public class MetricsClientTest {
   @Test
   @SuppressWarnings("all")
   public void updateLogMetricTest() {
-    String name = "name3373707";
+    MetricName name = ProjectMetricName.of("[PROJECT]", "[METRIC]");
     String description = "description-1724546052";
     String filter = "filter-1274492040";
     String valueExtractor = "valueExtractor2047672534";
     LogMetric expectedResponse =
         LogMetric.newBuilder()
-            .setName(name)
+            .setName(name.toString())
             .setDescription(description)
             .setFilter(filter)
             .setValueExtractor(valueExtractor)

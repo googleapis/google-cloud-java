@@ -96,6 +96,16 @@ public interface RedactImageRequestOrBuilder extends
 
   /**
    * <pre>
+   * Whether the response should include findings along with the redacted
+   * image.
+   * </pre>
+   *
+   * <code>bool include_findings = 6;</code>
+   */
+  boolean getIncludeFindings();
+
+  /**
+   * <pre>
    * The content must be PNG, JPEG, SVG or BMP.
    * </pre>
    *

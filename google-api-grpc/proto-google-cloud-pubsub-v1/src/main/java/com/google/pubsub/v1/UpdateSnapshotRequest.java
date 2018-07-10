@@ -5,7 +5,10 @@ package com.google.pubsub.v1;
 
 /**
  * <pre>
- * Request for the UpdateSnapshot method.
+ * Request for the UpdateSnapshot method.&lt;br&gt;&lt;br&gt;
+ * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
+ * changed in backward-incompatible ways and is not recommended for production
+ * use. It is not subject to any SLA or deprecation policy.
  * </pre>
  *
  * Protobuf type {@code google.pubsub.v1.UpdateSnapshotRequest}
@@ -107,7 +110,7 @@ private static final long serialVersionUID = 0L;
   private com.google.pubsub.v1.Snapshot snapshot_;
   /**
    * <pre>
-   * The updated snpashot object.
+   * The updated snapshot object.
    * </pre>
    *
    * <code>.google.pubsub.v1.Snapshot snapshot = 1;</code>
@@ -117,7 +120,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The updated snpashot object.
+   * The updated snapshot object.
    * </pre>
    *
    * <code>.google.pubsub.v1.Snapshot snapshot = 1;</code>
@@ -127,7 +130,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The updated snpashot object.
+   * The updated snapshot object.
    * </pre>
    *
    * <code>.google.pubsub.v1.Snapshot snapshot = 1;</code>
@@ -346,7 +349,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Request for the UpdateSnapshot method.
+   * Request for the UpdateSnapshot method.&lt;br&gt;&lt;br&gt;
+   * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
+   * changed in backward-incompatible ways and is not recommended for production
+   * use. It is not subject to any SLA or deprecation policy.
    * </pre>
    *
    * Protobuf type {@code google.pubsub.v1.UpdateSnapshotRequest}
@@ -507,7 +513,7 @@ private static final long serialVersionUID = 0L;
         com.google.pubsub.v1.Snapshot, com.google.pubsub.v1.Snapshot.Builder, com.google.pubsub.v1.SnapshotOrBuilder> snapshotBuilder_;
     /**
      * <pre>
-     * The updated snpashot object.
+     * The updated snapshot object.
      * </pre>
      *
      * <code>.google.pubsub.v1.Snapshot snapshot = 1;</code>
@@ -517,7 +523,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The updated snpashot object.
+     * The updated snapshot object.
      * </pre>
      *
      * <code>.google.pubsub.v1.Snapshot snapshot = 1;</code>
@@ -531,7 +537,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The updated snpashot object.
+     * The updated snapshot object.
      * </pre>
      *
      * <code>.google.pubsub.v1.Snapshot snapshot = 1;</code>
@@ -551,7 +557,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The updated snpashot object.
+     * The updated snapshot object.
      * </pre>
      *
      * <code>.google.pubsub.v1.Snapshot snapshot = 1;</code>
@@ -569,7 +575,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The updated snpashot object.
+     * The updated snapshot object.
      * </pre>
      *
      * <code>.google.pubsub.v1.Snapshot snapshot = 1;</code>
@@ -591,7 +597,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The updated snpashot object.
+     * The updated snapshot object.
      * </pre>
      *
      * <code>.google.pubsub.v1.Snapshot snapshot = 1;</code>
@@ -609,7 +615,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The updated snpashot object.
+     * The updated snapshot object.
      * </pre>
      *
      * <code>.google.pubsub.v1.Snapshot snapshot = 1;</code>
@@ -621,7 +627,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The updated snpashot object.
+     * The updated snapshot object.
      * </pre>
      *
      * <code>.google.pubsub.v1.Snapshot snapshot = 1;</code>
@@ -636,7 +642,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The updated snpashot object.
+     * The updated snapshot object.
      * </pre>
      *
      * <code>.google.pubsub.v1.Snapshot snapshot = 1;</code>

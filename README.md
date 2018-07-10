@@ -15,6 +15,7 @@ Java idiomatic client for [Google Cloud Platform][cloud-platform] services.
 This library supports the following Google Cloud Platform services with clients at a [GA](#versioning) quality level:
 -  [BigQuery](google-cloud-clients/google-cloud-bigquery) (GA)
 -  [Stackdriver Logging](google-cloud-clients/google-cloud-logging) (GA)
+-  [Stackdriver Monitoring](google-cloud-clients/google-cloud-monitoring) (GA)
 -  [Cloud Datastore](google-cloud-clients/google-cloud-datastore) (GA)
 -  [Cloud Natural Language](google-cloud-clients/google-cloud-language) (GA)
 -  [Cloud Pub/Sub](google-cloud-clients/google-cloud-pubsub) (GA)
@@ -28,7 +29,6 @@ This library supports the following Google Cloud Platform services with clients 
 -  [Cloud Data Loss Prevention](google-cloud-clients/google-cloud-dlp) (Beta)
 -  [Stackdriver Error Reporting](google-cloud-clients/google-cloud-errorreporting) (Beta)
 -  [Cloud Firestore](google-cloud-clients/google-cloud-firestore) (Beta)
--  [Stackdriver Monitoring](google-cloud-clients/google-cloud-monitoring) (Beta)
 -  [Cloud Spanner](google-cloud-clients/google-cloud-spanner) (Beta)
 -  [Cloud Video Intelligence](google-cloud-clients/google-cloud-video-intelligence) (Beta)
 -  [Stackdriver Trace](google-cloud-clients/google-cloud-trace) (Beta)
@@ -58,16 +58,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-storage</artifactId>
-  <version>1.34.0</version>
+  <version>1.35.0</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-storage:1.34.0'
+compile 'com.google.cloud:google-cloud-storage:1.35.0'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-storage" % "1.34.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-storage" % "1.35.0"
 ```
 [//]: # ({x-version-update-end})
 
@@ -288,7 +288,7 @@ The easiest way to solve version conflicts is to use google-cloud's BOM. In Mave
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-bom</artifactId>
-        <version>0.52.0-alpha</version>
+        <version>0.53.0-alpha</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>

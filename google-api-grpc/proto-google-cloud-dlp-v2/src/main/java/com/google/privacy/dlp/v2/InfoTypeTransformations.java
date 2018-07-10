@@ -99,8 +99,9 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * InfoTypes to apply the transformation to. Empty list will match all
-     * available infoTypes for this transformation.
+     * InfoTypes to apply the transformation to. An empty list will cause
+     * this transformation to apply to all findings that correspond to
+     * infoTypes that were requested in `InspectConfig`.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
@@ -109,8 +110,9 @@ private static final long serialVersionUID = 0L;
         getInfoTypesList();
     /**
      * <pre>
-     * InfoTypes to apply the transformation to. Empty list will match all
-     * available infoTypes for this transformation.
+     * InfoTypes to apply the transformation to. An empty list will cause
+     * this transformation to apply to all findings that correspond to
+     * infoTypes that were requested in `InspectConfig`.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
@@ -118,8 +120,9 @@ private static final long serialVersionUID = 0L;
     com.google.privacy.dlp.v2.InfoType getInfoTypes(int index);
     /**
      * <pre>
-     * InfoTypes to apply the transformation to. Empty list will match all
-     * available infoTypes for this transformation.
+     * InfoTypes to apply the transformation to. An empty list will cause
+     * this transformation to apply to all findings that correspond to
+     * infoTypes that were requested in `InspectConfig`.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
@@ -127,8 +130,9 @@ private static final long serialVersionUID = 0L;
     int getInfoTypesCount();
     /**
      * <pre>
-     * InfoTypes to apply the transformation to. Empty list will match all
-     * available infoTypes for this transformation.
+     * InfoTypes to apply the transformation to. An empty list will cause
+     * this transformation to apply to all findings that correspond to
+     * infoTypes that were requested in `InspectConfig`.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
@@ -137,8 +141,9 @@ private static final long serialVersionUID = 0L;
         getInfoTypesOrBuilderList();
     /**
      * <pre>
-     * InfoTypes to apply the transformation to. Empty list will match all
-     * available infoTypes for this transformation.
+     * InfoTypes to apply the transformation to. An empty list will cause
+     * this transformation to apply to all findings that correspond to
+     * infoTypes that were requested in `InspectConfig`.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
@@ -277,8 +282,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.google.privacy.dlp.v2.InfoType> infoTypes_;
     /**
      * <pre>
-     * InfoTypes to apply the transformation to. Empty list will match all
-     * available infoTypes for this transformation.
+     * InfoTypes to apply the transformation to. An empty list will cause
+     * this transformation to apply to all findings that correspond to
+     * infoTypes that were requested in `InspectConfig`.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
@@ -288,8 +294,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * InfoTypes to apply the transformation to. Empty list will match all
-     * available infoTypes for this transformation.
+     * InfoTypes to apply the transformation to. An empty list will cause
+     * this transformation to apply to all findings that correspond to
+     * infoTypes that were requested in `InspectConfig`.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
@@ -300,8 +307,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * InfoTypes to apply the transformation to. Empty list will match all
-     * available infoTypes for this transformation.
+     * InfoTypes to apply the transformation to. An empty list will cause
+     * this transformation to apply to all findings that correspond to
+     * infoTypes that were requested in `InspectConfig`.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
@@ -311,8 +319,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * InfoTypes to apply the transformation to. Empty list will match all
-     * available infoTypes for this transformation.
+     * InfoTypes to apply the transformation to. An empty list will cause
+     * this transformation to apply to all findings that correspond to
+     * infoTypes that were requested in `InspectConfig`.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
@@ -322,8 +331,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * InfoTypes to apply the transformation to. Empty list will match all
-     * available infoTypes for this transformation.
+     * InfoTypes to apply the transformation to. An empty list will cause
+     * this transformation to apply to all findings that correspond to
+     * infoTypes that were requested in `InspectConfig`.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
@@ -740,8 +750,9 @@ private static final long serialVersionUID = 0L;
 
       /**
        * <pre>
-       * InfoTypes to apply the transformation to. Empty list will match all
-       * available infoTypes for this transformation.
+       * InfoTypes to apply the transformation to. An empty list will cause
+       * this transformation to apply to all findings that correspond to
+       * infoTypes that were requested in `InspectConfig`.
        * </pre>
        *
        * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
@@ -755,8 +766,9 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * InfoTypes to apply the transformation to. Empty list will match all
-       * available infoTypes for this transformation.
+       * InfoTypes to apply the transformation to. An empty list will cause
+       * this transformation to apply to all findings that correspond to
+       * infoTypes that were requested in `InspectConfig`.
        * </pre>
        *
        * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
@@ -770,8 +782,9 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * InfoTypes to apply the transformation to. Empty list will match all
-       * available infoTypes for this transformation.
+       * InfoTypes to apply the transformation to. An empty list will cause
+       * this transformation to apply to all findings that correspond to
+       * infoTypes that were requested in `InspectConfig`.
        * </pre>
        *
        * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
@@ -785,8 +798,9 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * InfoTypes to apply the transformation to. Empty list will match all
-       * available infoTypes for this transformation.
+       * InfoTypes to apply the transformation to. An empty list will cause
+       * this transformation to apply to all findings that correspond to
+       * infoTypes that were requested in `InspectConfig`.
        * </pre>
        *
        * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
@@ -807,8 +821,9 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * InfoTypes to apply the transformation to. Empty list will match all
-       * available infoTypes for this transformation.
+       * InfoTypes to apply the transformation to. An empty list will cause
+       * this transformation to apply to all findings that correspond to
+       * infoTypes that were requested in `InspectConfig`.
        * </pre>
        *
        * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
@@ -826,8 +841,9 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * InfoTypes to apply the transformation to. Empty list will match all
-       * available infoTypes for this transformation.
+       * InfoTypes to apply the transformation to. An empty list will cause
+       * this transformation to apply to all findings that correspond to
+       * infoTypes that were requested in `InspectConfig`.
        * </pre>
        *
        * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
@@ -847,8 +863,9 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * InfoTypes to apply the transformation to. Empty list will match all
-       * available infoTypes for this transformation.
+       * InfoTypes to apply the transformation to. An empty list will cause
+       * this transformation to apply to all findings that correspond to
+       * infoTypes that were requested in `InspectConfig`.
        * </pre>
        *
        * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
@@ -869,8 +886,9 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * InfoTypes to apply the transformation to. Empty list will match all
-       * available infoTypes for this transformation.
+       * InfoTypes to apply the transformation to. An empty list will cause
+       * this transformation to apply to all findings that correspond to
+       * infoTypes that were requested in `InspectConfig`.
        * </pre>
        *
        * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
@@ -888,8 +906,9 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * InfoTypes to apply the transformation to. Empty list will match all
-       * available infoTypes for this transformation.
+       * InfoTypes to apply the transformation to. An empty list will cause
+       * this transformation to apply to all findings that correspond to
+       * infoTypes that were requested in `InspectConfig`.
        * </pre>
        *
        * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
@@ -907,8 +926,9 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * InfoTypes to apply the transformation to. Empty list will match all
-       * available infoTypes for this transformation.
+       * InfoTypes to apply the transformation to. An empty list will cause
+       * this transformation to apply to all findings that correspond to
+       * infoTypes that were requested in `InspectConfig`.
        * </pre>
        *
        * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
@@ -927,8 +947,9 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * InfoTypes to apply the transformation to. Empty list will match all
-       * available infoTypes for this transformation.
+       * InfoTypes to apply the transformation to. An empty list will cause
+       * this transformation to apply to all findings that correspond to
+       * infoTypes that were requested in `InspectConfig`.
        * </pre>
        *
        * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
@@ -945,8 +966,9 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * InfoTypes to apply the transformation to. Empty list will match all
-       * available infoTypes for this transformation.
+       * InfoTypes to apply the transformation to. An empty list will cause
+       * this transformation to apply to all findings that correspond to
+       * infoTypes that were requested in `InspectConfig`.
        * </pre>
        *
        * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
@@ -963,8 +985,9 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * InfoTypes to apply the transformation to. Empty list will match all
-       * available infoTypes for this transformation.
+       * InfoTypes to apply the transformation to. An empty list will cause
+       * this transformation to apply to all findings that correspond to
+       * infoTypes that were requested in `InspectConfig`.
        * </pre>
        *
        * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
@@ -975,8 +998,9 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * InfoTypes to apply the transformation to. Empty list will match all
-       * available infoTypes for this transformation.
+       * InfoTypes to apply the transformation to. An empty list will cause
+       * this transformation to apply to all findings that correspond to
+       * infoTypes that were requested in `InspectConfig`.
        * </pre>
        *
        * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
@@ -990,8 +1014,9 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * InfoTypes to apply the transformation to. Empty list will match all
-       * available infoTypes for this transformation.
+       * InfoTypes to apply the transformation to. An empty list will cause
+       * this transformation to apply to all findings that correspond to
+       * infoTypes that were requested in `InspectConfig`.
        * </pre>
        *
        * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
@@ -1006,8 +1031,9 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * InfoTypes to apply the transformation to. Empty list will match all
-       * available infoTypes for this transformation.
+       * InfoTypes to apply the transformation to. An empty list will cause
+       * this transformation to apply to all findings that correspond to
+       * infoTypes that were requested in `InspectConfig`.
        * </pre>
        *
        * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
@@ -1018,8 +1044,9 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * InfoTypes to apply the transformation to. Empty list will match all
-       * available infoTypes for this transformation.
+       * InfoTypes to apply the transformation to. An empty list will cause
+       * this transformation to apply to all findings that correspond to
+       * infoTypes that were requested in `InspectConfig`.
        * </pre>
        *
        * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
@@ -1031,8 +1058,9 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * InfoTypes to apply the transformation to. Empty list will match all
-       * available infoTypes for this transformation.
+       * InfoTypes to apply the transformation to. An empty list will cause
+       * this transformation to apply to all findings that correspond to
+       * infoTypes that were requested in `InspectConfig`.
        * </pre>
        *
        * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>

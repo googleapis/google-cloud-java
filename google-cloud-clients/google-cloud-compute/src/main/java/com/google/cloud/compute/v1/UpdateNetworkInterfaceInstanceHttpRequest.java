@@ -382,6 +382,10 @@ public final class UpdateNetworkInterfaceInstanceHttpRequest implements ApiMessa
     public UpdateNetworkInterfaceInstanceHttpRequest build() {
       String missing = "";
 
+      if (fieldMask == null) {
+        missing += " fieldMask";
+      }
+
       if (instance == null) {
         missing += " instance";
       }

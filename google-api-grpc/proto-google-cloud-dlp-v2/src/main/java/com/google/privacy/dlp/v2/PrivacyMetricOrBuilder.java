@@ -72,5 +72,18 @@ public interface PrivacyMetricOrBuilder extends
    */
   com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfigOrBuilder getKMapEstimationConfigOrBuilder();
 
+  /**
+   * <code>.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig delta_presence_estimation_config = 6;</code>
+   */
+  boolean hasDeltaPresenceEstimationConfig();
+  /**
+   * <code>.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig delta_presence_estimation_config = 6;</code>
+   */
+  com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig getDeltaPresenceEstimationConfig();
+  /**
+   * <code>.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig delta_presence_estimation_config = 6;</code>
+   */
+  com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfigOrBuilder getDeltaPresenceEstimationConfigOrBuilder();
+
   public com.google.privacy.dlp.v2.PrivacyMetric.TypeCase getTypeCase();
 }

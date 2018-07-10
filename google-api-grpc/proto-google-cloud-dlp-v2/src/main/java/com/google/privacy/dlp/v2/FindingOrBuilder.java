@@ -11,7 +11,7 @@ public interface FindingOrBuilder extends
    * <pre>
    * The content that was found. Even if the content is not textual, it
    * may be converted to a textual representation here.
-   * Provided if requested by the `InspectConfig` and the finding is
+   * Provided if `include_quote` is true and the finding is
    * less than or equal to 4096 bytes long. If the finding exceeds 4096 bytes
    * in length, the quote may be omitted.
    * </pre>
@@ -23,7 +23,7 @@ public interface FindingOrBuilder extends
    * <pre>
    * The content that was found. Even if the content is not textual, it
    * may be converted to a textual representation here.
-   * Provided if requested by the `InspectConfig` and the finding is
+   * Provided if `include_quote` is true and the finding is
    * less than or equal to 4096 bytes long. If the finding exceeds 4096 bytes
    * in length, the quote may be omitted.
    * </pre>
@@ -36,7 +36,7 @@ public interface FindingOrBuilder extends
   /**
    * <pre>
    * The type of content that might have been found.
-   * Provided if requested by the `InspectConfig`.
+   * Provided if `excluded_types` is false.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InfoType info_type = 2;</code>
@@ -45,7 +45,7 @@ public interface FindingOrBuilder extends
   /**
    * <pre>
    * The type of content that might have been found.
-   * Provided if requested by the `InspectConfig`.
+   * Provided if `excluded_types` is false.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InfoType info_type = 2;</code>
@@ -54,7 +54,7 @@ public interface FindingOrBuilder extends
   /**
    * <pre>
    * The type of content that might have been found.
-   * Provided if requested by the `InspectConfig`.
+   * Provided if `excluded_types` is false.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InfoType info_type = 2;</code>
@@ -63,7 +63,7 @@ public interface FindingOrBuilder extends
 
   /**
    * <pre>
-   * Estimate of how likely it is that the `info_type` is correct.
+   * Confidence of how likely it is that the `info_type` is correct.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Likelihood likelihood = 3;</code>
@@ -71,7 +71,7 @@ public interface FindingOrBuilder extends
   int getLikelihoodValue();
   /**
    * <pre>
-   * Estimate of how likely it is that the `info_type` is correct.
+   * Confidence of how likely it is that the `info_type` is correct.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Likelihood likelihood = 3;</code>

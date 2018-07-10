@@ -357,6 +357,10 @@ public final class PatchSslPolicyHttpRequest implements ApiMessage {
     public PatchSslPolicyHttpRequest build() {
       String missing = "";
 
+      if (fieldMask == null) {
+        missing += " fieldMask";
+      }
+
       if (sslPolicy == null) {
         missing += " sslPolicy";
       }
