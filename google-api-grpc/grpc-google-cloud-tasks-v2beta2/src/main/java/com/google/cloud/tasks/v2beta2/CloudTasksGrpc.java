@@ -833,7 +833,7 @@ public final class CloudTasksGrpc {
      * WARNING: Using this method may have unintended side effects if you are
      * using an App Engine `queue.yaml` or `queue.xml` file to manage your queues.
      * Read
-     * [Overview of Queue Management and queue.yaml](/cloud-tasks/docs/queue-yaml)
+     * [Overview of Queue Management and queue.yaml](/tasks/docs/queue-yaml)
      * before using this method.
      * </pre>
      */
@@ -853,7 +853,7 @@ public final class CloudTasksGrpc {
      * WARNING: Using this method may have unintended side effects if you are
      * using an App Engine `queue.yaml` or `queue.xml` file to manage your queues.
      * Read
-     * [Overview of Queue Management and queue.yaml](/cloud-tasks/docs/queue-yaml)
+     * [Overview of Queue Management and queue.yaml](/tasks/docs/queue-yaml)
      * before using this method.
      * </pre>
      */
@@ -871,7 +871,7 @@ public final class CloudTasksGrpc {
      * WARNING: Using this method may have unintended side effects if you are
      * using an App Engine `queue.yaml` or `queue.xml` file to manage your queues.
      * Read
-     * [Overview of Queue Management and queue.yaml](/cloud-tasks/docs/queue-yaml)
+     * [Overview of Queue Management and queue.yaml](/tasks/docs/queue-yaml)
      * before using this method.
      * </pre>
      */
@@ -919,7 +919,7 @@ public final class CloudTasksGrpc {
      * WARNING: Resuming many high-QPS queues at the same time can
      * lead to target overloading. If you are resuming high-QPS
      * queues, follow the 500/50/5 pattern described in
-     * [Managing Cloud Tasks Scaling Risks](/cloud-tasks/pdfs/managing-cloud-tasks-scaling-risks-2017-06-05.pdf).
+     * [Managing Cloud Tasks Scaling Risks](/tasks/docs/manage-cloud-task-scaling).
      * </pre>
      */
     public void resumeQueue(com.google.cloud.tasks.v2beta2.ResumeQueueRequest request,
@@ -1330,7 +1330,7 @@ public final class CloudTasksGrpc {
      * WARNING: Using this method may have unintended side effects if you are
      * using an App Engine `queue.yaml` or `queue.xml` file to manage your queues.
      * Read
-     * [Overview of Queue Management and queue.yaml](/cloud-tasks/docs/queue-yaml)
+     * [Overview of Queue Management and queue.yaml](/tasks/docs/queue-yaml)
      * before using this method.
      * </pre>
      */
@@ -1351,7 +1351,7 @@ public final class CloudTasksGrpc {
      * WARNING: Using this method may have unintended side effects if you are
      * using an App Engine `queue.yaml` or `queue.xml` file to manage your queues.
      * Read
-     * [Overview of Queue Management and queue.yaml](/cloud-tasks/docs/queue-yaml)
+     * [Overview of Queue Management and queue.yaml](/tasks/docs/queue-yaml)
      * before using this method.
      * </pre>
      */
@@ -1370,7 +1370,7 @@ public final class CloudTasksGrpc {
      * WARNING: Using this method may have unintended side effects if you are
      * using an App Engine `queue.yaml` or `queue.xml` file to manage your queues.
      * Read
-     * [Overview of Queue Management and queue.yaml](/cloud-tasks/docs/queue-yaml)
+     * [Overview of Queue Management and queue.yaml](/tasks/docs/queue-yaml)
      * before using this method.
      * </pre>
      */
@@ -1421,7 +1421,7 @@ public final class CloudTasksGrpc {
      * WARNING: Resuming many high-QPS queues at the same time can
      * lead to target overloading. If you are resuming high-QPS
      * queues, follow the 500/50/5 pattern described in
-     * [Managing Cloud Tasks Scaling Risks](/cloud-tasks/pdfs/managing-cloud-tasks-scaling-risks-2017-06-05.pdf).
+     * [Managing Cloud Tasks Scaling Risks](/tasks/docs/manage-cloud-task-scaling).
      * </pre>
      */
     public void resumeQueue(com.google.cloud.tasks.v2beta2.ResumeQueueRequest request,
@@ -1698,7 +1698,7 @@ public final class CloudTasksGrpc {
      * WARNING: Using this method may have unintended side effects if you are
      * using an App Engine `queue.yaml` or `queue.xml` file to manage your queues.
      * Read
-     * [Overview of Queue Management and queue.yaml](/cloud-tasks/docs/queue-yaml)
+     * [Overview of Queue Management and queue.yaml](/tasks/docs/queue-yaml)
      * before using this method.
      * </pre>
      */
@@ -1718,7 +1718,7 @@ public final class CloudTasksGrpc {
      * WARNING: Using this method may have unintended side effects if you are
      * using an App Engine `queue.yaml` or `queue.xml` file to manage your queues.
      * Read
-     * [Overview of Queue Management and queue.yaml](/cloud-tasks/docs/queue-yaml)
+     * [Overview of Queue Management and queue.yaml](/tasks/docs/queue-yaml)
      * before using this method.
      * </pre>
      */
@@ -1736,7 +1736,7 @@ public final class CloudTasksGrpc {
      * WARNING: Using this method may have unintended side effects if you are
      * using an App Engine `queue.yaml` or `queue.xml` file to manage your queues.
      * Read
-     * [Overview of Queue Management and queue.yaml](/cloud-tasks/docs/queue-yaml)
+     * [Overview of Queue Management and queue.yaml](/tasks/docs/queue-yaml)
      * before using this method.
      * </pre>
      */
@@ -1784,7 +1784,7 @@ public final class CloudTasksGrpc {
      * WARNING: Resuming many high-QPS queues at the same time can
      * lead to target overloading. If you are resuming high-QPS
      * queues, follow the 500/50/5 pattern described in
-     * [Managing Cloud Tasks Scaling Risks](/cloud-tasks/pdfs/managing-cloud-tasks-scaling-risks-2017-06-05.pdf).
+     * [Managing Cloud Tasks Scaling Risks](/tasks/docs/manage-cloud-task-scaling).
      * </pre>
      */
     public com.google.cloud.tasks.v2beta2.Queue resumeQueue(com.google.cloud.tasks.v2beta2.ResumeQueueRequest request) {
@@ -2050,7 +2050,7 @@ public final class CloudTasksGrpc {
      * WARNING: Using this method may have unintended side effects if you are
      * using an App Engine `queue.yaml` or `queue.xml` file to manage your queues.
      * Read
-     * [Overview of Queue Management and queue.yaml](/cloud-tasks/docs/queue-yaml)
+     * [Overview of Queue Management and queue.yaml](/tasks/docs/queue-yaml)
      * before using this method.
      * </pre>
      */
@@ -2071,7 +2071,7 @@ public final class CloudTasksGrpc {
      * WARNING: Using this method may have unintended side effects if you are
      * using an App Engine `queue.yaml` or `queue.xml` file to manage your queues.
      * Read
-     * [Overview of Queue Management and queue.yaml](/cloud-tasks/docs/queue-yaml)
+     * [Overview of Queue Management and queue.yaml](/tasks/docs/queue-yaml)
      * before using this method.
      * </pre>
      */
@@ -2090,7 +2090,7 @@ public final class CloudTasksGrpc {
      * WARNING: Using this method may have unintended side effects if you are
      * using an App Engine `queue.yaml` or `queue.xml` file to manage your queues.
      * Read
-     * [Overview of Queue Management and queue.yaml](/cloud-tasks/docs/queue-yaml)
+     * [Overview of Queue Management and queue.yaml](/tasks/docs/queue-yaml)
      * before using this method.
      * </pre>
      */
@@ -2141,7 +2141,7 @@ public final class CloudTasksGrpc {
      * WARNING: Resuming many high-QPS queues at the same time can
      * lead to target overloading. If you are resuming high-QPS
      * queues, follow the 500/50/5 pattern described in
-     * [Managing Cloud Tasks Scaling Risks](/cloud-tasks/pdfs/managing-cloud-tasks-scaling-risks-2017-06-05.pdf).
+     * [Managing Cloud Tasks Scaling Risks](/tasks/docs/manage-cloud-task-scaling).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.tasks.v2beta2.Queue> resumeQueue(
