@@ -35,6 +35,7 @@ import com.google.cloud.storage.testing.RemoteStorageHelper;
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -145,7 +146,7 @@ public class ITGcsNio {
   }
 
   // Start of tests related to the "requester pays" feature
-
+  @Ignore("blocked by #3448")
   @Test
   public void testFileExistsRequesterPaysNoUserProject() throws IOException {
     CloudStorageFileSystem testBucket = getRequesterPaysBucket(false, "");
@@ -175,6 +176,7 @@ public class ITGcsNio {
     Files.exists(path);
   }
 
+  @Ignore("blocked by #3448")
   @Test
   public void testCantCreateWithoutUserProject() throws IOException {
     CloudStorageFileSystem testBucket = getRequesterPaysBucket(false, "");
@@ -195,7 +197,8 @@ public class ITGcsNio {
     // should succeed because we specified a project
     Files.write(path, "I would like to write, please?".getBytes());
   }
-
+  
+  @Ignore("blocked by #3448")
   @Test
   public void testCantReadWithoutUserProject() throws IOException {
     CloudStorageFileSystem testBucket = getRequesterPaysBucket(false, "");
@@ -217,6 +220,7 @@ public class ITGcsNio {
     Files.readAllBytes(path);
   }
 
+  @Ignore("blocked by #3448")
   @Test
   public void testCantCopyWithoutUserProject() throws IOException {
     CloudStorageFileSystem testRPBucket = getRequesterPaysBucket(false, "");
