@@ -35,8 +35,13 @@ dir_overrides = {
     'spanner-admin-database': 'google-cloud-spanner'
 }
 
+def run_generate_api(config_path, artifact_type, noisy=False):
+    """ Generate an API client library.
 
-def run_generate_api(config_path, noisy=False):
+    :param config_path (str): Path to directory containing artman config file.
+    :param artifact_type (str): artman target, e.g "java_gapic".
+    :param noisy (bool): if console output should be verbose.
+    """
     googleapis_index = config_path.rfind('/google/')
     if googleapis_index == -1:
         raise ValueError('Didn\'t find /googleapis/ in config file path; need absolute path to the artman config file.')
@@ -47,7 +52,7 @@ def run_generate_api(config_path, noisy=False):
     if noisy:
         extra_options = ['-v']
 
-    subprocess.check_call(['artman', '--config', api_dir, '--local', '--root-dir', root_dir] + extra_options + ['generate', 'java_gapic'])
+    subprocess.check_call(['artman', '--config', api_dir, '--local', '--root-dir', root_dir] + extra_options + ['generate', artifact_type])
 
     with io.open(config_path, encoding='UTF-8') as config_file:
         artman_config_data = yaml.load(config_file, Loader=yaml.Loader)
@@ -113,11 +118,13 @@ def run_generate_api(config_path, noisy=False):
 def main():
     parser = argparse.ArgumentParser(description='Regenerate a single API.')
     parser.add_argument('config_file', help='The artman config file for the API')
+    parser.add_argument('artifact_type', help='The artman artifact type',
+                        default="java_gapic")
     parser.add_argument('--quiet', action="store_true", default=False,
                         help='Don\'t print informational instructions')
     args = parser.parse_args()
 
-    run_generate_api(args.config_file, not args.quiet)
+    run_generate_api(args.config_file, args.artifact_type, not args.quiet)
 
 if __name__ == '__main__':
     main()
