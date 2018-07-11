@@ -89,12 +89,12 @@ def main():
     # TODO Make the docker image the default, add --local option
     parser = argparse.ArgumentParser(description='Batch generate all APIs.')
     parser.add_argument('googleapis', help='The path to the googleapis repo')
-    parser.add_argument('discovery', help='The path to the discovery-artifact-manager repo')
+    parser.add_argument('discovery',
+                        help='The path to the discovery-artifact-manager repo')
     args = parser.parse_args()
 
     run_gapic_gen(args.googleapis)
     run_discogapic_gen(args.discovery)
-
 
 if __name__ == '__main__':
     main()
