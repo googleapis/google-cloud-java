@@ -90,6 +90,7 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.Timeout;
 
+@Ignore("Intermittent errors in this deprecated integration test.")
 public class ITComputeTest {
 
   private static final String REGION = "us-central1";
