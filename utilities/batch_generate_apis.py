@@ -14,14 +14,15 @@
 
 # Instructions:
 #
-# Check out the googleapis repo somewhere locally (e.g. from
-# https://github.com/googleapis/googleapis):
+# Check out the googleapis and discovery-artifact-manager repo somewhere locally
+# (e.g. from https://github.com/googleapis/googleapis):
 #
 # $ git checkout https://github.com/googleapis/googleapis.git
+# $ git checkout https://github.com/googleapis/discovery-artifact-manager.git
 #
 # Run this script:
 #
-# $ python utilities/batch_generate_apis.py PATH_TO_GOOGLEAPIS
+# $ python utilities/batch_generate_apis.py PATH_TO_GOOGLEAPIS PATH_TO_DISCOVERY_ARTIFACT_MANAGER
 
 import argparse
 import os
@@ -29,9 +30,10 @@ import os
 import generate_api
 
 
-def run(googleapis):
+def run_gapic_gen(googleapis):
     def generate(artman_yaml):
-        generate_api.run_generate_api(os.path.join(googleapis, artman_yaml))
+        generate_api.run_generate_api(os.path.join(googleapis, artman_yaml),
+                                      generate_api.JAVA_GAPIC)
 
     # TODO Needs to have java_proto called instead of java_grpc
     #generate('google/datastore/artman_datastore.yaml')
@@ -73,13 +75,25 @@ def run(googleapis):
     generate('google/cloud/websecurityscanner/artman_websecurityscanner_v1alpha.yaml')
 
 
+def run_discogapic_gen(discovery_repo):
+    def generate(artman_yaml):
+        # Run java_discogapic task. No proto or grpc libraries are generated.
+        generate_api.run_generate_api(os.path.join(discovery_repo, artman_yaml),
+                                      generate_api.JAVA_DISCOGAPIC)
+
+    generate('gapic/google/compute/artman_compute.yaml')
+
+
 def main():
     # TODO Make the docker image the default, add --local option
     parser = argparse.ArgumentParser(description='Batch generate all APIs.')
     parser.add_argument('googleapis', help='The path to the googleapis repo')
+    parser.add_argument('discovery_repo',
+                        help='The path to the discovery-artifact-manager repo')
     args = parser.parse_args()
 
-    run(args.googleapis)
+    run_gapic_gen(args.googleapis)
+    run_discogapic_gen(args.discovery_repo)
 
 if __name__ == '__main__':
     main()

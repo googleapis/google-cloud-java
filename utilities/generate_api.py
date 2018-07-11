@@ -15,8 +15,9 @@
 # Instructions:
 #
 # Find the artman config file the describes the API you want to generate a client for.
+# Specifiy the artman ARTIFACT_TYPE to generate, e.g. "java_gapic"
 #
-# $ python utilities/generate_api.py PATH_TO_ARTMAN_CONFIG_FILE
+# $ python utilities/generate_api.py PATH_TO_ARTMAN_CONFIG_FILE ARTIFACT_TYPE
 
 import argparse
 import io
@@ -35,19 +36,32 @@ dir_overrides = {
     'spanner-admin-database': 'google-cloud-spanner'
 }
 
+JAVA_GAPIC="java_gapic"
+JAVA_DISCOGAPIC="java_discogapic"
 
-def run_generate_api(config_path, noisy=False):
-    googleapis_index = config_path.rfind('/google/')
-    if googleapis_index == -1:
-        raise ValueError('Didn\'t find /googleapis/ in config file path; need absolute path to the artman config file.')
-    root_dir = config_path[0:googleapis_index]
-    api_dir = config_path[googleapis_index+1:]
+def run_generate_api(config_path, artifact_type, noisy=False):
+    """ Generate an API client library.
+
+    :param config_path: (str) Path to directory containing artman config file.
+    :param artifact_type: (str) artman target, e.g "java_gapic".
+    :param noisy: (bool) if console output should be verbose.
+
+    """
+    api_repo_index = config_path.rfind('/google/')
+    if artifact_type == JAVA_DISCOGAPIC:
+        api_repo_index = config_path.rfind('/gapic/')
+    if api_repo_index == -1:
+        raise ValueError('Didn\'t find the API repo in config file path; need absolute path to the artman config file.')
+    root_dir = config_path[0:api_repo_index]
+    api_dir = config_path[api_repo_index+1:]
 
     extra_options = []
     if noisy:
         extra_options = ['-v']
 
-    subprocess.check_call(['artman', '--config', api_dir, '--local', '--root-dir', root_dir] + extra_options + ['generate', 'java_gapic'])
+    subprocess.check_call(
+        ['artman', '--config', api_dir, '--local', '--root-dir', root_dir]
+        + extra_options + ['generate', artifact_type])
 
     with io.open(config_path, encoding='UTF-8') as config_file:
         artman_config_data = yaml.load(config_file, Loader=yaml.Loader)
@@ -60,38 +74,42 @@ def run_generate_api(config_path, noisy=False):
     proto_dirname = 'proto-{}'.format(api_full_name)
     grpc_dirname = 'grpc-{}'.format(api_full_name)
     gapic_dirname = 'gapic-{}'.format(api_full_name)
-    proto_dir = os.path.join('artman-genfiles', 'java', proto_dirname)
-    grpc_dir = os.path.join('artman-genfiles', 'java', grpc_dirname)
+
     gapic_dir = os.path.join('artman-genfiles', 'java', gapic_dirname)
-    if not os.path.exists(proto_dir):
-        raise ValueError('generated proto dir doesn\'t exist: {}'.format(proto_dir))
-    if not os.path.exists(grpc_dir):
-        raise ValueError('generated grpc dir doesn\'t exist: {}'.format(grpc_dir))
     if not os.path.exists(gapic_dir):
         raise ValueError('generated gapic dir doesn\'t exist: {}'.format(gapic_dir))
 
-    target_proto_dir = os.path.join('google-api-grpc', proto_dirname)
-    target_grpc_dir = os.path.join('google-api-grpc', grpc_dirname)
-    if os.path.exists(target_proto_dir):
-        print('{} already exists, removing & replacing it.'.format(target_proto_dir))
-    if os.path.exists(target_grpc_dir):
-        print('{} already exists, removing & replacing it.'.format(target_grpc_dir))
+    if artifact_type != JAVA_DISCOGAPIC:
+        proto_dir = os.path.join('artman-genfiles', 'java', proto_dirname)
+        grpc_dir = os.path.join('artman-genfiles', 'java', grpc_dirname)
 
-    print('-- ignore any pathspec errors that follow')
+        if not os.path.exists(proto_dir):
+            raise ValueError('generated proto dir doesn\'t exist: {}'.format(proto_dir))
+        if not os.path.exists(grpc_dir):
+            raise ValueError('generated grpc dir doesn\'t exist: {}'.format(grpc_dir))
 
-    if os.path.exists(target_proto_dir):
-        shutil.rmtree(target_proto_dir)
-    shutil.copytree(proto_dir, target_proto_dir)
-    os.remove(os.path.join(target_proto_dir, 'LICENSE'))
-    os.remove(os.path.join(target_proto_dir, 'build.gradle'))
-    subprocess.call(['git', 'checkout', os.path.join(target_proto_dir, 'pom.xml')])
+        target_proto_dir = os.path.join('google-api-grpc', proto_dirname)
+        target_grpc_dir = os.path.join('google-api-grpc', grpc_dirname)
+        if os.path.exists(target_proto_dir):
+            print('{} already exists, removing & replacing it.'.format(target_proto_dir))
+        if os.path.exists(target_grpc_dir):
+            print('{} already exists, removing & replacing it.'.format(target_grpc_dir))
 
-    if os.path.exists(target_grpc_dir):
-        shutil.rmtree(target_grpc_dir)
-    shutil.copytree(grpc_dir, target_grpc_dir)
-    os.remove(os.path.join(target_grpc_dir, 'LICENSE'))
-    os.remove(os.path.join(target_grpc_dir, 'build.gradle'))
-    subprocess.call(['git', 'checkout', os.path.join(target_grpc_dir, 'pom.xml')])
+        print('-- ignore any pathspec errors that follow')
+
+        if os.path.exists(target_proto_dir):
+            shutil.rmtree(target_proto_dir)
+        shutil.copytree(proto_dir, target_proto_dir)
+        os.remove(os.path.join(target_proto_dir, 'LICENSE'))
+        os.remove(os.path.join(target_proto_dir, 'build.gradle'))
+        subprocess.call(['git', 'checkout', os.path.join(target_proto_dir, 'pom.xml')])
+
+        if os.path.exists(target_grpc_dir):
+            shutil.rmtree(target_grpc_dir)
+        shutil.copytree(grpc_dir, target_grpc_dir)
+        os.remove(os.path.join(target_grpc_dir, 'LICENSE'))
+        os.remove(os.path.join(target_grpc_dir, 'build.gradle'))
+        subprocess.call(['git', 'checkout', os.path.join(target_grpc_dir, 'pom.xml')])
 
     api_unversioned_name = '{}-{}'.format(org_name, api_name)
     if api_name in dir_overrides:
@@ -113,11 +131,13 @@ def run_generate_api(config_path, noisy=False):
 def main():
     parser = argparse.ArgumentParser(description='Regenerate a single API.')
     parser.add_argument('config_file', help='The artman config file for the API')
+    parser.add_argument('artifact_type', help='The artman artifact type',
+                        default="java_gapic")
     parser.add_argument('--quiet', action="store_true", default=False,
                         help='Don\'t print informational instructions')
     args = parser.parse_args()
 
-    run_generate_api(args.config_file, not args.quiet)
+    run_generate_api(args.config_file, args.artifact_type, not args.quiet)
 
 if __name__ == '__main__':
     main()
