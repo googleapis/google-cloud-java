@@ -44,8 +44,6 @@ def run_generate_api(config_path, artifact_type, noisy=False):
 
     :param config_path: (str) Path to directory containing artman config file.
     :param artifact_type: (str) artman target, e.g "java_gapic".
-    :param root_dir: (str) Path to the directory containing the API definitions.
-    :param has_proto_libs: (bool) if this target creates proto and grpc libraries
     :param noisy: (bool) if console output should be verbose.
 
     """
