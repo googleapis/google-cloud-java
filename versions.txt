@@ -18,12 +18,14 @@ grpc-google-cloud-dialogflow-v2beta1:0.18.0:0.18.1-SNAPSHOT
 grpc-google-cloud-dlp-v2:0.18.0:0.18.1-SNAPSHOT
 grpc-google-cloud-error-reporting-v1beta1:0.18.0:0.18.1-SNAPSHOT
 grpc-google-cloud-firestore-v1beta1:0.18.0:0.18.1-SNAPSHOT
+grpc-google-cloud-iot-v1:0.18.0:0.18.1-SNAPSHOT
 grpc-google-cloud-language-v1:1.17.0:1.17.1-SNAPSHOT
 grpc-google-cloud-language-v1beta2:0.18.0:0.18.1-SNAPSHOT
 grpc-google-cloud-logging-v2:0.18.0:0.18.1-SNAPSHOT
 grpc-google-cloud-monitoring-v3:1.17.0:1.17.1-SNAPSHOT
 grpc-google-cloud-os-login-v1:0.18.0:0.18.1-SNAPSHOT
 grpc-google-cloud-pubsub-v1:1.17.0:1.17.1-SNAPSHOT
+grpc-google-cloud-redis-v1beta1:0.18.0:0.18.1-SNAPSHOT
 grpc-google-cloud-spanner-admin-database-v1:0.18.0:0.18.1-SNAPSHOT
 grpc-google-cloud-spanner-admin-instance-v1:0.18.0:0.18.1-SNAPSHOT
 grpc-google-cloud-spanner-v1:0.18.0:0.18.1-SNAPSHOT
@@ -42,8 +44,6 @@ grpc-google-cloud-video-intelligence-v1p1beta1:0.18.0:0.18.1-SNAPSHOT
 grpc-google-cloud-vision-v1:1.17.0:1.17.1-SNAPSHOT
 grpc-google-cloud-vision-v1p1beta1:0.18.0:0.18.1-SNAPSHOT
 grpc-google-cloud-vision-v1p2beta1:1.17.0:1.17.1-SNAPSHOT
-grpc-google-cloud-iot-v1:0.18.0:0.18.1-SNAPSHOT
-grpc-google-cloud-redis-v1beta1:0.18.0:0.18.1-SNAPSHOT
 grpc-google-cloud-websecurityscanner-v1alpha:0.18.0:0.18.1-SNAPSHOT
 proto-google-cloud-bigquerydatatransfer-v1:0.18.0:0.18.1-SNAPSHOT
 proto-google-cloud-bigtable-admin-v2:0.18.0:0.18.1-SNAPSHOT
@@ -56,12 +56,14 @@ proto-google-cloud-dialogflow-v2beta1:0.18.0:0.18.1-SNAPSHOT
 proto-google-cloud-dlp-v2:0.18.0:0.18.1-SNAPSHOT
 proto-google-cloud-error-reporting-v1beta1:0.18.0:0.18.1-SNAPSHOT
 proto-google-cloud-firestore-v1beta1:0.18.0:0.18.1-SNAPSHOT
+proto-google-cloud-iot-v1:0.18.0:0.18.1-SNAPSHOT
 proto-google-cloud-language-v1:1.17.0:1.17.1-SNAPSHOT
 proto-google-cloud-language-v1beta2:0.18.0:0.18.1-SNAPSHOT
 proto-google-cloud-logging-v2:0.18.0:0.18.1-SNAPSHOT
 proto-google-cloud-monitoring-v3:1.17.0:1.17.1-SNAPSHOT
 proto-google-cloud-os-login-v1:0.18.0:0.18.1-SNAPSHOT
 proto-google-cloud-pubsub-v1:1.17.0:1.17.1-SNAPSHOT
+proto-google-cloud-redis-v1beta1:0.18.0:0.18.1-SNAPSHOT
 proto-google-cloud-spanner-admin-database-v1:0.18.0:0.18.1-SNAPSHOT
 proto-google-cloud-spanner-admin-instance-v1:0.18.0:0.18.1-SNAPSHOT
 proto-google-cloud-spanner-v1:0.18.0:0.18.1-SNAPSHOT
@@ -80,8 +82,6 @@ proto-google-cloud-video-intelligence-v1p1beta1:0.18.0:0.18.1-SNAPSHOT
 proto-google-cloud-vision-v1:1.17.0:1.17.1-SNAPSHOT
 proto-google-cloud-vision-v1p1beta1:0.18.0:0.18.1-SNAPSHOT
 proto-google-cloud-vision-v1p2beta1:1.17.0:1.17.1-SNAPSHOT
-proto-google-cloud-iot-v1:0.18.0:0.18.1-SNAPSHOT
-proto-google-cloud-redis-v1beta1:0.18.0:0.18.1-SNAPSHOT
 proto-google-cloud-websecurityscanner-v1alpha:0.18.0:0.18.1-SNAPSHOT
 
 #
@@ -114,6 +114,7 @@ google-cloud-dns:0.53.0-alpha:0.53.1-alpha-SNAPSHOT
 google-cloud-errorreporting:0.53.0-beta:0.53.1-beta-SNAPSHOT
 google-cloud-examples:0.53.0-alpha:0.53.1-alpha-SNAPSHOT
 google-cloud-firestore:0.53.0-beta:0.53.1-beta-SNAPSHOT
+google-cloud-iot:0.53.0-beta:0.53.1-beta-SNAPSHOT
 google-cloud-language:1.35.0:1.35.1-SNAPSHOT
 google-cloud-logging:1.35.0:1.35.1-SNAPSHOT
 google-cloud-logging-logback:0.53.0-alpha:0.53.1-alpha-SNAPSHOT
@@ -137,5 +138,4 @@ google-cloud-translate:1.35.0:1.35.1-SNAPSHOT
 google-cloud-util:0.53.0-alpha:0.53.1-alpha-SNAPSHOT
 google-cloud-video-intelligence:0.53.0-beta:0.53.1-beta-SNAPSHOT
 google-cloud-vision:1.35.0:1.35.1-SNAPSHOT
-google-cloud-iot:0.53.0-beta:0.53.1-beta-SNAPSHOT
 google-cloud-websecurityscanner:0.53.0-alpha:0.53.1-alpha-SNAPSHOT
