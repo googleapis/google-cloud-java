@@ -18,6 +18,7 @@ grpc-google-cloud-dialogflow-v2beta1:0.18.0:0.18.1-SNAPSHOT
 grpc-google-cloud-dlp-v2:0.18.0:0.18.1-SNAPSHOT
 grpc-google-cloud-error-reporting-v1beta1:0.18.0:0.18.1-SNAPSHOT
 grpc-google-cloud-firestore-v1beta1:0.18.0:0.18.1-SNAPSHOT
+grpc-google-cloud-kms-v1:0.18.0:0.18.1-SNAPSHOT
 grpc-google-cloud-language-v1:1.17.0:1.17.1-SNAPSHOT
 grpc-google-cloud-language-v1beta2:0.18.0:0.18.1-SNAPSHOT
 grpc-google-cloud-logging-v2:0.18.0:0.18.1-SNAPSHOT
@@ -56,6 +57,7 @@ proto-google-cloud-dialogflow-v2beta1:0.18.0:0.18.1-SNAPSHOT
 proto-google-cloud-dlp-v2:0.18.0:0.18.1-SNAPSHOT
 proto-google-cloud-error-reporting-v1beta1:0.18.0:0.18.1-SNAPSHOT
 proto-google-cloud-firestore-v1beta1:0.18.0:0.18.1-SNAPSHOT
+proto-google-cloud-kms-v1:0.18.0:0.18.1-SNAPSHOT
 proto-google-cloud-language-v1:1.17.0:1.17.1-SNAPSHOT
 proto-google-cloud-language-v1beta2:0.18.0:0.18.1-SNAPSHOT
 proto-google-cloud-logging-v2:0.18.0:0.18.1-SNAPSHOT
@@ -114,6 +116,7 @@ google-cloud-dns:0.53.0-alpha:0.53.1-alpha-SNAPSHOT
 google-cloud-errorreporting:0.53.0-beta:0.53.1-beta-SNAPSHOT
 google-cloud-examples:0.53.0-alpha:0.53.1-alpha-SNAPSHOT
 google-cloud-firestore:0.53.0-beta:0.53.1-beta-SNAPSHOT
+google-cloud-kms:0.53.0-beta:0.53.1-beta-SNAPSHOT
 google-cloud-language:1.35.0:1.35.1-SNAPSHOT
 google-cloud-logging:1.35.0:1.35.1-SNAPSHOT
 google-cloud-logging-logback:0.53.0-alpha:0.53.1-alpha-SNAPSHOT
