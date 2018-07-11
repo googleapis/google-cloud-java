@@ -15,8 +15,9 @@
 # Instructions:
 #
 # Find the artman config file the describes the API you want to generate a client for.
+# Specifiy the artman ARTIFACT_TYPE to generate, e.g. "java_gapic"
 #
-# $ python utilities/generate_api.py PATH_TO_ARTMAN_CONFIG_FILE java_gapic
+# $ python utilities/generate_api.py PATH_TO_ARTMAN_CONFIG_FILE ARTIFACT_TYPE
 
 import argparse
 import io
@@ -52,7 +53,7 @@ def run_generate_api(config_path, artifact_type, noisy=False):
     if artifact_type == JAVA_DISCOGAPIC:
         api_repo_index = config_path.rfind('/gapic/')
     if api_repo_index == -1:
-        raise ValueError('Didn\'t find /googleapis/ in config file path; need absolute path to the artman config file.')
+        raise ValueError('Didn\'t find the API repo in config file path; need absolute path to the artman config file.')
     root_dir = config_path[0:api_repo_index]
     api_dir = config_path[api_repo_index+1:]
 
