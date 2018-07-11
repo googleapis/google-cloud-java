@@ -18,7 +18,7 @@
 # (e.g. from https://github.com/googleapis/googleapis):
 #
 # $ git checkout https://github.com/googleapis/googleapis.git
-# $ git checkout https://github.com/googleapis/discovery-artifact-manager
+# $ git checkout https://github.com/googleapis/discovery-artifact-manager.git
 #
 # Run this script:
 #
