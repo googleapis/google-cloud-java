@@ -21,6 +21,8 @@ private static final long serialVersionUID = 0L;
   }
   private WordInfo() {
     word_ = "";
+    confidence_ = 0F;
+    speakerTag_ = 0;
   }
 
   @java.lang.Override
@@ -84,6 +86,16 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             word_ = s;
+            break;
+          }
+          case 37: {
+
+            confidence_ = input.readFloat();
+            break;
+          }
+          case 40: {
+
+            speakerTag_ = input.readInt32();
             break;
           }
         }
@@ -248,6 +260,42 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int CONFIDENCE_FIELD_NUMBER = 4;
+  private float confidence_;
+  /**
+   * <pre>
+   * Output only. The confidence estimate between 0.0 and 1.0. A higher number
+   * indicates an estimated greater likelihood that the recognized words are
+   * correct. This field is set only for the top alternative of a non-streaming
+   * result or, of a streaming result where `is_final=true`.
+   * This field is not guaranteed to be accurate and users should not rely on it
+   * to be always provided.
+   * The default of 0.0 is a sentinel value indicating `confidence` was not set.
+   * </pre>
+   *
+   * <code>float confidence = 4;</code>
+   */
+  public float getConfidence() {
+    return confidence_;
+  }
+
+  public static final int SPEAKER_TAG_FIELD_NUMBER = 5;
+  private int speakerTag_;
+  /**
+   * <pre>
+   * Output only. A distinct integer value is assigned for every speaker within
+   * the audio. This field specifies which one of those speakers was detected to
+   * have spoken this word. Value ranges from '1' to diarization_speaker_count.
+   * speaker_tag is set if enable_speaker_diarization = 'true' and only in the
+   * top alternative.
+   * </pre>
+   *
+   * <code>int32 speaker_tag = 5;</code>
+   */
+  public int getSpeakerTag() {
+    return speakerTag_;
+  }
+
   private byte memoizedIsInitialized = -1;
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -269,6 +317,12 @@ private static final long serialVersionUID = 0L;
     if (!getWordBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, word_);
     }
+    if (confidence_ != 0F) {
+      output.writeFloat(4, confidence_);
+    }
+    if (speakerTag_ != 0) {
+      output.writeInt32(5, speakerTag_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -287,6 +341,14 @@ private static final long serialVersionUID = 0L;
     }
     if (!getWordBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, word_);
+    }
+    if (confidence_ != 0F) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeFloatSize(4, confidence_);
+    }
+    if (speakerTag_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(5, speakerTag_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -316,6 +378,12 @@ private static final long serialVersionUID = 0L;
     }
     result = result && getWord()
         .equals(other.getWord());
+    result = result && (
+        java.lang.Float.floatToIntBits(getConfidence())
+        == java.lang.Float.floatToIntBits(
+            other.getConfidence()));
+    result = result && (getSpeakerTag()
+        == other.getSpeakerTag());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -337,6 +405,11 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + WORD_FIELD_NUMBER;
     hash = (53 * hash) + getWord().hashCode();
+    hash = (37 * hash) + CONFIDENCE_FIELD_NUMBER;
+    hash = (53 * hash) + java.lang.Float.floatToIntBits(
+        getConfidence());
+    hash = (37 * hash) + SPEAKER_TAG_FIELD_NUMBER;
+    hash = (53 * hash) + getSpeakerTag();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -484,6 +557,10 @@ private static final long serialVersionUID = 0L;
       }
       word_ = "";
 
+      confidence_ = 0F;
+
+      speakerTag_ = 0;
+
       return this;
     }
 
@@ -517,6 +594,8 @@ private static final long serialVersionUID = 0L;
         result.endTime_ = endTimeBuilder_.build();
       }
       result.word_ = word_;
+      result.confidence_ = confidence_;
+      result.speakerTag_ = speakerTag_;
       onBuilt();
       return result;
     }
@@ -567,6 +646,12 @@ private static final long serialVersionUID = 0L;
       if (!other.getWord().isEmpty()) {
         word_ = other.word_;
         onChanged();
+      }
+      if (other.getConfidence() != 0F) {
+        setConfidence(other.getConfidence());
+      }
+      if (other.getSpeakerTag() != 0) {
+        setSpeakerTag(other.getSpeakerTag());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1076,6 +1161,112 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       word_ = value;
+      onChanged();
+      return this;
+    }
+
+    private float confidence_ ;
+    /**
+     * <pre>
+     * Output only. The confidence estimate between 0.0 and 1.0. A higher number
+     * indicates an estimated greater likelihood that the recognized words are
+     * correct. This field is set only for the top alternative of a non-streaming
+     * result or, of a streaming result where `is_final=true`.
+     * This field is not guaranteed to be accurate and users should not rely on it
+     * to be always provided.
+     * The default of 0.0 is a sentinel value indicating `confidence` was not set.
+     * </pre>
+     *
+     * <code>float confidence = 4;</code>
+     */
+    public float getConfidence() {
+      return confidence_;
+    }
+    /**
+     * <pre>
+     * Output only. The confidence estimate between 0.0 and 1.0. A higher number
+     * indicates an estimated greater likelihood that the recognized words are
+     * correct. This field is set only for the top alternative of a non-streaming
+     * result or, of a streaming result where `is_final=true`.
+     * This field is not guaranteed to be accurate and users should not rely on it
+     * to be always provided.
+     * The default of 0.0 is a sentinel value indicating `confidence` was not set.
+     * </pre>
+     *
+     * <code>float confidence = 4;</code>
+     */
+    public Builder setConfidence(float value) {
+      
+      confidence_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. The confidence estimate between 0.0 and 1.0. A higher number
+     * indicates an estimated greater likelihood that the recognized words are
+     * correct. This field is set only for the top alternative of a non-streaming
+     * result or, of a streaming result where `is_final=true`.
+     * This field is not guaranteed to be accurate and users should not rely on it
+     * to be always provided.
+     * The default of 0.0 is a sentinel value indicating `confidence` was not set.
+     * </pre>
+     *
+     * <code>float confidence = 4;</code>
+     */
+    public Builder clearConfidence() {
+      
+      confidence_ = 0F;
+      onChanged();
+      return this;
+    }
+
+    private int speakerTag_ ;
+    /**
+     * <pre>
+     * Output only. A distinct integer value is assigned for every speaker within
+     * the audio. This field specifies which one of those speakers was detected to
+     * have spoken this word. Value ranges from '1' to diarization_speaker_count.
+     * speaker_tag is set if enable_speaker_diarization = 'true' and only in the
+     * top alternative.
+     * </pre>
+     *
+     * <code>int32 speaker_tag = 5;</code>
+     */
+    public int getSpeakerTag() {
+      return speakerTag_;
+    }
+    /**
+     * <pre>
+     * Output only. A distinct integer value is assigned for every speaker within
+     * the audio. This field specifies which one of those speakers was detected to
+     * have spoken this word. Value ranges from '1' to diarization_speaker_count.
+     * speaker_tag is set if enable_speaker_diarization = 'true' and only in the
+     * top alternative.
+     * </pre>
+     *
+     * <code>int32 speaker_tag = 5;</code>
+     */
+    public Builder setSpeakerTag(int value) {
+      
+      speakerTag_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. A distinct integer value is assigned for every speaker within
+     * the audio. This field specifies which one of those speakers was detected to
+     * have spoken this word. Value ranges from '1' to diarization_speaker_count.
+     * speaker_tag is set if enable_speaker_diarization = 'true' and only in the
+     * top alternative.
+     * </pre>
+     *
+     * <code>int32 speaker_tag = 5;</code>
+     */
+    public Builder clearSpeakerTag() {
+      
+      speakerTag_ = 0;
       onChanged();
       return this;
     }
