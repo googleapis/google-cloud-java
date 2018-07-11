@@ -88,7 +88,7 @@ def main():
     parser.add_argument('discovery', help='The path to the discovery-artifact-manager repo')
     args = parser.parse_args()
 
-    run_gapic_gen(args.discovery)
+    # run_gapic_gen(args.googleapis)
     run_discogapic_gen(args.discovery)
 
 
