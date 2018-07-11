@@ -32,7 +32,8 @@ import generate_api
 
 def run_gapic_gen(googleapis):
     def generate(artman_yaml):
-        generate_api.run_generate_api(os.path.join(googleapis, artman_yaml), generate_api.JAVA_GAPIC)
+        generate_api.run_generate_api(os.path.join(googleapis, artman_yaml),
+                                      generate_api.JAVA_GAPIC)
 
     # TODO Needs to have java_proto called instead of java_grpc
     #generate('google/datastore/artman_datastore.yaml')
@@ -87,12 +88,12 @@ def main():
     # TODO Make the docker image the default, add --local option
     parser = argparse.ArgumentParser(description='Batch generate all APIs.')
     parser.add_argument('googleapis', help='The path to the googleapis repo')
-    parser.add_argument('discovery',
+    parser.add_argument('discovery_repo',
                         help='The path to the discovery-artifact-manager repo')
     args = parser.parse_args()
 
     run_gapic_gen(args.googleapis)
-    run_discogapic_gen(args.discovery)
+    run_discogapic_gen(args.discovery_repo)
 
 if __name__ == '__main__':
     main()
