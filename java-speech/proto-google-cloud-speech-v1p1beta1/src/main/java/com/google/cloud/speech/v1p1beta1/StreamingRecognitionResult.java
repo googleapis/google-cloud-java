@@ -24,6 +24,8 @@ private static final long serialVersionUID = 0L;
     alternatives_ = java.util.Collections.emptyList();
     isFinal_ = false;
     stability_ = 0F;
+    channelTag_ = 0;
+    languageCode_ = "";
   }
 
   @java.lang.Override
@@ -74,6 +76,17 @@ private static final long serialVersionUID = 0L;
           case 29: {
 
             stability_ = input.readFloat();
+            break;
+          }
+          case 40: {
+
+            channelTag_ = input.readInt32();
+            break;
+          }
+          case 50: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            languageCode_ = s;
             break;
           }
         }
@@ -208,6 +221,69 @@ private static final long serialVersionUID = 0L;
     return stability_;
   }
 
+  public static final int CHANNEL_TAG_FIELD_NUMBER = 5;
+  private int channelTag_;
+  /**
+   * <pre>
+   * For multi-channel audio, this is the channel number corresponding to the
+   * recognized result for the audio from that channel.
+   * For audio_channel_count = N, its output values can range from '1' to 'N'.
+   * </pre>
+   *
+   * <code>int32 channel_tag = 5;</code>
+   */
+  public int getChannelTag() {
+    return channelTag_;
+  }
+
+  public static final int LANGUAGE_CODE_FIELD_NUMBER = 6;
+  private volatile java.lang.Object languageCode_;
+  /**
+   * <pre>
+   * Output only. The
+   * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag of the
+   * language in this result. This language code was detected to have the most
+   * likelihood of being spoken in the audio.
+   * </pre>
+   *
+   * <code>string language_code = 6;</code>
+   */
+  public java.lang.String getLanguageCode() {
+    java.lang.Object ref = languageCode_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      languageCode_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Output only. The
+   * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag of the
+   * language in this result. This language code was detected to have the most
+   * likelihood of being spoken in the audio.
+   * </pre>
+   *
+   * <code>string language_code = 6;</code>
+   */
+  public com.google.protobuf.ByteString
+      getLanguageCodeBytes() {
+    java.lang.Object ref = languageCode_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      languageCode_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -229,6 +305,12 @@ private static final long serialVersionUID = 0L;
     if (stability_ != 0F) {
       output.writeFloat(3, stability_);
     }
+    if (channelTag_ != 0) {
+      output.writeInt32(5, channelTag_);
+    }
+    if (!getLanguageCodeBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, languageCode_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -248,6 +330,13 @@ private static final long serialVersionUID = 0L;
     if (stability_ != 0F) {
       size += com.google.protobuf.CodedOutputStream
         .computeFloatSize(3, stability_);
+    }
+    if (channelTag_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(5, channelTag_);
+    }
+    if (!getLanguageCodeBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, languageCode_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -273,6 +362,10 @@ private static final long serialVersionUID = 0L;
         java.lang.Float.floatToIntBits(getStability())
         == java.lang.Float.floatToIntBits(
             other.getStability()));
+    result = result && (getChannelTag()
+        == other.getChannelTag());
+    result = result && getLanguageCode()
+        .equals(other.getLanguageCode());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -294,6 +387,10 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + STABILITY_FIELD_NUMBER;
     hash = (53 * hash) + java.lang.Float.floatToIntBits(
         getStability());
+    hash = (37 * hash) + CHANNEL_TAG_FIELD_NUMBER;
+    hash = (53 * hash) + getChannelTag();
+    hash = (37 * hash) + LANGUAGE_CODE_FIELD_NUMBER;
+    hash = (53 * hash) + getLanguageCode().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -439,6 +536,10 @@ private static final long serialVersionUID = 0L;
 
       stability_ = 0F;
 
+      channelTag_ = 0;
+
+      languageCode_ = "";
+
       return this;
     }
 
@@ -474,6 +575,8 @@ private static final long serialVersionUID = 0L;
       }
       result.isFinal_ = isFinal_;
       result.stability_ = stability_;
+      result.channelTag_ = channelTag_;
+      result.languageCode_ = languageCode_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -547,6 +650,13 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getStability() != 0F) {
         setStability(other.getStability());
+      }
+      if (other.getChannelTag() != 0) {
+        setChannelTag(other.getChannelTag());
+      }
+      if (!other.getLanguageCode().isEmpty()) {
+        languageCode_ = other.languageCode_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1038,6 +1148,154 @@ private static final long serialVersionUID = 0L;
     public Builder clearStability() {
       
       stability_ = 0F;
+      onChanged();
+      return this;
+    }
+
+    private int channelTag_ ;
+    /**
+     * <pre>
+     * For multi-channel audio, this is the channel number corresponding to the
+     * recognized result for the audio from that channel.
+     * For audio_channel_count = N, its output values can range from '1' to 'N'.
+     * </pre>
+     *
+     * <code>int32 channel_tag = 5;</code>
+     */
+    public int getChannelTag() {
+      return channelTag_;
+    }
+    /**
+     * <pre>
+     * For multi-channel audio, this is the channel number corresponding to the
+     * recognized result for the audio from that channel.
+     * For audio_channel_count = N, its output values can range from '1' to 'N'.
+     * </pre>
+     *
+     * <code>int32 channel_tag = 5;</code>
+     */
+    public Builder setChannelTag(int value) {
+      
+      channelTag_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * For multi-channel audio, this is the channel number corresponding to the
+     * recognized result for the audio from that channel.
+     * For audio_channel_count = N, its output values can range from '1' to 'N'.
+     * </pre>
+     *
+     * <code>int32 channel_tag = 5;</code>
+     */
+    public Builder clearChannelTag() {
+      
+      channelTag_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object languageCode_ = "";
+    /**
+     * <pre>
+     * Output only. The
+     * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag of the
+     * language in this result. This language code was detected to have the most
+     * likelihood of being spoken in the audio.
+     * </pre>
+     *
+     * <code>string language_code = 6;</code>
+     */
+    public java.lang.String getLanguageCode() {
+      java.lang.Object ref = languageCode_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        languageCode_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Output only. The
+     * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag of the
+     * language in this result. This language code was detected to have the most
+     * likelihood of being spoken in the audio.
+     * </pre>
+     *
+     * <code>string language_code = 6;</code>
+     */
+    public com.google.protobuf.ByteString
+        getLanguageCodeBytes() {
+      java.lang.Object ref = languageCode_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        languageCode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Output only. The
+     * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag of the
+     * language in this result. This language code was detected to have the most
+     * likelihood of being spoken in the audio.
+     * </pre>
+     *
+     * <code>string language_code = 6;</code>
+     */
+    public Builder setLanguageCode(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      languageCode_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. The
+     * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag of the
+     * language in this result. This language code was detected to have the most
+     * likelihood of being spoken in the audio.
+     * </pre>
+     *
+     * <code>string language_code = 6;</code>
+     */
+    public Builder clearLanguageCode() {
+      
+      languageCode_ = getDefaultInstance().getLanguageCode();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. The
+     * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag of the
+     * language in this result. This language code was detected to have the most
+     * likelihood of being spoken in the audio.
+     * </pre>
+     *
+     * <code>string language_code = 6;</code>
+     */
+    public Builder setLanguageCodeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      languageCode_ = value;
       onChanged();
       return this;
     }

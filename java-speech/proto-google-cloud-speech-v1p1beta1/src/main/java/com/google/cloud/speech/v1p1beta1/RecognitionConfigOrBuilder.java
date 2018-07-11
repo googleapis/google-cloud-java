@@ -45,6 +45,37 @@ public interface RecognitionConfigOrBuilder extends
 
   /**
    * <pre>
+   * *Optional* The number of channels in the input audio data.
+   * ONLY set this for MULTI-CHANNEL recognition.
+   * Valid values for LINEAR16 and FLAC are `1`-`8`.
+   * Valid values for OGG_OPUS are '1'-'254'.
+   * Valid value for MULAW, AMR, AMR_WB and SPEEX_WITH_HEADER_BYTE is only `1`.
+   * If `0` or omitted, defaults to one channel (mono).
+   * NOTE: We only recognize the first channel by default.
+   * To perform independent recognition on each channel set
+   * enable_separate_recognition_per_channel to 'true'.
+   * </pre>
+   *
+   * <code>int32 audio_channel_count = 7;</code>
+   */
+  int getAudioChannelCount();
+
+  /**
+   * <pre>
+   * This needs to be set to ‘true’ explicitly and audio_channel_count &gt; 1
+   * to get each channel recognized separately. The recognition result will
+   * contain a channel_tag field to state which channel that result belongs to.
+   * If this is not ‘true’, we will only recognize the first channel.
+   * NOTE: The request is also billed cumulatively for all channels recognized:
+   *     (audio_channel_count times the audio length)
+   * </pre>
+   *
+   * <code>bool enable_separate_recognition_per_channel = 12;</code>
+   */
+  boolean getEnableSeparateRecognitionPerChannel();
+
+  /**
+   * <pre>
    * *Required* The language of the supplied audio as a
    * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
    * Example: "en-US".
@@ -68,6 +99,85 @@ public interface RecognitionConfigOrBuilder extends
    */
   com.google.protobuf.ByteString
       getLanguageCodeBytes();
+
+  /**
+   * <pre>
+   * *Optional* A list of up to 3 additional
+   * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tags,
+   * listing possible alternative languages of the supplied audio.
+   * See [Language Support](https://cloud.google.com/speech/docs/languages)
+   * for a list of the currently supported language codes.
+   * If alternative languages are listed, recognition result will contain
+   * recognition in the most likely language detected including the main
+   * language_code. The recognition result will include the language tag
+   * of the language detected in the audio.
+   * NOTE: This feature is only supported for Voice Command and Voice Search
+   * use cases and performance may vary for other use cases (e.g., phone call
+   * transcription).
+   * </pre>
+   *
+   * <code>repeated string alternative_language_codes = 18;</code>
+   */
+  java.util.List<java.lang.String>
+      getAlternativeLanguageCodesList();
+  /**
+   * <pre>
+   * *Optional* A list of up to 3 additional
+   * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tags,
+   * listing possible alternative languages of the supplied audio.
+   * See [Language Support](https://cloud.google.com/speech/docs/languages)
+   * for a list of the currently supported language codes.
+   * If alternative languages are listed, recognition result will contain
+   * recognition in the most likely language detected including the main
+   * language_code. The recognition result will include the language tag
+   * of the language detected in the audio.
+   * NOTE: This feature is only supported for Voice Command and Voice Search
+   * use cases and performance may vary for other use cases (e.g., phone call
+   * transcription).
+   * </pre>
+   *
+   * <code>repeated string alternative_language_codes = 18;</code>
+   */
+  int getAlternativeLanguageCodesCount();
+  /**
+   * <pre>
+   * *Optional* A list of up to 3 additional
+   * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tags,
+   * listing possible alternative languages of the supplied audio.
+   * See [Language Support](https://cloud.google.com/speech/docs/languages)
+   * for a list of the currently supported language codes.
+   * If alternative languages are listed, recognition result will contain
+   * recognition in the most likely language detected including the main
+   * language_code. The recognition result will include the language tag
+   * of the language detected in the audio.
+   * NOTE: This feature is only supported for Voice Command and Voice Search
+   * use cases and performance may vary for other use cases (e.g., phone call
+   * transcription).
+   * </pre>
+   *
+   * <code>repeated string alternative_language_codes = 18;</code>
+   */
+  java.lang.String getAlternativeLanguageCodes(int index);
+  /**
+   * <pre>
+   * *Optional* A list of up to 3 additional
+   * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tags,
+   * listing possible alternative languages of the supplied audio.
+   * See [Language Support](https://cloud.google.com/speech/docs/languages)
+   * for a list of the currently supported language codes.
+   * If alternative languages are listed, recognition result will contain
+   * recognition in the most likely language detected including the main
+   * language_code. The recognition result will include the language tag
+   * of the language detected in the audio.
+   * NOTE: This feature is only supported for Voice Command and Voice Search
+   * use cases and performance may vary for other use cases (e.g., phone call
+   * transcription).
+   * </pre>
+   *
+   * <code>repeated string alternative_language_codes = 18;</code>
+   */
+  com.google.protobuf.ByteString
+      getAlternativeLanguageCodesBytes(int index);
 
   /**
    * <pre>
@@ -153,6 +263,17 @@ public interface RecognitionConfigOrBuilder extends
 
   /**
    * <pre>
+   * *Optional* If `true`, the top result includes a list of words and the
+   * confidence for those words. If `false`, no word-level confidence
+   * information is returned. The default is `false`.
+   * </pre>
+   *
+   * <code>bool enable_word_confidence = 15;</code>
+   */
+  boolean getEnableWordConfidence();
+
+  /**
+   * <pre>
    * *Optional* If 'true', adds punctuation to recognition result hypotheses.
    * This feature is only available in select languages. Setting this for
    * requests in other languages has no effect at all.
@@ -165,6 +286,33 @@ public interface RecognitionConfigOrBuilder extends
    * <code>bool enable_automatic_punctuation = 11;</code>
    */
   boolean getEnableAutomaticPunctuation();
+
+  /**
+   * <pre>
+   * *Optional* If 'true', enables speaker detection for each recognized word in
+   * the top alternative of the recognition result using a speaker_tag provided
+   * in the WordInfo.
+   * Note: When this is true, we send all the words from the beginning of the
+   * audio for the top alternative in every consecutive responses.
+   * This is done in order to improve our speaker tags as our models learn to
+   * identify the speakers in the conversation over time.
+   * </pre>
+   *
+   * <code>bool enable_speaker_diarization = 16;</code>
+   */
+  boolean getEnableSpeakerDiarization();
+
+  /**
+   * <pre>
+   * *Optional*
+   * If set, specifies the estimated number of speakers in the conversation.
+   * If not set, defaults to '2'.
+   * Ignored unless enable_speaker_diarization is set to true."
+   * </pre>
+   *
+   * <code>int32 diarization_speaker_count = 17;</code>
+   */
+  int getDiarizationSpeakerCount();
 
   /**
    * <pre>
