@@ -76,8 +76,12 @@ def run_gapic_gen(googleapis):
 
 def run_discogapic_gen(discovery_repo):
     def generate(artman_yaml):
-        generate_api.run_generate_api(os.path.join(discovery_repo, artman_yaml), "java_discogapic")
+        # Run java_discogapic task. No proto or grpc libraries are generated.
+        generate_api.run_generate_api(os.path.join(discovery_repo, artman_yaml),
+                                      "java_discogapic",
+                                      replace_proto_libs=False)
 
+    os.chdir(discovery_repo)
     generate('gapic/google/compute/artman_compute.yaml')
 
 

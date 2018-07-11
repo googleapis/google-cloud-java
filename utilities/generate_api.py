@@ -16,7 +16,7 @@
 #
 # Find the artman config file the describes the API you want to generate a client for.
 #
-# $ python utilities/generate_api.py PATH_TO_ARTMAN_CONFIG_FILE
+# $ python utilities/generate_api.py PATH_TO_ARTMAN_CONFIG_FILE java_gapic
 
 import argparse
 import io
@@ -35,12 +35,15 @@ dir_overrides = {
     'spanner-admin-database': 'google-cloud-spanner'
 }
 
-def run_generate_api(config_path, artifact_type, noisy=False):
+
+def run_generate_api(config_path, artifact_type, noisy=False, replace_proto_libs=True):
     """ Generate an API client library.
 
-    :param config_path (str): Path to directory containing artman config file.
-    :param artifact_type (str): artman target, e.g "java_gapic".
-    :param noisy (bool): if console output should be verbose.
+    :param config_path: (str) Path to directory containing artman config file.
+    :param artifact_type: (str) artman target, e.g "java_gapic".
+    :param noisy: (bool) if console output should be verbose.
+    :param replace_proto_libs: (bool) if the generated proto and grpc libraries
+               should replace the existing ones
     """
     googleapis_index = config_path.rfind('/google/')
     if googleapis_index == -1:
@@ -65,38 +68,42 @@ def run_generate_api(config_path, artifact_type, noisy=False):
     proto_dirname = 'proto-{}'.format(api_full_name)
     grpc_dirname = 'grpc-{}'.format(api_full_name)
     gapic_dirname = 'gapic-{}'.format(api_full_name)
-    proto_dir = os.path.join('artman-genfiles', 'java', proto_dirname)
-    grpc_dir = os.path.join('artman-genfiles', 'java', grpc_dirname)
+
     gapic_dir = os.path.join('artman-genfiles', 'java', gapic_dirname)
-    if not os.path.exists(proto_dir):
-        raise ValueError('generated proto dir doesn\'t exist: {}'.format(proto_dir))
-    if not os.path.exists(grpc_dir):
-        raise ValueError('generated grpc dir doesn\'t exist: {}'.format(grpc_dir))
     if not os.path.exists(gapic_dir):
         raise ValueError('generated gapic dir doesn\'t exist: {}'.format(gapic_dir))
 
-    target_proto_dir = os.path.join('google-api-grpc', proto_dirname)
-    target_grpc_dir = os.path.join('google-api-grpc', grpc_dirname)
-    if os.path.exists(target_proto_dir):
-        print('{} already exists, removing & replacing it.'.format(target_proto_dir))
-    if os.path.exists(target_grpc_dir):
-        print('{} already exists, removing & replacing it.'.format(target_grpc_dir))
+    if replace_proto_libs:
+        proto_dir = os.path.join('artman-genfiles', 'java', proto_dirname)
+        grpc_dir = os.path.join('artman-genfiles', 'java', grpc_dirname)
 
-    print('-- ignore any pathspec errors that follow')
+        if not os.path.exists(proto_dir):
+            raise ValueError('generated proto dir doesn\'t exist: {}'.format(proto_dir))
+        if not os.path.exists(grpc_dir):
+            raise ValueError('generated grpc dir doesn\'t exist: {}'.format(grpc_dir))
 
-    if os.path.exists(target_proto_dir):
-        shutil.rmtree(target_proto_dir)
-    shutil.copytree(proto_dir, target_proto_dir)
-    os.remove(os.path.join(target_proto_dir, 'LICENSE'))
-    os.remove(os.path.join(target_proto_dir, 'build.gradle'))
-    subprocess.call(['git', 'checkout', os.path.join(target_proto_dir, 'pom.xml')])
+        target_proto_dir = os.path.join('google-api-grpc', proto_dirname)
+        target_grpc_dir = os.path.join('google-api-grpc', grpc_dirname)
+        if os.path.exists(target_proto_dir):
+            print('{} already exists, removing & replacing it.'.format(target_proto_dir))
+        if os.path.exists(target_grpc_dir):
+            print('{} already exists, removing & replacing it.'.format(target_grpc_dir))
 
-    if os.path.exists(target_grpc_dir):
-        shutil.rmtree(target_grpc_dir)
-    shutil.copytree(grpc_dir, target_grpc_dir)
-    os.remove(os.path.join(target_grpc_dir, 'LICENSE'))
-    os.remove(os.path.join(target_grpc_dir, 'build.gradle'))
-    subprocess.call(['git', 'checkout', os.path.join(target_grpc_dir, 'pom.xml')])
+        print('-- ignore any pathspec errors that follow')
+
+        if os.path.exists(target_proto_dir):
+            shutil.rmtree(target_proto_dir)
+        shutil.copytree(proto_dir, target_proto_dir)
+        os.remove(os.path.join(target_proto_dir, 'LICENSE'))
+        os.remove(os.path.join(target_proto_dir, 'build.gradle'))
+        subprocess.call(['git', 'checkout', os.path.join(target_proto_dir, 'pom.xml')])
+
+        if os.path.exists(target_grpc_dir):
+            shutil.rmtree(target_grpc_dir)
+        shutil.copytree(grpc_dir, target_grpc_dir)
+        os.remove(os.path.join(target_grpc_dir, 'LICENSE'))
+        os.remove(os.path.join(target_grpc_dir, 'build.gradle'))
+        subprocess.call(['git', 'checkout', os.path.join(target_grpc_dir, 'pom.xml')])
 
     api_unversioned_name = '{}-{}'.format(org_name, api_name)
     if api_name in dir_overrides:
