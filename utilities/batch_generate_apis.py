@@ -79,9 +79,9 @@ def run_discogapic_gen(discovery_repo):
         # Run java_discogapic task. No proto or grpc libraries are generated.
         generate_api.run_generate_api(os.path.join(discovery_repo, artman_yaml),
                                       "java_discogapic",
-                                      replace_proto_libs=False)
+                                      root_dir=discovery_repo,
+                                      has_proto_libs=False)
 
-    os.chdir(discovery_repo)
     generate('gapic/google/compute/artman_compute.yaml')
 
 
@@ -92,7 +92,7 @@ def main():
     parser.add_argument('discovery', help='The path to the discovery-artifact-manager repo')
     args = parser.parse_args()
 
-    # run_gapic_gen(args.googleapis)
+    run_gapic_gen(args.googleapis)
     run_discogapic_gen(args.discovery)
 
 

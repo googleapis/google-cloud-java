@@ -36,25 +36,32 @@ dir_overrides = {
 }
 
 
-def run_generate_api(config_path, artifact_type, noisy=False, replace_proto_libs=True):
+def run_generate_api(config_path, artifact_type, root_dir=None, has_proto_libs=True, noisy=False):
     """ Generate an API client library.
 
     :param config_path: (str) Path to directory containing artman config file.
     :param artifact_type: (str) artman target, e.g "java_gapic".
+    :param root_dir: (str) Path to the directory containing the API definitions.
+    :param has_proto_libs: (bool) if the generated proto and grpc libraries
+              should replace the existing ones
     :param noisy: (bool) if console output should be verbose.
-    :param replace_proto_libs: (bool) if the generated proto and grpc libraries
-               should replace the existing ones
+
     """
     googleapis_index = config_path.rfind('/google/')
     if googleapis_index == -1:
         raise ValueError('Didn\'t find /googleapis/ in config file path; need absolute path to the artman config file.')
-    root_dir = config_path[0:googleapis_index]
-    api_dir = config_path[googleapis_index+1:]
+    if has_proto_libs:
+        root_dir = config_path[0:googleapis_index]
+        api_dir = config_path[googleapis_index+1:]
+    else:
+        api_dir = config_path
 
     extra_options = []
     if noisy:
         extra_options = ['-v']
 
+    print("api_dir: "+ api_dir)
+    print("root_dir: "+ root_dir)
     subprocess.check_call(['artman', '--config', api_dir, '--local', '--root-dir', root_dir] + extra_options + ['generate', artifact_type])
 
     with io.open(config_path, encoding='UTF-8') as config_file:
@@ -73,7 +80,7 @@ def run_generate_api(config_path, artifact_type, noisy=False, replace_proto_libs
     if not os.path.exists(gapic_dir):
         raise ValueError('generated gapic dir doesn\'t exist: {}'.format(gapic_dir))
 
-    if replace_proto_libs:
+    if has_proto_libs:
         proto_dir = os.path.join('artman-genfiles', 'java', proto_dirname)
         grpc_dir = os.path.join('artman-genfiles', 'java', grpc_dirname)
 
