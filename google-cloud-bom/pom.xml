@@ -496,6 +496,27 @@
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-kms</artifactId>
+        <version>0.53.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-kms:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-kms</artifactId>
+        <version>0.53.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-kms:current} -->
+        <type>test-jar</type>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-kms-v1</artifactId>
+        <version>0.18.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-kms-v1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-kms-v1</artifactId>
+        <version>0.18.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-kms-v1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-language</artifactId>
         <version>1.35.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-language:current} -->
       </dependency>
