@@ -29,6 +29,7 @@ This library supports the following Google Cloud Platform services with clients 
 -  [Cloud Data Loss Prevention](google-cloud-clients/google-cloud-dlp) (Beta)
 -  [Stackdriver Error Reporting](google-cloud-clients/google-cloud-errorreporting) (Beta)
 -  [Cloud Firestore](google-cloud-clients/google-cloud-firestore) (Beta)
+-  [Cloud KMS](google-cloud-clients/google-cloud-kms) (Beta)
 -  [Cloud Spanner](google-cloud-clients/google-cloud-spanner) (Beta)
 -  [Cloud Video Intelligence](google-cloud-clients/google-cloud-video-intelligence) (Beta)
 -  [Stackdriver Trace](google-cloud-clients/google-cloud-trace) (Beta)
