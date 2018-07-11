@@ -35,8 +35,10 @@ dir_overrides = {
     'spanner-admin-database': 'google-cloud-spanner'
 }
 
+JAVA_GAPIC="java_gapic"
+JAVA_DISCOGAPIC="java_discogapic"
 
-def run_generate_api(config_path, artifact_type, root_dir=None, has_proto_libs=True, noisy=False):
+def run_generate_api(config_path, artifact_type, noisy=False):
     """ Generate an API client library.
 
     :param config_path: (str) Path to directory containing artman config file.
@@ -46,20 +48,21 @@ def run_generate_api(config_path, artifact_type, root_dir=None, has_proto_libs=T
     :param noisy: (bool) if console output should be verbose.
 
     """
-    googleapis_index = config_path.rfind('/google/')
-    if googleapis_index == -1:
+    api_repo_index = config_path.rfind('/google/')
+    if artifact_type == JAVA_DISCOGAPIC:
+        api_repo_index = config_path.rfind('/gapic/')
+    if api_repo_index == -1:
         raise ValueError('Didn\'t find /googleapis/ in config file path; need absolute path to the artman config file.')
-    if has_proto_libs:
-        root_dir = config_path[0:googleapis_index]
-        api_dir = config_path[googleapis_index+1:]
-    else:
-        api_dir = config_path
+    root_dir = config_path[0:api_repo_index]
+    api_dir = config_path[api_repo_index+1:]
 
     extra_options = []
     if noisy:
         extra_options = ['-v']
 
-    subprocess.check_call(['artman', '--config', api_dir, '--local', '--root-dir', root_dir] + extra_options + ['generate', artifact_type])
+    subprocess.check_call(
+        ['artman', '--config', api_dir, '--local', '--root-dir', root_dir]
+        + extra_options + ['generate', artifact_type])
 
     with io.open(config_path, encoding='UTF-8') as config_file:
         artman_config_data = yaml.load(config_file, Loader=yaml.Loader)
@@ -77,7 +80,7 @@ def run_generate_api(config_path, artifact_type, root_dir=None, has_proto_libs=T
     if not os.path.exists(gapic_dir):
         raise ValueError('generated gapic dir doesn\'t exist: {}'.format(gapic_dir))
 
-    if has_proto_libs:
+    if artifact_type != JAVA_DISCOGAPIC:
         proto_dir = os.path.join('artman-genfiles', 'java', proto_dirname)
         grpc_dir = os.path.join('artman-genfiles', 'java', grpc_dirname)
 
