@@ -91,6 +91,9 @@ public class CloudStorageReadTest {
         // reading past the end
         int eof = is.read(buf, 0, 1);
         assertWithMessage("EOF should return -1").that(eof).isEqualTo(-1);
+      } finally {
+        // clean up
+        Files.delete(p);
       }
     }
   }
@@ -121,6 +124,9 @@ public class CloudStorageReadTest {
         buf.clear();
         int eof = chan.read(buf);
         assertWithMessage("EOF should return -1").that(eof).isEqualTo(-1);
+      } finally {
+        // clean up
+        Files.delete(p);
       }
     }
   }
