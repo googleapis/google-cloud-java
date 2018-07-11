@@ -1666,6 +1666,7 @@ operation.waitFor();
     assertNull(compute.getInstance(instanceId));
   }
 
+  @Ignore("Intermittent failures.")
   @Test
   public void testStartStopAndResetInstance() throws InterruptedException, TimeoutException {
     String instanceName = BASE_RESOURCE_NAME + "start-stop-reset-instance";
