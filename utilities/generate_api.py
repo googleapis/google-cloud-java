@@ -122,11 +122,15 @@ def run_generate_api(config_path, artifact_type, noisy=False):
         print('**** REMAINING MANUAL WORK: *****')
         print('This script doesn\'t set up new clients. If this is a new client, you need to:')
         print('1. Add the new proto and grpc modules into google-api-grpc/pom.xml')
+        print('2. Add version declarations for the proto and grpc modules in google-api-grpc/pom.xml')
         print('3. Copy an existing client pom.xml to the new client directory, update its text')
         print('4. Copy an existing client README.md to the new client directory, update its text')
         print('5. Add the new proto, grpc, and client modules into versions.txt')
         print('6. Add the new proto, grpc, and client modules into google-cloud-bom/pom.xml')
-        print('7. Run `utilities/replace_versions.py` to update the module versions')
+        print('7. Add the API to the list in the root README.md')
+        print('8. Add the client module into the list in google-cloud-clients/pom.xml')
+        print('9. Add the stub package for the client into the stubs list in google-cloud-clients/pom.xml')
+        print('10. Run `utilities/replace_versions.py` to update the module versions')
 
 def main():
     parser = argparse.ArgumentParser(description='Regenerate a single API.')
