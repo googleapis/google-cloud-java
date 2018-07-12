@@ -1,7 +1,7 @@
 Google Cloud Java Client for Container (Kubernetes Engine)
-====================================
+==========================================================
 
-Java idiomatic client for [Google Cloud Container][cloud-container].
+Java idiomatic client for [Kubernetes Engine][cloud-container].
 
 [![CircleCI](https://circleci.com/gh/GoogleCloudPlatform/google-cloud-java/tree/master.svg?style=shield)](https://circleci.com/gh/GoogleCloudPlatform/google-cloud-java/tree/master)
 [![Coverage Status](https://coveralls.io/repos/GoogleCloudPlatform/google-cloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/google-cloud-java?branch=master)
@@ -42,24 +42,24 @@ Authentication
 
 See the [Authentication](https://github.com/GoogleCloudPlatform/google-cloud-java#authentication) section in the base directory's README.
 
-About Google Cloud container
+About Kubernetes Engine
 --------------------------
 
-[Google Cloud Container API][cloud-container] deploys, manages, and scales containerized applications on Kubernetes, powered by Google Cloud.
+[Kubernetes Engine API][cloud-container] deploys, manages, and scales containerized applications on Kubernetes, powered by Google Cloud.
 
-See the [Google Cloud Container docs][cloud-container-quickstart] for more details on how to activate
-Cloud Container for your project.
+See the [Kubernetes Engine docs][cloud-container-quickstart] for more details on how to activate
+Kubernetes Engine for your project.
 
-See the [Container client library docs][container-client-lib-docs] to learn how to interact with the
-Cloud Container using this Client Library.
+See the [Kubernetes Engine client library docs][container-client-lib-docs] to learn how to interact with the
+Kubernetes Engine API using this Client Library.
 
 Getting Started
 ---------------
 #### Prerequisites
 For this tutorial, you will need a
-[Google Developers Console](https://console.developers.google.com/) project with the Container API
+[Google Developers Console](https://console.developers.google.com/) project with the Kubernetes Engine API
 enabled. You will need to [enable billing](https://support.google.com/cloud/answer/6158867?hl=en) to
-use Google Cloud Container.
+use Kubernetes Engine.
 [Follow these instructions](https://cloud.google.com/docs/authentication#preparation) to get your
 project set up. You will also need to set up the local development environment by [installing the
 Google Cloud SDK](https://cloud.google.com/sdk/) and running the following commands in command line:
@@ -71,7 +71,7 @@ to add `google-cloud-container` as a dependency in your code.
 
 Transport
 ---------
-Container uses gRPC for the transport layer.
+Kubernetes Engine uses gRPC for the transport layer.
 
 Java Versions
 -------------
@@ -81,7 +81,7 @@ Java 7 or above is required for using this client.
 Testing
 -------
 
-This library has tools to help make tests for code using Cloud Container.
+This library has tools to help make tests for code using Kubernetes Engine.
 
 See [TESTING] to read more about testing.
 

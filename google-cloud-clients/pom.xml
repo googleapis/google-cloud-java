@@ -741,7 +741,7 @@
                   </group>
                   <group>
                     <title>Test helpers packages</title>
-                    <packages>com.google.cloud.bigquery.testing:com.google.cloud.datastore.testing:com.google.cloud.dns.testing:com.google.cloud.logging.testing:com.google.cloud.pubsub.testing:com.google.cloud.resourcemanager.testing:com.google.cloud.storage.testing:com.google.cloud.translate.testing:com.google.cloud.spanner.testing:com.google.cloud.storage.contrib.nio.testing</packages>
+                    <packages>com.google.cloud.bigquery.testing:com.google.cloud.testing:com.google.cloud.datastore.testing:com.google.cloud.dns.testing:com.google.cloud.logging.testing:com.google.cloud.pubsub.testing:com.google.cloud.resourcemanager.testing:com.google.cloud.storage.testing:com.google.cloud.translate.testing:com.google.cloud.spanner.testing:com.google.cloud.storage.contrib.nio.testing</packages>
                   </group>
                   <group>
                     <title>Example packages</title>
@@ -749,15 +749,15 @@
                   </group>
                   <group>
                     <title>SPI packages</title>
-                    <packages>com.google.cloud.spi*:com.google.cloud.bigquery.spi*:com.google.cloud.datastore.spi*:com.google.cloud.dns.spi*:com.google.cloud.logging.spi*:com.google.cloud.resourcemanager.spi*:com.google.cloud.spanner.spi*:com.google.cloud.storage.spi*:com.google.cloud.translate.spi*</packages>
+                    <packages>com.google.cloud.spi*:com.google.cloud.bigquery.spi*:com.google.cloud.datastore.spi*:com.google.cloud.dns.spi*:com.google.cloud.firestore.spi*:com.google.cloud.logging.spi*:com.google.cloud.resourcemanager.spi*:com.google.cloud.spanner.spi*:com.google.cloud.storage.spi*:com.google.cloud.translate.spi*</packages>
                   </group>
                   <group>
                     <title>Stub packages</title>
-                    <packages>com.google.cloud.bigquerydatatransfer.v1.stub:com.google.cloud.container.v1.stub:com.google.cloud.dlp.v2beta1.stub:com.google.cloud.dlp.v2.stub:com.google.cloud.dialogflow.v2beta1.stub:com.google.cloud.dialogflow.v2.stub:com.google.cloud.errorreporting.v1beta1.stub:com.google.cloud.firestore.v1beta1.stub:com.google.cloud.kms.v1.stub:com.google.cloud.language.v1beta2.stub:com.google.cloud.language.v1.stub:com.google.cloud.logging.v2.stub:com.google.cloud.monitoring.v3.stub:com.google.cloud.pubsub.v1.stub:com.google.cloud.speech.v1beta1.stub:com.google.cloud.speech.v1.stub:com.google.cloud.tasks.v2beta2.stub:com.google.cloud.texttospeech.v1beta1.stub:com.google.cloud.texttospeech.v1.stub:com.google.cloud.trace.v1.stub:com.google.cloud.trace.v2.stub:com.google.cloud.videointelligence.v1beta1.stub:com.google.cloud.videointelligence.v1beta2.stub:com.google.cloud.videointelligence.v1.stub:com.google.cloud.videointelligence.v1p1beta1.stub:com.google.cloud.vision.v1.stub:com.google.cloud.vision.v1p1beta1.stub:com.google.cloud.vision.v1p2beta1.stub</packages>
+                    <packages>com.google.cloud.bigquery.datatransfer.v1.stub:com.google.cloud.bigtable.admin.v2.stub:com.google.cloud.bigtable.data.v2.stub*:com.google.cloud.compute.v1.stub:com.google.cloud.container.v1.stub:com.google.cloud.dataproc.v1.stub:com.google.cloud.dlp.v2beta1.stub:com.google.cloud.dlp.v2.stub:com.google.cloud.dialogflow.v2beta1.stub:com.google.cloud.dialogflow.v2.stub:com.google.cloud.errorreporting.v1beta1.stub:com.google.cloud.firestore.v1beta1.stub:com.google.cloud.iot.v1.stub:com.google.cloud.kms.v1.stub:com.google.cloud.language.v1beta2.stub:com.google.cloud.language.v1.stub:com.google.cloud.logging.v2.stub:com.google.cloud.monitoring.v3.stub:com.google.cloud.oslogin.v1.stub:com.google.cloud.pubsub.v1.stub:com.google.cloud.redis.v1beta1.stub:com.google.cloud.spanner.admin.database.v1.stub:com.google.cloud.spanner.admin.instance.v1.stub:com.google.cloud.spanner.v1.stub:com.google.cloud.speech.v1beta1.stub:com.google.cloud.speech.v1p1beta1.stub:com.google.cloud.speech.v1.stub:com.google.cloud.tasks.v2beta2.stub:com.google.cloud.texttospeech.v1beta1.stub:com.google.cloud.texttospeech.v1.stub:com.google.cloud.trace.v1.stub:com.google.cloud.trace.v2.stub:com.google.cloud.videointelligence.v1beta1.stub:com.google.cloud.videointelligence.v1beta2.stub:com.google.cloud.videointelligence.v1.stub:com.google.cloud.videointelligence.v1p1beta1.stub:com.google.cloud.vision.v1.stub:com.google.cloud.vision.v1p1beta1.stub:com.google.cloud.vision.v1p2beta1.stub:com.google.cloud.websecurityscanner.v1alpha.stub</packages>
                   </group>
                   <group>
                     <title>Deprecated packages</title>
-                    <packages>com.google.cloud.compute.*</packages>
+                    <packages>com.google.cloud.compute.deprecated*</packages>
                   </group>
                 </groups>
                 <links>
