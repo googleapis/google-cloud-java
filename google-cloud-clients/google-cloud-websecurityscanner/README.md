@@ -1,5 +1,5 @@
-Google Cloud Java Client for Web Security Scanner
-======================================
+Google Cloud Java Client for Cloud Security Scanner
+===================================================
 
 Java idiomatic client for [Cloud Security Scanner][cloud-websecurityscanner].
 
