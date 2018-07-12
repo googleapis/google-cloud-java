@@ -227,6 +227,9 @@ jobs:
     steps:
       - checkout
       - run:
+          name: print maven version
+          command: mvn --version
+      - run:
           <<: *anchor_build
       - run:
           name: Run mvn javadoc goal
