@@ -118,7 +118,7 @@ try {
   ApiFuture<String> messageIdFuture = publisher.publish(pubsubMessage);
 } finally {
   if (publisher != null) {
-  publisher.shutdown();
+    publisher.shutdown();
   }
 }
 ```
