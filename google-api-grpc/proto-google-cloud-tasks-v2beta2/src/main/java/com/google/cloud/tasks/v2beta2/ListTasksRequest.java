@@ -22,7 +22,6 @@ private static final long serialVersionUID = 0L;
   private ListTasksRequest() {
     parent_ = "";
     responseView_ = 0;
-    orderBy_ = "";
     pageSize_ = 0;
     pageToken_ = "";
   }
@@ -68,12 +67,6 @@ private static final long serialVersionUID = 0L;
             int rawValue = input.readEnum();
 
             responseView_ = rawValue;
-            break;
-          }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            orderBy_ = s;
             break;
           }
           case 32: {
@@ -199,54 +192,6 @@ private static final long serialVersionUID = 0L;
     return result == null ? com.google.cloud.tasks.v2beta2.Task.View.UNRECOGNIZED : result;
   }
 
-  public static final int ORDER_BY_FIELD_NUMBER = 3;
-  private volatile java.lang.Object orderBy_;
-  /**
-   * <pre>
-   * Sort order used for the query. The only fields supported for sorting
-   * are `schedule_time` and `pull_message.tag`. All results will be
-   * returned in approximately ascending order. The default ordering is by
-   * `schedule_time`.
-   * </pre>
-   *
-   * <code>string order_by = 3;</code>
-   */
-  public java.lang.String getOrderBy() {
-    java.lang.Object ref = orderBy_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      orderBy_ = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * Sort order used for the query. The only fields supported for sorting
-   * are `schedule_time` and `pull_message.tag`. All results will be
-   * returned in approximately ascending order. The default ordering is by
-   * `schedule_time`.
-   * </pre>
-   *
-   * <code>string order_by = 3;</code>
-   */
-  public com.google.protobuf.ByteString
-      getOrderByBytes() {
-    java.lang.Object ref = orderBy_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      orderBy_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
   public static final int PAGE_SIZE_FIELD_NUMBER = 4;
   private int pageSize_;
   /**
@@ -337,9 +282,6 @@ private static final long serialVersionUID = 0L;
     if (responseView_ != com.google.cloud.tasks.v2beta2.Task.View.VIEW_UNSPECIFIED.getNumber()) {
       output.writeEnum(2, responseView_);
     }
-    if (!getOrderByBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, orderBy_);
-    }
     if (pageSize_ != 0) {
       output.writeInt32(4, pageSize_);
     }
@@ -360,9 +302,6 @@ private static final long serialVersionUID = 0L;
     if (responseView_ != com.google.cloud.tasks.v2beta2.Task.View.VIEW_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(2, responseView_);
-    }
-    if (!getOrderByBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, orderBy_);
     }
     if (pageSize_ != 0) {
       size += com.google.protobuf.CodedOutputStream
@@ -390,8 +329,6 @@ private static final long serialVersionUID = 0L;
     result = result && getParent()
         .equals(other.getParent());
     result = result && responseView_ == other.responseView_;
-    result = result && getOrderBy()
-        .equals(other.getOrderBy());
     result = result && (getPageSize()
         == other.getPageSize());
     result = result && getPageToken()
@@ -411,8 +348,6 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getParent().hashCode();
     hash = (37 * hash) + RESPONSE_VIEW_FIELD_NUMBER;
     hash = (53 * hash) + responseView_;
-    hash = (37 * hash) + ORDER_BY_FIELD_NUMBER;
-    hash = (53 * hash) + getOrderBy().hashCode();
     hash = (37 * hash) + PAGE_SIZE_FIELD_NUMBER;
     hash = (53 * hash) + getPageSize();
     hash = (37 * hash) + PAGE_TOKEN_FIELD_NUMBER;
@@ -554,8 +489,6 @@ private static final long serialVersionUID = 0L;
 
       responseView_ = 0;
 
-      orderBy_ = "";
-
       pageSize_ = 0;
 
       pageToken_ = "";
@@ -584,7 +517,6 @@ private static final long serialVersionUID = 0L;
       com.google.cloud.tasks.v2beta2.ListTasksRequest result = new com.google.cloud.tasks.v2beta2.ListTasksRequest(this);
       result.parent_ = parent_;
       result.responseView_ = responseView_;
-      result.orderBy_ = orderBy_;
       result.pageSize_ = pageSize_;
       result.pageToken_ = pageToken_;
       onBuilt();
@@ -634,10 +566,6 @@ private static final long serialVersionUID = 0L;
       }
       if (other.responseView_ != 0) {
         setResponseViewValue(other.getResponseViewValue());
-      }
-      if (!other.getOrderBy().isEmpty()) {
-        orderBy_ = other.orderBy_;
-        onChanged();
       }
       if (other.getPageSize() != 0) {
         setPageSize(other.getPageSize());
@@ -877,110 +805,6 @@ private static final long serialVersionUID = 0L;
     public Builder clearResponseView() {
       
       responseView_ = 0;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object orderBy_ = "";
-    /**
-     * <pre>
-     * Sort order used for the query. The only fields supported for sorting
-     * are `schedule_time` and `pull_message.tag`. All results will be
-     * returned in approximately ascending order. The default ordering is by
-     * `schedule_time`.
-     * </pre>
-     *
-     * <code>string order_by = 3;</code>
-     */
-    public java.lang.String getOrderBy() {
-      java.lang.Object ref = orderBy_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        orderBy_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <pre>
-     * Sort order used for the query. The only fields supported for sorting
-     * are `schedule_time` and `pull_message.tag`. All results will be
-     * returned in approximately ascending order. The default ordering is by
-     * `schedule_time`.
-     * </pre>
-     *
-     * <code>string order_by = 3;</code>
-     */
-    public com.google.protobuf.ByteString
-        getOrderByBytes() {
-      java.lang.Object ref = orderBy_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        orderBy_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * Sort order used for the query. The only fields supported for sorting
-     * are `schedule_time` and `pull_message.tag`. All results will be
-     * returned in approximately ascending order. The default ordering is by
-     * `schedule_time`.
-     * </pre>
-     *
-     * <code>string order_by = 3;</code>
-     */
-    public Builder setOrderBy(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      orderBy_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Sort order used for the query. The only fields supported for sorting
-     * are `schedule_time` and `pull_message.tag`. All results will be
-     * returned in approximately ascending order. The default ordering is by
-     * `schedule_time`.
-     * </pre>
-     *
-     * <code>string order_by = 3;</code>
-     */
-    public Builder clearOrderBy() {
-      
-      orderBy_ = getDefaultInstance().getOrderBy();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Sort order used for the query. The only fields supported for sorting
-     * are `schedule_time` and `pull_message.tag`. All results will be
-     * returned in approximately ascending order. The default ordering is by
-     * `schedule_time`.
-     * </pre>
-     *
-     * <code>string order_by = 3;</code>
-     */
-    public Builder setOrderByBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      orderBy_ = value;
       onChanged();
       return this;
     }
