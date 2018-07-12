@@ -14,39 +14,41 @@ Java idiomatic client for [Google Cloud Platform][cloud-platform] services.
 
 This library supports the following Google Cloud Platform services with clients at a [GA](#versioning) quality level:
 -  [BigQuery](google-cloud-clients/google-cloud-bigquery) (GA)
--  [Stackdriver Logging](google-cloud-clients/google-cloud-logging) (GA)
--  [Stackdriver Monitoring](google-cloud-clients/google-cloud-monitoring) (GA)
 -  [Cloud Datastore](google-cloud-clients/google-cloud-datastore) (GA)
 -  [Cloud Natural Language](google-cloud-clients/google-cloud-language) (GA)
 -  [Cloud Pub/Sub](google-cloud-clients/google-cloud-pubsub) (GA)
 -  [Cloud Storage](google-cloud-clients/google-cloud-storage) (GA)
 -  [Cloud Translation](google-cloud-clients/google-cloud-translate) (GA)
 -  [Cloud Vision](google-cloud-clients/google-cloud-vision) (GA)
+-  [Stackdriver Logging](google-cloud-clients/google-cloud-logging) (GA)
+-  [Stackdriver Monitoring](google-cloud-clients/google-cloud-monitoring) (GA)
 
 This library supports the following Google Cloud Platform services with clients at a [Beta](#versioning) quality level:
 
 -  [BigQuery Data Transfer](google-cloud-clients/google-cloud-bigquerydatatransfer) (Beta)
 -  [Cloud Data Loss Prevention](google-cloud-clients/google-cloud-dlp) (Beta)
--  [Stackdriver Error Reporting](google-cloud-clients/google-cloud-errorreporting) (Beta)
 -  [Cloud Firestore](google-cloud-clients/google-cloud-firestore) (Beta)
+-  [Cloud IoT Core](google-cloud-clients/google-cloud-iot) (Beta)
 -  [Cloud KMS](google-cloud-clients/google-cloud-kms) (Beta)
 -  [Cloud Spanner](google-cloud-clients/google-cloud-spanner) (Beta)
+-  [Cloud Speech](google-cloud-clients/google-cloud-speech) (Alpha)
+-  [Cloud Text-to-Speech](google-cloud-clients/google-cloud-texttospeech) (Beta)
 -  [Cloud Video Intelligence](google-cloud-clients/google-cloud-video-intelligence) (Beta)
+-  [Kubernetes Engine](google-cloud-clients/google-cloud-container) (Beta)
+-  [Stackdriver Error Reporting](google-cloud-clients/google-cloud-errorreporting) (Beta)
 -  [Stackdriver Trace](google-cloud-clients/google-cloud-trace) (Beta)
--  [Text-to-Speech](google-cloud-clients/google-cloud-texttospeech) (Beta)
--  [IoT](google-cloud-clients/google-cloud-iot) (Beta)
 
 This library supports the following Google Cloud Platform services with clients at an [Alpha](#versioning) quality level:
 
+-  [Cloud Bigtable](google-cloud-clients/google-cloud-bigtable) (Alpha)
 -  [Cloud Compute](google-cloud-clients/google-cloud-compute) (Alpha)
 -  [Cloud Dataproc](google-cloud-clients/google-cloud-dataproc) (Alpha)
 -  [Cloud DNS](google-cloud-clients/google-cloud-dns) (Alpha)
 -  [Cloud OS Login](google-cloud-clients/google-cloud-os-login) (Alpha)
--  [Cloud Redis](google-cloud-clients/google-cloud-redis) (Alpha)
+-  [Cloud Memorystore for Redis](google-cloud-clients/google-cloud-redis) (Alpha)
 -  [Cloud Resource Manager](google-cloud-clients/google-cloud-resourcemanager) (Alpha)
--  [Cloud Speech](google-cloud-clients/google-cloud-speech) (Alpha)
+-  [Cloud Security Scanner](google-cloud-clients/google-cloud-websecurityscanner) (Alpha)
 -  [Dialogflow](google-cloud-clients/google-cloud-dialogflow) (Alpha)
--  [Web Security Scanner](google-cloud-clients/google-cloud-websecurityscanner) (Alpha)
 
 Quickstart
 ----------

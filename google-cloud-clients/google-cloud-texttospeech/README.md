@@ -1,7 +1,7 @@
-Google Cloud Java Client for Text-to-Speech
+Google Cloud Java Client for Cloud Text-to-Speech
 ======================================
 
-Java idiomatic client for [Text-to-Speech][cloud-texttospeech].
+Java idiomatic client for [Cloud Text-to-Speech][cloud-texttospeech].
 
 [![CircleCI](https://circleci.com/gh/GoogleCloudPlatform/google-cloud-java/tree/master.svg?style=shield)](https://circleci.com/gh/GoogleCloudPlatform/google-cloud-java/tree/master)
 [![Coverage Status](https://coveralls.io/repos/GoogleCloudPlatform/google-cloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/google-cloud-java?branch=master)
@@ -42,17 +42,17 @@ Authentication
 
 See the [Authentication](https://github.com/GoogleCloudPlatform/google-cloud-java#authentication) section in the base directory's README.
 
-About Google Cloud Text-to-Speech
+About Cloud Text-to-Speech
 ----------------------------
 
-Google [Text-to-Speech API][cloud-texttospeech] enables easy integration of Google text recognition technologies into developer applications. Send text and receive synthesized audio output from the Text-to-Speech API service.
+[Cloud Text-to-Speech API][cloud-texttospeech] enables easy integration of Google text recognition technologies into developer applications. Send text and receive synthesized audio output from the Cloud Text-to-Speech API service.
 
-See the [Text-to-Speech client library docs][texttospeech-client-lib-docs] to learn how to use this Text-to-Speech API Client Library.
+See the [Cloud Text-to-Speech client library docs][texttospeech-client-lib-docs] to learn how to use this Cloud Text-to-Speech API Client Library.
 
 Getting Started
 ---------------
 #### Prerequisites
-You will need a [Google Developers Console](https://console.developers.google.com/) project with the Text-to-Speech API enabled. [Follow these instructions](https://cloud.google.com/docs/authentication#preparation) to get your project set up. You will also need to set up the local development environment by [installing the Google Cloud SDK](https://cloud.google.com/sdk/) and running the following commands in command line: `gcloud auth login` and `gcloud config set project [YOUR PROJECT ID]`.
+You will need a [Google Developers Console](https://console.developers.google.com/) project with the Cloud Text-to-Speech API enabled. [Follow these instructions](https://cloud.google.com/docs/authentication#preparation) to get your project set up. You will also need to set up the local development environment by [installing the Google Cloud SDK](https://cloud.google.com/sdk/) and running the following commands in command line: `gcloud auth login` and `gcloud config set project [YOUR PROJECT ID]`.
 
 #### Installation and setup
 You'll need to obtain the `google-cloud-texttospeech` library.  See the [Quickstart](#quickstart) section to add `google-cloud-texttospeech` as a dependency in your code.
@@ -64,7 +64,7 @@ To get help, follow the instructions in the [shared Troubleshooting document](ht
 
 Transport
 ---------
-Text-to-Speech uses gRPC for the transport layer.
+Cloud Text-to-Speech uses gRPC for the transport layer.
 
 Java Versions
 -------------
@@ -97,6 +97,6 @@ Apache 2.0 - See [LICENSE] for more information.
 [code-of-conduct]:https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
 [LICENSE]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/LICENSE
 [cloud-platform]: https://cloud.google.com/
-[cloud-texttospeech]: https://cloud.google.com/texttospeech
-[texttospeech-product-docs]: https://cloud.google.com/texttospeech/docs
+[cloud-texttospeech]: https://cloud.google.com/text-to-speech
+[texttospeech-product-docs]: https://cloud.google.com/text-to-speech/docs
 [texttospeech-client-lib-docs]: https://googlecloudplatform.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/texttospeech/v1/package-summary.html

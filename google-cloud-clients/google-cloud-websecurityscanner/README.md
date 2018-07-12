@@ -1,7 +1,7 @@
-Google Cloud Java Client for Web Security Scanner
-======================================
+Google Cloud Java Client for Cloud Security Scanner
+===================================================
 
-Java idiomatic client for [Web Security Scanner][cloud-websecurityscanner].
+Java idiomatic client for [Cloud Security Scanner][cloud-websecurityscanner].
 
 [![CircleCI](https://circleci.com/gh/GoogleCloudPlatform/google-cloud-java/tree/master.svg?style=shield)](https://circleci.com/gh/GoogleCloudPlatform/google-cloud-java/tree/master)
 [![Coverage Status](https://coveralls.io/repos/GoogleCloudPlatform/google-cloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/google-cloud-java?branch=master)
@@ -42,17 +42,17 @@ Authentication
 
 See the [Authentication](https://github.com/GoogleCloudPlatform/google-cloud-java#authentication) section in the base directory's README.
 
-About Google Cloud Web Security Scanner
+About Cloud Security Scanner
 ----------------------------
 
-Google [Cloud Web Security Scanner][cloud-websecurityscanner] is a web security scanner for common vulnerabilities in Google App Engine applications.
+[Cloud Security Scanner][cloud-websecurityscanner] is a web security scanner for common vulnerabilities in Google App Engine applications.
 
-See the [Web Security Scanner client library docs][websecurityscanner-client-lib-docs] to learn how to use this Web Security Scanner Client Library.
+See the [Cloud Security Scanner client library docs][websecurityscanner-client-lib-docs] to learn how to use this Cloud Security Scanner Client Library.
 
 Getting Started
 ---------------
 #### Prerequisites
-You will need a [Google Developers Console](https://console.developers.google.com/) project with the Web Security Scanner API enabled. [Follow these instructions](https://cloud.google.com/docs/authentication#preparation) to get your project set up. You will also need to set up the local development environment by [installing the Google Cloud SDK](https://cloud.google.com/sdk/) and running the following commands in command line: `gcloud auth login` and `gcloud config set project [YOUR PROJECT ID]`.
+You will need a [Google Developers Console](https://console.developers.google.com/) project with the Cloud Security Scanner API enabled. [Follow these instructions](https://cloud.google.com/docs/authentication#preparation) to get your project set up. You will also need to set up the local development environment by [installing the Google Cloud SDK](https://cloud.google.com/sdk/) and running the following commands in command line: `gcloud auth login` and `gcloud config set project [YOUR PROJECT ID]`.
 
 #### Installation and setup
 You'll need to obtain the `google-cloud-websecurityscanner` library.  See the [Quickstart](#quickstart) section to add `google-cloud-websecurityscanner` as a dependency in your code.
@@ -64,7 +64,7 @@ To get help, follow the instructions in the [shared Troubleshooting document](ht
 
 Transport
 ---------
-Web Security Scanner uses gRPC for the transport layer.
+Cloud Security Scanner uses gRPC for the transport layer.
 
 Java Versions
 -------------
