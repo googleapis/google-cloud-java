@@ -792,7 +792,6 @@ public class HttpStorageRpc implements StorageRpc {
       if (userProject == null) {
         userProject = Option.USER_PROJECT.getString(req.targetOptions);
       }
-      String kmsKeyName = Option.KMS_KEY_NAME.getString(req.targetOptions);
 
       Long maxBytesRewrittenPerCall = req.megabytesRewrittenPerCall != null
           ? req.megabytesRewrittenPerCall * MEGABYTE : null;
@@ -812,8 +811,9 @@ public class HttpStorageRpc implements StorageRpc {
           .setIfMetagenerationNotMatch(Option.IF_METAGENERATION_NOT_MATCH.getLong(req.targetOptions))
           .setIfGenerationMatch(Option.IF_GENERATION_MATCH.getLong(req.targetOptions))
           .setIfGenerationNotMatch(Option.IF_GENERATION_NOT_MATCH.getLong(req.targetOptions))
+          .setDestinationPredefinedAcl(Option.PREDEFINED_ACL.getString(req.targetOptions))
           .setUserProject(userProject)
-          .setDestinationKmsKeyName(kmsKeyName);
+          .setDestinationKmsKeyName(Option.KMS_KEY_NAME.getString(req.targetOptions));
       HttpHeaders requestHeaders = rewrite.getRequestHeaders();
       setEncryptionHeaders(requestHeaders, SOURCE_ENCRYPTION_KEY_PREFIX, req.sourceOptions);
       setEncryptionHeaders(requestHeaders, ENCRYPTION_KEY_PREFIX, req.targetOptions);

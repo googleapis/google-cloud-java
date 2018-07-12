@@ -897,6 +897,34 @@ public class ITStorageTest {
   }
 
   @Test
+  public void testCopyBlobWithPredefinedAcl() {
+    String sourceBlobName = "test-copy-blob-source";
+    BlobId source = BlobId.of(BUCKET, sourceBlobName);
+    ImmutableMap<String, String> metadata = ImmutableMap.of("k", "v");
+    BlobInfo blob = BlobInfo.newBuilder(source)
+            .setContentType(CONTENT_TYPE)
+            .setMetadata(metadata)
+            .build();
+    Blob remoteBlob = storage.create(blob, BLOB_BYTE_CONTENT);
+    assertNotNull(remoteBlob);
+    String targetBlobName = "test-copy-blob-target";
+    Storage.CopyRequest req = Storage.CopyRequest.newBuilder()
+            .setSource(source)
+            .setTarget(BlobId.of(BUCKET, targetBlobName),
+                    Storage.BlobTargetOption.predefinedAcl(Storage.PredefinedAcl.PUBLIC_READ))
+            .build();
+    CopyWriter copyWriter = storage.copy(req);
+    assertEquals(BUCKET, copyWriter.getResult().getBucket());
+    assertEquals(targetBlobName, copyWriter.getResult().getName());
+    assertEquals(CONTENT_TYPE, copyWriter.getResult().getContentType());
+    assertEquals(metadata, copyWriter.getResult().getMetadata());
+    assertNotNull(copyWriter.getResult().getAcl(User.ofAllUsers()));
+    assertTrue(copyWriter.isDone());
+    assertTrue(remoteBlob.delete());
+    assertTrue(storage.delete(BUCKET, targetBlobName));
+  }
+
+  @Test
   public void testCopyBlobWithEncryptionKeys() {
     String sourceBlobName = "test-copy-blob-encryption-key-source";
     BlobId source = BlobId.of(BUCKET, sourceBlobName);
