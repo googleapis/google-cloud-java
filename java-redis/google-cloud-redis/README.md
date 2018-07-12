@@ -1,7 +1,7 @@
 Google Cloud Java Client for Redis
 ==================================
 
-Java idiomatic client for [Google Cloud Redis][cloud-redis].
+Java idiomatic client for [Cloud Memorystore for Redis][cloud-redis].
 
 [![CircleCI](https://circleci.com/gh/GoogleCloudPlatform/google-cloud-java/tree/master.svg?style=shield)](https://circleci.com/gh/GoogleCloudPlatform/google-cloud-java/tree/master)
 [![Coverage Status](https://coveralls.io/repos/GoogleCloudPlatform/google-cloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/google-cloud-java?branch=master)
@@ -42,20 +42,20 @@ Authentication
 
 See the [Authentication](https://github.com/GoogleCloudPlatform/google-cloud-java#authentication) section in the base directory's README.
 
-About Google Cloud Redis
+About Cloud Memorystore for Redis
 --------------------------
 
-[Google Cloud Redis API][cloud-redis] transfers data from partner
+[Cloud Memorystore for Redis API][cloud-redis] transfers data from partner
 SaaS applications to Google BigQuery on a scheduled, managed basis.
 
-See the [Redis client library docs][redis-client-lib-docs] to learn how to interact with the
+See the [Cloud Memorystore for Redis client library docs][redis-client-lib-docs] to learn how to interact with the
 Cloud Redis using this Client Library.
 
 Getting Started
 ---------------
 #### Prerequisites
 For this tutorial, you will need a
-[Google Developers Console](https://console.developers.google.com/) project with the Redis API
+[Google Developers Console](https://console.developers.google.com/) project with the Cloud Memorystore for Redis API
 enabled. You will need to [enable billing](https://support.google.com/cloud/answer/6158867?hl=en) to
 use Google Cloud Redis.
 [Follow these instructions](https://cloud.google.com/docs/authentication#preparation) to get your
@@ -69,7 +69,7 @@ to add `google-cloud-redis` as a dependency in your code.
 
 Transport
 ---------
-Redis uses gRPC for the transport layer.
+Cloud Memorystore for Redis uses gRPC for the transport layer.
 
 Java Versions
 -------------
@@ -79,7 +79,7 @@ Java 7 or above is required for using this client.
 Testing
 -------
 
-This library has tools to help make tests for code using Cloud Redis.
+This library has tools to help make tests for code using Cloud Memorystore for Redis.
 
 See [TESTING] to read more about testing.
 
