@@ -66,30 +66,6 @@ public interface ListTasksRequestOrBuilder extends
 
   /**
    * <pre>
-   * Sort order used for the query. The only fields supported for sorting
-   * are `schedule_time` and `pull_message.tag`. All results will be
-   * returned in approximately ascending order. The default ordering is by
-   * `schedule_time`.
-   * </pre>
-   *
-   * <code>string order_by = 3;</code>
-   */
-  java.lang.String getOrderBy();
-  /**
-   * <pre>
-   * Sort order used for the query. The only fields supported for sorting
-   * are `schedule_time` and `pull_message.tag`. All results will be
-   * returned in approximately ascending order. The default ordering is by
-   * `schedule_time`.
-   * </pre>
-   *
-   * <code>string order_by = 3;</code>
-   */
-  com.google.protobuf.ByteString
-      getOrderByBytes();
-
-  /**
-   * <pre>
    * Requested page size. Fewer tasks than requested might be returned.
    * The maximum page size is 1000. If unspecified, the page size will
    * be the maximum. Fewer tasks than requested might be returned,
