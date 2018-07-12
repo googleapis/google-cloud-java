@@ -201,7 +201,7 @@ public class TableAdminClient implements AutoCloseable {
    *  }</pre>
    *
    * @param createTable
-   * @return the newly created table
+   * @return ApiFuture<Table> the newly created table
    * @see CreateTable for createTable configurations
    */
   public ApiFuture<Table> createTableAsync(CreateTable createTable) {
