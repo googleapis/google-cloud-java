@@ -46,7 +46,7 @@ public class TableAdminResponses {
    * Converts the protocol buffer table to a simpler Table model with only the required elements
    *
    * @param table - Protobuf table
-   * @return Table - Table response wrapper
+   * @return Table response wrapper
    */
   @InternalApi
   public static Table convertTable(com.google.bigtable.admin.v2.Table table) {
@@ -58,7 +58,7 @@ public class TableAdminResponses {
    * is.
    *
    * @param tokenResponse - Protobuf ConsistencyTokenResponse
-   * @return ConsistencyToken - ConsistencyToken response wrapper
+   * @return ConsistencyToken response wrapper
    */
   @InternalApi
   public static ConsistencyToken convertTokenResponse(
@@ -71,7 +71,6 @@ public class TableAdminResponses {
    * elements
    *
    * @param clusterStatesMap - Protobuf clusterStatesMap
-   * @return Map<String, ClusterState>
    */
   @InternalApi
   public static Map<String, ClusterState> convertClusterStates(
@@ -90,7 +89,6 @@ public class TableAdminResponses {
    * elements
    *
    * @param columnFamiliesMap - Protobuf columnFamiliesMap
-   * @return Map<String, ColumnFamily>
    */
   @InternalApi
   public static Map<String, ColumnFamily> convertColumnFamilies(
@@ -120,8 +118,6 @@ public class TableAdminResponses {
     /**
      * Gets the unique name of the table in the format:
      * projects/{project}/instances/{instance}/tables/{tableId}
-     *
-     * @return TableName
      */
     public TableName getTableName() {
       return tableName;
@@ -130,8 +126,6 @@ public class TableAdminResponses {
     /**
      * Returns state of the table by clusters in the instance as map of clusterId and {@link
      * ClusterState}
-     *
-     * @return Map<String, ClusterState>
      */
     public Map<String, ClusterState> getClusterStatesMap() {
       return clusterStates;
@@ -139,8 +133,6 @@ public class TableAdminResponses {
 
     /**
      * Returns a map of columfamilies in the table keyed by columnfamily and name
-     *
-     * @return Map<String, ColumnFamily>
      */
     public Map<String, ColumnFamily> getColumnFamiliesMap() {
       return columnFamilies;
@@ -148,8 +140,6 @@ public class TableAdminResponses {
 
     /**
      * Returns state of the table by clusters in the instance as a Collection
-     *
-     * @return Collection<ClusterState>
      */
     public Collection<ClusterState> getClusterStates() {
       return clusterStates.values();
@@ -157,8 +147,6 @@ public class TableAdminResponses {
 
     /**
      * Returns all columnfamilies in the table as a Collection
-     *
-     * @return
      */
     public Collection<ColumnFamily> getColumnFamiles() {
       return columnFamilies.values();
@@ -186,8 +174,6 @@ public class TableAdminResponses {
 
     /**
      * Gets the cluster Id
-     *
-     * @return String
      */
     public String getId() {
       return id;
@@ -195,8 +181,6 @@ public class TableAdminResponses {
 
     /**
      * Gets the ReplicationState of the table for this cluster
-     *
-     * @return ReplicationState
      */
     public ReplicationState getReplicationState() {
       return replicationState;
@@ -228,8 +212,6 @@ public class TableAdminResponses {
 
     /**
      * Gets the columnfamily name
-     *
-     * @return String
      */
     public String getId() {
       return id;
@@ -237,8 +219,6 @@ public class TableAdminResponses {
 
     /**
      * Get's the GCRule configured for the columnfamily
-     *
-     * @return GCRule
      */
     public GCRule getGCRule() {
       return gCRule;
@@ -246,8 +226,6 @@ public class TableAdminResponses {
 
     /**
      * Returns true if a GCRule has been configured for the family
-     *
-     * @return
      */
     public boolean hasGcRule() {
       return !RuleCase.RULE_NOT_SET.equals(gCRule.toProto().getRuleCase());

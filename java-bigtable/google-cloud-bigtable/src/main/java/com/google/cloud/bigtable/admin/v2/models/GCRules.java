@@ -37,8 +37,6 @@ public final class GCRules {
 
   /**
    * Creates a new instance of the IntersectionRule
-   *
-   * @return IntersectionRule
    */
   public IntersectionRule intersection() {
     return new IntersectionRule();
@@ -46,8 +44,6 @@ public final class GCRules {
 
   /**
    * Creates a new instance of the IntersectionRule
-   *
-   * @return UnionRule
    */
   public UnionRule union() {
     return new UnionRule();
@@ -57,7 +53,6 @@ public final class GCRules {
    * Creates a new instance of the VersionRule
    *
    * @param maxVersion - maximum number of cell versions to keep
-   * @return VersionRule
    */
   public VersionRule maxVersions(int maxVersion) {
     return new VersionRule(maxVersion);
@@ -68,7 +63,6 @@ public final class GCRules {
    *
    * @param maxAge - maximum age of the cell to keep
    * @param timeUnit - timeunit for the age
-   * @return DurationRule
    */
   public DurationRule maxAge(long maxAge, TimeUnit timeUnit) {
     return maxAge(Duration.ofNanos(TimeUnit.NANOSECONDS.convert(maxAge, timeUnit)));
@@ -78,7 +72,6 @@ public final class GCRules {
    * Creates a new instance of the DurationRule
    *
    * @param duration - age expressed as duration
-   * @return DurationRule
    */
   public DurationRule maxAge(Duration duration) {
     return new DurationRule(duration);
@@ -86,8 +79,6 @@ public final class GCRules {
 
   /**
    * Creates an empty default rule
-   *
-   * @return DefaultRule
    */
   public DefaultRule defaultRule() {
     return new DefaultRule();
@@ -108,7 +99,6 @@ public final class GCRules {
      * Adds a new GCRule
      *
      * @param rule
-     * @return IntersectionRule
      */
     public IntersectionRule rule(@Nonnull GCRule rule) {
       rulesList.add(rule);
@@ -117,8 +107,6 @@ public final class GCRules {
 
     /**
      * Gets the list of child rules
-     *
-     * @return List<GCRule>
      */
     public List<GCRule> getRulesList() {
       return rulesList;
@@ -160,7 +148,6 @@ public final class GCRules {
      * Adds a new GCRule
      *
      * @param rule
-     * @return UnionRule
      */
     public UnionRule rule(@Nonnull GCRule rule) {
       rulesList.add(rule);
@@ -169,8 +156,6 @@ public final class GCRules {
 
     /**
      * Gets the list of child rules
-     *
-     * @return List<GCRule>
      */
     public List<GCRule> getRulesList() {
       return rulesList;
@@ -236,8 +221,6 @@ public final class GCRules {
 
     /**
      * Gets the configured maximum age
-     *
-     * @return Duration
      */
     public Duration getMaxAge() {
       return Duration.ofSeconds(builder.getSeconds(), builder.getNanos());

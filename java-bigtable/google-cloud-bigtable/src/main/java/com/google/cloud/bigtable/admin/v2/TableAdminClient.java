@@ -152,8 +152,6 @@ public class TableAdminClient implements AutoCloseable {
 
   /**
    * Gets the instanceName this client is associated to
-   *
-   * @return InstanceName
    */
   public InstanceName getInstanceName() {
     return instanceName;
@@ -179,7 +177,7 @@ public class TableAdminClient implements AutoCloseable {
    * }</pre>
    *
    * @param createTable
-   * @return Table - the newly created table
+   * @return the newly created table
    * @see CreateTable for createTable configurations
    */
   public Table createTable(CreateTable createTable) {
@@ -203,7 +201,7 @@ public class TableAdminClient implements AutoCloseable {
    *  }</pre>
    *
    * @param createTable
-   * @return ApiFuture<Table> - the newly created table
+   * @return the newly created table
    * @see CreateTable for createTable configurations
    */
   public ApiFuture<Table> createTableAsync(CreateTable createTable) {
@@ -240,7 +238,7 @@ public class TableAdminClient implements AutoCloseable {
    * }</pre>
    *
    * @param modifyFamily
-   * @return Table - Modified table
+   * @return the modified table
    * @see ModifyFamilies for modifyFamily options
    */
   public Table modifyFamilies(ModifyFamilies modifyFamily) {
@@ -279,7 +277,7 @@ public class TableAdminClient implements AutoCloseable {
    * }</pre>
    *
    * @param modifyFamily
-   * @return ApiFuture<Table> - Modified table
+   * @return Modified table
    * @see ModifyFamilies for modifyFamily options
    */
   public ApiFuture<Table> modifyFamiliesAsync(ModifyFamilies modifyFamily) {
@@ -334,7 +332,6 @@ public class TableAdminClient implements AutoCloseable {
    * }</pre>
    *
    * @param tableId
-   * @return Table
    */
   public Table getTable(String tableId) {
     com.google.bigtable.admin.v2.Table table =
@@ -354,7 +351,6 @@ public class TableAdminClient implements AutoCloseable {
    * }</pre>
    *
    * @param tableId
-   * @return ApiFuture<Table>
    */
   public ApiFuture<Table> getTableAsync(String tableId) {
     return transformToTableResponse(
@@ -371,9 +367,6 @@ public class TableAdminClient implements AutoCloseable {
    *   client.listTables();
    * }
    * }</pre>
-   *
-   * @param tableId
-   * @return List<TableName>
    */
   public List<TableName> listTables() {
     ListTablesResponse listResp = this.stub.listTablesCallable().call(composeListTableRequest());
@@ -390,9 +383,6 @@ public class TableAdminClient implements AutoCloseable {
    *   client.listTablesAsync();
    * }
    * }</pre>
-   *
-   * @param tableId
-   * @return List<TableName>
    */
   public ApiFuture<List<TableName>> listTablesAsync() {
     ApiFuture<ListTablesResponse> listResp =
@@ -512,7 +502,6 @@ public class TableAdminClient implements AutoCloseable {
    * }</pre>
    *
    * @param tableId
-   * @return ApiFuture<Void>
    */
   public ApiFuture<Void> dropAllRowsAsync(String tableId) {
     return transformToVoid(
@@ -534,7 +523,6 @@ public class TableAdminClient implements AutoCloseable {
    * }</pre>
    *
    * @param tableId
-   * @return ConsistencyToken
    */
   public ConsistencyToken generateConsistencyToken(String tableId) {
     return TableAdminResponses.convertTokenResponse(
@@ -556,7 +544,6 @@ public class TableAdminClient implements AutoCloseable {
    * }</pre>
    *
    * @param tableId
-   * @return ApiFuture<ConsistencyToken>
    */
   public ApiFuture<ConsistencyToken> generateConsistencyTokenAsync(String tableId) {
     ApiFuture<GenerateConsistencyTokenResponse> tokenResp =
@@ -587,7 +574,6 @@ public class TableAdminClient implements AutoCloseable {
    *
    * @param tableId
    * @param token
-   * @return boolean
    */
   public boolean isConsistent(String tableId, ConsistencyToken token) {
     return stub.checkConsistencyCallable()
@@ -608,7 +594,6 @@ public class TableAdminClient implements AutoCloseable {
    *
    * @param tableId
    * @param token
-   * @return ApiFuture<Boolean>
    */
   public ApiFuture<Boolean> isConsistentAsync(String tableId, ConsistencyToken token) {
     ApiFuture<CheckConsistencyResponse> checkConsResp =
@@ -629,7 +614,7 @@ public class TableAdminClient implements AutoCloseable {
    * projects/{project}/instances/{instance}/tables/{tableId}
    *
    * @param tableId
-   * @return String - unique table name
+   * @return unique table name
    */
   @VisibleForTesting
   String getTableName(String tableId) {
@@ -638,8 +623,6 @@ public class TableAdminClient implements AutoCloseable {
 
   /**
    * Helper method to build an instance of ListTablesRequest
-   *
-   * @return ListTablesRequest
    */
   @VisibleForTesting
   ListTablesRequest composeListTableRequest() {
@@ -650,7 +633,6 @@ public class TableAdminClient implements AutoCloseable {
    * Helper method to build an instance of GetTableRequest
    *
    * @param tableId
-   * @return GetTableRequest
    */
   @VisibleForTesting
   GetTableRequest composeGetTableRequest(String tableId) {
@@ -661,7 +643,6 @@ public class TableAdminClient implements AutoCloseable {
    * Helper method to build an instance of DeleteTableRequest
    *
    * @param tableId
-   * @return DeleteTableRequest
    */
   @VisibleForTesting
   DeleteTableRequest composeDeleteTableRequest(String tableId) {
@@ -674,7 +655,6 @@ public class TableAdminClient implements AutoCloseable {
    * @param tableId
    * @param rowKeyPrefix
    * @param boolean dropAll
-   * @return DropRowRangeRequest
    */
   @VisibleForTesting
   DropRowRangeRequest composeDropRowRangeRequest(
@@ -693,7 +673,6 @@ public class TableAdminClient implements AutoCloseable {
    * Helper method to build an instance of GenerateConsistencyTokenRequest
    *
    * @param tableId
-   * @return GenerateConsistencyTokenRequest
    */
   @VisibleForTesting
   GenerateConsistencyTokenRequest composeGenerateConsistencyTokenRequest(String tableId) {
@@ -704,7 +683,6 @@ public class TableAdminClient implements AutoCloseable {
    * Helper method to convert ListTablesResponse to List<TableName>
    *
    * @param listTablesResponse
-   * @return List<TableName>
    */
   @VisibleForTesting
   static List<TableName> convertToTableNames(ListTablesResponse listTablesResponse) {
@@ -720,7 +698,6 @@ public class TableAdminClient implements AutoCloseable {
    * Helper method to transform ApiFuture<com.google.bigtable.admin.v2.Table> to ApiFuture<Table>
    *
    * @param future
-   * @return ApiFuture<Table>
    */
   @VisibleForTesting
   static ApiFuture<Table> transformToTableResponse(
@@ -739,7 +716,6 @@ public class TableAdminClient implements AutoCloseable {
    * Helper method to transform ApiFuture<Empty> to ApiFuture<Void>
    *
    * @param future
-   * @return ApiFuture<Void>
    */
   @VisibleForTesting
   static ApiFuture<Void> transformToVoid(ApiFuture<Empty> future) {
