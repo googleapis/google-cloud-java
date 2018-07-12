@@ -5,6 +5,7 @@ com.google.cloud.dataproc.v1
 com.google.cloud.dialogflow.v2
 com.google.cloud.dialogflow.v2beta1
 com.google.cloud.iot.v1
+com.google.cloud.kms.v1
 com.google.cloud.language.v1
 com.google.cloud.language.v1beta2
 com.google.cloud.oslogin.common
@@ -13,6 +14,7 @@ com.google.cloud.redis.v1beta1
 com.google.cloud.speech.v1
 com.google.cloud.speech.v1beta1
 com.google.cloud.speech.v1p1beta1
+com.google.cloud.tasks.v2beta2
 com.google.cloud.texttospeech.v1
 com.google.cloud.texttospeech.v1beta1
 com.google.cloud.videointelligence.v1

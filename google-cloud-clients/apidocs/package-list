@@ -7,6 +7,7 @@ com.google.cloud.bigquery.spi.v2
 com.google.cloud.bigquery.testing
 com.google.cloud.bigtable
 com.google.cloud.bigtable.admin.v2
+com.google.cloud.bigtable.admin.v2.models
 com.google.cloud.bigtable.admin.v2.stub
 com.google.cloud.bigtable.data.v2
 com.google.cloud.bigtable.data.v2.internal
@@ -52,6 +53,8 @@ com.google.cloud.grpc
 com.google.cloud.http
 com.google.cloud.iot.v1
 com.google.cloud.iot.v1.stub
+com.google.cloud.kms.v1
+com.google.cloud.kms.v1.stub
 com.google.cloud.language.v1
 com.google.cloud.language.v1.stub
 com.google.cloud.language.v1beta2
@@ -100,6 +103,8 @@ com.google.cloud.storage.contrib.nio.testing
 com.google.cloud.storage.spi
 com.google.cloud.storage.spi.v1
 com.google.cloud.storage.testing
+com.google.cloud.tasks.v2beta2
+com.google.cloud.tasks.v2beta2.stub
 com.google.cloud.testing
 com.google.cloud.texttospeech.v1
 com.google.cloud.texttospeech.v1.stub
