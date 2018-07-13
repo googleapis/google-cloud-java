@@ -531,6 +531,10 @@ public class ITGcsNio {
         got.add(path);
       }
       assertThat(got).containsExactlyElementsIn(goodPaths);
+      // clean up
+      for (Path path : paths) {
+        Files.delete(path);
+      }
     }
   }
 
@@ -556,10 +560,12 @@ public class ITGcsNio {
 
   @Test
   public void testListFilesInRootDirectory() throws IOException {
+    // We must explicitly set the storageOptions, because the unit tests
+    // set the fake storage as default but we want to access the real storage.
     CloudStorageFileSystem fs = CloudStorageFileSystem.forBucket(
       BUCKET, CloudStorageConfiguration.builder().permitEmptyPathComponents(true)
-      .build());
-    
+      .build(), storageOptions);
+
     // test absolute path
     Path rootPath = fs.getPath("");
     List<String> objectNames = new ArrayList<String>();
