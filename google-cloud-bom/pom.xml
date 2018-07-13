@@ -108,6 +108,24 @@
         <role>Developer</role>
       </roles>
     </developer>
+    <developer>
+      <id>jart</id>
+      <name>Justine Tunney</name>
+      <email>jart@google.com</email>
+      <organization>Google</organization>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
+    <developer>
+      <id>jean-philippe-martin</id>
+      <name>Jean-Philippe Martin</name>
+      <email>jpmartin@verily.com</email>
+      <organization>Verily</organization>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
   </developers>
   <organization>
     <name>Google</name>
