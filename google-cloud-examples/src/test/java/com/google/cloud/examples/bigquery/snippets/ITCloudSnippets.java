@@ -21,7 +21,6 @@ import static org.junit.Assert.assertTrue;
 
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQuery.DatasetDeleteOption;
-import com.google.cloud.bigquery.BigQueryOptions;
 import com.google.cloud.bigquery.DatasetInfo;
 import com.google.cloud.bigquery.FieldValueList;
 import com.google.cloud.bigquery.Job;
@@ -29,13 +28,12 @@ import com.google.cloud.bigquery.JobInfo;
 import com.google.cloud.bigquery.QueryJobConfiguration;
 import com.google.cloud.bigquery.TableResult;
 import com.google.cloud.bigquery.testing.RemoteBigQueryHelper;
+import com.google.common.collect.Lists;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeoutException;
-
-import com.google.common.collect.Lists;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -160,33 +158,33 @@ public class ITCloudSnippets {
     //     .setProjectId(projectId)
     //     .build().getService();
 
-    String sql = String.format(
+    String sql =
+        String.format(
             "CREATE VIEW `%s.%s.%s`\n"
-            + "OPTIONS(\n"
-            + "  expiration_timestamp=TIMESTAMP_ADD(\n"
-            + "    CURRENT_TIMESTAMP(), INTERVAL 48 HOUR),\n"
-            + "  friendly_name=\"new_view\",\n"
-            + "  description=\"a view that expires in 2 days\",\n"
-            + "  labels=[(\"org_unit\", \"development\")]\n"
-            + ")\n"
-            + "AS SELECT name, state, year, number\n"
-            + "  FROM `bigquery-public-data.usa_names.usa_1910_current`\n"
-            + "  WHERE state LIKE 'W%%';\n",
+                + "OPTIONS(\n"
+                + "  expiration_timestamp=TIMESTAMP_ADD(\n"
+                + "    CURRENT_TIMESTAMP(), INTERVAL 48 HOUR),\n"
+                + "  friendly_name=\"new_view\",\n"
+                + "  description=\"a view that expires in 2 days\",\n"
+                + "  labels=[(\"org_unit\", \"development\")]\n"
+                + ")\n"
+                + "AS SELECT name, state, year, number\n"
+                + "  FROM `bigquery-public-data.usa_names.usa_1910_current`\n"
+                + "  WHERE state LIKE 'W%%';\n",
             projectId, datasetId, tableId);
 
     // Make an API request to run the query job.
-    Job job = bigquery.create(
-            JobInfo.of(QueryJobConfiguration.newBuilder(sql).build()));
+    Job job = bigquery.create(JobInfo.of(QueryJobConfiguration.newBuilder(sql).build()));
 
     // Wait for the query to finish.
     job = job.waitFor();
 
     QueryJobConfiguration jobConfig = (QueryJobConfiguration) job.getConfiguration();
     System.out.printf(
-            "Created new view \"%s.%s.%s\".\n",
-            jobConfig.getDestinationTable().getProject(),
-            jobConfig.getDestinationTable().getDataset(),
-            jobConfig.getDestinationTable().getTable());
+        "Created new view \"%s.%s.%s\".\n",
+        jobConfig.getDestinationTable().getProject(),
+        jobConfig.getDestinationTable().getDataset(),
+        jobConfig.getDestinationTable().getTable());
     // [END bigquery_ddl_create_view]
 
     String got = bout.toString();

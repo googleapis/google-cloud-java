@@ -17,19 +17,7 @@
 package com.google.cloud.bigquery;
 
 import com.google.api.core.InternalApi;
-import com.google.api.gax.paging.Page;
 import com.google.cloud.PageImpl;
-import com.google.common.base.Function;
-import com.google.common.base.MoreObjects;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.Iterables;
-import com.google.common.collect.Iterators;
-
-import javax.annotation.Nullable;
-import java.io.Serializable;
-import java.util.Objects;
-
-import static com.google.common.base.Preconditions.checkNotNull;
 
 public class EmptyTableResult extends TableResult {
 
@@ -41,9 +29,6 @@ public class EmptyTableResult extends TableResult {
    */
   @InternalApi("Exposed for testing")
   public EmptyTableResult() {
-    super(null, 0, new PageImpl<FieldValueList>(
-            null,
-            "",
-            null));
+    super(null, 0, new PageImpl<FieldValueList>(null, "", null));
   }
 }

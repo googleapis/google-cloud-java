@@ -27,6 +27,7 @@ import com.google.cloud.bigquery.BigQuery.JobOption;
 import com.google.cloud.bigquery.BigQuery.QueryResultsOption;
 import com.google.cloud.bigquery.BigQuery.TableDataListOption;
 import com.google.cloud.bigquery.JobConfiguration.Type;
+import com.google.common.collect.ImmutableList;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.util.ArrayList;
@@ -35,8 +36,6 @@ import java.util.List;
 import java.util.Objects;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
-
-import com.google.common.collect.ImmutableList;
 import org.threeten.bp.Duration;
 
 /**
@@ -156,7 +155,8 @@ public class Job extends JobInfo {
    * Checks if this job exists.
    *
    * <p>Example of checking that a job exists.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * if (!job.exists()) {
    *   // job doesn't exist
    * }
@@ -175,7 +175,8 @@ public class Job extends JobInfo {
    * not exist this method returns {@code true}.
    *
    * <p>Example of waiting for a job until it reports that it is done.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * while (!job.isDone()) {
    *   Thread.sleep(1000L);
    * }
@@ -198,7 +199,8 @@ public class Job extends JobInfo {
    * 12 hours as a total timeout and unlimited number of attempts.
    *
    * <p>Example usage of {@code waitFor()}.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * Job completedJob = job.waitFor();
    * if (completedJob == null) {
    *   // job no longer exists
@@ -210,7 +212,8 @@ public class Job extends JobInfo {
    * }</pre>
    *
    * <p>Example usage of {@code waitFor()} with checking period and timeout.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * Job completedJob =
    *     job.waitFor(
    *         RetryOption.initialRetryDelay(Duration.ofSeconds(1)),
@@ -295,8 +298,7 @@ public class Job extends JobInfo {
     }
     if (job.getStatus().getError() != null) {
       throw new JobException(
-          getJobId(),
-          ImmutableList.copyOf(job.getStatus().getExecutionErrors()));
+          getJobId(), ImmutableList.copyOf(job.getStatus().getExecutionErrors()));
     }
 
     // If there are no rows in the result, this may have been a DDL query.
@@ -373,7 +375,8 @@ public class Job extends JobInfo {
    * Fetches current job's latest information. Returns {@code null} if the job does not exist.
    *
    * <p>Example of reloading all fields until job status is DONE.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * while (job.getStatus().getState() != JobStatus.State.DONE) {
    *   Thread.sleep(1000L);
    *   job = job.reload();
@@ -381,7 +384,8 @@ public class Job extends JobInfo {
    * }</pre>
    *
    * <p>Example of reloading status field until job status is DONE.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * while (job.getStatus().getState() != JobStatus.State.DONE) {
    *   Thread.sleep(1000L);
    *   job = job.reload(BigQuery.JobOption.fields(BigQuery.JobField.STATUS));
@@ -401,7 +405,8 @@ public class Job extends JobInfo {
    * Sends a job cancel request.
    *
    * <p>Example of cancelling a job.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * if (job.cancel()) {
    *   return true; // job successfully cancelled
    * } else {

@@ -22,11 +22,10 @@ import com.google.cloud.StringEnumValue;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
-
-import javax.annotation.Nullable;
 import java.io.Serializable;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 /**
  * A Google BigQuery Job status. Objects of this class can be examined when polling an asynchronous
@@ -36,9 +35,7 @@ public class JobStatus implements Serializable {
 
   private static final long serialVersionUID = -714976456815445365L;
 
-  /**
-   * Possible states that a BigQuery Job can assume.
-   */
+  /** Possible states that a BigQuery Job can assume. */
   public static final class State extends StringEnumValue {
     private static final long serialVersionUID = 818920627219751204L;
 
@@ -50,18 +47,12 @@ public class JobStatus implements Serializable {
           }
         };
 
-    private static final StringEnumType<State> type = new StringEnumType(
-        State.class,
-        CONSTRUCTOR);
+    private static final StringEnumType<State> type = new StringEnumType(State.class, CONSTRUCTOR);
 
-    /**
-     * The BigQuery Job is waiting to be executed.
-     */
+    /** The BigQuery Job is waiting to be executed. */
     public static final State PENDING = type.createAndRegister("PENDING");
 
-    /**
-     * The BigQuery Job is being executed.
-     */
+    /** The BigQuery Job is being executed. */
     public static final State RUNNING = type.createAndRegister("RUNNING");
 
     /**
@@ -75,23 +66,19 @@ public class JobStatus implements Serializable {
     }
 
     /**
-     * Get the State for the given String constant, and throw an exception if the constant is
-     * not recognized.
+     * Get the State for the given String constant, and throw an exception if the constant is not
+     * recognized.
      */
     public static State valueOfStrict(String constant) {
       return type.valueOfStrict(constant);
     }
 
-    /**
-     * Get the State for the given String constant, and allow unrecognized values.
-     */
+    /** Get the State for the given String constant, and allow unrecognized values. */
     public static State valueOf(String constant) {
       return type.valueOf(constant);
     }
 
-    /**
-     * Return the known values for State.
-     */
+    /** Return the known values for State. */
     public static State[] values() {
       return type.values();
     }
@@ -113,36 +100,33 @@ public class JobStatus implements Serializable {
     this.executionErrors = executionErrors != null ? ImmutableList.copyOf(executionErrors) : null;
   }
 
-
   /**
-   * Returns the state of the job. A {@link State#PENDING} job is waiting to be executed. A
-   * {@link State#RUNNING} is being executed. A {@link State#DONE} job has completed either
-   * succeeding or failing. If failed {@link #getError()} will be non-null.
+   * Returns the state of the job. A {@link State#PENDING} job is waiting to be executed. A {@link
+   * State#RUNNING} is being executed. A {@link State#DONE} job has completed either succeeding or
+   * failing. If failed {@link #getError()} will be non-null.
    */
   public State getState() {
     return state;
   }
 
-
   /**
-   * Returns the final error result of the job. If present, indicates that the job has completed
-   * and was unsuccessful.
+   * Returns the final error result of the job. If present, indicates that the job has completed and
+   * was unsuccessful.
    *
-   * @see <a href="https://cloud.google.com/bigquery/troubleshooting-errors">
-   *     Troubleshooting Errors</a>
+   * @see <a href="https://cloud.google.com/bigquery/troubleshooting-errors">Troubleshooting
+   *     Errors</a>
    */
   @Nullable
   public BigQueryError getError() {
     return error;
   }
 
-
   /**
    * Returns all errors encountered during the running of the job. Errors here do not necessarily
    * mean that the job has completed or was unsuccessful.
    *
-   * @see <a href="https://cloud.google.com/bigquery/troubleshooting-errors">
-   *     Troubleshooting Errors</a>
+   * @see <a href="https://cloud.google.com/bigquery/troubleshooting-errors">Troubleshooting
+   *     Errors</a>
    */
   public List<BigQueryError> getExecutionErrors() {
     return executionErrors;
@@ -166,8 +150,8 @@ public class JobStatus implements Serializable {
   public final boolean equals(Object obj) {
     return obj == this
         || obj != null
-        && obj.getClass().equals(JobStatus.class)
-        && Objects.equals(toPb(), ((JobStatus) obj).toPb());
+            && obj.getClass().equals(JobStatus.class)
+            && Objects.equals(toPb(), ((JobStatus) obj).toPb());
   }
 
   com.google.api.services.bigquery.model.JobStatus toPb() {
