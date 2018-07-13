@@ -24,8 +24,7 @@ public class EmptyTableResult extends TableResult {
   private static final long serialVersionUID = -4831062717210349819L;
 
   /**
-   * If {@code schema} is non-null, {@code TableResult} adds the schema to {@code FieldValueList}s
-   * when iterating through them. {@code pageNoSchema} must not be null.
+   * An empty {@code TableResult} to avoid making API requests to unlistable tables.
    */
   @InternalApi("Exposed for testing")
   public EmptyTableResult() {
