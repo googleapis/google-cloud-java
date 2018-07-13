@@ -35,6 +35,8 @@ import java.util.List;
 import java.util.Objects;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
+
+import com.google.common.collect.ImmutableList;
 import org.threeten.bp.Duration;
 
 /**
@@ -285,10 +287,25 @@ public class Job extends JobInfo {
     QueryResponse response =
         waitForQueryResults(
             DEFAULT_JOB_WAIT_SETTINGS, waitOptions.toArray(new QueryResultsOption[0]));
-    if (response.getSchema() == null) {
-      throw new JobException(getJobId(), response.getErrors());
+
+    // Get the job resource to determine if it has errored.
+    Job job = this;
+    if (!this.isDone()) {
+      job = reload();
     }
-    
+    if (job.getStatus().getError() != null) {
+      throw new JobException(
+          getJobId(),
+          ImmutableList.copyOf(job.getStatus().getExecutionErrors()));
+    }
+
+    // If there are no rows in the result, this may have been a DDL query.
+    // Listing table data might fail, such as with CREATE VIEW queries.
+    // Avoid a tabledata.list API request by returning an empty TableResult.
+    if (response.getTotalRows() == 0) {
+      return new EmptyTableResult();
+    }
+
     TableId table = ((QueryJobConfiguration) getConfiguration()).getDestinationTable();
     return bigquery.listTableData(
         table, response.getSchema(), listOptions.toArray(new TableDataListOption[0]));

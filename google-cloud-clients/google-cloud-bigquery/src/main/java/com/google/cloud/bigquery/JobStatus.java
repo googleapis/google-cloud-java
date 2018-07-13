@@ -23,6 +23,7 @@ import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 
+import javax.annotation.Nullable;
 import java.io.Serializable;
 import java.util.List;
 import java.util.Objects;
@@ -130,6 +131,7 @@ public class JobStatus implements Serializable {
    * @see <a href="https://cloud.google.com/bigquery/troubleshooting-errors">
    *     Troubleshooting Errors</a>
    */
+  @Nullable
   public BigQueryError getError() {
     return error;
   }
