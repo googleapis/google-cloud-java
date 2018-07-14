@@ -18,8 +18,10 @@ package com.google.cloud.bigquery;
 
 import static com.google.common.collect.ObjectArrays.concat;
 import static com.google.common.truth.Truth.assertThat;
+import static org.easymock.EasyMock.anyObject;
 import static org.easymock.EasyMock.createMock;
 import static org.easymock.EasyMock.createStrictMock;
+import static org.easymock.EasyMock.eq;
 import static org.easymock.EasyMock.expect;
 import static org.easymock.EasyMock.replay;
 import static org.easymock.EasyMock.verify;
@@ -225,6 +227,82 @@ public class JobTest {
   }
 
   @Test
+  public void testWaitForAndGetQueryResultsEmpty() throws InterruptedException {
+    QueryJobConfiguration jobConfig =
+            QueryJobConfiguration.newBuilder("CREATE VIEW").setDestinationTable(TABLE_ID1).build();
+    QueryStatistics jobStatistics =
+            QueryStatistics.newBuilder()
+                    .setCreationTimestamp(1L)
+                    .setEndTime(3L)
+                    .setStartTime(2L)
+                    .build();
+    JobInfo jobInfo =
+            JobInfo.newBuilder(jobConfig)
+                    .setJobId(JOB_ID)
+                    .setStatistics(jobStatistics)
+                    .setJobId(JOB_ID)
+                    .setEtag(ETAG)
+                    .setGeneratedId(GENERATED_ID)
+                    .setSelfLink(SELF_LINK)
+                    .setUserEmail(EMAIL)
+                    .setStatus(JOB_STATUS)
+                    .build();
+
+    initializeExpectedJob(2, jobInfo);
+    JobStatus status = createStrictMock(JobStatus.class);
+    expect(bigquery.getOptions()).andReturn(mockOptions);
+    expect(mockOptions.getClock()).andReturn(CurrentMillisClock.getDefaultClock()).times(2);
+    Job completedJob = expectedJob.toBuilder().setStatus(status).build();
+    // TODO(pongad): remove when we bump gax to 1.15.
+    Page<FieldValueList> emptyPage =
+            new Page<FieldValueList>() {
+              @Override
+              public boolean hasNextPage() {
+                return false;
+              }
+
+              @Override
+              public String getNextPageToken() {
+                return "";
+              }
+
+              @Override
+              public Page<FieldValueList> getNextPage() {
+                return null;
+              }
+
+              @Override
+              public Iterable<FieldValueList> iterateAll() {
+                return Collections.emptyList();
+              }
+
+              @Override
+              public Iterable<FieldValueList> getValues() {
+                return Collections.emptyList();
+              }
+            };
+    TableResult result = new TableResult(Schema.of(), 0, emptyPage);
+    QueryResponse completedQuery =
+            QueryResponse.newBuilder()
+                    .setCompleted(true)
+                    .setTotalRows(0)
+                    .setSchema(Schema.of())
+                    .setErrors(ImmutableList.<BigQueryError>of())
+                    .build();
+
+    expect(bigquery.getQueryResults(jobInfo.getJobId(), Job.DEFAULT_QUERY_WAIT_OPTIONS)).andReturn(completedQuery);
+    expect(bigquery.getJob(JOB_INFO.getJobId())).andReturn(completedJob);
+    expect(bigquery.getQueryResults(jobInfo.getJobId(), Job.DEFAULT_QUERY_WAIT_OPTIONS))
+            .andReturn(completedQuery);
+
+    replay(status, bigquery, mockOptions);
+    initializeJob(jobInfo);
+    assertThat(job.waitFor(TEST_RETRY_OPTIONS)).isSameAs(completedJob);
+    assertThat(job.getQueryResults().iterateAll()).isEmpty();
+    verify(status, mockOptions);
+  }
+
+  @Test
   public void testWaitForAndGetQueryResults() throws InterruptedException {
     QueryJobConfiguration jobConfig =
         QueryJobConfiguration.newBuilder("SELECT 1").setDestinationTable(TABLE_ID1).build();
@@ -252,7 +330,7 @@ public class JobTest {
     expect(mockOptions.getClock()).andReturn(CurrentMillisClock.getDefaultClock()).times(2);
     Job completedJob = expectedJob.toBuilder().setStatus(status).build();
     // TODO(pongad): remove when we bump gax to 1.15.
-    Page<FieldValueList> emptyPage =
+    Page<FieldValueList> singlePage =
         new Page<FieldValueList>() {
           @Override
           public boolean hasNextPage() {
@@ -270,21 +348,19 @@ public class JobTest {
           }
 
           @Override
-          public Iterable<FieldValueList> iterateAll() {
-            return Collections.emptyList();
-          }
+          public Iterable<FieldValueList> iterateAll() { return Collections.emptyList(); }
 
           @Override
           public Iterable<FieldValueList> getValues() {
             return Collections.emptyList();
           }
         };
-    TableResult result = new TableResult(Schema.of(), 0, emptyPage);
+    TableResult result = new TableResult(Schema.of(), 1, singlePage);
     QueryResponse completedQuery =
         QueryResponse.newBuilder()
             .setCompleted(true)
-            .setTotalRows(0)
-            .setSchema(Schema.of())
+            .setTotalRows(1)  // Lies to force call of listTableData().
+            .setSchema(Schema.of(Field.of("_f0", LegacySQLTypeName.INTEGER)))
             .setErrors(ImmutableList.<BigQueryError>of())
             .build();
 
@@ -292,12 +368,12 @@ public class JobTest {
     expect(bigquery.getJob(JOB_INFO.getJobId())).andReturn(completedJob);
     expect(bigquery.getQueryResults(jobInfo.getJobId(), Job.DEFAULT_QUERY_WAIT_OPTIONS))
         .andReturn(completedQuery);
-    expect(bigquery.listTableData(TABLE_ID1, Schema.of())).andReturn(result);
+    expect(bigquery.listTableData(eq(TABLE_ID1), anyObject(Schema.class))).andReturn(result);
 
     replay(status, bigquery, mockOptions);
     initializeJob(jobInfo);
     assertThat(job.waitFor(TEST_RETRY_OPTIONS)).isSameAs(completedJob);
-    assertThat(job.getQueryResults().iterateAll()).isEmpty();
+    assertThat(job.getQueryResults().iterateAll()).hasSize(0);
     verify(status, mockOptions);
   }
 
