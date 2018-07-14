@@ -293,10 +293,10 @@ public class Job extends JobInfo {
 
     // Get the job resource to determine if it has errored.
     Job job = this;
-    if (!this.isDone()) {
+    if (job.getStatus() == null || job.getStatus().getState() != JobStatus.State.DONE) {
       job = reload();
     }
-    if (job.getStatus().getError() != null) {
+    if (job.getStatus() != null && job.getStatus().getError() != null) {
       throw new JobException(
           getJobId(), ImmutableList.copyOf(job.getStatus().getExecutionErrors()));
     }
