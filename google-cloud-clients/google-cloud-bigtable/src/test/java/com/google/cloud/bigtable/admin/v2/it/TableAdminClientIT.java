@@ -21,17 +21,6 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
-import com.google.api.client.util.Preconditions;
-import com.google.bigtable.admin.v2.Instance;
-import java.io.IOException;
-import java.util.List;
-import org.junit.AfterClass;
-import org.junit.AssumptionViolatedException;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Ignore;
-import org.junit.Test;
-import org.threeten.bp.Duration;
 import com.google.bigtable.admin.v2.InstanceName;
 import com.google.bigtable.admin.v2.TableName;
 import com.google.cloud.bigtable.admin.v2.TableAdminClient;
@@ -45,6 +34,14 @@ import com.google.cloud.bigtable.admin.v2.models.TableAdminRequests.ModifyFamili
 import com.google.cloud.bigtable.admin.v2.models.TableAdminResponses.ConsistencyToken;
 import com.google.cloud.bigtable.admin.v2.models.TableAdminResponses.Table;
 import com.google.protobuf.ByteString;
+import java.io.IOException;
+import java.util.List;
+import org.junit.AfterClass;
+import org.junit.AssumptionViolatedException;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.threeten.bp.Duration;
 
 public class TableAdminClientIT {
   // TODO(igorbernstein2): remove these properties once admin is split from data client
