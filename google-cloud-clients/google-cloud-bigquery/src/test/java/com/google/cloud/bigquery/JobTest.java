@@ -281,7 +281,6 @@ public class JobTest {
                 return Collections.emptyList();
               }
             };
-    TableResult result = new TableResult(Schema.of(), 0, emptyPage);
     QueryResponse completedQuery =
             QueryResponse.newBuilder()
                     .setCompleted(true)
