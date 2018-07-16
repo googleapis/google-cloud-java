@@ -20,10 +20,16 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
+
+import com.google.api.client.util.Preconditions;
+import com.google.bigtable.admin.v2.Instance;
 import java.io.IOException;
 import java.util.List;
 import org.junit.AfterClass;
+import org.junit.AssumptionViolatedException;
+import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.threeten.bp.Duration;
 import com.google.bigtable.admin.v2.InstanceName;
@@ -41,20 +47,42 @@ import com.google.cloud.bigtable.admin.v2.models.TableAdminResponses.Table;
 import com.google.protobuf.ByteString;
 
 public class TableAdminClientIT {
+  // TODO(igorbernstein2): remove these properties once admin is split from data client
+  private static final String ENV_PROPERTY = "bigtable.env";
+  private static final String TABLE_PROPERTY_NAME = "bigtable.table";
+
   static TableAdminClient tableAdmin;
 
   @BeforeClass
   public static void createClient() throws IOException {
-    tableAdmin = TableAdminClient.create(InstanceName.of("sduskis-hello-shakespear", "beam-test"));
+    if (!"prod".equals(System.getProperty(ENV_PROPERTY))) {
+      tableAdmin = null;
+      return;
+    }
+
+    TableName tableName = TableName.parse(System.getProperty(TABLE_PROPERTY_NAME));
+    InstanceName instanceName = InstanceName.of(tableName.getProject(), tableName.getInstance());
+
+    tableAdmin = TableAdminClient.create(instanceName);
   }
 
   @AfterClass
-  public static void closeClient() throws Exception {
-    tableAdmin.close();
+  public static void closeClient() {
+    if (tableAdmin != null) {
+      tableAdmin.close();
+    }
+  }
+
+  @Before
+  public void setup() {
+    // TODO(igorbernstein2): remove this check once admin is split
+    if (tableAdmin == null) {
+      throw new AssumptionViolatedException("Tests can only run against prod environment");
+    }
   }
 
   @Test
-  public void createTable() throws Exception {
+  public void createTable() {
     String tableId = "adminCreateTest";
     CreateTable createTableReq =
         TableAdminRequests.createTable(tableId)
@@ -83,7 +111,7 @@ public class TableAdminClientIT {
   public void modifyFamilies() {
     String tableId = "adminModifyFamTest";
     ModifyFamilies modifyFamiliesReq = TableAdminRequests.modifyFamilies(tableId);
-    Duration.ofSeconds(1000);
+
     modifyFamiliesReq
         .addFamily("mf1")
         .addFamily("mf2", GCRULES.maxAge(Duration.ofSeconds(1000, 20000)))
