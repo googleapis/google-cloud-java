@@ -99,7 +99,11 @@ public final class FirestoreOptions extends ServiceOptions<Firestore, FirestoreO
   }
 
   public CredentialsProvider getCredentialsProvider() {
-    return credentialsProvider;
+    if (credentials != null) {
+      return GrpcTransportOptions.setUpCredentialsProvider(this);
+    } else {
+      return credentialsProvider;
+    }
   }
 
   public TransportChannelProvider getTransportChannelProvider() {
