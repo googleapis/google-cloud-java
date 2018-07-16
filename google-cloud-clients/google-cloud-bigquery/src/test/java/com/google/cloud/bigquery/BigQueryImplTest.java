@@ -17,6 +17,8 @@
 package com.google.cloud.bigquery;
 
 import static com.google.common.truth.Truth.assertThat;
+import static org.easymock.EasyMock.anyObject;
+import static org.easymock.EasyMock.anyString;
 import static org.easymock.EasyMock.capture;
 import static org.easymock.EasyMock.eq;
 import static org.junit.Assert.assertArrayEquals;
@@ -962,7 +964,7 @@ public class BigQueryImplTest {
         .andThrow(new BigQueryException(409, "already exists, for some reason"));
     EasyMock.expect(
             bigqueryRpcMock.getJob(
-                EasyMock.anyString(),
+                anyString(),
                 EasyMock.eq(id),
                 EasyMock.eq((String) null),
                 EasyMock.eq(EMPTY_RPC_OPTIONS)))
@@ -1270,6 +1272,9 @@ public class BigQueryImplTest {
             bigqueryRpcMock.create(
                 JOB_INFO.toPb(), Collections.<BigQueryRpc.Option, Object>emptyMap()))
         .andReturn(jobResponsePb1);
+    EasyMock.expect(
+            bigqueryRpcMock.getJob(eq(PROJECT), eq(JOB), anyString(), anyObject(Map.class)))
+            .andReturn(jobResponsePb1);
 
     EasyMock.expect(
             bigqueryRpcMock.getQueryResults(
