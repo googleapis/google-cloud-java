@@ -20,6 +20,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
+
 import com.google.bigtable.admin.v2.InstanceName;
 import com.google.bigtable.admin.v2.TableName;
 import com.google.cloud.bigtable.admin.v2.TableAdminClient;
@@ -196,7 +197,7 @@ public class TableAdminClientIT {
       tableAdmin.createTable(TableAdminRequests.createTable(tableId));
       List<TableName> tables = tableAdmin.listTables();
       assertNotNull(tables);
-      assertEquals(1, tables.size());
+      assertFalse("List tables did not return any tables", tables.isEmpty());
     } finally {
       tableAdmin.deleteTable(tableId);
     }
@@ -210,7 +211,7 @@ public class TableAdminClientIT {
       tableAdmin.createTable(TableAdminRequests.createTable(tableId));
       List<TableName> tables = tableAdmin.listTablesAsync().get();
       assertNotNull(tables);
-      assertEquals(1, tables.size());
+      assertFalse("List tables did not return any tables", tables.isEmpty());
     } finally {
       tableAdmin.deleteTable(tableId);
     }
