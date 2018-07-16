@@ -33,6 +33,7 @@ import java.io.IOException;
 import java.util.Objects;
 import java.util.Set;
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 
 /** A Factory class to create new Firestore instances. */
 public final class FirestoreOptions extends ServiceOptions<Firestore, FirestoreOptions> {
@@ -107,12 +108,10 @@ public final class FirestoreOptions extends ServiceOptions<Firestore, FirestoreO
 
   public static class Builder extends ServiceOptions.Builder<Firestore, FirestoreOptions, Builder> {
 
-    private String databaseId = FirestoreDefaults.INSTANCE.getDatabaseId();
-    private boolean timestampsInSnapshotsEnabled = DEFAULT_TIMESTAMPS_IN_SNAPSHOTS_ENABLED;
-    private TransportChannelProvider channelProvider =
-        FirestoreDefaults.INSTANCE.getDefaultTransportChannelProvider();
-    private CredentialsProvider credentialsProvider =
-        FirestoreDefaults.INSTANCE.getDefaultCredentialsProvider();
+    @Nullable private String databaseId = null;
+    @Nullable private Boolean timestampsInSnapshotsEnabled = null;
+    @Nullable private TransportChannelProvider channelProvider = null;
+    @Nullable private CredentialsProvider credentialsProvider = null;
 
     private Builder() {}
 
@@ -217,10 +216,26 @@ public final class FirestoreOptions extends ServiceOptions<Firestore, FirestoreO
   protected FirestoreOptions(Builder builder) {
     super(FirestoreFactory.class, FirestoreRpcFactory.class, builder, new FirestoreDefaults());
 
-    this.databaseId = builder.databaseId;
-    this.channelProvider = builder.channelProvider;
-    this.credentialsProvider = builder.credentialsProvider;
-    this.timestampsInSnapshotsEnabled = builder.timestampsInSnapshotsEnabled;
+    this.databaseId =
+        builder.databaseId != null
+            ? builder.databaseId
+            : FirestoreDefaults.INSTANCE.getDatabaseId();
+
+    this.timestampsInSnapshotsEnabled =
+        builder.timestampsInSnapshotsEnabled != null
+            ? builder.timestampsInSnapshotsEnabled
+            : DEFAULT_TIMESTAMPS_IN_SNAPSHOTS_ENABLED;
+
+    this.channelProvider =
+        builder.channelProvider != null
+            ? builder.channelProvider
+            : GrpcTransportOptions.setUpChannelProvider(
+                FirestoreSettings.defaultGrpcTransportProviderBuilder(), this);
+
+    this.credentialsProvider =
+        builder.credentialsProvider != null
+            ? builder.credentialsProvider
+            : GrpcTransportOptions.setUpCredentialsProvider(this);
   }
 
   private static class FirestoreDefaults implements ServiceDefaults<Firestore, FirestoreOptions> {
@@ -229,10 +244,6 @@ public final class FirestoreOptions extends ServiceOptions<Firestore, FirestoreO
     private final String HOST = FirestoreSettings.getDefaultEndpoint();
     private final String DATABASE_ID = "(default)";
     private final TransportOptions TRANSPORT_OPTIONS = getDefaultTransportOptionsBuilder().build();
-    private final TransportChannelProvider CHANNEL_PROVIDER =
-        getDefaultTransportChannelProviderBuilder().build();
-    private final CredentialsProvider CREDENTIALS_PROVIDER =
-        getDefaultCredentialsProviderBuilder().build();
 
     @Nonnull
     String getHost() {
@@ -260,16 +271,6 @@ public final class FirestoreOptions extends ServiceOptions<Firestore, FirestoreO
     @Override
     public TransportOptions getDefaultTransportOptions() {
       return TRANSPORT_OPTIONS;
-    }
-
-    @Nonnull
-    TransportChannelProvider getDefaultTransportChannelProvider() {
-      return CHANNEL_PROVIDER;
-    }
-
-    @Nonnull
-    CredentialsProvider getDefaultCredentialsProvider() {
-      return CREDENTIALS_PROVIDER;
     }
   }
 
