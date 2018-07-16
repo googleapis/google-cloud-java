@@ -197,7 +197,7 @@ public class TableAdminClientIT {
       tableAdmin.createTable(TableAdminRequests.createTable(tableId));
       List<TableName> tables = tableAdmin.listTables();
       assertNotNull(tables);
-      assertTrue("List tables did not return any tables", tables.size() > 0);
+      assertFalse("List tables did not return any tables", tables.isEmpty());
     } finally {
       tableAdmin.deleteTable(tableId);
     }
@@ -211,7 +211,7 @@ public class TableAdminClientIT {
       tableAdmin.createTable(TableAdminRequests.createTable(tableId));
       List<TableName> tables = tableAdmin.listTablesAsync().get();
       assertNotNull(tables);
-      assertTrue("List tables did not return any tables", tables.size() > 0);
+      assertFalse("List tables did not return any tables", tables.isEmpty());
     } finally {
       tableAdmin.deleteTable(tableId);
     }
