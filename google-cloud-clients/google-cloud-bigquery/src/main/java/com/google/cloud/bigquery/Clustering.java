@@ -17,6 +17,7 @@ package com.google.cloud.bigquery;
 
 
 import com.google.auto.value.AutoValue;
+import com.google.common.collect.ImmutableList;
 import java.io.Serializable;
 import java.util.List;
 import javax.annotation.Nullable;
@@ -26,15 +27,23 @@ public abstract class Clustering implements Serializable {
 
   private static final long serialVersionUID = 1L;
 
+
   @Nullable
-  public abstract List<String> getFields();
+  abstract ImmutableList<String> getFieldsImmut();
+
+  public List<String> getFields() {return getFieldsImmut();}
+
 
   public abstract Builder toBuilder();
 
   @AutoValue.Builder
   public abstract static class Builder {
 
-    public abstract Builder setFields(List<String> fields);
+    abstract Builder setFieldsImmut(ImmutableList<String> fieldsImmut);
+
+    public Builder setFields(List<String> fields) {
+      return setFieldsImmut(ImmutableList.copyOf(fields));
+    }
 
     public abstract Clustering build();
   }
