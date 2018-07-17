@@ -38,6 +38,7 @@ def run_gapic_gen(googleapis):
     # TODO Needs to have java_proto called instead of java_grpc
     #generate('google/datastore/artman_datastore.yaml')
 
+    generate('google/cloud/automl/artman_automl_v1beta1.yaml')
     generate('google/cloud/bigquery/datatransfer/artman_bigquerydatatransfer.yaml')
     generate('google/bigtable/artman_bigtable.yaml')
     generate('google/bigtable/admin/artman_bigtableadmin.yaml')
