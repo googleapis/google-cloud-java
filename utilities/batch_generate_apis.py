@@ -75,6 +75,7 @@ def run_gapic_gen(googleapis):
     generate('google/cloud/vision/artman_vision_v1.yaml')
     generate('google/cloud/vision/artman_vision_v1p1beta1.yaml')
     generate('google/cloud/vision/artman_vision_v1p2beta1.yaml')
+    generate('google/cloud/vision/artman_vision_v1p3beta1.yaml')
     generate('google/cloud/websecurityscanner/artman_websecurityscanner_v1alpha.yaml')
 
 
