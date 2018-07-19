@@ -22,6 +22,7 @@ private static final long serialVersionUID = 0L;
   private WebhookRequest() {
     session_ = "";
     responseId_ = "";
+    alternativeQueryResults_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -93,6 +94,15 @@ private static final long serialVersionUID = 0L;
             session_ = s;
             break;
           }
+          case 42: {
+            if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+              alternativeQueryResults_ = new java.util.ArrayList<com.google.cloud.dialogflow.v2beta1.QueryResult>();
+              mutable_bitField0_ |= 0x00000008;
+            }
+            alternativeQueryResults_.add(
+                input.readMessage(com.google.cloud.dialogflow.v2beta1.QueryResult.parser(), extensionRegistry));
+            break;
+          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -101,6 +111,9 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+        alternativeQueryResults_ = java.util.Collections.unmodifiableList(alternativeQueryResults_);
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -117,6 +130,7 @@ private static final long serialVersionUID = 0L;
             com.google.cloud.dialogflow.v2beta1.WebhookRequest.class, com.google.cloud.dialogflow.v2beta1.WebhookRequest.Builder.class);
   }
 
+  private int bitField0_;
   public static final int SESSION_FIELD_NUMBER = 4;
   private volatile java.lang.Object session_;
   /**
@@ -243,6 +257,61 @@ private static final long serialVersionUID = 0L;
     return getQueryResult();
   }
 
+  public static final int ALTERNATIVE_QUERY_RESULTS_FIELD_NUMBER = 5;
+  private java.util.List<com.google.cloud.dialogflow.v2beta1.QueryResult> alternativeQueryResults_;
+  /**
+   * <pre>
+   * Alternative query results from KnowledgeService.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;</code>
+   */
+  public java.util.List<com.google.cloud.dialogflow.v2beta1.QueryResult> getAlternativeQueryResultsList() {
+    return alternativeQueryResults_;
+  }
+  /**
+   * <pre>
+   * Alternative query results from KnowledgeService.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;</code>
+   */
+  public java.util.List<? extends com.google.cloud.dialogflow.v2beta1.QueryResultOrBuilder> 
+      getAlternativeQueryResultsOrBuilderList() {
+    return alternativeQueryResults_;
+  }
+  /**
+   * <pre>
+   * Alternative query results from KnowledgeService.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;</code>
+   */
+  public int getAlternativeQueryResultsCount() {
+    return alternativeQueryResults_.size();
+  }
+  /**
+   * <pre>
+   * Alternative query results from KnowledgeService.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;</code>
+   */
+  public com.google.cloud.dialogflow.v2beta1.QueryResult getAlternativeQueryResults(int index) {
+    return alternativeQueryResults_.get(index);
+  }
+  /**
+   * <pre>
+   * Alternative query results from KnowledgeService.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;</code>
+   */
+  public com.google.cloud.dialogflow.v2beta1.QueryResultOrBuilder getAlternativeQueryResultsOrBuilder(
+      int index) {
+    return alternativeQueryResults_.get(index);
+  }
+
   public static final int ORIGINAL_DETECT_INTENT_REQUEST_FIELD_NUMBER = 3;
   private com.google.cloud.dialogflow.v2beta1.OriginalDetectIntentRequest originalDetectIntentRequest_;
   /**
@@ -303,6 +372,9 @@ private static final long serialVersionUID = 0L;
     if (!getSessionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, session_);
     }
+    for (int i = 0; i < alternativeQueryResults_.size(); i++) {
+      output.writeMessage(5, alternativeQueryResults_.get(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -324,6 +396,10 @@ private static final long serialVersionUID = 0L;
     }
     if (!getSessionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, session_);
+    }
+    for (int i = 0; i < alternativeQueryResults_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(5, alternativeQueryResults_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -350,6 +426,8 @@ private static final long serialVersionUID = 0L;
       result = result && getQueryResult()
           .equals(other.getQueryResult());
     }
+    result = result && getAlternativeQueryResultsList()
+        .equals(other.getAlternativeQueryResultsList());
     result = result && (hasOriginalDetectIntentRequest() == other.hasOriginalDetectIntentRequest());
     if (hasOriginalDetectIntentRequest()) {
       result = result && getOriginalDetectIntentRequest()
@@ -373,6 +451,10 @@ private static final long serialVersionUID = 0L;
     if (hasQueryResult()) {
       hash = (37 * hash) + QUERY_RESULT_FIELD_NUMBER;
       hash = (53 * hash) + getQueryResult().hashCode();
+    }
+    if (getAlternativeQueryResultsCount() > 0) {
+      hash = (37 * hash) + ALTERNATIVE_QUERY_RESULTS_FIELD_NUMBER;
+      hash = (53 * hash) + getAlternativeQueryResultsList().hashCode();
     }
     if (hasOriginalDetectIntentRequest()) {
       hash = (37 * hash) + ORIGINAL_DETECT_INTENT_REQUEST_FIELD_NUMBER;
@@ -507,6 +589,7 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
+        getAlternativeQueryResultsFieldBuilder();
       }
     }
     public Builder clear() {
@@ -520,6 +603,12 @@ private static final long serialVersionUID = 0L;
       } else {
         queryResult_ = null;
         queryResultBuilder_ = null;
+      }
+      if (alternativeQueryResultsBuilder_ == null) {
+        alternativeQueryResults_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000008);
+      } else {
+        alternativeQueryResultsBuilder_.clear();
       }
       if (originalDetectIntentRequestBuilder_ == null) {
         originalDetectIntentRequest_ = null;
@@ -549,6 +638,8 @@ private static final long serialVersionUID = 0L;
 
     public com.google.cloud.dialogflow.v2beta1.WebhookRequest buildPartial() {
       com.google.cloud.dialogflow.v2beta1.WebhookRequest result = new com.google.cloud.dialogflow.v2beta1.WebhookRequest(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       result.session_ = session_;
       result.responseId_ = responseId_;
       if (queryResultBuilder_ == null) {
@@ -556,11 +647,21 @@ private static final long serialVersionUID = 0L;
       } else {
         result.queryResult_ = queryResultBuilder_.build();
       }
+      if (alternativeQueryResultsBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) == 0x00000008)) {
+          alternativeQueryResults_ = java.util.Collections.unmodifiableList(alternativeQueryResults_);
+          bitField0_ = (bitField0_ & ~0x00000008);
+        }
+        result.alternativeQueryResults_ = alternativeQueryResults_;
+      } else {
+        result.alternativeQueryResults_ = alternativeQueryResultsBuilder_.build();
+      }
       if (originalDetectIntentRequestBuilder_ == null) {
         result.originalDetectIntentRequest_ = originalDetectIntentRequest_;
       } else {
         result.originalDetectIntentRequest_ = originalDetectIntentRequestBuilder_.build();
       }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -613,6 +714,32 @@ private static final long serialVersionUID = 0L;
       if (other.hasQueryResult()) {
         mergeQueryResult(other.getQueryResult());
       }
+      if (alternativeQueryResultsBuilder_ == null) {
+        if (!other.alternativeQueryResults_.isEmpty()) {
+          if (alternativeQueryResults_.isEmpty()) {
+            alternativeQueryResults_ = other.alternativeQueryResults_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+          } else {
+            ensureAlternativeQueryResultsIsMutable();
+            alternativeQueryResults_.addAll(other.alternativeQueryResults_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.alternativeQueryResults_.isEmpty()) {
+          if (alternativeQueryResultsBuilder_.isEmpty()) {
+            alternativeQueryResultsBuilder_.dispose();
+            alternativeQueryResultsBuilder_ = null;
+            alternativeQueryResults_ = other.alternativeQueryResults_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+            alternativeQueryResultsBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getAlternativeQueryResultsFieldBuilder() : null;
+          } else {
+            alternativeQueryResultsBuilder_.addAllMessages(other.alternativeQueryResults_);
+          }
+        }
+      }
       if (other.hasOriginalDetectIntentRequest()) {
         mergeOriginalDetectIntentRequest(other.getOriginalDetectIntentRequest());
       }
@@ -642,6 +769,7 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0_;
 
     private java.lang.Object session_ = "";
     /**
@@ -996,6 +1124,318 @@ private static final long serialVersionUID = 0L;
         queryResult_ = null;
       }
       return queryResultBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.dialogflow.v2beta1.QueryResult> alternativeQueryResults_ =
+      java.util.Collections.emptyList();
+    private void ensureAlternativeQueryResultsIsMutable() {
+      if (!((bitField0_ & 0x00000008) == 0x00000008)) {
+        alternativeQueryResults_ = new java.util.ArrayList<com.google.cloud.dialogflow.v2beta1.QueryResult>(alternativeQueryResults_);
+        bitField0_ |= 0x00000008;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.google.cloud.dialogflow.v2beta1.QueryResult, com.google.cloud.dialogflow.v2beta1.QueryResult.Builder, com.google.cloud.dialogflow.v2beta1.QueryResultOrBuilder> alternativeQueryResultsBuilder_;
+
+    /**
+     * <pre>
+     * Alternative query results from KnowledgeService.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;</code>
+     */
+    public java.util.List<com.google.cloud.dialogflow.v2beta1.QueryResult> getAlternativeQueryResultsList() {
+      if (alternativeQueryResultsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(alternativeQueryResults_);
+      } else {
+        return alternativeQueryResultsBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * Alternative query results from KnowledgeService.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;</code>
+     */
+    public int getAlternativeQueryResultsCount() {
+      if (alternativeQueryResultsBuilder_ == null) {
+        return alternativeQueryResults_.size();
+      } else {
+        return alternativeQueryResultsBuilder_.getCount();
+      }
+    }
+    /**
+     * <pre>
+     * Alternative query results from KnowledgeService.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;</code>
+     */
+    public com.google.cloud.dialogflow.v2beta1.QueryResult getAlternativeQueryResults(int index) {
+      if (alternativeQueryResultsBuilder_ == null) {
+        return alternativeQueryResults_.get(index);
+      } else {
+        return alternativeQueryResultsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * Alternative query results from KnowledgeService.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;</code>
+     */
+    public Builder setAlternativeQueryResults(
+        int index, com.google.cloud.dialogflow.v2beta1.QueryResult value) {
+      if (alternativeQueryResultsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAlternativeQueryResultsIsMutable();
+        alternativeQueryResults_.set(index, value);
+        onChanged();
+      } else {
+        alternativeQueryResultsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Alternative query results from KnowledgeService.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;</code>
+     */
+    public Builder setAlternativeQueryResults(
+        int index, com.google.cloud.dialogflow.v2beta1.QueryResult.Builder builderForValue) {
+      if (alternativeQueryResultsBuilder_ == null) {
+        ensureAlternativeQueryResultsIsMutable();
+        alternativeQueryResults_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        alternativeQueryResultsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Alternative query results from KnowledgeService.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;</code>
+     */
+    public Builder addAlternativeQueryResults(com.google.cloud.dialogflow.v2beta1.QueryResult value) {
+      if (alternativeQueryResultsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAlternativeQueryResultsIsMutable();
+        alternativeQueryResults_.add(value);
+        onChanged();
+      } else {
+        alternativeQueryResultsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Alternative query results from KnowledgeService.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;</code>
+     */
+    public Builder addAlternativeQueryResults(
+        int index, com.google.cloud.dialogflow.v2beta1.QueryResult value) {
+      if (alternativeQueryResultsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAlternativeQueryResultsIsMutable();
+        alternativeQueryResults_.add(index, value);
+        onChanged();
+      } else {
+        alternativeQueryResultsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Alternative query results from KnowledgeService.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;</code>
+     */
+    public Builder addAlternativeQueryResults(
+        com.google.cloud.dialogflow.v2beta1.QueryResult.Builder builderForValue) {
+      if (alternativeQueryResultsBuilder_ == null) {
+        ensureAlternativeQueryResultsIsMutable();
+        alternativeQueryResults_.add(builderForValue.build());
+        onChanged();
+      } else {
+        alternativeQueryResultsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Alternative query results from KnowledgeService.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;</code>
+     */
+    public Builder addAlternativeQueryResults(
+        int index, com.google.cloud.dialogflow.v2beta1.QueryResult.Builder builderForValue) {
+      if (alternativeQueryResultsBuilder_ == null) {
+        ensureAlternativeQueryResultsIsMutable();
+        alternativeQueryResults_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        alternativeQueryResultsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Alternative query results from KnowledgeService.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;</code>
+     */
+    public Builder addAllAlternativeQueryResults(
+        java.lang.Iterable<? extends com.google.cloud.dialogflow.v2beta1.QueryResult> values) {
+      if (alternativeQueryResultsBuilder_ == null) {
+        ensureAlternativeQueryResultsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, alternativeQueryResults_);
+        onChanged();
+      } else {
+        alternativeQueryResultsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Alternative query results from KnowledgeService.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;</code>
+     */
+    public Builder clearAlternativeQueryResults() {
+      if (alternativeQueryResultsBuilder_ == null) {
+        alternativeQueryResults_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+      } else {
+        alternativeQueryResultsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Alternative query results from KnowledgeService.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;</code>
+     */
+    public Builder removeAlternativeQueryResults(int index) {
+      if (alternativeQueryResultsBuilder_ == null) {
+        ensureAlternativeQueryResultsIsMutable();
+        alternativeQueryResults_.remove(index);
+        onChanged();
+      } else {
+        alternativeQueryResultsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Alternative query results from KnowledgeService.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;</code>
+     */
+    public com.google.cloud.dialogflow.v2beta1.QueryResult.Builder getAlternativeQueryResultsBuilder(
+        int index) {
+      return getAlternativeQueryResultsFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * Alternative query results from KnowledgeService.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;</code>
+     */
+    public com.google.cloud.dialogflow.v2beta1.QueryResultOrBuilder getAlternativeQueryResultsOrBuilder(
+        int index) {
+      if (alternativeQueryResultsBuilder_ == null) {
+        return alternativeQueryResults_.get(index);  } else {
+        return alternativeQueryResultsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * Alternative query results from KnowledgeService.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;</code>
+     */
+    public java.util.List<? extends com.google.cloud.dialogflow.v2beta1.QueryResultOrBuilder> 
+         getAlternativeQueryResultsOrBuilderList() {
+      if (alternativeQueryResultsBuilder_ != null) {
+        return alternativeQueryResultsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(alternativeQueryResults_);
+      }
+    }
+    /**
+     * <pre>
+     * Alternative query results from KnowledgeService.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;</code>
+     */
+    public com.google.cloud.dialogflow.v2beta1.QueryResult.Builder addAlternativeQueryResultsBuilder() {
+      return getAlternativeQueryResultsFieldBuilder().addBuilder(
+          com.google.cloud.dialogflow.v2beta1.QueryResult.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * Alternative query results from KnowledgeService.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;</code>
+     */
+    public com.google.cloud.dialogflow.v2beta1.QueryResult.Builder addAlternativeQueryResultsBuilder(
+        int index) {
+      return getAlternativeQueryResultsFieldBuilder().addBuilder(
+          index, com.google.cloud.dialogflow.v2beta1.QueryResult.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * Alternative query results from KnowledgeService.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;</code>
+     */
+    public java.util.List<com.google.cloud.dialogflow.v2beta1.QueryResult.Builder> 
+         getAlternativeQueryResultsBuilderList() {
+      return getAlternativeQueryResultsFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.google.cloud.dialogflow.v2beta1.QueryResult, com.google.cloud.dialogflow.v2beta1.QueryResult.Builder, com.google.cloud.dialogflow.v2beta1.QueryResultOrBuilder> 
+        getAlternativeQueryResultsFieldBuilder() {
+      if (alternativeQueryResultsBuilder_ == null) {
+        alternativeQueryResultsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.dialogflow.v2beta1.QueryResult, com.google.cloud.dialogflow.v2beta1.QueryResult.Builder, com.google.cloud.dialogflow.v2beta1.QueryResultOrBuilder>(
+                alternativeQueryResults_,
+                ((bitField0_ & 0x00000008) == 0x00000008),
+                getParentForChildren(),
+                isClean());
+        alternativeQueryResults_ = null;
+      }
+      return alternativeQueryResultsBuilder_;
     }
 
     private com.google.cloud.dialogflow.v2beta1.OriginalDetectIntentRequest originalDetectIntentRequest_ = null;

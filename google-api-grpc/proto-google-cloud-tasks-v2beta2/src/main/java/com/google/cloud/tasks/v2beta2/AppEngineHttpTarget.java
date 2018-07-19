@@ -11,7 +11,7 @@ package com.google.cloud.tasks.v2beta2;
  * The documentation for [AppEngineHttpRequest][google.cloud.tasks.v2beta2.AppEngineHttpRequest] explains how the
  * task's host URL is constructed.
  * Using [AppEngineHttpTarget][google.cloud.tasks.v2beta2.AppEngineHttpTarget] requires
- * [`appengine.applications.get`](/appengine/docs/admin-api/access-control)
+ * [`appengine.applications.get`](https://cloud.google.com/appengine/docs/admin-api/access-control)
  * Google IAM permission for the project
  * and the following scope:
  * `https://www.googleapis.com/auth/cloud-platform`
@@ -308,7 +308,7 @@ private static final long serialVersionUID = 0L;
    * The documentation for [AppEngineHttpRequest][google.cloud.tasks.v2beta2.AppEngineHttpRequest] explains how the
    * task's host URL is constructed.
    * Using [AppEngineHttpTarget][google.cloud.tasks.v2beta2.AppEngineHttpTarget] requires
-   * [`appengine.applications.get`](/appengine/docs/admin-api/access-control)
+   * [`appengine.applications.get`](https://cloud.google.com/appengine/docs/admin-api/access-control)
    * Google IAM permission for the project
    * and the following scope:
    * `https://www.googleapis.com/auth/cloud-platform`

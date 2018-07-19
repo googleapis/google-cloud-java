@@ -130,6 +130,21 @@ public final class IntentProto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_SelectItemInfo_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_TelephonyPlayAudio_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_TelephonyPlayAudio_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_TelephonySynthesizeSpeech_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_TelephonySynthesizeSpeech_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_TelephonyTransferCall_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_TelephonyTransferCall_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_google_cloud_dialogflow_v2beta1_Intent_FollowupIntentInfo_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -200,188 +215,201 @@ public final class IntentProto {
       "ogle/longrunning/operations.proto\032\033googl" +
       "e/protobuf/empty.proto\032 google/protobuf/" +
       "field_mask.proto\032\034google/protobuf/struct" +
-      ".proto\"\247\"\n\006Intent\022\014\n\004name\030\001 \001(\t\022\024\n\014displ" +
+      ".proto\"\262&\n\006Intent\022\014\n\004name\030\001 \001(\t\022\024\n\014displ" +
       "ay_name\030\002 \001(\t\022K\n\rwebhook_state\030\006 \001(\01624.g" +
       "oogle.cloud.dialogflow.v2beta1.Intent.We" +
       "bhookState\022\020\n\010priority\030\003 \001(\005\022\023\n\013is_fallb" +
-      "ack\030\004 \001(\010\022\022\n\nml_enabled\030\005 \001(\010\022\023\n\013ml_disa" +
-      "bled\030\023 \001(\010\022\033\n\023input_context_names\030\007 \003(\t\022" +
-      "\016\n\006events\030\010 \003(\t\022P\n\020training_phrases\030\t \003(" +
-      "\01326.google.cloud.dialogflow.v2beta1.Inte" +
-      "nt.TrainingPhrase\022\016\n\006action\030\n \001(\t\022A\n\017out" +
-      "put_contexts\030\013 \003(\0132(.google.cloud.dialog" +
-      "flow.v2beta1.Context\022\026\n\016reset_contexts\030\014" +
-      " \001(\010\022E\n\nparameters\030\r \003(\01321.google.cloud." +
-      "dialogflow.v2beta1.Intent.Parameter\022A\n\010m" +
-      "essages\030\016 \003(\0132/.google.cloud.dialogflow." +
-      "v2beta1.Intent.Message\022\\\n\032default_respon" +
-      "se_platforms\030\017 \003(\01628.google.cloud.dialog" +
-      "flow.v2beta1.Intent.Message.Platform\022!\n\031" +
-      "root_followup_intent_name\030\020 \001(\t\022#\n\033paren" +
-      "t_followup_intent_name\030\021 \001(\t\022X\n\024followup" +
-      "_intent_info\030\022 \003(\0132:.google.cloud.dialog" +
-      "flow.v2beta1.Intent.FollowupIntentInfo\032\331" +
-      "\002\n\016TrainingPhrase\022\014\n\004name\030\001 \001(\t\022I\n\004type\030" +
-      "\002 \001(\0162;.google.cloud.dialogflow.v2beta1." +
-      "Intent.TrainingPhrase.Type\022J\n\005parts\030\003 \003(" +
-      "\0132;.google.cloud.dialogflow.v2beta1.Inte" +
-      "nt.TrainingPhrase.Part\022\031\n\021times_added_co" +
-      "unt\030\004 \001(\005\032N\n\004Part\022\014\n\004text\030\001 \001(\t\022\023\n\013entit" +
-      "y_type\030\002 \001(\t\022\r\n\005alias\030\003 \001(\t\022\024\n\014user_defi" +
-      "ned\030\004 \001(\010\"7\n\004Type\022\024\n\020TYPE_UNSPECIFIED\020\000\022" +
-      "\013\n\007EXAMPLE\020\001\022\014\n\010TEMPLATE\020\002\032\254\001\n\tParameter" +
-      "\022\014\n\004name\030\001 \001(\t\022\024\n\014display_name\030\002 \001(\t\022\r\n\005" +
-      "value\030\003 \001(\t\022\025\n\rdefault_value\030\004 \001(\t\022 \n\030en" +
-      "tity_type_display_name\030\005 \001(\t\022\021\n\tmandator" +
-      "y\030\006 \001(\010\022\017\n\007prompts\030\007 \003(\t\022\017\n\007is_list\030\010 \001(" +
-      "\010\032\215\026\n\007Message\022D\n\004text\030\001 \001(\01324.google.clo" +
-      "ud.dialogflow.v2beta1.Intent.Message.Tex" +
-      "tH\000\022F\n\005image\030\002 \001(\01325.google.cloud.dialog" +
-      "flow.v2beta1.Intent.Message.ImageH\000\022U\n\rq" +
-      "uick_replies\030\003 \001(\0132<.google.cloud.dialog" +
-      "flow.v2beta1.Intent.Message.QuickReplies" +
-      "H\000\022D\n\004card\030\004 \001(\01324.google.cloud.dialogfl" +
-      "ow.v2beta1.Intent.Message.CardH\000\022*\n\007payl" +
-      "oad\030\005 \001(\0132\027.google.protobuf.StructH\000\022[\n\020" +
-      "simple_responses\030\007 \001(\0132?.google.cloud.di" +
-      "alogflow.v2beta1.Intent.Message.SimpleRe" +
-      "sponsesH\000\022O\n\nbasic_card\030\010 \001(\01329.google.c" +
-      "loud.dialogflow.v2beta1.Intent.Message.B" +
-      "asicCardH\000\022R\n\013suggestions\030\t \001(\0132;.google" +
-      ".cloud.dialogflow.v2beta1.Intent.Message" +
-      ".SuggestionsH\000\022`\n\023link_out_suggestion\030\n " +
-      "\001(\0132A.google.cloud.dialogflow.v2beta1.In" +
-      "tent.Message.LinkOutSuggestionH\000\022Q\n\013list" +
-      "_select\030\013 \001(\0132:.google.cloud.dialogflow." +
-      "v2beta1.Intent.Message.ListSelectH\000\022Y\n\017c" +
-      "arousel_select\030\014 \001(\0132>.google.cloud.dial" +
-      "ogflow.v2beta1.Intent.Message.CarouselSe" +
-      "lectH\000\022J\n\010platform\030\006 \001(\01628.google.cloud." +
-      "dialogflow.v2beta1.Intent.Message.Platfo" +
-      "rm\032\024\n\004Text\022\014\n\004text\030\001 \003(\t\0326\n\005Image\022\021\n\tima" +
-      "ge_uri\030\001 \001(\t\022\032\n\022accessibility_text\030\002 \001(\t" +
-      "\0324\n\014QuickReplies\022\r\n\005title\030\001 \001(\t\022\025\n\rquick" +
-      "_replies\030\002 \003(\t\032\262\001\n\004Card\022\r\n\005title\030\001 \001(\t\022\020" +
-      "\n\010subtitle\030\002 \001(\t\022\021\n\timage_uri\030\003 \001(\t\022L\n\007b" +
-      "uttons\030\004 \003(\0132;.google.cloud.dialogflow.v" +
-      "2beta1.Intent.Message.Card.Button\032(\n\006But" +
-      "ton\022\014\n\004text\030\001 \001(\t\022\020\n\010postback\030\002 \001(\t\032L\n\016S" +
-      "impleResponse\022\026\n\016text_to_speech\030\001 \001(\t\022\014\n" +
-      "\004ssml\030\002 \001(\t\022\024\n\014display_text\030\003 \001(\t\032k\n\017Sim" +
-      "pleResponses\022X\n\020simple_responses\030\001 \003(\0132>" +
-      ".google.cloud.dialogflow.v2beta1.Intent." +
-      "Message.SimpleResponse\032\376\002\n\tBasicCard\022\r\n\005" +
-      "title\030\001 \001(\t\022\020\n\010subtitle\030\002 \001(\t\022\026\n\016formatt" +
-      "ed_text\030\003 \001(\t\022D\n\005image\030\004 \001(\01325.google.cl" +
-      "oud.dialogflow.v2beta1.Intent.Message.Im" +
-      "age\022Q\n\007buttons\030\005 \003(\0132@.google.cloud.dial" +
-      "ogflow.v2beta1.Intent.Message.BasicCard." +
-      "Button\032\236\001\n\006Button\022\r\n\005title\030\001 \001(\t\022g\n\017open" +
-      "_uri_action\030\002 \001(\0132N.google.cloud.dialogf" +
-      "low.v2beta1.Intent.Message.BasicCard.But" +
-      "ton.OpenUriAction\032\034\n\rOpenUriAction\022\013\n\003ur" +
-      "i\030\001 \001(\t\032\033\n\nSuggestion\022\r\n\005title\030\001 \001(\t\032^\n\013" +
-      "Suggestions\022O\n\013suggestions\030\001 \003(\0132:.googl" +
+      "ack\030\004 \001(\010\022\026\n\nml_enabled\030\005 \001(\010B\002\030\001\022\023\n\013ml_" +
+      "disabled\030\023 \001(\010\022\027\n\017end_interaction\030\025 \001(\010\022" +
+      "\033\n\023input_context_names\030\007 \003(\t\022\016\n\006events\030\010" +
+      " \003(\t\022P\n\020training_phrases\030\t \003(\01326.google." +
+      "cloud.dialogflow.v2beta1.Intent.Training" +
+      "Phrase\022\016\n\006action\030\n \001(\t\022A\n\017output_context" +
+      "s\030\013 \003(\0132(.google.cloud.dialogflow.v2beta" +
+      "1.Context\022\026\n\016reset_contexts\030\014 \001(\010\022E\n\npar" +
+      "ameters\030\r \003(\01321.google.cloud.dialogflow." +
+      "v2beta1.Intent.Parameter\022A\n\010messages\030\016 \003" +
+      "(\0132/.google.cloud.dialogflow.v2beta1.Int" +
+      "ent.Message\022\\\n\032default_response_platform" +
+      "s\030\017 \003(\01628.google.cloud.dialogflow.v2beta" +
+      "1.Intent.Message.Platform\022!\n\031root_follow" +
+      "up_intent_name\030\020 \001(\t\022#\n\033parent_followup_" +
+      "intent_name\030\021 \001(\t\022X\n\024followup_intent_inf" +
+      "o\030\022 \003(\0132:.google.cloud.dialogflow.v2beta" +
+      "1.Intent.FollowupIntentInfo\032\331\002\n\016Training" +
+      "Phrase\022\014\n\004name\030\001 \001(\t\022I\n\004type\030\002 \001(\0162;.goo" +
+      "gle.cloud.dialogflow.v2beta1.Intent.Trai" +
+      "ningPhrase.Type\022J\n\005parts\030\003 \003(\0132;.google." +
+      "cloud.dialogflow.v2beta1.Intent.Training" +
+      "Phrase.Part\022\031\n\021times_added_count\030\004 \001(\005\032N" +
+      "\n\004Part\022\014\n\004text\030\001 \001(\t\022\023\n\013entity_type\030\002 \001(" +
+      "\t\022\r\n\005alias\030\003 \001(\t\022\024\n\014user_defined\030\004 \001(\010\"7" +
+      "\n\004Type\022\024\n\020TYPE_UNSPECIFIED\020\000\022\013\n\007EXAMPLE\020" +
+      "\001\022\014\n\010TEMPLATE\020\002\032\254\001\n\tParameter\022\014\n\004name\030\001 " +
+      "\001(\t\022\024\n\014display_name\030\002 \001(\t\022\r\n\005value\030\003 \001(\t" +
+      "\022\025\n\rdefault_value\030\004 \001(\t\022 \n\030entity_type_d" +
+      "isplay_name\030\005 \001(\t\022\021\n\tmandatory\030\006 \001(\010\022\017\n\007" +
+      "prompts\030\007 \003(\t\022\017\n\007is_list\030\010 \001(\010\032\373\031\n\007Messa" +
+      "ge\022D\n\004text\030\001 \001(\01324.google.cloud.dialogfl" +
+      "ow.v2beta1.Intent.Message.TextH\000\022F\n\005imag" +
+      "e\030\002 \001(\01325.google.cloud.dialogflow.v2beta" +
+      "1.Intent.Message.ImageH\000\022U\n\rquick_replie" +
+      "s\030\003 \001(\0132<.google.cloud.dialogflow.v2beta" +
+      "1.Intent.Message.QuickRepliesH\000\022D\n\004card\030" +
+      "\004 \001(\01324.google.cloud.dialogflow.v2beta1." +
+      "Intent.Message.CardH\000\022*\n\007payload\030\005 \001(\0132\027" +
+      ".google.protobuf.StructH\000\022[\n\020simple_resp" +
+      "onses\030\007 \001(\0132?.google.cloud.dialogflow.v2" +
+      "beta1.Intent.Message.SimpleResponsesH\000\022O" +
+      "\n\nbasic_card\030\010 \001(\01329.google.cloud.dialog" +
+      "flow.v2beta1.Intent.Message.BasicCardH\000\022" +
+      "R\n\013suggestions\030\t \001(\0132;.google.cloud.dial" +
+      "ogflow.v2beta1.Intent.Message.Suggestion" +
+      "sH\000\022`\n\023link_out_suggestion\030\n \001(\0132A.googl" +
       "e.cloud.dialogflow.v2beta1.Intent.Messag" +
-      "e.Suggestion\032:\n\021LinkOutSuggestion\022\030\n\020des" +
-      "tination_name\030\001 \001(\t\022\013\n\003uri\030\002 \001(\t\032\254\002\n\nLis" +
-      "tSelect\022\r\n\005title\030\001 \001(\t\022N\n\005items\030\002 \003(\0132?." +
-      "google.cloud.dialogflow.v2beta1.Intent.M" +
-      "essage.ListSelect.Item\032\276\001\n\004Item\022L\n\004info\030" +
-      "\001 \001(\0132>.google.cloud.dialogflow.v2beta1." +
-      "Intent.Message.SelectItemInfo\022\r\n\005title\030\002" +
-      " \001(\t\022\023\n\013description\030\003 \001(\t\022D\n\005image\030\004 \001(\013" +
-      "25.google.cloud.dialogflow.v2beta1.Inten" +
-      "t.Message.Image\032\245\002\n\016CarouselSelect\022R\n\005it" +
-      "ems\030\001 \003(\0132C.google.cloud.dialogflow.v2be" +
-      "ta1.Intent.Message.CarouselSelect.Item\032\276" +
-      "\001\n\004Item\022L\n\004info\030\001 \001(\0132>.google.cloud.dia" +
-      "logflow.v2beta1.Intent.Message.SelectIte" +
-      "mInfo\022\r\n\005title\030\002 \001(\t\022\023\n\013description\030\003 \001(" +
-      "\t\022D\n\005image\030\004 \001(\01325.google.cloud.dialogfl" +
-      "ow.v2beta1.Intent.Message.Image\032/\n\016Selec" +
-      "tItemInfo\022\013\n\003key\030\001 \001(\t\022\020\n\010synonyms\030\002 \003(\t" +
-      "\"\213\001\n\010Platform\022\030\n\024PLATFORM_UNSPECIFIED\020\000\022" +
-      "\014\n\010FACEBOOK\020\001\022\t\n\005SLACK\020\002\022\014\n\010TELEGRAM\020\003\022\007" +
-      "\n\003KIK\020\004\022\t\n\005SKYPE\020\005\022\010\n\004LINE\020\006\022\t\n\005VIBER\020\007\022" +
-      "\025\n\021ACTIONS_ON_GOOGLE\020\010B\t\n\007message\032W\n\022Fol" +
-      "lowupIntentInfo\022\034\n\024followup_intent_name\030" +
-      "\001 \001(\t\022#\n\033parent_followup_intent_name\030\002 \001" +
-      "(\t\"t\n\014WebhookState\022\035\n\031WEBHOOK_STATE_UNSP" +
-      "ECIFIED\020\000\022\031\n\025WEBHOOK_STATE_ENABLED\020\001\022*\n&" +
-      "WEBHOOK_STATE_ENABLED_FOR_SLOT_FILLING\020\002" +
-      "\"\244\001\n\022ListIntentsRequest\022\016\n\006parent\030\001 \001(\t\022" +
-      "\025\n\rlanguage_code\030\002 \001(\t\022@\n\013intent_view\030\003 " +
-      "\001(\0162+.google.cloud.dialogflow.v2beta1.In" +
-      "tentView\022\021\n\tpage_size\030\004 \001(\005\022\022\n\npage_toke" +
-      "n\030\005 \001(\t\"h\n\023ListIntentsResponse\0228\n\007intent" +
-      "s\030\001 \003(\0132\'.google.cloud.dialogflow.v2beta" +
-      "1.Intent\022\027\n\017next_page_token\030\002 \001(\t\"y\n\020Get" +
-      "IntentRequest\022\014\n\004name\030\001 \001(\t\022\025\n\rlanguage_" +
-      "code\030\002 \001(\t\022@\n\013intent_view\030\003 \001(\0162+.google" +
-      ".cloud.dialogflow.v2beta1.IntentView\"\267\001\n" +
-      "\023CreateIntentRequest\022\016\n\006parent\030\001 \001(\t\0227\n\006" +
-      "intent\030\002 \001(\0132\'.google.cloud.dialogflow.v" +
-      "2beta1.Intent\022\025\n\rlanguage_code\030\003 \001(\t\022@\n\013" +
-      "intent_view\030\004 \001(\0162+.google.cloud.dialogf" +
-      "low.v2beta1.IntentView\"\330\001\n\023UpdateIntentR" +
-      "equest\0227\n\006intent\030\001 \001(\0132\'.google.cloud.di" +
-      "alogflow.v2beta1.Intent\022\025\n\rlanguage_code" +
-      "\030\002 \001(\t\022/\n\013update_mask\030\003 \001(\0132\032.google.pro" +
-      "tobuf.FieldMask\022@\n\013intent_view\030\004 \001(\0162+.g" +
-      "oogle.cloud.dialogflow.v2beta1.IntentVie" +
-      "w\"#\n\023DeleteIntentRequest\022\014\n\004name\030\001 \001(\t\"\256" +
-      "\002\n\031BatchUpdateIntentsRequest\022\016\n\006parent\030\001" +
-      " \001(\t\022\032\n\020intent_batch_uri\030\002 \001(\tH\000\022K\n\023inte" +
-      "nt_batch_inline\030\003 \001(\0132,.google.cloud.dia" +
-      "logflow.v2beta1.IntentBatchH\000\022\025\n\rlanguag" +
-      "e_code\030\004 \001(\t\022/\n\013update_mask\030\005 \001(\0132\032.goog" +
-      "le.protobuf.FieldMask\022@\n\013intent_view\030\006 \001" +
-      "(\0162+.google.cloud.dialogflow.v2beta1.Int" +
-      "entViewB\016\n\014intent_batch\"V\n\032BatchUpdateIn" +
-      "tentsResponse\0228\n\007intents\030\001 \003(\0132\'.google." +
-      "cloud.dialogflow.v2beta1.Intent\"e\n\031Batch" +
-      "DeleteIntentsRequest\022\016\n\006parent\030\001 \001(\t\0228\n\007" +
-      "intents\030\002 \003(\0132\'.google.cloud.dialogflow." +
-      "v2beta1.Intent\"G\n\013IntentBatch\0228\n\007intents" +
-      "\030\001 \003(\0132\'.google.cloud.dialogflow.v2beta1" +
-      ".Intent*?\n\nIntentView\022\033\n\027INTENT_VIEW_UNS" +
-      "PECIFIED\020\000\022\024\n\020INTENT_VIEW_FULL\020\0012\262\t\n\007Int" +
-      "ents\022\254\001\n\013ListIntents\0223.google.cloud.dial" +
-      "ogflow.v2beta1.ListIntentsRequest\0324.goog" +
-      "le.cloud.dialogflow.v2beta1.ListIntentsR" +
-      "esponse\"2\202\323\344\223\002,\022*/v2beta1/{parent=projec" +
-      "ts/*/agent}/intents\022\233\001\n\tGetIntent\0221.goog" +
-      "le.cloud.dialogflow.v2beta1.GetIntentReq" +
-      "uest\032\'.google.cloud.dialogflow.v2beta1.I" +
-      "ntent\"2\202\323\344\223\002,\022*/v2beta1/{name=projects/*" +
-      "/agent/intents/*}\022\251\001\n\014CreateIntent\0224.goo" +
-      "gle.cloud.dialogflow.v2beta1.CreateInten" +
-      "tRequest\032\'.google.cloud.dialogflow.v2bet" +
-      "a1.Intent\":\202\323\344\223\0024\"*/v2beta1/{parent=proj" +
-      "ects/*/agent}/intents:\006intent\022\260\001\n\014Update" +
-      "Intent\0224.google.cloud.dialogflow.v2beta1" +
-      ".UpdateIntentRequest\032\'.google.cloud.dial" +
-      "ogflow.v2beta1.Intent\"A\202\323\344\223\002;21/v2beta1/" +
-      "{intent.name=projects/*/agent/intents/*}" +
-      ":\006intent\022\220\001\n\014DeleteIntent\0224.google.cloud" +
-      ".dialogflow.v2beta1.DeleteIntentRequest\032" +
-      "\026.google.protobuf.Empty\"2\202\323\344\223\002,**/v2beta" +
-      "1/{name=projects/*/agent/intents/*}\022\262\001\n\022" +
-      "BatchUpdateIntents\022:.google.cloud.dialog" +
-      "flow.v2beta1.BatchUpdateIntentsRequest\032\035" +
-      ".google.longrunning.Operation\"A\202\323\344\223\002;\"6/" +
-      "v2beta1/{parent=projects/*/agent}/intent" +
-      "s:batchUpdate:\001*\022\262\001\n\022BatchDeleteIntents\022" +
-      ":.google.cloud.dialogflow.v2beta1.BatchD" +
-      "eleteIntentsRequest\032\035.google.longrunning" +
-      ".Operation\"A\202\323\344\223\002;\"6/v2beta1/{parent=pro" +
-      "jects/*/agent}/intents:batchDelete:\001*B\251\001" +
-      "\n#com.google.cloud.dialogflow.v2beta1B\013I" +
-      "ntentProtoP\001ZIgoogle.golang.org/genproto" +
-      "/googleapis/cloud/dialogflow/v2beta1;dia" +
-      "logflow\370\001\001\242\002\002DF\252\002\037Google.Cloud.Dialogflo" +
-      "w.V2beta1b\006proto3"
+      "e.LinkOutSuggestionH\000\022Q\n\013list_select\030\013 \001" +
+      "(\0132:.google.cloud.dialogflow.v2beta1.Int" +
+      "ent.Message.ListSelectH\000\022Y\n\017carousel_sel" +
+      "ect\030\014 \001(\0132>.google.cloud.dialogflow.v2be" +
+      "ta1.Intent.Message.CarouselSelectH\000\022b\n\024t" +
+      "elephony_play_audio\030\r \001(\0132B.google.cloud" +
+      ".dialogflow.v2beta1.Intent.Message.Telep" +
+      "honyPlayAudioH\000\022p\n\033telephony_synthesize_" +
+      "speech\030\016 \001(\0132I.google.cloud.dialogflow.v" +
+      "2beta1.Intent.Message.TelephonySynthesiz" +
+      "eSpeechH\000\022h\n\027telephony_transfer_call\030\017 \001" +
+      "(\0132E.google.cloud.dialogflow.v2beta1.Int" +
+      "ent.Message.TelephonyTransferCallH\000\022J\n\010p" +
+      "latform\030\006 \001(\01628.google.cloud.dialogflow." +
+      "v2beta1.Intent.Message.Platform\032\024\n\004Text\022" +
+      "\014\n\004text\030\001 \003(\t\0326\n\005Image\022\021\n\timage_uri\030\001 \001(" +
+      "\t\022\032\n\022accessibility_text\030\002 \001(\t\0324\n\014QuickRe" +
+      "plies\022\r\n\005title\030\001 \001(\t\022\025\n\rquick_replies\030\002 " +
+      "\003(\t\032\262\001\n\004Card\022\r\n\005title\030\001 \001(\t\022\020\n\010subtitle\030" +
+      "\002 \001(\t\022\021\n\timage_uri\030\003 \001(\t\022L\n\007buttons\030\004 \003(" +
+      "\0132;.google.cloud.dialogflow.v2beta1.Inte" +
+      "nt.Message.Card.Button\032(\n\006Button\022\014\n\004text" +
+      "\030\001 \001(\t\022\020\n\010postback\030\002 \001(\t\032L\n\016SimpleRespon" +
+      "se\022\026\n\016text_to_speech\030\001 \001(\t\022\014\n\004ssml\030\002 \001(\t" +
+      "\022\024\n\014display_text\030\003 \001(\t\032k\n\017SimpleResponse" +
+      "s\022X\n\020simple_responses\030\001 \003(\0132>.google.clo" +
+      "ud.dialogflow.v2beta1.Intent.Message.Sim" +
+      "pleResponse\032\376\002\n\tBasicCard\022\r\n\005title\030\001 \001(\t" +
+      "\022\020\n\010subtitle\030\002 \001(\t\022\026\n\016formatted_text\030\003 \001" +
+      "(\t\022D\n\005image\030\004 \001(\01325.google.cloud.dialogf" +
+      "low.v2beta1.Intent.Message.Image\022Q\n\007butt" +
+      "ons\030\005 \003(\0132@.google.cloud.dialogflow.v2be" +
+      "ta1.Intent.Message.BasicCard.Button\032\236\001\n\006" +
+      "Button\022\r\n\005title\030\001 \001(\t\022g\n\017open_uri_action" +
+      "\030\002 \001(\0132N.google.cloud.dialogflow.v2beta1" +
+      ".Intent.Message.BasicCard.Button.OpenUri" +
+      "Action\032\034\n\rOpenUriAction\022\013\n\003uri\030\001 \001(\t\032\033\n\n" +
+      "Suggestion\022\r\n\005title\030\001 \001(\t\032^\n\013Suggestions" +
+      "\022O\n\013suggestions\030\001 \003(\0132:.google.cloud.dia" +
+      "logflow.v2beta1.Intent.Message.Suggestio" +
+      "n\032:\n\021LinkOutSuggestion\022\030\n\020destination_na" +
+      "me\030\001 \001(\t\022\013\n\003uri\030\002 \001(\t\032\254\002\n\nListSelect\022\r\n\005" +
+      "title\030\001 \001(\t\022N\n\005items\030\002 \003(\0132?.google.clou" +
+      "d.dialogflow.v2beta1.Intent.Message.List" +
+      "Select.Item\032\276\001\n\004Item\022L\n\004info\030\001 \001(\0132>.goo" +
+      "gle.cloud.dialogflow.v2beta1.Intent.Mess" +
+      "age.SelectItemInfo\022\r\n\005title\030\002 \001(\t\022\023\n\013des" +
+      "cription\030\003 \001(\t\022D\n\005image\030\004 \001(\01325.google.c" +
+      "loud.dialogflow.v2beta1.Intent.Message.I" +
+      "mage\032\245\002\n\016CarouselSelect\022R\n\005items\030\001 \003(\0132C" +
+      ".google.cloud.dialogflow.v2beta1.Intent." +
+      "Message.CarouselSelect.Item\032\276\001\n\004Item\022L\n\004" +
+      "info\030\001 \001(\0132>.google.cloud.dialogflow.v2b" +
+      "eta1.Intent.Message.SelectItemInfo\022\r\n\005ti" +
+      "tle\030\002 \001(\t\022\023\n\013description\030\003 \001(\t\022D\n\005image\030" +
+      "\004 \001(\01325.google.cloud.dialogflow.v2beta1." +
+      "Intent.Message.Image\032/\n\016SelectItemInfo\022\013" +
+      "\n\003key\030\001 \001(\t\022\020\n\010synonyms\030\002 \003(\t\032\'\n\022Telepho" +
+      "nyPlayAudio\022\021\n\taudio_uri\030\001 \001(\t\032E\n\031Teleph" +
+      "onySynthesizeSpeech\022\016\n\004text\030\001 \001(\tH\000\022\016\n\004s" +
+      "sml\030\002 \001(\tH\000B\010\n\006source\032-\n\025TelephonyTransf" +
+      "erCall\022\024\n\014phone_number\030\001 \001(\t\"\232\001\n\010Platfor" +
+      "m\022\030\n\024PLATFORM_UNSPECIFIED\020\000\022\014\n\010FACEBOOK\020" +
+      "\001\022\t\n\005SLACK\020\002\022\014\n\010TELEGRAM\020\003\022\007\n\003KIK\020\004\022\t\n\005S" +
+      "KYPE\020\005\022\010\n\004LINE\020\006\022\t\n\005VIBER\020\007\022\025\n\021ACTIONS_O" +
+      "N_GOOGLE\020\010\022\r\n\tTELEPHONY\020\nB\t\n\007message\032W\n\022" +
+      "FollowupIntentInfo\022\034\n\024followup_intent_na" +
+      "me\030\001 \001(\t\022#\n\033parent_followup_intent_name\030" +
+      "\002 \001(\t\"t\n\014WebhookState\022\035\n\031WEBHOOK_STATE_U" +
+      "NSPECIFIED\020\000\022\031\n\025WEBHOOK_STATE_ENABLED\020\001\022" +
+      "*\n&WEBHOOK_STATE_ENABLED_FOR_SLOT_FILLIN" +
+      "G\020\002\"\244\001\n\022ListIntentsRequest\022\016\n\006parent\030\001 \001" +
+      "(\t\022\025\n\rlanguage_code\030\002 \001(\t\022@\n\013intent_view" +
+      "\030\003 \001(\0162+.google.cloud.dialogflow.v2beta1" +
+      ".IntentView\022\021\n\tpage_size\030\004 \001(\005\022\022\n\npage_t" +
+      "oken\030\005 \001(\t\"h\n\023ListIntentsResponse\0228\n\007int" +
+      "ents\030\001 \003(\0132\'.google.cloud.dialogflow.v2b" +
+      "eta1.Intent\022\027\n\017next_page_token\030\002 \001(\t\"y\n\020" +
+      "GetIntentRequest\022\014\n\004name\030\001 \001(\t\022\025\n\rlangua" +
+      "ge_code\030\002 \001(\t\022@\n\013intent_view\030\003 \001(\0162+.goo" +
+      "gle.cloud.dialogflow.v2beta1.IntentView\"" +
+      "\267\001\n\023CreateIntentRequest\022\016\n\006parent\030\001 \001(\t\022" +
+      "7\n\006intent\030\002 \001(\0132\'.google.cloud.dialogflo" +
+      "w.v2beta1.Intent\022\025\n\rlanguage_code\030\003 \001(\t\022" +
+      "@\n\013intent_view\030\004 \001(\0162+.google.cloud.dial" +
+      "ogflow.v2beta1.IntentView\"\330\001\n\023UpdateInte" +
+      "ntRequest\0227\n\006intent\030\001 \001(\0132\'.google.cloud" +
+      ".dialogflow.v2beta1.Intent\022\025\n\rlanguage_c" +
+      "ode\030\002 \001(\t\022/\n\013update_mask\030\003 \001(\0132\032.google." +
+      "protobuf.FieldMask\022@\n\013intent_view\030\004 \001(\0162" +
+      "+.google.cloud.dialogflow.v2beta1.Intent" +
+      "View\"#\n\023DeleteIntentRequest\022\014\n\004name\030\001 \001(" +
+      "\t\"\256\002\n\031BatchUpdateIntentsRequest\022\016\n\006paren" +
+      "t\030\001 \001(\t\022\032\n\020intent_batch_uri\030\002 \001(\tH\000\022K\n\023i" +
+      "ntent_batch_inline\030\003 \001(\0132,.google.cloud." +
+      "dialogflow.v2beta1.IntentBatchH\000\022\025\n\rlang" +
+      "uage_code\030\004 \001(\t\022/\n\013update_mask\030\005 \001(\0132\032.g" +
+      "oogle.protobuf.FieldMask\022@\n\013intent_view\030" +
+      "\006 \001(\0162+.google.cloud.dialogflow.v2beta1." +
+      "IntentViewB\016\n\014intent_batch\"V\n\032BatchUpdat" +
+      "eIntentsResponse\0228\n\007intents\030\001 \003(\0132\'.goog" +
+      "le.cloud.dialogflow.v2beta1.Intent\"e\n\031Ba" +
+      "tchDeleteIntentsRequest\022\016\n\006parent\030\001 \001(\t\022" +
+      "8\n\007intents\030\002 \003(\0132\'.google.cloud.dialogfl" +
+      "ow.v2beta1.Intent\"G\n\013IntentBatch\0228\n\007inte" +
+      "nts\030\001 \003(\0132\'.google.cloud.dialogflow.v2be" +
+      "ta1.Intent*?\n\nIntentView\022\033\n\027INTENT_VIEW_" +
+      "UNSPECIFIED\020\000\022\024\n\020INTENT_VIEW_FULL\020\0012\262\t\n\007" +
+      "Intents\022\254\001\n\013ListIntents\0223.google.cloud.d" +
+      "ialogflow.v2beta1.ListIntentsRequest\0324.g" +
+      "oogle.cloud.dialogflow.v2beta1.ListInten" +
+      "tsResponse\"2\202\323\344\223\002,\022*/v2beta1/{parent=pro" +
+      "jects/*/agent}/intents\022\233\001\n\tGetIntent\0221.g" +
+      "oogle.cloud.dialogflow.v2beta1.GetIntent" +
+      "Request\032\'.google.cloud.dialogflow.v2beta" +
+      "1.Intent\"2\202\323\344\223\002,\022*/v2beta1/{name=project" +
+      "s/*/agent/intents/*}\022\251\001\n\014CreateIntent\0224." +
+      "google.cloud.dialogflow.v2beta1.CreateIn" +
+      "tentRequest\032\'.google.cloud.dialogflow.v2" +
+      "beta1.Intent\":\202\323\344\223\0024\"*/v2beta1/{parent=p" +
+      "rojects/*/agent}/intents:\006intent\022\260\001\n\014Upd" +
+      "ateIntent\0224.google.cloud.dialogflow.v2be" +
+      "ta1.UpdateIntentRequest\032\'.google.cloud.d" +
+      "ialogflow.v2beta1.Intent\"A\202\323\344\223\002;21/v2bet" +
+      "a1/{intent.name=projects/*/agent/intents" +
+      "/*}:\006intent\022\220\001\n\014DeleteIntent\0224.google.cl" +
+      "oud.dialogflow.v2beta1.DeleteIntentReque" +
+      "st\032\026.google.protobuf.Empty\"2\202\323\344\223\002,**/v2b" +
+      "eta1/{name=projects/*/agent/intents/*}\022\262" +
+      "\001\n\022BatchUpdateIntents\022:.google.cloud.dia" +
+      "logflow.v2beta1.BatchUpdateIntentsReques" +
+      "t\032\035.google.longrunning.Operation\"A\202\323\344\223\002;" +
+      "\"6/v2beta1/{parent=projects/*/agent}/int" +
+      "ents:batchUpdate:\001*\022\262\001\n\022BatchDeleteInten" +
+      "ts\022:.google.cloud.dialogflow.v2beta1.Bat" +
+      "chDeleteIntentsRequest\032\035.google.longrunn" +
+      "ing.Operation\"A\202\323\344\223\002;\"6/v2beta1/{parent=" +
+      "projects/*/agent}/intents:batchDelete:\001*" +
+      "B\251\001\n#com.google.cloud.dialogflow.v2beta1" +
+      "B\013IntentProtoP\001ZIgoogle.golang.org/genpr" +
+      "oto/googleapis/cloud/dialogflow/v2beta1;" +
+      "dialogflow\370\001\001\242\002\002DF\252\002\037Google.Cloud.Dialog" +
+      "flow.V2beta1b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -406,7 +434,7 @@ public final class IntentProto {
     internal_static_google_cloud_dialogflow_v2beta1_Intent_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_cloud_dialogflow_v2beta1_Intent_descriptor,
-        new java.lang.String[] { "Name", "DisplayName", "WebhookState", "Priority", "IsFallback", "MlEnabled", "MlDisabled", "InputContextNames", "Events", "TrainingPhrases", "Action", "OutputContexts", "ResetContexts", "Parameters", "Messages", "DefaultResponsePlatforms", "RootFollowupIntentName", "ParentFollowupIntentName", "FollowupIntentInfo", });
+        new java.lang.String[] { "Name", "DisplayName", "WebhookState", "Priority", "IsFallback", "MlEnabled", "MlDisabled", "EndInteraction", "InputContextNames", "Events", "TrainingPhrases", "Action", "OutputContexts", "ResetContexts", "Parameters", "Messages", "DefaultResponsePlatforms", "RootFollowupIntentName", "ParentFollowupIntentName", "FollowupIntentInfo", });
     internal_static_google_cloud_dialogflow_v2beta1_Intent_TrainingPhrase_descriptor =
       internal_static_google_cloud_dialogflow_v2beta1_Intent_descriptor.getNestedTypes().get(0);
     internal_static_google_cloud_dialogflow_v2beta1_Intent_TrainingPhrase_fieldAccessorTable = new
@@ -430,7 +458,7 @@ public final class IntentProto {
     internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_descriptor,
-        new java.lang.String[] { "Text", "Image", "QuickReplies", "Card", "Payload", "SimpleResponses", "BasicCard", "Suggestions", "LinkOutSuggestion", "ListSelect", "CarouselSelect", "Platform", "Message", });
+        new java.lang.String[] { "Text", "Image", "QuickReplies", "Card", "Payload", "SimpleResponses", "BasicCard", "Suggestions", "LinkOutSuggestion", "ListSelect", "CarouselSelect", "TelephonyPlayAudio", "TelephonySynthesizeSpeech", "TelephonyTransferCall", "Platform", "Message", });
     internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_Text_descriptor =
       internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_descriptor.getNestedTypes().get(0);
     internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_Text_fieldAccessorTable = new
@@ -539,6 +567,24 @@ public final class IntentProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_SelectItemInfo_descriptor,
         new java.lang.String[] { "Key", "Synonyms", });
+    internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_TelephonyPlayAudio_descriptor =
+      internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_descriptor.getNestedTypes().get(13);
+    internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_TelephonyPlayAudio_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_TelephonyPlayAudio_descriptor,
+        new java.lang.String[] { "AudioUri", });
+    internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_TelephonySynthesizeSpeech_descriptor =
+      internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_descriptor.getNestedTypes().get(14);
+    internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_TelephonySynthesizeSpeech_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_TelephonySynthesizeSpeech_descriptor,
+        new java.lang.String[] { "Text", "Ssml", "Source", });
+    internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_TelephonyTransferCall_descriptor =
+      internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_descriptor.getNestedTypes().get(15);
+    internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_TelephonyTransferCall_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_TelephonyTransferCall_descriptor,
+        new java.lang.String[] { "PhoneNumber", });
     internal_static_google_cloud_dialogflow_v2beta1_Intent_FollowupIntentInfo_descriptor =
       internal_static_google_cloud_dialogflow_v2beta1_Intent_descriptor.getNestedTypes().get(3);
     internal_static_google_cloud_dialogflow_v2beta1_Intent_FollowupIntentInfo_fieldAccessorTable = new

@@ -297,7 +297,7 @@ public class TopicAdminClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  /* package-private */ final Topic updateTopic(UpdateTopicRequest request) {
+  public final Topic updateTopic(UpdateTopicRequest request) {
     return updateTopicCallable().call(request);
   }
 
@@ -321,7 +321,7 @@ public class TopicAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    */
-  /* package-private */ final UnaryCallable<UpdateTopicRequest, Topic> updateTopicCallable() {
+  public final UnaryCallable<UpdateTopicRequest, Topic> updateTopicCallable() {
     return stub.updateTopicCallable();
   }
 

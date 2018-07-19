@@ -51,7 +51,8 @@ import javax.annotation.Generated;
  * conversation and match user input to predefined intents and actions.
  *
  * <p>You can create an agent using both Dialogflow Standard Edition and Dialogflow Enterprise
- * Edition. For details, see [Dialogflow Editions](/dialogflow-enterprise/docs/editions).
+ * Edition. For details, see [Dialogflow
+ * Editions](https://cloud.google.com/dialogflow-enterprise/docs/editions).
  *
  * <p>You can save your agent for backup or versioning by exporting the agent by using the
  * [ExportAgent][google.cloud.dialogflow.v2beta1.Agents.ExportAgent] method. You can import a saved

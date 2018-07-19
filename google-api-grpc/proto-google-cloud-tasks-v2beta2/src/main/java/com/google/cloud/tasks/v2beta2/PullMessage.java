@@ -121,7 +121,7 @@ private static final long serialVersionUID = 0L;
    * [task is created][google.cloud.tasks.v2beta2.CloudTasks.CreateTask].
    * The tag must be less than 500 characters.
    * SDK compatibility: Although the SDK allows tags to be either
-   * string or [bytes](/appengine/docs/standard/java/javadoc/com/google/appengine/api/taskqueue/TaskOptions.html#tag-byte:A-),
+   * string or [bytes](https://cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/taskqueue/TaskOptions.html#tag-byte:A-),
    * only UTF-8 encoded tags can be used in Cloud Tasks. If a tag isn't UTF-8
    * encoded, the tag will be empty when the task is returned by Cloud Tasks.
    * </pre>
@@ -153,7 +153,7 @@ private static final long serialVersionUID = 0L;
    * [task is created][google.cloud.tasks.v2beta2.CloudTasks.CreateTask].
    * The tag must be less than 500 characters.
    * SDK compatibility: Although the SDK allows tags to be either
-   * string or [bytes](/appengine/docs/standard/java/javadoc/com/google/appengine/api/taskqueue/TaskOptions.html#tag-byte:A-),
+   * string or [bytes](https://cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/taskqueue/TaskOptions.html#tag-byte:A-),
    * only UTF-8 encoded tags can be used in Cloud Tasks. If a tag isn't UTF-8
    * encoded, the tag will be empty when the task is returned by Cloud Tasks.
    * </pre>
@@ -536,7 +536,7 @@ private static final long serialVersionUID = 0L;
      * [task is created][google.cloud.tasks.v2beta2.CloudTasks.CreateTask].
      * The tag must be less than 500 characters.
      * SDK compatibility: Although the SDK allows tags to be either
-     * string or [bytes](/appengine/docs/standard/java/javadoc/com/google/appengine/api/taskqueue/TaskOptions.html#tag-byte:A-),
+     * string or [bytes](https://cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/taskqueue/TaskOptions.html#tag-byte:A-),
      * only UTF-8 encoded tags can be used in Cloud Tasks. If a tag isn't UTF-8
      * encoded, the tag will be empty when the task is returned by Cloud Tasks.
      * </pre>
@@ -568,7 +568,7 @@ private static final long serialVersionUID = 0L;
      * [task is created][google.cloud.tasks.v2beta2.CloudTasks.CreateTask].
      * The tag must be less than 500 characters.
      * SDK compatibility: Although the SDK allows tags to be either
-     * string or [bytes](/appengine/docs/standard/java/javadoc/com/google/appengine/api/taskqueue/TaskOptions.html#tag-byte:A-),
+     * string or [bytes](https://cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/taskqueue/TaskOptions.html#tag-byte:A-),
      * only UTF-8 encoded tags can be used in Cloud Tasks. If a tag isn't UTF-8
      * encoded, the tag will be empty when the task is returned by Cloud Tasks.
      * </pre>
@@ -601,7 +601,7 @@ private static final long serialVersionUID = 0L;
      * [task is created][google.cloud.tasks.v2beta2.CloudTasks.CreateTask].
      * The tag must be less than 500 characters.
      * SDK compatibility: Although the SDK allows tags to be either
-     * string or [bytes](/appengine/docs/standard/java/javadoc/com/google/appengine/api/taskqueue/TaskOptions.html#tag-byte:A-),
+     * string or [bytes](https://cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/taskqueue/TaskOptions.html#tag-byte:A-),
      * only UTF-8 encoded tags can be used in Cloud Tasks. If a tag isn't UTF-8
      * encoded, the tag will be empty when the task is returned by Cloud Tasks.
      * </pre>
@@ -631,7 +631,7 @@ private static final long serialVersionUID = 0L;
      * [task is created][google.cloud.tasks.v2beta2.CloudTasks.CreateTask].
      * The tag must be less than 500 characters.
      * SDK compatibility: Although the SDK allows tags to be either
-     * string or [bytes](/appengine/docs/standard/java/javadoc/com/google/appengine/api/taskqueue/TaskOptions.html#tag-byte:A-),
+     * string or [bytes](https://cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/taskqueue/TaskOptions.html#tag-byte:A-),
      * only UTF-8 encoded tags can be used in Cloud Tasks. If a tag isn't UTF-8
      * encoded, the tag will be empty when the task is returned by Cloud Tasks.
      * </pre>
@@ -657,7 +657,7 @@ private static final long serialVersionUID = 0L;
      * [task is created][google.cloud.tasks.v2beta2.CloudTasks.CreateTask].
      * The tag must be less than 500 characters.
      * SDK compatibility: Although the SDK allows tags to be either
-     * string or [bytes](/appengine/docs/standard/java/javadoc/com/google/appengine/api/taskqueue/TaskOptions.html#tag-byte:A-),
+     * string or [bytes](https://cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/taskqueue/TaskOptions.html#tag-byte:A-),
      * only UTF-8 encoded tags can be used in Cloud Tasks. If a tag isn't UTF-8
      * encoded, the tag will be empty when the task is returned by Cloud Tasks.
      * </pre>

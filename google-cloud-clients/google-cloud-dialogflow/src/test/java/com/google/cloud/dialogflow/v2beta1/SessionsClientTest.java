@@ -26,6 +26,7 @@ import com.google.api.gax.rpc.ApiStreamObserver;
 import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
+import com.google.protobuf.ByteString;
 import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
@@ -44,8 +45,10 @@ import org.junit.Test;
 public class SessionsClientTest {
   private static MockAgents mockAgents;
   private static MockContexts mockContexts;
+  private static MockDocuments mockDocuments;
   private static MockEntityTypes mockEntityTypes;
   private static MockIntents mockIntents;
+  private static MockKnowledgeBases mockKnowledgeBases;
   private static MockSessionEntityTypes mockSessionEntityTypes;
   private static MockSessions mockSessions;
   private static MockServiceHelper serviceHelper;
@@ -56,8 +59,10 @@ public class SessionsClientTest {
   public static void startStaticServer() {
     mockAgents = new MockAgents();
     mockContexts = new MockContexts();
+    mockDocuments = new MockDocuments();
     mockEntityTypes = new MockEntityTypes();
     mockIntents = new MockIntents();
+    mockKnowledgeBases = new MockKnowledgeBases();
     mockSessionEntityTypes = new MockSessionEntityTypes();
     mockSessions = new MockSessions();
     serviceHelper =
@@ -66,8 +71,10 @@ public class SessionsClientTest {
             Arrays.<MockGrpcService>asList(
                 mockAgents,
                 mockContexts,
+                mockDocuments,
                 mockEntityTypes,
                 mockIntents,
+                mockKnowledgeBases,
                 mockSessionEntityTypes,
                 mockSessions));
     serviceHelper.start();
@@ -99,8 +106,12 @@ public class SessionsClientTest {
   @SuppressWarnings("all")
   public void detectIntentTest() {
     String responseId = "responseId1847552473";
+    ByteString outputAudio = ByteString.copyFromUtf8("24");
     DetectIntentResponse expectedResponse =
-        DetectIntentResponse.newBuilder().setResponseId(responseId).build();
+        DetectIntentResponse.newBuilder()
+            .setResponseId(responseId)
+            .setOutputAudio(outputAudio)
+            .build();
     mockSessions.addResponse(expectedResponse);
 
     SessionName session = SessionName.of("[PROJECT]", "[SESSION]");
@@ -142,8 +153,12 @@ public class SessionsClientTest {
   @SuppressWarnings("all")
   public void streamingDetectIntentTest() throws Exception {
     String responseId = "responseId1847552473";
+    ByteString outputAudio = ByteString.copyFromUtf8("24");
     StreamingDetectIntentResponse expectedResponse =
-        StreamingDetectIntentResponse.newBuilder().setResponseId(responseId).build();
+        StreamingDetectIntentResponse.newBuilder()
+            .setResponseId(responseId)
+            .setOutputAudio(outputAudio)
+            .build();
     mockSessions.addResponse(expectedResponse);
     String session = "session1984987798";
     QueryInput queryInput = QueryInput.newBuilder().build();

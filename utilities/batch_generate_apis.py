@@ -62,7 +62,6 @@ def run_gapic_gen(googleapis):
     generate('google/spanner/admin/database/artman_spanner_admin_database.yaml')
     generate('google/spanner/admin/instance/artman_spanner_admin_instance.yaml')
     generate('google/cloud/speech/artman_speech_v1.yaml')
-    generate('google/cloud/speech/artman_speech_v1beta1.yaml')
     generate('google/cloud/speech/artman_speech_v1p1beta1.yaml')
     generate('google/cloud/tasks/artman_cloudtasks.yaml')
     generate('google/cloud/texttospeech/artman_texttospeech_v1.yaml')

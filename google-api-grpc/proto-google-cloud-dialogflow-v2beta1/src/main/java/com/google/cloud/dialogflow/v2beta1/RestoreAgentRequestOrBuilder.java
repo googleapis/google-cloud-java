@@ -51,16 +51,17 @@ public interface RestoreAgentRequestOrBuilder extends
    * <pre>
    * The agent to restore.
    * Example for how to restore an agent via the command line:
-   * curl &#92;
-   *   'https://dialogflow.googleapis.com/v2beta1/projects/&lt;project_name&gt;/agent:restore&#92;
+   * &lt;pre&gt;curl &#92;
+   *   'https://dialogflow.googleapis.com/v2beta1/projects/&amp;lt;project_name&amp;gt;/agent:restore&#92;
    *    -X POST &#92;
-   *    -H 'Authorization: Bearer '$(gcloud auth print-access-token) &#92;
+   *    -H 'Authorization: Bearer '$(gcloud auth application-default
+   *    print-access-token) &#92;
    *    -H 'Accept: application/json' &#92;
    *    -H 'Content-Type: application/json' &#92;
    *    --compressed &#92;
    *    --data-binary "{
-   *        'agentContent': '$(cat &lt;agent zip file&gt; | base64 -w 0)'
-   *    }" &#92;
+   *        'agentContent': '$(cat &amp;lt;agent zip file&amp;gt; | base64 -w 0)'
+   *    }"&lt;/pre&gt;
    * </pre>
    *
    * <code>bytes agent_content = 3;</code>

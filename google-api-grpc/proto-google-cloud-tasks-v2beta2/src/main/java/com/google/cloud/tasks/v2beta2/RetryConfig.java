@@ -217,11 +217,10 @@ private static final long serialVersionUID = 0L;
    * If zero, then the task age is unlimited.
    * If unspecified when the queue is created, Cloud Tasks will pick the
    * default.
-   * This field is output only for
-   * [pull queues](google.cloud.tasks.v2beta2.PullTarget).
+   * This field is output only for [pull queues][google.cloud.tasks.v2beta2.PullTarget].
    * `max_retry_duration` will be truncated to the nearest second.
    * This field has the same meaning as
-   * [task_age_limit in queue.yaml/xml](/appengine/docs/standard/python/config/queueref#retry_parameters).
+   * [task_age_limit in queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
    * </pre>
    *
    * <code>.google.protobuf.Duration max_retry_duration = 3;</code>
@@ -240,11 +239,10 @@ private static final long serialVersionUID = 0L;
    * If zero, then the task age is unlimited.
    * If unspecified when the queue is created, Cloud Tasks will pick the
    * default.
-   * This field is output only for
-   * [pull queues](google.cloud.tasks.v2beta2.PullTarget).
+   * This field is output only for [pull queues][google.cloud.tasks.v2beta2.PullTarget].
    * `max_retry_duration` will be truncated to the nearest second.
    * This field has the same meaning as
-   * [task_age_limit in queue.yaml/xml](/appengine/docs/standard/python/config/queueref#retry_parameters).
+   * [task_age_limit in queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
    * </pre>
    *
    * <code>.google.protobuf.Duration max_retry_duration = 3;</code>
@@ -263,11 +261,10 @@ private static final long serialVersionUID = 0L;
    * If zero, then the task age is unlimited.
    * If unspecified when the queue is created, Cloud Tasks will pick the
    * default.
-   * This field is output only for
-   * [pull queues](google.cloud.tasks.v2beta2.PullTarget).
+   * This field is output only for [pull queues][google.cloud.tasks.v2beta2.PullTarget].
    * `max_retry_duration` will be truncated to the nearest second.
    * This field has the same meaning as
-   * [task_age_limit in queue.yaml/xml](/appengine/docs/standard/python/config/queueref#retry_parameters).
+   * [task_age_limit in queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
    * </pre>
    *
    * <code>.google.protobuf.Duration max_retry_duration = 3;</code>
@@ -280,18 +277,17 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.Duration minBackoff_;
   /**
    * <pre>
-   * A task will be [scheduled](Task.schedule_time) for retry between
+   * A task will be [scheduled][google.cloud.tasks.v2beta2.Task.schedule_time] for retry between
    * [min_backoff][google.cloud.tasks.v2beta2.RetryConfig.min_backoff] and
    * [max_backoff][google.cloud.tasks.v2beta2.RetryConfig.max_backoff] duration after it fails,
    * if the queue's [RetryConfig][google.cloud.tasks.v2beta2.RetryConfig] specifies that the task should be
    * retried.
    * If unspecified when the queue is created, Cloud Tasks will pick the
    * default.
-   * This field is output only for
-   * [pull queues](google.cloud.tasks.v2beta2.PullTarget).
+   * This field is output only for [pull queues][google.cloud.tasks.v2beta2.PullTarget].
    * `min_backoff` will be truncated to the nearest second.
    * This field has the same meaning as
-   * [min_backoff_seconds in queue.yaml/xml](/appengine/docs/standard/python/config/queueref#retry_parameters).
+   * [min_backoff_seconds in queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
    * </pre>
    *
    * <code>.google.protobuf.Duration min_backoff = 4;</code>
@@ -301,18 +297,17 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * A task will be [scheduled](Task.schedule_time) for retry between
+   * A task will be [scheduled][google.cloud.tasks.v2beta2.Task.schedule_time] for retry between
    * [min_backoff][google.cloud.tasks.v2beta2.RetryConfig.min_backoff] and
    * [max_backoff][google.cloud.tasks.v2beta2.RetryConfig.max_backoff] duration after it fails,
    * if the queue's [RetryConfig][google.cloud.tasks.v2beta2.RetryConfig] specifies that the task should be
    * retried.
    * If unspecified when the queue is created, Cloud Tasks will pick the
    * default.
-   * This field is output only for
-   * [pull queues](google.cloud.tasks.v2beta2.PullTarget).
+   * This field is output only for [pull queues][google.cloud.tasks.v2beta2.PullTarget].
    * `min_backoff` will be truncated to the nearest second.
    * This field has the same meaning as
-   * [min_backoff_seconds in queue.yaml/xml](/appengine/docs/standard/python/config/queueref#retry_parameters).
+   * [min_backoff_seconds in queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
    * </pre>
    *
    * <code>.google.protobuf.Duration min_backoff = 4;</code>
@@ -322,18 +317,17 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * A task will be [scheduled](Task.schedule_time) for retry between
+   * A task will be [scheduled][google.cloud.tasks.v2beta2.Task.schedule_time] for retry between
    * [min_backoff][google.cloud.tasks.v2beta2.RetryConfig.min_backoff] and
    * [max_backoff][google.cloud.tasks.v2beta2.RetryConfig.max_backoff] duration after it fails,
    * if the queue's [RetryConfig][google.cloud.tasks.v2beta2.RetryConfig] specifies that the task should be
    * retried.
    * If unspecified when the queue is created, Cloud Tasks will pick the
    * default.
-   * This field is output only for
-   * [pull queues](google.cloud.tasks.v2beta2.PullTarget).
+   * This field is output only for [pull queues][google.cloud.tasks.v2beta2.PullTarget].
    * `min_backoff` will be truncated to the nearest second.
    * This field has the same meaning as
-   * [min_backoff_seconds in queue.yaml/xml](/appengine/docs/standard/python/config/queueref#retry_parameters).
+   * [min_backoff_seconds in queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
    * </pre>
    *
    * <code>.google.protobuf.Duration min_backoff = 4;</code>
@@ -346,18 +340,17 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.Duration maxBackoff_;
   /**
    * <pre>
-   * A task will be [scheduled](Task.schedule_time) for retry between
+   * A task will be [scheduled][google.cloud.tasks.v2beta2.Task.schedule_time] for retry between
    * [min_backoff][google.cloud.tasks.v2beta2.RetryConfig.min_backoff] and
    * [max_backoff][google.cloud.tasks.v2beta2.RetryConfig.max_backoff] duration after it fails,
    * if the queue's [RetryConfig][google.cloud.tasks.v2beta2.RetryConfig] specifies that the task should be
    * retried.
    * If unspecified when the queue is created, Cloud Tasks will pick the
    * default.
-   * This field is output only for
-   * [pull queues](google.cloud.tasks.v2beta2.PullTarget).
+   * This field is output only for [pull queues][google.cloud.tasks.v2beta2.PullTarget].
    * `max_backoff` will be truncated to the nearest second.
    * This field has the same meaning as
-   * [max_backoff_seconds in queue.yaml/xml](/appengine/docs/standard/python/config/queueref#retry_parameters).
+   * [max_backoff_seconds in queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
    * </pre>
    *
    * <code>.google.protobuf.Duration max_backoff = 5;</code>
@@ -367,18 +360,17 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * A task will be [scheduled](Task.schedule_time) for retry between
+   * A task will be [scheduled][google.cloud.tasks.v2beta2.Task.schedule_time] for retry between
    * [min_backoff][google.cloud.tasks.v2beta2.RetryConfig.min_backoff] and
    * [max_backoff][google.cloud.tasks.v2beta2.RetryConfig.max_backoff] duration after it fails,
    * if the queue's [RetryConfig][google.cloud.tasks.v2beta2.RetryConfig] specifies that the task should be
    * retried.
    * If unspecified when the queue is created, Cloud Tasks will pick the
    * default.
-   * This field is output only for
-   * [pull queues](google.cloud.tasks.v2beta2.PullTarget).
+   * This field is output only for [pull queues][google.cloud.tasks.v2beta2.PullTarget].
    * `max_backoff` will be truncated to the nearest second.
    * This field has the same meaning as
-   * [max_backoff_seconds in queue.yaml/xml](/appengine/docs/standard/python/config/queueref#retry_parameters).
+   * [max_backoff_seconds in queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
    * </pre>
    *
    * <code>.google.protobuf.Duration max_backoff = 5;</code>
@@ -388,18 +380,17 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * A task will be [scheduled](Task.schedule_time) for retry between
+   * A task will be [scheduled][google.cloud.tasks.v2beta2.Task.schedule_time] for retry between
    * [min_backoff][google.cloud.tasks.v2beta2.RetryConfig.min_backoff] and
    * [max_backoff][google.cloud.tasks.v2beta2.RetryConfig.max_backoff] duration after it fails,
    * if the queue's [RetryConfig][google.cloud.tasks.v2beta2.RetryConfig] specifies that the task should be
    * retried.
    * If unspecified when the queue is created, Cloud Tasks will pick the
    * default.
-   * This field is output only for
-   * [pull queues](google.cloud.tasks.v2beta2.PullTarget).
+   * This field is output only for [pull queues][google.cloud.tasks.v2beta2.PullTarget].
    * `max_backoff` will be truncated to the nearest second.
    * This field has the same meaning as
-   * [max_backoff_seconds in queue.yaml/xml](/appengine/docs/standard/python/config/queueref#retry_parameters).
+   * [max_backoff_seconds in queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
    * </pre>
    *
    * <code>.google.protobuf.Duration max_backoff = 5;</code>
@@ -430,10 +421,9 @@ private static final long serialVersionUID = 0L;
    * 240s, 300s, 300s, ....
    * If unspecified when the queue is created, Cloud Tasks will pick the
    * default.
-   * This field is output only for
-   * [pull queues](google.cloud.tasks.v2beta2.PullTarget).
+   * This field is output only for [pull queues][google.cloud.tasks.v2beta2.PullTarget].
    * This field has the same meaning as
-   * [max_doublings in queue.yaml/xml](/appengine/docs/standard/python/config/queueref#retry_parameters).
+   * [max_doublings in queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
    * </pre>
    *
    * <code>int32 max_doublings = 6;</code>
@@ -1010,11 +1000,10 @@ private static final long serialVersionUID = 0L;
      * If zero, then the task age is unlimited.
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
-     * This field is output only for
-     * [pull queues](google.cloud.tasks.v2beta2.PullTarget).
+     * This field is output only for [pull queues][google.cloud.tasks.v2beta2.PullTarget].
      * `max_retry_duration` will be truncated to the nearest second.
      * This field has the same meaning as
-     * [task_age_limit in queue.yaml/xml](/appengine/docs/standard/python/config/queueref#retry_parameters).
+     * [task_age_limit in queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
      * </pre>
      *
      * <code>.google.protobuf.Duration max_retry_duration = 3;</code>
@@ -1033,11 +1022,10 @@ private static final long serialVersionUID = 0L;
      * If zero, then the task age is unlimited.
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
-     * This field is output only for
-     * [pull queues](google.cloud.tasks.v2beta2.PullTarget).
+     * This field is output only for [pull queues][google.cloud.tasks.v2beta2.PullTarget].
      * `max_retry_duration` will be truncated to the nearest second.
      * This field has the same meaning as
-     * [task_age_limit in queue.yaml/xml](/appengine/docs/standard/python/config/queueref#retry_parameters).
+     * [task_age_limit in queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
      * </pre>
      *
      * <code>.google.protobuf.Duration max_retry_duration = 3;</code>
@@ -1060,11 +1048,10 @@ private static final long serialVersionUID = 0L;
      * If zero, then the task age is unlimited.
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
-     * This field is output only for
-     * [pull queues](google.cloud.tasks.v2beta2.PullTarget).
+     * This field is output only for [pull queues][google.cloud.tasks.v2beta2.PullTarget].
      * `max_retry_duration` will be truncated to the nearest second.
      * This field has the same meaning as
-     * [task_age_limit in queue.yaml/xml](/appengine/docs/standard/python/config/queueref#retry_parameters).
+     * [task_age_limit in queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
      * </pre>
      *
      * <code>.google.protobuf.Duration max_retry_duration = 3;</code>
@@ -1093,11 +1080,10 @@ private static final long serialVersionUID = 0L;
      * If zero, then the task age is unlimited.
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
-     * This field is output only for
-     * [pull queues](google.cloud.tasks.v2beta2.PullTarget).
+     * This field is output only for [pull queues][google.cloud.tasks.v2beta2.PullTarget].
      * `max_retry_duration` will be truncated to the nearest second.
      * This field has the same meaning as
-     * [task_age_limit in queue.yaml/xml](/appengine/docs/standard/python/config/queueref#retry_parameters).
+     * [task_age_limit in queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
      * </pre>
      *
      * <code>.google.protobuf.Duration max_retry_duration = 3;</code>
@@ -1124,11 +1110,10 @@ private static final long serialVersionUID = 0L;
      * If zero, then the task age is unlimited.
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
-     * This field is output only for
-     * [pull queues](google.cloud.tasks.v2beta2.PullTarget).
+     * This field is output only for [pull queues][google.cloud.tasks.v2beta2.PullTarget].
      * `max_retry_duration` will be truncated to the nearest second.
      * This field has the same meaning as
-     * [task_age_limit in queue.yaml/xml](/appengine/docs/standard/python/config/queueref#retry_parameters).
+     * [task_age_limit in queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
      * </pre>
      *
      * <code>.google.protobuf.Duration max_retry_duration = 3;</code>
@@ -1159,11 +1144,10 @@ private static final long serialVersionUID = 0L;
      * If zero, then the task age is unlimited.
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
-     * This field is output only for
-     * [pull queues](google.cloud.tasks.v2beta2.PullTarget).
+     * This field is output only for [pull queues][google.cloud.tasks.v2beta2.PullTarget].
      * `max_retry_duration` will be truncated to the nearest second.
      * This field has the same meaning as
-     * [task_age_limit in queue.yaml/xml](/appengine/docs/standard/python/config/queueref#retry_parameters).
+     * [task_age_limit in queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
      * </pre>
      *
      * <code>.google.protobuf.Duration max_retry_duration = 3;</code>
@@ -1190,11 +1174,10 @@ private static final long serialVersionUID = 0L;
      * If zero, then the task age is unlimited.
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
-     * This field is output only for
-     * [pull queues](google.cloud.tasks.v2beta2.PullTarget).
+     * This field is output only for [pull queues][google.cloud.tasks.v2beta2.PullTarget].
      * `max_retry_duration` will be truncated to the nearest second.
      * This field has the same meaning as
-     * [task_age_limit in queue.yaml/xml](/appengine/docs/standard/python/config/queueref#retry_parameters).
+     * [task_age_limit in queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
      * </pre>
      *
      * <code>.google.protobuf.Duration max_retry_duration = 3;</code>
@@ -1215,11 +1198,10 @@ private static final long serialVersionUID = 0L;
      * If zero, then the task age is unlimited.
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
-     * This field is output only for
-     * [pull queues](google.cloud.tasks.v2beta2.PullTarget).
+     * This field is output only for [pull queues][google.cloud.tasks.v2beta2.PullTarget].
      * `max_retry_duration` will be truncated to the nearest second.
      * This field has the same meaning as
-     * [task_age_limit in queue.yaml/xml](/appengine/docs/standard/python/config/queueref#retry_parameters).
+     * [task_age_limit in queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
      * </pre>
      *
      * <code>.google.protobuf.Duration max_retry_duration = 3;</code>
@@ -1243,11 +1225,10 @@ private static final long serialVersionUID = 0L;
      * If zero, then the task age is unlimited.
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
-     * This field is output only for
-     * [pull queues](google.cloud.tasks.v2beta2.PullTarget).
+     * This field is output only for [pull queues][google.cloud.tasks.v2beta2.PullTarget].
      * `max_retry_duration` will be truncated to the nearest second.
      * This field has the same meaning as
-     * [task_age_limit in queue.yaml/xml](/appengine/docs/standard/python/config/queueref#retry_parameters).
+     * [task_age_limit in queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
      * </pre>
      *
      * <code>.google.protobuf.Duration max_retry_duration = 3;</code>
@@ -1271,18 +1252,17 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> minBackoffBuilder_;
     /**
      * <pre>
-     * A task will be [scheduled](Task.schedule_time) for retry between
+     * A task will be [scheduled][google.cloud.tasks.v2beta2.Task.schedule_time] for retry between
      * [min_backoff][google.cloud.tasks.v2beta2.RetryConfig.min_backoff] and
      * [max_backoff][google.cloud.tasks.v2beta2.RetryConfig.max_backoff] duration after it fails,
      * if the queue's [RetryConfig][google.cloud.tasks.v2beta2.RetryConfig] specifies that the task should be
      * retried.
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
-     * This field is output only for
-     * [pull queues](google.cloud.tasks.v2beta2.PullTarget).
+     * This field is output only for [pull queues][google.cloud.tasks.v2beta2.PullTarget].
      * `min_backoff` will be truncated to the nearest second.
      * This field has the same meaning as
-     * [min_backoff_seconds in queue.yaml/xml](/appengine/docs/standard/python/config/queueref#retry_parameters).
+     * [min_backoff_seconds in queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
      * </pre>
      *
      * <code>.google.protobuf.Duration min_backoff = 4;</code>
@@ -1292,18 +1272,17 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A task will be [scheduled](Task.schedule_time) for retry between
+     * A task will be [scheduled][google.cloud.tasks.v2beta2.Task.schedule_time] for retry between
      * [min_backoff][google.cloud.tasks.v2beta2.RetryConfig.min_backoff] and
      * [max_backoff][google.cloud.tasks.v2beta2.RetryConfig.max_backoff] duration after it fails,
      * if the queue's [RetryConfig][google.cloud.tasks.v2beta2.RetryConfig] specifies that the task should be
      * retried.
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
-     * This field is output only for
-     * [pull queues](google.cloud.tasks.v2beta2.PullTarget).
+     * This field is output only for [pull queues][google.cloud.tasks.v2beta2.PullTarget].
      * `min_backoff` will be truncated to the nearest second.
      * This field has the same meaning as
-     * [min_backoff_seconds in queue.yaml/xml](/appengine/docs/standard/python/config/queueref#retry_parameters).
+     * [min_backoff_seconds in queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
      * </pre>
      *
      * <code>.google.protobuf.Duration min_backoff = 4;</code>
@@ -1317,18 +1296,17 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A task will be [scheduled](Task.schedule_time) for retry between
+     * A task will be [scheduled][google.cloud.tasks.v2beta2.Task.schedule_time] for retry between
      * [min_backoff][google.cloud.tasks.v2beta2.RetryConfig.min_backoff] and
      * [max_backoff][google.cloud.tasks.v2beta2.RetryConfig.max_backoff] duration after it fails,
      * if the queue's [RetryConfig][google.cloud.tasks.v2beta2.RetryConfig] specifies that the task should be
      * retried.
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
-     * This field is output only for
-     * [pull queues](google.cloud.tasks.v2beta2.PullTarget).
+     * This field is output only for [pull queues][google.cloud.tasks.v2beta2.PullTarget].
      * `min_backoff` will be truncated to the nearest second.
      * This field has the same meaning as
-     * [min_backoff_seconds in queue.yaml/xml](/appengine/docs/standard/python/config/queueref#retry_parameters).
+     * [min_backoff_seconds in queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
      * </pre>
      *
      * <code>.google.protobuf.Duration min_backoff = 4;</code>
@@ -1348,18 +1326,17 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A task will be [scheduled](Task.schedule_time) for retry between
+     * A task will be [scheduled][google.cloud.tasks.v2beta2.Task.schedule_time] for retry between
      * [min_backoff][google.cloud.tasks.v2beta2.RetryConfig.min_backoff] and
      * [max_backoff][google.cloud.tasks.v2beta2.RetryConfig.max_backoff] duration after it fails,
      * if the queue's [RetryConfig][google.cloud.tasks.v2beta2.RetryConfig] specifies that the task should be
      * retried.
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
-     * This field is output only for
-     * [pull queues](google.cloud.tasks.v2beta2.PullTarget).
+     * This field is output only for [pull queues][google.cloud.tasks.v2beta2.PullTarget].
      * `min_backoff` will be truncated to the nearest second.
      * This field has the same meaning as
-     * [min_backoff_seconds in queue.yaml/xml](/appengine/docs/standard/python/config/queueref#retry_parameters).
+     * [min_backoff_seconds in queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
      * </pre>
      *
      * <code>.google.protobuf.Duration min_backoff = 4;</code>
@@ -1377,18 +1354,17 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A task will be [scheduled](Task.schedule_time) for retry between
+     * A task will be [scheduled][google.cloud.tasks.v2beta2.Task.schedule_time] for retry between
      * [min_backoff][google.cloud.tasks.v2beta2.RetryConfig.min_backoff] and
      * [max_backoff][google.cloud.tasks.v2beta2.RetryConfig.max_backoff] duration after it fails,
      * if the queue's [RetryConfig][google.cloud.tasks.v2beta2.RetryConfig] specifies that the task should be
      * retried.
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
-     * This field is output only for
-     * [pull queues](google.cloud.tasks.v2beta2.PullTarget).
+     * This field is output only for [pull queues][google.cloud.tasks.v2beta2.PullTarget].
      * `min_backoff` will be truncated to the nearest second.
      * This field has the same meaning as
-     * [min_backoff_seconds in queue.yaml/xml](/appengine/docs/standard/python/config/queueref#retry_parameters).
+     * [min_backoff_seconds in queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
      * </pre>
      *
      * <code>.google.protobuf.Duration min_backoff = 4;</code>
@@ -1410,18 +1386,17 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A task will be [scheduled](Task.schedule_time) for retry between
+     * A task will be [scheduled][google.cloud.tasks.v2beta2.Task.schedule_time] for retry between
      * [min_backoff][google.cloud.tasks.v2beta2.RetryConfig.min_backoff] and
      * [max_backoff][google.cloud.tasks.v2beta2.RetryConfig.max_backoff] duration after it fails,
      * if the queue's [RetryConfig][google.cloud.tasks.v2beta2.RetryConfig] specifies that the task should be
      * retried.
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
-     * This field is output only for
-     * [pull queues](google.cloud.tasks.v2beta2.PullTarget).
+     * This field is output only for [pull queues][google.cloud.tasks.v2beta2.PullTarget].
      * `min_backoff` will be truncated to the nearest second.
      * This field has the same meaning as
-     * [min_backoff_seconds in queue.yaml/xml](/appengine/docs/standard/python/config/queueref#retry_parameters).
+     * [min_backoff_seconds in queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
      * </pre>
      *
      * <code>.google.protobuf.Duration min_backoff = 4;</code>
@@ -1439,18 +1414,17 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A task will be [scheduled](Task.schedule_time) for retry between
+     * A task will be [scheduled][google.cloud.tasks.v2beta2.Task.schedule_time] for retry between
      * [min_backoff][google.cloud.tasks.v2beta2.RetryConfig.min_backoff] and
      * [max_backoff][google.cloud.tasks.v2beta2.RetryConfig.max_backoff] duration after it fails,
      * if the queue's [RetryConfig][google.cloud.tasks.v2beta2.RetryConfig] specifies that the task should be
      * retried.
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
-     * This field is output only for
-     * [pull queues](google.cloud.tasks.v2beta2.PullTarget).
+     * This field is output only for [pull queues][google.cloud.tasks.v2beta2.PullTarget].
      * `min_backoff` will be truncated to the nearest second.
      * This field has the same meaning as
-     * [min_backoff_seconds in queue.yaml/xml](/appengine/docs/standard/python/config/queueref#retry_parameters).
+     * [min_backoff_seconds in queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
      * </pre>
      *
      * <code>.google.protobuf.Duration min_backoff = 4;</code>
@@ -1462,18 +1436,17 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A task will be [scheduled](Task.schedule_time) for retry between
+     * A task will be [scheduled][google.cloud.tasks.v2beta2.Task.schedule_time] for retry between
      * [min_backoff][google.cloud.tasks.v2beta2.RetryConfig.min_backoff] and
      * [max_backoff][google.cloud.tasks.v2beta2.RetryConfig.max_backoff] duration after it fails,
      * if the queue's [RetryConfig][google.cloud.tasks.v2beta2.RetryConfig] specifies that the task should be
      * retried.
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
-     * This field is output only for
-     * [pull queues](google.cloud.tasks.v2beta2.PullTarget).
+     * This field is output only for [pull queues][google.cloud.tasks.v2beta2.PullTarget].
      * `min_backoff` will be truncated to the nearest second.
      * This field has the same meaning as
-     * [min_backoff_seconds in queue.yaml/xml](/appengine/docs/standard/python/config/queueref#retry_parameters).
+     * [min_backoff_seconds in queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
      * </pre>
      *
      * <code>.google.protobuf.Duration min_backoff = 4;</code>
@@ -1488,18 +1461,17 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A task will be [scheduled](Task.schedule_time) for retry between
+     * A task will be [scheduled][google.cloud.tasks.v2beta2.Task.schedule_time] for retry between
      * [min_backoff][google.cloud.tasks.v2beta2.RetryConfig.min_backoff] and
      * [max_backoff][google.cloud.tasks.v2beta2.RetryConfig.max_backoff] duration after it fails,
      * if the queue's [RetryConfig][google.cloud.tasks.v2beta2.RetryConfig] specifies that the task should be
      * retried.
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
-     * This field is output only for
-     * [pull queues](google.cloud.tasks.v2beta2.PullTarget).
+     * This field is output only for [pull queues][google.cloud.tasks.v2beta2.PullTarget].
      * `min_backoff` will be truncated to the nearest second.
      * This field has the same meaning as
-     * [min_backoff_seconds in queue.yaml/xml](/appengine/docs/standard/python/config/queueref#retry_parameters).
+     * [min_backoff_seconds in queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
      * </pre>
      *
      * <code>.google.protobuf.Duration min_backoff = 4;</code>
@@ -1523,18 +1495,17 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> maxBackoffBuilder_;
     /**
      * <pre>
-     * A task will be [scheduled](Task.schedule_time) for retry between
+     * A task will be [scheduled][google.cloud.tasks.v2beta2.Task.schedule_time] for retry between
      * [min_backoff][google.cloud.tasks.v2beta2.RetryConfig.min_backoff] and
      * [max_backoff][google.cloud.tasks.v2beta2.RetryConfig.max_backoff] duration after it fails,
      * if the queue's [RetryConfig][google.cloud.tasks.v2beta2.RetryConfig] specifies that the task should be
      * retried.
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
-     * This field is output only for
-     * [pull queues](google.cloud.tasks.v2beta2.PullTarget).
+     * This field is output only for [pull queues][google.cloud.tasks.v2beta2.PullTarget].
      * `max_backoff` will be truncated to the nearest second.
      * This field has the same meaning as
-     * [max_backoff_seconds in queue.yaml/xml](/appengine/docs/standard/python/config/queueref#retry_parameters).
+     * [max_backoff_seconds in queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
      * </pre>
      *
      * <code>.google.protobuf.Duration max_backoff = 5;</code>
@@ -1544,18 +1515,17 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A task will be [scheduled](Task.schedule_time) for retry between
+     * A task will be [scheduled][google.cloud.tasks.v2beta2.Task.schedule_time] for retry between
      * [min_backoff][google.cloud.tasks.v2beta2.RetryConfig.min_backoff] and
      * [max_backoff][google.cloud.tasks.v2beta2.RetryConfig.max_backoff] duration after it fails,
      * if the queue's [RetryConfig][google.cloud.tasks.v2beta2.RetryConfig] specifies that the task should be
      * retried.
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
-     * This field is output only for
-     * [pull queues](google.cloud.tasks.v2beta2.PullTarget).
+     * This field is output only for [pull queues][google.cloud.tasks.v2beta2.PullTarget].
      * `max_backoff` will be truncated to the nearest second.
      * This field has the same meaning as
-     * [max_backoff_seconds in queue.yaml/xml](/appengine/docs/standard/python/config/queueref#retry_parameters).
+     * [max_backoff_seconds in queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
      * </pre>
      *
      * <code>.google.protobuf.Duration max_backoff = 5;</code>
@@ -1569,18 +1539,17 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A task will be [scheduled](Task.schedule_time) for retry between
+     * A task will be [scheduled][google.cloud.tasks.v2beta2.Task.schedule_time] for retry between
      * [min_backoff][google.cloud.tasks.v2beta2.RetryConfig.min_backoff] and
      * [max_backoff][google.cloud.tasks.v2beta2.RetryConfig.max_backoff] duration after it fails,
      * if the queue's [RetryConfig][google.cloud.tasks.v2beta2.RetryConfig] specifies that the task should be
      * retried.
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
-     * This field is output only for
-     * [pull queues](google.cloud.tasks.v2beta2.PullTarget).
+     * This field is output only for [pull queues][google.cloud.tasks.v2beta2.PullTarget].
      * `max_backoff` will be truncated to the nearest second.
      * This field has the same meaning as
-     * [max_backoff_seconds in queue.yaml/xml](/appengine/docs/standard/python/config/queueref#retry_parameters).
+     * [max_backoff_seconds in queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
      * </pre>
      *
      * <code>.google.protobuf.Duration max_backoff = 5;</code>
@@ -1600,18 +1569,17 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A task will be [scheduled](Task.schedule_time) for retry between
+     * A task will be [scheduled][google.cloud.tasks.v2beta2.Task.schedule_time] for retry between
      * [min_backoff][google.cloud.tasks.v2beta2.RetryConfig.min_backoff] and
      * [max_backoff][google.cloud.tasks.v2beta2.RetryConfig.max_backoff] duration after it fails,
      * if the queue's [RetryConfig][google.cloud.tasks.v2beta2.RetryConfig] specifies that the task should be
      * retried.
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
-     * This field is output only for
-     * [pull queues](google.cloud.tasks.v2beta2.PullTarget).
+     * This field is output only for [pull queues][google.cloud.tasks.v2beta2.PullTarget].
      * `max_backoff` will be truncated to the nearest second.
      * This field has the same meaning as
-     * [max_backoff_seconds in queue.yaml/xml](/appengine/docs/standard/python/config/queueref#retry_parameters).
+     * [max_backoff_seconds in queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
      * </pre>
      *
      * <code>.google.protobuf.Duration max_backoff = 5;</code>
@@ -1629,18 +1597,17 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A task will be [scheduled](Task.schedule_time) for retry between
+     * A task will be [scheduled][google.cloud.tasks.v2beta2.Task.schedule_time] for retry between
      * [min_backoff][google.cloud.tasks.v2beta2.RetryConfig.min_backoff] and
      * [max_backoff][google.cloud.tasks.v2beta2.RetryConfig.max_backoff] duration after it fails,
      * if the queue's [RetryConfig][google.cloud.tasks.v2beta2.RetryConfig] specifies that the task should be
      * retried.
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
-     * This field is output only for
-     * [pull queues](google.cloud.tasks.v2beta2.PullTarget).
+     * This field is output only for [pull queues][google.cloud.tasks.v2beta2.PullTarget].
      * `max_backoff` will be truncated to the nearest second.
      * This field has the same meaning as
-     * [max_backoff_seconds in queue.yaml/xml](/appengine/docs/standard/python/config/queueref#retry_parameters).
+     * [max_backoff_seconds in queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
      * </pre>
      *
      * <code>.google.protobuf.Duration max_backoff = 5;</code>
@@ -1662,18 +1629,17 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A task will be [scheduled](Task.schedule_time) for retry between
+     * A task will be [scheduled][google.cloud.tasks.v2beta2.Task.schedule_time] for retry between
      * [min_backoff][google.cloud.tasks.v2beta2.RetryConfig.min_backoff] and
      * [max_backoff][google.cloud.tasks.v2beta2.RetryConfig.max_backoff] duration after it fails,
      * if the queue's [RetryConfig][google.cloud.tasks.v2beta2.RetryConfig] specifies that the task should be
      * retried.
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
-     * This field is output only for
-     * [pull queues](google.cloud.tasks.v2beta2.PullTarget).
+     * This field is output only for [pull queues][google.cloud.tasks.v2beta2.PullTarget].
      * `max_backoff` will be truncated to the nearest second.
      * This field has the same meaning as
-     * [max_backoff_seconds in queue.yaml/xml](/appengine/docs/standard/python/config/queueref#retry_parameters).
+     * [max_backoff_seconds in queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
      * </pre>
      *
      * <code>.google.protobuf.Duration max_backoff = 5;</code>
@@ -1691,18 +1657,17 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A task will be [scheduled](Task.schedule_time) for retry between
+     * A task will be [scheduled][google.cloud.tasks.v2beta2.Task.schedule_time] for retry between
      * [min_backoff][google.cloud.tasks.v2beta2.RetryConfig.min_backoff] and
      * [max_backoff][google.cloud.tasks.v2beta2.RetryConfig.max_backoff] duration after it fails,
      * if the queue's [RetryConfig][google.cloud.tasks.v2beta2.RetryConfig] specifies that the task should be
      * retried.
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
-     * This field is output only for
-     * [pull queues](google.cloud.tasks.v2beta2.PullTarget).
+     * This field is output only for [pull queues][google.cloud.tasks.v2beta2.PullTarget].
      * `max_backoff` will be truncated to the nearest second.
      * This field has the same meaning as
-     * [max_backoff_seconds in queue.yaml/xml](/appengine/docs/standard/python/config/queueref#retry_parameters).
+     * [max_backoff_seconds in queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
      * </pre>
      *
      * <code>.google.protobuf.Duration max_backoff = 5;</code>
@@ -1714,18 +1679,17 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A task will be [scheduled](Task.schedule_time) for retry between
+     * A task will be [scheduled][google.cloud.tasks.v2beta2.Task.schedule_time] for retry between
      * [min_backoff][google.cloud.tasks.v2beta2.RetryConfig.min_backoff] and
      * [max_backoff][google.cloud.tasks.v2beta2.RetryConfig.max_backoff] duration after it fails,
      * if the queue's [RetryConfig][google.cloud.tasks.v2beta2.RetryConfig] specifies that the task should be
      * retried.
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
-     * This field is output only for
-     * [pull queues](google.cloud.tasks.v2beta2.PullTarget).
+     * This field is output only for [pull queues][google.cloud.tasks.v2beta2.PullTarget].
      * `max_backoff` will be truncated to the nearest second.
      * This field has the same meaning as
-     * [max_backoff_seconds in queue.yaml/xml](/appengine/docs/standard/python/config/queueref#retry_parameters).
+     * [max_backoff_seconds in queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
      * </pre>
      *
      * <code>.google.protobuf.Duration max_backoff = 5;</code>
@@ -1740,18 +1704,17 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A task will be [scheduled](Task.schedule_time) for retry between
+     * A task will be [scheduled][google.cloud.tasks.v2beta2.Task.schedule_time] for retry between
      * [min_backoff][google.cloud.tasks.v2beta2.RetryConfig.min_backoff] and
      * [max_backoff][google.cloud.tasks.v2beta2.RetryConfig.max_backoff] duration after it fails,
      * if the queue's [RetryConfig][google.cloud.tasks.v2beta2.RetryConfig] specifies that the task should be
      * retried.
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
-     * This field is output only for
-     * [pull queues](google.cloud.tasks.v2beta2.PullTarget).
+     * This field is output only for [pull queues][google.cloud.tasks.v2beta2.PullTarget].
      * `max_backoff` will be truncated to the nearest second.
      * This field has the same meaning as
-     * [max_backoff_seconds in queue.yaml/xml](/appengine/docs/standard/python/config/queueref#retry_parameters).
+     * [max_backoff_seconds in queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
      * </pre>
      *
      * <code>.google.protobuf.Duration max_backoff = 5;</code>
@@ -1791,10 +1754,9 @@ private static final long serialVersionUID = 0L;
      * 240s, 300s, 300s, ....
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
-     * This field is output only for
-     * [pull queues](google.cloud.tasks.v2beta2.PullTarget).
+     * This field is output only for [pull queues][google.cloud.tasks.v2beta2.PullTarget].
      * This field has the same meaning as
-     * [max_doublings in queue.yaml/xml](/appengine/docs/standard/python/config/queueref#retry_parameters).
+     * [max_doublings in queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
      * </pre>
      *
      * <code>int32 max_doublings = 6;</code>
@@ -1822,10 +1784,9 @@ private static final long serialVersionUID = 0L;
      * 240s, 300s, 300s, ....
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
-     * This field is output only for
-     * [pull queues](google.cloud.tasks.v2beta2.PullTarget).
+     * This field is output only for [pull queues][google.cloud.tasks.v2beta2.PullTarget].
      * This field has the same meaning as
-     * [max_doublings in queue.yaml/xml](/appengine/docs/standard/python/config/queueref#retry_parameters).
+     * [max_doublings in queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
      * </pre>
      *
      * <code>int32 max_doublings = 6;</code>
@@ -1856,10 +1817,9 @@ private static final long serialVersionUID = 0L;
      * 240s, 300s, 300s, ....
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
-     * This field is output only for
-     * [pull queues](google.cloud.tasks.v2beta2.PullTarget).
+     * This field is output only for [pull queues][google.cloud.tasks.v2beta2.PullTarget].
      * This field has the same meaning as
-     * [max_doublings in queue.yaml/xml](/appengine/docs/standard/python/config/queueref#retry_parameters).
+     * [max_doublings in queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
      * </pre>
      *
      * <code>int32 max_doublings = 6;</code>

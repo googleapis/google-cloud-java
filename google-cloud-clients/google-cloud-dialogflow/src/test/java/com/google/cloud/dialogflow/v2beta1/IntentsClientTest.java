@@ -49,8 +49,10 @@ import org.junit.Test;
 public class IntentsClientTest {
   private static MockAgents mockAgents;
   private static MockContexts mockContexts;
+  private static MockDocuments mockDocuments;
   private static MockEntityTypes mockEntityTypes;
   private static MockIntents mockIntents;
+  private static MockKnowledgeBases mockKnowledgeBases;
   private static MockSessionEntityTypes mockSessionEntityTypes;
   private static MockSessions mockSessions;
   private static MockServiceHelper serviceHelper;
@@ -61,8 +63,10 @@ public class IntentsClientTest {
   public static void startStaticServer() {
     mockAgents = new MockAgents();
     mockContexts = new MockContexts();
+    mockDocuments = new MockDocuments();
     mockEntityTypes = new MockEntityTypes();
     mockIntents = new MockIntents();
+    mockKnowledgeBases = new MockKnowledgeBases();
     mockSessionEntityTypes = new MockSessionEntityTypes();
     mockSessions = new MockSessions();
     serviceHelper =
@@ -71,8 +75,10 @@ public class IntentsClientTest {
             Arrays.<MockGrpcService>asList(
                 mockAgents,
                 mockContexts,
+                mockDocuments,
                 mockEntityTypes,
                 mockIntents,
+                mockKnowledgeBases,
                 mockSessionEntityTypes,
                 mockSessions));
     serviceHelper.start();
@@ -208,6 +214,7 @@ public class IntentsClientTest {
     boolean isFallback = false;
     boolean mlEnabled = false;
     boolean mlDisabled = true;
+    boolean endInteraction = true;
     String action = "action-1422950858";
     boolean resetContexts = true;
     String rootFollowupIntentName = "rootFollowupIntentName402253784";
@@ -220,6 +227,7 @@ public class IntentsClientTest {
             .setIsFallback(isFallback)
             .setMlEnabled(mlEnabled)
             .setMlDisabled(mlDisabled)
+            .setEndInteraction(endInteraction)
             .setAction(action)
             .setResetContexts(resetContexts)
             .setRootFollowupIntentName(rootFollowupIntentName)
@@ -268,6 +276,7 @@ public class IntentsClientTest {
     boolean isFallback = false;
     boolean mlEnabled = false;
     boolean mlDisabled = true;
+    boolean endInteraction = true;
     String action = "action-1422950858";
     boolean resetContexts = true;
     String rootFollowupIntentName = "rootFollowupIntentName402253784";
@@ -280,6 +289,7 @@ public class IntentsClientTest {
             .setIsFallback(isFallback)
             .setMlEnabled(mlEnabled)
             .setMlDisabled(mlDisabled)
+            .setEndInteraction(endInteraction)
             .setAction(action)
             .setResetContexts(resetContexts)
             .setRootFollowupIntentName(rootFollowupIntentName)
@@ -331,6 +341,7 @@ public class IntentsClientTest {
     boolean isFallback = false;
     boolean mlEnabled = false;
     boolean mlDisabled = true;
+    boolean endInteraction = true;
     String action = "action-1422950858";
     boolean resetContexts = true;
     String rootFollowupIntentName = "rootFollowupIntentName402253784";
@@ -343,6 +354,7 @@ public class IntentsClientTest {
             .setIsFallback(isFallback)
             .setMlEnabled(mlEnabled)
             .setMlDisabled(mlDisabled)
+            .setEndInteraction(endInteraction)
             .setAction(action)
             .setResetContexts(resetContexts)
             .setRootFollowupIntentName(rootFollowupIntentName)
@@ -394,6 +406,7 @@ public class IntentsClientTest {
     boolean isFallback = false;
     boolean mlEnabled = false;
     boolean mlDisabled = true;
+    boolean endInteraction = true;
     String action = "action-1422950858";
     boolean resetContexts = true;
     String rootFollowupIntentName = "rootFollowupIntentName402253784";
@@ -406,6 +419,7 @@ public class IntentsClientTest {
             .setIsFallback(isFallback)
             .setMlEnabled(mlEnabled)
             .setMlDisabled(mlDisabled)
+            .setEndInteraction(endInteraction)
             .setAction(action)
             .setResetContexts(resetContexts)
             .setRootFollowupIntentName(rootFollowupIntentName)
@@ -460,6 +474,7 @@ public class IntentsClientTest {
     boolean isFallback = false;
     boolean mlEnabled = false;
     boolean mlDisabled = true;
+    boolean endInteraction = true;
     String action = "action-1422950858";
     boolean resetContexts = true;
     String rootFollowupIntentName = "rootFollowupIntentName402253784";
@@ -472,6 +487,7 @@ public class IntentsClientTest {
             .setIsFallback(isFallback)
             .setMlEnabled(mlEnabled)
             .setMlDisabled(mlDisabled)
+            .setEndInteraction(endInteraction)
             .setAction(action)
             .setResetContexts(resetContexts)
             .setRootFollowupIntentName(rootFollowupIntentName)
@@ -523,6 +539,7 @@ public class IntentsClientTest {
     boolean isFallback = false;
     boolean mlEnabled = false;
     boolean mlDisabled = true;
+    boolean endInteraction = true;
     String action = "action-1422950858";
     boolean resetContexts = true;
     String rootFollowupIntentName = "rootFollowupIntentName402253784";
@@ -535,6 +552,7 @@ public class IntentsClientTest {
             .setIsFallback(isFallback)
             .setMlEnabled(mlEnabled)
             .setMlDisabled(mlDisabled)
+            .setEndInteraction(endInteraction)
             .setAction(action)
             .setResetContexts(resetContexts)
             .setRootFollowupIntentName(rootFollowupIntentName)
@@ -629,7 +647,7 @@ public class IntentsClientTest {
             .build();
     mockIntents.addResponse(resultOperation);
 
-    ProjectName parent = ProjectName.of("[PROJECT]");
+    ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
     List<Intent> intents = new ArrayList<>();
 
     Empty actualResponse = client.batchDeleteIntentsAsync(parent, intents).get();
@@ -639,7 +657,7 @@ public class IntentsClientTest {
     Assert.assertEquals(1, actualRequests.size());
     BatchDeleteIntentsRequest actualRequest = (BatchDeleteIntentsRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, ProjectName.parse(actualRequest.getParent()));
+    Assert.assertEquals(parent, ProjectAgentName.parse(actualRequest.getParent()));
     Assert.assertEquals(intents, actualRequest.getIntentsList());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -654,7 +672,7 @@ public class IntentsClientTest {
     mockIntents.addException(exception);
 
     try {
-      ProjectName parent = ProjectName.of("[PROJECT]");
+      ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
       List<Intent> intents = new ArrayList<>();
 
       client.batchDeleteIntentsAsync(parent, intents).get();
