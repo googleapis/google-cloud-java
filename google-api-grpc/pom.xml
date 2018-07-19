@@ -456,16 +456,16 @@
         <artifactId>grpc-google-cloud-vision-v1p2beta1</artifactId>
         <version>1.18.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-vision-v1p2beta1:current} -->
       </dependency>
-      <dependency>
+<!--       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-vision-v1p3beta1</artifactId>
-        <version>0.19.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-vision-v1p3beta1:current} -->
+        <version>0.19.1-SNAPSHOT</version>
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-vision-v1p3beta1</artifactId>
-        <version>0.19.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-vision-v1p3beta1:current} -->
-      </dependency>
+        <version>0.19.1-SNAPSHOT</version>
+      </dependency> -->
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-video-intelligence-v1beta1</artifactId>
