@@ -29,6 +29,7 @@ private static final long serialVersionUID = 0L;
     isFallback_ = false;
     mlEnabled_ = false;
     mlDisabled_ = false;
+    endInteraction_ = false;
     inputContextNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     events_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     trainingPhrases_ = java.util.Collections.emptyList();
@@ -109,26 +110,26 @@ private static final long serialVersionUID = 0L;
           }
           case 58: {
             java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
+            if (!((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
               inputContextNames_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000080;
+              mutable_bitField0_ |= 0x00000100;
             }
             inputContextNames_.add(s);
             break;
           }
           case 66: {
             java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
+            if (!((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
               events_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000100;
+              mutable_bitField0_ |= 0x00000200;
             }
             events_.add(s);
             break;
           }
           case 74: {
-            if (!((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
+            if (!((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
               trainingPhrases_ = new java.util.ArrayList<com.google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase>();
-              mutable_bitField0_ |= 0x00000200;
+              mutable_bitField0_ |= 0x00000400;
             }
             trainingPhrases_.add(
                 input.readMessage(com.google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.parser(), extensionRegistry));
@@ -141,9 +142,9 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 90: {
-            if (!((mutable_bitField0_ & 0x00000800) == 0x00000800)) {
+            if (!((mutable_bitField0_ & 0x00001000) == 0x00001000)) {
               outputContexts_ = new java.util.ArrayList<com.google.cloud.dialogflow.v2beta1.Context>();
-              mutable_bitField0_ |= 0x00000800;
+              mutable_bitField0_ |= 0x00001000;
             }
             outputContexts_.add(
                 input.readMessage(com.google.cloud.dialogflow.v2beta1.Context.parser(), extensionRegistry));
@@ -155,18 +156,18 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 106: {
-            if (!((mutable_bitField0_ & 0x00002000) == 0x00002000)) {
+            if (!((mutable_bitField0_ & 0x00004000) == 0x00004000)) {
               parameters_ = new java.util.ArrayList<com.google.cloud.dialogflow.v2beta1.Intent.Parameter>();
-              mutable_bitField0_ |= 0x00002000;
+              mutable_bitField0_ |= 0x00004000;
             }
             parameters_.add(
                 input.readMessage(com.google.cloud.dialogflow.v2beta1.Intent.Parameter.parser(), extensionRegistry));
             break;
           }
           case 114: {
-            if (!((mutable_bitField0_ & 0x00004000) == 0x00004000)) {
+            if (!((mutable_bitField0_ & 0x00008000) == 0x00008000)) {
               messages_ = new java.util.ArrayList<com.google.cloud.dialogflow.v2beta1.Intent.Message>();
-              mutable_bitField0_ |= 0x00004000;
+              mutable_bitField0_ |= 0x00008000;
             }
             messages_.add(
                 input.readMessage(com.google.cloud.dialogflow.v2beta1.Intent.Message.parser(), extensionRegistry));
@@ -174,9 +175,9 @@ private static final long serialVersionUID = 0L;
           }
           case 120: {
             int rawValue = input.readEnum();
-            if (!((mutable_bitField0_ & 0x00008000) == 0x00008000)) {
+            if (!((mutable_bitField0_ & 0x00010000) == 0x00010000)) {
               defaultResponsePlatforms_ = new java.util.ArrayList<java.lang.Integer>();
-              mutable_bitField0_ |= 0x00008000;
+              mutable_bitField0_ |= 0x00010000;
             }
             defaultResponsePlatforms_.add(rawValue);
             break;
@@ -186,9 +187,9 @@ private static final long serialVersionUID = 0L;
             int oldLimit = input.pushLimit(length);
             while(input.getBytesUntilLimit() > 0) {
               int rawValue = input.readEnum();
-              if (!((mutable_bitField0_ & 0x00008000) == 0x00008000)) {
+              if (!((mutable_bitField0_ & 0x00010000) == 0x00010000)) {
                 defaultResponsePlatforms_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00008000;
+                mutable_bitField0_ |= 0x00010000;
               }
               defaultResponsePlatforms_.add(rawValue);
             }
@@ -208,9 +209,9 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 146: {
-            if (!((mutable_bitField0_ & 0x00040000) == 0x00040000)) {
+            if (!((mutable_bitField0_ & 0x00080000) == 0x00080000)) {
               followupIntentInfo_ = new java.util.ArrayList<com.google.cloud.dialogflow.v2beta1.Intent.FollowupIntentInfo>();
-              mutable_bitField0_ |= 0x00040000;
+              mutable_bitField0_ |= 0x00080000;
             }
             followupIntentInfo_.add(
                 input.readMessage(com.google.cloud.dialogflow.v2beta1.Intent.FollowupIntentInfo.parser(), extensionRegistry));
@@ -221,6 +222,11 @@ private static final long serialVersionUID = 0L;
             mlDisabled_ = input.readBool();
             break;
           }
+          case 168: {
+
+            endInteraction_ = input.readBool();
+            break;
+          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -229,28 +235,28 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
+      if (((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
         inputContextNames_ = inputContextNames_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
+      if (((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
         events_ = events_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
+      if (((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
         trainingPhrases_ = java.util.Collections.unmodifiableList(trainingPhrases_);
       }
-      if (((mutable_bitField0_ & 0x00000800) == 0x00000800)) {
+      if (((mutable_bitField0_ & 0x00001000) == 0x00001000)) {
         outputContexts_ = java.util.Collections.unmodifiableList(outputContexts_);
       }
-      if (((mutable_bitField0_ & 0x00002000) == 0x00002000)) {
+      if (((mutable_bitField0_ & 0x00004000) == 0x00004000)) {
         parameters_ = java.util.Collections.unmodifiableList(parameters_);
       }
-      if (((mutable_bitField0_ & 0x00004000) == 0x00004000)) {
+      if (((mutable_bitField0_ & 0x00008000) == 0x00008000)) {
         messages_ = java.util.Collections.unmodifiableList(messages_);
       }
-      if (((mutable_bitField0_ & 0x00008000) == 0x00008000)) {
+      if (((mutable_bitField0_ & 0x00010000) == 0x00010000)) {
         defaultResponsePlatforms_ = java.util.Collections.unmodifiableList(defaultResponsePlatforms_);
       }
-      if (((mutable_bitField0_ & 0x00040000) == 0x00040000)) {
+      if (((mutable_bitField0_ & 0x00080000) == 0x00080000)) {
         followupIntentInfo_ = java.util.Collections.unmodifiableList(followupIntentInfo_);
       }
       this.unknownFields = unknownFields.build();
@@ -5019,6 +5025,81 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
+     * Plays audio from a file in Telephony Gateway.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio telephony_play_audio = 13;</code>
+     */
+    boolean hasTelephonyPlayAudio();
+    /**
+     * <pre>
+     * Plays audio from a file in Telephony Gateway.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio telephony_play_audio = 13;</code>
+     */
+    com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio getTelephonyPlayAudio();
+    /**
+     * <pre>
+     * Plays audio from a file in Telephony Gateway.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio telephony_play_audio = 13;</code>
+     */
+    com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudioOrBuilder getTelephonyPlayAudioOrBuilder();
+
+    /**
+     * <pre>
+     * Synthesizes speech in Telephony Gateway.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech telephony_synthesize_speech = 14;</code>
+     */
+    boolean hasTelephonySynthesizeSpeech();
+    /**
+     * <pre>
+     * Synthesizes speech in Telephony Gateway.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech telephony_synthesize_speech = 14;</code>
+     */
+    com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech getTelephonySynthesizeSpeech();
+    /**
+     * <pre>
+     * Synthesizes speech in Telephony Gateway.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech telephony_synthesize_speech = 14;</code>
+     */
+    com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeechOrBuilder getTelephonySynthesizeSpeechOrBuilder();
+
+    /**
+     * <pre>
+     * Transfers the call in Telephony Gateway.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall telephony_transfer_call = 15;</code>
+     */
+    boolean hasTelephonyTransferCall();
+    /**
+     * <pre>
+     * Transfers the call in Telephony Gateway.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall telephony_transfer_call = 15;</code>
+     */
+    com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall getTelephonyTransferCall();
+    /**
+     * <pre>
+     * Transfers the call in Telephony Gateway.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall telephony_transfer_call = 15;</code>
+     */
+    com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCallOrBuilder getTelephonyTransferCallOrBuilder();
+
+    /**
+     * <pre>
      * Optional. The platform that this message is intended for.
      * </pre>
      *
@@ -5247,6 +5328,48 @@ private static final long serialVersionUID = 0L;
               messageCase_ = 12;
               break;
             }
+            case 106: {
+              com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio.Builder subBuilder = null;
+              if (messageCase_ == 13) {
+                subBuilder = ((com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio) message_).toBuilder();
+              }
+              message_ =
+                  input.readMessage(com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio) message_);
+                message_ = subBuilder.buildPartial();
+              }
+              messageCase_ = 13;
+              break;
+            }
+            case 114: {
+              com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech.Builder subBuilder = null;
+              if (messageCase_ == 14) {
+                subBuilder = ((com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech) message_).toBuilder();
+              }
+              message_ =
+                  input.readMessage(com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech) message_);
+                message_ = subBuilder.buildPartial();
+              }
+              messageCase_ = 14;
+              break;
+            }
+            case 122: {
+              com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall.Builder subBuilder = null;
+              if (messageCase_ == 15) {
+                subBuilder = ((com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall) message_).toBuilder();
+              }
+              message_ =
+                  input.readMessage(com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall) message_);
+                message_ = subBuilder.buildPartial();
+              }
+              messageCase_ = 15;
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -5412,6 +5535,14 @@ private static final long serialVersionUID = 0L;
        * <code>ACTIONS_ON_GOOGLE = 8;</code>
        */
       ACTIONS_ON_GOOGLE(8),
+      /**
+       * <pre>
+       * Telephony Gateway.
+       * </pre>
+       *
+       * <code>TELEPHONY = 10;</code>
+       */
+      TELEPHONY(10),
       UNRECOGNIZED(-1),
       ;
 
@@ -5547,6 +5678,14 @@ private static final long serialVersionUID = 0L;
        * <code>ACTIONS_ON_GOOGLE = 8;</code>
        */
       public static final int ACTIONS_ON_GOOGLE_VALUE = 8;
+      /**
+       * <pre>
+       * Telephony Gateway.
+       * </pre>
+       *
+       * <code>TELEPHONY = 10;</code>
+       */
+      public static final int TELEPHONY_VALUE = 10;
 
 
       public final int getNumber() {
@@ -5576,6 +5715,7 @@ private static final long serialVersionUID = 0L;
           case 6: return LINE;
           case 7: return VIBER;
           case 8: return ACTIONS_ON_GOOGLE;
+          case 10: return TELEPHONY;
           default: return null;
         }
       }
@@ -6307,8 +6447,8 @@ private static final long serialVersionUID = 0L;
 
       /**
        * <pre>
-       * Optional. A text description of the image to be used for accessibility,
-       * e.g., screen readers.
+       * A text description of the image to be used for accessibility,
+       * e.g., screen readers. Required if image_uri is set for CarouselSelect.
        * </pre>
        *
        * <code>string accessibility_text = 2;</code>
@@ -6316,8 +6456,8 @@ private static final long serialVersionUID = 0L;
       java.lang.String getAccessibilityText();
       /**
        * <pre>
-       * Optional. A text description of the image to be used for accessibility,
-       * e.g., screen readers.
+       * A text description of the image to be used for accessibility,
+       * e.g., screen readers. Required if image_uri is set for CarouselSelect.
        * </pre>
        *
        * <code>string accessibility_text = 2;</code>
@@ -6459,8 +6599,8 @@ private static final long serialVersionUID = 0L;
       private volatile java.lang.Object accessibilityText_;
       /**
        * <pre>
-       * Optional. A text description of the image to be used for accessibility,
-       * e.g., screen readers.
+       * A text description of the image to be used for accessibility,
+       * e.g., screen readers. Required if image_uri is set for CarouselSelect.
        * </pre>
        *
        * <code>string accessibility_text = 2;</code>
@@ -6479,8 +6619,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Optional. A text description of the image to be used for accessibility,
-       * e.g., screen readers.
+       * A text description of the image to be used for accessibility,
+       * e.g., screen readers. Required if image_uri is set for CarouselSelect.
        * </pre>
        *
        * <code>string accessibility_text = 2;</code>
@@ -6895,8 +7035,8 @@ private static final long serialVersionUID = 0L;
         private java.lang.Object accessibilityText_ = "";
         /**
          * <pre>
-         * Optional. A text description of the image to be used for accessibility,
-         * e.g., screen readers.
+         * A text description of the image to be used for accessibility,
+         * e.g., screen readers. Required if image_uri is set for CarouselSelect.
          * </pre>
          *
          * <code>string accessibility_text = 2;</code>
@@ -6915,8 +7055,8 @@ private static final long serialVersionUID = 0L;
         }
         /**
          * <pre>
-         * Optional. A text description of the image to be used for accessibility,
-         * e.g., screen readers.
+         * A text description of the image to be used for accessibility,
+         * e.g., screen readers. Required if image_uri is set for CarouselSelect.
          * </pre>
          *
          * <code>string accessibility_text = 2;</code>
@@ -6936,8 +7076,8 @@ private static final long serialVersionUID = 0L;
         }
         /**
          * <pre>
-         * Optional. A text description of the image to be used for accessibility,
-         * e.g., screen readers.
+         * A text description of the image to be used for accessibility,
+         * e.g., screen readers. Required if image_uri is set for CarouselSelect.
          * </pre>
          *
          * <code>string accessibility_text = 2;</code>
@@ -6954,8 +7094,8 @@ private static final long serialVersionUID = 0L;
         }
         /**
          * <pre>
-         * Optional. A text description of the image to be used for accessibility,
-         * e.g., screen readers.
+         * A text description of the image to be used for accessibility,
+         * e.g., screen readers. Required if image_uri is set for CarouselSelect.
          * </pre>
          *
          * <code>string accessibility_text = 2;</code>
@@ -6968,8 +7108,8 @@ private static final long serialVersionUID = 0L;
         }
         /**
          * <pre>
-         * Optional. A text description of the image to be used for accessibility,
-         * e.g., screen readers.
+         * A text description of the image to be used for accessibility,
+         * e.g., screen readers. Required if image_uri is set for CarouselSelect.
          * </pre>
          *
          * <code>string accessibility_text = 2;</code>
@@ -22375,6 +22515,2135 @@ private static final long serialVersionUID = 0L;
 
     }
 
+    public interface TelephonyPlayAudioOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       * <pre>
+       * Required. URI to a Google Cloud Storage object containing the audio to
+       * play, e.g., "gs://bucket/object". The object must contain a single
+       * channel (mono) of linear PCM audio (2 bytes / sample) at 8kHz.
+       * This object must be readable by the `service-&lt;Project
+       * Number&gt;&#64;gcp-sa-dialogflow.iam.gserviceaccount.com` service account
+       * where &lt;Project Number&gt; is the number of the Telephony Gateway project
+       * (usually the same as the Dialogflow agent project). If the Google Cloud
+       * Storage bucket is in the Telephony Gateway project, this permission is
+       * added by default when enabling the Dialogflow V2 API.
+       * For audio from other sources, consider using the
+       * `TelephonySynthesizeSpeech` message with SSML.
+       * </pre>
+       *
+       * <code>string audio_uri = 1;</code>
+       */
+      java.lang.String getAudioUri();
+      /**
+       * <pre>
+       * Required. URI to a Google Cloud Storage object containing the audio to
+       * play, e.g., "gs://bucket/object". The object must contain a single
+       * channel (mono) of linear PCM audio (2 bytes / sample) at 8kHz.
+       * This object must be readable by the `service-&lt;Project
+       * Number&gt;&#64;gcp-sa-dialogflow.iam.gserviceaccount.com` service account
+       * where &lt;Project Number&gt; is the number of the Telephony Gateway project
+       * (usually the same as the Dialogflow agent project). If the Google Cloud
+       * Storage bucket is in the Telephony Gateway project, this permission is
+       * added by default when enabling the Dialogflow V2 API.
+       * For audio from other sources, consider using the
+       * `TelephonySynthesizeSpeech` message with SSML.
+       * </pre>
+       *
+       * <code>string audio_uri = 1;</code>
+       */
+      com.google.protobuf.ByteString
+          getAudioUriBytes();
+    }
+    /**
+     * <pre>
+     * Plays audio from a file in Telephony Gateway.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio}
+     */
+    public  static final class TelephonyPlayAudio extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio)
+        TelephonyPlayAudioOrBuilder {
+    private static final long serialVersionUID = 0L;
+      // Use TelephonyPlayAudio.newBuilder() to construct.
+      private TelephonyPlayAudio(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+      private TelephonyPlayAudio() {
+        audioUri_ = "";
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+      getUnknownFields() {
+        return this.unknownFields;
+      }
+      private TelephonyPlayAudio(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        int mutable_bitField0_ = 0;
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default: {
+                if (!parseUnknownFieldProto3(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+              case 10: {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                audioUri_ = s;
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e).setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.google.cloud.dialogflow.v2beta1.IntentProto.internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_TelephonyPlayAudio_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dialogflow.v2beta1.IntentProto.internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_TelephonyPlayAudio_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio.class, com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio.Builder.class);
+      }
+
+      public static final int AUDIO_URI_FIELD_NUMBER = 1;
+      private volatile java.lang.Object audioUri_;
+      /**
+       * <pre>
+       * Required. URI to a Google Cloud Storage object containing the audio to
+       * play, e.g., "gs://bucket/object". The object must contain a single
+       * channel (mono) of linear PCM audio (2 bytes / sample) at 8kHz.
+       * This object must be readable by the `service-&lt;Project
+       * Number&gt;&#64;gcp-sa-dialogflow.iam.gserviceaccount.com` service account
+       * where &lt;Project Number&gt; is the number of the Telephony Gateway project
+       * (usually the same as the Dialogflow agent project). If the Google Cloud
+       * Storage bucket is in the Telephony Gateway project, this permission is
+       * added by default when enabling the Dialogflow V2 API.
+       * For audio from other sources, consider using the
+       * `TelephonySynthesizeSpeech` message with SSML.
+       * </pre>
+       *
+       * <code>string audio_uri = 1;</code>
+       */
+      public java.lang.String getAudioUri() {
+        java.lang.Object ref = audioUri_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          audioUri_ = s;
+          return s;
+        }
+      }
+      /**
+       * <pre>
+       * Required. URI to a Google Cloud Storage object containing the audio to
+       * play, e.g., "gs://bucket/object". The object must contain a single
+       * channel (mono) of linear PCM audio (2 bytes / sample) at 8kHz.
+       * This object must be readable by the `service-&lt;Project
+       * Number&gt;&#64;gcp-sa-dialogflow.iam.gserviceaccount.com` service account
+       * where &lt;Project Number&gt; is the number of the Telephony Gateway project
+       * (usually the same as the Dialogflow agent project). If the Google Cloud
+       * Storage bucket is in the Telephony Gateway project, this permission is
+       * added by default when enabling the Dialogflow V2 API.
+       * For audio from other sources, consider using the
+       * `TelephonySynthesizeSpeech` message with SSML.
+       * </pre>
+       *
+       * <code>string audio_uri = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getAudioUriBytes() {
+        java.lang.Object ref = audioUri_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          audioUri_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      private byte memoizedIsInitialized = -1;
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        if (!getAudioUriBytes().isEmpty()) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, audioUri_);
+        }
+        unknownFields.writeTo(output);
+      }
+
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!getAudioUriBytes().isEmpty()) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, audioUri_);
+        }
+        size += unknownFields.getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+         return true;
+        }
+        if (!(obj instanceof com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio other = (com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio) obj;
+
+        boolean result = true;
+        result = result && getAudioUri()
+            .equals(other.getAudioUri());
+        result = result && unknownFields.equals(other.unknownFields);
+        return result;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + AUDIO_URI_FIELD_NUMBER;
+        hash = (53 * hash) + getAudioUri().hashCode();
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio parseFrom(
+          java.nio.ByteBuffer data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio parseFrom(
+          java.nio.ByteBuffer data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input);
+      }
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+      public static Builder newBuilder(com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+            ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * <pre>
+       * Plays audio from a file in Telephony Gateway.
+       * </pre>
+       *
+       * Protobuf type {@code google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio)
+          com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudioOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return com.google.cloud.dialogflow.v2beta1.IntentProto.internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_TelephonyPlayAudio_descriptor;
+        }
+
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.dialogflow.v2beta1.IntentProto.internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_TelephonyPlayAudio_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio.class, com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio.Builder.class);
+        }
+
+        // Construct using com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3
+                  .alwaysUseFieldBuilders) {
+          }
+        }
+        public Builder clear() {
+          super.clear();
+          audioUri_ = "";
+
+          return this;
+        }
+
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return com.google.cloud.dialogflow.v2beta1.IntentProto.internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_TelephonyPlayAudio_descriptor;
+        }
+
+        public com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio getDefaultInstanceForType() {
+          return com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio.getDefaultInstance();
+        }
+
+        public com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio build() {
+          com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        public com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio buildPartial() {
+          com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio result = new com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio(this);
+          result.audioUri_ = audioUri_;
+          onBuilt();
+          return result;
+        }
+
+        public Builder clone() {
+          return (Builder) super.clone();
+        }
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return (Builder) super.setField(field, value);
+        }
+        public Builder clearField(
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return (Builder) super.clearField(field);
+        }
+        public Builder clearOneof(
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return (Builder) super.clearOneof(oneof);
+        }
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index, java.lang.Object value) {
+          return (Builder) super.setRepeatedField(field, index, value);
+        }
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return (Builder) super.addRepeatedField(field, value);
+        }
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio) {
+            return mergeFrom((com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio other) {
+          if (other == com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio.getDefaultInstance()) return this;
+          if (!other.getAudioUri().isEmpty()) {
+            audioUri_ = other.audioUri_;
+            onChanged();
+          }
+          this.mergeUnknownFields(other.unknownFields);
+          onChanged();
+          return this;
+        }
+
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio) e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+
+        private java.lang.Object audioUri_ = "";
+        /**
+         * <pre>
+         * Required. URI to a Google Cloud Storage object containing the audio to
+         * play, e.g., "gs://bucket/object". The object must contain a single
+         * channel (mono) of linear PCM audio (2 bytes / sample) at 8kHz.
+         * This object must be readable by the `service-&lt;Project
+         * Number&gt;&#64;gcp-sa-dialogflow.iam.gserviceaccount.com` service account
+         * where &lt;Project Number&gt; is the number of the Telephony Gateway project
+         * (usually the same as the Dialogflow agent project). If the Google Cloud
+         * Storage bucket is in the Telephony Gateway project, this permission is
+         * added by default when enabling the Dialogflow V2 API.
+         * For audio from other sources, consider using the
+         * `TelephonySynthesizeSpeech` message with SSML.
+         * </pre>
+         *
+         * <code>string audio_uri = 1;</code>
+         */
+        public java.lang.String getAudioUri() {
+          java.lang.Object ref = audioUri_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            audioUri_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <pre>
+         * Required. URI to a Google Cloud Storage object containing the audio to
+         * play, e.g., "gs://bucket/object". The object must contain a single
+         * channel (mono) of linear PCM audio (2 bytes / sample) at 8kHz.
+         * This object must be readable by the `service-&lt;Project
+         * Number&gt;&#64;gcp-sa-dialogflow.iam.gserviceaccount.com` service account
+         * where &lt;Project Number&gt; is the number of the Telephony Gateway project
+         * (usually the same as the Dialogflow agent project). If the Google Cloud
+         * Storage bucket is in the Telephony Gateway project, this permission is
+         * added by default when enabling the Dialogflow V2 API.
+         * For audio from other sources, consider using the
+         * `TelephonySynthesizeSpeech` message with SSML.
+         * </pre>
+         *
+         * <code>string audio_uri = 1;</code>
+         */
+        public com.google.protobuf.ByteString
+            getAudioUriBytes() {
+          java.lang.Object ref = audioUri_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            audioUri_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <pre>
+         * Required. URI to a Google Cloud Storage object containing the audio to
+         * play, e.g., "gs://bucket/object". The object must contain a single
+         * channel (mono) of linear PCM audio (2 bytes / sample) at 8kHz.
+         * This object must be readable by the `service-&lt;Project
+         * Number&gt;&#64;gcp-sa-dialogflow.iam.gserviceaccount.com` service account
+         * where &lt;Project Number&gt; is the number of the Telephony Gateway project
+         * (usually the same as the Dialogflow agent project). If the Google Cloud
+         * Storage bucket is in the Telephony Gateway project, this permission is
+         * added by default when enabling the Dialogflow V2 API.
+         * For audio from other sources, consider using the
+         * `TelephonySynthesizeSpeech` message with SSML.
+         * </pre>
+         *
+         * <code>string audio_uri = 1;</code>
+         */
+        public Builder setAudioUri(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          audioUri_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * Required. URI to a Google Cloud Storage object containing the audio to
+         * play, e.g., "gs://bucket/object". The object must contain a single
+         * channel (mono) of linear PCM audio (2 bytes / sample) at 8kHz.
+         * This object must be readable by the `service-&lt;Project
+         * Number&gt;&#64;gcp-sa-dialogflow.iam.gserviceaccount.com` service account
+         * where &lt;Project Number&gt; is the number of the Telephony Gateway project
+         * (usually the same as the Dialogflow agent project). If the Google Cloud
+         * Storage bucket is in the Telephony Gateway project, this permission is
+         * added by default when enabling the Dialogflow V2 API.
+         * For audio from other sources, consider using the
+         * `TelephonySynthesizeSpeech` message with SSML.
+         * </pre>
+         *
+         * <code>string audio_uri = 1;</code>
+         */
+        public Builder clearAudioUri() {
+          
+          audioUri_ = getDefaultInstance().getAudioUri();
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * Required. URI to a Google Cloud Storage object containing the audio to
+         * play, e.g., "gs://bucket/object". The object must contain a single
+         * channel (mono) of linear PCM audio (2 bytes / sample) at 8kHz.
+         * This object must be readable by the `service-&lt;Project
+         * Number&gt;&#64;gcp-sa-dialogflow.iam.gserviceaccount.com` service account
+         * where &lt;Project Number&gt; is the number of the Telephony Gateway project
+         * (usually the same as the Dialogflow agent project). If the Google Cloud
+         * Storage bucket is in the Telephony Gateway project, this permission is
+         * added by default when enabling the Dialogflow V2 API.
+         * For audio from other sources, consider using the
+         * `TelephonySynthesizeSpeech` message with SSML.
+         * </pre>
+         *
+         * <code>string audio_uri = 1;</code>
+         */
+        public Builder setAudioUriBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          audioUri_ = value;
+          onChanged();
+          return this;
+        }
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFieldsProto3(unknownFields);
+        }
+
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio)
+      private static final com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio DEFAULT_INSTANCE;
+      static {
+        DEFAULT_INSTANCE = new com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio();
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<TelephonyPlayAudio>
+          PARSER = new com.google.protobuf.AbstractParser<TelephonyPlayAudio>() {
+        public TelephonyPlayAudio parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new TelephonyPlayAudio(input, extensionRegistry);
+        }
+      };
+
+      public static com.google.protobuf.Parser<TelephonyPlayAudio> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<TelephonyPlayAudio> getParserForType() {
+        return PARSER;
+      }
+
+      public com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+
+    }
+
+    public interface TelephonySynthesizeSpeechOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       * <pre>
+       * The raw text to be synthesized.
+       * </pre>
+       *
+       * <code>string text = 1;</code>
+       */
+      java.lang.String getText();
+      /**
+       * <pre>
+       * The raw text to be synthesized.
+       * </pre>
+       *
+       * <code>string text = 1;</code>
+       */
+      com.google.protobuf.ByteString
+          getTextBytes();
+
+      /**
+       * <pre>
+       * The SSML to be synthesized. For more information, see
+       * [SSML](https://developers.google.com/actions/reference/ssml).
+       * </pre>
+       *
+       * <code>string ssml = 2;</code>
+       */
+      java.lang.String getSsml();
+      /**
+       * <pre>
+       * The SSML to be synthesized. For more information, see
+       * [SSML](https://developers.google.com/actions/reference/ssml).
+       * </pre>
+       *
+       * <code>string ssml = 2;</code>
+       */
+      com.google.protobuf.ByteString
+          getSsmlBytes();
+
+      public com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech.SourceCase getSourceCase();
+    }
+    /**
+     * <pre>
+     * Synthesizes speech and plays back the synthesized audio to the caller in
+     * Telephony Gateway.
+     * Telephony Gateway takes the synthesizer settings from
+     * `DetectIntentResponse.output_audio_config` which can either be set
+     * at request-level or can come from the agent-level synthesizer config.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech}
+     */
+    public  static final class TelephonySynthesizeSpeech extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech)
+        TelephonySynthesizeSpeechOrBuilder {
+    private static final long serialVersionUID = 0L;
+      // Use TelephonySynthesizeSpeech.newBuilder() to construct.
+      private TelephonySynthesizeSpeech(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+      private TelephonySynthesizeSpeech() {
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+      getUnknownFields() {
+        return this.unknownFields;
+      }
+      private TelephonySynthesizeSpeech(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        int mutable_bitField0_ = 0;
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default: {
+                if (!parseUnknownFieldProto3(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+              case 10: {
+                java.lang.String s = input.readStringRequireUtf8();
+                sourceCase_ = 1;
+                source_ = s;
+                break;
+              }
+              case 18: {
+                java.lang.String s = input.readStringRequireUtf8();
+                sourceCase_ = 2;
+                source_ = s;
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e).setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.google.cloud.dialogflow.v2beta1.IntentProto.internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_TelephonySynthesizeSpeech_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dialogflow.v2beta1.IntentProto.internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_TelephonySynthesizeSpeech_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech.class, com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech.Builder.class);
+      }
+
+      private int sourceCase_ = 0;
+      private java.lang.Object source_;
+      public enum SourceCase
+          implements com.google.protobuf.Internal.EnumLite {
+        TEXT(1),
+        SSML(2),
+        SOURCE_NOT_SET(0);
+        private final int value;
+        private SourceCase(int value) {
+          this.value = value;
+        }
+        /**
+         * @deprecated Use {@link #forNumber(int)} instead.
+         */
+        @java.lang.Deprecated
+        public static SourceCase valueOf(int value) {
+          return forNumber(value);
+        }
+
+        public static SourceCase forNumber(int value) {
+          switch (value) {
+            case 1: return TEXT;
+            case 2: return SSML;
+            case 0: return SOURCE_NOT_SET;
+            default: return null;
+          }
+        }
+        public int getNumber() {
+          return this.value;
+        }
+      };
+
+      public SourceCase
+      getSourceCase() {
+        return SourceCase.forNumber(
+            sourceCase_);
+      }
+
+      public static final int TEXT_FIELD_NUMBER = 1;
+      /**
+       * <pre>
+       * The raw text to be synthesized.
+       * </pre>
+       *
+       * <code>string text = 1;</code>
+       */
+      public java.lang.String getText() {
+        java.lang.Object ref = "";
+        if (sourceCase_ == 1) {
+          ref = source_;
+        }
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (sourceCase_ == 1) {
+            source_ = s;
+          }
+          return s;
+        }
+      }
+      /**
+       * <pre>
+       * The raw text to be synthesized.
+       * </pre>
+       *
+       * <code>string text = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getTextBytes() {
+        java.lang.Object ref = "";
+        if (sourceCase_ == 1) {
+          ref = source_;
+        }
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          if (sourceCase_ == 1) {
+            source_ = b;
+          }
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int SSML_FIELD_NUMBER = 2;
+      /**
+       * <pre>
+       * The SSML to be synthesized. For more information, see
+       * [SSML](https://developers.google.com/actions/reference/ssml).
+       * </pre>
+       *
+       * <code>string ssml = 2;</code>
+       */
+      public java.lang.String getSsml() {
+        java.lang.Object ref = "";
+        if (sourceCase_ == 2) {
+          ref = source_;
+        }
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (sourceCase_ == 2) {
+            source_ = s;
+          }
+          return s;
+        }
+      }
+      /**
+       * <pre>
+       * The SSML to be synthesized. For more information, see
+       * [SSML](https://developers.google.com/actions/reference/ssml).
+       * </pre>
+       *
+       * <code>string ssml = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getSsmlBytes() {
+        java.lang.Object ref = "";
+        if (sourceCase_ == 2) {
+          ref = source_;
+        }
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          if (sourceCase_ == 2) {
+            source_ = b;
+          }
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      private byte memoizedIsInitialized = -1;
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        if (sourceCase_ == 1) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, source_);
+        }
+        if (sourceCase_ == 2) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 2, source_);
+        }
+        unknownFields.writeTo(output);
+      }
+
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (sourceCase_ == 1) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, source_);
+        }
+        if (sourceCase_ == 2) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, source_);
+        }
+        size += unknownFields.getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+         return true;
+        }
+        if (!(obj instanceof com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech other = (com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech) obj;
+
+        boolean result = true;
+        result = result && getSourceCase().equals(
+            other.getSourceCase());
+        if (!result) return false;
+        switch (sourceCase_) {
+          case 1:
+            result = result && getText()
+                .equals(other.getText());
+            break;
+          case 2:
+            result = result && getSsml()
+                .equals(other.getSsml());
+            break;
+          case 0:
+          default:
+        }
+        result = result && unknownFields.equals(other.unknownFields);
+        return result;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        switch (sourceCase_) {
+          case 1:
+            hash = (37 * hash) + TEXT_FIELD_NUMBER;
+            hash = (53 * hash) + getText().hashCode();
+            break;
+          case 2:
+            hash = (37 * hash) + SSML_FIELD_NUMBER;
+            hash = (53 * hash) + getSsml().hashCode();
+            break;
+          case 0:
+          default:
+        }
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech parseFrom(
+          java.nio.ByteBuffer data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech parseFrom(
+          java.nio.ByteBuffer data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input);
+      }
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+      public static Builder newBuilder(com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+            ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * <pre>
+       * Synthesizes speech and plays back the synthesized audio to the caller in
+       * Telephony Gateway.
+       * Telephony Gateway takes the synthesizer settings from
+       * `DetectIntentResponse.output_audio_config` which can either be set
+       * at request-level or can come from the agent-level synthesizer config.
+       * </pre>
+       *
+       * Protobuf type {@code google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech)
+          com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeechOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return com.google.cloud.dialogflow.v2beta1.IntentProto.internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_TelephonySynthesizeSpeech_descriptor;
+        }
+
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.dialogflow.v2beta1.IntentProto.internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_TelephonySynthesizeSpeech_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech.class, com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech.Builder.class);
+        }
+
+        // Construct using com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3
+                  .alwaysUseFieldBuilders) {
+          }
+        }
+        public Builder clear() {
+          super.clear();
+          sourceCase_ = 0;
+          source_ = null;
+          return this;
+        }
+
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return com.google.cloud.dialogflow.v2beta1.IntentProto.internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_TelephonySynthesizeSpeech_descriptor;
+        }
+
+        public com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech getDefaultInstanceForType() {
+          return com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech.getDefaultInstance();
+        }
+
+        public com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech build() {
+          com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        public com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech buildPartial() {
+          com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech result = new com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech(this);
+          if (sourceCase_ == 1) {
+            result.source_ = source_;
+          }
+          if (sourceCase_ == 2) {
+            result.source_ = source_;
+          }
+          result.sourceCase_ = sourceCase_;
+          onBuilt();
+          return result;
+        }
+
+        public Builder clone() {
+          return (Builder) super.clone();
+        }
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return (Builder) super.setField(field, value);
+        }
+        public Builder clearField(
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return (Builder) super.clearField(field);
+        }
+        public Builder clearOneof(
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return (Builder) super.clearOneof(oneof);
+        }
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index, java.lang.Object value) {
+          return (Builder) super.setRepeatedField(field, index, value);
+        }
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return (Builder) super.addRepeatedField(field, value);
+        }
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech) {
+            return mergeFrom((com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech other) {
+          if (other == com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech.getDefaultInstance()) return this;
+          switch (other.getSourceCase()) {
+            case TEXT: {
+              sourceCase_ = 1;
+              source_ = other.source_;
+              onChanged();
+              break;
+            }
+            case SSML: {
+              sourceCase_ = 2;
+              source_ = other.source_;
+              onChanged();
+              break;
+            }
+            case SOURCE_NOT_SET: {
+              break;
+            }
+          }
+          this.mergeUnknownFields(other.unknownFields);
+          onChanged();
+          return this;
+        }
+
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech) e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+        private int sourceCase_ = 0;
+        private java.lang.Object source_;
+        public SourceCase
+            getSourceCase() {
+          return SourceCase.forNumber(
+              sourceCase_);
+        }
+
+        public Builder clearSource() {
+          sourceCase_ = 0;
+          source_ = null;
+          onChanged();
+          return this;
+        }
+
+
+        /**
+         * <pre>
+         * The raw text to be synthesized.
+         * </pre>
+         *
+         * <code>string text = 1;</code>
+         */
+        public java.lang.String getText() {
+          java.lang.Object ref = "";
+          if (sourceCase_ == 1) {
+            ref = source_;
+          }
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            if (sourceCase_ == 1) {
+              source_ = s;
+            }
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <pre>
+         * The raw text to be synthesized.
+         * </pre>
+         *
+         * <code>string text = 1;</code>
+         */
+        public com.google.protobuf.ByteString
+            getTextBytes() {
+          java.lang.Object ref = "";
+          if (sourceCase_ == 1) {
+            ref = source_;
+          }
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            if (sourceCase_ == 1) {
+              source_ = b;
+            }
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <pre>
+         * The raw text to be synthesized.
+         * </pre>
+         *
+         * <code>string text = 1;</code>
+         */
+        public Builder setText(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  sourceCase_ = 1;
+          source_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * The raw text to be synthesized.
+         * </pre>
+         *
+         * <code>string text = 1;</code>
+         */
+        public Builder clearText() {
+          if (sourceCase_ == 1) {
+            sourceCase_ = 0;
+            source_ = null;
+            onChanged();
+          }
+          return this;
+        }
+        /**
+         * <pre>
+         * The raw text to be synthesized.
+         * </pre>
+         *
+         * <code>string text = 1;</code>
+         */
+        public Builder setTextBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          sourceCase_ = 1;
+          source_ = value;
+          onChanged();
+          return this;
+        }
+
+        /**
+         * <pre>
+         * The SSML to be synthesized. For more information, see
+         * [SSML](https://developers.google.com/actions/reference/ssml).
+         * </pre>
+         *
+         * <code>string ssml = 2;</code>
+         */
+        public java.lang.String getSsml() {
+          java.lang.Object ref = "";
+          if (sourceCase_ == 2) {
+            ref = source_;
+          }
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            if (sourceCase_ == 2) {
+              source_ = s;
+            }
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <pre>
+         * The SSML to be synthesized. For more information, see
+         * [SSML](https://developers.google.com/actions/reference/ssml).
+         * </pre>
+         *
+         * <code>string ssml = 2;</code>
+         */
+        public com.google.protobuf.ByteString
+            getSsmlBytes() {
+          java.lang.Object ref = "";
+          if (sourceCase_ == 2) {
+            ref = source_;
+          }
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            if (sourceCase_ == 2) {
+              source_ = b;
+            }
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <pre>
+         * The SSML to be synthesized. For more information, see
+         * [SSML](https://developers.google.com/actions/reference/ssml).
+         * </pre>
+         *
+         * <code>string ssml = 2;</code>
+         */
+        public Builder setSsml(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  sourceCase_ = 2;
+          source_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * The SSML to be synthesized. For more information, see
+         * [SSML](https://developers.google.com/actions/reference/ssml).
+         * </pre>
+         *
+         * <code>string ssml = 2;</code>
+         */
+        public Builder clearSsml() {
+          if (sourceCase_ == 2) {
+            sourceCase_ = 0;
+            source_ = null;
+            onChanged();
+          }
+          return this;
+        }
+        /**
+         * <pre>
+         * The SSML to be synthesized. For more information, see
+         * [SSML](https://developers.google.com/actions/reference/ssml).
+         * </pre>
+         *
+         * <code>string ssml = 2;</code>
+         */
+        public Builder setSsmlBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          sourceCase_ = 2;
+          source_ = value;
+          onChanged();
+          return this;
+        }
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFieldsProto3(unknownFields);
+        }
+
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech)
+      private static final com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech DEFAULT_INSTANCE;
+      static {
+        DEFAULT_INSTANCE = new com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech();
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<TelephonySynthesizeSpeech>
+          PARSER = new com.google.protobuf.AbstractParser<TelephonySynthesizeSpeech>() {
+        public TelephonySynthesizeSpeech parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new TelephonySynthesizeSpeech(input, extensionRegistry);
+        }
+      };
+
+      public static com.google.protobuf.Parser<TelephonySynthesizeSpeech> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<TelephonySynthesizeSpeech> getParserForType() {
+        return PARSER;
+      }
+
+      public com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+
+    }
+
+    public interface TelephonyTransferCallOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       * <pre>
+       * Required. The phone number to transfer the call to
+       * in [E.164 format](https://en.wikipedia.org/wiki/E.164).
+       * We currently only allow transferring to US numbers (+1xxxyyyzzzz).
+       * </pre>
+       *
+       * <code>string phone_number = 1;</code>
+       */
+      java.lang.String getPhoneNumber();
+      /**
+       * <pre>
+       * Required. The phone number to transfer the call to
+       * in [E.164 format](https://en.wikipedia.org/wiki/E.164).
+       * We currently only allow transferring to US numbers (+1xxxyyyzzzz).
+       * </pre>
+       *
+       * <code>string phone_number = 1;</code>
+       */
+      com.google.protobuf.ByteString
+          getPhoneNumberBytes();
+    }
+    /**
+     * <pre>
+     * Transfers the call in Telephony Gateway.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall}
+     */
+    public  static final class TelephonyTransferCall extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall)
+        TelephonyTransferCallOrBuilder {
+    private static final long serialVersionUID = 0L;
+      // Use TelephonyTransferCall.newBuilder() to construct.
+      private TelephonyTransferCall(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+      private TelephonyTransferCall() {
+        phoneNumber_ = "";
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+      getUnknownFields() {
+        return this.unknownFields;
+      }
+      private TelephonyTransferCall(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        int mutable_bitField0_ = 0;
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default: {
+                if (!parseUnknownFieldProto3(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+              case 10: {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                phoneNumber_ = s;
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e).setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.google.cloud.dialogflow.v2beta1.IntentProto.internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_TelephonyTransferCall_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dialogflow.v2beta1.IntentProto.internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_TelephonyTransferCall_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall.class, com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall.Builder.class);
+      }
+
+      public static final int PHONE_NUMBER_FIELD_NUMBER = 1;
+      private volatile java.lang.Object phoneNumber_;
+      /**
+       * <pre>
+       * Required. The phone number to transfer the call to
+       * in [E.164 format](https://en.wikipedia.org/wiki/E.164).
+       * We currently only allow transferring to US numbers (+1xxxyyyzzzz).
+       * </pre>
+       *
+       * <code>string phone_number = 1;</code>
+       */
+      public java.lang.String getPhoneNumber() {
+        java.lang.Object ref = phoneNumber_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          phoneNumber_ = s;
+          return s;
+        }
+      }
+      /**
+       * <pre>
+       * Required. The phone number to transfer the call to
+       * in [E.164 format](https://en.wikipedia.org/wiki/E.164).
+       * We currently only allow transferring to US numbers (+1xxxyyyzzzz).
+       * </pre>
+       *
+       * <code>string phone_number = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getPhoneNumberBytes() {
+        java.lang.Object ref = phoneNumber_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          phoneNumber_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      private byte memoizedIsInitialized = -1;
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        if (!getPhoneNumberBytes().isEmpty()) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, phoneNumber_);
+        }
+        unknownFields.writeTo(output);
+      }
+
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!getPhoneNumberBytes().isEmpty()) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, phoneNumber_);
+        }
+        size += unknownFields.getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+         return true;
+        }
+        if (!(obj instanceof com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall other = (com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall) obj;
+
+        boolean result = true;
+        result = result && getPhoneNumber()
+            .equals(other.getPhoneNumber());
+        result = result && unknownFields.equals(other.unknownFields);
+        return result;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + PHONE_NUMBER_FIELD_NUMBER;
+        hash = (53 * hash) + getPhoneNumber().hashCode();
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall parseFrom(
+          java.nio.ByteBuffer data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall parseFrom(
+          java.nio.ByteBuffer data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input);
+      }
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+      public static Builder newBuilder(com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+            ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * <pre>
+       * Transfers the call in Telephony Gateway.
+       * </pre>
+       *
+       * Protobuf type {@code google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall)
+          com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCallOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return com.google.cloud.dialogflow.v2beta1.IntentProto.internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_TelephonyTransferCall_descriptor;
+        }
+
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.dialogflow.v2beta1.IntentProto.internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_TelephonyTransferCall_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall.class, com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall.Builder.class);
+        }
+
+        // Construct using com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3
+                  .alwaysUseFieldBuilders) {
+          }
+        }
+        public Builder clear() {
+          super.clear();
+          phoneNumber_ = "";
+
+          return this;
+        }
+
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return com.google.cloud.dialogflow.v2beta1.IntentProto.internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_TelephonyTransferCall_descriptor;
+        }
+
+        public com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall getDefaultInstanceForType() {
+          return com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall.getDefaultInstance();
+        }
+
+        public com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall build() {
+          com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        public com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall buildPartial() {
+          com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall result = new com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall(this);
+          result.phoneNumber_ = phoneNumber_;
+          onBuilt();
+          return result;
+        }
+
+        public Builder clone() {
+          return (Builder) super.clone();
+        }
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return (Builder) super.setField(field, value);
+        }
+        public Builder clearField(
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return (Builder) super.clearField(field);
+        }
+        public Builder clearOneof(
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return (Builder) super.clearOneof(oneof);
+        }
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index, java.lang.Object value) {
+          return (Builder) super.setRepeatedField(field, index, value);
+        }
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return (Builder) super.addRepeatedField(field, value);
+        }
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall) {
+            return mergeFrom((com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall other) {
+          if (other == com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall.getDefaultInstance()) return this;
+          if (!other.getPhoneNumber().isEmpty()) {
+            phoneNumber_ = other.phoneNumber_;
+            onChanged();
+          }
+          this.mergeUnknownFields(other.unknownFields);
+          onChanged();
+          return this;
+        }
+
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall) e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+
+        private java.lang.Object phoneNumber_ = "";
+        /**
+         * <pre>
+         * Required. The phone number to transfer the call to
+         * in [E.164 format](https://en.wikipedia.org/wiki/E.164).
+         * We currently only allow transferring to US numbers (+1xxxyyyzzzz).
+         * </pre>
+         *
+         * <code>string phone_number = 1;</code>
+         */
+        public java.lang.String getPhoneNumber() {
+          java.lang.Object ref = phoneNumber_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            phoneNumber_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <pre>
+         * Required. The phone number to transfer the call to
+         * in [E.164 format](https://en.wikipedia.org/wiki/E.164).
+         * We currently only allow transferring to US numbers (+1xxxyyyzzzz).
+         * </pre>
+         *
+         * <code>string phone_number = 1;</code>
+         */
+        public com.google.protobuf.ByteString
+            getPhoneNumberBytes() {
+          java.lang.Object ref = phoneNumber_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            phoneNumber_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <pre>
+         * Required. The phone number to transfer the call to
+         * in [E.164 format](https://en.wikipedia.org/wiki/E.164).
+         * We currently only allow transferring to US numbers (+1xxxyyyzzzz).
+         * </pre>
+         *
+         * <code>string phone_number = 1;</code>
+         */
+        public Builder setPhoneNumber(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          phoneNumber_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * Required. The phone number to transfer the call to
+         * in [E.164 format](https://en.wikipedia.org/wiki/E.164).
+         * We currently only allow transferring to US numbers (+1xxxyyyzzzz).
+         * </pre>
+         *
+         * <code>string phone_number = 1;</code>
+         */
+        public Builder clearPhoneNumber() {
+          
+          phoneNumber_ = getDefaultInstance().getPhoneNumber();
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * Required. The phone number to transfer the call to
+         * in [E.164 format](https://en.wikipedia.org/wiki/E.164).
+         * We currently only allow transferring to US numbers (+1xxxyyyzzzz).
+         * </pre>
+         *
+         * <code>string phone_number = 1;</code>
+         */
+        public Builder setPhoneNumberBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          phoneNumber_ = value;
+          onChanged();
+          return this;
+        }
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFieldsProto3(unknownFields);
+        }
+
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall)
+      private static final com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall DEFAULT_INSTANCE;
+      static {
+        DEFAULT_INSTANCE = new com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall();
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<TelephonyTransferCall>
+          PARSER = new com.google.protobuf.AbstractParser<TelephonyTransferCall>() {
+        public TelephonyTransferCall parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new TelephonyTransferCall(input, extensionRegistry);
+        }
+      };
+
+      public static com.google.protobuf.Parser<TelephonyTransferCall> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<TelephonyTransferCall> getParserForType() {
+        return PARSER;
+      }
+
+      public com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+
+    }
+
     private int messageCase_ = 0;
     private java.lang.Object message_;
     public enum MessageCase
@@ -22390,6 +24659,9 @@ private static final long serialVersionUID = 0L;
       LINK_OUT_SUGGESTION(10),
       LIST_SELECT(11),
       CAROUSEL_SELECT(12),
+      TELEPHONY_PLAY_AUDIO(13),
+      TELEPHONY_SYNTHESIZE_SPEECH(14),
+      TELEPHONY_TRANSFER_CALL(15),
       MESSAGE_NOT_SET(0);
       private final int value;
       private MessageCase(int value) {
@@ -22416,6 +24688,9 @@ private static final long serialVersionUID = 0L;
           case 10: return LINK_OUT_SUGGESTION;
           case 11: return LIST_SELECT;
           case 12: return CAROUSEL_SELECT;
+          case 13: return TELEPHONY_PLAY_AUDIO;
+          case 14: return TELEPHONY_SYNTHESIZE_SPEECH;
+          case 15: return TELEPHONY_TRANSFER_CALL;
           case 0: return MESSAGE_NOT_SET;
           default: return null;
         }
@@ -22855,6 +25130,120 @@ private static final long serialVersionUID = 0L;
       return com.google.cloud.dialogflow.v2beta1.Intent.Message.CarouselSelect.getDefaultInstance();
     }
 
+    public static final int TELEPHONY_PLAY_AUDIO_FIELD_NUMBER = 13;
+    /**
+     * <pre>
+     * Plays audio from a file in Telephony Gateway.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio telephony_play_audio = 13;</code>
+     */
+    public boolean hasTelephonyPlayAudio() {
+      return messageCase_ == 13;
+    }
+    /**
+     * <pre>
+     * Plays audio from a file in Telephony Gateway.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio telephony_play_audio = 13;</code>
+     */
+    public com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio getTelephonyPlayAudio() {
+      if (messageCase_ == 13) {
+         return (com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio) message_;
+      }
+      return com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio.getDefaultInstance();
+    }
+    /**
+     * <pre>
+     * Plays audio from a file in Telephony Gateway.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio telephony_play_audio = 13;</code>
+     */
+    public com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudioOrBuilder getTelephonyPlayAudioOrBuilder() {
+      if (messageCase_ == 13) {
+         return (com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio) message_;
+      }
+      return com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio.getDefaultInstance();
+    }
+
+    public static final int TELEPHONY_SYNTHESIZE_SPEECH_FIELD_NUMBER = 14;
+    /**
+     * <pre>
+     * Synthesizes speech in Telephony Gateway.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech telephony_synthesize_speech = 14;</code>
+     */
+    public boolean hasTelephonySynthesizeSpeech() {
+      return messageCase_ == 14;
+    }
+    /**
+     * <pre>
+     * Synthesizes speech in Telephony Gateway.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech telephony_synthesize_speech = 14;</code>
+     */
+    public com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech getTelephonySynthesizeSpeech() {
+      if (messageCase_ == 14) {
+         return (com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech) message_;
+      }
+      return com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech.getDefaultInstance();
+    }
+    /**
+     * <pre>
+     * Synthesizes speech in Telephony Gateway.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech telephony_synthesize_speech = 14;</code>
+     */
+    public com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeechOrBuilder getTelephonySynthesizeSpeechOrBuilder() {
+      if (messageCase_ == 14) {
+         return (com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech) message_;
+      }
+      return com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech.getDefaultInstance();
+    }
+
+    public static final int TELEPHONY_TRANSFER_CALL_FIELD_NUMBER = 15;
+    /**
+     * <pre>
+     * Transfers the call in Telephony Gateway.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall telephony_transfer_call = 15;</code>
+     */
+    public boolean hasTelephonyTransferCall() {
+      return messageCase_ == 15;
+    }
+    /**
+     * <pre>
+     * Transfers the call in Telephony Gateway.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall telephony_transfer_call = 15;</code>
+     */
+    public com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall getTelephonyTransferCall() {
+      if (messageCase_ == 15) {
+         return (com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall) message_;
+      }
+      return com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall.getDefaultInstance();
+    }
+    /**
+     * <pre>
+     * Transfers the call in Telephony Gateway.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall telephony_transfer_call = 15;</code>
+     */
+    public com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCallOrBuilder getTelephonyTransferCallOrBuilder() {
+      if (messageCase_ == 15) {
+         return (com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall) message_;
+      }
+      return com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall.getDefaultInstance();
+    }
+
     public static final int PLATFORM_FIELD_NUMBER = 6;
     private int platform_;
     /**
@@ -22927,6 +25316,15 @@ private static final long serialVersionUID = 0L;
       if (messageCase_ == 12) {
         output.writeMessage(12, (com.google.cloud.dialogflow.v2beta1.Intent.Message.CarouselSelect) message_);
       }
+      if (messageCase_ == 13) {
+        output.writeMessage(13, (com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio) message_);
+      }
+      if (messageCase_ == 14) {
+        output.writeMessage(14, (com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech) message_);
+      }
+      if (messageCase_ == 15) {
+        output.writeMessage(15, (com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall) message_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -22982,6 +25380,18 @@ private static final long serialVersionUID = 0L;
       if (messageCase_ == 12) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(12, (com.google.cloud.dialogflow.v2beta1.Intent.Message.CarouselSelect) message_);
+      }
+      if (messageCase_ == 13) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(13, (com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio) message_);
+      }
+      if (messageCase_ == 14) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(14, (com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech) message_);
+      }
+      if (messageCase_ == 15) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(15, (com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall) message_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -23048,6 +25458,18 @@ private static final long serialVersionUID = 0L;
           result = result && getCarouselSelect()
               .equals(other.getCarouselSelect());
           break;
+        case 13:
+          result = result && getTelephonyPlayAudio()
+              .equals(other.getTelephonyPlayAudio());
+          break;
+        case 14:
+          result = result && getTelephonySynthesizeSpeech()
+              .equals(other.getTelephonySynthesizeSpeech());
+          break;
+        case 15:
+          result = result && getTelephonyTransferCall()
+              .equals(other.getTelephonyTransferCall());
+          break;
         case 0:
         default:
       }
@@ -23108,6 +25530,18 @@ private static final long serialVersionUID = 0L;
         case 12:
           hash = (37 * hash) + CAROUSEL_SELECT_FIELD_NUMBER;
           hash = (53 * hash) + getCarouselSelect().hashCode();
+          break;
+        case 13:
+          hash = (37 * hash) + TELEPHONY_PLAY_AUDIO_FIELD_NUMBER;
+          hash = (53 * hash) + getTelephonyPlayAudio().hashCode();
+          break;
+        case 14:
+          hash = (37 * hash) + TELEPHONY_SYNTHESIZE_SPEECH_FIELD_NUMBER;
+          hash = (53 * hash) + getTelephonySynthesizeSpeech().hashCode();
+          break;
+        case 15:
+          hash = (37 * hash) + TELEPHONY_TRANSFER_CALL_FIELD_NUMBER;
+          hash = (53 * hash) + getTelephonyTransferCall().hashCode();
           break;
         case 0:
         default:
@@ -23348,6 +25782,27 @@ private static final long serialVersionUID = 0L;
             result.message_ = carouselSelectBuilder_.build();
           }
         }
+        if (messageCase_ == 13) {
+          if (telephonyPlayAudioBuilder_ == null) {
+            result.message_ = message_;
+          } else {
+            result.message_ = telephonyPlayAudioBuilder_.build();
+          }
+        }
+        if (messageCase_ == 14) {
+          if (telephonySynthesizeSpeechBuilder_ == null) {
+            result.message_ = message_;
+          } else {
+            result.message_ = telephonySynthesizeSpeechBuilder_.build();
+          }
+        }
+        if (messageCase_ == 15) {
+          if (telephonyTransferCallBuilder_ == null) {
+            result.message_ = message_;
+          } else {
+            result.message_ = telephonyTransferCallBuilder_.build();
+          }
+        }
         result.platform_ = platform_;
         result.messageCase_ = messageCase_;
         onBuilt();
@@ -23437,6 +25892,18 @@ private static final long serialVersionUID = 0L;
           }
           case CAROUSEL_SELECT: {
             mergeCarouselSelect(other.getCarouselSelect());
+            break;
+          }
+          case TELEPHONY_PLAY_AUDIO: {
+            mergeTelephonyPlayAudio(other.getTelephonyPlayAudio());
+            break;
+          }
+          case TELEPHONY_SYNTHESIZE_SPEECH: {
+            mergeTelephonySynthesizeSpeech(other.getTelephonySynthesizeSpeech());
+            break;
+          }
+          case TELEPHONY_TRANSFER_CALL: {
+            mergeTelephonyTransferCall(other.getTelephonyTransferCall());
             break;
           }
           case MESSAGE_NOT_SET: {
@@ -25395,6 +27862,522 @@ private static final long serialVersionUID = 0L;
         return carouselSelectBuilder_;
       }
 
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio, com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio.Builder, com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudioOrBuilder> telephonyPlayAudioBuilder_;
+      /**
+       * <pre>
+       * Plays audio from a file in Telephony Gateway.
+       * </pre>
+       *
+       * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio telephony_play_audio = 13;</code>
+       */
+      public boolean hasTelephonyPlayAudio() {
+        return messageCase_ == 13;
+      }
+      /**
+       * <pre>
+       * Plays audio from a file in Telephony Gateway.
+       * </pre>
+       *
+       * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio telephony_play_audio = 13;</code>
+       */
+      public com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio getTelephonyPlayAudio() {
+        if (telephonyPlayAudioBuilder_ == null) {
+          if (messageCase_ == 13) {
+            return (com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio) message_;
+          }
+          return com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio.getDefaultInstance();
+        } else {
+          if (messageCase_ == 13) {
+            return telephonyPlayAudioBuilder_.getMessage();
+          }
+          return com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio.getDefaultInstance();
+        }
+      }
+      /**
+       * <pre>
+       * Plays audio from a file in Telephony Gateway.
+       * </pre>
+       *
+       * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio telephony_play_audio = 13;</code>
+       */
+      public Builder setTelephonyPlayAudio(com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio value) {
+        if (telephonyPlayAudioBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          message_ = value;
+          onChanged();
+        } else {
+          telephonyPlayAudioBuilder_.setMessage(value);
+        }
+        messageCase_ = 13;
+        return this;
+      }
+      /**
+       * <pre>
+       * Plays audio from a file in Telephony Gateway.
+       * </pre>
+       *
+       * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio telephony_play_audio = 13;</code>
+       */
+      public Builder setTelephonyPlayAudio(
+          com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio.Builder builderForValue) {
+        if (telephonyPlayAudioBuilder_ == null) {
+          message_ = builderForValue.build();
+          onChanged();
+        } else {
+          telephonyPlayAudioBuilder_.setMessage(builderForValue.build());
+        }
+        messageCase_ = 13;
+        return this;
+      }
+      /**
+       * <pre>
+       * Plays audio from a file in Telephony Gateway.
+       * </pre>
+       *
+       * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio telephony_play_audio = 13;</code>
+       */
+      public Builder mergeTelephonyPlayAudio(com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio value) {
+        if (telephonyPlayAudioBuilder_ == null) {
+          if (messageCase_ == 13 &&
+              message_ != com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio.getDefaultInstance()) {
+            message_ = com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio.newBuilder((com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio) message_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            message_ = value;
+          }
+          onChanged();
+        } else {
+          if (messageCase_ == 13) {
+            telephonyPlayAudioBuilder_.mergeFrom(value);
+          }
+          telephonyPlayAudioBuilder_.setMessage(value);
+        }
+        messageCase_ = 13;
+        return this;
+      }
+      /**
+       * <pre>
+       * Plays audio from a file in Telephony Gateway.
+       * </pre>
+       *
+       * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio telephony_play_audio = 13;</code>
+       */
+      public Builder clearTelephonyPlayAudio() {
+        if (telephonyPlayAudioBuilder_ == null) {
+          if (messageCase_ == 13) {
+            messageCase_ = 0;
+            message_ = null;
+            onChanged();
+          }
+        } else {
+          if (messageCase_ == 13) {
+            messageCase_ = 0;
+            message_ = null;
+          }
+          telephonyPlayAudioBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Plays audio from a file in Telephony Gateway.
+       * </pre>
+       *
+       * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio telephony_play_audio = 13;</code>
+       */
+      public com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio.Builder getTelephonyPlayAudioBuilder() {
+        return getTelephonyPlayAudioFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Plays audio from a file in Telephony Gateway.
+       * </pre>
+       *
+       * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio telephony_play_audio = 13;</code>
+       */
+      public com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudioOrBuilder getTelephonyPlayAudioOrBuilder() {
+        if ((messageCase_ == 13) && (telephonyPlayAudioBuilder_ != null)) {
+          return telephonyPlayAudioBuilder_.getMessageOrBuilder();
+        } else {
+          if (messageCase_ == 13) {
+            return (com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio) message_;
+          }
+          return com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio.getDefaultInstance();
+        }
+      }
+      /**
+       * <pre>
+       * Plays audio from a file in Telephony Gateway.
+       * </pre>
+       *
+       * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio telephony_play_audio = 13;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio, com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio.Builder, com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudioOrBuilder> 
+          getTelephonyPlayAudioFieldBuilder() {
+        if (telephonyPlayAudioBuilder_ == null) {
+          if (!(messageCase_ == 13)) {
+            message_ = com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio.getDefaultInstance();
+          }
+          telephonyPlayAudioBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio, com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio.Builder, com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudioOrBuilder>(
+                  (com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio) message_,
+                  getParentForChildren(),
+                  isClean());
+          message_ = null;
+        }
+        messageCase_ = 13;
+        onChanged();;
+        return telephonyPlayAudioBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech, com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech.Builder, com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeechOrBuilder> telephonySynthesizeSpeechBuilder_;
+      /**
+       * <pre>
+       * Synthesizes speech in Telephony Gateway.
+       * </pre>
+       *
+       * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech telephony_synthesize_speech = 14;</code>
+       */
+      public boolean hasTelephonySynthesizeSpeech() {
+        return messageCase_ == 14;
+      }
+      /**
+       * <pre>
+       * Synthesizes speech in Telephony Gateway.
+       * </pre>
+       *
+       * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech telephony_synthesize_speech = 14;</code>
+       */
+      public com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech getTelephonySynthesizeSpeech() {
+        if (telephonySynthesizeSpeechBuilder_ == null) {
+          if (messageCase_ == 14) {
+            return (com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech) message_;
+          }
+          return com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech.getDefaultInstance();
+        } else {
+          if (messageCase_ == 14) {
+            return telephonySynthesizeSpeechBuilder_.getMessage();
+          }
+          return com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech.getDefaultInstance();
+        }
+      }
+      /**
+       * <pre>
+       * Synthesizes speech in Telephony Gateway.
+       * </pre>
+       *
+       * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech telephony_synthesize_speech = 14;</code>
+       */
+      public Builder setTelephonySynthesizeSpeech(com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech value) {
+        if (telephonySynthesizeSpeechBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          message_ = value;
+          onChanged();
+        } else {
+          telephonySynthesizeSpeechBuilder_.setMessage(value);
+        }
+        messageCase_ = 14;
+        return this;
+      }
+      /**
+       * <pre>
+       * Synthesizes speech in Telephony Gateway.
+       * </pre>
+       *
+       * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech telephony_synthesize_speech = 14;</code>
+       */
+      public Builder setTelephonySynthesizeSpeech(
+          com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech.Builder builderForValue) {
+        if (telephonySynthesizeSpeechBuilder_ == null) {
+          message_ = builderForValue.build();
+          onChanged();
+        } else {
+          telephonySynthesizeSpeechBuilder_.setMessage(builderForValue.build());
+        }
+        messageCase_ = 14;
+        return this;
+      }
+      /**
+       * <pre>
+       * Synthesizes speech in Telephony Gateway.
+       * </pre>
+       *
+       * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech telephony_synthesize_speech = 14;</code>
+       */
+      public Builder mergeTelephonySynthesizeSpeech(com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech value) {
+        if (telephonySynthesizeSpeechBuilder_ == null) {
+          if (messageCase_ == 14 &&
+              message_ != com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech.getDefaultInstance()) {
+            message_ = com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech.newBuilder((com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech) message_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            message_ = value;
+          }
+          onChanged();
+        } else {
+          if (messageCase_ == 14) {
+            telephonySynthesizeSpeechBuilder_.mergeFrom(value);
+          }
+          telephonySynthesizeSpeechBuilder_.setMessage(value);
+        }
+        messageCase_ = 14;
+        return this;
+      }
+      /**
+       * <pre>
+       * Synthesizes speech in Telephony Gateway.
+       * </pre>
+       *
+       * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech telephony_synthesize_speech = 14;</code>
+       */
+      public Builder clearTelephonySynthesizeSpeech() {
+        if (telephonySynthesizeSpeechBuilder_ == null) {
+          if (messageCase_ == 14) {
+            messageCase_ = 0;
+            message_ = null;
+            onChanged();
+          }
+        } else {
+          if (messageCase_ == 14) {
+            messageCase_ = 0;
+            message_ = null;
+          }
+          telephonySynthesizeSpeechBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Synthesizes speech in Telephony Gateway.
+       * </pre>
+       *
+       * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech telephony_synthesize_speech = 14;</code>
+       */
+      public com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech.Builder getTelephonySynthesizeSpeechBuilder() {
+        return getTelephonySynthesizeSpeechFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Synthesizes speech in Telephony Gateway.
+       * </pre>
+       *
+       * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech telephony_synthesize_speech = 14;</code>
+       */
+      public com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeechOrBuilder getTelephonySynthesizeSpeechOrBuilder() {
+        if ((messageCase_ == 14) && (telephonySynthesizeSpeechBuilder_ != null)) {
+          return telephonySynthesizeSpeechBuilder_.getMessageOrBuilder();
+        } else {
+          if (messageCase_ == 14) {
+            return (com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech) message_;
+          }
+          return com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech.getDefaultInstance();
+        }
+      }
+      /**
+       * <pre>
+       * Synthesizes speech in Telephony Gateway.
+       * </pre>
+       *
+       * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech telephony_synthesize_speech = 14;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech, com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech.Builder, com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeechOrBuilder> 
+          getTelephonySynthesizeSpeechFieldBuilder() {
+        if (telephonySynthesizeSpeechBuilder_ == null) {
+          if (!(messageCase_ == 14)) {
+            message_ = com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech.getDefaultInstance();
+          }
+          telephonySynthesizeSpeechBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech, com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech.Builder, com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeechOrBuilder>(
+                  (com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech) message_,
+                  getParentForChildren(),
+                  isClean());
+          message_ = null;
+        }
+        messageCase_ = 14;
+        onChanged();;
+        return telephonySynthesizeSpeechBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall, com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall.Builder, com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCallOrBuilder> telephonyTransferCallBuilder_;
+      /**
+       * <pre>
+       * Transfers the call in Telephony Gateway.
+       * </pre>
+       *
+       * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall telephony_transfer_call = 15;</code>
+       */
+      public boolean hasTelephonyTransferCall() {
+        return messageCase_ == 15;
+      }
+      /**
+       * <pre>
+       * Transfers the call in Telephony Gateway.
+       * </pre>
+       *
+       * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall telephony_transfer_call = 15;</code>
+       */
+      public com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall getTelephonyTransferCall() {
+        if (telephonyTransferCallBuilder_ == null) {
+          if (messageCase_ == 15) {
+            return (com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall) message_;
+          }
+          return com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall.getDefaultInstance();
+        } else {
+          if (messageCase_ == 15) {
+            return telephonyTransferCallBuilder_.getMessage();
+          }
+          return com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall.getDefaultInstance();
+        }
+      }
+      /**
+       * <pre>
+       * Transfers the call in Telephony Gateway.
+       * </pre>
+       *
+       * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall telephony_transfer_call = 15;</code>
+       */
+      public Builder setTelephonyTransferCall(com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall value) {
+        if (telephonyTransferCallBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          message_ = value;
+          onChanged();
+        } else {
+          telephonyTransferCallBuilder_.setMessage(value);
+        }
+        messageCase_ = 15;
+        return this;
+      }
+      /**
+       * <pre>
+       * Transfers the call in Telephony Gateway.
+       * </pre>
+       *
+       * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall telephony_transfer_call = 15;</code>
+       */
+      public Builder setTelephonyTransferCall(
+          com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall.Builder builderForValue) {
+        if (telephonyTransferCallBuilder_ == null) {
+          message_ = builderForValue.build();
+          onChanged();
+        } else {
+          telephonyTransferCallBuilder_.setMessage(builderForValue.build());
+        }
+        messageCase_ = 15;
+        return this;
+      }
+      /**
+       * <pre>
+       * Transfers the call in Telephony Gateway.
+       * </pre>
+       *
+       * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall telephony_transfer_call = 15;</code>
+       */
+      public Builder mergeTelephonyTransferCall(com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall value) {
+        if (telephonyTransferCallBuilder_ == null) {
+          if (messageCase_ == 15 &&
+              message_ != com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall.getDefaultInstance()) {
+            message_ = com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall.newBuilder((com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall) message_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            message_ = value;
+          }
+          onChanged();
+        } else {
+          if (messageCase_ == 15) {
+            telephonyTransferCallBuilder_.mergeFrom(value);
+          }
+          telephonyTransferCallBuilder_.setMessage(value);
+        }
+        messageCase_ = 15;
+        return this;
+      }
+      /**
+       * <pre>
+       * Transfers the call in Telephony Gateway.
+       * </pre>
+       *
+       * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall telephony_transfer_call = 15;</code>
+       */
+      public Builder clearTelephonyTransferCall() {
+        if (telephonyTransferCallBuilder_ == null) {
+          if (messageCase_ == 15) {
+            messageCase_ = 0;
+            message_ = null;
+            onChanged();
+          }
+        } else {
+          if (messageCase_ == 15) {
+            messageCase_ = 0;
+            message_ = null;
+          }
+          telephonyTransferCallBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Transfers the call in Telephony Gateway.
+       * </pre>
+       *
+       * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall telephony_transfer_call = 15;</code>
+       */
+      public com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall.Builder getTelephonyTransferCallBuilder() {
+        return getTelephonyTransferCallFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Transfers the call in Telephony Gateway.
+       * </pre>
+       *
+       * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall telephony_transfer_call = 15;</code>
+       */
+      public com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCallOrBuilder getTelephonyTransferCallOrBuilder() {
+        if ((messageCase_ == 15) && (telephonyTransferCallBuilder_ != null)) {
+          return telephonyTransferCallBuilder_.getMessageOrBuilder();
+        } else {
+          if (messageCase_ == 15) {
+            return (com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall) message_;
+          }
+          return com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall.getDefaultInstance();
+        }
+      }
+      /**
+       * <pre>
+       * Transfers the call in Telephony Gateway.
+       * </pre>
+       *
+       * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall telephony_transfer_call = 15;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall, com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall.Builder, com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCallOrBuilder> 
+          getTelephonyTransferCallFieldBuilder() {
+        if (telephonyTransferCallBuilder_ == null) {
+          if (!(messageCase_ == 15)) {
+            message_ = com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall.getDefaultInstance();
+          }
+          telephonyTransferCallBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall, com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall.Builder, com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCallOrBuilder>(
+                  (com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall) message_,
+                  getParentForChildren(),
+                  isClean());
+          message_ = null;
+        }
+        messageCase_ = 15;
+        onChanged();;
+        return telephonyTransferCallBuilder_;
+      }
+
       private int platform_ = 0;
       /**
        * <pre>
@@ -26418,17 +29401,17 @@ private static final long serialVersionUID = 0L;
    * taken into account during inference in `ML ONLY` match mode. Also,
    * auto-markup in the UI is turned off.
    * DEPRECATED! Please use `ml_disabled` field instead.
-   * NOTE: If neither `ml_enabled` nor `ml_disabled` field is set, then the
-   * default value is determined as follows:
+   * NOTE: If both `ml_enabled` and `ml_disabled` are either not set or false,
+   * then the default value is determined as follows:
    * - Before April 15th, 2018 the default is:
    *   ml_enabled = false / ml_disabled = true.
    * - After April 15th, 2018 the default is:
    *   ml_enabled = true / ml_disabled = false.
    * </pre>
    *
-   * <code>bool ml_enabled = 5;</code>
+   * <code>bool ml_enabled = 5 [deprecated = true];</code>
    */
-  public boolean getMlEnabled() {
+  @java.lang.Deprecated public boolean getMlEnabled() {
     return mlEnabled_;
   }
 
@@ -26446,6 +29429,21 @@ private static final long serialVersionUID = 0L;
    */
   public boolean getMlDisabled() {
     return mlDisabled_;
+  }
+
+  public static final int END_INTERACTION_FIELD_NUMBER = 21;
+  private boolean endInteraction_;
+  /**
+   * <pre>
+   * Optional. Indicates that this intent ends an interaction. Some integrations
+   * (e.g., Actions on Google or Dialogflow phone gateway) use this information
+   * to close interaction with an end user. Default is false.
+   * </pre>
+   *
+   * <code>bool end_interaction = 21;</code>
+   */
+  public boolean getEndInteraction() {
+    return endInteraction_;
   }
 
   public static final int INPUT_CONTEXT_NAMES_FIELD_NUMBER = 7;
@@ -26619,6 +29617,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Optional. The name of the action associated with the intent.
+   * Note: The action name must not contain whitespaces.
    * </pre>
    *
    * <code>string action = 10;</code>
@@ -26638,6 +29637,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Optional. The name of the action associated with the intent.
+   * Note: The action name must not contain whitespaces.
    * </pre>
    *
    * <code>string action = 10;</code>
@@ -27158,6 +30158,9 @@ private static final long serialVersionUID = 0L;
     if (mlDisabled_ != false) {
       output.writeBool(19, mlDisabled_);
     }
+    if (endInteraction_ != false) {
+      output.writeBool(21, endInteraction_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -27253,6 +30256,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(19, mlDisabled_);
     }
+    if (endInteraction_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(21, endInteraction_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -27282,6 +30289,8 @@ private static final long serialVersionUID = 0L;
         == other.getMlEnabled());
     result = result && (getMlDisabled()
         == other.getMlDisabled());
+    result = result && (getEndInteraction()
+        == other.getEndInteraction());
     result = result && getInputContextNamesList()
         .equals(other.getInputContextNamesList());
     result = result && getEventsList()
@@ -27333,6 +30342,9 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + ML_DISABLED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getMlDisabled());
+    hash = (37 * hash) + END_INTERACTION_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getEndInteraction());
     if (getInputContextNamesCount() > 0) {
       hash = (37 * hash) + INPUT_CONTEXT_NAMES_FIELD_NUMBER;
       hash = (53 * hash) + getInputContextNamesList().hashCode();
@@ -27528,13 +30540,15 @@ private static final long serialVersionUID = 0L;
 
       mlDisabled_ = false;
 
+      endInteraction_ = false;
+
       inputContextNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000080);
-      events_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000100);
+      events_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000200);
       if (trainingPhrasesBuilder_ == null) {
         trainingPhrases_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000400);
       } else {
         trainingPhrasesBuilder_.clear();
       }
@@ -27542,7 +30556,7 @@ private static final long serialVersionUID = 0L;
 
       if (outputContextsBuilder_ == null) {
         outputContexts_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000800);
+        bitField0_ = (bitField0_ & ~0x00001000);
       } else {
         outputContextsBuilder_.clear();
       }
@@ -27550,25 +30564,25 @@ private static final long serialVersionUID = 0L;
 
       if (parametersBuilder_ == null) {
         parameters_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00002000);
+        bitField0_ = (bitField0_ & ~0x00004000);
       } else {
         parametersBuilder_.clear();
       }
       if (messagesBuilder_ == null) {
         messages_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00004000);
+        bitField0_ = (bitField0_ & ~0x00008000);
       } else {
         messagesBuilder_.clear();
       }
       defaultResponsePlatforms_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       rootFollowupIntentName_ = "";
 
       parentFollowupIntentName_ = "";
 
       if (followupIntentInfoBuilder_ == null) {
         followupIntentInfo_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00040000);
+        bitField0_ = (bitField0_ & ~0x00080000);
       } else {
         followupIntentInfoBuilder_.clear();
       }
@@ -27603,20 +30617,21 @@ private static final long serialVersionUID = 0L;
       result.isFallback_ = isFallback_;
       result.mlEnabled_ = mlEnabled_;
       result.mlDisabled_ = mlDisabled_;
-      if (((bitField0_ & 0x00000080) == 0x00000080)) {
+      result.endInteraction_ = endInteraction_;
+      if (((bitField0_ & 0x00000100) == 0x00000100)) {
         inputContextNames_ = inputContextNames_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000100);
       }
       result.inputContextNames_ = inputContextNames_;
-      if (((bitField0_ & 0x00000100) == 0x00000100)) {
+      if (((bitField0_ & 0x00000200) == 0x00000200)) {
         events_ = events_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000200);
       }
       result.events_ = events_;
       if (trainingPhrasesBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) == 0x00000200)) {
+        if (((bitField0_ & 0x00000400) == 0x00000400)) {
           trainingPhrases_ = java.util.Collections.unmodifiableList(trainingPhrases_);
-          bitField0_ = (bitField0_ & ~0x00000200);
+          bitField0_ = (bitField0_ & ~0x00000400);
         }
         result.trainingPhrases_ = trainingPhrases_;
       } else {
@@ -27624,9 +30639,9 @@ private static final long serialVersionUID = 0L;
       }
       result.action_ = action_;
       if (outputContextsBuilder_ == null) {
-        if (((bitField0_ & 0x00000800) == 0x00000800)) {
+        if (((bitField0_ & 0x00001000) == 0x00001000)) {
           outputContexts_ = java.util.Collections.unmodifiableList(outputContexts_);
-          bitField0_ = (bitField0_ & ~0x00000800);
+          bitField0_ = (bitField0_ & ~0x00001000);
         }
         result.outputContexts_ = outputContexts_;
       } else {
@@ -27634,34 +30649,34 @@ private static final long serialVersionUID = 0L;
       }
       result.resetContexts_ = resetContexts_;
       if (parametersBuilder_ == null) {
-        if (((bitField0_ & 0x00002000) == 0x00002000)) {
+        if (((bitField0_ & 0x00004000) == 0x00004000)) {
           parameters_ = java.util.Collections.unmodifiableList(parameters_);
-          bitField0_ = (bitField0_ & ~0x00002000);
+          bitField0_ = (bitField0_ & ~0x00004000);
         }
         result.parameters_ = parameters_;
       } else {
         result.parameters_ = parametersBuilder_.build();
       }
       if (messagesBuilder_ == null) {
-        if (((bitField0_ & 0x00004000) == 0x00004000)) {
+        if (((bitField0_ & 0x00008000) == 0x00008000)) {
           messages_ = java.util.Collections.unmodifiableList(messages_);
-          bitField0_ = (bitField0_ & ~0x00004000);
+          bitField0_ = (bitField0_ & ~0x00008000);
         }
         result.messages_ = messages_;
       } else {
         result.messages_ = messagesBuilder_.build();
       }
-      if (((bitField0_ & 0x00008000) == 0x00008000)) {
+      if (((bitField0_ & 0x00010000) == 0x00010000)) {
         defaultResponsePlatforms_ = java.util.Collections.unmodifiableList(defaultResponsePlatforms_);
-        bitField0_ = (bitField0_ & ~0x00008000);
+        bitField0_ = (bitField0_ & ~0x00010000);
       }
       result.defaultResponsePlatforms_ = defaultResponsePlatforms_;
       result.rootFollowupIntentName_ = rootFollowupIntentName_;
       result.parentFollowupIntentName_ = parentFollowupIntentName_;
       if (followupIntentInfoBuilder_ == null) {
-        if (((bitField0_ & 0x00040000) == 0x00040000)) {
+        if (((bitField0_ & 0x00080000) == 0x00080000)) {
           followupIntentInfo_ = java.util.Collections.unmodifiableList(followupIntentInfo_);
-          bitField0_ = (bitField0_ & ~0x00040000);
+          bitField0_ = (bitField0_ & ~0x00080000);
         }
         result.followupIntentInfo_ = followupIntentInfo_;
       } else {
@@ -27732,10 +30747,13 @@ private static final long serialVersionUID = 0L;
       if (other.getMlDisabled() != false) {
         setMlDisabled(other.getMlDisabled());
       }
+      if (other.getEndInteraction() != false) {
+        setEndInteraction(other.getEndInteraction());
+      }
       if (!other.inputContextNames_.isEmpty()) {
         if (inputContextNames_.isEmpty()) {
           inputContextNames_ = other.inputContextNames_;
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ = (bitField0_ & ~0x00000100);
         } else {
           ensureInputContextNamesIsMutable();
           inputContextNames_.addAll(other.inputContextNames_);
@@ -27745,7 +30763,7 @@ private static final long serialVersionUID = 0L;
       if (!other.events_.isEmpty()) {
         if (events_.isEmpty()) {
           events_ = other.events_;
-          bitField0_ = (bitField0_ & ~0x00000100);
+          bitField0_ = (bitField0_ & ~0x00000200);
         } else {
           ensureEventsIsMutable();
           events_.addAll(other.events_);
@@ -27756,7 +30774,7 @@ private static final long serialVersionUID = 0L;
         if (!other.trainingPhrases_.isEmpty()) {
           if (trainingPhrases_.isEmpty()) {
             trainingPhrases_ = other.trainingPhrases_;
-            bitField0_ = (bitField0_ & ~0x00000200);
+            bitField0_ = (bitField0_ & ~0x00000400);
           } else {
             ensureTrainingPhrasesIsMutable();
             trainingPhrases_.addAll(other.trainingPhrases_);
@@ -27769,7 +30787,7 @@ private static final long serialVersionUID = 0L;
             trainingPhrasesBuilder_.dispose();
             trainingPhrasesBuilder_ = null;
             trainingPhrases_ = other.trainingPhrases_;
-            bitField0_ = (bitField0_ & ~0x00000200);
+            bitField0_ = (bitField0_ & ~0x00000400);
             trainingPhrasesBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getTrainingPhrasesFieldBuilder() : null;
@@ -27786,7 +30804,7 @@ private static final long serialVersionUID = 0L;
         if (!other.outputContexts_.isEmpty()) {
           if (outputContexts_.isEmpty()) {
             outputContexts_ = other.outputContexts_;
-            bitField0_ = (bitField0_ & ~0x00000800);
+            bitField0_ = (bitField0_ & ~0x00001000);
           } else {
             ensureOutputContextsIsMutable();
             outputContexts_.addAll(other.outputContexts_);
@@ -27799,7 +30817,7 @@ private static final long serialVersionUID = 0L;
             outputContextsBuilder_.dispose();
             outputContextsBuilder_ = null;
             outputContexts_ = other.outputContexts_;
-            bitField0_ = (bitField0_ & ~0x00000800);
+            bitField0_ = (bitField0_ & ~0x00001000);
             outputContextsBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getOutputContextsFieldBuilder() : null;
@@ -27815,7 +30833,7 @@ private static final long serialVersionUID = 0L;
         if (!other.parameters_.isEmpty()) {
           if (parameters_.isEmpty()) {
             parameters_ = other.parameters_;
-            bitField0_ = (bitField0_ & ~0x00002000);
+            bitField0_ = (bitField0_ & ~0x00004000);
           } else {
             ensureParametersIsMutable();
             parameters_.addAll(other.parameters_);
@@ -27828,7 +30846,7 @@ private static final long serialVersionUID = 0L;
             parametersBuilder_.dispose();
             parametersBuilder_ = null;
             parameters_ = other.parameters_;
-            bitField0_ = (bitField0_ & ~0x00002000);
+            bitField0_ = (bitField0_ & ~0x00004000);
             parametersBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getParametersFieldBuilder() : null;
@@ -27841,7 +30859,7 @@ private static final long serialVersionUID = 0L;
         if (!other.messages_.isEmpty()) {
           if (messages_.isEmpty()) {
             messages_ = other.messages_;
-            bitField0_ = (bitField0_ & ~0x00004000);
+            bitField0_ = (bitField0_ & ~0x00008000);
           } else {
             ensureMessagesIsMutable();
             messages_.addAll(other.messages_);
@@ -27854,7 +30872,7 @@ private static final long serialVersionUID = 0L;
             messagesBuilder_.dispose();
             messagesBuilder_ = null;
             messages_ = other.messages_;
-            bitField0_ = (bitField0_ & ~0x00004000);
+            bitField0_ = (bitField0_ & ~0x00008000);
             messagesBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getMessagesFieldBuilder() : null;
@@ -27866,7 +30884,7 @@ private static final long serialVersionUID = 0L;
       if (!other.defaultResponsePlatforms_.isEmpty()) {
         if (defaultResponsePlatforms_.isEmpty()) {
           defaultResponsePlatforms_ = other.defaultResponsePlatforms_;
-          bitField0_ = (bitField0_ & ~0x00008000);
+          bitField0_ = (bitField0_ & ~0x00010000);
         } else {
           ensureDefaultResponsePlatformsIsMutable();
           defaultResponsePlatforms_.addAll(other.defaultResponsePlatforms_);
@@ -27885,7 +30903,7 @@ private static final long serialVersionUID = 0L;
         if (!other.followupIntentInfo_.isEmpty()) {
           if (followupIntentInfo_.isEmpty()) {
             followupIntentInfo_ = other.followupIntentInfo_;
-            bitField0_ = (bitField0_ & ~0x00040000);
+            bitField0_ = (bitField0_ & ~0x00080000);
           } else {
             ensureFollowupIntentInfoIsMutable();
             followupIntentInfo_.addAll(other.followupIntentInfo_);
@@ -27898,7 +30916,7 @@ private static final long serialVersionUID = 0L;
             followupIntentInfoBuilder_.dispose();
             followupIntentInfoBuilder_ = null;
             followupIntentInfo_ = other.followupIntentInfo_;
-            bitField0_ = (bitField0_ & ~0x00040000);
+            bitField0_ = (bitField0_ & ~0x00080000);
             followupIntentInfoBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getFollowupIntentInfoFieldBuilder() : null;
@@ -28279,17 +31297,17 @@ private static final long serialVersionUID = 0L;
      * taken into account during inference in `ML ONLY` match mode. Also,
      * auto-markup in the UI is turned off.
      * DEPRECATED! Please use `ml_disabled` field instead.
-     * NOTE: If neither `ml_enabled` nor `ml_disabled` field is set, then the
-     * default value is determined as follows:
+     * NOTE: If both `ml_enabled` and `ml_disabled` are either not set or false,
+     * then the default value is determined as follows:
      * - Before April 15th, 2018 the default is:
      *   ml_enabled = false / ml_disabled = true.
      * - After April 15th, 2018 the default is:
      *   ml_enabled = true / ml_disabled = false.
      * </pre>
      *
-     * <code>bool ml_enabled = 5;</code>
+     * <code>bool ml_enabled = 5 [deprecated = true];</code>
      */
-    public boolean getMlEnabled() {
+    @java.lang.Deprecated public boolean getMlEnabled() {
       return mlEnabled_;
     }
     /**
@@ -28299,17 +31317,17 @@ private static final long serialVersionUID = 0L;
      * taken into account during inference in `ML ONLY` match mode. Also,
      * auto-markup in the UI is turned off.
      * DEPRECATED! Please use `ml_disabled` field instead.
-     * NOTE: If neither `ml_enabled` nor `ml_disabled` field is set, then the
-     * default value is determined as follows:
+     * NOTE: If both `ml_enabled` and `ml_disabled` are either not set or false,
+     * then the default value is determined as follows:
      * - Before April 15th, 2018 the default is:
      *   ml_enabled = false / ml_disabled = true.
      * - After April 15th, 2018 the default is:
      *   ml_enabled = true / ml_disabled = false.
      * </pre>
      *
-     * <code>bool ml_enabled = 5;</code>
+     * <code>bool ml_enabled = 5 [deprecated = true];</code>
      */
-    public Builder setMlEnabled(boolean value) {
+    @java.lang.Deprecated public Builder setMlEnabled(boolean value) {
       
       mlEnabled_ = value;
       onChanged();
@@ -28322,17 +31340,17 @@ private static final long serialVersionUID = 0L;
      * taken into account during inference in `ML ONLY` match mode. Also,
      * auto-markup in the UI is turned off.
      * DEPRECATED! Please use `ml_disabled` field instead.
-     * NOTE: If neither `ml_enabled` nor `ml_disabled` field is set, then the
-     * default value is determined as follows:
+     * NOTE: If both `ml_enabled` and `ml_disabled` are either not set or false,
+     * then the default value is determined as follows:
      * - Before April 15th, 2018 the default is:
      *   ml_enabled = false / ml_disabled = true.
      * - After April 15th, 2018 the default is:
      *   ml_enabled = true / ml_disabled = false.
      * </pre>
      *
-     * <code>bool ml_enabled = 5;</code>
+     * <code>bool ml_enabled = 5 [deprecated = true];</code>
      */
-    public Builder clearMlEnabled() {
+    @java.lang.Deprecated public Builder clearMlEnabled() {
       
       mlEnabled_ = false;
       onChanged();
@@ -28386,11 +31404,55 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private boolean endInteraction_ ;
+    /**
+     * <pre>
+     * Optional. Indicates that this intent ends an interaction. Some integrations
+     * (e.g., Actions on Google or Dialogflow phone gateway) use this information
+     * to close interaction with an end user. Default is false.
+     * </pre>
+     *
+     * <code>bool end_interaction = 21;</code>
+     */
+    public boolean getEndInteraction() {
+      return endInteraction_;
+    }
+    /**
+     * <pre>
+     * Optional. Indicates that this intent ends an interaction. Some integrations
+     * (e.g., Actions on Google or Dialogflow phone gateway) use this information
+     * to close interaction with an end user. Default is false.
+     * </pre>
+     *
+     * <code>bool end_interaction = 21;</code>
+     */
+    public Builder setEndInteraction(boolean value) {
+      
+      endInteraction_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Indicates that this intent ends an interaction. Some integrations
+     * (e.g., Actions on Google or Dialogflow phone gateway) use this information
+     * to close interaction with an end user. Default is false.
+     * </pre>
+     *
+     * <code>bool end_interaction = 21;</code>
+     */
+    public Builder clearEndInteraction() {
+      
+      endInteraction_ = false;
+      onChanged();
+      return this;
+    }
+
     private com.google.protobuf.LazyStringList inputContextNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     private void ensureInputContextNamesIsMutable() {
-      if (!((bitField0_ & 0x00000080) == 0x00000080)) {
+      if (!((bitField0_ & 0x00000100) == 0x00000100)) {
         inputContextNames_ = new com.google.protobuf.LazyStringArrayList(inputContextNames_);
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
        }
     }
     /**
@@ -28509,7 +31571,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearInputContextNames() {
       inputContextNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -28536,9 +31598,9 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.LazyStringList events_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     private void ensureEventsIsMutable() {
-      if (!((bitField0_ & 0x00000100) == 0x00000100)) {
+      if (!((bitField0_ & 0x00000200) == 0x00000200)) {
         events_ = new com.google.protobuf.LazyStringArrayList(events_);
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
        }
     }
     /**
@@ -28657,7 +31719,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearEvents() {
       events_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -28685,9 +31747,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase> trainingPhrases_ =
       java.util.Collections.emptyList();
     private void ensureTrainingPhrasesIsMutable() {
-      if (!((bitField0_ & 0x00000200) == 0x00000200)) {
+      if (!((bitField0_ & 0x00000400) == 0x00000400)) {
         trainingPhrases_ = new java.util.ArrayList<com.google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase>(trainingPhrases_);
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
        }
     }
 
@@ -28892,7 +31954,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearTrainingPhrases() {
       if (trainingPhrasesBuilder_ == null) {
         trainingPhrases_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000400);
         onChanged();
       } else {
         trainingPhrasesBuilder_.clear();
@@ -29004,7 +32066,7 @@ private static final long serialVersionUID = 0L;
         trainingPhrasesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase, com.google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Builder, com.google.cloud.dialogflow.v2beta1.Intent.TrainingPhraseOrBuilder>(
                 trainingPhrases_,
-                ((bitField0_ & 0x00000200) == 0x00000200),
+                ((bitField0_ & 0x00000400) == 0x00000400),
                 getParentForChildren(),
                 isClean());
         trainingPhrases_ = null;
@@ -29016,6 +32078,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. The name of the action associated with the intent.
+     * Note: The action name must not contain whitespaces.
      * </pre>
      *
      * <code>string action = 10;</code>
@@ -29035,6 +32098,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. The name of the action associated with the intent.
+     * Note: The action name must not contain whitespaces.
      * </pre>
      *
      * <code>string action = 10;</code>
@@ -29055,6 +32119,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. The name of the action associated with the intent.
+     * Note: The action name must not contain whitespaces.
      * </pre>
      *
      * <code>string action = 10;</code>
@@ -29072,6 +32137,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. The name of the action associated with the intent.
+     * Note: The action name must not contain whitespaces.
      * </pre>
      *
      * <code>string action = 10;</code>
@@ -29085,6 +32151,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. The name of the action associated with the intent.
+     * Note: The action name must not contain whitespaces.
      * </pre>
      *
      * <code>string action = 10;</code>
@@ -29104,9 +32171,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.google.cloud.dialogflow.v2beta1.Context> outputContexts_ =
       java.util.Collections.emptyList();
     private void ensureOutputContextsIsMutable() {
-      if (!((bitField0_ & 0x00000800) == 0x00000800)) {
+      if (!((bitField0_ & 0x00001000) == 0x00001000)) {
         outputContexts_ = new java.util.ArrayList<com.google.cloud.dialogflow.v2beta1.Context>(outputContexts_);
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
        }
     }
 
@@ -29344,7 +32411,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearOutputContexts() {
       if (outputContextsBuilder_ == null) {
         outputContexts_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000800);
+        bitField0_ = (bitField0_ & ~0x00001000);
         onChanged();
       } else {
         outputContextsBuilder_.clear();
@@ -29477,7 +32544,7 @@ private static final long serialVersionUID = 0L;
         outputContextsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.google.cloud.dialogflow.v2beta1.Context, com.google.cloud.dialogflow.v2beta1.Context.Builder, com.google.cloud.dialogflow.v2beta1.ContextOrBuilder>(
                 outputContexts_,
-                ((bitField0_ & 0x00000800) == 0x00000800),
+                ((bitField0_ & 0x00001000) == 0x00001000),
                 getParentForChildren(),
                 isClean());
         outputContexts_ = null;
@@ -29529,9 +32596,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.google.cloud.dialogflow.v2beta1.Intent.Parameter> parameters_ =
       java.util.Collections.emptyList();
     private void ensureParametersIsMutable() {
-      if (!((bitField0_ & 0x00002000) == 0x00002000)) {
+      if (!((bitField0_ & 0x00004000) == 0x00004000)) {
         parameters_ = new java.util.ArrayList<com.google.cloud.dialogflow.v2beta1.Intent.Parameter>(parameters_);
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
        }
     }
 
@@ -29725,7 +32792,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearParameters() {
       if (parametersBuilder_ == null) {
         parameters_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00002000);
+        bitField0_ = (bitField0_ & ~0x00004000);
         onChanged();
       } else {
         parametersBuilder_.clear();
@@ -29830,7 +32897,7 @@ private static final long serialVersionUID = 0L;
         parametersBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.google.cloud.dialogflow.v2beta1.Intent.Parameter, com.google.cloud.dialogflow.v2beta1.Intent.Parameter.Builder, com.google.cloud.dialogflow.v2beta1.Intent.ParameterOrBuilder>(
                 parameters_,
-                ((bitField0_ & 0x00002000) == 0x00002000),
+                ((bitField0_ & 0x00004000) == 0x00004000),
                 getParentForChildren(),
                 isClean());
         parameters_ = null;
@@ -29841,9 +32908,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.google.cloud.dialogflow.v2beta1.Intent.Message> messages_ =
       java.util.Collections.emptyList();
     private void ensureMessagesIsMutable() {
-      if (!((bitField0_ & 0x00004000) == 0x00004000)) {
+      if (!((bitField0_ & 0x00008000) == 0x00008000)) {
         messages_ = new java.util.ArrayList<com.google.cloud.dialogflow.v2beta1.Intent.Message>(messages_);
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00008000;
        }
     }
 
@@ -30048,7 +33115,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearMessages() {
       if (messagesBuilder_ == null) {
         messages_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00004000);
+        bitField0_ = (bitField0_ & ~0x00008000);
         onChanged();
       } else {
         messagesBuilder_.clear();
@@ -30160,7 +33227,7 @@ private static final long serialVersionUID = 0L;
         messagesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.google.cloud.dialogflow.v2beta1.Intent.Message, com.google.cloud.dialogflow.v2beta1.Intent.Message.Builder, com.google.cloud.dialogflow.v2beta1.Intent.MessageOrBuilder>(
                 messages_,
-                ((bitField0_ & 0x00004000) == 0x00004000),
+                ((bitField0_ & 0x00008000) == 0x00008000),
                 getParentForChildren(),
                 isClean());
         messages_ = null;
@@ -30171,9 +33238,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<java.lang.Integer> defaultResponsePlatforms_ =
       java.util.Collections.emptyList();
     private void ensureDefaultResponsePlatformsIsMutable() {
-      if (!((bitField0_ & 0x00008000) == 0x00008000)) {
+      if (!((bitField0_ & 0x00010000) == 0x00010000)) {
         defaultResponsePlatforms_ = new java.util.ArrayList<java.lang.Integer>(defaultResponsePlatforms_);
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00010000;
       }
     }
     /**
@@ -30272,7 +33339,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearDefaultResponsePlatforms() {
       defaultResponsePlatforms_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       onChanged();
       return this;
     }
@@ -30552,9 +33619,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.google.cloud.dialogflow.v2beta1.Intent.FollowupIntentInfo> followupIntentInfo_ =
       java.util.Collections.emptyList();
     private void ensureFollowupIntentInfoIsMutable() {
-      if (!((bitField0_ & 0x00040000) == 0x00040000)) {
+      if (!((bitField0_ & 0x00080000) == 0x00080000)) {
         followupIntentInfo_ = new java.util.ArrayList<com.google.cloud.dialogflow.v2beta1.Intent.FollowupIntentInfo>(followupIntentInfo_);
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00080000;
        }
     }
 
@@ -30759,7 +33826,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearFollowupIntentInfo() {
       if (followupIntentInfoBuilder_ == null) {
         followupIntentInfo_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00040000);
+        bitField0_ = (bitField0_ & ~0x00080000);
         onChanged();
       } else {
         followupIntentInfoBuilder_.clear();
@@ -30871,7 +33938,7 @@ private static final long serialVersionUID = 0L;
         followupIntentInfoBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.google.cloud.dialogflow.v2beta1.Intent.FollowupIntentInfo, com.google.cloud.dialogflow.v2beta1.Intent.FollowupIntentInfo.Builder, com.google.cloud.dialogflow.v2beta1.Intent.FollowupIntentInfoOrBuilder>(
                 followupIntentInfo_,
-                ((bitField0_ & 0x00040000) == 0x00040000),
+                ((bitField0_ & 0x00080000) == 0x00080000),
                 getParentForChildren(),
                 isClean());
         followupIntentInfo_ = null;

@@ -29,7 +29,8 @@ public interface DetectIntentResponseOrBuilder extends
 
   /**
    * <pre>
-   * The results of the conversational query or event processing.
+   * The selected results of the conversational query or event processing.
+   * See `alternative_query_results` for additional potential results.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.QueryResult query_result = 2;</code>
@@ -37,7 +38,8 @@ public interface DetectIntentResponseOrBuilder extends
   boolean hasQueryResult();
   /**
    * <pre>
-   * The results of the conversational query or event processing.
+   * The selected results of the conversational query or event processing.
+   * See `alternative_query_results` for additional potential results.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.QueryResult query_result = 2;</code>
@@ -45,12 +47,87 @@ public interface DetectIntentResponseOrBuilder extends
   com.google.cloud.dialogflow.v2beta1.QueryResult getQueryResult();
   /**
    * <pre>
-   * The results of the conversational query or event processing.
+   * The selected results of the conversational query or event processing.
+   * See `alternative_query_results` for additional potential results.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.QueryResult query_result = 2;</code>
    */
   com.google.cloud.dialogflow.v2beta1.QueryResultOrBuilder getQueryResultOrBuilder();
+
+  /**
+   * <pre>
+   * If Knowledge Connectors are enabled, there could be more than one result
+   * returned for a given query or event and this field will contain all results
+   * except for the top one which is captured in query_result. The alternative
+   * results are ordered by decreasing
+   * `QueryResult.intent_detection_confidence`. If Knowledge Connectors are
+   * disabled this field will be empty  at which point those additional results
+   * will be surfaced here.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;</code>
+   */
+  java.util.List<com.google.cloud.dialogflow.v2beta1.QueryResult> 
+      getAlternativeQueryResultsList();
+  /**
+   * <pre>
+   * If Knowledge Connectors are enabled, there could be more than one result
+   * returned for a given query or event and this field will contain all results
+   * except for the top one which is captured in query_result. The alternative
+   * results are ordered by decreasing
+   * `QueryResult.intent_detection_confidence`. If Knowledge Connectors are
+   * disabled this field will be empty  at which point those additional results
+   * will be surfaced here.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;</code>
+   */
+  com.google.cloud.dialogflow.v2beta1.QueryResult getAlternativeQueryResults(int index);
+  /**
+   * <pre>
+   * If Knowledge Connectors are enabled, there could be more than one result
+   * returned for a given query or event and this field will contain all results
+   * except for the top one which is captured in query_result. The alternative
+   * results are ordered by decreasing
+   * `QueryResult.intent_detection_confidence`. If Knowledge Connectors are
+   * disabled this field will be empty  at which point those additional results
+   * will be surfaced here.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;</code>
+   */
+  int getAlternativeQueryResultsCount();
+  /**
+   * <pre>
+   * If Knowledge Connectors are enabled, there could be more than one result
+   * returned for a given query or event and this field will contain all results
+   * except for the top one which is captured in query_result. The alternative
+   * results are ordered by decreasing
+   * `QueryResult.intent_detection_confidence`. If Knowledge Connectors are
+   * disabled this field will be empty  at which point those additional results
+   * will be surfaced here.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;</code>
+   */
+  java.util.List<? extends com.google.cloud.dialogflow.v2beta1.QueryResultOrBuilder> 
+      getAlternativeQueryResultsOrBuilderList();
+  /**
+   * <pre>
+   * If Knowledge Connectors are enabled, there could be more than one result
+   * returned for a given query or event and this field will contain all results
+   * except for the top one which is captured in query_result. The alternative
+   * results are ordered by decreasing
+   * `QueryResult.intent_detection_confidence`. If Knowledge Connectors are
+   * disabled this field will be empty  at which point those additional results
+   * will be surfaced here.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;</code>
+   */
+  com.google.cloud.dialogflow.v2beta1.QueryResultOrBuilder getAlternativeQueryResultsOrBuilder(
+      int index);
 
   /**
    * <pre>
@@ -79,4 +156,44 @@ public interface DetectIntentResponseOrBuilder extends
    * <code>.google.rpc.Status webhook_status = 3;</code>
    */
   com.google.rpc.StatusOrBuilder getWebhookStatusOrBuilder();
+
+  /**
+   * <pre>
+   * The audio data bytes encoded as specified in the request.
+   * </pre>
+   *
+   * <code>bytes output_audio = 4;</code>
+   */
+  com.google.protobuf.ByteString getOutputAudio();
+
+  /**
+   * <pre>
+   * Instructs the speech synthesizer how to generate the output audio. This
+   * field is populated from the agent-level speech synthesizer configuration,
+   * if enabled.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.OutputAudioConfig output_audio_config = 6;</code>
+   */
+  boolean hasOutputAudioConfig();
+  /**
+   * <pre>
+   * Instructs the speech synthesizer how to generate the output audio. This
+   * field is populated from the agent-level speech synthesizer configuration,
+   * if enabled.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.OutputAudioConfig output_audio_config = 6;</code>
+   */
+  com.google.cloud.dialogflow.v2beta1.OutputAudioConfig getOutputAudioConfig();
+  /**
+   * <pre>
+   * Instructs the speech synthesizer how to generate the output audio. This
+   * field is populated from the agent-level speech synthesizer configuration,
+   * if enabled.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.OutputAudioConfig output_audio_config = 6;</code>
+   */
+  com.google.cloud.dialogflow.v2beta1.OutputAudioConfigOrBuilder getOutputAudioConfigOrBuilder();
 }

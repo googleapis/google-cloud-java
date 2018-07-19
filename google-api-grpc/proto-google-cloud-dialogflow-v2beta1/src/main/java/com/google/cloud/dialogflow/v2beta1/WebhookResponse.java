@@ -24,6 +24,7 @@ private static final long serialVersionUID = 0L;
     fulfillmentMessages_ = java.util.Collections.emptyList();
     source_ = "";
     outputContexts_ = java.util.Collections.emptyList();
+    endInteraction_ = false;
   }
 
   @java.lang.Override
@@ -111,6 +112,11 @@ private static final long serialVersionUID = 0L;
               followupEventInput_ = subBuilder.buildPartial();
             }
 
+            break;
+          }
+          case 64: {
+
+            endInteraction_ = input.readBool();
             break;
           }
         }
@@ -482,6 +488,21 @@ private static final long serialVersionUID = 0L;
     return getFollowupEventInput();
   }
 
+  public static final int END_INTERACTION_FIELD_NUMBER = 8;
+  private boolean endInteraction_;
+  /**
+   * <pre>
+   * Optional. Indicates that this intent ends an interaction. Some integrations
+   * (e.g., Actions on Google or Dialogflow phone gateway) use this information
+   * to close interaction with an end user. Default is false.
+   * </pre>
+   *
+   * <code>bool end_interaction = 8;</code>
+   */
+  public boolean getEndInteraction() {
+    return endInteraction_;
+  }
+
   private byte memoizedIsInitialized = -1;
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -512,6 +533,9 @@ private static final long serialVersionUID = 0L;
     if (followupEventInput_ != null) {
       output.writeMessage(6, getFollowupEventInput());
     }
+    if (endInteraction_ != false) {
+      output.writeBool(8, endInteraction_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -541,6 +565,10 @@ private static final long serialVersionUID = 0L;
     if (followupEventInput_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(6, getFollowupEventInput());
+    }
+    if (endInteraction_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(8, endInteraction_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -576,6 +604,8 @@ private static final long serialVersionUID = 0L;
       result = result && getFollowupEventInput()
           .equals(other.getFollowupEventInput());
     }
+    result = result && (getEndInteraction()
+        == other.getEndInteraction());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -607,6 +637,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + FOLLOWUP_EVENT_INPUT_FIELD_NUMBER;
       hash = (53 * hash) + getFollowupEventInput().hashCode();
     }
+    hash = (37 * hash) + END_INTERACTION_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getEndInteraction());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -770,6 +803,8 @@ private static final long serialVersionUID = 0L;
         followupEventInput_ = null;
         followupEventInputBuilder_ = null;
       }
+      endInteraction_ = false;
+
       return this;
     }
 
@@ -824,6 +859,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.followupEventInput_ = followupEventInputBuilder_.build();
       }
+      result.endInteraction_ = endInteraction_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -931,6 +967,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasFollowupEventInput()) {
         mergeFollowupEventInput(other.getFollowupEventInput());
+      }
+      if (other.getEndInteraction() != false) {
+        setEndInteraction(other.getEndInteraction());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2305,6 +2344,50 @@ private static final long serialVersionUID = 0L;
         followupEventInput_ = null;
       }
       return followupEventInputBuilder_;
+    }
+
+    private boolean endInteraction_ ;
+    /**
+     * <pre>
+     * Optional. Indicates that this intent ends an interaction. Some integrations
+     * (e.g., Actions on Google or Dialogflow phone gateway) use this information
+     * to close interaction with an end user. Default is false.
+     * </pre>
+     *
+     * <code>bool end_interaction = 8;</code>
+     */
+    public boolean getEndInteraction() {
+      return endInteraction_;
+    }
+    /**
+     * <pre>
+     * Optional. Indicates that this intent ends an interaction. Some integrations
+     * (e.g., Actions on Google or Dialogflow phone gateway) use this information
+     * to close interaction with an end user. Default is false.
+     * </pre>
+     *
+     * <code>bool end_interaction = 8;</code>
+     */
+    public Builder setEndInteraction(boolean value) {
+      
+      endInteraction_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Indicates that this intent ends an interaction. Some integrations
+     * (e.g., Actions on Google or Dialogflow phone gateway) use this information
+     * to close interaction with an end user. Default is false.
+     * </pre>
+     *
+     * <code>bool end_interaction = 8;</code>
+     */
+    public Builder clearEndInteraction() {
+      
+      endInteraction_ = false;
+      onChanged();
+      return this;
     }
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {

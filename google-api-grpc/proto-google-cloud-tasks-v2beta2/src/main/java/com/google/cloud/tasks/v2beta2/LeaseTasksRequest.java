@@ -245,8 +245,8 @@ private static final long serialVersionUID = 0L;
    * of its large size or because of the sensitivity of data that it
    * contains.
    * Authorization for [FULL][google.cloud.tasks.v2beta2.Task.View.FULL] requires
-   * `cloudtasks.tasks.fullView` [Google IAM](/iam/) permission on the
-   * [Task][google.cloud.tasks.v2beta2.Task] resource.
+   * `cloudtasks.tasks.fullView` [Google IAM](https://cloud.google.com/iam/)
+   * permission on the [Task][google.cloud.tasks.v2beta2.Task] resource.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta2.Task.View response_view = 4;</code>
@@ -264,8 +264,8 @@ private static final long serialVersionUID = 0L;
    * of its large size or because of the sensitivity of data that it
    * contains.
    * Authorization for [FULL][google.cloud.tasks.v2beta2.Task.View.FULL] requires
-   * `cloudtasks.tasks.fullView` [Google IAM](/iam/) permission on the
-   * [Task][google.cloud.tasks.v2beta2.Task] resource.
+   * `cloudtasks.tasks.fullView` [Google IAM](https://cloud.google.com/iam/)
+   * permission on the [Task][google.cloud.tasks.v2beta2.Task] resource.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta2.Task.View response_view = 4;</code>
@@ -295,7 +295,7 @@ private static final long serialVersionUID = 0L;
    * oldest task (ordered by schedule time).
    * SDK compatibility: Although the SDK allows tags to be either
    * string or
-   * [bytes](/appengine/docs/standard/java/javadoc/com/google/appengine/api/taskqueue/TaskOptions.html#tag-byte:A-),
+   * [bytes](https://cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/taskqueue/TaskOptions.html#tag-byte:A-),
    * only UTF-8 encoded tags can be used in Cloud Tasks. Tag which
    * aren't UTF-8 encoded can't be used in the
    * [filter][google.cloud.tasks.v2beta2.LeaseTasksRequest.filter] and the task's
@@ -334,7 +334,7 @@ private static final long serialVersionUID = 0L;
    * oldest task (ordered by schedule time).
    * SDK compatibility: Although the SDK allows tags to be either
    * string or
-   * [bytes](/appengine/docs/standard/java/javadoc/com/google/appengine/api/taskqueue/TaskOptions.html#tag-byte:A-),
+   * [bytes](https://cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/taskqueue/TaskOptions.html#tag-byte:A-),
    * only UTF-8 encoded tags can be used in Cloud Tasks. Tag which
    * aren't UTF-8 encoded can't be used in the
    * [filter][google.cloud.tasks.v2beta2.LeaseTasksRequest.filter] and the task's
@@ -1097,8 +1097,8 @@ private static final long serialVersionUID = 0L;
      * of its large size or because of the sensitivity of data that it
      * contains.
      * Authorization for [FULL][google.cloud.tasks.v2beta2.Task.View.FULL] requires
-     * `cloudtasks.tasks.fullView` [Google IAM](/iam/) permission on the
-     * [Task][google.cloud.tasks.v2beta2.Task] resource.
+     * `cloudtasks.tasks.fullView` [Google IAM](https://cloud.google.com/iam/)
+     * permission on the [Task][google.cloud.tasks.v2beta2.Task] resource.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.Task.View response_view = 4;</code>
@@ -1116,8 +1116,8 @@ private static final long serialVersionUID = 0L;
      * of its large size or because of the sensitivity of data that it
      * contains.
      * Authorization for [FULL][google.cloud.tasks.v2beta2.Task.View.FULL] requires
-     * `cloudtasks.tasks.fullView` [Google IAM](/iam/) permission on the
-     * [Task][google.cloud.tasks.v2beta2.Task] resource.
+     * `cloudtasks.tasks.fullView` [Google IAM](https://cloud.google.com/iam/)
+     * permission on the [Task][google.cloud.tasks.v2beta2.Task] resource.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.Task.View response_view = 4;</code>
@@ -1137,8 +1137,8 @@ private static final long serialVersionUID = 0L;
      * of its large size or because of the sensitivity of data that it
      * contains.
      * Authorization for [FULL][google.cloud.tasks.v2beta2.Task.View.FULL] requires
-     * `cloudtasks.tasks.fullView` [Google IAM](/iam/) permission on the
-     * [Task][google.cloud.tasks.v2beta2.Task] resource.
+     * `cloudtasks.tasks.fullView` [Google IAM](https://cloud.google.com/iam/)
+     * permission on the [Task][google.cloud.tasks.v2beta2.Task] resource.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.Task.View response_view = 4;</code>
@@ -1157,8 +1157,8 @@ private static final long serialVersionUID = 0L;
      * of its large size or because of the sensitivity of data that it
      * contains.
      * Authorization for [FULL][google.cloud.tasks.v2beta2.Task.View.FULL] requires
-     * `cloudtasks.tasks.fullView` [Google IAM](/iam/) permission on the
-     * [Task][google.cloud.tasks.v2beta2.Task] resource.
+     * `cloudtasks.tasks.fullView` [Google IAM](https://cloud.google.com/iam/)
+     * permission on the [Task][google.cloud.tasks.v2beta2.Task] resource.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.Task.View response_view = 4;</code>
@@ -1182,8 +1182,8 @@ private static final long serialVersionUID = 0L;
      * of its large size or because of the sensitivity of data that it
      * contains.
      * Authorization for [FULL][google.cloud.tasks.v2beta2.Task.View.FULL] requires
-     * `cloudtasks.tasks.fullView` [Google IAM](/iam/) permission on the
-     * [Task][google.cloud.tasks.v2beta2.Task] resource.
+     * `cloudtasks.tasks.fullView` [Google IAM](https://cloud.google.com/iam/)
+     * permission on the [Task][google.cloud.tasks.v2beta2.Task] resource.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.Task.View response_view = 4;</code>
@@ -1214,7 +1214,7 @@ private static final long serialVersionUID = 0L;
      * oldest task (ordered by schedule time).
      * SDK compatibility: Although the SDK allows tags to be either
      * string or
-     * [bytes](/appengine/docs/standard/java/javadoc/com/google/appengine/api/taskqueue/TaskOptions.html#tag-byte:A-),
+     * [bytes](https://cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/taskqueue/TaskOptions.html#tag-byte:A-),
      * only UTF-8 encoded tags can be used in Cloud Tasks. Tag which
      * aren't UTF-8 encoded can't be used in the
      * [filter][google.cloud.tasks.v2beta2.LeaseTasksRequest.filter] and the task's
@@ -1253,7 +1253,7 @@ private static final long serialVersionUID = 0L;
      * oldest task (ordered by schedule time).
      * SDK compatibility: Although the SDK allows tags to be either
      * string or
-     * [bytes](/appengine/docs/standard/java/javadoc/com/google/appengine/api/taskqueue/TaskOptions.html#tag-byte:A-),
+     * [bytes](https://cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/taskqueue/TaskOptions.html#tag-byte:A-),
      * only UTF-8 encoded tags can be used in Cloud Tasks. Tag which
      * aren't UTF-8 encoded can't be used in the
      * [filter][google.cloud.tasks.v2beta2.LeaseTasksRequest.filter] and the task's
@@ -1293,7 +1293,7 @@ private static final long serialVersionUID = 0L;
      * oldest task (ordered by schedule time).
      * SDK compatibility: Although the SDK allows tags to be either
      * string or
-     * [bytes](/appengine/docs/standard/java/javadoc/com/google/appengine/api/taskqueue/TaskOptions.html#tag-byte:A-),
+     * [bytes](https://cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/taskqueue/TaskOptions.html#tag-byte:A-),
      * only UTF-8 encoded tags can be used in Cloud Tasks. Tag which
      * aren't UTF-8 encoded can't be used in the
      * [filter][google.cloud.tasks.v2beta2.LeaseTasksRequest.filter] and the task's
@@ -1330,7 +1330,7 @@ private static final long serialVersionUID = 0L;
      * oldest task (ordered by schedule time).
      * SDK compatibility: Although the SDK allows tags to be either
      * string or
-     * [bytes](/appengine/docs/standard/java/javadoc/com/google/appengine/api/taskqueue/TaskOptions.html#tag-byte:A-),
+     * [bytes](https://cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/taskqueue/TaskOptions.html#tag-byte:A-),
      * only UTF-8 encoded tags can be used in Cloud Tasks. Tag which
      * aren't UTF-8 encoded can't be used in the
      * [filter][google.cloud.tasks.v2beta2.LeaseTasksRequest.filter] and the task's
@@ -1363,7 +1363,7 @@ private static final long serialVersionUID = 0L;
      * oldest task (ordered by schedule time).
      * SDK compatibility: Although the SDK allows tags to be either
      * string or
-     * [bytes](/appengine/docs/standard/java/javadoc/com/google/appengine/api/taskqueue/TaskOptions.html#tag-byte:A-),
+     * [bytes](https://cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/taskqueue/TaskOptions.html#tag-byte:A-),
      * only UTF-8 encoded tags can be used in Cloud Tasks. Tag which
      * aren't UTF-8 encoded can't be used in the
      * [filter][google.cloud.tasks.v2beta2.LeaseTasksRequest.filter] and the task's

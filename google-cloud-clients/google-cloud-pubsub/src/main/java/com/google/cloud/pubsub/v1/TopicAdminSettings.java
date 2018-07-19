@@ -86,7 +86,7 @@ public class TopicAdminSettings extends ClientSettings<TopicAdminSettings> {
   }
 
   /** Returns the object with the settings used for calls to updateTopic. */
-  /* package-private */ UnaryCallSettings<UpdateTopicRequest, Topic> updateTopicSettings() {
+  public UnaryCallSettings<UpdateTopicRequest, Topic> updateTopicSettings() {
     return ((PublisherStubSettings) getStubSettings()).updateTopicSettings();
   }
 
@@ -237,8 +237,7 @@ public class TopicAdminSettings extends ClientSettings<TopicAdminSettings> {
     }
 
     /** Returns the builder for the settings used for calls to updateTopic. */
-    /* package-private */ UnaryCallSettings.Builder<UpdateTopicRequest, Topic>
-        updateTopicSettings() {
+    public UnaryCallSettings.Builder<UpdateTopicRequest, Topic> updateTopicSettings() {
       return getStubSettingsBuilder().updateTopicSettings();
     }
 

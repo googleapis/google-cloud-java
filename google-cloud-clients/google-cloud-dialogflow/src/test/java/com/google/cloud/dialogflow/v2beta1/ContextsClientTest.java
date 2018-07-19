@@ -43,8 +43,10 @@ import org.junit.Test;
 public class ContextsClientTest {
   private static MockAgents mockAgents;
   private static MockContexts mockContexts;
+  private static MockDocuments mockDocuments;
   private static MockEntityTypes mockEntityTypes;
   private static MockIntents mockIntents;
+  private static MockKnowledgeBases mockKnowledgeBases;
   private static MockSessionEntityTypes mockSessionEntityTypes;
   private static MockSessions mockSessions;
   private static MockServiceHelper serviceHelper;
@@ -55,8 +57,10 @@ public class ContextsClientTest {
   public static void startStaticServer() {
     mockAgents = new MockAgents();
     mockContexts = new MockContexts();
+    mockDocuments = new MockDocuments();
     mockEntityTypes = new MockEntityTypes();
     mockIntents = new MockIntents();
+    mockKnowledgeBases = new MockKnowledgeBases();
     mockSessionEntityTypes = new MockSessionEntityTypes();
     mockSessions = new MockSessions();
     serviceHelper =
@@ -65,8 +69,10 @@ public class ContextsClientTest {
             Arrays.<MockGrpcService>asList(
                 mockAgents,
                 mockContexts,
+                mockDocuments,
                 mockEntityTypes,
                 mockIntents,
+                mockKnowledgeBases,
                 mockSessionEntityTypes,
                 mockSessions));
     serviceHelper.start();

@@ -32,7 +32,8 @@
  * conversation and match user input to predefined intents and actions.
  *
  * <p>You can create an agent using both Dialogflow Standard Edition and Dialogflow Enterprise
- * Edition. For details, see [Dialogflow Editions](/dialogflow-enterprise/docs/editions).
+ * Edition. For details, see [Dialogflow
+ * Editions](https://cloud.google.com/dialogflow-enterprise/docs/editions).
  *
  * <p>You can save your agent for backup or versioning by exporting the agent by using the
  * [ExportAgent][google.cloud.dialogflow.v2beta1.Agents.ExportAgent] method. You can import a saved
@@ -81,6 +82,21 @@
  * try (ContextsClient contextsClient = ContextsClient.create()) {
  *   ContextName name = ContextName.of("[PROJECT]", "[SESSION]", "[CONTEXT]");
  *   Context response = contextsClient.getContext(name);
+ * }
+ * </code>
+ * </pre>
+ *
+ * =============== DocumentsClient ===============
+ *
+ * <p>Service Description: Manages documents of a knowledge base.
+ *
+ * <p>Sample for DocumentsClient:
+ *
+ * <pre>
+ * <code>
+ * try (DocumentsClient documentsClient = DocumentsClient.create()) {
+ *   DocumentName name = DocumentName.of("[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]");
+ *   Document response = documentsClient.getDocument(name);
  * }
  * </code>
  * </pre>
@@ -161,6 +177,23 @@
  * try (IntentsClient intentsClient = IntentsClient.create()) {
  *   IntentName name = IntentName.of("[PROJECT]", "[INTENT]");
  *   Intent response = intentsClient.getIntent(name);
+ * }
+ * </code>
+ * </pre>
+ *
+ * ==================== KnowledgeBasesClient ====================
+ *
+ * <p>Service Description: Manages knowledge bases.
+ *
+ * <p>Allows users to setup and maintain knowledge bases with their knowledge data.
+ *
+ * <p>Sample for KnowledgeBasesClient:
+ *
+ * <pre>
+ * <code>
+ * try (KnowledgeBasesClient knowledgeBasesClient = KnowledgeBasesClient.create()) {
+ *   KnowledgeBaseName name = KnowledgeBaseName.of("[PROJECT]", "[KNOWLEDGE_BASE]");
+ *   KnowledgeBase response = knowledgeBasesClient.getKnowledgeBase(name);
  * }
  * </code>
  * </pre>
