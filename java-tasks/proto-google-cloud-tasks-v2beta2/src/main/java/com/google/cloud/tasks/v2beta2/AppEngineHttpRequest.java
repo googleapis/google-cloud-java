@@ -11,15 +11,15 @@ package com.google.cloud.tasks.v2beta2;
  * This proto can only be used for tasks in a queue which has
  * [app_engine_http_target][google.cloud.tasks.v2beta2.Queue.app_engine_http_target] set.
  * Using [AppEngineHttpRequest][google.cloud.tasks.v2beta2.AppEngineHttpRequest] requires
- * [`appengine.applications.get`](/appengine/docs/admin-api/access-control)
+ * [`appengine.applications.get`](https://cloud.google.com/appengine/docs/admin-api/access-control)
  * Google IAM permission for the project
  * and the following scope:
  * `https://www.googleapis.com/auth/cloud-platform`
  * The task will be delivered to the App Engine app which belongs to the same
  * project as the queue. For more information, see
- * [How Requests are Routed](/appengine/docs/standard/python/how-requests-are-routed)
+ * [How Requests are Routed](https://cloud.google.com/appengine/docs/standard/python/how-requests-are-routed)
  * and how routing is affected by
- * [dispatch files](/appengine/docs/python/config/dispatchref).
+ * [dispatch files](https://cloud.google.com/appengine/docs/python/config/dispatchref).
  * The [AppEngineRouting][google.cloud.tasks.v2beta2.AppEngineRouting] used to construct the URL that the task is
  * delivered to can be set at the queue-level or task-level:
  * * If set,
@@ -174,10 +174,10 @@ private static final long serialVersionUID = 0L;
    * The app's request handler for the task's target URL must be able to handle
    * HTTP requests with this http_method, otherwise the task attempt will fail
    * with error code 405 (Method Not Allowed). See
-   * [Writing a push task request handler](/appengine/docs/java/taskqueue/push/creating-handlers#writing_a_push_task_request_handler)
+   * [Writing a push task request handler](https://cloud.google.com/appengine/docs/java/taskqueue/push/creating-handlers#writing_a_push_task_request_handler)
    * and the documentation for the request handlers in the language your app is
    * written in e.g.
-   * [Python Request Handler](/appengine/docs/python/tools/webapp/requesthandlerclass).
+   * [Python Request Handler](https://cloud.google.com/appengine/docs/python/tools/webapp/requesthandlerclass).
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta2.HttpMethod http_method = 1;</code>
@@ -191,10 +191,10 @@ private static final long serialVersionUID = 0L;
    * The app's request handler for the task's target URL must be able to handle
    * HTTP requests with this http_method, otherwise the task attempt will fail
    * with error code 405 (Method Not Allowed). See
-   * [Writing a push task request handler](/appengine/docs/java/taskqueue/push/creating-handlers#writing_a_push_task_request_handler)
+   * [Writing a push task request handler](https://cloud.google.com/appengine/docs/java/taskqueue/push/creating-handlers#writing_a_push_task_request_handler)
    * and the documentation for the request handlers in the language your app is
    * written in e.g.
-   * [Python Request Handler](/appengine/docs/python/tools/webapp/requesthandlerclass).
+   * [Python Request Handler](https://cloud.google.com/appengine/docs/python/tools/webapp/requesthandlerclass).
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta2.HttpMethod http_method = 1;</code>
@@ -330,7 +330,7 @@ private static final long serialVersionUID = 0L;
    * HTTP request headers.
    * This map contains the header field names and values.
    * Headers can be set when the
-   * [task is created](google.cloud.tasks.v2beta2.CloudTasks.CreateTask).
+   * [task is created][google.cloud.tasks.v2beta2.CloudTasks.CreateTask].
    * Repeated headers are not supported but a header value can contain commas.
    * Cloud Tasks sets some headers to default values:
    * * `User-Agent`: By default, this header is
@@ -343,7 +343,7 @@ private static final long serialVersionUID = 0L;
    * * `Content-Type`: By default, the `Content-Type` header is set to
    *   `"application/octet-stream"`. The default can be overridden by explicitly
    *   setting `Content-Type` to a particular media type when the
-   *   [task is created](google.cloud.tasks.v2beta2.CloudTasks.CreateTask).
+   *   [task is created][google.cloud.tasks.v2beta2.CloudTasks.CreateTask].
    *   For example, `Content-Type` can be set to `"application/json"`.
    * * `Content-Length`: This is computed by Cloud Tasks. This value is
    *   output only.   It cannot be changed.
@@ -353,7 +353,7 @@ private static final long serialVersionUID = 0L;
    * * `X-AppEngine-*`
    * In addition, Cloud Tasks sets some headers when the task is dispatched,
    * such as headers containing information about the task; see
-   * [request headers](/appengine/docs/python/taskqueue/push/creating-handlers#reading_request_headers).
+   * [request headers](https://cloud.google.com/appengine/docs/python/taskqueue/push/creating-handlers#reading_request_headers).
    * These headers are set only when the task is dispatched, so they are not
    * visible when the task is returned in a Cloud Tasks response.
    * Although there is no specific limit for the maximum number of headers or
@@ -381,7 +381,7 @@ private static final long serialVersionUID = 0L;
    * HTTP request headers.
    * This map contains the header field names and values.
    * Headers can be set when the
-   * [task is created](google.cloud.tasks.v2beta2.CloudTasks.CreateTask).
+   * [task is created][google.cloud.tasks.v2beta2.CloudTasks.CreateTask].
    * Repeated headers are not supported but a header value can contain commas.
    * Cloud Tasks sets some headers to default values:
    * * `User-Agent`: By default, this header is
@@ -394,7 +394,7 @@ private static final long serialVersionUID = 0L;
    * * `Content-Type`: By default, the `Content-Type` header is set to
    *   `"application/octet-stream"`. The default can be overridden by explicitly
    *   setting `Content-Type` to a particular media type when the
-   *   [task is created](google.cloud.tasks.v2beta2.CloudTasks.CreateTask).
+   *   [task is created][google.cloud.tasks.v2beta2.CloudTasks.CreateTask].
    *   For example, `Content-Type` can be set to `"application/json"`.
    * * `Content-Length`: This is computed by Cloud Tasks. This value is
    *   output only.   It cannot be changed.
@@ -404,7 +404,7 @@ private static final long serialVersionUID = 0L;
    * * `X-AppEngine-*`
    * In addition, Cloud Tasks sets some headers when the task is dispatched,
    * such as headers containing information about the task; see
-   * [request headers](/appengine/docs/python/taskqueue/push/creating-handlers#reading_request_headers).
+   * [request headers](https://cloud.google.com/appengine/docs/python/taskqueue/push/creating-handlers#reading_request_headers).
    * These headers are set only when the task is dispatched, so they are not
    * visible when the task is returned in a Cloud Tasks response.
    * Although there is no specific limit for the maximum number of headers or
@@ -423,7 +423,7 @@ private static final long serialVersionUID = 0L;
    * HTTP request headers.
    * This map contains the header field names and values.
    * Headers can be set when the
-   * [task is created](google.cloud.tasks.v2beta2.CloudTasks.CreateTask).
+   * [task is created][google.cloud.tasks.v2beta2.CloudTasks.CreateTask].
    * Repeated headers are not supported but a header value can contain commas.
    * Cloud Tasks sets some headers to default values:
    * * `User-Agent`: By default, this header is
@@ -436,7 +436,7 @@ private static final long serialVersionUID = 0L;
    * * `Content-Type`: By default, the `Content-Type` header is set to
    *   `"application/octet-stream"`. The default can be overridden by explicitly
    *   setting `Content-Type` to a particular media type when the
-   *   [task is created](google.cloud.tasks.v2beta2.CloudTasks.CreateTask).
+   *   [task is created][google.cloud.tasks.v2beta2.CloudTasks.CreateTask].
    *   For example, `Content-Type` can be set to `"application/json"`.
    * * `Content-Length`: This is computed by Cloud Tasks. This value is
    *   output only.   It cannot be changed.
@@ -446,7 +446,7 @@ private static final long serialVersionUID = 0L;
    * * `X-AppEngine-*`
    * In addition, Cloud Tasks sets some headers when the task is dispatched,
    * such as headers containing information about the task; see
-   * [request headers](/appengine/docs/python/taskqueue/push/creating-handlers#reading_request_headers).
+   * [request headers](https://cloud.google.com/appengine/docs/python/taskqueue/push/creating-handlers#reading_request_headers).
    * These headers are set only when the task is dispatched, so they are not
    * visible when the task is returned in a Cloud Tasks response.
    * Although there is no specific limit for the maximum number of headers or
@@ -470,7 +470,7 @@ private static final long serialVersionUID = 0L;
    * HTTP request headers.
    * This map contains the header field names and values.
    * Headers can be set when the
-   * [task is created](google.cloud.tasks.v2beta2.CloudTasks.CreateTask).
+   * [task is created][google.cloud.tasks.v2beta2.CloudTasks.CreateTask].
    * Repeated headers are not supported but a header value can contain commas.
    * Cloud Tasks sets some headers to default values:
    * * `User-Agent`: By default, this header is
@@ -483,7 +483,7 @@ private static final long serialVersionUID = 0L;
    * * `Content-Type`: By default, the `Content-Type` header is set to
    *   `"application/octet-stream"`. The default can be overridden by explicitly
    *   setting `Content-Type` to a particular media type when the
-   *   [task is created](google.cloud.tasks.v2beta2.CloudTasks.CreateTask).
+   *   [task is created][google.cloud.tasks.v2beta2.CloudTasks.CreateTask].
    *   For example, `Content-Type` can be set to `"application/json"`.
    * * `Content-Length`: This is computed by Cloud Tasks. This value is
    *   output only.   It cannot be changed.
@@ -493,7 +493,7 @@ private static final long serialVersionUID = 0L;
    * * `X-AppEngine-*`
    * In addition, Cloud Tasks sets some headers when the task is dispatched,
    * such as headers containing information about the task; see
-   * [request headers](/appengine/docs/python/taskqueue/push/creating-handlers#reading_request_headers).
+   * [request headers](https://cloud.google.com/appengine/docs/python/taskqueue/push/creating-handlers#reading_request_headers).
    * These headers are set only when the task is dispatched, so they are not
    * visible when the task is returned in a Cloud Tasks response.
    * Although there is no specific limit for the maximum number of headers or
@@ -749,15 +749,15 @@ private static final long serialVersionUID = 0L;
    * This proto can only be used for tasks in a queue which has
    * [app_engine_http_target][google.cloud.tasks.v2beta2.Queue.app_engine_http_target] set.
    * Using [AppEngineHttpRequest][google.cloud.tasks.v2beta2.AppEngineHttpRequest] requires
-   * [`appengine.applications.get`](/appengine/docs/admin-api/access-control)
+   * [`appengine.applications.get`](https://cloud.google.com/appengine/docs/admin-api/access-control)
    * Google IAM permission for the project
    * and the following scope:
    * `https://www.googleapis.com/auth/cloud-platform`
    * The task will be delivered to the App Engine app which belongs to the same
    * project as the queue. For more information, see
-   * [How Requests are Routed](/appengine/docs/standard/python/how-requests-are-routed)
+   * [How Requests are Routed](https://cloud.google.com/appengine/docs/standard/python/how-requests-are-routed)
    * and how routing is affected by
-   * [dispatch files](/appengine/docs/python/config/dispatchref).
+   * [dispatch files](https://cloud.google.com/appengine/docs/python/config/dispatchref).
    * The [AppEngineRouting][google.cloud.tasks.v2beta2.AppEngineRouting] used to construct the URL that the task is
    * delivered to can be set at the queue-level or task-level:
    * * If set,
@@ -973,10 +973,10 @@ private static final long serialVersionUID = 0L;
      * The app's request handler for the task's target URL must be able to handle
      * HTTP requests with this http_method, otherwise the task attempt will fail
      * with error code 405 (Method Not Allowed). See
-     * [Writing a push task request handler](/appengine/docs/java/taskqueue/push/creating-handlers#writing_a_push_task_request_handler)
+     * [Writing a push task request handler](https://cloud.google.com/appengine/docs/java/taskqueue/push/creating-handlers#writing_a_push_task_request_handler)
      * and the documentation for the request handlers in the language your app is
      * written in e.g.
-     * [Python Request Handler](/appengine/docs/python/tools/webapp/requesthandlerclass).
+     * [Python Request Handler](https://cloud.google.com/appengine/docs/python/tools/webapp/requesthandlerclass).
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.HttpMethod http_method = 1;</code>
@@ -990,10 +990,10 @@ private static final long serialVersionUID = 0L;
      * The app's request handler for the task's target URL must be able to handle
      * HTTP requests with this http_method, otherwise the task attempt will fail
      * with error code 405 (Method Not Allowed). See
-     * [Writing a push task request handler](/appengine/docs/java/taskqueue/push/creating-handlers#writing_a_push_task_request_handler)
+     * [Writing a push task request handler](https://cloud.google.com/appengine/docs/java/taskqueue/push/creating-handlers#writing_a_push_task_request_handler)
      * and the documentation for the request handlers in the language your app is
      * written in e.g.
-     * [Python Request Handler](/appengine/docs/python/tools/webapp/requesthandlerclass).
+     * [Python Request Handler](https://cloud.google.com/appengine/docs/python/tools/webapp/requesthandlerclass).
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.HttpMethod http_method = 1;</code>
@@ -1009,10 +1009,10 @@ private static final long serialVersionUID = 0L;
      * The app's request handler for the task's target URL must be able to handle
      * HTTP requests with this http_method, otherwise the task attempt will fail
      * with error code 405 (Method Not Allowed). See
-     * [Writing a push task request handler](/appengine/docs/java/taskqueue/push/creating-handlers#writing_a_push_task_request_handler)
+     * [Writing a push task request handler](https://cloud.google.com/appengine/docs/java/taskqueue/push/creating-handlers#writing_a_push_task_request_handler)
      * and the documentation for the request handlers in the language your app is
      * written in e.g.
-     * [Python Request Handler](/appengine/docs/python/tools/webapp/requesthandlerclass).
+     * [Python Request Handler](https://cloud.google.com/appengine/docs/python/tools/webapp/requesthandlerclass).
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.HttpMethod http_method = 1;</code>
@@ -1027,10 +1027,10 @@ private static final long serialVersionUID = 0L;
      * The app's request handler for the task's target URL must be able to handle
      * HTTP requests with this http_method, otherwise the task attempt will fail
      * with error code 405 (Method Not Allowed). See
-     * [Writing a push task request handler](/appengine/docs/java/taskqueue/push/creating-handlers#writing_a_push_task_request_handler)
+     * [Writing a push task request handler](https://cloud.google.com/appengine/docs/java/taskqueue/push/creating-handlers#writing_a_push_task_request_handler)
      * and the documentation for the request handlers in the language your app is
      * written in e.g.
-     * [Python Request Handler](/appengine/docs/python/tools/webapp/requesthandlerclass).
+     * [Python Request Handler](https://cloud.google.com/appengine/docs/python/tools/webapp/requesthandlerclass).
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.HttpMethod http_method = 1;</code>
@@ -1050,10 +1050,10 @@ private static final long serialVersionUID = 0L;
      * The app's request handler for the task's target URL must be able to handle
      * HTTP requests with this http_method, otherwise the task attempt will fail
      * with error code 405 (Method Not Allowed). See
-     * [Writing a push task request handler](/appengine/docs/java/taskqueue/push/creating-handlers#writing_a_push_task_request_handler)
+     * [Writing a push task request handler](https://cloud.google.com/appengine/docs/java/taskqueue/push/creating-handlers#writing_a_push_task_request_handler)
      * and the documentation for the request handlers in the language your app is
      * written in e.g.
-     * [Python Request Handler](/appengine/docs/python/tools/webapp/requesthandlerclass).
+     * [Python Request Handler](https://cloud.google.com/appengine/docs/python/tools/webapp/requesthandlerclass).
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.HttpMethod http_method = 1;</code>
@@ -1394,7 +1394,7 @@ private static final long serialVersionUID = 0L;
      * HTTP request headers.
      * This map contains the header field names and values.
      * Headers can be set when the
-     * [task is created](google.cloud.tasks.v2beta2.CloudTasks.CreateTask).
+     * [task is created][google.cloud.tasks.v2beta2.CloudTasks.CreateTask].
      * Repeated headers are not supported but a header value can contain commas.
      * Cloud Tasks sets some headers to default values:
      * * `User-Agent`: By default, this header is
@@ -1407,7 +1407,7 @@ private static final long serialVersionUID = 0L;
      * * `Content-Type`: By default, the `Content-Type` header is set to
      *   `"application/octet-stream"`. The default can be overridden by explicitly
      *   setting `Content-Type` to a particular media type when the
-     *   [task is created](google.cloud.tasks.v2beta2.CloudTasks.CreateTask).
+     *   [task is created][google.cloud.tasks.v2beta2.CloudTasks.CreateTask].
      *   For example, `Content-Type` can be set to `"application/json"`.
      * * `Content-Length`: This is computed by Cloud Tasks. This value is
      *   output only.   It cannot be changed.
@@ -1417,7 +1417,7 @@ private static final long serialVersionUID = 0L;
      * * `X-AppEngine-*`
      * In addition, Cloud Tasks sets some headers when the task is dispatched,
      * such as headers containing information about the task; see
-     * [request headers](/appengine/docs/python/taskqueue/push/creating-handlers#reading_request_headers).
+     * [request headers](https://cloud.google.com/appengine/docs/python/taskqueue/push/creating-handlers#reading_request_headers).
      * These headers are set only when the task is dispatched, so they are not
      * visible when the task is returned in a Cloud Tasks response.
      * Although there is no specific limit for the maximum number of headers or
@@ -1445,7 +1445,7 @@ private static final long serialVersionUID = 0L;
      * HTTP request headers.
      * This map contains the header field names and values.
      * Headers can be set when the
-     * [task is created](google.cloud.tasks.v2beta2.CloudTasks.CreateTask).
+     * [task is created][google.cloud.tasks.v2beta2.CloudTasks.CreateTask].
      * Repeated headers are not supported but a header value can contain commas.
      * Cloud Tasks sets some headers to default values:
      * * `User-Agent`: By default, this header is
@@ -1458,7 +1458,7 @@ private static final long serialVersionUID = 0L;
      * * `Content-Type`: By default, the `Content-Type` header is set to
      *   `"application/octet-stream"`. The default can be overridden by explicitly
      *   setting `Content-Type` to a particular media type when the
-     *   [task is created](google.cloud.tasks.v2beta2.CloudTasks.CreateTask).
+     *   [task is created][google.cloud.tasks.v2beta2.CloudTasks.CreateTask].
      *   For example, `Content-Type` can be set to `"application/json"`.
      * * `Content-Length`: This is computed by Cloud Tasks. This value is
      *   output only.   It cannot be changed.
@@ -1468,7 +1468,7 @@ private static final long serialVersionUID = 0L;
      * * `X-AppEngine-*`
      * In addition, Cloud Tasks sets some headers when the task is dispatched,
      * such as headers containing information about the task; see
-     * [request headers](/appengine/docs/python/taskqueue/push/creating-handlers#reading_request_headers).
+     * [request headers](https://cloud.google.com/appengine/docs/python/taskqueue/push/creating-handlers#reading_request_headers).
      * These headers are set only when the task is dispatched, so they are not
      * visible when the task is returned in a Cloud Tasks response.
      * Although there is no specific limit for the maximum number of headers or
@@ -1487,7 +1487,7 @@ private static final long serialVersionUID = 0L;
      * HTTP request headers.
      * This map contains the header field names and values.
      * Headers can be set when the
-     * [task is created](google.cloud.tasks.v2beta2.CloudTasks.CreateTask).
+     * [task is created][google.cloud.tasks.v2beta2.CloudTasks.CreateTask].
      * Repeated headers are not supported but a header value can contain commas.
      * Cloud Tasks sets some headers to default values:
      * * `User-Agent`: By default, this header is
@@ -1500,7 +1500,7 @@ private static final long serialVersionUID = 0L;
      * * `Content-Type`: By default, the `Content-Type` header is set to
      *   `"application/octet-stream"`. The default can be overridden by explicitly
      *   setting `Content-Type` to a particular media type when the
-     *   [task is created](google.cloud.tasks.v2beta2.CloudTasks.CreateTask).
+     *   [task is created][google.cloud.tasks.v2beta2.CloudTasks.CreateTask].
      *   For example, `Content-Type` can be set to `"application/json"`.
      * * `Content-Length`: This is computed by Cloud Tasks. This value is
      *   output only.   It cannot be changed.
@@ -1510,7 +1510,7 @@ private static final long serialVersionUID = 0L;
      * * `X-AppEngine-*`
      * In addition, Cloud Tasks sets some headers when the task is dispatched,
      * such as headers containing information about the task; see
-     * [request headers](/appengine/docs/python/taskqueue/push/creating-handlers#reading_request_headers).
+     * [request headers](https://cloud.google.com/appengine/docs/python/taskqueue/push/creating-handlers#reading_request_headers).
      * These headers are set only when the task is dispatched, so they are not
      * visible when the task is returned in a Cloud Tasks response.
      * Although there is no specific limit for the maximum number of headers or
@@ -1534,7 +1534,7 @@ private static final long serialVersionUID = 0L;
      * HTTP request headers.
      * This map contains the header field names and values.
      * Headers can be set when the
-     * [task is created](google.cloud.tasks.v2beta2.CloudTasks.CreateTask).
+     * [task is created][google.cloud.tasks.v2beta2.CloudTasks.CreateTask].
      * Repeated headers are not supported but a header value can contain commas.
      * Cloud Tasks sets some headers to default values:
      * * `User-Agent`: By default, this header is
@@ -1547,7 +1547,7 @@ private static final long serialVersionUID = 0L;
      * * `Content-Type`: By default, the `Content-Type` header is set to
      *   `"application/octet-stream"`. The default can be overridden by explicitly
      *   setting `Content-Type` to a particular media type when the
-     *   [task is created](google.cloud.tasks.v2beta2.CloudTasks.CreateTask).
+     *   [task is created][google.cloud.tasks.v2beta2.CloudTasks.CreateTask].
      *   For example, `Content-Type` can be set to `"application/json"`.
      * * `Content-Length`: This is computed by Cloud Tasks. This value is
      *   output only.   It cannot be changed.
@@ -1557,7 +1557,7 @@ private static final long serialVersionUID = 0L;
      * * `X-AppEngine-*`
      * In addition, Cloud Tasks sets some headers when the task is dispatched,
      * such as headers containing information about the task; see
-     * [request headers](/appengine/docs/python/taskqueue/push/creating-handlers#reading_request_headers).
+     * [request headers](https://cloud.google.com/appengine/docs/python/taskqueue/push/creating-handlers#reading_request_headers).
      * These headers are set only when the task is dispatched, so they are not
      * visible when the task is returned in a Cloud Tasks response.
      * Although there is no specific limit for the maximum number of headers or
@@ -1589,7 +1589,7 @@ private static final long serialVersionUID = 0L;
      * HTTP request headers.
      * This map contains the header field names and values.
      * Headers can be set when the
-     * [task is created](google.cloud.tasks.v2beta2.CloudTasks.CreateTask).
+     * [task is created][google.cloud.tasks.v2beta2.CloudTasks.CreateTask].
      * Repeated headers are not supported but a header value can contain commas.
      * Cloud Tasks sets some headers to default values:
      * * `User-Agent`: By default, this header is
@@ -1602,7 +1602,7 @@ private static final long serialVersionUID = 0L;
      * * `Content-Type`: By default, the `Content-Type` header is set to
      *   `"application/octet-stream"`. The default can be overridden by explicitly
      *   setting `Content-Type` to a particular media type when the
-     *   [task is created](google.cloud.tasks.v2beta2.CloudTasks.CreateTask).
+     *   [task is created][google.cloud.tasks.v2beta2.CloudTasks.CreateTask].
      *   For example, `Content-Type` can be set to `"application/json"`.
      * * `Content-Length`: This is computed by Cloud Tasks. This value is
      *   output only.   It cannot be changed.
@@ -1612,7 +1612,7 @@ private static final long serialVersionUID = 0L;
      * * `X-AppEngine-*`
      * In addition, Cloud Tasks sets some headers when the task is dispatched,
      * such as headers containing information about the task; see
-     * [request headers](/appengine/docs/python/taskqueue/push/creating-handlers#reading_request_headers).
+     * [request headers](https://cloud.google.com/appengine/docs/python/taskqueue/push/creating-handlers#reading_request_headers).
      * These headers are set only when the task is dispatched, so they are not
      * visible when the task is returned in a Cloud Tasks response.
      * Although there is no specific limit for the maximum number of headers or
@@ -1643,7 +1643,7 @@ private static final long serialVersionUID = 0L;
      * HTTP request headers.
      * This map contains the header field names and values.
      * Headers can be set when the
-     * [task is created](google.cloud.tasks.v2beta2.CloudTasks.CreateTask).
+     * [task is created][google.cloud.tasks.v2beta2.CloudTasks.CreateTask].
      * Repeated headers are not supported but a header value can contain commas.
      * Cloud Tasks sets some headers to default values:
      * * `User-Agent`: By default, this header is
@@ -1656,7 +1656,7 @@ private static final long serialVersionUID = 0L;
      * * `Content-Type`: By default, the `Content-Type` header is set to
      *   `"application/octet-stream"`. The default can be overridden by explicitly
      *   setting `Content-Type` to a particular media type when the
-     *   [task is created](google.cloud.tasks.v2beta2.CloudTasks.CreateTask).
+     *   [task is created][google.cloud.tasks.v2beta2.CloudTasks.CreateTask].
      *   For example, `Content-Type` can be set to `"application/json"`.
      * * `Content-Length`: This is computed by Cloud Tasks. This value is
      *   output only.   It cannot be changed.
@@ -1666,7 +1666,7 @@ private static final long serialVersionUID = 0L;
      * * `X-AppEngine-*`
      * In addition, Cloud Tasks sets some headers when the task is dispatched,
      * such as headers containing information about the task; see
-     * [request headers](/appengine/docs/python/taskqueue/push/creating-handlers#reading_request_headers).
+     * [request headers](https://cloud.google.com/appengine/docs/python/taskqueue/push/creating-handlers#reading_request_headers).
      * These headers are set only when the task is dispatched, so they are not
      * visible when the task is returned in a Cloud Tasks response.
      * Although there is no specific limit for the maximum number of headers or
@@ -1690,7 +1690,7 @@ private static final long serialVersionUID = 0L;
      * HTTP request headers.
      * This map contains the header field names and values.
      * Headers can be set when the
-     * [task is created](google.cloud.tasks.v2beta2.CloudTasks.CreateTask).
+     * [task is created][google.cloud.tasks.v2beta2.CloudTasks.CreateTask].
      * Repeated headers are not supported but a header value can contain commas.
      * Cloud Tasks sets some headers to default values:
      * * `User-Agent`: By default, this header is
@@ -1703,7 +1703,7 @@ private static final long serialVersionUID = 0L;
      * * `Content-Type`: By default, the `Content-Type` header is set to
      *   `"application/octet-stream"`. The default can be overridden by explicitly
      *   setting `Content-Type` to a particular media type when the
-     *   [task is created](google.cloud.tasks.v2beta2.CloudTasks.CreateTask).
+     *   [task is created][google.cloud.tasks.v2beta2.CloudTasks.CreateTask].
      *   For example, `Content-Type` can be set to `"application/json"`.
      * * `Content-Length`: This is computed by Cloud Tasks. This value is
      *   output only.   It cannot be changed.
@@ -1713,7 +1713,7 @@ private static final long serialVersionUID = 0L;
      * * `X-AppEngine-*`
      * In addition, Cloud Tasks sets some headers when the task is dispatched,
      * such as headers containing information about the task; see
-     * [request headers](/appengine/docs/python/taskqueue/push/creating-handlers#reading_request_headers).
+     * [request headers](https://cloud.google.com/appengine/docs/python/taskqueue/push/creating-handlers#reading_request_headers).
      * These headers are set only when the task is dispatched, so they are not
      * visible when the task is returned in a Cloud Tasks response.
      * Although there is no specific limit for the maximum number of headers or

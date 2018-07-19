@@ -17,7 +17,7 @@ public interface QueueOrBuilder extends
    * * `PROJECT_ID` can contain letters ([A-Za-z]), numbers ([0-9]),
    *    hyphens (-), colons (:), or periods (.).
    *    For more information, see
-   *    [Identifying projects](/resource-manager/docs/creating-managing-projects#identifying_projects)
+   *    [Identifying projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
    * * `LOCATION_ID` is the canonical ID for the queue's location.
    *    The list of available locations can be obtained by calling
    *    [ListLocations][google.cloud.location.Locations.ListLocations].
@@ -39,7 +39,7 @@ public interface QueueOrBuilder extends
    * * `PROJECT_ID` can contain letters ([A-Za-z]), numbers ([0-9]),
    *    hyphens (-), colons (:), or periods (.).
    *    For more information, see
-   *    [Identifying projects](/resource-manager/docs/creating-managing-projects#identifying_projects)
+   *    [Identifying projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
    * * `LOCATION_ID` is the canonical ID for the queue's location.
    *    The list of available locations can be obtained by calling
    *    [ListLocations][google.cloud.location.Locations.ListLocations].
@@ -179,7 +179,7 @@ public interface QueueOrBuilder extends
    * * For tasks created using the App Engine SDK: the queue-level retry
    *   settings apply to all tasks in the queue which do not have retry settings
    *   explicitly set on the task and were created by the App Engine SDK. See
-   *   [App Engine documentation](/appengine/docs/standard/python/taskqueue/push/retrying-tasks).
+   *   [App Engine documentation](https://cloud.google.com/appengine/docs/standard/python/taskqueue/push/retrying-tasks).
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta2.RetryConfig retry_config = 6;</code>
@@ -194,7 +194,7 @@ public interface QueueOrBuilder extends
    * * For tasks created using the App Engine SDK: the queue-level retry
    *   settings apply to all tasks in the queue which do not have retry settings
    *   explicitly set on the task and were created by the App Engine SDK. See
-   *   [App Engine documentation](/appengine/docs/standard/python/taskqueue/push/retrying-tasks).
+   *   [App Engine documentation](https://cloud.google.com/appengine/docs/standard/python/taskqueue/push/retrying-tasks).
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta2.RetryConfig retry_config = 6;</code>
@@ -209,7 +209,7 @@ public interface QueueOrBuilder extends
    * * For tasks created using the App Engine SDK: the queue-level retry
    *   settings apply to all tasks in the queue which do not have retry settings
    *   explicitly set on the task and were created by the App Engine SDK. See
-   *   [App Engine documentation](/appengine/docs/standard/python/taskqueue/push/retrying-tasks).
+   *   [App Engine documentation](https://cloud.google.com/appengine/docs/standard/python/taskqueue/push/retrying-tasks).
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta2.RetryConfig retry_config = 6;</code>
@@ -222,7 +222,7 @@ public interface QueueOrBuilder extends
    * `state` can only be changed by called
    * [PauseQueue][google.cloud.tasks.v2beta2.CloudTasks.PauseQueue],
    * [ResumeQueue][google.cloud.tasks.v2beta2.CloudTasks.ResumeQueue], or uploading
-   * [queue.yaml/xml](/appengine/docs/python/config/queueref).
+   * [queue.yaml/xml](https://cloud.google.com/appengine/docs/python/config/queueref).
    * [UpdateQueue][google.cloud.tasks.v2beta2.CloudTasks.UpdateQueue] cannot be used to change `state`.
    * </pre>
    *
@@ -235,7 +235,7 @@ public interface QueueOrBuilder extends
    * `state` can only be changed by called
    * [PauseQueue][google.cloud.tasks.v2beta2.CloudTasks.PauseQueue],
    * [ResumeQueue][google.cloud.tasks.v2beta2.CloudTasks.ResumeQueue], or uploading
-   * [queue.yaml/xml](/appengine/docs/python/config/queueref).
+   * [queue.yaml/xml](https://cloud.google.com/appengine/docs/python/config/queueref).
    * [UpdateQueue][google.cloud.tasks.v2beta2.CloudTasks.UpdateQueue] cannot be used to change `state`.
    * </pre>
    *
@@ -249,7 +249,7 @@ public interface QueueOrBuilder extends
    * All tasks that were [created][google.cloud.tasks.v2beta2.Task.create_time] before this time
    * were purged.
    * A queue can be purged using [PurgeQueue][google.cloud.tasks.v2beta2.CloudTasks.PurgeQueue], the
-   * [App Engine Task Queue SDK, or the Cloud Console](/appengine/docs/standard/python/taskqueue/push/deleting-tasks-and-queues#purging_all_tasks_from_a_queue).
+   * [App Engine Task Queue SDK, or the Cloud Console](https://cloud.google.com/appengine/docs/standard/python/taskqueue/push/deleting-tasks-and-queues#purging_all_tasks_from_a_queue).
    * Purge time will be truncated to the nearest microsecond. Purge
    * time will be unset if the queue has never been purged.
    * </pre>
@@ -263,7 +263,7 @@ public interface QueueOrBuilder extends
    * All tasks that were [created][google.cloud.tasks.v2beta2.Task.create_time] before this time
    * were purged.
    * A queue can be purged using [PurgeQueue][google.cloud.tasks.v2beta2.CloudTasks.PurgeQueue], the
-   * [App Engine Task Queue SDK, or the Cloud Console](/appengine/docs/standard/python/taskqueue/push/deleting-tasks-and-queues#purging_all_tasks_from_a_queue).
+   * [App Engine Task Queue SDK, or the Cloud Console](https://cloud.google.com/appengine/docs/standard/python/taskqueue/push/deleting-tasks-and-queues#purging_all_tasks_from_a_queue).
    * Purge time will be truncated to the nearest microsecond. Purge
    * time will be unset if the queue has never been purged.
    * </pre>
@@ -277,7 +277,7 @@ public interface QueueOrBuilder extends
    * All tasks that were [created][google.cloud.tasks.v2beta2.Task.create_time] before this time
    * were purged.
    * A queue can be purged using [PurgeQueue][google.cloud.tasks.v2beta2.CloudTasks.PurgeQueue], the
-   * [App Engine Task Queue SDK, or the Cloud Console](/appengine/docs/standard/python/taskqueue/push/deleting-tasks-and-queues#purging_all_tasks_from_a_queue).
+   * [App Engine Task Queue SDK, or the Cloud Console](https://cloud.google.com/appengine/docs/standard/python/taskqueue/push/deleting-tasks-and-queues#purging_all_tasks_from_a_queue).
    * Purge time will be truncated to the nearest microsecond. Purge
    * time will be unset if the queue has never been purged.
    * </pre>

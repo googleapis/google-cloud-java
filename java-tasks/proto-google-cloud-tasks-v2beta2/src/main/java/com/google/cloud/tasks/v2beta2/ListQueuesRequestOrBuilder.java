@@ -35,7 +35,7 @@ public interface ListQueuesRequestOrBuilder extends
    * field can be used as a filter and several operators as supported.
    * For example: `&lt;=, &lt;, &gt;=, &gt;, !=, =, :`. The filter syntax is the same as
    * described in
-   * [Stackdriver's Advanced Logs Filters](/logging/docs/view/advanced_filters).
+   * [Stackdriver's Advanced Logs Filters](https://cloud.google.com/logging/docs/view/advanced_filters).
    * Sample filter "app_engine_http_target: *".
    * Note that using filters might cause fewer queues than the
    * requested_page size to be returned.
@@ -50,7 +50,7 @@ public interface ListQueuesRequestOrBuilder extends
    * field can be used as a filter and several operators as supported.
    * For example: `&lt;=, &lt;, &gt;=, &gt;, !=, =, :`. The filter syntax is the same as
    * described in
-   * [Stackdriver's Advanced Logs Filters](/logging/docs/view/advanced_filters).
+   * [Stackdriver's Advanced Logs Filters](https://cloud.google.com/logging/docs/view/advanced_filters).
    * Sample filter "app_engine_http_target: *".
    * Note that using filters might cause fewer queues than the
    * requested_page size to be returned.

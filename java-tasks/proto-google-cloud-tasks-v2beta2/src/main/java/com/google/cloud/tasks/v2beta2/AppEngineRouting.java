@@ -7,10 +7,10 @@ package com.google.cloud.tasks.v2beta2;
  * <pre>
  * App Engine Routing.
  * For more information about services, versions, and instances see
- * [An Overview of App Engine](/appengine/docs/python/an-overview-of-app-engine),
- * [Microservices Architecture on Google App Engine](/appengine/docs/python/microservices-on-app-engine),
- * [App Engine Standard request routing](/appengine/docs/standard/python/how-requests-are-routed),
- * and [App Engine Flex request routing](/appengine/docs/flexible/python/how-requests-are-routed).
+ * [An Overview of App Engine](https://cloud.google.com/appengine/docs/python/an-overview-of-app-engine),
+ * [Microservices Architecture on Google App Engine](https://cloud.google.com/appengine/docs/python/microservices-on-app-engine),
+ * [App Engine Standard request routing](https://cloud.google.com/appengine/docs/standard/python/how-requests-are-routed),
+ * and [App Engine Flex request routing](https://cloud.google.com/appengine/docs/flexible/python/how-requests-are-routed).
  * </pre>
  *
  * Protobuf type {@code google.cloud.tasks.v2beta2.AppEngineRouting}
@@ -254,10 +254,10 @@ private static final long serialVersionUID = 0L;
    * By default, the task is sent to an instance which is available when
    * the task is attempted.
    * Requests can only be sent to a specific instance if
-   * [manual scaling is used in App Engine Standard](/appengine/docs/python/an-overview-of-app-engine?hl=en_US#scaling_types_and_instance_classes).
+   * [manual scaling is used in App Engine Standard](https://cloud.google.com/appengine/docs/python/an-overview-of-app-engine?hl=en_US#scaling_types_and_instance_classes).
    * App Engine Flex does not support instances. For more information, see
-   * [App Engine Standard request routing](/appengine/docs/standard/python/how-requests-are-routed)
-   * and [App Engine Flex request routing](/appengine/docs/flexible/python/how-requests-are-routed).
+   * [App Engine Standard request routing](https://cloud.google.com/appengine/docs/standard/python/how-requests-are-routed)
+   * and [App Engine Flex request routing](https://cloud.google.com/appengine/docs/flexible/python/how-requests-are-routed).
    * </pre>
    *
    * <code>string instance = 3;</code>
@@ -280,10 +280,10 @@ private static final long serialVersionUID = 0L;
    * By default, the task is sent to an instance which is available when
    * the task is attempted.
    * Requests can only be sent to a specific instance if
-   * [manual scaling is used in App Engine Standard](/appengine/docs/python/an-overview-of-app-engine?hl=en_US#scaling_types_and_instance_classes).
+   * [manual scaling is used in App Engine Standard](https://cloud.google.com/appengine/docs/python/an-overview-of-app-engine?hl=en_US#scaling_types_and_instance_classes).
    * App Engine Flex does not support instances. For more information, see
-   * [App Engine Standard request routing](/appengine/docs/standard/python/how-requests-are-routed)
-   * and [App Engine Flex request routing](/appengine/docs/flexible/python/how-requests-are-routed).
+   * [App Engine Standard request routing](https://cloud.google.com/appengine/docs/standard/python/how-requests-are-routed)
+   * and [App Engine Flex request routing](https://cloud.google.com/appengine/docs/flexible/python/how-requests-are-routed).
    * </pre>
    *
    * <code>string instance = 3;</code>
@@ -308,7 +308,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Output only. The host that the task is sent to.
    * For more information, see
-   * [How Requests are Routed](/appengine/docs/standard/python/how-requests-are-routed).
+   * [How Requests are Routed](https://cloud.google.com/appengine/docs/standard/python/how-requests-are-routed).
    * The host is constructed as:
    * * `host = [application_domain_name]`&lt;/br&gt;
    *   `| [service] + '.' + [application_domain_name]`&lt;/br&gt;
@@ -370,7 +370,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Output only. The host that the task is sent to.
    * For more information, see
-   * [How Requests are Routed](/appengine/docs/standard/python/how-requests-are-routed).
+   * [How Requests are Routed](https://cloud.google.com/appengine/docs/standard/python/how-requests-are-routed).
    * The host is constructed as:
    * * `host = [application_domain_name]`&lt;/br&gt;
    *   `| [service] + '.' + [application_domain_name]`&lt;/br&gt;
@@ -614,10 +614,10 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * App Engine Routing.
    * For more information about services, versions, and instances see
-   * [An Overview of App Engine](/appengine/docs/python/an-overview-of-app-engine),
-   * [Microservices Architecture on Google App Engine](/appengine/docs/python/microservices-on-app-engine),
-   * [App Engine Standard request routing](/appengine/docs/standard/python/how-requests-are-routed),
-   * and [App Engine Flex request routing](/appengine/docs/flexible/python/how-requests-are-routed).
+   * [An Overview of App Engine](https://cloud.google.com/appengine/docs/python/an-overview-of-app-engine),
+   * [Microservices Architecture on Google App Engine](https://cloud.google.com/appengine/docs/python/microservices-on-app-engine),
+   * [App Engine Standard request routing](https://cloud.google.com/appengine/docs/standard/python/how-requests-are-routed),
+   * and [App Engine Flex request routing](https://cloud.google.com/appengine/docs/flexible/python/how-requests-are-routed).
    * </pre>
    *
    * Protobuf type {@code google.cloud.tasks.v2beta2.AppEngineRouting}
@@ -1088,10 +1088,10 @@ private static final long serialVersionUID = 0L;
      * By default, the task is sent to an instance which is available when
      * the task is attempted.
      * Requests can only be sent to a specific instance if
-     * [manual scaling is used in App Engine Standard](/appengine/docs/python/an-overview-of-app-engine?hl=en_US#scaling_types_and_instance_classes).
+     * [manual scaling is used in App Engine Standard](https://cloud.google.com/appengine/docs/python/an-overview-of-app-engine?hl=en_US#scaling_types_and_instance_classes).
      * App Engine Flex does not support instances. For more information, see
-     * [App Engine Standard request routing](/appengine/docs/standard/python/how-requests-are-routed)
-     * and [App Engine Flex request routing](/appengine/docs/flexible/python/how-requests-are-routed).
+     * [App Engine Standard request routing](https://cloud.google.com/appengine/docs/standard/python/how-requests-are-routed)
+     * and [App Engine Flex request routing](https://cloud.google.com/appengine/docs/flexible/python/how-requests-are-routed).
      * </pre>
      *
      * <code>string instance = 3;</code>
@@ -1114,10 +1114,10 @@ private static final long serialVersionUID = 0L;
      * By default, the task is sent to an instance which is available when
      * the task is attempted.
      * Requests can only be sent to a specific instance if
-     * [manual scaling is used in App Engine Standard](/appengine/docs/python/an-overview-of-app-engine?hl=en_US#scaling_types_and_instance_classes).
+     * [manual scaling is used in App Engine Standard](https://cloud.google.com/appengine/docs/python/an-overview-of-app-engine?hl=en_US#scaling_types_and_instance_classes).
      * App Engine Flex does not support instances. For more information, see
-     * [App Engine Standard request routing](/appengine/docs/standard/python/how-requests-are-routed)
-     * and [App Engine Flex request routing](/appengine/docs/flexible/python/how-requests-are-routed).
+     * [App Engine Standard request routing](https://cloud.google.com/appengine/docs/standard/python/how-requests-are-routed)
+     * and [App Engine Flex request routing](https://cloud.google.com/appengine/docs/flexible/python/how-requests-are-routed).
      * </pre>
      *
      * <code>string instance = 3;</code>
@@ -1141,10 +1141,10 @@ private static final long serialVersionUID = 0L;
      * By default, the task is sent to an instance which is available when
      * the task is attempted.
      * Requests can only be sent to a specific instance if
-     * [manual scaling is used in App Engine Standard](/appengine/docs/python/an-overview-of-app-engine?hl=en_US#scaling_types_and_instance_classes).
+     * [manual scaling is used in App Engine Standard](https://cloud.google.com/appengine/docs/python/an-overview-of-app-engine?hl=en_US#scaling_types_and_instance_classes).
      * App Engine Flex does not support instances. For more information, see
-     * [App Engine Standard request routing](/appengine/docs/standard/python/how-requests-are-routed)
-     * and [App Engine Flex request routing](/appengine/docs/flexible/python/how-requests-are-routed).
+     * [App Engine Standard request routing](https://cloud.google.com/appengine/docs/standard/python/how-requests-are-routed)
+     * and [App Engine Flex request routing](https://cloud.google.com/appengine/docs/flexible/python/how-requests-are-routed).
      * </pre>
      *
      * <code>string instance = 3;</code>
@@ -1165,10 +1165,10 @@ private static final long serialVersionUID = 0L;
      * By default, the task is sent to an instance which is available when
      * the task is attempted.
      * Requests can only be sent to a specific instance if
-     * [manual scaling is used in App Engine Standard](/appengine/docs/python/an-overview-of-app-engine?hl=en_US#scaling_types_and_instance_classes).
+     * [manual scaling is used in App Engine Standard](https://cloud.google.com/appengine/docs/python/an-overview-of-app-engine?hl=en_US#scaling_types_and_instance_classes).
      * App Engine Flex does not support instances. For more information, see
-     * [App Engine Standard request routing](/appengine/docs/standard/python/how-requests-are-routed)
-     * and [App Engine Flex request routing](/appengine/docs/flexible/python/how-requests-are-routed).
+     * [App Engine Standard request routing](https://cloud.google.com/appengine/docs/standard/python/how-requests-are-routed)
+     * and [App Engine Flex request routing](https://cloud.google.com/appengine/docs/flexible/python/how-requests-are-routed).
      * </pre>
      *
      * <code>string instance = 3;</code>
@@ -1185,10 +1185,10 @@ private static final long serialVersionUID = 0L;
      * By default, the task is sent to an instance which is available when
      * the task is attempted.
      * Requests can only be sent to a specific instance if
-     * [manual scaling is used in App Engine Standard](/appengine/docs/python/an-overview-of-app-engine?hl=en_US#scaling_types_and_instance_classes).
+     * [manual scaling is used in App Engine Standard](https://cloud.google.com/appengine/docs/python/an-overview-of-app-engine?hl=en_US#scaling_types_and_instance_classes).
      * App Engine Flex does not support instances. For more information, see
-     * [App Engine Standard request routing](/appengine/docs/standard/python/how-requests-are-routed)
-     * and [App Engine Flex request routing](/appengine/docs/flexible/python/how-requests-are-routed).
+     * [App Engine Standard request routing](https://cloud.google.com/appengine/docs/standard/python/how-requests-are-routed)
+     * and [App Engine Flex request routing](https://cloud.google.com/appengine/docs/flexible/python/how-requests-are-routed).
      * </pre>
      *
      * <code>string instance = 3;</code>
@@ -1210,7 +1210,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Output only. The host that the task is sent to.
      * For more information, see
-     * [How Requests are Routed](/appengine/docs/standard/python/how-requests-are-routed).
+     * [How Requests are Routed](https://cloud.google.com/appengine/docs/standard/python/how-requests-are-routed).
      * The host is constructed as:
      * * `host = [application_domain_name]`&lt;/br&gt;
      *   `| [service] + '.' + [application_domain_name]`&lt;/br&gt;
@@ -1272,7 +1272,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Output only. The host that the task is sent to.
      * For more information, see
-     * [How Requests are Routed](/appengine/docs/standard/python/how-requests-are-routed).
+     * [How Requests are Routed](https://cloud.google.com/appengine/docs/standard/python/how-requests-are-routed).
      * The host is constructed as:
      * * `host = [application_domain_name]`&lt;/br&gt;
      *   `| [service] + '.' + [application_domain_name]`&lt;/br&gt;
@@ -1335,7 +1335,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Output only. The host that the task is sent to.
      * For more information, see
-     * [How Requests are Routed](/appengine/docs/standard/python/how-requests-are-routed).
+     * [How Requests are Routed](https://cloud.google.com/appengine/docs/standard/python/how-requests-are-routed).
      * The host is constructed as:
      * * `host = [application_domain_name]`&lt;/br&gt;
      *   `| [service] + '.' + [application_domain_name]`&lt;/br&gt;
@@ -1395,7 +1395,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Output only. The host that the task is sent to.
      * For more information, see
-     * [How Requests are Routed](/appengine/docs/standard/python/how-requests-are-routed).
+     * [How Requests are Routed](https://cloud.google.com/appengine/docs/standard/python/how-requests-are-routed).
      * The host is constructed as:
      * * `host = [application_domain_name]`&lt;/br&gt;
      *   `| [service] + '.' + [application_domain_name]`&lt;/br&gt;
@@ -1451,7 +1451,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Output only. The host that the task is sent to.
      * For more information, see
-     * [How Requests are Routed](/appengine/docs/standard/python/how-requests-are-routed).
+     * [How Requests are Routed](https://cloud.google.com/appengine/docs/standard/python/how-requests-are-routed).
      * The host is constructed as:
      * * `host = [application_domain_name]`&lt;/br&gt;
      *   `| [service] + '.' + [application_domain_name]`&lt;/br&gt;

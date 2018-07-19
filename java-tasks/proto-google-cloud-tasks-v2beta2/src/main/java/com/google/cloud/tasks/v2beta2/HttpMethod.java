@@ -22,7 +22,7 @@ public enum HttpMethod
   HTTP_METHOD_UNSPECIFIED(0),
   /**
    * <pre>
-   * HTTP Post
+   * HTTP POST
    * </pre>
    *
    * <code>POST = 1;</code>
@@ -30,7 +30,7 @@ public enum HttpMethod
   POST(1),
   /**
    * <pre>
-   * HTTP Get
+   * HTTP GET
    * </pre>
    *
    * <code>GET = 2;</code>
@@ -38,7 +38,7 @@ public enum HttpMethod
   GET(2),
   /**
    * <pre>
-   * HTTP Head
+   * HTTP HEAD
    * </pre>
    *
    * <code>HEAD = 3;</code>
@@ -46,7 +46,7 @@ public enum HttpMethod
   HEAD(3),
   /**
    * <pre>
-   * HTTP Put
+   * HTTP PUT
    * </pre>
    *
    * <code>PUT = 4;</code>
@@ -54,7 +54,7 @@ public enum HttpMethod
   PUT(4),
   /**
    * <pre>
-   * HTTP Delete
+   * HTTP DELETE
    * </pre>
    *
    * <code>DELETE = 5;</code>
@@ -73,7 +73,7 @@ public enum HttpMethod
   public static final int HTTP_METHOD_UNSPECIFIED_VALUE = 0;
   /**
    * <pre>
-   * HTTP Post
+   * HTTP POST
    * </pre>
    *
    * <code>POST = 1;</code>
@@ -81,7 +81,7 @@ public enum HttpMethod
   public static final int POST_VALUE = 1;
   /**
    * <pre>
-   * HTTP Get
+   * HTTP GET
    * </pre>
    *
    * <code>GET = 2;</code>
@@ -89,7 +89,7 @@ public enum HttpMethod
   public static final int GET_VALUE = 2;
   /**
    * <pre>
-   * HTTP Head
+   * HTTP HEAD
    * </pre>
    *
    * <code>HEAD = 3;</code>
@@ -97,7 +97,7 @@ public enum HttpMethod
   public static final int HEAD_VALUE = 3;
   /**
    * <pre>
-   * HTTP Put
+   * HTTP PUT
    * </pre>
    *
    * <code>PUT = 4;</code>
@@ -105,7 +105,7 @@ public enum HttpMethod
   public static final int PUT_VALUE = 4;
   /**
    * <pre>
-   * HTTP Delete
+   * HTTP DELETE
    * </pre>
    *
    * <code>DELETE = 5;</code>

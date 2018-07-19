@@ -402,7 +402,7 @@ public class CloudTasksClient implements BackgroundResource {
    *
    * <p>WARNING: Using this method may have unintended side effects if you are using an App Engine
    * `queue.yaml` or `queue.xml` file to manage your queues. Read [Overview of Queue Management and
-   * queue.yaml](/tasks/docs/queue-yaml) before using this method.
+   * queue.yaml](https://cloud.google.com/tasks/docs/queue-yaml) before using this method.
    *
    * <p>Sample code:
    *
@@ -444,7 +444,7 @@ public class CloudTasksClient implements BackgroundResource {
    *
    * <p>WARNING: Using this method may have unintended side effects if you are using an App Engine
    * `queue.yaml` or `queue.xml` file to manage your queues. Read [Overview of Queue Management and
-   * queue.yaml](/tasks/docs/queue-yaml) before using this method.
+   * queue.yaml](https://cloud.google.com/tasks/docs/queue-yaml) before using this method.
    *
    * <p>Sample code:
    *
@@ -483,7 +483,7 @@ public class CloudTasksClient implements BackgroundResource {
    *
    * <p>WARNING: Using this method may have unintended side effects if you are using an App Engine
    * `queue.yaml` or `queue.xml` file to manage your queues. Read [Overview of Queue Management and
-   * queue.yaml](/tasks/docs/queue-yaml) before using this method.
+   * queue.yaml](https://cloud.google.com/tasks/docs/queue-yaml) before using this method.
    *
    * <p>Sample code:
    *
@@ -515,7 +515,7 @@ public class CloudTasksClient implements BackgroundResource {
    *
    * <p>WARNING: Using this method may have unintended side effects if you are using an App Engine
    * `queue.yaml` or `queue.xml` file to manage your queues. Read [Overview of Queue Management and
-   * queue.yaml](/tasks/docs/queue-yaml) before using this method.
+   * queue.yaml](https://cloud.google.com/tasks/docs/queue-yaml) before using this method.
    *
    * <p>Sample code:
    *
@@ -548,7 +548,7 @@ public class CloudTasksClient implements BackgroundResource {
    *
    * <p>WARNING: Using this method may have unintended side effects if you are using an App Engine
    * `queue.yaml` or `queue.xml` file to manage your queues. Read [Overview of Queue Management and
-   * queue.yaml](/tasks/docs/queue-yaml) before using this method.
+   * queue.yaml](https://cloud.google.com/tasks/docs/queue-yaml) before using this method.
    *
    * <p>Sample code:
    *
@@ -588,7 +588,7 @@ public class CloudTasksClient implements BackgroundResource {
    *
    * <p>WARNING: Using this method may have unintended side effects if you are using an App Engine
    * `queue.yaml` or `queue.xml` file to manage your queues. Read [Overview of Queue Management and
-   * queue.yaml](/tasks/docs/queue-yaml) before using this method.
+   * queue.yaml](https://cloud.google.com/tasks/docs/queue-yaml) before using this method.
    *
    * <p>Sample code:
    *
@@ -620,7 +620,7 @@ public class CloudTasksClient implements BackgroundResource {
    *
    * <p>WARNING: Using this method may have unintended side effects if you are using an App Engine
    * `queue.yaml` or `queue.xml` file to manage your queues. Read [Overview of Queue Management and
-   * queue.yaml](/tasks/docs/queue-yaml) before using this method.
+   * queue.yaml](https://cloud.google.com/tasks/docs/queue-yaml) before using this method.
    *
    * <p>Sample code:
    *
@@ -650,7 +650,7 @@ public class CloudTasksClient implements BackgroundResource {
    *
    * <p>WARNING: Using this method may have unintended side effects if you are using an App Engine
    * `queue.yaml` or `queue.xml` file to manage your queues. Read [Overview of Queue Management and
-   * queue.yaml](/tasks/docs/queue-yaml) before using this method.
+   * queue.yaml](https://cloud.google.com/tasks/docs/queue-yaml) before using this method.
    *
    * <p>Sample code:
    *
@@ -682,7 +682,7 @@ public class CloudTasksClient implements BackgroundResource {
    *
    * <p>WARNING: Using this method may have unintended side effects if you are using an App Engine
    * `queue.yaml` or `queue.xml` file to manage your queues. Read [Overview of Queue Management and
-   * queue.yaml](/tasks/docs/queue-yaml) before using this method.
+   * queue.yaml](https://cloud.google.com/tasks/docs/queue-yaml) before using this method.
    *
    * <p>Sample code:
    *
@@ -713,7 +713,7 @@ public class CloudTasksClient implements BackgroundResource {
    *
    * <p>WARNING: Using this method may have unintended side effects if you are using an App Engine
    * `queue.yaml` or `queue.xml` file to manage your queues. Read [Overview of Queue Management and
-   * queue.yaml](/tasks/docs/queue-yaml) before using this method.
+   * queue.yaml](https://cloud.google.com/tasks/docs/queue-yaml) before using this method.
    *
    * <p>Sample code:
    *
@@ -744,7 +744,7 @@ public class CloudTasksClient implements BackgroundResource {
    *
    * <p>WARNING: Using this method may have unintended side effects if you are using an App Engine
    * `queue.yaml` or `queue.xml` file to manage your queues. Read [Overview of Queue Management and
-   * queue.yaml](/tasks/docs/queue-yaml) before using this method.
+   * queue.yaml](https://cloud.google.com/tasks/docs/queue-yaml) before using this method.
    *
    * <p>Sample code:
    *
@@ -1004,7 +1004,7 @@ public class CloudTasksClient implements BackgroundResource {
    *
    * <p>WARNING: Resuming many high-QPS queues at the same time can lead to target overloading. If
    * you are resuming high-QPS queues, follow the 500/50/5 pattern described in [Managing Cloud
-   * Tasks Scaling Risks](/tasks/docs/manage-cloud-task-scaling).
+   * Tasks Scaling Risks](https://cloud.google.com/tasks/docs/manage-cloud-task-scaling).
    *
    * <p>Sample code:
    *
@@ -1038,7 +1038,7 @@ public class CloudTasksClient implements BackgroundResource {
    *
    * <p>WARNING: Resuming many high-QPS queues at the same time can lead to target overloading. If
    * you are resuming high-QPS queues, follow the 500/50/5 pattern described in [Managing Cloud
-   * Tasks Scaling Risks](/tasks/docs/manage-cloud-task-scaling).
+   * Tasks Scaling Risks](https://cloud.google.com/tasks/docs/manage-cloud-task-scaling).
    *
    * <p>Sample code:
    *
@@ -1071,7 +1071,7 @@ public class CloudTasksClient implements BackgroundResource {
    *
    * <p>WARNING: Resuming many high-QPS queues at the same time can lead to target overloading. If
    * you are resuming high-QPS queues, follow the 500/50/5 pattern described in [Managing Cloud
-   * Tasks Scaling Risks](/tasks/docs/manage-cloud-task-scaling).
+   * Tasks Scaling Risks](https://cloud.google.com/tasks/docs/manage-cloud-task-scaling).
    *
    * <p>Sample code:
    *
@@ -1104,7 +1104,7 @@ public class CloudTasksClient implements BackgroundResource {
    *
    * <p>WARNING: Resuming many high-QPS queues at the same time can lead to target overloading. If
    * you are resuming high-QPS queues, follow the 500/50/5 pattern described in [Managing Cloud
-   * Tasks Scaling Risks](/tasks/docs/manage-cloud-task-scaling).
+   * Tasks Scaling Risks](https://cloud.google.com/tasks/docs/manage-cloud-task-scaling).
    *
    * <p>Sample code:
    *
@@ -1129,8 +1129,8 @@ public class CloudTasksClient implements BackgroundResource {
    * Gets the access control policy for a [Queue][google.cloud.tasks.v2beta2.Queue]. Returns an
    * empty policy if the resource exists and does not have a policy set.
    *
-   * <p>Authorization requires the following [Google IAM](/iam) permission on the specified resource
-   * parent:
+   * <p>Authorization requires the following [Google IAM](https://cloud.google.com/iam) permission
+   * on the specified resource parent:
    *
    * <p>&#42; `cloudtasks.queues.getIamPolicy`
    *
@@ -1162,8 +1162,8 @@ public class CloudTasksClient implements BackgroundResource {
    * Gets the access control policy for a [Queue][google.cloud.tasks.v2beta2.Queue]. Returns an
    * empty policy if the resource exists and does not have a policy set.
    *
-   * <p>Authorization requires the following [Google IAM](/iam) permission on the specified resource
-   * parent:
+   * <p>Authorization requires the following [Google IAM](https://cloud.google.com/iam) permission
+   * on the specified resource parent:
    *
    * <p>&#42; `cloudtasks.queues.getIamPolicy`
    *
@@ -1192,8 +1192,8 @@ public class CloudTasksClient implements BackgroundResource {
    * Gets the access control policy for a [Queue][google.cloud.tasks.v2beta2.Queue]. Returns an
    * empty policy if the resource exists and does not have a policy set.
    *
-   * <p>Authorization requires the following [Google IAM](/iam) permission on the specified resource
-   * parent:
+   * <p>Authorization requires the following [Google IAM](https://cloud.google.com/iam) permission
+   * on the specified resource parent:
    *
    * <p>&#42; `cloudtasks.queues.getIamPolicy`
    *
@@ -1221,8 +1221,8 @@ public class CloudTasksClient implements BackgroundResource {
    * Gets the access control policy for a [Queue][google.cloud.tasks.v2beta2.Queue]. Returns an
    * empty policy if the resource exists and does not have a policy set.
    *
-   * <p>Authorization requires the following [Google IAM](/iam) permission on the specified resource
-   * parent:
+   * <p>Authorization requires the following [Google IAM](https://cloud.google.com/iam) permission
+   * on the specified resource parent:
    *
    * <p>&#42; `cloudtasks.queues.getIamPolicy`
    *
@@ -1252,8 +1252,8 @@ public class CloudTasksClient implements BackgroundResource {
    * <p>Note: The Cloud Console does not check queue-level IAM permissions yet. Project-level
    * permissions are required to use the Cloud Console.
    *
-   * <p>Authorization requires the following [Google IAM](/iam) permission on the specified resource
-   * parent:
+   * <p>Authorization requires the following [Google IAM](https://cloud.google.com/iam) permission
+   * on the specified resource parent:
    *
    * <p>&#42; `cloudtasks.queues.setIamPolicy`
    *
@@ -1293,8 +1293,8 @@ public class CloudTasksClient implements BackgroundResource {
    * <p>Note: The Cloud Console does not check queue-level IAM permissions yet. Project-level
    * permissions are required to use the Cloud Console.
    *
-   * <p>Authorization requires the following [Google IAM](/iam) permission on the specified resource
-   * parent:
+   * <p>Authorization requires the following [Google IAM](https://cloud.google.com/iam) permission
+   * on the specified resource parent:
    *
    * <p>&#42; `cloudtasks.queues.setIamPolicy`
    *
@@ -1331,8 +1331,8 @@ public class CloudTasksClient implements BackgroundResource {
    * <p>Note: The Cloud Console does not check queue-level IAM permissions yet. Project-level
    * permissions are required to use the Cloud Console.
    *
-   * <p>Authorization requires the following [Google IAM](/iam) permission on the specified resource
-   * parent:
+   * <p>Authorization requires the following [Google IAM](https://cloud.google.com/iam) permission
+   * on the specified resource parent:
    *
    * <p>&#42; `cloudtasks.queues.setIamPolicy`
    *
@@ -1365,8 +1365,8 @@ public class CloudTasksClient implements BackgroundResource {
    * <p>Note: The Cloud Console does not check queue-level IAM permissions yet. Project-level
    * permissions are required to use the Cloud Console.
    *
-   * <p>Authorization requires the following [Google IAM](/iam) permission on the specified resource
-   * parent:
+   * <p>Authorization requires the following [Google IAM](https://cloud.google.com/iam) permission
+   * on the specified resource parent:
    *
    * <p>&#42; `cloudtasks.queues.setIamPolicy`
    *
@@ -1539,6 +1539,8 @@ public class CloudTasksClient implements BackgroundResource {
    * [response_view][google.cloud.tasks.v2beta2.ListTasksRequest.response_view] controls the subset
    * of information which is returned.
    *
+   * <p>The tasks may be returned in any order. The ordering may change at any time.
+   *
    * <p>Sample code:
    *
    * <pre><code>
@@ -1569,6 +1571,8 @@ public class CloudTasksClient implements BackgroundResource {
    * [response_view][google.cloud.tasks.v2beta2.ListTasksRequest.response_view] controls the subset
    * of information which is returned.
    *
+   * <p>The tasks may be returned in any order. The ordering may change at any time.
+   *
    * <p>Sample code:
    *
    * <pre><code>
@@ -1597,6 +1601,8 @@ public class CloudTasksClient implements BackgroundResource {
    * due to performance considerations;
    * [response_view][google.cloud.tasks.v2beta2.ListTasksRequest.response_view] controls the subset
    * of information which is returned.
+   *
+   * <p>The tasks may be returned in any order. The ordering may change at any time.
    *
    * <p>Sample code:
    *
@@ -1628,6 +1634,8 @@ public class CloudTasksClient implements BackgroundResource {
    * [response_view][google.cloud.tasks.v2beta2.ListTasksRequest.response_view] controls the subset
    * of information which is returned.
    *
+   * <p>The tasks may be returned in any order. The ordering may change at any time.
+   *
    * <p>Sample code:
    *
    * <pre><code>
@@ -1656,6 +1664,8 @@ public class CloudTasksClient implements BackgroundResource {
    * due to performance considerations;
    * [response_view][google.cloud.tasks.v2beta2.ListTasksRequest.response_view] controls the subset
    * of information which is returned.
+   *
+   * <p>The tasks may be returned in any order. The ordering may change at any time.
    *
    * <p>Sample code:
    *
@@ -1784,9 +1794,9 @@ public class CloudTasksClient implements BackgroundResource {
    *
    * <p>Tasks cannot be updated after creation; there is no UpdateTask command.
    *
-   * <p>&#42; For [App Engine queues](google.cloud.tasks.v2beta2.AppEngineHttpTarget), the maximum
-   * task size is 100KB. &#42; For [pull queues](google.cloud.tasks.v2beta2.PullTarget), this the
-   * maximum task size is 1MB.
+   * <p>&#42; For [App Engine queues][google.cloud.tasks.v2beta2.AppEngineHttpTarget], the maximum
+   * task size is 100KB. &#42; For [pull queues][google.cloud.tasks.v2beta2.PullTarget], the maximum
+   * task size is 1MB.
    *
    * <p>Sample code:
    *
@@ -1843,9 +1853,9 @@ public class CloudTasksClient implements BackgroundResource {
    *
    * <p>Tasks cannot be updated after creation; there is no UpdateTask command.
    *
-   * <p>&#42; For [App Engine queues](google.cloud.tasks.v2beta2.AppEngineHttpTarget), the maximum
-   * task size is 100KB. &#42; For [pull queues](google.cloud.tasks.v2beta2.PullTarget), this the
-   * maximum task size is 1MB.
+   * <p>&#42; For [App Engine queues][google.cloud.tasks.v2beta2.AppEngineHttpTarget], the maximum
+   * task size is 100KB. &#42; For [pull queues][google.cloud.tasks.v2beta2.PullTarget], the maximum
+   * task size is 1MB.
    *
    * <p>Sample code:
    *
@@ -1899,9 +1909,9 @@ public class CloudTasksClient implements BackgroundResource {
    *
    * <p>Tasks cannot be updated after creation; there is no UpdateTask command.
    *
-   * <p>&#42; For [App Engine queues](google.cloud.tasks.v2beta2.AppEngineHttpTarget), the maximum
-   * task size is 100KB. &#42; For [pull queues](google.cloud.tasks.v2beta2.PullTarget), this the
-   * maximum task size is 1MB.
+   * <p>&#42; For [App Engine queues][google.cloud.tasks.v2beta2.AppEngineHttpTarget], the maximum
+   * task size is 100KB. &#42; For [pull queues][google.cloud.tasks.v2beta2.PullTarget], the maximum
+   * task size is 1MB.
    *
    * <p>Sample code:
    *
@@ -1930,9 +1940,9 @@ public class CloudTasksClient implements BackgroundResource {
    *
    * <p>Tasks cannot be updated after creation; there is no UpdateTask command.
    *
-   * <p>&#42; For [App Engine queues](google.cloud.tasks.v2beta2.AppEngineHttpTarget), the maximum
-   * task size is 100KB. &#42; For [pull queues](google.cloud.tasks.v2beta2.PullTarget), this the
-   * maximum task size is 1MB.
+   * <p>&#42; For [App Engine queues][google.cloud.tasks.v2beta2.AppEngineHttpTarget], the maximum
+   * task size is 100KB. &#42; For [pull queues][google.cloud.tasks.v2beta2.PullTarget], the maximum
+   * task size is 1MB.
    *
    * <p>Sample code:
    *
