@@ -31,16 +31,17 @@ public interface ExportAgentResponseOrBuilder extends
    * <pre>
    * The exported agent.
    * Example for how to export an agent to a zip file via a command line:
-   * curl &#92;
-   *   'https://dialogflow.googleapis.com/v2beta1/projects/&lt;project_name&gt;/agent:export'&#92;
+   * &lt;pre&gt;curl &#92;
+   *   'https://dialogflow.googleapis.com/v2beta1/projects/&amp;lt;project_name&amp;gt;/agent:export'&#92;
    *   -X POST &#92;
-   *   -H 'Authorization: Bearer '$(gcloud auth print-access-token) &#92;
+   *   -H 'Authorization: Bearer '$(gcloud auth application-default
+   *   print-access-token) &#92;
    *   -H 'Accept: application/json' &#92;
    *   -H 'Content-Type: application/json' &#92;
    *   --compressed &#92;
    *   --data-binary '{}' &#92;
    * | grep agentContent | sed -e 's/.*"agentContent": "&#92;([^"]*&#92;)".*&#47;&#92;1/' &#92;
-   * | base64 --decode &gt; &lt;agent zip file&gt;
+   * | base64 --decode &gt; &amp;lt;agent zip file&amp;gt;&lt;/pre&gt;
    * </pre>
    *
    * <code>bytes agent_content = 2;</code>

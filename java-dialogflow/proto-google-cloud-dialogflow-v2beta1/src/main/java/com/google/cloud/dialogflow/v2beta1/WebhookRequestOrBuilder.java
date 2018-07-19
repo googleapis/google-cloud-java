@@ -79,6 +79,50 @@ public interface WebhookRequestOrBuilder extends
 
   /**
    * <pre>
+   * Alternative query results from KnowledgeService.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;</code>
+   */
+  java.util.List<com.google.cloud.dialogflow.v2beta1.QueryResult> 
+      getAlternativeQueryResultsList();
+  /**
+   * <pre>
+   * Alternative query results from KnowledgeService.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;</code>
+   */
+  com.google.cloud.dialogflow.v2beta1.QueryResult getAlternativeQueryResults(int index);
+  /**
+   * <pre>
+   * Alternative query results from KnowledgeService.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;</code>
+   */
+  int getAlternativeQueryResultsCount();
+  /**
+   * <pre>
+   * Alternative query results from KnowledgeService.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;</code>
+   */
+  java.util.List<? extends com.google.cloud.dialogflow.v2beta1.QueryResultOrBuilder> 
+      getAlternativeQueryResultsOrBuilderList();
+  /**
+   * <pre>
+   * Alternative query results from KnowledgeService.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;</code>
+   */
+  com.google.cloud.dialogflow.v2beta1.QueryResultOrBuilder getAlternativeQueryResultsOrBuilder(
+      int index);
+
+  /**
+   * <pre>
    * Optional. The contents of the original request that was passed to
    * `[Streaming]DetectIntent` call.
    * </pre>

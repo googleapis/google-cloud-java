@@ -24,6 +24,7 @@ private static final long serialVersionUID = 0L;
     sampleRateHertz_ = 0;
     languageCode_ = "";
     phraseHints_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    model_ = "";
   }
 
   @java.lang.Override
@@ -83,6 +84,12 @@ private static final long serialVersionUID = 0L;
             phraseHints_.add(s);
             break;
           }
+          case 58: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            model_ = s;
+            break;
+          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -140,8 +147,10 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Required. Sample rate (in Hertz) of the audio content sent in the query.
-   * Refer to [Cloud Speech API documentation](/speech/docs/basics) for more
-   * details.
+   * Refer to
+   * [Cloud Speech API
+   * documentation](https://cloud.google.com/speech-to-text/docs/basics) for
+   * more details.
    * </pre>
    *
    * <code>int32 sample_rate_hertz = 2;</code>
@@ -206,7 +215,9 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Optional. The collection of phrase hints which are used to boost accuracy
    * of speech recognition.
-   * Refer to [Cloud Speech API documentation](/speech/docs/basics#phrase-hints)
+   * Refer to
+   * [Cloud Speech API
+   * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
    * for more details.
    * </pre>
    *
@@ -220,7 +231,9 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Optional. The collection of phrase hints which are used to boost accuracy
    * of speech recognition.
-   * Refer to [Cloud Speech API documentation](/speech/docs/basics#phrase-hints)
+   * Refer to
+   * [Cloud Speech API
+   * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
    * for more details.
    * </pre>
    *
@@ -233,7 +246,9 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Optional. The collection of phrase hints which are used to boost accuracy
    * of speech recognition.
-   * Refer to [Cloud Speech API documentation](/speech/docs/basics#phrase-hints)
+   * Refer to
+   * [Cloud Speech API
+   * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
    * for more details.
    * </pre>
    *
@@ -246,7 +261,9 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Optional. The collection of phrase hints which are used to boost accuracy
    * of speech recognition.
-   * Refer to [Cloud Speech API documentation](/speech/docs/basics#phrase-hints)
+   * Refer to
+   * [Cloud Speech API
+   * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
    * for more details.
    * </pre>
    *
@@ -255,6 +272,68 @@ private static final long serialVersionUID = 0L;
   public com.google.protobuf.ByteString
       getPhraseHintsBytes(int index) {
     return phraseHints_.getByteString(index);
+  }
+
+  public static final int MODEL_FIELD_NUMBER = 7;
+  private volatile java.lang.Object model_;
+  /**
+   * <pre>
+   * Optional. Which Speech model to select for the given request. Select the
+   * model best suited to your domain to get best results. If a model is not
+   * explicitly specified, then we auto-select a model based on the parameters
+   * in the InputAudioConfig.
+   * If enhanced speech model is enabled for the agent and an enhanced
+   * version of the specified model for the language does not exist, then the
+   * speech is recognized using the standard version of the specified model.
+   * Refer to
+   * [Cloud Speech API
+   * documentation](https://cloud.google.com/speech-to-text/docs/basics#select-model)
+   * for more details.
+   * </pre>
+   *
+   * <code>string model = 7;</code>
+   */
+  public java.lang.String getModel() {
+    java.lang.Object ref = model_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      model_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Optional. Which Speech model to select for the given request. Select the
+   * model best suited to your domain to get best results. If a model is not
+   * explicitly specified, then we auto-select a model based on the parameters
+   * in the InputAudioConfig.
+   * If enhanced speech model is enabled for the agent and an enhanced
+   * version of the specified model for the language does not exist, then the
+   * speech is recognized using the standard version of the specified model.
+   * Refer to
+   * [Cloud Speech API
+   * documentation](https://cloud.google.com/speech-to-text/docs/basics#select-model)
+   * for more details.
+   * </pre>
+   *
+   * <code>string model = 7;</code>
+   */
+  public com.google.protobuf.ByteString
+      getModelBytes() {
+    java.lang.Object ref = model_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      model_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -280,6 +359,9 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < phraseHints_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, phraseHints_.getRaw(i));
+    }
+    if (!getModelBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, model_);
     }
     unknownFields.writeTo(output);
   }
@@ -308,6 +390,9 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getPhraseHintsList().size();
     }
+    if (!getModelBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, model_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -331,6 +416,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getLanguageCode());
     result = result && getPhraseHintsList()
         .equals(other.getPhraseHintsList());
+    result = result && getModel()
+        .equals(other.getModel());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -352,6 +439,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + PHRASE_HINTS_FIELD_NUMBER;
       hash = (53 * hash) + getPhraseHintsList().hashCode();
     }
+    hash = (37 * hash) + MODEL_FIELD_NUMBER;
+    hash = (53 * hash) + getModel().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -493,6 +582,8 @@ private static final long serialVersionUID = 0L;
 
       phraseHints_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000008);
+      model_ = "";
+
       return this;
     }
 
@@ -525,6 +616,7 @@ private static final long serialVersionUID = 0L;
         bitField0_ = (bitField0_ & ~0x00000008);
       }
       result.phraseHints_ = phraseHints_;
+      result.model_ = model_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -585,6 +677,10 @@ private static final long serialVersionUID = 0L;
           ensurePhraseHintsIsMutable();
           phraseHints_.addAll(other.phraseHints_);
         }
+        onChanged();
+      }
+      if (!other.getModel().isEmpty()) {
+        model_ = other.model_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -683,8 +779,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. Sample rate (in Hertz) of the audio content sent in the query.
-     * Refer to [Cloud Speech API documentation](/speech/docs/basics) for more
-     * details.
+     * Refer to
+     * [Cloud Speech API
+     * documentation](https://cloud.google.com/speech-to-text/docs/basics) for
+     * more details.
      * </pre>
      *
      * <code>int32 sample_rate_hertz = 2;</code>
@@ -695,8 +793,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. Sample rate (in Hertz) of the audio content sent in the query.
-     * Refer to [Cloud Speech API documentation](/speech/docs/basics) for more
-     * details.
+     * Refer to
+     * [Cloud Speech API
+     * documentation](https://cloud.google.com/speech-to-text/docs/basics) for
+     * more details.
      * </pre>
      *
      * <code>int32 sample_rate_hertz = 2;</code>
@@ -710,8 +810,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. Sample rate (in Hertz) of the audio content sent in the query.
-     * Refer to [Cloud Speech API documentation](/speech/docs/basics) for more
-     * details.
+     * Refer to
+     * [Cloud Speech API
+     * documentation](https://cloud.google.com/speech-to-text/docs/basics) for
+     * more details.
      * </pre>
      *
      * <code>int32 sample_rate_hertz = 2;</code>
@@ -843,7 +945,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Optional. The collection of phrase hints which are used to boost accuracy
      * of speech recognition.
-     * Refer to [Cloud Speech API documentation](/speech/docs/basics#phrase-hints)
+     * Refer to
+     * [Cloud Speech API
+     * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
      * for more details.
      * </pre>
      *
@@ -857,7 +961,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Optional. The collection of phrase hints which are used to boost accuracy
      * of speech recognition.
-     * Refer to [Cloud Speech API documentation](/speech/docs/basics#phrase-hints)
+     * Refer to
+     * [Cloud Speech API
+     * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
      * for more details.
      * </pre>
      *
@@ -870,7 +976,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Optional. The collection of phrase hints which are used to boost accuracy
      * of speech recognition.
-     * Refer to [Cloud Speech API documentation](/speech/docs/basics#phrase-hints)
+     * Refer to
+     * [Cloud Speech API
+     * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
      * for more details.
      * </pre>
      *
@@ -883,7 +991,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Optional. The collection of phrase hints which are used to boost accuracy
      * of speech recognition.
-     * Refer to [Cloud Speech API documentation](/speech/docs/basics#phrase-hints)
+     * Refer to
+     * [Cloud Speech API
+     * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
      * for more details.
      * </pre>
      *
@@ -897,7 +1007,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Optional. The collection of phrase hints which are used to boost accuracy
      * of speech recognition.
-     * Refer to [Cloud Speech API documentation](/speech/docs/basics#phrase-hints)
+     * Refer to
+     * [Cloud Speech API
+     * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
      * for more details.
      * </pre>
      *
@@ -917,7 +1029,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Optional. The collection of phrase hints which are used to boost accuracy
      * of speech recognition.
-     * Refer to [Cloud Speech API documentation](/speech/docs/basics#phrase-hints)
+     * Refer to
+     * [Cloud Speech API
+     * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
      * for more details.
      * </pre>
      *
@@ -937,7 +1051,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Optional. The collection of phrase hints which are used to boost accuracy
      * of speech recognition.
-     * Refer to [Cloud Speech API documentation](/speech/docs/basics#phrase-hints)
+     * Refer to
+     * [Cloud Speech API
+     * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
      * for more details.
      * </pre>
      *
@@ -955,7 +1071,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Optional. The collection of phrase hints which are used to boost accuracy
      * of speech recognition.
-     * Refer to [Cloud Speech API documentation](/speech/docs/basics#phrase-hints)
+     * Refer to
+     * [Cloud Speech API
+     * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
      * for more details.
      * </pre>
      *
@@ -971,7 +1089,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Optional. The collection of phrase hints which are used to boost accuracy
      * of speech recognition.
-     * Refer to [Cloud Speech API documentation](/speech/docs/basics#phrase-hints)
+     * Refer to
+     * [Cloud Speech API
+     * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
      * for more details.
      * </pre>
      *
@@ -985,6 +1105,145 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       ensurePhraseHintsIsMutable();
       phraseHints_.add(value);
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object model_ = "";
+    /**
+     * <pre>
+     * Optional. Which Speech model to select for the given request. Select the
+     * model best suited to your domain to get best results. If a model is not
+     * explicitly specified, then we auto-select a model based on the parameters
+     * in the InputAudioConfig.
+     * If enhanced speech model is enabled for the agent and an enhanced
+     * version of the specified model for the language does not exist, then the
+     * speech is recognized using the standard version of the specified model.
+     * Refer to
+     * [Cloud Speech API
+     * documentation](https://cloud.google.com/speech-to-text/docs/basics#select-model)
+     * for more details.
+     * </pre>
+     *
+     * <code>string model = 7;</code>
+     */
+    public java.lang.String getModel() {
+      java.lang.Object ref = model_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        model_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Optional. Which Speech model to select for the given request. Select the
+     * model best suited to your domain to get best results. If a model is not
+     * explicitly specified, then we auto-select a model based on the parameters
+     * in the InputAudioConfig.
+     * If enhanced speech model is enabled for the agent and an enhanced
+     * version of the specified model for the language does not exist, then the
+     * speech is recognized using the standard version of the specified model.
+     * Refer to
+     * [Cloud Speech API
+     * documentation](https://cloud.google.com/speech-to-text/docs/basics#select-model)
+     * for more details.
+     * </pre>
+     *
+     * <code>string model = 7;</code>
+     */
+    public com.google.protobuf.ByteString
+        getModelBytes() {
+      java.lang.Object ref = model_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        model_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Optional. Which Speech model to select for the given request. Select the
+     * model best suited to your domain to get best results. If a model is not
+     * explicitly specified, then we auto-select a model based on the parameters
+     * in the InputAudioConfig.
+     * If enhanced speech model is enabled for the agent and an enhanced
+     * version of the specified model for the language does not exist, then the
+     * speech is recognized using the standard version of the specified model.
+     * Refer to
+     * [Cloud Speech API
+     * documentation](https://cloud.google.com/speech-to-text/docs/basics#select-model)
+     * for more details.
+     * </pre>
+     *
+     * <code>string model = 7;</code>
+     */
+    public Builder setModel(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      model_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Which Speech model to select for the given request. Select the
+     * model best suited to your domain to get best results. If a model is not
+     * explicitly specified, then we auto-select a model based on the parameters
+     * in the InputAudioConfig.
+     * If enhanced speech model is enabled for the agent and an enhanced
+     * version of the specified model for the language does not exist, then the
+     * speech is recognized using the standard version of the specified model.
+     * Refer to
+     * [Cloud Speech API
+     * documentation](https://cloud.google.com/speech-to-text/docs/basics#select-model)
+     * for more details.
+     * </pre>
+     *
+     * <code>string model = 7;</code>
+     */
+    public Builder clearModel() {
+      
+      model_ = getDefaultInstance().getModel();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Which Speech model to select for the given request. Select the
+     * model best suited to your domain to get best results. If a model is not
+     * explicitly specified, then we auto-select a model based on the parameters
+     * in the InputAudioConfig.
+     * If enhanced speech model is enabled for the agent and an enhanced
+     * version of the specified model for the language does not exist, then the
+     * speech is recognized using the standard version of the specified model.
+     * Refer to
+     * [Cloud Speech API
+     * documentation](https://cloud.google.com/speech-to-text/docs/basics#select-model)
+     * for more details.
+     * </pre>
+     *
+     * <code>string model = 7;</code>
+     */
+    public Builder setModelBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      model_ = value;
       onChanged();
       return this;
     }

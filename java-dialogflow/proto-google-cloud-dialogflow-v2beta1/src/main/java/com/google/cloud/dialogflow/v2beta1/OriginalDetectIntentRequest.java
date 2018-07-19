@@ -22,6 +22,7 @@ private static final long serialVersionUID = 0L;
   }
   private OriginalDetectIntentRequest() {
     source_ = "";
+    version_ = "";
   }
 
   @java.lang.Override
@@ -59,6 +60,12 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             source_ = s;
+            break;
+          }
+          case 18: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            version_ = s;
             break;
           }
           case 26: {
@@ -142,12 +149,68 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int VERSION_FIELD_NUMBER = 2;
+  private volatile java.lang.Object version_;
+  /**
+   * <pre>
+   * Optional. The version of the protocol used for this request.
+   * This field is AoG-specific.
+   * </pre>
+   *
+   * <code>string version = 2;</code>
+   */
+  public java.lang.String getVersion() {
+    java.lang.Object ref = version_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      version_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Optional. The version of the protocol used for this request.
+   * This field is AoG-specific.
+   * </pre>
+   *
+   * <code>string version = 2;</code>
+   */
+  public com.google.protobuf.ByteString
+      getVersionBytes() {
+    java.lang.Object ref = version_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      version_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int PAYLOAD_FIELD_NUMBER = 3;
   private com.google.protobuf.Struct payload_;
   /**
    * <pre>
    * Optional. This field is set to the value of `QueryParameters.payload` field
    * passed in the request.
+   * This field is used for the telephony gateway. It should have a
+   * structure similar to this JSON message:
+   * &lt;pre&gt;{
+   *  "telephony": {
+   *    "caller_id": "+18558363987"
+   *  }
+   * }&lt;/pre&gt;
+   * Note: The caller ID field (`caller_id`) will be in
+   * [E.164 format](https://en.wikipedia.org/wiki/E.164) and is only supported
+   * for Enterprise Edition and not for Standard Edition agents. When the
+   * telephony gateway is used with a standard tier agent the `caller_id` field
+   * above will have a value of `REDACTED_IN_STANDARD_TIER_AGENT`.
    * </pre>
    *
    * <code>.google.protobuf.Struct payload = 3;</code>
@@ -159,6 +222,18 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Optional. This field is set to the value of `QueryParameters.payload` field
    * passed in the request.
+   * This field is used for the telephony gateway. It should have a
+   * structure similar to this JSON message:
+   * &lt;pre&gt;{
+   *  "telephony": {
+   *    "caller_id": "+18558363987"
+   *  }
+   * }&lt;/pre&gt;
+   * Note: The caller ID field (`caller_id`) will be in
+   * [E.164 format](https://en.wikipedia.org/wiki/E.164) and is only supported
+   * for Enterprise Edition and not for Standard Edition agents. When the
+   * telephony gateway is used with a standard tier agent the `caller_id` field
+   * above will have a value of `REDACTED_IN_STANDARD_TIER_AGENT`.
    * </pre>
    *
    * <code>.google.protobuf.Struct payload = 3;</code>
@@ -170,6 +245,18 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Optional. This field is set to the value of `QueryParameters.payload` field
    * passed in the request.
+   * This field is used for the telephony gateway. It should have a
+   * structure similar to this JSON message:
+   * &lt;pre&gt;{
+   *  "telephony": {
+   *    "caller_id": "+18558363987"
+   *  }
+   * }&lt;/pre&gt;
+   * Note: The caller ID field (`caller_id`) will be in
+   * [E.164 format](https://en.wikipedia.org/wiki/E.164) and is only supported
+   * for Enterprise Edition and not for Standard Edition agents. When the
+   * telephony gateway is used with a standard tier agent the `caller_id` field
+   * above will have a value of `REDACTED_IN_STANDARD_TIER_AGENT`.
    * </pre>
    *
    * <code>.google.protobuf.Struct payload = 3;</code>
@@ -193,6 +280,9 @@ private static final long serialVersionUID = 0L;
     if (!getSourceBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, source_);
     }
+    if (!getVersionBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, version_);
+    }
     if (payload_ != null) {
       output.writeMessage(3, getPayload());
     }
@@ -206,6 +296,9 @@ private static final long serialVersionUID = 0L;
     size = 0;
     if (!getSourceBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, source_);
+    }
+    if (!getVersionBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, version_);
     }
     if (payload_ != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -229,6 +322,8 @@ private static final long serialVersionUID = 0L;
     boolean result = true;
     result = result && getSource()
         .equals(other.getSource());
+    result = result && getVersion()
+        .equals(other.getVersion());
     result = result && (hasPayload() == other.hasPayload());
     if (hasPayload()) {
       result = result && getPayload()
@@ -247,6 +342,8 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + SOURCE_FIELD_NUMBER;
     hash = (53 * hash) + getSource().hashCode();
+    hash = (37 * hash) + VERSION_FIELD_NUMBER;
+    hash = (53 * hash) + getVersion().hashCode();
     if (hasPayload()) {
       hash = (37 * hash) + PAYLOAD_FIELD_NUMBER;
       hash = (53 * hash) + getPayload().hashCode();
@@ -387,6 +484,8 @@ private static final long serialVersionUID = 0L;
       super.clear();
       source_ = "";
 
+      version_ = "";
+
       if (payloadBuilder_ == null) {
         payload_ = null;
       } else {
@@ -416,6 +515,7 @@ private static final long serialVersionUID = 0L;
     public com.google.cloud.dialogflow.v2beta1.OriginalDetectIntentRequest buildPartial() {
       com.google.cloud.dialogflow.v2beta1.OriginalDetectIntentRequest result = new com.google.cloud.dialogflow.v2beta1.OriginalDetectIntentRequest(this);
       result.source_ = source_;
+      result.version_ = version_;
       if (payloadBuilder_ == null) {
         result.payload_ = payload_;
       } else {
@@ -464,6 +564,10 @@ private static final long serialVersionUID = 0L;
       if (other == com.google.cloud.dialogflow.v2beta1.OriginalDetectIntentRequest.getDefaultInstance()) return this;
       if (!other.getSource().isEmpty()) {
         source_ = other.source_;
+        onChanged();
+      }
+      if (!other.getVersion().isEmpty()) {
+        version_ = other.version_;
         onChanged();
       }
       if (other.hasPayload()) {
@@ -590,6 +694,100 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private java.lang.Object version_ = "";
+    /**
+     * <pre>
+     * Optional. The version of the protocol used for this request.
+     * This field is AoG-specific.
+     * </pre>
+     *
+     * <code>string version = 2;</code>
+     */
+    public java.lang.String getVersion() {
+      java.lang.Object ref = version_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        version_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Optional. The version of the protocol used for this request.
+     * This field is AoG-specific.
+     * </pre>
+     *
+     * <code>string version = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getVersionBytes() {
+      java.lang.Object ref = version_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        version_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Optional. The version of the protocol used for this request.
+     * This field is AoG-specific.
+     * </pre>
+     *
+     * <code>string version = 2;</code>
+     */
+    public Builder setVersion(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      version_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. The version of the protocol used for this request.
+     * This field is AoG-specific.
+     * </pre>
+     *
+     * <code>string version = 2;</code>
+     */
+    public Builder clearVersion() {
+      
+      version_ = getDefaultInstance().getVersion();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. The version of the protocol used for this request.
+     * This field is AoG-specific.
+     * </pre>
+     *
+     * <code>string version = 2;</code>
+     */
+    public Builder setVersionBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      version_ = value;
+      onChanged();
+      return this;
+    }
+
     private com.google.protobuf.Struct payload_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> payloadBuilder_;
@@ -597,6 +795,18 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Optional. This field is set to the value of `QueryParameters.payload` field
      * passed in the request.
+     * This field is used for the telephony gateway. It should have a
+     * structure similar to this JSON message:
+     * &lt;pre&gt;{
+     *  "telephony": {
+     *    "caller_id": "+18558363987"
+     *  }
+     * }&lt;/pre&gt;
+     * Note: The caller ID field (`caller_id`) will be in
+     * [E.164 format](https://en.wikipedia.org/wiki/E.164) and is only supported
+     * for Enterprise Edition and not for Standard Edition agents. When the
+     * telephony gateway is used with a standard tier agent the `caller_id` field
+     * above will have a value of `REDACTED_IN_STANDARD_TIER_AGENT`.
      * </pre>
      *
      * <code>.google.protobuf.Struct payload = 3;</code>
@@ -608,6 +818,18 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Optional. This field is set to the value of `QueryParameters.payload` field
      * passed in the request.
+     * This field is used for the telephony gateway. It should have a
+     * structure similar to this JSON message:
+     * &lt;pre&gt;{
+     *  "telephony": {
+     *    "caller_id": "+18558363987"
+     *  }
+     * }&lt;/pre&gt;
+     * Note: The caller ID field (`caller_id`) will be in
+     * [E.164 format](https://en.wikipedia.org/wiki/E.164) and is only supported
+     * for Enterprise Edition and not for Standard Edition agents. When the
+     * telephony gateway is used with a standard tier agent the `caller_id` field
+     * above will have a value of `REDACTED_IN_STANDARD_TIER_AGENT`.
      * </pre>
      *
      * <code>.google.protobuf.Struct payload = 3;</code>
@@ -623,6 +845,18 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Optional. This field is set to the value of `QueryParameters.payload` field
      * passed in the request.
+     * This field is used for the telephony gateway. It should have a
+     * structure similar to this JSON message:
+     * &lt;pre&gt;{
+     *  "telephony": {
+     *    "caller_id": "+18558363987"
+     *  }
+     * }&lt;/pre&gt;
+     * Note: The caller ID field (`caller_id`) will be in
+     * [E.164 format](https://en.wikipedia.org/wiki/E.164) and is only supported
+     * for Enterprise Edition and not for Standard Edition agents. When the
+     * telephony gateway is used with a standard tier agent the `caller_id` field
+     * above will have a value of `REDACTED_IN_STANDARD_TIER_AGENT`.
      * </pre>
      *
      * <code>.google.protobuf.Struct payload = 3;</code>
@@ -644,6 +878,18 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Optional. This field is set to the value of `QueryParameters.payload` field
      * passed in the request.
+     * This field is used for the telephony gateway. It should have a
+     * structure similar to this JSON message:
+     * &lt;pre&gt;{
+     *  "telephony": {
+     *    "caller_id": "+18558363987"
+     *  }
+     * }&lt;/pre&gt;
+     * Note: The caller ID field (`caller_id`) will be in
+     * [E.164 format](https://en.wikipedia.org/wiki/E.164) and is only supported
+     * for Enterprise Edition and not for Standard Edition agents. When the
+     * telephony gateway is used with a standard tier agent the `caller_id` field
+     * above will have a value of `REDACTED_IN_STANDARD_TIER_AGENT`.
      * </pre>
      *
      * <code>.google.protobuf.Struct payload = 3;</code>
@@ -663,6 +909,18 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Optional. This field is set to the value of `QueryParameters.payload` field
      * passed in the request.
+     * This field is used for the telephony gateway. It should have a
+     * structure similar to this JSON message:
+     * &lt;pre&gt;{
+     *  "telephony": {
+     *    "caller_id": "+18558363987"
+     *  }
+     * }&lt;/pre&gt;
+     * Note: The caller ID field (`caller_id`) will be in
+     * [E.164 format](https://en.wikipedia.org/wiki/E.164) and is only supported
+     * for Enterprise Edition and not for Standard Edition agents. When the
+     * telephony gateway is used with a standard tier agent the `caller_id` field
+     * above will have a value of `REDACTED_IN_STANDARD_TIER_AGENT`.
      * </pre>
      *
      * <code>.google.protobuf.Struct payload = 3;</code>
@@ -686,6 +944,18 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Optional. This field is set to the value of `QueryParameters.payload` field
      * passed in the request.
+     * This field is used for the telephony gateway. It should have a
+     * structure similar to this JSON message:
+     * &lt;pre&gt;{
+     *  "telephony": {
+     *    "caller_id": "+18558363987"
+     *  }
+     * }&lt;/pre&gt;
+     * Note: The caller ID field (`caller_id`) will be in
+     * [E.164 format](https://en.wikipedia.org/wiki/E.164) and is only supported
+     * for Enterprise Edition and not for Standard Edition agents. When the
+     * telephony gateway is used with a standard tier agent the `caller_id` field
+     * above will have a value of `REDACTED_IN_STANDARD_TIER_AGENT`.
      * </pre>
      *
      * <code>.google.protobuf.Struct payload = 3;</code>
@@ -705,6 +975,18 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Optional. This field is set to the value of `QueryParameters.payload` field
      * passed in the request.
+     * This field is used for the telephony gateway. It should have a
+     * structure similar to this JSON message:
+     * &lt;pre&gt;{
+     *  "telephony": {
+     *    "caller_id": "+18558363987"
+     *  }
+     * }&lt;/pre&gt;
+     * Note: The caller ID field (`caller_id`) will be in
+     * [E.164 format](https://en.wikipedia.org/wiki/E.164) and is only supported
+     * for Enterprise Edition and not for Standard Edition agents. When the
+     * telephony gateway is used with a standard tier agent the `caller_id` field
+     * above will have a value of `REDACTED_IN_STANDARD_TIER_AGENT`.
      * </pre>
      *
      * <code>.google.protobuf.Struct payload = 3;</code>
@@ -718,6 +1000,18 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Optional. This field is set to the value of `QueryParameters.payload` field
      * passed in the request.
+     * This field is used for the telephony gateway. It should have a
+     * structure similar to this JSON message:
+     * &lt;pre&gt;{
+     *  "telephony": {
+     *    "caller_id": "+18558363987"
+     *  }
+     * }&lt;/pre&gt;
+     * Note: The caller ID field (`caller_id`) will be in
+     * [E.164 format](https://en.wikipedia.org/wiki/E.164) and is only supported
+     * for Enterprise Edition and not for Standard Edition agents. When the
+     * telephony gateway is used with a standard tier agent the `caller_id` field
+     * above will have a value of `REDACTED_IN_STANDARD_TIER_AGENT`.
      * </pre>
      *
      * <code>.google.protobuf.Struct payload = 3;</code>
@@ -734,6 +1028,18 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Optional. This field is set to the value of `QueryParameters.payload` field
      * passed in the request.
+     * This field is used for the telephony gateway. It should have a
+     * structure similar to this JSON message:
+     * &lt;pre&gt;{
+     *  "telephony": {
+     *    "caller_id": "+18558363987"
+     *  }
+     * }&lt;/pre&gt;
+     * Note: The caller ID field (`caller_id`) will be in
+     * [E.164 format](https://en.wikipedia.org/wiki/E.164) and is only supported
+     * for Enterprise Edition and not for Standard Edition agents. When the
+     * telephony gateway is used with a standard tier agent the `caller_id` field
+     * above will have a value of `REDACTED_IN_STANDARD_TIER_AGENT`.
      * </pre>
      *
      * <code>.google.protobuf.Struct payload = 3;</code>

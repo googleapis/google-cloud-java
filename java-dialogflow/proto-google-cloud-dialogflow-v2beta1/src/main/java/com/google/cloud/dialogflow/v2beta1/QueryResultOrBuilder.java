@@ -65,10 +65,10 @@ public interface QueryResultOrBuilder extends
    * indicates an estimated greater likelihood that the recognized words are
    * correct. The default of 0.0 is a sentinel value indicating that confidence
    * was not set.
-   * You should not rely on this field as it isn't guaranteed to be accurate, or
-   * even set. In particular this field isn't set in Webhook calls and for
-   * StreamingDetectIntent since the streaming endpoint has separate confidence
-   * estimates per portion of the audio in StreamingRecognitionResult.
+   * This field is not guaranteed to be accurate or set. In particular this
+   * field isn't set for StreamingDetectIntent since the streaming endpoint has
+   * separate confidence estimates per portion of the audio in
+   * StreamingRecognitionResult.
    * </pre>
    *
    * <code>float speech_recognition_confidence = 2;</code>
@@ -335,6 +335,8 @@ public interface QueryResultOrBuilder extends
    * <pre>
    * The intent detection confidence. Values range from 0.0
    * (completely uncertain) to 1.0 (completely certain).
+   * If there are `multiple knowledge_answers` messages, this value is set to
+   * the greatest `knowledgeAnswers.match_confidence` value in the list.
    * </pre>
    *
    * <code>float intent_detection_confidence = 12;</code>
@@ -368,4 +370,60 @@ public interface QueryResultOrBuilder extends
    * <code>.google.protobuf.Struct diagnostic_info = 14;</code>
    */
   com.google.protobuf.StructOrBuilder getDiagnosticInfoOrBuilder();
+
+  /**
+   * <pre>
+   * The sentiment analysis result, which depends on the
+   * `sentiment_analysis_request_config` specified in the request.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult sentiment_analysis_result = 17;</code>
+   */
+  boolean hasSentimentAnalysisResult();
+  /**
+   * <pre>
+   * The sentiment analysis result, which depends on the
+   * `sentiment_analysis_request_config` specified in the request.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult sentiment_analysis_result = 17;</code>
+   */
+  com.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult getSentimentAnalysisResult();
+  /**
+   * <pre>
+   * The sentiment analysis result, which depends on the
+   * `sentiment_analysis_request_config` specified in the request.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult sentiment_analysis_result = 17;</code>
+   */
+  com.google.cloud.dialogflow.v2beta1.SentimentAnalysisResultOrBuilder getSentimentAnalysisResultOrBuilder();
+
+  /**
+   * <pre>
+   * The result from Knowledge Connector (if any), ordered by decreasing
+   * `KnowledgeAnswers.match_confidence`.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.KnowledgeAnswers knowledge_answers = 18;</code>
+   */
+  boolean hasKnowledgeAnswers();
+  /**
+   * <pre>
+   * The result from Knowledge Connector (if any), ordered by decreasing
+   * `KnowledgeAnswers.match_confidence`.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.KnowledgeAnswers knowledge_answers = 18;</code>
+   */
+  com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers getKnowledgeAnswers();
+  /**
+   * <pre>
+   * The result from Knowledge Connector (if any), ordered by decreasing
+   * `KnowledgeAnswers.match_confidence`.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.KnowledgeAnswers knowledge_answers = 18;</code>
+   */
+  com.google.cloud.dialogflow.v2beta1.KnowledgeAnswersOrBuilder getKnowledgeAnswersOrBuilder();
 }

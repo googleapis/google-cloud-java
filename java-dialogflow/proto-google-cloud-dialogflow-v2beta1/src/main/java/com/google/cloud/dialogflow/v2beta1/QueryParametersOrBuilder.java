@@ -196,4 +196,93 @@ public interface QueryParametersOrBuilder extends
    * <code>.google.protobuf.Struct payload = 6;</code>
    */
   com.google.protobuf.StructOrBuilder getPayloadOrBuilder();
+
+  /**
+   * <pre>
+   * Optional. KnowledgeBases to get alternative results from. If not set, the
+   * KnowledgeBases enabled in the agent (through UI) will be used.
+   * Format:  `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
+   * Note: This field is `repeated` for forward compatibility, currently only
+   * the first one is supported, we may return an error if multiple
+   * KnowledgeBases are specified.
+   * </pre>
+   *
+   * <code>repeated string knowledge_base_names = 12;</code>
+   */
+  java.util.List<java.lang.String>
+      getKnowledgeBaseNamesList();
+  /**
+   * <pre>
+   * Optional. KnowledgeBases to get alternative results from. If not set, the
+   * KnowledgeBases enabled in the agent (through UI) will be used.
+   * Format:  `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
+   * Note: This field is `repeated` for forward compatibility, currently only
+   * the first one is supported, we may return an error if multiple
+   * KnowledgeBases are specified.
+   * </pre>
+   *
+   * <code>repeated string knowledge_base_names = 12;</code>
+   */
+  int getKnowledgeBaseNamesCount();
+  /**
+   * <pre>
+   * Optional. KnowledgeBases to get alternative results from. If not set, the
+   * KnowledgeBases enabled in the agent (through UI) will be used.
+   * Format:  `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
+   * Note: This field is `repeated` for forward compatibility, currently only
+   * the first one is supported, we may return an error if multiple
+   * KnowledgeBases are specified.
+   * </pre>
+   *
+   * <code>repeated string knowledge_base_names = 12;</code>
+   */
+  java.lang.String getKnowledgeBaseNames(int index);
+  /**
+   * <pre>
+   * Optional. KnowledgeBases to get alternative results from. If not set, the
+   * KnowledgeBases enabled in the agent (through UI) will be used.
+   * Format:  `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
+   * Note: This field is `repeated` for forward compatibility, currently only
+   * the first one is supported, we may return an error if multiple
+   * KnowledgeBases are specified.
+   * </pre>
+   *
+   * <code>repeated string knowledge_base_names = 12;</code>
+   */
+  com.google.protobuf.ByteString
+      getKnowledgeBaseNamesBytes(int index);
+
+  /**
+   * <pre>
+   * Optional. Configures the type of sentiment analysis to perform. If not
+   * provided, sentiment analysis is not performed.
+   * Note: Sentiment Analysis is only currently available for Enterprise Edition
+   * agents.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.SentimentAnalysisRequestConfig sentiment_analysis_request_config = 10;</code>
+   */
+  boolean hasSentimentAnalysisRequestConfig();
+  /**
+   * <pre>
+   * Optional. Configures the type of sentiment analysis to perform. If not
+   * provided, sentiment analysis is not performed.
+   * Note: Sentiment Analysis is only currently available for Enterprise Edition
+   * agents.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.SentimentAnalysisRequestConfig sentiment_analysis_request_config = 10;</code>
+   */
+  com.google.cloud.dialogflow.v2beta1.SentimentAnalysisRequestConfig getSentimentAnalysisRequestConfig();
+  /**
+   * <pre>
+   * Optional. Configures the type of sentiment analysis to perform. If not
+   * provided, sentiment analysis is not performed.
+   * Note: Sentiment Analysis is only currently available for Enterprise Edition
+   * agents.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.SentimentAnalysisRequestConfig sentiment_analysis_request_config = 10;</code>
+   */
+  com.google.cloud.dialogflow.v2beta1.SentimentAnalysisRequestConfigOrBuilder getSentimentAnalysisRequestConfigOrBuilder();
 }

@@ -24,6 +24,7 @@ private static final long serialVersionUID = 0L;
     contexts_ = java.util.Collections.emptyList();
     resetContexts_ = false;
     sessionEntityTypes_ = java.util.Collections.emptyList();
+    knowledgeBaseNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
@@ -112,6 +113,28 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 82: {
+            com.google.cloud.dialogflow.v2beta1.SentimentAnalysisRequestConfig.Builder subBuilder = null;
+            if (sentimentAnalysisRequestConfig_ != null) {
+              subBuilder = sentimentAnalysisRequestConfig_.toBuilder();
+            }
+            sentimentAnalysisRequestConfig_ = input.readMessage(com.google.cloud.dialogflow.v2beta1.SentimentAnalysisRequestConfig.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(sentimentAnalysisRequestConfig_);
+              sentimentAnalysisRequestConfig_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 98: {
+            java.lang.String s = input.readStringRequireUtf8();
+            if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+              knowledgeBaseNames_ = new com.google.protobuf.LazyStringArrayList();
+              mutable_bitField0_ |= 0x00000040;
+            }
+            knowledgeBaseNames_.add(s);
+            break;
+          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -125,6 +148,9 @@ private static final long serialVersionUID = 0L;
       }
       if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
         sessionEntityTypes_ = java.util.Collections.unmodifiableList(sessionEntityTypes_);
+      }
+      if (((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+        knowledgeBaseNames_ = knowledgeBaseNames_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -399,6 +425,113 @@ private static final long serialVersionUID = 0L;
     return getPayload();
   }
 
+  public static final int KNOWLEDGE_BASE_NAMES_FIELD_NUMBER = 12;
+  private com.google.protobuf.LazyStringList knowledgeBaseNames_;
+  /**
+   * <pre>
+   * Optional. KnowledgeBases to get alternative results from. If not set, the
+   * KnowledgeBases enabled in the agent (through UI) will be used.
+   * Format:  `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
+   * Note: This field is `repeated` for forward compatibility, currently only
+   * the first one is supported, we may return an error if multiple
+   * KnowledgeBases are specified.
+   * </pre>
+   *
+   * <code>repeated string knowledge_base_names = 12;</code>
+   */
+  public com.google.protobuf.ProtocolStringList
+      getKnowledgeBaseNamesList() {
+    return knowledgeBaseNames_;
+  }
+  /**
+   * <pre>
+   * Optional. KnowledgeBases to get alternative results from. If not set, the
+   * KnowledgeBases enabled in the agent (through UI) will be used.
+   * Format:  `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
+   * Note: This field is `repeated` for forward compatibility, currently only
+   * the first one is supported, we may return an error if multiple
+   * KnowledgeBases are specified.
+   * </pre>
+   *
+   * <code>repeated string knowledge_base_names = 12;</code>
+   */
+  public int getKnowledgeBaseNamesCount() {
+    return knowledgeBaseNames_.size();
+  }
+  /**
+   * <pre>
+   * Optional. KnowledgeBases to get alternative results from. If not set, the
+   * KnowledgeBases enabled in the agent (through UI) will be used.
+   * Format:  `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
+   * Note: This field is `repeated` for forward compatibility, currently only
+   * the first one is supported, we may return an error if multiple
+   * KnowledgeBases are specified.
+   * </pre>
+   *
+   * <code>repeated string knowledge_base_names = 12;</code>
+   */
+  public java.lang.String getKnowledgeBaseNames(int index) {
+    return knowledgeBaseNames_.get(index);
+  }
+  /**
+   * <pre>
+   * Optional. KnowledgeBases to get alternative results from. If not set, the
+   * KnowledgeBases enabled in the agent (through UI) will be used.
+   * Format:  `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
+   * Note: This field is `repeated` for forward compatibility, currently only
+   * the first one is supported, we may return an error if multiple
+   * KnowledgeBases are specified.
+   * </pre>
+   *
+   * <code>repeated string knowledge_base_names = 12;</code>
+   */
+  public com.google.protobuf.ByteString
+      getKnowledgeBaseNamesBytes(int index) {
+    return knowledgeBaseNames_.getByteString(index);
+  }
+
+  public static final int SENTIMENT_ANALYSIS_REQUEST_CONFIG_FIELD_NUMBER = 10;
+  private com.google.cloud.dialogflow.v2beta1.SentimentAnalysisRequestConfig sentimentAnalysisRequestConfig_;
+  /**
+   * <pre>
+   * Optional. Configures the type of sentiment analysis to perform. If not
+   * provided, sentiment analysis is not performed.
+   * Note: Sentiment Analysis is only currently available for Enterprise Edition
+   * agents.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.SentimentAnalysisRequestConfig sentiment_analysis_request_config = 10;</code>
+   */
+  public boolean hasSentimentAnalysisRequestConfig() {
+    return sentimentAnalysisRequestConfig_ != null;
+  }
+  /**
+   * <pre>
+   * Optional. Configures the type of sentiment analysis to perform. If not
+   * provided, sentiment analysis is not performed.
+   * Note: Sentiment Analysis is only currently available for Enterprise Edition
+   * agents.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.SentimentAnalysisRequestConfig sentiment_analysis_request_config = 10;</code>
+   */
+  public com.google.cloud.dialogflow.v2beta1.SentimentAnalysisRequestConfig getSentimentAnalysisRequestConfig() {
+    return sentimentAnalysisRequestConfig_ == null ? com.google.cloud.dialogflow.v2beta1.SentimentAnalysisRequestConfig.getDefaultInstance() : sentimentAnalysisRequestConfig_;
+  }
+  /**
+   * <pre>
+   * Optional. Configures the type of sentiment analysis to perform. If not
+   * provided, sentiment analysis is not performed.
+   * Note: Sentiment Analysis is only currently available for Enterprise Edition
+   * agents.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.SentimentAnalysisRequestConfig sentiment_analysis_request_config = 10;</code>
+   */
+  public com.google.cloud.dialogflow.v2beta1.SentimentAnalysisRequestConfigOrBuilder getSentimentAnalysisRequestConfigOrBuilder() {
+    return getSentimentAnalysisRequestConfig();
+  }
+
   private byte memoizedIsInitialized = -1;
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -428,6 +561,12 @@ private static final long serialVersionUID = 0L;
     }
     if (payload_ != null) {
       output.writeMessage(6, getPayload());
+    }
+    if (sentimentAnalysisRequestConfig_ != null) {
+      output.writeMessage(10, getSentimentAnalysisRequestConfig());
+    }
+    for (int i = 0; i < knowledgeBaseNames_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 12, knowledgeBaseNames_.getRaw(i));
     }
     unknownFields.writeTo(output);
   }
@@ -459,6 +598,18 @@ private static final long serialVersionUID = 0L;
     if (payload_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(6, getPayload());
+    }
+    if (sentimentAnalysisRequestConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(10, getSentimentAnalysisRequestConfig());
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < knowledgeBaseNames_.size(); i++) {
+        dataSize += computeStringSizeNoTag(knowledgeBaseNames_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getKnowledgeBaseNamesList().size();
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -494,6 +645,13 @@ private static final long serialVersionUID = 0L;
       result = result && getPayload()
           .equals(other.getPayload());
     }
+    result = result && getKnowledgeBaseNamesList()
+        .equals(other.getKnowledgeBaseNamesList());
+    result = result && (hasSentimentAnalysisRequestConfig() == other.hasSentimentAnalysisRequestConfig());
+    if (hasSentimentAnalysisRequestConfig()) {
+      result = result && getSentimentAnalysisRequestConfig()
+          .equals(other.getSentimentAnalysisRequestConfig());
+    }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -525,6 +683,14 @@ private static final long serialVersionUID = 0L;
     if (hasPayload()) {
       hash = (37 * hash) + PAYLOAD_FIELD_NUMBER;
       hash = (53 * hash) + getPayload().hashCode();
+    }
+    if (getKnowledgeBaseNamesCount() > 0) {
+      hash = (37 * hash) + KNOWLEDGE_BASE_NAMES_FIELD_NUMBER;
+      hash = (53 * hash) + getKnowledgeBaseNamesList().hashCode();
+    }
+    if (hasSentimentAnalysisRequestConfig()) {
+      hash = (37 * hash) + SENTIMENT_ANALYSIS_REQUEST_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getSentimentAnalysisRequestConfig().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -689,6 +855,14 @@ private static final long serialVersionUID = 0L;
         payload_ = null;
         payloadBuilder_ = null;
       }
+      knowledgeBaseNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      if (sentimentAnalysisRequestConfigBuilder_ == null) {
+        sentimentAnalysisRequestConfig_ = null;
+      } else {
+        sentimentAnalysisRequestConfig_ = null;
+        sentimentAnalysisRequestConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -742,6 +916,16 @@ private static final long serialVersionUID = 0L;
         result.payload_ = payload_;
       } else {
         result.payload_ = payloadBuilder_.build();
+      }
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+        knowledgeBaseNames_ = knowledgeBaseNames_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000040);
+      }
+      result.knowledgeBaseNames_ = knowledgeBaseNames_;
+      if (sentimentAnalysisRequestConfigBuilder_ == null) {
+        result.sentimentAnalysisRequestConfig_ = sentimentAnalysisRequestConfig_;
+      } else {
+        result.sentimentAnalysisRequestConfig_ = sentimentAnalysisRequestConfigBuilder_.build();
       }
       result.bitField0_ = to_bitField0_;
       onBuilt();
@@ -849,6 +1033,19 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasPayload()) {
         mergePayload(other.getPayload());
+      }
+      if (!other.knowledgeBaseNames_.isEmpty()) {
+        if (knowledgeBaseNames_.isEmpty()) {
+          knowledgeBaseNames_ = other.knowledgeBaseNames_;
+          bitField0_ = (bitField0_ & ~0x00000040);
+        } else {
+          ensureKnowledgeBaseNamesIsMutable();
+          knowledgeBaseNames_.addAll(other.knowledgeBaseNames_);
+        }
+        onChanged();
+      }
+      if (other.hasSentimentAnalysisRequestConfig()) {
+        mergeSentimentAnalysisRequestConfig(other.getSentimentAnalysisRequestConfig());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2014,6 +2211,361 @@ private static final long serialVersionUID = 0L;
         payload_ = null;
       }
       return payloadBuilder_;
+    }
+
+    private com.google.protobuf.LazyStringList knowledgeBaseNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureKnowledgeBaseNamesIsMutable() {
+      if (!((bitField0_ & 0x00000040) == 0x00000040)) {
+        knowledgeBaseNames_ = new com.google.protobuf.LazyStringArrayList(knowledgeBaseNames_);
+        bitField0_ |= 0x00000040;
+       }
+    }
+    /**
+     * <pre>
+     * Optional. KnowledgeBases to get alternative results from. If not set, the
+     * KnowledgeBases enabled in the agent (through UI) will be used.
+     * Format:  `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
+     * Note: This field is `repeated` for forward compatibility, currently only
+     * the first one is supported, we may return an error if multiple
+     * KnowledgeBases are specified.
+     * </pre>
+     *
+     * <code>repeated string knowledge_base_names = 12;</code>
+     */
+    public com.google.protobuf.ProtocolStringList
+        getKnowledgeBaseNamesList() {
+      return knowledgeBaseNames_.getUnmodifiableView();
+    }
+    /**
+     * <pre>
+     * Optional. KnowledgeBases to get alternative results from. If not set, the
+     * KnowledgeBases enabled in the agent (through UI) will be used.
+     * Format:  `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
+     * Note: This field is `repeated` for forward compatibility, currently only
+     * the first one is supported, we may return an error if multiple
+     * KnowledgeBases are specified.
+     * </pre>
+     *
+     * <code>repeated string knowledge_base_names = 12;</code>
+     */
+    public int getKnowledgeBaseNamesCount() {
+      return knowledgeBaseNames_.size();
+    }
+    /**
+     * <pre>
+     * Optional. KnowledgeBases to get alternative results from. If not set, the
+     * KnowledgeBases enabled in the agent (through UI) will be used.
+     * Format:  `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
+     * Note: This field is `repeated` for forward compatibility, currently only
+     * the first one is supported, we may return an error if multiple
+     * KnowledgeBases are specified.
+     * </pre>
+     *
+     * <code>repeated string knowledge_base_names = 12;</code>
+     */
+    public java.lang.String getKnowledgeBaseNames(int index) {
+      return knowledgeBaseNames_.get(index);
+    }
+    /**
+     * <pre>
+     * Optional. KnowledgeBases to get alternative results from. If not set, the
+     * KnowledgeBases enabled in the agent (through UI) will be used.
+     * Format:  `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
+     * Note: This field is `repeated` for forward compatibility, currently only
+     * the first one is supported, we may return an error if multiple
+     * KnowledgeBases are specified.
+     * </pre>
+     *
+     * <code>repeated string knowledge_base_names = 12;</code>
+     */
+    public com.google.protobuf.ByteString
+        getKnowledgeBaseNamesBytes(int index) {
+      return knowledgeBaseNames_.getByteString(index);
+    }
+    /**
+     * <pre>
+     * Optional. KnowledgeBases to get alternative results from. If not set, the
+     * KnowledgeBases enabled in the agent (through UI) will be used.
+     * Format:  `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
+     * Note: This field is `repeated` for forward compatibility, currently only
+     * the first one is supported, we may return an error if multiple
+     * KnowledgeBases are specified.
+     * </pre>
+     *
+     * <code>repeated string knowledge_base_names = 12;</code>
+     */
+    public Builder setKnowledgeBaseNames(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureKnowledgeBaseNamesIsMutable();
+      knowledgeBaseNames_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. KnowledgeBases to get alternative results from. If not set, the
+     * KnowledgeBases enabled in the agent (through UI) will be used.
+     * Format:  `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
+     * Note: This field is `repeated` for forward compatibility, currently only
+     * the first one is supported, we may return an error if multiple
+     * KnowledgeBases are specified.
+     * </pre>
+     *
+     * <code>repeated string knowledge_base_names = 12;</code>
+     */
+    public Builder addKnowledgeBaseNames(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureKnowledgeBaseNamesIsMutable();
+      knowledgeBaseNames_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. KnowledgeBases to get alternative results from. If not set, the
+     * KnowledgeBases enabled in the agent (through UI) will be used.
+     * Format:  `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
+     * Note: This field is `repeated` for forward compatibility, currently only
+     * the first one is supported, we may return an error if multiple
+     * KnowledgeBases are specified.
+     * </pre>
+     *
+     * <code>repeated string knowledge_base_names = 12;</code>
+     */
+    public Builder addAllKnowledgeBaseNames(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureKnowledgeBaseNamesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, knowledgeBaseNames_);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. KnowledgeBases to get alternative results from. If not set, the
+     * KnowledgeBases enabled in the agent (through UI) will be used.
+     * Format:  `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
+     * Note: This field is `repeated` for forward compatibility, currently only
+     * the first one is supported, we may return an error if multiple
+     * KnowledgeBases are specified.
+     * </pre>
+     *
+     * <code>repeated string knowledge_base_names = 12;</code>
+     */
+    public Builder clearKnowledgeBaseNames() {
+      knowledgeBaseNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. KnowledgeBases to get alternative results from. If not set, the
+     * KnowledgeBases enabled in the agent (through UI) will be used.
+     * Format:  `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
+     * Note: This field is `repeated` for forward compatibility, currently only
+     * the first one is supported, we may return an error if multiple
+     * KnowledgeBases are specified.
+     * </pre>
+     *
+     * <code>repeated string knowledge_base_names = 12;</code>
+     */
+    public Builder addKnowledgeBaseNamesBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      ensureKnowledgeBaseNamesIsMutable();
+      knowledgeBaseNames_.add(value);
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.dialogflow.v2beta1.SentimentAnalysisRequestConfig sentimentAnalysisRequestConfig_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.dialogflow.v2beta1.SentimentAnalysisRequestConfig, com.google.cloud.dialogflow.v2beta1.SentimentAnalysisRequestConfig.Builder, com.google.cloud.dialogflow.v2beta1.SentimentAnalysisRequestConfigOrBuilder> sentimentAnalysisRequestConfigBuilder_;
+    /**
+     * <pre>
+     * Optional. Configures the type of sentiment analysis to perform. If not
+     * provided, sentiment analysis is not performed.
+     * Note: Sentiment Analysis is only currently available for Enterprise Edition
+     * agents.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.SentimentAnalysisRequestConfig sentiment_analysis_request_config = 10;</code>
+     */
+    public boolean hasSentimentAnalysisRequestConfig() {
+      return sentimentAnalysisRequestConfigBuilder_ != null || sentimentAnalysisRequestConfig_ != null;
+    }
+    /**
+     * <pre>
+     * Optional. Configures the type of sentiment analysis to perform. If not
+     * provided, sentiment analysis is not performed.
+     * Note: Sentiment Analysis is only currently available for Enterprise Edition
+     * agents.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.SentimentAnalysisRequestConfig sentiment_analysis_request_config = 10;</code>
+     */
+    public com.google.cloud.dialogflow.v2beta1.SentimentAnalysisRequestConfig getSentimentAnalysisRequestConfig() {
+      if (sentimentAnalysisRequestConfigBuilder_ == null) {
+        return sentimentAnalysisRequestConfig_ == null ? com.google.cloud.dialogflow.v2beta1.SentimentAnalysisRequestConfig.getDefaultInstance() : sentimentAnalysisRequestConfig_;
+      } else {
+        return sentimentAnalysisRequestConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Optional. Configures the type of sentiment analysis to perform. If not
+     * provided, sentiment analysis is not performed.
+     * Note: Sentiment Analysis is only currently available for Enterprise Edition
+     * agents.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.SentimentAnalysisRequestConfig sentiment_analysis_request_config = 10;</code>
+     */
+    public Builder setSentimentAnalysisRequestConfig(com.google.cloud.dialogflow.v2beta1.SentimentAnalysisRequestConfig value) {
+      if (sentimentAnalysisRequestConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        sentimentAnalysisRequestConfig_ = value;
+        onChanged();
+      } else {
+        sentimentAnalysisRequestConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Configures the type of sentiment analysis to perform. If not
+     * provided, sentiment analysis is not performed.
+     * Note: Sentiment Analysis is only currently available for Enterprise Edition
+     * agents.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.SentimentAnalysisRequestConfig sentiment_analysis_request_config = 10;</code>
+     */
+    public Builder setSentimentAnalysisRequestConfig(
+        com.google.cloud.dialogflow.v2beta1.SentimentAnalysisRequestConfig.Builder builderForValue) {
+      if (sentimentAnalysisRequestConfigBuilder_ == null) {
+        sentimentAnalysisRequestConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        sentimentAnalysisRequestConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Configures the type of sentiment analysis to perform. If not
+     * provided, sentiment analysis is not performed.
+     * Note: Sentiment Analysis is only currently available for Enterprise Edition
+     * agents.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.SentimentAnalysisRequestConfig sentiment_analysis_request_config = 10;</code>
+     */
+    public Builder mergeSentimentAnalysisRequestConfig(com.google.cloud.dialogflow.v2beta1.SentimentAnalysisRequestConfig value) {
+      if (sentimentAnalysisRequestConfigBuilder_ == null) {
+        if (sentimentAnalysisRequestConfig_ != null) {
+          sentimentAnalysisRequestConfig_ =
+            com.google.cloud.dialogflow.v2beta1.SentimentAnalysisRequestConfig.newBuilder(sentimentAnalysisRequestConfig_).mergeFrom(value).buildPartial();
+        } else {
+          sentimentAnalysisRequestConfig_ = value;
+        }
+        onChanged();
+      } else {
+        sentimentAnalysisRequestConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Configures the type of sentiment analysis to perform. If not
+     * provided, sentiment analysis is not performed.
+     * Note: Sentiment Analysis is only currently available for Enterprise Edition
+     * agents.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.SentimentAnalysisRequestConfig sentiment_analysis_request_config = 10;</code>
+     */
+    public Builder clearSentimentAnalysisRequestConfig() {
+      if (sentimentAnalysisRequestConfigBuilder_ == null) {
+        sentimentAnalysisRequestConfig_ = null;
+        onChanged();
+      } else {
+        sentimentAnalysisRequestConfig_ = null;
+        sentimentAnalysisRequestConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Configures the type of sentiment analysis to perform. If not
+     * provided, sentiment analysis is not performed.
+     * Note: Sentiment Analysis is only currently available for Enterprise Edition
+     * agents.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.SentimentAnalysisRequestConfig sentiment_analysis_request_config = 10;</code>
+     */
+    public com.google.cloud.dialogflow.v2beta1.SentimentAnalysisRequestConfig.Builder getSentimentAnalysisRequestConfigBuilder() {
+      
+      onChanged();
+      return getSentimentAnalysisRequestConfigFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Optional. Configures the type of sentiment analysis to perform. If not
+     * provided, sentiment analysis is not performed.
+     * Note: Sentiment Analysis is only currently available for Enterprise Edition
+     * agents.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.SentimentAnalysisRequestConfig sentiment_analysis_request_config = 10;</code>
+     */
+    public com.google.cloud.dialogflow.v2beta1.SentimentAnalysisRequestConfigOrBuilder getSentimentAnalysisRequestConfigOrBuilder() {
+      if (sentimentAnalysisRequestConfigBuilder_ != null) {
+        return sentimentAnalysisRequestConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return sentimentAnalysisRequestConfig_ == null ?
+            com.google.cloud.dialogflow.v2beta1.SentimentAnalysisRequestConfig.getDefaultInstance() : sentimentAnalysisRequestConfig_;
+      }
+    }
+    /**
+     * <pre>
+     * Optional. Configures the type of sentiment analysis to perform. If not
+     * provided, sentiment analysis is not performed.
+     * Note: Sentiment Analysis is only currently available for Enterprise Edition
+     * agents.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.SentimentAnalysisRequestConfig sentiment_analysis_request_config = 10;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.dialogflow.v2beta1.SentimentAnalysisRequestConfig, com.google.cloud.dialogflow.v2beta1.SentimentAnalysisRequestConfig.Builder, com.google.cloud.dialogflow.v2beta1.SentimentAnalysisRequestConfigOrBuilder> 
+        getSentimentAnalysisRequestConfigFieldBuilder() {
+      if (sentimentAnalysisRequestConfigBuilder_ == null) {
+        sentimentAnalysisRequestConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.v2beta1.SentimentAnalysisRequestConfig, com.google.cloud.dialogflow.v2beta1.SentimentAnalysisRequestConfig.Builder, com.google.cloud.dialogflow.v2beta1.SentimentAnalysisRequestConfigOrBuilder>(
+                getSentimentAnalysisRequestConfig(),
+                getParentForChildren(),
+                isClean());
+        sentimentAnalysisRequestConfig_ = null;
+      }
+      return sentimentAnalysisRequestConfigBuilder_;
     }
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {

@@ -12,8 +12,12 @@ package com.google.cloud.dialogflow.v2beta1;
  *     contain `recognition_result`. Each `recognition_result` represents a more
  *     complete transcript of what the user said. The last `recognition_result`
  *     has `is_final` set to `true`.
- * 2.  The next message contains `response_id`, `query_result`
- *     and optionally `webhook_status` if a WebHook was called.
+ * 2.  The next message contains `response_id`, `query_result`,
+ *     `alternative_query_results` and optionally `webhook_status` if a WebHook
+ *     was called.
+ * 3.  If `output_audio_config` was specified in the request or agent-level
+ *     speech synthesizer is configured, all subsequent messages contain
+ *     `output_audio` and `output_audio_config`.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2beta1.StreamingDetectIntentResponse}
@@ -29,6 +33,8 @@ private static final long serialVersionUID = 0L;
   }
   private StreamingDetectIntentResponse() {
     responseId_ = "";
+    alternativeQueryResults_ = java.util.Collections.emptyList();
+    outputAudio_ = com.google.protobuf.ByteString.EMPTY;
   }
 
   @java.lang.Override
@@ -107,6 +113,33 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 42: {
+
+            outputAudio_ = input.readBytes();
+            break;
+          }
+          case 50: {
+            com.google.cloud.dialogflow.v2beta1.OutputAudioConfig.Builder subBuilder = null;
+            if (outputAudioConfig_ != null) {
+              subBuilder = outputAudioConfig_.toBuilder();
+            }
+            outputAudioConfig_ = input.readMessage(com.google.cloud.dialogflow.v2beta1.OutputAudioConfig.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(outputAudioConfig_);
+              outputAudioConfig_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 58: {
+            if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+              alternativeQueryResults_ = new java.util.ArrayList<com.google.cloud.dialogflow.v2beta1.QueryResult>();
+              mutable_bitField0_ |= 0x00000008;
+            }
+            alternativeQueryResults_.add(
+                input.readMessage(com.google.cloud.dialogflow.v2beta1.QueryResult.parser(), extensionRegistry));
+            break;
+          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -115,6 +148,9 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+        alternativeQueryResults_ = java.util.Collections.unmodifiableList(alternativeQueryResults_);
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -131,6 +167,7 @@ private static final long serialVersionUID = 0L;
             com.google.cloud.dialogflow.v2beta1.StreamingDetectIntentResponse.class, com.google.cloud.dialogflow.v2beta1.StreamingDetectIntentResponse.Builder.class);
   }
 
+  private int bitField0_;
   public static final int RESPONSE_ID_FIELD_NUMBER = 1;
   private volatile java.lang.Object responseId_;
   /**
@@ -212,7 +249,8 @@ private static final long serialVersionUID = 0L;
   private com.google.cloud.dialogflow.v2beta1.QueryResult queryResult_;
   /**
    * <pre>
-   * The result of the conversational query or event processing.
+   * The selected results of the conversational query or event processing.
+   * See `alternative_query_results` for additional potential results.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.QueryResult query_result = 3;</code>
@@ -222,7 +260,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The result of the conversational query or event processing.
+   * The selected results of the conversational query or event processing.
+   * See `alternative_query_results` for additional potential results.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.QueryResult query_result = 3;</code>
@@ -232,13 +271,99 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The result of the conversational query or event processing.
+   * The selected results of the conversational query or event processing.
+   * See `alternative_query_results` for additional potential results.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.QueryResult query_result = 3;</code>
    */
   public com.google.cloud.dialogflow.v2beta1.QueryResultOrBuilder getQueryResultOrBuilder() {
     return getQueryResult();
+  }
+
+  public static final int ALTERNATIVE_QUERY_RESULTS_FIELD_NUMBER = 7;
+  private java.util.List<com.google.cloud.dialogflow.v2beta1.QueryResult> alternativeQueryResults_;
+  /**
+   * <pre>
+   * If Knowledge Connectors are enabled, there could be more than one result
+   * returned for a given query or event and this field will contain all results
+   * except for the top one which is captured in query_result. The alternative
+   * results are ordered by decreasing
+   * `QueryResult.intent_detection_confidence`. If Knowledge Connectors are
+   * disabled this field will be empty  at which point those additional results
+   * will be surfaced here.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 7;</code>
+   */
+  public java.util.List<com.google.cloud.dialogflow.v2beta1.QueryResult> getAlternativeQueryResultsList() {
+    return alternativeQueryResults_;
+  }
+  /**
+   * <pre>
+   * If Knowledge Connectors are enabled, there could be more than one result
+   * returned for a given query or event and this field will contain all results
+   * except for the top one which is captured in query_result. The alternative
+   * results are ordered by decreasing
+   * `QueryResult.intent_detection_confidence`. If Knowledge Connectors are
+   * disabled this field will be empty  at which point those additional results
+   * will be surfaced here.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 7;</code>
+   */
+  public java.util.List<? extends com.google.cloud.dialogflow.v2beta1.QueryResultOrBuilder> 
+      getAlternativeQueryResultsOrBuilderList() {
+    return alternativeQueryResults_;
+  }
+  /**
+   * <pre>
+   * If Knowledge Connectors are enabled, there could be more than one result
+   * returned for a given query or event and this field will contain all results
+   * except for the top one which is captured in query_result. The alternative
+   * results are ordered by decreasing
+   * `QueryResult.intent_detection_confidence`. If Knowledge Connectors are
+   * disabled this field will be empty  at which point those additional results
+   * will be surfaced here.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 7;</code>
+   */
+  public int getAlternativeQueryResultsCount() {
+    return alternativeQueryResults_.size();
+  }
+  /**
+   * <pre>
+   * If Knowledge Connectors are enabled, there could be more than one result
+   * returned for a given query or event and this field will contain all results
+   * except for the top one which is captured in query_result. The alternative
+   * results are ordered by decreasing
+   * `QueryResult.intent_detection_confidence`. If Knowledge Connectors are
+   * disabled this field will be empty  at which point those additional results
+   * will be surfaced here.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 7;</code>
+   */
+  public com.google.cloud.dialogflow.v2beta1.QueryResult getAlternativeQueryResults(int index) {
+    return alternativeQueryResults_.get(index);
+  }
+  /**
+   * <pre>
+   * If Knowledge Connectors are enabled, there could be more than one result
+   * returned for a given query or event and this field will contain all results
+   * except for the top one which is captured in query_result. The alternative
+   * results are ordered by decreasing
+   * `QueryResult.intent_detection_confidence`. If Knowledge Connectors are
+   * disabled this field will be empty  at which point those additional results
+   * will be surfaced here.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 7;</code>
+   */
+  public com.google.cloud.dialogflow.v2beta1.QueryResultOrBuilder getAlternativeQueryResultsOrBuilder(
+      int index) {
+    return alternativeQueryResults_.get(index);
   }
 
   public static final int WEBHOOK_STATUS_FIELD_NUMBER = 4;
@@ -274,6 +399,58 @@ private static final long serialVersionUID = 0L;
     return getWebhookStatus();
   }
 
+  public static final int OUTPUT_AUDIO_FIELD_NUMBER = 5;
+  private com.google.protobuf.ByteString outputAudio_;
+  /**
+   * <pre>
+   * The audio data bytes encoded as specified in the request.
+   * </pre>
+   *
+   * <code>bytes output_audio = 5;</code>
+   */
+  public com.google.protobuf.ByteString getOutputAudio() {
+    return outputAudio_;
+  }
+
+  public static final int OUTPUT_AUDIO_CONFIG_FIELD_NUMBER = 6;
+  private com.google.cloud.dialogflow.v2beta1.OutputAudioConfig outputAudioConfig_;
+  /**
+   * <pre>
+   * Instructs the speech synthesizer how to generate the output audio. This
+   * field is populated from the agent-level speech synthesizer configuration,
+   * if enabled.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.OutputAudioConfig output_audio_config = 6;</code>
+   */
+  public boolean hasOutputAudioConfig() {
+    return outputAudioConfig_ != null;
+  }
+  /**
+   * <pre>
+   * Instructs the speech synthesizer how to generate the output audio. This
+   * field is populated from the agent-level speech synthesizer configuration,
+   * if enabled.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.OutputAudioConfig output_audio_config = 6;</code>
+   */
+  public com.google.cloud.dialogflow.v2beta1.OutputAudioConfig getOutputAudioConfig() {
+    return outputAudioConfig_ == null ? com.google.cloud.dialogflow.v2beta1.OutputAudioConfig.getDefaultInstance() : outputAudioConfig_;
+  }
+  /**
+   * <pre>
+   * Instructs the speech synthesizer how to generate the output audio. This
+   * field is populated from the agent-level speech synthesizer configuration,
+   * if enabled.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.OutputAudioConfig output_audio_config = 6;</code>
+   */
+  public com.google.cloud.dialogflow.v2beta1.OutputAudioConfigOrBuilder getOutputAudioConfigOrBuilder() {
+    return getOutputAudioConfig();
+  }
+
   private byte memoizedIsInitialized = -1;
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -298,6 +475,15 @@ private static final long serialVersionUID = 0L;
     if (webhookStatus_ != null) {
       output.writeMessage(4, getWebhookStatus());
     }
+    if (!outputAudio_.isEmpty()) {
+      output.writeBytes(5, outputAudio_);
+    }
+    if (outputAudioConfig_ != null) {
+      output.writeMessage(6, getOutputAudioConfig());
+    }
+    for (int i = 0; i < alternativeQueryResults_.size(); i++) {
+      output.writeMessage(7, alternativeQueryResults_.get(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -320,6 +506,18 @@ private static final long serialVersionUID = 0L;
     if (webhookStatus_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(4, getWebhookStatus());
+    }
+    if (!outputAudio_.isEmpty()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBytesSize(5, outputAudio_);
+    }
+    if (outputAudioConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(6, getOutputAudioConfig());
+    }
+    for (int i = 0; i < alternativeQueryResults_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(7, alternativeQueryResults_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -349,10 +547,19 @@ private static final long serialVersionUID = 0L;
       result = result && getQueryResult()
           .equals(other.getQueryResult());
     }
+    result = result && getAlternativeQueryResultsList()
+        .equals(other.getAlternativeQueryResultsList());
     result = result && (hasWebhookStatus() == other.hasWebhookStatus());
     if (hasWebhookStatus()) {
       result = result && getWebhookStatus()
           .equals(other.getWebhookStatus());
+    }
+    result = result && getOutputAudio()
+        .equals(other.getOutputAudio());
+    result = result && (hasOutputAudioConfig() == other.hasOutputAudioConfig());
+    if (hasOutputAudioConfig()) {
+      result = result && getOutputAudioConfig()
+          .equals(other.getOutputAudioConfig());
     }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
@@ -375,9 +582,19 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + QUERY_RESULT_FIELD_NUMBER;
       hash = (53 * hash) + getQueryResult().hashCode();
     }
+    if (getAlternativeQueryResultsCount() > 0) {
+      hash = (37 * hash) + ALTERNATIVE_QUERY_RESULTS_FIELD_NUMBER;
+      hash = (53 * hash) + getAlternativeQueryResultsList().hashCode();
+    }
     if (hasWebhookStatus()) {
       hash = (37 * hash) + WEBHOOK_STATUS_FIELD_NUMBER;
       hash = (53 * hash) + getWebhookStatus().hashCode();
+    }
+    hash = (37 * hash) + OUTPUT_AUDIO_FIELD_NUMBER;
+    hash = (53 * hash) + getOutputAudio().hashCode();
+    if (hasOutputAudioConfig()) {
+      hash = (37 * hash) + OUTPUT_AUDIO_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getOutputAudioConfig().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -481,8 +698,12 @@ private static final long serialVersionUID = 0L;
    *     contain `recognition_result`. Each `recognition_result` represents a more
    *     complete transcript of what the user said. The last `recognition_result`
    *     has `is_final` set to `true`.
-   * 2.  The next message contains `response_id`, `query_result`
-   *     and optionally `webhook_status` if a WebHook was called.
+   * 2.  The next message contains `response_id`, `query_result`,
+   *     `alternative_query_results` and optionally `webhook_status` if a WebHook
+   *     was called.
+   * 3.  If `output_audio_config` was specified in the request or agent-level
+   *     speech synthesizer is configured, all subsequent messages contain
+   *     `output_audio` and `output_audio_config`.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2beta1.StreamingDetectIntentResponse}
@@ -516,6 +737,7 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
+        getAlternativeQueryResultsFieldBuilder();
       }
     }
     public Builder clear() {
@@ -534,11 +756,25 @@ private static final long serialVersionUID = 0L;
         queryResult_ = null;
         queryResultBuilder_ = null;
       }
+      if (alternativeQueryResultsBuilder_ == null) {
+        alternativeQueryResults_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000008);
+      } else {
+        alternativeQueryResultsBuilder_.clear();
+      }
       if (webhookStatusBuilder_ == null) {
         webhookStatus_ = null;
       } else {
         webhookStatus_ = null;
         webhookStatusBuilder_ = null;
+      }
+      outputAudio_ = com.google.protobuf.ByteString.EMPTY;
+
+      if (outputAudioConfigBuilder_ == null) {
+        outputAudioConfig_ = null;
+      } else {
+        outputAudioConfig_ = null;
+        outputAudioConfigBuilder_ = null;
       }
       return this;
     }
@@ -562,6 +798,8 @@ private static final long serialVersionUID = 0L;
 
     public com.google.cloud.dialogflow.v2beta1.StreamingDetectIntentResponse buildPartial() {
       com.google.cloud.dialogflow.v2beta1.StreamingDetectIntentResponse result = new com.google.cloud.dialogflow.v2beta1.StreamingDetectIntentResponse(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       result.responseId_ = responseId_;
       if (recognitionResultBuilder_ == null) {
         result.recognitionResult_ = recognitionResult_;
@@ -573,11 +811,27 @@ private static final long serialVersionUID = 0L;
       } else {
         result.queryResult_ = queryResultBuilder_.build();
       }
+      if (alternativeQueryResultsBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) == 0x00000008)) {
+          alternativeQueryResults_ = java.util.Collections.unmodifiableList(alternativeQueryResults_);
+          bitField0_ = (bitField0_ & ~0x00000008);
+        }
+        result.alternativeQueryResults_ = alternativeQueryResults_;
+      } else {
+        result.alternativeQueryResults_ = alternativeQueryResultsBuilder_.build();
+      }
       if (webhookStatusBuilder_ == null) {
         result.webhookStatus_ = webhookStatus_;
       } else {
         result.webhookStatus_ = webhookStatusBuilder_.build();
       }
+      result.outputAudio_ = outputAudio_;
+      if (outputAudioConfigBuilder_ == null) {
+        result.outputAudioConfig_ = outputAudioConfig_;
+      } else {
+        result.outputAudioConfig_ = outputAudioConfigBuilder_.build();
+      }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -629,8 +883,40 @@ private static final long serialVersionUID = 0L;
       if (other.hasQueryResult()) {
         mergeQueryResult(other.getQueryResult());
       }
+      if (alternativeQueryResultsBuilder_ == null) {
+        if (!other.alternativeQueryResults_.isEmpty()) {
+          if (alternativeQueryResults_.isEmpty()) {
+            alternativeQueryResults_ = other.alternativeQueryResults_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+          } else {
+            ensureAlternativeQueryResultsIsMutable();
+            alternativeQueryResults_.addAll(other.alternativeQueryResults_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.alternativeQueryResults_.isEmpty()) {
+          if (alternativeQueryResultsBuilder_.isEmpty()) {
+            alternativeQueryResultsBuilder_.dispose();
+            alternativeQueryResultsBuilder_ = null;
+            alternativeQueryResults_ = other.alternativeQueryResults_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+            alternativeQueryResultsBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getAlternativeQueryResultsFieldBuilder() : null;
+          } else {
+            alternativeQueryResultsBuilder_.addAllMessages(other.alternativeQueryResults_);
+          }
+        }
+      }
       if (other.hasWebhookStatus()) {
         mergeWebhookStatus(other.getWebhookStatus());
+      }
+      if (other.getOutputAudio() != com.google.protobuf.ByteString.EMPTY) {
+        setOutputAudio(other.getOutputAudio());
+      }
+      if (other.hasOutputAudioConfig()) {
+        mergeOutputAudioConfig(other.getOutputAudioConfig());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -658,6 +944,7 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0_;
 
     private java.lang.Object responseId_ = "";
     /**
@@ -911,7 +1198,8 @@ private static final long serialVersionUID = 0L;
         com.google.cloud.dialogflow.v2beta1.QueryResult, com.google.cloud.dialogflow.v2beta1.QueryResult.Builder, com.google.cloud.dialogflow.v2beta1.QueryResultOrBuilder> queryResultBuilder_;
     /**
      * <pre>
-     * The result of the conversational query or event processing.
+     * The selected results of the conversational query or event processing.
+     * See `alternative_query_results` for additional potential results.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.QueryResult query_result = 3;</code>
@@ -921,7 +1209,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The result of the conversational query or event processing.
+     * The selected results of the conversational query or event processing.
+     * See `alternative_query_results` for additional potential results.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.QueryResult query_result = 3;</code>
@@ -935,7 +1224,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The result of the conversational query or event processing.
+     * The selected results of the conversational query or event processing.
+     * See `alternative_query_results` for additional potential results.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.QueryResult query_result = 3;</code>
@@ -955,7 +1245,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The result of the conversational query or event processing.
+     * The selected results of the conversational query or event processing.
+     * See `alternative_query_results` for additional potential results.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.QueryResult query_result = 3;</code>
@@ -973,7 +1264,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The result of the conversational query or event processing.
+     * The selected results of the conversational query or event processing.
+     * See `alternative_query_results` for additional potential results.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.QueryResult query_result = 3;</code>
@@ -995,7 +1287,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The result of the conversational query or event processing.
+     * The selected results of the conversational query or event processing.
+     * See `alternative_query_results` for additional potential results.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.QueryResult query_result = 3;</code>
@@ -1013,7 +1306,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The result of the conversational query or event processing.
+     * The selected results of the conversational query or event processing.
+     * See `alternative_query_results` for additional potential results.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.QueryResult query_result = 3;</code>
@@ -1025,7 +1319,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The result of the conversational query or event processing.
+     * The selected results of the conversational query or event processing.
+     * See `alternative_query_results` for additional potential results.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.QueryResult query_result = 3;</code>
@@ -1040,7 +1335,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The result of the conversational query or event processing.
+     * The selected results of the conversational query or event processing.
+     * See `alternative_query_results` for additional potential results.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.QueryResult query_result = 3;</code>
@@ -1057,6 +1353,426 @@ private static final long serialVersionUID = 0L;
         queryResult_ = null;
       }
       return queryResultBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.dialogflow.v2beta1.QueryResult> alternativeQueryResults_ =
+      java.util.Collections.emptyList();
+    private void ensureAlternativeQueryResultsIsMutable() {
+      if (!((bitField0_ & 0x00000008) == 0x00000008)) {
+        alternativeQueryResults_ = new java.util.ArrayList<com.google.cloud.dialogflow.v2beta1.QueryResult>(alternativeQueryResults_);
+        bitField0_ |= 0x00000008;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.google.cloud.dialogflow.v2beta1.QueryResult, com.google.cloud.dialogflow.v2beta1.QueryResult.Builder, com.google.cloud.dialogflow.v2beta1.QueryResultOrBuilder> alternativeQueryResultsBuilder_;
+
+    /**
+     * <pre>
+     * If Knowledge Connectors are enabled, there could be more than one result
+     * returned for a given query or event and this field will contain all results
+     * except for the top one which is captured in query_result. The alternative
+     * results are ordered by decreasing
+     * `QueryResult.intent_detection_confidence`. If Knowledge Connectors are
+     * disabled this field will be empty  at which point those additional results
+     * will be surfaced here.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 7;</code>
+     */
+    public java.util.List<com.google.cloud.dialogflow.v2beta1.QueryResult> getAlternativeQueryResultsList() {
+      if (alternativeQueryResultsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(alternativeQueryResults_);
+      } else {
+        return alternativeQueryResultsBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * If Knowledge Connectors are enabled, there could be more than one result
+     * returned for a given query or event and this field will contain all results
+     * except for the top one which is captured in query_result. The alternative
+     * results are ordered by decreasing
+     * `QueryResult.intent_detection_confidence`. If Knowledge Connectors are
+     * disabled this field will be empty  at which point those additional results
+     * will be surfaced here.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 7;</code>
+     */
+    public int getAlternativeQueryResultsCount() {
+      if (alternativeQueryResultsBuilder_ == null) {
+        return alternativeQueryResults_.size();
+      } else {
+        return alternativeQueryResultsBuilder_.getCount();
+      }
+    }
+    /**
+     * <pre>
+     * If Knowledge Connectors are enabled, there could be more than one result
+     * returned for a given query or event and this field will contain all results
+     * except for the top one which is captured in query_result. The alternative
+     * results are ordered by decreasing
+     * `QueryResult.intent_detection_confidence`. If Knowledge Connectors are
+     * disabled this field will be empty  at which point those additional results
+     * will be surfaced here.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 7;</code>
+     */
+    public com.google.cloud.dialogflow.v2beta1.QueryResult getAlternativeQueryResults(int index) {
+      if (alternativeQueryResultsBuilder_ == null) {
+        return alternativeQueryResults_.get(index);
+      } else {
+        return alternativeQueryResultsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * If Knowledge Connectors are enabled, there could be more than one result
+     * returned for a given query or event and this field will contain all results
+     * except for the top one which is captured in query_result. The alternative
+     * results are ordered by decreasing
+     * `QueryResult.intent_detection_confidence`. If Knowledge Connectors are
+     * disabled this field will be empty  at which point those additional results
+     * will be surfaced here.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 7;</code>
+     */
+    public Builder setAlternativeQueryResults(
+        int index, com.google.cloud.dialogflow.v2beta1.QueryResult value) {
+      if (alternativeQueryResultsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAlternativeQueryResultsIsMutable();
+        alternativeQueryResults_.set(index, value);
+        onChanged();
+      } else {
+        alternativeQueryResultsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * If Knowledge Connectors are enabled, there could be more than one result
+     * returned for a given query or event and this field will contain all results
+     * except for the top one which is captured in query_result. The alternative
+     * results are ordered by decreasing
+     * `QueryResult.intent_detection_confidence`. If Knowledge Connectors are
+     * disabled this field will be empty  at which point those additional results
+     * will be surfaced here.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 7;</code>
+     */
+    public Builder setAlternativeQueryResults(
+        int index, com.google.cloud.dialogflow.v2beta1.QueryResult.Builder builderForValue) {
+      if (alternativeQueryResultsBuilder_ == null) {
+        ensureAlternativeQueryResultsIsMutable();
+        alternativeQueryResults_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        alternativeQueryResultsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * If Knowledge Connectors are enabled, there could be more than one result
+     * returned for a given query or event and this field will contain all results
+     * except for the top one which is captured in query_result. The alternative
+     * results are ordered by decreasing
+     * `QueryResult.intent_detection_confidence`. If Knowledge Connectors are
+     * disabled this field will be empty  at which point those additional results
+     * will be surfaced here.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 7;</code>
+     */
+    public Builder addAlternativeQueryResults(com.google.cloud.dialogflow.v2beta1.QueryResult value) {
+      if (alternativeQueryResultsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAlternativeQueryResultsIsMutable();
+        alternativeQueryResults_.add(value);
+        onChanged();
+      } else {
+        alternativeQueryResultsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * If Knowledge Connectors are enabled, there could be more than one result
+     * returned for a given query or event and this field will contain all results
+     * except for the top one which is captured in query_result. The alternative
+     * results are ordered by decreasing
+     * `QueryResult.intent_detection_confidence`. If Knowledge Connectors are
+     * disabled this field will be empty  at which point those additional results
+     * will be surfaced here.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 7;</code>
+     */
+    public Builder addAlternativeQueryResults(
+        int index, com.google.cloud.dialogflow.v2beta1.QueryResult value) {
+      if (alternativeQueryResultsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAlternativeQueryResultsIsMutable();
+        alternativeQueryResults_.add(index, value);
+        onChanged();
+      } else {
+        alternativeQueryResultsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * If Knowledge Connectors are enabled, there could be more than one result
+     * returned for a given query or event and this field will contain all results
+     * except for the top one which is captured in query_result. The alternative
+     * results are ordered by decreasing
+     * `QueryResult.intent_detection_confidence`. If Knowledge Connectors are
+     * disabled this field will be empty  at which point those additional results
+     * will be surfaced here.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 7;</code>
+     */
+    public Builder addAlternativeQueryResults(
+        com.google.cloud.dialogflow.v2beta1.QueryResult.Builder builderForValue) {
+      if (alternativeQueryResultsBuilder_ == null) {
+        ensureAlternativeQueryResultsIsMutable();
+        alternativeQueryResults_.add(builderForValue.build());
+        onChanged();
+      } else {
+        alternativeQueryResultsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * If Knowledge Connectors are enabled, there could be more than one result
+     * returned for a given query or event and this field will contain all results
+     * except for the top one which is captured in query_result. The alternative
+     * results are ordered by decreasing
+     * `QueryResult.intent_detection_confidence`. If Knowledge Connectors are
+     * disabled this field will be empty  at which point those additional results
+     * will be surfaced here.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 7;</code>
+     */
+    public Builder addAlternativeQueryResults(
+        int index, com.google.cloud.dialogflow.v2beta1.QueryResult.Builder builderForValue) {
+      if (alternativeQueryResultsBuilder_ == null) {
+        ensureAlternativeQueryResultsIsMutable();
+        alternativeQueryResults_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        alternativeQueryResultsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * If Knowledge Connectors are enabled, there could be more than one result
+     * returned for a given query or event and this field will contain all results
+     * except for the top one which is captured in query_result. The alternative
+     * results are ordered by decreasing
+     * `QueryResult.intent_detection_confidence`. If Knowledge Connectors are
+     * disabled this field will be empty  at which point those additional results
+     * will be surfaced here.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 7;</code>
+     */
+    public Builder addAllAlternativeQueryResults(
+        java.lang.Iterable<? extends com.google.cloud.dialogflow.v2beta1.QueryResult> values) {
+      if (alternativeQueryResultsBuilder_ == null) {
+        ensureAlternativeQueryResultsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, alternativeQueryResults_);
+        onChanged();
+      } else {
+        alternativeQueryResultsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * If Knowledge Connectors are enabled, there could be more than one result
+     * returned for a given query or event and this field will contain all results
+     * except for the top one which is captured in query_result. The alternative
+     * results are ordered by decreasing
+     * `QueryResult.intent_detection_confidence`. If Knowledge Connectors are
+     * disabled this field will be empty  at which point those additional results
+     * will be surfaced here.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 7;</code>
+     */
+    public Builder clearAlternativeQueryResults() {
+      if (alternativeQueryResultsBuilder_ == null) {
+        alternativeQueryResults_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+      } else {
+        alternativeQueryResultsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * If Knowledge Connectors are enabled, there could be more than one result
+     * returned for a given query or event and this field will contain all results
+     * except for the top one which is captured in query_result. The alternative
+     * results are ordered by decreasing
+     * `QueryResult.intent_detection_confidence`. If Knowledge Connectors are
+     * disabled this field will be empty  at which point those additional results
+     * will be surfaced here.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 7;</code>
+     */
+    public Builder removeAlternativeQueryResults(int index) {
+      if (alternativeQueryResultsBuilder_ == null) {
+        ensureAlternativeQueryResultsIsMutable();
+        alternativeQueryResults_.remove(index);
+        onChanged();
+      } else {
+        alternativeQueryResultsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * If Knowledge Connectors are enabled, there could be more than one result
+     * returned for a given query or event and this field will contain all results
+     * except for the top one which is captured in query_result. The alternative
+     * results are ordered by decreasing
+     * `QueryResult.intent_detection_confidence`. If Knowledge Connectors are
+     * disabled this field will be empty  at which point those additional results
+     * will be surfaced here.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 7;</code>
+     */
+    public com.google.cloud.dialogflow.v2beta1.QueryResult.Builder getAlternativeQueryResultsBuilder(
+        int index) {
+      return getAlternativeQueryResultsFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * If Knowledge Connectors are enabled, there could be more than one result
+     * returned for a given query or event and this field will contain all results
+     * except for the top one which is captured in query_result. The alternative
+     * results are ordered by decreasing
+     * `QueryResult.intent_detection_confidence`. If Knowledge Connectors are
+     * disabled this field will be empty  at which point those additional results
+     * will be surfaced here.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 7;</code>
+     */
+    public com.google.cloud.dialogflow.v2beta1.QueryResultOrBuilder getAlternativeQueryResultsOrBuilder(
+        int index) {
+      if (alternativeQueryResultsBuilder_ == null) {
+        return alternativeQueryResults_.get(index);  } else {
+        return alternativeQueryResultsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * If Knowledge Connectors are enabled, there could be more than one result
+     * returned for a given query or event and this field will contain all results
+     * except for the top one which is captured in query_result. The alternative
+     * results are ordered by decreasing
+     * `QueryResult.intent_detection_confidence`. If Knowledge Connectors are
+     * disabled this field will be empty  at which point those additional results
+     * will be surfaced here.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 7;</code>
+     */
+    public java.util.List<? extends com.google.cloud.dialogflow.v2beta1.QueryResultOrBuilder> 
+         getAlternativeQueryResultsOrBuilderList() {
+      if (alternativeQueryResultsBuilder_ != null) {
+        return alternativeQueryResultsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(alternativeQueryResults_);
+      }
+    }
+    /**
+     * <pre>
+     * If Knowledge Connectors are enabled, there could be more than one result
+     * returned for a given query or event and this field will contain all results
+     * except for the top one which is captured in query_result. The alternative
+     * results are ordered by decreasing
+     * `QueryResult.intent_detection_confidence`. If Knowledge Connectors are
+     * disabled this field will be empty  at which point those additional results
+     * will be surfaced here.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 7;</code>
+     */
+    public com.google.cloud.dialogflow.v2beta1.QueryResult.Builder addAlternativeQueryResultsBuilder() {
+      return getAlternativeQueryResultsFieldBuilder().addBuilder(
+          com.google.cloud.dialogflow.v2beta1.QueryResult.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * If Knowledge Connectors are enabled, there could be more than one result
+     * returned for a given query or event and this field will contain all results
+     * except for the top one which is captured in query_result. The alternative
+     * results are ordered by decreasing
+     * `QueryResult.intent_detection_confidence`. If Knowledge Connectors are
+     * disabled this field will be empty  at which point those additional results
+     * will be surfaced here.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 7;</code>
+     */
+    public com.google.cloud.dialogflow.v2beta1.QueryResult.Builder addAlternativeQueryResultsBuilder(
+        int index) {
+      return getAlternativeQueryResultsFieldBuilder().addBuilder(
+          index, com.google.cloud.dialogflow.v2beta1.QueryResult.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * If Knowledge Connectors are enabled, there could be more than one result
+     * returned for a given query or event and this field will contain all results
+     * except for the top one which is captured in query_result. The alternative
+     * results are ordered by decreasing
+     * `QueryResult.intent_detection_confidence`. If Knowledge Connectors are
+     * disabled this field will be empty  at which point those additional results
+     * will be surfaced here.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 7;</code>
+     */
+    public java.util.List<com.google.cloud.dialogflow.v2beta1.QueryResult.Builder> 
+         getAlternativeQueryResultsBuilderList() {
+      return getAlternativeQueryResultsFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.google.cloud.dialogflow.v2beta1.QueryResult, com.google.cloud.dialogflow.v2beta1.QueryResult.Builder, com.google.cloud.dialogflow.v2beta1.QueryResultOrBuilder> 
+        getAlternativeQueryResultsFieldBuilder() {
+      if (alternativeQueryResultsBuilder_ == null) {
+        alternativeQueryResultsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.dialogflow.v2beta1.QueryResult, com.google.cloud.dialogflow.v2beta1.QueryResult.Builder, com.google.cloud.dialogflow.v2beta1.QueryResultOrBuilder>(
+                alternativeQueryResults_,
+                ((bitField0_ & 0x00000008) == 0x00000008),
+                getParentForChildren(),
+                isClean());
+        alternativeQueryResults_ = null;
+      }
+      return alternativeQueryResultsBuilder_;
     }
 
     private com.google.rpc.Status webhookStatus_ = null;
@@ -1210,6 +1926,218 @@ private static final long serialVersionUID = 0L;
         webhookStatus_ = null;
       }
       return webhookStatusBuilder_;
+    }
+
+    private com.google.protobuf.ByteString outputAudio_ = com.google.protobuf.ByteString.EMPTY;
+    /**
+     * <pre>
+     * The audio data bytes encoded as specified in the request.
+     * </pre>
+     *
+     * <code>bytes output_audio = 5;</code>
+     */
+    public com.google.protobuf.ByteString getOutputAudio() {
+      return outputAudio_;
+    }
+    /**
+     * <pre>
+     * The audio data bytes encoded as specified in the request.
+     * </pre>
+     *
+     * <code>bytes output_audio = 5;</code>
+     */
+    public Builder setOutputAudio(com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      outputAudio_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The audio data bytes encoded as specified in the request.
+     * </pre>
+     *
+     * <code>bytes output_audio = 5;</code>
+     */
+    public Builder clearOutputAudio() {
+      
+      outputAudio_ = getDefaultInstance().getOutputAudio();
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.dialogflow.v2beta1.OutputAudioConfig outputAudioConfig_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.dialogflow.v2beta1.OutputAudioConfig, com.google.cloud.dialogflow.v2beta1.OutputAudioConfig.Builder, com.google.cloud.dialogflow.v2beta1.OutputAudioConfigOrBuilder> outputAudioConfigBuilder_;
+    /**
+     * <pre>
+     * Instructs the speech synthesizer how to generate the output audio. This
+     * field is populated from the agent-level speech synthesizer configuration,
+     * if enabled.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.OutputAudioConfig output_audio_config = 6;</code>
+     */
+    public boolean hasOutputAudioConfig() {
+      return outputAudioConfigBuilder_ != null || outputAudioConfig_ != null;
+    }
+    /**
+     * <pre>
+     * Instructs the speech synthesizer how to generate the output audio. This
+     * field is populated from the agent-level speech synthesizer configuration,
+     * if enabled.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.OutputAudioConfig output_audio_config = 6;</code>
+     */
+    public com.google.cloud.dialogflow.v2beta1.OutputAudioConfig getOutputAudioConfig() {
+      if (outputAudioConfigBuilder_ == null) {
+        return outputAudioConfig_ == null ? com.google.cloud.dialogflow.v2beta1.OutputAudioConfig.getDefaultInstance() : outputAudioConfig_;
+      } else {
+        return outputAudioConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Instructs the speech synthesizer how to generate the output audio. This
+     * field is populated from the agent-level speech synthesizer configuration,
+     * if enabled.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.OutputAudioConfig output_audio_config = 6;</code>
+     */
+    public Builder setOutputAudioConfig(com.google.cloud.dialogflow.v2beta1.OutputAudioConfig value) {
+      if (outputAudioConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        outputAudioConfig_ = value;
+        onChanged();
+      } else {
+        outputAudioConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Instructs the speech synthesizer how to generate the output audio. This
+     * field is populated from the agent-level speech synthesizer configuration,
+     * if enabled.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.OutputAudioConfig output_audio_config = 6;</code>
+     */
+    public Builder setOutputAudioConfig(
+        com.google.cloud.dialogflow.v2beta1.OutputAudioConfig.Builder builderForValue) {
+      if (outputAudioConfigBuilder_ == null) {
+        outputAudioConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        outputAudioConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Instructs the speech synthesizer how to generate the output audio. This
+     * field is populated from the agent-level speech synthesizer configuration,
+     * if enabled.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.OutputAudioConfig output_audio_config = 6;</code>
+     */
+    public Builder mergeOutputAudioConfig(com.google.cloud.dialogflow.v2beta1.OutputAudioConfig value) {
+      if (outputAudioConfigBuilder_ == null) {
+        if (outputAudioConfig_ != null) {
+          outputAudioConfig_ =
+            com.google.cloud.dialogflow.v2beta1.OutputAudioConfig.newBuilder(outputAudioConfig_).mergeFrom(value).buildPartial();
+        } else {
+          outputAudioConfig_ = value;
+        }
+        onChanged();
+      } else {
+        outputAudioConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Instructs the speech synthesizer how to generate the output audio. This
+     * field is populated from the agent-level speech synthesizer configuration,
+     * if enabled.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.OutputAudioConfig output_audio_config = 6;</code>
+     */
+    public Builder clearOutputAudioConfig() {
+      if (outputAudioConfigBuilder_ == null) {
+        outputAudioConfig_ = null;
+        onChanged();
+      } else {
+        outputAudioConfig_ = null;
+        outputAudioConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Instructs the speech synthesizer how to generate the output audio. This
+     * field is populated from the agent-level speech synthesizer configuration,
+     * if enabled.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.OutputAudioConfig output_audio_config = 6;</code>
+     */
+    public com.google.cloud.dialogflow.v2beta1.OutputAudioConfig.Builder getOutputAudioConfigBuilder() {
+      
+      onChanged();
+      return getOutputAudioConfigFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Instructs the speech synthesizer how to generate the output audio. This
+     * field is populated from the agent-level speech synthesizer configuration,
+     * if enabled.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.OutputAudioConfig output_audio_config = 6;</code>
+     */
+    public com.google.cloud.dialogflow.v2beta1.OutputAudioConfigOrBuilder getOutputAudioConfigOrBuilder() {
+      if (outputAudioConfigBuilder_ != null) {
+        return outputAudioConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return outputAudioConfig_ == null ?
+            com.google.cloud.dialogflow.v2beta1.OutputAudioConfig.getDefaultInstance() : outputAudioConfig_;
+      }
+    }
+    /**
+     * <pre>
+     * Instructs the speech synthesizer how to generate the output audio. This
+     * field is populated from the agent-level speech synthesizer configuration,
+     * if enabled.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.OutputAudioConfig output_audio_config = 6;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.dialogflow.v2beta1.OutputAudioConfig, com.google.cloud.dialogflow.v2beta1.OutputAudioConfig.Builder, com.google.cloud.dialogflow.v2beta1.OutputAudioConfigOrBuilder> 
+        getOutputAudioConfigFieldBuilder() {
+      if (outputAudioConfigBuilder_ == null) {
+        outputAudioConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.v2beta1.OutputAudioConfig, com.google.cloud.dialogflow.v2beta1.OutputAudioConfig.Builder, com.google.cloud.dialogflow.v2beta1.OutputAudioConfigOrBuilder>(
+                getOutputAudioConfig(),
+                getParentForChildren(),
+                isClean());
+        outputAudioConfig_ = null;
+      }
+      return outputAudioConfigBuilder_;
     }
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {

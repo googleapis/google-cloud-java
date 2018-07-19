@@ -24,22 +24,22 @@ import java.util.List;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 @javax.annotation.Generated("by GAPIC protoc plugin")
-public class AgentName implements ResourceName {
+public class KnowledgeBaseName implements ResourceName {
 
   private static final PathTemplate PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}/agents/{agent}");
+      PathTemplate.createWithoutUrlEncoding("projects/{project}/knowledgeBases/{knowledge_base}");
 
   private volatile Map<String, String> fieldValuesMap;
 
   private final String project;
-  private final String agent;
+  private final String knowledgeBase;
 
   public String getProject() {
     return project;
   }
 
-  public String getAgent() {
-    return agent;
+  public String getKnowledgeBase() {
+    return knowledgeBase;
   }
 
   public static Builder newBuilder() {
@@ -50,46 +50,46 @@ public class AgentName implements ResourceName {
     return new Builder(this);
   }
 
-  private AgentName(Builder builder) {
+  private KnowledgeBaseName(Builder builder) {
     project = Preconditions.checkNotNull(builder.getProject());
-    agent = Preconditions.checkNotNull(builder.getAgent());
+    knowledgeBase = Preconditions.checkNotNull(builder.getKnowledgeBase());
   }
 
-  public static AgentName of(String project, String agent) {
+  public static KnowledgeBaseName of(String project, String knowledgeBase) {
     return newBuilder()
       .setProject(project)
-      .setAgent(agent)
+      .setKnowledgeBase(knowledgeBase)
       .build();
   }
 
-  public static String format(String project, String agent) {
+  public static String format(String project, String knowledgeBase) {
     return newBuilder()
       .setProject(project)
-      .setAgent(agent)
+      .setKnowledgeBase(knowledgeBase)
       .build()
       .toString();
   }
 
-  public static AgentName parse(String formattedString) {
+  public static KnowledgeBaseName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(formattedString, "AgentName.parse: formattedString not in valid format");
-    return of(matchMap.get("project"), matchMap.get("agent"));
+        PATH_TEMPLATE.validatedMatch(formattedString, "KnowledgeBaseName.parse: formattedString not in valid format");
+    return of(matchMap.get("project"), matchMap.get("knowledge_base"));
   }
 
-  public static List<AgentName> parseList(List<String> formattedStrings) {
-    List<AgentName> list = new ArrayList<>(formattedStrings.size());
+  public static List<KnowledgeBaseName> parseList(List<String> formattedStrings) {
+    List<KnowledgeBaseName> list = new ArrayList<>(formattedStrings.size());
     for (String formattedString : formattedStrings) {
       list.add(parse(formattedString));
     }
     return list;
   }
 
-  public static List<String> toStringList(List<AgentName> values) {
+  public static List<String> toStringList(List<KnowledgeBaseName> values) {
     List<String> list = new ArrayList<String>(values.size());
-    for (AgentName value : values) {
+    for (KnowledgeBaseName value : values) {
       if (value == null) {
         list.add("");
       } else {
@@ -109,7 +109,7 @@ public class AgentName implements ResourceName {
         if (fieldValuesMap == null) {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
           fieldMapBuilder.put("project", project);
-          fieldMapBuilder.put("agent", agent);
+          fieldMapBuilder.put("knowledgeBase", knowledgeBase);
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -123,21 +123,21 @@ public class AgentName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate("project", project, "agent", agent);
+    return PATH_TEMPLATE.instantiate("project", project, "knowledge_base", knowledgeBase);
   }
 
-  /** Builder for AgentName. */
+  /** Builder for KnowledgeBaseName. */
   public static class Builder {
 
     private String project;
-    private String agent;
+    private String knowledgeBase;
 
     public String getProject() {
       return project;
     }
 
-    public String getAgent() {
-      return agent;
+    public String getKnowledgeBase() {
+      return knowledgeBase;
     }
 
     public Builder setProject(String project) {
@@ -145,21 +145,21 @@ public class AgentName implements ResourceName {
       return this;
     }
 
-    public Builder setAgent(String agent) {
-      this.agent = agent;
+    public Builder setKnowledgeBase(String knowledgeBase) {
+      this.knowledgeBase = knowledgeBase;
       return this;
     }
 
     private Builder() {
     }
 
-    private Builder(AgentName agentName) {
-      project = agentName.project;
-      agent = agentName.agent;
+    private Builder(KnowledgeBaseName knowledgeBaseName) {
+      project = knowledgeBaseName.project;
+      knowledgeBase = knowledgeBaseName.knowledgeBase;
     }
 
-    public AgentName build() {
-      return new AgentName(this);
+    public KnowledgeBaseName build() {
+      return new KnowledgeBaseName(this);
     }
   }
 
@@ -168,10 +168,10 @@ public class AgentName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o instanceof AgentName) {
-      AgentName that = (AgentName) o;
+    if (o instanceof KnowledgeBaseName) {
+      KnowledgeBaseName that = (KnowledgeBaseName) o;
       return (this.project.equals(that.project))
-          && (this.agent.equals(that.agent));
+          && (this.knowledgeBase.equals(that.knowledgeBase));
     }
     return false;
   }
@@ -182,7 +182,7 @@ public class AgentName implements ResourceName {
     h *= 1000003;
     h ^= project.hashCode();
     h *= 1000003;
-    h ^= agent.hashCode();
+    h ^= knowledgeBase.hashCode();
     return h;
   }
 }
