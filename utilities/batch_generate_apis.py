@@ -44,6 +44,7 @@ def run_gapic_gen(googleapis):
     generate('google/bigtable/admin/artman_bigtableadmin.yaml')
     generate('google/container/artman_container.yaml')
     generate('google/cloud/dataproc/artman_dataproc_v1.yaml')
+    generate('google/cloud/dataproc/artman_dataproc_v1beta2.yaml')
     generate('google/cloud/dialogflow/artman_dialogflow_v2.yaml')
     generate('google/cloud/dialogflow/artman_dialogflow_v2beta1_java.yaml')
     generate('google/privacy/dlp/artman_dlp_v2.yaml')
