@@ -1,4 +1,6 @@
 com.google.cloud
+com.google.cloud.automl.v1beta1
+com.google.cloud.automl.v1beta1.stub
 com.google.cloud.bigquery
 com.google.cloud.bigquery.datatransfer.v1
 com.google.cloud.bigquery.datatransfer.v1.stub
@@ -92,8 +94,6 @@ com.google.cloud.spanner.v1
 com.google.cloud.spanner.v1.stub
 com.google.cloud.speech.v1
 com.google.cloud.speech.v1.stub
-com.google.cloud.speech.v1beta1
-com.google.cloud.speech.v1beta1.stub
 com.google.cloud.speech.v1p1beta1
 com.google.cloud.speech.v1p1beta1.stub
 com.google.cloud.spi
@@ -132,5 +132,7 @@ com.google.cloud.vision.v1p1beta1
 com.google.cloud.vision.v1p1beta1.stub
 com.google.cloud.vision.v1p2beta1
 com.google.cloud.vision.v1p2beta1.stub
+com.google.cloud.vision.v1p3beta1
+com.google.cloud.vision.v1p3beta1.stub
 com.google.cloud.websecurityscanner.v1alpha
 com.google.cloud.websecurityscanner.v1alpha.stub

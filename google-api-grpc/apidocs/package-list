@@ -1,5 +1,6 @@
 com.google.bigtable.admin.v2
 com.google.bigtable.v2
+com.google.cloud.automl.v1beta1
 com.google.cloud.bigquery.datatransfer.v1
 com.google.cloud.dataproc.v1
 com.google.cloud.dialogflow.v2
@@ -24,6 +25,7 @@ com.google.cloud.videointelligence.v1p1beta1
 com.google.cloud.vision.v1
 com.google.cloud.vision.v1p1beta1
 com.google.cloud.vision.v1p2beta1
+com.google.cloud.vision.v1p3beta1
 com.google.cloud.websecurityscanner.v1alpha
 com.google.container.v1
 com.google.datastore.v1
