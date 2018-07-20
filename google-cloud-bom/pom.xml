@@ -220,11 +220,11 @@
       </dependency>
 
       <!-- API-specific dependencies -->
-      <!-- <dependency>
+      <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-automl</artifactId>
-        <version>0.54.1-beta-SNAPSHOT</version>
-      </dependency> -->
+        <version>0.54.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-automl:current} -->
+      </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-automl-v1beta1</artifactId>
@@ -929,16 +929,16 @@
         <artifactId>grpc-google-cloud-vision-v1p2beta1</artifactId>
         <version>1.18.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-vision-v1p2beta1:current} -->
       </dependency>
-      <!-- <dependency>
+      <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-vision-v1p3beta1</artifactId>
-        <version>0.19.1-SNAPSHOT</version>
+        <version>0.19.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-vision-v1p3beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-vision-v1p3beta1</artifactId>
-        <version>0.19.1-SNAPSHOT</version>
-      </dependency> -->
+        <version>0.19.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-vision-v1p3beta1:current} -->
+      </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-video-intelligence</artifactId>
