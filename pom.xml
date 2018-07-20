@@ -80,9 +80,9 @@
     <module>google-api-grpc</module>
     <module>google-cloud-bom</module>
     <module>google-cloud-clients</module>
-    <!-- <module>google-cloud-examples</module> -->
-    <!-- <module>google-cloud-testing</module> -->
-    <!-- <module>google-cloud-util</module> -->
+    <module>google-cloud-examples</module>
+    <module>google-cloud-testing</module>
+    <module>google-cloud-util</module>
   </modules>
   <build>
     <plugins>
