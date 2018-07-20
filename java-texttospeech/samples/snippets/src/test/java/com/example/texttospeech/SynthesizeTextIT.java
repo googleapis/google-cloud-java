@@ -70,7 +70,7 @@ public class SynthesizeTextIT {
   @Test
   public void testSynthesizeSsml() throws Exception {
     // Act
-    SynthesizeText.synthesizeText(SSML);
+    SynthesizeText.synthesizeSsml(SSML);
 
     // Assert
     outputFile = new File(OUTPUT);
