@@ -32,7 +32,7 @@ This library supports the following Google Cloud Platform services with clients 
 -  [Cloud IoT Core](google-cloud-clients/google-cloud-iot) (Beta)
 -  [Cloud KMS](google-cloud-clients/google-cloud-kms) (Beta)
 -  [Cloud Spanner](google-cloud-clients/google-cloud-spanner) (Beta)
--  [Cloud Speech](google-cloud-clients/google-cloud-speech) (Alpha)
+-  [Cloud Speech](google-cloud-clients/google-cloud-speech) (Beta)
 -  [Cloud Text-to-Speech](google-cloud-clients/google-cloud-texttospeech) (Beta)
 -  [Cloud Video Intelligence](google-cloud-clients/google-cloud-video-intelligence) (Beta)
 -  [Kubernetes Engine](google-cloud-clients/google-cloud-container) (Beta)
