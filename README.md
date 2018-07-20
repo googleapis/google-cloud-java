@@ -26,6 +26,7 @@ This library supports the following Google Cloud Platform services with clients 
 This library supports the following Google Cloud Platform services with clients at a [Beta](#versioning) quality level:
 
 -  [BigQuery Data Transfer](google-cloud-clients/google-cloud-bigquerydatatransfer) (Beta)
+-  [Cloud AutoML](google-cloud-clients/google-cloud-automl) (Beta)
 -  [Cloud Data Loss Prevention](google-cloud-clients/google-cloud-dlp) (Beta)
 -  [Cloud Firestore](google-cloud-clients/google-cloud-firestore) (Beta)
 -  [Cloud IoT Core](google-cloud-clients/google-cloud-iot) (Beta)
@@ -74,7 +75,7 @@ libraryDependencies += "com.google.cloud" % "google-cloud-storage" % "1.36.0"
 ```
 [//]: # ({x-version-update-end})
 
-If you're using IntelliJ or Eclipse, you can add client libraries to your project using these IDE plugins: 
+If you're using IntelliJ or Eclipse, you can add client libraries to your project using these IDE plugins:
 * [Cloud Tools for IntelliJ](https://cloud.google.com/tools/intellij/docs/client-libraries?utm_source=github&utm_medium=google-cloud-java&utm_campaign=ToolsforIntelliJ)
 * [Cloud Tools for Eclipse](https://cloud.google.com/eclipse/docs/libraries?utm_source=github&utm_medium=google-cloud-java&utm_campaign=ToolsforEclipse)
 

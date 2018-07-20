@@ -4,10 +4,10 @@
   <artifactId>google-cloud-automl</artifactId>
   <version>0.54.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-automl:current} -->
   <packaging>jar</packaging>
-  <name>Google Cloud Web Security Scanner</name>
+  <name>Google Cloud Auto ML</name>
   <url>https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-automl</url>
   <description>
-    Java idiomatic client for Google Cloud Web Security Scanner
+    Java idiomatic client for Google Cloud Auto ML
   </description>
   <parent>
     <groupId>com.google.cloud</groupId>
