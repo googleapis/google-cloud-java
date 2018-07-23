@@ -16,6 +16,7 @@
 package com.google.cloud.bigtable.data.v2.internal;
 
 import com.google.api.core.InternalApi;
+import com.google.auto.value.AutoValue;
 import com.google.bigtable.v2.ReadRowsRequest;
 import com.google.bigtable.v2.RowRange;
 import com.google.bigtable.v2.RowSet;
@@ -49,16 +50,18 @@ public final class RowSetUtil {
   private RowSetUtil() {}
 
   /**
-   * Splits the provided {@link RowSet} along the provided splitPoint and returns the second
-   * segment. The segment is represented by a {@link RowSet}, which will contain all keys that are
-   * strictly greater than the splitPoint and all {@link RowRange}s truncated to start right after
-   * the splitPoint.
+   * Splits the provided {@link RowSet} along the provided splitPoint into 2 segments.
+   * The right segment will contain all keys that are strictly greater than the splitPoint and all
+   * {@link RowRange}s truncated to start right after the splitPoint.
    */
-  @Nullable
-  public static RowSet getRemaining(@Nonnull RowSet rowSet, @Nonnull ByteString splitPoint) {
+  @Nonnull
+  public static Split split(@Nonnull RowSet rowSet, @Nonnull ByteString splitPoint) {
     ImmutableSortedSet<ByteString> splitPoints =
         ImmutableSortedSet.orderedBy(ByteStringComparator.INSTANCE).add(splitPoint).build();
-    return split(rowSet, splitPoints, true).get(1);
+
+    List<RowSet> splits = split(rowSet, splitPoints, true);
+
+    return Split.of(splits.get(0), splits.get(1));
   }
 
   /**
@@ -272,6 +275,25 @@ public final class RowSetUtil {
     }
 
     return boundingRange;
+  }
+
+  /**
+   * Represents a RowSet split into 2 non-overlapping parts.
+   *
+   * <p>This class is considered an internal implementation detail and not meant to be used by
+   * applications.
+   */
+  @InternalApi
+  @AutoValue
+  public static abstract class Split {
+    @Nullable
+    public abstract RowSet getLeft();
+    @Nullable
+    public abstract RowSet getRight();
+
+    public static Split of(RowSet left, RowSet right) {
+      return new AutoValue_RowSetUtil_Split(left, right);
+    }
   }
 
   private static final Comparator<RowRange> RANGE_START_COMPARATOR =
