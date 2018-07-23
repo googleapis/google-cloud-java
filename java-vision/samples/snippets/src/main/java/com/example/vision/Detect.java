@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc.
+ * Copyright 2018 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,45 +22,46 @@ import com.google.cloud.storage.Bucket;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.Storage.BlobListOption;
 import com.google.cloud.storage.StorageOptions;
-import com.google.cloud.vision.v1p2beta1.AnnotateFileResponse;
-import com.google.cloud.vision.v1p2beta1.AnnotateFileResponse.Builder;
-import com.google.cloud.vision.v1p2beta1.AnnotateImageRequest;
-import com.google.cloud.vision.v1p2beta1.AnnotateImageResponse;
-import com.google.cloud.vision.v1p2beta1.AsyncAnnotateFileRequest;
-import com.google.cloud.vision.v1p2beta1.AsyncAnnotateFileResponse;
-import com.google.cloud.vision.v1p2beta1.AsyncBatchAnnotateFilesResponse;
-import com.google.cloud.vision.v1p2beta1.BatchAnnotateImagesResponse;
-import com.google.cloud.vision.v1p2beta1.Block;
-import com.google.cloud.vision.v1p2beta1.ColorInfo;
-import com.google.cloud.vision.v1p2beta1.CropHint;
-import com.google.cloud.vision.v1p2beta1.CropHintsAnnotation;
-import com.google.cloud.vision.v1p2beta1.DominantColorsAnnotation;
-import com.google.cloud.vision.v1p2beta1.EntityAnnotation;
-import com.google.cloud.vision.v1p2beta1.FaceAnnotation;
-import com.google.cloud.vision.v1p2beta1.Feature;
-import com.google.cloud.vision.v1p2beta1.Feature.Type;
-import com.google.cloud.vision.v1p2beta1.GcsDestination;
-import com.google.cloud.vision.v1p2beta1.GcsSource;
-import com.google.cloud.vision.v1p2beta1.Image;
-import com.google.cloud.vision.v1p2beta1.ImageAnnotatorClient;
-import com.google.cloud.vision.v1p2beta1.ImageContext;
-import com.google.cloud.vision.v1p2beta1.ImageSource;
-import com.google.cloud.vision.v1p2beta1.InputConfig;
-import com.google.cloud.vision.v1p2beta1.LocationInfo;
-import com.google.cloud.vision.v1p2beta1.OperationMetadata;
-import com.google.cloud.vision.v1p2beta1.OutputConfig;
-import com.google.cloud.vision.v1p2beta1.Page;
-import com.google.cloud.vision.v1p2beta1.Paragraph;
-import com.google.cloud.vision.v1p2beta1.SafeSearchAnnotation;
-import com.google.cloud.vision.v1p2beta1.Symbol;
-import com.google.cloud.vision.v1p2beta1.TextAnnotation;
-import com.google.cloud.vision.v1p2beta1.WebDetection;
-import com.google.cloud.vision.v1p2beta1.WebDetection.WebEntity;
-import com.google.cloud.vision.v1p2beta1.WebDetection.WebImage;
-import com.google.cloud.vision.v1p2beta1.WebDetection.WebLabel;
-import com.google.cloud.vision.v1p2beta1.WebDetection.WebPage;
-import com.google.cloud.vision.v1p2beta1.WebDetectionParams;
-import com.google.cloud.vision.v1p2beta1.Word;
+import com.google.cloud.vision.v1p3beta1.AnnotateFileResponse;
+import com.google.cloud.vision.v1p3beta1.AnnotateFileResponse.Builder;
+import com.google.cloud.vision.v1p3beta1.AnnotateImageRequest;
+import com.google.cloud.vision.v1p3beta1.AnnotateImageResponse;
+import com.google.cloud.vision.v1p3beta1.AsyncAnnotateFileRequest;
+import com.google.cloud.vision.v1p3beta1.AsyncAnnotateFileResponse;
+import com.google.cloud.vision.v1p3beta1.AsyncBatchAnnotateFilesResponse;
+import com.google.cloud.vision.v1p3beta1.BatchAnnotateImagesResponse;
+import com.google.cloud.vision.v1p3beta1.Block;
+import com.google.cloud.vision.v1p3beta1.ColorInfo;
+import com.google.cloud.vision.v1p3beta1.CropHint;
+import com.google.cloud.vision.v1p3beta1.CropHintsAnnotation;
+import com.google.cloud.vision.v1p3beta1.DominantColorsAnnotation;
+import com.google.cloud.vision.v1p3beta1.EntityAnnotation;
+import com.google.cloud.vision.v1p3beta1.FaceAnnotation;
+import com.google.cloud.vision.v1p3beta1.Feature;
+import com.google.cloud.vision.v1p3beta1.Feature.Type;
+import com.google.cloud.vision.v1p3beta1.GcsDestination;
+import com.google.cloud.vision.v1p3beta1.GcsSource;
+import com.google.cloud.vision.v1p3beta1.Image;
+import com.google.cloud.vision.v1p3beta1.ImageAnnotatorClient;
+import com.google.cloud.vision.v1p3beta1.ImageContext;
+import com.google.cloud.vision.v1p3beta1.ImageSource;
+import com.google.cloud.vision.v1p3beta1.InputConfig;
+import com.google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation;
+import com.google.cloud.vision.v1p3beta1.LocationInfo;
+import com.google.cloud.vision.v1p3beta1.OperationMetadata;
+import com.google.cloud.vision.v1p3beta1.OutputConfig;
+import com.google.cloud.vision.v1p3beta1.Page;
+import com.google.cloud.vision.v1p3beta1.Paragraph;
+import com.google.cloud.vision.v1p3beta1.SafeSearchAnnotation;
+import com.google.cloud.vision.v1p3beta1.Symbol;
+import com.google.cloud.vision.v1p3beta1.TextAnnotation;
+import com.google.cloud.vision.v1p3beta1.WebDetection;
+import com.google.cloud.vision.v1p3beta1.WebDetection.WebEntity;
+import com.google.cloud.vision.v1p3beta1.WebDetection.WebImage;
+import com.google.cloud.vision.v1p3beta1.WebDetection.WebLabel;
+import com.google.cloud.vision.v1p3beta1.WebDetection.WebPage;
+import com.google.cloud.vision.v1p3beta1.WebDetectionParams;
+import com.google.cloud.vision.v1p3beta1.Word;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.util.JsonFormat;
 
@@ -101,7 +102,8 @@ public class Detect {
               + "\n"
               + "Commands:\n"
               + "\tfaces | labels | landmarks | logos | text | safe-search | properties"
-              + "| web | web-entities | web-entities-include-geo | crop | ocr \n"
+              + "| web | web-entities | web-entities-include-geo | crop | ocr\n"
+              + "| object-localization| handwritten-ocr\n"
               + "Path:\n\tA file path (ex: ./resources/wakeupcat.jpg) or a URI for a Cloud Storage "
               + "resource (gs://...)\n"
               + "Path to File:\n\tA path to the remote file on Cloud Storage (gs://...)\n"
@@ -189,6 +191,18 @@ public class Detect {
     } else if (command.equals("ocr")) {
       String destPath = args.length > 2 ? args[2] : "";
       detectDocumentsGcs(path, destPath);
+    } else if (command.equals("object-localization")) {
+      if (path.startsWith("gs://")) {
+        detectLocalizedObjectsGcs(path, out);
+      } else {
+        detectLocalizedObjects(path, out);
+      }
+    } else if (command.equals("handwritten-ocr")) {
+      if (path.startsWith("gs://")) {
+        detectHandwrittenOcrGcs(path, out);
+      } else {
+        detectHandwrittenOcr(path, out);
+      }
     }
   }
 
@@ -1423,4 +1437,240 @@ public class Detect {
     }
   }
   // [END vision_async_detect_document_ocr]
+
+  // [START vision_localize_objects]
+  /**
+   * Detects localized objects in the specified local image.
+   *
+   * @param filePath The path to the file to perform localized object detection on.
+   * @param out A {@link PrintStream} to write detected objects to.
+   * @throws Exception on errors while closing the client.
+   * @throws IOException on Input/Output errors.
+   */
+  public static void detectLocalizedObjects(String filePath, PrintStream out)
+      throws Exception, IOException {
+    List<AnnotateImageRequest> requests = new ArrayList<>();
+
+    ByteString imgBytes = ByteString.readFrom(new FileInputStream(filePath));
+
+    Image img = Image.newBuilder().setContent(imgBytes).build();
+    AnnotateImageRequest request =
+        AnnotateImageRequest.newBuilder()
+            .addFeatures(Feature.newBuilder().setType(Type.OBJECT_LOCALIZATION))
+            .setImage(img)
+            .build();
+    requests.add(request);
+
+    // Perform the request
+    try (ImageAnnotatorClient client = ImageAnnotatorClient.create()) {
+      BatchAnnotateImagesResponse response = client.batchAnnotateImages(requests);
+      List<AnnotateImageResponse> responses = response.getResponsesList();
+
+      // Display the results
+      for (AnnotateImageResponse res : responses) {
+        for (LocalizedObjectAnnotation entity : res.getLocalizedObjectAnnotationsList()) {
+          out.format("Object name: %s\n", entity.getName());
+          out.format("Confidence: %s\n", entity.getScore());
+          out.format("Normalized Vertices:\n");
+          entity
+              .getBoundingPoly()
+              .getNormalizedVerticesList()
+              .forEach(vertex -> out.format("- (%s, %s)\n", vertex.getX(), vertex.getY()));
+        }
+      }
+    }
+  }
+  // [END vision_localize_objects]
+
+  // [START vision_localize_objects_uri]
+  /**
+   * Detects localized objects in a remote image on Google Cloud Storage.
+   *
+   * @param gcsPath The path to the remote file on Google Cloud Storage to detect localized objects
+   *     on.
+   * @param out A {@link PrintStream} to write detected objects to.
+   * @throws Exception on errors while closing the client.
+   * @throws IOException on Input/Output errors.
+   */
+  public static void detectLocalizedObjectsGcs(String gcsPath, PrintStream out)
+      throws Exception, IOException {
+    List<AnnotateImageRequest> requests = new ArrayList<>();
+
+    ImageSource imgSource = ImageSource.newBuilder().setGcsImageUri(gcsPath).build();
+    Image img = Image.newBuilder().setSource(imgSource).build();
+
+    AnnotateImageRequest request =
+        AnnotateImageRequest.newBuilder()
+            .addFeatures(Feature.newBuilder().setType(Type.OBJECT_LOCALIZATION))
+            .setImage(img)
+            .build();
+    requests.add(request);
+
+    // Perform the request
+    try (ImageAnnotatorClient client = ImageAnnotatorClient.create()) {
+      BatchAnnotateImagesResponse response = client.batchAnnotateImages(requests);
+      List<AnnotateImageResponse> responses = response.getResponsesList();
+      client.close();
+      // Display the results
+      for (AnnotateImageResponse res : responses) {
+        for (LocalizedObjectAnnotation entity : res.getLocalizedObjectAnnotationsList()) {
+          out.format("Object name: %s\n", entity.getName());
+          out.format("Confidence: %s\n", entity.getScore());
+          out.format("Normalized Vertices:\n");
+          entity
+              .getBoundingPoly()
+              .getNormalizedVerticesList()
+              .forEach(vertex -> out.format("- (%s, %s)\n", vertex.getX(), vertex.getY()));
+        }
+      }
+    }
+  }
+  // [END vision_localize_objects_uri]
+
+  // [START vision_handwritten_ocr]
+  /**
+   * Performs handwritten text detection on a local image file.
+   *
+   * @param filePath The path to the local file to detect handwritten text on.
+   * @param out A {@link PrintStream} to write the results to.
+   * @throws Exception on errors while closing the client.
+   * @throws IOException on Input/Output errors.
+   */
+  public static void detectHandwrittenOcr(String filePath, PrintStream out) throws Exception {
+    List<AnnotateImageRequest> requests = new ArrayList<>();
+
+    ByteString imgBytes = ByteString.readFrom(new FileInputStream(filePath));
+
+    Image img = Image.newBuilder().setContent(imgBytes).build();
+    Feature feat = Feature.newBuilder().setType(Type.DOCUMENT_TEXT_DETECTION).build();
+    // Set the Language Hint codes for handwritten OCR
+    ImageContext imageContext =
+        ImageContext.newBuilder().addLanguageHints("en-t-i0-handwrit").build();
+
+    AnnotateImageRequest request =
+        AnnotateImageRequest.newBuilder()
+            .addFeatures(feat)
+            .setImage(img)
+            .setImageContext(imageContext)
+            .build();
+    requests.add(request);
+
+    try (ImageAnnotatorClient client = ImageAnnotatorClient.create()) {
+      BatchAnnotateImagesResponse response = client.batchAnnotateImages(requests);
+      List<AnnotateImageResponse> responses = response.getResponsesList();
+      client.close();
+
+      for (AnnotateImageResponse res : responses) {
+        if (res.hasError()) {
+          out.printf("Error: %s\n", res.getError().getMessage());
+          return;
+        }
+
+        // For full list of available annotations, see http://g.co/cloud/vision/docs
+        TextAnnotation annotation = res.getFullTextAnnotation();
+        for (Page page : annotation.getPagesList()) {
+          String pageText = "";
+          for (Block block : page.getBlocksList()) {
+            String blockText = "";
+            for (Paragraph para : block.getParagraphsList()) {
+              String paraText = "";
+              for (Word word : para.getWordsList()) {
+                String wordText = "";
+                for (Symbol symbol : word.getSymbolsList()) {
+                  wordText = wordText + symbol.getText();
+                  out.format(
+                      "Symbol text: %s (confidence: %f)\n",
+                      symbol.getText(), symbol.getConfidence());
+                }
+                out.format("Word text: %s (confidence: %f)\n\n", wordText, word.getConfidence());
+                paraText = String.format("%s %s", paraText, wordText);
+              }
+              // Output Example using Paragraph:
+              out.println("\nParagraph: \n" + paraText);
+              out.format("Paragraph Confidence: %f\n", para.getConfidence());
+              blockText = blockText + paraText;
+            }
+            pageText = pageText + blockText;
+          }
+        }
+        out.println("\nComplete annotation:");
+        out.println(annotation.getText());
+      }
+    }
+  }
+  // [END vision_handwritten_ocr]
+
+  // [START vision_handwritten_ocr_uri]
+  /**
+   * Performs handwritten text detection on a remote image on Google Cloud Storage.
+   *
+   * @param gcsPath The path to the remote file on Google Cloud Storage to detect handwritten text
+   *     on.
+   * @param out A {@link PrintStream} to write the results to.
+   * @throws Exception on errors while closing the client.
+   * @throws IOException on Input/Output errors.
+   */
+  public static void detectHandwrittenOcrGcs(String gcsPath, PrintStream out) throws Exception {
+    List<AnnotateImageRequest> requests = new ArrayList<>();
+
+    ImageSource imgSource = ImageSource.newBuilder().setGcsImageUri(gcsPath).build();
+    Image img = Image.newBuilder().setSource(imgSource).build();
+
+    Feature feat = Feature.newBuilder().setType(Type.DOCUMENT_TEXT_DETECTION).build();
+    // Set the parameters for the image
+    ImageContext imageContext =
+        ImageContext.newBuilder().addLanguageHints("en-t-i0-handwrit").build();
+
+    AnnotateImageRequest request =
+        AnnotateImageRequest.newBuilder()
+            .addFeatures(feat)
+            .setImage(img)
+            .setImageContext(imageContext)
+            .build();
+    requests.add(request);
+
+    try (ImageAnnotatorClient client = ImageAnnotatorClient.create()) {
+      BatchAnnotateImagesResponse response = client.batchAnnotateImages(requests);
+      List<AnnotateImageResponse> responses = response.getResponsesList();
+      client.close();
+
+      for (AnnotateImageResponse res : responses) {
+        if (res.hasError()) {
+          out.printf("Error: %s\n", res.getError().getMessage());
+          return;
+        }
+
+        // For full list of available annotations, see http://g.co/cloud/vision/docs
+        TextAnnotation annotation = res.getFullTextAnnotation();
+        for (Page page : annotation.getPagesList()) {
+          String pageText = "";
+          for (Block block : page.getBlocksList()) {
+            String blockText = "";
+            for (Paragraph para : block.getParagraphsList()) {
+              String paraText = "";
+              for (Word word : para.getWordsList()) {
+                String wordText = "";
+                for (Symbol symbol : word.getSymbolsList()) {
+                  wordText = wordText + symbol.getText();
+                  out.format(
+                      "Symbol text: %s (confidence: %f)\n",
+                      symbol.getText(), symbol.getConfidence());
+                }
+                out.format("Word text: %s (confidence: %f)\n\n", wordText, word.getConfidence());
+                paraText = String.format("%s %s", paraText, wordText);
+              }
+              // Output Example using Paragraph:
+              out.println("\nParagraph: \n" + paraText);
+              out.format("Paragraph Confidence: %f\n", para.getConfidence());
+              blockText = blockText + paraText;
+            }
+            pageText = pageText + blockText;
+          }
+        }
+        out.println("\nComplete annotation:");
+        out.println(annotation.getText());
+      }
+    }
+  }
+  // [END vision_handwritten_ocr_uri]
 }

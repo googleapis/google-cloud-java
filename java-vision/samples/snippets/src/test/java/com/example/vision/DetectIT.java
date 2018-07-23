@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc.
+ * Copyright 2018 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,7 +41,8 @@ public class DetectIT {
   private PrintStream out;
   private Detect app;
   private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
-  private static final String BUCKET = PROJECT_ID;
+  //private static final String BUCKET = PROJECT_ID;
+  private static final String BUCKET = "java-docs-samples-testing";
   private static final  String OUTPUT_PREFIX = "OCR_PDF_TEST_OUTPUT";
 
   @Before
@@ -172,6 +173,29 @@ public class DetectIT {
     String got = bout.toString();
     assertThat(got).contains("37%");
   }
+
+  @Test
+  public void testDetectLocalizedObjects() throws Exception {
+    // Act
+    String[] args = {"object-localization", "./resources/puppies.jpg"};
+    Detect.argsHelper(args, out);
+
+    // Assert
+    String got = bout.toString();
+    assertThat(got).contains("Dog");
+  }
+
+  @Test
+  public void testDetectHandwrittenOcr() throws Exception {
+    // Act
+    String[] args = {"handwritten-ocr", "./resources/handwritten.jpg"};
+    Detect.argsHelper(args, out);
+
+    // Assert
+    String got = bout.toString();
+    assertThat(got).contains("Google Cloud Platform");
+  }
+
 
   @Test
   public void testTextGcs() throws Exception {
@@ -374,5 +398,31 @@ public class DetectIT {
     for (Blob blob : blobs.iterateAll()) {
       blob.delete();
     }
+  }
+
+  @Test
+  public void testDetectLocalizedObjectsGcs() throws Exception {
+    // Act
+    String[] args = {"object-localization", "gs://cloud-samples-data/vision/puppies.jpg"};
+    Detect.argsHelper(args, out);
+
+    // Assert
+    String got = bout.toString();
+    assertThat(got).contains("Dog");
+  }
+
+  @Test
+  public void testDetectHandwrittenOcrGcs() throws Exception {
+    // Act
+    String[] args = {
+        "handwritten-ocr",
+        "gs://cloud-samples-data/vision/handwritten.jpg",
+    };
+    Detect.argsHelper(args, out);
+
+    // Assert
+    String got = bout.toString();
+    assertThat(got).contains("Google Cloud Platform");
+
   }
 }
