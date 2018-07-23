@@ -30,7 +30,6 @@ from ruamel import yaml
 
 
 dir_overrides = {
-    'bigtable-admin': 'google-cloud-bigtable',
     'error-reporting': 'google-cloud-errorreporting',
     'spanner-admin-instance': 'google-cloud-spanner',
     'spanner-admin-database': 'google-cloud-spanner'
