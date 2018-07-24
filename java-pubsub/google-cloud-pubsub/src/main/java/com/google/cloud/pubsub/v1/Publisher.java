@@ -203,7 +203,7 @@ public class Publisher {
     final OutstandingPublish outstandingPublish = new OutstandingPublish(publishResult, message);
     messagesBatchLock.lock();
     try {
-      // Check if the next message makes the batch exceed the current batch byte size.
+      // Check if the next message makes the current batch exceed the max batch byte size.
       if (!messagesBatch.isEmpty()
           && hasBatchingBytes()
           && batchedBytes + messageSize >= getMaxBatchBytes()) {
@@ -212,8 +212,8 @@ public class Publisher {
         batchedBytes = 0;
       }
 
-      // Border case if the message to send is greater equals to the max batch size then can't be
-      // included in the current batch and instead sent immediately.
+      // Border case if the message to send is greater or equals to the max batch size then can't
+      // be included in the current batch and instead sent immediately.
       if (!hasBatchingBytes() || messageSize < getMaxBatchBytes()) {
         batchedBytes += messageSize;
         messagesBatch.add(outstandingPublish);
