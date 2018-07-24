@@ -5,7 +5,7 @@
   <version>1.37.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-pubsub:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Pub/Sub</name>
-  <url>https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-pubsub</url>
+  <url>https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-clients/google-cloud-pubsub</url>
   <description>
     Java idiomatic client for Google Cloud Pub/Sub.
   </description>

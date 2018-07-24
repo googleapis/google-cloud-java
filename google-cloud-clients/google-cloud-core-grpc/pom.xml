@@ -5,7 +5,7 @@
   <version>1.37.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-core-grpc:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Core gRPC</name>
-  <url>https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-core-grpc</url>
+  <url>https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-clients/google-cloud-core-grpc</url>
   <description>
     Core gRPC module for the google-cloud.
   </description>

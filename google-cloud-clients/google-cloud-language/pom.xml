@@ -7,7 +7,7 @@
   <version>1.37.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-language:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Natural Language</name>
-  <url>https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-language
+  <url>https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-clients/google-cloud-language
   </url>
   <description>
     Java idiomatic client for Google Cloud Natural Language.

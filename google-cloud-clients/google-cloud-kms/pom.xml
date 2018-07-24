@@ -5,7 +5,7 @@
   <version>0.55.2-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-kms:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud KMS</name>
-  <url>https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-kms</url>
+  <url>https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-clients/google-cloud-kms</url>
   <description>
     Java idiomatic client for Google Cloud KMS
   </description>
