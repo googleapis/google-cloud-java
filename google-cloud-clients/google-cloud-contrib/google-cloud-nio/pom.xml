@@ -5,7 +5,7 @@
   <version>0.55.2-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-nio:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud NIO</name>
-  <url>https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-contrib/google-cloud-nio</url>
+  <url>https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-clients/google-cloud-contrib/google-cloud-nio</url>
   <description>
     FileSystemProvider for Java NIO to access Google Cloud Storage transparently.
   </description>

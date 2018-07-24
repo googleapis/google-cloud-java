@@ -5,7 +5,7 @@
   <version>0.55.2-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-nio-examples:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud NIO Examples</name>
-  <url>https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-contrib/google-cloud-nio-examples</url>
+  <url>https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-clients/google-cloud-contrib/google-cloud-nio-examples</url>
   <description>
     Demonstrates how to use the google-cloud-nio jar to add Google Cloud Storage functionality to legacy code.
   </description>

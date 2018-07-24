@@ -7,7 +7,7 @@
   <version>0.55.2-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-dns:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud DNS</name>
-  <url>https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-dns</url>
+  <url>https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-clients/google-cloud-dns</url>
   <description>
     Java idiomatic client for Google Cloud DNS.
   </description>
