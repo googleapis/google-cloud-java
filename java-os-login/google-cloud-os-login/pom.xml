@@ -5,7 +5,7 @@
   <version>0.55.2-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-os-login:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud OS Login</name>
-  <url>https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-os-login</url>
+  <url>https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-clients/google-cloud-os-login</url>
   <description>
     Java idiomatic client for Google Cloud OS Login.
   </description>
