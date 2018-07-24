@@ -5,7 +5,7 @@
   <version>0.55.2-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigtable:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Bigtable</name>
-  <url>https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-bigtable</url>
+  <url>https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-clients/google-cloud-bigtable</url>
   <description>
     Java idiomatic client for Google Cloud Bigtable.
   </description>
