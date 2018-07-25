@@ -70,7 +70,7 @@ import org.threeten.bp.Duration;
  *
  * <p>The subscriber handles the ack management, by automatically extending the ack deadline while
  * the message is being processed, to then issue the ack or nack of such message when the processing
- * is done. <strong>Note:</strong> message redelivery is still possible.
+ * is done (see {@link Builder#setMaxAckExtensionPeriod(Duration)}). <strong>Note:</strong> message redelivery is still possible.
  *
  * <p>It also provides customizable options that control:
  *
@@ -547,7 +547,7 @@ public class Subscriber extends AbstractApiService {
     }
 
     /**
-     * Set the maximum period a message ack deadline will be extended.
+     * Set the maximum period a message ack deadline will be extended. Defaults to one hour.
      *
      * <p>It is recommended to set this value to a reasonable upper bound of the subscriber time to
      * process any message. This maximum period avoids messages to be <i>locked</i> by a subscriber
