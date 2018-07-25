@@ -19,16 +19,15 @@ import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GrpcTransportChannel;
 import com.google.api.gax.rpc.ClientSettings;
 import com.google.api.gax.rpc.FixedTransportChannelProvider;
-import com.google.cloud.bigtable.data.v2.models.InstanceName;
-import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient;
-import com.google.cloud.bigtable.admin.v2.BigtableTableAdminSettings;
+import com.google.bigtable.admin.v2.BigtableTableAdminGrpc;
+import com.google.bigtable.admin.v2.BigtableTableAdminGrpc.BigtableTableAdminBlockingStub;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
+import com.google.cloud.bigtable.data.v2.models.InstanceName;
 import com.google.common.io.CharStreams;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -38,7 +37,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 import java.util.concurrent.FutureTask;
 import java.util.concurrent.TimeUnit;
@@ -56,7 +54,7 @@ class Emulator {
   private Process process;
   private boolean isStopped = true;
   private ManagedChannel channel;
-  private BigtableTableAdminClient tableAdminClient;
+  private BigtableTableAdminBlockingStub tableAdminClient;
   private BigtableDataClient dataClient;
 
   private static final InstanceName INSTANCE_NAME =
@@ -99,9 +97,9 @@ class Emulator {
 
     channel = createChannel(availablePort);
 
-    tableAdminClient =
-        BigtableTableAdminClient.create(
-            configureClient(BigtableTableAdminSettings.newBuilder()).build());
+    tableAdminClient = BigtableTableAdminGrpc.newBlockingStub(
+        channel
+    );
 
     dataClient =
         BigtableDataClient.create(
@@ -124,7 +122,6 @@ class Emulator {
   void stop() throws Exception {
     try {
       dataClient.close();
-      tableAdminClient.close();
       channel.shutdownNow();
       channel.awaitTermination(1, TimeUnit.MINUTES);
     } finally {
@@ -137,7 +134,7 @@ class Emulator {
     return dataClient;
   }
 
-  BigtableTableAdminClient getTableAdminClient() {
+  BigtableTableAdminBlockingStub getTableAdminClient() {
     return tableAdminClient;
   }
 
