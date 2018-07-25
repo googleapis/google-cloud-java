@@ -50,13 +50,6 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
           case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
@@ -103,6 +96,13 @@ private static final long serialVersionUID = 0L;
             routingPolicyCase_ = 6;
             break;
           }
+          default: {
+            if (!parseUnknownFieldProto3(
+                input, unknownFields, extensionRegistry, tag)) {
+              done = true;
+            }
+            break;
+          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -120,6 +120,7 @@ private static final long serialVersionUID = 0L;
     return com.google.bigtable.admin.v2.InstanceProto.internal_static_google_bigtable_admin_v2_AppProfile_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.bigtable.admin.v2.InstanceProto.internal_static_google_bigtable_admin_v2_AppProfile_fieldAccessorTable
@@ -200,6 +201,7 @@ private static final long serialVersionUID = 0L;
       return com.google.bigtable.admin.v2.InstanceProto.internal_static_google_bigtable_admin_v2_AppProfile_MultiClusterRoutingUseAny_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.bigtable.admin.v2.InstanceProto.internal_static_google_bigtable_admin_v2_AppProfile_MultiClusterRoutingUseAny_fieldAccessorTable
@@ -208,6 +210,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -217,11 +220,13 @@ private static final long serialVersionUID = 0L;
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -329,6 +334,7 @@ private static final long serialVersionUID = 0L;
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -336,6 +342,7 @@ private static final long serialVersionUID = 0L;
     public static Builder newBuilder(com.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -366,6 +373,7 @@ private static final long serialVersionUID = 0L;
         return com.google.bigtable.admin.v2.InstanceProto.internal_static_google_bigtable_admin_v2_AppProfile_MultiClusterRoutingUseAny_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.bigtable.admin.v2.InstanceProto.internal_static_google_bigtable_admin_v2_AppProfile_MultiClusterRoutingUseAny_fieldAccessorTable
@@ -388,20 +396,24 @@ private static final long serialVersionUID = 0L;
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return com.google.bigtable.admin.v2.InstanceProto.internal_static_google_bigtable_admin_v2_AppProfile_MultiClusterRoutingUseAny_descriptor;
       }
 
+      @java.lang.Override
       public com.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny getDefaultInstanceForType() {
         return com.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny.getDefaultInstance();
       }
 
+      @java.lang.Override
       public com.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny build() {
         com.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny result = buildPartial();
         if (!result.isInitialized()) {
@@ -410,38 +422,46 @@ private static final long serialVersionUID = 0L;
         return result;
       }
 
+      @java.lang.Override
       public com.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny buildPartial() {
         com.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny result = new com.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny(this);
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny) {
           return mergeFrom((com.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny)other);
@@ -458,10 +478,12 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -479,11 +501,13 @@ private static final long serialVersionUID = 0L;
         }
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -505,6 +529,7 @@ private static final long serialVersionUID = 0L;
 
     private static final com.google.protobuf.Parser<MultiClusterRoutingUseAny>
         PARSER = new com.google.protobuf.AbstractParser<MultiClusterRoutingUseAny>() {
+      @java.lang.Override
       public MultiClusterRoutingUseAny parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -522,6 +547,7 @@ private static final long serialVersionUID = 0L;
       return PARSER;
     }
 
+    @java.lang.Override
     public com.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -608,13 +634,6 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -624,6 +643,13 @@ private static final long serialVersionUID = 0L;
             case 16: {
 
               allowTransactionalWrites_ = input.readBool();
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -643,6 +669,7 @@ private static final long serialVersionUID = 0L;
       return com.google.bigtable.admin.v2.InstanceProto.internal_static_google_bigtable_admin_v2_AppProfile_SingleClusterRouting_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.bigtable.admin.v2.InstanceProto.internal_static_google_bigtable_admin_v2_AppProfile_SingleClusterRouting_fieldAccessorTable
@@ -708,6 +735,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -717,6 +745,7 @@ private static final long serialVersionUID = 0L;
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getClusterIdBytes().isEmpty()) {
@@ -728,6 +757,7 @@ private static final long serialVersionUID = 0L;
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -851,6 +881,7 @@ private static final long serialVersionUID = 0L;
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -858,6 +889,7 @@ private static final long serialVersionUID = 0L;
     public static Builder newBuilder(com.google.bigtable.admin.v2.AppProfile.SingleClusterRouting prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -887,6 +919,7 @@ private static final long serialVersionUID = 0L;
         return com.google.bigtable.admin.v2.InstanceProto.internal_static_google_bigtable_admin_v2_AppProfile_SingleClusterRouting_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.bigtable.admin.v2.InstanceProto.internal_static_google_bigtable_admin_v2_AppProfile_SingleClusterRouting_fieldAccessorTable
@@ -909,6 +942,7 @@ private static final long serialVersionUID = 0L;
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         clusterId_ = "";
@@ -918,15 +952,18 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return com.google.bigtable.admin.v2.InstanceProto.internal_static_google_bigtable_admin_v2_AppProfile_SingleClusterRouting_descriptor;
       }
 
+      @java.lang.Override
       public com.google.bigtable.admin.v2.AppProfile.SingleClusterRouting getDefaultInstanceForType() {
         return com.google.bigtable.admin.v2.AppProfile.SingleClusterRouting.getDefaultInstance();
       }
 
+      @java.lang.Override
       public com.google.bigtable.admin.v2.AppProfile.SingleClusterRouting build() {
         com.google.bigtable.admin.v2.AppProfile.SingleClusterRouting result = buildPartial();
         if (!result.isInitialized()) {
@@ -935,6 +972,7 @@ private static final long serialVersionUID = 0L;
         return result;
       }
 
+      @java.lang.Override
       public com.google.bigtable.admin.v2.AppProfile.SingleClusterRouting buildPartial() {
         com.google.bigtable.admin.v2.AppProfile.SingleClusterRouting result = new com.google.bigtable.admin.v2.AppProfile.SingleClusterRouting(this);
         result.clusterId_ = clusterId_;
@@ -943,32 +981,39 @@ private static final long serialVersionUID = 0L;
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.google.bigtable.admin.v2.AppProfile.SingleClusterRouting) {
           return mergeFrom((com.google.bigtable.admin.v2.AppProfile.SingleClusterRouting)other);
@@ -992,10 +1037,12 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1146,11 +1193,13 @@ private static final long serialVersionUID = 0L;
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -1172,6 +1221,7 @@ private static final long serialVersionUID = 0L;
 
     private static final com.google.protobuf.Parser<SingleClusterRouting>
         PARSER = new com.google.protobuf.AbstractParser<SingleClusterRouting>() {
+      @java.lang.Override
       public SingleClusterRouting parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1189,6 +1239,7 @@ private static final long serialVersionUID = 0L;
       return PARSER;
     }
 
+    @java.lang.Override
     public com.google.bigtable.admin.v2.AppProfile.SingleClusterRouting getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -1454,6 +1505,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -1463,6 +1515,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
+  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (!getNameBytes().isEmpty()) {
@@ -1483,6 +1536,7 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -1646,6 +1700,7 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
+  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
@@ -1653,6 +1708,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder(com.google.bigtable.admin.v2.AppProfile prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
@@ -1681,6 +1737,7 @@ private static final long serialVersionUID = 0L;
       return com.google.bigtable.admin.v2.InstanceProto.internal_static_google_bigtable_admin_v2_AppProfile_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.bigtable.admin.v2.InstanceProto.internal_static_google_bigtable_admin_v2_AppProfile_fieldAccessorTable
@@ -1703,6 +1760,7 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
       }
     }
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       name_ = "";
@@ -1716,15 +1774,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
       return com.google.bigtable.admin.v2.InstanceProto.internal_static_google_bigtable_admin_v2_AppProfile_descriptor;
     }
 
+    @java.lang.Override
     public com.google.bigtable.admin.v2.AppProfile getDefaultInstanceForType() {
       return com.google.bigtable.admin.v2.AppProfile.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.bigtable.admin.v2.AppProfile build() {
       com.google.bigtable.admin.v2.AppProfile result = buildPartial();
       if (!result.isInitialized()) {
@@ -1733,6 +1794,7 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.bigtable.admin.v2.AppProfile buildPartial() {
       com.google.bigtable.admin.v2.AppProfile result = new com.google.bigtable.admin.v2.AppProfile(this);
       result.name_ = name_;
@@ -1757,32 +1819,39 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.bigtable.admin.v2.AppProfile) {
         return mergeFrom((com.google.bigtable.admin.v2.AppProfile)other);
@@ -1824,10 +1893,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -2516,11 +2587,13 @@ private static final long serialVersionUID = 0L;
       onChanged();;
       return singleClusterRoutingBuilder_;
     }
+    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -2542,6 +2615,7 @@ private static final long serialVersionUID = 0L;
 
   private static final com.google.protobuf.Parser<AppProfile>
       PARSER = new com.google.protobuf.AbstractParser<AppProfile>() {
+    @java.lang.Override
     public AppProfile parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -2559,6 +2633,7 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.bigtable.admin.v2.AppProfile getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
