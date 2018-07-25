@@ -31,12 +31,11 @@ import generate_api
 
 
 def run_gapic_gen(googleapis):
-    def generate(artman_yaml):
+    def generate(artman_yaml, artifact_name=generate_api.JAVA_GAPIC):
         generate_api.run_generate_api(os.path.join(googleapis, artman_yaml),
-                                      generate_api.JAVA_GAPIC)
+                                      artifact_name)
 
-    # TODO Needs to have java_proto called instead of java_grpc
-    #generate('google/datastore/artman_datastore.yaml')
+    generate('google/datastore/artman_datastore.yaml', generate_api.JAVA_PROTO)
 
     generate('google/cloud/automl/artman_automl_v1beta1.yaml')
     generate('google/cloud/bigquery/datatransfer/artman_bigquerydatatransfer.yaml')
