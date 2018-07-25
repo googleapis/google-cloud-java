@@ -11,13 +11,13 @@ heavy development and is not ready for production use. Please continue to use th
 [![Dependency Status](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772/badge.svg?style=flat)](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772)
 
 - [Product Documentation][bigtable-product-docs]
-- [Client Library Documentation][bigtable-client-lib-docs]
+- [Client Library Documentation][bigtable-admin-client-lib-docs]
 
 > Note: This client is under heavy development and should not be used in production.
 
 ## Quickstart
 
-[//]: # ({x-version-update-start:google-cloud-bigtable:released})
+[//]: # ({x-version-update-start:google-cloud-bigtable-admin:released})
 If you are using Maven, add this to your pom.xml file
 ```xml
 <dependency>
@@ -51,8 +51,8 @@ Gmail. The API is split into the data api and the admin api. This client targets
 Be sure to activate the Cloud Bigtable Admin API on the Developer's Console to use Cloud Bigtable
 from your project.
 
-See the [Bigtable client lib docs][bigtable-client-lib-docs] to learn how to
-interact with Cloud Bigtable using this Client Library.
+See the [Bigtable Amin client lib docs][bigtable-admin-client-lib-docs] to learn how to
+interact with Cloud Bigtable Admin API using this Client Library.
 
 ## Getting Started
 #### Prerequisites
@@ -131,4 +131,4 @@ Apache 2.0 - See [LICENSE] for more information.
 [cloud-platform]: https://cloud.google.com/
 [cloud-bigtable]: https://cloud.google.com/bigtable/
 [bigtable-product-docs]: https://cloud.google.com/bigtable/docs/
-[bigtable-client-lib-docs]: https://googlecloudplatform.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/bigtable/package-summary.html
+[bigtable-admin-client-lib-docs]: https://googlecloudplatform.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/bigtable/admin/v2/package-summary.html
