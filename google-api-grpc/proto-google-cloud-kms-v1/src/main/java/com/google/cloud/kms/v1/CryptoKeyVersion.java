@@ -56,13 +56,6 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
           case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
@@ -114,6 +107,13 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          default: {
+            if (!parseUnknownFieldProto3(
+                input, unknownFields, extensionRegistry, tag)) {
+              done = true;
+            }
+            break;
+          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -131,6 +131,7 @@ private static final long serialVersionUID = 0L;
     return com.google.cloud.kms.v1.KmsResourcesProto.internal_static_google_cloud_kms_v1_CryptoKeyVersion_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.kms.v1.KmsResourcesProto.internal_static_google_cloud_kms_v1_CryptoKeyVersion_fieldAccessorTable
@@ -383,6 +384,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState state = 3;</code>
    */
   public com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState getState() {
+    @SuppressWarnings("deprecation")
     com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState result = com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.valueOf(state_);
     return result == null ? com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.UNRECOGNIZED : result;
   }
@@ -499,6 +501,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -508,6 +511,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
+  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (!getNameBytes().isEmpty()) {
@@ -528,6 +532,7 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -688,6 +693,7 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
+  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
@@ -695,6 +701,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder(com.google.cloud.kms.v1.CryptoKeyVersion prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
@@ -730,6 +737,7 @@ private static final long serialVersionUID = 0L;
       return com.google.cloud.kms.v1.KmsResourcesProto.internal_static_google_cloud_kms_v1_CryptoKeyVersion_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.kms.v1.KmsResourcesProto.internal_static_google_cloud_kms_v1_CryptoKeyVersion_fieldAccessorTable
@@ -752,6 +760,7 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
       }
     }
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       name_ = "";
@@ -779,15 +788,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
       return com.google.cloud.kms.v1.KmsResourcesProto.internal_static_google_cloud_kms_v1_CryptoKeyVersion_descriptor;
     }
 
+    @java.lang.Override
     public com.google.cloud.kms.v1.CryptoKeyVersion getDefaultInstanceForType() {
       return com.google.cloud.kms.v1.CryptoKeyVersion.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.cloud.kms.v1.CryptoKeyVersion build() {
       com.google.cloud.kms.v1.CryptoKeyVersion result = buildPartial();
       if (!result.isInitialized()) {
@@ -796,6 +808,7 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.cloud.kms.v1.CryptoKeyVersion buildPartial() {
       com.google.cloud.kms.v1.CryptoKeyVersion result = new com.google.cloud.kms.v1.CryptoKeyVersion(this);
       result.name_ = name_;
@@ -819,32 +832,39 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.kms.v1.CryptoKeyVersion) {
         return mergeFrom((com.google.cloud.kms.v1.CryptoKeyVersion)other);
@@ -877,10 +897,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1024,6 +1046,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState state = 3;</code>
      */
     public com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState getState() {
+      @SuppressWarnings("deprecation")
       com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState result = com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.valueOf(state_);
       return result == null ? com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.UNRECOGNIZED : result;
     }
@@ -1551,11 +1574,13 @@ private static final long serialVersionUID = 0L;
       }
       return destroyEventTimeBuilder_;
     }
+    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -1577,6 +1602,7 @@ private static final long serialVersionUID = 0L;
 
   private static final com.google.protobuf.Parser<CryptoKeyVersion>
       PARSER = new com.google.protobuf.AbstractParser<CryptoKeyVersion>() {
+    @java.lang.Override
     public CryptoKeyVersion parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1594,6 +1620,7 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.cloud.kms.v1.CryptoKeyVersion getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
