@@ -172,7 +172,12 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
    * @see CloudStorageFileSystem#forBucket(String)
    */
   public CloudStorageFileSystemProvider() {
-    this("", futureStorageOptions);
+    this(
+        CloudStorageFileSystem
+            .getDefaultCloudStorageConfiguration()
+            .userProject(),
+        futureStorageOptions
+    );
   }
 
   /**
