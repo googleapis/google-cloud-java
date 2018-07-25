@@ -49,13 +49,6 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
           case 10: {
             com.google.firestore.v1beta1.StructuredQuery.Projection.Builder subBuilder = null;
             if (select_ != null) {
@@ -144,6 +137,13 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          default: {
+            if (!parseUnknownFieldProto3(
+                input, unknownFields, extensionRegistry, tag)) {
+              done = true;
+            }
+            break;
+          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -167,6 +167,7 @@ private static final long serialVersionUID = 0L;
     return com.google.firestore.v1beta1.QueryProto.internal_static_google_firestore_v1beta1_StructuredQuery_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.firestore.v1beta1.QueryProto.internal_static_google_firestore_v1beta1_StructuredQuery_fieldAccessorTable
@@ -389,13 +390,6 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -405,6 +399,13 @@ private static final long serialVersionUID = 0L;
             case 24: {
 
               allDescendants_ = input.readBool();
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -424,6 +425,7 @@ private static final long serialVersionUID = 0L;
       return com.google.firestore.v1beta1.QueryProto.internal_static_google_firestore_v1beta1_StructuredQuery_CollectionSelector_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.firestore.v1beta1.QueryProto.internal_static_google_firestore_v1beta1_StructuredQuery_CollectionSelector_fieldAccessorTable
@@ -491,6 +493,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -500,6 +503,7 @@ private static final long serialVersionUID = 0L;
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getCollectionIdBytes().isEmpty()) {
@@ -511,6 +515,7 @@ private static final long serialVersionUID = 0L;
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -634,6 +639,7 @@ private static final long serialVersionUID = 0L;
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -641,6 +647,7 @@ private static final long serialVersionUID = 0L;
     public static Builder newBuilder(com.google.firestore.v1beta1.StructuredQuery.CollectionSelector prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -668,6 +675,7 @@ private static final long serialVersionUID = 0L;
         return com.google.firestore.v1beta1.QueryProto.internal_static_google_firestore_v1beta1_StructuredQuery_CollectionSelector_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.firestore.v1beta1.QueryProto.internal_static_google_firestore_v1beta1_StructuredQuery_CollectionSelector_fieldAccessorTable
@@ -690,6 +698,7 @@ private static final long serialVersionUID = 0L;
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         collectionId_ = "";
@@ -699,15 +708,18 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return com.google.firestore.v1beta1.QueryProto.internal_static_google_firestore_v1beta1_StructuredQuery_CollectionSelector_descriptor;
       }
 
+      @java.lang.Override
       public com.google.firestore.v1beta1.StructuredQuery.CollectionSelector getDefaultInstanceForType() {
         return com.google.firestore.v1beta1.StructuredQuery.CollectionSelector.getDefaultInstance();
       }
 
+      @java.lang.Override
       public com.google.firestore.v1beta1.StructuredQuery.CollectionSelector build() {
         com.google.firestore.v1beta1.StructuredQuery.CollectionSelector result = buildPartial();
         if (!result.isInitialized()) {
@@ -716,6 +728,7 @@ private static final long serialVersionUID = 0L;
         return result;
       }
 
+      @java.lang.Override
       public com.google.firestore.v1beta1.StructuredQuery.CollectionSelector buildPartial() {
         com.google.firestore.v1beta1.StructuredQuery.CollectionSelector result = new com.google.firestore.v1beta1.StructuredQuery.CollectionSelector(this);
         result.collectionId_ = collectionId_;
@@ -724,32 +737,39 @@ private static final long serialVersionUID = 0L;
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.google.firestore.v1beta1.StructuredQuery.CollectionSelector) {
           return mergeFrom((com.google.firestore.v1beta1.StructuredQuery.CollectionSelector)other);
@@ -773,10 +793,12 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -932,11 +954,13 @@ private static final long serialVersionUID = 0L;
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -958,6 +982,7 @@ private static final long serialVersionUID = 0L;
 
     private static final com.google.protobuf.Parser<CollectionSelector>
         PARSER = new com.google.protobuf.AbstractParser<CollectionSelector>() {
+      @java.lang.Override
       public CollectionSelector parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -975,6 +1000,7 @@ private static final long serialVersionUID = 0L;
       return PARSER;
     }
 
+    @java.lang.Override
     public com.google.firestore.v1beta1.StructuredQuery.CollectionSelector getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -1105,13 +1131,6 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               com.google.firestore.v1beta1.StructuredQuery.CompositeFilter.Builder subBuilder = null;
               if (filterTypeCase_ == 1) {
@@ -1154,6 +1173,13 @@ private static final long serialVersionUID = 0L;
               filterTypeCase_ = 3;
               break;
             }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -1171,6 +1197,7 @@ private static final long serialVersionUID = 0L;
       return com.google.firestore.v1beta1.QueryProto.internal_static_google_firestore_v1beta1_StructuredQuery_Filter_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.firestore.v1beta1.QueryProto.internal_static_google_firestore_v1beta1_StructuredQuery_Filter_fieldAccessorTable
@@ -1333,6 +1360,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -1342,6 +1370,7 @@ private static final long serialVersionUID = 0L;
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (filterTypeCase_ == 1) {
@@ -1356,6 +1385,7 @@ private static final long serialVersionUID = 0L;
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -1510,6 +1540,7 @@ private static final long serialVersionUID = 0L;
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -1517,6 +1548,7 @@ private static final long serialVersionUID = 0L;
     public static Builder newBuilder(com.google.firestore.v1beta1.StructuredQuery.Filter prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -1544,6 +1576,7 @@ private static final long serialVersionUID = 0L;
         return com.google.firestore.v1beta1.QueryProto.internal_static_google_firestore_v1beta1_StructuredQuery_Filter_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.firestore.v1beta1.QueryProto.internal_static_google_firestore_v1beta1_StructuredQuery_Filter_fieldAccessorTable
@@ -1566,6 +1599,7 @@ private static final long serialVersionUID = 0L;
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         filterTypeCase_ = 0;
@@ -1573,15 +1607,18 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return com.google.firestore.v1beta1.QueryProto.internal_static_google_firestore_v1beta1_StructuredQuery_Filter_descriptor;
       }
 
+      @java.lang.Override
       public com.google.firestore.v1beta1.StructuredQuery.Filter getDefaultInstanceForType() {
         return com.google.firestore.v1beta1.StructuredQuery.Filter.getDefaultInstance();
       }
 
+      @java.lang.Override
       public com.google.firestore.v1beta1.StructuredQuery.Filter build() {
         com.google.firestore.v1beta1.StructuredQuery.Filter result = buildPartial();
         if (!result.isInitialized()) {
@@ -1590,6 +1627,7 @@ private static final long serialVersionUID = 0L;
         return result;
       }
 
+      @java.lang.Override
       public com.google.firestore.v1beta1.StructuredQuery.Filter buildPartial() {
         com.google.firestore.v1beta1.StructuredQuery.Filter result = new com.google.firestore.v1beta1.StructuredQuery.Filter(this);
         if (filterTypeCase_ == 1) {
@@ -1618,32 +1656,39 @@ private static final long serialVersionUID = 0L;
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.google.firestore.v1beta1.StructuredQuery.Filter) {
           return mergeFrom((com.google.firestore.v1beta1.StructuredQuery.Filter)other);
@@ -1677,10 +1722,12 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -2229,11 +2276,13 @@ private static final long serialVersionUID = 0L;
         onChanged();;
         return unaryFilterBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -2255,6 +2304,7 @@ private static final long serialVersionUID = 0L;
 
     private static final com.google.protobuf.Parser<Filter>
         PARSER = new com.google.protobuf.AbstractParser<Filter>() {
+      @java.lang.Override
       public Filter parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -2272,6 +2322,7 @@ private static final long serialVersionUID = 0L;
       return PARSER;
     }
 
+    @java.lang.Override
     public com.google.firestore.v1beta1.StructuredQuery.Filter getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -2393,13 +2444,6 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
               int rawValue = input.readEnum();
 
@@ -2413,6 +2457,13 @@ private static final long serialVersionUID = 0L;
               }
               filters_.add(
                   input.readMessage(com.google.firestore.v1beta1.StructuredQuery.Filter.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -2435,6 +2486,7 @@ private static final long serialVersionUID = 0L;
       return com.google.firestore.v1beta1.QueryProto.internal_static_google_firestore_v1beta1_StructuredQuery_CompositeFilter_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.firestore.v1beta1.QueryProto.internal_static_google_firestore_v1beta1_StructuredQuery_CompositeFilter_fieldAccessorTable
@@ -2581,6 +2633,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.firestore.v1beta1.StructuredQuery.CompositeFilter.Operator op = 1;</code>
      */
     public com.google.firestore.v1beta1.StructuredQuery.CompositeFilter.Operator getOp() {
+      @SuppressWarnings("deprecation")
       com.google.firestore.v1beta1.StructuredQuery.CompositeFilter.Operator result = com.google.firestore.v1beta1.StructuredQuery.CompositeFilter.Operator.valueOf(op_);
       return result == null ? com.google.firestore.v1beta1.StructuredQuery.CompositeFilter.Operator.UNRECOGNIZED : result;
     }
@@ -2646,6 +2699,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -2655,6 +2709,7 @@ private static final long serialVersionUID = 0L;
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (op_ != com.google.firestore.v1beta1.StructuredQuery.CompositeFilter.Operator.OPERATOR_UNSPECIFIED.getNumber()) {
@@ -2666,6 +2721,7 @@ private static final long serialVersionUID = 0L;
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -2790,6 +2846,7 @@ private static final long serialVersionUID = 0L;
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -2797,6 +2854,7 @@ private static final long serialVersionUID = 0L;
     public static Builder newBuilder(com.google.firestore.v1beta1.StructuredQuery.CompositeFilter prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -2824,6 +2882,7 @@ private static final long serialVersionUID = 0L;
         return com.google.firestore.v1beta1.QueryProto.internal_static_google_firestore_v1beta1_StructuredQuery_CompositeFilter_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.firestore.v1beta1.QueryProto.internal_static_google_firestore_v1beta1_StructuredQuery_CompositeFilter_fieldAccessorTable
@@ -2847,6 +2906,7 @@ private static final long serialVersionUID = 0L;
           getFiltersFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         op_ = 0;
@@ -2860,15 +2920,18 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return com.google.firestore.v1beta1.QueryProto.internal_static_google_firestore_v1beta1_StructuredQuery_CompositeFilter_descriptor;
       }
 
+      @java.lang.Override
       public com.google.firestore.v1beta1.StructuredQuery.CompositeFilter getDefaultInstanceForType() {
         return com.google.firestore.v1beta1.StructuredQuery.CompositeFilter.getDefaultInstance();
       }
 
+      @java.lang.Override
       public com.google.firestore.v1beta1.StructuredQuery.CompositeFilter build() {
         com.google.firestore.v1beta1.StructuredQuery.CompositeFilter result = buildPartial();
         if (!result.isInitialized()) {
@@ -2877,6 +2940,7 @@ private static final long serialVersionUID = 0L;
         return result;
       }
 
+      @java.lang.Override
       public com.google.firestore.v1beta1.StructuredQuery.CompositeFilter buildPartial() {
         com.google.firestore.v1beta1.StructuredQuery.CompositeFilter result = new com.google.firestore.v1beta1.StructuredQuery.CompositeFilter(this);
         int from_bitField0_ = bitField0_;
@@ -2896,32 +2960,39 @@ private static final long serialVersionUID = 0L;
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.google.firestore.v1beta1.StructuredQuery.CompositeFilter) {
           return mergeFrom((com.google.firestore.v1beta1.StructuredQuery.CompositeFilter)other);
@@ -2967,10 +3038,12 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -3021,6 +3094,7 @@ private static final long serialVersionUID = 0L;
        * <code>.google.firestore.v1beta1.StructuredQuery.CompositeFilter.Operator op = 1;</code>
        */
       public com.google.firestore.v1beta1.StructuredQuery.CompositeFilter.Operator getOp() {
+        @SuppressWarnings("deprecation")
         com.google.firestore.v1beta1.StructuredQuery.CompositeFilter.Operator result = com.google.firestore.v1beta1.StructuredQuery.CompositeFilter.Operator.valueOf(op_);
         return result == null ? com.google.firestore.v1beta1.StructuredQuery.CompositeFilter.Operator.UNRECOGNIZED : result;
       }
@@ -3383,11 +3457,13 @@ private static final long serialVersionUID = 0L;
         }
         return filtersBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -3409,6 +3485,7 @@ private static final long serialVersionUID = 0L;
 
     private static final com.google.protobuf.Parser<CompositeFilter>
         PARSER = new com.google.protobuf.AbstractParser<CompositeFilter>() {
+      @java.lang.Override
       public CompositeFilter parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -3426,6 +3503,7 @@ private static final long serialVersionUID = 0L;
       return PARSER;
     }
 
+    @java.lang.Override
     public com.google.firestore.v1beta1.StructuredQuery.CompositeFilter getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -3547,13 +3625,6 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               com.google.firestore.v1beta1.StructuredQuery.FieldReference.Builder subBuilder = null;
               if (field_ != null) {
@@ -3586,6 +3657,13 @@ private static final long serialVersionUID = 0L;
 
               break;
             }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -3603,6 +3681,7 @@ private static final long serialVersionUID = 0L;
       return com.google.firestore.v1beta1.QueryProto.internal_static_google_firestore_v1beta1_StructuredQuery_FieldFilter_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.firestore.v1beta1.QueryProto.internal_static_google_firestore_v1beta1_StructuredQuery_FieldFilter_fieldAccessorTable
@@ -3851,6 +3930,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.firestore.v1beta1.StructuredQuery.FieldFilter.Operator op = 2;</code>
      */
     public com.google.firestore.v1beta1.StructuredQuery.FieldFilter.Operator getOp() {
+      @SuppressWarnings("deprecation")
       com.google.firestore.v1beta1.StructuredQuery.FieldFilter.Operator result = com.google.firestore.v1beta1.StructuredQuery.FieldFilter.Operator.valueOf(op_);
       return result == null ? com.google.firestore.v1beta1.StructuredQuery.FieldFilter.Operator.UNRECOGNIZED : result;
     }
@@ -3889,6 +3969,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -3898,6 +3979,7 @@ private static final long serialVersionUID = 0L;
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (field_ != null) {
@@ -3912,6 +3994,7 @@ private static final long serialVersionUID = 0L;
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -4052,6 +4135,7 @@ private static final long serialVersionUID = 0L;
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -4059,6 +4143,7 @@ private static final long serialVersionUID = 0L;
     public static Builder newBuilder(com.google.firestore.v1beta1.StructuredQuery.FieldFilter prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -4086,6 +4171,7 @@ private static final long serialVersionUID = 0L;
         return com.google.firestore.v1beta1.QueryProto.internal_static_google_firestore_v1beta1_StructuredQuery_FieldFilter_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.firestore.v1beta1.QueryProto.internal_static_google_firestore_v1beta1_StructuredQuery_FieldFilter_fieldAccessorTable
@@ -4108,6 +4194,7 @@ private static final long serialVersionUID = 0L;
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (fieldBuilder_ == null) {
@@ -4127,15 +4214,18 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return com.google.firestore.v1beta1.QueryProto.internal_static_google_firestore_v1beta1_StructuredQuery_FieldFilter_descriptor;
       }
 
+      @java.lang.Override
       public com.google.firestore.v1beta1.StructuredQuery.FieldFilter getDefaultInstanceForType() {
         return com.google.firestore.v1beta1.StructuredQuery.FieldFilter.getDefaultInstance();
       }
 
+      @java.lang.Override
       public com.google.firestore.v1beta1.StructuredQuery.FieldFilter build() {
         com.google.firestore.v1beta1.StructuredQuery.FieldFilter result = buildPartial();
         if (!result.isInitialized()) {
@@ -4144,6 +4234,7 @@ private static final long serialVersionUID = 0L;
         return result;
       }
 
+      @java.lang.Override
       public com.google.firestore.v1beta1.StructuredQuery.FieldFilter buildPartial() {
         com.google.firestore.v1beta1.StructuredQuery.FieldFilter result = new com.google.firestore.v1beta1.StructuredQuery.FieldFilter(this);
         if (fieldBuilder_ == null) {
@@ -4161,32 +4252,39 @@ private static final long serialVersionUID = 0L;
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.google.firestore.v1beta1.StructuredQuery.FieldFilter) {
           return mergeFrom((com.google.firestore.v1beta1.StructuredQuery.FieldFilter)other);
@@ -4212,10 +4310,12 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -4418,6 +4518,7 @@ private static final long serialVersionUID = 0L;
        * <code>.google.firestore.v1beta1.StructuredQuery.FieldFilter.Operator op = 2;</code>
        */
       public com.google.firestore.v1beta1.StructuredQuery.FieldFilter.Operator getOp() {
+        @SuppressWarnings("deprecation")
         com.google.firestore.v1beta1.StructuredQuery.FieldFilter.Operator result = com.google.firestore.v1beta1.StructuredQuery.FieldFilter.Operator.valueOf(op_);
         return result == null ? com.google.firestore.v1beta1.StructuredQuery.FieldFilter.Operator.UNRECOGNIZED : result;
       }
@@ -4603,11 +4704,13 @@ private static final long serialVersionUID = 0L;
         }
         return valueBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -4629,6 +4732,7 @@ private static final long serialVersionUID = 0L;
 
     private static final com.google.protobuf.Parser<FieldFilter>
         PARSER = new com.google.protobuf.AbstractParser<FieldFilter>() {
+      @java.lang.Override
       public FieldFilter parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -4646,6 +4750,7 @@ private static final long serialVersionUID = 0L;
       return PARSER;
     }
 
+    @java.lang.Override
     public com.google.firestore.v1beta1.StructuredQuery.FieldFilter getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -4744,13 +4849,6 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
               int rawValue = input.readEnum();
 
@@ -4771,6 +4869,13 @@ private static final long serialVersionUID = 0L;
               operandTypeCase_ = 2;
               break;
             }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -4788,6 +4893,7 @@ private static final long serialVersionUID = 0L;
       return com.google.firestore.v1beta1.QueryProto.internal_static_google_firestore_v1beta1_StructuredQuery_UnaryFilter_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.firestore.v1beta1.QueryProto.internal_static_google_firestore_v1beta1_StructuredQuery_UnaryFilter_fieldAccessorTable
@@ -4986,6 +5092,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.firestore.v1beta1.StructuredQuery.UnaryFilter.Operator op = 1;</code>
      */
     public com.google.firestore.v1beta1.StructuredQuery.UnaryFilter.Operator getOp() {
+      @SuppressWarnings("deprecation")
       com.google.firestore.v1beta1.StructuredQuery.UnaryFilter.Operator result = com.google.firestore.v1beta1.StructuredQuery.UnaryFilter.Operator.valueOf(op_);
       return result == null ? com.google.firestore.v1beta1.StructuredQuery.UnaryFilter.Operator.UNRECOGNIZED : result;
     }
@@ -5029,6 +5136,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -5038,6 +5146,7 @@ private static final long serialVersionUID = 0L;
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (op_ != com.google.firestore.v1beta1.StructuredQuery.UnaryFilter.Operator.OPERATOR_UNSPECIFIED.getNumber()) {
@@ -5049,6 +5158,7 @@ private static final long serialVersionUID = 0L;
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -5186,6 +5296,7 @@ private static final long serialVersionUID = 0L;
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -5193,6 +5304,7 @@ private static final long serialVersionUID = 0L;
     public static Builder newBuilder(com.google.firestore.v1beta1.StructuredQuery.UnaryFilter prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -5220,6 +5332,7 @@ private static final long serialVersionUID = 0L;
         return com.google.firestore.v1beta1.QueryProto.internal_static_google_firestore_v1beta1_StructuredQuery_UnaryFilter_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.firestore.v1beta1.QueryProto.internal_static_google_firestore_v1beta1_StructuredQuery_UnaryFilter_fieldAccessorTable
@@ -5242,6 +5355,7 @@ private static final long serialVersionUID = 0L;
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         op_ = 0;
@@ -5251,15 +5365,18 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return com.google.firestore.v1beta1.QueryProto.internal_static_google_firestore_v1beta1_StructuredQuery_UnaryFilter_descriptor;
       }
 
+      @java.lang.Override
       public com.google.firestore.v1beta1.StructuredQuery.UnaryFilter getDefaultInstanceForType() {
         return com.google.firestore.v1beta1.StructuredQuery.UnaryFilter.getDefaultInstance();
       }
 
+      @java.lang.Override
       public com.google.firestore.v1beta1.StructuredQuery.UnaryFilter build() {
         com.google.firestore.v1beta1.StructuredQuery.UnaryFilter result = buildPartial();
         if (!result.isInitialized()) {
@@ -5268,6 +5385,7 @@ private static final long serialVersionUID = 0L;
         return result;
       }
 
+      @java.lang.Override
       public com.google.firestore.v1beta1.StructuredQuery.UnaryFilter buildPartial() {
         com.google.firestore.v1beta1.StructuredQuery.UnaryFilter result = new com.google.firestore.v1beta1.StructuredQuery.UnaryFilter(this);
         result.op_ = op_;
@@ -5283,32 +5401,39 @@ private static final long serialVersionUID = 0L;
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.google.firestore.v1beta1.StructuredQuery.UnaryFilter) {
           return mergeFrom((com.google.firestore.v1beta1.StructuredQuery.UnaryFilter)other);
@@ -5337,10 +5462,12 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -5405,6 +5532,7 @@ private static final long serialVersionUID = 0L;
        * <code>.google.firestore.v1beta1.StructuredQuery.UnaryFilter.Operator op = 1;</code>
        */
       public com.google.firestore.v1beta1.StructuredQuery.UnaryFilter.Operator getOp() {
+        @SuppressWarnings("deprecation")
         com.google.firestore.v1beta1.StructuredQuery.UnaryFilter.Operator result = com.google.firestore.v1beta1.StructuredQuery.UnaryFilter.Operator.valueOf(op_);
         return result == null ? com.google.firestore.v1beta1.StructuredQuery.UnaryFilter.Operator.UNRECOGNIZED : result;
       }
@@ -5609,11 +5737,13 @@ private static final long serialVersionUID = 0L;
         onChanged();;
         return fieldBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -5635,6 +5765,7 @@ private static final long serialVersionUID = 0L;
 
     private static final com.google.protobuf.Parser<UnaryFilter>
         PARSER = new com.google.protobuf.AbstractParser<UnaryFilter>() {
+      @java.lang.Override
       public UnaryFilter parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -5652,6 +5783,7 @@ private static final long serialVersionUID = 0L;
       return PARSER;
     }
 
+    @java.lang.Override
     public com.google.firestore.v1beta1.StructuredQuery.UnaryFilter getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -5748,13 +5880,6 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               com.google.firestore.v1beta1.StructuredQuery.FieldReference.Builder subBuilder = null;
               if (field_ != null) {
@@ -5774,6 +5899,13 @@ private static final long serialVersionUID = 0L;
               direction_ = rawValue;
               break;
             }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -5791,6 +5923,7 @@ private static final long serialVersionUID = 0L;
       return com.google.firestore.v1beta1.QueryProto.internal_static_google_firestore_v1beta1_StructuredQuery_Order_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.firestore.v1beta1.QueryProto.internal_static_google_firestore_v1beta1_StructuredQuery_Order_fieldAccessorTable
@@ -5851,11 +5984,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.firestore.v1beta1.StructuredQuery.Direction direction = 2;</code>
      */
     public com.google.firestore.v1beta1.StructuredQuery.Direction getDirection() {
+      @SuppressWarnings("deprecation")
       com.google.firestore.v1beta1.StructuredQuery.Direction result = com.google.firestore.v1beta1.StructuredQuery.Direction.valueOf(direction_);
       return result == null ? com.google.firestore.v1beta1.StructuredQuery.Direction.UNRECOGNIZED : result;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -5865,6 +6000,7 @@ private static final long serialVersionUID = 0L;
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (field_ != null) {
@@ -5876,6 +6012,7 @@ private static final long serialVersionUID = 0L;
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -6003,6 +6140,7 @@ private static final long serialVersionUID = 0L;
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -6010,6 +6148,7 @@ private static final long serialVersionUID = 0L;
     public static Builder newBuilder(com.google.firestore.v1beta1.StructuredQuery.Order prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -6037,6 +6176,7 @@ private static final long serialVersionUID = 0L;
         return com.google.firestore.v1beta1.QueryProto.internal_static_google_firestore_v1beta1_StructuredQuery_Order_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.firestore.v1beta1.QueryProto.internal_static_google_firestore_v1beta1_StructuredQuery_Order_fieldAccessorTable
@@ -6059,6 +6199,7 @@ private static final long serialVersionUID = 0L;
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (fieldBuilder_ == null) {
@@ -6072,15 +6213,18 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return com.google.firestore.v1beta1.QueryProto.internal_static_google_firestore_v1beta1_StructuredQuery_Order_descriptor;
       }
 
+      @java.lang.Override
       public com.google.firestore.v1beta1.StructuredQuery.Order getDefaultInstanceForType() {
         return com.google.firestore.v1beta1.StructuredQuery.Order.getDefaultInstance();
       }
 
+      @java.lang.Override
       public com.google.firestore.v1beta1.StructuredQuery.Order build() {
         com.google.firestore.v1beta1.StructuredQuery.Order result = buildPartial();
         if (!result.isInitialized()) {
@@ -6089,6 +6233,7 @@ private static final long serialVersionUID = 0L;
         return result;
       }
 
+      @java.lang.Override
       public com.google.firestore.v1beta1.StructuredQuery.Order buildPartial() {
         com.google.firestore.v1beta1.StructuredQuery.Order result = new com.google.firestore.v1beta1.StructuredQuery.Order(this);
         if (fieldBuilder_ == null) {
@@ -6101,32 +6246,39 @@ private static final long serialVersionUID = 0L;
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.google.firestore.v1beta1.StructuredQuery.Order) {
           return mergeFrom((com.google.firestore.v1beta1.StructuredQuery.Order)other);
@@ -6149,10 +6301,12 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -6355,6 +6509,7 @@ private static final long serialVersionUID = 0L;
        * <code>.google.firestore.v1beta1.StructuredQuery.Direction direction = 2;</code>
        */
       public com.google.firestore.v1beta1.StructuredQuery.Direction getDirection() {
+        @SuppressWarnings("deprecation")
         com.google.firestore.v1beta1.StructuredQuery.Direction result = com.google.firestore.v1beta1.StructuredQuery.Direction.valueOf(direction_);
         return result == null ? com.google.firestore.v1beta1.StructuredQuery.Direction.UNRECOGNIZED : result;
       }
@@ -6387,11 +6542,13 @@ private static final long serialVersionUID = 0L;
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -6413,6 +6570,7 @@ private static final long serialVersionUID = 0L;
 
     private static final com.google.protobuf.Parser<Order>
         PARSER = new com.google.protobuf.AbstractParser<Order>() {
+      @java.lang.Override
       public Order parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -6430,6 +6588,7 @@ private static final long serialVersionUID = 0L;
       return PARSER;
     }
 
+    @java.lang.Override
     public com.google.firestore.v1beta1.StructuredQuery.Order getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -6494,17 +6653,17 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              fieldPath_ = s;
+              break;
+            }
             default: {
               if (!parseUnknownFieldProto3(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              fieldPath_ = s;
               break;
             }
           }
@@ -6524,6 +6683,7 @@ private static final long serialVersionUID = 0L;
       return com.google.firestore.v1beta1.QueryProto.internal_static_google_firestore_v1beta1_StructuredQuery_FieldReference_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.firestore.v1beta1.QueryProto.internal_static_google_firestore_v1beta1_StructuredQuery_FieldReference_fieldAccessorTable
@@ -6566,6 +6726,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -6575,6 +6736,7 @@ private static final long serialVersionUID = 0L;
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getFieldPathBytes().isEmpty()) {
@@ -6583,6 +6745,7 @@ private static final long serialVersionUID = 0L;
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -6697,6 +6860,7 @@ private static final long serialVersionUID = 0L;
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -6704,6 +6868,7 @@ private static final long serialVersionUID = 0L;
     public static Builder newBuilder(com.google.firestore.v1beta1.StructuredQuery.FieldReference prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -6731,6 +6896,7 @@ private static final long serialVersionUID = 0L;
         return com.google.firestore.v1beta1.QueryProto.internal_static_google_firestore_v1beta1_StructuredQuery_FieldReference_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.firestore.v1beta1.QueryProto.internal_static_google_firestore_v1beta1_StructuredQuery_FieldReference_fieldAccessorTable
@@ -6753,6 +6919,7 @@ private static final long serialVersionUID = 0L;
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         fieldPath_ = "";
@@ -6760,15 +6927,18 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return com.google.firestore.v1beta1.QueryProto.internal_static_google_firestore_v1beta1_StructuredQuery_FieldReference_descriptor;
       }
 
+      @java.lang.Override
       public com.google.firestore.v1beta1.StructuredQuery.FieldReference getDefaultInstanceForType() {
         return com.google.firestore.v1beta1.StructuredQuery.FieldReference.getDefaultInstance();
       }
 
+      @java.lang.Override
       public com.google.firestore.v1beta1.StructuredQuery.FieldReference build() {
         com.google.firestore.v1beta1.StructuredQuery.FieldReference result = buildPartial();
         if (!result.isInitialized()) {
@@ -6777,6 +6947,7 @@ private static final long serialVersionUID = 0L;
         return result;
       }
 
+      @java.lang.Override
       public com.google.firestore.v1beta1.StructuredQuery.FieldReference buildPartial() {
         com.google.firestore.v1beta1.StructuredQuery.FieldReference result = new com.google.firestore.v1beta1.StructuredQuery.FieldReference(this);
         result.fieldPath_ = fieldPath_;
@@ -6784,32 +6955,39 @@ private static final long serialVersionUID = 0L;
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.google.firestore.v1beta1.StructuredQuery.FieldReference) {
           return mergeFrom((com.google.firestore.v1beta1.StructuredQuery.FieldReference)other);
@@ -6830,10 +7008,12 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -6920,11 +7100,13 @@ private static final long serialVersionUID = 0L;
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -6946,6 +7128,7 @@ private static final long serialVersionUID = 0L;
 
     private static final com.google.protobuf.Parser<FieldReference>
         PARSER = new com.google.protobuf.AbstractParser<FieldReference>() {
+      @java.lang.Override
       public FieldReference parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -6963,6 +7146,7 @@ private static final long serialVersionUID = 0L;
       return PARSER;
     }
 
+    @java.lang.Override
     public com.google.firestore.v1beta1.StructuredQuery.FieldReference getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -7071,13 +7255,6 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 18: {
               if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
                 fields_ = new java.util.ArrayList<com.google.firestore.v1beta1.StructuredQuery.FieldReference>();
@@ -7085,6 +7262,13 @@ private static final long serialVersionUID = 0L;
               }
               fields_.add(
                   input.readMessage(com.google.firestore.v1beta1.StructuredQuery.FieldReference.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -7107,6 +7291,7 @@ private static final long serialVersionUID = 0L;
       return com.google.firestore.v1beta1.QueryProto.internal_static_google_firestore_v1beta1_StructuredQuery_Projection_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.firestore.v1beta1.QueryProto.internal_static_google_firestore_v1beta1_StructuredQuery_Projection_fieldAccessorTable
@@ -7180,6 +7365,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -7189,6 +7375,7 @@ private static final long serialVersionUID = 0L;
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < fields_.size(); i++) {
@@ -7197,6 +7384,7 @@ private static final long serialVersionUID = 0L;
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -7314,6 +7502,7 @@ private static final long serialVersionUID = 0L;
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -7321,6 +7510,7 @@ private static final long serialVersionUID = 0L;
     public static Builder newBuilder(com.google.firestore.v1beta1.StructuredQuery.Projection prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -7348,6 +7538,7 @@ private static final long serialVersionUID = 0L;
         return com.google.firestore.v1beta1.QueryProto.internal_static_google_firestore_v1beta1_StructuredQuery_Projection_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.firestore.v1beta1.QueryProto.internal_static_google_firestore_v1beta1_StructuredQuery_Projection_fieldAccessorTable
@@ -7371,6 +7562,7 @@ private static final long serialVersionUID = 0L;
           getFieldsFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (fieldsBuilder_ == null) {
@@ -7382,15 +7574,18 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return com.google.firestore.v1beta1.QueryProto.internal_static_google_firestore_v1beta1_StructuredQuery_Projection_descriptor;
       }
 
+      @java.lang.Override
       public com.google.firestore.v1beta1.StructuredQuery.Projection getDefaultInstanceForType() {
         return com.google.firestore.v1beta1.StructuredQuery.Projection.getDefaultInstance();
       }
 
+      @java.lang.Override
       public com.google.firestore.v1beta1.StructuredQuery.Projection build() {
         com.google.firestore.v1beta1.StructuredQuery.Projection result = buildPartial();
         if (!result.isInitialized()) {
@@ -7399,6 +7594,7 @@ private static final long serialVersionUID = 0L;
         return result;
       }
 
+      @java.lang.Override
       public com.google.firestore.v1beta1.StructuredQuery.Projection buildPartial() {
         com.google.firestore.v1beta1.StructuredQuery.Projection result = new com.google.firestore.v1beta1.StructuredQuery.Projection(this);
         int from_bitField0_ = bitField0_;
@@ -7415,32 +7611,39 @@ private static final long serialVersionUID = 0L;
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.google.firestore.v1beta1.StructuredQuery.Projection) {
           return mergeFrom((com.google.firestore.v1beta1.StructuredQuery.Projection)other);
@@ -7483,10 +7686,12 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -7853,11 +8058,13 @@ private static final long serialVersionUID = 0L;
         }
         return fieldsBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -7879,6 +8086,7 @@ private static final long serialVersionUID = 0L;
 
     private static final com.google.protobuf.Parser<Projection>
         PARSER = new com.google.protobuf.AbstractParser<Projection>() {
+      @java.lang.Override
       public Projection parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -7896,6 +8104,7 @@ private static final long serialVersionUID = 0L;
       return PARSER;
     }
 
+    @java.lang.Override
     public com.google.firestore.v1beta1.StructuredQuery.Projection getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -8265,6 +8474,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -8274,6 +8484,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
+  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (select_ != null) {
@@ -8303,6 +8514,7 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -8503,6 +8715,7 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
+  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
@@ -8510,6 +8723,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder(com.google.firestore.v1beta1.StructuredQuery prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
@@ -8537,6 +8751,7 @@ private static final long serialVersionUID = 0L;
       return com.google.firestore.v1beta1.QueryProto.internal_static_google_firestore_v1beta1_StructuredQuery_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.firestore.v1beta1.QueryProto.internal_static_google_firestore_v1beta1_StructuredQuery_fieldAccessorTable
@@ -8561,6 +8776,7 @@ private static final long serialVersionUID = 0L;
         getOrderByFieldBuilder();
       }
     }
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       if (selectBuilder_ == null) {
@@ -8610,15 +8826,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
       return com.google.firestore.v1beta1.QueryProto.internal_static_google_firestore_v1beta1_StructuredQuery_descriptor;
     }
 
+    @java.lang.Override
     public com.google.firestore.v1beta1.StructuredQuery getDefaultInstanceForType() {
       return com.google.firestore.v1beta1.StructuredQuery.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.firestore.v1beta1.StructuredQuery build() {
       com.google.firestore.v1beta1.StructuredQuery result = buildPartial();
       if (!result.isInitialized()) {
@@ -8627,6 +8846,7 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.firestore.v1beta1.StructuredQuery buildPartial() {
       com.google.firestore.v1beta1.StructuredQuery result = new com.google.firestore.v1beta1.StructuredQuery(this);
       int from_bitField0_ = bitField0_;
@@ -8680,32 +8900,39 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.firestore.v1beta1.StructuredQuery) {
         return mergeFrom((com.google.firestore.v1beta1.StructuredQuery)other);
@@ -8792,10 +9019,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -10499,11 +10728,13 @@ private static final long serialVersionUID = 0L;
       }
       return limitBuilder_;
     }
+    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -10525,6 +10756,7 @@ private static final long serialVersionUID = 0L;
 
   private static final com.google.protobuf.Parser<StructuredQuery>
       PARSER = new com.google.protobuf.AbstractParser<StructuredQuery>() {
+    @java.lang.Override
     public StructuredQuery parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -10542,6 +10774,7 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.firestore.v1beta1.StructuredQuery getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }

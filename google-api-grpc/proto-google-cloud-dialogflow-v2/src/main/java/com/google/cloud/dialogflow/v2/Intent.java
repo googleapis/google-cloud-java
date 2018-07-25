@@ -66,13 +66,6 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
           case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
@@ -215,6 +208,13 @@ private static final long serialVersionUID = 0L;
             mlDisabled_ = input.readBool();
             break;
           }
+          default: {
+            if (!parseUnknownFieldProto3(
+                input, unknownFields, extensionRegistry, tag)) {
+              done = true;
+            }
+            break;
+          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -256,6 +256,7 @@ private static final long serialVersionUID = 0L;
     return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_fieldAccessorTable
@@ -551,13 +552,6 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -584,6 +578,13 @@ private static final long serialVersionUID = 0L;
               timesAddedCount_ = input.readInt32();
               break;
             }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -604,6 +605,7 @@ private static final long serialVersionUID = 0L;
       return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_TrainingPhrase_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_TrainingPhrase_fieldAccessorTable
@@ -875,13 +877,6 @@ private static final long serialVersionUID = 0L;
               case 0:
                 done = true;
                 break;
-              default: {
-                if (!parseUnknownFieldProto3(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
               case 10: {
                 java.lang.String s = input.readStringRequireUtf8();
 
@@ -905,6 +900,13 @@ private static final long serialVersionUID = 0L;
                 userDefined_ = input.readBool();
                 break;
               }
+              default: {
+                if (!parseUnknownFieldProto3(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
             }
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -922,6 +924,7 @@ private static final long serialVersionUID = 0L;
         return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_TrainingPhrase_Part_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_TrainingPhrase_Part_fieldAccessorTable
@@ -1080,6 +1083,7 @@ private static final long serialVersionUID = 0L;
       }
 
       private byte memoizedIsInitialized = -1;
+      @java.lang.Override
       public final boolean isInitialized() {
         byte isInitialized = memoizedIsInitialized;
         if (isInitialized == 1) return true;
@@ -1089,6 +1093,7 @@ private static final long serialVersionUID = 0L;
         return true;
       }
 
+      @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
         if (!getTextBytes().isEmpty()) {
@@ -1106,6 +1111,7 @@ private static final long serialVersionUID = 0L;
         unknownFields.writeTo(output);
       }
 
+      @java.lang.Override
       public int getSerializedSize() {
         int size = memoizedSize;
         if (size != -1) return size;
@@ -1243,6 +1249,7 @@ private static final long serialVersionUID = 0L;
             .parseWithIOException(PARSER, input, extensionRegistry);
       }
 
+      @java.lang.Override
       public Builder newBuilderForType() { return newBuilder(); }
       public static Builder newBuilder() {
         return DEFAULT_INSTANCE.toBuilder();
@@ -1250,6 +1257,7 @@ private static final long serialVersionUID = 0L;
       public static Builder newBuilder(com.google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part prototype) {
         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
       }
+      @java.lang.Override
       public Builder toBuilder() {
         return this == DEFAULT_INSTANCE
             ? new Builder() : new Builder().mergeFrom(this);
@@ -1277,6 +1285,7 @@ private static final long serialVersionUID = 0L;
           return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_TrainingPhrase_Part_descriptor;
         }
 
+        @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
           return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_TrainingPhrase_Part_fieldAccessorTable
@@ -1299,6 +1308,7 @@ private static final long serialVersionUID = 0L;
                   .alwaysUseFieldBuilders) {
           }
         }
+        @java.lang.Override
         public Builder clear() {
           super.clear();
           text_ = "";
@@ -1312,15 +1322,18 @@ private static final long serialVersionUID = 0L;
           return this;
         }
 
+        @java.lang.Override
         public com.google.protobuf.Descriptors.Descriptor
             getDescriptorForType() {
           return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_TrainingPhrase_Part_descriptor;
         }
 
+        @java.lang.Override
         public com.google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part getDefaultInstanceForType() {
           return com.google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part.getDefaultInstance();
         }
 
+        @java.lang.Override
         public com.google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part build() {
           com.google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part result = buildPartial();
           if (!result.isInitialized()) {
@@ -1329,6 +1342,7 @@ private static final long serialVersionUID = 0L;
           return result;
         }
 
+        @java.lang.Override
         public com.google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part buildPartial() {
           com.google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part result = new com.google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part(this);
           result.text_ = text_;
@@ -1339,32 +1353,39 @@ private static final long serialVersionUID = 0L;
           return result;
         }
 
+        @java.lang.Override
         public Builder clone() {
           return (Builder) super.clone();
         }
+        @java.lang.Override
         public Builder setField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             java.lang.Object value) {
           return (Builder) super.setField(field, value);
         }
+        @java.lang.Override
         public Builder clearField(
             com.google.protobuf.Descriptors.FieldDescriptor field) {
           return (Builder) super.clearField(field);
         }
+        @java.lang.Override
         public Builder clearOneof(
             com.google.protobuf.Descriptors.OneofDescriptor oneof) {
           return (Builder) super.clearOneof(oneof);
         }
+        @java.lang.Override
         public Builder setRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             int index, java.lang.Object value) {
           return (Builder) super.setRepeatedField(field, index, value);
         }
+        @java.lang.Override
         public Builder addRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             java.lang.Object value) {
           return (Builder) super.addRepeatedField(field, value);
         }
+        @java.lang.Override
         public Builder mergeFrom(com.google.protobuf.Message other) {
           if (other instanceof com.google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part) {
             return mergeFrom((com.google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part)other);
@@ -1396,10 +1417,12 @@ private static final long serialVersionUID = 0L;
           return this;
         }
 
+        @java.lang.Override
         public final boolean isInitialized() {
           return true;
         }
 
+        @java.lang.Override
         public Builder mergeFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1750,11 +1773,13 @@ private static final long serialVersionUID = 0L;
           onChanged();
           return this;
         }
+        @java.lang.Override
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
           return super.setUnknownFieldsProto3(unknownFields);
         }
 
+        @java.lang.Override
         public final Builder mergeUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
           return super.mergeUnknownFields(unknownFields);
@@ -1776,6 +1801,7 @@ private static final long serialVersionUID = 0L;
 
       private static final com.google.protobuf.Parser<Part>
           PARSER = new com.google.protobuf.AbstractParser<Part>() {
+        @java.lang.Override
         public Part parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1793,6 +1819,7 @@ private static final long serialVersionUID = 0L;
         return PARSER;
       }
 
+      @java.lang.Override
       public com.google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
       }
@@ -1862,6 +1889,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.dialogflow.v2.Intent.TrainingPhrase.Type type = 2;</code>
      */
     public com.google.cloud.dialogflow.v2.Intent.TrainingPhrase.Type getType() {
+      @SuppressWarnings("deprecation")
       com.google.cloud.dialogflow.v2.Intent.TrainingPhrase.Type result = com.google.cloud.dialogflow.v2.Intent.TrainingPhrase.Type.valueOf(type_);
       return result == null ? com.google.cloud.dialogflow.v2.Intent.TrainingPhrase.Type.UNRECOGNIZED : result;
     }
@@ -1947,6 +1975,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -1956,6 +1985,7 @@ private static final long serialVersionUID = 0L;
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getNameBytes().isEmpty()) {
@@ -1973,6 +2003,7 @@ private static final long serialVersionUID = 0L;
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -2112,6 +2143,7 @@ private static final long serialVersionUID = 0L;
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -2119,6 +2151,7 @@ private static final long serialVersionUID = 0L;
     public static Builder newBuilder(com.google.cloud.dialogflow.v2.Intent.TrainingPhrase prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -2146,6 +2179,7 @@ private static final long serialVersionUID = 0L;
         return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_TrainingPhrase_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_TrainingPhrase_fieldAccessorTable
@@ -2169,6 +2203,7 @@ private static final long serialVersionUID = 0L;
           getPartsFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         name_ = "";
@@ -2186,15 +2221,18 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_TrainingPhrase_descriptor;
       }
 
+      @java.lang.Override
       public com.google.cloud.dialogflow.v2.Intent.TrainingPhrase getDefaultInstanceForType() {
         return com.google.cloud.dialogflow.v2.Intent.TrainingPhrase.getDefaultInstance();
       }
 
+      @java.lang.Override
       public com.google.cloud.dialogflow.v2.Intent.TrainingPhrase build() {
         com.google.cloud.dialogflow.v2.Intent.TrainingPhrase result = buildPartial();
         if (!result.isInitialized()) {
@@ -2203,6 +2241,7 @@ private static final long serialVersionUID = 0L;
         return result;
       }
 
+      @java.lang.Override
       public com.google.cloud.dialogflow.v2.Intent.TrainingPhrase buildPartial() {
         com.google.cloud.dialogflow.v2.Intent.TrainingPhrase result = new com.google.cloud.dialogflow.v2.Intent.TrainingPhrase(this);
         int from_bitField0_ = bitField0_;
@@ -2224,32 +2263,39 @@ private static final long serialVersionUID = 0L;
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.google.cloud.dialogflow.v2.Intent.TrainingPhrase) {
           return mergeFrom((com.google.cloud.dialogflow.v2.Intent.TrainingPhrase)other);
@@ -2302,10 +2348,12 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -2445,6 +2493,7 @@ private static final long serialVersionUID = 0L;
        * <code>.google.cloud.dialogflow.v2.Intent.TrainingPhrase.Type type = 2;</code>
        */
       public com.google.cloud.dialogflow.v2.Intent.TrainingPhrase.Type getType() {
+        @SuppressWarnings("deprecation")
         com.google.cloud.dialogflow.v2.Intent.TrainingPhrase.Type result = com.google.cloud.dialogflow.v2.Intent.TrainingPhrase.Type.valueOf(type_);
         return result == null ? com.google.cloud.dialogflow.v2.Intent.TrainingPhrase.Type.UNRECOGNIZED : result;
       }
@@ -2869,11 +2918,13 @@ private static final long serialVersionUID = 0L;
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -2895,6 +2946,7 @@ private static final long serialVersionUID = 0L;
 
     private static final com.google.protobuf.Parser<TrainingPhrase>
         PARSER = new com.google.protobuf.AbstractParser<TrainingPhrase>() {
+      @java.lang.Override
       public TrainingPhrase parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -2912,6 +2964,7 @@ private static final long serialVersionUID = 0L;
       return PARSER;
     }
 
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2.Intent.TrainingPhrase getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -3142,13 +3195,6 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -3198,6 +3244,13 @@ private static final long serialVersionUID = 0L;
               isList_ = input.readBool();
               break;
             }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -3218,6 +3271,7 @@ private static final long serialVersionUID = 0L;
       return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Parameter_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Parameter_fieldAccessorTable
@@ -3534,6 +3588,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -3543,6 +3598,7 @@ private static final long serialVersionUID = 0L;
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getNameBytes().isEmpty()) {
@@ -3572,6 +3628,7 @@ private static final long serialVersionUID = 0L;
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -3746,6 +3803,7 @@ private static final long serialVersionUID = 0L;
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -3753,6 +3811,7 @@ private static final long serialVersionUID = 0L;
     public static Builder newBuilder(com.google.cloud.dialogflow.v2.Intent.Parameter prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -3780,6 +3839,7 @@ private static final long serialVersionUID = 0L;
         return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Parameter_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Parameter_fieldAccessorTable
@@ -3802,6 +3862,7 @@ private static final long serialVersionUID = 0L;
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         name_ = "";
@@ -3823,15 +3884,18 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Parameter_descriptor;
       }
 
+      @java.lang.Override
       public com.google.cloud.dialogflow.v2.Intent.Parameter getDefaultInstanceForType() {
         return com.google.cloud.dialogflow.v2.Intent.Parameter.getDefaultInstance();
       }
 
+      @java.lang.Override
       public com.google.cloud.dialogflow.v2.Intent.Parameter build() {
         com.google.cloud.dialogflow.v2.Intent.Parameter result = buildPartial();
         if (!result.isInitialized()) {
@@ -3840,6 +3904,7 @@ private static final long serialVersionUID = 0L;
         return result;
       }
 
+      @java.lang.Override
       public com.google.cloud.dialogflow.v2.Intent.Parameter buildPartial() {
         com.google.cloud.dialogflow.v2.Intent.Parameter result = new com.google.cloud.dialogflow.v2.Intent.Parameter(this);
         int from_bitField0_ = bitField0_;
@@ -3861,32 +3926,39 @@ private static final long serialVersionUID = 0L;
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.google.cloud.dialogflow.v2.Intent.Parameter) {
           return mergeFrom((com.google.cloud.dialogflow.v2.Intent.Parameter)other);
@@ -3939,10 +4011,12 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -4677,11 +4751,13 @@ private static final long serialVersionUID = 0L;
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -4703,6 +4779,7 @@ private static final long serialVersionUID = 0L;
 
     private static final com.google.protobuf.Parser<Parameter>
         PARSER = new com.google.protobuf.AbstractParser<Parameter>() {
+      @java.lang.Override
       public Parameter parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -4720,6 +4797,7 @@ private static final long serialVersionUID = 0L;
       return PARSER;
     }
 
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2.Intent.Parameter getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -5074,13 +5152,6 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               com.google.cloud.dialogflow.v2.Intent.Message.Text.Builder subBuilder = null;
               if (messageCase_ == 1) {
@@ -5241,6 +5312,13 @@ private static final long serialVersionUID = 0L;
               messageCase_ = 12;
               break;
             }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -5258,6 +5336,7 @@ private static final long serialVersionUID = 0L;
       return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_fieldAccessorTable
@@ -5705,13 +5784,6 @@ private static final long serialVersionUID = 0L;
               case 0:
                 done = true;
                 break;
-              default: {
-                if (!parseUnknownFieldProto3(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
               case 10: {
                 java.lang.String s = input.readStringRequireUtf8();
                 if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -5719,6 +5791,13 @@ private static final long serialVersionUID = 0L;
                   mutable_bitField0_ |= 0x00000001;
                 }
                 text_.add(s);
+                break;
+              }
+              default: {
+                if (!parseUnknownFieldProto3(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
                 break;
               }
             }
@@ -5741,6 +5820,7 @@ private static final long serialVersionUID = 0L;
         return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_Text_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_Text_fieldAccessorTable
@@ -5794,6 +5874,7 @@ private static final long serialVersionUID = 0L;
       }
 
       private byte memoizedIsInitialized = -1;
+      @java.lang.Override
       public final boolean isInitialized() {
         byte isInitialized = memoizedIsInitialized;
         if (isInitialized == 1) return true;
@@ -5803,6 +5884,7 @@ private static final long serialVersionUID = 0L;
         return true;
       }
 
+      @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
         for (int i = 0; i < text_.size(); i++) {
@@ -5811,6 +5893,7 @@ private static final long serialVersionUID = 0L;
         unknownFields.writeTo(output);
       }
 
+      @java.lang.Override
       public int getSerializedSize() {
         int size = memoizedSize;
         if (size != -1) return size;
@@ -5932,6 +6015,7 @@ private static final long serialVersionUID = 0L;
             .parseWithIOException(PARSER, input, extensionRegistry);
       }
 
+      @java.lang.Override
       public Builder newBuilderForType() { return newBuilder(); }
       public static Builder newBuilder() {
         return DEFAULT_INSTANCE.toBuilder();
@@ -5939,6 +6023,7 @@ private static final long serialVersionUID = 0L;
       public static Builder newBuilder(com.google.cloud.dialogflow.v2.Intent.Message.Text prototype) {
         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
       }
+      @java.lang.Override
       public Builder toBuilder() {
         return this == DEFAULT_INSTANCE
             ? new Builder() : new Builder().mergeFrom(this);
@@ -5966,6 +6051,7 @@ private static final long serialVersionUID = 0L;
           return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_Text_descriptor;
         }
 
+        @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
           return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_Text_fieldAccessorTable
@@ -5988,6 +6074,7 @@ private static final long serialVersionUID = 0L;
                   .alwaysUseFieldBuilders) {
           }
         }
+        @java.lang.Override
         public Builder clear() {
           super.clear();
           text_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -5995,15 +6082,18 @@ private static final long serialVersionUID = 0L;
           return this;
         }
 
+        @java.lang.Override
         public com.google.protobuf.Descriptors.Descriptor
             getDescriptorForType() {
           return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_Text_descriptor;
         }
 
+        @java.lang.Override
         public com.google.cloud.dialogflow.v2.Intent.Message.Text getDefaultInstanceForType() {
           return com.google.cloud.dialogflow.v2.Intent.Message.Text.getDefaultInstance();
         }
 
+        @java.lang.Override
         public com.google.cloud.dialogflow.v2.Intent.Message.Text build() {
           com.google.cloud.dialogflow.v2.Intent.Message.Text result = buildPartial();
           if (!result.isInitialized()) {
@@ -6012,6 +6102,7 @@ private static final long serialVersionUID = 0L;
           return result;
         }
 
+        @java.lang.Override
         public com.google.cloud.dialogflow.v2.Intent.Message.Text buildPartial() {
           com.google.cloud.dialogflow.v2.Intent.Message.Text result = new com.google.cloud.dialogflow.v2.Intent.Message.Text(this);
           int from_bitField0_ = bitField0_;
@@ -6024,32 +6115,39 @@ private static final long serialVersionUID = 0L;
           return result;
         }
 
+        @java.lang.Override
         public Builder clone() {
           return (Builder) super.clone();
         }
+        @java.lang.Override
         public Builder setField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             java.lang.Object value) {
           return (Builder) super.setField(field, value);
         }
+        @java.lang.Override
         public Builder clearField(
             com.google.protobuf.Descriptors.FieldDescriptor field) {
           return (Builder) super.clearField(field);
         }
+        @java.lang.Override
         public Builder clearOneof(
             com.google.protobuf.Descriptors.OneofDescriptor oneof) {
           return (Builder) super.clearOneof(oneof);
         }
+        @java.lang.Override
         public Builder setRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             int index, java.lang.Object value) {
           return (Builder) super.setRepeatedField(field, index, value);
         }
+        @java.lang.Override
         public Builder addRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             java.lang.Object value) {
           return (Builder) super.addRepeatedField(field, value);
         }
+        @java.lang.Override
         public Builder mergeFrom(com.google.protobuf.Message other) {
           if (other instanceof com.google.cloud.dialogflow.v2.Intent.Message.Text) {
             return mergeFrom((com.google.cloud.dialogflow.v2.Intent.Message.Text)other);
@@ -6076,10 +6174,12 @@ private static final long serialVersionUID = 0L;
           return this;
         }
 
+        @java.lang.Override
         public final boolean isInitialized() {
           return true;
         }
 
+        @java.lang.Override
         public Builder mergeFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -6228,11 +6328,13 @@ private static final long serialVersionUID = 0L;
           onChanged();
           return this;
         }
+        @java.lang.Override
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
           return super.setUnknownFieldsProto3(unknownFields);
         }
 
+        @java.lang.Override
         public final Builder mergeUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
           return super.mergeUnknownFields(unknownFields);
@@ -6254,6 +6356,7 @@ private static final long serialVersionUID = 0L;
 
       private static final com.google.protobuf.Parser<Text>
           PARSER = new com.google.protobuf.AbstractParser<Text>() {
+        @java.lang.Override
         public Text parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -6271,6 +6374,7 @@ private static final long serialVersionUID = 0L;
         return PARSER;
       }
 
+      @java.lang.Override
       public com.google.cloud.dialogflow.v2.Intent.Message.Text getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
       }
@@ -6364,13 +6468,6 @@ private static final long serialVersionUID = 0L;
               case 0:
                 done = true;
                 break;
-              default: {
-                if (!parseUnknownFieldProto3(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
               case 10: {
                 java.lang.String s = input.readStringRequireUtf8();
 
@@ -6381,6 +6478,13 @@ private static final long serialVersionUID = 0L;
                 java.lang.String s = input.readStringRequireUtf8();
 
                 accessibilityText_ = s;
+                break;
+              }
+              default: {
+                if (!parseUnknownFieldProto3(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
                 break;
               }
             }
@@ -6400,6 +6504,7 @@ private static final long serialVersionUID = 0L;
         return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_Image_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_Image_fieldAccessorTable
@@ -6494,6 +6599,7 @@ private static final long serialVersionUID = 0L;
       }
 
       private byte memoizedIsInitialized = -1;
+      @java.lang.Override
       public final boolean isInitialized() {
         byte isInitialized = memoizedIsInitialized;
         if (isInitialized == 1) return true;
@@ -6503,6 +6609,7 @@ private static final long serialVersionUID = 0L;
         return true;
       }
 
+      @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
         if (!getImageUriBytes().isEmpty()) {
@@ -6514,6 +6621,7 @@ private static final long serialVersionUID = 0L;
         unknownFields.writeTo(output);
       }
 
+      @java.lang.Override
       public int getSerializedSize() {
         int size = memoizedSize;
         if (size != -1) return size;
@@ -6635,6 +6743,7 @@ private static final long serialVersionUID = 0L;
             .parseWithIOException(PARSER, input, extensionRegistry);
       }
 
+      @java.lang.Override
       public Builder newBuilderForType() { return newBuilder(); }
       public static Builder newBuilder() {
         return DEFAULT_INSTANCE.toBuilder();
@@ -6642,6 +6751,7 @@ private static final long serialVersionUID = 0L;
       public static Builder newBuilder(com.google.cloud.dialogflow.v2.Intent.Message.Image prototype) {
         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
       }
+      @java.lang.Override
       public Builder toBuilder() {
         return this == DEFAULT_INSTANCE
             ? new Builder() : new Builder().mergeFrom(this);
@@ -6669,6 +6779,7 @@ private static final long serialVersionUID = 0L;
           return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_Image_descriptor;
         }
 
+        @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
           return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_Image_fieldAccessorTable
@@ -6691,6 +6802,7 @@ private static final long serialVersionUID = 0L;
                   .alwaysUseFieldBuilders) {
           }
         }
+        @java.lang.Override
         public Builder clear() {
           super.clear();
           imageUri_ = "";
@@ -6700,15 +6812,18 @@ private static final long serialVersionUID = 0L;
           return this;
         }
 
+        @java.lang.Override
         public com.google.protobuf.Descriptors.Descriptor
             getDescriptorForType() {
           return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_Image_descriptor;
         }
 
+        @java.lang.Override
         public com.google.cloud.dialogflow.v2.Intent.Message.Image getDefaultInstanceForType() {
           return com.google.cloud.dialogflow.v2.Intent.Message.Image.getDefaultInstance();
         }
 
+        @java.lang.Override
         public com.google.cloud.dialogflow.v2.Intent.Message.Image build() {
           com.google.cloud.dialogflow.v2.Intent.Message.Image result = buildPartial();
           if (!result.isInitialized()) {
@@ -6717,6 +6832,7 @@ private static final long serialVersionUID = 0L;
           return result;
         }
 
+        @java.lang.Override
         public com.google.cloud.dialogflow.v2.Intent.Message.Image buildPartial() {
           com.google.cloud.dialogflow.v2.Intent.Message.Image result = new com.google.cloud.dialogflow.v2.Intent.Message.Image(this);
           result.imageUri_ = imageUri_;
@@ -6725,32 +6841,39 @@ private static final long serialVersionUID = 0L;
           return result;
         }
 
+        @java.lang.Override
         public Builder clone() {
           return (Builder) super.clone();
         }
+        @java.lang.Override
         public Builder setField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             java.lang.Object value) {
           return (Builder) super.setField(field, value);
         }
+        @java.lang.Override
         public Builder clearField(
             com.google.protobuf.Descriptors.FieldDescriptor field) {
           return (Builder) super.clearField(field);
         }
+        @java.lang.Override
         public Builder clearOneof(
             com.google.protobuf.Descriptors.OneofDescriptor oneof) {
           return (Builder) super.clearOneof(oneof);
         }
+        @java.lang.Override
         public Builder setRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             int index, java.lang.Object value) {
           return (Builder) super.setRepeatedField(field, index, value);
         }
+        @java.lang.Override
         public Builder addRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             java.lang.Object value) {
           return (Builder) super.addRepeatedField(field, value);
         }
+        @java.lang.Override
         public Builder mergeFrom(com.google.protobuf.Message other) {
           if (other instanceof com.google.cloud.dialogflow.v2.Intent.Message.Image) {
             return mergeFrom((com.google.cloud.dialogflow.v2.Intent.Message.Image)other);
@@ -6775,10 +6898,12 @@ private static final long serialVersionUID = 0L;
           return this;
         }
 
+        @java.lang.Override
         public final boolean isInitialized() {
           return true;
         }
 
+        @java.lang.Override
         public Builder mergeFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -6979,11 +7104,13 @@ private static final long serialVersionUID = 0L;
           onChanged();
           return this;
         }
+        @java.lang.Override
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
           return super.setUnknownFieldsProto3(unknownFields);
         }
 
+        @java.lang.Override
         public final Builder mergeUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
           return super.mergeUnknownFields(unknownFields);
@@ -7005,6 +7132,7 @@ private static final long serialVersionUID = 0L;
 
       private static final com.google.protobuf.Parser<Image>
           PARSER = new com.google.protobuf.AbstractParser<Image>() {
+        @java.lang.Override
         public Image parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -7022,6 +7150,7 @@ private static final long serialVersionUID = 0L;
         return PARSER;
       }
 
+      @java.lang.Override
       public com.google.cloud.dialogflow.v2.Intent.Message.Image getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
       }
@@ -7130,13 +7259,6 @@ private static final long serialVersionUID = 0L;
               case 0:
                 done = true;
                 break;
-              default: {
-                if (!parseUnknownFieldProto3(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
               case 10: {
                 java.lang.String s = input.readStringRequireUtf8();
 
@@ -7150,6 +7272,13 @@ private static final long serialVersionUID = 0L;
                   mutable_bitField0_ |= 0x00000002;
                 }
                 quickReplies_.add(s);
+                break;
+              }
+              default: {
+                if (!parseUnknownFieldProto3(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
                 break;
               }
             }
@@ -7172,6 +7301,7 @@ private static final long serialVersionUID = 0L;
         return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_QuickReplies_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_QuickReplies_fieldAccessorTable
@@ -7268,6 +7398,7 @@ private static final long serialVersionUID = 0L;
       }
 
       private byte memoizedIsInitialized = -1;
+      @java.lang.Override
       public final boolean isInitialized() {
         byte isInitialized = memoizedIsInitialized;
         if (isInitialized == 1) return true;
@@ -7277,6 +7408,7 @@ private static final long serialVersionUID = 0L;
         return true;
       }
 
+      @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
         if (!getTitleBytes().isEmpty()) {
@@ -7288,6 +7420,7 @@ private static final long serialVersionUID = 0L;
         unknownFields.writeTo(output);
       }
 
+      @java.lang.Override
       public int getSerializedSize() {
         int size = memoizedSize;
         if (size != -1) return size;
@@ -7416,6 +7549,7 @@ private static final long serialVersionUID = 0L;
             .parseWithIOException(PARSER, input, extensionRegistry);
       }
 
+      @java.lang.Override
       public Builder newBuilderForType() { return newBuilder(); }
       public static Builder newBuilder() {
         return DEFAULT_INSTANCE.toBuilder();
@@ -7423,6 +7557,7 @@ private static final long serialVersionUID = 0L;
       public static Builder newBuilder(com.google.cloud.dialogflow.v2.Intent.Message.QuickReplies prototype) {
         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
       }
+      @java.lang.Override
       public Builder toBuilder() {
         return this == DEFAULT_INSTANCE
             ? new Builder() : new Builder().mergeFrom(this);
@@ -7450,6 +7585,7 @@ private static final long serialVersionUID = 0L;
           return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_QuickReplies_descriptor;
         }
 
+        @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
           return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_QuickReplies_fieldAccessorTable
@@ -7472,6 +7608,7 @@ private static final long serialVersionUID = 0L;
                   .alwaysUseFieldBuilders) {
           }
         }
+        @java.lang.Override
         public Builder clear() {
           super.clear();
           title_ = "";
@@ -7481,15 +7618,18 @@ private static final long serialVersionUID = 0L;
           return this;
         }
 
+        @java.lang.Override
         public com.google.protobuf.Descriptors.Descriptor
             getDescriptorForType() {
           return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_QuickReplies_descriptor;
         }
 
+        @java.lang.Override
         public com.google.cloud.dialogflow.v2.Intent.Message.QuickReplies getDefaultInstanceForType() {
           return com.google.cloud.dialogflow.v2.Intent.Message.QuickReplies.getDefaultInstance();
         }
 
+        @java.lang.Override
         public com.google.cloud.dialogflow.v2.Intent.Message.QuickReplies build() {
           com.google.cloud.dialogflow.v2.Intent.Message.QuickReplies result = buildPartial();
           if (!result.isInitialized()) {
@@ -7498,6 +7638,7 @@ private static final long serialVersionUID = 0L;
           return result;
         }
 
+        @java.lang.Override
         public com.google.cloud.dialogflow.v2.Intent.Message.QuickReplies buildPartial() {
           com.google.cloud.dialogflow.v2.Intent.Message.QuickReplies result = new com.google.cloud.dialogflow.v2.Intent.Message.QuickReplies(this);
           int from_bitField0_ = bitField0_;
@@ -7513,32 +7654,39 @@ private static final long serialVersionUID = 0L;
           return result;
         }
 
+        @java.lang.Override
         public Builder clone() {
           return (Builder) super.clone();
         }
+        @java.lang.Override
         public Builder setField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             java.lang.Object value) {
           return (Builder) super.setField(field, value);
         }
+        @java.lang.Override
         public Builder clearField(
             com.google.protobuf.Descriptors.FieldDescriptor field) {
           return (Builder) super.clearField(field);
         }
+        @java.lang.Override
         public Builder clearOneof(
             com.google.protobuf.Descriptors.OneofDescriptor oneof) {
           return (Builder) super.clearOneof(oneof);
         }
+        @java.lang.Override
         public Builder setRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             int index, java.lang.Object value) {
           return (Builder) super.setRepeatedField(field, index, value);
         }
+        @java.lang.Override
         public Builder addRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             java.lang.Object value) {
           return (Builder) super.addRepeatedField(field, value);
         }
+        @java.lang.Override
         public Builder mergeFrom(com.google.protobuf.Message other) {
           if (other instanceof com.google.cloud.dialogflow.v2.Intent.Message.QuickReplies) {
             return mergeFrom((com.google.cloud.dialogflow.v2.Intent.Message.QuickReplies)other);
@@ -7569,10 +7717,12 @@ private static final long serialVersionUID = 0L;
           return this;
         }
 
+        @java.lang.Override
         public final boolean isInitialized() {
           return true;
         }
 
+        @java.lang.Override
         public Builder mergeFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -7810,11 +7960,13 @@ private static final long serialVersionUID = 0L;
           onChanged();
           return this;
         }
+        @java.lang.Override
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
           return super.setUnknownFieldsProto3(unknownFields);
         }
 
+        @java.lang.Override
         public final Builder mergeUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
           return super.mergeUnknownFields(unknownFields);
@@ -7836,6 +7988,7 @@ private static final long serialVersionUID = 0L;
 
       private static final com.google.protobuf.Parser<QuickReplies>
           PARSER = new com.google.protobuf.AbstractParser<QuickReplies>() {
+        @java.lang.Override
         public QuickReplies parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -7853,6 +8006,7 @@ private static final long serialVersionUID = 0L;
         return PARSER;
       }
 
+      @java.lang.Override
       public com.google.cloud.dialogflow.v2.Intent.Message.QuickReplies getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
       }
@@ -8008,13 +8162,6 @@ private static final long serialVersionUID = 0L;
               case 0:
                 done = true;
                 break;
-              default: {
-                if (!parseUnknownFieldProto3(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
               case 10: {
                 java.lang.String s = input.readStringRequireUtf8();
 
@@ -8042,6 +8189,13 @@ private static final long serialVersionUID = 0L;
                     input.readMessage(com.google.cloud.dialogflow.v2.Intent.Message.Card.Button.parser(), extensionRegistry));
                 break;
               }
+              default: {
+                if (!parseUnknownFieldProto3(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
             }
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -8062,6 +8216,7 @@ private static final long serialVersionUID = 0L;
         return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_Card_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_Card_fieldAccessorTable
@@ -8156,13 +8311,6 @@ private static final long serialVersionUID = 0L;
                 case 0:
                   done = true;
                   break;
-                default: {
-                  if (!parseUnknownFieldProto3(
-                      input, unknownFields, extensionRegistry, tag)) {
-                    done = true;
-                  }
-                  break;
-                }
                 case 10: {
                   java.lang.String s = input.readStringRequireUtf8();
 
@@ -8173,6 +8321,13 @@ private static final long serialVersionUID = 0L;
                   java.lang.String s = input.readStringRequireUtf8();
 
                   postback_ = s;
+                  break;
+                }
+                default: {
+                  if (!parseUnknownFieldProto3(
+                      input, unknownFields, extensionRegistry, tag)) {
+                    done = true;
+                  }
                   break;
                 }
               }
@@ -8192,6 +8347,7 @@ private static final long serialVersionUID = 0L;
           return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_Card_Button_descriptor;
         }
 
+        @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
           return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_Card_Button_fieldAccessorTable
@@ -8286,6 +8442,7 @@ private static final long serialVersionUID = 0L;
         }
 
         private byte memoizedIsInitialized = -1;
+        @java.lang.Override
         public final boolean isInitialized() {
           byte isInitialized = memoizedIsInitialized;
           if (isInitialized == 1) return true;
@@ -8295,6 +8452,7 @@ private static final long serialVersionUID = 0L;
           return true;
         }
 
+        @java.lang.Override
         public void writeTo(com.google.protobuf.CodedOutputStream output)
                             throws java.io.IOException {
           if (!getTextBytes().isEmpty()) {
@@ -8306,6 +8464,7 @@ private static final long serialVersionUID = 0L;
           unknownFields.writeTo(output);
         }
 
+        @java.lang.Override
         public int getSerializedSize() {
           int size = memoizedSize;
           if (size != -1) return size;
@@ -8427,6 +8586,7 @@ private static final long serialVersionUID = 0L;
               .parseWithIOException(PARSER, input, extensionRegistry);
         }
 
+        @java.lang.Override
         public Builder newBuilderForType() { return newBuilder(); }
         public static Builder newBuilder() {
           return DEFAULT_INSTANCE.toBuilder();
@@ -8434,6 +8594,7 @@ private static final long serialVersionUID = 0L;
         public static Builder newBuilder(com.google.cloud.dialogflow.v2.Intent.Message.Card.Button prototype) {
           return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
         }
+        @java.lang.Override
         public Builder toBuilder() {
           return this == DEFAULT_INSTANCE
               ? new Builder() : new Builder().mergeFrom(this);
@@ -8461,6 +8622,7 @@ private static final long serialVersionUID = 0L;
             return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_Card_Button_descriptor;
           }
 
+          @java.lang.Override
           protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
               internalGetFieldAccessorTable() {
             return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_Card_Button_fieldAccessorTable
@@ -8483,6 +8645,7 @@ private static final long serialVersionUID = 0L;
                     .alwaysUseFieldBuilders) {
             }
           }
+          @java.lang.Override
           public Builder clear() {
             super.clear();
             text_ = "";
@@ -8492,15 +8655,18 @@ private static final long serialVersionUID = 0L;
             return this;
           }
 
+          @java.lang.Override
           public com.google.protobuf.Descriptors.Descriptor
               getDescriptorForType() {
             return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_Card_Button_descriptor;
           }
 
+          @java.lang.Override
           public com.google.cloud.dialogflow.v2.Intent.Message.Card.Button getDefaultInstanceForType() {
             return com.google.cloud.dialogflow.v2.Intent.Message.Card.Button.getDefaultInstance();
           }
 
+          @java.lang.Override
           public com.google.cloud.dialogflow.v2.Intent.Message.Card.Button build() {
             com.google.cloud.dialogflow.v2.Intent.Message.Card.Button result = buildPartial();
             if (!result.isInitialized()) {
@@ -8509,6 +8675,7 @@ private static final long serialVersionUID = 0L;
             return result;
           }
 
+          @java.lang.Override
           public com.google.cloud.dialogflow.v2.Intent.Message.Card.Button buildPartial() {
             com.google.cloud.dialogflow.v2.Intent.Message.Card.Button result = new com.google.cloud.dialogflow.v2.Intent.Message.Card.Button(this);
             result.text_ = text_;
@@ -8517,32 +8684,39 @@ private static final long serialVersionUID = 0L;
             return result;
           }
 
+          @java.lang.Override
           public Builder clone() {
             return (Builder) super.clone();
           }
+          @java.lang.Override
           public Builder setField(
               com.google.protobuf.Descriptors.FieldDescriptor field,
               java.lang.Object value) {
             return (Builder) super.setField(field, value);
           }
+          @java.lang.Override
           public Builder clearField(
               com.google.protobuf.Descriptors.FieldDescriptor field) {
             return (Builder) super.clearField(field);
           }
+          @java.lang.Override
           public Builder clearOneof(
               com.google.protobuf.Descriptors.OneofDescriptor oneof) {
             return (Builder) super.clearOneof(oneof);
           }
+          @java.lang.Override
           public Builder setRepeatedField(
               com.google.protobuf.Descriptors.FieldDescriptor field,
               int index, java.lang.Object value) {
             return (Builder) super.setRepeatedField(field, index, value);
           }
+          @java.lang.Override
           public Builder addRepeatedField(
               com.google.protobuf.Descriptors.FieldDescriptor field,
               java.lang.Object value) {
             return (Builder) super.addRepeatedField(field, value);
           }
+          @java.lang.Override
           public Builder mergeFrom(com.google.protobuf.Message other) {
             if (other instanceof com.google.cloud.dialogflow.v2.Intent.Message.Card.Button) {
               return mergeFrom((com.google.cloud.dialogflow.v2.Intent.Message.Card.Button)other);
@@ -8567,10 +8741,12 @@ private static final long serialVersionUID = 0L;
             return this;
           }
 
+          @java.lang.Override
           public final boolean isInitialized() {
             return true;
           }
 
+          @java.lang.Override
           public Builder mergeFrom(
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -8771,11 +8947,13 @@ private static final long serialVersionUID = 0L;
             onChanged();
             return this;
           }
+          @java.lang.Override
           public final Builder setUnknownFields(
               final com.google.protobuf.UnknownFieldSet unknownFields) {
             return super.setUnknownFieldsProto3(unknownFields);
           }
 
+          @java.lang.Override
           public final Builder mergeUnknownFields(
               final com.google.protobuf.UnknownFieldSet unknownFields) {
             return super.mergeUnknownFields(unknownFields);
@@ -8797,6 +8975,7 @@ private static final long serialVersionUID = 0L;
 
         private static final com.google.protobuf.Parser<Button>
             PARSER = new com.google.protobuf.AbstractParser<Button>() {
+          @java.lang.Override
           public Button parsePartialFrom(
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -8814,6 +8993,7 @@ private static final long serialVersionUID = 0L;
           return PARSER;
         }
 
+        @java.lang.Override
         public com.google.cloud.dialogflow.v2.Intent.Message.Card.Button getDefaultInstanceForType() {
           return DEFAULT_INSTANCE;
         }
@@ -9003,6 +9183,7 @@ private static final long serialVersionUID = 0L;
       }
 
       private byte memoizedIsInitialized = -1;
+      @java.lang.Override
       public final boolean isInitialized() {
         byte isInitialized = memoizedIsInitialized;
         if (isInitialized == 1) return true;
@@ -9012,6 +9193,7 @@ private static final long serialVersionUID = 0L;
         return true;
       }
 
+      @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
         if (!getTitleBytes().isEmpty()) {
@@ -9029,6 +9211,7 @@ private static final long serialVersionUID = 0L;
         unknownFields.writeTo(output);
       }
 
+      @java.lang.Override
       public int getSerializedSize() {
         int size = memoizedSize;
         if (size != -1) return size;
@@ -9167,6 +9350,7 @@ private static final long serialVersionUID = 0L;
             .parseWithIOException(PARSER, input, extensionRegistry);
       }
 
+      @java.lang.Override
       public Builder newBuilderForType() { return newBuilder(); }
       public static Builder newBuilder() {
         return DEFAULT_INSTANCE.toBuilder();
@@ -9174,6 +9358,7 @@ private static final long serialVersionUID = 0L;
       public static Builder newBuilder(com.google.cloud.dialogflow.v2.Intent.Message.Card prototype) {
         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
       }
+      @java.lang.Override
       public Builder toBuilder() {
         return this == DEFAULT_INSTANCE
             ? new Builder() : new Builder().mergeFrom(this);
@@ -9201,6 +9386,7 @@ private static final long serialVersionUID = 0L;
           return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_Card_descriptor;
         }
 
+        @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
           return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_Card_fieldAccessorTable
@@ -9224,6 +9410,7 @@ private static final long serialVersionUID = 0L;
             getButtonsFieldBuilder();
           }
         }
+        @java.lang.Override
         public Builder clear() {
           super.clear();
           title_ = "";
@@ -9241,15 +9428,18 @@ private static final long serialVersionUID = 0L;
           return this;
         }
 
+        @java.lang.Override
         public com.google.protobuf.Descriptors.Descriptor
             getDescriptorForType() {
           return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_Card_descriptor;
         }
 
+        @java.lang.Override
         public com.google.cloud.dialogflow.v2.Intent.Message.Card getDefaultInstanceForType() {
           return com.google.cloud.dialogflow.v2.Intent.Message.Card.getDefaultInstance();
         }
 
+        @java.lang.Override
         public com.google.cloud.dialogflow.v2.Intent.Message.Card build() {
           com.google.cloud.dialogflow.v2.Intent.Message.Card result = buildPartial();
           if (!result.isInitialized()) {
@@ -9258,6 +9448,7 @@ private static final long serialVersionUID = 0L;
           return result;
         }
 
+        @java.lang.Override
         public com.google.cloud.dialogflow.v2.Intent.Message.Card buildPartial() {
           com.google.cloud.dialogflow.v2.Intent.Message.Card result = new com.google.cloud.dialogflow.v2.Intent.Message.Card(this);
           int from_bitField0_ = bitField0_;
@@ -9279,32 +9470,39 @@ private static final long serialVersionUID = 0L;
           return result;
         }
 
+        @java.lang.Override
         public Builder clone() {
           return (Builder) super.clone();
         }
+        @java.lang.Override
         public Builder setField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             java.lang.Object value) {
           return (Builder) super.setField(field, value);
         }
+        @java.lang.Override
         public Builder clearField(
             com.google.protobuf.Descriptors.FieldDescriptor field) {
           return (Builder) super.clearField(field);
         }
+        @java.lang.Override
         public Builder clearOneof(
             com.google.protobuf.Descriptors.OneofDescriptor oneof) {
           return (Builder) super.clearOneof(oneof);
         }
+        @java.lang.Override
         public Builder setRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             int index, java.lang.Object value) {
           return (Builder) super.setRepeatedField(field, index, value);
         }
+        @java.lang.Override
         public Builder addRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             java.lang.Object value) {
           return (Builder) super.addRepeatedField(field, value);
         }
+        @java.lang.Override
         public Builder mergeFrom(com.google.protobuf.Message other) {
           if (other instanceof com.google.cloud.dialogflow.v2.Intent.Message.Card) {
             return mergeFrom((com.google.cloud.dialogflow.v2.Intent.Message.Card)other);
@@ -9359,10 +9557,12 @@ private static final long serialVersionUID = 0L;
           return this;
         }
 
+        @java.lang.Override
         public final boolean isInitialized() {
           return true;
         }
 
+        @java.lang.Override
         public Builder mergeFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -9960,11 +10160,13 @@ private static final long serialVersionUID = 0L;
           }
           return buttonsBuilder_;
         }
+        @java.lang.Override
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
           return super.setUnknownFieldsProto3(unknownFields);
         }
 
+        @java.lang.Override
         public final Builder mergeUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
           return super.mergeUnknownFields(unknownFields);
@@ -9986,6 +10188,7 @@ private static final long serialVersionUID = 0L;
 
       private static final com.google.protobuf.Parser<Card>
           PARSER = new com.google.protobuf.AbstractParser<Card>() {
+        @java.lang.Override
         public Card parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -10003,6 +10206,7 @@ private static final long serialVersionUID = 0L;
         return PARSER;
       }
 
+      @java.lang.Override
       public com.google.cloud.dialogflow.v2.Intent.Message.Card getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
       }
@@ -10119,13 +10323,6 @@ private static final long serialVersionUID = 0L;
               case 0:
                 done = true;
                 break;
-              default: {
-                if (!parseUnknownFieldProto3(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
               case 10: {
                 java.lang.String s = input.readStringRequireUtf8();
 
@@ -10142,6 +10339,13 @@ private static final long serialVersionUID = 0L;
                 java.lang.String s = input.readStringRequireUtf8();
 
                 displayText_ = s;
+                break;
+              }
+              default: {
+                if (!parseUnknownFieldProto3(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
                 break;
               }
             }
@@ -10161,6 +10365,7 @@ private static final long serialVersionUID = 0L;
         return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_SimpleResponse_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_SimpleResponse_fieldAccessorTable
@@ -10301,6 +10506,7 @@ private static final long serialVersionUID = 0L;
       }
 
       private byte memoizedIsInitialized = -1;
+      @java.lang.Override
       public final boolean isInitialized() {
         byte isInitialized = memoizedIsInitialized;
         if (isInitialized == 1) return true;
@@ -10310,6 +10516,7 @@ private static final long serialVersionUID = 0L;
         return true;
       }
 
+      @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
         if (!getTextToSpeechBytes().isEmpty()) {
@@ -10324,6 +10531,7 @@ private static final long serialVersionUID = 0L;
         unknownFields.writeTo(output);
       }
 
+      @java.lang.Override
       public int getSerializedSize() {
         int size = memoizedSize;
         if (size != -1) return size;
@@ -10452,6 +10660,7 @@ private static final long serialVersionUID = 0L;
             .parseWithIOException(PARSER, input, extensionRegistry);
       }
 
+      @java.lang.Override
       public Builder newBuilderForType() { return newBuilder(); }
       public static Builder newBuilder() {
         return DEFAULT_INSTANCE.toBuilder();
@@ -10459,6 +10668,7 @@ private static final long serialVersionUID = 0L;
       public static Builder newBuilder(com.google.cloud.dialogflow.v2.Intent.Message.SimpleResponse prototype) {
         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
       }
+      @java.lang.Override
       public Builder toBuilder() {
         return this == DEFAULT_INSTANCE
             ? new Builder() : new Builder().mergeFrom(this);
@@ -10486,6 +10696,7 @@ private static final long serialVersionUID = 0L;
           return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_SimpleResponse_descriptor;
         }
 
+        @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
           return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_SimpleResponse_fieldAccessorTable
@@ -10508,6 +10719,7 @@ private static final long serialVersionUID = 0L;
                   .alwaysUseFieldBuilders) {
           }
         }
+        @java.lang.Override
         public Builder clear() {
           super.clear();
           textToSpeech_ = "";
@@ -10519,15 +10731,18 @@ private static final long serialVersionUID = 0L;
           return this;
         }
 
+        @java.lang.Override
         public com.google.protobuf.Descriptors.Descriptor
             getDescriptorForType() {
           return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_SimpleResponse_descriptor;
         }
 
+        @java.lang.Override
         public com.google.cloud.dialogflow.v2.Intent.Message.SimpleResponse getDefaultInstanceForType() {
           return com.google.cloud.dialogflow.v2.Intent.Message.SimpleResponse.getDefaultInstance();
         }
 
+        @java.lang.Override
         public com.google.cloud.dialogflow.v2.Intent.Message.SimpleResponse build() {
           com.google.cloud.dialogflow.v2.Intent.Message.SimpleResponse result = buildPartial();
           if (!result.isInitialized()) {
@@ -10536,6 +10751,7 @@ private static final long serialVersionUID = 0L;
           return result;
         }
 
+        @java.lang.Override
         public com.google.cloud.dialogflow.v2.Intent.Message.SimpleResponse buildPartial() {
           com.google.cloud.dialogflow.v2.Intent.Message.SimpleResponse result = new com.google.cloud.dialogflow.v2.Intent.Message.SimpleResponse(this);
           result.textToSpeech_ = textToSpeech_;
@@ -10545,32 +10761,39 @@ private static final long serialVersionUID = 0L;
           return result;
         }
 
+        @java.lang.Override
         public Builder clone() {
           return (Builder) super.clone();
         }
+        @java.lang.Override
         public Builder setField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             java.lang.Object value) {
           return (Builder) super.setField(field, value);
         }
+        @java.lang.Override
         public Builder clearField(
             com.google.protobuf.Descriptors.FieldDescriptor field) {
           return (Builder) super.clearField(field);
         }
+        @java.lang.Override
         public Builder clearOneof(
             com.google.protobuf.Descriptors.OneofDescriptor oneof) {
           return (Builder) super.clearOneof(oneof);
         }
+        @java.lang.Override
         public Builder setRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             int index, java.lang.Object value) {
           return (Builder) super.setRepeatedField(field, index, value);
         }
+        @java.lang.Override
         public Builder addRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             java.lang.Object value) {
           return (Builder) super.addRepeatedField(field, value);
         }
+        @java.lang.Override
         public Builder mergeFrom(com.google.protobuf.Message other) {
           if (other instanceof com.google.cloud.dialogflow.v2.Intent.Message.SimpleResponse) {
             return mergeFrom((com.google.cloud.dialogflow.v2.Intent.Message.SimpleResponse)other);
@@ -10599,10 +10822,12 @@ private static final long serialVersionUID = 0L;
           return this;
         }
 
+        @java.lang.Override
         public final boolean isInitialized() {
           return true;
         }
 
+        @java.lang.Override
         public Builder mergeFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -10902,11 +11127,13 @@ private static final long serialVersionUID = 0L;
           onChanged();
           return this;
         }
+        @java.lang.Override
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
           return super.setUnknownFieldsProto3(unknownFields);
         }
 
+        @java.lang.Override
         public final Builder mergeUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
           return super.mergeUnknownFields(unknownFields);
@@ -10928,6 +11155,7 @@ private static final long serialVersionUID = 0L;
 
       private static final com.google.protobuf.Parser<SimpleResponse>
           PARSER = new com.google.protobuf.AbstractParser<SimpleResponse>() {
+        @java.lang.Override
         public SimpleResponse parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -10945,6 +11173,7 @@ private static final long serialVersionUID = 0L;
         return PARSER;
       }
 
+      @java.lang.Override
       public com.google.cloud.dialogflow.v2.Intent.Message.SimpleResponse getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
       }
@@ -11046,13 +11275,6 @@ private static final long serialVersionUID = 0L;
               case 0:
                 done = true;
                 break;
-              default: {
-                if (!parseUnknownFieldProto3(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
               case 10: {
                 if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
                   simpleResponses_ = new java.util.ArrayList<com.google.cloud.dialogflow.v2.Intent.Message.SimpleResponse>();
@@ -11060,6 +11282,13 @@ private static final long serialVersionUID = 0L;
                 }
                 simpleResponses_.add(
                     input.readMessage(com.google.cloud.dialogflow.v2.Intent.Message.SimpleResponse.parser(), extensionRegistry));
+                break;
+              }
+              default: {
+                if (!parseUnknownFieldProto3(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
                 break;
               }
             }
@@ -11082,6 +11311,7 @@ private static final long serialVersionUID = 0L;
         return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_SimpleResponses_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_SimpleResponses_fieldAccessorTable
@@ -11145,6 +11375,7 @@ private static final long serialVersionUID = 0L;
       }
 
       private byte memoizedIsInitialized = -1;
+      @java.lang.Override
       public final boolean isInitialized() {
         byte isInitialized = memoizedIsInitialized;
         if (isInitialized == 1) return true;
@@ -11154,6 +11385,7 @@ private static final long serialVersionUID = 0L;
         return true;
       }
 
+      @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
         for (int i = 0; i < simpleResponses_.size(); i++) {
@@ -11162,6 +11394,7 @@ private static final long serialVersionUID = 0L;
         unknownFields.writeTo(output);
       }
 
+      @java.lang.Override
       public int getSerializedSize() {
         int size = memoizedSize;
         if (size != -1) return size;
@@ -11279,6 +11512,7 @@ private static final long serialVersionUID = 0L;
             .parseWithIOException(PARSER, input, extensionRegistry);
       }
 
+      @java.lang.Override
       public Builder newBuilderForType() { return newBuilder(); }
       public static Builder newBuilder() {
         return DEFAULT_INSTANCE.toBuilder();
@@ -11286,6 +11520,7 @@ private static final long serialVersionUID = 0L;
       public static Builder newBuilder(com.google.cloud.dialogflow.v2.Intent.Message.SimpleResponses prototype) {
         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
       }
+      @java.lang.Override
       public Builder toBuilder() {
         return this == DEFAULT_INSTANCE
             ? new Builder() : new Builder().mergeFrom(this);
@@ -11316,6 +11551,7 @@ private static final long serialVersionUID = 0L;
           return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_SimpleResponses_descriptor;
         }
 
+        @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
           return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_SimpleResponses_fieldAccessorTable
@@ -11339,6 +11575,7 @@ private static final long serialVersionUID = 0L;
             getSimpleResponsesFieldBuilder();
           }
         }
+        @java.lang.Override
         public Builder clear() {
           super.clear();
           if (simpleResponsesBuilder_ == null) {
@@ -11350,15 +11587,18 @@ private static final long serialVersionUID = 0L;
           return this;
         }
 
+        @java.lang.Override
         public com.google.protobuf.Descriptors.Descriptor
             getDescriptorForType() {
           return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_SimpleResponses_descriptor;
         }
 
+        @java.lang.Override
         public com.google.cloud.dialogflow.v2.Intent.Message.SimpleResponses getDefaultInstanceForType() {
           return com.google.cloud.dialogflow.v2.Intent.Message.SimpleResponses.getDefaultInstance();
         }
 
+        @java.lang.Override
         public com.google.cloud.dialogflow.v2.Intent.Message.SimpleResponses build() {
           com.google.cloud.dialogflow.v2.Intent.Message.SimpleResponses result = buildPartial();
           if (!result.isInitialized()) {
@@ -11367,6 +11607,7 @@ private static final long serialVersionUID = 0L;
           return result;
         }
 
+        @java.lang.Override
         public com.google.cloud.dialogflow.v2.Intent.Message.SimpleResponses buildPartial() {
           com.google.cloud.dialogflow.v2.Intent.Message.SimpleResponses result = new com.google.cloud.dialogflow.v2.Intent.Message.SimpleResponses(this);
           int from_bitField0_ = bitField0_;
@@ -11383,32 +11624,39 @@ private static final long serialVersionUID = 0L;
           return result;
         }
 
+        @java.lang.Override
         public Builder clone() {
           return (Builder) super.clone();
         }
+        @java.lang.Override
         public Builder setField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             java.lang.Object value) {
           return (Builder) super.setField(field, value);
         }
+        @java.lang.Override
         public Builder clearField(
             com.google.protobuf.Descriptors.FieldDescriptor field) {
           return (Builder) super.clearField(field);
         }
+        @java.lang.Override
         public Builder clearOneof(
             com.google.protobuf.Descriptors.OneofDescriptor oneof) {
           return (Builder) super.clearOneof(oneof);
         }
+        @java.lang.Override
         public Builder setRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             int index, java.lang.Object value) {
           return (Builder) super.setRepeatedField(field, index, value);
         }
+        @java.lang.Override
         public Builder addRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             java.lang.Object value) {
           return (Builder) super.addRepeatedField(field, value);
         }
+        @java.lang.Override
         public Builder mergeFrom(com.google.protobuf.Message other) {
           if (other instanceof com.google.cloud.dialogflow.v2.Intent.Message.SimpleResponses) {
             return mergeFrom((com.google.cloud.dialogflow.v2.Intent.Message.SimpleResponses)other);
@@ -11451,10 +11699,12 @@ private static final long serialVersionUID = 0L;
           return this;
         }
 
+        @java.lang.Override
         public final boolean isInitialized() {
           return true;
         }
 
+        @java.lang.Override
         public Builder mergeFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -11785,11 +12035,13 @@ private static final long serialVersionUID = 0L;
           }
           return simpleResponsesBuilder_;
         }
+        @java.lang.Override
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
           return super.setUnknownFieldsProto3(unknownFields);
         }
 
+        @java.lang.Override
         public final Builder mergeUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
           return super.mergeUnknownFields(unknownFields);
@@ -11811,6 +12063,7 @@ private static final long serialVersionUID = 0L;
 
       private static final com.google.protobuf.Parser<SimpleResponses>
           PARSER = new com.google.protobuf.AbstractParser<SimpleResponses>() {
+        @java.lang.Override
         public SimpleResponses parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -11828,6 +12081,7 @@ private static final long serialVersionUID = 0L;
         return PARSER;
       }
 
+      @java.lang.Override
       public com.google.cloud.dialogflow.v2.Intent.Message.SimpleResponses getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
       }
@@ -12008,13 +12262,6 @@ private static final long serialVersionUID = 0L;
               case 0:
                 done = true;
                 break;
-              default: {
-                if (!parseUnknownFieldProto3(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
               case 10: {
                 java.lang.String s = input.readStringRequireUtf8();
 
@@ -12055,6 +12302,13 @@ private static final long serialVersionUID = 0L;
                     input.readMessage(com.google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button.parser(), extensionRegistry));
                 break;
               }
+              default: {
+                if (!parseUnknownFieldProto3(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
             }
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -12075,6 +12329,7 @@ private static final long serialVersionUID = 0L;
         return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_BasicCard_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_BasicCard_fieldAccessorTable
@@ -12173,13 +12428,6 @@ private static final long serialVersionUID = 0L;
                 case 0:
                   done = true;
                   break;
-                default: {
-                  if (!parseUnknownFieldProto3(
-                      input, unknownFields, extensionRegistry, tag)) {
-                    done = true;
-                  }
-                  break;
-                }
                 case 10: {
                   java.lang.String s = input.readStringRequireUtf8();
 
@@ -12199,6 +12447,13 @@ private static final long serialVersionUID = 0L;
 
                   break;
                 }
+                default: {
+                  if (!parseUnknownFieldProto3(
+                      input, unknownFields, extensionRegistry, tag)) {
+                    done = true;
+                  }
+                  break;
+                }
               }
             }
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -12216,6 +12471,7 @@ private static final long serialVersionUID = 0L;
           return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_BasicCard_Button_descriptor;
         }
 
+        @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
           return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_BasicCard_Button_fieldAccessorTable
@@ -12289,17 +12545,17 @@ private static final long serialVersionUID = 0L;
                   case 0:
                     done = true;
                     break;
+                  case 10: {
+                    java.lang.String s = input.readStringRequireUtf8();
+
+                    uri_ = s;
+                    break;
+                  }
                   default: {
                     if (!parseUnknownFieldProto3(
                         input, unknownFields, extensionRegistry, tag)) {
                       done = true;
                     }
-                    break;
-                  }
-                  case 10: {
-                    java.lang.String s = input.readStringRequireUtf8();
-
-                    uri_ = s;
                     break;
                   }
                 }
@@ -12319,6 +12575,7 @@ private static final long serialVersionUID = 0L;
             return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_BasicCard_Button_OpenUriAction_descriptor;
           }
 
+          @java.lang.Override
           protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
               internalGetFieldAccessorTable() {
             return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_BasicCard_Button_OpenUriAction_fieldAccessorTable
@@ -12369,6 +12626,7 @@ private static final long serialVersionUID = 0L;
           }
 
           private byte memoizedIsInitialized = -1;
+          @java.lang.Override
           public final boolean isInitialized() {
             byte isInitialized = memoizedIsInitialized;
             if (isInitialized == 1) return true;
@@ -12378,6 +12636,7 @@ private static final long serialVersionUID = 0L;
             return true;
           }
 
+          @java.lang.Override
           public void writeTo(com.google.protobuf.CodedOutputStream output)
                               throws java.io.IOException {
             if (!getUriBytes().isEmpty()) {
@@ -12386,6 +12645,7 @@ private static final long serialVersionUID = 0L;
             unknownFields.writeTo(output);
           }
 
+          @java.lang.Override
           public int getSerializedSize() {
             int size = memoizedSize;
             if (size != -1) return size;
@@ -12500,6 +12760,7 @@ private static final long serialVersionUID = 0L;
                 .parseWithIOException(PARSER, input, extensionRegistry);
           }
 
+          @java.lang.Override
           public Builder newBuilderForType() { return newBuilder(); }
           public static Builder newBuilder() {
             return DEFAULT_INSTANCE.toBuilder();
@@ -12507,6 +12768,7 @@ private static final long serialVersionUID = 0L;
           public static Builder newBuilder(com.google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button.OpenUriAction prototype) {
             return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
           }
+          @java.lang.Override
           public Builder toBuilder() {
             return this == DEFAULT_INSTANCE
                 ? new Builder() : new Builder().mergeFrom(this);
@@ -12534,6 +12796,7 @@ private static final long serialVersionUID = 0L;
               return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_BasicCard_Button_OpenUriAction_descriptor;
             }
 
+            @java.lang.Override
             protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
                 internalGetFieldAccessorTable() {
               return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_BasicCard_Button_OpenUriAction_fieldAccessorTable
@@ -12556,6 +12819,7 @@ private static final long serialVersionUID = 0L;
                       .alwaysUseFieldBuilders) {
               }
             }
+            @java.lang.Override
             public Builder clear() {
               super.clear();
               uri_ = "";
@@ -12563,15 +12827,18 @@ private static final long serialVersionUID = 0L;
               return this;
             }
 
+            @java.lang.Override
             public com.google.protobuf.Descriptors.Descriptor
                 getDescriptorForType() {
               return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_BasicCard_Button_OpenUriAction_descriptor;
             }
 
+            @java.lang.Override
             public com.google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button.OpenUriAction getDefaultInstanceForType() {
               return com.google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button.OpenUriAction.getDefaultInstance();
             }
 
+            @java.lang.Override
             public com.google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button.OpenUriAction build() {
               com.google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button.OpenUriAction result = buildPartial();
               if (!result.isInitialized()) {
@@ -12580,6 +12847,7 @@ private static final long serialVersionUID = 0L;
               return result;
             }
 
+            @java.lang.Override
             public com.google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button.OpenUriAction buildPartial() {
               com.google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button.OpenUriAction result = new com.google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button.OpenUriAction(this);
               result.uri_ = uri_;
@@ -12587,32 +12855,39 @@ private static final long serialVersionUID = 0L;
               return result;
             }
 
+            @java.lang.Override
             public Builder clone() {
               return (Builder) super.clone();
             }
+            @java.lang.Override
             public Builder setField(
                 com.google.protobuf.Descriptors.FieldDescriptor field,
                 java.lang.Object value) {
               return (Builder) super.setField(field, value);
             }
+            @java.lang.Override
             public Builder clearField(
                 com.google.protobuf.Descriptors.FieldDescriptor field) {
               return (Builder) super.clearField(field);
             }
+            @java.lang.Override
             public Builder clearOneof(
                 com.google.protobuf.Descriptors.OneofDescriptor oneof) {
               return (Builder) super.clearOneof(oneof);
             }
+            @java.lang.Override
             public Builder setRepeatedField(
                 com.google.protobuf.Descriptors.FieldDescriptor field,
                 int index, java.lang.Object value) {
               return (Builder) super.setRepeatedField(field, index, value);
             }
+            @java.lang.Override
             public Builder addRepeatedField(
                 com.google.protobuf.Descriptors.FieldDescriptor field,
                 java.lang.Object value) {
               return (Builder) super.addRepeatedField(field, value);
             }
+            @java.lang.Override
             public Builder mergeFrom(com.google.protobuf.Message other) {
               if (other instanceof com.google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button.OpenUriAction) {
                 return mergeFrom((com.google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button.OpenUriAction)other);
@@ -12633,10 +12908,12 @@ private static final long serialVersionUID = 0L;
               return this;
             }
 
+            @java.lang.Override
             public final boolean isInitialized() {
               return true;
             }
 
+            @java.lang.Override
             public Builder mergeFrom(
                 com.google.protobuf.CodedInputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -12743,11 +13020,13 @@ private static final long serialVersionUID = 0L;
               onChanged();
               return this;
             }
+            @java.lang.Override
             public final Builder setUnknownFields(
                 final com.google.protobuf.UnknownFieldSet unknownFields) {
               return super.setUnknownFieldsProto3(unknownFields);
             }
 
+            @java.lang.Override
             public final Builder mergeUnknownFields(
                 final com.google.protobuf.UnknownFieldSet unknownFields) {
               return super.mergeUnknownFields(unknownFields);
@@ -12769,6 +13048,7 @@ private static final long serialVersionUID = 0L;
 
           private static final com.google.protobuf.Parser<OpenUriAction>
               PARSER = new com.google.protobuf.AbstractParser<OpenUriAction>() {
+            @java.lang.Override
             public OpenUriAction parsePartialFrom(
                 com.google.protobuf.CodedInputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -12786,6 +13066,7 @@ private static final long serialVersionUID = 0L;
             return PARSER;
           }
 
+          @java.lang.Override
           public com.google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button.OpenUriAction getDefaultInstanceForType() {
             return DEFAULT_INSTANCE;
           }
@@ -12868,6 +13149,7 @@ private static final long serialVersionUID = 0L;
         }
 
         private byte memoizedIsInitialized = -1;
+        @java.lang.Override
         public final boolean isInitialized() {
           byte isInitialized = memoizedIsInitialized;
           if (isInitialized == 1) return true;
@@ -12877,6 +13159,7 @@ private static final long serialVersionUID = 0L;
           return true;
         }
 
+        @java.lang.Override
         public void writeTo(com.google.protobuf.CodedOutputStream output)
                             throws java.io.IOException {
           if (!getTitleBytes().isEmpty()) {
@@ -12888,6 +13171,7 @@ private static final long serialVersionUID = 0L;
           unknownFields.writeTo(output);
         }
 
+        @java.lang.Override
         public int getSerializedSize() {
           int size = memoizedSize;
           if (size != -1) return size;
@@ -13015,6 +13299,7 @@ private static final long serialVersionUID = 0L;
               .parseWithIOException(PARSER, input, extensionRegistry);
         }
 
+        @java.lang.Override
         public Builder newBuilderForType() { return newBuilder(); }
         public static Builder newBuilder() {
           return DEFAULT_INSTANCE.toBuilder();
@@ -13022,6 +13307,7 @@ private static final long serialVersionUID = 0L;
         public static Builder newBuilder(com.google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button prototype) {
           return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
         }
+        @java.lang.Override
         public Builder toBuilder() {
           return this == DEFAULT_INSTANCE
               ? new Builder() : new Builder().mergeFrom(this);
@@ -13049,6 +13335,7 @@ private static final long serialVersionUID = 0L;
             return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_BasicCard_Button_descriptor;
           }
 
+          @java.lang.Override
           protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
               internalGetFieldAccessorTable() {
             return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_BasicCard_Button_fieldAccessorTable
@@ -13071,6 +13358,7 @@ private static final long serialVersionUID = 0L;
                     .alwaysUseFieldBuilders) {
             }
           }
+          @java.lang.Override
           public Builder clear() {
             super.clear();
             title_ = "";
@@ -13084,15 +13372,18 @@ private static final long serialVersionUID = 0L;
             return this;
           }
 
+          @java.lang.Override
           public com.google.protobuf.Descriptors.Descriptor
               getDescriptorForType() {
             return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_BasicCard_Button_descriptor;
           }
 
+          @java.lang.Override
           public com.google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button getDefaultInstanceForType() {
             return com.google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button.getDefaultInstance();
           }
 
+          @java.lang.Override
           public com.google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button build() {
             com.google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button result = buildPartial();
             if (!result.isInitialized()) {
@@ -13101,6 +13392,7 @@ private static final long serialVersionUID = 0L;
             return result;
           }
 
+          @java.lang.Override
           public com.google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button buildPartial() {
             com.google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button result = new com.google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button(this);
             result.title_ = title_;
@@ -13113,32 +13405,39 @@ private static final long serialVersionUID = 0L;
             return result;
           }
 
+          @java.lang.Override
           public Builder clone() {
             return (Builder) super.clone();
           }
+          @java.lang.Override
           public Builder setField(
               com.google.protobuf.Descriptors.FieldDescriptor field,
               java.lang.Object value) {
             return (Builder) super.setField(field, value);
           }
+          @java.lang.Override
           public Builder clearField(
               com.google.protobuf.Descriptors.FieldDescriptor field) {
             return (Builder) super.clearField(field);
           }
+          @java.lang.Override
           public Builder clearOneof(
               com.google.protobuf.Descriptors.OneofDescriptor oneof) {
             return (Builder) super.clearOneof(oneof);
           }
+          @java.lang.Override
           public Builder setRepeatedField(
               com.google.protobuf.Descriptors.FieldDescriptor field,
               int index, java.lang.Object value) {
             return (Builder) super.setRepeatedField(field, index, value);
           }
+          @java.lang.Override
           public Builder addRepeatedField(
               com.google.protobuf.Descriptors.FieldDescriptor field,
               java.lang.Object value) {
             return (Builder) super.addRepeatedField(field, value);
           }
+          @java.lang.Override
           public Builder mergeFrom(com.google.protobuf.Message other) {
             if (other instanceof com.google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button) {
               return mergeFrom((com.google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button)other);
@@ -13162,10 +13461,12 @@ private static final long serialVersionUID = 0L;
             return this;
           }
 
+          @java.lang.Override
           public final boolean isInitialized() {
             return true;
           }
 
+          @java.lang.Override
           public Builder mergeFrom(
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -13425,11 +13726,13 @@ private static final long serialVersionUID = 0L;
             }
             return openUriActionBuilder_;
           }
+          @java.lang.Override
           public final Builder setUnknownFields(
               final com.google.protobuf.UnknownFieldSet unknownFields) {
             return super.setUnknownFieldsProto3(unknownFields);
           }
 
+          @java.lang.Override
           public final Builder mergeUnknownFields(
               final com.google.protobuf.UnknownFieldSet unknownFields) {
             return super.mergeUnknownFields(unknownFields);
@@ -13451,6 +13754,7 @@ private static final long serialVersionUID = 0L;
 
         private static final com.google.protobuf.Parser<Button>
             PARSER = new com.google.protobuf.AbstractParser<Button>() {
+          @java.lang.Override
           public Button parsePartialFrom(
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -13468,6 +13772,7 @@ private static final long serialVersionUID = 0L;
           return PARSER;
         }
 
+        @java.lang.Override
         public com.google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button getDefaultInstanceForType() {
           return DEFAULT_INSTANCE;
         }
@@ -13690,6 +13995,7 @@ private static final long serialVersionUID = 0L;
       }
 
       private byte memoizedIsInitialized = -1;
+      @java.lang.Override
       public final boolean isInitialized() {
         byte isInitialized = memoizedIsInitialized;
         if (isInitialized == 1) return true;
@@ -13699,6 +14005,7 @@ private static final long serialVersionUID = 0L;
         return true;
       }
 
+      @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
         if (!getTitleBytes().isEmpty()) {
@@ -13719,6 +14026,7 @@ private static final long serialVersionUID = 0L;
         unknownFields.writeTo(output);
       }
 
+      @java.lang.Override
       public int getSerializedSize() {
         int size = memoizedSize;
         if (size != -1) return size;
@@ -13870,6 +14178,7 @@ private static final long serialVersionUID = 0L;
             .parseWithIOException(PARSER, input, extensionRegistry);
       }
 
+      @java.lang.Override
       public Builder newBuilderForType() { return newBuilder(); }
       public static Builder newBuilder() {
         return DEFAULT_INSTANCE.toBuilder();
@@ -13877,6 +14186,7 @@ private static final long serialVersionUID = 0L;
       public static Builder newBuilder(com.google.cloud.dialogflow.v2.Intent.Message.BasicCard prototype) {
         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
       }
+      @java.lang.Override
       public Builder toBuilder() {
         return this == DEFAULT_INSTANCE
             ? new Builder() : new Builder().mergeFrom(this);
@@ -13904,6 +14214,7 @@ private static final long serialVersionUID = 0L;
           return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_BasicCard_descriptor;
         }
 
+        @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
           return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_BasicCard_fieldAccessorTable
@@ -13927,6 +14238,7 @@ private static final long serialVersionUID = 0L;
             getButtonsFieldBuilder();
           }
         }
+        @java.lang.Override
         public Builder clear() {
           super.clear();
           title_ = "";
@@ -13950,15 +14262,18 @@ private static final long serialVersionUID = 0L;
           return this;
         }
 
+        @java.lang.Override
         public com.google.protobuf.Descriptors.Descriptor
             getDescriptorForType() {
           return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_BasicCard_descriptor;
         }
 
+        @java.lang.Override
         public com.google.cloud.dialogflow.v2.Intent.Message.BasicCard getDefaultInstanceForType() {
           return com.google.cloud.dialogflow.v2.Intent.Message.BasicCard.getDefaultInstance();
         }
 
+        @java.lang.Override
         public com.google.cloud.dialogflow.v2.Intent.Message.BasicCard build() {
           com.google.cloud.dialogflow.v2.Intent.Message.BasicCard result = buildPartial();
           if (!result.isInitialized()) {
@@ -13967,6 +14282,7 @@ private static final long serialVersionUID = 0L;
           return result;
         }
 
+        @java.lang.Override
         public com.google.cloud.dialogflow.v2.Intent.Message.BasicCard buildPartial() {
           com.google.cloud.dialogflow.v2.Intent.Message.BasicCard result = new com.google.cloud.dialogflow.v2.Intent.Message.BasicCard(this);
           int from_bitField0_ = bitField0_;
@@ -13993,32 +14309,39 @@ private static final long serialVersionUID = 0L;
           return result;
         }
 
+        @java.lang.Override
         public Builder clone() {
           return (Builder) super.clone();
         }
+        @java.lang.Override
         public Builder setField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             java.lang.Object value) {
           return (Builder) super.setField(field, value);
         }
+        @java.lang.Override
         public Builder clearField(
             com.google.protobuf.Descriptors.FieldDescriptor field) {
           return (Builder) super.clearField(field);
         }
+        @java.lang.Override
         public Builder clearOneof(
             com.google.protobuf.Descriptors.OneofDescriptor oneof) {
           return (Builder) super.clearOneof(oneof);
         }
+        @java.lang.Override
         public Builder setRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             int index, java.lang.Object value) {
           return (Builder) super.setRepeatedField(field, index, value);
         }
+        @java.lang.Override
         public Builder addRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             java.lang.Object value) {
           return (Builder) super.addRepeatedField(field, value);
         }
+        @java.lang.Override
         public Builder mergeFrom(com.google.protobuf.Message other) {
           if (other instanceof com.google.cloud.dialogflow.v2.Intent.Message.BasicCard) {
             return mergeFrom((com.google.cloud.dialogflow.v2.Intent.Message.BasicCard)other);
@@ -14076,10 +14399,12 @@ private static final long serialVersionUID = 0L;
           return this;
         }
 
+        @java.lang.Override
         public final boolean isInitialized() {
           return true;
         }
 
+        @java.lang.Override
         public Builder mergeFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -14830,11 +15155,13 @@ private static final long serialVersionUID = 0L;
           }
           return buttonsBuilder_;
         }
+        @java.lang.Override
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
           return super.setUnknownFieldsProto3(unknownFields);
         }
 
+        @java.lang.Override
         public final Builder mergeUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
           return super.mergeUnknownFields(unknownFields);
@@ -14856,6 +15183,7 @@ private static final long serialVersionUID = 0L;
 
       private static final com.google.protobuf.Parser<BasicCard>
           PARSER = new com.google.protobuf.AbstractParser<BasicCard>() {
+        @java.lang.Override
         public BasicCard parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -14873,6 +15201,7 @@ private static final long serialVersionUID = 0L;
         return PARSER;
       }
 
+      @java.lang.Override
       public com.google.cloud.dialogflow.v2.Intent.Message.BasicCard getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
       }
@@ -14946,17 +15275,17 @@ private static final long serialVersionUID = 0L;
               case 0:
                 done = true;
                 break;
+              case 10: {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                title_ = s;
+                break;
+              }
               default: {
                 if (!parseUnknownFieldProto3(
                     input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
-                break;
-              }
-              case 10: {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                title_ = s;
                 break;
               }
             }
@@ -14976,6 +15305,7 @@ private static final long serialVersionUID = 0L;
         return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_Suggestion_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_Suggestion_fieldAccessorTable
@@ -15026,6 +15356,7 @@ private static final long serialVersionUID = 0L;
       }
 
       private byte memoizedIsInitialized = -1;
+      @java.lang.Override
       public final boolean isInitialized() {
         byte isInitialized = memoizedIsInitialized;
         if (isInitialized == 1) return true;
@@ -15035,6 +15366,7 @@ private static final long serialVersionUID = 0L;
         return true;
       }
 
+      @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
         if (!getTitleBytes().isEmpty()) {
@@ -15043,6 +15375,7 @@ private static final long serialVersionUID = 0L;
         unknownFields.writeTo(output);
       }
 
+      @java.lang.Override
       public int getSerializedSize() {
         int size = memoizedSize;
         if (size != -1) return size;
@@ -15157,6 +15490,7 @@ private static final long serialVersionUID = 0L;
             .parseWithIOException(PARSER, input, extensionRegistry);
       }
 
+      @java.lang.Override
       public Builder newBuilderForType() { return newBuilder(); }
       public static Builder newBuilder() {
         return DEFAULT_INSTANCE.toBuilder();
@@ -15164,6 +15498,7 @@ private static final long serialVersionUID = 0L;
       public static Builder newBuilder(com.google.cloud.dialogflow.v2.Intent.Message.Suggestion prototype) {
         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
       }
+      @java.lang.Override
       public Builder toBuilder() {
         return this == DEFAULT_INSTANCE
             ? new Builder() : new Builder().mergeFrom(this);
@@ -15192,6 +15527,7 @@ private static final long serialVersionUID = 0L;
           return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_Suggestion_descriptor;
         }
 
+        @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
           return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_Suggestion_fieldAccessorTable
@@ -15214,6 +15550,7 @@ private static final long serialVersionUID = 0L;
                   .alwaysUseFieldBuilders) {
           }
         }
+        @java.lang.Override
         public Builder clear() {
           super.clear();
           title_ = "";
@@ -15221,15 +15558,18 @@ private static final long serialVersionUID = 0L;
           return this;
         }
 
+        @java.lang.Override
         public com.google.protobuf.Descriptors.Descriptor
             getDescriptorForType() {
           return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_Suggestion_descriptor;
         }
 
+        @java.lang.Override
         public com.google.cloud.dialogflow.v2.Intent.Message.Suggestion getDefaultInstanceForType() {
           return com.google.cloud.dialogflow.v2.Intent.Message.Suggestion.getDefaultInstance();
         }
 
+        @java.lang.Override
         public com.google.cloud.dialogflow.v2.Intent.Message.Suggestion build() {
           com.google.cloud.dialogflow.v2.Intent.Message.Suggestion result = buildPartial();
           if (!result.isInitialized()) {
@@ -15238,6 +15578,7 @@ private static final long serialVersionUID = 0L;
           return result;
         }
 
+        @java.lang.Override
         public com.google.cloud.dialogflow.v2.Intent.Message.Suggestion buildPartial() {
           com.google.cloud.dialogflow.v2.Intent.Message.Suggestion result = new com.google.cloud.dialogflow.v2.Intent.Message.Suggestion(this);
           result.title_ = title_;
@@ -15245,32 +15586,39 @@ private static final long serialVersionUID = 0L;
           return result;
         }
 
+        @java.lang.Override
         public Builder clone() {
           return (Builder) super.clone();
         }
+        @java.lang.Override
         public Builder setField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             java.lang.Object value) {
           return (Builder) super.setField(field, value);
         }
+        @java.lang.Override
         public Builder clearField(
             com.google.protobuf.Descriptors.FieldDescriptor field) {
           return (Builder) super.clearField(field);
         }
+        @java.lang.Override
         public Builder clearOneof(
             com.google.protobuf.Descriptors.OneofDescriptor oneof) {
           return (Builder) super.clearOneof(oneof);
         }
+        @java.lang.Override
         public Builder setRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             int index, java.lang.Object value) {
           return (Builder) super.setRepeatedField(field, index, value);
         }
+        @java.lang.Override
         public Builder addRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             java.lang.Object value) {
           return (Builder) super.addRepeatedField(field, value);
         }
+        @java.lang.Override
         public Builder mergeFrom(com.google.protobuf.Message other) {
           if (other instanceof com.google.cloud.dialogflow.v2.Intent.Message.Suggestion) {
             return mergeFrom((com.google.cloud.dialogflow.v2.Intent.Message.Suggestion)other);
@@ -15291,10 +15639,12 @@ private static final long serialVersionUID = 0L;
           return this;
         }
 
+        @java.lang.Override
         public final boolean isInitialized() {
           return true;
         }
 
+        @java.lang.Override
         public Builder mergeFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -15401,11 +15751,13 @@ private static final long serialVersionUID = 0L;
           onChanged();
           return this;
         }
+        @java.lang.Override
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
           return super.setUnknownFieldsProto3(unknownFields);
         }
 
+        @java.lang.Override
         public final Builder mergeUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
           return super.mergeUnknownFields(unknownFields);
@@ -15427,6 +15779,7 @@ private static final long serialVersionUID = 0L;
 
       private static final com.google.protobuf.Parser<Suggestion>
           PARSER = new com.google.protobuf.AbstractParser<Suggestion>() {
+        @java.lang.Override
         public Suggestion parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -15444,6 +15797,7 @@ private static final long serialVersionUID = 0L;
         return PARSER;
       }
 
+      @java.lang.Override
       public com.google.cloud.dialogflow.v2.Intent.Message.Suggestion getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
       }
@@ -15542,13 +15896,6 @@ private static final long serialVersionUID = 0L;
               case 0:
                 done = true;
                 break;
-              default: {
-                if (!parseUnknownFieldProto3(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
               case 10: {
                 if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
                   suggestions_ = new java.util.ArrayList<com.google.cloud.dialogflow.v2.Intent.Message.Suggestion>();
@@ -15556,6 +15903,13 @@ private static final long serialVersionUID = 0L;
                 }
                 suggestions_.add(
                     input.readMessage(com.google.cloud.dialogflow.v2.Intent.Message.Suggestion.parser(), extensionRegistry));
+                break;
+              }
+              default: {
+                if (!parseUnknownFieldProto3(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
                 break;
               }
             }
@@ -15578,6 +15932,7 @@ private static final long serialVersionUID = 0L;
         return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_Suggestions_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_Suggestions_fieldAccessorTable
@@ -15641,6 +15996,7 @@ private static final long serialVersionUID = 0L;
       }
 
       private byte memoizedIsInitialized = -1;
+      @java.lang.Override
       public final boolean isInitialized() {
         byte isInitialized = memoizedIsInitialized;
         if (isInitialized == 1) return true;
@@ -15650,6 +16006,7 @@ private static final long serialVersionUID = 0L;
         return true;
       }
 
+      @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
         for (int i = 0; i < suggestions_.size(); i++) {
@@ -15658,6 +16015,7 @@ private static final long serialVersionUID = 0L;
         unknownFields.writeTo(output);
       }
 
+      @java.lang.Override
       public int getSerializedSize() {
         int size = memoizedSize;
         if (size != -1) return size;
@@ -15775,6 +16133,7 @@ private static final long serialVersionUID = 0L;
             .parseWithIOException(PARSER, input, extensionRegistry);
       }
 
+      @java.lang.Override
       public Builder newBuilderForType() { return newBuilder(); }
       public static Builder newBuilder() {
         return DEFAULT_INSTANCE.toBuilder();
@@ -15782,6 +16141,7 @@ private static final long serialVersionUID = 0L;
       public static Builder newBuilder(com.google.cloud.dialogflow.v2.Intent.Message.Suggestions prototype) {
         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
       }
+      @java.lang.Override
       public Builder toBuilder() {
         return this == DEFAULT_INSTANCE
             ? new Builder() : new Builder().mergeFrom(this);
@@ -15809,6 +16169,7 @@ private static final long serialVersionUID = 0L;
           return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_Suggestions_descriptor;
         }
 
+        @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
           return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_Suggestions_fieldAccessorTable
@@ -15832,6 +16193,7 @@ private static final long serialVersionUID = 0L;
             getSuggestionsFieldBuilder();
           }
         }
+        @java.lang.Override
         public Builder clear() {
           super.clear();
           if (suggestionsBuilder_ == null) {
@@ -15843,15 +16205,18 @@ private static final long serialVersionUID = 0L;
           return this;
         }
 
+        @java.lang.Override
         public com.google.protobuf.Descriptors.Descriptor
             getDescriptorForType() {
           return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_Suggestions_descriptor;
         }
 
+        @java.lang.Override
         public com.google.cloud.dialogflow.v2.Intent.Message.Suggestions getDefaultInstanceForType() {
           return com.google.cloud.dialogflow.v2.Intent.Message.Suggestions.getDefaultInstance();
         }
 
+        @java.lang.Override
         public com.google.cloud.dialogflow.v2.Intent.Message.Suggestions build() {
           com.google.cloud.dialogflow.v2.Intent.Message.Suggestions result = buildPartial();
           if (!result.isInitialized()) {
@@ -15860,6 +16225,7 @@ private static final long serialVersionUID = 0L;
           return result;
         }
 
+        @java.lang.Override
         public com.google.cloud.dialogflow.v2.Intent.Message.Suggestions buildPartial() {
           com.google.cloud.dialogflow.v2.Intent.Message.Suggestions result = new com.google.cloud.dialogflow.v2.Intent.Message.Suggestions(this);
           int from_bitField0_ = bitField0_;
@@ -15876,32 +16242,39 @@ private static final long serialVersionUID = 0L;
           return result;
         }
 
+        @java.lang.Override
         public Builder clone() {
           return (Builder) super.clone();
         }
+        @java.lang.Override
         public Builder setField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             java.lang.Object value) {
           return (Builder) super.setField(field, value);
         }
+        @java.lang.Override
         public Builder clearField(
             com.google.protobuf.Descriptors.FieldDescriptor field) {
           return (Builder) super.clearField(field);
         }
+        @java.lang.Override
         public Builder clearOneof(
             com.google.protobuf.Descriptors.OneofDescriptor oneof) {
           return (Builder) super.clearOneof(oneof);
         }
+        @java.lang.Override
         public Builder setRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             int index, java.lang.Object value) {
           return (Builder) super.setRepeatedField(field, index, value);
         }
+        @java.lang.Override
         public Builder addRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             java.lang.Object value) {
           return (Builder) super.addRepeatedField(field, value);
         }
+        @java.lang.Override
         public Builder mergeFrom(com.google.protobuf.Message other) {
           if (other instanceof com.google.cloud.dialogflow.v2.Intent.Message.Suggestions) {
             return mergeFrom((com.google.cloud.dialogflow.v2.Intent.Message.Suggestions)other);
@@ -15944,10 +16317,12 @@ private static final long serialVersionUID = 0L;
           return this;
         }
 
+        @java.lang.Override
         public final boolean isInitialized() {
           return true;
         }
 
+        @java.lang.Override
         public Builder mergeFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -16278,11 +16653,13 @@ private static final long serialVersionUID = 0L;
           }
           return suggestionsBuilder_;
         }
+        @java.lang.Override
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
           return super.setUnknownFieldsProto3(unknownFields);
         }
 
+        @java.lang.Override
         public final Builder mergeUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
           return super.mergeUnknownFields(unknownFields);
@@ -16304,6 +16681,7 @@ private static final long serialVersionUID = 0L;
 
       private static final com.google.protobuf.Parser<Suggestions>
           PARSER = new com.google.protobuf.AbstractParser<Suggestions>() {
+        @java.lang.Override
         public Suggestions parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -16321,6 +16699,7 @@ private static final long serialVersionUID = 0L;
         return PARSER;
       }
 
+      @java.lang.Override
       public com.google.cloud.dialogflow.v2.Intent.Message.Suggestions getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
       }
@@ -16415,13 +16794,6 @@ private static final long serialVersionUID = 0L;
               case 0:
                 done = true;
                 break;
-              default: {
-                if (!parseUnknownFieldProto3(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
               case 10: {
                 java.lang.String s = input.readStringRequireUtf8();
 
@@ -16432,6 +16804,13 @@ private static final long serialVersionUID = 0L;
                 java.lang.String s = input.readStringRequireUtf8();
 
                 uri_ = s;
+                break;
+              }
+              default: {
+                if (!parseUnknownFieldProto3(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
                 break;
               }
             }
@@ -16451,6 +16830,7 @@ private static final long serialVersionUID = 0L;
         return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_LinkOutSuggestion_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_LinkOutSuggestion_fieldAccessorTable
@@ -16545,6 +16925,7 @@ private static final long serialVersionUID = 0L;
       }
 
       private byte memoizedIsInitialized = -1;
+      @java.lang.Override
       public final boolean isInitialized() {
         byte isInitialized = memoizedIsInitialized;
         if (isInitialized == 1) return true;
@@ -16554,6 +16935,7 @@ private static final long serialVersionUID = 0L;
         return true;
       }
 
+      @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
         if (!getDestinationNameBytes().isEmpty()) {
@@ -16565,6 +16947,7 @@ private static final long serialVersionUID = 0L;
         unknownFields.writeTo(output);
       }
 
+      @java.lang.Override
       public int getSerializedSize() {
         int size = memoizedSize;
         if (size != -1) return size;
@@ -16686,6 +17069,7 @@ private static final long serialVersionUID = 0L;
             .parseWithIOException(PARSER, input, extensionRegistry);
       }
 
+      @java.lang.Override
       public Builder newBuilderForType() { return newBuilder(); }
       public static Builder newBuilder() {
         return DEFAULT_INSTANCE.toBuilder();
@@ -16693,6 +17077,7 @@ private static final long serialVersionUID = 0L;
       public static Builder newBuilder(com.google.cloud.dialogflow.v2.Intent.Message.LinkOutSuggestion prototype) {
         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
       }
+      @java.lang.Override
       public Builder toBuilder() {
         return this == DEFAULT_INSTANCE
             ? new Builder() : new Builder().mergeFrom(this);
@@ -16721,6 +17106,7 @@ private static final long serialVersionUID = 0L;
           return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_LinkOutSuggestion_descriptor;
         }
 
+        @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
           return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_LinkOutSuggestion_fieldAccessorTable
@@ -16743,6 +17129,7 @@ private static final long serialVersionUID = 0L;
                   .alwaysUseFieldBuilders) {
           }
         }
+        @java.lang.Override
         public Builder clear() {
           super.clear();
           destinationName_ = "";
@@ -16752,15 +17139,18 @@ private static final long serialVersionUID = 0L;
           return this;
         }
 
+        @java.lang.Override
         public com.google.protobuf.Descriptors.Descriptor
             getDescriptorForType() {
           return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_LinkOutSuggestion_descriptor;
         }
 
+        @java.lang.Override
         public com.google.cloud.dialogflow.v2.Intent.Message.LinkOutSuggestion getDefaultInstanceForType() {
           return com.google.cloud.dialogflow.v2.Intent.Message.LinkOutSuggestion.getDefaultInstance();
         }
 
+        @java.lang.Override
         public com.google.cloud.dialogflow.v2.Intent.Message.LinkOutSuggestion build() {
           com.google.cloud.dialogflow.v2.Intent.Message.LinkOutSuggestion result = buildPartial();
           if (!result.isInitialized()) {
@@ -16769,6 +17159,7 @@ private static final long serialVersionUID = 0L;
           return result;
         }
 
+        @java.lang.Override
         public com.google.cloud.dialogflow.v2.Intent.Message.LinkOutSuggestion buildPartial() {
           com.google.cloud.dialogflow.v2.Intent.Message.LinkOutSuggestion result = new com.google.cloud.dialogflow.v2.Intent.Message.LinkOutSuggestion(this);
           result.destinationName_ = destinationName_;
@@ -16777,32 +17168,39 @@ private static final long serialVersionUID = 0L;
           return result;
         }
 
+        @java.lang.Override
         public Builder clone() {
           return (Builder) super.clone();
         }
+        @java.lang.Override
         public Builder setField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             java.lang.Object value) {
           return (Builder) super.setField(field, value);
         }
+        @java.lang.Override
         public Builder clearField(
             com.google.protobuf.Descriptors.FieldDescriptor field) {
           return (Builder) super.clearField(field);
         }
+        @java.lang.Override
         public Builder clearOneof(
             com.google.protobuf.Descriptors.OneofDescriptor oneof) {
           return (Builder) super.clearOneof(oneof);
         }
+        @java.lang.Override
         public Builder setRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             int index, java.lang.Object value) {
           return (Builder) super.setRepeatedField(field, index, value);
         }
+        @java.lang.Override
         public Builder addRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             java.lang.Object value) {
           return (Builder) super.addRepeatedField(field, value);
         }
+        @java.lang.Override
         public Builder mergeFrom(com.google.protobuf.Message other) {
           if (other instanceof com.google.cloud.dialogflow.v2.Intent.Message.LinkOutSuggestion) {
             return mergeFrom((com.google.cloud.dialogflow.v2.Intent.Message.LinkOutSuggestion)other);
@@ -16827,10 +17225,12 @@ private static final long serialVersionUID = 0L;
           return this;
         }
 
+        @java.lang.Override
         public final boolean isInitialized() {
           return true;
         }
 
+        @java.lang.Override
         public Builder mergeFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -17031,11 +17431,13 @@ private static final long serialVersionUID = 0L;
           onChanged();
           return this;
         }
+        @java.lang.Override
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
           return super.setUnknownFieldsProto3(unknownFields);
         }
 
+        @java.lang.Override
         public final Builder mergeUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
           return super.mergeUnknownFields(unknownFields);
@@ -17057,6 +17459,7 @@ private static final long serialVersionUID = 0L;
 
       private static final com.google.protobuf.Parser<LinkOutSuggestion>
           PARSER = new com.google.protobuf.AbstractParser<LinkOutSuggestion>() {
+        @java.lang.Override
         public LinkOutSuggestion parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -17074,6 +17477,7 @@ private static final long serialVersionUID = 0L;
         return PARSER;
       }
 
+      @java.lang.Override
       public com.google.cloud.dialogflow.v2.Intent.Message.LinkOutSuggestion getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
       }
@@ -17191,13 +17595,6 @@ private static final long serialVersionUID = 0L;
               case 0:
                 done = true;
                 break;
-              default: {
-                if (!parseUnknownFieldProto3(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
               case 10: {
                 java.lang.String s = input.readStringRequireUtf8();
 
@@ -17211,6 +17608,13 @@ private static final long serialVersionUID = 0L;
                 }
                 items_.add(
                     input.readMessage(com.google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item.parser(), extensionRegistry));
+                break;
+              }
+              default: {
+                if (!parseUnknownFieldProto3(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
                 break;
               }
             }
@@ -17233,6 +17637,7 @@ private static final long serialVersionUID = 0L;
         return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_ListSelect_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_ListSelect_fieldAccessorTable
@@ -17375,13 +17780,6 @@ private static final long serialVersionUID = 0L;
                 case 0:
                   done = true;
                   break;
-                default: {
-                  if (!parseUnknownFieldProto3(
-                      input, unknownFields, extensionRegistry, tag)) {
-                    done = true;
-                  }
-                  break;
-                }
                 case 10: {
                   com.google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo.Builder subBuilder = null;
                   if (info_ != null) {
@@ -17420,6 +17818,13 @@ private static final long serialVersionUID = 0L;
 
                   break;
                 }
+                default: {
+                  if (!parseUnknownFieldProto3(
+                      input, unknownFields, extensionRegistry, tag)) {
+                    done = true;
+                  }
+                  break;
+                }
               }
             }
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -17437,6 +17842,7 @@ private static final long serialVersionUID = 0L;
           return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_ListSelect_Item_descriptor;
         }
 
+        @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
           return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_ListSelect_Item_fieldAccessorTable
@@ -17595,6 +18001,7 @@ private static final long serialVersionUID = 0L;
         }
 
         private byte memoizedIsInitialized = -1;
+        @java.lang.Override
         public final boolean isInitialized() {
           byte isInitialized = memoizedIsInitialized;
           if (isInitialized == 1) return true;
@@ -17604,6 +18011,7 @@ private static final long serialVersionUID = 0L;
           return true;
         }
 
+        @java.lang.Override
         public void writeTo(com.google.protobuf.CodedOutputStream output)
                             throws java.io.IOException {
           if (info_ != null) {
@@ -17621,6 +18029,7 @@ private static final long serialVersionUID = 0L;
           unknownFields.writeTo(output);
         }
 
+        @java.lang.Override
         public int getSerializedSize() {
           int size = memoizedSize;
           if (size != -1) return size;
@@ -17768,6 +18177,7 @@ private static final long serialVersionUID = 0L;
               .parseWithIOException(PARSER, input, extensionRegistry);
         }
 
+        @java.lang.Override
         public Builder newBuilderForType() { return newBuilder(); }
         public static Builder newBuilder() {
           return DEFAULT_INSTANCE.toBuilder();
@@ -17775,6 +18185,7 @@ private static final long serialVersionUID = 0L;
         public static Builder newBuilder(com.google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item prototype) {
           return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
         }
+        @java.lang.Override
         public Builder toBuilder() {
           return this == DEFAULT_INSTANCE
               ? new Builder() : new Builder().mergeFrom(this);
@@ -17802,6 +18213,7 @@ private static final long serialVersionUID = 0L;
             return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_ListSelect_Item_descriptor;
           }
 
+          @java.lang.Override
           protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
               internalGetFieldAccessorTable() {
             return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_ListSelect_Item_fieldAccessorTable
@@ -17824,6 +18236,7 @@ private static final long serialVersionUID = 0L;
                     .alwaysUseFieldBuilders) {
             }
           }
+          @java.lang.Override
           public Builder clear() {
             super.clear();
             if (infoBuilder_ == null) {
@@ -17845,15 +18258,18 @@ private static final long serialVersionUID = 0L;
             return this;
           }
 
+          @java.lang.Override
           public com.google.protobuf.Descriptors.Descriptor
               getDescriptorForType() {
             return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_ListSelect_Item_descriptor;
           }
 
+          @java.lang.Override
           public com.google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item getDefaultInstanceForType() {
             return com.google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item.getDefaultInstance();
           }
 
+          @java.lang.Override
           public com.google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item build() {
             com.google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item result = buildPartial();
             if (!result.isInitialized()) {
@@ -17862,6 +18278,7 @@ private static final long serialVersionUID = 0L;
             return result;
           }
 
+          @java.lang.Override
           public com.google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item buildPartial() {
             com.google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item result = new com.google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item(this);
             if (infoBuilder_ == null) {
@@ -17880,32 +18297,39 @@ private static final long serialVersionUID = 0L;
             return result;
           }
 
+          @java.lang.Override
           public Builder clone() {
             return (Builder) super.clone();
           }
+          @java.lang.Override
           public Builder setField(
               com.google.protobuf.Descriptors.FieldDescriptor field,
               java.lang.Object value) {
             return (Builder) super.setField(field, value);
           }
+          @java.lang.Override
           public Builder clearField(
               com.google.protobuf.Descriptors.FieldDescriptor field) {
             return (Builder) super.clearField(field);
           }
+          @java.lang.Override
           public Builder clearOneof(
               com.google.protobuf.Descriptors.OneofDescriptor oneof) {
             return (Builder) super.clearOneof(oneof);
           }
+          @java.lang.Override
           public Builder setRepeatedField(
               com.google.protobuf.Descriptors.FieldDescriptor field,
               int index, java.lang.Object value) {
             return (Builder) super.setRepeatedField(field, index, value);
           }
+          @java.lang.Override
           public Builder addRepeatedField(
               com.google.protobuf.Descriptors.FieldDescriptor field,
               java.lang.Object value) {
             return (Builder) super.addRepeatedField(field, value);
           }
+          @java.lang.Override
           public Builder mergeFrom(com.google.protobuf.Message other) {
             if (other instanceof com.google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item) {
               return mergeFrom((com.google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item)other);
@@ -17936,10 +18360,12 @@ private static final long serialVersionUID = 0L;
             return this;
           }
 
+          @java.lang.Override
           public final boolean isInitialized() {
             return true;
           }
 
+          @java.lang.Override
           public Builder mergeFrom(
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -18441,11 +18867,13 @@ private static final long serialVersionUID = 0L;
             }
             return imageBuilder_;
           }
+          @java.lang.Override
           public final Builder setUnknownFields(
               final com.google.protobuf.UnknownFieldSet unknownFields) {
             return super.setUnknownFieldsProto3(unknownFields);
           }
 
+          @java.lang.Override
           public final Builder mergeUnknownFields(
               final com.google.protobuf.UnknownFieldSet unknownFields) {
             return super.mergeUnknownFields(unknownFields);
@@ -18467,6 +18895,7 @@ private static final long serialVersionUID = 0L;
 
         private static final com.google.protobuf.Parser<Item>
             PARSER = new com.google.protobuf.AbstractParser<Item>() {
+          @java.lang.Override
           public Item parsePartialFrom(
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -18484,6 +18913,7 @@ private static final long serialVersionUID = 0L;
           return PARSER;
         }
 
+        @java.lang.Override
         public com.google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item getDefaultInstanceForType() {
           return DEFAULT_INSTANCE;
         }
@@ -18589,6 +19019,7 @@ private static final long serialVersionUID = 0L;
       }
 
       private byte memoizedIsInitialized = -1;
+      @java.lang.Override
       public final boolean isInitialized() {
         byte isInitialized = memoizedIsInitialized;
         if (isInitialized == 1) return true;
@@ -18598,6 +19029,7 @@ private static final long serialVersionUID = 0L;
         return true;
       }
 
+      @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
         if (!getTitleBytes().isEmpty()) {
@@ -18609,6 +19041,7 @@ private static final long serialVersionUID = 0L;
         unknownFields.writeTo(output);
       }
 
+      @java.lang.Override
       public int getSerializedSize() {
         int size = memoizedSize;
         if (size != -1) return size;
@@ -18733,6 +19166,7 @@ private static final long serialVersionUID = 0L;
             .parseWithIOException(PARSER, input, extensionRegistry);
       }
 
+      @java.lang.Override
       public Builder newBuilderForType() { return newBuilder(); }
       public static Builder newBuilder() {
         return DEFAULT_INSTANCE.toBuilder();
@@ -18740,6 +19174,7 @@ private static final long serialVersionUID = 0L;
       public static Builder newBuilder(com.google.cloud.dialogflow.v2.Intent.Message.ListSelect prototype) {
         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
       }
+      @java.lang.Override
       public Builder toBuilder() {
         return this == DEFAULT_INSTANCE
             ? new Builder() : new Builder().mergeFrom(this);
@@ -18767,6 +19202,7 @@ private static final long serialVersionUID = 0L;
           return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_ListSelect_descriptor;
         }
 
+        @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
           return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_ListSelect_fieldAccessorTable
@@ -18790,6 +19226,7 @@ private static final long serialVersionUID = 0L;
             getItemsFieldBuilder();
           }
         }
+        @java.lang.Override
         public Builder clear() {
           super.clear();
           title_ = "";
@@ -18803,15 +19240,18 @@ private static final long serialVersionUID = 0L;
           return this;
         }
 
+        @java.lang.Override
         public com.google.protobuf.Descriptors.Descriptor
             getDescriptorForType() {
           return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_ListSelect_descriptor;
         }
 
+        @java.lang.Override
         public com.google.cloud.dialogflow.v2.Intent.Message.ListSelect getDefaultInstanceForType() {
           return com.google.cloud.dialogflow.v2.Intent.Message.ListSelect.getDefaultInstance();
         }
 
+        @java.lang.Override
         public com.google.cloud.dialogflow.v2.Intent.Message.ListSelect build() {
           com.google.cloud.dialogflow.v2.Intent.Message.ListSelect result = buildPartial();
           if (!result.isInitialized()) {
@@ -18820,6 +19260,7 @@ private static final long serialVersionUID = 0L;
           return result;
         }
 
+        @java.lang.Override
         public com.google.cloud.dialogflow.v2.Intent.Message.ListSelect buildPartial() {
           com.google.cloud.dialogflow.v2.Intent.Message.ListSelect result = new com.google.cloud.dialogflow.v2.Intent.Message.ListSelect(this);
           int from_bitField0_ = bitField0_;
@@ -18839,32 +19280,39 @@ private static final long serialVersionUID = 0L;
           return result;
         }
 
+        @java.lang.Override
         public Builder clone() {
           return (Builder) super.clone();
         }
+        @java.lang.Override
         public Builder setField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             java.lang.Object value) {
           return (Builder) super.setField(field, value);
         }
+        @java.lang.Override
         public Builder clearField(
             com.google.protobuf.Descriptors.FieldDescriptor field) {
           return (Builder) super.clearField(field);
         }
+        @java.lang.Override
         public Builder clearOneof(
             com.google.protobuf.Descriptors.OneofDescriptor oneof) {
           return (Builder) super.clearOneof(oneof);
         }
+        @java.lang.Override
         public Builder setRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             int index, java.lang.Object value) {
           return (Builder) super.setRepeatedField(field, index, value);
         }
+        @java.lang.Override
         public Builder addRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             java.lang.Object value) {
           return (Builder) super.addRepeatedField(field, value);
         }
+        @java.lang.Override
         public Builder mergeFrom(com.google.protobuf.Message other) {
           if (other instanceof com.google.cloud.dialogflow.v2.Intent.Message.ListSelect) {
             return mergeFrom((com.google.cloud.dialogflow.v2.Intent.Message.ListSelect)other);
@@ -18911,10 +19359,12 @@ private static final long serialVersionUID = 0L;
           return this;
         }
 
+        @java.lang.Override
         public final boolean isInitialized() {
           return true;
         }
 
+        @java.lang.Override
         public Builder mergeFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -19334,11 +19784,13 @@ private static final long serialVersionUID = 0L;
           }
           return itemsBuilder_;
         }
+        @java.lang.Override
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
           return super.setUnknownFieldsProto3(unknownFields);
         }
 
+        @java.lang.Override
         public final Builder mergeUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
           return super.mergeUnknownFields(unknownFields);
@@ -19360,6 +19812,7 @@ private static final long serialVersionUID = 0L;
 
       private static final com.google.protobuf.Parser<ListSelect>
           PARSER = new com.google.protobuf.AbstractParser<ListSelect>() {
+        @java.lang.Override
         public ListSelect parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -19377,6 +19830,7 @@ private static final long serialVersionUID = 0L;
         return PARSER;
       }
 
+      @java.lang.Override
       public com.google.cloud.dialogflow.v2.Intent.Message.ListSelect getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
       }
@@ -19475,13 +19929,6 @@ private static final long serialVersionUID = 0L;
               case 0:
                 done = true;
                 break;
-              default: {
-                if (!parseUnknownFieldProto3(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
               case 10: {
                 if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
                   items_ = new java.util.ArrayList<com.google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.Item>();
@@ -19489,6 +19936,13 @@ private static final long serialVersionUID = 0L;
                 }
                 items_.add(
                     input.readMessage(com.google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.Item.parser(), extensionRegistry));
+                break;
+              }
+              default: {
+                if (!parseUnknownFieldProto3(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
                 break;
               }
             }
@@ -19511,6 +19965,7 @@ private static final long serialVersionUID = 0L;
         return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_CarouselSelect_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_CarouselSelect_fieldAccessorTable
@@ -19653,13 +20108,6 @@ private static final long serialVersionUID = 0L;
                 case 0:
                   done = true;
                   break;
-                default: {
-                  if (!parseUnknownFieldProto3(
-                      input, unknownFields, extensionRegistry, tag)) {
-                    done = true;
-                  }
-                  break;
-                }
                 case 10: {
                   com.google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo.Builder subBuilder = null;
                   if (info_ != null) {
@@ -19698,6 +20146,13 @@ private static final long serialVersionUID = 0L;
 
                   break;
                 }
+                default: {
+                  if (!parseUnknownFieldProto3(
+                      input, unknownFields, extensionRegistry, tag)) {
+                    done = true;
+                  }
+                  break;
+                }
               }
             }
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -19715,6 +20170,7 @@ private static final long serialVersionUID = 0L;
           return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_CarouselSelect_Item_descriptor;
         }
 
+        @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
           return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_CarouselSelect_Item_fieldAccessorTable
@@ -19873,6 +20329,7 @@ private static final long serialVersionUID = 0L;
         }
 
         private byte memoizedIsInitialized = -1;
+        @java.lang.Override
         public final boolean isInitialized() {
           byte isInitialized = memoizedIsInitialized;
           if (isInitialized == 1) return true;
@@ -19882,6 +20339,7 @@ private static final long serialVersionUID = 0L;
           return true;
         }
 
+        @java.lang.Override
         public void writeTo(com.google.protobuf.CodedOutputStream output)
                             throws java.io.IOException {
           if (info_ != null) {
@@ -19899,6 +20357,7 @@ private static final long serialVersionUID = 0L;
           unknownFields.writeTo(output);
         }
 
+        @java.lang.Override
         public int getSerializedSize() {
           int size = memoizedSize;
           if (size != -1) return size;
@@ -20046,6 +20505,7 @@ private static final long serialVersionUID = 0L;
               .parseWithIOException(PARSER, input, extensionRegistry);
         }
 
+        @java.lang.Override
         public Builder newBuilderForType() { return newBuilder(); }
         public static Builder newBuilder() {
           return DEFAULT_INSTANCE.toBuilder();
@@ -20053,6 +20513,7 @@ private static final long serialVersionUID = 0L;
         public static Builder newBuilder(com.google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.Item prototype) {
           return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
         }
+        @java.lang.Override
         public Builder toBuilder() {
           return this == DEFAULT_INSTANCE
               ? new Builder() : new Builder().mergeFrom(this);
@@ -20080,6 +20541,7 @@ private static final long serialVersionUID = 0L;
             return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_CarouselSelect_Item_descriptor;
           }
 
+          @java.lang.Override
           protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
               internalGetFieldAccessorTable() {
             return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_CarouselSelect_Item_fieldAccessorTable
@@ -20102,6 +20564,7 @@ private static final long serialVersionUID = 0L;
                     .alwaysUseFieldBuilders) {
             }
           }
+          @java.lang.Override
           public Builder clear() {
             super.clear();
             if (infoBuilder_ == null) {
@@ -20123,15 +20586,18 @@ private static final long serialVersionUID = 0L;
             return this;
           }
 
+          @java.lang.Override
           public com.google.protobuf.Descriptors.Descriptor
               getDescriptorForType() {
             return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_CarouselSelect_Item_descriptor;
           }
 
+          @java.lang.Override
           public com.google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.Item getDefaultInstanceForType() {
             return com.google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.Item.getDefaultInstance();
           }
 
+          @java.lang.Override
           public com.google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.Item build() {
             com.google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.Item result = buildPartial();
             if (!result.isInitialized()) {
@@ -20140,6 +20606,7 @@ private static final long serialVersionUID = 0L;
             return result;
           }
 
+          @java.lang.Override
           public com.google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.Item buildPartial() {
             com.google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.Item result = new com.google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.Item(this);
             if (infoBuilder_ == null) {
@@ -20158,32 +20625,39 @@ private static final long serialVersionUID = 0L;
             return result;
           }
 
+          @java.lang.Override
           public Builder clone() {
             return (Builder) super.clone();
           }
+          @java.lang.Override
           public Builder setField(
               com.google.protobuf.Descriptors.FieldDescriptor field,
               java.lang.Object value) {
             return (Builder) super.setField(field, value);
           }
+          @java.lang.Override
           public Builder clearField(
               com.google.protobuf.Descriptors.FieldDescriptor field) {
             return (Builder) super.clearField(field);
           }
+          @java.lang.Override
           public Builder clearOneof(
               com.google.protobuf.Descriptors.OneofDescriptor oneof) {
             return (Builder) super.clearOneof(oneof);
           }
+          @java.lang.Override
           public Builder setRepeatedField(
               com.google.protobuf.Descriptors.FieldDescriptor field,
               int index, java.lang.Object value) {
             return (Builder) super.setRepeatedField(field, index, value);
           }
+          @java.lang.Override
           public Builder addRepeatedField(
               com.google.protobuf.Descriptors.FieldDescriptor field,
               java.lang.Object value) {
             return (Builder) super.addRepeatedField(field, value);
           }
+          @java.lang.Override
           public Builder mergeFrom(com.google.protobuf.Message other) {
             if (other instanceof com.google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.Item) {
               return mergeFrom((com.google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.Item)other);
@@ -20214,10 +20688,12 @@ private static final long serialVersionUID = 0L;
             return this;
           }
 
+          @java.lang.Override
           public final boolean isInitialized() {
             return true;
           }
 
+          @java.lang.Override
           public Builder mergeFrom(
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -20719,11 +21195,13 @@ private static final long serialVersionUID = 0L;
             }
             return imageBuilder_;
           }
+          @java.lang.Override
           public final Builder setUnknownFields(
               final com.google.protobuf.UnknownFieldSet unknownFields) {
             return super.setUnknownFieldsProto3(unknownFields);
           }
 
+          @java.lang.Override
           public final Builder mergeUnknownFields(
               final com.google.protobuf.UnknownFieldSet unknownFields) {
             return super.mergeUnknownFields(unknownFields);
@@ -20745,6 +21223,7 @@ private static final long serialVersionUID = 0L;
 
         private static final com.google.protobuf.Parser<Item>
             PARSER = new com.google.protobuf.AbstractParser<Item>() {
+          @java.lang.Override
           public Item parsePartialFrom(
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -20762,6 +21241,7 @@ private static final long serialVersionUID = 0L;
           return PARSER;
         }
 
+        @java.lang.Override
         public com.google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.Item getDefaultInstanceForType() {
           return DEFAULT_INSTANCE;
         }
@@ -20824,6 +21304,7 @@ private static final long serialVersionUID = 0L;
       }
 
       private byte memoizedIsInitialized = -1;
+      @java.lang.Override
       public final boolean isInitialized() {
         byte isInitialized = memoizedIsInitialized;
         if (isInitialized == 1) return true;
@@ -20833,6 +21314,7 @@ private static final long serialVersionUID = 0L;
         return true;
       }
 
+      @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
         for (int i = 0; i < items_.size(); i++) {
@@ -20841,6 +21323,7 @@ private static final long serialVersionUID = 0L;
         unknownFields.writeTo(output);
       }
 
+      @java.lang.Override
       public int getSerializedSize() {
         int size = memoizedSize;
         if (size != -1) return size;
@@ -20958,6 +21441,7 @@ private static final long serialVersionUID = 0L;
             .parseWithIOException(PARSER, input, extensionRegistry);
       }
 
+      @java.lang.Override
       public Builder newBuilderForType() { return newBuilder(); }
       public static Builder newBuilder() {
         return DEFAULT_INSTANCE.toBuilder();
@@ -20965,6 +21449,7 @@ private static final long serialVersionUID = 0L;
       public static Builder newBuilder(com.google.cloud.dialogflow.v2.Intent.Message.CarouselSelect prototype) {
         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
       }
+      @java.lang.Override
       public Builder toBuilder() {
         return this == DEFAULT_INSTANCE
             ? new Builder() : new Builder().mergeFrom(this);
@@ -20992,6 +21477,7 @@ private static final long serialVersionUID = 0L;
           return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_CarouselSelect_descriptor;
         }
 
+        @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
           return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_CarouselSelect_fieldAccessorTable
@@ -21015,6 +21501,7 @@ private static final long serialVersionUID = 0L;
             getItemsFieldBuilder();
           }
         }
+        @java.lang.Override
         public Builder clear() {
           super.clear();
           if (itemsBuilder_ == null) {
@@ -21026,15 +21513,18 @@ private static final long serialVersionUID = 0L;
           return this;
         }
 
+        @java.lang.Override
         public com.google.protobuf.Descriptors.Descriptor
             getDescriptorForType() {
           return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_CarouselSelect_descriptor;
         }
 
+        @java.lang.Override
         public com.google.cloud.dialogflow.v2.Intent.Message.CarouselSelect getDefaultInstanceForType() {
           return com.google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.getDefaultInstance();
         }
 
+        @java.lang.Override
         public com.google.cloud.dialogflow.v2.Intent.Message.CarouselSelect build() {
           com.google.cloud.dialogflow.v2.Intent.Message.CarouselSelect result = buildPartial();
           if (!result.isInitialized()) {
@@ -21043,6 +21533,7 @@ private static final long serialVersionUID = 0L;
           return result;
         }
 
+        @java.lang.Override
         public com.google.cloud.dialogflow.v2.Intent.Message.CarouselSelect buildPartial() {
           com.google.cloud.dialogflow.v2.Intent.Message.CarouselSelect result = new com.google.cloud.dialogflow.v2.Intent.Message.CarouselSelect(this);
           int from_bitField0_ = bitField0_;
@@ -21059,32 +21550,39 @@ private static final long serialVersionUID = 0L;
           return result;
         }
 
+        @java.lang.Override
         public Builder clone() {
           return (Builder) super.clone();
         }
+        @java.lang.Override
         public Builder setField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             java.lang.Object value) {
           return (Builder) super.setField(field, value);
         }
+        @java.lang.Override
         public Builder clearField(
             com.google.protobuf.Descriptors.FieldDescriptor field) {
           return (Builder) super.clearField(field);
         }
+        @java.lang.Override
         public Builder clearOneof(
             com.google.protobuf.Descriptors.OneofDescriptor oneof) {
           return (Builder) super.clearOneof(oneof);
         }
+        @java.lang.Override
         public Builder setRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             int index, java.lang.Object value) {
           return (Builder) super.setRepeatedField(field, index, value);
         }
+        @java.lang.Override
         public Builder addRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             java.lang.Object value) {
           return (Builder) super.addRepeatedField(field, value);
         }
+        @java.lang.Override
         public Builder mergeFrom(com.google.protobuf.Message other) {
           if (other instanceof com.google.cloud.dialogflow.v2.Intent.Message.CarouselSelect) {
             return mergeFrom((com.google.cloud.dialogflow.v2.Intent.Message.CarouselSelect)other);
@@ -21127,10 +21625,12 @@ private static final long serialVersionUID = 0L;
           return this;
         }
 
+        @java.lang.Override
         public final boolean isInitialized() {
           return true;
         }
 
+        @java.lang.Override
         public Builder mergeFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -21461,11 +21961,13 @@ private static final long serialVersionUID = 0L;
           }
           return itemsBuilder_;
         }
+        @java.lang.Override
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
           return super.setUnknownFieldsProto3(unknownFields);
         }
 
+        @java.lang.Override
         public final Builder mergeUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
           return super.mergeUnknownFields(unknownFields);
@@ -21487,6 +21989,7 @@ private static final long serialVersionUID = 0L;
 
       private static final com.google.protobuf.Parser<CarouselSelect>
           PARSER = new com.google.protobuf.AbstractParser<CarouselSelect>() {
+        @java.lang.Override
         public CarouselSelect parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -21504,6 +22007,7 @@ private static final long serialVersionUID = 0L;
         return PARSER;
       }
 
+      @java.lang.Override
       public com.google.cloud.dialogflow.v2.Intent.Message.CarouselSelect getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
       }
@@ -21619,13 +22123,6 @@ private static final long serialVersionUID = 0L;
               case 0:
                 done = true;
                 break;
-              default: {
-                if (!parseUnknownFieldProto3(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
               case 10: {
                 java.lang.String s = input.readStringRequireUtf8();
 
@@ -21639,6 +22136,13 @@ private static final long serialVersionUID = 0L;
                   mutable_bitField0_ |= 0x00000002;
                 }
                 synonyms_.add(s);
+                break;
+              }
+              default: {
+                if (!parseUnknownFieldProto3(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
                 break;
               }
             }
@@ -21661,6 +22165,7 @@ private static final long serialVersionUID = 0L;
         return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_SelectItemInfo_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_SelectItemInfo_fieldAccessorTable
@@ -21763,6 +22268,7 @@ private static final long serialVersionUID = 0L;
       }
 
       private byte memoizedIsInitialized = -1;
+      @java.lang.Override
       public final boolean isInitialized() {
         byte isInitialized = memoizedIsInitialized;
         if (isInitialized == 1) return true;
@@ -21772,6 +22278,7 @@ private static final long serialVersionUID = 0L;
         return true;
       }
 
+      @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
         if (!getKeyBytes().isEmpty()) {
@@ -21783,6 +22290,7 @@ private static final long serialVersionUID = 0L;
         unknownFields.writeTo(output);
       }
 
+      @java.lang.Override
       public int getSerializedSize() {
         int size = memoizedSize;
         if (size != -1) return size;
@@ -21911,6 +22419,7 @@ private static final long serialVersionUID = 0L;
             .parseWithIOException(PARSER, input, extensionRegistry);
       }
 
+      @java.lang.Override
       public Builder newBuilderForType() { return newBuilder(); }
       public static Builder newBuilder() {
         return DEFAULT_INSTANCE.toBuilder();
@@ -21918,6 +22427,7 @@ private static final long serialVersionUID = 0L;
       public static Builder newBuilder(com.google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo prototype) {
         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
       }
+      @java.lang.Override
       public Builder toBuilder() {
         return this == DEFAULT_INSTANCE
             ? new Builder() : new Builder().mergeFrom(this);
@@ -21946,6 +22456,7 @@ private static final long serialVersionUID = 0L;
           return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_SelectItemInfo_descriptor;
         }
 
+        @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
           return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_SelectItemInfo_fieldAccessorTable
@@ -21968,6 +22479,7 @@ private static final long serialVersionUID = 0L;
                   .alwaysUseFieldBuilders) {
           }
         }
+        @java.lang.Override
         public Builder clear() {
           super.clear();
           key_ = "";
@@ -21977,15 +22489,18 @@ private static final long serialVersionUID = 0L;
           return this;
         }
 
+        @java.lang.Override
         public com.google.protobuf.Descriptors.Descriptor
             getDescriptorForType() {
           return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_SelectItemInfo_descriptor;
         }
 
+        @java.lang.Override
         public com.google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo getDefaultInstanceForType() {
           return com.google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo.getDefaultInstance();
         }
 
+        @java.lang.Override
         public com.google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo build() {
           com.google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo result = buildPartial();
           if (!result.isInitialized()) {
@@ -21994,6 +22509,7 @@ private static final long serialVersionUID = 0L;
           return result;
         }
 
+        @java.lang.Override
         public com.google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo buildPartial() {
           com.google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo result = new com.google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo(this);
           int from_bitField0_ = bitField0_;
@@ -22009,32 +22525,39 @@ private static final long serialVersionUID = 0L;
           return result;
         }
 
+        @java.lang.Override
         public Builder clone() {
           return (Builder) super.clone();
         }
+        @java.lang.Override
         public Builder setField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             java.lang.Object value) {
           return (Builder) super.setField(field, value);
         }
+        @java.lang.Override
         public Builder clearField(
             com.google.protobuf.Descriptors.FieldDescriptor field) {
           return (Builder) super.clearField(field);
         }
+        @java.lang.Override
         public Builder clearOneof(
             com.google.protobuf.Descriptors.OneofDescriptor oneof) {
           return (Builder) super.clearOneof(oneof);
         }
+        @java.lang.Override
         public Builder setRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             int index, java.lang.Object value) {
           return (Builder) super.setRepeatedField(field, index, value);
         }
+        @java.lang.Override
         public Builder addRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             java.lang.Object value) {
           return (Builder) super.addRepeatedField(field, value);
         }
+        @java.lang.Override
         public Builder mergeFrom(com.google.protobuf.Message other) {
           if (other instanceof com.google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo) {
             return mergeFrom((com.google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo)other);
@@ -22065,10 +22588,12 @@ private static final long serialVersionUID = 0L;
           return this;
         }
 
+        @java.lang.Override
         public final boolean isInitialized() {
           return true;
         }
 
+        @java.lang.Override
         public Builder mergeFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -22320,11 +22845,13 @@ private static final long serialVersionUID = 0L;
           onChanged();
           return this;
         }
+        @java.lang.Override
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
           return super.setUnknownFieldsProto3(unknownFields);
         }
 
+        @java.lang.Override
         public final Builder mergeUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
           return super.mergeUnknownFields(unknownFields);
@@ -22346,6 +22873,7 @@ private static final long serialVersionUID = 0L;
 
       private static final com.google.protobuf.Parser<SelectItemInfo>
           PARSER = new com.google.protobuf.AbstractParser<SelectItemInfo>() {
+        @java.lang.Override
         public SelectItemInfo parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -22363,6 +22891,7 @@ private static final long serialVersionUID = 0L;
         return PARSER;
       }
 
+      @java.lang.Override
       public com.google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
       }
@@ -22869,11 +23398,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.dialogflow.v2.Intent.Message.Platform platform = 6;</code>
      */
     public com.google.cloud.dialogflow.v2.Intent.Message.Platform getPlatform() {
+      @SuppressWarnings("deprecation")
       com.google.cloud.dialogflow.v2.Intent.Message.Platform result = com.google.cloud.dialogflow.v2.Intent.Message.Platform.valueOf(platform_);
       return result == null ? com.google.cloud.dialogflow.v2.Intent.Message.Platform.UNRECOGNIZED : result;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -22883,6 +23414,7 @@ private static final long serialVersionUID = 0L;
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (messageCase_ == 1) {
@@ -22924,6 +23456,7 @@ private static final long serialVersionUID = 0L;
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -23181,6 +23714,7 @@ private static final long serialVersionUID = 0L;
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -23188,6 +23722,7 @@ private static final long serialVersionUID = 0L;
     public static Builder newBuilder(com.google.cloud.dialogflow.v2.Intent.Message prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -23215,6 +23750,7 @@ private static final long serialVersionUID = 0L;
         return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_fieldAccessorTable
@@ -23237,6 +23773,7 @@ private static final long serialVersionUID = 0L;
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         platform_ = 0;
@@ -23246,15 +23783,18 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_Message_descriptor;
       }
 
+      @java.lang.Override
       public com.google.cloud.dialogflow.v2.Intent.Message getDefaultInstanceForType() {
         return com.google.cloud.dialogflow.v2.Intent.Message.getDefaultInstance();
       }
 
+      @java.lang.Override
       public com.google.cloud.dialogflow.v2.Intent.Message build() {
         com.google.cloud.dialogflow.v2.Intent.Message result = buildPartial();
         if (!result.isInitialized()) {
@@ -23263,6 +23803,7 @@ private static final long serialVersionUID = 0L;
         return result;
       }
 
+      @java.lang.Override
       public com.google.cloud.dialogflow.v2.Intent.Message buildPartial() {
         com.google.cloud.dialogflow.v2.Intent.Message result = new com.google.cloud.dialogflow.v2.Intent.Message(this);
         if (messageCase_ == 1) {
@@ -23348,32 +23889,39 @@ private static final long serialVersionUID = 0L;
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.google.cloud.dialogflow.v2.Intent.Message) {
           return mergeFrom((com.google.cloud.dialogflow.v2.Intent.Message)other);
@@ -23442,10 +23990,12 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -25420,6 +25970,7 @@ private static final long serialVersionUID = 0L;
        * <code>.google.cloud.dialogflow.v2.Intent.Message.Platform platform = 6;</code>
        */
       public com.google.cloud.dialogflow.v2.Intent.Message.Platform getPlatform() {
+        @SuppressWarnings("deprecation")
         com.google.cloud.dialogflow.v2.Intent.Message.Platform result = com.google.cloud.dialogflow.v2.Intent.Message.Platform.valueOf(platform_);
         return result == null ? com.google.cloud.dialogflow.v2.Intent.Message.Platform.UNRECOGNIZED : result;
       }
@@ -25452,11 +26003,13 @@ private static final long serialVersionUID = 0L;
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -25478,6 +26031,7 @@ private static final long serialVersionUID = 0L;
 
     private static final com.google.protobuf.Parser<Message>
         PARSER = new com.google.protobuf.AbstractParser<Message>() {
+      @java.lang.Override
       public Message parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -25495,6 +26049,7 @@ private static final long serialVersionUID = 0L;
       return PARSER;
     }
 
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2.Intent.Message getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -25590,13 +26145,6 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -25607,6 +26155,13 @@ private static final long serialVersionUID = 0L;
               java.lang.String s = input.readStringRequireUtf8();
 
               parentFollowupIntentName_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -25626,6 +26181,7 @@ private static final long serialVersionUID = 0L;
       return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_FollowupIntentInfo_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_FollowupIntentInfo_fieldAccessorTable
@@ -25722,6 +26278,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -25731,6 +26288,7 @@ private static final long serialVersionUID = 0L;
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getFollowupIntentNameBytes().isEmpty()) {
@@ -25742,6 +26300,7 @@ private static final long serialVersionUID = 0L;
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -25863,6 +26422,7 @@ private static final long serialVersionUID = 0L;
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -25870,6 +26430,7 @@ private static final long serialVersionUID = 0L;
     public static Builder newBuilder(com.google.cloud.dialogflow.v2.Intent.FollowupIntentInfo prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -25897,6 +26458,7 @@ private static final long serialVersionUID = 0L;
         return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_FollowupIntentInfo_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_FollowupIntentInfo_fieldAccessorTable
@@ -25919,6 +26481,7 @@ private static final long serialVersionUID = 0L;
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         followupIntentName_ = "";
@@ -25928,15 +26491,18 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_FollowupIntentInfo_descriptor;
       }
 
+      @java.lang.Override
       public com.google.cloud.dialogflow.v2.Intent.FollowupIntentInfo getDefaultInstanceForType() {
         return com.google.cloud.dialogflow.v2.Intent.FollowupIntentInfo.getDefaultInstance();
       }
 
+      @java.lang.Override
       public com.google.cloud.dialogflow.v2.Intent.FollowupIntentInfo build() {
         com.google.cloud.dialogflow.v2.Intent.FollowupIntentInfo result = buildPartial();
         if (!result.isInitialized()) {
@@ -25945,6 +26511,7 @@ private static final long serialVersionUID = 0L;
         return result;
       }
 
+      @java.lang.Override
       public com.google.cloud.dialogflow.v2.Intent.FollowupIntentInfo buildPartial() {
         com.google.cloud.dialogflow.v2.Intent.FollowupIntentInfo result = new com.google.cloud.dialogflow.v2.Intent.FollowupIntentInfo(this);
         result.followupIntentName_ = followupIntentName_;
@@ -25953,32 +26520,39 @@ private static final long serialVersionUID = 0L;
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.google.cloud.dialogflow.v2.Intent.FollowupIntentInfo) {
           return mergeFrom((com.google.cloud.dialogflow.v2.Intent.FollowupIntentInfo)other);
@@ -26003,10 +26577,12 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -26212,11 +26788,13 @@ private static final long serialVersionUID = 0L;
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -26238,6 +26816,7 @@ private static final long serialVersionUID = 0L;
 
     private static final com.google.protobuf.Parser<FollowupIntentInfo>
         PARSER = new com.google.protobuf.AbstractParser<FollowupIntentInfo>() {
+      @java.lang.Override
       public FollowupIntentInfo parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -26255,6 +26834,7 @@ private static final long serialVersionUID = 0L;
       return PARSER;
     }
 
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2.Intent.FollowupIntentInfo getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -26372,6 +26952,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.cloud.dialogflow.v2.Intent.WebhookState webhook_state = 6;</code>
    */
   public com.google.cloud.dialogflow.v2.Intent.WebhookState getWebhookState() {
+    @SuppressWarnings("deprecation")
     com.google.cloud.dialogflow.v2.Intent.WebhookState result = com.google.cloud.dialogflow.v2.Intent.WebhookState.valueOf(webhookState_);
     return result == null ? com.google.cloud.dialogflow.v2.Intent.WebhookState.UNRECOGNIZED : result;
   }
@@ -26838,6 +27419,7 @@ private static final long serialVersionUID = 0L;
           new com.google.protobuf.Internal.ListAdapter.Converter<
               java.lang.Integer, com.google.cloud.dialogflow.v2.Intent.Message.Platform>() {
             public com.google.cloud.dialogflow.v2.Intent.Message.Platform convert(java.lang.Integer from) {
+              @SuppressWarnings("deprecation")
               com.google.cloud.dialogflow.v2.Intent.Message.Platform result = com.google.cloud.dialogflow.v2.Intent.Message.Platform.valueOf(from);
               return result == null ? com.google.cloud.dialogflow.v2.Intent.Message.Platform.UNRECOGNIZED : result;
             }
@@ -27056,6 +27638,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -27065,6 +27648,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
+  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     getSerializedSize();
@@ -27129,6 +27713,7 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -27408,6 +27993,7 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
+  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
@@ -27415,6 +28001,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder(com.google.cloud.dialogflow.v2.Intent prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
@@ -27444,6 +28031,7 @@ private static final long serialVersionUID = 0L;
       return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_fieldAccessorTable
@@ -27471,6 +28059,7 @@ private static final long serialVersionUID = 0L;
         getFollowupIntentInfoFieldBuilder();
       }
     }
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       name_ = "";
@@ -27532,15 +28121,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
       return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_Intent_descriptor;
     }
 
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2.Intent getDefaultInstanceForType() {
       return com.google.cloud.dialogflow.v2.Intent.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2.Intent build() {
       com.google.cloud.dialogflow.v2.Intent result = buildPartial();
       if (!result.isInitialized()) {
@@ -27549,6 +28141,7 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2.Intent buildPartial() {
       com.google.cloud.dialogflow.v2.Intent result = new com.google.cloud.dialogflow.v2.Intent(this);
       int from_bitField0_ = bitField0_;
@@ -27628,32 +28221,39 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.dialogflow.v2.Intent) {
         return mergeFrom((com.google.cloud.dialogflow.v2.Intent)other);
@@ -27865,10 +28465,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -28112,6 +28714,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.dialogflow.v2.Intent.WebhookState webhook_state = 6;</code>
      */
     public com.google.cloud.dialogflow.v2.Intent.WebhookState getWebhookState() {
+      @SuppressWarnings("deprecation")
       com.google.cloud.dialogflow.v2.Intent.WebhookState result = com.google.cloud.dialogflow.v2.Intent.WebhookState.valueOf(webhookState_);
       return result == null ? com.google.cloud.dialogflow.v2.Intent.WebhookState.UNRECOGNIZED : result;
     }
@@ -30763,11 +31366,13 @@ private static final long serialVersionUID = 0L;
       }
       return followupIntentInfoBuilder_;
     }
+    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -30789,6 +31394,7 @@ private static final long serialVersionUID = 0L;
 
   private static final com.google.protobuf.Parser<Intent>
       PARSER = new com.google.protobuf.AbstractParser<Intent>() {
+    @java.lang.Override
     public Intent parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -30806,6 +31412,7 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2.Intent getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }

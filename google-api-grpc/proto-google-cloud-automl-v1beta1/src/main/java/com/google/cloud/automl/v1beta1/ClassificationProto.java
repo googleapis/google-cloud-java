@@ -210,16 +210,16 @@ public final class ClassificationProto {
             case 0:
               done = true;
               break;
+            case 13: {
+
+              score_ = input.readFloat();
+              break;
+            }
             default: {
               if (!parseUnknownFieldProto3(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
-              break;
-            }
-            case 13: {
-
-              score_ = input.readFloat();
               break;
             }
           }
@@ -239,6 +239,7 @@ public final class ClassificationProto {
       return com.google.cloud.automl.v1beta1.ClassificationProto.internal_static_google_cloud_automl_v1beta1_ClassificationAnnotation_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.automl.v1beta1.ClassificationProto.internal_static_google_cloud_automl_v1beta1_ClassificationAnnotation_fieldAccessorTable
@@ -264,6 +265,7 @@ public final class ClassificationProto {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -273,6 +275,7 @@ public final class ClassificationProto {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (score_ != 0F) {
@@ -281,6 +284,7 @@ public final class ClassificationProto {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -399,6 +403,7 @@ public final class ClassificationProto {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -406,6 +411,7 @@ public final class ClassificationProto {
     public static Builder newBuilder(com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -433,6 +439,7 @@ public final class ClassificationProto {
         return com.google.cloud.automl.v1beta1.ClassificationProto.internal_static_google_cloud_automl_v1beta1_ClassificationAnnotation_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.cloud.automl.v1beta1.ClassificationProto.internal_static_google_cloud_automl_v1beta1_ClassificationAnnotation_fieldAccessorTable
@@ -455,6 +462,7 @@ public final class ClassificationProto {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         score_ = 0F;
@@ -462,15 +470,18 @@ public final class ClassificationProto {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return com.google.cloud.automl.v1beta1.ClassificationProto.internal_static_google_cloud_automl_v1beta1_ClassificationAnnotation_descriptor;
       }
 
+      @java.lang.Override
       public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation getDefaultInstanceForType() {
         return com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation.getDefaultInstance();
       }
 
+      @java.lang.Override
       public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation build() {
         com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation result = buildPartial();
         if (!result.isInitialized()) {
@@ -479,6 +490,7 @@ public final class ClassificationProto {
         return result;
       }
 
+      @java.lang.Override
       public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation buildPartial() {
         com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation result = new com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation(this);
         result.score_ = score_;
@@ -486,32 +498,39 @@ public final class ClassificationProto {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation) {
           return mergeFrom((com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation)other);
@@ -531,10 +550,12 @@ public final class ClassificationProto {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -602,11 +623,13 @@ public final class ClassificationProto {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -628,6 +651,7 @@ public final class ClassificationProto {
 
     private static final com.google.protobuf.Parser<ClassificationAnnotation>
         PARSER = new com.google.protobuf.AbstractParser<ClassificationAnnotation>() {
+      @java.lang.Override
       public ClassificationAnnotation parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -645,6 +669,7 @@ public final class ClassificationProto {
       return PARSER;
     }
 
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -839,13 +864,6 @@ public final class ClassificationProto {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 13: {
 
               auPrc_ = input.readFloat();
@@ -887,6 +905,13 @@ public final class ClassificationProto {
               annotationSpecId_.add(s);
               break;
             }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -910,6 +935,7 @@ public final class ClassificationProto {
       return com.google.cloud.automl.v1beta1.ClassificationProto.internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.automl.v1beta1.ClassificationProto.internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_fieldAccessorTable
@@ -1038,13 +1064,6 @@ public final class ClassificationProto {
               case 0:
                 done = true;
                 break;
-              default: {
-                if (!parseUnknownFieldProto3(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
               case 13: {
 
                 confidenceThreshold_ = input.readFloat();
@@ -1080,6 +1099,13 @@ public final class ClassificationProto {
                 f1ScoreAt1_ = input.readFloat();
                 break;
               }
+              default: {
+                if (!parseUnknownFieldProto3(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
             }
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -1097,6 +1123,7 @@ public final class ClassificationProto {
         return com.google.cloud.automl.v1beta1.ClassificationProto.internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_ConfidenceMetricsEntry_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.cloud.automl.v1beta1.ClassificationProto.internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_ConfidenceMetricsEntry_fieldAccessorTable
@@ -1200,6 +1227,7 @@ public final class ClassificationProto {
       }
 
       private byte memoizedIsInitialized = -1;
+      @java.lang.Override
       public final boolean isInitialized() {
         byte isInitialized = memoizedIsInitialized;
         if (isInitialized == 1) return true;
@@ -1209,6 +1237,7 @@ public final class ClassificationProto {
         return true;
       }
 
+      @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
         if (confidenceThreshold_ != 0F) {
@@ -1235,6 +1264,7 @@ public final class ClassificationProto {
         unknownFields.writeTo(output);
       }
 
+      @java.lang.Override
       public int getSerializedSize() {
         int size = memoizedSize;
         if (size != -1) return size;
@@ -1419,6 +1449,7 @@ public final class ClassificationProto {
             .parseWithIOException(PARSER, input, extensionRegistry);
       }
 
+      @java.lang.Override
       public Builder newBuilderForType() { return newBuilder(); }
       public static Builder newBuilder() {
         return DEFAULT_INSTANCE.toBuilder();
@@ -1426,6 +1457,7 @@ public final class ClassificationProto {
       public static Builder newBuilder(com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntry prototype) {
         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
       }
+      @java.lang.Override
       public Builder toBuilder() {
         return this == DEFAULT_INSTANCE
             ? new Builder() : new Builder().mergeFrom(this);
@@ -1453,6 +1485,7 @@ public final class ClassificationProto {
           return com.google.cloud.automl.v1beta1.ClassificationProto.internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_ConfidenceMetricsEntry_descriptor;
         }
 
+        @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
           return com.google.cloud.automl.v1beta1.ClassificationProto.internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_ConfidenceMetricsEntry_fieldAccessorTable
@@ -1475,6 +1508,7 @@ public final class ClassificationProto {
                   .alwaysUseFieldBuilders) {
           }
         }
+        @java.lang.Override
         public Builder clear() {
           super.clear();
           confidenceThreshold_ = 0F;
@@ -1494,15 +1528,18 @@ public final class ClassificationProto {
           return this;
         }
 
+        @java.lang.Override
         public com.google.protobuf.Descriptors.Descriptor
             getDescriptorForType() {
           return com.google.cloud.automl.v1beta1.ClassificationProto.internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_ConfidenceMetricsEntry_descriptor;
         }
 
+        @java.lang.Override
         public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntry getDefaultInstanceForType() {
           return com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.getDefaultInstance();
         }
 
+        @java.lang.Override
         public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntry build() {
           com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntry result = buildPartial();
           if (!result.isInitialized()) {
@@ -1511,6 +1548,7 @@ public final class ClassificationProto {
           return result;
         }
 
+        @java.lang.Override
         public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntry buildPartial() {
           com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntry result = new com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntry(this);
           result.confidenceThreshold_ = confidenceThreshold_;
@@ -1524,32 +1562,39 @@ public final class ClassificationProto {
           return result;
         }
 
+        @java.lang.Override
         public Builder clone() {
           return (Builder) super.clone();
         }
+        @java.lang.Override
         public Builder setField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             java.lang.Object value) {
           return (Builder) super.setField(field, value);
         }
+        @java.lang.Override
         public Builder clearField(
             com.google.protobuf.Descriptors.FieldDescriptor field) {
           return (Builder) super.clearField(field);
         }
+        @java.lang.Override
         public Builder clearOneof(
             com.google.protobuf.Descriptors.OneofDescriptor oneof) {
           return (Builder) super.clearOneof(oneof);
         }
+        @java.lang.Override
         public Builder setRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             int index, java.lang.Object value) {
           return (Builder) super.setRepeatedField(field, index, value);
         }
+        @java.lang.Override
         public Builder addRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             java.lang.Object value) {
           return (Builder) super.addRepeatedField(field, value);
         }
+        @java.lang.Override
         public Builder mergeFrom(com.google.protobuf.Message other) {
           if (other instanceof com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntry) {
             return mergeFrom((com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntry)other);
@@ -1587,10 +1632,12 @@ public final class ClassificationProto {
           return this;
         }
 
+        @java.lang.Override
         public final boolean isInitialized() {
           return true;
         }
 
+        @java.lang.Override
         public Builder mergeFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1886,11 +1933,13 @@ public final class ClassificationProto {
           onChanged();
           return this;
         }
+        @java.lang.Override
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
           return super.setUnknownFieldsProto3(unknownFields);
         }
 
+        @java.lang.Override
         public final Builder mergeUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
           return super.mergeUnknownFields(unknownFields);
@@ -1912,6 +1961,7 @@ public final class ClassificationProto {
 
       private static final com.google.protobuf.Parser<ConfidenceMetricsEntry>
           PARSER = new com.google.protobuf.AbstractParser<ConfidenceMetricsEntry>() {
+        @java.lang.Override
         public ConfidenceMetricsEntry parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1929,6 +1979,7 @@ public final class ClassificationProto {
         return PARSER;
       }
 
+      @java.lang.Override
       public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntry getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
       }
@@ -2083,13 +2134,6 @@ public final class ClassificationProto {
               case 0:
                 done = true;
                 break;
-              default: {
-                if (!parseUnknownFieldProto3(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
               case 10: {
                 java.lang.String s = input.readStringRequireUtf8();
                 if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -2106,6 +2150,13 @@ public final class ClassificationProto {
                 }
                 row_.add(
                     input.readMessage(com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.Row.parser(), extensionRegistry));
+                break;
+              }
+              default: {
+                if (!parseUnknownFieldProto3(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
                 break;
               }
             }
@@ -2131,6 +2182,7 @@ public final class ClassificationProto {
         return com.google.cloud.automl.v1beta1.ClassificationProto.internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_ConfusionMatrix_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.cloud.automl.v1beta1.ClassificationProto.internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_ConfusionMatrix_fieldAccessorTable
@@ -2217,13 +2269,6 @@ public final class ClassificationProto {
                 case 0:
                   done = true;
                   break;
-                default: {
-                  if (!parseUnknownFieldProto3(
-                      input, unknownFields, extensionRegistry, tag)) {
-                    done = true;
-                  }
-                  break;
-                }
                 case 8: {
                   if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
                     exampleCount_ = new java.util.ArrayList<java.lang.Integer>();
@@ -2243,6 +2288,13 @@ public final class ClassificationProto {
                     exampleCount_.add(input.readInt32());
                   }
                   input.popLimit(limit);
+                  break;
+                }
+                default: {
+                  if (!parseUnknownFieldProto3(
+                      input, unknownFields, extensionRegistry, tag)) {
+                    done = true;
+                  }
                   break;
                 }
               }
@@ -2265,6 +2317,7 @@ public final class ClassificationProto {
           return com.google.cloud.automl.v1beta1.ClassificationProto.internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_ConfusionMatrix_Row_descriptor;
         }
 
+        @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
           return com.google.cloud.automl.v1beta1.ClassificationProto.internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_ConfusionMatrix_Row_fieldAccessorTable
@@ -2314,6 +2367,7 @@ public final class ClassificationProto {
         private int exampleCountMemoizedSerializedSize = -1;
 
         private byte memoizedIsInitialized = -1;
+        @java.lang.Override
         public final boolean isInitialized() {
           byte isInitialized = memoizedIsInitialized;
           if (isInitialized == 1) return true;
@@ -2323,6 +2377,7 @@ public final class ClassificationProto {
           return true;
         }
 
+        @java.lang.Override
         public void writeTo(com.google.protobuf.CodedOutputStream output)
                             throws java.io.IOException {
           getSerializedSize();
@@ -2336,6 +2391,7 @@ public final class ClassificationProto {
           unknownFields.writeTo(output);
         }
 
+        @java.lang.Override
         public int getSerializedSize() {
           int size = memoizedSize;
           if (size != -1) return size;
@@ -2463,6 +2519,7 @@ public final class ClassificationProto {
               .parseWithIOException(PARSER, input, extensionRegistry);
         }
 
+        @java.lang.Override
         public Builder newBuilderForType() { return newBuilder(); }
         public static Builder newBuilder() {
           return DEFAULT_INSTANCE.toBuilder();
@@ -2470,6 +2527,7 @@ public final class ClassificationProto {
         public static Builder newBuilder(com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.Row prototype) {
           return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
         }
+        @java.lang.Override
         public Builder toBuilder() {
           return this == DEFAULT_INSTANCE
               ? new Builder() : new Builder().mergeFrom(this);
@@ -2497,6 +2555,7 @@ public final class ClassificationProto {
             return com.google.cloud.automl.v1beta1.ClassificationProto.internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_ConfusionMatrix_Row_descriptor;
           }
 
+          @java.lang.Override
           protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
               internalGetFieldAccessorTable() {
             return com.google.cloud.automl.v1beta1.ClassificationProto.internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_ConfusionMatrix_Row_fieldAccessorTable
@@ -2519,6 +2578,7 @@ public final class ClassificationProto {
                     .alwaysUseFieldBuilders) {
             }
           }
+          @java.lang.Override
           public Builder clear() {
             super.clear();
             exampleCount_ = java.util.Collections.emptyList();
@@ -2526,15 +2586,18 @@ public final class ClassificationProto {
             return this;
           }
 
+          @java.lang.Override
           public com.google.protobuf.Descriptors.Descriptor
               getDescriptorForType() {
             return com.google.cloud.automl.v1beta1.ClassificationProto.internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_ConfusionMatrix_Row_descriptor;
           }
 
+          @java.lang.Override
           public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.Row getDefaultInstanceForType() {
             return com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.Row.getDefaultInstance();
           }
 
+          @java.lang.Override
           public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.Row build() {
             com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.Row result = buildPartial();
             if (!result.isInitialized()) {
@@ -2543,6 +2606,7 @@ public final class ClassificationProto {
             return result;
           }
 
+          @java.lang.Override
           public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.Row buildPartial() {
             com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.Row result = new com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.Row(this);
             int from_bitField0_ = bitField0_;
@@ -2555,32 +2619,39 @@ public final class ClassificationProto {
             return result;
           }
 
+          @java.lang.Override
           public Builder clone() {
             return (Builder) super.clone();
           }
+          @java.lang.Override
           public Builder setField(
               com.google.protobuf.Descriptors.FieldDescriptor field,
               java.lang.Object value) {
             return (Builder) super.setField(field, value);
           }
+          @java.lang.Override
           public Builder clearField(
               com.google.protobuf.Descriptors.FieldDescriptor field) {
             return (Builder) super.clearField(field);
           }
+          @java.lang.Override
           public Builder clearOneof(
               com.google.protobuf.Descriptors.OneofDescriptor oneof) {
             return (Builder) super.clearOneof(oneof);
           }
+          @java.lang.Override
           public Builder setRepeatedField(
               com.google.protobuf.Descriptors.FieldDescriptor field,
               int index, java.lang.Object value) {
             return (Builder) super.setRepeatedField(field, index, value);
           }
+          @java.lang.Override
           public Builder addRepeatedField(
               com.google.protobuf.Descriptors.FieldDescriptor field,
               java.lang.Object value) {
             return (Builder) super.addRepeatedField(field, value);
           }
+          @java.lang.Override
           public Builder mergeFrom(com.google.protobuf.Message other) {
             if (other instanceof com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.Row) {
               return mergeFrom((com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.Row)other);
@@ -2607,10 +2678,12 @@ public final class ClassificationProto {
             return this;
           }
 
+          @java.lang.Override
           public final boolean isInitialized() {
             return true;
           }
 
+          @java.lang.Override
           public Builder mergeFrom(
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -2737,11 +2810,13 @@ public final class ClassificationProto {
             onChanged();
             return this;
           }
+          @java.lang.Override
           public final Builder setUnknownFields(
               final com.google.protobuf.UnknownFieldSet unknownFields) {
             return super.setUnknownFieldsProto3(unknownFields);
           }
 
+          @java.lang.Override
           public final Builder mergeUnknownFields(
               final com.google.protobuf.UnknownFieldSet unknownFields) {
             return super.mergeUnknownFields(unknownFields);
@@ -2763,6 +2838,7 @@ public final class ClassificationProto {
 
         private static final com.google.protobuf.Parser<Row>
             PARSER = new com.google.protobuf.AbstractParser<Row>() {
+          @java.lang.Override
           public Row parsePartialFrom(
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -2780,6 +2856,7 @@ public final class ClassificationProto {
           return PARSER;
         }
 
+        @java.lang.Override
         public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.Row getDefaultInstanceForType() {
           return DEFAULT_INSTANCE;
         }
@@ -2907,6 +2984,7 @@ public final class ClassificationProto {
       }
 
       private byte memoizedIsInitialized = -1;
+      @java.lang.Override
       public final boolean isInitialized() {
         byte isInitialized = memoizedIsInitialized;
         if (isInitialized == 1) return true;
@@ -2916,6 +2994,7 @@ public final class ClassificationProto {
         return true;
       }
 
+      @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
         for (int i = 0; i < annotationSpecId_.size(); i++) {
@@ -2927,6 +3006,7 @@ public final class ClassificationProto {
         unknownFields.writeTo(output);
       }
 
+      @java.lang.Override
       public int getSerializedSize() {
         int size = memoizedSize;
         if (size != -1) return size;
@@ -3058,6 +3138,7 @@ public final class ClassificationProto {
             .parseWithIOException(PARSER, input, extensionRegistry);
       }
 
+      @java.lang.Override
       public Builder newBuilderForType() { return newBuilder(); }
       public static Builder newBuilder() {
         return DEFAULT_INSTANCE.toBuilder();
@@ -3065,6 +3146,7 @@ public final class ClassificationProto {
       public static Builder newBuilder(com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix prototype) {
         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
       }
+      @java.lang.Override
       public Builder toBuilder() {
         return this == DEFAULT_INSTANCE
             ? new Builder() : new Builder().mergeFrom(this);
@@ -3092,6 +3174,7 @@ public final class ClassificationProto {
           return com.google.cloud.automl.v1beta1.ClassificationProto.internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_ConfusionMatrix_descriptor;
         }
 
+        @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
           return com.google.cloud.automl.v1beta1.ClassificationProto.internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_ConfusionMatrix_fieldAccessorTable
@@ -3115,6 +3198,7 @@ public final class ClassificationProto {
             getRowFieldBuilder();
           }
         }
+        @java.lang.Override
         public Builder clear() {
           super.clear();
           annotationSpecId_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -3128,15 +3212,18 @@ public final class ClassificationProto {
           return this;
         }
 
+        @java.lang.Override
         public com.google.protobuf.Descriptors.Descriptor
             getDescriptorForType() {
           return com.google.cloud.automl.v1beta1.ClassificationProto.internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_ConfusionMatrix_descriptor;
         }
 
+        @java.lang.Override
         public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix getDefaultInstanceForType() {
           return com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.getDefaultInstance();
         }
 
+        @java.lang.Override
         public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix build() {
           com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix result = buildPartial();
           if (!result.isInitialized()) {
@@ -3145,6 +3232,7 @@ public final class ClassificationProto {
           return result;
         }
 
+        @java.lang.Override
         public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix buildPartial() {
           com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix result = new com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix(this);
           int from_bitField0_ = bitField0_;
@@ -3166,32 +3254,39 @@ public final class ClassificationProto {
           return result;
         }
 
+        @java.lang.Override
         public Builder clone() {
           return (Builder) super.clone();
         }
+        @java.lang.Override
         public Builder setField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             java.lang.Object value) {
           return (Builder) super.setField(field, value);
         }
+        @java.lang.Override
         public Builder clearField(
             com.google.protobuf.Descriptors.FieldDescriptor field) {
           return (Builder) super.clearField(field);
         }
+        @java.lang.Override
         public Builder clearOneof(
             com.google.protobuf.Descriptors.OneofDescriptor oneof) {
           return (Builder) super.clearOneof(oneof);
         }
+        @java.lang.Override
         public Builder setRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             int index, java.lang.Object value) {
           return (Builder) super.setRepeatedField(field, index, value);
         }
+        @java.lang.Override
         public Builder addRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             java.lang.Object value) {
           return (Builder) super.addRepeatedField(field, value);
         }
+        @java.lang.Override
         public Builder mergeFrom(com.google.protobuf.Message other) {
           if (other instanceof com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix) {
             return mergeFrom((com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix)other);
@@ -3244,10 +3339,12 @@ public final class ClassificationProto {
           return this;
         }
 
+        @java.lang.Override
         public final boolean isInitialized() {
           return true;
         }
 
+        @java.lang.Override
         public Builder mergeFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -3780,11 +3877,13 @@ public final class ClassificationProto {
           }
           return rowBuilder_;
         }
+        @java.lang.Override
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
           return super.setUnknownFieldsProto3(unknownFields);
         }
 
+        @java.lang.Override
         public final Builder mergeUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
           return super.mergeUnknownFields(unknownFields);
@@ -3806,6 +3905,7 @@ public final class ClassificationProto {
 
       private static final com.google.protobuf.Parser<ConfusionMatrix>
           PARSER = new com.google.protobuf.AbstractParser<ConfusionMatrix>() {
+        @java.lang.Override
         public ConfusionMatrix parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -3823,6 +3923,7 @@ public final class ClassificationProto {
         return PARSER;
       }
 
+      @java.lang.Override
       public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
       }
@@ -4004,6 +4105,7 @@ public final class ClassificationProto {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -4013,6 +4115,7 @@ public final class ClassificationProto {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (auPrc_ != 0F) {
@@ -4033,6 +4136,7 @@ public final class ClassificationProto {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -4199,6 +4303,7 @@ public final class ClassificationProto {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -4206,6 +4311,7 @@ public final class ClassificationProto {
     public static Builder newBuilder(com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -4234,6 +4340,7 @@ public final class ClassificationProto {
         return com.google.cloud.automl.v1beta1.ClassificationProto.internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.cloud.automl.v1beta1.ClassificationProto.internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_fieldAccessorTable
@@ -4257,6 +4364,7 @@ public final class ClassificationProto {
           getConfidenceMetricsEntryFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         auPrc_ = 0F;
@@ -4280,15 +4388,18 @@ public final class ClassificationProto {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return com.google.cloud.automl.v1beta1.ClassificationProto.internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_descriptor;
       }
 
+      @java.lang.Override
       public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics getDefaultInstanceForType() {
         return com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.getDefaultInstance();
       }
 
+      @java.lang.Override
       public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics build() {
         com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics result = buildPartial();
         if (!result.isInitialized()) {
@@ -4297,6 +4408,7 @@ public final class ClassificationProto {
         return result;
       }
 
+      @java.lang.Override
       public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics buildPartial() {
         com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics result = new com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics(this);
         int from_bitField0_ = bitField0_;
@@ -4327,32 +4439,39 @@ public final class ClassificationProto {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics) {
           return mergeFrom((com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics)other);
@@ -4414,10 +4533,12 @@ public final class ClassificationProto {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -5152,11 +5273,13 @@ public final class ClassificationProto {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -5178,6 +5301,7 @@ public final class ClassificationProto {
 
     private static final com.google.protobuf.Parser<ClassificationEvaluationMetrics>
         PARSER = new com.google.protobuf.AbstractParser<ClassificationEvaluationMetrics>() {
+      @java.lang.Override
       public ClassificationEvaluationMetrics parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -5195,6 +5319,7 @@ public final class ClassificationProto {
       return PARSER;
     }
 
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
