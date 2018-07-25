@@ -92,6 +92,18 @@ jobs:
           name: Run integration tests for google-cloud-bigtable
           command: ./utilities/verify_single_it.sh google-cloud-clients/google-cloud-bigtable -Dbigtable.env=prod -Dbigtable.table=projects/gcloud-devel/instances/google-cloud-bigtable/tables/integration-tests
 
+  bigtableadmin_it:
+    working_directory: ~/googleapis
+    <<: *anchor_docker
+    <<: *anchor_auth_vars
+    steps:
+      - checkout
+      - run:
+          <<: *anchor_run_decrypt
+      - run:
+          name: Run integration tests for google-cloud-bigtable-admin
+          command: ./utilities/verify_single_it.sh google-cloud-clients/google-cloud-bigtable-admin -Dbigtable.instance=projects/gcloud-devel/instances/google-cloud-bigtable
+
   compute_it:
     working_directory: ~/googleapis
     <<: *anchor_docker

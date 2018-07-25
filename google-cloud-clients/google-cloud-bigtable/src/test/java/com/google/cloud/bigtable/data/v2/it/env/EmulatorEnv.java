@@ -21,8 +21,6 @@ import com.google.cloud.bigtable.data.v2.models.InstanceName;
 import com.google.bigtable.admin.v2.Table;
 import com.google.bigtable.v2.TableName;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
-import java.io.IOException;
-import java.util.concurrent.TimeoutException;
 
 public class EmulatorEnv implements TestEnv {
   private static final InstanceName INSTANCE_NAME =

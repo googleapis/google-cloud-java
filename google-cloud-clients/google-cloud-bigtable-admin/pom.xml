@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <artifactId>google-cloud-bigtable</artifactId>
-  <version>0.55.2-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigtable:current} -->
+  <artifactId>google-cloud-bigtable-admin</artifactId>
+  <version>0.55.2-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigtable-admin:current} -->
   <packaging>jar</packaging>
-  <name>Google Cloud Bigtable</name>
-  <url>https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-clients/google-cloud-bigtable</url>
+  <name>Google Cloud Bigtable Admin</name>
+  <url>https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-bigtable</url>
   <description>
-    Java idiomatic client for Google Cloud Bigtable.
+    Java idiomatic client for Google Cloud Bigtable Admin API.
   </description>
   <parent>
     <groupId>com.google.cloud</groupId>
@@ -15,7 +15,7 @@
     <version>0.55.2-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-clients:current} -->
   </parent>
   <properties>
-    <site.installationModule>google-cloud-bigtable</site.installationModule>
+    <site.installationModule>google-cloud-bigtable-admin</site.installationModule>
   </properties>
   <dependencies>
     <dependency>
@@ -25,15 +25,6 @@
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>google-cloud-core-grpc</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>com.google.api.grpc</groupId>
-      <artifactId>proto-google-cloud-bigtable-v2</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>com.google.api.grpc</groupId>
-      <artifactId>grpc-google-cloud-bigtable-v2</artifactId>
-      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
@@ -68,11 +59,6 @@
       <groupId>${project.groupId}</groupId>
       <artifactId>google-cloud-core</artifactId>
       <type>test-jar</type>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.google.api.grpc</groupId>
-      <artifactId>grpc-google-cloud-bigtable-admin-v2</artifactId>
       <scope>test</scope>
     </dependency>
     <dependency>

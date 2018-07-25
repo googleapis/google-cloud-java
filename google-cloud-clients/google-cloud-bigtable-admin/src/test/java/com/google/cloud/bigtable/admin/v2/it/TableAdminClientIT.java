@@ -44,22 +44,20 @@ import org.junit.Test;
 import org.threeten.bp.Duration;
 
 public class TableAdminClientIT {
-  // TODO(igorbernstein2): remove these properties once admin is split from data client
-  private static final String ENV_PROPERTY = "bigtable.env";
-  private static final String TABLE_PROPERTY_NAME = "bigtable.table";
+  private static final String INSTANCE_PROPERTY_NAME = "bigtable.instance";
 
-  static TableAdminClient tableAdmin;
+  private static TableAdminClient tableAdmin;
 
   @BeforeClass
   public static void createClient() throws IOException {
-    if (!"prod".equals(System.getProperty(ENV_PROPERTY))) {
+    String targetInstance = System.getProperty(INSTANCE_PROPERTY_NAME);
+
+    if (targetInstance == null) {
       tableAdmin = null;
       return;
     }
 
-    TableName tableName = TableName.parse(System.getProperty(TABLE_PROPERTY_NAME));
-    InstanceName instanceName = InstanceName.of(tableName.getProject(), tableName.getInstance());
-
+    InstanceName instanceName = InstanceName.parse(targetInstance);
     tableAdmin = TableAdminClient.create(instanceName);
   }
 
@@ -72,9 +70,9 @@ public class TableAdminClientIT {
 
   @Before
   public void setup() {
-    // TODO(igorbernstein2): remove this check once admin is split
     if (tableAdmin == null) {
-      throw new AssumptionViolatedException("Tests can only run against prod environment");
+      throw new AssumptionViolatedException(
+          INSTANCE_PROPERTY_NAME + " property is not set, skipping integration tests.");
     }
   }
 

@@ -106,6 +106,7 @@ google-cloud-automl:0.55.1-beta:0.55.2-beta-SNAPSHOT
 google-cloud-bigquery:1.37.1:1.37.2-SNAPSHOT
 google-cloud-bigquerydatatransfer:0.55.1-beta:0.55.2-beta-SNAPSHOT
 google-cloud-bigtable:0.55.1-alpha:0.55.2-alpha-SNAPSHOT
+google-cloud-bigtable-admin:0.55.1-alpha:0.55.2-alpha-SNAPSHOT
 google-cloud-bom:0.55.1-alpha:0.55.2-alpha-SNAPSHOT
 google-cloud-compat-checker:0.55.1-alpha:0.55.2-alpha-SNAPSHOT
 google-cloud-compute:0.55.1-alpha:0.55.2-alpha-SNAPSHOT
