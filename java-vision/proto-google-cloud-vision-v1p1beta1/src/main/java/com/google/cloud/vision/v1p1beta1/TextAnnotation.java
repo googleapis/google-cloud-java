@@ -55,13 +55,6 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
           case 10: {
             if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
               pages_ = new java.util.ArrayList<com.google.cloud.vision.v1p1beta1.Page>();
@@ -75,6 +68,13 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             text_ = s;
+            break;
+          }
+          default: {
+            if (!parseUnknownFieldProto3(
+                input, unknownFields, extensionRegistry, tag)) {
+              done = true;
+            }
             break;
           }
         }
@@ -97,6 +97,7 @@ private static final long serialVersionUID = 0L;
     return com.google.cloud.vision.v1p1beta1.TextAnnotationProto.internal_static_google_cloud_vision_v1p1beta1_TextAnnotation_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.vision.v1p1beta1.TextAnnotationProto.internal_static_google_cloud_vision_v1p1beta1_TextAnnotation_fieldAccessorTable
@@ -184,13 +185,6 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -200,6 +194,13 @@ private static final long serialVersionUID = 0L;
             case 21: {
 
               confidence_ = input.readFloat();
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -219,6 +220,7 @@ private static final long serialVersionUID = 0L;
       return com.google.cloud.vision.v1p1beta1.TextAnnotationProto.internal_static_google_cloud_vision_v1p1beta1_TextAnnotation_DetectedLanguage_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.vision.v1p1beta1.TextAnnotationProto.internal_static_google_cloud_vision_v1p1beta1_TextAnnotation_DetectedLanguage_fieldAccessorTable
@@ -286,6 +288,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -295,6 +298,7 @@ private static final long serialVersionUID = 0L;
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getLanguageCodeBytes().isEmpty()) {
@@ -306,6 +310,7 @@ private static final long serialVersionUID = 0L;
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -431,6 +436,7 @@ private static final long serialVersionUID = 0L;
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -438,6 +444,7 @@ private static final long serialVersionUID = 0L;
     public static Builder newBuilder(com.google.cloud.vision.v1p1beta1.TextAnnotation.DetectedLanguage prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -465,6 +472,7 @@ private static final long serialVersionUID = 0L;
         return com.google.cloud.vision.v1p1beta1.TextAnnotationProto.internal_static_google_cloud_vision_v1p1beta1_TextAnnotation_DetectedLanguage_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.cloud.vision.v1p1beta1.TextAnnotationProto.internal_static_google_cloud_vision_v1p1beta1_TextAnnotation_DetectedLanguage_fieldAccessorTable
@@ -487,6 +495,7 @@ private static final long serialVersionUID = 0L;
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         languageCode_ = "";
@@ -496,15 +505,18 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return com.google.cloud.vision.v1p1beta1.TextAnnotationProto.internal_static_google_cloud_vision_v1p1beta1_TextAnnotation_DetectedLanguage_descriptor;
       }
 
+      @java.lang.Override
       public com.google.cloud.vision.v1p1beta1.TextAnnotation.DetectedLanguage getDefaultInstanceForType() {
         return com.google.cloud.vision.v1p1beta1.TextAnnotation.DetectedLanguage.getDefaultInstance();
       }
 
+      @java.lang.Override
       public com.google.cloud.vision.v1p1beta1.TextAnnotation.DetectedLanguage build() {
         com.google.cloud.vision.v1p1beta1.TextAnnotation.DetectedLanguage result = buildPartial();
         if (!result.isInitialized()) {
@@ -513,6 +525,7 @@ private static final long serialVersionUID = 0L;
         return result;
       }
 
+      @java.lang.Override
       public com.google.cloud.vision.v1p1beta1.TextAnnotation.DetectedLanguage buildPartial() {
         com.google.cloud.vision.v1p1beta1.TextAnnotation.DetectedLanguage result = new com.google.cloud.vision.v1p1beta1.TextAnnotation.DetectedLanguage(this);
         result.languageCode_ = languageCode_;
@@ -521,32 +534,39 @@ private static final long serialVersionUID = 0L;
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.google.cloud.vision.v1p1beta1.TextAnnotation.DetectedLanguage) {
           return mergeFrom((com.google.cloud.vision.v1p1beta1.TextAnnotation.DetectedLanguage)other);
@@ -570,10 +590,12 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -728,11 +750,13 @@ private static final long serialVersionUID = 0L;
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -754,6 +778,7 @@ private static final long serialVersionUID = 0L;
 
     private static final com.google.protobuf.Parser<DetectedLanguage>
         PARSER = new com.google.protobuf.AbstractParser<DetectedLanguage>() {
+      @java.lang.Override
       public DetectedLanguage parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -771,6 +796,7 @@ private static final long serialVersionUID = 0L;
       return PARSER;
     }
 
+    @java.lang.Override
     public com.google.cloud.vision.v1p1beta1.TextAnnotation.DetectedLanguage getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -852,13 +878,6 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
               int rawValue = input.readEnum();
 
@@ -868,6 +887,13 @@ private static final long serialVersionUID = 0L;
             case 16: {
 
               isPrefix_ = input.readBool();
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -887,6 +913,7 @@ private static final long serialVersionUID = 0L;
       return com.google.cloud.vision.v1p1beta1.TextAnnotationProto.internal_static_google_cloud_vision_v1p1beta1_TextAnnotation_DetectedBreak_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.vision.v1p1beta1.TextAnnotationProto.internal_static_google_cloud_vision_v1p1beta1_TextAnnotation_DetectedBreak_fieldAccessorTable
@@ -1102,6 +1129,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.vision.v1p1beta1.TextAnnotation.DetectedBreak.BreakType type = 1;</code>
      */
     public com.google.cloud.vision.v1p1beta1.TextAnnotation.DetectedBreak.BreakType getType() {
+      @SuppressWarnings("deprecation")
       com.google.cloud.vision.v1p1beta1.TextAnnotation.DetectedBreak.BreakType result = com.google.cloud.vision.v1p1beta1.TextAnnotation.DetectedBreak.BreakType.valueOf(type_);
       return result == null ? com.google.cloud.vision.v1p1beta1.TextAnnotation.DetectedBreak.BreakType.UNRECOGNIZED : result;
     }
@@ -1120,6 +1148,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -1129,6 +1158,7 @@ private static final long serialVersionUID = 0L;
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (type_ != com.google.cloud.vision.v1p1beta1.TextAnnotation.DetectedBreak.BreakType.UNKNOWN.getNumber()) {
@@ -1140,6 +1170,7 @@ private static final long serialVersionUID = 0L;
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -1263,6 +1294,7 @@ private static final long serialVersionUID = 0L;
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -1270,6 +1302,7 @@ private static final long serialVersionUID = 0L;
     public static Builder newBuilder(com.google.cloud.vision.v1p1beta1.TextAnnotation.DetectedBreak prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -1297,6 +1330,7 @@ private static final long serialVersionUID = 0L;
         return com.google.cloud.vision.v1p1beta1.TextAnnotationProto.internal_static_google_cloud_vision_v1p1beta1_TextAnnotation_DetectedBreak_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.cloud.vision.v1p1beta1.TextAnnotationProto.internal_static_google_cloud_vision_v1p1beta1_TextAnnotation_DetectedBreak_fieldAccessorTable
@@ -1319,6 +1353,7 @@ private static final long serialVersionUID = 0L;
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         type_ = 0;
@@ -1328,15 +1363,18 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return com.google.cloud.vision.v1p1beta1.TextAnnotationProto.internal_static_google_cloud_vision_v1p1beta1_TextAnnotation_DetectedBreak_descriptor;
       }
 
+      @java.lang.Override
       public com.google.cloud.vision.v1p1beta1.TextAnnotation.DetectedBreak getDefaultInstanceForType() {
         return com.google.cloud.vision.v1p1beta1.TextAnnotation.DetectedBreak.getDefaultInstance();
       }
 
+      @java.lang.Override
       public com.google.cloud.vision.v1p1beta1.TextAnnotation.DetectedBreak build() {
         com.google.cloud.vision.v1p1beta1.TextAnnotation.DetectedBreak result = buildPartial();
         if (!result.isInitialized()) {
@@ -1345,6 +1383,7 @@ private static final long serialVersionUID = 0L;
         return result;
       }
 
+      @java.lang.Override
       public com.google.cloud.vision.v1p1beta1.TextAnnotation.DetectedBreak buildPartial() {
         com.google.cloud.vision.v1p1beta1.TextAnnotation.DetectedBreak result = new com.google.cloud.vision.v1p1beta1.TextAnnotation.DetectedBreak(this);
         result.type_ = type_;
@@ -1353,32 +1392,39 @@ private static final long serialVersionUID = 0L;
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.google.cloud.vision.v1p1beta1.TextAnnotation.DetectedBreak) {
           return mergeFrom((com.google.cloud.vision.v1p1beta1.TextAnnotation.DetectedBreak)other);
@@ -1401,10 +1447,12 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1454,6 +1502,7 @@ private static final long serialVersionUID = 0L;
        * <code>.google.cloud.vision.v1p1beta1.TextAnnotation.DetectedBreak.BreakType type = 1;</code>
        */
       public com.google.cloud.vision.v1p1beta1.TextAnnotation.DetectedBreak.BreakType getType() {
+        @SuppressWarnings("deprecation")
         com.google.cloud.vision.v1p1beta1.TextAnnotation.DetectedBreak.BreakType result = com.google.cloud.vision.v1p1beta1.TextAnnotation.DetectedBreak.BreakType.valueOf(type_);
         return result == null ? com.google.cloud.vision.v1p1beta1.TextAnnotation.DetectedBreak.BreakType.UNRECOGNIZED : result;
       }
@@ -1524,11 +1573,13 @@ private static final long serialVersionUID = 0L;
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -1550,6 +1601,7 @@ private static final long serialVersionUID = 0L;
 
     private static final com.google.protobuf.Parser<DetectedBreak>
         PARSER = new com.google.protobuf.AbstractParser<DetectedBreak>() {
+      @java.lang.Override
       public DetectedBreak parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1567,6 +1619,7 @@ private static final long serialVersionUID = 0L;
       return PARSER;
     }
 
+    @java.lang.Override
     public com.google.cloud.vision.v1p1beta1.TextAnnotation.DetectedBreak getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -1690,13 +1743,6 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
                 detectedLanguages_ = new java.util.ArrayList<com.google.cloud.vision.v1p1beta1.TextAnnotation.DetectedLanguage>();
@@ -1719,6 +1765,13 @@ private static final long serialVersionUID = 0L;
 
               break;
             }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -1739,6 +1792,7 @@ private static final long serialVersionUID = 0L;
       return com.google.cloud.vision.v1p1beta1.TextAnnotationProto.internal_static_google_cloud_vision_v1p1beta1_TextAnnotation_TextProperty_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.vision.v1p1beta1.TextAnnotationProto.internal_static_google_cloud_vision_v1p1beta1_TextAnnotation_TextProperty_fieldAccessorTable
@@ -1836,6 +1890,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -1845,6 +1900,7 @@ private static final long serialVersionUID = 0L;
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < detectedLanguages_.size(); i++) {
@@ -1856,6 +1912,7 @@ private static final long serialVersionUID = 0L;
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -1986,6 +2043,7 @@ private static final long serialVersionUID = 0L;
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -1993,6 +2051,7 @@ private static final long serialVersionUID = 0L;
     public static Builder newBuilder(com.google.cloud.vision.v1p1beta1.TextAnnotation.TextProperty prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -2020,6 +2079,7 @@ private static final long serialVersionUID = 0L;
         return com.google.cloud.vision.v1p1beta1.TextAnnotationProto.internal_static_google_cloud_vision_v1p1beta1_TextAnnotation_TextProperty_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.cloud.vision.v1p1beta1.TextAnnotationProto.internal_static_google_cloud_vision_v1p1beta1_TextAnnotation_TextProperty_fieldAccessorTable
@@ -2043,6 +2103,7 @@ private static final long serialVersionUID = 0L;
           getDetectedLanguagesFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (detectedLanguagesBuilder_ == null) {
@@ -2060,15 +2121,18 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return com.google.cloud.vision.v1p1beta1.TextAnnotationProto.internal_static_google_cloud_vision_v1p1beta1_TextAnnotation_TextProperty_descriptor;
       }
 
+      @java.lang.Override
       public com.google.cloud.vision.v1p1beta1.TextAnnotation.TextProperty getDefaultInstanceForType() {
         return com.google.cloud.vision.v1p1beta1.TextAnnotation.TextProperty.getDefaultInstance();
       }
 
+      @java.lang.Override
       public com.google.cloud.vision.v1p1beta1.TextAnnotation.TextProperty build() {
         com.google.cloud.vision.v1p1beta1.TextAnnotation.TextProperty result = buildPartial();
         if (!result.isInitialized()) {
@@ -2077,6 +2141,7 @@ private static final long serialVersionUID = 0L;
         return result;
       }
 
+      @java.lang.Override
       public com.google.cloud.vision.v1p1beta1.TextAnnotation.TextProperty buildPartial() {
         com.google.cloud.vision.v1p1beta1.TextAnnotation.TextProperty result = new com.google.cloud.vision.v1p1beta1.TextAnnotation.TextProperty(this);
         int from_bitField0_ = bitField0_;
@@ -2100,32 +2165,39 @@ private static final long serialVersionUID = 0L;
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.google.cloud.vision.v1p1beta1.TextAnnotation.TextProperty) {
           return mergeFrom((com.google.cloud.vision.v1p1beta1.TextAnnotation.TextProperty)other);
@@ -2171,10 +2243,12 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -2658,11 +2732,13 @@ private static final long serialVersionUID = 0L;
         }
         return detectedBreakBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -2684,6 +2760,7 @@ private static final long serialVersionUID = 0L;
 
     private static final com.google.protobuf.Parser<TextProperty>
         PARSER = new com.google.protobuf.AbstractParser<TextProperty>() {
+      @java.lang.Override
       public TextProperty parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -2701,6 +2778,7 @@ private static final long serialVersionUID = 0L;
       return PARSER;
     }
 
+    @java.lang.Override
     public com.google.cloud.vision.v1p1beta1.TextAnnotation.TextProperty getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -2806,6 +2884,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -2815,6 +2894,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
+  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     for (int i = 0; i < pages_.size(); i++) {
@@ -2826,6 +2906,7 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -2950,6 +3031,7 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
+  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
@@ -2957,6 +3039,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder(com.google.cloud.vision.v1p1beta1.TextAnnotation prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
@@ -2991,6 +3074,7 @@ private static final long serialVersionUID = 0L;
       return com.google.cloud.vision.v1p1beta1.TextAnnotationProto.internal_static_google_cloud_vision_v1p1beta1_TextAnnotation_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.vision.v1p1beta1.TextAnnotationProto.internal_static_google_cloud_vision_v1p1beta1_TextAnnotation_fieldAccessorTable
@@ -3014,6 +3098,7 @@ private static final long serialVersionUID = 0L;
         getPagesFieldBuilder();
       }
     }
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       if (pagesBuilder_ == null) {
@@ -3027,15 +3112,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
       return com.google.cloud.vision.v1p1beta1.TextAnnotationProto.internal_static_google_cloud_vision_v1p1beta1_TextAnnotation_descriptor;
     }
 
+    @java.lang.Override
     public com.google.cloud.vision.v1p1beta1.TextAnnotation getDefaultInstanceForType() {
       return com.google.cloud.vision.v1p1beta1.TextAnnotation.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.cloud.vision.v1p1beta1.TextAnnotation build() {
       com.google.cloud.vision.v1p1beta1.TextAnnotation result = buildPartial();
       if (!result.isInitialized()) {
@@ -3044,6 +3132,7 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.cloud.vision.v1p1beta1.TextAnnotation buildPartial() {
       com.google.cloud.vision.v1p1beta1.TextAnnotation result = new com.google.cloud.vision.v1p1beta1.TextAnnotation(this);
       int from_bitField0_ = bitField0_;
@@ -3063,32 +3152,39 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.vision.v1p1beta1.TextAnnotation) {
         return mergeFrom((com.google.cloud.vision.v1p1beta1.TextAnnotation)other);
@@ -3135,10 +3231,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -3558,11 +3656,13 @@ private static final long serialVersionUID = 0L;
       onChanged();
       return this;
     }
+    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -3584,6 +3684,7 @@ private static final long serialVersionUID = 0L;
 
   private static final com.google.protobuf.Parser<TextAnnotation>
       PARSER = new com.google.protobuf.AbstractParser<TextAnnotation>() {
+    @java.lang.Override
     public TextAnnotation parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -3601,6 +3702,7 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.cloud.vision.v1p1beta1.TextAnnotation getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
