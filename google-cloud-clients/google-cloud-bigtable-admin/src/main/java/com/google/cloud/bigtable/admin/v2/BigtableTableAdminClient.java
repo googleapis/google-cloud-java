@@ -31,13 +31,11 @@ import com.google.bigtable.admin.v2.GetTableRequest;
 import com.google.bigtable.admin.v2.InstanceName;
 import com.google.bigtable.admin.v2.ListTablesRequest;
 import com.google.bigtable.admin.v2.ListTablesResponse;
-import com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest;
 import com.google.bigtable.admin.v2.TableName;
-import com.google.cloud.bigtable.admin.v2.models.TableAdminRequests.CreateTable;
-import com.google.cloud.bigtable.admin.v2.models.TableAdminRequests.ModifyFamilies;
-import com.google.cloud.bigtable.admin.v2.models.TableAdminResponses;
-import com.google.cloud.bigtable.admin.v2.models.TableAdminResponses.ConsistencyToken;
-import com.google.cloud.bigtable.admin.v2.models.TableAdminResponses.Table;
+import com.google.cloud.bigtable.admin.v2.models.CreateTableRequest;
+import com.google.cloud.bigtable.admin.v2.models.ModifyColumnFamiliesRequest;
+import com.google.cloud.bigtable.admin.v2.models.ConsistencyToken;
+import com.google.cloud.bigtable.admin.v2.models.Table;
 import com.google.cloud.bigtable.admin.v2.stub.BigtableTableAdminStub;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
@@ -146,12 +144,12 @@ public class BigtableTableAdminClient implements AutoCloseable {
    *
    * @param createTable
    * @return the newly created table
-   * @see CreateTable for createTable configurations
+   * @see CreateTableRequest for createTable configurations
    */
-  public Table createTable(CreateTable createTable) {
+  public Table createTable(CreateTableRequest createTable) {
     com.google.bigtable.admin.v2.Table table =
         this.stub.createTableCallable().call(createTable.toProto(instanceName));
-    return TableAdminResponses.convertTable(table);
+    return Table.fromProto(table);
   }
 
   /**
@@ -170,9 +168,9 @@ public class BigtableTableAdminClient implements AutoCloseable {
    *
    * @param createTable
    * @return the newly created table
-   * @see CreateTable for createTable configurations
+   * @see CreateTableRequest for createTable configurations
    */
-  public ApiFuture<Table> createTableAsync(CreateTable createTable) {
+  public ApiFuture<Table> createTableAsync(CreateTableRequest createTable) {
     return transformToTableResponse(
         this.stub.createTableCallable().futureCall(createTable.toProto(instanceName)));
   }
@@ -207,13 +205,13 @@ public class BigtableTableAdminClient implements AutoCloseable {
    *
    * @param modifyFamily
    * @return the modified table
-   * @see ModifyFamilies for modifyFamily options
+   * @see ModifyColumnFamiliesRequest for modifyFamily options
    */
-  public Table modifyFamilies(ModifyFamilies modifyFamily) {
-    ModifyColumnFamiliesRequest modReq = modifyFamily.toProto(instanceName);
+  public Table modifyFamilies(ModifyColumnFamiliesRequest modifyFamily) {
+    com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest modReq = modifyFamily.toProto(instanceName);
     com.google.bigtable.admin.v2.Table table =
         this.stub.modifyColumnFamiliesCallable().call(modReq);
-    return TableAdminResponses.convertTable(table);
+    return Table.fromProto(table);
   }
 
   /**
@@ -246,10 +244,10 @@ public class BigtableTableAdminClient implements AutoCloseable {
    *
    * @param modifyFamily
    * @return Modified table
-   * @see ModifyFamilies for modifyFamily options
+   * @see ModifyColumnFamiliesRequest for modifyFamily options
    */
-  public ApiFuture<Table> modifyFamiliesAsync(ModifyFamilies modifyFamily) {
-    ModifyColumnFamiliesRequest modReq = modifyFamily.toProto(instanceName);
+  public ApiFuture<Table> modifyFamiliesAsync(ModifyColumnFamiliesRequest modifyFamily) {
+    com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest modReq = modifyFamily.toProto(instanceName);
     return transformToTableResponse(this.stub.modifyColumnFamiliesCallable().futureCall(modReq));
   }
 
@@ -304,7 +302,7 @@ public class BigtableTableAdminClient implements AutoCloseable {
   public Table getTable(String tableId) {
     com.google.bigtable.admin.v2.Table table =
         this.stub.getTableCallable().call(composeGetTableRequest(tableId));
-    return TableAdminResponses.convertTable(table);
+    return Table.fromProto(table);
   }
 
   /**
@@ -493,7 +491,7 @@ public class BigtableTableAdminClient implements AutoCloseable {
    * @param tableId
    */
   public ConsistencyToken generateConsistencyToken(String tableId) {
-    return TableAdminResponses.convertTokenResponse(
+    return ConsistencyToken.fromProto(
         this.stub
             .generateConsistencyTokenCallable()
             .call(composeGenerateConsistencyTokenRequest(tableId)));
@@ -524,7 +522,7 @@ public class BigtableTableAdminClient implements AutoCloseable {
         new ApiFunction<GenerateConsistencyTokenResponse, ConsistencyToken>() {
           @Override
           public ConsistencyToken apply(GenerateConsistencyTokenResponse input) {
-            return TableAdminResponses.convertTokenResponse(input);
+            return ConsistencyToken.fromProto(input);
           }
         });
   }
@@ -622,7 +620,6 @@ public class BigtableTableAdminClient implements AutoCloseable {
    *
    * @param tableId
    * @param rowKeyPrefix
-   * @param boolean dropAll
    */
   @VisibleForTesting
   DropRowRangeRequest composeDropRowRangeRequest(
@@ -675,7 +672,7 @@ public class BigtableTableAdminClient implements AutoCloseable {
         new ApiFunction<com.google.bigtable.admin.v2.Table, Table>() {
           @Override
           public Table apply(com.google.bigtable.admin.v2.Table table) {
-            return TableAdminResponses.convertTable(table);
+            return Table.fromProto(table);
           }
         });
   }
