@@ -75,8 +75,9 @@ public final class TableAdminSettings {
 
   /** Builder for TableAdminSettings. */
   public static final class Builder {
+    @Nullable
     private InstanceName instanceName;
-    private BigtableTableAdminStubSettings.Builder stubSettings;
+    private final BigtableTableAdminStubSettings.Builder stubSettings;
 
     private Builder() {
       stubSettings = BigtableTableAdminStubSettings.newBuilder();
