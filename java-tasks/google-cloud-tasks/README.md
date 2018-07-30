@@ -10,7 +10,7 @@ Java idiomatic client for [Cloud Tasks][cloud-tasks].
 [![Dependency Status](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772/badge.svg?style=flat)](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772)
 
 - [Product Documentation][tasks]
-- [Client Library Documentation][tasks]
+- [Client Library Documentation][tasks-client-lib-docs]
 
 > Note: This client is a work-in-progress, and may occasionally
 > make backwards-incompatible changes.
@@ -47,7 +47,7 @@ About Google Cloud Cloud Tasks
 
 Google [Cloud Tasks API][cloud-tasks] manages Cloud Tasks queues and tasks.
 
-See the [Cloud Tasks client library docs][tasks] to learn how to use this Cloud Tasks API Client Library.
+See the [Cloud Tasks client library docs][tasks-client-lib-docs] to learn how to use this Cloud Tasks API Client Library.
 
 Getting Started
 ---------------
@@ -99,4 +99,4 @@ Apache 2.0 - See [LICENSE] for more information.
 [cloud-platform]: https://cloud.google.com/
 [cloud-tasks]: https://cloud.google.com/tasks
 [tasks]: https://cloud.google.com/tasks/docs
-[tasks]: https://googlecloudplatform.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/tasks/v2beta2/package-summary.html
+[tasks-client-lib-docs]: https://googlecloudplatform.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/tasks/v2beta2/package-summary.html
