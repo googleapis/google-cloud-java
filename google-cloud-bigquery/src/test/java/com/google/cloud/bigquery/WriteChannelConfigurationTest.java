@@ -21,6 +21,7 @@ import static org.junit.Assert.assertNull;
 
 import com.google.cloud.bigquery.JobInfo.CreateDisposition;
 import com.google.cloud.bigquery.JobInfo.WriteDisposition;
+import com.google.cloud.bigquery.TimePartitioning.Type;
 import com.google.common.collect.ImmutableList;
 
 import org.junit.Test;
@@ -51,6 +52,8 @@ public class WriteChannelConfigurationTest {
   private static final Boolean AUTODETECT = true;
   private static final List<JobInfo.SchemaUpdateOption> SCHEMA_UPDATE_OPTIONS =
       ImmutableList.of(JobInfo.SchemaUpdateOption.ALLOW_FIELD_ADDITION);
+  private static final TimePartitioning TIME_PARTITIONING = TimePartitioning.of(Type.DAY);
+  private static final Clustering CLUSTERING = Clustering.newBuilder().setFields(ImmutableList.of("Foo","Bar")).build();
   private static final WriteChannelConfiguration LOAD_CONFIGURATION_CSV =
       WriteChannelConfiguration.newBuilder(TABLE_ID)
           .setCreateDisposition(CREATE_DISPOSITION)
@@ -62,6 +65,8 @@ public class WriteChannelConfigurationTest {
           .setSchema(TABLE_SCHEMA)
           .setSchemaUpdateOptions(SCHEMA_UPDATE_OPTIONS)
           .setAutodetect(AUTODETECT)
+          .setTimePartitioning(TIME_PARTITIONING)
+          .setClustering(CLUSTERING)
           .build();
 
   private static final DatastoreBackupOptions BACKUP_OPTIONS = DatastoreBackupOptions.newBuilder()
@@ -173,5 +178,7 @@ public class WriteChannelConfigurationTest {
     assertEquals(expected.getSchema(), value.getSchema());
     assertEquals(expected.getSchemaUpdateOptions(), value.getSchemaUpdateOptions());
     assertEquals(expected.getAutodetect(), value.getAutodetect());
+    assertEquals(expected.getTimePartitioning(), value.getTimePartitioning());
+    assertEquals(expected.getClustering(), value.getClustering());
   }
 }

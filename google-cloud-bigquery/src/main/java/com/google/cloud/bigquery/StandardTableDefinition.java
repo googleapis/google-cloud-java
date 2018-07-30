@@ -142,6 +142,13 @@ public abstract class StandardTableDefinition extends TableDefinition {
      */
     public abstract Builder setTimePartitioning(TimePartitioning timePartitioning);
 
+    /**
+     * Set the clustering configuration for the table.  If not set, the table is not
+     * clustered.  Clustering is only available for partitioned tables.
+     */
+    public abstract Builder setClustering(Clustering clustering);
+
+
     /** Creates a {@code StandardTableDefinition} object. */
     public abstract StandardTableDefinition build();
   }
@@ -179,6 +186,14 @@ public abstract class StandardTableDefinition extends TableDefinition {
   @Nullable
   public abstract TimePartitioning getTimePartitioning();
 
+
+  /**
+   * Returns the clustering configuration for this table.  If {@code null}, the table is not
+   * clustered.
+   */
+  @Nullable
+  public abstract Clustering getClustering();
+
   /**
    * Returns a builder for a BigQuery standard table definition.
    */
@@ -212,6 +227,9 @@ public abstract class StandardTableDefinition extends TableDefinition {
     if (getTimePartitioning() != null) {
       tablePb.setTimePartitioning(getTimePartitioning().toPb());
     }
+    if (getClustering() != null) {
+      tablePb.setClustering(getClustering().toPb());
+    }
     return tablePb;
   }
 
@@ -226,6 +244,9 @@ public abstract class StandardTableDefinition extends TableDefinition {
     }
     if (tablePb.getTimePartitioning() != null) {
       builder.setTimePartitioning(TimePartitioning.fromPb(tablePb.getTimePartitioning()));
+    }
+    if (tablePb.getClustering() != null) {
+      builder.setClustering(Clustering.fromPb(tablePb.getClustering()));
     }
     return builder.setNumBytes(tablePb.getNumBytes()).setLocation(tablePb.getLocation()).build();
   }
