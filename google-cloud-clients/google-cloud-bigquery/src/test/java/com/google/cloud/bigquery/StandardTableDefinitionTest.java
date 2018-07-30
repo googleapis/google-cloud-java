@@ -22,6 +22,7 @@ import static org.junit.Assert.assertTrue;
 
 import com.google.cloud.bigquery.StandardTableDefinition.StreamingBuffer;
 
+import com.google.common.collect.ImmutableList;
 import org.junit.Test;
 
 public class StandardTableDefinitionTest {
@@ -48,6 +49,8 @@ public class StandardTableDefinitionTest {
   private static final StreamingBuffer STREAMING_BUFFER = new StreamingBuffer(1L, 2L, 3L);
   private static final TimePartitioning TIME_PARTITIONING =
       TimePartitioning.of(TimePartitioning.Type.DAY, 42);
+  private static final Clustering CLUSTERING =
+      Clustering.newBuilder().setFields(ImmutableList.of("Foo","Bar")).build();
   private static final StandardTableDefinition TABLE_DEFINITION =
       StandardTableDefinition.newBuilder()
           .setLocation(LOCATION)
@@ -56,6 +59,7 @@ public class StandardTableDefinitionTest {
           .setStreamingBuffer(STREAMING_BUFFER)
           .setSchema(TABLE_SCHEMA)
           .setTimePartitioning(TIME_PARTITIONING)
+          .setClustering(CLUSTERING)
           .build();
 
   @Test
@@ -85,6 +89,7 @@ public class StandardTableDefinitionTest {
     assertEquals(NUM_ROWS, TABLE_DEFINITION.getNumRows());
     assertEquals(STREAMING_BUFFER, TABLE_DEFINITION.getStreamingBuffer());
     assertEquals(TIME_PARTITIONING, TABLE_DEFINITION.getTimePartitioning());
+    assertEquals(CLUSTERING, TABLE_DEFINITION.getClustering());
   }
 
 
@@ -98,6 +103,7 @@ public class StandardTableDefinitionTest {
     assertNull(definition.getNumRows());
     assertNull(definition.getStreamingBuffer());
     assertNull(definition.getTimePartitioning());
+    assertNull(definition.getClustering());
   }
 
   @Test
@@ -122,6 +128,7 @@ public class StandardTableDefinitionTest {
     assertEquals(expected.getStreamingBuffer(), value.getStreamingBuffer());
     assertEquals(expected.getType(), value.getType());
     assertEquals(expected.getTimePartitioning(), value.getTimePartitioning());
+    assertEquals(expected.getClustering(), value.getClustering());
     assertEquals(expected.hashCode(), value.hashCode());
   }
 }
