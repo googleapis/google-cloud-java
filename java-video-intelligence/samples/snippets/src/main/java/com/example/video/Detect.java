@@ -84,6 +84,7 @@ public class Detect {
       // Set the language code
       SpeechTranscriptionConfig config = SpeechTranscriptionConfig.newBuilder()
           .setLanguageCode("en-US")
+          .setEnableAutomaticPunctuation(true)
           .build();
 
       // Set the video context with the above configuration
