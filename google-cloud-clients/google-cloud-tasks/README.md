@@ -47,7 +47,7 @@ About Google Cloud Cloud Tasks
 
 Google [Cloud Tasks API][cloud-tasks] manages Cloud Tasks queues and tasks.
 
-See the [Cloud Tasks client library docs][tasks] to learn how to use this Cloud Tasks API Client Library.
+See the [Cloud Tasks client library docs][tasks-client-lib-docs] to learn how to use this Cloud Tasks API Client Library.
 
 Getting Started
 ---------------
