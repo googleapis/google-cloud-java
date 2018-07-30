@@ -47,8 +47,8 @@ import net.sourceforge.argparse4j.inf.Subparsers;
 
 /**
  * Google Cloud AutoML Translate API sample application. Example usage: mvn package exec:java
- * -Dexec.mainClass ='com.google.cloud.vision.samples.automl.PredictionApi' -Dexec.args='predict
- * [modelId] [path-to-image] [scoreThreshold]'
+ * -Dexec.mainClass ='com.google.cloud.translate.automl.PredictionApi' -Dexec.args='predict
+ * [modelId] [file-path]'
  */
 public class PredictionApi {
 
@@ -61,16 +61,11 @@ public class PredictionApi {
    * @param computeRegion the Region name.
    * @param modelId the Id of the model which will be used for text classification.
    * @param filePath the Local text file path of the content to be classified.
-   * @param translationAllowFallback set to true to use a Google translation.
    * @throws IOException on Input/Output errors.
    */
   public static void predict(
-      String projectId,
-      String computeRegion,
-      String modelId,
-      String filePath,
-      boolean translationAllowFallback)
-      throws IOException {
+      String projectId, String computeRegion, String modelId, String filePath) throws IOException {
+ 
     // Instantiate client for prediction service.
     PredictionServiceClient predictionClient = PredictionServiceClient.create();
 
@@ -87,9 +82,6 @@ public class PredictionApi {
 
     // Additional parameters that can be provided for prediction
     Map<String, String> params = new HashMap<>();
-    if (translationAllowFallback) {
-      params.put("translation_allow_fallback", "True");//Allow Google Translation Model
-    }
 
     PredictResponse response = predictionClient.predict(name, payload, params);
     TextSnippet translatedContent = response.getPayload(0).getTranslation().getTranslatedContent();
@@ -104,20 +96,17 @@ public class PredictionApi {
   }
 
   public static void argsHelper(String[] args, PrintStream out) throws IOException {
-    ArgumentParser parser = ArgumentParsers.newFor("PredictionApi")
-        .build()
-        .defaultHelp(true)
-        .description("Prediction API Operation");
+    ArgumentParser parser =
+        ArgumentParsers.newFor("PredictionApi")
+            .build()
+            .defaultHelp(true)
+            .description("Prediction API Operation");
+
     Subparsers subparsers = parser.addSubparsers().dest("command");
 
     Subparser predictParser = subparsers.addParser("predict");
     predictParser.addArgument("modelId");
     predictParser.addArgument("filePath");
-    predictParser
-        .addArgument("translationAllowFallback")
-        .nargs("?")
-        .type(Boolean.class)
-        .setDefault(Boolean.FALSE);
 
     String projectId = System.getenv("PROJECT_ID");
     String computeRegion = System.getenv("REGION_NAME");
@@ -126,12 +115,8 @@ public class PredictionApi {
     try {
       ns = parser.parseArgs(args);
       if (ns.get("command").equals("predict")) {
-        predict(
-            projectId,
-            computeRegion,
-            ns.getString("modelId"),
-            ns.getString("filePath"),
-            ns.getBoolean("translationAllowFallback"));
+        predict(projectId, computeRegion, ns.getString("modelId"), ns.getString("filePath"));
+
       }
     } catch (ArgumentParserException e) {
       parser.handleError(e);

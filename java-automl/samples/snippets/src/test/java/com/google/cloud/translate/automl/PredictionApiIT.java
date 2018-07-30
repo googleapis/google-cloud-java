@@ -55,7 +55,7 @@ public class PredictionApiIT {
   @Test
   public void testPredict() throws Exception {
     // Act
-    PredictionApi.predict(PROJECT_ID, COMPUTE_REGION, modelId, filePath,FALSE);
+    PredictionApi.predict(PROJECT_ID, COMPUTE_REGION, modelId, filePath);
 
     // Assert
     String got = bout.toString();
