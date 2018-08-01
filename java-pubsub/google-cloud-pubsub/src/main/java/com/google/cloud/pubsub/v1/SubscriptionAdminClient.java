@@ -140,7 +140,6 @@ import javax.annotation.Generated;
  * </pre>
  */
 @Generated("by gapic-generator")
-@BetaApi
 public class SubscriptionAdminClient implements BackgroundResource {
   private final SubscriptionAdminSettings settings;
   private final SubscriberStub stub;
