@@ -108,14 +108,14 @@ private static final long serialVersionUID = 0L;
   private com.google.monitoring.v3.TimeInterval interval_;
   /**
    * <pre>
-   * The time interval to which the data point applies.  For GAUGE metrics, only
-   * the end time of the interval is used.  For DELTA metrics, the start and end
-   * time should specify a non-zero interval, with subsequent points specifying
-   * contiguous and non-overlapping intervals.  For CUMULATIVE metrics, the
-   * start and end time should specify a non-zero interval, with subsequent
-   * points specifying the same start time and increasing end times, until an
-   * event resets the cumulative value to zero and sets a new start time for the
-   * following points.
+   * The time interval to which the data point applies.  For `GAUGE` metrics,
+   * only the end time of the interval is used.  For `DELTA` metrics, the start
+   * and end time should specify a non-zero interval, with subsequent points
+   * specifying contiguous and non-overlapping intervals.  For `CUMULATIVE`
+   * metrics, the start and end time should specify a non-zero interval, with
+   * subsequent points specifying the same start time and increasing end times,
+   * until an event resets the cumulative value to zero and sets a new start
+   * time for the following points.
    * </pre>
    *
    * <code>.google.monitoring.v3.TimeInterval interval = 1;</code>
@@ -125,14 +125,14 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The time interval to which the data point applies.  For GAUGE metrics, only
-   * the end time of the interval is used.  For DELTA metrics, the start and end
-   * time should specify a non-zero interval, with subsequent points specifying
-   * contiguous and non-overlapping intervals.  For CUMULATIVE metrics, the
-   * start and end time should specify a non-zero interval, with subsequent
-   * points specifying the same start time and increasing end times, until an
-   * event resets the cumulative value to zero and sets a new start time for the
-   * following points.
+   * The time interval to which the data point applies.  For `GAUGE` metrics,
+   * only the end time of the interval is used.  For `DELTA` metrics, the start
+   * and end time should specify a non-zero interval, with subsequent points
+   * specifying contiguous and non-overlapping intervals.  For `CUMULATIVE`
+   * metrics, the start and end time should specify a non-zero interval, with
+   * subsequent points specifying the same start time and increasing end times,
+   * until an event resets the cumulative value to zero and sets a new start
+   * time for the following points.
    * </pre>
    *
    * <code>.google.monitoring.v3.TimeInterval interval = 1;</code>
@@ -142,14 +142,14 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The time interval to which the data point applies.  For GAUGE metrics, only
-   * the end time of the interval is used.  For DELTA metrics, the start and end
-   * time should specify a non-zero interval, with subsequent points specifying
-   * contiguous and non-overlapping intervals.  For CUMULATIVE metrics, the
-   * start and end time should specify a non-zero interval, with subsequent
-   * points specifying the same start time and increasing end times, until an
-   * event resets the cumulative value to zero and sets a new start time for the
-   * following points.
+   * The time interval to which the data point applies.  For `GAUGE` metrics,
+   * only the end time of the interval is used.  For `DELTA` metrics, the start
+   * and end time should specify a non-zero interval, with subsequent points
+   * specifying contiguous and non-overlapping intervals.  For `CUMULATIVE`
+   * metrics, the start and end time should specify a non-zero interval, with
+   * subsequent points specifying the same start time and increasing end times,
+   * until an event resets the cumulative value to zero and sets a new start
+   * time for the following points.
    * </pre>
    *
    * <code>.google.monitoring.v3.TimeInterval interval = 1;</code>
@@ -546,14 +546,14 @@ private static final long serialVersionUID = 0L;
         com.google.monitoring.v3.TimeInterval, com.google.monitoring.v3.TimeInterval.Builder, com.google.monitoring.v3.TimeIntervalOrBuilder> intervalBuilder_;
     /**
      * <pre>
-     * The time interval to which the data point applies.  For GAUGE metrics, only
-     * the end time of the interval is used.  For DELTA metrics, the start and end
-     * time should specify a non-zero interval, with subsequent points specifying
-     * contiguous and non-overlapping intervals.  For CUMULATIVE metrics, the
-     * start and end time should specify a non-zero interval, with subsequent
-     * points specifying the same start time and increasing end times, until an
-     * event resets the cumulative value to zero and sets a new start time for the
-     * following points.
+     * The time interval to which the data point applies.  For `GAUGE` metrics,
+     * only the end time of the interval is used.  For `DELTA` metrics, the start
+     * and end time should specify a non-zero interval, with subsequent points
+     * specifying contiguous and non-overlapping intervals.  For `CUMULATIVE`
+     * metrics, the start and end time should specify a non-zero interval, with
+     * subsequent points specifying the same start time and increasing end times,
+     * until an event resets the cumulative value to zero and sets a new start
+     * time for the following points.
      * </pre>
      *
      * <code>.google.monitoring.v3.TimeInterval interval = 1;</code>
@@ -563,14 +563,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The time interval to which the data point applies.  For GAUGE metrics, only
-     * the end time of the interval is used.  For DELTA metrics, the start and end
-     * time should specify a non-zero interval, with subsequent points specifying
-     * contiguous and non-overlapping intervals.  For CUMULATIVE metrics, the
-     * start and end time should specify a non-zero interval, with subsequent
-     * points specifying the same start time and increasing end times, until an
-     * event resets the cumulative value to zero and sets a new start time for the
-     * following points.
+     * The time interval to which the data point applies.  For `GAUGE` metrics,
+     * only the end time of the interval is used.  For `DELTA` metrics, the start
+     * and end time should specify a non-zero interval, with subsequent points
+     * specifying contiguous and non-overlapping intervals.  For `CUMULATIVE`
+     * metrics, the start and end time should specify a non-zero interval, with
+     * subsequent points specifying the same start time and increasing end times,
+     * until an event resets the cumulative value to zero and sets a new start
+     * time for the following points.
      * </pre>
      *
      * <code>.google.monitoring.v3.TimeInterval interval = 1;</code>
@@ -584,14 +584,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The time interval to which the data point applies.  For GAUGE metrics, only
-     * the end time of the interval is used.  For DELTA metrics, the start and end
-     * time should specify a non-zero interval, with subsequent points specifying
-     * contiguous and non-overlapping intervals.  For CUMULATIVE metrics, the
-     * start and end time should specify a non-zero interval, with subsequent
-     * points specifying the same start time and increasing end times, until an
-     * event resets the cumulative value to zero and sets a new start time for the
-     * following points.
+     * The time interval to which the data point applies.  For `GAUGE` metrics,
+     * only the end time of the interval is used.  For `DELTA` metrics, the start
+     * and end time should specify a non-zero interval, with subsequent points
+     * specifying contiguous and non-overlapping intervals.  For `CUMULATIVE`
+     * metrics, the start and end time should specify a non-zero interval, with
+     * subsequent points specifying the same start time and increasing end times,
+     * until an event resets the cumulative value to zero and sets a new start
+     * time for the following points.
      * </pre>
      *
      * <code>.google.monitoring.v3.TimeInterval interval = 1;</code>
@@ -611,14 +611,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The time interval to which the data point applies.  For GAUGE metrics, only
-     * the end time of the interval is used.  For DELTA metrics, the start and end
-     * time should specify a non-zero interval, with subsequent points specifying
-     * contiguous and non-overlapping intervals.  For CUMULATIVE metrics, the
-     * start and end time should specify a non-zero interval, with subsequent
-     * points specifying the same start time and increasing end times, until an
-     * event resets the cumulative value to zero and sets a new start time for the
-     * following points.
+     * The time interval to which the data point applies.  For `GAUGE` metrics,
+     * only the end time of the interval is used.  For `DELTA` metrics, the start
+     * and end time should specify a non-zero interval, with subsequent points
+     * specifying contiguous and non-overlapping intervals.  For `CUMULATIVE`
+     * metrics, the start and end time should specify a non-zero interval, with
+     * subsequent points specifying the same start time and increasing end times,
+     * until an event resets the cumulative value to zero and sets a new start
+     * time for the following points.
      * </pre>
      *
      * <code>.google.monitoring.v3.TimeInterval interval = 1;</code>
@@ -636,14 +636,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The time interval to which the data point applies.  For GAUGE metrics, only
-     * the end time of the interval is used.  For DELTA metrics, the start and end
-     * time should specify a non-zero interval, with subsequent points specifying
-     * contiguous and non-overlapping intervals.  For CUMULATIVE metrics, the
-     * start and end time should specify a non-zero interval, with subsequent
-     * points specifying the same start time and increasing end times, until an
-     * event resets the cumulative value to zero and sets a new start time for the
-     * following points.
+     * The time interval to which the data point applies.  For `GAUGE` metrics,
+     * only the end time of the interval is used.  For `DELTA` metrics, the start
+     * and end time should specify a non-zero interval, with subsequent points
+     * specifying contiguous and non-overlapping intervals.  For `CUMULATIVE`
+     * metrics, the start and end time should specify a non-zero interval, with
+     * subsequent points specifying the same start time and increasing end times,
+     * until an event resets the cumulative value to zero and sets a new start
+     * time for the following points.
      * </pre>
      *
      * <code>.google.monitoring.v3.TimeInterval interval = 1;</code>
@@ -665,14 +665,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The time interval to which the data point applies.  For GAUGE metrics, only
-     * the end time of the interval is used.  For DELTA metrics, the start and end
-     * time should specify a non-zero interval, with subsequent points specifying
-     * contiguous and non-overlapping intervals.  For CUMULATIVE metrics, the
-     * start and end time should specify a non-zero interval, with subsequent
-     * points specifying the same start time and increasing end times, until an
-     * event resets the cumulative value to zero and sets a new start time for the
-     * following points.
+     * The time interval to which the data point applies.  For `GAUGE` metrics,
+     * only the end time of the interval is used.  For `DELTA` metrics, the start
+     * and end time should specify a non-zero interval, with subsequent points
+     * specifying contiguous and non-overlapping intervals.  For `CUMULATIVE`
+     * metrics, the start and end time should specify a non-zero interval, with
+     * subsequent points specifying the same start time and increasing end times,
+     * until an event resets the cumulative value to zero and sets a new start
+     * time for the following points.
      * </pre>
      *
      * <code>.google.monitoring.v3.TimeInterval interval = 1;</code>
@@ -690,14 +690,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The time interval to which the data point applies.  For GAUGE metrics, only
-     * the end time of the interval is used.  For DELTA metrics, the start and end
-     * time should specify a non-zero interval, with subsequent points specifying
-     * contiguous and non-overlapping intervals.  For CUMULATIVE metrics, the
-     * start and end time should specify a non-zero interval, with subsequent
-     * points specifying the same start time and increasing end times, until an
-     * event resets the cumulative value to zero and sets a new start time for the
-     * following points.
+     * The time interval to which the data point applies.  For `GAUGE` metrics,
+     * only the end time of the interval is used.  For `DELTA` metrics, the start
+     * and end time should specify a non-zero interval, with subsequent points
+     * specifying contiguous and non-overlapping intervals.  For `CUMULATIVE`
+     * metrics, the start and end time should specify a non-zero interval, with
+     * subsequent points specifying the same start time and increasing end times,
+     * until an event resets the cumulative value to zero and sets a new start
+     * time for the following points.
      * </pre>
      *
      * <code>.google.monitoring.v3.TimeInterval interval = 1;</code>
@@ -709,14 +709,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The time interval to which the data point applies.  For GAUGE metrics, only
-     * the end time of the interval is used.  For DELTA metrics, the start and end
-     * time should specify a non-zero interval, with subsequent points specifying
-     * contiguous and non-overlapping intervals.  For CUMULATIVE metrics, the
-     * start and end time should specify a non-zero interval, with subsequent
-     * points specifying the same start time and increasing end times, until an
-     * event resets the cumulative value to zero and sets a new start time for the
-     * following points.
+     * The time interval to which the data point applies.  For `GAUGE` metrics,
+     * only the end time of the interval is used.  For `DELTA` metrics, the start
+     * and end time should specify a non-zero interval, with subsequent points
+     * specifying contiguous and non-overlapping intervals.  For `CUMULATIVE`
+     * metrics, the start and end time should specify a non-zero interval, with
+     * subsequent points specifying the same start time and increasing end times,
+     * until an event resets the cumulative value to zero and sets a new start
+     * time for the following points.
      * </pre>
      *
      * <code>.google.monitoring.v3.TimeInterval interval = 1;</code>
@@ -731,14 +731,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The time interval to which the data point applies.  For GAUGE metrics, only
-     * the end time of the interval is used.  For DELTA metrics, the start and end
-     * time should specify a non-zero interval, with subsequent points specifying
-     * contiguous and non-overlapping intervals.  For CUMULATIVE metrics, the
-     * start and end time should specify a non-zero interval, with subsequent
-     * points specifying the same start time and increasing end times, until an
-     * event resets the cumulative value to zero and sets a new start time for the
-     * following points.
+     * The time interval to which the data point applies.  For `GAUGE` metrics,
+     * only the end time of the interval is used.  For `DELTA` metrics, the start
+     * and end time should specify a non-zero interval, with subsequent points
+     * specifying contiguous and non-overlapping intervals.  For `CUMULATIVE`
+     * metrics, the start and end time should specify a non-zero interval, with
+     * subsequent points specifying the same start time and increasing end times,
+     * until an event resets the cumulative value to zero and sets a new start
+     * time for the following points.
      * </pre>
      *
      * <code>.google.monitoring.v3.TimeInterval interval = 1;</code>

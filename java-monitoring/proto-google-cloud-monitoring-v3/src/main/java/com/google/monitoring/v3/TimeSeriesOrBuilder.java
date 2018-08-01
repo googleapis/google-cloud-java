@@ -37,8 +37,8 @@ public interface TimeSeriesOrBuilder extends
 
   /**
    * <pre>
-   * The associated resource. A fully-specified monitored resource used to
-   * identify the time series.
+   * The associated monitored resource.  Custom metrics can use only certain
+   * monitored resource types in their time series data.
    * </pre>
    *
    * <code>.google.api.MonitoredResource resource = 2;</code>
@@ -46,8 +46,8 @@ public interface TimeSeriesOrBuilder extends
   boolean hasResource();
   /**
    * <pre>
-   * The associated resource. A fully-specified monitored resource used to
-   * identify the time series.
+   * The associated monitored resource.  Custom metrics can use only certain
+   * monitored resource types in their time series data.
    * </pre>
    *
    * <code>.google.api.MonitoredResource resource = 2;</code>
@@ -55,13 +55,44 @@ public interface TimeSeriesOrBuilder extends
   com.google.api.MonitoredResource getResource();
   /**
    * <pre>
-   * The associated resource. A fully-specified monitored resource used to
-   * identify the time series.
+   * The associated monitored resource.  Custom metrics can use only certain
+   * monitored resource types in their time series data.
    * </pre>
    *
    * <code>.google.api.MonitoredResource resource = 2;</code>
    */
   com.google.api.MonitoredResourceOrBuilder getResourceOrBuilder();
+
+  /**
+   * <pre>
+   * Output only. The associated monitored resource metadata. When reading a
+   * a timeseries, this field will include metadata labels that are explicitly
+   * named in the reduction. When creating a timeseries, this field is ignored.
+   * </pre>
+   *
+   * <code>.google.api.MonitoredResourceMetadata metadata = 7;</code>
+   */
+  boolean hasMetadata();
+  /**
+   * <pre>
+   * Output only. The associated monitored resource metadata. When reading a
+   * a timeseries, this field will include metadata labels that are explicitly
+   * named in the reduction. When creating a timeseries, this field is ignored.
+   * </pre>
+   *
+   * <code>.google.api.MonitoredResourceMetadata metadata = 7;</code>
+   */
+  com.google.api.MonitoredResourceMetadata getMetadata();
+  /**
+   * <pre>
+   * Output only. The associated monitored resource metadata. When reading a
+   * a timeseries, this field will include metadata labels that are explicitly
+   * named in the reduction. When creating a timeseries, this field is ignored.
+   * </pre>
+   *
+   * <code>.google.api.MonitoredResourceMetadata metadata = 7;</code>
+   */
+  com.google.api.MonitoredResourceMetadataOrBuilder getMetadataOrBuilder();
 
   /**
    * <pre>
@@ -121,8 +152,8 @@ public interface TimeSeriesOrBuilder extends
 
   /**
    * <pre>
-   * The data points of this time series. When listing time series, the order of
-   * the points is specified by the list method.
+   * The data points of this time series. When listing time series, points are
+   * returned in reverse time order.
    * When creating a time series, this field must contain exactly one point and
    * the point's type must be the same as the value type of the associated
    * metric. If the associated metric's descriptor must be auto-created, then
@@ -136,8 +167,8 @@ public interface TimeSeriesOrBuilder extends
       getPointsList();
   /**
    * <pre>
-   * The data points of this time series. When listing time series, the order of
-   * the points is specified by the list method.
+   * The data points of this time series. When listing time series, points are
+   * returned in reverse time order.
    * When creating a time series, this field must contain exactly one point and
    * the point's type must be the same as the value type of the associated
    * metric. If the associated metric's descriptor must be auto-created, then
@@ -150,8 +181,8 @@ public interface TimeSeriesOrBuilder extends
   com.google.monitoring.v3.Point getPoints(int index);
   /**
    * <pre>
-   * The data points of this time series. When listing time series, the order of
-   * the points is specified by the list method.
+   * The data points of this time series. When listing time series, points are
+   * returned in reverse time order.
    * When creating a time series, this field must contain exactly one point and
    * the point's type must be the same as the value type of the associated
    * metric. If the associated metric's descriptor must be auto-created, then
@@ -164,8 +195,8 @@ public interface TimeSeriesOrBuilder extends
   int getPointsCount();
   /**
    * <pre>
-   * The data points of this time series. When listing time series, the order of
-   * the points is specified by the list method.
+   * The data points of this time series. When listing time series, points are
+   * returned in reverse time order.
    * When creating a time series, this field must contain exactly one point and
    * the point's type must be the same as the value type of the associated
    * metric. If the associated metric's descriptor must be auto-created, then
@@ -179,8 +210,8 @@ public interface TimeSeriesOrBuilder extends
       getPointsOrBuilderList();
   /**
    * <pre>
-   * The data points of this time series. When listing time series, the order of
-   * the points is specified by the list method.
+   * The data points of this time series. When listing time series, points are
+   * returned in reverse time order.
    * When creating a time series, this field must contain exactly one point and
    * the point's type must be the same as the value type of the associated
    * metric. If the associated metric's descriptor must be auto-created, then

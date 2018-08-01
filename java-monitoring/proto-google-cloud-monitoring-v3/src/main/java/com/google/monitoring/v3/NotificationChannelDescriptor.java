@@ -412,9 +412,9 @@ private static final long serialVersionUID = 0L;
    * must be one of the supported_tiers.
    * </pre>
    *
-   * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5;</code>
+   * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];</code>
    */
-  public java.util.List<com.google.monitoring.v3.ServiceTier> getSupportedTiersList() {
+  @java.lang.Deprecated public java.util.List<com.google.monitoring.v3.ServiceTier> getSupportedTiersList() {
     return new com.google.protobuf.Internal.ListAdapter<
         java.lang.Integer, com.google.monitoring.v3.ServiceTier>(supportedTiers_, supportedTiers_converter_);
   }
@@ -424,9 +424,9 @@ private static final long serialVersionUID = 0L;
    * must be one of the supported_tiers.
    * </pre>
    *
-   * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5;</code>
+   * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];</code>
    */
-  public int getSupportedTiersCount() {
+  @java.lang.Deprecated public int getSupportedTiersCount() {
     return supportedTiers_.size();
   }
   /**
@@ -435,9 +435,9 @@ private static final long serialVersionUID = 0L;
    * must be one of the supported_tiers.
    * </pre>
    *
-   * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5;</code>
+   * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];</code>
    */
-  public com.google.monitoring.v3.ServiceTier getSupportedTiers(int index) {
+  @java.lang.Deprecated public com.google.monitoring.v3.ServiceTier getSupportedTiers(int index) {
     return supportedTiers_converter_.convert(supportedTiers_.get(index));
   }
   /**
@@ -446,9 +446,9 @@ private static final long serialVersionUID = 0L;
    * must be one of the supported_tiers.
    * </pre>
    *
-   * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5;</code>
+   * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];</code>
    */
-  public java.util.List<java.lang.Integer>
+  @java.lang.Deprecated public java.util.List<java.lang.Integer>
   getSupportedTiersValueList() {
     return supportedTiers_;
   }
@@ -458,9 +458,9 @@ private static final long serialVersionUID = 0L;
    * must be one of the supported_tiers.
    * </pre>
    *
-   * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5;</code>
+   * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];</code>
    */
-  public int getSupportedTiersValue(int index) {
+  @java.lang.Deprecated public int getSupportedTiersValue(int index) {
     return supportedTiers_.get(index);
   }
   private int supportedTiersMemoizedSerializedSize;
@@ -1674,9 +1674,9 @@ private static final long serialVersionUID = 0L;
      * must be one of the supported_tiers.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5;</code>
+     * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];</code>
      */
-    public java.util.List<com.google.monitoring.v3.ServiceTier> getSupportedTiersList() {
+    @java.lang.Deprecated public java.util.List<com.google.monitoring.v3.ServiceTier> getSupportedTiersList() {
       return new com.google.protobuf.Internal.ListAdapter<
           java.lang.Integer, com.google.monitoring.v3.ServiceTier>(supportedTiers_, supportedTiers_converter_);
     }
@@ -1686,9 +1686,9 @@ private static final long serialVersionUID = 0L;
      * must be one of the supported_tiers.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5;</code>
+     * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];</code>
      */
-    public int getSupportedTiersCount() {
+    @java.lang.Deprecated public int getSupportedTiersCount() {
       return supportedTiers_.size();
     }
     /**
@@ -1697,9 +1697,9 @@ private static final long serialVersionUID = 0L;
      * must be one of the supported_tiers.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5;</code>
+     * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];</code>
      */
-    public com.google.monitoring.v3.ServiceTier getSupportedTiers(int index) {
+    @java.lang.Deprecated public com.google.monitoring.v3.ServiceTier getSupportedTiers(int index) {
       return supportedTiers_converter_.convert(supportedTiers_.get(index));
     }
     /**
@@ -1708,9 +1708,9 @@ private static final long serialVersionUID = 0L;
      * must be one of the supported_tiers.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5;</code>
+     * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];</code>
      */
-    public Builder setSupportedTiers(
+    @java.lang.Deprecated public Builder setSupportedTiers(
         int index, com.google.monitoring.v3.ServiceTier value) {
       if (value == null) {
         throw new NullPointerException();
@@ -1726,9 +1726,9 @@ private static final long serialVersionUID = 0L;
      * must be one of the supported_tiers.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5;</code>
+     * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];</code>
      */
-    public Builder addSupportedTiers(com.google.monitoring.v3.ServiceTier value) {
+    @java.lang.Deprecated public Builder addSupportedTiers(com.google.monitoring.v3.ServiceTier value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -1743,9 +1743,9 @@ private static final long serialVersionUID = 0L;
      * must be one of the supported_tiers.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5;</code>
+     * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];</code>
      */
-    public Builder addAllSupportedTiers(
+    @java.lang.Deprecated public Builder addAllSupportedTiers(
         java.lang.Iterable<? extends com.google.monitoring.v3.ServiceTier> values) {
       ensureSupportedTiersIsMutable();
       for (com.google.monitoring.v3.ServiceTier value : values) {
@@ -1760,9 +1760,9 @@ private static final long serialVersionUID = 0L;
      * must be one of the supported_tiers.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5;</code>
+     * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];</code>
      */
-    public Builder clearSupportedTiers() {
+    @java.lang.Deprecated public Builder clearSupportedTiers() {
       supportedTiers_ = java.util.Collections.emptyList();
       bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
@@ -1774,9 +1774,9 @@ private static final long serialVersionUID = 0L;
      * must be one of the supported_tiers.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5;</code>
+     * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];</code>
      */
-    public java.util.List<java.lang.Integer>
+    @java.lang.Deprecated public java.util.List<java.lang.Integer>
     getSupportedTiersValueList() {
       return java.util.Collections.unmodifiableList(supportedTiers_);
     }
@@ -1786,9 +1786,9 @@ private static final long serialVersionUID = 0L;
      * must be one of the supported_tiers.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5;</code>
+     * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];</code>
      */
-    public int getSupportedTiersValue(int index) {
+    @java.lang.Deprecated public int getSupportedTiersValue(int index) {
       return supportedTiers_.get(index);
     }
     /**
@@ -1797,9 +1797,9 @@ private static final long serialVersionUID = 0L;
      * must be one of the supported_tiers.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5;</code>
+     * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];</code>
      */
-    public Builder setSupportedTiersValue(
+    @java.lang.Deprecated public Builder setSupportedTiersValue(
         int index, int value) {
       ensureSupportedTiersIsMutable();
       supportedTiers_.set(index, value);
@@ -1812,9 +1812,9 @@ private static final long serialVersionUID = 0L;
      * must be one of the supported_tiers.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5;</code>
+     * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];</code>
      */
-    public Builder addSupportedTiersValue(int value) {
+    @java.lang.Deprecated public Builder addSupportedTiersValue(int value) {
       ensureSupportedTiersIsMutable();
       supportedTiers_.add(value);
       onChanged();
@@ -1826,9 +1826,9 @@ private static final long serialVersionUID = 0L;
      * must be one of the supported_tiers.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5;</code>
+     * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];</code>
      */
-    public Builder addAllSupportedTiersValue(
+    @java.lang.Deprecated public Builder addAllSupportedTiersValue(
         java.lang.Iterable<java.lang.Integer> values) {
       ensureSupportedTiersIsMutable();
       for (int value : values) {

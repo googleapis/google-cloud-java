@@ -77,13 +77,14 @@ public final class CommonProto {
       "SON_UNSPECIFIED\020\000\022\021\n\rCOMPARISON_GT\020\001\022\021\n\r" +
       "COMPARISON_GE\020\002\022\021\n\rCOMPARISON_LT\020\003\022\021\n\rCO" +
       "MPARISON_LE\020\004\022\021\n\rCOMPARISON_EQ\020\005\022\021\n\rCOMP" +
-      "ARISON_NE\020\006*]\n\013ServiceTier\022\034\n\030SERVICE_TI" +
+      "ARISON_NE\020\006*a\n\013ServiceTier\022\034\n\030SERVICE_TI" +
       "ER_UNSPECIFIED\020\000\022\026\n\022SERVICE_TIER_BASIC\020\001" +
-      "\022\030\n\024SERVICE_TIER_PREMIUM\020\002B\243\001\n\030com.googl" +
-      "e.monitoring.v3B\013CommonProtoP\001Z>google.g" +
-      "olang.org/genproto/googleapis/monitoring" +
-      "/v3;monitoring\252\002\032Google.Cloud.Monitoring" +
-      ".V3\312\002\032Google\\Cloud\\Monitoring\\V3b\006proto3"
+      "\022\030\n\024SERVICE_TIER_PREMIUM\020\002\032\002\030\001B\243\001\n\030com.g" +
+      "oogle.monitoring.v3B\013CommonProtoP\001Z>goog" +
+      "le.golang.org/genproto/googleapis/monito" +
+      "ring/v3;monitoring\252\002\032Google.Cloud.Monito" +
+      "ring.V3\312\002\032Google\\Cloud\\Monitoring\\V3b\006pr" +
+      "oto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

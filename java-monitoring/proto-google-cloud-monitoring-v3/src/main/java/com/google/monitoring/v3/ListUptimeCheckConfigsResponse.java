@@ -22,6 +22,7 @@ private static final long serialVersionUID = 0L;
   private ListUptimeCheckConfigsResponse() {
     uptimeCheckConfigs_ = java.util.Collections.emptyList();
     nextPageToken_ = "";
+    totalSize_ = 0;
   }
 
   @java.lang.Override
@@ -61,6 +62,11 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             nextPageToken_ = s;
+            break;
+          }
+          case 24: {
+
+            totalSize_ = input.readInt32();
             break;
           }
           default: {
@@ -204,6 +210,20 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int TOTAL_SIZE_FIELD_NUMBER = 3;
+  private int totalSize_;
+  /**
+   * <pre>
+   * The total number of uptime check configurations for the project,
+   * irrespective of any pagination.
+   * </pre>
+   *
+   * <code>int32 total_size = 3;</code>
+   */
+  public int getTotalSize() {
+    return totalSize_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -224,6 +244,9 @@ private static final long serialVersionUID = 0L;
     if (!getNextPageTokenBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, nextPageToken_);
     }
+    if (totalSize_ != 0) {
+      output.writeInt32(3, totalSize_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -239,6 +262,10 @@ private static final long serialVersionUID = 0L;
     }
     if (!getNextPageTokenBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, nextPageToken_);
+    }
+    if (totalSize_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(3, totalSize_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -260,6 +287,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getUptimeCheckConfigsList());
     result = result && getNextPageToken()
         .equals(other.getNextPageToken());
+    result = result && (getTotalSize()
+        == other.getTotalSize());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -277,6 +306,8 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + NEXT_PAGE_TOKEN_FIELD_NUMBER;
     hash = (53 * hash) + getNextPageToken().hashCode();
+    hash = (37 * hash) + TOTAL_SIZE_FIELD_NUMBER;
+    hash = (53 * hash) + getTotalSize();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -423,6 +454,8 @@ private static final long serialVersionUID = 0L;
       }
       nextPageToken_ = "";
 
+      totalSize_ = 0;
+
       return this;
     }
 
@@ -461,6 +494,7 @@ private static final long serialVersionUID = 0L;
         result.uptimeCheckConfigs_ = uptimeCheckConfigsBuilder_.build();
       }
       result.nextPageToken_ = nextPageToken_;
+      result.totalSize_ = totalSize_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -539,6 +573,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getNextPageToken().isEmpty()) {
         nextPageToken_ = other.nextPageToken_;
         onChanged();
+      }
+      if (other.getTotalSize() != 0) {
+        setTotalSize(other.getTotalSize());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -987,6 +1024,47 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       nextPageToken_ = value;
+      onChanged();
+      return this;
+    }
+
+    private int totalSize_ ;
+    /**
+     * <pre>
+     * The total number of uptime check configurations for the project,
+     * irrespective of any pagination.
+     * </pre>
+     *
+     * <code>int32 total_size = 3;</code>
+     */
+    public int getTotalSize() {
+      return totalSize_;
+    }
+    /**
+     * <pre>
+     * The total number of uptime check configurations for the project,
+     * irrespective of any pagination.
+     * </pre>
+     *
+     * <code>int32 total_size = 3;</code>
+     */
+    public Builder setTotalSize(int value) {
+      
+      totalSize_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The total number of uptime check configurations for the project,
+     * irrespective of any pagination.
+     * </pre>
+     *
+     * <code>int32 total_size = 3;</code>
+     */
+    public Builder clearTotalSize() {
+      
+      totalSize_ = 0;
       onChanged();
       return this;
     }

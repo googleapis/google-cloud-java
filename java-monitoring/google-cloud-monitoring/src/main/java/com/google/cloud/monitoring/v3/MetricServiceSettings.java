@@ -76,7 +76,6 @@ import javax.annotation.Generated;
  * </pre>
  */
 @Generated("by gapic-generator")
-@BetaApi
 public class MetricServiceSettings extends ClientSettings<MetricServiceSettings> {
   /** Returns the object with the settings used for calls to listMonitoredResourceDescriptors. */
   public PagedCallSettings<

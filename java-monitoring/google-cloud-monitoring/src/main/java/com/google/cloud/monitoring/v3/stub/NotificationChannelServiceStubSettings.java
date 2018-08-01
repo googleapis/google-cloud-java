@@ -88,7 +88,6 @@ import org.threeten.bp.Duration;
  * </pre>
  */
 @Generated("by gapic-generator")
-@BetaApi
 public class NotificationChannelServiceStubSettings
     extends StubSettings<NotificationChannelServiceStubSettings> {
   /** The default scopes of the service. */
