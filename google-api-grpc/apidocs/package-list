@@ -3,6 +3,7 @@ com.google.bigtable.v2
 com.google.cloud.automl.v1beta1
 com.google.cloud.bigquery.datatransfer.v1
 com.google.cloud.dataproc.v1
+com.google.cloud.dataproc.v1beta2
 com.google.cloud.dialogflow.v2
 com.google.cloud.dialogflow.v2beta1
 com.google.cloud.iot.v1
@@ -40,3 +41,4 @@ com.google.pubsub.v1
 com.google.spanner.admin.database.v1
 com.google.spanner.admin.instance.v1
 com.google.spanner.v1
+google.monitoring.v3

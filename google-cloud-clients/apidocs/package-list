@@ -30,6 +30,8 @@ com.google.cloud.container.v1
 com.google.cloud.container.v1.stub
 com.google.cloud.dataproc.v1
 com.google.cloud.dataproc.v1.stub
+com.google.cloud.dataproc.v1beta2
+com.google.cloud.dataproc.v1beta2.stub
 com.google.cloud.datastore
 com.google.cloud.datastore.spi
 com.google.cloud.datastore.spi.v1
