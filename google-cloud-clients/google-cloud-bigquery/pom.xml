@@ -80,6 +80,7 @@
         <!-- Allow script to run, so we can run benchmarks. -->
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>exec-maven-plugin</artifactId>
+        <version>1.7</version>
         <configuration>
           <cleanupDaemonThreads>false</cleanupDaemonThreads>
           <skip>false</skip>

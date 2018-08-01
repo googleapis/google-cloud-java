@@ -239,8 +239,6 @@ jobs:
     steps:
       - checkout
       - run:
-          <<: *anchor_build
-      - run:
           name: Run mvn javadoc goal
           command: mvn javadoc:javadoc javadoc:test-javadoc
 
