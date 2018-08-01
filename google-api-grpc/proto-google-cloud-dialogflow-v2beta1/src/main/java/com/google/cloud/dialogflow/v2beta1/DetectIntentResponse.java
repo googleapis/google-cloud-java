@@ -229,12 +229,13 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * If Knowledge Connectors are enabled, there could be more than one result
-   * returned for a given query or event and this field will contain all results
-   * except for the top one which is captured in query_result. The alternative
-   * results are ordered by decreasing
+   * returned for a given query or event, and this field will contain all
+   * results except for the top one, which is captured in query_result. The
+   * alternative results are ordered by decreasing
    * `QueryResult.intent_detection_confidence`. If Knowledge Connectors are
-   * disabled this field will be empty  at which point those additional results
-   * will be surfaced here.
+   * disabled, this field will be empty until multiple responses for regular
+   * intents are supported, at which point those additional results will be
+   * surfaced here.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;</code>
@@ -245,12 +246,13 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * If Knowledge Connectors are enabled, there could be more than one result
-   * returned for a given query or event and this field will contain all results
-   * except for the top one which is captured in query_result. The alternative
-   * results are ordered by decreasing
+   * returned for a given query or event, and this field will contain all
+   * results except for the top one, which is captured in query_result. The
+   * alternative results are ordered by decreasing
    * `QueryResult.intent_detection_confidence`. If Knowledge Connectors are
-   * disabled this field will be empty  at which point those additional results
-   * will be surfaced here.
+   * disabled, this field will be empty until multiple responses for regular
+   * intents are supported, at which point those additional results will be
+   * surfaced here.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;</code>
@@ -262,12 +264,13 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * If Knowledge Connectors are enabled, there could be more than one result
-   * returned for a given query or event and this field will contain all results
-   * except for the top one which is captured in query_result. The alternative
-   * results are ordered by decreasing
+   * returned for a given query or event, and this field will contain all
+   * results except for the top one, which is captured in query_result. The
+   * alternative results are ordered by decreasing
    * `QueryResult.intent_detection_confidence`. If Knowledge Connectors are
-   * disabled this field will be empty  at which point those additional results
-   * will be surfaced here.
+   * disabled, this field will be empty until multiple responses for regular
+   * intents are supported, at which point those additional results will be
+   * surfaced here.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;</code>
@@ -278,12 +281,13 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * If Knowledge Connectors are enabled, there could be more than one result
-   * returned for a given query or event and this field will contain all results
-   * except for the top one which is captured in query_result. The alternative
-   * results are ordered by decreasing
+   * returned for a given query or event, and this field will contain all
+   * results except for the top one, which is captured in query_result. The
+   * alternative results are ordered by decreasing
    * `QueryResult.intent_detection_confidence`. If Knowledge Connectors are
-   * disabled this field will be empty  at which point those additional results
-   * will be surfaced here.
+   * disabled, this field will be empty until multiple responses for regular
+   * intents are supported, at which point those additional results will be
+   * surfaced here.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;</code>
@@ -294,12 +298,13 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * If Knowledge Connectors are enabled, there could be more than one result
-   * returned for a given query or event and this field will contain all results
-   * except for the top one which is captured in query_result. The alternative
-   * results are ordered by decreasing
+   * returned for a given query or event, and this field will contain all
+   * results except for the top one, which is captured in query_result. The
+   * alternative results are ordered by decreasing
    * `QueryResult.intent_detection_confidence`. If Knowledge Connectors are
-   * disabled this field will be empty  at which point those additional results
-   * will be surfaced here.
+   * disabled, this field will be empty until multiple responses for regular
+   * intents are supported, at which point those additional results will be
+   * surfaced here.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;</code>
@@ -1141,12 +1146,13 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * If Knowledge Connectors are enabled, there could be more than one result
-     * returned for a given query or event and this field will contain all results
-     * except for the top one which is captured in query_result. The alternative
-     * results are ordered by decreasing
+     * returned for a given query or event, and this field will contain all
+     * results except for the top one, which is captured in query_result. The
+     * alternative results are ordered by decreasing
      * `QueryResult.intent_detection_confidence`. If Knowledge Connectors are
-     * disabled this field will be empty  at which point those additional results
-     * will be surfaced here.
+     * disabled, this field will be empty until multiple responses for regular
+     * intents are supported, at which point those additional results will be
+     * surfaced here.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;</code>
@@ -1161,12 +1167,13 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * If Knowledge Connectors are enabled, there could be more than one result
-     * returned for a given query or event and this field will contain all results
-     * except for the top one which is captured in query_result. The alternative
-     * results are ordered by decreasing
+     * returned for a given query or event, and this field will contain all
+     * results except for the top one, which is captured in query_result. The
+     * alternative results are ordered by decreasing
      * `QueryResult.intent_detection_confidence`. If Knowledge Connectors are
-     * disabled this field will be empty  at which point those additional results
-     * will be surfaced here.
+     * disabled, this field will be empty until multiple responses for regular
+     * intents are supported, at which point those additional results will be
+     * surfaced here.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;</code>
@@ -1181,12 +1188,13 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * If Knowledge Connectors are enabled, there could be more than one result
-     * returned for a given query or event and this field will contain all results
-     * except for the top one which is captured in query_result. The alternative
-     * results are ordered by decreasing
+     * returned for a given query or event, and this field will contain all
+     * results except for the top one, which is captured in query_result. The
+     * alternative results are ordered by decreasing
      * `QueryResult.intent_detection_confidence`. If Knowledge Connectors are
-     * disabled this field will be empty  at which point those additional results
-     * will be surfaced here.
+     * disabled, this field will be empty until multiple responses for regular
+     * intents are supported, at which point those additional results will be
+     * surfaced here.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;</code>
@@ -1201,12 +1209,13 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * If Knowledge Connectors are enabled, there could be more than one result
-     * returned for a given query or event and this field will contain all results
-     * except for the top one which is captured in query_result. The alternative
-     * results are ordered by decreasing
+     * returned for a given query or event, and this field will contain all
+     * results except for the top one, which is captured in query_result. The
+     * alternative results are ordered by decreasing
      * `QueryResult.intent_detection_confidence`. If Knowledge Connectors are
-     * disabled this field will be empty  at which point those additional results
-     * will be surfaced here.
+     * disabled, this field will be empty until multiple responses for regular
+     * intents are supported, at which point those additional results will be
+     * surfaced here.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;</code>
@@ -1228,12 +1237,13 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * If Knowledge Connectors are enabled, there could be more than one result
-     * returned for a given query or event and this field will contain all results
-     * except for the top one which is captured in query_result. The alternative
-     * results are ordered by decreasing
+     * returned for a given query or event, and this field will contain all
+     * results except for the top one, which is captured in query_result. The
+     * alternative results are ordered by decreasing
      * `QueryResult.intent_detection_confidence`. If Knowledge Connectors are
-     * disabled this field will be empty  at which point those additional results
-     * will be surfaced here.
+     * disabled, this field will be empty until multiple responses for regular
+     * intents are supported, at which point those additional results will be
+     * surfaced here.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;</code>
@@ -1252,12 +1262,13 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * If Knowledge Connectors are enabled, there could be more than one result
-     * returned for a given query or event and this field will contain all results
-     * except for the top one which is captured in query_result. The alternative
-     * results are ordered by decreasing
+     * returned for a given query or event, and this field will contain all
+     * results except for the top one, which is captured in query_result. The
+     * alternative results are ordered by decreasing
      * `QueryResult.intent_detection_confidence`. If Knowledge Connectors are
-     * disabled this field will be empty  at which point those additional results
-     * will be surfaced here.
+     * disabled, this field will be empty until multiple responses for regular
+     * intents are supported, at which point those additional results will be
+     * surfaced here.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;</code>
@@ -1278,12 +1289,13 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * If Knowledge Connectors are enabled, there could be more than one result
-     * returned for a given query or event and this field will contain all results
-     * except for the top one which is captured in query_result. The alternative
-     * results are ordered by decreasing
+     * returned for a given query or event, and this field will contain all
+     * results except for the top one, which is captured in query_result. The
+     * alternative results are ordered by decreasing
      * `QueryResult.intent_detection_confidence`. If Knowledge Connectors are
-     * disabled this field will be empty  at which point those additional results
-     * will be surfaced here.
+     * disabled, this field will be empty until multiple responses for regular
+     * intents are supported, at which point those additional results will be
+     * surfaced here.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;</code>
@@ -1305,12 +1317,13 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * If Knowledge Connectors are enabled, there could be more than one result
-     * returned for a given query or event and this field will contain all results
-     * except for the top one which is captured in query_result. The alternative
-     * results are ordered by decreasing
+     * returned for a given query or event, and this field will contain all
+     * results except for the top one, which is captured in query_result. The
+     * alternative results are ordered by decreasing
      * `QueryResult.intent_detection_confidence`. If Knowledge Connectors are
-     * disabled this field will be empty  at which point those additional results
-     * will be surfaced here.
+     * disabled, this field will be empty until multiple responses for regular
+     * intents are supported, at which point those additional results will be
+     * surfaced here.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;</code>
@@ -1329,12 +1342,13 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * If Knowledge Connectors are enabled, there could be more than one result
-     * returned for a given query or event and this field will contain all results
-     * except for the top one which is captured in query_result. The alternative
-     * results are ordered by decreasing
+     * returned for a given query or event, and this field will contain all
+     * results except for the top one, which is captured in query_result. The
+     * alternative results are ordered by decreasing
      * `QueryResult.intent_detection_confidence`. If Knowledge Connectors are
-     * disabled this field will be empty  at which point those additional results
-     * will be surfaced here.
+     * disabled, this field will be empty until multiple responses for regular
+     * intents are supported, at which point those additional results will be
+     * surfaced here.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;</code>
@@ -1353,12 +1367,13 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * If Knowledge Connectors are enabled, there could be more than one result
-     * returned for a given query or event and this field will contain all results
-     * except for the top one which is captured in query_result. The alternative
-     * results are ordered by decreasing
+     * returned for a given query or event, and this field will contain all
+     * results except for the top one, which is captured in query_result. The
+     * alternative results are ordered by decreasing
      * `QueryResult.intent_detection_confidence`. If Knowledge Connectors are
-     * disabled this field will be empty  at which point those additional results
-     * will be surfaced here.
+     * disabled, this field will be empty until multiple responses for regular
+     * intents are supported, at which point those additional results will be
+     * surfaced here.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;</code>
@@ -1378,12 +1393,13 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * If Knowledge Connectors are enabled, there could be more than one result
-     * returned for a given query or event and this field will contain all results
-     * except for the top one which is captured in query_result. The alternative
-     * results are ordered by decreasing
+     * returned for a given query or event, and this field will contain all
+     * results except for the top one, which is captured in query_result. The
+     * alternative results are ordered by decreasing
      * `QueryResult.intent_detection_confidence`. If Knowledge Connectors are
-     * disabled this field will be empty  at which point those additional results
-     * will be surfaced here.
+     * disabled, this field will be empty until multiple responses for regular
+     * intents are supported, at which point those additional results will be
+     * surfaced here.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;</code>
@@ -1401,12 +1417,13 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * If Knowledge Connectors are enabled, there could be more than one result
-     * returned for a given query or event and this field will contain all results
-     * except for the top one which is captured in query_result. The alternative
-     * results are ordered by decreasing
+     * returned for a given query or event, and this field will contain all
+     * results except for the top one, which is captured in query_result. The
+     * alternative results are ordered by decreasing
      * `QueryResult.intent_detection_confidence`. If Knowledge Connectors are
-     * disabled this field will be empty  at which point those additional results
-     * will be surfaced here.
+     * disabled, this field will be empty until multiple responses for regular
+     * intents are supported, at which point those additional results will be
+     * surfaced here.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;</code>
@@ -1424,12 +1441,13 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * If Knowledge Connectors are enabled, there could be more than one result
-     * returned for a given query or event and this field will contain all results
-     * except for the top one which is captured in query_result. The alternative
-     * results are ordered by decreasing
+     * returned for a given query or event, and this field will contain all
+     * results except for the top one, which is captured in query_result. The
+     * alternative results are ordered by decreasing
      * `QueryResult.intent_detection_confidence`. If Knowledge Connectors are
-     * disabled this field will be empty  at which point those additional results
-     * will be surfaced here.
+     * disabled, this field will be empty until multiple responses for regular
+     * intents are supported, at which point those additional results will be
+     * surfaced here.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;</code>
@@ -1441,12 +1459,13 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * If Knowledge Connectors are enabled, there could be more than one result
-     * returned for a given query or event and this field will contain all results
-     * except for the top one which is captured in query_result. The alternative
-     * results are ordered by decreasing
+     * returned for a given query or event, and this field will contain all
+     * results except for the top one, which is captured in query_result. The
+     * alternative results are ordered by decreasing
      * `QueryResult.intent_detection_confidence`. If Knowledge Connectors are
-     * disabled this field will be empty  at which point those additional results
-     * will be surfaced here.
+     * disabled, this field will be empty until multiple responses for regular
+     * intents are supported, at which point those additional results will be
+     * surfaced here.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;</code>
@@ -1461,12 +1480,13 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * If Knowledge Connectors are enabled, there could be more than one result
-     * returned for a given query or event and this field will contain all results
-     * except for the top one which is captured in query_result. The alternative
-     * results are ordered by decreasing
+     * returned for a given query or event, and this field will contain all
+     * results except for the top one, which is captured in query_result. The
+     * alternative results are ordered by decreasing
      * `QueryResult.intent_detection_confidence`. If Knowledge Connectors are
-     * disabled this field will be empty  at which point those additional results
-     * will be surfaced here.
+     * disabled, this field will be empty until multiple responses for regular
+     * intents are supported, at which point those additional results will be
+     * surfaced here.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;</code>
@@ -1482,12 +1502,13 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * If Knowledge Connectors are enabled, there could be more than one result
-     * returned for a given query or event and this field will contain all results
-     * except for the top one which is captured in query_result. The alternative
-     * results are ordered by decreasing
+     * returned for a given query or event, and this field will contain all
+     * results except for the top one, which is captured in query_result. The
+     * alternative results are ordered by decreasing
      * `QueryResult.intent_detection_confidence`. If Knowledge Connectors are
-     * disabled this field will be empty  at which point those additional results
-     * will be surfaced here.
+     * disabled, this field will be empty until multiple responses for regular
+     * intents are supported, at which point those additional results will be
+     * surfaced here.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;</code>
@@ -1499,12 +1520,13 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * If Knowledge Connectors are enabled, there could be more than one result
-     * returned for a given query or event and this field will contain all results
-     * except for the top one which is captured in query_result. The alternative
-     * results are ordered by decreasing
+     * returned for a given query or event, and this field will contain all
+     * results except for the top one, which is captured in query_result. The
+     * alternative results are ordered by decreasing
      * `QueryResult.intent_detection_confidence`. If Knowledge Connectors are
-     * disabled this field will be empty  at which point those additional results
-     * will be surfaced here.
+     * disabled, this field will be empty until multiple responses for regular
+     * intents are supported, at which point those additional results will be
+     * surfaced here.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;</code>
@@ -1517,12 +1539,13 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * If Knowledge Connectors are enabled, there could be more than one result
-     * returned for a given query or event and this field will contain all results
-     * except for the top one which is captured in query_result. The alternative
-     * results are ordered by decreasing
+     * returned for a given query or event, and this field will contain all
+     * results except for the top one, which is captured in query_result. The
+     * alternative results are ordered by decreasing
      * `QueryResult.intent_detection_confidence`. If Knowledge Connectors are
-     * disabled this field will be empty  at which point those additional results
-     * will be surfaced here.
+     * disabled, this field will be empty until multiple responses for regular
+     * intents are supported, at which point those additional results will be
+     * surfaced here.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;</code>

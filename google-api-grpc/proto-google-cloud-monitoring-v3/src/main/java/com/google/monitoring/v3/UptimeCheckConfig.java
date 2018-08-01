@@ -25,6 +25,7 @@ private static final long serialVersionUID = 0L;
     displayName_ = "";
     contentMatchers_ = java.util.Collections.emptyList();
     selectedRegions_ = java.util.Collections.emptyList();
+    isInternal_ = false;
     internalCheckers_ = java.util.Collections.emptyList();
   }
 
@@ -179,12 +180,17 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 114: {
-            if (!((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
-              internalCheckers_ = new java.util.ArrayList<com.google.monitoring.v3.UptimeCheckConfig.InternalChecker>();
-              mutable_bitField0_ |= 0x00000400;
+            if (!((mutable_bitField0_ & 0x00000800) == 0x00000800)) {
+              internalCheckers_ = new java.util.ArrayList<com.google.monitoring.v3.InternalChecker>();
+              mutable_bitField0_ |= 0x00000800;
             }
             internalCheckers_.add(
-                input.readMessage(com.google.monitoring.v3.UptimeCheckConfig.InternalChecker.parser(), extensionRegistry));
+                input.readMessage(com.google.monitoring.v3.InternalChecker.parser(), extensionRegistry));
+            break;
+          }
+          case 120: {
+
+            isInternal_ = input.readBool();
             break;
           }
           default: {
@@ -208,7 +214,7 @@ private static final long serialVersionUID = 0L;
       if (((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
         selectedRegions_ = java.util.Collections.unmodifiableList(selectedRegions_);
       }
-      if (((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
+      if (((mutable_bitField0_ & 0x00000800) == 0x00000800)) {
         internalCheckers_ = java.util.Collections.unmodifiableList(internalCheckers_);
       }
       this.unknownFields = unknownFields.build();
@@ -1060,6 +1066,7 @@ private static final long serialVersionUID = 0L;
      * https://www.w3.org/Protocols/rfc2616/rfc2616.txt (page 31).
      * Entering two separate headers with the same key in a Create call will
      * cause the first to be overwritten by the second.
+     * The maximum number of headers allowed is 100.
      * </pre>
      *
      * <code>map&lt;string, string&gt; headers = 6;</code>
@@ -1074,6 +1081,7 @@ private static final long serialVersionUID = 0L;
      * https://www.w3.org/Protocols/rfc2616/rfc2616.txt (page 31).
      * Entering two separate headers with the same key in a Create call will
      * cause the first to be overwritten by the second.
+     * The maximum number of headers allowed is 100.
      * </pre>
      *
      * <code>map&lt;string, string&gt; headers = 6;</code>
@@ -1095,6 +1103,7 @@ private static final long serialVersionUID = 0L;
      * https://www.w3.org/Protocols/rfc2616/rfc2616.txt (page 31).
      * Entering two separate headers with the same key in a Create call will
      * cause the first to be overwritten by the second.
+     * The maximum number of headers allowed is 100.
      * </pre>
      *
      * <code>map&lt;string, string&gt; headers = 6;</code>
@@ -1110,6 +1119,7 @@ private static final long serialVersionUID = 0L;
      * https://www.w3.org/Protocols/rfc2616/rfc2616.txt (page 31).
      * Entering two separate headers with the same key in a Create call will
      * cause the first to be overwritten by the second.
+     * The maximum number of headers allowed is 100.
      * </pre>
      *
      * <code>map&lt;string, string&gt; headers = 6;</code>
@@ -1127,6 +1137,7 @@ private static final long serialVersionUID = 0L;
      * https://www.w3.org/Protocols/rfc2616/rfc2616.txt (page 31).
      * Entering two separate headers with the same key in a Create call will
      * cause the first to be overwritten by the second.
+     * The maximum number of headers allowed is 100.
      * </pre>
      *
      * <code>map&lt;string, string&gt; headers = 6;</code>
@@ -2208,6 +2219,7 @@ private static final long serialVersionUID = 0L;
      * https://www.w3.org/Protocols/rfc2616/rfc2616.txt (page 31).
      * Entering two separate headers with the same key in a Create call will
      * cause the first to be overwritten by the second.
+     * The maximum number of headers allowed is 100.
      * </pre>
      *
      * <code>map&lt;string, string&gt; headers = 6;</code>
@@ -2234,6 +2246,7 @@ private static final long serialVersionUID = 0L;
      * https://www.w3.org/Protocols/rfc2616/rfc2616.txt (page 31).
      * Entering two separate headers with the same key in a Create call will
      * cause the first to be overwritten by the second.
+     * The maximum number of headers allowed is 100.
      * </pre>
      *
      * <code>map&lt;string, string&gt; headers = 6;</code>
@@ -2251,6 +2264,7 @@ private static final long serialVersionUID = 0L;
      * https://www.w3.org/Protocols/rfc2616/rfc2616.txt (page 31).
      * Entering two separate headers with the same key in a Create call will
      * cause the first to be overwritten by the second.
+     * The maximum number of headers allowed is 100.
      * </pre>
      *
      * <code>map&lt;string, string&gt; headers = 6;</code>
@@ -2273,6 +2287,7 @@ private static final long serialVersionUID = 0L;
      * https://www.w3.org/Protocols/rfc2616/rfc2616.txt (page 31).
      * Entering two separate headers with the same key in a Create call will
      * cause the first to be overwritten by the second.
+     * The maximum number of headers allowed is 100.
      * </pre>
      *
      * <code>map&lt;string, string&gt; headers = 6;</code>
@@ -3163,6 +3178,7 @@ private static final long serialVersionUID = 0L;
        * https://www.w3.org/Protocols/rfc2616/rfc2616.txt (page 31).
        * Entering two separate headers with the same key in a Create call will
        * cause the first to be overwritten by the second.
+       * The maximum number of headers allowed is 100.
        * </pre>
        *
        * <code>map&lt;string, string&gt; headers = 6;</code>
@@ -3189,6 +3205,7 @@ private static final long serialVersionUID = 0L;
        * https://www.w3.org/Protocols/rfc2616/rfc2616.txt (page 31).
        * Entering two separate headers with the same key in a Create call will
        * cause the first to be overwritten by the second.
+       * The maximum number of headers allowed is 100.
        * </pre>
        *
        * <code>map&lt;string, string&gt; headers = 6;</code>
@@ -3206,6 +3223,7 @@ private static final long serialVersionUID = 0L;
        * https://www.w3.org/Protocols/rfc2616/rfc2616.txt (page 31).
        * Entering two separate headers with the same key in a Create call will
        * cause the first to be overwritten by the second.
+       * The maximum number of headers allowed is 100.
        * </pre>
        *
        * <code>map&lt;string, string&gt; headers = 6;</code>
@@ -3228,6 +3246,7 @@ private static final long serialVersionUID = 0L;
        * https://www.w3.org/Protocols/rfc2616/rfc2616.txt (page 31).
        * Entering two separate headers with the same key in a Create call will
        * cause the first to be overwritten by the second.
+       * The maximum number of headers allowed is 100.
        * </pre>
        *
        * <code>map&lt;string, string&gt; headers = 6;</code>
@@ -3258,6 +3277,7 @@ private static final long serialVersionUID = 0L;
        * https://www.w3.org/Protocols/rfc2616/rfc2616.txt (page 31).
        * Entering two separate headers with the same key in a Create call will
        * cause the first to be overwritten by the second.
+       * The maximum number of headers allowed is 100.
        * </pre>
        *
        * <code>map&lt;string, string&gt; headers = 6;</code>
@@ -3287,6 +3307,7 @@ private static final long serialVersionUID = 0L;
        * https://www.w3.org/Protocols/rfc2616/rfc2616.txt (page 31).
        * Entering two separate headers with the same key in a Create call will
        * cause the first to be overwritten by the second.
+       * The maximum number of headers allowed is 100.
        * </pre>
        *
        * <code>map&lt;string, string&gt; headers = 6;</code>
@@ -3309,6 +3330,7 @@ private static final long serialVersionUID = 0L;
        * https://www.w3.org/Protocols/rfc2616/rfc2616.txt (page 31).
        * Entering two separate headers with the same key in a Create call will
        * cause the first to be overwritten by the second.
+       * The maximum number of headers allowed is 100.
        * </pre>
        *
        * <code>map&lt;string, string&gt; headers = 6;</code>
@@ -3893,7 +3915,7 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * String content to match
+     * String content to match (max 1024 bytes)
      * </pre>
      *
      * <code>string content = 1;</code>
@@ -3901,7 +3923,7 @@ private static final long serialVersionUID = 0L;
     java.lang.String getContent();
     /**
      * <pre>
-     * String content to match
+     * String content to match (max 1024 bytes)
      * </pre>
      *
      * <code>string content = 1;</code>
@@ -3997,7 +4019,7 @@ private static final long serialVersionUID = 0L;
     private volatile java.lang.Object content_;
     /**
      * <pre>
-     * String content to match
+     * String content to match (max 1024 bytes)
      * </pre>
      *
      * <code>string content = 1;</code>
@@ -4016,7 +4038,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * String content to match
+     * String content to match (max 1024 bytes)
      * </pre>
      *
      * <code>string content = 1;</code>
@@ -4347,7 +4369,7 @@ private static final long serialVersionUID = 0L;
       private java.lang.Object content_ = "";
       /**
        * <pre>
-       * String content to match
+       * String content to match (max 1024 bytes)
        * </pre>
        *
        * <code>string content = 1;</code>
@@ -4366,7 +4388,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * String content to match
+       * String content to match (max 1024 bytes)
        * </pre>
        *
        * <code>string content = 1;</code>
@@ -4386,7 +4408,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * String content to match
+       * String content to match (max 1024 bytes)
        * </pre>
        *
        * <code>string content = 1;</code>
@@ -4403,7 +4425,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * String content to match
+       * String content to match (max 1024 bytes)
        * </pre>
        *
        * <code>string content = 1;</code>
@@ -4416,7 +4438,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * String content to match
+       * String content to match (max 1024 bytes)
        * </pre>
        *
        * <code>string content = 1;</code>
@@ -4480,1301 +4502,6 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface InternalCheckerOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:google.monitoring.v3.UptimeCheckConfig.InternalChecker)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     * The GCP project ID. Not necessarily the same as the project_id for the config.
-     * </pre>
-     *
-     * <code>string project_id = 1;</code>
-     */
-    java.lang.String getProjectId();
-    /**
-     * <pre>
-     * The GCP project ID. Not necessarily the same as the project_id for the config.
-     * </pre>
-     *
-     * <code>string project_id = 1;</code>
-     */
-    com.google.protobuf.ByteString
-        getProjectIdBytes();
-
-    /**
-     * <pre>
-     * The internal network to perform this uptime check on.
-     * </pre>
-     *
-     * <code>string network = 2;</code>
-     */
-    java.lang.String getNetwork();
-    /**
-     * <pre>
-     * The internal network to perform this uptime check on.
-     * </pre>
-     *
-     * <code>string network = 2;</code>
-     */
-    com.google.protobuf.ByteString
-        getNetworkBytes();
-
-    /**
-     * <pre>
-     * The GCP zone the uptime check should egress from. Only respected for
-     * internal uptime checks, where internal_network is specified.
-     * </pre>
-     *
-     * <code>string gcp_zone = 3;</code>
-     */
-    java.lang.String getGcpZone();
-    /**
-     * <pre>
-     * The GCP zone the uptime check should egress from. Only respected for
-     * internal uptime checks, where internal_network is specified.
-     * </pre>
-     *
-     * <code>string gcp_zone = 3;</code>
-     */
-    com.google.protobuf.ByteString
-        getGcpZoneBytes();
-
-    /**
-     * <pre>
-     * The checker ID.
-     * </pre>
-     *
-     * <code>string checker_id = 4;</code>
-     */
-    java.lang.String getCheckerId();
-    /**
-     * <pre>
-     * The checker ID.
-     * </pre>
-     *
-     * <code>string checker_id = 4;</code>
-     */
-    com.google.protobuf.ByteString
-        getCheckerIdBytes();
-
-    /**
-     * <pre>
-     * The checker's human-readable name.
-     * </pre>
-     *
-     * <code>string display_name = 5;</code>
-     */
-    java.lang.String getDisplayName();
-    /**
-     * <pre>
-     * The checker's human-readable name.
-     * </pre>
-     *
-     * <code>string display_name = 5;</code>
-     */
-    com.google.protobuf.ByteString
-        getDisplayNameBytes();
-  }
-  /**
-   * <pre>
-   * Nimbus InternalCheckers.
-   * </pre>
-   *
-   * Protobuf type {@code google.monitoring.v3.UptimeCheckConfig.InternalChecker}
-   */
-  public  static final class InternalChecker extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:google.monitoring.v3.UptimeCheckConfig.InternalChecker)
-      InternalCheckerOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use InternalChecker.newBuilder() to construct.
-    private InternalChecker(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private InternalChecker() {
-      projectId_ = "";
-      network_ = "";
-      gcpZone_ = "";
-      checkerId_ = "";
-      displayName_ = "";
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private InternalChecker(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              projectId_ = s;
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              network_ = s;
-              break;
-            }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              gcpZone_ = s;
-              break;
-            }
-            case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              checkerId_ = s;
-              break;
-            }
-            case 42: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              displayName_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.monitoring.v3.UptimeProto.internal_static_google_monitoring_v3_UptimeCheckConfig_InternalChecker_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.google.monitoring.v3.UptimeProto.internal_static_google_monitoring_v3_UptimeCheckConfig_InternalChecker_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.google.monitoring.v3.UptimeCheckConfig.InternalChecker.class, com.google.monitoring.v3.UptimeCheckConfig.InternalChecker.Builder.class);
-    }
-
-    public static final int PROJECT_ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object projectId_;
-    /**
-     * <pre>
-     * The GCP project ID. Not necessarily the same as the project_id for the config.
-     * </pre>
-     *
-     * <code>string project_id = 1;</code>
-     */
-    public java.lang.String getProjectId() {
-      java.lang.Object ref = projectId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        projectId_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * The GCP project ID. Not necessarily the same as the project_id for the config.
-     * </pre>
-     *
-     * <code>string project_id = 1;</code>
-     */
-    public com.google.protobuf.ByteString
-        getProjectIdBytes() {
-      java.lang.Object ref = projectId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        projectId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int NETWORK_FIELD_NUMBER = 2;
-    private volatile java.lang.Object network_;
-    /**
-     * <pre>
-     * The internal network to perform this uptime check on.
-     * </pre>
-     *
-     * <code>string network = 2;</code>
-     */
-    public java.lang.String getNetwork() {
-      java.lang.Object ref = network_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        network_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * The internal network to perform this uptime check on.
-     * </pre>
-     *
-     * <code>string network = 2;</code>
-     */
-    public com.google.protobuf.ByteString
-        getNetworkBytes() {
-      java.lang.Object ref = network_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        network_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int GCP_ZONE_FIELD_NUMBER = 3;
-    private volatile java.lang.Object gcpZone_;
-    /**
-     * <pre>
-     * The GCP zone the uptime check should egress from. Only respected for
-     * internal uptime checks, where internal_network is specified.
-     * </pre>
-     *
-     * <code>string gcp_zone = 3;</code>
-     */
-    public java.lang.String getGcpZone() {
-      java.lang.Object ref = gcpZone_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        gcpZone_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * The GCP zone the uptime check should egress from. Only respected for
-     * internal uptime checks, where internal_network is specified.
-     * </pre>
-     *
-     * <code>string gcp_zone = 3;</code>
-     */
-    public com.google.protobuf.ByteString
-        getGcpZoneBytes() {
-      java.lang.Object ref = gcpZone_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        gcpZone_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int CHECKER_ID_FIELD_NUMBER = 4;
-    private volatile java.lang.Object checkerId_;
-    /**
-     * <pre>
-     * The checker ID.
-     * </pre>
-     *
-     * <code>string checker_id = 4;</code>
-     */
-    public java.lang.String getCheckerId() {
-      java.lang.Object ref = checkerId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        checkerId_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * The checker ID.
-     * </pre>
-     *
-     * <code>string checker_id = 4;</code>
-     */
-    public com.google.protobuf.ByteString
-        getCheckerIdBytes() {
-      java.lang.Object ref = checkerId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        checkerId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int DISPLAY_NAME_FIELD_NUMBER = 5;
-    private volatile java.lang.Object displayName_;
-    /**
-     * <pre>
-     * The checker's human-readable name.
-     * </pre>
-     *
-     * <code>string display_name = 5;</code>
-     */
-    public java.lang.String getDisplayName() {
-      java.lang.Object ref = displayName_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        displayName_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * The checker's human-readable name.
-     * </pre>
-     *
-     * <code>string display_name = 5;</code>
-     */
-    public com.google.protobuf.ByteString
-        getDisplayNameBytes() {
-      java.lang.Object ref = displayName_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        displayName_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (!getProjectIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, projectId_);
-      }
-      if (!getNetworkBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, network_);
-      }
-      if (!getGcpZoneBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, gcpZone_);
-      }
-      if (!getCheckerIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, checkerId_);
-      }
-      if (!getDisplayNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, displayName_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!getProjectIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, projectId_);
-      }
-      if (!getNetworkBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, network_);
-      }
-      if (!getGcpZoneBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, gcpZone_);
-      }
-      if (!getCheckerIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, checkerId_);
-      }
-      if (!getDisplayNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, displayName_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.google.monitoring.v3.UptimeCheckConfig.InternalChecker)) {
-        return super.equals(obj);
-      }
-      com.google.monitoring.v3.UptimeCheckConfig.InternalChecker other = (com.google.monitoring.v3.UptimeCheckConfig.InternalChecker) obj;
-
-      boolean result = true;
-      result = result && getProjectId()
-          .equals(other.getProjectId());
-      result = result && getNetwork()
-          .equals(other.getNetwork());
-      result = result && getGcpZone()
-          .equals(other.getGcpZone());
-      result = result && getCheckerId()
-          .equals(other.getCheckerId());
-      result = result && getDisplayName()
-          .equals(other.getDisplayName());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + PROJECT_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getProjectId().hashCode();
-      hash = (37 * hash) + NETWORK_FIELD_NUMBER;
-      hash = (53 * hash) + getNetwork().hashCode();
-      hash = (37 * hash) + GCP_ZONE_FIELD_NUMBER;
-      hash = (53 * hash) + getGcpZone().hashCode();
-      hash = (37 * hash) + CHECKER_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getCheckerId().hashCode();
-      hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getDisplayName().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.google.monitoring.v3.UptimeCheckConfig.InternalChecker parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.google.monitoring.v3.UptimeCheckConfig.InternalChecker parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.google.monitoring.v3.UptimeCheckConfig.InternalChecker parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.google.monitoring.v3.UptimeCheckConfig.InternalChecker parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.google.monitoring.v3.UptimeCheckConfig.InternalChecker parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.google.monitoring.v3.UptimeCheckConfig.InternalChecker parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.google.monitoring.v3.UptimeCheckConfig.InternalChecker parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.google.monitoring.v3.UptimeCheckConfig.InternalChecker parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.google.monitoring.v3.UptimeCheckConfig.InternalChecker parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.google.monitoring.v3.UptimeCheckConfig.InternalChecker parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.google.monitoring.v3.UptimeCheckConfig.InternalChecker parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.google.monitoring.v3.UptimeCheckConfig.InternalChecker parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.google.monitoring.v3.UptimeCheckConfig.InternalChecker prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * <pre>
-     * Nimbus InternalCheckers.
-     * </pre>
-     *
-     * Protobuf type {@code google.monitoring.v3.UptimeCheckConfig.InternalChecker}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:google.monitoring.v3.UptimeCheckConfig.InternalChecker)
-        com.google.monitoring.v3.UptimeCheckConfig.InternalCheckerOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.google.monitoring.v3.UptimeProto.internal_static_google_monitoring_v3_UptimeCheckConfig_InternalChecker_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.google.monitoring.v3.UptimeProto.internal_static_google_monitoring_v3_UptimeCheckConfig_InternalChecker_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.google.monitoring.v3.UptimeCheckConfig.InternalChecker.class, com.google.monitoring.v3.UptimeCheckConfig.InternalChecker.Builder.class);
-      }
-
-      // Construct using com.google.monitoring.v3.UptimeCheckConfig.InternalChecker.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        projectId_ = "";
-
-        network_ = "";
-
-        gcpZone_ = "";
-
-        checkerId_ = "";
-
-        displayName_ = "";
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.google.monitoring.v3.UptimeProto.internal_static_google_monitoring_v3_UptimeCheckConfig_InternalChecker_descriptor;
-      }
-
-      @java.lang.Override
-      public com.google.monitoring.v3.UptimeCheckConfig.InternalChecker getDefaultInstanceForType() {
-        return com.google.monitoring.v3.UptimeCheckConfig.InternalChecker.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.google.monitoring.v3.UptimeCheckConfig.InternalChecker build() {
-        com.google.monitoring.v3.UptimeCheckConfig.InternalChecker result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.google.monitoring.v3.UptimeCheckConfig.InternalChecker buildPartial() {
-        com.google.monitoring.v3.UptimeCheckConfig.InternalChecker result = new com.google.monitoring.v3.UptimeCheckConfig.InternalChecker(this);
-        result.projectId_ = projectId_;
-        result.network_ = network_;
-        result.gcpZone_ = gcpZone_;
-        result.checkerId_ = checkerId_;
-        result.displayName_ = displayName_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.google.monitoring.v3.UptimeCheckConfig.InternalChecker) {
-          return mergeFrom((com.google.monitoring.v3.UptimeCheckConfig.InternalChecker)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.google.monitoring.v3.UptimeCheckConfig.InternalChecker other) {
-        if (other == com.google.monitoring.v3.UptimeCheckConfig.InternalChecker.getDefaultInstance()) return this;
-        if (!other.getProjectId().isEmpty()) {
-          projectId_ = other.projectId_;
-          onChanged();
-        }
-        if (!other.getNetwork().isEmpty()) {
-          network_ = other.network_;
-          onChanged();
-        }
-        if (!other.getGcpZone().isEmpty()) {
-          gcpZone_ = other.gcpZone_;
-          onChanged();
-        }
-        if (!other.getCheckerId().isEmpty()) {
-          checkerId_ = other.checkerId_;
-          onChanged();
-        }
-        if (!other.getDisplayName().isEmpty()) {
-          displayName_ = other.displayName_;
-          onChanged();
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.google.monitoring.v3.UptimeCheckConfig.InternalChecker parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.google.monitoring.v3.UptimeCheckConfig.InternalChecker) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private java.lang.Object projectId_ = "";
-      /**
-       * <pre>
-       * The GCP project ID. Not necessarily the same as the project_id for the config.
-       * </pre>
-       *
-       * <code>string project_id = 1;</code>
-       */
-      public java.lang.String getProjectId() {
-        java.lang.Object ref = projectId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          projectId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The GCP project ID. Not necessarily the same as the project_id for the config.
-       * </pre>
-       *
-       * <code>string project_id = 1;</code>
-       */
-      public com.google.protobuf.ByteString
-          getProjectIdBytes() {
-        java.lang.Object ref = projectId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          projectId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The GCP project ID. Not necessarily the same as the project_id for the config.
-       * </pre>
-       *
-       * <code>string project_id = 1;</code>
-       */
-      public Builder setProjectId(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        projectId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The GCP project ID. Not necessarily the same as the project_id for the config.
-       * </pre>
-       *
-       * <code>string project_id = 1;</code>
-       */
-      public Builder clearProjectId() {
-        
-        projectId_ = getDefaultInstance().getProjectId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The GCP project ID. Not necessarily the same as the project_id for the config.
-       * </pre>
-       *
-       * <code>string project_id = 1;</code>
-       */
-      public Builder setProjectIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        projectId_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object network_ = "";
-      /**
-       * <pre>
-       * The internal network to perform this uptime check on.
-       * </pre>
-       *
-       * <code>string network = 2;</code>
-       */
-      public java.lang.String getNetwork() {
-        java.lang.Object ref = network_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          network_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The internal network to perform this uptime check on.
-       * </pre>
-       *
-       * <code>string network = 2;</code>
-       */
-      public com.google.protobuf.ByteString
-          getNetworkBytes() {
-        java.lang.Object ref = network_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          network_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The internal network to perform this uptime check on.
-       * </pre>
-       *
-       * <code>string network = 2;</code>
-       */
-      public Builder setNetwork(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        network_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The internal network to perform this uptime check on.
-       * </pre>
-       *
-       * <code>string network = 2;</code>
-       */
-      public Builder clearNetwork() {
-        
-        network_ = getDefaultInstance().getNetwork();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The internal network to perform this uptime check on.
-       * </pre>
-       *
-       * <code>string network = 2;</code>
-       */
-      public Builder setNetworkBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        network_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object gcpZone_ = "";
-      /**
-       * <pre>
-       * The GCP zone the uptime check should egress from. Only respected for
-       * internal uptime checks, where internal_network is specified.
-       * </pre>
-       *
-       * <code>string gcp_zone = 3;</code>
-       */
-      public java.lang.String getGcpZone() {
-        java.lang.Object ref = gcpZone_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          gcpZone_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The GCP zone the uptime check should egress from. Only respected for
-       * internal uptime checks, where internal_network is specified.
-       * </pre>
-       *
-       * <code>string gcp_zone = 3;</code>
-       */
-      public com.google.protobuf.ByteString
-          getGcpZoneBytes() {
-        java.lang.Object ref = gcpZone_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          gcpZone_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The GCP zone the uptime check should egress from. Only respected for
-       * internal uptime checks, where internal_network is specified.
-       * </pre>
-       *
-       * <code>string gcp_zone = 3;</code>
-       */
-      public Builder setGcpZone(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        gcpZone_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The GCP zone the uptime check should egress from. Only respected for
-       * internal uptime checks, where internal_network is specified.
-       * </pre>
-       *
-       * <code>string gcp_zone = 3;</code>
-       */
-      public Builder clearGcpZone() {
-        
-        gcpZone_ = getDefaultInstance().getGcpZone();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The GCP zone the uptime check should egress from. Only respected for
-       * internal uptime checks, where internal_network is specified.
-       * </pre>
-       *
-       * <code>string gcp_zone = 3;</code>
-       */
-      public Builder setGcpZoneBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        gcpZone_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object checkerId_ = "";
-      /**
-       * <pre>
-       * The checker ID.
-       * </pre>
-       *
-       * <code>string checker_id = 4;</code>
-       */
-      public java.lang.String getCheckerId() {
-        java.lang.Object ref = checkerId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          checkerId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The checker ID.
-       * </pre>
-       *
-       * <code>string checker_id = 4;</code>
-       */
-      public com.google.protobuf.ByteString
-          getCheckerIdBytes() {
-        java.lang.Object ref = checkerId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          checkerId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The checker ID.
-       * </pre>
-       *
-       * <code>string checker_id = 4;</code>
-       */
-      public Builder setCheckerId(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        checkerId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The checker ID.
-       * </pre>
-       *
-       * <code>string checker_id = 4;</code>
-       */
-      public Builder clearCheckerId() {
-        
-        checkerId_ = getDefaultInstance().getCheckerId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The checker ID.
-       * </pre>
-       *
-       * <code>string checker_id = 4;</code>
-       */
-      public Builder setCheckerIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        checkerId_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object displayName_ = "";
-      /**
-       * <pre>
-       * The checker's human-readable name.
-       * </pre>
-       *
-       * <code>string display_name = 5;</code>
-       */
-      public java.lang.String getDisplayName() {
-        java.lang.Object ref = displayName_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          displayName_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The checker's human-readable name.
-       * </pre>
-       *
-       * <code>string display_name = 5;</code>
-       */
-      public com.google.protobuf.ByteString
-          getDisplayNameBytes() {
-        java.lang.Object ref = displayName_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          displayName_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The checker's human-readable name.
-       * </pre>
-       *
-       * <code>string display_name = 5;</code>
-       */
-      public Builder setDisplayName(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        displayName_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The checker's human-readable name.
-       * </pre>
-       *
-       * <code>string display_name = 5;</code>
-       */
-      public Builder clearDisplayName() {
-        
-        displayName_ = getDefaultInstance().getDisplayName();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The checker's human-readable name.
-       * </pre>
-       *
-       * <code>string display_name = 5;</code>
-       */
-      public Builder setDisplayNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        displayName_ = value;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:google.monitoring.v3.UptimeCheckConfig.InternalChecker)
-    }
-
-    // @@protoc_insertion_point(class_scope:google.monitoring.v3.UptimeCheckConfig.InternalChecker)
-    private static final com.google.monitoring.v3.UptimeCheckConfig.InternalChecker DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.google.monitoring.v3.UptimeCheckConfig.InternalChecker();
-    }
-
-    public static com.google.monitoring.v3.UptimeCheckConfig.InternalChecker getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<InternalChecker>
-        PARSER = new com.google.protobuf.AbstractParser<InternalChecker>() {
-      @java.lang.Override
-      public InternalChecker parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new InternalChecker(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<InternalChecker> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<InternalChecker> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.monitoring.v3.UptimeCheckConfig.InternalChecker getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -5956,7 +4683,15 @@ private static final long serialVersionUID = 0L;
   public static final int MONITORED_RESOURCE_FIELD_NUMBER = 3;
   /**
    * <pre>
-   * The monitored resource associated with the configuration.
+   * The [monitored
+   * resource](https://cloud.google.com/monitoring/api/resources) associated
+   * with the configuration.
+   * The following monitored resource types are supported for uptime checks:
+   *   uptime_url
+   *   gce_instance
+   *   gae_app
+   *   aws_ec2_instance
+   *   aws_elb_load_balancer
    * </pre>
    *
    * <code>.google.api.MonitoredResource monitored_resource = 3;</code>
@@ -5966,7 +4701,15 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The monitored resource associated with the configuration.
+   * The [monitored
+   * resource](https://cloud.google.com/monitoring/api/resources) associated
+   * with the configuration.
+   * The following monitored resource types are supported for uptime checks:
+   *   uptime_url
+   *   gce_instance
+   *   gae_app
+   *   aws_ec2_instance
+   *   aws_elb_load_balancer
    * </pre>
    *
    * <code>.google.api.MonitoredResource monitored_resource = 3;</code>
@@ -5979,7 +4722,15 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The monitored resource associated with the configuration.
+   * The [monitored
+   * resource](https://cloud.google.com/monitoring/api/resources) associated
+   * with the configuration.
+   * The following monitored resource types are supported for uptime checks:
+   *   uptime_url
+   *   gce_instance
+   *   gae_app
+   *   aws_ec2_instance
+   *   aws_elb_load_balancer
    * </pre>
    *
    * <code>.google.api.MonitoredResource monitored_resource = 3;</code>
@@ -6109,8 +4860,10 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.Duration period_;
   /**
    * <pre>
-   * How often the uptime check is performed.
-   * Currently, only 1, 5, 10, and 15 minutes are supported. Required.
+   * How often, in seconds, the uptime check is performed.
+   * Currently, the only supported values are `60s` (1 minute), `300s`
+   * (5 minutes), `600s` (10 minutes), and `900s` (15 minutes). Optional,
+   * defaults to `300s`.
    * </pre>
    *
    * <code>.google.protobuf.Duration period = 7;</code>
@@ -6120,8 +4873,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * How often the uptime check is performed.
-   * Currently, only 1, 5, 10, and 15 minutes are supported. Required.
+   * How often, in seconds, the uptime check is performed.
+   * Currently, the only supported values are `60s` (1 minute), `300s`
+   * (5 minutes), `600s` (10 minutes), and `900s` (15 minutes). Optional,
+   * defaults to `300s`.
    * </pre>
    *
    * <code>.google.protobuf.Duration period = 7;</code>
@@ -6131,8 +4886,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * How often the uptime check is performed.
-   * Currently, only 1, 5, 10, and 15 minutes are supported. Required.
+   * How often, in seconds, the uptime check is performed.
+   * Currently, the only supported values are `60s` (1 minute), `300s`
+   * (5 minutes), `600s` (10 minutes), and `900s` (15 minutes). Optional,
+   * defaults to `300s`.
    * </pre>
    *
    * <code>.google.protobuf.Duration period = 7;</code>
@@ -6338,57 +5095,80 @@ private static final long serialVersionUID = 0L;
   }
   private int selectedRegionsMemoizedSerializedSize;
 
-  public static final int INTERNAL_CHECKERS_FIELD_NUMBER = 14;
-  private java.util.List<com.google.monitoring.v3.UptimeCheckConfig.InternalChecker> internalCheckers_;
+  public static final int IS_INTERNAL_FIELD_NUMBER = 15;
+  private boolean isInternal_;
   /**
    * <pre>
-   * The internal checkers that this check will egress from.
+   * Denotes whether this is a check that egresses from InternalCheckers.
    * </pre>
    *
-   * <code>repeated .google.monitoring.v3.UptimeCheckConfig.InternalChecker internal_checkers = 14;</code>
+   * <code>bool is_internal = 15;</code>
    */
-  public java.util.List<com.google.monitoring.v3.UptimeCheckConfig.InternalChecker> getInternalCheckersList() {
+  public boolean getIsInternal() {
+    return isInternal_;
+  }
+
+  public static final int INTERNAL_CHECKERS_FIELD_NUMBER = 14;
+  private java.util.List<com.google.monitoring.v3.InternalChecker> internalCheckers_;
+  /**
+   * <pre>
+   * The internal checkers that this check will egress from. If `is_internal` is
+   * true and this list is empty, the check will egress from all
+   * InternalCheckers configured for the project that owns this CheckConfig.
+   * </pre>
+   *
+   * <code>repeated .google.monitoring.v3.InternalChecker internal_checkers = 14;</code>
+   */
+  public java.util.List<com.google.monitoring.v3.InternalChecker> getInternalCheckersList() {
     return internalCheckers_;
   }
   /**
    * <pre>
-   * The internal checkers that this check will egress from.
+   * The internal checkers that this check will egress from. If `is_internal` is
+   * true and this list is empty, the check will egress from all
+   * InternalCheckers configured for the project that owns this CheckConfig.
    * </pre>
    *
-   * <code>repeated .google.monitoring.v3.UptimeCheckConfig.InternalChecker internal_checkers = 14;</code>
+   * <code>repeated .google.monitoring.v3.InternalChecker internal_checkers = 14;</code>
    */
-  public java.util.List<? extends com.google.monitoring.v3.UptimeCheckConfig.InternalCheckerOrBuilder> 
+  public java.util.List<? extends com.google.monitoring.v3.InternalCheckerOrBuilder> 
       getInternalCheckersOrBuilderList() {
     return internalCheckers_;
   }
   /**
    * <pre>
-   * The internal checkers that this check will egress from.
+   * The internal checkers that this check will egress from. If `is_internal` is
+   * true and this list is empty, the check will egress from all
+   * InternalCheckers configured for the project that owns this CheckConfig.
    * </pre>
    *
-   * <code>repeated .google.monitoring.v3.UptimeCheckConfig.InternalChecker internal_checkers = 14;</code>
+   * <code>repeated .google.monitoring.v3.InternalChecker internal_checkers = 14;</code>
    */
   public int getInternalCheckersCount() {
     return internalCheckers_.size();
   }
   /**
    * <pre>
-   * The internal checkers that this check will egress from.
+   * The internal checkers that this check will egress from. If `is_internal` is
+   * true and this list is empty, the check will egress from all
+   * InternalCheckers configured for the project that owns this CheckConfig.
    * </pre>
    *
-   * <code>repeated .google.monitoring.v3.UptimeCheckConfig.InternalChecker internal_checkers = 14;</code>
+   * <code>repeated .google.monitoring.v3.InternalChecker internal_checkers = 14;</code>
    */
-  public com.google.monitoring.v3.UptimeCheckConfig.InternalChecker getInternalCheckers(int index) {
+  public com.google.monitoring.v3.InternalChecker getInternalCheckers(int index) {
     return internalCheckers_.get(index);
   }
   /**
    * <pre>
-   * The internal checkers that this check will egress from.
+   * The internal checkers that this check will egress from. If `is_internal` is
+   * true and this list is empty, the check will egress from all
+   * InternalCheckers configured for the project that owns this CheckConfig.
    * </pre>
    *
-   * <code>repeated .google.monitoring.v3.UptimeCheckConfig.InternalChecker internal_checkers = 14;</code>
+   * <code>repeated .google.monitoring.v3.InternalChecker internal_checkers = 14;</code>
    */
-  public com.google.monitoring.v3.UptimeCheckConfig.InternalCheckerOrBuilder getInternalCheckersOrBuilder(
+  public com.google.monitoring.v3.InternalCheckerOrBuilder getInternalCheckersOrBuilder(
       int index) {
     return internalCheckers_.get(index);
   }
@@ -6444,6 +5224,9 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < internalCheckers_.size(); i++) {
       output.writeMessage(14, internalCheckers_.get(i));
+    }
+    if (isInternal_ != false) {
+      output.writeBool(15, isInternal_);
     }
     unknownFields.writeTo(output);
   }
@@ -6504,6 +5287,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(14, internalCheckers_.get(i));
     }
+    if (isInternal_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(15, isInternal_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -6537,6 +5324,8 @@ private static final long serialVersionUID = 0L;
     result = result && getContentMatchersList()
         .equals(other.getContentMatchersList());
     result = result && selectedRegions_.equals(other.selectedRegions_);
+    result = result && (getIsInternal()
+        == other.getIsInternal());
     result = result && getInternalCheckersList()
         .equals(other.getInternalCheckersList());
     result = result && getResourceCase().equals(
@@ -6600,6 +5389,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + SELECTED_REGIONS_FIELD_NUMBER;
       hash = (53 * hash) + selectedRegions_.hashCode();
     }
+    hash = (37 * hash) + IS_INTERNAL_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getIsInternal());
     if (getInternalCheckersCount() > 0) {
       hash = (37 * hash) + INTERNAL_CHECKERS_FIELD_NUMBER;
       hash = (53 * hash) + getInternalCheckersList().hashCode();
@@ -6792,9 +5584,11 @@ private static final long serialVersionUID = 0L;
       }
       selectedRegions_ = java.util.Collections.emptyList();
       bitField0_ = (bitField0_ & ~0x00000200);
+      isInternal_ = false;
+
       if (internalCheckersBuilder_ == null) {
         internalCheckers_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000800);
       } else {
         internalCheckersBuilder_.clear();
       }
@@ -6884,10 +5678,11 @@ private static final long serialVersionUID = 0L;
         bitField0_ = (bitField0_ & ~0x00000200);
       }
       result.selectedRegions_ = selectedRegions_;
+      result.isInternal_ = isInternal_;
       if (internalCheckersBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) == 0x00000400)) {
+        if (((bitField0_ & 0x00000800) == 0x00000800)) {
           internalCheckers_ = java.util.Collections.unmodifiableList(internalCheckers_);
-          bitField0_ = (bitField0_ & ~0x00000400);
+          bitField0_ = (bitField0_ & ~0x00000800);
         }
         result.internalCheckers_ = internalCheckers_;
       } else {
@@ -6994,11 +5789,14 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       }
+      if (other.getIsInternal() != false) {
+        setIsInternal(other.getIsInternal());
+      }
       if (internalCheckersBuilder_ == null) {
         if (!other.internalCheckers_.isEmpty()) {
           if (internalCheckers_.isEmpty()) {
             internalCheckers_ = other.internalCheckers_;
-            bitField0_ = (bitField0_ & ~0x00000400);
+            bitField0_ = (bitField0_ & ~0x00000800);
           } else {
             ensureInternalCheckersIsMutable();
             internalCheckers_.addAll(other.internalCheckers_);
@@ -7011,7 +5809,7 @@ private static final long serialVersionUID = 0L;
             internalCheckersBuilder_.dispose();
             internalCheckersBuilder_ = null;
             internalCheckers_ = other.internalCheckers_;
-            bitField0_ = (bitField0_ & ~0x00000400);
+            bitField0_ = (bitField0_ & ~0x00000800);
             internalCheckersBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getInternalCheckersFieldBuilder() : null;
@@ -7318,7 +6116,15 @@ private static final long serialVersionUID = 0L;
         com.google.api.MonitoredResource, com.google.api.MonitoredResource.Builder, com.google.api.MonitoredResourceOrBuilder> monitoredResourceBuilder_;
     /**
      * <pre>
-     * The monitored resource associated with the configuration.
+     * The [monitored
+     * resource](https://cloud.google.com/monitoring/api/resources) associated
+     * with the configuration.
+     * The following monitored resource types are supported for uptime checks:
+     *   uptime_url
+     *   gce_instance
+     *   gae_app
+     *   aws_ec2_instance
+     *   aws_elb_load_balancer
      * </pre>
      *
      * <code>.google.api.MonitoredResource monitored_resource = 3;</code>
@@ -7328,7 +6134,15 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The monitored resource associated with the configuration.
+     * The [monitored
+     * resource](https://cloud.google.com/monitoring/api/resources) associated
+     * with the configuration.
+     * The following monitored resource types are supported for uptime checks:
+     *   uptime_url
+     *   gce_instance
+     *   gae_app
+     *   aws_ec2_instance
+     *   aws_elb_load_balancer
      * </pre>
      *
      * <code>.google.api.MonitoredResource monitored_resource = 3;</code>
@@ -7348,7 +6162,15 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The monitored resource associated with the configuration.
+     * The [monitored
+     * resource](https://cloud.google.com/monitoring/api/resources) associated
+     * with the configuration.
+     * The following monitored resource types are supported for uptime checks:
+     *   uptime_url
+     *   gce_instance
+     *   gae_app
+     *   aws_ec2_instance
+     *   aws_elb_load_balancer
      * </pre>
      *
      * <code>.google.api.MonitoredResource monitored_resource = 3;</code>
@@ -7368,7 +6190,15 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The monitored resource associated with the configuration.
+     * The [monitored
+     * resource](https://cloud.google.com/monitoring/api/resources) associated
+     * with the configuration.
+     * The following monitored resource types are supported for uptime checks:
+     *   uptime_url
+     *   gce_instance
+     *   gae_app
+     *   aws_ec2_instance
+     *   aws_elb_load_balancer
      * </pre>
      *
      * <code>.google.api.MonitoredResource monitored_resource = 3;</code>
@@ -7386,7 +6216,15 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The monitored resource associated with the configuration.
+     * The [monitored
+     * resource](https://cloud.google.com/monitoring/api/resources) associated
+     * with the configuration.
+     * The following monitored resource types are supported for uptime checks:
+     *   uptime_url
+     *   gce_instance
+     *   gae_app
+     *   aws_ec2_instance
+     *   aws_elb_load_balancer
      * </pre>
      *
      * <code>.google.api.MonitoredResource monitored_resource = 3;</code>
@@ -7412,7 +6250,15 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The monitored resource associated with the configuration.
+     * The [monitored
+     * resource](https://cloud.google.com/monitoring/api/resources) associated
+     * with the configuration.
+     * The following monitored resource types are supported for uptime checks:
+     *   uptime_url
+     *   gce_instance
+     *   gae_app
+     *   aws_ec2_instance
+     *   aws_elb_load_balancer
      * </pre>
      *
      * <code>.google.api.MonitoredResource monitored_resource = 3;</code>
@@ -7435,7 +6281,15 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The monitored resource associated with the configuration.
+     * The [monitored
+     * resource](https://cloud.google.com/monitoring/api/resources) associated
+     * with the configuration.
+     * The following monitored resource types are supported for uptime checks:
+     *   uptime_url
+     *   gce_instance
+     *   gae_app
+     *   aws_ec2_instance
+     *   aws_elb_load_balancer
      * </pre>
      *
      * <code>.google.api.MonitoredResource monitored_resource = 3;</code>
@@ -7445,7 +6299,15 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The monitored resource associated with the configuration.
+     * The [monitored
+     * resource](https://cloud.google.com/monitoring/api/resources) associated
+     * with the configuration.
+     * The following monitored resource types are supported for uptime checks:
+     *   uptime_url
+     *   gce_instance
+     *   gae_app
+     *   aws_ec2_instance
+     *   aws_elb_load_balancer
      * </pre>
      *
      * <code>.google.api.MonitoredResource monitored_resource = 3;</code>
@@ -7462,7 +6324,15 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The monitored resource associated with the configuration.
+     * The [monitored
+     * resource](https://cloud.google.com/monitoring/api/resources) associated
+     * with the configuration.
+     * The following monitored resource types are supported for uptime checks:
+     *   uptime_url
+     *   gce_instance
+     *   gae_app
+     *   aws_ec2_instance
+     *   aws_elb_load_balancer
      * </pre>
      *
      * <code>.google.api.MonitoredResource monitored_resource = 3;</code>
@@ -8007,8 +6877,10 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> periodBuilder_;
     /**
      * <pre>
-     * How often the uptime check is performed.
-     * Currently, only 1, 5, 10, and 15 minutes are supported. Required.
+     * How often, in seconds, the uptime check is performed.
+     * Currently, the only supported values are `60s` (1 minute), `300s`
+     * (5 minutes), `600s` (10 minutes), and `900s` (15 minutes). Optional,
+     * defaults to `300s`.
      * </pre>
      *
      * <code>.google.protobuf.Duration period = 7;</code>
@@ -8018,8 +6890,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * How often the uptime check is performed.
-     * Currently, only 1, 5, 10, and 15 minutes are supported. Required.
+     * How often, in seconds, the uptime check is performed.
+     * Currently, the only supported values are `60s` (1 minute), `300s`
+     * (5 minutes), `600s` (10 minutes), and `900s` (15 minutes). Optional,
+     * defaults to `300s`.
      * </pre>
      *
      * <code>.google.protobuf.Duration period = 7;</code>
@@ -8033,8 +6907,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * How often the uptime check is performed.
-     * Currently, only 1, 5, 10, and 15 minutes are supported. Required.
+     * How often, in seconds, the uptime check is performed.
+     * Currently, the only supported values are `60s` (1 minute), `300s`
+     * (5 minutes), `600s` (10 minutes), and `900s` (15 minutes). Optional,
+     * defaults to `300s`.
      * </pre>
      *
      * <code>.google.protobuf.Duration period = 7;</code>
@@ -8054,8 +6930,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * How often the uptime check is performed.
-     * Currently, only 1, 5, 10, and 15 minutes are supported. Required.
+     * How often, in seconds, the uptime check is performed.
+     * Currently, the only supported values are `60s` (1 minute), `300s`
+     * (5 minutes), `600s` (10 minutes), and `900s` (15 minutes). Optional,
+     * defaults to `300s`.
      * </pre>
      *
      * <code>.google.protobuf.Duration period = 7;</code>
@@ -8073,8 +6951,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * How often the uptime check is performed.
-     * Currently, only 1, 5, 10, and 15 minutes are supported. Required.
+     * How often, in seconds, the uptime check is performed.
+     * Currently, the only supported values are `60s` (1 minute), `300s`
+     * (5 minutes), `600s` (10 minutes), and `900s` (15 minutes). Optional,
+     * defaults to `300s`.
      * </pre>
      *
      * <code>.google.protobuf.Duration period = 7;</code>
@@ -8096,8 +6976,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * How often the uptime check is performed.
-     * Currently, only 1, 5, 10, and 15 minutes are supported. Required.
+     * How often, in seconds, the uptime check is performed.
+     * Currently, the only supported values are `60s` (1 minute), `300s`
+     * (5 minutes), `600s` (10 minutes), and `900s` (15 minutes). Optional,
+     * defaults to `300s`.
      * </pre>
      *
      * <code>.google.protobuf.Duration period = 7;</code>
@@ -8115,8 +6997,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * How often the uptime check is performed.
-     * Currently, only 1, 5, 10, and 15 minutes are supported. Required.
+     * How often, in seconds, the uptime check is performed.
+     * Currently, the only supported values are `60s` (1 minute), `300s`
+     * (5 minutes), `600s` (10 minutes), and `900s` (15 minutes). Optional,
+     * defaults to `300s`.
      * </pre>
      *
      * <code>.google.protobuf.Duration period = 7;</code>
@@ -8128,8 +7012,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * How often the uptime check is performed.
-     * Currently, only 1, 5, 10, and 15 minutes are supported. Required.
+     * How often, in seconds, the uptime check is performed.
+     * Currently, the only supported values are `60s` (1 minute), `300s`
+     * (5 minutes), `600s` (10 minutes), and `900s` (15 minutes). Optional,
+     * defaults to `300s`.
      * </pre>
      *
      * <code>.google.protobuf.Duration period = 7;</code>
@@ -8144,8 +7030,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * How often the uptime check is performed.
-     * Currently, only 1, 5, 10, and 15 minutes are supported. Required.
+     * How often, in seconds, the uptime check is performed.
+     * Currently, the only supported values are `60s` (1 minute), `300s`
+     * (5 minutes), `600s` (10 minutes), and `900s` (15 minutes). Optional,
+     * defaults to `300s`.
      * </pre>
      *
      * <code>.google.protobuf.Duration period = 7;</code>
@@ -8924,26 +7812,66 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.util.List<com.google.monitoring.v3.UptimeCheckConfig.InternalChecker> internalCheckers_ =
+    private boolean isInternal_ ;
+    /**
+     * <pre>
+     * Denotes whether this is a check that egresses from InternalCheckers.
+     * </pre>
+     *
+     * <code>bool is_internal = 15;</code>
+     */
+    public boolean getIsInternal() {
+      return isInternal_;
+    }
+    /**
+     * <pre>
+     * Denotes whether this is a check that egresses from InternalCheckers.
+     * </pre>
+     *
+     * <code>bool is_internal = 15;</code>
+     */
+    public Builder setIsInternal(boolean value) {
+      
+      isInternal_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Denotes whether this is a check that egresses from InternalCheckers.
+     * </pre>
+     *
+     * <code>bool is_internal = 15;</code>
+     */
+    public Builder clearIsInternal() {
+      
+      isInternal_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.util.List<com.google.monitoring.v3.InternalChecker> internalCheckers_ =
       java.util.Collections.emptyList();
     private void ensureInternalCheckersIsMutable() {
-      if (!((bitField0_ & 0x00000400) == 0x00000400)) {
-        internalCheckers_ = new java.util.ArrayList<com.google.monitoring.v3.UptimeCheckConfig.InternalChecker>(internalCheckers_);
-        bitField0_ |= 0x00000400;
+      if (!((bitField0_ & 0x00000800) == 0x00000800)) {
+        internalCheckers_ = new java.util.ArrayList<com.google.monitoring.v3.InternalChecker>(internalCheckers_);
+        bitField0_ |= 0x00000800;
        }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.monitoring.v3.UptimeCheckConfig.InternalChecker, com.google.monitoring.v3.UptimeCheckConfig.InternalChecker.Builder, com.google.monitoring.v3.UptimeCheckConfig.InternalCheckerOrBuilder> internalCheckersBuilder_;
+        com.google.monitoring.v3.InternalChecker, com.google.monitoring.v3.InternalChecker.Builder, com.google.monitoring.v3.InternalCheckerOrBuilder> internalCheckersBuilder_;
 
     /**
      * <pre>
-     * The internal checkers that this check will egress from.
+     * The internal checkers that this check will egress from. If `is_internal` is
+     * true and this list is empty, the check will egress from all
+     * InternalCheckers configured for the project that owns this CheckConfig.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.UptimeCheckConfig.InternalChecker internal_checkers = 14;</code>
+     * <code>repeated .google.monitoring.v3.InternalChecker internal_checkers = 14;</code>
      */
-    public java.util.List<com.google.monitoring.v3.UptimeCheckConfig.InternalChecker> getInternalCheckersList() {
+    public java.util.List<com.google.monitoring.v3.InternalChecker> getInternalCheckersList() {
       if (internalCheckersBuilder_ == null) {
         return java.util.Collections.unmodifiableList(internalCheckers_);
       } else {
@@ -8952,10 +7880,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The internal checkers that this check will egress from.
+     * The internal checkers that this check will egress from. If `is_internal` is
+     * true and this list is empty, the check will egress from all
+     * InternalCheckers configured for the project that owns this CheckConfig.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.UptimeCheckConfig.InternalChecker internal_checkers = 14;</code>
+     * <code>repeated .google.monitoring.v3.InternalChecker internal_checkers = 14;</code>
      */
     public int getInternalCheckersCount() {
       if (internalCheckersBuilder_ == null) {
@@ -8966,12 +7896,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The internal checkers that this check will egress from.
+     * The internal checkers that this check will egress from. If `is_internal` is
+     * true and this list is empty, the check will egress from all
+     * InternalCheckers configured for the project that owns this CheckConfig.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.UptimeCheckConfig.InternalChecker internal_checkers = 14;</code>
+     * <code>repeated .google.monitoring.v3.InternalChecker internal_checkers = 14;</code>
      */
-    public com.google.monitoring.v3.UptimeCheckConfig.InternalChecker getInternalCheckers(int index) {
+    public com.google.monitoring.v3.InternalChecker getInternalCheckers(int index) {
       if (internalCheckersBuilder_ == null) {
         return internalCheckers_.get(index);
       } else {
@@ -8980,13 +7912,15 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The internal checkers that this check will egress from.
+     * The internal checkers that this check will egress from. If `is_internal` is
+     * true and this list is empty, the check will egress from all
+     * InternalCheckers configured for the project that owns this CheckConfig.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.UptimeCheckConfig.InternalChecker internal_checkers = 14;</code>
+     * <code>repeated .google.monitoring.v3.InternalChecker internal_checkers = 14;</code>
      */
     public Builder setInternalCheckers(
-        int index, com.google.monitoring.v3.UptimeCheckConfig.InternalChecker value) {
+        int index, com.google.monitoring.v3.InternalChecker value) {
       if (internalCheckersBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -9001,13 +7935,15 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The internal checkers that this check will egress from.
+     * The internal checkers that this check will egress from. If `is_internal` is
+     * true and this list is empty, the check will egress from all
+     * InternalCheckers configured for the project that owns this CheckConfig.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.UptimeCheckConfig.InternalChecker internal_checkers = 14;</code>
+     * <code>repeated .google.monitoring.v3.InternalChecker internal_checkers = 14;</code>
      */
     public Builder setInternalCheckers(
-        int index, com.google.monitoring.v3.UptimeCheckConfig.InternalChecker.Builder builderForValue) {
+        int index, com.google.monitoring.v3.InternalChecker.Builder builderForValue) {
       if (internalCheckersBuilder_ == null) {
         ensureInternalCheckersIsMutable();
         internalCheckers_.set(index, builderForValue.build());
@@ -9019,12 +7955,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The internal checkers that this check will egress from.
+     * The internal checkers that this check will egress from. If `is_internal` is
+     * true and this list is empty, the check will egress from all
+     * InternalCheckers configured for the project that owns this CheckConfig.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.UptimeCheckConfig.InternalChecker internal_checkers = 14;</code>
+     * <code>repeated .google.monitoring.v3.InternalChecker internal_checkers = 14;</code>
      */
-    public Builder addInternalCheckers(com.google.monitoring.v3.UptimeCheckConfig.InternalChecker value) {
+    public Builder addInternalCheckers(com.google.monitoring.v3.InternalChecker value) {
       if (internalCheckersBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -9039,13 +7977,15 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The internal checkers that this check will egress from.
+     * The internal checkers that this check will egress from. If `is_internal` is
+     * true and this list is empty, the check will egress from all
+     * InternalCheckers configured for the project that owns this CheckConfig.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.UptimeCheckConfig.InternalChecker internal_checkers = 14;</code>
+     * <code>repeated .google.monitoring.v3.InternalChecker internal_checkers = 14;</code>
      */
     public Builder addInternalCheckers(
-        int index, com.google.monitoring.v3.UptimeCheckConfig.InternalChecker value) {
+        int index, com.google.monitoring.v3.InternalChecker value) {
       if (internalCheckersBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -9060,13 +8000,15 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The internal checkers that this check will egress from.
+     * The internal checkers that this check will egress from. If `is_internal` is
+     * true and this list is empty, the check will egress from all
+     * InternalCheckers configured for the project that owns this CheckConfig.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.UptimeCheckConfig.InternalChecker internal_checkers = 14;</code>
+     * <code>repeated .google.monitoring.v3.InternalChecker internal_checkers = 14;</code>
      */
     public Builder addInternalCheckers(
-        com.google.monitoring.v3.UptimeCheckConfig.InternalChecker.Builder builderForValue) {
+        com.google.monitoring.v3.InternalChecker.Builder builderForValue) {
       if (internalCheckersBuilder_ == null) {
         ensureInternalCheckersIsMutable();
         internalCheckers_.add(builderForValue.build());
@@ -9078,13 +8020,15 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The internal checkers that this check will egress from.
+     * The internal checkers that this check will egress from. If `is_internal` is
+     * true and this list is empty, the check will egress from all
+     * InternalCheckers configured for the project that owns this CheckConfig.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.UptimeCheckConfig.InternalChecker internal_checkers = 14;</code>
+     * <code>repeated .google.monitoring.v3.InternalChecker internal_checkers = 14;</code>
      */
     public Builder addInternalCheckers(
-        int index, com.google.monitoring.v3.UptimeCheckConfig.InternalChecker.Builder builderForValue) {
+        int index, com.google.monitoring.v3.InternalChecker.Builder builderForValue) {
       if (internalCheckersBuilder_ == null) {
         ensureInternalCheckersIsMutable();
         internalCheckers_.add(index, builderForValue.build());
@@ -9096,13 +8040,15 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The internal checkers that this check will egress from.
+     * The internal checkers that this check will egress from. If `is_internal` is
+     * true and this list is empty, the check will egress from all
+     * InternalCheckers configured for the project that owns this CheckConfig.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.UptimeCheckConfig.InternalChecker internal_checkers = 14;</code>
+     * <code>repeated .google.monitoring.v3.InternalChecker internal_checkers = 14;</code>
      */
     public Builder addAllInternalCheckers(
-        java.lang.Iterable<? extends com.google.monitoring.v3.UptimeCheckConfig.InternalChecker> values) {
+        java.lang.Iterable<? extends com.google.monitoring.v3.InternalChecker> values) {
       if (internalCheckersBuilder_ == null) {
         ensureInternalCheckersIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -9115,15 +8061,17 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The internal checkers that this check will egress from.
+     * The internal checkers that this check will egress from. If `is_internal` is
+     * true and this list is empty, the check will egress from all
+     * InternalCheckers configured for the project that owns this CheckConfig.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.UptimeCheckConfig.InternalChecker internal_checkers = 14;</code>
+     * <code>repeated .google.monitoring.v3.InternalChecker internal_checkers = 14;</code>
      */
     public Builder clearInternalCheckers() {
       if (internalCheckersBuilder_ == null) {
         internalCheckers_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000800);
         onChanged();
       } else {
         internalCheckersBuilder_.clear();
@@ -9132,10 +8080,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The internal checkers that this check will egress from.
+     * The internal checkers that this check will egress from. If `is_internal` is
+     * true and this list is empty, the check will egress from all
+     * InternalCheckers configured for the project that owns this CheckConfig.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.UptimeCheckConfig.InternalChecker internal_checkers = 14;</code>
+     * <code>repeated .google.monitoring.v3.InternalChecker internal_checkers = 14;</code>
      */
     public Builder removeInternalCheckers(int index) {
       if (internalCheckersBuilder_ == null) {
@@ -9149,23 +8099,27 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The internal checkers that this check will egress from.
+     * The internal checkers that this check will egress from. If `is_internal` is
+     * true and this list is empty, the check will egress from all
+     * InternalCheckers configured for the project that owns this CheckConfig.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.UptimeCheckConfig.InternalChecker internal_checkers = 14;</code>
+     * <code>repeated .google.monitoring.v3.InternalChecker internal_checkers = 14;</code>
      */
-    public com.google.monitoring.v3.UptimeCheckConfig.InternalChecker.Builder getInternalCheckersBuilder(
+    public com.google.monitoring.v3.InternalChecker.Builder getInternalCheckersBuilder(
         int index) {
       return getInternalCheckersFieldBuilder().getBuilder(index);
     }
     /**
      * <pre>
-     * The internal checkers that this check will egress from.
+     * The internal checkers that this check will egress from. If `is_internal` is
+     * true and this list is empty, the check will egress from all
+     * InternalCheckers configured for the project that owns this CheckConfig.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.UptimeCheckConfig.InternalChecker internal_checkers = 14;</code>
+     * <code>repeated .google.monitoring.v3.InternalChecker internal_checkers = 14;</code>
      */
-    public com.google.monitoring.v3.UptimeCheckConfig.InternalCheckerOrBuilder getInternalCheckersOrBuilder(
+    public com.google.monitoring.v3.InternalCheckerOrBuilder getInternalCheckersOrBuilder(
         int index) {
       if (internalCheckersBuilder_ == null) {
         return internalCheckers_.get(index);  } else {
@@ -9174,12 +8128,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The internal checkers that this check will egress from.
+     * The internal checkers that this check will egress from. If `is_internal` is
+     * true and this list is empty, the check will egress from all
+     * InternalCheckers configured for the project that owns this CheckConfig.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.UptimeCheckConfig.InternalChecker internal_checkers = 14;</code>
+     * <code>repeated .google.monitoring.v3.InternalChecker internal_checkers = 14;</code>
      */
-    public java.util.List<? extends com.google.monitoring.v3.UptimeCheckConfig.InternalCheckerOrBuilder> 
+    public java.util.List<? extends com.google.monitoring.v3.InternalCheckerOrBuilder> 
          getInternalCheckersOrBuilderList() {
       if (internalCheckersBuilder_ != null) {
         return internalCheckersBuilder_.getMessageOrBuilderList();
@@ -9189,46 +8145,52 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The internal checkers that this check will egress from.
+     * The internal checkers that this check will egress from. If `is_internal` is
+     * true and this list is empty, the check will egress from all
+     * InternalCheckers configured for the project that owns this CheckConfig.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.UptimeCheckConfig.InternalChecker internal_checkers = 14;</code>
+     * <code>repeated .google.monitoring.v3.InternalChecker internal_checkers = 14;</code>
      */
-    public com.google.monitoring.v3.UptimeCheckConfig.InternalChecker.Builder addInternalCheckersBuilder() {
+    public com.google.monitoring.v3.InternalChecker.Builder addInternalCheckersBuilder() {
       return getInternalCheckersFieldBuilder().addBuilder(
-          com.google.monitoring.v3.UptimeCheckConfig.InternalChecker.getDefaultInstance());
+          com.google.monitoring.v3.InternalChecker.getDefaultInstance());
     }
     /**
      * <pre>
-     * The internal checkers that this check will egress from.
+     * The internal checkers that this check will egress from. If `is_internal` is
+     * true and this list is empty, the check will egress from all
+     * InternalCheckers configured for the project that owns this CheckConfig.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.UptimeCheckConfig.InternalChecker internal_checkers = 14;</code>
+     * <code>repeated .google.monitoring.v3.InternalChecker internal_checkers = 14;</code>
      */
-    public com.google.monitoring.v3.UptimeCheckConfig.InternalChecker.Builder addInternalCheckersBuilder(
+    public com.google.monitoring.v3.InternalChecker.Builder addInternalCheckersBuilder(
         int index) {
       return getInternalCheckersFieldBuilder().addBuilder(
-          index, com.google.monitoring.v3.UptimeCheckConfig.InternalChecker.getDefaultInstance());
+          index, com.google.monitoring.v3.InternalChecker.getDefaultInstance());
     }
     /**
      * <pre>
-     * The internal checkers that this check will egress from.
+     * The internal checkers that this check will egress from. If `is_internal` is
+     * true and this list is empty, the check will egress from all
+     * InternalCheckers configured for the project that owns this CheckConfig.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.UptimeCheckConfig.InternalChecker internal_checkers = 14;</code>
+     * <code>repeated .google.monitoring.v3.InternalChecker internal_checkers = 14;</code>
      */
-    public java.util.List<com.google.monitoring.v3.UptimeCheckConfig.InternalChecker.Builder> 
+    public java.util.List<com.google.monitoring.v3.InternalChecker.Builder> 
          getInternalCheckersBuilderList() {
       return getInternalCheckersFieldBuilder().getBuilderList();
     }
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.monitoring.v3.UptimeCheckConfig.InternalChecker, com.google.monitoring.v3.UptimeCheckConfig.InternalChecker.Builder, com.google.monitoring.v3.UptimeCheckConfig.InternalCheckerOrBuilder> 
+        com.google.monitoring.v3.InternalChecker, com.google.monitoring.v3.InternalChecker.Builder, com.google.monitoring.v3.InternalCheckerOrBuilder> 
         getInternalCheckersFieldBuilder() {
       if (internalCheckersBuilder_ == null) {
         internalCheckersBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.monitoring.v3.UptimeCheckConfig.InternalChecker, com.google.monitoring.v3.UptimeCheckConfig.InternalChecker.Builder, com.google.monitoring.v3.UptimeCheckConfig.InternalCheckerOrBuilder>(
+            com.google.monitoring.v3.InternalChecker, com.google.monitoring.v3.InternalChecker.Builder, com.google.monitoring.v3.InternalCheckerOrBuilder>(
                 internalCheckers_,
-                ((bitField0_ & 0x00000400) == 0x00000400),
+                ((bitField0_ & 0x00000800) == 0x00000800),
                 getParentForChildren(),
                 isClean());
         internalCheckers_ = null;

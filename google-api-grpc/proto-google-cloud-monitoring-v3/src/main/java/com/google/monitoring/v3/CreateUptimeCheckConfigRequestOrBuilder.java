@@ -9,8 +9,8 @@ public interface CreateUptimeCheckConfigRequestOrBuilder extends
 
   /**
    * <pre>
-   * The project in which to create the uptime check. The format is:
-   *   `projects/[PROJECT_ID]`.
+   * The project in which to create the uptime check. The format
+   *   is `projects/[PROJECT_ID]`.
    * </pre>
    *
    * <code>string parent = 1;</code>
@@ -18,8 +18,8 @@ public interface CreateUptimeCheckConfigRequestOrBuilder extends
   java.lang.String getParent();
   /**
    * <pre>
-   * The project in which to create the uptime check. The format is:
-   *   `projects/[PROJECT_ID]`.
+   * The project in which to create the uptime check. The format
+   *   is `projects/[PROJECT_ID]`.
    * </pre>
    *
    * <code>string parent = 1;</code>

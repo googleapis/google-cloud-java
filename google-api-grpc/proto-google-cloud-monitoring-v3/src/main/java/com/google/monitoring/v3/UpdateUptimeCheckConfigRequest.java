@@ -153,10 +153,13 @@ private static final long serialVersionUID = 0L;
    * Required. If an `"updateMask"` has been specified, this field gives
    * the values for the set of fields mentioned in the `"updateMask"`. If an
    * `"updateMask"` has not been given, this uptime check configuration replaces
-   * the current configuration. If a field is mentioned in `"updateMask`" but
+   * the current configuration. If a field is mentioned in `"updateMask"` but
    * the corresonding field is omitted in this partial uptime check
    * configuration, it has the effect of deleting/clearing the field from the
    * configuration on the server.
+   * The following fields can be updated: `display_name`,
+   * `http_check`, `tcp_check`, `timeout`, `content_matchers`, and
+   * `selected_regions`.
    * </pre>
    *
    * <code>.google.monitoring.v3.UptimeCheckConfig uptime_check_config = 3;</code>
@@ -169,10 +172,13 @@ private static final long serialVersionUID = 0L;
    * Required. If an `"updateMask"` has been specified, this field gives
    * the values for the set of fields mentioned in the `"updateMask"`. If an
    * `"updateMask"` has not been given, this uptime check configuration replaces
-   * the current configuration. If a field is mentioned in `"updateMask`" but
+   * the current configuration. If a field is mentioned in `"updateMask"` but
    * the corresonding field is omitted in this partial uptime check
    * configuration, it has the effect of deleting/clearing the field from the
    * configuration on the server.
+   * The following fields can be updated: `display_name`,
+   * `http_check`, `tcp_check`, `timeout`, `content_matchers`, and
+   * `selected_regions`.
    * </pre>
    *
    * <code>.google.monitoring.v3.UptimeCheckConfig uptime_check_config = 3;</code>
@@ -185,10 +191,13 @@ private static final long serialVersionUID = 0L;
    * Required. If an `"updateMask"` has been specified, this field gives
    * the values for the set of fields mentioned in the `"updateMask"`. If an
    * `"updateMask"` has not been given, this uptime check configuration replaces
-   * the current configuration. If a field is mentioned in `"updateMask`" but
+   * the current configuration. If a field is mentioned in `"updateMask"` but
    * the corresonding field is omitted in this partial uptime check
    * configuration, it has the effect of deleting/clearing the field from the
    * configuration on the server.
+   * The following fields can be updated: `display_name`,
+   * `http_check`, `tcp_check`, `timeout`, `content_matchers`, and
+   * `selected_regions`.
    * </pre>
    *
    * <code>.google.monitoring.v3.UptimeCheckConfig uptime_check_config = 3;</code>
@@ -735,10 +744,13 @@ private static final long serialVersionUID = 0L;
      * Required. If an `"updateMask"` has been specified, this field gives
      * the values for the set of fields mentioned in the `"updateMask"`. If an
      * `"updateMask"` has not been given, this uptime check configuration replaces
-     * the current configuration. If a field is mentioned in `"updateMask`" but
+     * the current configuration. If a field is mentioned in `"updateMask"` but
      * the corresonding field is omitted in this partial uptime check
      * configuration, it has the effect of deleting/clearing the field from the
      * configuration on the server.
+     * The following fields can be updated: `display_name`,
+     * `http_check`, `tcp_check`, `timeout`, `content_matchers`, and
+     * `selected_regions`.
      * </pre>
      *
      * <code>.google.monitoring.v3.UptimeCheckConfig uptime_check_config = 3;</code>
@@ -751,10 +763,13 @@ private static final long serialVersionUID = 0L;
      * Required. If an `"updateMask"` has been specified, this field gives
      * the values for the set of fields mentioned in the `"updateMask"`. If an
      * `"updateMask"` has not been given, this uptime check configuration replaces
-     * the current configuration. If a field is mentioned in `"updateMask`" but
+     * the current configuration. If a field is mentioned in `"updateMask"` but
      * the corresonding field is omitted in this partial uptime check
      * configuration, it has the effect of deleting/clearing the field from the
      * configuration on the server.
+     * The following fields can be updated: `display_name`,
+     * `http_check`, `tcp_check`, `timeout`, `content_matchers`, and
+     * `selected_regions`.
      * </pre>
      *
      * <code>.google.monitoring.v3.UptimeCheckConfig uptime_check_config = 3;</code>
@@ -771,10 +786,13 @@ private static final long serialVersionUID = 0L;
      * Required. If an `"updateMask"` has been specified, this field gives
      * the values for the set of fields mentioned in the `"updateMask"`. If an
      * `"updateMask"` has not been given, this uptime check configuration replaces
-     * the current configuration. If a field is mentioned in `"updateMask`" but
+     * the current configuration. If a field is mentioned in `"updateMask"` but
      * the corresonding field is omitted in this partial uptime check
      * configuration, it has the effect of deleting/clearing the field from the
      * configuration on the server.
+     * The following fields can be updated: `display_name`,
+     * `http_check`, `tcp_check`, `timeout`, `content_matchers`, and
+     * `selected_regions`.
      * </pre>
      *
      * <code>.google.monitoring.v3.UptimeCheckConfig uptime_check_config = 3;</code>
@@ -797,10 +815,13 @@ private static final long serialVersionUID = 0L;
      * Required. If an `"updateMask"` has been specified, this field gives
      * the values for the set of fields mentioned in the `"updateMask"`. If an
      * `"updateMask"` has not been given, this uptime check configuration replaces
-     * the current configuration. If a field is mentioned in `"updateMask`" but
+     * the current configuration. If a field is mentioned in `"updateMask"` but
      * the corresonding field is omitted in this partial uptime check
      * configuration, it has the effect of deleting/clearing the field from the
      * configuration on the server.
+     * The following fields can be updated: `display_name`,
+     * `http_check`, `tcp_check`, `timeout`, `content_matchers`, and
+     * `selected_regions`.
      * </pre>
      *
      * <code>.google.monitoring.v3.UptimeCheckConfig uptime_check_config = 3;</code>
@@ -821,10 +842,13 @@ private static final long serialVersionUID = 0L;
      * Required. If an `"updateMask"` has been specified, this field gives
      * the values for the set of fields mentioned in the `"updateMask"`. If an
      * `"updateMask"` has not been given, this uptime check configuration replaces
-     * the current configuration. If a field is mentioned in `"updateMask`" but
+     * the current configuration. If a field is mentioned in `"updateMask"` but
      * the corresonding field is omitted in this partial uptime check
      * configuration, it has the effect of deleting/clearing the field from the
      * configuration on the server.
+     * The following fields can be updated: `display_name`,
+     * `http_check`, `tcp_check`, `timeout`, `content_matchers`, and
+     * `selected_regions`.
      * </pre>
      *
      * <code>.google.monitoring.v3.UptimeCheckConfig uptime_check_config = 3;</code>
@@ -849,10 +873,13 @@ private static final long serialVersionUID = 0L;
      * Required. If an `"updateMask"` has been specified, this field gives
      * the values for the set of fields mentioned in the `"updateMask"`. If an
      * `"updateMask"` has not been given, this uptime check configuration replaces
-     * the current configuration. If a field is mentioned in `"updateMask`" but
+     * the current configuration. If a field is mentioned in `"updateMask"` but
      * the corresonding field is omitted in this partial uptime check
      * configuration, it has the effect of deleting/clearing the field from the
      * configuration on the server.
+     * The following fields can be updated: `display_name`,
+     * `http_check`, `tcp_check`, `timeout`, `content_matchers`, and
+     * `selected_regions`.
      * </pre>
      *
      * <code>.google.monitoring.v3.UptimeCheckConfig uptime_check_config = 3;</code>
@@ -873,10 +900,13 @@ private static final long serialVersionUID = 0L;
      * Required. If an `"updateMask"` has been specified, this field gives
      * the values for the set of fields mentioned in the `"updateMask"`. If an
      * `"updateMask"` has not been given, this uptime check configuration replaces
-     * the current configuration. If a field is mentioned in `"updateMask`" but
+     * the current configuration. If a field is mentioned in `"updateMask"` but
      * the corresonding field is omitted in this partial uptime check
      * configuration, it has the effect of deleting/clearing the field from the
      * configuration on the server.
+     * The following fields can be updated: `display_name`,
+     * `http_check`, `tcp_check`, `timeout`, `content_matchers`, and
+     * `selected_regions`.
      * </pre>
      *
      * <code>.google.monitoring.v3.UptimeCheckConfig uptime_check_config = 3;</code>
@@ -891,10 +921,13 @@ private static final long serialVersionUID = 0L;
      * Required. If an `"updateMask"` has been specified, this field gives
      * the values for the set of fields mentioned in the `"updateMask"`. If an
      * `"updateMask"` has not been given, this uptime check configuration replaces
-     * the current configuration. If a field is mentioned in `"updateMask`" but
+     * the current configuration. If a field is mentioned in `"updateMask"` but
      * the corresonding field is omitted in this partial uptime check
      * configuration, it has the effect of deleting/clearing the field from the
      * configuration on the server.
+     * The following fields can be updated: `display_name`,
+     * `http_check`, `tcp_check`, `timeout`, `content_matchers`, and
+     * `selected_regions`.
      * </pre>
      *
      * <code>.google.monitoring.v3.UptimeCheckConfig uptime_check_config = 3;</code>
@@ -912,10 +945,13 @@ private static final long serialVersionUID = 0L;
      * Required. If an `"updateMask"` has been specified, this field gives
      * the values for the set of fields mentioned in the `"updateMask"`. If an
      * `"updateMask"` has not been given, this uptime check configuration replaces
-     * the current configuration. If a field is mentioned in `"updateMask`" but
+     * the current configuration. If a field is mentioned in `"updateMask"` but
      * the corresonding field is omitted in this partial uptime check
      * configuration, it has the effect of deleting/clearing the field from the
      * configuration on the server.
+     * The following fields can be updated: `display_name`,
+     * `http_check`, `tcp_check`, `timeout`, `content_matchers`, and
+     * `selected_regions`.
      * </pre>
      *
      * <code>.google.monitoring.v3.UptimeCheckConfig uptime_check_config = 3;</code>

@@ -102,8 +102,8 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object parent_;
   /**
    * <pre>
-   * The project in which to create the uptime check. The format is:
-   *   `projects/[PROJECT_ID]`.
+   * The project in which to create the uptime check. The format
+   *   is `projects/[PROJECT_ID]`.
    * </pre>
    *
    * <code>string parent = 1;</code>
@@ -122,8 +122,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The project in which to create the uptime check. The format is:
-   *   `projects/[PROJECT_ID]`.
+   * The project in which to create the uptime check. The format
+   *   is `projects/[PROJECT_ID]`.
    * </pre>
    *
    * <code>string parent = 1;</code>
@@ -515,8 +515,8 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object parent_ = "";
     /**
      * <pre>
-     * The project in which to create the uptime check. The format is:
-     *   `projects/[PROJECT_ID]`.
+     * The project in which to create the uptime check. The format
+     *   is `projects/[PROJECT_ID]`.
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -535,8 +535,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The project in which to create the uptime check. The format is:
-     *   `projects/[PROJECT_ID]`.
+     * The project in which to create the uptime check. The format
+     *   is `projects/[PROJECT_ID]`.
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -556,8 +556,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The project in which to create the uptime check. The format is:
-     *   `projects/[PROJECT_ID]`.
+     * The project in which to create the uptime check. The format
+     *   is `projects/[PROJECT_ID]`.
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -574,8 +574,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The project in which to create the uptime check. The format is:
-     *   `projects/[PROJECT_ID]`.
+     * The project in which to create the uptime check. The format
+     *   is `projects/[PROJECT_ID]`.
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -588,8 +588,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The project in which to create the uptime check. The format is:
-     *   `projects/[PROJECT_ID]`.
+     * The project in which to create the uptime check. The format
+     *   is `projects/[PROJECT_ID]`.
      * </pre>
      *
      * <code>string parent = 1;</code>

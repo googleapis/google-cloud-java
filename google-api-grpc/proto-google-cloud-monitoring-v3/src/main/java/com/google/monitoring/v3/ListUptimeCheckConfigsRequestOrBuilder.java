@@ -9,8 +9,8 @@ public interface ListUptimeCheckConfigsRequestOrBuilder extends
 
   /**
    * <pre>
-   * The project whose uptime check configurations are listed. The format is
-   *   `projects/[PROJECT_ID]`.
+   * The project whose uptime check configurations are listed. The format
+   *   is `projects/[PROJECT_ID]`.
    * </pre>
    *
    * <code>string parent = 1;</code>
@@ -18,8 +18,8 @@ public interface ListUptimeCheckConfigsRequestOrBuilder extends
   java.lang.String getParent();
   /**
    * <pre>
-   * The project whose uptime check configurations are listed. The format is
-   *   `projects/[PROJECT_ID]`.
+   * The project whose uptime check configurations are listed. The format
+   *   is `projects/[PROJECT_ID]`.
    * </pre>
    *
    * <code>string parent = 1;</code>

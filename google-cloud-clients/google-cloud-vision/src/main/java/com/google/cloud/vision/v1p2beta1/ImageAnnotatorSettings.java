@@ -59,6 +59,7 @@ import javax.annotation.Generated;
  * </pre>
  */
 @Generated("by gapic-generator")
+@BetaApi
 public class ImageAnnotatorSettings extends ClientSettings<ImageAnnotatorSettings> {
   /** Returns the object with the settings used for calls to batchAnnotateImages. */
   public UnaryCallSettings<BatchAnnotateImagesRequest, BatchAnnotateImagesResponse>
