@@ -26,16 +26,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-contrib</artifactId>
-  <version>0.55.1-alpha</version>
+  <version>0.56.0-alpha</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-contrib:0.55.1-alpha'
+compile 'com.google.cloud:google-cloud-contrib:0.56.0-alpha'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-contrib" % "0.55.1-alpha"
+libraryDependencies += "com.google.cloud" % "google-cloud-contrib" % "0.56.0-alpha"
 ```
 [//]: # ({x-version-update-end})
 
