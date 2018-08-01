@@ -1067,42 +1067,44 @@
         <version>3.4</version>
         <configuration>
           <skipDeploy>true</skipDeploy>
-          <reportPlugins>
-            <plugin>
-              <groupId>org.apache.maven.plugins</groupId>
-              <artifactId>maven-project-info-reports-plugin</artifactId>
-              <version>2.8.1</version>
-              <reportSets>
-                <reportSet>
-                  <reports>
-                    <report>index</report>
-                    <report>dependency-info</report>
-                    <report>project-team</report>
-                    <report>cim</report>
-                    <report>issue-tracking</report>
-                    <report>license</report>
-                    <report>scm</report>
-                    <report>dependency-management</report>
-                    <report>distribution-management</report>
-                    <report>summary</report>
-                    <report>modules</report>
-                  </reports>
-                </reportSet>
-              </reportSets>
-              <configuration>
-                <aggregate>true</aggregate>
-                <quiet>true</quiet>
-                <dependencyDetailsEnabled>true</dependencyDetailsEnabled>
-                <dependencyLocationsEnabled>true</dependencyLocationsEnabled>
-                <artifactId>google-cloud-bom</artifactId>
-                <packaging>jar</packaging>
-              </configuration>
-            </plugin>
-          </reportPlugins>
         </configuration>
       </plugin>
     </plugins>
   </build>
+  <reporting>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-project-info-reports-plugin</artifactId>
+        <version>2.8.1</version>
+        <reportSets>
+          <reportSet>
+            <reports>
+              <report>index</report>
+              <report>dependency-info</report>
+              <report>project-team</report>
+              <report>cim</report>
+              <report>issue-tracking</report>
+              <report>license</report>
+              <report>scm</report>
+              <report>dependency-management</report>
+              <report>distribution-management</report>
+              <report>summary</report>
+              <report>modules</report>
+            </reports>
+          </reportSet>
+        </reportSets>
+        <configuration>
+          <aggregate>true</aggregate>
+          <quiet>true</quiet>
+          <dependencyDetailsEnabled>true</dependencyDetailsEnabled>
+          <dependencyLocationsEnabled>true</dependencyLocationsEnabled>
+          <artifactId>google-cloud-bom</artifactId>
+          <packaging>jar</packaging>
+        </configuration>
+      </plugin>
+    </plugins>
+  </reporting>
   <profiles>
     <profile>
       <id>release</id>
