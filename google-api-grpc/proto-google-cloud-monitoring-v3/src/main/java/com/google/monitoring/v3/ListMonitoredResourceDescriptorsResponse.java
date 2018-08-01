@@ -5,7 +5,7 @@ package com.google.monitoring.v3;
 
 /**
  * <pre>
- * The `ListMonitoredResourcDescriptors` response.
+ * The `ListMonitoredResourceDescriptors` response.
  * </pre>
  *
  * Protobuf type {@code google.monitoring.v3.ListMonitoredResourceDescriptorsResponse}
@@ -375,7 +375,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The `ListMonitoredResourcDescriptors` response.
+   * The `ListMonitoredResourceDescriptors` response.
    * </pre>
    *
    * Protobuf type {@code google.monitoring.v3.ListMonitoredResourceDescriptorsResponse}

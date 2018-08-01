@@ -116,7 +116,6 @@ import javax.annotation.Generated;
  * </pre>
  */
 @Generated("by gapic-generator")
-@BetaApi
 public class UptimeCheckServiceClient implements BackgroundResource {
   private final UptimeCheckServiceSettings settings;
   private final UptimeCheckServiceStub stub;
@@ -186,7 +185,7 @@ public class UptimeCheckServiceClient implements BackgroundResource {
    * </code></pre>
    *
    * @param parent The project whose uptime check configurations are listed. The format is
-   *     <p>`projects/[PROJECT_ID]`.
+   *     `projects/[PROJECT_ID]`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListUptimeCheckConfigsPagedResponse listUptimeCheckConfigs(String parent) {
@@ -295,7 +294,7 @@ public class UptimeCheckServiceClient implements BackgroundResource {
    * </code></pre>
    *
    * @param name The uptime check configuration to retrieve. The format is
-   *     <p>`projects/[PROJECT_ID]/uptimeCheckConfigs/[UPTIME_CHECK_ID]`.
+   *     `projects/[PROJECT_ID]/uptimeCheckConfigs/[UPTIME_CHECK_ID]`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final UptimeCheckConfig getUptimeCheckConfig(String name) {
@@ -365,8 +364,8 @@ public class UptimeCheckServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent The project in which to create the uptime check. The format is:
-   *     <p>`projects/[PROJECT_ID]`.
+   * @param parent The project in which to create the uptime check. The format is
+   *     `projects/[PROJECT_ID]`.
    * @param uptimeCheckConfig The new uptime check configuration.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -449,9 +448,11 @@ public class UptimeCheckServiceClient implements BackgroundResource {
    * @param uptimeCheckConfig Required. If an `"updateMask"` has been specified, this field gives
    *     the values for the set of fields mentioned in the `"updateMask"`. If an `"updateMask"` has
    *     not been given, this uptime check configuration replaces the current configuration. If a
-   *     field is mentioned in `"updateMask`" but the corresonding field is omitted in this partial
+   *     field is mentioned in `"updateMask"` but the corresonding field is omitted in this partial
    *     uptime check configuration, it has the effect of deleting/clearing the field from the
    *     configuration on the server.
+   *     <p>The following fields can be updated: `display_name`, `http_check`, `tcp_check`,
+   *     `timeout`, `content_matchers`, and `selected_regions`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final UptimeCheckConfig updateUptimeCheckConfig(UptimeCheckConfig uptimeCheckConfig) {
@@ -527,7 +528,7 @@ public class UptimeCheckServiceClient implements BackgroundResource {
    * </code></pre>
    *
    * @param name The uptime check configuration to delete. The format is
-   *     <p>`projects/[PROJECT_ID]/uptimeCheckConfigs/[UPTIME_CHECK_ID]`.
+   *     `projects/[PROJECT_ID]/uptimeCheckConfigs/[UPTIME_CHECK_ID]`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteUptimeCheckConfig(String name) {

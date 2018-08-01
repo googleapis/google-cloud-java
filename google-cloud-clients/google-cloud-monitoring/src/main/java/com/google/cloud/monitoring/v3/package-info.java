@@ -42,7 +42,7 @@
  * ================== GroupServiceClient ==================
  *
  * <p>Service Description: The Group API lets you inspect and manage your
- * [groups](google.monitoring.v3.Group).
+ * [groups](#google.monitoring.v3.Group).
  *
  * <p>A group is a named filter that is used to identify a collection of monitored resources. Groups
  * are typically used to mirror the physical and/or logical topology of the environment. Because

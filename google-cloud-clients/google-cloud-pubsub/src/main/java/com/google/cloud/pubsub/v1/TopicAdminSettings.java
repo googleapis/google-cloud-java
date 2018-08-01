@@ -78,7 +78,6 @@ import javax.annotation.Generated;
  * </pre>
  */
 @Generated("by gapic-generator")
-@BetaApi
 public class TopicAdminSettings extends ClientSettings<TopicAdminSettings> {
   /** Returns the object with the settings used for calls to createTopic. */
   public UnaryCallSettings<Topic, Topic> createTopicSettings() {

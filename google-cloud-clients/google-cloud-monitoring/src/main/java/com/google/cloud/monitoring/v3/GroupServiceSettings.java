@@ -71,7 +71,6 @@ import javax.annotation.Generated;
  * </pre>
  */
 @Generated("by gapic-generator")
-@BetaApi
 public class GroupServiceSettings extends ClientSettings<GroupServiceSettings> {
   /** Returns the object with the settings used for calls to listGroups. */
   public PagedCallSettings<ListGroupsRequest, ListGroupsResponse, ListGroupsPagedResponse>

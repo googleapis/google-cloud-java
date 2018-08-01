@@ -445,9 +445,8 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object orderBy_;
   /**
    * <pre>
-   * Specifies the order in which the points of the time series should
-   * be returned.  By default, results are not ordered.  Currently,
-   * this field must be left blank.
+   * Unsupported: must be left blank. The points in each time series are
+   * returned in reverse time order.
    * </pre>
    *
    * <code>string order_by = 6;</code>
@@ -466,9 +465,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Specifies the order in which the points of the time series should
-   * be returned.  By default, results are not ordered.  Currently,
-   * this field must be left blank.
+   * Unsupported: must be left blank. The points in each time series are
+   * returned in reverse time order.
    * </pre>
    *
    * <code>string order_by = 6;</code>
@@ -516,10 +514,11 @@ private static final long serialVersionUID = 0L;
   private int pageSize_;
   /**
    * <pre>
-   * A positive number that is the maximum number of results to return.
-   * When `view` field sets to `FULL`, it limits the number of `Points` server
-   * will return; if `view` field is `HEADERS`, it limits the number of
-   * `TimeSeries` server will return.
+   * A positive number that is the maximum number of results to return. If
+   * `page_size` is empty or more than 100,000 results, the effective
+   * `page_size` is 100,000 results. If `view` is set to `FULL`, this is the
+   * maximum number of `Points` returned. If `view` is set to `HEADERS`, this is
+   * the maximum number of `TimeSeries` returned.
    * </pre>
    *
    * <code>int32 page_size = 8;</code>
@@ -1578,9 +1577,8 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object orderBy_ = "";
     /**
      * <pre>
-     * Specifies the order in which the points of the time series should
-     * be returned.  By default, results are not ordered.  Currently,
-     * this field must be left blank.
+     * Unsupported: must be left blank. The points in each time series are
+     * returned in reverse time order.
      * </pre>
      *
      * <code>string order_by = 6;</code>
@@ -1599,9 +1597,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Specifies the order in which the points of the time series should
-     * be returned.  By default, results are not ordered.  Currently,
-     * this field must be left blank.
+     * Unsupported: must be left blank. The points in each time series are
+     * returned in reverse time order.
      * </pre>
      *
      * <code>string order_by = 6;</code>
@@ -1621,9 +1618,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Specifies the order in which the points of the time series should
-     * be returned.  By default, results are not ordered.  Currently,
-     * this field must be left blank.
+     * Unsupported: must be left blank. The points in each time series are
+     * returned in reverse time order.
      * </pre>
      *
      * <code>string order_by = 6;</code>
@@ -1640,9 +1636,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Specifies the order in which the points of the time series should
-     * be returned.  By default, results are not ordered.  Currently,
-     * this field must be left blank.
+     * Unsupported: must be left blank. The points in each time series are
+     * returned in reverse time order.
      * </pre>
      *
      * <code>string order_by = 6;</code>
@@ -1655,9 +1650,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Specifies the order in which the points of the time series should
-     * be returned.  By default, results are not ordered.  Currently,
-     * this field must be left blank.
+     * Unsupported: must be left blank. The points in each time series are
+     * returned in reverse time order.
      * </pre>
      *
      * <code>string order_by = 6;</code>
@@ -1742,10 +1736,11 @@ private static final long serialVersionUID = 0L;
     private int pageSize_ ;
     /**
      * <pre>
-     * A positive number that is the maximum number of results to return.
-     * When `view` field sets to `FULL`, it limits the number of `Points` server
-     * will return; if `view` field is `HEADERS`, it limits the number of
-     * `TimeSeries` server will return.
+     * A positive number that is the maximum number of results to return. If
+     * `page_size` is empty or more than 100,000 results, the effective
+     * `page_size` is 100,000 results. If `view` is set to `FULL`, this is the
+     * maximum number of `Points` returned. If `view` is set to `HEADERS`, this is
+     * the maximum number of `TimeSeries` returned.
      * </pre>
      *
      * <code>int32 page_size = 8;</code>
@@ -1755,10 +1750,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A positive number that is the maximum number of results to return.
-     * When `view` field sets to `FULL`, it limits the number of `Points` server
-     * will return; if `view` field is `HEADERS`, it limits the number of
-     * `TimeSeries` server will return.
+     * A positive number that is the maximum number of results to return. If
+     * `page_size` is empty or more than 100,000 results, the effective
+     * `page_size` is 100,000 results. If `view` is set to `FULL`, this is the
+     * maximum number of `Points` returned. If `view` is set to `HEADERS`, this is
+     * the maximum number of `TimeSeries` returned.
      * </pre>
      *
      * <code>int32 page_size = 8;</code>
@@ -1771,10 +1767,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A positive number that is the maximum number of results to return.
-     * When `view` field sets to `FULL`, it limits the number of `Points` server
-     * will return; if `view` field is `HEADERS`, it limits the number of
-     * `TimeSeries` server will return.
+     * A positive number that is the maximum number of results to return. If
+     * `page_size` is empty or more than 100,000 results, the effective
+     * `page_size` is 100,000 results. If `view` is set to `FULL`, this is the
+     * maximum number of `Points` returned. If `view` is set to `HEADERS`, this is
+     * the maximum number of `TimeSeries` returned.
      * </pre>
      *
      * <code>int32 page_size = 8;</code>

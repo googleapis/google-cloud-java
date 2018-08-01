@@ -48,7 +48,7 @@ import javax.annotation.Generated;
 // AUTO-GENERATED DOCUMENTATION AND SERVICE
 /**
  * Service Description: The Group API lets you inspect and manage your
- * [groups](google.monitoring.v3.Group).
+ * [groups](#google.monitoring.v3.Group).
  *
  * <p>A group is a named filter that is used to identify a collection of monitored resources. Groups
  * are typically used to mirror the physical and/or logical topology of the environment. Because
@@ -120,7 +120,6 @@ import javax.annotation.Generated;
  * </pre>
  */
 @Generated("by gapic-generator")
-@BetaApi
 public class GroupServiceClient implements BackgroundResource {
   private final GroupServiceSettings settings;
   private final GroupServiceStub stub;

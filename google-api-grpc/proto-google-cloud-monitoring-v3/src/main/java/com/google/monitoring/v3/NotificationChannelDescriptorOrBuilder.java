@@ -151,36 +151,36 @@ public interface NotificationChannelDescriptorOrBuilder extends
    * must be one of the supported_tiers.
    * </pre>
    *
-   * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5;</code>
+   * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];</code>
    */
-  java.util.List<com.google.monitoring.v3.ServiceTier> getSupportedTiersList();
+  @java.lang.Deprecated java.util.List<com.google.monitoring.v3.ServiceTier> getSupportedTiersList();
   /**
    * <pre>
    * The tiers that support this notification channel; the project service tier
    * must be one of the supported_tiers.
    * </pre>
    *
-   * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5;</code>
+   * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];</code>
    */
-  int getSupportedTiersCount();
+  @java.lang.Deprecated int getSupportedTiersCount();
   /**
    * <pre>
    * The tiers that support this notification channel; the project service tier
    * must be one of the supported_tiers.
    * </pre>
    *
-   * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5;</code>
+   * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];</code>
    */
-  com.google.monitoring.v3.ServiceTier getSupportedTiers(int index);
+  @java.lang.Deprecated com.google.monitoring.v3.ServiceTier getSupportedTiers(int index);
   /**
    * <pre>
    * The tiers that support this notification channel; the project service tier
    * must be one of the supported_tiers.
    * </pre>
    *
-   * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5;</code>
+   * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];</code>
    */
-  java.util.List<java.lang.Integer>
+  @java.lang.Deprecated java.util.List<java.lang.Integer>
   getSupportedTiersValueList();
   /**
    * <pre>
@@ -188,7 +188,7 @@ public interface NotificationChannelDescriptorOrBuilder extends
    * must be one of the supported_tiers.
    * </pre>
    *
-   * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5;</code>
+   * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];</code>
    */
-  int getSupportedTiersValue(int index);
+  @java.lang.Deprecated int getSupportedTiersValue(int index);
 }

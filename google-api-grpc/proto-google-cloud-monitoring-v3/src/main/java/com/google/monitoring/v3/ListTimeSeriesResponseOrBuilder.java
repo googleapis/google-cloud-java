@@ -72,4 +72,53 @@ public interface ListTimeSeriesResponseOrBuilder extends
    */
   com.google.protobuf.ByteString
       getNextPageTokenBytes();
+
+  /**
+   * <pre>
+   * Query execution errors that may have caused the time series data returned
+   * to be incomplete.
+   * </pre>
+   *
+   * <code>repeated .google.rpc.Status execution_errors = 3;</code>
+   */
+  java.util.List<com.google.rpc.Status> 
+      getExecutionErrorsList();
+  /**
+   * <pre>
+   * Query execution errors that may have caused the time series data returned
+   * to be incomplete.
+   * </pre>
+   *
+   * <code>repeated .google.rpc.Status execution_errors = 3;</code>
+   */
+  com.google.rpc.Status getExecutionErrors(int index);
+  /**
+   * <pre>
+   * Query execution errors that may have caused the time series data returned
+   * to be incomplete.
+   * </pre>
+   *
+   * <code>repeated .google.rpc.Status execution_errors = 3;</code>
+   */
+  int getExecutionErrorsCount();
+  /**
+   * <pre>
+   * Query execution errors that may have caused the time series data returned
+   * to be incomplete.
+   * </pre>
+   *
+   * <code>repeated .google.rpc.Status execution_errors = 3;</code>
+   */
+  java.util.List<? extends com.google.rpc.StatusOrBuilder> 
+      getExecutionErrorsOrBuilderList();
+  /**
+   * <pre>
+   * Query execution errors that may have caused the time series data returned
+   * to be incomplete.
+   * </pre>
+   *
+   * <code>repeated .google.rpc.Status execution_errors = 3;</code>
+   */
+  com.google.rpc.StatusOrBuilder getExecutionErrorsOrBuilder(
+      int index);
 }

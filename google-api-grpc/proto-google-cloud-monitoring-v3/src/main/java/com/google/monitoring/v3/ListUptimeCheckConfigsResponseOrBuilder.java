@@ -76,4 +76,14 @@ public interface ListUptimeCheckConfigsResponseOrBuilder extends
    */
   com.google.protobuf.ByteString
       getNextPageTokenBytes();
+
+  /**
+   * <pre>
+   * The total number of uptime check configurations for the project,
+   * irrespective of any pagination.
+   * </pre>
+   *
+   * <code>int32 total_size = 3;</code>
+   */
+  int getTotalSize();
 }

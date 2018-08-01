@@ -120,7 +120,6 @@ import javax.annotation.Generated;
  * </pre>
  */
 @Generated("by gapic-generator")
-@BetaApi
 public class MetricServiceClient implements BackgroundResource {
   private final MetricServiceSettings settings;
   private final MetricServiceStub stub;
