@@ -17,13 +17,6 @@
 /**
  * A client for Cloud Bigtable.
  *
- * <p>This client is composed of two parts: the Data API and the Admin API. The Admin API provides
- * direct access to the protobuf based API, while the Data API has a higher level wrapper around the
- * raw GRPC stubs.
- *
  * @see com.google.cloud.bigtable.data.v2.BigtableDataClient For the data client.
- * @see com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClient For instance instance admin
- *     client.
- * @see com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient For table admin client.
  */
 package com.google.cloud.bigtable;
