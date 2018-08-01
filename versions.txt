@@ -14,6 +14,7 @@ grpc-google-cloud-bigtable-admin-v2:0.20.1:0.20.2-SNAPSHOT
 grpc-google-cloud-bigtable-v2:0.20.1:0.20.2-SNAPSHOT
 grpc-google-cloud-container-v1:0.20.1:0.20.2-SNAPSHOT
 grpc-google-cloud-dataproc-v1:0.20.1:0.20.2-SNAPSHOT
+grpc-google-cloud-dataproc-v1beta2:0.20.1:0.20.2-SNAPSHOT
 grpc-google-cloud-dialogflow-v2:0.20.1:0.20.2-SNAPSHOT
 grpc-google-cloud-dialogflow-v2beta1:0.20.1:0.20.2-SNAPSHOT
 grpc-google-cloud-dlp-v2:0.20.1:0.20.2-SNAPSHOT
@@ -55,6 +56,7 @@ proto-google-cloud-bigtable-admin-v2:0.20.1:0.20.2-SNAPSHOT
 proto-google-cloud-bigtable-v2:0.20.1:0.20.2-SNAPSHOT
 proto-google-cloud-container-v1:0.20.1:0.20.2-SNAPSHOT
 proto-google-cloud-dataproc-v1:0.20.1:0.20.2-SNAPSHOT
+proto-google-cloud-dataproc-v1beta2:0.20.1:0.20.2-SNAPSHOT
 proto-google-cloud-datastore-v1:0.20.1:0.20.2-SNAPSHOT
 proto-google-cloud-dialogflow-v2:0.20.1:0.20.2-SNAPSHOT
 proto-google-cloud-dialogflow-v2beta1:0.20.1:0.20.2-SNAPSHOT

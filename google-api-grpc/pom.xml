@@ -193,6 +193,16 @@
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-dataproc-v1beta2</artifactId>
+        <version>0.20.2-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-dataproc-v1beta2:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-dataproc-v1beta2</artifactId>
+        <version>0.20.2-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-dataproc-v1beta2:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-datastore-v1</artifactId>
         <version>0.20.2-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-datastore-v1:current} -->
       </dependency>
@@ -546,6 +556,7 @@
     <module>grpc-google-cloud-bigtable-v2</module>
     <module>grpc-google-cloud-container-v1</module>
     <module>grpc-google-cloud-dataproc-v1</module>
+    <module>grpc-google-cloud-dataproc-v1beta2</module>
     <module>grpc-google-cloud-dialogflow-v2</module>
     <module>grpc-google-cloud-dialogflow-v2beta1</module>
     <module>grpc-google-cloud-dlp-v2</module>
@@ -587,6 +598,7 @@
     <module>proto-google-cloud-bigtable-v2</module>
     <module>proto-google-cloud-container-v1</module>
     <module>proto-google-cloud-dataproc-v1</module>
+    <module>proto-google-cloud-dataproc-v1beta2</module>
     <module>proto-google-cloud-datastore-v1</module>
     <module>proto-google-cloud-dialogflow-v2</module>
     <module>proto-google-cloud-dialogflow-v2beta1</module>
