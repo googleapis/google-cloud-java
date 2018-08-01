@@ -418,6 +418,16 @@
         <version>0.20.2-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-dataproc-v1:current} -->
       </dependency>
       <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-dataproc-v1beta2</artifactId>
+        <version>0.20.2-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-dataproc-v1beta2:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-dataproc-v1beta2</artifactId>
+        <version>0.20.2-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-dataproc-v1beta2:current} -->
+      </dependency>
+      <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-datastore</artifactId>
         <version>1.37.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-datastore:current} -->
