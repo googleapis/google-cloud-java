@@ -17,7 +17,6 @@
 package com.google.cloud.translate.automl;
 
 import static com.google.common.truth.Truth.assertThat;
-import static java.lang.Boolean.FALSE;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;

@@ -45,7 +45,7 @@ import net.sourceforge.argparse4j.inf.Subparsers;
  */
 public class DatasetApi {
 
-  // [START automl_translate_create_dataset]
+  // [START automl_translation_create_dataset]
   /**
    * Demonstrates using the AutoML client to create a dataset
    *
