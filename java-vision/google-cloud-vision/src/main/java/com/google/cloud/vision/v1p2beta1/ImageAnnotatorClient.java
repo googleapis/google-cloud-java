@@ -98,6 +98,7 @@ import javax.annotation.Generated;
  * </pre>
  */
 @Generated("by gapic-generator")
+@BetaApi
 public class ImageAnnotatorClient implements BackgroundResource {
   private final ImageAnnotatorSettings settings;
   private final ImageAnnotatorStub stub;
