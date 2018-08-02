@@ -24,6 +24,9 @@ import (
 	"path/filepath"
 	"runtime/pprof"
 	"strings"
+
+	"github.com/kr/text"
+	"github.com/lithammer/dedent"
 )
 
 func init() {
@@ -127,10 +130,10 @@ func getCloud(file, txt string, snip map[string]string) error {
 			key := fmt.Sprintf("<!--SNIPPET %s-->", tag)
 			snipTxt := strings.Trim(txt[:p], "\n\r")
 			if _, exist := snip[key]; exist {
-				snip[key] = strings.Join([]string{snip[key], snipTxt}, "")
+				snip[key] = strings.Join([]string{snip[key], text.Indent(dedent.Dedent(snipTxt), " ")}, "")
 			}
 
-			snip[key] = snipTxt
+			snip[key] = text.Indent(dedent.Dedent(snipTxt), " ")
 			txt = txt[p+len(endTag):]
 		} else {
 			return fmt.Errorf("[START %s]:%d snippet %q not closed", file, lineNum(ftxt, txt), tag)
@@ -166,7 +169,7 @@ func getSnip(file, txt string, snip map[string]string) error {
 				return fmt.Errorf("%s:%d snippet %q has already been defined", file, lineNum(ftxt, txt), key)
 			}
 
-			snip[key] = strings.Trim(txt[:p], "\n\r")
+			snip[key] = text.Indent(dedent.Dedent(strings.Trim(txt[:p], "\n\r")), " ")
 			txt = txt[p+len(snipPrefix):]
 		} else {
 			return fmt.Errorf("%s:%d snippet %q not closed", file, lineNum(ftxt, txt), key)
