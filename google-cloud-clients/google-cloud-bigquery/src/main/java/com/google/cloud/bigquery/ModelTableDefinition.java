@@ -1,0 +1,69 @@
+/*
+ * Copyright 2016 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *       http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.google.cloud.bigquery;
+
+import com.google.api.services.bigquery.model.Table;
+import com.google.auto.value.AutoValue;
+import com.google.common.base.MoreObjects;
+import java.io.Serializable;
+import java.math.BigInteger;
+import java.util.Objects;
+import javax.annotation.Nullable;
+
+/**
+ * A Google BigQuery Model table definition. This definition is used to represent a BigQuery
+ * ML model.
+ *
+ * @see <a href="https://cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-create#models_in_bqml_name">BigQuery ML Model</a>
+ */
+@AutoValue
+public abstract class ModelTableDefinition extends TableDefinition {
+
+  //TODO(gsabhnani): Update this id.
+  private static final long serialVersionUID = 2113445776046717900L;
+
+  @AutoValue.Builder
+  public abstract static class Builder
+      extends TableDefinition.Builder<ModelTableDefinition, Builder> {
+
+    public abstract Builder setType(Type type);
+
+
+    /** Creates a {@code ModelTableDefinition} object. */
+    public abstract ModelTableDefinition build();
+  }
+
+  /**
+   * Returns a builder for a BigQuery ML model table definition.
+   */
+  public static Builder newBuilder() {
+    return new AutoValue_ModelTableDefinition.Builder().setType(Type.MODEL);
+  }
+
+  /** Returns a builder for the {@code <ModelTableDefinition} object. */
+  public abstract Builder toBuilder();
+
+  @Override
+  Table toPb() {
+    return super.toPb();
+  }
+
+  @SuppressWarnings("unchecked")
+  static ModelTableDefinition fromPb(Table tablePb) {
+    return newBuilder().table(tablePb).build();
+  }
+}

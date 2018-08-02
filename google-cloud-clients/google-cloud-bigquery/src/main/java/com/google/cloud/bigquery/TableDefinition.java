@@ -71,6 +71,14 @@ public abstract class TableDefinition implements Serializable {
      */
     public static final Type EXTERNAL = type.createAndRegister("EXTERNAL");
 
+    /**
+     * A BigQuery table representing BigQuery ML Model.
+     *
+     * @see <a href="https://cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-create#models_in_bqml_name">
+     *     BigQuery ML Model</a>
+     */
+    public static final Type MODEL = type.createAndRegister("MODEL");
+
     private Type(String constant) {
       super(constant);
     }
@@ -157,6 +165,8 @@ public abstract class TableDefinition implements Serializable {
         return (T) ViewDefinition.fromPb(tablePb);
       case "EXTERNAL":
         return (T) ExternalTableDefinition.fromPb(tablePb);
+      case "MODEL":
+        return (T) ModelTableDefinition.fromPb(tablePb);
       default:
         // never reached
         throw new IllegalArgumentException("Format " + tablePb.getType() + " is not supported");
