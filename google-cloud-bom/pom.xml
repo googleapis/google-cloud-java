@@ -818,12 +818,12 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-tasks</artifactId>
-        <version>>0.56.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-tasks:current} -->
+        <version>0.56.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-tasks:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-tasks</artifactId>
-        <version>>0.56.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-tasks:current} -->
+        <version>0.56.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-tasks:current} -->
         <type>test-jar</type>
       </dependency>
       <dependency>
