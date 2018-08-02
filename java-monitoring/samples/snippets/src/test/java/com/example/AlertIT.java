@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+package com.example;
+
 import static org.junit.Assert.assertTrue;
 
 import com.google.common.base.Strings;

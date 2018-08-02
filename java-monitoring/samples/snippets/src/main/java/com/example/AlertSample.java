@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google Inc.
+ * Copyright 2018 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import static com.google.common.base.Preconditions.checkNotNull;
+package com.example;
 
 import com.google.cloud.monitoring.v3.AlertPolicyServiceClient;
 import com.google.cloud.monitoring.v3.AlertPolicyServiceClient.ListAlertPoliciesPagedResponse;
@@ -49,6 +49,7 @@ import java.util.Optional;
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
 import org.apache.commons.cli.DefaultParser;
+import org.apache.commons.cli.HelpFormatter;
 import org.apache.commons.cli.Option;
 import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
@@ -120,23 +121,9 @@ public class AlertSample {
       .addPaths("userLabels")
       .build();
 
-  private AlertPolicyServiceClient alertPolicyClient;
-  private NotificationChannelServiceClient notificationChannelClient;
-  private Gson gson = new Gson();
+  private static Gson gson = new Gson();
 
-  private AlertSample() throws IOException {
-    this(AlertPolicyServiceClient.create(), NotificationChannelServiceClient.create());
-  }
-
-  AlertSample(AlertPolicyServiceClient alertPolicyClient,
-              NotificationChannelServiceClient notificationChannelClient) {
-    this.alertPolicyClient = checkNotNull(alertPolicyClient);
-    this.notificationChannelClient = notificationChannelClient;
-  }
-
-  public static void main(String[] args) throws IOException {
-    AlertSample sample = createAlertSample();
-
+  public static void main(String... args) throws IOException {
     if (args.length == 0) {
       usage(null);
       return;
@@ -162,28 +149,25 @@ public class AlertSample {
 
     switch (command) {
       case "list":
-        sample.listAlertPolicies(projectId);
+        listAlertPolicies(projectId);
         break;
       case "backup":
-        sample.backupPolicies(projectId,
-            cl.getOptionValue(FILE_PATH_OPTION.getOpt()));
+        backupPolicies(projectId, cl.getOptionValue(FILE_PATH_OPTION.getOpt()));
         break;
       case "restore":
-        sample.restorePolicies(projectId,
-            cl.getOptionValue(FILE_PATH_OPTION.getOpt()));
+        restorePolicies(projectId, cl.getOptionValue(FILE_PATH_OPTION.getOpt()));
         break;
       case "replace-channels":
-        sample.replaceChannels(projectId,
+        replaceChannels(
+            projectId,
             cl.getOptionValue(ALERT_ID_OPTION.getOpt()),
             cl.getOptionValues(CHANNEL_ID_OPTION.getOpt()));
         break;
       case "enable":
-        sample.enablePolicies(projectId,
-            cl.getOptionValue(FILTER_OPTION.getOpt()), true);
+        enablePolicies(projectId, cl.getOptionValue(FILTER_OPTION.getOpt()), true);
         break;
       case "disable":
-        sample.enablePolicies(projectId,
-            cl.getOptionValue(FILTER_OPTION.getOpt()), false);
+        enablePolicies(projectId, cl.getOptionValue(FILTER_OPTION.getOpt()), false);
         break;
       default:
         usage(null);
@@ -201,76 +185,70 @@ public class AlertSample {
     return cl;
   }
 
-  private static AlertSample createAlertSample() throws IOException {
-    AlertSample sample;
-    try {
-      sample = new AlertSample();
-    } catch (Exception e) {
-      usage("Exception creating alert sample.");
-      throw e;
-    }
-    return sample;
-  }
-
   // [START monitoring_alert_list_policies]
-  void listAlertPolicies(String projectId) {
-    ListAlertPoliciesPagedResponse response = alertPolicyClient.listAlertPolicies(ProjectName.of(
-        projectId));
+  private static void listAlertPolicies(String projectId) throws IOException {
+    try (AlertPolicyServiceClient client = AlertPolicyServiceClient.create()) {
+      ListAlertPoliciesPagedResponse response = client.listAlertPolicies(ProjectName.of(projectId));
 
-    System.out.println("Alert Policies:");
-    for (AlertPolicy policy : response.iterateAll()) {
-      System.out.println(
-          String.format("\nPolicy %s\nalert-id: %s", policy.getDisplayName(), policy.getName()));
-      int channels = policy.getNotificationChannelsCount();
-      if (channels > 0) {
-        System.out.println("notification-channels:");
-        for (int i = 0; i < channels; i++) {
-          System.out.println("\t" + policy.getNotificationChannels(i));
+      System.out.println("Alert Policies:");
+      for (AlertPolicy policy : response.iterateAll()) {
+        System.out.println(
+            String.format("\nPolicy %s\nalert-id: %s", policy.getDisplayName(), policy.getName()));
+        int channels = policy.getNotificationChannelsCount();
+        if (channels > 0) {
+          System.out.println("notification-channels:");
+          for (int i = 0; i < channels; i++) {
+            System.out.println("\t" + policy.getNotificationChannels(i));
+          }
         }
-      }
-      if (policy.hasDocumentation() && policy.getDocumentation().getContent() != null) {
-        System.out.println(policy.getDocumentation().getContent());
+        if (policy.hasDocumentation() && policy.getDocumentation().getContent() != null) {
+          System.out.println(policy.getDocumentation().getContent());
+        }
       }
     }
   }
   // [END monitoring_alert_list_policies]
 
   // [START monitoring_alert_backup_policies]
-  void backupPolicies(String projectId, String filePath) throws IOException {
+  private static void backupPolicies(String projectId, String filePath) throws IOException {
     List<AlertPolicy> alertPolicies = getAlertPolicies(projectId);
     List<NotificationChannel> notificationChannels = getNotificationChannels(projectId);
     writePoliciesBackupFile(projectId, filePath, alertPolicies, notificationChannels);
     System.out.println(String.format("Saved policies to %s", filePath));
   }
 
-  private List<AlertPolicy> getAlertPolicies(String projectId) {
+  private static List<AlertPolicy> getAlertPolicies(String projectId) throws IOException {
     List<AlertPolicy> alertPolicies = Lists.newArrayList();
-    ListAlertPoliciesPagedResponse response =
-        alertPolicyClient.listAlertPolicies(ProjectName.of(projectId));
+    try (AlertPolicyServiceClient client = AlertPolicyServiceClient.create()) {
+      ListAlertPoliciesPagedResponse response = client.listAlertPolicies(ProjectName.of(projectId));
 
-    for (AlertPolicy policy : response.iterateAll()) {
-      alertPolicies.add(policy);
+      for (AlertPolicy policy : response.iterateAll()) {
+        alertPolicies.add(policy);
+      }
     }
     return alertPolicies;
   }
 
   // [START monitoring_alert_list_channels]
-  private List<NotificationChannel> getNotificationChannels(String projectId) {
+  private static List<NotificationChannel> getNotificationChannels(String projectId)
+      throws IOException {
     List<NotificationChannel> notificationChannels = Lists.newArrayList();
-    ListNotificationChannelsPagedResponse listNotificationChannelsResponse =
-        notificationChannelClient.listNotificationChannels(ProjectName.of(projectId));
-    for (NotificationChannel channel : listNotificationChannelsResponse.iterateAll()) {
-      notificationChannels.add(channel);
+    try (NotificationChannelServiceClient client = NotificationChannelServiceClient.create()) {
+      ListNotificationChannelsPagedResponse listNotificationChannelsResponse =
+          client.listNotificationChannels(ProjectName.of(projectId));
+      for (NotificationChannel channel : listNotificationChannelsResponse.iterateAll()) {
+        notificationChannels.add(channel);
+      }
     }
     return notificationChannels;
   }
   // [END monitoring_alert_list_channels]
 
-  private void writePoliciesBackupFile(String projectId,
-                                       String filePath,
-                                       List<AlertPolicy> alertPolicies,
-                                       List<NotificationChannel> notificationChannels)
-      throws IOException {
+  private static void writePoliciesBackupFile(
+      String projectId,
+      String filePath,
+      List<AlertPolicy> alertPolicies,
+      List<NotificationChannel> notificationChannels) throws IOException {
     JsonObject backupContents = new JsonObject();
     backupContents.add("project_id", new JsonPrimitive(projectId));
     JsonArray policiesJson = new JsonArray();
@@ -292,11 +270,11 @@ public class AlertSample {
   // [END monitoring_alert_backup_policies]
 
   // [START monitoring_alert_restore_policies]
-  void restorePolicies(String projectId, String filePath) throws IOException {
+  private static void restorePolicies(String projectId, String filePath) throws IOException {
     FileReader reader = new FileReader(filePath);
     BufferedReader bufferedReader = new BufferedReader(reader);
 
-    JsonObject backupContent = getPolicyJsonContents(filePath, bufferedReader, gson);
+    JsonObject backupContent = getPolicyJsonContents(filePath, bufferedReader);
     String backupProjectId = backupContent.get("project_id").getAsString();
     boolean isSameProject = projectId.equals(backupProjectId);
 
@@ -305,16 +283,16 @@ public class AlertSample {
     Map<String, String> restoredChannelIds = restoreNotificationChannels(projectId,
         notificationChannels,
         isSameProject);
-    List<AlertPolicy> policiesToRestore = reviseRestoredPolicies(policies,
-        isSameProject,
-        restoredChannelIds);
+    List<AlertPolicy> policiesToRestore =
+        reviseRestoredPolicies(policies, isSameProject, restoredChannelIds);
 
     restoreRevisedPolicies(projectId, isSameProject, policiesToRestore);
   }
 
-  private List<AlertPolicy> reviseRestoredPolicies(AlertPolicy[] policies,
-                                                   boolean isSameProject,
-                                                   Map<String, String> restoredChannelIds) {
+  private static List<AlertPolicy> reviseRestoredPolicies(
+      AlertPolicy[] policies,
+      boolean isSameProject,
+      Map<String, String> restoredChannelIds) {
     List<AlertPolicy> newPolicies = Lists.newArrayListWithCapacity(policies.length);
     for (AlertPolicy policy : policies) {
       AlertPolicy.Builder policyBuilder = policy
@@ -342,26 +320,30 @@ public class AlertSample {
   }
 
   // [START monitoring_alert_create_policy]
-  private void restoreRevisedPolicies(String projectId,
-                                      boolean isSameProject,
-                                      List<AlertPolicy> policies) {
-    for (AlertPolicy policy : policies) {
-      if (!isSameProject) {
-        policy = alertPolicyClient.createAlertPolicy(ProjectName.of(projectId), policy);
-      } else {
-        try {
-          alertPolicyClient.updateAlertPolicy(null, policy);
-        } catch (Exception e) {
-          policy = alertPolicyClient.createAlertPolicy(ProjectName.of(projectId),
-              policy.toBuilder().clearName().build());
+  private static void restoreRevisedPolicies(
+      String projectId,
+      boolean isSameProject,
+      List<AlertPolicy> policies) throws IOException {
+    try (AlertPolicyServiceClient client = AlertPolicyServiceClient.create()) {
+      for (AlertPolicy policy : policies) {
+        if (!isSameProject) {
+          policy = client.createAlertPolicy(ProjectName.of(projectId), policy);
+        } else {
+          try {
+            client.updateAlertPolicy(null, policy);
+          } catch (Exception e) {
+            policy = client.createAlertPolicy(
+                ProjectName.of(projectId),
+                policy.toBuilder().clearName().build());
+          }
         }
+        System.out.println(String.format("Restored %s", policy.getName()));
       }
-      System.out.println(String.format("Restored %s", policy.getName()));
     }
   }
   // [END monitoring_alert_create_policy]
 
-  private List<NotificationChannel> readNotificationChannelsJson(JsonObject backupContent) {
+  private static List<NotificationChannel> readNotificationChannelsJson(JsonObject backupContent) {
     if (backupContent.has("notification_channels")) {
       NotificationChannel[] channels = gson.fromJson(backupContent.get("notification_channels"),
           NotificationChannel[].class);
@@ -372,33 +354,35 @@ public class AlertSample {
 
   // [START monitoring_alert_create_channel]
   // [START monitoring_alert_update_channel]
-  private Map<String, String> restoreNotificationChannels(String projectId,
-                                                          List<NotificationChannel> channels,
-                                                          boolean isSameProject) {
+  private static Map<String, String> restoreNotificationChannels(
+      String projectId,
+      List<NotificationChannel> channels,
+      boolean isSameProject) throws IOException {
     Map<String, String> newChannelNames = Maps.newHashMap();
-    for (NotificationChannel channel : channels) {
-      // Update channel name if project ID is different.
-      boolean channelUpdated = false;
-      if (isSameProject) {
-        try {
-          NotificationChannel updatedChannel = notificationChannelClient.updateNotificationChannel(
-              NOTIFICATION_CHANNEL_UPDATE_MASK,
-              channel);
-          newChannelNames.put(channel.getName(), updatedChannel.getName());
-          channelUpdated = true;
-        } catch (Exception e) {
-          channelUpdated = false;
+    try (NotificationChannelServiceClient client = NotificationChannelServiceClient.create()) {
+      for (NotificationChannel channel : channels) {
+        // Update channel name if project ID is different.
+        boolean channelUpdated = false;
+        if (isSameProject) {
+          try {
+            NotificationChannel updatedChannel =
+                client.updateNotificationChannel(NOTIFICATION_CHANNEL_UPDATE_MASK, channel);
+            newChannelNames.put(channel.getName(), updatedChannel.getName());
+            channelUpdated = true;
+          } catch (Exception e) {
+            channelUpdated = false;
+          }
         }
-      }
-      if (!channelUpdated) {
-        NotificationChannel newChannel = notificationChannelClient.createNotificationChannel(
-            ProjectName.of(projectId),
-            channel
-                .toBuilder()
-                .clearName()
-                .clearVerificationStatus()
-                .build());
-        newChannelNames.put(channel.getName(), newChannel.getName());
+        if (!channelUpdated) {
+          NotificationChannel newChannel = client.createNotificationChannel(
+              ProjectName.of(projectId),
+              channel
+                  .toBuilder()
+                  .clearName()
+                  .clearVerificationStatus()
+                  .build());
+          newChannelNames.put(channel.getName(), newChannel.getName());
+        }
       }
     }
     return newChannelNames;
@@ -406,7 +390,7 @@ public class AlertSample {
   // [END monitoring_alert_create_channel]
   // [END monitoring_alert_update_channel]
 
-  private JsonObject getPolicyJsonContents(String filePath, BufferedReader content, Gson gson) {
+  private static JsonObject getPolicyJsonContents(String filePath, BufferedReader content) {
     try {
       return gson.fromJson(content, JsonObject.class);
     } catch (JsonSyntaxException jse) {
@@ -416,7 +400,8 @@ public class AlertSample {
   // [END monitoring_alert_restore_policies]
 
   // [START monitoring_alert_replace_channels]
-  void replaceChannels(String projectId, String alertPolicyId, String[] channelIds) {
+  private static void replaceChannels(String projectId, String alertPolicyId, String[] channelIds)
+      throws IOException {
     AlertPolicy.Builder policyBuilder = AlertPolicy
         .newBuilder()
         .setName(AlertPolicyName.of(projectId, alertPolicyId).toString());
@@ -424,89 +409,73 @@ public class AlertSample {
       policyBuilder.addNotificationChannels(
           NotificationChannelName.of(projectId, channelId).toString());
     }
-    AlertPolicy result = alertPolicyClient.updateAlertPolicy(
-        FieldMask.newBuilder().addPaths("notification_channels").build(), policyBuilder.build());
-    System.out.println(String.format("Updated %s", result.getName()));
+    try (AlertPolicyServiceClient client = AlertPolicyServiceClient.create()) {
+      AlertPolicy result = client.updateAlertPolicy(
+          FieldMask.newBuilder().addPaths("notification_channels").build(), policyBuilder.build());
+      System.out.println(String.format("Updated %s", result.getName()));
+    }
   }
   // [END monitoring_alert_replace_channels]
 
   // [START monitoring_alert_enable_policies]
   // [START monitoring_alert_disable_policies]
-  void enablePolicies(String projectId,
-                      String filter,
-                      boolean enable) {
-    ListAlertPoliciesPagedResponse response = alertPolicyClient
-        .listAlertPolicies(ListAlertPoliciesRequest.newBuilder()
-            .setName(ProjectName.of(projectId).toString())
-            .setFilter(filter)
-            .build());
+  private static void enablePolicies(String projectId, String filter, boolean enable)
+      throws IOException {
+    try (AlertPolicyServiceClient client = AlertPolicyServiceClient.create()) {
+      ListAlertPoliciesPagedResponse response = client
+          .listAlertPolicies(ListAlertPoliciesRequest.newBuilder()
+              .setName(ProjectName.of(projectId).toString())
+              .setFilter(filter)
+              .build());
 
-    for (AlertPolicy policy : response.iterateAll()) {
-      if (policy.getEnabled().getValue() == enable) {
+      for (AlertPolicy policy : response.iterateAll()) {
+        if (policy.getEnabled().getValue() == enable) {
+          System.out.println(String.format(
+              "Policy %s is already %b.", policy.getName(), enable ? "enabled" : "disabled"));
+          continue;
+        }
+        AlertPolicy updatedPolicy = AlertPolicy
+            .newBuilder()
+            .setName(policy.getName())
+            .setEnabled(BoolValue.newBuilder().setValue(enable))
+            .build();
+        AlertPolicy result = client.updateAlertPolicy(
+            FieldMask.newBuilder().addPaths("enabled").build(), updatedPolicy);
         System.out.println(String.format(
-            "Policy %s is already %b.", policy.getName(), enable ? "enabled" : "disabled"));
-        continue;
+            "%s %s",
+            result.getDisplayName(),
+            result.getEnabled().getValue() ? "enabled" : "disabled"));
       }
-      AlertPolicy updatedPolicy = AlertPolicy
-          .newBuilder()
-          .setName(policy.getName())
-          .setEnabled(BoolValue.newBuilder().setValue(enable))
-          .build();
-      AlertPolicy result = alertPolicyClient.updateAlertPolicy(
-          FieldMask.newBuilder().addPaths("enabled").build(), updatedPolicy);
-      System.out.println(String.format(
-          "%s %s",
-          result.getDisplayName(),
-          result.getEnabled().getValue() ? "enabled" : "disabled"));
     }
-
   }
   // [END monitoring_alert_enable_policies]
   // [END monitoring_alert_disable_policies]
 
   private static void usage(String message) {
     Optional.ofNullable(message).ifPresent(System.out::println);
-    System.out.println("Usage:");
-    System.out.printf(
-        "\tjava %s \"<command>\" \"<args>\"\n"
-            + "Args:\n"
-            + "\t%s\n"
-            + "Commands:\n"
-            + "\tlist:\t\t\t\tList existing alert policies for project.\n"
-            + "\tbackup:\t\t\t\tBackup existing alert policies & notification channels to a file.\n"
-            + "\t\t\t\t\t\t\tArgs:\n"
-            + "\t\t\t\t\t\t\t\t%s\n"
-            + "\t\t\t\t\t\t\t\t%s\n"
-            + "\trestore:\t\t\tRestore alerts and notification channels from a backed-up file.\n"
-            + "\t\t\t\t\t\t\tArgs:\n"
-            + "\t\t\t\t\t\t\t\t%s\n"
-            + "\t\t\t\t\t\t\t\t%s\n"
-            + "\treplace-channels:\tReplace the notification channels for an alert.\n"
-            + "\t\t\t\t\t\t\tArgs:\n"
-            + "\t\t\t\t\t\t\t\t%s\n"
-            + "\t\t\t\t\t\t\t\t%s\n"
-            + "\tenable:\t\t\t\tEnable alert policies in project.\n"
-            + "\t\t\t\t\t\t\tArgs:\n"
-            + "\t\t\t\t\t\t\t\t%s\n"
-            + "\tdisable:\t\t\tDisable alert policies in project.\n"
-            + "\t\t\t\t\t\t\tArgs:\n"
-            + "\t\t\t\t\t\t\t\t%s\n",
-        AlertSample.class.getCanonicalName(),
-        formatArgString(PROJECT_ID_OPTION),
-        formatArgString(FILE_PATH_OPTION),
-        formatArgString(CHANNEL_ID_OPTION),
-        formatArgString(FILE_PATH_OPTION),
-        formatArgString(CHANNEL_ID_OPTION),
-        formatArgString(ALERT_ID_OPTION),
-        formatArgString(CHANNEL_ID_OPTION),
-        formatArgString(FILTER_OPTION),
-        formatArgString(FILTER_OPTION));
-  }
-
-  private static String formatArgString(Option option) {
-    return String.format("--%s (%s):\t%s",
-        option.getLongOpt(),
-        option.getOpt(),
-        option.getDescription());
+    System.out.println();
+    HelpFormatter formatter = new HelpFormatter();
+    formatter.printHelp("list", "Lists alert policies.", BASE_OPTIONS, "", true);
+    System.out.println();
+    formatter.printHelp(
+        "[backup|restore]",
+        "Backs up or restores alert policies.",
+        BACKUP_OPTIONS,
+        "",
+        true);
+    System.out.println();
+    formatter.printHelp(
+        "replace-channels",
+        "Replaces alert policy notification channels.",
+        REPLACE_CHANNELS_OPTIONS,
+        "",
+        true);
+    System.out.println();
+    formatter.printHelp(
+        "[enable|disable]",
+        "Enables/disables alert policies.",
+        ENABLE_OPTIONS,
+        "",
+        true);
   }
 }
