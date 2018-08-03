@@ -108,10 +108,14 @@ public class BigQueryImplTest {
   private static final Schema TABLE_SCHEMA = Schema.of(FIELD_SCHEMA1, FIELD_SCHEMA2);
   private static final StandardTableDefinition TABLE_DEFINITION =
       StandardTableDefinition.of(TABLE_SCHEMA);
+  private static final ModelTableDefinition MODEL_TABLE_DEFINITION =
+      ModelTableDefinition.newBuilder().build();
   private static final TableInfo TABLE_INFO = TableInfo.of(TABLE_ID, TABLE_DEFINITION);
   private static final TableInfo OTHER_TABLE_INFO = TableInfo.of(OTHER_TABLE_ID, TABLE_DEFINITION);
   private static final TableInfo TABLE_INFO_WITH_PROJECT =
       TableInfo.of(TABLE_ID_WITH_PROJECT, TABLE_DEFINITION);
+  private static final TableInfo MODEL_TABLE_INFO_WITH_PROJECT =
+      TableInfo.of(TABLE_ID_WITH_PROJECT, MODEL_TABLE_DEFINITION);
   private static final LoadJobConfiguration LOAD_JOB_CONFIGURATION =
       LoadJobConfiguration.of(TABLE_ID, "URI");
   private static final LoadJobConfiguration LOAD_JOB_CONFIGURATION_WITH_PROJECT =
@@ -613,7 +617,8 @@ public class BigQueryImplTest {
     ImmutableList<Table> tableList =
         ImmutableList.of(
             new Table(bigquery, new TableInfo.BuilderImpl(TABLE_INFO_WITH_PROJECT)),
-            new Table(bigquery, new TableInfo.BuilderImpl(OTHER_TABLE_INFO)));
+            new Table(bigquery, new TableInfo.BuilderImpl(OTHER_TABLE_INFO)),
+            new Table(bigquery, new TableInfo.BuilderImpl(MODEL_TABLE_INFO_WITH_PROJECT)));
     Tuple<String, Iterable<com.google.api.services.bigquery.model.Table>> result =
         Tuple.of(CURSOR, Iterables.transform(tableList, TableInfo.TO_PB_FUNCTION));
     EasyMock.expect(bigqueryRpcMock.listTables(PROJECT, DATASET, EMPTY_RPC_OPTIONS))
