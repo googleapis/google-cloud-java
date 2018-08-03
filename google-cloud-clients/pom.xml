@@ -155,13 +155,13 @@
     <github.global.server>github</github.global.server>
     <site.installationModule>google-cloud-clients</site.installationModule>
     <bom.version>0.56.1-alpha-SNAPSHOT</bom.version><!-- {x-version-update:google-cloud-bom:current} -->
-    <api-client.version>1.23.0</api-client.version>
-    <gax.version>1.29.0</gax.version>
+    <api-client.version>1.24.1</api-client.version>
+    <gax.version>1.30.0</gax.version>
     <google.auth.version>0.10.0</google.auth.version>
     <grpc.version>1.13.1</grpc.version>
     <nettyssl.version>2.0.7.Final</nettyssl.version>
     <guava.version>20.0</guava.version>
-    <http-client.version>1.23.0</http-client.version>
+    <http-client.version>1.24.1</http-client.version>
     <protobuf.version>3.6.0</protobuf.version>
     <opencensus.version>0.15.0</opencensus.version>
     <!-- test dependency versions -->
@@ -181,12 +181,12 @@
       <dependency>
         <groupId>com.google.apis</groupId>
         <artifactId>google-api-services-bigquery</artifactId>
-        <version>v2-rev383-1.23.0</version>
+        <version>v2-rev397-1.24.1</version>
       </dependency>
       <dependency>
         <groupId>com.google.apis</groupId>
         <artifactId>google-api-services-compute</artifactId>
-        <version>v1-rev103-1.21.0</version>
+        <version>v1-rev193-1.24.1</version>
       </dependency>
       <dependency>
         <groupId>com.google.cloud.datastore</groupId>
@@ -197,7 +197,7 @@
       <dependency>
         <groupId>com.google.apis</groupId>
         <artifactId>google-api-services-dns</artifactId>
-        <version>v1-rev66-1.23.0</version>
+        <version>v1-rev86-1.24.1</version>
       </dependency>
       <dependency>
         <groupId>commons-fileupload</groupId>
@@ -208,17 +208,17 @@
       <dependency>
         <groupId>com.google.apis</groupId>
         <artifactId>google-api-services-cloudresourcemanager</artifactId>
-        <version>v1-rev470-1.23.0</version>
+        <version>v1-rev498-1.24.1</version>
       </dependency>
       <dependency>
         <groupId>com.google.apis</groupId>
         <artifactId>google-api-services-storage</artifactId>
-        <version>v1-rev131-1.23.0</version>
+        <version>v1-rev135-1.24.1</version>
       </dependency>
       <dependency>
         <groupId>com.google.apis</groupId>
         <artifactId>google-api-services-translate</artifactId>
-        <version>v2-rev47-1.22.0</version>
+        <version>v2-rev51-1.24.1</version>
       </dependency>
       <dependency>
         <groupId>org.json</groupId>
@@ -318,7 +318,7 @@
       <dependency>
         <groupId>com.google.oauth-client</groupId>
         <artifactId>google-oauth-client</artifactId>
-        <version>1.23.0</version>
+        <version>1.24.1</version>
       </dependency>
       <dependency>
         <groupId>com.google.api-client</groupId>
@@ -764,7 +764,7 @@
                 </groups>
                 <links>
                   <link>https://developers.google.com/protocol-buffers/docs/reference/java/</link>
-                  <link>http://google.github.io/google-auth-library-java/releases/${google.auth.version}/apidocs/</link>
+                  <link>http://google.github.io/google-auth-library-java/releases/latest/apidocs/</link>
                   <link>http://googleapis.github.io/gax-java/${gax.version}/apidocs/</link>
                   <link>http://googleapis.github.io/googleapis/java/all/latest/apidocs/</link>
                 </links>
@@ -807,7 +807,7 @@
             </executions>
             <configuration>
               <links>
-                <link>http://google.github.io/google-auth-library-java/releases/${google.auth.version}/apidocs/</link>
+                <link>http://google.github.io/google-auth-library-java/releases/latest/apidocs/</link>
               </links>
             </configuration>
           </plugin>

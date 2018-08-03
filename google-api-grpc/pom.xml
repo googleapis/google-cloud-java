@@ -100,19 +100,19 @@
       <dependency>
         <groupId>io.grpc</groupId>
         <artifactId>grpc-stub</artifactId>
-        <version>1.10.1</version>
+        <version>1.13.1</version>
         <scope>compile</scope>
       </dependency>
       <dependency>
         <groupId>io.grpc</groupId>
         <artifactId>grpc-protobuf</artifactId>
-        <version>1.10.1</version>
+        <version>1.13.1</version>
         <scope>compile</scope>
       </dependency>
       <dependency>
         <groupId>com.google.api</groupId>
         <artifactId>api-common</artifactId>
-        <version>1.6.0</version>
+        <version>1.7.0</version>
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
