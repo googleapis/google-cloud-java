@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google LLC
+ * Copyright 2018 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,12 +16,9 @@
 
 package com.google.cloud.bigquery;
 
+import com.google.api.core.BetaApi;
 import com.google.api.services.bigquery.model.Table;
 import com.google.auto.value.AutoValue;
-import com.google.common.base.MoreObjects;
-import java.io.Serializable;
-import java.math.BigInteger;
-import java.util.Objects;
 import javax.annotation.Nullable;
 
 /**
@@ -31,9 +28,9 @@ import javax.annotation.Nullable;
  * @see <a href="https://cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-create#models_in_bqml_name">BigQuery ML Model</a>
  */
 @AutoValue
+@BetaApi
 public abstract class ModelTableDefinition extends TableDefinition {
 
-  //TODO(gsabhnani): Update this id??
   private static final long serialVersionUID = 2113445776046717900L;
 
   @AutoValue.Builder
