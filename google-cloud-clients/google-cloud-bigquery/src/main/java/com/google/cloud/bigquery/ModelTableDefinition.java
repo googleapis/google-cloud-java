@@ -33,19 +33,37 @@ import javax.annotation.Nullable;
 @AutoValue
 public abstract class ModelTableDefinition extends TableDefinition {
 
-  //TODO(gsabhnani): Update this id.
+  //TODO(gsabhnani): Update this id??
   private static final long serialVersionUID = 2113445776046717900L;
 
   @AutoValue.Builder
   public abstract static class Builder
       extends TableDefinition.Builder<ModelTableDefinition, Builder> {
 
-    public abstract Builder setType(Type type);
+    public abstract Builder setNumBytes(Long numBytes);
 
+    public abstract Builder setLocation(String location);
+
+    public abstract Builder setType(Type type);
 
     /** Creates a {@code ModelTableDefinition} object. */
     public abstract ModelTableDefinition build();
   }
+
+  /** Returns the size of this table in bytes, excluding any data in the streaming buffer. */
+  @Nullable
+  public abstract Long getNumBytes();
+
+  /**
+   * Returns the geographic location where the table should reside. This value is inherited from the
+   * dataset.
+   *
+   * @see <a
+   *     href="https://cloud.google.com/bigquery/docs/managing_jobs_datasets_projects#dataset-location">
+   *     Dataset Location</a>
+   */
+  @Nullable
+  public abstract String getLocation();
 
   /**
    * Returns a builder for a BigQuery ML model table definition.
@@ -59,11 +77,15 @@ public abstract class ModelTableDefinition extends TableDefinition {
 
   @Override
   Table toPb() {
-    return super.toPb();
+    Table tablePb = super.toPb();
+    tablePb.setNumBytes(getNumBytes());
+    tablePb.setLocation(getLocation());
+    return tablePb;
   }
 
   @SuppressWarnings("unchecked")
   static ModelTableDefinition fromPb(Table tablePb) {
-    return newBuilder().table(tablePb).build();
+    Builder builder = newBuilder().table(tablePb);
+    return builder.setNumBytes(tablePb.getNumBytes()).setLocation(tablePb.getLocation()).build();
   }
 }
