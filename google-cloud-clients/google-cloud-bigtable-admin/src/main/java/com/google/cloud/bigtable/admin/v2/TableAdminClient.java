@@ -21,7 +21,6 @@ import java.util.List;
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.BetaApi;
 import com.google.bigtable.admin.v2.CheckConsistencyResponse;
 import com.google.bigtable.admin.v2.DeleteTableRequest;
 import com.google.bigtable.admin.v2.DropRowRangeRequest;
@@ -40,11 +39,11 @@ import com.google.cloud.bigtable.admin.v2.models.TableAdminResponses;
 import com.google.cloud.bigtable.admin.v2.models.TableAdminResponses.ConsistencyToken;
 import com.google.cloud.bigtable.admin.v2.models.TableAdminResponses.Table;
 import com.google.cloud.bigtable.admin.v2.stub.BigtableTableAdminStub;
-import com.google.cloud.bigtable.admin.v2.stub.BigtableTableAdminStubSettings;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
+import javax.annotation.Nonnull;
 
 /**
  * Client for creating, configuring, and deleting Cloud Bigtable tables
@@ -64,95 +63,64 @@ import com.google.protobuf.Empty;
  *       .addSplit(ByteString.copyFromUtf8("b"))
  *       .addSplit(ByteString.copyFromUtf8("q"));
  *   client.createTable(createTableReq);
- *  }
- *  }</pre>
+ * }
+ * }</pre>
  *
- * <p>Note: close() needs to be called on the bigtableTableAdminClient object to clean up resources
- * such as threads. In the example above, try-with-resources is used, which automatically calls
- * close().
+ * <p>Note: close() needs to be called on the client object to clean up resources such as threads.
+ * In the example above, try-with-resources is used, which automatically calls close().
  *
- * <p>This class can be customized by passing in a custom instance of BigtableTableAdminSettings to
+ * <p>This class can be customized by passing in a custom instance of TableAdminSettings to
  * create(). For example:
  *
  * <p>To customize credentials:
  *
  * <pre>{@code
- * BigtableTableAdminSettings bigtableTableAdminSettings =
- *   BigtableTableAdminSettings.newBuilder()
+ * TableAdminSettings tableAdminSettings = TableAdminSettings.newBuilder()
+ *   .setInstanceName(InstanceName.of("[PROJECT]", "[INSTANCE]"))
  *   .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *   .build();
+ *
  * TableAdminClient client =
- *   TableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"), bigtableTableAdminSettings);
+ *   TableAdminClient.create(tableAdminSettings);
  * }</pre>
  *
  * To customize the endpoint:
  *
  * <pre>{@code
- * BigtableTableAdminSettings bigtableTableAdminSettings =
- *     BigtableTableAdminSettings.newBuilder().setEndpoint(myEndpoint).build();
- * TableAdminClient client =
- *   TableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"), bigtableTableAdminSettings);
+ * TableAdminSettings tableAdminSettings = TableAdminSettings.newBuilder()
+ *   .setInstanceName(InstanceName.of("[PROJECT]", "[INSTANCE]"))
+ *   .setEndpoint(myEndpoint).build();
+ *
+ * TableAdminClient client = TableAdminClient.create(tableAdminSettings);
  * }</pre>
  */
-@BetaApi
 public class TableAdminClient implements AutoCloseable {
   private final BigtableTableAdminStub stub;
   private final InstanceName instanceName;
 
-  /**
-   * Constructs an instance of TableAdminClient with the given instanceName
-   *
-   * @param instanceName
-   * @throws IOException
-   */
-  public static TableAdminClient create(InstanceName instanceName) throws IOException {
-    return new TableAdminClient(instanceName, BigtableTableAdminSettings.newBuilder().build());
+  /** Constructs an instance of TableAdminClient with the given instanceName. */
+  public static TableAdminClient create(@Nonnull InstanceName instanceName) throws IOException {
+    return create(TableAdminSettings.newBuilder().setInstanceName(instanceName).build());
   }
 
-  /**
-   * Constructs an instance of TableAdminClient with the given instanceName and
-   * bigtableTableAdminSettings
-   *
-   * @param instanceName
-   * @param adminSettings
-   * @throws IOException
-   */
-  public static TableAdminClient create(
-      InstanceName instanceName, BigtableTableAdminSettings adminSettings) throws IOException {
-    return new TableAdminClient(instanceName, adminSettings);
+  /** Constructs an instance of TableAdminClient with the given settings. */
+  public static TableAdminClient create(@Nonnull TableAdminSettings settings) throws IOException {
+    return create(settings.getInstanceName(), settings.getStubSettings().createStub());
   }
 
-  /**
-   * Constructs an instance of TableAdminClient with the given instanceName and
-   * bigtableTableAdminStub
-   *
-   * @param instanceName
-   * @param stub
-   * @throws IOException
-   */
-  public static TableAdminClient create(InstanceName instanceName, BigtableTableAdminStub stub)
-      throws IOException {
+  /** Constructs an instance of TableAdminClient with the given instanceName and stub. */
+  public static TableAdminClient create(@Nonnull InstanceName instanceName, @Nonnull BigtableTableAdminStub stub) {
     return new TableAdminClient(instanceName, stub);
   }
 
-  private TableAdminClient(InstanceName instanceName, BigtableTableAdminSettings adminSettings)
-      throws IOException {
-    this(
-        instanceName,
-        ((BigtableTableAdminStubSettings) adminSettings.getStubSettings()).createStub());
-  }
-
-  private TableAdminClient(InstanceName instanceName, BigtableTableAdminStub stub)
-      throws IOException {
+  private TableAdminClient(@Nonnull InstanceName instanceName, @Nonnull BigtableTableAdminStub stub) {
     Preconditions.checkNotNull(instanceName);
     Preconditions.checkNotNull(stub);
     this.instanceName = instanceName;
     this.stub = stub;
   }
 
-  /**
-   * Gets the instanceName this client is associated to
-   */
+  /** Gets the instanceName this client is associated with. */
   public InstanceName getInstanceName() {
     return instanceName;
   }
@@ -188,9 +156,9 @@ public class TableAdminClient implements AutoCloseable {
 
   /**
    * Creates a new table with the specified configuration asynchronously
-   * 
+   *
    * <p>Sample code:
-   * 
+   *
    * <pre>{@code
    *  try(TableAdminClient client =  TableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
    *    CreateTable createTableReq =
@@ -343,7 +311,7 @@ public class TableAdminClient implements AutoCloseable {
    * Gets the Table by tableId
    *
    * <p>Sample code:
-   * 
+   *
    * <pre>{@code
    * try(TableAdminClient client =  TableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
    *   client.getTableAsync("tableId");
