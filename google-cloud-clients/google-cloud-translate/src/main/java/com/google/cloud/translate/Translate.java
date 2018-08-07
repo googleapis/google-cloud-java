@@ -116,15 +116,35 @@ public interface Translate extends Service<TranslateOptions> {
    *
    * <p>Example of listing supported languages, localized according to
    * {@link TranslateOptions#getTargetLanguage()}:
-   * <pre> {@code
+   * <!--SNIPPET translate_list_codes-->
+   * <pre>{@code
+   * // TODO(developer): Uncomment these lines.
+   * // import com.google.cloud.translate.*;
+   * // Translate translate = TranslateOptions.getDefaultInstance().getService();
+   *
    * List<Language> languages = translate.listSupportedLanguages();
+   *
+   * for (Language language : languages) {
+   *   System.out.printf("Name: %s, Code: %s\n", language.getName(), language.getCode());
+   * }
    * }</pre>
+   * <!--SNIPPET translate_list_codes-->
    *
    * <p>Example of listing supported languages, localized according to a provided language:
-   * <pre> {@code
+   * <!--SNIPPET translate_list_language_names-->
+   * <pre>{@code
+   * // TODO(developer): Uncomment these lines.
+   * // import com.google.cloud.translate.*;
+   * // Translate translate = TranslateOptions.getDefaultInstance().getService();
+   *
    * List<Language> languages = translate.listSupportedLanguages(
-   *     LanguageListOption.targetLanguage("es"));
+   *         Translate.LanguageListOption.targetLanguage("es"));
+   *
+   * for (Language language : languages) {
+   *   System.out.printf("Name: %s, Code: %s\n", language.getName(), language.getCode());
+   * }
    * }</pre>
+   * <!--SNIPPET translate_list_language_names-->
    *
    */
   List<Language> listSupportedLanguages(LanguageListOption... options);
@@ -133,13 +153,24 @@ public interface Translate extends Service<TranslateOptions> {
    * Detects the language of the provided texts.
    *
    * <p>Example of detecting the language of some texts:
-   * <pre> {@code
+   * <!--SNIPPET translate_detect_language-->
+   * <pre>{@code
+   * // TODO(developer): Uncomment these lines.
+   * // import com.google.cloud.translate.*;
+   * // Translate translate = TranslateOptions.getDefaultInstance().getService();
+   *
    * List<String> texts = new LinkedList<>();
    * texts.add("Hello, World!");
    * texts.add("¡Hola Mundo!");
    * List<Detection> detections = translate.detect(texts);
-   * }</pre>
    *
+   * System.out.println("Language(s) detected:");
+   * for (Detection detection : detections) {
+   *   System.out.printf("\t%s\n", detection);
+   * }
+   * }</pre>
+   * <!--SNIPPET translate_detect_language-->
+
    * @param texts the texts for which language should be detected
    * @return a list of objects containing information on the language detection, one for each
    *     provided text, in order
@@ -150,9 +181,11 @@ public interface Translate extends Service<TranslateOptions> {
    * Detects the language of the provided texts.
    *
    * <p>Example of detecting the language of some texts:
-   * <pre> {@code
+   * <!--SNIPPET translate_detect_language_array-->
+   * <pre>{@code
    * List<Detection> detections = translate.detect("Hello, World!", "¡Hola Mundo!");
    * }</pre>
+   * <!--SNIPPET translate_detect_language_array-->
    *
    * @param texts the texts for which language should be detected
    * @return a list of objects containing information on the language detection, one for each
@@ -165,9 +198,11 @@ public interface Translate extends Service<TranslateOptions> {
    * language detection.
    *
    * <p>Example of detecting the language of a text:
-   * <pre> {@code
+   * <!--SNIPPET translate_detect_language_string-->
+   * <pre>{@code
    * Detection detection = translate.detect("Hello, World!");
    * }</pre>
+   * <!--SNIPPET translate_detect_language_string-->
    *
    */
   Detection detect(String text);
@@ -176,20 +211,26 @@ public interface Translate extends Service<TranslateOptions> {
    * Translates the provided texts.
    *
    * <p>Example of translating some texts:
-   * <pre> {@code
+   * <!--SNIPPET translateTexts-->
+   * <pre>{@code
    * List<String> texts = new LinkedList<>();
    * texts.add("Hello, World!");
    * texts.add("¡Hola Mundo!");
    * List<Translation> translations = translate.translate(texts);
    * }</pre>
+   * <!--SNIPPET translateTexts-->
    *
    * <p>Example of translating some texts, specifying source and target language:
-   * <pre> {@code
+   * <!--SNIPPET translateTextsWithOptions-->
+   * <pre>{@code
    * List<String> texts = new LinkedList<>();
    * texts.add("¡Hola Mundo!");
-   * List<Translation> translations = translate.translate(texts,
-   *     TranslateOption.sourceLanguage("es"), TranslateOption.targetLanguage("de"));
+   * List<Translation> translations = translate.translate(
+   *     texts,
+   *     Translate.TranslateOption.sourceLanguage("es"),
+   *     Translate.TranslateOption.targetLanguage("de"));
    * }</pre>
+   * <!--SNIPPET translateTextsWithOptions-->
    *
    * @param texts the texts to translate
    * @return a list of objects containing information on the language translation, one for each
@@ -200,18 +241,35 @@ public interface Translate extends Service<TranslateOptions> {
   List<Translation> translate(List<String> texts, TranslateOption... options);
 
   /**
-   * Translates the provided texts.
+   * Translates the provided text.
    *
    * <p>Example of translating a text:
-   * <pre> {@code
-   * Translation translation = translate.translate("¡Hola Mundo!");
-   * }</pre>
+   * <!--SNIPPET translate_translate_text-->
+   * <pre>{@code
+   * // TODO(developer): Uncomment these lines.
+   * // import com.google.cloud.translate.*;
+   * // Translate translate = TranslateOptions.getDefaultInstance().getService();
    *
-   * <p>Example of translating a text, specifying source and target language:
-   * <pre> {@code
-   * Translation translation = translate.translate("¡Hola Mundo!",
-   *     TranslateOption.sourceLanguage("es"), TranslateOption.targetLanguage("de"));
+   * Translation translation = translate.translate("¡Hola Mundo!");
+   * System.out.printf("Translated Text:\n\t%s\n", translation.getTranslatedText());
    * }</pre>
+   * <!--SNIPPET translate_translate_text-->
+   *
+   * <p>Example of translating a text, specifying source and target language and premium model:
+   * <!--SNIPPET translate_text_with_model-->
+   * <pre>{@code
+   * Translation translation = translate.translate(
+   *     "Hola Mundo!",
+   *     Translate.TranslateOption.sourceLanguage("es"),
+   *     Translate.TranslateOption.targetLanguage("de"),
+   *     // Use "base" for standard edition, "nmt" for the premium model.
+   *     Translate.TranslateOption.model("nmt"));
+   *
+   * System.out.printf(
+   *     "TranslatedText:\nText: %s\n",
+   *     translation.getTranslatedText());
+   * }</pre>
+   * <!--SNIPPET translate_text_with_model-->
    *
    * @param text the text to translate
    * @return an object containing information on the language translation
