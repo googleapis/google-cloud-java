@@ -19,38 +19,39 @@
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *
- * <p>=========================== BigtableInstanceAdminClient ===========================
+ * <p>=============================== BaseBigtableInstanceAdminClient
+ * ===============================
  *
  * <p>Service Description: Service for creating, configuring, and deleting Cloud Bigtable Instances
  * and Clusters. Provides access to the Instance and Cluster schemas only, not the tables' metadata
  * or data stored in those tables.
  *
- * <p>Sample for BigtableInstanceAdminClient:
+ * <p>Sample for BaseBigtableInstanceAdminClient:
  *
  * <pre>
  * <code>
- * try (BigtableInstanceAdminClient bigtableInstanceAdminClient = BigtableInstanceAdminClient.create()) {
+ * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
  *   InstanceName name = InstanceName.of("[PROJECT]", "[INSTANCE]");
- *   Instance response = bigtableInstanceAdminClient.getInstance(name);
+ *   Instance response = baseBigtableInstanceAdminClient.getInstance(name);
  * }
  * </code>
  * </pre>
  *
- * ======================== BigtableTableAdminClient ========================
+ * ============================ BaseBigtableTableAdminClient ============================
  *
  * <p>Service Description: Service for creating, configuring, and deleting Cloud Bigtable tables.
  *
  * <p>Provides access to the table schemas only, not the data stored within the tables.
  *
- * <p>Sample for BigtableTableAdminClient:
+ * <p>Sample for BaseBigtableTableAdminClient:
  *
  * <pre>
  * <code>
- * try (BigtableTableAdminClient bigtableTableAdminClient = BigtableTableAdminClient.create()) {
+ * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient = BaseBigtableTableAdminClient.create()) {
  *   InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
  *   String tableId = "";
  *   Table table = Table.newBuilder().build();
- *   Table response = bigtableTableAdminClient.createTable(parent, tableId, table);
+ *   Table response = baseBigtableTableAdminClient.createTable(parent, tableId, table);
  * }
  * </code>
  * </pre>

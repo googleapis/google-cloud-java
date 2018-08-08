@@ -15,8 +15,8 @@
  */
 package com.google.cloud.bigtable.admin.v2.stub;
 
-import static com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient.ListSnapshotsPagedResponse;
-import static com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient.ListTablesPagedResponse;
+import static com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListSnapshotsPagedResponse;
+import static com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListTablesPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
@@ -94,11 +94,11 @@ import org.threeten.bp.Duration;
  *
  * <pre>
  * <code>
- * BigtableTableAdminStubSettings.Builder bigtableTableAdminSettingsBuilder =
+ * BigtableTableAdminStubSettings.Builder baseBigtableTableAdminSettingsBuilder =
  *     BigtableTableAdminStubSettings.newBuilder();
- * bigtableTableAdminSettingsBuilder.createTableSettings().getRetrySettings().toBuilder()
+ * baseBigtableTableAdminSettingsBuilder.createTableSettings().getRetrySettings().toBuilder()
  *     .setTotalTimeout(Duration.ofSeconds(30));
- * BigtableTableAdminStubSettings bigtableTableAdminSettings = bigtableTableAdminSettingsBuilder.build();
+ * BigtableTableAdminStubSettings baseBigtableTableAdminSettings = baseBigtableTableAdminSettingsBuilder.build();
  * </code>
  * </pre>
  */

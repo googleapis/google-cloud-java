@@ -15,7 +15,7 @@
  */
 package com.google.cloud.bigtable.admin.v2.stub;
 
-import static com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClient.ListAppProfilesPagedResponse;
+import static com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient.ListAppProfilesPagedResponse;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
