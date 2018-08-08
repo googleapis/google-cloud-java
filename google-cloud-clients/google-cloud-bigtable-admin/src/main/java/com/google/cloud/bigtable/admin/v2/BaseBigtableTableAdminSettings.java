@@ -15,8 +15,8 @@
  */
 package com.google.cloud.bigtable.admin.v2;
 
-import static com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient.ListSnapshotsPagedResponse;
-import static com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient.ListTablesPagedResponse;
+import static com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListSnapshotsPagedResponse;
+import static com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListTablesPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
@@ -60,7 +60,7 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 /**
- * Settings class to configure an instance of {@link BigtableTableAdminClient}.
+ * Settings class to configure an instance of {@link BaseBigtableTableAdminClient}.
  *
  * <p>The default instance has everything set to sensible defaults:
  *
@@ -76,17 +76,17 @@ import javax.annotation.Generated;
  *
  * <pre>
  * <code>
- * BigtableTableAdminSettings.Builder bigtableTableAdminSettingsBuilder =
- *     BigtableTableAdminSettings.newBuilder();
- * bigtableTableAdminSettingsBuilder.createTableSettings().getRetrySettings().toBuilder()
+ * BaseBigtableTableAdminSettings.Builder baseBigtableTableAdminSettingsBuilder =
+ *     BaseBigtableTableAdminSettings.newBuilder();
+ * baseBigtableTableAdminSettingsBuilder.createTableSettings().getRetrySettings().toBuilder()
  *     .setTotalTimeout(Duration.ofSeconds(30));
- * BigtableTableAdminSettings bigtableTableAdminSettings = bigtableTableAdminSettingsBuilder.build();
+ * BaseBigtableTableAdminSettings baseBigtableTableAdminSettings = baseBigtableTableAdminSettingsBuilder.build();
  * </code>
  * </pre>
  */
 @Generated("by gapic-generator")
 @BetaApi
-public class BigtableTableAdminSettings extends ClientSettings<BigtableTableAdminSettings> {
+public class BaseBigtableTableAdminSettings extends ClientSettings<BaseBigtableTableAdminSettings> {
   /** Returns the object with the settings used for calls to createTable. */
   public UnaryCallSettings<CreateTableRequest, Table> createTableSettings() {
     return ((BigtableTableAdminStubSettings) getStubSettings()).createTableSettings();
@@ -175,9 +175,9 @@ public class BigtableTableAdminSettings extends ClientSettings<BigtableTableAdmi
     return ((BigtableTableAdminStubSettings) getStubSettings()).deleteSnapshotSettings();
   }
 
-  public static final BigtableTableAdminSettings create(BigtableTableAdminStubSettings stub)
+  public static final BaseBigtableTableAdminSettings create(BigtableTableAdminStubSettings stub)
       throws IOException {
-    return new BigtableTableAdminSettings.Builder(stub.toBuilder()).build();
+    return new BaseBigtableTableAdminSettings.Builder(stub.toBuilder()).build();
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -229,12 +229,13 @@ public class BigtableTableAdminSettings extends ClientSettings<BigtableTableAdmi
     return new Builder(this);
   }
 
-  protected BigtableTableAdminSettings(Builder settingsBuilder) throws IOException {
+  protected BaseBigtableTableAdminSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
   }
 
-  /** Builder for BigtableTableAdminSettings. */
-  public static class Builder extends ClientSettings.Builder<BigtableTableAdminSettings, Builder> {
+  /** Builder for BaseBigtableTableAdminSettings. */
+  public static class Builder
+      extends ClientSettings.Builder<BaseBigtableTableAdminSettings, Builder> {
     protected Builder() throws IOException {
       this((ClientContext) null);
     }
@@ -247,7 +248,7 @@ public class BigtableTableAdminSettings extends ClientSettings<BigtableTableAdmi
       return new Builder(BigtableTableAdminStubSettings.newBuilder());
     }
 
-    protected Builder(BigtableTableAdminSettings settings) {
+    protected Builder(BaseBigtableTableAdminSettings settings) {
       super(settings.getStubSettings().toBuilder());
     }
 
@@ -363,8 +364,8 @@ public class BigtableTableAdminSettings extends ClientSettings<BigtableTableAdmi
     }
 
     @Override
-    public BigtableTableAdminSettings build() throws IOException {
-      return new BigtableTableAdminSettings(this);
+    public BaseBigtableTableAdminSettings build() throws IOException {
+      return new BaseBigtableTableAdminSettings(this);
     }
   }
 }

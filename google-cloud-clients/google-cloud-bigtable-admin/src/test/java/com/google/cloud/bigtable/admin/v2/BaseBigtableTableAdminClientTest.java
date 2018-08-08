@@ -15,8 +15,8 @@
  */
 package com.google.cloud.bigtable.admin.v2;
 
-import static com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient.ListSnapshotsPagedResponse;
-import static com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient.ListTablesPagedResponse;
+import static com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListSnapshotsPagedResponse;
+import static com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListTablesPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
@@ -69,11 +69,11 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 @javax.annotation.Generated("by GAPIC")
-public class BigtableTableAdminClientTest {
+public class BaseBigtableTableAdminClientTest {
   private static MockBigtableInstanceAdmin mockBigtableInstanceAdmin;
   private static MockBigtableTableAdmin mockBigtableTableAdmin;
   private static MockServiceHelper serviceHelper;
-  private BigtableTableAdminClient client;
+  private BaseBigtableTableAdminClient client;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass
@@ -96,12 +96,12 @@ public class BigtableTableAdminClientTest {
   public void setUp() throws IOException {
     serviceHelper.reset();
     channelProvider = serviceHelper.createChannelProvider();
-    BigtableTableAdminSettings settings =
-        BigtableTableAdminSettings.newBuilder()
+    BaseBigtableTableAdminSettings settings =
+        BaseBigtableTableAdminSettings.newBuilder()
             .setTransportChannelProvider(channelProvider)
             .setCredentialsProvider(NoCredentialsProvider.create())
             .build();
-    client = BigtableTableAdminClient.create(settings);
+    client = BaseBigtableTableAdminClient.create(settings);
   }
 
   @After
