@@ -24,14 +24,14 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 /**
- * Settings class to configure an instance of {@link TableAdminClient}.
+ * Settings class to configure an instance of {@link BigtableTableAdminClient}.
  *
  * <p>It must be configured with an {@link InstanceName} and be used to change default RPC settings.
  *
  * <p>Example usage:
  *
  * <pre>{@code
- * TableAdminSettings.Builder tableAdminSettingsBuilder = TableAdminSettings.newBuilder()
+ * BigtableTableAdminSettings.Builder tableAdminSettingsBuilder = BigtableTableAdminSettings.newBuilder()
  *   .setInstanceName(InstanceName.of("my-project", "my-instance");
  *
  * tableAdminSettingsBuilder.stubSettings().createTableSettings()
@@ -43,11 +43,11 @@ import javax.annotation.Nullable;
  * BigtableTableAdminSettings tableAdminSettings = tableAdminSettingsBuilder.build();
  * }</pre>
  */
-public final class TableAdminSettings {
+public final class BigtableTableAdminSettings {
   private final InstanceName instanceName;
   private final BigtableTableAdminStubSettings stubSettings;
 
-  private TableAdminSettings(Builder builder) throws IOException {
+  private BigtableTableAdminSettings(Builder builder) throws IOException {
     this.instanceName = Preconditions.checkNotNull(builder.instanceName, "InstanceName must be set");
     this.stubSettings = Verify.verifyNotNull(builder.stubSettings, "stubSettings should never be null").build();
   }
@@ -73,7 +73,7 @@ public final class TableAdminSettings {
     return new Builder();
   }
 
-  /** Builder for TableAdminSettings. */
+  /** Builder for BigtableTableAdminSettings. */
   public static final class Builder {
     @Nullable
     private InstanceName instanceName;
@@ -83,7 +83,7 @@ public final class TableAdminSettings {
       stubSettings = BigtableTableAdminStubSettings.newBuilder();
     }
 
-    private Builder(TableAdminSettings settings) {
+    private Builder(BigtableTableAdminSettings settings) {
       this.instanceName = settings.instanceName;
       this.stubSettings = settings.stubSettings.toBuilder();
     }
@@ -112,8 +112,8 @@ public final class TableAdminSettings {
     }
 
     /** Builds an instance of the settings. */
-    public TableAdminSettings build() throws IOException {
-      return new TableAdminSettings(this);
+    public BigtableTableAdminSettings build() throws IOException {
+      return new BigtableTableAdminSettings(this);
     }
   }
 }

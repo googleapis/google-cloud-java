@@ -55,7 +55,7 @@ import javax.annotation.Nonnull;
  * <p>Sample code to get started:
  *
  * <pre>{@code
- * try(TableAdminClient client =  TableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
+ * try(BigtableTableAdminClient client =  BigtableTableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
  *   CreateTable createTableReq =
  *     TableAdminRequests.createTable("tableId")
  *       .addFamily("cf1")
@@ -69,51 +69,51 @@ import javax.annotation.Nonnull;
  * <p>Note: close() needs to be called on the client object to clean up resources such as threads.
  * In the example above, try-with-resources is used, which automatically calls close().
  *
- * <p>This class can be customized by passing in a custom instance of TableAdminSettings to
+ * <p>This class can be customized by passing in a custom instance of BigtableTableAdminSettings to
  * create(). For example:
  *
  * <p>To customize credentials:
  *
  * <pre>{@code
- * TableAdminSettings tableAdminSettings = TableAdminSettings.newBuilder()
+ * BigtableTableAdminSettings tableAdminSettings = BigtableTableAdminSettings.newBuilder()
  *   .setInstanceName(InstanceName.of("[PROJECT]", "[INSTANCE]"))
  *   .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *   .build();
  *
- * TableAdminClient client =
- *   TableAdminClient.create(tableAdminSettings);
+ * BigtableTableAdminClient client =
+ *   BigtableTableAdminClient.create(tableAdminSettings);
  * }</pre>
  *
  * To customize the endpoint:
  *
  * <pre>{@code
- * TableAdminSettings tableAdminSettings = TableAdminSettings.newBuilder()
+ * BigtableTableAdminSettings tableAdminSettings = BigtableTableAdminSettings.newBuilder()
  *   .setInstanceName(InstanceName.of("[PROJECT]", "[INSTANCE]"))
  *   .setEndpoint(myEndpoint).build();
  *
- * TableAdminClient client = TableAdminClient.create(tableAdminSettings);
+ * BigtableTableAdminClient client = BigtableTableAdminClient.create(tableAdminSettings);
  * }</pre>
  */
-public class TableAdminClient implements AutoCloseable {
+public class BigtableTableAdminClient implements AutoCloseable {
   private final BigtableTableAdminStub stub;
   private final InstanceName instanceName;
 
-  /** Constructs an instance of TableAdminClient with the given instanceName. */
-  public static TableAdminClient create(@Nonnull InstanceName instanceName) throws IOException {
-    return create(TableAdminSettings.newBuilder().setInstanceName(instanceName).build());
+  /** Constructs an instance of BigtableTableAdminClient with the given instanceName. */
+  public static BigtableTableAdminClient create(@Nonnull InstanceName instanceName) throws IOException {
+    return create(BigtableTableAdminSettings.newBuilder().setInstanceName(instanceName).build());
   }
 
-  /** Constructs an instance of TableAdminClient with the given settings. */
-  public static TableAdminClient create(@Nonnull TableAdminSettings settings) throws IOException {
+  /** Constructs an instance of BigtableTableAdminClient with the given settings. */
+  public static BigtableTableAdminClient create(@Nonnull BigtableTableAdminSettings settings) throws IOException {
     return create(settings.getInstanceName(), settings.getStubSettings().createStub());
   }
 
-  /** Constructs an instance of TableAdminClient with the given instanceName and stub. */
-  public static TableAdminClient create(@Nonnull InstanceName instanceName, @Nonnull BigtableTableAdminStub stub) {
-    return new TableAdminClient(instanceName, stub);
+  /** Constructs an instance of BigtableTableAdminClient with the given instanceName and stub. */
+  public static BigtableTableAdminClient create(@Nonnull InstanceName instanceName, @Nonnull BigtableTableAdminStub stub) {
+    return new BigtableTableAdminClient(instanceName, stub);
   }
 
-  private TableAdminClient(@Nonnull InstanceName instanceName, @Nonnull BigtableTableAdminStub stub) {
+  private BigtableTableAdminClient(@Nonnull InstanceName instanceName, @Nonnull BigtableTableAdminStub stub) {
     Preconditions.checkNotNull(instanceName);
     Preconditions.checkNotNull(stub);
     this.instanceName = instanceName;
@@ -136,7 +136,7 @@ public class TableAdminClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre>{@code
-   * try(TableAdminClient client =  TableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
+   * try(BigtableTableAdminClient client =  BigtableTableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
    *   CreateTable createTableReq =
    *     TableAdminRequests.createTable("tableId")
    *       .addFamily("cf2", GCRULES.maxVersions(10))
@@ -160,7 +160,7 @@ public class TableAdminClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre>{@code
-   *  try(TableAdminClient client =  TableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
+   *  try(BigtableTableAdminClient client =  BigtableTableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
    *    CreateTable createTableReq =
    *      TableAdminRequests.createTable("tableId")
    *        .addFamily("cf2", GCRULES.maxVersions(10))
@@ -183,7 +183,7 @@ public class TableAdminClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre>{@code
-   * try(TableAdminClient client =  TableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
+   * try(BigtableTableAdminClient client =  BigtableTableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
    *   ModifyFamilies modifyFamiliesReq = TableAdminRequests.modifyFamilies(tableId)
    *     .addFamily("mf1")
    *     .addFamily(
@@ -222,7 +222,7 @@ public class TableAdminClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre>{@code
-   * try(TableAdminClient client =  TableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
+   * try(BigtableTableAdminClient client =  BigtableTableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
    *   ModifyFamilies modifyFamiliesReq = TableAdminRequests.modifyFamilies(tableId)
    *     .addFamily("mf1")
    *     .addFamily(
@@ -259,7 +259,7 @@ public class TableAdminClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre>{@code
-   * try(TableAdminClient client =  TableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
+   * try(BigtableTableAdminClient client =  BigtableTableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
    *   client.deleteTable("tableId");
    * }
    * }</pre>
@@ -276,7 +276,7 @@ public class TableAdminClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre>{@code
-   * try(TableAdminClient client =  TableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
+   * try(BigtableTableAdminClient client =  BigtableTableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
    *   client.deleteTableAsync("tableId");
    * }
    * }</pre>
@@ -294,7 +294,7 @@ public class TableAdminClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre>{@code
-   * try(TableAdminClient client =  TableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
+   * try(BigtableTableAdminClient client =  BigtableTableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
    *   client.getTable("tableId");
    * }
    * }</pre>
@@ -313,7 +313,7 @@ public class TableAdminClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre>{@code
-   * try(TableAdminClient client =  TableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
+   * try(BigtableTableAdminClient client =  BigtableTableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
    *   client.getTableAsync("tableId");
    * }
    * }</pre>
@@ -331,7 +331,7 @@ public class TableAdminClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre>{@code
-   * try(TableAdminClient client =  TableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
+   * try(BigtableTableAdminClient client =  BigtableTableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
    *   client.listTables();
    * }
    * }</pre>
@@ -347,7 +347,7 @@ public class TableAdminClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre>{@code
-   * try(TableAdminClient client =  TableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
+   * try(BigtableTableAdminClient client =  BigtableTableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
    *   client.listTablesAsync();
    * }
    * }</pre>
@@ -372,7 +372,7 @@ public class TableAdminClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre>{@code
-   * try(TableAdminClient client =  TableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
+   * try(BigtableTableAdminClient client =  BigtableTableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
    *   client.dropRowRange("tableId");
    * }
    * }</pre>
@@ -390,7 +390,7 @@ public class TableAdminClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre>{@code
-   * try(TableAdminClient client =  TableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
+   * try(BigtableTableAdminClient client =  BigtableTableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
    *   client.dropRowRangeAsync("tableId");
    * }
    * }</pre>
@@ -408,7 +408,7 @@ public class TableAdminClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre>{@code
-   * try(TableAdminClient client =  TableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
+   * try(BigtableTableAdminClient client =  BigtableTableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
    *   client.dropRowRange("tableId");
    * }
    * }</pre>
@@ -426,7 +426,7 @@ public class TableAdminClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre>{@code
-   * try(TableAdminClient client =  TableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
+   * try(BigtableTableAdminClient client =  BigtableTableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
    *   client.dropRowRangeAsync("tableId");
    * }
    * }</pre>
@@ -447,7 +447,7 @@ public class TableAdminClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre>{@code
-   * try(TableAdminClient client =  TableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
+   * try(BigtableTableAdminClient client =  BigtableTableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
    *   client.dropAllRows("tableId");
    * }
    * }</pre>
@@ -464,7 +464,7 @@ public class TableAdminClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre>{@code
-   * try(TableAdminClient client =  TableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
+   * try(BigtableTableAdminClient client =  BigtableTableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
    *   client.dropAllRowsAsync("tableId");
    * }
    * }</pre>
@@ -485,7 +485,7 @@ public class TableAdminClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre>{@code
-   * try(TableAdminClient client =  TableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
+   * try(BigtableTableAdminClient client =  BigtableTableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
    *   ConsistencyToken consistencyToken = client.generateConsistencyToken("tableId");
    * }
    * }</pre>
@@ -506,7 +506,7 @@ public class TableAdminClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre>{@code
-   * try(TableAdminClient client =  TableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
+   * try(BigtableTableAdminClient client =  BigtableTableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
    *   ConsistencyToken consistencyToken = client.generateConsistencyToken("tableId");
    * }
    * }</pre>
@@ -535,7 +535,7 @@ public class TableAdminClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre>{@code
-   * try(TableAdminClient client =  TableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
+   * try(BigtableTableAdminClient client =  BigtableTableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
    *   boolean consistent = client.isConsistent("tableId", token);
    * }
    * }</pre>
@@ -555,7 +555,7 @@ public class TableAdminClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre>{@code
-   * try(TableAdminClient client =  TableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
+   * try(BigtableTableAdminClient client =  BigtableTableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
    *   boolean consistent = client.isConsistentAsync("tableId", token);
    * }
    * }</pre>

@@ -52,8 +52,8 @@ import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
 
 @RunWith(MockitoJUnitRunner.class)
-public class TableAdminClientTest {
-  private TableAdminClient adminClient;
+public class BigtableTableAdminClientTest {
+  private BigtableTableAdminClient adminClient;
   @Mock private BigtableTableAdminStub mockStub;
 
   @Mock private UnaryCallable<CreateTableRequest, Table> mockCreateTableCallable;
@@ -73,7 +73,8 @@ public class TableAdminClientTest {
 
   @Before
   public void setUp() throws Exception {
-    adminClient = TableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"), mockStub);
+    adminClient = BigtableTableAdminClient
+        .create(InstanceName.of("[PROJECT]", "[INSTANCE]"), mockStub);
 
     Mockito.when(mockStub.createTableCallable()).thenReturn(mockCreateTableCallable);
     Mockito.when(mockStub.modifyColumnFamiliesCallable()).thenReturn(mockModifyTableCallable);
@@ -293,12 +294,12 @@ public class TableAdminClientTest {
             .addTables(Table.newBuilder().setName("projects/p/instances/i/tables/t2"))
             .build();
 
-    List<TableName> tableNames = TableAdminClient.convertToTableNames(listTablesResponse);
+    List<TableName> tableNames = BigtableTableAdminClient.convertToTableNames(listTablesResponse);
     assertEquals(2, tableNames.size());
     assertEquals("projects/p/instances/i/tables/t1", tableNames.get(0).toString());
     assertEquals("projects/p/instances/i/tables/t2", tableNames.get(1).toString());
 
     listTablesResponse = ListTablesResponse.newBuilder().build();
-    assertEquals(0, TableAdminClient.convertToTableNames(listTablesResponse).size());
+    assertEquals(0, BigtableTableAdminClient.convertToTableNames(listTablesResponse).size());
   }
 }
