@@ -22,13 +22,13 @@ import com.google.bigtable.admin.v2.InstanceName;
 import java.io.IOException;
 import org.junit.Test;
 
-public class TableAdminSettingsTest {
+public class BigtableTableAdminSettingsTest {
 
   @Test
   public void testInstanceName() throws IOException {
     InstanceName instanceName = InstanceName.of("my-project", "my-instance");
 
-    TableAdminSettings.Builder builder = TableAdminSettings.newBuilder()
+    BigtableTableAdminSettings.Builder builder = BigtableTableAdminSettings.newBuilder()
         .setInstanceName(instanceName);
 
     assertThat(builder.getInstanceName()).isEqualTo(instanceName);
@@ -41,7 +41,7 @@ public class TableAdminSettingsTest {
     Exception actualException = null;
 
     try {
-      TableAdminSettings.newBuilder().build();
+      BigtableTableAdminSettings.newBuilder().build();
     } catch (Exception e) {
       actualException = e;
     }
@@ -53,7 +53,7 @@ public class TableAdminSettingsTest {
   public void testStubSettings() throws IOException {
     InstanceName instanceName = InstanceName.of("my-project", "my-instance");
 
-    TableAdminSettings.Builder builder = TableAdminSettings.newBuilder()
+    BigtableTableAdminSettings.Builder builder = BigtableTableAdminSettings.newBuilder()
         .setInstanceName(instanceName);
 
     builder.stubSettings().createTableSettings()

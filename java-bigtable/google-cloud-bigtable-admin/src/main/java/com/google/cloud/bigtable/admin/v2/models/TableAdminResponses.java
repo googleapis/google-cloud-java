@@ -29,7 +29,7 @@ import com.google.bigtable.admin.v2.GcRule.RuleCase;
 import com.google.bigtable.admin.v2.GenerateConsistencyTokenResponse;
 import com.google.bigtable.admin.v2.Table.ClusterState.ReplicationState;
 import com.google.bigtable.admin.v2.TableName;
-import com.google.cloud.bigtable.admin.v2.TableAdminClient;
+import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient;
 import com.google.cloud.bigtable.admin.v2.models.GCRules.GCRule;
 import com.google.cloud.bigtable.admin.v2.models.GCRules.IntersectionRule;
 import com.google.cloud.bigtable.admin.v2.models.GCRules.UnionRule;
@@ -269,7 +269,7 @@ public class TableAdminResponses {
    * Wrapper for {@link GenerateConsistencyTokenResponse#getConsistencyToken()}
    *
    * <p>Cannot be created. They are obtained by invoking {@link
-   * TableAdminClient#generateConsistencyToken(String)}
+   * BigtableTableAdminClient#generateConsistencyToken(String)}
    */
   public static final class ConsistencyToken {
     private final String token;
