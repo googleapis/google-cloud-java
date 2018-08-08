@@ -109,10 +109,9 @@ Most `google-cloud` libraries require a project ID.  There are multiple ways to 
 
 1. The project ID supplied when building the service options
 2. Project ID specified by the environment variable `GOOGLE_CLOUD_PROJECT`
-3. The App Engine project ID
+3. The App Engine / Compute Engine project ID
 4. The project ID specified in the JSON credentials file pointed by the `GOOGLE_APPLICATION_CREDENTIALS` environment variable
 5. The Google Cloud SDK project ID
-6. The Compute Engine project ID
 
 In cases where the library may expect a project ID explicitly, we provide a helper that can provide the inferred project ID:
    ```java
