@@ -52,7 +52,7 @@ public final class LogEntryProto {
       "tobuf/struct.proto\032\037google/protobuf/time" +
       "stamp.proto\"\363\005\n\010LogEntry\022\020\n\010log_name\030\014 \001" +
       "(\t\022/\n\010resource\030\010 \001(\0132\035.google.api.Monito" +
-      "redResource\022-\n\rproto_payload\030\002 \001(\0132\024.goo",
+      "redResource\022-\n\rproto_payload\030\002 \001(\0132\024.goo" +
       "gle.protobuf.AnyH\000\022\026\n\014text_payload\030\003 \001(\t" +
       "H\000\022/\n\014json_payload\030\006 \001(\0132\027.google.protob" +
       "uf.StructH\000\022-\n\ttimestamp\030\t \001(\0132\032.google." +
@@ -62,7 +62,7 @@ public final class LogEntryProto {
       "erity\022\021\n\tinsert_id\030\004 \001(\t\0226\n\014http_request" +
       "\030\007 \001(\0132 .google.logging.type.HttpRequest" +
       "\0227\n\006labels\030\013 \003(\0132\'.google.logging.v2.Log" +
-      "Entry.LabelsEntry\0227\n\010metadata\030\031 \001(\0132%.go",
+      "Entry.LabelsEntry\0227\n\010metadata\030\031 \001(\0132%.go" +
       "ogle.api.MonitoredResourceMetadata\0227\n\top" +
       "eration\030\017 \001(\0132$.google.logging.v2.LogEnt" +
       "ryOperation\022\r\n\005trace\030\026 \001(\t\022\017\n\007span_id\030\033 " +
@@ -72,7 +72,7 @@ public final class LogEntryProto {
       "\n\007payload\"N\n\021LogEntryOperation\022\n\n\002id\030\001 \001" +
       "(\t\022\020\n\010producer\030\002 \001(\t\022\r\n\005first\030\003 \001(\010\022\014\n\004l" +
       "ast\030\004 \001(\010\"F\n\026LogEntrySourceLocation\022\014\n\004f" +
-      "ile\030\001 \001(\t\022\014\n\004line\030\002 \001(\003\022\020\n\010function\030\003 \001(",
+      "ile\030\001 \001(\t\022\014\n\004line\030\002 \001(\003\022\020\n\010function\030\003 \001(" +
       "\tB\231\001\n\025com.google.logging.v2B\rLogEntryPro" +
       "toP\001Z8google.golang.org/genproto/googlea" +
       "pis/logging/v2;logging\370\001\001\252\002\027Google.Cloud" +

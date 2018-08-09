@@ -167,7 +167,7 @@ public final class DlpStorage {
       "2!.google.privacy.dlp.v2.Likelihood\022F\n\nd" +
       "ictionary\030\002 \001(\01320.google.privacy.dlp.v2." +
       "CustomInfoType.DictionaryH\000\022<\n\005regex\030\003 \001" +
-      "(\0132+.google.privacy.dlp.v2.CustomInfoTyp",
+      "(\0132+.google.privacy.dlp.v2.CustomInfoTyp" +
       "e.RegexH\000\022M\n\016surrogate_type\030\004 \001(\01323.goog" +
       "le.privacy.dlp.v2.CustomInfoType.Surroga" +
       "teTypeH\000\022L\n\017detection_rules\030\007 \003(\01323.goog" +
@@ -177,7 +177,7 @@ public final class DlpStorage {
       "Dictionary.WordListH\000\022E\n\022cloud_storage_p" +
       "ath\030\003 \001(\0132\'.google.privacy.dlp.v2.CloudS" +
       "toragePathH\000\032\031\n\010WordList\022\r\n\005words\030\001 \003(\tB" +
-      "\010\n\006source\032\030\n\005Regex\022\017\n\007pattern\030\001 \001(\t\032\017\n\rS",
+      "\010\n\006source\032\030\n\005Regex\022\017\n\007pattern\030\001 \001(\t\032\017\n\rS" +
       "urrogateType\032\276\004\n\rDetectionRule\022W\n\014hotwor" +
       "d_rule\030\001 \001(\0132?.google.privacy.dlp.v2.Cus" +
       "tomInfoType.DetectionRule.HotwordRuleH\000\032" +
@@ -187,7 +187,7 @@ public final class DlpStorage {
       "ivacy.dlp.v2.LikelihoodH\000\022\035\n\023relative_li" +
       "kelihood\030\002 \001(\005H\000B\014\n\nadjustment\032\214\002\n\013Hotwo" +
       "rdRule\022B\n\rhotword_regex\030\001 \001(\0132+.google.p" +
-      "rivacy.dlp.v2.CustomInfoType.Regex\022P\n\tpr",
+      "rivacy.dlp.v2.CustomInfoType.Regex\022P\n\tpr" +
       "oximity\030\002 \001(\0132=.google.privacy.dlp.v2.Cu" +
       "stomInfoType.DetectionRule.Proximity\022g\n\025" +
       "likelihood_adjustment\030\003 \001(\0132H.google.pri" +
@@ -197,7 +197,7 @@ public final class DlpStorage {
       "\nproject_id\030\002 \001(\t\022\024\n\014namespace_id\030\004 \001(\t\"" +
       "\036\n\016KindExpression\022\014\n\004name\030\001 \001(\t\"\201\001\n\020Data" +
       "storeOptions\0228\n\014partition_id\030\001 \001(\0132\".goo" +
-      "gle.privacy.dlp.v2.PartitionId\0223\n\004kind\030\002",
+      "gle.privacy.dlp.v2.PartitionId\0223\n\004kind\030\002" +
       " \001(\0132%.google.privacy.dlp.v2.KindExpress" +
       "ion\"\375\002\n\023CloudStorageOptions\022D\n\010file_set\030" +
       "\001 \001(\01322.google.privacy.dlp.v2.CloudStora" +
@@ -207,7 +207,7 @@ public final class DlpStorage {
       "\001(\01627.google.privacy.dlp.v2.CloudStorage" +
       "Options.SampleMethod\022\033\n\023files_limit_perc" +
       "ent\030\007 \001(\005\032\026\n\007FileSet\022\013\n\003url\030\001 \001(\t\"H\n\014Sam" +
-      "pleMethod\022\035\n\031SAMPLE_METHOD_UNSPECIFIED\020\000",
+      "pleMethod\022\035\n\031SAMPLE_METHOD_UNSPECIFIED\020\000" +
       "\022\007\n\003TOP\020\001\022\020\n\014RANDOM_START\020\002\" \n\020CloudStor" +
       "agePath\022\014\n\004path\030\001 \001(\t\"\266\002\n\017BigQueryOption" +
       "s\022=\n\017table_reference\030\001 \001(\0132$.google.priv" +
@@ -217,7 +217,7 @@ public final class DlpStorage {
       "d\030\004 \001(\01623.google.privacy.dlp.v2.BigQuery" +
       "Options.SampleMethod\"H\n\014SampleMethod\022\035\n\031" +
       "SAMPLE_METHOD_UNSPECIFIED\020\000\022\007\n\003TOP\020\001\022\020\n\014" +
-      "RANDOM_START\020\002\"\232\004\n\rStorageConfig\022D\n\021data",
+      "RANDOM_START\020\002\"\232\004\n\rStorageConfig\022D\n\021data" +
       "store_options\030\002 \001(\0132\'.google.privacy.dlp" +
       ".v2.DatastoreOptionsH\000\022K\n\025cloud_storage_" +
       "options\030\003 \001(\0132*.google.privacy.dlp.v2.Cl" +
@@ -227,7 +227,7 @@ public final class DlpStorage {
       "le.privacy.dlp.v2.StorageConfig.Timespan" +
       "Config\032\332\001\n\016TimespanConfig\022.\n\nstart_time\030" +
       "\001 \001(\0132\032.google.protobuf.Timestamp\022,\n\010end" +
-      "_time\030\002 \001(\0132\032.google.protobuf.Timestamp\022",
+      "_time\030\002 \001(\0132\032.google.protobuf.Timestamp\022" +
       "7\n\017timestamp_field\030\003 \001(\0132\036.google.privac" +
       "y.dlp.v2.FieldId\0221\n)enable_auto_populati" +
       "on_of_timespan_config\030\004 \001(\010B\006\n\004type\"`\n\013B" +
@@ -237,7 +237,7 @@ public final class DlpStorage {
       "key\030\001 \001(\0132\032.google.privacy.dlp.v2.Key\"\273\001" +
       "\n\003Key\0228\n\014partition_id\030\001 \001(\0132\".google.pri" +
       "vacy.dlp.v2.PartitionId\0224\n\004path\030\002 \003(\0132&." +
-      "google.privacy.dlp.v2.Key.PathElement\032D\n",
+      "google.privacy.dlp.v2.Key.PathElement\032D\n" +
       "\013PathElement\022\014\n\004kind\030\001 \001(\t\022\014\n\002id\030\002 \001(\003H\000" +
       "\022\016\n\004name\030\003 \001(\tH\000B\t\n\007id_type\"\216\001\n\tRecordKe" +
       "y\022<\n\rdatastore_key\030\002 \001(\0132#.google.privac" +
@@ -247,7 +247,7 @@ public final class DlpStorage {
       "_id\030\001 \001(\t\022\022\n\ndataset_id\030\002 \001(\t\022\020\n\010table_i" +
       "d\030\003 \001(\t\"9\n\010EntityId\022-\n\005field\030\001 \001(\0132\036.goo" +
       "gle.privacy.dlp.v2.FieldId*t\n\nLikelihood" +
-      "\022\032\n\026LIKELIHOOD_UNSPECIFIED\020\000\022\021\n\rVERY_UNL",
+      "\022\032\n\026LIKELIHOOD_UNSPECIFIED\020\000\022\021\n\rVERY_UNL" +
       "IKELY\020\001\022\014\n\010UNLIKELY\020\002\022\014\n\010POSSIBLE\020\003\022\n\n\006L" +
       "IKELY\020\004\022\017\n\013VERY_LIKELY\020\005*E\n\010FileType\022\031\n\025" +
       "FILE_TYPE_UNSPECIFIED\020\000\022\017\n\013BINARY_FILE\020\001" +

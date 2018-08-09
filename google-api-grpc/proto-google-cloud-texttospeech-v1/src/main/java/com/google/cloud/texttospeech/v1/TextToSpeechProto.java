@@ -72,7 +72,7 @@ public final class TextToSpeechProto {
       "anguage_codes\030\001 \003(\t\022\014\n\004name\030\002 \001(\t\022B\n\013ssm" +
       "l_gender\030\003 \001(\0162-.google.cloud.texttospee" +
       "ch.v1.SsmlVoiceGender\022!\n\031natural_sample_" +
-      "rate_hertz\030\004 \001(\005\"\332\001\n\027SynthesizeSpeechReq",
+      "rate_hertz\030\004 \001(\005\"\332\001\n\027SynthesizeSpeechReq" +
       "uest\022;\n\005input\030\001 \001(\0132,.google.cloud.textt" +
       "ospeech.v1.SynthesisInput\022A\n\005voice\030\002 \001(\013" +
       "22.google.cloud.texttospeech.v1.VoiceSel" +
@@ -82,7 +82,7 @@ public final class TextToSpeechProto {
       "\002 \001(\tH\000B\016\n\014input_source\"\177\n\024VoiceSelectio" +
       "nParams\022\025\n\rlanguage_code\030\001 \001(\t\022\014\n\004name\030\002" +
       " \001(\t\022B\n\013ssml_gender\030\003 \001(\0162-.google.cloud" +
-      ".texttospeech.v1.SsmlVoiceGender\"\253\001\n\013Aud",
+      ".texttospeech.v1.SsmlVoiceGender\"\253\001\n\013Aud" +
       "ioConfig\022C\n\016audio_encoding\030\001 \001(\0162+.googl" +
       "e.cloud.texttospeech.v1.AudioEncoding\022\025\n" +
       "\rspeaking_rate\030\002 \001(\001\022\r\n\005pitch\030\003 \001(\001\022\026\n\016v" +
@@ -92,7 +92,7 @@ public final class TextToSpeechProto {
       "SSML_VOICE_GENDER_UNSPECIFIED\020\000\022\010\n\004MALE\020" +
       "\001\022\n\n\006FEMALE\020\002\022\013\n\007NEUTRAL\020\003*T\n\rAudioEncod" +
       "ing\022\036\n\032AUDIO_ENCODING_UNSPECIFIED\020\000\022\014\n\010L" +
-      "INEAR16\020\001\022\007\n\003MP3\020\002\022\014\n\010OGG_OPUS\020\0032\270\002\n\014Tex",
+      "INEAR16\020\001\022\007\n\003MP3\020\002\022\014\n\010OGG_OPUS\020\0032\270\002\n\014Tex" +
       "tToSpeech\022\203\001\n\nListVoices\022/.google.cloud." +
       "texttospeech.v1.ListVoicesRequest\0320.goog" +
       "le.cloud.texttospeech.v1.ListVoicesRespo" +
@@ -102,7 +102,7 @@ public final class TextToSpeechProto {
       "ospeech.v1.SynthesizeSpeechResponse\"\036\202\323\344" +
       "\223\002\030\"\023/v1/text:synthesize:\001*B\302\001\n com.goog" +
       "le.cloud.texttospeech.v1B\021TextToSpeechPr" +
-      "otoP\001ZHgoogle.golang.org/genproto/google",
+      "otoP\001ZHgoogle.golang.org/genproto/google" +
       "apis/cloud/texttospeech/v1;texttospeech\370" +
       "\001\001\252\002\034Google.Cloud.TextToSpeech.V1\312\002\034Goog" +
       "le\\Cloud\\TextToSpeech\\V1b\006proto3"

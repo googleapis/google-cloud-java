@@ -47,7 +47,7 @@ public final class WebhookProto {
       "sion.proto\032\034google/protobuf/struct.proto" +
       "\"\261\002\n\016WebhookRequest\022\017\n\007session\030\004 \001(\t\022\023\n\013" +
       "response_id\030\001 \001(\t\022B\n\014query_result\030\002 \001(\0132" +
-      ",.google.cloud.dialogflow.v2beta1.QueryR",
+      ",.google.cloud.dialogflow.v2beta1.QueryR" +
       "esult\022O\n\031alternative_query_results\030\005 \003(\013" +
       "2,.google.cloud.dialogflow.v2beta1.Query" +
       "Result\022d\n\036original_detect_intent_request" +
@@ -57,7 +57,7 @@ public final class WebhookProto {
       "lfillment_messages\030\002 \003(\0132/.google.cloud." +
       "dialogflow.v2beta1.Intent.Message\022\016\n\006sou" +
       "rce\030\003 \001(\t\022(\n\007payload\030\004 \001(\0132\027.google.prot" +
-      "obuf.Struct\022A\n\017output_contexts\030\005 \003(\0132(.g",
+      "obuf.Struct\022A\n\017output_contexts\030\005 \003(\0132(.g" +
       "oogle.cloud.dialogflow.v2beta1.Context\022I" +
       "\n\024followup_event_input\030\006 \001(\0132+.google.cl" +
       "oud.dialogflow.v2beta1.EventInput\022\027\n\017end" +
@@ -67,7 +67,7 @@ public final class WebhookProto {
       "ructB\252\001\n#com.google.cloud.dialogflow.v2b" +
       "eta1B\014WebhookProtoP\001ZIgoogle.golang.org/" +
       "genproto/googleapis/cloud/dialogflow/v2b" +
-      "eta1;dialogflow\370\001\001\242\002\002DF\252\002\037Google.Cloud.D",
+      "eta1;dialogflow\370\001\001\242\002\002DF\252\002\037Google.Cloud.D" +
       "ialogflow.V2beta1b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =

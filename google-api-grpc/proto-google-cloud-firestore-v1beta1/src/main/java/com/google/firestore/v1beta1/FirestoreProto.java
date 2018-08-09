@@ -167,7 +167,7 @@ public final class FirestoreProto {
       "a1/write.proto\032\033google/protobuf/empty.pr" +
       "oto\032\037google/protobuf/timestamp.proto\032\027go" +
       "ogle/rpc/status.proto\"\270\001\n\022GetDocumentReq" +
-      "uest\022\014\n\004name\030\001 \001(\t\0224\n\004mask\030\002 \001(\0132&.googl",
+      "uest\022\014\n\004name\030\001 \001(\t\0224\n\004mask\030\002 \001(\0132&.googl" +
       "e.firestore.v1beta1.DocumentMask\022\025\n\013tran" +
       "saction\030\003 \001(\014H\000\022/\n\tread_time\030\005 \001(\0132\032.goo" +
       "gle.protobuf.TimestampH\000B\026\n\024consistency_" +
@@ -177,7 +177,7 @@ public final class FirestoreProto {
       "_by\030\006 \001(\t\0224\n\004mask\030\007 \001(\0132&.google.firesto" +
       "re.v1beta1.DocumentMask\022\025\n\013transaction\030\010" +
       " \001(\014H\000\022/\n\tread_time\030\n \001(\0132\032.google.proto" +
-      "buf.TimestampH\000\022\024\n\014show_missing\030\014 \001(\010B\026\n",
+      "buf.TimestampH\000\022\024\n\014show_missing\030\014 \001(\010B\026\n" +
       "\024consistency_selector\"g\n\025ListDocumentsRe" +
       "sponse\0225\n\tdocuments\030\001 \003(\0132\".google.fires" +
       "tore.v1beta1.Document\022\027\n\017next_page_token" +
@@ -187,7 +187,7 @@ public final class FirestoreProto {
       "firestore.v1beta1.Document\0224\n\004mask\030\005 \001(\013" +
       "2&.google.firestore.v1beta1.DocumentMask" +
       "\"\202\002\n\025UpdateDocumentRequest\0224\n\010document\030\001" +
-      " \001(\0132\".google.firestore.v1beta1.Document",
+      " \001(\0132\".google.firestore.v1beta1.Document" +
       "\022;\n\013update_mask\030\002 \001(\0132&.google.firestore" +
       ".v1beta1.DocumentMask\0224\n\004mask\030\003 \001(\0132&.go" +
       "ogle.firestore.v1beta1.DocumentMask\022@\n\020c" +
@@ -197,7 +197,7 @@ public final class FirestoreProto {
       "\030\002 \001(\0132&.google.firestore.v1beta1.Precon" +
       "dition\"\236\002\n\030BatchGetDocumentsRequest\022\020\n\010d" +
       "atabase\030\001 \001(\t\022\021\n\tdocuments\030\002 \003(\t\0224\n\004mask" +
-      "\030\003 \001(\0132&.google.firestore.v1beta1.Docume",
+      "\030\003 \001(\0132&.google.firestore.v1beta1.Docume" +
       "ntMask\022\025\n\013transaction\030\004 \001(\014H\000\022G\n\017new_tra" +
       "nsaction\030\005 \001(\0132,.google.firestore.v1beta" +
       "1.TransactionOptionsH\000\022/\n\tread_time\030\007 \001(" +
@@ -207,7 +207,7 @@ public final class FirestoreProto {
       "v1beta1.DocumentH\000\022\021\n\007missing\030\002 \001(\tH\000\022\023\n" +
       "\013transaction\030\003 \001(\014\022-\n\tread_time\030\004 \001(\0132\032." +
       "google.protobuf.TimestampB\010\n\006result\"j\n\027B" +
-      "eginTransactionRequest\022\020\n\010database\030\001 \001(\t",
+      "eginTransactionRequest\022\020\n\010database\030\001 \001(\t" +
       "\022=\n\007options\030\002 \001(\0132,.google.firestore.v1b" +
       "eta1.TransactionOptions\"/\n\030BeginTransact" +
       "ionResponse\022\023\n\013transaction\030\001 \001(\014\"g\n\rComm" +
@@ -217,7 +217,7 @@ public final class FirestoreProto {
       "rite_results\030\001 \003(\0132%.google.firestore.v1" +
       "beta1.WriteResult\022/\n\013commit_time\030\002 \001(\0132\032" +
       ".google.protobuf.Timestamp\"8\n\017RollbackRe" +
-      "quest\022\020\n\010database\030\001 \001(\t\022\023\n\013transaction\030\002",
+      "quest\022\020\n\010database\030\001 \001(\t\022\023\n\013transaction\030\002" +
       " \001(\014\"\237\002\n\017RunQueryRequest\022\016\n\006parent\030\001 \001(\t" +
       "\022E\n\020structured_query\030\002 \001(\0132).google.fire" +
       "store.v1beta1.StructuredQueryH\000\022\025\n\013trans" +
@@ -227,7 +227,7 @@ public final class FirestoreProto {
       "obuf.TimestampH\001B\014\n\nquery_typeB\026\n\024consis" +
       "tency_selector\"\245\001\n\020RunQueryResponse\022\023\n\013t" +
       "ransaction\030\002 \001(\014\0224\n\010document\030\001 \001(\0132\".goo" +
-      "gle.firestore.v1beta1.Document\022-\n\tread_t",
+      "gle.firestore.v1beta1.Document\022-\n\tread_t" +
       "ime\030\003 \001(\0132\032.google.protobuf.Timestamp\022\027\n" +
       "\017skipped_results\030\004 \001(\005\"\355\001\n\014WriteRequest\022" +
       "\020\n\010database\030\001 \001(\t\022\021\n\tstream_id\030\002 \001(\t\022/\n\006" +
@@ -237,7 +237,7 @@ public final class FirestoreProto {
       "est.LabelsEntry\032-\n\013LabelsEntry\022\013\n\003key\030\001 " +
       "\001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\247\001\n\rWriteResponse" +
       "\022\021\n\tstream_id\030\001 \001(\t\022\024\n\014stream_token\030\002 \001(" +
-      "\014\022<\n\rwrite_results\030\003 \003(\0132%.google.firest",
+      "\014\022<\n\rwrite_results\030\003 \003(\0132%.google.firest" +
       "ore.v1beta1.WriteResult\022/\n\013commit_time\030\004" +
       " \001(\0132\032.google.protobuf.Timestamp\"\367\001\n\rLis" +
       "tenRequest\022\020\n\010database\030\001 \001(\t\0226\n\nadd_targ" +
@@ -247,7 +247,7 @@ public final class FirestoreProto {
       "equest.LabelsEntry\032-\n\013LabelsEntry\022\013\n\003key" +
       "\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B\017\n\rtarget_chan" +
       "ge\"\356\002\n\016ListenResponse\022?\n\rtarget_change\030\002" +
-      " \001(\0132&.google.firestore.v1beta1.TargetCh",
+      " \001(\0132&.google.firestore.v1beta1.TargetCh" +
       "angeH\000\022C\n\017document_change\030\003 \001(\0132(.google" +
       ".firestore.v1beta1.DocumentChangeH\000\022C\n\017d" +
       "ocument_delete\030\004 \001(\0132(.google.firestore." +
@@ -257,7 +257,7 @@ public final class FirestoreProto {
       "irestore.v1beta1.ExistenceFilterH\000B\017\n\rre" +
       "sponse_type\"\260\003\n\006Target\022=\n\005query\030\002 \001(\0132,." +
       "google.firestore.v1beta1.Target.QueryTar" +
-      "getH\000\022E\n\tdocuments\030\003 \001(\01320.google.firest",
+      "getH\000\022E\n\tdocuments\030\003 \001(\01320.google.firest" +
       "ore.v1beta1.Target.DocumentsTargetH\000\022\026\n\014" +
       "resume_token\030\004 \001(\014H\001\022/\n\tread_time\030\013 \001(\0132" +
       "\032.google.protobuf.TimestampH\001\022\021\n\ttarget_" +
@@ -267,7 +267,7 @@ public final class FirestoreProto {
       "google.firestore.v1beta1.StructuredQuery" +
       "H\000B\014\n\nquery_typeB\r\n\013target_typeB\r\n\013resum" +
       "e_type\"\257\002\n\014TargetChange\022S\n\022target_change" +
-      "_type\030\001 \001(\01627.google.firestore.v1beta1.T",
+      "_type\030\001 \001(\01627.google.firestore.v1beta1.T" +
       "argetChange.TargetChangeType\022\022\n\ntarget_i" +
       "ds\030\002 \003(\005\022!\n\005cause\030\003 \001(\0132\022.google.rpc.Sta" +
       "tus\022\024\n\014resume_token\030\004 \001(\014\022-\n\tread_time\030\006" +
@@ -277,7 +277,7 @@ public final class FirestoreProto {
       "CollectionIdsRequest\022\016\n\006parent\030\001 \001(\t\022\021\n\t" +
       "page_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"L\n\031L" +
       "istCollectionIdsResponse\022\026\n\016collection_i" +
-      "ds\030\001 \003(\t\022\027\n\017next_page_token\030\002 \001(\t2\310\023\n\tFi",
+      "ds\030\001 \003(\t\022\027\n\017next_page_token\030\002 \001(\t2\310\023\n\tFi" +
       "restore\022\236\001\n\013GetDocument\022,.google.firesto" +
       "re.v1beta1.GetDocumentRequest\032\".google.f" +
       "irestore.v1beta1.Document\"=\202\323\344\223\0027\0225/v1be" +
@@ -287,7 +287,7 @@ public final class FirestoreProto {
       "gle.firestore.v1beta1.ListDocumentsRespo" +
       "nse\"O\202\323\344\223\002I\022G/v1beta1/{parent=projects/*" +
       "/databases/*/documents/*/**}/{collection" +
-      "_id}\022\276\001\n\016CreateDocument\022/.google.firesto",
+      "_id}\022\276\001\n\016CreateDocument\022/.google.firesto" +
       "re.v1beta1.CreateDocumentRequest\032\".googl" +
       "e.firestore.v1beta1.Document\"W\202\323\344\223\002Q\"E/v" +
       "1beta1/{parent=projects/*/databases/*/do" +
@@ -297,7 +297,7 @@ public final class FirestoreProto {
       "tore.v1beta1.Document\"P\202\323\344\223\002J2>/v1beta1/" +
       "{document.name=projects/*/databases/*/do" +
       "cuments/*/**}:\010document\022\230\001\n\016DeleteDocume" +
-      "nt\022/.google.firestore.v1beta1.DeleteDocu",
+      "nt\022/.google.firestore.v1beta1.DeleteDocu" +
       "mentRequest\032\026.google.protobuf.Empty\"=\202\323\344" +
       "\223\0027*5/v1beta1/{name=projects/*/databases" +
       "/*/documents/*/**}\022\310\001\n\021BatchGetDocuments" +
@@ -307,7 +307,7 @@ public final class FirestoreProto {
       "ta1/{database=projects/*/databases/*}/do" +
       "cuments:batchGet:\001*0\001\022\313\001\n\020BeginTransacti" +
       "on\0221.google.firestore.v1beta1.BeginTrans" +
-      "actionRequest\0322.google.firestore.v1beta1",
+      "actionRequest\0322.google.firestore.v1beta1" +
       ".BeginTransactionResponse\"P\202\323\344\223\002J\"E/v1be" +
       "ta1/{database=projects/*/databases/*}/do" +
       "cuments:beginTransaction:\001*\022\243\001\n\006Commit\022\'" +
@@ -317,7 +317,7 @@ public final class FirestoreProto {
       "/databases/*}/documents:commit:\001*\022\227\001\n\010Ro" +
       "llback\022).google.firestore.v1beta1.Rollba" +
       "ckRequest\032\026.google.protobuf.Empty\"H\202\323\344\223\002" +
-      "B\"=/v1beta1/{database=projects/*/databas",
+      "B\"=/v1beta1/{database=projects/*/databas" +
       "es/*}/documents:rollback:\001*\022\364\001\n\010RunQuery" +
       "\022).google.firestore.v1beta1.RunQueryRequ" +
       "est\032*.google.firestore.v1beta1.RunQueryR" +
@@ -327,7 +327,7 @@ public final class FirestoreProto {
       "es/*/documents/*/**}:runQuery:\001*0\001\022\243\001\n\005W" +
       "rite\022&.google.firestore.v1beta1.WriteReq" +
       "uest\032\'.google.firestore.v1beta1.WriteRes" +
-      "ponse\"E\202\323\344\223\002?\":/v1beta1/{database=projec",
+      "ponse\"E\202\323\344\223\002?\":/v1beta1/{database=projec" +
       "ts/*/databases/*}/documents:write:\001*(\0010\001" +
       "\022\247\001\n\006Listen\022\'.google.firestore.v1beta1.L" +
       "istenRequest\032(.google.firestore.v1beta1." +
@@ -337,7 +337,7 @@ public final class FirestoreProto {
       "e.firestore.v1beta1.ListCollectionIdsReq" +
       "uest\0323.google.firestore.v1beta1.ListColl" +
       "ectionIdsResponse\"\240\001\202\323\344\223\002\231\001\"D/v1beta1/{p" +
-      "arent=projects/*/databases/*/documents}:",
+      "arent=projects/*/databases/*/documents}:" +
       "listCollectionIds:\001*ZN\"I/v1beta1/{parent" +
       "=projects/*/databases/*/documents/*/**}:" +
       "listCollectionIds:\001*B\274\001\n\034com.google.fire" +

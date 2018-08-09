@@ -107,7 +107,7 @@ public final class SpeechProto {
       "tatus.proto\"\206\001\n\020RecognizeRequest\0229\n\006conf" +
       "ig\030\001 \001(\0132).google.cloud.speech.v1.Recogn" +
       "itionConfig\0227\n\005audio\030\002 \001(\0132(.google.clou" +
-      "d.speech.v1.RecognitionAudio\"\221\001\n\033LongRun",
+      "d.speech.v1.RecognitionAudio\"\221\001\n\033LongRun" +
       "ningRecognizeRequest\0229\n\006config\030\001 \001(\0132).g" +
       "oogle.cloud.speech.v1.RecognitionConfig\022" +
       "7\n\005audio\030\002 \001(\0132(.google.cloud.speech.v1." +
@@ -117,7 +117,7 @@ public final class SpeechProto {
       "nfigH\000\022\027\n\raudio_content\030\002 \001(\014H\000B\023\n\021strea" +
       "ming_request\"\212\001\n\032StreamingRecognitionCon" +
       "fig\0229\n\006config\030\001 \001(\0132).google.cloud.speec" +
-      "h.v1.RecognitionConfig\022\030\n\020single_utteran",
+      "h.v1.RecognitionConfig\022\030\n\020single_utteran" +
       "ce\030\002 \001(\010\022\027\n\017interim_results\030\003 \001(\010\"\264\003\n\021Re" +
       "cognitionConfig\022I\n\010encoding\030\001 \001(\01627.goog" +
       "le.cloud.speech.v1.RecognitionConfig.Aud" +
@@ -127,7 +127,7 @@ public final class SpeechProto {
       "ch_contexts\030\006 \003(\0132%.google.cloud.speech." +
       "v1.SpeechContext\022 \n\030enable_word_time_off" +
       "sets\030\010 \001(\010\"\213\001\n\rAudioEncoding\022\030\n\024ENCODING" +
-      "_UNSPECIFIED\020\000\022\014\n\010LINEAR16\020\001\022\010\n\004FLAC\020\002\022\t",
+      "_UNSPECIFIED\020\000\022\014\n\010LINEAR16\020\001\022\010\n\004FLAC\020\002\022\t" +
       "\n\005MULAW\020\003\022\007\n\003AMR\020\004\022\n\n\006AMR_WB\020\005\022\014\n\010OGG_OP" +
       "US\020\006\022\032\n\026SPEEX_WITH_HEADER_BYTE\020\007\" \n\rSpee" +
       "chContext\022\017\n\007phrases\030\001 \003(\t\"D\n\020Recognitio" +
@@ -137,7 +137,7 @@ public final class SpeechProto {
       "SpeechRecognitionResult\"`\n\034LongRunningRe" +
       "cognizeResponse\022@\n\007results\030\002 \003(\0132/.googl" +
       "e.cloud.speech.v1.SpeechRecognitionResul" +
-      "t\"\236\001\n\034LongRunningRecognizeMetadata\022\030\n\020pr",
+      "t\"\236\001\n\034LongRunningRecognizeMetadata\022\030\n\020pr" +
       "ogress_percent\030\001 \001(\005\022.\n\nstart_time\030\002 \001(\013" +
       "2\032.google.protobuf.Timestamp\0224\n\020last_upd" +
       "ate_time\030\003 \001(\0132\032.google.protobuf.Timesta" +
@@ -147,7 +147,7 @@ public final class SpeechProto {
       "RecognitionResult\022]\n\021speech_event_type\030\004" +
       " \001(\0162B.google.cloud.speech.v1.StreamingR" +
       "ecognizeResponse.SpeechEventType\"L\n\017Spee" +
-      "chEventType\022\034\n\030SPEECH_EVENT_UNSPECIFIED\020",
+      "chEventType\022\034\n\030SPEECH_EVENT_UNSPECIFIED\020" +
       "\000\022\033\n\027END_OF_SINGLE_UTTERANCE\020\001\"\215\001\n\032Strea" +
       "mingRecognitionResult\022J\n\014alternatives\030\001 " +
       "\003(\01324.google.cloud.speech.v1.SpeechRecog" +
@@ -157,7 +157,7 @@ public final class SpeechProto {
       "peech.v1.SpeechRecognitionAlternative\"w\n" +
       "\034SpeechRecognitionAlternative\022\022\n\ntranscr" +
       "ipt\030\001 \001(\t\022\022\n\nconfidence\030\002 \001(\002\022/\n\005words\030\003" +
-      " \003(\0132 .google.cloud.speech.v1.WordInfo\"t",
+      " \003(\0132 .google.cloud.speech.v1.WordInfo\"t" +
       "\n\010WordInfo\022-\n\nstart_time\030\001 \001(\0132\031.google." +
       "protobuf.Duration\022+\n\010end_time\030\002 \001(\0132\031.go" +
       "ogle.protobuf.Duration\022\014\n\004word\030\003 \001(\t2\246\003\n" +
@@ -167,7 +167,7 @@ public final class SpeechProto {
       "speech:recognize:\001*\022\226\001\n\024LongRunningRecog" +
       "nize\0223.google.cloud.speech.v1.LongRunnin" +
       "gRecognizeRequest\032\035.google.longrunning.O" +
-      "peration\"*\202\323\344\223\002$\"\037/v1/speech:longrunning",
+      "peration\"*\202\323\344\223\002$\"\037/v1/speech:longrunning" +
       "recognize:\001*\022\177\n\022StreamingRecognize\0221.goo" +
       "gle.cloud.speech.v1.StreamingRecognizeRe" +
       "quest\0322.google.cloud.speech.v1.Streaming" +

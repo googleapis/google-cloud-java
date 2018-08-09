@@ -77,7 +77,7 @@ public final class OsLoginProto {
       "accounts\030\002 \003(\0132).google.cloud.oslogin.co" +
       "mmon.PosixAccount\022Q\n\017ssh_public_keys\030\003 \003" +
       "(\01328.google.cloud.oslogin.v1.LoginProfil" +
-      "e.SshPublicKeysEntry\022\021\n\tsuspended\030\004 \001(\010\032",
+      "e.SshPublicKeysEntry\022\021\n\tsuspended\030\004 \001(\010\032" +
       "_\n\022SshPublicKeysEntry\022\013\n\003key\030\001 \001(\t\0228\n\005va" +
       "lue\030\002 \001(\0132).google.cloud.oslogin.common." +
       "SshPublicKey:\0028\001\")\n\031DeletePosixAccountRe" +
@@ -87,7 +87,7 @@ public final class OsLoginProto {
       "yRequest\022\014\n\004name\030\001 \001(\t\"\202\001\n\031ImportSshPubl" +
       "icKeyRequest\022\016\n\006parent\030\001 \001(\t\022A\n\016ssh_publ" +
       "ic_key\030\002 \001(\0132).google.cloud.oslogin.comm" +
-      "on.SshPublicKey\022\022\n\nproject_id\030\003 \001(\t\"Z\n\032I",
+      "on.SshPublicKey\022\022\n\nproject_id\030\003 \001(\t\"Z\n\032I" +
       "mportSshPublicKeyResponse\022<\n\rlogin_profi" +
       "le\030\001 \001(\0132%.google.cloud.oslogin.v1.Login" +
       "Profile\"\235\001\n\031UpdateSshPublicKeyRequest\022\014\n" +
@@ -97,7 +97,7 @@ public final class OsLoginProto {
       "eldMask2\315\007\n\016OsLoginService\022\207\001\n\022DeletePos" +
       "ixAccount\0222.google.cloud.oslogin.v1.Dele" +
       "tePosixAccountRequest\032\026.google.protobuf." +
-      "Empty\"%\202\323\344\223\002\037*\035/v1/{name=users/*/project",
+      "Empty\"%\202\323\344\223\002\037*\035/v1/{name=users/*/project" +
       "s/*}\022\214\001\n\022DeleteSshPublicKey\0222.google.clo" +
       "ud.oslogin.v1.DeleteSshPublicKeyRequest\032" +
       "\026.google.protobuf.Empty\"*\202\323\344\223\002$*\"/v1/{na" +
@@ -107,7 +107,7 @@ public final class OsLoginProto {
       "v1.LoginProfile\"\'\202\323\344\223\002!\022\037/v1/{name=users" +
       "/*}/loginProfile\022\231\001\n\017GetSshPublicKey\022/.g" +
       "oogle.cloud.oslogin.v1.GetSshPublicKeyRe" +
-      "quest\032).google.cloud.oslogin.common.SshP",
+      "quest\032).google.cloud.oslogin.common.SshP" +
       "ublicKey\"*\202\323\344\223\002$\022\"/v1/{name=users/*/sshP" +
       "ublicKeys/*}\022\276\001\n\022ImportSshPublicKey\0222.go" +
       "ogle.cloud.oslogin.v1.ImportSshPublicKey" +
@@ -117,7 +117,7 @@ public final class OsLoginProto {
       "c_key\022\257\001\n\022UpdateSshPublicKey\0222.google.cl" +
       "oud.oslogin.v1.UpdateSshPublicKeyRequest" +
       "\032).google.cloud.oslogin.common.SshPublic" +
-      "Key\":\202\323\344\223\00242\"/v1/{name=users/*/sshPublic",
+      "Key\":\202\323\344\223\00242\"/v1/{name=users/*/sshPublic" +
       "Keys/*}:\016ssh_public_keyB\241\001\n\033com.google.c" +
       "loud.oslogin.v1B\014OsLoginProtoP\001Z>google." +
       "golang.org/genproto/googleapis/cloud/osl" +

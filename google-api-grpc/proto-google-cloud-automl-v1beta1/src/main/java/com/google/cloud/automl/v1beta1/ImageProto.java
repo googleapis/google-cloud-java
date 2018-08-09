@@ -42,7 +42,7 @@ public final class ImageProto {
       "type\030\001 \001(\0162/.google.cloud.automl.v1beta1" +
       ".ClassificationType\"x\n ImageClassificati" +
       "onModelMetadata\022\025\n\rbase_model_id\030\001 \001(\t\022\024" +
-      "\n\014train_budget\030\002 \001(\003\022\022\n\ntrain_cost\030\003 \001(\003",
+      "\n\014train_budget\030\002 \001(\003\022\022\n\ntrain_cost\030\003 \001(\003" +
       "\022\023\n\013stop_reason\030\005 \001(\tBr\n\037com.google.clou" +
       "d.automl.v1beta1B\nImageProtoP\001ZAgoogle.g" +
       "olang.org/genproto/googleapis/cloud/auto" +

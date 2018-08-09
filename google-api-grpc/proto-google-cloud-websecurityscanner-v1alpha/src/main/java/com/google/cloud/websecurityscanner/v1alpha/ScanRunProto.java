@@ -37,7 +37,7 @@ public final class ScanRunProto {
       "anner.v1alpha.ScanRun.ExecutionState\022R\n\014" +
       "result_state\030\003 \001(\0162<.google.cloud.websec" +
       "urityscanner.v1alpha.ScanRun.ResultState" +
-      "\022.\n\nstart_time\030\004 \001(\0132\032.google.protobuf.T",
+      "\022.\n\nstart_time\030\004 \001(\0132\032.google.protobuf.T" +
       "imestamp\022,\n\010end_time\030\005 \001(\0132\032.google.prot" +
       "obuf.Timestamp\022\032\n\022urls_crawled_count\030\006 \001" +
       "(\003\022\031\n\021urls_tested_count\030\007 \001(\003\022\033\n\023has_vul" +
@@ -47,7 +47,7 @@ public final class ScanRunProto {
       "\002\022\014\n\010FINISHED\020\003\"O\n\013ResultState\022\034\n\030RESULT" +
       "_STATE_UNSPECIFIED\020\000\022\013\n\007SUCCESS\020\001\022\t\n\005ERR" +
       "OR\020\002\022\n\n\006KILLED\020\003B\230\001\n+com.google.cloud.we" +
-      "bsecurityscanner.v1alphaB\014ScanRunProtoP\001",
+      "bsecurityscanner.v1alphaB\014ScanRunProtoP\001" +
       "ZYgoogle.golang.org/genproto/googleapis/" +
       "cloud/websecurityscanner/v1alpha;websecu" +
       "rityscannerb\006proto3"
