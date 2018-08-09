@@ -17,8 +17,8 @@
 # Check out the googleapis and discovery-artifact-manager repo somewhere locally
 # (e.g. from https://github.com/googleapis/googleapis):
 #
-# $ git checkout https://github.com/googleapis/googleapis.git
-# $ git checkout https://github.com/googleapis/discovery-artifact-manager.git
+# $ git clone https://github.com/googleapis/googleapis.git
+# $ git clone https://github.com/googleapis/discovery-artifact-manager.git
 #
 # Run this script:
 #
