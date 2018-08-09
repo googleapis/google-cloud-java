@@ -49,4 +49,3 @@ test_script:
 cache:
   - C:\maven\
   - C:\Users\appveyor\.m2
-
