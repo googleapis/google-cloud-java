@@ -38,6 +38,7 @@ import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.ProjectGlobalTargetHttpsProxyName;
 import com.google.cloud.compute.v1.ProjectName;
 import com.google.cloud.compute.v1.ProjectTargetHttpsProxyName;
+import com.google.cloud.compute.v1.SetQuicOverrideTargetHttpsProxyHttpRequest;
 import com.google.cloud.compute.v1.SetSslCertificatesTargetHttpsProxyHttpRequest;
 import com.google.cloud.compute.v1.SetSslPolicyTargetHttpsProxyHttpRequest;
 import com.google.cloud.compute.v1.SetUrlMapTargetHttpsProxyHttpRequest;
@@ -139,6 +140,28 @@ public class HttpJsonTargetHttpsProxyStub extends TargetHttpsProxyStub {
               .build();
 
   @InternalApi
+  public static final ApiMethodDescriptor<SetQuicOverrideTargetHttpsProxyHttpRequest, Operation>
+      setQuicOverrideTargetHttpsProxyMethodDescriptor =
+          ApiMethodDescriptor.<SetQuicOverrideTargetHttpsProxyHttpRequest, Operation>newBuilder()
+              .setFullMethodName("compute.targetHttpsProxies.setQuicOverride")
+              .setHttpMethod(HttpMethods.POST)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter
+                      .<SetQuicOverrideTargetHttpsProxyHttpRequest>newBuilder()
+                      .setPathTemplate(
+                          PathTemplate.create(
+                              "{project}/global/targetHttpsProxies/{targetHttpsProxy}/setQuicOverride"))
+                      .setQueryParams(Sets.<String>newHashSet("requestId"))
+                      .setResourceNameFactory(ProjectGlobalTargetHttpsProxyName.newFactory())
+                      .setResourceNameField("targetHttpsProxy")
+                      .build())
+              .setResponseParser(
+                  ApiMessageHttpResponseParser.<Operation>newBuilder()
+                      .setResponseInstance(Operation.getDefaultInstance())
+                      .build())
+              .build();
+
+  @InternalApi
   public static final ApiMethodDescriptor<SetSslCertificatesTargetHttpsProxyHttpRequest, Operation>
       setSslCertificatesTargetHttpsProxyMethodDescriptor =
           ApiMethodDescriptor.<SetSslCertificatesTargetHttpsProxyHttpRequest, Operation>newBuilder()
@@ -216,6 +239,8 @@ public class HttpJsonTargetHttpsProxyStub extends TargetHttpsProxyStub {
   private final UnaryCallable<
           ListTargetHttpsProxiesHttpRequest, ListTargetHttpsProxiesPagedResponse>
       listTargetHttpsProxiesPagedCallable;
+  private final UnaryCallable<SetQuicOverrideTargetHttpsProxyHttpRequest, Operation>
+      setQuicOverrideTargetHttpsProxyCallable;
   private final UnaryCallable<SetSslCertificatesTargetHttpsProxyHttpRequest, Operation>
       setSslCertificatesTargetHttpsProxyCallable;
   private final UnaryCallable<SetSslPolicyTargetHttpsProxyHttpRequest, Operation>
@@ -285,6 +310,11 @@ public class HttpJsonTargetHttpsProxyStub extends TargetHttpsProxyStub {
                 .<ListTargetHttpsProxiesHttpRequest, TargetHttpsProxyList>newBuilder()
                 .setMethodDescriptor(listTargetHttpsProxiesMethodDescriptor)
                 .build();
+    HttpJsonCallSettings<SetQuicOverrideTargetHttpsProxyHttpRequest, Operation>
+        setQuicOverrideTargetHttpsProxyTransportSettings =
+            HttpJsonCallSettings.<SetQuicOverrideTargetHttpsProxyHttpRequest, Operation>newBuilder()
+                .setMethodDescriptor(setQuicOverrideTargetHttpsProxyMethodDescriptor)
+                .build();
     HttpJsonCallSettings<SetSslCertificatesTargetHttpsProxyHttpRequest, Operation>
         setSslCertificatesTargetHttpsProxyTransportSettings =
             HttpJsonCallSettings
@@ -326,6 +356,11 @@ public class HttpJsonTargetHttpsProxyStub extends TargetHttpsProxyStub {
         callableFactory.createPagedCallable(
             listTargetHttpsProxiesTransportSettings,
             settings.listTargetHttpsProxiesSettings(),
+            clientContext);
+    this.setQuicOverrideTargetHttpsProxyCallable =
+        callableFactory.createUnaryCallable(
+            setQuicOverrideTargetHttpsProxyTransportSettings,
+            settings.setQuicOverrideTargetHttpsProxySettings(),
             clientContext);
     this.setSslCertificatesTargetHttpsProxyCallable =
         callableFactory.createUnaryCallable(
@@ -374,6 +409,12 @@ public class HttpJsonTargetHttpsProxyStub extends TargetHttpsProxyStub {
   public UnaryCallable<ListTargetHttpsProxiesHttpRequest, TargetHttpsProxyList>
       listTargetHttpsProxiesCallable() {
     return listTargetHttpsProxiesCallable;
+  }
+
+  @BetaApi
+  public UnaryCallable<SetQuicOverrideTargetHttpsProxyHttpRequest, Operation>
+      setQuicOverrideTargetHttpsProxyCallable() {
+    return setQuicOverrideTargetHttpsProxyCallable;
   }
 
   @BetaApi

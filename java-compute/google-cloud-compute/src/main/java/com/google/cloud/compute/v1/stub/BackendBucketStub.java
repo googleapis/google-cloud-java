@@ -20,9 +20,11 @@ import static com.google.cloud.compute.v1.BackendBucketClient.ListBackendBuckets
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.compute.v1.AddSignedUrlKeyBackendBucketHttpRequest;
 import com.google.cloud.compute.v1.BackendBucket;
 import com.google.cloud.compute.v1.BackendBucketList;
 import com.google.cloud.compute.v1.DeleteBackendBucketHttpRequest;
+import com.google.cloud.compute.v1.DeleteSignedUrlKeyBackendBucketHttpRequest;
 import com.google.cloud.compute.v1.GetBackendBucketHttpRequest;
 import com.google.cloud.compute.v1.InsertBackendBucketHttpRequest;
 import com.google.cloud.compute.v1.ListBackendBucketsHttpRequest;
@@ -42,8 +44,22 @@ import javax.annotation.Generated;
 public abstract class BackendBucketStub implements BackgroundResource {
 
   @BetaApi
+  public UnaryCallable<AddSignedUrlKeyBackendBucketHttpRequest, Operation>
+      addSignedUrlKeyBackendBucketCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: addSignedUrlKeyBackendBucketCallable()");
+  }
+
+  @BetaApi
   public UnaryCallable<DeleteBackendBucketHttpRequest, Operation> deleteBackendBucketCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteBackendBucketCallable()");
+  }
+
+  @BetaApi
+  public UnaryCallable<DeleteSignedUrlKeyBackendBucketHttpRequest, Operation>
+      deleteSignedUrlKeyBackendBucketCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deleteSignedUrlKeyBackendBucketCallable()");
   }
 
   @BetaApi

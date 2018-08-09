@@ -30,9 +30,11 @@ import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.pathtemplate.PathTemplate;
+import com.google.cloud.compute.v1.AddSignedUrlKeyBackendBucketHttpRequest;
 import com.google.cloud.compute.v1.BackendBucket;
 import com.google.cloud.compute.v1.BackendBucketList;
 import com.google.cloud.compute.v1.DeleteBackendBucketHttpRequest;
+import com.google.cloud.compute.v1.DeleteSignedUrlKeyBackendBucketHttpRequest;
 import com.google.cloud.compute.v1.GetBackendBucketHttpRequest;
 import com.google.cloud.compute.v1.InsertBackendBucketHttpRequest;
 import com.google.cloud.compute.v1.ListBackendBucketsHttpRequest;
@@ -56,6 +58,28 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonBackendBucketStub extends BackendBucketStub {
   @InternalApi
+  public static final ApiMethodDescriptor<AddSignedUrlKeyBackendBucketHttpRequest, Operation>
+      addSignedUrlKeyBackendBucketMethodDescriptor =
+          ApiMethodDescriptor.<AddSignedUrlKeyBackendBucketHttpRequest, Operation>newBuilder()
+              .setFullMethodName("compute.backendBuckets.addSignedUrlKey")
+              .setHttpMethod(HttpMethods.POST)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter
+                      .<AddSignedUrlKeyBackendBucketHttpRequest>newBuilder()
+                      .setPathTemplate(
+                          PathTemplate.create(
+                              "{project}/global/backendBuckets/{backendBucket}/addSignedUrlKey"))
+                      .setQueryParams(Sets.<String>newHashSet("requestId"))
+                      .setResourceNameFactory(ProjectGlobalBackendBucketName.newFactory())
+                      .setResourceNameField("backendBucket")
+                      .build())
+              .setResponseParser(
+                  ApiMessageHttpResponseParser.<Operation>newBuilder()
+                      .setResponseInstance(Operation.getDefaultInstance())
+                      .build())
+              .build();
+
+  @InternalApi
   public static final ApiMethodDescriptor<DeleteBackendBucketHttpRequest, Operation>
       deleteBackendBucketMethodDescriptor =
           ApiMethodDescriptor.<DeleteBackendBucketHttpRequest, Operation>newBuilder()
@@ -66,6 +90,28 @@ public class HttpJsonBackendBucketStub extends BackendBucketStub {
                       .setPathTemplate(
                           PathTemplate.create("{project}/global/backendBuckets/{backendBucket}"))
                       .setQueryParams(Sets.<String>newHashSet("requestId"))
+                      .setResourceNameFactory(ProjectGlobalBackendBucketName.newFactory())
+                      .setResourceNameField("backendBucket")
+                      .build())
+              .setResponseParser(
+                  ApiMessageHttpResponseParser.<Operation>newBuilder()
+                      .setResponseInstance(Operation.getDefaultInstance())
+                      .build())
+              .build();
+
+  @InternalApi
+  public static final ApiMethodDescriptor<DeleteSignedUrlKeyBackendBucketHttpRequest, Operation>
+      deleteSignedUrlKeyBackendBucketMethodDescriptor =
+          ApiMethodDescriptor.<DeleteSignedUrlKeyBackendBucketHttpRequest, Operation>newBuilder()
+              .setFullMethodName("compute.backendBuckets.deleteSignedUrlKey")
+              .setHttpMethod(HttpMethods.POST)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter
+                      .<DeleteSignedUrlKeyBackendBucketHttpRequest>newBuilder()
+                      .setPathTemplate(
+                          PathTemplate.create(
+                              "{project}/global/backendBuckets/{backendBucket}/deleteSignedUrlKey"))
+                      .setQueryParams(Sets.<String>newHashSet("keyName", "requestId"))
                       .setResourceNameFactory(ProjectGlobalBackendBucketName.newFactory())
                       .setResourceNameField("backendBucket")
                       .build())
@@ -176,8 +222,12 @@ public class HttpJsonBackendBucketStub extends BackendBucketStub {
 
   private final BackgroundResource backgroundResources;
 
+  private final UnaryCallable<AddSignedUrlKeyBackendBucketHttpRequest, Operation>
+      addSignedUrlKeyBackendBucketCallable;
   private final UnaryCallable<DeleteBackendBucketHttpRequest, Operation>
       deleteBackendBucketCallable;
+  private final UnaryCallable<DeleteSignedUrlKeyBackendBucketHttpRequest, Operation>
+      deleteSignedUrlKeyBackendBucketCallable;
   private final UnaryCallable<GetBackendBucketHttpRequest, BackendBucket> getBackendBucketCallable;
   private final UnaryCallable<InsertBackendBucketHttpRequest, Operation>
       insertBackendBucketCallable;
@@ -230,10 +280,20 @@ public class HttpJsonBackendBucketStub extends BackendBucketStub {
       throws IOException {
     this.callableFactory = callableFactory;
 
+    HttpJsonCallSettings<AddSignedUrlKeyBackendBucketHttpRequest, Operation>
+        addSignedUrlKeyBackendBucketTransportSettings =
+            HttpJsonCallSettings.<AddSignedUrlKeyBackendBucketHttpRequest, Operation>newBuilder()
+                .setMethodDescriptor(addSignedUrlKeyBackendBucketMethodDescriptor)
+                .build();
     HttpJsonCallSettings<DeleteBackendBucketHttpRequest, Operation>
         deleteBackendBucketTransportSettings =
             HttpJsonCallSettings.<DeleteBackendBucketHttpRequest, Operation>newBuilder()
                 .setMethodDescriptor(deleteBackendBucketMethodDescriptor)
+                .build();
+    HttpJsonCallSettings<DeleteSignedUrlKeyBackendBucketHttpRequest, Operation>
+        deleteSignedUrlKeyBackendBucketTransportSettings =
+            HttpJsonCallSettings.<DeleteSignedUrlKeyBackendBucketHttpRequest, Operation>newBuilder()
+                .setMethodDescriptor(deleteSignedUrlKeyBackendBucketMethodDescriptor)
                 .build();
     HttpJsonCallSettings<GetBackendBucketHttpRequest, BackendBucket>
         getBackendBucketTransportSettings =
@@ -261,10 +321,20 @@ public class HttpJsonBackendBucketStub extends BackendBucketStub {
                 .setMethodDescriptor(updateBackendBucketMethodDescriptor)
                 .build();
 
+    this.addSignedUrlKeyBackendBucketCallable =
+        callableFactory.createUnaryCallable(
+            addSignedUrlKeyBackendBucketTransportSettings,
+            settings.addSignedUrlKeyBackendBucketSettings(),
+            clientContext);
     this.deleteBackendBucketCallable =
         callableFactory.createUnaryCallable(
             deleteBackendBucketTransportSettings,
             settings.deleteBackendBucketSettings(),
+            clientContext);
+    this.deleteSignedUrlKeyBackendBucketCallable =
+        callableFactory.createUnaryCallable(
+            deleteSignedUrlKeyBackendBucketTransportSettings,
+            settings.deleteSignedUrlKeyBackendBucketSettings(),
             clientContext);
     this.getBackendBucketCallable =
         callableFactory.createUnaryCallable(
@@ -299,8 +369,20 @@ public class HttpJsonBackendBucketStub extends BackendBucketStub {
   }
 
   @BetaApi
+  public UnaryCallable<AddSignedUrlKeyBackendBucketHttpRequest, Operation>
+      addSignedUrlKeyBackendBucketCallable() {
+    return addSignedUrlKeyBackendBucketCallable;
+  }
+
+  @BetaApi
   public UnaryCallable<DeleteBackendBucketHttpRequest, Operation> deleteBackendBucketCallable() {
     return deleteBackendBucketCallable;
+  }
+
+  @BetaApi
+  public UnaryCallable<DeleteSignedUrlKeyBackendBucketHttpRequest, Operation>
+      deleteSignedUrlKeyBackendBucketCallable() {
+    return deleteSignedUrlKeyBackendBucketCallable;
   }
 
   @BetaApi

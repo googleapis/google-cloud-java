@@ -130,6 +130,12 @@ public class ProjectSettings extends ClientSettings<ProjectSettings> {
     return ((ProjectStubSettings) getStubSettings()).setCommonInstanceMetadataProjectSettings();
   }
 
+  /** Returns the object with the settings used for calls to setDefaultNetworkTierProject. */
+  public UnaryCallSettings<SetDefaultNetworkTierProjectHttpRequest, Operation>
+      setDefaultNetworkTierProjectSettings() {
+    return ((ProjectStubSettings) getStubSettings()).setDefaultNetworkTierProjectSettings();
+  }
+
   /** Returns the object with the settings used for calls to setUsageExportBucketProject. */
   public UnaryCallSettings<SetUsageExportBucketProjectHttpRequest, Operation>
       setUsageExportBucketProjectSettings() {
@@ -303,6 +309,12 @@ public class ProjectSettings extends ClientSettings<ProjectSettings> {
     public UnaryCallSettings.Builder<SetCommonInstanceMetadataProjectHttpRequest, Operation>
         setCommonInstanceMetadataProjectSettings() {
       return getStubSettingsBuilder().setCommonInstanceMetadataProjectSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setDefaultNetworkTierProject. */
+    public UnaryCallSettings.Builder<SetDefaultNetworkTierProjectHttpRequest, Operation>
+        setDefaultNetworkTierProjectSettings() {
+      return getStubSettingsBuilder().setDefaultNetworkTierProjectSettings();
     }
 
     /** Returns the builder for the settings used for calls to setUsageExportBucketProject. */

@@ -17,6 +17,7 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 import javax.annotation.Generated;
@@ -26,17 +27,24 @@ import javax.annotation.Nullable;
 @BetaApi
 public final class Scheduling implements ApiMessage {
   private final Boolean automaticRestart;
+  private final List<SchedulingNodeAffinity> nodeAffinities;
   private final String onHostMaintenance;
   private final Boolean preemptible;
 
   private Scheduling() {
     this.automaticRestart = null;
+    this.nodeAffinities = null;
     this.onHostMaintenance = null;
     this.preemptible = null;
   }
 
-  private Scheduling(Boolean automaticRestart, String onHostMaintenance, Boolean preemptible) {
+  private Scheduling(
+      Boolean automaticRestart,
+      List<SchedulingNodeAffinity> nodeAffinities,
+      String onHostMaintenance,
+      Boolean preemptible) {
     this.automaticRestart = automaticRestart;
+    this.nodeAffinities = nodeAffinities;
     this.onHostMaintenance = onHostMaintenance;
     this.preemptible = preemptible;
   }
@@ -45,6 +53,9 @@ public final class Scheduling implements ApiMessage {
   public Object getFieldValue(String fieldName) {
     if (fieldName.equals("automaticRestart")) {
       return automaticRestart;
+    }
+    if (fieldName.equals("nodeAffinities")) {
+      return nodeAffinities;
     }
     if (fieldName.equals("onHostMaintenance")) {
       return onHostMaintenance;
@@ -69,6 +80,10 @@ public final class Scheduling implements ApiMessage {
 
   public Boolean getAutomaticRestart() {
     return automaticRestart;
+  }
+
+  public List<SchedulingNodeAffinity> getNodeAffinitiesList() {
+    return nodeAffinities;
   }
 
   public String getOnHostMaintenance() {
@@ -103,6 +118,7 @@ public final class Scheduling implements ApiMessage {
 
   public static class Builder {
     private Boolean automaticRestart;
+    private List<SchedulingNodeAffinity> nodeAffinities;
     private String onHostMaintenance;
     private Boolean preemptible;
 
@@ -112,6 +128,9 @@ public final class Scheduling implements ApiMessage {
       if (other == Scheduling.getDefaultInstance()) return this;
       if (other.getAutomaticRestart() != null) {
         this.automaticRestart = other.automaticRestart;
+      }
+      if (other.getNodeAffinitiesList() != null) {
+        this.nodeAffinities = other.nodeAffinities;
       }
       if (other.getOnHostMaintenance() != null) {
         this.onHostMaintenance = other.onHostMaintenance;
@@ -124,6 +143,7 @@ public final class Scheduling implements ApiMessage {
 
     Builder(Scheduling source) {
       this.automaticRestart = source.automaticRestart;
+      this.nodeAffinities = source.nodeAffinities;
       this.onHostMaintenance = source.onHostMaintenance;
       this.preemptible = source.preemptible;
     }
@@ -134,6 +154,26 @@ public final class Scheduling implements ApiMessage {
 
     public Builder setAutomaticRestart(Boolean automaticRestart) {
       this.automaticRestart = automaticRestart;
+      return this;
+    }
+
+    public List<SchedulingNodeAffinity> getNodeAffinitiesList() {
+      return nodeAffinities;
+    }
+
+    public Builder addAllNodeAffinities(List<SchedulingNodeAffinity> nodeAffinities) {
+      if (this.nodeAffinities == null) {
+        this.nodeAffinities = new LinkedList<>();
+      }
+      this.nodeAffinities.addAll(nodeAffinities);
+      return this;
+    }
+
+    public Builder addNodeAffinities(SchedulingNodeAffinity nodeAffinities) {
+      if (this.nodeAffinities == null) {
+        this.nodeAffinities = new LinkedList<>();
+      }
+      this.nodeAffinities.add(nodeAffinities);
       return this;
     }
 
@@ -157,12 +197,13 @@ public final class Scheduling implements ApiMessage {
 
     public Scheduling build() {
 
-      return new Scheduling(automaticRestart, onHostMaintenance, preemptible);
+      return new Scheduling(automaticRestart, nodeAffinities, onHostMaintenance, preemptible);
     }
 
     public Builder clone() {
       Builder newBuilder = new Builder();
       newBuilder.setAutomaticRestart(this.automaticRestart);
+      newBuilder.addAllNodeAffinities(this.nodeAffinities);
       newBuilder.setOnHostMaintenance(this.onHostMaintenance);
       newBuilder.setPreemptible(this.preemptible);
       return newBuilder;
@@ -174,6 +215,9 @@ public final class Scheduling implements ApiMessage {
     return "Scheduling{"
         + "automaticRestart="
         + automaticRestart
+        + ", "
+        + "nodeAffinities="
+        + nodeAffinities
         + ", "
         + "onHostMaintenance="
         + onHostMaintenance
@@ -191,6 +235,7 @@ public final class Scheduling implements ApiMessage {
     if (o instanceof Scheduling) {
       Scheduling that = (Scheduling) o;
       return Objects.equals(this.automaticRestart, that.getAutomaticRestart())
+          && Objects.equals(this.nodeAffinities, that.getNodeAffinitiesList())
           && Objects.equals(this.onHostMaintenance, that.getOnHostMaintenance())
           && Objects.equals(this.preemptible, that.getPreemptible());
     }
@@ -199,6 +244,6 @@ public final class Scheduling implements ApiMessage {
 
   @Override
   public int hashCode() {
-    return Objects.hash(automaticRestart, onHostMaintenance, preemptible);
+    return Objects.hash(automaticRestart, nodeAffinities, onHostMaintenance, preemptible);
   }
 }

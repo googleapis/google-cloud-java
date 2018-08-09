@@ -39,9 +39,11 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.compute.v1.AddSignedUrlKeyBackendBucketHttpRequest;
 import com.google.cloud.compute.v1.BackendBucket;
 import com.google.cloud.compute.v1.BackendBucketList;
 import com.google.cloud.compute.v1.DeleteBackendBucketHttpRequest;
+import com.google.cloud.compute.v1.DeleteSignedUrlKeyBackendBucketHttpRequest;
 import com.google.cloud.compute.v1.GetBackendBucketHttpRequest;
 import com.google.cloud.compute.v1.InsertBackendBucketHttpRequest;
 import com.google.cloud.compute.v1.ListBackendBucketsHttpRequest;
@@ -72,13 +74,13 @@ import org.threeten.bp.Duration;
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object. For
- * example, to set the total timeout of deleteBackendBucket to 30 seconds:
+ * example, to set the total timeout of addSignedUrlKeyBackendBucket to 30 seconds:
  *
  * <pre>
  * <code>
  * BackendBucketStubSettings.Builder backendBucketSettingsBuilder =
  *     BackendBucketStubSettings.newBuilder();
- * backendBucketSettingsBuilder.deleteBackendBucketSettings().getRetrySettings().toBuilder()
+ * backendBucketSettingsBuilder.addSignedUrlKeyBackendBucketSettings().getRetrySettings().toBuilder()
  *     .setTotalTimeout(Duration.ofSeconds(30));
  * BackendBucketStubSettings backendBucketSettings = backendBucketSettingsBuilder.build();
  * </code>
@@ -98,8 +100,12 @@ public class BackendBucketStubSettings extends StubSettings<BackendBucketStubSet
           .add("https://www.googleapis.com/auth/devstorage.read_write")
           .build();
 
+  private final UnaryCallSettings<AddSignedUrlKeyBackendBucketHttpRequest, Operation>
+      addSignedUrlKeyBackendBucketSettings;
   private final UnaryCallSettings<DeleteBackendBucketHttpRequest, Operation>
       deleteBackendBucketSettings;
+  private final UnaryCallSettings<DeleteSignedUrlKeyBackendBucketHttpRequest, Operation>
+      deleteSignedUrlKeyBackendBucketSettings;
   private final UnaryCallSettings<GetBackendBucketHttpRequest, BackendBucket>
       getBackendBucketSettings;
   private final UnaryCallSettings<InsertBackendBucketHttpRequest, Operation>
@@ -112,10 +118,22 @@ public class BackendBucketStubSettings extends StubSettings<BackendBucketStubSet
   private final UnaryCallSettings<UpdateBackendBucketHttpRequest, Operation>
       updateBackendBucketSettings;
 
+  /** Returns the object with the settings used for calls to addSignedUrlKeyBackendBucket. */
+  public UnaryCallSettings<AddSignedUrlKeyBackendBucketHttpRequest, Operation>
+      addSignedUrlKeyBackendBucketSettings() {
+    return addSignedUrlKeyBackendBucketSettings;
+  }
+
   /** Returns the object with the settings used for calls to deleteBackendBucket. */
   public UnaryCallSettings<DeleteBackendBucketHttpRequest, Operation>
       deleteBackendBucketSettings() {
     return deleteBackendBucketSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteSignedUrlKeyBackendBucket. */
+  public UnaryCallSettings<DeleteSignedUrlKeyBackendBucketHttpRequest, Operation>
+      deleteSignedUrlKeyBackendBucketSettings() {
+    return deleteSignedUrlKeyBackendBucketSettings;
   }
 
   /** Returns the object with the settings used for calls to getBackendBucket. */
@@ -222,7 +240,11 @@ public class BackendBucketStubSettings extends StubSettings<BackendBucketStubSet
   protected BackendBucketStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
+    addSignedUrlKeyBackendBucketSettings =
+        settingsBuilder.addSignedUrlKeyBackendBucketSettings().build();
     deleteBackendBucketSettings = settingsBuilder.deleteBackendBucketSettings().build();
+    deleteSignedUrlKeyBackendBucketSettings =
+        settingsBuilder.deleteSignedUrlKeyBackendBucketSettings().build();
     getBackendBucketSettings = settingsBuilder.getBackendBucketSettings().build();
     insertBackendBucketSettings = settingsBuilder.insertBackendBucketSettings().build();
     listBackendBucketsSettings = settingsBuilder.listBackendBucketsSettings().build();
@@ -293,8 +315,12 @@ public class BackendBucketStubSettings extends StubSettings<BackendBucketStubSet
   public static class Builder extends StubSettings.Builder<BackendBucketStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
+    private final UnaryCallSettings.Builder<AddSignedUrlKeyBackendBucketHttpRequest, Operation>
+        addSignedUrlKeyBackendBucketSettings;
     private final UnaryCallSettings.Builder<DeleteBackendBucketHttpRequest, Operation>
         deleteBackendBucketSettings;
+    private final UnaryCallSettings.Builder<DeleteSignedUrlKeyBackendBucketHttpRequest, Operation>
+        deleteSignedUrlKeyBackendBucketSettings;
     private final UnaryCallSettings.Builder<GetBackendBucketHttpRequest, BackendBucket>
         getBackendBucketSettings;
     private final UnaryCallSettings.Builder<InsertBackendBucketHttpRequest, Operation>
@@ -348,7 +374,11 @@ public class BackendBucketStubSettings extends StubSettings<BackendBucketStubSet
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
+      addSignedUrlKeyBackendBucketSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       deleteBackendBucketSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      deleteSignedUrlKeyBackendBucketSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       getBackendBucketSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -362,7 +392,9 @@ public class BackendBucketStubSettings extends StubSettings<BackendBucketStubSet
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              addSignedUrlKeyBackendBucketSettings,
               deleteBackendBucketSettings,
+              deleteSignedUrlKeyBackendBucketSettings,
               getBackendBucketSettings,
               insertBackendBucketSettings,
               listBackendBucketsSettings,
@@ -384,8 +416,18 @@ public class BackendBucketStubSettings extends StubSettings<BackendBucketStubSet
     private static Builder initDefaults(Builder builder) {
 
       builder
+          .addSignedUrlKeyBackendBucketSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
           .deleteBackendBucketSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .deleteSignedUrlKeyBackendBucketSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
@@ -419,7 +461,11 @@ public class BackendBucketStubSettings extends StubSettings<BackendBucketStubSet
     protected Builder(BackendBucketStubSettings settings) {
       super(settings);
 
+      addSignedUrlKeyBackendBucketSettings =
+          settings.addSignedUrlKeyBackendBucketSettings.toBuilder();
       deleteBackendBucketSettings = settings.deleteBackendBucketSettings.toBuilder();
+      deleteSignedUrlKeyBackendBucketSettings =
+          settings.deleteSignedUrlKeyBackendBucketSettings.toBuilder();
       getBackendBucketSettings = settings.getBackendBucketSettings.toBuilder();
       insertBackendBucketSettings = settings.insertBackendBucketSettings.toBuilder();
       listBackendBucketsSettings = settings.listBackendBucketsSettings.toBuilder();
@@ -428,7 +474,9 @@ public class BackendBucketStubSettings extends StubSettings<BackendBucketStubSet
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              addSignedUrlKeyBackendBucketSettings,
               deleteBackendBucketSettings,
+              deleteSignedUrlKeyBackendBucketSettings,
               getBackendBucketSettings,
               insertBackendBucketSettings,
               listBackendBucketsSettings,
@@ -452,10 +500,22 @@ public class BackendBucketStubSettings extends StubSettings<BackendBucketStubSet
       return unaryMethodSettingsBuilders;
     }
 
+    /** Returns the builder for the settings used for calls to addSignedUrlKeyBackendBucket. */
+    public UnaryCallSettings.Builder<AddSignedUrlKeyBackendBucketHttpRequest, Operation>
+        addSignedUrlKeyBackendBucketSettings() {
+      return addSignedUrlKeyBackendBucketSettings;
+    }
+
     /** Returns the builder for the settings used for calls to deleteBackendBucket. */
     public UnaryCallSettings.Builder<DeleteBackendBucketHttpRequest, Operation>
         deleteBackendBucketSettings() {
       return deleteBackendBucketSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteSignedUrlKeyBackendBucket. */
+    public UnaryCallSettings.Builder<DeleteSignedUrlKeyBackendBucketHttpRequest, Operation>
+        deleteSignedUrlKeyBackendBucketSettings() {
+      return deleteSignedUrlKeyBackendBucketSettings;
     }
 
     /** Returns the builder for the settings used for calls to getBackendBucket. */

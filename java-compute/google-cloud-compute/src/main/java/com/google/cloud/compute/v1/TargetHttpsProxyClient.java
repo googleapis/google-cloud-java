@@ -617,6 +617,125 @@ public class TargetHttpsProxyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
+   * Sets the QUIC override policy for TargetHttpsProxy.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (TargetHttpsProxyClient targetHttpsProxyClient = TargetHttpsProxyClient.create()) {
+   *   ProjectGlobalTargetHttpsProxyName targetHttpsProxy = ProjectGlobalTargetHttpsProxyName.of("[PROJECT]", "[TARGET_HTTPS_PROXY]");
+   *   TargetHttpsProxiesSetQuicOverrideRequest targetHttpsProxiesSetQuicOverrideRequestResource = TargetHttpsProxiesSetQuicOverrideRequest.newBuilder().build();
+   *   Operation response = targetHttpsProxyClient.setQuicOverrideTargetHttpsProxy(targetHttpsProxy, targetHttpsProxiesSetQuicOverrideRequestResource);
+   * }
+   * </code></pre>
+   *
+   * @param targetHttpsProxy Name of the TargetHttpsProxy resource to set the QUIC override policy
+   *     for. The name should conform to RFC1035.
+   * @param targetHttpsProxiesSetQuicOverrideRequestResource
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation setQuicOverrideTargetHttpsProxy(
+      ProjectGlobalTargetHttpsProxyName targetHttpsProxy,
+      TargetHttpsProxiesSetQuicOverrideRequest targetHttpsProxiesSetQuicOverrideRequestResource) {
+
+    SetQuicOverrideTargetHttpsProxyHttpRequest request =
+        SetQuicOverrideTargetHttpsProxyHttpRequest.newBuilder()
+            .setTargetHttpsProxy(targetHttpsProxy == null ? null : targetHttpsProxy.toString())
+            .setTargetHttpsProxiesSetQuicOverrideRequestResource(
+                targetHttpsProxiesSetQuicOverrideRequestResource)
+            .build();
+    return setQuicOverrideTargetHttpsProxy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sets the QUIC override policy for TargetHttpsProxy.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (TargetHttpsProxyClient targetHttpsProxyClient = TargetHttpsProxyClient.create()) {
+   *   ProjectGlobalTargetHttpsProxyName targetHttpsProxy = ProjectGlobalTargetHttpsProxyName.of("[PROJECT]", "[TARGET_HTTPS_PROXY]");
+   *   TargetHttpsProxiesSetQuicOverrideRequest targetHttpsProxiesSetQuicOverrideRequestResource = TargetHttpsProxiesSetQuicOverrideRequest.newBuilder().build();
+   *   Operation response = targetHttpsProxyClient.setQuicOverrideTargetHttpsProxy(targetHttpsProxy.toString(), targetHttpsProxiesSetQuicOverrideRequestResource);
+   * }
+   * </code></pre>
+   *
+   * @param targetHttpsProxy Name of the TargetHttpsProxy resource to set the QUIC override policy
+   *     for. The name should conform to RFC1035.
+   * @param targetHttpsProxiesSetQuicOverrideRequestResource
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation setQuicOverrideTargetHttpsProxy(
+      String targetHttpsProxy,
+      TargetHttpsProxiesSetQuicOverrideRequest targetHttpsProxiesSetQuicOverrideRequestResource) {
+
+    SetQuicOverrideTargetHttpsProxyHttpRequest request =
+        SetQuicOverrideTargetHttpsProxyHttpRequest.newBuilder()
+            .setTargetHttpsProxy(targetHttpsProxy)
+            .setTargetHttpsProxiesSetQuicOverrideRequestResource(
+                targetHttpsProxiesSetQuicOverrideRequestResource)
+            .build();
+    return setQuicOverrideTargetHttpsProxy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sets the QUIC override policy for TargetHttpsProxy.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (TargetHttpsProxyClient targetHttpsProxyClient = TargetHttpsProxyClient.create()) {
+   *   ProjectGlobalTargetHttpsProxyName targetHttpsProxy = ProjectGlobalTargetHttpsProxyName.of("[PROJECT]", "[TARGET_HTTPS_PROXY]");
+   *   TargetHttpsProxiesSetQuicOverrideRequest targetHttpsProxiesSetQuicOverrideRequestResource = TargetHttpsProxiesSetQuicOverrideRequest.newBuilder().build();
+   *   SetQuicOverrideTargetHttpsProxyHttpRequest request = SetQuicOverrideTargetHttpsProxyHttpRequest.newBuilder()
+   *     .setTargetHttpsProxy(targetHttpsProxy.toString())
+   *     .setTargetHttpsProxiesSetQuicOverrideRequestResource(targetHttpsProxiesSetQuicOverrideRequestResource)
+   *     .build();
+   *   Operation response = targetHttpsProxyClient.setQuicOverrideTargetHttpsProxy(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation setQuicOverrideTargetHttpsProxy(
+      SetQuicOverrideTargetHttpsProxyHttpRequest request) {
+    return setQuicOverrideTargetHttpsProxyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sets the QUIC override policy for TargetHttpsProxy.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (TargetHttpsProxyClient targetHttpsProxyClient = TargetHttpsProxyClient.create()) {
+   *   ProjectGlobalTargetHttpsProxyName targetHttpsProxy = ProjectGlobalTargetHttpsProxyName.of("[PROJECT]", "[TARGET_HTTPS_PROXY]");
+   *   TargetHttpsProxiesSetQuicOverrideRequest targetHttpsProxiesSetQuicOverrideRequestResource = TargetHttpsProxiesSetQuicOverrideRequest.newBuilder().build();
+   *   SetQuicOverrideTargetHttpsProxyHttpRequest request = SetQuicOverrideTargetHttpsProxyHttpRequest.newBuilder()
+   *     .setTargetHttpsProxy(targetHttpsProxy.toString())
+   *     .setTargetHttpsProxiesSetQuicOverrideRequestResource(targetHttpsProxiesSetQuicOverrideRequestResource)
+   *     .build();
+   *   ApiFuture&lt;Operation&gt; future = targetHttpsProxyClient.setQuicOverrideTargetHttpsProxyCallable().futureCall(request);
+   *   // Do something
+   *   Operation response = future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi
+  public final UnaryCallable<SetQuicOverrideTargetHttpsProxyHttpRequest, Operation>
+      setQuicOverrideTargetHttpsProxyCallable() {
+    return stub.setQuicOverrideTargetHttpsProxyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
    * Replaces SslCertificates for TargetHttpsProxy.
    *
    * <p>Sample code:

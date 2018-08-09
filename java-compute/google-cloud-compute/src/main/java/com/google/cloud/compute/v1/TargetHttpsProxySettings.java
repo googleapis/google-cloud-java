@@ -89,6 +89,13 @@ public class TargetHttpsProxySettings extends ClientSettings<TargetHttpsProxySet
     return ((TargetHttpsProxyStubSettings) getStubSettings()).listTargetHttpsProxiesSettings();
   }
 
+  /** Returns the object with the settings used for calls to setQuicOverrideTargetHttpsProxy. */
+  public UnaryCallSettings<SetQuicOverrideTargetHttpsProxyHttpRequest, Operation>
+      setQuicOverrideTargetHttpsProxySettings() {
+    return ((TargetHttpsProxyStubSettings) getStubSettings())
+        .setQuicOverrideTargetHttpsProxySettings();
+  }
+
   /** Returns the object with the settings used for calls to setSslCertificatesTargetHttpsProxy. */
   public UnaryCallSettings<SetSslCertificatesTargetHttpsProxyHttpRequest, Operation>
       setSslCertificatesTargetHttpsProxySettings() {
@@ -235,6 +242,12 @@ public class TargetHttpsProxySettings extends ClientSettings<TargetHttpsProxySet
             ListTargetHttpsProxiesPagedResponse>
         listTargetHttpsProxiesSettings() {
       return getStubSettingsBuilder().listTargetHttpsProxiesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setQuicOverrideTargetHttpsProxy. */
+    public UnaryCallSettings.Builder<SetQuicOverrideTargetHttpsProxyHttpRequest, Operation>
+        setQuicOverrideTargetHttpsProxySettings() {
+      return getStubSettingsBuilder().setQuicOverrideTargetHttpsProxySettings();
     }
 
     /**

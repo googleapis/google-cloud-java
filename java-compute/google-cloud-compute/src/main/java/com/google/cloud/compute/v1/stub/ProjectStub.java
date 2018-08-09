@@ -35,6 +35,7 @@ import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.Project;
 import com.google.cloud.compute.v1.ProjectsGetXpnResources;
 import com.google.cloud.compute.v1.SetCommonInstanceMetadataProjectHttpRequest;
+import com.google.cloud.compute.v1.SetDefaultNetworkTierProjectHttpRequest;
 import com.google.cloud.compute.v1.SetUsageExportBucketProjectHttpRequest;
 import com.google.cloud.compute.v1.XpnHostList;
 import javax.annotation.Generated;
@@ -122,6 +123,13 @@ public abstract class ProjectStub implements BackgroundResource {
       setCommonInstanceMetadataProjectCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: setCommonInstanceMetadataProjectCallable()");
+  }
+
+  @BetaApi
+  public UnaryCallable<SetDefaultNetworkTierProjectHttpRequest, Operation>
+      setDefaultNetworkTierProjectCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: setDefaultNetworkTierProjectCallable()");
   }
 
   @BetaApi

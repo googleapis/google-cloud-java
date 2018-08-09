@@ -246,6 +246,7 @@ public class ForwardingRuleClientTest {
   @SuppressWarnings("all")
   public void getForwardingRuleTest() {
     String portRange = "portRange217518079";
+    String networkTier = "networkTier-19473069";
     String kind = "kind3292052";
     String iPProtocol = "iPProtocol323774237";
     ProjectGlobalBackendServiceName backendService =
@@ -266,6 +267,7 @@ public class ForwardingRuleClientTest {
     ForwardingRule expectedResponse =
         ForwardingRule.newBuilder()
             .setPortRange(portRange)
+            .setNetworkTier(networkTier)
             .setKind(kind)
             .setIPProtocol(iPProtocol)
             .setBackendService(backendService.toString())

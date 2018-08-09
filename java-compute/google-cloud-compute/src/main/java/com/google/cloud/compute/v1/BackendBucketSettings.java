@@ -48,13 +48,13 @@ import javax.annotation.Generated;
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object. For
- * example, to set the total timeout of deleteBackendBucket to 30 seconds:
+ * example, to set the total timeout of addSignedUrlKeyBackendBucket to 30 seconds:
  *
  * <pre>
  * <code>
  * BackendBucketSettings.Builder backendBucketSettingsBuilder =
  *     BackendBucketSettings.newBuilder();
- * backendBucketSettingsBuilder.deleteBackendBucketSettings().getRetrySettings().toBuilder()
+ * backendBucketSettingsBuilder.addSignedUrlKeyBackendBucketSettings().getRetrySettings().toBuilder()
  *     .setTotalTimeout(Duration.ofSeconds(30));
  * BackendBucketSettings backendBucketSettings = backendBucketSettingsBuilder.build();
  * </code>
@@ -63,10 +63,23 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator")
 @BetaApi
 public class BackendBucketSettings extends ClientSettings<BackendBucketSettings> {
+  /** Returns the object with the settings used for calls to addSignedUrlKeyBackendBucket. */
+  public UnaryCallSettings<AddSignedUrlKeyBackendBucketHttpRequest, Operation>
+      addSignedUrlKeyBackendBucketSettings() {
+    return ((BackendBucketStubSettings) getStubSettings()).addSignedUrlKeyBackendBucketSettings();
+  }
+
   /** Returns the object with the settings used for calls to deleteBackendBucket. */
   public UnaryCallSettings<DeleteBackendBucketHttpRequest, Operation>
       deleteBackendBucketSettings() {
     return ((BackendBucketStubSettings) getStubSettings()).deleteBackendBucketSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteSignedUrlKeyBackendBucket. */
+  public UnaryCallSettings<DeleteSignedUrlKeyBackendBucketHttpRequest, Operation>
+      deleteSignedUrlKeyBackendBucketSettings() {
+    return ((BackendBucketStubSettings) getStubSettings())
+        .deleteSignedUrlKeyBackendBucketSettings();
   }
 
   /** Returns the object with the settings used for calls to getBackendBucket. */
@@ -200,10 +213,22 @@ public class BackendBucketSettings extends ClientSettings<BackendBucketSettings>
       return this;
     }
 
+    /** Returns the builder for the settings used for calls to addSignedUrlKeyBackendBucket. */
+    public UnaryCallSettings.Builder<AddSignedUrlKeyBackendBucketHttpRequest, Operation>
+        addSignedUrlKeyBackendBucketSettings() {
+      return getStubSettingsBuilder().addSignedUrlKeyBackendBucketSettings();
+    }
+
     /** Returns the builder for the settings used for calls to deleteBackendBucket. */
     public UnaryCallSettings.Builder<DeleteBackendBucketHttpRequest, Operation>
         deleteBackendBucketSettings() {
       return getStubSettingsBuilder().deleteBackendBucketSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteSignedUrlKeyBackendBucket. */
+    public UnaryCallSettings.Builder<DeleteSignedUrlKeyBackendBucketHttpRequest, Operation>
+        deleteSignedUrlKeyBackendBucketSettings() {
+      return getStubSettingsBuilder().deleteSignedUrlKeyBackendBucketSettings();
     }
 
     /** Returns the builder for the settings used for calls to getBackendBucket. */

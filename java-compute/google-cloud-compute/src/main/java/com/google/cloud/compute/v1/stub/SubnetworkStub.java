@@ -17,6 +17,7 @@ package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.SubnetworkClient.AggregatedListSubnetworksPagedResponse;
 import static com.google.cloud.compute.v1.SubnetworkClient.ListSubnetworksPagedResponse;
+import static com.google.cloud.compute.v1.SubnetworkClient.ListUsableSubnetworksPagedResponse;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -27,12 +28,14 @@ import com.google.cloud.compute.v1.ExpandIpCidrRangeSubnetworkHttpRequest;
 import com.google.cloud.compute.v1.GetSubnetworkHttpRequest;
 import com.google.cloud.compute.v1.InsertSubnetworkHttpRequest;
 import com.google.cloud.compute.v1.ListSubnetworksHttpRequest;
+import com.google.cloud.compute.v1.ListUsableSubnetworksHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchSubnetworkHttpRequest;
 import com.google.cloud.compute.v1.SetPrivateIpGoogleAccessSubnetworkHttpRequest;
 import com.google.cloud.compute.v1.Subnetwork;
 import com.google.cloud.compute.v1.SubnetworkAggregatedList;
 import com.google.cloud.compute.v1.SubnetworkList;
+import com.google.cloud.compute.v1.UsableSubnetworksAggregatedList;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
@@ -89,6 +92,19 @@ public abstract class SubnetworkStub implements BackgroundResource {
   @BetaApi
   public UnaryCallable<ListSubnetworksHttpRequest, SubnetworkList> listSubnetworksCallable() {
     throw new UnsupportedOperationException("Not implemented: listSubnetworksCallable()");
+  }
+
+  @BetaApi
+  public UnaryCallable<ListUsableSubnetworksHttpRequest, ListUsableSubnetworksPagedResponse>
+      listUsableSubnetworksPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listUsableSubnetworksPagedCallable()");
+  }
+
+  @BetaApi
+  public UnaryCallable<ListUsableSubnetworksHttpRequest, UsableSubnetworksAggregatedList>
+      listUsableSubnetworksCallable() {
+    throw new UnsupportedOperationException("Not implemented: listUsableSubnetworksCallable()");
   }
 
   @BetaApi

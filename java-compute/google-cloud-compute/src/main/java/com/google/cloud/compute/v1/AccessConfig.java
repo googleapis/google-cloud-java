@@ -28,6 +28,7 @@ public final class AccessConfig implements ApiMessage {
   private final String kind;
   private final String name;
   private final String natIP;
+  private final String networkTier;
   private final String publicPtrDomainName;
   private final Boolean setPublicPtr;
   private final String type;
@@ -36,6 +37,7 @@ public final class AccessConfig implements ApiMessage {
     this.kind = null;
     this.name = null;
     this.natIP = null;
+    this.networkTier = null;
     this.publicPtrDomainName = null;
     this.setPublicPtr = null;
     this.type = null;
@@ -45,12 +47,14 @@ public final class AccessConfig implements ApiMessage {
       String kind,
       String name,
       String natIP,
+      String networkTier,
       String publicPtrDomainName,
       Boolean setPublicPtr,
       String type) {
     this.kind = kind;
     this.name = name;
     this.natIP = natIP;
+    this.networkTier = networkTier;
     this.publicPtrDomainName = publicPtrDomainName;
     this.setPublicPtr = setPublicPtr;
     this.type = type;
@@ -66,6 +70,9 @@ public final class AccessConfig implements ApiMessage {
     }
     if (fieldName.equals("natIP")) {
       return natIP;
+    }
+    if (fieldName.equals("networkTier")) {
+      return networkTier;
     }
     if (fieldName.equals("publicPtrDomainName")) {
       return publicPtrDomainName;
@@ -101,6 +108,10 @@ public final class AccessConfig implements ApiMessage {
 
   public String getNatIP() {
     return natIP;
+  }
+
+  public String getNetworkTier() {
+    return networkTier;
   }
 
   public String getPublicPtrDomainName() {
@@ -141,6 +152,7 @@ public final class AccessConfig implements ApiMessage {
     private String kind;
     private String name;
     private String natIP;
+    private String networkTier;
     private String publicPtrDomainName;
     private Boolean setPublicPtr;
     private String type;
@@ -158,6 +170,9 @@ public final class AccessConfig implements ApiMessage {
       if (other.getNatIP() != null) {
         this.natIP = other.natIP;
       }
+      if (other.getNetworkTier() != null) {
+        this.networkTier = other.networkTier;
+      }
       if (other.getPublicPtrDomainName() != null) {
         this.publicPtrDomainName = other.publicPtrDomainName;
       }
@@ -174,6 +189,7 @@ public final class AccessConfig implements ApiMessage {
       this.kind = source.kind;
       this.name = source.name;
       this.natIP = source.natIP;
+      this.networkTier = source.networkTier;
       this.publicPtrDomainName = source.publicPtrDomainName;
       this.setPublicPtr = source.setPublicPtr;
       this.type = source.type;
@@ -206,6 +222,15 @@ public final class AccessConfig implements ApiMessage {
       return this;
     }
 
+    public String getNetworkTier() {
+      return networkTier;
+    }
+
+    public Builder setNetworkTier(String networkTier) {
+      this.networkTier = networkTier;
+      return this;
+    }
+
     public String getPublicPtrDomainName() {
       return publicPtrDomainName;
     }
@@ -235,7 +260,8 @@ public final class AccessConfig implements ApiMessage {
 
     public AccessConfig build() {
 
-      return new AccessConfig(kind, name, natIP, publicPtrDomainName, setPublicPtr, type);
+      return new AccessConfig(
+          kind, name, natIP, networkTier, publicPtrDomainName, setPublicPtr, type);
     }
 
     public Builder clone() {
@@ -243,6 +269,7 @@ public final class AccessConfig implements ApiMessage {
       newBuilder.setKind(this.kind);
       newBuilder.setName(this.name);
       newBuilder.setNatIP(this.natIP);
+      newBuilder.setNetworkTier(this.networkTier);
       newBuilder.setPublicPtrDomainName(this.publicPtrDomainName);
       newBuilder.setSetPublicPtr(this.setPublicPtr);
       newBuilder.setType(this.type);
@@ -261,6 +288,9 @@ public final class AccessConfig implements ApiMessage {
         + ", "
         + "natIP="
         + natIP
+        + ", "
+        + "networkTier="
+        + networkTier
         + ", "
         + "publicPtrDomainName="
         + publicPtrDomainName
@@ -283,6 +313,7 @@ public final class AccessConfig implements ApiMessage {
       return Objects.equals(this.kind, that.getKind())
           && Objects.equals(this.name, that.getName())
           && Objects.equals(this.natIP, that.getNatIP())
+          && Objects.equals(this.networkTier, that.getNetworkTier())
           && Objects.equals(this.publicPtrDomainName, that.getPublicPtrDomainName())
           && Objects.equals(this.setPublicPtr, that.getSetPublicPtr())
           && Objects.equals(this.type, that.getType());
@@ -292,6 +323,6 @@ public final class AccessConfig implements ApiMessage {
 
   @Override
   public int hashCode() {
-    return Objects.hash(kind, name, natIP, publicPtrDomainName, setPublicPtr, type);
+    return Objects.hash(kind, name, natIP, networkTier, publicPtrDomainName, setPublicPtr, type);
   }
 }

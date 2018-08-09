@@ -16,7 +16,9 @@
 package com.google.cloud.compute.v1;
 
 import static com.google.cloud.compute.v1.BackendBucketClient.ListBackendBucketsPagedResponse;
+import static com.google.cloud.compute.v1.stub.HttpJsonBackendBucketStub.addSignedUrlKeyBackendBucketMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonBackendBucketStub.deleteBackendBucketMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonBackendBucketStub.deleteSignedUrlKeyBackendBucketMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonBackendBucketStub.getBackendBucketMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonBackendBucketStub.insertBackendBucketMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonBackendBucketStub.listBackendBucketsMethodDescriptor;
@@ -52,7 +54,9 @@ public class BackendBucketClientTest {
   private static final List<ApiMethodDescriptor> METHOD_DESCRIPTORS =
       ImmutableList.copyOf(
           Lists.<ApiMethodDescriptor>newArrayList(
+              addSignedUrlKeyBackendBucketMethodDescriptor,
               deleteBackendBucketMethodDescriptor,
+              deleteSignedUrlKeyBackendBucketMethodDescriptor,
               getBackendBucketMethodDescriptor,
               insertBackendBucketMethodDescriptor,
               listBackendBucketsMethodDescriptor,
@@ -85,6 +89,99 @@ public class BackendBucketClientTest {
   @AfterClass
   public static void tearDown() throws Exception {
     client.close();
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void addSignedUrlKeyBackendBucketTest() {
+    String httpErrorMessage = "httpErrorMessage1276263769";
+    String targetId = "targetId-815576439";
+    String kind = "kind3292052";
+    String description = "description-1724546052";
+    String statusMessage = "statusMessage-239442758";
+    String selfLink = "selfLink-1691268851";
+    String insertTime = "insertTime-103148397";
+    Integer httpErrorStatusCode = 1386087020;
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
+    String targetLink = "targetLink-2084812312";
+    String creationTimestamp = "creationTimestamp567396278";
+    String name = "name3373707";
+    Integer progress = 1001078227;
+    String operationType = "operationType-1432962286";
+    String startTime = "startTime-1573145462";
+    String endTime = "endTime1725551537";
+    String id = "id3355";
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+    String clientOperationId = "clientOperationId-239630617";
+    String user = "user3599307";
+    String status = "status-892481550";
+    Operation expectedResponse =
+        Operation.newBuilder()
+            .setHttpErrorMessage(httpErrorMessage)
+            .setTargetId(targetId)
+            .setKind(kind)
+            .setDescription(description)
+            .setStatusMessage(statusMessage)
+            .setSelfLink(selfLink)
+            .setInsertTime(insertTime)
+            .setHttpErrorStatusCode(httpErrorStatusCode)
+            .setZone(zone.toString())
+            .setTargetLink(targetLink)
+            .setCreationTimestamp(creationTimestamp)
+            .setName(name)
+            .setProgress(progress)
+            .setOperationType(operationType)
+            .setStartTime(startTime)
+            .setEndTime(endTime)
+            .setId(id)
+            .setRegion(region.toString())
+            .setClientOperationId(clientOperationId)
+            .setUser(user)
+            .setStatus(status)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ProjectGlobalBackendBucketName backendBucket =
+        ProjectGlobalBackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
+    SignedUrlKey signedUrlKeyResource = SignedUrlKey.newBuilder().build();
+
+    Operation actualResponse =
+        client.addSignedUrlKeyBackendBucket(backendBucket, signedUrlKeyResource);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void addSignedUrlKeyBackendBucketExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ProjectGlobalBackendBucketName backendBucket =
+          ProjectGlobalBackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
+      SignedUrlKey signedUrlKeyResource = SignedUrlKey.newBuilder().build();
+
+      client.addSignedUrlKeyBackendBucket(backendBucket, signedUrlKeyResource);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
   }
 
   @Test
@@ -171,6 +268,98 @@ public class BackendBucketClientTest {
           ProjectGlobalBackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
 
       client.deleteBackendBucket(backendBucket);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteSignedUrlKeyBackendBucketTest() {
+    String httpErrorMessage = "httpErrorMessage1276263769";
+    String targetId = "targetId-815576439";
+    String kind = "kind3292052";
+    String description = "description-1724546052";
+    String statusMessage = "statusMessage-239442758";
+    String selfLink = "selfLink-1691268851";
+    String insertTime = "insertTime-103148397";
+    Integer httpErrorStatusCode = 1386087020;
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
+    String targetLink = "targetLink-2084812312";
+    String creationTimestamp = "creationTimestamp567396278";
+    String name = "name3373707";
+    Integer progress = 1001078227;
+    String operationType = "operationType-1432962286";
+    String startTime = "startTime-1573145462";
+    String endTime = "endTime1725551537";
+    String id = "id3355";
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+    String clientOperationId = "clientOperationId-239630617";
+    String user = "user3599307";
+    String status = "status-892481550";
+    Operation expectedResponse =
+        Operation.newBuilder()
+            .setHttpErrorMessage(httpErrorMessage)
+            .setTargetId(targetId)
+            .setKind(kind)
+            .setDescription(description)
+            .setStatusMessage(statusMessage)
+            .setSelfLink(selfLink)
+            .setInsertTime(insertTime)
+            .setHttpErrorStatusCode(httpErrorStatusCode)
+            .setZone(zone.toString())
+            .setTargetLink(targetLink)
+            .setCreationTimestamp(creationTimestamp)
+            .setName(name)
+            .setProgress(progress)
+            .setOperationType(operationType)
+            .setStartTime(startTime)
+            .setEndTime(endTime)
+            .setId(id)
+            .setRegion(region.toString())
+            .setClientOperationId(clientOperationId)
+            .setUser(user)
+            .setStatus(status)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ProjectGlobalBackendBucketName backendBucket =
+        ProjectGlobalBackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
+    String keyName = "keyName500938859";
+
+    Operation actualResponse = client.deleteSignedUrlKeyBackendBucket(backendBucket, keyName);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteSignedUrlKeyBackendBucketExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ProjectGlobalBackendBucketName backendBucket =
+          ProjectGlobalBackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
+      String keyName = "keyName500938859";
+
+      client.deleteSignedUrlKeyBackendBucket(backendBucket, keyName);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

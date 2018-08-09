@@ -850,6 +850,144 @@ public class SubnetworkClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
+   * Retrieves an aggregated list of usable subnetworks.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SubnetworkClient subnetworkClient = SubnetworkClient.create()) {
+   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   for (UsableSubnetwork element : subnetworkClient.listUsableSubnetworks(project).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param project Project ID for this request.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final ListUsableSubnetworksPagedResponse listUsableSubnetworks(ProjectName project) {
+    ListUsableSubnetworksHttpRequest request =
+        ListUsableSubnetworksHttpRequest.newBuilder()
+            .setProject(project == null ? null : project.toString())
+            .build();
+    return listUsableSubnetworks(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Retrieves an aggregated list of usable subnetworks.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SubnetworkClient subnetworkClient = SubnetworkClient.create()) {
+   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   for (UsableSubnetwork element : subnetworkClient.listUsableSubnetworks(project.toString()).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param project Project ID for this request.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final ListUsableSubnetworksPagedResponse listUsableSubnetworks(String project) {
+    ListUsableSubnetworksHttpRequest request =
+        ListUsableSubnetworksHttpRequest.newBuilder().setProject(project).build();
+    return listUsableSubnetworks(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Retrieves an aggregated list of usable subnetworks.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SubnetworkClient subnetworkClient = SubnetworkClient.create()) {
+   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   ListUsableSubnetworksHttpRequest request = ListUsableSubnetworksHttpRequest.newBuilder()
+   *     .setProject(project.toString())
+   *     .build();
+   *   for (UsableSubnetwork element : subnetworkClient.listUsableSubnetworks(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final ListUsableSubnetworksPagedResponse listUsableSubnetworks(
+      ListUsableSubnetworksHttpRequest request) {
+    return listUsableSubnetworksPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Retrieves an aggregated list of usable subnetworks.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SubnetworkClient subnetworkClient = SubnetworkClient.create()) {
+   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   ListUsableSubnetworksHttpRequest request = ListUsableSubnetworksHttpRequest.newBuilder()
+   *     .setProject(project.toString())
+   *     .build();
+   *   ApiFuture&lt;ListUsableSubnetworksPagedResponse&gt; future = subnetworkClient.listUsableSubnetworksPagedCallable().futureCall(request);
+   *   // Do something
+   *   for (UsableSubnetwork element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   */
+  @BetaApi
+  public final UnaryCallable<ListUsableSubnetworksHttpRequest, ListUsableSubnetworksPagedResponse>
+      listUsableSubnetworksPagedCallable() {
+    return stub.listUsableSubnetworksPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Retrieves an aggregated list of usable subnetworks.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SubnetworkClient subnetworkClient = SubnetworkClient.create()) {
+   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   ListUsableSubnetworksHttpRequest request = ListUsableSubnetworksHttpRequest.newBuilder()
+   *     .setProject(project.toString())
+   *     .build();
+   *   while (true) {
+   *     UsableSubnetworksAggregatedList response = subnetworkClient.listUsableSubnetworksCallable().call(request);
+   *     for (UsableSubnetwork element : response.getItemsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * </code></pre>
+   */
+  @BetaApi
+  public final UnaryCallable<ListUsableSubnetworksHttpRequest, UsableSubnetworksAggregatedList>
+      listUsableSubnetworksCallable() {
+    return stub.listUsableSubnetworksCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
    * Patches the specified subnetwork with the data included in the request. Only the following
    * fields within the subnetwork resource can be specified in the request: secondary_ip_range,
    * allow_subnet_cidr_routes_overlap and role. It is also mandatory to specify the current
@@ -1299,6 +1437,90 @@ public class SubnetworkClient implements BackgroundResource {
     protected ListSubnetworksFixedSizeCollection createCollection(
         List<ListSubnetworksPage> pages, int collectionSize) {
       return new ListSubnetworksFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListUsableSubnetworksPagedResponse
+      extends AbstractPagedListResponse<
+          ListUsableSubnetworksHttpRequest, UsableSubnetworksAggregatedList, UsableSubnetwork,
+          ListUsableSubnetworksPage, ListUsableSubnetworksFixedSizeCollection> {
+
+    public static ApiFuture<ListUsableSubnetworksPagedResponse> createAsync(
+        PageContext<
+                ListUsableSubnetworksHttpRequest, UsableSubnetworksAggregatedList, UsableSubnetwork>
+            context,
+        ApiFuture<UsableSubnetworksAggregatedList> futureResponse) {
+      ApiFuture<ListUsableSubnetworksPage> futurePage =
+          ListUsableSubnetworksPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          new ApiFunction<ListUsableSubnetworksPage, ListUsableSubnetworksPagedResponse>() {
+            @Override
+            public ListUsableSubnetworksPagedResponse apply(ListUsableSubnetworksPage input) {
+              return new ListUsableSubnetworksPagedResponse(input);
+            }
+          });
+    }
+
+    private ListUsableSubnetworksPagedResponse(ListUsableSubnetworksPage page) {
+      super(page, ListUsableSubnetworksFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListUsableSubnetworksPage
+      extends AbstractPage<
+          ListUsableSubnetworksHttpRequest, UsableSubnetworksAggregatedList, UsableSubnetwork,
+          ListUsableSubnetworksPage> {
+
+    private ListUsableSubnetworksPage(
+        PageContext<
+                ListUsableSubnetworksHttpRequest, UsableSubnetworksAggregatedList, UsableSubnetwork>
+            context,
+        UsableSubnetworksAggregatedList response) {
+      super(context, response);
+    }
+
+    private static ListUsableSubnetworksPage createEmptyPage() {
+      return new ListUsableSubnetworksPage(null, null);
+    }
+
+    @Override
+    protected ListUsableSubnetworksPage createPage(
+        PageContext<
+                ListUsableSubnetworksHttpRequest, UsableSubnetworksAggregatedList, UsableSubnetwork>
+            context,
+        UsableSubnetworksAggregatedList response) {
+      return new ListUsableSubnetworksPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListUsableSubnetworksPage> createPageAsync(
+        PageContext<
+                ListUsableSubnetworksHttpRequest, UsableSubnetworksAggregatedList, UsableSubnetwork>
+            context,
+        ApiFuture<UsableSubnetworksAggregatedList> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListUsableSubnetworksFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListUsableSubnetworksHttpRequest, UsableSubnetworksAggregatedList, UsableSubnetwork,
+          ListUsableSubnetworksPage, ListUsableSubnetworksFixedSizeCollection> {
+
+    private ListUsableSubnetworksFixedSizeCollection(
+        List<ListUsableSubnetworksPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListUsableSubnetworksFixedSizeCollection createEmptyCollection() {
+      return new ListUsableSubnetworksFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListUsableSubnetworksFixedSizeCollection createCollection(
+        List<ListUsableSubnetworksPage> pages, int collectionSize) {
+      return new ListUsableSubnetworksFixedSizeCollection(pages, collectionSize);
     }
   }
 }
