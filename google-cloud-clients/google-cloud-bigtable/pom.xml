@@ -110,7 +110,7 @@
       </activation>
       <properties>
         <!-- add this to disable checking -->
-        <javadoc.opts>-Xdoclint:none</javadoc.opts>
+        <!--<javadoc.opts>-Xdoclint:none</javadoc.opts>-->
       </properties>
     </profile>
   </profiles>
