@@ -142,7 +142,7 @@ public final class ImageAnnotatorProto {
       "eta1/web_detection.proto\032\027google/rpc/sta" +
       "tus.proto\032\027google/type/color.proto\032\030goog" +
       "le/type/latlng.proto\"\341\002\n\007Feature\0229\n\004type" +
-      "\030\001 \001(\0162+.google.cloud.vision.v1p1beta1.F" +
+      "\030\001 \001(\0162+.google.cloud.vision.v1p1beta1.F",
       "eature.Type\022\023\n\013max_results\030\002 \001(\005\022\r\n\005mode" +
       "l\030\003 \001(\t\"\366\001\n\004Type\022\024\n\020TYPE_UNSPECIFIED\020\000\022\022" +
       "\n\016FACE_DETECTION\020\001\022\026\n\022LANDMARK_DETECTION" +
@@ -152,7 +152,7 @@ public final class ImageAnnotatorProto {
       "\024\n\020IMAGE_PROPERTIES\020\007\022\016\n\nCROP_HINTS\020\t\022\021\n" +
       "\rWEB_DETECTION\020\n\"7\n\013ImageSource\022\025\n\rgcs_i" +
       "mage_uri\030\001 \001(\t\022\021\n\timage_uri\030\002 \001(\t\"T\n\005Ima" +
-      "ge\022\017\n\007content\030\001 \001(\014\022:\n\006source\030\002 \001(\0132*.go" +
+      "ge\022\017\n\007content\030\001 \001(\014\022:\n\006source\030\002 \001(\0132*.go",
       "ogle.cloud.vision.v1p1beta1.ImageSource\"" +
       "\233\016\n\016FaceAnnotation\022B\n\rbounding_poly\030\001 \001(" +
       "\0132+.google.cloud.vision.v1p1beta1.Boundi" +
@@ -162,7 +162,7 @@ public final class ImageAnnotatorProto {
       "1p1beta1.FaceAnnotation.Landmark\022\022\n\nroll" +
       "_angle\030\004 \001(\002\022\021\n\tpan_angle\030\005 \001(\002\022\022\n\ntilt_" +
       "angle\030\006 \001(\002\022\034\n\024detection_confidence\030\007 \001(" +
-      "\002\022\036\n\026landmarking_confidence\030\010 \001(\002\022A\n\016joy" +
+      "\002\022\036\n\026landmarking_confidence\030\010 \001(\002\022A\n\016joy",
       "_likelihood\030\t \001(\0162).google.cloud.vision." +
       "v1p1beta1.Likelihood\022D\n\021sorrow_likelihoo" +
       "d\030\n \001(\0162).google.cloud.vision.v1p1beta1." +
@@ -172,7 +172,7 @@ public final class ImageAnnotatorProto {
       "oud.vision.v1p1beta1.Likelihood\022K\n\030under" +
       "_exposed_likelihood\030\r \001(\0162).google.cloud" +
       ".vision.v1p1beta1.Likelihood\022E\n\022blurred_" +
-      "likelihood\030\016 \001(\0162).google.cloud.vision.v" +
+      "likelihood\030\016 \001(\0162).google.cloud.vision.v",
       "1p1beta1.Likelihood\022F\n\023headwear_likeliho" +
       "od\030\017 \001(\0162).google.cloud.vision.v1p1beta1" +
       ".Likelihood\032\307\007\n\010Landmark\022I\n\004type\030\003 \001(\0162;" +
@@ -182,7 +182,7 @@ public final class ImageAnnotatorProto {
       "\006\n\004Type\022\024\n\020UNKNOWN_LANDMARK\020\000\022\014\n\010LEFT_EY" +
       "E\020\001\022\r\n\tRIGHT_EYE\020\002\022\030\n\024LEFT_OF_LEFT_EYEBR" +
       "OW\020\003\022\031\n\025RIGHT_OF_LEFT_EYEBROW\020\004\022\031\n\025LEFT_" +
-      "OF_RIGHT_EYEBROW\020\005\022\032\n\026RIGHT_OF_RIGHT_EYE" +
+      "OF_RIGHT_EYEBROW\020\005\022\032\n\026RIGHT_OF_RIGHT_EYE",
       "BROW\020\006\022\031\n\025MIDPOINT_BETWEEN_EYES\020\007\022\014\n\010NOS" +
       "E_TIP\020\010\022\r\n\tUPPER_LIP\020\t\022\r\n\tLOWER_LIP\020\n\022\016\n" +
       "\nMOUTH_LEFT\020\013\022\017\n\013MOUTH_RIGHT\020\014\022\020\n\014MOUTH_" +
@@ -192,7 +192,7 @@ public final class ImageAnnotatorProto {
       "HT_CORNER\020\022\022\034\n\030LEFT_EYE_BOTTOM_BOUNDARY\020" +
       "\023\022\030\n\024LEFT_EYE_LEFT_CORNER\020\024\022\032\n\026RIGHT_EYE" +
       "_TOP_BOUNDARY\020\025\022\032\n\026RIGHT_EYE_RIGHT_CORNE" +
-      "R\020\026\022\035\n\031RIGHT_EYE_BOTTOM_BOUNDARY\020\027\022\031\n\025RI" +
+      "R\020\026\022\035\n\031RIGHT_EYE_BOTTOM_BOUNDARY\020\027\022\031\n\025RI",
       "GHT_EYE_LEFT_CORNER\020\030\022\037\n\033LEFT_EYEBROW_UP" +
       "PER_MIDPOINT\020\031\022 \n\034RIGHT_EYEBROW_UPPER_MI" +
       "DPOINT\020\032\022\024\n\020LEFT_EAR_TRAGION\020\033\022\025\n\021RIGHT_" +
@@ -202,7 +202,7 @@ public final class ImageAnnotatorProto {
       "\n\021CHIN_RIGHT_GONION\020\"\"4\n\014LocationInfo\022$\n" +
       "\007lat_lng\030\001 \001(\0132\023.google.type.LatLng\"=\n\010P" +
       "roperty\022\014\n\004name\030\001 \001(\t\022\r\n\005value\030\002 \001(\t\022\024\n\014" +
-      "uint64_value\030\003 \001(\004\"\274\002\n\020EntityAnnotation\022" +
+      "uint64_value\030\003 \001(\004\"\274\002\n\020EntityAnnotation\022",
       "\013\n\003mid\030\001 \001(\t\022\016\n\006locale\030\002 \001(\t\022\023\n\013descript" +
       "ion\030\003 \001(\t\022\r\n\005score\030\004 \001(\002\022\022\n\nconfidence\030\005" +
       " \001(\002\022\022\n\ntopicality\030\006 \001(\002\022B\n\rbounding_pol" +
@@ -212,7 +212,7 @@ public final class ImageAnnotatorProto {
       "properties\030\t \003(\0132\'.google.cloud.vision.v" +
       "1p1beta1.Property\"\274\002\n\024SafeSearchAnnotati" +
       "on\0228\n\005adult\030\001 \001(\0162).google.cloud.vision." +
-      "v1p1beta1.Likelihood\0228\n\005spoof\030\002 \001(\0162).go" +
+      "v1p1beta1.Likelihood\0228\n\005spoof\030\002 \001(\0162).go",
       "ogle.cloud.vision.v1p1beta1.Likelihood\022:" +
       "\n\007medical\030\003 \001(\0162).google.cloud.vision.v1" +
       "p1beta1.Likelihood\022;\n\010violence\030\004 \001(\0162).g" +
@@ -222,7 +222,7 @@ public final class ImageAnnotatorProto {
       "at_lng\030\001 \001(\0132\023.google.type.LatLng\022(\n\013max" +
       "_lat_lng\030\002 \001(\0132\023.google.type.LatLng\"U\n\tC" +
       "olorInfo\022!\n\005color\030\001 \001(\0132\022.google.type.Co" +
-      "lor\022\r\n\005score\030\002 \001(\002\022\026\n\016pixel_fraction\030\003 \001" +
+      "lor\022\r\n\005score\030\002 \001(\002\022\026\n\016pixel_fraction\030\003 \001",
       "(\002\"T\n\030DominantColorsAnnotation\0228\n\006colors" +
       "\030\001 \003(\0132(.google.cloud.vision.v1p1beta1.C" +
       "olorInfo\"c\n\017ImageProperties\022P\n\017dominant_" +
@@ -232,7 +232,7 @@ public final class ImageAnnotatorProto {
       "vision.v1p1beta1.BoundingPoly\022\022\n\nconfide" +
       "nce\030\002 \001(\002\022\033\n\023importance_fraction\030\003 \001(\002\"R" +
       "\n\023CropHintsAnnotation\022;\n\ncrop_hints\030\001 \003(" +
-      "\0132\'.google.cloud.vision.v1p1beta1.CropHi" +
+      "\0132\'.google.cloud.vision.v1p1beta1.CropHi",
       "nt\"(\n\017CropHintsParams\022\025\n\raspect_ratios\030\001" +
       " \003(\002\"1\n\022WebDetectionParams\022\033\n\023include_ge" +
       "o_results\030\002 \001(\010\"\205\002\n\014ImageContext\022A\n\rlat_" +
@@ -242,7 +242,7 @@ public final class ImageAnnotatorProto {
       "cloud.vision.v1p1beta1.CropHintsParams\022O" +
       "\n\024web_detection_params\030\006 \001(\01321.google.cl" +
       "oud.vision.v1p1beta1.WebDetectionParams\"" +
-      "\311\001\n\024AnnotateImageRequest\0223\n\005image\030\001 \001(\0132" +
+      "\311\001\n\024AnnotateImageRequest\0223\n\005image\030\001 \001(\0132",
       "$.google.cloud.vision.v1p1beta1.Image\0228\n" +
       "\010features\030\002 \003(\0132&.google.cloud.vision.v1" +
       "p1beta1.Feature\022B\n\rimage_context\030\003 \001(\0132+" +
@@ -252,7 +252,7 @@ public final class ImageAnnotatorProto {
       "p1beta1.FaceAnnotation\022M\n\024landmark_annot" +
       "ations\030\002 \003(\0132/.google.cloud.vision.v1p1b" +
       "eta1.EntityAnnotation\022I\n\020logo_annotation" +
-      "s\030\003 \003(\0132/.google.cloud.vision.v1p1beta1." +
+      "s\030\003 \003(\0132/.google.cloud.vision.v1p1beta1.",
       "EntityAnnotation\022J\n\021label_annotations\030\004 " +
       "\003(\0132/.google.cloud.vision.v1p1beta1.Enti" +
       "tyAnnotation\022I\n\020text_annotations\030\005 \003(\0132/" +
@@ -262,7 +262,7 @@ public final class ImageAnnotatorProto {
       "tion\022S\n\026safe_search_annotation\030\006 \001(\01323.g" +
       "oogle.cloud.vision.v1p1beta1.SafeSearchA" +
       "nnotation\022S\n\033image_properties_annotation" +
-      "\030\010 \001(\0132..google.cloud.vision.v1p1beta1.I" +
+      "\030\010 \001(\0132..google.cloud.vision.v1p1beta1.I",
       "mageProperties\022Q\n\025crop_hints_annotation\030" +
       "\013 \001(\01322.google.cloud.vision.v1p1beta1.Cr" +
       "opHintsAnnotation\022B\n\rweb_detection\030\r \001(\013" +
@@ -272,7 +272,7 @@ public final class ImageAnnotatorProto {
       "ts\030\001 \003(\01323.google.cloud.vision.v1p1beta1" +
       ".AnnotateImageRequest\"f\n\033BatchAnnotateIm" +
       "agesResponse\022G\n\tresponses\030\001 \003(\01324.google" +
-      ".cloud.vision.v1p1beta1.AnnotateImageRes" +
+      ".cloud.vision.v1p1beta1.AnnotateImageRes",
       "ponse*e\n\nLikelihood\022\013\n\007UNKNOWN\020\000\022\021\n\rVERY" +
       "_UNLIKELY\020\001\022\014\n\010UNLIKELY\020\002\022\014\n\010POSSIBLE\020\003\022" +
       "\n\n\006LIKELY\020\004\022\017\n\013VERY_LIKELY\020\0052\306\001\n\016ImageAn" +
@@ -282,7 +282,7 @@ public final class ImageAnnotatorProto {
       "a1.BatchAnnotateImagesResponse\"%\202\323\344\223\002\037\"\032" +
       "/v1p1beta1/images:annotate:\001*B\202\001\n!com.go" +
       "ogle.cloud.vision.v1p1beta1B\023ImageAnnota" +
-      "torProtoP\001ZCgoogle.golang.org/genproto/g" +
+      "torProtoP\001ZCgoogle.golang.org/genproto/g",
       "oogleapis/cloud/vision/v1p1beta1;vision\370" +
       "\001\001b\006proto3"
     };

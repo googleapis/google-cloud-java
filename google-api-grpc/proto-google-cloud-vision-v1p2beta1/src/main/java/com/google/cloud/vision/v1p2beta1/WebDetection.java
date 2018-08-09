@@ -38,9 +38,6 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -52,6 +49,13 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
+          default: {
+            if (!parseUnknownFieldProto3(
+                input, unknownFields, extensionRegistry, tag)) {
+              done = true;
+            }
+            break;
+          }
           case 10: {
             if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
               webEntities_ = new java.util.ArrayList<com.google.cloud.vision.v1p2beta1.WebDetection.WebEntity>();
@@ -106,13 +110,6 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.google.cloud.vision.v1p2beta1.WebDetection.WebLabel.parser(), extensionRegistry));
             break;
           }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -148,7 +145,6 @@ private static final long serialVersionUID = 0L;
     return com.google.cloud.vision.v1p2beta1.WebDetectionProto.internal_static_google_cloud_vision_v1p2beta1_WebDetection_descriptor;
   }
 
-  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.vision.v1p2beta1.WebDetectionProto.internal_static_google_cloud_vision_v1p2beta1_WebDetection_fieldAccessorTable
@@ -238,9 +234,6 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -252,6 +245,13 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -267,13 +267,6 @@ private static final long serialVersionUID = 0L;
               java.lang.String s = input.readStringRequireUtf8();
 
               description_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
               break;
             }
           }
@@ -293,7 +286,6 @@ private static final long serialVersionUID = 0L;
       return com.google.cloud.vision.v1p2beta1.WebDetectionProto.internal_static_google_cloud_vision_v1p2beta1_WebDetection_WebEntity_descriptor;
     }
 
-    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.vision.v1p2beta1.WebDetectionProto.internal_static_google_cloud_vision_v1p2beta1_WebDetection_WebEntity_fieldAccessorTable
@@ -400,7 +392,6 @@ private static final long serialVersionUID = 0L;
     }
 
     private byte memoizedIsInitialized = -1;
-    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -410,7 +401,6 @@ private static final long serialVersionUID = 0L;
       return true;
     }
 
-    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getEntityIdBytes().isEmpty()) {
@@ -425,7 +415,6 @@ private static final long serialVersionUID = 0L;
       unknownFields.writeTo(output);
     }
 
-    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -558,7 +547,6 @@ private static final long serialVersionUID = 0L;
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -566,7 +554,6 @@ private static final long serialVersionUID = 0L;
     public static Builder newBuilder(com.google.cloud.vision.v1p2beta1.WebDetection.WebEntity prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -594,7 +581,6 @@ private static final long serialVersionUID = 0L;
         return com.google.cloud.vision.v1p2beta1.WebDetectionProto.internal_static_google_cloud_vision_v1p2beta1_WebDetection_WebEntity_descriptor;
       }
 
-      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.cloud.vision.v1p2beta1.WebDetectionProto.internal_static_google_cloud_vision_v1p2beta1_WebDetection_WebEntity_fieldAccessorTable
@@ -617,7 +603,6 @@ private static final long serialVersionUID = 0L;
                 .alwaysUseFieldBuilders) {
         }
       }
-      @java.lang.Override
       public Builder clear() {
         super.clear();
         entityId_ = "";
@@ -629,18 +614,15 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
-      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return com.google.cloud.vision.v1p2beta1.WebDetectionProto.internal_static_google_cloud_vision_v1p2beta1_WebDetection_WebEntity_descriptor;
       }
 
-      @java.lang.Override
       public com.google.cloud.vision.v1p2beta1.WebDetection.WebEntity getDefaultInstanceForType() {
         return com.google.cloud.vision.v1p2beta1.WebDetection.WebEntity.getDefaultInstance();
       }
 
-      @java.lang.Override
       public com.google.cloud.vision.v1p2beta1.WebDetection.WebEntity build() {
         com.google.cloud.vision.v1p2beta1.WebDetection.WebEntity result = buildPartial();
         if (!result.isInitialized()) {
@@ -649,7 +631,6 @@ private static final long serialVersionUID = 0L;
         return result;
       }
 
-      @java.lang.Override
       public com.google.cloud.vision.v1p2beta1.WebDetection.WebEntity buildPartial() {
         com.google.cloud.vision.v1p2beta1.WebDetection.WebEntity result = new com.google.cloud.vision.v1p2beta1.WebDetection.WebEntity(this);
         result.entityId_ = entityId_;
@@ -659,39 +640,32 @@ private static final long serialVersionUID = 0L;
         return result;
       }
 
-      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
-      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
-      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
-      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
-      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
-      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
-      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.google.cloud.vision.v1p2beta1.WebDetection.WebEntity) {
           return mergeFrom((com.google.cloud.vision.v1p2beta1.WebDetection.WebEntity)other);
@@ -719,12 +693,10 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
-      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -961,13 +933,11 @@ private static final long serialVersionUID = 0L;
         onChanged();
         return this;
       }
-      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFieldsProto3(unknownFields);
       }
 
-      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -989,12 +959,11 @@ private static final long serialVersionUID = 0L;
 
     private static final com.google.protobuf.Parser<WebEntity>
         PARSER = new com.google.protobuf.AbstractParser<WebEntity>() {
-      @java.lang.Override
       public WebEntity parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new WebEntity(input, extensionRegistry);
+          return new WebEntity(input, extensionRegistry);
       }
     };
 
@@ -1007,7 +976,6 @@ private static final long serialVersionUID = 0L;
       return PARSER;
     }
 
-    @java.lang.Override
     public com.google.cloud.vision.v1p2beta1.WebDetection.WebEntity getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -1076,9 +1044,6 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -1090,6 +1055,13 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -1099,13 +1071,6 @@ private static final long serialVersionUID = 0L;
             case 21: {
 
               score_ = input.readFloat();
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
               break;
             }
           }
@@ -1125,7 +1090,6 @@ private static final long serialVersionUID = 0L;
       return com.google.cloud.vision.v1p2beta1.WebDetectionProto.internal_static_google_cloud_vision_v1p2beta1_WebDetection_WebImage_descriptor;
     }
 
-    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.vision.v1p2beta1.WebDetectionProto.internal_static_google_cloud_vision_v1p2beta1_WebDetection_WebImage_fieldAccessorTable
@@ -1189,7 +1153,6 @@ private static final long serialVersionUID = 0L;
     }
 
     private byte memoizedIsInitialized = -1;
-    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -1199,7 +1162,6 @@ private static final long serialVersionUID = 0L;
       return true;
     }
 
-    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getUrlBytes().isEmpty()) {
@@ -1211,7 +1173,6 @@ private static final long serialVersionUID = 0L;
       unknownFields.writeTo(output);
     }
 
-    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -1337,7 +1298,6 @@ private static final long serialVersionUID = 0L;
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -1345,7 +1305,6 @@ private static final long serialVersionUID = 0L;
     public static Builder newBuilder(com.google.cloud.vision.v1p2beta1.WebDetection.WebImage prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -1373,7 +1332,6 @@ private static final long serialVersionUID = 0L;
         return com.google.cloud.vision.v1p2beta1.WebDetectionProto.internal_static_google_cloud_vision_v1p2beta1_WebDetection_WebImage_descriptor;
       }
 
-      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.cloud.vision.v1p2beta1.WebDetectionProto.internal_static_google_cloud_vision_v1p2beta1_WebDetection_WebImage_fieldAccessorTable
@@ -1396,7 +1354,6 @@ private static final long serialVersionUID = 0L;
                 .alwaysUseFieldBuilders) {
         }
       }
-      @java.lang.Override
       public Builder clear() {
         super.clear();
         url_ = "";
@@ -1406,18 +1363,15 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
-      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return com.google.cloud.vision.v1p2beta1.WebDetectionProto.internal_static_google_cloud_vision_v1p2beta1_WebDetection_WebImage_descriptor;
       }
 
-      @java.lang.Override
       public com.google.cloud.vision.v1p2beta1.WebDetection.WebImage getDefaultInstanceForType() {
         return com.google.cloud.vision.v1p2beta1.WebDetection.WebImage.getDefaultInstance();
       }
 
-      @java.lang.Override
       public com.google.cloud.vision.v1p2beta1.WebDetection.WebImage build() {
         com.google.cloud.vision.v1p2beta1.WebDetection.WebImage result = buildPartial();
         if (!result.isInitialized()) {
@@ -1426,7 +1380,6 @@ private static final long serialVersionUID = 0L;
         return result;
       }
 
-      @java.lang.Override
       public com.google.cloud.vision.v1p2beta1.WebDetection.WebImage buildPartial() {
         com.google.cloud.vision.v1p2beta1.WebDetection.WebImage result = new com.google.cloud.vision.v1p2beta1.WebDetection.WebImage(this);
         result.url_ = url_;
@@ -1435,39 +1388,32 @@ private static final long serialVersionUID = 0L;
         return result;
       }
 
-      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
-      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
-      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
-      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
-      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
-      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
-      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.google.cloud.vision.v1p2beta1.WebDetection.WebImage) {
           return mergeFrom((com.google.cloud.vision.v1p2beta1.WebDetection.WebImage)other);
@@ -1491,12 +1437,10 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
-      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1641,13 +1585,11 @@ private static final long serialVersionUID = 0L;
         onChanged();
         return this;
       }
-      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFieldsProto3(unknownFields);
       }
 
-      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -1669,12 +1611,11 @@ private static final long serialVersionUID = 0L;
 
     private static final com.google.protobuf.Parser<WebImage>
         PARSER = new com.google.protobuf.AbstractParser<WebImage>() {
-      @java.lang.Override
       public WebImage parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new WebImage(input, extensionRegistry);
+          return new WebImage(input, extensionRegistry);
       }
     };
 
@@ -1687,7 +1628,6 @@ private static final long serialVersionUID = 0L;
       return PARSER;
     }
 
-    @java.lang.Override
     public com.google.cloud.vision.v1p2beta1.WebDetection.WebImage getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -1885,9 +1825,6 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -1899,6 +1836,13 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -1934,13 +1878,6 @@ private static final long serialVersionUID = 0L;
                   input.readMessage(com.google.cloud.vision.v1p2beta1.WebDetection.WebImage.parser(), extensionRegistry));
               break;
             }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -1964,7 +1901,6 @@ private static final long serialVersionUID = 0L;
       return com.google.cloud.vision.v1p2beta1.WebDetectionProto.internal_static_google_cloud_vision_v1p2beta1_WebDetection_WebPage_descriptor;
     }
 
-    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.vision.v1p2beta1.WebDetectionProto.internal_static_google_cloud_vision_v1p2beta1_WebDetection_WebPage_fieldAccessorTable
@@ -2201,7 +2137,6 @@ private static final long serialVersionUID = 0L;
     }
 
     private byte memoizedIsInitialized = -1;
-    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -2211,7 +2146,6 @@ private static final long serialVersionUID = 0L;
       return true;
     }
 
-    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getUrlBytes().isEmpty()) {
@@ -2232,7 +2166,6 @@ private static final long serialVersionUID = 0L;
       unknownFields.writeTo(output);
     }
 
-    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -2385,7 +2318,6 @@ private static final long serialVersionUID = 0L;
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -2393,7 +2325,6 @@ private static final long serialVersionUID = 0L;
     public static Builder newBuilder(com.google.cloud.vision.v1p2beta1.WebDetection.WebPage prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -2421,7 +2352,6 @@ private static final long serialVersionUID = 0L;
         return com.google.cloud.vision.v1p2beta1.WebDetectionProto.internal_static_google_cloud_vision_v1p2beta1_WebDetection_WebPage_descriptor;
       }
 
-      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.cloud.vision.v1p2beta1.WebDetectionProto.internal_static_google_cloud_vision_v1p2beta1_WebDetection_WebPage_fieldAccessorTable
@@ -2446,7 +2376,6 @@ private static final long serialVersionUID = 0L;
           getPartialMatchingImagesFieldBuilder();
         }
       }
-      @java.lang.Override
       public Builder clear() {
         super.clear();
         url_ = "";
@@ -2470,18 +2399,15 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
-      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return com.google.cloud.vision.v1p2beta1.WebDetectionProto.internal_static_google_cloud_vision_v1p2beta1_WebDetection_WebPage_descriptor;
       }
 
-      @java.lang.Override
       public com.google.cloud.vision.v1p2beta1.WebDetection.WebPage getDefaultInstanceForType() {
         return com.google.cloud.vision.v1p2beta1.WebDetection.WebPage.getDefaultInstance();
       }
 
-      @java.lang.Override
       public com.google.cloud.vision.v1p2beta1.WebDetection.WebPage build() {
         com.google.cloud.vision.v1p2beta1.WebDetection.WebPage result = buildPartial();
         if (!result.isInitialized()) {
@@ -2490,7 +2416,6 @@ private static final long serialVersionUID = 0L;
         return result;
       }
 
-      @java.lang.Override
       public com.google.cloud.vision.v1p2beta1.WebDetection.WebPage buildPartial() {
         com.google.cloud.vision.v1p2beta1.WebDetection.WebPage result = new com.google.cloud.vision.v1p2beta1.WebDetection.WebPage(this);
         int from_bitField0_ = bitField0_;
@@ -2521,39 +2446,32 @@ private static final long serialVersionUID = 0L;
         return result;
       }
 
-      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
-      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
-      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
-      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
-      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
-      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
-      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.google.cloud.vision.v1p2beta1.WebDetection.WebPage) {
           return mergeFrom((com.google.cloud.vision.v1p2beta1.WebDetection.WebPage)other);
@@ -2633,12 +2551,10 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
-      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -3569,13 +3485,11 @@ private static final long serialVersionUID = 0L;
         }
         return partialMatchingImagesBuilder_;
       }
-      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFieldsProto3(unknownFields);
       }
 
-      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -3597,12 +3511,11 @@ private static final long serialVersionUID = 0L;
 
     private static final com.google.protobuf.Parser<WebPage>
         PARSER = new com.google.protobuf.AbstractParser<WebPage>() {
-      @java.lang.Override
       public WebPage parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new WebPage(input, extensionRegistry);
+          return new WebPage(input, extensionRegistry);
       }
     };
 
@@ -3615,7 +3528,6 @@ private static final long serialVersionUID = 0L;
       return PARSER;
     }
 
-    @java.lang.Override
     public com.google.cloud.vision.v1p2beta1.WebDetection.WebPage getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -3697,9 +3609,6 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -3711,6 +3620,13 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -3721,13 +3637,6 @@ private static final long serialVersionUID = 0L;
               java.lang.String s = input.readStringRequireUtf8();
 
               languageCode_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
               break;
             }
           }
@@ -3747,7 +3656,6 @@ private static final long serialVersionUID = 0L;
       return com.google.cloud.vision.v1p2beta1.WebDetectionProto.internal_static_google_cloud_vision_v1p2beta1_WebDetection_WebLabel_descriptor;
     }
 
-    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.vision.v1p2beta1.WebDetectionProto.internal_static_google_cloud_vision_v1p2beta1_WebDetection_WebLabel_fieldAccessorTable
@@ -3844,7 +3752,6 @@ private static final long serialVersionUID = 0L;
     }
 
     private byte memoizedIsInitialized = -1;
-    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -3854,7 +3761,6 @@ private static final long serialVersionUID = 0L;
       return true;
     }
 
-    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getLabelBytes().isEmpty()) {
@@ -3866,7 +3772,6 @@ private static final long serialVersionUID = 0L;
       unknownFields.writeTo(output);
     }
 
-    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -3988,7 +3893,6 @@ private static final long serialVersionUID = 0L;
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -3996,7 +3900,6 @@ private static final long serialVersionUID = 0L;
     public static Builder newBuilder(com.google.cloud.vision.v1p2beta1.WebDetection.WebLabel prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -4024,7 +3927,6 @@ private static final long serialVersionUID = 0L;
         return com.google.cloud.vision.v1p2beta1.WebDetectionProto.internal_static_google_cloud_vision_v1p2beta1_WebDetection_WebLabel_descriptor;
       }
 
-      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.cloud.vision.v1p2beta1.WebDetectionProto.internal_static_google_cloud_vision_v1p2beta1_WebDetection_WebLabel_fieldAccessorTable
@@ -4047,7 +3949,6 @@ private static final long serialVersionUID = 0L;
                 .alwaysUseFieldBuilders) {
         }
       }
-      @java.lang.Override
       public Builder clear() {
         super.clear();
         label_ = "";
@@ -4057,18 +3958,15 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
-      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return com.google.cloud.vision.v1p2beta1.WebDetectionProto.internal_static_google_cloud_vision_v1p2beta1_WebDetection_WebLabel_descriptor;
       }
 
-      @java.lang.Override
       public com.google.cloud.vision.v1p2beta1.WebDetection.WebLabel getDefaultInstanceForType() {
         return com.google.cloud.vision.v1p2beta1.WebDetection.WebLabel.getDefaultInstance();
       }
 
-      @java.lang.Override
       public com.google.cloud.vision.v1p2beta1.WebDetection.WebLabel build() {
         com.google.cloud.vision.v1p2beta1.WebDetection.WebLabel result = buildPartial();
         if (!result.isInitialized()) {
@@ -4077,7 +3975,6 @@ private static final long serialVersionUID = 0L;
         return result;
       }
 
-      @java.lang.Override
       public com.google.cloud.vision.v1p2beta1.WebDetection.WebLabel buildPartial() {
         com.google.cloud.vision.v1p2beta1.WebDetection.WebLabel result = new com.google.cloud.vision.v1p2beta1.WebDetection.WebLabel(this);
         result.label_ = label_;
@@ -4086,39 +3983,32 @@ private static final long serialVersionUID = 0L;
         return result;
       }
 
-      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
-      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
-      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
-      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
-      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
-      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
-      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.google.cloud.vision.v1p2beta1.WebDetection.WebLabel) {
           return mergeFrom((com.google.cloud.vision.v1p2beta1.WebDetection.WebLabel)other);
@@ -4143,12 +4033,10 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
-      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -4354,13 +4242,11 @@ private static final long serialVersionUID = 0L;
         onChanged();
         return this;
       }
-      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFieldsProto3(unknownFields);
       }
 
-      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -4382,12 +4268,11 @@ private static final long serialVersionUID = 0L;
 
     private static final com.google.protobuf.Parser<WebLabel>
         PARSER = new com.google.protobuf.AbstractParser<WebLabel>() {
-      @java.lang.Override
       public WebLabel parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new WebLabel(input, extensionRegistry);
+          return new WebLabel(input, extensionRegistry);
       }
     };
 
@@ -4400,7 +4285,6 @@ private static final long serialVersionUID = 0L;
       return PARSER;
     }
 
-    @java.lang.Override
     public com.google.cloud.vision.v1p2beta1.WebDetection.WebLabel getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -4753,7 +4637,6 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
-  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -4763,7 +4646,6 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     for (int i = 0; i < webEntities_.size(); i++) {
@@ -4787,7 +4669,6 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
-  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -4955,7 +4836,6 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
@@ -4963,7 +4843,6 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder(com.google.cloud.vision.v1p2beta1.WebDetection prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
@@ -4991,7 +4870,6 @@ private static final long serialVersionUID = 0L;
       return com.google.cloud.vision.v1p2beta1.WebDetectionProto.internal_static_google_cloud_vision_v1p2beta1_WebDetection_descriptor;
     }
 
-    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.vision.v1p2beta1.WebDetectionProto.internal_static_google_cloud_vision_v1p2beta1_WebDetection_fieldAccessorTable
@@ -5020,7 +4898,6 @@ private static final long serialVersionUID = 0L;
         getBestGuessLabelsFieldBuilder();
       }
     }
-    @java.lang.Override
     public Builder clear() {
       super.clear();
       if (webEntitiesBuilder_ == null) {
@@ -5062,18 +4939,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
       return com.google.cloud.vision.v1p2beta1.WebDetectionProto.internal_static_google_cloud_vision_v1p2beta1_WebDetection_descriptor;
     }
 
-    @java.lang.Override
     public com.google.cloud.vision.v1p2beta1.WebDetection getDefaultInstanceForType() {
       return com.google.cloud.vision.v1p2beta1.WebDetection.getDefaultInstance();
     }
 
-    @java.lang.Override
     public com.google.cloud.vision.v1p2beta1.WebDetection build() {
       com.google.cloud.vision.v1p2beta1.WebDetection result = buildPartial();
       if (!result.isInitialized()) {
@@ -5082,7 +4956,6 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
-    @java.lang.Override
     public com.google.cloud.vision.v1p2beta1.WebDetection buildPartial() {
       com.google.cloud.vision.v1p2beta1.WebDetection result = new com.google.cloud.vision.v1p2beta1.WebDetection(this);
       int from_bitField0_ = bitField0_;
@@ -5144,39 +5017,32 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
-    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
-    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
-    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
-    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
-    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
-    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
-    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.vision.v1p2beta1.WebDetection) {
         return mergeFrom((com.google.cloud.vision.v1p2beta1.WebDetection)other);
@@ -5349,12 +5215,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
-    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -7299,13 +7163,11 @@ private static final long serialVersionUID = 0L;
       }
       return bestGuessLabelsBuilder_;
     }
-    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
-    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -7327,12 +7189,11 @@ private static final long serialVersionUID = 0L;
 
   private static final com.google.protobuf.Parser<WebDetection>
       PARSER = new com.google.protobuf.AbstractParser<WebDetection>() {
-    @java.lang.Override
     public WebDetection parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new WebDetection(input, extensionRegistry);
+        return new WebDetection(input, extensionRegistry);
     }
   };
 
@@ -7345,7 +7206,6 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
-  @java.lang.Override
   public com.google.cloud.vision.v1p2beta1.WebDetection getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }

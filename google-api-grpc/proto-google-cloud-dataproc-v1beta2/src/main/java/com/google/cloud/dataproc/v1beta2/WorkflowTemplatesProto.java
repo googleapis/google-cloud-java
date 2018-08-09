@@ -142,7 +142,7 @@ public final class WorkflowTemplatesProto {
       "to\032\033google/protobuf/empty.proto\032\037google/" +
       "protobuf/timestamp.proto\"\241\003\n\020WorkflowTem" +
       "plate\022\n\n\002id\030\002 \001(\t\022\014\n\004name\030\001 \001(\t\022\017\n\007versi" +
-      "on\030\003 \001(\005\022/\n\013create_time\030\004 \001(\0132\032.google.p" +
+      "on\030\003 \001(\005\022/\n\013create_time\030\004 \001(\0132\032.google.p",
       "rotobuf.Timestamp\022/\n\013update_time\030\005 \001(\0132\032" +
       ".google.protobuf.Timestamp\022K\n\006labels\030\006 \003" +
       "(\0132;.google.cloud.dataproc.v1beta2.Workf" +
@@ -152,7 +152,7 @@ public final class WorkflowTemplatesProto {
       "gle.cloud.dataproc.v1beta2.OrderedJob\032-\n" +
       "\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t" +
       ":\0028\001\"\276\001\n\031WorkflowTemplatePlacement\022H\n\017ma" +
-      "naged_cluster\030\001 \001(\0132-.google.cloud.datap" +
+      "naged_cluster\030\001 \001(\0132-.google.cloud.datap",
       "roc.v1beta2.ManagedClusterH\000\022J\n\020cluster_" +
       "selector\030\002 \001(\0132..google.cloud.dataproc.v" +
       "1beta2.ClusterSelectorH\000B\013\n\tplacement\"\336\001" +
@@ -162,7 +162,7 @@ public final class WorkflowTemplatesProto {
       "oogle.cloud.dataproc.v1beta2.ManagedClus" +
       "ter.LabelsEntry\032-\n\013LabelsEntry\022\013\n\003key\030\001 " +
       "\001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\260\001\n\017ClusterSelect" +
-      "or\022\014\n\004zone\030\001 \001(\t\022Y\n\016cluster_labels\030\002 \003(\013" +
+      "or\022\014\n\004zone\030\001 \001(\t\022Y\n\016cluster_labels\030\002 \003(\013",
       "2A.google.cloud.dataproc.v1beta2.Cluster" +
       "Selector.ClusterLabelsEntry\0324\n\022ClusterLa" +
       "belsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028" +
@@ -172,7 +172,7 @@ public final class WorkflowTemplatesProto {
       "oogle.cloud.dataproc.v1beta2.SparkJobH\000\022" +
       "@\n\013pyspark_job\030\004 \001(\0132).google.cloud.data" +
       "proc.v1beta2.PySparkJobH\000\022:\n\010hive_job\030\005 " +
-      "\001(\0132&.google.cloud.dataproc.v1beta2.Hive" +
+      "\001(\0132&.google.cloud.dataproc.v1beta2.Hive",
       "JobH\000\0228\n\007pig_job\030\006 \001(\0132%.google.cloud.da" +
       "taproc.v1beta2.PigJobH\000\022C\n\rspark_sql_job" +
       "\030\007 \001(\0132*.google.cloud.dataproc.v1beta2.S" +
@@ -182,7 +182,7 @@ public final class WorkflowTemplatesProto {
       "ataproc.v1beta2.JobScheduling\022\035\n\025prerequ" +
       "isite_step_ids\030\n \003(\t\032-\n\013LabelsEntry\022\013\n\003k" +
       "ey\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B\n\n\010job_type\"" +
-      "\242\004\n\020WorkflowMetadata\022\020\n\010template\030\001 \001(\t\022\017" +
+      "\242\004\n\020WorkflowMetadata\022\020\n\010template\030\001 \001(\t\022\017",
       "\n\007version\030\002 \001(\005\022G\n\016create_cluster\030\003 \001(\0132" +
       "/.google.cloud.dataproc.v1beta2.ClusterO" +
       "peration\022;\n\005graph\030\004 \001(\0132,.google.cloud.d" +
@@ -192,7 +192,7 @@ public final class WorkflowTemplatesProto {
       "google.cloud.dataproc.v1beta2.WorkflowMe" +
       "tadata.State\022\024\n\014cluster_name\030\007 \001(\t\022S\n\npa" +
       "rameters\030\010 \003(\0132?.google.cloud.dataproc.v" +
-      "1beta2.WorkflowMetadata.ParametersEntry\032" +
+      "1beta2.WorkflowMetadata.ParametersEntry\032",
       "1\n\017ParametersEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value" +
       "\030\002 \001(\t:\0028\001\"8\n\005State\022\013\n\007UNKNOWN\020\000\022\013\n\007PEND" +
       "ING\020\001\022\013\n\007RUNNING\020\002\022\010\n\004DONE\020\003\"E\n\020ClusterO" +
@@ -202,7 +202,7 @@ public final class WorkflowTemplatesProto {
       "ta2.WorkflowNode\"\220\002\n\014WorkflowNode\022\017\n\007ste" +
       "p_id\030\001 \001(\t\022\035\n\025prerequisite_step_ids\030\002 \003(" +
       "\t\022\016\n\006job_id\030\003 \001(\t\022D\n\005state\030\005 \001(\01625.googl" +
-      "e.cloud.dataproc.v1beta2.WorkflowNode.No" +
+      "e.cloud.dataproc.v1beta2.WorkflowNode.No",
       "deState\022\r\n\005error\030\006 \001(\t\"k\n\tNodeState\022\033\n\027N" +
       "ODE_STATUS_UNSPECIFIED\020\000\022\013\n\007BLOCKED\020\001\022\014\n" +
       "\010RUNNABLE\020\002\022\013\n\007RUNNING\020\003\022\r\n\tCOMPLETED\020\004\022" +
@@ -212,7 +212,7 @@ public final class WorkflowTemplatesProto {
       "emplate\";\n\032GetWorkflowTemplateRequest\022\014\n" +
       "\004name\030\001 \001(\t\022\017\n\007version\030\002 \001(\005\"X\n\"Instanti" +
       "ateWorkflowTemplateRequest\022\014\n\004name\030\001 \001(\t" +
-      "\022\017\n\007version\030\002 \001(\005\022\023\n\013instance_id\030\003 \001(\t\"\222" +
+      "\022\017\n\007version\030\002 \001(\005\022\023\n\013instance_id\030\003 \001(\t\"\222",
       "\001\n(InstantiateInlineWorkflowTemplateRequ" +
       "est\022\016\n\006parent\030\001 \001(\t\022A\n\010template\030\002 \001(\0132/." +
       "google.cloud.dataproc.v1beta2.WorkflowTe" +
@@ -222,7 +222,7 @@ public final class WorkflowTemplatesProto {
       "emplate\"U\n\034ListWorkflowTemplatesRequest\022" +
       "\016\n\006parent\030\001 \001(\t\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npa" +
       "ge_token\030\003 \001(\t\"|\n\035ListWorkflowTemplatesR" +
-      "esponse\022B\n\ttemplates\030\001 \003(\0132/.google.clou" +
+      "esponse\022B\n\ttemplates\030\001 \003(\0132/.google.clou",
       "d.dataproc.v1beta2.WorkflowTemplate\022\027\n\017n" +
       "ext_page_token\030\002 \001(\t\">\n\035DeleteWorkflowTe" +
       "mplateRequest\022\014\n\004name\030\001 \001(\t\022\017\n\007version\030\002" +
@@ -232,7 +232,7 @@ public final class WorkflowTemplatesProto {
       "t\032/.google.cloud.dataproc.v1beta2.Workfl" +
       "owTemplate\"\223\001\202\323\344\223\002\214\001\"8/v1beta2/{parent=p" +
       "rojects/*/regions/*}/workflowTemplates:\010" +
-      "templateZF\":/v1beta2/{parent=projects/*/" +
+      "templateZF\":/v1beta2/{parent=projects/*/",
       "locations/*}/workflowTemplates:\010template" +
       "\022\201\002\n\023GetWorkflowTemplate\0229.google.cloud." +
       "dataproc.v1beta2.GetWorkflowTemplateRequ" +
@@ -242,7 +242,7 @@ public final class WorkflowTemplatesProto {
       "\022:/v1beta2/{name=projects/*/locations/*/" +
       "workflowTemplates/*}\022\237\002\n\033InstantiateWork" +
       "flowTemplate\022A.google.cloud.dataproc.v1b" +
-      "eta2.InstantiateWorkflowTemplateRequest\032" +
+      "eta2.InstantiateWorkflowTemplateRequest\032",
       "\035.google.longrunning.Operation\"\235\001\202\323\344\223\002\226\001" +
       "\"D/v1beta2/{name=projects/*/regions/*/wo" +
       "rkflowTemplates/*}:instantiate:\001*ZK\"F/v1" +
@@ -252,7 +252,7 @@ public final class WorkflowTemplatesProto {
       "oud.dataproc.v1beta2.InstantiateInlineWo" +
       "rkflowTemplateRequest\032\035.google.longrunni" +
       "ng.Operation\"\267\001\202\323\344\223\002\260\001\"J/v1beta2/{parent" +
-      "=projects/*/regions/*}/workflowTemplates" +
+      "=projects/*/regions/*}/workflowTemplates",
       ":instantiateInline:\010templateZX\"L/v1beta2" +
       "/{parent=projects/*/locations/*}/workflo" +
       "wTemplates:instantiateInline:\010template\022\257" +
@@ -262,7 +262,7 @@ public final class WorkflowTemplatesProto {
       "WorkflowTemplate\"\245\001\202\323\344\223\002\236\001\032A/v1beta2/{te" +
       "mplate.name=projects/*/regions/*/workflo" +
       "wTemplates/*}:\010templateZO\032C/v1beta2/{tem" +
-      "plate.name=projects/*/locations/*/workfl" +
+      "plate.name=projects/*/locations/*/workfl",
       "owTemplates/*}:\010template\022\222\002\n\025ListWorkflo" +
       "wTemplates\022;.google.cloud.dataproc.v1bet" +
       "a2.ListWorkflowTemplatesRequest\032<.google" +
@@ -272,7 +272,7 @@ public final class WorkflowTemplatesProto {
       "<\022:/v1beta2/{parent=projects/*/locations" +
       "/*}/workflowTemplates\022\356\001\n\026DeleteWorkflow" +
       "Template\022<.google.cloud.dataproc.v1beta2" +
-      ".DeleteWorkflowTemplateRequest\032\026.google." +
+      ".DeleteWorkflowTemplateRequest\032\026.google.",
       "protobuf.Empty\"~\202\323\344\223\002x*8/v1beta2/{name=p" +
       "rojects/*/regions/*/workflowTemplates/*}" +
       "Z<*:/v1beta2/{name=projects/*/locations/" +

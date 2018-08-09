@@ -42,7 +42,7 @@ public final class ErrorGroupServiceProto {
       "\001(\t\"\\\n\022UpdateGroupRequest\022F\n\005group\030\001 \001(\013" +
       "27.google.devtools.clouderrorreporting.v" +
       "1beta1.ErrorGroup2\216\003\n\021ErrorGroupService\022" +
-      "\264\001\n\010GetGroup\022<.google.devtools.clouderro" +
+      "\264\001\n\010GetGroup\022<.google.devtools.clouderro",
       "rreporting.v1beta1.GetGroupRequest\0327.goo" +
       "gle.devtools.clouderrorreporting.v1beta1" +
       ".ErrorGroup\"1\202\323\344\223\002+\022)/v1beta1/{group_nam" +
@@ -52,7 +52,7 @@ public final class ErrorGroupServiceProto {
       "s.clouderrorreporting.v1beta1.ErrorGroup" +
       "\"8\202\323\344\223\0022\032)/v1beta1/{group.name=projects/" +
       "*/groups/*}:\005groupB\367\001\n/com.google.devtoo" +
-      "ls.clouderrorreporting.v1beta1B\026ErrorGro" +
+      "ls.clouderrorreporting.v1beta1B\026ErrorGro",
       "upServiceProtoP\001Z^google.golang.org/genp" +
       "roto/googleapis/devtools/clouderrorrepor" +
       "ting/v1beta1;clouderrorreporting\252\002#Googl" +

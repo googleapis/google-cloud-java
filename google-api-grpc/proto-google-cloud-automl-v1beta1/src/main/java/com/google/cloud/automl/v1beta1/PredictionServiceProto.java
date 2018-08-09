@@ -52,7 +52,7 @@ public final class PredictionServiceProto {
       "\030\001 \001(\t\022<\n\007payload\030\002 \001(\0132+.google.cloud.a" +
       "utoml.v1beta1.ExamplePayload\022G\n\006params\030\003" +
       " \003(\01327.google.cloud.automl.v1beta1.Predi" +
-      "ctRequest.ParamsEntry\032-\n\013ParamsEntry\022\013\n\003" +
+      "ctRequest.ParamsEntry\032-\n\013ParamsEntry\022\013\n\003",
       "key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\321\001\n\017Predict" +
       "Response\022?\n\007payload\030\001 \003(\0132..google.cloud" +
       ".automl.v1beta1.AnnotationPayload\022L\n\010met" +
@@ -62,7 +62,7 @@ public final class PredictionServiceProto {
       "2\276\001\n\021PredictionService\022\250\001\n\007Predict\022+.goo" +
       "gle.cloud.automl.v1beta1.PredictRequest\032" +
       ",.google.cloud.automl.v1beta1.PredictRes" +
-      "ponse\"B\202\323\344\223\002<\"7/v1beta1/{name=projects/*" +
+      "ponse\"B\202\323\344\223\002<\"7/v1beta1/{name=projects/*",
       "/locations/*/models/*}:predict:\001*B~\n\037com" +
       ".google.cloud.automl.v1beta1B\026Prediction" +
       "ServiceProtoP\001ZAgoogle.golang.org/genpro" +

@@ -42,7 +42,7 @@ public final class Operations {
       "obuf/timestamp.proto\032\027google/rpc/status." +
       "proto\"\243\002\n\021OperationMetadata\022Y\n\024create_mo" +
       "del_details\030\n \001(\01329.google.cloud.automl." +
-      "v1beta1.CreateModelOperationMetadataH\000\022\030" +
+      "v1beta1.CreateModelOperationMetadataH\000\022\030",
       "\n\020progress_percent\030\r \001(\005\022,\n\020partial_fail" +
       "ures\030\002 \003(\0132\022.google.rpc.Status\022/\n\013create" +
       "_time\030\003 \001(\0132\032.google.protobuf.Timestamp\022" +

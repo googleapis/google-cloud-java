@@ -47,7 +47,7 @@ public final class QueueProto {
       "ne_http_target\030\003 \001(\0132/.google.cloud.task" +
       "s.v2beta2.AppEngineHttpTargetH\000\022=\n\013pull_" +
       "target\030\004 \001(\0132&.google.cloud.tasks.v2beta" +
-      "2.PullTargetH\000\022;\n\013rate_limits\030\005 \001(\0132&.go" +
+      "2.PullTargetH\000\022;\n\013rate_limits\030\005 \001(\0132&.go",
       "ogle.cloud.tasks.v2beta2.RateLimits\022=\n\014r" +
       "etry_config\030\006 \001(\0132\'.google.cloud.tasks.v" +
       "2beta2.RetryConfig\0226\n\005state\030\007 \001(\0162\'.goog" +
@@ -57,7 +57,7 @@ public final class QueueProto {
       "NNING\020\001\022\n\n\006PAUSED\020\002\022\014\n\010DISABLED\020\003B\r\n\013tar" +
       "get_type\"k\n\nRateLimits\022\'\n\037max_tasks_disp" +
       "atched_per_second\030\001 \001(\001\022\026\n\016max_burst_siz" +
-      "e\030\002 \001(\005\022\034\n\024max_concurrent_tasks\030\003 \001(\005\"\201\002" +
+      "e\030\002 \001(\005\022\034\n\024max_concurrent_tasks\030\003 \001(\005\"\201\002",
       "\n\013RetryConfig\022\026\n\014max_attempts\030\001 \001(\005H\000\022\034\n" +
       "\022unlimited_attempts\030\002 \001(\010H\000\0225\n\022max_retry" +
       "_duration\030\003 \001(\0132\031.google.protobuf.Durati" +

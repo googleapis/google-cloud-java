@@ -102,7 +102,7 @@ public final class LoggingConfigProto {
       "er\030\005 \001(\t\022K\n\025output_version_format\030\006 \001(\0162" +
       "(.google.logging.v2.LogSink.VersionForma" +
       "tB\002\030\001\022\027\n\017writer_identity\030\010 \001(\t\022\030\n\020includ" +
-      "e_children\030\t \001(\010\0222\n\nstart_time\030\n \001(\0132\032.g" +
+      "e_children\030\t \001(\010\0222\n\nstart_time\030\n \001(\0132\032.g",
       "oogle.protobuf.TimestampB\002\030\001\0220\n\010end_time" +
       "\030\013 \001(\0132\032.google.protobuf.TimestampB\002\030\001\"?" +
       "\n\rVersionFormat\022\036\n\032VERSION_FORMAT_UNSPEC" +
@@ -112,7 +112,7 @@ public final class LoggingConfigProto {
       ")\n\005sinks\030\001 \003(\0132\032.google.logging.v2.LogSi" +
       "nk\022\027\n\017next_page_token\030\002 \001(\t\"#\n\016GetSinkRe" +
       "quest\022\021\n\tsink_name\030\001 \001(\t\"m\n\021CreateSinkRe" +
-      "quest\022\016\n\006parent\030\001 \001(\t\022(\n\004sink\030\002 \001(\0132\032.go" +
+      "quest\022\016\n\006parent\030\001 \001(\t\022(\n\004sink\030\002 \001(\0132\032.go",
       "ogle.logging.v2.LogSink\022\036\n\026unique_writer" +
       "_identity\030\003 \001(\010\"\241\001\n\021UpdateSinkRequest\022\021\n" +
       "\tsink_name\030\001 \001(\t\022(\n\004sink\030\002 \001(\0132\032.google." +
@@ -122,7 +122,7 @@ public final class LoggingConfigProto {
       "\022\021\n\tsink_name\030\001 \001(\t\"S\n\014LogExclusion\022\014\n\004n" +
       "ame\030\001 \001(\t\022\023\n\013description\030\002 \001(\t\022\016\n\006filter" +
       "\030\003 \001(\t\022\020\n\010disabled\030\004 \001(\010\"N\n\025ListExclusio" +
-      "nsRequest\022\016\n\006parent\030\001 \001(\t\022\022\n\npage_token\030" +
+      "nsRequest\022\016\n\006parent\030\001 \001(\t\022\022\n\npage_token\030",
       "\002 \001(\t\022\021\n\tpage_size\030\003 \001(\005\"f\n\026ListExclusio" +
       "nsResponse\0223\n\nexclusions\030\001 \003(\0132\037.google." +
       "logging.v2.LogExclusion\022\027\n\017next_page_tok" +
@@ -132,7 +132,7 @@ public final class LoggingConfigProto {
       "ing.v2.LogExclusion\"\213\001\n\026UpdateExclusionR" +
       "equest\022\014\n\004name\030\001 \001(\t\0222\n\texclusion\030\002 \001(\0132" +
       "\037.google.logging.v2.LogExclusion\022/\n\013upda" +
-      "te_mask\030\003 \001(\0132\032.google.protobuf.FieldMas" +
+      "te_mask\030\003 \001(\0132\032.google.protobuf.FieldMas",
       "k\"&\n\026DeleteExclusionRequest\022\014\n\004name\030\001 \001(" +
       "\t2\224\031\n\017ConfigServiceV2\022\207\002\n\tListSinks\022#.go" +
       "ogle.logging.v2.ListSinksRequest\032$.googl" +
@@ -142,7 +142,7 @@ public final class LoggingConfigProto {
       "ations/*}/sinksZ\036\022\034/v2/{parent=folders/*" +
       "}/sinksZ&\022$/v2/{parent=billingAccounts/*" +
       "}/sinks\022\222\002\n\007GetSink\022!.google.logging.v2." +
-      "GetSinkRequest\032\032.google.logging.v2.LogSi" +
+      "GetSinkRequest\032\032.google.logging.v2.LogSi",
       "nk\"\307\001\202\323\344\223\002\300\001\022\033/v2/{sink_name=*/*/sinks/*" +
       "}Z$\022\"/v2/{sink_name=projects/*/sinks/*}Z" +
       ")\022\'/v2/{sink_name=organizations/*/sinks/" +
@@ -152,7 +152,7 @@ public final class LoggingConfigProto {
       "CreateSinkRequest\032\032.google.logging.v2.Lo" +
       "gSink\"\314\001\202\323\344\223\002\305\001\"\026/v2/{parent=*/*}/sinks:" +
       "\004sinkZ%\"\035/v2/{parent=projects/*}/sinks:\004" +
-      "sinkZ*\"\"/v2/{parent=organizations/*}/sin" +
+      "sinkZ*\"\"/v2/{parent=organizations/*}/sin",
       "ks:\004sinkZ$\"\034/v2/{parent=folders/*}/sinks" +
       ":\004sinkZ,\"$/v2/{parent=billingAccounts/*}" +
       "/sinks:\004sink\022\361\003\n\nUpdateSink\022$.google.log" +
@@ -162,7 +162,7 @@ public final class LoggingConfigProto {
       "jects/*/sinks/*}:\004sinkZ/\032\'/v2/{sink_name" +
       "=organizations/*/sinks/*}:\004sinkZ)\032!/v2/{" +
       "sink_name=folders/*/sinks/*}:\004sinkZ1\032)/v" +
-      "2/{sink_name=billingAccounts/*/sinks/*}:" +
+      "2/{sink_name=billingAccounts/*/sinks/*}:",
       "\004sinkZ*2\"/v2/{sink_name=projects/*/sinks" +
       "/*}:\004sinkZ/2\'/v2/{sink_name=organization" +
       "s/*/sinks/*}:\004sinkZ)2!/v2/{sink_name=fol" +
@@ -172,7 +172,7 @@ public final class LoggingConfigProto {
       "quest\032\026.google.protobuf.Empty\"\307\001\202\323\344\223\002\300\001*" +
       "\033/v2/{sink_name=*/*/sinks/*}Z$*\"/v2/{sin" +
       "k_name=projects/*/sinks/*}Z)*\'/v2/{sink_" +
-      "name=organizations/*/sinks/*}Z#*!/v2/{si" +
+      "name=organizations/*/sinks/*}Z#*!/v2/{si",
       "nk_name=folders/*/sinks/*}Z+*)/v2/{sink_" +
       "name=billingAccounts/*/sinks/*}\022\257\002\n\016List" +
       "Exclusions\022(.google.logging.v2.ListExclu" +
@@ -182,7 +182,7 @@ public final class LoggingConfigProto {
       "}/exclusionsZ)\022\'/v2/{parent=organization" +
       "s/*}/exclusionsZ#\022!/v2/{parent=folders/*" +
       "}/exclusionsZ+\022)/v2/{parent=billingAccou" +
-      "nts/*}/exclusions\022\241\002\n\014GetExclusion\022&.goo" +
+      "nts/*}/exclusions\022\241\002\n\014GetExclusion\022&.goo",
       "gle.logging.v2.GetExclusionRequest\032\037.goo" +
       "gle.logging.v2.LogExclusion\"\307\001\202\323\344\223\002\300\001\022\033/" +
       "v2/{name=*/*/exclusions/*}Z$\022\"/v2/{name=" +
@@ -192,7 +192,7 @@ public final class LoggingConfigProto {
       "llingAccounts/*/exclusions/*}\022\336\002\n\017Create" +
       "Exclusion\022).google.logging.v2.CreateExcl" +
       "usionRequest\032\037.google.logging.v2.LogExcl" +
-      "usion\"\376\001\202\323\344\223\002\367\001\"\033/v2/{parent=*/*}/exclus" +
+      "usion\"\376\001\202\323\344\223\002\367\001\"\033/v2/{parent=*/*}/exclus",
       "ions:\texclusionZ/\"\"/v2/{parent=projects/" +
       "*}/exclusions:\texclusionZ4\"\'/v2/{parent=" +
       "organizations/*}/exclusions:\texclusionZ." +
@@ -202,7 +202,7 @@ public final class LoggingConfigProto {
       "on\022).google.logging.v2.UpdateExclusionRe" +
       "quest\032\037.google.logging.v2.LogExclusion\"\376" +
       "\001\202\323\344\223\002\367\0012\033/v2/{name=*/*/exclusions/*}:\te" +
-      "xclusionZ/2\"/v2/{name=projects/*/exclusi" +
+      "xclusionZ/2\"/v2/{name=projects/*/exclusi",
       "ons/*}:\texclusionZ42\'/v2/{name=organizat" +
       "ions/*/exclusions/*}:\texclusionZ.2!/v2/{" +
       "name=folders/*/exclusions/*}:\texclusionZ" +
@@ -212,7 +212,7 @@ public final class LoggingConfigProto {
       ".google.protobuf.Empty\"\307\001\202\323\344\223\002\300\001*\033/v2/{n" +
       "ame=*/*/exclusions/*}Z$*\"/v2/{name=proje" +
       "cts/*/exclusions/*}Z)*\'/v2/{name=organiz" +
-      "ations/*/exclusions/*}Z#*!/v2/{name=fold" +
+      "ations/*/exclusions/*}Z#*!/v2/{name=fold",
       "ers/*/exclusions/*}Z+*)/v2/{name=billing" +
       "Accounts/*/exclusions/*}B\236\001\n\025com.google." +
       "logging.v2B\022LoggingConfigProtoP\001Z8google" +

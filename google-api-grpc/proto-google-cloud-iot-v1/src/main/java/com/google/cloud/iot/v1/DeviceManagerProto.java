@@ -117,7 +117,7 @@ public final class DeviceManagerProto {
       "empty.proto\032 google/protobuf/field_mask." +
       "proto\032\037google/protobuf/timestamp.proto\"k" +
       "\n\033CreateDeviceRegistryRequest\022\016\n\006parent\030" +
-      "\001 \001(\t\022<\n\017device_registry\030\002 \001(\0132#.google." +
+      "\001 \001(\t\022<\n\017device_registry\030\002 \001(\0132#.google.",
       "cloud.iot.v1.DeviceRegistry\"(\n\030GetDevice" +
       "RegistryRequest\022\014\n\004name\030\001 \001(\t\"+\n\033DeleteD" +
       "eviceRegistryRequest\022\014\n\004name\030\001 \001(\t\"\214\001\n\033U" +
@@ -127,7 +127,7 @@ public final class DeviceManagerProto {
       "rotobuf.FieldMask\"T\n\033ListDeviceRegistrie" +
       "sRequest\022\016\n\006parent\030\001 \001(\t\022\021\n\tpage_size\030\002 " +
       "\001(\005\022\022\n\npage_token\030\003 \001(\t\"w\n\034ListDeviceReg" +
-      "istriesResponse\022>\n\021device_registries\030\001 \003" +
+      "istriesResponse\022>\n\021device_registries\030\001 \003",
       "(\0132#.google.cloud.iot.v1.DeviceRegistry\022" +
       "\027\n\017next_page_token\030\002 \001(\t\"R\n\023CreateDevice" +
       "Request\022\016\n\006parent\030\001 \001(\t\022+\n\006device\030\002 \001(\0132" +
@@ -137,7 +137,7 @@ public final class DeviceManagerProto {
       "DeviceRequest\022+\n\006device\030\002 \001(\0132\033.google.c" +
       "loud.iot.v1.Device\022/\n\013update_mask\030\003 \001(\0132" +
       "\032.google.protobuf.FieldMask\"#\n\023DeleteDev" +
-      "iceRequest\022\014\n\004name\030\001 \001(\t\"\247\001\n\022ListDevices" +
+      "iceRequest\022\014\n\004name\030\001 \001(\t\"\247\001\n\022ListDevices",
       "Request\022\016\n\006parent\030\001 \001(\t\022\026\n\016device_num_id" +
       "s\030\002 \003(\004\022\022\n\ndevice_ids\030\003 \003(\t\022.\n\nfield_mas" +
       "k\030\004 \001(\0132\032.google.protobuf.FieldMask\022\021\n\tp" +
@@ -147,7 +147,7 @@ public final class DeviceManagerProto {
       "en\030\002 \001(\t\"`\n ModifyCloudToDeviceConfigReq" +
       "uest\022\014\n\004name\030\001 \001(\t\022\031\n\021version_to_update\030" +
       "\002 \001(\003\022\023\n\013binary_data\030\003 \001(\014\"E\n\037ListDevice" +
-      "ConfigVersionsRequest\022\014\n\004name\030\001 \001(\t\022\024\n\014n" +
+      "ConfigVersionsRequest\022\014\n\004name\030\001 \001(\t\022\024\n\014n",
       "um_versions\030\002 \001(\005\"]\n ListDeviceConfigVer" +
       "sionsResponse\0229\n\016device_configs\030\001 \003(\0132!." +
       "google.cloud.iot.v1.DeviceConfig\";\n\027List" +
@@ -157,7 +157,7 @@ public final class DeviceManagerProto {
       "iot.v1.DeviceState2\223\034\n\rDeviceManager\022\266\001\n" +
       "\024CreateDeviceRegistry\0220.google.cloud.iot" +
       ".v1.CreateDeviceRegistryRequest\032#.google" +
-      ".cloud.iot.v1.DeviceRegistry\"G\202\323\344\223\002A\"./v" +
+      ".cloud.iot.v1.DeviceRegistry\"G\202\323\344\223\002A\"./v",
       "1/{parent=projects/*/locations/*}/regist" +
       "ries:\017device_registry\022\237\001\n\021GetDeviceRegis" +
       "try\022-.google.cloud.iot.v1.GetDeviceRegis" +
@@ -167,7 +167,7 @@ public final class DeviceManagerProto {
       "Registry\0220.google.cloud.iot.v1.UpdateDev" +
       "iceRegistryRequest\032#.google.cloud.iot.v1" +
       ".DeviceRegistry\"W\202\323\344\223\002Q2>/v1/{device_reg" +
-      "istry.name=projects/*/locations/*/regist" +
+      "istry.name=projects/*/locations/*/regist",
       "ries/*}:\017device_registry\022\230\001\n\024DeleteDevic" +
       "eRegistry\0220.google.cloud.iot.v1.DeleteDe" +
       "viceRegistryRequest\032\026.google.protobuf.Em" +
@@ -177,7 +177,7 @@ public final class DeviceManagerProto {
       "istriesRequest\0321.google.cloud.iot.v1.Lis" +
       "tDeviceRegistriesResponse\"6\202\323\344\223\0020\022./v1/{" +
       "parent=projects/*/locations/*}/registrie" +
-      "s\022\237\001\n\014CreateDevice\022(.google.cloud.iot.v1" +
+      "s\022\237\001\n\014CreateDevice\022(.google.cloud.iot.v1",
       ".CreateDeviceRequest\032\033.google.cloud.iot." +
       "v1.Device\"H\202\323\344\223\002B\"8/v1/{parent=projects/" +
       "*/locations/*/registries/*}/devices:\006dev" +
@@ -187,7 +187,7 @@ public final class DeviceManagerProto {
       "ations/*/registries/*/devices/*}ZC\022A/v1/" +
       "{name=projects/*/locations/*/registries/" +
       "*/groups/*/devices/*}\022\374\001\n\014UpdateDevice\022(" +
-      ".google.cloud.iot.v1.UpdateDeviceRequest" +
+      ".google.cloud.iot.v1.UpdateDeviceRequest",
       "\032\033.google.cloud.iot.v1.Device\"\244\001\202\323\344\223\002\235\0012" +
       "?/v1/{device.name=projects/*/locations/*" +
       "/registries/*/devices/*}:\006deviceZR2H/v1/" +
@@ -197,7 +197,7 @@ public final class DeviceManagerProto {
       "teDeviceRequest\032\026.google.protobuf.Empty\"" +
       "\205\001\202\323\344\223\002\177*8/v1/{name=projects/*/locations" +
       "/*/registries/*/devices/*}ZC*A/v1/{name=" +
-      "projects/*/locations/*/registries/*/grou" +
+      "projects/*/locations/*/registries/*/grou",
       "ps/*/devices/*}\022\332\001\n\013ListDevices\022\'.google" +
       ".cloud.iot.v1.ListDevicesRequest\032(.googl" +
       "e.cloud.iot.v1.ListDevicesResponse\"x\202\323\344\223" +
@@ -207,7 +207,7 @@ public final class DeviceManagerProto {
       "\031ModifyCloudToDeviceConfig\0225.google.clou" +
       "d.iot.v1.ModifyCloudToDeviceConfigReques" +
       "t\032!.google.cloud.iot.v1.DeviceConfig\"\300\001\202" +
-      "\323\344\223\002\271\001\"R/v1/{name=projects/*/locations/*" +
+      "\323\344\223\002\271\001\"R/v1/{name=projects/*/locations/*",
       "/registries/*/devices/*}:modifyCloudToDe" +
       "viceConfig:\001*Z`\"[/v1/{name=projects/*/lo" +
       "cations/*/registries/*/groups/*/devices/" +
@@ -217,7 +217,7 @@ public final class DeviceManagerProto {
       "gle.cloud.iot.v1.ListDeviceConfigVersion" +
       "sResponse\"\244\001\202\323\344\223\002\235\001\022G/v1/{name=projects/" +
       "*/locations/*/registries/*/devices/*}/co" +
-      "nfigVersionsZR\022P/v1/{name=projects/*/loc" +
+      "nfigVersionsZR\022P/v1/{name=projects/*/loc",
       "ations/*/registries/*/groups/*/devices/*" +
       "}/configVersions\022\206\002\n\020ListDeviceStates\022,." +
       "google.cloud.iot.v1.ListDeviceStatesRequ" +
@@ -227,7 +227,7 @@ public final class DeviceManagerProto {
       "tatesZJ\022H/v1/{name=projects/*/locations/" +
       "*/registries/*/groups/*/devices/*}/state" +
       "s\022\346\001\n\014SetIamPolicy\022\".google.iam.v1.SetIa" +
-      "mPolicyRequest\032\025.google.iam.v1.Policy\"\232\001" +
+      "mPolicyRequest\032\025.google.iam.v1.Policy\"\232\001",
       "\202\323\344\223\002\223\001\"?/v1/{resource=projects/*/locati" +
       "ons/*/registries/*}:setIamPolicy:\001*ZM\"H/" +
       "v1/{resource=projects/*/locations/*/regi" +
@@ -237,7 +237,7 @@ public final class DeviceManagerProto {
       "\"?/v1/{resource=projects/*/locations/*/r" +
       "egistries/*}:getIamPolicy:\001*ZM\"H/v1/{res" +
       "ource=projects/*/locations/*/registries/" +
-      "*/groups/*}:getIamPolicy:\001*\022\222\002\n\022TestIamP" +
+      "*/groups/*}:getIamPolicy:\001*\022\222\002\n\022TestIamP",
       "ermissions\022(.google.iam.v1.TestIamPermis" +
       "sionsRequest\032).google.iam.v1.TestIamPerm" +
       "issionsResponse\"\246\001\202\323\344\223\002\237\001\"E/v1/{resource" +

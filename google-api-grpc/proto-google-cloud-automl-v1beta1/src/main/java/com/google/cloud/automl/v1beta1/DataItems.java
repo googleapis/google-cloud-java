@@ -47,7 +47,7 @@ public final class DataItems {
       "\000\022\025\n\rthumbnail_uri\030\004 \001(\tB\006\n\004data\"F\n\013Text" +
       "Snippet\022\017\n\007content\030\001 \001(\t\022\021\n\tmime_type\030\002 " +
       "\001(\t\022\023\n\013content_uri\030\004 \001(\t\"\222\001\n\016ExamplePayl" +
-      "oad\0223\n\005image\030\001 \001(\0132\".google.cloud.automl" +
+      "oad\0223\n\005image\030\001 \001(\0132\".google.cloud.automl",
       ".v1beta1.ImageH\000\022@\n\014text_snippet\030\002 \001(\0132(" +
       ".google.cloud.automl.v1beta1.TextSnippet" +
       "H\000B\t\n\007payloadBf\n\037com.google.cloud.automl" +

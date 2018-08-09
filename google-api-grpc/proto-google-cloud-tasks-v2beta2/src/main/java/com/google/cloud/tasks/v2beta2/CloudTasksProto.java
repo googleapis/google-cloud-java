@@ -132,7 +132,7 @@ public final class CloudTasksProto {
       "to\032\036google/protobuf/duration.proto\032\033goog" +
       "le/protobuf/empty.proto\032 google/protobuf" +
       "/field_mask.proto\032\037google/protobuf/times" +
-      "tamp.proto\032\025google/rpc/code.proto\"Z\n\021Lis" +
+      "tamp.proto\032\025google/rpc/code.proto\"Z\n\021Lis",
       "tQueuesRequest\022\016\n\006parent\030\001 \001(\t\022\016\n\006filter" +
       "\030\002 \001(\t\022\021\n\tpage_size\030\003 \001(\005\022\022\n\npage_token\030" +
       "\004 \001(\t\"`\n\022ListQueuesResponse\0221\n\006queues\030\001 " +
@@ -142,7 +142,7 @@ public final class CloudTasksProto {
       "\n\006parent\030\001 \001(\t\0220\n\005queue\030\002 \001(\0132!.google.c" +
       "loud.tasks.v2beta2.Queue\"w\n\022UpdateQueueR" +
       "equest\0220\n\005queue\030\001 \001(\0132!.google.cloud.tas" +
-      "ks.v2beta2.Queue\022/\n\013update_mask\030\002 \001(\0132\032." +
+      "ks.v2beta2.Queue\022/\n\013update_mask\030\002 \001(\0132\032.",
       "google.protobuf.FieldMask\"\"\n\022DeleteQueue" +
       "Request\022\014\n\004name\030\001 \001(\t\"!\n\021PurgeQueueReque" +
       "st\022\014\n\004name\030\001 \001(\t\"!\n\021PauseQueueRequest\022\014\n" +
@@ -152,7 +152,7 @@ public final class CloudTasksProto {
       "ud.tasks.v2beta2.Task.View\022\021\n\tpage_size\030" +
       "\004 \001(\005\022\022\n\npage_token\030\005 \001(\t\"]\n\021ListTasksRe" +
       "sponse\022/\n\005tasks\030\001 \003(\0132 .google.cloud.tas" +
-      "ks.v2beta2.Task\022\027\n\017next_page_token\030\002 \001(\t" +
+      "ks.v2beta2.Task\022\027\n\017next_page_token\030\002 \001(\t",
       "\"\\\n\016GetTaskRequest\022\014\n\004name\030\001 \001(\t\022<\n\rresp" +
       "onse_view\030\002 \001(\0162%.google.cloud.tasks.v2b" +
       "eta2.Task.View\"\221\001\n\021CreateTaskRequest\022\016\n\006" +
@@ -162,7 +162,7 @@ public final class CloudTasksProto {
       "ew\"!\n\021DeleteTaskRequest\022\014\n\004name\030\001 \001(\t\"\267\001" +
       "\n\021LeaseTasksRequest\022\016\n\006parent\030\001 \001(\t\022\021\n\tm" +
       "ax_tasks\030\002 \001(\005\0221\n\016lease_duration\030\003 \001(\0132\031" +
-      ".google.protobuf.Duration\022<\n\rresponse_vi" +
+      ".google.protobuf.Duration\022<\n\rresponse_vi",
       "ew\030\004 \001(\0162%.google.cloud.tasks.v2beta2.Ta" +
       "sk.View\022\016\n\006filter\030\005 \001(\t\"E\n\022LeaseTasksRes" +
       "ponse\022/\n\005tasks\030\001 \003(\0132 .google.cloud.task" +
@@ -172,7 +172,7 @@ public final class CloudTasksProto {
       "Request\022\014\n\004name\030\001 \001(\t\0221\n\rschedule_time\030\002" +
       " \001(\0132\032.google.protobuf.Timestamp\0221\n\016leas" +
       "e_duration\030\003 \001(\0132\031.google.protobuf.Durat" +
-      "ion\022<\n\rresponse_view\030\004 \001(\0162%.google.clou" +
+      "ion\022<\n\rresponse_view\030\004 \001(\0162%.google.clou",
       "d.tasks.v2beta2.Task.View\"\223\001\n\022CancelLeas" +
       "eRequest\022\014\n\004name\030\001 \001(\t\0221\n\rschedule_time\030" +
       "\002 \001(\0132\032.google.protobuf.Timestamp\022<\n\rres" +
@@ -182,7 +182,7 @@ public final class CloudTasksProto {
       "cloud.tasks.v2beta2.Task.View2\360\031\n\nCloudT" +
       "asks\022\244\001\n\nListQueues\022-.google.cloud.tasks" +
       ".v2beta2.ListQueuesRequest\032..google.clou" +
-      "d.tasks.v2beta2.ListQueuesResponse\"7\202\323\344\223" +
+      "d.tasks.v2beta2.ListQueuesResponse\"7\202\323\344\223",
       "\0021\022//v2beta2/{parent=projects/*/location" +
       "s/*}/queues\022\223\001\n\010GetQueue\022+.google.cloud." +
       "tasks.v2beta2.GetQueueRequest\032!.google.c" +
@@ -192,7 +192,7 @@ public final class CloudTasksProto {
       "2beta2.CreateQueueRequest\032!.google.cloud" +
       ".tasks.v2beta2.Queue\">\202\323\344\223\0028\"//v2beta2/{" +
       "parent=projects/*/locations/*}/queues:\005q" +
-      "ueue\022\246\001\n\013UpdateQueue\022..google.cloud.task" +
+      "ueue\022\246\001\n\013UpdateQueue\022..google.cloud.task",
       "s.v2beta2.UpdateQueueRequest\032!.google.cl" +
       "oud.tasks.v2beta2.Queue\"D\202\323\344\223\002>25/v2beta" +
       "2/{queue.name=projects/*/locations/*/que" +
@@ -202,7 +202,7 @@ public final class CloudTasksProto {
       "{name=projects/*/locations/*/queues/*}\022\240" +
       "\001\n\nPurgeQueue\022-.google.cloud.tasks.v2bet" +
       "a2.PurgeQueueRequest\032!.google.cloud.task" +
-      "s.v2beta2.Queue\"@\202\323\344\223\002:\"5/v2beta2/{name=" +
+      "s.v2beta2.Queue\"@\202\323\344\223\002:\"5/v2beta2/{name=",
       "projects/*/locations/*/queues/*}:purge:\001" +
       "*\022\240\001\n\nPauseQueue\022-.google.cloud.tasks.v2" +
       "beta2.PauseQueueRequest\032!.google.cloud.t" +
@@ -212,7 +212,7 @@ public final class CloudTasksProto {
       "s.v2beta2.ResumeQueueRequest\032!.google.cl" +
       "oud.tasks.v2beta2.Queue\"A\202\323\344\223\002;\"6/v2beta" +
       "2/{name=projects/*/locations/*/queues/*}" +
-      ":resume:\001*\022\226\001\n\014GetIamPolicy\022\".google.iam" +
+      ":resume:\001*\022\226\001\n\014GetIamPolicy\022\".google.iam",
       ".v1.GetIamPolicyRequest\032\025.google.iam.v1." +
       "Policy\"K\202\323\344\223\002E\"@/v2beta2/{resource=proje" +
       "cts/*/locations/*/queues/*}:getIamPolicy" +
@@ -222,7 +222,7 @@ public final class CloudTasksProto {
       "ocations/*/queues/*}:setIamPolicy:\001*\022\274\001\n" +
       "\022TestIamPermissions\022(.google.iam.v1.Test" +
       "IamPermissionsRequest\032).google.iam.v1.Te" +
-      "stIamPermissionsResponse\"Q\202\323\344\223\002K\"F/v2bet" +
+      "stIamPermissionsResponse\"Q\202\323\344\223\002K\"F/v2bet",
       "a2/{resource=projects/*/locations/*/queu" +
       "es/*}:testIamPermissions:\001*\022\251\001\n\tListTask" +
       "s\022,.google.cloud.tasks.v2beta2.ListTasks" +
@@ -232,7 +232,7 @@ public final class CloudTasksProto {
       "\230\001\n\007GetTask\022*.google.cloud.tasks.v2beta2" +
       ".GetTaskRequest\032 .google.cloud.tasks.v2b" +
       "eta2.Task\"?\202\323\344\223\0029\0227/v2beta2/{name=projec" +
-      "ts/*/locations/*/queues/*/tasks/*}\022\241\001\n\nC" +
+      "ts/*/locations/*/queues/*/tasks/*}\022\241\001\n\nC",
       "reateTask\022-.google.cloud.tasks.v2beta2.C" +
       "reateTaskRequest\032 .google.cloud.tasks.v2" +
       "beta2.Task\"B\202\323\344\223\002<\"7/v2beta2/{parent=pro" +
@@ -242,7 +242,7 @@ public final class CloudTasksProto {
       "mpty\"?\202\323\344\223\0029*7/v2beta2/{name=projects/*/" +
       "locations/*/queues/*/tasks/*}\022\265\001\n\nLeaseT" +
       "asks\022-.google.cloud.tasks.v2beta2.LeaseT" +
-      "asksRequest\032..google.cloud.tasks.v2beta2" +
+      "asksRequest\032..google.cloud.tasks.v2beta2",
       ".LeaseTasksResponse\"H\202\323\344\223\002B\"=/v2beta2/{p" +
       "arent=projects/*/locations/*/queues/*}/t" +
       "asks:lease:\001*\022\255\001\n\017AcknowledgeTask\0222.goog" +
@@ -252,7 +252,7 @@ public final class CloudTasksProto {
       "ues/*/tasks/*}:acknowledge:\001*\022\254\001\n\nRenewL" +
       "ease\022-.google.cloud.tasks.v2beta2.RenewL" +
       "easeRequest\032 .google.cloud.tasks.v2beta2" +
-      ".Task\"M\202\323\344\223\002G\"B/v2beta2/{name=projects/*" +
+      ".Task\"M\202\323\344\223\002G\"B/v2beta2/{name=projects/*",
       "/locations/*/queues/*/tasks/*}:renewLeas" +
       "e:\001*\022\257\001\n\013CancelLease\022..google.cloud.task" +
       "s.v2beta2.CancelLeaseRequest\032 .google.cl" +
@@ -262,7 +262,7 @@ public final class CloudTasksProto {
       "gle.cloud.tasks.v2beta2.RunTaskRequest\032 " +
       ".google.cloud.tasks.v2beta2.Task\"F\202\323\344\223\002@" +
       "\";/v2beta2/{name=projects/*/locations/*/" +
-      "queues/*/tasks/*}:run:\001*B|\n\036com.google.c" +
+      "queues/*/tasks/*}:run:\001*B|\n\036com.google.c",
       "loud.tasks.v2beta2B\017CloudTasksProtoP\001Z?g" +
       "oogle.golang.org/genproto/googleapis/clo" +
       "ud/tasks/v2beta2;tasks\242\002\005TASKSb\006proto3"

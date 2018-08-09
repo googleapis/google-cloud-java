@@ -52,7 +52,7 @@ public final class KmsResourcesProto {
       "y\022\014\n\004name\030\001 \001(\t\0226\n\007primary\030\002 \001(\0132%.googl" +
       "e.cloud.kms.v1.CryptoKeyVersion\022@\n\007purpo" +
       "se\030\003 \001(\0162/.google.cloud.kms.v1.CryptoKey" +
-      ".CryptoKeyPurpose\022/\n\013create_time\030\005 \001(\0132\032" +
+      ".CryptoKeyPurpose\022/\n\013create_time\030\005 \001(\0132\032",
       ".google.protobuf.Timestamp\0226\n\022next_rotat" +
       "ion_time\030\007 \001(\0132\032.google.protobuf.Timesta" +
       "mp\0224\n\017rotation_period\030\010 \001(\0132\031.google.pro" +
@@ -62,7 +62,7 @@ public final class KmsResourcesProto {
       "\0028\001\"K\n\020CryptoKeyPurpose\022\"\n\036CRYPTO_KEY_PU" +
       "RPOSE_UNSPECIFIED\020\000\022\023\n\017ENCRYPT_DECRYPT\020\001" +
       "B\023\n\021rotation_schedule\"\214\003\n\020CryptoKeyVersi" +
-      "on\022\014\n\004name\030\001 \001(\t\022J\n\005state\030\003 \001(\0162;.google" +
+      "on\022\014\n\004name\030\001 \001(\t\022J\n\005state\030\003 \001(\0162;.google",
       ".cloud.kms.v1.CryptoKeyVersion.CryptoKey" +
       "VersionState\022/\n\013create_time\030\004 \001(\0132\032.goog" +
       "le.protobuf.Timestamp\0220\n\014destroy_time\030\005 " +
@@ -72,7 +72,7 @@ public final class KmsResourcesProto {
       "PTO_KEY_VERSION_STATE_UNSPECIFIED\020\000\022\013\n\007E" +
       "NABLED\020\001\022\014\n\010DISABLED\020\002\022\r\n\tDESTROYED\020\003\022\025\n" +
       "\021DESTROY_SCHEDULED\020\004B\225\001\n\027com.google.clou" +
-      "d.kms.v1B\021KmsResourcesProtoP\001Z6google.go" +
+      "d.kms.v1B\021KmsResourcesProtoP\001Z6google.go",
       "lang.org/genproto/googleapis/cloud/kms/v" +
       "1;kms\370\001\001\252\002\023Google.Cloud.Kms.V1\312\002\023Google\\" +
       "Cloud\\Kms\\V1b\006proto3"

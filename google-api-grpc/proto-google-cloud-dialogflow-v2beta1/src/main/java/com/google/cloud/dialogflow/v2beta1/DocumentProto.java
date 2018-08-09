@@ -67,7 +67,7 @@ public final class DocumentProto {
       "\n\014display_name\030\002 \001(\t\022\021\n\tmime_type\030\003 \001(\t\022" +
       "P\n\017knowledge_types\030\004 \003(\01627.google.cloud." +
       "dialogflow.v2beta1.Document.KnowledgeTyp" +
-      "e\022\025\n\013content_uri\030\005 \001(\tH\000\022\021\n\007content\030\006 \001(" +
+      "e\022\025\n\013content_uri\030\005 \001(\tH\000\022\021\n\007content\030\006 \001(",
       "\tH\000\"K\n\rKnowledgeType\022\036\n\032KNOWLEDGE_TYPE_U" +
       "NSPECIFIED\020\000\022\007\n\003FAQ\020\001\022\021\n\rEXTRACTIVE_QA\020\002" +
       "B\010\n\006source\"M\n\024ListDocumentsRequest\022\016\n\006pa" +
@@ -77,7 +77,7 @@ public final class DocumentProto {
       "v2beta1.Document\022\027\n\017next_page_token\030\002 \001(" +
       "\t\"\"\n\022GetDocumentRequest\022\014\n\004name\030\001 \001(\t\"d\n" +
       "\025CreateDocumentRequest\022\016\n\006parent\030\001 \001(\t\022;" +
-      "\n\010document\030\002 \001(\0132).google.cloud.dialogfl" +
+      "\n\010document\030\002 \001(\0132).google.cloud.dialogfl",
       "ow.v2beta1.Document\"%\n\025DeleteDocumentReq" +
       "uest\022\014\n\004name\030\001 \001(\t\"\262\001\n\032KnowledgeOperatio" +
       "nMetadata\022P\n\005state\030\001 \001(\0162A.google.cloud." +
@@ -87,7 +87,7 @@ public final class DocumentProto {
       "\361\007\n\tDocuments\022\201\002\n\rListDocuments\0225.google" +
       ".cloud.dialogflow.v2beta1.ListDocumentsR" +
       "equest\0326.google.cloud.dialogflow.v2beta1" +
-      ".ListDocumentsResponse\"\200\001\202\323\344\223\002z\0227/v2beta" +
+      ".ListDocumentsResponse\"\200\001\202\323\344\223\002z\0227/v2beta",
       "1/{parent=projects/*/knowledgeBases/*}/d" +
       "ocumentsZ?\022=/v2beta1/{parent=projects/*/" +
       "agent/knowledgeBases/*}/documents\022\360\001\n\013Ge" +
@@ -97,7 +97,7 @@ public final class DocumentProto {
       "eta1/{name=projects/*/knowledgeBases/*/d" +
       "ocuments/*}Z?\022=/v2beta1/{name=projects/*" +
       "/agent/knowledgeBases/*/documents/*}\022\377\001\n" +
-      "\016CreateDocument\0226.google.cloud.dialogflo" +
+      "\016CreateDocument\0226.google.cloud.dialogflo",
       "w.v2beta1.CreateDocumentRequest\032\035.google" +
       ".longrunning.Operation\"\225\001\202\323\344\223\002\216\001\"7/v2bet" +
       "a1/{parent=projects/*/knowledgeBases/*}/" +
@@ -107,7 +107,7 @@ public final class DocumentProto {
       "le.cloud.dialogflow.v2beta1.DeleteDocume" +
       "ntRequest\032\035.google.longrunning.Operation" +
       "\"\200\001\202\323\344\223\002z*7/v2beta1/{name=projects/*/kno" +
-      "wledgeBases/*/documents/*}Z?*=/v2beta1/{" +
+      "wledgeBases/*/documents/*}Z?*=/v2beta1/{",
       "name=projects/*/agent/knowledgeBases/*/d" +
       "ocuments/*}B\253\001\n#com.google.cloud.dialogf" +
       "low.v2beta1B\rDocumentProtoP\001ZIgoogle.gol" +

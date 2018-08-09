@@ -117,7 +117,7 @@ public final class AutoMlProto {
       "oogle/cloud/automl/v1beta1/model.proto\0322" +
       "google/cloud/automl/v1beta1/model_evalua" +
       "tion.proto\032,google/cloud/automl/v1beta1/" +
-      "operations.proto\032#google/longrunning/ope" +
+      "operations.proto\032#google/longrunning/ope",
       "rations.proto\032 google/protobuf/field_mas" +
       "k.proto\"]\n\024CreateDatasetRequest\022\016\n\006paren" +
       "t\030\001 \001(\t\0225\n\007dataset\030\002 \001(\0132$.google.cloud." +
@@ -127,7 +127,7 @@ public final class AutoMlProto {
       "_size\030\004 \001(\005\022\022\n\npage_token\030\006 \001(\t\"g\n\024ListD" +
       "atasetsResponse\0226\n\010datasets\030\001 \003(\0132$.goog" +
       "le.cloud.automl.v1beta1.Dataset\022\027\n\017next_" +
-      "page_token\030\002 \001(\t\"$\n\024DeleteDatasetRequest" +
+      "page_token\030\002 \001(\t\"$\n\024DeleteDatasetRequest",
       "\022\014\n\004name\030\001 \001(\t\"a\n\021ImportDataRequest\022\014\n\004n" +
       "ame\030\001 \001(\t\022>\n\014input_config\030\003 \001(\0132(.google" +
       ".cloud.automl.v1beta1.InputConfig\"c\n\021Exp" +
@@ -137,7 +137,7 @@ public final class AutoMlProto {
       "parent\030\001 \001(\t\0221\n\005model\030\004 \001(\0132\".google.clo" +
       "ud.automl.v1beta1.Model\"\037\n\017GetModelReque" +
       "st\022\014\n\004name\030\001 \001(\t\"Z\n\021ListModelsRequest\022\016\n" +
-      "\006parent\030\001 \001(\t\022\016\n\006filter\030\003 \001(\t\022\021\n\tpage_si" +
+      "\006parent\030\001 \001(\t\022\016\n\006filter\030\003 \001(\t\022\021\n\tpage_si",
       "ze\030\004 \001(\005\022\022\n\npage_token\030\006 \001(\t\"`\n\022ListMode" +
       "lsResponse\0221\n\005model\030\001 \003(\0132\".google.cloud" +
       ".automl.v1beta1.Model\022\027\n\017next_page_token" +
@@ -147,7 +147,7 @@ public final class AutoMlProto {
       "GetModelEvaluationRequest\022\014\n\004name\030\001 \001(\t\"" +
       "d\n\033ListModelEvaluationsRequest\022\016\n\006parent" +
       "\030\001 \001(\t\022\016\n\006filter\030\003 \001(\t\022\021\n\tpage_size\030\004 \001(" +
-      "\005\022\022\n\npage_token\030\006 \001(\t\"\177\n\034ListModelEvalua" +
+      "\005\022\022\n\npage_token\030\006 \001(\t\"\177\n\034ListModelEvalua",
       "tionsResponse\022F\n\020model_evaluation\030\001 \003(\0132" +
       ",.google.cloud.automl.v1beta1.ModelEvalu" +
       "ation\022\027\n\017next_page_token\030\002 \001(\t2\336\022\n\006AutoM" +
@@ -157,7 +157,7 @@ public final class AutoMlProto {
       "1beta1/{parent=projects/*/locations/*}/d" +
       "atasets:\007dataset\022\235\001\n\nGetDataset\022..google" +
       ".cloud.automl.v1beta1.GetDatasetRequest\032" +
-      "$.google.cloud.automl.v1beta1.Dataset\"9\202" +
+      "$.google.cloud.automl.v1beta1.Dataset\"9\202",
       "\323\344\223\0023\0221/v1beta1/{name=projects/*/locatio" +
       "ns/*/datasets/*}\022\256\001\n\014ListDatasets\0220.goog" +
       "le.cloud.automl.v1beta1.ListDatasetsRequ" +
@@ -167,7 +167,7 @@ public final class AutoMlProto {
       "leteDataset\0221.google.cloud.automl.v1beta" +
       "1.DeleteDatasetRequest\032\035.google.longrunn" +
       "ing.Operation\"9\202\323\344\223\0023*1/v1beta1/{name=pr" +
-      "ojects/*/locations/*/datasets/*}\022\244\001\n\nImp" +
+      "ojects/*/locations/*/datasets/*}\022\244\001\n\nImp",
       "ortData\022..google.cloud.automl.v1beta1.Im" +
       "portDataRequest\032\035.google.longrunning.Ope" +
       "ration\"G\202\323\344\223\002A\"</v1beta1/{name=projects/" +
@@ -177,7 +177,7 @@ public final class AutoMlProto {
       "ing.Operation\"G\202\323\344\223\002A\"</v1beta1/{name=pr" +
       "ojects/*/locations/*/datasets/*}:exportD" +
       "ata:\001*\022\235\001\n\013CreateModel\022/.google.cloud.au" +
-      "toml.v1beta1.CreateModelRequest\032\035.google" +
+      "toml.v1beta1.CreateModelRequest\032\035.google",
       ".longrunning.Operation\">\202\323\344\223\0028\"//v1beta1" +
       "/{parent=projects/*/locations/*}/models:" +
       "\005model\022\225\001\n\010GetModel\022,.google.cloud.autom" +
@@ -187,7 +187,7 @@ public final class AutoMlProto {
       "\001\n\nListModels\022..google.cloud.automl.v1be" +
       "ta1.ListModelsRequest\032/.google.cloud.aut" +
       "oml.v1beta1.ListModelsResponse\"7\202\323\344\223\0021\022/" +
-      "/v1beta1/{parent=projects/*/locations/*}" +
+      "/v1beta1/{parent=projects/*/locations/*}",
       "/models\022\226\001\n\013DeleteModel\022/.google.cloud.a" +
       "utoml.v1beta1.DeleteModelRequest\032\035.googl" +
       "e.longrunning.Operation\"7\202\323\344\223\0021*//v1beta" +
@@ -197,7 +197,7 @@ public final class AutoMlProto {
       "unning.Operation\"A\202\323\344\223\002;\"6/v1beta1/{name" +
       "=projects/*/locations/*/models/*}:deploy" +
       ":\001*\022\246\001\n\rUndeployModel\0221.google.cloud.aut" +
-      "oml.v1beta1.UndeployModelRequest\032\035.googl" +
+      "oml.v1beta1.UndeployModelRequest\032\035.googl",
       "e.longrunning.Operation\"C\202\323\344\223\002=\"8/v1beta" +
       "1/{name=projects/*/locations/*/models/*}" +
       ":undeploy:\001*\022\306\001\n\022GetModelEvaluation\0226.go" +
@@ -207,7 +207,7 @@ public final class AutoMlProto {
       "e=projects/*/locations/*/models/*/modelE" +
       "valuations/*}\022\327\001\n\024ListModelEvaluations\0228" +
       ".google.cloud.automl.v1beta1.ListModelEv" +
-      "aluationsRequest\0329.google.cloud.automl.v" +
+      "aluationsRequest\0329.google.cloud.automl.v",
       "1beta1.ListModelEvaluationsResponse\"J\202\323\344" +
       "\223\002D\022B/v1beta1/{parent=projects/*/locatio" +
       "ns/*/models/*}/modelEvaluationsBs\n\037com.g" +
