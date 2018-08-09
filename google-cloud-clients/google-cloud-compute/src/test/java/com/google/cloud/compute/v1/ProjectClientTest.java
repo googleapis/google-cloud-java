@@ -28,6 +28,7 @@ import static com.google.cloud.compute.v1.stub.HttpJsonProjectStub.listXpnHostsP
 import static com.google.cloud.compute.v1.stub.HttpJsonProjectStub.moveDiskProjectMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonProjectStub.moveInstanceProjectMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonProjectStub.setCommonInstanceMetadataProjectMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonProjectStub.setDefaultNetworkTierProjectMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonProjectStub.setUsageExportBucketProjectMethodDescriptor;
 
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -69,6 +70,7 @@ public class ProjectClientTest {
               moveDiskProjectMethodDescriptor,
               moveInstanceProjectMethodDescriptor,
               setCommonInstanceMetadataProjectMethodDescriptor,
+              setDefaultNetworkTierProjectMethodDescriptor,
               setUsageExportBucketProjectMethodDescriptor));
   private static final MockHttpService mockService =
       new MockHttpService(METHOD_DESCRIPTORS, ProjectStubSettings.getDefaultEndpoint());
@@ -464,24 +466,26 @@ public class ProjectClientTest {
   @Test
   @SuppressWarnings("all")
   public void getProjectTest() {
-    String xpnProjectStatus = "xpnProjectStatus-308451647";
     String kind = "kind3292052";
-    String creationTimestamp = "creationTimestamp567396278";
-    String name = "name3373707";
     String description = "description-1724546052";
-    String id = "id3355";
+    String defaultNetworkTier = "defaultNetworkTier1545495185";
     String defaultServiceAccount = "defaultServiceAccount-1848771419";
     String selfLink = "selfLink-1691268851";
+    String xpnProjectStatus = "xpnProjectStatus-308451647";
+    String creationTimestamp = "creationTimestamp567396278";
+    String name = "name3373707";
+    String id = "id3355";
     Project expectedResponse =
         Project.newBuilder()
-            .setXpnProjectStatus(xpnProjectStatus)
             .setKind(kind)
-            .setCreationTimestamp(creationTimestamp)
-            .setName(name)
             .setDescription(description)
-            .setId(id)
+            .setDefaultNetworkTier(defaultNetworkTier)
             .setDefaultServiceAccount(defaultServiceAccount)
             .setSelfLink(selfLink)
+            .setXpnProjectStatus(xpnProjectStatus)
+            .setCreationTimestamp(creationTimestamp)
+            .setName(name)
+            .setId(id)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -526,24 +530,26 @@ public class ProjectClientTest {
   @Test
   @SuppressWarnings("all")
   public void getXpnHostProjectTest() {
-    String xpnProjectStatus = "xpnProjectStatus-308451647";
     String kind = "kind3292052";
-    String creationTimestamp = "creationTimestamp567396278";
-    String name = "name3373707";
     String description = "description-1724546052";
-    String id = "id3355";
+    String defaultNetworkTier = "defaultNetworkTier1545495185";
     String defaultServiceAccount = "defaultServiceAccount-1848771419";
     String selfLink = "selfLink-1691268851";
+    String xpnProjectStatus = "xpnProjectStatus-308451647";
+    String creationTimestamp = "creationTimestamp567396278";
+    String name = "name3373707";
+    String id = "id3355";
     Project expectedResponse =
         Project.newBuilder()
-            .setXpnProjectStatus(xpnProjectStatus)
             .setKind(kind)
-            .setCreationTimestamp(creationTimestamp)
-            .setName(name)
             .setDescription(description)
-            .setId(id)
+            .setDefaultNetworkTier(defaultNetworkTier)
             .setDefaultServiceAccount(defaultServiceAccount)
             .setSelfLink(selfLink)
+            .setXpnProjectStatus(xpnProjectStatus)
+            .setCreationTimestamp(creationTimestamp)
+            .setName(name)
+            .setId(id)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -971,6 +977,99 @@ public class ProjectClientTest {
       Metadata metadataResource = Metadata.newBuilder().build();
 
       client.setCommonInstanceMetadataProject(project, metadataResource);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void setDefaultNetworkTierProjectTest() {
+    String httpErrorMessage = "httpErrorMessage1276263769";
+    String targetId = "targetId-815576439";
+    String kind = "kind3292052";
+    String description = "description-1724546052";
+    String statusMessage = "statusMessage-239442758";
+    String selfLink = "selfLink-1691268851";
+    String insertTime = "insertTime-103148397";
+    Integer httpErrorStatusCode = 1386087020;
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
+    String targetLink = "targetLink-2084812312";
+    String creationTimestamp = "creationTimestamp567396278";
+    String name = "name3373707";
+    Integer progress = 1001078227;
+    String operationType = "operationType-1432962286";
+    String startTime = "startTime-1573145462";
+    String endTime = "endTime1725551537";
+    String id = "id3355";
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+    String clientOperationId = "clientOperationId-239630617";
+    String user = "user3599307";
+    String status = "status-892481550";
+    Operation expectedResponse =
+        Operation.newBuilder()
+            .setHttpErrorMessage(httpErrorMessage)
+            .setTargetId(targetId)
+            .setKind(kind)
+            .setDescription(description)
+            .setStatusMessage(statusMessage)
+            .setSelfLink(selfLink)
+            .setInsertTime(insertTime)
+            .setHttpErrorStatusCode(httpErrorStatusCode)
+            .setZone(zone.toString())
+            .setTargetLink(targetLink)
+            .setCreationTimestamp(creationTimestamp)
+            .setName(name)
+            .setProgress(progress)
+            .setOperationType(operationType)
+            .setStartTime(startTime)
+            .setEndTime(endTime)
+            .setId(id)
+            .setRegion(region.toString())
+            .setClientOperationId(clientOperationId)
+            .setUser(user)
+            .setStatus(status)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ProjectName project = ProjectName.of("[PROJECT]");
+    ProjectsSetDefaultNetworkTierRequest projectsSetDefaultNetworkTierRequestResource =
+        ProjectsSetDefaultNetworkTierRequest.newBuilder().build();
+
+    Operation actualResponse =
+        client.setDefaultNetworkTierProject(project, projectsSetDefaultNetworkTierRequestResource);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void setDefaultNetworkTierProjectExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ProjectName project = ProjectName.of("[PROJECT]");
+      ProjectsSetDefaultNetworkTierRequest projectsSetDefaultNetworkTierRequestResource =
+          ProjectsSetDefaultNetworkTierRequest.newBuilder().build();
+
+      client.setDefaultNetworkTierProject(project, projectsSetDefaultNetworkTierRequestResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

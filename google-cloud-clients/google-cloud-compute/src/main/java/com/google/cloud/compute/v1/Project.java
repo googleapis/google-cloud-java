@@ -28,6 +28,7 @@ import javax.annotation.Nullable;
 public final class Project implements ApiMessage {
   private final Metadata commonInstanceMetadata;
   private final String creationTimestamp;
+  private final String defaultNetworkTier;
   private final String defaultServiceAccount;
   private final String description;
   private final List<String> enabledFeatures;
@@ -42,6 +43,7 @@ public final class Project implements ApiMessage {
   private Project() {
     this.commonInstanceMetadata = null;
     this.creationTimestamp = null;
+    this.defaultNetworkTier = null;
     this.defaultServiceAccount = null;
     this.description = null;
     this.enabledFeatures = null;
@@ -57,6 +59,7 @@ public final class Project implements ApiMessage {
   private Project(
       Metadata commonInstanceMetadata,
       String creationTimestamp,
+      String defaultNetworkTier,
       String defaultServiceAccount,
       String description,
       List<String> enabledFeatures,
@@ -69,6 +72,7 @@ public final class Project implements ApiMessage {
       String xpnProjectStatus) {
     this.commonInstanceMetadata = commonInstanceMetadata;
     this.creationTimestamp = creationTimestamp;
+    this.defaultNetworkTier = defaultNetworkTier;
     this.defaultServiceAccount = defaultServiceAccount;
     this.description = description;
     this.enabledFeatures = enabledFeatures;
@@ -88,6 +92,9 @@ public final class Project implements ApiMessage {
     }
     if (fieldName.equals("creationTimestamp")) {
       return creationTimestamp;
+    }
+    if (fieldName.equals("defaultNetworkTier")) {
+      return defaultNetworkTier;
     }
     if (fieldName.equals("defaultServiceAccount")) {
       return defaultServiceAccount;
@@ -140,6 +147,10 @@ public final class Project implements ApiMessage {
 
   public String getCreationTimestamp() {
     return creationTimestamp;
+  }
+
+  public String getDefaultNetworkTier() {
+    return defaultNetworkTier;
   }
 
   public String getDefaultServiceAccount() {
@@ -207,6 +218,7 @@ public final class Project implements ApiMessage {
   public static class Builder {
     private Metadata commonInstanceMetadata;
     private String creationTimestamp;
+    private String defaultNetworkTier;
     private String defaultServiceAccount;
     private String description;
     private List<String> enabledFeatures;
@@ -227,6 +239,9 @@ public final class Project implements ApiMessage {
       }
       if (other.getCreationTimestamp() != null) {
         this.creationTimestamp = other.creationTimestamp;
+      }
+      if (other.getDefaultNetworkTier() != null) {
+        this.defaultNetworkTier = other.defaultNetworkTier;
       }
       if (other.getDefaultServiceAccount() != null) {
         this.defaultServiceAccount = other.defaultServiceAccount;
@@ -264,6 +279,7 @@ public final class Project implements ApiMessage {
     Builder(Project source) {
       this.commonInstanceMetadata = source.commonInstanceMetadata;
       this.creationTimestamp = source.creationTimestamp;
+      this.defaultNetworkTier = source.defaultNetworkTier;
       this.defaultServiceAccount = source.defaultServiceAccount;
       this.description = source.description;
       this.enabledFeatures = source.enabledFeatures;
@@ -291,6 +307,15 @@ public final class Project implements ApiMessage {
 
     public Builder setCreationTimestamp(String creationTimestamp) {
       this.creationTimestamp = creationTimestamp;
+      return this;
+    }
+
+    public String getDefaultNetworkTier() {
+      return defaultNetworkTier;
+    }
+
+    public Builder setDefaultNetworkTier(String defaultNetworkTier) {
+      this.defaultNetworkTier = defaultNetworkTier;
       return this;
     }
 
@@ -411,6 +436,7 @@ public final class Project implements ApiMessage {
       return new Project(
           commonInstanceMetadata,
           creationTimestamp,
+          defaultNetworkTier,
           defaultServiceAccount,
           description,
           enabledFeatures,
@@ -427,6 +453,7 @@ public final class Project implements ApiMessage {
       Builder newBuilder = new Builder();
       newBuilder.setCommonInstanceMetadata(this.commonInstanceMetadata);
       newBuilder.setCreationTimestamp(this.creationTimestamp);
+      newBuilder.setDefaultNetworkTier(this.defaultNetworkTier);
       newBuilder.setDefaultServiceAccount(this.defaultServiceAccount);
       newBuilder.setDescription(this.description);
       newBuilder.addAllEnabledFeatures(this.enabledFeatures);
@@ -449,6 +476,9 @@ public final class Project implements ApiMessage {
         + ", "
         + "creationTimestamp="
         + creationTimestamp
+        + ", "
+        + "defaultNetworkTier="
+        + defaultNetworkTier
         + ", "
         + "defaultServiceAccount="
         + defaultServiceAccount
@@ -491,6 +521,7 @@ public final class Project implements ApiMessage {
       Project that = (Project) o;
       return Objects.equals(this.commonInstanceMetadata, that.getCommonInstanceMetadata())
           && Objects.equals(this.creationTimestamp, that.getCreationTimestamp())
+          && Objects.equals(this.defaultNetworkTier, that.getDefaultNetworkTier())
           && Objects.equals(this.defaultServiceAccount, that.getDefaultServiceAccount())
           && Objects.equals(this.description, that.getDescription())
           && Objects.equals(this.enabledFeatures, that.getEnabledFeaturesList())
@@ -510,6 +541,7 @@ public final class Project implements ApiMessage {
     return Objects.hash(
         commonInstanceMetadata,
         creationTimestamp,
+        defaultNetworkTier,
         defaultServiceAccount,
         description,
         enabledFeatures,

@@ -74,7 +74,8 @@
  * <code>
  * try (BackendBucketClient backendBucketClient = BackendBucketClient.create()) {
  *   ProjectGlobalBackendBucketName backendBucket = ProjectGlobalBackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
- *   Operation response = backendBucketClient.deleteBackendBucket(backendBucket);
+ *   SignedUrlKey signedUrlKeyResource = SignedUrlKey.newBuilder().build();
+ *   Operation response = backendBucketClient.addSignedUrlKeyBackendBucket(backendBucket, signedUrlKeyResource);
  * }
  * </code>
  * </pre>
@@ -89,7 +90,8 @@
  * <code>
  * try (BackendServiceClient backendServiceClient = BackendServiceClient.create()) {
  *   ProjectGlobalBackendServiceName backendService = ProjectGlobalBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
- *   Operation response = backendServiceClient.deleteBackendService(backendService);
+ *   SignedUrlKey signedUrlKeyResource = SignedUrlKey.newBuilder().build();
+ *   Operation response = backendServiceClient.addSignedUrlKeyBackendService(backendService, signedUrlKeyResource);
  * }
  * </code>
  * </pre>
@@ -427,6 +429,52 @@
  *   ProjectGlobalNetworkName network = ProjectGlobalNetworkName.of("[PROJECT]", "[NETWORK]");
  *   NetworksAddPeeringRequest networksAddPeeringRequestResource = NetworksAddPeeringRequest.newBuilder().build();
  *   Operation response = networkClient.addPeeringNetwork(network, networksAddPeeringRequestResource);
+ * }
+ * </code>
+ * </pre>
+ *
+ * =============== NodeGroupClient ===============
+ *
+ * <p>Service Description: Creates and runs virtual machines on Google Cloud Platform.
+ *
+ * <p>Sample for NodeGroupClient:
+ *
+ * <pre>
+ * <code>
+ * try (NodeGroupClient nodeGroupClient = NodeGroupClient.create()) {
+ *   ProjectZoneNodeGroupName nodeGroup = ProjectZoneNodeGroupName.of("[PROJECT]", "[ZONE]", "[NODE_GROUP]");
+ *   NodeGroupsAddNodesRequest nodeGroupsAddNodesRequestResource = NodeGroupsAddNodesRequest.newBuilder().build();
+ *   Operation response = nodeGroupClient.addNodesNodeGroup(nodeGroup, nodeGroupsAddNodesRequestResource);
+ * }
+ * </code>
+ * </pre>
+ *
+ * ================== NodeTemplateClient ==================
+ *
+ * <p>Service Description: Creates and runs virtual machines on Google Cloud Platform.
+ *
+ * <p>Sample for NodeTemplateClient:
+ *
+ * <pre>
+ * <code>
+ * try (NodeTemplateClient nodeTemplateClient = NodeTemplateClient.create()) {
+ *   ProjectRegionNodeTemplateName nodeTemplate = ProjectRegionNodeTemplateName.of("[PROJECT]", "[REGION]", "[NODE_TEMPLATE]");
+ *   Operation response = nodeTemplateClient.deleteNodeTemplate(nodeTemplate);
+ * }
+ * </code>
+ * </pre>
+ *
+ * ============== NodeTypeClient ==============
+ *
+ * <p>Service Description: Creates and runs virtual machines on Google Cloud Platform.
+ *
+ * <p>Sample for NodeTypeClient:
+ *
+ * <pre>
+ * <code>
+ * try (NodeTypeClient nodeTypeClient = NodeTypeClient.create()) {
+ *   ProjectZoneNodeTypeName nodeType = ProjectZoneNodeTypeName.of("[PROJECT]", "[ZONE]", "[NODE_TYPE]");
+ *   NodeType response = nodeTypeClient.getNodeType(nodeType);
  * }
  * </code>
  * </pre>

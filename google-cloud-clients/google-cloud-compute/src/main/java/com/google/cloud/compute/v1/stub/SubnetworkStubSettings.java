@@ -17,6 +17,7 @@ package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.SubnetworkClient.AggregatedListSubnetworksPagedResponse;
 import static com.google.cloud.compute.v1.SubnetworkClient.ListSubnetworksPagedResponse;
+import static com.google.cloud.compute.v1.SubnetworkClient.ListUsableSubnetworksPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
@@ -46,6 +47,7 @@ import com.google.cloud.compute.v1.ExpandIpCidrRangeSubnetworkHttpRequest;
 import com.google.cloud.compute.v1.GetSubnetworkHttpRequest;
 import com.google.cloud.compute.v1.InsertSubnetworkHttpRequest;
 import com.google.cloud.compute.v1.ListSubnetworksHttpRequest;
+import com.google.cloud.compute.v1.ListUsableSubnetworksHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchSubnetworkHttpRequest;
 import com.google.cloud.compute.v1.SetPrivateIpGoogleAccessSubnetworkHttpRequest;
@@ -53,6 +55,8 @@ import com.google.cloud.compute.v1.Subnetwork;
 import com.google.cloud.compute.v1.SubnetworkAggregatedList;
 import com.google.cloud.compute.v1.SubnetworkList;
 import com.google.cloud.compute.v1.SubnetworksScopedList;
+import com.google.cloud.compute.v1.UsableSubnetwork;
+import com.google.cloud.compute.v1.UsableSubnetworksAggregatedList;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -115,6 +119,10 @@ public class SubnetworkStubSettings extends StubSettings<SubnetworkStubSettings>
   private final PagedCallSettings<
           ListSubnetworksHttpRequest, SubnetworkList, ListSubnetworksPagedResponse>
       listSubnetworksSettings;
+  private final PagedCallSettings<
+          ListUsableSubnetworksHttpRequest, UsableSubnetworksAggregatedList,
+          ListUsableSubnetworksPagedResponse>
+      listUsableSubnetworksSettings;
   private final UnaryCallSettings<PatchSubnetworkHttpRequest, Operation> patchSubnetworkSettings;
   private final UnaryCallSettings<SetPrivateIpGoogleAccessSubnetworkHttpRequest, Operation>
       setPrivateIpGoogleAccessSubnetworkSettings;
@@ -152,6 +160,14 @@ public class SubnetworkStubSettings extends StubSettings<SubnetworkStubSettings>
   public PagedCallSettings<ListSubnetworksHttpRequest, SubnetworkList, ListSubnetworksPagedResponse>
       listSubnetworksSettings() {
     return listSubnetworksSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listUsableSubnetworks. */
+  public PagedCallSettings<
+          ListUsableSubnetworksHttpRequest, UsableSubnetworksAggregatedList,
+          ListUsableSubnetworksPagedResponse>
+      listUsableSubnetworksSettings() {
+    return listUsableSubnetworksSettings;
   }
 
   /** Returns the object with the settings used for calls to patchSubnetwork. */
@@ -247,6 +263,7 @@ public class SubnetworkStubSettings extends StubSettings<SubnetworkStubSettings>
     getSubnetworkSettings = settingsBuilder.getSubnetworkSettings().build();
     insertSubnetworkSettings = settingsBuilder.insertSubnetworkSettings().build();
     listSubnetworksSettings = settingsBuilder.listSubnetworksSettings().build();
+    listUsableSubnetworksSettings = settingsBuilder.listUsableSubnetworksSettings().build();
     patchSubnetworkSettings = settingsBuilder.patchSubnetworkSettings().build();
     setPrivateIpGoogleAccessSubnetworkSettings =
         settingsBuilder.setPrivateIpGoogleAccessSubnetworkSettings().build();
@@ -332,6 +349,50 @@ public class SubnetworkStubSettings extends StubSettings<SubnetworkStubSettings>
             }
           };
 
+  private static final PagedListDescriptor<
+          ListUsableSubnetworksHttpRequest, UsableSubnetworksAggregatedList, UsableSubnetwork>
+      LIST_USABLE_SUBNETWORKS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListUsableSubnetworksHttpRequest, UsableSubnetworksAggregatedList,
+              UsableSubnetwork>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListUsableSubnetworksHttpRequest injectToken(
+                ListUsableSubnetworksHttpRequest payload, String token) {
+              return ListUsableSubnetworksHttpRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public ListUsableSubnetworksHttpRequest injectPageSize(
+                ListUsableSubnetworksHttpRequest payload, int pageSize) {
+              return ListUsableSubnetworksHttpRequest.newBuilder(payload)
+                  .setMaxResults(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListUsableSubnetworksHttpRequest payload) {
+              return payload.getMaxResults();
+            }
+
+            @Override
+            public String extractNextToken(UsableSubnetworksAggregatedList payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<UsableSubnetwork> extractResources(
+                UsableSubnetworksAggregatedList payload) {
+              return payload.getItemsList();
+            }
+          };
+
   private static final PagedListResponseFactory<
           AggregatedListSubnetworksHttpRequest, SubnetworkAggregatedList,
           AggregatedListSubnetworksPagedResponse>
@@ -374,6 +435,30 @@ public class SubnetworkStubSettings extends StubSettings<SubnetworkStubSettings>
             }
           };
 
+  private static final PagedListResponseFactory<
+          ListUsableSubnetworksHttpRequest, UsableSubnetworksAggregatedList,
+          ListUsableSubnetworksPagedResponse>
+      LIST_USABLE_SUBNETWORKS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListUsableSubnetworksHttpRequest, UsableSubnetworksAggregatedList,
+              ListUsableSubnetworksPagedResponse>() {
+            @Override
+            public ApiFuture<ListUsableSubnetworksPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListUsableSubnetworksHttpRequest, UsableSubnetworksAggregatedList>
+                    callable,
+                ListUsableSubnetworksHttpRequest request,
+                ApiCallContext context,
+                ApiFuture<UsableSubnetworksAggregatedList> futureResponse) {
+              PageContext<
+                      ListUsableSubnetworksHttpRequest, UsableSubnetworksAggregatedList,
+                      UsableSubnetwork>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_USABLE_SUBNETWORKS_PAGE_STR_DESC, request, context);
+              return ListUsableSubnetworksPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
   /** Builder for SubnetworkStubSettings. */
   public static class Builder extends StubSettings.Builder<SubnetworkStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
@@ -393,6 +478,10 @@ public class SubnetworkStubSettings extends StubSettings<SubnetworkStubSettings>
     private final PagedCallSettings.Builder<
             ListSubnetworksHttpRequest, SubnetworkList, ListSubnetworksPagedResponse>
         listSubnetworksSettings;
+    private final PagedCallSettings.Builder<
+            ListUsableSubnetworksHttpRequest, UsableSubnetworksAggregatedList,
+            ListUsableSubnetworksPagedResponse>
+        listUsableSubnetworksSettings;
     private final UnaryCallSettings.Builder<PatchSubnetworkHttpRequest, Operation>
         patchSubnetworkSettings;
     private final UnaryCallSettings.Builder<
@@ -453,6 +542,9 @@ public class SubnetworkStubSettings extends StubSettings<SubnetworkStubSettings>
 
       listSubnetworksSettings = PagedCallSettings.newBuilder(LIST_SUBNETWORKS_PAGE_STR_FACT);
 
+      listUsableSubnetworksSettings =
+          PagedCallSettings.newBuilder(LIST_USABLE_SUBNETWORKS_PAGE_STR_FACT);
+
       patchSubnetworkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       setPrivateIpGoogleAccessSubnetworkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -465,6 +557,7 @@ public class SubnetworkStubSettings extends StubSettings<SubnetworkStubSettings>
               getSubnetworkSettings,
               insertSubnetworkSettings,
               listSubnetworksSettings,
+              listUsableSubnetworksSettings,
               patchSubnetworkSettings,
               setPrivateIpGoogleAccessSubnetworkSettings);
 
@@ -513,6 +606,11 @@ public class SubnetworkStubSettings extends StubSettings<SubnetworkStubSettings>
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
+          .listUsableSubnetworksSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
           .patchSubnetworkSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
@@ -535,6 +633,7 @@ public class SubnetworkStubSettings extends StubSettings<SubnetworkStubSettings>
       getSubnetworkSettings = settings.getSubnetworkSettings.toBuilder();
       insertSubnetworkSettings = settings.insertSubnetworkSettings.toBuilder();
       listSubnetworksSettings = settings.listSubnetworksSettings.toBuilder();
+      listUsableSubnetworksSettings = settings.listUsableSubnetworksSettings.toBuilder();
       patchSubnetworkSettings = settings.patchSubnetworkSettings.toBuilder();
       setPrivateIpGoogleAccessSubnetworkSettings =
           settings.setPrivateIpGoogleAccessSubnetworkSettings.toBuilder();
@@ -547,6 +646,7 @@ public class SubnetworkStubSettings extends StubSettings<SubnetworkStubSettings>
               getSubnetworkSettings,
               insertSubnetworkSettings,
               listSubnetworksSettings,
+              listUsableSubnetworksSettings,
               patchSubnetworkSettings,
               setPrivateIpGoogleAccessSubnetworkSettings);
     }
@@ -603,6 +703,14 @@ public class SubnetworkStubSettings extends StubSettings<SubnetworkStubSettings>
             ListSubnetworksHttpRequest, SubnetworkList, ListSubnetworksPagedResponse>
         listSubnetworksSettings() {
       return listSubnetworksSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listUsableSubnetworks. */
+    public PagedCallSettings.Builder<
+            ListUsableSubnetworksHttpRequest, UsableSubnetworksAggregatedList,
+            ListUsableSubnetworksPagedResponse>
+        listUsableSubnetworksSettings() {
+      return listUsableSubnetworksSettings;
     }
 
     /** Returns the builder for the settings used for calls to patchSubnetwork. */

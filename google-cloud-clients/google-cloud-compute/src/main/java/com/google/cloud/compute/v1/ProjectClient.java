@@ -1403,6 +1403,127 @@ public class ProjectClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
+   * Sets the default network tier of the project. The default network tier is used when an
+   * address/forwardingRule/instance is created without specifying the network tier field.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ProjectClient projectClient = ProjectClient.create()) {
+   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   ProjectsSetDefaultNetworkTierRequest projectsSetDefaultNetworkTierRequestResource = ProjectsSetDefaultNetworkTierRequest.newBuilder().build();
+   *   Operation response = projectClient.setDefaultNetworkTierProject(project, projectsSetDefaultNetworkTierRequestResource);
+   * }
+   * </code></pre>
+   *
+   * @param project Project ID for this request.
+   * @param projectsSetDefaultNetworkTierRequestResource
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation setDefaultNetworkTierProject(
+      ProjectName project,
+      ProjectsSetDefaultNetworkTierRequest projectsSetDefaultNetworkTierRequestResource) {
+
+    SetDefaultNetworkTierProjectHttpRequest request =
+        SetDefaultNetworkTierProjectHttpRequest.newBuilder()
+            .setProject(project == null ? null : project.toString())
+            .setProjectsSetDefaultNetworkTierRequestResource(
+                projectsSetDefaultNetworkTierRequestResource)
+            .build();
+    return setDefaultNetworkTierProject(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sets the default network tier of the project. The default network tier is used when an
+   * address/forwardingRule/instance is created without specifying the network tier field.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ProjectClient projectClient = ProjectClient.create()) {
+   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   ProjectsSetDefaultNetworkTierRequest projectsSetDefaultNetworkTierRequestResource = ProjectsSetDefaultNetworkTierRequest.newBuilder().build();
+   *   Operation response = projectClient.setDefaultNetworkTierProject(project.toString(), projectsSetDefaultNetworkTierRequestResource);
+   * }
+   * </code></pre>
+   *
+   * @param project Project ID for this request.
+   * @param projectsSetDefaultNetworkTierRequestResource
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation setDefaultNetworkTierProject(
+      String project,
+      ProjectsSetDefaultNetworkTierRequest projectsSetDefaultNetworkTierRequestResource) {
+
+    SetDefaultNetworkTierProjectHttpRequest request =
+        SetDefaultNetworkTierProjectHttpRequest.newBuilder()
+            .setProject(project)
+            .setProjectsSetDefaultNetworkTierRequestResource(
+                projectsSetDefaultNetworkTierRequestResource)
+            .build();
+    return setDefaultNetworkTierProject(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sets the default network tier of the project. The default network tier is used when an
+   * address/forwardingRule/instance is created without specifying the network tier field.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ProjectClient projectClient = ProjectClient.create()) {
+   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   ProjectsSetDefaultNetworkTierRequest projectsSetDefaultNetworkTierRequestResource = ProjectsSetDefaultNetworkTierRequest.newBuilder().build();
+   *   SetDefaultNetworkTierProjectHttpRequest request = SetDefaultNetworkTierProjectHttpRequest.newBuilder()
+   *     .setProject(project.toString())
+   *     .setProjectsSetDefaultNetworkTierRequestResource(projectsSetDefaultNetworkTierRequestResource)
+   *     .build();
+   *   Operation response = projectClient.setDefaultNetworkTierProject(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation setDefaultNetworkTierProject(
+      SetDefaultNetworkTierProjectHttpRequest request) {
+    return setDefaultNetworkTierProjectCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sets the default network tier of the project. The default network tier is used when an
+   * address/forwardingRule/instance is created without specifying the network tier field.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ProjectClient projectClient = ProjectClient.create()) {
+   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   ProjectsSetDefaultNetworkTierRequest projectsSetDefaultNetworkTierRequestResource = ProjectsSetDefaultNetworkTierRequest.newBuilder().build();
+   *   SetDefaultNetworkTierProjectHttpRequest request = SetDefaultNetworkTierProjectHttpRequest.newBuilder()
+   *     .setProject(project.toString())
+   *     .setProjectsSetDefaultNetworkTierRequestResource(projectsSetDefaultNetworkTierRequestResource)
+   *     .build();
+   *   ApiFuture&lt;Operation&gt; future = projectClient.setDefaultNetworkTierProjectCallable().futureCall(request);
+   *   // Do something
+   *   Operation response = future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi
+  public final UnaryCallable<SetDefaultNetworkTierProjectHttpRequest, Operation>
+      setDefaultNetworkTierProjectCallable() {
+    return stub.setDefaultNetworkTierProjectCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
    * Enables the usage export feature and sets the usage export bucket where reports are stored. If
    * you provide an empty request body using this method, the usage export feature will be disabled.
    *

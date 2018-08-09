@@ -43,7 +43,8 @@ import javax.annotation.Generated;
  * <code>
  * try (BackendServiceClient backendServiceClient = BackendServiceClient.create()) {
  *   ProjectGlobalBackendServiceName backendService = ProjectGlobalBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
- *   Operation response = backendServiceClient.deleteBackendService(backendService);
+ *   SignedUrlKey signedUrlKeyResource = SignedUrlKey.newBuilder().build();
+ *   Operation response = backendServiceClient.addSignedUrlKeyBackendService(backendService, signedUrlKeyResource);
  * }
  * </code>
  * </pre>
@@ -150,6 +151,123 @@ public class BackendServiceClient implements BackgroundResource {
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public BackendServiceStub getStub() {
     return stub;
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Adds a key for validating requests with signed URLs for this backend service.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BackendServiceClient backendServiceClient = BackendServiceClient.create()) {
+   *   ProjectGlobalBackendServiceName backendService = ProjectGlobalBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
+   *   SignedUrlKey signedUrlKeyResource = SignedUrlKey.newBuilder().build();
+   *   Operation response = backendServiceClient.addSignedUrlKeyBackendService(backendService, signedUrlKeyResource);
+   * }
+   * </code></pre>
+   *
+   * @param backendService Name of the BackendService resource to which the Signed URL Key should be
+   *     added. The name should conform to RFC1035.
+   * @param signedUrlKeyResource Represents a customer-supplied Signing Key used by Cloud CDN Signed
+   *     URLs
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation addSignedUrlKeyBackendService(
+      ProjectGlobalBackendServiceName backendService, SignedUrlKey signedUrlKeyResource) {
+
+    AddSignedUrlKeyBackendServiceHttpRequest request =
+        AddSignedUrlKeyBackendServiceHttpRequest.newBuilder()
+            .setBackendService(backendService == null ? null : backendService.toString())
+            .setSignedUrlKeyResource(signedUrlKeyResource)
+            .build();
+    return addSignedUrlKeyBackendService(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Adds a key for validating requests with signed URLs for this backend service.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BackendServiceClient backendServiceClient = BackendServiceClient.create()) {
+   *   ProjectGlobalBackendServiceName backendService = ProjectGlobalBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
+   *   SignedUrlKey signedUrlKeyResource = SignedUrlKey.newBuilder().build();
+   *   Operation response = backendServiceClient.addSignedUrlKeyBackendService(backendService.toString(), signedUrlKeyResource);
+   * }
+   * </code></pre>
+   *
+   * @param backendService Name of the BackendService resource to which the Signed URL Key should be
+   *     added. The name should conform to RFC1035.
+   * @param signedUrlKeyResource Represents a customer-supplied Signing Key used by Cloud CDN Signed
+   *     URLs
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation addSignedUrlKeyBackendService(
+      String backendService, SignedUrlKey signedUrlKeyResource) {
+
+    AddSignedUrlKeyBackendServiceHttpRequest request =
+        AddSignedUrlKeyBackendServiceHttpRequest.newBuilder()
+            .setBackendService(backendService)
+            .setSignedUrlKeyResource(signedUrlKeyResource)
+            .build();
+    return addSignedUrlKeyBackendService(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Adds a key for validating requests with signed URLs for this backend service.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BackendServiceClient backendServiceClient = BackendServiceClient.create()) {
+   *   ProjectGlobalBackendServiceName backendService = ProjectGlobalBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
+   *   SignedUrlKey signedUrlKeyResource = SignedUrlKey.newBuilder().build();
+   *   AddSignedUrlKeyBackendServiceHttpRequest request = AddSignedUrlKeyBackendServiceHttpRequest.newBuilder()
+   *     .setBackendService(backendService.toString())
+   *     .setSignedUrlKeyResource(signedUrlKeyResource)
+   *     .build();
+   *   Operation response = backendServiceClient.addSignedUrlKeyBackendService(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation addSignedUrlKeyBackendService(
+      AddSignedUrlKeyBackendServiceHttpRequest request) {
+    return addSignedUrlKeyBackendServiceCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Adds a key for validating requests with signed URLs for this backend service.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BackendServiceClient backendServiceClient = BackendServiceClient.create()) {
+   *   ProjectGlobalBackendServiceName backendService = ProjectGlobalBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
+   *   SignedUrlKey signedUrlKeyResource = SignedUrlKey.newBuilder().build();
+   *   AddSignedUrlKeyBackendServiceHttpRequest request = AddSignedUrlKeyBackendServiceHttpRequest.newBuilder()
+   *     .setBackendService(backendService.toString())
+   *     .setSignedUrlKeyResource(signedUrlKeyResource)
+   *     .build();
+   *   ApiFuture&lt;Operation&gt; future = backendServiceClient.addSignedUrlKeyBackendServiceCallable().futureCall(request);
+   *   // Do something
+   *   Operation response = future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi
+  public final UnaryCallable<AddSignedUrlKeyBackendServiceHttpRequest, Operation>
+      addSignedUrlKeyBackendServiceCallable() {
+    return stub.addSignedUrlKeyBackendServiceCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -394,6 +512,120 @@ public class BackendServiceClient implements BackgroundResource {
   public final UnaryCallable<DeleteBackendServiceHttpRequest, Operation>
       deleteBackendServiceCallable() {
     return stub.deleteBackendServiceCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a key for validating requests with signed URLs for this backend service.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BackendServiceClient backendServiceClient = BackendServiceClient.create()) {
+   *   ProjectGlobalBackendServiceName backendService = ProjectGlobalBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
+   *   String keyName = "";
+   *   Operation response = backendServiceClient.deleteSignedUrlKeyBackendService(backendService, keyName);
+   * }
+   * </code></pre>
+   *
+   * @param backendService Name of the BackendService resource to which the Signed URL Key should be
+   *     added. The name should conform to RFC1035.
+   * @param keyName The name of the Signed URL Key to delete.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation deleteSignedUrlKeyBackendService(
+      ProjectGlobalBackendServiceName backendService, String keyName) {
+
+    DeleteSignedUrlKeyBackendServiceHttpRequest request =
+        DeleteSignedUrlKeyBackendServiceHttpRequest.newBuilder()
+            .setBackendService(backendService == null ? null : backendService.toString())
+            .setKeyName(keyName)
+            .build();
+    return deleteSignedUrlKeyBackendService(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a key for validating requests with signed URLs for this backend service.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BackendServiceClient backendServiceClient = BackendServiceClient.create()) {
+   *   ProjectGlobalBackendServiceName backendService = ProjectGlobalBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
+   *   String keyName = "";
+   *   Operation response = backendServiceClient.deleteSignedUrlKeyBackendService(backendService.toString(), keyName);
+   * }
+   * </code></pre>
+   *
+   * @param backendService Name of the BackendService resource to which the Signed URL Key should be
+   *     added. The name should conform to RFC1035.
+   * @param keyName The name of the Signed URL Key to delete.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation deleteSignedUrlKeyBackendService(String backendService, String keyName) {
+
+    DeleteSignedUrlKeyBackendServiceHttpRequest request =
+        DeleteSignedUrlKeyBackendServiceHttpRequest.newBuilder()
+            .setBackendService(backendService)
+            .setKeyName(keyName)
+            .build();
+    return deleteSignedUrlKeyBackendService(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a key for validating requests with signed URLs for this backend service.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BackendServiceClient backendServiceClient = BackendServiceClient.create()) {
+   *   ProjectGlobalBackendServiceName backendService = ProjectGlobalBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
+   *   String keyName = "";
+   *   DeleteSignedUrlKeyBackendServiceHttpRequest request = DeleteSignedUrlKeyBackendServiceHttpRequest.newBuilder()
+   *     .setBackendService(backendService.toString())
+   *     .setKeyName(keyName)
+   *     .build();
+   *   Operation response = backendServiceClient.deleteSignedUrlKeyBackendService(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation deleteSignedUrlKeyBackendService(
+      DeleteSignedUrlKeyBackendServiceHttpRequest request) {
+    return deleteSignedUrlKeyBackendServiceCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a key for validating requests with signed URLs for this backend service.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BackendServiceClient backendServiceClient = BackendServiceClient.create()) {
+   *   ProjectGlobalBackendServiceName backendService = ProjectGlobalBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
+   *   String keyName = "";
+   *   DeleteSignedUrlKeyBackendServiceHttpRequest request = DeleteSignedUrlKeyBackendServiceHttpRequest.newBuilder()
+   *     .setBackendService(backendService.toString())
+   *     .setKeyName(keyName)
+   *     .build();
+   *   ApiFuture&lt;Operation&gt; future = backendServiceClient.deleteSignedUrlKeyBackendServiceCallable().futureCall(request);
+   *   // Do something
+   *   Operation response = future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi
+  public final UnaryCallable<DeleteSignedUrlKeyBackendServiceHttpRequest, Operation>
+      deleteSignedUrlKeyBackendServiceCallable() {
+    return stub.deleteSignedUrlKeyBackendServiceCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD

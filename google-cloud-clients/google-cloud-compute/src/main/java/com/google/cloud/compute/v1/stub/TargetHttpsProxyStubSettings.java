@@ -44,6 +44,7 @@ import com.google.cloud.compute.v1.GetTargetHttpsProxyHttpRequest;
 import com.google.cloud.compute.v1.InsertTargetHttpsProxyHttpRequest;
 import com.google.cloud.compute.v1.ListTargetHttpsProxiesHttpRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.SetQuicOverrideTargetHttpsProxyHttpRequest;
 import com.google.cloud.compute.v1.SetSslCertificatesTargetHttpsProxyHttpRequest;
 import com.google.cloud.compute.v1.SetSslPolicyTargetHttpsProxyHttpRequest;
 import com.google.cloud.compute.v1.SetUrlMapTargetHttpsProxyHttpRequest;
@@ -109,6 +110,8 @@ public class TargetHttpsProxyStubSettings extends StubSettings<TargetHttpsProxyS
           ListTargetHttpsProxiesHttpRequest, TargetHttpsProxyList,
           ListTargetHttpsProxiesPagedResponse>
       listTargetHttpsProxiesSettings;
+  private final UnaryCallSettings<SetQuicOverrideTargetHttpsProxyHttpRequest, Operation>
+      setQuicOverrideTargetHttpsProxySettings;
   private final UnaryCallSettings<SetSslCertificatesTargetHttpsProxyHttpRequest, Operation>
       setSslCertificatesTargetHttpsProxySettings;
   private final UnaryCallSettings<SetSslPolicyTargetHttpsProxyHttpRequest, Operation>
@@ -140,6 +143,12 @@ public class TargetHttpsProxyStubSettings extends StubSettings<TargetHttpsProxyS
           ListTargetHttpsProxiesPagedResponse>
       listTargetHttpsProxiesSettings() {
     return listTargetHttpsProxiesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to setQuicOverrideTargetHttpsProxy. */
+  public UnaryCallSettings<SetQuicOverrideTargetHttpsProxyHttpRequest, Operation>
+      setQuicOverrideTargetHttpsProxySettings() {
+    return setQuicOverrideTargetHttpsProxySettings;
   }
 
   /** Returns the object with the settings used for calls to setSslCertificatesTargetHttpsProxy. */
@@ -239,6 +248,8 @@ public class TargetHttpsProxyStubSettings extends StubSettings<TargetHttpsProxyS
     getTargetHttpsProxySettings = settingsBuilder.getTargetHttpsProxySettings().build();
     insertTargetHttpsProxySettings = settingsBuilder.insertTargetHttpsProxySettings().build();
     listTargetHttpsProxiesSettings = settingsBuilder.listTargetHttpsProxiesSettings().build();
+    setQuicOverrideTargetHttpsProxySettings =
+        settingsBuilder.setQuicOverrideTargetHttpsProxySettings().build();
     setSslCertificatesTargetHttpsProxySettings =
         settingsBuilder.setSslCertificatesTargetHttpsProxySettings().build();
     setSslPolicyTargetHttpsProxySettings =
@@ -323,6 +334,8 @@ public class TargetHttpsProxyStubSettings extends StubSettings<TargetHttpsProxyS
             ListTargetHttpsProxiesHttpRequest, TargetHttpsProxyList,
             ListTargetHttpsProxiesPagedResponse>
         listTargetHttpsProxiesSettings;
+    private final UnaryCallSettings.Builder<SetQuicOverrideTargetHttpsProxyHttpRequest, Operation>
+        setQuicOverrideTargetHttpsProxySettings;
     private final UnaryCallSettings.Builder<
             SetSslCertificatesTargetHttpsProxyHttpRequest, Operation>
         setSslCertificatesTargetHttpsProxySettings;
@@ -381,6 +394,8 @@ public class TargetHttpsProxyStubSettings extends StubSettings<TargetHttpsProxyS
       listTargetHttpsProxiesSettings =
           PagedCallSettings.newBuilder(LIST_TARGET_HTTPS_PROXIES_PAGE_STR_FACT);
 
+      setQuicOverrideTargetHttpsProxySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       setSslCertificatesTargetHttpsProxySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       setSslPolicyTargetHttpsProxySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -393,6 +408,7 @@ public class TargetHttpsProxyStubSettings extends StubSettings<TargetHttpsProxyS
               getTargetHttpsProxySettings,
               insertTargetHttpsProxySettings,
               listTargetHttpsProxiesSettings,
+              setQuicOverrideTargetHttpsProxySettings,
               setSslCertificatesTargetHttpsProxySettings,
               setSslPolicyTargetHttpsProxySettings,
               setUrlMapTargetHttpsProxySettings);
@@ -432,6 +448,11 @@ public class TargetHttpsProxyStubSettings extends StubSettings<TargetHttpsProxyS
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
+          .setQuicOverrideTargetHttpsProxySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
           .setSslCertificatesTargetHttpsProxySettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
@@ -456,6 +477,8 @@ public class TargetHttpsProxyStubSettings extends StubSettings<TargetHttpsProxyS
       getTargetHttpsProxySettings = settings.getTargetHttpsProxySettings.toBuilder();
       insertTargetHttpsProxySettings = settings.insertTargetHttpsProxySettings.toBuilder();
       listTargetHttpsProxiesSettings = settings.listTargetHttpsProxiesSettings.toBuilder();
+      setQuicOverrideTargetHttpsProxySettings =
+          settings.setQuicOverrideTargetHttpsProxySettings.toBuilder();
       setSslCertificatesTargetHttpsProxySettings =
           settings.setSslCertificatesTargetHttpsProxySettings.toBuilder();
       setSslPolicyTargetHttpsProxySettings =
@@ -468,6 +491,7 @@ public class TargetHttpsProxyStubSettings extends StubSettings<TargetHttpsProxyS
               getTargetHttpsProxySettings,
               insertTargetHttpsProxySettings,
               listTargetHttpsProxiesSettings,
+              setQuicOverrideTargetHttpsProxySettings,
               setSslCertificatesTargetHttpsProxySettings,
               setSslPolicyTargetHttpsProxySettings,
               setUrlMapTargetHttpsProxySettings);
@@ -513,6 +537,12 @@ public class TargetHttpsProxyStubSettings extends StubSettings<TargetHttpsProxyS
             ListTargetHttpsProxiesPagedResponse>
         listTargetHttpsProxiesSettings() {
       return listTargetHttpsProxiesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setQuicOverrideTargetHttpsProxy. */
+    public UnaryCallSettings.Builder<SetQuicOverrideTargetHttpsProxyHttpRequest, Operation>
+        setQuicOverrideTargetHttpsProxySettings() {
+      return setQuicOverrideTargetHttpsProxySettings;
     }
 
     /**

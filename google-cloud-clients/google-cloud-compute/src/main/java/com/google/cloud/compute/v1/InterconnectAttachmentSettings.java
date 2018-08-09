@@ -105,6 +105,13 @@ public class InterconnectAttachmentSettings extends ClientSettings<InterconnectA
         .listInterconnectAttachmentsSettings();
   }
 
+  /** Returns the object with the settings used for calls to patchInterconnectAttachment. */
+  public UnaryCallSettings<PatchInterconnectAttachmentHttpRequest, Operation>
+      patchInterconnectAttachmentSettings() {
+    return ((InterconnectAttachmentStubSettings) getStubSettings())
+        .patchInterconnectAttachmentSettings();
+  }
+
   public static final InterconnectAttachmentSettings create(InterconnectAttachmentStubSettings stub)
       throws IOException {
     return new InterconnectAttachmentSettings.Builder(stub.toBuilder()).build();
@@ -242,6 +249,12 @@ public class InterconnectAttachmentSettings extends ClientSettings<InterconnectA
             ListInterconnectAttachmentsPagedResponse>
         listInterconnectAttachmentsSettings() {
       return getStubSettingsBuilder().listInterconnectAttachmentsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to patchInterconnectAttachment. */
+    public UnaryCallSettings.Builder<PatchInterconnectAttachmentHttpRequest, Operation>
+        patchInterconnectAttachmentSettings() {
+      return getStubSettingsBuilder().patchInterconnectAttachmentSettings();
     }
 
     @Override

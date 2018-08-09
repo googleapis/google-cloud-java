@@ -49,13 +49,13 @@ import javax.annotation.Generated;
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object. For
- * example, to set the total timeout of deleteBackendService to 30 seconds:
+ * example, to set the total timeout of addSignedUrlKeyBackendService to 30 seconds:
  *
  * <pre>
  * <code>
  * BackendServiceSettings.Builder backendServiceSettingsBuilder =
  *     BackendServiceSettings.newBuilder();
- * backendServiceSettingsBuilder.deleteBackendServiceSettings().getRetrySettings().toBuilder()
+ * backendServiceSettingsBuilder.addSignedUrlKeyBackendServiceSettings().getRetrySettings().toBuilder()
  *     .setTotalTimeout(Duration.ofSeconds(30));
  * BackendServiceSettings backendServiceSettings = backendServiceSettingsBuilder.build();
  * </code>
@@ -64,6 +64,12 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator")
 @BetaApi
 public class BackendServiceSettings extends ClientSettings<BackendServiceSettings> {
+  /** Returns the object with the settings used for calls to addSignedUrlKeyBackendService. */
+  public UnaryCallSettings<AddSignedUrlKeyBackendServiceHttpRequest, Operation>
+      addSignedUrlKeyBackendServiceSettings() {
+    return ((BackendServiceStubSettings) getStubSettings()).addSignedUrlKeyBackendServiceSettings();
+  }
+
   /** Returns the object with the settings used for calls to aggregatedListBackendServices. */
   public PagedCallSettings<
           AggregatedListBackendServicesHttpRequest, BackendServiceAggregatedList,
@@ -76,6 +82,13 @@ public class BackendServiceSettings extends ClientSettings<BackendServiceSetting
   public UnaryCallSettings<DeleteBackendServiceHttpRequest, Operation>
       deleteBackendServiceSettings() {
     return ((BackendServiceStubSettings) getStubSettings()).deleteBackendServiceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteSignedUrlKeyBackendService. */
+  public UnaryCallSettings<DeleteSignedUrlKeyBackendServiceHttpRequest, Operation>
+      deleteSignedUrlKeyBackendServiceSettings() {
+    return ((BackendServiceStubSettings) getStubSettings())
+        .deleteSignedUrlKeyBackendServiceSettings();
   }
 
   /** Returns the object with the settings used for calls to getBackendService. */
@@ -217,6 +230,12 @@ public class BackendServiceSettings extends ClientSettings<BackendServiceSetting
       return this;
     }
 
+    /** Returns the builder for the settings used for calls to addSignedUrlKeyBackendService. */
+    public UnaryCallSettings.Builder<AddSignedUrlKeyBackendServiceHttpRequest, Operation>
+        addSignedUrlKeyBackendServiceSettings() {
+      return getStubSettingsBuilder().addSignedUrlKeyBackendServiceSettings();
+    }
+
     /** Returns the builder for the settings used for calls to aggregatedListBackendServices. */
     public PagedCallSettings.Builder<
             AggregatedListBackendServicesHttpRequest, BackendServiceAggregatedList,
@@ -229,6 +248,12 @@ public class BackendServiceSettings extends ClientSettings<BackendServiceSetting
     public UnaryCallSettings.Builder<DeleteBackendServiceHttpRequest, Operation>
         deleteBackendServiceSettings() {
       return getStubSettingsBuilder().deleteBackendServiceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteSignedUrlKeyBackendService. */
+    public UnaryCallSettings.Builder<DeleteSignedUrlKeyBackendServiceHttpRequest, Operation>
+        deleteSignedUrlKeyBackendServiceSettings() {
+      return getStubSettingsBuilder().deleteSignedUrlKeyBackendServiceSettings();
     }
 
     /** Returns the builder for the settings used for calls to getBackendService. */

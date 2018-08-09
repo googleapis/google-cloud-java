@@ -17,6 +17,7 @@ package com.google.cloud.compute.v1;
 
 import static com.google.cloud.compute.v1.SubnetworkClient.AggregatedListSubnetworksPagedResponse;
 import static com.google.cloud.compute.v1.SubnetworkClient.ListSubnetworksPagedResponse;
+import static com.google.cloud.compute.v1.SubnetworkClient.ListUsableSubnetworksPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
@@ -97,6 +98,14 @@ public class SubnetworkSettings extends ClientSettings<SubnetworkSettings> {
   public PagedCallSettings<ListSubnetworksHttpRequest, SubnetworkList, ListSubnetworksPagedResponse>
       listSubnetworksSettings() {
     return ((SubnetworkStubSettings) getStubSettings()).listSubnetworksSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listUsableSubnetworks. */
+  public PagedCallSettings<
+          ListUsableSubnetworksHttpRequest, UsableSubnetworksAggregatedList,
+          ListUsableSubnetworksPagedResponse>
+      listUsableSubnetworksSettings() {
+    return ((SubnetworkStubSettings) getStubSettings()).listUsableSubnetworksSettings();
   }
 
   /** Returns the object with the settings used for calls to patchSubnetwork. */
@@ -248,6 +257,14 @@ public class SubnetworkSettings extends ClientSettings<SubnetworkSettings> {
             ListSubnetworksHttpRequest, SubnetworkList, ListSubnetworksPagedResponse>
         listSubnetworksSettings() {
       return getStubSettingsBuilder().listSubnetworksSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listUsableSubnetworks. */
+    public PagedCallSettings.Builder<
+            ListUsableSubnetworksHttpRequest, UsableSubnetworksAggregatedList,
+            ListUsableSubnetworksPagedResponse>
+        listUsableSubnetworksSettings() {
+      return getStubSettingsBuilder().listUsableSubnetworksSettings();
     }
 
     /** Returns the builder for the settings used for calls to patchSubnetwork. */

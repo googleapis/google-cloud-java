@@ -40,6 +40,7 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.compute.v1.AddSignedUrlKeyBackendServiceHttpRequest;
 import com.google.cloud.compute.v1.AggregatedListBackendServicesHttpRequest;
 import com.google.cloud.compute.v1.BackendService;
 import com.google.cloud.compute.v1.BackendServiceAggregatedList;
@@ -47,6 +48,7 @@ import com.google.cloud.compute.v1.BackendServiceGroupHealth;
 import com.google.cloud.compute.v1.BackendServiceList;
 import com.google.cloud.compute.v1.BackendServicesScopedList;
 import com.google.cloud.compute.v1.DeleteBackendServiceHttpRequest;
+import com.google.cloud.compute.v1.DeleteSignedUrlKeyBackendServiceHttpRequest;
 import com.google.cloud.compute.v1.GetBackendServiceHttpRequest;
 import com.google.cloud.compute.v1.GetHealthBackendServiceHttpRequest;
 import com.google.cloud.compute.v1.InsertBackendServiceHttpRequest;
@@ -78,13 +80,13 @@ import org.threeten.bp.Duration;
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object. For
- * example, to set the total timeout of deleteBackendService to 30 seconds:
+ * example, to set the total timeout of addSignedUrlKeyBackendService to 30 seconds:
  *
  * <pre>
  * <code>
  * BackendServiceStubSettings.Builder backendServiceSettingsBuilder =
  *     BackendServiceStubSettings.newBuilder();
- * backendServiceSettingsBuilder.deleteBackendServiceSettings().getRetrySettings().toBuilder()
+ * backendServiceSettingsBuilder.addSignedUrlKeyBackendServiceSettings().getRetrySettings().toBuilder()
  *     .setTotalTimeout(Duration.ofSeconds(30));
  * BackendServiceStubSettings backendServiceSettings = backendServiceSettingsBuilder.build();
  * </code>
@@ -104,12 +106,16 @@ public class BackendServiceStubSettings extends StubSettings<BackendServiceStubS
           .add("https://www.googleapis.com/auth/devstorage.read_write")
           .build();
 
+  private final UnaryCallSettings<AddSignedUrlKeyBackendServiceHttpRequest, Operation>
+      addSignedUrlKeyBackendServiceSettings;
   private final PagedCallSettings<
           AggregatedListBackendServicesHttpRequest, BackendServiceAggregatedList,
           AggregatedListBackendServicesPagedResponse>
       aggregatedListBackendServicesSettings;
   private final UnaryCallSettings<DeleteBackendServiceHttpRequest, Operation>
       deleteBackendServiceSettings;
+  private final UnaryCallSettings<DeleteSignedUrlKeyBackendServiceHttpRequest, Operation>
+      deleteSignedUrlKeyBackendServiceSettings;
   private final UnaryCallSettings<GetBackendServiceHttpRequest, BackendService>
       getBackendServiceSettings;
   private final UnaryCallSettings<GetHealthBackendServiceHttpRequest, BackendServiceGroupHealth>
@@ -124,6 +130,12 @@ public class BackendServiceStubSettings extends StubSettings<BackendServiceStubS
   private final UnaryCallSettings<UpdateBackendServiceHttpRequest, Operation>
       updateBackendServiceSettings;
 
+  /** Returns the object with the settings used for calls to addSignedUrlKeyBackendService. */
+  public UnaryCallSettings<AddSignedUrlKeyBackendServiceHttpRequest, Operation>
+      addSignedUrlKeyBackendServiceSettings() {
+    return addSignedUrlKeyBackendServiceSettings;
+  }
+
   /** Returns the object with the settings used for calls to aggregatedListBackendServices. */
   public PagedCallSettings<
           AggregatedListBackendServicesHttpRequest, BackendServiceAggregatedList,
@@ -136,6 +148,12 @@ public class BackendServiceStubSettings extends StubSettings<BackendServiceStubS
   public UnaryCallSettings<DeleteBackendServiceHttpRequest, Operation>
       deleteBackendServiceSettings() {
     return deleteBackendServiceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteSignedUrlKeyBackendService. */
+  public UnaryCallSettings<DeleteSignedUrlKeyBackendServiceHttpRequest, Operation>
+      deleteSignedUrlKeyBackendServiceSettings() {
+    return deleteSignedUrlKeyBackendServiceSettings;
   }
 
   /** Returns the object with the settings used for calls to getBackendService. */
@@ -250,9 +268,13 @@ public class BackendServiceStubSettings extends StubSettings<BackendServiceStubS
   protected BackendServiceStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
+    addSignedUrlKeyBackendServiceSettings =
+        settingsBuilder.addSignedUrlKeyBackendServiceSettings().build();
     aggregatedListBackendServicesSettings =
         settingsBuilder.aggregatedListBackendServicesSettings().build();
     deleteBackendServiceSettings = settingsBuilder.deleteBackendServiceSettings().build();
+    deleteSignedUrlKeyBackendServiceSettings =
+        settingsBuilder.deleteSignedUrlKeyBackendServiceSettings().build();
     getBackendServiceSettings = settingsBuilder.getBackendServiceSettings().build();
     getHealthBackendServiceSettings = settingsBuilder.getHealthBackendServiceSettings().build();
     insertBackendServiceSettings = settingsBuilder.insertBackendServiceSettings().build();
@@ -399,12 +421,16 @@ public class BackendServiceStubSettings extends StubSettings<BackendServiceStubS
   public static class Builder extends StubSettings.Builder<BackendServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
+    private final UnaryCallSettings.Builder<AddSignedUrlKeyBackendServiceHttpRequest, Operation>
+        addSignedUrlKeyBackendServiceSettings;
     private final PagedCallSettings.Builder<
             AggregatedListBackendServicesHttpRequest, BackendServiceAggregatedList,
             AggregatedListBackendServicesPagedResponse>
         aggregatedListBackendServicesSettings;
     private final UnaryCallSettings.Builder<DeleteBackendServiceHttpRequest, Operation>
         deleteBackendServiceSettings;
+    private final UnaryCallSettings.Builder<DeleteSignedUrlKeyBackendServiceHttpRequest, Operation>
+        deleteSignedUrlKeyBackendServiceSettings;
     private final UnaryCallSettings.Builder<GetBackendServiceHttpRequest, BackendService>
         getBackendServiceSettings;
     private final UnaryCallSettings.Builder<
@@ -461,10 +487,14 @@ public class BackendServiceStubSettings extends StubSettings<BackendServiceStubS
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
+      addSignedUrlKeyBackendServiceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       aggregatedListBackendServicesSettings =
           PagedCallSettings.newBuilder(AGGREGATED_LIST_BACKEND_SERVICES_PAGE_STR_FACT);
 
       deleteBackendServiceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      deleteSignedUrlKeyBackendServiceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       getBackendServiceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -481,8 +511,10 @@ public class BackendServiceStubSettings extends StubSettings<BackendServiceStubS
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              addSignedUrlKeyBackendServiceSettings,
               aggregatedListBackendServicesSettings,
               deleteBackendServiceSettings,
+              deleteSignedUrlKeyBackendServiceSettings,
               getBackendServiceSettings,
               getHealthBackendServiceSettings,
               insertBackendServiceSettings,
@@ -505,6 +537,11 @@ public class BackendServiceStubSettings extends StubSettings<BackendServiceStubS
     private static Builder initDefaults(Builder builder) {
 
       builder
+          .addSignedUrlKeyBackendServiceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
           .aggregatedListBackendServicesSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
@@ -512,6 +549,11 @@ public class BackendServiceStubSettings extends StubSettings<BackendServiceStubS
       builder
           .deleteBackendServiceSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .deleteSignedUrlKeyBackendServiceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
@@ -550,9 +592,13 @@ public class BackendServiceStubSettings extends StubSettings<BackendServiceStubS
     protected Builder(BackendServiceStubSettings settings) {
       super(settings);
 
+      addSignedUrlKeyBackendServiceSettings =
+          settings.addSignedUrlKeyBackendServiceSettings.toBuilder();
       aggregatedListBackendServicesSettings =
           settings.aggregatedListBackendServicesSettings.toBuilder();
       deleteBackendServiceSettings = settings.deleteBackendServiceSettings.toBuilder();
+      deleteSignedUrlKeyBackendServiceSettings =
+          settings.deleteSignedUrlKeyBackendServiceSettings.toBuilder();
       getBackendServiceSettings = settings.getBackendServiceSettings.toBuilder();
       getHealthBackendServiceSettings = settings.getHealthBackendServiceSettings.toBuilder();
       insertBackendServiceSettings = settings.insertBackendServiceSettings.toBuilder();
@@ -562,8 +608,10 @@ public class BackendServiceStubSettings extends StubSettings<BackendServiceStubS
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              addSignedUrlKeyBackendServiceSettings,
               aggregatedListBackendServicesSettings,
               deleteBackendServiceSettings,
+              deleteSignedUrlKeyBackendServiceSettings,
               getBackendServiceSettings,
               getHealthBackendServiceSettings,
               insertBackendServiceSettings,
@@ -588,6 +636,12 @@ public class BackendServiceStubSettings extends StubSettings<BackendServiceStubS
       return unaryMethodSettingsBuilders;
     }
 
+    /** Returns the builder for the settings used for calls to addSignedUrlKeyBackendService. */
+    public UnaryCallSettings.Builder<AddSignedUrlKeyBackendServiceHttpRequest, Operation>
+        addSignedUrlKeyBackendServiceSettings() {
+      return addSignedUrlKeyBackendServiceSettings;
+    }
+
     /** Returns the builder for the settings used for calls to aggregatedListBackendServices. */
     public PagedCallSettings.Builder<
             AggregatedListBackendServicesHttpRequest, BackendServiceAggregatedList,
@@ -600,6 +654,12 @@ public class BackendServiceStubSettings extends StubSettings<BackendServiceStubS
     public UnaryCallSettings.Builder<DeleteBackendServiceHttpRequest, Operation>
         deleteBackendServiceSettings() {
       return deleteBackendServiceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteSignedUrlKeyBackendService. */
+    public UnaryCallSettings.Builder<DeleteSignedUrlKeyBackendServiceHttpRequest, Operation>
+        deleteSignedUrlKeyBackendServiceSettings() {
+      return deleteSignedUrlKeyBackendServiceSettings;
     }
 
     /** Returns the builder for the settings used for calls to getBackendService. */

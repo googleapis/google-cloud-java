@@ -46,6 +46,7 @@ import com.google.cloud.compute.v1.Project;
 import com.google.cloud.compute.v1.ProjectName;
 import com.google.cloud.compute.v1.ProjectsGetXpnResources;
 import com.google.cloud.compute.v1.SetCommonInstanceMetadataProjectHttpRequest;
+import com.google.cloud.compute.v1.SetDefaultNetworkTierProjectHttpRequest;
 import com.google.cloud.compute.v1.SetUsageExportBucketProjectHttpRequest;
 import com.google.cloud.compute.v1.XpnHostList;
 import com.google.common.collect.Sets;
@@ -277,6 +278,26 @@ public class HttpJsonProjectStub extends ProjectStub {
               .build();
 
   @InternalApi
+  public static final ApiMethodDescriptor<SetDefaultNetworkTierProjectHttpRequest, Operation>
+      setDefaultNetworkTierProjectMethodDescriptor =
+          ApiMethodDescriptor.<SetDefaultNetworkTierProjectHttpRequest, Operation>newBuilder()
+              .setFullMethodName("compute.projects.setDefaultNetworkTier")
+              .setHttpMethod(HttpMethods.POST)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter
+                      .<SetDefaultNetworkTierProjectHttpRequest>newBuilder()
+                      .setPathTemplate(PathTemplate.create("{project}/setDefaultNetworkTier"))
+                      .setQueryParams(Sets.<String>newHashSet("requestId"))
+                      .setResourceNameFactory(ProjectName.newFactory())
+                      .setResourceNameField("project")
+                      .build())
+              .setResponseParser(
+                  ApiMessageHttpResponseParser.<Operation>newBuilder()
+                      .setResponseInstance(Operation.getDefaultInstance())
+                      .build())
+              .build();
+
+  @InternalApi
   public static final ApiMethodDescriptor<SetUsageExportBucketProjectHttpRequest, Operation>
       setUsageExportBucketProjectMethodDescriptor =
           ApiMethodDescriptor.<SetUsageExportBucketProjectHttpRequest, Operation>newBuilder()
@@ -322,6 +343,8 @@ public class HttpJsonProjectStub extends ProjectStub {
       moveInstanceProjectCallable;
   private final UnaryCallable<SetCommonInstanceMetadataProjectHttpRequest, Operation>
       setCommonInstanceMetadataProjectCallable;
+  private final UnaryCallable<SetDefaultNetworkTierProjectHttpRequest, Operation>
+      setDefaultNetworkTierProjectCallable;
   private final UnaryCallable<SetUsageExportBucketProjectHttpRequest, Operation>
       setUsageExportBucketProjectCallable;
 
@@ -417,6 +440,11 @@ public class HttpJsonProjectStub extends ProjectStub {
                 .<SetCommonInstanceMetadataProjectHttpRequest, Operation>newBuilder()
                 .setMethodDescriptor(setCommonInstanceMetadataProjectMethodDescriptor)
                 .build();
+    HttpJsonCallSettings<SetDefaultNetworkTierProjectHttpRequest, Operation>
+        setDefaultNetworkTierProjectTransportSettings =
+            HttpJsonCallSettings.<SetDefaultNetworkTierProjectHttpRequest, Operation>newBuilder()
+                .setMethodDescriptor(setDefaultNetworkTierProjectMethodDescriptor)
+                .build();
     HttpJsonCallSettings<SetUsageExportBucketProjectHttpRequest, Operation>
         setUsageExportBucketProjectTransportSettings =
             HttpJsonCallSettings.<SetUsageExportBucketProjectHttpRequest, Operation>newBuilder()
@@ -483,6 +511,11 @@ public class HttpJsonProjectStub extends ProjectStub {
         callableFactory.createUnaryCallable(
             setCommonInstanceMetadataProjectTransportSettings,
             settings.setCommonInstanceMetadataProjectSettings(),
+            clientContext);
+    this.setDefaultNetworkTierProjectCallable =
+        callableFactory.createUnaryCallable(
+            setDefaultNetworkTierProjectTransportSettings,
+            settings.setDefaultNetworkTierProjectSettings(),
             clientContext);
     this.setUsageExportBucketProjectCallable =
         callableFactory.createUnaryCallable(
@@ -564,6 +597,12 @@ public class HttpJsonProjectStub extends ProjectStub {
   public UnaryCallable<SetCommonInstanceMetadataProjectHttpRequest, Operation>
       setCommonInstanceMetadataProjectCallable() {
     return setCommonInstanceMetadataProjectCallable;
+  }
+
+  @BetaApi
+  public UnaryCallable<SetDefaultNetworkTierProjectHttpRequest, Operation>
+      setDefaultNetworkTierProjectCallable() {
+    return setDefaultNetworkTierProjectCallable;
   }
 
   @BetaApi

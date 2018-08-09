@@ -40,6 +40,7 @@ import com.google.cloud.compute.v1.InterconnectAttachmentAggregatedList;
 import com.google.cloud.compute.v1.InterconnectAttachmentList;
 import com.google.cloud.compute.v1.ListInterconnectAttachmentsHttpRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.PatchInterconnectAttachmentHttpRequest;
 import com.google.cloud.compute.v1.ProjectName;
 import com.google.cloud.compute.v1.ProjectRegionInterconnectAttachmentName;
 import com.google.cloud.compute.v1.ProjectRegionName;
@@ -174,6 +175,28 @@ public class HttpJsonInterconnectAttachmentStub extends InterconnectAttachmentSt
                       .build())
               .build();
 
+  @InternalApi
+  public static final ApiMethodDescriptor<PatchInterconnectAttachmentHttpRequest, Operation>
+      patchInterconnectAttachmentMethodDescriptor =
+          ApiMethodDescriptor.<PatchInterconnectAttachmentHttpRequest, Operation>newBuilder()
+              .setFullMethodName("compute.interconnectAttachments.patch")
+              .setHttpMethod(HttpMethods.PATCH)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter
+                      .<PatchInterconnectAttachmentHttpRequest>newBuilder()
+                      .setPathTemplate(
+                          PathTemplate.create(
+                              "{project}/regions/{region}/interconnectAttachments/{interconnectAttachment}"))
+                      .setQueryParams(Sets.<String>newHashSet("requestId"))
+                      .setResourceNameFactory(ProjectRegionInterconnectAttachmentName.newFactory())
+                      .setResourceNameField("interconnectAttachment")
+                      .build())
+              .setResponseParser(
+                  ApiMessageHttpResponseParser.<Operation>newBuilder()
+                      .setResponseInstance(Operation.getDefaultInstance())
+                      .build())
+              .build();
+
   private final BackgroundResource backgroundResources;
 
   private final UnaryCallable<
@@ -194,6 +217,8 @@ public class HttpJsonInterconnectAttachmentStub extends InterconnectAttachmentSt
   private final UnaryCallable<
           ListInterconnectAttachmentsHttpRequest, ListInterconnectAttachmentsPagedResponse>
       listInterconnectAttachmentsPagedCallable;
+  private final UnaryCallable<PatchInterconnectAttachmentHttpRequest, Operation>
+      patchInterconnectAttachmentCallable;
 
   private final HttpJsonStubCallableFactory callableFactory;
 
@@ -267,6 +292,11 @@ public class HttpJsonInterconnectAttachmentStub extends InterconnectAttachmentSt
                 .<ListInterconnectAttachmentsHttpRequest, InterconnectAttachmentList>newBuilder()
                 .setMethodDescriptor(listInterconnectAttachmentsMethodDescriptor)
                 .build();
+    HttpJsonCallSettings<PatchInterconnectAttachmentHttpRequest, Operation>
+        patchInterconnectAttachmentTransportSettings =
+            HttpJsonCallSettings.<PatchInterconnectAttachmentHttpRequest, Operation>newBuilder()
+                .setMethodDescriptor(patchInterconnectAttachmentMethodDescriptor)
+                .build();
 
     this.aggregatedListInterconnectAttachmentsCallable =
         callableFactory.createUnaryCallable(
@@ -302,6 +332,11 @@ public class HttpJsonInterconnectAttachmentStub extends InterconnectAttachmentSt
         callableFactory.createPagedCallable(
             listInterconnectAttachmentsTransportSettings,
             settings.listInterconnectAttachmentsSettings(),
+            clientContext);
+    this.patchInterconnectAttachmentCallable =
+        callableFactory.createUnaryCallable(
+            patchInterconnectAttachmentTransportSettings,
+            settings.patchInterconnectAttachmentSettings(),
             clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -351,6 +386,12 @@ public class HttpJsonInterconnectAttachmentStub extends InterconnectAttachmentSt
   public UnaryCallable<ListInterconnectAttachmentsHttpRequest, InterconnectAttachmentList>
       listInterconnectAttachmentsCallable() {
     return listInterconnectAttachmentsCallable;
+  }
+
+  @BetaApi
+  public UnaryCallable<PatchInterconnectAttachmentHttpRequest, Operation>
+      patchInterconnectAttachmentCallable() {
+    return patchInterconnectAttachmentCallable;
   }
 
   @Override
