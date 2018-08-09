@@ -106,8 +106,8 @@ public class BaseBigtableInstanceAdminClientTest {
   public void setUp() throws IOException {
     serviceHelper.reset();
     channelProvider = serviceHelper.createChannelProvider();
-    BigtableInstanceAdminSettings settings =
-        BigtableInstanceAdminSettings.newBuilder()
+    BaseBigtableInstanceAdminSettings settings =
+        BaseBigtableInstanceAdminSettings.newBuilder()
             .setTransportChannelProvider(channelProvider)
             .setCredentialsProvider(NoCredentialsProvider.create())
             .build();

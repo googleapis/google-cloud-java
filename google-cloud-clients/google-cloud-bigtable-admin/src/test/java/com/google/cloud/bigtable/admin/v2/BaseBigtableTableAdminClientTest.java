@@ -43,6 +43,7 @@ import com.google.bigtable.admin.v2.ListSnapshotsResponse;
 import com.google.bigtable.admin.v2.ListTablesRequest;
 import com.google.bigtable.admin.v2.ListTablesResponse;
 import com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest;
+import com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification;
 import com.google.bigtable.admin.v2.Snapshot;
 import com.google.bigtable.admin.v2.SnapshotName;
 import com.google.bigtable.admin.v2.SnapshotTableRequest;
@@ -95,8 +96,8 @@ public class BaseBigtableTableAdminClientTest {
   public void setUp() throws IOException {
     serviceHelper.reset();
     channelProvider = serviceHelper.createChannelProvider();
-    BigtableTableAdminSettings settings =
-        BigtableTableAdminSettings.newBuilder()
+    BaseBigtableTableAdminSettings settings =
+        BaseBigtableTableAdminSettings.newBuilder()
             .setTransportChannelProvider(channelProvider)
             .setCredentialsProvider(NoCredentialsProvider.create())
             .build();
