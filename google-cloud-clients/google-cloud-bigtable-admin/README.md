@@ -76,7 +76,7 @@ at the top of your file:
 ```java
 import com.google.bigtable.admin.v2.ColumnFamily;
 import com.google.bigtable.admin.v2.InstanceName;
-import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient;
+import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient;
 ```
 
 Then, to create a table, use the following code:

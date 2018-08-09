@@ -84,14 +84,14 @@ import javax.annotation.Generated;
  *
  * <pre>
  * <code>
- * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
+ * try (BaseBigtableInstanceAdminClient bigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
  *   InstanceName name = InstanceName.of("[PROJECT]", "[INSTANCE]");
- *   Instance response = baseBigtableInstanceAdminClient.getInstance(name);
+ *   Instance response = bigtableInstanceAdminClient.getInstance(name);
  * }
  * </code>
  * </pre>
  *
- * <p>Note: close() needs to be called on the baseBigtableInstanceAdminClient object to clean up
+ * <p>Note: close() needs to be called on the bigtableInstanceAdminClient object to clean up
  * resources such as threads. In the example above, try-with-resources is used, which automatically
  * calls close().
  *
@@ -115,19 +115,19 @@ import javax.annotation.Generated;
  * these names, this class includes a format method for each type of name, and additionally a parse
  * method to extract the individual identifiers contained within names that are returned.
  *
- * <p>This class can be customized by passing in a custom instance of
- * BaseBigtableInstanceAdminSettings to create(). For example:
+ * <p>This class can be customized by passing in a custom instance of BigtableInstanceAdminSettings
+ * to create(). For example:
  *
  * <p>To customize credentials:
  *
  * <pre>
  * <code>
- * BaseBigtableInstanceAdminSettings baseBigtableInstanceAdminSettings =
- *     BaseBigtableInstanceAdminSettings.newBuilder()
+ * BigtableInstanceAdminSettings bigtableInstanceAdminSettings =
+ *     BigtableInstanceAdminSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
- * BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
- *     BaseBigtableInstanceAdminClient.create(baseBigtableInstanceAdminSettings);
+ * BaseBigtableInstanceAdminClient bigtableInstanceAdminClient =
+ *     BaseBigtableInstanceAdminClient.create(bigtableInstanceAdminSettings);
  * </code>
  * </pre>
  *
@@ -135,38 +135,37 @@ import javax.annotation.Generated;
  *
  * <pre>
  * <code>
- * BaseBigtableInstanceAdminSettings baseBigtableInstanceAdminSettings =
- *     BaseBigtableInstanceAdminSettings.newBuilder().setEndpoint(myEndpoint).build();
- * BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
- *     BaseBigtableInstanceAdminClient.create(baseBigtableInstanceAdminSettings);
+ * BigtableInstanceAdminSettings bigtableInstanceAdminSettings =
+ *     BigtableInstanceAdminSettings.newBuilder().setEndpoint(myEndpoint).build();
+ * BaseBigtableInstanceAdminClient bigtableInstanceAdminClient =
+ *     BaseBigtableInstanceAdminClient.create(bigtableInstanceAdminSettings);
  * </code>
  * </pre>
  */
 @Generated("by gapic-generator")
 @BetaApi
 public class BaseBigtableInstanceAdminClient implements BackgroundResource {
-  private final BaseBigtableInstanceAdminSettings settings;
+  private final BigtableInstanceAdminSettings settings;
   private final BigtableInstanceAdminStub stub;
   private final OperationsClient operationsClient;
 
   /** Constructs an instance of BaseBigtableInstanceAdminClient with default settings. */
   public static final BaseBigtableInstanceAdminClient create() throws IOException {
-    return create(BaseBigtableInstanceAdminSettings.newBuilder().build());
+    return create(BigtableInstanceAdminSettings.newBuilder().build());
   }
 
   /**
-   * Constructs an instance of BaseBigtableInstanceAdminClient, using the given settings. The
-   * channels are created based on the settings passed in, or defaults for any settings that are not
-   * set.
+   * Constructs an instance of BaseBigtableInstanceAdminClient, using the given settings. The channels
+   * are created based on the settings passed in, or defaults for any settings that are not set.
    */
-  public static final BaseBigtableInstanceAdminClient create(
-      BaseBigtableInstanceAdminSettings settings) throws IOException {
+  public static final BaseBigtableInstanceAdminClient create(BigtableInstanceAdminSettings settings)
+      throws IOException {
     return new BaseBigtableInstanceAdminClient(settings);
   }
 
   /**
-   * Constructs an instance of BaseBigtableInstanceAdminClient, using the given stub for making
-   * calls. This is for advanced usage - prefer to use BaseBigtableInstanceAdminSettings}.
+   * Constructs an instance of BaseBigtableInstanceAdminClient, using the given stub for making calls.
+   * This is for advanced usage - prefer to use BigtableInstanceAdminSettings}.
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final BaseBigtableInstanceAdminClient create(BigtableInstanceAdminStub stub) {
@@ -178,8 +177,7 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * protected so that it is easy to make a subclass, but otherwise, the static factory methods
    * should be preferred.
    */
-  protected BaseBigtableInstanceAdminClient(BaseBigtableInstanceAdminSettings settings)
-      throws IOException {
+  protected BaseBigtableInstanceAdminClient(BigtableInstanceAdminSettings settings) throws IOException {
     this.settings = settings;
     this.stub = ((BigtableInstanceAdminStubSettings) settings.getStubSettings()).createStub();
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
@@ -192,7 +190,7 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  public final BaseBigtableInstanceAdminSettings getSettings() {
+  public final BigtableInstanceAdminSettings getSettings() {
     return settings;
   }
 
@@ -218,12 +216,12 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
+   * try (BaseBigtableInstanceAdminClient bigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
    *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   String instanceId = "";
    *   Instance instance = Instance.newBuilder().build();
    *   Map&lt;String, Cluster&gt; clusters = new HashMap&lt;&gt;();
-   *   Instance response = baseBigtableInstanceAdminClient.createInstanceAsync(parent, instanceId, instance, clusters).get();
+   *   Instance response = bigtableInstanceAdminClient.createInstanceAsync(parent, instanceId, instance, clusters).get();
    * }
    * </code></pre>
    *
@@ -260,12 +258,12 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
+   * try (BaseBigtableInstanceAdminClient bigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
    *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   String instanceId = "";
    *   Instance instance = Instance.newBuilder().build();
    *   Map&lt;String, Cluster&gt; clusters = new HashMap&lt;&gt;();
-   *   Instance response = baseBigtableInstanceAdminClient.createInstanceAsync(parent.toString(), instanceId, instance, clusters).get();
+   *   Instance response = bigtableInstanceAdminClient.createInstanceAsync(parent.toString(), instanceId, instance, clusters).get();
    * }
    * </code></pre>
    *
@@ -302,7 +300,7 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
+   * try (BaseBigtableInstanceAdminClient bigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
    *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   String instanceId = "";
    *   Instance instance = Instance.newBuilder().build();
@@ -313,7 +311,7 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    *     .setInstance(instance)
    *     .putAllClusters(clusters)
    *     .build();
-   *   Instance response = baseBigtableInstanceAdminClient.createInstanceAsync(request).get();
+   *   Instance response = bigtableInstanceAdminClient.createInstanceAsync(request).get();
    * }
    * </code></pre>
    *
@@ -334,7 +332,7 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
+   * try (BaseBigtableInstanceAdminClient bigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
    *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   String instanceId = "";
    *   Instance instance = Instance.newBuilder().build();
@@ -345,7 +343,7 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    *     .setInstance(instance)
    *     .putAllClusters(clusters)
    *     .build();
-   *   OperationFuture&lt;Operation&gt; future = baseBigtableInstanceAdminClient.createInstanceOperationCallable().futureCall(request);
+   *   OperationFuture&lt;Operation&gt; future = bigtableInstanceAdminClient.createInstanceOperationCallable().futureCall(request);
    *   // Do something
    *   Instance response = future.get();
    * }
@@ -364,7 +362,7 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
+   * try (BaseBigtableInstanceAdminClient bigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
    *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   String instanceId = "";
    *   Instance instance = Instance.newBuilder().build();
@@ -375,7 +373,7 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    *     .setInstance(instance)
    *     .putAllClusters(clusters)
    *     .build();
-   *   ApiFuture&lt;Operation&gt; future = baseBigtableInstanceAdminClient.createInstanceCallable().futureCall(request);
+   *   ApiFuture&lt;Operation&gt; future = bigtableInstanceAdminClient.createInstanceCallable().futureCall(request);
    *   // Do something
    *   Operation response = future.get();
    * }
@@ -392,9 +390,9 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
+   * try (BaseBigtableInstanceAdminClient bigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
    *   InstanceName name = InstanceName.of("[PROJECT]", "[INSTANCE]");
-   *   Instance response = baseBigtableInstanceAdminClient.getInstance(name);
+   *   Instance response = bigtableInstanceAdminClient.getInstance(name);
    * }
    * </code></pre>
    *
@@ -416,9 +414,9 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
+   * try (BaseBigtableInstanceAdminClient bigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
    *   InstanceName name = InstanceName.of("[PROJECT]", "[INSTANCE]");
-   *   Instance response = baseBigtableInstanceAdminClient.getInstance(name.toString());
+   *   Instance response = bigtableInstanceAdminClient.getInstance(name.toString());
    * }
    * </code></pre>
    *
@@ -439,12 +437,12 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
+   * try (BaseBigtableInstanceAdminClient bigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
    *   InstanceName name = InstanceName.of("[PROJECT]", "[INSTANCE]");
    *   GetInstanceRequest request = GetInstanceRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
-   *   Instance response = baseBigtableInstanceAdminClient.getInstance(request);
+   *   Instance response = bigtableInstanceAdminClient.getInstance(request);
    * }
    * </code></pre>
    *
@@ -462,12 +460,12 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
+   * try (BaseBigtableInstanceAdminClient bigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
    *   InstanceName name = InstanceName.of("[PROJECT]", "[INSTANCE]");
    *   GetInstanceRequest request = GetInstanceRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
-   *   ApiFuture&lt;Instance&gt; future = baseBigtableInstanceAdminClient.getInstanceCallable().futureCall(request);
+   *   ApiFuture&lt;Instance&gt; future = bigtableInstanceAdminClient.getInstanceCallable().futureCall(request);
    *   // Do something
    *   Instance response = future.get();
    * }
@@ -484,9 +482,9 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
+   * try (BaseBigtableInstanceAdminClient bigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
    *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   ListInstancesResponse response = baseBigtableInstanceAdminClient.listInstances(parent);
+   *   ListInstancesResponse response = bigtableInstanceAdminClient.listInstances(parent);
    * }
    * </code></pre>
    *
@@ -510,9 +508,9 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
+   * try (BaseBigtableInstanceAdminClient bigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
    *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   ListInstancesResponse response = baseBigtableInstanceAdminClient.listInstances(parent.toString());
+   *   ListInstancesResponse response = bigtableInstanceAdminClient.listInstances(parent.toString());
    * }
    * </code></pre>
    *
@@ -533,12 +531,12 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
+   * try (BaseBigtableInstanceAdminClient bigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
    *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   ListInstancesRequest request = ListInstancesRequest.newBuilder()
    *     .setParent(parent.toString())
    *     .build();
-   *   ListInstancesResponse response = baseBigtableInstanceAdminClient.listInstances(request);
+   *   ListInstancesResponse response = bigtableInstanceAdminClient.listInstances(request);
    * }
    * </code></pre>
    *
@@ -556,12 +554,12 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
+   * try (BaseBigtableInstanceAdminClient bigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
    *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   ListInstancesRequest request = ListInstancesRequest.newBuilder()
    *     .setParent(parent.toString())
    *     .build();
-   *   ApiFuture&lt;ListInstancesResponse&gt; future = baseBigtableInstanceAdminClient.listInstancesCallable().futureCall(request);
+   *   ApiFuture&lt;ListInstancesResponse&gt; future = bigtableInstanceAdminClient.listInstancesCallable().futureCall(request);
    *   // Do something
    *   ListInstancesResponse response = future.get();
    * }
@@ -578,10 +576,10 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
+   * try (BaseBigtableInstanceAdminClient bigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
    *   Instance instance = Instance.newBuilder().build();
    *   FieldMask updateMask = FieldMask.newBuilder().build();
-   *   Instance response = baseBigtableInstanceAdminClient.partialUpdateInstanceAsync(instance, updateMask).get();
+   *   Instance response = bigtableInstanceAdminClient.partialUpdateInstanceAsync(instance, updateMask).get();
    * }
    * </code></pre>
    *
@@ -610,14 +608,14 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
+   * try (BaseBigtableInstanceAdminClient bigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
    *   Instance instance = Instance.newBuilder().build();
    *   FieldMask updateMask = FieldMask.newBuilder().build();
    *   PartialUpdateInstanceRequest request = PartialUpdateInstanceRequest.newBuilder()
    *     .setInstance(instance)
    *     .setUpdateMask(updateMask)
    *     .build();
-   *   Instance response = baseBigtableInstanceAdminClient.partialUpdateInstanceAsync(request).get();
+   *   Instance response = bigtableInstanceAdminClient.partialUpdateInstanceAsync(request).get();
    * }
    * </code></pre>
    *
@@ -638,14 +636,14 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
+   * try (BaseBigtableInstanceAdminClient bigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
    *   Instance instance = Instance.newBuilder().build();
    *   FieldMask updateMask = FieldMask.newBuilder().build();
    *   PartialUpdateInstanceRequest request = PartialUpdateInstanceRequest.newBuilder()
    *     .setInstance(instance)
    *     .setUpdateMask(updateMask)
    *     .build();
-   *   OperationFuture&lt;Operation&gt; future = baseBigtableInstanceAdminClient.partialUpdateInstanceOperationCallable().futureCall(request);
+   *   OperationFuture&lt;Operation&gt; future = bigtableInstanceAdminClient.partialUpdateInstanceOperationCallable().futureCall(request);
    *   // Do something
    *   Instance response = future.get();
    * }
@@ -664,14 +662,14 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
+   * try (BaseBigtableInstanceAdminClient bigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
    *   Instance instance = Instance.newBuilder().build();
    *   FieldMask updateMask = FieldMask.newBuilder().build();
    *   PartialUpdateInstanceRequest request = PartialUpdateInstanceRequest.newBuilder()
    *     .setInstance(instance)
    *     .setUpdateMask(updateMask)
    *     .build();
-   *   ApiFuture&lt;Operation&gt; future = baseBigtableInstanceAdminClient.partialUpdateInstanceCallable().futureCall(request);
+   *   ApiFuture&lt;Operation&gt; future = bigtableInstanceAdminClient.partialUpdateInstanceCallable().futureCall(request);
    *   // Do something
    *   Operation response = future.get();
    * }
@@ -689,9 +687,9 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
+   * try (BaseBigtableInstanceAdminClient bigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
    *   InstanceName name = InstanceName.of("[PROJECT]", "[INSTANCE]");
-   *   baseBigtableInstanceAdminClient.deleteInstance(name);
+   *   bigtableInstanceAdminClient.deleteInstance(name);
    * }
    * </code></pre>
    *
@@ -713,9 +711,9 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
+   * try (BaseBigtableInstanceAdminClient bigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
    *   InstanceName name = InstanceName.of("[PROJECT]", "[INSTANCE]");
-   *   baseBigtableInstanceAdminClient.deleteInstance(name.toString());
+   *   bigtableInstanceAdminClient.deleteInstance(name.toString());
    * }
    * </code></pre>
    *
@@ -736,12 +734,12 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
+   * try (BaseBigtableInstanceAdminClient bigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
    *   InstanceName name = InstanceName.of("[PROJECT]", "[INSTANCE]");
    *   DeleteInstanceRequest request = DeleteInstanceRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
-   *   baseBigtableInstanceAdminClient.deleteInstance(request);
+   *   bigtableInstanceAdminClient.deleteInstance(request);
    * }
    * </code></pre>
    *
@@ -759,12 +757,12 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
+   * try (BaseBigtableInstanceAdminClient bigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
    *   InstanceName name = InstanceName.of("[PROJECT]", "[INSTANCE]");
    *   DeleteInstanceRequest request = DeleteInstanceRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
-   *   ApiFuture&lt;Void&gt; future = baseBigtableInstanceAdminClient.deleteInstanceCallable().futureCall(request);
+   *   ApiFuture&lt;Void&gt; future = bigtableInstanceAdminClient.deleteInstanceCallable().futureCall(request);
    *   // Do something
    *   future.get();
    * }
@@ -781,11 +779,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
+   * try (BaseBigtableInstanceAdminClient bigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
    *   InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
    *   String clusterId = "";
    *   Cluster cluster = Cluster.newBuilder().build();
-   *   Cluster response = baseBigtableInstanceAdminClient.createClusterAsync(parent, clusterId, cluster).get();
+   *   Cluster response = bigtableInstanceAdminClient.createClusterAsync(parent, clusterId, cluster).get();
    * }
    * </code></pre>
    *
@@ -817,11 +815,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
+   * try (BaseBigtableInstanceAdminClient bigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
    *   InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
    *   String clusterId = "";
    *   Cluster cluster = Cluster.newBuilder().build();
-   *   Cluster response = baseBigtableInstanceAdminClient.createClusterAsync(parent.toString(), clusterId, cluster).get();
+   *   Cluster response = bigtableInstanceAdminClient.createClusterAsync(parent.toString(), clusterId, cluster).get();
    * }
    * </code></pre>
    *
@@ -853,7 +851,7 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
+   * try (BaseBigtableInstanceAdminClient bigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
    *   InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
    *   String clusterId = "";
    *   Cluster cluster = Cluster.newBuilder().build();
@@ -862,7 +860,7 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    *     .setClusterId(clusterId)
    *     .setCluster(cluster)
    *     .build();
-   *   Cluster response = baseBigtableInstanceAdminClient.createClusterAsync(request).get();
+   *   Cluster response = bigtableInstanceAdminClient.createClusterAsync(request).get();
    * }
    * </code></pre>
    *
@@ -883,7 +881,7 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
+   * try (BaseBigtableInstanceAdminClient bigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
    *   InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
    *   String clusterId = "";
    *   Cluster cluster = Cluster.newBuilder().build();
@@ -892,7 +890,7 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    *     .setClusterId(clusterId)
    *     .setCluster(cluster)
    *     .build();
-   *   OperationFuture&lt;Operation&gt; future = baseBigtableInstanceAdminClient.createClusterOperationCallable().futureCall(request);
+   *   OperationFuture&lt;Operation&gt; future = bigtableInstanceAdminClient.createClusterOperationCallable().futureCall(request);
    *   // Do something
    *   Cluster response = future.get();
    * }
@@ -911,7 +909,7 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
+   * try (BaseBigtableInstanceAdminClient bigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
    *   InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
    *   String clusterId = "";
    *   Cluster cluster = Cluster.newBuilder().build();
@@ -920,7 +918,7 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    *     .setClusterId(clusterId)
    *     .setCluster(cluster)
    *     .build();
-   *   ApiFuture&lt;Operation&gt; future = baseBigtableInstanceAdminClient.createClusterCallable().futureCall(request);
+   *   ApiFuture&lt;Operation&gt; future = bigtableInstanceAdminClient.createClusterCallable().futureCall(request);
    *   // Do something
    *   Operation response = future.get();
    * }
@@ -937,9 +935,9 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
+   * try (BaseBigtableInstanceAdminClient bigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
    *   ClusterName name = ClusterName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
-   *   Cluster response = baseBigtableInstanceAdminClient.getCluster(name);
+   *   Cluster response = bigtableInstanceAdminClient.getCluster(name);
    * }
    * </code></pre>
    *
@@ -961,9 +959,9 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
+   * try (BaseBigtableInstanceAdminClient bigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
    *   ClusterName name = ClusterName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
-   *   Cluster response = baseBigtableInstanceAdminClient.getCluster(name.toString());
+   *   Cluster response = bigtableInstanceAdminClient.getCluster(name.toString());
    * }
    * </code></pre>
    *
@@ -984,12 +982,12 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
+   * try (BaseBigtableInstanceAdminClient bigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
    *   ClusterName name = ClusterName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
    *   GetClusterRequest request = GetClusterRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
-   *   Cluster response = baseBigtableInstanceAdminClient.getCluster(request);
+   *   Cluster response = bigtableInstanceAdminClient.getCluster(request);
    * }
    * </code></pre>
    *
@@ -1007,12 +1005,12 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
+   * try (BaseBigtableInstanceAdminClient bigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
    *   ClusterName name = ClusterName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
    *   GetClusterRequest request = GetClusterRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
-   *   ApiFuture&lt;Cluster&gt; future = baseBigtableInstanceAdminClient.getClusterCallable().futureCall(request);
+   *   ApiFuture&lt;Cluster&gt; future = bigtableInstanceAdminClient.getClusterCallable().futureCall(request);
    *   // Do something
    *   Cluster response = future.get();
    * }
@@ -1029,9 +1027,9 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
+   * try (BaseBigtableInstanceAdminClient bigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
    *   InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
-   *   ListClustersResponse response = baseBigtableInstanceAdminClient.listClusters(parent);
+   *   ListClustersResponse response = bigtableInstanceAdminClient.listClusters(parent);
    * }
    * </code></pre>
    *
@@ -1057,9 +1055,9 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
+   * try (BaseBigtableInstanceAdminClient bigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
    *   InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
-   *   ListClustersResponse response = baseBigtableInstanceAdminClient.listClusters(parent.toString());
+   *   ListClustersResponse response = bigtableInstanceAdminClient.listClusters(parent.toString());
    * }
    * </code></pre>
    *
@@ -1082,12 +1080,12 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
+   * try (BaseBigtableInstanceAdminClient bigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
    *   InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
    *   ListClustersRequest request = ListClustersRequest.newBuilder()
    *     .setParent(parent.toString())
    *     .build();
-   *   ListClustersResponse response = baseBigtableInstanceAdminClient.listClusters(request);
+   *   ListClustersResponse response = bigtableInstanceAdminClient.listClusters(request);
    * }
    * </code></pre>
    *
@@ -1105,12 +1103,12 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
+   * try (BaseBigtableInstanceAdminClient bigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
    *   InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
    *   ListClustersRequest request = ListClustersRequest.newBuilder()
    *     .setParent(parent.toString())
    *     .build();
-   *   ApiFuture&lt;ListClustersResponse&gt; future = baseBigtableInstanceAdminClient.listClustersCallable().futureCall(request);
+   *   ApiFuture&lt;ListClustersResponse&gt; future = bigtableInstanceAdminClient.listClustersCallable().futureCall(request);
    *   // Do something
    *   ListClustersResponse response = future.get();
    * }
@@ -1127,14 +1125,14 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
+   * try (BaseBigtableInstanceAdminClient bigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
    *   ClusterName name = ClusterName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
    *   int serveNodes = 0;
    *   Cluster request = Cluster.newBuilder()
    *     .setName(name.toString())
    *     .setServeNodes(serveNodes)
    *     .build();
-   *   Cluster response = baseBigtableInstanceAdminClient.updateClusterAsync(request).get();
+   *   Cluster response = bigtableInstanceAdminClient.updateClusterAsync(request).get();
    * }
    * </code></pre>
    *
@@ -1154,14 +1152,14 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
+   * try (BaseBigtableInstanceAdminClient bigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
    *   ClusterName name = ClusterName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
    *   int serveNodes = 0;
    *   Cluster request = Cluster.newBuilder()
    *     .setName(name.toString())
    *     .setServeNodes(serveNodes)
    *     .build();
-   *   OperationFuture&lt;Operation&gt; future = baseBigtableInstanceAdminClient.updateClusterOperationCallable().futureCall(request);
+   *   OperationFuture&lt;Operation&gt; future = bigtableInstanceAdminClient.updateClusterOperationCallable().futureCall(request);
    *   // Do something
    *   Cluster response = future.get();
    * }
@@ -1180,14 +1178,14 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
+   * try (BaseBigtableInstanceAdminClient bigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
    *   ClusterName name = ClusterName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
    *   int serveNodes = 0;
    *   Cluster request = Cluster.newBuilder()
    *     .setName(name.toString())
    *     .setServeNodes(serveNodes)
    *     .build();
-   *   ApiFuture&lt;Operation&gt; future = baseBigtableInstanceAdminClient.updateClusterCallable().futureCall(request);
+   *   ApiFuture&lt;Operation&gt; future = bigtableInstanceAdminClient.updateClusterCallable().futureCall(request);
    *   // Do something
    *   Operation response = future.get();
    * }
@@ -1204,9 +1202,9 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
+   * try (BaseBigtableInstanceAdminClient bigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
    *   ClusterName name = ClusterName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
-   *   baseBigtableInstanceAdminClient.deleteCluster(name);
+   *   bigtableInstanceAdminClient.deleteCluster(name);
    * }
    * </code></pre>
    *
@@ -1228,9 +1226,9 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
+   * try (BaseBigtableInstanceAdminClient bigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
    *   ClusterName name = ClusterName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
-   *   baseBigtableInstanceAdminClient.deleteCluster(name.toString());
+   *   bigtableInstanceAdminClient.deleteCluster(name.toString());
    * }
    * </code></pre>
    *
@@ -1251,12 +1249,12 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
+   * try (BaseBigtableInstanceAdminClient bigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
    *   ClusterName name = ClusterName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
    *   DeleteClusterRequest request = DeleteClusterRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
-   *   baseBigtableInstanceAdminClient.deleteCluster(request);
+   *   bigtableInstanceAdminClient.deleteCluster(request);
    * }
    * </code></pre>
    *
@@ -1274,12 +1272,12 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
+   * try (BaseBigtableInstanceAdminClient bigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
    *   ClusterName name = ClusterName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
    *   DeleteClusterRequest request = DeleteClusterRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
-   *   ApiFuture&lt;Void&gt; future = baseBigtableInstanceAdminClient.deleteClusterCallable().futureCall(request);
+   *   ApiFuture&lt;Void&gt; future = bigtableInstanceAdminClient.deleteClusterCallable().futureCall(request);
    *   // Do something
    *   future.get();
    * }
@@ -1296,11 +1294,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
+   * try (BaseBigtableInstanceAdminClient bigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
    *   InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
    *   String appProfileId = "";
    *   AppProfile appProfile = AppProfile.newBuilder().build();
-   *   AppProfile response = baseBigtableInstanceAdminClient.createAppProfile(parent, appProfileId, appProfile);
+   *   AppProfile response = bigtableInstanceAdminClient.createAppProfile(parent, appProfileId, appProfile);
    * }
    * </code></pre>
    *
@@ -1331,11 +1329,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
+   * try (BaseBigtableInstanceAdminClient bigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
    *   InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
    *   String appProfileId = "";
    *   AppProfile appProfile = AppProfile.newBuilder().build();
-   *   AppProfile response = baseBigtableInstanceAdminClient.createAppProfile(parent.toString(), appProfileId, appProfile);
+   *   AppProfile response = bigtableInstanceAdminClient.createAppProfile(parent.toString(), appProfileId, appProfile);
    * }
    * </code></pre>
    *
@@ -1366,7 +1364,7 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
+   * try (BaseBigtableInstanceAdminClient bigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
    *   InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
    *   String appProfileId = "";
    *   AppProfile appProfile = AppProfile.newBuilder().build();
@@ -1375,7 +1373,7 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    *     .setAppProfileId(appProfileId)
    *     .setAppProfile(appProfile)
    *     .build();
-   *   AppProfile response = baseBigtableInstanceAdminClient.createAppProfile(request);
+   *   AppProfile response = bigtableInstanceAdminClient.createAppProfile(request);
    * }
    * </code></pre>
    *
@@ -1393,7 +1391,7 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
+   * try (BaseBigtableInstanceAdminClient bigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
    *   InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
    *   String appProfileId = "";
    *   AppProfile appProfile = AppProfile.newBuilder().build();
@@ -1402,7 +1400,7 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    *     .setAppProfileId(appProfileId)
    *     .setAppProfile(appProfile)
    *     .build();
-   *   ApiFuture&lt;AppProfile&gt; future = baseBigtableInstanceAdminClient.createAppProfileCallable().futureCall(request);
+   *   ApiFuture&lt;AppProfile&gt; future = bigtableInstanceAdminClient.createAppProfileCallable().futureCall(request);
    *   // Do something
    *   AppProfile response = future.get();
    * }
@@ -1419,9 +1417,9 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
+   * try (BaseBigtableInstanceAdminClient bigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
    *   AppProfileName name = AppProfileName.of("[PROJECT]", "[INSTANCE]", "[APP_PROFILE]");
-   *   AppProfile response = baseBigtableInstanceAdminClient.getAppProfile(name);
+   *   AppProfile response = bigtableInstanceAdminClient.getAppProfile(name);
    * }
    * </code></pre>
    *
@@ -1443,9 +1441,9 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
+   * try (BaseBigtableInstanceAdminClient bigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
    *   AppProfileName name = AppProfileName.of("[PROJECT]", "[INSTANCE]", "[APP_PROFILE]");
-   *   AppProfile response = baseBigtableInstanceAdminClient.getAppProfile(name.toString());
+   *   AppProfile response = bigtableInstanceAdminClient.getAppProfile(name.toString());
    * }
    * </code></pre>
    *
@@ -1466,12 +1464,12 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
+   * try (BaseBigtableInstanceAdminClient bigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
    *   AppProfileName name = AppProfileName.of("[PROJECT]", "[INSTANCE]", "[APP_PROFILE]");
    *   GetAppProfileRequest request = GetAppProfileRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
-   *   AppProfile response = baseBigtableInstanceAdminClient.getAppProfile(request);
+   *   AppProfile response = bigtableInstanceAdminClient.getAppProfile(request);
    * }
    * </code></pre>
    *
@@ -1489,12 +1487,12 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
+   * try (BaseBigtableInstanceAdminClient bigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
    *   AppProfileName name = AppProfileName.of("[PROJECT]", "[INSTANCE]", "[APP_PROFILE]");
    *   GetAppProfileRequest request = GetAppProfileRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
-   *   ApiFuture&lt;AppProfile&gt; future = baseBigtableInstanceAdminClient.getAppProfileCallable().futureCall(request);
+   *   ApiFuture&lt;AppProfile&gt; future = bigtableInstanceAdminClient.getAppProfileCallable().futureCall(request);
    *   // Do something
    *   AppProfile response = future.get();
    * }
@@ -1511,9 +1509,9 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
+   * try (BaseBigtableInstanceAdminClient bigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
    *   InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
-   *   for (AppProfile element : baseBigtableInstanceAdminClient.listAppProfiles(parent).iterateAll()) {
+   *   for (AppProfile element : bigtableInstanceAdminClient.listAppProfiles(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -1538,9 +1536,9 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
+   * try (BaseBigtableInstanceAdminClient bigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
    *   InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
-   *   for (AppProfile element : baseBigtableInstanceAdminClient.listAppProfiles(parent.toString()).iterateAll()) {
+   *   for (AppProfile element : bigtableInstanceAdminClient.listAppProfiles(parent.toString()).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -1562,12 +1560,12 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
+   * try (BaseBigtableInstanceAdminClient bigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
    *   InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
    *   ListAppProfilesRequest request = ListAppProfilesRequest.newBuilder()
    *     .setParent(parent.toString())
    *     .build();
-   *   for (AppProfile element : baseBigtableInstanceAdminClient.listAppProfiles(request).iterateAll()) {
+   *   for (AppProfile element : bigtableInstanceAdminClient.listAppProfiles(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -1587,12 +1585,12 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
+   * try (BaseBigtableInstanceAdminClient bigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
    *   InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
    *   ListAppProfilesRequest request = ListAppProfilesRequest.newBuilder()
    *     .setParent(parent.toString())
    *     .build();
-   *   ApiFuture&lt;ListAppProfilesPagedResponse&gt; future = baseBigtableInstanceAdminClient.listAppProfilesPagedCallable().futureCall(request);
+   *   ApiFuture&lt;ListAppProfilesPagedResponse&gt; future = bigtableInstanceAdminClient.listAppProfilesPagedCallable().futureCall(request);
    *   // Do something
    *   for (AppProfile element : future.get().iterateAll()) {
    *     // doThingsWith(element);
@@ -1612,13 +1610,13 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
+   * try (BaseBigtableInstanceAdminClient bigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
    *   InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
    *   ListAppProfilesRequest request = ListAppProfilesRequest.newBuilder()
    *     .setParent(parent.toString())
    *     .build();
    *   while (true) {
-   *     ListAppProfilesResponse response = baseBigtableInstanceAdminClient.listAppProfilesCallable().call(request);
+   *     ListAppProfilesResponse response = bigtableInstanceAdminClient.listAppProfilesCallable().call(request);
    *     for (AppProfile element : response.getAppProfilesList()) {
    *       // doThingsWith(element);
    *     }
@@ -1644,10 +1642,10 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
+   * try (BaseBigtableInstanceAdminClient bigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
    *   AppProfile appProfile = AppProfile.newBuilder().build();
    *   FieldMask updateMask = FieldMask.newBuilder().build();
-   *   AppProfile response = baseBigtableInstanceAdminClient.updateAppProfileAsync(appProfile, updateMask).get();
+   *   AppProfile response = bigtableInstanceAdminClient.updateAppProfileAsync(appProfile, updateMask).get();
    * }
    * </code></pre>
    *
@@ -1676,14 +1674,14 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
+   * try (BaseBigtableInstanceAdminClient bigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
    *   AppProfile appProfile = AppProfile.newBuilder().build();
    *   FieldMask updateMask = FieldMask.newBuilder().build();
    *   UpdateAppProfileRequest request = UpdateAppProfileRequest.newBuilder()
    *     .setAppProfile(appProfile)
    *     .setUpdateMask(updateMask)
    *     .build();
-   *   AppProfile response = baseBigtableInstanceAdminClient.updateAppProfileAsync(request).get();
+   *   AppProfile response = bigtableInstanceAdminClient.updateAppProfileAsync(request).get();
    * }
    * </code></pre>
    *
@@ -1704,14 +1702,14 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
+   * try (BaseBigtableInstanceAdminClient bigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
    *   AppProfile appProfile = AppProfile.newBuilder().build();
    *   FieldMask updateMask = FieldMask.newBuilder().build();
    *   UpdateAppProfileRequest request = UpdateAppProfileRequest.newBuilder()
    *     .setAppProfile(appProfile)
    *     .setUpdateMask(updateMask)
    *     .build();
-   *   OperationFuture&lt;Operation&gt; future = baseBigtableInstanceAdminClient.updateAppProfileOperationCallable().futureCall(request);
+   *   OperationFuture&lt;Operation&gt; future = bigtableInstanceAdminClient.updateAppProfileOperationCallable().futureCall(request);
    *   // Do something
    *   AppProfile response = future.get();
    * }
@@ -1730,14 +1728,14 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
+   * try (BaseBigtableInstanceAdminClient bigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
    *   AppProfile appProfile = AppProfile.newBuilder().build();
    *   FieldMask updateMask = FieldMask.newBuilder().build();
    *   UpdateAppProfileRequest request = UpdateAppProfileRequest.newBuilder()
    *     .setAppProfile(appProfile)
    *     .setUpdateMask(updateMask)
    *     .build();
-   *   ApiFuture&lt;Operation&gt; future = baseBigtableInstanceAdminClient.updateAppProfileCallable().futureCall(request);
+   *   ApiFuture&lt;Operation&gt; future = bigtableInstanceAdminClient.updateAppProfileCallable().futureCall(request);
    *   // Do something
    *   Operation response = future.get();
    * }
@@ -1754,9 +1752,9 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
+   * try (BaseBigtableInstanceAdminClient bigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
    *   AppProfileName name = AppProfileName.of("[PROJECT]", "[INSTANCE]", "[APP_PROFILE]");
-   *   baseBigtableInstanceAdminClient.deleteAppProfile(name);
+   *   bigtableInstanceAdminClient.deleteAppProfile(name);
    * }
    * </code></pre>
    *
@@ -1778,9 +1776,9 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
+   * try (BaseBigtableInstanceAdminClient bigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
    *   AppProfileName name = AppProfileName.of("[PROJECT]", "[INSTANCE]", "[APP_PROFILE]");
-   *   baseBigtableInstanceAdminClient.deleteAppProfile(name.toString());
+   *   bigtableInstanceAdminClient.deleteAppProfile(name.toString());
    * }
    * </code></pre>
    *
@@ -1801,14 +1799,14 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
+   * try (BaseBigtableInstanceAdminClient bigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
    *   AppProfileName name = AppProfileName.of("[PROJECT]", "[INSTANCE]", "[APP_PROFILE]");
    *   boolean ignoreWarnings = false;
    *   DeleteAppProfileRequest request = DeleteAppProfileRequest.newBuilder()
    *     .setName(name.toString())
    *     .setIgnoreWarnings(ignoreWarnings)
    *     .build();
-   *   baseBigtableInstanceAdminClient.deleteAppProfile(request);
+   *   bigtableInstanceAdminClient.deleteAppProfile(request);
    * }
    * </code></pre>
    *
@@ -1826,14 +1824,14 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
+   * try (BaseBigtableInstanceAdminClient bigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
    *   AppProfileName name = AppProfileName.of("[PROJECT]", "[INSTANCE]", "[APP_PROFILE]");
    *   boolean ignoreWarnings = false;
    *   DeleteAppProfileRequest request = DeleteAppProfileRequest.newBuilder()
    *     .setName(name.toString())
    *     .setIgnoreWarnings(ignoreWarnings)
    *     .build();
-   *   ApiFuture&lt;Void&gt; future = baseBigtableInstanceAdminClient.deleteAppProfileCallable().futureCall(request);
+   *   ApiFuture&lt;Void&gt; future = bigtableInstanceAdminClient.deleteAppProfileCallable().futureCall(request);
    *   // Do something
    *   future.get();
    * }
@@ -1851,9 +1849,9 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
+   * try (BaseBigtableInstanceAdminClient bigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
    *   String formattedResource = InstanceName.format("[PROJECT]", "[INSTANCE]");
-   *   Policy response = baseBigtableInstanceAdminClient.getIamPolicy(formattedResource);
+   *   Policy response = bigtableInstanceAdminClient.getIamPolicy(formattedResource);
    * }
    * </code></pre>
    *
@@ -1876,12 +1874,12 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
+   * try (BaseBigtableInstanceAdminClient bigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
    *   String formattedResource = InstanceName.format("[PROJECT]", "[INSTANCE]");
    *   GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder()
    *     .setResource(formattedResource)
    *     .build();
-   *   Policy response = baseBigtableInstanceAdminClient.getIamPolicy(request);
+   *   Policy response = bigtableInstanceAdminClient.getIamPolicy(request);
    * }
    * </code></pre>
    *
@@ -1900,12 +1898,12 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
+   * try (BaseBigtableInstanceAdminClient bigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
    *   String formattedResource = InstanceName.format("[PROJECT]", "[INSTANCE]");
    *   GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder()
    *     .setResource(formattedResource)
    *     .build();
-   *   ApiFuture&lt;Policy&gt; future = baseBigtableInstanceAdminClient.getIamPolicyCallable().futureCall(request);
+   *   ApiFuture&lt;Policy&gt; future = bigtableInstanceAdminClient.getIamPolicyCallable().futureCall(request);
    *   // Do something
    *   Policy response = future.get();
    * }
@@ -1922,10 +1920,10 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
+   * try (BaseBigtableInstanceAdminClient bigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
    *   String formattedResource = InstanceName.format("[PROJECT]", "[INSTANCE]");
    *   Policy policy = Policy.newBuilder().build();
-   *   Policy response = baseBigtableInstanceAdminClient.setIamPolicy(formattedResource, policy);
+   *   Policy response = bigtableInstanceAdminClient.setIamPolicy(formattedResource, policy);
    * }
    * </code></pre>
    *
@@ -1951,14 +1949,14 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
+   * try (BaseBigtableInstanceAdminClient bigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
    *   String formattedResource = InstanceName.format("[PROJECT]", "[INSTANCE]");
    *   Policy policy = Policy.newBuilder().build();
    *   SetIamPolicyRequest request = SetIamPolicyRequest.newBuilder()
    *     .setResource(formattedResource)
    *     .setPolicy(policy)
    *     .build();
-   *   Policy response = baseBigtableInstanceAdminClient.setIamPolicy(request);
+   *   Policy response = bigtableInstanceAdminClient.setIamPolicy(request);
    * }
    * </code></pre>
    *
@@ -1976,14 +1974,14 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
+   * try (BaseBigtableInstanceAdminClient bigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
    *   String formattedResource = InstanceName.format("[PROJECT]", "[INSTANCE]");
    *   Policy policy = Policy.newBuilder().build();
    *   SetIamPolicyRequest request = SetIamPolicyRequest.newBuilder()
    *     .setResource(formattedResource)
    *     .setPolicy(policy)
    *     .build();
-   *   ApiFuture&lt;Policy&gt; future = baseBigtableInstanceAdminClient.setIamPolicyCallable().futureCall(request);
+   *   ApiFuture&lt;Policy&gt; future = bigtableInstanceAdminClient.setIamPolicyCallable().futureCall(request);
    *   // Do something
    *   Policy response = future.get();
    * }
@@ -2000,10 +1998,10 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
+   * try (BaseBigtableInstanceAdminClient bigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
    *   String formattedResource = InstanceName.format("[PROJECT]", "[INSTANCE]");
    *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
-   *   TestIamPermissionsResponse response = baseBigtableInstanceAdminClient.testIamPermissions(formattedResource, permissions);
+   *   TestIamPermissionsResponse response = bigtableInstanceAdminClient.testIamPermissions(formattedResource, permissions);
    * }
    * </code></pre>
    *
@@ -2033,14 +2031,14 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
+   * try (BaseBigtableInstanceAdminClient bigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
    *   String formattedResource = InstanceName.format("[PROJECT]", "[INSTANCE]");
    *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
    *   TestIamPermissionsRequest request = TestIamPermissionsRequest.newBuilder()
    *     .setResource(formattedResource)
    *     .addAllPermissions(permissions)
    *     .build();
-   *   TestIamPermissionsResponse response = baseBigtableInstanceAdminClient.testIamPermissions(request);
+   *   TestIamPermissionsResponse response = bigtableInstanceAdminClient.testIamPermissions(request);
    * }
    * </code></pre>
    *
@@ -2058,14 +2056,14 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
+   * try (BaseBigtableInstanceAdminClient bigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
    *   String formattedResource = InstanceName.format("[PROJECT]", "[INSTANCE]");
    *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
    *   TestIamPermissionsRequest request = TestIamPermissionsRequest.newBuilder()
    *     .setResource(formattedResource)
    *     .addAllPermissions(permissions)
    *     .build();
-   *   ApiFuture&lt;TestIamPermissionsResponse&gt; future = baseBigtableInstanceAdminClient.testIamPermissionsCallable().futureCall(request);
+   *   ApiFuture&lt;TestIamPermissionsResponse&gt; future = bigtableInstanceAdminClient.testIamPermissionsCallable().futureCall(request);
    *   // Do something
    *   TestIamPermissionsResponse response = future.get();
    * }

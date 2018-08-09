@@ -23,7 +23,7 @@ import static org.junit.Assert.assertTrue;
 
 import com.google.bigtable.admin.v2.InstanceName;
 import com.google.bigtable.admin.v2.TableName;
-import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient;
+import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient;
 import com.google.cloud.bigtable.admin.v2.models.GCRules.DurationRule;
 import com.google.cloud.bigtable.admin.v2.models.GCRules.IntersectionRule;
 import com.google.cloud.bigtable.admin.v2.models.GCRules.UnionRule;
@@ -46,7 +46,7 @@ import org.threeten.bp.Duration;
 public class BigtableTableAdminClientIT {
   private static final String INSTANCE_PROPERTY_NAME = "bigtable.instance";
 
-  private static BigtableTableAdminClient tableAdmin;
+  private static BaseBigtableTableAdminClient tableAdmin;
 
   @BeforeClass
   public static void createClient() throws IOException {
@@ -58,7 +58,7 @@ public class BigtableTableAdminClientIT {
     }
 
     InstanceName instanceName = InstanceName.parse(targetInstance);
-    tableAdmin = BigtableTableAdminClient.create(instanceName);
+    tableAdmin = BaseBigtableTableAdminClient.create(instanceName);
   }
 
   @AfterClass

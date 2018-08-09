@@ -15,8 +15,8 @@
  */
 package com.google.cloud.bigtable.admin.v2;
 
-import static com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient.ListSnapshotsPagedResponse;
-import static com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient.ListTablesPagedResponse;
+import static com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListSnapshotsPagedResponse;
+import static com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListTablesPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
@@ -60,7 +60,7 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 /**
- * Settings class to configure an instance of {@link BigtableTableAdminClient}.
+ * Settings class to configure an instance of {@link BaseBigtableTableAdminClient}.
  *
  * <p>The default instance has everything set to sensible defaults:
  *
