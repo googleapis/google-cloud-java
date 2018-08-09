@@ -244,6 +244,7 @@ public class AddressClientTest {
   @SuppressWarnings("all")
   public void getAddressTest() {
     ProjectGlobalAddressName address2 = ProjectGlobalAddressName.of("[PROJECT]", "[ADDRESS]");
+    String networkTier = "networkTier-19473069";
     String addressType = "addressType264307877";
     String kind = "kind3292052";
     String description = "description-1724546052";
@@ -259,6 +260,7 @@ public class AddressClientTest {
     Address expectedResponse =
         Address.newBuilder()
             .setAddress(address2.toString())
+            .setNetworkTier(networkTier)
             .setAddressType(addressType)
             .setKind(kind)
             .setDescription(description)

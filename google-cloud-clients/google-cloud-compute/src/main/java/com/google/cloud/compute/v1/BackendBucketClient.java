@@ -43,7 +43,8 @@ import javax.annotation.Generated;
  * <code>
  * try (BackendBucketClient backendBucketClient = BackendBucketClient.create()) {
  *   ProjectGlobalBackendBucketName backendBucket = ProjectGlobalBackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
- *   Operation response = backendBucketClient.deleteBackendBucket(backendBucket);
+ *   SignedUrlKey signedUrlKeyResource = SignedUrlKey.newBuilder().build();
+ *   Operation response = backendBucketClient.addSignedUrlKeyBackendBucket(backendBucket, signedUrlKeyResource);
  * }
  * </code>
  * </pre>
@@ -154,6 +155,123 @@ public class BackendBucketClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
+   * Adds a key for validating requests with signed URLs for this backend bucket.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BackendBucketClient backendBucketClient = BackendBucketClient.create()) {
+   *   ProjectGlobalBackendBucketName backendBucket = ProjectGlobalBackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
+   *   SignedUrlKey signedUrlKeyResource = SignedUrlKey.newBuilder().build();
+   *   Operation response = backendBucketClient.addSignedUrlKeyBackendBucket(backendBucket, signedUrlKeyResource);
+   * }
+   * </code></pre>
+   *
+   * @param backendBucket Name of the BackendBucket resource to which the Signed URL Key should be
+   *     added. The name should conform to RFC1035.
+   * @param signedUrlKeyResource Represents a customer-supplied Signing Key used by Cloud CDN Signed
+   *     URLs
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation addSignedUrlKeyBackendBucket(
+      ProjectGlobalBackendBucketName backendBucket, SignedUrlKey signedUrlKeyResource) {
+
+    AddSignedUrlKeyBackendBucketHttpRequest request =
+        AddSignedUrlKeyBackendBucketHttpRequest.newBuilder()
+            .setBackendBucket(backendBucket == null ? null : backendBucket.toString())
+            .setSignedUrlKeyResource(signedUrlKeyResource)
+            .build();
+    return addSignedUrlKeyBackendBucket(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Adds a key for validating requests with signed URLs for this backend bucket.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BackendBucketClient backendBucketClient = BackendBucketClient.create()) {
+   *   ProjectGlobalBackendBucketName backendBucket = ProjectGlobalBackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
+   *   SignedUrlKey signedUrlKeyResource = SignedUrlKey.newBuilder().build();
+   *   Operation response = backendBucketClient.addSignedUrlKeyBackendBucket(backendBucket.toString(), signedUrlKeyResource);
+   * }
+   * </code></pre>
+   *
+   * @param backendBucket Name of the BackendBucket resource to which the Signed URL Key should be
+   *     added. The name should conform to RFC1035.
+   * @param signedUrlKeyResource Represents a customer-supplied Signing Key used by Cloud CDN Signed
+   *     URLs
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation addSignedUrlKeyBackendBucket(
+      String backendBucket, SignedUrlKey signedUrlKeyResource) {
+
+    AddSignedUrlKeyBackendBucketHttpRequest request =
+        AddSignedUrlKeyBackendBucketHttpRequest.newBuilder()
+            .setBackendBucket(backendBucket)
+            .setSignedUrlKeyResource(signedUrlKeyResource)
+            .build();
+    return addSignedUrlKeyBackendBucket(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Adds a key for validating requests with signed URLs for this backend bucket.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BackendBucketClient backendBucketClient = BackendBucketClient.create()) {
+   *   ProjectGlobalBackendBucketName backendBucket = ProjectGlobalBackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
+   *   SignedUrlKey signedUrlKeyResource = SignedUrlKey.newBuilder().build();
+   *   AddSignedUrlKeyBackendBucketHttpRequest request = AddSignedUrlKeyBackendBucketHttpRequest.newBuilder()
+   *     .setBackendBucket(backendBucket.toString())
+   *     .setSignedUrlKeyResource(signedUrlKeyResource)
+   *     .build();
+   *   Operation response = backendBucketClient.addSignedUrlKeyBackendBucket(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation addSignedUrlKeyBackendBucket(
+      AddSignedUrlKeyBackendBucketHttpRequest request) {
+    return addSignedUrlKeyBackendBucketCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Adds a key for validating requests with signed URLs for this backend bucket.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BackendBucketClient backendBucketClient = BackendBucketClient.create()) {
+   *   ProjectGlobalBackendBucketName backendBucket = ProjectGlobalBackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
+   *   SignedUrlKey signedUrlKeyResource = SignedUrlKey.newBuilder().build();
+   *   AddSignedUrlKeyBackendBucketHttpRequest request = AddSignedUrlKeyBackendBucketHttpRequest.newBuilder()
+   *     .setBackendBucket(backendBucket.toString())
+   *     .setSignedUrlKeyResource(signedUrlKeyResource)
+   *     .build();
+   *   ApiFuture&lt;Operation&gt; future = backendBucketClient.addSignedUrlKeyBackendBucketCallable().futureCall(request);
+   *   // Do something
+   *   Operation response = future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi
+  public final UnaryCallable<AddSignedUrlKeyBackendBucketHttpRequest, Operation>
+      addSignedUrlKeyBackendBucketCallable() {
+    return stub.addSignedUrlKeyBackendBucketCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
    * Deletes the specified BackendBucket resource.
    *
    * <p>Sample code:
@@ -248,6 +366,120 @@ public class BackendBucketClient implements BackgroundResource {
   public final UnaryCallable<DeleteBackendBucketHttpRequest, Operation>
       deleteBackendBucketCallable() {
     return stub.deleteBackendBucketCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a key for validating requests with signed URLs for this backend bucket.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BackendBucketClient backendBucketClient = BackendBucketClient.create()) {
+   *   ProjectGlobalBackendBucketName backendBucket = ProjectGlobalBackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
+   *   String keyName = "";
+   *   Operation response = backendBucketClient.deleteSignedUrlKeyBackendBucket(backendBucket, keyName);
+   * }
+   * </code></pre>
+   *
+   * @param backendBucket Name of the BackendBucket resource to which the Signed URL Key should be
+   *     added. The name should conform to RFC1035.
+   * @param keyName The name of the Signed URL Key to delete.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation deleteSignedUrlKeyBackendBucket(
+      ProjectGlobalBackendBucketName backendBucket, String keyName) {
+
+    DeleteSignedUrlKeyBackendBucketHttpRequest request =
+        DeleteSignedUrlKeyBackendBucketHttpRequest.newBuilder()
+            .setBackendBucket(backendBucket == null ? null : backendBucket.toString())
+            .setKeyName(keyName)
+            .build();
+    return deleteSignedUrlKeyBackendBucket(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a key for validating requests with signed URLs for this backend bucket.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BackendBucketClient backendBucketClient = BackendBucketClient.create()) {
+   *   ProjectGlobalBackendBucketName backendBucket = ProjectGlobalBackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
+   *   String keyName = "";
+   *   Operation response = backendBucketClient.deleteSignedUrlKeyBackendBucket(backendBucket.toString(), keyName);
+   * }
+   * </code></pre>
+   *
+   * @param backendBucket Name of the BackendBucket resource to which the Signed URL Key should be
+   *     added. The name should conform to RFC1035.
+   * @param keyName The name of the Signed URL Key to delete.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation deleteSignedUrlKeyBackendBucket(String backendBucket, String keyName) {
+
+    DeleteSignedUrlKeyBackendBucketHttpRequest request =
+        DeleteSignedUrlKeyBackendBucketHttpRequest.newBuilder()
+            .setBackendBucket(backendBucket)
+            .setKeyName(keyName)
+            .build();
+    return deleteSignedUrlKeyBackendBucket(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a key for validating requests with signed URLs for this backend bucket.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BackendBucketClient backendBucketClient = BackendBucketClient.create()) {
+   *   ProjectGlobalBackendBucketName backendBucket = ProjectGlobalBackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
+   *   String keyName = "";
+   *   DeleteSignedUrlKeyBackendBucketHttpRequest request = DeleteSignedUrlKeyBackendBucketHttpRequest.newBuilder()
+   *     .setBackendBucket(backendBucket.toString())
+   *     .setKeyName(keyName)
+   *     .build();
+   *   Operation response = backendBucketClient.deleteSignedUrlKeyBackendBucket(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation deleteSignedUrlKeyBackendBucket(
+      DeleteSignedUrlKeyBackendBucketHttpRequest request) {
+    return deleteSignedUrlKeyBackendBucketCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a key for validating requests with signed URLs for this backend bucket.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BackendBucketClient backendBucketClient = BackendBucketClient.create()) {
+   *   ProjectGlobalBackendBucketName backendBucket = ProjectGlobalBackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
+   *   String keyName = "";
+   *   DeleteSignedUrlKeyBackendBucketHttpRequest request = DeleteSignedUrlKeyBackendBucketHttpRequest.newBuilder()
+   *     .setBackendBucket(backendBucket.toString())
+   *     .setKeyName(keyName)
+   *     .build();
+   *   ApiFuture&lt;Operation&gt; future = backendBucketClient.deleteSignedUrlKeyBackendBucketCallable().futureCall(request);
+   *   // Do something
+   *   Operation response = future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi
+  public final UnaryCallable<DeleteSignedUrlKeyBackendBucketHttpRequest, Operation>
+      deleteSignedUrlKeyBackendBucketCallable() {
+    return stub.deleteSignedUrlKeyBackendBucketCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD

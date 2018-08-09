@@ -139,6 +139,104 @@ private static final long serialVersionUID = 0L;
      */
     com.google.firestore.v1beta1.DocumentTransform.FieldTransform.ServerValue getSetToServerValue();
 
+    /**
+     * <pre>
+     * Append the given elements in order if they are not already present in
+     * the current field value.
+     * If the field is not an array, or if the field does not yet exist, it is
+     * first set to the empty array.
+     * Equivalent numbers of different types (e.g. 3L and 3.0) are
+     * considered equal when checking if a value is missing.
+     * NaN is equal to NaN, and Null is equal to Null.
+     * If the input contains multiple equivalent values, only the first will
+     * be considered.
+     * The corresponding transform_result will be the null value.
+     * </pre>
+     *
+     * <code>.google.firestore.v1beta1.ArrayValue append_missing_elements = 6;</code>
+     */
+    boolean hasAppendMissingElements();
+    /**
+     * <pre>
+     * Append the given elements in order if they are not already present in
+     * the current field value.
+     * If the field is not an array, or if the field does not yet exist, it is
+     * first set to the empty array.
+     * Equivalent numbers of different types (e.g. 3L and 3.0) are
+     * considered equal when checking if a value is missing.
+     * NaN is equal to NaN, and Null is equal to Null.
+     * If the input contains multiple equivalent values, only the first will
+     * be considered.
+     * The corresponding transform_result will be the null value.
+     * </pre>
+     *
+     * <code>.google.firestore.v1beta1.ArrayValue append_missing_elements = 6;</code>
+     */
+    com.google.firestore.v1beta1.ArrayValue getAppendMissingElements();
+    /**
+     * <pre>
+     * Append the given elements in order if they are not already present in
+     * the current field value.
+     * If the field is not an array, or if the field does not yet exist, it is
+     * first set to the empty array.
+     * Equivalent numbers of different types (e.g. 3L and 3.0) are
+     * considered equal when checking if a value is missing.
+     * NaN is equal to NaN, and Null is equal to Null.
+     * If the input contains multiple equivalent values, only the first will
+     * be considered.
+     * The corresponding transform_result will be the null value.
+     * </pre>
+     *
+     * <code>.google.firestore.v1beta1.ArrayValue append_missing_elements = 6;</code>
+     */
+    com.google.firestore.v1beta1.ArrayValueOrBuilder getAppendMissingElementsOrBuilder();
+
+    /**
+     * <pre>
+     * Remove all of the given elements from the array in the field.
+     * If the field is not an array, or if the field does not yet exist, it is
+     * set to the empty array.
+     * Equivalent numbers of the different types (e.g. 3L and 3.0) are
+     * considered equal when deciding whether an element should be removed.
+     * NaN is equal to NaN, and Null is equal to Null.
+     * This will remove all equivalent values if there are duplicates.
+     * The corresponding transform_result will be the null value.
+     * </pre>
+     *
+     * <code>.google.firestore.v1beta1.ArrayValue remove_all_from_array = 7;</code>
+     */
+    boolean hasRemoveAllFromArray();
+    /**
+     * <pre>
+     * Remove all of the given elements from the array in the field.
+     * If the field is not an array, or if the field does not yet exist, it is
+     * set to the empty array.
+     * Equivalent numbers of the different types (e.g. 3L and 3.0) are
+     * considered equal when deciding whether an element should be removed.
+     * NaN is equal to NaN, and Null is equal to Null.
+     * This will remove all equivalent values if there are duplicates.
+     * The corresponding transform_result will be the null value.
+     * </pre>
+     *
+     * <code>.google.firestore.v1beta1.ArrayValue remove_all_from_array = 7;</code>
+     */
+    com.google.firestore.v1beta1.ArrayValue getRemoveAllFromArray();
+    /**
+     * <pre>
+     * Remove all of the given elements from the array in the field.
+     * If the field is not an array, or if the field does not yet exist, it is
+     * set to the empty array.
+     * Equivalent numbers of the different types (e.g. 3L and 3.0) are
+     * considered equal when deciding whether an element should be removed.
+     * NaN is equal to NaN, and Null is equal to Null.
+     * This will remove all equivalent values if there are duplicates.
+     * The corresponding transform_result will be the null value.
+     * </pre>
+     *
+     * <code>.google.firestore.v1beta1.ArrayValue remove_all_from_array = 7;</code>
+     */
+    com.google.firestore.v1beta1.ArrayValueOrBuilder getRemoveAllFromArrayOrBuilder();
+
     public com.google.firestore.v1beta1.DocumentTransform.FieldTransform.TransformTypeCase getTransformTypeCase();
   }
   /**
@@ -195,6 +293,34 @@ private static final long serialVersionUID = 0L;
               int rawValue = input.readEnum();
               transformTypeCase_ = 2;
               transformType_ = rawValue;
+              break;
+            }
+            case 50: {
+              com.google.firestore.v1beta1.ArrayValue.Builder subBuilder = null;
+              if (transformTypeCase_ == 6) {
+                subBuilder = ((com.google.firestore.v1beta1.ArrayValue) transformType_).toBuilder();
+              }
+              transformType_ =
+                  input.readMessage(com.google.firestore.v1beta1.ArrayValue.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.firestore.v1beta1.ArrayValue) transformType_);
+                transformType_ = subBuilder.buildPartial();
+              }
+              transformTypeCase_ = 6;
+              break;
+            }
+            case 58: {
+              com.google.firestore.v1beta1.ArrayValue.Builder subBuilder = null;
+              if (transformTypeCase_ == 7) {
+                subBuilder = ((com.google.firestore.v1beta1.ArrayValue) transformType_).toBuilder();
+              }
+              transformType_ =
+                  input.readMessage(com.google.firestore.v1beta1.ArrayValue.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.firestore.v1beta1.ArrayValue) transformType_);
+                transformType_ = subBuilder.buildPartial();
+              }
+              transformTypeCase_ = 7;
               break;
             }
             default: {
@@ -354,6 +480,8 @@ private static final long serialVersionUID = 0L;
     public enum TransformTypeCase
         implements com.google.protobuf.Internal.EnumLite {
       SET_TO_SERVER_VALUE(2),
+      APPEND_MISSING_ELEMENTS(6),
+      REMOVE_ALL_FROM_ARRAY(7),
       TRANSFORMTYPE_NOT_SET(0);
       private final int value;
       private TransformTypeCase(int value) {
@@ -370,6 +498,8 @@ private static final long serialVersionUID = 0L;
       public static TransformTypeCase forNumber(int value) {
         switch (value) {
           case 2: return SET_TO_SERVER_VALUE;
+          case 6: return APPEND_MISSING_ELEMENTS;
+          case 7: return REMOVE_ALL_FROM_ARRAY;
           case 0: return TRANSFORMTYPE_NOT_SET;
           default: return null;
         }
@@ -460,6 +590,130 @@ private static final long serialVersionUID = 0L;
       return com.google.firestore.v1beta1.DocumentTransform.FieldTransform.ServerValue.SERVER_VALUE_UNSPECIFIED;
     }
 
+    public static final int APPEND_MISSING_ELEMENTS_FIELD_NUMBER = 6;
+    /**
+     * <pre>
+     * Append the given elements in order if they are not already present in
+     * the current field value.
+     * If the field is not an array, or if the field does not yet exist, it is
+     * first set to the empty array.
+     * Equivalent numbers of different types (e.g. 3L and 3.0) are
+     * considered equal when checking if a value is missing.
+     * NaN is equal to NaN, and Null is equal to Null.
+     * If the input contains multiple equivalent values, only the first will
+     * be considered.
+     * The corresponding transform_result will be the null value.
+     * </pre>
+     *
+     * <code>.google.firestore.v1beta1.ArrayValue append_missing_elements = 6;</code>
+     */
+    public boolean hasAppendMissingElements() {
+      return transformTypeCase_ == 6;
+    }
+    /**
+     * <pre>
+     * Append the given elements in order if they are not already present in
+     * the current field value.
+     * If the field is not an array, or if the field does not yet exist, it is
+     * first set to the empty array.
+     * Equivalent numbers of different types (e.g. 3L and 3.0) are
+     * considered equal when checking if a value is missing.
+     * NaN is equal to NaN, and Null is equal to Null.
+     * If the input contains multiple equivalent values, only the first will
+     * be considered.
+     * The corresponding transform_result will be the null value.
+     * </pre>
+     *
+     * <code>.google.firestore.v1beta1.ArrayValue append_missing_elements = 6;</code>
+     */
+    public com.google.firestore.v1beta1.ArrayValue getAppendMissingElements() {
+      if (transformTypeCase_ == 6) {
+         return (com.google.firestore.v1beta1.ArrayValue) transformType_;
+      }
+      return com.google.firestore.v1beta1.ArrayValue.getDefaultInstance();
+    }
+    /**
+     * <pre>
+     * Append the given elements in order if they are not already present in
+     * the current field value.
+     * If the field is not an array, or if the field does not yet exist, it is
+     * first set to the empty array.
+     * Equivalent numbers of different types (e.g. 3L and 3.0) are
+     * considered equal when checking if a value is missing.
+     * NaN is equal to NaN, and Null is equal to Null.
+     * If the input contains multiple equivalent values, only the first will
+     * be considered.
+     * The corresponding transform_result will be the null value.
+     * </pre>
+     *
+     * <code>.google.firestore.v1beta1.ArrayValue append_missing_elements = 6;</code>
+     */
+    public com.google.firestore.v1beta1.ArrayValueOrBuilder getAppendMissingElementsOrBuilder() {
+      if (transformTypeCase_ == 6) {
+         return (com.google.firestore.v1beta1.ArrayValue) transformType_;
+      }
+      return com.google.firestore.v1beta1.ArrayValue.getDefaultInstance();
+    }
+
+    public static final int REMOVE_ALL_FROM_ARRAY_FIELD_NUMBER = 7;
+    /**
+     * <pre>
+     * Remove all of the given elements from the array in the field.
+     * If the field is not an array, or if the field does not yet exist, it is
+     * set to the empty array.
+     * Equivalent numbers of the different types (e.g. 3L and 3.0) are
+     * considered equal when deciding whether an element should be removed.
+     * NaN is equal to NaN, and Null is equal to Null.
+     * This will remove all equivalent values if there are duplicates.
+     * The corresponding transform_result will be the null value.
+     * </pre>
+     *
+     * <code>.google.firestore.v1beta1.ArrayValue remove_all_from_array = 7;</code>
+     */
+    public boolean hasRemoveAllFromArray() {
+      return transformTypeCase_ == 7;
+    }
+    /**
+     * <pre>
+     * Remove all of the given elements from the array in the field.
+     * If the field is not an array, or if the field does not yet exist, it is
+     * set to the empty array.
+     * Equivalent numbers of the different types (e.g. 3L and 3.0) are
+     * considered equal when deciding whether an element should be removed.
+     * NaN is equal to NaN, and Null is equal to Null.
+     * This will remove all equivalent values if there are duplicates.
+     * The corresponding transform_result will be the null value.
+     * </pre>
+     *
+     * <code>.google.firestore.v1beta1.ArrayValue remove_all_from_array = 7;</code>
+     */
+    public com.google.firestore.v1beta1.ArrayValue getRemoveAllFromArray() {
+      if (transformTypeCase_ == 7) {
+         return (com.google.firestore.v1beta1.ArrayValue) transformType_;
+      }
+      return com.google.firestore.v1beta1.ArrayValue.getDefaultInstance();
+    }
+    /**
+     * <pre>
+     * Remove all of the given elements from the array in the field.
+     * If the field is not an array, or if the field does not yet exist, it is
+     * set to the empty array.
+     * Equivalent numbers of the different types (e.g. 3L and 3.0) are
+     * considered equal when deciding whether an element should be removed.
+     * NaN is equal to NaN, and Null is equal to Null.
+     * This will remove all equivalent values if there are duplicates.
+     * The corresponding transform_result will be the null value.
+     * </pre>
+     *
+     * <code>.google.firestore.v1beta1.ArrayValue remove_all_from_array = 7;</code>
+     */
+    public com.google.firestore.v1beta1.ArrayValueOrBuilder getRemoveAllFromArrayOrBuilder() {
+      if (transformTypeCase_ == 7) {
+         return (com.google.firestore.v1beta1.ArrayValue) transformType_;
+      }
+      return com.google.firestore.v1beta1.ArrayValue.getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -480,6 +734,12 @@ private static final long serialVersionUID = 0L;
       if (transformTypeCase_ == 2) {
         output.writeEnum(2, ((java.lang.Integer) transformType_));
       }
+      if (transformTypeCase_ == 6) {
+        output.writeMessage(6, (com.google.firestore.v1beta1.ArrayValue) transformType_);
+      }
+      if (transformTypeCase_ == 7) {
+        output.writeMessage(7, (com.google.firestore.v1beta1.ArrayValue) transformType_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -495,6 +755,14 @@ private static final long serialVersionUID = 0L;
       if (transformTypeCase_ == 2) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(2, ((java.lang.Integer) transformType_));
+      }
+      if (transformTypeCase_ == 6) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(6, (com.google.firestore.v1beta1.ArrayValue) transformType_);
+      }
+      if (transformTypeCase_ == 7) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(7, (com.google.firestore.v1beta1.ArrayValue) transformType_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -522,6 +790,14 @@ private static final long serialVersionUID = 0L;
           result = result && getSetToServerValueValue()
               == other.getSetToServerValueValue();
           break;
+        case 6:
+          result = result && getAppendMissingElements()
+              .equals(other.getAppendMissingElements());
+          break;
+        case 7:
+          result = result && getRemoveAllFromArray()
+              .equals(other.getRemoveAllFromArray());
+          break;
         case 0:
         default:
       }
@@ -542,6 +818,14 @@ private static final long serialVersionUID = 0L;
         case 2:
           hash = (37 * hash) + SET_TO_SERVER_VALUE_FIELD_NUMBER;
           hash = (53 * hash) + getSetToServerValueValue();
+          break;
+        case 6:
+          hash = (37 * hash) + APPEND_MISSING_ELEMENTS_FIELD_NUMBER;
+          hash = (53 * hash) + getAppendMissingElements().hashCode();
+          break;
+        case 7:
+          hash = (37 * hash) + REMOVE_ALL_FROM_ARRAY_FIELD_NUMBER;
+          hash = (53 * hash) + getRemoveAllFromArray().hashCode();
           break;
         case 0:
         default:
@@ -717,6 +1001,20 @@ private static final long serialVersionUID = 0L;
         if (transformTypeCase_ == 2) {
           result.transformType_ = transformType_;
         }
+        if (transformTypeCase_ == 6) {
+          if (appendMissingElementsBuilder_ == null) {
+            result.transformType_ = transformType_;
+          } else {
+            result.transformType_ = appendMissingElementsBuilder_.build();
+          }
+        }
+        if (transformTypeCase_ == 7) {
+          if (removeAllFromArrayBuilder_ == null) {
+            result.transformType_ = transformType_;
+          } else {
+            result.transformType_ = removeAllFromArrayBuilder_.build();
+          }
+        }
         result.transformTypeCase_ = transformTypeCase_;
         onBuilt();
         return result;
@@ -773,6 +1071,14 @@ private static final long serialVersionUID = 0L;
         switch (other.getTransformTypeCase()) {
           case SET_TO_SERVER_VALUE: {
             setSetToServerValueValue(other.getSetToServerValueValue());
+            break;
+          }
+          case APPEND_MISSING_ELEMENTS: {
+            mergeAppendMissingElements(other.getAppendMissingElements());
+            break;
+          }
+          case REMOVE_ALL_FROM_ARRAY: {
+            mergeRemoveAllFromArray(other.getRemoveAllFromArray());
             break;
           }
           case TRANSFORMTYPE_NOT_SET: {
@@ -989,6 +1295,494 @@ private static final long serialVersionUID = 0L;
           onChanged();
         }
         return this;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.firestore.v1beta1.ArrayValue, com.google.firestore.v1beta1.ArrayValue.Builder, com.google.firestore.v1beta1.ArrayValueOrBuilder> appendMissingElementsBuilder_;
+      /**
+       * <pre>
+       * Append the given elements in order if they are not already present in
+       * the current field value.
+       * If the field is not an array, or if the field does not yet exist, it is
+       * first set to the empty array.
+       * Equivalent numbers of different types (e.g. 3L and 3.0) are
+       * considered equal when checking if a value is missing.
+       * NaN is equal to NaN, and Null is equal to Null.
+       * If the input contains multiple equivalent values, only the first will
+       * be considered.
+       * The corresponding transform_result will be the null value.
+       * </pre>
+       *
+       * <code>.google.firestore.v1beta1.ArrayValue append_missing_elements = 6;</code>
+       */
+      public boolean hasAppendMissingElements() {
+        return transformTypeCase_ == 6;
+      }
+      /**
+       * <pre>
+       * Append the given elements in order if they are not already present in
+       * the current field value.
+       * If the field is not an array, or if the field does not yet exist, it is
+       * first set to the empty array.
+       * Equivalent numbers of different types (e.g. 3L and 3.0) are
+       * considered equal when checking if a value is missing.
+       * NaN is equal to NaN, and Null is equal to Null.
+       * If the input contains multiple equivalent values, only the first will
+       * be considered.
+       * The corresponding transform_result will be the null value.
+       * </pre>
+       *
+       * <code>.google.firestore.v1beta1.ArrayValue append_missing_elements = 6;</code>
+       */
+      public com.google.firestore.v1beta1.ArrayValue getAppendMissingElements() {
+        if (appendMissingElementsBuilder_ == null) {
+          if (transformTypeCase_ == 6) {
+            return (com.google.firestore.v1beta1.ArrayValue) transformType_;
+          }
+          return com.google.firestore.v1beta1.ArrayValue.getDefaultInstance();
+        } else {
+          if (transformTypeCase_ == 6) {
+            return appendMissingElementsBuilder_.getMessage();
+          }
+          return com.google.firestore.v1beta1.ArrayValue.getDefaultInstance();
+        }
+      }
+      /**
+       * <pre>
+       * Append the given elements in order if they are not already present in
+       * the current field value.
+       * If the field is not an array, or if the field does not yet exist, it is
+       * first set to the empty array.
+       * Equivalent numbers of different types (e.g. 3L and 3.0) are
+       * considered equal when checking if a value is missing.
+       * NaN is equal to NaN, and Null is equal to Null.
+       * If the input contains multiple equivalent values, only the first will
+       * be considered.
+       * The corresponding transform_result will be the null value.
+       * </pre>
+       *
+       * <code>.google.firestore.v1beta1.ArrayValue append_missing_elements = 6;</code>
+       */
+      public Builder setAppendMissingElements(com.google.firestore.v1beta1.ArrayValue value) {
+        if (appendMissingElementsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          transformType_ = value;
+          onChanged();
+        } else {
+          appendMissingElementsBuilder_.setMessage(value);
+        }
+        transformTypeCase_ = 6;
+        return this;
+      }
+      /**
+       * <pre>
+       * Append the given elements in order if they are not already present in
+       * the current field value.
+       * If the field is not an array, or if the field does not yet exist, it is
+       * first set to the empty array.
+       * Equivalent numbers of different types (e.g. 3L and 3.0) are
+       * considered equal when checking if a value is missing.
+       * NaN is equal to NaN, and Null is equal to Null.
+       * If the input contains multiple equivalent values, only the first will
+       * be considered.
+       * The corresponding transform_result will be the null value.
+       * </pre>
+       *
+       * <code>.google.firestore.v1beta1.ArrayValue append_missing_elements = 6;</code>
+       */
+      public Builder setAppendMissingElements(
+          com.google.firestore.v1beta1.ArrayValue.Builder builderForValue) {
+        if (appendMissingElementsBuilder_ == null) {
+          transformType_ = builderForValue.build();
+          onChanged();
+        } else {
+          appendMissingElementsBuilder_.setMessage(builderForValue.build());
+        }
+        transformTypeCase_ = 6;
+        return this;
+      }
+      /**
+       * <pre>
+       * Append the given elements in order if they are not already present in
+       * the current field value.
+       * If the field is not an array, or if the field does not yet exist, it is
+       * first set to the empty array.
+       * Equivalent numbers of different types (e.g. 3L and 3.0) are
+       * considered equal when checking if a value is missing.
+       * NaN is equal to NaN, and Null is equal to Null.
+       * If the input contains multiple equivalent values, only the first will
+       * be considered.
+       * The corresponding transform_result will be the null value.
+       * </pre>
+       *
+       * <code>.google.firestore.v1beta1.ArrayValue append_missing_elements = 6;</code>
+       */
+      public Builder mergeAppendMissingElements(com.google.firestore.v1beta1.ArrayValue value) {
+        if (appendMissingElementsBuilder_ == null) {
+          if (transformTypeCase_ == 6 &&
+              transformType_ != com.google.firestore.v1beta1.ArrayValue.getDefaultInstance()) {
+            transformType_ = com.google.firestore.v1beta1.ArrayValue.newBuilder((com.google.firestore.v1beta1.ArrayValue) transformType_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            transformType_ = value;
+          }
+          onChanged();
+        } else {
+          if (transformTypeCase_ == 6) {
+            appendMissingElementsBuilder_.mergeFrom(value);
+          }
+          appendMissingElementsBuilder_.setMessage(value);
+        }
+        transformTypeCase_ = 6;
+        return this;
+      }
+      /**
+       * <pre>
+       * Append the given elements in order if they are not already present in
+       * the current field value.
+       * If the field is not an array, or if the field does not yet exist, it is
+       * first set to the empty array.
+       * Equivalent numbers of different types (e.g. 3L and 3.0) are
+       * considered equal when checking if a value is missing.
+       * NaN is equal to NaN, and Null is equal to Null.
+       * If the input contains multiple equivalent values, only the first will
+       * be considered.
+       * The corresponding transform_result will be the null value.
+       * </pre>
+       *
+       * <code>.google.firestore.v1beta1.ArrayValue append_missing_elements = 6;</code>
+       */
+      public Builder clearAppendMissingElements() {
+        if (appendMissingElementsBuilder_ == null) {
+          if (transformTypeCase_ == 6) {
+            transformTypeCase_ = 0;
+            transformType_ = null;
+            onChanged();
+          }
+        } else {
+          if (transformTypeCase_ == 6) {
+            transformTypeCase_ = 0;
+            transformType_ = null;
+          }
+          appendMissingElementsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Append the given elements in order if they are not already present in
+       * the current field value.
+       * If the field is not an array, or if the field does not yet exist, it is
+       * first set to the empty array.
+       * Equivalent numbers of different types (e.g. 3L and 3.0) are
+       * considered equal when checking if a value is missing.
+       * NaN is equal to NaN, and Null is equal to Null.
+       * If the input contains multiple equivalent values, only the first will
+       * be considered.
+       * The corresponding transform_result will be the null value.
+       * </pre>
+       *
+       * <code>.google.firestore.v1beta1.ArrayValue append_missing_elements = 6;</code>
+       */
+      public com.google.firestore.v1beta1.ArrayValue.Builder getAppendMissingElementsBuilder() {
+        return getAppendMissingElementsFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Append the given elements in order if they are not already present in
+       * the current field value.
+       * If the field is not an array, or if the field does not yet exist, it is
+       * first set to the empty array.
+       * Equivalent numbers of different types (e.g. 3L and 3.0) are
+       * considered equal when checking if a value is missing.
+       * NaN is equal to NaN, and Null is equal to Null.
+       * If the input contains multiple equivalent values, only the first will
+       * be considered.
+       * The corresponding transform_result will be the null value.
+       * </pre>
+       *
+       * <code>.google.firestore.v1beta1.ArrayValue append_missing_elements = 6;</code>
+       */
+      public com.google.firestore.v1beta1.ArrayValueOrBuilder getAppendMissingElementsOrBuilder() {
+        if ((transformTypeCase_ == 6) && (appendMissingElementsBuilder_ != null)) {
+          return appendMissingElementsBuilder_.getMessageOrBuilder();
+        } else {
+          if (transformTypeCase_ == 6) {
+            return (com.google.firestore.v1beta1.ArrayValue) transformType_;
+          }
+          return com.google.firestore.v1beta1.ArrayValue.getDefaultInstance();
+        }
+      }
+      /**
+       * <pre>
+       * Append the given elements in order if they are not already present in
+       * the current field value.
+       * If the field is not an array, or if the field does not yet exist, it is
+       * first set to the empty array.
+       * Equivalent numbers of different types (e.g. 3L and 3.0) are
+       * considered equal when checking if a value is missing.
+       * NaN is equal to NaN, and Null is equal to Null.
+       * If the input contains multiple equivalent values, only the first will
+       * be considered.
+       * The corresponding transform_result will be the null value.
+       * </pre>
+       *
+       * <code>.google.firestore.v1beta1.ArrayValue append_missing_elements = 6;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.firestore.v1beta1.ArrayValue, com.google.firestore.v1beta1.ArrayValue.Builder, com.google.firestore.v1beta1.ArrayValueOrBuilder> 
+          getAppendMissingElementsFieldBuilder() {
+        if (appendMissingElementsBuilder_ == null) {
+          if (!(transformTypeCase_ == 6)) {
+            transformType_ = com.google.firestore.v1beta1.ArrayValue.getDefaultInstance();
+          }
+          appendMissingElementsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.google.firestore.v1beta1.ArrayValue, com.google.firestore.v1beta1.ArrayValue.Builder, com.google.firestore.v1beta1.ArrayValueOrBuilder>(
+                  (com.google.firestore.v1beta1.ArrayValue) transformType_,
+                  getParentForChildren(),
+                  isClean());
+          transformType_ = null;
+        }
+        transformTypeCase_ = 6;
+        onChanged();;
+        return appendMissingElementsBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.firestore.v1beta1.ArrayValue, com.google.firestore.v1beta1.ArrayValue.Builder, com.google.firestore.v1beta1.ArrayValueOrBuilder> removeAllFromArrayBuilder_;
+      /**
+       * <pre>
+       * Remove all of the given elements from the array in the field.
+       * If the field is not an array, or if the field does not yet exist, it is
+       * set to the empty array.
+       * Equivalent numbers of the different types (e.g. 3L and 3.0) are
+       * considered equal when deciding whether an element should be removed.
+       * NaN is equal to NaN, and Null is equal to Null.
+       * This will remove all equivalent values if there are duplicates.
+       * The corresponding transform_result will be the null value.
+       * </pre>
+       *
+       * <code>.google.firestore.v1beta1.ArrayValue remove_all_from_array = 7;</code>
+       */
+      public boolean hasRemoveAllFromArray() {
+        return transformTypeCase_ == 7;
+      }
+      /**
+       * <pre>
+       * Remove all of the given elements from the array in the field.
+       * If the field is not an array, or if the field does not yet exist, it is
+       * set to the empty array.
+       * Equivalent numbers of the different types (e.g. 3L and 3.0) are
+       * considered equal when deciding whether an element should be removed.
+       * NaN is equal to NaN, and Null is equal to Null.
+       * This will remove all equivalent values if there are duplicates.
+       * The corresponding transform_result will be the null value.
+       * </pre>
+       *
+       * <code>.google.firestore.v1beta1.ArrayValue remove_all_from_array = 7;</code>
+       */
+      public com.google.firestore.v1beta1.ArrayValue getRemoveAllFromArray() {
+        if (removeAllFromArrayBuilder_ == null) {
+          if (transformTypeCase_ == 7) {
+            return (com.google.firestore.v1beta1.ArrayValue) transformType_;
+          }
+          return com.google.firestore.v1beta1.ArrayValue.getDefaultInstance();
+        } else {
+          if (transformTypeCase_ == 7) {
+            return removeAllFromArrayBuilder_.getMessage();
+          }
+          return com.google.firestore.v1beta1.ArrayValue.getDefaultInstance();
+        }
+      }
+      /**
+       * <pre>
+       * Remove all of the given elements from the array in the field.
+       * If the field is not an array, or if the field does not yet exist, it is
+       * set to the empty array.
+       * Equivalent numbers of the different types (e.g. 3L and 3.0) are
+       * considered equal when deciding whether an element should be removed.
+       * NaN is equal to NaN, and Null is equal to Null.
+       * This will remove all equivalent values if there are duplicates.
+       * The corresponding transform_result will be the null value.
+       * </pre>
+       *
+       * <code>.google.firestore.v1beta1.ArrayValue remove_all_from_array = 7;</code>
+       */
+      public Builder setRemoveAllFromArray(com.google.firestore.v1beta1.ArrayValue value) {
+        if (removeAllFromArrayBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          transformType_ = value;
+          onChanged();
+        } else {
+          removeAllFromArrayBuilder_.setMessage(value);
+        }
+        transformTypeCase_ = 7;
+        return this;
+      }
+      /**
+       * <pre>
+       * Remove all of the given elements from the array in the field.
+       * If the field is not an array, or if the field does not yet exist, it is
+       * set to the empty array.
+       * Equivalent numbers of the different types (e.g. 3L and 3.0) are
+       * considered equal when deciding whether an element should be removed.
+       * NaN is equal to NaN, and Null is equal to Null.
+       * This will remove all equivalent values if there are duplicates.
+       * The corresponding transform_result will be the null value.
+       * </pre>
+       *
+       * <code>.google.firestore.v1beta1.ArrayValue remove_all_from_array = 7;</code>
+       */
+      public Builder setRemoveAllFromArray(
+          com.google.firestore.v1beta1.ArrayValue.Builder builderForValue) {
+        if (removeAllFromArrayBuilder_ == null) {
+          transformType_ = builderForValue.build();
+          onChanged();
+        } else {
+          removeAllFromArrayBuilder_.setMessage(builderForValue.build());
+        }
+        transformTypeCase_ = 7;
+        return this;
+      }
+      /**
+       * <pre>
+       * Remove all of the given elements from the array in the field.
+       * If the field is not an array, or if the field does not yet exist, it is
+       * set to the empty array.
+       * Equivalent numbers of the different types (e.g. 3L and 3.0) are
+       * considered equal when deciding whether an element should be removed.
+       * NaN is equal to NaN, and Null is equal to Null.
+       * This will remove all equivalent values if there are duplicates.
+       * The corresponding transform_result will be the null value.
+       * </pre>
+       *
+       * <code>.google.firestore.v1beta1.ArrayValue remove_all_from_array = 7;</code>
+       */
+      public Builder mergeRemoveAllFromArray(com.google.firestore.v1beta1.ArrayValue value) {
+        if (removeAllFromArrayBuilder_ == null) {
+          if (transformTypeCase_ == 7 &&
+              transformType_ != com.google.firestore.v1beta1.ArrayValue.getDefaultInstance()) {
+            transformType_ = com.google.firestore.v1beta1.ArrayValue.newBuilder((com.google.firestore.v1beta1.ArrayValue) transformType_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            transformType_ = value;
+          }
+          onChanged();
+        } else {
+          if (transformTypeCase_ == 7) {
+            removeAllFromArrayBuilder_.mergeFrom(value);
+          }
+          removeAllFromArrayBuilder_.setMessage(value);
+        }
+        transformTypeCase_ = 7;
+        return this;
+      }
+      /**
+       * <pre>
+       * Remove all of the given elements from the array in the field.
+       * If the field is not an array, or if the field does not yet exist, it is
+       * set to the empty array.
+       * Equivalent numbers of the different types (e.g. 3L and 3.0) are
+       * considered equal when deciding whether an element should be removed.
+       * NaN is equal to NaN, and Null is equal to Null.
+       * This will remove all equivalent values if there are duplicates.
+       * The corresponding transform_result will be the null value.
+       * </pre>
+       *
+       * <code>.google.firestore.v1beta1.ArrayValue remove_all_from_array = 7;</code>
+       */
+      public Builder clearRemoveAllFromArray() {
+        if (removeAllFromArrayBuilder_ == null) {
+          if (transformTypeCase_ == 7) {
+            transformTypeCase_ = 0;
+            transformType_ = null;
+            onChanged();
+          }
+        } else {
+          if (transformTypeCase_ == 7) {
+            transformTypeCase_ = 0;
+            transformType_ = null;
+          }
+          removeAllFromArrayBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Remove all of the given elements from the array in the field.
+       * If the field is not an array, or if the field does not yet exist, it is
+       * set to the empty array.
+       * Equivalent numbers of the different types (e.g. 3L and 3.0) are
+       * considered equal when deciding whether an element should be removed.
+       * NaN is equal to NaN, and Null is equal to Null.
+       * This will remove all equivalent values if there are duplicates.
+       * The corresponding transform_result will be the null value.
+       * </pre>
+       *
+       * <code>.google.firestore.v1beta1.ArrayValue remove_all_from_array = 7;</code>
+       */
+      public com.google.firestore.v1beta1.ArrayValue.Builder getRemoveAllFromArrayBuilder() {
+        return getRemoveAllFromArrayFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Remove all of the given elements from the array in the field.
+       * If the field is not an array, or if the field does not yet exist, it is
+       * set to the empty array.
+       * Equivalent numbers of the different types (e.g. 3L and 3.0) are
+       * considered equal when deciding whether an element should be removed.
+       * NaN is equal to NaN, and Null is equal to Null.
+       * This will remove all equivalent values if there are duplicates.
+       * The corresponding transform_result will be the null value.
+       * </pre>
+       *
+       * <code>.google.firestore.v1beta1.ArrayValue remove_all_from_array = 7;</code>
+       */
+      public com.google.firestore.v1beta1.ArrayValueOrBuilder getRemoveAllFromArrayOrBuilder() {
+        if ((transformTypeCase_ == 7) && (removeAllFromArrayBuilder_ != null)) {
+          return removeAllFromArrayBuilder_.getMessageOrBuilder();
+        } else {
+          if (transformTypeCase_ == 7) {
+            return (com.google.firestore.v1beta1.ArrayValue) transformType_;
+          }
+          return com.google.firestore.v1beta1.ArrayValue.getDefaultInstance();
+        }
+      }
+      /**
+       * <pre>
+       * Remove all of the given elements from the array in the field.
+       * If the field is not an array, or if the field does not yet exist, it is
+       * set to the empty array.
+       * Equivalent numbers of the different types (e.g. 3L and 3.0) are
+       * considered equal when deciding whether an element should be removed.
+       * NaN is equal to NaN, and Null is equal to Null.
+       * This will remove all equivalent values if there are duplicates.
+       * The corresponding transform_result will be the null value.
+       * </pre>
+       *
+       * <code>.google.firestore.v1beta1.ArrayValue remove_all_from_array = 7;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.firestore.v1beta1.ArrayValue, com.google.firestore.v1beta1.ArrayValue.Builder, com.google.firestore.v1beta1.ArrayValueOrBuilder> 
+          getRemoveAllFromArrayFieldBuilder() {
+        if (removeAllFromArrayBuilder_ == null) {
+          if (!(transformTypeCase_ == 7)) {
+            transformType_ = com.google.firestore.v1beta1.ArrayValue.getDefaultInstance();
+          }
+          removeAllFromArrayBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.google.firestore.v1beta1.ArrayValue, com.google.firestore.v1beta1.ArrayValue.Builder, com.google.firestore.v1beta1.ArrayValueOrBuilder>(
+                  (com.google.firestore.v1beta1.ArrayValue) transformType_,
+                  getParentForChildren(),
+                  isClean());
+          transformType_ = null;
+        }
+        transformTypeCase_ = 7;
+        onChanged();;
+        return removeAllFromArrayBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(

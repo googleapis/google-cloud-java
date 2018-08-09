@@ -54,6 +54,7 @@ import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.Project;
 import com.google.cloud.compute.v1.ProjectsGetXpnResources;
 import com.google.cloud.compute.v1.SetCommonInstanceMetadataProjectHttpRequest;
+import com.google.cloud.compute.v1.SetDefaultNetworkTierProjectHttpRequest;
 import com.google.cloud.compute.v1.SetUsageExportBucketProjectHttpRequest;
 import com.google.cloud.compute.v1.XpnHostList;
 import com.google.cloud.compute.v1.XpnResourceId;
@@ -129,6 +130,8 @@ public class ProjectStubSettings extends StubSettings<ProjectStubSettings> {
       moveInstanceProjectSettings;
   private final UnaryCallSettings<SetCommonInstanceMetadataProjectHttpRequest, Operation>
       setCommonInstanceMetadataProjectSettings;
+  private final UnaryCallSettings<SetDefaultNetworkTierProjectHttpRequest, Operation>
+      setDefaultNetworkTierProjectSettings;
   private final UnaryCallSettings<SetUsageExportBucketProjectHttpRequest, Operation>
       setUsageExportBucketProjectSettings;
 
@@ -196,6 +199,12 @@ public class ProjectStubSettings extends StubSettings<ProjectStubSettings> {
   public UnaryCallSettings<SetCommonInstanceMetadataProjectHttpRequest, Operation>
       setCommonInstanceMetadataProjectSettings() {
     return setCommonInstanceMetadataProjectSettings;
+  }
+
+  /** Returns the object with the settings used for calls to setDefaultNetworkTierProject. */
+  public UnaryCallSettings<SetDefaultNetworkTierProjectHttpRequest, Operation>
+      setDefaultNetworkTierProjectSettings() {
+    return setDefaultNetworkTierProjectSettings;
   }
 
   /** Returns the object with the settings used for calls to setUsageExportBucketProject. */
@@ -290,6 +299,8 @@ public class ProjectStubSettings extends StubSettings<ProjectStubSettings> {
     moveInstanceProjectSettings = settingsBuilder.moveInstanceProjectSettings().build();
     setCommonInstanceMetadataProjectSettings =
         settingsBuilder.setCommonInstanceMetadataProjectSettings().build();
+    setDefaultNetworkTierProjectSettings =
+        settingsBuilder.setDefaultNetworkTierProjectSettings().build();
     setUsageExportBucketProjectSettings =
         settingsBuilder.setUsageExportBucketProjectSettings().build();
   }
@@ -444,6 +455,8 @@ public class ProjectStubSettings extends StubSettings<ProjectStubSettings> {
         moveInstanceProjectSettings;
     private final UnaryCallSettings.Builder<SetCommonInstanceMetadataProjectHttpRequest, Operation>
         setCommonInstanceMetadataProjectSettings;
+    private final UnaryCallSettings.Builder<SetDefaultNetworkTierProjectHttpRequest, Operation>
+        setDefaultNetworkTierProjectSettings;
     private final UnaryCallSettings.Builder<SetUsageExportBucketProjectHttpRequest, Operation>
         setUsageExportBucketProjectSettings;
 
@@ -512,6 +525,8 @@ public class ProjectStubSettings extends StubSettings<ProjectStubSettings> {
 
       setCommonInstanceMetadataProjectSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      setDefaultNetworkTierProjectSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       setUsageExportBucketProjectSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
@@ -527,6 +542,7 @@ public class ProjectStubSettings extends StubSettings<ProjectStubSettings> {
               moveDiskProjectSettings,
               moveInstanceProjectSettings,
               setCommonInstanceMetadataProjectSettings,
+              setDefaultNetworkTierProjectSettings,
               setUsageExportBucketProjectSettings);
 
       initDefaults(this);
@@ -599,6 +615,11 @@ public class ProjectStubSettings extends StubSettings<ProjectStubSettings> {
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
+          .setDefaultNetworkTierProjectSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
           .setUsageExportBucketProjectSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
@@ -621,6 +642,8 @@ public class ProjectStubSettings extends StubSettings<ProjectStubSettings> {
       moveInstanceProjectSettings = settings.moveInstanceProjectSettings.toBuilder();
       setCommonInstanceMetadataProjectSettings =
           settings.setCommonInstanceMetadataProjectSettings.toBuilder();
+      setDefaultNetworkTierProjectSettings =
+          settings.setDefaultNetworkTierProjectSettings.toBuilder();
       setUsageExportBucketProjectSettings =
           settings.setUsageExportBucketProjectSettings.toBuilder();
 
@@ -637,6 +660,7 @@ public class ProjectStubSettings extends StubSettings<ProjectStubSettings> {
               moveDiskProjectSettings,
               moveInstanceProjectSettings,
               setCommonInstanceMetadataProjectSettings,
+              setDefaultNetworkTierProjectSettings,
               setUsageExportBucketProjectSettings);
     }
 
@@ -722,6 +746,12 @@ public class ProjectStubSettings extends StubSettings<ProjectStubSettings> {
     public UnaryCallSettings.Builder<SetCommonInstanceMetadataProjectHttpRequest, Operation>
         setCommonInstanceMetadataProjectSettings() {
       return setCommonInstanceMetadataProjectSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setDefaultNetworkTierProject. */
+    public UnaryCallSettings.Builder<SetDefaultNetworkTierProjectHttpRequest, Operation>
+        setDefaultNetworkTierProjectSettings() {
+      return setDefaultNetworkTierProjectSettings;
     }
 
     /** Returns the builder for the settings used for calls to setUsageExportBucketProject. */

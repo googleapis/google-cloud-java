@@ -517,7 +517,8 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * An array value.
-   * Cannot contain another array value.
+   * Cannot directly contain another array value, though can contain an
+   * map which contains another array.
    * </pre>
    *
    * <code>.google.firestore.v1beta1.ArrayValue array_value = 9;</code>
@@ -528,7 +529,8 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * An array value.
-   * Cannot contain another array value.
+   * Cannot directly contain another array value, though can contain an
+   * map which contains another array.
    * </pre>
    *
    * <code>.google.firestore.v1beta1.ArrayValue array_value = 9;</code>
@@ -542,7 +544,8 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * An array value.
-   * Cannot contain another array value.
+   * Cannot directly contain another array value, though can contain an
+   * map which contains another array.
    * </pre>
    *
    * <code>.google.firestore.v1beta1.ArrayValue array_value = 9;</code>
@@ -2027,7 +2030,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * An array value.
-     * Cannot contain another array value.
+     * Cannot directly contain another array value, though can contain an
+     * map which contains another array.
      * </pre>
      *
      * <code>.google.firestore.v1beta1.ArrayValue array_value = 9;</code>
@@ -2038,7 +2042,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * An array value.
-     * Cannot contain another array value.
+     * Cannot directly contain another array value, though can contain an
+     * map which contains another array.
      * </pre>
      *
      * <code>.google.firestore.v1beta1.ArrayValue array_value = 9;</code>
@@ -2059,7 +2064,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * An array value.
-     * Cannot contain another array value.
+     * Cannot directly contain another array value, though can contain an
+     * map which contains another array.
      * </pre>
      *
      * <code>.google.firestore.v1beta1.ArrayValue array_value = 9;</code>
@@ -2080,7 +2086,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * An array value.
-     * Cannot contain another array value.
+     * Cannot directly contain another array value, though can contain an
+     * map which contains another array.
      * </pre>
      *
      * <code>.google.firestore.v1beta1.ArrayValue array_value = 9;</code>
@@ -2099,7 +2106,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * An array value.
-     * Cannot contain another array value.
+     * Cannot directly contain another array value, though can contain an
+     * map which contains another array.
      * </pre>
      *
      * <code>.google.firestore.v1beta1.ArrayValue array_value = 9;</code>
@@ -2126,7 +2134,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * An array value.
-     * Cannot contain another array value.
+     * Cannot directly contain another array value, though can contain an
+     * map which contains another array.
      * </pre>
      *
      * <code>.google.firestore.v1beta1.ArrayValue array_value = 9;</code>
@@ -2150,7 +2159,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * An array value.
-     * Cannot contain another array value.
+     * Cannot directly contain another array value, though can contain an
+     * map which contains another array.
      * </pre>
      *
      * <code>.google.firestore.v1beta1.ArrayValue array_value = 9;</code>
@@ -2161,7 +2171,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * An array value.
-     * Cannot contain another array value.
+     * Cannot directly contain another array value, though can contain an
+     * map which contains another array.
      * </pre>
      *
      * <code>.google.firestore.v1beta1.ArrayValue array_value = 9;</code>
@@ -2179,7 +2190,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * An array value.
-     * Cannot contain another array value.
+     * Cannot directly contain another array value, though can contain an
+     * map which contains another array.
      * </pre>
      *
      * <code>.google.firestore.v1beta1.ArrayValue array_value = 9;</code>

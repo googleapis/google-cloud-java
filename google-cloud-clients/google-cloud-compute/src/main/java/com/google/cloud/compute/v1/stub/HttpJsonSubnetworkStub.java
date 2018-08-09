@@ -17,6 +17,7 @@ package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.SubnetworkClient.AggregatedListSubnetworksPagedResponse;
 import static com.google.cloud.compute.v1.SubnetworkClient.ListSubnetworksPagedResponse;
+import static com.google.cloud.compute.v1.SubnetworkClient.ListUsableSubnetworksPagedResponse;
 
 import com.google.api.client.http.HttpMethods;
 import com.google.api.core.BetaApi;
@@ -37,6 +38,7 @@ import com.google.cloud.compute.v1.ExpandIpCidrRangeSubnetworkHttpRequest;
 import com.google.cloud.compute.v1.GetSubnetworkHttpRequest;
 import com.google.cloud.compute.v1.InsertSubnetworkHttpRequest;
 import com.google.cloud.compute.v1.ListSubnetworksHttpRequest;
+import com.google.cloud.compute.v1.ListUsableSubnetworksHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchSubnetworkHttpRequest;
 import com.google.cloud.compute.v1.ProjectName;
@@ -46,6 +48,7 @@ import com.google.cloud.compute.v1.SetPrivateIpGoogleAccessSubnetworkHttpRequest
 import com.google.cloud.compute.v1.Subnetwork;
 import com.google.cloud.compute.v1.SubnetworkAggregatedList;
 import com.google.cloud.compute.v1.SubnetworkList;
+import com.google.cloud.compute.v1.UsableSubnetworksAggregatedList;
 import com.google.common.collect.Sets;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
@@ -188,6 +191,29 @@ public class HttpJsonSubnetworkStub extends SubnetworkStub {
               .build();
 
   @InternalApi
+  public static final ApiMethodDescriptor<
+          ListUsableSubnetworksHttpRequest, UsableSubnetworksAggregatedList>
+      listUsableSubnetworksMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListUsableSubnetworksHttpRequest, UsableSubnetworksAggregatedList>newBuilder()
+              .setFullMethodName("compute.subnetworks.listUsable")
+              .setHttpMethod(HttpMethods.GET)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter.<ListUsableSubnetworksHttpRequest>newBuilder()
+                      .setPathTemplate(
+                          PathTemplate.create("{project}/aggregated/subnetworks/listUsable"))
+                      .setQueryParams(
+                          Sets.<String>newHashSet("filter", "maxResults", "orderBy", "pageToken"))
+                      .setResourceNameFactory(ProjectName.newFactory())
+                      .setResourceNameField("project")
+                      .build())
+              .setResponseParser(
+                  ApiMessageHttpResponseParser.<UsableSubnetworksAggregatedList>newBuilder()
+                      .setResponseInstance(UsableSubnetworksAggregatedList.getDefaultInstance())
+                      .build())
+              .build();
+
+  @InternalApi
   public static final ApiMethodDescriptor<PatchSubnetworkHttpRequest, Operation>
       patchSubnetworkMethodDescriptor =
           ApiMethodDescriptor.<PatchSubnetworkHttpRequest, Operation>newBuilder()
@@ -245,6 +271,10 @@ public class HttpJsonSubnetworkStub extends SubnetworkStub {
   private final UnaryCallable<ListSubnetworksHttpRequest, SubnetworkList> listSubnetworksCallable;
   private final UnaryCallable<ListSubnetworksHttpRequest, ListSubnetworksPagedResponse>
       listSubnetworksPagedCallable;
+  private final UnaryCallable<ListUsableSubnetworksHttpRequest, UsableSubnetworksAggregatedList>
+      listUsableSubnetworksCallable;
+  private final UnaryCallable<ListUsableSubnetworksHttpRequest, ListUsableSubnetworksPagedResponse>
+      listUsableSubnetworksPagedCallable;
   private final UnaryCallable<PatchSubnetworkHttpRequest, Operation> patchSubnetworkCallable;
   private final UnaryCallable<SetPrivateIpGoogleAccessSubnetworkHttpRequest, Operation>
       setPrivateIpGoogleAccessSubnetworkCallable;
@@ -317,6 +347,12 @@ public class HttpJsonSubnetworkStub extends SubnetworkStub {
             HttpJsonCallSettings.<ListSubnetworksHttpRequest, SubnetworkList>newBuilder()
                 .setMethodDescriptor(listSubnetworksMethodDescriptor)
                 .build();
+    HttpJsonCallSettings<ListUsableSubnetworksHttpRequest, UsableSubnetworksAggregatedList>
+        listUsableSubnetworksTransportSettings =
+            HttpJsonCallSettings
+                .<ListUsableSubnetworksHttpRequest, UsableSubnetworksAggregatedList>newBuilder()
+                .setMethodDescriptor(listUsableSubnetworksMethodDescriptor)
+                .build();
     HttpJsonCallSettings<PatchSubnetworkHttpRequest, Operation> patchSubnetworkTransportSettings =
         HttpJsonCallSettings.<PatchSubnetworkHttpRequest, Operation>newBuilder()
             .setMethodDescriptor(patchSubnetworkMethodDescriptor)
@@ -358,6 +394,16 @@ public class HttpJsonSubnetworkStub extends SubnetworkStub {
     this.listSubnetworksPagedCallable =
         callableFactory.createPagedCallable(
             listSubnetworksTransportSettings, settings.listSubnetworksSettings(), clientContext);
+    this.listUsableSubnetworksCallable =
+        callableFactory.createUnaryCallable(
+            listUsableSubnetworksTransportSettings,
+            settings.listUsableSubnetworksSettings(),
+            clientContext);
+    this.listUsableSubnetworksPagedCallable =
+        callableFactory.createPagedCallable(
+            listUsableSubnetworksTransportSettings,
+            settings.listUsableSubnetworksSettings(),
+            clientContext);
     this.patchSubnetworkCallable =
         callableFactory.createUnaryCallable(
             patchSubnetworkTransportSettings, settings.patchSubnetworkSettings(), clientContext);
@@ -412,6 +458,18 @@ public class HttpJsonSubnetworkStub extends SubnetworkStub {
   @BetaApi
   public UnaryCallable<ListSubnetworksHttpRequest, SubnetworkList> listSubnetworksCallable() {
     return listSubnetworksCallable;
+  }
+
+  @BetaApi
+  public UnaryCallable<ListUsableSubnetworksHttpRequest, ListUsableSubnetworksPagedResponse>
+      listUsableSubnetworksPagedCallable() {
+    return listUsableSubnetworksPagedCallable;
+  }
+
+  @BetaApi
+  public UnaryCallable<ListUsableSubnetworksHttpRequest, UsableSubnetworksAggregatedList>
+      listUsableSubnetworksCallable() {
+    return listUsableSubnetworksCallable;
   }
 
   @BetaApi

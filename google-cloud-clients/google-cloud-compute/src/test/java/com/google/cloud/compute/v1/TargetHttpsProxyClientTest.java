@@ -20,6 +20,7 @@ import static com.google.cloud.compute.v1.stub.HttpJsonTargetHttpsProxyStub.dele
 import static com.google.cloud.compute.v1.stub.HttpJsonTargetHttpsProxyStub.getTargetHttpsProxyMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonTargetHttpsProxyStub.insertTargetHttpsProxyMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonTargetHttpsProxyStub.listTargetHttpsProxiesMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonTargetHttpsProxyStub.setQuicOverrideTargetHttpsProxyMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonTargetHttpsProxyStub.setSslCertificatesTargetHttpsProxyMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonTargetHttpsProxyStub.setSslPolicyTargetHttpsProxyMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonTargetHttpsProxyStub.setUrlMapTargetHttpsProxyMethodDescriptor;
@@ -56,6 +57,7 @@ public class TargetHttpsProxyClientTest {
               getTargetHttpsProxyMethodDescriptor,
               insertTargetHttpsProxyMethodDescriptor,
               listTargetHttpsProxiesMethodDescriptor,
+              setQuicOverrideTargetHttpsProxyMethodDescriptor,
               setSslCertificatesTargetHttpsProxyMethodDescriptor,
               setSslPolicyTargetHttpsProxyMethodDescriptor,
               setUrlMapTargetHttpsProxyMethodDescriptor));
@@ -389,6 +391,103 @@ public class TargetHttpsProxyClientTest {
       ProjectName project = ProjectName.of("[PROJECT]");
 
       client.listTargetHttpsProxies(project);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void setQuicOverrideTargetHttpsProxyTest() {
+    String httpErrorMessage = "httpErrorMessage1276263769";
+    String targetId = "targetId-815576439";
+    String kind = "kind3292052";
+    String description = "description-1724546052";
+    String statusMessage = "statusMessage-239442758";
+    String selfLink = "selfLink-1691268851";
+    String insertTime = "insertTime-103148397";
+    Integer httpErrorStatusCode = 1386087020;
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
+    String targetLink = "targetLink-2084812312";
+    String creationTimestamp = "creationTimestamp567396278";
+    String name = "name3373707";
+    Integer progress = 1001078227;
+    String operationType = "operationType-1432962286";
+    String startTime = "startTime-1573145462";
+    String endTime = "endTime1725551537";
+    String id = "id3355";
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+    String clientOperationId = "clientOperationId-239630617";
+    String user = "user3599307";
+    String status = "status-892481550";
+    Operation expectedResponse =
+        Operation.newBuilder()
+            .setHttpErrorMessage(httpErrorMessage)
+            .setTargetId(targetId)
+            .setKind(kind)
+            .setDescription(description)
+            .setStatusMessage(statusMessage)
+            .setSelfLink(selfLink)
+            .setInsertTime(insertTime)
+            .setHttpErrorStatusCode(httpErrorStatusCode)
+            .setZone(zone.toString())
+            .setTargetLink(targetLink)
+            .setCreationTimestamp(creationTimestamp)
+            .setName(name)
+            .setProgress(progress)
+            .setOperationType(operationType)
+            .setStartTime(startTime)
+            .setEndTime(endTime)
+            .setId(id)
+            .setRegion(region.toString())
+            .setClientOperationId(clientOperationId)
+            .setUser(user)
+            .setStatus(status)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ProjectGlobalTargetHttpsProxyName targetHttpsProxy =
+        ProjectGlobalTargetHttpsProxyName.of("[PROJECT]", "[TARGET_HTTPS_PROXY]");
+    TargetHttpsProxiesSetQuicOverrideRequest targetHttpsProxiesSetQuicOverrideRequestResource =
+        TargetHttpsProxiesSetQuicOverrideRequest.newBuilder().build();
+
+    Operation actualResponse =
+        client.setQuicOverrideTargetHttpsProxy(
+            targetHttpsProxy, targetHttpsProxiesSetQuicOverrideRequestResource);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void setQuicOverrideTargetHttpsProxyExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ProjectGlobalTargetHttpsProxyName targetHttpsProxy =
+          ProjectGlobalTargetHttpsProxyName.of("[PROJECT]", "[TARGET_HTTPS_PROXY]");
+      TargetHttpsProxiesSetQuicOverrideRequest targetHttpsProxiesSetQuicOverrideRequestResource =
+          TargetHttpsProxiesSetQuicOverrideRequest.newBuilder().build();
+
+      client.setQuicOverrideTargetHttpsProxy(
+          targetHttpsProxy, targetHttpsProxiesSetQuicOverrideRequestResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

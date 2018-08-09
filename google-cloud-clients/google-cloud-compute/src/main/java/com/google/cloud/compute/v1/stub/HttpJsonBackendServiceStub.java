@@ -31,12 +31,14 @@ import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.pathtemplate.PathTemplate;
+import com.google.cloud.compute.v1.AddSignedUrlKeyBackendServiceHttpRequest;
 import com.google.cloud.compute.v1.AggregatedListBackendServicesHttpRequest;
 import com.google.cloud.compute.v1.BackendService;
 import com.google.cloud.compute.v1.BackendServiceAggregatedList;
 import com.google.cloud.compute.v1.BackendServiceGroupHealth;
 import com.google.cloud.compute.v1.BackendServiceList;
 import com.google.cloud.compute.v1.DeleteBackendServiceHttpRequest;
+import com.google.cloud.compute.v1.DeleteSignedUrlKeyBackendServiceHttpRequest;
 import com.google.cloud.compute.v1.GetBackendServiceHttpRequest;
 import com.google.cloud.compute.v1.GetHealthBackendServiceHttpRequest;
 import com.google.cloud.compute.v1.InsertBackendServiceHttpRequest;
@@ -60,6 +62,28 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonBackendServiceStub extends BackendServiceStub {
+  @InternalApi
+  public static final ApiMethodDescriptor<AddSignedUrlKeyBackendServiceHttpRequest, Operation>
+      addSignedUrlKeyBackendServiceMethodDescriptor =
+          ApiMethodDescriptor.<AddSignedUrlKeyBackendServiceHttpRequest, Operation>newBuilder()
+              .setFullMethodName("compute.backendServices.addSignedUrlKey")
+              .setHttpMethod(HttpMethods.POST)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter
+                      .<AddSignedUrlKeyBackendServiceHttpRequest>newBuilder()
+                      .setPathTemplate(
+                          PathTemplate.create(
+                              "{project}/global/backendServices/{backendService}/addSignedUrlKey"))
+                      .setQueryParams(Sets.<String>newHashSet("requestId"))
+                      .setResourceNameFactory(ProjectGlobalBackendServiceName.newFactory())
+                      .setResourceNameField("backendService")
+                      .build())
+              .setResponseParser(
+                  ApiMessageHttpResponseParser.<Operation>newBuilder()
+                      .setResponseInstance(Operation.getDefaultInstance())
+                      .build())
+              .build();
+
   @InternalApi
   public static final ApiMethodDescriptor<
           AggregatedListBackendServicesHttpRequest, BackendServiceAggregatedList>
@@ -94,6 +118,28 @@ public class HttpJsonBackendServiceStub extends BackendServiceStub {
                       .setPathTemplate(
                           PathTemplate.create("{project}/global/backendServices/{backendService}"))
                       .setQueryParams(Sets.<String>newHashSet("requestId"))
+                      .setResourceNameFactory(ProjectGlobalBackendServiceName.newFactory())
+                      .setResourceNameField("backendService")
+                      .build())
+              .setResponseParser(
+                  ApiMessageHttpResponseParser.<Operation>newBuilder()
+                      .setResponseInstance(Operation.getDefaultInstance())
+                      .build())
+              .build();
+
+  @InternalApi
+  public static final ApiMethodDescriptor<DeleteSignedUrlKeyBackendServiceHttpRequest, Operation>
+      deleteSignedUrlKeyBackendServiceMethodDescriptor =
+          ApiMethodDescriptor.<DeleteSignedUrlKeyBackendServiceHttpRequest, Operation>newBuilder()
+              .setFullMethodName("compute.backendServices.deleteSignedUrlKey")
+              .setHttpMethod(HttpMethods.POST)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter
+                      .<DeleteSignedUrlKeyBackendServiceHttpRequest>newBuilder()
+                      .setPathTemplate(
+                          PathTemplate.create(
+                              "{project}/global/backendServices/{backendService}/deleteSignedUrlKey"))
+                      .setQueryParams(Sets.<String>newHashSet("keyName", "requestId"))
                       .setResourceNameFactory(ProjectGlobalBackendServiceName.newFactory())
                       .setResourceNameField("backendService")
                       .build())
@@ -227,6 +273,8 @@ public class HttpJsonBackendServiceStub extends BackendServiceStub {
 
   private final BackgroundResource backgroundResources;
 
+  private final UnaryCallable<AddSignedUrlKeyBackendServiceHttpRequest, Operation>
+      addSignedUrlKeyBackendServiceCallable;
   private final UnaryCallable<
           AggregatedListBackendServicesHttpRequest, BackendServiceAggregatedList>
       aggregatedListBackendServicesCallable;
@@ -235,6 +283,8 @@ public class HttpJsonBackendServiceStub extends BackendServiceStub {
       aggregatedListBackendServicesPagedCallable;
   private final UnaryCallable<DeleteBackendServiceHttpRequest, Operation>
       deleteBackendServiceCallable;
+  private final UnaryCallable<DeleteSignedUrlKeyBackendServiceHttpRequest, Operation>
+      deleteSignedUrlKeyBackendServiceCallable;
   private final UnaryCallable<GetBackendServiceHttpRequest, BackendService>
       getBackendServiceCallable;
   private final UnaryCallable<GetHealthBackendServiceHttpRequest, BackendServiceGroupHealth>
@@ -291,6 +341,11 @@ public class HttpJsonBackendServiceStub extends BackendServiceStub {
       throws IOException {
     this.callableFactory = callableFactory;
 
+    HttpJsonCallSettings<AddSignedUrlKeyBackendServiceHttpRequest, Operation>
+        addSignedUrlKeyBackendServiceTransportSettings =
+            HttpJsonCallSettings.<AddSignedUrlKeyBackendServiceHttpRequest, Operation>newBuilder()
+                .setMethodDescriptor(addSignedUrlKeyBackendServiceMethodDescriptor)
+                .build();
     HttpJsonCallSettings<AggregatedListBackendServicesHttpRequest, BackendServiceAggregatedList>
         aggregatedListBackendServicesTransportSettings =
             HttpJsonCallSettings
@@ -302,6 +357,12 @@ public class HttpJsonBackendServiceStub extends BackendServiceStub {
         deleteBackendServiceTransportSettings =
             HttpJsonCallSettings.<DeleteBackendServiceHttpRequest, Operation>newBuilder()
                 .setMethodDescriptor(deleteBackendServiceMethodDescriptor)
+                .build();
+    HttpJsonCallSettings<DeleteSignedUrlKeyBackendServiceHttpRequest, Operation>
+        deleteSignedUrlKeyBackendServiceTransportSettings =
+            HttpJsonCallSettings
+                .<DeleteSignedUrlKeyBackendServiceHttpRequest, Operation>newBuilder()
+                .setMethodDescriptor(deleteSignedUrlKeyBackendServiceMethodDescriptor)
                 .build();
     HttpJsonCallSettings<GetBackendServiceHttpRequest, BackendService>
         getBackendServiceTransportSettings =
@@ -335,6 +396,11 @@ public class HttpJsonBackendServiceStub extends BackendServiceStub {
                 .setMethodDescriptor(updateBackendServiceMethodDescriptor)
                 .build();
 
+    this.addSignedUrlKeyBackendServiceCallable =
+        callableFactory.createUnaryCallable(
+            addSignedUrlKeyBackendServiceTransportSettings,
+            settings.addSignedUrlKeyBackendServiceSettings(),
+            clientContext);
     this.aggregatedListBackendServicesCallable =
         callableFactory.createUnaryCallable(
             aggregatedListBackendServicesTransportSettings,
@@ -349,6 +415,11 @@ public class HttpJsonBackendServiceStub extends BackendServiceStub {
         callableFactory.createUnaryCallable(
             deleteBackendServiceTransportSettings,
             settings.deleteBackendServiceSettings(),
+            clientContext);
+    this.deleteSignedUrlKeyBackendServiceCallable =
+        callableFactory.createUnaryCallable(
+            deleteSignedUrlKeyBackendServiceTransportSettings,
+            settings.deleteSignedUrlKeyBackendServiceSettings(),
             clientContext);
     this.getBackendServiceCallable =
         callableFactory.createUnaryCallable(
@@ -390,6 +461,12 @@ public class HttpJsonBackendServiceStub extends BackendServiceStub {
   }
 
   @BetaApi
+  public UnaryCallable<AddSignedUrlKeyBackendServiceHttpRequest, Operation>
+      addSignedUrlKeyBackendServiceCallable() {
+    return addSignedUrlKeyBackendServiceCallable;
+  }
+
+  @BetaApi
   public UnaryCallable<
           AggregatedListBackendServicesHttpRequest, AggregatedListBackendServicesPagedResponse>
       aggregatedListBackendServicesPagedCallable() {
@@ -405,6 +482,12 @@ public class HttpJsonBackendServiceStub extends BackendServiceStub {
   @BetaApi
   public UnaryCallable<DeleteBackendServiceHttpRequest, Operation> deleteBackendServiceCallable() {
     return deleteBackendServiceCallable;
+  }
+
+  @BetaApi
+  public UnaryCallable<DeleteSignedUrlKeyBackendServiceHttpRequest, Operation>
+      deleteSignedUrlKeyBackendServiceCallable() {
+    return deleteSignedUrlKeyBackendServiceCallable;
   }
 
   @BetaApi

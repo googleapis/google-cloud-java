@@ -50,6 +50,7 @@ import com.google.cloud.compute.v1.InterconnectAttachmentList;
 import com.google.cloud.compute.v1.InterconnectAttachmentsScopedList;
 import com.google.cloud.compute.v1.ListInterconnectAttachmentsHttpRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.PatchInterconnectAttachmentHttpRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -115,6 +116,8 @@ public class InterconnectAttachmentStubSettings
           ListInterconnectAttachmentsHttpRequest, InterconnectAttachmentList,
           ListInterconnectAttachmentsPagedResponse>
       listInterconnectAttachmentsSettings;
+  private final UnaryCallSettings<PatchInterconnectAttachmentHttpRequest, Operation>
+      patchInterconnectAttachmentSettings;
 
   /**
    * Returns the object with the settings used for calls to aggregatedListInterconnectAttachments.
@@ -150,6 +153,12 @@ public class InterconnectAttachmentStubSettings
           ListInterconnectAttachmentsPagedResponse>
       listInterconnectAttachmentsSettings() {
     return listInterconnectAttachmentsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to patchInterconnectAttachment. */
+  public UnaryCallSettings<PatchInterconnectAttachmentHttpRequest, Operation>
+      patchInterconnectAttachmentSettings() {
+    return patchInterconnectAttachmentSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -236,6 +245,8 @@ public class InterconnectAttachmentStubSettings
         settingsBuilder.insertInterconnectAttachmentSettings().build();
     listInterconnectAttachmentsSettings =
         settingsBuilder.listInterconnectAttachmentsSettings().build();
+    patchInterconnectAttachmentSettings =
+        settingsBuilder.patchInterconnectAttachmentSettings().build();
   }
 
   private static final PagedListDescriptor<
@@ -406,6 +417,8 @@ public class InterconnectAttachmentStubSettings
             ListInterconnectAttachmentsHttpRequest, InterconnectAttachmentList,
             ListInterconnectAttachmentsPagedResponse>
         listInterconnectAttachmentsSettings;
+    private final UnaryCallSettings.Builder<PatchInterconnectAttachmentHttpRequest, Operation>
+        patchInterconnectAttachmentSettings;
 
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
@@ -460,13 +473,16 @@ public class InterconnectAttachmentStubSettings
       listInterconnectAttachmentsSettings =
           PagedCallSettings.newBuilder(LIST_INTERCONNECT_ATTACHMENTS_PAGE_STR_FACT);
 
+      patchInterconnectAttachmentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               aggregatedListInterconnectAttachmentsSettings,
               deleteInterconnectAttachmentSettings,
               getInterconnectAttachmentSettings,
               insertInterconnectAttachmentSettings,
-              listInterconnectAttachmentsSettings);
+              listInterconnectAttachmentsSettings,
+              patchInterconnectAttachmentSettings);
 
       initDefaults(this);
     }
@@ -507,6 +523,11 @@ public class InterconnectAttachmentStubSettings
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
+      builder
+          .patchInterconnectAttachmentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
       return builder;
     }
 
@@ -522,6 +543,8 @@ public class InterconnectAttachmentStubSettings
           settings.insertInterconnectAttachmentSettings.toBuilder();
       listInterconnectAttachmentsSettings =
           settings.listInterconnectAttachmentsSettings.toBuilder();
+      patchInterconnectAttachmentSettings =
+          settings.patchInterconnectAttachmentSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -529,7 +552,8 @@ public class InterconnectAttachmentStubSettings
               deleteInterconnectAttachmentSettings,
               getInterconnectAttachmentSettings,
               insertInterconnectAttachmentSettings,
-              listInterconnectAttachmentsSettings);
+              listInterconnectAttachmentsSettings,
+              patchInterconnectAttachmentSettings);
     }
 
     // NEXT_MAJOR_VER: remove 'throws Exception'
@@ -582,6 +606,12 @@ public class InterconnectAttachmentStubSettings
             ListInterconnectAttachmentsPagedResponse>
         listInterconnectAttachmentsSettings() {
       return listInterconnectAttachmentsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to patchInterconnectAttachment. */
+    public UnaryCallSettings.Builder<PatchInterconnectAttachmentHttpRequest, Operation>
+        patchInterconnectAttachmentSettings() {
+      return patchInterconnectAttachmentSettings;
     }
 
     @Override

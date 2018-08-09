@@ -34,6 +34,7 @@ public final class Address implements ApiMessage {
   private final String ipVersion;
   private final String kind;
   private final String name;
+  private final String networkTier;
   private final String region;
   private final String selfLink;
   private final String status;
@@ -49,6 +50,7 @@ public final class Address implements ApiMessage {
     this.ipVersion = null;
     this.kind = null;
     this.name = null;
+    this.networkTier = null;
     this.region = null;
     this.selfLink = null;
     this.status = null;
@@ -65,6 +67,7 @@ public final class Address implements ApiMessage {
       String ipVersion,
       String kind,
       String name,
+      String networkTier,
       String region,
       String selfLink,
       String status,
@@ -78,6 +81,7 @@ public final class Address implements ApiMessage {
     this.ipVersion = ipVersion;
     this.kind = kind;
     this.name = name;
+    this.networkTier = networkTier;
     this.region = region;
     this.selfLink = selfLink;
     this.status = status;
@@ -110,6 +114,9 @@ public final class Address implements ApiMessage {
     }
     if (fieldName.equals("name")) {
       return name;
+    }
+    if (fieldName.equals("networkTier")) {
+      return networkTier;
     }
     if (fieldName.equals("region")) {
       return region;
@@ -173,6 +180,10 @@ public final class Address implements ApiMessage {
     return name;
   }
 
+  public String getNetworkTier() {
+    return networkTier;
+  }
+
   public String getRegion() {
     return region;
   }
@@ -224,6 +235,7 @@ public final class Address implements ApiMessage {
     private String ipVersion;
     private String kind;
     private String name;
+    private String networkTier;
     private String region;
     private String selfLink;
     private String status;
@@ -258,6 +270,9 @@ public final class Address implements ApiMessage {
       if (other.getName() != null) {
         this.name = other.name;
       }
+      if (other.getNetworkTier() != null) {
+        this.networkTier = other.networkTier;
+      }
       if (other.getRegion() != null) {
         this.region = other.region;
       }
@@ -285,6 +300,7 @@ public final class Address implements ApiMessage {
       this.ipVersion = source.ipVersion;
       this.kind = source.kind;
       this.name = source.name;
+      this.networkTier = source.networkTier;
       this.region = source.region;
       this.selfLink = source.selfLink;
       this.status = source.status;
@@ -364,6 +380,15 @@ public final class Address implements ApiMessage {
       return this;
     }
 
+    public String getNetworkTier() {
+      return networkTier;
+    }
+
+    public Builder setNetworkTier(String networkTier) {
+      this.networkTier = networkTier;
+      return this;
+    }
+
     public String getRegion() {
       return region;
     }
@@ -431,6 +456,7 @@ public final class Address implements ApiMessage {
           ipVersion,
           kind,
           name,
+          networkTier,
           region,
           selfLink,
           status,
@@ -448,6 +474,7 @@ public final class Address implements ApiMessage {
       newBuilder.setIpVersion(this.ipVersion);
       newBuilder.setKind(this.kind);
       newBuilder.setName(this.name);
+      newBuilder.setNetworkTier(this.networkTier);
       newBuilder.setRegion(this.region);
       newBuilder.setSelfLink(this.selfLink);
       newBuilder.setStatus(this.status);
@@ -484,6 +511,9 @@ public final class Address implements ApiMessage {
         + "name="
         + name
         + ", "
+        + "networkTier="
+        + networkTier
+        + ", "
         + "region="
         + region
         + ", "
@@ -516,6 +546,7 @@ public final class Address implements ApiMessage {
           && Objects.equals(this.ipVersion, that.getIpVersion())
           && Objects.equals(this.kind, that.getKind())
           && Objects.equals(this.name, that.getName())
+          && Objects.equals(this.networkTier, that.getNetworkTier())
           && Objects.equals(this.region, that.getRegion())
           && Objects.equals(this.selfLink, that.getSelfLink())
           && Objects.equals(this.status, that.getStatus())
@@ -536,6 +567,7 @@ public final class Address implements ApiMessage {
         ipVersion,
         kind,
         name,
+        networkTier,
         region,
         selfLink,
         status,

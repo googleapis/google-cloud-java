@@ -21,12 +21,14 @@ import static com.google.cloud.compute.v1.BackendServiceClient.ListBackendServic
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.compute.v1.AddSignedUrlKeyBackendServiceHttpRequest;
 import com.google.cloud.compute.v1.AggregatedListBackendServicesHttpRequest;
 import com.google.cloud.compute.v1.BackendService;
 import com.google.cloud.compute.v1.BackendServiceAggregatedList;
 import com.google.cloud.compute.v1.BackendServiceGroupHealth;
 import com.google.cloud.compute.v1.BackendServiceList;
 import com.google.cloud.compute.v1.DeleteBackendServiceHttpRequest;
+import com.google.cloud.compute.v1.DeleteSignedUrlKeyBackendServiceHttpRequest;
 import com.google.cloud.compute.v1.GetBackendServiceHttpRequest;
 import com.google.cloud.compute.v1.GetHealthBackendServiceHttpRequest;
 import com.google.cloud.compute.v1.InsertBackendServiceHttpRequest;
@@ -47,6 +49,13 @@ import javax.annotation.Generated;
 public abstract class BackendServiceStub implements BackgroundResource {
 
   @BetaApi
+  public UnaryCallable<AddSignedUrlKeyBackendServiceHttpRequest, Operation>
+      addSignedUrlKeyBackendServiceCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: addSignedUrlKeyBackendServiceCallable()");
+  }
+
+  @BetaApi
   public UnaryCallable<
           AggregatedListBackendServicesHttpRequest, AggregatedListBackendServicesPagedResponse>
       aggregatedListBackendServicesPagedCallable() {
@@ -64,6 +73,13 @@ public abstract class BackendServiceStub implements BackgroundResource {
   @BetaApi
   public UnaryCallable<DeleteBackendServiceHttpRequest, Operation> deleteBackendServiceCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteBackendServiceCallable()");
+  }
+
+  @BetaApi
+  public UnaryCallable<DeleteSignedUrlKeyBackendServiceHttpRequest, Operation>
+      deleteSignedUrlKeyBackendServiceCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deleteSignedUrlKeyBackendServiceCallable()");
   }
 
   @BetaApi

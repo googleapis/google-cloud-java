@@ -765,6 +765,142 @@ public class InterconnectAttachmentClient implements BackgroundResource {
     return stub.listInterconnectAttachmentsCallable();
   }
 
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates the specified interconnect attachment with the data included in the request. This
+   * method supports PATCH semantics and uses the JSON merge patch format and processing rules.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InterconnectAttachmentClient interconnectAttachmentClient = InterconnectAttachmentClient.create()) {
+   *   ProjectRegionInterconnectAttachmentName interconnectAttachment = ProjectRegionInterconnectAttachmentName.of("[PROJECT]", "[REGION]", "[INTERCONNECT_ATTACHMENT]");
+   *   InterconnectAttachment interconnectAttachmentResource = InterconnectAttachment.newBuilder().build();
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
+   *   Operation response = interconnectAttachmentClient.patchInterconnectAttachment(interconnectAttachment, interconnectAttachmentResource, fieldMask);
+   * }
+   * </code></pre>
+   *
+   * @param interconnectAttachment Name of the interconnect attachment to patch.
+   * @param interconnectAttachmentResource Represents an InterconnectAttachment (VLAN attachment)
+   *     resource. For more information, see Creating VLAN Attachments. (== resource_for
+   *     beta.interconnectAttachments ==) (== resource_for v1.interconnectAttachments ==)
+   * @param fieldMask
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation patchInterconnectAttachment(
+      ProjectRegionInterconnectAttachmentName interconnectAttachment,
+      InterconnectAttachment interconnectAttachmentResource,
+      List<String> fieldMask) {
+
+    PatchInterconnectAttachmentHttpRequest request =
+        PatchInterconnectAttachmentHttpRequest.newBuilder()
+            .setInterconnectAttachment(
+                interconnectAttachment == null ? null : interconnectAttachment.toString())
+            .setInterconnectAttachmentResource(interconnectAttachmentResource)
+            .addAllFieldMask(fieldMask)
+            .build();
+    return patchInterconnectAttachment(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates the specified interconnect attachment with the data included in the request. This
+   * method supports PATCH semantics and uses the JSON merge patch format and processing rules.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InterconnectAttachmentClient interconnectAttachmentClient = InterconnectAttachmentClient.create()) {
+   *   ProjectRegionInterconnectAttachmentName interconnectAttachment = ProjectRegionInterconnectAttachmentName.of("[PROJECT]", "[REGION]", "[INTERCONNECT_ATTACHMENT]");
+   *   InterconnectAttachment interconnectAttachmentResource = InterconnectAttachment.newBuilder().build();
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
+   *   Operation response = interconnectAttachmentClient.patchInterconnectAttachment(interconnectAttachment.toString(), interconnectAttachmentResource, fieldMask);
+   * }
+   * </code></pre>
+   *
+   * @param interconnectAttachment Name of the interconnect attachment to patch.
+   * @param interconnectAttachmentResource Represents an InterconnectAttachment (VLAN attachment)
+   *     resource. For more information, see Creating VLAN Attachments. (== resource_for
+   *     beta.interconnectAttachments ==) (== resource_for v1.interconnectAttachments ==)
+   * @param fieldMask
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation patchInterconnectAttachment(
+      String interconnectAttachment,
+      InterconnectAttachment interconnectAttachmentResource,
+      List<String> fieldMask) {
+
+    PatchInterconnectAttachmentHttpRequest request =
+        PatchInterconnectAttachmentHttpRequest.newBuilder()
+            .setInterconnectAttachment(interconnectAttachment)
+            .setInterconnectAttachmentResource(interconnectAttachmentResource)
+            .addAllFieldMask(fieldMask)
+            .build();
+    return patchInterconnectAttachment(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates the specified interconnect attachment with the data included in the request. This
+   * method supports PATCH semantics and uses the JSON merge patch format and processing rules.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InterconnectAttachmentClient interconnectAttachmentClient = InterconnectAttachmentClient.create()) {
+   *   ProjectRegionInterconnectAttachmentName interconnectAttachment = ProjectRegionInterconnectAttachmentName.of("[PROJECT]", "[REGION]", "[INTERCONNECT_ATTACHMENT]");
+   *   InterconnectAttachment interconnectAttachmentResource = InterconnectAttachment.newBuilder().build();
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
+   *   PatchInterconnectAttachmentHttpRequest request = PatchInterconnectAttachmentHttpRequest.newBuilder()
+   *     .setInterconnectAttachment(interconnectAttachment.toString())
+   *     .setInterconnectAttachmentResource(interconnectAttachmentResource)
+   *     .addAllFieldMask(fieldMask)
+   *     .build();
+   *   Operation response = interconnectAttachmentClient.patchInterconnectAttachment(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation patchInterconnectAttachment(
+      PatchInterconnectAttachmentHttpRequest request) {
+    return patchInterconnectAttachmentCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates the specified interconnect attachment with the data included in the request. This
+   * method supports PATCH semantics and uses the JSON merge patch format and processing rules.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InterconnectAttachmentClient interconnectAttachmentClient = InterconnectAttachmentClient.create()) {
+   *   ProjectRegionInterconnectAttachmentName interconnectAttachment = ProjectRegionInterconnectAttachmentName.of("[PROJECT]", "[REGION]", "[INTERCONNECT_ATTACHMENT]");
+   *   InterconnectAttachment interconnectAttachmentResource = InterconnectAttachment.newBuilder().build();
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
+   *   PatchInterconnectAttachmentHttpRequest request = PatchInterconnectAttachmentHttpRequest.newBuilder()
+   *     .setInterconnectAttachment(interconnectAttachment.toString())
+   *     .setInterconnectAttachmentResource(interconnectAttachmentResource)
+   *     .addAllFieldMask(fieldMask)
+   *     .build();
+   *   ApiFuture&lt;Operation&gt; future = interconnectAttachmentClient.patchInterconnectAttachmentCallable().futureCall(request);
+   *   // Do something
+   *   Operation response = future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi
+  public final UnaryCallable<PatchInterconnectAttachmentHttpRequest, Operation>
+      patchInterconnectAttachmentCallable() {
+    return stub.patchInterconnectAttachmentCallable();
+  }
+
   @Override
   public final void close() {
     stub.close();

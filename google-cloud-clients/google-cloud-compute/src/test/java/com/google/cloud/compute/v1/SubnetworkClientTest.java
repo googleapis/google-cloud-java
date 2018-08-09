@@ -17,12 +17,14 @@ package com.google.cloud.compute.v1;
 
 import static com.google.cloud.compute.v1.SubnetworkClient.AggregatedListSubnetworksPagedResponse;
 import static com.google.cloud.compute.v1.SubnetworkClient.ListSubnetworksPagedResponse;
+import static com.google.cloud.compute.v1.SubnetworkClient.ListUsableSubnetworksPagedResponse;
 import static com.google.cloud.compute.v1.stub.HttpJsonSubnetworkStub.aggregatedListSubnetworksMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonSubnetworkStub.deleteSubnetworkMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonSubnetworkStub.expandIpCidrRangeSubnetworkMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonSubnetworkStub.getSubnetworkMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonSubnetworkStub.insertSubnetworkMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonSubnetworkStub.listSubnetworksMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonSubnetworkStub.listUsableSubnetworksMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonSubnetworkStub.patchSubnetworkMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonSubnetworkStub.setPrivateIpGoogleAccessSubnetworkMethodDescriptor;
 
@@ -63,6 +65,7 @@ public class SubnetworkClientTest {
               getSubnetworkMethodDescriptor,
               insertSubnetworkMethodDescriptor,
               listSubnetworksMethodDescriptor,
+              listUsableSubnetworksMethodDescriptor,
               patchSubnetworkMethodDescriptor,
               setPrivateIpGoogleAccessSubnetworkMethodDescriptor));
   private static final MockHttpService mockService =
@@ -560,6 +563,66 @@ public class SubnetworkClientTest {
       ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
 
       client.listSubnetworks(region);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void listUsableSubnetworksTest() {
+    String kind = "kind3292052";
+    String nextPageToken = "";
+    String id = "id3355";
+    String selfLink = "selfLink-1691268851";
+    UsableSubnetwork itemsElement = UsableSubnetwork.newBuilder().build();
+    List<UsableSubnetwork> items = Arrays.asList(itemsElement);
+    UsableSubnetworksAggregatedList expectedResponse =
+        UsableSubnetworksAggregatedList.newBuilder()
+            .setKind(kind)
+            .setNextPageToken(nextPageToken)
+            .setId(id)
+            .setSelfLink(selfLink)
+            .addAllItems(items)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ProjectName project = ProjectName.of("[PROJECT]");
+
+    ListUsableSubnetworksPagedResponse pagedListResponse = client.listUsableSubnetworks(project);
+
+    List<UsableSubnetwork> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getItemsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void listUsableSubnetworksExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ProjectName project = ProjectName.of("[PROJECT]");
+
+      client.listUsableSubnetworks(project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

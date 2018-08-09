@@ -37,6 +37,7 @@ public final class ForwardingRule implements ApiMessage {
   private final String loadBalancingScheme;
   private final String name;
   private final String network;
+  private final String networkTier;
   private final String portRange;
   private final List<String> ports;
   private final String region;
@@ -56,6 +57,7 @@ public final class ForwardingRule implements ApiMessage {
     this.loadBalancingScheme = null;
     this.name = null;
     this.network = null;
+    this.networkTier = null;
     this.portRange = null;
     this.ports = null;
     this.region = null;
@@ -76,6 +78,7 @@ public final class ForwardingRule implements ApiMessage {
       String loadBalancingScheme,
       String name,
       String network,
+      String networkTier,
       String portRange,
       List<String> ports,
       String region,
@@ -93,6 +96,7 @@ public final class ForwardingRule implements ApiMessage {
     this.loadBalancingScheme = loadBalancingScheme;
     this.name = name;
     this.network = network;
+    this.networkTier = networkTier;
     this.portRange = portRange;
     this.ports = ports;
     this.region = region;
@@ -135,6 +139,9 @@ public final class ForwardingRule implements ApiMessage {
     }
     if (fieldName.equals("network")) {
       return network;
+    }
+    if (fieldName.equals("networkTier")) {
+      return networkTier;
     }
     if (fieldName.equals("portRange")) {
       return portRange;
@@ -213,6 +220,10 @@ public final class ForwardingRule implements ApiMessage {
     return network;
   }
 
+  public String getNetworkTier() {
+    return networkTier;
+  }
+
   public String getPortRange() {
     return portRange;
   }
@@ -271,6 +282,7 @@ public final class ForwardingRule implements ApiMessage {
     private String loadBalancingScheme;
     private String name;
     private String network;
+    private String networkTier;
     private String portRange;
     private List<String> ports;
     private String region;
@@ -315,6 +327,9 @@ public final class ForwardingRule implements ApiMessage {
       if (other.getNetwork() != null) {
         this.network = other.network;
       }
+      if (other.getNetworkTier() != null) {
+        this.networkTier = other.networkTier;
+      }
       if (other.getPortRange() != null) {
         this.portRange = other.portRange;
       }
@@ -348,6 +363,7 @@ public final class ForwardingRule implements ApiMessage {
       this.loadBalancingScheme = source.loadBalancingScheme;
       this.name = source.name;
       this.network = source.network;
+      this.networkTier = source.networkTier;
       this.portRange = source.portRange;
       this.ports = source.ports;
       this.region = source.region;
@@ -455,6 +471,15 @@ public final class ForwardingRule implements ApiMessage {
       return this;
     }
 
+    public String getNetworkTier() {
+      return networkTier;
+    }
+
+    public Builder setNetworkTier(String networkTier) {
+      this.networkTier = networkTier;
+      return this;
+    }
+
     public String getPortRange() {
       return portRange;
     }
@@ -534,6 +559,7 @@ public final class ForwardingRule implements ApiMessage {
           loadBalancingScheme,
           name,
           network,
+          networkTier,
           portRange,
           ports,
           region,
@@ -555,6 +581,7 @@ public final class ForwardingRule implements ApiMessage {
       newBuilder.setLoadBalancingScheme(this.loadBalancingScheme);
       newBuilder.setName(this.name);
       newBuilder.setNetwork(this.network);
+      newBuilder.setNetworkTier(this.networkTier);
       newBuilder.setPortRange(this.portRange);
       newBuilder.addAllPorts(this.ports);
       newBuilder.setRegion(this.region);
@@ -601,6 +628,9 @@ public final class ForwardingRule implements ApiMessage {
         + "network="
         + network
         + ", "
+        + "networkTier="
+        + networkTier
+        + ", "
         + "portRange="
         + portRange
         + ", "
@@ -639,6 +669,7 @@ public final class ForwardingRule implements ApiMessage {
           && Objects.equals(this.loadBalancingScheme, that.getLoadBalancingScheme())
           && Objects.equals(this.name, that.getName())
           && Objects.equals(this.network, that.getNetwork())
+          && Objects.equals(this.networkTier, that.getNetworkTier())
           && Objects.equals(this.portRange, that.getPortRange())
           && Objects.equals(this.ports, that.getPortsList())
           && Objects.equals(this.region, that.getRegion())
@@ -663,6 +694,7 @@ public final class ForwardingRule implements ApiMessage {
         loadBalancingScheme,
         name,
         network,
+        networkTier,
         portRange,
         ports,
         region,

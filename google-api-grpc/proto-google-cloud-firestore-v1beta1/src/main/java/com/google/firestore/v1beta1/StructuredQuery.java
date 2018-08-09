@@ -3747,6 +3747,14 @@ private static final long serialVersionUID = 0L;
        * <code>EQUAL = 5;</code>
        */
       EQUAL(5),
+      /**
+       * <pre>
+       * Contains. Requires that the field is an array.
+       * </pre>
+       *
+       * <code>ARRAY_CONTAINS = 7;</code>
+       */
+      ARRAY_CONTAINS(7),
       UNRECOGNIZED(-1),
       ;
 
@@ -3799,6 +3807,14 @@ private static final long serialVersionUID = 0L;
        * <code>EQUAL = 5;</code>
        */
       public static final int EQUAL_VALUE = 5;
+      /**
+       * <pre>
+       * Contains. Requires that the field is an array.
+       * </pre>
+       *
+       * <code>ARRAY_CONTAINS = 7;</code>
+       */
+      public static final int ARRAY_CONTAINS_VALUE = 7;
 
 
       public final int getNumber() {
@@ -3825,6 +3841,7 @@ private static final long serialVersionUID = 0L;
           case 3: return GREATER_THAN;
           case 4: return GREATER_THAN_OR_EQUAL;
           case 5: return EQUAL;
+          case 7: return ARRAY_CONTAINS;
           default: return null;
         }
       }

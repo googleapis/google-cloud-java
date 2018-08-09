@@ -17,8 +17,10 @@ package com.google.cloud.compute.v1;
 
 import static com.google.cloud.compute.v1.BackendServiceClient.AggregatedListBackendServicesPagedResponse;
 import static com.google.cloud.compute.v1.BackendServiceClient.ListBackendServicesPagedResponse;
+import static com.google.cloud.compute.v1.stub.HttpJsonBackendServiceStub.addSignedUrlKeyBackendServiceMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonBackendServiceStub.aggregatedListBackendServicesMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonBackendServiceStub.deleteBackendServiceMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonBackendServiceStub.deleteSignedUrlKeyBackendServiceMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonBackendServiceStub.getBackendServiceMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonBackendServiceStub.getHealthBackendServiceMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonBackendServiceStub.insertBackendServiceMethodDescriptor;
@@ -57,8 +59,10 @@ public class BackendServiceClientTest {
   private static final List<ApiMethodDescriptor> METHOD_DESCRIPTORS =
       ImmutableList.copyOf(
           Lists.<ApiMethodDescriptor>newArrayList(
+              addSignedUrlKeyBackendServiceMethodDescriptor,
               aggregatedListBackendServicesMethodDescriptor,
               deleteBackendServiceMethodDescriptor,
+              deleteSignedUrlKeyBackendServiceMethodDescriptor,
               getBackendServiceMethodDescriptor,
               getHealthBackendServiceMethodDescriptor,
               insertBackendServiceMethodDescriptor,
@@ -92,6 +96,99 @@ public class BackendServiceClientTest {
   @AfterClass
   public static void tearDown() throws Exception {
     client.close();
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void addSignedUrlKeyBackendServiceTest() {
+    String httpErrorMessage = "httpErrorMessage1276263769";
+    String targetId = "targetId-815576439";
+    String kind = "kind3292052";
+    String description = "description-1724546052";
+    String statusMessage = "statusMessage-239442758";
+    String selfLink = "selfLink-1691268851";
+    String insertTime = "insertTime-103148397";
+    Integer httpErrorStatusCode = 1386087020;
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
+    String targetLink = "targetLink-2084812312";
+    String creationTimestamp = "creationTimestamp567396278";
+    String name = "name3373707";
+    Integer progress = 1001078227;
+    String operationType = "operationType-1432962286";
+    String startTime = "startTime-1573145462";
+    String endTime = "endTime1725551537";
+    String id = "id3355";
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+    String clientOperationId = "clientOperationId-239630617";
+    String user = "user3599307";
+    String status = "status-892481550";
+    Operation expectedResponse =
+        Operation.newBuilder()
+            .setHttpErrorMessage(httpErrorMessage)
+            .setTargetId(targetId)
+            .setKind(kind)
+            .setDescription(description)
+            .setStatusMessage(statusMessage)
+            .setSelfLink(selfLink)
+            .setInsertTime(insertTime)
+            .setHttpErrorStatusCode(httpErrorStatusCode)
+            .setZone(zone.toString())
+            .setTargetLink(targetLink)
+            .setCreationTimestamp(creationTimestamp)
+            .setName(name)
+            .setProgress(progress)
+            .setOperationType(operationType)
+            .setStartTime(startTime)
+            .setEndTime(endTime)
+            .setId(id)
+            .setRegion(region.toString())
+            .setClientOperationId(clientOperationId)
+            .setUser(user)
+            .setStatus(status)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ProjectGlobalBackendServiceName backendService =
+        ProjectGlobalBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
+    SignedUrlKey signedUrlKeyResource = SignedUrlKey.newBuilder().build();
+
+    Operation actualResponse =
+        client.addSignedUrlKeyBackendService(backendService, signedUrlKeyResource);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void addSignedUrlKeyBackendServiceExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ProjectGlobalBackendServiceName backendService =
+          ProjectGlobalBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
+      SignedUrlKey signedUrlKeyResource = SignedUrlKey.newBuilder().build();
+
+      client.addSignedUrlKeyBackendService(backendService, signedUrlKeyResource);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
   }
 
   @Test
@@ -241,6 +338,98 @@ public class BackendServiceClientTest {
           ProjectGlobalBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
 
       client.deleteBackendService(backendService);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteSignedUrlKeyBackendServiceTest() {
+    String httpErrorMessage = "httpErrorMessage1276263769";
+    String targetId = "targetId-815576439";
+    String kind = "kind3292052";
+    String description = "description-1724546052";
+    String statusMessage = "statusMessage-239442758";
+    String selfLink = "selfLink-1691268851";
+    String insertTime = "insertTime-103148397";
+    Integer httpErrorStatusCode = 1386087020;
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
+    String targetLink = "targetLink-2084812312";
+    String creationTimestamp = "creationTimestamp567396278";
+    String name = "name3373707";
+    Integer progress = 1001078227;
+    String operationType = "operationType-1432962286";
+    String startTime = "startTime-1573145462";
+    String endTime = "endTime1725551537";
+    String id = "id3355";
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+    String clientOperationId = "clientOperationId-239630617";
+    String user = "user3599307";
+    String status = "status-892481550";
+    Operation expectedResponse =
+        Operation.newBuilder()
+            .setHttpErrorMessage(httpErrorMessage)
+            .setTargetId(targetId)
+            .setKind(kind)
+            .setDescription(description)
+            .setStatusMessage(statusMessage)
+            .setSelfLink(selfLink)
+            .setInsertTime(insertTime)
+            .setHttpErrorStatusCode(httpErrorStatusCode)
+            .setZone(zone.toString())
+            .setTargetLink(targetLink)
+            .setCreationTimestamp(creationTimestamp)
+            .setName(name)
+            .setProgress(progress)
+            .setOperationType(operationType)
+            .setStartTime(startTime)
+            .setEndTime(endTime)
+            .setId(id)
+            .setRegion(region.toString())
+            .setClientOperationId(clientOperationId)
+            .setUser(user)
+            .setStatus(status)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ProjectGlobalBackendServiceName backendService =
+        ProjectGlobalBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
+    String keyName = "keyName500938859";
+
+    Operation actualResponse = client.deleteSignedUrlKeyBackendService(backendService, keyName);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteSignedUrlKeyBackendServiceExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ProjectGlobalBackendServiceName backendService =
+          ProjectGlobalBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
+      String keyName = "keyName500938859";
+
+      client.deleteSignedUrlKeyBackendService(backendService, keyName);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
