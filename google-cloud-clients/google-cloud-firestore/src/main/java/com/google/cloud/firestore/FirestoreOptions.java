@@ -208,6 +208,14 @@ public final class FirestoreOptions extends ServiceOptions<Firestore, FirestoreO
     @Override
     @Nonnull
     public FirestoreOptions build() {
+      if (this.credentials == null && this.credentialsProvider != null) {
+        try {
+          this.setCredentials(credentialsProvider.getCredentials());
+        } catch (IOException e) {
+          throw new RuntimeException("Failed to obtain credentials", e);
+        }
+      }
+
       return new FirestoreOptions(this);
     }
   }
