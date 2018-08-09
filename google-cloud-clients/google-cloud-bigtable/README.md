@@ -112,7 +112,7 @@ imports at the top of your file:
 import com.google.bigtable.admin.v2.ColumnFamily;
 import com.google.bigtable.admin.v2.InstanceName;
 import com.google.bigtable.admin.v2.Table;
-import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient;
+import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient;
 ```
 
 Then, to create a table, use the following code:
