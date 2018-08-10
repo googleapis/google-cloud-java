@@ -13,11 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.cloud.devtools.containeranalysis.v1alpha1.stub;
+package com.google.cloud.devtools.containeranalysis.v1beta1.stub;
 
-import static com.google.cloud.devtools.containeranalysis.v1alpha1.ContainerAnalysisClient.ListNoteOccurrencesPagedResponse;
-import static com.google.cloud.devtools.containeranalysis.v1alpha1.ContainerAnalysisClient.ListNotesPagedResponse;
-import static com.google.cloud.devtools.containeranalysis.v1alpha1.ContainerAnalysisClient.ListOccurrencesPagedResponse;
+import static com.google.cloud.devtools.containeranalysis.v1beta1.GrafeasV1Beta1Client.ListNoteOccurrencesPagedResponse;
+import static com.google.cloud.devtools.containeranalysis.v1beta1.GrafeasV1Beta1Client.ListNotesPagedResponse;
+import static com.google.cloud.devtools.containeranalysis.v1beta1.GrafeasV1Beta1Client.ListOccurrencesPagedResponse;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -26,31 +26,30 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.containeranalysis.v1alpha1.CreateNoteRequest;
-import com.google.containeranalysis.v1alpha1.CreateOccurrenceRequest;
-import com.google.containeranalysis.v1alpha1.DeleteNoteRequest;
-import com.google.containeranalysis.v1alpha1.DeleteOccurrenceRequest;
-import com.google.containeranalysis.v1alpha1.GetNoteRequest;
-import com.google.containeranalysis.v1alpha1.GetOccurrenceNoteRequest;
-import com.google.containeranalysis.v1alpha1.GetOccurrenceRequest;
-import com.google.containeranalysis.v1alpha1.GetVulnzOccurrencesSummaryRequest;
-import com.google.containeranalysis.v1alpha1.GetVulnzOccurrencesSummaryResponse;
-import com.google.containeranalysis.v1alpha1.ListNoteOccurrencesRequest;
-import com.google.containeranalysis.v1alpha1.ListNoteOccurrencesResponse;
-import com.google.containeranalysis.v1alpha1.ListNotesRequest;
-import com.google.containeranalysis.v1alpha1.ListNotesResponse;
-import com.google.containeranalysis.v1alpha1.ListOccurrencesRequest;
-import com.google.containeranalysis.v1alpha1.ListOccurrencesResponse;
-import com.google.containeranalysis.v1alpha1.Note;
-import com.google.containeranalysis.v1alpha1.Occurrence;
-import com.google.containeranalysis.v1alpha1.UpdateNoteRequest;
-import com.google.containeranalysis.v1alpha1.UpdateOccurrenceRequest;
-import com.google.iam.v1.GetIamPolicyRequest;
-import com.google.iam.v1.Policy;
-import com.google.iam.v1.SetIamPolicyRequest;
-import com.google.iam.v1.TestIamPermissionsRequest;
-import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.protobuf.Empty;
+import io.grafeas.v1beta1.BatchCreateNotesRequest;
+import io.grafeas.v1beta1.BatchCreateNotesResponse;
+import io.grafeas.v1beta1.BatchCreateOccurrencesRequest;
+import io.grafeas.v1beta1.BatchCreateOccurrencesResponse;
+import io.grafeas.v1beta1.CreateNoteRequest;
+import io.grafeas.v1beta1.CreateOccurrenceRequest;
+import io.grafeas.v1beta1.DeleteNoteRequest;
+import io.grafeas.v1beta1.DeleteOccurrenceRequest;
+import io.grafeas.v1beta1.GetNoteRequest;
+import io.grafeas.v1beta1.GetOccurrenceNoteRequest;
+import io.grafeas.v1beta1.GetOccurrenceRequest;
+import io.grafeas.v1beta1.GetVulnerabilityOccurrencesSummaryRequest;
+import io.grafeas.v1beta1.ListNoteOccurrencesRequest;
+import io.grafeas.v1beta1.ListNoteOccurrencesResponse;
+import io.grafeas.v1beta1.ListNotesRequest;
+import io.grafeas.v1beta1.ListNotesResponse;
+import io.grafeas.v1beta1.ListOccurrencesRequest;
+import io.grafeas.v1beta1.ListOccurrencesResponse;
+import io.grafeas.v1beta1.Note;
+import io.grafeas.v1beta1.Occurrence;
+import io.grafeas.v1beta1.UpdateNoteRequest;
+import io.grafeas.v1beta1.UpdateOccurrenceRequest;
+import io.grafeas.v1beta1.VulnerabilityOccurrencesSummary;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
@@ -65,14 +64,13 @@ import javax.annotation.Generated;
  */
 @Generated("by gapic-generator")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
-public class GrpcContainerAnalysisStub extends ContainerAnalysisStub {
+public class GrpcGrafeasV1Beta1Stub extends GrafeasV1Beta1Stub {
 
   private static final MethodDescriptor<GetOccurrenceRequest, Occurrence>
       getOccurrenceMethodDescriptor =
           MethodDescriptor.<GetOccurrenceRequest, Occurrence>newBuilder()
               .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.devtools.containeranalysis.v1alpha1.ContainerAnalysis/GetOccurrence")
+              .setFullMethodName("grafeas.v1beta1.GrafeasV1Beta1/GetOccurrence")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetOccurrenceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Occurrence.getDefaultInstance()))
@@ -81,8 +79,7 @@ public class GrpcContainerAnalysisStub extends ContainerAnalysisStub {
       listOccurrencesMethodDescriptor =
           MethodDescriptor.<ListOccurrencesRequest, ListOccurrencesResponse>newBuilder()
               .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.devtools.containeranalysis.v1alpha1.ContainerAnalysis/ListOccurrences")
+              .setFullMethodName("grafeas.v1beta1.GrafeasV1Beta1/ListOccurrences")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ListOccurrencesRequest.getDefaultInstance()))
               .setResponseMarshaller(
@@ -92,8 +89,7 @@ public class GrpcContainerAnalysisStub extends ContainerAnalysisStub {
       deleteOccurrenceMethodDescriptor =
           MethodDescriptor.<DeleteOccurrenceRequest, Empty>newBuilder()
               .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.devtools.containeranalysis.v1alpha1.ContainerAnalysis/DeleteOccurrence")
+              .setFullMethodName("grafeas.v1beta1.GrafeasV1Beta1/DeleteOccurrence")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteOccurrenceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
@@ -102,18 +98,28 @@ public class GrpcContainerAnalysisStub extends ContainerAnalysisStub {
       createOccurrenceMethodDescriptor =
           MethodDescriptor.<CreateOccurrenceRequest, Occurrence>newBuilder()
               .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.devtools.containeranalysis.v1alpha1.ContainerAnalysis/CreateOccurrence")
+              .setFullMethodName("grafeas.v1beta1.GrafeasV1Beta1/CreateOccurrence")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateOccurrenceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Occurrence.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<
+          BatchCreateOccurrencesRequest, BatchCreateOccurrencesResponse>
+      batchCreateOccurrencesMethodDescriptor =
+          MethodDescriptor
+              .<BatchCreateOccurrencesRequest, BatchCreateOccurrencesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("grafeas.v1beta1.GrafeasV1Beta1/BatchCreateOccurrences")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(BatchCreateOccurrencesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(BatchCreateOccurrencesResponse.getDefaultInstance()))
               .build();
   private static final MethodDescriptor<UpdateOccurrenceRequest, Occurrence>
       updateOccurrenceMethodDescriptor =
           MethodDescriptor.<UpdateOccurrenceRequest, Occurrence>newBuilder()
               .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.devtools.containeranalysis.v1alpha1.ContainerAnalysis/UpdateOccurrence")
+              .setFullMethodName("grafeas.v1beta1.GrafeasV1Beta1/UpdateOccurrence")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateOccurrenceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Occurrence.getDefaultInstance()))
@@ -122,8 +128,7 @@ public class GrpcContainerAnalysisStub extends ContainerAnalysisStub {
       getOccurrenceNoteMethodDescriptor =
           MethodDescriptor.<GetOccurrenceNoteRequest, Note>newBuilder()
               .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.devtools.containeranalysis.v1alpha1.ContainerAnalysis/GetOccurrenceNote")
+              .setFullMethodName("grafeas.v1beta1.GrafeasV1Beta1/GetOccurrenceNote")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetOccurrenceNoteRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Note.getDefaultInstance()))
@@ -131,7 +136,7 @@ public class GrpcContainerAnalysisStub extends ContainerAnalysisStub {
   private static final MethodDescriptor<GetNoteRequest, Note> getNoteMethodDescriptor =
       MethodDescriptor.<GetNoteRequest, Note>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName("google.devtools.containeranalysis.v1alpha1.ContainerAnalysis/GetNote")
+          .setFullMethodName("grafeas.v1beta1.GrafeasV1Beta1/GetNote")
           .setRequestMarshaller(ProtoUtils.marshaller(GetNoteRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Note.getDefaultInstance()))
           .build();
@@ -139,32 +144,38 @@ public class GrpcContainerAnalysisStub extends ContainerAnalysisStub {
       listNotesMethodDescriptor =
           MethodDescriptor.<ListNotesRequest, ListNotesResponse>newBuilder()
               .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.devtools.containeranalysis.v1alpha1.ContainerAnalysis/ListNotes")
+              .setFullMethodName("grafeas.v1beta1.GrafeasV1Beta1/ListNotes")
               .setRequestMarshaller(ProtoUtils.marshaller(ListNotesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListNotesResponse.getDefaultInstance()))
               .build();
   private static final MethodDescriptor<DeleteNoteRequest, Empty> deleteNoteMethodDescriptor =
       MethodDescriptor.<DeleteNoteRequest, Empty>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName(
-              "google.devtools.containeranalysis.v1alpha1.ContainerAnalysis/DeleteNote")
+          .setFullMethodName("grafeas.v1beta1.GrafeasV1Beta1/DeleteNote")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteNoteRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
           .build();
   private static final MethodDescriptor<CreateNoteRequest, Note> createNoteMethodDescriptor =
       MethodDescriptor.<CreateNoteRequest, Note>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName(
-              "google.devtools.containeranalysis.v1alpha1.ContainerAnalysis/CreateNote")
+          .setFullMethodName("grafeas.v1beta1.GrafeasV1Beta1/CreateNote")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateNoteRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Note.getDefaultInstance()))
           .build();
+  private static final MethodDescriptor<BatchCreateNotesRequest, BatchCreateNotesResponse>
+      batchCreateNotesMethodDescriptor =
+          MethodDescriptor.<BatchCreateNotesRequest, BatchCreateNotesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("grafeas.v1beta1.GrafeasV1Beta1/BatchCreateNotes")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(BatchCreateNotesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(BatchCreateNotesResponse.getDefaultInstance()))
+              .build();
   private static final MethodDescriptor<UpdateNoteRequest, Note> updateNoteMethodDescriptor =
       MethodDescriptor.<UpdateNoteRequest, Note>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName(
-              "google.devtools.containeranalysis.v1alpha1.ContainerAnalysis/UpdateNote")
+          .setFullMethodName("grafeas.v1beta1.GrafeasV1Beta1/UpdateNote")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateNoteRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Note.getDefaultInstance()))
           .build();
@@ -172,52 +183,26 @@ public class GrpcContainerAnalysisStub extends ContainerAnalysisStub {
       listNoteOccurrencesMethodDescriptor =
           MethodDescriptor.<ListNoteOccurrencesRequest, ListNoteOccurrencesResponse>newBuilder()
               .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.devtools.containeranalysis.v1alpha1.ContainerAnalysis/ListNoteOccurrences")
+              .setFullMethodName("grafeas.v1beta1.GrafeasV1Beta1/ListNoteOccurrences")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ListNoteOccurrencesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListNoteOccurrencesResponse.getDefaultInstance()))
               .build();
   private static final MethodDescriptor<
-          GetVulnzOccurrencesSummaryRequest, GetVulnzOccurrencesSummaryResponse>
-      getVulnzOccurrencesSummaryMethodDescriptor =
+          GetVulnerabilityOccurrencesSummaryRequest, VulnerabilityOccurrencesSummary>
+      getVulnerabilityOccurrencesSummaryMethodDescriptor =
           MethodDescriptor
-              .<GetVulnzOccurrencesSummaryRequest, GetVulnzOccurrencesSummaryResponse>newBuilder()
+              .<GetVulnerabilityOccurrencesSummaryRequest, VulnerabilityOccurrencesSummary>
+                  newBuilder()
               .setType(MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(
-                  "google.devtools.containeranalysis.v1alpha1.ContainerAnalysis/GetVulnzOccurrencesSummary")
+                  "grafeas.v1beta1.GrafeasV1Beta1/GetVulnerabilityOccurrencesSummary")
               .setRequestMarshaller(
-                  ProtoUtils.marshaller(GetVulnzOccurrencesSummaryRequest.getDefaultInstance()))
+                  ProtoUtils.marshaller(
+                      GetVulnerabilityOccurrencesSummaryRequest.getDefaultInstance()))
               .setResponseMarshaller(
-                  ProtoUtils.marshaller(GetVulnzOccurrencesSummaryResponse.getDefaultInstance()))
-              .build();
-  private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
-      MethodDescriptor.<SetIamPolicyRequest, Policy>newBuilder()
-          .setType(MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName(
-              "google.devtools.containeranalysis.v1alpha1.ContainerAnalysis/SetIamPolicy")
-          .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
-          .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
-          .build();
-  private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
-      MethodDescriptor.<GetIamPolicyRequest, Policy>newBuilder()
-          .setType(MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName(
-              "google.devtools.containeranalysis.v1alpha1.ContainerAnalysis/GetIamPolicy")
-          .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
-          .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
-          .build();
-  private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
-      testIamPermissionsMethodDescriptor =
-          MethodDescriptor.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.devtools.containeranalysis.v1alpha1.ContainerAnalysis/TestIamPermissions")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
-              .setResponseMarshaller(
-                  ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+                  ProtoUtils.marshaller(VulnerabilityOccurrencesSummary.getDefaultInstance()))
               .build();
 
   private final BackgroundResource backgroundResources;
@@ -229,6 +214,8 @@ public class GrpcContainerAnalysisStub extends ContainerAnalysisStub {
       listOccurrencesPagedCallable;
   private final UnaryCallable<DeleteOccurrenceRequest, Empty> deleteOccurrenceCallable;
   private final UnaryCallable<CreateOccurrenceRequest, Occurrence> createOccurrenceCallable;
+  private final UnaryCallable<BatchCreateOccurrencesRequest, BatchCreateOccurrencesResponse>
+      batchCreateOccurrencesCallable;
   private final UnaryCallable<UpdateOccurrenceRequest, Occurrence> updateOccurrenceCallable;
   private final UnaryCallable<GetOccurrenceNoteRequest, Note> getOccurrenceNoteCallable;
   private final UnaryCallable<GetNoteRequest, Note> getNoteCallable;
@@ -236,54 +223,53 @@ public class GrpcContainerAnalysisStub extends ContainerAnalysisStub {
   private final UnaryCallable<ListNotesRequest, ListNotesPagedResponse> listNotesPagedCallable;
   private final UnaryCallable<DeleteNoteRequest, Empty> deleteNoteCallable;
   private final UnaryCallable<CreateNoteRequest, Note> createNoteCallable;
+  private final UnaryCallable<BatchCreateNotesRequest, BatchCreateNotesResponse>
+      batchCreateNotesCallable;
   private final UnaryCallable<UpdateNoteRequest, Note> updateNoteCallable;
   private final UnaryCallable<ListNoteOccurrencesRequest, ListNoteOccurrencesResponse>
       listNoteOccurrencesCallable;
   private final UnaryCallable<ListNoteOccurrencesRequest, ListNoteOccurrencesPagedResponse>
       listNoteOccurrencesPagedCallable;
-  private final UnaryCallable<GetVulnzOccurrencesSummaryRequest, GetVulnzOccurrencesSummaryResponse>
-      getVulnzOccurrencesSummaryCallable;
-  private final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable;
-  private final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable;
-  private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
-      testIamPermissionsCallable;
+  private final UnaryCallable<
+          GetVulnerabilityOccurrencesSummaryRequest, VulnerabilityOccurrencesSummary>
+      getVulnerabilityOccurrencesSummaryCallable;
 
   private final GrpcStubCallableFactory callableFactory;
 
-  public static final GrpcContainerAnalysisStub create(ContainerAnalysisStubSettings settings)
+  public static final GrpcGrafeasV1Beta1Stub create(GrafeasV1Beta1StubSettings settings)
       throws IOException {
-    return new GrpcContainerAnalysisStub(settings, ClientContext.create(settings));
+    return new GrpcGrafeasV1Beta1Stub(settings, ClientContext.create(settings));
   }
 
-  public static final GrpcContainerAnalysisStub create(ClientContext clientContext)
+  public static final GrpcGrafeasV1Beta1Stub create(ClientContext clientContext)
       throws IOException {
-    return new GrpcContainerAnalysisStub(
-        ContainerAnalysisStubSettings.newBuilder().build(), clientContext);
+    return new GrpcGrafeasV1Beta1Stub(
+        GrafeasV1Beta1StubSettings.newBuilder().build(), clientContext);
   }
 
-  public static final GrpcContainerAnalysisStub create(
+  public static final GrpcGrafeasV1Beta1Stub create(
       ClientContext clientContext, GrpcStubCallableFactory callableFactory) throws IOException {
-    return new GrpcContainerAnalysisStub(
-        ContainerAnalysisStubSettings.newBuilder().build(), clientContext, callableFactory);
+    return new GrpcGrafeasV1Beta1Stub(
+        GrafeasV1Beta1StubSettings.newBuilder().build(), clientContext, callableFactory);
   }
 
   /**
-   * Constructs an instance of GrpcContainerAnalysisStub, using the given settings. This is
-   * protected so that it is easy to make a subclass, but otherwise, the static factory methods
-   * should be preferred.
+   * Constructs an instance of GrpcGrafeasV1Beta1Stub, using the given settings. This is protected
+   * so that it is easy to make a subclass, but otherwise, the static factory methods should be
+   * preferred.
    */
-  protected GrpcContainerAnalysisStub(
-      ContainerAnalysisStubSettings settings, ClientContext clientContext) throws IOException {
-    this(settings, clientContext, new GrpcContainerAnalysisCallableFactory());
+  protected GrpcGrafeasV1Beta1Stub(GrafeasV1Beta1StubSettings settings, ClientContext clientContext)
+      throws IOException {
+    this(settings, clientContext, new GrpcGrafeasV1Beta1CallableFactory());
   }
 
   /**
-   * Constructs an instance of GrpcContainerAnalysisStub, using the given settings. This is
-   * protected so that it is easy to make a subclass, but otherwise, the static factory methods
-   * should be preferred.
+   * Constructs an instance of GrpcGrafeasV1Beta1Stub, using the given settings. This is protected
+   * so that it is easy to make a subclass, but otherwise, the static factory methods should be
+   * preferred.
    */
-  protected GrpcContainerAnalysisStub(
-      ContainerAnalysisStubSettings settings,
+  protected GrpcGrafeasV1Beta1Stub(
+      GrafeasV1Beta1StubSettings settings,
       ClientContext clientContext,
       GrpcStubCallableFactory callableFactory)
       throws IOException {
@@ -306,6 +292,12 @@ public class GrpcContainerAnalysisStub extends ContainerAnalysisStub {
         GrpcCallSettings.<CreateOccurrenceRequest, Occurrence>newBuilder()
             .setMethodDescriptor(createOccurrenceMethodDescriptor)
             .build();
+    GrpcCallSettings<BatchCreateOccurrencesRequest, BatchCreateOccurrencesResponse>
+        batchCreateOccurrencesTransportSettings =
+            GrpcCallSettings
+                .<BatchCreateOccurrencesRequest, BatchCreateOccurrencesResponse>newBuilder()
+                .setMethodDescriptor(batchCreateOccurrencesMethodDescriptor)
+                .build();
     GrpcCallSettings<UpdateOccurrenceRequest, Occurrence> updateOccurrenceTransportSettings =
         GrpcCallSettings.<UpdateOccurrenceRequest, Occurrence>newBuilder()
             .setMethodDescriptor(updateOccurrenceMethodDescriptor)
@@ -330,6 +322,11 @@ public class GrpcContainerAnalysisStub extends ContainerAnalysisStub {
         GrpcCallSettings.<CreateNoteRequest, Note>newBuilder()
             .setMethodDescriptor(createNoteMethodDescriptor)
             .build();
+    GrpcCallSettings<BatchCreateNotesRequest, BatchCreateNotesResponse>
+        batchCreateNotesTransportSettings =
+            GrpcCallSettings.<BatchCreateNotesRequest, BatchCreateNotesResponse>newBuilder()
+                .setMethodDescriptor(batchCreateNotesMethodDescriptor)
+                .build();
     GrpcCallSettings<UpdateNoteRequest, Note> updateNoteTransportSettings =
         GrpcCallSettings.<UpdateNoteRequest, Note>newBuilder()
             .setMethodDescriptor(updateNoteMethodDescriptor)
@@ -339,24 +336,12 @@ public class GrpcContainerAnalysisStub extends ContainerAnalysisStub {
             GrpcCallSettings.<ListNoteOccurrencesRequest, ListNoteOccurrencesResponse>newBuilder()
                 .setMethodDescriptor(listNoteOccurrencesMethodDescriptor)
                 .build();
-    GrpcCallSettings<GetVulnzOccurrencesSummaryRequest, GetVulnzOccurrencesSummaryResponse>
-        getVulnzOccurrencesSummaryTransportSettings =
+    GrpcCallSettings<GetVulnerabilityOccurrencesSummaryRequest, VulnerabilityOccurrencesSummary>
+        getVulnerabilityOccurrencesSummaryTransportSettings =
             GrpcCallSettings
-                .<GetVulnzOccurrencesSummaryRequest, GetVulnzOccurrencesSummaryResponse>newBuilder()
-                .setMethodDescriptor(getVulnzOccurrencesSummaryMethodDescriptor)
-                .build();
-    GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
-        GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
-            .setMethodDescriptor(setIamPolicyMethodDescriptor)
-            .build();
-    GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
-        GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
-            .setMethodDescriptor(getIamPolicyMethodDescriptor)
-            .build();
-    GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
-        testIamPermissionsTransportSettings =
-            GrpcCallSettings.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
-                .setMethodDescriptor(testIamPermissionsMethodDescriptor)
+                .<GetVulnerabilityOccurrencesSummaryRequest, VulnerabilityOccurrencesSummary>
+                    newBuilder()
+                .setMethodDescriptor(getVulnerabilityOccurrencesSummaryMethodDescriptor)
                 .build();
 
     this.getOccurrenceCallable =
@@ -374,6 +359,11 @@ public class GrpcContainerAnalysisStub extends ContainerAnalysisStub {
     this.createOccurrenceCallable =
         callableFactory.createUnaryCallable(
             createOccurrenceTransportSettings, settings.createOccurrenceSettings(), clientContext);
+    this.batchCreateOccurrencesCallable =
+        callableFactory.createUnaryCallable(
+            batchCreateOccurrencesTransportSettings,
+            settings.batchCreateOccurrencesSettings(),
+            clientContext);
     this.updateOccurrenceCallable =
         callableFactory.createUnaryCallable(
             updateOccurrenceTransportSettings, settings.updateOccurrenceSettings(), clientContext);
@@ -397,6 +387,9 @@ public class GrpcContainerAnalysisStub extends ContainerAnalysisStub {
     this.createNoteCallable =
         callableFactory.createUnaryCallable(
             createNoteTransportSettings, settings.createNoteSettings(), clientContext);
+    this.batchCreateNotesCallable =
+        callableFactory.createUnaryCallable(
+            batchCreateNotesTransportSettings, settings.batchCreateNotesSettings(), clientContext);
     this.updateNoteCallable =
         callableFactory.createUnaryCallable(
             updateNoteTransportSettings, settings.updateNoteSettings(), clientContext);
@@ -410,21 +403,10 @@ public class GrpcContainerAnalysisStub extends ContainerAnalysisStub {
             listNoteOccurrencesTransportSettings,
             settings.listNoteOccurrencesSettings(),
             clientContext);
-    this.getVulnzOccurrencesSummaryCallable =
+    this.getVulnerabilityOccurrencesSummaryCallable =
         callableFactory.createUnaryCallable(
-            getVulnzOccurrencesSummaryTransportSettings,
-            settings.getVulnzOccurrencesSummarySettings(),
-            clientContext);
-    this.setIamPolicyCallable =
-        callableFactory.createUnaryCallable(
-            setIamPolicyTransportSettings, settings.setIamPolicySettings(), clientContext);
-    this.getIamPolicyCallable =
-        callableFactory.createUnaryCallable(
-            getIamPolicyTransportSettings, settings.getIamPolicySettings(), clientContext);
-    this.testIamPermissionsCallable =
-        callableFactory.createUnaryCallable(
-            testIamPermissionsTransportSettings,
-            settings.testIamPermissionsSettings(),
+            getVulnerabilityOccurrencesSummaryTransportSettings,
+            settings.getVulnerabilityOccurrencesSummarySettings(),
             clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -449,6 +431,11 @@ public class GrpcContainerAnalysisStub extends ContainerAnalysisStub {
 
   public UnaryCallable<CreateOccurrenceRequest, Occurrence> createOccurrenceCallable() {
     return createOccurrenceCallable;
+  }
+
+  public UnaryCallable<BatchCreateOccurrencesRequest, BatchCreateOccurrencesResponse>
+      batchCreateOccurrencesCallable() {
+    return batchCreateOccurrencesCallable;
   }
 
   public UnaryCallable<UpdateOccurrenceRequest, Occurrence> updateOccurrenceCallable() {
@@ -479,6 +466,11 @@ public class GrpcContainerAnalysisStub extends ContainerAnalysisStub {
     return createNoteCallable;
   }
 
+  public UnaryCallable<BatchCreateNotesRequest, BatchCreateNotesResponse>
+      batchCreateNotesCallable() {
+    return batchCreateNotesCallable;
+  }
+
   public UnaryCallable<UpdateNoteRequest, Note> updateNoteCallable() {
     return updateNoteCallable;
   }
@@ -493,22 +485,9 @@ public class GrpcContainerAnalysisStub extends ContainerAnalysisStub {
     return listNoteOccurrencesCallable;
   }
 
-  public UnaryCallable<GetVulnzOccurrencesSummaryRequest, GetVulnzOccurrencesSummaryResponse>
-      getVulnzOccurrencesSummaryCallable() {
-    return getVulnzOccurrencesSummaryCallable;
-  }
-
-  public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
-    return setIamPolicyCallable;
-  }
-
-  public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
-    return getIamPolicyCallable;
-  }
-
-  public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
-      testIamPermissionsCallable() {
-    return testIamPermissionsCallable;
+  public UnaryCallable<GetVulnerabilityOccurrencesSummaryRequest, VulnerabilityOccurrencesSummary>
+      getVulnerabilityOccurrencesSummaryCallable() {
+    return getVulnerabilityOccurrencesSummaryCallable;
   }
 
   @Override

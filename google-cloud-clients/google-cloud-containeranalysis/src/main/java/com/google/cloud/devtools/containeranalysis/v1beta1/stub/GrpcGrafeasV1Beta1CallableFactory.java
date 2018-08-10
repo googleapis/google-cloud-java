@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.cloud.devtools.containeranalysis.v1alpha1.stub;
+package com.google.cloud.devtools.containeranalysis.v1beta1.stub;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -43,7 +43,7 @@ import javax.annotation.Generated;
  */
 @Generated("by gapic-generator")
 @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-public class GrpcContainerAnalysisCallableFactory implements GrpcStubCallableFactory {
+public class GrpcGrafeasV1Beta1CallableFactory implements GrpcStubCallableFactory {
   @Override
   public <RequestT, ResponseT> UnaryCallable<RequestT, ResponseT> createUnaryCallable(
       GrpcCallSettings<RequestT, ResponseT> grpcCallSettings,

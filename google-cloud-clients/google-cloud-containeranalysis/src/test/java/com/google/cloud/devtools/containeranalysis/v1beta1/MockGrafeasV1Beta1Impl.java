@@ -13,36 +13,35 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.cloud.devtools.containeranalysis.v1alpha1;
+package com.google.cloud.devtools.containeranalysis.v1beta1;
 
 import com.google.api.core.BetaApi;
-import com.google.containeranalysis.v1alpha1.ContainerAnalysisGrpc.ContainerAnalysisImplBase;
-import com.google.containeranalysis.v1alpha1.CreateNoteRequest;
-import com.google.containeranalysis.v1alpha1.CreateOccurrenceRequest;
-import com.google.containeranalysis.v1alpha1.DeleteNoteRequest;
-import com.google.containeranalysis.v1alpha1.DeleteOccurrenceRequest;
-import com.google.containeranalysis.v1alpha1.GetNoteRequest;
-import com.google.containeranalysis.v1alpha1.GetOccurrenceNoteRequest;
-import com.google.containeranalysis.v1alpha1.GetOccurrenceRequest;
-import com.google.containeranalysis.v1alpha1.GetVulnzOccurrencesSummaryRequest;
-import com.google.containeranalysis.v1alpha1.GetVulnzOccurrencesSummaryResponse;
-import com.google.containeranalysis.v1alpha1.ListNoteOccurrencesRequest;
-import com.google.containeranalysis.v1alpha1.ListNoteOccurrencesResponse;
-import com.google.containeranalysis.v1alpha1.ListNotesRequest;
-import com.google.containeranalysis.v1alpha1.ListNotesResponse;
-import com.google.containeranalysis.v1alpha1.ListOccurrencesRequest;
-import com.google.containeranalysis.v1alpha1.ListOccurrencesResponse;
-import com.google.containeranalysis.v1alpha1.Note;
-import com.google.containeranalysis.v1alpha1.Occurrence;
-import com.google.containeranalysis.v1alpha1.UpdateNoteRequest;
-import com.google.containeranalysis.v1alpha1.UpdateOccurrenceRequest;
-import com.google.iam.v1.GetIamPolicyRequest;
-import com.google.iam.v1.Policy;
-import com.google.iam.v1.SetIamPolicyRequest;
-import com.google.iam.v1.TestIamPermissionsRequest;
-import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.protobuf.Empty;
 import com.google.protobuf.GeneratedMessageV3;
+import io.grafeas.v1beta1.BatchCreateNotesRequest;
+import io.grafeas.v1beta1.BatchCreateNotesResponse;
+import io.grafeas.v1beta1.BatchCreateOccurrencesRequest;
+import io.grafeas.v1beta1.BatchCreateOccurrencesResponse;
+import io.grafeas.v1beta1.CreateNoteRequest;
+import io.grafeas.v1beta1.CreateOccurrenceRequest;
+import io.grafeas.v1beta1.DeleteNoteRequest;
+import io.grafeas.v1beta1.DeleteOccurrenceRequest;
+import io.grafeas.v1beta1.GetNoteRequest;
+import io.grafeas.v1beta1.GetOccurrenceNoteRequest;
+import io.grafeas.v1beta1.GetOccurrenceRequest;
+import io.grafeas.v1beta1.GetVulnerabilityOccurrencesSummaryRequest;
+import io.grafeas.v1beta1.GrafeasV1Beta1Grpc.GrafeasV1Beta1ImplBase;
+import io.grafeas.v1beta1.ListNoteOccurrencesRequest;
+import io.grafeas.v1beta1.ListNoteOccurrencesResponse;
+import io.grafeas.v1beta1.ListNotesRequest;
+import io.grafeas.v1beta1.ListNotesResponse;
+import io.grafeas.v1beta1.ListOccurrencesRequest;
+import io.grafeas.v1beta1.ListOccurrencesResponse;
+import io.grafeas.v1beta1.Note;
+import io.grafeas.v1beta1.Occurrence;
+import io.grafeas.v1beta1.UpdateNoteRequest;
+import io.grafeas.v1beta1.UpdateOccurrenceRequest;
+import io.grafeas.v1beta1.VulnerabilityOccurrencesSummary;
 import io.grpc.stub.StreamObserver;
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -51,11 +50,11 @@ import java.util.Queue;
 
 @javax.annotation.Generated("by GAPIC")
 @BetaApi
-public class MockContainerAnalysisImpl extends ContainerAnalysisImplBase {
+public class MockGrafeasV1Beta1Impl extends GrafeasV1Beta1ImplBase {
   private ArrayList<GeneratedMessageV3> requests;
   private Queue<Object> responses;
 
-  public MockContainerAnalysisImpl() {
+  public MockGrafeasV1Beta1Impl() {
     requests = new ArrayList<>();
     responses = new LinkedList<>();
   }
@@ -133,6 +132,22 @@ public class MockContainerAnalysisImpl extends ContainerAnalysisImplBase {
     if (response instanceof Occurrence) {
       requests.add(request);
       responseObserver.onNext((Occurrence) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void batchCreateOccurrences(
+      BatchCreateOccurrencesRequest request,
+      StreamObserver<BatchCreateOccurrencesResponse> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof BatchCreateOccurrencesResponse) {
+      requests.add(request);
+      responseObserver.onNext((BatchCreateOccurrencesResponse) response);
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
       responseObserver.onError((Exception) response);
@@ -229,6 +244,21 @@ public class MockContainerAnalysisImpl extends ContainerAnalysisImplBase {
   }
 
   @Override
+  public void batchCreateNotes(
+      BatchCreateNotesRequest request, StreamObserver<BatchCreateNotesResponse> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof BatchCreateNotesResponse) {
+      requests.add(request);
+      responseObserver.onNext((BatchCreateNotesResponse) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
   public void updateNote(UpdateNoteRequest request, StreamObserver<Note> responseObserver) {
     Object response = responses.remove();
     if (response instanceof Note) {
@@ -259,57 +289,13 @@ public class MockContainerAnalysisImpl extends ContainerAnalysisImplBase {
   }
 
   @Override
-  public void getVulnzOccurrencesSummary(
-      GetVulnzOccurrencesSummaryRequest request,
-      StreamObserver<GetVulnzOccurrencesSummaryResponse> responseObserver) {
+  public void getVulnerabilityOccurrencesSummary(
+      GetVulnerabilityOccurrencesSummaryRequest request,
+      StreamObserver<VulnerabilityOccurrencesSummary> responseObserver) {
     Object response = responses.remove();
-    if (response instanceof GetVulnzOccurrencesSummaryResponse) {
+    if (response instanceof VulnerabilityOccurrencesSummary) {
       requests.add(request);
-      responseObserver.onNext((GetVulnzOccurrencesSummaryResponse) response);
-      responseObserver.onCompleted();
-    } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
-    } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
-    }
-  }
-
-  @Override
-  public void setIamPolicy(SetIamPolicyRequest request, StreamObserver<Policy> responseObserver) {
-    Object response = responses.remove();
-    if (response instanceof Policy) {
-      requests.add(request);
-      responseObserver.onNext((Policy) response);
-      responseObserver.onCompleted();
-    } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
-    } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
-    }
-  }
-
-  @Override
-  public void getIamPolicy(GetIamPolicyRequest request, StreamObserver<Policy> responseObserver) {
-    Object response = responses.remove();
-    if (response instanceof Policy) {
-      requests.add(request);
-      responseObserver.onNext((Policy) response);
-      responseObserver.onCompleted();
-    } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
-    } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
-    }
-  }
-
-  @Override
-  public void testIamPermissions(
-      TestIamPermissionsRequest request,
-      StreamObserver<TestIamPermissionsResponse> responseObserver) {
-    Object response = responses.remove();
-    if (response instanceof TestIamPermissionsResponse) {
-      requests.add(request);
-      responseObserver.onNext((TestIamPermissionsResponse) response);
+      responseObserver.onNext((VulnerabilityOccurrencesSummary) response);
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
       responseObserver.onError((Exception) response);

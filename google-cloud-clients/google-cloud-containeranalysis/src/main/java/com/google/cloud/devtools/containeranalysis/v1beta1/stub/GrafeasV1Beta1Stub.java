@@ -13,40 +13,39 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.cloud.devtools.containeranalysis.v1alpha1.stub;
+package com.google.cloud.devtools.containeranalysis.v1beta1.stub;
 
-import static com.google.cloud.devtools.containeranalysis.v1alpha1.ContainerAnalysisClient.ListNoteOccurrencesPagedResponse;
-import static com.google.cloud.devtools.containeranalysis.v1alpha1.ContainerAnalysisClient.ListNotesPagedResponse;
-import static com.google.cloud.devtools.containeranalysis.v1alpha1.ContainerAnalysisClient.ListOccurrencesPagedResponse;
+import static com.google.cloud.devtools.containeranalysis.v1beta1.GrafeasV1Beta1Client.ListNoteOccurrencesPagedResponse;
+import static com.google.cloud.devtools.containeranalysis.v1beta1.GrafeasV1Beta1Client.ListNotesPagedResponse;
+import static com.google.cloud.devtools.containeranalysis.v1beta1.GrafeasV1Beta1Client.ListOccurrencesPagedResponse;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.containeranalysis.v1alpha1.CreateNoteRequest;
-import com.google.containeranalysis.v1alpha1.CreateOccurrenceRequest;
-import com.google.containeranalysis.v1alpha1.DeleteNoteRequest;
-import com.google.containeranalysis.v1alpha1.DeleteOccurrenceRequest;
-import com.google.containeranalysis.v1alpha1.GetNoteRequest;
-import com.google.containeranalysis.v1alpha1.GetOccurrenceNoteRequest;
-import com.google.containeranalysis.v1alpha1.GetOccurrenceRequest;
-import com.google.containeranalysis.v1alpha1.GetVulnzOccurrencesSummaryRequest;
-import com.google.containeranalysis.v1alpha1.GetVulnzOccurrencesSummaryResponse;
-import com.google.containeranalysis.v1alpha1.ListNoteOccurrencesRequest;
-import com.google.containeranalysis.v1alpha1.ListNoteOccurrencesResponse;
-import com.google.containeranalysis.v1alpha1.ListNotesRequest;
-import com.google.containeranalysis.v1alpha1.ListNotesResponse;
-import com.google.containeranalysis.v1alpha1.ListOccurrencesRequest;
-import com.google.containeranalysis.v1alpha1.ListOccurrencesResponse;
-import com.google.containeranalysis.v1alpha1.Note;
-import com.google.containeranalysis.v1alpha1.Occurrence;
-import com.google.containeranalysis.v1alpha1.UpdateNoteRequest;
-import com.google.containeranalysis.v1alpha1.UpdateOccurrenceRequest;
-import com.google.iam.v1.GetIamPolicyRequest;
-import com.google.iam.v1.Policy;
-import com.google.iam.v1.SetIamPolicyRequest;
-import com.google.iam.v1.TestIamPermissionsRequest;
-import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.protobuf.Empty;
+import io.grafeas.v1beta1.BatchCreateNotesRequest;
+import io.grafeas.v1beta1.BatchCreateNotesResponse;
+import io.grafeas.v1beta1.BatchCreateOccurrencesRequest;
+import io.grafeas.v1beta1.BatchCreateOccurrencesResponse;
+import io.grafeas.v1beta1.CreateNoteRequest;
+import io.grafeas.v1beta1.CreateOccurrenceRequest;
+import io.grafeas.v1beta1.DeleteNoteRequest;
+import io.grafeas.v1beta1.DeleteOccurrenceRequest;
+import io.grafeas.v1beta1.GetNoteRequest;
+import io.grafeas.v1beta1.GetOccurrenceNoteRequest;
+import io.grafeas.v1beta1.GetOccurrenceRequest;
+import io.grafeas.v1beta1.GetVulnerabilityOccurrencesSummaryRequest;
+import io.grafeas.v1beta1.ListNoteOccurrencesRequest;
+import io.grafeas.v1beta1.ListNoteOccurrencesResponse;
+import io.grafeas.v1beta1.ListNotesRequest;
+import io.grafeas.v1beta1.ListNotesResponse;
+import io.grafeas.v1beta1.ListOccurrencesRequest;
+import io.grafeas.v1beta1.ListOccurrencesResponse;
+import io.grafeas.v1beta1.Note;
+import io.grafeas.v1beta1.Occurrence;
+import io.grafeas.v1beta1.UpdateNoteRequest;
+import io.grafeas.v1beta1.UpdateOccurrenceRequest;
+import io.grafeas.v1beta1.VulnerabilityOccurrencesSummary;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
@@ -57,7 +56,7 @@ import javax.annotation.Generated;
  */
 @Generated("by gapic-generator")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
-public abstract class ContainerAnalysisStub implements BackgroundResource {
+public abstract class GrafeasV1Beta1Stub implements BackgroundResource {
 
   public UnaryCallable<GetOccurrenceRequest, Occurrence> getOccurrenceCallable() {
     throw new UnsupportedOperationException("Not implemented: getOccurrenceCallable()");
@@ -78,6 +77,11 @@ public abstract class ContainerAnalysisStub implements BackgroundResource {
 
   public UnaryCallable<CreateOccurrenceRequest, Occurrence> createOccurrenceCallable() {
     throw new UnsupportedOperationException("Not implemented: createOccurrenceCallable()");
+  }
+
+  public UnaryCallable<BatchCreateOccurrencesRequest, BatchCreateOccurrencesResponse>
+      batchCreateOccurrencesCallable() {
+    throw new UnsupportedOperationException("Not implemented: batchCreateOccurrencesCallable()");
   }
 
   public UnaryCallable<UpdateOccurrenceRequest, Occurrence> updateOccurrenceCallable() {
@@ -108,6 +112,11 @@ public abstract class ContainerAnalysisStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: createNoteCallable()");
   }
 
+  public UnaryCallable<BatchCreateNotesRequest, BatchCreateNotesResponse>
+      batchCreateNotesCallable() {
+    throw new UnsupportedOperationException("Not implemented: batchCreateNotesCallable()");
+  }
+
   public UnaryCallable<UpdateNoteRequest, Note> updateNoteCallable() {
     throw new UnsupportedOperationException("Not implemented: updateNoteCallable()");
   }
@@ -122,23 +131,10 @@ public abstract class ContainerAnalysisStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: listNoteOccurrencesCallable()");
   }
 
-  public UnaryCallable<GetVulnzOccurrencesSummaryRequest, GetVulnzOccurrencesSummaryResponse>
-      getVulnzOccurrencesSummaryCallable() {
+  public UnaryCallable<GetVulnerabilityOccurrencesSummaryRequest, VulnerabilityOccurrencesSummary>
+      getVulnerabilityOccurrencesSummaryCallable() {
     throw new UnsupportedOperationException(
-        "Not implemented: getVulnzOccurrencesSummaryCallable()");
-  }
-
-  public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
-    throw new UnsupportedOperationException("Not implemented: setIamPolicyCallable()");
-  }
-
-  public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
-    throw new UnsupportedOperationException("Not implemented: getIamPolicyCallable()");
-  }
-
-  public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
-      testIamPermissionsCallable() {
-    throw new UnsupportedOperationException("Not implemented: testIamPermissionsCallable()");
+        "Not implemented: getVulnerabilityOccurrencesSummaryCallable()");
   }
 
   @Override

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.cloud.devtools.containeranalysis.v1alpha1;
+package com.google.cloud.devtools.containeranalysis.v1beta1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.grpc.testing.MockGrpcService;
@@ -23,11 +23,11 @@ import java.util.List;
 
 @javax.annotation.Generated("by GAPIC")
 @BetaApi
-public class MockContainerAnalysis implements MockGrpcService {
-  private final MockContainerAnalysisImpl serviceImpl;
+public class MockGrafeasV1Beta1 implements MockGrpcService {
+  private final MockGrafeasV1Beta1Impl serviceImpl;
 
-  public MockContainerAnalysis() {
-    serviceImpl = new MockContainerAnalysisImpl();
+  public MockGrafeasV1Beta1() {
+    serviceImpl = new MockGrafeasV1Beta1Impl();
   }
 
   @Override

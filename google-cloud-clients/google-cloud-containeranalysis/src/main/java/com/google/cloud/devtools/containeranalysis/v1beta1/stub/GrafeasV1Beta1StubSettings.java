@@ -13,11 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.cloud.devtools.containeranalysis.v1alpha1.stub;
+package com.google.cloud.devtools.containeranalysis.v1beta1.stub;
 
-import static com.google.cloud.devtools.containeranalysis.v1alpha1.ContainerAnalysisClient.ListNoteOccurrencesPagedResponse;
-import static com.google.cloud.devtools.containeranalysis.v1alpha1.ContainerAnalysisClient.ListNotesPagedResponse;
-import static com.google.cloud.devtools.containeranalysis.v1alpha1.ContainerAnalysisClient.ListOccurrencesPagedResponse;
+import static com.google.cloud.devtools.containeranalysis.v1beta1.GrafeasV1Beta1Client.ListNoteOccurrencesPagedResponse;
+import static com.google.cloud.devtools.containeranalysis.v1beta1.GrafeasV1Beta1Client.ListNotesPagedResponse;
+import static com.google.cloud.devtools.containeranalysis.v1beta1.GrafeasV1Beta1Client.ListOccurrencesPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
@@ -45,31 +45,30 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
-import com.google.containeranalysis.v1alpha1.CreateNoteRequest;
-import com.google.containeranalysis.v1alpha1.CreateOccurrenceRequest;
-import com.google.containeranalysis.v1alpha1.DeleteNoteRequest;
-import com.google.containeranalysis.v1alpha1.DeleteOccurrenceRequest;
-import com.google.containeranalysis.v1alpha1.GetNoteRequest;
-import com.google.containeranalysis.v1alpha1.GetOccurrenceNoteRequest;
-import com.google.containeranalysis.v1alpha1.GetOccurrenceRequest;
-import com.google.containeranalysis.v1alpha1.GetVulnzOccurrencesSummaryRequest;
-import com.google.containeranalysis.v1alpha1.GetVulnzOccurrencesSummaryResponse;
-import com.google.containeranalysis.v1alpha1.ListNoteOccurrencesRequest;
-import com.google.containeranalysis.v1alpha1.ListNoteOccurrencesResponse;
-import com.google.containeranalysis.v1alpha1.ListNotesRequest;
-import com.google.containeranalysis.v1alpha1.ListNotesResponse;
-import com.google.containeranalysis.v1alpha1.ListOccurrencesRequest;
-import com.google.containeranalysis.v1alpha1.ListOccurrencesResponse;
-import com.google.containeranalysis.v1alpha1.Note;
-import com.google.containeranalysis.v1alpha1.Occurrence;
-import com.google.containeranalysis.v1alpha1.UpdateNoteRequest;
-import com.google.containeranalysis.v1alpha1.UpdateOccurrenceRequest;
-import com.google.iam.v1.GetIamPolicyRequest;
-import com.google.iam.v1.Policy;
-import com.google.iam.v1.SetIamPolicyRequest;
-import com.google.iam.v1.TestIamPermissionsRequest;
-import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.protobuf.Empty;
+import io.grafeas.v1beta1.BatchCreateNotesRequest;
+import io.grafeas.v1beta1.BatchCreateNotesResponse;
+import io.grafeas.v1beta1.BatchCreateOccurrencesRequest;
+import io.grafeas.v1beta1.BatchCreateOccurrencesResponse;
+import io.grafeas.v1beta1.CreateNoteRequest;
+import io.grafeas.v1beta1.CreateOccurrenceRequest;
+import io.grafeas.v1beta1.DeleteNoteRequest;
+import io.grafeas.v1beta1.DeleteOccurrenceRequest;
+import io.grafeas.v1beta1.GetNoteRequest;
+import io.grafeas.v1beta1.GetOccurrenceNoteRequest;
+import io.grafeas.v1beta1.GetOccurrenceRequest;
+import io.grafeas.v1beta1.GetVulnerabilityOccurrencesSummaryRequest;
+import io.grafeas.v1beta1.ListNoteOccurrencesRequest;
+import io.grafeas.v1beta1.ListNoteOccurrencesResponse;
+import io.grafeas.v1beta1.ListNotesRequest;
+import io.grafeas.v1beta1.ListNotesResponse;
+import io.grafeas.v1beta1.ListOccurrencesRequest;
+import io.grafeas.v1beta1.ListOccurrencesResponse;
+import io.grafeas.v1beta1.Note;
+import io.grafeas.v1beta1.Occurrence;
+import io.grafeas.v1beta1.UpdateNoteRequest;
+import io.grafeas.v1beta1.UpdateOccurrenceRequest;
+import io.grafeas.v1beta1.VulnerabilityOccurrencesSummary;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
@@ -77,7 +76,7 @@ import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 /**
- * Settings class to configure an instance of {@link ContainerAnalysisStub}.
+ * Settings class to configure an instance of {@link GrafeasV1Beta1Stub}.
  *
  * <p>The default instance has everything set to sensible defaults:
  *
@@ -94,17 +93,17 @@ import org.threeten.bp.Duration;
  *
  * <pre>
  * <code>
- * ContainerAnalysisStubSettings.Builder containerAnalysisSettingsBuilder =
- *     ContainerAnalysisStubSettings.newBuilder();
- * containerAnalysisSettingsBuilder.getOccurrenceSettings().getRetrySettings().toBuilder()
+ * GrafeasV1Beta1StubSettings.Builder grafeasV1Beta1SettingsBuilder =
+ *     GrafeasV1Beta1StubSettings.newBuilder();
+ * grafeasV1Beta1SettingsBuilder.getOccurrenceSettings().getRetrySettings().toBuilder()
  *     .setTotalTimeout(Duration.ofSeconds(30));
- * ContainerAnalysisStubSettings containerAnalysisSettings = containerAnalysisSettingsBuilder.build();
+ * GrafeasV1Beta1StubSettings grafeasV1Beta1Settings = grafeasV1Beta1SettingsBuilder.build();
  * </code>
  * </pre>
  */
 @Generated("by gapic-generator")
 @BetaApi
-public class ContainerAnalysisStubSettings extends StubSettings<ContainerAnalysisStubSettings> {
+public class GrafeasV1Beta1StubSettings extends StubSettings<GrafeasV1Beta1StubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
@@ -115,6 +114,8 @@ public class ContainerAnalysisStubSettings extends StubSettings<ContainerAnalysi
       listOccurrencesSettings;
   private final UnaryCallSettings<DeleteOccurrenceRequest, Empty> deleteOccurrenceSettings;
   private final UnaryCallSettings<CreateOccurrenceRequest, Occurrence> createOccurrenceSettings;
+  private final UnaryCallSettings<BatchCreateOccurrencesRequest, BatchCreateOccurrencesResponse>
+      batchCreateOccurrencesSettings;
   private final UnaryCallSettings<UpdateOccurrenceRequest, Occurrence> updateOccurrenceSettings;
   private final UnaryCallSettings<GetOccurrenceNoteRequest, Note> getOccurrenceNoteSettings;
   private final UnaryCallSettings<GetNoteRequest, Note> getNoteSettings;
@@ -122,17 +123,15 @@ public class ContainerAnalysisStubSettings extends StubSettings<ContainerAnalysi
       listNotesSettings;
   private final UnaryCallSettings<DeleteNoteRequest, Empty> deleteNoteSettings;
   private final UnaryCallSettings<CreateNoteRequest, Note> createNoteSettings;
+  private final UnaryCallSettings<BatchCreateNotesRequest, BatchCreateNotesResponse>
+      batchCreateNotesSettings;
   private final UnaryCallSettings<UpdateNoteRequest, Note> updateNoteSettings;
   private final PagedCallSettings<
           ListNoteOccurrencesRequest, ListNoteOccurrencesResponse, ListNoteOccurrencesPagedResponse>
       listNoteOccurrencesSettings;
   private final UnaryCallSettings<
-          GetVulnzOccurrencesSummaryRequest, GetVulnzOccurrencesSummaryResponse>
-      getVulnzOccurrencesSummarySettings;
-  private final UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings;
-  private final UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings;
-  private final UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
-      testIamPermissionsSettings;
+          GetVulnerabilityOccurrencesSummaryRequest, VulnerabilityOccurrencesSummary>
+      getVulnerabilityOccurrencesSummarySettings;
 
   /** Returns the object with the settings used for calls to getOccurrence. */
   public UnaryCallSettings<GetOccurrenceRequest, Occurrence> getOccurrenceSettings() {
@@ -154,6 +153,12 @@ public class ContainerAnalysisStubSettings extends StubSettings<ContainerAnalysi
   /** Returns the object with the settings used for calls to createOccurrence. */
   public UnaryCallSettings<CreateOccurrenceRequest, Occurrence> createOccurrenceSettings() {
     return createOccurrenceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchCreateOccurrences. */
+  public UnaryCallSettings<BatchCreateOccurrencesRequest, BatchCreateOccurrencesResponse>
+      batchCreateOccurrencesSettings() {
+    return batchCreateOccurrencesSettings;
   }
 
   /** Returns the object with the settings used for calls to updateOccurrence. */
@@ -187,6 +192,12 @@ public class ContainerAnalysisStubSettings extends StubSettings<ContainerAnalysi
     return createNoteSettings;
   }
 
+  /** Returns the object with the settings used for calls to batchCreateNotes. */
+  public UnaryCallSettings<BatchCreateNotesRequest, BatchCreateNotesResponse>
+      batchCreateNotesSettings() {
+    return batchCreateNotesSettings;
+  }
+
   /** Returns the object with the settings used for calls to updateNote. */
   public UnaryCallSettings<UpdateNoteRequest, Note> updateNoteSettings() {
     return updateNoteSettings;
@@ -199,34 +210,19 @@ public class ContainerAnalysisStubSettings extends StubSettings<ContainerAnalysi
     return listNoteOccurrencesSettings;
   }
 
-  /** Returns the object with the settings used for calls to getVulnzOccurrencesSummary. */
-  public UnaryCallSettings<GetVulnzOccurrencesSummaryRequest, GetVulnzOccurrencesSummaryResponse>
-      getVulnzOccurrencesSummarySettings() {
-    return getVulnzOccurrencesSummarySettings;
-  }
-
-  /** Returns the object with the settings used for calls to setIamPolicy. */
-  public UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings() {
-    return setIamPolicySettings;
-  }
-
-  /** Returns the object with the settings used for calls to getIamPolicy. */
-  public UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings() {
-    return getIamPolicySettings;
-  }
-
-  /** Returns the object with the settings used for calls to testIamPermissions. */
-  public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
-      testIamPermissionsSettings() {
-    return testIamPermissionsSettings;
+  /** Returns the object with the settings used for calls to getVulnerabilityOccurrencesSummary. */
+  public UnaryCallSettings<
+          GetVulnerabilityOccurrencesSummaryRequest, VulnerabilityOccurrencesSummary>
+      getVulnerabilityOccurrencesSummarySettings() {
+    return getVulnerabilityOccurrencesSummarySettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
-  public ContainerAnalysisStub createStub() throws IOException {
+  public GrafeasV1Beta1Stub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
-      return GrpcContainerAnalysisStub.create(this);
+      return GrpcGrafeasV1Beta1Stub.create(this);
     } else {
       throw new UnsupportedOperationException(
           "Transport not supported: " + getTransportChannelProvider().getTransportName());
@@ -266,7 +262,7 @@ public class ContainerAnalysisStubSettings extends StubSettings<ContainerAnalysi
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken(
-            "gapic", GaxProperties.getLibraryVersion(ContainerAnalysisStubSettings.class))
+            "gapic", GaxProperties.getLibraryVersion(GrafeasV1Beta1StubSettings.class))
         .setTransportToken(
             GaxGrpcProperties.getGrpcTokenName(), GaxGrpcProperties.getGrpcVersion());
   }
@@ -286,26 +282,25 @@ public class ContainerAnalysisStubSettings extends StubSettings<ContainerAnalysi
     return new Builder(this);
   }
 
-  protected ContainerAnalysisStubSettings(Builder settingsBuilder) throws IOException {
+  protected GrafeasV1Beta1StubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
     getOccurrenceSettings = settingsBuilder.getOccurrenceSettings().build();
     listOccurrencesSettings = settingsBuilder.listOccurrencesSettings().build();
     deleteOccurrenceSettings = settingsBuilder.deleteOccurrenceSettings().build();
     createOccurrenceSettings = settingsBuilder.createOccurrenceSettings().build();
+    batchCreateOccurrencesSettings = settingsBuilder.batchCreateOccurrencesSettings().build();
     updateOccurrenceSettings = settingsBuilder.updateOccurrenceSettings().build();
     getOccurrenceNoteSettings = settingsBuilder.getOccurrenceNoteSettings().build();
     getNoteSettings = settingsBuilder.getNoteSettings().build();
     listNotesSettings = settingsBuilder.listNotesSettings().build();
     deleteNoteSettings = settingsBuilder.deleteNoteSettings().build();
     createNoteSettings = settingsBuilder.createNoteSettings().build();
+    batchCreateNotesSettings = settingsBuilder.batchCreateNotesSettings().build();
     updateNoteSettings = settingsBuilder.updateNoteSettings().build();
     listNoteOccurrencesSettings = settingsBuilder.listNoteOccurrencesSettings().build();
-    getVulnzOccurrencesSummarySettings =
-        settingsBuilder.getVulnzOccurrencesSummarySettings().build();
-    setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
-    getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
-    testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
+    getVulnerabilityOccurrencesSummarySettings =
+        settingsBuilder.getVulnerabilityOccurrencesSummarySettings().build();
   }
 
   private static final PagedListDescriptor<
@@ -471,8 +466,8 @@ public class ContainerAnalysisStubSettings extends StubSettings<ContainerAnalysi
             }
           };
 
-  /** Builder for ContainerAnalysisStubSettings. */
-  public static class Builder extends StubSettings.Builder<ContainerAnalysisStubSettings, Builder> {
+  /** Builder for GrafeasV1Beta1StubSettings. */
+  public static class Builder extends StubSettings.Builder<GrafeasV1Beta1StubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
     private final UnaryCallSettings.Builder<GetOccurrenceRequest, Occurrence> getOccurrenceSettings;
@@ -483,6 +478,9 @@ public class ContainerAnalysisStubSettings extends StubSettings<ContainerAnalysi
         deleteOccurrenceSettings;
     private final UnaryCallSettings.Builder<CreateOccurrenceRequest, Occurrence>
         createOccurrenceSettings;
+    private final UnaryCallSettings.Builder<
+            BatchCreateOccurrencesRequest, BatchCreateOccurrencesResponse>
+        batchCreateOccurrencesSettings;
     private final UnaryCallSettings.Builder<UpdateOccurrenceRequest, Occurrence>
         updateOccurrenceSettings;
     private final UnaryCallSettings.Builder<GetOccurrenceNoteRequest, Note>
@@ -493,18 +491,16 @@ public class ContainerAnalysisStubSettings extends StubSettings<ContainerAnalysi
         listNotesSettings;
     private final UnaryCallSettings.Builder<DeleteNoteRequest, Empty> deleteNoteSettings;
     private final UnaryCallSettings.Builder<CreateNoteRequest, Note> createNoteSettings;
+    private final UnaryCallSettings.Builder<BatchCreateNotesRequest, BatchCreateNotesResponse>
+        batchCreateNotesSettings;
     private final UnaryCallSettings.Builder<UpdateNoteRequest, Note> updateNoteSettings;
     private final PagedCallSettings.Builder<
             ListNoteOccurrencesRequest, ListNoteOccurrencesResponse,
             ListNoteOccurrencesPagedResponse>
         listNoteOccurrencesSettings;
     private final UnaryCallSettings.Builder<
-            GetVulnzOccurrencesSummaryRequest, GetVulnzOccurrencesSummaryResponse>
-        getVulnzOccurrencesSummarySettings;
-    private final UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings;
-    private final UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings;
-    private final UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
-        testIamPermissionsSettings;
+            GetVulnerabilityOccurrencesSummaryRequest, VulnerabilityOccurrencesSummary>
+        getVulnerabilityOccurrencesSummarySettings;
 
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
@@ -555,6 +551,8 @@ public class ContainerAnalysisStubSettings extends StubSettings<ContainerAnalysi
 
       createOccurrenceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      batchCreateOccurrencesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       updateOccurrenceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       getOccurrenceNoteSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -567,18 +565,14 @@ public class ContainerAnalysisStubSettings extends StubSettings<ContainerAnalysi
 
       createNoteSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      batchCreateNotesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       updateNoteSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       listNoteOccurrencesSettings =
           PagedCallSettings.newBuilder(LIST_NOTE_OCCURRENCES_PAGE_STR_FACT);
 
-      getVulnzOccurrencesSummarySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getVulnerabilityOccurrencesSummarySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -586,18 +580,17 @@ public class ContainerAnalysisStubSettings extends StubSettings<ContainerAnalysi
               listOccurrencesSettings,
               deleteOccurrenceSettings,
               createOccurrenceSettings,
+              batchCreateOccurrencesSettings,
               updateOccurrenceSettings,
               getOccurrenceNoteSettings,
               getNoteSettings,
               listNotesSettings,
               deleteNoteSettings,
               createNoteSettings,
+              batchCreateNotesSettings,
               updateNoteSettings,
               listNoteOccurrencesSettings,
-              getVulnzOccurrencesSummarySettings,
-              setIamPolicySettings,
-              getIamPolicySettings,
-              testIamPermissionsSettings);
+              getVulnerabilityOccurrencesSummarySettings);
 
       initDefaults(this);
     }
@@ -634,6 +627,11 @@ public class ContainerAnalysisStubSettings extends StubSettings<ContainerAnalysi
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
+          .batchCreateOccurrencesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
           .updateOccurrenceSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
@@ -664,6 +662,11 @@ public class ContainerAnalysisStubSettings extends StubSettings<ContainerAnalysi
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
+          .batchCreateNotesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
           .updateNoteSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
@@ -674,47 +677,32 @@ public class ContainerAnalysisStubSettings extends StubSettings<ContainerAnalysi
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
-          .getVulnzOccurrencesSummarySettings()
+          .getVulnerabilityOccurrencesSummarySettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .setIamPolicySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .getIamPolicySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .testIamPermissionsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       return builder;
     }
 
-    protected Builder(ContainerAnalysisStubSettings settings) {
+    protected Builder(GrafeasV1Beta1StubSettings settings) {
       super(settings);
 
       getOccurrenceSettings = settings.getOccurrenceSettings.toBuilder();
       listOccurrencesSettings = settings.listOccurrencesSettings.toBuilder();
       deleteOccurrenceSettings = settings.deleteOccurrenceSettings.toBuilder();
       createOccurrenceSettings = settings.createOccurrenceSettings.toBuilder();
+      batchCreateOccurrencesSettings = settings.batchCreateOccurrencesSettings.toBuilder();
       updateOccurrenceSettings = settings.updateOccurrenceSettings.toBuilder();
       getOccurrenceNoteSettings = settings.getOccurrenceNoteSettings.toBuilder();
       getNoteSettings = settings.getNoteSettings.toBuilder();
       listNotesSettings = settings.listNotesSettings.toBuilder();
       deleteNoteSettings = settings.deleteNoteSettings.toBuilder();
       createNoteSettings = settings.createNoteSettings.toBuilder();
+      batchCreateNotesSettings = settings.batchCreateNotesSettings.toBuilder();
       updateNoteSettings = settings.updateNoteSettings.toBuilder();
       listNoteOccurrencesSettings = settings.listNoteOccurrencesSettings.toBuilder();
-      getVulnzOccurrencesSummarySettings = settings.getVulnzOccurrencesSummarySettings.toBuilder();
-      setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
-      getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
-      testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
+      getVulnerabilityOccurrencesSummarySettings =
+          settings.getVulnerabilityOccurrencesSummarySettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -722,18 +710,17 @@ public class ContainerAnalysisStubSettings extends StubSettings<ContainerAnalysi
               listOccurrencesSettings,
               deleteOccurrenceSettings,
               createOccurrenceSettings,
+              batchCreateOccurrencesSettings,
               updateOccurrenceSettings,
               getOccurrenceNoteSettings,
               getNoteSettings,
               listNotesSettings,
               deleteNoteSettings,
               createNoteSettings,
+              batchCreateNotesSettings,
               updateNoteSettings,
               listNoteOccurrencesSettings,
-              getVulnzOccurrencesSummarySettings,
-              setIamPolicySettings,
-              getIamPolicySettings,
-              testIamPermissionsSettings);
+              getVulnerabilityOccurrencesSummarySettings);
     }
 
     // NEXT_MAJOR_VER: remove 'throws Exception'
@@ -775,6 +762,12 @@ public class ContainerAnalysisStubSettings extends StubSettings<ContainerAnalysi
       return createOccurrenceSettings;
     }
 
+    /** Returns the builder for the settings used for calls to batchCreateOccurrences. */
+    public UnaryCallSettings.Builder<BatchCreateOccurrencesRequest, BatchCreateOccurrencesResponse>
+        batchCreateOccurrencesSettings() {
+      return batchCreateOccurrencesSettings;
+    }
+
     /** Returns the builder for the settings used for calls to updateOccurrence. */
     public UnaryCallSettings.Builder<UpdateOccurrenceRequest, Occurrence>
         updateOccurrenceSettings() {
@@ -807,6 +800,12 @@ public class ContainerAnalysisStubSettings extends StubSettings<ContainerAnalysi
       return createNoteSettings;
     }
 
+    /** Returns the builder for the settings used for calls to batchCreateNotes. */
+    public UnaryCallSettings.Builder<BatchCreateNotesRequest, BatchCreateNotesResponse>
+        batchCreateNotesSettings() {
+      return batchCreateNotesSettings;
+    }
+
     /** Returns the builder for the settings used for calls to updateNote. */
     public UnaryCallSettings.Builder<UpdateNoteRequest, Note> updateNoteSettings() {
       return updateNoteSettings;
@@ -820,32 +819,18 @@ public class ContainerAnalysisStubSettings extends StubSettings<ContainerAnalysi
       return listNoteOccurrencesSettings;
     }
 
-    /** Returns the builder for the settings used for calls to getVulnzOccurrencesSummary. */
+    /**
+     * Returns the builder for the settings used for calls to getVulnerabilityOccurrencesSummary.
+     */
     public UnaryCallSettings.Builder<
-            GetVulnzOccurrencesSummaryRequest, GetVulnzOccurrencesSummaryResponse>
-        getVulnzOccurrencesSummarySettings() {
-      return getVulnzOccurrencesSummarySettings;
-    }
-
-    /** Returns the builder for the settings used for calls to setIamPolicy. */
-    public UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings() {
-      return setIamPolicySettings;
-    }
-
-    /** Returns the builder for the settings used for calls to getIamPolicy. */
-    public UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings() {
-      return getIamPolicySettings;
-    }
-
-    /** Returns the builder for the settings used for calls to testIamPermissions. */
-    public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
-        testIamPermissionsSettings() {
-      return testIamPermissionsSettings;
+            GetVulnerabilityOccurrencesSummaryRequest, VulnerabilityOccurrencesSummary>
+        getVulnerabilityOccurrencesSummarySettings() {
+      return getVulnerabilityOccurrencesSummarySettings;
     }
 
     @Override
-    public ContainerAnalysisStubSettings build() throws IOException {
-      return new ContainerAnalysisStubSettings(this);
+    public GrafeasV1Beta1StubSettings build() throws IOException {
+      return new GrafeasV1Beta1StubSettings(this);
     }
   }
 }
