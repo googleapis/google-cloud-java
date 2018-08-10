@@ -108,11 +108,17 @@ public class PublisherSnippets {
     Duration retryDelay = Duration.ofMillis(100); // default : 1 ms
     double retryDelayMultiplier = 2.0; // back off for repeated failures
     Duration maxRetryDelay = Duration.ofSeconds(5); // default : 10 seconds
+    Duration totalTimeout = Duration.ofSeconds(1); // default: 0 
+    Duration initialRpcTimeout = Duration.ofSeconds(1); // default: 0 
+    Duration maxRpcTimeout = Duration.ofSeconds(10); // default: 0
 
     RetrySettings retrySettings = RetrySettings.newBuilder()
         .setInitialRetryDelay(retryDelay)
         .setRetryDelayMultiplier(retryDelayMultiplier)
         .setMaxRetryDelay(maxRetryDelay)
+        .setTotalTimeout(totalTimeout)
+        .setInitialRpcTimeout(initialRpcTimeout)
+        .setMaxRpcTimeout(maxRpcTimeout)
         .build();
 
     Publisher publisher = Publisher.newBuilder(topicName)
