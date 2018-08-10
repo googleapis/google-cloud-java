@@ -32,8 +32,7 @@ import java.util.Objects;
 /**
  * Google BigQuery table information. Use {@link StandardTableDefinition} to create simple BigQuery
  * table. Use {@link ViewDefinition} to create a BigQuery view. Use {@link ExternalTableDefinition}
- * to create a BigQuery a table backed by external data. Use {@link ModelDefinition} to create a 
- * BigQuery ML model.
+ * to create a BigQuery a table backed by external data.
  *
  * @see <a href="https://cloud.google.com/bigquery/docs/tables">Managing Tables</a>
  */
