@@ -96,6 +96,8 @@ def main():
                         help='The path to the discovery-artifact-manager repo')
     args = parser.parse_args()
 
+    generate_api.dump_versions(googleapis=args.googleapis, discovery_repo=args.discovery_repo)
+
     run_gapic_gen(args.googleapis)
     run_discogapic_gen(args.discovery_repo)
 

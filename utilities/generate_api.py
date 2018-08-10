@@ -54,18 +54,23 @@ def get_git_repo_version(path):
     return ''.join([commit, suffix])
 
 
-def dump_versions(config_path):
+def dump_versions(googleapis=None, discovery_repo=None):
     print("Component versions:")
 
     print(subprocess.check_output(['artman', '--version'], stderr=subprocess.STDOUT).strip())
-
-    print("googleapis {}".format(get_git_repo_version(os.path.dirname(config_path))))
-    print("google-cloud-java {}".format(get_git_repo_version(os.path.dirname(__file__))))
 
     with io.open(os.path.expanduser("~/.artman/config.yaml"), encoding='UTF-8') as config_file:
         artman_config_data = yaml.load(config_file, Loader=yaml.Loader)
         toolkit_path = artman_config_data['local']['toolkit']
         print("gapic_generator {}".format(get_git_repo_version(toolkit_path)))
+
+    print("google-cloud-java {}".format(get_git_repo_version(os.path.dirname(__file__))))
+
+    if googleapis:
+        print("googleapis {}".format(get_git_repo_version(googleapis)))
+
+    if discovery_repo:
+        print("discovery_repo {}".format(get_git_repo_version(discovery_repo)))
 
 
 def run_generate_api(config_path, artifact_name, noisy=False):
@@ -166,7 +171,8 @@ def main():
                         help='Don\'t print informational instructions')
     args = parser.parse_args()
 
-    dump_versions(args.config_file)
+    if not args.quiet:
+        dump_versions(googleapis=os.path.dirname(args.config_file))
 
     run_generate_api(args.config_file, args.artifact_name, not args.quiet)
 
