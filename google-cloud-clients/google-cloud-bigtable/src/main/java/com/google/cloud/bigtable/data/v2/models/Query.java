@@ -172,7 +172,7 @@ public final class Query implements Serializable {
 
   /**
    * Split this query into multiple queries that can be evenly distributed across Bigtable nodes and
-   * be run im parallel. This method takes the results from {@link
+   * be run in parallel. This method takes the results from {@link
    * com.google.cloud.bigtable.data.v2.BigtableDataClient#sampleRowKeysAsync(String)} to divide this
    * query into a set of disjoint queries that logically combine into form this query.
    *
@@ -183,7 +183,7 @@ public final class Query implements Serializable {
    * List<Query> queryShards = myQuery.shard(keyOffsets);
    * List<ApiFuture<List<Row>>> futures = new ArrayList();
    * for (Query subQuery : queryShards) {
-   *   futures.add(dataClient.readRowsCallable().all().futureCall(subQuery))
+   *   futures.add(dataClient.readRowsCallable().all().futureCall(subQuery));
    * }
    * List<List<Row>> results = ApiFutures.allAsList(futures).get();
    * }</pre>
@@ -214,7 +214,7 @@ public final class Query implements Serializable {
    * List<Query> queryShards = myQuery.shard(splitPoints);
    * List<ApiFuture<List<Row>>> futures = new ArrayList();
    * for (Query subQuery : queryShards) {
-   *   futures.add(dataClient.readRowsCallable().all().futureCall(subQuery))
+   *   futures.add(dataClient.readRowsCallable().all().futureCall(subQuery));
    * }
    * List<List<Row>> results = ApiFutures.allAsList(futures).get();
    * }</pre>
