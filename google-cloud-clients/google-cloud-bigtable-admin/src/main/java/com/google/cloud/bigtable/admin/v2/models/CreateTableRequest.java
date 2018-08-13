@@ -38,7 +38,7 @@ import com.google.protobuf.ByteString;
 public final class CreateTableRequest {
   private final com.google.bigtable.admin.v2.CreateTableRequest.Builder createTableRequest = com.google.bigtable.admin.v2.CreateTableRequest
       .newBuilder();
-  private final com.google.bigtable.admin.v2.Table.Builder tableRequest = Table.newBuilder();
+  private final Table.Builder tableRequest = Table.newBuilder();
 
   public static CreateTableRequest of(String tableId) {
     return new CreateTableRequest(tableId);
@@ -60,7 +60,7 @@ public final class CreateTableRequest {
    */
   public CreateTableRequest addFamily(String familyId) {
     Preconditions.checkNotNull(familyId);
-    tableRequest.putColumnFamilies(familyId, com.google.bigtable.admin.v2.ColumnFamily.newBuilder().build());
+    tableRequest.putColumnFamilies(familyId, ColumnFamily.newBuilder().build());
     return this;
   }
 

@@ -21,10 +21,7 @@ import com.google.api.core.InternalApi;
 import com.google.bigtable.admin.v2.GcRule;
 import com.google.bigtable.admin.v2.GcRule.RuleCase;
 import com.google.cloud.bigtable.admin.v2.models.GCRules.GCRule;
-import com.google.cloud.bigtable.admin.v2.models.GCRules.IntersectionRule;
-import com.google.cloud.bigtable.admin.v2.models.GCRules.UnionRule;
 import com.google.common.base.MoreObjects;
-import org.threeten.bp.Duration;
 
 /** Wrapper for {@link ColumnFamily} protocol buffer object */
 public final class ColumnFamily {

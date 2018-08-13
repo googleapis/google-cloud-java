@@ -74,7 +74,7 @@ public final class ModifyColumnFamiliesRequest {
   public ModifyColumnFamiliesRequest addFamily(String familyId, GCRule gcRule) {
     Modification.Builder modification = Modification.newBuilder().setId(familyId);
     Preconditions.checkNotNull(gcRule);
-    modification.setCreate(com.google.bigtable.admin.v2.ColumnFamily.newBuilder().setGcRule(gcRule.toProto()));
+    modification.setCreate(ColumnFamily.newBuilder().setGcRule(gcRule.toProto()));
     modFamilyRequest.addModifications(modification.build());
     return this;
   }
