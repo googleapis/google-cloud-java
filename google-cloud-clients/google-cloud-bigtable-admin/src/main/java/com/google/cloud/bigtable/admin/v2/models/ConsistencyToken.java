@@ -18,7 +18,6 @@ package com.google.cloud.bigtable.admin.v2.models;
 import com.google.api.core.InternalApi;
 import com.google.bigtable.admin.v2.CheckConsistencyRequest;
 import com.google.bigtable.admin.v2.GenerateConsistencyTokenResponse;
-import com.google.cloud.bigtable.admin.v2.TableAdminClient;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.MoreObjects;
 
@@ -26,7 +25,7 @@ import com.google.common.base.MoreObjects;
  * Wrapper for {@link GenerateConsistencyTokenResponse#getConsistencyToken()}
  *
  * <p>Cannot be created. They are obtained by invoking {@link
- * TableAdminClient#generateConsistencyToken(String)}
+ * com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient#generateConsistencyToken(String)}
  */
 public final class ConsistencyToken {
   private final String token;
