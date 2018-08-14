@@ -227,8 +227,28 @@ public class ITStorageTest {
     assertNull(remoteBucket.getDefaultEventBasedHold());
     Bucket updatedBucket = remoteBucket.toBuilder().setDefaultEventBasedHold(true).build().update();
     assertTrue(updatedBucket.getDefaultEventBasedHold());
+    String blobName = "test-create-with-event-based-hold";
+    BlobInfo blobInfo = BlobInfo.newBuilder(BUCKET, blobName).build();
+    Blob remoteBlob = storage.create(blobInfo);
+    assertTrue(remoteBlob.getEventBasedHold());
+    remoteBlob = remoteBlob.toBuilder().setEventBasedHold(false).build().update();
+    assertFalse(remoteBlob.getEventBasedHold());
     updatedBucket = remoteBucket.toBuilder().setDefaultEventBasedHold(false).build().update().reload();
     assertFalse(updatedBucket.getDefaultEventBasedHold());
+  }
+
+  @Test
+  public void testAttemptDeletionObjectEventBasedHold() {
+    String blobName = "test-create-with-event-based-hold";
+    BlobInfo blobInfo = BlobInfo.newBuilder(BUCKET, blobName).setEventBasedHold(true).build();
+    Blob remoteBlob = storage.create(blobInfo);
+    assertTrue(remoteBlob.getEventBasedHold());
+    try {
+      remoteBlob.delete();
+      fail("Expected failure on delete from eventBasedHold");
+    } catch (StorageException ex) {
+      // expected
+    }
   }
 
   @Test

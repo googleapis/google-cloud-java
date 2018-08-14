@@ -139,6 +139,7 @@ public interface Storage extends Service<StorageOptions> {
     TIME_DELETED("timeDeleted"),
     @GcpLaunchStage.Beta
     KMS_KEY_NAME("kmsKeyName"),
+    EVENT_BASED_HOLD("eventBasedHold"),
     UPDATED("updated");
 
     static final List<? extends FieldSelector> REQUIRED_FIELDS = ImmutableList.of(BUCKET, NAME);

@@ -410,6 +410,12 @@ public class Blob extends BlobInfo {
     }
 
     @Override
+    public Builder setEventBasedHold(Boolean eventBasedHold) {
+      infoBuilder.setEventBasedHold(eventBasedHold);
+      return this;
+    }
+
+    @Override
     public Blob build() {
       return new Blob(storage, infoBuilder);
     }

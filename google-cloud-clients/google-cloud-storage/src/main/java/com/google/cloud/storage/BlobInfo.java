@@ -85,6 +85,7 @@ public class BlobInfo implements Serializable {
   private final boolean isDirectory;
   private final CustomerEncryption customerEncryption;
   private final String kmsKeyName;
+  private final Boolean eventBasedHold;
 
   /**
    * This class is meant for internal use only. Users are discouraged from using this class.
@@ -276,6 +277,12 @@ public class BlobInfo implements Serializable {
     abstract Builder setKmsKeyName(String kmsKeyName);
 
     /**
+     * Sets the blob's eventBasedHold.
+     */
+    public abstract Builder setEventBasedHold(Boolean eventBasedHold);
+
+
+    /**
      * Creates a {@code BlobInfo} object.
      */
     public abstract BlobInfo build();
@@ -308,6 +315,7 @@ public class BlobInfo implements Serializable {
     private CustomerEncryption customerEncryption;
     private StorageClass storageClass;
     private String kmsKeyName;
+    private Boolean eventBasedHold;
 
     BuilderImpl(BlobId blobId) {
       this.blobId = blobId;
@@ -339,6 +347,7 @@ public class BlobInfo implements Serializable {
       isDirectory = blobInfo.isDirectory;
       storageClass = blobInfo.storageClass;
       kmsKeyName = blobInfo.kmsKeyName;
+      eventBasedHold = blobInfo.eventBasedHold;
     }
 
     @Override
@@ -494,6 +503,12 @@ public class BlobInfo implements Serializable {
     }
 
     @Override
+    public Builder setEventBasedHold(Boolean eventBasedHold) {
+      this.eventBasedHold = eventBasedHold;
+      return this;
+    }
+
+    @Override
     public BlobInfo build() {
       checkNotNull(blobId);
       return new BlobInfo(this);
@@ -526,6 +541,7 @@ public class BlobInfo implements Serializable {
     isDirectory = firstNonNull(builder.isDirectory, Boolean.FALSE);
     storageClass = builder.storageClass;
     kmsKeyName = builder.kmsKeyName;
+    eventBasedHold = builder.eventBasedHold;
   }
 
     /**
@@ -764,6 +780,8 @@ public class BlobInfo implements Serializable {
     return kmsKeyName;
   }
 
+  public Boolean getEventBasedHold() { return eventBasedHold; }
+
   /**
    * Returns a builder for the current blob.
    */
@@ -838,6 +856,7 @@ public class BlobInfo implements Serializable {
     }
 
     storageObject.setKmsKeyName(kmsKeyName);
+    storageObject.setEventBasedHold(eventBasedHold);
     storageObject.setMetadata(pbMetadata);
     storageObject.setCacheControl(cacheControl);
     storageObject.setContentEncoding(contentEncoding);
@@ -970,6 +989,9 @@ public class BlobInfo implements Serializable {
     }
     if (storageObject.getKmsKeyName() != null) {
       builder.setKmsKeyName(storageObject.getKmsKeyName());
+    }
+    if (storageObject.getEventBasedHold() != null) {
+      builder.setEventBasedHold(storageObject.getEventBasedHold());
     }
     return builder.build();
   }
