@@ -86,6 +86,7 @@ public class BlobInfo implements Serializable {
   private final CustomerEncryption customerEncryption;
   private final String kmsKeyName;
   private final Boolean eventBasedHold;
+  private final Boolean temporaryHold;
 
   /**
    * This class is meant for internal use only. Users are discouraged from using this class.
@@ -281,6 +282,10 @@ public class BlobInfo implements Serializable {
      */
     public abstract Builder setEventBasedHold(Boolean eventBasedHold);
 
+    /**
+     * Sets the blob's temporaryHold.
+     */
+    public abstract Builder setTemporaryHold(Boolean temporaryHold);
 
     /**
      * Creates a {@code BlobInfo} object.
@@ -316,6 +321,7 @@ public class BlobInfo implements Serializable {
     private StorageClass storageClass;
     private String kmsKeyName;
     private Boolean eventBasedHold;
+    private Boolean temporaryHold;
 
     BuilderImpl(BlobId blobId) {
       this.blobId = blobId;
@@ -348,6 +354,7 @@ public class BlobInfo implements Serializable {
       storageClass = blobInfo.storageClass;
       kmsKeyName = blobInfo.kmsKeyName;
       eventBasedHold = blobInfo.eventBasedHold;
+      temporaryHold = blobInfo.temporaryHold;
     }
 
     @Override
@@ -509,6 +516,12 @@ public class BlobInfo implements Serializable {
     }
 
     @Override
+    public Builder setTemporaryHold(Boolean temporaryHold) {
+      this.temporaryHold = temporaryHold;
+      return this;
+    }
+
+    @Override
     public BlobInfo build() {
       checkNotNull(blobId);
       return new BlobInfo(this);
@@ -542,6 +555,7 @@ public class BlobInfo implements Serializable {
     storageClass = builder.storageClass;
     kmsKeyName = builder.kmsKeyName;
     eventBasedHold = builder.eventBasedHold;
+    temporaryHold = builder.temporaryHold;
   }
 
     /**
@@ -780,7 +794,15 @@ public class BlobInfo implements Serializable {
     return kmsKeyName;
   }
 
+  /**
+   * Returns the Event Based Hold status of the blob, if any.
+   */
   public Boolean getEventBasedHold() { return eventBasedHold; }
+
+  /**
+   * Returns the Temporary Hold status of the blob, if any.
+   */
+  public Boolean getTemporaryHold() { return temporaryHold; }
 
   /**
    * Returns a builder for the current blob.
@@ -857,6 +879,7 @@ public class BlobInfo implements Serializable {
 
     storageObject.setKmsKeyName(kmsKeyName);
     storageObject.setEventBasedHold(eventBasedHold);
+    storageObject.setTemporaryHold(temporaryHold);
     storageObject.setMetadata(pbMetadata);
     storageObject.setCacheControl(cacheControl);
     storageObject.setContentEncoding(contentEncoding);
@@ -992,6 +1015,9 @@ public class BlobInfo implements Serializable {
     }
     if (storageObject.getEventBasedHold() != null) {
       builder.setEventBasedHold(storageObject.getEventBasedHold());
+    }
+    if (storageObject.getTemporaryHold() != null) {
+      builder.setTemporaryHold(storageObject.getTemporaryHold());
     }
     return builder.build();
   }

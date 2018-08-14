@@ -416,6 +416,12 @@ public class Blob extends BlobInfo {
     }
 
     @Override
+    public Builder setTemporaryHold(Boolean temporaryHold) {
+      infoBuilder.setTemporaryHold(temporaryHold);
+      return this;
+    }
+
+    @Override
     public Blob build() {
       return new Blob(storage, infoBuilder);
     }

@@ -223,18 +223,34 @@ public class ITStorageTest {
 
   @Test
   public void testEnableDisableBucketDefaultEventBasedHold() {
-    Bucket remoteBucket = storage.get(BUCKET, Storage.BucketGetOption.fields(BucketField.DEFAULT_EVENT_BASED_HOLD, BucketField.BILLING));
+    Bucket remoteBucket = storage.get(BUCKET, Storage.BucketGetOption.fields(BucketField.DEFAULT_EVENT_BASED_HOLD));
     assertNull(remoteBucket.getDefaultEventBasedHold());
-    Bucket updatedBucket = remoteBucket.toBuilder().setDefaultEventBasedHold(true).build().update();
-    assertTrue(updatedBucket.getDefaultEventBasedHold());
+    remoteBucket = remoteBucket.toBuilder().setDefaultEventBasedHold(true).build().update();
+    assertTrue(remoteBucket.getDefaultEventBasedHold());
+    remoteBucket = storage.get(BUCKET, Storage.BucketGetOption.fields(BucketField.DEFAULT_EVENT_BASED_HOLD));
+    assertTrue(remoteBucket.getDefaultEventBasedHold());
     String blobName = "test-create-with-event-based-hold";
     BlobInfo blobInfo = BlobInfo.newBuilder(BUCKET, blobName).build();
     Blob remoteBlob = storage.create(blobInfo);
     assertTrue(remoteBlob.getEventBasedHold());
+    remoteBlob = storage.get(blobInfo.getBlobId(), Storage.BlobGetOption.fields(BlobField.EVENT_BASED_HOLD));
+    assertTrue(remoteBlob.getEventBasedHold());
     remoteBlob = remoteBlob.toBuilder().setEventBasedHold(false).build().update();
     assertFalse(remoteBlob.getEventBasedHold());
-    updatedBucket = remoteBucket.toBuilder().setDefaultEventBasedHold(false).build().update().reload();
-    assertFalse(updatedBucket.getDefaultEventBasedHold());
+    remoteBucket = remoteBucket.toBuilder().setDefaultEventBasedHold(false).build().update();
+    assertFalse(remoteBucket.getDefaultEventBasedHold());
+  }
+
+  @Test
+  public void testEnableDisableTemporaryHold() {
+    String blobName = "test-create-with-event-based-hold";
+    BlobInfo blobInfo = BlobInfo.newBuilder(BUCKET, blobName).setTemporaryHold(true).build();
+    Blob remoteBlob = storage.create(blobInfo);
+    assertTrue(remoteBlob.getTemporaryHold());
+    remoteBlob = storage.get(remoteBlob.getBlobId(), Storage.BlobGetOption.fields(BlobField.TEMPORARY_HOLD));
+    assertTrue(remoteBlob.getTemporaryHold());
+    remoteBlob = remoteBlob.toBuilder().setTemporaryHold(false).build().update();
+    assertFalse(remoteBlob.getTemporaryHold());
   }
 
   @Test
@@ -246,6 +262,22 @@ public class ITStorageTest {
     try {
       remoteBlob.delete();
       fail("Expected failure on delete from eventBasedHold");
+    } catch (StorageException ex) {
+      // expected
+    }
+  }
+
+  @Test
+  public void testAttemptDeletionObjectTemporaryHold() {
+    String blobName = "test-create-with-temporary-hold";
+    BlobInfo blobInfo = BlobInfo.newBuilder(BUCKET, blobName).setTemporaryHold(true).build();
+    Blob remoteBlob = storage.create(blobInfo);
+    assertTrue(remoteBlob.getTemporaryHold());
+    remoteBlob = storage.get(remoteBlob.getBlobId(), Storage.BlobGetOption.fields(BlobField.TEMPORARY_HOLD));
+    assertTrue(remoteBlob.getTemporaryHold());
+    try {
+      remoteBlob.delete();
+      fail("Expected failure on delete from temporaryHold");
     } catch (StorageException ex) {
       // expected
     }

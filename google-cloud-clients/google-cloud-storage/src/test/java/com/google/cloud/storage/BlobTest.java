@@ -93,6 +93,7 @@ public class BlobTest {
       new BlobInfo.CustomerEncryption(ENCRYPTION_ALGORITHM, KEY_SHA256);
   private static final String KMS_KEY_NAME = "projects/p/locations/kr-loc/keyRings/kr/cryptoKeys/key";
   private static final Boolean EVENT_BASED_HOLD = true;
+  private static final Boolean TEMPORARY_HOLD = true;
   private static final BlobInfo FULL_BLOB_INFO = BlobInfo.newBuilder("b", "n", GENERATION)
       .setAcl(ACLS)
       .setComponentCount(COMPONENT_COUNT)
@@ -117,6 +118,7 @@ public class BlobTest {
       .setCustomerEncryption(CUSTOMER_ENCRYPTION)
       .setKmsKeyName(KMS_KEY_NAME)
       .setEventBasedHold(EVENT_BASED_HOLD)
+      .setTemporaryHold(TEMPORARY_HOLD)
       .build();
   private static final BlobInfo BLOB_INFO = BlobInfo.newBuilder("b", "n")
       .setMetageneration(42L)
@@ -475,6 +477,7 @@ public class BlobTest {
         .setCustomerEncryption(CUSTOMER_ENCRYPTION)
         .setKmsKeyName(KMS_KEY_NAME)
         .setEventBasedHold(EVENT_BASED_HOLD)
+        .setTemporaryHold(TEMPORARY_HOLD)
         .setDeleteTime(DELETE_TIME)
         .setEtag(ETAG)
         .setGeneratedId(GENERATED_ID)
@@ -501,6 +504,7 @@ public class BlobTest {
     assertEquals(CUSTOMER_ENCRYPTION, blob.getCustomerEncryption());
     assertEquals(KMS_KEY_NAME, blob.getKmsKeyName());
     assertEquals(EVENT_BASED_HOLD, blob.getEventBasedHold());
+    assertEquals(TEMPORARY_HOLD, blob.getTemporaryHold());
     assertEquals(DELETE_TIME, blob.getDeleteTime());
     assertEquals(ETAG, blob.getEtag());
     assertEquals(GENERATED_ID, blob.getGeneratedId());
@@ -533,6 +537,7 @@ public class BlobTest {
     assertNull(blob.getCustomerEncryption());
     assertNull(blob.getKmsKeyName());
     assertNull(blob.getEventBasedHold());
+    assertNull(blob.getTemporaryHold());
     assertNull(blob.getDeleteTime());
     assertNull(blob.getEtag());
     assertNull(blob.getGeneratedId());
