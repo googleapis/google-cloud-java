@@ -39,6 +39,7 @@ public final class ConsistencyToken {
     this.token = token;
   }
 
+  // TODO(igorbernstein): tableName should be part of the token and be parameterized
   @InternalApi
   public CheckConsistencyRequest toProto(String tableName) {
     return CheckConsistencyRequest.newBuilder()

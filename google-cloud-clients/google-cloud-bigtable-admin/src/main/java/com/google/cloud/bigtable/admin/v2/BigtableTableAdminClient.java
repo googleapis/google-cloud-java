@@ -55,7 +55,7 @@ import javax.annotation.Nonnull;
  * <pre>{@code
  * try(BigtableTableAdminClient client =  BigtableTableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
  *   CreateTable createTableReq =
- *     TableAdminRequests.createTable("tableId")
+ *     CreateTableRequest.of("tableId")
  *       .addFamily("cf1")
  *       .addFamily("cf2", GCRULES.maxVersions(10))
  *       .addSplit(ByteString.copyFromUtf8("b"))
@@ -135,20 +135,17 @@ public class BigtableTableAdminClient implements AutoCloseable {
    *
    * <pre>{@code
    * try(BigtableTableAdminClient client =  BigtableTableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
-   *   CreateTable createTableReq =
-   *     TableAdminRequests.createTable("tableId")
+   *   CreateTableRequest createTableReq = CreateTableRequest.of("tableId")
    *       .addFamily("cf2", GCRULES.maxVersions(10))
    *   client.createTable(createTableReq);
    * }
    * }</pre>
    *
-   * @param createTable
-   * @return the newly created table
    * @see CreateTableRequest for createTable configurations
    */
-  public Table createTable(CreateTableRequest createTable) {
+  public Table createTable(CreateTableRequest request) {
     com.google.bigtable.admin.v2.Table table =
-        this.stub.createTableCallable().call(createTable.toProto(instanceName));
+        this.stub.createTableCallable().call(request.toProto(instanceName));
     return Table.fromProto(table);
   }
 
@@ -159,20 +156,17 @@ public class BigtableTableAdminClient implements AutoCloseable {
    *
    * <pre>{@code
    *  try(BigtableTableAdminClient client =  BigtableTableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
-   *    CreateTable createTableReq =
-   *      TableAdminRequests.createTable("tableId")
+   *    CreateTableRequest createTableReq = CreateTableRequest.of("tableId")
    *        .addFamily("cf2", GCRULES.maxVersions(10))
    *    client.createTableAsync(createTableReq);
    *  }
    *  }</pre>
    *
-   * @param createTable
-   * @return the newly created table
    * @see CreateTableRequest for createTable configurations
    */
-  public ApiFuture<Table> createTableAsync(CreateTableRequest createTable) {
+  public ApiFuture<Table> createTableAsync(CreateTableRequest request) {
     return transformToTableResponse(
-        this.stub.createTableCallable().futureCall(createTable.toProto(instanceName)));
+        this.stub.createTableCallable().futureCall(request.toProto(instanceName)));
   }
 
   /**
@@ -182,7 +176,7 @@ public class BigtableTableAdminClient implements AutoCloseable {
    *
    * <pre>{@code
    * try(BigtableTableAdminClient client =  BigtableTableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
-   *   ModifyFamilies modifyFamiliesReq = TableAdminRequests.modifyFamilies(tableId)
+   *   ModifyFamilies modifyFamiliesReq = ModifyColumnFamiliesRequest.of(tableId)
    *     .addFamily("mf1")
    *     .addFamily(
    *       "mf2", GCRULES.maxAge(Duration.ofSeconds(1000, 20000)))
@@ -203,14 +197,11 @@ public class BigtableTableAdminClient implements AutoCloseable {
    * }
    * }</pre>
    *
-   * @param modifyFamily
-   * @return the modified table
    * @see ModifyColumnFamiliesRequest for modifyFamily options
    */
-  public Table modifyFamilies(ModifyColumnFamiliesRequest modifyFamily) {
-    com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest modReq = modifyFamily.toProto(instanceName);
+  public Table modifyFamilies(ModifyColumnFamiliesRequest request) {
     com.google.bigtable.admin.v2.Table table =
-        this.stub.modifyColumnFamiliesCallable().call(modReq);
+        this.stub.modifyColumnFamiliesCallable().call(request.toProto(instanceName));
     return Table.fromProto(table);
   }
 
@@ -221,7 +212,7 @@ public class BigtableTableAdminClient implements AutoCloseable {
    *
    * <pre>{@code
    * try(BigtableTableAdminClient client =  BigtableTableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
-   *   ModifyFamilies modifyFamiliesReq = TableAdminRequests.modifyFamilies(tableId)
+   *   ModifyFamilies modifyFamiliesReq = ModifyColumnFamiliesRequest.of(tableId)
    *     .addFamily("mf1")
    *     .addFamily(
    *       "mf2", GCRULES.maxAge(Duration.ofSeconds(1000, 20000)))
@@ -242,12 +233,10 @@ public class BigtableTableAdminClient implements AutoCloseable {
    * }
    * }</pre>
    *
-   * @param modifyFamily
-   * @return Modified table
    * @see ModifyColumnFamiliesRequest for modifyFamily options
    */
-  public ApiFuture<Table> modifyFamiliesAsync(ModifyColumnFamiliesRequest modifyFamily) {
-    com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest modReq = modifyFamily.toProto(instanceName);
+  public ApiFuture<Table> modifyFamiliesAsync(ModifyColumnFamiliesRequest request) {
+    com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest modReq = request.toProto(instanceName);
     return transformToTableResponse(this.stub.modifyColumnFamiliesCallable().futureCall(modReq));
   }
 
@@ -261,8 +250,6 @@ public class BigtableTableAdminClient implements AutoCloseable {
    *   client.deleteTable("tableId");
    * }
    * }</pre>
-   *
-   * @param tableId
    */
   public void deleteTable(String tableId) {
     this.stub.deleteTableCallable().call(composeDeleteTableRequest(tableId));
@@ -278,8 +265,6 @@ public class BigtableTableAdminClient implements AutoCloseable {
    *   client.deleteTableAsync("tableId");
    * }
    * }</pre>
-   *
-   * @param tableId
    */
   public ApiFuture<Void> deleteTableAsync(String tableId) {
     return transformToVoid(
@@ -296,8 +281,6 @@ public class BigtableTableAdminClient implements AutoCloseable {
    *   client.getTable("tableId");
    * }
    * }</pre>
-   *
-   * @param tableId
    */
   public Table getTable(String tableId) {
     com.google.bigtable.admin.v2.Table table =
@@ -315,8 +298,6 @@ public class BigtableTableAdminClient implements AutoCloseable {
    *   client.getTableAsync("tableId");
    * }
    * }</pre>
-   *
-   * @param tableId
    */
   public ApiFuture<Table> getTableAsync(String tableId) {
     return transformToTableResponse(
@@ -374,9 +355,6 @@ public class BigtableTableAdminClient implements AutoCloseable {
    *   client.dropRowRange("tableId");
    * }
    * }</pre>
-   *
-   * @param tableId
-   * @param rowKeyPrefix
    */
   public void dropRowRange(String tableId, String rowKeyPrefix) {
     dropRowRange(tableId, ByteString.copyFromUtf8(rowKeyPrefix));
@@ -392,9 +370,6 @@ public class BigtableTableAdminClient implements AutoCloseable {
    *   client.dropRowRangeAsync("tableId");
    * }
    * }</pre>
-   *
-   * @param tableId
-   * @param rowKeyPrefix
    */
   public ApiFuture<Void> dropRowRangeAsync(String tableId, String rowKeyPrefix) {
     return dropRowRangeAsync(tableId, ByteString.copyFromUtf8(rowKeyPrefix));
@@ -410,9 +385,6 @@ public class BigtableTableAdminClient implements AutoCloseable {
    *   client.dropRowRange("tableId");
    * }
    * }</pre>
-   *
-   * @param tableId
-   * @param rowKeyPrefix
    */
   public void dropRowRange(String tableId, ByteString rowKeyPrefix) {
     this.stub.dropRowRangeCallable().call(composeDropRowRangeRequest(tableId, rowKeyPrefix, false));
@@ -428,9 +400,6 @@ public class BigtableTableAdminClient implements AutoCloseable {
    *   client.dropRowRangeAsync("tableId");
    * }
    * }</pre>
-   *
-   * @param tableId
-   * @param rowKeyPrefix
    */
   public ApiFuture<Void> dropRowRangeAsync(String tableId, ByteString rowKeyPrefix) {
     return transformToVoid(
@@ -449,8 +418,6 @@ public class BigtableTableAdminClient implements AutoCloseable {
    *   client.dropAllRows("tableId");
    * }
    * }</pre>
-   *
-   * @param tableId
    */
   public void dropAllRows(String tableId) {
     this.stub.dropRowRangeCallable().call(composeDropRowRangeRequest(tableId, null, true));
@@ -466,8 +433,6 @@ public class BigtableTableAdminClient implements AutoCloseable {
    *   client.dropAllRowsAsync("tableId");
    * }
    * }</pre>
-   *
-   * @param tableId
    */
   public ApiFuture<Void> dropAllRowsAsync(String tableId) {
     return transformToVoid(
@@ -487,8 +452,6 @@ public class BigtableTableAdminClient implements AutoCloseable {
    *   ConsistencyToken consistencyToken = client.generateConsistencyToken("tableId");
    * }
    * }</pre>
-   *
-   * @param tableId
    */
   public ConsistencyToken generateConsistencyToken(String tableId) {
     return ConsistencyToken.fromProto(
@@ -508,8 +471,6 @@ public class BigtableTableAdminClient implements AutoCloseable {
    *   ConsistencyToken consistencyToken = client.generateConsistencyToken("tableId");
    * }
    * }</pre>
-   *
-   * @param tableId
    */
   public ApiFuture<ConsistencyToken> generateConsistencyTokenAsync(String tableId) {
     ApiFuture<GenerateConsistencyTokenResponse> tokenResp =
@@ -537,9 +498,6 @@ public class BigtableTableAdminClient implements AutoCloseable {
    *   boolean consistent = client.isConsistent("tableId", token);
    * }
    * }</pre>
-   *
-   * @param tableId
-   * @param token
    */
   public boolean isConsistent(String tableId, ConsistencyToken token) {
     return stub.checkConsistencyCallable()
@@ -557,9 +515,6 @@ public class BigtableTableAdminClient implements AutoCloseable {
    *   boolean consistent = client.isConsistentAsync("tableId", token);
    * }
    * }</pre>
-   *
-   * @param tableId
-   * @param token
    */
   public ApiFuture<Boolean> isConsistentAsync(String tableId, ConsistencyToken token) {
     ApiFuture<CheckConsistencyResponse> checkConsResp =
@@ -578,9 +533,6 @@ public class BigtableTableAdminClient implements AutoCloseable {
   /**
    * Helper method to construct the table name in format:
    * projects/{project}/instances/{instance}/tables/{tableId}
-   *
-   * @param tableId
-   * @return unique table name
    */
   @VisibleForTesting
   String getTableName(String tableId) {
@@ -597,8 +549,6 @@ public class BigtableTableAdminClient implements AutoCloseable {
 
   /**
    * Helper method to build an instance of GetTableRequest
-   *
-   * @param tableId
    */
   @VisibleForTesting
   GetTableRequest composeGetTableRequest(String tableId) {
@@ -607,8 +557,6 @@ public class BigtableTableAdminClient implements AutoCloseable {
 
   /**
    * Helper method to build an instance of DeleteTableRequest
-   *
-   * @param tableId
    */
   @VisibleForTesting
   DeleteTableRequest composeDeleteTableRequest(String tableId) {
@@ -617,9 +565,6 @@ public class BigtableTableAdminClient implements AutoCloseable {
 
   /**
    * Helper method to build an instance of DropRowRangeRequest
-   *
-   * @param tableId
-   * @param rowKeyPrefix
    */
   @VisibleForTesting
   DropRowRangeRequest composeDropRowRangeRequest(
@@ -636,8 +581,6 @@ public class BigtableTableAdminClient implements AutoCloseable {
 
   /**
    * Helper method to build an instance of GenerateConsistencyTokenRequest
-   *
-   * @param tableId
    */
   @VisibleForTesting
   GenerateConsistencyTokenRequest composeGenerateConsistencyTokenRequest(String tableId) {
@@ -646,8 +589,6 @@ public class BigtableTableAdminClient implements AutoCloseable {
 
   /**
    * Helper method to convert ListTablesResponse to List<TableName>
-   *
-   * @param listTablesResponse
    */
   @VisibleForTesting
   static List<TableName> convertToTableNames(ListTablesResponse listTablesResponse) {
@@ -659,10 +600,9 @@ public class BigtableTableAdminClient implements AutoCloseable {
     return tableNames;
   }
 
+  // TODO(igorbernstein): rename methods to make clear that they deal with futures.
   /**
    * Helper method to transform ApiFuture<com.google.bigtable.admin.v2.Table> to ApiFuture<Table>
-   *
-   * @param future
    */
   @VisibleForTesting
   static ApiFuture<Table> transformToTableResponse(
@@ -679,8 +619,6 @@ public class BigtableTableAdminClient implements AutoCloseable {
 
   /**
    * Helper method to transform ApiFuture<Empty> to ApiFuture<Void>
-   *
-   * @param future
    */
   @VisibleForTesting
   static ApiFuture<Void> transformToVoid(ApiFuture<Empty> future) {

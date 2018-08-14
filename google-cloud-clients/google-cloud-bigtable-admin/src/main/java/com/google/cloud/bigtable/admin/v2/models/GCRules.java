@@ -27,6 +27,8 @@ import com.google.bigtable.admin.v2.GcRule.Intersection;
 import com.google.bigtable.admin.v2.GcRule.Union;
 import com.google.common.base.MoreObjects;
 
+// TODO(igorbernstein2): the distinction between GcRule & GCRule is too subtle, use fully qualified
+// names for the protos.
 /** Wraps {@link GcRule} protocol buffer object and exposes a simpler Fluent DSL model */
 @BetaApi
 public final class GCRules {
@@ -133,6 +135,7 @@ public final class GCRules {
      *
      * @param rule
      */
+    // TODO(igorbernstein2): consider renaming this to addRule
     public IntersectionRule rule(@Nonnull GCRule rule) {
       rulesList.add(rule);
       return this;

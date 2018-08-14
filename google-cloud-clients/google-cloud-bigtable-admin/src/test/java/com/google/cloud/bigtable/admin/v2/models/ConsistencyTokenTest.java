@@ -33,7 +33,6 @@ public class ConsistencyTokenTest {
                 .setConsistencyToken("87282hgwd8yg")
                 .build());
 
-    assertNotNull(tokenResponse);
     assertEquals("87282hgwd8yg", tokenResponse.getToken());
   }
 }

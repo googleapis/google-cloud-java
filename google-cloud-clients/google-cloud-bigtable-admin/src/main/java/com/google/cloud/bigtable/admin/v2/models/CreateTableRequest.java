@@ -36,8 +36,10 @@ import com.google.protobuf.ByteString;
  * </ul>
  */
 public final class CreateTableRequest {
+  // TODO(igorbernstein): rename to requestBuilder
   private final com.google.bigtable.admin.v2.CreateTableRequest.Builder createTableRequest = com.google.bigtable.admin.v2.CreateTableRequest
       .newBuilder();
+  // TODO(igorbernstein): use the embedded TableBuilder in createTableRequest
   private final Table.Builder tableRequest = Table.newBuilder();
 
   public static CreateTableRequest of(String tableId) {
@@ -49,7 +51,7 @@ public final class CreateTableRequest {
    *
    * @param tableId
    */
-  CreateTableRequest(String tableId) {
+  private CreateTableRequest(String tableId) {
     createTableRequest.setTableId(tableId);
   }
 
@@ -60,12 +62,13 @@ public final class CreateTableRequest {
    */
   public CreateTableRequest addFamily(String familyId) {
     Preconditions.checkNotNull(familyId);
-    tableRequest.putColumnFamilies(familyId, ColumnFamily.newBuilder().build());
+    tableRequest.putColumnFamilies(familyId, ColumnFamily.getDefaultInstance());
     return this;
   }
 
   /**
-   * Adds a new columnFamily with {@link GCRule} to the configuration
+   * Adds a new columnFamily with {@link GCRule} to the configuration. Please note that calling this
+   * method with the same familyId will overwrite the previous family.
    *
    * @param familyId
    * @param gcRule
@@ -84,7 +87,7 @@ public final class CreateTableRequest {
    */
   public CreateTableRequest addSplit(ByteString key) {
     Preconditions.checkNotNull(key);
-    createTableRequest.addInitialSplits(Split.newBuilder().setKey(key).build());
+    createTableRequest.addInitialSplitsBuilder().setKey(key);
     return this;
   }
 

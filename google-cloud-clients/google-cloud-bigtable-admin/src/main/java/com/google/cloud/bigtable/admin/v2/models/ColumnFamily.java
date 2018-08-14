@@ -25,11 +25,13 @@ import com.google.common.base.MoreObjects;
 
 /** Wrapper for {@link ColumnFamily} protocol buffer object */
 public final class ColumnFamily {
+  // TODO(igorbernstein2): rename this to `name`
   private final String id;
   private final GCRule rule;
 
   @InternalApi
   public static ColumnFamily fromProto(String id, com.google.bigtable.admin.v2.ColumnFamily proto) {
+    // TODO(igorbernstein): can getGcRule ever be null?
     GcRule ruleProto = MoreObjects.firstNonNull(proto.getGcRule(), GcRule.getDefaultInstance());
 
     return new ColumnFamily(id, GCRULES.fromProto(ruleProto));

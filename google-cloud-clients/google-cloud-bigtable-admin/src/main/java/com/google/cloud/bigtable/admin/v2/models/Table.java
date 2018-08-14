@@ -27,6 +27,7 @@ import javax.annotation.Nonnull;
 /** Wrapper for {@link Table} protocol buffer object */
 public final class Table {
   private final TableName tableName;
+  //  TODO(igorbernstein2): avoid duplication of id as keys and embedded in the models
   private final Map<String, ClusterState> clusterStates;
   private final Map<String, ColumnFamily> columnFamilies;
 
@@ -38,16 +39,16 @@ public final class Table {
       clusterStates.put(entry.getKey(), ClusterState.fromProto(entry.getKey(), entry.getValue()));
     }
 
-    ImmutableMap.Builder<String, ColumnFamily> families = ImmutableMap.builder();
+    ImmutableMap.Builder<String, ColumnFamily> columnFamilies = ImmutableMap.builder();
 
     for (Entry<String, com.google.bigtable.admin.v2.ColumnFamily> entry : proto.getColumnFamiliesMap().entrySet()) {
-      families.put(entry.getKey(), ColumnFamily.fromProto(entry.getKey(), entry.getValue()));
+      columnFamilies.put(entry.getKey(), ColumnFamily.fromProto(entry.getKey(), entry.getValue()));
     }
 
     return new Table(
         TableName.parse(proto.getName()),
         clusterStates.build(),
-        families.build());
+        columnFamilies.build());
   }
 
   private Table(TableName tableName,
@@ -66,6 +67,7 @@ public final class Table {
     return tableName;
   }
 
+  // TODO(igorbernstein2): don't expose the objects as both maps & lists
   /**
    * Returns state of the table by clusters in the instance as map of clusterId and {@link
    * ClusterState}
@@ -103,6 +105,4 @@ public final class Table {
         .add("columnFamiles", getColumnFamiles())
         .toString();
   }
-
-
 }

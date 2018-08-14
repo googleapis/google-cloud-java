@@ -72,9 +72,9 @@ public final class ModifyColumnFamiliesRequest {
    * @return
    */
   public ModifyColumnFamiliesRequest addFamily(String familyId, GCRule gcRule) {
-    Modification.Builder modification = Modification.newBuilder().setId(familyId);
     Preconditions.checkNotNull(gcRule);
-    modification.setCreate(ColumnFamily.newBuilder().setGcRule(gcRule.toProto()));
+    Modification.Builder modification = Modification.newBuilder().setId(familyId);
+    modification.getCreateBuilder().setGcRule(gcRule.toProto());
     modFamilyRequest.addModifications(modification.build());
     return this;
   }
@@ -87,9 +87,9 @@ public final class ModifyColumnFamiliesRequest {
    * @return
    */
   public ModifyColumnFamiliesRequest updateFamily(String familyId, GCRule gcRule) {
-    Modification.Builder modification = Modification.newBuilder().setId(familyId);
     Preconditions.checkNotNull(gcRule);
-    modification.setUpdate(ColumnFamily.newBuilder().setGcRule(gcRule.toProto()));
+    Modification.Builder modification = Modification.newBuilder().setId(familyId);
+    modification.getUpdateBuilder().setGcRule(gcRule.toProto());
     modFamilyRequest.addModifications(modification.build());
     return this;
   }
@@ -101,8 +101,9 @@ public final class ModifyColumnFamiliesRequest {
    * @return
    */
   public ModifyColumnFamiliesRequest dropFamily(String familyId) {
-    Modification.Builder modification = Modification.newBuilder().setId(familyId);
-    modification.setId(familyId).setDrop(true);
+    Modification.Builder modification = Modification.newBuilder()
+        .setId(familyId)
+        .setDrop(true);
     modFamilyRequest.addModifications(modification.build());
     return this;
   }
