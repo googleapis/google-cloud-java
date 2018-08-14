@@ -19,9 +19,8 @@ import com.google.api.core.InternalApi;
 import com.google.api.gax.retrying.StreamResumptionStrategy;
 import com.google.bigtable.v2.ReadRowsRequest;
 import com.google.bigtable.v2.ReadRowsRequest.Builder;
-import com.google.bigtable.v2.RowRange;
 import com.google.bigtable.v2.RowSet;
-import com.google.cloud.bigtable.data.v2.internal.ByteStringComparator;
+import com.google.cloud.bigtable.data.v2.internal.RowSetUtil;
 import com.google.cloud.bigtable.data.v2.models.RowAdapter;
 import com.google.common.base.Preconditions;
 import com.google.protobuf.ByteString;
@@ -79,97 +78,26 @@ public class ReadRowsResumptionStrategy<RowT>
    * received rows.
    */
   @Override
-  public ReadRowsRequest getResumeRequest(ReadRowsRequest request) {
+  public ReadRowsRequest getResumeRequest(ReadRowsRequest originalRequest) {
     // An empty lastKey means that we have not successfully read the first row,
     // so resume with the original request object.
     if (lastKey.isEmpty()) {
-      return request;
+      return originalRequest;
     }
 
-    ReadRowsRequest originalRequest = request;
-
-    // Special case: empty query implies full table scan, so make this explicit by adding an
-    // unbounded range to the request
-    if (request.getRows().getRowKeysList().isEmpty()
-        && request.getRows().getRowRangesList().isEmpty()) {
-
-      originalRequest =
-          request
-              .toBuilder()
-              .setRows(RowSet.newBuilder().addRowRanges(RowRange.getDefaultInstance()))
-              .build();
-    }
-
-    // Start building the resume request. The keys & ranges are cleared and will be recomputed.
-    Builder builder = originalRequest.toBuilder();
-    builder.clearRows();
-
-    RowSet.Builder rowSetBuilder = RowSet.newBuilder();
-
-    for (ByteString key : originalRequest.getRows().getRowKeysList()) {
-      if (ByteStringComparator.INSTANCE.compare(key, lastKey) > 0) {
-        rowSetBuilder.addRowKeys(key);
-      }
-    }
-
-    for (RowRange rowRange : originalRequest.getRows().getRowRangesList()) {
-      RowRange.Builder rowRangeBuilder = RowRange.newBuilder();
-
-      switch (rowRange.getEndKeyCase()) {
-        case END_KEY_CLOSED:
-          if (ByteStringComparator.INSTANCE.compare(rowRange.getEndKeyClosed(), lastKey) > 0) {
-            rowRangeBuilder.setEndKeyClosed(rowRange.getEndKeyClosed());
-          } else {
-            continue;
-          }
-          break;
-        case END_KEY_OPEN:
-          if (ByteStringComparator.INSTANCE.compare(rowRange.getEndKeyOpen(), lastKey) > 0) {
-            rowRangeBuilder.setEndKeyOpen(rowRange.getEndKeyOpen());
-          } else {
-            continue;
-          }
-          break;
-        case ENDKEY_NOT_SET:
-          rowRangeBuilder.clearEndKey();
-          break;
-        default:
-          throw new IllegalArgumentException("Unknown endKeyCase: " + rowRange.getEndKeyCase());
-      }
-
-      switch (rowRange.getStartKeyCase()) {
-        case STARTKEY_NOT_SET:
-          rowRangeBuilder.setStartKeyOpen(lastKey);
-          break;
-        case START_KEY_OPEN:
-          if (ByteStringComparator.INSTANCE.compare(rowRange.getStartKeyOpen(), lastKey) < 0) {
-            rowRangeBuilder.setStartKeyOpen(lastKey);
-          } else {
-            rowRangeBuilder.setStartKeyOpen(rowRange.getStartKeyOpen());
-          }
-          break;
-        case START_KEY_CLOSED:
-          if (ByteStringComparator.INSTANCE.compare(rowRange.getStartKeyClosed(), lastKey) <= 0) {
-            rowRangeBuilder.setStartKeyOpen(lastKey);
-          } else {
-            rowRangeBuilder.setStartKeyClosed(rowRange.getStartKeyClosed());
-          }
-          break;
-        default:
-          throw new IllegalArgumentException("Unknown startKeyCase: " + rowRange.getStartKeyCase());
-      }
-      rowSetBuilder.addRowRanges(rowRangeBuilder.build());
-    }
+    RowSet remaining = RowSetUtil.split(originalRequest.getRows(), lastKey).getRight();
 
     // Edge case: retrying a fulfilled request.
     // A fulfilled request is one that has had all of its row keys and ranges fulfilled, or if it
     // had a row limit, has seen enough rows. These requests are replaced with a marker request that
     // will be handled by ReadRowsRetryCompletedCallable. See docs in ReadRowsRetryCompletedCallable
     // for more details.
-    if ((rowSetBuilder.getRowRangesCount() == 0 && rowSetBuilder.getRowKeysCount() == 0)
+    if (remaining == null
         || (originalRequest.getRowsLimit() > 0 && originalRequest.getRowsLimit() == numProcessed)) {
       return ReadRowsRetryCompletedCallable.FULFILLED_REQUEST_MARKER;
     }
+
+    Builder builder = originalRequest.toBuilder().setRows(remaining);
 
     if (originalRequest.getRowsLimit() > 0) {
       Preconditions.checkState(
@@ -178,7 +106,6 @@ public class ReadRowsResumptionStrategy<RowT>
       builder.setRowsLimit(originalRequest.getRowsLimit() - numProcessed);
     }
 
-    builder.setRows(rowSetBuilder.build());
     return builder.build();
   }
 }

@@ -22,15 +22,21 @@ import com.google.bigtable.v2.ReadRowsRequest;
 import com.google.bigtable.v2.ReadRowsRequest.Builder;
 import com.google.bigtable.v2.RowFilter;
 import com.google.bigtable.v2.RowRange;
+import com.google.bigtable.v2.RowSet;
 import com.google.bigtable.v2.TableName;
+import com.google.cloud.bigtable.data.v2.internal.ByteStringComparator;
 import com.google.cloud.bigtable.data.v2.internal.RequestContext;
 import com.google.cloud.bigtable.data.v2.models.Range.ByteStringRange;
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableSortedSet;
 import com.google.protobuf.ByteString;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.util.List;
+import java.util.SortedSet;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -138,6 +144,82 @@ public class QueryTest {
 
     Query actual = (Query) ois.readObject();
     assertThat(actual.toProto(requestContext)).isEqualTo(expected.toProto(requestContext));
+  }
+
+  @Test
+  public void shardTestSplitPoints() {
+    Query query = Query.create(TABLE_NAME.getTable()).range("a", "z");
+
+    SortedSet<ByteString> splitPoints =
+        ImmutableSortedSet.orderedBy(ByteStringComparator.INSTANCE)
+            .add(ByteString.copyFromUtf8("j"))
+            .build();
+
+    List<Query> subQueries = query.shard(splitPoints);
+
+    assertThat(subQueries).hasSize(2);
+    assertThat(subQueries.get(0).toProto(requestContext))
+        .isEqualTo(
+            ReadRowsRequest.newBuilder()
+                .setTableName(TABLE_NAME.toString())
+                .setAppProfileId(APP_PROFILE_ID)
+                .setRows(
+                    RowSet.newBuilder()
+                        .addRowRanges(
+                            RowRange.newBuilder()
+                                .setStartKeyClosed(ByteString.copyFromUtf8("a"))
+                                .setEndKeyClosed(ByteString.copyFromUtf8("j"))))
+                .build());
+    assertThat(subQueries.get(1).toProto(requestContext))
+        .isEqualTo(
+            ReadRowsRequest.newBuilder()
+                .setTableName(TABLE_NAME.toString())
+                .setAppProfileId(APP_PROFILE_ID)
+                .setRows(
+                    RowSet.newBuilder()
+                        .addRowRanges(
+                            RowRange.newBuilder()
+                                .setStartKeyOpen(ByteString.copyFromUtf8("j"))
+                                .setEndKeyOpen(ByteString.copyFromUtf8("z"))))
+                .build());
+  }
+
+  @Test
+  public void shardTestKeyOffsets() {
+    Query query = Query.create(TABLE_NAME.getTable()).range("a", "z");
+
+    List<KeyOffset> keyOffsets =
+        ImmutableList.of(
+            KeyOffset.create(ByteString.copyFromUtf8("j"), 10),
+            KeyOffset.create(ByteString.EMPTY, 100));
+
+    List<Query> subQueries = query.shard(keyOffsets);
+
+    assertThat(subQueries).hasSize(2);
+    assertThat(subQueries.get(0).toProto(requestContext))
+        .isEqualTo(
+            ReadRowsRequest.newBuilder()
+                .setTableName(TABLE_NAME.toString())
+                .setAppProfileId(APP_PROFILE_ID)
+                .setRows(
+                    RowSet.newBuilder()
+                        .addRowRanges(
+                            RowRange.newBuilder()
+                                .setStartKeyClosed(ByteString.copyFromUtf8("a"))
+                                .setEndKeyClosed(ByteString.copyFromUtf8("j"))))
+                .build());
+    assertThat(subQueries.get(1).toProto(requestContext))
+        .isEqualTo(
+            ReadRowsRequest.newBuilder()
+                .setTableName(TABLE_NAME.toString())
+                .setAppProfileId(APP_PROFILE_ID)
+                .setRows(
+                    RowSet.newBuilder()
+                        .addRowRanges(
+                            RowRange.newBuilder()
+                                .setStartKeyOpen(ByteString.copyFromUtf8("j"))
+                                .setEndKeyOpen(ByteString.copyFromUtf8("z"))))
+                .build());
   }
 
   private static ReadRowsRequest.Builder expectedProtoBuilder() {
