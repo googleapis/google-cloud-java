@@ -82,6 +82,7 @@ public class BucketTest {
   private static final Map<String, String> BUCKET_LABELS = ImmutableMap.of("label1", "value1");
   private static final Boolean REQUESTER_PAYS = true;
   private static final String USER_PROJECT = "test-project";
+  private static final Boolean DEFAULT_EVENT_BASED_HOLD = true;
   private static final BucketInfo FULL_BUCKET_INFO = BucketInfo.newBuilder("b")
       .setAcl(ACLS)
       .setEtag(ETAG)
@@ -101,6 +102,7 @@ public class BucketTest {
       .setLabels(BUCKET_LABELS)
       .setRequesterPays(REQUESTER_PAYS)
       .setDefaultKmsKeyName(DEFAULT_KMS_KEY_NAME)
+      .setDefaultEventBasedHold(DEFAULT_EVENT_BASED_HOLD)
       .build();
   private static final BucketInfo BUCKET_INFO =
       BucketInfo.newBuilder("b").setMetageneration(42L).build();
@@ -694,6 +696,7 @@ public class BucketTest {
         .setLabels(BUCKET_LABELS)
         .setRequesterPays(REQUESTER_PAYS)
         .setDefaultKmsKeyName(DEFAULT_KMS_KEY_NAME)
+        .setDefaultEventBasedHold(DEFAULT_EVENT_BASED_HOLD)
         .build();
     assertEquals("b", bucket.getName());
     assertEquals(ACLS, bucket.getAcl());
@@ -714,6 +717,7 @@ public class BucketTest {
     assertEquals(BUCKET_LABELS, bucket.getLabels());
     assertEquals(REQUESTER_PAYS, bucket.requesterPays());
     assertEquals(DEFAULT_KMS_KEY_NAME, bucket.getDefaultKmsKeyName());
+    assertEquals(DEFAULT_EVENT_BASED_HOLD, bucket.getDefaultEventBasedHold());
     assertEquals(storage.getOptions(), bucket.getStorage().getOptions());
   }
 }

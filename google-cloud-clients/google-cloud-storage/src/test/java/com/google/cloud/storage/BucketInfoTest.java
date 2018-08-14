@@ -64,6 +64,7 @@ public class BucketInfoTest {
   private static final Boolean VERSIONING_ENABLED = true;
   private static final Map<String, String> BUCKET_LABELS = ImmutableMap.of("label1", "value1");
   private static final Boolean REQUESTER_PAYS = true;
+  private static final Boolean DEFAULT_EVENT_BASED_HOLD = true;
   private static final BucketInfo BUCKET_INFO = BucketInfo.newBuilder("b")
       .setAcl(ACL)
       .setEtag(ETAG)
@@ -83,6 +84,7 @@ public class BucketInfoTest {
       .setLabels(BUCKET_LABELS)
       .setRequesterPays(REQUESTER_PAYS)
       .setDefaultKmsKeyName(DEFAULT_KMS_KEY_NAME)
+      .setDefaultEventBasedHold(DEFAULT_EVENT_BASED_HOLD)
       .build();
 
   @Test
@@ -128,6 +130,7 @@ public class BucketInfoTest {
     assertEquals(VERSIONING_ENABLED, BUCKET_INFO.versioningEnabled());
     assertEquals(BUCKET_LABELS, BUCKET_INFO.getLabels());
     assertEquals(REQUESTER_PAYS, BUCKET_INFO.requesterPays());
+    assertEquals(DEFAULT_EVENT_BASED_HOLD, BUCKET_INFO.getDefaultEventBasedHold());
   }
 
   @Test
@@ -158,6 +161,7 @@ public class BucketInfoTest {
     assertEquals(expected.versioningEnabled(), value.versioningEnabled());
     assertEquals(expected.getLabels(), value.getLabels());
     assertEquals(expected.requesterPays(), value.requesterPays());
+    assertEquals(expected.getDefaultEventBasedHold(), value.getDefaultEventBasedHold());
   }
 
   @Test

@@ -210,6 +210,28 @@ public class ITStorageTest {
   }
 
   @Test
+  public void testCreateDefaultEventBasedHoldBucket() throws ExecutionException, InterruptedException {
+    String bucketName = RemoteStorageHelper.generateBucketName();
+    Bucket remoteBucket = storage.create(BucketInfo.newBuilder(bucketName).setDefaultEventBasedHold(true).build());
+
+    try {
+      assertTrue(remoteBucket.getDefaultEventBasedHold());
+    } finally {
+      RemoteStorageHelper.forceDelete(storage, bucketName, 5, TimeUnit.SECONDS);
+    }
+  }
+
+  @Test
+  public void testEnableDisableBucketDefaultEventBasedHold() {
+    Bucket remoteBucket = storage.get(BUCKET, Storage.BucketGetOption.fields(BucketField.DEFAULT_EVENT_BASED_HOLD, BucketField.BILLING));
+    assertNull(remoteBucket.getDefaultEventBasedHold());
+    Bucket updatedBucket = remoteBucket.toBuilder().setDefaultEventBasedHold(true).build().update();
+    assertTrue(updatedBucket.getDefaultEventBasedHold());
+    updatedBucket = remoteBucket.toBuilder().setDefaultEventBasedHold(false).build().update().reload();
+    assertFalse(updatedBucket.getDefaultEventBasedHold());
+  }
+
+  @Test
   public void testCreateBlob() {
     String blobName = "test-create-blob";
     BlobInfo blob = BlobInfo.newBuilder(BUCKET, blobName).build();

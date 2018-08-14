@@ -95,7 +95,8 @@ public interface Storage extends Service<StorageOptions> {
     ETAG("etag"),
     @GcpLaunchStage.Beta
     ENCRYPTION("encryption"),
-    BILLING("billing");
+    BILLING("billing"),
+    DEFAULT_EVENT_BASED_HOLD("defaultEventBasedHold");
 
     static final List<? extends FieldSelector> REQUIRED_FIELDS = ImmutableList.of(NAME);
 

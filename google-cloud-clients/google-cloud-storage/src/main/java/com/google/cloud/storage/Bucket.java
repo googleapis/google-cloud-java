@@ -636,6 +636,12 @@ public class Bucket extends BucketInfo {
     }
 
     @Override
+    public Builder setDefaultEventBasedHold(Boolean defaultEventBasedHold) {
+      infoBuilder.setDefaultEventBasedHold(defaultEventBasedHold);
+      return this;
+    }
+
+    @Override
     public Bucket build() {
       return new Bucket(storage, infoBuilder);
     }

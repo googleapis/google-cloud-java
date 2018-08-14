@@ -88,6 +88,7 @@ public class BucketInfo implements Serializable {
   private final StorageClass storageClass;
   private final Map<String, String> labels;
   private final String defaultKmsKeyName;
+  private final Boolean defaultEventBasedHold;
 
   /**
    * Base class for bucket's delete rules. Allows to configure automatic deletion of blobs and blobs
@@ -433,6 +434,11 @@ public class BucketInfo implements Serializable {
     public abstract Builder setDefaultKmsKeyName(String defaultKmsKeyName);
 
     /**
+     * Sets the default Event Based Hold for this bucket.
+     */
+    public abstract Builder setDefaultEventBasedHold(Boolean defaultEventBasedHold);
+
+    /**
      * Creates a {@code BucketInfo} object.
      */
     public abstract BucketInfo build();
@@ -459,6 +465,7 @@ public class BucketInfo implements Serializable {
     private List<Acl> defaultAcl;
     private Map<String, String> labels;
     private String defaultKmsKeyName;
+    private Boolean defaultEventBasedHold;
 
     BuilderImpl(String name) {
       this.name = name;
@@ -484,6 +491,7 @@ public class BucketInfo implements Serializable {
       labels = bucketInfo.labels;
       requesterPays = bucketInfo.requesterPays;
       defaultKmsKeyName = bucketInfo.defaultKmsKeyName;
+      defaultEventBasedHold = bucketInfo.defaultEventBasedHold;
     }
 
     @Override
@@ -604,6 +612,12 @@ public class BucketInfo implements Serializable {
     }
 
     @Override
+    public Builder setDefaultEventBasedHold(Boolean defaultEventBasedHold) {
+      this.defaultEventBasedHold = firstNonNull(defaultEventBasedHold, Data.<Boolean>nullOf(Boolean.class));
+      return this;
+    }
+
+    @Override
     public BucketInfo build() {
       checkNotNull(name);
       return new BucketInfo(this);
@@ -630,6 +644,7 @@ public class BucketInfo implements Serializable {
     labels = builder.labels;
     requesterPays = builder.requesterPays;
     defaultKmsKeyName = builder.defaultKmsKeyName;
+    defaultEventBasedHold = builder.defaultEventBasedHold;
   }
 
   /**
@@ -791,6 +806,11 @@ public class BucketInfo implements Serializable {
   }
 
   /**
+   * Returns the default Event Based Hold to be applied to newly inserted objects in this bucket.
+   */
+  public Boolean getDefaultEventBasedHold() { return defaultEventBasedHold; }
+
+  /**
    * Returns a builder for the current bucket.
    */
   public Builder toBuilder() {
@@ -888,6 +908,10 @@ public class BucketInfo implements Serializable {
     if (defaultKmsKeyName != null) {
       bucketPb.setEncryption(new Encryption().setDefaultKmsKeyName(defaultKmsKeyName));
     }
+    if (defaultEventBasedHold != null) {
+      bucketPb.setDefaultEventBasedHold(defaultEventBasedHold);
+    }
+
     return bucketPb;
   }
 
@@ -978,6 +1002,9 @@ public class BucketInfo implements Serializable {
     Encryption encryption = bucketPb.getEncryption();
     if (encryption != null && encryption.getDefaultKmsKeyName() != null && !encryption.getDefaultKmsKeyName().isEmpty()) {
       builder.setDefaultKmsKeyName(encryption.getDefaultKmsKeyName());
+    }
+    if (bucketPb.getDefaultEventBasedHold() != null) {
+      builder.setDefaultEventBasedHold(bucketPb.getDefaultEventBasedHold());
     }
     return builder.build();
   }
