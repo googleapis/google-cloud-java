@@ -63,8 +63,16 @@ public class UptimeIT {
 
   @Test
   public void test1_CreateUptimeCheck() throws Exception {
-    UptimeSample.main("create", "-n", config.getDisplayName());
+    UptimeSample.main(
+        "create", "-n", config.getDisplayName(), "-o", "test.example.com", "-a", "/");
     assertThat(bout.toString()).contains("Uptime check created: " + config.getDisplayName());
+
+  }
+
+  @Test
+  public void test2_UpdateUptimeCheck() throws Exception {
+    UptimeSample.main("update", "-n", config.getDisplayName(), "-a", "/updated");
+    assertThat(bout.toString()).contains("/updated");
   }
 
   @Test
@@ -75,7 +83,6 @@ public class UptimeIT {
 
   @Test
   public void test2_ListUptimeChecks() throws Exception {
-    // Create a few uptime check configs to list.
     UptimeSample.main("list");
     assertThat(bout.toString()).contains(config.getDisplayName());
   }

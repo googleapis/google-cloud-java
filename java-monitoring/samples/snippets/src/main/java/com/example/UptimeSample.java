@@ -25,11 +25,13 @@ import com.google.monitoring.v3.CreateUptimeCheckConfigRequest;
 import com.google.monitoring.v3.ListUptimeCheckConfigsRequest;
 import com.google.monitoring.v3.ListUptimeCheckIpsRequest;
 import com.google.monitoring.v3.ProjectName;
+import com.google.monitoring.v3.UpdateUptimeCheckConfigRequest;
 import com.google.monitoring.v3.UptimeCheckConfig;
 import com.google.monitoring.v3.UptimeCheckConfig.HttpCheck;
 import com.google.monitoring.v3.UptimeCheckConfigName;
 import com.google.monitoring.v3.UptimeCheckIp;
 import com.google.protobuf.Duration;
+import com.google.protobuf.FieldMask;
 
 import java.io.IOException;
 import java.util.Optional;
@@ -64,11 +66,19 @@ public class UptimeSample {
       .argName("HOST_NAME")
       .required(false)
       .build();
+  private static final Option PATH_NAME_OPTION = Option.builder("a")
+      .longOpt("pathname")
+      .desc("[create/update]: Path name of uptime check to create/update.")
+      .hasArg()
+      .argName("HOST_NAME")
+      .required(false)
+      .build();
 
   private static final Options OPTIONS = new Options()
       .addOption(PROJECT_ID_OPTION)
       .addOption(DISPLAY_NAME_OPTION)
-      .addOption(HOST_NAME_OPTION);
+      .addOption(HOST_NAME_OPTION)
+      .addOption(PATH_NAME_OPTION);
 
   private static final CommandLineParser PARSER = new DefaultParser();
 
@@ -100,7 +110,16 @@ public class UptimeSample {
         createUptimeCheck(
             projectId,
             cl.getOptionValue(DISPLAY_NAME_OPTION.getOpt(), "new uptime check"),
-            cl.getOptionValue(HOST_NAME_OPTION.getOpt(), "example.com")
+            cl.getOptionValue(HOST_NAME_OPTION.getOpt(), "example.com"),
+            cl.getOptionValue(PATH_NAME_OPTION.getOpt(), "/")
+        );
+        break;
+      case "update":
+        updateUptimeCheck(
+            projectId,
+            cl.getOptionValue(DISPLAY_NAME_OPTION.getOpt(), "new uptime check"),
+            cl.getOptionValue(HOST_NAME_OPTION.getOpt(), "example.com"),
+            cl.getOptionValue(PATH_NAME_OPTION.getOpt(), "/")
         );
         break;
       case "list":
@@ -125,8 +144,8 @@ public class UptimeSample {
   }
 
   // [START monitoring_uptime_check_create]]
-  private static void createUptimeCheck(String projectId, String displayName, String hostName)
-      throws IOException {
+  private static void createUptimeCheck(
+      String projectId, String displayName, String hostName, String pathName) throws IOException {
     CreateUptimeCheckConfigRequest request = CreateUptimeCheckConfigRequest
         .newBuilder()
         .setParent(ProjectName.format(projectId))
@@ -139,7 +158,7 @@ public class UptimeSample {
                 .putLabels("host", hostName))
             .setHttpCheck(HttpCheck
                 .newBuilder()
-                .setPath("/")
+                .setPath(pathName)
                 .setPort(80))
             .setTimeout(Duration.newBuilder().setSeconds(10))
             .setPeriod(Duration.newBuilder().setSeconds(300)))
@@ -153,6 +172,40 @@ public class UptimeSample {
     }
   }
   // [END monitoring_uptime_check_create]]
+
+  // [START monitoring_uptime_check_update]]
+  private static void updateUptimeCheck(
+      String projectId, String displayName, String hostName, String pathName) throws IOException {
+    String fullCheckName = UptimeCheckConfigName.format(projectId, displayName);
+
+    UpdateUptimeCheckConfigRequest request = UpdateUptimeCheckConfigRequest
+        .newBuilder()
+        .setUpdateMask(FieldMask
+            .newBuilder()
+            .addPaths("http_check.path"))
+        .setUptimeCheckConfig(UptimeCheckConfig
+            .newBuilder()
+            .setName(fullCheckName)
+            .setMonitoredResource(MonitoredResource
+                .newBuilder()
+                .setType("uptime_url")
+                .putLabels("host", hostName))
+            .setHttpCheck(HttpCheck
+                .newBuilder()
+                .setPath(pathName)
+                .setPort(80))
+            .setTimeout(Duration.newBuilder().setSeconds(10))
+            .setPeriod(Duration.newBuilder().setSeconds(300)))
+        .build();
+    try (UptimeCheckServiceClient client = UptimeCheckServiceClient.create()) {
+      UptimeCheckConfig config = client.updateUptimeCheckConfig(request);
+      System.out.println("Uptime check updated: \n" + config.toString());
+    } catch (Exception e) {
+      usage("Exception updating uptime check: " + e.toString());
+      throw e;
+    }
+  }
+  // [END monitoring_uptime_check_update]]
 
   // [START monitoring_uptime_check_list_configs]]
   private static void listUptimeChecks(String projectId) throws IOException {
