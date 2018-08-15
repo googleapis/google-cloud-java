@@ -36,6 +36,8 @@ com.google.cloud.datastore
 com.google.cloud.datastore.spi
 com.google.cloud.datastore.spi.v1
 com.google.cloud.datastore.testing
+com.google.cloud.devtools.containeranalysis.v1beta1
+com.google.cloud.devtools.containeranalysis.v1beta1.stub
 com.google.cloud.dialogflow.v2
 com.google.cloud.dialogflow.v2.stub
 com.google.cloud.dialogflow.v2beta1
