@@ -87,6 +87,7 @@ public class BlobInfo implements Serializable {
   private final String kmsKeyName;
   private final Boolean eventBasedHold;
   private final Boolean temporaryHold;
+  private final Long retentionExpirationTime;
 
   /**
    * This class is meant for internal use only. Users are discouraged from using this class.
@@ -270,10 +271,6 @@ public class BlobInfo implements Serializable {
 
     abstract Builder setCustomerEncryption(CustomerEncryption customerEncryption);
 
-    /**
-     *
-     * Sets the blob's kmsKeyName.
-     */
     @GcpLaunchStage.Beta
     abstract Builder setKmsKeyName(String kmsKeyName);
 
@@ -286,6 +283,8 @@ public class BlobInfo implements Serializable {
      * Sets the blob's temporaryHold.
      */
     public abstract Builder setTemporaryHold(Boolean temporaryHold);
+
+    abstract Builder setRetentionExpirationTime(Long retentionExpirationTime);
 
     /**
      * Creates a {@code BlobInfo} object.
@@ -322,6 +321,7 @@ public class BlobInfo implements Serializable {
     private String kmsKeyName;
     private Boolean eventBasedHold;
     private Boolean temporaryHold;
+    private Long retentionExpirationTime;
 
     BuilderImpl(BlobId blobId) {
       this.blobId = blobId;
@@ -355,6 +355,7 @@ public class BlobInfo implements Serializable {
       kmsKeyName = blobInfo.kmsKeyName;
       eventBasedHold = blobInfo.eventBasedHold;
       temporaryHold = blobInfo.temporaryHold;
+      retentionExpirationTime = blobInfo.retentionExpirationTime;
     }
 
     @Override
@@ -522,6 +523,12 @@ public class BlobInfo implements Serializable {
     }
 
     @Override
+    Builder setRetentionExpirationTime(Long retentionExpirationTime) {
+      this.retentionExpirationTime = retentionExpirationTime;
+      return this;
+    }
+
+    @Override
     public BlobInfo build() {
       checkNotNull(blobId);
       return new BlobInfo(this);
@@ -556,6 +563,7 @@ public class BlobInfo implements Serializable {
     kmsKeyName = builder.kmsKeyName;
     eventBasedHold = builder.eventBasedHold;
     temporaryHold = builder.temporaryHold;
+    retentionExpirationTime = builder.retentionExpirationTime;
   }
 
     /**
@@ -805,6 +813,11 @@ public class BlobInfo implements Serializable {
   public Boolean getTemporaryHold() { return temporaryHold; }
 
   /**
+   * Returns the Retention Expiration Time of the blob, if a retention period is defined.
+   */
+  public Long getRetentionExpirationTime() { return retentionExpirationTime; }
+
+  /**
    * Returns a builder for the current blob.
    */
   public Builder toBuilder() {
@@ -875,6 +888,9 @@ public class BlobInfo implements Serializable {
     }
     if (customerEncryption != null) {
       storageObject.setCustomerEncryption(customerEncryption.toPb());
+    }
+    if (retentionExpirationTime != null) {
+      storageObject.setRetentionExpirationTime(new DateTime(retentionExpirationTime));
     }
 
     storageObject.setKmsKeyName(kmsKeyName);
@@ -1018,6 +1034,9 @@ public class BlobInfo implements Serializable {
     }
     if (storageObject.getTemporaryHold() != null) {
       builder.setTemporaryHold(storageObject.getTemporaryHold());
+    }
+    if (storageObject.getRetentionExpirationTime() != null) {
+      builder.setRetentionExpirationTime(storageObject.getRetentionExpirationTime().getValue());
     }
     return builder.build();
   }

@@ -96,7 +96,8 @@ public interface Storage extends Service<StorageOptions> {
     @GcpLaunchStage.Beta
     ENCRYPTION("encryption"),
     BILLING("billing"),
-    DEFAULT_EVENT_BASED_HOLD("defaultEventBasedHold");
+    DEFAULT_EVENT_BASED_HOLD("defaultEventBasedHold"),
+    RETENTION_POLICY("retentionPolicy");
 
     static final List<? extends FieldSelector> REQUIRED_FIELDS = ImmutableList.of(NAME);
 
@@ -141,6 +142,7 @@ public interface Storage extends Service<StorageOptions> {
     KMS_KEY_NAME("kmsKeyName"),
     EVENT_BASED_HOLD("eventBasedHold"),
     TEMPORARY_HOLD("temporaryHold"),
+    RETENTION_EXPIRATION_TIME("retentionExpirationTime"),
     UPDATED("updated");
 
     static final List<? extends FieldSelector> REQUIRED_FIELDS = ImmutableList.of(BUCKET, NAME);
@@ -1539,6 +1541,26 @@ public interface Storage extends Service<StorageOptions> {
    * @throws StorageException upon failure
    */
   Bucket get(String bucket, BucketGetOption... options);
+
+  /**
+   * Locks bucket retention policy. Requires a local metageneration value in the request. Review example below.
+   *
+   * Warning: Once a retention policy is locked, it can no longer be unlocked or removed only increased.
+   *
+   * Accepts an optional userProject {@link BucketTargetOption} option which defines the project id
+   * to assign operational costs.
+   *
+   * <p>Example of locking a retention policy on a bucket, only if its local metageneration value matches the buckets
+   * service metagenerationn otherwise a {@link StorageException} is thrown.
+   * <pre> {@code
+   * String bucketName = "my_unique_bucket";
+   * Bucket bucket = storage.get(bucketName, BucketGetOption.fields(BucketField.METAGENERATION));
+   * storage.lockRetentionPolicy(bucket, BucketTargetOption.metagenerationMatch());
+   * }</pre>
+   *
+   * @throws StorageException upon failure
+   */
+  Bucket lockRetentionPolicy(BucketInfo bucket, BucketTargetOption... options);
 
   /**
    * Returns the requested blob or {@code null} if not found.

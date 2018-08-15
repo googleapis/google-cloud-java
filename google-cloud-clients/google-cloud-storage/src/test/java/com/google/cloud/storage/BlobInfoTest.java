@@ -70,6 +70,7 @@ public class BlobInfoTest {
   private static final StorageClass STORAGE_CLASS = StorageClass.COLDLINE;
   private static final Boolean EVENT_BASED_HOLD = true;
   private static final Boolean TEMPORARY_HOLD = true;
+  private static final Long RETENTION_EXPIRATION_TIME = 10L;
 
   private static final BlobInfo BLOB_INFO = BlobInfo.newBuilder("b", "n", GENERATION)
       .setAcl(ACL)
@@ -97,6 +98,7 @@ public class BlobInfoTest {
       .setKmsKeyName(KMS_KEY_NAME)
       .setEventBasedHold(EVENT_BASED_HOLD)
       .setTemporaryHold(TEMPORARY_HOLD)
+      .setRetentionExpirationTime(RETENTION_EXPIRATION_TIME)
       .build();
   private static final BlobInfo DIRECTORY_INFO = BlobInfo.newBuilder("b", "n/")
       .setSize(0L)
@@ -162,6 +164,7 @@ public class BlobInfoTest {
     assertEquals(KMS_KEY_NAME, BLOB_INFO.getKmsKeyName());
     assertEquals(EVENT_BASED_HOLD, BLOB_INFO.getEventBasedHold());
     assertEquals(TEMPORARY_HOLD, BLOB_INFO.getTemporaryHold());
+    assertEquals(RETENTION_EXPIRATION_TIME, BLOB_INFO.getRetentionExpirationTime());
     assertFalse(BLOB_INFO.isDirectory());
     assertEquals("b", DIRECTORY_INFO.getBucket());
     assertEquals("n/", DIRECTORY_INFO.getName());
@@ -220,6 +223,7 @@ public class BlobInfoTest {
     assertEquals(expected.getKmsKeyName(), value.getKmsKeyName());
     assertEquals(expected.getEventBasedHold(), value.getEventBasedHold());
     assertEquals(expected.getTemporaryHold(), value.getTemporaryHold());
+    assertEquals(expected.getRetentionExpirationTime(), value.getRetentionExpirationTime());
   }
 
   private void compareCustomerEncryptions(CustomerEncryption expected, CustomerEncryption value) {
@@ -270,6 +274,7 @@ public class BlobInfoTest {
     assertNull(blobInfo.getKmsKeyName());
     assertNull(blobInfo.getEventBasedHold());
     assertNull(blobInfo.getTemporaryHold());
+    assertNull(blobInfo.getRetentionExpirationTime());
     assertTrue(blobInfo.isDirectory());
   }
 

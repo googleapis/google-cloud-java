@@ -65,6 +65,9 @@ public class BucketInfoTest {
   private static final Map<String, String> BUCKET_LABELS = ImmutableMap.of("label1", "value1");
   private static final Boolean REQUESTER_PAYS = true;
   private static final Boolean DEFAULT_EVENT_BASED_HOLD = true;
+  private static final Long RETENTION_EFFECTIVE_TIME = 10L;
+  private static final Long RETENTION_PERIOD = 10L;
+  private static Boolean RETENTION_POLICY_IS_LOCKED = false;
   private static final BucketInfo BUCKET_INFO = BucketInfo.newBuilder("b")
       .setAcl(ACL)
       .setEtag(ETAG)
@@ -85,6 +88,9 @@ public class BucketInfoTest {
       .setRequesterPays(REQUESTER_PAYS)
       .setDefaultKmsKeyName(DEFAULT_KMS_KEY_NAME)
       .setDefaultEventBasedHold(DEFAULT_EVENT_BASED_HOLD)
+      .setRetentionEffectiveTime(RETENTION_EFFECTIVE_TIME)
+      .setRetentionPeriod(RETENTION_PERIOD)
+      .setRetentionPolicyIsLocked(RETENTION_POLICY_IS_LOCKED)
       .build();
 
   @Test
@@ -131,6 +137,9 @@ public class BucketInfoTest {
     assertEquals(BUCKET_LABELS, BUCKET_INFO.getLabels());
     assertEquals(REQUESTER_PAYS, BUCKET_INFO.requesterPays());
     assertEquals(DEFAULT_EVENT_BASED_HOLD, BUCKET_INFO.getDefaultEventBasedHold());
+    assertEquals(RETENTION_EFFECTIVE_TIME, BUCKET_INFO.getRetentionEffectiveTime());
+    assertEquals(RETENTION_PERIOD, BUCKET_INFO.getRetentionPeriod());
+    assertEquals(RETENTION_POLICY_IS_LOCKED, BUCKET_INFO.getRetentionPolicyIsLocked());
   }
 
   @Test
@@ -162,6 +171,9 @@ public class BucketInfoTest {
     assertEquals(expected.getLabels(), value.getLabels());
     assertEquals(expected.requesterPays(), value.requesterPays());
     assertEquals(expected.getDefaultEventBasedHold(), value.getDefaultEventBasedHold());
+    assertEquals(expected.getRetentionEffectiveTime(), value.getRetentionEffectiveTime());
+    assertEquals(expected.getRetentionPeriod(), value.getRetentionPeriod());
+    assertEquals(expected.getRetentionPolicyIsLocked(), value.getRetentionPolicyIsLocked());
   }
 
   @Test

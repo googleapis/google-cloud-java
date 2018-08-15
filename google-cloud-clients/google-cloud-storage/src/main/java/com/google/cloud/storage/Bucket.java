@@ -642,6 +642,24 @@ public class Bucket extends BucketInfo {
     }
 
     @Override
+    Builder setRetentionEffectiveTime(Long retentionEffectiveTime) {
+      infoBuilder.setRetentionEffectiveTime(retentionEffectiveTime);
+      return this;
+    }
+
+    @Override
+    Builder setRetentionPolicyIsLocked(Boolean retentionIsLocked) {
+      infoBuilder.setRetentionPolicyIsLocked(retentionIsLocked);
+      return this;
+    }
+
+    @Override
+    public Builder setRetentionPeriod(Long retentionPeriod) {
+      infoBuilder.setRetentionPeriod(retentionPeriod);
+      return this;
+    }
+
+    @Override
     public Bucket build() {
       return new Bucket(storage, infoBuilder);
     }
@@ -1115,6 +1133,28 @@ public class Bucket extends BucketInfo {
    */
   public List<Acl> listDefaultAcls() {
     return storage.listDefaultAcls(getName());
+  }
+
+  /**
+   * Locks bucket retention policy. Requires a local metageneration value in the request. Review example below.
+   *
+   * Warning: Once a retention policy is locked, it can no longer be unlocked or removed only increased.
+   *
+   * Accepts an optional userProject {@link BucketTargetOption} option which defines the project id
+   * to assign operational costs.
+   *
+   * <p>Example of locking a retention policy on a bucket, only if its metageneration matches the buckets
+   * metagenerationn otherwise a {@link StorageException} is thrown.
+   * <pre> {@code
+   * String bucketName = "my_unique_bucket";
+   * Bucket bucket = storage.get(bucketName, BucketGetOption.fields(BucketField.METAGENERATION));
+   * bucket.lockRetentionPolicy(BucketTargetOption.metagenerationMatch());
+   * }</pre>
+   *
+   * @throws StorageException upon failure
+   */
+  public Bucket lockRetentionPolicy(BucketTargetOption... options) {
+    return storage.lockRetentionPolicy(this, options);
   }
 
   /**

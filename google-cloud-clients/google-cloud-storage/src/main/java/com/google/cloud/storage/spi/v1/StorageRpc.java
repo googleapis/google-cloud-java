@@ -461,6 +461,13 @@ public interface StorageRpc extends ServiceRpc {
   Notification createNotification(String bucket, Notification notification);
 
   /**
+   * Lock retention policy for the provided bucket.
+   * @return
+   * @throws StorageException upon failure
+   */
+  Bucket lockRetentionPolicy(Bucket bucket, Map<Option, ?> options);
+
+  /**
    * Returns the service account associated with the given project.
    *
    * @return the ID of the project to fetch the service account for.

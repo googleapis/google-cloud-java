@@ -422,6 +422,12 @@ public class Blob extends BlobInfo {
     }
 
     @Override
+    Builder setRetentionExpirationTime(Long retentionExpirationTime) {
+      infoBuilder.setRetentionExpirationTime(retentionExpirationTime);
+      return this;
+    }
+
+    @Override
     public Blob build() {
       return new Blob(storage, infoBuilder);
     }

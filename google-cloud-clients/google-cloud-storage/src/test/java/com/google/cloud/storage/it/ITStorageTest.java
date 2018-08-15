@@ -110,6 +110,8 @@ public class ITStorageTest {
   private static final String SERVICE_ACCOUNT_EMAIL = "gcloud-devel@gs-project-accounts.iam.gserviceaccount.com";
   private static final String KMS_KEY_NAME_1 = "projects/gcloud-devel/locations/us/keyRings/gcs_kms_key_ring_us/cryptoKeys/key";
   private static final String KMS_KEY_NAME_2 = "projects/gcloud-devel/locations/us/keyRings/gcs_kms_key_ring_us/cryptoKeys/key2";
+  private static final Long RETENTION_PERIOD = 5L;
+  private static final Long RETENTION_PERIOD_IN_MILLISECONDS = RETENTION_PERIOD * 1000;
 
   @BeforeClass
   public static void beforeClass() throws NoSuchAlgorithmException, InvalidKeySpecException {
@@ -206,80 +208,6 @@ public class ITStorageTest {
       assertEquals(KMS_KEY_NAME_2, updatedBucket.getDefaultKmsKeyName());
     } finally {
       RemoteStorageHelper.forceDelete(storage, bucketName, 5, TimeUnit.SECONDS);
-    }
-  }
-
-  @Test
-  public void testCreateDefaultEventBasedHoldBucket() throws ExecutionException, InterruptedException {
-    String bucketName = RemoteStorageHelper.generateBucketName();
-    Bucket remoteBucket = storage.create(BucketInfo.newBuilder(bucketName).setDefaultEventBasedHold(true).build());
-
-    try {
-      assertTrue(remoteBucket.getDefaultEventBasedHold());
-    } finally {
-      RemoteStorageHelper.forceDelete(storage, bucketName, 5, TimeUnit.SECONDS);
-    }
-  }
-
-  @Test
-  public void testEnableDisableBucketDefaultEventBasedHold() {
-    Bucket remoteBucket = storage.get(BUCKET, Storage.BucketGetOption.fields(BucketField.DEFAULT_EVENT_BASED_HOLD));
-    assertNull(remoteBucket.getDefaultEventBasedHold());
-    remoteBucket = remoteBucket.toBuilder().setDefaultEventBasedHold(true).build().update();
-    assertTrue(remoteBucket.getDefaultEventBasedHold());
-    remoteBucket = storage.get(BUCKET, Storage.BucketGetOption.fields(BucketField.DEFAULT_EVENT_BASED_HOLD));
-    assertTrue(remoteBucket.getDefaultEventBasedHold());
-    String blobName = "test-create-with-event-based-hold";
-    BlobInfo blobInfo = BlobInfo.newBuilder(BUCKET, blobName).build();
-    Blob remoteBlob = storage.create(blobInfo);
-    assertTrue(remoteBlob.getEventBasedHold());
-    remoteBlob = storage.get(blobInfo.getBlobId(), Storage.BlobGetOption.fields(BlobField.EVENT_BASED_HOLD));
-    assertTrue(remoteBlob.getEventBasedHold());
-    remoteBlob = remoteBlob.toBuilder().setEventBasedHold(false).build().update();
-    assertFalse(remoteBlob.getEventBasedHold());
-    remoteBucket = remoteBucket.toBuilder().setDefaultEventBasedHold(false).build().update();
-    assertFalse(remoteBucket.getDefaultEventBasedHold());
-  }
-
-  @Test
-  public void testEnableDisableTemporaryHold() {
-    String blobName = "test-create-with-event-based-hold";
-    BlobInfo blobInfo = BlobInfo.newBuilder(BUCKET, blobName).setTemporaryHold(true).build();
-    Blob remoteBlob = storage.create(blobInfo);
-    assertTrue(remoteBlob.getTemporaryHold());
-    remoteBlob = storage.get(remoteBlob.getBlobId(), Storage.BlobGetOption.fields(BlobField.TEMPORARY_HOLD));
-    assertTrue(remoteBlob.getTemporaryHold());
-    remoteBlob = remoteBlob.toBuilder().setTemporaryHold(false).build().update();
-    assertFalse(remoteBlob.getTemporaryHold());
-  }
-
-  @Test
-  public void testAttemptDeletionObjectEventBasedHold() {
-    String blobName = "test-create-with-event-based-hold";
-    BlobInfo blobInfo = BlobInfo.newBuilder(BUCKET, blobName).setEventBasedHold(true).build();
-    Blob remoteBlob = storage.create(blobInfo);
-    assertTrue(remoteBlob.getEventBasedHold());
-    try {
-      remoteBlob.delete();
-      fail("Expected failure on delete from eventBasedHold");
-    } catch (StorageException ex) {
-      // expected
-    }
-  }
-
-  @Test
-  public void testAttemptDeletionObjectTemporaryHold() {
-    String blobName = "test-create-with-temporary-hold";
-    BlobInfo blobInfo = BlobInfo.newBuilder(BUCKET, blobName).setTemporaryHold(true).build();
-    Blob remoteBlob = storage.create(blobInfo);
-    assertTrue(remoteBlob.getTemporaryHold());
-    remoteBlob = storage.get(remoteBlob.getBlobId(), Storage.BlobGetOption.fields(BlobField.TEMPORARY_HOLD));
-    assertTrue(remoteBlob.getTemporaryHold());
-    try {
-      remoteBlob.delete();
-      fail("Expected failure on delete from temporaryHold");
-    } catch (StorageException ex) {
-      // expected
     }
   }
 
@@ -1986,6 +1914,152 @@ public class ITStorageTest {
       }
     } finally {
       RemoteStorageHelper.forceDelete(storage, bucketName, 5, TimeUnit.SECONDS);
+    }
+  }
+
+  @Test
+  public void testRetentionPolicyNoLock() throws ExecutionException, InterruptedException {
+    String bucketName = RemoteStorageHelper.generateBucketName();
+    Bucket remoteBucket = storage.create(BucketInfo.newBuilder(bucketName)
+        .setRetentionPeriod(RETENTION_PERIOD).build());
+    try {
+      assertEquals(RETENTION_PERIOD, remoteBucket.getRetentionPeriod());
+      assertNotNull(remoteBucket.getRetentionEffectiveTime());
+      assertNull(remoteBucket.getRetentionPolicyIsLocked());
+      remoteBucket = storage.get(bucketName, Storage.BucketGetOption.fields(BucketField.RETENTION_POLICY));
+      assertEquals(RETENTION_PERIOD, remoteBucket.getRetentionPeriod());
+      assertNotNull(remoteBucket.getRetentionEffectiveTime());
+      assertNull(remoteBucket.getRetentionPolicyIsLocked());
+      String blobName = "test-create-with-retention-policy-hold";
+      BlobInfo blobInfo = BlobInfo.newBuilder(bucketName, blobName).build();
+      Blob remoteBlob = storage.create(blobInfo);
+      assertNotNull(remoteBlob.getRetentionExpirationTime());
+      remoteBucket = remoteBucket.toBuilder().setRetentionPeriod(null).build().update();
+      assertNull(remoteBucket.getRetentionPeriod());
+    } finally {
+      RemoteStorageHelper.forceDelete(storage, bucketName, 5, TimeUnit.SECONDS);
+    }
+  }
+
+  @Test
+  public void testRetentionPolicyLock() throws ExecutionException, InterruptedException {
+    retentionPolicyLockRequesterPays(true);
+    retentionPolicyLockRequesterPays(false);
+  }
+
+  private void retentionPolicyLockRequesterPays(boolean requesterPays) throws ExecutionException, InterruptedException {
+    String projectId = remoteStorageHelper.getOptions().getProjectId();
+    String bucketName = RemoteStorageHelper.generateBucketName();
+    BucketInfo bucketInfo;
+    if (requesterPays) {
+      bucketInfo = BucketInfo.newBuilder(bucketName).setRetentionPeriod(RETENTION_PERIOD)
+          .setRequesterPays(true).build();
+    } else {
+      bucketInfo = BucketInfo.newBuilder(bucketName).setRetentionPeriod(RETENTION_PERIOD).build();
+    }
+    Bucket remoteBucket = storage.create(bucketInfo);
+    try {
+      assertNull(remoteBucket.getRetentionPolicyIsLocked());
+      assertNotNull(remoteBucket.getRetentionEffectiveTime());
+      assertNotNull(remoteBucket.getMetageneration());
+      if (requesterPays) {
+        remoteBucket = storage.lockRetentionPolicy(remoteBucket, Storage.BucketTargetOption.metagenerationMatch(),
+            Storage.BucketTargetOption.userProject(projectId));
+      } else {
+        remoteBucket = storage.lockRetentionPolicy(remoteBucket, Storage.BucketTargetOption.metagenerationMatch());
+      }
+      assertTrue(remoteBucket.getRetentionPolicyIsLocked());
+      assertNotNull(remoteBucket.getRetentionEffectiveTime());
+    } finally {
+      RemoteStorageHelper.forceDelete(storage, bucketName, 5, TimeUnit.SECONDS);
+    }
+  }
+
+  @Test
+  public void testAttemptObjectDeleteWithRetentionPolicy() throws ExecutionException, InterruptedException {
+    String bucketName = RemoteStorageHelper.generateBucketName();
+    Bucket remoteBucket = storage.create(BucketInfo.newBuilder(bucketName)
+        .setRetentionPeriod(RETENTION_PERIOD).build());
+    assertEquals(RETENTION_PERIOD, remoteBucket.getRetentionPeriod());
+    String blobName = "test-create-with-retention-policy";
+    BlobInfo blobInfo = BlobInfo.newBuilder(bucketName, blobName).build();
+    Blob remoteBlob = storage.create(blobInfo);
+    assertNotNull(remoteBlob.getRetentionExpirationTime());
+    try {
+      remoteBlob.delete();
+      fail("Expected failure on delete from retentionPolicy");
+    } catch (StorageException ex) {
+      // expected
+    } finally {
+      Thread.sleep(RETENTION_PERIOD_IN_MILLISECONDS);
+      RemoteStorageHelper.forceDelete(storage, bucketName, 5, TimeUnit.SECONDS);
+    }
+  }
+
+  @Test
+  public void testEnableDisableBucketDefaultEventBasedHold() throws ExecutionException, InterruptedException {
+    String bucketName = RemoteStorageHelper.generateBucketName();
+    Bucket remoteBucket = storage.create(BucketInfo.newBuilder(bucketName).setDefaultEventBasedHold(true).build());
+    try {
+      assertTrue(remoteBucket.getDefaultEventBasedHold());
+      remoteBucket = storage.get(bucketName, Storage.BucketGetOption.fields(BucketField.DEFAULT_EVENT_BASED_HOLD));
+      assertTrue(remoteBucket.getDefaultEventBasedHold());
+      String blobName = "test-create-with-event-based-hold";
+      BlobInfo blobInfo = BlobInfo.newBuilder(bucketName, blobName).build();
+      Blob remoteBlob = storage.create(blobInfo);
+      assertTrue(remoteBlob.getEventBasedHold());
+      remoteBlob = storage.get(blobInfo.getBlobId(), Storage.BlobGetOption.fields(BlobField.EVENT_BASED_HOLD));
+      assertTrue(remoteBlob.getEventBasedHold());
+      remoteBlob = remoteBlob.toBuilder().setEventBasedHold(false).build().update();
+      assertFalse(remoteBlob.getEventBasedHold());
+      remoteBucket = remoteBucket.toBuilder().setDefaultEventBasedHold(false).build().update();
+      assertFalse(remoteBucket.getDefaultEventBasedHold());
+    } finally {
+      RemoteStorageHelper.forceDelete(storage, bucketName, 5, TimeUnit.SECONDS);
+    }
+  }
+
+  @Test
+  public void testEnableDisableTemporaryHold() {
+    String blobName = "test-create-with-temporary-hold";
+    BlobInfo blobInfo = BlobInfo.newBuilder(BUCKET, blobName).setTemporaryHold(true).build();
+    Blob remoteBlob = storage.create(blobInfo);
+    assertTrue(remoteBlob.getTemporaryHold());
+    remoteBlob = storage.get(remoteBlob.getBlobId(), Storage.BlobGetOption.fields(BlobField.TEMPORARY_HOLD));
+    assertTrue(remoteBlob.getTemporaryHold());
+    remoteBlob = remoteBlob.toBuilder().setTemporaryHold(false).build().update();
+    assertFalse(remoteBlob.getTemporaryHold());
+  }
+
+  @Test
+  public void testAttemptObjectDeleteWithEventBasedHold() {
+    String blobName = "test-create-with-event-based-hold";
+    BlobInfo blobInfo = BlobInfo.newBuilder(BUCKET, blobName).setEventBasedHold(true).build();
+    Blob remoteBlob = storage.create(blobInfo);
+    assertTrue(remoteBlob.getEventBasedHold());
+    try {
+      remoteBlob.delete();
+      fail("Expected failure on delete from eventBasedHold");
+    } catch (StorageException ex) {
+      // expected
+    } finally {
+      remoteBlob.toBuilder().setEventBasedHold(false).build().update();
+    }
+  }
+
+  @Test
+  public void testAttemptDeletionObjectTemporaryHold() {
+    String blobName = "test-create-with-temporary-hold";
+    BlobInfo blobInfo = BlobInfo.newBuilder(BUCKET, blobName).setTemporaryHold(true).build();
+    Blob remoteBlob = storage.create(blobInfo);
+    assertTrue(remoteBlob.getTemporaryHold());
+    try {
+      remoteBlob.delete();
+      fail("Expected failure on delete from temporaryHold");
+    } catch (StorageException ex) {
+      // expected
+    } finally {
+      remoteBlob.toBuilder().setEventBasedHold(false).build().update();
     }
   }
 

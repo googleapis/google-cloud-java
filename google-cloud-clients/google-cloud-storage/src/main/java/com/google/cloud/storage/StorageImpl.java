@@ -984,6 +984,23 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
   }
 
   @Override
+  public Bucket lockRetentionPolicy(BucketInfo bucketInfo, BucketTargetOption... options) {
+    final com.google.api.services.storage.model.Bucket bucketPb = bucketInfo.toPb();
+    final Map<StorageRpc.Option, ?> optionsMap = optionMap(bucketInfo, options);
+    try {
+      return Bucket.fromPb(this, runWithRetries(
+          new Callable<com.google.api.services.storage.model.Bucket>() {
+            @Override
+            public com.google.api.services.storage.model.Bucket call() {
+              return storageRpc.lockRetentionPolicy(bucketPb, optionsMap);
+            }
+          }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock()));
+    } catch (RetryHelperException e) {
+      throw StorageException.translateAndThrow(e);
+    }
+  }
+
+  @Override
   public ServiceAccount getServiceAccount(final String projectId) {
     try {
       com.google.api.services.storage.model.ServiceAccount answer = runWithRetries(new Callable<com.google.api.services.storage.model.ServiceAccount>() {
