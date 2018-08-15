@@ -24,9 +24,9 @@ import static com.google.cloud.firestore.LocalFirestoreHelper.CREATE_PRECONDITIO
 import static com.google.cloud.firestore.LocalFirestoreHelper.DATE;
 import static com.google.cloud.firestore.LocalFirestoreHelper.DOCUMENT_NAME;
 import static com.google.cloud.firestore.LocalFirestoreHelper.DOCUMENT_PATH;
+import static com.google.cloud.firestore.LocalFirestoreHelper.FIELD_TRANSFORM_COMMIT_RESPONSE;
 import static com.google.cloud.firestore.LocalFirestoreHelper.GEO_POINT;
 import static com.google.cloud.firestore.LocalFirestoreHelper.NESTED_CLASS_OBJECT;
-import static com.google.cloud.firestore.LocalFirestoreHelper.SERVER_TIMESTAMP_COMMIT_RESPONSE;
 import static com.google.cloud.firestore.LocalFirestoreHelper.SERVER_TIMESTAMP_PROTO;
 import static com.google.cloud.firestore.LocalFirestoreHelper.SERVER_TIMESTAMP_TRANSFORM;
 import static com.google.cloud.firestore.LocalFirestoreHelper.SINGLE_DELETE_COMMIT_RESPONSE;
@@ -36,6 +36,8 @@ import static com.google.cloud.firestore.LocalFirestoreHelper.SINGLE_FIELD_PROTO
 import static com.google.cloud.firestore.LocalFirestoreHelper.SINGLE_WRITE_COMMIT_RESPONSE;
 import static com.google.cloud.firestore.LocalFirestoreHelper.TIMESTAMP;
 import static com.google.cloud.firestore.LocalFirestoreHelper.UPDATE_PRECONDITION;
+import static com.google.cloud.firestore.LocalFirestoreHelper.arrayRemove;
+import static com.google.cloud.firestore.LocalFirestoreHelper.arrayUnion;
 import static com.google.cloud.firestore.LocalFirestoreHelper.assertCommitEquals;
 import static com.google.cloud.firestore.LocalFirestoreHelper.commit;
 import static com.google.cloud.firestore.LocalFirestoreHelper.create;
@@ -44,6 +46,7 @@ import static com.google.cloud.firestore.LocalFirestoreHelper.get;
 import static com.google.cloud.firestore.LocalFirestoreHelper.getAllResponse;
 import static com.google.cloud.firestore.LocalFirestoreHelper.map;
 import static com.google.cloud.firestore.LocalFirestoreHelper.object;
+import static com.google.cloud.firestore.LocalFirestoreHelper.serverTimestamp;
 import static com.google.cloud.firestore.LocalFirestoreHelper.set;
 import static com.google.cloud.firestore.LocalFirestoreHelper.streamingResponse;
 import static com.google.cloud.firestore.LocalFirestoreHelper.string;
@@ -333,7 +336,10 @@ public class DocumentReferenceTest {
     documentReference.create(LocalFirestoreHelper.SERVER_TIMESTAMP_MAP).get();
     documentReference.create(LocalFirestoreHelper.SERVER_TIMESTAMP_OBJECT).get();
 
-    CommitRequest create = commit(transform(CREATE_PRECONDITION, "foo", "inner.bar"));
+    CommitRequest create =
+        commit(
+            transform(
+                CREATE_PRECONDITION, "foo", serverTimestamp(), "inner.bar", serverTimestamp()));
 
     List<CommitRequest> commitRequests = commitCapture.getAllValues();
     assertCommitEquals(create, commitRequests.get(0));
@@ -342,7 +348,7 @@ public class DocumentReferenceTest {
 
   @Test
   public void setWithServerTimestamp() throws Exception {
-    doReturn(SERVER_TIMESTAMP_COMMIT_RESPONSE)
+    doReturn(FIELD_TRANSFORM_COMMIT_RESPONSE)
         .when(firestoreMock)
         .sendRequest(
             commitCapture.capture(), Matchers.<UnaryCallable<CommitRequest, CommitResponse>>any());
@@ -359,7 +365,7 @@ public class DocumentReferenceTest {
 
   @Test
   public void updateWithServerTimestamp() throws Exception {
-    doReturn(SERVER_TIMESTAMP_COMMIT_RESPONSE)
+    doReturn(FIELD_TRANSFORM_COMMIT_RESPONSE)
         .when(firestoreMock)
         .sendRequest(
             commitCapture.capture(), Matchers.<UnaryCallable<CommitRequest, CommitResponse>>any());
@@ -376,7 +382,10 @@ public class DocumentReferenceTest {
     documentReference.update(
         "foo", FieldValue.serverTimestamp(), "inner.bar", FieldValue.serverTimestamp());
 
-    update = commit(transform(UPDATE_PRECONDITION, "foo", "inner.bar"));
+    update =
+        commit(
+            transform(
+                UPDATE_PRECONDITION, "foo", serverTimestamp(), "inner.bar", serverTimestamp()));
 
     assertCommitEquals(update, commitCapture.getValue());
   }
@@ -395,7 +404,7 @@ public class DocumentReferenceTest {
         .set(LocalFirestoreHelper.SERVER_TIMESTAMP_OBJECT, SetOptions.mergeFields("inner.bar"))
         .get();
 
-    CommitRequest set = commit(transform("inner.bar"));
+    CommitRequest set = commit(transform("inner.bar", serverTimestamp()));
 
     List<CommitRequest> commitRequests = commitCapture.getAllValues();
     assertCommitEquals(set, commitRequests.get(0));
@@ -403,7 +412,47 @@ public class DocumentReferenceTest {
   }
 
   @Test
-  public void serverTimestampInArray() throws Exception {
+  public void setWithArrayUnion() throws Exception {
+    doReturn(FIELD_TRANSFORM_COMMIT_RESPONSE)
+        .when(firestoreMock)
+        .sendRequest(
+            commitCapture.capture(), Matchers.<UnaryCallable<CommitRequest, CommitResponse>>any());
+
+    documentReference
+        .set(map("foo", FieldValue.arrayUnion("bar", map("foo", "baz"))))
+        .get();
+
+    CommitRequest set =
+        commit(
+            set(Collections.<String, Value>emptyMap()),
+            transform("foo", arrayUnion(string("bar"), object("foo", string("baz")))));
+
+    CommitRequest commitRequest = commitCapture.getValue();
+    assertCommitEquals(set, commitRequest);
+  }
+
+  @Test
+  public void setWithArrayRemove() throws Exception {
+    doReturn(FIELD_TRANSFORM_COMMIT_RESPONSE)
+        .when(firestoreMock)
+        .sendRequest(
+            commitCapture.capture(), Matchers.<UnaryCallable<CommitRequest, CommitResponse>>any());
+
+    documentReference
+        .set(map("foo", FieldValue.arrayRemove("bar", map("foo", "baz"))))
+        .get();
+
+    CommitRequest set =
+        commit(
+            set(Collections.<String, Value>emptyMap()),
+            transform("foo", arrayRemove(string("bar"), object("foo", string("baz")))));
+
+    CommitRequest commitRequest = commitCapture.getValue();
+    assertCommitEquals(set, commitRequest);
+  }
+
+  @Test
+  public void serverTimestampInArray() {
     Map<String, Object> list = new HashMap<>();
     list.put("foo", ImmutableList.of(FieldValue.serverTimestamp()));
 
@@ -411,7 +460,9 @@ public class DocumentReferenceTest {
       documentReference.create(list);
       fail();
     } catch (FirestoreException e) {
-      assertTrue(e.getMessage().endsWith("Server timestamps are not supported as Array values."));
+      assertTrue(
+          e.getMessage()
+              .endsWith("FieldValue.serverTimestamp() is not supported inside of an array."));
     }
 
     list.clear();
@@ -421,7 +472,112 @@ public class DocumentReferenceTest {
       documentReference.create(list);
       fail();
     } catch (FirestoreException e) {
-      assertTrue(e.getMessage().endsWith("Server timestamps are not supported as Array values."));
+      assertTrue(
+          e.getMessage()
+              .endsWith("FieldValue.serverTimestamp() is not supported inside of an array."));
+    }
+  }
+
+  @Test
+  public void deleteInArray() {
+    Map<String, Object> list = new HashMap<>();
+    list.put("foo", ImmutableList.of(FieldValue.delete()));
+
+    try {
+      documentReference.create(list);
+      fail();
+    } catch (IllegalArgumentException e) {
+      assertTrue(
+          e.getMessage().endsWith("FieldValue.delete() is not supported at field 'foo.`0`'."));
+    }
+
+    list.clear();
+    list.put("a", ImmutableList.of(ImmutableList.of("b", map("c", FieldValue.delete()))));
+
+    try {
+      documentReference.create(list);
+      fail();
+    } catch (IllegalArgumentException e) {
+      assertTrue(
+          e.getMessage().endsWith("FieldValue.delete() is not supported at field 'a.`0`.`1`.c'."));
+    }
+  }
+
+  @Test
+  public void arrayUnionInArray() {
+    Map<String, Object> list = new HashMap<>();
+    list.put("foo", ImmutableList.of(FieldValue.arrayUnion("foo")));
+
+    try {
+      documentReference.create(list);
+      fail();
+    } catch (FirestoreException e) {
+      assertTrue(
+          e.getMessage().endsWith("FieldValue.arrayUnion() is not supported inside of an array."));
+    }
+
+    list.clear();
+    list.put("a", ImmutableList.of(ImmutableList.of("b", map("c", FieldValue.arrayUnion("foo")))));
+
+    try {
+      documentReference.create(list);
+      fail();
+    } catch (FirestoreException e) {
+      assertTrue(
+          e.getMessage().endsWith("FieldValue.arrayUnion() is not supported inside of an array."));
+    }
+  }
+
+  @Test
+  public void arrayUnionInArrayUnion() {
+    Map<String, Object> data = new HashMap<>();
+    data.put("foo", FieldValue.arrayUnion(FieldValue.arrayUnion("foo")));
+
+    try {
+      documentReference.create(data);
+      fail();
+    } catch (IllegalArgumentException e) {
+      assertTrue(
+          e.getMessage()
+              .endsWith("Cannot use FieldValue.arrayUnion() as an argument at field 'foo'."));
+    }
+  }
+
+  @Test
+  public void deleteInArrayUnion() {
+    Map<String, Object> data = new HashMap<>();
+    data.put("foo", FieldValue.arrayUnion(FieldValue.delete()));
+
+    try {
+      documentReference.set(data, SetOptions.merge());
+      fail();
+    } catch (IllegalArgumentException e) {
+      assertTrue(e.getMessage().endsWith("FieldValue.delete() is not supported at field 'foo'."));
+    }
+  }
+
+  @Test
+  public void arrayRemoveInArray() {
+    Map<String, Object> list = new HashMap<>();
+    list.put("foo", ImmutableList.of(FieldValue.arrayRemove("foo")));
+
+    try {
+      documentReference.create(list);
+      fail();
+    } catch (FirestoreException e) {
+      assertTrue(
+          e.getMessage().endsWith("FieldValue.arrayRemove() is not supported inside of an array."));
+    }
+
+    list.clear();
+    list.put("a", ImmutableList.of(ImmutableList.of("b", map("c", FieldValue.arrayRemove("foo")))));
+
+    try {
+      documentReference.create(list);
+      fail();
+    } catch (FirestoreException e) {
+      assertTrue(
+          e.getMessage().endsWith("FieldValue.arrayRemove() is not supported inside of an array."));
     }
   }
 
