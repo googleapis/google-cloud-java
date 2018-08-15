@@ -22,6 +22,7 @@ private static final long serialVersionUID = 0L;
   }
   private CloudStorageOptions() {
     bytesLimitPerFile_ = 0L;
+    bytesLimitPerFilePercent_ = 0;
     fileTypes_ = java.util.Collections.emptyList();
     sampleMethod_ = 0;
     filesLimitPercent_ = 0;
@@ -71,9 +72,9 @@ private static final long serialVersionUID = 0L;
           }
           case 40: {
             int rawValue = input.readEnum();
-            if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+            if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
               fileTypes_ = new java.util.ArrayList<java.lang.Integer>();
-              mutable_bitField0_ |= 0x00000004;
+              mutable_bitField0_ |= 0x00000008;
             }
             fileTypes_.add(rawValue);
             break;
@@ -83,9 +84,9 @@ private static final long serialVersionUID = 0L;
             int oldLimit = input.pushLimit(length);
             while(input.getBytesUntilLimit() > 0) {
               int rawValue = input.readEnum();
-              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
                 fileTypes_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000008;
               }
               fileTypes_.add(rawValue);
             }
@@ -103,6 +104,11 @@ private static final long serialVersionUID = 0L;
             filesLimitPercent_ = input.readInt32();
             break;
           }
+          case 64: {
+
+            bytesLimitPerFilePercent_ = input.readInt32();
+            break;
+          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -118,7 +124,7 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+      if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
         fileTypes_ = java.util.Collections.unmodifiableList(fileTypes_);
       }
       this.unknownFields = unknownFields.build();
@@ -899,13 +905,30 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Max number of bytes to scan from a file. If a scanned file's size is bigger
-   * than this value then the rest of the bytes are omitted.
+   * than this value then the rest of the bytes are omitted. Only one
+   * of bytes_limit_per_file and bytes_limit_per_file_percent can be specified.
    * </pre>
    *
    * <code>int64 bytes_limit_per_file = 4;</code>
    */
   public long getBytesLimitPerFile() {
     return bytesLimitPerFile_;
+  }
+
+  public static final int BYTES_LIMIT_PER_FILE_PERCENT_FIELD_NUMBER = 8;
+  private int bytesLimitPerFilePercent_;
+  /**
+   * <pre>
+   * Max percentage of bytes to scan from a file. The rest are omitted. The
+   * number of bytes scanned is rounded down. Must be between 0 and 100,
+   * inclusively. Both 0 and 100 means no limit. Defaults to 0. Only one
+   * of bytes_limit_per_file and bytes_limit_per_file_percent can be specified.
+   * </pre>
+   *
+   * <code>int32 bytes_limit_per_file_percent = 8;</code>
+   */
+  public int getBytesLimitPerFilePercent() {
+    return bytesLimitPerFilePercent_;
   }
 
   public static final int FILE_TYPES_FIELD_NUMBER = 5;
@@ -1050,6 +1073,9 @@ private static final long serialVersionUID = 0L;
     if (filesLimitPercent_ != 0) {
       output.writeInt32(7, filesLimitPercent_);
     }
+    if (bytesLimitPerFilePercent_ != 0) {
+      output.writeInt32(8, bytesLimitPerFilePercent_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -1087,6 +1113,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(7, filesLimitPercent_);
     }
+    if (bytesLimitPerFilePercent_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(8, bytesLimitPerFilePercent_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1110,6 +1140,8 @@ private static final long serialVersionUID = 0L;
     }
     result = result && (getBytesLimitPerFile()
         == other.getBytesLimitPerFile());
+    result = result && (getBytesLimitPerFilePercent()
+        == other.getBytesLimitPerFilePercent());
     result = result && fileTypes_.equals(other.fileTypes_);
     result = result && sampleMethod_ == other.sampleMethod_;
     result = result && (getFilesLimitPercent()
@@ -1132,6 +1164,8 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + BYTES_LIMIT_PER_FILE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getBytesLimitPerFile());
+    hash = (37 * hash) + BYTES_LIMIT_PER_FILE_PERCENT_FIELD_NUMBER;
+    hash = (53 * hash) + getBytesLimitPerFilePercent();
     if (getFileTypesCount() > 0) {
       hash = (37 * hash) + FILE_TYPES_FIELD_NUMBER;
       hash = (53 * hash) + fileTypes_.hashCode();
@@ -1286,8 +1320,10 @@ private static final long serialVersionUID = 0L;
       }
       bytesLimitPerFile_ = 0L;
 
+      bytesLimitPerFilePercent_ = 0;
+
       fileTypes_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       sampleMethod_ = 0;
 
       filesLimitPercent_ = 0;
@@ -1326,9 +1362,10 @@ private static final long serialVersionUID = 0L;
         result.fileSet_ = fileSetBuilder_.build();
       }
       result.bytesLimitPerFile_ = bytesLimitPerFile_;
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+      result.bytesLimitPerFilePercent_ = bytesLimitPerFilePercent_;
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
         fileTypes_ = java.util.Collections.unmodifiableList(fileTypes_);
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000008);
       }
       result.fileTypes_ = fileTypes_;
       result.sampleMethod_ = sampleMethod_;
@@ -1388,10 +1425,13 @@ private static final long serialVersionUID = 0L;
       if (other.getBytesLimitPerFile() != 0L) {
         setBytesLimitPerFile(other.getBytesLimitPerFile());
       }
+      if (other.getBytesLimitPerFilePercent() != 0) {
+        setBytesLimitPerFilePercent(other.getBytesLimitPerFilePercent());
+      }
       if (!other.fileTypes_.isEmpty()) {
         if (fileTypes_.isEmpty()) {
           fileTypes_ = other.fileTypes_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
           ensureFileTypesIsMutable();
           fileTypes_.addAll(other.fileTypes_);
@@ -1555,7 +1595,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Max number of bytes to scan from a file. If a scanned file's size is bigger
-     * than this value then the rest of the bytes are omitted.
+     * than this value then the rest of the bytes are omitted. Only one
+     * of bytes_limit_per_file and bytes_limit_per_file_percent can be specified.
      * </pre>
      *
      * <code>int64 bytes_limit_per_file = 4;</code>
@@ -1566,7 +1607,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Max number of bytes to scan from a file. If a scanned file's size is bigger
-     * than this value then the rest of the bytes are omitted.
+     * than this value then the rest of the bytes are omitted. Only one
+     * of bytes_limit_per_file and bytes_limit_per_file_percent can be specified.
      * </pre>
      *
      * <code>int64 bytes_limit_per_file = 4;</code>
@@ -1580,7 +1622,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Max number of bytes to scan from a file. If a scanned file's size is bigger
-     * than this value then the rest of the bytes are omitted.
+     * than this value then the rest of the bytes are omitted. Only one
+     * of bytes_limit_per_file and bytes_limit_per_file_percent can be specified.
      * </pre>
      *
      * <code>int64 bytes_limit_per_file = 4;</code>
@@ -1592,12 +1635,59 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private int bytesLimitPerFilePercent_ ;
+    /**
+     * <pre>
+     * Max percentage of bytes to scan from a file. The rest are omitted. The
+     * number of bytes scanned is rounded down. Must be between 0 and 100,
+     * inclusively. Both 0 and 100 means no limit. Defaults to 0. Only one
+     * of bytes_limit_per_file and bytes_limit_per_file_percent can be specified.
+     * </pre>
+     *
+     * <code>int32 bytes_limit_per_file_percent = 8;</code>
+     */
+    public int getBytesLimitPerFilePercent() {
+      return bytesLimitPerFilePercent_;
+    }
+    /**
+     * <pre>
+     * Max percentage of bytes to scan from a file. The rest are omitted. The
+     * number of bytes scanned is rounded down. Must be between 0 and 100,
+     * inclusively. Both 0 and 100 means no limit. Defaults to 0. Only one
+     * of bytes_limit_per_file and bytes_limit_per_file_percent can be specified.
+     * </pre>
+     *
+     * <code>int32 bytes_limit_per_file_percent = 8;</code>
+     */
+    public Builder setBytesLimitPerFilePercent(int value) {
+      
+      bytesLimitPerFilePercent_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Max percentage of bytes to scan from a file. The rest are omitted. The
+     * number of bytes scanned is rounded down. Must be between 0 and 100,
+     * inclusively. Both 0 and 100 means no limit. Defaults to 0. Only one
+     * of bytes_limit_per_file and bytes_limit_per_file_percent can be specified.
+     * </pre>
+     *
+     * <code>int32 bytes_limit_per_file_percent = 8;</code>
+     */
+    public Builder clearBytesLimitPerFilePercent() {
+      
+      bytesLimitPerFilePercent_ = 0;
+      onChanged();
+      return this;
+    }
+
     private java.util.List<java.lang.Integer> fileTypes_ =
       java.util.Collections.emptyList();
     private void ensureFileTypesIsMutable() {
-      if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (!((bitField0_ & 0x00000008) == 0x00000008)) {
         fileTypes_ = new java.util.ArrayList<java.lang.Integer>(fileTypes_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
       }
     }
     /**
@@ -1703,7 +1793,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearFileTypes() {
       fileTypes_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
