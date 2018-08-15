@@ -16,7 +16,6 @@
 
 package com.example.vision;
 
-// [START product_search_import]
 import com.google.cloud.vision.v1p3beta1.AnnotateImageRequest;
 import com.google.cloud.vision.v1p3beta1.BatchAnnotateImagesResponse;
 import com.google.cloud.vision.v1p3beta1.Feature;
@@ -42,7 +41,6 @@ import net.sourceforge.argparse4j.inf.ArgumentParserException;
 import net.sourceforge.argparse4j.inf.Namespace;
 import net.sourceforge.argparse4j.inf.Subparser;
 import net.sourceforge.argparse4j.inf.Subparsers;
-// [END product_search_import]
 
 /**
  * This application demonstrates how to perform similar product search operation in Cloud Vision
@@ -54,7 +52,7 @@ import net.sourceforge.argparse4j.inf.Subparsers;
 
 public class ProductSearch {
 
-  // [START product_search_get_similar_products_file]
+  // [START vision_product_search_get_similar_products]
   /**
    * Search similar products to image.
    *
@@ -130,7 +128,7 @@ public class ProductSearch {
       System.out.println(String.format("Image name: %s", product.getImage()));
     }
   }
-  // [END product_search_get_similar_products_file]
+  // [END vision_product_search_get_similar_products]
 
   public static void main(String[] args) throws Exception {
     ProductSearch productSearch = new ProductSearch();

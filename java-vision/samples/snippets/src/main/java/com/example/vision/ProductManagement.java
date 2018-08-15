@@ -16,7 +16,6 @@
 
 package com.example.vision;
 
-// [START product_search_import]
 import com.google.cloud.vision.v1p3beta1.LocationName;
 import com.google.cloud.vision.v1p3beta1.Product;
 import com.google.cloud.vision.v1p3beta1.Product.KeyValue;
@@ -33,7 +32,6 @@ import net.sourceforge.argparse4j.inf.ArgumentParserException;
 import net.sourceforge.argparse4j.inf.Namespace;
 import net.sourceforge.argparse4j.inf.Subparser;
 import net.sourceforge.argparse4j.inf.Subparsers;
-// [END product_search_import]
 
 /**
  * This application demonstrates how to perform basic operations on Products.
@@ -44,7 +42,7 @@ import net.sourceforge.argparse4j.inf.Subparsers;
 
 public class ProductManagement {
 
-  // [START product_search_create_product]
+  // [START vision_product_search_create_product]
   /**
    * Create one product.
    *
@@ -90,9 +88,9 @@ public class ProductManagement {
     // Display the product information
     System.out.println(String.format("Product name: %s", product.getName()));
   }
-  // [END product_search_create_product]
+  // [END vision_product_search_create_product]
 
-  // [START product_search_list_products]
+  // [START vision_product_search_list_products]
   /**
    * List all products.
    *
@@ -121,9 +119,9 @@ public class ProductManagement {
           String.format("Product labels: %s", product.getProductLabelsList().toString()));
     }
   }
-  // [END product_search_list_products]
+  // [END vision_product_search_list_products]
 
-  // [START product_search_get_product]
+  // [START vision_product_search_get_product]
   /**
    * Get information about a product.
    *
@@ -154,9 +152,9 @@ public class ProductManagement {
     System.out.println(
         String.format("Product labels: %s", product.getProductLabelsList().toString()));
   }
-  // [END product_search_get_product]
+  // [END vision_product_search_get_product]
 
-  // [START product_search_update_product_labels]
+  // [START vision_product_search_update_product_labels]
   /**
    * Update the product labels.
    *
@@ -198,9 +196,9 @@ public class ProductManagement {
         String.format(
             "Updated product labels: %s", updatedProduct.getProductLabelsList().toString()));
   }
-  // [END product_search_update_product_labels]
+  // [END vision_product_search_update_product_labels]
 
-  // [START product_search_delete_product]
+  // [START vision_product_search_delete_product]
   /**
    * Delete the product and all its reference images.
    *
@@ -221,7 +219,7 @@ public class ProductManagement {
 
     System.out.println("Product deleted.");
   }
-  // [END product_search_delete_product]
+  // [END vision_product_search_delete_product]
 
   public static void main(String[] args) throws Exception {
     ProductManagement productManagement = new ProductManagement();

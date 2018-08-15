@@ -16,7 +16,7 @@
 
 package com.example.vision;
 
-// [START product_search_import]
+// [START vision_product_search_tutorial_import]
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.vision.v1p3beta1.BatchOperationMetadata;
 import com.google.cloud.vision.v1p3beta1.ImportProductSetsGcsSource;
@@ -26,7 +26,7 @@ import com.google.cloud.vision.v1p3beta1.ImportProductSetsResponse;
 import com.google.cloud.vision.v1p3beta1.LocationName;
 import com.google.cloud.vision.v1p3beta1.ProductSearchClient;
 import com.google.cloud.vision.v1p3beta1.ReferenceImage;
-
+// [END vision_product_search_tutorial_import]
 import java.io.PrintStream;
 import javax.swing.JPanel;
 
@@ -36,7 +36,6 @@ import net.sourceforge.argparse4j.inf.ArgumentParserException;
 import net.sourceforge.argparse4j.inf.Namespace;
 import net.sourceforge.argparse4j.inf.Subparser;
 import net.sourceforge.argparse4j.inf.Subparsers;
-// [END product_search_import]
 
 /**
  * This application demonstrates how to Import Product Sets in Cloud Vision
@@ -47,7 +46,7 @@ import net.sourceforge.argparse4j.inf.Subparsers;
  */
 
 public class ImportProductSets extends JPanel {
-  // [START product_search_import_product_sets]
+  // [START vision_product_search_import_product_images]
   /**
    * Import images of different products in the product set.
    *
@@ -89,7 +88,7 @@ public class ImportProductSets extends JPanel {
       }
     }
   }
-  // [END product_search_import_product_sets]
+  // [END vision_product_search_import_product_images]
 
   public static void main(String[] args) throws Exception {
     ImportProductSets importProductSet = new ImportProductSets();
