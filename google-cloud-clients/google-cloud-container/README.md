@@ -1,7 +1,7 @@
-Google Cloud Java Client for Container (Kubernetes Engine)
+Google Cloud Java Client for Container Analysis
 ==========================================================
 
-Java idiomatic client for [Kubernetes Engine][cloud-container].
+Java idiomatic client for [Container Analysis][cloud-containeranalysis].
 
 [![CircleCI](https://circleci.com/gh/GoogleCloudPlatform/google-cloud-java/tree/master.svg?style=shield)](https://circleci.com/gh/GoogleCloudPlatform/google-cloud-java/tree/master)
 [![Coverage Status](https://coveralls.io/repos/GoogleCloudPlatform/google-cloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/google-cloud-java?branch=master)
@@ -114,7 +114,7 @@ Apache 2.0 - See [LICENSE] for more information.
 [LICENSE]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/LICENSE
 [TESTING]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/TESTING.md#testing-code-that-uses-container
 
-[cloud-container]: https://cloud.google.com/kubernetes-engine/
-[cloud-container-quickstart]: https://cloud.google.com/kubernetes-engine/docs/quickstart
-[container-product-docs]: https://cloud.google.com/kubernetes-engine/docs/
-[container-client-lib-docs]: https://googlecloudplatform.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/container/v1/package-summary.html
+[cloud-containeranalysis]: https://cloud.google.com/container-analysis/
+[cloud-containeranalysis-quickstart]: https://cloud.google.com/kubernetes-engine/docs/quickstart
+[containeranalysis-product-docs]: https://cloud.google.com/kubernetes-engine/docs/
+[containeranalysis-client-lib-docs]: https://googlecloudplatform.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/container/v1/package-summary.html

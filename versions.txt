@@ -13,6 +13,7 @@ grpc-google-cloud-bigquerydatatransfer-v1:0.22.0:0.22.1-SNAPSHOT
 grpc-google-cloud-bigtable-admin-v2:0.22.0:0.22.1-SNAPSHOT
 grpc-google-cloud-bigtable-v2:0.22.0:0.22.1-SNAPSHOT
 grpc-google-cloud-container-v1:0.22.0:0.22.1-SNAPSHOT
+grpc-google-cloud-containeranalysis-v1beta1:0.22.0:0.22.1-SNAPSHOT
 grpc-google-cloud-dataproc-v1:0.22.0:0.22.1-SNAPSHOT
 grpc-google-cloud-dataproc-v1beta2:0.22.0:0.22.1-SNAPSHOT
 grpc-google-cloud-dialogflow-v2:0.22.0:0.22.1-SNAPSHOT
@@ -55,6 +56,7 @@ proto-google-cloud-bigquerydatatransfer-v1:0.22.0:0.22.1-SNAPSHOT
 proto-google-cloud-bigtable-admin-v2:0.22.0:0.22.1-SNAPSHOT
 proto-google-cloud-bigtable-v2:0.22.0:0.22.1-SNAPSHOT
 proto-google-cloud-container-v1:0.22.0:0.22.1-SNAPSHOT
+proto-google-cloud-containeranalysis-v1beta1:0.22.0:0.22.1-SNAPSHOT
 proto-google-cloud-dataproc-v1:0.22.0:0.22.1-SNAPSHOT
 proto-google-cloud-dataproc-v1beta2:0.22.0:0.22.1-SNAPSHOT
 proto-google-cloud-datastore-v1:0.22.0:0.22.1-SNAPSHOT
@@ -113,6 +115,7 @@ google-cloud-bom:0.57.0-alpha:0.57.1-alpha-SNAPSHOT
 google-cloud-compat-checker:0.57.0-alpha:0.57.1-alpha-SNAPSHOT
 google-cloud-compute:0.57.0-alpha:0.57.1-alpha-SNAPSHOT
 google-cloud-container:0.57.0-beta:0.57.1-beta-SNAPSHOT
+google-cloud-containeranalysis:0.57.0-beta:0.57.1-beta-SNAPSHOT
 google-cloud-contrib:0.57.0-alpha:0.57.1-alpha-SNAPSHOT
 google-cloud-core:1.39.0:1.39.1-SNAPSHOT
 google-cloud-core-grpc:1.39.0:1.39.1-SNAPSHOT
