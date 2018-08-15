@@ -104,6 +104,20 @@ private static final long serialVersionUID = 0L;
             typeCase_ = 4;
             break;
           }
+          case 42: {
+            com.google.privacy.dlp.v2.StoredType.Builder subBuilder = null;
+            if (typeCase_ == 5) {
+              subBuilder = ((com.google.privacy.dlp.v2.StoredType) type_).toBuilder();
+            }
+            type_ =
+                input.readMessage(com.google.privacy.dlp.v2.StoredType.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((com.google.privacy.dlp.v2.StoredType) type_);
+              type_ = subBuilder.buildPartial();
+            }
+            typeCase_ = 5;
+            break;
+          }
           case 48: {
             int rawValue = input.readEnum();
 
@@ -111,9 +125,9 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 58: {
-            if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+            if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
               detectionRules_ = new java.util.ArrayList<com.google.privacy.dlp.v2.CustomInfoType.DetectionRule>();
-              mutable_bitField0_ |= 0x00000020;
+              mutable_bitField0_ |= 0x00000040;
             }
             detectionRules_.add(
                 input.readMessage(com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.parser(), extensionRegistry));
@@ -134,7 +148,7 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+      if (((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
         detectionRules_ = java.util.Collections.unmodifiableList(detectionRules_);
       }
       this.unknownFields = unknownFields.build();
@@ -231,7 +245,11 @@ private static final long serialVersionUID = 0L;
    * matches for "jennifer".
    * Dictionary words containing a large number of characters that are not
    * letters or digits may result in unexpected findings because such characters
-   * are treated as whitespace.
+   * are treated as whitespace. The
+   * [limits](https://cloud.google.com/dlp/limits) page contains details about
+   * the size limits of dictionaries. For dictionaries that do not fit within
+   * these constraints, consider using `LargeCustomDictionaryConfig` in the
+   * `StoredInfoType` API.
    * </pre>
    *
    * Protobuf type {@code google.privacy.dlp.v2.CustomInfoType.Dictionary}
@@ -1367,7 +1385,11 @@ private static final long serialVersionUID = 0L;
      * matches for "jennifer".
      * Dictionary words containing a large number of characters that are not
      * letters or digits may result in unexpected findings because such characters
-     * are treated as whitespace.
+     * are treated as whitespace. The
+     * [limits](https://cloud.google.com/dlp/limits) page contains details about
+     * the size limits of dictionaries. For dictionaries that do not fit within
+     * these constraints, consider using `LargeCustomDictionaryConfig` in the
+     * `StoredInfoType` API.
      * </pre>
      *
      * Protobuf type {@code google.privacy.dlp.v2.CustomInfoType.Dictionary}
@@ -6424,6 +6446,7 @@ private static final long serialVersionUID = 0L;
     DICTIONARY(2),
     REGEX(3),
     SURROGATE_TYPE(4),
+    STORED_TYPE(5),
     TYPE_NOT_SET(0);
     private final int value;
     private TypeCase(int value) {
@@ -6442,6 +6465,7 @@ private static final long serialVersionUID = 0L;
         case 2: return DICTIONARY;
         case 3: return REGEX;
         case 4: return SURROGATE_TYPE;
+        case 5: return STORED_TYPE;
         case 0: return TYPE_NOT_SET;
         default: return null;
       }
@@ -6639,6 +6663,47 @@ private static final long serialVersionUID = 0L;
     return com.google.privacy.dlp.v2.CustomInfoType.SurrogateType.getDefaultInstance();
   }
 
+  public static final int STORED_TYPE_FIELD_NUMBER = 5;
+  /**
+   * <pre>
+   * Load an existing `StoredInfoType` resource for use in
+   * `InspectDataSource`. Not currently supported in `InspectContent`.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.StoredType stored_type = 5;</code>
+   */
+  public boolean hasStoredType() {
+    return typeCase_ == 5;
+  }
+  /**
+   * <pre>
+   * Load an existing `StoredInfoType` resource for use in
+   * `InspectDataSource`. Not currently supported in `InspectContent`.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.StoredType stored_type = 5;</code>
+   */
+  public com.google.privacy.dlp.v2.StoredType getStoredType() {
+    if (typeCase_ == 5) {
+       return (com.google.privacy.dlp.v2.StoredType) type_;
+    }
+    return com.google.privacy.dlp.v2.StoredType.getDefaultInstance();
+  }
+  /**
+   * <pre>
+   * Load an existing `StoredInfoType` resource for use in
+   * `InspectDataSource`. Not currently supported in `InspectContent`.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.StoredType stored_type = 5;</code>
+   */
+  public com.google.privacy.dlp.v2.StoredTypeOrBuilder getStoredTypeOrBuilder() {
+    if (typeCase_ == 5) {
+       return (com.google.privacy.dlp.v2.StoredType) type_;
+    }
+    return com.google.privacy.dlp.v2.StoredType.getDefaultInstance();
+  }
+
   public static final int DETECTION_RULES_FIELD_NUMBER = 7;
   private java.util.List<com.google.privacy.dlp.v2.CustomInfoType.DetectionRule> detectionRules_;
   /**
@@ -6730,6 +6795,9 @@ private static final long serialVersionUID = 0L;
     if (typeCase_ == 4) {
       output.writeMessage(4, (com.google.privacy.dlp.v2.CustomInfoType.SurrogateType) type_);
     }
+    if (typeCase_ == 5) {
+      output.writeMessage(5, (com.google.privacy.dlp.v2.StoredType) type_);
+    }
     if (likelihood_ != com.google.privacy.dlp.v2.Likelihood.LIKELIHOOD_UNSPECIFIED.getNumber()) {
       output.writeEnum(6, likelihood_);
     }
@@ -6760,6 +6828,10 @@ private static final long serialVersionUID = 0L;
     if (typeCase_ == 4) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(4, (com.google.privacy.dlp.v2.CustomInfoType.SurrogateType) type_);
+    }
+    if (typeCase_ == 5) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(5, (com.google.privacy.dlp.v2.StoredType) type_);
     }
     if (likelihood_ != com.google.privacy.dlp.v2.Likelihood.LIKELIHOOD_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
@@ -6809,6 +6881,10 @@ private static final long serialVersionUID = 0L;
         result = result && getSurrogateType()
             .equals(other.getSurrogateType());
         break;
+      case 5:
+        result = result && getStoredType()
+            .equals(other.getStoredType());
+        break;
       case 0:
       default:
     }
@@ -6845,6 +6921,10 @@ private static final long serialVersionUID = 0L;
       case 4:
         hash = (37 * hash) + SURROGATE_TYPE_FIELD_NUMBER;
         hash = (53 * hash) + getSurrogateType().hashCode();
+        break;
+      case 5:
+        hash = (37 * hash) + STORED_TYPE_FIELD_NUMBER;
+        hash = (53 * hash) + getStoredType().hashCode();
         break;
       case 0:
       default:
@@ -6998,7 +7078,7 @@ private static final long serialVersionUID = 0L;
 
       if (detectionRulesBuilder_ == null) {
         detectionRules_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000040);
       } else {
         detectionRulesBuilder_.clear();
       }
@@ -7059,10 +7139,17 @@ private static final long serialVersionUID = 0L;
           result.type_ = surrogateTypeBuilder_.build();
         }
       }
+      if (typeCase_ == 5) {
+        if (storedTypeBuilder_ == null) {
+          result.type_ = type_;
+        } else {
+          result.type_ = storedTypeBuilder_.build();
+        }
+      }
       if (detectionRulesBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        if (((bitField0_ & 0x00000040) == 0x00000040)) {
           detectionRules_ = java.util.Collections.unmodifiableList(detectionRules_);
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000040);
         }
         result.detectionRules_ = detectionRules_;
       } else {
@@ -7128,7 +7215,7 @@ private static final long serialVersionUID = 0L;
         if (!other.detectionRules_.isEmpty()) {
           if (detectionRules_.isEmpty()) {
             detectionRules_ = other.detectionRules_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000040);
           } else {
             ensureDetectionRulesIsMutable();
             detectionRules_.addAll(other.detectionRules_);
@@ -7141,7 +7228,7 @@ private static final long serialVersionUID = 0L;
             detectionRulesBuilder_.dispose();
             detectionRulesBuilder_ = null;
             detectionRules_ = other.detectionRules_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000040);
             detectionRulesBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getDetectionRulesFieldBuilder() : null;
@@ -7161,6 +7248,10 @@ private static final long serialVersionUID = 0L;
         }
         case SURROGATE_TYPE: {
           mergeSurrogateType(other.getSurrogateType());
+          break;
+        }
+        case STORED_TYPE: {
+          mergeStoredType(other.getStoredType());
           break;
         }
         case TYPE_NOT_SET: {
@@ -7974,12 +8065,193 @@ private static final long serialVersionUID = 0L;
       return surrogateTypeBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.privacy.dlp.v2.StoredType, com.google.privacy.dlp.v2.StoredType.Builder, com.google.privacy.dlp.v2.StoredTypeOrBuilder> storedTypeBuilder_;
+    /**
+     * <pre>
+     * Load an existing `StoredInfoType` resource for use in
+     * `InspectDataSource`. Not currently supported in `InspectContent`.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.StoredType stored_type = 5;</code>
+     */
+    public boolean hasStoredType() {
+      return typeCase_ == 5;
+    }
+    /**
+     * <pre>
+     * Load an existing `StoredInfoType` resource for use in
+     * `InspectDataSource`. Not currently supported in `InspectContent`.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.StoredType stored_type = 5;</code>
+     */
+    public com.google.privacy.dlp.v2.StoredType getStoredType() {
+      if (storedTypeBuilder_ == null) {
+        if (typeCase_ == 5) {
+          return (com.google.privacy.dlp.v2.StoredType) type_;
+        }
+        return com.google.privacy.dlp.v2.StoredType.getDefaultInstance();
+      } else {
+        if (typeCase_ == 5) {
+          return storedTypeBuilder_.getMessage();
+        }
+        return com.google.privacy.dlp.v2.StoredType.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * Load an existing `StoredInfoType` resource for use in
+     * `InspectDataSource`. Not currently supported in `InspectContent`.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.StoredType stored_type = 5;</code>
+     */
+    public Builder setStoredType(com.google.privacy.dlp.v2.StoredType value) {
+      if (storedTypeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        type_ = value;
+        onChanged();
+      } else {
+        storedTypeBuilder_.setMessage(value);
+      }
+      typeCase_ = 5;
+      return this;
+    }
+    /**
+     * <pre>
+     * Load an existing `StoredInfoType` resource for use in
+     * `InspectDataSource`. Not currently supported in `InspectContent`.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.StoredType stored_type = 5;</code>
+     */
+    public Builder setStoredType(
+        com.google.privacy.dlp.v2.StoredType.Builder builderForValue) {
+      if (storedTypeBuilder_ == null) {
+        type_ = builderForValue.build();
+        onChanged();
+      } else {
+        storedTypeBuilder_.setMessage(builderForValue.build());
+      }
+      typeCase_ = 5;
+      return this;
+    }
+    /**
+     * <pre>
+     * Load an existing `StoredInfoType` resource for use in
+     * `InspectDataSource`. Not currently supported in `InspectContent`.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.StoredType stored_type = 5;</code>
+     */
+    public Builder mergeStoredType(com.google.privacy.dlp.v2.StoredType value) {
+      if (storedTypeBuilder_ == null) {
+        if (typeCase_ == 5 &&
+            type_ != com.google.privacy.dlp.v2.StoredType.getDefaultInstance()) {
+          type_ = com.google.privacy.dlp.v2.StoredType.newBuilder((com.google.privacy.dlp.v2.StoredType) type_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          type_ = value;
+        }
+        onChanged();
+      } else {
+        if (typeCase_ == 5) {
+          storedTypeBuilder_.mergeFrom(value);
+        }
+        storedTypeBuilder_.setMessage(value);
+      }
+      typeCase_ = 5;
+      return this;
+    }
+    /**
+     * <pre>
+     * Load an existing `StoredInfoType` resource for use in
+     * `InspectDataSource`. Not currently supported in `InspectContent`.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.StoredType stored_type = 5;</code>
+     */
+    public Builder clearStoredType() {
+      if (storedTypeBuilder_ == null) {
+        if (typeCase_ == 5) {
+          typeCase_ = 0;
+          type_ = null;
+          onChanged();
+        }
+      } else {
+        if (typeCase_ == 5) {
+          typeCase_ = 0;
+          type_ = null;
+        }
+        storedTypeBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Load an existing `StoredInfoType` resource for use in
+     * `InspectDataSource`. Not currently supported in `InspectContent`.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.StoredType stored_type = 5;</code>
+     */
+    public com.google.privacy.dlp.v2.StoredType.Builder getStoredTypeBuilder() {
+      return getStoredTypeFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Load an existing `StoredInfoType` resource for use in
+     * `InspectDataSource`. Not currently supported in `InspectContent`.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.StoredType stored_type = 5;</code>
+     */
+    public com.google.privacy.dlp.v2.StoredTypeOrBuilder getStoredTypeOrBuilder() {
+      if ((typeCase_ == 5) && (storedTypeBuilder_ != null)) {
+        return storedTypeBuilder_.getMessageOrBuilder();
+      } else {
+        if (typeCase_ == 5) {
+          return (com.google.privacy.dlp.v2.StoredType) type_;
+        }
+        return com.google.privacy.dlp.v2.StoredType.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * Load an existing `StoredInfoType` resource for use in
+     * `InspectDataSource`. Not currently supported in `InspectContent`.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.StoredType stored_type = 5;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.privacy.dlp.v2.StoredType, com.google.privacy.dlp.v2.StoredType.Builder, com.google.privacy.dlp.v2.StoredTypeOrBuilder> 
+        getStoredTypeFieldBuilder() {
+      if (storedTypeBuilder_ == null) {
+        if (!(typeCase_ == 5)) {
+          type_ = com.google.privacy.dlp.v2.StoredType.getDefaultInstance();
+        }
+        storedTypeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.privacy.dlp.v2.StoredType, com.google.privacy.dlp.v2.StoredType.Builder, com.google.privacy.dlp.v2.StoredTypeOrBuilder>(
+                (com.google.privacy.dlp.v2.StoredType) type_,
+                getParentForChildren(),
+                isClean());
+        type_ = null;
+      }
+      typeCase_ = 5;
+      onChanged();;
+      return storedTypeBuilder_;
+    }
+
     private java.util.List<com.google.privacy.dlp.v2.CustomInfoType.DetectionRule> detectionRules_ =
       java.util.Collections.emptyList();
     private void ensureDetectionRulesIsMutable() {
-      if (!((bitField0_ & 0x00000020) == 0x00000020)) {
+      if (!((bitField0_ & 0x00000040) == 0x00000040)) {
         detectionRules_ = new java.util.ArrayList<com.google.privacy.dlp.v2.CustomInfoType.DetectionRule>(detectionRules_);
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
        }
     }
 
@@ -8195,7 +8467,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearDetectionRules() {
       if (detectionRulesBuilder_ == null) {
         detectionRules_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000040);
         onChanged();
       } else {
         detectionRulesBuilder_.clear();
@@ -8314,7 +8586,7 @@ private static final long serialVersionUID = 0L;
         detectionRulesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.google.privacy.dlp.v2.CustomInfoType.DetectionRule, com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Builder, com.google.privacy.dlp.v2.CustomInfoType.DetectionRuleOrBuilder>(
                 detectionRules_,
-                ((bitField0_ & 0x00000020) == 0x00000020),
+                ((bitField0_ & 0x00000040) == 0x00000040),
                 getParentForChildren(),
                 isClean());
         detectionRules_ = null;
