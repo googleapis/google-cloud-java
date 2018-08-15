@@ -518,6 +518,11 @@ abstract class UpdateBuilder<T extends UpdateBuilder> {
               public boolean allowDelete(FieldPath fieldPath) {
                 return fields.containsKey(fieldPath);
               }
+
+              @Override
+              public boolean allowTransform() {
+                return true;
+              }
             });
     List<FieldPath> fieldPaths = new ArrayList<>(fields.keySet());
     DocumentTransform documentTransform =

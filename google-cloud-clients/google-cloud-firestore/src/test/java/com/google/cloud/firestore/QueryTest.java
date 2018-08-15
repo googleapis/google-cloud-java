@@ -123,6 +123,7 @@ public class QueryTest {
     query.whereGreaterThanOrEqualTo("foo", "bar").get().get();
     query.whereLessThan("foo", "bar").get().get();
     query.whereLessThanOrEqualTo("foo", "bar").get().get();
+    query.whereArrayContains("foo", "bar").get().get();
 
     Iterator<RunQueryRequest> expected =
         Arrays.asList(
@@ -133,7 +134,8 @@ public class QueryTest {
                 query(filter(StructuredQuery.FieldFilter.Operator.GREATER_THAN)),
                 query(filter(StructuredQuery.FieldFilter.Operator.GREATER_THAN_OR_EQUAL)),
                 query(filter(StructuredQuery.FieldFilter.Operator.LESS_THAN)),
-                query(filter(StructuredQuery.FieldFilter.Operator.LESS_THAN_OR_EQUAL)))
+                query(filter(StructuredQuery.FieldFilter.Operator.LESS_THAN_OR_EQUAL)),
+                query(filter(StructuredQuery.FieldFilter.Operator.ARRAY_CONTAINS)))
             .iterator();
 
     for (RunQueryRequest actual : runQuery.getAllValues()) {
@@ -155,6 +157,7 @@ public class QueryTest {
     query.whereGreaterThanOrEqualTo(FieldPath.of("foo"), "bar").get().get();
     query.whereLessThan(FieldPath.of("foo"), "bar").get().get();
     query.whereLessThanOrEqualTo(FieldPath.of("foo"), "bar").get().get();
+    query.whereArrayContains(FieldPath.of("foo"), "bar").get().get();
 
     Iterator<RunQueryRequest> expected =
         Arrays.asList(
@@ -162,7 +165,8 @@ public class QueryTest {
                 query(filter(StructuredQuery.FieldFilter.Operator.GREATER_THAN)),
                 query(filter(StructuredQuery.FieldFilter.Operator.GREATER_THAN_OR_EQUAL)),
                 query(filter(StructuredQuery.FieldFilter.Operator.LESS_THAN)),
-                query(filter(StructuredQuery.FieldFilter.Operator.LESS_THAN_OR_EQUAL)))
+                query(filter(StructuredQuery.FieldFilter.Operator.LESS_THAN_OR_EQUAL)),
+                query(filter(StructuredQuery.FieldFilter.Operator.ARRAY_CONTAINS)))
             .iterator();
 
     for (RunQueryRequest actual : runQuery.getAllValues()) {

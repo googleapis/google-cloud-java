@@ -160,7 +160,8 @@ class CustomClassMapper {
         || o instanceof Timestamp
         || o instanceof GeoPoint
         || o instanceof Blob
-        || o instanceof DocumentReference) {
+        || o instanceof DocumentReference
+        || o instanceof FieldValue) {
       return o;
     } else {
       Class<T> clazz = (Class<T>) o.getClass();

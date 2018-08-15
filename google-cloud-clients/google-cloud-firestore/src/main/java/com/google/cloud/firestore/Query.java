@@ -16,6 +16,7 @@
 
 package com.google.cloud.firestore;
 
+import static com.google.firestore.v1beta1.StructuredQuery.FieldFilter.Operator.ARRAY_CONTAINS;
 import static com.google.firestore.v1beta1.StructuredQuery.FieldFilter.Operator.EQUAL;
 import static com.google.firestore.v1beta1.StructuredQuery.FieldFilter.Operator.GREATER_THAN;
 import static com.google.firestore.v1beta1.StructuredQuery.FieldFilter.Operator.GREATER_THAN_OR_EQUAL;
@@ -89,7 +90,7 @@ public class Query {
     Value encodeValue() {
       Object sanitizedObject = CustomClassMapper.serialize(value);
       Value encodedValue =
-          UserDataConverter.encodeValue(fieldPath, sanitizedObject, UserDataConverter.NO_DELETES);
+          UserDataConverter.encodeValue(fieldPath, sanitizedObject, UserDataConverter.ARGUMENT);
 
       if (encodedValue == null) {
         throw FirestoreException.invalidState("Cannot use Firestore Sentinels in FieldFilter");
@@ -351,7 +352,7 @@ public class Query {
       }
 
       Value encodedValue =
-          UserDataConverter.encodeValue(fieldPath, sanitizedValue, UserDataConverter.NO_DELETES);
+          UserDataConverter.encodeValue(fieldPath, sanitizedValue, UserDataConverter.ARGUMENT);
 
       if (encodedValue == null) {
         throw FirestoreException.invalidState(
@@ -564,6 +565,44 @@ public class Query {
             + "startAfter(), endBefore() or endAt().");
     QueryOptions newOptions = new QueryOptions(options);
     newOptions.fieldFilters.add(new ComparisonFilter(fieldPath, GREATER_THAN_OR_EQUAL, value));
+    return new Query(firestore, path, newOptions);
+  }
+
+  /**
+   * Creates and returns a new Query with the additional filter that documents must contain the
+   * specified field, the value must be an array, and that the array must contain the provided
+   * value.
+   *
+   * <p>A Query can have only one whereArrayContains() filter.
+   *
+   * @param field The name of the field containing an array to search
+   * @param value The value that must be contained in the array
+   * @return The created Query.
+   */
+  @Nonnull
+  public Query whereArrayContains(@Nonnull String field, @Nonnull Object value) {
+    return whereArrayContains(FieldPath.fromDotSeparatedString(field), value);
+  }
+
+  /**
+   * Creates and returns a new Query with the additional filter that documents must contain the
+   * specified field, the value must be an array, and that the array must contain the provided
+   * value.
+   *
+   * <p>A Query can have only one whereArrayContains() filter.
+   *
+   * @param fieldPath The path of the field containing an array to search
+   * @param value The value that must be contained in the array
+   * @return The created Query.
+   */
+  @Nonnull
+  public Query whereArrayContains(@Nonnull FieldPath fieldPath, @Nonnull Object value) {
+    Preconditions.checkState(
+        options.startCursor == null && options.endCursor == null,
+        "Cannot call whereArrayContains() after defining a boundary with startAt(), "
+            + "startAfter(), endBefore() or endAt().");
+    QueryOptions newOptions = new QueryOptions(options);
+    newOptions.fieldFilters.add(new ComparisonFilter(fieldPath, ARRAY_CONTAINS, value));
     return new Query(firestore, path, newOptions);
   }
 
