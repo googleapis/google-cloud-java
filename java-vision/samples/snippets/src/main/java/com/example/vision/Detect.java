@@ -1319,7 +1319,7 @@ public class Detect {
   }
   // [END vision_detect_document_uri]
 
-  // [START vision_async_detect_document_ocr]
+  // [START vision_text_detection_pdf_gcs]
   /**
    * Performs document text OCR with PDF/TIFF as source files on Google Cloud Storage.
    *
@@ -1436,7 +1436,7 @@ public class Detect {
       }
     }
   }
-  // [END vision_async_detect_document_ocr]
+  // [END vision_text_detection_pdf_gcs]
 
   // [START vision_localize_objects]
   /**
@@ -1482,7 +1482,7 @@ public class Detect {
   }
   // [END vision_localize_objects]
 
-  // [START vision_localize_objects_uri]
+  // [START vision_localize_objects_gcs]
   /**
    * Detects localized objects in a remote image on Google Cloud Storage.
    *
@@ -1525,7 +1525,7 @@ public class Detect {
       }
     }
   }
-  // [END vision_localize_objects_uri]
+  // [END vision_localize_objects_gcs]
 
   // [START vision_handwritten_ocr]
   /**
@@ -1600,7 +1600,7 @@ public class Detect {
   }
   // [END vision_handwritten_ocr]
 
-  // [START vision_handwritten_ocr_uri]
+  // [START vision_handwritten_ocr_gcs]
   /**
    * Performs handwritten text detection on a remote image on Google Cloud Storage.
    *
@@ -1672,5 +1672,5 @@ public class Detect {
       }
     }
   }
-  // [END vision_handwritten_ocr_uri]
+  // [END vision_handwritten_ocr_gcs]
 }
