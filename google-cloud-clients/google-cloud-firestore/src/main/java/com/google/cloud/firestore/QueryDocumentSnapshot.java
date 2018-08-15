@@ -37,13 +37,13 @@ import javax.annotation.Nonnull;
  * that does so.
  */
 public class QueryDocumentSnapshot extends DocumentSnapshot {
-  private QueryDocumentSnapshot(
+  protected QueryDocumentSnapshot(
       FirestoreImpl firestore,
       DocumentReference docRef,
       Map<String, Value> fields,
       Timestamp readTime,
       Timestamp updateTime,
-      Timestamp createTime) {
+      Timestamp createTime) { // Elevated access level for mocking.
     super(firestore, docRef, fields, readTime, updateTime, createTime);
   }
 

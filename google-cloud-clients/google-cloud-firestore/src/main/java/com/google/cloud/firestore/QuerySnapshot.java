@@ -34,7 +34,7 @@ public abstract class QuerySnapshot implements Iterable<QueryDocumentSnapshot> {
   private final Query query;
   private final Timestamp readTime;
 
-  private QuerySnapshot(Query query, Timestamp readTime) {
+  protected QuerySnapshot(Query query, Timestamp readTime) { // Elevated access level for mocking.
     this.query = query;
     this.readTime = readTime;
   }
