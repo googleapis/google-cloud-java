@@ -54,13 +54,13 @@ import javax.annotation.Nonnull;
  *
  * <pre>{@code
  * try(BigtableTableAdminClient client =  BigtableTableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
- *   CreateTable createTableReq =
+ *   CreateTable request =
  *     CreateTableRequest.of("tableId")
  *       .addFamily("cf1")
  *       .addFamily("cf2", GCRULES.maxVersions(10))
  *       .addSplit(ByteString.copyFromUtf8("b"))
  *       .addSplit(ByteString.copyFromUtf8("q"));
- *   client.createTable(createTableReq);
+ *   client.createTable(request);
  * }
  * }</pre>
  *
@@ -135,9 +135,9 @@ public class BigtableTableAdminClient implements AutoCloseable {
    *
    * <pre>{@code
    * try(BigtableTableAdminClient client =  BigtableTableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
-   *   CreateTableRequest createTableReq = CreateTableRequest.of("tableId")
+   *   CreateTableRequest request = CreateTableRequest.of("tableId")
    *       .addFamily("cf2", GCRULES.maxVersions(10))
-   *   client.createTable(createTableReq);
+   *   client.createTable(request);
    * }
    * }</pre>
    *
@@ -156,9 +156,9 @@ public class BigtableTableAdminClient implements AutoCloseable {
    *
    * <pre>{@code
    *  try(BigtableTableAdminClient client =  BigtableTableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
-   *    CreateTableRequest createTableReq = CreateTableRequest.of("tableId")
+   *    CreateTableRequest request = CreateTableRequest.of("tableId")
    *        .addFamily("cf2", GCRULES.maxVersions(10))
-   *    client.createTableAsync(createTableReq);
+   *    client.createTableAsync(request);
    *  }
    *  }</pre>
    *
@@ -176,7 +176,7 @@ public class BigtableTableAdminClient implements AutoCloseable {
    *
    * <pre>{@code
    * try(BigtableTableAdminClient client =  BigtableTableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
-   *   ModifyFamilies modifyFamiliesReq = ModifyColumnFamiliesRequest.of(tableId)
+   *   ModifyFamilies request = ModifyColumnFamiliesRequest.of(tableId)
    *     .addFamily("mf1")
    *     .addFamily(
    *       "mf2", GCRULES.maxAge(Duration.ofSeconds(1000, 20000)))
@@ -193,7 +193,7 @@ public class BigtableTableAdminClient implements AutoCloseable {
    *           .rule(GCRULES.maxAge(Duration.ofSeconds(2000)))
    *           .rule(GCRULES.maxVersions(10)))
    *     .dropFamily("mf1")
-   *    client.modifyFamilies(modifyFamiliesReq);
+   *    client.modifyFamilies(request);
    * }
    * }</pre>
    *
@@ -212,7 +212,7 @@ public class BigtableTableAdminClient implements AutoCloseable {
    *
    * <pre>{@code
    * try(BigtableTableAdminClient client =  BigtableTableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
-   *   ModifyFamilies modifyFamiliesReq = ModifyColumnFamiliesRequest.of(tableId)
+   *   ModifyFamilies request = ModifyColumnFamiliesRequest.of(tableId)
    *     .addFamily("mf1")
    *     .addFamily(
    *       "mf2", GCRULES.maxAge(Duration.ofSeconds(1000, 20000)))
@@ -229,15 +229,15 @@ public class BigtableTableAdminClient implements AutoCloseable {
    *           .rule(GCRULES.maxAge(Duration.ofSeconds(2000)))
    *           .rule(GCRULES.maxVersions(10)))
    *     .dropFamily("mf1")
-   *    client.modifyFamilies(modifyFamiliesReq);
+   *    client.modifyFamilies(request);
    * }
    * }</pre>
    *
    * @see ModifyColumnFamiliesRequest for modifyFamily options
    */
   public ApiFuture<Table> modifyFamiliesAsync(ModifyColumnFamiliesRequest request) {
-    com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest modReq = request.toProto(instanceName);
-    return transformToTableResponse(this.stub.modifyColumnFamiliesCallable().futureCall(modReq));
+    return transformToTableResponse(
+        this.stub.modifyColumnFamiliesCallable().futureCall(request.toProto(instanceName)));
   }
 
   /**
