@@ -122,16 +122,13 @@ public abstract class FieldValue {
       if (o == null || getClass() != o.getClass()) {
         return false;
       }
-      if (!super.equals(o)) {
-        return false;
-      }
       ArrayUnionFieldValue that = (ArrayUnionFieldValue) o;
       return Objects.equals(elements, that.elements);
     }
 
     @Override
     public int hashCode() {
-      return Objects.hash(super.hashCode(), elements);
+      return Objects.hash(elements);
     }
   }
 
@@ -180,16 +177,13 @@ public abstract class FieldValue {
       if (o == null || getClass() != o.getClass()) {
         return false;
       }
-      if (!super.equals(o)) {
-        return false;
-      }
       ArrayRemoveFieldValue that = (ArrayRemoveFieldValue) o;
       return Objects.equals(elements, that.elements);
     }
 
     @Override
     public int hashCode() {
-      return Objects.hash(super.hashCode(), elements);
+      return Objects.hash(elements);
     }
   }
 
