@@ -136,6 +136,34 @@ public interface CustomInfoTypeOrBuilder extends
 
   /**
    * <pre>
+   * Load an existing `StoredInfoType` resource for use in
+   * `InspectDataSource`. Not currently supported in `InspectContent`.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.StoredType stored_type = 5;</code>
+   */
+  boolean hasStoredType();
+  /**
+   * <pre>
+   * Load an existing `StoredInfoType` resource for use in
+   * `InspectDataSource`. Not currently supported in `InspectContent`.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.StoredType stored_type = 5;</code>
+   */
+  com.google.privacy.dlp.v2.StoredType getStoredType();
+  /**
+   * <pre>
+   * Load an existing `StoredInfoType` resource for use in
+   * `InspectDataSource`. Not currently supported in `InspectContent`.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.StoredType stored_type = 5;</code>
+   */
+  com.google.privacy.dlp.v2.StoredTypeOrBuilder getStoredTypeOrBuilder();
+
+  /**
+   * <pre>
    * Set of detection rules to apply to all findings of this CustomInfoType.
    * Rules are applied in order that they are specified. Not supported for the
    * `surrogate_type` CustomInfoType.
