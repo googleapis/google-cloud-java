@@ -53,13 +53,13 @@ public class DocumentSnapshot {
   @Nullable private final Timestamp updateTime;
   @Nullable private final Timestamp createTime;
 
-  DocumentSnapshot(
+  protected DocumentSnapshot(
       FirestoreImpl firestore,
       DocumentReference docRef,
       @Nullable Map<String, Value> fields,
       @Nullable Timestamp readTime,
       @Nullable Timestamp updateTime,
-      @Nullable Timestamp createTime) {
+      @Nullable Timestamp createTime) { // Elevated access level for mocking.
     this.firestore = firestore;
     this.docRef = docRef;
     this.fields = fields;

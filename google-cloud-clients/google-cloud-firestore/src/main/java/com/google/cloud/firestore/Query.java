@@ -255,7 +255,10 @@ public class Query {
     this(firestore, path, new QueryOptions());
   }
 
-  private Query(FirestoreImpl firestore, ResourcePath path, QueryOptions queryOptions) {
+  protected Query(
+      FirestoreImpl firestore,
+      ResourcePath path,
+      QueryOptions queryOptions) { // Elevated access level for mocking.
     Preconditions.checkArgument(
         path.isCollection(), "Invalid path specified. Path should point to a collection");
 
