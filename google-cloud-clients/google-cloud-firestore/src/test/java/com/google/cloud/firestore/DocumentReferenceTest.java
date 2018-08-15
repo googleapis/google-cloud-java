@@ -419,7 +419,7 @@ public class DocumentReferenceTest {
             commitCapture.capture(), Matchers.<UnaryCallable<CommitRequest, CommitResponse>>any());
 
     documentReference
-        .set(map("foo", FieldValue.arrayUnion("bar", LocalFirestoreHelper.map("foo", "baz"))))
+        .set(map("foo", FieldValue.arrayUnion("bar", map("foo", "baz"))))
         .get();
 
     CommitRequest set =

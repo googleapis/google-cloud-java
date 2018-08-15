@@ -128,6 +128,11 @@ public abstract class FieldValue {
       ArrayUnionFieldValue that = (ArrayUnionFieldValue) o;
       return Objects.equals(elements, that.elements);
     }
+
+    @Override
+    public int hashCode() {
+      return Objects.hash(super.hashCode(), elements);
+    }
   }
 
   static class ArrayRemoveFieldValue extends FieldValue {
@@ -180,6 +185,11 @@ public abstract class FieldValue {
       }
       ArrayRemoveFieldValue that = (ArrayRemoveFieldValue) o;
       return Objects.equals(elements, that.elements);
+    }
+
+    @Override
+    public int hashCode() {
+      return Objects.hash(super.hashCode(), elements);
     }
   }
 
