@@ -21,6 +21,7 @@ import com.google.firestore.v1beta1.ArrayValue;
 import com.google.firestore.v1beta1.DocumentTransform.FieldTransform;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 import javax.annotation.Nonnull;
 
 /** Sentinel values that can be used when writing document fields with set() or update(). */
@@ -112,6 +113,21 @@ public abstract class FieldValue {
       fieldTransform.setAppendMissingElements(encodedElements);
       return fieldTransform.build();
     }
+
+    @Override
+    public boolean equals(Object o) {
+      if (this == o) {
+        return true;
+      }
+      if (o == null || getClass() != o.getClass()) {
+        return false;
+      }
+      if (!super.equals(o)) {
+        return false;
+      }
+      ArrayUnionFieldValue that = (ArrayUnionFieldValue) o;
+      return Objects.equals(elements, that.elements);
+    }
   }
 
   static class ArrayRemoveFieldValue extends FieldValue {
@@ -149,6 +165,21 @@ public abstract class FieldValue {
       fieldTransform.setFieldPath(path.getEncodedPath());
       fieldTransform.setRemoveAllFromArray(encodedElements);
       return fieldTransform.build();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+      if (this == o) {
+        return true;
+      }
+      if (o == null || getClass() != o.getClass()) {
+        return false;
+      }
+      if (!super.equals(o)) {
+        return false;
+      }
+      ArrayRemoveFieldValue that = (ArrayRemoveFieldValue) o;
+      return Objects.equals(elements, that.elements);
     }
   }
 
