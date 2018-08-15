@@ -16,7 +16,6 @@
 package com.google.cloud.bigtable.admin.v2.models;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
 
 import com.google.bigtable.admin.v2.GenerateConsistencyTokenResponse;
 import org.junit.Test;
