@@ -16,7 +16,7 @@
 
 package com.example.video;
 
-// [START videointelligence_quickstart]
+// [START video_quickstart]
 
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.videointelligence.v1.AnnotateVideoProgress;
@@ -81,4 +81,4 @@ public class QuickstartSample {
     }
   }
 }
-// [END videointelligence_quickstart]
+// [END video_quickstart]
