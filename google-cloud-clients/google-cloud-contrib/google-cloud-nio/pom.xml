@@ -97,40 +97,34 @@
           <shadedArtifactAttached>true</shadedArtifactAttached>
           <relocations>
             <relocation>
-              <pattern>com.google</pattern>
-              <shadedPattern>shaded.cloud_nio.com.google</shadedPattern>
+              <pattern>com</pattern>
+              <shadedPattern>shaded.cloud_nio.com_stuff</shadedPattern>
+              <includes>
+                <include>com.google.**</include>
+                <include>com.fasterxml.**</include>
+              </includes>
               <excludes>
                 <exclude>com.google.cloud.**</exclude>
                 <exclude>com.google.auto.**</exclude>
               </excludes>
             </relocation>
             <relocation>
-              <pattern>com.fasterxml</pattern>
-              <shadedPattern>shaded.cloud_nio.com.fasterxml</shadedPattern>
+              <pattern>org</pattern>
+              <shadedPattern>shaded.cloud_nio.org_stuff</shadedPattern>
+              <includes>
+                <include>org.joda.**</include>
+                <include>org.apache.**</include>
+                <include>org.threeten.**</include>
+                <include>org.codehaus.**</include>
+              </includes>
             </relocation>
             <relocation>
-              <pattern>org.joda</pattern>
-              <shadedPattern>shaded.cloud_nio.org.joda</shadedPattern>
-            </relocation>
-            <relocation>
-              <pattern>org.apache</pattern>
-              <shadedPattern>shaded.cloud_nio.org.apache</shadedPattern>
-            </relocation>
-            <relocation>
-              <pattern>org.threeten</pattern>
-              <shadedPattern>shaded.cloud_nio.org.threeten</shadedPattern>
-            </relocation>
-            <relocation>
-              <pattern>org.codehaus</pattern>
-              <shadedPattern>shaded.cloud_nio.org.codehaus</shadedPattern>
-            </relocation>
-            <relocation>
-              <pattern>io.opencensus</pattern>
-              <shadedPattern>shaded.cloud_nio.io.opencensus</shadedPattern>
-            </relocation>
-            <relocation>
-              <pattern>io.grpc</pattern>
-              <shadedPattern>shaded.cloud_nio.io.grpc</shadedPattern>
+              <pattern>io</pattern>
+              <shadedPattern>shaded.cloud_nio.io_stuff</shadedPattern>
+              <includes>
+                <include>io.opencensus.**</include>
+                <include>io.grpc.**</include>
+              </includes>
             </relocation>
             <relocation>
               <pattern>okio</pattern>
