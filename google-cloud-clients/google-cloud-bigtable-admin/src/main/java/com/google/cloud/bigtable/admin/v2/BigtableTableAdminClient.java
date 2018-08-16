@@ -15,6 +15,7 @@
  */
 package com.google.cloud.bigtable.admin.v2;
 
+import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -144,9 +145,7 @@ public class BigtableTableAdminClient implements AutoCloseable {
    * @see CreateTableRequest for createTable configurations
    */
   public Table createTable(CreateTableRequest request) {
-    com.google.bigtable.admin.v2.Table table =
-        this.stub.createTableCallable().call(request.toProto(instanceName));
-    return Table.fromProto(table);
+    return awaitFuture(createTableAsync(request));
   }
 
   /**
@@ -200,9 +199,7 @@ public class BigtableTableAdminClient implements AutoCloseable {
    * @see ModifyColumnFamiliesRequest for modifyFamily options
    */
   public Table modifyFamilies(ModifyColumnFamiliesRequest request) {
-    com.google.bigtable.admin.v2.Table table =
-        this.stub.modifyColumnFamiliesCallable().call(request.toProto(instanceName));
-    return Table.fromProto(table);
+    return awaitFuture(modifyFamiliesAsync(request));
   }
 
   /**
@@ -252,7 +249,7 @@ public class BigtableTableAdminClient implements AutoCloseable {
    * }</pre>
    */
   public void deleteTable(String tableId) {
-    this.stub.deleteTableCallable().call(composeDeleteTableRequest(tableId));
+    awaitFuture(deleteTableAsync(tableId));
   }
 
   /**
@@ -283,9 +280,7 @@ public class BigtableTableAdminClient implements AutoCloseable {
    * }</pre>
    */
   public Table getTable(String tableId) {
-    com.google.bigtable.admin.v2.Table table =
-        this.stub.getTableCallable().call(composeGetTableRequest(tableId));
-    return Table.fromProto(table);
+    return awaitFuture(getTableAsync(tableId));
   }
 
   /**
@@ -316,8 +311,7 @@ public class BigtableTableAdminClient implements AutoCloseable {
    * }</pre>
    */
   public List<TableName> listTables() {
-    ListTablesResponse listResp = this.stub.listTablesCallable().call(composeListTableRequest());
-    return convertToTableNames(listResp);
+    return awaitFuture(listTablesAsync());
   }
 
   /**
@@ -342,7 +336,8 @@ public class BigtableTableAdminClient implements AutoCloseable {
           public List<TableName> apply(ListTablesResponse input) {
             return convertToTableNames(input);
           }
-        });
+        },
+        MoreExecutors.directExecutor());
   }
 
   /**
@@ -357,7 +352,7 @@ public class BigtableTableAdminClient implements AutoCloseable {
    * }</pre>
    */
   public void dropRowRange(String tableId, String rowKeyPrefix) {
-    dropRowRange(tableId, ByteString.copyFromUtf8(rowKeyPrefix));
+    awaitFuture(dropRowRangeAsync(tableId, rowKeyPrefix));
   }
 
   /**
@@ -387,7 +382,7 @@ public class BigtableTableAdminClient implements AutoCloseable {
    * }</pre>
    */
   public void dropRowRange(String tableId, ByteString rowKeyPrefix) {
-    this.stub.dropRowRangeCallable().call(composeDropRowRangeRequest(tableId, rowKeyPrefix, false));
+    awaitFuture(dropRowRangeAsync(tableId, rowKeyPrefix));
   }
 
   /**
@@ -420,7 +415,7 @@ public class BigtableTableAdminClient implements AutoCloseable {
    * }</pre>
    */
   public void dropAllRows(String tableId) {
-    this.stub.dropRowRangeCallable().call(composeDropRowRangeRequest(tableId, null, true));
+    awaitFuture(dropAllRowsAsync(tableId));
   }
 
   /**
@@ -454,10 +449,7 @@ public class BigtableTableAdminClient implements AutoCloseable {
    * }</pre>
    */
   public ConsistencyToken generateConsistencyToken(String tableId) {
-    return ConsistencyToken.fromProto(
-        this.stub
-            .generateConsistencyTokenCallable()
-            .call(composeGenerateConsistencyTokenRequest(tableId)));
+    return awaitFuture(generateConsistencyTokenAsync(tableId));
   }
 
   /**
@@ -485,7 +477,8 @@ public class BigtableTableAdminClient implements AutoCloseable {
           public ConsistencyToken apply(GenerateConsistencyTokenResponse input) {
             return ConsistencyToken.fromProto(input);
           }
-        });
+        },
+        MoreExecutors.directExecutor());
   }
 
   /**
@@ -500,9 +493,7 @@ public class BigtableTableAdminClient implements AutoCloseable {
    * }</pre>
    */
   public boolean isConsistent(String tableId, ConsistencyToken token) {
-    return stub.checkConsistencyCallable()
-        .call(token.toProto(getTableName(tableId)))
-        .getConsistent();
+    return awaitFuture(isConsistentAsync(tableId, token));
   }
 
   /**
@@ -527,7 +518,8 @@ public class BigtableTableAdminClient implements AutoCloseable {
           public Boolean apply(CheckConsistencyResponse input) {
             return input.getConsistent();
           }
-        });
+        },
+        MoreExecutors.directExecutor());
   }
 
   /**
@@ -604,8 +596,7 @@ public class BigtableTableAdminClient implements AutoCloseable {
   /**
    * Helper method to transform ApiFuture<com.google.bigtable.admin.v2.Table> to ApiFuture<Table>
    */
-  @VisibleForTesting
-  static ApiFuture<Table> transformToTableResponse(
+  private static ApiFuture<Table> transformToTableResponse(
       ApiFuture<com.google.bigtable.admin.v2.Table> future) {
     return ApiFutures.transform(
         future,
@@ -614,14 +605,14 @@ public class BigtableTableAdminClient implements AutoCloseable {
           public Table apply(com.google.bigtable.admin.v2.Table table) {
             return Table.fromProto(table);
           }
-        });
+        },
+        MoreExecutors.directExecutor());
   }
 
   /**
    * Helper method to transform ApiFuture<Empty> to ApiFuture<Void>
    */
-  @VisibleForTesting
-  static ApiFuture<Void> transformToVoid(ApiFuture<Empty> future) {
+  private static ApiFuture<Void> transformToVoid(ApiFuture<Empty> future) {
     return ApiFutures.transform(
         future,
         new ApiFunction<Empty, Void>() {
@@ -629,6 +620,16 @@ public class BigtableTableAdminClient implements AutoCloseable {
           public Void apply(Empty empty) {
             return null;
           }
-        });
+        },
+        MoreExecutors.directExecutor());
+  }
+
+  private <T> T awaitFuture(ApiFuture<T> future) {
+    try {
+      return future.get();
+    } catch(Throwable t) {
+      // TODO(igorbernstein2): figure out a better wrapper exception.
+      throw new RuntimeException(t);
+    }
   }
 }
