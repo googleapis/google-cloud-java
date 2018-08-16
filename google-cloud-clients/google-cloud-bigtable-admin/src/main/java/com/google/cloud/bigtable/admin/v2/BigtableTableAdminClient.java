@@ -454,10 +454,7 @@ public final class BigtableTableAdminClient implements AutoCloseable {
    * }</pre>
    */
   public ConsistencyToken generateConsistencyToken(String tableId) {
-    return ConsistencyToken.fromProto(
-        this.stub
-            .generateConsistencyTokenCallable()
-            .call(composeGenerateConsistencyTokenRequest(tableId)));
+    return awaitFuture(generateConsistencyTokenAsync(tableId));
   }
 
   /**
@@ -472,7 +469,7 @@ public final class BigtableTableAdminClient implements AutoCloseable {
    * }
    * }</pre>
    */
-  public ApiFuture<ConsistencyToken> generateConsistencyTokenAsync(String tableId) {
+  public ApiFuture<ConsistencyToken> generateConsistencyTokenAsync(final String tableId) {
     ApiFuture<GenerateConsistencyTokenResponse> tokenResp =
         this.stub
             .generateConsistencyTokenCallable()
@@ -482,8 +479,9 @@ public final class BigtableTableAdminClient implements AutoCloseable {
         tokenResp,
         new ApiFunction<GenerateConsistencyTokenResponse, ConsistencyToken>() {
           @Override
-          public ConsistencyToken apply(GenerateConsistencyTokenResponse input) {
-            return ConsistencyToken.fromProto(input);
+          public ConsistencyToken apply(GenerateConsistencyTokenResponse proto) {
+            TableName tableName = TableName.of(instanceName.getProject(), instanceName.getProject(), tableId);
+            return ConsistencyToken.of(tableName, proto.getConsistencyToken());
           }
         });
   }
@@ -495,30 +493,25 @@ public final class BigtableTableAdminClient implements AutoCloseable {
    *
    * <pre>{@code
    * try(BigtableTableAdminClient client =  BigtableTableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
-   *   boolean consistent = client.isConsistent("tableId", token);
+   *   // Perform some mutations.
+   *
+   *   ConsistencyToken token = client.generateConsistencyToken("table-id");
+   *   while(!client.isConsistent(token)) {
+   *     Thread.sleep(100);
+   *   }
+   *
+   *   // Now all clusters are consistent
    * }
    * }</pre>
    */
-  public boolean isConsistent(String tableId, ConsistencyToken token) {
-    return stub.checkConsistencyCallable()
-        .call(token.toProto(getTableName(tableId)))
-        .getConsistent();
+  public boolean isConsistent(ConsistencyToken token) {
+    return awaitFuture(isConsistentAsync(token));
   }
 
-  /**
-   * Checks replication consistency for the specified token consistency token asynchronously
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * try(BigtableTableAdminClient client =  BigtableTableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
-   *   boolean consistent = client.isConsistentAsync("tableId", token);
-   * }
-   * }</pre>
-   */
-  public ApiFuture<Boolean> isConsistentAsync(String tableId, ConsistencyToken token) {
-    ApiFuture<CheckConsistencyResponse> checkConsResp =
-        stub.checkConsistencyCallable().futureCall(token.toProto(getTableName(tableId)));
+  @VisibleForTesting
+  ApiFuture<Boolean> isConsistentAsync(ConsistencyToken token) {
+    ApiFuture<CheckConsistencyResponse> checkConsResp = stub.checkConsistencyCallable()
+        .futureCall(token.toProto(instanceName));
 
     return ApiFutures.transform(
         checkConsResp,
@@ -529,6 +522,8 @@ public final class BigtableTableAdminClient implements AutoCloseable {
           }
         });
   }
+
+  // TODO(igorbernstein2): add awaitConsist() & awaitConsistAsync() that generate & poll a token
 
   /**
    * Helper method to construct the table name in format:
@@ -630,5 +625,14 @@ public final class BigtableTableAdminClient implements AutoCloseable {
             return null;
           }
         });
+  }
+
+  private <T> T awaitFuture(ApiFuture<T> future) {
+    try {
+      return future.get();
+    } catch(Throwable t) {
+      // TODO(igorbernstein2): figure out a better wrapper exception.
+      throw new RuntimeException(t);
+    }
   }
 }

@@ -257,7 +257,7 @@ public class BigtableTableAdminClientTest {
     Mockito.when(mockCheckConsistencyCallable.call(any(CheckConsistencyRequest.class)))
         .thenReturn(consistencyResp);
 
-    adminClient.isConsistent("tableId", consistencyToken);
+    adminClient.isConsistent(consistencyToken);
     Mockito.verify(mockCheckConsistencyCallable).call(requestCaptor.capture());
   }
 
@@ -282,7 +282,7 @@ public class BigtableTableAdminClientTest {
     Mockito.when(mockCheckConsistencyCallable.futureCall(any(CheckConsistencyRequest.class)))
         .thenReturn(consistencyResp);
 
-    adminClient.isConsistentAsync("tableId", consistencyTokenFuture.get());
+    adminClient.isConsistentAsync(consistencyTokenFuture.get());
     Mockito.verify(mockCheckConsistencyCallable).futureCall(requestCaptor.capture());
   }
 

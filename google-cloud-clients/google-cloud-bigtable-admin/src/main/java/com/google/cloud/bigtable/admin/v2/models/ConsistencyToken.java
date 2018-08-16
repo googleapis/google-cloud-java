@@ -18,8 +18,11 @@ package com.google.cloud.bigtable.admin.v2.models;
 import com.google.api.core.InternalApi;
 import com.google.bigtable.admin.v2.CheckConsistencyRequest;
 import com.google.bigtable.admin.v2.GenerateConsistencyTokenResponse;
+import com.google.bigtable.admin.v2.InstanceName;
+import com.google.bigtable.admin.v2.TableName;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.MoreObjects;
+import com.google.common.base.Preconditions;
 
 /**
  * Wrapper for {@link GenerateConsistencyTokenResponse#getConsistencyToken()}
@@ -28,22 +31,26 @@ import com.google.common.base.MoreObjects;
  * com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient#generateConsistencyToken(String)}
  */
 public final class ConsistencyToken {
+  private final TableName tableName;
   private final String token;
 
-  @InternalApi
-  public static ConsistencyToken fromProto(GenerateConsistencyTokenResponse proto) {
-    return new ConsistencyToken(proto.getConsistencyToken());
+  public static ConsistencyToken of(TableName tableName, String token) {
+    return new ConsistencyToken(tableName, token);
   }
 
-  private ConsistencyToken(String token) {
+  public ConsistencyToken(TableName tableName, String token) {
+    this.tableName = tableName;
     this.token = token;
   }
 
-  // TODO(igorbernstein): tableName should be part of the token and be parameterized
   @InternalApi
-  public CheckConsistencyRequest toProto(String tableName) {
+  public CheckConsistencyRequest toProto(InstanceName instanceName) {
+    Preconditions.checkArgument(
+        instanceName.equals(InstanceName.of(tableName.getProject(), tableName.getInstance())),
+        "Consistency tokens are only valid within a single instance.");
+
     return CheckConsistencyRequest.newBuilder()
-        .setName(tableName)
+        .setName(tableName.toString())
         .setConsistencyToken(token)
         .build();
   }
