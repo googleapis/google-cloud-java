@@ -72,7 +72,7 @@ public class Detect {
     }
   }
 
-  // [START video_speech_transcription]
+  // [START video_speech_transcription_gcs_beta]
   /**
    * Transcribe speech from a video stored on GCS.
    *
@@ -135,5 +135,5 @@ public class Detect {
       }
     }
   }
-  // [END video_speech_transcription]
+  // [END video_speech_transcription_gcs_beta]
 }
