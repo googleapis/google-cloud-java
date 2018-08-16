@@ -27,6 +27,8 @@ import com.google.bigtable.admin.v2.GcRule.Intersection;
 import com.google.bigtable.admin.v2.GcRule.Union;
 import com.google.common.base.MoreObjects;
 
+// TODO(igorbernstein2): the distinction between GcRule & GCRule is too subtle, use fully qualified
+// names for the protos.
 /** Wraps {@link GcRule} protocol buffer object and exposes a simpler Fluent DSL model */
 @BetaApi
 public final class GCRules {
@@ -84,6 +86,39 @@ public final class GCRules {
     return new DefaultRule();
   }
 
+
+  @InternalApi
+  public GCRule fromProto(GcRule source) {
+    switch (source.getRuleCase()) {
+      case MAX_AGE:
+        return GCRULES.maxAge(
+            Duration.ofSeconds(source.getMaxAge().getSeconds(), source.getMaxAge().getNanos()));
+
+      case MAX_NUM_VERSIONS:
+        return GCRULES.maxVersions(source.getMaxNumVersions());
+
+      case INTERSECTION:
+        IntersectionRule intersection = GCRules.GCRULES.intersection();
+        for (GcRule rule : source.getIntersection().getRulesList()) {
+          intersection.rule(fromProto(rule));
+        }
+        return intersection;
+
+      case UNION:
+        UnionRule union = GCRules.GCRULES.union();
+        for (GcRule rule : source.getUnion().getRulesList()) {
+          union.rule(fromProto(rule));
+        }
+        return union;
+
+      case RULE_NOT_SET:
+        return defaultRule();
+
+      default:
+        throw new IllegalArgumentException("Unknown GcRule case: " + source.getRuleCase());
+    }
+  }
+
   /**
    * Fluent wrapper for {@link Intersection} rule. Allows far adding an hierarchy of rules with
    * intersection as the root
@@ -100,6 +135,7 @@ public final class GCRules {
      *
      * @param rule
      */
+    // TODO(igorbernstein2): consider renaming this to addRule
     public IntersectionRule rule(@Nonnull GCRule rule) {
       rulesList.add(rule);
       return this;

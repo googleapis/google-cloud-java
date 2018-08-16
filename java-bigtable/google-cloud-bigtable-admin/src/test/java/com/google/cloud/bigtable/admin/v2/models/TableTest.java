@@ -30,8 +30,6 @@ import com.google.cloud.bigtable.admin.v2.models.GCRules.DurationRule;
 import com.google.cloud.bigtable.admin.v2.models.GCRules.IntersectionRule;
 import com.google.cloud.bigtable.admin.v2.models.GCRules.UnionRule;
 import com.google.cloud.bigtable.admin.v2.models.GCRules.VersionRule;
-import com.google.cloud.bigtable.admin.v2.models.TableAdminResponses.ConsistencyToken;
-import com.google.cloud.bigtable.admin.v2.models.TableAdminResponses.Table;
 import com.google.bigtable.admin.v2.GcRule.Intersection;
 import com.google.bigtable.admin.v2.GcRule.Union;
 import com.google.bigtable.admin.v2.GenerateConsistencyTokenResponse;
@@ -39,7 +37,7 @@ import static com.google.cloud.bigtable.admin.v2.models.GCRules.GCRULES;
 import static com.google.common.truth.Truth.assertThat;
 
 @RunWith(JUnit4.class)
-public class TableAdminResponsesTest {
+public class TableTest {
 
   @Test
   public void convertTable() {
@@ -74,7 +72,7 @@ public class TableAdminResponsesTest {
                     .build())
             .build();
 
-    Table tableResponse = TableAdminResponses.convertTable(table);
+    Table tableResponse = Table.fromProto(table);
     assertNotNull(tableResponse);
     assertEquals(testName, tableResponse.getTableName());
     assertEquals(2, tableResponse.getClusterStates().size());
@@ -86,7 +84,7 @@ public class TableAdminResponsesTest {
         tableResponse.getClusterStatesMap().get("prod").getReplicationState());
     assertEquals(3, tableResponse.getColumnFamiles().size());
     assertNotNull("cf1", tableResponse.getColumnFamiliesMap().get("cf1").getId());
-    assertFalse(tableResponse.getColumnFamiliesMap().get("cf1").hasGcRule());
+    assertFalse(tableResponse.getColumnFamiliesMap().get("cf1").hasGCRule());
 
     assertThat(GCRULES.defaultRule().toProto())
         .isEqualTo(tableResponse.getColumnFamiliesMap().get("cf1").getGCRule().toProto());
@@ -136,10 +134,10 @@ public class TableAdminResponsesTest {
             .putColumnFamilies("cf3", ColumnFamily.newBuilder().setGcRule(expected).build())
             .build();
 
-    Table tableResponse = TableAdminResponses.convertTable(table);
+    Table tableResponse = Table.fromProto(table);
     assertThat(actual)
         .isEqualTo(tableResponse.getColumnFamiliesMap().get("cf3").getGCRule().toProto());
-    assertTrue(tableResponse.getColumnFamiliesMap().get("cf3").hasGcRule());
+    assertTrue(tableResponse.getColumnFamiliesMap().get("cf3").hasGCRule());
 
     UnionRule parentUnion =
         ((UnionRule) tableResponse.getColumnFamiliesMap().get("cf3").getGCRule());
@@ -200,7 +198,7 @@ public class TableAdminResponsesTest {
             .putColumnFamilies("cf3", ColumnFamily.newBuilder().setGcRule(expected).build())
             .build();
 
-    Table tableResponse = TableAdminResponses.convertTable(table);
+    Table tableResponse = Table.fromProto(table);
     assertThat(actual)
         .isEqualTo(tableResponse.getColumnFamiliesMap().get("cf3").getGCRule().toProto());
   }
@@ -208,22 +206,10 @@ public class TableAdminResponsesTest {
   @Test
   public void convertTableEmpty() {
     Table tableResponse =
-        TableAdminResponses.convertTable(com.google.bigtable.admin.v2.Table.newBuilder().build());
+        Table.fromProto(com.google.bigtable.admin.v2.Table.newBuilder().build());
 
     assertNotNull(tableResponse);
     assertEquals(0, tableResponse.getClusterStates().size());
     assertEquals(0, tableResponse.getColumnFamiles().size());
-  }
-
-  @Test
-  public void convertTokenResponse() {
-    ConsistencyToken tokenResponse =
-        TableAdminResponses.convertTokenResponse(
-            GenerateConsistencyTokenResponse.newBuilder()
-                .setConsistencyToken("87282hgwd8yg")
-                .build());
-
-    assertNotNull(tokenResponse);
-    assertEquals("87282hgwd8yg", tokenResponse.getToken());
   }
 }

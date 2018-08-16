@@ -28,11 +28,10 @@ import com.google.cloud.bigtable.admin.v2.models.GCRules.DurationRule;
 import com.google.cloud.bigtable.admin.v2.models.GCRules.IntersectionRule;
 import com.google.cloud.bigtable.admin.v2.models.GCRules.UnionRule;
 import com.google.cloud.bigtable.admin.v2.models.GCRules.VersionRule;
-import com.google.cloud.bigtable.admin.v2.models.TableAdminRequests;
-import com.google.cloud.bigtable.admin.v2.models.TableAdminRequests.CreateTable;
-import com.google.cloud.bigtable.admin.v2.models.TableAdminRequests.ModifyFamilies;
-import com.google.cloud.bigtable.admin.v2.models.TableAdminResponses.ConsistencyToken;
-import com.google.cloud.bigtable.admin.v2.models.TableAdminResponses.Table;
+import com.google.cloud.bigtable.admin.v2.models.CreateTableRequest;
+import com.google.cloud.bigtable.admin.v2.models.ModifyColumnFamiliesRequest;
+import com.google.cloud.bigtable.admin.v2.models.ConsistencyToken;
+import com.google.cloud.bigtable.admin.v2.models.Table;
 import com.google.protobuf.ByteString;
 import java.io.IOException;
 import java.util.List;
@@ -79,8 +78,8 @@ public class BigtableTableAdminClientIT {
   @Test
   public void createTable() {
     String tableId = "adminCreateTest";
-    CreateTable createTableReq =
-        TableAdminRequests.createTable(tableId)
+    CreateTableRequest createTableReq =
+        CreateTableRequest.of(tableId)
             .addFamily("cf1")
             .addFamily("cf2", GCRULES.maxVersions(10))
             .addSplit(ByteString.copyFromUtf8("b"))
@@ -91,8 +90,8 @@ public class BigtableTableAdminClientIT {
       assertNotNull(tableResponse);
       assertEquals(tableId, tableResponse.getTableName().getTable());
       assertEquals(2, tableResponse.getColumnFamiles().size());
-      assertFalse(tableResponse.getColumnFamiliesMap().get("cf1").hasGcRule());
-      assertTrue(tableResponse.getColumnFamiliesMap().get("cf2").hasGcRule());
+      assertFalse(tableResponse.getColumnFamiliesMap().get("cf1").hasGCRule());
+      assertTrue(tableResponse.getColumnFamiliesMap().get("cf2").hasGCRule());
       assertEquals(
           10,
           ((VersionRule) tableResponse.getColumnFamiliesMap().get("cf2").getGCRule())
@@ -105,7 +104,7 @@ public class BigtableTableAdminClientIT {
   @Test
   public void modifyFamilies() {
     String tableId = "adminModifyFamTest";
-    ModifyFamilies modifyFamiliesReq = TableAdminRequests.modifyFamilies(tableId);
+    ModifyColumnFamiliesRequest modifyFamiliesReq = ModifyColumnFamiliesRequest.of(tableId);
 
     modifyFamiliesReq
         .addFamily("mf1")
@@ -130,7 +129,7 @@ public class BigtableTableAdminClientIT {
         .addFamily("mf7");
 
     try {
-      tableAdmin.createTable(TableAdminRequests.createTable(tableId));
+      tableAdmin.createTable(CreateTableRequest.of(tableId));
       Table tableResponse = tableAdmin.modifyFamilies(modifyFamiliesReq);
       assertEquals(5, tableResponse.getColumnFamiles().size());
       assertNotNull(tableResponse.getColumnFamiliesMap().get("mf1"));
@@ -169,7 +168,7 @@ public class BigtableTableAdminClientIT {
   @Test
   public void deleteTable() {
     String tableId = "adminDeleteTest";
-    tableAdmin.createTable(TableAdminRequests.createTable(tableId));
+    tableAdmin.createTable(CreateTableRequest.of(tableId));
     tableAdmin.deleteTable(tableId);
   }
 
@@ -178,7 +177,7 @@ public class BigtableTableAdminClientIT {
     String tableId = "adminGetTest";
 
     try {
-      tableAdmin.createTable(TableAdminRequests.createTable(tableId));
+      tableAdmin.createTable(CreateTableRequest.of(tableId));
       Table tableResponse = tableAdmin.getTable(tableId);
       assertNotNull(tableResponse);
       assertEquals(tableId, tableResponse.getTableName().getTable());
@@ -192,7 +191,7 @@ public class BigtableTableAdminClientIT {
     String tableId = "adminListTest";
 
     try {
-      tableAdmin.createTable(TableAdminRequests.createTable(tableId));
+      tableAdmin.createTable(CreateTableRequest.of(tableId));
       List<TableName> tables = tableAdmin.listTables();
       assertNotNull(tables);
       assertFalse("List tables did not return any tables", tables.isEmpty());
@@ -206,7 +205,7 @@ public class BigtableTableAdminClientIT {
     String tableId = "adminListTest";
 
     try {
-      tableAdmin.createTable(TableAdminRequests.createTable(tableId));
+      tableAdmin.createTable(CreateTableRequest.of(tableId));
       List<TableName> tables = tableAdmin.listTablesAsync().get();
       assertNotNull(tables);
       assertFalse("List tables did not return any tables", tables.isEmpty());
@@ -220,7 +219,7 @@ public class BigtableTableAdminClientIT {
     String tableId = "adminDropRowrangeTest";
 
     try {
-      tableAdmin.createTable(TableAdminRequests.createTable(tableId));
+      tableAdmin.createTable(CreateTableRequest.of(tableId));
       tableAdmin.dropRowRange(tableId, "rowPrefix");
       tableAdmin.dropAllRows(tableId);
     } finally {
@@ -233,7 +232,7 @@ public class BigtableTableAdminClientIT {
     String tableId = "adminConsistencyTest";
 
     try {
-      tableAdmin.createTable(TableAdminRequests.createTable(tableId));
+      tableAdmin.createTable(CreateTableRequest.of(tableId));
       ConsistencyToken consistencyToken = tableAdmin.generateConsistencyToken(tableId);
       assertNotNull(consistencyToken);
       boolean consistent = tableAdmin.isConsistent(tableId, consistencyToken);

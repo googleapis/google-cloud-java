@@ -31,7 +31,6 @@ import com.google.api.core.ApiFutures;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.bigtable.admin.v2.CheckConsistencyRequest;
 import com.google.bigtable.admin.v2.CheckConsistencyResponse;
-import com.google.bigtable.admin.v2.CreateTableRequest;
 import com.google.bigtable.admin.v2.DeleteTableRequest;
 import com.google.bigtable.admin.v2.DropRowRangeRequest;
 import com.google.bigtable.admin.v2.GenerateConsistencyTokenRequest;
@@ -40,13 +39,11 @@ import com.google.bigtable.admin.v2.GetTableRequest;
 import com.google.bigtable.admin.v2.InstanceName;
 import com.google.bigtable.admin.v2.ListTablesRequest;
 import com.google.bigtable.admin.v2.ListTablesResponse;
-import com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest;
 import com.google.bigtable.admin.v2.Table;
 import com.google.bigtable.admin.v2.TableName;
-import com.google.cloud.bigtable.admin.v2.models.TableAdminRequests;
-import com.google.cloud.bigtable.admin.v2.models.TableAdminRequests.CreateTable;
-import com.google.cloud.bigtable.admin.v2.models.TableAdminRequests.ModifyFamilies;
-import com.google.cloud.bigtable.admin.v2.models.TableAdminResponses.ConsistencyToken;
+import com.google.cloud.bigtable.admin.v2.models.CreateTableRequest;
+import com.google.cloud.bigtable.admin.v2.models.ModifyColumnFamiliesRequest;
+import com.google.cloud.bigtable.admin.v2.models.ConsistencyToken;
 import com.google.cloud.bigtable.admin.v2.stub.BigtableTableAdminStub;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
@@ -56,8 +53,8 @@ public class BigtableTableAdminClientTest {
   private BigtableTableAdminClient adminClient;
   @Mock private BigtableTableAdminStub mockStub;
 
-  @Mock private UnaryCallable<CreateTableRequest, Table> mockCreateTableCallable;
-  @Mock private UnaryCallable<ModifyColumnFamiliesRequest, Table> mockModifyTableCallable;
+  @Mock private UnaryCallable<com.google.bigtable.admin.v2.CreateTableRequest, Table> mockCreateTableCallable;
+  @Mock private UnaryCallable<com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest, Table> mockModifyTableCallable;
   @Mock private UnaryCallable<DeleteTableRequest, Empty> mockDeleteTableCallable;
   @Mock private UnaryCallable<GetTableRequest, Table> mockGetTableCallable;
   @Mock private UnaryCallable<ListTablesRequest, ListTablesResponse> mockListTableCallable;
@@ -88,12 +85,15 @@ public class BigtableTableAdminClientTest {
 
     Table table = Table.newBuilder().build();
     ApiFuture<Table> futureTable = ApiFutures.immediateFuture(table);
-    Mockito.when(mockCreateTableCallable.call(any(CreateTableRequest.class))).thenReturn(table);
-    Mockito.when(mockCreateTableCallable.futureCall(any(CreateTableRequest.class)))
+    Mockito.when(mockCreateTableCallable.call(any(com.google.bigtable.admin.v2.CreateTableRequest.class))).thenReturn(table);
+    Mockito.when(mockCreateTableCallable.futureCall(any(
+        com.google.bigtable.admin.v2.CreateTableRequest.class)))
         .thenReturn(futureTable);
-    Mockito.when(mockModifyTableCallable.call(any(ModifyColumnFamiliesRequest.class)))
+    Mockito.when(mockModifyTableCallable.call(any(
+        com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.class)))
         .thenReturn(table);
-    Mockito.when(mockModifyTableCallable.futureCall(any(ModifyColumnFamiliesRequest.class)))
+    Mockito.when(mockModifyTableCallable.futureCall(any(
+        com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.class)))
         .thenReturn(futureTable);
     Mockito.when(mockGetTableCallable.call(any(GetTableRequest.class))).thenReturn(table);
     Mockito.when(mockGetTableCallable.futureCall(any(GetTableRequest.class)))
@@ -101,14 +101,14 @@ public class BigtableTableAdminClientTest {
   }
 
   @Test
-  public void close() throws Exception {
+  public void close() {
     adminClient.close();
     Mockito.verify(mockStub).close();
   }
 
   @Test
   public void createTable() {
-    CreateTable createTableReq = TableAdminRequests.createTable("tableId");
+    CreateTableRequest createTableReq = CreateTableRequest.of("tableId");
     adminClient.createTable(createTableReq);
     Mockito.verify(mockCreateTableCallable)
         .call(createTableReq.toProto(adminClient.getInstanceName()));
@@ -116,7 +116,7 @@ public class BigtableTableAdminClientTest {
 
   @Test
   public void createTableAsync() {
-    CreateTable createTableReq = TableAdminRequests.createTable("tableId");
+    CreateTableRequest createTableReq = CreateTableRequest.of("tableId");
     adminClient.createTableAsync(createTableReq);
     Mockito.verify(mockCreateTableCallable)
         .futureCall(createTableReq.toProto(adminClient.getInstanceName()));
@@ -124,7 +124,7 @@ public class BigtableTableAdminClientTest {
 
   @Test
   public void modifyFamilies() {
-    ModifyFamilies modifyFamReq = TableAdminRequests.modifyFamilies("tableId");
+    ModifyColumnFamiliesRequest modifyFamReq = ModifyColumnFamiliesRequest.of("tableId");
     adminClient.modifyFamilies(modifyFamReq);
     Mockito.verify(mockModifyTableCallable)
         .call(modifyFamReq.toProto(adminClient.getInstanceName()));
@@ -132,7 +132,7 @@ public class BigtableTableAdminClientTest {
 
   @Test
   public void modifyFamiliesAsync() {
-    ModifyFamilies modifyFamReq = TableAdminRequests.modifyFamilies("tableId");
+    ModifyColumnFamiliesRequest modifyFamReq = ModifyColumnFamiliesRequest.of("tableId");
     adminClient.modifyFamiliesAsync(modifyFamReq);
     Mockito.verify(mockModifyTableCallable)
         .futureCall(modifyFamReq.toProto(adminClient.getInstanceName()));
