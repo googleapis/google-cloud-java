@@ -97,20 +97,40 @@
           <shadedArtifactAttached>true</shadedArtifactAttached>
           <relocations>
             <relocation>
-              <pattern>com</pattern>
-              <shadedPattern>shaded.cloud_nio.com</shadedPattern>
+              <pattern>com.google</pattern>
+              <shadedPattern>shaded.cloud_nio.com.google</shadedPattern>
               <excludes>
                 <exclude>com.google.cloud.**</exclude>
                 <exclude>com.google.auto.**</exclude>
               </excludes>
             </relocation>
             <relocation>
-              <pattern>org</pattern>
-              <shadedPattern>shaded.cloud_nio.org</shadedPattern>
+              <pattern>com.fasterxml</pattern>
+              <shadedPattern>shaded.cloud_nio.com.fasterxml</shadedPattern>
             </relocation>
             <relocation>
-              <pattern>io</pattern>
-              <shadedPattern>shaded.cloud_nio.io</shadedPattern>
+              <pattern>org.joda</pattern>
+              <shadedPattern>shaded.cloud_nio.org.joda</shadedPattern>
+            </relocation>
+            <relocation>
+              <pattern>org.apache</pattern>
+              <shadedPattern>shaded.cloud_nio.org.apache</shadedPattern>
+            </relocation>
+            <relocation>
+              <pattern>org.threeten</pattern>
+              <shadedPattern>shaded.cloud_nio.org.threeten</shadedPattern>
+            </relocation>
+            <relocation>
+              <pattern>org.codehaus</pattern>
+              <shadedPattern>shaded.cloud_nio.org.codehaus</shadedPattern>
+            </relocation>
+            <relocation>
+              <pattern>io.opencensus</pattern>
+              <shadedPattern>shaded.cloud_nio.io.opencensus</shadedPattern>
+            </relocation>
+            <relocation>
+              <pattern>io.grpc</pattern>
+              <shadedPattern>shaded.cloud_nio.io.grpc</shadedPattern>
             </relocation>
             <relocation>
               <pattern>okio</pattern>
