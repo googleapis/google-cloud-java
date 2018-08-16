@@ -66,7 +66,7 @@ import javax.annotation.Nonnull;
  * BigtableInstanceAdminClient client = BigtableInstanceAdminClient.create(settings);
  * }</pre>
  */
-public class BigtableInstanceAdminClient implements AutoCloseable {
+public final class BigtableInstanceAdminClient implements AutoCloseable {
   private final ProjectName projectName;
   private final BigtableInstanceAdminStub stub;
 

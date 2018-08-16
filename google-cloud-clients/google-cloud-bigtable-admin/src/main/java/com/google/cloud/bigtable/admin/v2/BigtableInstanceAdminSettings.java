@@ -43,7 +43,7 @@ import javax.annotation.Nullable;
  * BigtableInstanceAdminSettings settings = settingsBuilder.build();
  * }</pre>
  */
-public class BigtableInstanceAdminSettings {
+public final class BigtableInstanceAdminSettings {
   private final ProjectName projectName;
   private final BigtableInstanceAdminStubSettings stubSettings;
 
