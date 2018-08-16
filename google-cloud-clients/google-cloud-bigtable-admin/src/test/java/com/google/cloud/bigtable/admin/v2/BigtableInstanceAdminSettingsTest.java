@@ -39,8 +39,11 @@ public class BigtableInstanceAdminSettingsTest {
   public void testMissingProjectName() {
     Exception actualException = null;
 
+    Builder settingsBuilder = BigtableInstanceAdminSettings.newBuilder();
+    assertThat(settingsBuilder.getProjectName()).isNull();
+
     try {
-      BigtableInstanceAdminSettings.newBuilder().build();
+      settingsBuilder.build();
     } catch (Exception e) {
       actualException = e;
     }

@@ -40,7 +40,7 @@ public class BigtableInstanceAdminClientTest {
 
   @Test
   public void testProjectName() {
-    assertThat(adminClient.getProjectName()).isEqualTo("[PROJECT]");
+    assertThat(adminClient.getProjectName()).isEqualTo(ProjectName.of("[PROJECT]"));
   }
 
   @Test

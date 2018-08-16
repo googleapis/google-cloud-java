@@ -27,8 +27,8 @@ import javax.annotation.Nonnull;
  * <p>See the individual methods for example code.
  *
  * <pre>{@code
- * try(BigtableInstanceAdminClient client =  BigtableInstanceAdminClient.create(ProjectName.of("[PROJECT]"))) {
- *   CreateInstanceRequest request = CreateInstanceRequest.of(ProjectName)
+ * try(BigtableInstanceAdminClient client =  BigtableInstanceAdminClient.create(ProjectName.of("my-project"))) {
+ *   CreateInstanceRequest request = CreateInstanceRequest.of("my-instance")
  *     .addFamily("cf1")
  *     .addFamily("cf2", GCRULES.maxVersions(10))
  *     .addSplit(ByteString.copyFromUtf8("b"))
