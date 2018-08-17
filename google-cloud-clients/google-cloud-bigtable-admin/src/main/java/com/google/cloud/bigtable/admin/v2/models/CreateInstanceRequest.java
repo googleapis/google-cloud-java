@@ -65,7 +65,7 @@ public final class CreateInstanceRequest {
   private final List<CreateClusterRequest> clusterRequests = Lists.newArrayList();
 
   /** Builds a new request to create a new instance with the specified id. */
-  public static CreateInstanceRequest of(String instanceId) {
+  public static CreateInstanceRequest of(@Nonnull String instanceId) {
     return new CreateInstanceRequest(instanceId);
   }
 
@@ -80,6 +80,7 @@ public final class CreateInstanceRequest {
   /**
    * Sets the friendly display name of the instance. If left unspecified, it will default to the id
    */
+  @SuppressWarnings("WeakerAccess")
   public CreateInstanceRequest setDisplayName(@Nonnull String displayName) {
     Preconditions.checkNotNull(displayName);
     builder.getInstanceBuilder().setDisplayName(displayName);
@@ -93,6 +94,7 @@ public final class CreateInstanceRequest {
    * Please see class javadoc for details.
    */
   // TODO(igorbernstein2): try to avoid leaking protobuf generated enums
+  @SuppressWarnings("WeakerAccess")
   public CreateInstanceRequest setType(@Nonnull Type type) {
     Preconditions.checkNotNull(type);
     builder.getInstanceBuilder().setType(type);
@@ -107,6 +109,7 @@ public final class CreateInstanceRequest {
    *
    * @see <a href="https://cloud.google.com/bigtable/docs/creating-managing-labels">For more details</a>
    */
+  @SuppressWarnings("WeakerAccess")
   public CreateInstanceRequest addLabel(@Nonnull String key, @Nonnull String value) {
     Preconditions.checkNotNull(key, "Key can't be null");
     Preconditions.checkNotNull(value, "Value can't be null");
@@ -126,7 +129,8 @@ public final class CreateInstanceRequest {
    * @param storageType The type of storage used by this cluster to serve its parent instance's tables.
    */
   // TODO(igorbernstein2): try to avoid leaking protobuf generated enums
-  public CreateInstanceRequest addCluster(String clusterId, String zone, int serveNodes, StorageType storageType) {
+  @SuppressWarnings("WeakerAccess")
+  public CreateInstanceRequest addCluster(@Nonnull String clusterId, @Nonnull String zone, int serveNodes, @Nonnull StorageType storageType) {
     CreateClusterRequest clusterRequest = CreateClusterRequest
         .of("ignored-instance-id", clusterId)
         .setZone(zone)

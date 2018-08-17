@@ -40,7 +40,7 @@ public final class Instance {
    * to be used by applications.
    */
   @InternalApi
-  public static Instance fromProto(com.google.bigtable.admin.v2.Instance proto) {
+  public static Instance fromProto(@Nonnull com.google.bigtable.admin.v2.Instance proto) {
     return new Instance(proto);
   }
 
