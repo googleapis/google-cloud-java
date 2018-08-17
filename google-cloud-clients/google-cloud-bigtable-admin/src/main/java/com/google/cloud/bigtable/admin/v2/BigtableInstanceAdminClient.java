@@ -47,7 +47,7 @@ import javax.annotation.Nonnull;
  * <p>See the individual methods for example code.
  *
  * <pre>{@code
- * try(BigtableInstanceAdminClient client =  BigtableInstanceAdminClient.create(ProjectName.of("[PROJECT]"))) {
+ * try(BigtableInstanceAdminClient client =  BigtableInstanceAdminClient.create(ProjectName.of("my-project"))) {
  *   CreateInstanceRequest request = CreateInstanceRequest.of("my-instance")
  *     .addCluster("my-cluster", "us-east1-c", 3, StorageType.SSD);
  *
@@ -65,7 +65,7 @@ import javax.annotation.Nonnull;
  *
  * <pre>{@code
  * BigtableInstanceAdminSettings settings = BigtableInstanceAdminSettings.newBuilder()
- *   .setProjectName(ProjectName.of("[PROJECT]"))
+ *   .setProjectName(ProjectName.of("my-project"))
  *   .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *   .build();
  *
@@ -76,7 +76,7 @@ import javax.annotation.Nonnull;
  *
  * <pre>{@code
  * BigtableInstanceAdminSettings settings = BigtableInstanceAdminSettings.newBuilder()
- *   .setProjectName(ProjectName.of("[PROJECT]"))
+ *   .setProjectName(ProjectName.of("my-project"))
  *   .setEndpoint(myEndpoint)
  *   .build();
  *
@@ -127,6 +127,15 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
   /**
    * Creates a new instance and returns its representation.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * Instance instance = client.createInstance(
+   *   CreateInstanceRequest.of("my-instance")
+   *     .addCluster("my-cluster", "us-east1-c", 3, StorageType.SSD)
+   * );
+   * }</pre>
+   *
    * @see CreateInstanceRequest for details.
    */
   @SuppressWarnings("WeakerAccess")
@@ -136,6 +145,17 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
 
   /**
    * Asynchronously creates a new instance and returns its representation wrapped in a future.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * ApiFuture<Instance> instanceFuture = client.createInstanceAsync(
+   *   CreateInstanceRequest.of("my-instance")
+   *     .addCluster("my-cluster", "us-east1-c", 3, StorageType.SSD)
+   * );
+   *
+   * Instance instance = instanceFuture.get();
+   * }</pre>
    *
    * @see CreateInstanceRequest for details.
    */
@@ -155,6 +175,15 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
   /**
    * Updates a new instance and returns its representation.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * Instance instance = client.updateInstance(
+   *   UpdateInstanceRequest.of("my-instance")
+   *     .setProductionType()
+   * )
+   * }</pre>
+   *
    * @see UpdateInstanceRequest for details.
    */
   @SuppressWarnings("WeakerAccess")
@@ -164,6 +193,17 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
 
   /**
    * Asynchronously updates a new instance and returns its representation wrapped in a future.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * ApiFuture<Instance> instanceFuture = client.updateInstanceAsync(
+   *   UpdateInstanceRequest.of("my-instance")
+   *     .setProductionType()
+   * )
+   *
+   * Instance instance = instanceFuture.get();
+   * }</pre>
    *
    * @see UpdateInstanceRequest for details.
    */
@@ -180,13 +220,30 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
         MoreExecutors.directExecutor());
   }
 
-  /** Get the instance representation. */
+  /**
+   * Get the instance representation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * Instance instance = client.getInstance("my-instance");
+   * }</pre>
+   */
   @SuppressWarnings("WeakerAccess")
   public Instance getInstance(String id) {
     return awaitFuture(getInstanceAsync(id));
   }
 
-  /** Asynchronously gets the instance representation wrapped in a future. */
+  /**
+   * Asynchronously gets the instance representation wrapped in a future.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * ApiFuture<Instance> instanceFuture = client.getInstanceAsync("my-instance");
+   * Instance instance = instanceFuture.get();
+   * }</pre>
+   */
   @SuppressWarnings("WeakerAccess")
   public ApiFuture<Instance> getInstanceAsync(String instanceId) {
     InstanceName name = InstanceName.of(projectName.getProject(), instanceId);
@@ -206,13 +263,55 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
         MoreExecutors.directExecutor());
   }
 
-  /** Lists all of the instances in the current project. */
+  /**
+   * Lists all of the instances in the current project.
+   *
+   * <p>This method will throw a {@link PartialListInstancesException} when any zone is
+   * unavailable. If partial listing are ok, the exception can be caught and inspected.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try {
+   *   List<Instance> instances = client.listInstances();
+   * } catch (PartialListInstancesException e) {
+   *   System.out.println("The following zones are unavailable: " + e.getUnavailableZones());
+   *   System.out.println("But the following instances are reachable: " + e.getInstances());
+   * }
+   * }</pre>
+   */
   @SuppressWarnings("WeakerAccess")
   public List<Instance> listInstances() {
     return awaitFuture(listInstancesAsync());
   }
 
-  /** Asynchronously lists all of the instances in the current project. */
+  /**
+   * Asynchronously lists all of the instances in the current project.
+   *
+   * <p>This method will throw a {@link PartialListInstancesException} when any zone is
+   * unavailable.
+   * If partial listing are ok, the exception can be caught and inspected.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * ApiFutures.addCallback(instancesFuture, new ApiFutureCallback<List<Instance>>() {
+   *   @Override
+   *   public void onFailure(Throwable t) {
+   *     if (t instanceof PartialListInstancesException) {
+   *       PartialListInstancesException partialError = (PartialListInstancesException)t;
+   *       System.out.println("The following zones are unavailable: " + partialError.getUnavailableZones());
+   *       System.out.println("But the following instances are reachable: " + partialError.getInstances());
+   *     }
+   *   }
+   *
+   *   @Override
+   *   public void onSuccess(List<Instance> result) {
+   *     System.out.println("Found a complete set of instances: " + result);
+   *   }
+   * }, MoreExecutors.directExecutor());
+   * }</pre>
+   */
   @SuppressWarnings("WeakerAccess")
   public ApiFuture<List<Instance>> listInstancesAsync() {
     ListInstancesRequest request = ListInstancesRequest.newBuilder()
@@ -254,13 +353,30 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
         }, MoreExecutors.directExecutor());
   }
 
-  /** Deletes the specified instance. */
+  /**
+   * Deletes the specified instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * client.deleteInstance("my-instance");
+   * }</pre>
+   */
   @SuppressWarnings("WeakerAccess")
   public void deleteInstance(String instanceId) {
     awaitFuture(deleteInstanceAsync(instanceId));
   }
 
-  /** Asynchronously deletes the specified instance. */
+  /**
+   * Asynchronously deletes the specified instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * ApiFuture<Void> deleteFuture = client.deleteInstance("my-instance");
+   * deleteFuture.get();
+   * }</pre>
+   */
   @SuppressWarnings("WeakerAccess")
   public ApiFuture<Void> deleteInstanceAsync(String instanceId) {
     InstanceName instanceName = InstanceName.of(projectName.getProject(), instanceId);
@@ -307,5 +423,4 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
 
     throw error;
   }
-
 }

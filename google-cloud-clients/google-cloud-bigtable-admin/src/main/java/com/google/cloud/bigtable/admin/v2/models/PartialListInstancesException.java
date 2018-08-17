@@ -22,19 +22,19 @@ import java.util.List;
  * instance list. This exception can be inspected to get a partial list.
  */
 public class PartialListInstancesException extends RuntimeException {
-  private final List<String> failedZones;
+  private final List<String> unavailableZones;
   private final List<Instance> instances;
 
-  public PartialListInstancesException(List<String> failedZones, List<Instance> instances) {
+  public PartialListInstancesException(List<String> unavailableZones, List<Instance> instances) {
     super("Failed to list all instances, some zones where unavailable");
 
-    this.failedZones = failedZones;
+    this.unavailableZones = unavailableZones;
     this.instances = instances;
   }
 
   /** A list of zones, whose unavailability caused this error. */
-  public List<String> getFailedZones() {
-    return failedZones;
+  public List<String> getUnavailableZones() {
+    return unavailableZones;
   }
 
   /** A partial list of instances that were found in the available zones. */

@@ -269,7 +269,7 @@ public class BigtableInstanceAdminClientTest {
 
     assertThat(partialListError.getInstances())
         .containsExactly(Instance.fromProto(expectedResponse.getInstances(0)));
-    assertThat(partialListError.getFailedZones()).containsExactly("us-east1-d");
+    assertThat(partialListError.getUnavailableZones()).containsExactly("us-east1-d");
   }
 
   @Test
