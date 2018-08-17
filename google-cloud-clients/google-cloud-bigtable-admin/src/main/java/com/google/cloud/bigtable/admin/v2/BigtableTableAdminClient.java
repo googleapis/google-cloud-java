@@ -15,6 +15,7 @@
  */
 package com.google.cloud.bigtable.admin.v2;
 
+import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListTablesPagedResponse;
 import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -326,15 +327,15 @@ public class BigtableTableAdminClient implements AutoCloseable {
    * }</pre>
    */
   public ApiFuture<List<TableName>> listTablesAsync() {
-    ApiFuture<ListTablesResponse> listResp =
-        this.stub.listTablesCallable().futureCall(composeListTableRequest());
+    ApiFuture<ListTablesPagedResponse> listResp =
+        this.stub.listTablesPagedCallable().futureCall(composeListTableRequest());
 
     return ApiFutures.transform(
         listResp,
-        new ApiFunction<ListTablesResponse, List<TableName>>() {
+        new ApiFunction<ListTablesPagedResponse, List<TableName>>() {
           @Override
-          public List<TableName> apply(ListTablesResponse input) {
-            return convertToTableNames(input);
+          public List<TableName> apply(ListTablesPagedResponse input) {
+            return convertToTableNames(input.iterateAll());
           }
         },
         MoreExecutors.directExecutor());
@@ -583,10 +584,10 @@ public class BigtableTableAdminClient implements AutoCloseable {
    * Helper method to convert ListTablesResponse to List<TableName>
    */
   @VisibleForTesting
-  static List<TableName> convertToTableNames(ListTablesResponse listTablesResponse) {
+  static List<TableName> convertToTableNames(Iterable<com.google.bigtable.admin.v2.Table> listTablesResponse) {
     List<TableName> tableNames = new ArrayList<>();
 
-    for (com.google.bigtable.admin.v2.Table table : listTablesResponse.getTablesList()) {
+    for (com.google.bigtable.admin.v2.Table table : listTablesResponse) {
       tableNames.add(TableName.parse(table.getName()));
     }
     return tableNames;

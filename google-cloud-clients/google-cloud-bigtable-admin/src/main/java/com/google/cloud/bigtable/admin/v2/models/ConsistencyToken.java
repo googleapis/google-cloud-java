@@ -20,6 +20,7 @@ import com.google.bigtable.admin.v2.CheckConsistencyRequest;
 import com.google.bigtable.admin.v2.GenerateConsistencyTokenResponse;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.MoreObjects;
+import com.google.common.base.Objects;
 
 /**
  * Wrapper for {@link GenerateConsistencyTokenResponse#getConsistencyToken()}
@@ -51,6 +52,23 @@ public final class ConsistencyToken {
   @VisibleForTesting
   String getToken() {
     return token;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    ConsistencyToken that = (ConsistencyToken) o;
+    return Objects.equal(token, that.token);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hashCode(token);
   }
 
   @Override
