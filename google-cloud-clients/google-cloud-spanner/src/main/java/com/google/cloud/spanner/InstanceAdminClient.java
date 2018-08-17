@@ -28,7 +28,7 @@ public interface InstanceAdminClient {
   /* <!--SNIPPET instance_admin_client_get_instance_config-->
    * <pre>{@code
    * final String configId = my_config_id;
-   * InstanceConfig instanceConfig = instanceAdminClient.getInstanceConfig(configId)
+   * InstanceConfig instanceConfig = instanceAdminClient.getInstanceConfig(configId);
    * }</pre>
    * <!--SNIPPET instance_admin_client_get_instance_config-->
    */
@@ -37,7 +37,7 @@ public interface InstanceAdminClient {
   /** Lists the supported instance configs for current project. */
   /* <!--SNIPPET instance_admin_client_list_configs-->
    * <pre>{@code
-   * List<com.google.cloud.spanner.InstanceConfig> configs =
+   * List<InstanceConfig> configs =
    *     Lists.newArrayList(instanceAdminClient.listInstanceConfigs(Options.pageSize(1)).iterateAll());
    * }</pre>
    * <!--SNIPPET instance_admin_client_list_configs-->
@@ -172,7 +172,7 @@ public interface InstanceAdminClient {
    * final String clientProject = my_client_project;
    * final String instanceId = my_instance_id;
    *
-   * final String newDisplayName = "some name";
+   * final String newDisplayName = my_display_name;
    *
    * InstanceInfo toUpdate =
    *     InstanceInfo.newBuilder(InstanceId.of(clientProject, instanceId))
@@ -182,7 +182,7 @@ public interface InstanceAdminClient {
    * // Only update display name
    * Operation<Instance, UpdateInstanceMetadata> op =
    *     instanceAdminClient.updateInstance(toUpdate, InstanceInfo.InstanceField.DISPLAY_NAME);
-   * Instance newInstance = op.waitFor().getResult();
+   * op.waitFor().getResult();
    * }</pre>
    * <!--SNIPPET instance_admin_client_update_instance-->
    */

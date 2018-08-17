@@ -49,21 +49,23 @@ public class InstanceAdminClientSnippets {
   /**
    * Example to get instance config.
    */
-  public void getInstanceConfig(final String my_config_id) {
+  public InstanceConfig getInstanceConfig(final String my_config_id) {
     // [START instance_admin_client_get_instance_config]
     final String configId = my_config_id;
     InstanceConfig instanceConfig = instanceAdminClient.getInstanceConfig(configId);
     // [END instance_admin_client_get_instance_config]
+    return instanceConfig;
   }
 
   /**
    * Example to list instance configs.
    */
-  public void listInstanceConfigs() {
+  public List<InstanceConfig> listInstanceConfigs() {
     // [START instance_admin_client_list_configs]
-    List<com.google.cloud.spanner.InstanceConfig> configs =
+    List<InstanceConfig> configs =
         Lists.newArrayList(instanceAdminClient.listInstanceConfigs(Options.pageSize(1)).iterateAll());
     // [END instance_admin_client_list_configs]
+    return configs;
   }
 
   /**
@@ -92,22 +94,24 @@ public class InstanceAdminClientSnippets {
   /**
    * Example to get an instance.
    */
-  public void getInstance(final String my_instance_id)  {
+  public Instance getInstance(final String my_instance_id)  {
     // [START instance_admin_client_get_instance]
     final String instanceId = my_instance_id;
     Instance ins = instanceAdminClient.getInstance(instanceId);
     // [END instance_admin_client_get_instance]
+    return ins;
   }
 
   /**
    * Example to list instances.
    */
-  public void listInstances() {
+  public List<Instance> listInstances() {
     // [START instance_admin_client_list_instances]
     List<Instance> instances =
         Lists.newArrayList(
             instanceAdminClient.listInstances(Options.pageSize(1)).iterateAll());
     // [END instance_admin_client_list_instances]
+    return instances;
   }
 
   /**
@@ -125,13 +129,14 @@ public class InstanceAdminClientSnippets {
    */
   public void updateInstance(Instance my_instance,
       final String my_client_project,
-      final String my_instance_id) {
+      final String my_instance_id,
+      final String my_display_name) {
     // [START instance_admin_client_update_instance]
     Instance instance = my_instance;
     final String clientProject = my_client_project;
     final String instanceId = my_instance_id;
 
-    final String newDisplayName = "some name";
+    final String newDisplayName = my_display_name;
 
     InstanceInfo toUpdate =
         InstanceInfo.newBuilder(InstanceId.of(clientProject, instanceId))
@@ -141,7 +146,7 @@ public class InstanceAdminClientSnippets {
     // Only update display name
     Operation<Instance, UpdateInstanceMetadata> op =
         instanceAdminClient.updateInstance(toUpdate, InstanceInfo.InstanceField.DISPLAY_NAME);
-    Instance newInstance = op.waitFor().getResult();
+    op.waitFor().getResult();
     // [END instance_admin_client_update_instance]
   }
 }
