@@ -22,6 +22,7 @@ private static final long serialVersionUID = 0L;
   private BigQueryOptions() {
     identifyingFields_ = java.util.Collections.emptyList();
     rowsLimit_ = 0L;
+    rowsLimitPercent_ = 0;
     sampleMethod_ = 0;
   }
 
@@ -80,6 +81,11 @@ private static final long serialVersionUID = 0L;
             int rawValue = input.readEnum();
 
             sampleMethod_ = rawValue;
+            break;
+          }
+          case 48: {
+
+            rowsLimitPercent_ = input.readInt32();
             break;
           }
           default: {
@@ -346,13 +352,31 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Max number of rows to scan. If the table has more rows than this value, the
    * rest of the rows are omitted. If not set, or if set to 0, all rows will be
-   * scanned. Cannot be used in conjunction with TimespanConfig.
+   * scanned. Only one of rows_limit and rows_limit_percent can be specified.
+   * Cannot be used in conjunction with TimespanConfig.
    * </pre>
    *
    * <code>int64 rows_limit = 3;</code>
    */
   public long getRowsLimit() {
     return rowsLimit_;
+  }
+
+  public static final int ROWS_LIMIT_PERCENT_FIELD_NUMBER = 6;
+  private int rowsLimitPercent_;
+  /**
+   * <pre>
+   * Max percentage of rows to scan. The rest are omitted. The number of rows
+   * scanned is rounded down. Must be between 0 and 100, inclusively. Both 0 and
+   * 100 means no limit. Defaults to 0. Only one of rows_limit and
+   * rows_limit_percent can be specified. Cannot be used in conjunction with
+   * TimespanConfig.
+   * </pre>
+   *
+   * <code>int32 rows_limit_percent = 6;</code>
+   */
+  public int getRowsLimitPercent() {
+    return rowsLimitPercent_;
   }
 
   public static final int SAMPLE_METHOD_FIELD_NUMBER = 4;
@@ -398,6 +422,9 @@ private static final long serialVersionUID = 0L;
     if (sampleMethod_ != com.google.privacy.dlp.v2.BigQueryOptions.SampleMethod.SAMPLE_METHOD_UNSPECIFIED.getNumber()) {
       output.writeEnum(4, sampleMethod_);
     }
+    if (rowsLimitPercent_ != 0) {
+      output.writeInt32(6, rowsLimitPercent_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -422,6 +449,10 @@ private static final long serialVersionUID = 0L;
     if (sampleMethod_ != com.google.privacy.dlp.v2.BigQueryOptions.SampleMethod.SAMPLE_METHOD_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(4, sampleMethod_);
+    }
+    if (rowsLimitPercent_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(6, rowsLimitPercent_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -448,6 +479,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getIdentifyingFieldsList());
     result = result && (getRowsLimit()
         == other.getRowsLimit());
+    result = result && (getRowsLimitPercent()
+        == other.getRowsLimitPercent());
     result = result && sampleMethod_ == other.sampleMethod_;
     result = result && unknownFields.equals(other.unknownFields);
     return result;
@@ -471,6 +504,8 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + ROWS_LIMIT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getRowsLimit());
+    hash = (37 * hash) + ROWS_LIMIT_PERCENT_FIELD_NUMBER;
+    hash = (53 * hash) + getRowsLimitPercent();
     hash = (37 * hash) + SAMPLE_METHOD_FIELD_NUMBER;
     hash = (53 * hash) + sampleMethod_;
     hash = (29 * hash) + unknownFields.hashCode();
@@ -625,6 +660,8 @@ private static final long serialVersionUID = 0L;
       }
       rowsLimit_ = 0L;
 
+      rowsLimitPercent_ = 0;
+
       sampleMethod_ = 0;
 
       return this;
@@ -670,6 +707,7 @@ private static final long serialVersionUID = 0L;
         result.identifyingFields_ = identifyingFieldsBuilder_.build();
       }
       result.rowsLimit_ = rowsLimit_;
+      result.rowsLimitPercent_ = rowsLimitPercent_;
       result.sampleMethod_ = sampleMethod_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
@@ -751,6 +789,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getRowsLimit() != 0L) {
         setRowsLimit(other.getRowsLimit());
+      }
+      if (other.getRowsLimitPercent() != 0) {
+        setRowsLimitPercent(other.getRowsLimitPercent());
       }
       if (other.sampleMethod_ != 0) {
         setSampleMethodValue(other.getSampleMethodValue());
@@ -1273,7 +1314,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Max number of rows to scan. If the table has more rows than this value, the
      * rest of the rows are omitted. If not set, or if set to 0, all rows will be
-     * scanned. Cannot be used in conjunction with TimespanConfig.
+     * scanned. Only one of rows_limit and rows_limit_percent can be specified.
+     * Cannot be used in conjunction with TimespanConfig.
      * </pre>
      *
      * <code>int64 rows_limit = 3;</code>
@@ -1285,7 +1327,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Max number of rows to scan. If the table has more rows than this value, the
      * rest of the rows are omitted. If not set, or if set to 0, all rows will be
-     * scanned. Cannot be used in conjunction with TimespanConfig.
+     * scanned. Only one of rows_limit and rows_limit_percent can be specified.
+     * Cannot be used in conjunction with TimespanConfig.
      * </pre>
      *
      * <code>int64 rows_limit = 3;</code>
@@ -1300,7 +1343,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Max number of rows to scan. If the table has more rows than this value, the
      * rest of the rows are omitted. If not set, or if set to 0, all rows will be
-     * scanned. Cannot be used in conjunction with TimespanConfig.
+     * scanned. Only one of rows_limit and rows_limit_percent can be specified.
+     * Cannot be used in conjunction with TimespanConfig.
      * </pre>
      *
      * <code>int64 rows_limit = 3;</code>
@@ -1308,6 +1352,56 @@ private static final long serialVersionUID = 0L;
     public Builder clearRowsLimit() {
       
       rowsLimit_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private int rowsLimitPercent_ ;
+    /**
+     * <pre>
+     * Max percentage of rows to scan. The rest are omitted. The number of rows
+     * scanned is rounded down. Must be between 0 and 100, inclusively. Both 0 and
+     * 100 means no limit. Defaults to 0. Only one of rows_limit and
+     * rows_limit_percent can be specified. Cannot be used in conjunction with
+     * TimespanConfig.
+     * </pre>
+     *
+     * <code>int32 rows_limit_percent = 6;</code>
+     */
+    public int getRowsLimitPercent() {
+      return rowsLimitPercent_;
+    }
+    /**
+     * <pre>
+     * Max percentage of rows to scan. The rest are omitted. The number of rows
+     * scanned is rounded down. Must be between 0 and 100, inclusively. Both 0 and
+     * 100 means no limit. Defaults to 0. Only one of rows_limit and
+     * rows_limit_percent can be specified. Cannot be used in conjunction with
+     * TimespanConfig.
+     * </pre>
+     *
+     * <code>int32 rows_limit_percent = 6;</code>
+     */
+    public Builder setRowsLimitPercent(int value) {
+      
+      rowsLimitPercent_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Max percentage of rows to scan. The rest are omitted. The number of rows
+     * scanned is rounded down. Must be between 0 and 100, inclusively. Both 0 and
+     * 100 means no limit. Defaults to 0. Only one of rows_limit and
+     * rows_limit_percent can be specified. Cannot be used in conjunction with
+     * TimespanConfig.
+     * </pre>
+     *
+     * <code>int32 rows_limit_percent = 6;</code>
+     */
+    public Builder clearRowsLimitPercent() {
+      
+      rowsLimitPercent_ = 0;
       onChanged();
       return this;
     }

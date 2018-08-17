@@ -6,7 +6,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-clients</artifactId>
   <packaging>pom</packaging>
-  <version>0.57.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-clients:current} -->
+  <version>0.58.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-clients:current} -->
   <name>Google Cloud</name>
   <url>https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-clients</url>
   <description>
@@ -154,7 +154,7 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <github.global.server>github</github.global.server>
     <site.installationModule>google-cloud-clients</site.installationModule>
-    <bom.version>0.57.1-alpha-SNAPSHOT</bom.version><!-- {x-version-update:google-cloud-bom:current} -->
+    <bom.version>0.58.1-alpha-SNAPSHOT</bom.version><!-- {x-version-update:google-cloud-bom:current} -->
     <api-client.version>1.24.1</api-client.version>
     <gax.version>1.30.0</gax.version>
     <google.auth.version>0.10.0</google.auth.version>
@@ -419,6 +419,7 @@
     <module>google-cloud-bigquerydatatransfer</module>
     <module>google-cloud-compute</module>
     <module>google-cloud-container</module>
+    <module>google-cloud-containeranalysis</module>
     <module>google-cloud-contrib</module>
     <module>google-cloud-core</module>
     <module>google-cloud-core-http</module>
@@ -755,7 +756,7 @@
                   </group>
                   <group>
                     <title>Stub packages</title>
-                    <packages>com.google.cloud.automl.v1beta1.stub:com.google.cloud.bigquery.datatransfer.v1.stub:com.google.cloud.bigtable.admin.v2.stub:com.google.cloud.bigtable.data.v2.stub*:com.google.cloud.compute.v1.stub:com.google.cloud.container.v1.stub:com.google.cloud.dataproc.v1.stub:com.google.cloud.dataproc.v1beta2.stub:com.google.cloud.dlp.v2beta1.stub:com.google.cloud.dlp.v2.stub:com.google.cloud.dialogflow.v2beta1.stub:com.google.cloud.dialogflow.v2.stub:com.google.cloud.errorreporting.v1beta1.stub:com.google.cloud.firestore.v1beta1.stub:com.google.cloud.iot.v1.stub:com.google.cloud.kms.v1.stub:com.google.cloud.language.v1beta2.stub:com.google.cloud.language.v1.stub:com.google.cloud.logging.v2.stub:com.google.cloud.monitoring.v3.stub:com.google.cloud.oslogin.v1.stub:com.google.cloud.pubsub.v1.stub:com.google.cloud.redis.v1beta1.stub:com.google.cloud.spanner.admin.database.v1.stub:com.google.cloud.spanner.admin.instance.v1.stub:com.google.cloud.spanner.v1.stub:com.google.cloud.speech.v1beta1.stub:com.google.cloud.speech.v1p1beta1.stub:com.google.cloud.speech.v1.stub:com.google.cloud.tasks.v2beta2.stub:com.google.cloud.texttospeech.v1beta1.stub:com.google.cloud.texttospeech.v1.stub:com.google.cloud.trace.v1.stub:com.google.cloud.trace.v2.stub:com.google.cloud.videointelligence.v1beta1.stub:com.google.cloud.videointelligence.v1beta2.stub:com.google.cloud.videointelligence.v1.stub:com.google.cloud.videointelligence.v1p1beta1.stub:com.google.cloud.vision.v1.stub:com.google.cloud.vision.v1p1beta1.stub:com.google.cloud.vision.v1p2beta1.stub:com.google.cloud.vision.v1p3beta1.stub:com.google.cloud.websecurityscanner.v1alpha.stub</packages>
+                    <packages>com.google.cloud.automl.v1beta1.stub:com.google.cloud.bigquery.datatransfer.v1.stub:com.google.cloud.bigtable.admin.v2.stub:com.google.cloud.bigtable.data.v2.stub*:com.google.cloud.compute.v1.stub:com.google.cloud.container.v1.stub:com.google.cloud.devtools.containeranalysis.v1beta1.stub:com.google.cloud.dataproc.v1.stub:com.google.cloud.dataproc.v1beta2.stub:com.google.cloud.dlp.v2beta1.stub:com.google.cloud.dlp.v2.stub:com.google.cloud.dialogflow.v2beta1.stub:com.google.cloud.dialogflow.v2.stub:com.google.cloud.errorreporting.v1beta1.stub:com.google.cloud.firestore.v1beta1.stub:com.google.cloud.iot.v1.stub:com.google.cloud.kms.v1.stub:com.google.cloud.language.v1beta2.stub:com.google.cloud.language.v1.stub:com.google.cloud.logging.v2.stub:com.google.cloud.monitoring.v3.stub:com.google.cloud.oslogin.v1.stub:com.google.cloud.pubsub.v1.stub:com.google.cloud.redis.v1beta1.stub:com.google.cloud.spanner.admin.database.v1.stub:com.google.cloud.spanner.admin.instance.v1.stub:com.google.cloud.spanner.v1.stub:com.google.cloud.speech.v1beta1.stub:com.google.cloud.speech.v1p1beta1.stub:com.google.cloud.speech.v1.stub:com.google.cloud.tasks.v2beta2.stub:com.google.cloud.texttospeech.v1beta1.stub:com.google.cloud.texttospeech.v1.stub:com.google.cloud.trace.v1.stub:com.google.cloud.trace.v2.stub:com.google.cloud.videointelligence.v1beta1.stub:com.google.cloud.videointelligence.v1beta2.stub:com.google.cloud.videointelligence.v1.stub:com.google.cloud.videointelligence.v1p1beta1.stub:com.google.cloud.vision.v1.stub:com.google.cloud.vision.v1p1beta1.stub:com.google.cloud.vision.v1p2beta1.stub:com.google.cloud.vision.v1p3beta1.stub:com.google.cloud.websecurityscanner.v1alpha.stub</packages>
                   </group>
                   <group>
                     <title>Deprecated packages</title>

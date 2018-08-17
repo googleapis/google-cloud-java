@@ -19,6 +19,7 @@ package com.google.cloud.firestore;
 import static com.google.cloud.firestore.LocalFirestoreHelper.SINGLE_FIELD_PROTO;
 import static com.google.cloud.firestore.LocalFirestoreHelper.getAllResponse;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.fail;
 import static org.mockito.Mockito.doAnswer;
 
@@ -115,5 +116,29 @@ public class FirestoreTest {
     // Note that we sort based on the order in the getAll() call.
     assertEquals("doc4", snapshot.get(2).getId());
     assertEquals("doc3", snapshot.get(3).getId());
+  }
+
+  @Test
+  public void arrayUnionEquals() {
+    FieldValue arrayUnion1 = FieldValue.arrayUnion("foo", "bar");
+    FieldValue arrayUnion2 = FieldValue.arrayUnion("foo", "bar");
+    FieldValue arrayUnion3 = FieldValue.arrayUnion("foo", "baz");
+    FieldValue arrayRemove = FieldValue.arrayRemove("foo", "bar");
+    assertEquals(arrayUnion1, arrayUnion1);
+    assertEquals(arrayUnion1, arrayUnion2);
+    assertNotEquals(arrayUnion1, arrayUnion3);
+    assertNotEquals(arrayUnion1, arrayRemove);
+  }
+
+  @Test
+  public void arrayRemoveEquals() {
+    FieldValue arrayRemove1 = FieldValue.arrayRemove("foo", "bar");
+    FieldValue arrayRemove2 = FieldValue.arrayRemove("foo", "bar");
+    FieldValue arrayRemove3 = FieldValue.arrayRemove("foo", "baz");
+    FieldValue arrayUnion = FieldValue.arrayUnion("foo", "bar");
+    assertEquals(arrayRemove1, arrayRemove1);
+    assertEquals(arrayRemove1, arrayRemove2);
+    assertNotEquals(arrayRemove1, arrayRemove3);
+    assertNotEquals(arrayRemove1, arrayUnion);
   }
 }

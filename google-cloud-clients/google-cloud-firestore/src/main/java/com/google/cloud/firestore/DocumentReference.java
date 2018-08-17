@@ -46,7 +46,8 @@ public class DocumentReference {
   private final ResourcePath path;
   private final FirestoreImpl firestore;
 
-  DocumentReference(FirestoreImpl firestore, ResourcePath path) {
+  protected DocumentReference(
+      FirestoreImpl firestore, ResourcePath path) { // Elevated access level for mocking.
     this.path = path;
     this.firestore = firestore;
   }

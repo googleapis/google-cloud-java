@@ -101,7 +101,7 @@ public final class LocalFirestoreHelper {
   public static final ApiFuture<CommitResponse> SINGLE_DELETE_COMMIT_RESPONSE;
   public static final ApiFuture<CommitResponse> SINGLE_WRITE_COMMIT_RESPONSE;
 
-  public static final ApiFuture<CommitResponse> SERVER_TIMESTAMP_COMMIT_RESPONSE;
+  public static final ApiFuture<CommitResponse> FIELD_TRANSFORM_COMMIT_RESPONSE;
 
   public static final Date DATE;
   public static final Timestamp TIMESTAMP;
@@ -266,20 +266,44 @@ public final class LocalFirestoreHelper {
     return rollback.build();
   }
 
-  public static Write transform(String... fieldPaths) {
-    return transform(null, fieldPaths);
+  public static FieldTransform serverTimestamp() {
+    return FieldTransform.newBuilder()
+        .setSetToServerValue(FieldTransform.ServerValue.REQUEST_TIME)
+        .build();
   }
 
-  public static Write transform(@Nullable Precondition precondition, String... fieldPaths) {
-    Write.Builder write = Write.newBuilder();
-    DocumentTransform.Builder transform = write.getTransformBuilder();
-    transform.setDocument(DOCUMENT_NAME);
+  public static FieldTransform arrayUnion(Value... values) {
+    return FieldTransform.newBuilder()
+        .setAppendMissingElements(ArrayValue.newBuilder().addAllValues(Arrays.asList(values)))
+        .build();
+  }
 
-    for (String fieldPath : fieldPaths) {
-      transform
-          .addFieldTransformsBuilder()
-          .setFieldPath(fieldPath)
-          .setSetToServerValue(DocumentTransform.FieldTransform.ServerValue.REQUEST_TIME);
+  public static FieldTransform arrayRemove(Value... values) {
+    return FieldTransform.newBuilder()
+        .setRemoveAllFromArray(ArrayValue.newBuilder().addAllValues(Arrays.asList(values)))
+        .build();
+  }
+
+  public static Write transform(
+      String fieldPath, FieldTransform fieldTransform, Object... fieldPathOrTransform) {
+    return transform(null, fieldPath, fieldTransform, fieldPathOrTransform);
+  }
+
+  public static Write transform(
+      @Nullable Precondition precondition,
+      String fieldPath,
+      FieldTransform fieldTransform,
+      Object... fieldPathOrTransform) {
+    Write.Builder write = Write.newBuilder();
+    DocumentTransform.Builder documentTransform = write.getTransformBuilder();
+    documentTransform.setDocument(DOCUMENT_NAME);
+
+    documentTransform.addFieldTransformsBuilder().setFieldPath(fieldPath).mergeFrom(fieldTransform);
+
+    for (int i = 0; i < fieldPathOrTransform.length; i += 2) {
+      String path = (String) fieldPathOrTransform[i];
+      FieldTransform transform = (FieldTransform) fieldPathOrTransform[i + 1];
+      documentTransform.addFieldTransformsBuilder().setFieldPath(path).mergeFrom(transform);
     }
 
     if (precondition != null) {
@@ -659,7 +683,8 @@ public final class LocalFirestoreHelper {
     mapValue.getMapValueBuilder();
     SERVER_TIMESTAMP_PROTO = Collections.emptyMap();
     SERVER_TIMESTAMP_OBJECT = new ServerTimestamp();
-    SERVER_TIMESTAMP_TRANSFORM = transform("foo", "inner.bar");
+    SERVER_TIMESTAMP_TRANSFORM =
+        transform("foo", serverTimestamp(), "inner.bar", serverTimestamp());
 
     ALL_SUPPORTED_TYPES_MAP = new HashMap<>();
     ALL_SUPPORTED_TYPES_MAP.put("foo", "bar");
@@ -699,7 +724,7 @@ public final class LocalFirestoreHelper {
                     .setTimestampValue(
                         com.google.protobuf.Timestamp.newBuilder()
                             .setSeconds(479978400)
-                            .setNanos(123000000))  // Dates only support millisecond precision.
+                            .setNanos(123000000)) // Dates only support millisecond precision.
                     .build())
             .put(
                 "timestampValue",
@@ -707,7 +732,7 @@ public final class LocalFirestoreHelper {
                     .setTimestampValue(
                         com.google.protobuf.Timestamp.newBuilder()
                             .setSeconds(479978400)
-                            .setNanos(123000))  // Timestamps supports microsecond precision.
+                            .setNanos(123000)) // Timestamps supports microsecond precision.
                     .build())
             .put(
                 "arrayValue",
@@ -730,7 +755,7 @@ public final class LocalFirestoreHelper {
     SINGLE_DELETE_COMMIT_RESPONSE = commitResponse(/* adds= */ 0, /* deletes= */ 1);
     SINGLE_CREATE_COMMIT_REQUEST = commit(create(SINGLE_FIELD_PROTO));
 
-    SERVER_TIMESTAMP_COMMIT_RESPONSE = commitResponse(/* adds= */ 2, /* deletes= */ 0);
+    FIELD_TRANSFORM_COMMIT_RESPONSE = commitResponse(/* adds= */ 2, /* deletes= */ 0);
 
     NESTED_CLASS_OBJECT = new NestedClass();
 

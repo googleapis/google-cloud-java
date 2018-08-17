@@ -23,12 +23,25 @@ public interface CloudStorageOptionsOrBuilder extends
   /**
    * <pre>
    * Max number of bytes to scan from a file. If a scanned file's size is bigger
-   * than this value then the rest of the bytes are omitted.
+   * than this value then the rest of the bytes are omitted. Only one
+   * of bytes_limit_per_file and bytes_limit_per_file_percent can be specified.
    * </pre>
    *
    * <code>int64 bytes_limit_per_file = 4;</code>
    */
   long getBytesLimitPerFile();
+
+  /**
+   * <pre>
+   * Max percentage of bytes to scan from a file. The rest are omitted. The
+   * number of bytes scanned is rounded down. Must be between 0 and 100,
+   * inclusively. Both 0 and 100 means no limit. Defaults to 0. Only one
+   * of bytes_limit_per_file and bytes_limit_per_file_percent can be specified.
+   * </pre>
+   *
+   * <code>int32 bytes_limit_per_file_percent = 8;</code>
+   */
+  int getBytesLimitPerFilePercent();
 
   /**
    * <pre>
