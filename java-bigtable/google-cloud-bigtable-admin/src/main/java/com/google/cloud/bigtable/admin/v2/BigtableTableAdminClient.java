@@ -92,7 +92,7 @@ import javax.annotation.Nonnull;
  * BigtableTableAdminClient client = BigtableTableAdminClient.create(tableAdminSettings);
  * }</pre>
  */
-public class BigtableTableAdminClient implements AutoCloseable {
+public final class BigtableTableAdminClient implements AutoCloseable {
   private final BigtableTableAdminStub stub;
   private final InstanceName instanceName;
 
