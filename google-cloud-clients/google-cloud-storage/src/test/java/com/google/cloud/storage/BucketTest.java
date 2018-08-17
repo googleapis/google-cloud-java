@@ -85,7 +85,7 @@ public class BucketTest {
   private static final Boolean DEFAULT_EVENT_BASED_HOLD = true;
   private static final Long RETENTION_EFFECTIVE_TIME = 10L;
   private static final Long RETENTION_PERIOD = 10L;
-  private static Boolean RETENTION_POLICY_IS_LOCKED = false;
+  private static final Boolean RETENTION_POLICY_IS_LOCKED = false;
   private static final BucketInfo FULL_BUCKET_INFO = BucketInfo.newBuilder("b")
       .setAcl(ACLS)
       .setEtag(ETAG)
