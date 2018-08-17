@@ -359,10 +359,11 @@ public final class GCRules {
       if (this == o) {
         return true;
       }
-      if (o == null || getClass() != o.getClass()) {
+      if (o == null) {
         return false;
       }
-      return true;
+
+      return getClass() == o.getClass();
     }
 
     @Override

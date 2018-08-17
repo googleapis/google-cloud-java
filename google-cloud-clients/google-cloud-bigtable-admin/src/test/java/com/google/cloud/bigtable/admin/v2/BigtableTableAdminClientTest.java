@@ -232,11 +232,9 @@ public class BigtableTableAdminClientTest {
   @Test
   public void testDeleteTable() {
     // Setup
-    com.google.bigtable.admin.v2.DeleteTableRequest expectedRequest =
-        com.google.bigtable.admin.v2.DeleteTableRequest
-            .newBuilder()
-            .setName(TABLE_NAME.toString())
-            .build();
+    DeleteTableRequest expectedRequest = DeleteTableRequest.newBuilder()
+        .setName(TABLE_NAME.toString())
+        .build();
 
     final AtomicBoolean wasCalled = new AtomicBoolean(false);
 
@@ -259,11 +257,9 @@ public class BigtableTableAdminClientTest {
   @Test
   public void testDeleteTableAsync() throws Exception {
     // Setup
-    com.google.bigtable.admin.v2.DeleteTableRequest expectedRequest =
-        com.google.bigtable.admin.v2.DeleteTableRequest
-            .newBuilder()
-            .setName(TABLE_NAME.toString())
-            .build();
+    DeleteTableRequest expectedRequest = DeleteTableRequest.newBuilder()
+        .setName(TABLE_NAME.toString())
+        .build();
 
     final AtomicBoolean wasCalled = new AtomicBoolean(false);
 
@@ -287,11 +283,9 @@ public class BigtableTableAdminClientTest {
   @Test
   public void testGetTable() {
     // Setup
-    com.google.bigtable.admin.v2.GetTableRequest expectedRequest =
-        com.google.bigtable.admin.v2.GetTableRequest
-            .newBuilder()
-            .setName(TABLE_NAME.toString())
-            .build();
+    GetTableRequest expectedRequest = GetTableRequest.newBuilder()
+        .setName(TABLE_NAME.toString())
+        .build();
 
     com.google.bigtable.admin.v2.Table expectedResponse = com.google.bigtable.admin.v2.Table
         .newBuilder()
@@ -311,11 +305,9 @@ public class BigtableTableAdminClientTest {
   @Test
   public void testGetTableAsync() throws Exception {
     // Setup
-    com.google.bigtable.admin.v2.GetTableRequest expectedRequest =
-        com.google.bigtable.admin.v2.GetTableRequest
-            .newBuilder()
-            .setName(TABLE_NAME.toString())
-            .build();
+    GetTableRequest expectedRequest = GetTableRequest.newBuilder()
+        .setName(TABLE_NAME.toString())
+        .build();
 
     com.google.bigtable.admin.v2.Table expectedResponse = com.google.bigtable.admin.v2.Table
         .newBuilder()
@@ -566,8 +558,10 @@ public class BigtableTableAdminClientTest {
     );
 
     List<com.google.bigtable.admin.v2.Table> input = Lists.newArrayList(
-        com.google.bigtable.admin.v2.Table.newBuilder().setName("projects/p/instances/i/tables/t1").build(),
-        com.google.bigtable.admin.v2.Table.newBuilder().setName("projects/p/instances/i/tables/t2").build()
+        com.google.bigtable.admin.v2.Table.newBuilder().setName("projects/p/instances/i/tables/t1")
+            .build(),
+        com.google.bigtable.admin.v2.Table.newBuilder().setName("projects/p/instances/i/tables/t2")
+            .build()
     );
 
     List<TableName> actual = BigtableTableAdminClient.convertToTableNames(input);
