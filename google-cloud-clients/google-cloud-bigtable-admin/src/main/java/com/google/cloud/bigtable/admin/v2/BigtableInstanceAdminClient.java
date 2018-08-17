@@ -296,7 +296,6 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
    *
    * <pre>{@code
    * ApiFutures.addCallback(instancesFuture, new ApiFutureCallback<List<Instance>>() {
-   *   @Override
    *   public void onFailure(Throwable t) {
    *     if (t instanceof PartialListInstancesException) {
    *       PartialListInstancesException partialError = (PartialListInstancesException)t;
@@ -305,7 +304,6 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
    *     }
    *   }
    *
-   *   @Override
    *   public void onSuccess(List<Instance> result) {
    *     System.out.println("Found a complete set of instances: " + result);
    *   }
