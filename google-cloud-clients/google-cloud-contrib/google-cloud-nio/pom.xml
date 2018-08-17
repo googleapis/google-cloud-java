@@ -98,7 +98,7 @@
           <relocations>
             <relocation>
               <pattern>com</pattern>
-              <shadedPattern>shaded.cloud_nio.com_stuff</shadedPattern>
+              <shadedPattern>shaded.cloud_nio.com</shadedPattern>
               <includes>
                 <include>com.google.**</include>
                 <include>com.fasterxml.**</include>
@@ -110,7 +110,7 @@
             </relocation>
             <relocation>
               <pattern>org</pattern>
-              <shadedPattern>shaded.cloud_nio.org_stuff</shadedPattern>
+              <shadedPattern>shaded.cloud_nio.org</shadedPattern>
               <includes>
                 <include>org.joda.**</include>
                 <include>org.apache.**</include>
@@ -120,7 +120,7 @@
             </relocation>
             <relocation>
               <pattern>io</pattern>
-              <shadedPattern>shaded.cloud_nio.io_stuff</shadedPattern>
+              <shadedPattern>shaded.cloud_nio.io</shadedPattern>
               <includes>
                 <include>io.opencensus.**</include>
                 <include>io.grpc.**</include>
