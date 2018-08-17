@@ -271,7 +271,6 @@ public class BlobInfo implements Serializable {
 
     abstract Builder setCustomerEncryption(CustomerEncryption customerEncryption);
 
-    @GcpLaunchStage.Beta
     abstract Builder setKmsKeyName(String kmsKeyName);
 
     /**
@@ -503,7 +502,6 @@ public class BlobInfo implements Serializable {
       return this;
     }
 
-    @GcpLaunchStage.Beta
     @Override
     Builder setKmsKeyName(String kmsKeyName) {
       this.kmsKeyName = kmsKeyName;
@@ -797,7 +795,6 @@ public class BlobInfo implements Serializable {
   /**
    * Returns the Cloud KMS key used to encrypt the blob, if any.
    */
-  @GcpLaunchStage.Beta
   public String getKmsKeyName() {
     return kmsKeyName;
   }

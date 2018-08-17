@@ -57,7 +57,6 @@ public interface StorageRpc extends ServiceRpc {
     FIELDS("fields"),
     CUSTOMER_SUPPLIED_KEY("customerSuppliedKey"),
     USER_PROJECT("userProject"),
-    @GcpLaunchStage.Beta
     KMS_KEY_NAME("kmsKeyName");
 
     private final String value;

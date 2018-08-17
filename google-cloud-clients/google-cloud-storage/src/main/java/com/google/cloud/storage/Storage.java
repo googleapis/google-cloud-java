@@ -93,7 +93,6 @@ public interface Storage extends Service<StorageOptions> {
     CORS("cors"),
     STORAGE_CLASS("storageClass"),
     ETAG("etag"),
-    @GcpLaunchStage.Beta
     ENCRYPTION("encryption"),
     BILLING("billing"),
     DEFAULT_EVENT_BASED_HOLD("defaultEventBasedHold"),
@@ -138,7 +137,6 @@ public interface Storage extends Service<StorageOptions> {
     SIZE("size"),
     STORAGE_CLASS("storageClass"),
     TIME_DELETED("timeDeleted"),
-    @GcpLaunchStage.Beta
     KMS_KEY_NAME("kmsKeyName"),
     EVENT_BASED_HOLD("eventBasedHold"),
     TEMPORARY_HOLD("temporaryHold"),
@@ -393,7 +391,6 @@ public interface Storage extends Service<StorageOptions> {
     /**
      * Returns an option to set a customer-managed key for server-side encryption of the blob.
      */
-    @GcpLaunchStage.Beta
     public static BlobTargetOption kmsKeyName(String kmsKeyName) {
       return new BlobTargetOption(StorageRpc.Option.KMS_KEY_NAME, kmsKeyName);
     }
@@ -555,7 +552,6 @@ public interface Storage extends Service<StorageOptions> {
      *
      * @param kmsKeyName the KMS key resource id
      */
-    @GcpLaunchStage.Beta
     public static BlobWriteOption kmsKeyName(String kmsKeyName) {
       return new BlobWriteOption(Option.KMS_KEY_NAME, kmsKeyName);
     }
