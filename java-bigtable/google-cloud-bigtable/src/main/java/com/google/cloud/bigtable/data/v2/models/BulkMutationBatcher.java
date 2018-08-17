@@ -22,6 +22,7 @@ import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.base.Preconditions;
+import com.google.common.util.concurrent.MoreExecutors;
 import java.util.concurrent.TimeoutException;
 import java.util.concurrent.atomic.AtomicLong;
 import org.threeten.bp.Duration;
@@ -110,7 +111,8 @@ public final class BulkMutationBatcher implements AutoCloseable {
           public void onSuccess(Void aVoid) {
             onMutationComplete(true);
           }
-        });
+        },
+        MoreExecutors.directExecutor());
 
     return future;
   }

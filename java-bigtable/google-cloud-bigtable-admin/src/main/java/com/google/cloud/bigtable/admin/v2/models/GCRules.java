@@ -15,6 +15,7 @@
  */
 package com.google.cloud.bigtable.admin.v2.models;
 
+import com.google.common.base.Objects;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -149,6 +150,23 @@ public final class GCRules {
     }
 
     @Override
+    public boolean equals(Object o) {
+      if (this == o) {
+        return true;
+      }
+      if (o == null || getClass() != o.getClass()) {
+        return false;
+      }
+      IntersectionRule that = (IntersectionRule) o;
+      return Objects.equal(rulesList, that.rulesList);
+    }
+
+    @Override
+    public int hashCode() {
+      return Objects.hashCode(rulesList);
+    }
+
+    @Override
     public String toString() {
       return MoreObjects.toStringHelper(this).add("rulesList", rulesList).toString();
     }
@@ -197,6 +215,24 @@ public final class GCRules {
       return rulesList;
     }
 
+
+    @Override
+    public boolean equals(Object o) {
+      if (this == o) {
+        return true;
+      }
+      if (o == null || getClass() != o.getClass()) {
+        return false;
+      }
+      UnionRule unionRule = (UnionRule) o;
+      return Objects.equal(rulesList, unionRule.rulesList);
+    }
+
+    @Override
+    public int hashCode() {
+      return Objects.hashCode(rulesList);
+    }
+
     @Override
     public String toString() {
       return MoreObjects.toStringHelper(this).add("rulesList", rulesList).toString();
@@ -233,6 +269,23 @@ public final class GCRules {
     }
 
     @Override
+    public boolean equals(Object o) {
+      if (this == o) {
+        return true;
+      }
+      if (o == null || getClass() != o.getClass()) {
+        return false;
+      }
+      VersionRule that = (VersionRule) o;
+      return Objects.equal(builder, that.builder);
+    }
+
+    @Override
+    public int hashCode() {
+      return Objects.hashCode(builder);
+    }
+
+    @Override
     public String toString() {
       return MoreObjects.toStringHelper(this).add("maxNumVersions", getMaxVersions()).toString();
     }
@@ -263,6 +316,23 @@ public final class GCRules {
     }
 
     @Override
+    public boolean equals(Object o) {
+      if (this == o) {
+        return true;
+      }
+      if (o == null || getClass() != o.getClass()) {
+        return false;
+      }
+      DurationRule that = (DurationRule) o;
+      return Objects.equal(builder, that.builder);
+    }
+
+    @Override
+    public int hashCode() {
+      return Objects.hashCode(builder);
+    }
+
+    @Override
     public String toString() {
       return MoreObjects.toStringHelper(this).add("maxAge", getMaxAge()).toString();
     }
@@ -283,6 +353,24 @@ public final class GCRules {
     public GcRule toProto() {
       return GcRule.getDefaultInstance();
     }
+
+    @Override
+    public boolean equals(Object o) {
+      if (this == o) {
+        return true;
+      }
+      if (o == null) {
+        return false;
+      }
+
+      return getClass() == o.getClass();
+    }
+
+    @Override
+    public int hashCode() {
+      return Objects.hashCode(1);
+    }
+
 
     @Override
     public String toString() {

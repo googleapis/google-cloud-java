@@ -24,6 +24,7 @@ import com.google.bigtable.v2.MutateRowRequest;
 import com.google.bigtable.v2.MutateRowResponse;
 import com.google.cloud.bigtable.data.v2.internal.RequestContext;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
+import com.google.common.util.concurrent.MoreExecutors;
 
 /** Simple wrapper for MutateRow to wrap the request and response protobufs. */
 class MutateRowCallable extends UnaryCallable<RowMutation, Void> {
@@ -49,6 +50,7 @@ class MutateRowCallable extends UnaryCallable<RowMutation, Void> {
           public Void apply(MutateRowResponse mutateRowResponse) {
             return null;
           }
-        });
+        },
+        MoreExecutors.directExecutor());
   }
 }

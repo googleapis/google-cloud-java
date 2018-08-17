@@ -24,6 +24,7 @@ import com.google.bigtable.v2.CheckAndMutateRowRequest;
 import com.google.bigtable.v2.CheckAndMutateRowResponse;
 import com.google.cloud.bigtable.data.v2.internal.RequestContext;
 import com.google.cloud.bigtable.data.v2.models.ConditionalRowMutation;
+import com.google.common.util.concurrent.MoreExecutors;
 
 /** Simple wrapper for CheckAndMutateRow to wrap the request and response protobufs. */
 class CheckAndMutateRowCallable extends UnaryCallable<ConditionalRowMutation, Boolean> {
@@ -49,6 +50,7 @@ class CheckAndMutateRowCallable extends UnaryCallable<ConditionalRowMutation, Bo
           public Boolean apply(CheckAndMutateRowResponse checkAndMutateRowResponse) {
             return checkAndMutateRowResponse.getPredicateMatched();
           }
-        });
+        },
+        MoreExecutors.directExecutor());
   }
 }

@@ -20,6 +20,7 @@ import com.google.bigtable.admin.v2.ColumnFamily;
 import com.google.bigtable.admin.v2.InstanceName;
 import com.google.bigtable.admin.v2.Table;
 import com.google.cloud.bigtable.admin.v2.models.GCRules.GCRule;
+import com.google.common.base.Objects;
 import com.google.common.base.Preconditions;
 import com.google.protobuf.ByteString;
 
@@ -88,6 +89,24 @@ public final class CreateTableRequest {
     Preconditions.checkNotNull(key);
     createTableRequest.addInitialSplitsBuilder().setKey(key);
     return this;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    CreateTableRequest that = (CreateTableRequest) o;
+    return Objects.equal(createTableRequest, that.createTableRequest) &&
+        Objects.equal(tableRequest, that.tableRequest);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hashCode(createTableRequest, tableRequest);
   }
 
   @InternalApi

@@ -17,6 +17,7 @@ package com.google.cloud.bigtable.admin.v2.models;
 
 import com.google.bigtable.admin.v2.Table.ClusterState.ReplicationState;
 import com.google.common.base.MoreObjects;
+import com.google.common.base.Objects;
 
 // TODO(igorbernstein2): remove this class and promote Replication State to Table.
 /** Wrapper for {@link ClusterState} protocol buffer object */
@@ -45,6 +46,24 @@ public final class ClusterState {
    */
   public ReplicationState getReplicationState() {
     return replicationState;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    ClusterState that = (ClusterState) o;
+    return Objects.equal(id, that.id) &&
+        replicationState == that.replicationState;
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hashCode(id, replicationState);
   }
 
   @Override

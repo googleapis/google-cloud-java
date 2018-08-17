@@ -35,6 +35,7 @@ import com.google.cloud.bigtable.gaxx.retrying.NonCancellableFuture;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.rpc.Code;
 import java.util.List;
 import java.util.Set;
@@ -188,7 +189,8 @@ class MutateRowsAttemptCallable implements Callable<Void> {
 
       // Inspect the results and either propagate the success, or prepare to retry the failed
       // mutations
-      ApiFuture<Void> transformed = ApiFutures.transform(catching, attemptSuccessfulCallback);
+      ApiFuture<Void> transformed = ApiFutures.transform(catching, attemptSuccessfulCallback,
+          MoreExecutors.directExecutor());
 
       // Notify the parent of the attempt
       externalFuture.setAttemptFuture(transformed);
