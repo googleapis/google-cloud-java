@@ -480,7 +480,7 @@ public final class BigtableTableAdminClient implements AutoCloseable {
         new ApiFunction<GenerateConsistencyTokenResponse, ConsistencyToken>() {
           @Override
           public ConsistencyToken apply(GenerateConsistencyTokenResponse proto) {
-            TableName tableName = TableName.of(instanceName.getProject(), instanceName.getProject(), tableId);
+            TableName tableName = TableName.of(instanceName.getProject(), instanceName.getInstance(), tableId);
             return ConsistencyToken.of(tableName, proto.getConsistencyToken());
           }
         });

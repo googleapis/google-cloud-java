@@ -16,12 +16,12 @@
 package com.google.cloud.bigtable.admin.v2.models;
 
 import com.google.api.core.InternalApi;
+import com.google.api.core.InternalExtensionOnly;
+import com.google.auto.value.AutoValue;
 import com.google.bigtable.admin.v2.CheckConsistencyRequest;
 import com.google.bigtable.admin.v2.GenerateConsistencyTokenResponse;
 import com.google.bigtable.admin.v2.InstanceName;
 import com.google.bigtable.admin.v2.TableName;
-import com.google.common.annotations.VisibleForTesting;
-import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
 
 /**
@@ -30,38 +30,25 @@ import com.google.common.base.Preconditions;
  * <p>Cannot be created. They are obtained by invoking {@link
  * com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient#generateConsistencyToken(String)}
  */
-public final class ConsistencyToken {
-  private final TableName tableName;
-  private final String token;
-
+@InternalExtensionOnly
+@AutoValue
+public abstract class ConsistencyToken {
   public static ConsistencyToken of(TableName tableName, String token) {
-    return new ConsistencyToken(tableName, token);
+    return new AutoValue_ConsistencyToken(tableName, token);
   }
 
-  public ConsistencyToken(TableName tableName, String token) {
-    this.tableName = tableName;
-    this.token = token;
-  }
+  abstract TableName getTableName();
+  abstract String getToken();
 
   @InternalApi
   public CheckConsistencyRequest toProto(InstanceName instanceName) {
     Preconditions.checkArgument(
-        instanceName.equals(InstanceName.of(tableName.getProject(), tableName.getInstance())),
+        instanceName.equals(InstanceName.of(getTableName().getProject(), getTableName().getInstance())),
         "Consistency tokens are only valid within a single instance.");
 
     return CheckConsistencyRequest.newBuilder()
-        .setName(tableName.toString())
-        .setConsistencyToken(token)
+        .setName(getTableName().toString())
+        .setConsistencyToken(getToken())
         .build();
-  }
-
-  @VisibleForTesting
-  String getToken() {
-    return token;
-  }
-
-  @Override
-  public String toString() {
-    return MoreObjects.toStringHelper(this).add("token", token).toString();
   }
 }
