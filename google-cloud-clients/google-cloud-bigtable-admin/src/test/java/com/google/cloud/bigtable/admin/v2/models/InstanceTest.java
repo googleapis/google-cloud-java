@@ -36,7 +36,7 @@ public class InstanceTest {
         .putLabels("label2", "value2")
         .build();
 
-    Instance result = Instance.PROTO_TRANSFORMER.apply(proto);
+    Instance result = Instance.fromProto(proto);
 
     assertThat(result.getId()).isEqualTo("my-instance");
     assertThat(result.getDisplayName()).isEqualTo("my display name");
@@ -61,7 +61,7 @@ public class InstanceTest {
     Exception actualException = null;
 
     try {
-      Instance.PROTO_TRANSFORMER.apply(proto);
+      Instance.fromProto(proto);
     } catch (Exception e) {
       actualException = e;
     }

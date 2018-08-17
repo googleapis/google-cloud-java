@@ -30,9 +30,7 @@ import com.google.bigtable.admin.v2.Cluster;
 import com.google.bigtable.admin.v2.CreateInstanceMetadata;
 import com.google.bigtable.admin.v2.Instance.Type;
 import com.google.bigtable.admin.v2.InstanceName;
-import com.google.bigtable.admin.v2.ListInstancesResponse;
 import com.google.bigtable.admin.v2.LocationName;
-import com.google.bigtable.admin.v2.PartialUpdateInstanceRequest;
 import com.google.bigtable.admin.v2.ProjectName;
 import com.google.bigtable.admin.v2.StorageType;
 import com.google.bigtable.admin.v2.UpdateInstanceMetadata;
@@ -135,7 +133,7 @@ public class BigtableInstanceAdminClientTest {
     mockOperationResult(mockCreateInstanceCallable, expectedRequest, expectedResponse);
 
     // Execute
-    com.google.cloud.bigtable.admin.v2.models.Instance actualResult = adminClient.createInstance(
+    Instance actualResult = adminClient.createInstance(
         CreateInstanceRequest.of(INSTANCE_NAME.getInstance())
             .setType(Type.DEVELOPMENT)
             .addCluster("cluster1", "us-east1-c", 1, StorageType.SSD)
@@ -149,7 +147,7 @@ public class BigtableInstanceAdminClientTest {
   public void testUpdateInstance() {
     // Setup
     com.google.bigtable.admin.v2.PartialUpdateInstanceRequest expectedRequest =
-        PartialUpdateInstanceRequest.newBuilder()
+        com.google.bigtable.admin.v2.PartialUpdateInstanceRequest.newBuilder()
             .setUpdateMask(
                 FieldMask.newBuilder()
                     .addPaths("display_name")
@@ -169,7 +167,7 @@ public class BigtableInstanceAdminClientTest {
     mockOperationResult(mockUpdateInstanceCallable, expectedRequest, expectedResponse);
 
     // Execute
-    com.google.cloud.bigtable.admin.v2.models.Instance actualResult = adminClient.updateInstance(
+    Instance actualResult = adminClient.updateInstance(
         UpdateInstanceRequest.of(INSTANCE_NAME.getInstance())
             .setDisplayName("new display name")
     );
@@ -209,15 +207,18 @@ public class BigtableInstanceAdminClientTest {
             .setParent(PROJECT_NAME.toString())
             .build();
 
-    com.google.bigtable.admin.v2.ListInstancesResponse expectedResponse = ListInstancesResponse
-        .newBuilder()
-        .addInstances(
-            com.google.bigtable.admin.v2.Instance.newBuilder().setName(INSTANCE_NAME + "1").build()
-        )
-        .addInstances(
-            com.google.bigtable.admin.v2.Instance.newBuilder().setName(INSTANCE_NAME + "2").build()
-        )
-        .build();
+    com.google.bigtable.admin.v2.ListInstancesResponse expectedResponse =
+        com.google.bigtable.admin.v2.ListInstancesResponse
+            .newBuilder()
+            .addInstances(
+                com.google.bigtable.admin.v2.Instance.newBuilder().setName(INSTANCE_NAME + "1")
+                    .build()
+            )
+            .addInstances(
+                com.google.bigtable.admin.v2.Instance.newBuilder().setName(INSTANCE_NAME + "2")
+                    .build()
+            )
+            .build();
 
     Mockito.when(mockListInstancesCallable.futureCall(expectedRequest))
         .thenReturn(ApiFutures.immediateFuture(expectedResponse));
@@ -240,15 +241,17 @@ public class BigtableInstanceAdminClientTest {
             .setParent(PROJECT_NAME.toString())
             .build();
 
-    com.google.bigtable.admin.v2.ListInstancesResponse expectedResponse = ListInstancesResponse
-        .newBuilder()
-        .addInstances(
-            com.google.bigtable.admin.v2.Instance.newBuilder().setName(INSTANCE_NAME + "1").build()
-        )
-        .addFailedLocations(
-            LocationName.of(PROJECT_NAME.getProject(), "us-east1-d").toString()
-        )
-        .build();
+    com.google.bigtable.admin.v2.ListInstancesResponse expectedResponse =
+        com.google.bigtable.admin.v2.ListInstancesResponse
+            .newBuilder()
+            .addInstances(
+                com.google.bigtable.admin.v2.Instance.newBuilder().setName(INSTANCE_NAME + "1")
+                    .build()
+            )
+            .addFailedLocations(
+                LocationName.of(PROJECT_NAME.getProject(), "us-east1-d").toString()
+            )
+            .build();
 
     Mockito.when(mockListInstancesCallable.futureCall(expectedRequest))
         .thenReturn(ApiFutures.immediateFuture(expectedResponse));
