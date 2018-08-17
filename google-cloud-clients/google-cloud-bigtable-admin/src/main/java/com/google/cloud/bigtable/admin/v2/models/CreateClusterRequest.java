@@ -49,6 +49,7 @@ import com.google.bigtable.admin.v2.StorageType;
 public final class CreateClusterRequest {
   private final com.google.bigtable.admin.v2.CreateClusterRequest.Builder proto = com.google.bigtable.admin.v2.CreateClusterRequest
       .newBuilder();
+  // Partial ids will be set when the project is passed to toProto
   private final String instanceId;
   private String zone;
 
@@ -70,12 +71,14 @@ public final class CreateClusterRequest {
    * Sets the zone where the new cluster will be located. Must be different from the existing
    * cluster.
    */
+  @SuppressWarnings("WeakerAccess")
   public CreateClusterRequest setZone(String zone) {
     this.zone = zone;
     return this;
   }
 
   /** Sets the type of storage used by this cluster to serve its parent instance's tables. */
+  @SuppressWarnings("WeakerAccess")
   public CreateClusterRequest setServeNodes(int numNodes) {
     proto.getClusterBuilder().setServeNodes(numNodes);
     return this;
@@ -86,6 +89,7 @@ public final class CreateClusterRequest {
    * Defaults to {@code SSD}.
    */
   // TODO(igorbernstein2): try to avoid leaking protobuf generated enums
+  @SuppressWarnings("WeakerAccess")
   public CreateClusterRequest setStorageType(StorageType storageType) {
     proto.getClusterBuilder().setDefaultStorageType(storageType);
     return this;
@@ -113,8 +117,8 @@ public final class CreateClusterRequest {
   }
 
   /**
-   * Creates the request protobuf. This method is considered an internal implementation detail and
-   * not meant to be used by applications.
+   * Creates the request protobuf to be used in {@link CreateInstanceRequest}. This method is
+   * considered an internal implementation detail and not meant to be used by applications.
    */
   @InternalApi
   com.google.bigtable.admin.v2.Cluster toEmbeddedProto(ProjectName projectName) {

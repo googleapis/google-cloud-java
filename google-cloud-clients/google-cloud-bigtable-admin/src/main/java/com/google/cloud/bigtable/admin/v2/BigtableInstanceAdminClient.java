@@ -27,11 +27,14 @@ import com.google.bigtable.admin.v2.LocationName;
 import com.google.bigtable.admin.v2.ProjectName;
 import com.google.cloud.bigtable.admin.v2.models.CreateInstanceRequest;
 import com.google.cloud.bigtable.admin.v2.models.Instance;
+import com.google.cloud.bigtable.admin.v2.models.PartialListInstancesException;
 import com.google.cloud.bigtable.admin.v2.models.UpdateInstanceRequest;
 import com.google.cloud.bigtable.admin.v2.stub.BigtableInstanceAdminStub;
 import com.google.common.base.Verify;
 import com.google.common.collect.ImmutableList;
+import com.google.common.util.concurrent.Futures;
 import com.google.common.util.concurrent.MoreExecutors;
+import com.google.common.util.concurrent.UncheckedExecutionException;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
@@ -96,7 +99,7 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
     return create(settings.getProjectName(), settings.getStubSettings().createStub());
   }
 
-  /** Constructs an instance of BigtableInstanceAdminClient with the given Projectname and stub. */
+  /** Constructs an instance of BigtableInstanceAdminClient with the given ProjectName and stub. */
   public static BigtableInstanceAdminClient create(@Nonnull ProjectName projectName,
       @Nonnull BigtableInstanceAdminStub stub) {
     return new BigtableInstanceAdminClient(projectName, stub);
@@ -110,6 +113,7 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
   }
 
   /** Gets the ProjectName this client is associated with. */
+  @SuppressWarnings("WeakerAccess")
   public ProjectName getProjectName() {
     return projectName;
   }
@@ -125,6 +129,7 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
    *
    * @see CreateInstanceRequest for details.
    */
+  @SuppressWarnings("WeakerAccess")
   public Instance createInstance(CreateInstanceRequest request) {
     return awaitFuture(createInstanceAsync(request));
   }
@@ -134,10 +139,16 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
    *
    * @see CreateInstanceRequest for details.
    */
+  @SuppressWarnings("WeakerAccess")
   public ApiFuture<Instance> createInstanceAsync(CreateInstanceRequest request) {
     return ApiFutures.transform(
         stub.createInstanceOperationCallable().futureCall(request.toProto(projectName)),
-        Instance.PROTO_TRANSFORMER,
+        new ApiFunction<com.google.bigtable.admin.v2.Instance, Instance>() {
+          @Override
+          public Instance apply(com.google.bigtable.admin.v2.Instance proto) {
+            return Instance.fromProto(proto);
+          }
+        },
         MoreExecutors.directExecutor());
   }
 
@@ -146,6 +157,7 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
    *
    * @see UpdateInstanceRequest for details.
    */
+  @SuppressWarnings("WeakerAccess")
   public Instance updateInstance(UpdateInstanceRequest request) {
     return awaitFuture(updateInstanceAsync(request));
   }
@@ -155,21 +167,28 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
    *
    * @see UpdateInstanceRequest for details.
    */
+  @SuppressWarnings("WeakerAccess")
   public ApiFuture<Instance> updateInstanceAsync(UpdateInstanceRequest request) {
     return ApiFutures.transform(
         stub.partialUpdateInstanceOperationCallable().futureCall(request.toProto(projectName)),
-        Instance.PROTO_TRANSFORMER,
+        new ApiFunction<com.google.bigtable.admin.v2.Instance, Instance>() {
+          @Override
+          public Instance apply(com.google.bigtable.admin.v2.Instance proto) {
+            return Instance.fromProto(proto);
+          }
+        },
         MoreExecutors.directExecutor());
   }
 
   /** Get the instance representation. */
+  @SuppressWarnings("WeakerAccess")
   public Instance getInstance(String id) {
     return awaitFuture(getInstanceAsync(id));
   }
 
   /** Asynchronously gets the instance representation wrapped in a future. */
+  @SuppressWarnings("WeakerAccess")
   public ApiFuture<Instance> getInstanceAsync(String instanceId) {
-
     InstanceName name = InstanceName.of(projectName.getProject(), instanceId);
 
     GetInstanceRequest request = GetInstanceRequest.newBuilder()
@@ -178,16 +197,23 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
 
     return ApiFutures.transform(
         stub.getInstanceCallable().futureCall(request),
-        Instance.PROTO_TRANSFORMER,
+        new ApiFunction<com.google.bigtable.admin.v2.Instance, Instance>() {
+          @Override
+          public Instance apply(com.google.bigtable.admin.v2.Instance proto) {
+            return Instance.fromProto(proto);
+          }
+        },
         MoreExecutors.directExecutor());
   }
 
   /** Lists all of the instances in the current project. */
+  @SuppressWarnings("WeakerAccess")
   public List<Instance> listInstances() {
     return awaitFuture(listInstancesAsync());
   }
 
   /** Asynchronously lists all of the instances in the current project. */
+  @SuppressWarnings("WeakerAccess")
   public ApiFuture<List<Instance>> listInstancesAsync() {
     ListInstancesRequest request = ListInstancesRequest.newBuilder()
         .setParent(projectName.toString())
@@ -196,41 +222,47 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
     ApiFuture<ListInstancesResponse> responseFuture = stub.listInstancesCallable()
         .futureCall(request);
 
-    return ApiFutures.transform(responseFuture, new ApiFunction<ListInstancesResponse, List<Instance>>() {
-      @Override
-      public List<Instance> apply(ListInstancesResponse proto) {
-        // NOTE: pagination is intentionally ignored. The server does not implement it.
-        Verify.verify(proto.getNextPageToken().isEmpty(),
-            "Server returned an unexpected paginated response");
+    return ApiFutures
+        .transform(responseFuture, new ApiFunction<ListInstancesResponse, List<Instance>>() {
+          @Override
+          public List<Instance> apply(ListInstancesResponse proto) {
+            // NOTE: pagination is intentionally ignored. The server does not implement it.
+            Verify.verify(proto.getNextPageToken().isEmpty(),
+                "Server returned an unexpected paginated response");
 
-        ImmutableList.Builder<Instance> instances = ImmutableList.builder();
+            ImmutableList.Builder<Instance> instances = ImmutableList.builder();
 
-        for (com.google.bigtable.admin.v2.Instance protoInstance : proto.getInstancesList()) {
-          instances.add(Instance.PROTO_TRANSFORMER.apply(protoInstance));
-        }
+            for (com.google.bigtable.admin.v2.Instance protoInstance : proto.getInstancesList()) {
+              instances.add(Instance.fromProto(protoInstance));
+            }
 
-        ImmutableList.Builder<String> failedZones = ImmutableList.builder();
-        for (String locationStr : proto.getFailedLocationsList()) {
-          failedZones.add(LocationName.parse(locationStr).getLocation());
-        }
+            ImmutableList.Builder<String> failedZones = ImmutableList.builder();
+            for (String locationStr : proto.getFailedLocationsList()) {
+              LocationName fullLocation = LocationName.parse(locationStr);
+              if (fullLocation == null) {
+                continue;
+              }
+              failedZones.add(fullLocation.getLocation());
+            }
 
+            if (!failedZones.build().isEmpty()) {
+              throw new PartialListInstancesException(failedZones.build(), instances.build());
+            }
 
-        if (!failedZones.build().isEmpty()) {
-          throw new PartialListInstancesException(failedZones.build(), instances.build());
-        }
-
-        return instances.build();
-      }
-    }, MoreExecutors.directExecutor());
+            return instances.build();
+          }
+        }, MoreExecutors.directExecutor());
   }
 
   /** Deletes the specified instance. */
+  @SuppressWarnings("WeakerAccess")
   public void deleteInstance(String instanceId) {
     awaitFuture(deleteInstanceAsync(instanceId));
   }
 
   /** Asynchronously deletes the specified instance. */
-  private ApiFuture<Void> deleteInstanceAsync(String instanceId) {
+  @SuppressWarnings("WeakerAccess")
+  public ApiFuture<Void> deleteInstanceAsync(String instanceId) {
     InstanceName instanceName = InstanceName.of(projectName.getProject(), instanceId);
 
     DeleteInstanceRequest request = DeleteInstanceRequest.newBuilder()
@@ -248,39 +280,32 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
     );
   }
 
-
-  private <T> T awaitFuture(ApiFuture<T> future) {
-    try {
-      return future.get();
-    } catch(Throwable t) {
-      // TODO(igorbernstein2): figure out a better wrapper exception.
-      throw new RuntimeException(t);
-    }
-  }
-
   /**
-   * Exception thrown when some zones are unavailable and listInstances is unable to return a full
-   * instance list. This exception can be inspected to get a partial list.
+   * Awaits the result of a future, taking care to propagate errors while maintaining the call site
+   * in a suppressed exception. This allows semantic errors to be caught across threads, while
+   * preserving the call site in the error. The caller's stacktrace will be made available as a
+   * suppressed exception.
    */
-  public static class PartialListInstancesException extends RuntimeException {
-    private final List<String> failedZones;
-    private final List<Instance> instances;
+  // TODO(igorbernstein2): try to move this into gax
+  private <T> T awaitFuture(ApiFuture<T> future) {
+    RuntimeException error;
 
-    PartialListInstancesException(List<String> failedZones, List<Instance> instances) {
-      super("Failed to list all instances, some zones where unavailable");
-
-      this.failedZones = failedZones;
-      this.instances = instances;
+    try {
+      return Futures.getUnchecked(future);
+    } catch (UncheckedExecutionException e) {
+      if (e.getCause() instanceof RuntimeException) {
+        error = (RuntimeException) e.getCause();
+      } else {
+        error = e;
+      }
+    } catch (RuntimeException e) {
+      error = e;
     }
 
-    /** A list of zones, whose unavailability caused this error. */
-    public List<String> getFailedZones() {
-      return failedZones;
-    }
+    // Add the caller's stack as a suppressed exception
+    error.addSuppressed(new RuntimeException("Encountered error while awaiting future"));
 
-    /** A partial list of instances that were found in the available zones. */
-    public List<Instance> getInstances() {
-      return instances;
-    }
+    throw error;
   }
+
 }
