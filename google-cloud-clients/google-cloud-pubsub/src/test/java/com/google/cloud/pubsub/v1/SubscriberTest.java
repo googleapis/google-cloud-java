@@ -114,6 +114,8 @@ public class SubscriberTest {
 
   @Test(expected = IllegalStateException.class)
   public void testFailedChannel_fatalError_subscriberFails() throws Exception {
+    System.err.println("testFailedChannel_fatalError_subscriberFails");
+
     Subscriber subscriber =
         startSubscriber(
             getTestSubscriberBuilder(testReceiver)
@@ -150,7 +152,8 @@ public class SubscriberTest {
     return Subscriber.newBuilder(TEST_SUBSCRIPTION, receiver)
         .setExecutorProvider(FixedExecutorProvider.create(fakeExecutor))
         .setSystemExecutorProvider(FixedExecutorProvider.create(fakeExecutor))
-        .setChannelProvider(FixedTransportChannelProvider.create(GrpcTransportChannel.create(testChannel)))
+        .setChannelProvider(
+            FixedTransportChannelProvider.create(GrpcTransportChannel.create(testChannel)))
         .setCredentialsProvider(NoCredentialsProvider.create())
         .setClock(fakeExecutor.getClock())
         .setParallelPullCount(1);
