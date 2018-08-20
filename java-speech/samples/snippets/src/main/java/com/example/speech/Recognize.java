@@ -146,6 +146,7 @@ public class Recognize {
     }
   }
 
+  // [START speech_transcribe_sync]
   /**
    * Performs speech recognition on raw PCM audio and prints the transcription.
    *
@@ -178,6 +179,7 @@ public class Recognize {
       }
     }
   }
+  // [END speech_transcribe_sync]
 
   /**
    * Performs sync recognize and prints word time offsets.
@@ -222,6 +224,7 @@ public class Recognize {
     }
   }
 
+  // [START speech_transcribe_sync_gcs]
   /**
    * Performs speech recognition on remote FLAC file and prints the transcription.
    *
@@ -251,7 +254,9 @@ public class Recognize {
       }
     }
   }
+  // [END speech_transcribe_sync_gcs]
 
+  // [START speech_transcribe_async]
   /**
    * Performs non-blocking speech recognition on raw PCM audio and prints the transcription. Note
    * that transcription is limited to 60 seconds audio.
@@ -294,7 +299,9 @@ public class Recognize {
       }
     }
   }
+  // [END speech_transcribe_async]
 
+  // [START speech_transcribe_async_time_offsets_gcs]
   /**
    * Performs non-blocking speech recognition on remote FLAC file and prints the transcription as
    * well as word time offsets.
@@ -342,7 +349,9 @@ public class Recognize {
       }
     }
   }
+  // [END speech_transcribe_async_time_offsets_gcs]
 
+  // [START speech_transcribe_async_gcs]
   /**
    * Performs non-blocking speech recognition on remote FLAC file and prints the transcription.
    *
@@ -379,7 +388,9 @@ public class Recognize {
       }
     }
   }
+  // [END speech_transcribe_async_gcs]
 
+  // [START speech_transcribe_streaming]
   /**
    * Performs streaming speech recognition on raw PCM audio data.
    *
@@ -464,8 +475,9 @@ public class Recognize {
       }
     }
   }
+  // [END speech_transcribe_streaming]
 
-  // [START speech_transcribe_model_selection]
+  // [START speech_transcribe_model_selection_beta]
   /**
    * Performs transcription of the given audio file synchronously with the selected model.
    *
@@ -499,10 +511,10 @@ public class Recognize {
       SpeechRecognitionAlternative alternative = result.getAlternativesList().get(0);
       System.out.printf("Transcript : %s\n", alternative.getTranscript());
     }
-    // [END speech_transcribe_model_selection]
+    // [END speech_transcribe_model_selection_beta]
   }
 
-  // [START speech_transcribe_model_selection_gcs]
+  // [START speech_transcribe_model_selection_gcs_beta]
   /**
    * Performs transcription of the remote audio file asynchronously with the selected model.
    *
@@ -543,7 +555,7 @@ public class Recognize {
       SpeechRecognitionAlternative alternative = result.getAlternativesList().get(0);
       System.out.printf("Transcript : %s\n", alternative.getTranscript());
     }
-    // [END speech_transcribe_model_selection_gcs]
+    // [END speech_transcribe_model_selection_gcs_beta]
   }
 
   // [START speech_sync_recognize_punctuation]
@@ -586,7 +598,7 @@ public class Recognize {
   }
   // [END speech_sync_recognize_punctuation]
 
-  // [START speech_async_recognize_gcs_punctuation]
+  // [START speech_transcribe_auto_punctuation_beta]
   /**
    * Performs transcription on remote FLAC file and prints the transcription.
    *
@@ -626,7 +638,7 @@ public class Recognize {
       System.out.printf("Transcript : %s\n", alternative.getTranscript());
     }
   }
-  // [END speech_async_recognize_gcs_punctuation]
+  // [END speech_transcribe_auto_punctuation_beta]
 
   // [START speech_stream_recognize_punctuation]
   /**
@@ -717,7 +729,7 @@ public class Recognize {
   }
   // [END speech_stream_recognize_punctuation]
 
-  // [START speech_streaming_mic_recognize]
+  // [START speech_transcribe_streaming_mic]
   /** Performs microphone streaming speech recognition with a duration of 1 minute. */
   public static void streamingMicRecognize() throws Exception {
 
@@ -806,9 +818,9 @@ public class Recognize {
     }
     responseObserver.onComplete();
   }
-  // [END speech_streaming_mic_recognize]
+  // [END speech_transcribe_streaming_mic]
 
-  // [START speech_transcribe_file_with_enhanced_model]
+  // [START speech_transcribe_enhanced_model_beta]
   /**
    * Transcribe the given audio file using an enhanced model.
    *
@@ -848,9 +860,9 @@ public class Recognize {
       }
     }
   }
-  // [END speech_transcribe_file_with_enhanced_model]
+  // [END speech_transcribe_enhanced_model_beta]
 
-  // [START speech_transcribe_file_with_metadata]
+  // [START speech_transcribe_recognition_metadata_beta]
   /**
    * Transcribe the given audio file and include recognition metadata in the request.
    *
@@ -900,9 +912,9 @@ public class Recognize {
       }
     }
   }
-  // [END speech_transcribe_file_with_metadata]
+  // [END speech_transcribe_recognition_metadata_beta]
 
-  // [START speech_transcribe_diarization]
+  // [START speech_transcribe_diarization_beta]
   /**
    * Transcribe the given audio file using speaker diarization.
    *
@@ -945,9 +957,9 @@ public class Recognize {
       }
     }
   }
-  // [END speech_transcribe_diarization]
+  // [END speech_transcribe_diarization_beta]
 
-  // [START speech_transcribe_diarization_gcs]
+  // [START speech_transcribe_diarization_gcs_beta]
   /**
    * Transcribe a remote audio file using speaker diarization.
    *
@@ -991,9 +1003,9 @@ public class Recognize {
     }
   }
 
-  // [END speech_transcribe_diarization_gcs]
+  // [END speech_transcribe_diarization_gcs_beta]
 
-  // [START speech_transcribe_multichannel]
+  // [START speech_transcribe_multichannel_beta]
 
   /**
    * Transcribe a local audio file with multi-channel recognition
@@ -1032,9 +1044,9 @@ public class Recognize {
       }
     }
   }
-  // [END speech_transcribe_multichannel]
+  // [END speech_transcribe_multichannel_beta]
 
-  // [START speech_transcribe_multichannel_gcs]
+  // [START speech_transcribe_multichannel_gcs_beta]
 
   /**
    * Transcribe a remote audio file with multi-channel recognition
@@ -1079,9 +1091,9 @@ public class Recognize {
       }
     }
   }
-  // [END speech_transcribe_multichannel_gcs]
+  // [END speech_transcribe_multichannel_gcs_beta]
 
-  // [START speech_transcribe_multilang]
+  // [START speech_transcribe_multilanguage_beta]
 
   /**
    * Transcribe a local audio file with multi-language recognition
@@ -1121,9 +1133,9 @@ public class Recognize {
       }
     }
   }
-  // [END speech_transcribe_multilang]
+  // [END speech_transcribe_multilanguage_beta]
 
-  // [START speech_transcribe_multilang_gcs]
+  // [START speech_transcribe_multilanguage_gcs_beta]
 
   /**
    * Transcribe a remote audio file with multi-language recognition
@@ -1169,9 +1181,9 @@ public class Recognize {
       }
     }
   }
-  // [END speech_transcribe_multilang_gcs]
+  // [END speech_transcribe_multilanguage_gcs_beta]
 
-  // [START speech_transcribe_word_level_confidence]
+  // [START speech_transcribe_word_level_confidence_beta]
 
   /**
    * Transcribe a local audio file with word level confidence
@@ -1208,9 +1220,9 @@ public class Recognize {
       }
     }
   }
-  // [END speech_transcribe_word_level_confidence]
+  // [END speech_transcribe_word_level_confidence_beta]
 
-  // [START speech_transcribe_word_level_confidence_gcs]
+  // [START speech_transcribe_word_level_confidence_gcs_beta]
 
   /**
    * Transcribe a remote audio file with word level confidence
@@ -1253,5 +1265,5 @@ public class Recognize {
           alternative.getWords(0).getWord(), alternative.getWords(0).getConfidence());
     }
   }
-  // [END speech_transcribe_word_level_confidence_gcs]
+  // [END speech_transcribe_word_level_confidence_gcs_beta]
 }
