@@ -99,6 +99,10 @@
             <relocation>
               <pattern>com</pattern>
               <shadedPattern>shaded.cloud_nio.com</shadedPattern>
+              <includes>
+                <include>com.google.**</include>
+                <include>com.fasterxml.**</include>
+              </includes>
               <excludes>
                 <exclude>com.google.cloud.**</exclude>
                 <exclude>com.google.auto.**</exclude>
@@ -107,10 +111,20 @@
             <relocation>
               <pattern>org</pattern>
               <shadedPattern>shaded.cloud_nio.org</shadedPattern>
+              <includes>
+                <include>org.joda.**</include>
+                <include>org.apache.**</include>
+                <include>org.threeten.**</include>
+                <include>org.codehaus.**</include>
+              </includes>
             </relocation>
             <relocation>
               <pattern>io</pattern>
               <shadedPattern>shaded.cloud_nio.io</shadedPattern>
+              <includes>
+                <include>io.opencensus.**</include>
+                <include>io.grpc.**</include>
+              </includes>
             </relocation>
             <relocation>
               <pattern>okio</pattern>
