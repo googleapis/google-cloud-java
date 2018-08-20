@@ -84,12 +84,7 @@ Besides adding client libraries, the plugins provide additional functionality, s
 
 These client libraries can be used on App Engine standard for Java 8 runtime and App Engine flexible (including the Compat runtime).  Most of the libraries do not work on the App Engine standard for Java 7 runtime. However, Datastore, Storage, and Bigquery should work.
 
-If you are running into problems with version conflicts, see [Version Management](#version-management).
-
-Version Management
-------------------
-
-The easiest way to solve version conflicts is to use google-cloud's BOM. In Maven, add the following to your POM:
+If you are running into problems with version conflicts, the easiest way to solve the conflicts is to use google-cloud's BOM. In Maven, add the following to your POM:
 
 [//]: # ({x-version-update-start:google-cloud-bom:released})
 ```xml
@@ -107,41 +102,7 @@ The easiest way to solve version conflicts is to use google-cloud's BOM. In Mave
 ```
 [//]: # ({x-version-update-end})
 
-This BOM is only available starting at version 0.32.0-alpha. If you are having problems with prior versions of
-google-cloud, use the following table as a reference to make sure that your versions are compatible. Definitions:
-
-* **alpha**: The version of any alpha package in google-cloud
-* **beta**: The version of any beta package in google-cloud
-* **GA**: The version of any GA package in google-cloud
-* **gax**: The version of com.google.api:gax
-* **gax-grpc**: The version of com.google.api:gax-grpc
-
-Something to be aware of is that a package can be promoted from alpha -> beta or beta -> GA between versions, which
-means that after a certain point for any given package, the alpha or beta version won't be valid any more.
-
-alpha         | beta         | GA         | gax        | gax-grpc
-------------- | ------------ | ---------- | ---------- | --------
-0.30.0-alpha  | 0.30.0-beta  | 1.12.0     | 1.15.0     | 1.15.0
-0.29.0-alpha  | 0.29.0-beta  | 1.11.0     | 1.15.0     | 1.15.0
-0.28.0-alpha  | 0.28.0-beta  | 1.10.0     | 1.14.0     | 1.14.0
-0.27.0-alpha  | 0.27.0-beta  | 1.9.0      | 1.13.0     | 0.30.0
-0.26.0-alpha  | 0.26.0-beta  | 1.8.0      | 1.9.0      | 0.26.0
-0.25.0-alpha  | 0.25.0-beta  | 1.7.0      | 1.8.1      | 0.25.1
-0.24.0-alpha  | 0.24.0-beta  | 1.6.0      | 1.8.1      | 0.25.1
-0.23.1-alpha  | 0.23.1-beta  | 1.5.1      | 1.8.1      | 0.25.1
-0.23.0-alpha  | 0.23.0-beta  | 1.5.0      | 1.5.0      | 0.22.0
-0.22.0-alpha  | 0.22.0-beta  | 1.4.0      | 1.5.0      | 0.22.0
-0.21.1-alpha  | 0.21.1-beta  | 1.3.1      | 1.5.0      | 0.22.0
-0.21.0-alpha  | 0.21.0-beta  | 1.3.0      | 1.5.0      | 0.22.0
-0.20.3-alpha  | 0.20.3-beta  | 1.2.3      | 1.4.2      | 0.21.2
-0.20.2-alpha  | 0.20.2-beta  | 1.2.2      | 1.4.2      | 0.21.2
-0.20.1-alpha  | 0.20.1-beta  | 1.2.1      | 1.4.1      | 0.21.1
-0.20.0-alpha  | 0.20.0-beta  | 1.2.0      | 1.3.1      | 0.20.0
-0.19.0-alpha  | 0.19.0-beta  | 1.1.0      | 1.3.0      | 0.19.0
-0.18.0-alpha  | 0.18.0-beta  | 1.0.2      | 1.1.0      | 0.17.0
-0.17.2-alpha  | 0.17.2-beta  | 1.0.1      | 1.0.0      | 0.16.0
-0.17.1-alpha  | 0.17.1-beta  | 1.0.0      | 1.0.0      | 0.16.0
-0.17.0-alpha  | 0.17.0-beta  | 1.0.0-rc4  | 1.0.0-rc1  | 0.15.0
+For more details about how to use BOM, see [Version Management](#version-management).
 
 Specifying a Project ID
 -----------------------
@@ -336,6 +297,63 @@ a higher priority.
 **Alpha**: Libraries defined at an Alpha quality level are still a work-in-progress and
 are more likely to get backwards-incompatible updates. Additionally, it's possible for Alpha
 libraries to get deprecated and deleted before ever being promoted to Beta or GA.
+
+Version Management
+------------------
+
+The easiest way to solve version conflicts is to use google-cloud's BOM. In Maven, add the following to your POM:
+
+[//]: # ({x-version-update-start:google-cloud-bom:released})
+```xml
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-bom</artifactId>
+        <version>0.57.0-alpha</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+```
+[//]: # ({x-version-update-end})
+
+This BOM is only available starting at version 0.32.0-alpha. If you are having problems with prior versions of
+google-cloud, use the following table as a reference to make sure that your versions are compatible. Definitions:
+
+* **alpha**: The version of any alpha package in google-cloud
+* **beta**: The version of any beta package in google-cloud
+* **GA**: The version of any GA package in google-cloud
+* **gax**: The version of com.google.api:gax
+* **gax-grpc**: The version of com.google.api:gax-grpc
+
+Something to be aware of is that a package can be promoted from alpha -> beta or beta -> GA between versions, which
+means that after a certain point for any given package, the alpha or beta version won't be valid any more.
+
+alpha         | beta         | GA         | gax        | gax-grpc
+------------- | ------------ | ---------- | ---------- | --------
+0.30.0-alpha  | 0.30.0-beta  | 1.12.0     | 1.15.0     | 1.15.0
+0.29.0-alpha  | 0.29.0-beta  | 1.11.0     | 1.15.0     | 1.15.0
+0.28.0-alpha  | 0.28.0-beta  | 1.10.0     | 1.14.0     | 1.14.0
+0.27.0-alpha  | 0.27.0-beta  | 1.9.0      | 1.13.0     | 0.30.0
+0.26.0-alpha  | 0.26.0-beta  | 1.8.0      | 1.9.0      | 0.26.0
+0.25.0-alpha  | 0.25.0-beta  | 1.7.0      | 1.8.1      | 0.25.1
+0.24.0-alpha  | 0.24.0-beta  | 1.6.0      | 1.8.1      | 0.25.1
+0.23.1-alpha  | 0.23.1-beta  | 1.5.1      | 1.8.1      | 0.25.1
+0.23.0-alpha  | 0.23.0-beta  | 1.5.0      | 1.5.0      | 0.22.0
+0.22.0-alpha  | 0.22.0-beta  | 1.4.0      | 1.5.0      | 0.22.0
+0.21.1-alpha  | 0.21.1-beta  | 1.3.1      | 1.5.0      | 0.22.0
+0.21.0-alpha  | 0.21.0-beta  | 1.3.0      | 1.5.0      | 0.22.0
+0.20.3-alpha  | 0.20.3-beta  | 1.2.3      | 1.4.2      | 0.21.2
+0.20.2-alpha  | 0.20.2-beta  | 1.2.2      | 1.4.2      | 0.21.2
+0.20.1-alpha  | 0.20.1-beta  | 1.2.1      | 1.4.1      | 0.21.1
+0.20.0-alpha  | 0.20.0-beta  | 1.2.0      | 1.3.1      | 0.20.0
+0.19.0-alpha  | 0.19.0-beta  | 1.1.0      | 1.3.0      | 0.19.0
+0.18.0-alpha  | 0.18.0-beta  | 1.0.2      | 1.1.0      | 0.17.0
+0.17.2-alpha  | 0.17.2-beta  | 1.0.1      | 1.0.0      | 0.16.0
+0.17.1-alpha  | 0.17.1-beta  | 1.0.0      | 1.0.0      | 0.16.0
+0.17.0-alpha  | 0.17.0-beta  | 1.0.0-rc4  | 1.0.0-rc1  | 0.15.0
 
 Contributing
 ------------
