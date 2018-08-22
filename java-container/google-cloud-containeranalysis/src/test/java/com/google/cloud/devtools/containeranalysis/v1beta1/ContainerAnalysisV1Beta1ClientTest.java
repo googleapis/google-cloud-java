@@ -26,9 +26,14 @@ import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.common.collect.Lists;
 import com.google.containeranalysis.v1beta1.GetScanConfigRequest;
+import com.google.containeranalysis.v1beta1.IamResourceName;
+import com.google.containeranalysis.v1beta1.IamResourceNames;
 import com.google.containeranalysis.v1beta1.ListScanConfigsRequest;
 import com.google.containeranalysis.v1beta1.ListScanConfigsResponse;
+import com.google.containeranalysis.v1beta1.NoteName;
+import com.google.containeranalysis.v1beta1.ProjectName;
 import com.google.containeranalysis.v1beta1.ScanConfig;
+import com.google.containeranalysis.v1beta1.ScanConfigName;
 import com.google.containeranalysis.v1beta1.UpdateScanConfigRequest;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
@@ -99,17 +104,17 @@ public class ContainerAnalysisV1Beta1ClientTest {
     Policy expectedResponse = Policy.newBuilder().setVersion(version).setEtag(etag).build();
     mockContainerAnalysisV1Beta1.addResponse(expectedResponse);
 
-    String formattedResource = ContainerAnalysisV1Beta1Client.formatNoteName("[PROJECT]", "[NOTE]");
+    IamResourceName resource = NoteName.of("[PROJECT]", "[NOTE]");
     Policy policy = Policy.newBuilder().build();
 
-    Policy actualResponse = client.setIamPolicy(formattedResource, policy);
+    Policy actualResponse = client.setIamPolicy(resource, policy);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<GeneratedMessageV3> actualRequests = mockContainerAnalysisV1Beta1.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     SetIamPolicyRequest actualRequest = (SetIamPolicyRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedResource, actualRequest.getResource());
+    Assert.assertEquals(resource, IamResourceNames.parse(actualRequest.getResource()));
     Assert.assertEquals(policy, actualRequest.getPolicy());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -124,11 +129,10 @@ public class ContainerAnalysisV1Beta1ClientTest {
     mockContainerAnalysisV1Beta1.addException(exception);
 
     try {
-      String formattedResource =
-          ContainerAnalysisV1Beta1Client.formatNoteName("[PROJECT]", "[NOTE]");
+      IamResourceName resource = NoteName.of("[PROJECT]", "[NOTE]");
       Policy policy = Policy.newBuilder().build();
 
-      client.setIamPolicy(formattedResource, policy);
+      client.setIamPolicy(resource, policy);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -143,16 +147,16 @@ public class ContainerAnalysisV1Beta1ClientTest {
     Policy expectedResponse = Policy.newBuilder().setVersion(version).setEtag(etag).build();
     mockContainerAnalysisV1Beta1.addResponse(expectedResponse);
 
-    String formattedResource = ContainerAnalysisV1Beta1Client.formatNoteName("[PROJECT]", "[NOTE]");
+    IamResourceName resource = NoteName.of("[PROJECT]", "[NOTE]");
 
-    Policy actualResponse = client.getIamPolicy(formattedResource);
+    Policy actualResponse = client.getIamPolicy(resource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<GeneratedMessageV3> actualRequests = mockContainerAnalysisV1Beta1.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetIamPolicyRequest actualRequest = (GetIamPolicyRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedResource, actualRequest.getResource());
+    Assert.assertEquals(resource, IamResourceNames.parse(actualRequest.getResource()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -166,10 +170,9 @@ public class ContainerAnalysisV1Beta1ClientTest {
     mockContainerAnalysisV1Beta1.addException(exception);
 
     try {
-      String formattedResource =
-          ContainerAnalysisV1Beta1Client.formatNoteName("[PROJECT]", "[NOTE]");
+      IamResourceName resource = NoteName.of("[PROJECT]", "[NOTE]");
 
-      client.getIamPolicy(formattedResource);
+      client.getIamPolicy(resource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -182,18 +185,17 @@ public class ContainerAnalysisV1Beta1ClientTest {
     TestIamPermissionsResponse expectedResponse = TestIamPermissionsResponse.newBuilder().build();
     mockContainerAnalysisV1Beta1.addResponse(expectedResponse);
 
-    String formattedResource = ContainerAnalysisV1Beta1Client.formatNoteName("[PROJECT]", "[NOTE]");
+    IamResourceName resource = NoteName.of("[PROJECT]", "[NOTE]");
     List<String> permissions = new ArrayList<>();
 
-    TestIamPermissionsResponse actualResponse =
-        client.testIamPermissions(formattedResource, permissions);
+    TestIamPermissionsResponse actualResponse = client.testIamPermissions(resource, permissions);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<GeneratedMessageV3> actualRequests = mockContainerAnalysisV1Beta1.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     TestIamPermissionsRequest actualRequest = (TestIamPermissionsRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedResource, actualRequest.getResource());
+    Assert.assertEquals(resource, IamResourceNames.parse(actualRequest.getResource()));
     Assert.assertEquals(permissions, actualRequest.getPermissionsList());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -208,11 +210,10 @@ public class ContainerAnalysisV1Beta1ClientTest {
     mockContainerAnalysisV1Beta1.addException(exception);
 
     try {
-      String formattedResource =
-          ContainerAnalysisV1Beta1Client.formatNoteName("[PROJECT]", "[NOTE]");
+      IamResourceName resource = NoteName.of("[PROJECT]", "[NOTE]");
       List<String> permissions = new ArrayList<>();
 
-      client.testIamPermissions(formattedResource, permissions);
+      client.testIamPermissions(resource, permissions);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -222,28 +223,27 @@ public class ContainerAnalysisV1Beta1ClientTest {
   @Test
   @SuppressWarnings("all")
   public void getScanConfigTest() {
-    String name2 = "name2-1052831874";
+    ScanConfigName name2 = ScanConfigName.of("[PROJECT]", "[SCAN_CONFIG]");
     String description = "description-1724546052";
     boolean enabled = false;
     ScanConfig expectedResponse =
         ScanConfig.newBuilder()
-            .setName(name2)
+            .setName(name2.toString())
             .setDescription(description)
             .setEnabled(enabled)
             .build();
     mockContainerAnalysisV1Beta1.addResponse(expectedResponse);
 
-    String formattedName =
-        ContainerAnalysisV1Beta1Client.formatScanConfigName("[PROJECT]", "[SCAN_CONFIG]");
+    ScanConfigName name = ScanConfigName.of("[PROJECT]", "[SCAN_CONFIG]");
 
-    ScanConfig actualResponse = client.getScanConfig(formattedName);
+    ScanConfig actualResponse = client.getScanConfig(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<GeneratedMessageV3> actualRequests = mockContainerAnalysisV1Beta1.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetScanConfigRequest actualRequest = (GetScanConfigRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedName, actualRequest.getName());
+    Assert.assertEquals(name, ScanConfigName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -257,10 +257,9 @@ public class ContainerAnalysisV1Beta1ClientTest {
     mockContainerAnalysisV1Beta1.addException(exception);
 
     try {
-      String formattedName =
-          ContainerAnalysisV1Beta1Client.formatScanConfigName("[PROJECT]", "[SCAN_CONFIG]");
+      ScanConfigName name = ScanConfigName.of("[PROJECT]", "[SCAN_CONFIG]");
 
-      client.getScanConfig(formattedName);
+      client.getScanConfig(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -280,11 +279,10 @@ public class ContainerAnalysisV1Beta1ClientTest {
             .build();
     mockContainerAnalysisV1Beta1.addResponse(expectedResponse);
 
-    String formattedParent = ContainerAnalysisV1Beta1Client.formatProjectName("[PROJECT]");
+    ProjectName parent = ProjectName.of("[PROJECT]");
     String filter = "filter-1274492040";
 
-    ListScanConfigsPagedResponse pagedListResponse =
-        client.listScanConfigs(formattedParent, filter);
+    ListScanConfigsPagedResponse pagedListResponse = client.listScanConfigs(parent, filter);
 
     List<ScanConfig> resources = Lists.newArrayList(pagedListResponse.iterateAll());
     Assert.assertEquals(1, resources.size());
@@ -294,7 +292,7 @@ public class ContainerAnalysisV1Beta1ClientTest {
     Assert.assertEquals(1, actualRequests.size());
     ListScanConfigsRequest actualRequest = (ListScanConfigsRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedParent, actualRequest.getParent());
+    Assert.assertEquals(parent, ProjectName.parse(actualRequest.getParent()));
     Assert.assertEquals(filter, actualRequest.getFilter());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -309,10 +307,10 @@ public class ContainerAnalysisV1Beta1ClientTest {
     mockContainerAnalysisV1Beta1.addException(exception);
 
     try {
-      String formattedParent = ContainerAnalysisV1Beta1Client.formatProjectName("[PROJECT]");
+      ProjectName parent = ProjectName.of("[PROJECT]");
       String filter = "filter-1274492040";
 
-      client.listScanConfigs(formattedParent, filter);
+      client.listScanConfigs(parent, filter);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -322,29 +320,28 @@ public class ContainerAnalysisV1Beta1ClientTest {
   @Test
   @SuppressWarnings("all")
   public void updateScanConfigTest() {
-    String name2 = "name2-1052831874";
+    ScanConfigName name2 = ScanConfigName.of("[PROJECT]", "[SCAN_CONFIG]");
     String description = "description-1724546052";
     boolean enabled = false;
     ScanConfig expectedResponse =
         ScanConfig.newBuilder()
-            .setName(name2)
+            .setName(name2.toString())
             .setDescription(description)
             .setEnabled(enabled)
             .build();
     mockContainerAnalysisV1Beta1.addResponse(expectedResponse);
 
-    String formattedName =
-        ContainerAnalysisV1Beta1Client.formatScanConfigName("[PROJECT]", "[SCAN_CONFIG]");
+    ScanConfigName name = ScanConfigName.of("[PROJECT]", "[SCAN_CONFIG]");
     ScanConfig scanConfig = ScanConfig.newBuilder().build();
 
-    ScanConfig actualResponse = client.updateScanConfig(formattedName, scanConfig);
+    ScanConfig actualResponse = client.updateScanConfig(name, scanConfig);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<GeneratedMessageV3> actualRequests = mockContainerAnalysisV1Beta1.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     UpdateScanConfigRequest actualRequest = (UpdateScanConfigRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedName, actualRequest.getName());
+    Assert.assertEquals(name, ScanConfigName.parse(actualRequest.getName()));
     Assert.assertEquals(scanConfig, actualRequest.getScanConfig());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -359,11 +356,10 @@ public class ContainerAnalysisV1Beta1ClientTest {
     mockContainerAnalysisV1Beta1.addException(exception);
 
     try {
-      String formattedName =
-          ContainerAnalysisV1Beta1Client.formatScanConfigName("[PROJECT]", "[SCAN_CONFIG]");
+      ScanConfigName name = ScanConfigName.of("[PROJECT]", "[SCAN_CONFIG]");
       ScanConfig scanConfig = ScanConfig.newBuilder().build();
 
-      client.updateScanConfig(formattedName, scanConfig);
+      client.updateScanConfig(name, scanConfig);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
