@@ -1,5 +1,6 @@
 com.google.bigtable.admin.v2
 com.google.bigtable.v2
+com.google.cloud.asset.v1beta1
 com.google.cloud.automl.v1beta1
 com.google.cloud.bigquery.datatransfer.v1
 com.google.cloud.dataproc.v1
