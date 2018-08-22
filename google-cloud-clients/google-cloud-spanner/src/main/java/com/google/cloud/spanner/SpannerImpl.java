@@ -81,7 +81,6 @@ import io.opencensus.trace.AttributeValue;
 import io.opencensus.trace.Span;
 import io.opencensus.trace.Tracer;
 import io.opencensus.trace.Tracing;
-
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.AbstractList;
@@ -1210,6 +1209,13 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
   @VisibleForTesting
   static class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
 
+    private static final ThreadLocal<Boolean> inTransaction = new ThreadLocal<Boolean>() {
+      @Override
+      protected Boolean initialValue() {
+        return false;
+      }
+    };
+
     /** Allow for testing of backoff logic */
     static class Sleeper {
       void backoffSleep(Context context, long backoffMillis) {
@@ -1238,12 +1244,18 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     @Nullable
     @Override
     public <T> T run(TransactionCallable<T> callable) {
+      if (inTransaction.get() == Boolean.TRUE) {
+        throw newSpannerException(ErrorCode.INTERNAL, "Nested transactions are not supported");
+      }
+
       try (Scope s = tracer.withSpan(span)) {
+        inTransaction.set(Boolean.TRUE);
         return runInternal(callable);
       } catch (RuntimeException e) {
         TraceUtil.endSpanWithFailure(span, e);
         throw e;
       } finally {
+        inTransaction.set(Boolean.FALSE);
         span.end();
       }
     }

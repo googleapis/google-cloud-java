@@ -349,4 +349,37 @@ public class ITTransactionTest {
                 .getLong(0))
         .isEqualTo(2);
   }
+
+  private void doNestedTransaction() {
+    client
+        .readWriteTransaction()
+        .run(
+            new TransactionCallable<Void>() {
+              @Override
+              public Void run(TransactionContext transaction) throws SpannerException {
+                client
+                    .readWriteTransaction()
+                    .run(
+                        new TransactionCallable<Void>() {
+                          @Override
+                          public Void run(TransactionContext transaction) throws Exception {
+                            return null;
+                          }
+                        });
+
+                return null;
+              }
+            });
+  }
+
+  @Test
+  public void nestedTransactionShouldThrowException() {
+    try {
+      doNestedTransaction();
+      fail("Expected exception");
+    } catch (SpannerException e) {
+      assertThat(e.getErrorCode()).isEqualTo(ErrorCode.INTERNAL);
+      assertThat(e.getMessage()).contains("not supported");
+    }
+  }
 }

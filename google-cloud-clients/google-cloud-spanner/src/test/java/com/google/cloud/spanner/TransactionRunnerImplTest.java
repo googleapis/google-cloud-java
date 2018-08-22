@@ -32,7 +32,6 @@ import io.grpc.Context;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.util.concurrent.atomic.AtomicInteger;
-
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -142,6 +141,34 @@ public class TransactionRunnerImplTest {
       // expected.
     }
     verify(txn).rollback();
+  }
+
+  private void runNestedTransaction() {
+    transactionRunner.run(
+        new TransactionCallable<Void>() {
+          @Override
+          public Void run(TransactionContext transaction) throws SpannerException {
+            transactionRunner.run(
+                new TransactionCallable<Void>() {
+                  @Override
+                  public Void run(TransactionContext transaction) throws Exception {
+                    return null;
+                  }
+                });
+            return null;
+          }
+        });
+  }
+
+  @Test
+  public void nestedTransactionShouldThrowException() {
+    try {
+      runNestedTransaction();
+      fail("Expected exception");
+    } catch (SpannerException e) {
+      assertThat(e.getErrorCode()).isEqualTo(ErrorCode.INTERNAL);
+      assertThat(e.getMessage()).contains("not supported");
+    }
   }
 
   private void runTransaction(final Exception exception) {
