@@ -81,7 +81,6 @@ import io.opencensus.trace.AttributeValue;
 import io.opencensus.trace.Span;
 import io.opencensus.trace.Tracer;
 import io.opencensus.trace.Tracing;
-
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.AbstractList;
@@ -128,6 +127,19 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
   private static final String COMMIT = "CloudSpannerOperation.Commit";
   private static final String QUERY = "CloudSpannerOperation.ExecuteStreamingQuery";
   private static final String READ = "CloudSpannerOperation.ExecuteStreamingRead";
+
+  private static final ThreadLocal<Boolean> hasPendingTransaction = new ThreadLocal<Boolean>() {
+    @Override
+    protected Boolean initialValue() {
+      return false;
+    }
+  };
+
+  private static void throwIfTransactionsPending() {
+    if (hasPendingTransaction.get() == Boolean.TRUE) {
+        throw newSpannerException(ErrorCode.INTERNAL, "Nested transactions are not supported");
+    }
+  }
 
   static {
     TraceUtil.exportSpans(CREATE_SESSION, DELETE_SESSION, BEGIN_TRANSACTION, COMMIT, QUERY, READ);
@@ -905,6 +917,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     }
     
     <T extends SessionTransaction> T setActive(@Nullable T ctx) {
+      throwIfTransactionsPending();
+
       if (activeTransaction != null) {
         activeTransaction.invalidate();
       }
@@ -1239,11 +1253,13 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     @Override
     public <T> T run(TransactionCallable<T> callable) {
       try (Scope s = tracer.withSpan(span)) {
+        hasPendingTransaction.set(Boolean.TRUE);
         return runInternal(callable);
       } catch (RuntimeException e) {
         TraceUtil.endSpanWithFailure(span, e);
         throw e;
       } finally {
+        hasPendingTransaction.set(Boolean.FALSE);
         span.end();
       }
     }
@@ -1660,6 +1676,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     }
 
     void initTransaction() {
+      throwIfTransactionsPending();
+
       // Since we only support synchronous calls, just block on "txnLock" while the RPC is in
       // flight.  Note that we use the strategy of sending an explicit BeginTransaction() RPC,
       // rather than using the first read in the transaction to begin it implicitly.  The chosen
