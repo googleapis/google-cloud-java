@@ -1,0 +1,31 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>grpc-google-cloud-asset-v1beta1</artifactId>
+  <version>0.23.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-asset-v1beta1:current} -->
+  <name>grpc-google-cloud-asset-v1beta1</name>
+  <description>GRPC library for grpc-google-cloud-asset-v1beta1</description>
+  <parent>
+    <groupId>com.google.api.grpc</groupId>
+    <artifactId>google-api-grpc</artifactId>
+    <version>0.23.1-SNAPSHOT</version><!-- {x-version-update:google-api-grpc:current} -->
+  </parent>
+  <dependencies>
+    <dependency>
+      <groupId>io.grpc</groupId>
+      <artifactId>grpc-stub</artifactId>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.grpc</groupId>
+      <artifactId>grpc-protobuf</artifactId>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>proto-google-cloud-asset-v1beta1</artifactId>
+      <scope>compile</scope>
+    </dependency>
+  </dependencies>
+</project>

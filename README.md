@@ -26,6 +26,7 @@ This library supports the following Google Cloud Platform services with clients 
 This library supports the following Google Cloud Platform services with clients at a [Beta](#versioning) quality level:
 
 -  [BigQuery Data Transfer](google-cloud-clients/google-cloud-bigquerydatatransfer) (Beta)
+-  [Cloud Asset](google-cloud-clients/google-cloud-asset) (Beta)
 -  [Cloud AutoML](google-cloud-clients/google-cloud-automl) (Beta)
 -  [Cloud Container Analysis](google-cloud-clients/google-cloud-containeranalysis) (Beta)
 -  [Cloud Data Loss Prevention](google-cloud-clients/google-cloud-dlp) (Beta)

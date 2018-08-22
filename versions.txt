@@ -8,6 +8,7 @@
 google-api-grpc:0.23.0:0.23.1-SNAPSHOT
 # children
 #grpc-google-cloud-datastore-v1
+grpc-google-cloud-asset-v1beta1:0.23.0:0.23.1-SNAPSHOT
 grpc-google-cloud-automl-v1beta1:0.23.0:0.23.1-SNAPSHOT
 grpc-google-cloud-bigquerydatatransfer-v1:0.23.0:0.23.1-SNAPSHOT
 grpc-google-cloud-bigtable-admin-v2:0.23.0:0.23.1-SNAPSHOT
@@ -51,6 +52,7 @@ grpc-google-cloud-vision-v1p2beta1:1.22.0:1.22.1-SNAPSHOT
 grpc-google-cloud-vision-v1p3beta1:0.23.0:0.23.1-SNAPSHOT
 grpc-google-cloud-websecurityscanner-v1alpha:0.23.0:0.23.1-SNAPSHOT
 
+proto-google-cloud-asset-v1beta1:0.23.0:0.23.1-SNAPSHOT
 proto-google-cloud-automl-v1beta1:0.23.0:0.23.1-SNAPSHOT
 proto-google-cloud-bigquerydatatransfer-v1:0.23.0:0.23.1-SNAPSHOT
 proto-google-cloud-bigtable-admin-v2:0.23.0:0.23.1-SNAPSHOT

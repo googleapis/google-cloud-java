@@ -222,6 +222,21 @@
       <!-- API-specific dependencies -->
       <dependency>
         <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-asset</artifactId>
+        <version>0.58.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-asset:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-asset-v1beta1</artifactId>
+        <version>0.23.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-asset-v1beta1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-asset-v1beta1</artifactId>
+        <version>0.23.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-asset-v1beta1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-automl</artifactId>
         <version>0.58.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-automl:current} -->
       </dependency>
