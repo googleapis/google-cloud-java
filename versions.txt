@@ -108,6 +108,7 @@ google-cloud-appengineflexcustom:0.58.0-alpha:0.58.1-alpha-SNAPSHOT
 google-cloud-appengineflexjava:0.58.0-alpha:0.58.1-alpha-SNAPSHOT
 google-cloud-appenginejava8:0.58.0-alpha:0.58.1-alpha-SNAPSHOT
 google-cloud:0.58.0-alpha:0.58.1-alpha-SNAPSHOT
+google-cloud-asset:0.58.0-beta:0.58.1-beta-SNAPSHOT
 google-cloud-automl:0.58.0-beta:0.58.1-beta-SNAPSHOT
 google-cloud-bigquery:1.40.0:1.40.1-SNAPSHOT
 google-cloud-bigquerydatatransfer:0.58.0-beta:0.58.1-beta-SNAPSHOT
