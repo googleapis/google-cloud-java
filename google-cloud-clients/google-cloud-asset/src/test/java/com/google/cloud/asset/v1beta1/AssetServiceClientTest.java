@@ -79,9 +79,9 @@ public class AssetServiceClientTest {
         BatchGetAssetsHistoryResponse.newBuilder().build();
     mockAssetService.addResponse(expectedResponse);
 
-    String formattedParent = AssetServiceClient.formatProjectName("[PROJECT]");
+    ProjectName parent = ProjectName.of("[PROJECT]");
 
-    BatchGetAssetsHistoryResponse actualResponse = client.batchGetAssetsHistory(formattedParent);
+    BatchGetAssetsHistoryResponse actualResponse = client.batchGetAssetsHistory(parent);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<GeneratedMessageV3> actualRequests = mockAssetService.getRequests();
@@ -89,7 +89,7 @@ public class AssetServiceClientTest {
     BatchGetAssetsHistoryRequest actualRequest =
         (BatchGetAssetsHistoryRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedParent, actualRequest.getParent());
+    Assert.assertEquals(parent, ProjectName.parse(actualRequest.getParent()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -103,9 +103,9 @@ public class AssetServiceClientTest {
     mockAssetService.addException(exception);
 
     try {
-      String formattedParent = AssetServiceClient.formatProjectName("[PROJECT]");
+      ProjectName parent = ProjectName.of("[PROJECT]");
 
-      client.batchGetAssetsHistory(formattedParent);
+      client.batchGetAssetsHistory(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

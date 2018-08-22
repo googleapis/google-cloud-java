@@ -20,7 +20,6 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.asset.v1beta1.stub.AssetServiceStub;
 import com.google.cloud.asset.v1beta1.stub.AssetServiceStubSettings;
 import com.google.longrunning.Operation;
@@ -39,8 +38,8 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
- *   String formattedParent = AssetServiceClient.formatProjectName("[PROJECT]");
- *   BatchGetAssetsHistoryResponse response = assetServiceClient.batchGetAssetsHistory(formattedParent);
+ *   ProjectName parent = ProjectName.of("[PROJECT]");
+ *   BatchGetAssetsHistoryResponse response = assetServiceClient.batchGetAssetsHistory(parent);
  * }
  * </code>
  * </pre>
@@ -101,19 +100,6 @@ public class AssetServiceClient implements BackgroundResource {
   private final AssetServiceSettings settings;
   private final AssetServiceStub stub;
   private final OperationsClient operationsClient;
-
-  private static final PathTemplate PROJECT_PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}");
-
-  /** Formats a string containing the fully-qualified path to represent a project resource. */
-  public static final String formatProjectName(String project) {
-    return PROJECT_PATH_TEMPLATE.instantiate("project", project);
-  }
-
-  /** Parses the project from the given fully-qualified path which represents a project resource. */
-  public static final String parseProjectFromProjectName(String projectName) {
-    return PROJECT_PATH_TEMPLATE.parse(projectName).get("project");
-  }
 
   /** Constructs an instance of AssetServiceClient with default settings. */
   public static final AssetServiceClient create() throws IOException {
@@ -185,11 +171,11 @@ public class AssetServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
-   *   String formattedParent = AssetServiceClient.formatProjectName("[PROJECT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   List&lt;ContentType&gt; contentTypes = new ArrayList&lt;&gt;();
    *   OutputConfig outputConfig = OutputConfig.newBuilder().build();
    *   ExportAssetsRequest request = ExportAssetsRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .addAllContentTypes(contentTypes)
    *     .setOutputConfig(outputConfig)
    *     .build();
@@ -218,11 +204,11 @@ public class AssetServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
-   *   String formattedParent = AssetServiceClient.formatProjectName("[PROJECT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   List&lt;ContentType&gt; contentTypes = new ArrayList&lt;&gt;();
    *   OutputConfig outputConfig = OutputConfig.newBuilder().build();
    *   ExportAssetsRequest request = ExportAssetsRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .addAllContentTypes(contentTypes)
    *     .setOutputConfig(outputConfig)
    *     .build();
@@ -249,11 +235,11 @@ public class AssetServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
-   *   String formattedParent = AssetServiceClient.formatProjectName("[PROJECT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   List&lt;ContentType&gt; contentTypes = new ArrayList&lt;&gt;();
    *   OutputConfig outputConfig = OutputConfig.newBuilder().build();
    *   ExportAssetsRequest request = ExportAssetsRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .addAllContentTypes(contentTypes)
    *     .setOutputConfig(outputConfig)
    *     .build();
@@ -278,8 +264,37 @@ public class AssetServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
-   *   String formattedParent = AssetServiceClient.formatProjectName("[PROJECT]");
-   *   BatchGetAssetsHistoryResponse response = assetServiceClient.batchGetAssetsHistory(formattedParent);
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   BatchGetAssetsHistoryResponse response = assetServiceClient.batchGetAssetsHistory(parent);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The relative name of the root asset. It can only be an organization ID
+   *     (e.g. "organizations/123") or a project ID (e.g. "projects/12345").
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchGetAssetsHistoryResponse batchGetAssetsHistory(ProjectName parent) {
+
+    BatchGetAssetsHistoryRequest request =
+        BatchGetAssetsHistoryRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return batchGetAssetsHistory(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Batch gets assets update history that overlaps a time window. For RESOURCE content, this API
+   * outputs history with asset in both non-delete or deleted status. For IAM_POLICY content, this
+   * API only outputs history when asset and its attached IAM POLICY both exist. So there may be
+   * gaps in the output history.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   BatchGetAssetsHistoryResponse response = assetServiceClient.batchGetAssetsHistory(parent.toString());
    * }
    * </code></pre>
    *
@@ -288,7 +303,7 @@ public class AssetServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BatchGetAssetsHistoryResponse batchGetAssetsHistory(String parent) {
-    PROJECT_PATH_TEMPLATE.validate(parent, "batchGetAssetsHistory");
+
     BatchGetAssetsHistoryRequest request =
         BatchGetAssetsHistoryRequest.newBuilder().setParent(parent).build();
     return batchGetAssetsHistory(request);
@@ -305,12 +320,12 @@ public class AssetServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
-   *   String formattedParent = AssetServiceClient.formatProjectName("[PROJECT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   List&lt;String&gt; assetNames = new ArrayList&lt;&gt;();
    *   ContentType contentType = ContentType.CONTENT_TYPE_UNSPECIFIED;
    *   TimeWindow readTimeWindow = TimeWindow.newBuilder().build();
    *   BatchGetAssetsHistoryRequest request = BatchGetAssetsHistoryRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .addAllAssetNames(assetNames)
    *     .setContentType(contentType)
    *     .setReadTimeWindow(readTimeWindow)
@@ -338,12 +353,12 @@ public class AssetServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
-   *   String formattedParent = AssetServiceClient.formatProjectName("[PROJECT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   List&lt;String&gt; assetNames = new ArrayList&lt;&gt;();
    *   ContentType contentType = ContentType.CONTENT_TYPE_UNSPECIFIED;
    *   TimeWindow readTimeWindow = TimeWindow.newBuilder().build();
    *   BatchGetAssetsHistoryRequest request = BatchGetAssetsHistoryRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .addAllAssetNames(assetNames)
    *     .setContentType(contentType)
    *     .setReadTimeWindow(readTimeWindow)

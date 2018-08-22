@@ -28,8 +28,8 @@
  * <pre>
  * <code>
  * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
- *   String formattedParent = AssetServiceClient.formatProjectName("[PROJECT]");
- *   BatchGetAssetsHistoryResponse response = assetServiceClient.batchGetAssetsHistory(formattedParent);
+ *   ProjectName parent = ProjectName.of("[PROJECT]");
+ *   BatchGetAssetsHistoryResponse response = assetServiceClient.batchGetAssetsHistory(parent);
  * }
  * </code>
  * </pre>
