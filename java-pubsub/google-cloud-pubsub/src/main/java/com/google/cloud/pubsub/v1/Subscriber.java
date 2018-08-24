@@ -583,8 +583,7 @@ public class Subscriber extends AbstractApiService {
     }
 
     /**
-     * Sets the number of pullers used to pull messages from the subscription. Defaults to the
-     * number of available processors.
+     * Sets the number of pullers used to pull messages from the subscription. Defaults to one.
      */
     public Builder setParallelPullCount(int parallelPullCount) {
       this.parallelPullCount = parallelPullCount;
