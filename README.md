@@ -301,7 +301,7 @@ libraries to get deprecated and deleted before ever being promoted to Beta or GA
 Old Version Combinations
 ------------------
 
-If you are having problems with google-cloud prior to version 0.32.0-alpha, use the following table as a reference to make sure that your versions are compatible. Definitions:
+If you are having compatbility problems with google-cloud prior to version 0.32.0-alpha, use the following table as a reference to make sure that your versions are compatible. Definitions:
 
 * **alpha**: The version of any alpha package in google-cloud
 * **beta**: The version of any beta package in google-cloud
