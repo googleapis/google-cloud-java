@@ -26,7 +26,9 @@ This library supports the following Google Cloud Platform services with clients 
 This library supports the following Google Cloud Platform services with clients at a [Beta](#versioning) quality level:
 
 -  [BigQuery Data Transfer](google-cloud-clients/google-cloud-bigquerydatatransfer) (Beta)
+-  [Cloud Asset](google-cloud-clients/google-cloud-asset) (Beta)
 -  [Cloud AutoML](google-cloud-clients/google-cloud-automl) (Beta)
+-  [Cloud Container Analysis](google-cloud-clients/google-cloud-containeranalysis) (Beta)
 -  [Cloud Data Loss Prevention](google-cloud-clients/google-cloud-dlp) (Beta)
 -  [Cloud Firestore](google-cloud-clients/google-cloud-firestore) (Beta)
 -  [Cloud IoT Core](google-cloud-clients/google-cloud-iot) (Beta)
@@ -63,16 +65,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-storage</artifactId>
-  <version>1.39.0</version>
+  <version>1.41.0</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-storage:1.39.0'
+compile 'com.google.cloud:google-cloud-storage:1.41.0'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-storage" % "1.39.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-storage" % "1.41.0"
 ```
 [//]: # ({x-version-update-end})
 

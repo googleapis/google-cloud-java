@@ -85,12 +85,26 @@ public interface BigQueryOptionsOrBuilder extends
    * <pre>
    * Max number of rows to scan. If the table has more rows than this value, the
    * rest of the rows are omitted. If not set, or if set to 0, all rows will be
-   * scanned. Cannot be used in conjunction with TimespanConfig.
+   * scanned. Only one of rows_limit and rows_limit_percent can be specified.
+   * Cannot be used in conjunction with TimespanConfig.
    * </pre>
    *
    * <code>int64 rows_limit = 3;</code>
    */
   long getRowsLimit();
+
+  /**
+   * <pre>
+   * Max percentage of rows to scan. The rest are omitted. The number of rows
+   * scanned is rounded down. Must be between 0 and 100, inclusively. Both 0 and
+   * 100 means no limit. Defaults to 0. Only one of rows_limit and
+   * rows_limit_percent can be specified. Cannot be used in conjunction with
+   * TimespanConfig.
+   * </pre>
+   *
+   * <code>int32 rows_limit_percent = 6;</code>
+   */
+  int getRowsLimitPercent();
 
   /**
    * <code>.google.privacy.dlp.v2.BigQueryOptions.SampleMethod sample_method = 4;</code>

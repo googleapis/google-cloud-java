@@ -131,6 +131,11 @@ public final class SetOptions {
         public boolean allowDelete(FieldPath fieldPath) {
           return fieldMask.contains(fieldPath);
         }
+
+        @Override
+        public boolean allowTransform() {
+          return true;
+        }
       };
     }
   }

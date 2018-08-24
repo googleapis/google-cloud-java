@@ -15,6 +15,10 @@ public interface InspectConfigOrBuilder extends
    * When no InfoTypes or CustomInfoTypes are specified in a request, the
    * system may automatically choose what detectors to run. By default this may
    * be all types, but may change over time as detectors are updated.
+   * The special InfoType name "ALL_BASIC" can be used to trigger all detectors,
+   * but may change over time as new InfoTypes are added. If you need precise
+   * control and predictability as to what detectors are run you should specify
+   * specific InfoTypes listed in the reference.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
@@ -29,6 +33,10 @@ public interface InspectConfigOrBuilder extends
    * When no InfoTypes or CustomInfoTypes are specified in a request, the
    * system may automatically choose what detectors to run. By default this may
    * be all types, but may change over time as detectors are updated.
+   * The special InfoType name "ALL_BASIC" can be used to trigger all detectors,
+   * but may change over time as new InfoTypes are added. If you need precise
+   * control and predictability as to what detectors are run you should specify
+   * specific InfoTypes listed in the reference.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
@@ -42,6 +50,10 @@ public interface InspectConfigOrBuilder extends
    * When no InfoTypes or CustomInfoTypes are specified in a request, the
    * system may automatically choose what detectors to run. By default this may
    * be all types, but may change over time as detectors are updated.
+   * The special InfoType name "ALL_BASIC" can be used to trigger all detectors,
+   * but may change over time as new InfoTypes are added. If you need precise
+   * control and predictability as to what detectors are run you should specify
+   * specific InfoTypes listed in the reference.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
@@ -55,6 +67,10 @@ public interface InspectConfigOrBuilder extends
    * When no InfoTypes or CustomInfoTypes are specified in a request, the
    * system may automatically choose what detectors to run. By default this may
    * be all types, but may change over time as detectors are updated.
+   * The special InfoType name "ALL_BASIC" can be used to trigger all detectors,
+   * but may change over time as new InfoTypes are added. If you need precise
+   * control and predictability as to what detectors are run you should specify
+   * specific InfoTypes listed in the reference.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
@@ -69,6 +85,10 @@ public interface InspectConfigOrBuilder extends
    * When no InfoTypes or CustomInfoTypes are specified in a request, the
    * system may automatically choose what detectors to run. By default this may
    * be all types, but may change over time as detectors are updated.
+   * The special InfoType name "ALL_BASIC" can be used to trigger all detectors,
+   * but may change over time as new InfoTypes are added. If you need precise
+   * control and predictability as to what detectors are run you should specify
+   * specific InfoTypes listed in the reference.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
