@@ -36,10 +36,9 @@ import net.sourceforge.argparse4j.inf.Subparsers;
 /**
  * This application demonstrates how to perform basic operations on Products.
  *
- * For more information, see the tutorial page at
+ * <p>For more information, see the tutorial page at
  * https://cloud.google.com/vision/product-search/docs/
  */
-
 public class ProductManagement {
 
   // [START vision_product_search_create_product]
@@ -51,8 +50,6 @@ public class ProductManagement {
    * @param productId - Id of the product.
    * @param productDisplayName - Display name of the product.
    * @param productCategory - Category of the product.
-   * @param productDescription - Description of the product.
-   * @param productLabels - Labels of the product.
    * @throws IOException - on I/O errors.
    */
   public static void createProduct(
@@ -60,9 +57,7 @@ public class ProductManagement {
       String computeRegion,
       String productId,
       String productDisplayName,
-      String productCategory,
-      String productDescription,
-      String productLabels)
+      String productCategory)
       throws IOException {
     ProductSearchClient client = ProductSearchClient.create();
 
@@ -76,12 +71,6 @@ public class ProductManagement {
             .setName(productId)
             .setDisplayName(productDisplayName)
             .setProductCategory(productCategory)
-            .setDescription(productDescription)
-            .addProductLabels(
-                KeyValue.newBuilder()
-                    .setKey(productLabels.split(",")[0].split("=")[0])
-                    .setValue(productLabels.split(",")[0].split("=")[1])
-                    .build())
             .build();
     Product product = client.createProduct(projectLocation.toString(), myProduct, productId);
 
@@ -110,8 +99,8 @@ public class ProductManagement {
       System.out.println(String.format("\nProduct name: %s", product.getName()));
       System.out.println(
           String.format(
-              "Product id: %s",
-              product.getName().substring(product.getName().lastIndexOf('/') + 1)));
+                "Product id: %s",
+                    product.getName().substring(product.getName().lastIndexOf('/') + 1)));
       System.out.println(String.format("Product display name: %s", product.getDisplayName()));
       System.out.println(String.format("Product category: %s", product.getProductCategory()));
       System.out.println("Product labels:");
@@ -192,9 +181,10 @@ public class ProductManagement {
 
     // Display the product information
     System.out.println(String.format("Product name: %s", updatedProduct.getName()));
-    System.out.println(
-        String.format(
-            "Updated product labels: %s", updatedProduct.getProductLabelsList().toString()));
+    System.out.println(String.format("Updated product labels: "));
+    for (Product.KeyValue element : updatedProduct.getProductLabelsList()) {
+      System.out.println(String.format("%s: %s", element.getKey(), element.getValue()));
+    }
   }
   // [END vision_product_search_update_product_labels]
 
@@ -261,9 +251,7 @@ public class ProductManagement {
             computeRegion,
             ns.getString("productId"),
             ns.getString("productDisplayName"),
-            ns.getString("productCategory"),
-            ns.getString("productDescription"),
-            ns.getString("productLabels"));
+            ns.getString("productCategory"));
       }
       if (ns.get("command").equals("list_products")) {
         listProducts(projectId, computeRegion);

@@ -53,7 +53,7 @@ public class ProductInProductSetManagement {
    * @param productSetId - Id of the product set.
    * @throws IOException - on I/O errors.
    */
-  public static void addProductToSet(
+  public static void addProductToProductSet(
       String projectId, String computeRegion, String productId, String productSetId)
       throws IOException {
     ProductSearchClient client = ProductSearchClient.create();
@@ -162,7 +162,7 @@ public class ProductInProductSetManagement {
     try {
       ns = parser.parseArgs(args);
       if (ns.get("command").equals("add_product_to_product_set")) {
-        addProductToSet(
+        addProductToProductSet(
             projectId, computeRegion, ns.getString("productId"), ns.getString("productSetId"));
       }
       if (ns.get("command").equals("list_products_in_product_set")) {

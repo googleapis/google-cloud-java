@@ -73,6 +73,7 @@ public class ProductSetManagement {
 
     // Display the product set information
     System.out.println(String.format("Product set name: %s", productSet.getName()));
+
   }
   // [END vision_product_search_create_product_set]
 
@@ -86,10 +87,8 @@ public class ProductSetManagement {
    */
   public static void listProductSets(String projectId, String computeRegion) throws IOException {
     ProductSearchClient client = ProductSearchClient.create();
-
     // A resource that represents Google Cloud Platform location.
     LocationName projectLocation = LocationName.of(projectId, computeRegion);
-
     // List all the product sets available in the region.
     for (ProductSet productSet : client.listProductSets(projectLocation).iterateAll()) {
       // Display the product set information
@@ -104,6 +103,7 @@ public class ProductSetManagement {
       System.out.println(String.format("\tseconds: %s", productSet.getIndexTime().getSeconds()));
       System.out.println(String.format("\tnanos: %s", productSet.getIndexTime().getNanos()));
     }
+
   }
   // [END vision_product_search_list_product_sets]
 
