@@ -78,7 +78,7 @@ public class UpdateInstanceRequest {
    * details</a>
    */
   @SuppressWarnings("WeakerAccess")
-  public UpdateInstanceRequest setLabels(@Nonnull Map<String, String> labels) {
+  public UpdateInstanceRequest setAllLabels(@Nonnull Map<String, String> labels) {
     Preconditions.checkNotNull(labels, "labels can't be null");
     builder.getInstanceBuilder().clearLabels();
     builder.getInstanceBuilder().putAllLabels(labels);

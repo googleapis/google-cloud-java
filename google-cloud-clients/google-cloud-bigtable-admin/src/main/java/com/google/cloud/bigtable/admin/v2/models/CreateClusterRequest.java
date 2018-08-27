@@ -49,7 +49,8 @@ import com.google.bigtable.admin.v2.StorageType;
 public final class CreateClusterRequest {
   private final com.google.bigtable.admin.v2.CreateClusterRequest.Builder proto = com.google.bigtable.admin.v2.CreateClusterRequest
       .newBuilder();
-  // Partial ids will be set when the project is passed to toProto
+  // instanceId and zone are short ids, which will be expanded to full names when the project name
+  // is passed to toProto
   private final String instanceId;
   private String zone;
 
@@ -77,7 +78,8 @@ public final class CreateClusterRequest {
     return this;
   }
 
-  /** Sets the type of storage used by this cluster to serve its parent instance's tables. */
+  /** Sets the number of nodes allocated to this cluster. More nodes enable higher throughput and
+   * more consistent performance. */
   @SuppressWarnings("WeakerAccess")
   public CreateClusterRequest setServeNodes(int numNodes) {
     proto.getClusterBuilder().setServeNodes(numNodes);

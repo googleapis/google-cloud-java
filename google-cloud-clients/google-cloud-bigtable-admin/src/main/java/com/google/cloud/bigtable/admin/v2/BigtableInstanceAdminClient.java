@@ -38,6 +38,7 @@ import com.google.common.util.concurrent.UncheckedExecutionException;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
+import java.util.Objects;
 import javax.annotation.Nonnull;
 
 /**
@@ -181,7 +182,7 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
    * Instance instance = client.updateInstance(
    *   UpdateInstanceRequest.of("my-instance")
    *     .setProductionType()
-   * )
+   * );
    * }</pre>
    *
    * @see UpdateInstanceRequest for details.
@@ -200,7 +201,7 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
    * ApiFuture<Instance> instanceFuture = client.updateInstanceAsync(
    *   UpdateInstanceRequest.of("my-instance")
    *     .setProductionType()
-   * )
+   * );
    *
    * Instance instance = instanceFuture.get();
    * }</pre>
@@ -221,7 +222,7 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
   }
 
   /**
-   * Get the instance representation.
+   * Get the instance representation by ID.
    *
    * <p>Sample code:
    *
@@ -235,7 +236,7 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
   }
 
   /**
-   * Asynchronously gets the instance representation wrapped in a future.
+   * Asynchronously gets the instance representation by ID wrapped in a future.
    *
    * <p>Sample code:
    *
@@ -295,12 +296,16 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre>{@code
+   * ApiFuture<Instance> instancesFuture = client.listInstancesAsync();
+   *
    * ApiFutures.addCallback(instancesFuture, new ApiFutureCallback<List<Instance>>() {
    *   public void onFailure(Throwable t) {
    *     if (t instanceof PartialListInstancesException) {
    *       PartialListInstancesException partialError = (PartialListInstancesException)t;
    *       System.out.println("The following zones are unavailable: " + partialError.getUnavailableZones());
    *       System.out.println("But the following instances are reachable: " + partialError.getInstances());
+   *     } else {
+   *       t.printStackTrace();
    *     }
    *   }
    *
@@ -323,7 +328,8 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
         .transform(responseFuture, new ApiFunction<ListInstancesResponse, List<Instance>>() {
           @Override
           public List<Instance> apply(ListInstancesResponse proto) {
-            // NOTE: pagination is intentionally ignored. The server does not implement it.
+            // NOTE: pagination is intentionally ignored. The server does not implement it and never
+            // will.
             Verify.verify(proto.getNextPageToken().isEmpty(),
                 "Server returned an unexpected paginated response");
 
@@ -335,10 +341,7 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
 
             ImmutableList.Builder<String> failedZones = ImmutableList.builder();
             for (String locationStr : proto.getFailedLocationsList()) {
-              LocationName fullLocation = LocationName.parse(locationStr);
-              if (fullLocation == null) {
-                continue;
-              }
+              LocationName fullLocation = Objects.requireNonNull(LocationName.parse(locationStr));
               failedZones.add(fullLocation.getLocation());
             }
 

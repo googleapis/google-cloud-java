@@ -16,6 +16,7 @@
 package com.google.cloud.bigtable.admin.v2.models;
 
 import com.google.api.core.InternalApi;
+import com.google.common.collect.ImmutableList;
 import java.util.List;
 import javax.annotation.Nonnull;
 
@@ -31,8 +32,8 @@ public class PartialListInstancesException extends RuntimeException {
   public PartialListInstancesException(@Nonnull List<String> unavailableZones, @Nonnull List<Instance> instances) {
     super("Failed to list all instances, some zones where unavailable");
 
-    this.unavailableZones = unavailableZones;
-    this.instances = instances;
+    this.unavailableZones = ImmutableList.copyOf(unavailableZones);
+    this.instances = ImmutableList.copyOf(instances);
   }
 
   /** A list of zones, whose unavailability caused this error. */

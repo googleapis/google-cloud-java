@@ -69,7 +69,7 @@ public class UpdateInstanceRequestTest {
   @Test
   public void testLabels() {
     UpdateInstanceRequest input = UpdateInstanceRequest.of("my-instance")
-        .setLabels(ImmutableMap.of(
+        .setAllLabels(ImmutableMap.of(
             "label1", "value1",
             "label2", "value2"
         ));
