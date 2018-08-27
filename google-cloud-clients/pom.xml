@@ -497,6 +497,7 @@
             <exclude>**/IT*.java</exclude>
             <exclude>**/*SmokeTest.java</exclude>
           </excludes>
+          <reportNameSuffix>sponge_log</reportNameSuffix>
         </configuration>
       </plugin>
       <plugin>
@@ -555,6 +556,9 @@
             </goals>
           </execution>
         </executions>
+        <configuration>
+          <reportNameSuffix>sponge_log</reportNameSuffix>
+        </configuration>
       </plugin>
       <plugin>
         <artifactId>maven-jar-plugin</artifactId>
