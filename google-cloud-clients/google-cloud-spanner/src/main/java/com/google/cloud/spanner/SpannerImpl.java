@@ -1209,7 +1209,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
   @VisibleForTesting
   static class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
 
-    private static final ThreadLocal<Boolean> inTransaction = new ThreadLocal<Boolean>() {
+    private static final ThreadLocal<Boolean> hasPendingTransaction = new ThreadLocal<Boolean>() {
       @Override
       protected Boolean initialValue() {
         return false;
@@ -1244,18 +1244,18 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     @Nullable
     @Override
     public <T> T run(TransactionCallable<T> callable) {
-      if (inTransaction.get() == Boolean.TRUE) {
+      if (hasPendingTransaction.get() == Boolean.TRUE) {
         throw newSpannerException(ErrorCode.INTERNAL, "Nested transactions are not supported");
       }
 
       try (Scope s = tracer.withSpan(span)) {
-        inTransaction.set(Boolean.TRUE);
+        hasPendingTransaction.set(Boolean.TRUE);
         return runInternal(callable);
       } catch (RuntimeException e) {
         TraceUtil.endSpanWithFailure(span, e);
         throw e;
       } finally {
-        inTransaction.set(Boolean.FALSE);
+        hasPendingTransaction.set(Boolean.FALSE);
         span.end();
       }
     }
