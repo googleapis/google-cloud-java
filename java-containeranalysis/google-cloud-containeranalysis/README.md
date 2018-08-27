@@ -39,7 +39,7 @@ Authentication
 
 See the [Authentication](https://github.com/GoogleCloudPlatform/google-cloud-java#authentication) section in the base directory's README.
 
-About Google Cloud Natural Container Analysis
+About Google Cloud Container Analysis
 ----------------------------
 
 Google [Cloud Container Analysis API][cloud-containeranalysis] is an implementation of the Grafeas API, which stores, and enables querying and retrieval of critical metadata about all of your software artifacts.
