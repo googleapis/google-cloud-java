@@ -184,7 +184,7 @@ public class SubscriberSnippets {
         Subscriber.newBuilder(subscriptionName, receiver)
             .setCredentialsProvider(credentialsProvider)
             .build();
-    // [START pubsub_subscriber_custom_credentials]
+    // [END pubsub_subscriber_custom_credentials]
     return subscriber;
   }
 

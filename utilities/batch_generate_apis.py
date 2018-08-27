@@ -37,6 +37,7 @@ def run_gapic_gen(googleapis):
 
     generate('google/datastore/artman_datastore.yaml', generate_api.JAVA_PROTO)
 
+    generate('google/cloud/asset/artman_cloudasset_v1beta1.yaml')
     generate('google/cloud/automl/artman_automl_v1beta1.yaml')
     generate('google/cloud/bigquery/datatransfer/artman_bigquerydatatransfer.yaml')
     generate('google/bigtable/artman_bigtable.yaml')
