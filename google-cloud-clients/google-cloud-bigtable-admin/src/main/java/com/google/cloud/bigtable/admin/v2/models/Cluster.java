@@ -20,6 +20,7 @@ import com.google.bigtable.admin.v2.Cluster.State;
 import com.google.bigtable.admin.v2.ClusterName;
 import com.google.bigtable.admin.v2.LocationName;
 import com.google.bigtable.admin.v2.StorageType;
+import com.google.common.base.Objects;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Verify;
 import javax.annotation.Nonnull;
@@ -33,7 +34,7 @@ public class Cluster {
     return new Cluster(proto);
   }
 
-  private Cluster(com.google.bigtable.admin.v2.Cluster proto) {
+  private Cluster(@Nonnull com.google.bigtable.admin.v2.Cluster proto) {
     this.proto = proto;
     Preconditions.checkNotNull(proto);
     Preconditions.checkArgument(!proto.getName().isEmpty(), "Name must be set");
@@ -51,7 +52,21 @@ public class Cluster {
     return fullName.getCluster();
   }
 
+  /** Gets the instance id. */
+  @SuppressWarnings("WeakerAccess")
+  public String getInstanceId() {
+    // Constructor ensures that name is not null
+    ClusterName fullName = Verify.verifyNotNull(
+        ClusterName.parse(proto.getName()),
+        "Name can never be null");
+    //noinspection ConstantConditions
+    return fullName.getInstance();
+
+  }
+
+
   /** Get the zone where this cluster is located. */
+  @SuppressWarnings("WeakerAccess")
   public String getZone() {
     LocationName location = Verify.verifyNotNull(LocationName.parse(proto.getLocation()));
     //noinspection ConstantConditions
@@ -60,14 +75,16 @@ public class Cluster {
 
   /** Gets the current state of the cluster */
   // TODO(igorbernstein2): try to avoid exposing proto enums
+  @SuppressWarnings("WeakerAccess")
   public State getState() {
     return proto.getState();
   }
 
   /**
-   * Get the number of nodes allocated to this cluster. More nodes enable higher throughput and
-   * more consistent performance.
+   * Get the number of nodes allocated to this cluster. More nodes enable higher throughput and more
+   * consistent performance.
    */
+  @SuppressWarnings("WeakerAccess")
   public int getServeNodes() {
     return proto.getServeNodes();
   }
@@ -77,7 +94,25 @@ public class Cluster {
    * explicitly overridden.
    */
   // TODO(igorbernstein2): try to avoid exposing proto enums
+  @SuppressWarnings("WeakerAccess")
   public StorageType getStorageType() {
     return proto.getDefaultStorageType();
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    Cluster cluster = (Cluster) o;
+    return Objects.equal(proto, cluster.proto);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hashCode(proto);
   }
 }

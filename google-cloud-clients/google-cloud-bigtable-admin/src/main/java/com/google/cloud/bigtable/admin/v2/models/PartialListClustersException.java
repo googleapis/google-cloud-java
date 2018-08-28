@@ -20,7 +20,7 @@ import com.google.common.collect.ImmutableList;
 import java.util.List;
 
 /**
- * Exception thrown when some zones are unavailable and listClustersis unable to return a full
+ * Exception thrown when some zones are unavailable and listClusters is unable to return a full
  * cluster list. This exception can be inspected to get a partial list.
  */
 public class PartialListClustersException extends RuntimeException {
@@ -31,7 +31,7 @@ public class PartialListClustersException extends RuntimeException {
   public PartialListClustersException(List<String> unavailableZones, List<Cluster> clusters) {
     super("Failed to list all instances, some zones where unavailable");
     this.unavailableZones = ImmutableList.copyOf(unavailableZones);
-    this.clusters= ImmutableList.copyOf(clusters);
+    this.clusters = ImmutableList.copyOf(clusters);
   }
 
   /** A list of zones, whose unavailability caused this error. */
