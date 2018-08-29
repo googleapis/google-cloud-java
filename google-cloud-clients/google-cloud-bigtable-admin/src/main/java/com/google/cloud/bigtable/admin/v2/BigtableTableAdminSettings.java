@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 /**
  * Settings class to configure an instance of {@link BigtableTableAdminClient}.
  *
- * <p>It must be configured with an {@link InstanceName} and be used to change default RPC settings.
+ * <p>It must be configured with an {@link InstanceName} and can be used to change default RPC settings.
  *
  * <p>Example usage:
  *

@@ -21,16 +21,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-containeranalysis</artifactId>
-  <version>0.58.0-beta</version>
+  <version>0.59.0-beta</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-containeranalysis:0.58.0-beta'
+compile 'com.google.cloud:google-cloud-containeranalysis:0.59.0-beta'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-containeranalysis" % "0.58.0-beta"
+libraryDependencies += "com.google.cloud" % "google-cloud-containeranalysis" % "0.59.0-beta"
 ```
 [//]: # ({x-version-update-end})
 
@@ -39,7 +39,7 @@ Authentication
 
 See the [Authentication](https://github.com/GoogleCloudPlatform/google-cloud-java#authentication) section in the base directory's README.
 
-About Google Cloud Natural Container Analysis
+About Google Cloud Container Analysis
 ----------------------------
 
 Google [Cloud Container Analysis API][cloud-containeranalysis] is an implementation of the Grafeas API, which stores, and enables querying and retrieval of critical metadata about all of your software artifacts.

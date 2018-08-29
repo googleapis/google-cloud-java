@@ -38,9 +38,9 @@
  * <pre>
  * <code>
  * try (ContainerAnalysisV1Beta1Client containerAnalysisV1Beta1Client = ContainerAnalysisV1Beta1Client.create()) {
- *   String formattedResource = ContainerAnalysisV1Beta1Client.formatNoteName("[PROJECT]", "[NOTE]");
+ *   IamResourceName resource = NoteName.of("[PROJECT]", "[NOTE]");
  *   Policy policy = Policy.newBuilder().build();
- *   Policy response = containerAnalysisV1Beta1Client.setIamPolicy(formattedResource, policy);
+ *   Policy response = containerAnalysisV1Beta1Client.setIamPolicy(resource, policy);
  * }
  * </code>
  * </pre>
@@ -65,8 +65,8 @@
  * <pre>
  * <code>
  * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
- *   String formattedName = GrafeasV1Beta1Client.formatOccurrenceName("[PROJECT]", "[OCCURRENCE]");
- *   Occurrence response = grafeasV1Beta1Client.getOccurrence(formattedName);
+ *   OccurrenceName name = OccurrenceName.of("[PROJECT]", "[OCCURRENCE]");
+ *   Occurrence response = grafeasV1Beta1Client.getOccurrence(name);
  * }
  * </code>
  * </pre>

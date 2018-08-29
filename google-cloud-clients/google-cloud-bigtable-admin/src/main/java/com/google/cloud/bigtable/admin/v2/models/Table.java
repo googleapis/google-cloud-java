@@ -18,6 +18,7 @@ package com.google.cloud.bigtable.admin.v2.models;
 import com.google.api.core.InternalApi;
 import com.google.bigtable.admin.v2.TableName;
 import com.google.common.base.MoreObjects;
+import com.google.common.base.Objects;
 import com.google.common.collect.ImmutableMap;
 import java.util.Collection;
 import java.util.Map;
@@ -95,6 +96,25 @@ public final class Table {
    */
   public Collection<ColumnFamily> getColumnFamiles() {
     return columnFamilies.values();
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    Table table = (Table) o;
+    return Objects.equal(tableName, table.tableName) &&
+        Objects.equal(clusterStates, table.clusterStates) &&
+        Objects.equal(columnFamilies, table.columnFamilies);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hashCode(tableName, clusterStates, columnFamilies);
   }
 
   @Override

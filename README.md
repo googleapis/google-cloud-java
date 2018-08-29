@@ -26,6 +26,7 @@ This library supports the following Google Cloud Platform services with clients 
 This library supports the following Google Cloud Platform services with clients at a [Beta](#versioning) quality level:
 
 -  [BigQuery Data Transfer](google-cloud-clients/google-cloud-bigquerydatatransfer) (Beta)
+-  [Cloud Asset](google-cloud-clients/google-cloud-asset) (Beta)
 -  [Cloud AutoML](google-cloud-clients/google-cloud-automl) (Beta)
 -  [Cloud Container Analysis](google-cloud-clients/google-cloud-containeranalysis) (Beta)
 -  [Cloud Data Loss Prevention](google-cloud-clients/google-cloud-dlp) (Beta)
@@ -64,16 +65,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-storage</artifactId>
-  <version>1.40.0</version>
+  <version>1.41.0</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-storage:1.40.0'
+compile 'com.google.cloud:google-cloud-storage:1.41.0'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-storage" % "1.40.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-storage" % "1.41.0"
 ```
 [//]: # ({x-version-update-end})
 
@@ -293,7 +294,7 @@ The easiest way to solve version conflicts is to use google-cloud's BOM. In Mave
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-bom</artifactId>
-        <version>0.58.0-alpha</version>
+        <version>0.59.0-alpha</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
