@@ -25,10 +25,22 @@ import com.google.common.base.Preconditions;
 import com.google.common.base.Verify;
 import javax.annotation.Nonnull;
 
+/**
+ * A cluster represents the actual Cloud Bigtable service. Each cluster belongs to a single Cloud
+ * Bigtable instance, and an instance can have up to 2 clusters. When your application sends
+ * requests to a Cloud Bigtable instance, those requests are actually handled by one of the clusters
+ * in the instance.
+ */
 public class Cluster {
   @Nonnull
   private final com.google.bigtable.admin.v2.Cluster proto;
 
+  /**
+   * Wraps a protobuf response.
+   *
+   * <p>This method is considered an internal implementation detail and not meant to be used by
+   * applications.
+   */
   @InternalApi
   public static Cluster fromProto(com.google.bigtable.admin.v2.Cluster proto) {
     return new Cluster(proto);

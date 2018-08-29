@@ -27,6 +27,10 @@ public class PartialListClustersException extends RuntimeException {
   private final List<String> unavailableZones;
   private final List<Cluster> clusters;
 
+  /**
+   * <p>This method is considered an internal implementation detail and not meant to be used by
+   * applications.
+   */
   @InternalApi
   public PartialListClustersException(List<String> unavailableZones, List<Cluster> clusters) {
     super("Failed to list all instances, some zones where unavailable");
