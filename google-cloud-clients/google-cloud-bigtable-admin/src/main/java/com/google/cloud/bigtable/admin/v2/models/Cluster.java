@@ -47,9 +47,9 @@ public class Cluster {
   }
 
   private Cluster(@Nonnull com.google.bigtable.admin.v2.Cluster proto) {
-    this.proto = proto;
     Preconditions.checkNotNull(proto);
     Preconditions.checkArgument(!proto.getName().isEmpty(), "Name must be set");
+    this.proto = proto;
   }
 
 

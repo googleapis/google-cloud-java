@@ -282,8 +282,9 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
         new ApiFunction<ListClustersResponse, List<Cluster>>() {
           @Override
           public List<Cluster> apply(ListClustersResponse proto) {
-            // NOTE: pagination is intentionally ignored. The server does not implement it and never
-            // will.
+            // NOTE: servserside pagination is not and will not be implemented, so remaining pages
+            // are not fetched. However, if that assumption turns out to be wrong, fail fast to
+            // avoid returning partial data.
             Verify.verify(proto.getNextPageToken().isEmpty(),
                 "Server returned an unexpected paginated response");
 
