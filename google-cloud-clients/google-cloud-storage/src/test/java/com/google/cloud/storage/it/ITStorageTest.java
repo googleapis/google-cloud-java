@@ -116,7 +116,9 @@ public class ITStorageTest {
   private static Storage storage;
   private static String kmsKeyOneResourcePath;
   private static String kmsKeyTwoResourcePath;
-
+  private static Metadata requestParamsHeader = new Metadata();
+  private static Metadata.Key<String> requestParamsKey =
+      Metadata.Key.of("x-goog-request-params", Metadata.ASCII_STRING_MARSHALLER);
   private static final Logger log = Logger.getLogger(ITStorageTest.class.getName());
   private static final String BUCKET = RemoteStorageHelper.generateBucketName();
   private static final String CONTENT_TYPE = "text/plain";
@@ -173,20 +175,17 @@ public class ITStorageTest {
         .withCallCredentials(MoreCallCredentials.from(credentials));
     IAMPolicyGrpc.IAMPolicyBlockingStub iamStub = IAMPolicyGrpc.newBlockingStub(kmsChannel)
         .withCallCredentials(MoreCallCredentials.from(credentials));
-    ensureKmsKeyRingExistsForTests(kmsStub, iamStub, projectId, KMS_KEY_RING_LOCATION, KMS_KEY_RING_NAME);
+    ensureKmsKeyRingExistsForTests(kmsStub, projectId, KMS_KEY_RING_LOCATION, KMS_KEY_RING_NAME);
+    ensureKmsKeyRingIamPermissionsForTests(iamStub, projectId, KMS_KEY_RING_LOCATION, KMS_KEY_RING_NAME);
     kmsKeyOneResourcePath = ensureKmsKeyExistsForTests(kmsStub, projectId, KMS_KEY_RING_LOCATION, KMS_KEY_RING_NAME,
         KMS_KEY_ONE_NAME);
     kmsKeyTwoResourcePath = ensureKmsKeyExistsForTests(kmsStub, projectId, KMS_KEY_RING_LOCATION, KMS_KEY_RING_NAME,
         KMS_KEY_TWO_NAME);
   }
 
-  private static String ensureKmsKeyRingExistsForTests(KeyManagementServiceBlockingStub kmsStub,
-                                                       IAMPolicyGrpc.IAMPolicyBlockingStub iamStub, String projectId,
+  private static String ensureKmsKeyRingExistsForTests(KeyManagementServiceBlockingStub kmsStub, String projectId,
                                                        String location,
                                                        String keyRingName) throws StatusRuntimeException {
-    Metadata requestParamsHeader = new Metadata();
-    Metadata.Key<String> requestParamsKey =
-        Metadata.Key.of("x-goog-request-params", Metadata.ASCII_STRING_MARSHALLER);
     String kmsKeyRingResourcePath = KeyRingName.of(projectId, location, keyRingName).toString();
     try {
       // Attempt to Get KeyRing
@@ -211,7 +210,15 @@ public class ITStorageTest {
         throw ex;
       }
     }
+
+    return kmsKeyRingResourcePath;
+  }
+
+  private static void ensureKmsKeyRingIamPermissionsForTests(IAMPolicyGrpc.IAMPolicyBlockingStub iamStub,
+                                                             String projectId, String location,
+                                                             String keyRingName) throws StatusRuntimeException {
     ServiceAccount serviceAccount = storage.getServiceAccount(projectId);
+    String kmsKeyRingResourcePath = KeyRingName.of(projectId, location, keyRingName).toString();
     Binding binding = Binding.newBuilder().setRole("roles/cloudkms.cryptoKeyEncrypterDecrypter")
         .addMembers("serviceAccount:"+serviceAccount.getEmail()).build();
     com.google.iam.v1.Policy policy = com.google.iam.v1.Policy.newBuilder().addBindings(binding).build();
@@ -220,15 +227,11 @@ public class ITStorageTest {
     requestParamsHeader.put(requestParamsKey, "parent=" + kmsKeyRingResourcePath);
     iamStub = MetadataUtils.attachHeaders(iamStub, requestParamsHeader);
     iamStub.setIamPolicy(setIamPolicyRequest);
-
-    return kmsKeyRingResourcePath;
   }
 
-  private static String ensureKmsKeyExistsForTests(KeyManagementServiceBlockingStub kmsStub, String projectId, String location,
-                                  String keyRingName, String keyName) throws StatusRuntimeException {
-    Metadata requestParamsHeader = new Metadata();
-    Metadata.Key<String> requestParamsKey =
-        Metadata.Key.of("x-goog-request-params", Metadata.ASCII_STRING_MARSHALLER);
+  private static String ensureKmsKeyExistsForTests(KeyManagementServiceBlockingStub kmsStub, String projectId,
+                                                   String location, String keyRingName,
+                                                   String keyName) throws StatusRuntimeException {
     String kmsKeyResourcePath = CryptoKeyName.of(projectId, location, keyRingName, keyName).toString();
     try {
       // Attempt to Get CryptoKey
