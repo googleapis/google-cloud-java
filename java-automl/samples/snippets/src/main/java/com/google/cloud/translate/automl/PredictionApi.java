@@ -52,7 +52,7 @@ import net.sourceforge.argparse4j.inf.Subparsers;
  */
 public class PredictionApi {
 
-  // [START automl_translation_predict]
+  // [START automl_translate_predict]
 
   /**
    * Demonstrates using the AutoML client to predict an image.
@@ -65,7 +65,7 @@ public class PredictionApi {
    */
   public static void predict(
       String projectId, String computeRegion, String modelId, String filePath) throws IOException {
- 
+
     // Instantiate client for prediction service.
     PredictionServiceClient predictionClient = PredictionServiceClient.create();
 
@@ -88,7 +88,7 @@ public class PredictionApi {
 
     System.out.println(String.format("Translated Content: %s", translatedContent.getContent()));
   }
-  // [END automl_translation_predict]
+  // [END automl_translate_predict]
 
   public static void main(String[] args) throws IOException {
     PredictionApi predictApi = new PredictionApi();

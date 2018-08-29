@@ -45,7 +45,7 @@ import net.sourceforge.argparse4j.inf.Subparsers;
  */
 public class DatasetApi {
 
-  // [START automl_translation_create_dataset]
+  // [START automl_translate_create_dataset]
   /**
    * Demonstrates using the AutoML client to create a dataset
    *
@@ -102,9 +102,9 @@ public class DatasetApi {
     System.out.println(String.format("\tseconds: %s", dataset.getCreateTime().getSeconds()));
     System.out.println(String.format("\tnanos: %s", dataset.getCreateTime().getNanos()));
   }
-  // [END automl_translation_create_dataset]
+  // [END automl_translate_create_dataset]
 
-  // [START automl_translation_list_datasets]
+  // [START automl_translate_list_datasets]
   /**
    * Demonstrates using the AutoML client to list all datasets.
    *
@@ -151,9 +151,9 @@ public class DatasetApi {
       System.out.println(String.format("\tnanos: %s", dataset.getCreateTime().getNanos()));
     }
   }
-  // [END automl_translation_list_datasets]
+  // [END automl_translate_list_datasets]
 
-  // [START automl_translation_get_dataset]
+  // [START automl_translate_get_dataset]
   /**
    * Demonstrates using the AutoML client to get a dataset by ID.
    *
@@ -193,9 +193,9 @@ public class DatasetApi {
     System.out.println(String.format("\tseconds: %s", dataset.getCreateTime().getSeconds()));
     System.out.println(String.format("\tnanos: %s", dataset.getCreateTime().getNanos()));
   }
-  // [END automl_translation_get_dataset]
+  // [END automl_translate_get_dataset]
 
-  // [START automl_translation_import_data]
+  // [START automl_translate_import_data]
   /**
    * Import sentence pairs to the dataset.
    *
@@ -228,9 +228,9 @@ public class DatasetApi {
     Empty response = client.importDataAsync(datasetFullId, inputConfig).get();
     System.out.println(String.format("Dataset imported. %s", response));
   }
-  // [END automl_translation_import_data]
+  // [END automl_translate_import_data]
 
-  // [START automl_translation_delete_dataset]
+  // [START automl_translate_delete_dataset]
   /**
    * Delete a dataset.
    *
@@ -252,7 +252,7 @@ public class DatasetApi {
 
     System.out.println(String.format("Dataset deleted. %s", response));
   }
-  // [END automl_translation_delete_dataset]
+  // [END automl_translate_delete_dataset]
 
   public static void main(String[] args) throws Exception {
     DatasetApi datasetApi = new DatasetApi();
