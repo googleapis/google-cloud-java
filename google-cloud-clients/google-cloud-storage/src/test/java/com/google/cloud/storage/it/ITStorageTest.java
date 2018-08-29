@@ -1925,11 +1925,11 @@ public class ITStorageTest {
     try {
       assertEquals(RETENTION_PERIOD, remoteBucket.getRetentionPeriod());
       assertNotNull(remoteBucket.getRetentionEffectiveTime());
-      assertNull(remoteBucket.getRetentionPolicyIsLocked());
+      assertNull(remoteBucket.retentionPolicyIsLocked());
       remoteBucket = storage.get(bucketName, Storage.BucketGetOption.fields(BucketField.RETENTION_POLICY));
       assertEquals(RETENTION_PERIOD, remoteBucket.getRetentionPeriod());
       assertNotNull(remoteBucket.getRetentionEffectiveTime());
-      assertNull(remoteBucket.getRetentionPolicyIsLocked());
+      assertNull(remoteBucket.retentionPolicyIsLocked());
       String blobName = "test-create-with-retention-policy-hold";
       BlobInfo blobInfo = BlobInfo.newBuilder(bucketName, blobName).build();
       Blob remoteBlob = storage.create(blobInfo);
@@ -1959,7 +1959,7 @@ public class ITStorageTest {
     }
     Bucket remoteBucket = storage.create(bucketInfo);
     try {
-      assertNull(remoteBucket.getRetentionPolicyIsLocked());
+      assertFalse(remoteBucket.retentionPolicyIsLocked());
       assertNotNull(remoteBucket.getRetentionEffectiveTime());
       assertNotNull(remoteBucket.getMetageneration());
       if (requesterPays) {
@@ -1968,7 +1968,7 @@ public class ITStorageTest {
       } else {
         remoteBucket = storage.lockRetentionPolicy(remoteBucket, Storage.BucketTargetOption.metagenerationMatch());
       }
-      assertTrue(remoteBucket.getRetentionPolicyIsLocked());
+      assertTrue(remoteBucket.retentionPolicyIsLocked());
       assertNotNull(remoteBucket.getRetentionEffectiveTime());
     } finally {
       RemoteStorageHelper.forceDelete(storage, bucketName, 5, TimeUnit.SECONDS);

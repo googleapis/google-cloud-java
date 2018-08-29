@@ -746,7 +746,7 @@ public class BucketTest {
     assertEquals(DEFAULT_EVENT_BASED_HOLD, bucket.getDefaultEventBasedHold());
     assertEquals(RETENTION_EFFECTIVE_TIME, bucket.getRetentionEffectiveTime());
     assertEquals(RETENTION_PERIOD, bucket.getRetentionPeriod());
-    assertEquals(RETENTION_POLICY_IS_LOCKED, bucket.getRetentionPolicyIsLocked());
+    assertEquals(RETENTION_POLICY_IS_LOCKED, bucket.retentionPolicyIsLocked());
     assertEquals(storage.getOptions(), bucket.getStorage().getOptions());
   }
 }

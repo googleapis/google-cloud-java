@@ -718,7 +718,6 @@ public class BucketInfo implements Serializable {
     return Data.isNull(versioningEnabled) ? null : versioningEnabled;
   }
 
-
   /**
    * Returns {@code true} if a user accessing the bucket or an object it contains should assume the transit costs
    * related to the access, {@code false} otherwise.
@@ -850,9 +849,11 @@ public class BucketInfo implements Serializable {
   public Long getRetentionEffectiveTime() { return retentionEffectiveTime; }
 
   /**
-   * Returns the lock state of the bucket's retention policy.
+   * Returns {@code true} if the bucket retention policy is locked, {@code false} otherwise.
    */
-  public Boolean getRetentionPolicyIsLocked() { return retentionPolicyIsLocked; }
+  public Boolean retentionPolicyIsLocked() {
+    return Data.isNull(retentionPolicyIsLocked) ? null : retentionPolicyIsLocked;
+  }
 
   /**
    * Returns the retention period.

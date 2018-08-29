@@ -139,7 +139,7 @@ public class BucketInfoTest {
     assertEquals(DEFAULT_EVENT_BASED_HOLD, BUCKET_INFO.getDefaultEventBasedHold());
     assertEquals(RETENTION_EFFECTIVE_TIME, BUCKET_INFO.getRetentionEffectiveTime());
     assertEquals(RETENTION_PERIOD, BUCKET_INFO.getRetentionPeriod());
-    assertEquals(RETENTION_POLICY_IS_LOCKED, BUCKET_INFO.getRetentionPolicyIsLocked());
+    assertEquals(RETENTION_POLICY_IS_LOCKED, BUCKET_INFO.retentionPolicyIsLocked());
   }
 
   @Test
@@ -173,7 +173,7 @@ public class BucketInfoTest {
     assertEquals(expected.getDefaultEventBasedHold(), value.getDefaultEventBasedHold());
     assertEquals(expected.getRetentionEffectiveTime(), value.getRetentionEffectiveTime());
     assertEquals(expected.getRetentionPeriod(), value.getRetentionPeriod());
-    assertEquals(expected.getRetentionPolicyIsLocked(), value.getRetentionPolicyIsLocked());
+    assertEquals(expected.retentionPolicyIsLocked(), value.retentionPolicyIsLocked());
   }
 
   @Test
