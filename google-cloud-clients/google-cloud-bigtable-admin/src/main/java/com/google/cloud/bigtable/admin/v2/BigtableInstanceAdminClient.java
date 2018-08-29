@@ -15,9 +15,29 @@
  */
 package com.google.cloud.bigtable.admin.v2;
 
+import com.google.api.core.ApiAsyncFunction;
+import com.google.api.core.ApiFunction;
+import com.google.api.core.ApiFuture;
+import com.google.api.core.ApiFutures;
+import com.google.bigtable.admin.v2.AppProfileName;
+import com.google.bigtable.admin.v2.DeleteAppProfileRequest;
+import com.google.bigtable.admin.v2.GetAppProfileRequest;
+import com.google.bigtable.admin.v2.InstanceName;
+import com.google.bigtable.admin.v2.ListAppProfilesRequest;
 import com.google.bigtable.admin.v2.ProjectName;
+import com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient.ListAppProfilesPage;
+import com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient.ListAppProfilesPagedResponse;
+import com.google.cloud.bigtable.admin.v2.models.AppProfile;
+import com.google.cloud.bigtable.admin.v2.models.CreateAppProfileRequest;
+import com.google.cloud.bigtable.admin.v2.models.UpdateAppProfileRequest;
 import com.google.cloud.bigtable.admin.v2.stub.BigtableInstanceAdminStub;
+import com.google.common.collect.Lists;
+import com.google.common.util.concurrent.Futures;
+import com.google.common.util.concurrent.MoreExecutors;
+import com.google.common.util.concurrent.UncheckedExecutionException;
+import com.google.protobuf.Empty;
 import java.io.IOException;
+import java.util.List;
 import javax.annotation.Nonnull;
 
 /**
@@ -104,5 +124,191 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
   @Override
   public void close() {
     stub.close();
+  }
+
+  @SuppressWarnings("WeakerAccess")
+  public AppProfile createAppProfile(CreateAppProfileRequest request) {
+    return awaitFuture(createAppProfileAsync(request));
+  }
+
+  @SuppressWarnings("WeakerAccess")
+  public ApiFuture<AppProfile> createAppProfileAsync(CreateAppProfileRequest request) {
+    return ApiFutures.transform(
+        stub.createAppProfileCallable().futureCall(request.toProto(projectName)),
+        new ApiFunction<com.google.bigtable.admin.v2.AppProfile, AppProfile>() {
+          @Override
+          public AppProfile apply(com.google.bigtable.admin.v2.AppProfile proto) {
+            return AppProfile.fromProto(proto);
+          }
+        },
+        MoreExecutors.directExecutor()
+    );
+  }
+
+  @SuppressWarnings("WeakerAccess")
+  public AppProfile getAppProfile(String instanceId, String appProfileId) {
+    return awaitFuture(getAppProfileAsync(instanceId, appProfileId));
+  }
+
+  @SuppressWarnings("WeakerAccess")
+  public ApiFuture<AppProfile> getAppProfileAsync(String instanceId, String appProfileId) {
+    AppProfileName name = AppProfileName.of(projectName.getProject(), instanceId, appProfileId);
+
+    GetAppProfileRequest request = GetAppProfileRequest.newBuilder()
+        .setName(name.toString())
+        .build();
+
+    return ApiFutures.transform(
+        stub.getAppProfileCallable().futureCall(request),
+        new ApiFunction<com.google.bigtable.admin.v2.AppProfile, AppProfile>() {
+          @Override
+          public AppProfile apply(com.google.bigtable.admin.v2.AppProfile proto) {
+            return AppProfile.fromProto(proto);
+          }
+        },
+        MoreExecutors.directExecutor()
+    );
+  }
+
+  @SuppressWarnings("WeakerAccess")
+  public List<AppProfile> listAppProfiles(String instanceId) {
+    return awaitFuture(listAppProfilesAsync(instanceId));
+  }
+
+  @SuppressWarnings("WeakerAccess")
+  public ApiFuture<List<AppProfile>> listAppProfilesAsync(String instanceId) {
+    InstanceName instanceName = InstanceName.of(projectName.getProject(), instanceId);
+
+    ListAppProfilesRequest request = ListAppProfilesRequest.newBuilder()
+        .setParent(instanceName.toString())
+        .build();
+
+    // TODO(igorbernstein2): try to upstream pagination spooling or figure out a way to expose the
+    // paginated responses while maintaining the wrapper facade.
+
+    // Fetch the first page.
+    ApiFuture<ListAppProfilesPage> firstPageFuture = ApiFutures.transform(
+        stub.listAppProfilesPagedCallable().futureCall(request),
+        new ApiFunction<ListAppProfilesPagedResponse, ListAppProfilesPage>() {
+          @Override
+          public ListAppProfilesPage apply(ListAppProfilesPagedResponse response) {
+            return response.getPage();
+          }
+        },
+        MoreExecutors.directExecutor()
+    );
+
+    // Fetch the rest of the pages by chaining the futures.
+    ApiFuture<List<com.google.bigtable.admin.v2.AppProfile>> allProtos = ApiFutures
+        .transformAsync(
+            firstPageFuture,
+            new ApiAsyncFunction<ListAppProfilesPage, List<com.google.bigtable.admin.v2.AppProfile>>() {
+              List<com.google.bigtable.admin.v2.AppProfile> responseAccumulator = Lists
+                  .newArrayList();
+
+              @Override
+              public ApiFuture<List<com.google.bigtable.admin.v2.AppProfile>> apply(
+                  ListAppProfilesPage page) {
+                // Add all entries from the page
+                responseAccumulator.addAll(Lists.newArrayList(page.getValues()));
+
+                // If this is the last page, just return the accumulated responses.
+                if (!page.hasNextPage()) {
+                  return ApiFutures.immediateFuture(responseAccumulator);
+                }
+
+                // Otherwise fetch the next page.
+                return ApiFutures.transformAsync(
+                    page.getNextPageAsync(),
+                    this,
+                    MoreExecutors.directExecutor()
+                );
+              }
+            },
+            MoreExecutors.directExecutor()
+        );
+
+    // Wrap all of the accumulated protos.
+    return ApiFutures.transform(allProtos,
+        new ApiFunction<List<com.google.bigtable.admin.v2.AppProfile>, List<AppProfile>>() {
+          @Override
+          public List<AppProfile> apply(List<com.google.bigtable.admin.v2.AppProfile> input) {
+            List<AppProfile> results = Lists.newArrayListWithCapacity(input.size());
+            for (com.google.bigtable.admin.v2.AppProfile appProfile : input) {
+              results.add(AppProfile.fromProto(appProfile));
+            }
+            return results;
+          }
+        },
+        MoreExecutors.directExecutor()
+    );
+  }
+
+  @SuppressWarnings("WeakerAccess")
+  public AppProfile updateAppProfile(UpdateAppProfileRequest request) {
+    return awaitFuture(updateAppProfileAsync(request));
+  }
+
+  @SuppressWarnings("WeakerAccess")
+  public ApiFuture<AppProfile> updateAppProfileAsync(UpdateAppProfileRequest request) {
+    return ApiFutures.transform(
+        stub.updateAppProfileOperationCallable().futureCall(request.toProto(projectName)),
+        new ApiFunction<com.google.bigtable.admin.v2.AppProfile, AppProfile>() {
+          @Override
+          public AppProfile apply(com.google.bigtable.admin.v2.AppProfile proto) {
+            return AppProfile.fromProto(proto);
+          }
+        },
+        MoreExecutors.directExecutor()
+    );
+  }
+
+  @SuppressWarnings("WeakerAccess")
+  public void deleteAppProfile(String instanceId, String appProfileId) {
+    awaitFuture(deleteAppProfileAsync(instanceId, appProfileId));
+  }
+
+  @SuppressWarnings("WeakerAccess")
+  public ApiFuture<Void> deleteAppProfileAsync(String instanceId, String appProfileId) {
+    AppProfileName name = AppProfileName.of(projectName.getProject(), instanceId, appProfileId);
+    DeleteAppProfileRequest request = DeleteAppProfileRequest.newBuilder()
+        .setName(name.toString())
+        .build();
+
+    return ApiFutures.transform(
+        stub.deleteAppProfileCallable().futureCall(request),
+        new ApiFunction<Empty, Void>() {
+          @Override
+          public Void apply(Empty input) {
+            return null;
+          }
+        },
+        MoreExecutors.directExecutor()
+    );
+  }
+
+  /**
+   * Awaits the result of a future, taking care to propagate errors while maintaining the call site
+   * in a suppressed exception. This allows semantic errors to be caught across threads, while
+   * preserving the call site in the error. The caller's stacktrace will be made available as a
+   * suppressed exception.
+   */
+  // TODO(igorbernstein2): try to move this into gax
+  private <T> T awaitFuture(ApiFuture<T> future) {
+    RuntimeException error;
+    try {
+      return Futures.getUnchecked(future);
+    } catch (UncheckedExecutionException e) {
+      if (e.getCause() instanceof RuntimeException) {
+        error = (RuntimeException) e.getCause();
+      } else {
+        error = e;
+      }
+    } catch (RuntimeException e) {
+      error = e;
+    }
+    // Add the caller's stack as a suppressed exception
+    error.addSuppressed(new RuntimeException("Encountered error while awaiting future"));
+    throw error;
   }
 }
