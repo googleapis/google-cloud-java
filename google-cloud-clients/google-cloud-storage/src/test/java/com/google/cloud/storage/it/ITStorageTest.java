@@ -42,6 +42,7 @@ import com.google.cloud.Policy;
 import com.google.cloud.ReadChannel;
 import com.google.cloud.RestorableState;
 import com.google.cloud.WriteChannel;
+import com.google.cloud.kms.v1.LocationName;
 import com.google.cloud.storage.Acl;
 import com.google.cloud.storage.Acl.Role;
 import com.google.cloud.storage.Acl.User;
@@ -113,7 +114,6 @@ public class ITStorageTest {
 
   private static RemoteStorageHelper remoteStorageHelper;
   private static Storage storage;
-
   private static String kmsKeyOneResourcePath;
   private static String kmsKeyTwoResourcePath;
 
@@ -131,7 +131,7 @@ public class ITStorageTest {
       .decode("H4sIAAAAAAAAAPNIzcnJV3DPz0/PSVVwzskvTVEILskvSkxPVQQA/LySchsAAAA=");
   private static final Map<String, String> BUCKET_LABELS = ImmutableMap.of("label1", "value1");
   private static final String SERVICE_ACCOUNT_EMAIL_SUFFIX = "@gs-project-accounts.iam.gserviceaccount.com";
-  private static final String KMS_KEY_RING_NAME = "gcs_kms_key_ring";
+  private static final String KMS_KEY_RING_NAME = "gcs_test_kms_key_ring";
   private static final String KMS_KEY_RING_LOCATION = "us";
   private static final String KMS_KEY_ONE_NAME = "gcs_kms_key_one";
   private static final String KMS_KEY_TWO_NAME = "gcs_kms_key_two";
@@ -168,94 +168,92 @@ public class ITStorageTest {
   private static void prepareKmsKeys() throws IOException {
     String projectId = remoteStorageHelper.getOptions().getProjectId();
     GoogleCredentials credentials = GoogleCredentials.getApplicationDefault();
-    ManagedChannel kmsChannel = ManagedChannelBuilder.forTarget("cloudkms.googleapis.com:443")
-        .build();
-    KeyManagementServiceBlockingStub keyManagementServiceBlockingStub = KeyManagementServiceGrpc
-        .newBlockingStub(kmsChannel).withCallCredentials(MoreCallCredentials.from(credentials));
+    ManagedChannel kmsChannel = ManagedChannelBuilder.forTarget("cloudkms.googleapis.com:443").build();
+    KeyManagementServiceBlockingStub kmsStub = KeyManagementServiceGrpc.newBlockingStub(kmsChannel)
+        .withCallCredentials(MoreCallCredentials.from(credentials));
+    IAMPolicyGrpc.IAMPolicyBlockingStub iamStub = IAMPolicyGrpc.newBlockingStub(kmsChannel)
+        .withCallCredentials(MoreCallCredentials.from(credentials));
+    ensureKmsKeyRingExistsForTests(kmsStub, iamStub, projectId, KMS_KEY_RING_LOCATION, KMS_KEY_RING_NAME);
+    kmsKeyOneResourcePath = ensureKmsKeyExistsForTests(kmsStub, projectId, KMS_KEY_RING_LOCATION, KMS_KEY_RING_NAME,
+        KMS_KEY_ONE_NAME);
+    kmsKeyTwoResourcePath = ensureKmsKeyExistsForTests(kmsStub, projectId, KMS_KEY_RING_LOCATION, KMS_KEY_RING_NAME,
+        KMS_KEY_TWO_NAME);
+  }
+
+  private static String ensureKmsKeyRingExistsForTests(KeyManagementServiceBlockingStub kmsStub,
+                                                       IAMPolicyGrpc.IAMPolicyBlockingStub iamStub, String projectId,
+                                                       String location,
+                                                       String keyRingName) throws StatusRuntimeException {
     Metadata requestParamsHeader = new Metadata();
     Metadata.Key<String> requestParamsKey =
         Metadata.Key.of("x-goog-request-params", Metadata.ASCII_STRING_MARSHALLER);
-
-    String kmsKeyRingResourcePath = KeyRingName
-        .of(projectId, KMS_KEY_RING_LOCATION, KMS_KEY_RING_NAME).toString();
+    String kmsKeyRingResourcePath = KeyRingName.of(projectId, location, keyRingName).toString();
     try {
       // Attempt to Get KeyRing
       GetKeyRingRequest getKeyRingRequest = GetKeyRingRequest.newBuilder().setName(kmsKeyRingResourcePath)
           .build();
       requestParamsHeader.put(requestParamsKey, "name="+kmsKeyRingResourcePath);
-      KeyManagementServiceBlockingStub serviceBlockingStubForGetKeyRing = MetadataUtils
-          .attachHeaders(keyManagementServiceBlockingStub, requestParamsHeader);
-      serviceBlockingStubForGetKeyRing.getKeyRing(getKeyRingRequest);
+      KeyManagementServiceBlockingStub stubForGetKeyRing = MetadataUtils
+          .attachHeaders(kmsStub, requestParamsHeader);
+      stubForGetKeyRing.getKeyRing(getKeyRingRequest);
     } catch (StatusRuntimeException ex) {
       if (ex.getStatus().getCode() == Status.Code.NOT_FOUND) {
         // Create KmsKeyRing
-        String keyRingParent = "parent=projects/" + projectId + "/locations/" + KMS_KEY_RING_LOCATION;
+        String keyRingParent = LocationName.of(projectId, location).toString();
         CreateKeyRingRequest createKeyRingRequest = CreateKeyRingRequest.newBuilder()
             .setParent(keyRingParent)
-            .setKeyRingId(KMS_KEY_RING_NAME).build();
-        requestParamsHeader.put(requestParamsKey, keyRingParent);
-        KeyManagementServiceBlockingStub serviceBlockingStubForCreateKeyRing = MetadataUtils
-            .attachHeaders(keyManagementServiceBlockingStub, requestParamsHeader);
-        serviceBlockingStubForCreateKeyRing.createKeyRing(createKeyRingRequest);
+            .setKeyRingId(keyRingName).build();
+        requestParamsHeader.put(requestParamsKey, "parent=" + keyRingParent);
+        KeyManagementServiceBlockingStub stubForCreateKeyRing = MetadataUtils
+            .attachHeaders(kmsStub, requestParamsHeader);
+        stubForCreateKeyRing.createKeyRing(createKeyRingRequest);
       } else {
         throw ex;
       }
     }
-
     ServiceAccount serviceAccount = storage.getServiceAccount(projectId);
-    IAMPolicyGrpc.IAMPolicyBlockingStub iamPolicyBlockingStub = IAMPolicyGrpc.newBlockingStub(kmsChannel)
-        .withCallCredentials(MoreCallCredentials.from(credentials));
     Binding binding = Binding.newBuilder().setRole("roles/cloudkms.cryptoKeyEncrypterDecrypter")
         .addMembers("serviceAccount:"+serviceAccount.getEmail()).build();
     com.google.iam.v1.Policy policy = com.google.iam.v1.Policy.newBuilder().addBindings(binding).build();
     SetIamPolicyRequest setIamPolicyRequest = SetIamPolicyRequest.newBuilder().setResource(kmsKeyRingResourcePath)
         .setPolicy(policy).build();
-    requestParamsHeader.put(requestParamsKey, "parent="+kmsKeyRingResourcePath);
-    iamPolicyBlockingStub = MetadataUtils.attachHeaders(iamPolicyBlockingStub, requestParamsHeader);
-    iamPolicyBlockingStub.setIamPolicy(setIamPolicyRequest);
+    requestParamsHeader.put(requestParamsKey, "parent=" + kmsKeyRingResourcePath);
+    iamStub = MetadataUtils.attachHeaders(iamStub, requestParamsHeader);
+    iamStub.setIamPolicy(setIamPolicyRequest);
 
-    kmsKeyOneResourcePath = CryptoKeyName
-        .of(projectId, KMS_KEY_RING_LOCATION, KMS_KEY_RING_NAME, KMS_KEY_ONE_NAME).toString();
+    return kmsKeyRingResourcePath;
+  }
+
+  private static String ensureKmsKeyExistsForTests(KeyManagementServiceBlockingStub kmsStub, String projectId, String location,
+                                  String keyRingName, String keyName) throws StatusRuntimeException {
+    Metadata requestParamsHeader = new Metadata();
+    Metadata.Key<String> requestParamsKey =
+        Metadata.Key.of("x-goog-request-params", Metadata.ASCII_STRING_MARSHALLER);
+    String kmsKeyResourcePath = CryptoKeyName.of(projectId, location, keyRingName, keyName).toString();
     try {
       // Attempt to Get CryptoKey
-      GetCryptoKeyRequest getCryptoKeyOneRequest = GetCryptoKeyRequest.newBuilder()
-          .setName(kmsKeyOneResourcePath).build();
-      keyManagementServiceBlockingStub.getCryptoKey(getCryptoKeyOneRequest);
+      requestParamsHeader.put(requestParamsKey, "name=" + kmsKeyResourcePath);
+      GetCryptoKeyRequest getCryptoKeyRequest = GetCryptoKeyRequest.newBuilder()
+          .setName(kmsKeyResourcePath).build();
+      KeyManagementServiceGrpc.KeyManagementServiceBlockingStub stubForGetCryptoKey = MetadataUtils
+          .attachHeaders(kmsStub, requestParamsHeader);
+      stubForGetCryptoKey.getCryptoKey(getCryptoKeyRequest);
     } catch(StatusRuntimeException ex) {
       if (ex.getStatus().getCode() == Status.Code.NOT_FOUND) {
+        String kmsKeyRingResourcePath = KeyRingName.of(projectId, location, keyRingName).toString();
         CryptoKey cryptoKey = CryptoKey.newBuilder().setPurpose(CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT).build();
-        CreateCryptoKeyRequest createCryptoKeyOneRequest = CreateCryptoKeyRequest.newBuilder()
-            .setCryptoKeyId(KMS_KEY_ONE_NAME).setParent(kmsKeyRingResourcePath).setCryptoKey(cryptoKey).build();
+        CreateCryptoKeyRequest createCryptoKeyRequest = CreateCryptoKeyRequest.newBuilder()
+            .setCryptoKeyId(keyName).setParent(kmsKeyRingResourcePath).setCryptoKey(cryptoKey).build();
+
         requestParamsHeader.put(requestParamsKey, "parent=" + kmsKeyRingResourcePath);
-        KeyManagementServiceBlockingStub serviceBlockingStubForCreateCryptoKey = MetadataUtils
-            .attachHeaders(keyManagementServiceBlockingStub, requestParamsHeader);
-        serviceBlockingStubForCreateCryptoKey.createCryptoKey(createCryptoKeyOneRequest);
+        KeyManagementServiceGrpc.KeyManagementServiceBlockingStub stubForCreateCryptoKey = MetadataUtils
+            .attachHeaders(kmsStub, requestParamsHeader);
+        stubForCreateCryptoKey.createCryptoKey(createCryptoKeyRequest);
       } else {
         throw ex;
       }
     }
-
-    kmsKeyTwoResourcePath = CryptoKeyName
-        .of(projectId, KMS_KEY_RING_LOCATION, KMS_KEY_RING_NAME, KMS_KEY_TWO_NAME).toString();
-    try {
-      // Attempt to Get CryptoKey
-      GetCryptoKeyRequest getCryptoKeyTwoRequest = GetCryptoKeyRequest.newBuilder()
-          .setName(kmsKeyTwoResourcePath).build();
-      keyManagementServiceBlockingStub.getCryptoKey(getCryptoKeyTwoRequest);
-    } catch(StatusRuntimeException ex) {
-      if (ex.getStatus().getCode() == Status.Code.NOT_FOUND) {
-        // Create CryptoKeyTwo
-        CryptoKey cryptoKey = CryptoKey.newBuilder().setPurpose(CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT).build();
-        CreateCryptoKeyRequest createCryptoKeyTwoRequest = CreateCryptoKeyRequest.newBuilder()
-            .setCryptoKeyId(KMS_KEY_TWO_NAME).setParent(kmsKeyRingResourcePath).setCryptoKey(cryptoKey).build();
-        requestParamsHeader.put(requestParamsKey, "parent=" + kmsKeyRingResourcePath);
-        KeyManagementServiceGrpc.KeyManagementServiceBlockingStub serviceBlockingStubForCreateCryptoKey = MetadataUtils
-            .attachHeaders(keyManagementServiceBlockingStub, requestParamsHeader);
-        serviceBlockingStubForCreateCryptoKey.createCryptoKey(createCryptoKeyTwoRequest);
-      } else {
-        throw ex;
-      }
-    }
+    return kmsKeyResourcePath;
   }
 
   @Test(timeout = 5000)
