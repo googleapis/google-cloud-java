@@ -171,11 +171,10 @@ public class GrafeasV1Beta1ClientTest {
             .build();
     mockGrafeasV1Beta1.addResponse(expectedResponse);
 
-    String formattedParent = ProjectName.format("[PROJECT]");
+    ProjectName parent = ProjectName.of("[PROJECT]");
     String filter = "filter-1274492040";
 
-    ListOccurrencesPagedResponse pagedListResponse =
-        client.listOccurrences(formattedParent, filter);
+    ListOccurrencesPagedResponse pagedListResponse = client.listOccurrences(parent, filter);
 
     List<Occurrence> resources = Lists.newArrayList(pagedListResponse.iterateAll());
     Assert.assertEquals(1, resources.size());
@@ -185,7 +184,7 @@ public class GrafeasV1Beta1ClientTest {
     Assert.assertEquals(1, actualRequests.size());
     ListOccurrencesRequest actualRequest = (ListOccurrencesRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedParent, actualRequest.getParent());
+    Assert.assertEquals(parent, ProjectName.parse(actualRequest.getParent()));
     Assert.assertEquals(filter, actualRequest.getFilter());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -200,10 +199,10 @@ public class GrafeasV1Beta1ClientTest {
     mockGrafeasV1Beta1.addException(exception);
 
     try {
-      String formattedParent = ProjectName.format("[PROJECT]");
+      ProjectName parent = ProjectName.of("[PROJECT]");
       String filter = "filter-1274492040";
 
-      client.listOccurrences(formattedParent, filter);
+      client.listOccurrences(parent, filter);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
