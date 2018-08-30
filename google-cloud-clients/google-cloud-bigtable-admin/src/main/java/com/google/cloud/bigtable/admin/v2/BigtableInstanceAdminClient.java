@@ -19,6 +19,7 @@ import com.google.api.core.ApiAsyncFunction;
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
+import com.google.bigtable.admin.v2.AppProfile.SingleClusterRouting;
 import com.google.bigtable.admin.v2.AppProfileName;
 import com.google.bigtable.admin.v2.DeleteAppProfileRequest;
 import com.google.bigtable.admin.v2.GetAppProfileRequest;
@@ -28,6 +29,7 @@ import com.google.bigtable.admin.v2.ProjectName;
 import com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient.ListAppProfilesPage;
 import com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient.ListAppProfilesPagedResponse;
 import com.google.cloud.bigtable.admin.v2.models.AppProfile;
+import com.google.cloud.bigtable.admin.v2.models.AppProfile.SingleClusterRoutingPolicy;
 import com.google.cloud.bigtable.admin.v2.models.CreateAppProfileRequest;
 import com.google.cloud.bigtable.admin.v2.models.UpdateAppProfileRequest;
 import com.google.cloud.bigtable.admin.v2.stub.BigtableInstanceAdminStub;
@@ -126,11 +128,37 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
     stub.close();
   }
 
+  /**
+   * Creates a new app profile.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * AppProfile appProfile = client.createAppProfile(
+   *   CreateAppProfileRequest.of("my-instance", "my-new-app-profile")
+   *     .setRoutingPolicy(SingleClusterRoutingPolicy.of("my-cluster"))
+   * );
+   * }</pre>
+   */
   @SuppressWarnings("WeakerAccess")
   public AppProfile createAppProfile(CreateAppProfileRequest request) {
     return awaitFuture(createAppProfileAsync(request));
   }
 
+  /**
+   * Asynchronously creates a new app profile.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * ApiFuture<AppProfile> appProfileFuture = client.createAppProfileAsync(
+   *   CreateAppProfileRequest.of("my-instance", "my-new-app-profile")
+   *     .setRoutingPolicy(SingleClusterRoutingPolicy.of("my-cluster"))
+   * );
+   *
+   * AppProfile appProfile = appProfileFuture.get();
+   * }</pre>
+   */
   @SuppressWarnings("WeakerAccess")
   public ApiFuture<AppProfile> createAppProfileAsync(CreateAppProfileRequest request) {
     return ApiFutures.transform(
@@ -145,11 +173,31 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
     );
   }
 
+  /**
+   * Get the app profile by id.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * AppProfile appProfile = client.getAppProfile("my-instance", "my-app-profile");
+   * }</pre>
+   */
   @SuppressWarnings("WeakerAccess")
   public AppProfile getAppProfile(String instanceId, String appProfileId) {
     return awaitFuture(getAppProfileAsync(instanceId, appProfileId));
   }
 
+  /**
+   * Asynchronously get the app profile by id.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * ApiFuture<AppProfile> appProfileFuture = client.getAppProfileAsync("my-instance", "my-app-profile");
+   *
+   * AppProfile appProfile = appProfileFuture.get();
+   * }</pre>
+   */
   @SuppressWarnings("WeakerAccess")
   public ApiFuture<AppProfile> getAppProfileAsync(String instanceId, String appProfileId) {
     AppProfileName name = AppProfileName.of(projectName.getProject(), instanceId, appProfileId);
@@ -170,11 +218,31 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
     );
   }
 
+  /**
+   * Lists all app profiles the specified instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * List<AppProfile> appProfiles = client.listAppProfiles("my-instance");
+   * }</pre>
+   */
   @SuppressWarnings("WeakerAccess")
   public List<AppProfile> listAppProfiles(String instanceId) {
     return awaitFuture(listAppProfilesAsync(instanceId));
   }
 
+  /**
+   * Lists all app profiles the specified instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * ApiFuture<List<AppProfile>> appProfilesFuture = client.listAppProfilesAsync("my-instance");
+   *
+   * List<AppProfile> appProfiles = appProfileFuture.get();
+   * }</pre>
+   */
   @SuppressWarnings("WeakerAccess")
   public ApiFuture<List<AppProfile>> listAppProfilesAsync(String instanceId) {
     InstanceName instanceName = InstanceName.of(projectName.getProject(), instanceId);
@@ -244,11 +312,51 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
     );
   }
 
+  /**
+   * Updates an existing app profile.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * AppProfile existingAppProfile = client.getAppProfile("my-instance", "my-app-profile");
+   *
+   * AppProfile updatedAppProfile = client.updateAppProfile(
+   *   UpdateAppProfileRequest.of(existingAppProfile)
+   *     .setRoutingPolicy(SingleClusterRoutingPolicy.of("my-cluster"))
+   * );
+   * }</pre>
+   */
   @SuppressWarnings("WeakerAccess")
   public AppProfile updateAppProfile(UpdateAppProfileRequest request) {
     return awaitFuture(updateAppProfileAsync(request));
   }
 
+  /**
+   * Asynchronously updates an existing app profile.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   *
+   * ApiFuture<AppProfile> existingAppProfileFuture = client.getAppProfileAsync("my-instance", "my-app-profile");
+   *
+   * ApiFuture<AppProfile> updatedAppProfileFuture = ApiFutures.transformAsync(
+   *   existingAppProfileFuture,
+   *   new ApiAsyncFunction<AppProfile, AppProfile>() {
+   *     @Override
+   *     public ApiFuture<AppProfile> apply(AppProfile existingAppProfile) {
+   *       return client.updateAppProfileAsync(
+   *         UpdateAppProfileRequest.of(existingAppProfile)
+   *           .setRoutingPolicy(SingleClusterRoutingPolicy.of("my-other-cluster"))
+   *       );
+   *     }
+   *   },
+   *   MoreExecutors.directExecutor()
+   * );
+   *
+   * ApiFuture<AppProfile> appProfile = updatedAppProfileFuture.get();
+   * }</pre>
+   */
   @SuppressWarnings("WeakerAccess")
   public ApiFuture<AppProfile> updateAppProfileAsync(UpdateAppProfileRequest request) {
     return ApiFutures.transform(
@@ -263,11 +371,31 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
     );
   }
 
+  /**
+   * Deletes the specified app profile.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * client.deleteAppProfile("my-instance", "my-app-profile");
+   * }</pre>
+   */
   @SuppressWarnings("WeakerAccess")
   public void deleteAppProfile(String instanceId, String appProfileId) {
     awaitFuture(deleteAppProfileAsync(instanceId, appProfileId));
   }
 
+  /**
+   * Asynchronously deletes the specified app profile.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * ApiFuture<Void> deleteFuture = client.deleteAppProfileAsync("my-instance", "my-app-profile");
+   *
+   * deleteFuture.get();
+   * }</pre>
+   */
   @SuppressWarnings("WeakerAccess")
   public ApiFuture<Void> deleteAppProfileAsync(String instanceId, String appProfileId) {
     AppProfileName name = AppProfileName.of(projectName.getProject(), instanceId, appProfileId);

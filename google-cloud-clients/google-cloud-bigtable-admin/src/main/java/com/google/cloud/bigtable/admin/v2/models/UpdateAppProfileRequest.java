@@ -18,50 +18,74 @@ package com.google.cloud.bigtable.admin.v2.models;
 import com.google.api.core.InternalApi;
 import com.google.bigtable.admin.v2.AppProfileName;
 import com.google.bigtable.admin.v2.ProjectName;
-import com.google.bigtable.admin.v2.UpdateAppProfileRequest.Builder;
 import com.google.cloud.bigtable.admin.v2.models.AppProfile.MultiClusterRoutingPolicy;
 import com.google.cloud.bigtable.admin.v2.models.AppProfile.RoutingPolicy;
 import com.google.cloud.bigtable.admin.v2.models.AppProfile.SingleClusterRoutingPolicy;
 import com.google.common.base.Objects;
 import com.google.common.base.Preconditions;
-import com.google.common.base.Verify;
 import com.google.protobuf.FieldMask;
 import com.google.protobuf.util.FieldMaskUtil;
 import javax.annotation.Nonnull;
 
-public class UpdateAppProfileRequest {
+/**
+ * Parameters for updating an existing Cloud Bigtable app profile.
+ *
+ * <p>Examples
+ *
+ * <pre>{@code
+ * AppProfile existingAppProfile = ...;
+ * UpdateAppProfileRequest appProfileRequest = UpdateAppProfileRequest.of(existingAppProfile)
+ *   .setRoutingPolicy(SingleClusterRoutingPolicy.of("my-cluster"));
+ * }</pre>
+ *
+ * @see AppProfile for more details
+ */
+public final class UpdateAppProfileRequest {
   private final String instanceId;
   private final String appProfileId;
 
   private final com.google.bigtable.admin.v2.UpdateAppProfileRequest.Builder proto;
 
-  public static UpdateAppProfileRequest of(@Nonnull String instanceId, @Nonnull String appProfileId) {
+  /**
+   * Builds a new update request using an existing AppProfile.
+   *
+   * <p>This variant is recommended over {@link #of(String, String)} because it provides optimistic
+   * concurrency control using etags.
+   */
+  public static UpdateAppProfileRequest of(@Nonnull AppProfile appProfile) {
+    return new UpdateAppProfileRequest(appProfile.getInstanceId(), appProfile.getId(),
+        com.google.bigtable.admin.v2.UpdateAppProfileRequest.newBuilder()
+            .setAppProfile(appProfile.toProto())
+    );
+  }
+
+  /** Builds a new update request using an existing AppProfile. */
+  public static UpdateAppProfileRequest of(@Nonnull String instanceId,
+      @Nonnull String appProfileId) {
     return new UpdateAppProfileRequest(instanceId, appProfileId,
         com.google.bigtable.admin.v2.UpdateAppProfileRequest.newBuilder());
   }
 
-  public static UpdateAppProfileRequest of(@Nonnull AppProfile appProfile) {
-    return new UpdateAppProfileRequest(appProfile.getInstanceId(), appProfile.getId(),
-        com.google.bigtable.admin.v2.UpdateAppProfileRequest.newBuilder()
-          .setAppProfile(appProfile.getProto())
-        );
-  }
-
-  private UpdateAppProfileRequest(@Nonnull String instanceId, @Nonnull String appProfileId, @Nonnull Builder builder) {
+  private UpdateAppProfileRequest(@Nonnull String instanceId, @Nonnull String appProfileId,
+      @Nonnull com.google.bigtable.admin.v2.UpdateAppProfileRequest.Builder builder) {
     Preconditions.checkNotNull(instanceId, "instanceId must be set");
     Preconditions.checkNotNull(appProfileId, "appProfileId must be set");
-    Verify.verifyNotNull(builder);
+    Preconditions.checkNotNull(builder, "builder must be set");
 
     this.instanceId = instanceId;
     this.appProfileId = appProfileId;
     this.proto = builder;
   }
 
+  /** Configures if safety warnings should be disabled. */
+  @SuppressWarnings("WeakerAccess")
   public UpdateAppProfileRequest setIgnoreWarnings(boolean value) {
     proto.setIgnoreWarnings(value);
     return this;
   }
 
+  /** Sets the optional long form description of the use case for the AppProfile. */
+  @SuppressWarnings("WeakerAccess")
   public UpdateAppProfileRequest setDescription(@Nonnull String description) {
     Preconditions.checkNotNull(description);
 
@@ -70,14 +94,19 @@ public class UpdateAppProfileRequest {
     return this;
   }
 
-  public UpdateAppProfileRequest setRoutingPolicy(RoutingPolicy routingPolicy) {
+  /** Sets the routing policy for all read/write requests that use this app profile. */
+  @SuppressWarnings("WeakerAccess")
+  public UpdateAppProfileRequest setRoutingPolicy(@Nonnull RoutingPolicy routingPolicy) {
     Preconditions.checkNotNull(routingPolicy);
 
     if (routingPolicy instanceof MultiClusterRoutingPolicy) {
-      proto.getAppProfileBuilder().setMultiClusterRoutingUseAny(((MultiClusterRoutingPolicy)routingPolicy).toProto());
-      updateFieldMask(com.google.bigtable.admin.v2.AppProfile.MULTI_CLUSTER_ROUTING_USE_ANY_FIELD_NUMBER);
+      proto.getAppProfileBuilder()
+          .setMultiClusterRoutingUseAny(((MultiClusterRoutingPolicy) routingPolicy).toProto());
+      updateFieldMask(
+          com.google.bigtable.admin.v2.AppProfile.MULTI_CLUSTER_ROUTING_USE_ANY_FIELD_NUMBER);
     } else if (routingPolicy instanceof SingleClusterRoutingPolicy) {
-      proto.getAppProfileBuilder().setSingleClusterRouting(((SingleClusterRoutingPolicy)routingPolicy).toProto());
+      proto.getAppProfileBuilder()
+          .setSingleClusterRouting(((SingleClusterRoutingPolicy) routingPolicy).toProto());
       updateFieldMask(com.google.bigtable.admin.v2.AppProfile.SINGLE_CLUSTER_ROUTING_FIELD_NUMBER);
     } else {
       throw new IllegalArgumentException("Unknown policy type: " + routingPolicy);
@@ -87,10 +116,15 @@ public class UpdateAppProfileRequest {
   }
 
   private void updateFieldMask(int fieldNumber) {
-    FieldMask newMask = FieldMaskUtil.fromFieldNumbers(com.google.bigtable.admin.v2.AppProfile.class, fieldNumber);
+    FieldMask newMask = FieldMaskUtil
+        .fromFieldNumbers(com.google.bigtable.admin.v2.AppProfile.class, fieldNumber);
     proto.setUpdateMask(FieldMaskUtil.union(proto.getUpdateMask(), newMask));
   }
 
+  /**
+   * Creates the request protobuf. This method is considered an internal implementation detail and
+   * not meant to be used by applications.
+   */
   @InternalApi
   public com.google.bigtable.admin.v2.UpdateAppProfileRequest toProto(ProjectName projectName) {
     AppProfileName name = AppProfileName.of(projectName.getProject(), instanceId, appProfileId);

@@ -24,11 +24,30 @@ import com.google.cloud.bigtable.admin.v2.models.AppProfile.SingleClusterRouting
 import com.google.common.base.Preconditions;
 import javax.annotation.Nonnull;
 
-public class CreateAppProfileRequest {
+/**
+ * Parameters for creating a new Cloud Bigtable app profile.
+ *
+ * <p>An application profile, or app profile, stores settings that tell your Cloud Bigtable
+ * instance how to handle incoming requests from an application. When one of your applications
+ * connects to a Cloud Bigtable instance, it can specify an app profile, and Cloud Bigtable uses
+ * that app profile for any requests that the application sends over that connection.
+ *
+ * <p>Sample code:
+ *
+ * <pre>{@code
+ * AppProfile existingAppProfile = ...;
+ * CreateAppProfileRequest appProfileRequest = CreateAppProfileRequest.of("my-instance", "my-new-app-profile")
+ *   .setRoutingPolicy(SingleClusterRoutingPolicy.of("my-cluster"));
+ * }</pre>
+ *
+ * @see AppProfile for more details
+ */
+public final class CreateAppProfileRequest {
   private final String instanceId;
   private final com.google.bigtable.admin.v2.CreateAppProfileRequest.Builder proto;
 
-  public CreateAppProfileRequest of(String instanceId, String appProfileId) {
+  /** Builds a new request to create a new app profile in the specified instance. */
+  public static CreateAppProfileRequest of(String instanceId, String appProfileId) {
     return new CreateAppProfileRequest(instanceId, appProfileId);
   }
 
@@ -40,16 +59,22 @@ public class CreateAppProfileRequest {
     proto.getAppProfileBuilder().setDescription(appProfileId);
   }
 
+  /** Configures if safety warnings should be disabled. */
+  @SuppressWarnings("WeakerAccess")
   public CreateAppProfileRequest setIgnoreWarnings(boolean value) {
     proto.setIgnoreWarnings(value);
     return this;
   }
 
+  /** Sets the optional long form description of the use case for the AppProfile. */
+  @SuppressWarnings("WeakerAccess")
   public CreateAppProfileRequest setDescription(@Nonnull String description) {
     proto.getAppProfileBuilder().setDescription(description);
     return this;
   }
 
+  /** Sets the routing policy for all read/write requests that use this app profile. */
+  @SuppressWarnings("WeakerAccess")
   public CreateAppProfileRequest setRoutingPolicy(RoutingPolicy routingPolicy) {
     Preconditions.checkNotNull(routingPolicy);
 
@@ -64,6 +89,10 @@ public class CreateAppProfileRequest {
     return this;
   }
 
+  /**
+   * Creates the request protobuf. This method is considered an internal implementation detail and
+   * not meant to be used by applications.
+   */
   @InternalApi
   public com.google.bigtable.admin.v2.CreateAppProfileRequest toProto(ProjectName projectName) {
     InstanceName name = InstanceName.of(projectName.getProject(), instanceId);
