@@ -23,13 +23,17 @@ import static org.junit.Assert.fail;
 
 import com.google.cloud.Timestamp;
 import com.google.cloud.spanner.AbortedException;
+import com.google.cloud.spanner.BatchClient;
+import com.google.cloud.spanner.BatchReadOnlyTransaction;
 import com.google.cloud.spanner.Database;
 import com.google.cloud.spanner.DatabaseClient;
 import com.google.cloud.spanner.ErrorCode;
 import com.google.cloud.spanner.IntegrationTest;
 import com.google.cloud.spanner.IntegrationTestEnv;
 import com.google.cloud.spanner.Key;
+import com.google.cloud.spanner.KeySet;
 import com.google.cloud.spanner.Mutation;
+import com.google.cloud.spanner.PartitionOptions;
 import com.google.cloud.spanner.ReadContext;
 import com.google.cloud.spanner.ResultSet;
 import com.google.cloud.spanner.SpannerException;
@@ -350,7 +354,7 @@ public class ITTransactionTest {
         .isEqualTo(2);
   }
 
-  private void doNestedTransaction() {
+  private void doNestedRwTransaction() {
     client
         .readWriteTransaction()
         .run(
@@ -373,9 +377,82 @@ public class ITTransactionTest {
   }
 
   @Test
-  public void nestedTransactionShouldThrowException() {
+  public void nestedRwRwTransactionShouldThrowException() {
     try {
-      doNestedTransaction();
+      doNestedRwTransaction();
+      fail("Expected exception");
+    } catch (SpannerException e) {
+      assertThat(e.getErrorCode()).isEqualTo(ErrorCode.INTERNAL);
+      assertThat(e.getMessage()).contains("not supported");
+    }
+  }
+
+  @Test
+  public void nestedRwRdTransactionShouldThrowException() {
+    try {
+      client
+          .readWriteTransaction()
+          .run(
+              new TransactionCallable<Void>() {
+                @Override
+                public Void run(TransactionContext transaction) throws SpannerException {
+                  client
+                      .readOnlyTransaction()
+                      .getReadTimestamp();
+
+                  return null;
+                }
+              });
+      fail("Expected exception");
+    } catch (SpannerException e) {
+      assertThat(e.getErrorCode()).isEqualTo(ErrorCode.INTERNAL);
+      assertThat(e.getMessage()).contains("not supported");
+    }
+  }
+
+  @Test
+  public void nestedRwBatchTransactionShouldThrowException() {
+    try {
+      client
+          .readWriteTransaction()
+          .run(
+              new TransactionCallable<Void>() {
+                @Override
+                public Void run(TransactionContext transaction) throws SpannerException {
+                  BatchClient batchClient = env.getTestHelper().getBatchClient(db);
+                  BatchReadOnlyTransaction batchTxn = batchClient
+                      .batchReadOnlyTransaction(TimestampBound.strong());
+                  batchTxn.partitionReadUsingIndex(
+                      PartitionOptions.getDefaultInstance(),
+                      "Test",
+                      "Index",
+                      KeySet.all(),
+                      Arrays.asList("Fingerprint"));
+
+                  return null;
+                }
+              });
+      fail("Expected exception");
+    } catch (SpannerException e) {
+      assertThat(e.getErrorCode()).isEqualTo(ErrorCode.INTERNAL);
+      assertThat(e.getMessage()).contains("not supported");
+    }
+  }
+
+  @Test
+  public void nestedRwSingleUseReadTransactionShouldThrowException() {
+    try {
+      client
+          .readWriteTransaction()
+          .run(
+              new TransactionCallable<Void>() {
+                @Override
+                public Void run(TransactionContext transaction) throws SpannerException {
+                  client.singleUseReadOnlyTransaction();
+
+                  return null;
+                }
+              });
       fail("Expected exception");
     } catch (SpannerException e) {
       assertThat(e.getErrorCode()).isEqualTo(ErrorCode.INTERNAL);

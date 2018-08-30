@@ -143,34 +143,6 @@ public class TransactionRunnerImplTest {
     verify(txn).rollback();
   }
 
-  private void runNestedTransaction() {
-    transactionRunner.run(
-        new TransactionCallable<Void>() {
-          @Override
-          public Void run(TransactionContext transaction) throws SpannerException {
-            transactionRunner.run(
-                new TransactionCallable<Void>() {
-                  @Override
-                  public Void run(TransactionContext transaction) throws Exception {
-                    return null;
-                  }
-                });
-            return null;
-          }
-        });
-  }
-
-  @Test
-  public void nestedTransactionShouldThrowException() {
-    try {
-      runNestedTransaction();
-      fail("Expected exception");
-    } catch (SpannerException e) {
-      assertThat(e.getErrorCode()).isEqualTo(ErrorCode.INTERNAL);
-      assertThat(e.getMessage()).contains("not supported");
-    }
-  }
-
   private void runTransaction(final Exception exception) {
     transactionRunner.run(
         new TransactionCallable<Void>() {

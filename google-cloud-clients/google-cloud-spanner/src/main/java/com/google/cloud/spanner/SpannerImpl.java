@@ -128,6 +128,19 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
   private static final String QUERY = "CloudSpannerOperation.ExecuteStreamingQuery";
   private static final String READ = "CloudSpannerOperation.ExecuteStreamingRead";
 
+  private static final ThreadLocal<Boolean> hasPendingTransaction = new ThreadLocal<Boolean>() {
+    @Override
+    protected Boolean initialValue() {
+      return false;
+    }
+  };
+
+  private static void throwIfTransactionsPending() {
+    if (hasPendingTransaction.get() == Boolean.TRUE) {
+        throw newSpannerException(ErrorCode.INTERNAL, "Nested transactions are not supported");
+    }
+  }
+
   static {
     TraceUtil.exportSpans(CREATE_SESSION, DELETE_SESSION, BEGIN_TRANSACTION, COMMIT, QUERY, READ);
   }
@@ -904,6 +917,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     }
     
     <T extends SessionTransaction> T setActive(@Nullable T ctx) {
+      throwIfTransactionsPending();
+
       if (activeTransaction != null) {
         activeTransaction.invalidate();
       }
@@ -1209,13 +1224,6 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
   @VisibleForTesting
   static class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
 
-    private static final ThreadLocal<Boolean> hasPendingTransaction = new ThreadLocal<Boolean>() {
-      @Override
-      protected Boolean initialValue() {
-        return false;
-      }
-    };
-
     /** Allow for testing of backoff logic */
     static class Sleeper {
       void backoffSleep(Context context, long backoffMillis) {
@@ -1244,10 +1252,6 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     @Nullable
     @Override
     public <T> T run(TransactionCallable<T> callable) {
-      if (hasPendingTransaction.get() == Boolean.TRUE) {
-        throw newSpannerException(ErrorCode.INTERNAL, "Nested transactions are not supported");
-      }
-
       try (Scope s = tracer.withSpan(span)) {
         hasPendingTransaction.set(Boolean.TRUE);
         return runInternal(callable);
@@ -1672,6 +1676,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     }
 
     void initTransaction() {
+      throwIfTransactionsPending();
+
       // Since we only support synchronous calls, just block on "txnLock" while the RPC is in
       // flight.  Note that we use the strategy of sending an explicit BeginTransaction() RPC,
       // rather than using the first read in the transaction to begin it implicitly.  The chosen
