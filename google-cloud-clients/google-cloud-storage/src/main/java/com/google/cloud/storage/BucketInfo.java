@@ -444,8 +444,8 @@ public class BucketInfo implements Serializable {
     abstract Builder setRetentionPolicyIsLocked(Boolean retentionPolicyIsLocked);
 
     /**
-     * If policy is not locked this value can be cleared, increased, and decreased. If policy is locked the retention
-     * period can only be increased.
+     * If policy is not locked this value can be cleared, increased, and decreased.
+     * If policy is locked the retention period can only be increased.
      */
     public abstract Builder setRetentionPeriod(Long retentionPeriod);
 
