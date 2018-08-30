@@ -32,7 +32,7 @@
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
-      <artifactId>proto-google-cloud-tasks-v2beta2</artifactId>
+      <artifactId>proto-google-cloud-tasks-v2beta3</artifactId>
     </dependency>
     <dependency>
       <groupId>io.grpc</groupId>
@@ -74,7 +74,7 @@
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
-      <artifactId>grpc-google-cloud-tasks-v2beta2</artifactId>
+      <artifactId>grpc-google-cloud-tasks-v2beta3</artifactId>
       <scope>test</scope>
     </dependency>
     <dependency>

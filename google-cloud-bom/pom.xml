@@ -873,6 +873,16 @@
         <version>0.24.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-tasks-v2beta2:current} -->
       </dependency>
       <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-tasks-v2beta3</artifactId>
+        <version>0.24.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-tasks-v2beta2:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-tasks-v2beta3</artifactId>
+        <version>0.24.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-tasks-v2beta2:current} -->
+      </dependency>
+      <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-texttospeech</artifactId>
         <version>0.59.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-texttospeech:current} -->
