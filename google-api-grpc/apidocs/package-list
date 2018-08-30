@@ -18,6 +18,7 @@ com.google.cloud.speech.v1
 com.google.cloud.speech.v1beta1
 com.google.cloud.speech.v1p1beta1
 com.google.cloud.tasks.v2beta2
+com.google.cloud.tasks.v2beta3
 com.google.cloud.texttospeech.v1
 com.google.cloud.texttospeech.v1beta1
 com.google.cloud.videointelligence.v1

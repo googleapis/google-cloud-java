@@ -111,6 +111,8 @@ com.google.cloud.storage.spi.v1
 com.google.cloud.storage.testing
 com.google.cloud.tasks.v2beta2
 com.google.cloud.tasks.v2beta2.stub
+com.google.cloud.tasks.v2beta3
+com.google.cloud.tasks.v2beta3.stub
 com.google.cloud.testing
 com.google.cloud.texttospeech.v1
 com.google.cloud.texttospeech.v1.stub
