@@ -15,9 +15,24 @@
  */
 package com.google.cloud.bigtable.admin.v2;
 
+import com.google.api.core.ApiFunction;
+import com.google.api.core.ApiFuture;
+import com.google.api.core.ApiFutures;
+import com.google.bigtable.admin.v2.InstanceName;
 import com.google.bigtable.admin.v2.ProjectName;
+import com.google.cloud.Policy;
+import com.google.cloud.Policy.DefaultMarshaller;
 import com.google.cloud.bigtable.admin.v2.stub.BigtableInstanceAdminStub;
+import com.google.common.util.concurrent.Futures;
+import com.google.common.util.concurrent.MoreExecutors;
+import com.google.common.util.concurrent.UncheckedExecutionException;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import java.io.IOException;
+import java.util.Arrays;
+import java.util.List;
 import javax.annotation.Nonnull;
 
 /**
@@ -104,5 +119,116 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
   @Override
   public void close() {
     stub.close();
+  }
+
+  public Policy getIamPolicy(String instanceId) {
+    return awaitFuture(getIamPolicyAsync(instanceId));
+  }
+
+  public ApiFuture<Policy> getIamPolicyAsync(String instanceId) {
+    InstanceName name = InstanceName.of(projectName.getProject(), instanceId);
+
+    GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder()
+        .setResource(name.toString())
+        .build();
+
+    final PolicyMarshaller marshaller = new PolicyMarshaller();
+
+    return ApiFutures.transform(
+        stub.getIamPolicyCallable().futureCall(request),
+        new ApiFunction<com.google.iam.v1.Policy, Policy>() {
+          @Override
+          public Policy apply(com.google.iam.v1.Policy proto) {
+            return marshaller.fromPb(proto);
+          }
+        },
+        MoreExecutors.directExecutor()
+    );
+  }
+
+  public Policy setIamPolicy(String instanceId, Policy policy) {
+    return awaitFuture(setIamPolicyAsync(instanceId, policy));
+  }
+
+  public ApiFuture<Policy> setIamPolicyAsync(String instanceId, Policy policy) {
+    InstanceName name = InstanceName.of(projectName.getProject(), instanceId);
+    final PolicyMarshaller marshaller = new PolicyMarshaller();
+
+    SetIamPolicyRequest request = SetIamPolicyRequest.newBuilder()
+        .setResource(name.toString())
+        .setPolicy(marshaller.toPb(policy))
+        .build();
+
+    return ApiFutures.transform(
+        stub.setIamPolicyCallable().futureCall(request),
+        new ApiFunction<com.google.iam.v1.Policy, Policy>() {
+          @Override
+          public Policy apply(com.google.iam.v1.Policy proto) {
+            return marshaller.fromPb(proto);
+          }
+        },
+        MoreExecutors.directExecutor()
+    );
+  }
+
+  public List<String> testIamPermission(String instanceId, String... permissions) {
+    return awaitFuture(testIamPermissionAsync(instanceId, permissions));
+  }
+
+  public ApiFuture<List<String>> testIamPermissionAsync(String instanceId, String... permissions) {
+    InstanceName name = InstanceName.of(projectName.getProject(), instanceId);
+
+    TestIamPermissionsRequest request = TestIamPermissionsRequest.newBuilder()
+        .setResource(name.toString())
+        .addAllPermissions(Arrays.asList(permissions))
+        .build();
+
+    return ApiFutures.transform(
+        stub.testIamPermissionsCallable().futureCall(request),
+        new ApiFunction<TestIamPermissionsResponse, List<String>>() {
+          @Override
+          public List<String> apply(TestIamPermissionsResponse input) {
+            return input.getPermissionsList();
+          }
+        },
+        MoreExecutors.directExecutor()
+    );
+  }
+
+  private static class PolicyMarshaller extends DefaultMarshaller {
+    @Override
+    public Policy fromPb(com.google.iam.v1.Policy policyPb) {
+      return super.fromPb(policyPb);
+    }
+
+    @Override
+    public com.google.iam.v1.Policy toPb(Policy policy) {
+      return super.toPb(policy);
+    }
+  }
+
+  /**
+   * Awaits the result of a future, taking care to propagate errors while maintaining the call site
+   * in a suppressed exception. This allows semantic errors to be caught across threads, while
+   * preserving the call site in the error. The caller's stacktrace will be made available as a
+   * suppressed exception.
+   */
+  // TODO(igorbernstein2): try to move this into gax
+  private <T> T awaitFuture(ApiFuture<T> future) {
+    RuntimeException error;
+    try {
+      return Futures.getUnchecked(future);
+    } catch (UncheckedExecutionException e) {
+      if (e.getCause() instanceof RuntimeException) {
+        error = (RuntimeException) e.getCause();
+      } else {
+        error = e;
+      }
+    } catch (RuntimeException e) {
+      error = e;
+    }
+    // Add the caller's stack as a suppressed exception
+    error.addSuppressed(new RuntimeException("Encountered error while awaiting future"));
+    throw error;
   }
 }
