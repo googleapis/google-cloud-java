@@ -139,6 +139,8 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
    *     .setRoutingPolicy(SingleClusterRoutingPolicy.of("my-cluster"))
    * );
    * }</pre>
+   *
+   * @see CreateAppProfileRequest
    */
   @SuppressWarnings("WeakerAccess")
   public AppProfile createAppProfile(CreateAppProfileRequest request) {
@@ -158,6 +160,8 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
    *
    * AppProfile appProfile = appProfileFuture.get();
    * }</pre>
+   *
+   * @see CreateAppProfileRequest
    */
   @SuppressWarnings("WeakerAccess")
   public ApiFuture<AppProfile> createAppProfileAsync(CreateAppProfileRequest request) {
@@ -181,6 +185,8 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
    * <pre>{@code
    * AppProfile appProfile = client.getAppProfile("my-instance", "my-app-profile");
    * }</pre>
+   *
+   * @see AppProfile
    */
   @SuppressWarnings("WeakerAccess")
   public AppProfile getAppProfile(String instanceId, String appProfileId) {
@@ -197,6 +203,8 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
    *
    * AppProfile appProfile = appProfileFuture.get();
    * }</pre>
+   *
+   * @see AppProfile
    */
   @SuppressWarnings("WeakerAccess")
   public ApiFuture<AppProfile> getAppProfileAsync(String instanceId, String appProfileId) {
@@ -226,6 +234,8 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
    * <pre>{@code
    * List<AppProfile> appProfiles = client.listAppProfiles("my-instance");
    * }</pre>
+   *
+   * @see AppProfile
    */
   @SuppressWarnings("WeakerAccess")
   public List<AppProfile> listAppProfiles(String instanceId) {
@@ -242,6 +252,8 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
    *
    * List<AppProfile> appProfiles = appProfileFuture.get();
    * }</pre>
+   *
+   * @see AppProfile
    */
   @SuppressWarnings("WeakerAccess")
   public ApiFuture<List<AppProfile>> listAppProfilesAsync(String instanceId) {
@@ -325,6 +337,8 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
    *     .setRoutingPolicy(SingleClusterRoutingPolicy.of("my-cluster"))
    * );
    * }</pre>
+   *
+   * @see UpdateAppProfileRequest
    */
   @SuppressWarnings("WeakerAccess")
   public AppProfile updateAppProfile(UpdateAppProfileRequest request) {
@@ -356,6 +370,8 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
    *
    * ApiFuture<AppProfile> appProfile = updatedAppProfileFuture.get();
    * }</pre>
+   *
+   * @see UpdateAppProfileRequest
    */
   @SuppressWarnings("WeakerAccess")
   public ApiFuture<AppProfile> updateAppProfileAsync(UpdateAppProfileRequest request) {
