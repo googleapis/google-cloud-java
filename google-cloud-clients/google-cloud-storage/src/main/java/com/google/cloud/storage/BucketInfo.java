@@ -435,7 +435,7 @@ public class BucketInfo implements Serializable {
     public abstract Builder setDefaultKmsKeyName(String defaultKmsKeyName);
 
     /**
-     * Sets the default Event Based Hold for this bucket.
+     * Sets the default event based hold for this bucket.
      */
     public abstract Builder setDefaultEventBasedHold(Boolean defaultEventBasedHold);
 
@@ -444,8 +444,8 @@ public class BucketInfo implements Serializable {
     abstract Builder setRetentionPolicyIsLocked(Boolean retentionPolicyIsLocked);
 
     /**
-     * If policy is not locked this value can be cleared or increased. If policy is locked the retention period can only
-     * be increased.
+     * If policy is not locked this value can be cleared, increased, and decreased. If policy is locked the retention
+     * period can only be increased.
      */
     public abstract Builder setRetentionPeriod(Long retentionPeriod);
 
@@ -839,7 +839,7 @@ public class BucketInfo implements Serializable {
   }
 
   /**
-   * Returns the default Event Based Hold to be applied to newly inserted objects in this bucket.
+   * Returns the default event based hold value used for inserted objects in this bucket.
    */
   public Boolean getDefaultEventBasedHold() { return defaultEventBasedHold; }
 
@@ -856,7 +856,7 @@ public class BucketInfo implements Serializable {
   }
 
   /**
-   * Returns the retention period.
+   * Returns the Retention Period.
    */
   public Long getRetentionPeriod() { return retentionPeriod; }
 

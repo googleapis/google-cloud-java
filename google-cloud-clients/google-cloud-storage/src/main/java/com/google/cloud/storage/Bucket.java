@@ -1137,19 +1137,20 @@ public class Bucket extends BucketInfo {
   /**
    * Locks bucket retention policy. Requires a local metageneration value in the request. Review example below.
    *
-   * Warning: Once a retention policy is locked, it can no longer be unlocked or removed only increased.
-   *
    * Accepts an optional userProject {@link BucketTargetOption} option which defines the project id
    * to assign operational costs.
    *
-   * <p>Example of locking a retention policy on a bucket, only if its metageneration matches the buckets
-   * metagenerationn otherwise a {@link StorageException} is thrown.
+   * <p>Warning: Once a retention policy is locked, it can't be unlocked, removed, or shortened.
+   *
+   * <p>Example of locking a retention policy on a bucket, only if its local metageneration value matches the bucket's
+   * service metageneration otherwise a {@link StorageException} is thrown.
    * <pre> {@code
    * String bucketName = "my_unique_bucket";
    * Bucket bucket = storage.get(bucketName, BucketGetOption.fields(BucketField.METAGENERATION));
-   * bucket.lockRetentionPolicy(BucketTargetOption.metagenerationMatch());
+   * storage.lockRetentionPolicy(bucket, BucketTargetOption.metagenerationMatch());
    * }</pre>
    *
+   * @return locked bucket
    * @throws StorageException upon failure
    */
   public Bucket lockRetentionPolicy(BucketTargetOption... options) {
