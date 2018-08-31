@@ -18,6 +18,7 @@ package com.google.cloud.bigtable.admin.v2;
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
+import com.google.api.resourcenames.ResourceName;
 import com.google.bigtable.admin.v2.InstanceName;
 import com.google.bigtable.admin.v2.ProjectName;
 import com.google.cloud.Policy;
@@ -121,10 +122,53 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
     stub.close();
   }
 
+  /**
+   * Gets the IAM access control policy for the specified instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * Policy policy = client.getIamPolicy("my-instance");
+   * for(Map.Entry<Role, Set<Identity>> entry : policy.getBindings().entrySet()) {
+   *   System.out.printf("Role: %s Identities: %s\n", entry.getKey(), entry.getValue());
+   * }
+   * }</pre>
+   *
+   * @see <a href="https://cloud.google.com/bigtable/docs/access-control#iam-management-instance">Instance-level
+   * IAM management</a>
+   */
+  @SuppressWarnings("WeakerAccess")
   public Policy getIamPolicy(String instanceId) {
     return awaitFuture(getIamPolicyAsync(instanceId));
   }
 
+  /**
+   * Asynchronously gets the IAM access control policy for the specified instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * ApiFuture<Policy> policyFuture = client.getIamPolicyAsync("my-instance");
+   *
+   *
+   * ApiFutures.addCallback(policyFuture,
+   *   new ApiFutureCallback<Policy>() {
+   *     public void onSuccess(Policy policy) {
+   *       for (Entry<Role, Set<Identity>> entry : policy.getBindings().entrySet()) {
+   *         System.out.printf("Role: %s Identities: %s\n", entry.getKey(), entry.getValue());
+   *       }
+   *     }
+   *
+   *     public void onFailure(Throwable t) {
+   *       t.printStackTrace();
+   *     }
+   *   },
+   *   MoreExecutors.directExecutor());
+   * }</pre>
+   *
+   * @see <a href="https://cloud.google.com/bigtable/docs/access-control#iam-management-instance">Instance-level IAM management</a>
+   */
+  @SuppressWarnings("WeakerAccess")
   public ApiFuture<Policy> getIamPolicyAsync(String instanceId) {
     InstanceName name = InstanceName.of(projectName.getProject(), instanceId);
 
@@ -132,7 +176,7 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
         .setResource(name.toString())
         .build();
 
-    final PolicyMarshaller marshaller = new PolicyMarshaller();
+    final IamPolicyMarshaller marshaller = new IamPolicyMarshaller();
 
     return ApiFutures.transform(
         stub.getIamPolicyCallable().futureCall(request),
@@ -146,13 +190,59 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
     );
   }
 
+  /**
+   * Replaces the IAM policy associated with the specified instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * Policy newPolicy = client.setIamPolicy("my-instance",
+   *   Policy.newBuilder()
+   *     .addIdentity(Role.of("bigtable.user"), Identity.user("someone@example.com"))
+   *     .addIdentity(Role.of("bigtable.admin"), Identity.group("admins@example.com"))
+   *     .build());
+   * }</pre>
+   *
+   * @see <a href="https://cloud.google.com/bigtable/docs/access-control#iam-management-instance">Instance-level IAM management</a>
+   */
+  @SuppressWarnings("WeakerAccess")
   public Policy setIamPolicy(String instanceId, Policy policy) {
     return awaitFuture(setIamPolicyAsync(instanceId, policy));
   }
 
+  /**
+   * Asynchronously replaces the IAM policy associated with the specified instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * ApiFuture<Policy> newPolicyFuture = client.setIamPolicyAsync("my-instance",
+   *   Policy.newBuilder()
+   *     .addIdentity(Role.of("bigtable.user"), Identity.user("someone@example.com"))
+   *     .addIdentity(Role.of("bigtable.admin"), Identity.group("admins@example.com"))
+   *     .build());
+   *
+   * ApiFutures.addCallback(policyFuture,
+   *   new ApiFutureCallback<Policy>() {
+   *     public void onSuccess(Policy policy) {
+   *       for (Entry<Role, Set<Identity>> entry : policy.getBindings().entrySet()) {
+   *         System.out.printf("Role: %s Identities: %s\n", entry.getKey(), entry.getValue());
+   *       }
+   *     }
+   *
+   *     public void onFailure(Throwable t) {
+   *       t.printStackTrace();
+   *     }
+   *   },
+   *   MoreExecutors.directExecutor());
+   * }</pre>
+   *
+   * @see <a href="https://cloud.google.com/bigtable/docs/access-control#iam-management-instance">Instance-level IAM management</a>
+   */
+  @SuppressWarnings("WeakerAccess")
   public ApiFuture<Policy> setIamPolicyAsync(String instanceId, Policy policy) {
     InstanceName name = InstanceName.of(projectName.getProject(), instanceId);
-    final PolicyMarshaller marshaller = new PolicyMarshaller();
+    final IamPolicyMarshaller marshaller = new IamPolicyMarshaller();
 
     SetIamPolicyRequest request = SetIamPolicyRequest.newBuilder()
         .setResource(name.toString())
@@ -171,15 +261,115 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
     );
   }
 
+  /**
+   * Tests whether the caller has the given permissions for the specified instance.
+   * Returns a subset of the specified permissions that the caller has.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * List<String> grantedPermissions = client.testIamPermission("my-instance",
+   *   "bigtable.tables.readRows", "bigtable.tables.mutateRows");
+   * }</pre>
+   *
+   * System.out.println("Has read access: " + grantedPermissions.contains("bigtable.tables.readRows"));
+   * System.out.println("Has write access: " + grantedPermissions.contains("bigtable.tables.mutateRows"));
+   *
+   * @see <a href="https://cloud.google.com/bigtable/docs/access-control#permissions">Cloud Bigtable permissions</a>
+   */
+  @SuppressWarnings("WeakerAccess")
   public List<String> testIamPermission(String instanceId, String... permissions) {
-    return awaitFuture(testIamPermissionAsync(instanceId, permissions));
+    return testIamPermission(InstanceName.of(projectName.getProject(), instanceId), permissions);
   }
 
+  /**
+   * Asynchronously tests whether the caller has the given permissions for the specified instance.
+   * Returns a subset of the specified permissions that the caller has.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * ApiFuture<List<String>> grantedPermissionsFuture = client.testIamPermission("my-instance",
+   *   "bigtable.tables.readRows", "bigtable.tables.mutateRows");
+   *
+   * ApiFutures.addCallback(grantedPermissionsFuture,
+   *   new ApiFutureCallback<List<String>>() {
+   *     public void onSuccess(List<String> grantedPermissions) {
+   *       System.out.println("Has read access: " + grantedPermissions.contains("bigtable.tables.readRows"));
+   *       System.out.println("Has write access: " + grantedPermissions.contains("bigtable.tables.mutateRows"));
+   *     }
+   *
+   *     public void onFailure(Throwable t) {
+   *       t.printStackTrace();
+   *     }
+   *   },
+   *   MoreExecutors.directExecutor());
+   * }</pre>
+   *
+   * @see <a href="https://cloud.google.com/bigtable/docs/access-control#permissions">Cloud Bigtable permissions</a>
+   */
+  @SuppressWarnings("WeakerAccess")
   public ApiFuture<List<String>> testIamPermissionAsync(String instanceId, String... permissions) {
-    InstanceName name = InstanceName.of(projectName.getProject(), instanceId);
+    return testIamPermissionAsync(InstanceName.of(projectName.getProject(), instanceId), permissions);
+  }
 
+  /**
+   * Tests whether the caller has the given permissions for the specified absolute resource name
+   * (note that the current project of the client is ignored).
+   *
+   * Returns a subset of the specified permissions that the caller has.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * List<String> grantedPermissions = client.testIamPermission(
+   *   TableName.of("my-project", "my-instance", "my-table"),
+   *   "bigtable.tables.readRows", "bigtable.tables.mutateRows");
+   *
+   * System.out.println("Has read access: " + grantedPermissions.contains("bigtable.tables.readRows"));
+   * System.out.println("Has write access: " + grantedPermissions.contains("bigtable.tables.mutateRows"));
+   * }</pre>
+   *
+   * @see <a href="https://cloud.google.com/bigtable/docs/access-control#permissions">Cloud Bigtable permissions</a>
+   */
+  @SuppressWarnings("WeakerAccess")
+  public List<String> testIamPermission(ResourceName resourceName, String... permissions) {
+    return awaitFuture(testIamPermissionAsync(resourceName, permissions));
+  }
+
+
+  /**
+   * Asynchronously tests whether the caller has the given permissions for the the specified
+   * absolute resource name (note that the current project of the client is ignored).
+   * Returns a subset of the specified permissions that the caller has.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * ApiFuture<List<String>> grantedPermissionsFuture = client.testIamPermission(
+   *   TableName.of("my-project", "my-instance", "my-table"),
+   *   "bigtable.tables.readRows", "bigtable.tables.mutateRows");
+   *
+   * ApiFutures.addCallback(grantedPermissionsFuture,
+   *   new ApiFutureCallback<List<String>>() {
+   *     public void onSuccess(List<String> grantedPermissions) {
+   *       System.out.println("Has read access: " + grantedPermissions.contains("bigtable.tables.readRows"));
+   *       System.out.println("Has write access: " + grantedPermissions.contains("bigtable.tables.mutateRows"));
+   *     }
+   *
+   *     public void onFailure(Throwable t) {
+   *       t.printStackTrace();
+   *     }
+   *   },
+   *   MoreExecutors.directExecutor());
+   * }</pre>
+   *
+   * @see <a href="https://cloud.google.com/bigtable/docs/access-control#permissions">Cloud Bigtable permissions</a>
+   */
+  @SuppressWarnings("WeakerAccess")
+  public ApiFuture<List<String>> testIamPermissionAsync(ResourceName resourceName, String... permissions) {
     TestIamPermissionsRequest request = TestIamPermissionsRequest.newBuilder()
-        .setResource(name.toString())
+        .setResource(resourceName.toString())
         .addAllPermissions(Arrays.asList(permissions))
         .build();
 
@@ -195,7 +385,11 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
     );
   }
 
-  private static class PolicyMarshaller extends DefaultMarshaller {
+  /**
+   * Simple adapter to expose {@link DefaultMarshaller} to this class. It enables this client to
+   * convert to/from IAM wrappers and protobufs.
+   */
+  private static class IamPolicyMarshaller extends DefaultMarshaller {
     @Override
     public Policy fromPb(com.google.iam.v1.Policy policyPb) {
       return super.fromPb(policyPb);
