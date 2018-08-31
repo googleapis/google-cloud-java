@@ -32,7 +32,6 @@ import io.grpc.Context;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.util.concurrent.atomic.AtomicInteger;
-
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

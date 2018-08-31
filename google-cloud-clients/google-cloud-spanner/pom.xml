@@ -18,6 +18,7 @@
   </parent>
   <properties>
     <site.installationModule>google-cloud-spanner</site.installationModule>
+    <skipUnitTests>${skipTests}</skipUnitTests>
   </properties>
   <build>
     <plugins>
@@ -27,6 +28,7 @@
         <version>2.12.4</version>
         <configuration>
           <excludedGroups>com.google.cloud.spanner.IntegrationTest</excludedGroups>
+          <skipTests>${skipUnitTests}</skipTests>
         </configuration>
       </plugin>
       <plugin>
