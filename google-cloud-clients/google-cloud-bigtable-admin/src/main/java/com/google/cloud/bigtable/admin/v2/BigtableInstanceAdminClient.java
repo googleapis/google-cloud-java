@@ -227,7 +227,7 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
   }
 
   /**
-   * Lists all app profiles the specified instance.
+   * Lists all app profiles of the specified instance.
    *
    * <p>Sample code:
    *
@@ -243,7 +243,7 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
   }
 
   /**
-   * Lists all app profiles the specified instance.
+   * Asynchronously lists all app profiles of the specified instance.
    *
    * <p>Sample code:
    *

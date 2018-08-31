@@ -67,14 +67,14 @@ public final class UpdateAppProfileRequest {
   }
 
   private UpdateAppProfileRequest(@Nonnull String instanceId, @Nonnull String appProfileId,
-      @Nonnull com.google.bigtable.admin.v2.UpdateAppProfileRequest.Builder builder) {
+      @Nonnull com.google.bigtable.admin.v2.UpdateAppProfileRequest.Builder proto) {
     Preconditions.checkNotNull(instanceId, "instanceId must be set");
     Preconditions.checkNotNull(appProfileId, "appProfileId must be set");
-    Preconditions.checkNotNull(builder, "builder must be set");
+    Preconditions.checkNotNull(proto, "proto must be set");
 
     this.instanceId = instanceId;
     this.appProfileId = appProfileId;
-    this.proto = builder;
+    this.proto = proto;
   }
 
   /** Configures if safety warnings should be disabled. */
