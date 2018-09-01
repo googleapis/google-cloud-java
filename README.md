@@ -221,10 +221,15 @@ threading restrictions.
 
 Thus, the following are not supported:
 
-- Android
+- Android (consider [Firebase](https://firebase.google.com), which includes many of these APIs)
 - Alpine Linux (due to netty-tcnative requiring glibc, which is not present on Alpine)
 - Raspberry Pi (since it runs on the ARM architecture)
 - Google App Engine Standard Java 7
+
+*Android users*: Although unsupported, it is possible to use these libraries in many cases.
+You can find examples, such as [this one](https://github.com/GoogleCloudPlatform/android-docs-samples/tree/master/speech/SpeechRecognitionClient),
+[here](https://github.com/GoogleCloudPlatform/android-docs-samples) but consider the risks carefully before
+using them in an application.
 
 The following environments should work (among others):
 
