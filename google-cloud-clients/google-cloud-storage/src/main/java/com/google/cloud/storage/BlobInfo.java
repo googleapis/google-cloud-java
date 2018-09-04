@@ -274,12 +274,12 @@ public class BlobInfo implements Serializable {
     abstract Builder setKmsKeyName(String kmsKeyName);
 
     /**
-     * Sets the blob's eventBasedHold.
+     * Sets the blob's event based hold.
      */
     public abstract Builder setEventBasedHold(Boolean eventBasedHold);
 
     /**
-     * Sets the blob's temporaryHold.
+     * Sets the blob's temporary hold.
      */
     public abstract Builder setTemporaryHold(Boolean temporaryHold);
 
