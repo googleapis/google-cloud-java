@@ -315,9 +315,8 @@ public abstract class BaseSystemTest {
     MonitoredResource monitoredResource =
         new LoggingConfig(handler.getClass().getName())
             .getMonitoredResource(options.getProjectId());
-    assertEquals(monitoredResource.getType(), entry.getResource().getType());
+    assertThat(entry.getResource().getType()).isEqualTo(monitoredResource.getType());
     assertThat(entry.getResource().getLabels()).containsEntry("project_id", options.getProjectId());
-    
     assertNull(entry.getHttpRequest());
     assertEquals(Severity.INFO, entry.getSeverity());
     assertNull(entry.getOperation());
