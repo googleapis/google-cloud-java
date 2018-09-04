@@ -26,6 +26,7 @@ import com.google.api.gax.longrunning.OperationSnapshot;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.gax.rpc.testing.FakeOperationSnapshot;
+import com.google.bigtable.admin.v2.AppProfileName;
 import com.google.bigtable.admin.v2.ClusterName;
 import com.google.bigtable.admin.v2.CreateInstanceMetadata;
 import com.google.bigtable.admin.v2.Instance.Type;
@@ -35,14 +36,21 @@ import com.google.bigtable.admin.v2.ProjectName;
 import com.google.bigtable.admin.v2.StorageType;
 import com.google.bigtable.admin.v2.UpdateClusterMetadata;
 import com.google.bigtable.admin.v2.UpdateInstanceMetadata;
+import com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient.ListAppProfilesPage;
+import com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient.ListAppProfilesPagedResponse;
+import com.google.cloud.bigtable.admin.v2.models.AppProfile;
+import com.google.cloud.bigtable.admin.v2.models.AppProfile.MultiClusterRoutingPolicy;
 import com.google.cloud.bigtable.admin.v2.models.Cluster;
+import com.google.cloud.bigtable.admin.v2.models.CreateAppProfileRequest;
 import com.google.cloud.bigtable.admin.v2.models.CreateClusterRequest;
 import com.google.cloud.bigtable.admin.v2.models.CreateInstanceRequest;
 import com.google.cloud.bigtable.admin.v2.models.Instance;
 import com.google.cloud.bigtable.admin.v2.models.PartialListClustersException;
 import com.google.cloud.bigtable.admin.v2.models.PartialListInstancesException;
+import com.google.cloud.bigtable.admin.v2.models.UpdateAppProfileRequest;
 import com.google.cloud.bigtable.admin.v2.models.UpdateInstanceRequest;
 import com.google.cloud.bigtable.admin.v2.stub.BigtableInstanceAdminStub;
+import com.google.common.collect.Lists;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import io.grpc.Status.Code;
@@ -59,11 +67,14 @@ import org.mockito.stubbing.Answer;
 
 @RunWith(MockitoJUnitRunner.class)
 public class BigtableInstanceAdminClientTest {
+
   private static final ProjectName PROJECT_NAME = ProjectName.of("my-project");
   private static final InstanceName INSTANCE_NAME =
       InstanceName.of(PROJECT_NAME.getProject(), "my-instance");
   private static final ClusterName CLUSTER_NAME =
       ClusterName.of(INSTANCE_NAME.getProject(), INSTANCE_NAME.getInstance(), "my-cluster");
+  private static final AppProfileName APP_PROFILE_NAME =
+      AppProfileName.of(INSTANCE_NAME.getProject(), INSTANCE_NAME.getInstance(), "my-cluster");
 
   private BigtableInstanceAdminClient adminClient;
 
@@ -72,19 +83,14 @@ public class BigtableInstanceAdminClientTest {
 
   @Mock
   private OperationCallable<com.google.bigtable.admin.v2.CreateInstanceRequest, com.google.bigtable.admin.v2.Instance, CreateInstanceMetadata> mockCreateInstanceCallable;
-
   @Mock
   private OperationCallable<com.google.bigtable.admin.v2.PartialUpdateInstanceRequest, com.google.bigtable.admin.v2.Instance, UpdateInstanceMetadata> mockUpdateInstanceCallable;
-
   @Mock
   private UnaryCallable<com.google.bigtable.admin.v2.GetInstanceRequest, com.google.bigtable.admin.v2.Instance> mockGetInstanceCallable;
-
   @Mock
   private UnaryCallable<com.google.bigtable.admin.v2.ListInstancesRequest, com.google.bigtable.admin.v2.ListInstancesResponse> mockListInstancesCallable;
-
   @Mock
   private UnaryCallable<com.google.bigtable.admin.v2.DeleteInstanceRequest, Empty> mockDeleteInstanceCallable;
-
 
   @Mock
   private OperationCallable<com.google.bigtable.admin.v2.CreateClusterRequest, com.google.bigtable.admin.v2.Cluster, com.google.bigtable.admin.v2.CreateClusterMetadata> mockCreateClusterCallable;
@@ -97,6 +103,18 @@ public class BigtableInstanceAdminClientTest {
   @Mock
   private UnaryCallable<com.google.bigtable.admin.v2.DeleteClusterRequest, Empty> mockDeleteClusterCallable;
 
+  @Mock
+  private UnaryCallable<com.google.bigtable.admin.v2.CreateAppProfileRequest, com.google.bigtable.admin.v2.AppProfile> mockCreateAppProfileCallable;
+  @Mock
+  private UnaryCallable<com.google.bigtable.admin.v2.GetAppProfileRequest, com.google.bigtable.admin.v2.AppProfile> mockGetAppProfileCallable;
+  @Mock
+  private UnaryCallable<com.google.bigtable.admin.v2.ListAppProfilesRequest, ListAppProfilesPagedResponse> mockListAppProfilesCallable;
+  @Mock
+  private OperationCallable<com.google.bigtable.admin.v2.UpdateAppProfileRequest, com.google.bigtable.admin.v2.AppProfile, com.google.bigtable.admin.v2.UpdateAppProfileMetadata> mockUpdateAppProfileCallable;
+  @Mock
+  private UnaryCallable<com.google.bigtable.admin.v2.DeleteAppProfileRequest, Empty> mockDeleteAppProfileCallable;
+
+
   @Before
   public void setUp() {
     adminClient = BigtableInstanceAdminClient
@@ -105,7 +123,6 @@ public class BigtableInstanceAdminClientTest {
     Mockito.when(mockStub.createInstanceOperationCallable()).thenReturn(mockCreateInstanceCallable);
     Mockito.when(mockStub.partialUpdateInstanceOperationCallable())
         .thenReturn(mockUpdateInstanceCallable);
-
     Mockito.when(mockStub.getInstanceCallable()).thenReturn(mockGetInstanceCallable);
     Mockito.when(mockStub.listInstancesCallable()).thenReturn(mockListInstancesCallable);
     Mockito.when(mockStub.deleteInstanceCallable()).thenReturn(mockDeleteInstanceCallable);
@@ -115,6 +132,13 @@ public class BigtableInstanceAdminClientTest {
     Mockito.when(mockStub.listClustersCallable()).thenReturn(mockListClustersCallable);
     Mockito.when(mockStub.updateClusterOperationCallable()).thenReturn(mockUpdateClusterCallable);
     Mockito.when(mockStub.deleteClusterCallable()).thenReturn(mockDeleteClusterCallable);
+
+    Mockito.when(mockStub.createAppProfileCallable()).thenReturn(mockCreateAppProfileCallable);
+    Mockito.when(mockStub.getAppProfileCallable()).thenReturn(mockGetAppProfileCallable);
+    Mockito.when(mockStub.listAppProfilesPagedCallable()).thenReturn(mockListAppProfilesCallable);
+    Mockito.when(mockStub.updateAppProfileOperationCallable())
+        .thenReturn(mockUpdateAppProfileCallable);
+    Mockito.when(mockStub.deleteAppProfileCallable()).thenReturn(mockDeleteAppProfileCallable);
   }
 
   @Test
@@ -502,6 +526,189 @@ public class BigtableInstanceAdminClientTest {
 
     // Execute
     adminClient.deleteCluster(CLUSTER_NAME.getInstance(), CLUSTER_NAME.getCluster());
+
+    // Verify
+    assertThat(wasCalled.get()).isTrue();
+  }
+
+  @Test
+  public void testCreateAppProfile() {
+    // Setup
+    com.google.bigtable.admin.v2.CreateAppProfileRequest expectedRequest =
+        com.google.bigtable.admin.v2.CreateAppProfileRequest.newBuilder()
+            .setParent(INSTANCE_NAME.toString())
+            .setAppProfileId(APP_PROFILE_NAME.getAppProfile())
+            .setAppProfile(
+                com.google.bigtable.admin.v2.AppProfile.newBuilder()
+                    .setDescription("my description")
+                    .setMultiClusterRoutingUseAny(
+                        com.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny
+                            .getDefaultInstance())
+            )
+            .build();
+
+    com.google.bigtable.admin.v2.AppProfile expectedResponse =
+        com.google.bigtable.admin.v2.AppProfile.newBuilder()
+            .setName(APP_PROFILE_NAME.toString())
+            .setDescription("my description")
+            .setMultiClusterRoutingUseAny(
+                com.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny
+                    .getDefaultInstance())
+            .build();
+
+    Mockito.when(mockCreateAppProfileCallable.futureCall(expectedRequest)).thenReturn(
+        ApiFutures.immediateFuture(expectedResponse)
+    );
+
+    // Execute
+    AppProfile actualResult = adminClient.createAppProfile(
+        CreateAppProfileRequest.of(APP_PROFILE_NAME.getInstance(), APP_PROFILE_NAME.getAppProfile())
+            .setDescription("my description")
+            .setRoutingPolicy(MultiClusterRoutingPolicy.of())
+    );
+
+    // Verify
+    assertThat(actualResult).isEqualTo(AppProfile.fromProto(expectedResponse));
+  }
+
+  @Test
+  public void testGetAppProfile() {
+    // Setup
+    com.google.bigtable.admin.v2.GetAppProfileRequest expectedRequest =
+        com.google.bigtable.admin.v2.GetAppProfileRequest.newBuilder()
+            .setName(APP_PROFILE_NAME.toString())
+            .build();
+
+    com.google.bigtable.admin.v2.AppProfile expectedResponse =
+        com.google.bigtable.admin.v2.AppProfile.newBuilder()
+            .setName(APP_PROFILE_NAME.toString())
+            .setDescription("my description")
+            .setMultiClusterRoutingUseAny(
+                com.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny
+                    .getDefaultInstance())
+            .build();
+
+    Mockito.when(mockGetAppProfileCallable.futureCall(expectedRequest))
+        .thenReturn(ApiFutures.immediateFuture(expectedResponse));
+
+    // Execute
+    AppProfile actualResult = adminClient
+        .getAppProfile(APP_PROFILE_NAME.getInstance(), APP_PROFILE_NAME.getAppProfile());
+
+    // Verify
+    assertThat(actualResult).isEqualTo(AppProfile.fromProto(expectedResponse));
+  }
+
+  @Test
+  public void testListAppProfiles() {
+    // Setup
+    com.google.bigtable.admin.v2.ListAppProfilesRequest expectedRequest =
+        com.google.bigtable.admin.v2.ListAppProfilesRequest.newBuilder()
+            .setParent(INSTANCE_NAME.toString())
+            .build();
+
+    // 3 AppProfiles spread across 2 pages
+    List<com.google.bigtable.admin.v2.AppProfile> expectedProtos = Lists.newArrayList();
+    for (int i = 0; i < 3; i++) {
+      expectedProtos.add(
+          com.google.bigtable.admin.v2.AppProfile.newBuilder()
+              .setName(APP_PROFILE_NAME.toString() + i)
+              .setDescription("profile" + i)
+              .setMultiClusterRoutingUseAny(
+                  com.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny
+                      .getDefaultInstance())
+              .build());
+    }
+    // 2 on the first page
+    ListAppProfilesPage page0 = Mockito.mock(ListAppProfilesPage.class);
+    Mockito.when(page0.getValues()).thenReturn(expectedProtos.subList(0, 2));
+    Mockito.when(page0.getNextPageToken()).thenReturn("next-page");
+    Mockito.when(page0.hasNextPage()).thenReturn(true);
+
+    // 1 on the last page
+    ListAppProfilesPage page1 = Mockito.mock(ListAppProfilesPage.class);
+    Mockito.when(page1.getValues()).thenReturn(expectedProtos.subList(2, 3));
+
+    // Link page0 to page1
+    Mockito.when(page0.getNextPageAsync()).thenReturn(
+        ApiFutures.immediateFuture(page1)
+    );
+
+    // Link page to the response
+    ListAppProfilesPagedResponse response0 = Mockito.mock(ListAppProfilesPagedResponse.class);
+    Mockito.when(response0.getPage()).thenReturn(page0);
+
+    Mockito.when(mockListAppProfilesCallable.futureCall(expectedRequest)).thenReturn(
+        ApiFutures.immediateFuture(response0)
+    );
+
+    // Execute
+    List<AppProfile> actualResults = adminClient.listAppProfiles(INSTANCE_NAME.getInstance());
+
+    // Verify
+    List<AppProfile> expectedResults = Lists.newArrayList();
+    for (com.google.bigtable.admin.v2.AppProfile expectedProto : expectedProtos) {
+      expectedResults.add(AppProfile.fromProto(expectedProto));
+    }
+
+    assertThat(actualResults).containsExactlyElementsIn(expectedResults);
+  }
+
+  @Test
+  public void testUpdateAppProfile() {
+    // Setup
+    com.google.bigtable.admin.v2.UpdateAppProfileRequest expectedRequest =
+        com.google.bigtable.admin.v2.UpdateAppProfileRequest.newBuilder()
+            .setAppProfile(
+                com.google.bigtable.admin.v2.AppProfile.newBuilder()
+                    .setName(APP_PROFILE_NAME.toString())
+                    .setDescription("updated description")
+            )
+            .setUpdateMask(FieldMask.newBuilder().addPaths("description"))
+            .build();
+
+    com.google.bigtable.admin.v2.AppProfile expectedResponse =
+        com.google.bigtable.admin.v2.AppProfile.newBuilder()
+            .setName(APP_PROFILE_NAME.toString())
+            .setDescription("updated description")
+            .setMultiClusterRoutingUseAny(
+                com.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny
+                    .getDefaultInstance())
+            .build();
+
+    mockOperationResult(mockUpdateAppProfileCallable, expectedRequest, expectedResponse);
+
+    // Execute
+    AppProfile actualResult = adminClient.updateAppProfile(
+        UpdateAppProfileRequest.of(APP_PROFILE_NAME.getInstance(), APP_PROFILE_NAME.getAppProfile())
+            .setDescription("updated description")
+    );
+
+    // Verify
+    assertThat(actualResult).isEqualTo(AppProfile.fromProto(expectedResponse));
+  }
+
+  @Test
+  public void testDeleteAppProfile() {
+    // Setup
+    com.google.bigtable.admin.v2.DeleteAppProfileRequest expectedRequest =
+        com.google.bigtable.admin.v2.DeleteAppProfileRequest.newBuilder()
+            .setName(APP_PROFILE_NAME.toString())
+            .build();
+
+    final AtomicBoolean wasCalled = new AtomicBoolean(false);
+
+    Mockito.when(mockDeleteAppProfileCallable.futureCall(expectedRequest))
+        .thenAnswer(new Answer<ApiFuture<Empty>>() {
+          @Override
+          public ApiFuture<Empty> answer(InvocationOnMock invocationOnMock) {
+            wasCalled.set(true);
+            return ApiFutures.immediateFuture(Empty.getDefaultInstance());
+          }
+        });
+
+    // Execute
+    adminClient.deleteAppProfile(APP_PROFILE_NAME.getInstance(), APP_PROFILE_NAME.getAppProfile());
 
     // Verify
     assertThat(wasCalled.get()).isTrue();
