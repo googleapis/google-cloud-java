@@ -16,6 +16,7 @@
 
 package com.google.cloud.logging;
 
+import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
@@ -36,12 +37,11 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Iterators;
 import com.google.common.collect.Sets;
 import com.google.logging.v2.LogName;
+import com.google.logging.v2.ProjectLogName;
 import java.util.Iterator;
 import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
-import com.google.logging.v2.ProjectLogName;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
@@ -312,9 +312,12 @@ public abstract class BaseSystemTest {
     assertEquals(logId, entry.getLogName());
     assertEquals(ImmutableMap.of("levelName", "INFO",
         "levelValue", String.valueOf(Level.INFO.intValue())), entry.getLabels());
-    //assertEquals("global", entry.getResource().getType());
-    //assertEquals(ImmutableMap.of("project_id", options.getProjectId()),
-    //    entry.getResource().getLabels());
+    MonitoredResource monitoredResource =
+        new LoggingConfig(handler.getClass().getName())
+            .getMonitoredResource(options.getProjectId());
+    assertEquals(monitoredResource.getType(), entry.getResource().getType());
+    assertThat(entry.getResource().getLabels()).containsEntry("project_id", options.getProjectId());
+    
     assertNull(entry.getHttpRequest());
     assertEquals(Severity.INFO, entry.getSeverity());
     assertNull(entry.getOperation());
