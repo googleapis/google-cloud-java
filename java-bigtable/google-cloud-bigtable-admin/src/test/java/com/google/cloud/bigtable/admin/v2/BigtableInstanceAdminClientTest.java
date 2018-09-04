@@ -26,16 +26,20 @@ import com.google.api.gax.longrunning.OperationSnapshot;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.gax.rpc.testing.FakeOperationSnapshot;
-import com.google.bigtable.admin.v2.Cluster;
+import com.google.bigtable.admin.v2.ClusterName;
 import com.google.bigtable.admin.v2.CreateInstanceMetadata;
 import com.google.bigtable.admin.v2.Instance.Type;
 import com.google.bigtable.admin.v2.InstanceName;
 import com.google.bigtable.admin.v2.LocationName;
 import com.google.bigtable.admin.v2.ProjectName;
 import com.google.bigtable.admin.v2.StorageType;
+import com.google.bigtable.admin.v2.UpdateClusterMetadata;
 import com.google.bigtable.admin.v2.UpdateInstanceMetadata;
+import com.google.cloud.bigtable.admin.v2.models.Cluster;
+import com.google.cloud.bigtable.admin.v2.models.CreateClusterRequest;
 import com.google.cloud.bigtable.admin.v2.models.CreateInstanceRequest;
 import com.google.cloud.bigtable.admin.v2.models.Instance;
+import com.google.cloud.bigtable.admin.v2.models.PartialListClustersException;
 import com.google.cloud.bigtable.admin.v2.models.PartialListInstancesException;
 import com.google.cloud.bigtable.admin.v2.models.UpdateInstanceRequest;
 import com.google.cloud.bigtable.admin.v2.stub.BigtableInstanceAdminStub;
@@ -58,6 +62,8 @@ public class BigtableInstanceAdminClientTest {
   private static final ProjectName PROJECT_NAME = ProjectName.of("my-project");
   private static final InstanceName INSTANCE_NAME =
       InstanceName.of(PROJECT_NAME.getProject(), "my-instance");
+  private static final ClusterName CLUSTER_NAME =
+      ClusterName.of(INSTANCE_NAME.getProject(), INSTANCE_NAME.getInstance(), "my-cluster");
 
   private BigtableInstanceAdminClient adminClient;
 
@@ -80,6 +86,17 @@ public class BigtableInstanceAdminClientTest {
   private UnaryCallable<com.google.bigtable.admin.v2.DeleteInstanceRequest, Empty> mockDeleteInstanceCallable;
 
 
+  @Mock
+  private OperationCallable<com.google.bigtable.admin.v2.CreateClusterRequest, com.google.bigtable.admin.v2.Cluster, com.google.bigtable.admin.v2.CreateClusterMetadata> mockCreateClusterCallable;
+  @Mock
+  private UnaryCallable<com.google.bigtable.admin.v2.GetClusterRequest, com.google.bigtable.admin.v2.Cluster> mockGetClusterCallable;
+  @Mock
+  private UnaryCallable<com.google.bigtable.admin.v2.ListClustersRequest, com.google.bigtable.admin.v2.ListClustersResponse> mockListClustersCallable;
+  @Mock
+  private OperationCallable<com.google.bigtable.admin.v2.Cluster, com.google.bigtable.admin.v2.Cluster, UpdateClusterMetadata> mockUpdateClusterCallable;
+  @Mock
+  private UnaryCallable<com.google.bigtable.admin.v2.DeleteClusterRequest, Empty> mockDeleteClusterCallable;
+
   @Before
   public void setUp() {
     adminClient = BigtableInstanceAdminClient
@@ -92,6 +109,12 @@ public class BigtableInstanceAdminClientTest {
     Mockito.when(mockStub.getInstanceCallable()).thenReturn(mockGetInstanceCallable);
     Mockito.when(mockStub.listInstancesCallable()).thenReturn(mockListInstancesCallable);
     Mockito.when(mockStub.deleteInstanceCallable()).thenReturn(mockDeleteInstanceCallable);
+
+    Mockito.when(mockStub.createClusterOperationCallable()).thenReturn(mockCreateClusterCallable);
+    Mockito.when(mockStub.getClusterCallable()).thenReturn(mockGetClusterCallable);
+    Mockito.when(mockStub.listClustersCallable()).thenReturn(mockListClustersCallable);
+    Mockito.when(mockStub.updateClusterOperationCallable()).thenReturn(mockUpdateClusterCallable);
+    Mockito.when(mockStub.deleteClusterCallable()).thenReturn(mockDeleteClusterCallable);
   }
 
   @Test
@@ -117,7 +140,7 @@ public class BigtableInstanceAdminClientTest {
                     .setType(Type.DEVELOPMENT)
                     .setDisplayName(INSTANCE_NAME.getInstance())
             )
-            .putClusters("cluster1", Cluster.newBuilder()
+            .putClusters("cluster1", com.google.bigtable.admin.v2.Cluster.newBuilder()
                 .setLocation("projects/my-project/locations/us-east1-c")
                 .setServeNodes(1)
                 .setDefaultStorageType(StorageType.SSD)
@@ -301,6 +324,188 @@ public class BigtableInstanceAdminClientTest {
     assertThat(wasCalled.get()).isTrue();
   }
 
+  @Test
+  public void testCreateCluster() {
+    // Setup
+    com.google.bigtable.admin.v2.CreateClusterRequest expectedRequest =
+        com.google.bigtable.admin.v2.CreateClusterRequest.newBuilder()
+            .setParent(INSTANCE_NAME.toString())
+            .setClusterId(CLUSTER_NAME.getCluster())
+            .setCluster(
+                com.google.bigtable.admin.v2.Cluster.newBuilder()
+                    .setLocation("projects/my-project/locations/us-east1-c")
+                    .setServeNodes(3)
+                    .setDefaultStorageType(StorageType.SSD)
+            )
+            .build();
+    com.google.bigtable.admin.v2.Cluster expectedResponse = com.google.bigtable.admin.v2.Cluster
+        .newBuilder()
+        .setName(CLUSTER_NAME.toString())
+        .build();
+    mockOperationResult(mockCreateClusterCallable, expectedRequest, expectedResponse);
+
+    // Execute
+    Cluster actualResult = adminClient.createCluster(
+        CreateClusterRequest.of(CLUSTER_NAME.getInstance(), CLUSTER_NAME.getCluster())
+            .setZone("us-east1-c")
+            .setServeNodes(3)
+            .setStorageType(StorageType.SSD)
+    );
+    // Verify
+    assertThat(actualResult).isEqualTo(Cluster.fromProto(expectedResponse));
+  }
+
+  @Test
+  public void testGetCluster() {
+    // Setup
+    com.google.bigtable.admin.v2.GetClusterRequest expectedRequest =
+        com.google.bigtable.admin.v2.GetClusterRequest.newBuilder()
+            .setName(CLUSTER_NAME.toString())
+            .build();
+
+    com.google.bigtable.admin.v2.Cluster expectedResponse = com.google.bigtable.admin.v2.Cluster
+        .newBuilder()
+        .setName(CLUSTER_NAME.toString())
+        .build();
+
+    Mockito.when(mockGetClusterCallable.futureCall(expectedRequest)).thenReturn(
+        ApiFutures.immediateFuture(expectedResponse)
+    );
+
+    // Execute
+    Cluster actualResult = adminClient
+        .getCluster(CLUSTER_NAME.getInstance(), CLUSTER_NAME.getCluster());
+
+    // Verify
+    assertThat(actualResult).isEqualTo(Cluster.fromProto(expectedResponse));
+  }
+
+  @Test
+  public void testListClusters() {
+    // Setup
+    com.google.bigtable.admin.v2.ListClustersRequest expectedRequest =
+        com.google.bigtable.admin.v2.ListClustersRequest.newBuilder()
+            .setParent(INSTANCE_NAME.toString())
+            .build();
+
+    com.google.bigtable.admin.v2.ListClustersResponse expectedResponse =
+        com.google.bigtable.admin.v2.ListClustersResponse.newBuilder()
+            .addClusters(
+                com.google.bigtable.admin.v2.Cluster.newBuilder()
+                    .setName(CLUSTER_NAME.toString() + "1")
+            )
+            .addClusters(
+                com.google.bigtable.admin.v2.Cluster.newBuilder()
+                    .setName(CLUSTER_NAME.toString() + "2")
+            )
+            .build();
+
+    Mockito.when(mockListClustersCallable.futureCall(expectedRequest)).thenReturn(
+        ApiFutures.immediateFuture(expectedResponse)
+    );
+
+    // Execute
+    List<Cluster> actualResult = adminClient.listClusters(INSTANCE_NAME.getInstance());
+
+    // Verify
+    assertThat(actualResult).containsExactly(
+        Cluster.fromProto(expectedResponse.getClusters(0)),
+        Cluster.fromProto(expectedResponse.getClusters(1))
+    );
+  }
+
+  @Test
+  public void testListClustersFailedZone() {
+    // Setup
+    com.google.bigtable.admin.v2.ListClustersRequest expectedRequest =
+        com.google.bigtable.admin.v2.ListClustersRequest.newBuilder()
+            .setParent(INSTANCE_NAME.toString())
+            .build();
+
+    com.google.bigtable.admin.v2.ListClustersResponse expectedResponse =
+        com.google.bigtable.admin.v2.ListClustersResponse.newBuilder()
+            .addClusters(
+                com.google.bigtable.admin.v2.Cluster.newBuilder()
+                    .setName(CLUSTER_NAME.toString())
+            )
+            .addFailedLocations(
+                LocationName.of(PROJECT_NAME.getProject(), "us-east1-c").toString()
+            )
+            .build();
+
+    Mockito.when(mockListClustersCallable.futureCall(expectedRequest)).thenReturn(
+        ApiFutures.immediateFuture(expectedResponse)
+    );
+
+    // Execute
+    Exception actualError = null;
+
+    try {
+      adminClient.listClusters(INSTANCE_NAME.getInstance());
+    } catch (Exception e) {
+      actualError = e;
+    }
+
+    // Verify
+    assertThat(actualError).isInstanceOf(PartialListClustersException.class);
+    assert actualError != null;
+    PartialListClustersException partialListError = (PartialListClustersException) actualError;
+    assertThat(partialListError.getClusters())
+        .containsExactly(Cluster.fromProto(expectedResponse.getClusters(0)));
+    assertThat(partialListError.getUnavailableZones()).containsExactly("us-east1-c");
+  }
+
+  @Test
+  public void testResizeCluster() {
+    // Setup
+    com.google.bigtable.admin.v2.Cluster expectedRequest =
+        com.google.bigtable.admin.v2.Cluster.newBuilder()
+            .setName(CLUSTER_NAME.toString())
+            .setServeNodes(30)
+            .build();
+
+    com.google.bigtable.admin.v2.Cluster expectedResponse =
+        com.google.bigtable.admin.v2.Cluster.newBuilder()
+            .setName(CLUSTER_NAME.toString())
+            .setLocation(LocationName.of(PROJECT_NAME.getProject(), "us-east1-c").toString())
+            .setServeNodes(30)
+            .build();
+
+    mockOperationResult(mockUpdateClusterCallable, expectedRequest, expectedResponse);
+
+    // Execute
+    Cluster actualResult = adminClient
+        .resizeCluster(CLUSTER_NAME.getInstance(), CLUSTER_NAME.getCluster(), 30);
+
+    // Verify
+    assertThat(actualResult).isEqualTo(Cluster.fromProto(expectedResponse));
+  }
+
+  @Test
+  public void testDeleteCluster() {
+    // Setup
+    com.google.bigtable.admin.v2.DeleteClusterRequest expectedRequest =
+        com.google.bigtable.admin.v2.DeleteClusterRequest.newBuilder()
+            .setName(CLUSTER_NAME.toString())
+            .build();
+
+    final AtomicBoolean wasCalled = new AtomicBoolean(false);
+
+    Mockito.when(mockDeleteClusterCallable.futureCall(expectedRequest))
+        .thenAnswer(new Answer<ApiFuture<Empty>>() {
+          @Override
+          public ApiFuture<Empty> answer(InvocationOnMock invocationOnMock) {
+            wasCalled.set(true);
+            return ApiFutures.immediateFuture(Empty.getDefaultInstance());
+          }
+        });
+
+    // Execute
+    adminClient.deleteCluster(CLUSTER_NAME.getInstance(), CLUSTER_NAME.getCluster());
+
+    // Verify
+    assertThat(wasCalled.get()).isTrue();
+  }
 
   private <ReqT, RespT, MetaT> void mockOperationResult(
       OperationCallable<ReqT, RespT, MetaT> callable, ReqT request, RespT response) {
@@ -310,10 +515,8 @@ public class BigtableInstanceAdminClientTest {
         .setName("fake-name")
         .setResponse(response)
         .build();
-
     OperationFuture<RespT, MetaT> operationFuture = OperationFutures
         .immediateOperationFuture(operationSnapshot);
-
     Mockito.when(callable.futureCall(request)).thenReturn(operationFuture);
   }
 }

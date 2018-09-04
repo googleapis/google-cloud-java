@@ -112,6 +112,9 @@ public final class CreateClusterRequest {
   /**
    * Gets the clusterId. This method is meant to be used by {@link CreateClusterRequest} and is
    * considered an internal implementation detail and not meant to be used by applications.
+   *
+   * <p>This method is considered an internal implementation detail and not meant to be used by
+   * applications.
    */
   @InternalApi
   String getClusterId() {
@@ -121,6 +124,9 @@ public final class CreateClusterRequest {
   /**
    * Creates the request protobuf to be used in {@link CreateInstanceRequest}. This method is
    * considered an internal implementation detail and not meant to be used by applications.
+   *
+   * <p>This method is considered an internal implementation detail and not meant to be used by
+   * applications.
    */
   @InternalApi
   com.google.bigtable.admin.v2.Cluster toEmbeddedProto(ProjectName projectName) {
