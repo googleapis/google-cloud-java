@@ -856,7 +856,7 @@ public class BucketInfo implements Serializable {
   }
 
   /**
-   * Returns the Retention Period.
+   * Returns the retention policy retention period.
    */
   public Long getRetentionPeriod() { return retentionPeriod; }
 

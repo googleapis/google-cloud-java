@@ -1541,7 +1541,7 @@ public interface Storage extends Service<StorageOptions> {
   /**
    * Locks bucket retention policy. Requires a local metageneration value in the request. Review example below.
    *
-   * Accepts an optional userProject {@link BucketTargetOption} option which defines the project id
+   * <p>Accepts an optional userProject {@link BucketTargetOption} option which defines the project id
    * to assign operational costs.
    *
    * <p>Warning: Once a retention policy is locked, it can't be unlocked, removed, or shortened.
