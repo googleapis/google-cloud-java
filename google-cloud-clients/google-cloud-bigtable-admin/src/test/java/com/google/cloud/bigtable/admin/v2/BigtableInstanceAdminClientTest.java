@@ -26,7 +26,6 @@ import com.google.api.gax.longrunning.OperationSnapshot;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.gax.rpc.testing.FakeOperationSnapshot;
-import com.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny;
 import com.google.bigtable.admin.v2.AppProfileName;
 import com.google.bigtable.admin.v2.ClusterName;
 import com.google.bigtable.admin.v2.CreateInstanceMetadata;
@@ -52,7 +51,6 @@ import com.google.cloud.bigtable.admin.v2.models.UpdateAppProfileRequest;
 import com.google.cloud.bigtable.admin.v2.models.UpdateInstanceRequest;
 import com.google.cloud.bigtable.admin.v2.stub.BigtableInstanceAdminStub;
 import com.google.common.collect.Lists;
-import com.google.common.truth.Truth;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import io.grpc.Status.Code;
@@ -69,6 +67,7 @@ import org.mockito.stubbing.Answer;
 
 @RunWith(MockitoJUnitRunner.class)
 public class BigtableInstanceAdminClientTest {
+
   private static final ProjectName PROJECT_NAME = ProjectName.of("my-project");
   private static final InstanceName INSTANCE_NAME =
       InstanceName.of(PROJECT_NAME.getProject(), "my-instance");
@@ -569,7 +568,7 @@ public class BigtableInstanceAdminClientTest {
     );
 
     // Verify
-    Truth.assertThat(actualResult).isEqualTo(AppProfile.fromProto(expectedResponse));
+    assertThat(actualResult).isEqualTo(AppProfile.fromProto(expectedResponse));
   }
 
   @Test
@@ -597,7 +596,7 @@ public class BigtableInstanceAdminClientTest {
         .getAppProfile(APP_PROFILE_NAME.getInstance(), APP_PROFILE_NAME.getAppProfile());
 
     // Verify
-    Truth.assertThat(actualResult).isEqualTo(AppProfile.fromProto(expectedResponse));
+    assertThat(actualResult).isEqualTo(AppProfile.fromProto(expectedResponse));
   }
 
   @Test
@@ -652,7 +651,7 @@ public class BigtableInstanceAdminClientTest {
       expectedResults.add(AppProfile.fromProto(expectedProto));
     }
 
-    Truth.assertThat(actualResults).containsExactlyElementsIn(expectedResults);
+    assertThat(actualResults).containsExactlyElementsIn(expectedResults);
   }
 
   @Test
@@ -672,7 +671,9 @@ public class BigtableInstanceAdminClientTest {
         com.google.bigtable.admin.v2.AppProfile.newBuilder()
             .setName(APP_PROFILE_NAME.toString())
             .setDescription("updated description")
-            .setMultiClusterRoutingUseAny(MultiClusterRoutingUseAny.getDefaultInstance())
+            .setMultiClusterRoutingUseAny(
+                com.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny
+                    .getDefaultInstance())
             .build();
 
     mockOperationResult(mockUpdateAppProfileCallable, expectedRequest, expectedResponse);
@@ -684,7 +685,7 @@ public class BigtableInstanceAdminClientTest {
     );
 
     // Verify
-    Truth.assertThat(actualResult).isEqualTo(AppProfile.fromProto(expectedResponse));
+    assertThat(actualResult).isEqualTo(AppProfile.fromProto(expectedResponse));
   }
 
   @Test
@@ -710,7 +711,7 @@ public class BigtableInstanceAdminClientTest {
     adminClient.deleteAppProfile(APP_PROFILE_NAME.getInstance(), APP_PROFILE_NAME.getAppProfile());
 
     // Verify
-    Truth.assertThat(wasCalled.get()).isTrue();
+    assertThat(wasCalled.get()).isTrue();
   }
 
   private <ReqT, RespT, MetaT> void mockOperationResult(
