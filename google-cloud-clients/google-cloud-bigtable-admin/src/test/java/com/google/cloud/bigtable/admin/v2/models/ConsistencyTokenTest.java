@@ -15,23 +15,47 @@
  */
 package com.google.cloud.bigtable.admin.v2.models;
 
-import static org.junit.Assert.assertEquals;
+import static com.google.common.truth.Truth.assertThat;
 
-import com.google.bigtable.admin.v2.GenerateConsistencyTokenResponse;
+import com.google.bigtable.admin.v2.CheckConsistencyRequest;
+import com.google.bigtable.admin.v2.InstanceName;
+import com.google.bigtable.admin.v2.TableName;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
 @RunWith(JUnit4.class)
 public class ConsistencyTokenTest {
-  @Test
-  public void fromJsonTest() {
-    ConsistencyToken tokenResponse =
-        ConsistencyToken.fromProto(
-            GenerateConsistencyTokenResponse.newBuilder()
-                .setConsistencyToken("87282hgwd8yg")
-                .build());
+  private static final InstanceName INSTANCE_NAME = InstanceName.of("my-project", "my-instance");
+  private static final TableName TABLE_NAME = TableName.of(INSTANCE_NAME.getProject(), INSTANCE_NAME.getInstance(), "my-table");
+  private static final String TOKEN_VALUE = "87282hgwd8yg";
 
-    assertEquals("87282hgwd8yg", tokenResponse.getToken());
+  @Test
+  public void testToProto() {
+    ConsistencyToken token = ConsistencyToken.of(TABLE_NAME, TOKEN_VALUE);
+
+    assertThat(token.toProto(INSTANCE_NAME)).isEqualTo(
+        CheckConsistencyRequest.newBuilder()
+          .setName(TABLE_NAME.toString())
+          .setConsistencyToken(TOKEN_VALUE)
+          .build()
+    );
+  }
+
+  @Test
+  public void testInstanceMismatch() {
+    ConsistencyToken token = ConsistencyToken.of(TABLE_NAME, TOKEN_VALUE);
+
+    InstanceName otherInstanceName = InstanceName.of("my-project", "other-instance");
+
+    Exception actualError = null;
+
+    try {
+      token.toProto(otherInstanceName);
+    } catch (Exception e) {
+      actualError = e;
+    }
+
+    assertThat(actualError).isInstanceOf(IllegalArgumentException.class);
   }
 }
