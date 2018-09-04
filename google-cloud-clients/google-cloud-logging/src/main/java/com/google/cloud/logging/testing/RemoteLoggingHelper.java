@@ -86,11 +86,14 @@ public class RemoteLoggingHelper {
    * credentials.
    */
   public static RemoteLoggingHelper create() throws LoggingHelperException {
+    System.out.println("hahahaha");
     GrpcTransportOptions transportOptions = LoggingOptions.getDefaultGrpcTransportOptions();
     LoggingOptions loggingOptions = LoggingOptions.newBuilder()
         .setRetrySettings(retrySettings())
         .setTransportOptions(transportOptions)
         .build();
+    System.out.println("projectId: " + loggingOptions.getProjectId());
+    System.out.println("credential: " + loggingOptions.getCredentials());
     return new RemoteLoggingHelper(loggingOptions);
   }
 
