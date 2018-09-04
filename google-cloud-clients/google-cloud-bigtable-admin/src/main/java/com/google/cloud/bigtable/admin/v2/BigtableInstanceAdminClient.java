@@ -1028,7 +1028,6 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
    * <pre>{@code
    * ApiFuture<Policy> policyFuture = client.getIamPolicyAsync("my-instance");
    *
-   *
    * ApiFutures.addCallback(policyFuture,
    *   new ApiFutureCallback<Policy>() {
    *     public void onSuccess(Policy policy) {
