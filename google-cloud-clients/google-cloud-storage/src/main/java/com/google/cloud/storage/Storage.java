@@ -1554,7 +1554,7 @@ public interface Storage extends Service<StorageOptions> {
    * storage.lockRetentionPolicy(bucket, BucketTargetOption.metagenerationMatch());
    * }</pre>
    *
-   * @return locked bucket
+   * @return a {@code Bucket} object of the locked bucket
    * @throws StorageException upon failure
    */
   Bucket lockRetentionPolicy(BucketInfo bucket, BucketTargetOption... options);

@@ -461,7 +461,8 @@ public interface StorageRpc extends ServiceRpc {
 
   /**
    * Lock retention policy for the provided bucket.
-   * @return locked bucket
+   *
+   * @return a {@code Bucket} object of the locked bucket
    * @throws StorageException upon failure
    */
   Bucket lockRetentionPolicy(Bucket bucket, Map<Option, ?> options);

@@ -1150,7 +1150,7 @@ public class Bucket extends BucketInfo {
    * storage.lockRetentionPolicy(bucket, BucketTargetOption.metagenerationMatch());
    * }</pre>
    *
-   * @return locked bucket
+   * @return a {@code Bucket} object of the locked bucket
    * @throws StorageException upon failure
    */
   public Bucket lockRetentionPolicy(BucketTargetOption... options) {
