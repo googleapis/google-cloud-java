@@ -24,6 +24,7 @@ private static final long serialVersionUID = 0L;
     landmarkAnnotations_ = java.util.Collections.emptyList();
     logoAnnotations_ = java.util.Collections.emptyList();
     labelAnnotations_ = java.util.Collections.emptyList();
+    localizedObjectAnnotations_ = java.util.Collections.emptyList();
     textAnnotations_ = java.util.Collections.emptyList();
   }
 
@@ -88,9 +89,9 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 42: {
-            if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+            if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
               textAnnotations_ = new java.util.ArrayList<com.google.cloud.vision.v1.EntityAnnotation>();
-              mutable_bitField0_ |= 0x00000010;
+              mutable_bitField0_ |= 0x00000020;
             }
             textAnnotations_.add(
                 input.readMessage(com.google.cloud.vision.v1.EntityAnnotation.parser(), extensionRegistry));
@@ -187,6 +188,15 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 178: {
+            if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+              localizedObjectAnnotations_ = new java.util.ArrayList<com.google.cloud.vision.v1.LocalizedObjectAnnotation>();
+              mutable_bitField0_ |= 0x00000010;
+            }
+            localizedObjectAnnotations_.add(
+                input.readMessage(com.google.cloud.vision.v1.LocalizedObjectAnnotation.parser(), extensionRegistry));
+            break;
+          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -214,8 +224,11 @@ private static final long serialVersionUID = 0L;
       if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
         labelAnnotations_ = java.util.Collections.unmodifiableList(labelAnnotations_);
       }
-      if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+      if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
         textAnnotations_ = java.util.Collections.unmodifiableList(textAnnotations_);
+      }
+      if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+        localizedObjectAnnotations_ = java.util.Collections.unmodifiableList(localizedObjectAnnotations_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -453,6 +466,66 @@ private static final long serialVersionUID = 0L;
   public com.google.cloud.vision.v1.EntityAnnotationOrBuilder getLabelAnnotationsOrBuilder(
       int index) {
     return labelAnnotations_.get(index);
+  }
+
+  public static final int LOCALIZED_OBJECT_ANNOTATIONS_FIELD_NUMBER = 22;
+  private java.util.List<com.google.cloud.vision.v1.LocalizedObjectAnnotation> localizedObjectAnnotations_;
+  /**
+   * <pre>
+   * If present, localized object detection has completed successfully.
+   * This will be sorted descending by confidence score.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.vision.v1.LocalizedObjectAnnotation localized_object_annotations = 22;</code>
+   */
+  public java.util.List<com.google.cloud.vision.v1.LocalizedObjectAnnotation> getLocalizedObjectAnnotationsList() {
+    return localizedObjectAnnotations_;
+  }
+  /**
+   * <pre>
+   * If present, localized object detection has completed successfully.
+   * This will be sorted descending by confidence score.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.vision.v1.LocalizedObjectAnnotation localized_object_annotations = 22;</code>
+   */
+  public java.util.List<? extends com.google.cloud.vision.v1.LocalizedObjectAnnotationOrBuilder> 
+      getLocalizedObjectAnnotationsOrBuilderList() {
+    return localizedObjectAnnotations_;
+  }
+  /**
+   * <pre>
+   * If present, localized object detection has completed successfully.
+   * This will be sorted descending by confidence score.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.vision.v1.LocalizedObjectAnnotation localized_object_annotations = 22;</code>
+   */
+  public int getLocalizedObjectAnnotationsCount() {
+    return localizedObjectAnnotations_.size();
+  }
+  /**
+   * <pre>
+   * If present, localized object detection has completed successfully.
+   * This will be sorted descending by confidence score.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.vision.v1.LocalizedObjectAnnotation localized_object_annotations = 22;</code>
+   */
+  public com.google.cloud.vision.v1.LocalizedObjectAnnotation getLocalizedObjectAnnotations(int index) {
+    return localizedObjectAnnotations_.get(index);
+  }
+  /**
+   * <pre>
+   * If present, localized object detection has completed successfully.
+   * This will be sorted descending by confidence score.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.vision.v1.LocalizedObjectAnnotation localized_object_annotations = 22;</code>
+   */
+  public com.google.cloud.vision.v1.LocalizedObjectAnnotationOrBuilder getLocalizedObjectAnnotationsOrBuilder(
+      int index) {
+    return localizedObjectAnnotations_.get(index);
   }
 
   public static final int TEXT_ANNOTATIONS_FIELD_NUMBER = 5;
@@ -809,6 +882,9 @@ private static final long serialVersionUID = 0L;
     if (context_ != null) {
       output.writeMessage(21, getContext());
     }
+    for (int i = 0; i < localizedObjectAnnotations_.size(); i++) {
+      output.writeMessage(22, localizedObjectAnnotations_.get(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -866,6 +942,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(21, getContext());
     }
+    for (int i = 0; i < localizedObjectAnnotations_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(22, localizedObjectAnnotations_.get(i));
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -890,6 +970,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getLogoAnnotationsList());
     result = result && getLabelAnnotationsList()
         .equals(other.getLabelAnnotationsList());
+    result = result && getLocalizedObjectAnnotationsList()
+        .equals(other.getLocalizedObjectAnnotationsList());
     result = result && getTextAnnotationsList()
         .equals(other.getTextAnnotationsList());
     result = result && (hasFullTextAnnotation() == other.hasFullTextAnnotation());
@@ -953,6 +1035,10 @@ private static final long serialVersionUID = 0L;
     if (getLabelAnnotationsCount() > 0) {
       hash = (37 * hash) + LABEL_ANNOTATIONS_FIELD_NUMBER;
       hash = (53 * hash) + getLabelAnnotationsList().hashCode();
+    }
+    if (getLocalizedObjectAnnotationsCount() > 0) {
+      hash = (37 * hash) + LOCALIZED_OBJECT_ANNOTATIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getLocalizedObjectAnnotationsList().hashCode();
     }
     if (getTextAnnotationsCount() > 0) {
       hash = (37 * hash) + TEXT_ANNOTATIONS_FIELD_NUMBER;
@@ -1122,6 +1208,7 @@ private static final long serialVersionUID = 0L;
         getLandmarkAnnotationsFieldBuilder();
         getLogoAnnotationsFieldBuilder();
         getLabelAnnotationsFieldBuilder();
+        getLocalizedObjectAnnotationsFieldBuilder();
         getTextAnnotationsFieldBuilder();
       }
     }
@@ -1152,9 +1239,15 @@ private static final long serialVersionUID = 0L;
       } else {
         labelAnnotationsBuilder_.clear();
       }
+      if (localizedObjectAnnotationsBuilder_ == null) {
+        localizedObjectAnnotations_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000010);
+      } else {
+        localizedObjectAnnotationsBuilder_.clear();
+      }
       if (textAnnotationsBuilder_ == null) {
         textAnnotations_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000020);
       } else {
         textAnnotationsBuilder_.clear();
       }
@@ -1264,10 +1357,19 @@ private static final long serialVersionUID = 0L;
       } else {
         result.labelAnnotations_ = labelAnnotationsBuilder_.build();
       }
-      if (textAnnotationsBuilder_ == null) {
+      if (localizedObjectAnnotationsBuilder_ == null) {
         if (((bitField0_ & 0x00000010) == 0x00000010)) {
-          textAnnotations_ = java.util.Collections.unmodifiableList(textAnnotations_);
+          localizedObjectAnnotations_ = java.util.Collections.unmodifiableList(localizedObjectAnnotations_);
           bitField0_ = (bitField0_ & ~0x00000010);
+        }
+        result.localizedObjectAnnotations_ = localizedObjectAnnotations_;
+      } else {
+        result.localizedObjectAnnotations_ = localizedObjectAnnotationsBuilder_.build();
+      }
+      if (textAnnotationsBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) == 0x00000020)) {
+          textAnnotations_ = java.util.Collections.unmodifiableList(textAnnotations_);
+          bitField0_ = (bitField0_ & ~0x00000020);
         }
         result.textAnnotations_ = textAnnotations_;
       } else {
@@ -1461,11 +1563,37 @@ private static final long serialVersionUID = 0L;
           }
         }
       }
+      if (localizedObjectAnnotationsBuilder_ == null) {
+        if (!other.localizedObjectAnnotations_.isEmpty()) {
+          if (localizedObjectAnnotations_.isEmpty()) {
+            localizedObjectAnnotations_ = other.localizedObjectAnnotations_;
+            bitField0_ = (bitField0_ & ~0x00000010);
+          } else {
+            ensureLocalizedObjectAnnotationsIsMutable();
+            localizedObjectAnnotations_.addAll(other.localizedObjectAnnotations_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.localizedObjectAnnotations_.isEmpty()) {
+          if (localizedObjectAnnotationsBuilder_.isEmpty()) {
+            localizedObjectAnnotationsBuilder_.dispose();
+            localizedObjectAnnotationsBuilder_ = null;
+            localizedObjectAnnotations_ = other.localizedObjectAnnotations_;
+            bitField0_ = (bitField0_ & ~0x00000010);
+            localizedObjectAnnotationsBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getLocalizedObjectAnnotationsFieldBuilder() : null;
+          } else {
+            localizedObjectAnnotationsBuilder_.addAllMessages(other.localizedObjectAnnotations_);
+          }
+        }
+      }
       if (textAnnotationsBuilder_ == null) {
         if (!other.textAnnotations_.isEmpty()) {
           if (textAnnotations_.isEmpty()) {
             textAnnotations_ = other.textAnnotations_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000020);
           } else {
             ensureTextAnnotationsIsMutable();
             textAnnotations_.addAll(other.textAnnotations_);
@@ -1478,7 +1606,7 @@ private static final long serialVersionUID = 0L;
             textAnnotationsBuilder_.dispose();
             textAnnotationsBuilder_ = null;
             textAnnotations_ = other.textAnnotations_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000020);
             textAnnotationsBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getTextAnnotationsFieldBuilder() : null;
@@ -2786,12 +2914,342 @@ private static final long serialVersionUID = 0L;
       return labelAnnotationsBuilder_;
     }
 
+    private java.util.List<com.google.cloud.vision.v1.LocalizedObjectAnnotation> localizedObjectAnnotations_ =
+      java.util.Collections.emptyList();
+    private void ensureLocalizedObjectAnnotationsIsMutable() {
+      if (!((bitField0_ & 0x00000010) == 0x00000010)) {
+        localizedObjectAnnotations_ = new java.util.ArrayList<com.google.cloud.vision.v1.LocalizedObjectAnnotation>(localizedObjectAnnotations_);
+        bitField0_ |= 0x00000010;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.google.cloud.vision.v1.LocalizedObjectAnnotation, com.google.cloud.vision.v1.LocalizedObjectAnnotation.Builder, com.google.cloud.vision.v1.LocalizedObjectAnnotationOrBuilder> localizedObjectAnnotationsBuilder_;
+
+    /**
+     * <pre>
+     * If present, localized object detection has completed successfully.
+     * This will be sorted descending by confidence score.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.vision.v1.LocalizedObjectAnnotation localized_object_annotations = 22;</code>
+     */
+    public java.util.List<com.google.cloud.vision.v1.LocalizedObjectAnnotation> getLocalizedObjectAnnotationsList() {
+      if (localizedObjectAnnotationsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(localizedObjectAnnotations_);
+      } else {
+        return localizedObjectAnnotationsBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * If present, localized object detection has completed successfully.
+     * This will be sorted descending by confidence score.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.vision.v1.LocalizedObjectAnnotation localized_object_annotations = 22;</code>
+     */
+    public int getLocalizedObjectAnnotationsCount() {
+      if (localizedObjectAnnotationsBuilder_ == null) {
+        return localizedObjectAnnotations_.size();
+      } else {
+        return localizedObjectAnnotationsBuilder_.getCount();
+      }
+    }
+    /**
+     * <pre>
+     * If present, localized object detection has completed successfully.
+     * This will be sorted descending by confidence score.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.vision.v1.LocalizedObjectAnnotation localized_object_annotations = 22;</code>
+     */
+    public com.google.cloud.vision.v1.LocalizedObjectAnnotation getLocalizedObjectAnnotations(int index) {
+      if (localizedObjectAnnotationsBuilder_ == null) {
+        return localizedObjectAnnotations_.get(index);
+      } else {
+        return localizedObjectAnnotationsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * If present, localized object detection has completed successfully.
+     * This will be sorted descending by confidence score.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.vision.v1.LocalizedObjectAnnotation localized_object_annotations = 22;</code>
+     */
+    public Builder setLocalizedObjectAnnotations(
+        int index, com.google.cloud.vision.v1.LocalizedObjectAnnotation value) {
+      if (localizedObjectAnnotationsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureLocalizedObjectAnnotationsIsMutable();
+        localizedObjectAnnotations_.set(index, value);
+        onChanged();
+      } else {
+        localizedObjectAnnotationsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * If present, localized object detection has completed successfully.
+     * This will be sorted descending by confidence score.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.vision.v1.LocalizedObjectAnnotation localized_object_annotations = 22;</code>
+     */
+    public Builder setLocalizedObjectAnnotations(
+        int index, com.google.cloud.vision.v1.LocalizedObjectAnnotation.Builder builderForValue) {
+      if (localizedObjectAnnotationsBuilder_ == null) {
+        ensureLocalizedObjectAnnotationsIsMutable();
+        localizedObjectAnnotations_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        localizedObjectAnnotationsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * If present, localized object detection has completed successfully.
+     * This will be sorted descending by confidence score.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.vision.v1.LocalizedObjectAnnotation localized_object_annotations = 22;</code>
+     */
+    public Builder addLocalizedObjectAnnotations(com.google.cloud.vision.v1.LocalizedObjectAnnotation value) {
+      if (localizedObjectAnnotationsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureLocalizedObjectAnnotationsIsMutable();
+        localizedObjectAnnotations_.add(value);
+        onChanged();
+      } else {
+        localizedObjectAnnotationsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * If present, localized object detection has completed successfully.
+     * This will be sorted descending by confidence score.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.vision.v1.LocalizedObjectAnnotation localized_object_annotations = 22;</code>
+     */
+    public Builder addLocalizedObjectAnnotations(
+        int index, com.google.cloud.vision.v1.LocalizedObjectAnnotation value) {
+      if (localizedObjectAnnotationsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureLocalizedObjectAnnotationsIsMutable();
+        localizedObjectAnnotations_.add(index, value);
+        onChanged();
+      } else {
+        localizedObjectAnnotationsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * If present, localized object detection has completed successfully.
+     * This will be sorted descending by confidence score.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.vision.v1.LocalizedObjectAnnotation localized_object_annotations = 22;</code>
+     */
+    public Builder addLocalizedObjectAnnotations(
+        com.google.cloud.vision.v1.LocalizedObjectAnnotation.Builder builderForValue) {
+      if (localizedObjectAnnotationsBuilder_ == null) {
+        ensureLocalizedObjectAnnotationsIsMutable();
+        localizedObjectAnnotations_.add(builderForValue.build());
+        onChanged();
+      } else {
+        localizedObjectAnnotationsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * If present, localized object detection has completed successfully.
+     * This will be sorted descending by confidence score.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.vision.v1.LocalizedObjectAnnotation localized_object_annotations = 22;</code>
+     */
+    public Builder addLocalizedObjectAnnotations(
+        int index, com.google.cloud.vision.v1.LocalizedObjectAnnotation.Builder builderForValue) {
+      if (localizedObjectAnnotationsBuilder_ == null) {
+        ensureLocalizedObjectAnnotationsIsMutable();
+        localizedObjectAnnotations_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        localizedObjectAnnotationsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * If present, localized object detection has completed successfully.
+     * This will be sorted descending by confidence score.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.vision.v1.LocalizedObjectAnnotation localized_object_annotations = 22;</code>
+     */
+    public Builder addAllLocalizedObjectAnnotations(
+        java.lang.Iterable<? extends com.google.cloud.vision.v1.LocalizedObjectAnnotation> values) {
+      if (localizedObjectAnnotationsBuilder_ == null) {
+        ensureLocalizedObjectAnnotationsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, localizedObjectAnnotations_);
+        onChanged();
+      } else {
+        localizedObjectAnnotationsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * If present, localized object detection has completed successfully.
+     * This will be sorted descending by confidence score.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.vision.v1.LocalizedObjectAnnotation localized_object_annotations = 22;</code>
+     */
+    public Builder clearLocalizedObjectAnnotations() {
+      if (localizedObjectAnnotationsBuilder_ == null) {
+        localizedObjectAnnotations_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000010);
+        onChanged();
+      } else {
+        localizedObjectAnnotationsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * If present, localized object detection has completed successfully.
+     * This will be sorted descending by confidence score.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.vision.v1.LocalizedObjectAnnotation localized_object_annotations = 22;</code>
+     */
+    public Builder removeLocalizedObjectAnnotations(int index) {
+      if (localizedObjectAnnotationsBuilder_ == null) {
+        ensureLocalizedObjectAnnotationsIsMutable();
+        localizedObjectAnnotations_.remove(index);
+        onChanged();
+      } else {
+        localizedObjectAnnotationsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * If present, localized object detection has completed successfully.
+     * This will be sorted descending by confidence score.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.vision.v1.LocalizedObjectAnnotation localized_object_annotations = 22;</code>
+     */
+    public com.google.cloud.vision.v1.LocalizedObjectAnnotation.Builder getLocalizedObjectAnnotationsBuilder(
+        int index) {
+      return getLocalizedObjectAnnotationsFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * If present, localized object detection has completed successfully.
+     * This will be sorted descending by confidence score.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.vision.v1.LocalizedObjectAnnotation localized_object_annotations = 22;</code>
+     */
+    public com.google.cloud.vision.v1.LocalizedObjectAnnotationOrBuilder getLocalizedObjectAnnotationsOrBuilder(
+        int index) {
+      if (localizedObjectAnnotationsBuilder_ == null) {
+        return localizedObjectAnnotations_.get(index);  } else {
+        return localizedObjectAnnotationsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * If present, localized object detection has completed successfully.
+     * This will be sorted descending by confidence score.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.vision.v1.LocalizedObjectAnnotation localized_object_annotations = 22;</code>
+     */
+    public java.util.List<? extends com.google.cloud.vision.v1.LocalizedObjectAnnotationOrBuilder> 
+         getLocalizedObjectAnnotationsOrBuilderList() {
+      if (localizedObjectAnnotationsBuilder_ != null) {
+        return localizedObjectAnnotationsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(localizedObjectAnnotations_);
+      }
+    }
+    /**
+     * <pre>
+     * If present, localized object detection has completed successfully.
+     * This will be sorted descending by confidence score.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.vision.v1.LocalizedObjectAnnotation localized_object_annotations = 22;</code>
+     */
+    public com.google.cloud.vision.v1.LocalizedObjectAnnotation.Builder addLocalizedObjectAnnotationsBuilder() {
+      return getLocalizedObjectAnnotationsFieldBuilder().addBuilder(
+          com.google.cloud.vision.v1.LocalizedObjectAnnotation.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * If present, localized object detection has completed successfully.
+     * This will be sorted descending by confidence score.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.vision.v1.LocalizedObjectAnnotation localized_object_annotations = 22;</code>
+     */
+    public com.google.cloud.vision.v1.LocalizedObjectAnnotation.Builder addLocalizedObjectAnnotationsBuilder(
+        int index) {
+      return getLocalizedObjectAnnotationsFieldBuilder().addBuilder(
+          index, com.google.cloud.vision.v1.LocalizedObjectAnnotation.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * If present, localized object detection has completed successfully.
+     * This will be sorted descending by confidence score.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.vision.v1.LocalizedObjectAnnotation localized_object_annotations = 22;</code>
+     */
+    public java.util.List<com.google.cloud.vision.v1.LocalizedObjectAnnotation.Builder> 
+         getLocalizedObjectAnnotationsBuilderList() {
+      return getLocalizedObjectAnnotationsFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.google.cloud.vision.v1.LocalizedObjectAnnotation, com.google.cloud.vision.v1.LocalizedObjectAnnotation.Builder, com.google.cloud.vision.v1.LocalizedObjectAnnotationOrBuilder> 
+        getLocalizedObjectAnnotationsFieldBuilder() {
+      if (localizedObjectAnnotationsBuilder_ == null) {
+        localizedObjectAnnotationsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.vision.v1.LocalizedObjectAnnotation, com.google.cloud.vision.v1.LocalizedObjectAnnotation.Builder, com.google.cloud.vision.v1.LocalizedObjectAnnotationOrBuilder>(
+                localizedObjectAnnotations_,
+                ((bitField0_ & 0x00000010) == 0x00000010),
+                getParentForChildren(),
+                isClean());
+        localizedObjectAnnotations_ = null;
+      }
+      return localizedObjectAnnotationsBuilder_;
+    }
+
     private java.util.List<com.google.cloud.vision.v1.EntityAnnotation> textAnnotations_ =
       java.util.Collections.emptyList();
     private void ensureTextAnnotationsIsMutable() {
-      if (!((bitField0_ & 0x00000010) == 0x00000010)) {
+      if (!((bitField0_ & 0x00000020) == 0x00000020)) {
         textAnnotations_ = new java.util.ArrayList<com.google.cloud.vision.v1.EntityAnnotation>(textAnnotations_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
        }
     }
 
@@ -2985,7 +3443,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearTextAnnotations() {
       if (textAnnotationsBuilder_ == null) {
         textAnnotations_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
       } else {
         textAnnotationsBuilder_.clear();
@@ -3090,7 +3548,7 @@ private static final long serialVersionUID = 0L;
         textAnnotationsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.google.cloud.vision.v1.EntityAnnotation, com.google.cloud.vision.v1.EntityAnnotation.Builder, com.google.cloud.vision.v1.EntityAnnotationOrBuilder>(
                 textAnnotations_,
-                ((bitField0_ & 0x00000010) == 0x00000010),
+                ((bitField0_ & 0x00000020) == 0x00000020),
                 getParentForChildren(),
                 isClean());
         textAnnotations_ = null;

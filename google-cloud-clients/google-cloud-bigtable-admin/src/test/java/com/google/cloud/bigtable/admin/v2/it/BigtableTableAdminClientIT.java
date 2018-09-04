@@ -235,7 +235,7 @@ public class BigtableTableAdminClientIT {
       tableAdmin.createTable(CreateTableRequest.of(tableId));
       ConsistencyToken consistencyToken = tableAdmin.generateConsistencyToken(tableId);
       assertNotNull(consistencyToken);
-      boolean consistent = tableAdmin.isConsistent(tableId, consistencyToken);
+      boolean consistent = tableAdmin.isConsistent(consistencyToken);
       assertTrue(consistent);
     } finally {
       tableAdmin.deleteTable(tableId);
