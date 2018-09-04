@@ -20,28 +20,23 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.bigtable.admin.v2.ClusterName;
 import com.google.bigtable.admin.v2.DeleteClusterRequest;
+import com.google.bigtable.admin.v2.DeleteInstanceRequest;
 import com.google.bigtable.admin.v2.GetClusterRequest;
+import com.google.bigtable.admin.v2.GetInstanceRequest;
 import com.google.bigtable.admin.v2.InstanceName;
 import com.google.bigtable.admin.v2.ListClustersRequest;
 import com.google.bigtable.admin.v2.ListClustersResponse;
-import com.google.bigtable.admin.v2.LocationName;
-import com.google.api.core.ApiFunction;
-import com.google.api.core.ApiFuture;
-import com.google.api.core.ApiFutures;
-import com.google.bigtable.admin.v2.DeleteInstanceRequest;
-import com.google.bigtable.admin.v2.GetInstanceRequest;
-import com.google.bigtable.admin.v2.InstanceName;
 import com.google.bigtable.admin.v2.ListInstancesRequest;
 import com.google.bigtable.admin.v2.ListInstancesResponse;
 import com.google.bigtable.admin.v2.LocationName;
 import com.google.bigtable.admin.v2.ProjectName;
-import com.google.cloud.bigtable.admin.v2.models.CreateInstanceRequest;
-import com.google.cloud.bigtable.admin.v2.models.Instance;
-import com.google.cloud.bigtable.admin.v2.models.PartialListInstancesException;
-import com.google.cloud.bigtable.admin.v2.models.UpdateInstanceRequest;
 import com.google.cloud.bigtable.admin.v2.models.Cluster;
 import com.google.cloud.bigtable.admin.v2.models.CreateClusterRequest;
+import com.google.cloud.bigtable.admin.v2.models.CreateInstanceRequest;
+import com.google.cloud.bigtable.admin.v2.models.Instance;
 import com.google.cloud.bigtable.admin.v2.models.PartialListClustersException;
+import com.google.cloud.bigtable.admin.v2.models.PartialListInstancesException;
+import com.google.cloud.bigtable.admin.v2.models.UpdateInstanceRequest;
 import com.google.cloud.bigtable.admin.v2.stub.BigtableInstanceAdminStub;
 import com.google.common.base.Verify;
 import com.google.common.collect.ImmutableList;
@@ -411,34 +406,6 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
   }
 
   /**
-   * Awaits the result of a future, taking care to propagate errors while maintaining the call site
-   * in a suppressed exception. This allows semantic errors to be caught across threads, while
-   * preserving the call site in the error. The caller's stacktrace will be made available as a
-   * suppressed exception.
-   */
-  // TODO(igorbernstein2): try to move this into gax
-  private <T> T awaitFuture(ApiFuture<T> future) {
-    RuntimeException error;
-
-    try {
-      return Futures.getUnchecked(future);
-    } catch (UncheckedExecutionException e) {
-      if (e.getCause() instanceof RuntimeException) {
-        error = (RuntimeException) e.getCause();
-      } else {
-        error = e;
-      }
-    } catch (RuntimeException e) {
-      error = e;
-    }
-
-    // Add the caller's stack as a suppressed exception
-    error.addSuppressed(new RuntimeException("Encountered error while awaiting future"));
-
-    throw error;
-  }
-
-  /**
    * Creates a new cluster in the specified instance.
    *
    * <p>Sample code:
@@ -470,7 +437,7 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
    *     .setStorageType(StorageType.SSD)
    * );
    *
-   * Cluster cluste = clusterFuture.get();
+   * Cluster cluster = clusterFuture.get();
    * }</pre>
    */
   @SuppressWarnings("WeakerAccess")
@@ -541,7 +508,7 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
    *
    * <pre>{@code
    * try {
-   *   List<Cluster> clusters = clister.listClusters("my-instance");
+   *   List<Cluster> clusters = cluster.listClusters("my-instance");
    * } catch (PartialListClustersException e) {
    *   System.out.println("The following zones are unavailable: " + e.getUnavailableZones());
    *   System.out.println("But the following clusters are reachable: " + e.getClusters())
@@ -593,7 +560,7 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
         new ApiFunction<ListClustersResponse, List<Cluster>>() {
           @Override
           public List<Cluster> apply(ListClustersResponse proto) {
-            // NOTE: servserside pagination is not and will not be implemented, so remaining pages
+            // NOTE: serverside pagination is not and will not be implemented, so remaining pages
             // are not fetched. However, if that assumption turns out to be wrong, fail fast to
             // avoid returning partial data.
             Verify.verify(proto.getNextPageToken().isEmpty(),
@@ -628,7 +595,7 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre>{@code
-   * Cluster cluster = clister.resizeCluster("my-instance", "my-cluster", 30);
+   * Cluster cluster = cluster.resizeCluster("my-instance", "my-cluster", 30);
    * }</pre>
    */
   @SuppressWarnings("WeakerAccess")
@@ -641,7 +608,7 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
    * a PRODUCTION instance can be resized.
    *
    * <pre>{@code
-   * ApiFuture<Cluster> clusterFuture = clister.resizeCluster("my-instance", "my-cluster", 30);
+   * ApiFuture<Cluster> clusterFuture = cluster.resizeCluster("my-instance", "my-cluster", 30);
    * Cluster cluster = clusterFuture.get();
    * }</pre>
    */

@@ -27,18 +27,6 @@ import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.gax.rpc.testing.FakeOperationSnapshot;
 import com.google.bigtable.admin.v2.ClusterName;
-import com.google.bigtable.admin.v2.InstanceName;
-import com.google.bigtable.admin.v2.LocationName;
-import com.google.api.core.ApiFuture;
-import com.google.api.core.ApiFutures;
-import com.google.api.gax.grpc.GrpcStatusCode;
-import com.google.api.gax.longrunning.OperationFuture;
-import com.google.api.gax.longrunning.OperationFutures;
-import com.google.api.gax.longrunning.OperationSnapshot;
-import com.google.api.gax.rpc.OperationCallable;
-import com.google.api.gax.rpc.UnaryCallable;
-import com.google.api.gax.rpc.testing.FakeOperationSnapshot;
-import com.google.bigtable.admin.v2.Cluster;
 import com.google.bigtable.admin.v2.CreateInstanceMetadata;
 import com.google.bigtable.admin.v2.Instance.Type;
 import com.google.bigtable.admin.v2.InstanceName;
@@ -46,20 +34,15 @@ import com.google.bigtable.admin.v2.LocationName;
 import com.google.bigtable.admin.v2.ProjectName;
 import com.google.bigtable.admin.v2.StorageType;
 import com.google.bigtable.admin.v2.UpdateClusterMetadata;
+import com.google.bigtable.admin.v2.UpdateInstanceMetadata;
 import com.google.cloud.bigtable.admin.v2.models.Cluster;
 import com.google.cloud.bigtable.admin.v2.models.CreateClusterRequest;
-import com.google.cloud.bigtable.admin.v2.models.PartialListClustersException;
-import com.google.bigtable.admin.v2.StorageType;
-import com.google.bigtable.admin.v2.UpdateInstanceMetadata;
 import com.google.cloud.bigtable.admin.v2.models.CreateInstanceRequest;
 import com.google.cloud.bigtable.admin.v2.models.Instance;
+import com.google.cloud.bigtable.admin.v2.models.PartialListClustersException;
 import com.google.cloud.bigtable.admin.v2.models.PartialListInstancesException;
 import com.google.cloud.bigtable.admin.v2.models.UpdateInstanceRequest;
 import com.google.cloud.bigtable.admin.v2.stub.BigtableInstanceAdminStub;
-import com.google.protobuf.Empty;
-import io.grpc.Status.Code;
-import java.util.List;
-import java.util.concurrent.atomic.AtomicBoolean;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import io.grpc.Status.Code;
@@ -126,7 +109,6 @@ public class BigtableInstanceAdminClientTest {
     Mockito.when(mockStub.getInstanceCallable()).thenReturn(mockGetInstanceCallable);
     Mockito.when(mockStub.listInstancesCallable()).thenReturn(mockListInstancesCallable);
     Mockito.when(mockStub.deleteInstanceCallable()).thenReturn(mockDeleteInstanceCallable);
-        .create(PROJECT_NAME, mockStub);
 
     Mockito.when(mockStub.createClusterOperationCallable()).thenReturn(mockCreateClusterCallable);
     Mockito.when(mockStub.getClusterCallable()).thenReturn(mockGetClusterCallable);
@@ -158,7 +140,7 @@ public class BigtableInstanceAdminClientTest {
                     .setType(Type.DEVELOPMENT)
                     .setDisplayName(INSTANCE_NAME.getInstance())
             )
-            .putClusters("cluster1", Cluster.newBuilder()
+            .putClusters("cluster1", com.google.bigtable.admin.v2.Cluster.newBuilder()
                 .setLocation("projects/my-project/locations/us-east1-c")
                 .setServeNodes(1)
                 .setDefaultStorageType(StorageType.SSD)
@@ -340,22 +322,6 @@ public class BigtableInstanceAdminClientTest {
 
     // Verify
     assertThat(wasCalled.get()).isTrue();
-  }
-
-
-  private <ReqT, RespT, MetaT> void mockOperationResult(
-      OperationCallable<ReqT, RespT, MetaT> callable, ReqT request, RespT response) {
-    OperationSnapshot operationSnapshot = FakeOperationSnapshot.newBuilder()
-        .setDone(true)
-        .setErrorCode(GrpcStatusCode.of(Code.OK))
-        .setName("fake-name")
-        .setResponse(response)
-        .build();
-
-    OperationFuture<RespT, MetaT> operationFuture = OperationFutures
-        .immediateOperationFuture(operationSnapshot);
-
-    Mockito.when(callable.futureCall(request)).thenReturn(operationFuture);
   }
 
   @Test
