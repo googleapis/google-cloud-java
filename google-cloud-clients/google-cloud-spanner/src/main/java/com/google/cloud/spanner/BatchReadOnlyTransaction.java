@@ -54,6 +54,29 @@ public interface BatchReadOnlyTransaction extends ReadOnlyTransaction {
    * @param columns the columns to read
    * @param options the options to configure the read, supported values are
    * {@link Options#prefetchChunks()}
+   *
+   * <!--SNIPPET partition_read-->
+   * <pre>{@code
+   * final BatchReadOnlyTransaction txn =
+   *     batchClient.batchReadOnlyTransaction(TimestampBound.strong());
+   * List<Partition> partitions =
+   *     txn.partitionRead(
+   *         PartitionOptions.getDefaultInstance(),
+   *         "Singers",
+   *         KeySet.all(),
+   *         Arrays.asList("SingerId", "FirstName", "LastName"));
+   * for (final Partition p : partitions) {
+   *   try (ResultSet results = txn.execute(p)) {
+   *     while (results.next()) {
+   *       long singerId = results.getLong(0);
+   *       String firstName = results.getString(1);
+   *       String lastName = results.getString(2);
+   *       System.out.println("P2 [" + singerId + "] " + firstName + " " + lastName);
+   *     }
+   *   }
+   * }
+   * }</pre>
+   * <!--SNIPPET partition_read-->
    */
   List<Partition> partitionRead(
       PartitionOptions partitionOptions,
@@ -76,6 +99,30 @@ public interface BatchReadOnlyTransaction extends ReadOnlyTransaction {
    *     rows are returned in the natural key order of the index.
    * @param columns the columns to read
    * @param options the options to configure the read
+   *
+   * <!--SNIPPET partition_read_using_index-->
+   * <pre>{@code
+   * final BatchReadOnlyTransaction txn =
+   *     batchClient.batchReadOnlyTransaction(TimestampBound.strong());
+   * List<Partition> partitions =
+   *     txn.partitionReadUsingIndex(
+   *         PartitionOptions.getDefaultInstance(),
+   *         "Singers",
+   *         "SingerId",
+   *         KeySet.all(),
+   *         Arrays.asList("FirstName"));
+   * BatchTransactionId txnID = txn.getBatchTransactionId();
+   * int numRowsRead = 0;
+   * for (Partition p : partitions) {
+   *   BatchReadOnlyTransaction batchTxnOnEachWorker = batchClient.batchReadOnlyTransaction(txnID);
+   *   try (ResultSet results = batchTxnOnEachWorker.execute(p)) {
+   *     while (results.next()) {
+   *       System.out.println(results.getString(0));
+   *     }
+   *   }
+   * }
+   * }</pre>
+   * <!--SNIPPET partition_read_using_index-->
    */
   List<Partition> partitionReadUsingIndex(
       PartitionOptions partitionOptions,
@@ -95,6 +142,26 @@ public interface BatchReadOnlyTransaction extends ReadOnlyTransaction {
    * @param partitionOptions configuration for size and count of partitions returned
    * @param statement the query statement to execute
    * @param options the options to configure the query
+   *
+   * <!--SNIPPET partition_query-->
+   * <pre>{@code
+   * final BatchReadOnlyTransaction txn =
+   *     batchClient.batchReadOnlyTransaction(TimestampBound.strong());
+   * List<Partition> partitions = txn.partitionQuery(PartitionOptions.getDefaultInstance(),
+   *     Statement.of("SELECT SingerId, FirstName, LastName FROM Singers"));
+   *
+   * for (final Partition p : partitions) {
+   *   try (ResultSet results = txn.execute(p)) {
+   *     while (results.next()) {
+   *       long singerId = results.getLong(0);
+   *       String firstName = results.getString(1);
+   *       String lastName = results.getString(2);
+   *       System.out.println("[" + singerId + "] " + firstName + " " + lastName);
+   *     }
+   *   }
+   * }
+   * }</pre>
+   * <!--SNIPPET partition_query-->
    */
   List<Partition> partitionQuery(
       PartitionOptions partitionOptions, Statement statement, QueryOption... options)
@@ -103,12 +170,41 @@ public interface BatchReadOnlyTransaction extends ReadOnlyTransaction {
   /**
    * Execute the partition to return {@link ResultSet}. The result returned could be zero or more
    * rows. The row metadata may be absent if no rows are returned.
+   *
+   * <!--SNIPPET partition_query-->
+   * <pre>{@code
+   * final BatchReadOnlyTransaction txn =
+   *     batchClient.batchReadOnlyTransaction(TimestampBound.strong());
+   * List<Partition> partitions = txn.partitionQuery(PartitionOptions.getDefaultInstance(),
+   *     Statement.of("SELECT SingerId, FirstName, LastName FROM Singers"));
+   *
+   * for (final Partition p : partitions) {
+   *   try (ResultSet results = txn.execute(p)) {
+   *     while (results.next()) {
+   *       long singerId = results.getLong(0);
+   *       String firstName = results.getString(1);
+   *       String lastName = results.getString(2);
+   *       System.out.println("[" + singerId + "] " + firstName + " " + lastName);
+   *     }
+   *   }
+   * }
+   * }</pre>
+   * <!--SNIPPET partition_query-->
+   *
    */
   ResultSet execute(Partition partition) throws SpannerException;
 
   /**
    * Returns a {@link BatchTransactionId} to be re-used across several machines/processes. This
    * BatchTransactionId guarantees the subsequent read/query to be executed at the same timestamp.
+   *
+   * <!--SNIPPET batch_client_read_with_id-->
+   * <pre>{@code
+   * BatchTransactionId txnId = my_txn.getBatchTransactionId();
+   * BatchReadOnlyTransaction txn = batchClient.batchReadOnlyTransaction(txnId);
+   * }</pre>
+   * <!--SNIPPET batch_client_read_with_id-->
+   *
    */
   BatchTransactionId getBatchTransactionId();
 }
