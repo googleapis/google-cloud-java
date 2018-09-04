@@ -496,7 +496,7 @@ public class BigtableTableAdminClientTest {
     ConsistencyToken actualResult = adminClient.generateConsistencyToken(TABLE_NAME.getTable());
 
     // Verify
-    assertThat(actualResult).isEqualTo(ConsistencyToken.fromProto(expectedResponse));
+    assertThat(actualResult).isEqualTo(ConsistencyToken.of(TABLE_NAME, "fakeToken"));
   }
 
   @Test
@@ -519,7 +519,7 @@ public class BigtableTableAdminClientTest {
         .generateConsistencyTokenAsync(TABLE_NAME.getTable());
 
     // Verify
-    assertThat(actualResult.get()).isEqualTo(ConsistencyToken.fromProto(expectedResponse));
+    assertThat(actualResult.get()).isEqualTo(ConsistencyToken.of(TABLE_NAME, "fakeToken"));
   }
 
   @Test
@@ -538,13 +538,9 @@ public class BigtableTableAdminClientTest {
         .thenReturn(ApiFutures.immediateFuture(expectedResponse));
 
     // Execute
-    ConsistencyToken actualToken = ConsistencyToken.fromProto(
-        GenerateConsistencyTokenResponse.newBuilder()
-            .setConsistencyToken("fakeToken")
-            .build()
-    );
+    ConsistencyToken actualToken = ConsistencyToken.of(TABLE_NAME, "fakeToken");
 
-    boolean actualResult = adminClient.isConsistent(TABLE_NAME.getTable(), actualToken);
+    boolean actualResult = adminClient.isConsistent(actualToken);
 
     // Verify
     assertThat(actualResult).isTrue();
