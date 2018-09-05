@@ -65,7 +65,6 @@ import javax.annotation.concurrent.NotThreadSafe;
  *   <li>createBatch
  *   <li>checksums, etags
  *   <li>IAM operations</li>
- *   <li>BucketLock operations</li>
  *   </ul>
  * </ul>
  */
@@ -518,11 +517,6 @@ class FakeStorageRpc implements StorageRpc {
 
   @Override
   public Notification createNotification(String bucket, Notification notification) {
-    throw new UnsupportedOperationException();
-  }
-
-  @Override
-  public Bucket lockRetentionPolicy(Bucket bucket, Map<Option, ?> options) {
     throw new UnsupportedOperationException();
   }
 

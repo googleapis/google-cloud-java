@@ -93,10 +93,9 @@ public interface Storage extends Service<StorageOptions> {
     CORS("cors"),
     STORAGE_CLASS("storageClass"),
     ETAG("etag"),
+    @GcpLaunchStage.Beta
     ENCRYPTION("encryption"),
-    BILLING("billing"),
-    DEFAULT_EVENT_BASED_HOLD("defaultEventBasedHold"),
-    RETENTION_POLICY("retentionPolicy");
+    BILLING("billing");
 
     static final List<? extends FieldSelector> REQUIRED_FIELDS = ImmutableList.of(NAME);
 
@@ -137,10 +136,8 @@ public interface Storage extends Service<StorageOptions> {
     SIZE("size"),
     STORAGE_CLASS("storageClass"),
     TIME_DELETED("timeDeleted"),
+    @GcpLaunchStage.Beta
     KMS_KEY_NAME("kmsKeyName"),
-    EVENT_BASED_HOLD("eventBasedHold"),
-    TEMPORARY_HOLD("temporaryHold"),
-    RETENTION_EXPIRATION_TIME("retentionExpirationTime"),
     UPDATED("updated");
 
     static final List<? extends FieldSelector> REQUIRED_FIELDS = ImmutableList.of(BUCKET, NAME);
@@ -391,6 +388,7 @@ public interface Storage extends Service<StorageOptions> {
     /**
      * Returns an option to set a customer-managed key for server-side encryption of the blob.
      */
+    @GcpLaunchStage.Beta
     public static BlobTargetOption kmsKeyName(String kmsKeyName) {
       return new BlobTargetOption(StorageRpc.Option.KMS_KEY_NAME, kmsKeyName);
     }
@@ -552,6 +550,7 @@ public interface Storage extends Service<StorageOptions> {
      *
      * @param kmsKeyName the KMS key resource id
      */
+    @GcpLaunchStage.Beta
     public static BlobWriteOption kmsKeyName(String kmsKeyName) {
       return new BlobWriteOption(Option.KMS_KEY_NAME, kmsKeyName);
     }
@@ -1537,27 +1536,6 @@ public interface Storage extends Service<StorageOptions> {
    * @throws StorageException upon failure
    */
   Bucket get(String bucket, BucketGetOption... options);
-
-  /**
-   * Locks bucket retention policy. Requires a local metageneration value in the request. Review example below.
-   *
-   * <p>Accepts an optional userProject {@link BucketTargetOption} option which defines the project id
-   * to assign operational costs.
-   *
-   * <p>Warning: Once a retention policy is locked, it can't be unlocked, removed, or shortened.
-   *
-   * <p>Example of locking a retention policy on a bucket, only if its local metageneration value matches the bucket's
-   * service metageneration otherwise a {@link StorageException} is thrown.
-   * <pre> {@code
-   * String bucketName = "my_unique_bucket";
-   * Bucket bucket = storage.get(bucketName, BucketGetOption.fields(BucketField.METAGENERATION));
-   * storage.lockRetentionPolicy(bucket, BucketTargetOption.metagenerationMatch());
-   * }</pre>
-   *
-   * @return a {@code Bucket} object of the locked bucket
-   * @throws StorageException upon failure
-   */
-  Bucket lockRetentionPolicy(BucketInfo bucket, BucketTargetOption... options);
 
   /**
    * Returns the requested blob or {@code null} if not found.
