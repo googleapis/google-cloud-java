@@ -305,24 +305,24 @@ public abstract class BaseSystemTest {
       iterator =
           logging().listLogEntries(EntryListOption.filter(filter)).iterateAll().iterator();
     }
-    assertTrue(iterator.hasNext());
+    assertThat(iterator.hasNext()).isTrue();
     LogEntry entry = iterator.next();
-    assertTrue(entry.getPayload() instanceof StringPayload);
-    assertTrue(entry.<StringPayload>getPayload().getData().contains("Message"));
-    assertEquals(logId, entry.getLogName());
-    assertEquals(ImmutableMap.of("levelName", "INFO",
-        "levelValue", String.valueOf(Level.INFO.intValue())), entry.getLabels());
+    assertThat(entry.getPayload() instanceof StringPayload).isTrue();
+    assertThat(entry.<StringPayload>getPayload().getData()).contains("Message");
+    assertThat(entry.getLogName()).isEqualTo(logId);
+    assertThat(entry.getLabels())
+        .containsExactly("levelName", "INFO", "levelValue", String.valueOf(Level.INFO.intValue()));
     MonitoredResource monitoredResource =
         new LoggingConfig(handler.getClass().getName())
             .getMonitoredResource(options.getProjectId());
     assertThat(entry.getResource().getType()).isEqualTo(monitoredResource.getType());
     assertThat(entry.getResource().getLabels()).containsEntry("project_id", options.getProjectId());
-    assertNull(entry.getHttpRequest());
-    assertEquals(Severity.INFO, entry.getSeverity());
-    assertNull(entry.getOperation());
-    assertNotNull(entry.getInsertId());
-    assertNotNull(entry.getTimestamp());
-    assertFalse(iterator.hasNext());
+    assertThat(entry.getHttpRequest()).isNull();
+    assertThat(entry.getSeverity()).isEqualTo(Severity.INFO);
+    assertThat(entry.getOperation()).isNull();
+    assertThat(entry.getInsertId()).isNotNull();
+    assertThat(entry.getTimestamp()).isNotNull();
+    assertThat(iterator.hasNext()).isFalse();
     logger.removeHandler(handler);
     logging().deleteLog(logId);
   }
