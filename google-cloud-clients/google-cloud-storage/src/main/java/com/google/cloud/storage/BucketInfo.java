@@ -88,6 +88,10 @@ public class BucketInfo implements Serializable {
   private final StorageClass storageClass;
   private final Map<String, String> labels;
   private final String defaultKmsKeyName;
+  private final Boolean defaultEventBasedHold;
+  private final Long retentionEffectiveTime;
+  private final Boolean retentionPolicyIsLocked;
+  private final Long retentionPeriod;
 
   /**
    * Base class for bucket's delete rules. Allows to configure automatic deletion of blobs and blobs
@@ -346,7 +350,6 @@ public class BucketInfo implements Serializable {
      * Sets whether a user accessing the bucket or an object it contains should assume the transit costs
      * related to the access.
      *
-     * GcpLaunchStage.Alpha
      */
     public abstract Builder setRequesterPays(Boolean requesterPays);
 
@@ -429,8 +432,22 @@ public class BucketInfo implements Serializable {
     /**
      * Sets the default Cloud KMS key name for this bucket.
      */
-    @GcpLaunchStage.Beta
     public abstract Builder setDefaultKmsKeyName(String defaultKmsKeyName);
+
+    /**
+     * Sets the default event based hold for this bucket.
+     */
+    public abstract Builder setDefaultEventBasedHold(Boolean defaultEventBasedHold);
+
+    abstract Builder setRetentionEffectiveTime(Long retentionEffectiveTime);
+
+    abstract Builder setRetentionPolicyIsLocked(Boolean retentionPolicyIsLocked);
+
+    /**
+     * If policy is not locked this value can be cleared, increased, and decreased.
+     * If policy is locked the retention period can only be increased.
+     */
+    public abstract Builder setRetentionPeriod(Long retentionPeriod);
 
     /**
      * Creates a {@code BucketInfo} object.
@@ -459,6 +476,10 @@ public class BucketInfo implements Serializable {
     private List<Acl> defaultAcl;
     private Map<String, String> labels;
     private String defaultKmsKeyName;
+    private Boolean defaultEventBasedHold;
+    private Long retentionEffectiveTime;
+    private Boolean retentionPolicyIsLocked;
+    private Long retentionPeriod;
 
     BuilderImpl(String name) {
       this.name = name;
@@ -484,6 +505,10 @@ public class BucketInfo implements Serializable {
       labels = bucketInfo.labels;
       requesterPays = bucketInfo.requesterPays;
       defaultKmsKeyName = bucketInfo.defaultKmsKeyName;
+      defaultEventBasedHold = bucketInfo.defaultEventBasedHold;
+      retentionEffectiveTime = bucketInfo.retentionEffectiveTime;
+      retentionPolicyIsLocked = bucketInfo.retentionPolicyIsLocked;
+      retentionPeriod = bucketInfo.retentionPeriod;
     }
 
     @Override
@@ -516,7 +541,6 @@ public class BucketInfo implements Serializable {
       return this;
     }
 
-    /** GcpLaunchStage.Alpha */
     @Override
     public Builder setRequesterPays(Boolean enable) {
       this.requesterPays = firstNonNull(enable, Data.<Boolean>nullOf(Boolean.class));
@@ -595,11 +619,34 @@ public class BucketInfo implements Serializable {
       return this;
     }
 
-    @GcpLaunchStage.Beta
     @Override
     public Builder setDefaultKmsKeyName(String defaultKmsKeyName) {
       this.defaultKmsKeyName = defaultKmsKeyName != null
               ? defaultKmsKeyName : Data.<String>nullOf(String.class);
+      return this;
+    }
+
+    @Override
+    public Builder setDefaultEventBasedHold(Boolean defaultEventBasedHold) {
+      this.defaultEventBasedHold = firstNonNull(defaultEventBasedHold, Data.<Boolean>nullOf(Boolean.class));
+      return this;
+    }
+
+    @Override
+    Builder setRetentionEffectiveTime(Long retentionEffectiveTime) {
+      this.retentionEffectiveTime = firstNonNull(retentionEffectiveTime, Data.<Long>nullOf(Long.class));
+      return this;
+    }
+
+    @Override
+    Builder setRetentionPolicyIsLocked(Boolean retentionPolicyIsLocked) {
+      this.retentionPolicyIsLocked = firstNonNull(retentionPolicyIsLocked, Data.<Boolean>nullOf(Boolean.class));
+      return this;
+    }
+
+    @Override
+    public Builder setRetentionPeriod(Long retentionPeriod) {
+      this.retentionPeriod = firstNonNull(retentionPeriod, Data.<Long>nullOf(Long.class));
       return this;
     }
 
@@ -630,6 +677,10 @@ public class BucketInfo implements Serializable {
     labels = builder.labels;
     requesterPays = builder.requesterPays;
     defaultKmsKeyName = builder.defaultKmsKeyName;
+    defaultEventBasedHold = builder.defaultEventBasedHold;
+    retentionEffectiveTime = builder.retentionEffectiveTime;
+    retentionPolicyIsLocked = builder.retentionPolicyIsLocked;
+    retentionPeriod = builder.retentionPeriod;
   }
 
   /**
@@ -667,12 +718,10 @@ public class BucketInfo implements Serializable {
     return Data.isNull(versioningEnabled) ? null : versioningEnabled;
   }
 
-
   /**
    * Returns {@code true} if a user accessing the bucket or an object it contains should assume the transit costs
    * related to the access, {@code false} otherwise.
    *
-   * GcpLaunchStage.Alpha
    */
   public Boolean requesterPays() {
     return Data.isNull(requesterPays) ? null : requesterPays;
@@ -785,10 +834,31 @@ public class BucketInfo implements Serializable {
   /**
    * Returns the default Cloud KMS key to be applied to newly inserted objects in this bucket.
    */
-  @GcpLaunchStage.Beta
   public String getDefaultKmsKeyName() {
     return defaultKmsKeyName;
   }
+
+  /**
+   * Returns the default event based hold value used for inserted objects in this bucket.
+   */
+  public Boolean getDefaultEventBasedHold() { return defaultEventBasedHold; }
+
+  /**
+   * Returns the retention effective time a policy took effect if a retention policy is defined.
+   */
+  public Long getRetentionEffectiveTime() { return retentionEffectiveTime; }
+
+  /**
+   * Returns {@code true} if the bucket retention policy is locked, {@code false} otherwise.
+   */
+  public Boolean retentionPolicyIsLocked() {
+    return Data.isNull(retentionPolicyIsLocked) ? null : retentionPolicyIsLocked;
+  }
+
+  /**
+   * Returns the retention policy retention period.
+   */
+  public Long getRetentionPeriod() { return retentionPeriod; }
 
   /**
    * Returns a builder for the current bucket.
@@ -888,6 +958,23 @@ public class BucketInfo implements Serializable {
     if (defaultKmsKeyName != null) {
       bucketPb.setEncryption(new Encryption().setDefaultKmsKeyName(defaultKmsKeyName));
     }
+    if (defaultEventBasedHold != null) {
+      bucketPb.setDefaultEventBasedHold(defaultEventBasedHold);
+    }
+    if (retentionPeriod != null || retentionEffectiveTime != null || retentionPolicyIsLocked != null) {
+      Bucket.RetentionPolicy retentionPolicy = new Bucket.RetentionPolicy();
+      if (retentionPeriod != null) {
+        retentionPolicy.setRetentionPeriod(retentionPeriod);
+      }
+      if (retentionEffectiveTime != null) {
+        retentionPolicy.setEffectiveTime(new DateTime(retentionEffectiveTime));
+      }
+      if (retentionPolicyIsLocked != null) {
+        retentionPolicy.setIsLocked(retentionPolicyIsLocked);
+      }
+      bucketPb.setRetentionPolicy(retentionPolicy);
+    }
+
     return bucketPb;
   }
 
@@ -978,6 +1065,21 @@ public class BucketInfo implements Serializable {
     Encryption encryption = bucketPb.getEncryption();
     if (encryption != null && encryption.getDefaultKmsKeyName() != null && !encryption.getDefaultKmsKeyName().isEmpty()) {
       builder.setDefaultKmsKeyName(encryption.getDefaultKmsKeyName());
+    }
+    if (bucketPb.getDefaultEventBasedHold() != null) {
+      builder.setDefaultEventBasedHold(bucketPb.getDefaultEventBasedHold());
+    }
+    Bucket.RetentionPolicy retentionPolicy = bucketPb.getRetentionPolicy();
+    if (retentionPolicy != null) {
+      if (retentionPolicy.getEffectiveTime() != null) {
+        builder.setRetentionEffectiveTime(retentionPolicy.getEffectiveTime().getValue());
+      }
+      if (retentionPolicy.getIsLocked() != null) {
+        builder.setRetentionPolicyIsLocked(retentionPolicy.getIsLocked());
+      }
+      if (retentionPolicy.getRetentionPeriod() != null) {
+        builder.setRetentionPeriod(retentionPolicy.getRetentionPeriod());
+      }
     }
     return builder.build();
   }

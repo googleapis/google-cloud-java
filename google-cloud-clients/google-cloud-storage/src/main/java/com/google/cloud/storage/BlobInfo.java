@@ -85,6 +85,9 @@ public class BlobInfo implements Serializable {
   private final boolean isDirectory;
   private final CustomerEncryption customerEncryption;
   private final String kmsKeyName;
+  private final Boolean eventBasedHold;
+  private final Boolean temporaryHold;
+  private final Long retentionExpirationTime;
 
   /**
    * This class is meant for internal use only. Users are discouraged from using this class.
@@ -268,12 +271,19 @@ public class BlobInfo implements Serializable {
 
     abstract Builder setCustomerEncryption(CustomerEncryption customerEncryption);
 
-    /**
-     *
-     * Sets the blob's kmsKeyName.
-     */
-    @GcpLaunchStage.Beta
     abstract Builder setKmsKeyName(String kmsKeyName);
+
+    /**
+     * Sets the blob's event based hold.
+     */
+    public abstract Builder setEventBasedHold(Boolean eventBasedHold);
+
+    /**
+     * Sets the blob's temporary hold.
+     */
+    public abstract Builder setTemporaryHold(Boolean temporaryHold);
+
+    abstract Builder setRetentionExpirationTime(Long retentionExpirationTime);
 
     /**
      * Creates a {@code BlobInfo} object.
@@ -308,6 +318,9 @@ public class BlobInfo implements Serializable {
     private CustomerEncryption customerEncryption;
     private StorageClass storageClass;
     private String kmsKeyName;
+    private Boolean eventBasedHold;
+    private Boolean temporaryHold;
+    private Long retentionExpirationTime;
 
     BuilderImpl(BlobId blobId) {
       this.blobId = blobId;
@@ -339,6 +352,9 @@ public class BlobInfo implements Serializable {
       isDirectory = blobInfo.isDirectory;
       storageClass = blobInfo.storageClass;
       kmsKeyName = blobInfo.kmsKeyName;
+      eventBasedHold = blobInfo.eventBasedHold;
+      temporaryHold = blobInfo.temporaryHold;
+      retentionExpirationTime = blobInfo.retentionExpirationTime;
     }
 
     @Override
@@ -486,10 +502,27 @@ public class BlobInfo implements Serializable {
       return this;
     }
 
-    @GcpLaunchStage.Beta
     @Override
     Builder setKmsKeyName(String kmsKeyName) {
       this.kmsKeyName = kmsKeyName;
+      return this;
+    }
+
+    @Override
+    public Builder setEventBasedHold(Boolean eventBasedHold) {
+      this.eventBasedHold = eventBasedHold;
+      return this;
+    }
+
+    @Override
+    public Builder setTemporaryHold(Boolean temporaryHold) {
+      this.temporaryHold = temporaryHold;
+      return this;
+    }
+
+    @Override
+    Builder setRetentionExpirationTime(Long retentionExpirationTime) {
+      this.retentionExpirationTime = retentionExpirationTime;
       return this;
     }
 
@@ -526,6 +559,9 @@ public class BlobInfo implements Serializable {
     isDirectory = firstNonNull(builder.isDirectory, Boolean.FALSE);
     storageClass = builder.storageClass;
     kmsKeyName = builder.kmsKeyName;
+    eventBasedHold = builder.eventBasedHold;
+    temporaryHold = builder.temporaryHold;
+    retentionExpirationTime = builder.retentionExpirationTime;
   }
 
     /**
@@ -759,9 +795,29 @@ public class BlobInfo implements Serializable {
   /**
    * Returns the Cloud KMS key used to encrypt the blob, if any.
    */
-  @GcpLaunchStage.Beta
   public String getKmsKeyName() {
     return kmsKeyName;
+  }
+
+  /**
+   * Returns the event based hold status of the blob, if any.
+   */
+  public Boolean getEventBasedHold() {
+    return eventBasedHold;
+  }
+
+  /**
+   * Returns the temporary hold status of the blob, if any.
+   */
+  public Boolean getTemporaryHold() {
+    return temporaryHold;
+  }
+
+  /**
+   * Returns the retention expiration time of the blob, if a retention period is defined.
+   */
+  public Long getRetentionExpirationTime() {
+    return retentionExpirationTime;
   }
 
   /**
@@ -836,8 +892,13 @@ public class BlobInfo implements Serializable {
     if (customerEncryption != null) {
       storageObject.setCustomerEncryption(customerEncryption.toPb());
     }
+    if (retentionExpirationTime != null) {
+      storageObject.setRetentionExpirationTime(new DateTime(retentionExpirationTime));
+    }
 
     storageObject.setKmsKeyName(kmsKeyName);
+    storageObject.setEventBasedHold(eventBasedHold);
+    storageObject.setTemporaryHold(temporaryHold);
     storageObject.setMetadata(pbMetadata);
     storageObject.setCacheControl(cacheControl);
     storageObject.setContentEncoding(contentEncoding);
@@ -970,6 +1031,15 @@ public class BlobInfo implements Serializable {
     }
     if (storageObject.getKmsKeyName() != null) {
       builder.setKmsKeyName(storageObject.getKmsKeyName());
+    }
+    if (storageObject.getEventBasedHold() != null) {
+      builder.setEventBasedHold(storageObject.getEventBasedHold());
+    }
+    if (storageObject.getTemporaryHold() != null) {
+      builder.setTemporaryHold(storageObject.getTemporaryHold());
+    }
+    if (storageObject.getRetentionExpirationTime() != null) {
+      builder.setRetentionExpirationTime(storageObject.getRetentionExpirationTime().getValue());
     }
     return builder.build();
   }
