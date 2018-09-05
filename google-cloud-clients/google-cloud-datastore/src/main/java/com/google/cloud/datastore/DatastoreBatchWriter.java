@@ -22,7 +22,7 @@ import java.util.List;
  * An interface to represent a batch of write operations. All write operation for a batch writer
  * will be applied to the Datastore in one RPC call.
  */
-interface DatastoreBatchWriter extends DatastoreWriter {
+public interface DatastoreBatchWriter extends DatastoreWriter {
 
   /**
    * Datastore add operation. This method will also allocate id for any entity with an incomplete
