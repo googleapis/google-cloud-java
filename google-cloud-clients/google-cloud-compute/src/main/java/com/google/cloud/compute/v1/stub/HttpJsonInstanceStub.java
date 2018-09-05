@@ -64,6 +64,7 @@ import com.google.cloud.compute.v1.SetMinCpuPlatformInstanceHttpRequest;
 import com.google.cloud.compute.v1.SetSchedulingInstanceHttpRequest;
 import com.google.cloud.compute.v1.SetServiceAccountInstanceHttpRequest;
 import com.google.cloud.compute.v1.SetTagsInstanceHttpRequest;
+import com.google.cloud.compute.v1.SimulateMaintenanceEventInstanceHttpRequest;
 import com.google.cloud.compute.v1.StartInstanceHttpRequest;
 import com.google.cloud.compute.v1.StartWithEncryptionKeyInstanceHttpRequest;
 import com.google.cloud.compute.v1.StopInstanceHttpRequest;
@@ -548,6 +549,28 @@ public class HttpJsonInstanceStub extends InstanceStub {
               .build();
 
   @InternalApi
+  public static final ApiMethodDescriptor<SimulateMaintenanceEventInstanceHttpRequest, Operation>
+      simulateMaintenanceEventInstanceMethodDescriptor =
+          ApiMethodDescriptor.<SimulateMaintenanceEventInstanceHttpRequest, Operation>newBuilder()
+              .setFullMethodName("compute.instances.simulateMaintenanceEvent")
+              .setHttpMethod(HttpMethods.POST)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter
+                      .<SimulateMaintenanceEventInstanceHttpRequest>newBuilder()
+                      .setPathTemplate(
+                          PathTemplate.create(
+                              "{project}/zones/{zone}/instances/{instance}/simulateMaintenanceEvent"))
+                      .setQueryParams(Sets.<String>newHashSet())
+                      .setResourceNameFactory(ProjectZoneInstanceName.newFactory())
+                      .setResourceNameField("instance")
+                      .build())
+              .setResponseParser(
+                  ApiMessageHttpResponseParser.<Operation>newBuilder()
+                      .setResponseInstance(Operation.getDefaultInstance())
+                      .build())
+              .build();
+
+  @InternalApi
   public static final ApiMethodDescriptor<StartInstanceHttpRequest, Operation>
       startInstanceMethodDescriptor =
           ApiMethodDescriptor.<StartInstanceHttpRequest, Operation>newBuilder()
@@ -697,6 +720,8 @@ public class HttpJsonInstanceStub extends InstanceStub {
   private final UnaryCallable<SetServiceAccountInstanceHttpRequest, Operation>
       setServiceAccountInstanceCallable;
   private final UnaryCallable<SetTagsInstanceHttpRequest, Operation> setTagsInstanceCallable;
+  private final UnaryCallable<SimulateMaintenanceEventInstanceHttpRequest, Operation>
+      simulateMaintenanceEventInstanceCallable;
   private final UnaryCallable<StartInstanceHttpRequest, Operation> startInstanceCallable;
   private final UnaryCallable<StartWithEncryptionKeyInstanceHttpRequest, Operation>
       startWithEncryptionKeyInstanceCallable;
@@ -852,6 +877,12 @@ public class HttpJsonInstanceStub extends InstanceStub {
         HttpJsonCallSettings.<SetTagsInstanceHttpRequest, Operation>newBuilder()
             .setMethodDescriptor(setTagsInstanceMethodDescriptor)
             .build();
+    HttpJsonCallSettings<SimulateMaintenanceEventInstanceHttpRequest, Operation>
+        simulateMaintenanceEventInstanceTransportSettings =
+            HttpJsonCallSettings
+                .<SimulateMaintenanceEventInstanceHttpRequest, Operation>newBuilder()
+                .setMethodDescriptor(simulateMaintenanceEventInstanceMethodDescriptor)
+                .build();
     HttpJsonCallSettings<StartInstanceHttpRequest, Operation> startInstanceTransportSettings =
         HttpJsonCallSettings.<StartInstanceHttpRequest, Operation>newBuilder()
             .setMethodDescriptor(startInstanceMethodDescriptor)
@@ -987,6 +1018,11 @@ public class HttpJsonInstanceStub extends InstanceStub {
     this.setTagsInstanceCallable =
         callableFactory.createUnaryCallable(
             setTagsInstanceTransportSettings, settings.setTagsInstanceSettings(), clientContext);
+    this.simulateMaintenanceEventInstanceCallable =
+        callableFactory.createUnaryCallable(
+            simulateMaintenanceEventInstanceTransportSettings,
+            settings.simulateMaintenanceEventInstanceSettings(),
+            clientContext);
     this.startInstanceCallable =
         callableFactory.createUnaryCallable(
             startInstanceTransportSettings, settings.startInstanceSettings(), clientContext);
@@ -1150,6 +1186,12 @@ public class HttpJsonInstanceStub extends InstanceStub {
   @BetaApi
   public UnaryCallable<SetTagsInstanceHttpRequest, Operation> setTagsInstanceCallable() {
     return setTagsInstanceCallable;
+  }
+
+  @BetaApi
+  public UnaryCallable<SimulateMaintenanceEventInstanceHttpRequest, Operation>
+      simulateMaintenanceEventInstanceCallable() {
+    return simulateMaintenanceEventInstanceCallable;
   }
 
   @BetaApi

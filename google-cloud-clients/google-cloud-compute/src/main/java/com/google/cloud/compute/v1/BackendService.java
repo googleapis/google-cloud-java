@@ -44,6 +44,7 @@ public final class BackendService implements ApiMessage {
   private final String portName;
   private final String protocol;
   private final String region;
+  private final String securityPolicy;
   private final String selfLink;
   private final String sessionAffinity;
   private final Integer timeoutSec;
@@ -67,6 +68,7 @@ public final class BackendService implements ApiMessage {
     this.portName = null;
     this.protocol = null;
     this.region = null;
+    this.securityPolicy = null;
     this.selfLink = null;
     this.sessionAffinity = null;
     this.timeoutSec = null;
@@ -91,6 +93,7 @@ public final class BackendService implements ApiMessage {
       String portName,
       String protocol,
       String region,
+      String securityPolicy,
       String selfLink,
       String sessionAffinity,
       Integer timeoutSec) {
@@ -112,6 +115,7 @@ public final class BackendService implements ApiMessage {
     this.portName = portName;
     this.protocol = protocol;
     this.region = region;
+    this.securityPolicy = securityPolicy;
     this.selfLink = selfLink;
     this.sessionAffinity = sessionAffinity;
     this.timeoutSec = timeoutSec;
@@ -172,6 +176,9 @@ public final class BackendService implements ApiMessage {
     }
     if (fieldName.equals("region")) {
       return region;
+    }
+    if (fieldName.equals("securityPolicy")) {
+      return securityPolicy;
     }
     if (fieldName.equals("selfLink")) {
       return selfLink;
@@ -269,6 +276,10 @@ public final class BackendService implements ApiMessage {
     return region;
   }
 
+  public String getSecurityPolicy() {
+    return securityPolicy;
+  }
+
   public String getSelfLink() {
     return selfLink;
   }
@@ -322,6 +333,7 @@ public final class BackendService implements ApiMessage {
     private String portName;
     private String protocol;
     private String region;
+    private String securityPolicy;
     private String selfLink;
     private String sessionAffinity;
     private Integer timeoutSec;
@@ -384,6 +396,9 @@ public final class BackendService implements ApiMessage {
       if (other.getRegion() != null) {
         this.region = other.region;
       }
+      if (other.getSecurityPolicy() != null) {
+        this.securityPolicy = other.securityPolicy;
+      }
       if (other.getSelfLink() != null) {
         this.selfLink = other.selfLink;
       }
@@ -415,6 +430,7 @@ public final class BackendService implements ApiMessage {
       this.portName = source.portName;
       this.protocol = source.protocol;
       this.region = source.region;
+      this.securityPolicy = source.securityPolicy;
       this.selfLink = source.selfLink;
       this.sessionAffinity = source.sessionAffinity;
       this.timeoutSec = source.timeoutSec;
@@ -604,6 +620,15 @@ public final class BackendService implements ApiMessage {
       return this;
     }
 
+    public String getSecurityPolicy() {
+      return securityPolicy;
+    }
+
+    public Builder setSecurityPolicy(String securityPolicy) {
+      this.securityPolicy = securityPolicy;
+      return this;
+    }
+
     public String getSelfLink() {
       return selfLink;
     }
@@ -652,6 +677,7 @@ public final class BackendService implements ApiMessage {
           portName,
           protocol,
           region,
+          securityPolicy,
           selfLink,
           sessionAffinity,
           timeoutSec);
@@ -677,6 +703,7 @@ public final class BackendService implements ApiMessage {
       newBuilder.setPortName(this.portName);
       newBuilder.setProtocol(this.protocol);
       newBuilder.setRegion(this.region);
+      newBuilder.setSecurityPolicy(this.securityPolicy);
       newBuilder.setSelfLink(this.selfLink);
       newBuilder.setSessionAffinity(this.sessionAffinity);
       newBuilder.setTimeoutSec(this.timeoutSec);
@@ -741,6 +768,9 @@ public final class BackendService implements ApiMessage {
         + "region="
         + region
         + ", "
+        + "securityPolicy="
+        + securityPolicy
+        + ", "
         + "selfLink="
         + selfLink
         + ", "
@@ -777,6 +807,7 @@ public final class BackendService implements ApiMessage {
           && Objects.equals(this.portName, that.getPortName())
           && Objects.equals(this.protocol, that.getProtocol())
           && Objects.equals(this.region, that.getRegion())
+          && Objects.equals(this.securityPolicy, that.getSecurityPolicy())
           && Objects.equals(this.selfLink, that.getSelfLink())
           && Objects.equals(this.sessionAffinity, that.getSessionAffinity())
           && Objects.equals(this.timeoutSec, that.getTimeoutSec());
@@ -805,6 +836,7 @@ public final class BackendService implements ApiMessage {
         portName,
         protocol,
         region,
+        securityPolicy,
         selfLink,
         sessionAffinity,
         timeoutSec);
