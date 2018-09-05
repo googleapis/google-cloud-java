@@ -37,30 +37,48 @@ public final class RowMutation implements MutationApi<RowMutation>, Serializable
   private final ByteString key;
   private final Mutation mutation;
 
-  private RowMutation(String tableId, ByteString key) {
-    this.tableId = tableId;
-    this.key = key;
-    this.mutation = Mutation.create();
-  }
-
   private RowMutation(String tableId, ByteString key, Mutation mutation) {
     this.tableId = tableId;
     this.key = key;
     this.mutation = mutation;
   }
 
+  /** Creates a new instance of the mutation builder. */
   public static RowMutation create(@Nonnull String tableId, @Nonnull String key) {
     return create(tableId, ByteString.copyFromUtf8(key));
   }
 
+  /** Creates a new instance of the mutation builder. */
   public static RowMutation create(@Nonnull String tableId, @Nonnull ByteString key) {
-    return new RowMutation(tableId, key);
+    return new RowMutation(tableId, key, Mutation.create());
   }
 
+  /**
+   * Creates new instance of mutation builder by wrapping existing mutation builder.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * Mutation mutation = Mutation.create()
+   *     .setCell("[FAMILY_NAME]", "[QUALIFIER]", [TIMESTAMP], "[VALUE]");
+   * RowMutation rowMutation = RowMutation.create("[TABLE]", "[ROW_KEY]", mutation);
+   * </code></pre>
+   */
   public static RowMutation create(@Nonnull String tableId, @Nonnull String key, @Nonnull Mutation mutation) {
     return create(tableId, ByteString.copyFromUtf8(key), mutation);
   }
 
+  /**
+   * Creates new instance of mutation builder by wrapping existing mutation builder.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * Mutation mutation = Mutation.create()
+   *     .setCell("[FAMILY_NAME]", "[QUALIFIER]", [TIMESTAMP], "[VALUE]");
+   * RowMutation rowMutation = RowMutation.create("[TABLE]", [BYTE_STRING_ROW_KEY], mutation);
+   * </code></pre>
+   */
   public static RowMutation create(@Nonnull String tableId, @Nonnull ByteString key, @Nonnull Mutation mutation) {
     return new RowMutation(tableId, key, mutation);
   }
