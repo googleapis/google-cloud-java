@@ -280,7 +280,7 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves aggregated list of instances.
+   * Retrieves aggregated list of all of the instances in your project across all regions and zones.
    *
    * <p>Sample code:
    *
@@ -307,7 +307,7 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves aggregated list of instances.
+   * Retrieves aggregated list of all of the instances in your project across all regions and zones.
    *
    * <p>Sample code:
    *
@@ -332,7 +332,7 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves aggregated list of instances.
+   * Retrieves aggregated list of all of the instances in your project across all regions and zones.
    *
    * <p>Sample code:
    *
@@ -359,7 +359,7 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves aggregated list of instances.
+   * Retrieves aggregated list of all of the instances in your project across all regions and zones.
    *
    * <p>Sample code:
    *
@@ -386,7 +386,7 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves aggregated list of instances.
+   * Retrieves aggregated list of all of the instances in your project across all regions and zones.
    *
    * <p>Sample code:
    *
@@ -985,7 +985,7 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified instance's serial port output.
+   * Returns the last 1 MB of serial port output from the specified instance.
    *
    * <p>Sample code:
    *
@@ -1021,7 +1021,7 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified instance's serial port output.
+   * Returns the last 1 MB of serial port output from the specified instance.
    *
    * <p>Sample code:
    *
@@ -1057,7 +1057,7 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified instance's serial port output.
+   * Returns the last 1 MB of serial port output from the specified instance.
    *
    * <p>Sample code:
    *
@@ -1086,7 +1086,7 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified instance's serial port output.
+   * Returns the last 1 MB of serial port output from the specified instance.
    *
    * <p>Sample code:
    *
@@ -2746,6 +2746,105 @@ public class InstanceClient implements BackgroundResource {
   @BetaApi
   public final UnaryCallable<SetTagsInstanceHttpRequest, Operation> setTagsInstanceCallable() {
     return stub.setTagsInstanceCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Simulates a maintenance event on the instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InstanceClient instanceClient = InstanceClient.create()) {
+   *   ProjectZoneInstanceName instance = ProjectZoneInstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   Operation response = instanceClient.simulateMaintenanceEventInstance(instance);
+   * }
+   * </code></pre>
+   *
+   * @param instance Name of the instance scoping this request.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation simulateMaintenanceEventInstance(ProjectZoneInstanceName instance) {
+
+    SimulateMaintenanceEventInstanceHttpRequest request =
+        SimulateMaintenanceEventInstanceHttpRequest.newBuilder()
+            .setInstance(instance == null ? null : instance.toString())
+            .build();
+    return simulateMaintenanceEventInstance(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Simulates a maintenance event on the instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InstanceClient instanceClient = InstanceClient.create()) {
+   *   ProjectZoneInstanceName instance = ProjectZoneInstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   Operation response = instanceClient.simulateMaintenanceEventInstance(instance.toString());
+   * }
+   * </code></pre>
+   *
+   * @param instance Name of the instance scoping this request.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation simulateMaintenanceEventInstance(String instance) {
+
+    SimulateMaintenanceEventInstanceHttpRequest request =
+        SimulateMaintenanceEventInstanceHttpRequest.newBuilder().setInstance(instance).build();
+    return simulateMaintenanceEventInstance(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Simulates a maintenance event on the instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InstanceClient instanceClient = InstanceClient.create()) {
+   *   ProjectZoneInstanceName instance = ProjectZoneInstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   SimulateMaintenanceEventInstanceHttpRequest request = SimulateMaintenanceEventInstanceHttpRequest.newBuilder()
+   *     .setInstance(instance.toString())
+   *     .build();
+   *   Operation response = instanceClient.simulateMaintenanceEventInstance(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation simulateMaintenanceEventInstance(
+      SimulateMaintenanceEventInstanceHttpRequest request) {
+    return simulateMaintenanceEventInstanceCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Simulates a maintenance event on the instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InstanceClient instanceClient = InstanceClient.create()) {
+   *   ProjectZoneInstanceName instance = ProjectZoneInstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   SimulateMaintenanceEventInstanceHttpRequest request = SimulateMaintenanceEventInstanceHttpRequest.newBuilder()
+   *     .setInstance(instance.toString())
+   *     .build();
+   *   ApiFuture&lt;Operation&gt; future = instanceClient.simulateMaintenanceEventInstanceCallable().futureCall(request);
+   *   // Do something
+   *   Operation response = future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi
+  public final UnaryCallable<SimulateMaintenanceEventInstanceHttpRequest, Operation>
+      simulateMaintenanceEventInstanceCallable() {
+    return stub.simulateMaintenanceEventInstanceCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD

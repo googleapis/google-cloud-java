@@ -50,6 +50,7 @@ import com.google.cloud.compute.v1.SetMinCpuPlatformInstanceHttpRequest;
 import com.google.cloud.compute.v1.SetSchedulingInstanceHttpRequest;
 import com.google.cloud.compute.v1.SetServiceAccountInstanceHttpRequest;
 import com.google.cloud.compute.v1.SetTagsInstanceHttpRequest;
+import com.google.cloud.compute.v1.SimulateMaintenanceEventInstanceHttpRequest;
 import com.google.cloud.compute.v1.StartInstanceHttpRequest;
 import com.google.cloud.compute.v1.StartWithEncryptionKeyInstanceHttpRequest;
 import com.google.cloud.compute.v1.StopInstanceHttpRequest;
@@ -211,6 +212,13 @@ public abstract class InstanceStub implements BackgroundResource {
   @BetaApi
   public UnaryCallable<SetTagsInstanceHttpRequest, Operation> setTagsInstanceCallable() {
     throw new UnsupportedOperationException("Not implemented: setTagsInstanceCallable()");
+  }
+
+  @BetaApi
+  public UnaryCallable<SimulateMaintenanceEventInstanceHttpRequest, Operation>
+      simulateMaintenanceEventInstanceCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: simulateMaintenanceEventInstanceCallable()");
   }
 
   @BetaApi

@@ -1250,6 +1250,122 @@ public class BackendServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
+   * Sets the security policy for the specified backend service.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BackendServiceClient backendServiceClient = BackendServiceClient.create()) {
+   *   ProjectGlobalBackendServiceName backendService = ProjectGlobalBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
+   *   SecurityPolicyReference securityPolicyReferenceResource = SecurityPolicyReference.newBuilder().build();
+   *   Operation response = backendServiceClient.setSecurityPolicyBackendService(backendService, securityPolicyReferenceResource);
+   * }
+   * </code></pre>
+   *
+   * @param backendService Name of the BackendService resource to which the security policy should
+   *     be set. The name should conform to RFC1035.
+   * @param securityPolicyReferenceResource
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation setSecurityPolicyBackendService(
+      ProjectGlobalBackendServiceName backendService,
+      SecurityPolicyReference securityPolicyReferenceResource) {
+
+    SetSecurityPolicyBackendServiceHttpRequest request =
+        SetSecurityPolicyBackendServiceHttpRequest.newBuilder()
+            .setBackendService(backendService == null ? null : backendService.toString())
+            .setSecurityPolicyReferenceResource(securityPolicyReferenceResource)
+            .build();
+    return setSecurityPolicyBackendService(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sets the security policy for the specified backend service.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BackendServiceClient backendServiceClient = BackendServiceClient.create()) {
+   *   ProjectGlobalBackendServiceName backendService = ProjectGlobalBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
+   *   SecurityPolicyReference securityPolicyReferenceResource = SecurityPolicyReference.newBuilder().build();
+   *   Operation response = backendServiceClient.setSecurityPolicyBackendService(backendService.toString(), securityPolicyReferenceResource);
+   * }
+   * </code></pre>
+   *
+   * @param backendService Name of the BackendService resource to which the security policy should
+   *     be set. The name should conform to RFC1035.
+   * @param securityPolicyReferenceResource
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation setSecurityPolicyBackendService(
+      String backendService, SecurityPolicyReference securityPolicyReferenceResource) {
+
+    SetSecurityPolicyBackendServiceHttpRequest request =
+        SetSecurityPolicyBackendServiceHttpRequest.newBuilder()
+            .setBackendService(backendService)
+            .setSecurityPolicyReferenceResource(securityPolicyReferenceResource)
+            .build();
+    return setSecurityPolicyBackendService(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sets the security policy for the specified backend service.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BackendServiceClient backendServiceClient = BackendServiceClient.create()) {
+   *   ProjectGlobalBackendServiceName backendService = ProjectGlobalBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
+   *   SecurityPolicyReference securityPolicyReferenceResource = SecurityPolicyReference.newBuilder().build();
+   *   SetSecurityPolicyBackendServiceHttpRequest request = SetSecurityPolicyBackendServiceHttpRequest.newBuilder()
+   *     .setBackendService(backendService.toString())
+   *     .setSecurityPolicyReferenceResource(securityPolicyReferenceResource)
+   *     .build();
+   *   Operation response = backendServiceClient.setSecurityPolicyBackendService(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation setSecurityPolicyBackendService(
+      SetSecurityPolicyBackendServiceHttpRequest request) {
+    return setSecurityPolicyBackendServiceCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sets the security policy for the specified backend service.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BackendServiceClient backendServiceClient = BackendServiceClient.create()) {
+   *   ProjectGlobalBackendServiceName backendService = ProjectGlobalBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
+   *   SecurityPolicyReference securityPolicyReferenceResource = SecurityPolicyReference.newBuilder().build();
+   *   SetSecurityPolicyBackendServiceHttpRequest request = SetSecurityPolicyBackendServiceHttpRequest.newBuilder()
+   *     .setBackendService(backendService.toString())
+   *     .setSecurityPolicyReferenceResource(securityPolicyReferenceResource)
+   *     .build();
+   *   ApiFuture&lt;Operation&gt; future = backendServiceClient.setSecurityPolicyBackendServiceCallable().futureCall(request);
+   *   // Do something
+   *   Operation response = future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi
+  public final UnaryCallable<SetSecurityPolicyBackendServiceHttpRequest, Operation>
+      setSecurityPolicyBackendServiceCallable() {
+    return stub.setSecurityPolicyBackendServiceCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
    * Updates the specified BackendService resource with the data included in the request. There are
    * several restrictions and guidelines to keep in mind when updating a backend service. Read
    * Restrictions and Guidelines for more information.
