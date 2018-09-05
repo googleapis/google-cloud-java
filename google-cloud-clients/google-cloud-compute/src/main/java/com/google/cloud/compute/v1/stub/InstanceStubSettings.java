@@ -71,6 +71,7 @@ import com.google.cloud.compute.v1.SetMinCpuPlatformInstanceHttpRequest;
 import com.google.cloud.compute.v1.SetSchedulingInstanceHttpRequest;
 import com.google.cloud.compute.v1.SetServiceAccountInstanceHttpRequest;
 import com.google.cloud.compute.v1.SetTagsInstanceHttpRequest;
+import com.google.cloud.compute.v1.SimulateMaintenanceEventInstanceHttpRequest;
 import com.google.cloud.compute.v1.StartInstanceHttpRequest;
 import com.google.cloud.compute.v1.StartWithEncryptionKeyInstanceHttpRequest;
 import com.google.cloud.compute.v1.StopInstanceHttpRequest;
@@ -170,6 +171,8 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
   private final UnaryCallSettings<SetServiceAccountInstanceHttpRequest, Operation>
       setServiceAccountInstanceSettings;
   private final UnaryCallSettings<SetTagsInstanceHttpRequest, Operation> setTagsInstanceSettings;
+  private final UnaryCallSettings<SimulateMaintenanceEventInstanceHttpRequest, Operation>
+      simulateMaintenanceEventInstanceSettings;
   private final UnaryCallSettings<StartInstanceHttpRequest, Operation> startInstanceSettings;
   private final UnaryCallSettings<StartWithEncryptionKeyInstanceHttpRequest, Operation>
       startWithEncryptionKeyInstanceSettings;
@@ -307,6 +310,12 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
     return setTagsInstanceSettings;
   }
 
+  /** Returns the object with the settings used for calls to simulateMaintenanceEventInstance. */
+  public UnaryCallSettings<SimulateMaintenanceEventInstanceHttpRequest, Operation>
+      simulateMaintenanceEventInstanceSettings() {
+    return simulateMaintenanceEventInstanceSettings;
+  }
+
   /** Returns the object with the settings used for calls to startInstance. */
   public UnaryCallSettings<StartInstanceHttpRequest, Operation> startInstanceSettings() {
     return startInstanceSettings;
@@ -435,6 +444,8 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
     setSchedulingInstanceSettings = settingsBuilder.setSchedulingInstanceSettings().build();
     setServiceAccountInstanceSettings = settingsBuilder.setServiceAccountInstanceSettings().build();
     setTagsInstanceSettings = settingsBuilder.setTagsInstanceSettings().build();
+    simulateMaintenanceEventInstanceSettings =
+        settingsBuilder.simulateMaintenanceEventInstanceSettings().build();
     startInstanceSettings = settingsBuilder.startInstanceSettings().build();
     startWithEncryptionKeyInstanceSettings =
         settingsBuilder.startWithEncryptionKeyInstanceSettings().build();
@@ -679,6 +690,8 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
         setServiceAccountInstanceSettings;
     private final UnaryCallSettings.Builder<SetTagsInstanceHttpRequest, Operation>
         setTagsInstanceSettings;
+    private final UnaryCallSettings.Builder<SimulateMaintenanceEventInstanceHttpRequest, Operation>
+        simulateMaintenanceEventInstanceSettings;
     private final UnaryCallSettings.Builder<StartInstanceHttpRequest, Operation>
         startInstanceSettings;
     private final UnaryCallSettings.Builder<StartWithEncryptionKeyInstanceHttpRequest, Operation>
@@ -777,6 +790,8 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
 
       setTagsInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      simulateMaintenanceEventInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       startInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       startWithEncryptionKeyInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -811,6 +826,7 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
               setSchedulingInstanceSettings,
               setServiceAccountInstanceSettings,
               setTagsInstanceSettings,
+              simulateMaintenanceEventInstanceSettings,
               startInstanceSettings,
               startWithEncryptionKeyInstanceSettings,
               stopInstanceSettings,
@@ -942,6 +958,11 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
+          .simulateMaintenanceEventInstanceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
           .startInstanceSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
@@ -997,6 +1018,8 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
       setSchedulingInstanceSettings = settings.setSchedulingInstanceSettings.toBuilder();
       setServiceAccountInstanceSettings = settings.setServiceAccountInstanceSettings.toBuilder();
       setTagsInstanceSettings = settings.setTagsInstanceSettings.toBuilder();
+      simulateMaintenanceEventInstanceSettings =
+          settings.simulateMaintenanceEventInstanceSettings.toBuilder();
       startInstanceSettings = settings.startInstanceSettings.toBuilder();
       startWithEncryptionKeyInstanceSettings =
           settings.startWithEncryptionKeyInstanceSettings.toBuilder();
@@ -1029,6 +1052,7 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
               setSchedulingInstanceSettings,
               setServiceAccountInstanceSettings,
               setTagsInstanceSettings,
+              simulateMaintenanceEventInstanceSettings,
               startInstanceSettings,
               startWithEncryptionKeyInstanceSettings,
               stopInstanceSettings,
@@ -1185,6 +1209,12 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
     public UnaryCallSettings.Builder<SetTagsInstanceHttpRequest, Operation>
         setTagsInstanceSettings() {
       return setTagsInstanceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to simulateMaintenanceEventInstance. */
+    public UnaryCallSettings.Builder<SimulateMaintenanceEventInstanceHttpRequest, Operation>
+        simulateMaintenanceEventInstanceSettings() {
+      return simulateMaintenanceEventInstanceSettings;
     }
 
     /** Returns the builder for the settings used for calls to startInstance. */

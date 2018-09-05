@@ -662,6 +662,22 @@
  * </code>
  * </pre>
  *
+ * ==================== SecurityPolicyClient ====================
+ *
+ * <p>Service Description: Creates and runs virtual machines on Google Cloud Platform.
+ *
+ * <p>Sample for SecurityPolicyClient:
+ *
+ * <pre>
+ * <code>
+ * try (SecurityPolicyClient securityPolicyClient = SecurityPolicyClient.create()) {
+ *   ProjectGlobalSecurityPolicyName securityPolicy = ProjectGlobalSecurityPolicyName.of("[PROJECT]", "[SECURITY_POLICY]");
+ *   SecurityPolicyRule securityPolicyRuleResource = SecurityPolicyRule.newBuilder().build();
+ *   Operation response = securityPolicyClient.addRuleSecurityPolicy(securityPolicy, securityPolicyRuleResource);
+ * }
+ * </code>
+ * </pre>
+ *
  * ============== SnapshotClient ==============
  *
  * <p>Service Description: Creates and runs virtual machines on Google Cloud Platform.
