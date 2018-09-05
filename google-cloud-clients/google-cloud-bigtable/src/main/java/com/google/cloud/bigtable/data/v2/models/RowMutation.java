@@ -57,11 +57,11 @@ public final class RowMutation implements MutationApi<RowMutation>, Serializable
     return new RowMutation(tableId, key);
   }
 
-  public static RowMutation create(@Nonnull String tableId, @Nonnull String key, Mutation mutation) {
+  public static RowMutation create(@Nonnull String tableId, @Nonnull String key, @Nonnull Mutation mutation) {
     return create(tableId, ByteString.copyFromUtf8(key), mutation);
   }
 
-  public static RowMutation create(@Nonnull String tableId, @Nonnull ByteString key, Mutation mutation) {
+  public static RowMutation create(@Nonnull String tableId, @Nonnull ByteString key, @Nonnull Mutation mutation) {
     return new RowMutation(tableId, key, mutation);
   }
 
