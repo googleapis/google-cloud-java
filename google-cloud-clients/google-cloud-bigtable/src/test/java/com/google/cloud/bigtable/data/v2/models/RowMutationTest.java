@@ -91,6 +91,32 @@ public class RowMutationTest {
   }
 
   @Test
+  public void toProtoTestWithProvidedMutation() {
+    long timestampMin = System.currentTimeMillis() * 1_000;
+
+    Mutation mutation = Mutation.create().setCell("fake-family", "fake-qualifier", "fake-value");
+    RowMutation rowMutation = RowMutation.create("fake-table", "fake-key", mutation);
+
+    MutateRowsRequest actualRowMutation = rowMutation.toBulkProto(REQUEST_CONTEXT);
+
+    com.google.common.collect.Range<Long> timestampRange =
+        com.google.common.collect.Range.closed(timestampMin, System.currentTimeMillis() * 1_000);
+
+    assertThat(actualRowMutation.getTableName())
+        .isEqualTo(
+            TableName.of(INSTANCE_NAME.getProject(), INSTANCE_NAME.getInstance(), "fake-table")
+                .toString());
+    assertThat(actualRowMutation.getAppProfileId()).isEqualTo(APP_PROFILE_ID);
+    assertThat(actualRowMutation.getEntriesList()).hasSize(1);
+    assertThat(actualRowMutation.getEntries(0).getMutationsList()).hasSize(1);
+    assertThat(actualRowMutation.getEntries(0).getMutations(0).getSetCell().getValue())
+        .isEqualTo(ByteString.copyFromUtf8("fake-value"));
+
+    assertThat(actualRowMutation.getEntries(0).getMutations(0).getSetCell().getTimestampMicros())
+        .isIn(timestampRange);
+  }
+
+  @Test
   public void serializationTest() throws IOException, ClassNotFoundException {
     RowMutation expected =
         RowMutation.create("fake-table", "fake-key")

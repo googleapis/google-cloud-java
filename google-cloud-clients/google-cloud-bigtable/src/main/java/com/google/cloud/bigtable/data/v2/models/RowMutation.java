@@ -43,12 +43,26 @@ public final class RowMutation implements MutationApi<RowMutation>, Serializable
     this.mutation = Mutation.create();
   }
 
+  private RowMutation(String tableId, ByteString key, Mutation mutation) {
+    this.tableId = tableId;
+    this.key = key;
+    this.mutation = mutation;
+  }
+
   public static RowMutation create(@Nonnull String tableId, @Nonnull String key) {
     return create(tableId, ByteString.copyFromUtf8(key));
   }
 
   public static RowMutation create(@Nonnull String tableId, @Nonnull ByteString key) {
     return new RowMutation(tableId, key);
+  }
+
+  public static RowMutation create(@Nonnull String tableId, @Nonnull String key, Mutation mutation) {
+    return create(tableId, ByteString.copyFromUtf8(key), mutation);
+  }
+
+  public static RowMutation create(@Nonnull String tableId, @Nonnull ByteString key, Mutation mutation) {
+    return new RowMutation(tableId, key, mutation);
   }
 
   @Override
