@@ -101,21 +101,25 @@ public final class BigtableTableAdminClient implements AutoCloseable {
   private final InstanceName instanceName;
 
   /** Constructs an instance of BigtableTableAdminClient with the given instanceName. */
-  public static BigtableTableAdminClient create(@Nonnull InstanceName instanceName) throws IOException {
+  public static BigtableTableAdminClient create(@Nonnull InstanceName instanceName)
+      throws IOException {
     return create(BigtableTableAdminSettings.newBuilder().setInstanceName(instanceName).build());
   }
 
   /** Constructs an instance of BigtableTableAdminClient with the given settings. */
-  public static BigtableTableAdminClient create(@Nonnull BigtableTableAdminSettings settings) throws IOException {
+  public static BigtableTableAdminClient create(@Nonnull BigtableTableAdminSettings settings)
+      throws IOException {
     return create(settings.getInstanceName(), settings.getStubSettings().createStub());
   }
 
   /** Constructs an instance of BigtableTableAdminClient with the given instanceName and stub. */
-  public static BigtableTableAdminClient create(@Nonnull InstanceName instanceName, @Nonnull BigtableTableAdminStub stub) {
+  public static BigtableTableAdminClient create(@Nonnull InstanceName instanceName,
+      @Nonnull BigtableTableAdminStub stub) {
     return new BigtableTableAdminClient(instanceName, stub);
   }
 
-  private BigtableTableAdminClient(@Nonnull InstanceName instanceName, @Nonnull BigtableTableAdminStub stub) {
+  private BigtableTableAdminClient(@Nonnull InstanceName instanceName,
+      @Nonnull BigtableTableAdminStub stub) {
     Preconditions.checkNotNull(instanceName);
     Preconditions.checkNotNull(stub);
     this.instanceName = instanceName;
@@ -528,7 +532,8 @@ public final class BigtableTableAdminClient implements AutoCloseable {
         new ApiFunction<GenerateConsistencyTokenResponse, ConsistencyToken>() {
           @Override
           public ConsistencyToken apply(GenerateConsistencyTokenResponse proto) {
-            TableName tableName = TableName.of(instanceName.getProject(), instanceName.getInstance(), tableId);
+            TableName tableName = TableName
+                .of(instanceName.getProject(), instanceName.getInstance(), tableId);
             return ConsistencyToken.of(tableName, proto.getConsistencyToken());
           }
         },
@@ -576,8 +581,7 @@ public final class BigtableTableAdminClient implements AutoCloseable {
   // TODO(igorbernstein2): add awaitConsist() & awaitConsistAsync() that generate & poll a token
 
   /**
-   * Helper method to construct the table name in format:
-   * projects/{project}/instances/{instance}/tables/{tableId}
+   * Helper method to construct the table name in format: projects/{project}/instances/{instance}/tables/{tableId}
    */
   @VisibleForTesting
   String getTableName(String tableId) {
@@ -636,7 +640,8 @@ public final class BigtableTableAdminClient implements AutoCloseable {
    * Helper method to convert ListTablesResponse to List<TableName>
    */
   @VisibleForTesting
-  static List<TableName> convertToTableNames(Iterable<com.google.bigtable.admin.v2.Table> listTablesResponse) {
+  static List<TableName> convertToTableNames(
+      Iterable<com.google.bigtable.admin.v2.Table> listTablesResponse) {
     List<TableName> tableNames = new ArrayList<>();
 
     for (com.google.bigtable.admin.v2.Table table : listTablesResponse) {
@@ -646,6 +651,7 @@ public final class BigtableTableAdminClient implements AutoCloseable {
   }
 
   // TODO(igorbernstein): rename methods to make clear that they deal with futures.
+
   /**
    * Helper method to transform ApiFuture<com.google.bigtable.admin.v2.Table> to ApiFuture<Table>
    */
@@ -680,7 +686,7 @@ public final class BigtableTableAdminClient implements AutoCloseable {
   private <T> T awaitFuture(ApiFuture<T> future) {
     try {
       return future.get();
-    } catch(Throwable t) {
+    } catch (Throwable t) {
       // TODO(igorbernstein2): figure out a better wrapper exception.
       throw new RuntimeException(t);
     }
