@@ -15,7 +15,7 @@
  */
 
 /**
- * A client to Google Cloud Speech API.
+ * A client to Cloud Speech API.
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *
