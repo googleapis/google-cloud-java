@@ -919,7 +919,7 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    *
    * ApiFuture<AppProfile> existingAppProfileFuture = client.getAppProfileAsync("my-instance", "my-app-profile");
    *
@@ -937,7 +937,7 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
    * );
    *
    * ApiFuture<AppProfile> appProfile = updatedAppProfileFuture.get();
-   * }</code></pre>
+   * }</pre>
    *
    * @see UpdateAppProfileRequest
    */
