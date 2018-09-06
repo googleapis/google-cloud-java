@@ -47,7 +47,7 @@ public final class BuildOuterClass {
       "gnature\"\322\001\n\016BuildSignature\022\022\n\npublic_key" +
       "\030\001 \001(\t\022\021\n\tsignature\030\002 \001(\014\022\016\n\006key_id\030\003 \001(" +
       "\t\022?\n\010key_type\030\004 \001(\0162-.grafeas.v1beta1.bu" +
-      "ild.BuildSignature.KeyType\"H\n\007KeyType\022\030\n" +
+      "ild.BuildSignature.KeyType\"H\n\007KeyType\022\030\n",
       "\024KEY_TYPE_UNSPECIFIED\020\000\022\025\n\021PGP_ASCII_ARM" +
       "ORED\020\001\022\014\n\010PKIX_PEM\020\002\"d\n\007Details\022?\n\nprove" +
       "nance\030\001 \001(\0132+.grafeas.v1beta1.provenance" +
