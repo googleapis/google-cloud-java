@@ -280,7 +280,7 @@ public final class BigtableTableAdminClient implements AutoCloseable {
   }
 
   /**
-   * Deletes the specified tableId.
+   * Deletes the table specified by tableId
    *
    * <p>Sample code:
    *
@@ -294,7 +294,7 @@ public final class BigtableTableAdminClient implements AutoCloseable {
   }
 
   /**
-   * Asynchronously deletes the specified tableId.
+   * Asynchronously deletes the table specified by tableId.
    *
    * <p>Sample code:
    *
@@ -347,7 +347,7 @@ public final class BigtableTableAdminClient implements AutoCloseable {
   }
 
   /**
-   * Asynchronously gets the table  metadata by tableId.
+   * Asynchronously gets the table metadata by tableId.
    *
    * <p>Sample code:
    *
