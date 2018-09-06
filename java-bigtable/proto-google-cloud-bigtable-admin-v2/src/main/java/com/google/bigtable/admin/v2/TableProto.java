@@ -77,7 +77,7 @@ public final class TableProto {
       ".ClusterStatesEntry\022L\n\017column_families\030\003" +
       " \003(\01323.google.bigtable.admin.v2.Table.Co" +
       "lumnFamiliesEntry\022I\n\013granularity\030\004 \001(\01624" +
-      ".google.bigtable.admin.v2.Table.Timestam" +
+      ".google.bigtable.admin.v2.Table.Timestam",
       "pGranularity\032\342\001\n\014ClusterState\022X\n\021replica" +
       "tion_state\030\001 \001(\0162=.google.bigtable.admin" +
       ".v2.Table.ClusterState.ReplicationState\"" +
@@ -87,7 +87,7 @@ public final class TableProto {
       "\004\032b\n\022ClusterStatesEntry\022\013\n\003key\030\001 \001(\t\022;\n\005" +
       "value\030\002 \001(\0132,.google.bigtable.admin.v2.T" +
       "able.ClusterState:\0028\001\032]\n\023ColumnFamiliesE" +
-      "ntry\022\013\n\003key\030\001 \001(\t\0225\n\005value\030\002 \001(\0132&.googl" +
+      "ntry\022\013\n\003key\030\001 \001(\t\0225\n\005value\030\002 \001(\0132&.googl",
       "e.bigtable.admin.v2.ColumnFamily:\0028\001\"I\n\024" +
       "TimestampGranularity\022%\n!TIMESTAMP_GRANUL" +
       "ARITY_UNSPECIFIED\020\000\022\n\n\006MILLIS\020\001\"\\\n\004View\022" +
@@ -97,7 +97,7 @@ public final class TableProto {
       ".google.bigtable.admin.v2.GcRule\"\325\002\n\006GcR" +
       "ule\022\032\n\020max_num_versions\030\001 \001(\005H\000\022,\n\007max_a" +
       "ge\030\002 \001(\0132\031.google.protobuf.DurationH\000\022E\n" +
-      "\014intersection\030\003 \001(\0132-.google.bigtable.ad" +
+      "\014intersection\030\003 \001(\0132-.google.bigtable.ad",
       "min.v2.GcRule.IntersectionH\000\0227\n\005union\030\004 " +
       "\001(\0132&.google.bigtable.admin.v2.GcRule.Un" +
       "ionH\000\032?\n\014Intersection\022/\n\005rules\030\001 \003(\0132 .g" +
@@ -107,7 +107,7 @@ public final class TableProto {
       "\001(\t\0225\n\014source_table\030\002 \001(\0132\037.google.bigta" +
       "ble.admin.v2.Table\022\027\n\017data_size_bytes\030\003 " +
       "\001(\003\022/\n\013create_time\030\004 \001(\0132\032.google.protob" +
-      "uf.Timestamp\022/\n\013delete_time\030\005 \001(\0132\032.goog" +
+      "uf.Timestamp\022/\n\013delete_time\030\005 \001(\0132\032.goog",
       "le.protobuf.Timestamp\0227\n\005state\030\006 \001(\0162(.g" +
       "oogle.bigtable.admin.v2.Snapshot.State\022\023" +
       "\n\013description\030\007 \001(\t\"5\n\005State\022\023\n\017STATE_NO" +
