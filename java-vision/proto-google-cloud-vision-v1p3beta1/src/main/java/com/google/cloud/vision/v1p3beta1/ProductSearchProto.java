@@ -52,7 +52,7 @@ public final class ProductSearchProto {
       "estamp.proto\"\262\003\n\023ProductSearchParams\022\024\n\014" +
       "catalog_name\030\001 \001(\t\022F\n\010category\030\002 \001(\01624.g" +
       "oogle.cloud.vision.v1p3beta1.ProductSear" +
-      "chCategory\022\030\n\020product_category\030\005 \001(\t\022W\n\030" +
+      "chCategory\022\030\n\020product_category\030\005 \001(\t\022W\n\030",
       "normalized_bounding_poly\030\003 \001(\01325.google." +
       "cloud.vision.v1p3beta1.NormalizedBoundin" +
       "gPoly\022B\n\rbounding_poly\030\t \001(\0132+.google.cl" +
@@ -62,7 +62,7 @@ public final class ProductSearchProto {
       "\006 \001(\t\022\032\n\022product_categories\030\007 \003(\t\022\016\n\006fil" +
       "ter\030\010 \001(\t\"\356\003\n\024ProductSearchResults\022F\n\010ca" +
       "tegory\030\001 \001(\01624.google.cloud.vision.v1p3b" +
-      "eta1.ProductSearchCategory\022\030\n\020product_ca" +
+      "eta1.ProductSearchCategory\022\030\n\020product_ca",
       "tegory\030\004 \001(\t\022.\n\nindex_time\030\002 \001(\0132\032.googl" +
       "e.protobuf.Timestamp\022Q\n\010products\030\003 \003(\0132?" +
       ".google.cloud.vision.v1p3beta1.ProductSe" +
@@ -72,7 +72,7 @@ public final class ProductSearchProto {
       "roduct_id\030\001 \001(\t\022\021\n\timage_uri\030\002 \001(\t\022\r\n\005sc" +
       "ore\030\003 \001(\002\032_\n\006Result\0227\n\007product\030\001 \001(\0132&.g" +
       "oogle.cloud.vision.v1p3beta1.Product\022\r\n\005" +
-      "score\030\002 \001(\002\022\r\n\005image\030\003 \001(\t*U\n\025ProductSea" +
+      "score\030\002 \001(\002\022\r\n\005image\030\003 \001(\t*U\n\025ProductSea",
       "rchCategory\022\'\n#PRODUCT_SEARCH_CATEGORY_U" +
       "NSPECIFIED\020\000\022\t\n\005SHOES\020\001\022\010\n\004BAGS\020\002*/\n\030Pro" +
       "ductSearchResultsView\022\t\n\005BASIC\020\000\022\010\n\004FULL" +

@@ -52,7 +52,7 @@ public final class GeometryProto {
       "vertices\030\002 \003(\0132/.google.cloud.vision.v1p" +
       "2beta1.NormalizedVertex\"+\n\010Position\022\t\n\001x" +
       "\030\001 \001(\002\022\t\n\001y\030\002 \001(\002\022\t\n\001z\030\003 \001(\002B|\n!com.goog" +
-      "le.cloud.vision.v1p2beta1B\rGeometryProto" +
+      "le.cloud.vision.v1p2beta1B\rGeometryProto",
       "P\001ZCgoogle.golang.org/genproto/googleapi" +
       "s/cloud/vision/v1p2beta1;vision\370\001\001b\006prot" +
       "o3"
