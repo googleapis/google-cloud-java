@@ -72,7 +72,7 @@ public final class Provenance {
       "d\030\002 \001(\t\0225\n\010commands\030\003 \003(\0132#.grafeas.v1be" +
       "ta1.provenance.Command\022=\n\017built_artifact" +
       "s\030\004 \003(\0132$.grafeas.v1beta1.provenance.Art" +
-      "ifact\022/\n\013create_time\030\005 \001(\0132\032.google.prot" +
+      "ifact\022/\n\013create_time\030\005 \001(\0132\032.google.prot",
       "obuf.Timestamp\022.\n\nstart_time\030\006 \001(\0132\032.goo" +
       "gle.protobuf.Timestamp\022,\n\010end_time\030\007 \001(\013" +
       "2\032.google.protobuf.Timestamp\022\017\n\007creator\030" +
@@ -82,7 +82,7 @@ public final class Provenance {
       "ons\030\014 \003(\0132=.grafeas.v1beta1.provenance.B" +
       "uildProvenance.BuildOptionsEntry\022\027\n\017buil" +
       "der_version\030\r \001(\t\0323\n\021BuildOptionsEntry\022\013" +
-      "\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\315\002\n\006Sourc" +
+      "\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\315\002\n\006Sourc",
       "e\022#\n\033artifact_storage_source_uri\030\001 \001(\t\022G" +
       "\n\013file_hashes\030\002 \003(\01322.grafeas.v1beta1.pr" +
       "ovenance.Source.FileHashesEntry\0226\n\007conte" +
@@ -92,7 +92,7 @@ public final class Provenance {
       "ileHashesEntry\022\013\n\003key\030\001 \001(\t\0225\n\005value\030\002 \001" +
       "(\0132&.grafeas.v1beta1.provenance.FileHash" +
       "es:\0028\001\"A\n\nFileHashes\0223\n\tfile_hash\030\001 \003(\0132" +
-      " .grafeas.v1beta1.provenance.Hash\"\201\001\n\004Ha" +
+      " .grafeas.v1beta1.provenance.Hash\"\201\001\n\004Ha",
       "sh\0227\n\004type\030\001 \001(\0162).grafeas.v1beta1.prove" +
       "nance.Hash.HashType\022\r\n\005value\030\002 \001(\014\"1\n\010Ha" +
       "shType\022\031\n\025HASH_TYPE_UNSPECIFIED\020\000\022\n\n\006SHA" +
@@ -102,7 +102,7 @@ public final class Provenance {
       "ksum\030\001 \001(\t\022\n\n\002id\030\002 \001(\t\022\r\n\005names\030\003 \003(\tB\207\001" +
       "\n\035io.grafeas.v1beta1.provenanceP\001Z^googl" +
       "e.golang.org/genproto/googleapis/devtool" +
-      "s/containeranalysis/v1beta1/provenance;p" +
+      "s/containeranalysis/v1beta1/provenance;p",
       "rovenance\242\002\003GRAb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
