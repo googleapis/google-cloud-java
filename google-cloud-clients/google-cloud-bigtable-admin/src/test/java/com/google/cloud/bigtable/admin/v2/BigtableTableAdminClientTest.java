@@ -33,6 +33,7 @@ import com.google.bigtable.admin.v2.InstanceName;
 import com.google.bigtable.admin.v2.ListTablesRequest;
 import com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification;
 import com.google.bigtable.admin.v2.TableName;
+import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListTablesPage;
 import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListTablesPagedResponse;
 import com.google.cloud.bigtable.admin.v2.models.ConsistencyToken;
 import com.google.cloud.bigtable.admin.v2.models.CreateTableRequest;
@@ -216,34 +217,52 @@ public class BigtableTableAdminClientTest {
   @Test
   public void testListTables() {
     // Setup
-    ListTablesRequest expectedRequest = ListTablesRequest.newBuilder()
-        .setParent(INSTANCE_NAME.toString())
-        .build();
+    com.google.bigtable.admin.v2.ListTablesRequest expectedRequest =
+        com.google.bigtable.admin.v2.ListTablesRequest.newBuilder()
+            .setParent(INSTANCE_NAME.toString())
+            .build();
 
-    ListTablesPagedResponse expectedResponseWrapper = Mockito.mock(ListTablesPagedResponse.class);
+    // 3 Tables spread across 2 pages
+    List<com.google.bigtable.admin.v2.Table> expectedProtos = Lists.newArrayList();
+    for (int i = 0; i < 3; i++) {
+      expectedProtos.add(
+          com.google.bigtable.admin.v2.Table.newBuilder()
+              .setName(TABLE_NAME.toString() + i)
+              .build());
+    }
+    // 2 on the first page
+    ListTablesPage page0 = Mockito.mock(ListTablesPage.class);
+    Mockito.when(page0.getValues()).thenReturn(expectedProtos.subList(0, 2));
+    Mockito.when(page0.getNextPageToken()).thenReturn("next-page");
+    Mockito.when(page0.hasNextPage()).thenReturn(true);
 
-    Iterable<com.google.bigtable.admin.v2.Table> expectedResults = Lists.newArrayList(
-        com.google.bigtable.admin.v2.Table.newBuilder()
-            .setName(TABLE_NAME.toString() + "1")
-            .build(),
-        com.google.bigtable.admin.v2.Table.newBuilder()
-            .setName(TABLE_NAME.toString() + "2")
-            .build());
+    // 1 on the last page
+    ListTablesPage page1 = Mockito.mock(ListTablesPage.class);
+    Mockito.when(page1.getValues()).thenReturn(expectedProtos.subList(2, 3));
 
-    Mockito.when(mockListTableCallable.futureCall(expectedRequest))
-        .thenReturn(ApiFutures.immediateFuture(expectedResponseWrapper));
+    // Link page0 to page1
+    Mockito.when(page0.getNextPageAsync()).thenReturn(
+        ApiFutures.immediateFuture(page1)
+    );
 
-    Mockito.when(expectedResponseWrapper.iterateAll())
-        .thenReturn(expectedResults);
+    // Link page to the response
+    ListTablesPagedResponse response0 = Mockito.mock(ListTablesPagedResponse.class);
+    Mockito.when(response0.getPage()).thenReturn(page0);
+
+    Mockito.when(mockListTableCallable.futureCall(expectedRequest)).thenReturn(
+        ApiFutures.immediateFuture(response0)
+    );
 
     // Execute
     List<TableName> actualResults = adminClient.listTables();
 
     // Verify
-    assertThat(actualResults).containsExactly(
-        TableName.parse(TABLE_NAME.toString() + "1"),
-        TableName.parse(TABLE_NAME.toString() + "2")
-    );
+    List<TableName> expectedResults = Lists.newArrayList();
+    for (com.google.bigtable.admin.v2.Table expectedProto : expectedProtos) {
+      expectedResults.add(TableName.parse(expectedProto.getName()));
+    }
+
+    assertThat(actualResults).containsExactlyElementsIn(expectedResults);
   }
 
   @Test
