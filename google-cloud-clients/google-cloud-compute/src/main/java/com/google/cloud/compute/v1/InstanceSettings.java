@@ -193,6 +193,12 @@ public class InstanceSettings extends ClientSettings<InstanceSettings> {
     return ((InstanceStubSettings) getStubSettings()).setTagsInstanceSettings();
   }
 
+  /** Returns the object with the settings used for calls to simulateMaintenanceEventInstance. */
+  public UnaryCallSettings<SimulateMaintenanceEventInstanceHttpRequest, Operation>
+      simulateMaintenanceEventInstanceSettings() {
+    return ((InstanceStubSettings) getStubSettings()).simulateMaintenanceEventInstanceSettings();
+  }
+
   /** Returns the object with the settings used for calls to startInstance. */
   public UnaryCallSettings<StartInstanceHttpRequest, Operation> startInstanceSettings() {
     return ((InstanceStubSettings) getStubSettings()).startInstanceSettings();
@@ -455,6 +461,12 @@ public class InstanceSettings extends ClientSettings<InstanceSettings> {
     public UnaryCallSettings.Builder<SetTagsInstanceHttpRequest, Operation>
         setTagsInstanceSettings() {
       return getStubSettingsBuilder().setTagsInstanceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to simulateMaintenanceEventInstance. */
+    public UnaryCallSettings.Builder<SimulateMaintenanceEventInstanceHttpRequest, Operation>
+        simulateMaintenanceEventInstanceSettings() {
+      return getStubSettingsBuilder().simulateMaintenanceEventInstanceSettings();
     }
 
     /** Returns the builder for the settings used for calls to startInstance. */

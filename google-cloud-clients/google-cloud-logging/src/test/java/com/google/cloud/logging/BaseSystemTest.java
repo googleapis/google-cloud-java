@@ -16,6 +16,7 @@
 
 package com.google.cloud.logging;
 
+import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
@@ -36,12 +37,11 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Iterators;
 import com.google.common.collect.Sets;
 import com.google.logging.v2.LogName;
+import com.google.logging.v2.ProjectLogName;
 import java.util.Iterator;
 import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
-import com.google.logging.v2.ProjectLogName;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
@@ -305,22 +305,24 @@ public abstract class BaseSystemTest {
       iterator =
           logging().listLogEntries(EntryListOption.filter(filter)).iterateAll().iterator();
     }
-    assertTrue(iterator.hasNext());
+    assertThat(iterator.hasNext()).isTrue();
     LogEntry entry = iterator.next();
-    assertTrue(entry.getPayload() instanceof StringPayload);
-    assertTrue(entry.<StringPayload>getPayload().getData().contains("Message"));
-    assertEquals(logId, entry.getLogName());
-    assertEquals(ImmutableMap.of("levelName", "INFO",
-        "levelValue", String.valueOf(Level.INFO.intValue())), entry.getLabels());
-    assertEquals("global", entry.getResource().getType());
-    assertEquals(ImmutableMap.of("project_id", options.getProjectId()),
-        entry.getResource().getLabels());
-    assertNull(entry.getHttpRequest());
-    assertEquals(Severity.INFO, entry.getSeverity());
-    assertNull(entry.getOperation());
-    assertNotNull(entry.getInsertId());
-    assertNotNull(entry.getTimestamp());
-    assertFalse(iterator.hasNext());
+    assertThat(entry.getPayload() instanceof StringPayload).isTrue();
+    assertThat(entry.<StringPayload>getPayload().getData()).contains("Message");
+    assertThat(entry.getLogName()).isEqualTo(logId);
+    assertThat(entry.getLabels())
+        .containsExactly("levelName", "INFO", "levelValue", String.valueOf(Level.INFO.intValue()));
+    MonitoredResource monitoredResource =
+        new LoggingConfig(handler.getClass().getName())
+            .getMonitoredResource(options.getProjectId());
+    assertThat(entry.getResource().getType()).isEqualTo(monitoredResource.getType());
+    assertThat(entry.getResource().getLabels()).containsEntry("project_id", options.getProjectId());
+    assertThat(entry.getHttpRequest()).isNull();
+    assertThat(entry.getSeverity()).isEqualTo(Severity.INFO);
+    assertThat(entry.getOperation()).isNull();
+    assertThat(entry.getInsertId()).isNotNull();
+    assertThat(entry.getTimestamp()).isNotNull();
+    assertThat(iterator.hasNext()).isFalse();
     logger.removeHandler(handler);
     logging().deleteLog(logId);
   }

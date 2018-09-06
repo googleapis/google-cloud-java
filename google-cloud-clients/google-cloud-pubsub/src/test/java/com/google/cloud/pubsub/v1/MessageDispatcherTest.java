@@ -56,6 +56,7 @@ public class MessageDispatcherTest {
   private List<String> sentAcks;
   private List<ModAckItem> sentModAcks;
   private FakeClock clock;
+  private FlowController flowController;
 
   @AutoValue
   abstract static class ModAckItem {
@@ -101,6 +102,12 @@ public class MessageDispatcherTest {
     systemExecutor.shutdownNow();
 
     clock = new FakeClock();
+    flowController =
+        new FlowController(
+            FlowControlSettings.newBuilder()
+              .setMaxOutstandingElementCount(1L)
+              .setLimitExceededBehavior(FlowController.LimitExceededBehavior.ThrowException)
+              .build());
 
     dispatcher =
         new MessageDispatcher(
@@ -109,7 +116,7 @@ public class MessageDispatcherTest {
             Duration.ofSeconds(5),
             Duration.ofMinutes(60),
             new Distribution(Subscriber.MAX_ACK_DEADLINE_SECONDS + 1),
-            new FlowController(FlowControlSettings.newBuilder().build()),
+            flowController,
             new LinkedList<MessageDispatcher.OutstandingMessageBatch>(),
             MoreExecutors.directExecutor(),
             systemExecutor,
@@ -182,6 +189,10 @@ public class MessageDispatcherTest {
     clock.advance(1, TimeUnit.DAYS);
     dispatcher.extendDeadlines();
     assertThat(sentModAcks).isEmpty();
+
+    // We should be able to reserve another item in the flow controller and not block shutdown
+    flowController.reserve(1, 0);
+    dispatcher.stop();
   }
 
   @Test

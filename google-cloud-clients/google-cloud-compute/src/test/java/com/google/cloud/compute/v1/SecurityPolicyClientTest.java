@@ -15,19 +15,16 @@
  */
 package com.google.cloud.compute.v1;
 
-import static com.google.cloud.compute.v1.BackendServiceClient.AggregatedListBackendServicesPagedResponse;
-import static com.google.cloud.compute.v1.BackendServiceClient.ListBackendServicesPagedResponse;
-import static com.google.cloud.compute.v1.stub.HttpJsonBackendServiceStub.addSignedUrlKeyBackendServiceMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonBackendServiceStub.aggregatedListBackendServicesMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonBackendServiceStub.deleteBackendServiceMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonBackendServiceStub.deleteSignedUrlKeyBackendServiceMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonBackendServiceStub.getBackendServiceMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonBackendServiceStub.getHealthBackendServiceMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonBackendServiceStub.insertBackendServiceMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonBackendServiceStub.listBackendServicesMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonBackendServiceStub.patchBackendServiceMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonBackendServiceStub.setSecurityPolicyBackendServiceMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonBackendServiceStub.updateBackendServiceMethodDescriptor;
+import static com.google.cloud.compute.v1.SecurityPolicyClient.ListSecurityPoliciesPagedResponse;
+import static com.google.cloud.compute.v1.stub.HttpJsonSecurityPolicyStub.addRuleSecurityPolicyMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonSecurityPolicyStub.deleteSecurityPolicyMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonSecurityPolicyStub.getRuleSecurityPolicyMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonSecurityPolicyStub.getSecurityPolicyMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonSecurityPolicyStub.insertSecurityPolicyMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonSecurityPolicyStub.listSecurityPoliciesMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonSecurityPolicyStub.patchRuleSecurityPolicyMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonSecurityPolicyStub.patchSecurityPolicyMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonSecurityPolicyStub.removeRuleSecurityPolicyMethodDescriptor;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
@@ -39,15 +36,13 @@ import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode.Code;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
-import com.google.cloud.compute.v1.stub.BackendServiceStubSettings;
+import com.google.cloud.compute.v1.stub.SecurityPolicyStubSettings;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -55,39 +50,37 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 @javax.annotation.Generated("by GAPIC")
-public class BackendServiceClientTest {
+public class SecurityPolicyClientTest {
 
   private static final List<ApiMethodDescriptor> METHOD_DESCRIPTORS =
       ImmutableList.copyOf(
           Lists.<ApiMethodDescriptor>newArrayList(
-              addSignedUrlKeyBackendServiceMethodDescriptor,
-              aggregatedListBackendServicesMethodDescriptor,
-              deleteBackendServiceMethodDescriptor,
-              deleteSignedUrlKeyBackendServiceMethodDescriptor,
-              getBackendServiceMethodDescriptor,
-              getHealthBackendServiceMethodDescriptor,
-              insertBackendServiceMethodDescriptor,
-              listBackendServicesMethodDescriptor,
-              patchBackendServiceMethodDescriptor,
-              setSecurityPolicyBackendServiceMethodDescriptor,
-              updateBackendServiceMethodDescriptor));
+              addRuleSecurityPolicyMethodDescriptor,
+              deleteSecurityPolicyMethodDescriptor,
+              getSecurityPolicyMethodDescriptor,
+              getRuleSecurityPolicyMethodDescriptor,
+              insertSecurityPolicyMethodDescriptor,
+              listSecurityPoliciesMethodDescriptor,
+              patchSecurityPolicyMethodDescriptor,
+              patchRuleSecurityPolicyMethodDescriptor,
+              removeRuleSecurityPolicyMethodDescriptor));
   private static final MockHttpService mockService =
-      new MockHttpService(METHOD_DESCRIPTORS, BackendServiceStubSettings.getDefaultEndpoint());
+      new MockHttpService(METHOD_DESCRIPTORS, SecurityPolicyStubSettings.getDefaultEndpoint());
 
-  private static BackendServiceClient client;
-  private static BackendServiceSettings clientSettings;
+  private static SecurityPolicyClient client;
+  private static SecurityPolicySettings clientSettings;
 
   @BeforeClass
   public static void setUp() throws IOException {
     clientSettings =
-        BackendServiceSettings.newBuilder()
+        SecurityPolicySettings.newBuilder()
             .setTransportChannelProvider(
-                BackendServiceSettings.defaultHttpJsonTransportProviderBuilder()
+                SecurityPolicySettings.defaultHttpJsonTransportProviderBuilder()
                     .setHttpTransport(mockService)
                     .build())
             .setCredentialsProvider(NoCredentialsProvider.create())
             .build();
-    client = BackendServiceClient.create(clientSettings);
+    client = SecurityPolicyClient.create(clientSettings);
   }
 
   @After
@@ -102,7 +95,7 @@ public class BackendServiceClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void addSignedUrlKeyBackendServiceTest() {
+  public void addRuleSecurityPolicyTest() {
     String httpErrorMessage = "httpErrorMessage1276263769";
     String targetId = "targetId-815576439";
     String kind = "kind3292052";
@@ -150,341 +143,165 @@ public class BackendServiceClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    ProjectGlobalBackendServiceName backendService =
-        ProjectGlobalBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
-    SignedUrlKey signedUrlKeyResource = SignedUrlKey.newBuilder().build();
-
-    Operation actualResponse =
-        client.addSignedUrlKeyBackendService(backendService, signedUrlKeyResource);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<String> actualRequests = mockService.getRequestPaths();
-    Assert.assertEquals(1, actualRequests.size());
-
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
-    Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void addSignedUrlKeyBackendServiceExceptionTest() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
-
-    try {
-      ProjectGlobalBackendServiceName backendService =
-          ProjectGlobalBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
-      SignedUrlKey signedUrlKeyResource = SignedUrlKey.newBuilder().build();
-
-      client.addSignedUrlKeyBackendService(backendService, signedUrlKeyResource);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void aggregatedListBackendServicesTest() {
-    String kind = "kind3292052";
-    String nextPageToken = "";
-    String id = "id3355";
-    String selfLink = "selfLink-1691268851";
-    BackendServicesScopedList itemsItem = BackendServicesScopedList.newBuilder().build();
-    Map<String, BackendServicesScopedList> items = new HashMap<>();
-    items.put("items", itemsItem);
-    BackendServiceAggregatedList expectedResponse =
-        BackendServiceAggregatedList.newBuilder()
-            .setKind(kind)
-            .setNextPageToken(nextPageToken)
-            .setId(id)
-            .setSelfLink(selfLink)
-            .putAllItems(items)
-            .build();
-    mockService.addResponse(expectedResponse);
-
-    ProjectName project = ProjectName.of("[PROJECT]");
-
-    AggregatedListBackendServicesPagedResponse pagedListResponse =
-        client.aggregatedListBackendServices(project);
-
-    List<BackendServicesScopedList> resources = Lists.newArrayList(pagedListResponse.iterateAll());
-    Assert.assertEquals(1, resources.size());
-    Assert.assertEquals(
-        expectedResponse.getItemsMap().values().iterator().next(), resources.get(0));
-
-    List<String> actualRequests = mockService.getRequestPaths();
-    Assert.assertEquals(1, actualRequests.size());
-
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
-    Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void aggregatedListBackendServicesExceptionTest() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
-
-    try {
-      ProjectName project = ProjectName.of("[PROJECT]");
-
-      client.aggregatedListBackendServices(project);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void deleteBackendServiceTest() {
-    String httpErrorMessage = "httpErrorMessage1276263769";
-    String targetId = "targetId-815576439";
-    String kind = "kind3292052";
-    String description = "description-1724546052";
-    String statusMessage = "statusMessage-239442758";
-    String selfLink = "selfLink-1691268851";
-    String insertTime = "insertTime-103148397";
-    Integer httpErrorStatusCode = 1386087020;
-    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
-    String targetLink = "targetLink-2084812312";
-    String creationTimestamp = "creationTimestamp567396278";
-    String name = "name3373707";
-    Integer progress = 1001078227;
-    String operationType = "operationType-1432962286";
-    String startTime = "startTime-1573145462";
-    String endTime = "endTime1725551537";
-    String id = "id3355";
-    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
-    String clientOperationId = "clientOperationId-239630617";
-    String user = "user3599307";
-    String status = "status-892481550";
-    Operation expectedResponse =
-        Operation.newBuilder()
-            .setHttpErrorMessage(httpErrorMessage)
-            .setTargetId(targetId)
-            .setKind(kind)
-            .setDescription(description)
-            .setStatusMessage(statusMessage)
-            .setSelfLink(selfLink)
-            .setInsertTime(insertTime)
-            .setHttpErrorStatusCode(httpErrorStatusCode)
-            .setZone(zone.toString())
-            .setTargetLink(targetLink)
-            .setCreationTimestamp(creationTimestamp)
-            .setName(name)
-            .setProgress(progress)
-            .setOperationType(operationType)
-            .setStartTime(startTime)
-            .setEndTime(endTime)
-            .setId(id)
-            .setRegion(region.toString())
-            .setClientOperationId(clientOperationId)
-            .setUser(user)
-            .setStatus(status)
-            .build();
-    mockService.addResponse(expectedResponse);
-
-    ProjectGlobalBackendServiceName backendService =
-        ProjectGlobalBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
-
-    Operation actualResponse = client.deleteBackendService(backendService);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<String> actualRequests = mockService.getRequestPaths();
-    Assert.assertEquals(1, actualRequests.size());
-
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
-    Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void deleteBackendServiceExceptionTest() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
-
-    try {
-      ProjectGlobalBackendServiceName backendService =
-          ProjectGlobalBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
-
-      client.deleteBackendService(backendService);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void deleteSignedUrlKeyBackendServiceTest() {
-    String httpErrorMessage = "httpErrorMessage1276263769";
-    String targetId = "targetId-815576439";
-    String kind = "kind3292052";
-    String description = "description-1724546052";
-    String statusMessage = "statusMessage-239442758";
-    String selfLink = "selfLink-1691268851";
-    String insertTime = "insertTime-103148397";
-    Integer httpErrorStatusCode = 1386087020;
-    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
-    String targetLink = "targetLink-2084812312";
-    String creationTimestamp = "creationTimestamp567396278";
-    String name = "name3373707";
-    Integer progress = 1001078227;
-    String operationType = "operationType-1432962286";
-    String startTime = "startTime-1573145462";
-    String endTime = "endTime1725551537";
-    String id = "id3355";
-    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
-    String clientOperationId = "clientOperationId-239630617";
-    String user = "user3599307";
-    String status = "status-892481550";
-    Operation expectedResponse =
-        Operation.newBuilder()
-            .setHttpErrorMessage(httpErrorMessage)
-            .setTargetId(targetId)
-            .setKind(kind)
-            .setDescription(description)
-            .setStatusMessage(statusMessage)
-            .setSelfLink(selfLink)
-            .setInsertTime(insertTime)
-            .setHttpErrorStatusCode(httpErrorStatusCode)
-            .setZone(zone.toString())
-            .setTargetLink(targetLink)
-            .setCreationTimestamp(creationTimestamp)
-            .setName(name)
-            .setProgress(progress)
-            .setOperationType(operationType)
-            .setStartTime(startTime)
-            .setEndTime(endTime)
-            .setId(id)
-            .setRegion(region.toString())
-            .setClientOperationId(clientOperationId)
-            .setUser(user)
-            .setStatus(status)
-            .build();
-    mockService.addResponse(expectedResponse);
-
-    ProjectGlobalBackendServiceName backendService =
-        ProjectGlobalBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
-    String keyName = "keyName500938859";
-
-    Operation actualResponse = client.deleteSignedUrlKeyBackendService(backendService, keyName);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<String> actualRequests = mockService.getRequestPaths();
-    Assert.assertEquals(1, actualRequests.size());
-
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
-    Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void deleteSignedUrlKeyBackendServiceExceptionTest() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
-
-    try {
-      ProjectGlobalBackendServiceName backendService =
-          ProjectGlobalBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
-      String keyName = "keyName500938859";
-
-      client.deleteSignedUrlKeyBackendService(backendService, keyName);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void getBackendServiceTest() {
-    Integer affinityCookieTtlSec = 1777486694;
-    String kind = "kind3292052";
-    String sessionAffinity = "sessionAffinity1000759473";
-    String description = "description-1724546052";
-    String loadBalancingScheme = "loadBalancingScheme1974502980";
-    String portName = "portName1115276169";
     ProjectGlobalSecurityPolicyName securityPolicy =
         ProjectGlobalSecurityPolicyName.of("[PROJECT]", "[SECURITY_POLICY]");
-    Integer timeoutSec = 2067488653;
+    SecurityPolicyRule securityPolicyRuleResource = SecurityPolicyRule.newBuilder().build();
+
+    Operation actualResponse =
+        client.addRuleSecurityPolicy(securityPolicy, securityPolicyRuleResource);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void addRuleSecurityPolicyExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ProjectGlobalSecurityPolicyName securityPolicy =
+          ProjectGlobalSecurityPolicyName.of("[PROJECT]", "[SECURITY_POLICY]");
+      SecurityPolicyRule securityPolicyRuleResource = SecurityPolicyRule.newBuilder().build();
+
+      client.addRuleSecurityPolicy(securityPolicy, securityPolicyRuleResource);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteSecurityPolicyTest() {
+    String httpErrorMessage = "httpErrorMessage1276263769";
+    String targetId = "targetId-815576439";
+    String kind = "kind3292052";
+    String description = "description-1724546052";
+    String statusMessage = "statusMessage-239442758";
     String selfLink = "selfLink-1691268851";
-    String protocol = "protocol-989163880";
-    Boolean enableCDN = false;
-    Integer port = 3446913;
+    String insertTime = "insertTime-103148397";
+    Integer httpErrorStatusCode = 1386087020;
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
+    String targetLink = "targetLink-2084812312";
+    String creationTimestamp = "creationTimestamp567396278";
+    String name = "name3373707";
+    Integer progress = 1001078227;
+    String operationType = "operationType-1432962286";
+    String startTime = "startTime-1573145462";
+    String endTime = "endTime1725551537";
+    String id = "id3355";
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+    String clientOperationId = "clientOperationId-239630617";
+    String user = "user3599307";
+    String status = "status-892481550";
+    Operation expectedResponse =
+        Operation.newBuilder()
+            .setHttpErrorMessage(httpErrorMessage)
+            .setTargetId(targetId)
+            .setKind(kind)
+            .setDescription(description)
+            .setStatusMessage(statusMessage)
+            .setSelfLink(selfLink)
+            .setInsertTime(insertTime)
+            .setHttpErrorStatusCode(httpErrorStatusCode)
+            .setZone(zone.toString())
+            .setTargetLink(targetLink)
+            .setCreationTimestamp(creationTimestamp)
+            .setName(name)
+            .setProgress(progress)
+            .setOperationType(operationType)
+            .setStartTime(startTime)
+            .setEndTime(endTime)
+            .setId(id)
+            .setRegion(region.toString())
+            .setClientOperationId(clientOperationId)
+            .setUser(user)
+            .setStatus(status)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ProjectGlobalSecurityPolicyName securityPolicy =
+        ProjectGlobalSecurityPolicyName.of("[PROJECT]", "[SECURITY_POLICY]");
+
+    Operation actualResponse = client.deleteSecurityPolicy(securityPolicy);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteSecurityPolicyExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ProjectGlobalSecurityPolicyName securityPolicy =
+          ProjectGlobalSecurityPolicyName.of("[PROJECT]", "[SECURITY_POLICY]");
+
+      client.deleteSecurityPolicy(securityPolicy);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getSecurityPolicyTest() {
+    String kind = "kind3292052";
     String creationTimestamp = "creationTimestamp567396278";
     String fingerprint = "fingerprint-1375934236";
     String name = "name3373707";
+    String description = "description-1724546052";
     String id = "id3355";
-    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
-    BackendService expectedResponse =
-        BackendService.newBuilder()
-            .setAffinityCookieTtlSec(affinityCookieTtlSec)
+    String selfLink = "selfLink-1691268851";
+    SecurityPolicy expectedResponse =
+        SecurityPolicy.newBuilder()
             .setKind(kind)
-            .setSessionAffinity(sessionAffinity)
-            .setDescription(description)
-            .setLoadBalancingScheme(loadBalancingScheme)
-            .setPortName(portName)
-            .setSecurityPolicy(securityPolicy.toString())
-            .setTimeoutSec(timeoutSec)
-            .setSelfLink(selfLink)
-            .setProtocol(protocol)
-            .setEnableCDN(enableCDN)
-            .setPort(port)
             .setCreationTimestamp(creationTimestamp)
             .setFingerprint(fingerprint)
             .setName(name)
+            .setDescription(description)
             .setId(id)
-            .setRegion(region.toString())
+            .setSelfLink(selfLink)
             .build();
     mockService.addResponse(expectedResponse);
 
-    ProjectGlobalBackendServiceName backendService =
-        ProjectGlobalBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
+    ProjectGlobalSecurityPolicyName securityPolicy =
+        ProjectGlobalSecurityPolicyName.of("[PROJECT]", "[SECURITY_POLICY]");
 
-    BackendService actualResponse = client.getBackendService(backendService);
+    SecurityPolicy actualResponse = client.getSecurityPolicy(securityPolicy);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -504,17 +321,17 @@ public class BackendServiceClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void getBackendServiceExceptionTest() throws Exception {
+  public void getSecurityPolicyExceptionTest() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
             new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
-      ProjectGlobalBackendServiceName backendService =
-          ProjectGlobalBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
+      ProjectGlobalSecurityPolicyName securityPolicy =
+          ProjectGlobalSecurityPolicyName.of("[PROJECT]", "[SECURITY_POLICY]");
 
-      client.getBackendService(backendService);
+      client.getSecurityPolicy(securityPolicy);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -523,19 +340,27 @@ public class BackendServiceClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void getHealthBackendServiceTest() {
+  public void getRuleSecurityPolicyTest() {
+    Boolean preview = true;
     String kind = "kind3292052";
-    BackendServiceGroupHealth expectedResponse =
-        BackendServiceGroupHealth.newBuilder().setKind(kind).build();
+    String action = "action-1422950858";
+    String description = "description-1724546052";
+    Integer priority2 = 978365527;
+    SecurityPolicyRule expectedResponse =
+        SecurityPolicyRule.newBuilder()
+            .setPreview(preview)
+            .setKind(kind)
+            .setAction(action)
+            .setDescription(description)
+            .setPriority(priority2)
+            .build();
     mockService.addResponse(expectedResponse);
 
-    ProjectGlobalBackendServiceName backendService =
-        ProjectGlobalBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
-    ResourceGroupReference resourceGroupReferenceResource =
-        ResourceGroupReference.newBuilder().build();
+    Integer priority = 1165461084;
+    ProjectGlobalSecurityPolicyName securityPolicy =
+        ProjectGlobalSecurityPolicyName.of("[PROJECT]", "[SECURITY_POLICY]");
 
-    BackendServiceGroupHealth actualResponse =
-        client.getHealthBackendService(backendService, resourceGroupReferenceResource);
+    SecurityPolicyRule actualResponse = client.getRuleSecurityPolicy(priority, securityPolicy);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -555,19 +380,18 @@ public class BackendServiceClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void getHealthBackendServiceExceptionTest() throws Exception {
+  public void getRuleSecurityPolicyExceptionTest() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
             new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
-      ProjectGlobalBackendServiceName backendService =
-          ProjectGlobalBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
-      ResourceGroupReference resourceGroupReferenceResource =
-          ResourceGroupReference.newBuilder().build();
+      Integer priority = 1165461084;
+      ProjectGlobalSecurityPolicyName securityPolicy =
+          ProjectGlobalSecurityPolicyName.of("[PROJECT]", "[SECURITY_POLICY]");
 
-      client.getHealthBackendService(backendService, resourceGroupReferenceResource);
+      client.getRuleSecurityPolicy(priority, securityPolicy);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -576,7 +400,7 @@ public class BackendServiceClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void insertBackendServiceTest() {
+  public void insertSecurityPolicyTest() {
     String httpErrorMessage = "httpErrorMessage1276263769";
     String targetId = "targetId-815576439";
     String kind = "kind3292052";
@@ -625,9 +449,9 @@ public class BackendServiceClientTest {
     mockService.addResponse(expectedResponse);
 
     ProjectName project = ProjectName.of("[PROJECT]");
-    BackendService backendServiceResource = BackendService.newBuilder().build();
+    SecurityPolicy securityPolicyResource = SecurityPolicy.newBuilder().build();
 
-    Operation actualResponse = client.insertBackendService(project, backendServiceResource);
+    Operation actualResponse = client.insertSecurityPolicy(project, securityPolicyResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -647,7 +471,7 @@ public class BackendServiceClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void insertBackendServiceExceptionTest() throws Exception {
+  public void insertSecurityPolicyExceptionTest() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
             new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
@@ -655,9 +479,9 @@ public class BackendServiceClientTest {
 
     try {
       ProjectName project = ProjectName.of("[PROJECT]");
-      BackendService backendServiceResource = BackendService.newBuilder().build();
+      SecurityPolicy securityPolicyResource = SecurityPolicy.newBuilder().build();
 
-      client.insertBackendService(project, backendServiceResource);
+      client.insertSecurityPolicy(project, securityPolicyResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -666,28 +490,26 @@ public class BackendServiceClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void listBackendServicesTest() {
+  public void listSecurityPoliciesTest() {
     String kind = "kind3292052";
     String nextPageToken = "";
     String id = "id3355";
-    String selfLink = "selfLink-1691268851";
-    BackendService itemsElement = BackendService.newBuilder().build();
-    List<BackendService> items = Arrays.asList(itemsElement);
-    BackendServiceList expectedResponse =
-        BackendServiceList.newBuilder()
+    SecurityPolicy itemsElement = SecurityPolicy.newBuilder().build();
+    List<SecurityPolicy> items = Arrays.asList(itemsElement);
+    SecurityPolicyList expectedResponse =
+        SecurityPolicyList.newBuilder()
             .setKind(kind)
             .setNextPageToken(nextPageToken)
             .setId(id)
-            .setSelfLink(selfLink)
             .addAllItems(items)
             .build();
     mockService.addResponse(expectedResponse);
 
     ProjectName project = ProjectName.of("[PROJECT]");
 
-    ListBackendServicesPagedResponse pagedListResponse = client.listBackendServices(project);
+    ListSecurityPoliciesPagedResponse pagedListResponse = client.listSecurityPolicies(project);
 
-    List<BackendService> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+    List<SecurityPolicy> resources = Lists.newArrayList(pagedListResponse.iterateAll());
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getItemsList().get(0), resources.get(0));
 
@@ -708,7 +530,7 @@ public class BackendServiceClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void listBackendServicesExceptionTest() throws Exception {
+  public void listSecurityPoliciesExceptionTest() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
             new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
@@ -717,7 +539,7 @@ public class BackendServiceClientTest {
     try {
       ProjectName project = ProjectName.of("[PROJECT]");
 
-      client.listBackendServices(project);
+      client.listSecurityPolicies(project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -726,7 +548,7 @@ public class BackendServiceClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void patchBackendServiceTest() {
+  public void patchSecurityPolicyTest() {
     String httpErrorMessage = "httpErrorMessage1276263769";
     String targetId = "targetId-815576439";
     String kind = "kind3292052";
@@ -774,13 +596,13 @@ public class BackendServiceClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    ProjectGlobalBackendServiceName backendService =
-        ProjectGlobalBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
-    BackendService backendServiceResource = BackendService.newBuilder().build();
+    ProjectGlobalSecurityPolicyName securityPolicy =
+        ProjectGlobalSecurityPolicyName.of("[PROJECT]", "[SECURITY_POLICY]");
+    SecurityPolicy securityPolicyResource = SecurityPolicy.newBuilder().build();
     List<String> fieldMask = new ArrayList<>();
 
     Operation actualResponse =
-        client.patchBackendService(backendService, backendServiceResource, fieldMask);
+        client.patchSecurityPolicy(securityPolicy, securityPolicyResource, fieldMask);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -800,19 +622,19 @@ public class BackendServiceClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void patchBackendServiceExceptionTest() throws Exception {
+  public void patchSecurityPolicyExceptionTest() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
             new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
-      ProjectGlobalBackendServiceName backendService =
-          ProjectGlobalBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
-      BackendService backendServiceResource = BackendService.newBuilder().build();
+      ProjectGlobalSecurityPolicyName securityPolicy =
+          ProjectGlobalSecurityPolicyName.of("[PROJECT]", "[SECURITY_POLICY]");
+      SecurityPolicy securityPolicyResource = SecurityPolicy.newBuilder().build();
       List<String> fieldMask = new ArrayList<>();
 
-      client.patchBackendService(backendService, backendServiceResource, fieldMask);
+      client.patchSecurityPolicy(securityPolicy, securityPolicyResource, fieldMask);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -821,7 +643,7 @@ public class BackendServiceClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void setSecurityPolicyBackendServiceTest() {
+  public void patchRuleSecurityPolicyTest() {
     String httpErrorMessage = "httpErrorMessage1276263769";
     String targetId = "targetId-815576439";
     String kind = "kind3292052";
@@ -869,13 +691,13 @@ public class BackendServiceClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    ProjectGlobalBackendServiceName backendService =
-        ProjectGlobalBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
-    SecurityPolicyReference securityPolicyReferenceResource =
-        SecurityPolicyReference.newBuilder().build();
+    Integer priority = 1165461084;
+    ProjectGlobalSecurityPolicyName securityPolicy =
+        ProjectGlobalSecurityPolicyName.of("[PROJECT]", "[SECURITY_POLICY]");
+    SecurityPolicyRule securityPolicyRuleResource = SecurityPolicyRule.newBuilder().build();
 
     Operation actualResponse =
-        client.setSecurityPolicyBackendService(backendService, securityPolicyReferenceResource);
+        client.patchRuleSecurityPolicy(priority, securityPolicy, securityPolicyRuleResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -895,19 +717,19 @@ public class BackendServiceClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void setSecurityPolicyBackendServiceExceptionTest() throws Exception {
+  public void patchRuleSecurityPolicyExceptionTest() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
             new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
-      ProjectGlobalBackendServiceName backendService =
-          ProjectGlobalBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
-      SecurityPolicyReference securityPolicyReferenceResource =
-          SecurityPolicyReference.newBuilder().build();
+      Integer priority = 1165461084;
+      ProjectGlobalSecurityPolicyName securityPolicy =
+          ProjectGlobalSecurityPolicyName.of("[PROJECT]", "[SECURITY_POLICY]");
+      SecurityPolicyRule securityPolicyRuleResource = SecurityPolicyRule.newBuilder().build();
 
-      client.setSecurityPolicyBackendService(backendService, securityPolicyReferenceResource);
+      client.patchRuleSecurityPolicy(priority, securityPolicy, securityPolicyRuleResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -916,7 +738,7 @@ public class BackendServiceClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void updateBackendServiceTest() {
+  public void removeRuleSecurityPolicyTest() {
     String httpErrorMessage = "httpErrorMessage1276263769";
     String targetId = "targetId-815576439";
     String kind = "kind3292052";
@@ -964,13 +786,11 @@ public class BackendServiceClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    ProjectGlobalBackendServiceName backendService =
-        ProjectGlobalBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
-    BackendService backendServiceResource = BackendService.newBuilder().build();
-    List<String> fieldMask = new ArrayList<>();
+    Integer priority = 1165461084;
+    ProjectGlobalSecurityPolicyName securityPolicy =
+        ProjectGlobalSecurityPolicyName.of("[PROJECT]", "[SECURITY_POLICY]");
 
-    Operation actualResponse =
-        client.updateBackendService(backendService, backendServiceResource, fieldMask);
+    Operation actualResponse = client.removeRuleSecurityPolicy(priority, securityPolicy);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -990,19 +810,18 @@ public class BackendServiceClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void updateBackendServiceExceptionTest() throws Exception {
+  public void removeRuleSecurityPolicyExceptionTest() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
             new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
-      ProjectGlobalBackendServiceName backendService =
-          ProjectGlobalBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
-      BackendService backendServiceResource = BackendService.newBuilder().build();
-      List<String> fieldMask = new ArrayList<>();
+      Integer priority = 1165461084;
+      ProjectGlobalSecurityPolicyName securityPolicy =
+          ProjectGlobalSecurityPolicyName.of("[PROJECT]", "[SECURITY_POLICY]");
 
-      client.updateBackendService(backendService, backendServiceResource, fieldMask);
+      client.removeRuleSecurityPolicy(priority, securityPolicy);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
