@@ -47,7 +47,7 @@ public final class ReportErrorsServiceProto {
       "\177\n\027ReportErrorEventRequest\022\024\n\014project_na" +
       "me\030\001 \001(\t\022N\n\005event\030\002 \001(\0132?.google.devtool" +
       "s.clouderrorreporting.v1beta1.ReportedEr" +
-      "rorEvent\"\032\n\030ReportErrorEventResponse\"\367\001\n" +
+      "rorEvent\"\032\n\030ReportErrorEventResponse\"\367\001\n",
       "\022ReportedErrorEvent\022.\n\nevent_time\030\001 \001(\0132" +
       "\032.google.protobuf.Timestamp\022T\n\017service_c" +
       "ontext\030\002 \001(\0132;.google.devtools.clouderro" +
@@ -57,7 +57,7 @@ public final class ReportErrorsServiceProto {
       "ontext2\370\001\n\023ReportErrorsService\022\340\001\n\020Repor" +
       "tErrorEvent\022D.google.devtools.clouderror" +
       "reporting.v1beta1.ReportErrorEventReques" +
-      "t\032E.google.devtools.clouderrorreporting." +
+      "t\032E.google.devtools.clouderrorreporting.",
       "v1beta1.ReportErrorEventResponse\"?\202\323\344\223\0029" +
       "\"0/v1beta1/{project_name=projects/*}/eve" +
       "nts:report:\005eventB\371\001\n/com.google.devtool" +

@@ -47,7 +47,7 @@ public final class TaskProto {
       "equest\030\003 \001(\01320.google.cloud.tasks.v2beta" +
       "2.AppEngineHttpRequestH\000\022?\n\014pull_message" +
       "\030\004 \001(\0132\'.google.cloud.tasks.v2beta2.Pull" +
-      "MessageH\000\0221\n\rschedule_time\030\005 \001(\0132\032.googl" +
+      "MessageH\000\0221\n\rschedule_time\030\005 \001(\0132\032.googl",
       "e.protobuf.Timestamp\022/\n\013create_time\030\006 \001(" +
       "\0132\032.google.protobuf.Timestamp\0226\n\006status\030" +
       "\007 \001(\0132&.google.cloud.tasks.v2beta2.TaskS" +
@@ -57,7 +57,7 @@ public final class TaskProto {
       "_type\"\335\001\n\nTaskStatus\022\036\n\026attempt_dispatch" +
       "_count\030\001 \001(\005\022\036\n\026attempt_response_count\030\002" +
       " \001(\005\022G\n\024first_attempt_status\030\003 \001(\0132).goo" +
-      "gle.cloud.tasks.v2beta2.AttemptStatus\022F\n" +
+      "gle.cloud.tasks.v2beta2.AttemptStatus\022F\n",
       "\023last_attempt_status\030\004 \001(\0132).google.clou" +
       "d.tasks.v2beta2.AttemptStatus\"\325\001\n\rAttemp" +
       "tStatus\0221\n\rschedule_time\030\001 \001(\0132\032.google." +
@@ -67,7 +67,7 @@ public final class TaskProto {
       "\022+\n\017response_status\030\004 \001(\0132\022.google.rpc.S" +
       "tatusBn\n\036com.google.cloud.tasks.v2beta2B" +
       "\tTaskProtoP\001Z?google.golang.org/genproto" +
-      "/googleapis/cloud/tasks/v2beta2;tasksb\006p" +
+      "/googleapis/cloud/tasks/v2beta2;tasksb\006p",
       "roto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =

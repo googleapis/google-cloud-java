@@ -10,8 +10,8 @@ public interface BatchGetAssetsHistoryRequestOrBuilder extends
   /**
    * <pre>
    * Required. The relative name of the root asset. It can only be an
-   * organization ID (e.g. "organizations/123") or a project ID
-   * (e.g. "projects/12345").
+   * organization number (such as "organizations/123"), or a project id (such as
+   * "projects/my-project-id")"or a project number (such as "projects/12345").
    * </pre>
    *
    * <code>string parent = 1;</code>
@@ -20,8 +20,8 @@ public interface BatchGetAssetsHistoryRequestOrBuilder extends
   /**
    * <pre>
    * Required. The relative name of the root asset. It can only be an
-   * organization ID (e.g. "organizations/123") or a project ID
-   * (e.g. "projects/12345").
+   * organization number (such as "organizations/123"), or a project id (such as
+   * "projects/my-project-id")"or a project number (such as "projects/12345").
    * </pre>
    *
    * <code>string parent = 1;</code>
@@ -35,7 +35,8 @@ public interface BatchGetAssetsHistoryRequestOrBuilder extends
    * https://cloud.google.com/apis/design/resource_names#full_resource_name
    * Example:
    * "//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1".
-   * The request becomes a no-op if the asset name list is empty.
+   * The request becomes a no-op if the asset name list is empty, and the max
+   * size of the asset name list is 100 in one request.
    * </pre>
    *
    * <code>repeated string asset_names = 2;</code>
@@ -48,7 +49,8 @@ public interface BatchGetAssetsHistoryRequestOrBuilder extends
    * https://cloud.google.com/apis/design/resource_names#full_resource_name
    * Example:
    * "//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1".
-   * The request becomes a no-op if the asset name list is empty.
+   * The request becomes a no-op if the asset name list is empty, and the max
+   * size of the asset name list is 100 in one request.
    * </pre>
    *
    * <code>repeated string asset_names = 2;</code>
@@ -60,7 +62,8 @@ public interface BatchGetAssetsHistoryRequestOrBuilder extends
    * https://cloud.google.com/apis/design/resource_names#full_resource_name
    * Example:
    * "//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1".
-   * The request becomes a no-op if the asset name list is empty.
+   * The request becomes a no-op if the asset name list is empty, and the max
+   * size of the asset name list is 100 in one request.
    * </pre>
    *
    * <code>repeated string asset_names = 2;</code>
@@ -72,7 +75,8 @@ public interface BatchGetAssetsHistoryRequestOrBuilder extends
    * https://cloud.google.com/apis/design/resource_names#full_resource_name
    * Example:
    * "//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1".
-   * The request becomes a no-op if the asset name list is empty.
+   * The request becomes a no-op if the asset name list is empty, and the max
+   * size of the asset name list is 100 in one request.
    * </pre>
    *
    * <code>repeated string asset_names = 2;</code>
@@ -99,9 +103,9 @@ public interface BatchGetAssetsHistoryRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. The time window for the asset history. The returned results
-   * contain all temporal assets whose time window overlap with
-   * read_time_window.
+   * Required. The time window for the asset history. The start time is
+   * required. The returned results contain all temporal assets whose time
+   * window overlap with read_time_window.
    * </pre>
    *
    * <code>.google.cloud.asset.v1beta1.TimeWindow read_time_window = 4;</code>
@@ -109,9 +113,9 @@ public interface BatchGetAssetsHistoryRequestOrBuilder extends
   boolean hasReadTimeWindow();
   /**
    * <pre>
-   * Required. The time window for the asset history. The returned results
-   * contain all temporal assets whose time window overlap with
-   * read_time_window.
+   * Required. The time window for the asset history. The start time is
+   * required. The returned results contain all temporal assets whose time
+   * window overlap with read_time_window.
    * </pre>
    *
    * <code>.google.cloud.asset.v1beta1.TimeWindow read_time_window = 4;</code>
@@ -119,9 +123,9 @@ public interface BatchGetAssetsHistoryRequestOrBuilder extends
   com.google.cloud.asset.v1beta1.TimeWindow getReadTimeWindow();
   /**
    * <pre>
-   * Required. The time window for the asset history. The returned results
-   * contain all temporal assets whose time window overlap with
-   * read_time_window.
+   * Required. The time window for the asset history. The start time is
+   * required. The returned results contain all temporal assets whose time
+   * window overlap with read_time_window.
    * </pre>
    *
    * <code>.google.cloud.asset.v1beta1.TimeWindow read_time_window = 4;</code>
