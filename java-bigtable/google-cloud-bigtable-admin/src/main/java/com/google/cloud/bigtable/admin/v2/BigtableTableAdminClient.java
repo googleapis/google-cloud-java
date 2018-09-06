@@ -15,6 +15,7 @@
  */
 package com.google.cloud.bigtable.admin.v2;
 
+import com.google.api.core.ApiAsyncFunction;
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
@@ -27,6 +28,7 @@ import com.google.bigtable.admin.v2.GetTableRequest;
 import com.google.bigtable.admin.v2.InstanceName;
 import com.google.bigtable.admin.v2.ListTablesRequest;
 import com.google.bigtable.admin.v2.TableName;
+import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListTablesPage;
 import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListTablesPagedResponse;
 import com.google.cloud.bigtable.admin.v2.models.ConsistencyToken;
 import com.google.cloud.bigtable.admin.v2.models.CreateTableRequest;
@@ -433,22 +435,65 @@ public final class BigtableTableAdminClient implements AutoCloseable {
     ListTablesRequest request = ListTablesRequest.newBuilder().setParent(instanceName.toString())
         .build();
 
-    ApiFuture<ListTablesPagedResponse> listResp =
-        this.stub.listTablesPagedCallable().futureCall(request);
+    // TODO(igorbernstein2): try to upstream pagination spooling or figure out a way to expose the
+    // paginated responses while maintaining the wrapper facade.
 
-    return ApiFutures.transform(
-        listResp,
-        new ApiFunction<ListTablesPagedResponse, List<TableName>>() {
+    // Fetch the first page.
+    ApiFuture<ListTablesPage> firstPageFuture = ApiFutures.transform(
+        stub.listTablesPagedCallable().futureCall(request),
+        new ApiFunction<ListTablesPagedResponse, ListTablesPage>() {
           @Override
-          public List<TableName> apply(ListTablesPagedResponse response) {
-            List<TableName> results = Lists.newArrayList();
-            for (com.google.bigtable.admin.v2.Table proto : response.iterateAll()) {
+          public ListTablesPage apply(ListTablesPagedResponse response) {
+            return response.getPage();
+          }
+        },
+        MoreExecutors.directExecutor()
+    );
+
+    // Fetch the rest of the pages by chaining the futures.
+    ApiFuture<List<com.google.bigtable.admin.v2.Table>> allProtos = ApiFutures
+        .transformAsync(
+            firstPageFuture,
+            new ApiAsyncFunction<ListTablesPage, List<com.google.bigtable.admin.v2.Table>>() {
+              List<com.google.bigtable.admin.v2.Table> responseAccumulator = Lists
+                  .newArrayList();
+
+              @Override
+              public ApiFuture<List<com.google.bigtable.admin.v2.Table>> apply(
+                  ListTablesPage page) {
+                // Add all entries from the page
+                responseAccumulator.addAll(Lists.newArrayList(page.getValues()));
+
+                // If this is the last page, just return the accumulated responses.
+                if (!page.hasNextPage()) {
+                  return ApiFutures.immediateFuture(responseAccumulator);
+                }
+
+                // Otherwise fetch the next page.
+                return ApiFutures.transformAsync(
+                    page.getNextPageAsync(),
+                    this,
+                    MoreExecutors.directExecutor()
+                );
+              }
+            },
+            MoreExecutors.directExecutor()
+        );
+
+    // Wrap all of the accumulated protos.
+    return ApiFutures.transform(allProtos,
+        new ApiFunction<List<com.google.bigtable.admin.v2.Table>, List<TableName>>() {
+          @Override
+          public List<TableName> apply(List<com.google.bigtable.admin.v2.Table> protos) {
+            List<TableName> results = Lists.newArrayListWithCapacity(protos.size());
+            for (com.google.bigtable.admin.v2.Table proto : protos) {
               results.add(TableName.parse(proto.getName()));
             }
             return results;
           }
         },
-        MoreExecutors.directExecutor());
+        MoreExecutors.directExecutor()
+    );
   }
 
   /**
