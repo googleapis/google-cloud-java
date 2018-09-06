@@ -24,6 +24,7 @@ import static org.junit.Assert.assertTrue;
 import com.google.bigtable.admin.v2.InstanceName;
 import com.google.bigtable.admin.v2.TableName;
 import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient;
+import com.google.cloud.bigtable.admin.v2.models.ColumnFamily;
 import com.google.cloud.bigtable.admin.v2.models.GCRules.DurationRule;
 import com.google.cloud.bigtable.admin.v2.models.GCRules.IntersectionRule;
 import com.google.cloud.bigtable.admin.v2.models.GCRules.UnionRule;
@@ -32,9 +33,11 @@ import com.google.cloud.bigtable.admin.v2.models.CreateTableRequest;
 import com.google.cloud.bigtable.admin.v2.models.ModifyColumnFamiliesRequest;
 import com.google.cloud.bigtable.admin.v2.models.ConsistencyToken;
 import com.google.cloud.bigtable.admin.v2.models.Table;
+import com.google.common.collect.Maps;
 import com.google.protobuf.ByteString;
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 import org.junit.AfterClass;
 import org.junit.AssumptionViolatedException;
 import org.junit.Before;
@@ -88,13 +91,18 @@ public class BigtableTableAdminClientIT {
     try {
       Table tableResponse = tableAdmin.createTable(createTableReq);
       assertNotNull(tableResponse);
-      assertEquals(tableId, tableResponse.getTableName().getTable());
-      assertEquals(2, tableResponse.getColumnFamiles().size());
-      assertFalse(tableResponse.getColumnFamiliesMap().get("cf1").hasGCRule());
-      assertTrue(tableResponse.getColumnFamiliesMap().get("cf2").hasGCRule());
+      assertEquals(tableId, tableResponse.getId());
+
+      Map<String, ColumnFamily> columnFamilyById = Maps.newHashMap();
+      for (ColumnFamily columnFamily : tableResponse.getColumnFamilies()) {
+        columnFamilyById.put(columnFamily.getId(), columnFamily);
+      }
+      assertEquals(2, tableResponse.getColumnFamilies().size());
+      assertFalse(columnFamilyById.get("cf1").hasGCRule());
+      assertTrue(columnFamilyById.get("cf2").hasGCRule());
       assertEquals(
           10,
-          ((VersionRule) tableResponse.getColumnFamiliesMap().get("cf2").getGCRule())
+          ((VersionRule) columnFamilyById.get("cf2").getGCRule())
               .getMaxVersions());
     } finally {
       tableAdmin.deleteTable(tableId);
@@ -131,35 +139,40 @@ public class BigtableTableAdminClientIT {
     try {
       tableAdmin.createTable(CreateTableRequest.of(tableId));
       Table tableResponse = tableAdmin.modifyFamilies(modifyFamiliesReq);
-      assertEquals(5, tableResponse.getColumnFamiles().size());
-      assertNotNull(tableResponse.getColumnFamiliesMap().get("mf1"));
-      assertNotNull(tableResponse.getColumnFamiliesMap().get("mf2"));
+
+      Map<String, ColumnFamily> columnFamilyById = Maps.newHashMap();
+      for (ColumnFamily columnFamily : tableResponse.getColumnFamilies()) {
+        columnFamilyById.put(columnFamily.getId(), columnFamily);
+      }
+      assertEquals(5, columnFamilyById.size());
+      assertNotNull(columnFamilyById.get("mf1"));
+      assertNotNull(columnFamilyById.get("mf2"));
       assertEquals(
           2,
-          ((UnionRule) tableResponse.getColumnFamiliesMap().get("mf1").getGCRule())
+          ((UnionRule) columnFamilyById.get("mf1").getGCRule())
               .getRulesList()
               .size());
       assertEquals(
           1000,
-          ((DurationRule) tableResponse.getColumnFamiliesMap().get("mf2").getGCRule())
+          ((DurationRule) columnFamilyById.get("mf2").getGCRule())
               .getMaxAge()
               .getSeconds());
       assertEquals(
           20000,
-          ((DurationRule) tableResponse.getColumnFamiliesMap().get("mf2").getGCRule())
+          ((DurationRule) columnFamilyById.get("mf2").getGCRule())
               .getMaxAge()
               .getNano());
       assertEquals(
           2,
-          ((IntersectionRule) tableResponse.getColumnFamiliesMap().get("mf3").getGCRule())
+          ((IntersectionRule) columnFamilyById.get("mf3").getGCRule())
               .getRulesList()
               .size());
       assertEquals(
           360,
-          ((DurationRule) tableResponse.getColumnFamiliesMap().get("mf4").getGCRule())
+          ((DurationRule) columnFamilyById.get("mf4").getGCRule())
               .getMaxAge()
               .getSeconds());
-      assertNotNull(tableResponse.getColumnFamiliesMap().get("mf7"));
+      assertNotNull(columnFamilyById.get("mf7"));
     } finally {
       tableAdmin.deleteTable(tableId);
     }
@@ -180,7 +193,7 @@ public class BigtableTableAdminClientIT {
       tableAdmin.createTable(CreateTableRequest.of(tableId));
       Table tableResponse = tableAdmin.getTable(tableId);
       assertNotNull(tableResponse);
-      assertEquals(tableId, tableResponse.getTableName().getTable());
+      assertEquals(tableId, tableResponse.getId());
     } finally {
       tableAdmin.deleteTable(tableId);
     }
