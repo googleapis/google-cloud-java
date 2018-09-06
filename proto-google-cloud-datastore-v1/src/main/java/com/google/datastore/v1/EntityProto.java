@@ -67,7 +67,7 @@ public final class EntityProto {
       "6\n\014partition_id\030\001 \001(\0132 .google.datastore" +
       ".v1.PartitionId\0222\n\004path\030\002 \003(\0132$.google.d" +
       "atastore.v1.Key.PathElement\032D\n\013PathEleme" +
-      "nt\022\014\n\004kind\030\001 \001(\t\022\014\n\002id\030\002 \001(\003H\000\022\016\n\004name\030\003" +
+      "nt\022\014\n\004kind\030\001 \001(\t\022\014\n\002id\030\002 \001(\003H\000\022\016\n\004name\030\003",
       " \001(\tH\000B\t\n\007id_type\"8\n\nArrayValue\022*\n\006value" +
       "s\030\001 \003(\0132\032.google.datastore.v1.Value\"\361\003\n\005" +
       "Value\0220\n\nnull_value\030\013 \001(\0162\032.google.proto" +
@@ -77,7 +77,7 @@ public final class EntityProto {
       "gle.protobuf.TimestampH\000\022-\n\tkey_value\030\005 " +
       "\001(\0132\030.google.datastore.v1.KeyH\000\022\026\n\014strin" +
       "g_value\030\021 \001(\tH\000\022\024\n\nblob_value\030\022 \001(\014H\000\022.\n" +
-      "\017geo_point_value\030\010 \001(\0132\023.google.type.Lat" +
+      "\017geo_point_value\030\010 \001(\0132\023.google.type.Lat",
       "LngH\000\0223\n\014entity_value\030\006 \001(\0132\033.google.dat" +
       "astore.v1.EntityH\000\0226\n\013array_value\030\t \001(\0132" +
       "\037.google.datastore.v1.ArrayValueH\000\022\017\n\007me" +
@@ -87,7 +87,7 @@ public final class EntityProto {
       "\003 \003(\0132+.google.datastore.v1.Entity.Prope" +
       "rtiesEntry\032M\n\017PropertiesEntry\022\013\n\003key\030\001 \001" +
       "(\t\022)\n\005value\030\002 \001(\0132\032.google.datastore.v1." +
-      "Value:\0028\001B\236\001\n\027com.google.datastore.v1B\013E" +
+      "Value:\0028\001B\236\001\n\027com.google.datastore.v1B\013E",
       "ntityProtoP\001Z<google.golang.org/genproto" +
       "/googleapis/datastore/v1;datastore\252\002\031Goo" +
       "gle.Cloud.Datastore.V1\312\002\031Google\\Cloud\\Da" +
