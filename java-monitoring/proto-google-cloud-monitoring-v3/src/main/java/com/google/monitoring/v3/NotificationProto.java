@@ -52,7 +52,7 @@ public final class NotificationProto {
       "\030\001 \001(\t\022\024\n\014display_name\030\002 \001(\t\022\023\n\013descript" +
       "ion\030\003 \001(\t\022+\n\006labels\030\004 \003(\0132\033.google.api.L" +
       "abelDescriptor\022>\n\017supported_tiers\030\005 \003(\0162" +
-      "!.google.monitoring.v3.ServiceTierB\002\030\001\"\266" +
+      "!.google.monitoring.v3.ServiceTierB\002\030\001\"\266",
       "\004\n\023NotificationChannel\022\014\n\004type\030\001 \001(\t\022\014\n\004" +
       "name\030\006 \001(\t\022\024\n\014display_name\030\003 \001(\t\022\023\n\013desc" +
       "ription\030\004 \001(\t\022E\n\006labels\030\005 \003(\01325.google.m" +
@@ -62,7 +62,7 @@ public final class NotificationProto {
       "ntry\022Y\n\023verification_status\030\t \001(\0162<.goog" +
       "le.monitoring.v3.NotificationChannel.Ver" +
       "ificationStatus\022+\n\007enabled\030\013 \001(\0132\032.googl" +
-      "e.protobuf.BoolValue\032-\n\013LabelsEntry\022\013\n\003k" +
+      "e.protobuf.BoolValue\032-\n\013LabelsEntry\022\013\n\003k",
       "ey\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\0321\n\017UserLabel" +
       "sEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"W" +
       "\n\022VerificationStatus\022#\n\037VERIFICATION_STA" +
