@@ -11,6 +11,8 @@ anchor_unittest: &anchor_unittest
 anchor_docker: &anchor_docker
   docker:
     - image: circleci/openjdk:8-jdk
+      environment:
+        TERM: dumb
 
 anchor_auth_vars: &anchor_auth_vars
   environment:
@@ -232,7 +234,7 @@ jobs:
           name: Run integration tests for google-cloud-translate
           command: ./utilities/verify_single_it.sh google-cloud-clients/google-cloud-translate
   javadoc_test:
-    working_directory: /tmp/
+    working_directory: ~/googleapis
     <<: *anchor_docker
     steps:
       - checkout
