@@ -62,7 +62,7 @@ public final class PackageOuterClass {
       "ion\022\022\n\nmaintainer\030\004 \001(\t\022\013\n\003url\030\005 \001(\t\022\023\n\013" +
       "description\030\006 \001(\t\"\\\n\010Location\022\017\n\007cpe_uri" +
       "\030\001 \001(\t\0221\n\007version\030\002 \001(\0132 .grafeas.v1beta" +
-      "1.package.Version\022\014\n\004path\030\003 \001(\t\"T\n\007Packa" +
+      "1.package.Version\022\014\n\004path\030\003 \001(\t\"T\n\007Packa",
       "ge\022\014\n\004name\030\001 \001(\t\022;\n\014distribution\030\n \003(\0132%" +
       ".grafeas.v1beta1.package.Distribution\"F\n" +
       "\007Details\022;\n\014installation\030\001 \001(\0132%.grafeas" +
@@ -72,7 +72,7 @@ public final class PackageOuterClass {
       "sion\022\r\n\005epoch\030\001 \001(\005\022\014\n\004name\030\002 \001(\t\022\020\n\010rev" +
       "ision\030\003 \001(\t\022:\n\004kind\030\004 \001(\0162,.grafeas.v1be" +
       "ta1.package.Version.VersionKind\"Q\n\013Versi" +
-      "onKind\022\034\n\030VERSION_KIND_UNSPECIFIED\020\000\022\n\n\006" +
+      "onKind\022\034\n\030VERSION_KIND_UNSPECIFIED\020\000\022\n\n\006",
       "NORMAL\020\001\022\013\n\007MINIMUM\020\002\022\013\n\007MAXIMUM\020\003*>\n\014Ar" +
       "chitecture\022\034\n\030ARCHITECTURE_UNSPECIFIED\020\000" +
       "\022\007\n\003X86\020\001\022\007\n\003X64\020\002Bz\n\026io.grafeas.v1beta1" +

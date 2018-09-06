@@ -72,7 +72,7 @@ public final class WriteProto {
       "le.firestore.v1beta1.DocumentH\000\022\020\n\006delet" +
       "e\030\002 \001(\tH\000\022@\n\ttransform\030\006 \001(\0132+.google.fi" +
       "restore.v1beta1.DocumentTransformH\000\022;\n\013u" +
-      "pdate_mask\030\003 \001(\0132&.google.firestore.v1be" +
+      "pdate_mask\030\003 \001(\0132&.google.firestore.v1be",
       "ta1.DocumentMask\022@\n\020current_document\030\004 \001" +
       "(\0132&.google.firestore.v1beta1.Preconditi" +
       "onB\013\n\toperation\"\352\003\n\021DocumentTransform\022\020\n" +
@@ -82,7 +82,7 @@ public final class WriteProto {
       "\022\022\n\nfield_path\030\001 \001(\t\022e\n\023set_to_server_va" +
       "lue\030\002 \001(\0162F.google.firestore.v1beta1.Doc" +
       "umentTransform.FieldTransform.ServerValu" +
-      "eH\000\022G\n\027append_missing_elements\030\006 \001(\0132$.g" +
+      "eH\000\022G\n\027append_missing_elements\030\006 \001(\0132$.g",
       "oogle.firestore.v1beta1.ArrayValueH\000\022E\n\025" +
       "remove_all_from_array\030\007 \001(\0132$.google.fir" +
       "estore.v1beta1.ArrayValueH\000\"=\n\013ServerVal" +
@@ -92,7 +92,7 @@ public final class WriteProto {
       "uf.Timestamp\022:\n\021transform_results\030\002 \003(\0132" +
       "\037.google.firestore.v1beta1.Value\"v\n\016Docu" +
       "mentChange\0224\n\010document\030\001 \001(\0132\".google.fi" +
-      "restore.v1beta1.Document\022\022\n\ntarget_ids\030\005" +
+      "restore.v1beta1.Document\022\022\n\ntarget_ids\030\005",
       " \003(\005\022\032\n\022removed_target_ids\030\006 \003(\005\"m\n\016Docu" +
       "mentDelete\022\020\n\010document\030\001 \001(\t\022\032\n\022removed_" +
       "target_ids\030\006 \003(\005\022-\n\tread_time\030\004 \001(\0132\032.go" +
@@ -102,7 +102,7 @@ public final class WriteProto {
       "obuf.Timestamp\"3\n\017ExistenceFilter\022\021\n\ttar" +
       "get_id\030\001 \001(\005\022\r\n\005count\030\002 \001(\005B\270\001\n\034com.goog" +
       "le.firestore.v1beta1B\nWriteProtoP\001ZAgoog" +
-      "le.golang.org/genproto/googleapis/firest" +
+      "le.golang.org/genproto/googleapis/firest",
       "ore/v1beta1;firestore\242\002\004GCFS\252\002\036Google.Cl" +
       "oud.Firestore.V1Beta1\312\002\036Google\\Cloud\\Fir" +
       "estore\\V1beta1b\006proto3"

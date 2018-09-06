@@ -52,7 +52,7 @@ public final class Io {
       ".automl.v1beta1.GcsDestinationH\000B\r\n\013dest" +
       "ination\"\037\n\tGcsSource\022\022\n\ninput_uris\030\001 \003(\t" +
       "\"+\n\016GcsDestination\022\031\n\021output_uri_prefix\030" +
-      "\001 \001(\tBf\n\037com.google.cloud.automl.v1beta1" +
+      "\001 \001(\tBf\n\037com.google.cloud.automl.v1beta1",
       "P\001ZAgoogle.golang.org/genproto/googleapi" +
       "s/cloud/automl/v1beta1;automlb\006proto3"
     };

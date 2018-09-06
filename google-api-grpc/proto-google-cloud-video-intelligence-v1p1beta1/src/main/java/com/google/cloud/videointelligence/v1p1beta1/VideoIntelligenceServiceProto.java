@@ -137,7 +137,7 @@ public final class VideoIntelligenceServiceProto {
       "o\032\027google/rpc/status.proto\"\375\001\n\024AnnotateV" +
       "ideoRequest\022\021\n\tinput_uri\030\001 \001(\t\022\025\n\rinput_" +
       "content\030\006 \001(\014\022C\n\010features\030\002 \003(\01621.google" +
-      ".cloud.videointelligence.v1p1beta1.Featu" +
+      ".cloud.videointelligence.v1p1beta1.Featu",
       "re\022M\n\rvideo_context\030\003 \001(\01326.google.cloud" +
       ".videointelligence.v1p1beta1.VideoContex" +
       "t\022\022\n\noutput_uri\030\004 \001(\t\022\023\n\013location_id\030\005 \001" +
@@ -147,7 +147,7 @@ public final class VideoIntelligenceServiceProto {
       "\002 \001(\0132>.google.cloud.videointelligence.v" +
       "1p1beta1.LabelDetectionConfig\022i\n\034shot_ch" +
       "ange_detection_config\030\003 \001(\0132C.google.clo" +
-      "ud.videointelligence.v1p1beta1.ShotChang" +
+      "ud.videointelligence.v1p1beta1.ShotChang",
       "eDetectionConfig\022s\n!explicit_content_det" +
       "ection_config\030\004 \001(\0132H.google.cloud.video" +
       "intelligence.v1p1beta1.ExplicitContentDe" +
@@ -157,7 +157,7 @@ public final class VideoIntelligenceServiceProto {
       "\234\001\n\024LabelDetectionConfig\022Z\n\024label_detect" +
       "ion_mode\030\001 \001(\0162<.google.cloud.videointel" +
       "ligence.v1p1beta1.LabelDetectionMode\022\031\n\021" +
-      "stationary_camera\030\002 \001(\010\022\r\n\005model\030\003 \001(\t\"*" +
+      "stationary_camera\030\002 \001(\010\022\r\n\005model\030\003 \001(\t\"*",
       "\n\031ShotChangeDetectionConfig\022\r\n\005model\030\001 \001" +
       "(\t\"/\n\036ExplicitContentDetectionConfig\022\r\n\005" +
       "model\030\001 \001(\t\"x\n\014VideoSegment\0224\n\021start_tim" +
@@ -167,7 +167,7 @@ public final class VideoIntelligenceServiceProto {
       "\030\001 \001(\01326.google.cloud.videointelligence." +
       "v1p1beta1.VideoSegment\022\022\n\nconfidence\030\002 \001" +
       "(\002\"P\n\nLabelFrame\022.\n\013time_offset\030\001 \001(\0132\031." +
-      "google.protobuf.Duration\022\022\n\nconfidence\030\002" +
+      "google.protobuf.Duration\022\022\n\nconfidence\030\002",
       " \001(\002\"G\n\006Entity\022\021\n\tentity_id\030\001 \001(\t\022\023\n\013des" +
       "cription\030\002 \001(\t\022\025\n\rlanguage_code\030\003 \001(\t\"\260\002" +
       "\n\017LabelAnnotation\022@\n\006entity\030\001 \001(\01320.goog" +
@@ -177,7 +177,7 @@ public final class VideoIntelligenceServiceProto {
       "\022H\n\010segments\030\003 \003(\01326.google.cloud.videoi" +
       "ntelligence.v1p1beta1.LabelSegment\022D\n\006fr" +
       "ames\030\004 \003(\01324.google.cloud.videointellige" +
-      "nce.v1p1beta1.LabelFrame\"\234\001\n\024ExplicitCon" +
+      "nce.v1p1beta1.LabelFrame\"\234\001\n\024ExplicitCon",
       "tentFrame\022.\n\013time_offset\030\001 \001(\0132\031.google." +
       "protobuf.Duration\022T\n\026pornography_likelih" +
       "ood\030\002 \001(\01624.google.cloud.videointelligen" +
@@ -187,7 +187,7 @@ public final class VideoIntelligenceServiceProto {
       "ContentFrame\"\365\004\n\026VideoAnnotationResults\022" +
       "\021\n\tinput_uri\030\001 \001(\t\022\\\n\031segment_label_anno" +
       "tations\030\002 \003(\01329.google.cloud.videointell" +
-      "igence.v1p1beta1.LabelAnnotation\022Y\n\026shot" +
+      "igence.v1p1beta1.LabelAnnotation\022Y\n\026shot",
       "_label_annotations\030\003 \003(\01329.google.cloud." +
       "videointelligence.v1p1beta1.LabelAnnotat" +
       "ion\022Z\n\027frame_label_annotations\030\004 \003(\01329.g" +
@@ -197,7 +197,7 @@ public final class VideoIntelligenceServiceProto {
       "eta1.VideoSegment\022`\n\023explicit_annotation" +
       "\030\007 \001(\0132C.google.cloud.videointelligence." +
       "v1p1beta1.ExplicitContentAnnotation\022\\\n\025s" +
-      "peech_transcriptions\030\013 \003(\0132=.google.clou" +
+      "peech_transcriptions\030\013 \003(\0132=.google.clou",
       "d.videointelligence.v1p1beta1.SpeechTran" +
       "scription\022!\n\005error\030\t \001(\0132\022.google.rpc.St" +
       "atus\"u\n\025AnnotateVideoResponse\022\\\n\022annotat" +
@@ -207,7 +207,7 @@ public final class VideoIntelligenceServiceProto {
       "_uri\030\001 \001(\t\022\030\n\020progress_percent\030\002 \001(\005\022.\n\n" +
       "start_time\030\003 \001(\0132\032.google.protobuf.Times" +
       "tamp\022/\n\013update_time\030\004 \001(\0132\032.google.proto" +
-      "buf.Timestamp\"w\n\025AnnotateVideoProgress\022^" +
+      "buf.Timestamp\"w\n\025AnnotateVideoProgress\022^",
       "\n\023annotation_progress\030\001 \003(\0132A.google.clo" +
       "ud.videointelligence.v1p1beta1.VideoAnno" +
       "tationProgress\"\364\001\n\031SpeechTranscriptionCo" +
@@ -217,7 +217,7 @@ public final class VideoIntelligenceServiceProto {
       "videointelligence.v1p1beta1.SpeechContex" +
       "t\022$\n\034enable_automatic_punctuation\030\005 \001(\010\022" +
       "\024\n\014audio_tracks\030\006 \003(\005\" \n\rSpeechContext\022\017" +
-      "\n\007phrases\030\001 \003(\t\"s\n\023SpeechTranscription\022\\" +
+      "\n\007phrases\030\001 \003(\t\"s\n\023SpeechTranscription\022\\",
       "\n\014alternatives\030\001 \003(\0132F.google.cloud.vide" +
       "ointelligence.v1p1beta1.SpeechRecognitio" +
       "nAlternative\"\211\001\n\034SpeechRecognitionAltern" +
@@ -227,7 +227,7 @@ public final class VideoIntelligenceServiceProto {
       "Info\022-\n\nstart_time\030\001 \001(\0132\031.google.protob" +
       "uf.Duration\022+\n\010end_time\030\002 \001(\0132\031.google.p" +
       "rotobuf.Duration\022\014\n\004word\030\003 \001(\t*\214\001\n\007Featu" +
-      "re\022\027\n\023FEATURE_UNSPECIFIED\020\000\022\023\n\017LABEL_DET" +
+      "re\022\027\n\023FEATURE_UNSPECIFIED\020\000\022\023\n\017LABEL_DET",
       "ECTION\020\001\022\031\n\025SHOT_CHANGE_DETECTION\020\002\022\036\n\032E" +
       "XPLICIT_CONTENT_DETECTION\020\003\022\030\n\024SPEECH_TR" +
       "ANSCRIPTION\020\006*r\n\022LabelDetectionMode\022$\n L" +
@@ -237,7 +237,7 @@ public final class VideoIntelligenceServiceProto {
       "SPECIFIED\020\000\022\021\n\rVERY_UNLIKELY\020\001\022\014\n\010UNLIKE" +
       "LY\020\002\022\014\n\010POSSIBLE\020\003\022\n\n\006LIKELY\020\004\022\017\n\013VERY_L" +
       "IKELY\020\0052\262\001\n\030VideoIntelligenceService\022\225\001\n" +
-      "\rAnnotateVideo\022>.google.cloud.videointel" +
+      "\rAnnotateVideo\022>.google.cloud.videointel",
       "ligence.v1p1beta1.AnnotateVideoRequest\032\035" +
       ".google.longrunning.Operation\"%\202\323\344\223\002\037\"\032/" +
       "v1p1beta1/videos:annotate:\001*B\200\002\n,com.goo" +

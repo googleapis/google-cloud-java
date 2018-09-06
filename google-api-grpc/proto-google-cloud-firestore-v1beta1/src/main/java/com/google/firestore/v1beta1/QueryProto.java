@@ -82,7 +82,7 @@ public final class QueryProto {
       "dQuery.Projection\022J\n\004from\030\002 \003(\0132<.google" +
       ".firestore.v1beta1.StructuredQuery.Colle" +
       "ctionSelector\022?\n\005where\030\003 \001(\01320.google.fi" +
-      "restore.v1beta1.StructuredQuery.Filter\022A" +
+      "restore.v1beta1.StructuredQuery.Filter\022A",
       "\n\010order_by\030\004 \003(\0132/.google.firestore.v1be" +
       "ta1.StructuredQuery.Order\0222\n\010start_at\030\007 " +
       "\001(\0132 .google.firestore.v1beta1.Cursor\0220\n" +
@@ -92,7 +92,7 @@ public final class QueryProto {
       "nSelector\022\025\n\rcollection_id\030\002 \001(\t\022\027\n\017all_" +
       "descendants\030\003 \001(\010\032\214\002\n\006Filter\022U\n\020composit" +
       "e_filter\030\001 \001(\01329.google.firestore.v1beta" +
-      "1.StructuredQuery.CompositeFilterH\000\022M\n\014f" +
+      "1.StructuredQuery.CompositeFilterH\000\022M\n\014f",
       "ield_filter\030\002 \001(\01325.google.firestore.v1b" +
       "eta1.StructuredQuery.FieldFilterH\000\022M\n\014un" +
       "ary_filter\030\003 \001(\01325.google.firestore.v1be" +
@@ -102,7 +102,7 @@ public final class QueryProto {
       "ery.CompositeFilter.Operator\022A\n\007filters\030" +
       "\002 \003(\01320.google.firestore.v1beta1.Structu" +
       "redQuery.Filter\"-\n\010Operator\022\030\n\024OPERATOR_" +
-      "UNSPECIFIED\020\000\022\007\n\003AND\020\001\032\354\002\n\013FieldFilter\022G" +
+      "UNSPECIFIED\020\000\022\007\n\003AND\020\001\032\354\002\n\013FieldFilter\022G",
       "\n\005field\030\001 \001(\01328.google.firestore.v1beta1" +
       ".StructuredQuery.FieldReference\022J\n\002op\030\002 " +
       "\001(\0162>.google.firestore.v1beta1.Structure" +
@@ -112,7 +112,7 @@ public final class QueryProto {
       "SS_THAN\020\001\022\026\n\022LESS_THAN_OR_EQUAL\020\002\022\020\n\014GRE" +
       "ATER_THAN\020\003\022\031\n\025GREATER_THAN_OR_EQUAL\020\004\022\t" +
       "\n\005EQUAL\020\005\022\022\n\016ARRAY_CONTAINS\020\007\032\363\001\n\013UnaryF" +
-      "ilter\022J\n\002op\030\001 \001(\0162>.google.firestore.v1b" +
+      "ilter\022J\n\002op\030\001 \001(\0162>.google.firestore.v1b",
       "eta1.StructuredQuery.UnaryFilter.Operato" +
       "r\022I\n\005field\030\002 \001(\01328.google.firestore.v1be" +
       "ta1.StructuredQuery.FieldReferenceH\000\"=\n\010" +
@@ -122,7 +122,7 @@ public final class QueryProto {
       "v1beta1.StructuredQuery.FieldReference\022F" +
       "\n\tdirection\030\002 \001(\01623.google.firestore.v1b" +
       "eta1.StructuredQuery.Direction\032$\n\016FieldR" +
-      "eference\022\022\n\nfield_path\030\002 \001(\t\032V\n\nProjecti" +
+      "eference\022\022\n\nfield_path\030\002 \001(\t\032V\n\nProjecti",
       "on\022H\n\006fields\030\002 \003(\01328.google.firestore.v1" +
       "beta1.StructuredQuery.FieldReference\"E\n\t" +
       "Direction\022\031\n\025DIRECTION_UNSPECIFIED\020\000\022\r\n\t" +
@@ -132,7 +132,7 @@ public final class QueryProto {
       "restore.v1beta1B\nQueryProtoP\001ZAgoogle.go" +
       "lang.org/genproto/googleapis/firestore/v" +
       "1beta1;firestore\242\002\004GCFS\252\002\036Google.Cloud.F" +
-      "irestore.V1Beta1\312\002\036Google\\Cloud\\Firestor" +
+      "irestore.V1Beta1\312\002\036Google\\Cloud\\Firestor",
       "e\\V1beta1b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =

@@ -42,7 +42,7 @@ public final class TextProto {
       "beta1.ClassificationType\"!\n\037TextClassifi" +
       "cationModelMetadataBq\n\037com.google.cloud." +
       "automl.v1beta1B\tTextProtoP\001ZAgoogle.gola" +
-      "ng.org/genproto/googleapis/cloud/automl/" +
+      "ng.org/genproto/googleapis/cloud/automl/",
       "v1beta1;automlb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =

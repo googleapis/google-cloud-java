@@ -52,7 +52,7 @@ public final class TargetProto {
       "thod\030\001 \001(\0162&.google.cloud.tasks.v2beta3." +
       "HttpMethod\022H\n\022app_engine_routing\030\002 \001(\0132," +
       ".google.cloud.tasks.v2beta3.AppEngineRou" +
-      "ting\022\024\n\014relative_uri\030\003 \001(\t\022N\n\007headers\030\004 " +
+      "ting\022\024\n\014relative_uri\030\003 \001(\t\022N\n\007headers\030\004 ",
       "\003(\0132=.google.cloud.tasks.v2beta3.AppEngi" +
       "neHttpRequest.HeadersEntry\022\014\n\004body\030\005 \001(\014" +
       "\032.\n\014HeadersEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002" +
@@ -62,7 +62,7 @@ public final class TargetProto {
       "HOD_UNSPECIFIED\020\000\022\010\n\004POST\020\001\022\007\n\003GET\020\002\022\010\n\004" +
       "HEAD\020\003\022\007\n\003PUT\020\004\022\n\n\006DELETE\020\005Bp\n\036com.googl" +
       "e.cloud.tasks.v2beta3B\013TargetProtoP\001Z?go" +
-      "ogle.golang.org/genproto/googleapis/clou" +
+      "ogle.golang.org/genproto/googleapis/clou",
       "d/tasks/v2beta3;tasksb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =

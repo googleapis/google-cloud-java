@@ -9,7 +9,9 @@ public interface RecognitionConfigOrBuilder extends
 
   /**
    * <pre>
-   * *Required* Encoding of audio data sent in all `RecognitionAudio` messages.
+   * Encoding of audio data sent in all `RecognitionAudio` messages.
+   * This field is optional for `FLAC` and `WAV` audio files and required
+   * for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1.RecognitionConfig.AudioEncoding].
    * </pre>
    *
    * <code>.google.cloud.speech.v1.RecognitionConfig.AudioEncoding encoding = 1;</code>
@@ -17,7 +19,9 @@ public interface RecognitionConfigOrBuilder extends
   int getEncodingValue();
   /**
    * <pre>
-   * *Required* Encoding of audio data sent in all `RecognitionAudio` messages.
+   * Encoding of audio data sent in all `RecognitionAudio` messages.
+   * This field is optional for `FLAC` and `WAV` audio files and required
+   * for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1.RecognitionConfig.AudioEncoding].
    * </pre>
    *
    * <code>.google.cloud.speech.v1.RecognitionConfig.AudioEncoding encoding = 1;</code>
@@ -26,11 +30,13 @@ public interface RecognitionConfigOrBuilder extends
 
   /**
    * <pre>
-   * *Required* Sample rate in Hertz of the audio data sent in all
+   * Sample rate in Hertz of the audio data sent in all
    * `RecognitionAudio` messages. Valid values are: 8000-48000.
    * 16000 is optimal. For best results, set the sampling rate of the audio
    * source to 16000 Hz. If that's not possible, use the native sample rate of
    * the audio source (instead of re-sampling).
+   * This field is optional for `FLAC` and `WAV` audio files and required
+   * for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1.RecognitionConfig.AudioEncoding].
    * </pre>
    *
    * <code>int32 sample_rate_hertz = 2;</code>
@@ -42,7 +48,7 @@ public interface RecognitionConfigOrBuilder extends
    * *Required* The language of the supplied audio as a
    * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
    * Example: "en-US".
-   * See [Language Support](https://cloud.google.com/speech/docs/languages)
+   * See [Language Support](/speech-to-text/docs/languages)
    * for a list of the currently supported language codes.
    * </pre>
    *
@@ -54,7 +60,7 @@ public interface RecognitionConfigOrBuilder extends
    * *Required* The language of the supplied audio as a
    * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
    * Example: "en-US".
-   * See [Language Support](https://cloud.google.com/speech/docs/languages)
+   * See [Language Support](/speech-to-text/docs/languages)
    * for a list of the currently supported language codes.
    * </pre>
    *
@@ -91,7 +97,9 @@ public interface RecognitionConfigOrBuilder extends
 
   /**
    * <pre>
-   * *Optional* A means to provide context to assist the speech recognition.
+   * *Optional* array of [SpeechContext][google.cloud.speech.v1.SpeechContext].
+   * A means to provide context to assist the speech recognition. For more
+   * information, see [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code>
@@ -100,7 +108,9 @@ public interface RecognitionConfigOrBuilder extends
       getSpeechContextsList();
   /**
    * <pre>
-   * *Optional* A means to provide context to assist the speech recognition.
+   * *Optional* array of [SpeechContext][google.cloud.speech.v1.SpeechContext].
+   * A means to provide context to assist the speech recognition. For more
+   * information, see [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code>
@@ -108,7 +118,9 @@ public interface RecognitionConfigOrBuilder extends
   com.google.cloud.speech.v1.SpeechContext getSpeechContexts(int index);
   /**
    * <pre>
-   * *Optional* A means to provide context to assist the speech recognition.
+   * *Optional* array of [SpeechContext][google.cloud.speech.v1.SpeechContext].
+   * A means to provide context to assist the speech recognition. For more
+   * information, see [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code>
@@ -116,7 +128,9 @@ public interface RecognitionConfigOrBuilder extends
   int getSpeechContextsCount();
   /**
    * <pre>
-   * *Optional* A means to provide context to assist the speech recognition.
+   * *Optional* array of [SpeechContext][google.cloud.speech.v1.SpeechContext].
+   * A means to provide context to assist the speech recognition. For more
+   * information, see [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code>
@@ -125,7 +139,9 @@ public interface RecognitionConfigOrBuilder extends
       getSpeechContextsOrBuilderList();
   /**
    * <pre>
-   * *Optional* A means to provide context to assist the speech recognition.
+   * *Optional* array of [SpeechContext][google.cloud.speech.v1.SpeechContext].
+   * A means to provide context to assist the speech recognition. For more
+   * information, see [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code>
@@ -144,4 +160,117 @@ public interface RecognitionConfigOrBuilder extends
    * <code>bool enable_word_time_offsets = 8;</code>
    */
   boolean getEnableWordTimeOffsets();
+
+  /**
+   * <pre>
+   * *Optional* If 'true', adds punctuation to recognition result hypotheses.
+   * This feature is only available in select languages. Setting this for
+   * requests in other languages has no effect at all.
+   * The default 'false' value does not add punctuation to result hypotheses.
+   * Note: This is currently offered as an experimental service, complimentary
+   * to all users. In the future this may be exclusively available as a
+   * premium feature.
+   * </pre>
+   *
+   * <code>bool enable_automatic_punctuation = 11;</code>
+   */
+  boolean getEnableAutomaticPunctuation();
+
+  /**
+   * <pre>
+   * *Optional* Which model to select for the given request. Select the model
+   * best suited to your domain to get best results. If a model is not
+   * explicitly specified, then we auto-select a model based on the parameters
+   * in the RecognitionConfig.
+   * &lt;table&gt;
+   *   &lt;tr&gt;
+   *     &lt;td&gt;&lt;b&gt;Model&lt;/b&gt;&lt;/td&gt;
+   *     &lt;td&gt;&lt;b&gt;Description&lt;/b&gt;&lt;/td&gt;
+   *   &lt;/tr&gt;
+   *   &lt;tr&gt;
+   *     &lt;td&gt;&lt;code&gt;command_and_search&lt;/code&gt;&lt;/td&gt;
+   *     &lt;td&gt;Best for short queries such as voice commands or voice search.&lt;/td&gt;
+   *   &lt;/tr&gt;
+   *   &lt;tr&gt;
+   *     &lt;td&gt;&lt;code&gt;phone_call&lt;/code&gt;&lt;/td&gt;
+   *     &lt;td&gt;Best for audio that originated from a phone call (typically
+   *     recorded at an 8khz sampling rate).&lt;/td&gt;
+   *   &lt;/tr&gt;
+   *   &lt;tr&gt;
+   *     &lt;td&gt;&lt;code&gt;video&lt;/code&gt;&lt;/td&gt;
+   *     &lt;td&gt;Best for audio that originated from from video or includes multiple
+   *         speakers. Ideally the audio is recorded at a 16khz or greater
+   *         sampling rate. This is a premium model that costs more than the
+   *         standard rate.&lt;/td&gt;
+   *   &lt;/tr&gt;
+   *   &lt;tr&gt;
+   *     &lt;td&gt;&lt;code&gt;default&lt;/code&gt;&lt;/td&gt;
+   *     &lt;td&gt;Best for audio that is not one of the specific audio models.
+   *         For example, long-form audio. Ideally the audio is high-fidelity,
+   *         recorded at a 16khz or greater sampling rate.&lt;/td&gt;
+   *   &lt;/tr&gt;
+   * &lt;/table&gt;
+   * </pre>
+   *
+   * <code>string model = 13;</code>
+   */
+  java.lang.String getModel();
+  /**
+   * <pre>
+   * *Optional* Which model to select for the given request. Select the model
+   * best suited to your domain to get best results. If a model is not
+   * explicitly specified, then we auto-select a model based on the parameters
+   * in the RecognitionConfig.
+   * &lt;table&gt;
+   *   &lt;tr&gt;
+   *     &lt;td&gt;&lt;b&gt;Model&lt;/b&gt;&lt;/td&gt;
+   *     &lt;td&gt;&lt;b&gt;Description&lt;/b&gt;&lt;/td&gt;
+   *   &lt;/tr&gt;
+   *   &lt;tr&gt;
+   *     &lt;td&gt;&lt;code&gt;command_and_search&lt;/code&gt;&lt;/td&gt;
+   *     &lt;td&gt;Best for short queries such as voice commands or voice search.&lt;/td&gt;
+   *   &lt;/tr&gt;
+   *   &lt;tr&gt;
+   *     &lt;td&gt;&lt;code&gt;phone_call&lt;/code&gt;&lt;/td&gt;
+   *     &lt;td&gt;Best for audio that originated from a phone call (typically
+   *     recorded at an 8khz sampling rate).&lt;/td&gt;
+   *   &lt;/tr&gt;
+   *   &lt;tr&gt;
+   *     &lt;td&gt;&lt;code&gt;video&lt;/code&gt;&lt;/td&gt;
+   *     &lt;td&gt;Best for audio that originated from from video or includes multiple
+   *         speakers. Ideally the audio is recorded at a 16khz or greater
+   *         sampling rate. This is a premium model that costs more than the
+   *         standard rate.&lt;/td&gt;
+   *   &lt;/tr&gt;
+   *   &lt;tr&gt;
+   *     &lt;td&gt;&lt;code&gt;default&lt;/code&gt;&lt;/td&gt;
+   *     &lt;td&gt;Best for audio that is not one of the specific audio models.
+   *         For example, long-form audio. Ideally the audio is high-fidelity,
+   *         recorded at a 16khz or greater sampling rate.&lt;/td&gt;
+   *   &lt;/tr&gt;
+   * &lt;/table&gt;
+   * </pre>
+   *
+   * <code>string model = 13;</code>
+   */
+  com.google.protobuf.ByteString
+      getModelBytes();
+
+  /**
+   * <pre>
+   * *Optional* Set to true to use an enhanced model for speech recognition.
+   * You must also set the `model` field to a valid, enhanced model. If
+   * `use_enhanced` is set to true and the `model` field is not set, then
+   * `use_enhanced` is ignored. If `use_enhanced` is true and an enhanced
+   * version of the specified model does not exist, then the speech is
+   * recognized using the standard version of the specified model.
+   * Enhanced speech models require that you opt-in to data logging using
+   * instructions in the [documentation](/speech-to-text/enable-data-logging).
+   * If you set `use_enhanced` to true and you have not enabled audio logging,
+   * then you will receive an error.
+   * </pre>
+   *
+   * <code>bool use_enhanced = 14;</code>
+   */
+  boolean getUseEnhanced();
 }

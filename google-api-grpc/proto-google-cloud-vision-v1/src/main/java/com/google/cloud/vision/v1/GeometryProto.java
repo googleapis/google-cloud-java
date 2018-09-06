@@ -52,7 +52,7 @@ public final class GeometryProto {
       "le.cloud.vision.v1.NormalizedVertex\"+\n\010P" +
       "osition\022\t\n\001x\030\001 \001(\002\022\t\n\001y\030\002 \001(\002\022\t\n\001z\030\003 \001(\002" +
       "Bu\n\032com.google.cloud.vision.v1B\rGeometry" +
-      "ProtoP\001Z<google.golang.org/genproto/goog" +
+      "ProtoP\001Z<google.golang.org/genproto/goog",
       "leapis/cloud/vision/v1;vision\370\001\001\242\002\004GCVNb" +
       "\006proto3"
     };

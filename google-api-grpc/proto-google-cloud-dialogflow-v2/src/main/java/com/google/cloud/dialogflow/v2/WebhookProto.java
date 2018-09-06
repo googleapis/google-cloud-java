@@ -47,7 +47,7 @@ public final class WebhookProto {
       "uf/struct.proto\"\326\001\n\016WebhookRequest\022\017\n\007se" +
       "ssion\030\004 \001(\t\022\023\n\013response_id\030\001 \001(\t\022=\n\014quer" +
       "y_result\030\002 \001(\0132\'.google.cloud.dialogflow" +
-      ".v2.QueryResult\022_\n\036original_detect_inten" +
+      ".v2.QueryResult\022_\n\036original_detect_inten",
       "t_request\030\003 \001(\01327.google.cloud.dialogflo" +
       "w.v2.OriginalDetectIntentRequest\"\263\002\n\017Web" +
       "hookResponse\022\030\n\020fulfillment_text\030\001 \001(\t\022H" +
@@ -57,7 +57,7 @@ public final class WebhookProto {
       "buf.Struct\022<\n\017output_contexts\030\005 \003(\0132#.go" +
       "ogle.cloud.dialogflow.v2.Context\022D\n\024foll" +
       "owup_event_input\030\006 \001(\0132&.google.cloud.di" +
-      "alogflow.v2.EventInput\"W\n\033OriginalDetect" +
+      "alogflow.v2.EventInput\"W\n\033OriginalDetect",
       "IntentRequest\022\016\n\006source\030\001 \001(\t\022(\n\007payload" +
       "\030\003 \001(\0132\027.google.protobuf.StructB\233\001\n\036com." +
       "google.cloud.dialogflow.v2B\014WebhookProto" +

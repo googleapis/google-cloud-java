@@ -28,6 +28,9 @@ private static final long serialVersionUID = 0L;
     profanityFilter_ = false;
     speechContexts_ = java.util.Collections.emptyList();
     enableWordTimeOffsets_ = false;
+    enableAutomaticPunctuation_ = false;
+    model_ = "";
+    useEnhanced_ = false;
   }
 
   @java.lang.Override
@@ -40,9 +43,6 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -54,6 +54,13 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
+          default: {
+            if (!parseUnknownFieldProto3(
+                input, unknownFields, extensionRegistry, tag)) {
+              done = true;
+            }
+            break;
+          }
           case 8: {
             int rawValue = input.readEnum();
 
@@ -95,11 +102,20 @@ private static final long serialVersionUID = 0L;
             enableWordTimeOffsets_ = input.readBool();
             break;
           }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
+          case 88: {
+
+            enableAutomaticPunctuation_ = input.readBool();
+            break;
+          }
+          case 106: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            model_ = s;
+            break;
+          }
+          case 112: {
+
+            useEnhanced_ = input.readBool();
             break;
           }
         }
@@ -122,7 +138,6 @@ private static final long serialVersionUID = 0L;
     return com.google.cloud.speech.v1.SpeechProto.internal_static_google_cloud_speech_v1_RecognitionConfig_descriptor;
   }
 
-  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.speech.v1.SpeechProto.internal_static_google_cloud_speech_v1_RecognitionConfig_fieldAccessorTable
@@ -132,15 +147,23 @@ private static final long serialVersionUID = 0L;
 
   /**
    * <pre>
-   * Audio encoding of the data sent in the audio message. All encodings support
-   * only 1 channel (mono) audio. Only `FLAC` and `WAV` include a header that
-   * describes the bytes of audio that follow the header. The other encodings
-   * are raw audio bytes with no header.
+   * The encoding of the audio data sent in the request.
+   * All encodings support only 1 channel (mono) audio.
    * For best results, the audio source should be captured and transmitted using
-   * a lossless encoding (`FLAC` or `LINEAR16`). Recognition accuracy may be
-   * reduced if lossy codecs, which include the other codecs listed in
-   * this section, are used to capture or transmit the audio, particularly if
-   * background noise is present.
+   * a lossless encoding (`FLAC` or `LINEAR16`). The accuracy of the speech
+   * recognition can be reduced if lossy codecs are used to capture or transmit
+   * audio, particularly if background noise is present. Lossy codecs include
+   * `MULAW`, `AMR`, `AMR_WB`, `OGG_OPUS`, and `SPEEX_WITH_HEADER_BYTE`.
+   * The `FLAC` and `WAV` audio file formats include a header that describes the
+   * included audio content. You can request recognition for `WAV` files that
+   * contain either `LINEAR16` or `MULAW` encoded audio.
+   * If you send `FLAC` or `WAV` audio file format in
+   * your request, you do not need to specify an `AudioEncoding`; the audio
+   * encoding format is determined from the file header. If you specify
+   * an `AudioEncoding` when you send  send `FLAC` or `WAV` audio, the
+   * encoding configuration must match the encoding described in the audio
+   * header; otherwise the request returns an
+   * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] error code.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.speech.v1.RecognitionConfig.AudioEncoding}
@@ -149,7 +172,7 @@ private static final long serialVersionUID = 0L;
       implements com.google.protobuf.ProtocolMessageEnum {
     /**
      * <pre>
-     * Not specified. Will return result [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT].
+     * Not specified.
      * </pre>
      *
      * <code>ENCODING_UNSPECIFIED = 0;</code>
@@ -165,7 +188,7 @@ private static final long serialVersionUID = 0L;
     LINEAR16(1),
     /**
      * <pre>
-     * [`FLAC`](https://xiph.org/flac/documentation.html) (Free Lossless Audio
+     * `FLAC` (Free Lossless Audio
      * Codec) is the recommended encoding because it is
      * lossless--therefore recognition is not compromised--and
      * requires only about half the bandwidth of `LINEAR16`. `FLAC` stream
@@ -204,7 +227,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Opus encoded audio frames in Ogg container
      * ([OggOpus](https://wiki.xiph.org/OggOpus)).
-     * `sample_rate_hertz` must be 16000.
+     * `sample_rate_hertz` must be one of 8000, 12000, 16000, 24000, or 48000.
      * </pre>
      *
      * <code>OGG_OPUS = 6;</code>
@@ -235,7 +258,7 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * Not specified. Will return result [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT].
+     * Not specified.
      * </pre>
      *
      * <code>ENCODING_UNSPECIFIED = 0;</code>
@@ -251,7 +274,7 @@ private static final long serialVersionUID = 0L;
     public static final int LINEAR16_VALUE = 1;
     /**
      * <pre>
-     * [`FLAC`](https://xiph.org/flac/documentation.html) (Free Lossless Audio
+     * `FLAC` (Free Lossless Audio
      * Codec) is the recommended encoding because it is
      * lossless--therefore recognition is not compromised--and
      * requires only about half the bandwidth of `LINEAR16`. `FLAC` stream
@@ -290,7 +313,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Opus encoded audio frames in Ogg container
      * ([OggOpus](https://wiki.xiph.org/OggOpus)).
-     * `sample_rate_hertz` must be 16000.
+     * `sample_rate_hertz` must be one of 8000, 12000, 16000, 24000, or 48000.
      * </pre>
      *
      * <code>OGG_OPUS = 6;</code>
@@ -401,7 +424,9 @@ private static final long serialVersionUID = 0L;
   private int encoding_;
   /**
    * <pre>
-   * *Required* Encoding of audio data sent in all `RecognitionAudio` messages.
+   * Encoding of audio data sent in all `RecognitionAudio` messages.
+   * This field is optional for `FLAC` and `WAV` audio files and required
+   * for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1.RecognitionConfig.AudioEncoding].
    * </pre>
    *
    * <code>.google.cloud.speech.v1.RecognitionConfig.AudioEncoding encoding = 1;</code>
@@ -411,13 +436,14 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * *Required* Encoding of audio data sent in all `RecognitionAudio` messages.
+   * Encoding of audio data sent in all `RecognitionAudio` messages.
+   * This field is optional for `FLAC` and `WAV` audio files and required
+   * for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1.RecognitionConfig.AudioEncoding].
    * </pre>
    *
    * <code>.google.cloud.speech.v1.RecognitionConfig.AudioEncoding encoding = 1;</code>
    */
   public com.google.cloud.speech.v1.RecognitionConfig.AudioEncoding getEncoding() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.speech.v1.RecognitionConfig.AudioEncoding result = com.google.cloud.speech.v1.RecognitionConfig.AudioEncoding.valueOf(encoding_);
     return result == null ? com.google.cloud.speech.v1.RecognitionConfig.AudioEncoding.UNRECOGNIZED : result;
   }
@@ -426,11 +452,13 @@ private static final long serialVersionUID = 0L;
   private int sampleRateHertz_;
   /**
    * <pre>
-   * *Required* Sample rate in Hertz of the audio data sent in all
+   * Sample rate in Hertz of the audio data sent in all
    * `RecognitionAudio` messages. Valid values are: 8000-48000.
    * 16000 is optimal. For best results, set the sampling rate of the audio
    * source to 16000 Hz. If that's not possible, use the native sample rate of
    * the audio source (instead of re-sampling).
+   * This field is optional for `FLAC` and `WAV` audio files and required
+   * for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1.RecognitionConfig.AudioEncoding].
    * </pre>
    *
    * <code>int32 sample_rate_hertz = 2;</code>
@@ -446,7 +474,7 @@ private static final long serialVersionUID = 0L;
    * *Required* The language of the supplied audio as a
    * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
    * Example: "en-US".
-   * See [Language Support](https://cloud.google.com/speech/docs/languages)
+   * See [Language Support](/speech-to-text/docs/languages)
    * for a list of the currently supported language codes.
    * </pre>
    *
@@ -469,7 +497,7 @@ private static final long serialVersionUID = 0L;
    * *Required* The language of the supplied audio as a
    * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
    * Example: "en-US".
-   * See [Language Support](https://cloud.google.com/speech/docs/languages)
+   * See [Language Support](/speech-to-text/docs/languages)
    * for a list of the currently supported language codes.
    * </pre>
    *
@@ -527,7 +555,9 @@ private static final long serialVersionUID = 0L;
   private java.util.List<com.google.cloud.speech.v1.SpeechContext> speechContexts_;
   /**
    * <pre>
-   * *Optional* A means to provide context to assist the speech recognition.
+   * *Optional* array of [SpeechContext][google.cloud.speech.v1.SpeechContext].
+   * A means to provide context to assist the speech recognition. For more
+   * information, see [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code>
@@ -537,7 +567,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * *Optional* A means to provide context to assist the speech recognition.
+   * *Optional* array of [SpeechContext][google.cloud.speech.v1.SpeechContext].
+   * A means to provide context to assist the speech recognition. For more
+   * information, see [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code>
@@ -548,7 +580,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * *Optional* A means to provide context to assist the speech recognition.
+   * *Optional* array of [SpeechContext][google.cloud.speech.v1.SpeechContext].
+   * A means to provide context to assist the speech recognition. For more
+   * information, see [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code>
@@ -558,7 +592,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * *Optional* A means to provide context to assist the speech recognition.
+   * *Optional* array of [SpeechContext][google.cloud.speech.v1.SpeechContext].
+   * A means to provide context to assist the speech recognition. For more
+   * information, see [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code>
@@ -568,7 +604,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * *Optional* A means to provide context to assist the speech recognition.
+   * *Optional* array of [SpeechContext][google.cloud.speech.v1.SpeechContext].
+   * A means to provide context to assist the speech recognition. For more
+   * information, see [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code>
@@ -594,8 +632,152 @@ private static final long serialVersionUID = 0L;
     return enableWordTimeOffsets_;
   }
 
+  public static final int ENABLE_AUTOMATIC_PUNCTUATION_FIELD_NUMBER = 11;
+  private boolean enableAutomaticPunctuation_;
+  /**
+   * <pre>
+   * *Optional* If 'true', adds punctuation to recognition result hypotheses.
+   * This feature is only available in select languages. Setting this for
+   * requests in other languages has no effect at all.
+   * The default 'false' value does not add punctuation to result hypotheses.
+   * Note: This is currently offered as an experimental service, complimentary
+   * to all users. In the future this may be exclusively available as a
+   * premium feature.
+   * </pre>
+   *
+   * <code>bool enable_automatic_punctuation = 11;</code>
+   */
+  public boolean getEnableAutomaticPunctuation() {
+    return enableAutomaticPunctuation_;
+  }
+
+  public static final int MODEL_FIELD_NUMBER = 13;
+  private volatile java.lang.Object model_;
+  /**
+   * <pre>
+   * *Optional* Which model to select for the given request. Select the model
+   * best suited to your domain to get best results. If a model is not
+   * explicitly specified, then we auto-select a model based on the parameters
+   * in the RecognitionConfig.
+   * &lt;table&gt;
+   *   &lt;tr&gt;
+   *     &lt;td&gt;&lt;b&gt;Model&lt;/b&gt;&lt;/td&gt;
+   *     &lt;td&gt;&lt;b&gt;Description&lt;/b&gt;&lt;/td&gt;
+   *   &lt;/tr&gt;
+   *   &lt;tr&gt;
+   *     &lt;td&gt;&lt;code&gt;command_and_search&lt;/code&gt;&lt;/td&gt;
+   *     &lt;td&gt;Best for short queries such as voice commands or voice search.&lt;/td&gt;
+   *   &lt;/tr&gt;
+   *   &lt;tr&gt;
+   *     &lt;td&gt;&lt;code&gt;phone_call&lt;/code&gt;&lt;/td&gt;
+   *     &lt;td&gt;Best for audio that originated from a phone call (typically
+   *     recorded at an 8khz sampling rate).&lt;/td&gt;
+   *   &lt;/tr&gt;
+   *   &lt;tr&gt;
+   *     &lt;td&gt;&lt;code&gt;video&lt;/code&gt;&lt;/td&gt;
+   *     &lt;td&gt;Best for audio that originated from from video or includes multiple
+   *         speakers. Ideally the audio is recorded at a 16khz or greater
+   *         sampling rate. This is a premium model that costs more than the
+   *         standard rate.&lt;/td&gt;
+   *   &lt;/tr&gt;
+   *   &lt;tr&gt;
+   *     &lt;td&gt;&lt;code&gt;default&lt;/code&gt;&lt;/td&gt;
+   *     &lt;td&gt;Best for audio that is not one of the specific audio models.
+   *         For example, long-form audio. Ideally the audio is high-fidelity,
+   *         recorded at a 16khz or greater sampling rate.&lt;/td&gt;
+   *   &lt;/tr&gt;
+   * &lt;/table&gt;
+   * </pre>
+   *
+   * <code>string model = 13;</code>
+   */
+  public java.lang.String getModel() {
+    java.lang.Object ref = model_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      model_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * *Optional* Which model to select for the given request. Select the model
+   * best suited to your domain to get best results. If a model is not
+   * explicitly specified, then we auto-select a model based on the parameters
+   * in the RecognitionConfig.
+   * &lt;table&gt;
+   *   &lt;tr&gt;
+   *     &lt;td&gt;&lt;b&gt;Model&lt;/b&gt;&lt;/td&gt;
+   *     &lt;td&gt;&lt;b&gt;Description&lt;/b&gt;&lt;/td&gt;
+   *   &lt;/tr&gt;
+   *   &lt;tr&gt;
+   *     &lt;td&gt;&lt;code&gt;command_and_search&lt;/code&gt;&lt;/td&gt;
+   *     &lt;td&gt;Best for short queries such as voice commands or voice search.&lt;/td&gt;
+   *   &lt;/tr&gt;
+   *   &lt;tr&gt;
+   *     &lt;td&gt;&lt;code&gt;phone_call&lt;/code&gt;&lt;/td&gt;
+   *     &lt;td&gt;Best for audio that originated from a phone call (typically
+   *     recorded at an 8khz sampling rate).&lt;/td&gt;
+   *   &lt;/tr&gt;
+   *   &lt;tr&gt;
+   *     &lt;td&gt;&lt;code&gt;video&lt;/code&gt;&lt;/td&gt;
+   *     &lt;td&gt;Best for audio that originated from from video or includes multiple
+   *         speakers. Ideally the audio is recorded at a 16khz or greater
+   *         sampling rate. This is a premium model that costs more than the
+   *         standard rate.&lt;/td&gt;
+   *   &lt;/tr&gt;
+   *   &lt;tr&gt;
+   *     &lt;td&gt;&lt;code&gt;default&lt;/code&gt;&lt;/td&gt;
+   *     &lt;td&gt;Best for audio that is not one of the specific audio models.
+   *         For example, long-form audio. Ideally the audio is high-fidelity,
+   *         recorded at a 16khz or greater sampling rate.&lt;/td&gt;
+   *   &lt;/tr&gt;
+   * &lt;/table&gt;
+   * </pre>
+   *
+   * <code>string model = 13;</code>
+   */
+  public com.google.protobuf.ByteString
+      getModelBytes() {
+    java.lang.Object ref = model_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      model_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int USE_ENHANCED_FIELD_NUMBER = 14;
+  private boolean useEnhanced_;
+  /**
+   * <pre>
+   * *Optional* Set to true to use an enhanced model for speech recognition.
+   * You must also set the `model` field to a valid, enhanced model. If
+   * `use_enhanced` is set to true and the `model` field is not set, then
+   * `use_enhanced` is ignored. If `use_enhanced` is true and an enhanced
+   * version of the specified model does not exist, then the speech is
+   * recognized using the standard version of the specified model.
+   * Enhanced speech models require that you opt-in to data logging using
+   * instructions in the [documentation](/speech-to-text/enable-data-logging).
+   * If you set `use_enhanced` to true and you have not enabled audio logging,
+   * then you will receive an error.
+   * </pre>
+   *
+   * <code>bool use_enhanced = 14;</code>
+   */
+  public boolean getUseEnhanced() {
+    return useEnhanced_;
+  }
+
   private byte memoizedIsInitialized = -1;
-  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -605,7 +787,6 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (encoding_ != com.google.cloud.speech.v1.RecognitionConfig.AudioEncoding.ENCODING_UNSPECIFIED.getNumber()) {
@@ -629,10 +810,18 @@ private static final long serialVersionUID = 0L;
     if (enableWordTimeOffsets_ != false) {
       output.writeBool(8, enableWordTimeOffsets_);
     }
+    if (enableAutomaticPunctuation_ != false) {
+      output.writeBool(11, enableAutomaticPunctuation_);
+    }
+    if (!getModelBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 13, model_);
+    }
+    if (useEnhanced_ != false) {
+      output.writeBool(14, useEnhanced_);
+    }
     unknownFields.writeTo(output);
   }
 
-  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -665,6 +854,17 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(8, enableWordTimeOffsets_);
     }
+    if (enableAutomaticPunctuation_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(11, enableAutomaticPunctuation_);
+    }
+    if (!getModelBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, model_);
+    }
+    if (useEnhanced_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(14, useEnhanced_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -694,6 +894,12 @@ private static final long serialVersionUID = 0L;
         .equals(other.getSpeechContextsList());
     result = result && (getEnableWordTimeOffsets()
         == other.getEnableWordTimeOffsets());
+    result = result && (getEnableAutomaticPunctuation()
+        == other.getEnableAutomaticPunctuation());
+    result = result && getModel()
+        .equals(other.getModel());
+    result = result && (getUseEnhanced()
+        == other.getUseEnhanced());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -723,6 +929,14 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + ENABLE_WORD_TIME_OFFSETS_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getEnableWordTimeOffsets());
+    hash = (37 * hash) + ENABLE_AUTOMATIC_PUNCTUATION_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getEnableAutomaticPunctuation());
+    hash = (37 * hash) + MODEL_FIELD_NUMBER;
+    hash = (53 * hash) + getModel().hashCode();
+    hash = (37 * hash) + USE_ENHANCED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getUseEnhanced());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -798,7 +1012,6 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
@@ -806,7 +1019,6 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder(com.google.cloud.speech.v1.RecognitionConfig prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
@@ -835,7 +1047,6 @@ private static final long serialVersionUID = 0L;
       return com.google.cloud.speech.v1.SpeechProto.internal_static_google_cloud_speech_v1_RecognitionConfig_descriptor;
     }
 
-    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.speech.v1.SpeechProto.internal_static_google_cloud_speech_v1_RecognitionConfig_fieldAccessorTable
@@ -859,7 +1070,6 @@ private static final long serialVersionUID = 0L;
         getSpeechContextsFieldBuilder();
       }
     }
-    @java.lang.Override
     public Builder clear() {
       super.clear();
       encoding_ = 0;
@@ -880,21 +1090,24 @@ private static final long serialVersionUID = 0L;
       }
       enableWordTimeOffsets_ = false;
 
+      enableAutomaticPunctuation_ = false;
+
+      model_ = "";
+
+      useEnhanced_ = false;
+
       return this;
     }
 
-    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
       return com.google.cloud.speech.v1.SpeechProto.internal_static_google_cloud_speech_v1_RecognitionConfig_descriptor;
     }
 
-    @java.lang.Override
     public com.google.cloud.speech.v1.RecognitionConfig getDefaultInstanceForType() {
       return com.google.cloud.speech.v1.RecognitionConfig.getDefaultInstance();
     }
 
-    @java.lang.Override
     public com.google.cloud.speech.v1.RecognitionConfig build() {
       com.google.cloud.speech.v1.RecognitionConfig result = buildPartial();
       if (!result.isInitialized()) {
@@ -903,7 +1116,6 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
-    @java.lang.Override
     public com.google.cloud.speech.v1.RecognitionConfig buildPartial() {
       com.google.cloud.speech.v1.RecognitionConfig result = new com.google.cloud.speech.v1.RecognitionConfig(this);
       int from_bitField0_ = bitField0_;
@@ -923,44 +1135,40 @@ private static final long serialVersionUID = 0L;
         result.speechContexts_ = speechContextsBuilder_.build();
       }
       result.enableWordTimeOffsets_ = enableWordTimeOffsets_;
+      result.enableAutomaticPunctuation_ = enableAutomaticPunctuation_;
+      result.model_ = model_;
+      result.useEnhanced_ = useEnhanced_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
 
-    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
-    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
-    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
-    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
-    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
-    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
-    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.speech.v1.RecognitionConfig) {
         return mergeFrom((com.google.cloud.speech.v1.RecognitionConfig)other);
@@ -1017,17 +1225,25 @@ private static final long serialVersionUID = 0L;
       if (other.getEnableWordTimeOffsets() != false) {
         setEnableWordTimeOffsets(other.getEnableWordTimeOffsets());
       }
+      if (other.getEnableAutomaticPunctuation() != false) {
+        setEnableAutomaticPunctuation(other.getEnableAutomaticPunctuation());
+      }
+      if (!other.getModel().isEmpty()) {
+        model_ = other.model_;
+        onChanged();
+      }
+      if (other.getUseEnhanced() != false) {
+        setUseEnhanced(other.getUseEnhanced());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
 
-    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
-    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1050,7 +1266,9 @@ private static final long serialVersionUID = 0L;
     private int encoding_ = 0;
     /**
      * <pre>
-     * *Required* Encoding of audio data sent in all `RecognitionAudio` messages.
+     * Encoding of audio data sent in all `RecognitionAudio` messages.
+     * This field is optional for `FLAC` and `WAV` audio files and required
+     * for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1.RecognitionConfig.AudioEncoding].
      * </pre>
      *
      * <code>.google.cloud.speech.v1.RecognitionConfig.AudioEncoding encoding = 1;</code>
@@ -1060,7 +1278,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * *Required* Encoding of audio data sent in all `RecognitionAudio` messages.
+     * Encoding of audio data sent in all `RecognitionAudio` messages.
+     * This field is optional for `FLAC` and `WAV` audio files and required
+     * for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1.RecognitionConfig.AudioEncoding].
      * </pre>
      *
      * <code>.google.cloud.speech.v1.RecognitionConfig.AudioEncoding encoding = 1;</code>
@@ -1072,19 +1292,22 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * *Required* Encoding of audio data sent in all `RecognitionAudio` messages.
+     * Encoding of audio data sent in all `RecognitionAudio` messages.
+     * This field is optional for `FLAC` and `WAV` audio files and required
+     * for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1.RecognitionConfig.AudioEncoding].
      * </pre>
      *
      * <code>.google.cloud.speech.v1.RecognitionConfig.AudioEncoding encoding = 1;</code>
      */
     public com.google.cloud.speech.v1.RecognitionConfig.AudioEncoding getEncoding() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.speech.v1.RecognitionConfig.AudioEncoding result = com.google.cloud.speech.v1.RecognitionConfig.AudioEncoding.valueOf(encoding_);
       return result == null ? com.google.cloud.speech.v1.RecognitionConfig.AudioEncoding.UNRECOGNIZED : result;
     }
     /**
      * <pre>
-     * *Required* Encoding of audio data sent in all `RecognitionAudio` messages.
+     * Encoding of audio data sent in all `RecognitionAudio` messages.
+     * This field is optional for `FLAC` and `WAV` audio files and required
+     * for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1.RecognitionConfig.AudioEncoding].
      * </pre>
      *
      * <code>.google.cloud.speech.v1.RecognitionConfig.AudioEncoding encoding = 1;</code>
@@ -1100,7 +1323,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * *Required* Encoding of audio data sent in all `RecognitionAudio` messages.
+     * Encoding of audio data sent in all `RecognitionAudio` messages.
+     * This field is optional for `FLAC` and `WAV` audio files and required
+     * for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1.RecognitionConfig.AudioEncoding].
      * </pre>
      *
      * <code>.google.cloud.speech.v1.RecognitionConfig.AudioEncoding encoding = 1;</code>
@@ -1115,11 +1340,13 @@ private static final long serialVersionUID = 0L;
     private int sampleRateHertz_ ;
     /**
      * <pre>
-     * *Required* Sample rate in Hertz of the audio data sent in all
+     * Sample rate in Hertz of the audio data sent in all
      * `RecognitionAudio` messages. Valid values are: 8000-48000.
      * 16000 is optimal. For best results, set the sampling rate of the audio
      * source to 16000 Hz. If that's not possible, use the native sample rate of
      * the audio source (instead of re-sampling).
+     * This field is optional for `FLAC` and `WAV` audio files and required
+     * for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1.RecognitionConfig.AudioEncoding].
      * </pre>
      *
      * <code>int32 sample_rate_hertz = 2;</code>
@@ -1129,11 +1356,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * *Required* Sample rate in Hertz of the audio data sent in all
+     * Sample rate in Hertz of the audio data sent in all
      * `RecognitionAudio` messages. Valid values are: 8000-48000.
      * 16000 is optimal. For best results, set the sampling rate of the audio
      * source to 16000 Hz. If that's not possible, use the native sample rate of
      * the audio source (instead of re-sampling).
+     * This field is optional for `FLAC` and `WAV` audio files and required
+     * for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1.RecognitionConfig.AudioEncoding].
      * </pre>
      *
      * <code>int32 sample_rate_hertz = 2;</code>
@@ -1146,11 +1375,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * *Required* Sample rate in Hertz of the audio data sent in all
+     * Sample rate in Hertz of the audio data sent in all
      * `RecognitionAudio` messages. Valid values are: 8000-48000.
      * 16000 is optimal. For best results, set the sampling rate of the audio
      * source to 16000 Hz. If that's not possible, use the native sample rate of
      * the audio source (instead of re-sampling).
+     * This field is optional for `FLAC` and `WAV` audio files and required
+     * for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1.RecognitionConfig.AudioEncoding].
      * </pre>
      *
      * <code>int32 sample_rate_hertz = 2;</code>
@@ -1168,7 +1399,7 @@ private static final long serialVersionUID = 0L;
      * *Required* The language of the supplied audio as a
      * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
      * Example: "en-US".
-     * See [Language Support](https://cloud.google.com/speech/docs/languages)
+     * See [Language Support](/speech-to-text/docs/languages)
      * for a list of the currently supported language codes.
      * </pre>
      *
@@ -1191,7 +1422,7 @@ private static final long serialVersionUID = 0L;
      * *Required* The language of the supplied audio as a
      * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
      * Example: "en-US".
-     * See [Language Support](https://cloud.google.com/speech/docs/languages)
+     * See [Language Support](/speech-to-text/docs/languages)
      * for a list of the currently supported language codes.
      * </pre>
      *
@@ -1215,7 +1446,7 @@ private static final long serialVersionUID = 0L;
      * *Required* The language of the supplied audio as a
      * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
      * Example: "en-US".
-     * See [Language Support](https://cloud.google.com/speech/docs/languages)
+     * See [Language Support](/speech-to-text/docs/languages)
      * for a list of the currently supported language codes.
      * </pre>
      *
@@ -1236,7 +1467,7 @@ private static final long serialVersionUID = 0L;
      * *Required* The language of the supplied audio as a
      * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
      * Example: "en-US".
-     * See [Language Support](https://cloud.google.com/speech/docs/languages)
+     * See [Language Support](/speech-to-text/docs/languages)
      * for a list of the currently supported language codes.
      * </pre>
      *
@@ -1253,7 +1484,7 @@ private static final long serialVersionUID = 0L;
      * *Required* The language of the supplied audio as a
      * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
      * Example: "en-US".
-     * See [Language Support](https://cloud.google.com/speech/docs/languages)
+     * See [Language Support](/speech-to-text/docs/languages)
      * for a list of the currently supported language codes.
      * </pre>
      *
@@ -1385,7 +1616,9 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * *Optional* A means to provide context to assist the speech recognition.
+     * *Optional* array of [SpeechContext][google.cloud.speech.v1.SpeechContext].
+     * A means to provide context to assist the speech recognition. For more
+     * information, see [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code>
@@ -1399,7 +1632,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * *Optional* A means to provide context to assist the speech recognition.
+     * *Optional* array of [SpeechContext][google.cloud.speech.v1.SpeechContext].
+     * A means to provide context to assist the speech recognition. For more
+     * information, see [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code>
@@ -1413,7 +1648,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * *Optional* A means to provide context to assist the speech recognition.
+     * *Optional* array of [SpeechContext][google.cloud.speech.v1.SpeechContext].
+     * A means to provide context to assist the speech recognition. For more
+     * information, see [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code>
@@ -1427,7 +1664,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * *Optional* A means to provide context to assist the speech recognition.
+     * *Optional* array of [SpeechContext][google.cloud.speech.v1.SpeechContext].
+     * A means to provide context to assist the speech recognition. For more
+     * information, see [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code>
@@ -1448,7 +1687,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * *Optional* A means to provide context to assist the speech recognition.
+     * *Optional* array of [SpeechContext][google.cloud.speech.v1.SpeechContext].
+     * A means to provide context to assist the speech recognition. For more
+     * information, see [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code>
@@ -1466,7 +1707,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * *Optional* A means to provide context to assist the speech recognition.
+     * *Optional* array of [SpeechContext][google.cloud.speech.v1.SpeechContext].
+     * A means to provide context to assist the speech recognition. For more
+     * information, see [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code>
@@ -1486,7 +1729,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * *Optional* A means to provide context to assist the speech recognition.
+     * *Optional* array of [SpeechContext][google.cloud.speech.v1.SpeechContext].
+     * A means to provide context to assist the speech recognition. For more
+     * information, see [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code>
@@ -1507,7 +1752,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * *Optional* A means to provide context to assist the speech recognition.
+     * *Optional* array of [SpeechContext][google.cloud.speech.v1.SpeechContext].
+     * A means to provide context to assist the speech recognition. For more
+     * information, see [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code>
@@ -1525,7 +1772,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * *Optional* A means to provide context to assist the speech recognition.
+     * *Optional* array of [SpeechContext][google.cloud.speech.v1.SpeechContext].
+     * A means to provide context to assist the speech recognition. For more
+     * information, see [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code>
@@ -1543,7 +1792,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * *Optional* A means to provide context to assist the speech recognition.
+     * *Optional* array of [SpeechContext][google.cloud.speech.v1.SpeechContext].
+     * A means to provide context to assist the speech recognition. For more
+     * information, see [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code>
@@ -1562,7 +1813,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * *Optional* A means to provide context to assist the speech recognition.
+     * *Optional* array of [SpeechContext][google.cloud.speech.v1.SpeechContext].
+     * A means to provide context to assist the speech recognition. For more
+     * information, see [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code>
@@ -1579,7 +1832,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * *Optional* A means to provide context to assist the speech recognition.
+     * *Optional* array of [SpeechContext][google.cloud.speech.v1.SpeechContext].
+     * A means to provide context to assist the speech recognition. For more
+     * information, see [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code>
@@ -1596,7 +1851,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * *Optional* A means to provide context to assist the speech recognition.
+     * *Optional* array of [SpeechContext][google.cloud.speech.v1.SpeechContext].
+     * A means to provide context to assist the speech recognition. For more
+     * information, see [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code>
@@ -1607,7 +1864,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * *Optional* A means to provide context to assist the speech recognition.
+     * *Optional* array of [SpeechContext][google.cloud.speech.v1.SpeechContext].
+     * A means to provide context to assist the speech recognition. For more
+     * information, see [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code>
@@ -1621,7 +1880,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * *Optional* A means to provide context to assist the speech recognition.
+     * *Optional* array of [SpeechContext][google.cloud.speech.v1.SpeechContext].
+     * A means to provide context to assist the speech recognition. For more
+     * information, see [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code>
@@ -1636,7 +1897,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * *Optional* A means to provide context to assist the speech recognition.
+     * *Optional* array of [SpeechContext][google.cloud.speech.v1.SpeechContext].
+     * A means to provide context to assist the speech recognition. For more
+     * information, see [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code>
@@ -1647,7 +1910,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * *Optional* A means to provide context to assist the speech recognition.
+     * *Optional* array of [SpeechContext][google.cloud.speech.v1.SpeechContext].
+     * A means to provide context to assist the speech recognition. For more
+     * information, see [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code>
@@ -1659,7 +1924,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * *Optional* A means to provide context to assist the speech recognition.
+     * *Optional* array of [SpeechContext][google.cloud.speech.v1.SpeechContext].
+     * A means to provide context to assist the speech recognition. For more
+     * information, see [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code>
@@ -1729,13 +1996,376 @@ private static final long serialVersionUID = 0L;
       onChanged();
       return this;
     }
-    @java.lang.Override
+
+    private boolean enableAutomaticPunctuation_ ;
+    /**
+     * <pre>
+     * *Optional* If 'true', adds punctuation to recognition result hypotheses.
+     * This feature is only available in select languages. Setting this for
+     * requests in other languages has no effect at all.
+     * The default 'false' value does not add punctuation to result hypotheses.
+     * Note: This is currently offered as an experimental service, complimentary
+     * to all users. In the future this may be exclusively available as a
+     * premium feature.
+     * </pre>
+     *
+     * <code>bool enable_automatic_punctuation = 11;</code>
+     */
+    public boolean getEnableAutomaticPunctuation() {
+      return enableAutomaticPunctuation_;
+    }
+    /**
+     * <pre>
+     * *Optional* If 'true', adds punctuation to recognition result hypotheses.
+     * This feature is only available in select languages. Setting this for
+     * requests in other languages has no effect at all.
+     * The default 'false' value does not add punctuation to result hypotheses.
+     * Note: This is currently offered as an experimental service, complimentary
+     * to all users. In the future this may be exclusively available as a
+     * premium feature.
+     * </pre>
+     *
+     * <code>bool enable_automatic_punctuation = 11;</code>
+     */
+    public Builder setEnableAutomaticPunctuation(boolean value) {
+      
+      enableAutomaticPunctuation_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * *Optional* If 'true', adds punctuation to recognition result hypotheses.
+     * This feature is only available in select languages. Setting this for
+     * requests in other languages has no effect at all.
+     * The default 'false' value does not add punctuation to result hypotheses.
+     * Note: This is currently offered as an experimental service, complimentary
+     * to all users. In the future this may be exclusively available as a
+     * premium feature.
+     * </pre>
+     *
+     * <code>bool enable_automatic_punctuation = 11;</code>
+     */
+    public Builder clearEnableAutomaticPunctuation() {
+      
+      enableAutomaticPunctuation_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object model_ = "";
+    /**
+     * <pre>
+     * *Optional* Which model to select for the given request. Select the model
+     * best suited to your domain to get best results. If a model is not
+     * explicitly specified, then we auto-select a model based on the parameters
+     * in the RecognitionConfig.
+     * &lt;table&gt;
+     *   &lt;tr&gt;
+     *     &lt;td&gt;&lt;b&gt;Model&lt;/b&gt;&lt;/td&gt;
+     *     &lt;td&gt;&lt;b&gt;Description&lt;/b&gt;&lt;/td&gt;
+     *   &lt;/tr&gt;
+     *   &lt;tr&gt;
+     *     &lt;td&gt;&lt;code&gt;command_and_search&lt;/code&gt;&lt;/td&gt;
+     *     &lt;td&gt;Best for short queries such as voice commands or voice search.&lt;/td&gt;
+     *   &lt;/tr&gt;
+     *   &lt;tr&gt;
+     *     &lt;td&gt;&lt;code&gt;phone_call&lt;/code&gt;&lt;/td&gt;
+     *     &lt;td&gt;Best for audio that originated from a phone call (typically
+     *     recorded at an 8khz sampling rate).&lt;/td&gt;
+     *   &lt;/tr&gt;
+     *   &lt;tr&gt;
+     *     &lt;td&gt;&lt;code&gt;video&lt;/code&gt;&lt;/td&gt;
+     *     &lt;td&gt;Best for audio that originated from from video or includes multiple
+     *         speakers. Ideally the audio is recorded at a 16khz or greater
+     *         sampling rate. This is a premium model that costs more than the
+     *         standard rate.&lt;/td&gt;
+     *   &lt;/tr&gt;
+     *   &lt;tr&gt;
+     *     &lt;td&gt;&lt;code&gt;default&lt;/code&gt;&lt;/td&gt;
+     *     &lt;td&gt;Best for audio that is not one of the specific audio models.
+     *         For example, long-form audio. Ideally the audio is high-fidelity,
+     *         recorded at a 16khz or greater sampling rate.&lt;/td&gt;
+     *   &lt;/tr&gt;
+     * &lt;/table&gt;
+     * </pre>
+     *
+     * <code>string model = 13;</code>
+     */
+    public java.lang.String getModel() {
+      java.lang.Object ref = model_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        model_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * *Optional* Which model to select for the given request. Select the model
+     * best suited to your domain to get best results. If a model is not
+     * explicitly specified, then we auto-select a model based on the parameters
+     * in the RecognitionConfig.
+     * &lt;table&gt;
+     *   &lt;tr&gt;
+     *     &lt;td&gt;&lt;b&gt;Model&lt;/b&gt;&lt;/td&gt;
+     *     &lt;td&gt;&lt;b&gt;Description&lt;/b&gt;&lt;/td&gt;
+     *   &lt;/tr&gt;
+     *   &lt;tr&gt;
+     *     &lt;td&gt;&lt;code&gt;command_and_search&lt;/code&gt;&lt;/td&gt;
+     *     &lt;td&gt;Best for short queries such as voice commands or voice search.&lt;/td&gt;
+     *   &lt;/tr&gt;
+     *   &lt;tr&gt;
+     *     &lt;td&gt;&lt;code&gt;phone_call&lt;/code&gt;&lt;/td&gt;
+     *     &lt;td&gt;Best for audio that originated from a phone call (typically
+     *     recorded at an 8khz sampling rate).&lt;/td&gt;
+     *   &lt;/tr&gt;
+     *   &lt;tr&gt;
+     *     &lt;td&gt;&lt;code&gt;video&lt;/code&gt;&lt;/td&gt;
+     *     &lt;td&gt;Best for audio that originated from from video or includes multiple
+     *         speakers. Ideally the audio is recorded at a 16khz or greater
+     *         sampling rate. This is a premium model that costs more than the
+     *         standard rate.&lt;/td&gt;
+     *   &lt;/tr&gt;
+     *   &lt;tr&gt;
+     *     &lt;td&gt;&lt;code&gt;default&lt;/code&gt;&lt;/td&gt;
+     *     &lt;td&gt;Best for audio that is not one of the specific audio models.
+     *         For example, long-form audio. Ideally the audio is high-fidelity,
+     *         recorded at a 16khz or greater sampling rate.&lt;/td&gt;
+     *   &lt;/tr&gt;
+     * &lt;/table&gt;
+     * </pre>
+     *
+     * <code>string model = 13;</code>
+     */
+    public com.google.protobuf.ByteString
+        getModelBytes() {
+      java.lang.Object ref = model_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        model_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * *Optional* Which model to select for the given request. Select the model
+     * best suited to your domain to get best results. If a model is not
+     * explicitly specified, then we auto-select a model based on the parameters
+     * in the RecognitionConfig.
+     * &lt;table&gt;
+     *   &lt;tr&gt;
+     *     &lt;td&gt;&lt;b&gt;Model&lt;/b&gt;&lt;/td&gt;
+     *     &lt;td&gt;&lt;b&gt;Description&lt;/b&gt;&lt;/td&gt;
+     *   &lt;/tr&gt;
+     *   &lt;tr&gt;
+     *     &lt;td&gt;&lt;code&gt;command_and_search&lt;/code&gt;&lt;/td&gt;
+     *     &lt;td&gt;Best for short queries such as voice commands or voice search.&lt;/td&gt;
+     *   &lt;/tr&gt;
+     *   &lt;tr&gt;
+     *     &lt;td&gt;&lt;code&gt;phone_call&lt;/code&gt;&lt;/td&gt;
+     *     &lt;td&gt;Best for audio that originated from a phone call (typically
+     *     recorded at an 8khz sampling rate).&lt;/td&gt;
+     *   &lt;/tr&gt;
+     *   &lt;tr&gt;
+     *     &lt;td&gt;&lt;code&gt;video&lt;/code&gt;&lt;/td&gt;
+     *     &lt;td&gt;Best for audio that originated from from video or includes multiple
+     *         speakers. Ideally the audio is recorded at a 16khz or greater
+     *         sampling rate. This is a premium model that costs more than the
+     *         standard rate.&lt;/td&gt;
+     *   &lt;/tr&gt;
+     *   &lt;tr&gt;
+     *     &lt;td&gt;&lt;code&gt;default&lt;/code&gt;&lt;/td&gt;
+     *     &lt;td&gt;Best for audio that is not one of the specific audio models.
+     *         For example, long-form audio. Ideally the audio is high-fidelity,
+     *         recorded at a 16khz or greater sampling rate.&lt;/td&gt;
+     *   &lt;/tr&gt;
+     * &lt;/table&gt;
+     * </pre>
+     *
+     * <code>string model = 13;</code>
+     */
+    public Builder setModel(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      model_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * *Optional* Which model to select for the given request. Select the model
+     * best suited to your domain to get best results. If a model is not
+     * explicitly specified, then we auto-select a model based on the parameters
+     * in the RecognitionConfig.
+     * &lt;table&gt;
+     *   &lt;tr&gt;
+     *     &lt;td&gt;&lt;b&gt;Model&lt;/b&gt;&lt;/td&gt;
+     *     &lt;td&gt;&lt;b&gt;Description&lt;/b&gt;&lt;/td&gt;
+     *   &lt;/tr&gt;
+     *   &lt;tr&gt;
+     *     &lt;td&gt;&lt;code&gt;command_and_search&lt;/code&gt;&lt;/td&gt;
+     *     &lt;td&gt;Best for short queries such as voice commands or voice search.&lt;/td&gt;
+     *   &lt;/tr&gt;
+     *   &lt;tr&gt;
+     *     &lt;td&gt;&lt;code&gt;phone_call&lt;/code&gt;&lt;/td&gt;
+     *     &lt;td&gt;Best for audio that originated from a phone call (typically
+     *     recorded at an 8khz sampling rate).&lt;/td&gt;
+     *   &lt;/tr&gt;
+     *   &lt;tr&gt;
+     *     &lt;td&gt;&lt;code&gt;video&lt;/code&gt;&lt;/td&gt;
+     *     &lt;td&gt;Best for audio that originated from from video or includes multiple
+     *         speakers. Ideally the audio is recorded at a 16khz or greater
+     *         sampling rate. This is a premium model that costs more than the
+     *         standard rate.&lt;/td&gt;
+     *   &lt;/tr&gt;
+     *   &lt;tr&gt;
+     *     &lt;td&gt;&lt;code&gt;default&lt;/code&gt;&lt;/td&gt;
+     *     &lt;td&gt;Best for audio that is not one of the specific audio models.
+     *         For example, long-form audio. Ideally the audio is high-fidelity,
+     *         recorded at a 16khz or greater sampling rate.&lt;/td&gt;
+     *   &lt;/tr&gt;
+     * &lt;/table&gt;
+     * </pre>
+     *
+     * <code>string model = 13;</code>
+     */
+    public Builder clearModel() {
+      
+      model_ = getDefaultInstance().getModel();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * *Optional* Which model to select for the given request. Select the model
+     * best suited to your domain to get best results. If a model is not
+     * explicitly specified, then we auto-select a model based on the parameters
+     * in the RecognitionConfig.
+     * &lt;table&gt;
+     *   &lt;tr&gt;
+     *     &lt;td&gt;&lt;b&gt;Model&lt;/b&gt;&lt;/td&gt;
+     *     &lt;td&gt;&lt;b&gt;Description&lt;/b&gt;&lt;/td&gt;
+     *   &lt;/tr&gt;
+     *   &lt;tr&gt;
+     *     &lt;td&gt;&lt;code&gt;command_and_search&lt;/code&gt;&lt;/td&gt;
+     *     &lt;td&gt;Best for short queries such as voice commands or voice search.&lt;/td&gt;
+     *   &lt;/tr&gt;
+     *   &lt;tr&gt;
+     *     &lt;td&gt;&lt;code&gt;phone_call&lt;/code&gt;&lt;/td&gt;
+     *     &lt;td&gt;Best for audio that originated from a phone call (typically
+     *     recorded at an 8khz sampling rate).&lt;/td&gt;
+     *   &lt;/tr&gt;
+     *   &lt;tr&gt;
+     *     &lt;td&gt;&lt;code&gt;video&lt;/code&gt;&lt;/td&gt;
+     *     &lt;td&gt;Best for audio that originated from from video or includes multiple
+     *         speakers. Ideally the audio is recorded at a 16khz or greater
+     *         sampling rate. This is a premium model that costs more than the
+     *         standard rate.&lt;/td&gt;
+     *   &lt;/tr&gt;
+     *   &lt;tr&gt;
+     *     &lt;td&gt;&lt;code&gt;default&lt;/code&gt;&lt;/td&gt;
+     *     &lt;td&gt;Best for audio that is not one of the specific audio models.
+     *         For example, long-form audio. Ideally the audio is high-fidelity,
+     *         recorded at a 16khz or greater sampling rate.&lt;/td&gt;
+     *   &lt;/tr&gt;
+     * &lt;/table&gt;
+     * </pre>
+     *
+     * <code>string model = 13;</code>
+     */
+    public Builder setModelBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      model_ = value;
+      onChanged();
+      return this;
+    }
+
+    private boolean useEnhanced_ ;
+    /**
+     * <pre>
+     * *Optional* Set to true to use an enhanced model for speech recognition.
+     * You must also set the `model` field to a valid, enhanced model. If
+     * `use_enhanced` is set to true and the `model` field is not set, then
+     * `use_enhanced` is ignored. If `use_enhanced` is true and an enhanced
+     * version of the specified model does not exist, then the speech is
+     * recognized using the standard version of the specified model.
+     * Enhanced speech models require that you opt-in to data logging using
+     * instructions in the [documentation](/speech-to-text/enable-data-logging).
+     * If you set `use_enhanced` to true and you have not enabled audio logging,
+     * then you will receive an error.
+     * </pre>
+     *
+     * <code>bool use_enhanced = 14;</code>
+     */
+    public boolean getUseEnhanced() {
+      return useEnhanced_;
+    }
+    /**
+     * <pre>
+     * *Optional* Set to true to use an enhanced model for speech recognition.
+     * You must also set the `model` field to a valid, enhanced model. If
+     * `use_enhanced` is set to true and the `model` field is not set, then
+     * `use_enhanced` is ignored. If `use_enhanced` is true and an enhanced
+     * version of the specified model does not exist, then the speech is
+     * recognized using the standard version of the specified model.
+     * Enhanced speech models require that you opt-in to data logging using
+     * instructions in the [documentation](/speech-to-text/enable-data-logging).
+     * If you set `use_enhanced` to true and you have not enabled audio logging,
+     * then you will receive an error.
+     * </pre>
+     *
+     * <code>bool use_enhanced = 14;</code>
+     */
+    public Builder setUseEnhanced(boolean value) {
+      
+      useEnhanced_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * *Optional* Set to true to use an enhanced model for speech recognition.
+     * You must also set the `model` field to a valid, enhanced model. If
+     * `use_enhanced` is set to true and the `model` field is not set, then
+     * `use_enhanced` is ignored. If `use_enhanced` is true and an enhanced
+     * version of the specified model does not exist, then the speech is
+     * recognized using the standard version of the specified model.
+     * Enhanced speech models require that you opt-in to data logging using
+     * instructions in the [documentation](/speech-to-text/enable-data-logging).
+     * If you set `use_enhanced` to true and you have not enabled audio logging,
+     * then you will receive an error.
+     * </pre>
+     *
+     * <code>bool use_enhanced = 14;</code>
+     */
+    public Builder clearUseEnhanced() {
+      
+      useEnhanced_ = false;
+      onChanged();
+      return this;
+    }
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
-    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -1757,12 +2387,11 @@ private static final long serialVersionUID = 0L;
 
   private static final com.google.protobuf.Parser<RecognitionConfig>
       PARSER = new com.google.protobuf.AbstractParser<RecognitionConfig>() {
-    @java.lang.Override
     public RecognitionConfig parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new RecognitionConfig(input, extensionRegistry);
+        return new RecognitionConfig(input, extensionRegistry);
     }
   };
 
@@ -1775,7 +2404,6 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
-  @java.lang.Override
   public com.google.cloud.speech.v1.RecognitionConfig getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }

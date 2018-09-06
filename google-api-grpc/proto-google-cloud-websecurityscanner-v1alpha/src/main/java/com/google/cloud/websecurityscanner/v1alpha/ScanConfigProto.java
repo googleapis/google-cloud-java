@@ -57,7 +57,7 @@ public final class ScanConfigProto {
       "ing_urls\030\004 \003(\t\022Z\n\016authentication\030\005 \001(\0132B" +
       ".google.cloud.websecurityscanner.v1alpha" +
       ".ScanConfig.Authentication\022Q\n\nuser_agent" +
-      "\030\006 \001(\0162=.google.cloud.websecurityscanner" +
+      "\030\006 \001(\0162=.google.cloud.websecurityscanner",
       ".v1alpha.ScanConfig.UserAgent\022\032\n\022blackli" +
       "st_patterns\030\007 \003(\t\022N\n\010schedule\030\010 \001(\0132<.go" +
       "ogle.cloud.websecurityscanner.v1alpha.Sc" +
@@ -67,7 +67,7 @@ public final class ScanConfigProto {
       "entication\022j\n\016google_account\030\001 \001(\0132P.goo" +
       "gle.cloud.websecurityscanner.v1alpha.Sca" +
       "nConfig.Authentication.GoogleAccountH\000\022j" +
-      "\n\016custom_account\030\002 \001(\0132P.google.cloud.we" +
+      "\n\016custom_account\030\002 \001(\0132P.google.cloud.we",
       "bsecurityscanner.v1alpha.ScanConfig.Auth" +
       "entication.CustomAccountH\000\0323\n\rGoogleAcco" +
       "unt\022\020\n\010username\030\001 \001(\t\022\020\n\010password\030\002 \001(\t\032" +
@@ -77,7 +77,7 @@ public final class ScanConfigProto {
       " \001(\0132\032.google.protobuf.Timestamp\022\036\n\026inte" +
       "rval_duration_days\030\002 \001(\005\"`\n\tUserAgent\022\032\n" +
       "\026USER_AGENT_UNSPECIFIED\020\000\022\020\n\014CHROME_LINU" +
-      "X\020\001\022\022\n\016CHROME_ANDROID\020\002\022\021\n\rSAFARI_IPHONE" +
+      "X\020\001\022\022\n\016CHROME_ANDROID\020\002\022\021\n\rSAFARI_IPHONE",
       "\020\003\"N\n\016TargetPlatform\022\037\n\033TARGET_PLATFORM_" +
       "UNSPECIFIED\020\000\022\016\n\nAPP_ENGINE\020\001\022\013\n\007COMPUTE" +
       "\020\002B\233\001\n+com.google.cloud.websecurityscann" +

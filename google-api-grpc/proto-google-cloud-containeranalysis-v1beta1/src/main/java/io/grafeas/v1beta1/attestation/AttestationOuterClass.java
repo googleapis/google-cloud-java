@@ -57,7 +57,7 @@ public final class AttestationOuterClass {
       "ey_id\030\002 \001(\tH\000\"D\n\013ContentType\022\034\n\030CONTENT_" +
       "TYPE_UNSPECIFIED\020\000\022\027\n\023SIMPLE_SIGNING_JSO" +
       "N\020\001B\010\n\006key_id\"k\n\tAuthority\0229\n\004hint\030\001 \001(\013" +
-      "2+.grafeas.v1beta1.attestation.Authority" +
+      "2+.grafeas.v1beta1.attestation.Authority",
       ".Hint\032#\n\004Hint\022\033\n\023human_readable_name\030\001 \001" +
       "(\t\"H\n\007Details\022=\n\013attestation\030\001 \001(\0132(.gra" +
       "feas.v1beta1.attestation.Attestation\"o\n\013" +

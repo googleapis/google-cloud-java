@@ -47,7 +47,7 @@ public final class AudioConfigProto {
       "peechConfig\022\025\n\rspeaking_rate\030\001 \001(\001\022\r\n\005pi" +
       "tch\030\002 \001(\001\022\026\n\016volume_gain_db\030\003 \001(\001\022\032\n\022eff" +
       "ects_profile_id\030\005 \003(\t\022D\n\005voice\030\004 \001(\01325.g" +
-      "oogle.cloud.dialogflow.v2beta1.VoiceSele" +
+      "oogle.cloud.dialogflow.v2beta1.VoiceSele",
       "ctionParams\"\327\001\n\021OutputAudioConfig\022L\n\016aud" +
       "io_encoding\030\001 \001(\01624.google.cloud.dialogf" +
       "low.v2beta1.OutputAudioEncoding\022\031\n\021sampl" +
@@ -57,7 +57,7 @@ public final class AudioConfigProto {
       "iceGender\022!\n\035SSML_VOICE_GENDER_UNSPECIFI" +
       "ED\020\000\022\032\n\026SSML_VOICE_GENDER_MALE\020\001\022\034\n\030SSML" +
       "_VOICE_GENDER_FEMALE\020\002\022\035\n\031SSML_VOICE_GEN" +
-      "DER_NEUTRAL\020\003*\244\001\n\023OutputAudioEncoding\022%\n" +
+      "DER_NEUTRAL\020\003*\244\001\n\023OutputAudioEncoding\022%\n",
       "!OUTPUT_AUDIO_ENCODING_UNSPECIFIED\020\000\022#\n\037" +
       "OUTPUT_AUDIO_ENCODING_LINEAR_16\020\001\022\035\n\031OUT" +
       "PUT_AUDIO_ENCODING_MP3\020\002\022\"\n\036OUTPUT_AUDIO" +
