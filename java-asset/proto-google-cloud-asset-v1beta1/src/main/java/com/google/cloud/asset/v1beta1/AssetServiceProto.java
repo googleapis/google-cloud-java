@@ -58,45 +58,45 @@ public final class AssetServiceProto {
       "ogle/api/annotations.proto\032\'google/cloud" +
       "/asset/v1beta1/assets.proto\032#google/long" +
       "running/operations.proto\032\037google/protobu" +
-      "f/timestamp.proto\"\352\001\n\023ExportAssetsReques" +
+      "f/timestamp.proto\"\351\001\n\023ExportAssetsReques" +
       "t\022\016\n\006parent\030\001 \001(\t\022-\n\tread_time\030\002 \001(\0132\032.g" +
       "oogle.protobuf.Timestamp\022\023\n\013asset_types\030" +
-      "\003 \003(\t\022>\n\rcontent_types\030\004 \003(\0162\'.google.cl" +
-      "oud.asset.v1beta1.ContentType\022?\n\routput_" +
-      "config\030\005 \001(\0132(.google.cloud.asset.v1beta" +
-      "1.OutputConfig\"\206\001\n\024ExportAssetsResponse\022" +
-      "-\n\tread_time\030\001 \001(\0132\032.google.protobuf.Tim" +
-      "estamp\022?\n\routput_config\030\002 \001(\0132(.google.c" +
-      "loud.asset.v1beta1.OutputConfig\"\304\001\n\034Batc" +
-      "hGetAssetsHistoryRequest\022\016\n\006parent\030\001 \001(\t" +
-      "\022\023\n\013asset_names\030\002 \003(\t\022=\n\014content_type\030\003 " +
-      "\001(\0162\'.google.cloud.asset.v1beta1.Content" +
-      "Type\022@\n\020read_time_window\030\004 \001(\0132&.google." +
-      "cloud.asset.v1beta1.TimeWindow\"Z\n\035BatchG" +
-      "etAssetsHistoryResponse\0229\n\006assets\030\001 \003(\0132" +
-      ").google.cloud.asset.v1beta1.TemporalAss" +
-      "et\"d\n\014OutputConfig\022E\n\017gcs_destination\030\001 " +
-      "\001(\0132*.google.cloud.asset.v1beta1.GcsDest" +
-      "inationH\000B\r\n\013destination\"\035\n\016GcsDestinati" +
-      "on\022\013\n\003uri\030\001 \001(\t*I\n\013ContentType\022\034\n\030CONTEN" +
-      "T_TYPE_UNSPECIFIED\020\000\022\014\n\010RESOURCE\020\001\022\016\n\nIA" +
-      "M_POLICY\020\0022\337\003\n\014AssetService\022\311\001\n\014ExportAs" +
-      "sets\022/.google.cloud.asset.v1beta1.Export" +
-      "AssetsRequest\032\035.google.longrunning.Opera" +
-      "tion\"i\202\323\344\223\002c\")/v1beta1/{parent=projects/" +
-      "*}:exportAssets:\001*Z3\"./v1beta1/{parent=o" +
-      "rganizations/*}:exportAssets:\001*\022\202\002\n\025Batc" +
-      "hGetAssetsHistory\0228.google.cloud.asset.v" +
-      "1beta1.BatchGetAssetsHistoryRequest\0329.go" +
-      "ogle.cloud.asset.v1beta1.BatchGetAssetsH" +
-      "istoryResponse\"t\202\323\344\223\002n\0222/v1beta1/{parent" +
-      "=projects/*}:batchGetAssetsHistoryZ8\0226/v" +
-      "1beta1/{parent=organizations/*}:batchGet" +
-      "AssetHistoryB\260\001\n\036com.google.cloud.asset." +
-      "v1beta1B\021AssetServiceProtoP\001Z?google.gol" +
-      "ang.org/genproto/googleapis/cloud/asset/" +
-      "v1beta1;asset\252\002\032Google.Cloud.Asset.V1Bet" +
-      "a1\312\002\032Google\\Cloud\\Asset\\V1beta1b\006proto3"
+      "\003 \003(\t\022=\n\014content_type\030\004 \001(\0162\'.google.clo" +
+      "ud.asset.v1beta1.ContentType\022?\n\routput_c",
+      "onfig\030\005 \001(\0132(.google.cloud.asset.v1beta1" +
+      ".OutputConfig\"\206\001\n\024ExportAssetsResponse\022-" +
+      "\n\tread_time\030\001 \001(\0132\032.google.protobuf.Time" +
+      "stamp\022?\n\routput_config\030\002 \001(\0132(.google.cl" +
+      "oud.asset.v1beta1.OutputConfig\"\304\001\n\034Batch" +
+      "GetAssetsHistoryRequest\022\016\n\006parent\030\001 \001(\t\022" +
+      "\023\n\013asset_names\030\002 \003(\t\022=\n\014content_type\030\003 \001" +
+      "(\0162\'.google.cloud.asset.v1beta1.ContentT" +
+      "ype\022@\n\020read_time_window\030\004 \001(\0132&.google.c" +
+      "loud.asset.v1beta1.TimeWindow\"Z\n\035BatchGe",
+      "tAssetsHistoryResponse\0229\n\006assets\030\001 \003(\0132)" +
+      ".google.cloud.asset.v1beta1.TemporalAsse" +
+      "t\"d\n\014OutputConfig\022E\n\017gcs_destination\030\001 \001" +
+      "(\0132*.google.cloud.asset.v1beta1.GcsDesti" +
+      "nationH\000B\r\n\013destination\"\035\n\016GcsDestinatio" +
+      "n\022\013\n\003uri\030\001 \001(\t*I\n\013ContentType\022\034\n\030CONTENT" +
+      "_TYPE_UNSPECIFIED\020\000\022\014\n\010RESOURCE\020\001\022\016\n\nIAM" +
+      "_POLICY\020\0022\337\003\n\014AssetService\022\311\001\n\014ExportAss" +
+      "ets\022/.google.cloud.asset.v1beta1.ExportA" +
+      "ssetsRequest\032\035.google.longrunning.Operat",
+      "ion\"i\202\323\344\223\002c\")/v1beta1/{parent=projects/*" +
+      "}:exportAssets:\001*Z3\"./v1beta1/{parent=or" +
+      "ganizations/*}:exportAssets:\001*\022\202\002\n\025Batch" +
+      "GetAssetsHistory\0228.google.cloud.asset.v1" +
+      "beta1.BatchGetAssetsHistoryRequest\0329.goo" +
+      "gle.cloud.asset.v1beta1.BatchGetAssetsHi" +
+      "storyResponse\"t\202\323\344\223\002n\0222/v1beta1/{parent=" +
+      "projects/*}:batchGetAssetsHistoryZ8\0226/v1" +
+      "beta1/{parent=organizations/*}:batchGetA" +
+      "ssetHistoryB\260\001\n\036com.google.cloud.asset.v",
+      "1beta1B\021AssetServiceProtoP\001Z?google.gola" +
+      "ng.org/genproto/googleapis/cloud/asset/v" +
+      "1beta1;asset\252\002\032Google.Cloud.Asset.V1Beta" +
+      "1\312\002\032Google\\Cloud\\Asset\\V1beta1b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -119,7 +119,7 @@ public final class AssetServiceProto {
     internal_static_google_cloud_asset_v1beta1_ExportAssetsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_cloud_asset_v1beta1_ExportAssetsRequest_descriptor,
-        new java.lang.String[] { "Parent", "ReadTime", "AssetTypes", "ContentTypes", "OutputConfig", });
+        new java.lang.String[] { "Parent", "ReadTime", "AssetTypes", "ContentType", "OutputConfig", });
     internal_static_google_cloud_asset_v1beta1_ExportAssetsResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_google_cloud_asset_v1beta1_ExportAssetsResponse_fieldAccessorTable = new
