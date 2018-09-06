@@ -16,86 +16,68 @@
 package com.google.cloud.bigtable.admin.v2.models;
 
 import com.google.api.core.InternalApi;
+import com.google.bigtable.admin.v2.Table.ClusterState.ReplicationState;
 import com.google.bigtable.admin.v2.TableName;
-import com.google.common.base.MoreObjects;
 import com.google.common.base.Objects;
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
-import java.util.Collection;
+import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import javax.annotation.Nonnull;
 
 /** Wrapper for {@link Table} protocol buffer object */
 public final class Table {
-  private final TableName tableName;
-  //  TODO(igorbernstein2): avoid duplication of id as keys and embedded in the models
-  private final Map<String, ClusterState> clusterStates;
-  private final Map<String, ColumnFamily> columnFamilies;
+  private final String id;
+  private final String instanceId;
+  private final Map<String, ReplicationState> replicationStatesByClusterId;
+  private final List<ColumnFamily> columnFamilies;
 
   @InternalApi
   public static Table fromProto(@Nonnull com.google.bigtable.admin.v2.Table proto) {
-    ImmutableMap.Builder<String, ClusterState> clusterStates = ImmutableMap.builder();
+    ImmutableMap.Builder<String, ReplicationState> replicationStates = ImmutableMap.builder();
 
     for (Entry<String, com.google.bigtable.admin.v2.Table.ClusterState> entry : proto.getClusterStatesMap().entrySet()) {
-      clusterStates.put(entry.getKey(), ClusterState.fromProto(entry.getKey(), entry.getValue()));
+      replicationStates.put(entry.getKey(), entry.getValue().getReplicationState());
     }
 
-    ImmutableMap.Builder<String, ColumnFamily> columnFamilies = ImmutableMap.builder();
+    ImmutableList.Builder<ColumnFamily> columnFamilies = ImmutableList.builder();
 
     for (Entry<String, com.google.bigtable.admin.v2.ColumnFamily> entry : proto.getColumnFamiliesMap().entrySet()) {
-      columnFamilies.put(entry.getKey(), ColumnFamily.fromProto(entry.getKey(), entry.getValue()));
+      columnFamilies.add(ColumnFamily.fromProto(entry.getKey(), entry.getValue()));
     }
 
     return new Table(
         TableName.parse(proto.getName()),
-        clusterStates.build(),
+        replicationStates.build(),
         columnFamilies.build());
   }
 
   private Table(TableName tableName,
-      Map<String, ClusterState> clusterStates,
-      Map<String, ColumnFamily> columnFamilies) {
-    this.tableName = tableName;
-    this.clusterStates = clusterStates;
+      Map<String, ReplicationState> replicationStatesByClusterId,
+      List<ColumnFamily> columnFamilies) {
+    this.instanceId = tableName.getInstance();
+    this.id = tableName.getTable();
+    this.replicationStatesByClusterId = replicationStatesByClusterId;
     this.columnFamilies = columnFamilies;
   }
 
-  /**
-   * Gets the unique name of the table in the format:
-   * projects/{project}/instances/{instance}/tables/{tableId}
-   */
-  public TableName getTableName() {
-    return tableName;
+  /** Gets the table's id. */
+  public String getId() {
+    return id;
   }
 
-  // TODO(igorbernstein2): don't expose the objects as both maps & lists
-  /**
-   * Returns state of the table by clusters in the instance as map of clusterId and {@link
-   * ClusterState}
-   */
-  public Map<String, ClusterState> getClusterStatesMap() {
-    return clusterStates;
+  /** Gets the id of the instance that owns this Table. */
+  public String getInstanceId() {
+    return instanceId;
   }
 
-  /**
-   * Returns a map of columfamilies in the table keyed by columnfamily and name
-   */
-  public Map<String, ColumnFamily> getColumnFamiliesMap() {
+  public Map<String, ReplicationState> getReplicationStatesByClusterId() {
+    return replicationStatesByClusterId;
+  }
+
+  public List<ColumnFamily> getColumnFamilies() {
     return columnFamilies;
-  }
-
-  /**
-   * Returns state of the table by clusters in the instance as a Collection
-   */
-  public Collection<ClusterState> getClusterStates() {
-    return clusterStates.values();
-  }
-
-  /**
-   * Returns all columnfamilies in the table as a Collection
-   */
-  public Collection<ColumnFamily> getColumnFamiles() {
-    return columnFamilies.values();
   }
 
   @Override
@@ -107,22 +89,15 @@ public final class Table {
       return false;
     }
     Table table = (Table) o;
-    return Objects.equal(tableName, table.tableName) &&
-        Objects.equal(clusterStates, table.clusterStates) &&
+    return Objects.equal(id, table.id) &&
+        Objects.equal(instanceId, table.instanceId) &&
+        Objects
+            .equal(replicationStatesByClusterId, table.replicationStatesByClusterId) &&
         Objects.equal(columnFamilies, table.columnFamilies);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hashCode(tableName, clusterStates, columnFamilies);
-  }
-
-  @Override
-  public String toString() {
-    return MoreObjects.toStringHelper(this)
-        .add("tableName", tableName)
-        .add("clusterStates", getClusterStates())
-        .add("columnFamiles", getColumnFamiles())
-        .toString();
+    return Objects.hashCode(id, instanceId, replicationStatesByClusterId, columnFamilies);
   }
 }
