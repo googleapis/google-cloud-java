@@ -15,34 +15,34 @@
  */
 package com.google.cloud.bigtable.admin.v2;
 
-import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListTablesPagedResponse;
-import com.google.common.util.concurrent.MoreExecutors;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.bigtable.admin.v2.CheckConsistencyResponse;
 import com.google.bigtable.admin.v2.DeleteTableRequest;
 import com.google.bigtable.admin.v2.DropRowRangeRequest;
-import com.google.bigtable.admin.v2.DropRowRangeRequest.Builder;
 import com.google.bigtable.admin.v2.GenerateConsistencyTokenRequest;
 import com.google.bigtable.admin.v2.GenerateConsistencyTokenResponse;
 import com.google.bigtable.admin.v2.GetTableRequest;
 import com.google.bigtable.admin.v2.InstanceName;
 import com.google.bigtable.admin.v2.ListTablesRequest;
-import com.google.bigtable.admin.v2.ListTablesResponse;
 import com.google.bigtable.admin.v2.TableName;
+import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListTablesPagedResponse;
+import com.google.cloud.bigtable.admin.v2.models.ConsistencyToken;
 import com.google.cloud.bigtable.admin.v2.models.CreateTableRequest;
 import com.google.cloud.bigtable.admin.v2.models.ModifyColumnFamiliesRequest;
-import com.google.cloud.bigtable.admin.v2.models.ConsistencyToken;
 import com.google.cloud.bigtable.admin.v2.models.Table;
 import com.google.cloud.bigtable.admin.v2.stub.BigtableTableAdminStub;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
+import com.google.common.collect.Lists;
+import com.google.common.util.concurrent.Futures;
+import com.google.common.util.concurrent.MoreExecutors;
+import com.google.common.util.concurrent.UncheckedExecutionException;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
+import java.io.IOException;
+import java.util.List;
 import javax.annotation.Nonnull;
 
 /**
@@ -57,7 +57,7 @@ import javax.annotation.Nonnull;
  * <pre>{@code
  * try(BigtableTableAdminClient client =  BigtableTableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
  *   CreateTable request =
- *     CreateTableRequest.of("tableId")
+ *     CreateTableRequest.of("my-table")
  *       .addFamily("cf1")
  *       .addFamily("cf2", GCRULES.maxVersions(10))
  *       .addSplit(ByteString.copyFromUtf8("b"))
@@ -99,21 +99,25 @@ public final class BigtableTableAdminClient implements AutoCloseable {
   private final InstanceName instanceName;
 
   /** Constructs an instance of BigtableTableAdminClient with the given instanceName. */
-  public static BigtableTableAdminClient create(@Nonnull InstanceName instanceName) throws IOException {
+  public static BigtableTableAdminClient create(@Nonnull InstanceName instanceName)
+      throws IOException {
     return create(BigtableTableAdminSettings.newBuilder().setInstanceName(instanceName).build());
   }
 
   /** Constructs an instance of BigtableTableAdminClient with the given settings. */
-  public static BigtableTableAdminClient create(@Nonnull BigtableTableAdminSettings settings) throws IOException {
+  public static BigtableTableAdminClient create(@Nonnull BigtableTableAdminSettings settings)
+      throws IOException {
     return create(settings.getInstanceName(), settings.getStubSettings().createStub());
   }
 
   /** Constructs an instance of BigtableTableAdminClient with the given instanceName and stub. */
-  public static BigtableTableAdminClient create(@Nonnull InstanceName instanceName, @Nonnull BigtableTableAdminStub stub) {
+  public static BigtableTableAdminClient create(@Nonnull InstanceName instanceName,
+      @Nonnull BigtableTableAdminStub stub) {
     return new BigtableTableAdminClient(instanceName, stub);
   }
 
-  private BigtableTableAdminClient(@Nonnull InstanceName instanceName, @Nonnull BigtableTableAdminStub stub) {
+  private BigtableTableAdminClient(@Nonnull InstanceName instanceName,
+      @Nonnull BigtableTableAdminStub stub) {
     Preconditions.checkNotNull(instanceName);
     Preconditions.checkNotNull(stub);
     this.instanceName = instanceName;
@@ -136,15 +140,15 @@ public final class BigtableTableAdminClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre>{@code
-   * try(BigtableTableAdminClient client =  BigtableTableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
-   *   CreateTableRequest request = CreateTableRequest.of("tableId")
-   *       .addFamily("cf2", GCRULES.maxVersions(10))
-   *   client.createTable(request);
-   * }
+   * Table table = client.createTable(
+   *   CreateTableRequest.of("my-table")
+   *     .addFamily("cf2", GCRULES.maxVersions(1)
+   * );
    * }</pre>
    *
-   * @see CreateTableRequest for createTable configurations
+   * @see CreateTableRequest for available options.
    */
+  @SuppressWarnings("WeakerAccess")
   public Table createTable(CreateTableRequest request) {
     return awaitFuture(createTableAsync(request));
   }
@@ -155,15 +159,29 @@ public final class BigtableTableAdminClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre>{@code
-   *  try(BigtableTableAdminClient client =  BigtableTableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
-   *    CreateTableRequest request = CreateTableRequest.of("tableId")
-   *        .addFamily("cf2", GCRULES.maxVersions(10))
-   *    client.createTableAsync(request);
-   *  }
-   *  }</pre>
+   * ApiFuture<Table> tableFuture = client.createTableAsync(
+   *   CreateTableRequest.of("my-table")
+   *     .addFamily("cf", GCRules.GCRULES.maxVersions(1))
+   * );
    *
-   * @see CreateTableRequest for createTable configurations
+   * ApiFutures.addCallback(
+   *   tableFuture,
+   *   new ApiFutureCallback<Table>() {
+   *     public void onSuccess(Table table) {
+   *       System.out.println("Created table: " + table.getTableName());
+   *     }
+   *
+   *     public void onFailure(Throwable t) {
+   *       t.printStackTrace();
+   *     }
+   *   },
+   *   MoreExecutors.directExecutor()
+   * );
+   * }</pre>
+   *
+   * @see CreateTableRequest for available options.
    */
+  @SuppressWarnings("WeakerAccess")
   public ApiFuture<Table> createTableAsync(CreateTableRequest request) {
     return transformToTableResponse(
         this.stub.createTableCallable().futureCall(request.toProto(instanceName)));
@@ -175,129 +193,194 @@ public final class BigtableTableAdminClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre>{@code
-   * try(BigtableTableAdminClient client =  BigtableTableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
-   *   ModifyFamilies request = ModifyColumnFamiliesRequest.of(tableId)
-   *     .addFamily("mf1")
-   *     .addFamily(
-   *       "mf2", GCRULES.maxAge(Duration.ofSeconds(1000, 20000)))
+   * Table modifiedTable = client.modifyFamilies(
+   *   ModifyColumnFamiliesRequest.of(tableId)
+   *     .addFamily("cf1")
+   *     .addFamily("cf2", GCRULES.maxAge(Duration.ofSeconds(1000, 20000)))
    *     .updateFamily(
-   *       "mf1",
-   *          GCRULES
-   *            .union()
-   *              .rule(GCRULES.maxAge(Duration.ofSeconds(100)))
-   *              .rule(GCRULES.maxVersions(1)))
+   *       "cf3",
+   *       GCRULES.union()
+   *         .rule(GCRULES.maxAge(Duration.ofSeconds(100)))
+   *         .rule(GCRULES.maxVersions(1))
+   *       )
    *     .addFamily(
-   *       "mf3",
-   *         GCRULES
-   *           .intersection()
-   *           .rule(GCRULES.maxAge(Duration.ofSeconds(2000)))
-   *           .rule(GCRULES.maxVersions(10)))
-   *     .dropFamily("mf1")
-   *    client.modifyFamilies(request);
+   *       "cf4",
+   *       GCRULES.intersection()
+   *         .rule(GCRULES.maxAge(Duration.ofSeconds(2000)))
+   *         .rule(GCRULES.maxVersions(10))
+   *     )
+   *     .dropFamily("cf5")
+   * );
+   *
+   * System.out.println("Resulting families:");
+   *
+   * for (ColumnFamily cf : modifiedTable.getColumnFamilies()) {
+   *   System.out.println(cf.getId());
    * }
    * }</pre>
    *
-   * @see ModifyColumnFamiliesRequest for modifyFamily options
+   * @see ModifyColumnFamiliesRequest for available options.
    */
+  @SuppressWarnings("WeakerAccess")
   public Table modifyFamilies(ModifyColumnFamiliesRequest request) {
     return awaitFuture(modifyFamiliesAsync(request));
   }
 
   /**
-   * Creates, Updates and drops ColumnFamilies as per the request asynchronously
+   * Asynchronously creates, updates and drops ColumnFamilies as per the request.
    *
    * <p>Sample code:
    *
    * <pre>{@code
-   * try(BigtableTableAdminClient client =  BigtableTableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
-   *   ModifyFamilies request = ModifyColumnFamiliesRequest.of(tableId)
-   *     .addFamily("mf1")
-   *     .addFamily(
-   *       "mf2", GCRULES.maxAge(Duration.ofSeconds(1000, 20000)))
+   * ApiFuture<Table> modifiedTableFuture = client.modifyFamiliesAsync(
+   *   ModifyColumnFamiliesRequest.of(tableId)
+   *     .addFamily("cf1")
+   *     .addFamily("cf2", GCRULES.maxAge(Duration.ofSeconds(1000, 20000)))
    *     .updateFamily(
-   *       "mf1",
-   *          GCRULES
-   *            .union()
-   *              .rule(GCRULES.maxAge(Duration.ofSeconds(100)))
-   *              .rule(GCRULES.maxVersions(1)))
+   *       "cf3",
+   *       GCRULES.union()
+   *         .rule(GCRULES.maxAge(Duration.ofSeconds(100)))
+   *         .rule(GCRULES.maxVersions(1))
+   *       )
    *     .addFamily(
-   *       "mf3",
-   *         GCRULES
-   *           .intersection()
-   *           .rule(GCRULES.maxAge(Duration.ofSeconds(2000)))
-   *           .rule(GCRULES.maxVersions(10)))
-   *     .dropFamily("mf1")
-   *    client.modifyFamilies(request);
-   * }
+   *       "cf4",
+   *       GCRULES.intersection()
+   *         .rule(GCRULES.maxAge(Duration.ofSeconds(2000)))
+   *         .rule(GCRULES.maxVersions(10))
+   *     )
+   *     .dropFamily("cf5")
+   * );
+   *
+   * ApiFutures.addCallback(
+   *   modifiedTableFuture,
+   *   new ApiFutureCallback<Table>() {
+   *     public void onSuccess(Table table) {
+   *       System.out.println("Modified table: " + table.getTableName());
+   *       System.out.println("Resulting families:");
+   *
+   *       for (ColumnFamily cf : modifiedTable.getColumnFamilies()) {
+   *         System.out.println(cf.getId());
+   *       }
+   *     }
+   *
+   *     public void onFailure(Throwable t) {
+   *       t.printStackTrace();
+   *     }
+   *   },
+   *   MoreExecutors.directExecutor()
+   * );
    * }</pre>
    *
-   * @see ModifyColumnFamiliesRequest for modifyFamily options
+   * @see ModifyColumnFamiliesRequest for available options.
    */
+  @SuppressWarnings("WeakerAccess")
   public ApiFuture<Table> modifyFamiliesAsync(ModifyColumnFamiliesRequest request) {
     return transformToTableResponse(
         this.stub.modifyColumnFamiliesCallable().futureCall(request.toProto(instanceName)));
   }
 
   /**
-   * Deletes the specified tableId
+   * Deletes the table specified by tableId
    *
    * <p>Sample code:
    *
    * <pre>{@code
-   * try(BigtableTableAdminClient client =  BigtableTableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
-   *   client.deleteTable("tableId");
-   * }
+   * client.deleteTable("my-table");
    * }</pre>
    */
+  @SuppressWarnings("WeakerAccess")
   public void deleteTable(String tableId) {
     awaitFuture(deleteTableAsync(tableId));
   }
 
   /**
-   * Deletes the specified tableId asynchronously
+   * Asynchronously deletes the table specified by tableId.
    *
    * <p>Sample code:
    *
    * <pre>{@code
-   * try(BigtableTableAdminClient client =  BigtableTableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
-   *   client.deleteTableAsync("tableId");
-   * }
+   * ApiFuture<Void> future = client.deleteTableAsync("my-table");
+   *
+   * ApiFutures.addCallback(
+   *   future,
+   *   new ApiFutureCallback<Void>() {
+   *     public void onSuccess(Void ignored) {
+   *       System.out.println("Successfully deleted the table");
+   *     }
+   *
+   *     public void onFailure(Throwable t) {
+   *       t.printStackTrace();
+   *     }
+   *   },
+   *   MoreExecutors.directExecutor()
+   * );
    * }</pre>
    */
+  @SuppressWarnings("WeakerAccess")
   public ApiFuture<Void> deleteTableAsync(String tableId) {
-    return transformToVoid(
-        this.stub.deleteTableCallable().futureCall(composeDeleteTableRequest(tableId)));
+    DeleteTableRequest request = DeleteTableRequest.newBuilder()
+        .setName(getTableName(tableId))
+        .build();
+
+    return transformToVoid(this.stub.deleteTableCallable().futureCall(request));
   }
 
   /**
-   * Gets the Table by tableId
+   * Gets the table metadata by tableId.
    *
    * <p>Sample code:
    *
    * <pre>{@code
-   * try(BigtableTableAdminClient client =  BigtableTableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
-   *   client.getTable("tableId");
+   * Table table = client.getTable("my-table");
+   *
+   * System.out.println("Got metadata for table: " + table.getId());
+   * System.out.println("Column families:");
+   *
+   * for (ColumnFamily cf : table.getColumnFamilies()) {
+   *   System.out.println(cf.getId());
    * }
    * }</pre>
    */
+  @SuppressWarnings("WeakerAccess")
   public Table getTable(String tableId) {
     return awaitFuture(getTableAsync(tableId));
   }
 
   /**
-   * Gets the Table by tableId
+   * Asynchronously gets the table metadata by tableId.
    *
    * <p>Sample code:
    *
    * <pre>{@code
-   * try(BigtableTableAdminClient client =  BigtableTableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
-   *   client.getTableAsync("tableId");
-   * }
+   * ApiFuture<Table> tableFuture = client.getTableAsync("my-table");
+   *
+   * ApiFutures.addCallback(
+   *   tableFuture,
+   *   new ApiFutureCallback<Table>() {
+   *     public void onSuccess(Table table) {
+   *       System.out.println("Got metadata for table: " + table.getId());
+   *       System.out.println("Column families:");
+   *       for (ColumnFamily cf : table.getColumnFamilies()) {
+   *         System.out.println(cf.getId());
+   *       }
+   *     }
+   *
+   *     public void onFailure(Throwable t) {
+   *       t.printStackTrace();
+   *     }
+   *   },
+   *   MoreExecutors.directExecutor()
+   * );
    * }</pre>
    */
+  @SuppressWarnings("WeakerAccess")
   public ApiFuture<Table> getTableAsync(String tableId) {
+    GetTableRequest request = GetTableRequest.newBuilder()
+        .setName(getTableName(tableId))
+        .build();
+
     return transformToTableResponse(
-        this.stub.getTableCallable().futureCall(composeGetTableRequest(tableId)));
+        this.stub.getTableCallable().futureCall(request));
   }
 
   /**
@@ -306,36 +389,63 @@ public final class BigtableTableAdminClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre>{@code
-   * try(BigtableTableAdminClient client =  BigtableTableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
-   *   client.listTables();
+   * List<TableName> tableNames = client.listTables();
+   * for(TableName name : tableNames) {
+   *   System.out.println(name.getTable());
    * }
    * }</pre>
    */
+  // TODO(igorbernstein2): consider changing this method to use relative table ids.
+  @SuppressWarnings("WeakerAccess")
   public List<TableName> listTables() {
     return awaitFuture(listTablesAsync());
   }
 
   /**
-   * Lists all TableNames in the instance asynchronously
+   * Asynchronously lists all TableNames in the instance.
    *
    * <p>Sample code:
    *
    * <pre>{@code
-   * try(BigtableTableAdminClient client =  BigtableTableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
-   *   client.listTablesAsync();
-   * }
+   * ApiFuture<List<TableName>> listFuture = client.listTables();
+   *
+   * ApiFutures.addCallback(
+   *   listFuture,
+   *   new ApiFutureCallback<List<TableName>>() {
+   *     public void onSuccess(List<TableName> tableNames) {
+   *       System.out.println("Got list of tables:");
+   *       for (TableName name : tableNames) {
+   *         System.out.println(name.getTable());
+   *       }
+   *     }
+   *
+   *     public void onFailure(Throwable t) {
+   *       t.printStackTrace();
+   *     }
+   *   },
+   *   MoreExecutors.directExecutor()
+   * );
    * }</pre>
    */
+  // TODO(igorbernstein2): consider changing this method to use relative table ids.
+  @SuppressWarnings("WeakerAccess")
   public ApiFuture<List<TableName>> listTablesAsync() {
+    ListTablesRequest request = ListTablesRequest.newBuilder().setParent(instanceName.toString())
+        .build();
+
     ApiFuture<ListTablesPagedResponse> listResp =
-        this.stub.listTablesPagedCallable().futureCall(composeListTableRequest());
+        this.stub.listTablesPagedCallable().futureCall(request);
 
     return ApiFutures.transform(
         listResp,
         new ApiFunction<ListTablesPagedResponse, List<TableName>>() {
           @Override
-          public List<TableName> apply(ListTablesPagedResponse input) {
-            return convertToTableNames(input.iterateAll());
+          public List<TableName> apply(ListTablesPagedResponse response) {
+            List<TableName> results = Lists.newArrayList();
+            for (com.google.bigtable.admin.v2.Table proto : response.iterateAll()) {
+              results.add(TableName.parse(proto.getName()));
+            }
+            return results;
           }
         },
         MoreExecutors.directExecutor());
@@ -344,14 +454,15 @@ public final class BigtableTableAdminClient implements AutoCloseable {
   /**
    * Drops rows by the specified key prefix and tableId
    *
+   * <p>Please note that this method is considered part of the admin API and is rate limited.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
-   * try(BigtableTableAdminClient client =  BigtableTableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
-   *   client.dropRowRange("tableId");
-   * }
+   * client.dropRowRange("my-table", "prefix");
    * }</pre>
    */
+  @SuppressWarnings("WeakerAccess")
   public void dropRowRange(String tableId, String rowKeyPrefix) {
     awaitFuture(dropRowRangeAsync(tableId, rowKeyPrefix));
   }
@@ -359,14 +470,29 @@ public final class BigtableTableAdminClient implements AutoCloseable {
   /**
    * Drops rows by the specified key prefix and tableId asynchronously
    *
+   * <p>Please note that this method is considered part of the admin API and is rate limited.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
-   * try(BigtableTableAdminClient client =  BigtableTableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
-   *   client.dropRowRangeAsync("tableId");
-   * }
+   * ApiFuture<Void> dropFuture = client.dropRowRangeAsync("my-table", "prefix");
+   *
+   * ApiFutures.addCallback(
+   *   dropFuture,
+   *   new ApiFutureCallback<Void>() {
+   *     public void onSuccess(Void tableNames) {
+   *       System.out.println("Successfully dropped row range.");
+   *     }
+   *
+   *     public void onFailure(Throwable t) {
+   *       t.printStackTrace();
+   *     }
+   *   },
+   *   MoreExecutors.directExecutor()
+   * );
    * }</pre>
    */
+  @SuppressWarnings("WeakerAccess")
   public ApiFuture<Void> dropRowRangeAsync(String tableId, String rowKeyPrefix) {
     return dropRowRangeAsync(tableId, ByteString.copyFromUtf8(rowKeyPrefix));
   }
@@ -374,34 +500,55 @@ public final class BigtableTableAdminClient implements AutoCloseable {
   /**
    * Drops rows by the specified key prefix and tableId
    *
+   * <p>Please note that this method is considered part of the admin API and is rate limited.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
-   * try(BigtableTableAdminClient client =  BigtableTableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
-   *   client.dropRowRange("tableId");
-   * }
+   * client.dropRowRange("my-table", ByteString.copyFromUtf8("prefix"));
    * }</pre>
    */
+  @SuppressWarnings("WeakerAccess")
   public void dropRowRange(String tableId, ByteString rowKeyPrefix) {
     awaitFuture(dropRowRangeAsync(tableId, rowKeyPrefix));
   }
 
   /**
-   * Drops rows by the specified key prefix and tableId
+   * Drops rows by the specified key prefix and tableId asynchronously
+   *
+   * <p>Please note that this method is considered part of the admin API and is rate limited.
    *
    * <p>Sample code:
    *
    * <pre>{@code
-   * try(BigtableTableAdminClient client =  BigtableTableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
-   *   client.dropRowRangeAsync("tableId");
-   * }
+   * ApiFuture<Void> dropFuture = client.dropRowRangeAsync("my-table", ByteString.copyFromUtf8("prefix"));
+   *
+   * ApiFutures.addCallback(
+   *   dropFuture,
+   *   new ApiFutureCallback<Void>() {
+   *     public void onSuccess(Void tableNames) {
+   *       System.out.println("Successfully dropped row range.");
+   *     }
+   *
+   *     public void onFailure(Throwable t) {
+   *       t.printStackTrace();
+   *     }
+   *   },
+   *   MoreExecutors.directExecutor()
+   * );
    * }</pre>
    */
+  @SuppressWarnings("WeakerAccess")
   public ApiFuture<Void> dropRowRangeAsync(String tableId, ByteString rowKeyPrefix) {
+    DropRowRangeRequest request = DropRowRangeRequest.newBuilder()
+        .setName(getTableName(tableId))
+        .setRowKeyPrefix(rowKeyPrefix)
+        .build();
+
     return transformToVoid(
         this.stub
             .dropRowRangeCallable()
-            .futureCall(composeDropRowRangeRequest(tableId, rowKeyPrefix, false)));
+            .futureCall(request));
   }
 
   /**
@@ -410,31 +557,48 @@ public final class BigtableTableAdminClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre>{@code
-   * try(BigtableTableAdminClient client =  BigtableTableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
-   *   client.dropAllRows("tableId");
-   * }
+   * client.dropAllRows("my-table");
    * }</pre>
    */
+  @SuppressWarnings("WeakerAccess")
   public void dropAllRows(String tableId) {
     awaitFuture(dropAllRowsAsync(tableId));
   }
 
   /**
-   * Drops all data in the table asynchronously
+   * Asynchornously drops all data in the table.
    *
    * <p>Sample code:
    *
    * <pre>{@code
-   * try(BigtableTableAdminClient client =  BigtableTableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
-   *   client.dropAllRowsAsync("tableId");
-   * }
+   * ApiFuture<Void> dropFuture = client.dropAllRowsAsync("my-table");
+   *
+   * ApiFutures.addCallback(
+   *   dropFuture,
+   *   new ApiFutureCallback<Void>() {
+   *     public void onSuccess(Void tableNames) {
+   *       System.out.println("Successfully dropped all data");
+   *     }
+   *
+   *     public void onFailure(Throwable t) {
+   *       t.printStackTrace();
+   *     }
+   *   },
+   *   MoreExecutors.directExecutor()
+   * );
    * }</pre>
    */
+  @SuppressWarnings("WeakerAccess")
   public ApiFuture<Void> dropAllRowsAsync(String tableId) {
+    DropRowRangeRequest request = DropRowRangeRequest.newBuilder()
+        .setName(getTableName(tableId))
+        .setDeleteAllDataFromTable(true)
+        .build();
+
     return transformToVoid(
         this.stub
             .dropRowRangeCallable()
-            .futureCall(composeDropRowRangeRequest(tableId, null, true)));
+            .futureCall(request));
   }
 
   /**
@@ -444,39 +608,38 @@ public final class BigtableTableAdminClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre>{@code
-   * try(BigtableTableAdminClient client =  BigtableTableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
-   *   ConsistencyToken consistencyToken = client.generateConsistencyToken("tableId");
-   * }
+   * ConsistencyToken consistencyToken = client.generateConsistencyToken("my-table");
    * }</pre>
    */
+  @SuppressWarnings("WeakerAccess")
   public ConsistencyToken generateConsistencyToken(String tableId) {
     return awaitFuture(generateConsistencyTokenAsync(tableId));
   }
 
   /**
-   * Generates a token to verify the replication status of table mutations invoked before this call
-   * asynchronously Token expires in 90 days
+   * Asynchornously generates a token to verify the replication status of table mutations invoked
+   * before this call. Token expires in 90 days
    *
    * <p>Sample code:
    *
    * <pre>{@code
-   * try(BigtableTableAdminClient client =  BigtableTableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
-   *   ConsistencyToken consistencyToken = client.generateConsistencyToken("tableId");
-   * }
+   * ApiFuture<ConsistencyToken> consistencyTokenFuture = client.generateConsistencyToken("my-table");
    * }</pre>
    */
+  // TODO(igorbernstein2): add sample code for waiting for the fetch consistency token
+  @SuppressWarnings("WeakerAccess")
   public ApiFuture<ConsistencyToken> generateConsistencyTokenAsync(final String tableId) {
-    ApiFuture<GenerateConsistencyTokenResponse> tokenResp =
-        this.stub
-            .generateConsistencyTokenCallable()
-            .futureCall(composeGenerateConsistencyTokenRequest(tableId));
+    GenerateConsistencyTokenRequest request = GenerateConsistencyTokenRequest.newBuilder()
+        .setName(getTableName(tableId))
+        .build();
 
     return ApiFutures.transform(
-        tokenResp,
+        stub.generateConsistencyTokenCallable().futureCall(request),
         new ApiFunction<GenerateConsistencyTokenResponse, ConsistencyToken>() {
           @Override
           public ConsistencyToken apply(GenerateConsistencyTokenResponse proto) {
-            TableName tableName = TableName.of(instanceName.getProject(), instanceName.getInstance(), tableId);
+            TableName tableName = TableName
+                .of(instanceName.getProject(), instanceName.getInstance(), tableId);
             return ConsistencyToken.of(tableName, proto.getConsistencyToken());
           }
         },
@@ -501,6 +664,7 @@ public final class BigtableTableAdminClient implements AutoCloseable {
    * }
    * }</pre>
    */
+  @SuppressWarnings("WeakerAccess")
   public boolean isConsistent(ConsistencyToken token) {
     return awaitFuture(isConsistentAsync(token));
   }
@@ -524,76 +688,14 @@ public final class BigtableTableAdminClient implements AutoCloseable {
   // TODO(igorbernstein2): add awaitConsist() & awaitConsistAsync() that generate & poll a token
 
   /**
-   * Helper method to construct the table name in format:
-   * projects/{project}/instances/{instance}/tables/{tableId}
+   * Helper method to construct the table name in format: projects/{project}/instances/{instance}/tables/{tableId}
    */
-  @VisibleForTesting
-  String getTableName(String tableId) {
+  private String getTableName(String tableId) {
     return TableName.of(instanceName.getProject(), instanceName.getInstance(), tableId).toString();
   }
 
-  /**
-   * Helper method to build an instance of ListTablesRequest
-   */
-  @VisibleForTesting
-  ListTablesRequest composeListTableRequest() {
-    return ListTablesRequest.newBuilder().setParent(instanceName.toString()).build();
-  }
-
-  /**
-   * Helper method to build an instance of GetTableRequest
-   */
-  @VisibleForTesting
-  GetTableRequest composeGetTableRequest(String tableId) {
-    return GetTableRequest.newBuilder().setName(getTableName(tableId)).build();
-  }
-
-  /**
-   * Helper method to build an instance of DeleteTableRequest
-   */
-  @VisibleForTesting
-  DeleteTableRequest composeDeleteTableRequest(String tableId) {
-    return DeleteTableRequest.newBuilder().setName(getTableName(tableId)).build();
-  }
-
-  /**
-   * Helper method to build an instance of DropRowRangeRequest
-   */
-  @VisibleForTesting
-  DropRowRangeRequest composeDropRowRangeRequest(
-      String tableId, ByteString rowKeyPrefix, boolean dropAll) {
-    Builder dropRowReq = DropRowRangeRequest.newBuilder().setName(getTableName(tableId));
-
-    if (dropAll) {
-      dropRowReq.setDeleteAllDataFromTable(true);
-    } else {
-      dropRowReq.setRowKeyPrefix(rowKeyPrefix);
-    }
-    return dropRowReq.build();
-  }
-
-  /**
-   * Helper method to build an instance of GenerateConsistencyTokenRequest
-   */
-  @VisibleForTesting
-  GenerateConsistencyTokenRequest composeGenerateConsistencyTokenRequest(String tableId) {
-    return GenerateConsistencyTokenRequest.newBuilder().setName(getTableName(tableId)).build();
-  }
-
-  /**
-   * Helper method to convert ListTablesResponse to List<TableName>
-   */
-  @VisibleForTesting
-  static List<TableName> convertToTableNames(Iterable<com.google.bigtable.admin.v2.Table> listTablesResponse) {
-    List<TableName> tableNames = new ArrayList<>();
-
-    for (com.google.bigtable.admin.v2.Table table : listTablesResponse) {
-      tableNames.add(TableName.parse(table.getName()));
-    }
-    return tableNames;
-  }
-
   // TODO(igorbernstein): rename methods to make clear that they deal with futures.
+
   /**
    * Helper method to transform ApiFuture<com.google.bigtable.admin.v2.Table> to ApiFuture<Table>
    */
@@ -625,12 +727,28 @@ public final class BigtableTableAdminClient implements AutoCloseable {
         MoreExecutors.directExecutor());
   }
 
+  /**
+   * Awaits the result of a future, taking care to propagate errors while maintaining the call site
+   * in a suppressed exception. This allows semantic errors to be caught across threads, while
+   * preserving the call site in the error. The caller's stacktrace will be made available as a
+   * suppressed exception.
+   */
+  // TODO(igorbernstein2): try to move this into gax
   private <T> T awaitFuture(ApiFuture<T> future) {
+    RuntimeException error;
     try {
-      return future.get();
-    } catch(Throwable t) {
-      // TODO(igorbernstein2): figure out a better wrapper exception.
-      throw new RuntimeException(t);
+      return Futures.getUnchecked(future);
+    } catch (UncheckedExecutionException e) {
+      if (e.getCause() instanceof RuntimeException) {
+        error = (RuntimeException) e.getCause();
+      } else {
+        error = e;
+      }
+    } catch (RuntimeException e) {
+      error = e;
     }
+    // Add the caller's stack as a suppressed exception
+    error.addSuppressed(new RuntimeException("Encountered error while awaiting future"));
+    throw error;
   }
 }
