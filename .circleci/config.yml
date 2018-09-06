@@ -13,6 +13,7 @@ anchor_docker: &anchor_docker
     - image: circleci/openjdk:8-jdk
       environment:
         TERM: dumb
+        MAVEN_OPTS: -Xmx256m
 
 anchor_auth_vars: &anchor_auth_vars
   environment:
@@ -32,7 +33,7 @@ jobs:
       - image: maven:3.5.2-jdk-7
         environment:
           TERM: dumb
-          MAVEN_OPTS: -Xmx1024m
+          MAVEN_OPTS: -Xmx256m
     steps:
       - checkout
       - run:
