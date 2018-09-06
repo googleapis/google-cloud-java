@@ -54,7 +54,7 @@ public final class RowMutation implements MutationApi<RowMutation>, Serializable
   }
 
   /**
-   * Creates new instance of mutation builder by wrapping existing existing set of row mutations.
+   * Creates new instance of mutation builder by wrapping existing set of row mutations.
    * The builder will be owned by this RowMutation and should not be used by the caller after this call.
    * This functionality is intended for advanced usage.
    *
@@ -71,7 +71,7 @@ public final class RowMutation implements MutationApi<RowMutation>, Serializable
   }
 
   /**
-   * Creates new instance of mutation builder by wrapping existing existing set of row mutations.
+   * Creates new instance of mutation builder by wrapping existing set of row mutations.
    * The builder will be owned by this RowMutation and should not be used by the caller after this call.
    * This functionality is intended for advanced usage.
    *
