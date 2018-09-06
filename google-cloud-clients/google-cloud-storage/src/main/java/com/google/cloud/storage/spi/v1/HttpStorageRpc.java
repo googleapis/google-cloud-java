@@ -1209,6 +1209,23 @@ public class HttpStorageRpc implements StorageRpc {
   }
 
   @Override
+  public Bucket lockRetentionPolicy(Bucket bucket, Map<Option, ?> options) {
+    Span span = startSpan(HttpStorageRpcSpans.SPAN_LOCK_RETENTION_POLICY);
+    Scope scope = tracer.withSpan(span);
+    try {
+      return storage.buckets().lockRetentionPolicy(bucket.getName(), Option.IF_METAGENERATION_MATCH.getLong(options))
+          .setUserProject(Option.USER_PROJECT.getString(options)).execute();
+    } catch (IOException ex) {
+      span.setStatus(Status.UNKNOWN.withDescription(ex.getMessage()));
+      throw translate(ex);
+    } finally {
+      scope.close();
+      span.end();
+    }
+
+  }
+
+  @Override
   public ServiceAccount getServiceAccount(String projectId) {
     Span span = startSpan(HttpStorageRpcSpans.SPAN_NAME_GET_SERVICE_ACCOUNT);
     Scope scope = tracer.withSpan(span);
