@@ -87,7 +87,7 @@ public final class SessionProto {
       "oogle/protobuf/struct.proto\032\027google/rpc/" +
       "status.proto\032\030google/type/latlng.proto\"\273" +
       "\001\n\023DetectIntentRequest\022\017\n\007session\030\001 \001(\t\022" +
-      "A\n\014query_params\030\002 \001(\0132+.google.cloud.dia" +
+      "A\n\014query_params\030\002 \001(\0132+.google.cloud.dia",
       "logflow.v2.QueryParameters\022;\n\013query_inpu" +
       "t\030\003 \001(\0132&.google.cloud.dialogflow.v2.Que" +
       "ryInput\022\023\n\013input_audio\030\005 \001(\014\"\226\001\n\024DetectI" +
@@ -97,7 +97,7 @@ public final class SessionProto {
       "\0132\022.google.rpc.Status\"\225\002\n\017QueryParameter" +
       "s\022\021\n\ttime_zone\030\001 \001(\t\022)\n\014geo_location\030\002 \001" +
       "(\0132\023.google.type.LatLng\0225\n\010contexts\030\003 \003(" +
-      "\0132#.google.cloud.dialogflow.v2.Context\022\026" +
+      "\0132#.google.cloud.dialogflow.v2.Context\022\026",
       "\n\016reset_contexts\030\004 \001(\010\022K\n\024session_entity" +
       "_types\030\005 \003(\0132-.google.cloud.dialogflow.v" +
       "2.SessionEntityType\022(\n\007payload\030\006 \001(\0132\027.g" +
@@ -107,7 +107,7 @@ public final class SessionProto {
       "2%.google.cloud.dialogflow.v2.TextInputH" +
       "\000\0227\n\005event\030\003 \001(\0132&.google.cloud.dialogfl" +
       "ow.v2.EventInputH\000B\007\n\005input\"\270\004\n\013QueryRes" +
-      "ult\022\022\n\nquery_text\030\001 \001(\t\022\025\n\rlanguage_code" +
+      "ult\022\022\n\nquery_text\030\001 \001(\t\022\025\n\rlanguage_code",
       "\030\017 \001(\t\022%\n\035speech_recognition_confidence\030" +
       "\002 \001(\002\022\016\n\006action\030\003 \001(\t\022+\n\nparameters\030\004 \001(" +
       "\0132\027.google.protobuf.Struct\022#\n\033all_requir" +
@@ -117,7 +117,7 @@ public final class SessionProto {
       "age\022\026\n\016webhook_source\030\010 \001(\t\0220\n\017webhook_p" +
       "ayload\030\t \001(\0132\027.google.protobuf.Struct\022<\n" +
       "\017output_contexts\030\n \003(\0132#.google.cloud.di" +
-      "alogflow.v2.Context\0222\n\006intent\030\013 \001(\0132\".go" +
+      "alogflow.v2.Context\0222\n\006intent\030\013 \001(\0132\".go",
       "ogle.cloud.dialogflow.v2.Intent\022#\n\033inten" +
       "t_detection_confidence\030\014 \001(\002\0220\n\017diagnost" +
       "ic_info\030\016 \001(\0132\027.google.protobuf.Struct\"\336" +
@@ -127,7 +127,7 @@ public final class SessionProto {
       "uery_input\030\003 \001(\0132&.google.cloud.dialogfl" +
       "ow.v2.QueryInput\022\030\n\020single_utterance\030\004 \001" +
       "(\010\022\023\n\013input_audio\030\006 \001(\014\"\363\001\n\035StreamingDet" +
-      "ectIntentResponse\022\023\n\013response_id\030\001 \001(\t\022R" +
+      "ectIntentResponse\022\023\n\013response_id\030\001 \001(\t\022R",
       "\n\022recognition_result\030\002 \001(\01326.google.clou" +
       "d.dialogflow.v2.StreamingRecognitionResu" +
       "lt\022=\n\014query_result\030\003 \001(\0132\'.google.cloud." +
@@ -137,7 +137,7 @@ public final class SessionProto {
       "(\0162B.google.cloud.dialogflow.v2.Streamin" +
       "gRecognitionResult.MessageType\022\022\n\ntransc" +
       "ript\030\002 \001(\t\022\020\n\010is_final\030\003 \001(\010\022\022\n\nconfiden" +
-      "ce\030\004 \001(\002\"X\n\013MessageType\022\034\n\030MESSAGE_TYPE_" +
+      "ce\030\004 \001(\002\"X\n\013MessageType\022\034\n\030MESSAGE_TYPE_",
       "UNSPECIFIED\020\000\022\016\n\nTRANSCRIPT\020\001\022\033\n\027END_OF_" +
       "SINGLE_UTTERANCE\020\002\"\235\001\n\020InputAudioConfig\022" +
       "A\n\016audio_encoding\030\001 \001(\0162).google.cloud.d" +
@@ -147,7 +147,7 @@ public final class SessionProto {
       "\001 \001(\t\022\025\n\rlanguage_code\030\002 \001(\t\"^\n\nEventInp" +
       "ut\022\014\n\004name\030\001 \001(\t\022+\n\nparameters\030\002 \001(\0132\027.g" +
       "oogle.protobuf.Struct\022\025\n\rlanguage_code\030\003" +
-      " \001(\t*\373\001\n\rAudioEncoding\022\036\n\032AUDIO_ENCODING" +
+      " \001(\t*\373\001\n\rAudioEncoding\022\036\n\032AUDIO_ENCODING",
       "_UNSPECIFIED\020\000\022\034\n\030AUDIO_ENCODING_LINEAR_" +
       "16\020\001\022\027\n\023AUDIO_ENCODING_FLAC\020\002\022\030\n\024AUDIO_E" +
       "NCODING_MULAW\020\003\022\026\n\022AUDIO_ENCODING_AMR\020\004\022" +
@@ -157,7 +157,7 @@ public final class SessionProto {
       "ctIntent\022/.google.cloud.dialogflow.v2.De" +
       "tectIntentRequest\0320.google.cloud.dialogf" +
       "low.v2.DetectIntentResponse\"A\202\323\344\223\002;\"6/v2" +
-      "/{session=projects/*/agent/sessions/*}:d" +
+      "/{session=projects/*/agent/sessions/*}:d",
       "etectIntent:\001*\022\220\001\n\025StreamingDetectIntent" +
       "\0228.google.cloud.dialogflow.v2.StreamingD" +
       "etectIntentRequest\0329.google.cloud.dialog" +
