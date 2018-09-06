@@ -926,7 +926,6 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
    * ApiFuture<AppProfile> updatedAppProfileFuture = ApiFutures.transformAsync(
    *   existingAppProfileFuture,
    *   new ApiAsyncFunction<AppProfile, AppProfile>() {
-   *     @Override
    *     public ApiFuture<AppProfile> apply(AppProfile existingAppProfile) {
    *       return client.updateAppProfileAsync(
    *         UpdateAppProfileRequest.of(existingAppProfile)
