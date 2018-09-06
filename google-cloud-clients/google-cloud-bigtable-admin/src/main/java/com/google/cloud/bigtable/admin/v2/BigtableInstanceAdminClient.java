@@ -919,15 +919,14 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
    *
    * <p>Sample code:
    *
-   * <pre>{@code
+   * <pre><code>
    *
-   * ApiFuture\<AppProfile\> existingAppProfileFuture = client.getAppProfileAsync("my-instance", "my-app-profile");
+   * ApiFuture<AppProfile> existingAppProfileFuture = client.getAppProfileAsync("my-instance", "my-app-profile");
    *
-   * ApiFuture\<AppProfile\> updatedAppProfileFuture = ApiFutures.transformAsync(
+   * ApiFuture<AppProfile> updatedAppProfileFuture = ApiFutures.transformAsync(
    *   existingAppProfileFuture,
-   *   new ApiAsyncFunction\<AppProfile, AppProfile\>() {
-   *     \@Override
-   *     public ApiFuture\<AppProfile\> apply(AppProfile existingAppProfile) {
+   *   new ApiAsyncFunction<AppProfile, AppProfile>() {
+   *     public ApiFuture<AppProfile> apply(AppProfile existingAppProfile) {
    *       return client.updateAppProfileAsync(
    *         UpdateAppProfileRequest.of(existingAppProfile)
    *           .setRoutingPolicy(SingleClusterRoutingPolicy.of("my-other-cluster"))
@@ -937,8 +936,8 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
    *   MoreExecutors.directExecutor()
    * );
    *
-   * ApiFuture\<AppProfile\> appProfile = updatedAppProfileFuture.get();
-   * }</pre>
+   * ApiFuture<AppProfile> appProfile = updatedAppProfileFuture.get();
+   * }</code></pre>
    *
    * @see UpdateAppProfileRequest
    */
