@@ -38,53 +38,89 @@ public class RowMutationTest {
   private static final String APP_PROFILE_ID = "fake-profile";
   private static final RequestContext REQUEST_CONTEXT =
       RequestContext.create(INSTANCE_NAME, APP_PROFILE_ID);
-  private static final String TABLE_ID = "fake-table";
-  private static final ByteString ROW_KEY = ByteString.copyFromUtf8("fake-key");
-  private static final String FAMILY_NAME = "fake-family";
-  private static final ByteString QUALIFIER = ByteString.copyFromUtf8("fake-qualifier");
-  private static final ByteString VALUE = ByteString.copyFromUtf8("fake-value");
-  private static final String TABLE_NAME = TableName
-      .of(INSTANCE_NAME.getProject(), INSTANCE_NAME.getInstance(), "fake-table")
-      .toString();
-  private static final long TIMESTAMP = System.currentTimeMillis() * 1_000;
 
   @Test
   public void toProtoTest() {
+    long timestampMin = System.currentTimeMillis() * 1_000;
+
     RowMutation rowMutation =
-        RowMutation.create(TABLE_ID, ROW_KEY)
-            .setCell(FAMILY_NAME, QUALIFIER, TIMESTAMP, VALUE);
+        RowMutation.create("fake-table", "fake-key")
+            .setCell("fake-family", "fake-qualifier", "fake-value");
 
     MutateRowRequest actualRowMutation = rowMutation.toProto(REQUEST_CONTEXT);
+    com.google.common.collect.Range<Long> timestampRange =
+        com.google.common.collect.Range.closed(timestampMin, System.currentTimeMillis() * 1_000);
 
-    assertThat(actualRowMutation).isEqualTo(createMutateRowRequest());
+    assertThat(actualRowMutation.getTableName())
+        .isEqualTo(
+            TableName.of(INSTANCE_NAME.getProject(), INSTANCE_NAME.getInstance(), "fake-table")
+                .toString());
+    assertThat(actualRowMutation.getAppProfileId()).isEqualTo(APP_PROFILE_ID);
+    assertThat(actualRowMutation.getMutationsList()).hasSize(1);
+    assertThat(actualRowMutation.getMutations(0).getSetCell().getValue())
+        .isEqualTo(ByteString.copyFromUtf8("fake-value"));
+    assertThat(actualRowMutation.getMutations(0).getSetCell().getTimestampMicros())
+        .isIn(timestampRange);
   }
 
   @Test
   public void toBulkProtoTest() {
+    long timestampMin = System.currentTimeMillis() * 1_000;
+
     RowMutation rowMutation =
-        RowMutation.create(TABLE_ID, ROW_KEY)
-            .setCell(FAMILY_NAME, QUALIFIER, TIMESTAMP, VALUE);
+        RowMutation.create("fake-table", "fake-key")
+            .setCell("fake-family", "fake-qualifier", "fake-value");
 
     MutateRowsRequest actualRowMutation = rowMutation.toBulkProto(REQUEST_CONTEXT);
 
-    assertThat(actualRowMutation).isEqualTo(createMutateRowsRequest());
+    com.google.common.collect.Range<Long> timestampRange =
+        com.google.common.collect.Range.closed(timestampMin, System.currentTimeMillis() * 1_000);
+
+    assertThat(actualRowMutation.getTableName())
+        .isEqualTo(
+            TableName.of(INSTANCE_NAME.getProject(), INSTANCE_NAME.getInstance(), "fake-table")
+                .toString());
+    assertThat(actualRowMutation.getAppProfileId()).isEqualTo(APP_PROFILE_ID);
+    assertThat(actualRowMutation.getEntriesList()).hasSize(1);
+    assertThat(actualRowMutation.getEntries(0).getMutationsList()).hasSize(1);
+    assertThat(actualRowMutation.getEntries(0).getMutations(0).getSetCell().getValue())
+        .isEqualTo(ByteString.copyFromUtf8("fake-value"));
+
+    assertThat(actualRowMutation.getEntries(0).getMutations(0).getSetCell().getTimestampMicros())
+        .isIn(timestampRange);
   }
 
   @Test
   public void toProtoTestWithProvidedMutation() {
-    Mutation mutation = Mutation.create().setCell(FAMILY_NAME, QUALIFIER, TIMESTAMP, VALUE);
-    RowMutation rowMutation = RowMutation.create(TABLE_ID, ROW_KEY, mutation);
+    long timestampMin = System.currentTimeMillis() * 1_000;
 
-    MutateRowRequest actualRowMutation = rowMutation.toProto(REQUEST_CONTEXT);
+    Mutation mutation = Mutation.create().setCell("fake-family", "fake-qualifier", "fake-value");
+    RowMutation rowMutation = RowMutation.create("fake-table", "fake-key", mutation);
 
-    assertThat(actualRowMutation).isEqualTo(createMutateRowRequest());
+    MutateRowsRequest actualRowMutation = rowMutation.toBulkProto(REQUEST_CONTEXT);
+
+    com.google.common.collect.Range<Long> timestampRange =
+        com.google.common.collect.Range.closed(timestampMin, System.currentTimeMillis() * 1_000);
+
+    assertThat(actualRowMutation.getTableName())
+        .isEqualTo(
+            TableName.of(INSTANCE_NAME.getProject(), INSTANCE_NAME.getInstance(), "fake-table")
+                .toString());
+    assertThat(actualRowMutation.getAppProfileId()).isEqualTo(APP_PROFILE_ID);
+    assertThat(actualRowMutation.getEntriesList()).hasSize(1);
+    assertThat(actualRowMutation.getEntries(0).getMutationsList()).hasSize(1);
+    assertThat(actualRowMutation.getEntries(0).getMutations(0).getSetCell().getValue())
+        .isEqualTo(ByteString.copyFromUtf8("fake-value"));
+
+    assertThat(actualRowMutation.getEntries(0).getMutations(0).getSetCell().getTimestampMicros())
+        .isIn(timestampRange);
   }
 
   @Test
   public void serializationTest() throws IOException, ClassNotFoundException {
     RowMutation expected =
-        RowMutation.create(TABLE_ID, ROW_KEY)
-            .setCell(FAMILY_NAME, QUALIFIER, TIMESTAMP, VALUE);
+        RowMutation.create("fake-table", "fake-key")
+            .setCell("fake-family", "fake-qualifier", 10_000, "fake-value");
 
     ByteArrayOutputStream bos = new ByteArrayOutputStream();
     ObjectOutputStream oos = new ObjectOutputStream(bos);
@@ -95,44 +131,5 @@ public class RowMutationTest {
 
     RowMutation actual = (RowMutation) ois.readObject();
     assertThat(actual.toProto(REQUEST_CONTEXT)).isEqualTo(expected.toProto(REQUEST_CONTEXT));
-  }
-
-  private static com.google.bigtable.v2.Mutation.SetCell createSetCell() {
-    return com.google.bigtable.v2.Mutation.SetCell.newBuilder()
-        .setFamilyName(FAMILY_NAME)
-        .setColumnQualifier(QUALIFIER)
-        .setValue(VALUE)
-        .setTimestampMicros(TIMESTAMP)
-        .build();
-  }
-
-  private static com.google.bigtable.v2.Mutation createSetCellMutation() {
-    return com.google.bigtable.v2.Mutation.newBuilder()
-        .setSetCell(createSetCell())
-        .build();
-  }
-
-  private static MutateRowRequest createMutateRowRequest() {
-    return MutateRowRequest.newBuilder()
-        .addMutations(createSetCellMutation())
-        .setAppProfileId(APP_PROFILE_ID)
-        .setTableName(TABLE_NAME)
-        .setRowKey(ROW_KEY)
-        .build();
-  }
-
-  private static MutateRowsRequest.Entry createEntry() {
-    return MutateRowsRequest.Entry.newBuilder()
-        .addMutations(createSetCellMutation())
-        .setRowKey(ROW_KEY)
-        .build();
-  }
-
-  private static MutateRowsRequest createMutateRowsRequest() {
-    return MutateRowsRequest.newBuilder()
-        .addEntries(createEntry())
-        .setAppProfileId(APP_PROFILE_ID)
-        .setTableName(TABLE_NAME)
-        .build();
   }
 }
