@@ -42,7 +42,7 @@ public final class TaskProto {
       "equest\030\003 \001(\01320.google.cloud.tasks.v2beta" +
       "3.AppEngineHttpRequestH\000\0221\n\rschedule_tim" +
       "e\030\004 \001(\0132\032.google.protobuf.Timestamp\022/\n\013c" +
-      "reate_time\030\005 \001(\0132\032.google.protobuf.Times" +
+      "reate_time\030\005 \001(\0132\032.google.protobuf.Times",
       "tamp\022\026\n\016dispatch_count\030\006 \001(\005\022\026\n\016response" +
       "_count\030\007 \001(\005\022:\n\rfirst_attempt\030\010 \001(\0132#.go" +
       "ogle.cloud.tasks.v2beta3.Attempt\0229\n\014last" +
@@ -52,7 +52,7 @@ public final class TaskProto {
       "_UNSPECIFIED\020\000\022\t\n\005BASIC\020\001\022\010\n\004FULL\020\002B\016\n\014p" +
       "ayload_type\"\317\001\n\007Attempt\0221\n\rschedule_time" +
       "\030\001 \001(\0132\032.google.protobuf.Timestamp\0221\n\rdi" +
-      "spatch_time\030\002 \001(\0132\032.google.protobuf.Time" +
+      "spatch_time\030\002 \001(\0132\032.google.protobuf.Time",
       "stamp\0221\n\rresponse_time\030\003 \001(\0132\032.google.pr" +
       "otobuf.Timestamp\022+\n\017response_status\030\004 \001(" +
       "\0132\022.google.rpc.StatusBn\n\036com.google.clou" +
