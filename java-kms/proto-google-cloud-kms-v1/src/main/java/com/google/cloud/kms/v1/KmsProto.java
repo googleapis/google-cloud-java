@@ -137,7 +137,7 @@ public final class KmsProto {
       "st\022\016\n\006parent\030\001 \001(\t\022\021\n\tpage_size\030\002 \001(\005\022\022\n" +
       "\npage_token\030\003 \001(\t\"N\n\025ListCryptoKeysReque" +
       "st\022\016\n\006parent\030\001 \001(\t\022\021\n\tpage_size\030\002 \001(\005\022\022\n" +
-      "\npage_token\030\003 \001(\t\"U\n\034ListCryptoKeyVersio" +
+      "\npage_token\030\003 \001(\t\"U\n\034ListCryptoKeyVersio",
       "nsRequest\022\016\n\006parent\030\001 \001(\t\022\021\n\tpage_size\030\002" +
       " \001(\005\022\022\n\npage_token\030\003 \001(\t\"t\n\024ListKeyRings" +
       "Response\022/\n\tkey_rings\030\001 \003(\0132\034.google.clo" +
@@ -147,7 +147,7 @@ public final class KmsProto {
       "loud.kms.v1.CryptoKey\022\027\n\017next_page_token" +
       "\030\002 \001(\t\022\022\n\ntotal_size\030\003 \001(\005\"\220\001\n\035ListCrypt" +
       "oKeyVersionsResponse\022B\n\023crypto_key_versi" +
-      "ons\030\001 \003(\0132%.google.cloud.kms.v1.CryptoKe" +
+      "ons\030\001 \003(\0132%.google.cloud.kms.v1.CryptoKe",
       "yVersion\022\027\n\017next_page_token\030\002 \001(\t\022\022\n\ntot" +
       "al_size\030\003 \001(\005\"!\n\021GetKeyRingRequest\022\014\n\004na" +
       "me\030\001 \001(\t\"#\n\023GetCryptoKeyRequest\022\014\n\004name\030" +
@@ -157,7 +157,7 @@ public final class KmsProto {
       "ng\030\003 \001(\0132\034.google.cloud.kms.v1.KeyRing\"s" +
       "\n\026CreateCryptoKeyRequest\022\016\n\006parent\030\001 \001(\t" +
       "\022\025\n\rcrypto_key_id\030\002 \001(\t\0222\n\ncrypto_key\030\003 " +
-      "\001(\0132\036.google.cloud.kms.v1.CryptoKey\"r\n\035C" +
+      "\001(\0132\036.google.cloud.kms.v1.CryptoKey\"r\n\035C",
       "reateCryptoKeyVersionRequest\022\016\n\006parent\030\001" +
       " \001(\t\022A\n\022crypto_key_version\030\002 \001(\0132%.googl" +
       "e.cloud.kms.v1.CryptoKeyVersion\"}\n\026Updat" +
@@ -167,7 +167,7 @@ public final class KmsProto {
       "\001\n\035UpdateCryptoKeyVersionRequest\022A\n\022cryp" +
       "to_key_version\030\001 \001(\0132%.google.cloud.kms." +
       "v1.CryptoKeyVersion\022/\n\013update_mask\030\002 \001(\013" +
-      "2\032.google.protobuf.FieldMask\"X\n\016EncryptR" +
+      "2\032.google.protobuf.FieldMask\"X\n\016EncryptR",
       "equest\022\014\n\004name\030\001 \001(\t\022\021\n\tplaintext\030\002 \001(\014\022" +
       "%\n\035additional_authenticated_data\030\003 \001(\014\"Y" +
       "\n\016DecryptRequest\022\014\n\004name\030\001 \001(\t\022\022\n\ncipher" +
@@ -177,7 +177,7 @@ public final class KmsProto {
       "\022\022\n\nciphertext\030\002 \001(\014\"S\n$UpdateCryptoKeyP" +
       "rimaryVersionRequest\022\014\n\004name\030\001 \001(\t\022\035\n\025cr" +
       "ypto_key_version_id\030\002 \001(\t\".\n\036DestroyCryp" +
-      "toKeyVersionRequest\022\014\n\004name\030\001 \001(\t\".\n\036Res" +
+      "toKeyVersionRequest\022\014\n\004name\030\001 \001(\t\".\n\036Res",
       "toreCryptoKeyVersionRequest\022\014\n\004name\030\001 \001(" +
       "\t2\333\027\n\024KeyManagementService\022\231\001\n\014ListKeyRi" +
       "ngs\022(.google.cloud.kms.v1.ListKeyRingsRe" +
@@ -187,7 +187,7 @@ public final class KmsProto {
       "s\022*.google.cloud.kms.v1.ListCryptoKeysRe" +
       "quest\032+.google.cloud.kms.v1.ListCryptoKe" +
       "ysResponse\"A\202\323\344\223\002;\0229/v1/{parent=projects" +
-      "/*/locations/*/keyRings/*}/cryptoKeys\022\325\001" +
+      "/*/locations/*/keyRings/*}/cryptoKeys\022\325\001",
       "\n\025ListCryptoKeyVersions\0221.google.cloud.k" +
       "ms.v1.ListCryptoKeyVersionsRequest\0322.goo" +
       "gle.cloud.kms.v1.ListCryptoKeyVersionsRe" +
@@ -197,7 +197,7 @@ public final class KmsProto {
       "oud.kms.v1.GetKeyRingRequest\032\034.google.cl" +
       "oud.kms.v1.KeyRing\"4\202\323\344\223\002.\022,/v1/{name=pr" +
       "ojects/*/locations/*/keyRings/*}\022\233\001\n\014Get" +
-      "CryptoKey\022(.google.cloud.kms.v1.GetCrypt" +
+      "CryptoKey\022(.google.cloud.kms.v1.GetCrypt",
       "oKeyRequest\032\036.google.cloud.kms.v1.Crypto" +
       "Key\"A\202\323\344\223\002;\0229/v1/{name=projects/*/locati" +
       "ons/*/keyRings/*/cryptoKeys/*}\022\304\001\n\023GetCr" +
@@ -207,7 +207,7 @@ public final class KmsProto {
       "e=projects/*/locations/*/keyRings/*/cryp" +
       "toKeys/*/cryptoKeyVersions/*}\022\230\001\n\rCreate" +
       "KeyRing\022).google.cloud.kms.v1.CreateKeyR" +
-      "ingRequest\032\034.google.cloud.kms.v1.KeyRing" +
+      "ingRequest\032\034.google.cloud.kms.v1.KeyRing",
       "\">\202\323\344\223\0028\",/v1/{parent=projects/*/locatio" +
       "ns/*}/keyRings:\010key_ring\022\255\001\n\017CreateCrypt" +
       "oKey\022+.google.cloud.kms.v1.CreateCryptoK" +
@@ -217,7 +217,7 @@ public final class KmsProto {
       "\022\336\001\n\026CreateCryptoKeyVersion\0222.google.clo" +
       "ud.kms.v1.CreateCryptoKeyVersionRequest\032" +
       "%.google.cloud.kms.v1.CryptoKeyVersion\"i" +
-      "\202\323\344\223\002c\"M/v1/{parent=projects/*/locations" +
+      "\202\323\344\223\002c\"M/v1/{parent=projects/*/locations",
       "/*/keyRings/*/cryptoKeys/*}/cryptoKeyVer" +
       "sions:\022crypto_key_version\022\270\001\n\017UpdateCryp" +
       "toKey\022+.google.cloud.kms.v1.UpdateCrypto" +
@@ -227,7 +227,7 @@ public final class KmsProto {
       ":\ncrypto_key\022\361\001\n\026UpdateCryptoKeyVersion\022" +
       "2.google.cloud.kms.v1.UpdateCryptoKeyVer" +
       "sionRequest\032%.google.cloud.kms.v1.Crypto" +
-      "KeyVersion\"|\202\323\344\223\002v2`/v1/{crypto_key_vers" +
+      "KeyVersion\"|\202\323\344\223\002v2`/v1/{crypto_key_vers",
       "ion.name=projects/*/locations/*/keyRings" +
       "/*/cryptoKeys/*/cryptoKeyVersions/*}:\022cr" +
       "ypto_key_version\022\243\001\n\007Encrypt\022#.google.cl" +
@@ -237,7 +237,7 @@ public final class KmsProto {
       "ptoKeys/**}:encrypt:\001*\022\242\001\n\007Decrypt\022#.goo" +
       "gle.cloud.kms.v1.DecryptRequest\032$.google" +
       ".cloud.kms.v1.DecryptResponse\"L\202\323\344\223\002F\"A/" +
-      "v1/{name=projects/*/locations/*/keyRings" +
+      "v1/{name=projects/*/locations/*/keyRings",
       "/*/cryptoKeys/*}:decrypt:\001*\022\325\001\n\035UpdateCr" +
       "yptoKeyPrimaryVersion\0229.google.cloud.kms" +
       ".v1.UpdateCryptoKeyPrimaryVersionRequest" +
@@ -247,7 +247,7 @@ public final class KmsProto {
       ":\001*\022\327\001\n\027DestroyCryptoKeyVersion\0223.google" +
       ".cloud.kms.v1.DestroyCryptoKeyVersionReq" +
       "uest\032%.google.cloud.kms.v1.CryptoKeyVers" +
-      "ion\"`\202\323\344\223\002Z\"U/v1/{name=projects/*/locati" +
+      "ion\"`\202\323\344\223\002Z\"U/v1/{name=projects/*/locati",
       "ons/*/keyRings/*/cryptoKeys/*/cryptoKeyV" +
       "ersions/*}:destroy:\001*\022\327\001\n\027RestoreCryptoK" +
       "eyVersion\0223.google.cloud.kms.v1.RestoreC" +
@@ -257,7 +257,7 @@ public final class KmsProto {
       "oKeys/*/cryptoKeyVersions/*}:restore:\001*B" +
       "\214\001\n\027com.google.cloud.kms.v1B\010KmsProtoP\001Z" +
       "6google.golang.org/genproto/googleapis/c" +
-      "loud/kms/v1;kms\370\001\001\252\002\023Google.Cloud.Kms.V1" +
+      "loud/kms/v1;kms\370\001\001\252\002\023Google.Cloud.Kms.V1",
       "\312\002\023Google\\Cloud\\Kms\\V1b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
