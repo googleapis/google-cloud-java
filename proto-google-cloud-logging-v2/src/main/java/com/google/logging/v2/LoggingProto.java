@@ -92,7 +92,7 @@ public final class LoggingProto {
       "mp.proto\032\027google/rpc/status.proto\"$\n\020Del" +
       "eteLogRequest\022\020\n\010log_name\030\001 \001(\t\"\251\002\n\026Writ" +
       "eLogEntriesRequest\022\020\n\010log_name\030\001 \001(\t\022/\n\010" +
-      "resource\030\002 \001(\0132\035.google.api.MonitoredRes" +
+      "resource\030\002 \001(\0132\035.google.api.MonitoredRes",
       "ource\022E\n\006labels\030\003 \003(\01325.google.logging.v" +
       "2.WriteLogEntriesRequest.LabelsEntry\022,\n\007" +
       "entries\030\004 \003(\0132\033.google.logging.v2.LogEnt" +
@@ -102,7 +102,7 @@ public final class LoggingProto {
       "\001\n\034WriteLogEntriesPartialErrors\022]\n\020log_e" +
       "ntry_errors\030\001 \003(\0132C.google.logging.v2.Wr" +
       "iteLogEntriesPartialErrors.LogEntryError" +
-      "sEntry\032I\n\023LogEntryErrorsEntry\022\013\n\003key\030\001 \001" +
+      "sEntry\032I\n\023LogEntryErrorsEntry\022\013\n\003key\030\001 \001",
       "(\005\022!\n\005value\030\002 \001(\0132\022.google.rpc.Status:\0028" +
       "\001\"\221\001\n\025ListLogEntriesRequest\022\027\n\013project_i" +
       "ds\030\001 \003(\tB\002\030\001\022\026\n\016resource_names\030\010 \003(\t\022\016\n\006" +
@@ -112,7 +112,7 @@ public final class LoggingProto {
       "e.logging.v2.LogEntry\022\027\n\017next_page_token" +
       "\030\002 \001(\t\"P\n\'ListMonitoredResourceDescripto" +
       "rsRequest\022\021\n\tpage_size\030\001 \001(\005\022\022\n\npage_tok" +
-      "en\030\002 \001(\t\"\212\001\n(ListMonitoredResourceDescri" +
+      "en\030\002 \001(\t\"\212\001\n(ListMonitoredResourceDescri",
       "ptorsResponse\022E\n\024resource_descriptors\030\001 " +
       "\003(\0132\'.google.api.MonitoredResourceDescri" +
       "ptor\022\027\n\017next_page_token\030\002 \001(\t\"H\n\017ListLog" +
@@ -122,7 +122,7 @@ public final class LoggingProto {
       "n\030\002 \001(\t2\330\007\n\020LoggingServiceV2\022\353\001\n\tDeleteL" +
       "og\022#.google.logging.v2.DeleteLogRequest\032" +
       "\026.google.protobuf.Empty\"\240\001\202\323\344\223\002\231\001* /v2/{" +
-      "log_name=projects/*/logs/*}Z\'*%/v2/{log_" +
+      "log_name=projects/*/logs/*}Z\'*%/v2/{log_",
       "name=organizations/*/logs/*}Z!*\037/v2/{log" +
       "_name=folders/*/logs/*}Z)*\'/v2/{log_name" +
       "=billingAccounts/*/logs/*}\022\206\001\n\017WriteLogE" +
@@ -132,7 +132,7 @@ public final class LoggingProto {
       ":\001*\022\202\001\n\016ListLogEntries\022(.google.logging." +
       "v2.ListLogEntriesRequest\032).google.loggin" +
       "g.v2.ListLogEntriesResponse\"\033\202\323\344\223\002\025\"\020/v2" +
-      "/entries:list:\001*\022\305\001\n ListMonitoredResour" +
+      "/entries:list:\001*\022\305\001\n ListMonitoredResour",
       "ceDescriptors\022:.google.logging.v2.ListMo" +
       "nitoredResourceDescriptorsRequest\032;.goog" +
       "le.logging.v2.ListMonitoredResourceDescr" +
@@ -142,7 +142,7 @@ public final class LoggingProto {
       "ng.v2.ListLogsResponse\"\251\001\202\323\344\223\002\242\001\022\025/v2/{p" +
       "arent=*/*}/logsZ\036\022\034/v2/{parent=projects/" +
       "*}/logsZ#\022!/v2/{parent=organizations/*}/" +
-      "logsZ\035\022\033/v2/{parent=folders/*}/logsZ%\022#/" +
+      "logsZ\035\022\033/v2/{parent=folders/*}/logsZ%\022#/",
       "v2/{parent=billingAccounts/*}/logsB\230\001\n\025c" +
       "om.google.logging.v2B\014LoggingProtoP\001Z8go" +
       "ogle.golang.org/genproto/googleapis/logg" +
