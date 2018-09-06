@@ -37,7 +37,7 @@ public final class DatasetOuterClass {
       "oto\032&google/cloud/automl/v1beta1/text.pr" +
       "oto\032-google/cloud/automl/v1beta1/transla" +
       "tion.proto\032\037google/protobuf/timestamp.pr" +
-      "oto\"\314\003\n\007Dataset\022_\n\034translation_dataset_m" +
+      "oto\"\314\003\n\007Dataset\022_\n\034translation_dataset_m",
       "etadata\030\027 \001(\01327.google.cloud.automl.v1be" +
       "ta1.TranslationDatasetMetadataH\000\022p\n%imag" +
       "e_classification_dataset_metadata\030\030 \001(\0132" +
@@ -47,7 +47,7 @@ public final class DatasetOuterClass {
       "e.cloud.automl.v1beta1.TextClassificatio" +
       "nDatasetMetadataH\000\022\014\n\004name\030\001 \001(\t\022\024\n\014disp" +
       "lay_name\030\002 \001(\t\022\025\n\rexample_count\030\025 \001(\005\022/\n" +
-      "\013create_time\030\016 \001(\0132\032.google.protobuf.Tim" +
+      "\013create_time\030\016 \001(\0132\032.google.protobuf.Tim",
       "estampB\022\n\020dataset_metadataBf\n\037com.google" +
       ".cloud.automl.v1beta1P\001ZAgoogle.golang.o" +
       "rg/genproto/googleapis/cloud/automl/v1be" +
