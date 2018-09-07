@@ -17,8 +17,6 @@ package com.google.cloud.bigtable.admin.v2.models;
 
 import static com.google.common.truth.Truth.assertThat;
 
-import com.google.bigtable.admin.v2.Cluster.State;
-import com.google.bigtable.admin.v2.StorageType;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -30,9 +28,9 @@ public class ClusterTest {
     com.google.bigtable.admin.v2.Cluster proto = com.google.bigtable.admin.v2.Cluster.newBuilder()
         .setName("projects/my-project/instances/my-instance/clusters/my-cluster")
         .setLocation("projects/my-project/locations/us-east1-c")
-        .setState(State.READY)
+        .setState(com.google.bigtable.admin.v2.Cluster.State.READY)
         .setServeNodes(30)
-        .setDefaultStorageType(StorageType.SSD)
+        .setDefaultStorageType(com.google.bigtable.admin.v2.StorageType.SSD)
         .build();
 
     Cluster result = Cluster.fromProto(proto);
@@ -40,7 +38,7 @@ public class ClusterTest {
     assertThat(result.getId()).isEqualTo("my-cluster");
     assertThat(result.getInstanceId()).isEqualTo("my-instance");
     assertThat(result.getZone()).isEqualTo("us-east1-c");
-    assertThat(result.getState()).isEqualTo(State.READY);
+    assertThat(result.getState()).isEqualTo(Cluster.State.READY);
     assertThat(result.getServeNodes()).isEqualTo(30);
     assertThat(result.getStorageType()).isEqualTo(StorageType.SSD);
   }
@@ -49,9 +47,9 @@ public class ClusterTest {
   public void testRequiresName() {
     com.google.bigtable.admin.v2.Cluster proto = com.google.bigtable.admin.v2.Cluster.newBuilder()
         .setLocation("projects/my-project/locations/us-east1-c")
-        .setState(State.READY)
+        .setState(com.google.bigtable.admin.v2.Cluster.State.READY)
         .setServeNodes(30)
-        .setDefaultStorageType(StorageType.SSD)
+        .setDefaultStorageType(com.google.bigtable.admin.v2.StorageType.SSD)
         .build();
 
     Exception actualException = null;

@@ -17,8 +17,6 @@ package com.google.cloud.bigtable.admin.v2.models;
 
 import static com.google.common.truth.Truth.assertThat;
 
-import com.google.bigtable.admin.v2.Instance.State;
-import com.google.bigtable.admin.v2.Instance.Type;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -30,8 +28,8 @@ public class InstanceTest {
     com.google.bigtable.admin.v2.Instance proto = com.google.bigtable.admin.v2.Instance.newBuilder()
         .setName("projects/my-project/instances/my-instance")
         .setDisplayName("my display name")
-        .setType(Type.PRODUCTION)
-        .setState(State.READY)
+        .setType(com.google.bigtable.admin.v2.Instance.Type.PRODUCTION)
+        .setState(com.google.bigtable.admin.v2.Instance.State.READY)
         .putLabels("label1", "value1")
         .putLabels("label2", "value2")
         .build();
@@ -40,8 +38,8 @@ public class InstanceTest {
 
     assertThat(result.getId()).isEqualTo("my-instance");
     assertThat(result.getDisplayName()).isEqualTo("my display name");
-    assertThat(result.getType()).isEqualTo(Type.PRODUCTION);
-    assertThat(result.getState()).isEqualTo(State.READY);
+    assertThat(result.getType()).isEqualTo(Instance.Type.PRODUCTION);
+    assertThat(result.getState()).isEqualTo(Instance.State.READY);
     assertThat(result.getLabels()).containsExactly(
         "label1", "value1",
         "label2", "value2"
@@ -52,8 +50,8 @@ public class InstanceTest {
   public void testRequiresName() {
     com.google.bigtable.admin.v2.Instance proto = com.google.bigtable.admin.v2.Instance.newBuilder()
         .setDisplayName("my display name")
-        .setType(Type.PRODUCTION)
-        .setState(State.READY)
+        .setType(com.google.bigtable.admin.v2.Instance.Type.PRODUCTION)
+        .setState(com.google.bigtable.admin.v2.Instance.State.READY)
         .putLabels("label1", "value1")
         .putLabels("label2", "value2")
         .build();
