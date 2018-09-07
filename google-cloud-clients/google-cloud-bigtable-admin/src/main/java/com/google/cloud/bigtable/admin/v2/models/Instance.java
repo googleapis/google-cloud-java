@@ -16,8 +16,6 @@
 package com.google.cloud.bigtable.admin.v2.models;
 
 import com.google.api.core.InternalApi;
-import com.google.bigtable.admin.v2.Instance.State;
-import com.google.bigtable.admin.v2.Instance.Type;
 import com.google.bigtable.admin.v2.InstanceName;
 import com.google.common.base.Objects;
 import com.google.common.base.Preconditions;
@@ -32,6 +30,85 @@ import javax.annotation.Nonnull;
  * all of the real work.
  */
 public final class Instance {
+  public enum Type {
+    /** The type of the instance is unknown */
+    NOT_KNOWN(com.google.bigtable.admin.v2.Instance.Type.TYPE_UNSPECIFIED),
+    /** An instance meant for production use. `serve_nodes` must be set on the cluster. */
+    PRODUCTION(com.google.bigtable.admin.v2.Instance.Type.PRODUCTION),
+    /** The instance is meant for development and testing purposes only. */
+    DEVELOPMENT(com.google.bigtable.admin.v2.Instance.Type.DEVELOPMENT);
+
+    private final com.google.bigtable.admin.v2.Instance.Type proto;
+
+    /**
+     * Wraps the protobuf. This method is considered an internal implementation detail and not meant
+     * to be used by applications.
+     */
+    @InternalApi
+    public static Type fromProto(com.google.bigtable.admin.v2.Instance.Type proto) {
+      for (Type type : values()) {
+        if (type.proto.equals(proto)) {
+          return type;
+        }
+      }
+      return NOT_KNOWN;
+    }
+
+    Type(com.google.bigtable.admin.v2.Instance.Type proto) {
+      this.proto = proto;
+    }
+
+    /**
+     * Creates the request protobuf. This method is considered an internal implementation detail and
+     * not meant to be used by applications.
+     */
+    @InternalApi
+    public com.google.bigtable.admin.v2.Instance.Type toProto() {
+      return proto;
+    }
+  }
+
+  public enum State {
+    /** The state of the instance could not be determined. */
+    NOT_KNOWN(com.google.bigtable.admin.v2.Instance.State.STATE_NOT_KNOWN),
+    /** The instance has been successfully created and can serve requests to its tables. */
+    READY(com.google.bigtable.admin.v2.Instance.State.READY),
+    /**
+     * The instance is currently being created, and may be destroyed if the creation process
+     * encounters an error.
+     */
+    CREATING(com.google.bigtable.admin.v2.Instance.State.CREATING);
+
+    private final com.google.bigtable.admin.v2.Instance.State proto;
+
+    /**
+     * Wraps the protobuf. This method is considered an internal implementation detail and not meant
+     * to be used by applications.
+     */
+    @InternalApi
+    public static State fromProto(com.google.bigtable.admin.v2.Instance.State proto) {
+      for (State state : values()) {
+        if (state.proto.equals(proto)) {
+          return state;
+        }
+      }
+      return NOT_KNOWN;
+    }
+
+    State(com.google.bigtable.admin.v2.Instance.State proto) {
+      this.proto = proto;
+    }
+
+    /**
+     * Creates the request protobuf. This method is considered an internal implementation detail and
+     * not meant to be used by applications.
+     */
+    @InternalApi
+    public com.google.bigtable.admin.v2.Instance.State toProto() {
+      return proto;
+    }
+  }
+
   @Nonnull
   private final com.google.bigtable.admin.v2.Instance proto;
 
@@ -71,7 +148,7 @@ public final class Instance {
   /** Gets the instance's current type. Can be DEVELOPMENT or PRODUCTION. */
   @SuppressWarnings("WeakerAccess")
   public Type getType() {
-    return proto.getType();
+    return Type.fromProto(proto.getType());
   }
 
   /**
@@ -87,10 +164,9 @@ public final class Instance {
 
 
   /** The current state of the instance. */
-  // TODO(igorbernstein2): Try to avoid leaking protobuf enums
   @SuppressWarnings("WeakerAccess")
   public State getState() {
-    return proto.getState();
+    return State.fromProto(proto.getState());
   }
 
   @Override
