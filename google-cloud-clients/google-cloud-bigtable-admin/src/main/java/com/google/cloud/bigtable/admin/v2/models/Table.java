@@ -16,7 +16,6 @@
 package com.google.cloud.bigtable.admin.v2.models;
 
 import com.google.api.core.InternalApi;
-import com.google.bigtable.admin.v2.Table.ClusterState;
 import com.google.bigtable.admin.v2.TableName;
 import com.google.common.base.Objects;
 import com.google.common.collect.ImmutableList;
@@ -30,23 +29,23 @@ import javax.annotation.Nonnull;
 public final class Table {
   public enum ReplicationState {
     /** The replication state of the table is unknown in this cluster. */
-    NOT_KNOWN(ClusterState.ReplicationState.STATE_NOT_KNOWN),
+    NOT_KNOWN(com.google.bigtable.admin.v2.Table.ClusterState.ReplicationState.STATE_NOT_KNOWN),
     /**
      * The cluster was recently created, and the table must finish copying over pre-existing data
      * from other clusters before it can begin receiving live replication updates and serving Data
      * API requests.
      */
-    INITIALIZING(ClusterState.ReplicationState.INITIALIZING),
+    INITIALIZING(com.google.bigtable.admin.v2.Table.ClusterState.ReplicationState.INITIALIZING),
     /**
      * The table is temporarily unable to serve Data API requests from this cluster due to planned
      * internal maintenance.
      */
-    PLANNED_MAINTENANCE(ClusterState.ReplicationState.PLANNED_MAINTENANCE),
+    PLANNED_MAINTENANCE(com.google.bigtable.admin.v2.Table.ClusterState.ReplicationState.PLANNED_MAINTENANCE),
     /**
      * The table is temporarily unable to serve Data API requests from this cluster due to unplanned
      * or emergency maintenance.
      */
-    UNPLANNED_MAINTENANCE(ClusterState.ReplicationState.UNPLANNED_MAINTENANCE),
+    UNPLANNED_MAINTENANCE(com.google.bigtable.admin.v2.Table.ClusterState.ReplicationState.UNPLANNED_MAINTENANCE),
     /**
      * The table can serve Data API requests from this cluster. Depending on replication delay,
      * reads may not immediately reflect the state of the table in other clusters.
