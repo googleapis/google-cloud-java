@@ -102,7 +102,7 @@ This script checks out `gh-pages` branch of the repository, builds the documenta
 
 11. Check that you are not trying to release a SNAPSHOT build (the artifacts versions do not have "-SNAPSHOT" suffix) and then run `mvn clean deploy -DskipTests=true --settings ~/.m2/settings.xml -P release` command. It will build and deploy artifacts to the staging repository. 
 
-12. Run `mvn nexus-staging:release` to release the artifacts. 
+12. Uncomment the `nexus-staging-maven-plugin` plugin definition from step 10.2; This plugin needed to release the artifacts. Run `mvn nexus-staging:release` to release the artifacts.
 
 13. Revert the local edits to your `pom.xml` performed a couple steps above by running `git checkout pom.xml`.
 
