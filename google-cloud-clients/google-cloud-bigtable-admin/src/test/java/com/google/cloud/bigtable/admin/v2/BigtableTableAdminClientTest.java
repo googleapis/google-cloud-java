@@ -267,10 +267,16 @@ public class BigtableTableAdminClientTest {
     @SuppressWarnings("UnnecessaryLocalVariable")
     TableName expectedRequest = TABLE_NAME;
 
-    AtomicBoolean wasCalled = new AtomicBoolean(false);
+    final AtomicBoolean wasCalled = new AtomicBoolean(false);
 
     Mockito.when(mockAwaitReplicationCallable.futureCall(expectedRequest))
-        .thenReturn(ApiFutures.<Void>immediateFuture(null));
+        .thenAnswer(new Answer<ApiFuture<Void>>() {
+          @Override
+          public ApiFuture<Void> answer(InvocationOnMock invocationOnMock) throws Throwable {
+            wasCalled.set(true);
+            return ApiFutures.immediateFuture(null);
+          }
+        });
 
     // Execute
     adminClient.awaitReplication(TABLE_NAME.getTable());
