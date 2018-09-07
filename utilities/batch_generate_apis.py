@@ -59,6 +59,7 @@ def run_gapic_gen(googleapis):
     generate('google/monitoring/artman_monitoring.yaml')
     generate('google/pubsub/artman_pubsub.yaml')
     generate('google/cloud/oslogin/artman_oslogin_v1.yaml')
+    generate('google/cloud/redis/artman_redis_v1.yaml')
     generate('google/cloud/redis/artman_redis_v1beta1.yaml')
     generate('google/spanner/artman_spanner.yaml')
     generate('google/spanner/admin/database/artman_spanner_admin_database.yaml')
