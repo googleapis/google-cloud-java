@@ -91,6 +91,16 @@ public class RowMutationTest {
   }
 
   @Test
+  public void toProtoTestWithProvidedMutation() {
+    Mutation mutation = Mutation.create().setCell("fake-family", "fake-qualifier", "fake-value");
+    RowMutation rowMutation = RowMutation.create("fake-table", "fake-key", mutation);
+
+    MutateRowRequest actualRowMutation = rowMutation.toProto(REQUEST_CONTEXT);
+
+    assertThat(actualRowMutation.getMutationsList()).isEqualTo(mutation.getMutations());
+  }
+
+  @Test
   public void serializationTest() throws IOException, ClassNotFoundException {
     RowMutation expected =
         RowMutation.create("fake-table", "fake-key")
