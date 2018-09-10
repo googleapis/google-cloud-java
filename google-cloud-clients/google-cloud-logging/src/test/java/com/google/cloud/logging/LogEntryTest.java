@@ -50,7 +50,19 @@ public class LogEntryTest {
       ImmutableMap.of("key1", "value1", "key2", "value2");
   private static final Operation OPERATION = Operation.of("id", "producer");
   private static final String TRACE = "trace";
+  private static final Object TRACE_FORMATTER = new Object() {
+    @Override
+    public String toString() {
+      return TRACE;
+    }
+  };
   private static final String SPAN_ID = "spanId";
+  private static final Object SPAN_ID_FORMATTER = new Object() {
+    @Override
+    public String toString() {
+      return SPAN_ID;
+    }
+  };
   private static final SourceLocation SOURCE_LOCATION = new SourceLocation.Builder()
       .setFile("file")
       .setLine(42L)
@@ -71,8 +83,8 @@ public class LogEntryTest {
       .setHttpRequest(HTTP_REQUEST)
       .setLabels(LABELS)
       .setOperation(OPERATION)
-      .setTrace(TRACE)
-      .setSpanId(SPAN_ID)
+      .setTrace(TRACE_FORMATTER)
+      .setSpanId(SPAN_ID_FORMATTER)
       .setSourceLocation(SOURCE_LOCATION)
       .build();
   private static final LogEntry JSON_ENTRY = LogEntry.newBuilder(JSON_PAYLOAD)
@@ -85,8 +97,8 @@ public class LogEntryTest {
       .setHttpRequest(HTTP_REQUEST)
       .setLabels(LABELS)
       .setOperation(OPERATION)
-      .setTrace(TRACE)
-      .setSpanId(SPAN_ID)
+      .setTrace(TRACE_FORMATTER)
+      .setSpanId(SPAN_ID_FORMATTER)
       .setSourceLocation(SOURCE_LOCATION)
       .build();
   private static final LogEntry PROTO_ENTRY = LogEntry.newBuilder(PROTO_PAYLOAD)
@@ -99,8 +111,8 @@ public class LogEntryTest {
       .setHttpRequest(HTTP_REQUEST)
       .setLabels(LABELS)
       .setOperation(OPERATION)
-      .setTrace(TRACE)
-      .setSpanId(SPAN_ID)
+      .setTrace(TRACE_FORMATTER)
+      .setSpanId(SPAN_ID_FORMATTER)
       .setSourceLocation(SOURCE_LOCATION)
       .build();
 

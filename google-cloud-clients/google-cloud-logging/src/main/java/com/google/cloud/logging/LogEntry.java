@@ -65,8 +65,8 @@ public class LogEntry implements Serializable {
   private final HttpRequest httpRequest;
   private final Map<String, String> labels;
   private final Operation operation;
-  private final String trace;
-  private final String spanId;
+  private final Object trace;
+  private final Object spanId;
   private final SourceLocation sourceLocation;
   private final Payload<?> payload;
 
@@ -84,8 +84,8 @@ public class LogEntry implements Serializable {
     private HttpRequest httpRequest;
     private Map<String, String> labels = new HashMap<>();
     private Operation operation;
-    private String trace;
-    private String spanId;
+    private Object trace;
+    private Object spanId;
     private SourceLocation sourceLocation;
     private Payload<?> payload;
 
@@ -225,7 +225,7 @@ public class LogEntry implements Serializable {
      * Sets the resource name of the trace associated with the log entry, if any. If it contains a
      * relative resource name, the name is assumed to be relative to `//tracing.googleapis.com`.
      */
-    public Builder setTrace(String trace) {
+    public Builder setTrace(Object trace) {
       this.trace = trace;
       return this;
     }
@@ -234,7 +234,7 @@ public class LogEntry implements Serializable {
     /**
      * Sets the ID of the trace span associated with the log entry, if any.
      */
-    public Builder setSpanId(String spanId) {
+    public Builder setSpanId(Object spanId) {
       this.spanId = spanId;
       return this;
     }
@@ -372,7 +372,8 @@ public class LogEntry implements Serializable {
    * relative resource name, the name is assumed to be relative to `//tracing.googleapis.com`.
    */
   public String getTrace() {
-    return trace;
+    // For backwards compatibility return null when trace not set instead of "null".
+    return trace == null ? null : String.valueOf(trace);
   }
 
 
@@ -380,7 +381,8 @@ public class LogEntry implements Serializable {
    * Returns the ID of the trace span associated with the log entry, if any.
    */
   public String getSpanId() {
-    return spanId;
+    // For backwards compatibility return null when spanId not set instead of "null".
+    return spanId == null ? null : String.valueOf(spanId);
   }
 
 
@@ -407,7 +409,7 @@ public class LogEntry implements Serializable {
   @Override
   public int hashCode() {
     return Objects.hash(logName, resource, timestamp, receiveTimestamp, severity, insertId,
-        httpRequest, labels, operation, trace, spanId, sourceLocation, payload);
+        httpRequest, labels, operation, getTrace(), getSpanId(), sourceLocation, payload);
   }
 
   @Override
@@ -428,8 +430,8 @@ public class LogEntry implements Serializable {
         && Objects.equals(httpRequest, other.httpRequest)
         && Objects.equals(labels, other.labels)
         && Objects.equals(operation, other.operation)
-        && Objects.equals(trace, other.trace)
-        && Objects.equals(spanId, other.spanId)
+        && Objects.equals(getTrace(), other.getTrace())
+        && Objects.equals(getSpanId(), other.getSpanId())
         && Objects.equals(sourceLocation, other.sourceLocation)
         && Objects.equals(payload, other.payload);
   }
@@ -500,10 +502,10 @@ public class LogEntry implements Serializable {
       builder.setOperation(operation.toPb());
     }
     if (trace != null) {
-      builder.setTrace(trace);
+      builder.setTrace(getTrace());
     }
     if (spanId != null) {
-      builder.setSpanId(spanId);
+      builder.setSpanId(getSpanId());
     }
     if (sourceLocation != null) {
       builder.setSourceLocation(sourceLocation.toPb());
