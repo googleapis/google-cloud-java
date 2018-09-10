@@ -27,12 +27,12 @@ import com.google.cloud.ServiceOptions;
 import com.google.cloud.compute.v1.DiskType;
 import com.google.cloud.compute.v1.DiskTypeClient;
 import com.google.cloud.compute.v1.DiskTypeClient.AggregatedListDiskTypesPagedResponse;
-import com.google.cloud.compute.v1.DiskTypeName;
 import com.google.cloud.compute.v1.DiskTypeSettings;
 import com.google.cloud.compute.v1.DiskTypesScopedList;
 import com.google.cloud.compute.v1.ListDiskTypesHttpRequest;
 import com.google.cloud.compute.v1.ProjectName;
-import com.google.cloud.compute.v1.ZoneName;
+import com.google.cloud.compute.v1.ProjectZoneDiskTypeName;
+import com.google.cloud.compute.v1.ProjectZoneName;
 import com.google.common.collect.Lists;
 import java.io.IOException;
 import java.util.Iterator;
@@ -74,8 +74,9 @@ public class ITComputeTest {
 
   @Test
   public void testGetDiskType() {
-    DiskType diskType = diskTypeClient.getDiskType(DiskTypeName.of(DISK_TYPE, DEFAULT_PROJECT, ZONE));
-    DiskTypeName returnDiskName = DiskTypeName.parse(trimUrl(diskType.getSelfLink()));
+    DiskType diskType = diskTypeClient.getDiskType(ProjectZoneDiskTypeName
+        .of(DISK_TYPE, DEFAULT_PROJECT, ZONE));
+    ProjectZoneDiskTypeName returnDiskName = ProjectZoneDiskTypeName.parse(trimUrl(diskType.getSelfLink()));
     assertEquals(ZONE, returnDiskName.getZone());
     assertEquals(DISK_TYPE, returnDiskName.getDiskType());
     assertNotNull(diskType.getCreationTimestamp());
@@ -86,13 +87,13 @@ public class ITComputeTest {
 
   @Test
   public void testListDiskTypes() {
-    Page<DiskType> diskPage = diskTypeClient.listDiskTypes(ZoneName.of(DEFAULT_PROJECT, ZONE)).getPage();
+    Page<DiskType> diskPage = diskTypeClient.listDiskTypes(ProjectZoneName.of(DEFAULT_PROJECT, ZONE)).getPage();
     Iterator<DiskType> diskTypeIterator = diskPage.iterateAll().iterator();
     assertTrue(diskTypeIterator.hasNext());
     while (diskTypeIterator.hasNext()) {
       DiskType diskType = diskTypeIterator.next();
       assertNotNull(diskType.getSelfLink());
-      DiskTypeName returnDiskName = DiskTypeName.parse(trimUrl(diskType.getSelfLink()));
+      ProjectZoneDiskTypeName returnDiskName = ProjectZoneDiskTypeName.parse(trimUrl(diskType.getSelfLink()));
       assertEquals(ZONE, returnDiskName.getZone());
       assertNotNull(diskType.getCreationTimestamp());
       assertNotNull(diskType.getDescription());
@@ -104,7 +105,7 @@ public class ITComputeTest {
   @Test
   public void testListDiskTypesWithFilter() {
     ListDiskTypesHttpRequest request = ListDiskTypesHttpRequest.newBuilder()
-        .setZone(ZoneName.of(DEFAULT_PROJECT, ZONE).toString())
+        .setZone(ProjectZoneName.of(DEFAULT_PROJECT, ZONE).toString())
         .setFilter("(defaultDiskSizeGb = 375)")
         .build();
     Page<DiskType> diskPage = diskTypeClient.listDiskTypes(request).getPage();
@@ -113,7 +114,7 @@ public class ITComputeTest {
     while (diskTypeIterator.hasNext()) {
       DiskType diskType = diskTypeIterator.next();
       assertNotNull(diskType.getZone());
-      ZoneName zoneName = ZoneName.parse(trimUrl(diskType.getZone()));
+      ProjectZoneName zoneName = ProjectZoneName.parse(trimUrl(diskType.getZone()));
       assertEquals(ZONE, zoneName.getZone());
       assertNotNull(diskType.getCreationTimestamp());
       assertNotNull(diskType.getDescription());
@@ -133,7 +134,7 @@ public class ITComputeTest {
     assertTrue(diskTypeIterator.size() > 0);
     for (DiskType diskType : diskTypeIterator) {
       assertNotNull(diskType.getZone());
-      DiskTypeName zoneName = DiskTypeName.parse(trimUrl(diskType.getSelfLink()));
+      ProjectZoneDiskTypeName zoneName = ProjectZoneDiskTypeName.parse(trimUrl(diskType.getSelfLink()));
       assertNotNull(zoneName.getDiskType());
       assertNotNull(zoneName.getZone());
       assertNotNull(diskType.getCreationTimestamp());
