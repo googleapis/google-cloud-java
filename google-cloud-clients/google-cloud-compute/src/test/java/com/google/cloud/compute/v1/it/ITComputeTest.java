@@ -15,9 +15,7 @@
  */
 package com.google.cloud.compute.v1.it;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
+import static com.google.common.truth.Truth.assertThat;
 
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.api.gax.paging.Page;
@@ -48,7 +46,7 @@ public class ITComputeTest {
 
   private static final String ZONE = "us-central1-a";
   private static final String DISK_TYPE = "local-ssd";
-  private  static  final String DEFAULT_PROJECT = ServiceOptions.getDefaultProjectId();
+  private static final String DEFAULT_PROJECT = ServiceOptions.getDefaultProjectId();
 
   private static DiskTypeClient diskTypeClient;
   private static DiskTypeSettings diskTypeSettings;
@@ -77,28 +75,28 @@ public class ITComputeTest {
     DiskType diskType = diskTypeClient.getDiskType(ProjectZoneDiskTypeName
         .of(DISK_TYPE, DEFAULT_PROJECT, ZONE));
     ProjectZoneDiskTypeName returnDiskName = ProjectZoneDiskTypeName.parse(trimUrl(diskType.getSelfLink()));
-    assertEquals(ZONE, returnDiskName.getZone());
-    assertEquals(DISK_TYPE, returnDiskName.getDiskType());
-    assertNotNull(diskType.getCreationTimestamp());
-    assertNotNull(diskType.getDescription());
-    assertNotNull(diskType.getValidDiskSize());
-    assertNotNull(diskType.getDefaultDiskSizeGb());
+    assertThat(returnDiskName.getZone()).isEqualTo(ZONE);
+    assertThat(returnDiskName.getDiskType()).isEqualTo(DISK_TYPE);
+    assertThat(diskType.getCreationTimestamp()).isNotNull();
+    assertThat(diskType.getDescription()).isNotNull();
+    assertThat(diskType.getValidDiskSize()).isNotNull();
+    assertThat(diskType.getDefaultDiskSizeGb()).isNotNull();
   }
 
   @Test
   public void testListDiskTypes() {
     Page<DiskType> diskPage = diskTypeClient.listDiskTypes(ProjectZoneName.of(DEFAULT_PROJECT, ZONE)).getPage();
     Iterator<DiskType> diskTypeIterator = diskPage.iterateAll().iterator();
-    assertTrue(diskTypeIterator.hasNext());
+    assertThat(diskTypeIterator.hasNext()).isTrue();
     while (diskTypeIterator.hasNext()) {
       DiskType diskType = diskTypeIterator.next();
-      assertNotNull(diskType.getSelfLink());
+      assertThat(diskType.getSelfLink()).isNotNull();
       ProjectZoneDiskTypeName returnDiskName = ProjectZoneDiskTypeName.parse(trimUrl(diskType.getSelfLink()));
-      assertEquals(ZONE, returnDiskName.getZone());
-      assertNotNull(diskType.getCreationTimestamp());
-      assertNotNull(diskType.getDescription());
-      assertNotNull(diskType.getValidDiskSize());
-      assertNotNull(diskType.getDefaultDiskSizeGb());
+      assertThat(returnDiskName.getZone()).isEqualTo(ZONE);
+      assertThat(diskType.getCreationTimestamp()).isNotNull();
+      assertThat(diskType.getDescription()).isNotNull();
+      assertThat(diskType.getValidDiskSize()).isNotNull();
+      assertThat(diskType.getDefaultDiskSizeGb()).isNotNull();
     }
   }
 
@@ -110,16 +108,16 @@ public class ITComputeTest {
         .build();
     Page<DiskType> diskPage = diskTypeClient.listDiskTypes(request).getPage();
     Iterator<DiskType> diskTypeIterator = diskPage.iterateAll().iterator();
-    assertTrue(diskTypeIterator.hasNext());
+    assertThat(diskTypeIterator.hasNext()).isTrue();
     while (diskTypeIterator.hasNext()) {
       DiskType diskType = diskTypeIterator.next();
-      assertNotNull(diskType.getZone());
+      assertThat(diskType.getZone()).isNotNull();
       ProjectZoneName zoneName = ProjectZoneName.parse(trimUrl(diskType.getZone()));
-      assertEquals(ZONE, zoneName.getZone());
-      assertNotNull(diskType.getCreationTimestamp());
-      assertNotNull(diskType.getDescription());
-      assertNotNull(diskType.getValidDiskSize());
-      assertNotNull(diskType.getDefaultDiskSizeGb());
+      assertThat(zoneName.getZone()).isEqualTo(ZONE);
+      assertThat(diskType.getCreationTimestamp()).isNotNull();
+      assertThat(diskType.getDescription()).isNotNull();
+      assertThat(diskType.getValidDiskSize()).isNotNull();
+      assertThat(diskType.getDefaultDiskSizeGb()).isNotNull();
     }
   }
 
@@ -131,21 +129,21 @@ public class ITComputeTest {
     for (DiskTypesScopedList scopedList : diskTypeScopedListIterator) {
       diskTypeIterator.addAll(scopedList.getDiskTypesList());
     }
-    assertTrue(diskTypeIterator.size() > 0);
+    assertThat(diskTypeIterator.size()).isGreaterThan(0);
     for (DiskType diskType : diskTypeIterator) {
-      assertNotNull(diskType.getZone());
+      assertThat(diskType.getZone()).isNotNull();
       ProjectZoneDiskTypeName zoneName = ProjectZoneDiskTypeName.parse(trimUrl(diskType.getSelfLink()));
-      assertNotNull(zoneName.getDiskType());
-      assertNotNull(zoneName.getZone());
-      assertNotNull(diskType.getCreationTimestamp());
-      assertNotNull(diskType.getDescription());
-      assertNotNull(diskType.getValidDiskSize());
-      assertNotNull(diskType.getDefaultDiskSizeGb());
+      assertThat(zoneName.getDiskType()).isNotNull();
+      assertThat(zoneName.getZone()).isNotNull();
+      assertThat(diskType.getCreationTimestamp()).isNotNull();
+      assertThat(diskType.getDescription()).isNotNull();
+      assertThat(diskType.getValidDiskSize()).isNotNull();
+      assertThat(diskType.getDefaultDiskSizeGb()).isNotNull();
     }
   }
 
   /** For a given resource's URI, trim the path until it contains only the PathTemplate string. */
-  private String trimUrl(String url) {
+  private static String trimUrl(String url) {
     return url.replaceFirst("^https://www.googleapis.com/compute/v1/", "");
   }
 }
