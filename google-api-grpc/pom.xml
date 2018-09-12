@@ -548,6 +548,16 @@
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-video-intelligence-v1p2beta1</artifactId>
+        <version>0.26.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-video-intelligence-v1p2beta1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-video-intelligence-v1p2beta1</artifactId>
+        <version>0.26.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-video-intelligence-v1p2beta1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-iot-v1</artifactId>
         <version>0.26.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-iot-v1:current} -->
       </dependency>
@@ -565,6 +575,16 @@
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-redis-v1beta1</artifactId>
         <version>0.26.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-redis-v1beta1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-redis-v1</artifactId>
+        <version>0.26.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-redis-v1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-redis-v1</artifactId>
+        <version>0.26.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-redis-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
@@ -617,12 +637,14 @@
     <module>grpc-google-cloud-video-intelligence-v1beta1</module>
     <module>grpc-google-cloud-video-intelligence-v1beta2</module>
     <module>grpc-google-cloud-video-intelligence-v1p1beta1</module>
+    <module>grpc-google-cloud-video-intelligence-v1p2beta1</module>
     <module>grpc-google-cloud-vision-v1</module>
     <module>grpc-google-cloud-vision-v1p1beta1</module>
     <module>grpc-google-cloud-vision-v1p2beta1</module>
     <module>grpc-google-cloud-vision-v1p3beta1</module>
     <module>grpc-google-cloud-iot-v1</module>
     <module>grpc-google-cloud-redis-v1beta1</module>
+    <module>grpc-google-cloud-redis-v1</module>
     <module>grpc-google-cloud-websecurityscanner-v1alpha</module>
 
     <module>proto-google-cloud-asset-v1beta1</module>
@@ -663,12 +685,14 @@
     <module>proto-google-cloud-video-intelligence-v1beta1</module>
     <module>proto-google-cloud-video-intelligence-v1beta2</module>
     <module>proto-google-cloud-video-intelligence-v1p1beta1</module>
+    <module>proto-google-cloud-video-intelligence-v1p2beta1</module>
     <module>proto-google-cloud-vision-v1</module>
     <module>proto-google-cloud-vision-v1p1beta1</module>
     <module>proto-google-cloud-vision-v1p2beta1</module>
     <module>proto-google-cloud-vision-v1p3beta1</module>
     <module>proto-google-cloud-iot-v1</module>
     <module>proto-google-cloud-redis-v1beta1</module>
+    <module>proto-google-cloud-redis-v1</module>
     <module>proto-google-cloud-websecurityscanner-v1alpha</module>
   </modules>
 
