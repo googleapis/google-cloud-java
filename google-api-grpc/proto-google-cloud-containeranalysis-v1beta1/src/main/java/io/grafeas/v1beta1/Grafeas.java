@@ -162,7 +162,7 @@ public final class Grafeas {
       ".proto\032=google/devtools/containeranalysi" +
       "s/v1beta1/common/common.proto\032Egoogle/de" +
       "vtools/containeranalysis/v1beta1/deploym" +
-      "ent/deployment.proto\032Cgoogle/devtools/co",
+      "ent/deployment.proto\032Cgoogle/devtools/co" +
       "ntaineranalysis/v1beta1/discovery/discov" +
       "ery.proto\032;google/devtools/containeranal" +
       "ysis/v1beta1/image/image.proto\032?google/d" +
@@ -172,7 +172,7 @@ public final class Grafeas {
       ".proto\032Kgoogle/devtools/containeranalysi" +
       "s/v1beta1/vulnerability/vulnerability.pr" +
       "oto\032\033google/protobuf/empty.proto\032 google" +
-      "/protobuf/field_mask.proto\032\037google/proto",
+      "/protobuf/field_mask.proto\032\037google/proto" +
       "buf/timestamp.proto\"\234\005\n\nOccurrence\022\014\n\004na" +
       "me\030\001 \001(\t\022+\n\010resource\030\002 \001(\0132\031.grafeas.v1b" +
       "eta1.Resource\022\021\n\tnote_name\030\003 \001(\t\022\'\n\004kind" +
@@ -182,7 +182,7 @@ public final class Grafeas {
       " \001(\0132\032.google.protobuf.Timestamp\022?\n\rvuln" +
       "erability\030\010 \001(\0132&.grafeas.v1beta1.vulner" +
       "ability.DetailsH\000\022/\n\005build\030\t \001(\0132\036.grafe" +
-      "as.v1beta1.build.DetailsH\000\0227\n\rderived_im",
+      "as.v1beta1.build.DetailsH\000\0227\n\rderived_im" +
       "age\030\n \001(\0132\036.grafeas.v1beta1.image.Detail" +
       "sH\000\0228\n\014installation\030\013 \001(\0132 .grafeas.v1be" +
       "ta1.package.DetailsH\000\0229\n\ndeployment\030\014 \001(" +
@@ -192,7 +192,7 @@ public final class Grafeas {
       "$.grafeas.v1beta1.attestation.DetailsH\000B" +
       "\t\n\007details\"]\n\010Resource\022\014\n\004name\030\001 \001(\t\022\013\n\003" +
       "uri\030\002 \001(\t\0226\n\014content_hash\030\003 \001(\0132 .grafea" +
-      "s.v1beta1.provenance.Hash\"\200\006\n\004Note\022\014\n\004na",
+      "s.v1beta1.provenance.Hash\"\200\006\n\004Note\022\014\n\004na" +
       "me\030\001 \001(\t\022\031\n\021short_description\030\002 \001(\t\022\030\n\020l" +
       "ong_description\030\003 \001(\t\022\'\n\004kind\030\004 \001(\0162\031.gr" +
       "afeas.v1beta1.NoteKind\0220\n\013related_url\030\005 " +
@@ -202,7 +202,7 @@ public final class Grafeas {
       "obuf.Timestamp\022/\n\013update_time\030\010 \001(\0132\032.go" +
       "ogle.protobuf.Timestamp\022\032\n\022related_note_" +
       "names\030\t \003(\t\022E\n\rvulnerability\030\n \001(\0132,.gra" +
-      "feas.v1beta1.vulnerability.Vulnerability",
+      "feas.v1beta1.vulnerability.Vulnerability" +
       "H\000\022-\n\005build\030\013 \001(\0132\034.grafeas.v1beta1.buil" +
       "d.BuildH\000\0222\n\nbase_image\030\014 \001(\0132\034.grafeas." +
       "v1beta1.image.BasisH\000\0223\n\007package\030\r \001(\0132 " +
@@ -212,7 +212,7 @@ public final class Grafeas {
       "afeas.v1beta1.discovery.DiscoveryH\000\022G\n\025a" +
       "ttestation_authority\030\020 \001(\0132&.grafeas.v1b" +
       "eta1.attestation.AuthorityH\000B\006\n\004type\"$\n\024" +
-      "GetOccurrenceRequest\022\014\n\004name\030\001 \001(\t\"_\n\026Li",
+      "GetOccurrenceRequest\022\014\n\004name\030\001 \001(\t\"_\n\026Li" +
       "stOccurrencesRequest\022\016\n\006parent\030\001 \001(\t\022\016\n\006" +
       "filter\030\002 \001(\t\022\021\n\tpage_size\030\003 \001(\005\022\022\n\npage_" +
       "token\030\004 \001(\t\"d\n\027ListOccurrencesResponse\0220" +
@@ -222,7 +222,7 @@ public final class Grafeas {
       "eateOccurrenceRequest\022\016\n\006parent\030\001 \001(\t\022/\n" +
       "\noccurrence\030\002 \001(\0132\033.grafeas.v1beta1.Occu" +
       "rrence\"\211\001\n\027UpdateOccurrenceRequest\022\014\n\004na" +
-      "me\030\001 \001(\t\022/\n\noccurrence\030\002 \001(\0132\033.grafeas.v",
+      "me\030\001 \001(\t\022/\n\noccurrence\030\002 \001(\0132\033.grafeas.v" +
       "1beta1.Occurrence\022/\n\013update_mask\030\003 \001(\0132\032" +
       ".google.protobuf.FieldMask\"\036\n\016GetNoteReq" +
       "uest\022\014\n\004name\030\001 \001(\t\"(\n\030GetOccurrenceNoteR" +
@@ -232,7 +232,7 @@ public final class Grafeas {
       "otesResponse\022$\n\005notes\030\001 \003(\0132\025.grafeas.v1" +
       "beta1.Note\022\027\n\017next_page_token\030\002 \001(\t\"!\n\021D" +
       "eleteNoteRequest\022\014\n\004name\030\001 \001(\t\"Y\n\021Create" +
-      "NoteRequest\022\016\n\006parent\030\001 \001(\t\022\017\n\007note_id\030\002",
+      "NoteRequest\022\016\n\006parent\030\001 \001(\t\022\017\n\007note_id\030\002" +
       " \001(\t\022#\n\004note\030\003 \001(\0132\025.grafeas.v1beta1.Not" +
       "e\"w\n\021UpdateNoteRequest\022\014\n\004name\030\001 \001(\t\022#\n\004" +
       "note\030\002 \001(\0132\025.grafeas.v1beta1.Note\022/\n\013upd" +
@@ -242,7 +242,7 @@ public final class Grafeas {
       "\005\022\022\n\npage_token\030\004 \001(\t\"h\n\033ListNoteOccurre" +
       "ncesResponse\0220\n\013occurrences\030\001 \003(\0132\033.graf" +
       "eas.v1beta1.Occurrence\022\027\n\017next_page_toke" +
-      "n\030\002 \001(\t\"\262\001\n\027BatchCreateNotesRequest\022\016\n\006p",
+      "n\030\002 \001(\t\"\262\001\n\027BatchCreateNotesRequest\022\016\n\006p" +
       "arent\030\001 \001(\t\022B\n\005notes\030\002 \003(\01323.grafeas.v1b" +
       "eta1.BatchCreateNotesRequest.NotesEntry\032" +
       "C\n\nNotesEntry\022\013\n\003key\030\001 \001(\t\022$\n\005value\030\002 \001(" +
@@ -252,7 +252,7 @@ public final class Grafeas {
       "Request\022\016\n\006parent\030\001 \001(\t\0220\n\013occurrences\030\002" +
       " \003(\0132\033.grafeas.v1beta1.Occurrence\"R\n\036Bat" +
       "chCreateOccurrencesResponse\0220\n\013occurrenc" +
-      "es\030\001 \003(\0132\033.grafeas.v1beta1.Occurrence\"K\n",
+      "es\030\001 \003(\0132\033.grafeas.v1beta1.Occurrence\"K\n" +
       ")GetVulnerabilityOccurrencesSummaryReque" +
       "st\022\016\n\006parent\030\001 \001(\t\022\016\n\006filter\030\002 \001(\t\"\245\002\n\037V" +
       "ulnerabilityOccurrencesSummary\022U\n\006counts" +
@@ -262,7 +262,7 @@ public final class Grafeas {
       "2\031.grafeas.v1beta1.Resource\0229\n\010severity\030" +
       "\002 \001(\0162\'.grafeas.v1beta1.vulnerability.Se" +
       "verity\022\025\n\rfixable_count\030\003 \001(\003\022\023\n\013total_c" +
-      "ount\030\004 \001(\0032\302\021\n\016GrafeasV1Beta1\022\205\001\n\rGetOcc",
+      "ount\030\004 \001(\0032\302\021\n\016GrafeasV1Beta1\022\205\001\n\rGetOcc" +
       "urrence\022%.grafeas.v1beta1.GetOccurrenceR" +
       "equest\032\033.grafeas.v1beta1.Occurrence\"0\202\323\344" +
       "\223\002*\022(/v1beta1/{name=projects/*/occurrenc" +
@@ -272,7 +272,7 @@ public final class Grafeas {
       "1beta1/{parent=projects/*}/occurrences\022\206" +
       "\001\n\020DeleteOccurrence\022(.grafeas.v1beta1.De" +
       "leteOccurrenceRequest\032\026.google.protobuf." +
-      "Empty\"0\202\323\344\223\002**(/v1beta1/{name=projects/*",
+      "Empty\"0\202\323\344\223\002**(/v1beta1/{name=projects/*" +
       "/occurrences/*}\022\227\001\n\020CreateOccurrence\022(.g" +
       "rafeas.v1beta1.CreateOccurrenceRequest\032\033" +
       ".grafeas.v1beta1.Occurrence\"<\202\323\344\223\0026\"(/v1" +
@@ -282,7 +282,7 @@ public final class Grafeas {
       "uest\032/.grafeas.v1beta1.BatchCreateOccurr" +
       "encesResponse\"?\202\323\344\223\0029\"4/v1beta1/{parent=" +
       "projects/*}/occurrences:batchCreate:\001*\022\227" +
-      "\001\n\020UpdateOccurrence\022(.grafeas.v1beta1.Up",
+      "\001\n\020UpdateOccurrence\022(.grafeas.v1beta1.Up" +
       "dateOccurrenceRequest\032\033.grafeas.v1beta1." +
       "Occurrence\"<\202\323\344\223\00262(/v1beta1/{name=proje" +
       "cts/*/occurrences/*}:\noccurrence\022\215\001\n\021Get" +
@@ -292,7 +292,7 @@ public final class Grafeas {
       "rrences/*}/notes\022m\n\007GetNote\022\037.grafeas.v1" +
       "beta1.GetNoteRequest\032\025.grafeas.v1beta1.N" +
       "ote\"*\202\323\344\223\002$\022\"/v1beta1/{name=projects/*/n" +
-      "otes/*}\022~\n\tListNotes\022!.grafeas.v1beta1.L",
+      "otes/*}\022~\n\tListNotes\022!.grafeas.v1beta1.L" +
       "istNotesRequest\032\".grafeas.v1beta1.ListNo" +
       "tesResponse\"*\202\323\344\223\002$\022\"/v1beta1/{parent=pr" +
       "ojects/*}/notes\022t\n\nDeleteNote\022\".grafeas." +
@@ -302,7 +302,7 @@ public final class Grafeas {
       "beta1.CreateNoteRequest\032\025.grafeas.v1beta" +
       "1.Note\"0\202\323\344\223\002*\"\"/v1beta1/{parent=project" +
       "s/*}/notes:\004note\022\242\001\n\020BatchCreateNotes\022(." +
-      "grafeas.v1beta1.BatchCreateNotesRequest\032",
+      "grafeas.v1beta1.BatchCreateNotesRequest\032" +
       ").grafeas.v1beta1.BatchCreateNotesRespon" +
       "se\"9\202\323\344\223\0023\"./v1beta1/{parent=projects/*}" +
       "/notes:batchCreate:\001*\022y\n\nUpdateNote\022\".gr" +
@@ -312,7 +312,7 @@ public final class Grafeas {
       "urrences\022+.grafeas.v1beta1.ListNoteOccur" +
       "rencesRequest\032,.grafeas.v1beta1.ListNote" +
       "OccurrencesResponse\"6\202\323\344\223\0020\022./v1beta1/{n" +
-      "ame=projects/*/notes/*}/occurrences\022\331\001\n\"",
+      "ame=projects/*/notes/*}/occurrences\022\331\001\n\"" +
       "GetVulnerabilityOccurrencesSummary\022:.gra" +
       "feas.v1beta1.GetVulnerabilityOccurrences" +
       "SummaryRequest\0320.grafeas.v1beta1.Vulnera" +

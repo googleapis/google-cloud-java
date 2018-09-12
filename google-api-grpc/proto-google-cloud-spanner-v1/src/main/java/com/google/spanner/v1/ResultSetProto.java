@@ -52,7 +52,7 @@ public final class ResultSetProto {
       "data\030\001 \001(\0132$.google.spanner.v1.ResultSet" +
       "Metadata\022(\n\004rows\030\002 \003(\0132\032.google.protobuf" +
       ".ListValue\0220\n\005stats\030\003 \001(\0132!.google.spann" +
-      "er.v1.ResultSetStats\"\321\001\n\020PartialResultSe",
+      "er.v1.ResultSetStats\"\321\001\n\020PartialResultSe" +
       "t\0226\n\010metadata\030\001 \001(\0132$.google.spanner.v1." +
       "ResultSetMetadata\022&\n\006values\030\002 \003(\0132\026.goog" +
       "le.protobuf.Value\022\025\n\rchunked_value\030\003 \001(\010" +
@@ -62,7 +62,7 @@ public final class ResultSetProto {
       ".spanner.v1.StructType\0223\n\013transaction\030\002 " +
       "\001(\0132\036.google.spanner.v1.Transaction\"p\n\016R" +
       "esultSetStats\0220\n\nquery_plan\030\001 \001(\0132\034.goog" +
-      "le.spanner.v1.QueryPlan\022,\n\013query_stats\030\002",
+      "le.spanner.v1.QueryPlan\022,\n\013query_stats\030\002" +
       " \001(\0132\027.google.protobuf.StructB\232\001\n\025com.go" +
       "ogle.spanner.v1B\016ResultSetProtoP\001Z8googl" +
       "e.golang.org/genproto/googleapis/spanner" +

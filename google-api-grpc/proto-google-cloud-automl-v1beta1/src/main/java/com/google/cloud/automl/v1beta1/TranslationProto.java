@@ -52,7 +52,7 @@ public final class TranslationProto {
       "(\t\"K\n\034TranslationEvaluationMetrics\022\022\n\nbl" +
       "eu_score\030\001 \001(\001\022\027\n\017base_bleu_score\030\002 \001(\001\"" +
       "j\n\030TranslationModelMetadata\022\022\n\nbase_mode" +
-      "l\030\001 \001(\t\022\034\n\024source_language_code\030\002 \001(\t\022\034\n",
+      "l\030\001 \001(\t\022\034\n\024source_language_code\030\002 \001(\t\022\034\n" +
       "\024target_language_code\030\003 \001(\t\"]\n\025Translati" +
       "onAnnotation\022D\n\022translated_content\030\001 \001(\013" +
       "2(.google.cloud.automl.v1beta1.TextSnipp" +

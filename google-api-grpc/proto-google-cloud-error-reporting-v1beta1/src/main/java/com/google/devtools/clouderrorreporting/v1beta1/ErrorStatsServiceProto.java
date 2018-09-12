@@ -82,7 +82,7 @@ public final class ErrorStatsServiceProto {
       "ogle/protobuf/timestamp.proto\"\241\004\n\025ListGr" +
       "oupStatsRequest\022\024\n\014project_name\030\001 \001(\t\022\020\n" +
       "\010group_id\030\002 \003(\t\022Y\n\016service_filter\030\003 \001(\0132" +
-      "A.google.devtools.clouderrorreporting.v1",
+      "A.google.devtools.clouderrorreporting.v1" +
       "beta1.ServiceContextFilter\022O\n\ntime_range" +
       "\030\005 \001(\0132;.google.devtools.clouderrorrepor" +
       "ting.v1beta1.QueryTimeRange\0227\n\024timed_cou" +
@@ -92,7 +92,7 @@ public final class ErrorStatsServiceProto {
       "Alignment\0222\n\016alignment_time\030\010 \001(\0132\032.goog" +
       "le.protobuf.Timestamp\022K\n\005order\030\t \001(\0162<.g" +
       "oogle.devtools.clouderrorreporting.v1bet" +
-      "a1.ErrorGroupOrder\022\021\n\tpage_size\030\013 \001(\005\022\022\n",
+      "a1.ErrorGroupOrder\022\021\n\tpage_size\030\013 \001(\005\022\022\n" +
       "\npage_token\030\014 \001(\t\"\300\001\n\026ListGroupStatsResp" +
       "onse\022W\n\021error_group_stats\030\001 \003(\0132<.google" +
       ".devtools.clouderrorreporting.v1beta1.Er" +
@@ -102,7 +102,7 @@ public final class ErrorStatsServiceProto {
       "p\030\001 \001(\01327.google.devtools.clouderrorrepo" +
       "rting.v1beta1.ErrorGroup\022\r\n\005count\030\002 \001(\003\022" +
       "\034\n\024affected_users_count\030\003 \001(\003\022M\n\014timed_c" +
-      "ounts\030\004 \003(\01327.google.devtools.clouderror",
+      "ounts\030\004 \003(\01327.google.devtools.clouderror" +
       "reporting.v1beta1.TimedCount\0223\n\017first_se" +
       "en_time\030\005 \001(\0132\032.google.protobuf.Timestam" +
       "p\0222\n\016last_seen_time\030\006 \001(\0132\032.google.proto" +
@@ -112,7 +112,7 @@ public final class ErrorStatsServiceProto {
       "rvices\030\010 \001(\005\022O\n\016representative\030\t \001(\01327.g" +
       "oogle.devtools.clouderrorreporting.v1bet" +
       "a1.ErrorEvent\"y\n\nTimedCount\022\r\n\005count\030\001 \001" +
-      "(\003\022.\n\nstart_time\030\002 \001(\0132\032.google.protobuf",
+      "(\003\022.\n\nstart_time\030\002 \001(\0132\032.google.protobuf" +
       ".Timestamp\022,\n\010end_time\030\003 \001(\0132\032.google.pr" +
       "otobuf.Timestamp\"\216\002\n\021ListEventsRequest\022\024" +
       "\n\014project_name\030\001 \001(\t\022\020\n\010group_id\030\002 \001(\t\022Y" +
@@ -122,7 +122,7 @@ public final class ErrorStatsServiceProto {
       "evtools.clouderrorreporting.v1beta1.Quer" +
       "yTimeRange\022\021\n\tpage_size\030\006 \001(\005\022\022\n\npage_to" +
       "ken\030\007 \001(\t\"\262\001\n\022ListEventsResponse\022M\n\014erro" +
-      "r_events\030\001 \003(\01327.google.devtools.clouder",
+      "r_events\030\001 \003(\01327.google.devtools.clouder" +
       "rorreporting.v1beta1.ErrorEvent\022\027\n\017next_" +
       "page_token\030\002 \001(\t\0224\n\020time_range_begin\030\004 \001" +
       "(\0132\032.google.protobuf.Timestamp\"\347\001\n\016Query" +
@@ -132,7 +132,7 @@ public final class ErrorStatsServiceProto {
       "CIFIED\020\000\022\021\n\rPERIOD_1_HOUR\020\001\022\022\n\016PERIOD_6_" +
       "HOURS\020\002\022\020\n\014PERIOD_1_DAY\020\003\022\021\n\rPERIOD_1_WE" +
       "EK\020\004\022\022\n\016PERIOD_30_DAYS\020\005\"O\n\024ServiceConte" +
-      "xtFilter\022\017\n\007service\030\002 \001(\t\022\017\n\007version\030\003 \001",
+      "xtFilter\022\017\n\007service\030\002 \001(\t\022\017\n\007version\030\003 \001" +
       "(\t\022\025\n\rresource_type\030\004 \001(\t\"+\n\023DeleteEvent" +
       "sRequest\022\024\n\014project_name\030\001 \001(\t\"\026\n\024Delete" +
       "EventsResponse*u\n\023TimedCountAlignment\022%\n" +
@@ -142,7 +142,7 @@ public final class ErrorStatsServiceProto {
       "P_ORDER_UNSPECIFIED\020\000\022\016\n\nCOUNT_DESC\020\001\022\022\n" +
       "\016LAST_SEEN_DESC\020\002\022\020\n\014CREATED_DESC\020\003\022\027\n\023A" +
       "FFECTED_USERS_DESC\020\0042\362\004\n\021ErrorStatsServi" +
-      "ce\022\320\001\n\016ListGroupStats\022B.google.devtools.",
+      "ce\022\320\001\n\016ListGroupStats\022B.google.devtools." +
       "clouderrorreporting.v1beta1.ListGroupSta" +
       "tsRequest\032C.google.devtools.clouderrorre" +
       "porting.v1beta1.ListGroupStatsResponse\"5" +
@@ -152,7 +152,7 @@ public final class ErrorStatsServiceProto {
       "ventsRequest\032?.google.devtools.clouderro" +
       "rreporting.v1beta1.ListEventsResponse\"1\202" +
       "\323\344\223\002+\022)/v1beta1/{project_name=projects/*" +
-      "}/events\022\306\001\n\014DeleteEvents\022@.google.devto",
+      "}/events\022\306\001\n\014DeleteEvents\022@.google.devto" +
       "ols.clouderrorreporting.v1beta1.DeleteEv" +
       "entsRequest\032A.google.devtools.clouderror" +
       "reporting.v1beta1.DeleteEventsResponse\"1" +
@@ -162,7 +162,7 @@ public final class ErrorStatsServiceProto {
       "ProtoP\001Z^google.golang.org/genproto/goog" +
       "leapis/devtools/clouderrorreporting/v1be" +
       "ta1;clouderrorreporting\252\002#Google.Cloud.E" +
-      "rrorReporting.V1Beta1\312\002#Google\\Cloud\\Err",
+      "rrorReporting.V1Beta1\312\002#Google\\Cloud\\Err" +
       "orReporting\\V1beta1b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =

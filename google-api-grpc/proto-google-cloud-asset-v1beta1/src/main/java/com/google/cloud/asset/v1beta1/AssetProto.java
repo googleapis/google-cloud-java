@@ -52,7 +52,7 @@ public final class AssetProto {
       "indow\030\001 \001(\0132&.google.cloud.asset.v1beta1" +
       ".TimeWindow\022\017\n\007deleted\030\002 \001(\010\0220\n\005asset\030\003 " +
       "\001(\0132!.google.cloud.asset.v1beta1.Asset\"j" +
-      "\n\nTimeWindow\022.\n\nstart_time\030\001 \001(\0132\032.googl",
+      "\n\nTimeWindow\022.\n\nstart_time\030\001 \001(\0132\032.googl" +
       "e.protobuf.Timestamp\022,\n\010end_time\030\002 \001(\0132\032" +
       ".google.protobuf.Timestamp\"\214\001\n\005Asset\022\014\n\004" +
       "name\030\001 \001(\t\022\022\n\nasset_type\030\002 \001(\t\0226\n\010resour" +
@@ -62,7 +62,7 @@ public final class AssetProto {
       "\036\n\026discovery_document_uri\030\002 \001(\t\022\026\n\016disco" +
       "very_name\030\003 \001(\t\022\024\n\014resource_url\030\004 \001(\t\022\016\n" +
       "\006parent\030\005 \001(\t\022%\n\004data\030\006 \001(\0132\027.google.pro" +
-      "tobuf.StructB\251\001\n\036com.google.cloud.asset.",
+      "tobuf.StructB\251\001\n\036com.google.cloud.asset." +
       "v1beta1B\nAssetProtoP\001Z?google.golang.org" +
       "/genproto/googleapis/cloud/asset/v1beta1" +
       ";asset\252\002\032Google.Cloud.Asset.V1Beta1\312\002\032Go" +

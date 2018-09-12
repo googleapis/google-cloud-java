@@ -57,7 +57,7 @@ public final class GeometryProto {
       "1p3beta1.Vertex\022L\n\023normalized_vertices\030\002" +
       " \003(\0132/.google.cloud.vision.v1p3beta1.Nor" +
       "malizedVertex\"[\n\026NormalizedBoundingPoly\022" +
-      "A\n\010vertices\030\001 \003(\0132/.google.cloud.vision.",
+      "A\n\010vertices\030\001 \003(\0132/.google.cloud.vision." +
       "v1p3beta1.NormalizedVertex\"+\n\010Position\022\t" +
       "\n\001x\030\001 \001(\002\022\t\n\001y\030\002 \001(\002\022\t\n\001z\030\003 \001(\002B|\n!com.g" +
       "oogle.cloud.vision.v1p3beta1B\rGeometryPr" +

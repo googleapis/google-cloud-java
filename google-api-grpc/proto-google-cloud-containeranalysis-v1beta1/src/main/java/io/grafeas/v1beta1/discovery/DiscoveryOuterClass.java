@@ -47,7 +47,7 @@ public final class DiscoveryOuterClass {
       "is_kind\030\001 \001(\0162\031.grafeas.v1beta1.NoteKind" +
       "\"D\n\007Details\0229\n\ndiscovered\030\001 \001(\0132%.grafea" +
       "s.v1beta1.discovery.Discovered\"\206\004\n\nDisco" +
-      "vered\022U\n\023continuous_analysis\030\001 \001(\01628.gra",
+      "vered\022U\n\023continuous_analysis\030\001 \001(\01628.gra" +
       "feas.v1beta1.discovery.Discovered.Contin" +
       "uousAnalysis\0226\n\022last_analysis_time\030\002 \001(\013" +
       "2\032.google.protobuf.Timestamp\022M\n\017analysis" +
@@ -57,7 +57,7 @@ public final class DiscoveryOuterClass {
       "\n\022ContinuousAnalysis\022#\n\037CONTINUOUS_ANALY" +
       "SIS_UNSPECIFIED\020\000\022\n\n\006ACTIVE\020\001\022\014\n\010INACTIV" +
       "E\020\002\"\221\001\n\016AnalysisStatus\022\037\n\033ANALYSIS_STATU" +
-      "S_UNSPECIFIED\020\000\022\013\n\007PENDING\020\001\022\014\n\010SCANNING",
+      "S_UNSPECIFIED\020\000\022\013\n\007PENDING\020\001\022\014\n\010SCANNING" +
       "\020\002\022\024\n\020FINISHED_SUCCESS\020\003\022\023\n\017FINISHED_FAI" +
       "LED\020\004\022\030\n\024FINISHED_UNSUPPORTED\020\005B\204\001\n\034io.g" +
       "rafeas.v1beta1.discoveryP\001Z\\google.golan" +

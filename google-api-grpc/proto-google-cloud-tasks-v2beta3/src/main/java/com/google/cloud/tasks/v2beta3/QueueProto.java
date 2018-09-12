@@ -47,7 +47,7 @@ public final class QueueProto {
       "ne_http_queue\030\003 \001(\0132..google.cloud.tasks" +
       ".v2beta3.AppEngineHttpQueueH\000\022;\n\013rate_li" +
       "mits\030\004 \001(\0132&.google.cloud.tasks.v2beta3." +
-      "RateLimits\022=\n\014retry_config\030\005 \001(\0132\'.googl",
+      "RateLimits\022=\n\014retry_config\030\005 \001(\0132\'.googl" +
       "e.cloud.tasks.v2beta3.RetryConfig\0226\n\005sta" +
       "te\030\006 \001(\0162\'.google.cloud.tasks.v2beta3.Qu" +
       "eue.State\022.\n\npurge_time\030\007 \001(\0132\032.google.p" +
@@ -57,7 +57,7 @@ public final class QueueProto {
       "max_dispatches_per_second\030\001 \001(\001\022\026\n\016max_b" +
       "urst_size\030\002 \001(\005\022!\n\031max_concurrent_dispat" +
       "ches\030\003 \001(\005\"\321\001\n\013RetryConfig\022\024\n\014max_attemp" +
-      "ts\030\001 \001(\005\0225\n\022max_retry_duration\030\002 \001(\0132\031.g",
+      "ts\030\001 \001(\005\0225\n\022max_retry_duration\030\002 \001(\0132\031.g" +
       "oogle.protobuf.Duration\022.\n\013min_backoff\030\003" +
       " \001(\0132\031.google.protobuf.Duration\022.\n\013max_b" +
       "ackoff\030\004 \001(\0132\031.google.protobuf.Duration\022" +

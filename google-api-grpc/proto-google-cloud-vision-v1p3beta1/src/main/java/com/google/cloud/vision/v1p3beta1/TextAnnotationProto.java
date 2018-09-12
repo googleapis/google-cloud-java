@@ -77,7 +77,7 @@ public final class TextAnnotationProto {
       "\002 \001(\t\032=\n\020DetectedLanguage\022\025\n\rlanguage_co" +
       "de\030\001 \001(\t\022\022\n\nconfidence\030\002 \001(\002\032\334\001\n\rDetecte" +
       "dBreak\022S\n\004type\030\001 \001(\0162E.google.cloud.visi" +
-      "on.v1p3beta1.TextAnnotation.DetectedBrea",
+      "on.v1p3beta1.TextAnnotation.DetectedBrea" +
       "k.BreakType\022\021\n\tis_prefix\030\002 \001(\010\"c\n\tBreakT" +
       "ype\022\013\n\007UNKNOWN\020\000\022\t\n\005SPACE\020\001\022\016\n\nSURE_SPAC" +
       "E\020\002\022\022\n\016EOL_SURE_SPACE\020\003\022\n\n\006HYPHEN\020\004\022\016\n\nL" +
@@ -87,7 +87,7 @@ public final class TextAnnotationProto {
       "\022S\n\016detected_break\030\002 \001(\0132;.google.cloud." +
       "vision.v1p3beta1.TextAnnotation.Detected" +
       "Break\"\275\001\n\004Page\022L\n\010property\030\001 \001(\0132:.googl" +
-      "e.cloud.vision.v1p3beta1.TextAnnotation.",
+      "e.cloud.vision.v1p3beta1.TextAnnotation." +
       "TextProperty\022\r\n\005width\030\002 \001(\005\022\016\n\006height\030\003 " +
       "\001(\005\0224\n\006blocks\030\004 \003(\0132$.google.cloud.visio" +
       "n.v1p3beta1.Block\022\022\n\nconfidence\030\005 \001(\002\"\202\003" +
@@ -97,7 +97,7 @@ public final class TextAnnotationProto {
       "ud.vision.v1p3beta1.BoundingPoly\022<\n\npara" +
       "graphs\030\003 \003(\0132(.google.cloud.vision.v1p3b" +
       "eta1.Paragraph\022B\n\nblock_type\030\004 \001(\0162..goo" +
-      "gle.cloud.vision.v1p3beta1.Block.BlockTy",
+      "gle.cloud.vision.v1p3beta1.Block.BlockTy" +
       "pe\022\022\n\nconfidence\030\005 \001(\002\"R\n\tBlockType\022\013\n\007U" +
       "NKNOWN\020\000\022\010\n\004TEXT\020\001\022\t\n\005TABLE\020\002\022\013\n\007PICTURE" +
       "\020\003\022\t\n\005RULER\020\004\022\013\n\007BARCODE\020\005\"\344\001\n\tParagraph" +
@@ -107,7 +107,7 @@ public final class TextAnnotationProto {
       "on.v1p3beta1.BoundingPoly\0222\n\005words\030\003 \003(\013" +
       "2#.google.cloud.vision.v1p3beta1.Word\022\022\n" +
       "\nconfidence\030\004 \001(\002\"\343\001\n\004Word\022L\n\010property\030\001" +
-      " \001(\0132:.google.cloud.vision.v1p3beta1.Tex",
+      " \001(\0132:.google.cloud.vision.v1p3beta1.Tex" +
       "tAnnotation.TextProperty\022A\n\014bounding_box" +
       "\030\002 \001(\0132+.google.cloud.vision.v1p3beta1.B" +
       "oundingPoly\0226\n\007symbols\030\003 \003(\0132%.google.cl" +
@@ -117,7 +117,7 @@ public final class TextAnnotationProto {
       "ion.TextProperty\022A\n\014bounding_box\030\002 \001(\0132+" +
       ".google.cloud.vision.v1p3beta1.BoundingP" +
       "oly\022\014\n\004text\030\003 \001(\t\022\022\n\nconfidence\030\004 \001(\002B\202\001" +
-      "\n!com.google.cloud.vision.v1p3beta1B\023Tex",
+      "\n!com.google.cloud.vision.v1p3beta1B\023Tex" +
       "tAnnotationProtoP\001ZCgoogle.golang.org/ge" +
       "nproto/googleapis/cloud/vision/v1p3beta1" +
       ";vision\370\001\001b\006proto3"

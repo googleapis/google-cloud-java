@@ -62,7 +62,7 @@ public final class AssetServiceProto {
       "t\022\016\n\006parent\030\001 \001(\t\022-\n\tread_time\030\002 \001(\0132\032.g" +
       "oogle.protobuf.Timestamp\022\023\n\013asset_types\030" +
       "\003 \003(\t\022=\n\014content_type\030\004 \001(\0162\'.google.clo" +
-      "ud.asset.v1beta1.ContentType\022?\n\routput_c",
+      "ud.asset.v1beta1.ContentType\022?\n\routput_c" +
       "onfig\030\005 \001(\0132(.google.cloud.asset.v1beta1" +
       ".OutputConfig\"\206\001\n\024ExportAssetsResponse\022-" +
       "\n\tread_time\030\001 \001(\0132\032.google.protobuf.Time" +
@@ -72,7 +72,7 @@ public final class AssetServiceProto {
       "\023\n\013asset_names\030\002 \003(\t\022=\n\014content_type\030\003 \001" +
       "(\0162\'.google.cloud.asset.v1beta1.ContentT" +
       "ype\022@\n\020read_time_window\030\004 \001(\0132&.google.c" +
-      "loud.asset.v1beta1.TimeWindow\"Z\n\035BatchGe",
+      "loud.asset.v1beta1.TimeWindow\"Z\n\035BatchGe" +
       "tAssetsHistoryResponse\0229\n\006assets\030\001 \003(\0132)" +
       ".google.cloud.asset.v1beta1.TemporalAsse" +
       "t\"d\n\014OutputConfig\022E\n\017gcs_destination\030\001 \001" +
@@ -82,7 +82,7 @@ public final class AssetServiceProto {
       "_TYPE_UNSPECIFIED\020\000\022\014\n\010RESOURCE\020\001\022\016\n\nIAM" +
       "_POLICY\020\0022\337\003\n\014AssetService\022\311\001\n\014ExportAss" +
       "ets\022/.google.cloud.asset.v1beta1.ExportA" +
-      "ssetsRequest\032\035.google.longrunning.Operat",
+      "ssetsRequest\032\035.google.longrunning.Operat" +
       "ion\"i\202\323\344\223\002c\")/v1beta1/{parent=projects/*" +
       "}:exportAssets:\001*Z3\"./v1beta1/{parent=or" +
       "ganizations/*}:exportAssets:\001*\022\202\002\n\025Batch" +
@@ -92,7 +92,7 @@ public final class AssetServiceProto {
       "storyResponse\"t\202\323\344\223\002n\0222/v1beta1/{parent=" +
       "projects/*}:batchGetAssetsHistoryZ8\0226/v1" +
       "beta1/{parent=organizations/*}:batchGetA" +
-      "ssetHistoryB\260\001\n\036com.google.cloud.asset.v",
+      "ssetHistoryB\260\001\n\036com.google.cloud.asset.v" +
       "1beta1B\021AssetServiceProtoP\001Z?google.gola" +
       "ng.org/genproto/googleapis/cloud/asset/v" +
       "1beta1;asset\252\002\032Google.Cloud.Asset.V1Beta" +

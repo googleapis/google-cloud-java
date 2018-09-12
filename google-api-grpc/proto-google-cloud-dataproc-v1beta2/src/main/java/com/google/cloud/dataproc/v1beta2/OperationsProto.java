@@ -47,7 +47,7 @@ public final class OperationsProto {
       "State\022\023\n\013inner_state\030\002 \001(\t\022\017\n\007details\030\003 " +
       "\001(\t\0224\n\020state_start_time\030\004 \001(\0132\032.google.p" +
       "rotobuf.Timestamp\"8\n\005State\022\013\n\007UNKNOWN\020\000\022" +
-      "\013\n\007PENDING\020\001\022\013\n\007RUNNING\020\002\022\010\n\004DONE\020\003\"\237\003\n\030",
+      "\013\n\007PENDING\020\001\022\013\n\007RUNNING\020\002\022\010\n\004DONE\020\003\"\237\003\n\030" +
       "ClusterOperationMetadata\022\024\n\014cluster_name" +
       "\030\007 \001(\t\022\024\n\014cluster_uuid\030\010 \001(\t\022E\n\006status\030\t" +
       " \001(\01325.google.cloud.dataproc.v1beta2.Clu" +
@@ -57,7 +57,7 @@ public final class OperationsProto {
       "(\t\022\023\n\013description\030\014 \001(\t\022S\n\006labels\030\r \003(\0132" +
       "C.google.cloud.dataproc.v1beta2.ClusterO" +
       "perationMetadata.LabelsEntry\022\020\n\010warnings" +
-      "\030\016 \003(\t\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005va",
+      "\030\016 \003(\t\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005va" +
       "lue\030\002 \001(\t:\0028\001B}\n!com.google.cloud.datapr" +
       "oc.v1beta2B\017OperationsProtoP\001ZEgoogle.go" +
       "lang.org/genproto/googleapis/cloud/datap" +
