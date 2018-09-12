@@ -72,7 +72,7 @@ public final class UptimeServiceProto {
       "(\t\022\021\n\tpage_size\030\003 \001(\005\022\022\n\npage_token\030\004 \001(" +
       "\t\"\224\001\n\036ListUptimeCheckConfigsResponse\022E\n\024" +
       "uptime_check_configs\030\001 \003(\0132\'.google.moni" +
-      "toring.v3.UptimeCheckConfig\022\027\n\017next_page",
+      "toring.v3.UptimeCheckConfig\022\027\n\017next_page" +
       "_token\030\002 \001(\t\022\022\n\ntotal_size\030\003 \001(\005\"+\n\033GetU" +
       "ptimeCheckConfigRequest\022\014\n\004name\030\001 \001(\t\"v\n" +
       "\036CreateUptimeCheckConfigRequest\022\016\n\006paren" +
@@ -82,7 +82,7 @@ public final class UptimeServiceProto {
       "te_mask\030\002 \001(\0132\032.google.protobuf.FieldMas" +
       "k\022D\n\023uptime_check_config\030\003 \001(\0132\'.google." +
       "monitoring.v3.UptimeCheckConfig\".\n\036Delet" +
-      "eUptimeCheckConfigRequest\022\014\n\004name\030\001 \001(\t\"",
+      "eUptimeCheckConfigRequest\022\014\n\004name\030\001 \001(\t\"" +
       "B\n\031ListUptimeCheckIpsRequest\022\021\n\tpage_siz" +
       "e\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"t\n\032ListUptim" +
       "eCheckIpsResponse\022=\n\020uptime_check_ips\030\001 " +
@@ -92,7 +92,7 @@ public final class UptimeServiceProto {
       "ogle.monitoring.v3.ListUptimeCheckConfig" +
       "sRequest\0324.google.monitoring.v3.ListUpti" +
       "meCheckConfigsResponse\"2\202\323\344\223\002,\022*/v3/{par" +
-      "ent=projects/*}/uptimeCheckConfigs\022\246\001\n\024G",
+      "ent=projects/*}/uptimeCheckConfigs\022\246\001\n\024G" +
       "etUptimeCheckConfig\0221.google.monitoring." +
       "v3.GetUptimeCheckConfigRequest\032\'.google." +
       "monitoring.v3.UptimeCheckConfig\"2\202\323\344\223\002,\022" +
@@ -102,7 +102,7 @@ public final class UptimeServiceProto {
       "quest\032\'.google.monitoring.v3.UptimeCheck" +
       "Config\"G\202\323\344\223\002A\"*/v3/{parent=projects/*}/" +
       "uptimeCheckConfigs:\023uptime_check_config\022" +
-      "\325\001\n\027UpdateUptimeCheckConfig\0224.google.mon",
+      "\325\001\n\027UpdateUptimeCheckConfig\0224.google.mon" +
       "itoring.v3.UpdateUptimeCheckConfigReques" +
       "t\032\'.google.monitoring.v3.UptimeCheckConf" +
       "ig\"[\202\323\344\223\002U2>/v3/{uptime_check_config.nam" +
@@ -112,7 +112,7 @@ public final class UptimeServiceProto {
       "heckConfigRequest\032\026.google.protobuf.Empt" +
       "y\"2\202\323\344\223\002,**/v3/{name=projects/*/uptimeCh" +
       "eckConfigs/*}\022\223\001\n\022ListUptimeCheckIps\022/.g" +
-      "oogle.monitoring.v3.ListUptimeCheckIpsRe",
+      "oogle.monitoring.v3.ListUptimeCheckIpsRe" +
       "quest\0320.google.monitoring.v3.ListUptimeC" +
       "heckIpsResponse\"\032\202\323\344\223\002\024\022\022/v3/uptimeCheck" +
       "IpsB\252\001\n\030com.google.monitoring.v3B\022Uptime" +

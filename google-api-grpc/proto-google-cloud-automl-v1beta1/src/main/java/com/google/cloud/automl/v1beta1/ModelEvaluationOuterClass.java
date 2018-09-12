@@ -37,7 +37,7 @@ public final class ModelEvaluationOuterClass {
       "o\"\350\002\n\017ModelEvaluation\022i\n!classification_" +
       "evaluation_metrics\030\010 \001(\0132<.google.cloud." +
       "automl.v1beta1.ClassificationEvaluationM" +
-      "etricsH\000\022c\n\036translation_evaluation_metri",
+      "etricsH\000\022c\n\036translation_evaluation_metri" +
       "cs\030\t \001(\01329.google.cloud.automl.v1beta1.T" +
       "ranslationEvaluationMetricsH\000\022\014\n\004name\030\001 " +
       "\001(\t\022\032\n\022annotation_spec_id\030\002 \001(\t\022/\n\013creat" +

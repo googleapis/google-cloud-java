@@ -35,6 +35,9 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -46,13 +49,6 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
           case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
@@ -72,6 +68,13 @@ private static final long serialVersionUID = 0L;
               mutable_bitField0_ |= 0x00000004;
             }
             names_.add(s);
+            break;
+          }
+          default: {
+            if (!parseUnknownFieldProto3(
+                input, unknownFields, extensionRegistry, tag)) {
+              done = true;
+            }
             break;
           }
         }
@@ -94,6 +97,7 @@ private static final long serialVersionUID = 0L;
     return io.grafeas.v1beta1.provenance.Provenance.internal_static_grafeas_v1beta1_provenance_Artifact_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return io.grafeas.v1beta1.provenance.Provenance.internal_static_grafeas_v1beta1_provenance_Artifact_fieldAccessorTable
@@ -252,6 +256,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -261,6 +266,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
+  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (!getChecksumBytes().isEmpty()) {
@@ -275,6 +281,7 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -410,6 +417,7 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
+  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
@@ -417,6 +425,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder(io.grafeas.v1beta1.provenance.Artifact prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
@@ -444,6 +453,7 @@ private static final long serialVersionUID = 0L;
       return io.grafeas.v1beta1.provenance.Provenance.internal_static_grafeas_v1beta1_provenance_Artifact_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return io.grafeas.v1beta1.provenance.Provenance.internal_static_grafeas_v1beta1_provenance_Artifact_fieldAccessorTable
@@ -466,6 +476,7 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
       }
     }
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       checksum_ = "";
@@ -477,15 +488,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
       return io.grafeas.v1beta1.provenance.Provenance.internal_static_grafeas_v1beta1_provenance_Artifact_descriptor;
     }
 
+    @java.lang.Override
     public io.grafeas.v1beta1.provenance.Artifact getDefaultInstanceForType() {
       return io.grafeas.v1beta1.provenance.Artifact.getDefaultInstance();
     }
 
+    @java.lang.Override
     public io.grafeas.v1beta1.provenance.Artifact build() {
       io.grafeas.v1beta1.provenance.Artifact result = buildPartial();
       if (!result.isInitialized()) {
@@ -494,6 +508,7 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public io.grafeas.v1beta1.provenance.Artifact buildPartial() {
       io.grafeas.v1beta1.provenance.Artifact result = new io.grafeas.v1beta1.provenance.Artifact(this);
       int from_bitField0_ = bitField0_;
@@ -510,32 +525,39 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof io.grafeas.v1beta1.provenance.Artifact) {
         return mergeFrom((io.grafeas.v1beta1.provenance.Artifact)other);
@@ -570,10 +592,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -946,11 +970,13 @@ private static final long serialVersionUID = 0L;
       onChanged();
       return this;
     }
+    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -972,11 +998,12 @@ private static final long serialVersionUID = 0L;
 
   private static final com.google.protobuf.Parser<Artifact>
       PARSER = new com.google.protobuf.AbstractParser<Artifact>() {
+    @java.lang.Override
     public Artifact parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Artifact(input, extensionRegistry);
+      return new Artifact(input, extensionRegistry);
     }
   };
 
@@ -989,6 +1016,7 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public io.grafeas.v1beta1.provenance.Artifact getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }

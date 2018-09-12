@@ -77,7 +77,7 @@ public final class AgentProto {
       "\003\n\005Agent\022\016\n\006parent\030\001 \001(\t\022\024\n\014display_name" +
       "\030\002 \001(\t\022\035\n\025default_language_code\030\003 \001(\t\022 \n" +
       "\030supported_language_codes\030\004 \003(\t\022\021\n\ttime_" +
-      "zone\030\005 \001(\t\022\023\n\013description\030\006 \001(\t\022\022\n\navata",
+      "zone\030\005 \001(\t\022\023\n\013description\030\006 \001(\t\022\022\n\navata" +
       "r_uri\030\007 \001(\t\022\026\n\016enable_logging\030\010 \001(\010\022D\n\nm" +
       "atch_mode\030\t \001(\01620.google.cloud.dialogflo" +
       "w.v2beta1.Agent.MatchMode\022 \n\030classificat" +
@@ -87,7 +87,7 @@ public final class AgentProto {
       "equest\022\016\n\006parent\030\001 \001(\t\"L\n\023SearchAgentsRe" +
       "quest\022\016\n\006parent\030\001 \001(\t\022\021\n\tpage_size\030\002 \001(\005" +
       "\022\022\n\npage_token\030\003 \001(\t\"g\n\024SearchAgentsResp" +
-      "onse\0226\n\006agents\030\001 \003(\0132&.google.cloud.dial",
+      "onse\0226\n\006agents\030\001 \003(\0132&.google.cloud.dial" +
       "ogflow.v2beta1.Agent\022\027\n\017next_page_token\030" +
       "\002 \001(\t\"#\n\021TrainAgentRequest\022\016\n\006parent\030\001 \001" +
       "(\t\"7\n\022ExportAgentRequest\022\016\n\006parent\030\001 \001(\t" +
@@ -97,7 +97,7 @@ public final class AgentProto {
       "\016\n\006parent\030\001 \001(\t\022\023\n\tagent_uri\030\002 \001(\tH\000\022\027\n\r" +
       "agent_content\030\003 \001(\014H\000B\007\n\005agent\"\\\n\023Restor" +
       "eAgentRequest\022\016\n\006parent\030\001 \001(\t\022\023\n\tagent_u" +
-      "ri\030\002 \001(\tH\000\022\027\n\ragent_content\030\003 \001(\014H\000B\007\n\005a",
+      "ri\030\002 \001(\tH\000\022\027\n\ragent_content\030\003 \001(\014H\000B\007\n\005a" +
       "gent2\264\007\n\006Agents\022\220\001\n\010GetAgent\0220.google.cl" +
       "oud.dialogflow.v2beta1.GetAgentRequest\032&" +
       ".google.cloud.dialogflow.v2beta1.Agent\"*" +
@@ -107,7 +107,7 @@ public final class AgentProto {
       "le.cloud.dialogflow.v2beta1.SearchAgents" +
       "Response\"1\202\323\344\223\002+\022)/v2beta1/{parent=proje" +
       "cts/*}/agent:search\022\224\001\n\nTrainAgent\0222.goo" +
-      "gle.cloud.dialogflow.v2beta1.TrainAgentR",
+      "gle.cloud.dialogflow.v2beta1.TrainAgentR" +
       "equest\032\035.google.longrunning.Operation\"3\202" +
       "\323\344\223\002-\"(/v2beta1/{parent=projects/*}/agen" +
       "t:train:\001*\022\227\001\n\013ExportAgent\0223.google.clou" +
@@ -117,7 +117,7 @@ public final class AgentProto {
       "t:\001*\022\227\001\n\013ImportAgent\0223.google.cloud.dial" +
       "ogflow.v2beta1.ImportAgentRequest\032\035.goog" +
       "le.longrunning.Operation\"4\202\323\344\223\002.\")/v2bet" +
-      "a1/{parent=projects/*}/agent:import:\001*\022\232",
+      "a1/{parent=projects/*}/agent:import:\001*\022\232" +
       "\001\n\014RestoreAgent\0224.google.cloud.dialogflo" +
       "w.v2beta1.RestoreAgentRequest\032\035.google.l" +
       "ongrunning.Operation\"5\202\323\344\223\002/\"*/v2beta1/{" +

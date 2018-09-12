@@ -33,6 +33,9 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -44,13 +47,6 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
           case 18: {
             com.google.monitoring.v3.NotificationChannel.Builder subBuilder = null;
             if (notificationChannel_ != null) {
@@ -70,6 +66,13 @@ private static final long serialVersionUID = 0L;
             name_ = s;
             break;
           }
+          default: {
+            if (!parseUnknownFieldProto3(
+                input, unknownFields, extensionRegistry, tag)) {
+              done = true;
+            }
+            break;
+          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -87,6 +90,7 @@ private static final long serialVersionUID = 0L;
     return com.google.monitoring.v3.NotificationServiceProto.internal_static_google_monitoring_v3_CreateNotificationChannelRequest_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.monitoring.v3.NotificationServiceProto.internal_static_google_monitoring_v3_CreateNotificationChannelRequest_fieldAccessorTable
@@ -180,6 +184,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -189,6 +194,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
+  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (notificationChannel_ != null) {
@@ -200,6 +206,7 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -327,6 +334,7 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
+  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
@@ -334,6 +342,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder(com.google.monitoring.v3.CreateNotificationChannelRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
@@ -361,6 +370,7 @@ private static final long serialVersionUID = 0L;
       return com.google.monitoring.v3.NotificationServiceProto.internal_static_google_monitoring_v3_CreateNotificationChannelRequest_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.monitoring.v3.NotificationServiceProto.internal_static_google_monitoring_v3_CreateNotificationChannelRequest_fieldAccessorTable
@@ -383,6 +393,7 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
       }
     }
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       name_ = "";
@@ -396,15 +407,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
       return com.google.monitoring.v3.NotificationServiceProto.internal_static_google_monitoring_v3_CreateNotificationChannelRequest_descriptor;
     }
 
+    @java.lang.Override
     public com.google.monitoring.v3.CreateNotificationChannelRequest getDefaultInstanceForType() {
       return com.google.monitoring.v3.CreateNotificationChannelRequest.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.monitoring.v3.CreateNotificationChannelRequest build() {
       com.google.monitoring.v3.CreateNotificationChannelRequest result = buildPartial();
       if (!result.isInitialized()) {
@@ -413,6 +427,7 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.monitoring.v3.CreateNotificationChannelRequest buildPartial() {
       com.google.monitoring.v3.CreateNotificationChannelRequest result = new com.google.monitoring.v3.CreateNotificationChannelRequest(this);
       result.name_ = name_;
@@ -425,32 +440,39 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.monitoring.v3.CreateNotificationChannelRequest) {
         return mergeFrom((com.google.monitoring.v3.CreateNotificationChannelRequest)other);
@@ -474,10 +496,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -762,11 +786,13 @@ private static final long serialVersionUID = 0L;
       }
       return notificationChannelBuilder_;
     }
+    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -788,11 +814,12 @@ private static final long serialVersionUID = 0L;
 
   private static final com.google.protobuf.Parser<CreateNotificationChannelRequest>
       PARSER = new com.google.protobuf.AbstractParser<CreateNotificationChannelRequest>() {
+    @java.lang.Override
     public CreateNotificationChannelRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CreateNotificationChannelRequest(input, extensionRegistry);
+      return new CreateNotificationChannelRequest(input, extensionRegistry);
     }
   };
 
@@ -805,6 +832,7 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.monitoring.v3.CreateNotificationChannelRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }

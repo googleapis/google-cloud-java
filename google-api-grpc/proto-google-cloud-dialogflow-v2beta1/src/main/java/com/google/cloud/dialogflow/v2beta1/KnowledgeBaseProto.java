@@ -62,7 +62,7 @@ public final class KnowledgeBaseProto {
       "tKnowledgeBasesRequest\022\016\n\006parent\030\001 \001(\t\022\021" +
       "\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"~\n" +
       "\032ListKnowledgeBasesResponse\022G\n\017knowledge" +
-      "_bases\030\001 \003(\0132..google.cloud.dialogflow.v",
+      "_bases\030\001 \003(\0132..google.cloud.dialogflow.v" +
       "2beta1.KnowledgeBase\022\027\n\017next_page_token\030" +
       "\002 \001(\t\"\'\n\027GetKnowledgeBaseRequest\022\014\n\004name" +
       "\030\001 \001(\t\"t\n\032CreateKnowledgeBaseRequest\022\016\n\006" +
@@ -72,7 +72,7 @@ public final class KnowledgeBaseProto {
       "me\030\001 \001(\t\022\r\n\005force\030\002 \001(\0102\333\007\n\016KnowledgeBas" +
       "es\022\367\001\n\022ListKnowledgeBases\022:.google.cloud" +
       ".dialogflow.v2beta1.ListKnowledgeBasesRe" +
-      "quest\032;.google.cloud.dialogflow.v2beta1.",
+      "quest\032;.google.cloud.dialogflow.v2beta1." +
       "ListKnowledgeBasesResponse\"h\202\323\344\223\002b\022+/v2b" +
       "eta1/{parent=projects/*}/knowledgeBasesZ" +
       "3\0221/v2beta1/{parent=projects/*/agent}/kn" +
@@ -82,7 +82,7 @@ public final class KnowledgeBaseProto {
       "beta1.KnowledgeBase\"h\202\323\344\223\002b\022+/v2beta1/{n" +
       "ame=projects/*/knowledgeBases/*}Z3\0221/v2b" +
       "eta1/{name=projects/*/agent/knowledgeBas" +
-      "es/*}\022\216\002\n\023CreateKnowledgeBase\022;.google.c",
+      "es/*}\022\216\002\n\023CreateKnowledgeBase\022;.google.c" +
       "loud.dialogflow.v2beta1.CreateKnowledgeB" +
       "aseRequest\032..google.cloud.dialogflow.v2b" +
       "eta1.KnowledgeBase\"\211\001\202\323\344\223\002\202\001\"+/v2beta1/{" +
@@ -92,7 +92,7 @@ public final class KnowledgeBaseProto {
       "\001\n\023DeleteKnowledgeBase\022;.google.cloud.di" +
       "alogflow.v2beta1.DeleteKnowledgeBaseRequ" +
       "est\032\026.google.protobuf.Empty\"h\202\323\344\223\002b*+/v2" +
-      "beta1/{name=projects/*/knowledgeBases/*}",
+      "beta1/{name=projects/*/knowledgeBases/*}" +
       "Z3*1/v2beta1/{name=projects/*/agent/know" +
       "ledgeBases/*}B\260\001\n#com.google.cloud.dialo" +
       "gflow.v2beta1B\022KnowledgeBaseProtoP\001ZIgoo" +

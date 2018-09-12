@@ -57,7 +57,7 @@ public final class TransactionProto {
       "iteH\000\022C\n\tread_only\030\002 \001(\0132..google.spanne" +
       "r.v1.TransactionOptions.ReadOnlyH\000\032\013\n\tRe" +
       "adWrite\032\250\002\n\010ReadOnly\022\020\n\006strong\030\001 \001(\010H\000\0228" +
-      "\n\022min_read_timestamp\030\002 \001(\0132\032.google.prot",
+      "\n\022min_read_timestamp\030\002 \001(\0132\032.google.prot" +
       "obuf.TimestampH\000\0222\n\rmax_staleness\030\003 \001(\0132" +
       "\031.google.protobuf.DurationH\000\0224\n\016read_tim" +
       "estamp\030\004 \001(\0132\032.google.protobuf.Timestamp" +
@@ -67,7 +67,7 @@ public final class TransactionProto {
       "ansaction\022\n\n\002id\030\001 \001(\014\0222\n\016read_timestamp\030" +
       "\002 \001(\0132\032.google.protobuf.Timestamp\"\244\001\n\023Tr" +
       "ansactionSelector\022;\n\nsingle_use\030\001 \001(\0132%." +
-      "google.spanner.v1.TransactionOptionsH\000\022\014",
+      "google.spanner.v1.TransactionOptionsH\000\022\014" +
       "\n\002id\030\002 \001(\014H\000\0226\n\005begin\030\003 \001(\0132%.google.spa" +
       "nner.v1.TransactionOptionsH\000B\n\n\010selector" +
       "B\231\001\n\025com.google.spanner.v1B\020TransactionP" +

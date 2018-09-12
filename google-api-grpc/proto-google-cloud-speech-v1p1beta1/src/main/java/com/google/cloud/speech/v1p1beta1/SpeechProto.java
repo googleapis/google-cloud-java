@@ -112,7 +112,7 @@ public final class SpeechProto {
       "\032\027google/rpc/status.proto\"\224\001\n\020RecognizeR" +
       "equest\022@\n\006config\030\001 \001(\01320.google.cloud.sp" +
       "eech.v1p1beta1.RecognitionConfig\022>\n\005audi" +
-      "o\030\002 \001(\0132/.google.cloud.speech.v1p1beta1.",
+      "o\030\002 \001(\0132/.google.cloud.speech.v1p1beta1." +
       "RecognitionAudio\"\237\001\n\033LongRunningRecogniz" +
       "eRequest\022@\n\006config\030\001 \001(\01320.google.cloud." +
       "speech.v1p1beta1.RecognitionConfig\022>\n\005au" +
@@ -122,7 +122,7 @@ public final class SpeechProto {
       "gle.cloud.speech.v1p1beta1.StreamingReco" +
       "gnitionConfigH\000\022\027\n\raudio_content\030\002 \001(\014H\000" +
       "B\023\n\021streaming_request\"\221\001\n\032StreamingRecog" +
-      "nitionConfig\022@\n\006config\030\001 \001(\01320.google.cl",
+      "nitionConfig\022@\n\006config\030\001 \001(\01320.google.cl" +
       "oud.speech.v1p1beta1.RecognitionConfig\022\030" +
       "\n\020single_utterance\030\002 \001(\010\022\027\n\017interim_resu" +
       "lts\030\003 \001(\010\"\254\006\n\021RecognitionConfig\022P\n\010encod" +
@@ -132,7 +132,7 @@ public final class SpeechProto {
       "unt\030\007 \001(\005\022/\n\'enable_separate_recognition" +
       "_per_channel\030\014 \001(\010\022\025\n\rlanguage_code\030\003 \001(" +
       "\t\022\"\n\032alternative_language_codes\030\022 \003(\t\022\030\n" +
-      "\020max_alternatives\030\004 \001(\005\022\030\n\020profanity_fil",
+      "\020max_alternatives\030\004 \001(\005\022\030\n\020profanity_fil" +
       "ter\030\005 \001(\010\022E\n\017speech_contexts\030\006 \003(\0132,.goo" +
       "gle.cloud.speech.v1p1beta1.SpeechContext" +
       "\022 \n\030enable_word_time_offsets\030\010 \001(\010\022\036\n\026en" +
@@ -142,7 +142,7 @@ public final class SpeechProto {
       "ker_count\030\021 \001(\005\022D\n\010metadata\030\t \001(\01322.goog" +
       "le.cloud.speech.v1p1beta1.RecognitionMet" +
       "adata\022\r\n\005model\030\r \001(\t\022\024\n\014use_enhanced\030\016 \001" +
-      "(\010\"\213\001\n\rAudioEncoding\022\030\n\024ENCODING_UNSPECI",
+      "(\010\"\213\001\n\rAudioEncoding\022\030\n\024ENCODING_UNSPECI" +
       "FIED\020\000\022\014\n\010LINEAR16\020\001\022\010\n\004FLAC\020\002\022\t\n\005MULAW\020" +
       "\003\022\007\n\003AMR\020\004\022\n\n\006AMR_WB\020\005\022\014\n\010OGG_OPUS\020\006\022\032\n\026" +
       "SPEEX_WITH_HEADER_BYTE\020\007\"\323\010\n\023Recognition" +
@@ -152,7 +152,7 @@ public final class SpeechProto {
       "_code_of_audio\030\003 \001(\r\022b\n\023microphone_dista" +
       "nce\030\004 \001(\0162E.google.cloud.speech.v1p1beta" +
       "1.RecognitionMetadata.MicrophoneDistance" +
-      "\022a\n\023original_media_type\030\005 \001(\0162D.google.c",
+      "\022a\n\023original_media_type\030\005 \001(\0162D.google.c" +
       "loud.speech.v1p1beta1.RecognitionMetadat" +
       "a.OriginalMediaType\022e\n\025recording_device_" +
       "type\030\006 \001(\0162F.google.cloud.speech.v1p1bet" +
@@ -162,7 +162,7 @@ public final class SpeechProto {
       " \001(\003\022\023\n\013audio_topic\030\n \001(\t\"\305\001\n\017Interactio" +
       "nType\022 \n\034INTERACTION_TYPE_UNSPECIFIED\020\000\022" +
       "\016\n\nDISCUSSION\020\001\022\020\n\014PRESENTATION\020\002\022\016\n\nPHO" +
-      "NE_CALL\020\003\022\r\n\tVOICEMAIL\020\004\022\033\n\027PROFESSIONAL",
+      "NE_CALL\020\003\022\r\n\tVOICEMAIL\020\004\022\033\n\027PROFESSIONAL" +
       "LY_PRODUCED\020\005\022\020\n\014VOICE_SEARCH\020\006\022\021\n\rVOICE" +
       "_COMMAND\020\007\022\r\n\tDICTATION\020\010\"d\n\022MicrophoneD" +
       "istance\022#\n\037MICROPHONE_DISTANCE_UNSPECIFI" +
@@ -172,7 +172,7 @@ public final class SpeechProto {
       "VIDEO\020\002\"\244\001\n\023RecordingDeviceType\022%\n!RECOR" +
       "DING_DEVICE_TYPE_UNSPECIFIED\020\000\022\016\n\nSMARTP" +
       "HONE\020\001\022\006\n\002PC\020\002\022\016\n\nPHONE_LINE\020\003\022\013\n\007VEHICL" +
-      "E\020\004\022\030\n\024OTHER_OUTDOOR_DEVICE\020\005\022\027\n\023OTHER_I",
+      "E\020\004\022\030\n\024OTHER_OUTDOOR_DEVICE\020\005\022\027\n\023OTHER_I" +
       "NDOOR_DEVICE\020\006\" \n\rSpeechContext\022\017\n\007phras" +
       "es\030\001 \003(\t\"D\n\020RecognitionAudio\022\021\n\007content\030" +
       "\001 \001(\014H\000\022\r\n\003uri\030\002 \001(\tH\000B\016\n\014audio_source\"\\" +
@@ -182,7 +182,7 @@ public final class SpeechProto {
       "onse\022G\n\007results\030\002 \003(\01326.google.cloud.spe" +
       "ech.v1p1beta1.SpeechRecognitionResult\"\236\001" +
       "\n\034LongRunningRecognizeMetadata\022\030\n\020progre" +
-      "ss_percent\030\001 \001(\005\022.\n\nstart_time\030\002 \001(\0132\032.g",
+      "ss_percent\030\001 \001(\005\022.\n\nstart_time\030\002 \001(\0132\032.g" +
       "oogle.protobuf.Timestamp\0224\n\020last_update_" +
       "time\030\003 \001(\0132\032.google.protobuf.Timestamp\"\277" +
       "\002\n\032StreamingRecognizeResponse\022!\n\005error\030\001" +
@@ -192,7 +192,7 @@ public final class SpeechProto {
       "e\030\004 \001(\0162I.google.cloud.speech.v1p1beta1." +
       "StreamingRecognizeResponse.SpeechEventTy" +
       "pe\"L\n\017SpeechEventType\022\034\n\030SPEECH_EVENT_UN" +
-      "SPECIFIED\020\000\022\033\n\027END_OF_SINGLE_UTTERANCE\020\001",
+      "SPECIFIED\020\000\022\033\n\027END_OF_SINGLE_UTTERANCE\020\001" +
       "\"\300\001\n\032StreamingRecognitionResult\022Q\n\014alter" +
       "natives\030\001 \003(\0132;.google.cloud.speech.v1p1" +
       "beta1.SpeechRecognitionAlternative\022\020\n\010is" +
@@ -202,7 +202,7 @@ public final class SpeechProto {
       "\001 \003(\0132;.google.cloud.speech.v1p1beta1.Sp" +
       "eechRecognitionAlternative\022\023\n\013channel_ta" +
       "g\030\002 \001(\005\022\025\n\rlanguage_code\030\005 \001(\t\"~\n\034Speech" +
-      "RecognitionAlternative\022\022\n\ntranscript\030\001 \001",
+      "RecognitionAlternative\022\022\n\ntranscript\030\001 \001" +
       "(\t\022\022\n\nconfidence\030\002 \001(\002\0226\n\005words\030\003 \003(\0132\'." +
       "google.cloud.speech.v1p1beta1.WordInfo\"\235" +
       "\001\n\010WordInfo\022-\n\nstart_time\030\001 \001(\0132\031.google" +
@@ -212,7 +212,7 @@ public final class SpeechProto {
       "\003\n\006Speech\022\226\001\n\tRecognize\022/.google.cloud.s" +
       "peech.v1p1beta1.RecognizeRequest\0320.googl" +
       "e.cloud.speech.v1p1beta1.RecognizeRespon" +
-      "se\"&\202\323\344\223\002 \"\033/v1p1beta1/speech:recognize:",
+      "se\"&\202\323\344\223\002 \"\033/v1p1beta1/speech:recognize:" +
       "\001*\022\244\001\n\024LongRunningRecognize\022:.google.clo" +
       "ud.speech.v1p1beta1.LongRunningRecognize" +
       "Request\032\035.google.longrunning.Operation\"1" +
@@ -222,7 +222,7 @@ public final class SpeechProto {
       "izeRequest\0329.google.cloud.speech.v1p1bet" +
       "a1.StreamingRecognizeResponse(\0010\001Bz\n!com" +
       ".google.cloud.speech.v1p1beta1B\013SpeechPr" +
-      "otoP\001ZCgoogle.golang.org/genproto/google",
+      "otoP\001ZCgoogle.golang.org/genproto/google" +
       "apis/cloud/speech/v1p1beta1;speech\370\001\001b\006p" +
       "roto3"
     };

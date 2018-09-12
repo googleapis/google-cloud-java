@@ -37,7 +37,7 @@ public final class ModelOuterClass {
       "tobuf/timestamp.proto\"\213\005\n\005Model\022l\n#image" +
       "_classification_model_metadata\030\r \001(\0132=.g" +
       "oogle.cloud.automl.v1beta1.ImageClassifi" +
-      "cationModelMetadataH\000\022j\n\"text_classifica",
+      "cationModelMetadataH\000\022j\n\"text_classifica" +
       "tion_model_metadata\030\016 \001(\0132<.google.cloud" +
       ".automl.v1beta1.TextClassificationModelM" +
       "etadataH\000\022[\n\032translation_model_metadata\030" +
@@ -47,7 +47,7 @@ public final class ModelOuterClass {
       "\n\013create_time\030\007 \001(\0132\032.google.protobuf.Ti" +
       "mestamp\022/\n\013update_time\030\013 \001(\0132\032.google.pr" +
       "otobuf.Timestamp\022L\n\020deployment_state\030\010 \001" +
-      "(\01622.google.cloud.automl.v1beta1.Model.D",
+      "(\01622.google.cloud.automl.v1beta1.Model.D" +
       "eploymentState\"Q\n\017DeploymentState\022 \n\034DEP" +
       "LOYMENT_STATE_UNSPECIFIED\020\000\022\014\n\010DEPLOYED\020" +
       "\001\022\016\n\nUNDEPLOYED\020\002B\020\n\016model_metadataBf\n\037c" +

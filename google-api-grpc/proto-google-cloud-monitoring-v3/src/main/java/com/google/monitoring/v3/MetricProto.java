@@ -42,7 +42,7 @@ public final class MetricProto {
       "ogle.monitoring.v3.TimeInterval\022/\n\005value" +
       "\030\002 \001(\0132 .google.monitoring.v3.TypedValue" +
       "\"\301\002\n\nTimeSeries\022\"\n\006metric\030\001 \001(\0132\022.google" +
-      ".api.Metric\022/\n\010resource\030\002 \001(\0132\035.google.a",
+      ".api.Metric\022/\n\010resource\030\002 \001(\0132\035.google.a" +
       "pi.MonitoredResource\0227\n\010metadata\030\007 \001(\0132%" +
       ".google.api.MonitoredResourceMetadata\022<\n" +
       "\013metric_kind\030\003 \001(\0162\'.google.api.MetricDe" +
@@ -52,7 +52,7 @@ public final class MetricProto {
       "ointB\243\001\n\030com.google.monitoring.v3B\013Metri" +
       "cProtoP\001Z>google.golang.org/genproto/goo" +
       "gleapis/monitoring/v3;monitoring\252\002\032Googl" +
-      "e.Cloud.Monitoring.V3\312\002\032Google\\Cloud\\Mon",
+      "e.Cloud.Monitoring.V3\312\002\032Google\\Cloud\\Mon" +
       "itoring\\V3b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =

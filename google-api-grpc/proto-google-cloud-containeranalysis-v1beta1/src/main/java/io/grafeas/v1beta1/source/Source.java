@@ -72,7 +72,7 @@ public final class Source {
       "\n\003git\030\003 \001(\0132(.grafeas.v1beta1.source.Git" +
       "SourceContextH\000\022A\n\006labels\030\004 \003(\01321.grafea" +
       "s.v1beta1.source.SourceContext.LabelsEnt" +
-      "ry\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030",
+      "ry\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030" +
       "\002 \001(\t:\0028\001B\t\n\007context\"\226\001\n\014AliasContext\0227\n" +
       "\004kind\030\001 \001(\0162).grafeas.v1beta1.source.Ali" +
       "asContext.Kind\022\014\n\004name\030\002 \001(\t\"?\n\004Kind\022\024\n\020" +
@@ -82,7 +82,7 @@ public final class Source {
       "ce.RepoId\022\025\n\013revision_id\030\002 \001(\tH\000\022=\n\ralia" +
       "s_context\030\003 \001(\0132$.grafeas.v1beta1.source" +
       ".AliasContextH\000B\n\n\010revision\"\241\001\n\023GerritSo" +
-      "urceContext\022\020\n\010host_uri\030\001 \001(\t\022\026\n\016gerrit_",
+      "urceContext\022\020\n\010host_uri\030\001 \001(\t\022\026\n\016gerrit_" +
       "project\030\002 \001(\t\022\025\n\013revision_id\030\003 \001(\tH\000\022=\n\r" +
       "alias_context\030\004 \001(\0132$.grafeas.v1beta1.so" +
       "urce.AliasContextH\000B\n\n\010revision\"4\n\020GitSo" +
@@ -92,7 +92,7 @@ public final class Source {
       "\000\022\r\n\003uid\030\002 \001(\tH\000B\004\n\002id\"6\n\rProjectRepoId\022" +
       "\022\n\nproject_id\030\001 \001(\t\022\021\n\trepo_name\030\002 \001(\tB{" +
       "\n\031io.grafeas.v1beta1.sourceP\001ZVgoogle.go" +
-      "lang.org/genproto/googleapis/devtools/co",
+      "lang.org/genproto/googleapis/devtools/co" +
       "ntaineranalysis/v1beta1/source;source\242\002\003" +
       "GRAb\006proto3"
     };
