@@ -75,6 +75,7 @@ def run_gapic_gen(googleapis):
     generate('google/cloud/videointelligence/artman_videointelligence_v1beta1.yaml')
     generate('google/cloud/videointelligence/artman_videointelligence_v1beta2.yaml')
     generate('google/cloud/videointelligence/artman_videointelligence_v1p1beta1.yaml')
+    generate('google/cloud/videointelligence/artman_videointelligence_v1p2beta1.yaml')
     generate('google/cloud/videointelligence/artman_videointelligence_v1.yaml')
     generate('google/cloud/vision/artman_vision_v1.yaml')
     generate('google/cloud/vision/artman_vision_v1p1beta1.yaml')
