@@ -152,7 +152,7 @@ public final class LanguageServiceProto {
       "\004Type\022\024\n\020TYPE_UNSPECIFIED\020\000\022\016\n\nPLAIN_TEX" +
       "T\020\001\022\010\n\004HTML\020\002B\010\n\006source\"t\n\010Sentence\0220\n\004t" +
       "ext\030\001 \001(\0132\".google.cloud.language.v1.Tex" +
-      "tSpan\0226\n\tsentiment\030\002 \001(\0132#.google.cloud.",
+      "tSpan\0226\n\tsentiment\030\002 \001(\0132#.google.cloud." +
       "language.v1.Sentiment\"\276\003\n\006Entity\022\014\n\004name" +
       "\030\001 \001(\t\0223\n\004type\030\002 \001(\0162%.google.cloud.lang" +
       "uage.v1.Entity.Type\022@\n\010metadata\030\003 \003(\0132.." +
@@ -162,7 +162,7 @@ public final class LanguageServiceProto {
       "on\0226\n\tsentiment\030\006 \001(\0132#.google.cloud.lan" +
       "guage.v1.Sentiment\032/\n\rMetadataEntry\022\013\n\003k" +
       "ey\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"y\n\004Type\022\013\n\007U" +
-      "NKNOWN\020\000\022\n\n\006PERSON\020\001\022\014\n\010LOCATION\020\002\022\020\n\014OR",
+      "NKNOWN\020\000\022\n\n\006PERSON\020\001\022\014\n\010LOCATION\020\002\022\020\n\014OR" +
       "GANIZATION\020\003\022\t\n\005EVENT\020\004\022\017\n\013WORK_OF_ART\020\005" +
       "\022\021\n\rCONSUMER_GOOD\020\006\022\t\n\005OTHER\020\007\"\313\001\n\005Token" +
       "\0220\n\004text\030\001 \001(\0132\".google.cloud.language.v" +
@@ -172,7 +172,7 @@ public final class LanguageServiceProto {
       "age.v1.DependencyEdge\022\r\n\005lemma\030\004 \001(\t\"-\n\t" +
       "Sentiment\022\021\n\tmagnitude\030\002 \001(\002\022\r\n\005score\030\003 " +
       "\001(\002\"\243\020\n\014PartOfSpeech\0227\n\003tag\030\001 \001(\0162*.goog" +
-      "le.cloud.language.v1.PartOfSpeech.Tag\022=\n",
+      "le.cloud.language.v1.PartOfSpeech.Tag\022=\n" +
       "\006aspect\030\002 \001(\0162-.google.cloud.language.v1" +
       ".PartOfSpeech.Aspect\0229\n\004case\030\003 \001(\0162+.goo" +
       "gle.cloud.language.v1.PartOfSpeech.Case\022" +
@@ -182,7 +182,7 @@ public final class LanguageServiceProto {
       "r\0229\n\004mood\030\006 \001(\0162+.google.cloud.language." +
       "v1.PartOfSpeech.Mood\022=\n\006number\030\007 \001(\0162-.g" +
       "oogle.cloud.language.v1.PartOfSpeech.Num" +
-      "ber\022=\n\006person\030\010 \001(\0162-.google.cloud.langu",
+      "ber\022=\n\006person\030\010 \001(\0162-.google.cloud.langu" +
       "age.v1.PartOfSpeech.Person\022=\n\006proper\030\t \001" +
       "(\0162-.google.cloud.language.v1.PartOfSpee" +
       "ch.Proper\022G\n\013reciprocity\030\n \001(\01622.google." +
@@ -192,7 +192,7 @@ public final class LanguageServiceProto {
       ".google.cloud.language.v1.PartOfSpeech.V" +
       "oice\"\215\001\n\003Tag\022\013\n\007UNKNOWN\020\000\022\007\n\003ADJ\020\001\022\007\n\003AD" +
       "P\020\002\022\007\n\003ADV\020\003\022\010\n\004CONJ\020\004\022\007\n\003DET\020\005\022\010\n\004NOUN\020" +
-      "\006\022\007\n\003NUM\020\007\022\010\n\004PRON\020\010\022\007\n\003PRT\020\t\022\t\n\005PUNCT\020\n",
+      "\006\022\007\n\003NUM\020\007\022\010\n\004PRON\020\010\022\007\n\003PRT\020\t\022\t\n\005PUNCT\020\n" +
       "\022\010\n\004VERB\020\013\022\005\n\001X\020\014\022\t\n\005AFFIX\020\r\"O\n\006Aspect\022\022" +
       "\n\016ASPECT_UNKNOWN\020\000\022\016\n\nPERFECTIVE\020\001\022\020\n\014IM" +
       "PERFECTIVE\020\002\022\017\n\013PROGRESSIVE\020\003\"\370\001\n\004Case\022\020" +
@@ -202,7 +202,7 @@ public final class LanguageServiceProto {
       "VE\020\007\022\016\n\nNOMINATIVE\020\010\022\013\n\007OBLIQUE\020\t\022\r\n\tPAR" +
       "TITIVE\020\n\022\021\n\rPREPOSITIONAL\020\013\022\022\n\016REFLEXIVE" +
       "_CASE\020\014\022\021\n\rRELATIVE_CASE\020\r\022\014\n\010VOCATIVE\020\016" +
-      "\"\257\001\n\004Form\022\020\n\014FORM_UNKNOWN\020\000\022\014\n\010ADNOMIAL\020",
+      "\"\257\001\n\004Form\022\020\n\014FORM_UNKNOWN\020\000\022\014\n\010ADNOMIAL\020" +
       "\001\022\r\n\tAUXILIARY\020\002\022\022\n\016COMPLEMENTIZER\020\003\022\020\n\014" +
       "FINAL_ENDING\020\004\022\n\n\006GERUND\020\005\022\n\n\006REALIS\020\006\022\014" +
       "\n\010IRREALIS\020\007\022\t\n\005SHORT\020\010\022\010\n\004LONG\020\t\022\t\n\005ORD" +
@@ -212,7 +212,7 @@ public final class LanguageServiceProto {
       "ONDITIONAL_MOOD\020\001\022\016\n\nIMPERATIVE\020\002\022\016\n\nIND" +
       "ICATIVE\020\003\022\021\n\rINTERROGATIVE\020\004\022\013\n\007JUSSIVE\020" +
       "\005\022\017\n\013SUBJUNCTIVE\020\006\"@\n\006Number\022\022\n\016NUMBER_U" +
-      "NKNOWN\020\000\022\014\n\010SINGULAR\020\001\022\n\n\006PLURAL\020\002\022\010\n\004DU",
+      "NKNOWN\020\000\022\014\n\010SINGULAR\020\001\022\n\n\006PLURAL\020\002\022\010\n\004DU" +
       "AL\020\003\"T\n\006Person\022\022\n\016PERSON_UNKNOWN\020\000\022\t\n\005FI" +
       "RST\020\001\022\n\n\006SECOND\020\002\022\t\n\005THIRD\020\003\022\024\n\020REFLEXIV" +
       "E_PERSON\020\004\"8\n\006Proper\022\022\n\016PROPER_UNKNOWN\020\000" +
@@ -222,7 +222,7 @@ public final class LanguageServiceProto {
       "SE_UNKNOWN\020\000\022\025\n\021CONDITIONAL_TENSE\020\001\022\n\n\006F" +
       "UTURE\020\002\022\010\n\004PAST\020\003\022\013\n\007PRESENT\020\004\022\r\n\tIMPERF" +
       "ECT\020\005\022\016\n\nPLUPERFECT\020\006\"B\n\005Voice\022\021\n\rVOICE_" +
-      "UNKNOWN\020\000\022\n\n\006ACTIVE\020\001\022\r\n\tCAUSATIVE\020\002\022\013\n\007",
+      "UNKNOWN\020\000\022\n\n\006ACTIVE\020\001\022\r\n\tCAUSATIVE\020\002\022\013\n\007" +
       "PASSIVE\020\003\"\225\010\n\016DependencyEdge\022\030\n\020head_tok" +
       "en_index\030\001 \001(\005\022=\n\005label\030\002 \001(\0162..google.c" +
       "loud.language.v1.DependencyEdge.Label\"\251\007" +
@@ -232,7 +232,7 @@ public final class LanguageServiceProto {
       "\006\n\002CC\020\n\022\t\n\005CCOMP\020\013\022\010\n\004CONJ\020\014\022\t\n\005CSUBJ\020\r\022" +
       "\r\n\tCSUBJPASS\020\016\022\007\n\003DEP\020\017\022\007\n\003DET\020\020\022\r\n\tDISC" +
       "OURSE\020\021\022\010\n\004DOBJ\020\022\022\010\n\004EXPL\020\023\022\014\n\010GOESWITH\020" +
-      "\024\022\010\n\004IOBJ\020\025\022\010\n\004MARK\020\026\022\007\n\003MWE\020\027\022\007\n\003MWV\020\030\022",
+      "\024\022\010\n\004IOBJ\020\025\022\010\n\004MARK\020\026\022\007\n\003MWE\020\027\022\007\n\003MWV\020\030\022" +
       "\007\n\003NEG\020\031\022\006\n\002NN\020\032\022\014\n\010NPADVMOD\020\033\022\t\n\005NSUBJ\020" +
       "\034\022\r\n\tNSUBJPASS\020\035\022\007\n\003NUM\020\036\022\n\n\006NUMBER\020\037\022\005\n" +
       "\001P\020 \022\r\n\tPARATAXIS\020!\022\013\n\007PARTMOD\020\"\022\t\n\005PCOM" +
@@ -242,7 +242,7 @@ public final class LanguageServiceProto {
       "\020.\022\014\n\010QUANTMOD\020/\022\t\n\005RCMOD\0200\022\014\n\010RCMODREL\020" +
       "1\022\t\n\005RDROP\0202\022\007\n\003REF\0203\022\013\n\007REMNANT\0204\022\016\n\nRE" +
       "PARANDUM\0205\022\010\n\004ROOT\0206\022\010\n\004SNUM\0207\022\010\n\004SUFF\0208" +
-      "\022\010\n\004TMOD\0209\022\t\n\005TOPIC\020:\022\010\n\004VMOD\020;\022\014\n\010VOCAT",
+      "\022\010\n\004TMOD\0209\022\t\n\005TOPIC\020:\022\010\n\004VMOD\020;\022\014\n\010VOCAT" +
       "IVE\020<\022\t\n\005XCOMP\020=\022\n\n\006SUFFIX\020>\022\t\n\005TITLE\020?\022" +
       "\014\n\010ADVPHMOD\020@\022\013\n\007AUXCAUS\020A\022\t\n\005AUXVV\020B\022\t\n" +
       "\005DTMOD\020C\022\013\n\007FOREIGN\020D\022\006\n\002KW\020E\022\010\n\004LIST\020F\022" +
@@ -252,7 +252,7 @@ public final class LanguageServiceProto {
       "\003MES\020Q\022\t\n\005NCOMP\020R\"\347\001\n\rEntityMention\0220\n\004t" +
       "ext\030\001 \001(\0132\".google.cloud.language.v1.Tex" +
       "tSpan\022:\n\004type\030\002 \001(\0162,.google.cloud.langu" +
-      "age.v1.EntityMention.Type\0226\n\tsentiment\030\003",
+      "age.v1.EntityMention.Type\0226\n\tsentiment\030\003" +
       " \001(\0132#.google.cloud.language.v1.Sentimen" +
       "t\"0\n\004Type\022\020\n\014TYPE_UNKNOWN\020\000\022\n\n\006PROPER\020\001\022" +
       "\n\n\006COMMON\020\002\"1\n\010TextSpan\022\017\n\007content\030\001 \001(\t" +
@@ -262,7 +262,7 @@ public final class LanguageServiceProto {
       "nt\030\001 \001(\0132\".google.cloud.language.v1.Docu" +
       "ment\022=\n\rencoding_type\030\002 \001(\0162&.google.clo" +
       "ud.language.v1.EncodingType\"\244\001\n\030AnalyzeS" +
-      "entimentResponse\022?\n\022document_sentiment\030\001",
+      "entimentResponse\022?\n\022document_sentiment\030\001" +
       " \001(\0132#.google.cloud.language.v1.Sentimen" +
       "t\022\020\n\010language\030\002 \001(\t\0225\n\tsentences\030\003 \003(\0132\"" +
       ".google.cloud.language.v1.Sentence\"\224\001\n\035A" +
@@ -272,7 +272,7 @@ public final class LanguageServiceProto {
       ".language.v1.EncodingType\"f\n\036AnalyzeEnti" +
       "tySentimentResponse\0222\n\010entities\030\001 \003(\0132 ." +
       "google.cloud.language.v1.Entity\022\020\n\010langu" +
-      "age\030\002 \001(\t\"\215\001\n\026AnalyzeEntitiesRequest\0224\n\010",
+      "age\030\002 \001(\t\"\215\001\n\026AnalyzeEntitiesRequest\0224\n\010" +
       "document\030\001 \001(\0132\".google.cloud.language.v" +
       "1.Document\022=\n\rencoding_type\030\002 \001(\0162&.goog" +
       "le.cloud.language.v1.EncodingType\"_\n\027Ana" +
@@ -282,7 +282,7 @@ public final class LanguageServiceProto {
       "ocument\030\001 \001(\0132\".google.cloud.language.v1" +
       ".Document\022=\n\rencoding_type\030\002 \001(\0162&.googl" +
       "e.cloud.language.v1.EncodingType\"\221\001\n\025Ana" +
-      "lyzeSyntaxResponse\0225\n\tsentences\030\001 \003(\0132\".",
+      "lyzeSyntaxResponse\0225\n\tsentences\030\001 \003(\0132\"." +
       "google.cloud.language.v1.Sentence\022/\n\006tok" +
       "ens\030\002 \003(\0132\037.google.cloud.language.v1.Tok" +
       "en\022\020\n\010language\030\003 \001(\t\"K\n\023ClassifyTextRequ" +
@@ -292,7 +292,7 @@ public final class LanguageServiceProto {
       "guage.v1.ClassificationCategory\"\360\002\n\023Anno" +
       "tateTextRequest\0224\n\010document\030\001 \001(\0132\".goog" +
       "le.cloud.language.v1.Document\022H\n\010feature" +
-      "s\030\002 \001(\01326.google.cloud.language.v1.Annot",
+      "s\030\002 \001(\01326.google.cloud.language.v1.Annot" +
       "ateTextRequest.Features\022=\n\rencoding_type" +
       "\030\003 \001(\0162&.google.cloud.language.v1.Encodi" +
       "ngType\032\231\001\n\010Features\022\026\n\016extract_syntax\030\001 " +
@@ -302,7 +302,7 @@ public final class LanguageServiceProto {
       "(\010\"\313\002\n\024AnnotateTextResponse\0225\n\tsentences" +
       "\030\001 \003(\0132\".google.cloud.language.v1.Senten" +
       "ce\022/\n\006tokens\030\002 \003(\0132\037.google.cloud.langua" +
-      "ge.v1.Token\0222\n\010entities\030\003 \003(\0132 .google.c",
+      "ge.v1.Token\0222\n\010entities\030\003 \003(\0132 .google.c" +
       "loud.language.v1.Entity\022?\n\022document_sent" +
       "iment\030\004 \001(\0132#.google.cloud.language.v1.S" +
       "entiment\022\020\n\010language\030\005 \001(\t\022D\n\ncategories" +
@@ -312,7 +312,7 @@ public final class LanguageServiceProto {
       "anguageService\022\244\001\n\020AnalyzeSentiment\0221.go" +
       "ogle.cloud.language.v1.AnalyzeSentimentR" +
       "equest\0322.google.cloud.language.v1.Analyz" +
-      "eSentimentResponse\")\202\323\344\223\002#\"\036/v1/document",
+      "eSentimentResponse\")\202\323\344\223\002#\"\036/v1/document" +
       "s:analyzeSentiment:\001*\022\240\001\n\017AnalyzeEntitie" +
       "s\0220.google.cloud.language.v1.AnalyzeEnti" +
       "tiesRequest\0321.google.cloud.language.v1.A" +
@@ -322,7 +322,7 @@ public final class LanguageServiceProto {
       "nalyzeEntitySentimentRequest\0328.google.cl" +
       "oud.language.v1.AnalyzeEntitySentimentRe" +
       "sponse\"/\202\323\344\223\002)\"$/v1/documents:analyzeEnt" +
-      "itySentiment:\001*\022\230\001\n\rAnalyzeSyntax\022..goog",
+      "itySentiment:\001*\022\230\001\n\rAnalyzeSyntax\022..goog" +
       "le.cloud.language.v1.AnalyzeSyntaxReques" +
       "t\032/.google.cloud.language.v1.AnalyzeSynt" +
       "axResponse\"&\202\323\344\223\002 \"\033/v1/documents:analyz" +
@@ -332,7 +332,7 @@ public final class LanguageServiceProto {
       "se\"%\202\323\344\223\002\037\"\032/v1/documents:classifyText:\001" +
       "*\022\224\001\n\014AnnotateText\022-.google.cloud.langua" +
       "ge.v1.AnnotateTextRequest\032..google.cloud" +
-      ".language.v1.AnnotateTextResponse\"%\202\323\344\223\002",
+      ".language.v1.AnnotateTextResponse\"%\202\323\344\223\002" +
       "\037\"\032/v1/documents:annotateText:\001*Bx\n\034com." +
       "google.cloud.language.v1B\024LanguageServic" +
       "eProtoP\001Z@google.golang.org/genproto/goo" +
