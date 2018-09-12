@@ -422,6 +422,16 @@ public class ITStorageSnippets {
   }
 
   @Test
+  public void testBlobDownload() {
+    String blobName = "test-create-empty-blob";
+    Blob remoteBlob = bucket.create(blobName, BLOB_BYTE_CONTENT);
+    assertNotNull(remoteBlob);
+    storageSnippets.downloadFile(BUCKET, blobName, Paths.get(blobName));
+    byte[] readBytes = Files.readAllBytes(Paths.get(blobName));
+    assertArrayEquals(BLOB_BYTE_CONTENT, readBytes);
+  }
+  
+  @Test
   public void testRequesterPays() throws Exception {
     Bucket bucket = storageSnippets.enableRequesterPays(BUCKET);
     assertTrue(bucket.requesterPays());
