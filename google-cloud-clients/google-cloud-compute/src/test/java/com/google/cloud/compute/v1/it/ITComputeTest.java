@@ -29,6 +29,7 @@ import com.google.cloud.compute.v1.DiskTypeSettings;
 import com.google.cloud.compute.v1.DiskTypesScopedList;
 import com.google.cloud.compute.v1.ListDiskTypesHttpRequest;
 import com.google.cloud.compute.v1.ProjectName;
+import com.google.cloud.compute.v1.ProjectRegionDiskTypeName;
 import com.google.cloud.compute.v1.ProjectZoneDiskTypeName;
 import com.google.cloud.compute.v1.ProjectZoneName;
 import com.google.common.collect.Lists;
@@ -57,7 +58,8 @@ public class ITComputeTest {
 
   @BeforeClass
   public static void beforeClass() throws IOException{
-    Credentials credentials = GoogleCredentials.getApplicationDefault();
+    Credentials credentials = GoogleCredentials.getApplicationDefault().createScoped(
+        DiskTypeSettings.getDefaultServiceScopes());
 
     diskTypeSettings =
         DiskTypeSettings.newBuilder().setCredentialsProvider(FixedCredentialsProvider.create(credentials)).build();
@@ -131,10 +133,18 @@ public class ITComputeTest {
     }
     assertThat(diskTypeIterator.size()).isGreaterThan(0);
     for (DiskType diskType : diskTypeIterator) {
-      assertThat(diskType.getZone()).isNotNull();
-      ProjectZoneDiskTypeName zoneName = ProjectZoneDiskTypeName.parse(trimUrl(diskType.getSelfLink()));
-      assertThat(zoneName.getDiskType()).isNotNull();
-      assertThat(zoneName.getZone()).isNotNull();
+      assertThat(diskType.getRegion() != null || diskType.getZone() != null).isTrue();
+      if (diskType.getRegion() != null) {
+        ProjectRegionDiskTypeName zoneName = ProjectRegionDiskTypeName
+            .parse(trimUrl(diskType.getSelfLink()));
+        assertThat(zoneName.getDiskType()).isNotNull();
+        assertThat(zoneName.getRegion()).isNotNull();
+      } else {
+        ProjectZoneDiskTypeName zoneName = ProjectZoneDiskTypeName
+            .parse(trimUrl(diskType.getSelfLink()));
+        assertThat(zoneName.getDiskType()).isNotNull();
+        assertThat(zoneName.getZone()).isNotNull();
+      }
       assertThat(diskType.getCreationTimestamp()).isNotNull();
       assertThat(diskType.getDescription()).isNotNull();
       assertThat(diskType.getValidDiskSize()).isNotNull();
