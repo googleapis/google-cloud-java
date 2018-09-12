@@ -107,7 +107,7 @@ public final class SpeechProto {
       "timestamp.proto\032\027google/rpc/status.proto" +
       "\"\206\001\n\020RecognizeRequest\0229\n\006config\030\001 \001(\0132)." +
       "google.cloud.speech.v1.RecognitionConfig" +
-      "\0227\n\005audio\030\002 \001(\0132(.google.cloud.speech.v1",
+      "\0227\n\005audio\030\002 \001(\0132(.google.cloud.speech.v1" +
       ".RecognitionAudio\"\221\001\n\033LongRunningRecogni" +
       "zeRequest\0229\n\006config\030\001 \001(\0132).google.cloud" +
       ".speech.v1.RecognitionConfig\0227\n\005audio\030\002 " +
@@ -117,7 +117,7 @@ public final class SpeechProto {
       "ech.v1.StreamingRecognitionConfigH\000\022\027\n\ra" +
       "udio_content\030\002 \001(\014H\000B\023\n\021streaming_reques" +
       "t\"\212\001\n\032StreamingRecognitionConfig\0229\n\006conf" +
-      "ig\030\001 \001(\0132).google.cloud.speech.v1.Recogn",
+      "ig\030\001 \001(\0132).google.cloud.speech.v1.Recogn" +
       "itionConfig\022\030\n\020single_utterance\030\002 \001(\010\022\027\n" +
       "\017interim_results\030\003 \001(\010\"\377\003\n\021RecognitionCo" +
       "nfig\022I\n\010encoding\030\001 \001(\01627.google.cloud.sp" +
@@ -127,7 +127,7 @@ public final class SpeechProto {
       "rofanity_filter\030\005 \001(\010\022>\n\017speech_contexts" +
       "\030\006 \003(\0132%.google.cloud.speech.v1.SpeechCo" +
       "ntext\022 \n\030enable_word_time_offsets\030\010 \001(\010\022" +
-      "$\n\034enable_automatic_punctuation\030\013 \001(\010\022\r\n",
+      "$\n\034enable_automatic_punctuation\030\013 \001(\010\022\r\n" +
       "\005model\030\r \001(\t\022\024\n\014use_enhanced\030\016 \001(\010\"\213\001\n\rA" +
       "udioEncoding\022\030\n\024ENCODING_UNSPECIFIED\020\000\022\014" +
       "\n\010LINEAR16\020\001\022\010\n\004FLAC\020\002\022\t\n\005MULAW\020\003\022\007\n\003AMR" +
@@ -137,7 +137,7 @@ public final class SpeechProto {
       "t\030\001 \001(\014H\000\022\r\n\003uri\030\002 \001(\tH\000B\016\n\014audio_source" +
       "\"U\n\021RecognizeResponse\022@\n\007results\030\002 \003(\0132/" +
       ".google.cloud.speech.v1.SpeechRecognitio" +
-      "nResult\"`\n\034LongRunningRecognizeResponse\022",
+      "nResult\"`\n\034LongRunningRecognizeResponse\022" +
       "@\n\007results\030\002 \003(\0132/.google.cloud.speech.v" +
       "1.SpeechRecognitionResult\"\236\001\n\034LongRunnin" +
       "gRecognizeMetadata\022\030\n\020progress_percent\030\001" +
@@ -147,7 +147,7 @@ public final class SpeechProto {
       "RecognizeResponse\022!\n\005error\030\001 \001(\0132\022.googl" +
       "e.rpc.Status\022C\n\007results\030\002 \003(\01322.google.c" +
       "loud.speech.v1.StreamingRecognitionResul" +
-      "t\022]\n\021speech_event_type\030\004 \001(\0162B.google.cl",
+      "t\022]\n\021speech_event_type\030\004 \001(\0162B.google.cl" +
       "oud.speech.v1.StreamingRecognizeResponse" +
       ".SpeechEventType\"L\n\017SpeechEventType\022\034\n\030S" +
       "PEECH_EVENT_UNSPECIFIED\020\000\022\033\n\027END_OF_SING" +
@@ -157,7 +157,7 @@ public final class SpeechProto {
       "e\022\020\n\010is_final\030\002 \001(\010\022\021\n\tstability\030\003 \001(\002\"e" +
       "\n\027SpeechRecognitionResult\022J\n\014alternative" +
       "s\030\001 \003(\01324.google.cloud.speech.v1.SpeechR" +
-      "ecognitionAlternative\"w\n\034SpeechRecogniti",
+      "ecognitionAlternative\"w\n\034SpeechRecogniti" +
       "onAlternative\022\022\n\ntranscript\030\001 \001(\t\022\022\n\ncon" +
       "fidence\030\002 \001(\002\022/\n\005words\030\003 \003(\0132 .google.cl" +
       "oud.speech.v1.WordInfo\"t\n\010WordInfo\022-\n\nst" +
@@ -167,7 +167,7 @@ public final class SpeechProto {
       "gnize\022(.google.cloud.speech.v1.Recognize" +
       "Request\032).google.cloud.speech.v1.Recogni" +
       "zeResponse\"\037\202\323\344\223\002\031\"\024/v1/speech:recognize" +
-      ":\001*\022\226\001\n\024LongRunningRecognize\0223.google.cl",
+      ":\001*\022\226\001\n\024LongRunningRecognize\0223.google.cl" +
       "oud.speech.v1.LongRunningRecognizeReques" +
       "t\032\035.google.longrunning.Operation\"*\202\323\344\223\002$" +
       "\"\037/v1/speech:longrunningrecognize:\001*\022\201\001\n" +
