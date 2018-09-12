@@ -14,9 +14,6 @@ fi
 
 export GCLOUD_PROJECT="$GCLOUD_PROJECT"
 export GOOGLE_APPLICATION_CREDENTIALS=$(realpath "$GOOGLE_APPLICATION_CREDENTIALS")
-echo "----- credentials -----"
-echo "project: $GCLOUD_PROJECT"
-echo "credentials path: $GOOGLE_APPLICATION_CREDENTIALS"
 
 echo "----- installing modules -----"
 mvn -B install -DskipTests
