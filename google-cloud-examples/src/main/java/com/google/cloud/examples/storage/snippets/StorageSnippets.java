@@ -1136,8 +1136,8 @@ public class StorageSnippets {
   /**
    * Example of downloading a file.
    */
-  public void downloadFile(String projectId, String bucketName,
-      String srcFilename, Path destFilePath) throws IOException {
+  public void downloadFile(String bucketName, String srcFilename,
+      Path destFilePath) throws IOException {
     // [START storage_download_file]
     // The name of the bucket to access
     // String bucketName = "my-bucket";
