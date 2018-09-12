@@ -111,7 +111,7 @@ def verify_proto_version():
                  " (see output of `which protoc`)."
                  " Please use protoc version %s"
                  " to match the version of protobuf-java used in this repo."
-                 % (protobuf_version, protoc_version_str))
+                 % (protoc_version_str, protobuf_version))
 
 
 def main():
