@@ -168,34 +168,34 @@
       <dependency>
         <groupId>com.google.api</groupId>
         <artifactId>gax</artifactId>
-        <version>1.30.0</version>
+        <version>1.31.0</version>
       </dependency>
       <dependency>
         <groupId>com.google.api</groupId>
         <artifactId>gax</artifactId>
-        <version>1.30.0</version>
+        <version>1.31.0</version>
         <classifier>testlib</classifier>
       </dependency>
       <dependency>
         <groupId>com.google.api</groupId>
         <artifactId>gax-grpc</artifactId>
-        <version>1.30.0</version>
+        <version>1.31.0</version>
       </dependency>
       <dependency>
         <groupId>com.google.api</groupId>
         <artifactId>gax-grpc</artifactId>
-        <version>1.30.0</version>
+        <version>1.31.0</version>
         <classifier>testlib</classifier>
       </dependency>
       <dependency>
         <groupId>com.google.api</groupId>
         <artifactId>gax-httpjson</artifactId>
-        <version>0.47.0</version>
+        <version>0.48.0</version>
       </dependency>
       <dependency>
         <groupId>com.google.api</groupId>
         <artifactId>gax-httpjson</artifactId>
-        <version>0.47.0</version>
+        <version>0.48.0</version>
         <classifier>testlib</classifier>
       </dependency>
       <dependency>
