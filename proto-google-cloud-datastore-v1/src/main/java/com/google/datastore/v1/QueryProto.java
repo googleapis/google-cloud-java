@@ -97,7 +97,7 @@ public final class QueryProto {
       "\n\007version\030\004 \001(\003\022\016\n\006cursor\030\003 \001(\014\"Q\n\nResul" +
       "tType\022\033\n\027RESULT_TYPE_UNSPECIFIED\020\000\022\010\n\004FU" +
       "LL\020\001\022\016\n\nPROJECTION\020\002\022\014\n\010KEY_ONLY\020\003\"\362\002\n\005Q" +
-      "uery\0223\n\nprojection\030\002 \003(\0132\037.google.datast",
+      "uery\0223\n\nprojection\030\002 \003(\0132\037.google.datast" +
       "ore.v1.Projection\0221\n\004kind\030\003 \003(\0132#.google" +
       ".datastore.v1.KindExpression\022+\n\006filter\030\004" +
       " \001(\0132\033.google.datastore.v1.Filter\0221\n\005ord" +
@@ -107,7 +107,7 @@ public final class QueryProto {
       "r\030\007 \001(\014\022\022\n\nend_cursor\030\010 \001(\014\022\016\n\006offset\030\n " +
       "\001(\005\022*\n\005limit\030\014 \001(\0132\033.google.protobuf.Int" +
       "32Value\"\036\n\016KindExpression\022\014\n\004name\030\001 \001(\t\"" +
-      "!\n\021PropertyReference\022\014\n\004name\030\002 \001(\t\"F\n\nPr",
+      "!\n\021PropertyReference\022\014\n\004name\030\002 \001(\t\"F\n\nPr" +
       "ojection\0228\n\010property\030\001 \001(\0132&.google.data" +
       "store.v1.PropertyReference\"\321\001\n\rPropertyO" +
       "rder\0228\n\010property\030\001 \001(\0132&.google.datastor" +
@@ -117,7 +117,7 @@ public final class QueryProto {
       "IFIED\020\000\022\r\n\tASCENDING\020\001\022\016\n\nDESCENDING\020\002\"\231" +
       "\001\n\006Filter\022@\n\020composite_filter\030\001 \001(\0132$.go" +
       "ogle.datastore.v1.CompositeFilterH\000\022>\n\017p" +
-      "roperty_filter\030\002 \001(\0132#.google.datastore.",
+      "roperty_filter\030\002 \001(\0132#.google.datastore." +
       "v1.PropertyFilterH\000B\r\n\013filter_type\"\251\001\n\017C" +
       "ompositeFilter\0229\n\002op\030\001 \001(\0162-.google.data" +
       "store.v1.CompositeFilter.Operator\022,\n\007fil" +
@@ -127,7 +127,7 @@ public final class QueryProto {
       "\001(\0132&.google.datastore.v1.PropertyRefere" +
       "nce\0228\n\002op\030\002 \001(\0162,.google.datastore.v1.Pr" +
       "opertyFilter.Operator\022)\n\005value\030\003 \001(\0132\032.g" +
-      "oogle.datastore.v1.Value\"\225\001\n\010Operator\022\030\n",
+      "oogle.datastore.v1.Value\"\225\001\n\010Operator\022\030\n" +
       "\024OPERATOR_UNSPECIFIED\020\000\022\r\n\tLESS_THAN\020\001\022\026" +
       "\n\022LESS_THAN_OR_EQUAL\020\002\022\020\n\014GREATER_THAN\020\003" +
       "\022\031\n\025GREATER_THAN_OR_EQUAL\020\004\022\t\n\005EQUAL\020\005\022\020" +
@@ -137,7 +137,7 @@ public final class QueryProto {
       "1.GqlQuery.NamedBindingsEntry\022C\n\023positio" +
       "nal_bindings\030\004 \003(\0132&.google.datastore.v1" +
       ".GqlQueryParameter\032\\\n\022NamedBindingsEntry" +
-      "\022\013\n\003key\030\001 \001(\t\0225\n\005value\030\002 \001(\0132&.google.da",
+      "\022\013\n\003key\030\001 \001(\t\0225\n\005value\030\002 \001(\0132&.google.da" +
       "tastore.v1.GqlQueryParameter:\0028\001\"d\n\021GqlQ" +
       "ueryParameter\022+\n\005value\030\002 \001(\0132\032.google.da" +
       "tastore.v1.ValueH\000\022\020\n\006cursor\030\003 \001(\014H\000B\020\n\016" +
@@ -147,7 +147,7 @@ public final class QueryProto {
       "e.datastore.v1.EntityResult.ResultType\0229" +
       "\n\016entity_results\030\002 \003(\0132!.google.datastor" +
       "e.v1.EntityResult\022\022\n\nend_cursor\030\004 \001(\014\022K\n" +
-      "\014more_results\030\005 \001(\01625.google.datastore.v",
+      "\014more_results\030\005 \001(\01625.google.datastore.v" +
       "1.QueryResultBatch.MoreResultsType\022\030\n\020sn" +
       "apshot_version\030\007 \001(\003\"\230\001\n\017MoreResultsType" +
       "\022!\n\035MORE_RESULTS_TYPE_UNSPECIFIED\020\000\022\020\n\014N" +
