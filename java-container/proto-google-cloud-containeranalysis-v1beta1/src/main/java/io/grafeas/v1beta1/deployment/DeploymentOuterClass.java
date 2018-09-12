@@ -47,7 +47,7 @@ public final class DeploymentOuterClass {
       "\303\002\n\nDeployment\022\022\n\nuser_email\030\001 \001(\t\022/\n\013de" +
       "ploy_time\030\002 \001(\0132\032.google.protobuf.Timest" +
       "amp\0221\n\rundeploy_time\030\003 \001(\0132\032.google.prot" +
-      "obuf.Timestamp\022\016\n\006config\030\004 \001(\t\022\017\n\007addres",
+      "obuf.Timestamp\022\016\n\006config\030\004 \001(\t\022\017\n\007addres" +
       "s\030\005 \001(\t\022\024\n\014resource_uri\030\006 \003(\t\022A\n\010platfor" +
       "m\030\007 \001(\0162/.grafeas.v1beta1.deployment.Dep" +
       "loyment.Platform\"C\n\010Platform\022\030\n\024PLATFORM" +

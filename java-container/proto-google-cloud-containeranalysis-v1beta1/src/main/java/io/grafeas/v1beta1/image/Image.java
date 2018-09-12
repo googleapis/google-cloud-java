@@ -57,7 +57,7 @@ public final class Image {
       "\n\003CMD\020\003\022\t\n\005LABEL\020\004\022\n\n\006EXPOSE\020\005\022\007\n\003ENV\020\006\022" +
       "\007\n\003ADD\020\007\022\010\n\004COPY\020\010\022\016\n\nENTRYPOINT\020\t\022\n\n\006VO" +
       "LUME\020\n\022\010\n\004USER\020\013\022\013\n\007WORKDIR\020\014\022\007\n\003ARG\020\r\022\013" +
-      "\n\007ONBUILD\020\016\022\016\n\nSTOPSIGNAL\020\017\022\017\n\013HEALTHCHE",
+      "\n\007ONBUILD\020\016\022\016\n\nSTOPSIGNAL\020\017\022\017\n\013HEALTHCHE" +
       "CK\020\020\022\t\n\005SHELL\020\021\"@\n\013Fingerprint\022\017\n\007v1_nam" +
       "e\030\001 \001(\t\022\017\n\007v2_blob\030\002 \003(\t\022\017\n\007v2_name\030\003 \001(" +
       "\t\"V\n\005Basis\022\024\n\014resource_url\030\001 \001(\t\0227\n\013fing" +
@@ -67,7 +67,7 @@ public final class Image {
       "Derived\0227\n\013fingerprint\030\001 \001(\0132\".grafeas.v" +
       "1beta1.image.Fingerprint\022\020\n\010distance\030\002 \001" +
       "(\005\0220\n\nlayer_info\030\003 \003(\0132\034.grafeas.v1beta1" +
-      ".image.Layer\022\031\n\021base_resource_url\030\004 \001(\tB",
+      ".image.Layer\022\031\n\021base_resource_url\030\004 \001(\tB" +
       "x\n\030io.grafeas.v1beta1.imageP\001ZTgoogle.go" +
       "lang.org/genproto/googleapis/devtools/co" +
       "ntaineranalysis/v1beta1/image;image\242\002\003GR" +
