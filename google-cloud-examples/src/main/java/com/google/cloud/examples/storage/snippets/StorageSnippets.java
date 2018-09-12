@@ -1136,6 +1136,32 @@ public class StorageSnippets {
   }
 
   /**
+   * Example of downloading a file.
+   */
+  public void downloadFile(String projectId, String bucketName,
+      String srcFilename, Path destFilePath) throws IOException {
+    // [START storage_download_file]
+    // The name of the bucket to access
+    // String bucketName = "my-bucket";
+
+    // The name of the remote file to download
+    // String srcFilename = "file.txt";
+
+    // The path to which the file should be downloaded
+    // Path destFilePath = Paths.get("/local/path/to/file.txt");
+
+    // Instantiate a Google Cloud Storage client
+    Storage storage = StorageOptions.getDefaultInstance().getService();
+
+    // Get specific file from specified bucket
+    Blob blob = storage.get(BlobId.of(bucketName, srcFilename));
+
+    // Download file to specified path
+    blob.downloadTo(destFilePath);
+    // [END storage_download_file]
+  }
+  
+  /**
    * Example of downloading a file using Requester pay.
    */
   public void downloadFileUsingRequesterPays(String projectId, String bucketName,
