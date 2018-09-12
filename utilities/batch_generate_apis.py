@@ -101,14 +101,17 @@ def verify_proto_version():
          '<protobuf.version>.*</protobuf.version>'])
     version_start_index = protobuf_version_node.find('>') + 1
     version_end_index = protobuf_version_node.rfind('<')
-    version = protobuf_version_node[version_start_index : version_end_index].strip()
+    protobuf_version = protobuf_version_node[version_start_index : version_end_index].strip()
 
     # This will be something like 'libprotoc 3.6.0'
     protoc_version_str = check_output(['protoc', '--version'])
 
-    if not (version in protoc_version_str):
-        sys.exit("Local version of protoc is %s. Please use protoc version %s"
-                 " to match the version of protobuf-java used in this repo.")
+    if not (protobuf_version in protoc_version_str):
+        sys.exit("ERROR: Local version of protoc is %s"
+                 " (see output of `which protoc`)."
+                 " Please use protoc version %s"
+                 " to match the version of protobuf-java used in this repo."
+                 % (protobuf_version, protoc_version_str))
 
 
 def main():
