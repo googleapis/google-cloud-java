@@ -162,6 +162,22 @@ public class KeyManagementServiceSettings extends ClientSettings<KeyManagementSe
     return ((KeyManagementServiceStubSettings) getStubSettings()).restoreCryptoKeyVersionSettings();
   }
 
+  /** Returns the object with the settings used for calls to getPublicKey. */
+  public UnaryCallSettings<GetPublicKeyRequest, PublicKey> getPublicKeySettings() {
+    return ((KeyManagementServiceStubSettings) getStubSettings()).getPublicKeySettings();
+  }
+
+  /** Returns the object with the settings used for calls to asymmetricDecrypt. */
+  public UnaryCallSettings<AsymmetricDecryptRequest, AsymmetricDecryptResponse>
+      asymmetricDecryptSettings() {
+    return ((KeyManagementServiceStubSettings) getStubSettings()).asymmetricDecryptSettings();
+  }
+
+  /** Returns the object with the settings used for calls to asymmetricSign. */
+  public UnaryCallSettings<AsymmetricSignRequest, AsymmetricSignResponse> asymmetricSignSettings() {
+    return ((KeyManagementServiceStubSettings) getStubSettings()).asymmetricSignSettings();
+  }
+
   /** Returns the object with the settings used for calls to setIamPolicy. */
   public UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings() {
     return ((KeyManagementServiceStubSettings) getStubSettings()).setIamPolicySettings();
@@ -367,6 +383,23 @@ public class KeyManagementServiceSettings extends ClientSettings<KeyManagementSe
     public UnaryCallSettings.Builder<RestoreCryptoKeyVersionRequest, CryptoKeyVersion>
         restoreCryptoKeyVersionSettings() {
       return getStubSettingsBuilder().restoreCryptoKeyVersionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getPublicKey. */
+    public UnaryCallSettings.Builder<GetPublicKeyRequest, PublicKey> getPublicKeySettings() {
+      return getStubSettingsBuilder().getPublicKeySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to asymmetricDecrypt. */
+    public UnaryCallSettings.Builder<AsymmetricDecryptRequest, AsymmetricDecryptResponse>
+        asymmetricDecryptSettings() {
+      return getStubSettingsBuilder().asymmetricDecryptSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to asymmetricSign. */
+    public UnaryCallSettings.Builder<AsymmetricSignRequest, AsymmetricSignResponse>
+        asymmetricSignSettings() {
+      return getStubSettingsBuilder().asymmetricSignSettings();
     }
 
     /** Returns the builder for the settings used for calls to setIamPolicy. */

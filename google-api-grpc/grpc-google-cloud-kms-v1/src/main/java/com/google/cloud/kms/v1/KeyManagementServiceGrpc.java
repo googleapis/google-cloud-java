@@ -23,6 +23,8 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  * * [KeyRing][google.cloud.kms.v1.KeyRing]
  * * [CryptoKey][google.cloud.kms.v1.CryptoKey]
  * * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]
+ * If you are using manual gRPC libraries, see
+ * [Using gRPC with Cloud KMS](https://cloud.google.com/kms/docs/grpc).
  * </pre>
  */
 @javax.annotation.Generated(
@@ -256,6 +258,43 @@ public final class KeyManagementServiceGrpc {
         }
      }
      return getGetCryptoKeyVersionMethod;
+  }
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getGetPublicKeyMethod()} instead. 
+  public static final io.grpc.MethodDescriptor<com.google.cloud.kms.v1.GetPublicKeyRequest,
+      com.google.cloud.kms.v1.PublicKey> METHOD_GET_PUBLIC_KEY = getGetPublicKeyMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<com.google.cloud.kms.v1.GetPublicKeyRequest,
+      com.google.cloud.kms.v1.PublicKey> getGetPublicKeyMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<com.google.cloud.kms.v1.GetPublicKeyRequest,
+      com.google.cloud.kms.v1.PublicKey> getGetPublicKeyMethod() {
+    return getGetPublicKeyMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<com.google.cloud.kms.v1.GetPublicKeyRequest,
+      com.google.cloud.kms.v1.PublicKey> getGetPublicKeyMethodHelper() {
+    io.grpc.MethodDescriptor<com.google.cloud.kms.v1.GetPublicKeyRequest, com.google.cloud.kms.v1.PublicKey> getGetPublicKeyMethod;
+    if ((getGetPublicKeyMethod = KeyManagementServiceGrpc.getGetPublicKeyMethod) == null) {
+      synchronized (KeyManagementServiceGrpc.class) {
+        if ((getGetPublicKeyMethod = KeyManagementServiceGrpc.getGetPublicKeyMethod) == null) {
+          KeyManagementServiceGrpc.getGetPublicKeyMethod = getGetPublicKeyMethod = 
+              io.grpc.MethodDescriptor.<com.google.cloud.kms.v1.GetPublicKeyRequest, com.google.cloud.kms.v1.PublicKey>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "google.cloud.kms.v1.KeyManagementService", "GetPublicKey"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.cloud.kms.v1.GetPublicKeyRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.cloud.kms.v1.PublicKey.getDefaultInstance()))
+                  .setSchemaDescriptor(new KeyManagementServiceMethodDescriptorSupplier("GetPublicKey"))
+                  .build();
+          }
+        }
+     }
+     return getGetPublicKeyMethod;
   }
   @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
   @java.lang.Deprecated // Use {@link #getCreateKeyRingMethod()} instead. 
@@ -517,6 +556,80 @@ public final class KeyManagementServiceGrpc {
      return getDecryptMethod;
   }
   @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getAsymmetricSignMethod()} instead. 
+  public static final io.grpc.MethodDescriptor<com.google.cloud.kms.v1.AsymmetricSignRequest,
+      com.google.cloud.kms.v1.AsymmetricSignResponse> METHOD_ASYMMETRIC_SIGN = getAsymmetricSignMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<com.google.cloud.kms.v1.AsymmetricSignRequest,
+      com.google.cloud.kms.v1.AsymmetricSignResponse> getAsymmetricSignMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<com.google.cloud.kms.v1.AsymmetricSignRequest,
+      com.google.cloud.kms.v1.AsymmetricSignResponse> getAsymmetricSignMethod() {
+    return getAsymmetricSignMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<com.google.cloud.kms.v1.AsymmetricSignRequest,
+      com.google.cloud.kms.v1.AsymmetricSignResponse> getAsymmetricSignMethodHelper() {
+    io.grpc.MethodDescriptor<com.google.cloud.kms.v1.AsymmetricSignRequest, com.google.cloud.kms.v1.AsymmetricSignResponse> getAsymmetricSignMethod;
+    if ((getAsymmetricSignMethod = KeyManagementServiceGrpc.getAsymmetricSignMethod) == null) {
+      synchronized (KeyManagementServiceGrpc.class) {
+        if ((getAsymmetricSignMethod = KeyManagementServiceGrpc.getAsymmetricSignMethod) == null) {
+          KeyManagementServiceGrpc.getAsymmetricSignMethod = getAsymmetricSignMethod = 
+              io.grpc.MethodDescriptor.<com.google.cloud.kms.v1.AsymmetricSignRequest, com.google.cloud.kms.v1.AsymmetricSignResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "google.cloud.kms.v1.KeyManagementService", "AsymmetricSign"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.cloud.kms.v1.AsymmetricSignRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.cloud.kms.v1.AsymmetricSignResponse.getDefaultInstance()))
+                  .setSchemaDescriptor(new KeyManagementServiceMethodDescriptorSupplier("AsymmetricSign"))
+                  .build();
+          }
+        }
+     }
+     return getAsymmetricSignMethod;
+  }
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getAsymmetricDecryptMethod()} instead. 
+  public static final io.grpc.MethodDescriptor<com.google.cloud.kms.v1.AsymmetricDecryptRequest,
+      com.google.cloud.kms.v1.AsymmetricDecryptResponse> METHOD_ASYMMETRIC_DECRYPT = getAsymmetricDecryptMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<com.google.cloud.kms.v1.AsymmetricDecryptRequest,
+      com.google.cloud.kms.v1.AsymmetricDecryptResponse> getAsymmetricDecryptMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<com.google.cloud.kms.v1.AsymmetricDecryptRequest,
+      com.google.cloud.kms.v1.AsymmetricDecryptResponse> getAsymmetricDecryptMethod() {
+    return getAsymmetricDecryptMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<com.google.cloud.kms.v1.AsymmetricDecryptRequest,
+      com.google.cloud.kms.v1.AsymmetricDecryptResponse> getAsymmetricDecryptMethodHelper() {
+    io.grpc.MethodDescriptor<com.google.cloud.kms.v1.AsymmetricDecryptRequest, com.google.cloud.kms.v1.AsymmetricDecryptResponse> getAsymmetricDecryptMethod;
+    if ((getAsymmetricDecryptMethod = KeyManagementServiceGrpc.getAsymmetricDecryptMethod) == null) {
+      synchronized (KeyManagementServiceGrpc.class) {
+        if ((getAsymmetricDecryptMethod = KeyManagementServiceGrpc.getAsymmetricDecryptMethod) == null) {
+          KeyManagementServiceGrpc.getAsymmetricDecryptMethod = getAsymmetricDecryptMethod = 
+              io.grpc.MethodDescriptor.<com.google.cloud.kms.v1.AsymmetricDecryptRequest, com.google.cloud.kms.v1.AsymmetricDecryptResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "google.cloud.kms.v1.KeyManagementService", "AsymmetricDecrypt"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.cloud.kms.v1.AsymmetricDecryptRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.cloud.kms.v1.AsymmetricDecryptResponse.getDefaultInstance()))
+                  .setSchemaDescriptor(new KeyManagementServiceMethodDescriptorSupplier("AsymmetricDecrypt"))
+                  .build();
+          }
+        }
+     }
+     return getAsymmetricDecryptMethod;
+  }
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
   @java.lang.Deprecated // Use {@link #getUpdateCryptoKeyPrimaryVersionMethod()} instead. 
   public static final io.grpc.MethodDescriptor<com.google.cloud.kms.v1.UpdateCryptoKeyPrimaryVersionRequest,
       com.google.cloud.kms.v1.CryptoKey> METHOD_UPDATE_CRYPTO_KEY_PRIMARY_VERSION = getUpdateCryptoKeyPrimaryVersionMethodHelper();
@@ -659,6 +772,8 @@ public final class KeyManagementServiceGrpc {
    * * [KeyRing][google.cloud.kms.v1.KeyRing]
    * * [CryptoKey][google.cloud.kms.v1.CryptoKey]
    * * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]
+   * If you are using manual gRPC libraries, see
+   * [Using gRPC with Cloud KMS](https://cloud.google.com/kms/docs/grpc).
    * </pre>
    */
   public static abstract class KeyManagementServiceImplBase implements io.grpc.BindableService {
@@ -726,6 +841,19 @@ public final class KeyManagementServiceGrpc {
 
     /**
      * <pre>
+     * Returns the public key for the given [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]. The
+     * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] must be
+     * [ASYMMETRIC_SIGN][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ASYMMETRIC_SIGN] or
+     * [ASYMMETRIC_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ASYMMETRIC_DECRYPT].
+     * </pre>
+     */
+    public void getPublicKey(com.google.cloud.kms.v1.GetPublicKeyRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.PublicKey> responseObserver) {
+      asyncUnimplementedUnaryCall(getGetPublicKeyMethodHelper(), responseObserver);
+    }
+
+    /**
+     * <pre>
      * Create a new [KeyRing][google.cloud.kms.v1.KeyRing] in a given Project and Location.
      * </pre>
      */
@@ -737,7 +865,9 @@ public final class KeyManagementServiceGrpc {
     /**
      * <pre>
      * Create a new [CryptoKey][google.cloud.kms.v1.CryptoKey] within a [KeyRing][google.cloud.kms.v1.KeyRing].
-     * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] is required.
+     * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] and
+     * [CryptoKey.version_template.algorithm][google.cloud.kms.v1.CryptoKeyVersionTemplate.algorithm]
+     * are required.
      * </pre>
      */
     public void createCryptoKey(com.google.cloud.kms.v1.CreateCryptoKeyRequest request,
@@ -786,6 +916,8 @@ public final class KeyManagementServiceGrpc {
     /**
      * <pre>
      * Encrypts data, so that it can only be recovered by a call to [Decrypt][google.cloud.kms.v1.KeyManagementService.Decrypt].
+     * The [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] must be
+     * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
      * </pre>
      */
     public void encrypt(com.google.cloud.kms.v1.EncryptRequest request,
@@ -795,7 +927,8 @@ public final class KeyManagementServiceGrpc {
 
     /**
      * <pre>
-     * Decrypts data that was protected by [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt].
+     * Decrypts data that was protected by [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt]. The [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose]
+     * must be [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
      * </pre>
      */
     public void decrypt(com.google.cloud.kms.v1.DecryptRequest request,
@@ -805,7 +938,32 @@ public final class KeyManagementServiceGrpc {
 
     /**
      * <pre>
-     * Update the version of a [CryptoKey][google.cloud.kms.v1.CryptoKey] that will be used in [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt]
+     * Signs data using a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose]
+     * ASYMMETRIC_SIGN, producing a signature that can be verified with the public
+     * key retrieved from [GetPublicKey][google.cloud.kms.v1.KeyManagementService.GetPublicKey].
+     * </pre>
+     */
+    public void asymmetricSign(com.google.cloud.kms.v1.AsymmetricSignRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.AsymmetricSignResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getAsymmetricSignMethodHelper(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Decrypts data that was encrypted with a public key retrieved from
+     * [GetPublicKey][google.cloud.kms.v1.KeyManagementService.GetPublicKey] corresponding to a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with
+     * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] ASYMMETRIC_DECRYPT.
+     * </pre>
+     */
+    public void asymmetricDecrypt(com.google.cloud.kms.v1.AsymmetricDecryptRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.AsymmetricDecryptResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getAsymmetricDecryptMethodHelper(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Update the version of a [CryptoKey][google.cloud.kms.v1.CryptoKey] that will be used in [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt].
+     * Returns an error if called on an asymmetric key.
      * </pre>
      */
     public void updateCryptoKeyPrimaryVersion(com.google.cloud.kms.v1.UpdateCryptoKeyPrimaryVersionRequest request,
@@ -835,7 +993,7 @@ public final class KeyManagementServiceGrpc {
     /**
      * <pre>
      * Restore a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] in the
-     * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED],
+     * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED]
      * state.
      * Upon restoration of the CryptoKeyVersion, [state][google.cloud.kms.v1.CryptoKeyVersion.state]
      * will be set to [DISABLED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DISABLED],
@@ -892,6 +1050,13 @@ public final class KeyManagementServiceGrpc {
                 com.google.cloud.kms.v1.CryptoKeyVersion>(
                   this, METHODID_GET_CRYPTO_KEY_VERSION)))
           .addMethod(
+            getGetPublicKeyMethodHelper(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.google.cloud.kms.v1.GetPublicKeyRequest,
+                com.google.cloud.kms.v1.PublicKey>(
+                  this, METHODID_GET_PUBLIC_KEY)))
+          .addMethod(
             getCreateKeyRingMethodHelper(),
             asyncUnaryCall(
               new MethodHandlers<
@@ -941,6 +1106,20 @@ public final class KeyManagementServiceGrpc {
                 com.google.cloud.kms.v1.DecryptResponse>(
                   this, METHODID_DECRYPT)))
           .addMethod(
+            getAsymmetricSignMethodHelper(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.google.cloud.kms.v1.AsymmetricSignRequest,
+                com.google.cloud.kms.v1.AsymmetricSignResponse>(
+                  this, METHODID_ASYMMETRIC_SIGN)))
+          .addMethod(
+            getAsymmetricDecryptMethodHelper(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.google.cloud.kms.v1.AsymmetricDecryptRequest,
+                com.google.cloud.kms.v1.AsymmetricDecryptResponse>(
+                  this, METHODID_ASYMMETRIC_DECRYPT)))
+          .addMethod(
             getUpdateCryptoKeyPrimaryVersionMethodHelper(),
             asyncUnaryCall(
               new MethodHandlers<
@@ -973,6 +1152,8 @@ public final class KeyManagementServiceGrpc {
    * * [KeyRing][google.cloud.kms.v1.KeyRing]
    * * [CryptoKey][google.cloud.kms.v1.CryptoKey]
    * * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]
+   * If you are using manual gRPC libraries, see
+   * [Using gRPC with Cloud KMS](https://cloud.google.com/kms/docs/grpc).
    * </pre>
    */
   public static final class KeyManagementServiceStub extends io.grpc.stub.AbstractStub<KeyManagementServiceStub> {
@@ -1060,6 +1241,20 @@ public final class KeyManagementServiceGrpc {
 
     /**
      * <pre>
+     * Returns the public key for the given [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]. The
+     * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] must be
+     * [ASYMMETRIC_SIGN][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ASYMMETRIC_SIGN] or
+     * [ASYMMETRIC_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ASYMMETRIC_DECRYPT].
+     * </pre>
+     */
+    public void getPublicKey(com.google.cloud.kms.v1.GetPublicKeyRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.PublicKey> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getGetPublicKeyMethodHelper(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
      * Create a new [KeyRing][google.cloud.kms.v1.KeyRing] in a given Project and Location.
      * </pre>
      */
@@ -1072,7 +1267,9 @@ public final class KeyManagementServiceGrpc {
     /**
      * <pre>
      * Create a new [CryptoKey][google.cloud.kms.v1.CryptoKey] within a [KeyRing][google.cloud.kms.v1.KeyRing].
-     * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] is required.
+     * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] and
+     * [CryptoKey.version_template.algorithm][google.cloud.kms.v1.CryptoKeyVersionTemplate.algorithm]
+     * are required.
      * </pre>
      */
     public void createCryptoKey(com.google.cloud.kms.v1.CreateCryptoKeyRequest request,
@@ -1125,6 +1322,8 @@ public final class KeyManagementServiceGrpc {
     /**
      * <pre>
      * Encrypts data, so that it can only be recovered by a call to [Decrypt][google.cloud.kms.v1.KeyManagementService.Decrypt].
+     * The [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] must be
+     * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
      * </pre>
      */
     public void encrypt(com.google.cloud.kms.v1.EncryptRequest request,
@@ -1135,7 +1334,8 @@ public final class KeyManagementServiceGrpc {
 
     /**
      * <pre>
-     * Decrypts data that was protected by [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt].
+     * Decrypts data that was protected by [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt]. The [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose]
+     * must be [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
      * </pre>
      */
     public void decrypt(com.google.cloud.kms.v1.DecryptRequest request,
@@ -1146,7 +1346,34 @@ public final class KeyManagementServiceGrpc {
 
     /**
      * <pre>
-     * Update the version of a [CryptoKey][google.cloud.kms.v1.CryptoKey] that will be used in [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt]
+     * Signs data using a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose]
+     * ASYMMETRIC_SIGN, producing a signature that can be verified with the public
+     * key retrieved from [GetPublicKey][google.cloud.kms.v1.KeyManagementService.GetPublicKey].
+     * </pre>
+     */
+    public void asymmetricSign(com.google.cloud.kms.v1.AsymmetricSignRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.AsymmetricSignResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getAsymmetricSignMethodHelper(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Decrypts data that was encrypted with a public key retrieved from
+     * [GetPublicKey][google.cloud.kms.v1.KeyManagementService.GetPublicKey] corresponding to a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with
+     * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] ASYMMETRIC_DECRYPT.
+     * </pre>
+     */
+    public void asymmetricDecrypt(com.google.cloud.kms.v1.AsymmetricDecryptRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.AsymmetricDecryptResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getAsymmetricDecryptMethodHelper(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Update the version of a [CryptoKey][google.cloud.kms.v1.CryptoKey] that will be used in [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt].
+     * Returns an error if called on an asymmetric key.
      * </pre>
      */
     public void updateCryptoKeyPrimaryVersion(com.google.cloud.kms.v1.UpdateCryptoKeyPrimaryVersionRequest request,
@@ -1178,7 +1405,7 @@ public final class KeyManagementServiceGrpc {
     /**
      * <pre>
      * Restore a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] in the
-     * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED],
+     * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED]
      * state.
      * Upon restoration of the CryptoKeyVersion, [state][google.cloud.kms.v1.CryptoKeyVersion.state]
      * will be set to [DISABLED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DISABLED],
@@ -1200,6 +1427,8 @@ public final class KeyManagementServiceGrpc {
    * * [KeyRing][google.cloud.kms.v1.KeyRing]
    * * [CryptoKey][google.cloud.kms.v1.CryptoKey]
    * * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]
+   * If you are using manual gRPC libraries, see
+   * [Using gRPC with Cloud KMS](https://cloud.google.com/kms/docs/grpc).
    * </pre>
    */
   public static final class KeyManagementServiceBlockingStub extends io.grpc.stub.AbstractStub<KeyManagementServiceBlockingStub> {
@@ -1281,6 +1510,19 @@ public final class KeyManagementServiceGrpc {
 
     /**
      * <pre>
+     * Returns the public key for the given [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]. The
+     * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] must be
+     * [ASYMMETRIC_SIGN][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ASYMMETRIC_SIGN] or
+     * [ASYMMETRIC_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ASYMMETRIC_DECRYPT].
+     * </pre>
+     */
+    public com.google.cloud.kms.v1.PublicKey getPublicKey(com.google.cloud.kms.v1.GetPublicKeyRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getGetPublicKeyMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
      * Create a new [KeyRing][google.cloud.kms.v1.KeyRing] in a given Project and Location.
      * </pre>
      */
@@ -1292,7 +1534,9 @@ public final class KeyManagementServiceGrpc {
     /**
      * <pre>
      * Create a new [CryptoKey][google.cloud.kms.v1.CryptoKey] within a [KeyRing][google.cloud.kms.v1.KeyRing].
-     * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] is required.
+     * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] and
+     * [CryptoKey.version_template.algorithm][google.cloud.kms.v1.CryptoKeyVersionTemplate.algorithm]
+     * are required.
      * </pre>
      */
     public com.google.cloud.kms.v1.CryptoKey createCryptoKey(com.google.cloud.kms.v1.CreateCryptoKeyRequest request) {
@@ -1341,6 +1585,8 @@ public final class KeyManagementServiceGrpc {
     /**
      * <pre>
      * Encrypts data, so that it can only be recovered by a call to [Decrypt][google.cloud.kms.v1.KeyManagementService.Decrypt].
+     * The [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] must be
+     * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
      * </pre>
      */
     public com.google.cloud.kms.v1.EncryptResponse encrypt(com.google.cloud.kms.v1.EncryptRequest request) {
@@ -1350,7 +1596,8 @@ public final class KeyManagementServiceGrpc {
 
     /**
      * <pre>
-     * Decrypts data that was protected by [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt].
+     * Decrypts data that was protected by [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt]. The [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose]
+     * must be [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
      * </pre>
      */
     public com.google.cloud.kms.v1.DecryptResponse decrypt(com.google.cloud.kms.v1.DecryptRequest request) {
@@ -1360,7 +1607,32 @@ public final class KeyManagementServiceGrpc {
 
     /**
      * <pre>
-     * Update the version of a [CryptoKey][google.cloud.kms.v1.CryptoKey] that will be used in [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt]
+     * Signs data using a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose]
+     * ASYMMETRIC_SIGN, producing a signature that can be verified with the public
+     * key retrieved from [GetPublicKey][google.cloud.kms.v1.KeyManagementService.GetPublicKey].
+     * </pre>
+     */
+    public com.google.cloud.kms.v1.AsymmetricSignResponse asymmetricSign(com.google.cloud.kms.v1.AsymmetricSignRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getAsymmetricSignMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Decrypts data that was encrypted with a public key retrieved from
+     * [GetPublicKey][google.cloud.kms.v1.KeyManagementService.GetPublicKey] corresponding to a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with
+     * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] ASYMMETRIC_DECRYPT.
+     * </pre>
+     */
+    public com.google.cloud.kms.v1.AsymmetricDecryptResponse asymmetricDecrypt(com.google.cloud.kms.v1.AsymmetricDecryptRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getAsymmetricDecryptMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Update the version of a [CryptoKey][google.cloud.kms.v1.CryptoKey] that will be used in [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt].
+     * Returns an error if called on an asymmetric key.
      * </pre>
      */
     public com.google.cloud.kms.v1.CryptoKey updateCryptoKeyPrimaryVersion(com.google.cloud.kms.v1.UpdateCryptoKeyPrimaryVersionRequest request) {
@@ -1390,7 +1662,7 @@ public final class KeyManagementServiceGrpc {
     /**
      * <pre>
      * Restore a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] in the
-     * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED],
+     * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED]
      * state.
      * Upon restoration of the CryptoKeyVersion, [state][google.cloud.kms.v1.CryptoKeyVersion.state]
      * will be set to [DISABLED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DISABLED],
@@ -1411,6 +1683,8 @@ public final class KeyManagementServiceGrpc {
    * * [KeyRing][google.cloud.kms.v1.KeyRing]
    * * [CryptoKey][google.cloud.kms.v1.CryptoKey]
    * * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]
+   * If you are using manual gRPC libraries, see
+   * [Using gRPC with Cloud KMS](https://cloud.google.com/kms/docs/grpc).
    * </pre>
    */
   public static final class KeyManagementServiceFutureStub extends io.grpc.stub.AbstractStub<KeyManagementServiceFutureStub> {
@@ -1498,6 +1772,20 @@ public final class KeyManagementServiceGrpc {
 
     /**
      * <pre>
+     * Returns the public key for the given [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]. The
+     * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] must be
+     * [ASYMMETRIC_SIGN][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ASYMMETRIC_SIGN] or
+     * [ASYMMETRIC_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ASYMMETRIC_DECRYPT].
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.kms.v1.PublicKey> getPublicKey(
+        com.google.cloud.kms.v1.GetPublicKeyRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getGetPublicKeyMethodHelper(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
      * Create a new [KeyRing][google.cloud.kms.v1.KeyRing] in a given Project and Location.
      * </pre>
      */
@@ -1510,7 +1798,9 @@ public final class KeyManagementServiceGrpc {
     /**
      * <pre>
      * Create a new [CryptoKey][google.cloud.kms.v1.CryptoKey] within a [KeyRing][google.cloud.kms.v1.KeyRing].
-     * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] is required.
+     * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] and
+     * [CryptoKey.version_template.algorithm][google.cloud.kms.v1.CryptoKeyVersionTemplate.algorithm]
+     * are required.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.kms.v1.CryptoKey> createCryptoKey(
@@ -1563,6 +1853,8 @@ public final class KeyManagementServiceGrpc {
     /**
      * <pre>
      * Encrypts data, so that it can only be recovered by a call to [Decrypt][google.cloud.kms.v1.KeyManagementService.Decrypt].
+     * The [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] must be
+     * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.kms.v1.EncryptResponse> encrypt(
@@ -1573,7 +1865,8 @@ public final class KeyManagementServiceGrpc {
 
     /**
      * <pre>
-     * Decrypts data that was protected by [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt].
+     * Decrypts data that was protected by [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt]. The [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose]
+     * must be [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.kms.v1.DecryptResponse> decrypt(
@@ -1584,7 +1877,34 @@ public final class KeyManagementServiceGrpc {
 
     /**
      * <pre>
-     * Update the version of a [CryptoKey][google.cloud.kms.v1.CryptoKey] that will be used in [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt]
+     * Signs data using a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose]
+     * ASYMMETRIC_SIGN, producing a signature that can be verified with the public
+     * key retrieved from [GetPublicKey][google.cloud.kms.v1.KeyManagementService.GetPublicKey].
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.kms.v1.AsymmetricSignResponse> asymmetricSign(
+        com.google.cloud.kms.v1.AsymmetricSignRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getAsymmetricSignMethodHelper(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Decrypts data that was encrypted with a public key retrieved from
+     * [GetPublicKey][google.cloud.kms.v1.KeyManagementService.GetPublicKey] corresponding to a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with
+     * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] ASYMMETRIC_DECRYPT.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.kms.v1.AsymmetricDecryptResponse> asymmetricDecrypt(
+        com.google.cloud.kms.v1.AsymmetricDecryptRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getAsymmetricDecryptMethodHelper(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Update the version of a [CryptoKey][google.cloud.kms.v1.CryptoKey] that will be used in [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt].
+     * Returns an error if called on an asymmetric key.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.kms.v1.CryptoKey> updateCryptoKeyPrimaryVersion(
@@ -1616,7 +1936,7 @@ public final class KeyManagementServiceGrpc {
     /**
      * <pre>
      * Restore a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] in the
-     * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED],
+     * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED]
      * state.
      * Upon restoration of the CryptoKeyVersion, [state][google.cloud.kms.v1.CryptoKeyVersion.state]
      * will be set to [DISABLED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DISABLED],
@@ -1636,16 +1956,19 @@ public final class KeyManagementServiceGrpc {
   private static final int METHODID_GET_KEY_RING = 3;
   private static final int METHODID_GET_CRYPTO_KEY = 4;
   private static final int METHODID_GET_CRYPTO_KEY_VERSION = 5;
-  private static final int METHODID_CREATE_KEY_RING = 6;
-  private static final int METHODID_CREATE_CRYPTO_KEY = 7;
-  private static final int METHODID_CREATE_CRYPTO_KEY_VERSION = 8;
-  private static final int METHODID_UPDATE_CRYPTO_KEY = 9;
-  private static final int METHODID_UPDATE_CRYPTO_KEY_VERSION = 10;
-  private static final int METHODID_ENCRYPT = 11;
-  private static final int METHODID_DECRYPT = 12;
-  private static final int METHODID_UPDATE_CRYPTO_KEY_PRIMARY_VERSION = 13;
-  private static final int METHODID_DESTROY_CRYPTO_KEY_VERSION = 14;
-  private static final int METHODID_RESTORE_CRYPTO_KEY_VERSION = 15;
+  private static final int METHODID_GET_PUBLIC_KEY = 6;
+  private static final int METHODID_CREATE_KEY_RING = 7;
+  private static final int METHODID_CREATE_CRYPTO_KEY = 8;
+  private static final int METHODID_CREATE_CRYPTO_KEY_VERSION = 9;
+  private static final int METHODID_UPDATE_CRYPTO_KEY = 10;
+  private static final int METHODID_UPDATE_CRYPTO_KEY_VERSION = 11;
+  private static final int METHODID_ENCRYPT = 12;
+  private static final int METHODID_DECRYPT = 13;
+  private static final int METHODID_ASYMMETRIC_SIGN = 14;
+  private static final int METHODID_ASYMMETRIC_DECRYPT = 15;
+  private static final int METHODID_UPDATE_CRYPTO_KEY_PRIMARY_VERSION = 16;
+  private static final int METHODID_DESTROY_CRYPTO_KEY_VERSION = 17;
+  private static final int METHODID_RESTORE_CRYPTO_KEY_VERSION = 18;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1688,6 +2011,10 @@ public final class KeyManagementServiceGrpc {
           serviceImpl.getCryptoKeyVersion((com.google.cloud.kms.v1.GetCryptoKeyVersionRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.CryptoKeyVersion>) responseObserver);
           break;
+        case METHODID_GET_PUBLIC_KEY:
+          serviceImpl.getPublicKey((com.google.cloud.kms.v1.GetPublicKeyRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.PublicKey>) responseObserver);
+          break;
         case METHODID_CREATE_KEY_RING:
           serviceImpl.createKeyRing((com.google.cloud.kms.v1.CreateKeyRingRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.KeyRing>) responseObserver);
@@ -1715,6 +2042,14 @@ public final class KeyManagementServiceGrpc {
         case METHODID_DECRYPT:
           serviceImpl.decrypt((com.google.cloud.kms.v1.DecryptRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.DecryptResponse>) responseObserver);
+          break;
+        case METHODID_ASYMMETRIC_SIGN:
+          serviceImpl.asymmetricSign((com.google.cloud.kms.v1.AsymmetricSignRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.AsymmetricSignResponse>) responseObserver);
+          break;
+        case METHODID_ASYMMETRIC_DECRYPT:
+          serviceImpl.asymmetricDecrypt((com.google.cloud.kms.v1.AsymmetricDecryptRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.AsymmetricDecryptResponse>) responseObserver);
           break;
         case METHODID_UPDATE_CRYPTO_KEY_PRIMARY_VERSION:
           serviceImpl.updateCryptoKeyPrimaryVersion((com.google.cloud.kms.v1.UpdateCryptoKeyPrimaryVersionRequest) request,
@@ -1795,6 +2130,7 @@ public final class KeyManagementServiceGrpc {
               .addMethod(getGetKeyRingMethodHelper())
               .addMethod(getGetCryptoKeyMethodHelper())
               .addMethod(getGetCryptoKeyVersionMethodHelper())
+              .addMethod(getGetPublicKeyMethodHelper())
               .addMethod(getCreateKeyRingMethodHelper())
               .addMethod(getCreateCryptoKeyMethodHelper())
               .addMethod(getCreateCryptoKeyVersionMethodHelper())
@@ -1802,6 +2138,8 @@ public final class KeyManagementServiceGrpc {
               .addMethod(getUpdateCryptoKeyVersionMethodHelper())
               .addMethod(getEncryptMethodHelper())
               .addMethod(getDecryptMethodHelper())
+              .addMethod(getAsymmetricSignMethodHelper())
+              .addMethod(getAsymmetricDecryptMethodHelper())
               .addMethod(getUpdateCryptoKeyPrimaryVersionMethodHelper())
               .addMethod(getDestroyCryptoKeyVersionMethodHelper())
               .addMethod(getRestoreCryptoKeyVersionMethodHelper())
