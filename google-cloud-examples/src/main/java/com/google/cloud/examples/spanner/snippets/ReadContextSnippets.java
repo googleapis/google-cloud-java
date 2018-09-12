@@ -113,6 +113,7 @@ public class ReadContextSnippets {
             Statement.of("SELECT SingerId, AlbumId, MarketingBudget FROM Albums"),
             ReadContext.QueryAnalyzeMode.PROFILE);
     while (resultSet.next()) {
+      // Discard the results. We're only processing because getStats() below requires it.
       resultSet.getCurrentRowAsStruct();
     }
     ResultSetStats stats = resultSet.getStats();
