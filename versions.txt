@@ -30,6 +30,7 @@ grpc-google-cloud-logging-v2:0.26.0:0.26.1-SNAPSHOT
 grpc-google-cloud-monitoring-v3:1.25.0:1.25.1-SNAPSHOT
 grpc-google-cloud-os-login-v1:0.26.0:0.26.1-SNAPSHOT
 grpc-google-cloud-pubsub-v1:1.25.0:1.25.1-SNAPSHOT
+grpc-google-cloud-redis-v1:0.26.0:0.26.1-SNAPSHOT
 grpc-google-cloud-redis-v1beta1:0.26.0:0.26.1-SNAPSHOT
 grpc-google-cloud-spanner-admin-database-v1:0.26.0:0.26.1-SNAPSHOT
 grpc-google-cloud-spanner-admin-instance-v1:0.26.0:0.26.1-SNAPSHOT
@@ -47,6 +48,7 @@ grpc-google-cloud-video-intelligence-v1:0.26.0:0.26.1-SNAPSHOT
 grpc-google-cloud-video-intelligence-v1beta1:0.26.0:0.26.1-SNAPSHOT
 grpc-google-cloud-video-intelligence-v1beta2:0.26.0:0.26.1-SNAPSHOT
 grpc-google-cloud-video-intelligence-v1p1beta1:0.26.0:0.26.1-SNAPSHOT
+grpc-google-cloud-video-intelligence-v1p2beta1:0.26.0:0.26.1-SNAPSHOT
 grpc-google-cloud-vision-v1:1.25.0:1.25.1-SNAPSHOT
 grpc-google-cloud-vision-v1p1beta1:0.26.0:0.26.1-SNAPSHOT
 grpc-google-cloud-vision-v1p2beta1:1.25.0:1.25.1-SNAPSHOT
@@ -76,6 +78,7 @@ proto-google-cloud-logging-v2:0.26.0:0.26.1-SNAPSHOT
 proto-google-cloud-monitoring-v3:1.25.0:1.25.1-SNAPSHOT
 proto-google-cloud-os-login-v1:0.26.0:0.26.1-SNAPSHOT
 proto-google-cloud-pubsub-v1:1.25.0:1.25.1-SNAPSHOT
+proto-google-cloud-redis-v1:0.26.0:0.26.1-SNAPSHOT
 proto-google-cloud-redis-v1beta1:0.26.0:0.26.1-SNAPSHOT
 proto-google-cloud-spanner-admin-database-v1:0.26.0:0.26.1-SNAPSHOT
 proto-google-cloud-spanner-admin-instance-v1:0.26.0:0.26.1-SNAPSHOT
@@ -93,6 +96,7 @@ proto-google-cloud-video-intelligence-v1:0.26.0:0.26.1-SNAPSHOT
 proto-google-cloud-video-intelligence-v1beta1:0.26.0:0.26.1-SNAPSHOT
 proto-google-cloud-video-intelligence-v1beta2:0.26.0:0.26.1-SNAPSHOT
 proto-google-cloud-video-intelligence-v1p1beta1:0.26.0:0.26.1-SNAPSHOT
+proto-google-cloud-video-intelligence-v1p2beta1:0.26.0:0.26.1-SNAPSHOT
 proto-google-cloud-vision-v1:1.25.0:1.25.1-SNAPSHOT
 proto-google-cloud-vision-v1p1beta1:0.26.0:0.26.1-SNAPSHOT
 proto-google-cloud-vision-v1p2beta1:1.25.0:1.25.1-SNAPSHOT
