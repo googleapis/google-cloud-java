@@ -20,7 +20,7 @@
 # $ git clone https://github.com/googleapis/googleapis.git
 # $ git clone https://github.com/googleapis/discovery-artifact-manager.git
 #
-# Run this script:
+# Run this script from the top-level google-cloud-java directory:
 #
 # $ python utilities/batch_generate_apis.py PATH_TO_GOOGLEAPIS PATH_TO_DISCOVERY_ARTIFACT_MANAGER
 
@@ -28,6 +28,7 @@ import argparse
 import os
 
 import generate_api
+import re
 
 
 def run_gapic_gen(googleapis):
@@ -93,7 +94,12 @@ def run_discogapic_gen(discovery_repo):
     generate('gapic/google/compute/artman_compute.yaml')
 
 
+def verify_proto_version():
+    line = subprocess.check_output(['grep', '-C', path, 'rev-parse', 'HEAD']).strip()
+
+
 def main():
+    # Verify user has protoc 3.6.0
     # TODO Make the docker image the default, add --local option
     parser = argparse.ArgumentParser(description='Batch generate all APIs.')
     parser.add_argument('googleapis', help='The path to the googleapis repo')
