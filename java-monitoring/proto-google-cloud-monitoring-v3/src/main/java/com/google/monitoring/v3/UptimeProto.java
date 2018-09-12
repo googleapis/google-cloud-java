@@ -77,7 +77,7 @@ public final class UptimeProto {
       "(\t\"\301\t\n\021UptimeCheckConfig\022\014\n\004name\030\001 \001(\t\022\024" +
       "\n\014display_name\030\002 \001(\t\022;\n\022monitored_resour" +
       "ce\030\003 \001(\0132\035.google.api.MonitoredResourceH" +
-      "\000\022O\n\016resource_group\030\004 \001(\01325.google.monit",
+      "\000\022O\n\016resource_group\030\004 \001(\01325.google.monit" +
       "oring.v3.UptimeCheckConfig.ResourceGroup" +
       "H\000\022G\n\nhttp_check\030\005 \001(\01321.google.monitori" +
       "ng.v3.UptimeCheckConfig.HttpCheckH\001\022E\n\tt" +
@@ -87,7 +87,7 @@ public final class UptimeProto {
       "\030\010 \001(\0132\031.google.protobuf.Duration\022P\n\020con" +
       "tent_matchers\030\t \003(\01326.google.monitoring." +
       "v3.UptimeCheckConfig.ContentMatcher\022A\n\020s" +
-      "elected_regions\030\n \003(\0162\'.google.monitorin",
+      "elected_regions\030\n \003(\0162\'.google.monitorin" +
       "g.v3.UptimeCheckRegion\022\023\n\013is_internal\030\017 " +
       "\001(\010\022@\n\021internal_checkers\030\016 \003(\0132%.google." +
       "monitoring.v3.InternalChecker\032a\n\rResourc" +
@@ -97,7 +97,7 @@ public final class UptimeProto {
       "\014\n\004path\030\002 \001(\t\022\014\n\004port\030\003 \001(\005\022X\n\tauth_info" +
       "\030\004 \001(\0132E.google.monitoring.v3.UptimeChec" +
       "kConfig.HttpCheck.BasicAuthentication\022\024\n" +
-      "\014mask_headers\030\005 \001(\010\022O\n\007headers\030\006 \003(\0132>.g",
+      "\014mask_headers\030\005 \001(\010\022O\n\007headers\030\006 \003(\0132>.g" +
       "oogle.monitoring.v3.UptimeCheckConfig.Ht" +
       "tpCheck.HeadersEntry\0329\n\023BasicAuthenticat" +
       "ion\022\020\n\010username\030\001 \001(\t\022\020\n\010password\030\002 \001(\t\032" +
@@ -107,7 +107,7 @@ public final class UptimeProto {
       "B\024\n\022check_request_type\"n\n\rUptimeCheckIp\022" +
       "7\n\006region\030\001 \001(\0162\'.google.monitoring.v3.U" +
       "ptimeCheckRegion\022\020\n\010location\030\002 \001(\t\022\022\n\nip" +
-      "_address\030\003 \001(\t*e\n\021UptimeCheckRegion\022\026\n\022R",
+      "_address\030\003 \001(\t*e\n\021UptimeCheckRegion\022\026\n\022R" +
       "EGION_UNSPECIFIED\020\000\022\007\n\003USA\020\001\022\n\n\006EUROPE\020\002" +
       "\022\021\n\rSOUTH_AMERICA\020\003\022\020\n\014ASIA_PACIFIC\020\004*[\n" +
       "\021GroupResourceType\022\035\n\031RESOURCE_TYPE_UNSP" +
