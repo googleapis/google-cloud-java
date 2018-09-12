@@ -273,6 +273,8 @@ public class StorageSnippets {
   // [VARIABLE "bucket_"]
   public Page<Bucket> listBucketsWithSizeAndPrefix(String prefix) {
     // [START listBucketsWithSizeAndPrefix]
+    // Include a prefix of bucket-name to reduce search space.
+    // For more information read https://cloud.google.com/storage/docs/json_api/v1/buckets/list
     Page<Bucket> buckets = storage.list(BucketListOption.pageSize(100),
         BucketListOption.prefix(prefix));
     for (Bucket bucket : buckets.iterateAll()) {
