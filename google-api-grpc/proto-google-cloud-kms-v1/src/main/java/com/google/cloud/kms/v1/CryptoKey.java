@@ -117,16 +117,29 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 82: {
-            if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+            if (!((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
               labels_ = com.google.protobuf.MapField.newMapField(
                   LabelsDefaultEntryHolder.defaultEntry);
-              mutable_bitField0_ |= 0x00000040;
+              mutable_bitField0_ |= 0x00000080;
             }
             com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
             labels__ = input.readMessage(
                 LabelsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
             labels_.getMutableMap().put(
                 labels__.getKey(), labels__.getValue());
+            break;
+          }
+          case 90: {
+            com.google.cloud.kms.v1.CryptoKeyVersionTemplate.Builder subBuilder = null;
+            if (versionTemplate_ != null) {
+              subBuilder = versionTemplate_.toBuilder();
+            }
+            versionTemplate_ = input.readMessage(com.google.cloud.kms.v1.CryptoKeyVersionTemplate.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(versionTemplate_);
+              versionTemplate_ = subBuilder.buildPartial();
+            }
+
             break;
           }
           default: {
@@ -175,9 +188,9 @@ private static final long serialVersionUID = 0L;
 
   /**
    * <pre>
-   * [CryptoKeyPurpose][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose] describes the capabilities of a [CryptoKey][google.cloud.kms.v1.CryptoKey]. Two
-   * keys with the same purpose may use different underlying algorithms, but
-   * must support the same set of operations.
+   * [CryptoKeyPurpose][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose] describes the cryptographic capabilities of a
+   * [CryptoKey][google.cloud.kms.v1.CryptoKey]. A given key can only be used for the operations allowed by
+   * its purpose.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose}
@@ -202,6 +215,26 @@ private static final long serialVersionUID = 0L;
      * <code>ENCRYPT_DECRYPT = 1;</code>
      */
     ENCRYPT_DECRYPT(1),
+    /**
+     * <pre>
+     * [CryptoKeys][google.cloud.kms.v1.CryptoKey] with this purpose may be used with
+     * [AsymmetricSign][google.cloud.kms.v1.KeyManagementService.AsymmetricSign] and
+     * [GetPublicKey][google.cloud.kms.v1.KeyManagementService.GetPublicKey].
+     * </pre>
+     *
+     * <code>ASYMMETRIC_SIGN = 5;</code>
+     */
+    ASYMMETRIC_SIGN(5),
+    /**
+     * <pre>
+     * [CryptoKeys][google.cloud.kms.v1.CryptoKey] with this purpose may be used with
+     * [AsymmetricDecrypt][google.cloud.kms.v1.KeyManagementService.AsymmetricDecrypt] and
+     * [GetPublicKey][google.cloud.kms.v1.KeyManagementService.GetPublicKey].
+     * </pre>
+     *
+     * <code>ASYMMETRIC_DECRYPT = 6;</code>
+     */
+    ASYMMETRIC_DECRYPT(6),
     UNRECOGNIZED(-1),
     ;
 
@@ -223,6 +256,26 @@ private static final long serialVersionUID = 0L;
      * <code>ENCRYPT_DECRYPT = 1;</code>
      */
     public static final int ENCRYPT_DECRYPT_VALUE = 1;
+    /**
+     * <pre>
+     * [CryptoKeys][google.cloud.kms.v1.CryptoKey] with this purpose may be used with
+     * [AsymmetricSign][google.cloud.kms.v1.KeyManagementService.AsymmetricSign] and
+     * [GetPublicKey][google.cloud.kms.v1.KeyManagementService.GetPublicKey].
+     * </pre>
+     *
+     * <code>ASYMMETRIC_SIGN = 5;</code>
+     */
+    public static final int ASYMMETRIC_SIGN_VALUE = 5;
+    /**
+     * <pre>
+     * [CryptoKeys][google.cloud.kms.v1.CryptoKey] with this purpose may be used with
+     * [AsymmetricDecrypt][google.cloud.kms.v1.KeyManagementService.AsymmetricDecrypt] and
+     * [GetPublicKey][google.cloud.kms.v1.KeyManagementService.GetPublicKey].
+     * </pre>
+     *
+     * <code>ASYMMETRIC_DECRYPT = 6;</code>
+     */
+    public static final int ASYMMETRIC_DECRYPT_VALUE = 6;
 
 
     public final int getNumber() {
@@ -245,6 +298,8 @@ private static final long serialVersionUID = 0L;
       switch (value) {
         case 0: return CRYPTO_KEY_PURPOSE_UNSPECIFIED;
         case 1: return ENCRYPT_DECRYPT;
+        case 5: return ASYMMETRIC_SIGN;
+        case 6: return ASYMMETRIC_DECRYPT;
         default: return null;
       }
     }
@@ -387,6 +442,9 @@ private static final long serialVersionUID = 0L;
    * in [EncryptRequest.name][google.cloud.kms.v1.EncryptRequest.name].
    * The [CryptoKey][google.cloud.kms.v1.CryptoKey]'s primary version can be updated via
    * [UpdateCryptoKeyPrimaryVersion][google.cloud.kms.v1.KeyManagementService.UpdateCryptoKeyPrimaryVersion].
+   * All keys with [purpose][google.cloud.kms.v1.CryptoKey.purpose]
+   * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT] have a
+   * primary. For other keys, this field will be omitted.
    * </pre>
    *
    * <code>.google.cloud.kms.v1.CryptoKeyVersion primary = 2;</code>
@@ -401,6 +459,9 @@ private static final long serialVersionUID = 0L;
    * in [EncryptRequest.name][google.cloud.kms.v1.EncryptRequest.name].
    * The [CryptoKey][google.cloud.kms.v1.CryptoKey]'s primary version can be updated via
    * [UpdateCryptoKeyPrimaryVersion][google.cloud.kms.v1.KeyManagementService.UpdateCryptoKeyPrimaryVersion].
+   * All keys with [purpose][google.cloud.kms.v1.CryptoKey.purpose]
+   * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT] have a
+   * primary. For other keys, this field will be omitted.
    * </pre>
    *
    * <code>.google.cloud.kms.v1.CryptoKeyVersion primary = 2;</code>
@@ -415,6 +476,9 @@ private static final long serialVersionUID = 0L;
    * in [EncryptRequest.name][google.cloud.kms.v1.EncryptRequest.name].
    * The [CryptoKey][google.cloud.kms.v1.CryptoKey]'s primary version can be updated via
    * [UpdateCryptoKeyPrimaryVersion][google.cloud.kms.v1.KeyManagementService.UpdateCryptoKeyPrimaryVersion].
+   * All keys with [purpose][google.cloud.kms.v1.CryptoKey.purpose]
+   * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT] have a
+   * primary. For other keys, this field will be omitted.
    * </pre>
    *
    * <code>.google.cloud.kms.v1.CryptoKeyVersion primary = 2;</code>
@@ -427,8 +491,7 @@ private static final long serialVersionUID = 0L;
   private int purpose_;
   /**
    * <pre>
-   * The immutable purpose of this [CryptoKey][google.cloud.kms.v1.CryptoKey]. Currently, the only acceptable
-   * purpose is [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
+   * The immutable purpose of this [CryptoKey][google.cloud.kms.v1.CryptoKey].
    * </pre>
    *
    * <code>.google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose purpose = 3;</code>
@@ -438,8 +501,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The immutable purpose of this [CryptoKey][google.cloud.kms.v1.CryptoKey]. Currently, the only acceptable
-   * purpose is [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
+   * The immutable purpose of this [CryptoKey][google.cloud.kms.v1.CryptoKey].
    * </pre>
    *
    * <code>.google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose purpose = 3;</code>
@@ -494,6 +556,9 @@ private static final long serialVersionUID = 0L;
    * [CreateCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.CreateCryptoKeyVersion] and
    * [UpdateCryptoKeyPrimaryVersion][google.cloud.kms.v1.KeyManagementService.UpdateCryptoKeyPrimaryVersion]
    * do not affect [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time].
+   * Keys with [purpose][google.cloud.kms.v1.CryptoKey.purpose]
+   * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT] support
+   * automatic rotation. For other keys, this field must be omitted.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp next_rotation_time = 7;</code>
@@ -510,6 +575,9 @@ private static final long serialVersionUID = 0L;
    * [CreateCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.CreateCryptoKeyVersion] and
    * [UpdateCryptoKeyPrimaryVersion][google.cloud.kms.v1.KeyManagementService.UpdateCryptoKeyPrimaryVersion]
    * do not affect [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time].
+   * Keys with [purpose][google.cloud.kms.v1.CryptoKey.purpose]
+   * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT] support
+   * automatic rotation. For other keys, this field must be omitted.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp next_rotation_time = 7;</code>
@@ -526,6 +594,9 @@ private static final long serialVersionUID = 0L;
    * [CreateCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.CreateCryptoKeyVersion] and
    * [UpdateCryptoKeyPrimaryVersion][google.cloud.kms.v1.KeyManagementService.UpdateCryptoKeyPrimaryVersion]
    * do not affect [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time].
+   * Keys with [purpose][google.cloud.kms.v1.CryptoKey.purpose]
+   * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT] support
+   * automatic rotation. For other keys, this field must be omitted.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp next_rotation_time = 7;</code>
@@ -540,6 +611,9 @@ private static final long serialVersionUID = 0L;
    * [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time] will be advanced by this period when the service
    * automatically rotates a key. Must be at least one day.
    * If [rotation_period][google.cloud.kms.v1.CryptoKey.rotation_period] is set, [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time] must also be set.
+   * Keys with [purpose][google.cloud.kms.v1.CryptoKey.purpose]
+   * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT] support
+   * automatic rotation. For other keys, this field must be omitted.
    * </pre>
    *
    * <code>.google.protobuf.Duration rotation_period = 8;</code>
@@ -552,6 +626,9 @@ private static final long serialVersionUID = 0L;
    * [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time] will be advanced by this period when the service
    * automatically rotates a key. Must be at least one day.
    * If [rotation_period][google.cloud.kms.v1.CryptoKey.rotation_period] is set, [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time] must also be set.
+   * Keys with [purpose][google.cloud.kms.v1.CryptoKey.purpose]
+   * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT] support
+   * automatic rotation. For other keys, this field must be omitted.
    * </pre>
    *
    * <code>.google.protobuf.Duration rotation_period = 8;</code>
@@ -567,6 +644,9 @@ private static final long serialVersionUID = 0L;
    * [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time] will be advanced by this period when the service
    * automatically rotates a key. Must be at least one day.
    * If [rotation_period][google.cloud.kms.v1.CryptoKey.rotation_period] is set, [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time] must also be set.
+   * Keys with [purpose][google.cloud.kms.v1.CryptoKey.purpose]
+   * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT] support
+   * automatic rotation. For other keys, this field must be omitted.
    * </pre>
    *
    * <code>.google.protobuf.Duration rotation_period = 8;</code>
@@ -576,6 +656,48 @@ private static final long serialVersionUID = 0L;
        return (com.google.protobuf.Duration) rotationSchedule_;
     }
     return com.google.protobuf.Duration.getDefaultInstance();
+  }
+
+  public static final int VERSION_TEMPLATE_FIELD_NUMBER = 11;
+  private com.google.cloud.kms.v1.CryptoKeyVersionTemplate versionTemplate_;
+  /**
+   * <pre>
+   * A template describing settings for new [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] instances.
+   * The properties of new [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] instances created by either
+   * [CreateCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.CreateCryptoKeyVersion] or
+   * auto-rotation are controlled by this template.
+   * </pre>
+   *
+   * <code>.google.cloud.kms.v1.CryptoKeyVersionTemplate version_template = 11;</code>
+   */
+  public boolean hasVersionTemplate() {
+    return versionTemplate_ != null;
+  }
+  /**
+   * <pre>
+   * A template describing settings for new [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] instances.
+   * The properties of new [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] instances created by either
+   * [CreateCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.CreateCryptoKeyVersion] or
+   * auto-rotation are controlled by this template.
+   * </pre>
+   *
+   * <code>.google.cloud.kms.v1.CryptoKeyVersionTemplate version_template = 11;</code>
+   */
+  public com.google.cloud.kms.v1.CryptoKeyVersionTemplate getVersionTemplate() {
+    return versionTemplate_ == null ? com.google.cloud.kms.v1.CryptoKeyVersionTemplate.getDefaultInstance() : versionTemplate_;
+  }
+  /**
+   * <pre>
+   * A template describing settings for new [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] instances.
+   * The properties of new [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] instances created by either
+   * [CreateCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.CreateCryptoKeyVersion] or
+   * auto-rotation are controlled by this template.
+   * </pre>
+   *
+   * <code>.google.cloud.kms.v1.CryptoKeyVersionTemplate version_template = 11;</code>
+   */
+  public com.google.cloud.kms.v1.CryptoKeyVersionTemplateOrBuilder getVersionTemplateOrBuilder() {
+    return getVersionTemplate();
   }
 
   public static final int LABELS_FIELD_NUMBER = 10;
@@ -712,6 +834,9 @@ private static final long serialVersionUID = 0L;
         internalGetLabels(),
         LabelsDefaultEntryHolder.defaultEntry,
         10);
+    if (versionTemplate_ != null) {
+      output.writeMessage(11, getVersionTemplate());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -754,6 +879,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(10, labels__);
     }
+    if (versionTemplate_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(11, getVersionTemplate());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -787,6 +916,11 @@ private static final long serialVersionUID = 0L;
     if (hasNextRotationTime()) {
       result = result && getNextRotationTime()
           .equals(other.getNextRotationTime());
+    }
+    result = result && (hasVersionTemplate() == other.hasVersionTemplate());
+    if (hasVersionTemplate()) {
+      result = result && getVersionTemplate()
+          .equals(other.getVersionTemplate());
     }
     result = result && internalGetLabels().equals(
         other.internalGetLabels());
@@ -827,6 +961,10 @@ private static final long serialVersionUID = 0L;
     if (hasNextRotationTime()) {
       hash = (37 * hash) + NEXT_ROTATION_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getNextRotationTime().hashCode();
+    }
+    if (hasVersionTemplate()) {
+      hash = (37 * hash) + VERSION_TEMPLATE_FIELD_NUMBER;
+      hash = (53 * hash) + getVersionTemplate().hashCode();
     }
     if (!internalGetLabels().getMap().isEmpty()) {
       hash = (37 * hash) + LABELS_FIELD_NUMBER;
@@ -1024,6 +1162,12 @@ private static final long serialVersionUID = 0L;
         nextRotationTime_ = null;
         nextRotationTimeBuilder_ = null;
       }
+      if (versionTemplateBuilder_ == null) {
+        versionTemplate_ = null;
+      } else {
+        versionTemplate_ = null;
+        versionTemplateBuilder_ = null;
+      }
       internalGetMutableLabels().clear();
       rotationScheduleCase_ = 0;
       rotationSchedule_ = null;
@@ -1078,6 +1222,11 @@ private static final long serialVersionUID = 0L;
         } else {
           result.rotationSchedule_ = rotationPeriodBuilder_.build();
         }
+      }
+      if (versionTemplateBuilder_ == null) {
+        result.versionTemplate_ = versionTemplate_;
+      } else {
+        result.versionTemplate_ = versionTemplateBuilder_.build();
       }
       result.labels_ = internalGetLabels();
       result.labels_.makeImmutable();
@@ -1146,6 +1295,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasNextRotationTime()) {
         mergeNextRotationTime(other.getNextRotationTime());
+      }
+      if (other.hasVersionTemplate()) {
+        mergeVersionTemplate(other.getVersionTemplate());
       }
       internalGetMutableLabels().mergeFrom(
           other.internalGetLabels());
@@ -1307,6 +1459,9 @@ private static final long serialVersionUID = 0L;
      * in [EncryptRequest.name][google.cloud.kms.v1.EncryptRequest.name].
      * The [CryptoKey][google.cloud.kms.v1.CryptoKey]'s primary version can be updated via
      * [UpdateCryptoKeyPrimaryVersion][google.cloud.kms.v1.KeyManagementService.UpdateCryptoKeyPrimaryVersion].
+     * All keys with [purpose][google.cloud.kms.v1.CryptoKey.purpose]
+     * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT] have a
+     * primary. For other keys, this field will be omitted.
      * </pre>
      *
      * <code>.google.cloud.kms.v1.CryptoKeyVersion primary = 2;</code>
@@ -1321,6 +1476,9 @@ private static final long serialVersionUID = 0L;
      * in [EncryptRequest.name][google.cloud.kms.v1.EncryptRequest.name].
      * The [CryptoKey][google.cloud.kms.v1.CryptoKey]'s primary version can be updated via
      * [UpdateCryptoKeyPrimaryVersion][google.cloud.kms.v1.KeyManagementService.UpdateCryptoKeyPrimaryVersion].
+     * All keys with [purpose][google.cloud.kms.v1.CryptoKey.purpose]
+     * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT] have a
+     * primary. For other keys, this field will be omitted.
      * </pre>
      *
      * <code>.google.cloud.kms.v1.CryptoKeyVersion primary = 2;</code>
@@ -1339,6 +1497,9 @@ private static final long serialVersionUID = 0L;
      * in [EncryptRequest.name][google.cloud.kms.v1.EncryptRequest.name].
      * The [CryptoKey][google.cloud.kms.v1.CryptoKey]'s primary version can be updated via
      * [UpdateCryptoKeyPrimaryVersion][google.cloud.kms.v1.KeyManagementService.UpdateCryptoKeyPrimaryVersion].
+     * All keys with [purpose][google.cloud.kms.v1.CryptoKey.purpose]
+     * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT] have a
+     * primary. For other keys, this field will be omitted.
      * </pre>
      *
      * <code>.google.cloud.kms.v1.CryptoKeyVersion primary = 2;</code>
@@ -1363,6 +1524,9 @@ private static final long serialVersionUID = 0L;
      * in [EncryptRequest.name][google.cloud.kms.v1.EncryptRequest.name].
      * The [CryptoKey][google.cloud.kms.v1.CryptoKey]'s primary version can be updated via
      * [UpdateCryptoKeyPrimaryVersion][google.cloud.kms.v1.KeyManagementService.UpdateCryptoKeyPrimaryVersion].
+     * All keys with [purpose][google.cloud.kms.v1.CryptoKey.purpose]
+     * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT] have a
+     * primary. For other keys, this field will be omitted.
      * </pre>
      *
      * <code>.google.cloud.kms.v1.CryptoKeyVersion primary = 2;</code>
@@ -1385,6 +1549,9 @@ private static final long serialVersionUID = 0L;
      * in [EncryptRequest.name][google.cloud.kms.v1.EncryptRequest.name].
      * The [CryptoKey][google.cloud.kms.v1.CryptoKey]'s primary version can be updated via
      * [UpdateCryptoKeyPrimaryVersion][google.cloud.kms.v1.KeyManagementService.UpdateCryptoKeyPrimaryVersion].
+     * All keys with [purpose][google.cloud.kms.v1.CryptoKey.purpose]
+     * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT] have a
+     * primary. For other keys, this field will be omitted.
      * </pre>
      *
      * <code>.google.cloud.kms.v1.CryptoKeyVersion primary = 2;</code>
@@ -1411,6 +1578,9 @@ private static final long serialVersionUID = 0L;
      * in [EncryptRequest.name][google.cloud.kms.v1.EncryptRequest.name].
      * The [CryptoKey][google.cloud.kms.v1.CryptoKey]'s primary version can be updated via
      * [UpdateCryptoKeyPrimaryVersion][google.cloud.kms.v1.KeyManagementService.UpdateCryptoKeyPrimaryVersion].
+     * All keys with [purpose][google.cloud.kms.v1.CryptoKey.purpose]
+     * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT] have a
+     * primary. For other keys, this field will be omitted.
      * </pre>
      *
      * <code>.google.cloud.kms.v1.CryptoKeyVersion primary = 2;</code>
@@ -1433,6 +1603,9 @@ private static final long serialVersionUID = 0L;
      * in [EncryptRequest.name][google.cloud.kms.v1.EncryptRequest.name].
      * The [CryptoKey][google.cloud.kms.v1.CryptoKey]'s primary version can be updated via
      * [UpdateCryptoKeyPrimaryVersion][google.cloud.kms.v1.KeyManagementService.UpdateCryptoKeyPrimaryVersion].
+     * All keys with [purpose][google.cloud.kms.v1.CryptoKey.purpose]
+     * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT] have a
+     * primary. For other keys, this field will be omitted.
      * </pre>
      *
      * <code>.google.cloud.kms.v1.CryptoKeyVersion primary = 2;</code>
@@ -1449,6 +1622,9 @@ private static final long serialVersionUID = 0L;
      * in [EncryptRequest.name][google.cloud.kms.v1.EncryptRequest.name].
      * The [CryptoKey][google.cloud.kms.v1.CryptoKey]'s primary version can be updated via
      * [UpdateCryptoKeyPrimaryVersion][google.cloud.kms.v1.KeyManagementService.UpdateCryptoKeyPrimaryVersion].
+     * All keys with [purpose][google.cloud.kms.v1.CryptoKey.purpose]
+     * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT] have a
+     * primary. For other keys, this field will be omitted.
      * </pre>
      *
      * <code>.google.cloud.kms.v1.CryptoKeyVersion primary = 2;</code>
@@ -1468,6 +1644,9 @@ private static final long serialVersionUID = 0L;
      * in [EncryptRequest.name][google.cloud.kms.v1.EncryptRequest.name].
      * The [CryptoKey][google.cloud.kms.v1.CryptoKey]'s primary version can be updated via
      * [UpdateCryptoKeyPrimaryVersion][google.cloud.kms.v1.KeyManagementService.UpdateCryptoKeyPrimaryVersion].
+     * All keys with [purpose][google.cloud.kms.v1.CryptoKey.purpose]
+     * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT] have a
+     * primary. For other keys, this field will be omitted.
      * </pre>
      *
      * <code>.google.cloud.kms.v1.CryptoKeyVersion primary = 2;</code>
@@ -1489,8 +1668,7 @@ private static final long serialVersionUID = 0L;
     private int purpose_ = 0;
     /**
      * <pre>
-     * The immutable purpose of this [CryptoKey][google.cloud.kms.v1.CryptoKey]. Currently, the only acceptable
-     * purpose is [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
+     * The immutable purpose of this [CryptoKey][google.cloud.kms.v1.CryptoKey].
      * </pre>
      *
      * <code>.google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose purpose = 3;</code>
@@ -1500,8 +1678,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The immutable purpose of this [CryptoKey][google.cloud.kms.v1.CryptoKey]. Currently, the only acceptable
-     * purpose is [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
+     * The immutable purpose of this [CryptoKey][google.cloud.kms.v1.CryptoKey].
      * </pre>
      *
      * <code>.google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose purpose = 3;</code>
@@ -1513,8 +1690,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The immutable purpose of this [CryptoKey][google.cloud.kms.v1.CryptoKey]. Currently, the only acceptable
-     * purpose is [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
+     * The immutable purpose of this [CryptoKey][google.cloud.kms.v1.CryptoKey].
      * </pre>
      *
      * <code>.google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose purpose = 3;</code>
@@ -1526,8 +1702,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The immutable purpose of this [CryptoKey][google.cloud.kms.v1.CryptoKey]. Currently, the only acceptable
-     * purpose is [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
+     * The immutable purpose of this [CryptoKey][google.cloud.kms.v1.CryptoKey].
      * </pre>
      *
      * <code>.google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose purpose = 3;</code>
@@ -1543,8 +1718,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The immutable purpose of this [CryptoKey][google.cloud.kms.v1.CryptoKey]. Currently, the only acceptable
-     * purpose is [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
+     * The immutable purpose of this [CryptoKey][google.cloud.kms.v1.CryptoKey].
      * </pre>
      *
      * <code>.google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose purpose = 3;</code>
@@ -1721,6 +1895,9 @@ private static final long serialVersionUID = 0L;
      * [CreateCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.CreateCryptoKeyVersion] and
      * [UpdateCryptoKeyPrimaryVersion][google.cloud.kms.v1.KeyManagementService.UpdateCryptoKeyPrimaryVersion]
      * do not affect [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time].
+     * Keys with [purpose][google.cloud.kms.v1.CryptoKey.purpose]
+     * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT] support
+     * automatic rotation. For other keys, this field must be omitted.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp next_rotation_time = 7;</code>
@@ -1737,6 +1914,9 @@ private static final long serialVersionUID = 0L;
      * [CreateCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.CreateCryptoKeyVersion] and
      * [UpdateCryptoKeyPrimaryVersion][google.cloud.kms.v1.KeyManagementService.UpdateCryptoKeyPrimaryVersion]
      * do not affect [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time].
+     * Keys with [purpose][google.cloud.kms.v1.CryptoKey.purpose]
+     * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT] support
+     * automatic rotation. For other keys, this field must be omitted.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp next_rotation_time = 7;</code>
@@ -1757,6 +1937,9 @@ private static final long serialVersionUID = 0L;
      * [CreateCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.CreateCryptoKeyVersion] and
      * [UpdateCryptoKeyPrimaryVersion][google.cloud.kms.v1.KeyManagementService.UpdateCryptoKeyPrimaryVersion]
      * do not affect [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time].
+     * Keys with [purpose][google.cloud.kms.v1.CryptoKey.purpose]
+     * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT] support
+     * automatic rotation. For other keys, this field must be omitted.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp next_rotation_time = 7;</code>
@@ -1783,6 +1966,9 @@ private static final long serialVersionUID = 0L;
      * [CreateCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.CreateCryptoKeyVersion] and
      * [UpdateCryptoKeyPrimaryVersion][google.cloud.kms.v1.KeyManagementService.UpdateCryptoKeyPrimaryVersion]
      * do not affect [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time].
+     * Keys with [purpose][google.cloud.kms.v1.CryptoKey.purpose]
+     * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT] support
+     * automatic rotation. For other keys, this field must be omitted.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp next_rotation_time = 7;</code>
@@ -1807,6 +1993,9 @@ private static final long serialVersionUID = 0L;
      * [CreateCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.CreateCryptoKeyVersion] and
      * [UpdateCryptoKeyPrimaryVersion][google.cloud.kms.v1.KeyManagementService.UpdateCryptoKeyPrimaryVersion]
      * do not affect [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time].
+     * Keys with [purpose][google.cloud.kms.v1.CryptoKey.purpose]
+     * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT] support
+     * automatic rotation. For other keys, this field must be omitted.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp next_rotation_time = 7;</code>
@@ -1835,6 +2024,9 @@ private static final long serialVersionUID = 0L;
      * [CreateCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.CreateCryptoKeyVersion] and
      * [UpdateCryptoKeyPrimaryVersion][google.cloud.kms.v1.KeyManagementService.UpdateCryptoKeyPrimaryVersion]
      * do not affect [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time].
+     * Keys with [purpose][google.cloud.kms.v1.CryptoKey.purpose]
+     * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT] support
+     * automatic rotation. For other keys, this field must be omitted.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp next_rotation_time = 7;</code>
@@ -1859,6 +2051,9 @@ private static final long serialVersionUID = 0L;
      * [CreateCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.CreateCryptoKeyVersion] and
      * [UpdateCryptoKeyPrimaryVersion][google.cloud.kms.v1.KeyManagementService.UpdateCryptoKeyPrimaryVersion]
      * do not affect [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time].
+     * Keys with [purpose][google.cloud.kms.v1.CryptoKey.purpose]
+     * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT] support
+     * automatic rotation. For other keys, this field must be omitted.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp next_rotation_time = 7;</code>
@@ -1877,6 +2072,9 @@ private static final long serialVersionUID = 0L;
      * [CreateCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.CreateCryptoKeyVersion] and
      * [UpdateCryptoKeyPrimaryVersion][google.cloud.kms.v1.KeyManagementService.UpdateCryptoKeyPrimaryVersion]
      * do not affect [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time].
+     * Keys with [purpose][google.cloud.kms.v1.CryptoKey.purpose]
+     * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT] support
+     * automatic rotation. For other keys, this field must be omitted.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp next_rotation_time = 7;</code>
@@ -1898,6 +2096,9 @@ private static final long serialVersionUID = 0L;
      * [CreateCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.CreateCryptoKeyVersion] and
      * [UpdateCryptoKeyPrimaryVersion][google.cloud.kms.v1.KeyManagementService.UpdateCryptoKeyPrimaryVersion]
      * do not affect [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time].
+     * Keys with [purpose][google.cloud.kms.v1.CryptoKey.purpose]
+     * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT] support
+     * automatic rotation. For other keys, this field must be omitted.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp next_rotation_time = 7;</code>
@@ -1923,6 +2124,9 @@ private static final long serialVersionUID = 0L;
      * [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time] will be advanced by this period when the service
      * automatically rotates a key. Must be at least one day.
      * If [rotation_period][google.cloud.kms.v1.CryptoKey.rotation_period] is set, [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time] must also be set.
+     * Keys with [purpose][google.cloud.kms.v1.CryptoKey.purpose]
+     * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT] support
+     * automatic rotation. For other keys, this field must be omitted.
      * </pre>
      *
      * <code>.google.protobuf.Duration rotation_period = 8;</code>
@@ -1935,6 +2139,9 @@ private static final long serialVersionUID = 0L;
      * [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time] will be advanced by this period when the service
      * automatically rotates a key. Must be at least one day.
      * If [rotation_period][google.cloud.kms.v1.CryptoKey.rotation_period] is set, [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time] must also be set.
+     * Keys with [purpose][google.cloud.kms.v1.CryptoKey.purpose]
+     * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT] support
+     * automatic rotation. For other keys, this field must be omitted.
      * </pre>
      *
      * <code>.google.protobuf.Duration rotation_period = 8;</code>
@@ -1957,6 +2164,9 @@ private static final long serialVersionUID = 0L;
      * [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time] will be advanced by this period when the service
      * automatically rotates a key. Must be at least one day.
      * If [rotation_period][google.cloud.kms.v1.CryptoKey.rotation_period] is set, [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time] must also be set.
+     * Keys with [purpose][google.cloud.kms.v1.CryptoKey.purpose]
+     * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT] support
+     * automatic rotation. For other keys, this field must be omitted.
      * </pre>
      *
      * <code>.google.protobuf.Duration rotation_period = 8;</code>
@@ -1979,6 +2189,9 @@ private static final long serialVersionUID = 0L;
      * [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time] will be advanced by this period when the service
      * automatically rotates a key. Must be at least one day.
      * If [rotation_period][google.cloud.kms.v1.CryptoKey.rotation_period] is set, [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time] must also be set.
+     * Keys with [purpose][google.cloud.kms.v1.CryptoKey.purpose]
+     * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT] support
+     * automatic rotation. For other keys, this field must be omitted.
      * </pre>
      *
      * <code>.google.protobuf.Duration rotation_period = 8;</code>
@@ -1999,6 +2212,9 @@ private static final long serialVersionUID = 0L;
      * [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time] will be advanced by this period when the service
      * automatically rotates a key. Must be at least one day.
      * If [rotation_period][google.cloud.kms.v1.CryptoKey.rotation_period] is set, [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time] must also be set.
+     * Keys with [purpose][google.cloud.kms.v1.CryptoKey.purpose]
+     * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT] support
+     * automatic rotation. For other keys, this field must be omitted.
      * </pre>
      *
      * <code>.google.protobuf.Duration rotation_period = 8;</code>
@@ -2027,6 +2243,9 @@ private static final long serialVersionUID = 0L;
      * [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time] will be advanced by this period when the service
      * automatically rotates a key. Must be at least one day.
      * If [rotation_period][google.cloud.kms.v1.CryptoKey.rotation_period] is set, [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time] must also be set.
+     * Keys with [purpose][google.cloud.kms.v1.CryptoKey.purpose]
+     * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT] support
+     * automatic rotation. For other keys, this field must be omitted.
      * </pre>
      *
      * <code>.google.protobuf.Duration rotation_period = 8;</code>
@@ -2052,6 +2271,9 @@ private static final long serialVersionUID = 0L;
      * [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time] will be advanced by this period when the service
      * automatically rotates a key. Must be at least one day.
      * If [rotation_period][google.cloud.kms.v1.CryptoKey.rotation_period] is set, [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time] must also be set.
+     * Keys with [purpose][google.cloud.kms.v1.CryptoKey.purpose]
+     * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT] support
+     * automatic rotation. For other keys, this field must be omitted.
      * </pre>
      *
      * <code>.google.protobuf.Duration rotation_period = 8;</code>
@@ -2064,6 +2286,9 @@ private static final long serialVersionUID = 0L;
      * [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time] will be advanced by this period when the service
      * automatically rotates a key. Must be at least one day.
      * If [rotation_period][google.cloud.kms.v1.CryptoKey.rotation_period] is set, [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time] must also be set.
+     * Keys with [purpose][google.cloud.kms.v1.CryptoKey.purpose]
+     * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT] support
+     * automatic rotation. For other keys, this field must be omitted.
      * </pre>
      *
      * <code>.google.protobuf.Duration rotation_period = 8;</code>
@@ -2083,6 +2308,9 @@ private static final long serialVersionUID = 0L;
      * [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time] will be advanced by this period when the service
      * automatically rotates a key. Must be at least one day.
      * If [rotation_period][google.cloud.kms.v1.CryptoKey.rotation_period] is set, [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time] must also be set.
+     * Keys with [purpose][google.cloud.kms.v1.CryptoKey.purpose]
+     * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT] support
+     * automatic rotation. For other keys, this field must be omitted.
      * </pre>
      *
      * <code>.google.protobuf.Duration rotation_period = 8;</code>
@@ -2104,6 +2332,186 @@ private static final long serialVersionUID = 0L;
       rotationScheduleCase_ = 8;
       onChanged();;
       return rotationPeriodBuilder_;
+    }
+
+    private com.google.cloud.kms.v1.CryptoKeyVersionTemplate versionTemplate_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.kms.v1.CryptoKeyVersionTemplate, com.google.cloud.kms.v1.CryptoKeyVersionTemplate.Builder, com.google.cloud.kms.v1.CryptoKeyVersionTemplateOrBuilder> versionTemplateBuilder_;
+    /**
+     * <pre>
+     * A template describing settings for new [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] instances.
+     * The properties of new [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] instances created by either
+     * [CreateCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.CreateCryptoKeyVersion] or
+     * auto-rotation are controlled by this template.
+     * </pre>
+     *
+     * <code>.google.cloud.kms.v1.CryptoKeyVersionTemplate version_template = 11;</code>
+     */
+    public boolean hasVersionTemplate() {
+      return versionTemplateBuilder_ != null || versionTemplate_ != null;
+    }
+    /**
+     * <pre>
+     * A template describing settings for new [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] instances.
+     * The properties of new [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] instances created by either
+     * [CreateCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.CreateCryptoKeyVersion] or
+     * auto-rotation are controlled by this template.
+     * </pre>
+     *
+     * <code>.google.cloud.kms.v1.CryptoKeyVersionTemplate version_template = 11;</code>
+     */
+    public com.google.cloud.kms.v1.CryptoKeyVersionTemplate getVersionTemplate() {
+      if (versionTemplateBuilder_ == null) {
+        return versionTemplate_ == null ? com.google.cloud.kms.v1.CryptoKeyVersionTemplate.getDefaultInstance() : versionTemplate_;
+      } else {
+        return versionTemplateBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * A template describing settings for new [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] instances.
+     * The properties of new [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] instances created by either
+     * [CreateCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.CreateCryptoKeyVersion] or
+     * auto-rotation are controlled by this template.
+     * </pre>
+     *
+     * <code>.google.cloud.kms.v1.CryptoKeyVersionTemplate version_template = 11;</code>
+     */
+    public Builder setVersionTemplate(com.google.cloud.kms.v1.CryptoKeyVersionTemplate value) {
+      if (versionTemplateBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        versionTemplate_ = value;
+        onChanged();
+      } else {
+        versionTemplateBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * A template describing settings for new [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] instances.
+     * The properties of new [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] instances created by either
+     * [CreateCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.CreateCryptoKeyVersion] or
+     * auto-rotation are controlled by this template.
+     * </pre>
+     *
+     * <code>.google.cloud.kms.v1.CryptoKeyVersionTemplate version_template = 11;</code>
+     */
+    public Builder setVersionTemplate(
+        com.google.cloud.kms.v1.CryptoKeyVersionTemplate.Builder builderForValue) {
+      if (versionTemplateBuilder_ == null) {
+        versionTemplate_ = builderForValue.build();
+        onChanged();
+      } else {
+        versionTemplateBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * A template describing settings for new [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] instances.
+     * The properties of new [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] instances created by either
+     * [CreateCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.CreateCryptoKeyVersion] or
+     * auto-rotation are controlled by this template.
+     * </pre>
+     *
+     * <code>.google.cloud.kms.v1.CryptoKeyVersionTemplate version_template = 11;</code>
+     */
+    public Builder mergeVersionTemplate(com.google.cloud.kms.v1.CryptoKeyVersionTemplate value) {
+      if (versionTemplateBuilder_ == null) {
+        if (versionTemplate_ != null) {
+          versionTemplate_ =
+            com.google.cloud.kms.v1.CryptoKeyVersionTemplate.newBuilder(versionTemplate_).mergeFrom(value).buildPartial();
+        } else {
+          versionTemplate_ = value;
+        }
+        onChanged();
+      } else {
+        versionTemplateBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * A template describing settings for new [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] instances.
+     * The properties of new [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] instances created by either
+     * [CreateCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.CreateCryptoKeyVersion] or
+     * auto-rotation are controlled by this template.
+     * </pre>
+     *
+     * <code>.google.cloud.kms.v1.CryptoKeyVersionTemplate version_template = 11;</code>
+     */
+    public Builder clearVersionTemplate() {
+      if (versionTemplateBuilder_ == null) {
+        versionTemplate_ = null;
+        onChanged();
+      } else {
+        versionTemplate_ = null;
+        versionTemplateBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * A template describing settings for new [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] instances.
+     * The properties of new [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] instances created by either
+     * [CreateCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.CreateCryptoKeyVersion] or
+     * auto-rotation are controlled by this template.
+     * </pre>
+     *
+     * <code>.google.cloud.kms.v1.CryptoKeyVersionTemplate version_template = 11;</code>
+     */
+    public com.google.cloud.kms.v1.CryptoKeyVersionTemplate.Builder getVersionTemplateBuilder() {
+      
+      onChanged();
+      return getVersionTemplateFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * A template describing settings for new [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] instances.
+     * The properties of new [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] instances created by either
+     * [CreateCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.CreateCryptoKeyVersion] or
+     * auto-rotation are controlled by this template.
+     * </pre>
+     *
+     * <code>.google.cloud.kms.v1.CryptoKeyVersionTemplate version_template = 11;</code>
+     */
+    public com.google.cloud.kms.v1.CryptoKeyVersionTemplateOrBuilder getVersionTemplateOrBuilder() {
+      if (versionTemplateBuilder_ != null) {
+        return versionTemplateBuilder_.getMessageOrBuilder();
+      } else {
+        return versionTemplate_ == null ?
+            com.google.cloud.kms.v1.CryptoKeyVersionTemplate.getDefaultInstance() : versionTemplate_;
+      }
+    }
+    /**
+     * <pre>
+     * A template describing settings for new [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] instances.
+     * The properties of new [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] instances created by either
+     * [CreateCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.CreateCryptoKeyVersion] or
+     * auto-rotation are controlled by this template.
+     * </pre>
+     *
+     * <code>.google.cloud.kms.v1.CryptoKeyVersionTemplate version_template = 11;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.kms.v1.CryptoKeyVersionTemplate, com.google.cloud.kms.v1.CryptoKeyVersionTemplate.Builder, com.google.cloud.kms.v1.CryptoKeyVersionTemplateOrBuilder> 
+        getVersionTemplateFieldBuilder() {
+      if (versionTemplateBuilder_ == null) {
+        versionTemplateBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.kms.v1.CryptoKeyVersionTemplate, com.google.cloud.kms.v1.CryptoKeyVersionTemplate.Builder, com.google.cloud.kms.v1.CryptoKeyVersionTemplateOrBuilder>(
+                getVersionTemplate(),
+                getParentForChildren(),
+                isClean());
+        versionTemplate_ = null;
+      }
+      return versionTemplateBuilder_;
     }
 
     private com.google.protobuf.MapField<

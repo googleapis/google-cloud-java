@@ -49,6 +49,9 @@ import javax.annotation.Generated;
  * <p>&#42; [KeyRing][google.cloud.kms.v1.KeyRing] &#42; [CryptoKey][google.cloud.kms.v1.CryptoKey]
  * &#42; [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]
  *
+ * <p>If you are using manual gRPC libraries, see [Using gRPC with Cloud
+ * KMS](https://cloud.google.com/kms/docs/grpc).
+ *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
@@ -978,7 +981,9 @@ public class KeyManagementServiceClient implements BackgroundResource {
    * Create a new [CryptoKey][google.cloud.kms.v1.CryptoKey] within a
    * [KeyRing][google.cloud.kms.v1.KeyRing].
    *
-   * <p>[CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] is required.
+   * <p>[CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] and
+   * [CryptoKey.version_template.algorithm][google.cloud.kms.v1.CryptoKeyVersionTemplate.algorithm]
+   * are required.
    *
    * <p>Sample code:
    *
@@ -1028,7 +1033,9 @@ public class KeyManagementServiceClient implements BackgroundResource {
    * Create a new [CryptoKey][google.cloud.kms.v1.CryptoKey] within a
    * [KeyRing][google.cloud.kms.v1.KeyRing].
    *
-   * <p>[CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] is required.
+   * <p>[CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] and
+   * [CryptoKey.version_template.algorithm][google.cloud.kms.v1.CryptoKeyVersionTemplate.algorithm]
+   * are required.
    *
    * <p>Sample code:
    *
@@ -1077,7 +1084,9 @@ public class KeyManagementServiceClient implements BackgroundResource {
    * Create a new [CryptoKey][google.cloud.kms.v1.CryptoKey] within a
    * [KeyRing][google.cloud.kms.v1.KeyRing].
    *
-   * <p>[CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] is required.
+   * <p>[CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] and
+   * [CryptoKey.version_template.algorithm][google.cloud.kms.v1.CryptoKeyVersionTemplate.algorithm]
+   * are required.
    *
    * <p>Sample code:
    *
@@ -1120,7 +1129,9 @@ public class KeyManagementServiceClient implements BackgroundResource {
    * Create a new [CryptoKey][google.cloud.kms.v1.CryptoKey] within a
    * [KeyRing][google.cloud.kms.v1.KeyRing].
    *
-   * <p>[CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] is required.
+   * <p>[CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] and
+   * [CryptoKey.version_template.algorithm][google.cloud.kms.v1.CryptoKeyVersionTemplate.algorithm]
+   * are required.
    *
    * <p>Sample code:
    *
@@ -1475,7 +1486,9 @@ public class KeyManagementServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Encrypts data, so that it can only be recovered by a call to
-   * [Decrypt][google.cloud.kms.v1.KeyManagementService.Decrypt].
+   * [Decrypt][google.cloud.kms.v1.KeyManagementService.Decrypt]. The
+   * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] must be
+   * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
    *
    * <p>Sample code:
    *
@@ -1492,6 +1505,12 @@ public class KeyManagementServiceClient implements BackgroundResource {
    *     <p>If a [CryptoKey][google.cloud.kms.v1.CryptoKey] is specified, the server will use its
    *     [primary version][google.cloud.kms.v1.CryptoKey.primary].
    * @param plaintext Required. The data to encrypt. Must be no larger than 64KiB.
+   *     <p>The maximum size depends on the key version's
+   *     [protection_level][google.cloud.kms.v1.CryptoKeyVersionTemplate.protection_level]. For
+   *     [SOFTWARE][google.cloud.kms.v1.ProtectionLevel.SOFTWARE] keys, the plaintext must be no
+   *     larger than 64KiB. For [HSM][google.cloud.kms.v1.ProtectionLevel.HSM] keys, the combined
+   *     length of the plaintext and additional_authenticated_data fields must be no larger than
+   *     8KiB.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final EncryptResponse encrypt(CryptoKeyPathName name, ByteString plaintext) {
@@ -1507,7 +1526,9 @@ public class KeyManagementServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Encrypts data, so that it can only be recovered by a call to
-   * [Decrypt][google.cloud.kms.v1.KeyManagementService.Decrypt].
+   * [Decrypt][google.cloud.kms.v1.KeyManagementService.Decrypt]. The
+   * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] must be
+   * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
    *
    * <p>Sample code:
    *
@@ -1524,6 +1545,12 @@ public class KeyManagementServiceClient implements BackgroundResource {
    *     <p>If a [CryptoKey][google.cloud.kms.v1.CryptoKey] is specified, the server will use its
    *     [primary version][google.cloud.kms.v1.CryptoKey.primary].
    * @param plaintext Required. The data to encrypt. Must be no larger than 64KiB.
+   *     <p>The maximum size depends on the key version's
+   *     [protection_level][google.cloud.kms.v1.CryptoKeyVersionTemplate.protection_level]. For
+   *     [SOFTWARE][google.cloud.kms.v1.ProtectionLevel.SOFTWARE] keys, the plaintext must be no
+   *     larger than 64KiB. For [HSM][google.cloud.kms.v1.ProtectionLevel.HSM] keys, the combined
+   *     length of the plaintext and additional_authenticated_data fields must be no larger than
+   *     8KiB.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final EncryptResponse encrypt(String name, ByteString plaintext) {
@@ -1536,7 +1563,9 @@ public class KeyManagementServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Encrypts data, so that it can only be recovered by a call to
-   * [Decrypt][google.cloud.kms.v1.KeyManagementService.Decrypt].
+   * [Decrypt][google.cloud.kms.v1.KeyManagementService.Decrypt]. The
+   * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] must be
+   * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
    *
    * <p>Sample code:
    *
@@ -1562,7 +1591,9 @@ public class KeyManagementServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Encrypts data, so that it can only be recovered by a call to
-   * [Decrypt][google.cloud.kms.v1.KeyManagementService.Decrypt].
+   * [Decrypt][google.cloud.kms.v1.KeyManagementService.Decrypt]. The
+   * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] must be
+   * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
    *
    * <p>Sample code:
    *
@@ -1587,7 +1618,9 @@ public class KeyManagementServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Decrypts data that was protected by
-   * [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt].
+   * [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt]. The
+   * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] must be
+   * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
    *
    * <p>Sample code:
    *
@@ -1618,7 +1651,9 @@ public class KeyManagementServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Decrypts data that was protected by
-   * [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt].
+   * [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt]. The
+   * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] must be
+   * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
    *
    * <p>Sample code:
    *
@@ -1646,7 +1681,9 @@ public class KeyManagementServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Decrypts data that was protected by
-   * [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt].
+   * [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt]. The
+   * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] must be
+   * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
    *
    * <p>Sample code:
    *
@@ -1672,7 +1709,9 @@ public class KeyManagementServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Decrypts data that was protected by
-   * [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt].
+   * [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt]. The
+   * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] must be
+   * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
    *
    * <p>Sample code:
    *
@@ -1697,7 +1736,9 @@ public class KeyManagementServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Update the version of a [CryptoKey][google.cloud.kms.v1.CryptoKey] that will be used in
-   * [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt]
+   * [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt].
+   *
+   * <p>Returns an error if called on an asymmetric key.
    *
    * <p>Sample code:
    *
@@ -1728,7 +1769,9 @@ public class KeyManagementServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Update the version of a [CryptoKey][google.cloud.kms.v1.CryptoKey] that will be used in
-   * [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt]
+   * [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt].
+   *
+   * <p>Returns an error if called on an asymmetric key.
    *
    * <p>Sample code:
    *
@@ -1758,7 +1801,9 @@ public class KeyManagementServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Update the version of a [CryptoKey][google.cloud.kms.v1.CryptoKey] that will be used in
-   * [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt]
+   * [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt].
+   *
+   * <p>Returns an error if called on an asymmetric key.
    *
    * <p>Sample code:
    *
@@ -1785,7 +1830,9 @@ public class KeyManagementServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Update the version of a [CryptoKey][google.cloud.kms.v1.CryptoKey] that will be used in
-   * [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt]
+   * [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt].
+   *
+   * <p>Returns an error if called on an asymmetric key.
    *
    * <p>Sample code:
    *
@@ -1959,7 +2006,7 @@ public class KeyManagementServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Restore a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] in the
-   * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED],
+   * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED]
    * state.
    *
    * <p>Upon restoration of the CryptoKeyVersion,
@@ -1992,7 +2039,7 @@ public class KeyManagementServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Restore a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] in the
-   * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED],
+   * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED]
    * state.
    *
    * <p>Upon restoration of the CryptoKeyVersion,
@@ -2023,7 +2070,7 @@ public class KeyManagementServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Restore a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] in the
-   * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED],
+   * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED]
    * state.
    *
    * <p>Upon restoration of the CryptoKeyVersion,
@@ -2053,7 +2100,7 @@ public class KeyManagementServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Restore a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] in the
-   * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED],
+   * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED]
    * state.
    *
    * <p>Upon restoration of the CryptoKeyVersion,
@@ -2078,6 +2125,351 @@ public class KeyManagementServiceClient implements BackgroundResource {
   public final UnaryCallable<RestoreCryptoKeyVersionRequest, CryptoKeyVersion>
       restoreCryptoKeyVersionCallable() {
     return stub.restoreCryptoKeyVersionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns the public key for the given [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
+   * The [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] must be
+   * [ASYMMETRIC_SIGN][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ASYMMETRIC_SIGN] or
+   * [ASYMMETRIC_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ASYMMETRIC_DECRYPT].
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   CryptoKeyVersionName name = CryptoKeyVersionName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
+   *   PublicKey response = keyManagementServiceClient.getPublicKey(name);
+   * }
+   * </code></pre>
+   *
+   * @param name The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the
+   *     [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] public key to get.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PublicKey getPublicKey(CryptoKeyVersionName name) {
+
+    GetPublicKeyRequest request =
+        GetPublicKeyRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getPublicKey(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns the public key for the given [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
+   * The [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] must be
+   * [ASYMMETRIC_SIGN][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ASYMMETRIC_SIGN] or
+   * [ASYMMETRIC_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ASYMMETRIC_DECRYPT].
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   CryptoKeyVersionName name = CryptoKeyVersionName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
+   *   PublicKey response = keyManagementServiceClient.getPublicKey(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the
+   *     [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] public key to get.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PublicKey getPublicKey(String name) {
+
+    GetPublicKeyRequest request = GetPublicKeyRequest.newBuilder().setName(name).build();
+    return getPublicKey(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns the public key for the given [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
+   * The [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] must be
+   * [ASYMMETRIC_SIGN][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ASYMMETRIC_SIGN] or
+   * [ASYMMETRIC_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ASYMMETRIC_DECRYPT].
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   CryptoKeyVersionName name = CryptoKeyVersionName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
+   *   GetPublicKeyRequest request = GetPublicKeyRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   PublicKey response = keyManagementServiceClient.getPublicKey(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PublicKey getPublicKey(GetPublicKeyRequest request) {
+    return getPublicKeyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns the public key for the given [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
+   * The [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] must be
+   * [ASYMMETRIC_SIGN][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ASYMMETRIC_SIGN] or
+   * [ASYMMETRIC_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ASYMMETRIC_DECRYPT].
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   CryptoKeyVersionName name = CryptoKeyVersionName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
+   *   GetPublicKeyRequest request = GetPublicKeyRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;PublicKey&gt; future = keyManagementServiceClient.getPublicKeyCallable().futureCall(request);
+   *   // Do something
+   *   PublicKey response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<GetPublicKeyRequest, PublicKey> getPublicKeyCallable() {
+    return stub.getPublicKeyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Decrypts data that was encrypted with a public key retrieved from
+   * [GetPublicKey][google.cloud.kms.v1.KeyManagementService.GetPublicKey] corresponding to a
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with
+   * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] ASYMMETRIC_DECRYPT.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   CryptoKeyVersionName name = CryptoKeyVersionName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
+   *   ByteString ciphertext = ByteString.copyFromUtf8("");
+   *   AsymmetricDecryptResponse response = keyManagementServiceClient.asymmetricDecrypt(name, ciphertext);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The resource name of the
+   *     [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use for decryption.
+   * @param ciphertext Required. The data encrypted with the named
+   *     [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s public key using OAEP.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AsymmetricDecryptResponse asymmetricDecrypt(
+      CryptoKeyVersionName name, ByteString ciphertext) {
+
+    AsymmetricDecryptRequest request =
+        AsymmetricDecryptRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setCiphertext(ciphertext)
+            .build();
+    return asymmetricDecrypt(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Decrypts data that was encrypted with a public key retrieved from
+   * [GetPublicKey][google.cloud.kms.v1.KeyManagementService.GetPublicKey] corresponding to a
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with
+   * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] ASYMMETRIC_DECRYPT.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   CryptoKeyVersionName name = CryptoKeyVersionName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
+   *   ByteString ciphertext = ByteString.copyFromUtf8("");
+   *   AsymmetricDecryptResponse response = keyManagementServiceClient.asymmetricDecrypt(name.toString(), ciphertext);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The resource name of the
+   *     [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use for decryption.
+   * @param ciphertext Required. The data encrypted with the named
+   *     [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s public key using OAEP.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AsymmetricDecryptResponse asymmetricDecrypt(String name, ByteString ciphertext) {
+
+    AsymmetricDecryptRequest request =
+        AsymmetricDecryptRequest.newBuilder().setName(name).setCiphertext(ciphertext).build();
+    return asymmetricDecrypt(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Decrypts data that was encrypted with a public key retrieved from
+   * [GetPublicKey][google.cloud.kms.v1.KeyManagementService.GetPublicKey] corresponding to a
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with
+   * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] ASYMMETRIC_DECRYPT.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   CryptoKeyVersionName name = CryptoKeyVersionName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
+   *   ByteString ciphertext = ByteString.copyFromUtf8("");
+   *   AsymmetricDecryptRequest request = AsymmetricDecryptRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .setCiphertext(ciphertext)
+   *     .build();
+   *   AsymmetricDecryptResponse response = keyManagementServiceClient.asymmetricDecrypt(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AsymmetricDecryptResponse asymmetricDecrypt(AsymmetricDecryptRequest request) {
+    return asymmetricDecryptCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Decrypts data that was encrypted with a public key retrieved from
+   * [GetPublicKey][google.cloud.kms.v1.KeyManagementService.GetPublicKey] corresponding to a
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with
+   * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] ASYMMETRIC_DECRYPT.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   CryptoKeyVersionName name = CryptoKeyVersionName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
+   *   ByteString ciphertext = ByteString.copyFromUtf8("");
+   *   AsymmetricDecryptRequest request = AsymmetricDecryptRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .setCiphertext(ciphertext)
+   *     .build();
+   *   ApiFuture&lt;AsymmetricDecryptResponse&gt; future = keyManagementServiceClient.asymmetricDecryptCallable().futureCall(request);
+   *   // Do something
+   *   AsymmetricDecryptResponse response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<AsymmetricDecryptRequest, AsymmetricDecryptResponse>
+      asymmetricDecryptCallable() {
+    return stub.asymmetricDecryptCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Signs data using a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with
+   * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] ASYMMETRIC_SIGN, producing a
+   * signature that can be verified with the public key retrieved from
+   * [GetPublicKey][google.cloud.kms.v1.KeyManagementService.GetPublicKey].
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   CryptoKeyVersionName name = CryptoKeyVersionName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
+   *   Digest digest = Digest.newBuilder().build();
+   *   AsymmetricSignResponse response = keyManagementServiceClient.asymmetricSign(name, digest);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The resource name of the
+   *     [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use for signing.
+   * @param digest Required. The digest of the data to sign. The digest must be produced with the
+   *     same digest algorithm as specified by the key version's
+   *     [algorithm][google.cloud.kms.v1.CryptoKeyVersion.algorithm].
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AsymmetricSignResponse asymmetricSign(CryptoKeyVersionName name, Digest digest) {
+
+    AsymmetricSignRequest request =
+        AsymmetricSignRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setDigest(digest)
+            .build();
+    return asymmetricSign(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Signs data using a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with
+   * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] ASYMMETRIC_SIGN, producing a
+   * signature that can be verified with the public key retrieved from
+   * [GetPublicKey][google.cloud.kms.v1.KeyManagementService.GetPublicKey].
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   CryptoKeyVersionName name = CryptoKeyVersionName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
+   *   Digest digest = Digest.newBuilder().build();
+   *   AsymmetricSignResponse response = keyManagementServiceClient.asymmetricSign(name.toString(), digest);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The resource name of the
+   *     [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use for signing.
+   * @param digest Required. The digest of the data to sign. The digest must be produced with the
+   *     same digest algorithm as specified by the key version's
+   *     [algorithm][google.cloud.kms.v1.CryptoKeyVersion.algorithm].
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AsymmetricSignResponse asymmetricSign(String name, Digest digest) {
+
+    AsymmetricSignRequest request =
+        AsymmetricSignRequest.newBuilder().setName(name).setDigest(digest).build();
+    return asymmetricSign(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Signs data using a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with
+   * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] ASYMMETRIC_SIGN, producing a
+   * signature that can be verified with the public key retrieved from
+   * [GetPublicKey][google.cloud.kms.v1.KeyManagementService.GetPublicKey].
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   CryptoKeyVersionName name = CryptoKeyVersionName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
+   *   Digest digest = Digest.newBuilder().build();
+   *   AsymmetricSignRequest request = AsymmetricSignRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .setDigest(digest)
+   *     .build();
+   *   AsymmetricSignResponse response = keyManagementServiceClient.asymmetricSign(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AsymmetricSignResponse asymmetricSign(AsymmetricSignRequest request) {
+    return asymmetricSignCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Signs data using a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with
+   * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] ASYMMETRIC_SIGN, producing a
+   * signature that can be verified with the public key retrieved from
+   * [GetPublicKey][google.cloud.kms.v1.KeyManagementService.GetPublicKey].
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   CryptoKeyVersionName name = CryptoKeyVersionName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
+   *   Digest digest = Digest.newBuilder().build();
+   *   AsymmetricSignRequest request = AsymmetricSignRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .setDigest(digest)
+   *     .build();
+   *   ApiFuture&lt;AsymmetricSignResponse&gt; future = keyManagementServiceClient.asymmetricSignCallable().futureCall(request);
+   *   // Do something
+   *   AsymmetricSignResponse response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<AsymmetricSignRequest, AsymmetricSignResponse>
+      asymmetricSignCallable() {
+    return stub.asymmetricSignCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD

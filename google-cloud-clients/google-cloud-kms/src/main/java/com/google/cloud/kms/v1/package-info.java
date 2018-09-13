@@ -15,7 +15,7 @@
  */
 
 /**
- * A client to Google Cloud Key Management Service (KMS) API.
+ * A client to Cloud Key Management Service (KMS) API.
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *
@@ -28,6 +28,9 @@
  *
  * <p>&#42; [KeyRing][google.cloud.kms.v1.KeyRing] &#42; [CryptoKey][google.cloud.kms.v1.CryptoKey]
  * &#42; [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]
+ *
+ * <p>If you are using manual gRPC libraries, see [Using gRPC with Cloud
+ * KMS](https://cloud.google.com/kms/docs/grpc).
  *
  * <p>Sample for KeyManagementServiceClient:
  *
