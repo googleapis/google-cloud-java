@@ -422,10 +422,11 @@ public class ITStorageSnippets {
   }
 
   @Test
-  public void testBlobDownload() {
+  public void testBlobDownload() throws Exception {
     String blobName = "test-create-empty-blob";
     BlobId blobId = BlobId.of(BUCKET, blobName);
-    Blob remoteBlob = storage.create(blobId, BLOB_BYTE_CONTENT);
+    BlobInfo blobInfo = BlobInfo.newBuilder(blobId).build();
+    Blob remoteBlob = storage.create(blobInfo, BLOB_BYTE_CONTENT);
     assertNotNull(remoteBlob);
     storageSnippets.downloadFile(BUCKET, blobName, Paths.get(blobName));
     byte[] readBytes = Files.readAllBytes(Paths.get(blobName));
