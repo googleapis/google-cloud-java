@@ -20,12 +20,14 @@
 # $ git clone https://github.com/googleapis/googleapis.git
 # $ git clone https://github.com/googleapis/discovery-artifact-manager.git
 #
-# Run this script:
+# Run this script from the top-level google-cloud-java directory:
 #
 # $ python utilities/batch_generate_apis.py PATH_TO_GOOGLEAPIS PATH_TO_DISCOVERY_ARTIFACT_MANAGER
 
 import argparse
 import os
+import sys
+from subprocess import check_output
 
 import generate_api
 
@@ -93,7 +95,27 @@ def run_discogapic_gen(discovery_repo):
     generate('gapic/google/compute/artman_compute.yaml')
 
 
+def verify_protoc_version():
+    protobuf_version_node = check_output(
+        ['grep', '-zohr', '--include=pom.xml',
+         '<protobuf.version>.*</protobuf.version>'])
+    version_start_index = protobuf_version_node.find('>') + 1
+    version_end_index = protobuf_version_node.rfind('<')
+    protobuf_version = protobuf_version_node[version_start_index : version_end_index].strip()
+
+    # This will be something like 'libprotoc 3.6.0'
+    protoc_version_str = check_output(['protoc', '--version'])
+
+    if not (protobuf_version in protoc_version_str):
+        sys.exit("ERROR: Local version of protoc is %s"
+                 " (see output of `which protoc`)."
+                 " Please use protoc version %s"
+                 " to match the version of protobuf-java used in this repo."
+                 % (protoc_version_str, protobuf_version))
+
+
 def main():
+    verify_protoc_version()
     # TODO Make the docker image the default, add --local option
     parser = argparse.ArgumentParser(description='Batch generate all APIs.')
     parser.add_argument('googleapis', help='The path to the googleapis repo')
