@@ -82,6 +82,8 @@ com.google.cloud.oslogin.v1
 com.google.cloud.oslogin.v1.stub
 com.google.cloud.pubsub.v1
 com.google.cloud.pubsub.v1.stub
+com.google.cloud.redis.v1
+com.google.cloud.redis.v1.stub
 com.google.cloud.redis.v1beta1
 com.google.cloud.redis.v1beta1.stub
 com.google.cloud.resourcemanager
@@ -134,6 +136,8 @@ com.google.cloud.videointelligence.v1beta2
 com.google.cloud.videointelligence.v1beta2.stub
 com.google.cloud.videointelligence.v1p1beta1
 com.google.cloud.videointelligence.v1p1beta1.stub
+com.google.cloud.videointelligence.v1p2beta1
+com.google.cloud.videointelligence.v1p2beta1.stub
 com.google.cloud.vision.v1
 com.google.cloud.vision.v1.stub
 com.google.cloud.vision.v1p1beta1

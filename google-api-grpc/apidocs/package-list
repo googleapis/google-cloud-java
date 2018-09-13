@@ -13,6 +13,7 @@ com.google.cloud.language.v1
 com.google.cloud.language.v1beta2
 com.google.cloud.oslogin.common
 com.google.cloud.oslogin.v1
+com.google.cloud.redis.v1
 com.google.cloud.redis.v1beta1
 com.google.cloud.speech.v1
 com.google.cloud.speech.v1beta1
@@ -25,6 +26,7 @@ com.google.cloud.videointelligence.v1
 com.google.cloud.videointelligence.v1beta1
 com.google.cloud.videointelligence.v1beta2
 com.google.cloud.videointelligence.v1p1beta1
+com.google.cloud.videointelligence.v1p2beta1
 com.google.cloud.vision.v1
 com.google.cloud.vision.v1p1beta1
 com.google.cloud.vision.v1p2beta1
