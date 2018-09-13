@@ -115,7 +115,6 @@ def verify_proto_version():
 
 
 def main():
-    # Verify user has protoc 3.6.0
     verify_proto_version()
     # TODO Make the docker image the default, add --local option
     parser = argparse.ArgumentParser(description='Batch generate all APIs.')
