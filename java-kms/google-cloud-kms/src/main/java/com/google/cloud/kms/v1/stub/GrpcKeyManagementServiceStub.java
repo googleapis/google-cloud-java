@@ -27,6 +27,10 @@ import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.kms.v1.AsymmetricDecryptRequest;
+import com.google.cloud.kms.v1.AsymmetricDecryptResponse;
+import com.google.cloud.kms.v1.AsymmetricSignRequest;
+import com.google.cloud.kms.v1.AsymmetricSignResponse;
 import com.google.cloud.kms.v1.CreateCryptoKeyRequest;
 import com.google.cloud.kms.v1.CreateCryptoKeyVersionRequest;
 import com.google.cloud.kms.v1.CreateKeyRingRequest;
@@ -40,6 +44,7 @@ import com.google.cloud.kms.v1.EncryptResponse;
 import com.google.cloud.kms.v1.GetCryptoKeyRequest;
 import com.google.cloud.kms.v1.GetCryptoKeyVersionRequest;
 import com.google.cloud.kms.v1.GetKeyRingRequest;
+import com.google.cloud.kms.v1.GetPublicKeyRequest;
 import com.google.cloud.kms.v1.KeyRing;
 import com.google.cloud.kms.v1.ListCryptoKeyVersionsRequest;
 import com.google.cloud.kms.v1.ListCryptoKeyVersionsResponse;
@@ -47,6 +52,7 @@ import com.google.cloud.kms.v1.ListCryptoKeysRequest;
 import com.google.cloud.kms.v1.ListCryptoKeysResponse;
 import com.google.cloud.kms.v1.ListKeyRingsRequest;
 import com.google.cloud.kms.v1.ListKeyRingsResponse;
+import com.google.cloud.kms.v1.PublicKey;
 import com.google.cloud.kms.v1.RestoreCryptoKeyVersionRequest;
 import com.google.cloud.kms.v1.UpdateCryptoKeyPrimaryVersionRequest;
 import com.google.cloud.kms.v1.UpdateCryptoKeyRequest;
@@ -66,7 +72,7 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 /**
- * gRPC stub implementation for Google Cloud Key Management Service (KMS) API.
+ * gRPC stub implementation for Cloud Key Management Service (KMS) API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
@@ -214,6 +220,34 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
                   ProtoUtils.marshaller(RestoreCryptoKeyVersionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(CryptoKeyVersion.getDefaultInstance()))
               .build();
+  private static final MethodDescriptor<GetPublicKeyRequest, PublicKey>
+      getPublicKeyMethodDescriptor =
+          MethodDescriptor.<GetPublicKeyRequest, PublicKey>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.kms.v1.KeyManagementService/GetPublicKey")
+              .setRequestMarshaller(ProtoUtils.marshaller(GetPublicKeyRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(PublicKey.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<AsymmetricDecryptRequest, AsymmetricDecryptResponse>
+      asymmetricDecryptMethodDescriptor =
+          MethodDescriptor.<AsymmetricDecryptRequest, AsymmetricDecryptResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.kms.v1.KeyManagementService/AsymmetricDecrypt")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(AsymmetricDecryptRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(AsymmetricDecryptResponse.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<AsymmetricSignRequest, AsymmetricSignResponse>
+      asymmetricSignMethodDescriptor =
+          MethodDescriptor.<AsymmetricSignRequest, AsymmetricSignResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.kms.v1.KeyManagementService/AsymmetricSign")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(AsymmetricSignRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(AsymmetricSignResponse.getDefaultInstance()))
+              .build();
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
       MethodDescriptor.<SetIamPolicyRequest, Policy>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -270,6 +304,10 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
       destroyCryptoKeyVersionCallable;
   private final UnaryCallable<RestoreCryptoKeyVersionRequest, CryptoKeyVersion>
       restoreCryptoKeyVersionCallable;
+  private final UnaryCallable<GetPublicKeyRequest, PublicKey> getPublicKeyCallable;
+  private final UnaryCallable<AsymmetricDecryptRequest, AsymmetricDecryptResponse>
+      asymmetricDecryptCallable;
+  private final UnaryCallable<AsymmetricSignRequest, AsymmetricSignResponse> asymmetricSignCallable;
   private final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable;
   private final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable;
   private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -536,6 +574,47 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
                       }
                     })
                 .build();
+    GrpcCallSettings<GetPublicKeyRequest, PublicKey> getPublicKeyTransportSettings =
+        GrpcCallSettings.<GetPublicKeyRequest, PublicKey>newBuilder()
+            .setMethodDescriptor(getPublicKeyMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<GetPublicKeyRequest>() {
+                  @Override
+                  public Map<String, String> extract(GetPublicKeyRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<AsymmetricDecryptRequest, AsymmetricDecryptResponse>
+        asymmetricDecryptTransportSettings =
+            GrpcCallSettings.<AsymmetricDecryptRequest, AsymmetricDecryptResponse>newBuilder()
+                .setMethodDescriptor(asymmetricDecryptMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<AsymmetricDecryptRequest>() {
+                      @Override
+                      public Map<String, String> extract(AsymmetricDecryptRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("name", String.valueOf(request.getName()));
+                        return params.build();
+                      }
+                    })
+                .build();
+    GrpcCallSettings<AsymmetricSignRequest, AsymmetricSignResponse>
+        asymmetricSignTransportSettings =
+            GrpcCallSettings.<AsymmetricSignRequest, AsymmetricSignResponse>newBuilder()
+                .setMethodDescriptor(asymmetricSignMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<AsymmetricSignRequest>() {
+                      @Override
+                      public Map<String, String> extract(AsymmetricSignRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("name", String.valueOf(request.getName()));
+                        return params.build();
+                      }
+                    })
+                .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(setIamPolicyMethodDescriptor)
@@ -650,6 +729,17 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
             restoreCryptoKeyVersionTransportSettings,
             settings.restoreCryptoKeyVersionSettings(),
             clientContext);
+    this.getPublicKeyCallable =
+        callableFactory.createUnaryCallable(
+            getPublicKeyTransportSettings, settings.getPublicKeySettings(), clientContext);
+    this.asymmetricDecryptCallable =
+        callableFactory.createUnaryCallable(
+            asymmetricDecryptTransportSettings,
+            settings.asymmetricDecryptSettings(),
+            clientContext);
+    this.asymmetricSignCallable =
+        callableFactory.createUnaryCallable(
+            asymmetricSignTransportSettings, settings.asymmetricSignSettings(), clientContext);
     this.setIamPolicyCallable =
         callableFactory.createUnaryCallable(
             setIamPolicyTransportSettings, settings.setIamPolicySettings(), clientContext);
@@ -747,6 +837,19 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
   public UnaryCallable<RestoreCryptoKeyVersionRequest, CryptoKeyVersion>
       restoreCryptoKeyVersionCallable() {
     return restoreCryptoKeyVersionCallable;
+  }
+
+  public UnaryCallable<GetPublicKeyRequest, PublicKey> getPublicKeyCallable() {
+    return getPublicKeyCallable;
+  }
+
+  public UnaryCallable<AsymmetricDecryptRequest, AsymmetricDecryptResponse>
+      asymmetricDecryptCallable() {
+    return asymmetricDecryptCallable;
+  }
+
+  public UnaryCallable<AsymmetricSignRequest, AsymmetricSignResponse> asymmetricSignCallable() {
+    return asymmetricSignCallable;
   }
 
   public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
