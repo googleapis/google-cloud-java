@@ -95,7 +95,7 @@ def run_discogapic_gen(discovery_repo):
     generate('gapic/google/compute/artman_compute.yaml')
 
 
-def verify_proto_version():
+def verify_protoc_version():
     protobuf_version_node = check_output(
         ['grep', '-zohr', '--include=pom.xml',
          '<protobuf.version>.*</protobuf.version>'])
@@ -115,7 +115,7 @@ def verify_proto_version():
 
 
 def main():
-    verify_proto_version()
+    verify_protoc_version()
     # TODO Make the docker image the default, add --local option
     parser = argparse.ArgumentParser(description='Batch generate all APIs.')
     parser.add_argument('googleapis', help='The path to the googleapis repo')
