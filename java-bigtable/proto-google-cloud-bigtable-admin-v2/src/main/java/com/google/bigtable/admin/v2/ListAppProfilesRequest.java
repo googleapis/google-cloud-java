@@ -21,6 +21,7 @@ private static final long serialVersionUID = 0L;
   }
   private ListAppProfilesRequest() {
     parent_ = "";
+    pageSize_ = 0;
     pageToken_ = "";
   }
 
@@ -58,6 +59,11 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             pageToken_ = s;
+            break;
+          }
+          case 24: {
+
+            pageSize_ = input.readInt32();
             break;
           }
           default: {
@@ -99,6 +105,8 @@ private static final long serialVersionUID = 0L;
    * The unique name of the instance for which a list of app profiles is
    * requested. Values are of the form
    * `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
+   * Use `&lt;instance&gt; = '-'` to list AppProfiles for all Instances in a project,
+   * e.g., `projects/myproject/instances/-`.
    * </pre>
    *
    * <code>string parent = 1;</code>
@@ -120,6 +128,8 @@ private static final long serialVersionUID = 0L;
    * The unique name of the instance for which a list of app profiles is
    * requested. Values are of the form
    * `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
+   * Use `&lt;instance&gt; = '-'` to list AppProfiles for all Instances in a project,
+   * e.g., `projects/myproject/instances/-`.
    * </pre>
    *
    * <code>string parent = 1;</code>
@@ -136,6 +146,20 @@ private static final long serialVersionUID = 0L;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int PAGE_SIZE_FIELD_NUMBER = 3;
+  private int pageSize_;
+  /**
+   * <pre>
+   * Maximum number of results per page.
+   * CURRENTLY UNIMPLEMENTED AND IGNORED.
+   * </pre>
+   *
+   * <code>int32 page_size = 3;</code>
+   */
+  public int getPageSize() {
+    return pageSize_;
   }
 
   public static final int PAGE_TOKEN_FIELD_NUMBER = 2;
@@ -200,6 +224,9 @@ private static final long serialVersionUID = 0L;
     if (!getPageTokenBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, pageToken_);
     }
+    if (pageSize_ != 0) {
+      output.writeInt32(3, pageSize_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -214,6 +241,10 @@ private static final long serialVersionUID = 0L;
     }
     if (!getPageTokenBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, pageToken_);
+    }
+    if (pageSize_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(3, pageSize_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -233,6 +264,8 @@ private static final long serialVersionUID = 0L;
     boolean result = true;
     result = result && getParent()
         .equals(other.getParent());
+    result = result && (getPageSize()
+        == other.getPageSize());
     result = result && getPageToken()
         .equals(other.getPageToken());
     result = result && unknownFields.equals(other.unknownFields);
@@ -248,6 +281,8 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + PARENT_FIELD_NUMBER;
     hash = (53 * hash) + getParent().hashCode();
+    hash = (37 * hash) + PAGE_SIZE_FIELD_NUMBER;
+    hash = (53 * hash) + getPageSize();
     hash = (37 * hash) + PAGE_TOKEN_FIELD_NUMBER;
     hash = (53 * hash) + getPageToken().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
@@ -389,6 +424,8 @@ private static final long serialVersionUID = 0L;
       super.clear();
       parent_ = "";
 
+      pageSize_ = 0;
+
       pageToken_ = "";
 
       return this;
@@ -418,6 +455,7 @@ private static final long serialVersionUID = 0L;
     public com.google.bigtable.admin.v2.ListAppProfilesRequest buildPartial() {
       com.google.bigtable.admin.v2.ListAppProfilesRequest result = new com.google.bigtable.admin.v2.ListAppProfilesRequest(this);
       result.parent_ = parent_;
+      result.pageSize_ = pageSize_;
       result.pageToken_ = pageToken_;
       onBuilt();
       return result;
@@ -471,6 +509,9 @@ private static final long serialVersionUID = 0L;
         parent_ = other.parent_;
         onChanged();
       }
+      if (other.getPageSize() != 0) {
+        setPageSize(other.getPageSize());
+      }
       if (!other.getPageToken().isEmpty()) {
         pageToken_ = other.pageToken_;
         onChanged();
@@ -510,6 +551,8 @@ private static final long serialVersionUID = 0L;
      * The unique name of the instance for which a list of app profiles is
      * requested. Values are of the form
      * `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
+     * Use `&lt;instance&gt; = '-'` to list AppProfiles for all Instances in a project,
+     * e.g., `projects/myproject/instances/-`.
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -531,6 +574,8 @@ private static final long serialVersionUID = 0L;
      * The unique name of the instance for which a list of app profiles is
      * requested. Values are of the form
      * `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
+     * Use `&lt;instance&gt; = '-'` to list AppProfiles for all Instances in a project,
+     * e.g., `projects/myproject/instances/-`.
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -553,6 +598,8 @@ private static final long serialVersionUID = 0L;
      * The unique name of the instance for which a list of app profiles is
      * requested. Values are of the form
      * `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
+     * Use `&lt;instance&gt; = '-'` to list AppProfiles for all Instances in a project,
+     * e.g., `projects/myproject/instances/-`.
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -572,6 +619,8 @@ private static final long serialVersionUID = 0L;
      * The unique name of the instance for which a list of app profiles is
      * requested. Values are of the form
      * `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
+     * Use `&lt;instance&gt; = '-'` to list AppProfiles for all Instances in a project,
+     * e.g., `projects/myproject/instances/-`.
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -587,6 +636,8 @@ private static final long serialVersionUID = 0L;
      * The unique name of the instance for which a list of app profiles is
      * requested. Values are of the form
      * `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
+     * Use `&lt;instance&gt; = '-'` to list AppProfiles for all Instances in a project,
+     * e.g., `projects/myproject/instances/-`.
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -599,6 +650,47 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       parent_ = value;
+      onChanged();
+      return this;
+    }
+
+    private int pageSize_ ;
+    /**
+     * <pre>
+     * Maximum number of results per page.
+     * CURRENTLY UNIMPLEMENTED AND IGNORED.
+     * </pre>
+     *
+     * <code>int32 page_size = 3;</code>
+     */
+    public int getPageSize() {
+      return pageSize_;
+    }
+    /**
+     * <pre>
+     * Maximum number of results per page.
+     * CURRENTLY UNIMPLEMENTED AND IGNORED.
+     * </pre>
+     *
+     * <code>int32 page_size = 3;</code>
+     */
+    public Builder setPageSize(int value) {
+      
+      pageSize_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Maximum number of results per page.
+     * CURRENTLY UNIMPLEMENTED AND IGNORED.
+     * </pre>
+     *
+     * <code>int32 page_size = 3;</code>
+     */
+    public Builder clearPageSize() {
+      
+      pageSize_ = 0;
       onChanged();
       return this;
     }

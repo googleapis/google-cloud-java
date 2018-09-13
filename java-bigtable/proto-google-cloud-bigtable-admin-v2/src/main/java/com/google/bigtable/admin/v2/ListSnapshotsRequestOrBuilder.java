@@ -35,7 +35,8 @@ public interface ListSnapshotsRequestOrBuilder extends
 
   /**
    * <pre>
-   * The maximum number of snapshots to return.
+   * The maximum number of snapshots to return per page.
+   * CURRENTLY UNIMPLEMENTED AND IGNORED.
    * </pre>
    *
    * <code>int32 page_size = 2;</code>

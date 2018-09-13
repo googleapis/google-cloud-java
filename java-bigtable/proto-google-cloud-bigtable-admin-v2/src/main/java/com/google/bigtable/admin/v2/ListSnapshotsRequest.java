@@ -157,7 +157,8 @@ private static final long serialVersionUID = 0L;
   private int pageSize_;
   /**
    * <pre>
-   * The maximum number of snapshots to return.
+   * The maximum number of snapshots to return per page.
+   * CURRENTLY UNIMPLEMENTED AND IGNORED.
    * </pre>
    *
    * <code>int32 page_size = 2;</code>
@@ -666,7 +667,8 @@ private static final long serialVersionUID = 0L;
     private int pageSize_ ;
     /**
      * <pre>
-     * The maximum number of snapshots to return.
+     * The maximum number of snapshots to return per page.
+     * CURRENTLY UNIMPLEMENTED AND IGNORED.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>
@@ -676,7 +678,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The maximum number of snapshots to return.
+     * The maximum number of snapshots to return per page.
+     * CURRENTLY UNIMPLEMENTED AND IGNORED.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>
@@ -689,7 +692,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The maximum number of snapshots to return.
+     * The maximum number of snapshots to return per page.
+     * CURRENTLY UNIMPLEMENTED AND IGNORED.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>

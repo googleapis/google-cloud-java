@@ -12,6 +12,8 @@ public interface ListAppProfilesRequestOrBuilder extends
    * The unique name of the instance for which a list of app profiles is
    * requested. Values are of the form
    * `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
+   * Use `&lt;instance&gt; = '-'` to list AppProfiles for all Instances in a project,
+   * e.g., `projects/myproject/instances/-`.
    * </pre>
    *
    * <code>string parent = 1;</code>
@@ -22,12 +24,24 @@ public interface ListAppProfilesRequestOrBuilder extends
    * The unique name of the instance for which a list of app profiles is
    * requested. Values are of the form
    * `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
+   * Use `&lt;instance&gt; = '-'` to list AppProfiles for all Instances in a project,
+   * e.g., `projects/myproject/instances/-`.
    * </pre>
    *
    * <code>string parent = 1;</code>
    */
   com.google.protobuf.ByteString
       getParentBytes();
+
+  /**
+   * <pre>
+   * Maximum number of results per page.
+   * CURRENTLY UNIMPLEMENTED AND IGNORED.
+   * </pre>
+   *
+   * <code>int32 page_size = 3;</code>
+   */
+  int getPageSize();
 
   /**
    * <pre>

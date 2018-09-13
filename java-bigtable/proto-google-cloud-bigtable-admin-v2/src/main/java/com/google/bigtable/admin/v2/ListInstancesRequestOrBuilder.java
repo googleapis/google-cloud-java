@@ -29,7 +29,7 @@ public interface ListInstancesRequestOrBuilder extends
 
   /**
    * <pre>
-   * The value of `next_page_token` returned by a previous call.
+   * DEPRECATED: This field is unused and ignored.
    * </pre>
    *
    * <code>string page_token = 2;</code>
@@ -37,7 +37,7 @@ public interface ListInstancesRequestOrBuilder extends
   java.lang.String getPageToken();
   /**
    * <pre>
-   * The value of `next_page_token` returned by a previous call.
+   * DEPRECATED: This field is unused and ignored.
    * </pre>
    *
    * <code>string page_token = 2;</code>

@@ -48,6 +48,16 @@ public interface ListTablesRequestOrBuilder extends
 
   /**
    * <pre>
+   * Maximum number of results per page.
+   * CURRENTLY UNIMPLEMENTED AND IGNORED.
+   * </pre>
+   *
+   * <code>int32 page_size = 4;</code>
+   */
+  int getPageSize();
+
+  /**
+   * <pre>
    * The value of `next_page_token` returned by a previous call.
    * </pre>
    *
