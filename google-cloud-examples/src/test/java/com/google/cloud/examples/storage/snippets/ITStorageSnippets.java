@@ -424,7 +424,8 @@ public class ITStorageSnippets {
   @Test
   public void testBlobDownload() {
     String blobName = "test-create-empty-blob";
-    Blob remoteBlob = bucket.create(blobName, BLOB_BYTE_CONTENT);
+    BlobId blobId = BlobId.of(BUCKET, blobName);
+    Blob remoteBlob = storage.create(blobId, BLOB_BYTE_CONTENT);
     assertNotNull(remoteBlob);
     storageSnippets.downloadFile(BUCKET, blobName, Paths.get(blobName));
     byte[] readBytes = Files.readAllBytes(Paths.get(blobName));
