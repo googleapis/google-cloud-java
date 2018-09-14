@@ -55,6 +55,7 @@ import java.net.URLConnection;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
@@ -74,7 +75,7 @@ public class ITStorageSnippets {
 
   private static final String KMS_KEY_NAME =
       "projects/gcloud-devel/locations/us/" + "keyRings/gcs_kms_key_ring_us/cryptoKeys/key";
-
+  private static final Long RETENTION_PERIOD = 5L; // 5 seconds
   private static Storage storage;
   private static StorageSnippets storageSnippets;
   private static List<String> bucketsToCleanUp;
@@ -87,20 +88,22 @@ public class ITStorageSnippets {
   public static void beforeClass() {
     RemoteStorageHelper helper = RemoteStorageHelper.create();
     storage = helper.getOptions().getService();
-    bucketsToCleanUp = new ArrayList<String>();
     storageSnippets = new StorageSnippets(storage);
     storageSnippets.createBucket(BUCKET);
-    bucketsToCleanUp.add(BUCKET);
   }
 
   @AfterClass
   public static void afterClass() throws ExecutionException, InterruptedException {
     if (storage != null) {
-      for (String bucket : bucketsToCleanUp) {
-        boolean wasDeleted = RemoteStorageHelper.forceDelete(storage, bucket, 5, TimeUnit.SECONDS);
-        if (!wasDeleted && log.isLoggable(Level.WARNING)) {
-          log.log(Level.WARNING, "Deletion of bucket {0} timed out, bucket is not empty", bucket);
-        }
+      // In beforeClass, we make buckets auto-delete blobs older than a day old.
+      // Here, delete all buckets older than 2 days. They should already be empty and easy.
+      long cleanTime = System.currentTimeMillis() - TimeUnit.DAYS.toMillis(2);
+      long cleanTimeout = System.currentTimeMillis() - TimeUnit.MINUTES.toMillis(1);
+      RemoteStorageHelper.cleanBuckets(storage, cleanTime, cleanTimeout);
+
+      boolean wasDeleted = RemoteStorageHelper.forceDelete(storage, BUCKET, 1, TimeUnit.MINUTES);
+      if (!wasDeleted && log.isLoggable(Level.WARNING)) {
+        log.log(Level.WARNING, "Deletion of bucket {0} timed out, bucket is not empty", BUCKET);
       }
     }
   }
@@ -109,7 +112,6 @@ public class ITStorageSnippets {
   public void testCreateBucketWithStorageClassAndLocation()
       throws ExecutionException, InterruptedException {
     String tempBucket = RemoteStorageHelper.generateBucketName();
-    bucketsToCleanUp.add(tempBucket);
 
     Bucket bucket = storageSnippets.createBucketWithStorageClassAndLocation(tempBucket);
 
@@ -436,6 +438,16 @@ public class ITStorageSnippets {
   }
 
   @Test
+  public void testGetBlobMetadata() {
+    String blobName = "test-create-empty-blob";
+    BlobId blobId = BlobId.of(BUCKET, blobName);
+    BlobInfo blobInfo = BlobInfo.newBuilder(blobId).build();
+    Blob remoteBlob = storage.create(blobInfo, BLOB_BYTE_CONTENT);
+    assertNotNull(remoteBlob);
+    storageSnippets.getBlobMetadata(BUCKET, blobName);
+  }
+
+  @Test
   public void testRequesterPays() throws Exception {
     Bucket bucket = storageSnippets.enableRequesterPays(BUCKET);
     assertTrue(bucket.requesterPays());
@@ -460,5 +472,48 @@ public class ITStorageSnippets {
     assertEquals(KMS_KEY_NAME, bucket.getDefaultKmsKeyName());
     // Remove default key
     storageSnippets.setDefaultKmsKey(BUCKET, null);
+  }
+
+  @Test
+  public void testBucketRetention() {
+    Bucket bucket = storageSnippets.setRetentionPolicy(BUCKET, RETENTION_PERIOD);
+    assertEquals(bucket.getRetentionPeriod(), RETENTION_PERIOD);
+    assertNotNull(bucket.getRetentionEffectiveTime());
+    bucket = storageSnippets.getRetentionPolicy(BUCKET);
+    assertEquals(bucket.getRetentionPeriod(), RETENTION_PERIOD);
+    assertNotNull(bucket.getRetentionEffectiveTime());
+    assertNull(bucket.retentionPolicyIsLocked());
+    bucket = storageSnippets.enableDefaultEventBasedHold(BUCKET);
+    assertTrue(bucket.getDefaultEventBasedHold());
+    bucket = storageSnippets.getDefaultEventBasedHold(BUCKET);
+    assertTrue(bucket.getDefaultEventBasedHold());
+    String blobName = "test-create-empty-blob-retention-policy";
+    Blob remoteBlob = bucket.create(blobName, BLOB_BYTE_CONTENT);
+    assertTrue(remoteBlob.getEventBasedHold());
+    remoteBlob = storageSnippets.setEventBasedHold(BUCKET, blobName);
+    assertTrue(remoteBlob.getEventBasedHold());
+    remoteBlob = storageSnippets.releaseEventBasedHold(BUCKET, blobName);
+    assertFalse(remoteBlob.getEventBasedHold());
+    assertNotNull(remoteBlob.getRetentionExpirationTime());
+    bucket = storageSnippets.removeRetentionPolicy(BUCKET);
+    assertNull(bucket.getRetentionPeriod());
+    assertNull(bucket.getRetentionEffectiveTime());
+    bucket = storageSnippets.disableDefaultEventBasedHold(BUCKET);
+    assertFalse(bucket.getDefaultEventBasedHold());
+    remoteBlob = storageSnippets.setTemporaryHold(BUCKET, blobName);
+    assertTrue(remoteBlob.getTemporaryHold());
+    remoteBlob = storageSnippets.releaseTemporaryHold(BUCKET, blobName);
+    assertFalse(remoteBlob.getTemporaryHold());
+  }
+
+  @Test
+  public void testLockRetentionPolicy() {
+    String tempBucket = RemoteStorageHelper.generateBucketName();
+    Bucket bucket = storageSnippets.createBucket(tempBucket);
+    assertNotNull(bucket);
+    bucket = storageSnippets.setRetentionPolicy(tempBucket, RETENTION_PERIOD);
+    assertEquals(bucket.getRetentionPeriod(), RETENTION_PERIOD);
+    bucket = storageSnippets.lockRetentionPolicy(tempBucket);
+    assertTrue(bucket.retentionPolicyIsLocked());
   }
 }

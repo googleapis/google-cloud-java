@@ -20,6 +20,7 @@ import com.google.api.gax.paging.Page;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.http.HttpTransportOptions;
+import com.google.cloud.storage.Blob;
 import com.google.cloud.storage.BlobId;
 import com.google.cloud.storage.BlobInfo;
 import com.google.cloud.storage.Bucket;
@@ -80,6 +81,15 @@ public class RemoteStorageHelper {
             for (Bucket bucket : buckets.iterateAll()) {
               if (bucket.getCreateTime() < olderThan) {
                 try {
+                  for (Blob blob : bucket.list(BlobListOption.fields(Storage.BlobField.EVENT_BASED_HOLD,
+                      Storage.BlobField.TEMPORARY_HOLD)).iterateAll()) {
+                    if(blob.getEventBasedHold() == true || blob.getTemporaryHold() == true) {
+                      BlobInfo.Builder blobBuilder = BlobInfo.newBuilder(bucket.getName(), blob.getName());
+                      blobBuilder.setTemporaryHold(false);
+                      blobBuilder.setEventBasedHold(false);
+                      storage.update(blobBuilder.build());
+                    }
+                  }
                   forceDelete(storage, bucket.getName());
                 } catch (Exception e) {
                   // Ignore the exception, maybe the bucket is being deleted by someone else.

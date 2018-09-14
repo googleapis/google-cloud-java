@@ -712,7 +712,16 @@ public class BucketInfo implements Serializable {
   }
 
   /**
-   * Returns {@code true} if versioning is fully enabled for this bucket, {@code false} otherwise.
+   * Returns {@code true} if versioning is enabled for this bucket. Otherwise {@code null} is returned
+   * which defines one of two states or {@code false} following an update.
+   *
+   * <p>When {@code BucketField.VERSIONS} is used explicitly to request this field
+   * the return value {@code null} is equivalent to {@code false}. On the other hand if the field is not explicitly used
+   * then {@code null} represents the value is not available. This value is only {@code false} after performing an
+   * update to disable versioning on the bucket in the same BucketInfo instance used with
+   * {@link Storage#update(BlobInfo)} and overloads.
+   *
+   * @return
    */
   public Boolean versioningEnabled() {
     return Data.isNull(versioningEnabled) ? null : versioningEnabled;
@@ -839,14 +848,23 @@ public class BucketInfo implements Serializable {
   }
 
   /**
-   * Returns the default event based hold value used for inserted objects in this bucket.
+   * Returns the default event based hold for this bucket's blobs. Returns {@code true} if default event based hold is
+   * enabled for this bucket or {@code null}.
+   *
+   * <p>When {@code BucketField.DEFAULT_EVENT_BASED_HOLD} is used explicitly to request this field * the return value {@code null} is
+   * equivalent to {@code false}. On the other hand if the field is not explicitly used then {@code null} represents
+   * the value is not available.
    */
-  public Boolean getDefaultEventBasedHold() { return defaultEventBasedHold; }
+  public Boolean getDefaultEventBasedHold() {
+    return Data.isNull(defaultEventBasedHold) ? null : defaultEventBasedHold;
+  }
 
   /**
-   * Returns the retention effective time a policy took effect if a retention policy is defined.
+   * Returns the retention effective time a policy took effect if a retention policy is defined as a {@code Long}.
    */
-  public Long getRetentionEffectiveTime() { return retentionEffectiveTime; }
+  public Long getRetentionEffectiveTime() {
+    return retentionEffectiveTime;
+  }
 
   /**
    * Returns {@code true} if the bucket retention policy is locked, {@code false} otherwise.
@@ -961,18 +979,15 @@ public class BucketInfo implements Serializable {
     if (defaultEventBasedHold != null) {
       bucketPb.setDefaultEventBasedHold(defaultEventBasedHold);
     }
-    if (retentionPeriod != null || retentionEffectiveTime != null || retentionPolicyIsLocked != null) {
-      Bucket.RetentionPolicy retentionPolicy = new Bucket.RetentionPolicy();
-      if (retentionPeriod != null) {
+    if (retentionPeriod != null) {
+      if (Data.isNull(retentionPeriod)) {
+        bucketPb.setRetentionPolicy(
+            Data.<Bucket.RetentionPolicy>nullOf(Bucket.RetentionPolicy.class));
+      } else {
+        Bucket.RetentionPolicy retentionPolicy = new Bucket.RetentionPolicy();
         retentionPolicy.setRetentionPeriod(retentionPeriod);
+        bucketPb.setRetentionPolicy(retentionPolicy);
       }
-      if (retentionEffectiveTime != null) {
-        retentionPolicy.setEffectiveTime(new DateTime(retentionEffectiveTime));
-      }
-      if (retentionPolicyIsLocked != null) {
-        retentionPolicy.setIsLocked(retentionPolicyIsLocked);
-      }
-      bucketPb.setRetentionPolicy(retentionPolicy);
     }
 
     return bucketPb;
