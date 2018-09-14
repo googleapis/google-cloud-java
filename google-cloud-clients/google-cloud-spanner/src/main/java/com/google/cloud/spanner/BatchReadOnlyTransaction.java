@@ -71,7 +71,7 @@ public interface BatchReadOnlyTransaction extends ReadOnlyTransaction {
    *       long singerId = results.getLong(0);
    *       String firstName = results.getString(1);
    *       String lastName = results.getString(2);
-   *       System.out.println("P2 [" + singerId + "] " + firstName + " " + lastName);
+   *       System.out.println("P[" + singerId + "] " + firstName + " " + lastName);
    *     }
    *   }
    * }
@@ -110,14 +110,15 @@ public interface BatchReadOnlyTransaction extends ReadOnlyTransaction {
    *         "Singers",
    *         "SingerId",
    *         KeySet.all(),
-   *         Arrays.asList("FirstName"));
-   * BatchTransactionId txnID = txn.getBatchTransactionId();
-   * int numRowsRead = 0;
+   *         Arrays.asList("SingerId", "FirstName", "LastName"));
+   *
    * for (Partition p : partitions) {
-   *   BatchReadOnlyTransaction batchTxnOnEachWorker = batchClient.batchReadOnlyTransaction(txnID);
-   *   try (ResultSet results = batchTxnOnEachWorker.execute(p)) {
+   *   try (ResultSet results = txn.execute(p)) {
    *     while (results.next()) {
-   *       System.out.println(results.getString(0));
+   *       long singerId = results.getLong(0);
+   *       String firstName = results.getString(1);
+   *       String lastName = results.getString(2);
+   *       System.out.println("P[" + singerId + "] " + firstName + " " + lastName);
    *     }
    *   }
    * }
@@ -200,7 +201,7 @@ public interface BatchReadOnlyTransaction extends ReadOnlyTransaction {
    *
    * <!--SNIPPET batch_client_read_with_id-->
    * <pre>{@code
-   * BatchTransactionId txnId = my_txn.getBatchTransactionId();
+   * BatchTransactionId txnId = prevTxn.getBatchTransactionId();
    * BatchReadOnlyTransaction txn = batchClient.batchReadOnlyTransaction(txnId);
    * }</pre>
    * <!--SNIPPET batch_client_read_with_id-->

@@ -61,7 +61,7 @@ public interface BatchClient {
    *
    * <!--SNIPPET batch_client_read_with_id-->
    * <pre>{@code
-   * BatchTransactionId txnId = my_txn.getBatchTransactionId();
+   * BatchTransactionId txnId = prevTxn.getBatchTransactionId();
    * BatchReadOnlyTransaction txn = batchClient.batchReadOnlyTransaction(txnId);
    * }</pre>
    * <!--SNIPPET batch_client_read_with_id-->
