@@ -459,4 +459,20 @@ public class ITTransactionTest {
       assertThat(e.getMessage()).contains("not supported");
     }
   }
+
+  @Test
+  public void nestedTxnShouldSucceedWhenAllowed() {
+    client
+        .readWriteTransaction()
+        .allowNestedTransaction()
+        .run(
+            new TransactionCallable<Void>() {
+              @Override
+              public Void run(TransactionContext transaction) throws SpannerException {
+                client.singleUseReadOnlyTransaction();
+
+                return null;
+              }
+            });
+  }
 }

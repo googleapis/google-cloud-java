@@ -1236,6 +1236,11 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     private final Span span;
     private TransactionContextImpl txn;
     private volatile boolean isValid = true;
+    private boolean blockNestedTxn = true;
+    public TransactionRunner allowNestedTransaction() {
+      blockNestedTxn = false;
+      return this;
+    }
 
     TransactionRunnerImpl(
         SessionImpl session, SpannerRpc rpc, Sleeper sleeper, int defaultPrefetchChunks) {
@@ -1253,13 +1258,17 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     @Override
     public <T> T run(TransactionCallable<T> callable) {
       try (Scope s = tracer.withSpan(span)) {
-        hasPendingTransaction.set(Boolean.TRUE);
+        if (blockNestedTxn)
+          hasPendingTransaction.set(Boolean.TRUE);
+
         return runInternal(callable);
       } catch (RuntimeException e) {
         TraceUtil.endSpanWithFailure(span, e);
         throw e;
       } finally {
-        hasPendingTransaction.set(Boolean.FALSE);
+        if (blockNestedTxn)
+          hasPendingTransaction.set(Boolean.FALSE);
+
         span.end();
       }
     }

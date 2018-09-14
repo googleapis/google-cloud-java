@@ -73,4 +73,6 @@ public interface TransactionRunner {
    * {@link #run(TransactionCallable)} has returned normally.
    */
   Timestamp getCommitTimestamp();
+
+  TransactionRunner allowNestedTransaction();
 }
