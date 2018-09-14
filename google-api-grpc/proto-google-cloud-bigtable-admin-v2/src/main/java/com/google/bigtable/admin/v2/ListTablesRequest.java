@@ -23,6 +23,7 @@ private static final long serialVersionUID = 0L;
   private ListTablesRequest() {
     parent_ = "";
     view_ = 0;
+    pageSize_ = 0;
     pageToken_ = "";
   }
 
@@ -66,6 +67,11 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             pageToken_ = s;
+            break;
+          }
+          case 32: {
+
+            pageSize_ = input.readInt32();
             break;
           }
           default: {
@@ -171,6 +177,20 @@ private static final long serialVersionUID = 0L;
     return result == null ? com.google.bigtable.admin.v2.Table.View.UNRECOGNIZED : result;
   }
 
+  public static final int PAGE_SIZE_FIELD_NUMBER = 4;
+  private int pageSize_;
+  /**
+   * <pre>
+   * Maximum number of results per page.
+   * CURRENTLY UNIMPLEMENTED AND IGNORED.
+   * </pre>
+   *
+   * <code>int32 page_size = 4;</code>
+   */
+  public int getPageSize() {
+    return pageSize_;
+  }
+
   public static final int PAGE_TOKEN_FIELD_NUMBER = 3;
   private volatile java.lang.Object pageToken_;
   /**
@@ -236,6 +256,9 @@ private static final long serialVersionUID = 0L;
     if (!getPageTokenBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, pageToken_);
     }
+    if (pageSize_ != 0) {
+      output.writeInt32(4, pageSize_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -254,6 +277,10 @@ private static final long serialVersionUID = 0L;
     }
     if (!getPageTokenBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, pageToken_);
+    }
+    if (pageSize_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(4, pageSize_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -274,6 +301,8 @@ private static final long serialVersionUID = 0L;
     result = result && getParent()
         .equals(other.getParent());
     result = result && view_ == other.view_;
+    result = result && (getPageSize()
+        == other.getPageSize());
     result = result && getPageToken()
         .equals(other.getPageToken());
     result = result && unknownFields.equals(other.unknownFields);
@@ -291,6 +320,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getParent().hashCode();
     hash = (37 * hash) + VIEW_FIELD_NUMBER;
     hash = (53 * hash) + view_;
+    hash = (37 * hash) + PAGE_SIZE_FIELD_NUMBER;
+    hash = (53 * hash) + getPageSize();
     hash = (37 * hash) + PAGE_TOKEN_FIELD_NUMBER;
     hash = (53 * hash) + getPageToken().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
@@ -435,6 +466,8 @@ private static final long serialVersionUID = 0L;
 
       view_ = 0;
 
+      pageSize_ = 0;
+
       pageToken_ = "";
 
       return this;
@@ -465,6 +498,7 @@ private static final long serialVersionUID = 0L;
       com.google.bigtable.admin.v2.ListTablesRequest result = new com.google.bigtable.admin.v2.ListTablesRequest(this);
       result.parent_ = parent_;
       result.view_ = view_;
+      result.pageSize_ = pageSize_;
       result.pageToken_ = pageToken_;
       onBuilt();
       return result;
@@ -520,6 +554,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.view_ != 0) {
         setViewValue(other.getViewValue());
+      }
+      if (other.getPageSize() != 0) {
+        setPageSize(other.getPageSize());
       }
       if (!other.getPageToken().isEmpty()) {
         pageToken_ = other.pageToken_;
@@ -714,6 +751,47 @@ private static final long serialVersionUID = 0L;
     public Builder clearView() {
       
       view_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int pageSize_ ;
+    /**
+     * <pre>
+     * Maximum number of results per page.
+     * CURRENTLY UNIMPLEMENTED AND IGNORED.
+     * </pre>
+     *
+     * <code>int32 page_size = 4;</code>
+     */
+    public int getPageSize() {
+      return pageSize_;
+    }
+    /**
+     * <pre>
+     * Maximum number of results per page.
+     * CURRENTLY UNIMPLEMENTED AND IGNORED.
+     * </pre>
+     *
+     * <code>int32 page_size = 4;</code>
+     */
+    public Builder setPageSize(int value) {
+      
+      pageSize_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Maximum number of results per page.
+     * CURRENTLY UNIMPLEMENTED AND IGNORED.
+     * </pre>
+     *
+     * <code>int32 page_size = 4;</code>
+     */
+    public Builder clearPageSize() {
+      
+      pageSize_ = 0;
       onChanged();
       return this;
     }

@@ -6,13 +6,14 @@ anchor_build: &anchor_build
 
 anchor_unittest: &anchor_unittest
   name: Run unit tests
-  command: mvn -B -DtrimStackTrace=false -fae --quiet -DskipITs install -P release
+  command: mvn -B -DtrimStackTrace=false -fae --quiet -DskipITs test -P release
 
 anchor_docker: &anchor_docker
   docker:
     - image: circleci/openjdk:8-jdk
       environment:
         TERM: dumb
+        MAVEN_OPTS: -Xmx256m
 
 anchor_auth_vars: &anchor_auth_vars
   environment:
@@ -32,7 +33,7 @@ jobs:
       - image: maven:3.5.2-jdk-7
         environment:
           TERM: dumb
-          MAVEN_OPTS: -Xmx1024m
+          MAVEN_OPTS: -Xmx512m
     steps:
       - checkout
       - run:

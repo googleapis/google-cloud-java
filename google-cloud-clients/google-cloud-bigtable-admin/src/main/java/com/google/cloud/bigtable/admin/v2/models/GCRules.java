@@ -277,7 +277,7 @@ public final class GCRules {
         return false;
       }
       VersionRule that = (VersionRule) o;
-      return Objects.equal(builder, that.builder);
+      return Objects.equal(builder.build(), that.builder.build());
     }
 
     @Override
@@ -324,7 +324,7 @@ public final class GCRules {
         return false;
       }
       DurationRule that = (DurationRule) o;
-      return Objects.equal(builder, that.builder);
+      return Objects.equal(builder.build(), that.builder.build());
     }
 
     @Override

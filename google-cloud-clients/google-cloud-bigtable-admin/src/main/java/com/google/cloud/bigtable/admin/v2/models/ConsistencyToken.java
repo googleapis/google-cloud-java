@@ -16,11 +16,13 @@
 package com.google.cloud.bigtable.admin.v2.models;
 
 import com.google.api.core.InternalApi;
+import com.google.api.core.InternalExtensionOnly;
+import com.google.auto.value.AutoValue;
 import com.google.bigtable.admin.v2.CheckConsistencyRequest;
 import com.google.bigtable.admin.v2.GenerateConsistencyTokenResponse;
-import com.google.common.annotations.VisibleForTesting;
-import com.google.common.base.MoreObjects;
-import com.google.common.base.Objects;
+import com.google.bigtable.admin.v2.InstanceName;
+import com.google.bigtable.admin.v2.TableName;
+import com.google.common.base.Preconditions;
 
 /**
  * Wrapper for {@link GenerateConsistencyTokenResponse#getConsistencyToken()}
@@ -28,51 +30,25 @@ import com.google.common.base.Objects;
  * <p>Cannot be created. They are obtained by invoking {@link
  * com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient#generateConsistencyToken(String)}
  */
-public final class ConsistencyToken {
-  private final String token;
-
-  @InternalApi
-  public static ConsistencyToken fromProto(GenerateConsistencyTokenResponse proto) {
-    return new ConsistencyToken(proto.getConsistencyToken());
+@InternalExtensionOnly
+@AutoValue
+public abstract class ConsistencyToken {
+  public static ConsistencyToken of(TableName tableName, String token) {
+    return new AutoValue_ConsistencyToken(tableName, token);
   }
 
-  private ConsistencyToken(String token) {
-    this.token = token;
-  }
+  abstract TableName getTableName();
+  abstract String getToken();
 
-  // TODO(igorbernstein): tableName should be part of the token and be parameterized
   @InternalApi
-  public CheckConsistencyRequest toProto(String tableName) {
+  public CheckConsistencyRequest toProto(InstanceName instanceName) {
+    Preconditions.checkArgument(
+        instanceName.equals(InstanceName.of(getTableName().getProject(), getTableName().getInstance())),
+        "Consistency tokens are only valid within a single instance.");
+
     return CheckConsistencyRequest.newBuilder()
-        .setName(tableName)
-        .setConsistencyToken(token)
+        .setName(getTableName().toString())
+        .setConsistencyToken(getToken())
         .build();
-  }
-
-  @VisibleForTesting
-  String getToken() {
-    return token;
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    ConsistencyToken that = (ConsistencyToken) o;
-    return Objects.equal(token, that.token);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hashCode(token);
-  }
-
-  @Override
-  public String toString() {
-    return MoreObjects.toStringHelper(this).add("token", token).toString();
   }
 }

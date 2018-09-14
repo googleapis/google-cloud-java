@@ -140,7 +140,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object pageToken_;
   /**
    * <pre>
-   * The value of `next_page_token` returned by a previous call.
+   * DEPRECATED: This field is unused and ignored.
    * </pre>
    *
    * <code>string page_token = 2;</code>
@@ -159,7 +159,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The value of `next_page_token` returned by a previous call.
+   * DEPRECATED: This field is unused and ignored.
    * </pre>
    *
    * <code>string page_token = 2;</code>
@@ -599,7 +599,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object pageToken_ = "";
     /**
      * <pre>
-     * The value of `next_page_token` returned by a previous call.
+     * DEPRECATED: This field is unused and ignored.
      * </pre>
      *
      * <code>string page_token = 2;</code>
@@ -618,7 +618,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The value of `next_page_token` returned by a previous call.
+     * DEPRECATED: This field is unused and ignored.
      * </pre>
      *
      * <code>string page_token = 2;</code>
@@ -638,7 +638,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The value of `next_page_token` returned by a previous call.
+     * DEPRECATED: This field is unused and ignored.
      * </pre>
      *
      * <code>string page_token = 2;</code>
@@ -655,7 +655,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The value of `next_page_token` returned by a previous call.
+     * DEPRECATED: This field is unused and ignored.
      * </pre>
      *
      * <code>string page_token = 2;</code>
@@ -668,7 +668,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The value of `next_page_token` returned by a previous call.
+     * DEPRECATED: This field is unused and ignored.
      * </pre>
      *
      * <code>string page_token = 2;</code>

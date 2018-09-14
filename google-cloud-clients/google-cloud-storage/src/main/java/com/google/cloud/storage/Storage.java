@@ -2043,10 +2043,9 @@ public interface Storage extends Service<StorageOptions> {
    * {@code GOOGLE_APPLICATION_CREDENTIALS} is set or your application is running in App Engine,
    * then {@code signUrl} will use that credentials to sign the URL. If the credentials passed to
    * {@link StorageOptions} do not implement {@link ServiceAccountSigner} (this is the case, for
-   * instance, for Compute Engine credentials and Google Cloud SDK credentials) then {@code signUrl}
-   * will throw an {@link IllegalStateException} unless an implementation of
-   * {@link ServiceAccountSigner} is passed using the
-   * {@link SignUrlOption#signWith(ServiceAccountSigner)} option.
+   * instance, for Google Cloud SDK credentials) then {@code signUrl} will throw an
+   * {@link IllegalStateException} unless an implementation of {@link ServiceAccountSigner} is
+   * passed using the {@link SignUrlOption#signWith(ServiceAccountSigner)} option.
    *
    * <p>A service account signer is looked for in the following order:
    * <ol>
@@ -2075,6 +2074,9 @@ public interface Storage extends Service<StorageOptions> {
    *     14, TimeUnit.DAYS, SignUrlOption.signWith(
    *         ServiceAccountCredentials.fromStream(new FileInputStream(keyPath))));
    * }</pre>
+   *
+   * <p>Note that the {@link ServiceAccountSigner} may require additional configuration to enable
+   * URL signing. See the documentation for the implementation for more details.</p>
    *
    * @param blobInfo the blob associated with the signed URL
    * @param duration time until the signed URL expires, expressed in {@code unit}. The finest

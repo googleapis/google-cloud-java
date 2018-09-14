@@ -170,7 +170,7 @@ public class AssetServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Exports assets with time and resource types to a given Google Cloud Storage location. The
-   * output format is newline delimited JSON. This API implements the
+   * output format is newline-delimited JSON. This API implements the
    * [google.longrunning.Operation][google.longrunning.Operation] API allowing users to keep track
    * of the export.
    *
@@ -201,7 +201,7 @@ public class AssetServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Exports assets with time and resource types to a given Google Cloud Storage location. The
-   * output format is newline delimited JSON. This API implements the
+   * output format is newline-delimited JSON. This API implements the
    * [google.longrunning.Operation][google.longrunning.Operation] API allowing users to keep track
    * of the export.
    *
@@ -230,7 +230,7 @@ public class AssetServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Exports assets with time and resource types to a given Google Cloud Storage location. The
-   * output format is newline delimited JSON. This API implements the
+   * output format is newline-delimited JSON. This API implements the
    * [google.longrunning.Operation][google.longrunning.Operation] API allowing users to keep track
    * of the export.
    *

@@ -55,6 +55,7 @@ import com.google.cloud.compute.v1.InsertBackendServiceHttpRequest;
 import com.google.cloud.compute.v1.ListBackendServicesHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchBackendServiceHttpRequest;
+import com.google.cloud.compute.v1.SetSecurityPolicyBackendServiceHttpRequest;
 import com.google.cloud.compute.v1.UpdateBackendServiceHttpRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -127,6 +128,8 @@ public class BackendServiceStubSettings extends StubSettings<BackendServiceStubS
       listBackendServicesSettings;
   private final UnaryCallSettings<PatchBackendServiceHttpRequest, Operation>
       patchBackendServiceSettings;
+  private final UnaryCallSettings<SetSecurityPolicyBackendServiceHttpRequest, Operation>
+      setSecurityPolicyBackendServiceSettings;
   private final UnaryCallSettings<UpdateBackendServiceHttpRequest, Operation>
       updateBackendServiceSettings;
 
@@ -185,6 +188,12 @@ public class BackendServiceStubSettings extends StubSettings<BackendServiceStubS
   public UnaryCallSettings<PatchBackendServiceHttpRequest, Operation>
       patchBackendServiceSettings() {
     return patchBackendServiceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to setSecurityPolicyBackendService. */
+  public UnaryCallSettings<SetSecurityPolicyBackendServiceHttpRequest, Operation>
+      setSecurityPolicyBackendServiceSettings() {
+    return setSecurityPolicyBackendServiceSettings;
   }
 
   /** Returns the object with the settings used for calls to updateBackendService. */
@@ -280,6 +289,8 @@ public class BackendServiceStubSettings extends StubSettings<BackendServiceStubS
     insertBackendServiceSettings = settingsBuilder.insertBackendServiceSettings().build();
     listBackendServicesSettings = settingsBuilder.listBackendServicesSettings().build();
     patchBackendServiceSettings = settingsBuilder.patchBackendServiceSettings().build();
+    setSecurityPolicyBackendServiceSettings =
+        settingsBuilder.setSecurityPolicyBackendServiceSettings().build();
     updateBackendServiceSettings = settingsBuilder.updateBackendServiceSettings().build();
   }
 
@@ -443,6 +454,8 @@ public class BackendServiceStubSettings extends StubSettings<BackendServiceStubS
         listBackendServicesSettings;
     private final UnaryCallSettings.Builder<PatchBackendServiceHttpRequest, Operation>
         patchBackendServiceSettings;
+    private final UnaryCallSettings.Builder<SetSecurityPolicyBackendServiceHttpRequest, Operation>
+        setSecurityPolicyBackendServiceSettings;
     private final UnaryCallSettings.Builder<UpdateBackendServiceHttpRequest, Operation>
         updateBackendServiceSettings;
 
@@ -507,6 +520,8 @@ public class BackendServiceStubSettings extends StubSettings<BackendServiceStubS
 
       patchBackendServiceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      setSecurityPolicyBackendServiceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       updateBackendServiceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
@@ -520,6 +535,7 @@ public class BackendServiceStubSettings extends StubSettings<BackendServiceStubS
               insertBackendServiceSettings,
               listBackendServicesSettings,
               patchBackendServiceSettings,
+              setSecurityPolicyBackendServiceSettings,
               updateBackendServiceSettings);
 
       initDefaults(this);
@@ -582,6 +598,11 @@ public class BackendServiceStubSettings extends StubSettings<BackendServiceStubS
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
+          .setSecurityPolicyBackendServiceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
           .updateBackendServiceSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
@@ -604,6 +625,8 @@ public class BackendServiceStubSettings extends StubSettings<BackendServiceStubS
       insertBackendServiceSettings = settings.insertBackendServiceSettings.toBuilder();
       listBackendServicesSettings = settings.listBackendServicesSettings.toBuilder();
       patchBackendServiceSettings = settings.patchBackendServiceSettings.toBuilder();
+      setSecurityPolicyBackendServiceSettings =
+          settings.setSecurityPolicyBackendServiceSettings.toBuilder();
       updateBackendServiceSettings = settings.updateBackendServiceSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
@@ -617,6 +640,7 @@ public class BackendServiceStubSettings extends StubSettings<BackendServiceStubS
               insertBackendServiceSettings,
               listBackendServicesSettings,
               patchBackendServiceSettings,
+              setSecurityPolicyBackendServiceSettings,
               updateBackendServiceSettings);
     }
 
@@ -691,6 +715,12 @@ public class BackendServiceStubSettings extends StubSettings<BackendServiceStubS
     public UnaryCallSettings.Builder<PatchBackendServiceHttpRequest, Operation>
         patchBackendServiceSettings() {
       return patchBackendServiceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setSecurityPolicyBackendService. */
+    public UnaryCallSettings.Builder<SetSecurityPolicyBackendServiceHttpRequest, Operation>
+        setSecurityPolicyBackendServiceSettings() {
+      return setSecurityPolicyBackendServiceSettings;
     }
 
     /** Returns the builder for the settings used for calls to updateBackendService. */

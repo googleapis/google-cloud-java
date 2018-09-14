@@ -5,9 +5,7 @@ package com.google.cloud.speech.v1;
 
 /**
  * <pre>
- * Word-specific information for recognized words. Word information is only
- * included in the response when certain request parameters are set, such
- * as `enable_word_time_offsets`.
+ * Word-specific information for recognized words.
  * </pre>
  *
  * Protobuf type {@code google.cloud.speech.v1.WordInfo}
@@ -117,7 +115,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.Duration startTime_;
   /**
    * <pre>
-   * *Output-only* Time offset relative to the beginning of the audio,
+   * Output only. Time offset relative to the beginning of the audio,
    * and corresponding to the start of the spoken word.
    * This field is only set if `enable_word_time_offsets=true` and only
    * in the top hypothesis.
@@ -132,7 +130,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * *Output-only* Time offset relative to the beginning of the audio,
+   * Output only. Time offset relative to the beginning of the audio,
    * and corresponding to the start of the spoken word.
    * This field is only set if `enable_word_time_offsets=true` and only
    * in the top hypothesis.
@@ -147,7 +145,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * *Output-only* Time offset relative to the beginning of the audio,
+   * Output only. Time offset relative to the beginning of the audio,
    * and corresponding to the start of the spoken word.
    * This field is only set if `enable_word_time_offsets=true` and only
    * in the top hypothesis.
@@ -165,7 +163,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.Duration endTime_;
   /**
    * <pre>
-   * *Output-only* Time offset relative to the beginning of the audio,
+   * Output only. Time offset relative to the beginning of the audio,
    * and corresponding to the end of the spoken word.
    * This field is only set if `enable_word_time_offsets=true` and only
    * in the top hypothesis.
@@ -180,7 +178,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * *Output-only* Time offset relative to the beginning of the audio,
+   * Output only. Time offset relative to the beginning of the audio,
    * and corresponding to the end of the spoken word.
    * This field is only set if `enable_word_time_offsets=true` and only
    * in the top hypothesis.
@@ -195,7 +193,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * *Output-only* Time offset relative to the beginning of the audio,
+   * Output only. Time offset relative to the beginning of the audio,
    * and corresponding to the end of the spoken word.
    * This field is only set if `enable_word_time_offsets=true` and only
    * in the top hypothesis.
@@ -213,7 +211,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object word_;
   /**
    * <pre>
-   * *Output-only* The word corresponding to this set of information.
+   * Output only. The word corresponding to this set of information.
    * </pre>
    *
    * <code>string word = 3;</code>
@@ -232,7 +230,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * *Output-only* The word corresponding to this set of information.
+   * Output only. The word corresponding to this set of information.
    * </pre>
    *
    * <code>string word = 3;</code>
@@ -440,9 +438,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Word-specific information for recognized words. Word information is only
-   * included in the response when certain request parameters are set, such
-   * as `enable_word_time_offsets`.
+   * Word-specific information for recognized words.
    * </pre>
    *
    * Protobuf type {@code google.cloud.speech.v1.WordInfo}
@@ -625,7 +621,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> startTimeBuilder_;
     /**
      * <pre>
-     * *Output-only* Time offset relative to the beginning of the audio,
+     * Output only. Time offset relative to the beginning of the audio,
      * and corresponding to the start of the spoken word.
      * This field is only set if `enable_word_time_offsets=true` and only
      * in the top hypothesis.
@@ -640,7 +636,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * *Output-only* Time offset relative to the beginning of the audio,
+     * Output only. Time offset relative to the beginning of the audio,
      * and corresponding to the start of the spoken word.
      * This field is only set if `enable_word_time_offsets=true` and only
      * in the top hypothesis.
@@ -659,7 +655,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * *Output-only* Time offset relative to the beginning of the audio,
+     * Output only. Time offset relative to the beginning of the audio,
      * and corresponding to the start of the spoken word.
      * This field is only set if `enable_word_time_offsets=true` and only
      * in the top hypothesis.
@@ -684,7 +680,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * *Output-only* Time offset relative to the beginning of the audio,
+     * Output only. Time offset relative to the beginning of the audio,
      * and corresponding to the start of the spoken word.
      * This field is only set if `enable_word_time_offsets=true` and only
      * in the top hypothesis.
@@ -707,7 +703,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * *Output-only* Time offset relative to the beginning of the audio,
+     * Output only. Time offset relative to the beginning of the audio,
      * and corresponding to the start of the spoken word.
      * This field is only set if `enable_word_time_offsets=true` and only
      * in the top hypothesis.
@@ -734,7 +730,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * *Output-only* Time offset relative to the beginning of the audio,
+     * Output only. Time offset relative to the beginning of the audio,
      * and corresponding to the start of the spoken word.
      * This field is only set if `enable_word_time_offsets=true` and only
      * in the top hypothesis.
@@ -757,7 +753,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * *Output-only* Time offset relative to the beginning of the audio,
+     * Output only. Time offset relative to the beginning of the audio,
      * and corresponding to the start of the spoken word.
      * This field is only set if `enable_word_time_offsets=true` and only
      * in the top hypothesis.
@@ -774,7 +770,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * *Output-only* Time offset relative to the beginning of the audio,
+     * Output only. Time offset relative to the beginning of the audio,
      * and corresponding to the start of the spoken word.
      * This field is only set if `enable_word_time_offsets=true` and only
      * in the top hypothesis.
@@ -794,7 +790,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * *Output-only* Time offset relative to the beginning of the audio,
+     * Output only. Time offset relative to the beginning of the audio,
      * and corresponding to the start of the spoken word.
      * This field is only set if `enable_word_time_offsets=true` and only
      * in the top hypothesis.
@@ -823,7 +819,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> endTimeBuilder_;
     /**
      * <pre>
-     * *Output-only* Time offset relative to the beginning of the audio,
+     * Output only. Time offset relative to the beginning of the audio,
      * and corresponding to the end of the spoken word.
      * This field is only set if `enable_word_time_offsets=true` and only
      * in the top hypothesis.
@@ -838,7 +834,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * *Output-only* Time offset relative to the beginning of the audio,
+     * Output only. Time offset relative to the beginning of the audio,
      * and corresponding to the end of the spoken word.
      * This field is only set if `enable_word_time_offsets=true` and only
      * in the top hypothesis.
@@ -857,7 +853,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * *Output-only* Time offset relative to the beginning of the audio,
+     * Output only. Time offset relative to the beginning of the audio,
      * and corresponding to the end of the spoken word.
      * This field is only set if `enable_word_time_offsets=true` and only
      * in the top hypothesis.
@@ -882,7 +878,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * *Output-only* Time offset relative to the beginning of the audio,
+     * Output only. Time offset relative to the beginning of the audio,
      * and corresponding to the end of the spoken word.
      * This field is only set if `enable_word_time_offsets=true` and only
      * in the top hypothesis.
@@ -905,7 +901,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * *Output-only* Time offset relative to the beginning of the audio,
+     * Output only. Time offset relative to the beginning of the audio,
      * and corresponding to the end of the spoken word.
      * This field is only set if `enable_word_time_offsets=true` and only
      * in the top hypothesis.
@@ -932,7 +928,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * *Output-only* Time offset relative to the beginning of the audio,
+     * Output only. Time offset relative to the beginning of the audio,
      * and corresponding to the end of the spoken word.
      * This field is only set if `enable_word_time_offsets=true` and only
      * in the top hypothesis.
@@ -955,7 +951,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * *Output-only* Time offset relative to the beginning of the audio,
+     * Output only. Time offset relative to the beginning of the audio,
      * and corresponding to the end of the spoken word.
      * This field is only set if `enable_word_time_offsets=true` and only
      * in the top hypothesis.
@@ -972,7 +968,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * *Output-only* Time offset relative to the beginning of the audio,
+     * Output only. Time offset relative to the beginning of the audio,
      * and corresponding to the end of the spoken word.
      * This field is only set if `enable_word_time_offsets=true` and only
      * in the top hypothesis.
@@ -992,7 +988,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * *Output-only* Time offset relative to the beginning of the audio,
+     * Output only. Time offset relative to the beginning of the audio,
      * and corresponding to the end of the spoken word.
      * This field is only set if `enable_word_time_offsets=true` and only
      * in the top hypothesis.
@@ -1019,7 +1015,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object word_ = "";
     /**
      * <pre>
-     * *Output-only* The word corresponding to this set of information.
+     * Output only. The word corresponding to this set of information.
      * </pre>
      *
      * <code>string word = 3;</code>
@@ -1038,7 +1034,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * *Output-only* The word corresponding to this set of information.
+     * Output only. The word corresponding to this set of information.
      * </pre>
      *
      * <code>string word = 3;</code>
@@ -1058,7 +1054,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * *Output-only* The word corresponding to this set of information.
+     * Output only. The word corresponding to this set of information.
      * </pre>
      *
      * <code>string word = 3;</code>
@@ -1075,7 +1071,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * *Output-only* The word corresponding to this set of information.
+     * Output only. The word corresponding to this set of information.
      * </pre>
      *
      * <code>string word = 3;</code>
@@ -1088,7 +1084,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * *Output-only* The word corresponding to this set of information.
+     * Output only. The word corresponding to this set of information.
      * </pre>
      *
      * <code>string word = 3;</code>
