@@ -377,7 +377,7 @@ public class ITTransactionTest {
   }
 
   @Test
-  public void nestedRwRwTransactionShouldThrowException() {
+  public void nestedReadWriteTxnThrows() {
     try {
       doNestedRwTransaction();
       fail("Expected exception");
@@ -388,7 +388,7 @@ public class ITTransactionTest {
   }
 
   @Test
-  public void nestedRwRdTransactionShouldThrowException() {
+  public void nestedReadOnlyTxnThrows() {
     try {
       client
           .readWriteTransaction()
@@ -411,7 +411,7 @@ public class ITTransactionTest {
   }
 
   @Test
-  public void nestedRwBatchTransactionShouldThrowException() {
+  public void nestedBatchTxnThrows() {
     try {
       client
           .readWriteTransaction()
@@ -440,7 +440,7 @@ public class ITTransactionTest {
   }
 
   @Test
-  public void nestedRwSingleUseReadTransactionShouldThrowException() {
+  public void nestedSingleUseReadTxnThrows() {
     try {
       client
           .readWriteTransaction()
@@ -461,7 +461,7 @@ public class ITTransactionTest {
   }
 
   @Test
-  public void nestedTxnShouldSucceedWhenAllowed() {
+  public void nestedTxnSucceedsWhenAllowed() {
     client
         .readWriteTransaction()
         .allowNestedTransaction()
