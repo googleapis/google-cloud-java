@@ -4,6 +4,7 @@ Google Cloud Client Library for Java
 Java idiomatic client for [Google Cloud Platform][cloud-platform] services.
 
 [![CircleCI](https://circleci.com/gh/GoogleCloudPlatform/google-cloud-java/tree/master.svg?style=shield)](https://circleci.com/gh/GoogleCloudPlatform/google-cloud-java/tree/master)
+[![Kokoro CI](http://storage.googleapis.com/cloud-devrel-kokoro-resources/java/badges/google-cloud-java/master.svg)](http://storage.googleapis.com/cloud-devrel-kokoro-resources/java/badges/google-cloud-java/master.html)
 [![Coverage Status](https://coveralls.io/repos/GoogleCloudPlatform/google-cloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/google-cloud-java?branch=master)
 [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud.svg)](http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22com.google.cloud%22%20a%3A%22google-cloud%22)
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/google-cloud-java)
