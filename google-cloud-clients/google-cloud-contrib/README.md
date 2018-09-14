@@ -12,7 +12,7 @@ Packages that provide higher-level abstraction/functionality for common Google C
 Contents
 --------
 
- * [google-cloud-logging](./google-cloud-logging) Logback appender for Google Cloud Logging.
+ * [google-cloud-logging-logback](./google-cloud-logging-logback) Logback appender for Google Cloud Logging.
  * [google-cloud-nio](./google-cloud-nio/): NIO Filesystem Provider for Google Cloud Storage.
  * [google-cloud-nio-examples](./google-cloud-nio-examples/): How to add Google Cloud Storage NIO after the fact.
 
