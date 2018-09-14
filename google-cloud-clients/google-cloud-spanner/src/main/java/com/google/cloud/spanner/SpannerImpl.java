@@ -1223,6 +1223,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
 
   @VisibleForTesting
   static class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
+    private boolean blockNestedTxn = true;
 
     /** Allow for testing of backoff logic */
     static class Sleeper {
@@ -1236,7 +1237,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     private final Span span;
     private TransactionContextImpl txn;
     private volatile boolean isValid = true;
-    private boolean blockNestedTxn = true;
+
     public TransactionRunner allowNestedTransaction() {
       blockNestedTxn = false;
       return this;
@@ -1258,16 +1259,18 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     @Override
     public <T> T run(TransactionCallable<T> callable) {
       try (Scope s = tracer.withSpan(span)) {
-        if (blockNestedTxn)
+        if (blockNestedTxn) {
           hasPendingTransaction.set(Boolean.TRUE);
+        }
 
         return runInternal(callable);
       } catch (RuntimeException e) {
         TraceUtil.endSpanWithFailure(span, e);
         throw e;
       } finally {
-        if (blockNestedTxn)
+        if (blockNestedTxn) {
           hasPendingTransaction.set(Boolean.FALSE);
+        }
 
         span.end();
       }
