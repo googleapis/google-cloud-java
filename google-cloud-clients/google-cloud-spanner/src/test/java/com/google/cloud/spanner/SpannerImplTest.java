@@ -17,9 +17,10 @@
 package com.google.cloud.spanner;
 
 import static com.google.common.truth.Truth.assertThat;
+import static org.junit.Assert.fail;
 
+import com.google.cloud.grpc.GrpcTransportOptions;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
-
 import java.util.HashMap;
 import java.util.Map;
 import org.junit.Before;
@@ -69,5 +70,50 @@ public class SpannerImplTest {
     session.close();
     // The same channelHint is passed for deleteSession (contained in "options").
     Mockito.verify(rpc).deleteSession(sessionName, options.getValue());
+  }
+
+  @Test
+  public void getDbclientAgainGivesSame() {
+    Map<String, String> labels = new HashMap<>();
+    labels.put("env", "dev");
+    Mockito.when(spannerOptions.getSessionLabels()).thenReturn(labels);
+    String dbName = "projects/p1/instances/i1/databases/d1";
+    DatabaseId db = DatabaseId.of(dbName);
+
+    Mockito.when(spannerOptions.getTransportOptions())
+        .thenReturn(GrpcTransportOptions.newBuilder().build());
+    Mockito.when(spannerOptions.getSessionPoolOptions())
+        .thenReturn(SessionPoolOptions.newBuilder().build());
+
+    DatabaseClient databaseClient = impl.getDatabaseClient(db);
+
+    // Get db client again
+    DatabaseClient databaseClient1 = impl.getDatabaseClient(db);
+
+    assertThat(databaseClient == databaseClient1);
+  }
+
+  @Test
+  public void getDbclientAfterCloseThrows() {
+    SpannerImpl imp = new SpannerImpl(rpc, 1, spannerOptions);
+    Map<String, String> labels = new HashMap<>();
+    labels.put("env", "dev");
+    Mockito.when(spannerOptions.getSessionLabels()).thenReturn(labels);
+    String dbName = "projects/p1/instances/i1/databases/d1";
+    DatabaseId db = DatabaseId.of(dbName);
+
+    Mockito.when(spannerOptions.getTransportOptions())
+        .thenReturn(GrpcTransportOptions.newBuilder().build());
+    Mockito.when(spannerOptions.getSessionPoolOptions())
+        .thenReturn(SessionPoolOptions.newBuilder().build());
+
+    imp.close();
+
+    try {
+      imp.getDatabaseClient(db);
+      fail("Expected exception");
+    } catch (IllegalStateException e) {
+      assertThat(e.getMessage()).contains("Cloud Spanner client has been closed");
+    }
   }
 }
