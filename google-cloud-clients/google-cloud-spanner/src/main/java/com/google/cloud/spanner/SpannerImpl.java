@@ -1063,7 +1063,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
       final int prefetchChunks =
           readOptions.hasPrefetchChunks() ? readOptions.prefetchChunks() : defaultPrefetchChunks;
       ResumableStreamIterator stream =
-          new ResumableStreamIterator(MAX_BUFFERED_CHUNKS, QUERY) {
+          new ResumableStreamIterator(MAX_BUFFERED_CHUNKS, QUERY, span) {
             @Override
             CloseableIterator<PartialResultSet> startStream(@Nullable ByteString resumeToken) {
               GrpcStreamIterator stream = new GrpcStreamIterator(prefetchChunks);
@@ -1176,7 +1176,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
       final int prefetchChunks =
           readOptions.hasPrefetchChunks() ? readOptions.prefetchChunks() : defaultPrefetchChunks;
       ResumableStreamIterator stream =
-          new ResumableStreamIterator(MAX_BUFFERED_CHUNKS, READ) {
+          new ResumableStreamIterator(MAX_BUFFERED_CHUNKS, READ, span) {
             @Override
             CloseableIterator<PartialResultSet> startStream(@Nullable ByteString resumeToken) {
               GrpcStreamIterator stream = new GrpcStreamIterator(prefetchChunks);
@@ -2452,20 +2452,20 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
      */
     private boolean safeToRetry = true;
 
-    protected ResumableStreamIterator(int maxBufferSize, String streamName) {
+    protected ResumableStreamIterator(int maxBufferSize, String streamName, Span parent) {
       checkArgument(maxBufferSize >= 0);
       this.maxBufferSize = maxBufferSize;
-      this.span = tracer.spanBuilder(streamName).startSpan();
+      this.span = tracer.spanBuilderWithExplicitParent(streamName, parent).startSpan();
     }
 
     abstract CloseableIterator<PartialResultSet> startStream(@Nullable ByteString resumeToken);
 
     @Override
     public void close(@Nullable String message) {
-      span.end();
       if (stream != null) {
         stream.close(message);
       }
+      span.end();
     }
 
     @Override
@@ -2478,7 +2478,11 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
               ImmutableMap.of("ResumeToken",
                   AttributeValue.stringAttributeValue(
                       resumeToken == null ? "null" : resumeToken.toStringUtf8())));
-          stream = checkNotNull(startStream(resumeToken));
+          try (Scope s = tracer.withSpan(span)) {
+            // When start a new stream set the Span as current to make the gRPC Span a child of
+            // this Span.
+            stream = checkNotNull(startStream(resumeToken));
+          }
         }
         // Buffer contains items up to a resume token or has reached capacity: flush.
         if (!buffer.isEmpty()
