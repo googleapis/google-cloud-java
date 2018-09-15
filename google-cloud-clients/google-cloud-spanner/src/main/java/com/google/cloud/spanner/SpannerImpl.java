@@ -1426,7 +1426,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
         mutations = null;
       }
       final CommitRequest commitRequest = builder.build();
-      Span opSpan = tracer.spanBuilder(COMMIT).startSpan();
+      Span opSpan = tracer.spanBuilderWithExplicitParent(COMMIT, span).startSpan();
       try (Scope s = tracer.withSpan(opSpan)) {
         CommitResponse commitResponse =
             runWithRetries(
