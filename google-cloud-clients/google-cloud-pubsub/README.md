@@ -119,6 +119,7 @@ try {
 } finally {
   if (publisher != null) {
     publisher.shutdown();
+    publisher.awaitTermination(1, TimeUnit.MINUTES);
   }
 }
 ```
