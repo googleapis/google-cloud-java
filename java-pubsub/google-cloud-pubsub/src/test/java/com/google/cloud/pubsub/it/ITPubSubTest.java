@@ -16,6 +16,8 @@
 
 package com.google.cloud.pubsub.it;
 
+import static com.google.common.truth.Truth.assertThat;
+
 import com.google.auto.value.AutoValue;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.pubsub.v1.AckReplyConsumer;
@@ -32,20 +34,17 @@ import com.google.pubsub.v1.ProjectSubscriptionName;
 import com.google.pubsub.v1.ProjectTopicName;
 import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.PushConfig;
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.rules.Timeout;
-
 import java.util.Collections;
 import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.TimeUnit;
-
-import static com.google.common.truth.Truth.assertThat;
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.rules.Timeout;
 
 public class ITPubSubTest {
 
@@ -147,6 +146,7 @@ public class ITPubSubTest {
         .publish(PubsubMessage.newBuilder().setData(ByteString.copyFromUtf8("msg2")).build())
         .get();
     publisher.shutdown();
+    publisher.awaitTermination(1, TimeUnit.MINUTES);
 
     // Ack the first message.
     MessageAndConsumer toAck = pollQueue(receiveQueue);

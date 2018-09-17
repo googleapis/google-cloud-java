@@ -42,6 +42,7 @@ import io.grpc.Status;
 import io.grpc.StatusException;
 import io.grpc.inprocess.InProcessServerBuilder;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeUnit;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -114,6 +115,7 @@ public class PublisherImplTest {
 
     assertEquals(2, testPublisherServiceImpl.getCapturedRequests().get(0).getMessagesCount());
     publisher.shutdown();
+    publisher.awaitTermination(1, TimeUnit.MINUTES);
   }
 
   @Test
@@ -152,6 +154,7 @@ public class PublisherImplTest {
     assertEquals(2, testPublisherServiceImpl.getCapturedRequests().get(0).getMessagesCount());
     assertEquals(2, testPublisherServiceImpl.getCapturedRequests().get(1).getMessagesCount());
     publisher.shutdown();
+    publisher.awaitTermination(1, TimeUnit.MINUTES);
   }
 
   @Test
@@ -186,6 +189,7 @@ public class PublisherImplTest {
 
     assertEquals(2, testPublisherServiceImpl.getCapturedRequests().size());
     publisher.shutdown();
+    publisher.awaitTermination(1, TimeUnit.MINUTES);
   }
 
   @Test
@@ -228,6 +232,7 @@ public class PublisherImplTest {
     assertEquals(2, testPublisherServiceImpl.getCapturedRequests().get(0).getMessagesCount());
     assertEquals(1, testPublisherServiceImpl.getCapturedRequests().get(1).getMessagesCount());
     publisher.shutdown();
+    publisher.awaitTermination(1, TimeUnit.MINUTES);
   }
 
   private ApiFuture<String> sendTestMessage(Publisher publisher, String data) {
@@ -278,6 +283,7 @@ public class PublisherImplTest {
 
     assertEquals(2, testPublisherServiceImpl.getCapturedRequests().size());
     publisher.shutdown();
+    publisher.awaitTermination(1, TimeUnit.MINUTES);
   }
 
   @Test(expected = ExecutionException.class)
@@ -302,6 +308,7 @@ public class PublisherImplTest {
     } finally {
       assertSame(testPublisherServiceImpl.getCapturedRequests().size(), 1);
       publisher.shutdown();
+      publisher.awaitTermination(1, TimeUnit.MINUTES);
     }
   }
 
@@ -328,6 +335,7 @@ public class PublisherImplTest {
 
     assertEquals(3, testPublisherServiceImpl.getCapturedRequests().size());
     publisher.shutdown();
+    publisher.awaitTermination(1, TimeUnit.MINUTES);
   }
 
   @Test
@@ -353,6 +361,7 @@ public class PublisherImplTest {
 
     assertEquals(3, testPublisherServiceImpl.getCapturedRequests().size());
     publisher.shutdown();
+    publisher.awaitTermination(1, TimeUnit.MINUTES);
   }
 
   @Test(expected = ExecutionException.class)
@@ -381,6 +390,7 @@ public class PublisherImplTest {
     } finally {
       assertTrue(testPublisherServiceImpl.getCapturedRequests().size() >= 1);
       publisher.shutdown();
+      publisher.awaitTermination(1, TimeUnit.MINUTES);
     }
   }
 
@@ -403,6 +413,7 @@ public class PublisherImplTest {
     assertEquals(Duration.ofMillis(11), publisher.getBatchingSettings().getDelayThreshold());
     assertEquals(12, (long) publisher.getBatchingSettings().getElementCountThreshold());
     publisher.shutdown();
+    publisher.awaitTermination(1, TimeUnit.MINUTES);
   }
 
   @Test
