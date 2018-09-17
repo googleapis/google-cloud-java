@@ -71,7 +71,7 @@ public interface BatchReadOnlyTransaction extends ReadOnlyTransaction {
    *       long singerId = results.getLong(0);
    *       String firstName = results.getString(1);
    *       String lastName = results.getString(2);
-   *       System.out.println("P[" + singerId + "] " + firstName + " " + lastName);
+   *       System.out.println("[" + singerId + "] " + firstName + " " + lastName);
    *     }
    *   }
    * }
@@ -118,7 +118,7 @@ public interface BatchReadOnlyTransaction extends ReadOnlyTransaction {
    *       long singerId = results.getLong(0);
    *       String firstName = results.getString(1);
    *       String lastName = results.getString(2);
-   *       System.out.println("P[" + singerId + "] " + firstName + " " + lastName);
+   *       System.out.println("[" + singerId + "] " + firstName + " " + lastName);
    *     }
    *   }
    * }
@@ -198,13 +198,6 @@ public interface BatchReadOnlyTransaction extends ReadOnlyTransaction {
   /**
    * Returns a {@link BatchTransactionId} to be re-used across several machines/processes. This
    * BatchTransactionId guarantees the subsequent read/query to be executed at the same timestamp.
-   *
-   * <!--SNIPPET batch_client_read_with_id-->
-   * <pre>{@code
-   * BatchTransactionId txnId = prevTxn.getBatchTransactionId();
-   * BatchReadOnlyTransaction txn = batchClient.batchReadOnlyTransaction(txnId);
-   * }</pre>
-   * <!--SNIPPET batch_client_read_with_id-->
    *
    */
   BatchTransactionId getBatchTransactionId();

@@ -55,18 +55,6 @@ public class BatchClientSnippets {
     return txn;
   }
 
-  /**
-   * Example to do a batch read with txn id.
-   */
-  BatchReadOnlyTransaction readWithId(BatchReadOnlyTransaction prevTxn) {
-    // [START batch_client_read_with_id]
-    BatchTransactionId txnId = prevTxn.getBatchTransactionId();
-    BatchReadOnlyTransaction txn = batchClient.batchReadOnlyTransaction(txnId);
-    // [END batch_client_read_with_id]
-
-    return txn;
-  }
-
   void partitionQuery() {
     // [START partition_query]
     final BatchReadOnlyTransaction txn =
@@ -104,7 +92,7 @@ public class BatchClientSnippets {
           long singerId = results.getLong(0);
           String firstName = results.getString(1);
           String lastName = results.getString(2);
-          System.out.println("P[" + singerId + "] " + firstName + " " + lastName);
+          System.out.println("[" + singerId + "] " + firstName + " " + lastName);
         }
       }
     }
@@ -129,7 +117,7 @@ public class BatchClientSnippets {
           long singerId = results.getLong(0);
           String firstName = results.getString(1);
           String lastName = results.getString(2);
-          System.out.println("P[" + singerId + "] " + firstName + " " + lastName);
+          System.out.println("[" + singerId + "] " + firstName + " " + lastName);
         }
       }
     }
