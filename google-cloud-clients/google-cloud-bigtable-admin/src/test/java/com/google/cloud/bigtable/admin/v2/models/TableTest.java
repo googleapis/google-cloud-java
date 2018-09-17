@@ -15,11 +15,16 @@
  */
 package com.google.cloud.bigtable.admin.v2.models;
 
+import static com.google.common.truth.Truth.assertThat;
+
 import com.google.bigtable.admin.v2.ColumnFamily;
 import com.google.bigtable.admin.v2.GcRule;
 import com.google.bigtable.admin.v2.Table.TimestampGranularity;
 import com.google.bigtable.admin.v2.TableName;
-import com.google.common.truth.Truth;
+import com.google.common.collect.ArrayListMultimap;
+import com.google.common.collect.Multimap;
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.Map.Entry;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -69,18 +74,51 @@ public class TableTest {
 
     Table result = Table.fromProto(proto);
 
-    Truth.assertThat(result.getInstanceId()).isEqualTo("my-instance");
-    Truth.assertThat(result.getId()).isEqualTo("my-table");
-    Truth.assertThat(result.getReplicationStatesByClusterId()).containsExactly(
+    assertThat(result.getInstanceId()).isEqualTo("my-instance");
+    assertThat(result.getId()).isEqualTo("my-table");
+    assertThat(result.getReplicationStatesByClusterId()).containsExactly(
         "cluster1", Table.ReplicationState.READY,
         "cluster2", Table.ReplicationState.INITIALIZING
     );
-    Truth.assertThat(result.getColumnFamilies()).hasSize(3);
+    assertThat(result.getColumnFamilies()).hasSize(3);
 
     for (Entry<String, ColumnFamily> entry : proto.getColumnFamiliesMap().entrySet()) {
-      Truth.assertThat(result.getColumnFamilies()).contains(
-          com.google.cloud.bigtable.admin.v2.models.ColumnFamily.fromProto(entry.getKey(), entry.getValue())
+      assertThat(result.getColumnFamilies()).contains(
+          com.google.cloud.bigtable.admin.v2.models.ColumnFamily
+              .fromProto(entry.getKey(), entry.getValue())
       );
+    }
+  }
+
+  @Test
+  public void testReplicationStateEnumUpToDate() {
+    Multimap<Table.ReplicationState, com.google.bigtable.admin.v2.Table.ClusterState.ReplicationState> modelToProtoMap =
+        ArrayListMultimap.create();
+
+    for (com.google.bigtable.admin.v2.Table.ClusterState.ReplicationState protoValue : com.google.bigtable.admin.v2.Table.ClusterState.ReplicationState
+        .values()) {
+      Table.ReplicationState modelValue = Table.ReplicationState.fromProto(protoValue);
+      modelToProtoMap.put(modelValue, protoValue);
+    }
+
+    // Make sure all model values are used
+    assertThat(modelToProtoMap.keys())
+        .containsAllIn(Arrays.asList(Table.ReplicationState.values()));
+
+    // Make sure unknown is handled properly (it has multiple mappings)
+    assertThat(modelToProtoMap).valuesForKey(Table.ReplicationState.NOT_KNOWN).containsExactly(
+        com.google.bigtable.admin.v2.Table.ClusterState.ReplicationState.STATE_NOT_KNOWN,
+        com.google.bigtable.admin.v2.Table.ClusterState.ReplicationState.UNRECOGNIZED
+    );
+
+    // Make sure everything else has exactly 1 mapping
+    modelToProtoMap.removeAll(Table.ReplicationState.NOT_KNOWN);
+
+    for (Table.ReplicationState modelState : modelToProtoMap.keySet()) {
+      Collection<com.google.bigtable.admin.v2.Table.ClusterState.ReplicationState> protoStates = modelToProtoMap
+          .get(modelState);
+
+      assertThat(protoStates).hasSize(1);
     }
   }
 }

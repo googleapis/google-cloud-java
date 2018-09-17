@@ -17,12 +17,17 @@ package com.google.cloud.bigtable.admin.v2.models;
 
 import static com.google.common.truth.Truth.assertThat;
 
+import com.google.common.collect.ArrayListMultimap;
+import com.google.common.collect.Multimap;
+import java.util.Arrays;
+import java.util.Collection;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
 @RunWith(JUnit4.class)
 public class ClusterTest {
+
   @Test
   public void testFromProto() {
     com.google.bigtable.admin.v2.Cluster proto = com.google.bigtable.admin.v2.Cluster.newBuilder()
@@ -61,5 +66,36 @@ public class ClusterTest {
     }
 
     assertThat(actualException).isInstanceOf(IllegalArgumentException.class);
+  }
+
+  @Test
+  public void testStateEnumUpToDate() {
+    Multimap<Cluster.State, com.google.bigtable.admin.v2.Cluster.State> modelToProtoMap =
+        ArrayListMultimap.create();
+
+    for (com.google.bigtable.admin.v2.Cluster.State protoValue : com.google.bigtable.admin.v2.Cluster.State
+        .values()) {
+      Cluster.State modelValue = Cluster.State.fromProto(protoValue);
+      modelToProtoMap.put(modelValue, protoValue);
+    }
+
+    // Make sure all model values are used
+    assertThat(modelToProtoMap.keys()).containsAllIn(Arrays.asList(Cluster.State.values()));
+
+    // Make sure unknown is handled properly (it has multiple mappings)
+    assertThat(modelToProtoMap).valuesForKey(Cluster.State.NOT_KNOWN).containsExactly(
+        com.google.bigtable.admin.v2.Cluster.State.STATE_NOT_KNOWN,
+        com.google.bigtable.admin.v2.Cluster.State.UNRECOGNIZED
+    );
+
+    // Make sure everything else has exactly 1 mapping
+    modelToProtoMap.removeAll(Cluster.State.NOT_KNOWN);
+
+    for (Cluster.State modelState : modelToProtoMap.keySet()) {
+      Collection<com.google.bigtable.admin.v2.Cluster.State> protoStates = modelToProtoMap
+          .get(modelState);
+
+      assertThat(protoStates).hasSize(1);
+    }
   }
 }
