@@ -85,7 +85,7 @@ public class Cluster {
   }
 
   @Nonnull
-  private final com.google.bigtable.admin.v2.Cluster proto;
+  private final com.google.bigtable.admin.v2.Cluster stateProto;
 
   /**
    * Wraps a protobuf response.
@@ -101,7 +101,7 @@ public class Cluster {
   private Cluster(@Nonnull com.google.bigtable.admin.v2.Cluster proto) {
     Preconditions.checkNotNull(proto);
     Preconditions.checkArgument(!proto.getName().isEmpty(), "Name must be set");
-    this.proto = proto;
+    this.stateProto = proto;
   }
 
 
@@ -110,7 +110,7 @@ public class Cluster {
   public String getId() {
     // Constructor ensures that name is not null
     ClusterName fullName = Verify.verifyNotNull(
-        ClusterName.parse(proto.getName()),
+        ClusterName.parse(stateProto.getName()),
         "Name can never be null");
     //noinspection ConstantConditions
     return fullName.getCluster();
@@ -121,7 +121,7 @@ public class Cluster {
   public String getInstanceId() {
     // Constructor ensures that name is not null
     ClusterName fullName = Verify.verifyNotNull(
-        ClusterName.parse(proto.getName()),
+        ClusterName.parse(stateProto.getName()),
         "Name can never be null");
     //noinspection ConstantConditions
     return fullName.getInstance();
@@ -132,7 +132,7 @@ public class Cluster {
   /** Get the zone where this cluster is located. */
   @SuppressWarnings("WeakerAccess")
   public String getZone() {
-    LocationName location = Verify.verifyNotNull(LocationName.parse(proto.getLocation()));
+    LocationName location = Verify.verifyNotNull(LocationName.parse(stateProto.getLocation()));
     //noinspection ConstantConditions
     return location.getLocation();
   }
@@ -140,7 +140,7 @@ public class Cluster {
   /** Gets the current state of the cluster */
   @SuppressWarnings("WeakerAccess")
   public State getState() {
-    return State.fromProto(proto.getState());
+    return State.fromProto(stateProto.getState());
   }
 
   /**
@@ -149,7 +149,7 @@ public class Cluster {
    */
   @SuppressWarnings("WeakerAccess")
   public int getServeNodes() {
-    return proto.getServeNodes();
+    return stateProto.getServeNodes();
   }
 
   /**
@@ -158,7 +158,7 @@ public class Cluster {
    */
   @SuppressWarnings("WeakerAccess")
   public StorageType getStorageType() {
-    return StorageType.fromProto(proto.getDefaultStorageType());
+    return StorageType.fromProto(stateProto.getDefaultStorageType());
   }
 
   @Override
@@ -170,11 +170,11 @@ public class Cluster {
       return false;
     }
     Cluster cluster = (Cluster) o;
-    return Objects.equal(proto, cluster.proto);
+    return Objects.equal(stateProto, cluster.stateProto);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hashCode(proto);
+    return Objects.hashCode(stateProto);
   }
 }
