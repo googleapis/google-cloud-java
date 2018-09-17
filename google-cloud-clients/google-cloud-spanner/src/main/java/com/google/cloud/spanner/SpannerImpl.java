@@ -1268,10 +1268,10 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
         TraceUtil.endSpanWithFailure(span, e);
         throw e;
       } finally {
-        if (blockNestedTxn) {
-          hasPendingTransaction.set(Boolean.FALSE);
-        }
-
+        // Remove threadLocal rather than set to FALSE to avoid a possible memory leak.
+        // We also do this unconditionally in case a user has modified the flag when the transaction
+        // was running.
+        hasPendingTransaction.remove();
         span.end();
       }
     }
