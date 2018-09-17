@@ -665,4 +665,161 @@ public class GrpcResultSetTest {
     Struct copy = reserialize(row);
     assertThat(row).isEqualTo(copy);
   }
+
+  @Test
+  public void getBoolean() {
+    consumer.onPartialResultSet(
+        PartialResultSet.newBuilder()
+            .setMetadata(makeMetadata(Type.struct(Type.StructField.of("f", Type.bool()))))
+            .addValues(Value.bool(true).toProto())
+            .addValues(Value.bool(false).toProto())
+            .build());
+    consumer.onCompleted();
+    resultSet.next();
+    assertThat(resultSet.getBoolean(0) == true);
+    resultSet.next();
+    assertThat(resultSet.getBoolean(0) == false);
+  }
+
+  @Test
+  public void getDouble() {
+    consumer.onPartialResultSet(
+        PartialResultSet.newBuilder()
+            .setMetadata(makeMetadata(Type.struct(Type.StructField.of("f", Type.float64()))))
+            .addValues(Value.float64(Double.MIN_VALUE).toProto())
+            .addValues(Value.float64(Double.MAX_VALUE).toProto())
+            .build());
+    consumer.onCompleted();
+
+    resultSet.next();
+    Double d = resultSet.getDouble(0);
+    assertThat(d.equals(Double.MIN_VALUE));
+    resultSet.next();
+    d = resultSet.getDouble(0);
+    assertThat(d.equals(Double.MAX_VALUE));
+  }
+
+  @Test
+  public void getLong() {
+    consumer.onPartialResultSet(
+        PartialResultSet.newBuilder()
+            .setMetadata(makeMetadata(Type.struct(Type.StructField.of("f", Type.int64()))))
+            .addValues(Value.int64(Long.MIN_VALUE).toProto())
+            .addValues(Value.int64(Long.MAX_VALUE).toProto())
+            .build());
+    consumer.onCompleted();
+
+    resultSet.next();
+    Long l = resultSet.getLong(0);
+    assertThat(l.equals(Long.MIN_VALUE));
+
+    resultSet.next();
+    l = resultSet.getLong(0);
+    assertThat(l.equals(Long.MAX_VALUE));
+  }
+
+  @Test
+  public void getDate() {
+    consumer.onPartialResultSet(
+        PartialResultSet.newBuilder()
+            .setMetadata(makeMetadata(Type.struct(Type.StructField.of("f", Type.date()))))
+            .addValues(Value.date(Date.fromYearMonthDay(2018, 5, 29)).toProto())
+            .build());
+    consumer.onCompleted();
+
+    resultSet.next();
+    assertThat(resultSet.getDate(0).compareTo(Date.fromYearMonthDay(2018, 5, 29)) == 0);
+  }
+
+  @Test
+  public void getTimestamp() {
+    consumer.onPartialResultSet(
+        PartialResultSet.newBuilder()
+            .setMetadata(makeMetadata(Type.struct(Type.StructField.of("f", Type.timestamp()))))
+            .addValues(Value.timestamp(Timestamp.parseTimestamp("0001-01-01T00:00:00Z")).toProto())
+            .build());
+    consumer.onCompleted();
+
+    resultSet.next();
+    assertThat(resultSet.getTimestamp(0) == Timestamp.parseTimestamp("0001-01-01T00:00:00Z"));
+  }
+
+  @Test
+  public void getBooleanArray() {
+    boolean[] bArray = {true, true, false};
+    consumer.onPartialResultSet(
+        PartialResultSet.newBuilder()
+            .setMetadata(makeMetadata(Type.struct(Type.StructField.of("f", Type.array(Type.bool())))))
+            .addValues(Value.boolArray(bArray).toProto())
+            .build());
+    consumer.onCompleted();
+    resultSet.next();
+    assertThat(resultSet.getBooleanArray(0)).isEqualTo(bArray);
+  }
+
+  @Test
+  public void getLongArray() {
+    long[] lArray = {111, 333, 444, 0, -1, -2234, Long.MAX_VALUE, Long.MIN_VALUE};
+
+    consumer.onPartialResultSet(
+        PartialResultSet.newBuilder()
+            .setMetadata(makeMetadata(Type.struct(Type.StructField.of("f", Type.array(Type.int64())))))
+            .addValues(Value.int64Array(lArray).toProto())
+            .build());
+    consumer.onCompleted();
+    resultSet.next();
+    assertThat(resultSet.getLongArray(0)).isEqualTo(lArray);
+  }
+
+  @Test
+  public void getDoubleArray() {
+    double[] dArray = {Double.MAX_VALUE, Double.MIN_VALUE, 111, 333, 444, 0, -1, -2234};
+
+    consumer.onPartialResultSet(
+        PartialResultSet.newBuilder()
+            .setMetadata(makeMetadata(Type.struct(
+                Type.StructField.of("f", Type.array(Type.float64())))))
+            .addValues(Value.float64Array(dArray).toProto())
+            .build());
+    consumer.onCompleted();
+    resultSet.next();
+
+    assertThat(resultSet.getDoubleArray(0).equals(dArray));
+  }
+
+  @Test
+  public void getTimestampList() {
+    List<Timestamp> tList = new ArrayList<>();
+    tList.add(Timestamp.parseTimestamp("0001-01-01T00:00:00Z"));
+    tList.add(Timestamp.parseTimestamp("0002-02-02T02:00:00Z"));
+
+    consumer.onPartialResultSet(
+        PartialResultSet.newBuilder()
+            .setMetadata(makeMetadata(Type.struct(
+                Type.StructField.of("f", Type.array(Type.timestamp())))))
+            .addValues(Value.timestampArray(tList).toProto())
+            .build());
+    consumer.onCompleted();
+    resultSet.next();
+
+    assertThat(resultSet.getTimestampList(0).equals(tList));
+  }
+
+  @Test
+  public void getDateList() {
+    List<Date> dList = new ArrayList<>();
+    dList.add(Date.fromYearMonthDay(1999, 8, 23));
+    dList.add(Date.fromYearMonthDay(1986, 3, 17));
+
+    consumer.onPartialResultSet(
+        PartialResultSet.newBuilder()
+            .setMetadata(makeMetadata(Type.struct(
+                Type.StructField.of("f", Type.array(Type.date())))))
+            .addValues(Value.dateArray(dList).toProto())
+            .build());
+    consumer.onCompleted();
+    resultSet.next();
+
+    assertThat(resultSet.getDateList(0).equals(dList));
+  }
 }
