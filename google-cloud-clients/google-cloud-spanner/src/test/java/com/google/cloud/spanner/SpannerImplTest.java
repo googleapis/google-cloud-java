@@ -90,7 +90,7 @@ public class SpannerImplTest {
     // Get db client again
     DatabaseClient databaseClient1 = impl.getDatabaseClient(db);
 
-    assertThat(databaseClient == databaseClient1);
+    assertThat(databaseClient1).isSameAs(databaseClient);
   }
 
   @Test
