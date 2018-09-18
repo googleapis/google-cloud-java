@@ -20,8 +20,6 @@ import com.google.common.base.Preconditions;
 
 /** Storage media types for persisting Bigtable data. */
 public enum StorageType {
-  /** Storage type could not be determined. */
-  NOT_KNOWN(com.google.bigtable.admin.v2.StorageType.STORAGE_TYPE_UNSPECIFIED),
   /** Flash (SSD) storage should be used. */
   HDD(com.google.bigtable.admin.v2.StorageType.HDD),
   /** Magnetic drive (HDD) storage should be used. */
@@ -38,6 +36,8 @@ public enum StorageType {
   @InternalApi
   public static StorageType fromProto(com.google.bigtable.admin.v2.StorageType proto) {
     Preconditions.checkNotNull(proto);
+    Preconditions.checkArgument(proto != com.google.bigtable.admin.v2.StorageType.STORAGE_TYPE_UNSPECIFIED,
+        "Storage type must be specified");
 
     for (StorageType type : values()) {
       if (type.proto.equals(proto)) {

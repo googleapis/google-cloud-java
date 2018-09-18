@@ -25,11 +25,22 @@ import org.junit.runners.JUnit4;
 
 @RunWith(JUnit4.class)
 public class StorageTypeTest {
-
   @Test
   public void testUpToDate() {
     List<com.google.bigtable.admin.v2.StorageType> validProtoValues =
         Lists.newArrayList(com.google.bigtable.admin.v2.StorageType.values());
+
+    // TYPE_UNSPECIFIED is not surfaced
+    validProtoValues.remove(com.google.bigtable.admin.v2.StorageType.STORAGE_TYPE_UNSPECIFIED);
+
+    Exception actualError = null;
+    try {
+      StorageType.fromProto(com.google.bigtable.admin.v2.StorageType.STORAGE_TYPE_UNSPECIFIED);
+    } catch (Exception e) {
+      actualError = e;
+    }
+    assertThat(actualError).isInstanceOf(IllegalArgumentException.class);
+
 
     List<StorageType> validModelValues = Lists.newArrayList(StorageType.values());
 

@@ -101,8 +101,6 @@ public final class CreateClusterRequest {
   @SuppressWarnings("WeakerAccess")
   public CreateClusterRequest setStorageType(@Nonnull StorageType storageType) {
     Preconditions.checkNotNull(storageType);
-    Preconditions.checkArgument(storageType != StorageType.NOT_KNOWN,
-        "StorageType can't be NOT_KNOWN");
     Preconditions.checkArgument(storageType != StorageType.UNRECOGNIZED,
         "StorageType can't be UNRECOGNIZED");
 
