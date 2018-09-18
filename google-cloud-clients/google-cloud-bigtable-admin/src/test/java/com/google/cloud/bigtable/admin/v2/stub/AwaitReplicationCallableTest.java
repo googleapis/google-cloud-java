@@ -54,7 +54,7 @@ public class AwaitReplicationCallableTest {
   private AwaitReplicationCallable callable;
 
   @Before
-  public void setup() {
+  public void setUp() {
     ClientContext clientContext = ClientContext.newBuilder()
         .setDefaultCallContext(CALL_CONTEXT)
         .build();

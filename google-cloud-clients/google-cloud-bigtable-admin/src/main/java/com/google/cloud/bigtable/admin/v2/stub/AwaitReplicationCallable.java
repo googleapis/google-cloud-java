@@ -44,8 +44,8 @@ import java.util.concurrent.CancellationException;
 /**
  * Callable that waits until replication has caught up to the point it was called.
  *
- * <p>This callable wraps GenerateConsistencyToken and CheckConsistency RPCs. It will generate
- * a token then poll until it isConsistent is true.
+ * <p>This callable wraps GenerateConsistencyToken and CheckConsistency RPCs. It will generate a
+ * token then poll until isConsistent is true.
  */
 class AwaitReplicationCallable extends UnaryCallable<TableName, Void> {
   private final UnaryCallable<GenerateConsistencyTokenRequest, GenerateConsistencyTokenResponse> generateCallable;
@@ -189,7 +189,6 @@ class AwaitReplicationCallable extends UnaryCallable<TableName, Void> {
     @Override
     public boolean shouldRetry(Throwable prevThrowable, CheckConsistencyResponse prevResponse)
         throws CancellationException {
-
       return prevResponse != null && !prevResponse.getConsistent();
     }
   }

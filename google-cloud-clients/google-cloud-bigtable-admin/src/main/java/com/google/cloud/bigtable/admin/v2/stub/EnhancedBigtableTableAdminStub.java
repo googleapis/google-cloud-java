@@ -64,7 +64,8 @@ public class EnhancedBigtableTableAdminStub extends GrpcBigtableTableAdminStub {
         .setRetryDelayMultiplier(1.0)
         .setMaxRetryDelay(Duration.ofSeconds(10))
         .setJittered(true)
-        // rpc timeouts are ignored
+        // These rpc timeouts are ignored, instead the rpc timeouts defined for
+        // generateConsistencyToken and checkConsistency callables will be used.
         .setInitialRpcTimeout(Duration.ZERO)
         .setMaxRpcTimeout(Duration.ZERO)
         .setRpcTimeoutMultiplier(1.0)
