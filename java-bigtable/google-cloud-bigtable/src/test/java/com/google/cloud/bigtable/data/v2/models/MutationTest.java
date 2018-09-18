@@ -35,6 +35,7 @@ import org.junit.runners.JUnit4;
 
 @RunWith(JUnit4.class)
 public class MutationTest {
+
   private Mutation mutation;
 
   @Before
@@ -175,5 +176,40 @@ public class MutationTest {
 
     Mutation actual = (Mutation) ois.readObject();
     assertThat(actual.getMutations()).isEqualTo(expected.getMutations());
+  }
+
+  @Test
+  public void tooManyMutationsTest() {
+    Mutation mutation = Mutation.create();
+
+    for (int i = 0; i < Mutation.MAX_MUTATIONS; i++) {
+      mutation.setCell("f", "", "");
+    }
+
+    Exception actualError = null;
+
+    try {
+      mutation.setCell("f", "", "");
+    } catch (Exception e) {
+      actualError = e;
+    }
+
+    assertThat(actualError).isInstanceOf(IllegalStateException.class);
+  }
+
+  @Test
+  public void tooLargeRequest() {
+    Mutation mutation = Mutation.create();
+
+    Exception actualError = null;
+
+    try {
+      mutation.setCell("f", ByteString.copyFromUtf8(""),
+          ByteString.copyFrom(new byte[Mutation.MAX_BYTE_SIZE]));
+    } catch (Exception e) {
+      actualError = e;
+    }
+
+    assertThat(actualError).isInstanceOf(IllegalStateException.class);
   }
 }
