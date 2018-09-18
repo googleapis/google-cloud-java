@@ -17,10 +17,8 @@ package com.google.cloud.bigtable.admin.v2.models;
 
 import static com.google.common.truth.Truth.assertThat;
 
-import com.google.common.collect.ArrayListMultimap;
-import com.google.common.collect.Multimap;
-import java.util.Arrays;
-import java.util.Collection;
+import com.google.common.collect.Lists;
+import java.util.List;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -74,63 +72,44 @@ public class InstanceTest {
 
   @Test
   public void testTypeEnumUpToDate() {
-    Multimap<Instance.Type, com.google.bigtable.admin.v2.Instance.Type> modelToProtoMap =
-        ArrayListMultimap.create();
+    List<com.google.bigtable.admin.v2.Instance.Type> validProtoValues =
+        Lists.newArrayList(com.google.bigtable.admin.v2.Instance.Type.values());
 
-    for (com.google.bigtable.admin.v2.Instance.Type protoValue : com.google.bigtable.admin.v2.Instance.Type
-        .values()) {
-      Instance.Type modelValue = Instance.Type.fromProto(protoValue);
-      modelToProtoMap.put(modelValue, protoValue);
+    // TYPE_UNSPECIFIED is not surfaced
+    validProtoValues.remove(com.google.bigtable.admin.v2.Instance.Type.TYPE_UNSPECIFIED);
+
+    Exception actualError = null;
+    try {
+      Instance.Type.fromProto(com.google.bigtable.admin.v2.Instance.Type.TYPE_UNSPECIFIED);
+    } catch (Exception e) {
+      actualError = e;
+    }
+    assertThat(actualError).isInstanceOf(IllegalArgumentException.class);
+
+    List<Instance.Type> validModelValues = Lists.newArrayList(Instance.Type.values());
+
+    List<Instance.Type> actualModelValues = Lists.newArrayList();
+    for (com.google.bigtable.admin.v2.Instance.Type protoValue : validProtoValues) {
+      actualModelValues.add(Instance.Type.fromProto(protoValue));
     }
 
-    // Make sure all model values are used
-    assertThat(modelToProtoMap.keys()).containsAllIn(Arrays.asList(Instance.Type.values()));
-
-    // Make sure unknown is handled properly (it has multiple mappings)
-    assertThat(modelToProtoMap).valuesForKey(Instance.Type.NOT_KNOWN).containsExactly(
-        com.google.bigtable.admin.v2.Instance.Type.TYPE_UNSPECIFIED,
-        com.google.bigtable.admin.v2.Instance.Type.UNRECOGNIZED
-    );
-
-    // Make sure everything else has exactly 1 mapping
-    modelToProtoMap.removeAll(Instance.Type.NOT_KNOWN);
-
-    for (Instance.Type modelState : modelToProtoMap.keySet()) {
-      Collection<com.google.bigtable.admin.v2.Instance.Type> protoStates = modelToProtoMap
-          .get(modelState);
-
-      assertThat(protoStates).hasSize(1);
-    }
+    assertThat(actualModelValues).containsExactlyElementsIn(validModelValues);
   }
 
   @Test
   public void testStateEnumUpToDate() {
-    Multimap<Instance.State, com.google.bigtable.admin.v2.Instance.State> modelToProtoMap =
-        ArrayListMultimap.create();
+    List<com.google.bigtable.admin.v2.Instance.State> validProtoValues =
+        Lists.newArrayList(com.google.bigtable.admin.v2.Instance.State.values());
 
-    for (com.google.bigtable.admin.v2.Instance.State protoValue : com.google.bigtable.admin.v2.Instance.State
-        .values()) {
+    List<Instance.State> validModelValues = Lists.newArrayList(Instance.State.values());
+
+    List<Instance.State> actualModelValues = Lists.newArrayList();
+
+    for (com.google.bigtable.admin.v2.Instance.State protoValue : validProtoValues) {
       Instance.State modelValue = Instance.State.fromProto(protoValue);
-      modelToProtoMap.put(modelValue, protoValue);
+      actualModelValues.add(modelValue);
     }
 
-    // Make sure all model values are used
-    assertThat(modelToProtoMap.keys()).containsAllIn(Arrays.asList(Instance.State.values()));
-
-    // Make sure unknown is handled properly (it has multiple mappings)
-    assertThat(modelToProtoMap).valuesForKey(Instance.State.NOT_KNOWN).containsExactly(
-        com.google.bigtable.admin.v2.Instance.State.STATE_NOT_KNOWN,
-        com.google.bigtable.admin.v2.Instance.State.UNRECOGNIZED
-    );
-
-    // Make sure everything else has exactly 1 mapping
-    modelToProtoMap.removeAll(Instance.State.NOT_KNOWN);
-
-    for (Instance.State modelState : modelToProtoMap.keySet()) {
-      Collection<com.google.bigtable.admin.v2.Instance.State> protoStates = modelToProtoMap
-          .get(modelState);
-
-      assertThat(protoStates).hasSize(1);
-    }
+    assertThat(actualModelValues).containsExactlyElementsIn(validModelValues);
   }
 }

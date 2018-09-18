@@ -96,7 +96,6 @@ public final class CreateInstanceRequest {
   @SuppressWarnings("WeakerAccess")
   public CreateInstanceRequest setType(@Nonnull Instance.Type type) {
     Preconditions.checkNotNull(type);
-    Preconditions.checkArgument(type != Instance.Type.NOT_KNOWN, "Type must be specified");
     builder.getInstanceBuilder().setType(type.toProto());
     return this;
   }

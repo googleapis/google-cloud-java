@@ -18,6 +18,7 @@ package com.google.cloud.bigtable.admin.v2.models;
 import com.google.api.core.InternalApi;
 import com.google.bigtable.admin.v2.TableName;
 import com.google.common.base.Objects;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import java.util.List;
@@ -50,7 +51,11 @@ public final class Table {
      * The table can serve Data API requests from this cluster. Depending on replication delay,
      * reads may not immediately reflect the state of the table in other clusters.
      */
-    READY(com.google.bigtable.admin.v2.Table.ClusterState.ReplicationState.READY);
+    READY(com.google.bigtable.admin.v2.Table.ClusterState.ReplicationState.READY),
+
+    /** The replication state of table is not known by this client. Please upgrade your client. */
+    UNRECOGNIZED(com.google.bigtable.admin.v2.Table.ClusterState.ReplicationState.UNRECOGNIZED);
+
 
     private final com.google.bigtable.admin.v2.Table.ClusterState.ReplicationState proto;
 
@@ -60,12 +65,14 @@ public final class Table {
      */
     @InternalApi
     public static ReplicationState fromProto(com.google.bigtable.admin.v2.Table.ClusterState.ReplicationState proto) {
+      Preconditions.checkNotNull(proto);
+
       for (ReplicationState state : values()) {
         if (state.proto.equals(proto)) {
           return state;
         }
       }
-      return NOT_KNOWN;
+      return UNRECOGNIZED;
     }
 
     ReplicationState(com.google.bigtable.admin.v2.Table.ClusterState.ReplicationState proto) {

@@ -16,6 +16,7 @@
 package com.google.cloud.bigtable.admin.v2.models;
 
 import com.google.api.core.InternalApi;
+import com.google.common.base.Preconditions;
 
 /** Storage media types for persisting Bigtable data. */
 public enum StorageType {
@@ -24,7 +25,9 @@ public enum StorageType {
   /** Flash (SSD) storage should be used. */
   HDD(com.google.bigtable.admin.v2.StorageType.HDD),
   /** Magnetic drive (HDD) storage should be used. */
-  SSD(com.google.bigtable.admin.v2.StorageType.SSD);
+  SSD(com.google.bigtable.admin.v2.StorageType.SSD),
+  /** The storage type is not known by this client. Please upgrade your client. */
+  UNRECOGNIZED(com.google.bigtable.admin.v2.StorageType.UNRECOGNIZED);
 
   private final com.google.bigtable.admin.v2.StorageType proto;
 
@@ -34,12 +37,14 @@ public enum StorageType {
    */
   @InternalApi
   public static StorageType fromProto(com.google.bigtable.admin.v2.StorageType proto) {
+    Preconditions.checkNotNull(proto);
+
     for (StorageType type : values()) {
       if (type.proto.equals(proto)) {
         return type;
       }
     }
-    return NOT_KNOWN;
+    return UNRECOGNIZED;
   }
 
   /**

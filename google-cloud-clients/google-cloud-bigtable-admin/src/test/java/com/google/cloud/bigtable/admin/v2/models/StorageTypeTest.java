@@ -17,10 +17,8 @@ package com.google.cloud.bigtable.admin.v2.models;
 
 import static com.google.common.truth.Truth.assertThat;
 
-import com.google.common.collect.ArrayListMultimap;
-import com.google.common.collect.Multimap;
-import java.util.Arrays;
-import java.util.Collection;
+import com.google.common.collect.Lists;
+import java.util.List;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -30,32 +28,18 @@ public class StorageTypeTest {
 
   @Test
   public void testUpToDate() {
-    Multimap<StorageType, com.google.bigtable.admin.v2.StorageType> modelToProtoMap =
-        ArrayListMultimap.create();
+    List<com.google.bigtable.admin.v2.StorageType> validProtoValues =
+        Lists.newArrayList(com.google.bigtable.admin.v2.StorageType.values());
 
-    for (com.google.bigtable.admin.v2.StorageType protoValue : com.google.bigtable.admin.v2.StorageType
-        .values()) {
+    List<StorageType> validModelValues = Lists.newArrayList(StorageType.values());
+
+    List<StorageType> actualModelValues = Lists.newArrayList();
+
+    for (com.google.bigtable.admin.v2.StorageType protoValue : validProtoValues) {
       StorageType modelValue = StorageType.fromProto(protoValue);
-      modelToProtoMap.put(modelValue, protoValue);
+      actualModelValues.add(modelValue);
     }
 
-    // Make sure all model values are used
-    assertThat(modelToProtoMap.keys()).containsAllIn(Arrays.asList(StorageType.values()));
-
-    // Make sure unknown is handled properly (it has multiple mappings)
-    assertThat(modelToProtoMap).valuesForKey(StorageType.NOT_KNOWN).containsExactly(
-        com.google.bigtable.admin.v2.StorageType.UNRECOGNIZED,
-        com.google.bigtable.admin.v2.StorageType.STORAGE_TYPE_UNSPECIFIED
-    );
-
-    // Make sure everything else has exactly 1 mapping
-    modelToProtoMap.removeAll(StorageType.NOT_KNOWN);
-
-    for (StorageType modelState : modelToProtoMap.keySet()) {
-      Collection<com.google.bigtable.admin.v2.StorageType> protoStates = modelToProtoMap
-          .get(modelState);
-
-      assertThat(protoStates).hasSize(1);
-    }
+    assertThat(actualModelValues).containsExactlyElementsIn(validModelValues);
   }
 }

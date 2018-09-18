@@ -31,12 +31,12 @@ import javax.annotation.Nonnull;
  */
 public final class Instance {
   public enum Type {
-    /** The type of the instance is unknown */
-    NOT_KNOWN(com.google.bigtable.admin.v2.Instance.Type.TYPE_UNSPECIFIED),
     /** An instance meant for production use. `serve_nodes` must be set on the cluster. */
     PRODUCTION(com.google.bigtable.admin.v2.Instance.Type.PRODUCTION),
     /** The instance is meant for development and testing purposes only. */
-    DEVELOPMENT(com.google.bigtable.admin.v2.Instance.Type.DEVELOPMENT);
+    DEVELOPMENT(com.google.bigtable.admin.v2.Instance.Type.DEVELOPMENT),
+    /** The type of instance is not known by this client. Please upgrade your client. */
+    UNRECOGNIZED(com.google.bigtable.admin.v2.Instance.Type.UNRECOGNIZED);
 
     private final com.google.bigtable.admin.v2.Instance.Type proto;
 
@@ -46,12 +46,15 @@ public final class Instance {
      */
     @InternalApi
     public static Type fromProto(com.google.bigtable.admin.v2.Instance.Type proto) {
+      Preconditions.checkNotNull(proto);
+      Preconditions.checkArgument(proto != com.google.bigtable.admin.v2.Instance.Type.TYPE_UNSPECIFIED,
+          "Server instance type must always be specified");
       for (Type type : values()) {
         if (type.proto.equals(proto)) {
           return type;
         }
       }
-      return NOT_KNOWN;
+      return UNRECOGNIZED;
     }
 
     Type(com.google.bigtable.admin.v2.Instance.Type proto) {
@@ -69,7 +72,7 @@ public final class Instance {
   }
 
   public enum State {
-    /** The state of the instance could not be determined. */
+    /** The state of the instance could not be determined by the server. */
     NOT_KNOWN(com.google.bigtable.admin.v2.Instance.State.STATE_NOT_KNOWN),
     /** The instance has been successfully created and can serve requests to its tables. */
     READY(com.google.bigtable.admin.v2.Instance.State.READY),
@@ -77,7 +80,9 @@ public final class Instance {
      * The instance is currently being created, and may be destroyed if the creation process
      * encounters an error.
      */
-    CREATING(com.google.bigtable.admin.v2.Instance.State.CREATING);
+    CREATING(com.google.bigtable.admin.v2.Instance.State.CREATING),
+    /** The state of instance is not known by this client. Please upgrade your client. */
+    UNRECOGNIZED(com.google.bigtable.admin.v2.Instance.State.UNRECOGNIZED);
 
     private final com.google.bigtable.admin.v2.Instance.State proto;
 
@@ -87,12 +92,13 @@ public final class Instance {
      */
     @InternalApi
     public static State fromProto(com.google.bigtable.admin.v2.Instance.State proto) {
+      Preconditions.checkNotNull(proto);
       for (State state : values()) {
         if (state.proto.equals(proto)) {
           return state;
         }
       }
-      return NOT_KNOWN;
+      return UNRECOGNIZED;
     }
 
     State(com.google.bigtable.admin.v2.Instance.State proto) {
