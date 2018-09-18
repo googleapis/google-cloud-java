@@ -846,6 +846,143 @@ public class KeyManagementServiceClientTest {
 
   @Test
   @SuppressWarnings("all")
+  public void getPublicKeyTest() {
+    String pem = "pem110872";
+    PublicKey expectedResponse = PublicKey.newBuilder().setPem(pem).build();
+    mockKeyManagementService.addResponse(expectedResponse);
+
+    CryptoKeyVersionName name =
+        CryptoKeyVersionName.of(
+            "[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
+
+    PublicKey actualResponse = client.getPublicKey(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<GeneratedMessageV3> actualRequests = mockKeyManagementService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetPublicKeyRequest actualRequest = (GetPublicKeyRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, CryptoKeyVersionName.parse(actualRequest.getName()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getPublicKeyExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockKeyManagementService.addException(exception);
+
+    try {
+      CryptoKeyVersionName name =
+          CryptoKeyVersionName.of(
+              "[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
+
+      client.getPublicKey(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void asymmetricDecryptTest() {
+    ByteString plaintext = ByteString.copyFromUtf8("-9");
+    AsymmetricDecryptResponse expectedResponse =
+        AsymmetricDecryptResponse.newBuilder().setPlaintext(plaintext).build();
+    mockKeyManagementService.addResponse(expectedResponse);
+
+    CryptoKeyVersionName name =
+        CryptoKeyVersionName.of(
+            "[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
+    ByteString ciphertext = ByteString.copyFromUtf8("-72");
+
+    AsymmetricDecryptResponse actualResponse = client.asymmetricDecrypt(name, ciphertext);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<GeneratedMessageV3> actualRequests = mockKeyManagementService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    AsymmetricDecryptRequest actualRequest = (AsymmetricDecryptRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, CryptoKeyVersionName.parse(actualRequest.getName()));
+    Assert.assertEquals(ciphertext, actualRequest.getCiphertext());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void asymmetricDecryptExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockKeyManagementService.addException(exception);
+
+    try {
+      CryptoKeyVersionName name =
+          CryptoKeyVersionName.of(
+              "[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
+      ByteString ciphertext = ByteString.copyFromUtf8("-72");
+
+      client.asymmetricDecrypt(name, ciphertext);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void asymmetricSignTest() {
+    ByteString signature = ByteString.copyFromUtf8("106");
+    AsymmetricSignResponse expectedResponse =
+        AsymmetricSignResponse.newBuilder().setSignature(signature).build();
+    mockKeyManagementService.addResponse(expectedResponse);
+
+    CryptoKeyVersionName name =
+        CryptoKeyVersionName.of(
+            "[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
+    Digest digest = Digest.newBuilder().build();
+
+    AsymmetricSignResponse actualResponse = client.asymmetricSign(name, digest);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<GeneratedMessageV3> actualRequests = mockKeyManagementService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    AsymmetricSignRequest actualRequest = (AsymmetricSignRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, CryptoKeyVersionName.parse(actualRequest.getName()));
+    Assert.assertEquals(digest, actualRequest.getDigest());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void asymmetricSignExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockKeyManagementService.addException(exception);
+
+    try {
+      CryptoKeyVersionName name =
+          CryptoKeyVersionName.of(
+              "[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
+      Digest digest = Digest.newBuilder().build();
+
+      client.asymmetricSign(name, digest);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void setIamPolicyTest() {
     int version = 351608024;
     ByteString etag = ByteString.copyFromUtf8("21");

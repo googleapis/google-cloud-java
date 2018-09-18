@@ -110,7 +110,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.Timestamp readTime_;
   /**
    * <pre>
-   * Required. Time the snapshot was taken.
+   * Time the snapshot was taken.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp read_time = 1;</code>
@@ -120,7 +120,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. Time the snapshot was taken.
+   * Time the snapshot was taken.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp read_time = 1;</code>
@@ -130,7 +130,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. Time the snapshot was taken.
+   * Time the snapshot was taken.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp read_time = 1;</code>
@@ -143,7 +143,7 @@ private static final long serialVersionUID = 0L;
   private com.google.cloud.asset.v1beta1.OutputConfig outputConfig_;
   /**
    * <pre>
-   * Required. Output configuration indicating where the results were output to.
+   * Output configuration indicating where the results were output to.
    * All results are in JSON format.
    * </pre>
    *
@@ -154,7 +154,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. Output configuration indicating where the results were output to.
+   * Output configuration indicating where the results were output to.
    * All results are in JSON format.
    * </pre>
    *
@@ -165,7 +165,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. Output configuration indicating where the results were output to.
+   * Output configuration indicating where the results were output to.
    * All results are in JSON format.
    * </pre>
    *
@@ -532,7 +532,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> readTimeBuilder_;
     /**
      * <pre>
-     * Required. Time the snapshot was taken.
+     * Time the snapshot was taken.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp read_time = 1;</code>
@@ -542,7 +542,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Time the snapshot was taken.
+     * Time the snapshot was taken.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp read_time = 1;</code>
@@ -556,7 +556,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Time the snapshot was taken.
+     * Time the snapshot was taken.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp read_time = 1;</code>
@@ -576,7 +576,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Time the snapshot was taken.
+     * Time the snapshot was taken.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp read_time = 1;</code>
@@ -594,7 +594,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Time the snapshot was taken.
+     * Time the snapshot was taken.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp read_time = 1;</code>
@@ -616,7 +616,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Time the snapshot was taken.
+     * Time the snapshot was taken.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp read_time = 1;</code>
@@ -634,7 +634,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Time the snapshot was taken.
+     * Time the snapshot was taken.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp read_time = 1;</code>
@@ -646,7 +646,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Time the snapshot was taken.
+     * Time the snapshot was taken.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp read_time = 1;</code>
@@ -661,7 +661,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Time the snapshot was taken.
+     * Time the snapshot was taken.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp read_time = 1;</code>
@@ -685,7 +685,7 @@ private static final long serialVersionUID = 0L;
         com.google.cloud.asset.v1beta1.OutputConfig, com.google.cloud.asset.v1beta1.OutputConfig.Builder, com.google.cloud.asset.v1beta1.OutputConfigOrBuilder> outputConfigBuilder_;
     /**
      * <pre>
-     * Required. Output configuration indicating where the results were output to.
+     * Output configuration indicating where the results were output to.
      * All results are in JSON format.
      * </pre>
      *
@@ -696,7 +696,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Output configuration indicating where the results were output to.
+     * Output configuration indicating where the results were output to.
      * All results are in JSON format.
      * </pre>
      *
@@ -711,7 +711,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Output configuration indicating where the results were output to.
+     * Output configuration indicating where the results were output to.
      * All results are in JSON format.
      * </pre>
      *
@@ -732,7 +732,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Output configuration indicating where the results were output to.
+     * Output configuration indicating where the results were output to.
      * All results are in JSON format.
      * </pre>
      *
@@ -751,7 +751,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Output configuration indicating where the results were output to.
+     * Output configuration indicating where the results were output to.
      * All results are in JSON format.
      * </pre>
      *
@@ -774,7 +774,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Output configuration indicating where the results were output to.
+     * Output configuration indicating where the results were output to.
      * All results are in JSON format.
      * </pre>
      *
@@ -793,7 +793,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Output configuration indicating where the results were output to.
+     * Output configuration indicating where the results were output to.
      * All results are in JSON format.
      * </pre>
      *
@@ -806,7 +806,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Output configuration indicating where the results were output to.
+     * Output configuration indicating where the results were output to.
      * All results are in JSON format.
      * </pre>
      *
@@ -822,7 +822,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Output configuration indicating where the results were output to.
+     * Output configuration indicating where the results were output to.
      * All results are in JSON format.
      * </pre>
      *

@@ -69,21 +69,19 @@ public class ITStorageSnippets {
   private static final Logger log = Logger.getLogger(ITStorageSnippets.class.getName());
   private static final String BUCKET = RemoteStorageHelper.generateBucketName();
   private static final byte[] BLOB_BYTE_CONTENT = {0xD, 0xE, 0xA, 0xD};
-  private static final String USER_EMAIL = "google-cloud-java-tests@"
-      + "java-docs-samples-tests.iam.gserviceaccount.com";
+  private static final String USER_EMAIL =
+      "google-cloud-java-tests@" + "java-docs-samples-tests.iam.gserviceaccount.com";
 
-  private static final String KMS_KEY_NAME = "projects/gcloud-devel/locations/us/"
-      + "keyRings/gcs_kms_key_ring_us/cryptoKeys/key";
+  private static final String KMS_KEY_NAME =
+      "projects/gcloud-devel/locations/us/" + "keyRings/gcs_kms_key_ring_us/cryptoKeys/key";
 
   private static Storage storage;
   private static StorageSnippets storageSnippets;
   private static List<String> bucketsToCleanUp;
 
-  @Rule
-  public ExpectedException thrown = ExpectedException.none();
+  @Rule public ExpectedException thrown = ExpectedException.none();
 
-  @Rule
-  public Timeout globalTimeout = Timeout.seconds(300);
+  @Rule public Timeout globalTimeout = Timeout.seconds(300);
 
   @BeforeClass
   public static void beforeClass() {
@@ -171,8 +169,8 @@ public class ITStorageSnippets {
 
     String encryptionKey2 = "wnxMO0w+dmxribu7rICJ+Q2ES9TLpFRIDy3/L7HN5ZA=";
 
-    blob = storageSnippets.rotateBlobEncryptionKey(
-        BUCKET, blobName, encryptionKey1, encryptionKey2);
+    blob =
+        storageSnippets.rotateBlobEncryptionKey(BUCKET, blobName, encryptionKey1, encryptionKey2);
 
     assertNotNull(blob);
     encryptedContent = storageSnippets.readEncryptedBlob(BUCKET, blobName, encryptionKey2);
@@ -211,8 +209,9 @@ public class ITStorageSnippets {
     Blob blob =
         storageSnippets.createBlobFromInputStream(BUCKET, "test-create-blob-from-input-stream");
     assertNotNull(blob);
-    assertTrue(storageSnippets.deleteBlobFromIdWithGeneration(
-        BUCKET, "test-create-blob-from-input-stream", blob.getGeneration()));
+    assertTrue(
+        storageSnippets.deleteBlobFromIdWithGeneration(
+            BUCKET, "test-create-blob-from-input-stream", blob.getGeneration()));
   }
 
   @Test
@@ -261,11 +260,11 @@ public class ITStorageSnippets {
   public void testReadWriteAndSignUrl() throws IOException {
     String blobName = "text-read-write-sign-url";
     byte[] content = "Hello, World!".getBytes(UTF_8);
-    Blob blob = storage.create(
-        BlobInfo.newBuilder(BUCKET, blobName).build(), content);
-    assertArrayEquals(content,
-        storageSnippets.readBlobFromId(BUCKET, blobName, blob.getGeneration()));
-    assertArrayEquals(content,
+    Blob blob = storage.create(BlobInfo.newBuilder(BUCKET, blobName).build(), content);
+    assertArrayEquals(
+        content, storageSnippets.readBlobFromId(BUCKET, blobName, blob.getGeneration()));
+    assertArrayEquals(
+        content,
         storageSnippets.readBlobFromStringsWithGeneration(BUCKET, blobName, blob.getGeneration()));
     storageSnippets.readerFromId(BUCKET, blobName);
     storageSnippets.readerFromStrings(BUCKET, blobName);
@@ -277,8 +276,9 @@ public class ITStorageSnippets {
       assertEquals(content.length, responseStream.read(readBytes));
       assertArrayEquals(content, readBytes);
     }
-    signedUrl = storageSnippets.signUrlWithSigner(BUCKET, blobName,
-        System.getenv("GOOGLE_APPLICATION_CREDENTIALS"));
+    signedUrl =
+        storageSnippets.signUrlWithSigner(
+            BUCKET, blobName, System.getenv("GOOGLE_APPLICATION_CREDENTIALS"));
     connection = signedUrl.openConnection();
     try (InputStream responseStream = connection.getInputStream()) {
       assertEquals(content.length, responseStream.read(readBytes));
@@ -342,7 +342,7 @@ public class ITStorageSnippets {
     storage.createAcl(BUCKET, Acl.of(new User(USER_EMAIL), Role.READER));
     Acl userAcl = storageSnippets.getBucketAcl(BUCKET, USER_EMAIL);
     assertNotNull(userAcl);
-    assertEquals(USER_EMAIL, ((User)userAcl.getEntity()).getEmail());
+    assertEquals(USER_EMAIL, ((User) userAcl.getEntity()).getEmail());
 
     assertTrue(storageSnippets.deleteBucketAcl(BUCKET));
     assertNull(storageSnippets.getBucketAcl(BUCKET));
@@ -371,21 +371,23 @@ public class ITStorageSnippets {
     assertNotNull(storageSnippets.createBlobAcl(BUCKET, blobName, createdBlob.getGeneration()));
     Acl updatedAcl = storageSnippets.updateBlobAcl(BUCKET, blobName, createdBlob.getGeneration());
     assertEquals(Acl.Role.OWNER, updatedAcl.getRole());
-    Set<Acl> acls = Sets.newHashSet(
-        storageSnippets.listBlobAcls(BUCKET, blobName, createdBlob.getGeneration()));
+    Set<Acl> acls =
+        Sets.newHashSet(
+            storageSnippets.listBlobAcls(BUCKET, blobName, createdBlob.getGeneration()));
     assertTrue(acls.contains(updatedAcl));
 
     assertNull(storageSnippets.getBlobAcl(BUCKET, blobName, USER_EMAIL));
     storage.createAcl(BlobId.of(BUCKET, blobName), Acl.of(new User(USER_EMAIL), Role.READER));
     Acl userAcl = storageSnippets.getBlobAcl(BUCKET, blobName, USER_EMAIL);
     assertNotNull(userAcl);
-    assertEquals(USER_EMAIL, ((User)userAcl.getEntity()).getEmail());
+    assertEquals(USER_EMAIL, ((User) userAcl.getEntity()).getEmail());
 
     updatedAcl = storageSnippets.blobToPublicRead(BUCKET, blobName, createdBlob.getGeneration());
     assertEquals(Acl.Role.READER, updatedAcl.getRole());
     assertEquals(User.ofAllUsers(), updatedAcl.getEntity());
-    acls = Sets.newHashSet(
-        storageSnippets.listBlobAcls(BUCKET, blobName, createdBlob.getGeneration()));
+    acls =
+        Sets.newHashSet(
+            storageSnippets.listBlobAcls(BUCKET, blobName, createdBlob.getGeneration()));
     assertTrue(acls.contains(updatedAcl));
 
     assertNotNull(storageSnippets.getBlobAcl(BUCKET, blobName, createdBlob.getGeneration()));
@@ -422,6 +424,18 @@ public class ITStorageSnippets {
   }
 
   @Test
+  public void testBlobDownload() throws Exception {
+    String blobName = "test-create-empty-blob";
+    BlobId blobId = BlobId.of(BUCKET, blobName);
+    BlobInfo blobInfo = BlobInfo.newBuilder(blobId).build();
+    Blob remoteBlob = storage.create(blobInfo, BLOB_BYTE_CONTENT);
+    assertNotNull(remoteBlob);
+    storageSnippets.downloadFile(BUCKET, blobName, Paths.get(blobName));
+    byte[] readBytes = Files.readAllBytes(Paths.get(blobName));
+    assertArrayEquals(BLOB_BYTE_CONTENT, readBytes);
+  }
+
+  @Test
   public void testRequesterPays() throws Exception {
     Bucket bucket = storageSnippets.enableRequesterPays(BUCKET);
     assertTrue(bucket.requesterPays());
@@ -429,11 +443,11 @@ public class ITStorageSnippets {
     assertTrue(bucket.requesterPays());
     String projectId = ServiceOptions.getDefaultProjectId();
     String blobName = "test-create-empty-blob-requester-pays";
-    Blob remoteBlob = bucket.create(blobName, BLOB_BYTE_CONTENT,
-        BlobTargetOption.userProject(projectId));
+    Blob remoteBlob =
+        bucket.create(blobName, BLOB_BYTE_CONTENT, BlobTargetOption.userProject(projectId));
     assertNotNull(remoteBlob);
-    storageSnippets.downloadFileUsingRequesterPays(projectId, BUCKET, blobName,
-        Paths.get(blobName));
+    storageSnippets.downloadFileUsingRequesterPays(
+        projectId, BUCKET, blobName, Paths.get(blobName));
     byte[] readBytes = Files.readAllBytes(Paths.get(blobName));
     assertArrayEquals(BLOB_BYTE_CONTENT, readBytes);
     bucket = storageSnippets.disableRequesterPays(BUCKET);
@@ -441,10 +455,10 @@ public class ITStorageSnippets {
   }
 
   @Test
-  public void testDefaultKMSKey(){
+  public void testDefaultKMSKey() {
     Bucket bucket = storageSnippets.setDefaultKmsKey(BUCKET, KMS_KEY_NAME);
     assertEquals(KMS_KEY_NAME, bucket.getDefaultKmsKeyName());
     // Remove default key
-    storageSnippets.setDefaultKmsKey(BUCKET,null);
+    storageSnippets.setDefaultKmsKey(BUCKET, null);
   }
 }

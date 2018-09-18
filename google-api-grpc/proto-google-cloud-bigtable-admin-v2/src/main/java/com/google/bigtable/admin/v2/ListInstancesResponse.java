@@ -176,6 +176,7 @@ private static final long serialVersionUID = 0L;
    * Instances whose Clusters are all in one of the failed locations
    * may be missing from `instances`, and Instances with at least one
    * Cluster in a failed location may only have partial information returned.
+   * Values are of the form `projects/&lt;project&gt;/locations/&lt;zone_id&gt;`
    * </pre>
    *
    * <code>repeated string failed_locations = 2;</code>
@@ -191,6 +192,7 @@ private static final long serialVersionUID = 0L;
    * Instances whose Clusters are all in one of the failed locations
    * may be missing from `instances`, and Instances with at least one
    * Cluster in a failed location may only have partial information returned.
+   * Values are of the form `projects/&lt;project&gt;/locations/&lt;zone_id&gt;`
    * </pre>
    *
    * <code>repeated string failed_locations = 2;</code>
@@ -205,6 +207,7 @@ private static final long serialVersionUID = 0L;
    * Instances whose Clusters are all in one of the failed locations
    * may be missing from `instances`, and Instances with at least one
    * Cluster in a failed location may only have partial information returned.
+   * Values are of the form `projects/&lt;project&gt;/locations/&lt;zone_id&gt;`
    * </pre>
    *
    * <code>repeated string failed_locations = 2;</code>
@@ -219,6 +222,7 @@ private static final long serialVersionUID = 0L;
    * Instances whose Clusters are all in one of the failed locations
    * may be missing from `instances`, and Instances with at least one
    * Cluster in a failed location may only have partial information returned.
+   * Values are of the form `projects/&lt;project&gt;/locations/&lt;zone_id&gt;`
    * </pre>
    *
    * <code>repeated string failed_locations = 2;</code>
@@ -232,9 +236,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object nextPageToken_;
   /**
    * <pre>
-   * Set if not all instances could be returned in a single response.
-   * Pass this value to `page_token` in another request to get the next
-   * page of results.
+   * DEPRECATED: This field is unused and ignored.
    * </pre>
    *
    * <code>string next_page_token = 3;</code>
@@ -253,9 +255,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Set if not all instances could be returned in a single response.
-   * Pass this value to `page_token` in another request to get the next
-   * page of results.
+   * DEPRECATED: This field is unused and ignored.
    * </pre>
    *
    * <code>string next_page_token = 3;</code>
@@ -1000,6 +1000,7 @@ private static final long serialVersionUID = 0L;
      * Instances whose Clusters are all in one of the failed locations
      * may be missing from `instances`, and Instances with at least one
      * Cluster in a failed location may only have partial information returned.
+     * Values are of the form `projects/&lt;project&gt;/locations/&lt;zone_id&gt;`
      * </pre>
      *
      * <code>repeated string failed_locations = 2;</code>
@@ -1015,6 +1016,7 @@ private static final long serialVersionUID = 0L;
      * Instances whose Clusters are all in one of the failed locations
      * may be missing from `instances`, and Instances with at least one
      * Cluster in a failed location may only have partial information returned.
+     * Values are of the form `projects/&lt;project&gt;/locations/&lt;zone_id&gt;`
      * </pre>
      *
      * <code>repeated string failed_locations = 2;</code>
@@ -1029,6 +1031,7 @@ private static final long serialVersionUID = 0L;
      * Instances whose Clusters are all in one of the failed locations
      * may be missing from `instances`, and Instances with at least one
      * Cluster in a failed location may only have partial information returned.
+     * Values are of the form `projects/&lt;project&gt;/locations/&lt;zone_id&gt;`
      * </pre>
      *
      * <code>repeated string failed_locations = 2;</code>
@@ -1043,6 +1046,7 @@ private static final long serialVersionUID = 0L;
      * Instances whose Clusters are all in one of the failed locations
      * may be missing from `instances`, and Instances with at least one
      * Cluster in a failed location may only have partial information returned.
+     * Values are of the form `projects/&lt;project&gt;/locations/&lt;zone_id&gt;`
      * </pre>
      *
      * <code>repeated string failed_locations = 2;</code>
@@ -1058,6 +1062,7 @@ private static final long serialVersionUID = 0L;
      * Instances whose Clusters are all in one of the failed locations
      * may be missing from `instances`, and Instances with at least one
      * Cluster in a failed location may only have partial information returned.
+     * Values are of the form `projects/&lt;project&gt;/locations/&lt;zone_id&gt;`
      * </pre>
      *
      * <code>repeated string failed_locations = 2;</code>
@@ -1079,6 +1084,7 @@ private static final long serialVersionUID = 0L;
      * Instances whose Clusters are all in one of the failed locations
      * may be missing from `instances`, and Instances with at least one
      * Cluster in a failed location may only have partial information returned.
+     * Values are of the form `projects/&lt;project&gt;/locations/&lt;zone_id&gt;`
      * </pre>
      *
      * <code>repeated string failed_locations = 2;</code>
@@ -1100,6 +1106,7 @@ private static final long serialVersionUID = 0L;
      * Instances whose Clusters are all in one of the failed locations
      * may be missing from `instances`, and Instances with at least one
      * Cluster in a failed location may only have partial information returned.
+     * Values are of the form `projects/&lt;project&gt;/locations/&lt;zone_id&gt;`
      * </pre>
      *
      * <code>repeated string failed_locations = 2;</code>
@@ -1119,6 +1126,7 @@ private static final long serialVersionUID = 0L;
      * Instances whose Clusters are all in one of the failed locations
      * may be missing from `instances`, and Instances with at least one
      * Cluster in a failed location may only have partial information returned.
+     * Values are of the form `projects/&lt;project&gt;/locations/&lt;zone_id&gt;`
      * </pre>
      *
      * <code>repeated string failed_locations = 2;</code>
@@ -1136,6 +1144,7 @@ private static final long serialVersionUID = 0L;
      * Instances whose Clusters are all in one of the failed locations
      * may be missing from `instances`, and Instances with at least one
      * Cluster in a failed location may only have partial information returned.
+     * Values are of the form `projects/&lt;project&gt;/locations/&lt;zone_id&gt;`
      * </pre>
      *
      * <code>repeated string failed_locations = 2;</code>
@@ -1155,9 +1164,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object nextPageToken_ = "";
     /**
      * <pre>
-     * Set if not all instances could be returned in a single response.
-     * Pass this value to `page_token` in another request to get the next
-     * page of results.
+     * DEPRECATED: This field is unused and ignored.
      * </pre>
      *
      * <code>string next_page_token = 3;</code>
@@ -1176,9 +1183,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Set if not all instances could be returned in a single response.
-     * Pass this value to `page_token` in another request to get the next
-     * page of results.
+     * DEPRECATED: This field is unused and ignored.
      * </pre>
      *
      * <code>string next_page_token = 3;</code>
@@ -1198,9 +1203,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Set if not all instances could be returned in a single response.
-     * Pass this value to `page_token` in another request to get the next
-     * page of results.
+     * DEPRECATED: This field is unused and ignored.
      * </pre>
      *
      * <code>string next_page_token = 3;</code>
@@ -1217,9 +1220,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Set if not all instances could be returned in a single response.
-     * Pass this value to `page_token` in another request to get the next
-     * page of results.
+     * DEPRECATED: This field is unused and ignored.
      * </pre>
      *
      * <code>string next_page_token = 3;</code>
@@ -1232,9 +1233,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Set if not all instances could be returned in a single response.
-     * Pass this value to `page_token` in another request to get the next
-     * page of results.
+     * DEPRECATED: This field is unused and ignored.
      * </pre>
      *
      * <code>string next_page_token = 3;</code>

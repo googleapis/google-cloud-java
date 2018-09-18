@@ -40,7 +40,6 @@ public class EnhancedBigtableTableAdminStub extends GrpcBigtableTableAdminStub {
   public static EnhancedBigtableTableAdminStub createEnhanced(
       BigtableTableAdminStubSettings settings)
       throws IOException {
-
     return new EnhancedBigtableTableAdminStub(settings, ClientContext.create(settings));
   }
 
@@ -83,3 +82,4 @@ public class EnhancedBigtableTableAdminStub extends GrpcBigtableTableAdminStub {
     return awaitReplicationCallable;
   }
 }
+

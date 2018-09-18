@@ -60,6 +60,11 @@ public final class KmsProto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_kms_v1_GetCryptoKeyVersionRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_google_cloud_kms_v1_GetPublicKeyRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_kms_v1_GetPublicKeyRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_google_cloud_kms_v1_CreateKeyRingRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -95,6 +100,16 @@ public final class KmsProto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_kms_v1_DecryptRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_google_cloud_kms_v1_AsymmetricSignRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_kms_v1_AsymmetricSignRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_google_cloud_kms_v1_AsymmetricDecryptRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_kms_v1_AsymmetricDecryptRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_google_cloud_kms_v1_DecryptResponse_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -104,6 +119,16 @@ public final class KmsProto {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_kms_v1_EncryptResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_google_cloud_kms_v1_AsymmetricSignResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_kms_v1_AsymmetricSignResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_google_cloud_kms_v1_AsymmetricDecryptResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_kms_v1_AsymmetricDecryptResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_google_cloud_kms_v1_UpdateCryptoKeyPrimaryVersionRequest_descriptor;
   static final 
@@ -119,6 +144,16 @@ public final class KmsProto {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_kms_v1_RestoreCryptoKeyVersionRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_google_cloud_kms_v1_Digest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_kms_v1_Digest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_google_cloud_kms_v1_LocationMetadata_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_kms_v1_LocationMetadata_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -135,130 +170,160 @@ public final class KmsProto {
       "oogle/protobuf/struct.proto\032\036google/prot" +
       "obuf/wrappers.proto\"L\n\023ListKeyRingsReque" +
       "st\022\016\n\006parent\030\001 \001(\t\022\021\n\tpage_size\030\002 \001(\005\022\022\n" +
-      "\npage_token\030\003 \001(\t\"N\n\025ListCryptoKeysReque" +
-      "st\022\016\n\006parent\030\001 \001(\t\022\021\n\tpage_size\030\002 \001(\005\022\022\n" +
-      "\npage_token\030\003 \001(\t\"U\n\034ListCryptoKeyVersio" +
-      "nsRequest\022\016\n\006parent\030\001 \001(\t\022\021\n\tpage_size\030\002" +
-      " \001(\005\022\022\n\npage_token\030\003 \001(\t\"t\n\024ListKeyRings" +
-      "Response\022/\n\tkey_rings\030\001 \003(\0132\034.google.clo" +
-      "ud.kms.v1.KeyRing\022\027\n\017next_page_token\030\002 \001" +
-      "(\t\022\022\n\ntotal_size\030\003 \001(\005\"z\n\026ListCryptoKeys" +
-      "Response\0223\n\013crypto_keys\030\001 \003(\0132\036.google.c" +
-      "loud.kms.v1.CryptoKey\022\027\n\017next_page_token" +
-      "\030\002 \001(\t\022\022\n\ntotal_size\030\003 \001(\005\"\220\001\n\035ListCrypt" +
-      "oKeyVersionsResponse\022B\n\023crypto_key_versi" +
-      "ons\030\001 \003(\0132%.google.cloud.kms.v1.CryptoKe" +
-      "yVersion\022\027\n\017next_page_token\030\002 \001(\t\022\022\n\ntot" +
-      "al_size\030\003 \001(\005\"!\n\021GetKeyRingRequest\022\014\n\004na" +
-      "me\030\001 \001(\t\"#\n\023GetCryptoKeyRequest\022\014\n\004name\030" +
-      "\001 \001(\t\"*\n\032GetCryptoKeyVersionRequest\022\014\n\004n" +
-      "ame\030\001 \001(\t\"k\n\024CreateKeyRingRequest\022\016\n\006par" +
-      "ent\030\001 \001(\t\022\023\n\013key_ring_id\030\002 \001(\t\022.\n\010key_ri" +
-      "ng\030\003 \001(\0132\034.google.cloud.kms.v1.KeyRing\"s" +
-      "\n\026CreateCryptoKeyRequest\022\016\n\006parent\030\001 \001(\t" +
-      "\022\025\n\rcrypto_key_id\030\002 \001(\t\0222\n\ncrypto_key\030\003 " +
-      "\001(\0132\036.google.cloud.kms.v1.CryptoKey\"r\n\035C" +
-      "reateCryptoKeyVersionRequest\022\016\n\006parent\030\001" +
-      " \001(\t\022A\n\022crypto_key_version\030\002 \001(\0132%.googl" +
-      "e.cloud.kms.v1.CryptoKeyVersion\"}\n\026Updat" +
-      "eCryptoKeyRequest\0222\n\ncrypto_key\030\001 \001(\0132\036." +
-      "google.cloud.kms.v1.CryptoKey\022/\n\013update_" +
-      "mask\030\002 \001(\0132\032.google.protobuf.FieldMask\"\223" +
-      "\001\n\035UpdateCryptoKeyVersionRequest\022A\n\022cryp" +
-      "to_key_version\030\001 \001(\0132%.google.cloud.kms." +
-      "v1.CryptoKeyVersion\022/\n\013update_mask\030\002 \001(\013" +
-      "2\032.google.protobuf.FieldMask\"X\n\016EncryptR" +
-      "equest\022\014\n\004name\030\001 \001(\t\022\021\n\tplaintext\030\002 \001(\014\022" +
-      "%\n\035additional_authenticated_data\030\003 \001(\014\"Y" +
-      "\n\016DecryptRequest\022\014\n\004name\030\001 \001(\t\022\022\n\ncipher" +
-      "text\030\002 \001(\014\022%\n\035additional_authenticated_d" +
-      "ata\030\003 \001(\014\"$\n\017DecryptResponse\022\021\n\tplaintex" +
-      "t\030\001 \001(\014\"3\n\017EncryptResponse\022\014\n\004name\030\001 \001(\t" +
-      "\022\022\n\nciphertext\030\002 \001(\014\"S\n$UpdateCryptoKeyP" +
-      "rimaryVersionRequest\022\014\n\004name\030\001 \001(\t\022\035\n\025cr" +
-      "ypto_key_version_id\030\002 \001(\t\".\n\036DestroyCryp" +
-      "toKeyVersionRequest\022\014\n\004name\030\001 \001(\t\".\n\036Res" +
-      "toreCryptoKeyVersionRequest\022\014\n\004name\030\001 \001(" +
-      "\t2\333\027\n\024KeyManagementService\022\231\001\n\014ListKeyRi" +
-      "ngs\022(.google.cloud.kms.v1.ListKeyRingsRe" +
-      "quest\032).google.cloud.kms.v1.ListKeyRings" +
-      "Response\"4\202\323\344\223\002.\022,/v1/{parent=projects/*" +
-      "/locations/*}/keyRings\022\254\001\n\016ListCryptoKey" +
-      "s\022*.google.cloud.kms.v1.ListCryptoKeysRe" +
-      "quest\032+.google.cloud.kms.v1.ListCryptoKe" +
-      "ysResponse\"A\202\323\344\223\002;\0229/v1/{parent=projects" +
-      "/*/locations/*/keyRings/*}/cryptoKeys\022\325\001" +
-      "\n\025ListCryptoKeyVersions\0221.google.cloud.k" +
-      "ms.v1.ListCryptoKeyVersionsRequest\0322.goo" +
-      "gle.cloud.kms.v1.ListCryptoKeyVersionsRe" +
-      "sponse\"U\202\323\344\223\002O\022M/v1/{parent=projects/*/l" +
-      "ocations/*/keyRings/*/cryptoKeys/*}/cryp" +
-      "toKeyVersions\022\210\001\n\nGetKeyRing\022&.google.cl" +
-      "oud.kms.v1.GetKeyRingRequest\032\034.google.cl" +
-      "oud.kms.v1.KeyRing\"4\202\323\344\223\002.\022,/v1/{name=pr" +
-      "ojects/*/locations/*/keyRings/*}\022\233\001\n\014Get" +
-      "CryptoKey\022(.google.cloud.kms.v1.GetCrypt" +
-      "oKeyRequest\032\036.google.cloud.kms.v1.Crypto" +
-      "Key\"A\202\323\344\223\002;\0229/v1/{name=projects/*/locati" +
-      "ons/*/keyRings/*/cryptoKeys/*}\022\304\001\n\023GetCr" +
-      "yptoKeyVersion\022/.google.cloud.kms.v1.Get" +
-      "CryptoKeyVersionRequest\032%.google.cloud.k" +
-      "ms.v1.CryptoKeyVersion\"U\202\323\344\223\002O\022M/v1/{nam" +
-      "e=projects/*/locations/*/keyRings/*/cryp" +
-      "toKeys/*/cryptoKeyVersions/*}\022\230\001\n\rCreate" +
-      "KeyRing\022).google.cloud.kms.v1.CreateKeyR" +
-      "ingRequest\032\034.google.cloud.kms.v1.KeyRing" +
-      "\">\202\323\344\223\0028\",/v1/{parent=projects/*/locatio" +
-      "ns/*}/keyRings:\010key_ring\022\255\001\n\017CreateCrypt" +
-      "oKey\022+.google.cloud.kms.v1.CreateCryptoK" +
-      "eyRequest\032\036.google.cloud.kms.v1.CryptoKe" +
-      "y\"M\202\323\344\223\002G\"9/v1/{parent=projects/*/locati" +
-      "ons/*/keyRings/*}/cryptoKeys:\ncrypto_key" +
-      "\022\336\001\n\026CreateCryptoKeyVersion\0222.google.clo" +
-      "ud.kms.v1.CreateCryptoKeyVersionRequest\032" +
-      "%.google.cloud.kms.v1.CryptoKeyVersion\"i" +
-      "\202\323\344\223\002c\"M/v1/{parent=projects/*/locations" +
-      "/*/keyRings/*/cryptoKeys/*}/cryptoKeyVer" +
-      "sions:\022crypto_key_version\022\270\001\n\017UpdateCryp" +
-      "toKey\022+.google.cloud.kms.v1.UpdateCrypto" +
-      "KeyRequest\032\036.google.cloud.kms.v1.CryptoK" +
-      "ey\"X\202\323\344\223\002R2D/v1/{crypto_key.name=project" +
-      "s/*/locations/*/keyRings/*/cryptoKeys/*}" +
-      ":\ncrypto_key\022\361\001\n\026UpdateCryptoKeyVersion\022" +
-      "2.google.cloud.kms.v1.UpdateCryptoKeyVer" +
-      "sionRequest\032%.google.cloud.kms.v1.Crypto" +
-      "KeyVersion\"|\202\323\344\223\002v2`/v1/{crypto_key_vers" +
-      "ion.name=projects/*/locations/*/keyRings" +
-      "/*/cryptoKeys/*/cryptoKeyVersions/*}:\022cr" +
-      "ypto_key_version\022\243\001\n\007Encrypt\022#.google.cl" +
-      "oud.kms.v1.EncryptRequest\032$.google.cloud" +
-      ".kms.v1.EncryptResponse\"M\202\323\344\223\002G\"B/v1/{na" +
-      "me=projects/*/locations/*/keyRings/*/cry" +
-      "ptoKeys/**}:encrypt:\001*\022\242\001\n\007Decrypt\022#.goo" +
-      "gle.cloud.kms.v1.DecryptRequest\032$.google" +
-      ".cloud.kms.v1.DecryptResponse\"L\202\323\344\223\002F\"A/" +
-      "v1/{name=projects/*/locations/*/keyRings" +
-      "/*/cryptoKeys/*}:decrypt:\001*\022\325\001\n\035UpdateCr" +
-      "yptoKeyPrimaryVersion\0229.google.cloud.kms" +
-      ".v1.UpdateCryptoKeyPrimaryVersionRequest" +
-      "\032\036.google.cloud.kms.v1.CryptoKey\"Y\202\323\344\223\002S" +
-      "\"N/v1/{name=projects/*/locations/*/keyRi" +
-      "ngs/*/cryptoKeys/*}:updatePrimaryVersion" +
-      ":\001*\022\327\001\n\027DestroyCryptoKeyVersion\0223.google" +
-      ".cloud.kms.v1.DestroyCryptoKeyVersionReq" +
-      "uest\032%.google.cloud.kms.v1.CryptoKeyVers" +
-      "ion\"`\202\323\344\223\002Z\"U/v1/{name=projects/*/locati" +
-      "ons/*/keyRings/*/cryptoKeys/*/cryptoKeyV" +
-      "ersions/*}:destroy:\001*\022\327\001\n\027RestoreCryptoK" +
-      "eyVersion\0223.google.cloud.kms.v1.RestoreC" +
-      "ryptoKeyVersionRequest\032%.google.cloud.km" +
-      "s.v1.CryptoKeyVersion\"`\202\323\344\223\002Z\"U/v1/{name" +
-      "=projects/*/locations/*/keyRings/*/crypt" +
-      "oKeys/*/cryptoKeyVersions/*}:restore:\001*B" +
-      "\214\001\n\027com.google.cloud.kms.v1B\010KmsProtoP\001Z" +
-      "6google.golang.org/genproto/googleapis/c" +
-      "loud/kms/v1;kms\370\001\001\252\002\023Google.Cloud.Kms.V1" +
-      "\312\002\023Google\\Cloud\\Kms\\V1b\006proto3"
+      "\npage_token\030\003 \001(\t\"\240\001\n\025ListCryptoKeysRequ" +
+      "est\022\016\n\006parent\030\001 \001(\t\022\021\n\tpage_size\030\002 \001(\005\022\022" +
+      "\n\npage_token\030\003 \001(\t\022P\n\014version_view\030\004 \001(\016" +
+      "2:.google.cloud.kms.v1.CryptoKeyVersion." +
+      "CryptoKeyVersionView\"\237\001\n\034ListCryptoKeyVe" +
+      "rsionsRequest\022\016\n\006parent\030\001 \001(\t\022\021\n\tpage_si" +
+      "ze\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022H\n\004view\030\004 \001" +
+      "(\0162:.google.cloud.kms.v1.CryptoKeyVersio" +
+      "n.CryptoKeyVersionView\"t\n\024ListKeyRingsRe" +
+      "sponse\022/\n\tkey_rings\030\001 \003(\0132\034.google.cloud" +
+      ".kms.v1.KeyRing\022\027\n\017next_page_token\030\002 \001(\t" +
+      "\022\022\n\ntotal_size\030\003 \001(\005\"z\n\026ListCryptoKeysRe" +
+      "sponse\0223\n\013crypto_keys\030\001 \003(\0132\036.google.clo" +
+      "ud.kms.v1.CryptoKey\022\027\n\017next_page_token\030\002" +
+      " \001(\t\022\022\n\ntotal_size\030\003 \001(\005\"\220\001\n\035ListCryptoK" +
+      "eyVersionsResponse\022B\n\023crypto_key_version" +
+      "s\030\001 \003(\0132%.google.cloud.kms.v1.CryptoKeyV" +
+      "ersion\022\027\n\017next_page_token\030\002 \001(\t\022\022\n\ntotal" +
+      "_size\030\003 \001(\005\"!\n\021GetKeyRingRequest\022\014\n\004name" +
+      "\030\001 \001(\t\"#\n\023GetCryptoKeyRequest\022\014\n\004name\030\001 " +
+      "\001(\t\"*\n\032GetCryptoKeyVersionRequest\022\014\n\004nam" +
+      "e\030\001 \001(\t\"#\n\023GetPublicKeyRequest\022\014\n\004name\030\001" +
+      " \001(\t\"k\n\024CreateKeyRingRequest\022\016\n\006parent\030\001" +
+      " \001(\t\022\023\n\013key_ring_id\030\002 \001(\t\022.\n\010key_ring\030\003 " +
+      "\001(\0132\034.google.cloud.kms.v1.KeyRing\"s\n\026Cre" +
+      "ateCryptoKeyRequest\022\016\n\006parent\030\001 \001(\t\022\025\n\rc" +
+      "rypto_key_id\030\002 \001(\t\0222\n\ncrypto_key\030\003 \001(\0132\036" +
+      ".google.cloud.kms.v1.CryptoKey\"r\n\035Create" +
+      "CryptoKeyVersionRequest\022\016\n\006parent\030\001 \001(\t\022" +
+      "A\n\022crypto_key_version\030\002 \001(\0132%.google.clo" +
+      "ud.kms.v1.CryptoKeyVersion\"}\n\026UpdateCryp" +
+      "toKeyRequest\0222\n\ncrypto_key\030\001 \001(\0132\036.googl" +
+      "e.cloud.kms.v1.CryptoKey\022/\n\013update_mask\030" +
+      "\002 \001(\0132\032.google.protobuf.FieldMask\"\223\001\n\035Up" +
+      "dateCryptoKeyVersionRequest\022A\n\022crypto_ke" +
+      "y_version\030\001 \001(\0132%.google.cloud.kms.v1.Cr" +
+      "yptoKeyVersion\022/\n\013update_mask\030\002 \001(\0132\032.go" +
+      "ogle.protobuf.FieldMask\"X\n\016EncryptReques" +
+      "t\022\014\n\004name\030\001 \001(\t\022\021\n\tplaintext\030\002 \001(\014\022%\n\035ad" +
+      "ditional_authenticated_data\030\003 \001(\014\"Y\n\016Dec" +
+      "ryptRequest\022\014\n\004name\030\001 \001(\t\022\022\n\nciphertext\030" +
+      "\002 \001(\014\022%\n\035additional_authenticated_data\030\003" +
+      " \001(\014\"R\n\025AsymmetricSignRequest\022\014\n\004name\030\001 " +
+      "\001(\t\022+\n\006digest\030\003 \001(\0132\033.google.cloud.kms.v" +
+      "1.Digest\"<\n\030AsymmetricDecryptRequest\022\014\n\004" +
+      "name\030\001 \001(\t\022\022\n\nciphertext\030\003 \001(\014\"$\n\017Decryp" +
+      "tResponse\022\021\n\tplaintext\030\001 \001(\014\"3\n\017EncryptR" +
+      "esponse\022\014\n\004name\030\001 \001(\t\022\022\n\nciphertext\030\002 \001(" +
+      "\014\"+\n\026AsymmetricSignResponse\022\021\n\tsignature" +
+      "\030\001 \001(\014\".\n\031AsymmetricDecryptResponse\022\021\n\tp" +
+      "laintext\030\001 \001(\014\"S\n$UpdateCryptoKeyPrimary" +
+      "VersionRequest\022\014\n\004name\030\001 \001(\t\022\035\n\025crypto_k" +
+      "ey_version_id\030\002 \001(\t\".\n\036DestroyCryptoKeyV" +
+      "ersionRequest\022\014\n\004name\030\001 \001(\t\".\n\036RestoreCr" +
+      "yptoKeyVersionRequest\022\014\n\004name\030\001 \001(\t\"H\n\006D" +
+      "igest\022\020\n\006sha256\030\001 \001(\014H\000\022\020\n\006sha384\030\002 \001(\014H" +
+      "\000\022\020\n\006sha512\030\003 \001(\014H\000B\010\n\006digest\")\n\020Locatio" +
+      "nMetadata\022\025\n\rhsm_available\030\001 \001(\0102\315\034\n\024Key" +
+      "ManagementService\022\231\001\n\014ListKeyRings\022(.goo" +
+      "gle.cloud.kms.v1.ListKeyRingsRequest\032).g" +
+      "oogle.cloud.kms.v1.ListKeyRingsResponse\"" +
+      "4\202\323\344\223\002.\022,/v1/{parent=projects/*/location" +
+      "s/*}/keyRings\022\254\001\n\016ListCryptoKeys\022*.googl" +
+      "e.cloud.kms.v1.ListCryptoKeysRequest\032+.g" +
+      "oogle.cloud.kms.v1.ListCryptoKeysRespons" +
+      "e\"A\202\323\344\223\002;\0229/v1/{parent=projects/*/locati" +
+      "ons/*/keyRings/*}/cryptoKeys\022\325\001\n\025ListCry" +
+      "ptoKeyVersions\0221.google.cloud.kms.v1.Lis" +
+      "tCryptoKeyVersionsRequest\0322.google.cloud" +
+      ".kms.v1.ListCryptoKeyVersionsResponse\"U\202" +
+      "\323\344\223\002O\022M/v1/{parent=projects/*/locations/" +
+      "*/keyRings/*/cryptoKeys/*}/cryptoKeyVers" +
+      "ions\022\210\001\n\nGetKeyRing\022&.google.cloud.kms.v" +
+      "1.GetKeyRingRequest\032\034.google.cloud.kms.v" +
+      "1.KeyRing\"4\202\323\344\223\002.\022,/v1/{name=projects/*/" +
+      "locations/*/keyRings/*}\022\233\001\n\014GetCryptoKey" +
+      "\022(.google.cloud.kms.v1.GetCryptoKeyReque" +
+      "st\032\036.google.cloud.kms.v1.CryptoKey\"A\202\323\344\223" +
+      "\002;\0229/v1/{name=projects/*/locations/*/key" +
+      "Rings/*/cryptoKeys/*}\022\304\001\n\023GetCryptoKeyVe" +
+      "rsion\022/.google.cloud.kms.v1.GetCryptoKey" +
+      "VersionRequest\032%.google.cloud.kms.v1.Cry" +
+      "ptoKeyVersion\"U\202\323\344\223\002O\022M/v1/{name=project" +
+      "s/*/locations/*/keyRings/*/cryptoKeys/*/" +
+      "cryptoKeyVersions/*}\022\271\001\n\014GetPublicKey\022(." +
+      "google.cloud.kms.v1.GetPublicKeyRequest\032" +
+      "\036.google.cloud.kms.v1.PublicKey\"_\202\323\344\223\002Y\022" +
+      "W/v1/{name=projects/*/locations/*/keyRin" +
+      "gs/*/cryptoKeys/*/cryptoKeyVersions/*}/p" +
+      "ublicKey\022\230\001\n\rCreateKeyRing\022).google.clou" +
+      "d.kms.v1.CreateKeyRingRequest\032\034.google.c" +
+      "loud.kms.v1.KeyRing\">\202\323\344\223\0028\",/v1/{parent" +
+      "=projects/*/locations/*}/keyRings:\010key_r" +
+      "ing\022\255\001\n\017CreateCryptoKey\022+.google.cloud.k" +
+      "ms.v1.CreateCryptoKeyRequest\032\036.google.cl" +
+      "oud.kms.v1.CryptoKey\"M\202\323\344\223\002G\"9/v1/{paren" +
+      "t=projects/*/locations/*/keyRings/*}/cry" +
+      "ptoKeys:\ncrypto_key\022\336\001\n\026CreateCryptoKeyV" +
+      "ersion\0222.google.cloud.kms.v1.CreateCrypt" +
+      "oKeyVersionRequest\032%.google.cloud.kms.v1" +
+      ".CryptoKeyVersion\"i\202\323\344\223\002c\"M/v1/{parent=p" +
+      "rojects/*/locations/*/keyRings/*/cryptoK" +
+      "eys/*}/cryptoKeyVersions:\022crypto_key_ver" +
+      "sion\022\270\001\n\017UpdateCryptoKey\022+.google.cloud." +
+      "kms.v1.UpdateCryptoKeyRequest\032\036.google.c" +
+      "loud.kms.v1.CryptoKey\"X\202\323\344\223\002R2D/v1/{cryp" +
+      "to_key.name=projects/*/locations/*/keyRi" +
+      "ngs/*/cryptoKeys/*}:\ncrypto_key\022\361\001\n\026Upda" +
+      "teCryptoKeyVersion\0222.google.cloud.kms.v1" +
+      ".UpdateCryptoKeyVersionRequest\032%.google." +
+      "cloud.kms.v1.CryptoKeyVersion\"|\202\323\344\223\002v2`/" +
+      "v1/{crypto_key_version.name=projects/*/l" +
+      "ocations/*/keyRings/*/cryptoKeys/*/crypt" +
+      "oKeyVersions/*}:\022crypto_key_version\022\243\001\n\007" +
+      "Encrypt\022#.google.cloud.kms.v1.EncryptReq" +
+      "uest\032$.google.cloud.kms.v1.EncryptRespon" +
+      "se\"M\202\323\344\223\002G\"B/v1/{name=projects/*/locatio" +
+      "ns/*/keyRings/*/cryptoKeys/**}:encrypt:\001" +
+      "*\022\242\001\n\007Decrypt\022#.google.cloud.kms.v1.Decr" +
+      "yptRequest\032$.google.cloud.kms.v1.Decrypt" +
+      "Response\"L\202\323\344\223\002F\"A/v1/{name=projects/*/l" +
+      "ocations/*/keyRings/*/cryptoKeys/*}:decr" +
+      "ypt:\001*\022\322\001\n\016AsymmetricSign\022*.google.cloud" +
+      ".kms.v1.AsymmetricSignRequest\032+.google.c" +
+      "loud.kms.v1.AsymmetricSignResponse\"g\202\323\344\223" +
+      "\002a\"\\/v1/{name=projects/*/locations/*/key" +
+      "Rings/*/cryptoKeys/*/cryptoKeyVersions/*" +
+      "}:asymmetricSign:\001*\022\336\001\n\021AsymmetricDecryp" +
+      "t\022-.google.cloud.kms.v1.AsymmetricDecryp" +
+      "tRequest\032..google.cloud.kms.v1.Asymmetri" +
+      "cDecryptResponse\"j\202\323\344\223\002d\"_/v1/{name=proj" +
+      "ects/*/locations/*/keyRings/*/cryptoKeys" +
+      "/*/cryptoKeyVersions/*}:asymmetricDecryp" +
+      "t:\001*\022\325\001\n\035UpdateCryptoKeyPrimaryVersion\0229" +
+      ".google.cloud.kms.v1.UpdateCryptoKeyPrim" +
+      "aryVersionRequest\032\036.google.cloud.kms.v1." +
+      "CryptoKey\"Y\202\323\344\223\002S\"N/v1/{name=projects/*/" +
+      "locations/*/keyRings/*/cryptoKeys/*}:upd" +
+      "atePrimaryVersion:\001*\022\327\001\n\027DestroyCryptoKe" +
+      "yVersion\0223.google.cloud.kms.v1.DestroyCr" +
+      "yptoKeyVersionRequest\032%.google.cloud.kms" +
+      ".v1.CryptoKeyVersion\"`\202\323\344\223\002Z\"U/v1/{name=" +
+      "projects/*/locations/*/keyRings/*/crypto" +
+      "Keys/*/cryptoKeyVersions/*}:destroy:\001*\022\327" +
+      "\001\n\027RestoreCryptoKeyVersion\0223.google.clou" +
+      "d.kms.v1.RestoreCryptoKeyVersionRequest\032" +
+      "%.google.cloud.kms.v1.CryptoKeyVersion\"`" +
+      "\202\323\344\223\002Z\"U/v1/{name=projects/*/locations/*" +
+      "/keyRings/*/cryptoKeys/*/cryptoKeyVersio" +
+      "ns/*}:restore:\001*B\214\001\n\027com.google.cloud.km" +
+      "s.v1B\010KmsProtoP\001Z6google.golang.org/genp" +
+      "roto/googleapis/cloud/kms/v1;kms\370\001\001\252\002\023Go" +
+      "ogle.Cloud.Kms.V1\312\002\023Google\\Cloud\\Kms\\V1b" +
+      "\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -288,13 +353,13 @@ public final class KmsProto {
     internal_static_google_cloud_kms_v1_ListCryptoKeysRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_cloud_kms_v1_ListCryptoKeysRequest_descriptor,
-        new java.lang.String[] { "Parent", "PageSize", "PageToken", });
+        new java.lang.String[] { "Parent", "PageSize", "PageToken", "VersionView", });
     internal_static_google_cloud_kms_v1_ListCryptoKeyVersionsRequest_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_google_cloud_kms_v1_ListCryptoKeyVersionsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_cloud_kms_v1_ListCryptoKeyVersionsRequest_descriptor,
-        new java.lang.String[] { "Parent", "PageSize", "PageToken", });
+        new java.lang.String[] { "Parent", "PageSize", "PageToken", "View", });
     internal_static_google_cloud_kms_v1_ListKeyRingsResponse_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_google_cloud_kms_v1_ListKeyRingsResponse_fieldAccessorTable = new
@@ -331,78 +396,120 @@ public final class KmsProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_cloud_kms_v1_GetCryptoKeyVersionRequest_descriptor,
         new java.lang.String[] { "Name", });
-    internal_static_google_cloud_kms_v1_CreateKeyRingRequest_descriptor =
+    internal_static_google_cloud_kms_v1_GetPublicKeyRequest_descriptor =
       getDescriptor().getMessageTypes().get(9);
+    internal_static_google_cloud_kms_v1_GetPublicKeyRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_google_cloud_kms_v1_GetPublicKeyRequest_descriptor,
+        new java.lang.String[] { "Name", });
+    internal_static_google_cloud_kms_v1_CreateKeyRingRequest_descriptor =
+      getDescriptor().getMessageTypes().get(10);
     internal_static_google_cloud_kms_v1_CreateKeyRingRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_cloud_kms_v1_CreateKeyRingRequest_descriptor,
         new java.lang.String[] { "Parent", "KeyRingId", "KeyRing", });
     internal_static_google_cloud_kms_v1_CreateCryptoKeyRequest_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_google_cloud_kms_v1_CreateCryptoKeyRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_cloud_kms_v1_CreateCryptoKeyRequest_descriptor,
         new java.lang.String[] { "Parent", "CryptoKeyId", "CryptoKey", });
     internal_static_google_cloud_kms_v1_CreateCryptoKeyVersionRequest_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_google_cloud_kms_v1_CreateCryptoKeyVersionRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_cloud_kms_v1_CreateCryptoKeyVersionRequest_descriptor,
         new java.lang.String[] { "Parent", "CryptoKeyVersion", });
     internal_static_google_cloud_kms_v1_UpdateCryptoKeyRequest_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_google_cloud_kms_v1_UpdateCryptoKeyRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_cloud_kms_v1_UpdateCryptoKeyRequest_descriptor,
         new java.lang.String[] { "CryptoKey", "UpdateMask", });
     internal_static_google_cloud_kms_v1_UpdateCryptoKeyVersionRequest_descriptor =
-      getDescriptor().getMessageTypes().get(13);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_google_cloud_kms_v1_UpdateCryptoKeyVersionRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_cloud_kms_v1_UpdateCryptoKeyVersionRequest_descriptor,
         new java.lang.String[] { "CryptoKeyVersion", "UpdateMask", });
     internal_static_google_cloud_kms_v1_EncryptRequest_descriptor =
-      getDescriptor().getMessageTypes().get(14);
+      getDescriptor().getMessageTypes().get(15);
     internal_static_google_cloud_kms_v1_EncryptRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_cloud_kms_v1_EncryptRequest_descriptor,
         new java.lang.String[] { "Name", "Plaintext", "AdditionalAuthenticatedData", });
     internal_static_google_cloud_kms_v1_DecryptRequest_descriptor =
-      getDescriptor().getMessageTypes().get(15);
+      getDescriptor().getMessageTypes().get(16);
     internal_static_google_cloud_kms_v1_DecryptRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_cloud_kms_v1_DecryptRequest_descriptor,
         new java.lang.String[] { "Name", "Ciphertext", "AdditionalAuthenticatedData", });
+    internal_static_google_cloud_kms_v1_AsymmetricSignRequest_descriptor =
+      getDescriptor().getMessageTypes().get(17);
+    internal_static_google_cloud_kms_v1_AsymmetricSignRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_google_cloud_kms_v1_AsymmetricSignRequest_descriptor,
+        new java.lang.String[] { "Name", "Digest", });
+    internal_static_google_cloud_kms_v1_AsymmetricDecryptRequest_descriptor =
+      getDescriptor().getMessageTypes().get(18);
+    internal_static_google_cloud_kms_v1_AsymmetricDecryptRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_google_cloud_kms_v1_AsymmetricDecryptRequest_descriptor,
+        new java.lang.String[] { "Name", "Ciphertext", });
     internal_static_google_cloud_kms_v1_DecryptResponse_descriptor =
-      getDescriptor().getMessageTypes().get(16);
+      getDescriptor().getMessageTypes().get(19);
     internal_static_google_cloud_kms_v1_DecryptResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_cloud_kms_v1_DecryptResponse_descriptor,
         new java.lang.String[] { "Plaintext", });
     internal_static_google_cloud_kms_v1_EncryptResponse_descriptor =
-      getDescriptor().getMessageTypes().get(17);
+      getDescriptor().getMessageTypes().get(20);
     internal_static_google_cloud_kms_v1_EncryptResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_cloud_kms_v1_EncryptResponse_descriptor,
         new java.lang.String[] { "Name", "Ciphertext", });
+    internal_static_google_cloud_kms_v1_AsymmetricSignResponse_descriptor =
+      getDescriptor().getMessageTypes().get(21);
+    internal_static_google_cloud_kms_v1_AsymmetricSignResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_google_cloud_kms_v1_AsymmetricSignResponse_descriptor,
+        new java.lang.String[] { "Signature", });
+    internal_static_google_cloud_kms_v1_AsymmetricDecryptResponse_descriptor =
+      getDescriptor().getMessageTypes().get(22);
+    internal_static_google_cloud_kms_v1_AsymmetricDecryptResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_google_cloud_kms_v1_AsymmetricDecryptResponse_descriptor,
+        new java.lang.String[] { "Plaintext", });
     internal_static_google_cloud_kms_v1_UpdateCryptoKeyPrimaryVersionRequest_descriptor =
-      getDescriptor().getMessageTypes().get(18);
+      getDescriptor().getMessageTypes().get(23);
     internal_static_google_cloud_kms_v1_UpdateCryptoKeyPrimaryVersionRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_cloud_kms_v1_UpdateCryptoKeyPrimaryVersionRequest_descriptor,
         new java.lang.String[] { "Name", "CryptoKeyVersionId", });
     internal_static_google_cloud_kms_v1_DestroyCryptoKeyVersionRequest_descriptor =
-      getDescriptor().getMessageTypes().get(19);
+      getDescriptor().getMessageTypes().get(24);
     internal_static_google_cloud_kms_v1_DestroyCryptoKeyVersionRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_cloud_kms_v1_DestroyCryptoKeyVersionRequest_descriptor,
         new java.lang.String[] { "Name", });
     internal_static_google_cloud_kms_v1_RestoreCryptoKeyVersionRequest_descriptor =
-      getDescriptor().getMessageTypes().get(20);
+      getDescriptor().getMessageTypes().get(25);
     internal_static_google_cloud_kms_v1_RestoreCryptoKeyVersionRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_cloud_kms_v1_RestoreCryptoKeyVersionRequest_descriptor,
         new java.lang.String[] { "Name", });
+    internal_static_google_cloud_kms_v1_Digest_descriptor =
+      getDescriptor().getMessageTypes().get(26);
+    internal_static_google_cloud_kms_v1_Digest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_google_cloud_kms_v1_Digest_descriptor,
+        new java.lang.String[] { "Sha256", "Sha384", "Sha512", "Digest", });
+    internal_static_google_cloud_kms_v1_LocationMetadata_descriptor =
+      getDescriptor().getMessageTypes().get(27);
+    internal_static_google_cloud_kms_v1_LocationMetadata_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_google_cloud_kms_v1_LocationMetadata_descriptor,
+        new java.lang.String[] { "HsmAvailable", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.AnnotationsProto.http);

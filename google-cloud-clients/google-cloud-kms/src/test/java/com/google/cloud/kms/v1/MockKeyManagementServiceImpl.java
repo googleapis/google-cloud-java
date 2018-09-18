@@ -147,6 +147,21 @@ public class MockKeyManagementServiceImpl extends KeyManagementServiceImplBase {
   }
 
   @Override
+  public void getPublicKey(
+      GetPublicKeyRequest request, StreamObserver<PublicKey> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof PublicKey) {
+      requests.add(request);
+      responseObserver.onNext((PublicKey) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
   public void createKeyRing(
       CreateKeyRingRequest request, StreamObserver<KeyRing> responseObserver) {
     Object response = responses.remove();
@@ -241,6 +256,37 @@ public class MockKeyManagementServiceImpl extends KeyManagementServiceImplBase {
     if (response instanceof DecryptResponse) {
       requests.add(request);
       responseObserver.onNext((DecryptResponse) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void asymmetricSign(
+      AsymmetricSignRequest request, StreamObserver<AsymmetricSignResponse> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof AsymmetricSignResponse) {
+      requests.add(request);
+      responseObserver.onNext((AsymmetricSignResponse) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void asymmetricDecrypt(
+      AsymmetricDecryptRequest request,
+      StreamObserver<AsymmetricDecryptResponse> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof AsymmetricDecryptResponse) {
+      requests.add(request);
+      responseObserver.onNext((AsymmetricDecryptResponse) response);
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
       responseObserver.onError((Exception) response);
