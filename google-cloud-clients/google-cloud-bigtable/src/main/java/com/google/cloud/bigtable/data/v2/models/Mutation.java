@@ -42,7 +42,7 @@ public final class Mutation implements MutationApi<Mutation>, Serializable {
   @InternalApi("Visible for testing")
   static final int MAX_MUTATIONS = 100_000;
   @InternalApi("Visible for testing")
-  static final int MAX_MUTATION_SIZE = 200 * 1024 * 1024;
+  static final int MAX_BYTE_SIZE = 200 * 1024 * 1024;
 
   private transient ImmutableList.Builder<com.google.bigtable.v2.Mutation> mutations =
       ImmutableList.builder();
@@ -200,7 +200,7 @@ public final class Mutation implements MutationApi<Mutation>, Serializable {
   private void addMutation(com.google.bigtable.v2.Mutation mutation) {
     Preconditions.checkState(numMutations + 1 <= MAX_MUTATIONS,
         "Too many mutations per row");
-    Preconditions.checkState(byteSize + mutation.getSerializedSize() <= MAX_MUTATION_SIZE,
+    Preconditions.checkState(byteSize + mutation.getSerializedSize() <= MAX_BYTE_SIZE,
         "Byte size of mutations is too large");
 
     numMutations++;

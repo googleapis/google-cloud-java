@@ -205,7 +205,7 @@ public class MutationTest {
 
     try {
       mutation.setCell("f", ByteString.copyFromUtf8(""),
-          ByteString.copyFrom(new byte[Mutation.MAX_MUTATION_SIZE]));
+          ByteString.copyFrom(new byte[Mutation.MAX_BYTE_SIZE]));
     } catch (Exception e) {
       actualError = e;
     }
