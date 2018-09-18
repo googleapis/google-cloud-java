@@ -243,7 +243,7 @@ jobs:
           <<: *anchor_build
       - run:
           name: Run mvn javadoc goal
-          command: mvn javadoc:javadoc javadoc:test-javadoc
+          command: mvn -B -q javadoc:javadoc javadoc:test-javadoc
 
 workflows:
   version: 2
