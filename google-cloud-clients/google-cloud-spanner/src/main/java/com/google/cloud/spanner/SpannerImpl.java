@@ -757,6 +757,13 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     }
 
     @Override
+    public long executePartitionedUpdate(Statement stmt) {
+      setActive(null);
+      PartitionedDMLTransaction txn = new PartitionedDMLTransaction(this, rpc);
+      return txn.executePartitionedUpdate(stmt);
+    }
+
+    @Override
     public Timestamp write(Iterable<Mutation> mutations) throws SpannerException {
       TransactionRunner runner = readWriteTransaction();
       final Collection<Mutation> finalMutations =
@@ -943,6 +950,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
 
     @GuardedBy("lock")
     private boolean isClosed = false;
+
     // Allow up to 512MB to be buffered (assuming 1MB chunks). In practice, restart tokens are sent
     // much more frequently.
     private static final int MAX_BUFFERED_CHUNKS = 512;
@@ -1019,17 +1027,14 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
           statement, queryMode, readOptions, null /*partitionToken*/);
     }
 
-    ResultSet executeQueryInternalWithOptions(
+    ExecuteSqlRequest.Builder getExecuteSqlRequestBuilder(
         Statement statement,
-        com.google.spanner.v1.ExecuteSqlRequest.QueryMode queryMode,
-        Options readOptions,
-        ByteString partitionToken) {
-      beforeReadOrQuery();
+        com.google.spanner.v1.ExecuteSqlRequest.QueryMode queryMode) {
       ExecuteSqlRequest.Builder builder =
           ExecuteSqlRequest.newBuilder()
               .setSql(statement.getSql())
               .setQueryMode(queryMode)
-              .setSession(session.getName());
+              .setSession(session.name);
       Map<String, Value> stmtParameters = statement.getParameters();
       if (!stmtParameters.isEmpty()) {
         com.google.protobuf.Struct.Builder paramsBuilder = builder.getParamsBuilder();
@@ -1042,24 +1047,32 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
       if (selector != null) {
         builder.setTransaction(selector);
       }
+      return builder;
+    }
+
+    ResultSet executeQueryInternalWithOptions(
+        Statement statement,
+        com.google.spanner.v1.ExecuteSqlRequest.QueryMode queryMode,
+        Options readOptions,
+        ByteString partitionToken) {
+      beforeReadOrQuery();
+      final ExecuteSqlRequest.Builder request =
+          getExecuteSqlRequestBuilder(statement, queryMode);
       if (partitionToken != null) {
-        builder.setPartitionToken(partitionToken);
+        request.setPartitionToken(partitionToken);
       }
-      final ExecuteSqlRequest request = builder.build();
       final int prefetchChunks =
           readOptions.hasPrefetchChunks() ? readOptions.prefetchChunks() : defaultPrefetchChunks;
       ResumableStreamIterator stream =
-          new ResumableStreamIterator(MAX_BUFFERED_CHUNKS, QUERY) {
+          new ResumableStreamIterator(MAX_BUFFERED_CHUNKS) {
             @Override
             CloseableIterator<PartialResultSet> startStream(@Nullable ByteString resumeToken) {
               GrpcStreamIterator stream = new GrpcStreamIterator(prefetchChunks);
+              if (resumeToken != null) {
+                request.setResumeToken(resumeToken);
+              }
               SpannerRpc.StreamingCall call =
-                  rpc.executeQuery(
-                      resumeToken == null
-                          ? request
-                          : request.toBuilder().setResumeToken(resumeToken).build(),
-                      stream.consumer(),
-                      session.options);
+                  rpc.executeQuery(request.build(), stream.consumer(), session.options);
               // We get one message for free.
               if (prefetchChunks > 1) {
                 call.request(prefetchChunks - 1);
@@ -1069,7 +1082,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
             }
           };
       return new GrpcResultSet(stream, this, queryMode);
-    }
+    } 
 
     /**
      * Called before any read or query is started to perform state checks and initializations.
@@ -1158,7 +1171,6 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
       if (partitionToken != null) {
         builder.setPartitionToken(partitionToken);
       }
-      final ReadRequest request = builder.build();
       final int prefetchChunks =
           readOptions.hasPrefetchChunks() ? readOptions.prefetchChunks() : defaultPrefetchChunks;
       ResumableStreamIterator stream =
@@ -1166,13 +1178,11 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
             @Override
             CloseableIterator<PartialResultSet> startStream(@Nullable ByteString resumeToken) {
               GrpcStreamIterator stream = new GrpcStreamIterator(prefetchChunks);
+              if (resumeToken != null) {
+                builder.setResumeToken(resumeToken);
+              }
               SpannerRpc.StreamingCall call =
-                  rpc.read(
-                      resumeToken == null
-                          ? request
-                          : request.toBuilder().setResumeToken(resumeToken).build(),
-                      stream.consumer(),
-                      session.options);
+                  rpc.read(builder.build(), stream.consumer(), session.options);
               // We get one message for free.
               if (prefetchChunks > 1) {
                 call.request(prefetchChunks - 1);
@@ -1334,6 +1344,83 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     }
   }
 
+  static class PartitionedDMLTransaction implements SessionTransaction {
+    private ByteString transactionId;
+    private final SessionImpl session;
+    private final SpannerRpc rpc;
+    private volatile boolean isValid = true;
+
+    PartitionedDMLTransaction(
+        SessionImpl session,
+        SpannerRpc rpc) {
+      this.session = session;
+      this.rpc = rpc;
+      initTransaction();
+    }
+
+    void initTransaction() {
+      final BeginTransactionRequest request =
+          BeginTransactionRequest.newBuilder()
+              .setSession(session.getName())
+              .setOptions(
+                  TransactionOptions.newBuilder()
+                      .setPartitionedDml(TransactionOptions.PartitionedDml.getDefaultInstance()))
+              .build();
+      Transaction txn =
+          runWithRetries(
+              new Callable<Transaction>() {
+                @Override
+                public Transaction call() throws Exception {
+                  return rpc.beginTransaction(request, session.options);
+                }
+              });
+      if (txn.getId().isEmpty()) {
+        throw SpannerExceptionFactory.newSpannerException(
+            ErrorCode.INTERNAL,
+            "Failed to init transaction, missing transaction id\n" + session.getName());
+      }
+      transactionId = txn.getId();
+    }
+
+    public long executePartitionedUpdate(Statement statement) {
+      checkState(
+            isValid, "Partitioned DML has been invalidated by a new operation on the session");
+      final ExecuteSqlRequest.Builder builder =
+          ExecuteSqlRequest.newBuilder()
+              .setSql(statement.getSql())
+              .setQueryMode(com.google.spanner.v1.ExecuteSqlRequest.QueryMode.NORMAL)
+              .setSession(session.name)
+              .setTransaction(TransactionSelector.newBuilder().setId(transactionId).build());
+      Map<String, Value> stmtParameters = statement.getParameters();
+      if (!stmtParameters.isEmpty()) {
+        com.google.protobuf.Struct.Builder paramsBuilder = builder.getParamsBuilder();
+        for (Map.Entry<String, Value> param : stmtParameters.entrySet()) {
+          paramsBuilder.putFields(param.getKey(), param.getValue().toProto());
+          builder.putParamTypes(param.getKey(), param.getValue().getType().toProto());
+        }
+      }
+      com.google.spanner.v1.ResultSet resultSet =
+          runWithRetries(
+              new Callable<com.google.spanner.v1.ResultSet>() {
+                @Override
+                public com.google.spanner.v1.ResultSet call() throws Exception {
+                  return rpc.executeQuery(builder.build(), session.options);
+                }
+              });
+      if (!resultSet.hasStats()) {
+        throw new IllegalArgumentException(
+            "Partitioned DML response missing stats possibly due to non-DML statement as input");
+      }
+      // For partitioned DML, using the row count lower bound.
+      return resultSet.getStats().getRowCountLowerBound();
+    }
+
+    @Override
+    public void invalidate() {
+      isValid = false;
+    }
+  }
+
   @VisibleForTesting
   static class TransactionContextImpl extends AbstractReadContext implements TransactionContext {
     @GuardedBy("lock")
@@ -1345,6 +1432,11 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     /** Default to -1 to indicate not available. */
     @GuardedBy("lock")
     private long retryDelayInMillis = -1L;
+
+    // A per-transaction sequence number used to identify this ExecuteSqlRequests. Required for DML,
+    // ignored for query by the server.
+    @GuardedBy("lock")
+    private long seqNo = 1L;
 
     private ByteString transactionId;
     private Timestamp commitTimestamp;
@@ -1467,6 +1559,12 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
       }
     }
 
+    long getSeqNo() {
+      synchronized (lock) {
+        return seqNo++;
+      }
+    }
+
     @Nullable
     @Override
     TransactionSelector getTransactionSelector() {
@@ -1508,6 +1606,30 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
         }
       }
     }
+
+    @Override
+    public long executeUpdate(Statement statement) {
+      beforeReadOrQuery();
+      final ExecuteSqlRequest.Builder builder =
+          getExecuteSqlRequestBuilder(
+              statement,
+              com.google.spanner.v1.ExecuteSqlRequest.QueryMode.NORMAL);
+      builder.setSeqno(getSeqNo());
+      com.google.spanner.v1.ResultSet resultSet =
+          runWithRetries(
+              new Callable<com.google.spanner.v1.ResultSet>() {
+                @Override
+                public com.google.spanner.v1.ResultSet call() throws Exception {
+                  return rpc.executeQuery(builder.build(), session.options);
+                }
+              });
+      if (!resultSet.hasStats()) {
+        throw new IllegalArgumentException(
+            "DML response missing stats possibly due to non-DML statement as input");
+      }
+      // For standard DML, using the exact row count.
+      return resultSet.getStats().getRowCountExact();
+    } 
   }
 
   /**
@@ -1871,7 +1993,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
           currRow = new GrpcStruct(iterator.type(), new ArrayList<>());
         }
         boolean hasNext = currRow.consumeRow(iterator);
-        if (queryMode != QueryMode.NORMAL && !hasNext) {
+        if (!hasNext) {
           statistics = iterator.getStats();
         }
         return hasNext;
@@ -1881,13 +2003,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     }
 
     @Override
+    @Nullable
     public ResultSetStats getStats() {
-      if (queryMode == QueryMode.NORMAL) {
-        throw new UnsupportedOperationException(
-            "ResultSetStats are available only in PLAN and PROFILE execution modes");
-      }
-      checkState(
-          statistics != null, "ResultSetStats requested before consuming the entire ResultSet");
       return statistics;
     }
 
