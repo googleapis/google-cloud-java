@@ -34,7 +34,7 @@ import com.google.cloud.bigtable.admin.v2.models.ConsistencyToken;
 import com.google.cloud.bigtable.admin.v2.models.CreateTableRequest;
 import com.google.cloud.bigtable.admin.v2.models.ModifyColumnFamiliesRequest;
 import com.google.cloud.bigtable.admin.v2.models.Table;
-import com.google.cloud.bigtable.admin.v2.stub.BigtableTableAdminStub;
+import com.google.cloud.bigtable.admin.v2.stub.EnhancedBigtableTableAdminStub;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.Lists;
@@ -97,7 +97,7 @@ import javax.annotation.Nonnull;
  * }</pre>
  */
 public final class BigtableTableAdminClient implements AutoCloseable {
-  private final BigtableTableAdminStub stub;
+  private final EnhancedBigtableTableAdminStub stub;
   private final InstanceName instanceName;
 
   /** Constructs an instance of BigtableTableAdminClient with the given instanceName. */
@@ -109,17 +109,19 @@ public final class BigtableTableAdminClient implements AutoCloseable {
   /** Constructs an instance of BigtableTableAdminClient with the given settings. */
   public static BigtableTableAdminClient create(@Nonnull BigtableTableAdminSettings settings)
       throws IOException {
-    return create(settings.getInstanceName(), settings.getStubSettings().createStub());
+    EnhancedBigtableTableAdminStub stub = EnhancedBigtableTableAdminStub
+        .createEnhanced(settings.getStubSettings());
+    return create(settings.getInstanceName(), stub);
   }
 
   /** Constructs an instance of BigtableTableAdminClient with the given instanceName and stub. */
   public static BigtableTableAdminClient create(@Nonnull InstanceName instanceName,
-      @Nonnull BigtableTableAdminStub stub) {
+      @Nonnull EnhancedBigtableTableAdminStub stub) {
     return new BigtableTableAdminClient(instanceName, stub);
   }
 
   private BigtableTableAdminClient(@Nonnull InstanceName instanceName,
-      @Nonnull BigtableTableAdminStub stub) {
+      @Nonnull EnhancedBigtableTableAdminStub stub) {
     Preconditions.checkNotNull(instanceName);
     Preconditions.checkNotNull(stub);
     this.instanceName = instanceName;
