@@ -17,21 +17,22 @@ package com.google.cloud.bigtable.admin.v2.models;
 
 import static com.google.common.truth.Truth.assertThat;
 
-import com.google.bigtable.admin.v2.Instance.State;
-import com.google.bigtable.admin.v2.Instance.Type;
+import com.google.common.collect.Lists;
+import java.util.List;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
 @RunWith(JUnit4.class)
 public class InstanceTest {
+
   @Test
   public void testFromProto() {
     com.google.bigtable.admin.v2.Instance proto = com.google.bigtable.admin.v2.Instance.newBuilder()
         .setName("projects/my-project/instances/my-instance")
         .setDisplayName("my display name")
-        .setType(Type.PRODUCTION)
-        .setState(State.READY)
+        .setType(com.google.bigtable.admin.v2.Instance.Type.PRODUCTION)
+        .setState(com.google.bigtable.admin.v2.Instance.State.READY)
         .putLabels("label1", "value1")
         .putLabels("label2", "value2")
         .build();
@@ -40,8 +41,8 @@ public class InstanceTest {
 
     assertThat(result.getId()).isEqualTo("my-instance");
     assertThat(result.getDisplayName()).isEqualTo("my display name");
-    assertThat(result.getType()).isEqualTo(Type.PRODUCTION);
-    assertThat(result.getState()).isEqualTo(State.READY);
+    assertThat(result.getType()).isEqualTo(Instance.Type.PRODUCTION);
+    assertThat(result.getState()).isEqualTo(Instance.State.READY);
     assertThat(result.getLabels()).containsExactly(
         "label1", "value1",
         "label2", "value2"
@@ -52,8 +53,8 @@ public class InstanceTest {
   public void testRequiresName() {
     com.google.bigtable.admin.v2.Instance proto = com.google.bigtable.admin.v2.Instance.newBuilder()
         .setDisplayName("my display name")
-        .setType(Type.PRODUCTION)
-        .setState(State.READY)
+        .setType(com.google.bigtable.admin.v2.Instance.Type.PRODUCTION)
+        .setState(com.google.bigtable.admin.v2.Instance.State.READY)
         .putLabels("label1", "value1")
         .putLabels("label2", "value2")
         .build();
@@ -67,5 +68,48 @@ public class InstanceTest {
     }
 
     assertThat(actualException).isInstanceOf(IllegalArgumentException.class);
+  }
+
+  @Test
+  public void testTypeEnumUpToDate() {
+    List<com.google.bigtable.admin.v2.Instance.Type> validProtoValues =
+        Lists.newArrayList(com.google.bigtable.admin.v2.Instance.Type.values());
+
+    // TYPE_UNSPECIFIED is not surfaced
+    validProtoValues.remove(com.google.bigtable.admin.v2.Instance.Type.TYPE_UNSPECIFIED);
+
+    Exception actualError = null;
+    try {
+      Instance.Type.fromProto(com.google.bigtable.admin.v2.Instance.Type.TYPE_UNSPECIFIED);
+    } catch (Exception e) {
+      actualError = e;
+    }
+    assertThat(actualError).isInstanceOf(IllegalArgumentException.class);
+
+    List<Instance.Type> validModelValues = Lists.newArrayList(Instance.Type.values());
+
+    List<Instance.Type> actualModelValues = Lists.newArrayList();
+    for (com.google.bigtable.admin.v2.Instance.Type protoValue : validProtoValues) {
+      actualModelValues.add(Instance.Type.fromProto(protoValue));
+    }
+
+    assertThat(actualModelValues).containsExactlyElementsIn(validModelValues);
+  }
+
+  @Test
+  public void testStateEnumUpToDate() {
+    List<com.google.bigtable.admin.v2.Instance.State> validProtoValues =
+        Lists.newArrayList(com.google.bigtable.admin.v2.Instance.State.values());
+
+    List<Instance.State> validModelValues = Lists.newArrayList(Instance.State.values());
+
+    List<Instance.State> actualModelValues = Lists.newArrayList();
+
+    for (com.google.bigtable.admin.v2.Instance.State protoValue : validProtoValues) {
+      Instance.State modelValue = Instance.State.fromProto(protoValue);
+      actualModelValues.add(modelValue);
+    }
+
+    assertThat(actualModelValues).containsExactlyElementsIn(validModelValues);
   }
 }
