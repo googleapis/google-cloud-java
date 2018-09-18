@@ -40,6 +40,7 @@ import com.google.cloud.bigtable.admin.v2.models.CreateTableRequest;
 import com.google.cloud.bigtable.admin.v2.models.ModifyColumnFamiliesRequest;
 import com.google.cloud.bigtable.admin.v2.models.Table;
 import com.google.cloud.bigtable.admin.v2.stub.BigtableTableAdminStub;
+import com.google.cloud.bigtable.admin.v2.stub.EnhancedBigtableTableAdminStub;
 import com.google.common.collect.Lists;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
@@ -63,7 +64,7 @@ public class BigtableTableAdminClientTest {
 
   private BigtableTableAdminClient adminClient;
   @Mock
-  private BigtableTableAdminStub mockStub;
+  private EnhancedBigtableTableAdminStub mockStub;
 
   @Mock
   private UnaryCallable<com.google.bigtable.admin.v2.CreateTableRequest, com.google.bigtable.admin.v2.Table> mockCreateTableCallable;
