@@ -20,7 +20,8 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.services.bigquery.model.TableReference;
 import com.google.common.base.Function;
-
+import com.google.common.base.Preconditions;
+import com.google.common.base.Strings;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -111,7 +112,9 @@ public final class TableId implements Serializable {
   }
 
   TableId setProjectId(String projectId) {
-    return getProject() != null ? this : TableId.of(projectId, getDataset(), getTable());
+    Preconditions
+        .checkArgument(!Strings.isNullOrEmpty(projectId), "Provided projectId is null or empty");
+    return TableId.of(projectId, getDataset(), getTable());
   }
 
   TableReference toPb() {
