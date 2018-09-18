@@ -17,10 +17,8 @@ package com.google.cloud.bigtable.admin.v2.models;
 
 import static com.google.common.truth.Truth.assertThat;
 
-import com.google.common.collect.ArrayListMultimap;
-import com.google.common.collect.Multimap;
-import java.util.Arrays;
-import java.util.Collection;
+import com.google.common.collect.Lists;
+import java.util.List;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -70,32 +68,18 @@ public class ClusterTest {
 
   @Test
   public void testStateEnumUpToDate() {
-    Multimap<Cluster.State, com.google.bigtable.admin.v2.Cluster.State> modelToProtoMap =
-        ArrayListMultimap.create();
+    List<com.google.bigtable.admin.v2.Cluster.State> validProtoValues =
+        Lists.newArrayList(com.google.bigtable.admin.v2.Cluster.State.values());
 
-    for (com.google.bigtable.admin.v2.Cluster.State protoValue : com.google.bigtable.admin.v2.Cluster.State
-        .values()) {
+    List<Cluster.State> validModelValues = Lists.newArrayList(Cluster.State.values());
+
+    List<Cluster.State> actualModelValues = Lists.newArrayList();
+
+    for (com.google.bigtable.admin.v2.Cluster.State protoValue : validProtoValues) {
       Cluster.State modelValue = Cluster.State.fromProto(protoValue);
-      modelToProtoMap.put(modelValue, protoValue);
+      actualModelValues.add(modelValue);
     }
 
-    // Make sure all model values are used
-    assertThat(modelToProtoMap.keys()).containsAllIn(Arrays.asList(Cluster.State.values()));
-
-    // Make sure unknown is handled properly (it has multiple mappings)
-    assertThat(modelToProtoMap).valuesForKey(Cluster.State.NOT_KNOWN).containsExactly(
-        com.google.bigtable.admin.v2.Cluster.State.STATE_NOT_KNOWN,
-        com.google.bigtable.admin.v2.Cluster.State.UNRECOGNIZED
-    );
-
-    // Make sure everything else has exactly 1 mapping
-    modelToProtoMap.removeAll(Cluster.State.NOT_KNOWN);
-
-    for (Cluster.State modelState : modelToProtoMap.keySet()) {
-      Collection<com.google.bigtable.admin.v2.Cluster.State> protoStates = modelToProtoMap
-          .get(modelState);
-
-      assertThat(protoStates).hasSize(1);
-    }
+    assertThat(actualModelValues).containsExactlyElementsIn(validModelValues);
   }
 }

@@ -96,6 +96,7 @@ public final class CreateInstanceRequest {
   @SuppressWarnings("WeakerAccess")
   public CreateInstanceRequest setType(@Nonnull Instance.Type type) {
     Preconditions.checkNotNull(type);
+    Preconditions.checkArgument(type != Instance.Type.UNRECOGNIZED, "Type is unrecognized");
     builder.getInstanceBuilder().setType(type.toProto());
     return this;
   }

@@ -51,8 +51,9 @@ public class Cluster {
      * The cluster has no backing nodes. The data (tables) still exist, but no operations can be
      * performed on the cluster.
      */
-    DISABLED(com.google.bigtable.admin.v2.Cluster.State.DISABLED);
-
+    DISABLED(com.google.bigtable.admin.v2.Cluster.State.DISABLED),
+    /** The state of the cluster is not known by this client. Please upgrade your client. */
+    UNRECOGNIZED(com.google.bigtable.admin.v2.Cluster.State.UNRECOGNIZED);
 
     private final com.google.bigtable.admin.v2.Cluster.State proto;
 
@@ -67,7 +68,7 @@ public class Cluster {
           return state;
         }
       }
-      return NOT_KNOWN;
+      return UNRECOGNIZED;
     }
 
     State(com.google.bigtable.admin.v2.Cluster.State proto) {
