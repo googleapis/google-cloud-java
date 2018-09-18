@@ -17,11 +17,7 @@ package com.google.cloud.bigtable.admin.v2.models;
 
 import static com.google.common.truth.Truth.assertThat;
 
-import com.google.bigtable.admin.v2.Cluster;
-import com.google.bigtable.admin.v2.Instance;
-import com.google.bigtable.admin.v2.Instance.Type;
 import com.google.bigtable.admin.v2.ProjectName;
-import com.google.bigtable.admin.v2.StorageType;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -31,7 +27,7 @@ public class CreateClusterRequestTest {
   @Test
   public void testProductionSingle() {
     CreateInstanceRequest input = CreateInstanceRequest.of("my-instance")
-        .setType(Type.PRODUCTION)
+        .setType(Instance.Type.PRODUCTION)
         .addCluster("cluster1", "us-east1-c", 3, StorageType.SSD);
 
     com.google.bigtable.admin.v2.CreateInstanceRequest actual = input
@@ -42,15 +38,15 @@ public class CreateClusterRequestTest {
             .setParent(ProjectName.of("my-project").toString())
             .setInstanceId("my-instance")
             .setInstance(
-                Instance.newBuilder()
+                com.google.bigtable.admin.v2.Instance.newBuilder()
                     .setDisplayName("my-instance")
-                    .setType(Type.PRODUCTION)
+                    .setType(com.google.bigtable.admin.v2.Instance.Type.PRODUCTION)
             )
             .putClusters("cluster1",
-                Cluster.newBuilder()
+                com.google.bigtable.admin.v2.Cluster.newBuilder()
                     .setLocation("projects/my-project/locations/us-east1-c")
                     .setServeNodes(3)
-                    .setDefaultStorageType(StorageType.SSD)
+                    .setDefaultStorageType(com.google.bigtable.admin.v2.StorageType.SSD)
                     .build()
             )
             .build();
@@ -61,7 +57,7 @@ public class CreateClusterRequestTest {
   @Test
   public void testProductionReplication() {
     CreateInstanceRequest input = CreateInstanceRequest.of("my-instance")
-        .setType(Type.PRODUCTION)
+        .setType(Instance.Type.PRODUCTION)
         .addCluster("cluster1", "us-east1-c", 3, StorageType.SSD)
         .addCluster("cluster2", "us-east1-a", 3, StorageType.SSD);
 
@@ -73,22 +69,22 @@ public class CreateClusterRequestTest {
             .setParent(ProjectName.of("my-project").toString())
             .setInstanceId("my-instance")
             .setInstance(
-                Instance.newBuilder()
+                com.google.bigtable.admin.v2.Instance.newBuilder()
                     .setDisplayName("my-instance")
-                    .setType(Type.PRODUCTION)
+                    .setType(com.google.bigtable.admin.v2.Instance.Type.PRODUCTION)
             )
             .putClusters("cluster1",
-                Cluster.newBuilder()
+                com.google.bigtable.admin.v2.Cluster.newBuilder()
                     .setLocation("projects/my-project/locations/us-east1-c")
                     .setServeNodes(3)
-                    .setDefaultStorageType(StorageType.SSD)
+                    .setDefaultStorageType(com.google.bigtable.admin.v2.StorageType.SSD)
                     .build()
             )
             .putClusters("cluster2",
-                Cluster.newBuilder()
+                com.google.bigtable.admin.v2.Cluster.newBuilder()
                     .setLocation("projects/my-project/locations/us-east1-a")
                     .setServeNodes(3)
-                    .setDefaultStorageType(StorageType.SSD)
+                    .setDefaultStorageType(com.google.bigtable.admin.v2.StorageType.SSD)
                     .build()
             )
             .build();
@@ -99,7 +95,7 @@ public class CreateClusterRequestTest {
   @Test
   public void testDevelopment() {
     CreateInstanceRequest input = CreateInstanceRequest.of("my-instance")
-        .setType(Type.DEVELOPMENT)
+        .setType(Instance.Type.DEVELOPMENT)
         .addCluster("cluster1", "us-east1-c", 1, StorageType.SSD);
 
     com.google.bigtable.admin.v2.CreateInstanceRequest actual = input
@@ -110,15 +106,15 @@ public class CreateClusterRequestTest {
             .setParent(ProjectName.of("my-project").toString())
             .setInstanceId("my-instance")
             .setInstance(
-                Instance.newBuilder()
+                com.google.bigtable.admin.v2.Instance.newBuilder()
                     .setDisplayName("my-instance")
-                    .setType(Type.DEVELOPMENT)
+                    .setType(com.google.bigtable.admin.v2.Instance.Type.DEVELOPMENT)
             )
             .putClusters("cluster1",
-                Cluster.newBuilder()
+                com.google.bigtable.admin.v2.Cluster.newBuilder()
                     .setLocation("projects/my-project/locations/us-east1-c")
                     .setServeNodes(1)
-                    .setDefaultStorageType(StorageType.SSD)
+                    .setDefaultStorageType(com.google.bigtable.admin.v2.StorageType.SSD)
                     .build()
             )
             .build();
@@ -132,7 +128,7 @@ public class CreateClusterRequestTest {
         .setDisplayName("custom display name")
         .addLabel("my label", "with some value")
         .addLabel("my other label", "with some value")
-        .setType(Type.DEVELOPMENT)
+        .setType(Instance.Type.DEVELOPMENT)
         .addCluster("cluster1", "us-east1-c", 1, StorageType.SSD);
 
     com.google.bigtable.admin.v2.CreateInstanceRequest actual = input
@@ -143,17 +139,17 @@ public class CreateClusterRequestTest {
             .setParent(ProjectName.of("my-project").toString())
             .setInstanceId("my-instance")
             .setInstance(
-                Instance.newBuilder()
+                com.google.bigtable.admin.v2.Instance.newBuilder()
                     .setDisplayName("custom display name")
                     .putLabels("my label", "with some value")
                     .putLabels("my other label", "with some value")
-                    .setType(Type.DEVELOPMENT)
+                    .setType(com.google.bigtable.admin.v2.Instance.Type.DEVELOPMENT)
             )
             .putClusters("cluster1",
-                Cluster.newBuilder()
+                com.google.bigtable.admin.v2.Cluster.newBuilder()
                     .setLocation("projects/my-project/locations/us-east1-c")
                     .setServeNodes(1)
-                    .setDefaultStorageType(StorageType.SSD)
+                    .setDefaultStorageType(com.google.bigtable.admin.v2.StorageType.SSD)
                     .build()
             )
             .build();

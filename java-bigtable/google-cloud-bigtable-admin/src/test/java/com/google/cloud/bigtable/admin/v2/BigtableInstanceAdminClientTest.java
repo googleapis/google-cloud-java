@@ -29,11 +29,9 @@ import com.google.api.gax.rpc.testing.FakeOperationSnapshot;
 import com.google.bigtable.admin.v2.AppProfileName;
 import com.google.bigtable.admin.v2.ClusterName;
 import com.google.bigtable.admin.v2.CreateInstanceMetadata;
-import com.google.bigtable.admin.v2.Instance.Type;
 import com.google.bigtable.admin.v2.InstanceName;
 import com.google.bigtable.admin.v2.LocationName;
 import com.google.bigtable.admin.v2.ProjectName;
-import com.google.bigtable.admin.v2.StorageType;
 import com.google.bigtable.admin.v2.UpdateClusterMetadata;
 import com.google.bigtable.admin.v2.UpdateInstanceMetadata;
 import com.google.cloud.Identity;
@@ -50,6 +48,7 @@ import com.google.cloud.bigtable.admin.v2.models.CreateInstanceRequest;
 import com.google.cloud.bigtable.admin.v2.models.Instance;
 import com.google.cloud.bigtable.admin.v2.models.PartialListClustersException;
 import com.google.cloud.bigtable.admin.v2.models.PartialListInstancesException;
+import com.google.cloud.bigtable.admin.v2.models.StorageType;
 import com.google.cloud.bigtable.admin.v2.models.UpdateAppProfileRequest;
 import com.google.cloud.bigtable.admin.v2.models.UpdateInstanceRequest;
 import com.google.cloud.bigtable.admin.v2.stub.BigtableInstanceAdminStub;
@@ -176,13 +175,13 @@ public class BigtableInstanceAdminClientTest {
             .setInstanceId(INSTANCE_NAME.getInstance())
             .setInstance(
                 com.google.bigtable.admin.v2.Instance.newBuilder()
-                    .setType(Type.DEVELOPMENT)
+                    .setType(com.google.bigtable.admin.v2.Instance.Type.DEVELOPMENT)
                     .setDisplayName(INSTANCE_NAME.getInstance())
             )
             .putClusters("cluster1", com.google.bigtable.admin.v2.Cluster.newBuilder()
                 .setLocation("projects/my-project/locations/us-east1-c")
                 .setServeNodes(1)
-                .setDefaultStorageType(StorageType.SSD)
+                .setDefaultStorageType(com.google.bigtable.admin.v2.StorageType.SSD)
                 .build()
             )
             .build();
@@ -197,7 +196,7 @@ public class BigtableInstanceAdminClientTest {
     // Execute
     Instance actualResult = adminClient.createInstance(
         CreateInstanceRequest.of(INSTANCE_NAME.getInstance())
-            .setType(Type.DEVELOPMENT)
+            .setType(Instance.Type.DEVELOPMENT)
             .addCluster("cluster1", "us-east1-c", 1, StorageType.SSD)
     );
 
@@ -374,7 +373,7 @@ public class BigtableInstanceAdminClientTest {
                 com.google.bigtable.admin.v2.Cluster.newBuilder()
                     .setLocation("projects/my-project/locations/us-east1-c")
                     .setServeNodes(3)
-                    .setDefaultStorageType(StorageType.SSD)
+                    .setDefaultStorageType(com.google.bigtable.admin.v2.StorageType.SSD)
             )
             .build();
     com.google.bigtable.admin.v2.Cluster expectedResponse = com.google.bigtable.admin.v2.Cluster
