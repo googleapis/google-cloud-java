@@ -19,23 +19,18 @@ import com.google.api.core.ApiAsyncFunction;
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.bigtable.admin.v2.CheckConsistencyResponse;
 import com.google.bigtable.admin.v2.DeleteTableRequest;
 import com.google.bigtable.admin.v2.DropRowRangeRequest;
-import com.google.bigtable.admin.v2.GenerateConsistencyTokenRequest;
-import com.google.bigtable.admin.v2.GenerateConsistencyTokenResponse;
 import com.google.bigtable.admin.v2.GetTableRequest;
 import com.google.bigtable.admin.v2.InstanceName;
 import com.google.bigtable.admin.v2.ListTablesRequest;
 import com.google.bigtable.admin.v2.TableName;
 import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListTablesPage;
 import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListTablesPagedResponse;
-import com.google.cloud.bigtable.admin.v2.models.ConsistencyToken;
 import com.google.cloud.bigtable.admin.v2.models.CreateTableRequest;
 import com.google.cloud.bigtable.admin.v2.models.ModifyColumnFamiliesRequest;
 import com.google.cloud.bigtable.admin.v2.models.Table;
 import com.google.cloud.bigtable.admin.v2.stub.EnhancedBigtableTableAdminStub;
-import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.Lists;
 import com.google.common.util.concurrent.Futures;
@@ -649,90 +644,56 @@ public final class BigtableTableAdminClient implements AutoCloseable {
   }
 
   /**
-   * Generates a token to verify the replication status of table mutations invoked before this call.
-   * Token expires in 90 days
+   * Blocks until replication has caught up to the point this method was called. This allows callers
+   * to make sure that their mutations have been replicated across all of their clusters.
    *
-   * <p>Sample code:
+   * <p>Sample code
    *
    * <pre>{@code
-   * ConsistencyToken consistencyToken = client.generateConsistencyToken("my-table");
+   * client.awaitReplication("my-table");
    * }</pre>
+   *
+   * @throws com.google.api.gax.retrying.PollException when polling exceeds the total timeout
    */
   @SuppressWarnings("WeakerAccess")
-  public ConsistencyToken generateConsistencyToken(String tableId) {
-    return awaitFuture(generateConsistencyTokenAsync(tableId));
+  public void awaitReplication(String tableId) {
+    TableName tableName = TableName
+        .of(instanceName.getProject(), instanceName.getInstance(), tableId);
+    awaitFuture(stub.awaitReplicationCallable().futureCall(tableName));
   }
 
   /**
-   * Asynchornously generates a token to verify the replication status of table mutations invoked
-   * before this call. Token expires in 90 days
+   * Returns a future that is resolved when replication has caught up to the point this method was
+   * called. This allows callers to make sure that their mutations have been replicated across all
+   * of their clusters.
    *
    * <p>Sample code:
    *
    * <pre>{@code
-   * ApiFuture<ConsistencyToken> consistencyTokenFuture = client.generateConsistencyToken("my-table");
-   * }</pre>
-   */
-  // TODO(igorbernstein2): add sample code for waiting for the fetch consistency token
-  @SuppressWarnings("WeakerAccess")
-  public ApiFuture<ConsistencyToken> generateConsistencyTokenAsync(final String tableId) {
-    GenerateConsistencyTokenRequest request = GenerateConsistencyTokenRequest.newBuilder()
-        .setName(getTableName(tableId))
-        .build();
-
-    return ApiFutures.transform(
-        stub.generateConsistencyTokenCallable().futureCall(request),
-        new ApiFunction<GenerateConsistencyTokenResponse, ConsistencyToken>() {
-          @Override
-          public ConsistencyToken apply(GenerateConsistencyTokenResponse proto) {
-            TableName tableName = TableName
-                .of(instanceName.getProject(), instanceName.getInstance(), tableId);
-            return ConsistencyToken.of(tableName, proto.getConsistencyToken());
-          }
-        },
-        MoreExecutors.directExecutor());
-  }
-
-  /**
-   * Checks replication consistency for the specified token consistency token
+   * ApiFuture<Void> replicationFuture = client.awaitReplicationAsync("my-table");
    *
-   * <p>Sample code:
+   * ApiFutures.addCallback(
+   *   replicationFuture,
+   *   new ApiFutureCallback<Void>() {
+   *     public void onSuccess(Table table) {
+   *       System.out.println("All clusters are now consistent");
+   *     }
    *
-   * <pre>{@code
-   * try(BigtableTableAdminClient client =  BigtableTableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
-   *   // Perform some mutations.
+   *     public void onFailure(Throwable t) {
+   *       t.printStackTrace();
+   *     }
+   *   },
+   *   MoreExecutors.directExecutor()
+   * );
    *
-   *   ConsistencyToken token = client.generateConsistencyToken("table-id");
-   *   while(!client.isConsistent(token)) {
-   *     Thread.sleep(100);
-   *   }
-   *
-   *   // Now all clusters are consistent
-   * }
    * }</pre>
    */
   @SuppressWarnings("WeakerAccess")
-  public boolean isConsistent(ConsistencyToken token) {
-    return awaitFuture(isConsistentAsync(token));
+  public ApiFuture<Void> awaitReplicationAsync(final String tableId) {
+    TableName tableName = TableName
+        .of(instanceName.getProject(), instanceName.getInstance(), tableId);
+    return stub.awaitReplicationCallable().futureCall(tableName);
   }
-
-  @VisibleForTesting
-  ApiFuture<Boolean> isConsistentAsync(ConsistencyToken token) {
-    ApiFuture<CheckConsistencyResponse> checkConsResp = stub.checkConsistencyCallable()
-        .futureCall(token.toProto(instanceName));
-
-    return ApiFutures.transform(
-        checkConsResp,
-        new ApiFunction<CheckConsistencyResponse, Boolean>() {
-          @Override
-          public Boolean apply(CheckConsistencyResponse input) {
-            return input.getConsistent();
-          }
-        },
-        MoreExecutors.directExecutor());
-  }
-
-  // TODO(igorbernstein2): add awaitConsist() & awaitConsistAsync() that generate & poll a token
 
   /**
    * Helper method to construct the table name in format: projects/{project}/instances/{instance}/tables/{tableId}

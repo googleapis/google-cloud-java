@@ -25,13 +25,12 @@ import com.google.bigtable.admin.v2.InstanceName;
 import com.google.bigtable.admin.v2.TableName;
 import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient;
 import com.google.cloud.bigtable.admin.v2.models.ColumnFamily;
+import com.google.cloud.bigtable.admin.v2.models.CreateTableRequest;
 import com.google.cloud.bigtable.admin.v2.models.GCRules.DurationRule;
 import com.google.cloud.bigtable.admin.v2.models.GCRules.IntersectionRule;
 import com.google.cloud.bigtable.admin.v2.models.GCRules.UnionRule;
 import com.google.cloud.bigtable.admin.v2.models.GCRules.VersionRule;
-import com.google.cloud.bigtable.admin.v2.models.CreateTableRequest;
 import com.google.cloud.bigtable.admin.v2.models.ModifyColumnFamiliesRequest;
-import com.google.cloud.bigtable.admin.v2.models.ConsistencyToken;
 import com.google.cloud.bigtable.admin.v2.models.Table;
 import com.google.common.collect.Maps;
 import com.google.protobuf.ByteString;
@@ -241,15 +240,12 @@ public class BigtableTableAdminClientIT {
   }
 
   @Test
-  public void checkConsistency() {
+  public void awaitReplication() {
     String tableId = "adminConsistencyTest";
 
     try {
       tableAdmin.createTable(CreateTableRequest.of(tableId));
-      ConsistencyToken consistencyToken = tableAdmin.generateConsistencyToken(tableId);
-      assertNotNull(consistencyToken);
-      boolean consistent = tableAdmin.isConsistent(consistencyToken);
-      assertTrue(consistent);
+      tableAdmin.awaitReplication(tableId);
     } finally {
       tableAdmin.deleteTable(tableId);
     }
