@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.ServerStreamingCallSettings;
 import com.google.api.gax.rpc.StatusCode.Code;
 import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.UnaryCallSettings;
+import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.bigtable.data.v2.internal.DummyBatchingDescriptor;
 import com.google.cloud.bigtable.data.v2.models.ConditionalRowMutation;
 import com.google.cloud.bigtable.data.v2.models.InstanceName;
@@ -38,6 +39,7 @@ import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
+import com.google.protobuf.ByteString;
 import java.util.List;
 import java.util.Set;
 import javax.annotation.Nonnull;
@@ -111,6 +113,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
   private final String appProfileId;
 
   private final ServerStreamingCallSettings<Query, Row> readRowsSettings;
+  private final UnaryCallSettings<Query, Row> readSingleRowSettings;
   private final UnaryCallSettings<String, List<KeyOffset>> sampleRowKeysSettings;
   private final UnaryCallSettings<RowMutation, Void> mutateRowSettings;
   private final BatchingCallSettings<RowMutation, Void> bulkMutateRowsSettings;
@@ -119,11 +122,20 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
 
   private EnhancedBigtableStubSettings(Builder builder) {
     super(builder);
+
+    // Since point reads & streaming reads share the same base callable that converts grpc errors
+    // into ApiExceptions, they must have the same retry codes.
+    Preconditions.checkState(
+        builder.readRowsSettings.getRetryableCodes().equals(builder.readRowsSettings.getRetryableCodes()),
+        "SingleReadRow retry codes must match ReadRows retry codes"
+      );
+
     instanceName = builder.instanceName;
     appProfileId = builder.appProfileId;
 
     // Per method settings.
     readRowsSettings = builder.readRowsSettings.build();
+    readSingleRowSettings = builder.readSingleRowSettings.build();
     sampleRowKeysSettings = builder.sampleRowKeysSettings.build();
     mutateRowSettings = builder.mutateRowSettings.build();
     bulkMutateRowsSettings = builder.bulkMutateRowsSettings.build();
@@ -155,6 +167,11 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
   /** Returns the object with the settings used for calls to ReadRows. */
   public ServerStreamingCallSettings<Query, Row> readRowsSettings() {
     return readRowsSettings;
+  }
+
+  /** Returns the object with the settings used for point reads via ReadRows. */
+  public UnaryCallSettings<Query, Row> readSingleRowSettings() {
+    return readSingleRowSettings;
   }
 
   /** Returns the object with the settings used for calls to SampleRowKeys. */
@@ -199,6 +216,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
     private String appProfileId;
 
     private final ServerStreamingCallSettings.Builder<Query, Row> readRowsSettings;
+    private final UnaryCallSettings.Builder<Query, Row> readSingleRowSettings;
     private final UnaryCallSettings.Builder<String, List<KeyOffset>> sampleRowKeysSettings;
     private final UnaryCallSettings.Builder<RowMutation, Void> mutateRowSettings;
     private final BatchingCallSettings.Builder<RowMutation, Void> bulkMutateRowsSettings;
@@ -233,18 +251,25 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
 
       // Per-method settings using baseSettings for defaults.
       readRowsSettings = ServerStreamingCallSettings.newBuilder();
-      /* TODO: copy timeouts, retryCodes & retrySettings from baseSettings.readRows once it exists in GAPIC */
       readRowsSettings
-          .setRetryableCodes(DEFAULT_RETRY_CODES)
-          .setRetrySettings(
-              DEFAULT_RETRY_SETTINGS.toBuilder().setTotalTimeout(Duration.ofHours(1)).build())
+          .setRetryableCodes(baseDefaults.readRowsSettings().getRetryableCodes())
+          .setRetrySettings(baseDefaults.readRowsSettings().getRetrySettings())
           .setIdleTimeout(Duration.ofMinutes(5));
 
+      // Point reads should use same defaults as streaming reads, but with a shorter timeout
+      readSingleRowSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      readSingleRowSettings
+          .setRetryableCodes(baseDefaults.readRowsSettings().getRetryableCodes())
+          .setRetrySettings(
+              baseDefaults.readRowsSettings().getRetrySettings().toBuilder()
+                  .setTotalTimeout(DEFAULT_RETRY_SETTINGS.getTotalTimeout())
+                  .build()
+          );
+
       sampleRowKeysSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      /* TODO: copy retryCodes & retrySettings from baseSettings.sampleRowKeysSettings once it exists in GAPIC */
       sampleRowKeysSettings
-          .setRetryableCodes(Code.DEADLINE_EXCEEDED, Code.UNAVAILABLE, Code.ABORTED)
-          .setRetrySettings(DEFAULT_RETRY_SETTINGS);
+          .setRetryableCodes(baseDefaults.sampleRowKeysSettings().getRetryableCodes())
+          .setRetrySettings(baseDefaults.sampleRowKeysSettings().getRetrySettings());
 
       mutateRowSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       copyRetrySettings(baseDefaults.mutateRowSettings(), mutateRowSettings);
@@ -281,6 +306,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
 
       // Per method settings.
       readRowsSettings = settings.readRowsSettings.toBuilder();
+      readSingleRowSettings = settings.readSingleRowSettings.toBuilder();
       sampleRowKeysSettings = settings.sampleRowKeysSettings.toBuilder();
       mutateRowSettings = settings.mutateRowSettings.toBuilder();
       bulkMutateRowsSettings = settings.bulkMutateRowsSettings.toBuilder();
@@ -336,6 +362,11 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
     /** Returns the builder for the settings used for calls to readRows. */
     public ServerStreamingCallSettings.Builder<Query, Row> readRowsSettings() {
       return readRowsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to readSingleRows. */
+    public UnaryCallSettings.Builder<Query, Row> readSingleRowSettings() {
+      return readSingleRowSettings;
     }
 
     /** Returns the builder for the settings used for calls to SampleRowKeysSettings. */

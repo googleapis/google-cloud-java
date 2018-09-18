@@ -36,6 +36,7 @@ import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStub;
 import com.google.protobuf.ByteString;
 import java.io.IOException;
 import java.util.List;
+import javax.annotation.Nullable;
 
 /**
  * Client for reading from and writing to existing Bigtable tables.
@@ -128,6 +129,19 @@ public class BigtableDataClient implements AutoCloseable {
     this.stub = stub;
   }
 
+
+  /** @deprecated Use {@link #readSingleRowAsync(String, String)} */
+  @Deprecated
+  public ApiFuture<Row> readRowAsync(String tableId, String rowKey) {
+    return readRowAsync(tableId, rowKey);
+  }
+
+  /** @deprecated Use {@link #readSingleRowAsync(String, ByteString)} */
+  @Deprecated
+  public ApiFuture<Row> readRowAsync(String tableId, ByteString rowKey) {
+    return readRowAsync(tableId, rowKey);
+  }
+
   /**
    * Convenience method for asynchronously reading a single row. If the row does not exist, the
    * future's value will be null.
@@ -143,8 +157,8 @@ public class BigtableDataClient implements AutoCloseable {
    * }
    * }</pre>
    */
-  public ApiFuture<Row> readRowAsync(String tableId, String rowKey) {
-    return readRowAsync(tableId, ByteString.copyFromUtf8(rowKey));
+  public ApiFuture<Row> readSingleRowAsync(String tableId, String rowKey) {
+    return readSingleRowAsync(tableId, ByteString.copyFromUtf8(rowKey));
   }
 
   /**
@@ -162,8 +176,33 @@ public class BigtableDataClient implements AutoCloseable {
    * }
    * }</pre>
    */
-  public ApiFuture<Row> readRowAsync(String tableId, ByteString rowKey) {
-    return readRowsCallable().first().futureCall(Query.create(tableId).rowKey(rowKey));
+  public ApiFuture<Row> readSingleRowAsync(String tableId, ByteString rowKey) {
+    return stub.readSingleRowCallable().futureCall(Query.create(tableId).rowKey(rowKey));
+  }
+
+  /**
+   * Read the first result from the query.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * InstanceName instanceName = InstanceName.of("[PROJECT]", "[INSTANCE]");
+   * try (BigtableClient bigtableClient = BigtableClient.create(instanceName)) {
+   *   String tableId = "[TABLE]";
+   *
+   *   Query query = Query.create(tableId)
+   *     .rowKey("[ROW KEY]")
+   *
+   *   Row row = bigtableClient.readSingleRowsCallable().call(query);
+   * }
+   * }</pre>
+   *
+   * @see UnaryCallable For call styles.
+   * @see Query For query options.
+   * @see com.google.cloud.bigtable.data.v2.models.Filters For the filter building DSL.
+   */
+  public UnaryCallable<Query, Row> readSingleRowCallable() {
+    return stub.readSingleRowCallable();
   }
 
   /**

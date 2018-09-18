@@ -74,6 +74,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
   private final RequestContext requestContext;
 
   private final ServerStreamingCallable<Query, Row> readRowsCallable;
+  private final UnaryCallable<Query, Row> readSingleRowCallable;
   private final UnaryCallable<String, List<KeyOffset>> sampleRowKeysCallable;
   private final UnaryCallable<RowMutation, Void> mutateRowCallable;
   private final UnaryCallable<BulkMutation, Void> bulkMutateRowsCallable;
@@ -150,7 +151,14 @@ public class EnhancedBigtableStub implements AutoCloseable {
     this.requestContext =
         RequestContext.create(settings.getInstanceName(), settings.getAppProfileId());
 
-    readRowsCallable = createReadRowsCallable(new DefaultRowAdapter());
+    readRowsCallable = createReadRowsCallable(settings.readRowsSettings(), new DefaultRowAdapter());
+    readSingleRowCallable = createReadRowsCallable(
+        ServerStreamingCallSettings.<Query,Row>newBuilder()
+          .setRetryableCodes(settings.readSingleRowSettings().getRetryableCodes())
+          .setRetrySettings(settings.readSingleRowSettings().getRetrySettings())
+          .setIdleTimeout(settings.readSingleRowSettings().getRetrySettings().getTotalTimeout())
+          .build(),
+        new DefaultRowAdapter()).first();
     sampleRowKeysCallable = createSampleRowKeysCallable();
     mutateRowCallable = createMutateRowCallable();
     bulkMutateRowsCallable = createBulkMutateRowsCallable();
@@ -176,6 +184,15 @@ public class EnhancedBigtableStub implements AutoCloseable {
    */
   public <RowT> ServerStreamingCallable<Query, RowT> createReadRowsCallable(
       RowAdapter<RowT> rowAdapter) {
+    return createReadRowsCallable(settings.readRowsSettings(), rowAdapter);
+  }
+
+  /**
+   * Helper to create the callable chain for both point reads and streaming reads.
+   * @see #createReadRowsCallable(RowAdapter)
+   */
+  private <RowT> ServerStreamingCallable<Query, RowT> createReadRowsCallable(
+      ServerStreamingCallSettings<Query, Row> settings, RowAdapter<RowT> rowAdapter) {
 
     ServerStreamingCallable<ReadRowsRequest, RowT> merging =
         new RowMergingCallable<>(stub.readRowsCallable(), rowAdapter);
@@ -185,9 +202,9 @@ public class EnhancedBigtableStub implements AutoCloseable {
     ServerStreamingCallSettings<ReadRowsRequest, RowT> innerSettings =
         ServerStreamingCallSettings.<ReadRowsRequest, RowT>newBuilder()
             .setResumptionStrategy(new ReadRowsResumptionStrategy<>(rowAdapter))
-            .setRetryableCodes(settings.readRowsSettings().getRetryableCodes())
-            .setRetrySettings(settings.readRowsSettings().getRetrySettings())
-            .setIdleTimeout(settings.readRowsSettings().getIdleTimeout())
+            .setRetryableCodes(settings.getRetryableCodes())
+            .setRetrySettings(settings.getRetrySettings())
+            .setIdleTimeout(settings.getIdleTimeout())
             .build();
 
     // Retry logic is split into 2 parts to workaround a rare edge case described in
@@ -358,6 +375,10 @@ public class EnhancedBigtableStub implements AutoCloseable {
   // <editor-fold desc="Callable accessors">
   public ServerStreamingCallable<Query, Row> readRowsCallable() {
     return readRowsCallable;
+  }
+
+  public UnaryCallable<Query, Row> readSingleRowCallable() {
+    return readSingleRowCallable;
   }
 
   public UnaryCallable<String, List<KeyOffset>> sampleRowKeysCallable() {
