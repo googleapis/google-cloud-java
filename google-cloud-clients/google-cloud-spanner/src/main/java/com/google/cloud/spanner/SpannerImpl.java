@@ -1064,7 +1064,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
       final int prefetchChunks =
           readOptions.hasPrefetchChunks() ? readOptions.prefetchChunks() : defaultPrefetchChunks;
       ResumableStreamIterator stream =
-          new ResumableStreamIterator(MAX_BUFFERED_CHUNKS) {
+          new ResumableStreamIterator(MAX_BUFFERED_CHUNKS, QUERY) {
             @Override
             CloseableIterator<PartialResultSet> startStream(@Nullable ByteString resumeToken) {
               GrpcStreamIterator stream = new GrpcStreamIterator(prefetchChunks);
