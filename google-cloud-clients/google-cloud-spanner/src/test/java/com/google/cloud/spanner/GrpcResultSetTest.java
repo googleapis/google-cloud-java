@@ -676,9 +676,9 @@ public class GrpcResultSetTest {
             .build());
     consumer.onCompleted();
     resultSet.next();
-    assertThat(resultSet.getBoolean(0));
+    assertThat(resultSet.getBoolean(0)).isTrue();
     resultSet.next();
-    assertThat(!resultSet.getBoolean(0));
+    assertThat(resultSet.getBoolean(0)).isFalse();
   }
 
   @Test
@@ -695,8 +695,7 @@ public class GrpcResultSetTest {
     Double d = resultSet.getDouble(0);
     assertThat(d.equals(Double.MIN_VALUE));
     resultSet.next();
-    d = resultSet.getDouble(0);
-    assertThat(d.equals(Double.MAX_VALUE));
+    assertThat(resultSet.getDouble(0)).isWithin(0.0).of(Double.MAX_VALUE);
   }
 
   @Test
@@ -710,12 +709,9 @@ public class GrpcResultSetTest {
     consumer.onCompleted();
 
     resultSet.next();
-    Long l = resultSet.getLong(0);
-    assertThat(l.equals(Long.MIN_VALUE));
-
+    assertThat(resultSet.getLong(0)).isEqualTo(Long.MIN_VALUE);
     resultSet.next();
-    l = resultSet.getLong(0);
-    assertThat(l.equals(Long.MAX_VALUE));
+    assertThat(resultSet.getLong(0)).isEqualTo(Long.MAX_VALUE);
   }
 
   @Test
@@ -728,7 +724,9 @@ public class GrpcResultSetTest {
     consumer.onCompleted();
 
     resultSet.next();
-    assertThat(resultSet.getDate(0).compareTo(Date.fromYearMonthDay(2018, 5, 29)) == 0);
+    assertThat(resultSet.getDate(0)
+        .compareTo(Date.fromYearMonthDay(2018, 5, 29)))
+        .isEqualTo(0);
   }
 
   @Test
@@ -741,7 +739,8 @@ public class GrpcResultSetTest {
     consumer.onCompleted();
 
     resultSet.next();
-    assertThat(resultSet.getTimestamp(0) == Timestamp.parseTimestamp("0001-01-01T00:00:00Z"));
+    assertThat(resultSet.getTimestamp(0))
+        .isEqualTo(Timestamp.parseTimestamp("0001-01-01T00:00:00Z"));
   }
 
   @Test
