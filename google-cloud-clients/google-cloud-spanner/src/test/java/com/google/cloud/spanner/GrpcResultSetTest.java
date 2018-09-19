@@ -676,9 +676,9 @@ public class GrpcResultSetTest {
             .build());
     consumer.onCompleted();
     resultSet.next();
-    assertThat(resultSet.getBoolean(0) == true);
+    assertThat(resultSet.getBoolean(0));
     resultSet.next();
-    assertThat(resultSet.getBoolean(0) == false);
+    assertThat(!resultSet.getBoolean(0));
   }
 
   @Test

@@ -39,7 +39,6 @@ import org.mockito.MockitoAnnotations;
 public class SpannerImplTest {
   @Mock private SpannerRpc rpc;
   @Mock private SpannerOptions spannerOptions;
-  @Mock private SpannerImpl.TransactionRunnerImpl.Sleeper sleeper;
   private SpannerImpl impl;
 
   @Captor ArgumentCaptor<Map<SpannerRpc.Option, Object>> options;
@@ -126,7 +125,7 @@ public class SpannerImplTest {
           new Callable<Object>() {
             @Override
             public Void call() throws Exception {
-              throw (new Exception("Should be translated to SpannerException"));
+              throw new Exception("Should be translated to SpannerException");
             }
           });
     } catch (SpannerException e) {
