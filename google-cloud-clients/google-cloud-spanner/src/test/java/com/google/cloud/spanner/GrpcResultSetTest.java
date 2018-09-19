@@ -783,7 +783,7 @@ public class GrpcResultSetTest {
     consumer.onCompleted();
     resultSet.next();
 
-    assertThat(resultSet.getDoubleArray(0).equals(dArray));
+    assertThat(resultSet.getDoubleArray(0)).isEqualTo(dArray, 0.0);
   }
 
   @Test
@@ -801,7 +801,7 @@ public class GrpcResultSetTest {
     consumer.onCompleted();
     resultSet.next();
 
-    assertThat(resultSet.getTimestampList(0).equals(tList));
+    assertThat(resultSet.getTimestampList(0)).isEqualTo(tList);
   }
 
   @Test
