@@ -2720,13 +2720,10 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     /*
      * Get the query statistics. Query statistics are delivered with the last PartialResultSet
      * in the stream. Any attempt to call this method before the caller has finished consuming the
-     * results will throw an exception.
+     * results will return null.
      */
-    ResultSetStats getStats() {
-      if (statistics == null) {
-        throw newSpannerException(
-            ErrorCode.INTERNAL, "Stream closed without sending query statistics");
-      }
+    @Nullable
+    ResultSetStats getStats() { 
       return statistics;
     }
 
