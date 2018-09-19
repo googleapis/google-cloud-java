@@ -1029,7 +1029,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
 
     ExecuteSqlRequest.Builder getExecuteSqlRequestBuilder(
         Statement statement,
-        com.google.spanner.v1.ExecuteSqlRequest.QueryMode queryMode) {
+        QueryMode queryMode) {
       ExecuteSqlRequest.Builder builder =
           ExecuteSqlRequest.newBuilder()
               .setSql(statement.getSql())
@@ -1388,7 +1388,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
       final ExecuteSqlRequest.Builder builder =
           ExecuteSqlRequest.newBuilder()
               .setSql(statement.getSql())
-              .setQueryMode(com.google.spanner.v1.ExecuteSqlRequest.QueryMode.NORMAL)
+              .setQueryMode(QueryMode.NORMAL)
               .setSession(session.name)
               .setTransaction(TransactionSelector.newBuilder().setId(transactionId).build());
       Map<String, Value> stmtParameters = statement.getParameters();
@@ -1613,7 +1613,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
       final ExecuteSqlRequest.Builder builder =
           getExecuteSqlRequestBuilder(
               statement,
-              com.google.spanner.v1.ExecuteSqlRequest.QueryMode.NORMAL);
+              QueryMode.NORMAL);
       builder.setSeqno(getSeqNo());
       com.google.spanner.v1.ResultSet resultSet =
           runWithRetries(
