@@ -557,6 +557,7 @@
           </execution>
         </executions>
         <configuration>
+          <forkedProcessTimeoutInSeconds>600</forkedProcessTimeoutInSeconds>
           <reportNameSuffix>sponge_log</reportNameSuffix>
         </configuration>
       </plugin>

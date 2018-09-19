@@ -15,23 +15,27 @@
  */
 package com.google.cloud.bigtable.admin.v2.models;
 
+import static com.google.cloud.bigtable.admin.v2.models.StorageType.SSD;
+
 import com.google.api.core.InternalApi;
 import com.google.bigtable.admin.v2.InstanceName;
 import com.google.bigtable.admin.v2.LocationName;
 import com.google.bigtable.admin.v2.ProjectName;
-import com.google.bigtable.admin.v2.StorageType;
+import com.google.common.base.Preconditions;
+import javax.annotation.Nonnull;
 
 /**
  * Parameters for creating a new Bigtable cluster.
  *
- * <p>A cluster represents the actual Cloud Bigtable service. Each cluster belongs to a single Cloud
- * Bigtable instance. When your application sends requests to a Cloud Bigtable instance, those
+ * <p>A cluster represents the actual Cloud Bigtable service. Each cluster belongs to a single
+ * Cloud Bigtable instance. When your application sends requests to a Cloud Bigtable instance, those
  * requests are actually handled by one of the clusters in the instance.
  *
  * <p>Each cluster is located in a single zone. An instance's clusters must be in unique zones that
  * are within the same region. For example, if the first cluster is in us-east1-b, then us-east1-c
  * is a valid zone for the second cluster. For a list of zones and regions where Cloud Bigtable is
- * available, see <a href="https://cloud.google.com/bigtable/docs/locations">Cloud Bigtable Locations</a>.
+ * available, see <a href="https://cloud.google.com/bigtable/docs/locations">Cloud Bigtable
+ * Locations</a>.
  *
  *
  * Examples:
@@ -44,7 +48,8 @@ import com.google.bigtable.admin.v2.StorageType;
  *   .setStorageType(StorageType.SSD);
  * }</pre>
  *
- * @see <a href="https://cloud.google.com/bigtable/docs/instances-clusters-nodes#clusters">For more details</a>
+ * @see <a href="https://cloud.google.com/bigtable/docs/instances-clusters-nodes#clusters">For more
+ * details</a>
  */
 public final class CreateClusterRequest {
   private final com.google.bigtable.admin.v2.CreateClusterRequest.Builder proto = com.google.bigtable.admin.v2.CreateClusterRequest
@@ -57,7 +62,8 @@ public final class CreateClusterRequest {
 
   /**
    * Builds a new request to create a new cluster to the specified instance with the specified
-   * cluster id. */
+   * cluster id.
+   */
   public static CreateClusterRequest of(String instanceId, String clusterId) {
     return new CreateClusterRequest(instanceId, clusterId);
   }
@@ -65,7 +71,7 @@ public final class CreateClusterRequest {
   private CreateClusterRequest(String instanceId, String clusterId) {
     this.instanceId = instanceId;
     proto.setClusterId(clusterId);
-    proto.getClusterBuilder().setDefaultStorageType(StorageType.SSD);
+    proto.getClusterBuilder().setDefaultStorageType(SSD.toProto());
   }
 
   /**
@@ -78,8 +84,10 @@ public final class CreateClusterRequest {
     return this;
   }
 
-  /** Sets the number of nodes allocated to this cluster. More nodes enable higher throughput and
-   * more consistent performance. */
+  /**
+   * Sets the number of nodes allocated to this cluster. More nodes enable higher throughput and
+   * more consistent performance.
+   */
   @SuppressWarnings("WeakerAccess")
   public CreateClusterRequest setServeNodes(int numNodes) {
     proto.getClusterBuilder().setServeNodes(numNodes);
@@ -87,13 +95,16 @@ public final class CreateClusterRequest {
   }
 
   /**
-   * Sets the type of storage used by this cluster to serve its parent instance's tables.
-   * Defaults to {@code SSD}.
+   * Sets the type of storage used by this cluster to serve its parent instance's tables. Defaults
+   * to {@code SSD}.
    */
-  // TODO(igorbernstein2): try to avoid leaking protobuf generated enums
   @SuppressWarnings("WeakerAccess")
-  public CreateClusterRequest setStorageType(StorageType storageType) {
-    proto.getClusterBuilder().setDefaultStorageType(storageType);
+  public CreateClusterRequest setStorageType(@Nonnull StorageType storageType) {
+    Preconditions.checkNotNull(storageType);
+    Preconditions.checkArgument(storageType != StorageType.UNRECOGNIZED,
+        "StorageType can't be UNRECOGNIZED");
+
+    proto.getClusterBuilder().setDefaultStorageType(storageType.toProto());
     return this;
   }
 
@@ -104,7 +115,8 @@ public final class CreateClusterRequest {
   @InternalApi
   public com.google.bigtable.admin.v2.CreateClusterRequest toProto(ProjectName projectName) {
     proto.setParent(InstanceName.of(projectName.getProject(), instanceId).toString());
-    proto.getClusterBuilder().setLocation(LocationName.of(projectName.getProject(), zone).toString());
+    proto.getClusterBuilder()
+        .setLocation(LocationName.of(projectName.getProject(), zone).toString());
 
     return proto.build();
   }
@@ -130,7 +142,8 @@ public final class CreateClusterRequest {
    */
   @InternalApi
   com.google.bigtable.admin.v2.Cluster toEmbeddedProto(ProjectName projectName) {
-    proto.getClusterBuilder().setLocation(LocationName.of(projectName.getProject(), zone).toString());
+    proto.getClusterBuilder()
+        .setLocation(LocationName.of(projectName.getProject(), zone).toString());
 
     return proto.getClusterBuilder().build();
   }

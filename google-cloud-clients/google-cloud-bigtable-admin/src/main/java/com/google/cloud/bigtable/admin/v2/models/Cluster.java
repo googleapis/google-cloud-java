@@ -16,10 +16,8 @@
 package com.google.cloud.bigtable.admin.v2.models;
 
 import com.google.api.core.InternalApi;
-import com.google.bigtable.admin.v2.Cluster.State;
 import com.google.bigtable.admin.v2.ClusterName;
 import com.google.bigtable.admin.v2.LocationName;
-import com.google.bigtable.admin.v2.StorageType;
 import com.google.common.base.Objects;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Verify;
@@ -32,8 +30,63 @@ import javax.annotation.Nonnull;
  * in the instance.
  */
 public class Cluster {
+  public enum State {
+    /** The state of the cluster could not be determined. */
+    NOT_KNOWN(com.google.bigtable.admin.v2.Cluster.State.STATE_NOT_KNOWN),
+    /** The cluster has been successfully created and is ready to serve requests. */
+    READY(com.google.bigtable.admin.v2.Cluster.State.READY),
+    /**
+     * The cluster is currently being created, and may be destroyed if the creation process
+     * encounters an error. A cluster may not be able to serve requests while being created.
+     */
+    CREATING(com.google.bigtable.admin.v2.Cluster.State.CREATING),
+    /**
+     * The cluster is currently being resized, and may revert to its previous node count if the
+     * process encounters an error. A cluster is still capable of serving requests while being
+     * resized, but may exhibit performance as if its number of allocated nodes is between the
+     * starting and requested states.
+     */
+    RESIZING(com.google.bigtable.admin.v2.Cluster.State.RESIZING),
+    /**
+     * The cluster has no backing nodes. The data (tables) still exist, but no operations can be
+     * performed on the cluster.
+     */
+    DISABLED(com.google.bigtable.admin.v2.Cluster.State.DISABLED),
+    /** The state of the cluster is not known by this client. Please upgrade your client. */
+    UNRECOGNIZED(com.google.bigtable.admin.v2.Cluster.State.UNRECOGNIZED);
+
+    private final com.google.bigtable.admin.v2.Cluster.State proto;
+
+    /**
+     * Wraps the protobuf. This method is considered an internal implementation detail and not meant
+     * to be used by applications.
+     */
+    @InternalApi
+    public static State fromProto(com.google.bigtable.admin.v2.Cluster.State proto) {
+      for (State state : values()) {
+        if (state.proto.equals(proto)) {
+          return state;
+        }
+      }
+      return UNRECOGNIZED;
+    }
+
+    State(com.google.bigtable.admin.v2.Cluster.State proto) {
+      this.proto = proto;
+    }
+
+    /**
+     * Creates the request protobuf. This method is considered an internal implementation detail and
+     * not meant to be used by applications.
+     */
+    @InternalApi
+    public com.google.bigtable.admin.v2.Cluster.State toProto() {
+      return proto;
+    }
+  }
+
   @Nonnull
-  private final com.google.bigtable.admin.v2.Cluster proto;
+  private final com.google.bigtable.admin.v2.Cluster stateProto;
 
   /**
    * Wraps a protobuf response.
@@ -49,7 +102,7 @@ public class Cluster {
   private Cluster(@Nonnull com.google.bigtable.admin.v2.Cluster proto) {
     Preconditions.checkNotNull(proto);
     Preconditions.checkArgument(!proto.getName().isEmpty(), "Name must be set");
-    this.proto = proto;
+    this.stateProto = proto;
   }
 
 
@@ -58,7 +111,7 @@ public class Cluster {
   public String getId() {
     // Constructor ensures that name is not null
     ClusterName fullName = Verify.verifyNotNull(
-        ClusterName.parse(proto.getName()),
+        ClusterName.parse(stateProto.getName()),
         "Name can never be null");
     //noinspection ConstantConditions
     return fullName.getCluster();
@@ -69,7 +122,7 @@ public class Cluster {
   public String getInstanceId() {
     // Constructor ensures that name is not null
     ClusterName fullName = Verify.verifyNotNull(
-        ClusterName.parse(proto.getName()),
+        ClusterName.parse(stateProto.getName()),
         "Name can never be null");
     //noinspection ConstantConditions
     return fullName.getInstance();
@@ -80,16 +133,15 @@ public class Cluster {
   /** Get the zone where this cluster is located. */
   @SuppressWarnings("WeakerAccess")
   public String getZone() {
-    LocationName location = Verify.verifyNotNull(LocationName.parse(proto.getLocation()));
+    LocationName location = Verify.verifyNotNull(LocationName.parse(stateProto.getLocation()));
     //noinspection ConstantConditions
     return location.getLocation();
   }
 
   /** Gets the current state of the cluster */
-  // TODO(igorbernstein2): try to avoid exposing proto enums
   @SuppressWarnings("WeakerAccess")
   public State getState() {
-    return proto.getState();
+    return State.fromProto(stateProto.getState());
   }
 
   /**
@@ -98,17 +150,16 @@ public class Cluster {
    */
   @SuppressWarnings("WeakerAccess")
   public int getServeNodes() {
-    return proto.getServeNodes();
+    return stateProto.getServeNodes();
   }
 
   /**
    * The type of storage used by this cluster to serve its parent instance's tables, unless
    * explicitly overridden.
    */
-  // TODO(igorbernstein2): try to avoid exposing proto enums
   @SuppressWarnings("WeakerAccess")
   public StorageType getStorageType() {
-    return proto.getDefaultStorageType();
+    return StorageType.fromProto(stateProto.getDefaultStorageType());
   }
 
   @Override
@@ -120,11 +171,11 @@ public class Cluster {
       return false;
     }
     Cluster cluster = (Cluster) o;
-    return Objects.equal(proto, cluster.proto);
+    return Objects.equal(stateProto, cluster.stateProto);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hashCode(proto);
+    return Objects.hashCode(stateProto);
   }
 }

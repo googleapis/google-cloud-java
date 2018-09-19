@@ -61,7 +61,7 @@ public interface Spanner extends Service<SpannerOptions> {
    * final String instance = "test-instance";
    * final String database = "example-db";
    * DatabaseId db =
-   *     DatabaseId.of("span-cloud-testing", "nsujir-ins", "example-db");
+   *     DatabaseId.of(project, instance, database);
    * DatabaseClient dbClient = spanner.getDatabaseClient(db);
    * }</pre>
    * <!--SNIPPET get_db_client-->
@@ -85,7 +85,7 @@ public interface Spanner extends Service<SpannerOptions> {
    * final String instance = "test-instance";
    * final String database = "example-db";
    * DatabaseId db =
-   *     DatabaseId.of("span-cloud-testing", "nsujir-ins", "example-db");
+   *     DatabaseId.of(project, instance, database);
    * BatchClient batchClient = spanner.getBatchClient(db);
    * }</pre>
    * <!--SNIPPET get_batch_client-->
