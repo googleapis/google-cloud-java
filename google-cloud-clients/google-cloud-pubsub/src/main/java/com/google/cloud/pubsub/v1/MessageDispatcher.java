@@ -17,16 +17,16 @@
 package com.google.cloud.pubsub.v1;
 
 import com.google.api.core.ApiClock;
+import com.google.api.core.ApiFutureCallback;
+import com.google.api.core.ApiFutures;
 import com.google.api.core.InternalApi;
+import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.batching.FlowController;
 import com.google.api.gax.batching.FlowController.FlowControlException;
 import com.google.api.gax.core.Distribution;
 import com.google.cloud.pubsub.v1.MessageDispatcher.OutstandingMessageBatch.OutstandingMessage;
-import com.google.common.collect.ArrayListMultimap;
 import com.google.common.primitives.Ints;
-import com.google.common.util.concurrent.FutureCallback;
-import com.google.common.util.concurrent.Futures;
-import com.google.common.util.concurrent.SettableFuture;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.ReceivedMessage;
 import java.util.ArrayList;
@@ -129,7 +129,7 @@ class MessageDispatcher {
   }
 
   /** Handles callbacks for acking/nacking messages from the {@link MessageReceiver}. */
-  private class AckHandler implements FutureCallback<AckReply> {
+  private class AckHandler implements ApiFutureCallback<AckReply> {
     private final String ackId;
     private final int outstandingBytes;
     private final long receivedTimeMillis;
@@ -379,7 +379,7 @@ class MessageDispatcher {
 
       final PubsubMessage message = outstandingMessage.receivedMessage().getMessage();
       final AckHandler ackHandler = outstandingMessage.ackHandler();
-      final SettableFuture<AckReply> response = SettableFuture.create();
+      final SettableApiFuture<AckReply> response = SettableApiFuture.create();
       final AckReplyConsumer consumer =
           new AckReplyConsumer() {
             @Override
@@ -392,7 +392,7 @@ class MessageDispatcher {
               response.set(AckReply.NACK);
             }
           };
-      Futures.addCallback(response, ackHandler);
+      ApiFutures.addCallback(response, ackHandler, MoreExecutors.directExecutor());
       executor.execute(
           new Runnable() {
             @Override
