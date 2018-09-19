@@ -408,6 +408,12 @@ final class SessionPool {
         public Timestamp getCommitTimestamp() {
           return runner.getCommitTimestamp();
         }
+
+        @Override
+        public TransactionRunner allowNestedTransaction() {
+          runner.allowNestedTransaction();
+          return runner;
+        }
       };
     }
 
