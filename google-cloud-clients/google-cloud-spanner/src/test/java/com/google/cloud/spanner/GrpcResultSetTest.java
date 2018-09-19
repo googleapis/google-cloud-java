@@ -819,6 +819,6 @@ public class GrpcResultSetTest {
     consumer.onCompleted();
     resultSet.next();
 
-    assertThat(resultSet.getDateList(0).equals(dList));
+    assertThat(resultSet.getDateList(0)).isEqualTo(dList);
   }
 }
