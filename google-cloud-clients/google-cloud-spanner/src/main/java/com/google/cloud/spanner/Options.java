@@ -199,12 +199,12 @@ public final class Options implements Serializable {
 
     Options that = (Options) o;
     return (!hasLimit() && !that.hasLimit()
-            || (hasLimit() && that.hasLimit() && Objects.equals(limit(), that.limit())))
+            || hasLimit() && that.hasLimit() && Objects.equals(limit(), that.limit()))
         && (!hasPrefetchChunks() && !that.hasPrefetchChunks()
-            || (hasPrefetchChunks() && that.hasPrefetchChunks()
-                && Objects.equals(prefetchChunks(), that.prefetchChunks())))
+            || hasPrefetchChunks() && that.hasPrefetchChunks()
+                && Objects.equals(prefetchChunks(), that.prefetchChunks()))
         && (!hasPageSize() && !that.hasPageSize()
-            || (hasPageSize() && that.hasPageSize() && Objects.equals(pageSize(), that.pageSize())))
+            || hasPageSize() && that.hasPageSize() && Objects.equals(pageSize(), that.pageSize()))
         && Objects.equals(pageToken(), that.pageToken())
         && Objects.equals(filter(), that.filter());
   }

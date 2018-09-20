@@ -18,7 +18,6 @@ package com.google.cloud.spanner;
 
 import static com.google.common.truth.Truth.assertThat;
 
-import com.google.cloud.spanner.Options.ListOption;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
@@ -102,7 +101,9 @@ public class OptionsTest {
 
   @Test
   public void listEquality() {
-    Options o1, o2, o3;
+    Options o1;
+    Options o2;
+    Options o3;
 
     o1 = Options.fromListOptions();
     o2 = Options.fromListOptions();
@@ -141,7 +142,6 @@ public class OptionsTest {
   public void readOptTest() {
     int limit = 3;
     Options opts = Options.fromReadOptions(Options.limit(limit));
-    String st = opts.toString();
 
     assertThat(opts.toString()).isEqualTo("limit: " + Integer.toString(limit) + " ");
     assertThat(opts.hashCode()).isEqualTo(964);
@@ -149,7 +149,9 @@ public class OptionsTest {
 
   @Test
   public void readEquality() {
-    Options o1, o2, o3;
+    Options o1;
+    Options o2;
+    Options o3;
 
     o1 = Options.fromReadOptions();
     o2 = Options.fromReadOptions();
@@ -178,7 +180,9 @@ public class OptionsTest {
 
   @Test
   public void queryEquality() {
-    Options o1, o2, o3;
+    Options o1;
+    Options o2;
+    Options o3;
 
     o1 = Options.fromQueryOptions();
     o2 = Options.fromQueryOptions();
