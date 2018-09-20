@@ -179,13 +179,11 @@ public class Detect {
       // Read file and encode into Base64
       Path path = Paths.get(filePath);
       byte[] data = Files.readAllBytes(path);
-      byte[] encodedBytes = Base64.encodeBase64(data);
 
       AnnotateVideoRequest request = AnnotateVideoRequest.newBuilder()
-          .setInputContent(ByteString.copyFrom(encodedBytes))
+          .setInputContent(ByteString.copyFrom(data))
           .addFeatures(Feature.LABEL_DETECTION)
           .build();
-
       // Create an operation that will contain the response when the operation completes.
       OperationFuture<AnnotateVideoResponse, AnnotateVideoProgress> response =
           client.annotateVideoAsync(request);
