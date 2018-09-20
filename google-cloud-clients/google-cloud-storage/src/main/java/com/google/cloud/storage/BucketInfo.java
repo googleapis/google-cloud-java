@@ -1013,7 +1013,14 @@ public class BucketInfo implements Serializable {
       } else {
         Bucket.RetentionPolicy retentionPolicy = new Bucket.RetentionPolicy();
         retentionPolicy.setRetentionPeriod(retentionPeriod);
+        if (retentionEffectiveTime != null) {
+          retentionPolicy.setEffectiveTime(new DateTime(retentionEffectiveTime));
+        }
+        if (retentionPolicyIsLocked != null) {
+          retentionPolicy.setIsLocked(retentionPolicyIsLocked);
+        }
         bucketPb.setRetentionPolicy(retentionPolicy);
+
       }
     }
 
