@@ -475,7 +475,6 @@ public class SubscriberStubSettings extends StubSettings<SubscriberStubSettings>
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
-      definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       definitions.put(
           "pull",
           ImmutableSet.copyOf(
@@ -485,6 +484,12 @@ public class SubscriberStubSettings extends StubSettings<SubscriberStubSettings>
                   StatusCode.Code.INTERNAL,
                   StatusCode.Code.RESOURCE_EXHAUSTED,
                   StatusCode.Code.UNAVAILABLE)));
+      definitions.put(
+          "http_get",
+          ImmutableSet.copyOf(
+              Lists.<StatusCode.Code>newArrayList(
+                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
+      definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
