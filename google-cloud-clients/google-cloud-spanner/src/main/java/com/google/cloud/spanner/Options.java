@@ -110,10 +110,6 @@ public final class Options implements Serializable {
       this.prefetchChunks = prefetchChunks;
     }
 
-    int prefetchChunks() {
-      return prefetchChunks;
-    }
-
     @Override
     void appendToOptions(Options options) {
       options.prefetchChunks = prefetchChunks;
@@ -202,10 +198,13 @@ public final class Options implements Serializable {
     }
 
     Options that = (Options) o;
-    return (!hasLimit() && !that.hasLimit() || Objects.equals(limit(), that.limit()))
+    return (!hasLimit() && !that.hasLimit()
+            || (hasLimit() && that.hasLimit() && Objects.equals(limit(), that.limit())))
         && (!hasPrefetchChunks() && !that.hasPrefetchChunks()
-            || Objects.equals(prefetchChunks(), that.prefetchChunks()))
-        && (!hasPageSize() && !that.hasPageSize() || Objects.equals(pageSize(), that.pageSize()))
+            || (hasPrefetchChunks() && that.hasPrefetchChunks()
+                && Objects.equals(prefetchChunks(), that.prefetchChunks())))
+        && (!hasPageSize() && !that.hasPageSize()
+            || (hasPageSize() && that.hasPageSize() && Objects.equals(pageSize(), that.pageSize())))
         && Objects.equals(pageToken(), that.pageToken())
         && Objects.equals(filter(), that.filter());
   }
@@ -266,10 +265,6 @@ public final class Options implements Serializable {
       this.limit = limit;
     }
 
-    long limit() {
-      return limit;
-    }
-
     @Override
     void appendToOptions(Options options) {
       options.limit = limit;
@@ -283,10 +278,6 @@ public final class Options implements Serializable {
       this.pageSize = pageSize;
     }
 
-    int pageSize() {
-      return pageSize;
-    }
-
     @Override
     void appendToOptions(Options options) {
       options.pageSize = pageSize;
@@ -298,10 +289,6 @@ public final class Options implements Serializable {
 
     PageTokenOption(String pageToken) {
       this.pageToken = pageToken;
-    }
-
-    String pageToken() {
-      return pageToken;
     }
 
     @Override
