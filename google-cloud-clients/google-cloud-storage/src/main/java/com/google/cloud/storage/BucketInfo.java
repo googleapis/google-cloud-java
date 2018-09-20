@@ -50,7 +50,7 @@ import java.util.Objects;
  * Google Storage bucket metadata;
  *
  * @see <a href="https://cloud.google.com/storage/docs/concepts-techniques#concepts">Concepts and
- *      Terminology</a>
+ *     Terminology</a>
  */
 public class BucketInfo implements Serializable {
 
@@ -106,7 +106,11 @@ public class BucketInfo implements Serializable {
     private final Type type;
 
     public enum Type {
-      AGE, CREATE_BEFORE, NUM_NEWER_VERSIONS, IS_LIVE, UNKNOWN
+      AGE,
+      CREATE_BEFORE,
+      NUM_NEWER_VERSIONS,
+      IS_LIVE,
+      UNKNOWN
     }
 
     DeleteRule(Type type) {
@@ -183,8 +187,8 @@ public class BucketInfo implements Serializable {
      * Creates an {@code AgeDeleteRule} object.
      *
      * @param daysToLive blobs' Time To Live expressed in days. The time when the age condition is
-     *     considered to be satisfied is computed by adding {@code daysToLive} days to the
-     *     midnight following blob's creation time in UTC.
+     *     considered to be satisfied is computed by adding {@code daysToLive} days to the midnight
+     *     following blob's creation time in UTC.
      */
     public AgeDeleteRule(int daysToLive) {
       super(Type.AGE);
@@ -222,8 +226,7 @@ public class BucketInfo implements Serializable {
       out.writeUTF(rule.toString());
     }
 
-    private void readObject(ObjectInputStream in) throws IOException,
-        ClassNotFoundException {
+    private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
       in.defaultReadObject();
       rule = new JacksonFactory().fromString(in.readUTF(), Rule.class);
     }
@@ -310,8 +313,8 @@ public class BucketInfo implements Serializable {
     /**
      * Creates an {@code IsLiveDeleteRule} object.
      *
-     * @param isLive if set to {@code true} live blobs meet the delete condition. If set to
-     *     {@code false} delete condition is met by archived blobs.
+     * @param isLive if set to {@code true} live blobs meet the delete condition. If set to {@code
+     *     false} delete condition is met by archived blobs.
      */
     public IsLiveDeleteRule(boolean isLive) {
       super(Type.IS_LIVE);
@@ -328,16 +331,11 @@ public class BucketInfo implements Serializable {
     }
   }
 
-  /**
-   * Builder for {@code BucketInfo}.
-   */
+  /** Builder for {@code BucketInfo}. */
   public abstract static class Builder {
-    Builder() {
-    }
+    Builder() {}
 
-    /**
-     * Sets the bucket's name.
-     */
+    /** Sets the bucket's name. */
     public abstract Builder setName(String name);
 
     abstract Builder setGeneratedId(String generatedId);
@@ -347,9 +345,8 @@ public class BucketInfo implements Serializable {
     abstract Builder setSelfLink(String selfLink);
 
     /**
-     * Sets whether a user accessing the bucket or an object it contains should assume the transit costs
-     * related to the access.
-     *
+     * Sets whether a user accessing the bucket or an object it contains should assume the transit
+     * costs related to the access.
      */
     public abstract Builder setRequesterPays(Boolean requesterPays);
 
@@ -365,9 +362,7 @@ public class BucketInfo implements Serializable {
      */
     public abstract Builder setIndexPage(String indexPage);
 
-    /**
-     * Sets the custom object to return when a requested resource is not found.
-     */
+    /** Sets the custom object to return when a requested resource is not found. */
     public abstract Builder setNotFoundPage(String notFoundPage);
 
     /**
@@ -379,15 +374,15 @@ public class BucketInfo implements Serializable {
 
     /**
      * Sets the bucket's storage class. This defines how blobs in the bucket are stored and
-     * determines the SLA and the cost of storage. A list of supported values is available
-     * <a href="https://cloud.google.com/storage/docs/storage-classes">here</a>.
+     * determines the SLA and the cost of storage. A list of supported values is available <a
+     * href="https://cloud.google.com/storage/docs/storage-classes">here</a>.
      */
     public abstract Builder setStorageClass(StorageClass storageClass);
 
     /**
      * Sets the bucket's location. Data for blobs in the bucket resides in physical storage within
-     * this region. A list of supported values is available
-     * <a href="https://cloud.google.com/storage/docs/bucket-locations">here</a>.
+     * this region. A list of supported values is available <a
+     * href="https://cloud.google.com/storage/docs/bucket-locations">here</a>.
      */
     public abstract Builder setLocation(String location);
 
@@ -400,8 +395,8 @@ public class BucketInfo implements Serializable {
     /**
      * Sets the bucket's Cross-Origin Resource Sharing (CORS) configuration.
      *
-     * @see <a href="https://cloud.google.com/storage/docs/cross-origin">
-     *     Cross-Origin Resource Sharing (CORS)</a>
+     * @see <a href="https://cloud.google.com/storage/docs/cross-origin">Cross-Origin Resource
+     *     Sharing (CORS)</a>
      */
     public abstract Builder setCors(Iterable<Cors> cors);
 
@@ -409,7 +404,7 @@ public class BucketInfo implements Serializable {
      * Sets the bucket's access control configuration.
      *
      * @see <a
-     * href="https://cloud.google.com/storage/docs/access-control#About-Access-Control-Lists">
+     *     href="https://cloud.google.com/storage/docs/access-control#About-Access-Control-Lists">
      *     About Access Control Lists</a>
      */
     public abstract Builder setAcl(Iterable<Acl> acl);
@@ -419,24 +414,18 @@ public class BucketInfo implements Serializable {
      * configuration is specified.
      *
      * @see <a
-     * href="https://cloud.google.com/storage/docs/access-control#About-Access-Control-Lists">
+     *     href="https://cloud.google.com/storage/docs/access-control#About-Access-Control-Lists">
      *     About Access Control Lists</a>
      */
     public abstract Builder setDefaultAcl(Iterable<Acl> acl);
 
-    /**
-     * Sets the label of this bucket.
-     */
+    /** Sets the label of this bucket. */
     public abstract Builder setLabels(Map<String, String> labels);
 
-    /**
-     * Sets the default Cloud KMS key name for this bucket.
-     */
+    /** Sets the default Cloud KMS key name for this bucket. */
     public abstract Builder setDefaultKmsKeyName(String defaultKmsKeyName);
 
-    /**
-     * Sets the default event based hold for this bucket.
-     */
+    /** Sets the default event-based hold for this bucket. */
     public abstract Builder setDefaultEventBasedHold(Boolean defaultEventBasedHold);
 
     abstract Builder setRetentionEffectiveTime(Long retentionEffectiveTime);
@@ -444,14 +433,12 @@ public class BucketInfo implements Serializable {
     abstract Builder setRetentionPolicyIsLocked(Boolean retentionPolicyIsLocked);
 
     /**
-     * If policy is not locked this value can be cleared, increased, and decreased.
-     * If policy is locked the retention period can only be increased.
+     * If policy is not locked this value can be cleared, increased, and decreased. If policy is
+     * locked the retention period can only be increased.
      */
     public abstract Builder setRetentionPeriod(Long retentionPeriod);
 
-    /**
-     * Creates a {@code BucketInfo} object.
-     */
+    /** Creates a {@code BucketInfo} object. */
     public abstract BucketInfo build();
   }
 
@@ -621,26 +608,29 @@ public class BucketInfo implements Serializable {
 
     @Override
     public Builder setDefaultKmsKeyName(String defaultKmsKeyName) {
-      this.defaultKmsKeyName = defaultKmsKeyName != null
-              ? defaultKmsKeyName : Data.<String>nullOf(String.class);
+      this.defaultKmsKeyName =
+          defaultKmsKeyName != null ? defaultKmsKeyName : Data.<String>nullOf(String.class);
       return this;
     }
 
     @Override
     public Builder setDefaultEventBasedHold(Boolean defaultEventBasedHold) {
-      this.defaultEventBasedHold = firstNonNull(defaultEventBasedHold, Data.<Boolean>nullOf(Boolean.class));
+      this.defaultEventBasedHold =
+          firstNonNull(defaultEventBasedHold, Data.<Boolean>nullOf(Boolean.class));
       return this;
     }
 
     @Override
     Builder setRetentionEffectiveTime(Long retentionEffectiveTime) {
-      this.retentionEffectiveTime = firstNonNull(retentionEffectiveTime, Data.<Long>nullOf(Long.class));
+      this.retentionEffectiveTime =
+          firstNonNull(retentionEffectiveTime, Data.<Long>nullOf(Long.class));
       return this;
     }
 
     @Override
     Builder setRetentionPolicyIsLocked(Boolean retentionPolicyIsLocked) {
-      this.retentionPolicyIsLocked = firstNonNull(retentionPolicyIsLocked, Data.<Boolean>nullOf(Boolean.class));
+      this.retentionPolicyIsLocked =
+          firstNonNull(retentionPolicyIsLocked, Data.<Boolean>nullOf(Boolean.class));
       return this;
     }
 
@@ -683,54 +673,66 @@ public class BucketInfo implements Serializable {
     retentionPeriod = builder.retentionPeriod;
   }
 
-  /**
-   * Returns the service-generated id for the bucket.
-   */
+  /** Returns the service-generated id for the bucket. */
   public String getGeneratedId() {
     return generatedId;
   }
 
-  /**
-   * Returns the bucket's name.
-   */
+  /** Returns the bucket's name. */
   public String getName() {
     return name;
   }
 
-  /**
-   * Returns the bucket's owner. This is always the project team's owner group.
-   */
+  /** Returns the bucket's owner. This is always the project team's owner group. */
   public Entity getOwner() {
     return owner;
   }
 
-  /**
-   * Returns the URI of this bucket as a string.
-   */
+  /** Returns the URI of this bucket as a string. */
   public String getSelfLink() {
     return selfLink;
   }
 
   /**
-   * Returns {@code true} if versioning is enabled for this bucket. Otherwise {@code null} is returned
-   * which defines one of two states or {@code false} following an update.
+   * Returns a {@code Boolean} with either {@code true}, {@code null} and in certain cases {@code
+   * false}.
    *
-   * <p>When {@code BucketField.VERSIONS} is used explicitly to request this field
-   * the return value {@code null} is equivalent to {@code false}. On the other hand if the field is not explicitly used
-   * then {@code null} represents the value is not available. This value is only {@code false} after performing an
-   * update to disable versioning on the bucket in the same BucketInfo instance used with
-   * {@link Storage#update(BlobInfo)} and overloads.
+   * <p>Case 1: {@code true} the field {@link
+   * com.google.cloud.storage.Storage.BucketField#VERSIONING} is selected in a {@link
+   * Storage#get(String, Storage.BucketGetOption...)} and versions for the bucket is enabled.
    *
-   * @return
+   * <p>Case 2.1: {@code null} the field {@link
+   * com.google.cloud.storage.Storage.BucketField#VERSIONING} is selected in a {@link
+   * Storage#get(String, Storage.BucketGetOption...)}, but versions for the bucket is not enabled.
+   * This case can be considered implicitly {@code false}.
+   *
+   * <p>Case 2.2: {@code null} the field {@link
+   * com.google.cloud.storage.Storage.BucketField#VERSIONING} is not selected in a {@link
+   * Storage#get(String, Storage.BucketGetOption...)}, and the state for this field is unknown.
+   *
+   * <p>Case 3: {@code false} versions is explicitly set to false client side for a follow-up
+   * request for example {@link Storage#update(BucketInfo, Storage.BucketTargetOption...)} in which
+   * case the value of versions will remain {@code false} for for the given instance.
    */
   public Boolean versioningEnabled() {
     return Data.isNull(versioningEnabled) ? null : versioningEnabled;
   }
 
   /**
-   * Returns {@code true} if a user accessing the bucket or an object it contains should assume the transit costs
-   * related to the access, {@code false} otherwise.
+   * Returns a {@code Boolean} with either {@code true}, {@code false}, and in a specific case
+   * {@code null}.
    *
+   * <p>Case 1: {@code true} the field {@link com.google.cloud.storage.Storage.BucketField#BILLING}
+   * is selected in a {@link Storage#get(String, Storage.BucketGetOption...)} and requester pays for
+   * the bucket is enabled.
+   *
+   * <p>Case 2: {@code false} the field {@link com.google.cloud.storage.Storage.BucketField#BILLING}
+   * in a {@link Storage#get(String, Storage.BucketGetOption...)} is selected and requester pays for
+   * the bucket is disable.
+   *
+   * <p>Case 3: {@code null} the field {@link com.google.cloud.storage.Storage.BucketField#BILLING}
+   * in a {@link Storage#get(String, Storage.BucketGetOption...)} is not selected, the value is
+   * unknown.
    */
   public Boolean requesterPays() {
     return Data.isNull(requesterPays) ? null : requesterPays;
@@ -744,9 +746,7 @@ public class BucketInfo implements Serializable {
     return indexPage;
   }
 
-  /**
-   * Returns the custom object to return when a requested resource is not found.
-   */
+  /** Returns the custom object to return when a requested resource is not found. */
   public String getNotFoundPage() {
     return notFoundPage;
   }
@@ -769,16 +769,12 @@ public class BucketInfo implements Serializable {
     return etag;
   }
 
-  /**
-   * Returns the time at which the bucket was created.
-   */
+  /** Returns the time at which the bucket was created. */
   public Long getCreateTime() {
     return createTime;
   }
 
-  /**
-   * Returns the metadata generation of this bucket.
-   */
+  /** Returns the metadata generation of this bucket. */
   public Long getMetageneration() {
     return metageneration;
   }
@@ -806,8 +802,8 @@ public class BucketInfo implements Serializable {
   /**
    * Returns the bucket's Cross-Origin Resource Sharing (CORS) configuration.
    *
-   * @see <a href="https://cloud.google.com/storage/docs/cross-origin">
-   *     Cross-Origin Resource Sharing (CORS)</a>
+   * @see <a href="https://cloud.google.com/storage/docs/cross-origin">Cross-Origin Resource Sharing
+   *     (CORS)</a>
    */
   public List<Cors> getCors() {
     return cors;
@@ -833,54 +829,78 @@ public class BucketInfo implements Serializable {
     return defaultAcl;
   }
 
-  /**
-   * Returns the labels for this bucket.
-   */
+  /** Returns the labels for this bucket. */
   public Map<String, String> getLabels() {
     return labels;
   }
 
-  /**
-   * Returns the default Cloud KMS key to be applied to newly inserted objects in this bucket.
-   */
+  /** Returns the default Cloud KMS key to be applied to newly inserted objects in this bucket. */
   public String getDefaultKmsKeyName() {
     return defaultKmsKeyName;
   }
 
   /**
-   * Returns the default event based hold for this bucket's blobs. Returns {@code true} if default event based hold is
-   * enabled for this bucket or {@code null}.
+   * Returns a {@code Boolean} with either {@code true}, {@code null} and in certain cases {@code
+   * false}.
    *
-   * <p>When {@code BucketField.DEFAULT_EVENT_BASED_HOLD} is used explicitly to request this field * the return value {@code null} is
-   * equivalent to {@code false}. On the other hand if the field is not explicitly used then {@code null} represents
-   * the value is not available.
+   * <p>Case 1: {@code true} the field {@link
+   * com.google.cloud.storage.Storage.BucketField#DEFAULT_EVENT_BASED_HOLD} is selected in a {@link
+   * Storage#get(String, Storage.BucketGetOption...)} and default event-based hold for the bucket is
+   * enabled.
+   *
+   * <p>Case 2.1: {@code null} the field {@link
+   * com.google.cloud.storage.Storage.BucketField#DEFAULT_EVENT_BASED_HOLD} is selected in a {@link
+   * Storage#get(String, Storage.BucketGetOption...)}, but default event-based hold for the bucket
+   * is not enabled. This case can be considered implicitly {@code false}.
+   *
+   * <p>Case 2.2: {@code null} the field {@link
+   * com.google.cloud.storage.Storage.BucketField#DEFAULT_EVENT_BASED_HOLD} is not selected in a
+   * {@link Storage#get(String, Storage.BucketGetOption...)}, and the state for this field is
+   * unknown.
+   *
+   * <p>Case 3: {@code false} default event-based hold is explicitly set to false using in a {@link
+   * Builder#setDefaultEventBasedHold(Boolean)} client side for a follow-up request e.g. {@link
+   * Storage#update(BucketInfo, Storage.BucketTargetOption...)} in which case the value of default
+   * event-based hold will remain {@code false} for the given instance.
    */
   public Boolean getDefaultEventBasedHold() {
     return Data.isNull(defaultEventBasedHold) ? null : defaultEventBasedHold;
   }
 
   /**
-   * Returns the retention effective time a policy took effect if a retention policy is defined as a {@code Long}.
+   * Returns the retention effective time a policy took effect if a retention policy is defined as a
+   * {@code Long}.
    */
   public Long getRetentionEffectiveTime() {
     return retentionEffectiveTime;
   }
 
   /**
-   * Returns {@code true} if the bucket retention policy is locked, {@code false} otherwise.
+   * Returns a {@code Boolean} with either {@code true} or {@code null}.
+   *
+   * <p>Case 1: {@code true} the field {@link
+   * com.google.cloud.storage.Storage.BucketField#RETENTION_POLICY} is selected in a {@link
+   * Storage#get(String, Storage.BucketGetOption...)} and retention policy for the bucket is locked.
+   *
+   * <p>Case 2.1: {@code null} the field {@link
+   * com.google.cloud.storage.Storage.BucketField#RETENTION_POLICY} is selected in a {@link
+   * Storage#get(String, Storage.BucketGetOption...)}, but retention policy for the bucket is not
+   * locked. This case can be considered implicitly {@code false}.
+   *
+   * <p>Case 2.2: {@code null} the field {@link
+   * com.google.cloud.storage.Storage.BucketField#RETENTION_POLICY} is not selected in a {@link
+   * Storage#get(String, Storage.BucketGetOption...)}, and the state for this field is unknown.
    */
   public Boolean retentionPolicyIsLocked() {
     return Data.isNull(retentionPolicyIsLocked) ? null : retentionPolicyIsLocked;
   }
 
-  /**
-   * Returns the retention policy retention period.
-   */
-  public Long getRetentionPeriod() { return retentionPeriod; }
+  /** Returns the retention policy retention period. */
+  public Long getRetentionPeriod() {
+    return retentionPeriod;
+  }
 
-  /**
-   * Returns a builder for the current bucket.
-   */
+  /** Returns a builder for the current bucket. */
   public Builder toBuilder() {
     return new BuilderImpl(this);
   }
@@ -894,15 +914,13 @@ public class BucketInfo implements Serializable {
   public boolean equals(Object obj) {
     return obj == this
         || obj != null
-        && obj.getClass().equals(BucketInfo.class)
-        && Objects.equals(toPb(), ((BucketInfo) obj).toPb());
+            && obj.getClass().equals(BucketInfo.class)
+            && Objects.equals(toPb(), ((BucketInfo) obj).toPb());
   }
 
   @Override
   public String toString() {
-    return MoreObjects.toStringHelper(this)
-        .add("name", name)
-        .toString();
+    return MoreObjects.toStringHelper(this).add("name", name).toString();
   }
 
   com.google.api.services.storage.model.Bucket toPb() {
@@ -927,20 +945,26 @@ public class BucketInfo implements Serializable {
       bucketPb.setCors(transform(cors, Cors.TO_PB_FUNCTION));
     }
     if (acl != null) {
-      bucketPb.setAcl(transform(acl, new Function<Acl, BucketAccessControl>() {
-        @Override
-        public BucketAccessControl apply(Acl acl) {
-          return acl.toBucketPb();
-        }
-      }));
+      bucketPb.setAcl(
+          transform(
+              acl,
+              new Function<Acl, BucketAccessControl>() {
+                @Override
+                public BucketAccessControl apply(Acl acl) {
+                  return acl.toBucketPb();
+                }
+              }));
     }
     if (defaultAcl != null) {
-      bucketPb.setDefaultObjectAcl(transform(defaultAcl, new Function<Acl, ObjectAccessControl>() {
-        @Override
-        public ObjectAccessControl apply(Acl acl) {
-          return acl.toObjectPb();
-        }
-      }));
+      bucketPb.setDefaultObjectAcl(
+          transform(
+              defaultAcl,
+              new Function<Acl, ObjectAccessControl>() {
+                @Override
+                public ObjectAccessControl apply(Acl acl) {
+                  return acl.toObjectPb();
+                }
+              }));
     }
     if (owner != null) {
       bucketPb.setOwner(new Owner().setEntity(owner.toPb()));
@@ -962,12 +986,15 @@ public class BucketInfo implements Serializable {
     }
     if (deleteRules != null) {
       Lifecycle lifecycle = new Lifecycle();
-      lifecycle.setRule(transform(deleteRules, new Function<DeleteRule, Rule>() {
-        @Override
-        public Rule apply(DeleteRule deleteRule) {
-          return deleteRule.toPb();
-        }
-      }));
+      lifecycle.setRule(
+          transform(
+              deleteRules,
+              new Function<DeleteRule, Rule>() {
+                @Override
+                public Rule apply(DeleteRule deleteRule) {
+                  return deleteRule.toPb();
+                }
+              }));
       bucketPb.setLifecycle(lifecycle);
     }
     if (labels != null) {
@@ -993,16 +1020,12 @@ public class BucketInfo implements Serializable {
     return bucketPb;
   }
 
-  /**
-   * Creates a {@code BucketInfo} object for the provided bucket name.
-   */
+  /** Creates a {@code BucketInfo} object for the provided bucket name. */
   public static BucketInfo of(String name) {
     return newBuilder(name).build();
   }
 
-  /**
-   * Returns a {@code BucketInfo} builder where the bucket's name is set to the provided name.
-   */
+  /** Returns a {@code BucketInfo} builder where the bucket's name is set to the provided name. */
   public static Builder newBuilder(String name) {
     return new BuilderImpl(name);
   }
@@ -1034,21 +1057,26 @@ public class BucketInfo implements Serializable {
       builder.setCors(transform(bucketPb.getCors(), Cors.FROM_PB_FUNCTION));
     }
     if (bucketPb.getAcl() != null) {
-      builder.setAcl(transform(bucketPb.getAcl(), new Function<BucketAccessControl, Acl>() {
-        @Override
-        public Acl apply(BucketAccessControl bucketAccessControl) {
-          return Acl.fromPb(bucketAccessControl);
-        }
-      }));
+      builder.setAcl(
+          transform(
+              bucketPb.getAcl(),
+              new Function<BucketAccessControl, Acl>() {
+                @Override
+                public Acl apply(BucketAccessControl bucketAccessControl) {
+                  return Acl.fromPb(bucketAccessControl);
+                }
+              }));
     }
     if (bucketPb.getDefaultObjectAcl() != null) {
-      builder.setDefaultAcl(transform(bucketPb.getDefaultObjectAcl(),
-          new Function<ObjectAccessControl, Acl>() {
-            @Override
-            public Acl apply(ObjectAccessControl objectAccessControl) {
-              return Acl.fromPb(objectAccessControl);
-            }
-          }));
+      builder.setDefaultAcl(
+          transform(
+              bucketPb.getDefaultObjectAcl(),
+              new Function<ObjectAccessControl, Acl>() {
+                @Override
+                public Acl apply(ObjectAccessControl objectAccessControl) {
+                  return Acl.fromPb(objectAccessControl);
+                }
+              }));
     }
     if (bucketPb.getOwner() != null) {
       builder.setOwner(Entity.fromPb(bucketPb.getOwner().getEntity()));
@@ -1062,13 +1090,15 @@ public class BucketInfo implements Serializable {
       builder.setNotFoundPage(website.getNotFoundPage());
     }
     if (bucketPb.getLifecycle() != null && bucketPb.getLifecycle().getRule() != null) {
-      builder.setDeleteRules(transform(bucketPb.getLifecycle().getRule(),
-          new Function<Rule, DeleteRule>() {
-            @Override
-            public DeleteRule apply(Rule rule) {
-              return DeleteRule.fromPb(rule);
-            }
-          }));
+      builder.setDeleteRules(
+          transform(
+              bucketPb.getLifecycle().getRule(),
+              new Function<Rule, DeleteRule>() {
+                @Override
+                public DeleteRule apply(Rule rule) {
+                  return DeleteRule.fromPb(rule);
+                }
+              }));
     }
     if (bucketPb.getLabels() != null) {
       builder.setLabels(bucketPb.getLabels());
@@ -1078,7 +1108,9 @@ public class BucketInfo implements Serializable {
       builder.setRequesterPays(billing.getRequesterPays());
     }
     Encryption encryption = bucketPb.getEncryption();
-    if (encryption != null && encryption.getDefaultKmsKeyName() != null && !encryption.getDefaultKmsKeyName().isEmpty()) {
+    if (encryption != null
+        && encryption.getDefaultKmsKeyName() != null
+        && !encryption.getDefaultKmsKeyName().isEmpty()) {
       builder.setDefaultKmsKeyName(encryption.getDefaultKmsKeyName());
     }
     if (bucketPb.getDefaultEventBasedHold() != null) {

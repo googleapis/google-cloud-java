@@ -1265,7 +1265,7 @@ public class StorageSnippets {
     return updated_bucket;
   }
 
-  /** Example of how to enable default event based hold for a bucket */
+  /** Example of how to enable default event-based hold for a bucket */
   public Bucket enableDefaultEventBasedHold(String bucketName) throws StorageException {
     // [START storage_enable_default_event_based_hold]
     // Instantiate a Google Cloud Storage client
@@ -1277,12 +1277,12 @@ public class StorageSnippets {
     Bucket bucket =
         storage.update(BucketInfo.newBuilder(bucketName).setDefaultEventBasedHold(true).build());
 
-    System.out.println("Default event based hold was enabled for " + bucketName);
+    System.out.println("Default event-based hold was enabled for " + bucketName);
     // [END storage_enable_default_event_based_hold]
     return bucket;
   }
 
-  /** Example of how to disable default event based hold for a bucket */
+  /** Example of how to disable default event-based hold for a bucket */
   public Bucket disableDefaultEventBasedHold(String bucketName) throws StorageException {
     // [START storage_disable_default_event_based_hold]
     // Instantiate a Google Cloud Storage client
@@ -1294,12 +1294,12 @@ public class StorageSnippets {
     Bucket bucket =
         storage.update(BucketInfo.newBuilder(bucketName).setDefaultEventBasedHold(false).build());
 
-    System.out.println("Default event based hold was disabled for " + bucketName);
+    System.out.println("Default event-based hold was disabled for " + bucketName);
     // [END storage_disable_default_event_based_hold]
     return bucket;
   }
 
-  /** Example of how to get default event based hold for a bucket */
+  /** Example of how to get default event-based hold for a bucket */
   public Bucket getDefaultEventBasedHold(String bucketName) throws StorageException {
     // [START storage_get_default_event_based_hold]
     // Instantiate a Google Cloud Storage client
@@ -1312,15 +1312,15 @@ public class StorageSnippets {
         storage.get(bucketName, BucketGetOption.fields(BucketField.DEFAULT_EVENT_BASED_HOLD));
 
     if (bucket.getDefaultEventBasedHold() == true) {
-      System.out.println("Default event based hold is enabled for " + bucketName);
+      System.out.println("Default event-based hold is enabled for " + bucketName);
     } else {
-      System.out.println("Default event based hold is not enabled for " + bucketName);
+      System.out.println("Default event-based hold is not enabled for " + bucketName);
     }
     // [END storage_get_default_event_based_hold]
     return bucket;
   }
 
-  /** Example of how to set event based hold for a blob */
+  /** Example of how to set event-based hold for a blob */
   public Blob setEventBasedHold(String bucketName, String blobName) throws StorageException {
     // [START storage_set_event_based_hold]
     // Instantiate a Google Cloud Storage client
@@ -1335,12 +1335,12 @@ public class StorageSnippets {
     BlobId blobId = BlobId.of(bucketName, blobName);
     Blob blob = storage.update(BlobInfo.newBuilder(blobId).setEventBasedHold(true).build());
 
-    System.out.println("Event based hold was set for " + blobName);
+    System.out.println("Event-based hold was set for " + blobName);
     // [END storage_set_event_based_hold]
     return blob;
   }
 
-  /** Example of how to release event based hold for a blob */
+  /** Example of how to release event-based hold for a blob */
   public Blob releaseEventBasedHold(String bucketName, String blobName) throws StorageException {
     // [START storage_release_event_based_hold]
     // Instantiate a Google Cloud Storage client
@@ -1355,7 +1355,7 @@ public class StorageSnippets {
     BlobId blobId = BlobId.of(bucketName, blobName);
     Blob blob = storage.update(BlobInfo.newBuilder(blobId).setEventBasedHold(false).build());
 
-    System.out.println("Event based hold was released for " + blobName);
+    System.out.println("Event-based hold was released for " + blobName);
     // [END storage_release_event_based_hold]
     return blob;
   }
