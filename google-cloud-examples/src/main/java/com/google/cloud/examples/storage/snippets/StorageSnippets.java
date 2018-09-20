@@ -1152,23 +1152,17 @@ public class StorageSnippets {
     System.out.println("StorageClass: " + blob.getStorageClass());
     System.out.println("TimeCreated: " + new Date(blob.getCreateTime()));
     System.out.println("Last Metadata Update: " + new Date(blob.getUpdateTime()));
-    System.out.println(
-        "temporaryHold: "
-            + (blob.getTemporaryHold() != null && blob.getTemporaryHold()
-                ? "Enabled"
-                : "Disabled"));
-    System.out.println(
-        "eventBasedHold: "
-            + (blob.getTemporaryHold() != null && blob.getTemporaryHold()
-                ? "Enabled"
-                : "Disabled"));
+    Boolean temporaryHoldIsEnabled = (blob.getTemporaryHold() != null && blob.getTemporaryHold());
+    System.out.println("temporaryHold: " + (temporaryHoldIsEnabled ? "enabled" : "disabled"));
+    Boolean eventBasedHoldIsEnabled = (blob.getEventBasedHold() != null && blob.getEventBasedHold());
+    System.out.println("eventBasedHold: " + (eventBasedHoldIsEnabled ? "enabled" : "disabled"));
     if (blob.getRetentionExpirationTime() != null) {
       System.out.println("retentionExpirationTime: " + new Date(blob.getRetentionExpirationTime()));
     }
     if (blob.getMetadata() != null) {
-      System.out.println("User metadata:");
+      System.out.println("\n\n\nUser metadata:");
       for (Map.Entry<String, String> userMetadata : blob.getMetadata().entrySet()) {
-        System.out.println(userMetadata.getKey() + " " + userMetadata.getValue());
+        System.out.println(userMetadata.getKey() + "=" + userMetadata.getValue());
       }
     }
     // [END storage_get_metadata]
@@ -1184,22 +1178,21 @@ public class StorageSnippets {
     // The name of a bucket, e.g. "my-bucket"
     // String bucketName = "my-bucket";
 
-    // The retetion period for objects in bucket
-    // 1 hour in seconds
-    // Long retentionPeriod = 3600L;
+    // The retention period for objects in bucket
+    // Long retentionPeriod = 3600L; // 1 hour in seconds
 
-    Bucket bucket =
+    Bucket bucketWithRetentionPolicy =
         storage.update(
             BucketInfo.newBuilder(bucketName).setRetentionPeriod(retentionPeriod).build());
 
     System.out.println(
-        "Retention period for " + bucketName + " is now " + bucket.getRetentionPeriod());
+        "Retention period for " + bucketName + " is now " + bucketWithRetentionPolicy.getRetentionPeriod());
     // [END storage_set_retention_policy]
-    return bucket;
+    return bucketWithRetentionPolicy;
   }
 
   /** Example of removing a retention policy on a bucket */
-  public Bucket removeRetentionPolicy(String bucketName) throws StorageException {
+  public Bucket removeRetentionPolicy(String bucketName) throws StorageException, IllegalArgumentException {
     // [START storage_remove_retention_policy]
     // Instantiate a Google Cloud Storage client
     Storage storage = StorageOptions.getDefaultInstance().getService();
@@ -1209,15 +1202,14 @@ public class StorageSnippets {
 
     Bucket bucket = storage.get(bucketName, BucketGetOption.fields(BucketField.RETENTION_POLICY));
     if (bucket.retentionPolicyIsLocked() != null && bucket.retentionPolicyIsLocked()) {
-      System.out.println("Unable to remove retention period as retention policy is locked.");
-      return bucket;
+       throw new IllegalArgumentException("Unable to remove retention period as retention policy is locked.");
     }
 
-    Bucket updated_bucket = bucket.toBuilder().setRetentionPeriod(null).build().update();
+    Bucket bucketWithoutRetentionPolicy = bucket.toBuilder().setRetentionPeriod(null).build().update();
 
     System.out.println("Retention period for " + bucketName + " has been removed");
     // [END storage_remove_retention_policy]
-    return updated_bucket;
+    return bucketWithoutRetentionPolicy;
   }
 
   /** Example of removing a retention policy on a bucket */
@@ -1232,7 +1224,6 @@ public class StorageSnippets {
     Bucket bucket = storage.get(bucketName, BucketGetOption.fields(BucketField.RETENTION_POLICY));
 
     System.out.println("Retention Policy for " + bucketName);
-
     System.out.println("Retention Period: " + bucket.getRetentionPeriod());
     if (bucket.retentionPolicyIsLocked() != null && bucket.retentionPolicyIsLocked()) {
       System.out.println("Retention Policy is locked");
@@ -1255,14 +1246,14 @@ public class StorageSnippets {
 
     Bucket bucket =
         storage.get(bucketName, Storage.BucketGetOption.fields(BucketField.METAGENERATION));
-    Bucket updated_bucket =
+    Bucket lockedBucket =
         bucket.lockRetentionPolicy(Storage.BucketTargetOption.metagenerationMatch());
 
     System.out.println("Retention period for " + bucketName + " is now locked");
     System.out.println(
-        "Retention policy effective as of " + new Date(updated_bucket.getRetentionEffectiveTime()));
+        "Retention policy effective as of " + new Date(lockedBucket.getRetentionEffectiveTime()));
     // [END storage_lock_retention_policy]
-    return updated_bucket;
+    return lockedBucket;
   }
 
   /** Example of how to enable default event-based hold for a bucket */
@@ -1311,7 +1302,7 @@ public class StorageSnippets {
     Bucket bucket =
         storage.get(bucketName, BucketGetOption.fields(BucketField.DEFAULT_EVENT_BASED_HOLD));
 
-    if (bucket.getDefaultEventBasedHold() == true) {
+    if (bucket.getDefaultEventBasedHold() != null && bucket.getDefaultEventBasedHold()) {
       System.out.println("Default event-based hold is enabled for " + bucketName);
     } else {
       System.out.println("Default event-based hold is not enabled for " + bucketName);
