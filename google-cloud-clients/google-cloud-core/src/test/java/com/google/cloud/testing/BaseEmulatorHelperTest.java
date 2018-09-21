@@ -123,7 +123,7 @@ public class BaseEmulatorHelperTest {
             .andReturn(mockURLConnection).times(1);
     EasyMock.replay(mockURLStreamHandler, mockURLConnection);
 
-    URL url = new URL (mockProtocol, null, 0, mockFile, mockURLStreamHandler);
+    URL url = new URL(mockProtocol, null, 0, mockFile, mockURLStreamHandler);
     BaseEmulatorHelper.DownloadableEmulatorRunner runner =
             new BaseEmulatorHelper.DownloadableEmulatorRunner(ImmutableList.of(mockCommandText), url, null);
 
@@ -134,6 +134,7 @@ public class BaseEmulatorHelperTest {
 
     EasyMock.verify();
 
+    cachedFile.delete(); //Cleanup
   }
 
   @Test
