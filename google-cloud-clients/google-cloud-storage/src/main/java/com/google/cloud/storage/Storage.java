@@ -137,6 +137,7 @@ public interface Storage extends Service<StorageOptions> {
     SIZE("size"),
     STORAGE_CLASS("storageClass"),
     TIME_DELETED("timeDeleted"),
+    TIME_CREATED("timeCreated"),
     KMS_KEY_NAME("kmsKeyName"),
     EVENT_BASED_HOLD("eventBasedHold"),
     TEMPORARY_HOLD("temporaryHold"),

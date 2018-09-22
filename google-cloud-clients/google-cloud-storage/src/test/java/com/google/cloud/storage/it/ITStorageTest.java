@@ -2058,6 +2058,8 @@ public class ITStorageTest {
       assertNotNull(remoteBlob.getRetentionExpirationTime());
       remoteBucket = remoteBucket.toBuilder().setRetentionPeriod(null).build().update();
       assertNull(remoteBucket.getRetentionPeriod());
+      remoteBucket = remoteBucket.toBuilder().setRetentionPeriod(null).build().update();
+      assertNull(remoteBucket.getRetentionPeriod());
     } finally {
       RemoteStorageHelper.forceDelete(storage, bucketName, 5, TimeUnit.SECONDS);
     }
@@ -2081,7 +2083,7 @@ public class ITStorageTest {
     }
     Bucket remoteBucket = storage.create(bucketInfo);
     try {
-      assertFalse(remoteBucket.retentionPolicyIsLocked());
+      assertNull(remoteBucket.retentionPolicyIsLocked());
       assertNotNull(remoteBucket.getRetentionEffectiveTime());
       assertNotNull(remoteBucket.getMetageneration());
       if (requesterPays) {
@@ -2186,7 +2188,7 @@ public class ITStorageTest {
   }
 
   @Test
-  public void testGetServiceAccount() throws InterruptedException {
+  public void testGetServiceAccount() {
     String projectId = remoteStorageHelper.getOptions().getProjectId();
     ServiceAccount serviceAccount = storage.getServiceAccount(projectId);
     assertNotNull(serviceAccount);

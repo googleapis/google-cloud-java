@@ -57,6 +57,7 @@ import com.google.cloud.storage.StorageBatchResult;
 import com.google.cloud.storage.StorageClass;
 import com.google.cloud.storage.StorageException;
 import com.google.cloud.storage.StorageOptions;
+import java.util.Date;
 
 import java.io.ByteArrayInputStream;
 import java.io.FileInputStream;
@@ -1112,5 +1113,281 @@ public class StorageSnippets {
     System.out.println("Default KMS Key Name: " + bucket.getDefaultKmsKeyName());
     // [END storage_set_bucket_default_kms_key]
     return bucket;
+  }
+
+  /** Example of displaying Blob metadata */
+  public void getBlobMetadata(String bucketName, String blobName) throws StorageException {
+    // [START storage_get_metadata]
+    // Instantiate a Google Cloud Storage client
+    Storage storage = StorageOptions.getDefaultInstance().getService();
+
+    // The name of a bucket, e.g. "my-bucket"
+    // String bucketName = "my-bucket";
+
+    // The name of a blob, e.g. "my-blob"
+    // String blobName = "my-blob";
+
+    // Select all fields
+    // Fields can be selected individually e.g. Storage.BlobField.CACHE_CONTROL
+    Blob blob = storage.get(bucketName, blobName, BlobGetOption.fields(Storage.BlobField.values()));
+
+    // Print blob metadata
+    System.out.println("Bucket: " + blob.getBucket());
+    System.out.println("CacheControl: " + blob.getCacheControl());
+    System.out.println("ComponentCount: " + blob.getComponentCount());
+    System.out.println("ContentDisposition: " + blob.getContentDisposition());
+    System.out.println("ContentEncoding: " + blob.getContentEncoding());
+    System.out.println("ContentLanguage: " + blob.getContentLanguage());
+    System.out.println("ContentType: " + blob.getContentType());
+    System.out.println("Crc32c: " + blob.getCrc32c());
+    System.out.println("ETag: " + blob.getEtag());
+    System.out.println("Generation: " + blob.getGeneration());
+    System.out.println("Id: " + blob.getBlobId());
+    System.out.println("KmsKeyName: " + blob.getKmsKeyName());
+    System.out.println("Md5Hash: " + blob.getMd5());
+    System.out.println("MediaLink: " + blob.getMediaLink());
+    System.out.println("Metageneration: " + blob.getMetageneration());
+    System.out.println("Name: " + blob.getName());
+    System.out.println("Size: " + blob.getSize());
+    System.out.println("StorageClass: " + blob.getStorageClass());
+    System.out.println("TimeCreated: " + new Date(blob.getCreateTime()));
+    System.out.println("Last Metadata Update: " + new Date(blob.getUpdateTime()));
+    Boolean temporaryHoldIsEnabled = (blob.getTemporaryHold() != null && blob.getTemporaryHold());
+    System.out.println("temporaryHold: " + (temporaryHoldIsEnabled ? "enabled" : "disabled"));
+    Boolean eventBasedHoldIsEnabled = (blob.getEventBasedHold() != null && blob.getEventBasedHold());
+    System.out.println("eventBasedHold: " + (eventBasedHoldIsEnabled ? "enabled" : "disabled"));
+    if (blob.getRetentionExpirationTime() != null) {
+      System.out.println("retentionExpirationTime: " + new Date(blob.getRetentionExpirationTime()));
+    }
+    if (blob.getMetadata() != null) {
+      System.out.println("\n\n\nUser metadata:");
+      for (Map.Entry<String, String> userMetadata : blob.getMetadata().entrySet()) {
+        System.out.println(userMetadata.getKey() + "=" + userMetadata.getValue());
+      }
+    }
+    // [END storage_get_metadata]
+  }
+
+  /** Example of setting a retention policy on a bucket */
+  public Bucket setRetentionPolicy(String bucketName, Long retentionPeriod)
+      throws StorageException {
+    // [START storage_set_retention_policy]
+    // Instantiate a Google Cloud Storage client
+    Storage storage = StorageOptions.getDefaultInstance().getService();
+
+    // The name of a bucket, e.g. "my-bucket"
+    // String bucketName = "my-bucket";
+
+    // The retention period for objects in bucket
+    // Long retentionPeriod = 3600L; // 1 hour in seconds
+
+    Bucket bucketWithRetentionPolicy =
+        storage.update(
+            BucketInfo.newBuilder(bucketName).setRetentionPeriod(retentionPeriod).build());
+
+    System.out.println(
+        "Retention period for " + bucketName + " is now " + bucketWithRetentionPolicy.getRetentionPeriod());
+    // [END storage_set_retention_policy]
+    return bucketWithRetentionPolicy;
+  }
+
+  /** Example of removing a retention policy on a bucket */
+  public Bucket removeRetentionPolicy(String bucketName) throws StorageException, IllegalArgumentException {
+    // [START storage_remove_retention_policy]
+    // Instantiate a Google Cloud Storage client
+    Storage storage = StorageOptions.getDefaultInstance().getService();
+
+    // The name of a bucket, e.g. "my-bucket"
+    // String bucketName = "my-bucket";
+
+    Bucket bucket = storage.get(bucketName, BucketGetOption.fields(BucketField.RETENTION_POLICY));
+    if (bucket.retentionPolicyIsLocked() != null && bucket.retentionPolicyIsLocked()) {
+       throw new IllegalArgumentException("Unable to remove retention period as retention policy is locked.");
+    }
+
+    Bucket bucketWithoutRetentionPolicy = bucket.toBuilder().setRetentionPeriod(null).build().update();
+
+    System.out.println("Retention period for " + bucketName + " has been removed");
+    // [END storage_remove_retention_policy]
+    return bucketWithoutRetentionPolicy;
+  }
+
+  /** Example of removing a retention policy on a bucket */
+  public Bucket getRetentionPolicy(String bucketName) throws StorageException {
+    // [START storage_get_retention_policy]
+    // Instantiate a Google Cloud Storage client
+    Storage storage = StorageOptions.getDefaultInstance().getService();
+
+    // The name of a bucket, e.g. "my-bucket"
+    // String bucketName = "my-bucket";
+
+    Bucket bucket = storage.get(bucketName, BucketGetOption.fields(BucketField.RETENTION_POLICY));
+
+    System.out.println("Retention Policy for " + bucketName);
+    System.out.println("Retention Period: " + bucket.getRetentionPeriod());
+    if (bucket.retentionPolicyIsLocked() != null && bucket.retentionPolicyIsLocked()) {
+      System.out.println("Retention Policy is locked");
+    }
+    if (bucket.getRetentionEffectiveTime() != null) {
+      System.out.println("Effective Time: " + new Date(bucket.getRetentionEffectiveTime()));
+    }
+    // [END storage_get_retention_policy]
+    return bucket;
+  }
+
+  /** Example of how to lock a bucket retention policy */
+  public Bucket lockRetentionPolicy(String bucketName) throws StorageException {
+    // [START storage_lock_retention_policy]
+    // Instantiate a Google Cloud Storage client
+    Storage storage = StorageOptions.getDefaultInstance().getService();
+
+    // The name of a bucket, e.g. "my-bucket"
+    // String bucketName = "my-bucket";
+
+    Bucket bucket =
+        storage.get(bucketName, Storage.BucketGetOption.fields(BucketField.METAGENERATION));
+    Bucket lockedBucket =
+        bucket.lockRetentionPolicy(Storage.BucketTargetOption.metagenerationMatch());
+
+    System.out.println("Retention period for " + bucketName + " is now locked");
+    System.out.println(
+        "Retention policy effective as of " + new Date(lockedBucket.getRetentionEffectiveTime()));
+    // [END storage_lock_retention_policy]
+    return lockedBucket;
+  }
+
+  /** Example of how to enable default event-based hold for a bucket */
+  public Bucket enableDefaultEventBasedHold(String bucketName) throws StorageException {
+    // [START storage_enable_default_event_based_hold]
+    // Instantiate a Google Cloud Storage client
+    Storage storage = StorageOptions.getDefaultInstance().getService();
+
+    // The name of a bucket, e.g. "my-bucket"
+    // String bucketName = "my-bucket";
+
+    Bucket bucket =
+        storage.update(BucketInfo.newBuilder(bucketName).setDefaultEventBasedHold(true).build());
+
+    System.out.println("Default event-based hold was enabled for " + bucketName);
+    // [END storage_enable_default_event_based_hold]
+    return bucket;
+  }
+
+  /** Example of how to disable default event-based hold for a bucket */
+  public Bucket disableDefaultEventBasedHold(String bucketName) throws StorageException {
+    // [START storage_disable_default_event_based_hold]
+    // Instantiate a Google Cloud Storage client
+    Storage storage = StorageOptions.getDefaultInstance().getService();
+
+    // The name of a bucket, e.g. "my-bucket"
+    // String bucketName = "my-bucket";
+
+    Bucket bucket =
+        storage.update(BucketInfo.newBuilder(bucketName).setDefaultEventBasedHold(false).build());
+
+    System.out.println("Default event-based hold was disabled for " + bucketName);
+    // [END storage_disable_default_event_based_hold]
+    return bucket;
+  }
+
+  /** Example of how to get default event-based hold for a bucket */
+  public Bucket getDefaultEventBasedHold(String bucketName) throws StorageException {
+    // [START storage_get_default_event_based_hold]
+    // Instantiate a Google Cloud Storage client
+    Storage storage = StorageOptions.getDefaultInstance().getService();
+
+    // The name of a bucket, e.g. "my-bucket"
+    // String bucketName = "my-bucket";
+
+    Bucket bucket =
+        storage.get(bucketName, BucketGetOption.fields(BucketField.DEFAULT_EVENT_BASED_HOLD));
+
+    if (bucket.getDefaultEventBasedHold() != null && bucket.getDefaultEventBasedHold()) {
+      System.out.println("Default event-based hold is enabled for " + bucketName);
+    } else {
+      System.out.println("Default event-based hold is not enabled for " + bucketName);
+    }
+    // [END storage_get_default_event_based_hold]
+    return bucket;
+  }
+
+  /** Example of how to set event-based hold for a blob */
+  public Blob setEventBasedHold(String bucketName, String blobName) throws StorageException {
+    // [START storage_set_event_based_hold]
+    // Instantiate a Google Cloud Storage client
+    Storage storage = StorageOptions.getDefaultInstance().getService();
+
+    // The name of a bucket, e.g. "my-bucket"
+    // String bucketName = "my-bucket";
+
+    // The name of a blob, e.g. "my-blob"
+    // String blobName = "my-blob";
+
+    BlobId blobId = BlobId.of(bucketName, blobName);
+    Blob blob = storage.update(BlobInfo.newBuilder(blobId).setEventBasedHold(true).build());
+
+    System.out.println("Event-based hold was set for " + blobName);
+    // [END storage_set_event_based_hold]
+    return blob;
+  }
+
+  /** Example of how to release event-based hold for a blob */
+  public Blob releaseEventBasedHold(String bucketName, String blobName) throws StorageException {
+    // [START storage_release_event_based_hold]
+    // Instantiate a Google Cloud Storage client
+    Storage storage = StorageOptions.getDefaultInstance().getService();
+
+    // The name of a bucket, e.g. "my-bucket"
+    // String bucketName = "my-bucket";
+
+    // The name of a blob, e.g. "my-blob"
+    // String blobName = "my-blob";
+
+    BlobId blobId = BlobId.of(bucketName, blobName);
+    Blob blob = storage.update(BlobInfo.newBuilder(blobId).setEventBasedHold(false).build());
+
+    System.out.println("Event-based hold was released for " + blobName);
+    // [END storage_release_event_based_hold]
+    return blob;
+  }
+
+  /** Example of how to set a temporary hold for a blob */
+  public Blob setTemporaryHold(String bucketName, String blobName) throws StorageException {
+    // [START storage_set_temporary_hold]
+    // Instantiate a Google Cloud Storage client
+    Storage storage = StorageOptions.getDefaultInstance().getService();
+
+    // The name of a bucket, e.g. "my-bucket"
+    // String bucketName = "my-bucket";
+
+    // The name of a blob, e.g. "my-blob"
+    // String blobName = "my-blob";
+
+    BlobId blobId = BlobId.of(bucketName, blobName);
+    Blob blob = storage.update(BlobInfo.newBuilder(blobId).setTemporaryHold(true).build());
+
+    System.out.println("Temporary hold was set for " + blobName);
+    // [END storage_set_temporary_hold]
+    return blob;
+  }
+
+  /** Example of how to release a temporary hold for a blob */
+  public Blob releaseTemporaryHold(String bucketName, String blobName) throws StorageException {
+    // [START storage_release_temporary_hold]
+    // Instantiate a Google Cloud Storage client
+    Storage storage = StorageOptions.getDefaultInstance().getService();
+
+    // The name of a bucket, e.g. "my-bucket"
+    // String bucketName = "my-bucket";
+
+    // The name of a blob, e.g. "my-blob"
+    // String blobName = "my-blob";
+
+    BlobId blobId = BlobId.of(bucketName, blobName);
+    Blob blob = storage.update(BlobInfo.newBuilder(blobId).setTemporaryHold(false).build());
+
+    System.out.println("Temporary hold was released for " + blobName);
+    // [END storage_release_temporary_hold]
+    return blob;
   }
 }
