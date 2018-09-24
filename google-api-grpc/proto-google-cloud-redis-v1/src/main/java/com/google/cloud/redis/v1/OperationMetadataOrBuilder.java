@@ -113,7 +113,7 @@ public interface OperationMetadataOrBuilder extends
 
   /**
    * <pre>
-   * Specifies if cancellation was requested for the operaiton.
+   * Specifies if cancellation was requested for the operation.
    * </pre>
    *
    * <code>bool cancel_requested = 6;</code>

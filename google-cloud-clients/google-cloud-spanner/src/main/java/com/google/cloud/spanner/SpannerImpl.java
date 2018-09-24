@@ -81,7 +81,6 @@ import io.opencensus.trace.AttributeValue;
 import io.opencensus.trace.Span;
 import io.opencensus.trace.Tracer;
 import io.opencensus.trace.Tracing;
-
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.AbstractList;
@@ -103,6 +102,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executor;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicLong;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.Nullable;
@@ -128,6 +128,19 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
   private static final String COMMIT = "CloudSpannerOperation.Commit";
   private static final String QUERY = "CloudSpannerOperation.ExecuteStreamingQuery";
   private static final String READ = "CloudSpannerOperation.ExecuteStreamingRead";
+
+  private static final ThreadLocal<Boolean> hasPendingTransaction = new ThreadLocal<Boolean>() {
+    @Override
+    protected Boolean initialValue() {
+      return false;
+    }
+  };
+
+  private static void throwIfTransactionsPending() {
+    if (hasPendingTransaction.get() == Boolean.TRUE) {
+        throw newSpannerException(ErrorCode.INTERNAL, "Nested transactions are not supported");
+    }
+  }
 
   static {
     TraceUtil.exportSpans(CREATE_SESSION, DELETE_SESSION, BEGIN_TRANSACTION, COMMIT, QUERY, READ);
@@ -912,6 +925,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     }
     
     <T extends SessionTransaction> T setActive(@Nullable T ctx) {
+      throwIfTransactionsPending();
+
       if (activeTransaction != null) {
         activeTransaction.invalidate();
       }
@@ -1151,7 +1166,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
         Options readOptions,
         ByteString partitionToken) {
       beforeReadOrQuery();
-      ReadRequest.Builder builder =
+      final ReadRequest.Builder builder =
           ReadRequest.newBuilder()
               .setSession(session.name)
               .setTable(checkNotNull(table))
@@ -1219,6 +1234,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
 
   @VisibleForTesting
   static class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
+    private boolean blockNestedTxn = true;
 
     /** Allow for testing of backoff logic */
     static class Sleeper {
@@ -1232,6 +1248,11 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     private final Span span;
     private TransactionContextImpl txn;
     private volatile boolean isValid = true;
+
+    public TransactionRunner allowNestedTransaction() {
+      blockNestedTxn = false;
+      return this;
+    }
 
     TransactionRunnerImpl(
         SessionImpl session, SpannerRpc rpc, Sleeper sleeper, int defaultPrefetchChunks) {
@@ -1249,11 +1270,19 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     @Override
     public <T> T run(TransactionCallable<T> callable) {
       try (Scope s = tracer.withSpan(span)) {
+        if (blockNestedTxn) {
+          hasPendingTransaction.set(Boolean.TRUE);
+        }
+
         return runInternal(callable);
       } catch (RuntimeException e) {
         TraceUtil.endSpanWithFailure(span, e);
         throw e;
       } finally {
+        // Remove threadLocal rather than set to FALSE to avoid a possible memory leak.
+        // We also do this unconditionally in case a user has modified the flag when the transaction
+        // was running.
+        hasPendingTransaction.remove();
         span.end();
       }
     }
@@ -1779,6 +1808,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     }
 
     void initTransaction() {
+      throwIfTransactionsPending();
+
       // Since we only support synchronous calls, just block on "txnLock" while the RPC is in
       // flight.  Note that we use the strategy of sending an explicit BeginTransaction() RPC,
       // rather than using the first read in the transaction to begin it implicitly.  The chosen

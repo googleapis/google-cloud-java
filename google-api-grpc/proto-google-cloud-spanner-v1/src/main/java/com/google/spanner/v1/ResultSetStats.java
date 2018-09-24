@@ -72,6 +72,16 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 24: {
+            rowCountCase_ = 3;
+            rowCount_ = input.readInt64();
+            break;
+          }
+          case 32: {
+            rowCountCase_ = 4;
+            rowCount_ = input.readInt64();
+            break;
+          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -102,6 +112,44 @@ private static final long serialVersionUID = 0L;
     return com.google.spanner.v1.ResultSetProto.internal_static_google_spanner_v1_ResultSetStats_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.spanner.v1.ResultSetStats.class, com.google.spanner.v1.ResultSetStats.Builder.class);
+  }
+
+  private int rowCountCase_ = 0;
+  private java.lang.Object rowCount_;
+  public enum RowCountCase
+      implements com.google.protobuf.Internal.EnumLite {
+    ROW_COUNT_EXACT(3),
+    ROW_COUNT_LOWER_BOUND(4),
+    ROWCOUNT_NOT_SET(0);
+    private final int value;
+    private RowCountCase(int value) {
+      this.value = value;
+    }
+    /**
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static RowCountCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static RowCountCase forNumber(int value) {
+      switch (value) {
+        case 3: return ROW_COUNT_EXACT;
+        case 4: return ROW_COUNT_LOWER_BOUND;
+        case 0: return ROWCOUNT_NOT_SET;
+        default: return null;
+      }
+    }
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public RowCountCase
+  getRowCountCase() {
+    return RowCountCase.forNumber(
+        rowCountCase_);
   }
 
   public static final int QUERY_PLAN_FIELD_NUMBER = 1;
@@ -191,6 +239,37 @@ private static final long serialVersionUID = 0L;
     return getQueryStats();
   }
 
+  public static final int ROW_COUNT_EXACT_FIELD_NUMBER = 3;
+  /**
+   * <pre>
+   * Standard DML returns an exact count of rows that were modified.
+   * </pre>
+   *
+   * <code>int64 row_count_exact = 3;</code>
+   */
+  public long getRowCountExact() {
+    if (rowCountCase_ == 3) {
+      return (java.lang.Long) rowCount_;
+    }
+    return 0L;
+  }
+
+  public static final int ROW_COUNT_LOWER_BOUND_FIELD_NUMBER = 4;
+  /**
+   * <pre>
+   * Partitioned DML does not offer exactly-once semantics, so it
+   * returns a lower bound of the rows modified.
+   * </pre>
+   *
+   * <code>int64 row_count_lower_bound = 4;</code>
+   */
+  public long getRowCountLowerBound() {
+    if (rowCountCase_ == 4) {
+      return (java.lang.Long) rowCount_;
+    }
+    return 0L;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -211,6 +290,14 @@ private static final long serialVersionUID = 0L;
     if (queryStats_ != null) {
       output.writeMessage(2, getQueryStats());
     }
+    if (rowCountCase_ == 3) {
+      output.writeInt64(
+          3, (long)((java.lang.Long) rowCount_));
+    }
+    if (rowCountCase_ == 4) {
+      output.writeInt64(
+          4, (long)((java.lang.Long) rowCount_));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -227,6 +314,16 @@ private static final long serialVersionUID = 0L;
     if (queryStats_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getQueryStats());
+    }
+    if (rowCountCase_ == 3) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(
+            3, (long)((java.lang.Long) rowCount_));
+    }
+    if (rowCountCase_ == 4) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(
+            4, (long)((java.lang.Long) rowCount_));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -254,6 +351,21 @@ private static final long serialVersionUID = 0L;
       result = result && getQueryStats()
           .equals(other.getQueryStats());
     }
+    result = result && getRowCountCase().equals(
+        other.getRowCountCase());
+    if (!result) return false;
+    switch (rowCountCase_) {
+      case 3:
+        result = result && (getRowCountExact()
+            == other.getRowCountExact());
+        break;
+      case 4:
+        result = result && (getRowCountLowerBound()
+            == other.getRowCountLowerBound());
+        break;
+      case 0:
+      default:
+    }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -272,6 +384,20 @@ private static final long serialVersionUID = 0L;
     if (hasQueryStats()) {
       hash = (37 * hash) + QUERY_STATS_FIELD_NUMBER;
       hash = (53 * hash) + getQueryStats().hashCode();
+    }
+    switch (rowCountCase_) {
+      case 3:
+        hash = (37 * hash) + ROW_COUNT_EXACT_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            getRowCountExact());
+        break;
+      case 4:
+        hash = (37 * hash) + ROW_COUNT_LOWER_BOUND_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            getRowCountLowerBound());
+        break;
+      case 0:
+      default:
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -422,6 +548,8 @@ private static final long serialVersionUID = 0L;
         queryStats_ = null;
         queryStatsBuilder_ = null;
       }
+      rowCountCase_ = 0;
+      rowCount_ = null;
       return this;
     }
 
@@ -458,6 +586,13 @@ private static final long serialVersionUID = 0L;
       } else {
         result.queryStats_ = queryStatsBuilder_.build();
       }
+      if (rowCountCase_ == 3) {
+        result.rowCount_ = rowCount_;
+      }
+      if (rowCountCase_ == 4) {
+        result.rowCount_ = rowCount_;
+      }
+      result.rowCountCase_ = rowCountCase_;
       onBuilt();
       return result;
     }
@@ -512,6 +647,19 @@ private static final long serialVersionUID = 0L;
       if (other.hasQueryStats()) {
         mergeQueryStats(other.getQueryStats());
       }
+      switch (other.getRowCountCase()) {
+        case ROW_COUNT_EXACT: {
+          setRowCountExact(other.getRowCountExact());
+          break;
+        }
+        case ROW_COUNT_LOWER_BOUND: {
+          setRowCountLowerBound(other.getRowCountLowerBound());
+          break;
+        }
+        case ROWCOUNT_NOT_SET: {
+          break;
+        }
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -540,6 +688,21 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int rowCountCase_ = 0;
+    private java.lang.Object rowCount_;
+    public RowCountCase
+        getRowCountCase() {
+      return RowCountCase.forNumber(
+          rowCountCase_);
+    }
+
+    public Builder clearRowCount() {
+      rowCountCase_ = 0;
+      rowCount_ = null;
+      onChanged();
+      return this;
+    }
+
 
     private com.google.spanner.v1.QueryPlan queryPlan_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -908,6 +1071,93 @@ private static final long serialVersionUID = 0L;
         queryStats_ = null;
       }
       return queryStatsBuilder_;
+    }
+
+    /**
+     * <pre>
+     * Standard DML returns an exact count of rows that were modified.
+     * </pre>
+     *
+     * <code>int64 row_count_exact = 3;</code>
+     */
+    public long getRowCountExact() {
+      if (rowCountCase_ == 3) {
+        return (java.lang.Long) rowCount_;
+      }
+      return 0L;
+    }
+    /**
+     * <pre>
+     * Standard DML returns an exact count of rows that were modified.
+     * </pre>
+     *
+     * <code>int64 row_count_exact = 3;</code>
+     */
+    public Builder setRowCountExact(long value) {
+      rowCountCase_ = 3;
+      rowCount_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Standard DML returns an exact count of rows that were modified.
+     * </pre>
+     *
+     * <code>int64 row_count_exact = 3;</code>
+     */
+    public Builder clearRowCountExact() {
+      if (rowCountCase_ == 3) {
+        rowCountCase_ = 0;
+        rowCount_ = null;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     * <pre>
+     * Partitioned DML does not offer exactly-once semantics, so it
+     * returns a lower bound of the rows modified.
+     * </pre>
+     *
+     * <code>int64 row_count_lower_bound = 4;</code>
+     */
+    public long getRowCountLowerBound() {
+      if (rowCountCase_ == 4) {
+        return (java.lang.Long) rowCount_;
+      }
+      return 0L;
+    }
+    /**
+     * <pre>
+     * Partitioned DML does not offer exactly-once semantics, so it
+     * returns a lower bound of the rows modified.
+     * </pre>
+     *
+     * <code>int64 row_count_lower_bound = 4;</code>
+     */
+    public Builder setRowCountLowerBound(long value) {
+      rowCountCase_ = 4;
+      rowCount_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Partitioned DML does not offer exactly-once semantics, so it
+     * returns a lower bound of the rows modified.
+     * </pre>
+     *
+     * <code>int64 row_count_lower_bound = 4;</code>
+     */
+    public Builder clearRowCountLowerBound() {
+      if (rowCountCase_ == 4) {
+        rowCountCase_ = 0;
+        rowCount_ = null;
+        onChanged();
+      }
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

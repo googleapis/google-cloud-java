@@ -75,7 +75,7 @@ public final class ITDMLTest {
     return "k" + seq++;
   }
 
-  private void executeUpdate(long expectedCount, String... stmts) {
+  private void executeUpdate(long expectedCount, final String... stmts) {
     final TransactionCallable<Long> callable =
         new TransactionCallable<Long>() {
           @Override
@@ -153,10 +153,9 @@ public final class ITDMLTest {
       fail("Expected illegal argument exception");
     } catch (SpannerException e) {
       assertThat(e.getErrorCode()).isEqualTo(ErrorCode.UNKNOWN);
-      assertThat(e)
-          .hasMessageThat()
+      assertThat(e.getMessage())
           .contains("DML response missing stats possibly due to non-DML statement as input");
-      assertThat(e).hasCauseThat().isInstanceOf(IllegalArgumentException.class);
+      assertThat(e.getCause()).isInstanceOf(IllegalArgumentException.class);
     }
   }
 
@@ -225,8 +224,8 @@ public final class ITDMLTest {
       fail("Expected user exception");
     } catch (SpannerException e) {
       assertThat(e.getErrorCode()).isEqualTo(ErrorCode.UNKNOWN);
-      assertThat(e).hasMessageThat().contains("failing to commit");
-      assertThat(e).hasCauseThat().isInstanceOf(UserException.class);
+      assertThat(e.getMessage()).contains("failing to commit");
+      assertThat(e.getCause()).isInstanceOf(UserException.class);
     }
 
     ResultSet resultSet =
@@ -270,13 +269,13 @@ public final class ITDMLTest {
     assertThat(rowCount).isEqualTo(2);
   }
 
-  private void executeQuery(long expectedCount, String... stmts) {
+  private void executeQuery(long expectedCount, final String... stmts) {
     final TransactionCallable<Long> callable =
         new TransactionCallable<Long>() {
           @Override
           public Long run(TransactionContext transaction) {
             long rowCount = 0;
-            for (String stmt : stmts) {
+            for (final String stmt : stmts) {
               ResultSet resultSet = transaction.executeQuery(Statement.of(stmt));
               assertThat(resultSet.next()).isFalse();
               assertThat(resultSet.getStats()).isNotNull();
