@@ -373,4 +373,26 @@ public class DetectIT {
       blob.delete();
     }
   }
+
+  @Test
+  public void testDetectLocalizedObjects() throws Exception {
+    // Act
+    String[] args = {"object-localization", "./resources/puppies.jpg"};
+    Detect.argsHelper(args, out);
+
+    // Assert
+    String got = bout.toString();
+    assertThat(got).contains("Dog");
+  }
+
+  @Test
+  public void testDetectLocalizedObjectsGcs() throws Exception {
+    // Act
+    String[] args = {"object-localization", "gs://cloud-samples-data/vision/puppies.jpg"};
+    Detect.argsHelper(args, out);
+
+    // Assert
+    String got = bout.toString();
+    assertThat(got).contains("Dog");
+  }
 }

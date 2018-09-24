@@ -46,6 +46,7 @@ import com.google.cloud.vision.v1.ImageAnnotatorClient;
 import com.google.cloud.vision.v1.ImageContext;
 import com.google.cloud.vision.v1.ImageSource;
 import com.google.cloud.vision.v1.InputConfig;
+import com.google.cloud.vision.v1.LocalizedObjectAnnotation;
 import com.google.cloud.vision.v1.LocationInfo;
 import com.google.cloud.vision.v1.OperationMetadata;
 import com.google.cloud.vision.v1.OutputConfig;
@@ -103,6 +104,7 @@ public class Detect {
               + "Commands:\n"
               + "\tfaces | labels | landmarks | logos | text | safe-search | properties"
               + "| web | web-entities | web-entities-include-geo | crop | ocr \n"
+              + "| object-localization \n"
               + "Path:\n\tA file path (ex: ./resources/wakeupcat.jpg) or a URI for a Cloud Storage "
               + "resource (gs://...)\n"
               + "Path to File:\n\tA path to the remote file on Cloud Storage (gs://...)\n"
@@ -190,6 +192,12 @@ public class Detect {
     } else if (command.equals("ocr")) {
       String destPath = args.length > 2 ? args[2] : "";
       detectDocumentsGcs(path, destPath);
+    } else if (command.equals("object-localization")) {
+      if (path.startsWith("gs://")) {
+        detectLocalizedObjectsGcs(path, out);
+      } else {
+        detectLocalizedObjects(path, out);
+      }
     }
   }
 
@@ -1452,4 +1460,93 @@ public class Detect {
     }
   }
   // [END vision_text_detection_pdf_gcs]
+
+  // [START vision_localize_objects]
+  /**
+   * Detects localized objects in the specified local image.
+   *
+   * @param filePath The path to the file to perform localized object detection on.
+   * @param out A {@link PrintStream} to write detected objects to.
+   * @throws Exception on errors while closing the client.
+   * @throws IOException on Input/Output errors.
+   */
+  public static void detectLocalizedObjects(String filePath, PrintStream out)
+      throws Exception, IOException {
+    List<AnnotateImageRequest> requests = new ArrayList<>();
+
+    ByteString imgBytes = ByteString.readFrom(new FileInputStream(filePath));
+
+    Image img = Image.newBuilder().setContent(imgBytes).build();
+    AnnotateImageRequest request =
+        AnnotateImageRequest.newBuilder()
+            .addFeatures(Feature.newBuilder().setType(Type.OBJECT_LOCALIZATION))
+            .setImage(img)
+            .build();
+    requests.add(request);
+
+    // Perform the request
+    try (ImageAnnotatorClient client = ImageAnnotatorClient.create()) {
+      BatchAnnotateImagesResponse response = client.batchAnnotateImages(requests);
+      List<AnnotateImageResponse> responses = response.getResponsesList();
+
+      // Display the results
+      for (AnnotateImageResponse res : responses) {
+        for (LocalizedObjectAnnotation entity : res.getLocalizedObjectAnnotationsList()) {
+          out.format("Object name: %s\n", entity.getName());
+          out.format("Confidence: %s\n", entity.getScore());
+          out.format("Normalized Vertices:\n");
+          entity
+              .getBoundingPoly()
+              .getNormalizedVerticesList()
+              .forEach(vertex -> out.format("- (%s, %s)\n", vertex.getX(), vertex.getY()));
+        }
+      }
+    }
+  }
+  // [END vision_localize_objects]
+
+  // [START vision_localize_objects_gcs]
+  /**
+   * Detects localized objects in a remote image on Google Cloud Storage.
+   *
+   * @param gcsPath The path to the remote file on Google Cloud Storage to detect localized objects
+   *     on.
+   * @param out A {@link PrintStream} to write detected objects to.
+   * @throws Exception on errors while closing the client.
+   * @throws IOException on Input/Output errors.
+   */
+  public static void detectLocalizedObjectsGcs(String gcsPath, PrintStream out)
+      throws Exception, IOException {
+    List<AnnotateImageRequest> requests = new ArrayList<>();
+
+    ImageSource imgSource = ImageSource.newBuilder().setGcsImageUri(gcsPath).build();
+    Image img = Image.newBuilder().setSource(imgSource).build();
+
+    AnnotateImageRequest request =
+        AnnotateImageRequest.newBuilder()
+            .addFeatures(Feature.newBuilder().setType(Type.OBJECT_LOCALIZATION))
+            .setImage(img)
+            .build();
+    requests.add(request);
+
+    // Perform the request
+    try (ImageAnnotatorClient client = ImageAnnotatorClient.create()) {
+      BatchAnnotateImagesResponse response = client.batchAnnotateImages(requests);
+      List<AnnotateImageResponse> responses = response.getResponsesList();
+      client.close();
+      // Display the results
+      for (AnnotateImageResponse res : responses) {
+        for (LocalizedObjectAnnotation entity : res.getLocalizedObjectAnnotationsList()) {
+          out.format("Object name: %s\n", entity.getName());
+          out.format("Confidence: %s\n", entity.getScore());
+          out.format("Normalized Vertices:\n");
+          entity
+              .getBoundingPoly()
+              .getNormalizedVerticesList()
+              .forEach(vertex -> out.format("- (%s, %s)\n", vertex.getX(), vertex.getY()));
+        }
+      }
+    }
+  }
+  // [END vision_localize_objects_gcs]
 }
