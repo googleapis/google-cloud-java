@@ -22,24 +22,20 @@ import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.ClientStream;
 import com.google.api.gax.rpc.ResponseObserver;
 import com.google.api.gax.rpc.StreamController;
-import com.google.cloud.speech.v1p1beta1.LongRunningRecognizeMetadata;
-import com.google.cloud.speech.v1p1beta1.LongRunningRecognizeResponse;
-import com.google.cloud.speech.v1p1beta1.RecognitionAudio;
-import com.google.cloud.speech.v1p1beta1.RecognitionConfig;
-import com.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding;
-import com.google.cloud.speech.v1p1beta1.RecognitionMetadata;
-import com.google.cloud.speech.v1p1beta1.RecognitionMetadata.InteractionType;
-import com.google.cloud.speech.v1p1beta1.RecognitionMetadata.MicrophoneDistance;
-import com.google.cloud.speech.v1p1beta1.RecognitionMetadata.RecordingDeviceType;
-import com.google.cloud.speech.v1p1beta1.RecognizeResponse;
-import com.google.cloud.speech.v1p1beta1.SpeechClient;
-import com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative;
-import com.google.cloud.speech.v1p1beta1.SpeechRecognitionResult;
-import com.google.cloud.speech.v1p1beta1.StreamingRecognitionConfig;
-import com.google.cloud.speech.v1p1beta1.StreamingRecognitionResult;
-import com.google.cloud.speech.v1p1beta1.StreamingRecognizeRequest;
-import com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponse;
-import com.google.cloud.speech.v1p1beta1.WordInfo;
+import com.google.cloud.speech.v1.LongRunningRecognizeMetadata;
+import com.google.cloud.speech.v1.LongRunningRecognizeResponse;
+import com.google.cloud.speech.v1.RecognitionAudio;
+import com.google.cloud.speech.v1.RecognitionConfig;
+import com.google.cloud.speech.v1.RecognitionConfig.AudioEncoding;
+import com.google.cloud.speech.v1.RecognizeResponse;
+import com.google.cloud.speech.v1.SpeechClient;
+import com.google.cloud.speech.v1.SpeechRecognitionAlternative;
+import com.google.cloud.speech.v1.SpeechRecognitionResult;
+import com.google.cloud.speech.v1.StreamingRecognitionConfig;
+import com.google.cloud.speech.v1.StreamingRecognitionResult;
+import com.google.cloud.speech.v1.StreamingRecognizeRequest;
+import com.google.cloud.speech.v1.StreamingRecognizeResponse;
+import com.google.cloud.speech.v1.WordInfo;
 import com.google.common.util.concurrent.SettableFuture;
 import com.google.protobuf.ByteString;
 
@@ -67,9 +63,8 @@ public class Recognize {
           "\tjava %s \"<command>\" \"<path-to-image>\"\n"
               + "Commands:\n"
               + "\tsyncrecognize | asyncrecognize | streamrecognize | micstreamrecognize \n"
-              + "\t| wordoffsets | model-selection | auto-punctuation | stream-punctuation \n"
-              + "\t| enhanced-model| metadata | diarization | multi-channel | multi-language \n"
-              + "\t | word-level-conf"
+              + "\t| wordoffsets | auto-punctuation | stream-punctuation \n"
+              + "\t| enhanced-model | model-selection\n"
               + "Path:\n\tA file path (ex: ./resources/audio.raw) or a URI "
               + "for a Cloud Storage resource (gs://...)\n",
           Recognize.class.getCanonicalName());
@@ -101,12 +96,6 @@ public class Recognize {
       streamingRecognizeFile(path);
     } else if (command.equals("micstreamrecognize")) {
       streamingMicRecognize();
-    } else if (command.equals("model-selection")) {
-      if (path.startsWith("gs://")) {
-        transcribeModelSelectionGcs(path);
-      } else {
-        transcribeModelSelection(path);
-      }
     } else if (command.equals("auto-punctuation")) {
       if (path.startsWith("gs://")) {
         transcribeGcsWithAutomaticPunctuation(path);
@@ -117,31 +106,11 @@ public class Recognize {
       streamingTranscribeWithAutomaticPunctuation(path);
     } else if (command.equals("enhanced-model")) {
       transcribeFileWithEnhancedModel(path);
-    } else if (command.equals("metadata")) {
-      transcribeFileWithMetadata(path);
-    } else if (command.equals("diarization")) {
+    } else if (command.equals("model-selection")) {
       if (path.startsWith("gs://")) {
-        transcribeDiarizationGcs(path);
+        transcribeModelSelectionGcs(path);
       } else {
-        transcribeDiarization(path);
-      }
-    } else if (command.equals("multi-channel")) {
-      if (path.startsWith("gs://")) {
-        transcribeMultiChannelGcs(path);
-      } else {
-        transcribeMultiChannel(path);
-      }
-    } else if (command.equals("multi-language")) {
-      if (path.startsWith("gs://")) {
-        transcribeMultiLanguageGcs(path);
-      } else {
-        transcribeMultiLanguage(path);
-      }
-    } else if (command.equals("word-level-conf")) {
-      if (path.startsWith("gs://")) {
-        transcribeWordLevelConfidenceGcs(path);
-      } else {
-        transcribeWordLevelConfidence(path);
+        transcribeModelSelection(path);
       }
     }
   }
@@ -477,87 +446,6 @@ public class Recognize {
   }
   // [END speech_transcribe_streaming]
 
-  // [START speech_transcribe_model_selection_beta]
-  /**
-   * Performs transcription of the given audio file synchronously with the selected model.
-   *
-   * @param fileName the path to a audio file to transcribe
-   */
-  public static void transcribeModelSelection(String fileName) throws Exception {
-    Path path = Paths.get(fileName);
-    byte[] content = Files.readAllBytes(path);
-
-    try (SpeechClient speech = SpeechClient.create()) {
-      // Configure request with video media type
-      RecognitionConfig recConfig =
-          RecognitionConfig.newBuilder()
-              // encoding may either be omitted or must match the value in the file header
-              .setEncoding(AudioEncoding.LINEAR16)
-              .setLanguageCode("en-US")
-              // sample rate hertz may be either be omitted or must match the value in the file
-              // header
-              .setSampleRateHertz(16000)
-              .setModel("video")
-              .build();
-
-      RecognitionAudio recognitionAudio =
-          RecognitionAudio.newBuilder().setContent(ByteString.copyFrom(content)).build();
-
-      RecognizeResponse recognizeResponse = speech.recognize(recConfig, recognitionAudio);
-      // Just print the first result here.
-      SpeechRecognitionResult result = recognizeResponse.getResultsList().get(0);
-      // There can be several alternative transcripts for a given chunk of speech. Just use the
-      // first (most likely) one here.
-      SpeechRecognitionAlternative alternative = result.getAlternativesList().get(0);
-      System.out.printf("Transcript : %s\n", alternative.getTranscript());
-    }
-    // [END speech_transcribe_model_selection_beta]
-  }
-
-  // [START speech_transcribe_model_selection_gcs_beta]
-  /**
-   * Performs transcription of the remote audio file asynchronously with the selected model.
-   *
-   * @param gcsUri the path to the remote audio file to transcribe.
-   */
-  public static void transcribeModelSelectionGcs(String gcsUri) throws Exception {
-    try (SpeechClient speech = SpeechClient.create()) {
-
-      // Configure request with video media type
-      RecognitionConfig config =
-          RecognitionConfig.newBuilder()
-              // encoding may either be omitted or must match the value in the file header
-              .setEncoding(AudioEncoding.LINEAR16)
-              .setLanguageCode("en-US")
-              // sample rate hertz may be either be omitted or must match the value in the file
-              // header
-              .setSampleRateHertz(16000)
-              .setModel("video")
-              .build();
-
-      RecognitionAudio audio = RecognitionAudio.newBuilder().setUri(gcsUri).build();
-
-      // Use non-blocking call for getting file transcription
-      OperationFuture<LongRunningRecognizeResponse, LongRunningRecognizeMetadata> response =
-          speech.longRunningRecognizeAsync(config, audio);
-
-      while (!response.isDone()) {
-        System.out.println("Waiting for response...");
-        Thread.sleep(10000);
-      }
-
-      List<SpeechRecognitionResult> results = response.get().getResultsList();
-
-      // Just print the first result here.
-      SpeechRecognitionResult result = results.get(0);
-      // There can be several alternative transcripts for a given chunk of speech. Just use the
-      // first (most likely) one here.
-      SpeechRecognitionAlternative alternative = result.getAlternativesList().get(0);
-      System.out.printf("Transcript : %s\n", alternative.getTranscript());
-    }
-    // [END speech_transcribe_model_selection_gcs_beta]
-  }
-
   // [START speech_sync_recognize_punctuation]
   /**
    * Performs transcription with automatic punctuation on raw PCM audio data.
@@ -598,7 +486,7 @@ public class Recognize {
   }
   // [END speech_sync_recognize_punctuation]
 
-  // [START speech_transcribe_auto_punctuation_beta]
+  // [START speech_transcribe_auto_punctuation]
   /**
    * Performs transcription on remote FLAC file and prints the transcription.
    *
@@ -638,7 +526,7 @@ public class Recognize {
       System.out.printf("Transcript : %s\n", alternative.getTranscript());
     }
   }
-  // [END speech_transcribe_auto_punctuation_beta]
+  // [END speech_transcribe_auto_punctuation]
 
   // [START speech_stream_recognize_punctuation]
   /**
@@ -820,7 +708,7 @@ public class Recognize {
   }
   // [END speech_transcribe_streaming_mic]
 
-  // [START speech_transcribe_enhanced_model_beta]
+  // [START speech_transcribe_enhanced_model]
   /**
    * Transcribe the given audio file using an enhanced model.
    *
@@ -860,410 +748,86 @@ public class Recognize {
       }
     }
   }
-  // [END speech_transcribe_enhanced_model_beta]
+  // [END speech_transcribe_enhanced_model]
 
-  // [START speech_transcribe_recognition_metadata_beta]
+  // [START speech_transcribe_model_selection]
   /**
-   * Transcribe the given audio file and include recognition metadata in the request.
+   * Performs transcription of the given audio file synchronously with the selected model.
    *
-   * @param fileName the path to an audio file.
+   * @param fileName the path to a audio file to transcribe
    */
-  public static void transcribeFileWithMetadata(String fileName) throws Exception {
+  public static void transcribeModelSelection(String fileName) throws Exception {
     Path path = Paths.get(fileName);
     byte[] content = Files.readAllBytes(path);
 
-    try (SpeechClient speechClient = SpeechClient.create()) {
-      // Get the contents of the local audio file
+    try (SpeechClient speech = SpeechClient.create()) {
+      // Configure request with video media type
+      RecognitionConfig recConfig =
+          RecognitionConfig.newBuilder()
+              // encoding may either be omitted or must match the value in the file header
+              .setEncoding(AudioEncoding.LINEAR16)
+              .setLanguageCode("en-US")
+              // sample rate hertz may be either be omitted or must match the value in the file
+              // header
+              .setSampleRateHertz(16000)
+              .setModel("video")
+              .build();
+
       RecognitionAudio recognitionAudio =
           RecognitionAudio.newBuilder().setContent(ByteString.copyFrom(content)).build();
 
-      // Construct a recognition metadata object.
-      // Most metadata fields are specified as enums that can be found
-      // in speech.enums.RecognitionMetadata
-      RecognitionMetadata metadata =
-          RecognitionMetadata.newBuilder()
-              .setInteractionType(InteractionType.DISCUSSION)
-              .setMicrophoneDistance(MicrophoneDistance.NEARFIELD)
-              .setRecordingDeviceType(RecordingDeviceType.SMARTPHONE)
-              .setRecordingDeviceName("Pixel 2 XL") // Some metadata fields are free form strings
-              // And some are integers, for instance the 6 digit NAICS code
-              // https://www.naics.com/search/
-              .setIndustryNaicsCodeOfAudio(519190)
-              .build();
-
-      // Configure request to enable enhanced models
-      RecognitionConfig config =
-          RecognitionConfig.newBuilder()
-              .setEncoding(AudioEncoding.LINEAR16)
-              .setLanguageCode("en-US")
-              .setSampleRateHertz(8000)
-              .setMetadata(metadata) // Add the metadata to the config
-              .build();
-
-      // Perform the transcription request
-      RecognizeResponse recognizeResponse = speechClient.recognize(config, recognitionAudio);
-
-      // Print out the results
-      for (SpeechRecognitionResult result : recognizeResponse.getResultsList()) {
-        // There can be several alternative transcripts for a given chunk of speech. Just use the
-        // first (most likely) one here.
-        SpeechRecognitionAlternative alternative = result.getAlternatives(0);
-        System.out.format("Transcript: %s\n\n", alternative.getTranscript());
-      }
-    }
-  }
-  // [END speech_transcribe_recognition_metadata_beta]
-
-  // [START speech_transcribe_diarization_beta]
-  /**
-   * Transcribe the given audio file using speaker diarization.
-   *
-   * @param fileName the path to an audio file.
-   */
-  public static void transcribeDiarization(String fileName) throws Exception {
-    Path path = Paths.get(fileName);
-    byte[] content = Files.readAllBytes(path);
-
-    try (SpeechClient speechClient = SpeechClient.create()) {
-      // Get the contents of the local audio file
-      RecognitionAudio recognitionAudio =
-          RecognitionAudio.newBuilder().setContent(ByteString.copyFrom(content)).build();
-
-      // Configure request to enable Speaker diarization
-      RecognitionConfig config =
-          RecognitionConfig.newBuilder()
-              .setEncoding(AudioEncoding.LINEAR16)
-              .setLanguageCode("en-US")
-              .setSampleRateHertz(8000)
-              .setEnableSpeakerDiarization(true)
-              .setDiarizationSpeakerCount(2)
-              .build();
-
-      // Perform the transcription request
-      RecognizeResponse recognizeResponse = speechClient.recognize(config, recognitionAudio);
-
-      // Print out the results
-      for (SpeechRecognitionResult result : recognizeResponse.getResultsList()) {
-        // There can be several alternative transcripts for a given chunk of speech. Just
-        // use the first (most likely) one here.
-        SpeechRecognitionAlternative alternative = result.getAlternatives(0);
-        System.out.format("Transcript : %s\n", alternative.getTranscript());
-        // The words array contains the entire transcript up until that point.
-        // Referencing the last spoken word to get the associated Speaker tag
-        System.out.format(
-            "Speaker Tag %s: %s\n",
-            alternative.getWords((alternative.getWordsCount() - 1)).getSpeakerTag(),
-            alternative.getTranscript());
-      }
-    }
-  }
-  // [END speech_transcribe_diarization_beta]
-
-  // [START speech_transcribe_diarization_gcs_beta]
-  /**
-   * Transcribe a remote audio file using speaker diarization.
-   *
-   * @param gcsUri the path to an audio file.
-   */
-  public static void transcribeDiarizationGcs(String gcsUri) throws Exception {
-    try (SpeechClient speechClient = SpeechClient.create()) {
-      // Configure request to enable Speaker diarization
-      RecognitionConfig config =
-          RecognitionConfig.newBuilder()
-              .setEncoding(AudioEncoding.LINEAR16)
-              .setLanguageCode("en-US")
-              .setSampleRateHertz(8000)
-              .setEnableSpeakerDiarization(true)
-              .setDiarizationSpeakerCount(2)
-              .build();
-
-      // Set the remote path for the audio file
-      RecognitionAudio audio = RecognitionAudio.newBuilder().setUri(gcsUri).build();
-
-      // Use non-blocking call for getting file transcription
-      OperationFuture<LongRunningRecognizeResponse, LongRunningRecognizeMetadata> response =
-          speechClient.longRunningRecognizeAsync(config, audio);
-
-      while (!response.isDone()) {
-        System.out.println("Waiting for response...");
-        Thread.sleep(10000);
-      }
-
-      for (SpeechRecognitionResult result : response.get().getResultsList()) {
-        // There can be several alternative transcripts for a given chunk of speech. Just
-        // use the first (most likely) one here.
-        SpeechRecognitionAlternative alternative = result.getAlternatives(0);
-        // The words array contains the entire transcript up until that point.
-        // Referencing the last spoken word to get the associated Speaker tag
-        System.out.format(
-            "Speaker Tag %s:%s\n",
-            alternative.getWords((alternative.getWordsCount() - 1)).getSpeakerTag(),
-            alternative.getTranscript());
-      }
-    }
-  }
-
-  // [END speech_transcribe_diarization_gcs_beta]
-
-  // [START speech_transcribe_multichannel_beta]
-
-  /**
-   * Transcribe a local audio file with multi-channel recognition
-   *
-   * @param fileName the path to local audio file
-   */
-  public static void transcribeMultiChannel(String fileName) throws Exception {
-    Path path = Paths.get(fileName);
-    byte[] content = Files.readAllBytes(path);
-
-    try (SpeechClient speechClient = SpeechClient.create()) {
-      // Get the contents of the local audio file
-      RecognitionAudio recognitionAudio =
-          RecognitionAudio.newBuilder().setContent(ByteString.copyFrom(content)).build();
-
-      // Configure request to enable multiple channels
-      RecognitionConfig config =
-          RecognitionConfig.newBuilder()
-              .setEncoding(AudioEncoding.LINEAR16)
-              .setLanguageCode("en-US")
-              .setSampleRateHertz(44100)
-              .setAudioChannelCount(2)
-              .setEnableSeparateRecognitionPerChannel(true)
-              .build();
-
-      // Perform the transcription request
-      RecognizeResponse recognizeResponse = speechClient.recognize(config, recognitionAudio);
-
-      // Print out the results
-      for (SpeechRecognitionResult result : recognizeResponse.getResultsList()) {
-        // There can be several alternative transcripts for a given chunk of speech. Just use the
-        // first (most likely) one here.
-        SpeechRecognitionAlternative alternative = result.getAlternatives(0);
-        System.out.format("Transcript : %s\n", alternative.getTranscript());
-        System.out.printf("Channel Tag : %s\n\n", result.getChannelTag());
-      }
-    }
-  }
-  // [END speech_transcribe_multichannel_beta]
-
-  // [START speech_transcribe_multichannel_gcs_beta]
-
-  /**
-   * Transcribe a remote audio file with multi-channel recognition
-   *
-   * @param gcsUri the path to the audio file
-   */
-  public static void transcribeMultiChannelGcs(String gcsUri) throws Exception {
-
-    try (SpeechClient speechClient = SpeechClient.create()) {
-
-      // Configure request to enable multiple channels
-      RecognitionConfig config =
-          RecognitionConfig.newBuilder()
-              .setEncoding(AudioEncoding.LINEAR16)
-              .setLanguageCode("en-US")
-              .setSampleRateHertz(44100)
-              .setAudioChannelCount(2)
-              .setEnableSeparateRecognitionPerChannel(true)
-              .build();
-
-      // Set the remote path for the audio file
-      RecognitionAudio audio = RecognitionAudio.newBuilder().setUri(gcsUri).build();
-
-      // Use non-blocking call for getting file transcription
-      OperationFuture<LongRunningRecognizeResponse, LongRunningRecognizeMetadata> response =
-          speechClient.longRunningRecognizeAsync(config, audio);
-
-      while (!response.isDone()) {
-        System.out.println("Waiting for response...");
-        Thread.sleep(10000);
-      }
+      RecognizeResponse recognizeResponse = speech.recognize(recConfig, recognitionAudio);
       // Just print the first result here.
-      for (SpeechRecognitionResult result : response.get().getResultsList()) {
-
-        // There can be several alternative transcripts for a given chunk of speech. Just use the
-        // first (most likely) one here.
-        SpeechRecognitionAlternative alternative = result.getAlternativesList().get(0);
-
-        // Print out the result
-        System.out.printf("Transcript : %s\n", alternative.getTranscript());
-        System.out.printf("Channel Tag : %s\n\n", result.getChannelTag());
-      }
-    }
-  }
-  // [END speech_transcribe_multichannel_gcs_beta]
-
-  // [START speech_transcribe_multilanguage_beta]
-
-  /**
-   * Transcribe a local audio file with multi-language recognition
-   *
-   * @param fileName the path to the audio file
-   */
-  public static void transcribeMultiLanguage(String fileName) throws Exception {
-    Path path = Paths.get(fileName);
-    // Get the contents of the local audio file
-    byte[] content = Files.readAllBytes(path);
-
-    try (SpeechClient speechClient = SpeechClient.create()) {
-
-      RecognitionAudio recognitionAudio =
-          RecognitionAudio.newBuilder().setContent(ByteString.copyFrom(content)).build();
-      ArrayList<String> languageList = new ArrayList<>();
-      languageList.add("es-ES");
-      languageList.add("en-US");
-
-      // Configure request to enable multiple languages
-      RecognitionConfig config =
-          RecognitionConfig.newBuilder()
-              .setEncoding(AudioEncoding.LINEAR16)
-              .setSampleRateHertz(16000)
-              .setLanguageCode("ja-JP")
-              .addAllAlternativeLanguageCodes(languageList)
-              .build();
-      // Perform the transcription request
-      RecognizeResponse recognizeResponse = speechClient.recognize(config, recognitionAudio);
-
-      // Print out the results
-      for (SpeechRecognitionResult result : recognizeResponse.getResultsList()) {
-        // There can be several alternative transcripts for a given chunk of speech. Just use the
-        // first (most likely) one here.
-        SpeechRecognitionAlternative alternative = result.getAlternatives(0);
-        System.out.format("Transcript : %s\n\n", alternative.getTranscript());
-      }
-    }
-  }
-  // [END speech_transcribe_multilanguage_beta]
-
-  // [START speech_transcribe_multilanguage_gcs_beta]
-
-  /**
-   * Transcribe a remote audio file with multi-language recognition
-   *
-   * @param gcsUri the path to the remote audio file
-   */
-  public static void transcribeMultiLanguageGcs(String gcsUri) throws Exception {
-    try (SpeechClient speechClient = SpeechClient.create()) {
-
-      ArrayList<String> languageList = new ArrayList<>();
-      languageList.add("es-ES");
-      languageList.add("en-US");
-
-      // Configure request to enable multiple languages
-      RecognitionConfig config =
-          RecognitionConfig.newBuilder()
-              .setEncoding(AudioEncoding.LINEAR16)
-              .setSampleRateHertz(16000)
-              .setLanguageCode("ja-JP")
-              .addAllAlternativeLanguageCodes(languageList)
-              .build();
-
-      // Set the remote path for the audio file
-      RecognitionAudio audio = RecognitionAudio.newBuilder().setUri(gcsUri).build();
-
-      // Use non-blocking call for getting file transcription
-      OperationFuture<LongRunningRecognizeResponse, LongRunningRecognizeMetadata> response =
-          speechClient.longRunningRecognizeAsync(config, audio);
-
-      while (!response.isDone()) {
-        System.out.println("Waiting for response...");
-        Thread.sleep(10000);
-      }
-
-      for (SpeechRecognitionResult result : response.get().getResultsList()) {
-
-        // There can be several alternative transcripts for a given chunk of speech. Just use the
-        // first (most likely) one here.
-        SpeechRecognitionAlternative alternative = result.getAlternativesList().get(0);
-
-        // Print out the result
-        System.out.printf("Transcript : %s\n\n", alternative.getTranscript());
-      }
-    }
-  }
-  // [END speech_transcribe_multilanguage_gcs_beta]
-
-  // [START speech_transcribe_word_level_confidence_beta]
-
-  /**
-   * Transcribe a local audio file with word level confidence
-   *
-   * @param fileName the path to the local audio file
-   */
-  public static void transcribeWordLevelConfidence(String fileName) throws Exception {
-    Path path = Paths.get(fileName);
-    byte[] content = Files.readAllBytes(path);
-
-    try (SpeechClient speechClient = SpeechClient.create()) {
-      RecognitionAudio recognitionAudio =
-          RecognitionAudio.newBuilder().setContent(ByteString.copyFrom(content)).build();
-      // Configure request to enable word level confidence
-      RecognitionConfig config =
-          RecognitionConfig.newBuilder()
-              .setEncoding(AudioEncoding.LINEAR16)
-              .setSampleRateHertz(16000)
-              .setLanguageCode("en-US")
-              .setEnableWordConfidence(true)
-              .build();
-      // Perform the transcription request
-      RecognizeResponse recognizeResponse = speechClient.recognize(config, recognitionAudio);
-
-      // Print out the results
-      for (SpeechRecognitionResult result : recognizeResponse.getResultsList()) {
-        // There can be several alternative transcripts for a given chunk of speech. Just use the
-        // first (most likely) one here.
-        SpeechRecognitionAlternative alternative = result.getAlternatives(0);
-        System.out.format("Transcript : %s\n", alternative.getTranscript());
-        System.out.format(
-            "First Word and Confidence : %s %s \n",
-            alternative.getWords(0).getWord(), alternative.getWords(0).getConfidence());
-      }
-    }
-  }
-  // [END speech_transcribe_word_level_confidence_beta]
-
-  // [START speech_transcribe_word_level_confidence_gcs_beta]
-
-  /**
-   * Transcribe a remote audio file with word level confidence
-   *
-   * @param gcsUri path to the remote audio file
-   */
-  public static void transcribeWordLevelConfidenceGcs(String gcsUri) throws Exception {
-    try (SpeechClient speechClient = SpeechClient.create()) {
-
-      // Configure request to enable word level confidence
-      RecognitionConfig config =
-          RecognitionConfig.newBuilder()
-              .setEncoding(AudioEncoding.FLAC)
-              .setSampleRateHertz(16000)
-              .setLanguageCode("en-US")
-              .setEnableWordConfidence(true)
-              .build();
-
-      // Set the remote path for the audio file
-      RecognitionAudio audio = RecognitionAudio.newBuilder().setUri(gcsUri).build();
-
-      // Use non-blocking call for getting file transcription
-      OperationFuture<LongRunningRecognizeResponse, LongRunningRecognizeMetadata> response =
-          speechClient.longRunningRecognizeAsync(config, audio);
-
-      while (!response.isDone()) {
-        System.out.println("Waiting for response...");
-        Thread.sleep(10000);
-      }
-      // Just print the first result here.
-      SpeechRecognitionResult result = response.get().getResultsList().get(0);
-
+      SpeechRecognitionResult result = recognizeResponse.getResultsList().get(0);
       // There can be several alternative transcripts for a given chunk of speech. Just use the
       // first (most likely) one here.
       SpeechRecognitionAlternative alternative = result.getAlternativesList().get(0);
-      // Print out the result
       System.out.printf("Transcript : %s\n", alternative.getTranscript());
-      System.out.format(
-          "First Word and Confidence : %s %s \n",
-          alternative.getWords(0).getWord(), alternative.getWords(0).getConfidence());
     }
   }
-  // [END speech_transcribe_word_level_confidence_gcs_beta]
+  // [END speech_transcribe_model_selection]
+
+  // [START speech_transcribe_model_selection_gcs]
+  /**
+   * Performs transcription of the remote audio file asynchronously with the selected model.
+   *
+   * @param gcsUri the path to the remote audio file to transcribe.
+   */
+  public static void transcribeModelSelectionGcs(String gcsUri) throws Exception {
+    try (SpeechClient speech = SpeechClient.create()) {
+
+      // Configure request with video media type
+      RecognitionConfig config =
+          RecognitionConfig.newBuilder()
+              // encoding may either be omitted or must match the value in the file header
+              .setEncoding(AudioEncoding.LINEAR16)
+              .setLanguageCode("en-US")
+              // sample rate hertz may be either be omitted or must match the value in the file
+              // header
+              .setSampleRateHertz(16000)
+              .setModel("video")
+              .build();
+
+      RecognitionAudio audio = RecognitionAudio.newBuilder().setUri(gcsUri).build();
+
+      // Use non-blocking call for getting file transcription
+      OperationFuture<LongRunningRecognizeResponse, LongRunningRecognizeMetadata> response =
+          speech.longRunningRecognizeAsync(config, audio);
+
+      while (!response.isDone()) {
+        System.out.println("Waiting for response...");
+        Thread.sleep(10000);
+      }
+
+      List<SpeechRecognitionResult> results = response.get().getResultsList();
+
+      // Just print the first result here.
+      SpeechRecognitionResult result = results.get(0);
+      // There can be several alternative transcripts for a given chunk of speech. Just use the
+      // first (most likely) one here.
+      SpeechRecognitionAlternative alternative = result.getAlternativesList().get(0);
+      System.out.printf("Transcript : %s\n", alternative.getTranscript());
+    }
+  }
+  // [END speech_transcribe_model_selection_gcs]
 }

@@ -37,16 +37,12 @@ public class RecognizeIT {
 
   // The path to the audio file to transcribe
   private String audioFileName = "./resources/audio.raw";
-  private String multiChannelAudioFileName = "./resources/commercial_stereo.wav";
-  private String gcsMultiChannelAudioPath = "gs://" + BUCKET + "/speech/commercial_stereo.wav";
   private String gcsAudioPath = "gs://" + BUCKET + "/speech/brooklyn.flac";
-  private String gcsDiarizationAudioPath = "gs://" + BUCKET + "/speech/commercial_mono.wav";
+  private String recognitionAudioFile = "./resources/commercial_mono.wav";
 
   // The path to the video file to transcribe
   private String videoFileName = "./resources/Google_Gnome.wav";
   private String gcsVideoPath = "gs://" + BUCKET + "/speech/Google_Gnome.wav";
-
-  private String recognitionAudioFile = "./resources/commercial_mono.wav";
 
   @Before
   public void setUp() {
@@ -112,22 +108,6 @@ public class RecognizeIT {
   }
 
   @Test
-  public void testModelSelection() throws Exception {
-    Recognize.transcribeModelSelection(videoFileName);
-    String got = bout.toString();
-    assertThat(got).contains("OK Google");
-    assertThat(got).contains("the weather outside is sunny");
-  }
-
-  @Test
-  public void testGcsModelSelection() throws Exception {
-    Recognize.transcribeModelSelectionGcs(gcsVideoPath);
-    String got = bout.toString();
-    assertThat(got).contains("OK Google");
-    assertThat(got).contains("the weather outside is sunny");
-  }
-
-  @Test
   public void testAutoPunctuation() throws Exception {
     Recognize.transcribeFileWithAutomaticPunctuation(audioFileName);
     String got = bout.toString();
@@ -156,67 +136,18 @@ public class RecognizeIT {
   }
 
   @Test
-  public void testMetadata() throws Exception {
-    Recognize.transcribeFileWithMetadata(recognitionAudioFile);
+  public void testModelSelection() throws Exception {
+    Recognize.transcribeModelSelection(videoFileName);
     String got = bout.toString();
-    assertThat(got).contains("Chrome");
+    assertThat(got).contains("OK Google");
+    assertThat(got).contains("the weather outside is sunny");
   }
 
   @Test
-  public void testTranscribeDiarization() throws Exception {
-    Recognize.transcribeDiarization(recognitionAudioFile);
+  public void testGcsModelSelection() throws Exception {
+    Recognize.transcribeModelSelectionGcs(gcsVideoPath);
     String got = bout.toString();
-    assertThat(got).contains("Speaker Tag 2:");
-  }
-
-  @Test
-  public void testTranscribeDiarizationGcs() throws Exception {
-    Recognize.transcribeDiarizationGcs(gcsDiarizationAudioPath);
-    String got = bout.toString();
-    assertThat(got).contains("Speaker Tag 2:");
-  }
-
-  @Test
-  public void testTranscribeMultiChannel() throws Exception {
-    Recognize.transcribeMultiChannel(multiChannelAudioFileName);
-    String got = bout.toString();
-    assertThat(got).contains("Channel Tag : 1");
-  }
-
-  @Test
-  public void testTranscribeMultiChannelGcs() throws Exception {
-    Recognize.transcribeMultiChannelGcs(gcsMultiChannelAudioPath);
-    String got = bout.toString();
-    assertThat(got).contains("Channel Tag : 1");
-  }
-
-  @Test
-  public void testTranscribeMultiLanguage() throws Exception {
-    Recognize.transcribeMultiLanguage(videoFileName);
-    String got = bout.toString();
-    assertThat(got).contains("Transcript : OK Google");
-  }
-
-  @Test
-  public void testTranscribeMultiLanguageGcs() throws Exception {
-    Recognize.transcribeMultiLanguageGcs(gcsVideoPath);
-    String got = bout.toString();
-    assertThat(got).contains("Transcript : OK Google");
-  }
-
-  @Test
-  public void testTranscribeWordLevelConfidence() throws Exception {
-    Recognize.transcribeWordLevelConfidence(audioFileName);
-    String got = bout.toString();
-    assertThat(got).contains("Transcript : how old is the Brooklyn Bridge");
-    assertThat(got).contains("First Word and Confidence : how");
-  }
-
-  @Test
-  public void testTranscribeWordLevelConfidenceGcs() throws Exception {
-    Recognize.transcribeWordLevelConfidenceGcs(gcsAudioPath);
-    String got = bout.toString();
-    assertThat(got).contains("Transcript : how old is the Brooklyn Bridge");
-    assertThat(got).contains("First Word and Confidence : how");
+    assertThat(got).contains("OK Google");
+    assertThat(got).contains("the weather outside is sunny");
   }
 }
