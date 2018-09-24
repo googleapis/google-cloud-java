@@ -92,7 +92,7 @@ import org.joda.time.format.ISODateTimeFormat;
 public class LocalResourceManagerHelper {
   private static final Logger log = Logger.getLogger(LocalResourceManagerHelper.class.getName());
   private static final JsonFactory jsonFactory =
-      new com.google.api.client.json.jackson.JacksonFactory();
+      new com.google.api.client.json.jackson2.JacksonFactory();
   private static final Random PROJECT_NUMBER_GENERATOR = new Random();
   private static final String VERSION = "v1";
   private static final String CONTEXT = "/" + VERSION + "/projects";

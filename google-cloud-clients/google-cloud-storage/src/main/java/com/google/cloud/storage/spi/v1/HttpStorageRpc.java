@@ -36,7 +36,7 @@ import com.google.api.client.http.InputStreamContent;
 import com.google.api.client.http.LowLevelHttpResponse;
 import com.google.api.client.http.json.JsonHttpContent;
 import com.google.api.client.json.JsonFactory;
-import com.google.api.client.json.jackson.JacksonFactory;
+import com.google.api.client.json.jackson2.JacksonFactory;
 import com.google.api.client.util.IOUtils;
 import com.google.api.services.storage.Storage;
 import com.google.api.services.storage.Storage.Objects.Get;
