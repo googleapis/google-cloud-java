@@ -76,7 +76,7 @@ public class ResultSetsTest {
             Type.StructField.of("doubleVal", Type.float64()),
             Type.StructField.of("stringVal", Type.string()),
             Type.StructField.of("byteVal", Type.bytes()),
-            Type.StructField.of("ts", Type.timestamp()),
+            Type.StructField.of("timestamp", Type.timestamp()),
             Type.StructField.of("date", Type.date()),
             Type.StructField.of("boolArray", Type.array(Type.bool())),
             Type.StructField.of("longArray", Type.array(Type.int64())),
@@ -100,7 +100,7 @@ public class ResultSetsTest {
             .to(stringVal)
             .set("byteVal")
             .to(Value.bytes(ByteArray.copyFrom(byteVal)))
-            .set("ts")
+            .set("timestamp")
             .to(Timestamp.ofTimeMicroseconds(usecs))
             .set("date")
             .to(Date.fromYearMonthDay(year, month, day))
@@ -133,7 +133,7 @@ public class ResultSetsTest {
             .to(stringVal)
             .set("byteVal")
             .to(Value.bytes(ByteArray.copyFrom(byteVal)))
-            .set("ts")
+            .set("timestamp")
             .to(Timestamp.ofTimeMicroseconds(usecs))
             .set("date")
             .to(Date.fromYearMonthDay(year, month, day))
@@ -187,7 +187,7 @@ public class ResultSetsTest {
     assertThat(rs.getBytes(5)).isEqualTo(ByteArray.copyFrom(byteVal));
     assertThat(rs.getBytes("byteVal")).isEqualTo(ByteArray.copyFrom(byteVal));
     assertThat(rs.getTimestamp(6)).isEqualTo(Timestamp.ofTimeMicroseconds(usecs));
-    assertThat(rs.getTimestamp("ts")).isEqualTo(Timestamp.ofTimeMicroseconds(usecs));
+    assertThat(rs.getTimestamp("timestamp")).isEqualTo(Timestamp.ofTimeMicroseconds(usecs));
     assertThat(rs.getDate(7)).isEqualTo(Date.fromYearMonthDay(year, month, day));
     assertThat(rs.getDate("date")).isEqualTo(Date.fromYearMonthDay(year, month, day));
     assertThat(rs.getBooleanArray(8)).isEqualTo(boolArray);
