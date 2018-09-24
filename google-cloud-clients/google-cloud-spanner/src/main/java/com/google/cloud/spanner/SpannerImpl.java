@@ -1345,7 +1345,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
   }
 
   static class PartitionedDMLTransaction implements SessionTransaction {
-    private ByteString transactionId;
+    private final ByteString transactionId;
     private final SessionImpl session;
     private final SpannerRpc rpc;
     private volatile boolean isValid = true;
@@ -1355,10 +1355,10 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
         SpannerRpc rpc) {
       this.session = session;
       this.rpc = rpc;
-      initTransaction();
+      this.transactionId = initTransaction();
     }
 
-    void initTransaction() {
+    ByteString initTransaction() {
       final BeginTransactionRequest request =
           BeginTransactionRequest.newBuilder()
               .setSession(session.getName())
@@ -1379,7 +1379,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
             ErrorCode.INTERNAL,
             "Failed to init transaction, missing transaction id\n" + session.getName());
       }
-      transactionId = txn.getId();
+      return txn.getId();
     }
 
     public long executePartitionedUpdate(Statement statement) {
@@ -1435,8 +1435,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
 
     // A per-transaction sequence number used to identify this ExecuteSqlRequests. Required for DML,
     // ignored for query by the server.
-    @GuardedBy("lock")
-    private long seqNo = 1L;
+    private AtomicLong seqNo = new AtomicLong();
 
     private ByteString transactionId;
     private Timestamp commitTimestamp;
@@ -1560,9 +1559,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     }
 
     long getSeqNo() {
-      synchronized (lock) {
-        return seqNo++;
-      }
+      return seqNo.incrementAndGet();
     }
 
     @Nullable

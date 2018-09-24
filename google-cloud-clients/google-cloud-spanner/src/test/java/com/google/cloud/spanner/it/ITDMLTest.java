@@ -153,7 +153,9 @@ public final class ITDMLTest {
       fail("Expected illegal argument exception");
     } catch (SpannerException e) {
       assertThat(e.getErrorCode()).isEqualTo(ErrorCode.UNKNOWN);
-      assertThat(e).hasMessageThat().contains("DML response missing stats possibly due to non-DML statement as input");
+      assertThat(e)
+          .hasMessageThat()
+          .contains("DML response missing stats possibly due to non-DML statement as input");
       assertThat(e).hasCauseThat().isInstanceOf(IllegalArgumentException.class);
     }
   }
