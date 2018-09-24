@@ -16,6 +16,7 @@
 package com.google.cloud.spanner.v1;
 
 import static com.google.cloud.spanner.v1.SpannerClient.ListSessionsPagedResponse;
+import static com.google.common.truth.Truth.assertThat;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
@@ -27,6 +28,8 @@ import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.StatusCode;
+import com.google.cloud.spanner.v1.stub.SpannerStub;
+import com.google.cloud.spanner.v1.stub.SpannerStubSettings;
 import com.google.common.collect.Lists;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
@@ -102,6 +105,17 @@ public class SpannerClientTest {
   }
 
   @Test
+  public void createClientTest() throws IOException {
+    SpannerClient client1 = SpannerClient.create();
+    assertThat(client1.getSettings()).isNotNull();
+
+    SpannerStub stub = SpannerStubSettings.newBuilder().build().createStub();
+    client1 = SpannerClient.create(stub);
+    assertThat(client1.getStub()).isEqualTo(stub);
+    assertThat(client1.getSettings()).isNull();
+  }
+
+  @Test
   @SuppressWarnings("all")
   public void createSessionTest() {
     SessionName name = SessionName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]", "[SESSION]");
@@ -122,6 +136,27 @@ public class SpannerClientTest {
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
             GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createSessionWithStringName() {
+    String name = "projects/[PROJECT]/instances/[INSTANCE]/databases/[DATABASE]";
+    Session expectedResponse = Session.newBuilder().setName(name).build();
+    mockSpanner.addResponse(expectedResponse);
+
+    DatabaseName database = DatabaseName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]");
+
+    Session actualResponse = client.createSession(name);
+    assertThat(actualResponse).isEqualTo(expectedResponse);
+
+    List<GeneratedMessageV3> actualRequests = mockSpanner.getRequests();
+    assertThat(actualRequests.size()).isEqualTo(1);
+
+    CreateSessionRequest actualRequest = (CreateSessionRequest) actualRequests.get(0);
+    assertThat(DatabaseName.parse(actualRequest.getDatabase())).isEqualTo(database);
+    assertThat(channelProvider.isHeaderSent(
+        ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+        GaxGrpcProperties.getDefaultApiClientHeaderPattern())).isTrue();
   }
 
   @Test
@@ -161,6 +196,24 @@ public class SpannerClientTest {
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
             GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getSessionByStringNameTest() {
+    String name = "projects/[PROJECT]/instances/[INSTANCE]/databases/[DATABASE]/sessions/[SESSION]";
+    SessionName sessionName = SessionName.parse(name);
+    Session expectedResponse = Session.newBuilder().setName(name).build();
+    mockSpanner.addResponse(expectedResponse);
+
+    Session actualResponse = client.getSession(name);
+    assertThat(actualResponse).isEqualTo(expectedResponse);
+
+    List<GeneratedMessageV3> actualRequests = mockSpanner.getRequests();
+    assertThat(actualRequests.size()).isEqualTo(1);
+
+    GetSessionRequest actualRequest = (GetSessionRequest) actualRequests.get(0);
+    assertThat(SessionName.parse(actualRequest.getName())).isEqualTo(sessionName);
+
   }
 
   @Test
@@ -212,6 +265,27 @@ public class SpannerClientTest {
   }
 
   @Test
+  public void listSessionsCallableTest() {
+    List<Session> sessions = Arrays.asList(Session.newBuilder().build());
+    ListSessionsResponse expectedResponse =
+        ListSessionsResponse.newBuilder()
+            .addAllSessions(sessions)
+            .build();
+    mockSpanner.addResponse(expectedResponse);
+
+    String formattedDatabase = DatabaseName.format("[PROJECT]", "[INSTANCE]", "[DATABASE]");
+
+    ListSessionsRequest request = ListSessionsRequest.newBuilder()
+        .setDatabase(formattedDatabase)
+        .build();
+
+    ListSessionsResponse listSessionsResponse = client.listSessionsCallable().call(request);
+    List<Session> resources = Lists.newArrayList(listSessionsResponse.getSessionsList());
+    assertThat(resources.size()).isEqualTo(1);
+    assertThat(expectedResponse.getSessionsList().get(0)).isEqualTo(resources.get(0));
+  }
+
+  @Test
   @SuppressWarnings("all")
   public void listSessionsExceptionTest() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
@@ -246,6 +320,25 @@ public class SpannerClientTest {
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
             GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteSessionWithStringName() {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockSpanner.addResponse(expectedResponse);
+
+    String name = "projects/[PROJECT]/instances/[INSTANCE]/databases/[DATABASE]/sessions/[SESSION]";
+    SessionName sessionName = SessionName.parse(name);
+    client.deleteSession(name);
+
+    List<GeneratedMessageV3> actualRequests = mockSpanner.getRequests();
+    assertThat(actualRequests.size()).isEqualTo(1);
+
+    DeleteSessionRequest actualRequest = (DeleteSessionRequest) actualRequests.get(0);
+    assertThat(SessionName.parse(actualRequest.getName())).isEqualTo(sessionName);
+    assertThat(channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern())).isTrue();
   }
 
   @Test
@@ -427,6 +520,31 @@ public class SpannerClientTest {
   }
 
   @Test
+  public void commitWithStringNameTest() {
+    CommitResponse expectedResponse = CommitResponse.newBuilder().build();
+    mockSpanner.addResponse(expectedResponse);
+
+    ByteString transactionId = ByteString.copyFromUtf8("28");
+    List<Mutation> mutations = new ArrayList<>();
+
+    String name = "projects/[PROJECT]/instances/[INSTANCE]/databases/[DATABASE]/sessions/[SESSION]";
+    SessionName sessionName = SessionName.parse(name);
+    CommitResponse actualResponse = client.commit(name, transactionId, mutations);
+    assertThat(actualResponse).isEqualTo(expectedResponse);
+
+    List<GeneratedMessageV3> actualRequests = mockSpanner.getRequests();
+    assertThat(actualRequests.size()).isEqualTo(1);
+
+    CommitRequest actualRequest = (CommitRequest) actualRequests.get(0);
+    assertThat(SessionName.parse(actualRequest.getSession())).isEqualTo(sessionName);
+    assertThat(actualRequest.getTransactionId()).isEqualTo(transactionId);
+    assertThat(actualRequest.getMutationsList()).isEqualTo(mutations);
+    assertThat(channelProvider.isHeaderSent(
+        ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+        GaxGrpcProperties.getDefaultApiClientHeaderPattern())).isTrue();
+  }
+
+  @Test
   @SuppressWarnings("all")
   public void commitTest() {
     CommitResponse expectedResponse = CommitResponse.newBuilder().build();
@@ -471,6 +589,29 @@ public class SpannerClientTest {
   }
 
   @Test
+  public void commitWithStringNameViaTransactionTest() {
+    CommitResponse expectedResponse = CommitResponse.newBuilder().build();
+    mockSpanner.addResponse(expectedResponse);
+
+    String name = "projects/[PROJECT]/instances/[INSTANCE]/databases/[DATABASE]/sessions/[SESSION]";
+    TransactionOptions singleUseTransaction = TransactionOptions.newBuilder().build();
+    List<Mutation> mutations = new ArrayList<>();
+
+    CommitResponse actualResponse = client.commit(name, singleUseTransaction, mutations);
+    assertThat(actualResponse).isEqualTo(expectedResponse);
+
+    List<GeneratedMessageV3> actualRequests = mockSpanner.getRequests();
+    assertThat(actualRequests.size()).isEqualTo(1);
+
+    CommitRequest actualRequest = (CommitRequest) actualRequests.get(0);
+    assertThat(actualRequest.getSingleUseTransaction()).isEqualTo(singleUseTransaction);
+    assertThat(actualRequest.getMutationsList()).isEqualTo(mutations);
+    assertThat(channelProvider.isHeaderSent(
+        ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+        GaxGrpcProperties.getDefaultApiClientHeaderPattern())).isTrue();
+  }
+
+  @Test
   @SuppressWarnings("all")
   public void commitTest2() {
     CommitResponse expectedResponse = CommitResponse.newBuilder().build();
@@ -512,6 +653,26 @@ public class SpannerClientTest {
     } catch (InvalidArgumentException e) {
       // Expected exception
     }
+  }
+
+  @Test
+  public void rollbackWithStringNameTest() {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockSpanner.addResponse(expectedResponse);
+
+    String name = "projects/[PROJECT]/instances/[INSTANCE]/databases/[DATABASE]/sessions/[SESSION]";
+    ByteString transactionId = ByteString.copyFromUtf8("28");
+
+    client.rollback(name, transactionId);
+
+    List<GeneratedMessageV3> actualRequests = mockSpanner.getRequests();
+    assertThat(actualRequests.size()).isEqualTo(1);
+
+    RollbackRequest actualRequest = (RollbackRequest) actualRequests.get(0);
+    assertThat(actualRequest.getTransactionId()).isEqualTo(transactionId);
+    assertThat(channelProvider.isHeaderSent(
+        ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+        GaxGrpcProperties.getDefaultApiClientHeaderPattern())).isTrue();
   }
 
   @Test
