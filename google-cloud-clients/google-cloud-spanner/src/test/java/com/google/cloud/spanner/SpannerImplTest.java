@@ -129,7 +129,7 @@ public class SpannerImplTest {
             }
           });
     } catch (SpannerException e) {
-      assertThat(e.getErrorCode() == ErrorCode.INTERNAL);
+      assertThat(e.getErrorCode()).isEqualTo(ErrorCode.INTERNAL);
       assertThat(e.getMessage().contains("Unexpected exception thrown"));
     }
   }
