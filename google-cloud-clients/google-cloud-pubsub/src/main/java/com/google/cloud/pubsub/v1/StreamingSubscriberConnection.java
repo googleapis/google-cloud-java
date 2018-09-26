@@ -86,7 +86,8 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
       Deque<MessageDispatcher.OutstandingMessageBatch> outstandingMessageBatches,
       ScheduledExecutorService executor,
       ScheduledExecutorService systemExecutor,
-      ApiClock clock) {
+      ApiClock clock,
+      Duration subscriptionDeadline) {
     this.subscription = subscription;
     this.systemExecutor = systemExecutor;
     this.stub = stub;
@@ -101,7 +102,8 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
             outstandingMessageBatches,
             executor,
             systemExecutor,
-            clock);
+            clock,
+            subscriptionDeadline);
   }
 
   @Override
