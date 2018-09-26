@@ -106,11 +106,10 @@ public class SpannerClientTest {
 
   @Test
   public void createClientTest() throws IOException {
-    SpannerClient client1 = SpannerClient.create();
-    assertThat(client1.getSettings()).isNotNull();
-
-    SpannerStub stub = SpannerStubSettings.newBuilder().build().createStub();
-    client1 = SpannerClient.create(stub);
+    SpannerStub stub =
+        SpannerStubSettings.newBuilder()
+            .setCredentialsProvider(NoCredentialsProvider.create()).build().createStub();
+    SpannerClient client1 = SpannerClient.create(stub);
     assertThat(client1.getStub()).isEqualTo(stub);
     assertThat(client1.getSettings()).isNull();
   }
