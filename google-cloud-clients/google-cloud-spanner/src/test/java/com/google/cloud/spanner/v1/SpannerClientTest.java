@@ -150,7 +150,7 @@ public class SpannerClientTest {
     assertThat(actualResponse).isEqualTo(expectedResponse);
 
     List<GeneratedMessageV3> actualRequests = mockSpanner.getRequests();
-    assertThat(actualRequests.size()).isEqualTo(1);
+    assertThat(actualRequests).hasSize(1);
 
     CreateSessionRequest actualRequest = (CreateSessionRequest) actualRequests.get(0);
     assertThat(DatabaseName.parse(actualRequest.getDatabase())).isEqualTo(database);
@@ -209,7 +209,7 @@ public class SpannerClientTest {
     assertThat(actualResponse).isEqualTo(expectedResponse);
 
     List<GeneratedMessageV3> actualRequests = mockSpanner.getRequests();
-    assertThat(actualRequests.size()).isEqualTo(1);
+    assertThat(actualRequests).hasSize(1);
 
     GetSessionRequest actualRequest = (GetSessionRequest) actualRequests.get(0);
     assertThat(SessionName.parse(actualRequest.getName())).isEqualTo(sessionName);
@@ -281,7 +281,7 @@ public class SpannerClientTest {
 
     ListSessionsResponse listSessionsResponse = client.listSessionsCallable().call(request);
     List<Session> resources = Lists.newArrayList(listSessionsResponse.getSessionsList());
-    assertThat(resources.size()).isEqualTo(1);
+    assertThat(resources).hasSize(1);
     assertThat(expectedResponse.getSessionsList().get(0)).isEqualTo(resources.get(0));
   }
 
@@ -332,7 +332,7 @@ public class SpannerClientTest {
     client.deleteSession(name);
 
     List<GeneratedMessageV3> actualRequests = mockSpanner.getRequests();
-    assertThat(actualRequests.size()).isEqualTo(1);
+    assertThat(actualRequests).hasSize(1);
 
     DeleteSessionRequest actualRequest = (DeleteSessionRequest) actualRequests.get(0);
     assertThat(SessionName.parse(actualRequest.getName())).isEqualTo(sessionName);
@@ -533,7 +533,7 @@ public class SpannerClientTest {
     assertThat(actualResponse).isEqualTo(expectedResponse);
 
     List<GeneratedMessageV3> actualRequests = mockSpanner.getRequests();
-    assertThat(actualRequests.size()).isEqualTo(1);
+    assertThat(actualRequests).hasSize(1);
 
     CommitRequest actualRequest = (CommitRequest) actualRequests.get(0);
     assertThat(SessionName.parse(actualRequest.getSession())).isEqualTo(sessionName);
@@ -666,7 +666,7 @@ public class SpannerClientTest {
     client.rollback(name, transactionId);
 
     List<GeneratedMessageV3> actualRequests = mockSpanner.getRequests();
-    assertThat(actualRequests.size()).isEqualTo(1);
+    assertThat(actualRequests).hasSize(1);
 
     RollbackRequest actualRequest = (RollbackRequest) actualRequests.get(0);
     assertThat(actualRequest.getTransactionId()).isEqualTo(transactionId);
