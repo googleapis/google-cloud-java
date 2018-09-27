@@ -16,8 +16,8 @@
 
 package com.example.dialogflow;
 
-
 // Imports the Google Cloud client library
+
 import com.google.cloud.dialogflow.v2.Context;
 import com.google.cloud.dialogflow.v2.Intent;
 import com.google.cloud.dialogflow.v2.Intent.Message;
@@ -27,28 +27,25 @@ import com.google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part;
 import com.google.cloud.dialogflow.v2.IntentName;
 import com.google.cloud.dialogflow.v2.IntentsClient;
 import com.google.cloud.dialogflow.v2.ProjectAgentName;
+import com.google.common.collect.Lists;
 
 import java.util.ArrayList;
 import java.util.List;
-import net.sourceforge.argparse4j.ArgumentParsers;
-import net.sourceforge.argparse4j.inf.ArgumentParser;
-import net.sourceforge.argparse4j.inf.ArgumentParserException;
-import net.sourceforge.argparse4j.inf.Namespace;
-import net.sourceforge.argparse4j.inf.Subparser;
-import net.sourceforge.argparse4j.inf.Subparsers;
-
 
 /**
  * DialogFlow API Intent sample.
  */
 public class IntentManagement {
-
   // [START dialogflow_list_intents]
+
   /**
    * List intents
+   *
    * @param projectId Project/Agent Id.
+   * @return Intents found.
    */
-  public static void listIntents(String projectId) throws Exception {
+  public static List<Intent> listIntents(String projectId) throws Exception {
+    List<Intent> intents = Lists.newArrayList();
     // Instantiates a client
     try (IntentsClient intentsClient = IntentsClient.create()) {
       // Set the project agent name using the projectID (my-project-id)
@@ -67,27 +64,34 @@ public class IntentManagement {
         for (String inputContextName : intent.getInputContextNamesList()) {
           System.out.format("\tName: %s\n", inputContextName);
         }
-
         System.out.format("Output contexts:\n");
         for (Context outputContext : intent.getOutputContextsList()) {
           System.out.format("\tName: %s\n", outputContext.getName());
         }
+
+        intents.add(intent);
       }
     }
+    return intents;
   }
   // [END dialogflow_list_intents]
 
   // [START dialogflow_create_intent]
+
   /**
    * Create an intent of the given intent type
-   * @param displayName The display name of the intent.
-   * @param projectId Project/Agent Id.
+   *
+   * @param displayName          The display name of the intent.
+   * @param projectId            Project/Agent Id.
    * @param trainingPhrasesParts Training phrases.
-   * @param messageTexts Message texts for the agent's response when the intent is detected.
+   * @param messageTexts         Message texts for the agent's response when the intent is detected.
+   * @return The created Intent.
    */
-  public static void createIntent(String displayName, String projectId,
-      List<String> trainingPhrasesParts, List<String> messageTexts)
-      throws Exception {
+  public static Intent createIntent(
+      String displayName,
+      String projectId,
+      List<String> trainingPhrasesParts,
+      List<String> messageTexts) throws Exception {
     // Instantiates a client
     try (IntentsClient intentsClient = IntentsClient.create()) {
       // Set the project agent name using the projectID (my-project-id)
@@ -98,7 +102,7 @@ public class IntentManagement {
       for (String trainingPhrase : trainingPhrasesParts) {
         trainingPhrases.add(
             TrainingPhrase.newBuilder().addParts(
-                    Part.newBuilder().setText(trainingPhrase).build())
+                Part.newBuilder().setText(trainingPhrase).build())
                 .build());
       }
 
@@ -119,14 +123,18 @@ public class IntentManagement {
       // Performs the create intent request
       Intent response = intentsClient.createIntent(parent, intent);
       System.out.format("Intent created: %s\n", response);
+
+      return response;
     }
   }
   // [END dialogflow_create_intent]
 
   // [START dialogflow_delete_intent]
+
   /**
    * Delete intent with the given intent type and intent value
-   * @param intentId The id of the intent.
+   *
+   * @param intentId  The id of the intent.
    * @param projectId Project/Agent Id.
    */
   public static void deleteIntent(String intentId, String projectId) throws Exception {
@@ -157,64 +165,5 @@ public class IntentManagement {
     }
 
     return intentIds;
-  }
-
-  public static void main(String[] args) throws Exception {
-
-
-    ArgumentParser parser =
-        ArgumentParsers.newFor("IntentManagement")
-            .build()
-            .defaultHelp(true)
-            .description("Create / List / Delete a Intent.");
-
-    Subparsers subparsers = parser.addSubparsers().dest("command").title("Commands");
-
-    Subparser listParser = subparsers.addParser("list")
-        .help("mvn exec:java -DIntentManagement -Dexec.args='list --projectId PROJECT_ID'");
-    listParser.addArgument("--projectId").help("Project/Agent Id").required(true);
-
-    Subparser createParser = subparsers.addParser("create")
-        .help("mvn exec:java -DIntentManagement -Dexec.args='create DISPLAY_NAME "
-            + "--projectId PROJECT_ID --trainingPhrasesParts \"cancel\" \"cancellation\" "
-            + "--messageTexts \"Are you sure you want to cancel?\" \"Cancelled.\"'");
-    createParser.addArgument("displayName")
-        .help("The display name of the intent.").required(true);
-    createParser.addArgument("--projectId").help("Project/Agent Id").required(true);
-    createParser.addArgument("--trainingPhrasesParts")
-        .help("Training phrases.").nargs("+");
-    createParser.addArgument("--messageTexts").nargs("+")
-        .help("Message texts for the agent's response when the intent is detected.");
-
-    Subparser deleteParser = subparsers.addParser("delete")
-        .help("mvn exec:java -DIntentManagement -Dexec.args='delete INTENT_ID "
-            + "--projectId PROJECT_ID'");
-    deleteParser.addArgument("intentId")
-        .help("The ID of the intent.").required(true);
-    deleteParser.addArgument("--projectId").help("Project/Agent Id").required(true);
-
-    try {
-      Namespace namespace = parser.parseArgs(args);
-
-      if (namespace.get("command").equals("list")) {
-        listIntents(namespace.get("projectId"));
-      } else if (namespace.get("command").equals("create")) {
-        ArrayList<String> trainingPhrasesParts = new ArrayList<>();
-        ArrayList<String> messageTexts = new ArrayList<>();
-        if (namespace.get("trainingPhrasesParts") != null) {
-          trainingPhrasesParts = namespace.get("trainingPhrasesParts");
-        }
-        if (namespace.get("messageTexts") != null) {
-          messageTexts = namespace.get("messageTexts");
-        }
-
-        createIntent(namespace.get("displayName"), namespace.get("projectId"), trainingPhrasesParts,
-            messageTexts);
-      } else if (namespace.get("command").equals("delete")) {
-        deleteIntent(namespace.get("intentId"), namespace.get("projectId"));
-      }
-    } catch (ArgumentParserException e) {
-      parser.handleError(e);
-    }
   }
 }

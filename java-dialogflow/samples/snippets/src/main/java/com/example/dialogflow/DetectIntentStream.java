@@ -33,30 +33,29 @@ import com.google.protobuf.ByteString;
 import java.io.FileInputStream;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 import java.util.concurrent.CountDownLatch;
-import net.sourceforge.argparse4j.ArgumentParsers;
-import net.sourceforge.argparse4j.inf.ArgumentParser;
-import net.sourceforge.argparse4j.inf.ArgumentParserException;
-import net.sourceforge.argparse4j.inf.Namespace;
-
 
 /**
  * DialogFlow API Detect Intent sample with audio files processes as an audio stream.
  */
 public class DetectIntentStream {
-
   // [START dialogflow_detect_intent_streaming]
+
   /**
    * Returns the result of detect intent with streaming audio as input.
    *
    * Using the same `session_id` between requests allows continuation of the conversation.
-   * @param projectId Project/Agent Id.
+   *
+   * @param projectId     Project/Agent Id.
    * @param audioFilePath The audio file to be processed.
-   * @param sessionId Identifier of the DetectIntent session.
-   * @param languageCode Language code of the query.
+   * @param sessionId     Identifier of the DetectIntent session.
+   * @param languageCode  Language code of the query.
+   * @return The List of StreamingDetectIntentResponses to the input audio inputs.
    */
-  public static void detectIntentStream(String projectId, String audioFilePath, String sessionId,
+  public static List<StreamingDetectIntentResponse> detectIntentStream(
+      String projectId,
+      String audioFilePath,
+      String sessionId,
       String languageCode) throws Throwable {
     // Start bi-directional StreamingDetectIntent stream.
     final CountDownLatch notification = new CountDownLatch(1);
@@ -159,40 +158,9 @@ public class DetectIntentStream {
       System.out.format("Detected Intent: %s (confidence: %f)\n",
           queryResult.getIntent().getDisplayName(), queryResult.getIntentDetectionConfidence());
       System.out.format("Fulfillment Text: '%s'\n", queryResult.getFulfillmentText());
+
+      return responses;
     }
   }
   // [END dialogflow_detect_intent_streaming]
-
-  public static void main(String[] args) throws Throwable {
-    ArgumentParser parser =
-        ArgumentParsers.newFor("DetectIntentStream")
-            .build()
-            .defaultHelp(true)
-            .description("Returns the result of detect intent with streaming audio as input.\n"
-                + "mvn exec:java -DDetectIntentStream -Dexec.args='--projectId PROJECT_ID "
-                + "--audioFilePath resources/book_a_room.wav --sessionId SESSION_ID'");
-
-    parser.addArgument("--projectId").help("Project/Agent Id").required(true);
-
-    parser.addArgument("--audioFilePath")
-        .help("Path to the audio file")
-        .required(true);
-
-    parser.addArgument("--sessionId")
-        .help("Identifier of the DetectIntent session (Default: UUID.)")
-        .setDefault(UUID.randomUUID().toString());
-
-    parser.addArgument("--languageCode")
-        .help("Language Code of the query (Default: en-US")
-        .setDefault("en-US");
-
-    try {
-      Namespace namespace = parser.parseArgs(args);
-
-      detectIntentStream(namespace.get("projectId"), namespace.get("audioFilePath"),
-          namespace.get("sessionId"), namespace.get("languageCode"));
-    } catch (ArgumentParserException e) {
-      parser.handleError(e);
-    }
-  }
 }

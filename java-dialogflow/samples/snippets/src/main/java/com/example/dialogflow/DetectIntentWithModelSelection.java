@@ -28,28 +28,26 @@ import com.google.protobuf.ByteString;
 
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.UUID;
-import net.sourceforge.argparse4j.ArgumentParsers;
-import net.sourceforge.argparse4j.inf.ArgumentParser;
-import net.sourceforge.argparse4j.inf.ArgumentParserException;
-import net.sourceforge.argparse4j.inf.Namespace;
 
 public class DetectIntentWithModelSelection {
-
   // [START dialogflow_detect_intent_with_model_selection]
+
   /**
    * Returns the result of detect intent with an audio file as input.
    *
    * <p>Using the same `session_id` between requests allows continuation of the conversation.
    *
-   * @param projectId Project/Agent Id.
+   * @param projectId     Project/Agent Id.
    * @param audioFilePath Path to the audio file.
-   * @param sessionId Identifier of the DetectIntent session.
-   * @param languageCode Language code of the query.
+   * @param sessionId     Identifier of the DetectIntent session.
+   * @param languageCode  Language code of the query.
+   * @return The QueryResult for the audio query.
    */
-  public static void detectIntentWithModelSelection(
-      String projectId, String sessionId, String audioFilePath, String languageCode)
-      throws Exception {
+  public static QueryResult detectIntentWithModelSelection(
+      String projectId,
+      String audioFilePath,
+      String sessionId,
+      String languageCode) throws Exception {
     // Instantiates a client
     try (SessionsClient sessionsClient = SessionsClient.create()) {
       // Set the session name using the sessionId (UUID) and projectID (my-project-id)
@@ -95,42 +93,9 @@ public class DetectIntentWithModelSelection {
           "Detected Intent: %s (confidence: %f)\n",
           queryResult.getIntent().getDisplayName(), queryResult.getIntentDetectionConfidence());
       System.out.format("Fulfillment Text: '%s'\n", queryResult.getFulfillmentText());
+
+      return queryResult;
     }
   }
   // [END dialogflow_detect_intent_with_model_selection]
-
-
-  public static void main(String[] args) throws Exception {
-    ArgumentParser parser =
-        ArgumentParsers.newFor("DetectIntentWithModelSelection")
-            .build()
-            .defaultHelp(true)
-            .description("Returns the result of detect intent with an audio file as input.\n"
-                + "mvn exec:java -DDetectIntentWithModelSelection -Dexec.args='--projectId "
-                + "PROJECT_ID --audioFilePath resources/book_a_room.wav --sessionId SESSION_ID'");
-
-    parser.addArgument("--projectId").help("Project/Agent Id").required(true);
-
-    parser.addArgument("--audioFilePath")
-        .help("Path to the audio file")
-        .required(true);
-
-    parser.addArgument("--sessionId")
-        .help("Identifier of the DetectIntent session (Default: UUID.)")
-        .setDefault(UUID.randomUUID().toString());
-
-    parser.addArgument("--languageCode")
-        .help("Language Code of the query (Default: en-US")
-        .setDefault("en-US");
-
-    try {
-      Namespace namespace = parser.parseArgs(args);
-
-      detectIntentWithModelSelection(namespace.get("projectId"), namespace.get("audioFilePath"),
-          namespace.get("sessionId"), namespace.get("languageCode"));
-    } catch (ArgumentParserException e) {
-      parser.handleError(e);
-    }
-  }
-
 }

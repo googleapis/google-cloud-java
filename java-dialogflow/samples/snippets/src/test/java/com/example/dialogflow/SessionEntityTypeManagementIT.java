@@ -17,11 +17,20 @@
 package com.example.dialogflow;
 
 import static com.google.common.truth.Truth.assertThat;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
+import com.google.cloud.dialogflow.v2.EntityType;
+import com.google.cloud.dialogflow.v2.EntityType.Kind;
+import com.google.cloud.dialogflow.v2.SessionEntityType;
+import com.google.cloud.dialogflow.v2.SessionEntityTypesClient;
+import com.google.cloud.dialogflow.v2.SessionName;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.Arrays;
 import java.util.List;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -39,63 +48,62 @@ public class SessionEntityTypeManagementIT {
   private static List<String> ENTITY_VALUES = Arrays.asList("fake_entity_value_1",
       "fake_entity_value_2");
   private static String PROJECT_ID = System.getenv().get("GOOGLE_CLOUD_PROJECT");
-  private ByteArrayOutputStream bout;
-  private PrintStream out;
-
-  private SessionEntityTypeManagement sessionEntityTypeManagement;
-  private EntityTypeManagement entityTypeManagement;
 
   @Before
   public void setUp() {
-    bout = new ByteArrayOutputStream();
-    out = new PrintStream(bout);
-    System.setOut(out);
-    sessionEntityTypeManagement = new SessionEntityTypeManagement();
-    entityTypeManagement = new EntityTypeManagement();
+    System.setOut(new PrintStream(new ByteArrayOutputStream()));
   }
-
 
   @After
-  public void tearDown() {
+  public void tearDown() throws Exception {
+    try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
+      SessionName session = SessionName.of(PROJECT_ID, SESSION_ID);
+
+      // Performs the list session entity types request
+      for (SessionEntityType sessionEntityType :
+          sessionEntityTypesClient.listSessionEntityTypes(session).iterateAll()) {
+        if (sessionEntityType.getName().equals(ENTITY_TYPE_DISPLAY_NAME)) {
+          sessionEntityTypesClient.deleteSessionEntityType(sessionEntityType.getName());
+        }
+      }
+    }
     System.setOut(null);
   }
-
 
   @Test
   public void testCreateDeleteSessionEntityType() throws Exception {
     // Create session entity type
-    entityTypeManagement.createEntityType(ENTITY_TYPE_DISPLAY_NAME, PROJECT_ID, "KIND_MAP");
+    EntityType entityType = EntityTypeManagement
+        .createEntityType(ENTITY_TYPE_DISPLAY_NAME, PROJECT_ID, "KIND_MAP");
+    assertEquals(Kind.valueOf("KIND_MAP"), entityType.getKind());
 
-    sessionEntityTypeManagement.createSessionEntityType(PROJECT_ID, SESSION_ID, ENTITY_VALUES,
-        ENTITY_TYPE_DISPLAY_NAME, 1);
+    SessionEntityTypeManagement.createSessionEntityType(
+        PROJECT_ID, SESSION_ID, ENTITY_VALUES, ENTITY_TYPE_DISPLAY_NAME, 1);
 
-    sessionEntityTypeManagement.listSessionEntityTypes(PROJECT_ID, SESSION_ID);
+    List<SessionEntityType> sessionEntityTypes = SessionEntityTypeManagement
+        .listSessionEntityTypes(PROJECT_ID, SESSION_ID);
+    assertEquals(1, sessionEntityTypes.size());
+    SessionEntityType sessionEntityType = sessionEntityTypes.get(0);
+    assertThat(sessionEntityType.getName()).contains(SESSION_ID);
+    assertThat(sessionEntityType.getName()).contains(ENTITY_TYPE_DISPLAY_NAME);
 
-    String got = bout.toString();
-    assertThat(got).contains(SESSION_ID);
-    assertThat(got).contains(ENTITY_TYPE_DISPLAY_NAME);
     for (String entityValue : ENTITY_VALUES) {
-      assertThat(got).contains(entityValue);
+      assertTrue(sessionEntityType
+          .getEntitiesList().stream().anyMatch(e -> e.getValue().equals(entityValue)));
     }
 
     // Delete session entity type
-    bout.reset();
-    sessionEntityTypeManagement.deleteSessionEntityType(PROJECT_ID, SESSION_ID,
-        ENTITY_TYPE_DISPLAY_NAME);
+    SessionEntityTypeManagement.deleteSessionEntityType(
+        PROJECT_ID, SESSION_ID, ENTITY_TYPE_DISPLAY_NAME);
 
-    sessionEntityTypeManagement.listSessionEntityTypes(PROJECT_ID, SESSION_ID);
+    sessionEntityTypes = SessionEntityTypeManagement.listSessionEntityTypes(PROJECT_ID, SESSION_ID);
+    assertEquals(0, sessionEntityTypes.size());
 
-    got = bout.toString();
-    assertThat(got).doesNotContain(ENTITY_TYPE_DISPLAY_NAME);
-    for (String entityValue : ENTITY_VALUES) {
-      assertThat(got).doesNotContain(entityValue);
-    }
-
-    List<String> entityTypesIds = entityTypeManagement.getEntityTypeIds(ENTITY_TYPE_DISPLAY_NAME,
-        PROJECT_ID);
+    List<String> entityTypesIds = EntityTypeManagement.getEntityTypeIds(
+        ENTITY_TYPE_DISPLAY_NAME, PROJECT_ID);
 
     for (String entityTypeId : entityTypesIds) {
-      entityTypeManagement.deleteEntityType(entityTypeId, PROJECT_ID);
+      EntityTypeManagement.deleteEntityType(entityTypeId, PROJECT_ID);
     }
   }
 }

@@ -17,11 +17,23 @@
 package com.example.dialogflow;
 
 import static com.google.common.truth.Truth.assertThat;
+import static org.junit.Assert.assertEquals;
+
+import com.google.cloud.dialogflow.v2beta1.DeleteDocumentRequest;
+import com.google.cloud.dialogflow.v2beta1.Document;
+import com.google.cloud.dialogflow.v2beta1.DocumentsClient;
+import com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers;
+import com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer;
+import com.google.cloud.dialogflow.v2beta1.KnowledgeBase;
+import com.google.cloud.dialogflow.v2beta1.KnowledgeBasesClient;
+import com.google.cloud.dialogflow.v2beta1.ProjectName;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
+import java.util.Map;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -35,100 +47,127 @@ import org.junit.runners.JUnit4;
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
 public class KnowledgeBaseManagementIT {
 
-  private ByteArrayOutputStream bout;
-  private DetectIntentKnowledge detectIntentKnowledge;
-  private KnowledgeBaseManagement knowledgeBaseManagement;
-  private DocumentManagement documentManagement;
-  private PrintStream out;
   private static String PROJECT_ID = System.getenv().get("GOOGLE_CLOUD_PROJECT");
   private static String SESSION_ID = "fake_session_for_testing";
   private static String LANGUAGE_CODE = "en-US";
   private static String KNOWLEDGE_BASE_NAME = "fake_knowledge_base_name";
   private static String DOCUMENT_BASE_NAME = "fake_document_name";
-  private String knowledgeBaseId = "";
-  private String documentId = "";
 
-  private static List<String> TEXTS = Arrays.asList("Where is my data stored?");
+  private static List<String> TEXTS = Collections.singletonList("Is my data redundant?");
 
   @Before
   public void setUp() {
-    bout = new ByteArrayOutputStream();
-    out = new PrintStream(bout);
-    System.setOut(out);
-    detectIntentKnowledge = new DetectIntentKnowledge();
-    knowledgeBaseManagement = new KnowledgeBaseManagement();
-    documentManagement = new DocumentManagement();
+    System.setOut(new PrintStream(new ByteArrayOutputStream()));
   }
 
+  // If any knowledge base/documents remain after test complete, delete them.
   @After
-  public void tearDown() {
+  public void tearDown() throws Exception {
+    try (KnowledgeBasesClient knowledgeBasesClient = KnowledgeBasesClient.create()) {
+      try (DocumentsClient documentsClient = DocumentsClient.create()) {
+        ProjectName projectName = ProjectName.of(PROJECT_ID);
+        for (KnowledgeBase knowledgeBase :
+            knowledgeBasesClient.listKnowledgeBases(projectName).iterateAll()) {
+          // Delete any documents in the knowledge base.
+          for (Document document : documentsClient.listDocuments(
+              knowledgeBase.getName()).iterateAll()) {
+            documentsClient.deleteDocumentCallable().call(
+                DeleteDocumentRequest.newBuilder().setName(document.getName()).build());
+          }
+          knowledgeBasesClient.deleteKnowledgeBase(knowledgeBase.getName());
+        }
+      }
+    }
     System.setOut(null);
   }
 
   @Test
   public void testKnowledgeBase() throws Exception {
     // Check the knowledge base does not yet exist
-    knowledgeBaseManagement.listKnowledgeBases(PROJECT_ID);
-    String got = bout.toString();
-    assertThat(got).doesNotContain("Display Name: " + KNOWLEDGE_BASE_NAME);
+    List<KnowledgeBase> knowledgeBases = KnowledgeBaseManagement.listKnowledgeBases(PROJECT_ID);
+    assertEquals(0, knowledgeBases.size());
 
     // Create a Knowledge Base
-    knowledgeBaseManagement.createKnowledgeBase(PROJECT_ID,KNOWLEDGE_BASE_NAME);
-    got = bout.toString();
-    assertThat(got).contains("Display Name: " + KNOWLEDGE_BASE_NAME);
+    KnowledgeBase knowledgeBase =
+        KnowledgeBaseManagement.createKnowledgeBase(PROJECT_ID, KNOWLEDGE_BASE_NAME);
+    assertEquals(knowledgeBase.getDisplayName(), KNOWLEDGE_BASE_NAME);
+
+    // Get KnowledgeBase
+    knowledgeBase = KnowledgeBaseManagement.getKnowledgeBase(knowledgeBase.getName());
+    assertEquals(knowledgeBase.getDisplayName(), KNOWLEDGE_BASE_NAME);
 
     // List Knowledge Bases
-    knowledgeBaseManagement.listKnowledgeBases(PROJECT_ID);
-    got = bout.toString();
-    assertThat(got).contains("Display Name: " + KNOWLEDGE_BASE_NAME);
-    knowledgeBaseId = got.split("/knowledgeBases/")[2].trim();
-
-    // Get knowledge base
-    knowledgeBaseManagement.getKnowledgeBase(PROJECT_ID,knowledgeBaseId);
-    got = bout.toString();
-    assertThat(got).contains("Display Name: " + KNOWLEDGE_BASE_NAME);
-
-    // Create a Document
-    documentManagement.createDocument(PROJECT_ID,knowledgeBaseId,DOCUMENT_BASE_NAME,"text/html","FAQ","https://cloud.google.com/storage/docs/faq");
-    got = bout.toString();
-    assertThat(got).contains("Display Name: " + DOCUMENT_BASE_NAME);
-
-    // List the Document
-    documentManagement.listDocuments(PROJECT_ID,knowledgeBaseId);
-    got = bout.toString();
-    assertThat(got).contains("Display Name: " + DOCUMENT_BASE_NAME);
-    documentId = got.split("documents/")[1].split("- MIME Type")[0].trim();
-
-    // Get the Document
-    documentManagement.getDocument(PROJECT_ID,knowledgeBaseId,documentId);
-    got = bout.toString();
-    assertThat(got).contains("Display Name: " + DOCUMENT_BASE_NAME);
-
-    // Detect Intent with Knowledge Base
-    detectIntentKnowledge.detectIntentKnowledge(PROJECT_ID, knowledgeBaseId,SESSION_ID,
-        LANGUAGE_CODE, TEXTS);
-    got = bout.toString();
-    assertThat(got).contains("Knowledge results");
-
-    // Delete the Document
-    bout.reset();
-    documentManagement.deleteDocument(PROJECT_ID,knowledgeBaseId,documentId);
-    got = bout.toString();
-    assertThat(got).contains("The document has been deleted.");
-
-    // List the Document
-    documentManagement.listDocuments(PROJECT_ID,knowledgeBaseId);
-    got = bout.toString();
-    assertThat(got).doesNotContain("Display Name: " + DOCUMENT_BASE_NAME);
+    knowledgeBases = KnowledgeBaseManagement.listKnowledgeBases(PROJECT_ID);
+    assertEquals(1, knowledgeBases.size());
+    assertEquals(KNOWLEDGE_BASE_NAME, knowledgeBases.get(0).getDisplayName());
 
     // Delete the Knowledge Base
-    knowledgeBaseManagement.deleteKnowledgeBase(PROJECT_ID,knowledgeBaseId);
+    KnowledgeBaseManagement.deleteKnowledgeBase(knowledgeBase.getName());
 
-    // List Knowledge Bases
-    knowledgeBaseManagement.listKnowledgeBases(PROJECT_ID);
-    got = bout.toString();
-    assertThat(got).doesNotContain("Display Name: " + KNOWLEDGE_BASE_NAME);
-
+    // List Knowledge Bases (ensure delete success)
+    knowledgeBases = KnowledgeBaseManagement.listKnowledgeBases(PROJECT_ID);
+    assertEquals(0, knowledgeBases.size());
   }
 
+  @Test
+  public void testDocumentManagement() throws Exception {
+    // Create a Knowledge Base
+    KnowledgeBase knowledgeBase =
+        KnowledgeBaseManagement.createKnowledgeBase(PROJECT_ID, KNOWLEDGE_BASE_NAME);
+    String knowledgeBaseName = knowledgeBase.getName();
+
+    // Create a Document
+    Document document = DocumentManagement.createDocument(
+        knowledgeBaseName,
+        DOCUMENT_BASE_NAME,
+        "text/html",
+        "FAQ",
+        "https://cloud.google.com/storage/docs/faq");
+    assertEquals(DOCUMENT_BASE_NAME, document.getDisplayName());
+
+    // List the Documents
+    List<Document> documents = DocumentManagement.listDocuments(knowledgeBaseName);
+    assertEquals(1, documents.size());
+    assertEquals(DOCUMENT_BASE_NAME, documents.get(0).getDisplayName());
+
+    // Get the Document
+    document = DocumentManagement.getDocument(document.getName());
+    assertEquals(DOCUMENT_BASE_NAME, document.getDisplayName());
+
+    // Delete the Document
+    DocumentManagement.deleteDocument(document.getName());
+
+    // List the Document
+    documents = DocumentManagement.listDocuments(knowledgeBaseName);
+    assertEquals(0, documents.size());
+  }
+
+  @Test
+  public void testDetectIntentKnowledge() throws Exception {
+    // Create a Knowledge Base
+    KnowledgeBase knowledgeBase =
+        KnowledgeBaseManagement.createKnowledgeBase(PROJECT_ID, KNOWLEDGE_BASE_NAME);
+    String knowledgeBaseName = knowledgeBase.getName();
+
+    // Create a Document - one needs to exist in order for detectIntentKnowledge to provide answers.
+    Document document = DocumentManagement.createDocument(
+        knowledgeBaseName,
+        DOCUMENT_BASE_NAME,
+        "text/html",
+        "FAQ",
+        "https://cloud.google.com/storage/docs/faq");
+    assertEquals(DOCUMENT_BASE_NAME, document.getDisplayName());
+
+    Map<String, KnowledgeAnswers> allAnswers = DetectIntentKnowledge
+        .detectIntentKnowledge(PROJECT_ID, knowledgeBaseName, SESSION_ID, LANGUAGE_CODE, TEXTS);
+    assertEquals(1, allAnswers.size());
+    KnowledgeAnswers knowledgeAnswers = allAnswers.get(TEXTS.get(0));
+    for (String text : TEXTS) {
+      assertEquals(1, knowledgeAnswers.getAnswersCount());
+      Answer answer = knowledgeAnswers.getAnswers(0);
+      assertEquals(text, answer.getFaqQuestion());
+      assertEquals(document.getName(), answer.getSource());
+      assertThat(answer.getAnswer()).contains("Cloud Storage");
+    }
+  }
 }

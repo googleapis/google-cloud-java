@@ -17,10 +17,17 @@
 package com.example.dialogflow;
 
 import static com.google.common.truth.Truth.assertThat;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
+import com.google.cloud.dialogflow.v2.Context;
+import com.google.cloud.dialogflow.v2.ContextName;
+import com.google.cloud.dialogflow.v2.ContextsClient;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
-import java.util.Arrays;
+import java.util.List;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -33,49 +40,46 @@ import org.junit.runners.JUnit4;
 @RunWith(JUnit4.class)
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
 public class ContextManagementIT {
-
-  private ByteArrayOutputStream bout;
-  private PrintStream out;
-
-  private DetectIntentTexts detectIntentTexts;
-  private ContextManagement contextManagement;
   private static String PROJECT_ID = System.getenv().get("GOOGLE_CLOUD_PROJECT");
   private static String SESSION_ID = "fake_session_for_testing";
   private static String CONTEXT_ID = "fake_context_for_testing";
 
   @Before
   public void setUp() {
-    bout = new ByteArrayOutputStream();
-    out = new PrintStream(bout);
-    System.setOut(out);
-    detectIntentTexts = new DetectIntentTexts();
-    contextManagement = new ContextManagement();
-    PROJECT_ID = System.getenv().get("GOOGLE_CLOUD_PROJECT");
+    System.setOut(new PrintStream(new ByteArrayOutputStream()));
   }
 
   @After
-  public void tearDown() {
+  public void tearDown() throws Exception {
+    try (ContextsClient contextsClient = ContextsClient.create()) {
+      // If the Context still exists, delete it.
+      try {
+        ContextName contextName = ContextName.of(PROJECT_ID, SESSION_ID, CONTEXT_ID);
+        Context existing = contextsClient.getContext(contextName);
+        contextsClient.deleteContext(existing.getName());
+      } catch (Exception e) {
+        // Context doesn't exist, nothing to do.
+      }
+    }
     System.setOut(null);
   }
 
   @Test
   public void testCreateDeleteContext() throws Exception {
-    // Calling detect intent to create a session
-    detectIntentTexts.detectIntentTexts(PROJECT_ID, Arrays.asList("hi"), SESSION_ID, "en-US");
-
     // Create the context
-    contextManagement.createContext(CONTEXT_ID, SESSION_ID, PROJECT_ID, 1);
-    contextManagement.listContexts(SESSION_ID, PROJECT_ID);
+    Context context = ContextManagement.createContext(CONTEXT_ID, SESSION_ID, PROJECT_ID, 1);
+    assertThat(context.getName()).contains(CONTEXT_ID);
+    assertEquals(1, context.getLifespanCount());
 
-    String got = bout.toString();
-    assertThat(got).contains(CONTEXT_ID);
+    List<Context> contexts = ContextManagement.listContexts(SESSION_ID, PROJECT_ID);
+    assertTrue(contexts.size() > 0);
+    assertTrue(contexts.stream().anyMatch(c -> c.getName().contains(SESSION_ID)
+        && c.getName().contains(CONTEXT_ID)));
 
     // Delete the context
-    bout.reset();
-    contextManagement.deleteContext(CONTEXT_ID, SESSION_ID, PROJECT_ID);
-    contextManagement.listContexts(SESSION_ID, PROJECT_ID);
-
-    got = bout.toString();
-    assertThat(got).doesNotContain(CONTEXT_ID);
+    ContextManagement.deleteContext(CONTEXT_ID, SESSION_ID, PROJECT_ID);
+    int numContexts = contexts.size();
+    contexts = ContextManagement.listContexts(SESSION_ID, PROJECT_ID);
+    assertEquals(numContexts - 1, contexts.size());
   }
 }

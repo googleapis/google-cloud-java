@@ -17,41 +17,38 @@
 package com.example.dialogflow;
 
 // Imports the Google Cloud client library
+
 import com.google.cloud.dialogflow.v2.Context;
 import com.google.cloud.dialogflow.v2.ContextName;
 import com.google.cloud.dialogflow.v2.ContextsClient;
 import com.google.cloud.dialogflow.v2.SessionName;
+import com.google.common.collect.Lists;
 import com.google.protobuf.Value;
 
+import java.util.List;
 import java.util.Map.Entry;
-import net.sourceforge.argparse4j.ArgumentParsers;
-import net.sourceforge.argparse4j.inf.ArgumentParser;
-import net.sourceforge.argparse4j.inf.ArgumentParserException;
-import net.sourceforge.argparse4j.inf.MutuallyExclusiveGroup;
-import net.sourceforge.argparse4j.inf.Namespace;
-import net.sourceforge.argparse4j.inf.Subparser;
-import net.sourceforge.argparse4j.inf.Subparsers;
-
 
 /**
  * DialogFlow API Context sample.
  */
 public class ContextManagement {
-
   // [START dialogflow_list_contexts]
+
   /**
    * Lists contexts
+   *
    * @param sessionId Identifier of the DetectIntent session.
    * @param projectId Project/Agent Id.
+   * @return List of Contexts found.
    */
-  public static void listContexts(String sessionId, String projectId) throws Exception {
+  public static List<Context> listContexts(String sessionId, String projectId) throws Exception {
+    List<Context> contexts = Lists.newArrayList();
     // Instantiates a client
     try (ContextsClient contextsClient = ContextsClient.create()) {
       // Set the session name using the sessionId (UUID) and projectId (my-project-id)
       SessionName session = SessionName.of(projectId, sessionId);
 
       // Performs the list contexts request
-      System.out.format("Contexts for session %s:\n", session.toString());
       for (Context context : contextsClient.listContexts(session).iterateAll()) {
         System.out.format("Context name: %s\n", context.getName());
         System.out.format("Lifespan Count: %d\n", context.getLifespanCount());
@@ -61,20 +58,29 @@ public class ContextManagement {
             System.out.format("\t%s: %s\n", entry.getKey(), entry.getValue());
           }
         }
+
+        contexts.add(context);
       }
     }
+    return contexts;
   }
   // [END dialogflow_list_contexts]
 
   // [START dialogflow_create_context]
+
   /**
    * Create an entity type with the given display name
-   * @param contextId  The Id of the context.
-   * @param sessionId Identifier of the DetectIntent session.
+   *
+   * @param contextId     The Id of the context.
+   * @param sessionId     Identifier of the DetectIntent session.
    * @param lifespanCount The lifespan count of the context.
-   * @param projectId Project/Agent Id.
+   * @param projectId     Project/Agent Id.
+   * @return The new Context.
    */
-  public static void createContext(String contextId, String sessionId, String projectId,
+  public static Context createContext(
+      String contextId,
+      String sessionId,
+      String projectId,
       int lifespanCount) throws Exception {
     // Instantiates a client
     try (ContextsClient contextsClient = ContextsClient.create()) {
@@ -97,13 +103,17 @@ public class ContextManagement {
       // Performs the create context request
       Context response = contextsClient.createContext(session, context);
       System.out.format("Context created: %s\n", response);
+
+      return response;
     }
   }
   // [END dialogflow_create_context]
 
   // [START dialogflow_delete_context]
+
   /**
    * Delete entity type with the given entity type name
+   *
    * @param contextId The Id of the context.
    * @param sessionId Identifier of the DetectIntent session.
    * @param projectId Project/Agent Id.
@@ -119,59 +129,4 @@ public class ContextManagement {
     }
   }
   // [END dialogflow_delete_context]
-
-  public static void main(String[] args) throws Exception {
-    ArgumentParser parser =
-        ArgumentParsers.newFor("ContextManagement")
-            .build()
-            .defaultHelp(true)
-            .description("Create / List / Delete a context.");
-
-    Subparsers subparsers = parser.addSubparsers().dest("command").title("Commands");
-
-    Subparser listParser = subparsers.addParser("list")
-        .help("mvn exec:java -DContextManagement -Dexec.args='list --sessionId SESSION_ID "
-            + "--projectId PROJECT_ID'");
-    listParser.addArgument("--sessionId")
-        .help("Identifier of the DetectIntent session").required(true);
-    listParser.addArgument("--projectId").help("Project/Agent Id").required(true);
-
-    Subparser createParser = subparsers.addParser("create")
-        .help("mvn exec:java -DContextManagement -Dexec.args='create --sessionId SESSION_ID "
-            + "--projectId PROJECT_ID --contextId CONTEXT_ID'");
-    createParser.addArgument("--sessionId")
-        .help("Identifier of the DetectIntent session").required(true);
-    createParser.addArgument("--projectId").help("Project/Agent Id").required(true);
-    createParser.addArgument("--contextId")
-        .help("The Id of the context")
-        .required(true);
-    createParser.addArgument("--lifespanCount")
-        .help("The lifespan count of the context (Default: 1)").setDefault(1);
-
-    Subparser deleteParser = subparsers.addParser("delete")
-        .help("mvn exec:java -DContextManagement -Dexec.args='delete --sessionId SESSION_ID "
-            + "--projectId PROJECT_ID --contextId CONTEXT_ID'");
-    deleteParser.addArgument("--sessionId")
-        .help("Identifier of the DetectIntent session").required(true);
-    deleteParser.addArgument("--projectId").help("Project/Agent Id").required(true);
-    deleteParser.addArgument("--contextId")
-        .help("The Id of the context")
-        .required(true);
-
-    try {
-      Namespace namespace = parser.parseArgs(args);
-
-      if (namespace.get("command").equals("list")) {
-        listContexts(namespace.get("sessionId"), namespace.get("projectId"));
-      } else if (namespace.get("command").equals("create")) {
-        createContext(namespace.get("contextId"), namespace.get("sessionId"),
-            namespace.get("projectId"), namespace.get("lifespanCount"));
-      } else if (namespace.get("command").equals("delete")) {
-        deleteContext(namespace.get("contextId"), namespace.get("sessionId"),
-            namespace.get("projectId"));
-      }
-    } catch (ArgumentParserException e) {
-      parser.handleError(e);
-    }
-  }
 }

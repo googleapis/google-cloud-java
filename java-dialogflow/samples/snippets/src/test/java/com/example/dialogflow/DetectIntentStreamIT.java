@@ -16,10 +16,14 @@
 
 package com.example.dialogflow;
 
-import static com.google.common.truth.Truth.assertThat;
+import static org.junit.Assert.assertTrue;
+
+import com.google.cloud.dialogflow.v2.StreamingDetectIntentResponse;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import java.util.List;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -33,35 +37,32 @@ import org.junit.runners.JUnit4;
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
 public class DetectIntentStreamIT {
 
-  private ByteArrayOutputStream bout;
-  private PrintStream out;
   private static String audioFilePath = "resources/book_a_room.wav";
-  private DetectIntentStream detectIntentStream;
   private static String PROJECT_ID = System.getenv().get("GOOGLE_CLOUD_PROJECT");
   private static String SESSION_ID = "fake_session_for_testing";
   private static String LANGUAGE_CODE = "en-US";
 
   @Before
   public void setUp() {
-    bout = new ByteArrayOutputStream();
-    out = new PrintStream(bout);
-    System.setOut(out);
-    detectIntentStream = new DetectIntentStream();
+    System.setOut(new PrintStream(new ByteArrayOutputStream()));
   }
-
 
   @After
   public void tearDown() {
     System.setOut(null);
   }
 
-
   @Test
   public void testStreamingDetectIntentCallable() throws Throwable {
-    detectIntentStream.detectIntentStream(PROJECT_ID, audioFilePath, SESSION_ID, LANGUAGE_CODE);
-
-    String got = bout.toString();
-    assertThat(got).contains("Intermediate transcript: 'book'");
-    assertThat(got).contains("Detected Intent: room.reservation");
+    List<StreamingDetectIntentResponse> response = DetectIntentStream.detectIntentStream(
+        PROJECT_ID, audioFilePath, SESSION_ID, LANGUAGE_CODE);
+    assertTrue(response.size() > 0);
+    assertTrue(response.stream().anyMatch(i -> i
+        .getQueryResult()
+        .getIntent()
+        .getDisplayName().equals("room.reservation")));
+    assertTrue(response.stream().anyMatch(i -> i
+        .getRecognitionResult()
+        .getTranscript().contains("book")));
   }
 }

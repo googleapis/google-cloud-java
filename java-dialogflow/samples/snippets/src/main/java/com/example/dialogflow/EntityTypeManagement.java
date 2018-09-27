@@ -16,35 +16,32 @@
 
 package com.example.dialogflow;
 
-
 // Imports the Google Cloud client library
+
 import com.google.cloud.dialogflow.v2.EntityType;
 import com.google.cloud.dialogflow.v2.EntityType.Kind;
 import com.google.cloud.dialogflow.v2.EntityTypeName;
 import com.google.cloud.dialogflow.v2.EntityTypesClient;
 import com.google.cloud.dialogflow.v2.ProjectAgentName;
+import com.google.common.collect.Lists;
 
 import java.util.ArrayList;
 import java.util.List;
-import net.sourceforge.argparse4j.ArgumentParsers;
-import net.sourceforge.argparse4j.inf.ArgumentParser;
-import net.sourceforge.argparse4j.inf.ArgumentParserException;
-import net.sourceforge.argparse4j.inf.Namespace;
-import net.sourceforge.argparse4j.inf.Subparser;
-import net.sourceforge.argparse4j.inf.Subparsers;
-
 
 /**
  * DialogFlow API EntityType sample.
  */
 public class EntityTypeManagement {
-
   // [START dialogflow_list_entity_types]
+
   /**
    * List entity types
+   *
    * @param projectId Project/agent id.
+   * @return The EntityTypes found.
    */
-  public static void listEntityTypes(String projectId) throws Exception {
+  public static List<EntityType> listEntityTypes(String projectId) throws Exception {
+    List<EntityType> entityTypes = Lists.newArrayList();
     // Instantiates a client
     try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
       // Set the project agent name using the projectID (my-project-id)
@@ -55,19 +52,25 @@ public class EntityTypeManagement {
         System.out.format("Entity type name %s\n", entityType.getName());
         System.out.format("Entity type display name: %s\n", entityType.getDisplayName());
         System.out.format("Number of entities: %d\n", entityType.getEntitiesCount());
+
+        entityTypes.add(entityType);
       }
     }
+    return entityTypes;
   }
   // [END dialogflow_list_entity_types]
 
   // [START dialogflow_create_entity_type]
+
   /**
    * Create an entity type with the given display name
+   *
    * @param displayName The display name of the entity.
-   * @param projectId Project/agent id.
-   * @param kind The kind of entity.  KIND_MAP (default) or KIND_LIST.
+   * @param projectId   Project/agent id.
+   * @param kind        The kind of entity.  KIND_MAP (default) or KIND_LIST.
+   * @return The created EntityType.
    */
-  public static void createEntityType(String displayName, String projectId, String kind)
+  public static EntityType createEntityType(String displayName, String projectId, String kind)
       throws Exception {
     // Instantiates a client
     try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
@@ -83,15 +86,18 @@ public class EntityTypeManagement {
       // Performs the create entity type request
       EntityType response = entityTypesClient.createEntityType(parent, entityType);
       System.out.println("Entity type created: " + response);
+      return response;
     }
   }
   // [END dialogflow_create_entity_type]
 
   // [START dialogflow_delete_entity_type]
+
   /**
    * Delete entity type with the given entity type name
+   *
    * @param entityTypeId The id of the entity_type.
-   * @param projectId Project/agent id.
+   * @param projectId    Project/agent id.
    */
   public static void deleteEntityType(String entityTypeId, String projectId) throws Exception {
     // Instantiates a client
@@ -123,53 +129,5 @@ public class EntityTypeManagement {
       }
     }
     return entityTypesIds;
-  }
-
-
-  public static void main(String[] args) throws Exception {
-    ArgumentParser parser =
-        ArgumentParsers.newFor("EntityTypeManagement")
-            .build()
-            .defaultHelp(true)
-            .description("Create / List / Delete a Entity Type.");
-
-    Subparsers subparsers = parser.addSubparsers().dest("command").title("Commands");
-
-    Subparser listParser = subparsers.addParser("list")
-        .help("mvn exec:java -DEntityTypeManagement -Dexec.args='list --projectId PROJECT_ID'");
-    listParser.addArgument("--projectId").help("Project/Agent Id").required(true);
-
-    Subparser createParser = subparsers.addParser("create")
-        .help("mvn exec:java -DEntityTypeManagement -Dexec.args='create DISPLAY_NAME "
-            + "--projectId PROJECT_ID --entityTypeId ENTITY_TYPE_ID "
-            + "--synonyms basement cellar'");
-    createParser.addArgument("displayName")
-        .help("The display name of the entity.").required(true);
-    createParser.addArgument("--projectId").help("Project/Agent Id").required(true);
-    createParser.addArgument("--kind")
-        .help("The kind of entity. KIND_MAP (default) or KIND_LIST.").setDefault("KIND_MAP");
-
-    Subparser deleteParser = subparsers.addParser("delete")
-        .help("mvn exec:java -DEntityTypeManagement -Dexec.args='delete ENTITY_TYPE_ID "
-            + "--projectId PROJECT_ID'");
-    deleteParser.addArgument("entityTypeId")
-        .help("The id of the entityType to delete.").required(true);
-    deleteParser.addArgument("--projectId").help("Project/Agent Id").required(true);
-
-
-    try {
-      Namespace namespace = parser.parseArgs(args);
-
-      if (namespace.get("command").equals("list")) {
-        listEntityTypes(namespace.get("projectId"));
-      } else if (namespace.get("command").equals("create")) {
-        createEntityType(namespace.get("displayName"), namespace.get("projectId"),
-            namespace.get("kind"));
-      } else if (namespace.get("command").equals("delete")) {
-        deleteEntityType(namespace.get("entityTypeId"), namespace.get("projectId"));
-      }
-    } catch (ArgumentParserException e) {
-      parser.handleError(e);
-    }
   }
 }

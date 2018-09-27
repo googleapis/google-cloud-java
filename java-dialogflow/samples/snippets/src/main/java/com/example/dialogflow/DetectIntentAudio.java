@@ -17,6 +17,7 @@
 package com.example.dialogflow;
 
 // Imports the Google Cloud client library
+
 import com.google.cloud.dialogflow.v2.AudioEncoding;
 import com.google.cloud.dialogflow.v2.DetectIntentRequest;
 import com.google.cloud.dialogflow.v2.DetectIntentResponse;
@@ -29,29 +30,29 @@ import com.google.protobuf.ByteString;
 
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.UUID;
-import net.sourceforge.argparse4j.ArgumentParsers;
-import net.sourceforge.argparse4j.inf.ArgumentParser;
-import net.sourceforge.argparse4j.inf.ArgumentParserException;
-import net.sourceforge.argparse4j.inf.Namespace;
 
 
 /**
  * DialogFlow API Detect Intent sample with audio files.
  */
 public class DetectIntentAudio {
-
   // [START dialogflow_detect_intent_audio]
+
   /**
    * Returns the result of detect intent with an audio file as input.
    *
    * Using the same `session_id` between requests allows continuation of the conversation.
-   * @param projectId Project/Agent Id.
+   *
+   * @param projectId     Project/Agent Id.
    * @param audioFilePath Path to the audio file.
-   * @param sessionId Identifier of the DetectIntent session.
-   * @param languageCode Language code of the query.
+   * @param sessionId     Identifier of the DetectIntent session.
+   * @param languageCode  Language code of the query.
+   * @return QueryResult for the request.
    */
-  public static void detectIntentAudio(String projectId, String audioFilePath, String sessionId,
+  public static QueryResult detectIntentAudio(
+      String projectId,
+      String audioFilePath,
+      String sessionId,
       String languageCode)
       throws Exception {
     // Instantiates a client
@@ -95,40 +96,9 @@ public class DetectIntentAudio {
       System.out.format("Detected Intent: %s (confidence: %f)\n",
           queryResult.getIntent().getDisplayName(), queryResult.getIntentDetectionConfidence());
       System.out.format("Fulfillment Text: '%s'\n", queryResult.getFulfillmentText());
+
+      return queryResult;
     }
   }
   // [END dialogflow_detect_intent_audio]
-
-  public static void main(String[] args) throws Exception {
-    ArgumentParser parser =
-        ArgumentParsers.newFor("DetectIntentAudio")
-            .build()
-            .defaultHelp(true)
-            .description("Returns the result of detect intent with an audio file as input.\n"
-                + "mvn exec:java -DDetectIntentAudio -Dexec.args='--projectId PROJECT_ID "
-                + "--audioFilePath resources/book_a_room.wav --sessionId SESSION_ID'");
-
-    parser.addArgument("--projectId").help("Project/Agent Id").required(true);
-
-    parser.addArgument("--audioFilePath")
-        .help("Path to the audio file")
-        .required(true);
-
-    parser.addArgument("--sessionId")
-        .help("Identifier of the DetectIntent session (Default: UUID.)")
-        .setDefault(UUID.randomUUID().toString());
-
-    parser.addArgument("--languageCode")
-        .help("Language Code of the query (Default: en-US")
-        .setDefault("en-US");
-
-    try {
-      Namespace namespace = parser.parseArgs(args);
-
-      detectIntentAudio(namespace.get("projectId"), namespace.get("audioFilePath"),
-          namespace.get("sessionId"), namespace.get("languageCode"));
-    } catch (ArgumentParserException e) {
-      parser.handleError(e);
-    }
-  }
 }

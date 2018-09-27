@@ -17,11 +17,19 @@
 package com.example.dialogflow;
 
 import static com.google.common.truth.Truth.assertThat;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
+
+import com.google.cloud.dialogflow.v2.Intent;
+import com.google.cloud.dialogflow.v2.IntentsClient;
+import com.google.cloud.dialogflow.v2.ProjectAgentName;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.Arrays;
 import java.util.List;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -41,59 +49,53 @@ public class IntentManagementIT {
   private static List<String> TRAINING_PHRASE_PARTS = Arrays.asList(
       "fake_training_phrase_part_1",
       "fake_training_phrase_part_2");
-  private ByteArrayOutputStream bout;
-  private PrintStream out;
   private static String PROJECT_ID = System.getenv().get("GOOGLE_CLOUD_PROJECT");
-  private IntentManagement intentManagement;
 
   @Before
   public void setUp() {
-    bout = new ByteArrayOutputStream();
-    out = new PrintStream(bout);
-    System.setOut(out);
-    intentManagement = new IntentManagement();
+    System.setOut(new PrintStream(new ByteArrayOutputStream()));
   }
 
-
   @After
-  public void tearDown() {
+  public void tearDown() throws Exception {
+    try (IntentsClient intentsClient = IntentsClient.create()) {
+      // Set the project agent name using the projectID (my-project-id)
+      ProjectAgentName parent = ProjectAgentName.of(PROJECT_ID);
+
+      // Performs the list intents request
+      for (Intent intent : intentsClient.listIntents(parent).iterateAll()) {
+        if (intent.getDisplayName().equals(INTENT_DISPLAY_NAME)) {
+          intentsClient.deleteIntent(intent.getName());
+        }
+      }
+    }
     System.setOut(null);
   }
 
   @Test
   public void testCreateIntent() throws Exception {
     // Create the intent
-    intentManagement.createIntent(INTENT_DISPLAY_NAME, PROJECT_ID, TRAINING_PHRASE_PARTS,
-        MESSAGE_TEXTS);
+    Intent intent = IntentManagement.createIntent(
+        INTENT_DISPLAY_NAME, PROJECT_ID, TRAINING_PHRASE_PARTS, MESSAGE_TEXTS);
+    assertNotNull(intent);
 
-    List<String> intentIds = intentManagement.getIntentIds(INTENT_DISPLAY_NAME, PROJECT_ID);
-
+    List<String> intentIds = IntentManagement.getIntentIds(intent.getDisplayName(), PROJECT_ID);
     assertThat(intentIds.size()).isEqualTo(1);
 
-    intentManagement.listIntents(PROJECT_ID);
-
-    String got = bout.toString();
-    assertThat(got).contains(INTENT_DISPLAY_NAME);
+    List<Intent> intents = IntentManagement.listIntents(PROJECT_ID);
+    assertTrue(intents.size() > 0);
+    assertThat(intents).contains(intent);
     for (String messageText : MESSAGE_TEXTS) {
-      assertThat(got).contains(messageText);
+      assertTrue(intent.getMessagesList()
+          .stream().anyMatch(message -> message.getText().toString().contains(messageText)));
     }
-
-    // Delete the intent
-    bout.reset();
-    intentIds = intentManagement.getIntentIds(INTENT_DISPLAY_NAME, PROJECT_ID);
 
     for (String intentId : intentIds) {
-      intentManagement.deleteIntent(intentId, PROJECT_ID);
+      IntentManagement.deleteIntent(intentId, PROJECT_ID);
     }
 
-    intentManagement.listIntents(PROJECT_ID);
-
-    got = bout.toString();
-    assertThat(got).doesNotContain(INTENT_DISPLAY_NAME);
-
-    intentIds = intentManagement.getIntentIds(INTENT_DISPLAY_NAME, PROJECT_ID);
-
-    assertThat(intentIds.size()).isEqualTo(0);
+    int numIntents = intents.size();
+    intents = IntentManagement.listIntents(PROJECT_ID);
+    assertEquals(numIntents - 1, intents.size());
   }
-
 }

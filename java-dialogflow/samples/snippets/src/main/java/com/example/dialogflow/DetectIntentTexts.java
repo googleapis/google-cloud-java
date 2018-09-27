@@ -17,6 +17,7 @@
 package com.example.dialogflow;
 
 // Imports the Google Cloud client library
+
 import com.google.cloud.dialogflow.v2.DetectIntentResponse;
 import com.google.cloud.dialogflow.v2.QueryInput;
 import com.google.cloud.dialogflow.v2.QueryResult;
@@ -24,32 +25,34 @@ import com.google.cloud.dialogflow.v2.SessionName;
 import com.google.cloud.dialogflow.v2.SessionsClient;
 import com.google.cloud.dialogflow.v2.TextInput;
 import com.google.cloud.dialogflow.v2.TextInput.Builder;
+import com.google.common.collect.Maps;
 
 import java.util.List;
-import java.util.UUID;
-import net.sourceforge.argparse4j.ArgumentParsers;
-import net.sourceforge.argparse4j.inf.ArgumentParser;
-import net.sourceforge.argparse4j.inf.ArgumentParserException;
-import net.sourceforge.argparse4j.inf.Namespace;
-
+import java.util.Map;
 
 /**
  * DialogFlow API Detect Intent sample with text inputs.
  */
 public class DetectIntentTexts {
-
   // [START dialogflow_detect_intent_text]
+
   /**
    * Returns the result of detect intent with texts as inputs.
    *
    * Using the same `session_id` between requests allows continuation of the conversation.
-   * @param projectId Project/Agent Id.
-   * @param texts The text intents to be detected based on what a user says.
-   * @param sessionId Identifier of the DetectIntent session.
+   *
+   * @param projectId    Project/Agent Id.
+   * @param texts        The text intents to be detected based on what a user says.
+   * @param sessionId    Identifier of the DetectIntent session.
    * @param languageCode Language code of the query.
+   * @return The QueryResult for each input text.
    */
-  public static void detectIntentTexts(String projectId, List<String> texts, String sessionId,
+  public static Map<String, QueryResult> detectIntentTexts(
+      String projectId,
+      List<String> texts,
+      String sessionId,
       String languageCode) throws Exception {
+    Map<String, QueryResult> queryResults = Maps.newHashMap();
     // Instantiates a client
     try (SessionsClient sessionsClient = SessionsClient.create()) {
       // Set the session name using the sessionId (UUID) and projectID (my-project-id)
@@ -75,44 +78,11 @@ public class DetectIntentTexts {
         System.out.format("Detected Intent: %s (confidence: %f)\n",
             queryResult.getIntent().getDisplayName(), queryResult.getIntentDetectionConfidence());
         System.out.format("Fulfillment Text: '%s'\n", queryResult.getFulfillmentText());
+
+        queryResults.put(text, queryResult);
       }
     }
+    return queryResults;
   }
   // [END dialogflow_detect_intent_text]
-
-  public static void main(String[] args) throws Exception {
-    ArgumentParser parser =
-        ArgumentParsers.newFor("DetectIntentTexts")
-            .build()
-            .defaultHelp(true)
-            .description("Returns the result of detect intent with text as input for a Knowledge "
-                + "Base.\n"
-                + "mvn exec:java -DDetectIntentTexts -Dexec.args=\"--projectId PROJECT_ID "
-                + "--sessionId SESSION_ID 'hello' 'book a meeting room' 'Mountain View' 'tomorrow' "
-                + "'10 am' '2 hours' '10 people' 'A' 'yes'\"\n");
-
-    parser.addArgument("--projectId").help("Project/Agent Id").required(true);
-
-    parser.addArgument("--sessionId")
-        .help("Identifier of the DetectIntent session (Default: UUID.)")
-        .setDefault(UUID.randomUUID().toString());
-
-    parser.addArgument("--languageCode")
-        .help("Language Code of the query (Default: en-US")
-        .setDefault("en-US");
-
-    parser.addArgument("texts")
-        .nargs("+")
-        .help("Text: 'Where can I find pricing information?'")
-        .required(true);
-
-    try {
-      Namespace namespace = parser.parseArgs(args);
-
-      detectIntentTexts(namespace.get("projectId"), namespace.get("texts"),
-          namespace.get("sessionId"), namespace.get("languageCode"));
-    } catch (ArgumentParserException e) {
-      parser.handleError(e);
-    }
-  }
 }
