@@ -423,7 +423,7 @@ class MessageDispatcher {
             @Override
             public void run() {
               try {
-                if (ackHandler.totalExpiration.isBefore(now())) {
+                if (ackHandler.totalExpiration.plusSeconds(messageDeadlineSeconds.get()).isBefore(now())) {
                   // Message expired while waiting. We don't extend these messages anymore,
                   // so it was probably sent to someone else. Don't work on it.
                   // Don't nack it either, because we'd be nacking someone else's message.
