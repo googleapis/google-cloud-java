@@ -135,7 +135,7 @@ public interface DatabaseClient {
   ReadOnlyTransaction singleUseReadOnlyTransaction();
 
   /**
-   * Returns a read-only transaction context in which a single read or query can be performed at
+   * Returns a read-only transaction context in which a single read or query can be performed at the
    * given timestamp bound. This method differs from {@link #singleUse(TimestampBound)} in that the
    * read timestamp used may be inspected after the read has returned data or finished successfully.
    *
@@ -269,51 +269,4 @@ public interface DatabaseClient {
    *
    */
   TransactionManager transactionManager();
-
-  /**
-   * Returns the lower bound of rows modified by this DML statement.
-   *
-   * <p>The method will block until the update is complete. Running a DML statement with this method
-   * does not offer exactly once semantics, and therfore the DML statement should be idempotent. The
-   * DML statement must be fully-partitionable. Specifically, the statement must be expressible as
-   * the union of many statements which each access only a single row of the table. This is a
-   * Partitioned DML transaction in which a single Partitioned DML statement is executed.
-   * Partitioned DML partitions the key space and runs the DML statement over each partition in
-   * parallel using separate, internal transactions that commit independently. Partitioned DML
-   * transactions do not need to be committed.
-   *
-   * <p>Partitioned DML updates are used to execute a single DML statement with a different
-   * execution strategy that provides different, and often better, scalability properties for large,
-   * table-wide operations than DML in a {@link #readWriteTransaction()} transaction. Smaller scoped
-   * statements, such as an OLTP workload, should prefer using {@link
-   * TransactionContext#executeUpdate(Statement)} with {@link #readWriteTransaction()}.
-   *
-   * <ul>
-   *   That said, Partitioned DML is not a drop-in replacement for standard DML used in {@link
-   *   #readWriteTransaction()}.
-   *   <li>The DML statement must be fully-partitionable. Specifically, the statement must be
-   *       expressible as the union of many statements which each access only a single row of the
-   *       table.
-   *   <li>The statement is not applied atomically to all rows of the table. Rather, the statement
-   *       is applied atomically to partitions of the table, in independent internal transactions.
-   *       Secondary index rows are updated atomically with the base table rows.
-   *   <li>Partitioned DML does not guarantee exactly-once execution semantics against a partition.
-   *       The statement will be applied at least once to each partition. It is strongly recommended
-   *       that the DML statement should be idempotent to avoid unexpected results. For instance, it
-   *       is potentially dangerous to run a statement such as `UPDATE table SET column = column +
-   *       1` as it could be run multiple times against some rows.
-   *   <li>The partitions are committed automatically - there is no support for Commit or Rollback.
-   *       If the call returns an error, or if the client issuing the DML statement dies, it is
-   *       possible that some rows had the statement executed on them successfully. It is also
-   *       possible that statement was never executed against other rows.
-   *   <li>If any error is encountered during the execution of the partitioned DML operation (for
-   *       instance, a UNIQUE INDEX violation, division by zero, or a value that cannot be stored
-   *       due to schema constraints), then the operation is stopped at that point and an error is
-   *       returned. It is possible that at this point, some partitions have been committed (or even
-   *       committed multiple times), and other partitions have not been run at all.
-   *
-   * <p>Given the above, Partitioned DML is good fit for large, database-wide, operations that are
-   * idempotent, such as deleting old rows from a very large table.
-   */
-  long executePartitionedUpdate(Statement stmt);
 }
