@@ -500,7 +500,7 @@ public class GrpcResultSetTest {
   }
 
   @Test
-  public void statsUnavailableError() {
+  public void statsUnavailable() {
     ResultSetStats stats = ResultSetStats.newBuilder().build();
     consumer.onPartialResultSet(
         PartialResultSet.newBuilder()
@@ -510,27 +510,7 @@ public class GrpcResultSetTest {
             .build());
     resultSet = resultSetWithMode(QueryMode.PROFILE);
     consumer.onCompleted();
-    expectedException.expect(IllegalStateException.class);
-    expectedException.expectMessage(
-        "ResultSetStats requested before consuming the entire ResultSet");
-    resultSet.getStats();
-  }
-
-  @Test
-  public void statsNotSupportedError() {
-    ResultSetStats stats = ResultSetStats.newBuilder().build();
-    consumer.onPartialResultSet(
-        PartialResultSet.newBuilder()
-            .setMetadata(makeMetadata(Type.struct(new ArrayList<Type.StructField>())))
-            .setChunkedValue(false)
-            .setStats(stats)
-            .build());
-    resultSet = resultSetWithMode(QueryMode.NORMAL);
-    consumer.onCompleted();
-    expectedException.expect(UnsupportedOperationException.class);
-    expectedException.expectMessage(
-        "ResultSetStats are available only in PLAN and PROFILE execution modes");
-    resultSet.getStats();
+    assertThat(resultSet.getStats()).isNull();
   }
 
   private <T> void doArrayTest(
