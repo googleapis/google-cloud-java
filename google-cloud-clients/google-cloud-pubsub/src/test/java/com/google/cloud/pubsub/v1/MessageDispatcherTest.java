@@ -27,6 +27,7 @@ import com.google.protobuf.ByteString;
 import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.ReceivedMessage;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
@@ -43,6 +44,11 @@ public class MessageDispatcherTest {
           .setAckId("ackid")
           .setMessage(PubsubMessage.newBuilder().setData(ByteString.EMPTY).build())
           .build();
+  private static final ReceivedMessage TEST_MESSAGE_2 =
+          ReceivedMessage.newBuilder()
+                  .setAckId("ackid_2")
+                  .setMessage(PubsubMessage.newBuilder().setData(ByteString.EMPTY).build())
+                  .build();
   private static final Runnable NOOP_RUNNABLE =
       new Runnable() {
         @Override
@@ -120,7 +126,8 @@ public class MessageDispatcherTest {
             new LinkedList<MessageDispatcher.OutstandingMessageBatch>(),
             MoreExecutors.directExecutor(),
             systemExecutor,
-            clock);
+            clock,
+            Duration.ofSeconds(10));
     dispatcher.setMessageDeadlineSeconds(Subscriber.MIN_ACK_DEADLINE_SECONDS);
   }
 
@@ -189,10 +196,15 @@ public class MessageDispatcherTest {
     clock.advance(1, TimeUnit.DAYS);
     dispatcher.extendDeadlines();
     assertThat(sentModAcks).isEmpty();
+  }
 
-    // We should be able to reserve another item in the flow controller and not block shutdown
-    flowController.reserve(1, 0);
-    dispatcher.stop();
+  @Test
+  public void testExtension_AvoidProcessingThatCanNotAck() throws Exception {
+    dispatcher.processReceivedMessages(Arrays.asList(TEST_MESSAGE, TEST_MESSAGE_2), NOOP_RUNNABLE);
+    clock.advance(1, TimeUnit.DAYS);
+    consumers.poll().ack();
+    dispatcher.processOutstandingBatches();
+    assertThat(consumers).isEmpty();
   }
 
   @Test

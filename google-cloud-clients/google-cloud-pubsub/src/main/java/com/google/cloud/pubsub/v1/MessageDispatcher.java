@@ -78,7 +78,7 @@ class MessageDispatcher {
   private final MessageWaiter messagesWaiter;
 
   // Maps ID to "total expiration time". If it takes longer than this, stop extending.
-  private final ConcurrentMap<AckHandler, Instant> pendingMessages = new ConcurrentHashMap<>();
+  private final ConcurrentMap<String, Instant> pendingMessages = new ConcurrentHashMap<>();
 
   private final LinkedBlockingQueue<String> pendingAcks = new LinkedBlockingQueue<>();
   private final LinkedBlockingQueue<String> pendingNacks = new LinkedBlockingQueue<>();
@@ -95,6 +95,9 @@ class MessageDispatcher {
 
   // To keep track of number of seconds the receiver takes to process messages.
   private final Distribution ackLatencyDistribution;
+
+  // The deadline set on the subscription
+  private final Duration subscriptionDeadline;
 
   /** Stores the data needed to asynchronously modify acknowledgement deadlines. */
   static class PendingModifyAckDeadline {
@@ -141,7 +144,7 @@ class MessageDispatcher {
     }
 
     private void onBoth(LinkedBlockingQueue<String> destination) {
-      pendingMessages.remove(this);
+      pendingMessages.remove(this.ackId);
       destination.add(ackId);
       flowController.release(1, outstandingBytes);
       messagesWaiter.incrementPendingMessages(-1);
@@ -193,7 +196,8 @@ class MessageDispatcher {
       Deque<OutstandingMessageBatch> outstandingMessageBatches,
       Executor executor,
       ScheduledExecutorService systemExecutor,
-      ApiClock clock) {
+      ApiClock clock,
+      Duration subscriptionDeadline) {
     this.executor = executor;
     this.systemExecutor = systemExecutor;
     this.ackExpirationPadding = ackExpirationPadding;
@@ -207,6 +211,7 @@ class MessageDispatcher {
     jobLock = new ReentrantLock();
     messagesWaiter = new MessageWaiter();
     this.clock = clock;
+    this.subscriptionDeadline = subscriptionDeadline;
   }
 
   public void start() {
@@ -329,15 +334,15 @@ class MessageDispatcher {
     }
     messagesWaiter.incrementPendingMessages(messages.size());
 
-
-    Instant totalExpiration = now().plus(maxAckExtensionPeriod);
+    Duration expectedExpiration = maxAckExtensionPeriod.compareTo(subscriptionDeadline) >= 0 ? maxAckExtensionPeriod : subscriptionDeadline;
+    Instant totalExpiration = now().plus(expectedExpiration);
     OutstandingMessageBatch outstandingBatch = new OutstandingMessageBatch(doneCallback);
     for (ReceivedMessage message : messages) {
       AckHandler ackHandler =
           new AckHandler(message.getAckId(), message.getMessage().getSerializedSize());
       outstandingBatch.addMessage(message, ackHandler);
       pendingReceipts.add(message.getAckId());
-      pendingMessages.put(ackHandler, totalExpiration);
+      pendingMessages.put(message.getAckId(), totalExpiration);
     }
     synchronized (outstandingMessageBatches) {
       outstandingMessageBatches.add(outstandingBatch);
@@ -398,7 +403,13 @@ class MessageDispatcher {
             @Override
             public void run() {
               try {
-                receiver.receiveMessage(message, consumer);
+                Instant expiration = pendingMessages.get(ackHandler.ackId);
+                if (expiration == null || expiration.isBefore(now())) {
+                  // Message expired while waiting, do not process as the ack would be rejected
+                  consumer.nack();
+                } else {
+                  receiver.receiveMessage(message, consumer);
+                }
               } catch (Exception e) {
                 response.setException(e);
               }
@@ -434,10 +445,10 @@ class MessageDispatcher {
     Instant extendTo = now.plusSeconds(extendSeconds);
 
     int count = 0;
-    Iterator<Map.Entry<AckHandler, Instant>> it = pendingMessages.entrySet().iterator();
+    Iterator<Map.Entry<String, Instant>> it = pendingMessages.entrySet().iterator();
     while (it.hasNext()) {
-      Map.Entry<AckHandler, Instant> entry = it.next();
-      String ackId = entry.getKey().ackId;
+      Map.Entry<String, Instant> entry = it.next();
+      String ackId = entry.getKey();
       Instant totalExpiration = entry.getValue();
       // TODO(pongad): PendingModifyAckDeadline is created to dance around polling pull,
       // since one modack RPC only takes one expiration.
@@ -453,9 +464,6 @@ class MessageDispatcher {
         int sec = Math.max(1, (int) now.until(totalExpiration, ChronoUnit.SECONDS));
         modacks.add(new PendingModifyAckDeadline(sec, ackId));
         count++;
-      } else {
-        flowController.release(1, entry.getKey().outstandingBytes);
-        messagesWaiter.incrementPendingMessages(-1);
       }
     }
     modacks.add(modack);

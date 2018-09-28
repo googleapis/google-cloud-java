@@ -39,6 +39,7 @@ import com.google.auth.oauth2.GoogleCredentials;
 import com.google.common.base.Optional;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
+import com.google.pubsub.v1.GetSubscriptionRequest;
 import com.google.pubsub.v1.ProjectSubscriptionName;
 import com.google.pubsub.v1.SubscriberGrpc;
 import com.google.pubsub.v1.SubscriberGrpc.SubscriberStub;
@@ -335,9 +336,18 @@ public class Subscriber extends AbstractApiService {
 
       for (Channel channel : channels) {
         SubscriberStub stub = SubscriberGrpc.newStub(channel);
+        SubscriberGrpc.SubscriberBlockingStub blockingStub = SubscriberGrpc.newBlockingStub(channel);
         if (callCredentials != null) {
           stub = stub.withCallCredentials(callCredentials);
+          blockingStub = blockingStub.withCallCredentials(callCredentials);
         }
+
+        GetSubscriptionRequest request = GetSubscriptionRequest.newBuilder()
+                .setSubscription(subscriptionName)
+                .build();
+        int ackDeadlineSeconds = blockingStub.getSubscription(request)
+                .getAckDeadlineSeconds();
+
         streamingSubscriberConnections.add(
             new StreamingSubscriberConnection(
                 subscriptionName,
@@ -350,7 +360,8 @@ public class Subscriber extends AbstractApiService {
                 outstandingMessageBatches,
                 executor,
                 alarmsExecutor,
-                clock));
+                clock,
+                Duration.ofSeconds(ackDeadlineSeconds)));
       }
       startConnections(
           streamingSubscriberConnections,
