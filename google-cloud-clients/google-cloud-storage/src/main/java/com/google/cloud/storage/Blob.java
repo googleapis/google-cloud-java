@@ -402,10 +402,27 @@ public class Blob extends BlobInfo {
       return this;
     }
 
-    @GcpLaunchStage.Beta
     @Override
     Builder setKmsKeyName(String kmsKeyName) {
       infoBuilder.setKmsKeyName(kmsKeyName);
+      return this;
+    }
+
+    @Override
+    public Builder setEventBasedHold(Boolean eventBasedHold) {
+      infoBuilder.setEventBasedHold(eventBasedHold);
+      return this;
+    }
+
+    @Override
+    public Builder setTemporaryHold(Boolean temporaryHold) {
+      infoBuilder.setTemporaryHold(temporaryHold);
+      return this;
+    }
+
+    @Override
+    Builder setRetentionExpirationTime(Long retentionExpirationTime) {
+      infoBuilder.setRetentionExpirationTime(retentionExpirationTime);
       return this;
     }
 
