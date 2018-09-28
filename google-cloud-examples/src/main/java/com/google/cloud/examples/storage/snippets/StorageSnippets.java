@@ -1212,7 +1212,7 @@ public class StorageSnippets {
     return bucketWithoutRetentionPolicy;
   }
 
-  /** Example of removing a retention policy on a bucket */
+  /** Example of how to get a bucket's retention policy */
   public Bucket getRetentionPolicy(String bucketName) throws StorageException {
     // [START storage_get_retention_policy]
     // Instantiate a Google Cloud Storage client
