@@ -97,6 +97,6 @@ Apache 2.0 - See [LICENSE] for more information.
 [code-of-conduct]:https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
 [LICENSE]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/LICENSE
 [cloud-platform]: https://cloud.google.com/
-[cloud-automl]: https://cloud.google.com/security-scanner
+[cloud-automl]: https://cloud.google.com/automl
 [automl-product-docs]: https://cloud.google.com/automl/
 [automl-client-lib-docs]: https://googlecloudplatform.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/automl/v1beta1/package-summary.html
