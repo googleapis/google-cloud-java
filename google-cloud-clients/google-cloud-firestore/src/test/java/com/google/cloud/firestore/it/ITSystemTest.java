@@ -578,6 +578,39 @@ public class ITSystemTest {
   }
 
   @Test
+  public void listDocuments() throws Exception {
+    // We test with 21 documents since 20 documents are by default returned in a single paged
+    // response.
+    String[] documents =
+        new String[] {
+          "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16",
+          "17", "18", "19", "20", "21"
+        };
+    Arrays.sort(documents); // Sort in alphabetical (non-numeric) order.
+
+    WriteBatch batch = firestore.batch();
+    for (String document : documents) {
+      batch.create(randomColl.document(document), SINGLE_FIELD_OBJECT);
+    }
+    batch.commit().get();
+
+    Iterable<DocumentReference> collectionRefs = randomColl.listDocuments();
+
+    int count = 0;
+    for (DocumentReference documentRef : collectionRefs) {
+      assertEquals(documents[count++], documentRef.getId());
+    }
+    assertEquals(documents.length, count);
+  }
+
+  @Test
+  public void listDocumentsListsMissingDocument() throws Exception {
+    randomColl.document("missing/foo/bar").set(SINGLE_FIELD_MAP).get();
+    Iterable<DocumentReference> collectionRefs = randomColl.listDocuments();
+    assertEquals(randomColl.document("missing"), collectionRefs.iterator().next());
+  }
+
+  @Test
   public void addAndRemoveFields() throws ExecutionException, InterruptedException {
     Map<String, Object> expected = new HashMap<>();
 
