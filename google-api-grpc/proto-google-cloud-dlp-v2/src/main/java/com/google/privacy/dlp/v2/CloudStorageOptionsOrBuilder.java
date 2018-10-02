@@ -8,14 +8,26 @@ public interface CloudStorageOptionsOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * The set of one or more files to scan.
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.CloudStorageOptions.FileSet file_set = 1;</code>
    */
   boolean hasFileSet();
   /**
+   * <pre>
+   * The set of one or more files to scan.
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.CloudStorageOptions.FileSet file_set = 1;</code>
    */
   com.google.privacy.dlp.v2.CloudStorageOptions.FileSet getFileSet();
   /**
+   * <pre>
+   * The set of one or more files to scan.
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.CloudStorageOptions.FileSet file_set = 1;</code>
    */
   com.google.privacy.dlp.v2.CloudStorageOptions.FileSetOrBuilder getFileSetOrBuilder();

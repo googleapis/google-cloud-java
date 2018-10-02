@@ -56,4 +56,42 @@ public interface ListStoredInfoTypesRequestOrBuilder extends
    * <code>int32 page_size = 3;</code>
    */
   int getPageSize();
+
+  /**
+   * <pre>
+   * Optional comma separated list of fields to order by,
+   * followed by `asc` or `desc` postfix. This list is case-insensitive,
+   * default sorting order is ascending, redundant space characters are
+   * insignificant.
+   * Example: `name asc, display_name, create_time desc`
+   * Supported fields are:
+   * - `create_time`: corresponds to time the most recent version of the
+   * resource was created.
+   * - `state`: corresponds to the state of the resource.
+   * - `name`: corresponds to resource name.
+   * - `display_name`: corresponds to info type's display name.
+   * </pre>
+   *
+   * <code>string order_by = 4;</code>
+   */
+  java.lang.String getOrderBy();
+  /**
+   * <pre>
+   * Optional comma separated list of fields to order by,
+   * followed by `asc` or `desc` postfix. This list is case-insensitive,
+   * default sorting order is ascending, redundant space characters are
+   * insignificant.
+   * Example: `name asc, display_name, create_time desc`
+   * Supported fields are:
+   * - `create_time`: corresponds to time the most recent version of the
+   * resource was created.
+   * - `state`: corresponds to the state of the resource.
+   * - `name`: corresponds to resource name.
+   * - `display_name`: corresponds to info type's display name.
+   * </pre>
+   *
+   * <code>string order_by = 4;</code>
+   */
+  com.google.protobuf.ByteString
+      getOrderByBytes();
 }

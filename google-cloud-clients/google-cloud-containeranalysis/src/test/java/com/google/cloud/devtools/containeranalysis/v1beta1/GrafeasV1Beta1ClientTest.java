@@ -115,12 +115,12 @@ public class GrafeasV1Beta1ClientTest {
   @Test
   @SuppressWarnings("all")
   public void getOccurrenceTest() {
-    OccurrenceName name2 = OccurrenceName.of("[PROJECT]", "[OCCURRENCE]");
+    String name2 = "name2-1052831874";
     String noteName = "noteName1780787896";
     String remediation = "remediation779381797";
     Occurrence expectedResponse =
         Occurrence.newBuilder()
-            .setName(name2.toString())
+            .setName(name2)
             .setNoteName(noteName)
             .setRemediation(remediation)
             .build();
@@ -249,12 +249,12 @@ public class GrafeasV1Beta1ClientTest {
   @Test
   @SuppressWarnings("all")
   public void createOccurrenceTest() {
-    OccurrenceName name = OccurrenceName.of("[PROJECT]", "[OCCURRENCE]");
+    String name = "name3373707";
     String noteName = "noteName1780787896";
     String remediation = "remediation779381797";
     Occurrence expectedResponse =
         Occurrence.newBuilder()
-            .setName(name.toString())
+            .setName(name)
             .setNoteName(noteName)
             .setRemediation(remediation)
             .build();
@@ -342,12 +342,12 @@ public class GrafeasV1Beta1ClientTest {
   @Test
   @SuppressWarnings("all")
   public void updateOccurrenceTest() {
-    OccurrenceName name2 = OccurrenceName.of("[PROJECT]", "[OCCURRENCE]");
+    String name2 = "name2-1052831874";
     String noteName = "noteName1780787896";
     String remediation = "remediation779381797";
     Occurrence expectedResponse =
         Occurrence.newBuilder()
-            .setName(name2.toString())
+            .setName(name2)
             .setNoteName(noteName)
             .setRemediation(remediation)
             .build();
@@ -394,12 +394,12 @@ public class GrafeasV1Beta1ClientTest {
   @Test
   @SuppressWarnings("all")
   public void getOccurrenceNoteTest() {
-    NoteName name2 = NoteName.of("[PROJECT]", "[NOTE]");
+    String name2 = "name2-1052831874";
     String shortDescription = "shortDescription-235369287";
     String longDescription = "longDescription-1747792199";
     Note expectedResponse =
         Note.newBuilder()
-            .setName(name2.toString())
+            .setName(name2)
             .setShortDescription(shortDescription)
             .setLongDescription(longDescription)
             .build();
@@ -440,12 +440,12 @@ public class GrafeasV1Beta1ClientTest {
   @Test
   @SuppressWarnings("all")
   public void getNoteTest() {
-    NoteName name2 = NoteName.of("[PROJECT]", "[NOTE]");
+    String name2 = "name2-1052831874";
     String shortDescription = "shortDescription-235369287";
     String longDescription = "longDescription-1747792199";
     Note expectedResponse =
         Note.newBuilder()
-            .setName(name2.toString())
+            .setName(name2)
             .setShortDescription(shortDescription)
             .setLongDescription(longDescription)
             .build();
@@ -571,12 +571,12 @@ public class GrafeasV1Beta1ClientTest {
   @Test
   @SuppressWarnings("all")
   public void createNoteTest() {
-    NoteName name = NoteName.of("[PROJECT]", "[NOTE]");
+    String name = "name3373707";
     String shortDescription = "shortDescription-235369287";
     String longDescription = "longDescription-1747792199";
     Note expectedResponse =
         Note.newBuilder()
-            .setName(name.toString())
+            .setName(name)
             .setShortDescription(shortDescription)
             .setLongDescription(longDescription)
             .build();
@@ -664,12 +664,12 @@ public class GrafeasV1Beta1ClientTest {
   @Test
   @SuppressWarnings("all")
   public void updateNoteTest() {
-    NoteName name2 = NoteName.of("[PROJECT]", "[NOTE]");
+    String name2 = "name2-1052831874";
     String shortDescription = "shortDescription-235369287";
     String longDescription = "longDescription-1747792199";
     Note expectedResponse =
         Note.newBuilder()
-            .setName(name2.toString())
+            .setName(name2)
             .setShortDescription(shortDescription)
             .setLongDescription(longDescription)
             .build();

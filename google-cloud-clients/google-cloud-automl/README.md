@@ -24,16 +24,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-automl</artifactId>
-  <version>0.62.0-beta</version>
+  <version>0.64.0-beta</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-automl:0.62.0-beta'
+compile 'com.google.cloud:google-cloud-automl:0.64.0-beta'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-automl" % "0.62.0-beta"
+libraryDependencies += "com.google.cloud" % "google-cloud-automl" % "0.64.0-beta"
 ```
 [//]: # ({x-version-update-end})
 
@@ -97,6 +97,6 @@ Apache 2.0 - See [LICENSE] for more information.
 [code-of-conduct]:https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
 [LICENSE]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/LICENSE
 [cloud-platform]: https://cloud.google.com/
-[cloud-automl]: https://cloud.google.com/security-scanner
+[cloud-automl]: https://cloud.google.com/automl
 [automl-product-docs]: https://cloud.google.com/automl/
 [automl-client-lib-docs]: https://googlecloudplatform.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/automl/v1beta1/package-summary.html

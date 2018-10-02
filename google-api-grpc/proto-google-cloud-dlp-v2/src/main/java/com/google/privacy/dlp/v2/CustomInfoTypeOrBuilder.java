@@ -9,8 +9,12 @@ public interface CustomInfoTypeOrBuilder extends
 
   /**
    * <pre>
-   * All CustomInfoTypes must have a name
-   * that does not conflict with built-in InfoTypes or other CustomInfoTypes.
+   * CustomInfoType can either be a new infoType, or an extension of built-in
+   * infoType, when the name matches one of existing infoTypes and that infoType
+   * is specified in `InspectContent.info_types` field. Specifying the latter
+   * adds findings to the one detected by the system. If built-in info type is
+   * not specified in `InspectContent.info_types` list then the name is treated
+   * as a custom info type.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
@@ -18,8 +22,12 @@ public interface CustomInfoTypeOrBuilder extends
   boolean hasInfoType();
   /**
    * <pre>
-   * All CustomInfoTypes must have a name
-   * that does not conflict with built-in InfoTypes or other CustomInfoTypes.
+   * CustomInfoType can either be a new infoType, or an extension of built-in
+   * infoType, when the name matches one of existing infoTypes and that infoType
+   * is specified in `InspectContent.info_types` field. Specifying the latter
+   * adds findings to the one detected by the system. If built-in info type is
+   * not specified in `InspectContent.info_types` list then the name is treated
+   * as a custom info type.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
@@ -27,8 +35,12 @@ public interface CustomInfoTypeOrBuilder extends
   com.google.privacy.dlp.v2.InfoType getInfoType();
   /**
    * <pre>
-   * All CustomInfoTypes must have a name
-   * that does not conflict with built-in InfoTypes or other CustomInfoTypes.
+   * CustomInfoType can either be a new infoType, or an extension of built-in
+   * infoType, when the name matches one of existing infoTypes and that infoType
+   * is specified in `InspectContent.info_types` field. Specifying the latter
+   * adds findings to the one detected by the system. If built-in info type is
+   * not specified in `InspectContent.info_types` list then the name is treated
+   * as a custom info type.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
@@ -215,6 +227,25 @@ public interface CustomInfoTypeOrBuilder extends
    */
   com.google.privacy.dlp.v2.CustomInfoType.DetectionRuleOrBuilder getDetectionRulesOrBuilder(
       int index);
+
+  /**
+   * <pre>
+   * If set to EXCLUSION_TYPE_EXCLUDE this infoType will not cause a finding
+   * to be returned. It still can be used for rules matching.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.CustomInfoType.ExclusionType exclusion_type = 8;</code>
+   */
+  int getExclusionTypeValue();
+  /**
+   * <pre>
+   * If set to EXCLUSION_TYPE_EXCLUDE this infoType will not cause a finding
+   * to be returned. It still can be used for rules matching.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.CustomInfoType.ExclusionType exclusion_type = 8;</code>
+   */
+  com.google.privacy.dlp.v2.CustomInfoType.ExclusionType getExclusionType();
 
   public com.google.privacy.dlp.v2.CustomInfoType.TypeCase getTypeCase();
 }

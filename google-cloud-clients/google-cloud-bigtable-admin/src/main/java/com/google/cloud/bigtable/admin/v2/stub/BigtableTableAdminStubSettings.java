@@ -484,28 +484,6 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
               .setTotalTimeout(Duration.ofMillis(600000L))
               .build();
       definitions.put("default", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
-              .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(130000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(130000L))
-              .setTotalTimeout(Duration.ofMillis(3600000L))
-              .build();
-      definitions.put("create_table", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
-              .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(900000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(900000L))
-              .setTotalTimeout(Duration.ofMillis(3600000L))
-              .build();
-      definitions.put("drop_row_range", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -579,7 +557,7 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
       builder
           .createTableSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("create_table"));
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
           .createTableFromSnapshotSettings()
@@ -598,7 +576,7 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
 
       builder
           .deleteTableSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
@@ -609,7 +587,7 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
       builder
           .dropRowRangeSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("drop_row_range"));
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
           .generateConsistencyTokenSettings()

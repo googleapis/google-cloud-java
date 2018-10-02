@@ -11,7 +11,7 @@ package com.google.spanner.v1;
  * re-used for the next transaction. It is not necessary to create a
  * new session for each transaction.
  * # Transaction Modes
- * Cloud Spanner supports two transaction modes:
+ * Cloud Spanner supports three transaction modes:
  *   1. Locking read-write. This type of transaction is the only way
  *      to write data into Cloud Spanner. These transactions rely on
  *      pessimistic locking and, if necessary, two-phase commit.
@@ -22,6 +22,12 @@ package com.google.spanner.v1;
  *      writes. Snapshot read-only transactions can be configured to
  *      read at timestamps in the past. Snapshot read-only
  *      transactions do not need to be committed.
+ *   3. Partitioned DML. This type of transaction is used to execute
+ *      a single Partitioned DML statement. Partitioned DML partitions
+ *      the key space and runs the DML statement over each partition
+ *      in parallel using separate, internal transactions that commit
+ *      independently. Partitioned DML transactions do not need to be
+ *      committed.
  * For transactions that only read, snapshot read-only transactions
  * provide simpler semantics and are almost always faster. In
  * particular, read-only transactions do not take locks, so they do
@@ -43,11 +49,8 @@ package com.google.spanner.v1;
  * [Rollback][google.spanner.v1.Spanner.Rollback].  Long periods of
  * inactivity at the client may cause Cloud Spanner to release a
  * transaction's locks and abort it.
- * Reads performed within a transaction acquire locks on the data
- * being read. Writes can only be done at commit time, after all reads
- * have been completed.
  * Conceptually, a read-write transaction consists of zero or more
- * reads or SQL queries followed by
+ * reads or SQL statements followed by
  * [Commit][google.spanner.v1.Spanner.Commit]. At any time before
  * [Commit][google.spanner.v1.Spanner.Commit], the client can send a
  * [Rollback][google.spanner.v1.Spanner.Rollback] request to abort the
@@ -173,6 +176,50 @@ package com.google.spanner.v1;
  * restriction also applies to in-progress reads and/or SQL queries whose
  * timestamp become too old while executing. Reads and SQL queries with
  * too-old read timestamps fail with the error `FAILED_PRECONDITION`.
+ * ## Partitioned DML Transactions
+ * Partitioned DML transactions are used to execute DML statements with a
+ * different execution strategy that provides different, and often better,
+ * scalability properties for large, table-wide operations than DML in a
+ * ReadWrite transaction. Smaller scoped statements, such as an OLTP workload,
+ * should prefer using ReadWrite transactions.
+ * Partitioned DML partitions the keyspace and runs the DML statement on each
+ * partition in separate, internal transactions. These transactions commit
+ * automatically when complete, and run independently from one another.
+ * To reduce lock contention, this execution strategy only acquires read locks
+ * on rows that match the WHERE clause of the statement. Additionally, the
+ * smaller per-partition transactions hold locks for less time.
+ * That said, Partitioned DML is not a drop-in replacement for standard DML used
+ * in ReadWrite transactions.
+ *  - The DML statement must be fully-partitionable. Specifically, the statement
+ *    must be expressible as the union of many statements which each access only
+ *    a single row of the table.
+ *  - The statement is not applied atomically to all rows of the table. Rather,
+ *    the statement is applied atomically to partitions of the table, in
+ *    independent transactions. Secondary index rows are updated atomically
+ *    with the base table rows.
+ *  - Partitioned DML does not guarantee exactly-once execution semantics
+ *    against a partition. The statement will be applied at least once to each
+ *    partition. It is strongly recommended that the DML statement should be
+ *    idempotent to avoid unexpected results. For instance, it is potentially
+ *    dangerous to run a statement such as
+ *    `UPDATE table SET column = column + 1` as it could be run multiple times
+ *    against some rows.
+ *  - The partitions are committed automatically - there is no support for
+ *    Commit or Rollback. If the call returns an error, or if the client issuing
+ *    the ExecuteSql call dies, it is possible that some rows had the statement
+ *    executed on them successfully. It is also possible that statement was
+ *    never executed against other rows.
+ *  - Partitioned DML transactions may only contain the execution of a single
+ *    DML statement via ExecuteSql or ExecuteStreamingSql.
+ *  - If any error is encountered during the execution of the partitioned DML
+ *    operation (for instance, a UNIQUE INDEX violation, division by zero, or a
+ *    value that cannot be stored due to schema constraints), then the
+ *    operation is stopped at that point and an error is returned. It is
+ *    possible that at this point, some partitions have been committed (or even
+ *    committed multiple times), and other partitions have not been run at all.
+ * Given the above, Partitioned DML is good fit for large, database-wide,
+ * operations that are idempotent, such as deleting old rows from a very large
+ * table.
  * </pre>
  *
  * Protobuf type {@code google.spanner.v1.TransactionOptions}
@@ -239,6 +286,20 @@ private static final long serialVersionUID = 0L;
               mode_ = subBuilder.buildPartial();
             }
             modeCase_ = 2;
+            break;
+          }
+          case 26: {
+            com.google.spanner.v1.TransactionOptions.PartitionedDml.Builder subBuilder = null;
+            if (modeCase_ == 3) {
+              subBuilder = ((com.google.spanner.v1.TransactionOptions.PartitionedDml) mode_).toBuilder();
+            }
+            mode_ =
+                input.readMessage(com.google.spanner.v1.TransactionOptions.PartitionedDml.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((com.google.spanner.v1.TransactionOptions.PartitionedDml) mode_);
+              mode_ = subBuilder.buildPartial();
+            }
+            modeCase_ = 3;
             break;
           }
           default: {
@@ -690,6 +751,426 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.spanner.v1.TransactionOptions.ReadWrite getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface PartitionedDmlOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:google.spanner.v1.TransactionOptions.PartitionedDml)
+      com.google.protobuf.MessageOrBuilder {
+  }
+  /**
+   * <pre>
+   * Message type to initiate a Partitioned DML transaction.
+   * </pre>
+   *
+   * Protobuf type {@code google.spanner.v1.TransactionOptions.PartitionedDml}
+   */
+  public  static final class PartitionedDml extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:google.spanner.v1.TransactionOptions.PartitionedDml)
+      PartitionedDmlOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use PartitionedDml.newBuilder() to construct.
+    private PartitionedDml(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private PartitionedDml() {
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private PartitionedDml(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.google.spanner.v1.TransactionProto.internal_static_google_spanner_v1_TransactionOptions_PartitionedDml_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.spanner.v1.TransactionProto.internal_static_google_spanner_v1_TransactionOptions_PartitionedDml_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.spanner.v1.TransactionOptions.PartitionedDml.class, com.google.spanner.v1.TransactionOptions.PartitionedDml.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.google.spanner.v1.TransactionOptions.PartitionedDml)) {
+        return super.equals(obj);
+      }
+      com.google.spanner.v1.TransactionOptions.PartitionedDml other = (com.google.spanner.v1.TransactionOptions.PartitionedDml) obj;
+
+      boolean result = true;
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.spanner.v1.TransactionOptions.PartitionedDml parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.google.spanner.v1.TransactionOptions.PartitionedDml parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.google.spanner.v1.TransactionOptions.PartitionedDml parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.google.spanner.v1.TransactionOptions.PartitionedDml parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.google.spanner.v1.TransactionOptions.PartitionedDml parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.google.spanner.v1.TransactionOptions.PartitionedDml parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.google.spanner.v1.TransactionOptions.PartitionedDml parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.google.spanner.v1.TransactionOptions.PartitionedDml parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.google.spanner.v1.TransactionOptions.PartitionedDml parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.google.spanner.v1.TransactionOptions.PartitionedDml parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.google.spanner.v1.TransactionOptions.PartitionedDml parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.google.spanner.v1.TransactionOptions.PartitionedDml parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.google.spanner.v1.TransactionOptions.PartitionedDml prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * Message type to initiate a Partitioned DML transaction.
+     * </pre>
+     *
+     * Protobuf type {@code google.spanner.v1.TransactionOptions.PartitionedDml}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:google.spanner.v1.TransactionOptions.PartitionedDml)
+        com.google.spanner.v1.TransactionOptions.PartitionedDmlOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.google.spanner.v1.TransactionProto.internal_static_google_spanner_v1_TransactionOptions_PartitionedDml_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.spanner.v1.TransactionProto.internal_static_google_spanner_v1_TransactionOptions_PartitionedDml_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.spanner.v1.TransactionOptions.PartitionedDml.class, com.google.spanner.v1.TransactionOptions.PartitionedDml.Builder.class);
+      }
+
+      // Construct using com.google.spanner.v1.TransactionOptions.PartitionedDml.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.google.spanner.v1.TransactionProto.internal_static_google_spanner_v1_TransactionOptions_PartitionedDml_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.spanner.v1.TransactionOptions.PartitionedDml getDefaultInstanceForType() {
+        return com.google.spanner.v1.TransactionOptions.PartitionedDml.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.spanner.v1.TransactionOptions.PartitionedDml build() {
+        com.google.spanner.v1.TransactionOptions.PartitionedDml result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.spanner.v1.TransactionOptions.PartitionedDml buildPartial() {
+        com.google.spanner.v1.TransactionOptions.PartitionedDml result = new com.google.spanner.v1.TransactionOptions.PartitionedDml(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.spanner.v1.TransactionOptions.PartitionedDml) {
+          return mergeFrom((com.google.spanner.v1.TransactionOptions.PartitionedDml)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.spanner.v1.TransactionOptions.PartitionedDml other) {
+        if (other == com.google.spanner.v1.TransactionOptions.PartitionedDml.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.spanner.v1.TransactionOptions.PartitionedDml parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.google.spanner.v1.TransactionOptions.PartitionedDml) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:google.spanner.v1.TransactionOptions.PartitionedDml)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.spanner.v1.TransactionOptions.PartitionedDml)
+    private static final com.google.spanner.v1.TransactionOptions.PartitionedDml DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.google.spanner.v1.TransactionOptions.PartitionedDml();
+    }
+
+    public static com.google.spanner.v1.TransactionOptions.PartitionedDml getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<PartitionedDml>
+        PARSER = new com.google.protobuf.AbstractParser<PartitionedDml>() {
+      @java.lang.Override
+      public PartitionedDml parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new PartitionedDml(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<PartitionedDml> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PartitionedDml> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.spanner.v1.TransactionOptions.PartitionedDml getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -2986,6 +3467,7 @@ private static final long serialVersionUID = 0L;
   public enum ModeCase
       implements com.google.protobuf.Internal.EnumLite {
     READ_WRITE(1),
+    PARTITIONED_DML(3),
     READ_ONLY(2),
     MODE_NOT_SET(0);
     private final int value;
@@ -3003,6 +3485,7 @@ private static final long serialVersionUID = 0L;
     public static ModeCase forNumber(int value) {
       switch (value) {
         case 1: return READ_WRITE;
+        case 3: return PARTITIONED_DML;
         case 2: return READ_ONLY;
         case 0: return MODE_NOT_SET;
         default: return null;
@@ -3064,6 +3547,53 @@ private static final long serialVersionUID = 0L;
        return (com.google.spanner.v1.TransactionOptions.ReadWrite) mode_;
     }
     return com.google.spanner.v1.TransactionOptions.ReadWrite.getDefaultInstance();
+  }
+
+  public static final int PARTITIONED_DML_FIELD_NUMBER = 3;
+  /**
+   * <pre>
+   * Partitioned DML transaction.
+   * Authorization to begin a Partitioned DML transaction requires
+   * `spanner.databases.beginPartitionedDmlTransaction` permission
+   * on the `session` resource.
+   * </pre>
+   *
+   * <code>.google.spanner.v1.TransactionOptions.PartitionedDml partitioned_dml = 3;</code>
+   */
+  public boolean hasPartitionedDml() {
+    return modeCase_ == 3;
+  }
+  /**
+   * <pre>
+   * Partitioned DML transaction.
+   * Authorization to begin a Partitioned DML transaction requires
+   * `spanner.databases.beginPartitionedDmlTransaction` permission
+   * on the `session` resource.
+   * </pre>
+   *
+   * <code>.google.spanner.v1.TransactionOptions.PartitionedDml partitioned_dml = 3;</code>
+   */
+  public com.google.spanner.v1.TransactionOptions.PartitionedDml getPartitionedDml() {
+    if (modeCase_ == 3) {
+       return (com.google.spanner.v1.TransactionOptions.PartitionedDml) mode_;
+    }
+    return com.google.spanner.v1.TransactionOptions.PartitionedDml.getDefaultInstance();
+  }
+  /**
+   * <pre>
+   * Partitioned DML transaction.
+   * Authorization to begin a Partitioned DML transaction requires
+   * `spanner.databases.beginPartitionedDmlTransaction` permission
+   * on the `session` resource.
+   * </pre>
+   *
+   * <code>.google.spanner.v1.TransactionOptions.PartitionedDml partitioned_dml = 3;</code>
+   */
+  public com.google.spanner.v1.TransactionOptions.PartitionedDmlOrBuilder getPartitionedDmlOrBuilder() {
+    if (modeCase_ == 3) {
+       return (com.google.spanner.v1.TransactionOptions.PartitionedDml) mode_;
+    }
+    return com.google.spanner.v1.TransactionOptions.PartitionedDml.getDefaultInstance();
   }
 
   public static final int READ_ONLY_FIELD_NUMBER = 2;
@@ -3133,6 +3663,9 @@ private static final long serialVersionUID = 0L;
     if (modeCase_ == 2) {
       output.writeMessage(2, (com.google.spanner.v1.TransactionOptions.ReadOnly) mode_);
     }
+    if (modeCase_ == 3) {
+      output.writeMessage(3, (com.google.spanner.v1.TransactionOptions.PartitionedDml) mode_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -3149,6 +3682,10 @@ private static final long serialVersionUID = 0L;
     if (modeCase_ == 2) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, (com.google.spanner.v1.TransactionOptions.ReadOnly) mode_);
+    }
+    if (modeCase_ == 3) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(3, (com.google.spanner.v1.TransactionOptions.PartitionedDml) mode_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -3174,6 +3711,10 @@ private static final long serialVersionUID = 0L;
         result = result && getReadWrite()
             .equals(other.getReadWrite());
         break;
+      case 3:
+        result = result && getPartitionedDml()
+            .equals(other.getPartitionedDml());
+        break;
       case 2:
         result = result && getReadOnly()
             .equals(other.getReadOnly());
@@ -3196,6 +3737,10 @@ private static final long serialVersionUID = 0L;
       case 1:
         hash = (37 * hash) + READ_WRITE_FIELD_NUMBER;
         hash = (53 * hash) + getReadWrite().hashCode();
+        break;
+      case 3:
+        hash = (37 * hash) + PARTITIONED_DML_FIELD_NUMBER;
+        hash = (53 * hash) + getPartitionedDml().hashCode();
         break;
       case 2:
         hash = (37 * hash) + READ_ONLY_FIELD_NUMBER;
@@ -3307,7 +3852,7 @@ private static final long serialVersionUID = 0L;
    * re-used for the next transaction. It is not necessary to create a
    * new session for each transaction.
    * # Transaction Modes
-   * Cloud Spanner supports two transaction modes:
+   * Cloud Spanner supports three transaction modes:
    *   1. Locking read-write. This type of transaction is the only way
    *      to write data into Cloud Spanner. These transactions rely on
    *      pessimistic locking and, if necessary, two-phase commit.
@@ -3318,6 +3863,12 @@ private static final long serialVersionUID = 0L;
    *      writes. Snapshot read-only transactions can be configured to
    *      read at timestamps in the past. Snapshot read-only
    *      transactions do not need to be committed.
+   *   3. Partitioned DML. This type of transaction is used to execute
+   *      a single Partitioned DML statement. Partitioned DML partitions
+   *      the key space and runs the DML statement over each partition
+   *      in parallel using separate, internal transactions that commit
+   *      independently. Partitioned DML transactions do not need to be
+   *      committed.
    * For transactions that only read, snapshot read-only transactions
    * provide simpler semantics and are almost always faster. In
    * particular, read-only transactions do not take locks, so they do
@@ -3339,11 +3890,8 @@ private static final long serialVersionUID = 0L;
    * [Rollback][google.spanner.v1.Spanner.Rollback].  Long periods of
    * inactivity at the client may cause Cloud Spanner to release a
    * transaction's locks and abort it.
-   * Reads performed within a transaction acquire locks on the data
-   * being read. Writes can only be done at commit time, after all reads
-   * have been completed.
    * Conceptually, a read-write transaction consists of zero or more
-   * reads or SQL queries followed by
+   * reads or SQL statements followed by
    * [Commit][google.spanner.v1.Spanner.Commit]. At any time before
    * [Commit][google.spanner.v1.Spanner.Commit], the client can send a
    * [Rollback][google.spanner.v1.Spanner.Rollback] request to abort the
@@ -3469,6 +4017,50 @@ private static final long serialVersionUID = 0L;
    * restriction also applies to in-progress reads and/or SQL queries whose
    * timestamp become too old while executing. Reads and SQL queries with
    * too-old read timestamps fail with the error `FAILED_PRECONDITION`.
+   * ## Partitioned DML Transactions
+   * Partitioned DML transactions are used to execute DML statements with a
+   * different execution strategy that provides different, and often better,
+   * scalability properties for large, table-wide operations than DML in a
+   * ReadWrite transaction. Smaller scoped statements, such as an OLTP workload,
+   * should prefer using ReadWrite transactions.
+   * Partitioned DML partitions the keyspace and runs the DML statement on each
+   * partition in separate, internal transactions. These transactions commit
+   * automatically when complete, and run independently from one another.
+   * To reduce lock contention, this execution strategy only acquires read locks
+   * on rows that match the WHERE clause of the statement. Additionally, the
+   * smaller per-partition transactions hold locks for less time.
+   * That said, Partitioned DML is not a drop-in replacement for standard DML used
+   * in ReadWrite transactions.
+   *  - The DML statement must be fully-partitionable. Specifically, the statement
+   *    must be expressible as the union of many statements which each access only
+   *    a single row of the table.
+   *  - The statement is not applied atomically to all rows of the table. Rather,
+   *    the statement is applied atomically to partitions of the table, in
+   *    independent transactions. Secondary index rows are updated atomically
+   *    with the base table rows.
+   *  - Partitioned DML does not guarantee exactly-once execution semantics
+   *    against a partition. The statement will be applied at least once to each
+   *    partition. It is strongly recommended that the DML statement should be
+   *    idempotent to avoid unexpected results. For instance, it is potentially
+   *    dangerous to run a statement such as
+   *    `UPDATE table SET column = column + 1` as it could be run multiple times
+   *    against some rows.
+   *  - The partitions are committed automatically - there is no support for
+   *    Commit or Rollback. If the call returns an error, or if the client issuing
+   *    the ExecuteSql call dies, it is possible that some rows had the statement
+   *    executed on them successfully. It is also possible that statement was
+   *    never executed against other rows.
+   *  - Partitioned DML transactions may only contain the execution of a single
+   *    DML statement via ExecuteSql or ExecuteStreamingSql.
+   *  - If any error is encountered during the execution of the partitioned DML
+   *    operation (for instance, a UNIQUE INDEX violation, division by zero, or a
+   *    value that cannot be stored due to schema constraints), then the
+   *    operation is stopped at that point and an error is returned. It is
+   *    possible that at this point, some partitions have been committed (or even
+   *    committed multiple times), and other partitions have not been run at all.
+   * Given the above, Partitioned DML is good fit for large, database-wide,
+   * operations that are idempotent, such as deleting old rows from a very large
+   * table.
    * </pre>
    *
    * Protobuf type {@code google.spanner.v1.TransactionOptions}
@@ -3543,6 +4135,13 @@ private static final long serialVersionUID = 0L;
           result.mode_ = readWriteBuilder_.build();
         }
       }
+      if (modeCase_ == 3) {
+        if (partitionedDmlBuilder_ == null) {
+          result.mode_ = mode_;
+        } else {
+          result.mode_ = partitionedDmlBuilder_.build();
+        }
+      }
       if (modeCase_ == 2) {
         if (readOnlyBuilder_ == null) {
           result.mode_ = mode_;
@@ -3602,6 +4201,10 @@ private static final long serialVersionUID = 0L;
       switch (other.getModeCase()) {
         case READ_WRITE: {
           mergeReadWrite(other.getReadWrite());
+          break;
+        }
+        case PARTITIONED_DML: {
+          mergePartitionedDml(other.getPartitionedDml());
           break;
         }
         case READ_ONLY: {
@@ -3853,6 +4456,205 @@ private static final long serialVersionUID = 0L;
       modeCase_ = 1;
       onChanged();;
       return readWriteBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.spanner.v1.TransactionOptions.PartitionedDml, com.google.spanner.v1.TransactionOptions.PartitionedDml.Builder, com.google.spanner.v1.TransactionOptions.PartitionedDmlOrBuilder> partitionedDmlBuilder_;
+    /**
+     * <pre>
+     * Partitioned DML transaction.
+     * Authorization to begin a Partitioned DML transaction requires
+     * `spanner.databases.beginPartitionedDmlTransaction` permission
+     * on the `session` resource.
+     * </pre>
+     *
+     * <code>.google.spanner.v1.TransactionOptions.PartitionedDml partitioned_dml = 3;</code>
+     */
+    public boolean hasPartitionedDml() {
+      return modeCase_ == 3;
+    }
+    /**
+     * <pre>
+     * Partitioned DML transaction.
+     * Authorization to begin a Partitioned DML transaction requires
+     * `spanner.databases.beginPartitionedDmlTransaction` permission
+     * on the `session` resource.
+     * </pre>
+     *
+     * <code>.google.spanner.v1.TransactionOptions.PartitionedDml partitioned_dml = 3;</code>
+     */
+    public com.google.spanner.v1.TransactionOptions.PartitionedDml getPartitionedDml() {
+      if (partitionedDmlBuilder_ == null) {
+        if (modeCase_ == 3) {
+          return (com.google.spanner.v1.TransactionOptions.PartitionedDml) mode_;
+        }
+        return com.google.spanner.v1.TransactionOptions.PartitionedDml.getDefaultInstance();
+      } else {
+        if (modeCase_ == 3) {
+          return partitionedDmlBuilder_.getMessage();
+        }
+        return com.google.spanner.v1.TransactionOptions.PartitionedDml.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * Partitioned DML transaction.
+     * Authorization to begin a Partitioned DML transaction requires
+     * `spanner.databases.beginPartitionedDmlTransaction` permission
+     * on the `session` resource.
+     * </pre>
+     *
+     * <code>.google.spanner.v1.TransactionOptions.PartitionedDml partitioned_dml = 3;</code>
+     */
+    public Builder setPartitionedDml(com.google.spanner.v1.TransactionOptions.PartitionedDml value) {
+      if (partitionedDmlBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        mode_ = value;
+        onChanged();
+      } else {
+        partitionedDmlBuilder_.setMessage(value);
+      }
+      modeCase_ = 3;
+      return this;
+    }
+    /**
+     * <pre>
+     * Partitioned DML transaction.
+     * Authorization to begin a Partitioned DML transaction requires
+     * `spanner.databases.beginPartitionedDmlTransaction` permission
+     * on the `session` resource.
+     * </pre>
+     *
+     * <code>.google.spanner.v1.TransactionOptions.PartitionedDml partitioned_dml = 3;</code>
+     */
+    public Builder setPartitionedDml(
+        com.google.spanner.v1.TransactionOptions.PartitionedDml.Builder builderForValue) {
+      if (partitionedDmlBuilder_ == null) {
+        mode_ = builderForValue.build();
+        onChanged();
+      } else {
+        partitionedDmlBuilder_.setMessage(builderForValue.build());
+      }
+      modeCase_ = 3;
+      return this;
+    }
+    /**
+     * <pre>
+     * Partitioned DML transaction.
+     * Authorization to begin a Partitioned DML transaction requires
+     * `spanner.databases.beginPartitionedDmlTransaction` permission
+     * on the `session` resource.
+     * </pre>
+     *
+     * <code>.google.spanner.v1.TransactionOptions.PartitionedDml partitioned_dml = 3;</code>
+     */
+    public Builder mergePartitionedDml(com.google.spanner.v1.TransactionOptions.PartitionedDml value) {
+      if (partitionedDmlBuilder_ == null) {
+        if (modeCase_ == 3 &&
+            mode_ != com.google.spanner.v1.TransactionOptions.PartitionedDml.getDefaultInstance()) {
+          mode_ = com.google.spanner.v1.TransactionOptions.PartitionedDml.newBuilder((com.google.spanner.v1.TransactionOptions.PartitionedDml) mode_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          mode_ = value;
+        }
+        onChanged();
+      } else {
+        if (modeCase_ == 3) {
+          partitionedDmlBuilder_.mergeFrom(value);
+        }
+        partitionedDmlBuilder_.setMessage(value);
+      }
+      modeCase_ = 3;
+      return this;
+    }
+    /**
+     * <pre>
+     * Partitioned DML transaction.
+     * Authorization to begin a Partitioned DML transaction requires
+     * `spanner.databases.beginPartitionedDmlTransaction` permission
+     * on the `session` resource.
+     * </pre>
+     *
+     * <code>.google.spanner.v1.TransactionOptions.PartitionedDml partitioned_dml = 3;</code>
+     */
+    public Builder clearPartitionedDml() {
+      if (partitionedDmlBuilder_ == null) {
+        if (modeCase_ == 3) {
+          modeCase_ = 0;
+          mode_ = null;
+          onChanged();
+        }
+      } else {
+        if (modeCase_ == 3) {
+          modeCase_ = 0;
+          mode_ = null;
+        }
+        partitionedDmlBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Partitioned DML transaction.
+     * Authorization to begin a Partitioned DML transaction requires
+     * `spanner.databases.beginPartitionedDmlTransaction` permission
+     * on the `session` resource.
+     * </pre>
+     *
+     * <code>.google.spanner.v1.TransactionOptions.PartitionedDml partitioned_dml = 3;</code>
+     */
+    public com.google.spanner.v1.TransactionOptions.PartitionedDml.Builder getPartitionedDmlBuilder() {
+      return getPartitionedDmlFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Partitioned DML transaction.
+     * Authorization to begin a Partitioned DML transaction requires
+     * `spanner.databases.beginPartitionedDmlTransaction` permission
+     * on the `session` resource.
+     * </pre>
+     *
+     * <code>.google.spanner.v1.TransactionOptions.PartitionedDml partitioned_dml = 3;</code>
+     */
+    public com.google.spanner.v1.TransactionOptions.PartitionedDmlOrBuilder getPartitionedDmlOrBuilder() {
+      if ((modeCase_ == 3) && (partitionedDmlBuilder_ != null)) {
+        return partitionedDmlBuilder_.getMessageOrBuilder();
+      } else {
+        if (modeCase_ == 3) {
+          return (com.google.spanner.v1.TransactionOptions.PartitionedDml) mode_;
+        }
+        return com.google.spanner.v1.TransactionOptions.PartitionedDml.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * Partitioned DML transaction.
+     * Authorization to begin a Partitioned DML transaction requires
+     * `spanner.databases.beginPartitionedDmlTransaction` permission
+     * on the `session` resource.
+     * </pre>
+     *
+     * <code>.google.spanner.v1.TransactionOptions.PartitionedDml partitioned_dml = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.spanner.v1.TransactionOptions.PartitionedDml, com.google.spanner.v1.TransactionOptions.PartitionedDml.Builder, com.google.spanner.v1.TransactionOptions.PartitionedDmlOrBuilder> 
+        getPartitionedDmlFieldBuilder() {
+      if (partitionedDmlBuilder_ == null) {
+        if (!(modeCase_ == 3)) {
+          mode_ = com.google.spanner.v1.TransactionOptions.PartitionedDml.getDefaultInstance();
+        }
+        partitionedDmlBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.spanner.v1.TransactionOptions.PartitionedDml, com.google.spanner.v1.TransactionOptions.PartitionedDml.Builder, com.google.spanner.v1.TransactionOptions.PartitionedDmlOrBuilder>(
+                (com.google.spanner.v1.TransactionOptions.PartitionedDml) mode_,
+                getParentForChildren(),
+                isClean());
+        mode_ = null;
+      }
+      modeCase_ = 3;
+      onChanged();;
+      return partitionedDmlBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<

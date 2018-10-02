@@ -628,10 +628,33 @@ public class Bucket extends BucketInfo {
       return this;
     }
 
-    @GcpLaunchStage.Beta
     @Override
     public Builder setDefaultKmsKeyName(String defaultKmsKeyName) {
       infoBuilder.setDefaultKmsKeyName(defaultKmsKeyName);
+      return this;
+    }
+
+    @Override
+    public Builder setDefaultEventBasedHold(Boolean defaultEventBasedHold) {
+      infoBuilder.setDefaultEventBasedHold(defaultEventBasedHold);
+      return this;
+    }
+
+    @Override
+    Builder setRetentionEffectiveTime(Long retentionEffectiveTime) {
+      infoBuilder.setRetentionEffectiveTime(retentionEffectiveTime);
+      return this;
+    }
+
+    @Override
+    Builder setRetentionPolicyIsLocked(Boolean retentionIsLocked) {
+      infoBuilder.setRetentionPolicyIsLocked(retentionIsLocked);
+      return this;
+    }
+
+    @Override
+    public Builder setRetentionPeriod(Long retentionPeriod) {
+      infoBuilder.setRetentionPeriod(retentionPeriod);
       return this;
     }
 
@@ -1109,6 +1132,29 @@ public class Bucket extends BucketInfo {
    */
   public List<Acl> listDefaultAcls() {
     return storage.listDefaultAcls(getName());
+  }
+
+  /**
+   * Locks bucket retention policy. Requires a local metageneration value in the request. Review example below.
+   *
+   * <p>Accepts an optional userProject {@link BucketTargetOption} option which defines the project id
+   * to assign operational costs.
+   *
+   * <p>Warning: Once a retention policy is locked, it can't be unlocked, removed, or shortened.
+   *
+   * <p>Example of locking a retention policy on a bucket, only if its local metageneration value matches the bucket's
+   * service metageneration otherwise a {@link StorageException} is thrown.
+   * <pre> {@code
+   * String bucketName = "my_unique_bucket";
+   * Bucket bucket = storage.get(bucketName, BucketGetOption.fields(BucketField.METAGENERATION));
+   * storage.lockRetentionPolicy(bucket, BucketTargetOption.metagenerationMatch());
+   * }</pre>
+   *
+   * @return a {@code Bucket} object of the locked bucket
+   * @throws StorageException upon failure
+   */
+  public Bucket lockRetentionPolicy(BucketTargetOption... options) {
+    return storage.lockRetentionPolicy(this, options);
   }
 
   /**

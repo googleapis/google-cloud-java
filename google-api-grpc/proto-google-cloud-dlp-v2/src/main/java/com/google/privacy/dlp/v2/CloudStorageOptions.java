@@ -5,8 +5,8 @@ package com.google.privacy.dlp.v2;
 
 /**
  * <pre>
- * Options defining a file or a set of files (path ending with *) within
- * a Google Cloud Storage bucket.
+ * Options defining a file or a set of files within a Google Cloud Storage
+ * bucket.
  * </pre>
  *
  * Protobuf type {@code google.privacy.dlp.v2.CloudStorageOptions}
@@ -281,8 +281,8 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * The url, in the format `gs://&lt;bucket&gt;/&lt;path&gt;`. Trailing wildcard in the
-     * path is allowed.
+     * The Cloud Storage url of the file(s) to scan, in the format
+     * `gs://&lt;bucket&gt;/&lt;path&gt;`. Trailing wildcard in the path is allowed.
      * </pre>
      *
      * <code>string url = 1;</code>
@@ -290,8 +290,8 @@ private static final long serialVersionUID = 0L;
     java.lang.String getUrl();
     /**
      * <pre>
-     * The url, in the format `gs://&lt;bucket&gt;/&lt;path&gt;`. Trailing wildcard in the
-     * path is allowed.
+     * The Cloud Storage url of the file(s) to scan, in the format
+     * `gs://&lt;bucket&gt;/&lt;path&gt;`. Trailing wildcard in the path is allowed.
      * </pre>
      *
      * <code>string url = 1;</code>
@@ -385,8 +385,8 @@ private static final long serialVersionUID = 0L;
     private volatile java.lang.Object url_;
     /**
      * <pre>
-     * The url, in the format `gs://&lt;bucket&gt;/&lt;path&gt;`. Trailing wildcard in the
-     * path is allowed.
+     * The Cloud Storage url of the file(s) to scan, in the format
+     * `gs://&lt;bucket&gt;/&lt;path&gt;`. Trailing wildcard in the path is allowed.
      * </pre>
      *
      * <code>string url = 1;</code>
@@ -405,8 +405,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The url, in the format `gs://&lt;bucket&gt;/&lt;path&gt;`. Trailing wildcard in the
-     * path is allowed.
+     * The Cloud Storage url of the file(s) to scan, in the format
+     * `gs://&lt;bucket&gt;/&lt;path&gt;`. Trailing wildcard in the path is allowed.
      * </pre>
      *
      * <code>string url = 1;</code>
@@ -735,8 +735,8 @@ private static final long serialVersionUID = 0L;
       private java.lang.Object url_ = "";
       /**
        * <pre>
-       * The url, in the format `gs://&lt;bucket&gt;/&lt;path&gt;`. Trailing wildcard in the
-       * path is allowed.
+       * The Cloud Storage url of the file(s) to scan, in the format
+       * `gs://&lt;bucket&gt;/&lt;path&gt;`. Trailing wildcard in the path is allowed.
        * </pre>
        *
        * <code>string url = 1;</code>
@@ -755,8 +755,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * The url, in the format `gs://&lt;bucket&gt;/&lt;path&gt;`. Trailing wildcard in the
-       * path is allowed.
+       * The Cloud Storage url of the file(s) to scan, in the format
+       * `gs://&lt;bucket&gt;/&lt;path&gt;`. Trailing wildcard in the path is allowed.
        * </pre>
        *
        * <code>string url = 1;</code>
@@ -776,8 +776,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * The url, in the format `gs://&lt;bucket&gt;/&lt;path&gt;`. Trailing wildcard in the
-       * path is allowed.
+       * The Cloud Storage url of the file(s) to scan, in the format
+       * `gs://&lt;bucket&gt;/&lt;path&gt;`. Trailing wildcard in the path is allowed.
        * </pre>
        *
        * <code>string url = 1;</code>
@@ -794,8 +794,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * The url, in the format `gs://&lt;bucket&gt;/&lt;path&gt;`. Trailing wildcard in the
-       * path is allowed.
+       * The Cloud Storage url of the file(s) to scan, in the format
+       * `gs://&lt;bucket&gt;/&lt;path&gt;`. Trailing wildcard in the path is allowed.
        * </pre>
        *
        * <code>string url = 1;</code>
@@ -808,8 +808,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * The url, in the format `gs://&lt;bucket&gt;/&lt;path&gt;`. Trailing wildcard in the
-       * path is allowed.
+       * The Cloud Storage url of the file(s) to scan, in the format
+       * `gs://&lt;bucket&gt;/&lt;path&gt;`. Trailing wildcard in the path is allowed.
        * </pre>
        *
        * <code>string url = 1;</code>
@@ -882,18 +882,30 @@ private static final long serialVersionUID = 0L;
   public static final int FILE_SET_FIELD_NUMBER = 1;
   private com.google.privacy.dlp.v2.CloudStorageOptions.FileSet fileSet_;
   /**
+   * <pre>
+   * The set of one or more files to scan.
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.CloudStorageOptions.FileSet file_set = 1;</code>
    */
   public boolean hasFileSet() {
     return fileSet_ != null;
   }
   /**
+   * <pre>
+   * The set of one or more files to scan.
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.CloudStorageOptions.FileSet file_set = 1;</code>
    */
   public com.google.privacy.dlp.v2.CloudStorageOptions.FileSet getFileSet() {
     return fileSet_ == null ? com.google.privacy.dlp.v2.CloudStorageOptions.FileSet.getDefaultInstance() : fileSet_;
   }
   /**
+   * <pre>
+   * The set of one or more files to scan.
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.CloudStorageOptions.FileSet file_set = 1;</code>
    */
   public com.google.privacy.dlp.v2.CloudStorageOptions.FileSetOrBuilder getFileSetOrBuilder() {
@@ -1271,8 +1283,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Options defining a file or a set of files (path ending with *) within
-   * a Google Cloud Storage bucket.
+   * Options defining a file or a set of files within a Google Cloud Storage
+   * bucket.
    * </pre>
    *
    * Protobuf type {@code google.privacy.dlp.v2.CloudStorageOptions}
@@ -1478,12 +1490,20 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.privacy.dlp.v2.CloudStorageOptions.FileSet, com.google.privacy.dlp.v2.CloudStorageOptions.FileSet.Builder, com.google.privacy.dlp.v2.CloudStorageOptions.FileSetOrBuilder> fileSetBuilder_;
     /**
+     * <pre>
+     * The set of one or more files to scan.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.CloudStorageOptions.FileSet file_set = 1;</code>
      */
     public boolean hasFileSet() {
       return fileSetBuilder_ != null || fileSet_ != null;
     }
     /**
+     * <pre>
+     * The set of one or more files to scan.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.CloudStorageOptions.FileSet file_set = 1;</code>
      */
     public com.google.privacy.dlp.v2.CloudStorageOptions.FileSet getFileSet() {
@@ -1494,6 +1514,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * The set of one or more files to scan.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.CloudStorageOptions.FileSet file_set = 1;</code>
      */
     public Builder setFileSet(com.google.privacy.dlp.v2.CloudStorageOptions.FileSet value) {
@@ -1510,6 +1534,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The set of one or more files to scan.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.CloudStorageOptions.FileSet file_set = 1;</code>
      */
     public Builder setFileSet(
@@ -1524,6 +1552,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The set of one or more files to scan.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.CloudStorageOptions.FileSet file_set = 1;</code>
      */
     public Builder mergeFileSet(com.google.privacy.dlp.v2.CloudStorageOptions.FileSet value) {
@@ -1542,6 +1574,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The set of one or more files to scan.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.CloudStorageOptions.FileSet file_set = 1;</code>
      */
     public Builder clearFileSet() {
@@ -1556,6 +1592,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The set of one or more files to scan.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.CloudStorageOptions.FileSet file_set = 1;</code>
      */
     public com.google.privacy.dlp.v2.CloudStorageOptions.FileSet.Builder getFileSetBuilder() {
@@ -1564,6 +1604,10 @@ private static final long serialVersionUID = 0L;
       return getFileSetFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * The set of one or more files to scan.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.CloudStorageOptions.FileSet file_set = 1;</code>
      */
     public com.google.privacy.dlp.v2.CloudStorageOptions.FileSetOrBuilder getFileSetOrBuilder() {
@@ -1575,6 +1619,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * The set of one or more files to scan.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.CloudStorageOptions.FileSet file_set = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

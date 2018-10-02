@@ -43,6 +43,40 @@ public interface TransactionOptionsOrBuilder extends
 
   /**
    * <pre>
+   * Partitioned DML transaction.
+   * Authorization to begin a Partitioned DML transaction requires
+   * `spanner.databases.beginPartitionedDmlTransaction` permission
+   * on the `session` resource.
+   * </pre>
+   *
+   * <code>.google.spanner.v1.TransactionOptions.PartitionedDml partitioned_dml = 3;</code>
+   */
+  boolean hasPartitionedDml();
+  /**
+   * <pre>
+   * Partitioned DML transaction.
+   * Authorization to begin a Partitioned DML transaction requires
+   * `spanner.databases.beginPartitionedDmlTransaction` permission
+   * on the `session` resource.
+   * </pre>
+   *
+   * <code>.google.spanner.v1.TransactionOptions.PartitionedDml partitioned_dml = 3;</code>
+   */
+  com.google.spanner.v1.TransactionOptions.PartitionedDml getPartitionedDml();
+  /**
+   * <pre>
+   * Partitioned DML transaction.
+   * Authorization to begin a Partitioned DML transaction requires
+   * `spanner.databases.beginPartitionedDmlTransaction` permission
+   * on the `session` resource.
+   * </pre>
+   *
+   * <code>.google.spanner.v1.TransactionOptions.PartitionedDml partitioned_dml = 3;</code>
+   */
+  com.google.spanner.v1.TransactionOptions.PartitionedDmlOrBuilder getPartitionedDmlOrBuilder();
+
+  /**
+   * <pre>
    * Transaction will not write.
    * Authorization to begin a read-only transaction requires
    * `spanner.databases.beginReadOnlyTransaction` permission
