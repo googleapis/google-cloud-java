@@ -23,6 +23,7 @@ import static com.google.common.collect.Lists.transform;
 import com.google.api.client.json.jackson2.JacksonFactory;
 import com.google.api.client.util.Data;
 import com.google.api.client.util.DateTime;
+import com.google.api.core.BetaApi;
 import com.google.api.services.storage.model.*;
 import com.google.api.services.storage.model.Bucket;
 import com.google.api.services.storage.model.Bucket.Encryption;
@@ -31,7 +32,6 @@ import com.google.api.services.storage.model.Bucket.Lifecycle.Rule;
 import com.google.api.services.storage.model.Bucket.Owner;
 import com.google.api.services.storage.model.Bucket.Versioning;
 import com.google.api.services.storage.model.Bucket.Website;
-import com.google.cloud.GcpLaunchStage;
 import com.google.cloud.storage.Acl.Entity;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
@@ -426,20 +426,20 @@ public class BucketInfo implements Serializable {
     public abstract Builder setDefaultKmsKeyName(String defaultKmsKeyName);
 
     /** Sets the default event-based hold for this bucket. */
-    @GcpLaunchStage.Beta
+    @BetaApi
     public abstract Builder setDefaultEventBasedHold(Boolean defaultEventBasedHold);
 
-    @GcpLaunchStage.Beta
+    @BetaApi
     abstract Builder setRetentionEffectiveTime(Long retentionEffectiveTime);
 
-    @GcpLaunchStage.Beta
+    @BetaApi
     abstract Builder setRetentionPolicyIsLocked(Boolean retentionPolicyIsLocked);
 
     /**
      * If policy is not locked this value can be cleared, increased, and decreased. If policy is
      * locked the retention period can only be increased.
      */
-    @GcpLaunchStage.Beta
+    @BetaApi
     public abstract Builder setRetentionPeriod(Long retentionPeriod);
 
     /** Creates a {@code BucketInfo} object. */
@@ -867,7 +867,7 @@ public class BucketInfo implements Serializable {
    * Storage#update(BucketInfo, Storage.BucketTargetOption...)} in which case the value of default
    * event-based hold will remain {@code false} for the given instance.
    */
-  @GcpLaunchStage.Beta
+  @BetaApi
   public Boolean getDefaultEventBasedHold() {
     return Data.isNull(defaultEventBasedHold) ? null : defaultEventBasedHold;
   }
@@ -876,7 +876,7 @@ public class BucketInfo implements Serializable {
    * Returns the retention effective time a policy took effect if a retention policy is defined as a
    * {@code Long}.
    */
-  @GcpLaunchStage.Beta
+  @BetaApi
   public Long getRetentionEffectiveTime() {
     return retentionEffectiveTime;
   }
@@ -897,13 +897,13 @@ public class BucketInfo implements Serializable {
    * com.google.cloud.storage.Storage.BucketField#RETENTION_POLICY} is not selected in a {@link
    * Storage#get(String, Storage.BucketGetOption...)}, and the state for this field is unknown.
    */
-  @GcpLaunchStage.Beta
+  @BetaApi
   public Boolean retentionPolicyIsLocked() {
     return Data.isNull(retentionPolicyIsLocked) ? null : retentionPolicyIsLocked;
   }
 
   /** Returns the retention policy retention period. */
-  @GcpLaunchStage.Beta
+  @BetaApi
   public Long getRetentionPeriod() {
     return retentionPeriod;
   }

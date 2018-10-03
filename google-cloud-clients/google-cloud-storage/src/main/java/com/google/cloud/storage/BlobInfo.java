@@ -21,10 +21,10 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.client.util.Data;
 import com.google.api.client.util.DateTime;
+import com.google.api.core.BetaApi;
 import com.google.api.services.storage.model.ObjectAccessControl;
 import com.google.api.services.storage.model.StorageObject;
 import com.google.api.services.storage.model.StorageObject.Owner;
-import com.google.cloud.GcpLaunchStage;
 import com.google.cloud.storage.Blob.Builder;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
@@ -260,14 +260,14 @@ public class BlobInfo implements Serializable {
     abstract Builder setKmsKeyName(String kmsKeyName);
 
     /** Sets the blob's event-based hold. */
-    @GcpLaunchStage.Beta
+    @BetaApi
     public abstract Builder setEventBasedHold(Boolean eventBasedHold);
 
     /** Sets the blob's temporary hold. */
-    @GcpLaunchStage.Beta
+    @BetaApi
     public abstract Builder setTemporaryHold(Boolean temporaryHold);
 
-    @GcpLaunchStage.Beta
+    @BetaApi
     abstract Builder setRetentionExpirationTime(Long retentionExpirationTime);
 
     /** Creates a {@code BlobInfo} object. */
@@ -778,7 +778,7 @@ public class BlobInfo implements Serializable {
    * Storage#update(BlobInfo, Storage.BlobTargetOption...)} in which case the value of event-based
    * hold will remain {@code false} for the given instance.
    */
-  @GcpLaunchStage.Beta
+  @BetaApi
   public Boolean getEventBasedHold() {
     return Data.<Boolean>isNull(eventBasedHold) ? null : eventBasedHold;
   }
@@ -805,7 +805,7 @@ public class BlobInfo implements Serializable {
    * Storage#update(BlobInfo, Storage.BlobTargetOption...)} in which case the value of temporary
    * hold will remain {@code false} for the given instance.
    */
-  @GcpLaunchStage.Beta
+  @BetaApi
   public Boolean getTemporaryHold() {
     return Data.<Boolean>isNull(temporaryHold) ? null : temporaryHold;
   }
@@ -814,7 +814,7 @@ public class BlobInfo implements Serializable {
    * Returns the retention expiration time of the blob as {@code Long}, if a retention period is
    * defined. If retention period is not defined this value returns {@code null}
    */
-  @GcpLaunchStage.Beta
+  @BetaApi
   public Long getRetentionExpirationTime() {
     return Data.<Long>isNull(retentionExpirationTime) ? null : retentionExpirationTime;
   }
