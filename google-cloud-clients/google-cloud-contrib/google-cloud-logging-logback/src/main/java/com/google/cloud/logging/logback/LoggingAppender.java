@@ -237,7 +237,8 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
 
     builder
         .addLabel(LEVEL_NAME_KEY, level.toString())
-        .addLabel(LEVEL_VALUE_KEY, String.valueOf(level.toInt()));
+        .addLabel(LEVEL_VALUE_KEY, String.valueOf(level.toInt()))
+        .addLabel("logger", e.getLoggerName());
 
     if (loggingEnhancers != null) {
       for (LoggingEnhancer enhancer : loggingEnhancers) {

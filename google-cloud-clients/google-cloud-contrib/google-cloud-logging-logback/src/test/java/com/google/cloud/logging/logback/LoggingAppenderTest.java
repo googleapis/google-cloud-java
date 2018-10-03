@@ -82,6 +82,7 @@ public class LoggingAppenderTest {
                 new ImmutableMap.Builder<String, String>()
                     .put("levelName", "WARN")
                     .put("levelValue", String.valueOf(30000L))
+                    .put("logger", "testLogger")
                     .build())
             .build();
     logging.setFlushSeverity(Severity.WARNING);
@@ -110,6 +111,7 @@ public class LoggingAppenderTest {
                 new ImmutableMap.Builder<String, String>()
                     .put("levelName", "ERROR")
                     .put("levelValue", String.valueOf(40000L))
+                    .put("logger", "testLogger")
                     .build())
             .build();
     logging.setFlushSeverity(Severity.ERROR);
@@ -147,6 +149,7 @@ public class LoggingAppenderTest {
                     .put("levelValue", String.valueOf(30000L))
                     .put("test-label-1", "test-value-1")
                     .put("test-label-2", "test-value-2")
+                    .put("logger", "testLogger")
                     .build())
             .build();
     logging.setFlushSeverity(Severity.ERROR);
@@ -189,6 +192,7 @@ public class LoggingAppenderTest {
     loggingEvent.setMessage("this is a test");
     loggingEvent.setLevel(level);
     loggingEvent.setTimeStamp(timestamp);
+    loggingEvent.setLoggerName("testLogger");
     return loggingEvent;
   }
 }
