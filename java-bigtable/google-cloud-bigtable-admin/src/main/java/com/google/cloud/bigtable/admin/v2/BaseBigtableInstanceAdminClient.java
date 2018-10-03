@@ -451,7 +451,7 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final Instance getInstance(GetInstanceRequest request) {
+  public final Instance getInstance(GetInstanceRequest request) {
     return getInstanceCallable().call(request);
   }
 
@@ -748,7 +748,7 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final void deleteInstance(DeleteInstanceRequest request) {
+  public final void deleteInstance(DeleteInstanceRequest request) {
     deleteInstanceCallable().call(request);
   }
 
@@ -996,7 +996,7 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final Cluster getCluster(GetClusterRequest request) {
+  public final Cluster getCluster(GetClusterRequest request) {
     return getClusterCallable().call(request);
   }
 
@@ -1263,7 +1263,7 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final void deleteCluster(DeleteClusterRequest request) {
+  public final void deleteCluster(DeleteClusterRequest request) {
     deleteClusterCallable().call(request);
   }
 
@@ -1478,7 +1478,7 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final AppProfile getAppProfile(GetAppProfileRequest request) {
+  public final AppProfile getAppProfile(GetAppProfileRequest request) {
     return getAppProfileCallable().call(request);
   }
 
@@ -1892,7 +1892,7 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final Policy getIamPolicy(GetIamPolicyRequest request) {
+  public final Policy getIamPolicy(GetIamPolicyRequest request) {
     return getIamPolicyCallable().call(request);
   }
 
