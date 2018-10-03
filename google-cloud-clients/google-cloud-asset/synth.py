@@ -25,7 +25,8 @@ common_templates = gcp.CommonTemplates()
 
 # tasks has two product names, and a poorly named artman yaml
 v1beta1_library = gapic.java_library(
-    'asset', 'v1beta1',
+    service='asset',
+    version='v1beta1',
     config_path='artman_cloudasset_v1beta1.yaml',
     artman_output_name='')
 

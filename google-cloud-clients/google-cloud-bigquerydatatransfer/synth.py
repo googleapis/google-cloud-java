@@ -24,12 +24,12 @@ gapic = gcp.GAPICGenerator()
 common_templates = gcp.CommonTemplates()
 
 library = gapic.java_library(
-    service='automl',
-    version='v1beta1',
-    config_path='artman_automl_v1beta1.yaml',
-    artman_output_name='')
+    service='bigquerydatatransfer',
+    version='v1',
+    config_path='/google/cloud/bigquery/datatransfer/artman_bigquerydatatransfer.yaml',
+    artman_output_name='google-cloud-bigquerydatatransfer-v1')
 
-s.copy(library / 'gapic-google-cloud-automl-v1beta1/src', 'src')
-s.copy(library / 'grpc-google-cloud-automl-v1beta1/src', '../../google-api-grpc/grpc-google-cloud-automl-v1beta1/src')
-s.copy(library / 'proto-google-cloud-automl-v1beta1/src', '../../google-api-grpc/proto-google-cloud-automl-v1beta1/src')
+s.copy(library / 'gapic-google-cloud-bigquerydatatransfer-v1/src', 'src')
+s.copy(library / 'grpc-google-cloud-bigquerydatatransfer-v1/src', '../../google-api-grpc/grpc-google-cloud-bigquerydatatransfer-v1/src')
+s.copy(library / 'proto-google-cloud-bigquerydatatransfer-v1/src', '../../google-api-grpc/proto-google-cloud-bigquerydatatransfer-v1/src')
 
