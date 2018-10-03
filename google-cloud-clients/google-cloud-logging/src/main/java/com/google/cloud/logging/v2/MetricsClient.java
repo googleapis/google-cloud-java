@@ -362,7 +362,7 @@ public class MetricsClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final LogMetric getLogMetric(GetLogMetricRequest request) {
+  public final LogMetric getLogMetric(GetLogMetricRequest request) {
     return getLogMetricCallable().call(request);
   }
 
@@ -673,7 +673,7 @@ public class MetricsClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final void deleteLogMetric(DeleteLogMetricRequest request) {
+  public final void deleteLogMetric(DeleteLogMetricRequest request) {
     deleteLogMetricCallable().call(request);
   }
 

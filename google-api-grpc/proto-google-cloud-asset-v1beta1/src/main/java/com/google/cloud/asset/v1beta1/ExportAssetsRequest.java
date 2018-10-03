@@ -136,9 +136,9 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object parent_;
   /**
    * <pre>
-   * Required. The relative name of the root asset. Can only be an organization
-   * number (such as "organizations/123"), or a project id (such as
-   * "projects/my-project-id") or a project number (such as "projects/12345").
+   * Required. The relative name of the root asset. This can only be an organization
+   * number (such as "organizations/123"), a project ID (such as
+   * "projects/my-project-id"), or a project number (such as "projects/12345").
    * </pre>
    *
    * <code>string parent = 1;</code>
@@ -157,9 +157,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The relative name of the root asset. Can only be an organization
-   * number (such as "organizations/123"), or a project id (such as
-   * "projects/my-project-id") or a project number (such as "projects/12345").
+   * Required. The relative name of the root asset. This can only be an organization
+   * number (such as "organizations/123"), a project ID (such as
+   * "projects/my-project-id"), or a project number (such as "projects/12345").
    * </pre>
    *
    * <code>string parent = 1;</code>
@@ -227,7 +227,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.LazyStringList assetTypes_;
   /**
    * <pre>
-   * A list of asset types of which to take a snapshot for. Example:
+   * A list of asset types of which to take a snapshot for. For example:
    * "google.compute.disk". If specified, only matching assets will be returned.
    * </pre>
    *
@@ -239,7 +239,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * A list of asset types of which to take a snapshot for. Example:
+   * A list of asset types of which to take a snapshot for. For example:
    * "google.compute.disk". If specified, only matching assets will be returned.
    * </pre>
    *
@@ -250,7 +250,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * A list of asset types of which to take a snapshot for. Example:
+   * A list of asset types of which to take a snapshot for. For example:
    * "google.compute.disk". If specified, only matching assets will be returned.
    * </pre>
    *
@@ -261,7 +261,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * A list of asset types of which to take a snapshot for. Example:
+   * A list of asset types of which to take a snapshot for. For example:
    * "google.compute.disk". If specified, only matching assets will be returned.
    * </pre>
    *
@@ -759,9 +759,9 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object parent_ = "";
     /**
      * <pre>
-     * Required. The relative name of the root asset. Can only be an organization
-     * number (such as "organizations/123"), or a project id (such as
-     * "projects/my-project-id") or a project number (such as "projects/12345").
+     * Required. The relative name of the root asset. This can only be an organization
+     * number (such as "organizations/123"), a project ID (such as
+     * "projects/my-project-id"), or a project number (such as "projects/12345").
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -780,9 +780,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The relative name of the root asset. Can only be an organization
-     * number (such as "organizations/123"), or a project id (such as
-     * "projects/my-project-id") or a project number (such as "projects/12345").
+     * Required. The relative name of the root asset. This can only be an organization
+     * number (such as "organizations/123"), a project ID (such as
+     * "projects/my-project-id"), or a project number (such as "projects/12345").
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -802,9 +802,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The relative name of the root asset. Can only be an organization
-     * number (such as "organizations/123"), or a project id (such as
-     * "projects/my-project-id") or a project number (such as "projects/12345").
+     * Required. The relative name of the root asset. This can only be an organization
+     * number (such as "organizations/123"), a project ID (such as
+     * "projects/my-project-id"), or a project number (such as "projects/12345").
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -821,9 +821,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The relative name of the root asset. Can only be an organization
-     * number (such as "organizations/123"), or a project id (such as
-     * "projects/my-project-id") or a project number (such as "projects/12345").
+     * Required. The relative name of the root asset. This can only be an organization
+     * number (such as "organizations/123"), a project ID (such as
+     * "projects/my-project-id"), or a project number (such as "projects/12345").
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -836,9 +836,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The relative name of the root asset. Can only be an organization
-     * number (such as "organizations/123"), or a project id (such as
-     * "projects/my-project-id") or a project number (such as "projects/12345").
+     * Required. The relative name of the root asset. This can only be an organization
+     * number (such as "organizations/123"), a project ID (such as
+     * "projects/my-project-id"), or a project number (such as "projects/12345").
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -1053,7 +1053,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of asset types of which to take a snapshot for. Example:
+     * A list of asset types of which to take a snapshot for. For example:
      * "google.compute.disk". If specified, only matching assets will be returned.
      * </pre>
      *
@@ -1065,7 +1065,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of asset types of which to take a snapshot for. Example:
+     * A list of asset types of which to take a snapshot for. For example:
      * "google.compute.disk". If specified, only matching assets will be returned.
      * </pre>
      *
@@ -1076,7 +1076,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of asset types of which to take a snapshot for. Example:
+     * A list of asset types of which to take a snapshot for. For example:
      * "google.compute.disk". If specified, only matching assets will be returned.
      * </pre>
      *
@@ -1087,7 +1087,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of asset types of which to take a snapshot for. Example:
+     * A list of asset types of which to take a snapshot for. For example:
      * "google.compute.disk". If specified, only matching assets will be returned.
      * </pre>
      *
@@ -1099,7 +1099,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of asset types of which to take a snapshot for. Example:
+     * A list of asset types of which to take a snapshot for. For example:
      * "google.compute.disk". If specified, only matching assets will be returned.
      * </pre>
      *
@@ -1117,7 +1117,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of asset types of which to take a snapshot for. Example:
+     * A list of asset types of which to take a snapshot for. For example:
      * "google.compute.disk". If specified, only matching assets will be returned.
      * </pre>
      *
@@ -1135,7 +1135,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of asset types of which to take a snapshot for. Example:
+     * A list of asset types of which to take a snapshot for. For example:
      * "google.compute.disk". If specified, only matching assets will be returned.
      * </pre>
      *
@@ -1151,7 +1151,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of asset types of which to take a snapshot for. Example:
+     * A list of asset types of which to take a snapshot for. For example:
      * "google.compute.disk". If specified, only matching assets will be returned.
      * </pre>
      *
@@ -1165,7 +1165,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of asset types of which to take a snapshot for. Example:
+     * A list of asset types of which to take a snapshot for. For example:
      * "google.compute.disk". If specified, only matching assets will be returned.
      * </pre>
      *

@@ -645,7 +645,7 @@ public class ProjectClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  private final Project getProject(GetProjectHttpRequest request) {
+  public final Project getProject(GetProjectHttpRequest request) {
     return getProjectCallable().call(request);
   }
 
@@ -742,7 +742,7 @@ public class ProjectClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  private final Project getXpnHostProject(GetXpnHostProjectHttpRequest request) {
+  public final Project getXpnHostProject(GetXpnHostProjectHttpRequest request) {
     return getXpnHostProjectCallable().call(request);
   }
 

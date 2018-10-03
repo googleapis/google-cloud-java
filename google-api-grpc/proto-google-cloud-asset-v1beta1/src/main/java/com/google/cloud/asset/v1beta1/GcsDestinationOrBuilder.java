@@ -9,10 +9,9 @@ public interface GcsDestinationOrBuilder extends
 
   /**
    * <pre>
-   * The path of the GCS objects. It's the same path that is used by gsutil, for
-   * example: "gs://bucket_name/object_path". See:
-   * https://cloud.google.com/storage/docs/viewing-editing-metadata for more
-   * information.
+   * The path of the Cloud Storage objects. It's the same path that is used by
+   *  gsutil. For example: "gs://bucket_name/object_path". See [Viewing and Editing Object Metadata](https://cloud.google.com/storage/docs/viewing-editing-metadata)
+   * for more information.
    * </pre>
    *
    * <code>string uri = 1;</code>
@@ -20,10 +19,9 @@ public interface GcsDestinationOrBuilder extends
   java.lang.String getUri();
   /**
    * <pre>
-   * The path of the GCS objects. It's the same path that is used by gsutil, for
-   * example: "gs://bucket_name/object_path". See:
-   * https://cloud.google.com/storage/docs/viewing-editing-metadata for more
-   * information.
+   * The path of the Cloud Storage objects. It's the same path that is used by
+   *  gsutil. For example: "gs://bucket_name/object_path". See [Viewing and Editing Object Metadata](https://cloud.google.com/storage/docs/viewing-editing-metadata)
+   * for more information.
    * </pre>
    *
    * <code>string uri = 1;</code>

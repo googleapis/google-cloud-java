@@ -377,7 +377,7 @@ public class ConfigClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final LogSink getSink(GetSinkRequest request) {
+  public final LogSink getSink(GetSinkRequest request) {
     return getSinkCallable().call(request);
   }
 
@@ -826,7 +826,7 @@ public class ConfigClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final void deleteSink(DeleteSinkRequest request) {
+  public final void deleteSink(DeleteSinkRequest request) {
     deleteSinkCallable().call(request);
   }
 
@@ -1062,7 +1062,7 @@ public class ConfigClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final LogExclusion getExclusion(GetExclusionRequest request) {
+  public final LogExclusion getExclusion(GetExclusionRequest request) {
     return getExclusionCallable().call(request);
   }
 
@@ -1415,7 +1415,7 @@ public class ConfigClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final void deleteExclusion(DeleteExclusionRequest request) {
+  public final void deleteExclusion(DeleteExclusionRequest request) {
     deleteExclusionCallable().call(request);
   }
 
