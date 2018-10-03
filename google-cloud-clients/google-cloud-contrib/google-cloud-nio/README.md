@@ -117,7 +117,7 @@ The simplest way to get started is with `Paths` and `Files`:
 If you know the paths will point to Google Cloud Storage, you can also use the
 direct formulation:
 
-    try (CloudStorageFileSystem fs = CloudStorageFileSystem.forBucket("bucket") {
+    try (CloudStorageFileSystem fs = CloudStorageFileSystem.forBucket("bucket")) {
       Path path = fs.getPath("lolcat.csv");
       List<String> lines = Files.readAllLines(path, StandardCharsets.UTF_8);
     }
