@@ -80,23 +80,23 @@ public final class AssetServiceProto {
       "nationH\000B\r\n\013destination\"\035\n\016GcsDestinatio" +
       "n\022\013\n\003uri\030\001 \001(\t*I\n\013ContentType\022\034\n\030CONTENT" +
       "_TYPE_UNSPECIFIED\020\000\022\014\n\010RESOURCE\020\001\022\016\n\nIAM" +
-      "_POLICY\020\0022\337\003\n\014AssetService\022\311\001\n\014ExportAss" +
+      "_POLICY\020\0022\340\003\n\014AssetService\022\311\001\n\014ExportAss" +
       "ets\022/.google.cloud.asset.v1beta1.ExportA" +
       "ssetsRequest\032\035.google.longrunning.Operat" +
       "ion\"i\202\323\344\223\002c\")/v1beta1/{parent=projects/*" +
       "}:exportAssets:\001*Z3\"./v1beta1/{parent=or" +
-      "ganizations/*}:exportAssets:\001*\022\202\002\n\025Batch" +
+      "ganizations/*}:exportAssets:\001*\022\203\002\n\025Batch" +
       "GetAssetsHistory\0228.google.cloud.asset.v1" +
       "beta1.BatchGetAssetsHistoryRequest\0329.goo" +
       "gle.cloud.asset.v1beta1.BatchGetAssetsHi" +
-      "storyResponse\"t\202\323\344\223\002n\0222/v1beta1/{parent=" +
-      "projects/*}:batchGetAssetsHistoryZ8\0226/v1" +
+      "storyResponse\"u\202\323\344\223\002o\0222/v1beta1/{parent=" +
+      "projects/*}:batchGetAssetsHistoryZ9\0227/v1" +
       "beta1/{parent=organizations/*}:batchGetA" +
-      "ssetHistoryB\260\001\n\036com.google.cloud.asset.v" +
-      "1beta1B\021AssetServiceProtoP\001Z?google.gola" +
-      "ng.org/genproto/googleapis/cloud/asset/v" +
-      "1beta1;asset\252\002\032Google.Cloud.Asset.V1Beta" +
-      "1\312\002\032Google\\Cloud\\Asset\\V1beta1b\006proto3"
+      "ssetsHistoryB\260\001\n\036com.google.cloud.asset." +
+      "v1beta1B\021AssetServiceProtoP\001Z?google.gol" +
+      "ang.org/genproto/googleapis/cloud/asset/" +
+      "v1beta1;asset\252\002\032Google.Cloud.Asset.V1Bet" +
+      "a1\312\002\032Google\\Cloud\\Asset\\V1beta1b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

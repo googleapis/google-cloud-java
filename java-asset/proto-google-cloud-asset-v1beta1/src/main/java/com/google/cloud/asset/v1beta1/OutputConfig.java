@@ -131,7 +131,7 @@ private static final long serialVersionUID = 0L;
   public static final int GCS_DESTINATION_FIELD_NUMBER = 1;
   /**
    * <pre>
-   * Destination on Google Cloud Storage (GCS).
+   * Destination on Cloud Storage.
    * </pre>
    *
    * <code>.google.cloud.asset.v1beta1.GcsDestination gcs_destination = 1;</code>
@@ -141,7 +141,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Destination on Google Cloud Storage (GCS).
+   * Destination on Cloud Storage.
    * </pre>
    *
    * <code>.google.cloud.asset.v1beta1.GcsDestination gcs_destination = 1;</code>
@@ -154,7 +154,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Destination on Google Cloud Storage (GCS).
+   * Destination on Cloud Storage.
    * </pre>
    *
    * <code>.google.cloud.asset.v1beta1.GcsDestination gcs_destination = 1;</code>
@@ -520,7 +520,7 @@ private static final long serialVersionUID = 0L;
         com.google.cloud.asset.v1beta1.GcsDestination, com.google.cloud.asset.v1beta1.GcsDestination.Builder, com.google.cloud.asset.v1beta1.GcsDestinationOrBuilder> gcsDestinationBuilder_;
     /**
      * <pre>
-     * Destination on Google Cloud Storage (GCS).
+     * Destination on Cloud Storage.
      * </pre>
      *
      * <code>.google.cloud.asset.v1beta1.GcsDestination gcs_destination = 1;</code>
@@ -530,7 +530,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Destination on Google Cloud Storage (GCS).
+     * Destination on Cloud Storage.
      * </pre>
      *
      * <code>.google.cloud.asset.v1beta1.GcsDestination gcs_destination = 1;</code>
@@ -550,7 +550,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Destination on Google Cloud Storage (GCS).
+     * Destination on Cloud Storage.
      * </pre>
      *
      * <code>.google.cloud.asset.v1beta1.GcsDestination gcs_destination = 1;</code>
@@ -570,7 +570,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Destination on Google Cloud Storage (GCS).
+     * Destination on Cloud Storage.
      * </pre>
      *
      * <code>.google.cloud.asset.v1beta1.GcsDestination gcs_destination = 1;</code>
@@ -588,7 +588,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Destination on Google Cloud Storage (GCS).
+     * Destination on Cloud Storage.
      * </pre>
      *
      * <code>.google.cloud.asset.v1beta1.GcsDestination gcs_destination = 1;</code>
@@ -614,7 +614,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Destination on Google Cloud Storage (GCS).
+     * Destination on Cloud Storage.
      * </pre>
      *
      * <code>.google.cloud.asset.v1beta1.GcsDestination gcs_destination = 1;</code>
@@ -637,7 +637,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Destination on Google Cloud Storage (GCS).
+     * Destination on Cloud Storage.
      * </pre>
      *
      * <code>.google.cloud.asset.v1beta1.GcsDestination gcs_destination = 1;</code>
@@ -647,7 +647,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Destination on Google Cloud Storage (GCS).
+     * Destination on Cloud Storage.
      * </pre>
      *
      * <code>.google.cloud.asset.v1beta1.GcsDestination gcs_destination = 1;</code>
@@ -664,7 +664,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Destination on Google Cloud Storage (GCS).
+     * Destination on Cloud Storage.
      * </pre>
      *
      * <code>.google.cloud.asset.v1beta1.GcsDestination gcs_destination = 1;</code>
