@@ -461,7 +461,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final Subscription getSubscription(GetSubscriptionRequest request) {
+  public final Subscription getSubscription(GetSubscriptionRequest request) {
     return getSubscriptionCallable().call(request);
   }
 
@@ -764,7 +764,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final void deleteSubscription(DeleteSubscriptionRequest request) {
+  public final void deleteSubscription(DeleteSubscriptionRequest request) {
     deleteSubscriptionCallable().call(request);
   }
 
@@ -1823,7 +1823,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final void deleteSnapshot(DeleteSnapshotRequest request) {
+  public final void deleteSnapshot(DeleteSnapshotRequest request) {
     deleteSnapshotCallable().call(request);
   }
 
@@ -2029,7 +2029,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final Policy getIamPolicy(GetIamPolicyRequest request) {
+  public final Policy getIamPolicy(GetIamPolicyRequest request) {
     return getIamPolicyCallable().call(request);
   }
 

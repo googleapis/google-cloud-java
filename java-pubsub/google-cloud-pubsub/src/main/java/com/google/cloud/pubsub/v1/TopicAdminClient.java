@@ -248,7 +248,7 @@ public class TopicAdminClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final Topic createTopic(Topic request) {
+  public final Topic createTopic(Topic request) {
     return createTopicCallable().call(request);
   }
 
@@ -517,7 +517,7 @@ public class TopicAdminClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final Topic getTopic(GetTopicRequest request) {
+  public final Topic getTopic(GetTopicRequest request) {
     return getTopicCallable().call(request);
   }
 
@@ -882,7 +882,7 @@ public class TopicAdminClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final void deleteTopic(DeleteTopicRequest request) {
+  public final void deleteTopic(DeleteTopicRequest request) {
     deleteTopicCallable().call(request);
   }
 
@@ -1034,7 +1034,7 @@ public class TopicAdminClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final Policy getIamPolicy(GetIamPolicyRequest request) {
+  public final Policy getIamPolicy(GetIamPolicyRequest request) {
     return getIamPolicyCallable().call(request);
   }
 
