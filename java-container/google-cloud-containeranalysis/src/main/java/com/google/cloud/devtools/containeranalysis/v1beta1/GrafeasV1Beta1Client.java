@@ -258,7 +258,7 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final Occurrence getOccurrence(GetOccurrenceRequest request) {
+  public final Occurrence getOccurrence(GetOccurrenceRequest request) {
     return getOccurrenceCallable().call(request);
   }
 
@@ -492,7 +492,7 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final void deleteOccurrence(DeleteOccurrenceRequest request) {
+  public final void deleteOccurrence(DeleteOccurrenceRequest request) {
     deleteOccurrenceCallable().call(request);
   }
 
@@ -920,7 +920,7 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final Note getOccurrenceNote(GetOccurrenceNoteRequest request) {
+  public final Note getOccurrenceNote(GetOccurrenceNoteRequest request) {
     return getOccurrenceNoteCallable().call(request);
   }
 
@@ -1011,7 +1011,7 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final Note getNote(GetNoteRequest request) {
+  public final Note getNote(GetNoteRequest request) {
     return getNoteCallable().call(request);
   }
 
@@ -1236,7 +1236,7 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final void deleteNote(DeleteNoteRequest request) {
+  public final void deleteNote(DeleteNoteRequest request) {
     deleteNoteCallable().call(request);
   }
 
