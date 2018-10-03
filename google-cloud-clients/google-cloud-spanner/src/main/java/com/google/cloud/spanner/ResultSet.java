@@ -17,7 +17,6 @@
 package com.google.cloud.spanner;
 
 import com.google.spanner.v1.ResultSetStats;
-import javax.annotation.Nullable;
 
 /**
  * Provides access to the data returned by a Cloud Spanner read or query. {@code ResultSet} allows a
@@ -60,17 +59,13 @@ public interface ResultSet extends AutoCloseable, StructReader {
   @Override
   void close();
 
-
   /**
    * Returns the {@link ResultSetStats} for the query only if the query was executed in either the
    * {@code PLAN} or the {@code PROFILE} mode via the {@link ReadContext#analyzeQuery(Statement,
-   * com.google.cloud.spanner.ReadContext.QueryAnalyzeMode)} method or for DML statements in
-   * {@link ReadContext#executeQuery(Statement, QueryOption)}. Attempts to call this method on
-   * a {@code ResultSet} not obtained from {@code analyzeQuery} or {@code executeQuery} will return
-   * a {@code null} {@code ResultSetStats}. This method must be called after {@link #next()} has
-   * returned @{code false}. Calling it before that will result in {@code null}
-   * {@code ResultSetStats} too.
+   * com.google.cloud.spanner.ReadContext.QueryAnalyzeMode)} method. Attempts to call this method on
+   * a {@code ResultSet} not obtained from {@code analyzeQuery} result in an {@code
+   * UnsupportedOperationException}. This method must be called after {@link #next()} has
+   * returned @{code false}. Calling it before that will result in an {@code IllegalStateException}.
    */
-  @Nullable
   ResultSetStats getStats();
 }

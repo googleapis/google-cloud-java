@@ -34,7 +34,6 @@ import com.google.spanner.v1.PartitionQueryRequest;
 import com.google.spanner.v1.PartitionReadRequest;
 import com.google.spanner.v1.PartitionResponse;
 import com.google.spanner.v1.ReadRequest;
-import com.google.spanner.v1.ResultSet;
 import com.google.spanner.v1.RollbackRequest;
 import com.google.spanner.v1.Session;
 import com.google.spanner.v1.Transaction;
@@ -200,8 +199,6 @@ public interface SpannerRpc extends ServiceRpc {
 
   StreamingCall read(
       ReadRequest request, ResultStreamConsumer consumer, @Nullable Map<Option, ?> options);
-
-  ResultSet executeQuery(ExecuteSqlRequest request, @Nullable Map<Option, ?> options);
 
   StreamingCall executeQuery(
       ExecuteSqlRequest request, ResultStreamConsumer consumer, @Nullable Map<Option, ?> options);
