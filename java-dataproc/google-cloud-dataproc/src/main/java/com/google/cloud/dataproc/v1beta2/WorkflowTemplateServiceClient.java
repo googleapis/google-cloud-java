@@ -651,7 +651,7 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final WorkflowTemplate updateWorkflowTemplate(UpdateWorkflowTemplateRequest request) {
+  public final WorkflowTemplate updateWorkflowTemplate(UpdateWorkflowTemplateRequest request) {
     return updateWorkflowTemplateCallable().call(request);
   }
 
