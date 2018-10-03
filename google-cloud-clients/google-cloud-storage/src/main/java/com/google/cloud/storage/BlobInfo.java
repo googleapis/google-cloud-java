@@ -260,11 +260,14 @@ public class BlobInfo implements Serializable {
     abstract Builder setKmsKeyName(String kmsKeyName);
 
     /** Sets the blob's event-based hold. */
+    @GcpLaunchStage.Beta
     public abstract Builder setEventBasedHold(Boolean eventBasedHold);
 
     /** Sets the blob's temporary hold. */
+    @GcpLaunchStage.Beta
     public abstract Builder setTemporaryHold(Boolean temporaryHold);
 
+    @GcpLaunchStage.Beta
     abstract Builder setRetentionExpirationTime(Long retentionExpirationTime);
 
     /** Creates a {@code BlobInfo} object. */
@@ -775,6 +778,7 @@ public class BlobInfo implements Serializable {
    * Storage#update(BlobInfo, Storage.BlobTargetOption...)} in which case the value of event-based
    * hold will remain {@code false} for the given instance.
    */
+  @GcpLaunchStage.Beta
   public Boolean getEventBasedHold() {
     return Data.<Boolean>isNull(eventBasedHold) ? null : eventBasedHold;
   }
@@ -801,6 +805,7 @@ public class BlobInfo implements Serializable {
    * Storage#update(BlobInfo, Storage.BlobTargetOption...)} in which case the value of temporary
    * hold will remain {@code false} for the given instance.
    */
+  @GcpLaunchStage.Beta
   public Boolean getTemporaryHold() {
     return Data.<Boolean>isNull(temporaryHold) ? null : temporaryHold;
   }
@@ -809,6 +814,7 @@ public class BlobInfo implements Serializable {
    * Returns the retention expiration time of the blob as {@code Long}, if a retention period is
    * defined. If retention period is not defined this value returns {@code null}
    */
+  @GcpLaunchStage.Beta
   public Long getRetentionExpirationTime() {
     return Data.<Long>isNull(retentionExpirationTime) ? null : retentionExpirationTime;
   }
