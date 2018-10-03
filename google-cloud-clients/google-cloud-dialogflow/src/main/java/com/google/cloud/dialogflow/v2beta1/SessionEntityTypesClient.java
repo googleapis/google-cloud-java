@@ -381,7 +381,7 @@ public class SessionEntityTypesClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final SessionEntityType getSessionEntityType(GetSessionEntityTypeRequest request) {
+  public final SessionEntityType getSessionEntityType(GetSessionEntityTypeRequest request) {
     return getSessionEntityTypeCallable().call(request);
   }
 
@@ -675,7 +675,7 @@ public class SessionEntityTypesClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final void deleteSessionEntityType(DeleteSessionEntityTypeRequest request) {
+  public final void deleteSessionEntityType(DeleteSessionEntityTypeRequest request) {
     deleteSessionEntityTypeCallable().call(request);
   }
 

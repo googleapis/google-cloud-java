@@ -56,7 +56,7 @@ public interface QueueOrBuilder extends
   /**
    * <pre>
    * App Engine HTTP queue.
-   * An App Engine queue is a queue that has an [AppEngineHttpQeueue][] type.
+   * An App Engine queue is a queue that has an [AppEngineHttpQueue][google.cloud.tasks.v2beta3.AppEngineHttpQueue] type.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.AppEngineHttpQueue app_engine_http_queue = 3;</code>
@@ -65,7 +65,7 @@ public interface QueueOrBuilder extends
   /**
    * <pre>
    * App Engine HTTP queue.
-   * An App Engine queue is a queue that has an [AppEngineHttpQeueue][] type.
+   * An App Engine queue is a queue that has an [AppEngineHttpQueue][google.cloud.tasks.v2beta3.AppEngineHttpQueue] type.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.AppEngineHttpQueue app_engine_http_queue = 3;</code>
@@ -74,7 +74,7 @@ public interface QueueOrBuilder extends
   /**
    * <pre>
    * App Engine HTTP queue.
-   * An App Engine queue is a queue that has an [AppEngineHttpQeueue][] type.
+   * An App Engine queue is a queue that has an [AppEngineHttpQueue][google.cloud.tasks.v2beta3.AppEngineHttpQueue] type.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.AppEngineHttpQueue app_engine_http_queue = 3;</code>

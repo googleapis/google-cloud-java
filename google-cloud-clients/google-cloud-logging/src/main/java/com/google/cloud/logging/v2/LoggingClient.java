@@ -245,7 +245,7 @@ public class LoggingClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final void deleteLog(DeleteLogRequest request) {
+  public final void deleteLog(DeleteLogRequest request) {
     deleteLogCallable().call(request);
   }
 

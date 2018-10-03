@@ -804,7 +804,7 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final void deleteTable(DeleteTableRequest request) {
+  public final void deleteTable(DeleteTableRequest request) {
     deleteTableCallable().call(request);
   }
 
@@ -1073,7 +1073,7 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final GenerateConsistencyTokenResponse generateConsistencyToken(
+  public final GenerateConsistencyTokenResponse generateConsistencyToken(
       GenerateConsistencyTokenRequest request) {
     return generateConsistencyTokenCallable().call(request);
   }
@@ -1498,7 +1498,7 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final Snapshot getSnapshot(GetSnapshotRequest request) {
+  public final Snapshot getSnapshot(GetSnapshotRequest request) {
     return getSnapshotCallable().call(request);
   }
 
@@ -1771,7 +1771,7 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final void deleteSnapshot(DeleteSnapshotRequest request) {
+  public final void deleteSnapshot(DeleteSnapshotRequest request) {
     deleteSnapshotCallable().call(request);
   }
 

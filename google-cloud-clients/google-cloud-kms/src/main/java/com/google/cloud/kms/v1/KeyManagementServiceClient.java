@@ -635,7 +635,7 @@ public class KeyManagementServiceClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final KeyRing getKeyRing(GetKeyRingRequest request) {
+  public final KeyRing getKeyRing(GetKeyRingRequest request) {
     return getKeyRingCallable().call(request);
   }
 
@@ -733,7 +733,7 @@ public class KeyManagementServiceClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final CryptoKey getCryptoKey(GetCryptoKeyRequest request) {
+  public final CryptoKey getCryptoKey(GetCryptoKeyRequest request) {
     return getCryptoKeyCallable().call(request);
   }
 
@@ -830,7 +830,7 @@ public class KeyManagementServiceClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final CryptoKeyVersion getCryptoKeyVersion(GetCryptoKeyVersionRequest request) {
+  public final CryptoKeyVersion getCryptoKeyVersion(GetCryptoKeyVersionRequest request) {
     return getCryptoKeyVersionCallable().call(request);
   }
 
@@ -1963,7 +1963,7 @@ public class KeyManagementServiceClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final CryptoKeyVersion destroyCryptoKeyVersion(DestroyCryptoKeyVersionRequest request) {
+  public final CryptoKeyVersion destroyCryptoKeyVersion(DestroyCryptoKeyVersionRequest request) {
     return destroyCryptoKeyVersionCallable().call(request);
   }
 
@@ -2093,7 +2093,7 @@ public class KeyManagementServiceClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final CryptoKeyVersion restoreCryptoKeyVersion(RestoreCryptoKeyVersionRequest request) {
+  public final CryptoKeyVersion restoreCryptoKeyVersion(RestoreCryptoKeyVersionRequest request) {
     return restoreCryptoKeyVersionCallable().call(request);
   }
 
@@ -2655,7 +2655,7 @@ public class KeyManagementServiceClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final Policy getIamPolicy(GetIamPolicyRequest request) {
+  public final Policy getIamPolicy(GetIamPolicyRequest request) {
     return getIamPolicyCallable().call(request);
   }
 
