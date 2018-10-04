@@ -1,6 +1,9 @@
 Google Cloud Java Client for Cloud Pub/Sub Notifications
 =================================
 
+[![Kokoro CI](http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/master.svg)](http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/master.html)
+[![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-notification.svg)](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-notification.svg)
+[![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/google-cloud-java)
 
 -  [Product Documentation](https://cloud.google.com/storage/docs/pubsub-notifications)
 -  [Client Library Documentation](https://googlecloudplatform.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/notification/package-summary.html)
