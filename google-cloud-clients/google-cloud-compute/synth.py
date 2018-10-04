@@ -16,7 +16,6 @@
 
 import os
 import synthtool as s
-import synthtool.gcp as gcp
 import logging
 
 from synthtool import log
