@@ -325,6 +325,31 @@ public final class BigtableTableAdminClient implements AutoCloseable {
   }
 
   /**
+   * Checks if the table exists
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * if(client.exists("my-table")) {
+   *   "Table exists";
+   * }
+   * }</pre>
+   */
+  public boolean exists(String tableId) {
+    List<TableName> tableNames = this.listTables();
+    for (TableName tableName : tableNames) {
+      String table = tableName.toString();
+      String separator = "/";
+      int index = table.lastIndexOf(separator);
+      String name = table.substring(index + separator.length());
+      if (name.equals(tableId)) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  /**
    * Gets the table metadata by tableId.
    *
    * <p>Sample code:

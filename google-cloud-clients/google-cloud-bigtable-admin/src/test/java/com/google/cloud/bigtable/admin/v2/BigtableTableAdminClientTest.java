@@ -40,6 +40,7 @@ import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -302,5 +303,64 @@ public class BigtableTableAdminClientTest {
 
     // Verify
     assertThat(wasCalled.get()).isTrue();
+  }
+
+  @Test
+  public void testExistsTrue() {
+    // Setup
+    com.google.bigtable.admin.v2.CreateTableRequest expectedRequest =
+        com.google.bigtable.admin.v2.CreateTableRequest.newBuilder()
+            .setParent(INSTANCE_NAME.toString()).setTableId(TABLE_NAME.getTable())
+            .setTable(com.google.bigtable.admin.v2.Table.getDefaultInstance()).build();
+
+    com.google.bigtable.admin.v2.Table expectedResponse =
+        com.google.bigtable.admin.v2.Table.newBuilder().setName(TABLE_NAME.toString()).build();
+
+    Mockito.when(mockCreateTableCallable.futureCall(expectedRequest))
+        .thenReturn(ApiFutures.immediateFuture(expectedResponse));
+
+    com.google.bigtable.admin.v2.ListTablesRequest listTablesRequest =
+        com.google.bigtable.admin.v2.ListTablesRequest.newBuilder()
+            .setParent(INSTANCE_NAME.toString()).build();
+
+    List<com.google.bigtable.admin.v2.Table> expectedProtos = Lists.newArrayList();
+    expectedProtos.add(
+        com.google.bigtable.admin.v2.Table.newBuilder().setName(TABLE_NAME.toString()).build());
+
+    ListTablesPage page0 = Mockito.mock(ListTablesPage.class);
+    Mockito.when(page0.getValues()).thenReturn(expectedProtos);
+    ListTablesPagedResponse response0 = Mockito.mock(ListTablesPagedResponse.class);
+    Mockito.when(response0.getPage()).thenReturn(page0);
+
+    Mockito.when(mockListTableCallable.futureCall(listTablesRequest)).thenReturn(ApiFutures.immediateFuture(response0));
+
+    // Execute
+    boolean found = adminClient.exists(TABLE_NAME.getTable());
+
+    // Verify
+    Assert.assertTrue(found);
+  }
+
+  @Test
+  public void testExistsFalse() {
+    // Setup
+    com.google.bigtable.admin.v2.ListTablesRequest listTablesRequest =
+        com.google.bigtable.admin.v2.ListTablesRequest.newBuilder()
+            .setParent(INSTANCE_NAME.toString()).build();
+
+    List<com.google.bigtable.admin.v2.Table> expectedProtos = Lists.newArrayList();
+
+    ListTablesPage page0 = Mockito.mock(ListTablesPage.class);
+    Mockito.when(page0.getValues()).thenReturn(expectedProtos);
+    ListTablesPagedResponse response0 = Mockito.mock(ListTablesPagedResponse.class);
+    Mockito.when(response0.getPage()).thenReturn(page0);
+
+    Mockito.when(mockListTableCallable.futureCall(listTablesRequest)).thenReturn(ApiFutures.immediateFuture(response0));
+
+    // Execute
+    boolean found = adminClient.exists(TABLE_NAME.getTable());
+
+    // Verify
+    Assert.assertFalse(found);
   }
 }
