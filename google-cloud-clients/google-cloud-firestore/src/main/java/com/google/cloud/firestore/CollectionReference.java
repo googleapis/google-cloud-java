@@ -19,7 +19,14 @@ package com.google.cloud.firestore;
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
+import com.google.api.gax.rpc.ApiException;
+import com.google.api.gax.rpc.ApiExceptions;
+import com.google.cloud.firestore.v1beta1.FirestoreClient.ListDocumentsPagedResponse;
 import com.google.common.base.Preconditions;
+import com.google.firestore.v1beta1.Document;
+import com.google.firestore.v1beta1.DocumentMask;
+import com.google.firestore.v1beta1.ListDocumentsRequest;
+import java.util.Iterator;
 import java.util.Map;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -102,6 +109,62 @@ public class CollectionReference extends Query {
         documentPath.isDocument(),
         String.format("Path should point to a Document Reference: %s", path));
     return new DocumentReference(firestore, documentPath);
+  }
+
+  /**
+   * Retrieves the list of documents in this collection.
+   *
+   * <p>The document references returned may include references to "missing documents", i.e.
+   * document locations that have no document present but which contain subcollections with
+   * documents. Attempting to read such a document reference (e.g. via `get()` or `onSnapshot()`)
+   * will return a `DocumentSnapshot` whose `exists()` method returns false.
+   *
+   * @return {Promise<DocumentReference[]>} @return {Promise<DocumentReference[]>} The list of
+   *     documents in this * collection.
+   */
+  @Nonnull
+  public Iterable<DocumentReference> listDocuments() {
+    ListDocumentsRequest.Builder request = ListDocumentsRequest.newBuilder();
+    request.setParent(path.getParent().toString());
+    request.setCollectionId(this.getId());
+    request.setMask(DocumentMask.getDefaultInstance());
+    request.setShowMissing(true);
+
+    final ListDocumentsPagedResponse response;
+
+    try {
+      response =
+          ApiExceptions.callAndTranslateApiException(
+              firestore.sendRequest(
+                  request.build(), firestore.getClient().listDocumentsPagedCallable()));
+    } catch (ApiException exception) {
+      throw FirestoreException.apiException(exception);
+    }
+
+    return new Iterable<DocumentReference>() {
+      @Override
+      @Nonnull
+      public Iterator<DocumentReference> iterator() {
+        final Iterator<Document> iterator = response.iterateAll().iterator();
+        return new Iterator<DocumentReference>() {
+          @Override
+          public boolean hasNext() {
+            return iterator.hasNext();
+          }
+
+          @Override
+          public DocumentReference next() {
+            ResourcePath path = ResourcePath.create(iterator.next().getName());
+            return document(path.getId());
+          }
+
+          @Override
+          public void remove() {
+            throw new UnsupportedOperationException("remove");
+          }
+        };
+      }
+    };
   }
 
   /**
