@@ -552,7 +552,7 @@ public class ITSystemTest {
   }
 
   @Test
-  public void getCollections() throws Exception {
+  public void listCollections() throws Exception {
     // We test with 21 collections since 20 collections are by default returned in a single paged
     // response.
     String[] collections =
@@ -568,7 +568,7 @@ public class ITSystemTest {
     }
     batch.commit().get();
 
-    Iterable<CollectionReference> collectionRefs = randomDoc.getCollections();
+    Iterable<CollectionReference> collectionRefs = randomDoc.listCollections();
 
     int count = 0;
     for (CollectionReference collectionRef : collectionRefs) {
