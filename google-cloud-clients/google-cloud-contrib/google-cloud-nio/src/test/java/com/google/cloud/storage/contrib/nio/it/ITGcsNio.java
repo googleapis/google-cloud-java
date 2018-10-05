@@ -611,6 +611,9 @@ public class ITGcsNio {
       assertThat(Files.isDirectory(fs.getPath("dir/deeper"))).isTrue();
       assertThat(Files.isDirectory(fs.getPath("/dir/deeper/"))).isTrue();
       assertThat(Files.isDirectory(fs.getPath("/dir/deeper"))).isTrue();
+      // the root folder is a directory
+      assertThat(Files.isDirectory(fs.getPath("/"))).isTrue();
+      assertThat(Files.isDirectory(fs.getPath(""))).isTrue();
 
       // clean up
       for (Path path : paths) {
