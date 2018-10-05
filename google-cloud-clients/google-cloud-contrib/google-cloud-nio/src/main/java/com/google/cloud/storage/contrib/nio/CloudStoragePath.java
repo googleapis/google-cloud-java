@@ -19,7 +19,10 @@ package com.google.cloud.storage.contrib.nio;
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.api.gax.paging.Page;
+import com.google.cloud.storage.Blob;
 import com.google.cloud.storage.BlobId;
+import com.google.cloud.storage.Storage;
 import com.google.common.collect.UnmodifiableIterator;
 
 import java.io.File;
@@ -83,8 +86,34 @@ public final class CloudStoragePath implements Path {
     return path.seemsLikeADirectory();
   }
 
-  boolean seemsLikeADirectoryAndUsePseudoDirectories() {
-    return path.seemsLikeADirectory() && fileSystem.config().usePseudoDirectories();
+  boolean seemsLikeADirectoryAndUsePseudoDirectories(Storage storage) {
+    if (!fileSystem.config().usePseudoDirectories()) {
+      return false;
+    }
+    if (path.seemsLikeADirectory()) {
+      return true;
+    }
+    // fancy case: the file name doesn't end in slash, but we've been asked to have pseudo dirs.
+    // Let's see if there are any files with this prefix.
+    if (null==storage) {
+      // we are in a context where we don't want to access the storage, so we conservatively
+      // say this isn't a directory.
+      return false;
+    }
+    Page<Blob> list = storage.list(
+        this.bucket(),
+        Storage.BlobListOption.prefix(path.removeBeginningSeparator().toString()),
+        Storage.BlobListOption.pageSize(1));
+    for (Blob b : list.getValues()) {
+      // if this blob starts with our prefix and then a slash, then prefix is indeed a folder!
+      if (null==b.getBlobId()) continue;
+      String name = b.getBlobId().getName();
+      if (("/" + name).startsWith(this.path.toAbsolutePath() + "/")) {
+        return true;
+      }
+    }
+    // no match, so it's not a folder
+    return false;
   }
 
   @Override

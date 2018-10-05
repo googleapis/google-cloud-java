@@ -332,7 +332,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
       }
     }
     CloudStoragePath cloudPath = CloudStorageUtil.checkPath(path);
-    if (cloudPath.seemsLikeADirectoryAndUsePseudoDirectories()) {
+    if (cloudPath.seemsLikeADirectoryAndUsePseudoDirectories(storage)) {
       throw new CloudStoragePseudoDirectoryException(cloudPath);
     }
     return CloudStorageReadChannel.create(
@@ -348,7 +348,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
       throws IOException {
     initStorage();
     CloudStoragePath cloudPath = CloudStorageUtil.checkPath(path);
-    if (cloudPath.seemsLikeADirectoryAndUsePseudoDirectories()) {
+    if (cloudPath.seemsLikeADirectoryAndUsePseudoDirectories(storage)) {
       throw new CloudStoragePseudoDirectoryException(cloudPath);
     }
     BlobId file = cloudPath.getBlobId();
@@ -439,7 +439,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
   public boolean deleteIfExists(Path path) throws IOException {
     initStorage();
     CloudStoragePath cloudPath = CloudStorageUtil.checkPath(path);
-    if (cloudPath.seemsLikeADirectoryAndUsePseudoDirectories()) {
+    if (cloudPath.seemsLikeADirectoryAndUsePseudoDirectories(storage)) {
       // if the "folder" is empty then we're fine, otherwise complain
       // that we cannot act on folders.
       try (DirectoryStream<Path> paths = Files.newDirectoryStream(path)) {
@@ -567,10 +567,10 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
             "File systems associated with paths don't agree on pseudo-directories.");
       }
     }
-    if (fromPath.seemsLikeADirectoryAndUsePseudoDirectories()) {
+    if (fromPath.seemsLikeADirectoryAndUsePseudoDirectories(storage)) {
       throw new CloudStoragePseudoDirectoryException(fromPath);
     }
-    if (toPath.seemsLikeADirectoryAndUsePseudoDirectories()) {
+    if (toPath.seemsLikeADirectoryAndUsePseudoDirectories(storage)) {
       throw new CloudStoragePseudoDirectoryException(toPath);
     }
 
@@ -665,7 +665,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
     while (true) {
       try {
         CloudStoragePath cloudPath = CloudStorageUtil.checkPath(path);
-        if ( cloudPath.seemsLikeADirectoryAndUsePseudoDirectories() ) {
+        if ( cloudPath.seemsLikeADirectoryAndUsePseudoDirectories(storage) ) {
           return;
         }
         boolean nullId;
@@ -708,7 +708,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
     while (true) {
       try {
         CloudStoragePath cloudPath = CloudStorageUtil.checkPath(path);
-        if ( cloudPath.seemsLikeADirectoryAndUsePseudoDirectories() ) {
+        if ( cloudPath.seemsLikeADirectoryAndUsePseudoDirectories(storage) ) {
           @SuppressWarnings("unchecked")
           A result = (A) new CloudStoragePseudoDirectoryAttributes(cloudPath);
           return result;

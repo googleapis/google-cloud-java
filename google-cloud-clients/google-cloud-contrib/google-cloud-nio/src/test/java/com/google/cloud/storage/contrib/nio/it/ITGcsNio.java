@@ -582,6 +582,43 @@ public class ITGcsNio {
     assertThat(objectNames).containsExactly(BIG_FILE, SML_FILE);
   }
 
+  @Test
+  public void testFakeDirectories() throws IOException {
+    try (FileSystem fs = getTestBucket()) {
+      List<Path> paths = new ArrayList<>();
+      paths.add(fs.getPath("dir/angel"));
+      paths.add(fs.getPath("dir/deeper/fish"));
+      for (Path path : paths) {
+        fillFile(storage, BUCKET, path.toString(), SML_SIZE);
+      }
+
+      // ends with slash, must be a directory
+      assertThat(Files.isDirectory(fs.getPath("dir/"))).isTrue();
+      // files are not directories
+      assertThat(Files.isDirectory(fs.getPath("dir/angel"))).isFalse();
+      // directories are recognized even without the trailing "/"
+      assertThat(Files.isDirectory(fs.getPath("dir"))).isTrue();
+      // also works for absolute paths
+      assertThat(Files.isDirectory(fs.getPath("/dir"))).isTrue();
+      // non-existent files are not directories (but they don't make us crash)
+      assertThat(Files.isDirectory(fs.getPath("di"))).isFalse();
+      assertThat(Files.isDirectory(fs.getPath("dirs"))).isFalse();
+      assertThat(Files.isDirectory(fs.getPath("dir/deep"))).isFalse();
+      assertThat(Files.isDirectory(fs.getPath("dir/deeper/fi"))).isFalse();
+      assertThat(Files.isDirectory(fs.getPath("/dir/deeper/fi"))).isFalse();
+      // also works for subdirectories
+      assertThat(Files.isDirectory(fs.getPath("dir/deeper/"))).isTrue();
+      assertThat(Files.isDirectory(fs.getPath("dir/deeper"))).isTrue();
+      assertThat(Files.isDirectory(fs.getPath("/dir/deeper/"))).isTrue();
+      assertThat(Files.isDirectory(fs.getPath("/dir/deeper"))).isTrue();
+
+      // clean up
+      for (Path path : paths) {
+        Files.delete(path);
+      }
+    }
+  }
+
   /**
    * Delete the given directory and all of its contents if non-empty.
    * @param directory the directory to delete
