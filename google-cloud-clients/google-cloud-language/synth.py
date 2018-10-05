@@ -16,9 +16,6 @@
 
 import synthtool as s
 import synthtool.gcp as gcp
-import logging
-
-logging.basicConfig(level=logging.DEBUG)
 
 gapic = gcp.GAPICGenerator()
 common_templates = gcp.CommonTemplates()
@@ -33,4 +30,3 @@ for version in ["v1", "v1beta2"]:
     s.copy(library / f'gapic-google-cloud-language-{version}/src', 'src')
     s.copy(library / f'grpc-google-cloud-language-{version}/src', f'../../google-api-grpc/grpc-google-cloud-language-{version}/src')
     s.copy(library / f'proto-google-cloud-language-{version}/src', f'../../google-api-grpc/proto-google-cloud-language-{version}/src')
-

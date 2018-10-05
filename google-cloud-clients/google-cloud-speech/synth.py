@@ -16,9 +16,6 @@
 
 import synthtool as s
 import synthtool.gcp as gcp
-import logging
-
-logging.basicConfig(level=logging.DEBUG)
 
 gapic = gcp.GAPICGenerator()
 common_templates = gcp.CommonTemplates()

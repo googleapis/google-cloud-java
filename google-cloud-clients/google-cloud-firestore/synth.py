@@ -16,9 +16,6 @@
 
 import synthtool as s
 import synthtool.gcp as gcp
-import logging
-
-logging.basicConfig(level=logging.DEBUG)
 
 gapic = gcp.GAPICGenerator()
 common_templates = gcp.CommonTemplates()
@@ -32,4 +29,3 @@ library = gapic.java_library(
 s.copy(library / 'gapic-google-cloud-firestore-v1beta1/src', 'src')
 s.copy(library / 'grpc-google-cloud-firestore-v1beta1/src', '../../google-api-grpc/grpc-google-cloud-firestore-v1beta1/src')
 s.copy(library / 'proto-google-cloud-firestore-v1beta1/src', '../../google-api-grpc/proto-google-cloud-firestore-v1beta1/src')
-
