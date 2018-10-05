@@ -106,8 +106,13 @@ public final class CloudStoragePath implements Path {
         Storage.BlobListOption.pageSize(1));
     for (Blob b : list.getValues()) {
       // if this blob starts with our prefix and then a slash, then prefix is indeed a folder!
-      if (null==b.getBlobId()) continue;
+      if (null==b.getBlobId()) {
+        continue;
+      }
       String name = b.getBlobId().getName();
+      if (null == name) {
+        continue;
+      }
       if (("/" + name).startsWith(this.path.toAbsolutePath() + "/")) {
         return true;
       }
