@@ -292,7 +292,7 @@ public final class ITDMLTest {
   @Test
   public void standardDMLWithExecuteSQL() {
     executeQuery(DML_COUNT, INSERT_DML);
-    executeQuery(DML_COUNT, UPDATE_DML);
-    executeQuery(DML_COUNT, DELETE_DML);
+    // checks for multi-stmts within a txn, therefore also verifying seqNo.
+    executeQuery(DML_COUNT * 2, UPDATE_DML, DELETE_DML);
   }
 }
