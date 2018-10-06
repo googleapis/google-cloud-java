@@ -119,8 +119,7 @@ public class CollectionReference extends Query {
    * documents. Attempting to read such a document reference (e.g. via `get()` or `onSnapshot()`)
    * will return a `DocumentSnapshot` whose `exists()` method returns false.
    *
-   * @return {Promise<DocumentReference[]>} @return {Promise<DocumentReference[]>} The list of
-   *     documents in this * collection.
+   * @return The list of documents in this collection.
    */
   @Nonnull
   public Iterable<DocumentReference> listDocuments() {
