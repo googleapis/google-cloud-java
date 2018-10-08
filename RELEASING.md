@@ -114,7 +114,8 @@ To push a release version
    "-SNAPSHOT" suffix) and then run `mvn clean deploy -DskipTests=true --settings ~/.m2/settings.xml -P release`
    command. It will build and deploy artifacts to the staging repository.
 
-  **Note:** you may need to specify the stagingProfileId with `-DstagintProfileId=3187e4f20d328b`
+  **Note:** you may need to specify the stagingProfileId with `-DstagingProfileId=3187e4f20d328b`
+  **Note:** you may need to specify the GPG tty with `GPG_TTY=$(tty)`
 
 10. Uncomment the `nexus-staging-maven-plugin` plugin definition from step 8; This plugin is
     needed to release the artifacts. Run `mvn nexus-staging:release` to release the artifacts.
