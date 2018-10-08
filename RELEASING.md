@@ -69,57 +69,70 @@ Create a Maven settings file
 
 Make sure you are using Maven version 3.3 or higher to support the Nexus plugin required to stage a release.
 
+Install releasetool
+-------------------
+See [releasetool](https://github.com/googleapis/releasetool) for installation instructions. You will
+need python 3.6+ to run this tool.
+
 To push a release version
 =========================
 
 1. Make sure the team agrees that it is time to release. 
 
-2. Look over all of the commits since the last release and make sure there are no breaking changes on the public surface. If there are any breaking changes, create and merge a new PR to revert the surface back.
+2. Look over all of the commits since the last release and make sure there are no breaking changes
+   on the public surface. If there are any breaking changes, create and merge a new PR to revert the
+   surface back.
 
-  Note - this should just be a scan of the public surface that would appear in Java doc. Implementation changes, README changes, and snippet changes can all be skipped for this check.
+  Note - this should just be a scan of the public surface that would appear in Java doc.
+  Implementation changes, README changes, and snippet changes can all be skipped for this check.
 
 3. Verify that all unit and integration tests for the last commit have passed.
 
-4. Run `python utilities/bump_versions.py next_release minor` from the repository's base directory. (If there are only bug fixes and no additions to the surface, use `patch` instead of `minor`.) Alternatively, update the versions in `versions.txt` to the correct versions for the next release.
+4. Run `releasetool start`. Select "minor" or "patch" for the release type. This will bump the
+   artifact versions, ask you to edit release notes, and create the release pull request.
 
-5. Run `python utilities/replace_versions.py` from the repository's base directory. This updates the versions in all `pom.xml` and `README.md` files in preparation for a release. Commit these files locally:
-  
-  ```
-  git add .
-  git commit -m "Release [VERSION HERE]"
-  ```
+  Note - be sure to make these notes nice as they will be used for the release notes as well.
 
-6. Create and merge in a PR to reflect the updated project version.
+5. Run `git clean -x -f -d` to put the repo in a clean state.
 
-7. Run `git clean -x -f -d` to put the repo in a clean state.
+6. Locally build the repo by running `mvn install -DskipTests`.
 
-8. Locally build the repo by running `mvn install -DskipTests`.
+7. Run `python utilities/stage_sites.py`. This script checks out `gh-pages` branch of the
+   repository, builds the documentation site and javadocs, copies them to the branch and commits it.
+   This script does not push the docs and it must be done manually on the later step. The script
+   assumes that there is no directory called `tmp_gh-pages` in the repository root. If it is
+   present, remove it before running the script.
 
-9. Run `python utilities/stage_sites.py`.
-This script checks out `gh-pages` branch of the repository, builds the documentation site and javadocs, copies them to the branch and commits it. This script does not push the docs and it must be done manually on the later step. The script assumes that there is no directory called `tmp_gh-pages` in the repository root. If it is present, remove it before running the script.
+8. Locally edit the root `pom.xml` so that `mvn deploy` works:
+  1. Under `<modules>`, comment out `google-cloud-examples`, `google-cloud-testing`, and
+     `google-cloud-util`.
+  2. Comment out the `nexus-staging-maven-plugin` plugin definition at the end of the file.
 
-10. Locally edit the root `pom.xml` so that `mvn deploy` works: 1. Under `<modules>`, comment out `google-cloud-examples`, `google-cloud-testing`, and `google-cloud-util`. 2. Comment out the `nexus-staging-maven-plugin` plugin definition at the end of the file. Don't commit these changes.
+  *Don't commit these changes.*
 
-11. Check that you are not trying to release a SNAPSHOT build (the artifacts versions do not have "-SNAPSHOT" suffix) and then run `mvn clean deploy -DskipTests=true --settings ~/.m2/settings.xml -P release` command. It will build and deploy artifacts to the staging repository. 
+9. Check that you are not trying to release a SNAPSHOT build (the artifacts versions do not have
+   "-SNAPSHOT" suffix) and then run `mvn clean deploy -DskipTests=true --settings ~/.m2/settings.xml -P release`
+   command. It will build and deploy artifacts to the staging repository.
 
-12. Uncomment the `nexus-staging-maven-plugin` plugin definition from step 10.2; This plugin is needed to release the artifacts. Run `mvn nexus-staging:release` to release the artifacts.
+  Note: you may need to specify the stagingProfileId with `-DstagintProfileId=3187e4f20d328b`
 
-13. Revert the local edits to your `pom.xml` performed a couple steps above by running `git checkout pom.xml`.
+10. Uncomment the `nexus-staging-maven-plugin` plugin definition from step 8; This plugin is
+    needed to release the artifacts. Run `mvn nexus-staging:release` to release the artifacts.
 
-14. Run `cd tmp_gh-pages && git push && cd ..` to push the previously generated docs (step 8).
+11. Revert the local edits to your `pom.xml` performed a couple steps above by running `git checkout pom.xml`.
 
-15. Run `rm -rf tmp_gh-pages` to remove the generated docs directory from your local machine. 
+12. Run `cd tmp_gh-pages && git push && cd ..` to push the previously generated docs (step 7).
 
-16. Publish a release on Github manually.
-Go to the [releases page](https://github.com/GoogleCloudPlatform/google-cloud-java/releases) and open the appropriate release draft. Make sure the "Tag Version" is `vX.Y.Z` and the "Release Title" is `X.Y.Z`, where `X.Y.Z` is the release version as listed in the `pom.xml` files. 
-  
-  Add the commits since the last release into the release draft. Try to group them into sections with related changes. Anything that is a breaking change needs to be marked with `*breaking change*`. Such changes are only allowed for alpha/beta modules and `@BetaApi` features.
+13. Run `rm -rf tmp_gh-pages` to remove the generated docs directory from your local machine.
 
-  Ensure that the format is consistent with previous releases (for an example, see the [0.1.0 release](https://github.com/GoogleCloudPlatform/google-cloud-java/releases/tag/v0.1.0)).  After adding any missing updates and reformatting as necessary, publish the draft.
+14. Publish a release on Github. Run `releasetool tag`. It will list the last few merged PRs. Select
+    the newly merged release PR. Releasetool will create the GitHub release with notes extracted
+    from the pull request and tag the new release.
 
-17. Run `python utilities/bump_versions.py next_snapshot patch` to include "-SNAPSHOT" in the current project version (Alternatively, update the versions in `versions.txt` to the correct versions for the next release.). Then, run `python utilities/replace_versions.py` to update the `pom.xml` files. (If you see updates in `README.md` files at this step, you probably did something wrong.)
+15. Bump the next snapshot version. Run `releasetool start`. Select "snapshot" when prompted for the
+    release type. This will bump the artifact versions and create a pull request.
 
-18. Create and merge in another PR to reflect the updated project version.
+16. Review and submit the PR.
 
 Improvements
 ============
