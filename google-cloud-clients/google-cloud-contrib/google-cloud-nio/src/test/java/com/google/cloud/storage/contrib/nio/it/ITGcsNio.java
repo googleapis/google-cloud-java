@@ -565,7 +565,6 @@ public class ITGcsNio {
       paths.add(fs.getPath("dir/dir2/another_angel"));
       paths.add(fs.getPath("atroot"));
       paths.addAll(goodPaths);
-      goodPaths.add(fs.getPath("dir/dir2/"));
       for (Path path : paths) {
         fillFile(storage, BUCKET, path.toString(), SML_SIZE);
       }
@@ -574,6 +573,8 @@ public class ITGcsNio {
       for (Path p : relativePaths) {
         assertWithMessage("Should have been relative: " + p.toString()).that(p.isAbsolute()).isFalse();
       }
+      // The 5 paths are:
+      // dir/, dir/angel, dir/alone, dir/dir2/, dir/dir2/another_angel.
       assertThat(relativePaths.size()).isEqualTo(5);
 
       // Given an absolute path as starting point, walkFileTree must return only relative paths.
