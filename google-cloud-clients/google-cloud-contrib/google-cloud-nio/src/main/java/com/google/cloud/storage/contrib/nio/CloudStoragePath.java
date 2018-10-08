@@ -95,7 +95,7 @@ public final class CloudStoragePath implements Path {
     }
     // fancy case: the file name doesn't end in slash, but we've been asked to have pseudo dirs.
     // Let's see if there are any files with this prefix.
-    if (null==storage) {
+    if (storage == null) {
       // we are in a context where we don't want to access the storage, so we conservatively
       // say this isn't a directory.
       return false;
@@ -106,11 +106,11 @@ public final class CloudStoragePath implements Path {
         Storage.BlobListOption.pageSize(1));
     for (Blob b : list.getValues()) {
       // if this blob starts with our prefix and then a slash, then prefix is indeed a folder!
-      if (null==b.getBlobId()) {
+      if (b.getBlobId() == null) {
         continue;
       }
       String name = b.getBlobId().getName();
-      if (null == name) {
+      if (name == null) {
         continue;
       }
       if (("/" + name).startsWith(this.path.toAbsolutePath() + "/")) {
