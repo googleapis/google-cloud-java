@@ -780,7 +780,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
       try {
         String prePrefix = cloudPath.toRealPath().toString();
         // we can recognize paths without the final "/" as folders,
-        // but storage.list doesn't do the right thing with those, we need to prepend a "/".
+        // but storage.list doesn't do the right thing with those, we need to append a "/".
         if (!prePrefix.endsWith("/")) {
           prePrefix = prePrefix + "/";
         }
