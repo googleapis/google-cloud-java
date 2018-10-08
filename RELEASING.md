@@ -83,7 +83,7 @@ To push a release version
    on the public surface. If there are any breaking changes, create and merge a new PR to revert the
    surface back.
 
-  Note - this should just be a scan of the public surface that would appear in Java doc.
+  **Note:** this should just be a scan of the public surface that would appear in Java doc.
   Implementation changes, README changes, and snippet changes can all be skipped for this check.
 
 3. Verify that all unit and integration tests for the last commit have passed.
@@ -91,7 +91,7 @@ To push a release version
 4. Run `releasetool start`. Select "minor" or "patch" for the release type. This will bump the
    artifact versions, ask you to edit release notes, and create the release pull request.
 
-  Note - be sure to make these notes nice as they will be used for the release notes as well.
+  **Note:** be sure to make these notes nice as they will be used for the release notes as well.
 
 5. Run `git clean -x -f -d` to put the repo in a clean state.
 
@@ -108,13 +108,13 @@ To push a release version
      `google-cloud-util`.
   2. Comment out the `nexus-staging-maven-plugin` plugin definition at the end of the file.
 
-  *Don't commit these changes.*
+  **Don't commit these changes.**
 
 9. Check that you are not trying to release a SNAPSHOT build (the artifacts versions do not have
    "-SNAPSHOT" suffix) and then run `mvn clean deploy -DskipTests=true --settings ~/.m2/settings.xml -P release`
    command. It will build and deploy artifacts to the staging repository.
 
-  Note: you may need to specify the stagingProfileId with `-DstagintProfileId=3187e4f20d328b`
+  **Note:** you may need to specify the stagingProfileId with `-DstagintProfileId=3187e4f20d328b`
 
 10. Uncomment the `nexus-staging-maven-plugin` plugin definition from step 8; This plugin is
     needed to release the artifacts. Run `mvn nexus-staging:release` to release the artifacts.
