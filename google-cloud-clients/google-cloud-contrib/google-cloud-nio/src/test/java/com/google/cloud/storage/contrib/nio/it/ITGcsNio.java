@@ -570,14 +570,14 @@ public class ITGcsNio {
         fillFile(storage, BUCKET, path.toString(), SML_SIZE);
       }
       // Given a relative path as starting point, walkFileTree must return only relative paths.
-      List<Path> relativePaths = postTraversalWalker.walkFileTree(fs.getPath("dir/"));
+      List<Path> relativePaths = PostTraversalWalker.walkFileTree(fs.getPath("dir/"));
       for (Path p : relativePaths) {
         assertWithMessage("Should have been relative: " + p.toString()).that(p.isAbsolute()).isFalse();
       }
       assertThat(relativePaths.size()).isEqualTo(5);
 
       // Given an absolute path as starting point, walkFileTree must return only relative paths.
-      List<Path> absolutePaths = postTraversalWalker.walkFileTree(fs.getPath("/dir/"));
+      List<Path> absolutePaths = PostTraversalWalker.walkFileTree(fs.getPath("/dir/"));
       for (Path p : absolutePaths) {
         assertWithMessage("Should have been absolute: " + p.toString()).that(p.isAbsolute()).isTrue();
       }
@@ -667,12 +667,12 @@ public class ITGcsNio {
     return "-" + rnd.nextInt(99999);
   }
 
-  private static class postTraversalWalker extends SimpleFileVisitor<Path> {
+  private static class PostTraversalWalker extends SimpleFileVisitor<Path> {
     private final List<Path> paths = new ArrayList<>();
 
     // Traverse the tree, return the list of files and folders.
     static public ImmutableList<Path> walkFileTree(Path start) throws IOException {
-      postTraversalWalker walker = new postTraversalWalker();
+      PostTraversalWalker walker = new PostTraversalWalker();
       Files.walkFileTree(start, walker);
       return walker.getPaths();
     }
