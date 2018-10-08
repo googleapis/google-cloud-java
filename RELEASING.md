@@ -126,12 +126,12 @@ To push a release version
 
 13. Run `rm -rf tmp_gh-pages` to remove the generated docs directory from your local machine.
 
-14. Publish a release on Github. Run `releasetool tag`. It will list the last few merged PRs. Select
-    the newly merged release PR. Releasetool will create the GitHub release with notes extracted
-    from the pull request and tag the new release.
+14. Run `releasetool tag` to publish a release on Github. It will list the last few merged PRs.
+    Select the newly merged release PR. Releasetool will create the GitHub release with notes
+    extracted from the pull request and tag the new release.
 
-15. Bump the next snapshot version. Run `releasetool start`. Select "snapshot" when prompted for the
-    release type. This will bump the artifact versions and create a pull request.
+15. Run `releasetool start` to bump the next snapshot version. Select "snapshot" when prompted for
+    the release type. This will bump the artifact versions and create a pull request.
 
 16. Review and submit the PR.
 
