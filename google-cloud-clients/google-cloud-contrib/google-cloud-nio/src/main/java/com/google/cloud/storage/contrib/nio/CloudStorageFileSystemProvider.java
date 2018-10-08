@@ -778,7 +778,13 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
     // Loop will terminate via an exception if all retries are exhausted
     while (true) {
       try {
-        final String prefix = cloudPath.toRealPath().toString();
+        String prePrefix = cloudPath.toRealPath().toString();
+        // we can recognize paths without the final "/" as folders,
+        // but storage.list doesn't do the right thing with those, we need to prepend a "/".
+        if (!prePrefix.endsWith("/")) {
+          prePrefix = prePrefix + "/";
+        }
+        final String prefix = prePrefix;
         Page<Blob> dirList;
         if (isNullOrEmpty(userProject)) {
           dirList = storage.list(cloudPath.bucket(),

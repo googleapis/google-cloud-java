@@ -17,6 +17,7 @@
 package com.google.cloud.storage.contrib.nio.it;
 
 import static com.google.common.truth.Truth.assertThat;
+import static com.google.common.truth.Truth.assertWithMessage;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
 import com.google.api.client.http.HttpResponseException;
@@ -520,17 +521,15 @@ public class ITGcsNio {
       }
 
       List<Path> got = new ArrayList<>();
-      for (Path path : Files.newDirectoryStream(fs.getPath("/dir/"))) {
-        got.add(path);
+      for (String folder : new String[]{"/dir/", "/dir", "dir/", "dir"}) {
+        got.clear();
+        for (Path path : Files.newDirectoryStream(fs.getPath(folder))) {
+          got.add(path);
+        }
+        assertWithMessage("Listing " + folder+": ").that(got).containsExactlyElementsIn(goodPaths);
       }
-      assertThat(got).containsExactlyElementsIn(goodPaths);
 
-      // Must also work with relative path
-      got.clear();
-      for (Path path : Files.newDirectoryStream(fs.getPath("dir/"))) {
-        got.add(path);
-      }
-      assertThat(got).containsExactlyElementsIn(goodPaths);
+
       // clean up
       for (Path path : paths) {
         Files.delete(path);
