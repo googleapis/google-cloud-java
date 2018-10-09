@@ -333,7 +333,8 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
       }
     }
     CloudStoragePath cloudPath = CloudStorageUtil.checkPath(path);
-    if (cloudPath.seemsLikeADirectoryAndUsePseudoDirectories(storage)) {
+    // passing false since we just want to check if it ends with /
+    if (cloudPath.seemsLikeADirectoryAndUsePseudoDirectories(null)) {
       throw new CloudStoragePseudoDirectoryException(cloudPath);
     }
     return CloudStorageReadChannel.create(
@@ -349,7 +350,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
       throws IOException {
     initStorage();
     CloudStoragePath cloudPath = CloudStorageUtil.checkPath(path);
-    if (cloudPath.seemsLikeADirectoryAndUsePseudoDirectories(storage)) {
+    if (cloudPath.seemsLikeADirectoryAndUsePseudoDirectories(null)) {
       throw new CloudStoragePseudoDirectoryException(cloudPath);
     }
     BlobId file = cloudPath.getBlobId();
@@ -568,10 +569,13 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
             "File systems associated with paths don't agree on pseudo-directories.");
       }
     }
-    if (fromPath.seemsLikeADirectoryAndUsePseudoDirectories(storage)) {
+    // We refuse to use paths that end in '/'. If the user puts a folder name
+    // but without the '/', they'll get whatever error GCS will return normally
+    // (if any).
+    if (fromPath.seemsLikeADirectoryAndUsePseudoDirectories(null)) {
       throw new CloudStoragePseudoDirectoryException(fromPath);
     }
-    if (toPath.seemsLikeADirectoryAndUsePseudoDirectories(storage)) {
+    if (toPath.seemsLikeADirectoryAndUsePseudoDirectories(null)) {
       throw new CloudStoragePseudoDirectoryException(toPath);
     }
 

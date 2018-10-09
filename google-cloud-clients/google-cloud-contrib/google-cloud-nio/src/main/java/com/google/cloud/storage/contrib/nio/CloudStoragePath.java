@@ -86,6 +86,10 @@ public final class CloudStoragePath implements Path {
     return path.seemsLikeADirectory();
   }
 
+  // True if this path may be a directory (and pseudo-directories are enabled)
+  // Checks:
+  // 1) does the path end in / ?
+  // 2) (optional, if storage is set) is there a file whose name starts with path+/ ?
   boolean seemsLikeADirectoryAndUsePseudoDirectories(Storage storage) {
     if (!fileSystem.config().usePseudoDirectories()) {
       return false;
