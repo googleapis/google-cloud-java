@@ -100,9 +100,16 @@ public final class CloudStoragePath implements Path {
       // say this isn't a directory.
       return false;
     }
+    // Using the provided path + "/" as a prefix, can we find one file? If so, the path
+    // is a directory.
+    String prefix = path.removeBeginningSeparator().toString();
+    if (!prefix.endsWith("/")) {
+      prefix += "/";
+    }
     Page<Blob> list = storage.list(
         this.bucket(),
-        Storage.BlobListOption.prefix(path.removeBeginningSeparator().toString()),
+        Storage.BlobListOption.prefix(prefix),
+        // we only look at the first result, so no need for a bigger page.
         Storage.BlobListOption.pageSize(1));
     for (Blob b : list.getValues()) {
       // if this blob starts with our prefix and then a slash, then prefix is indeed a folder!
@@ -117,7 +124,7 @@ public final class CloudStoragePath implements Path {
         return true;
       }
     }
-    // no match, so it's not a folder
+    // no match, so it's not a directory
     return false;
   }
 

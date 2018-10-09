@@ -565,20 +565,15 @@ public class ITGcsNio {
       BUCKET, CloudStorageConfiguration.builder().permitEmptyPathComponents(true)
       .build(), storageOptions);
 
-    // test absolute path
-    Path rootPath = fs.getPath("");
-    List<String> objectNames = new ArrayList<String>();
-    for (Path path : Files.newDirectoryStream(rootPath)) {
-      objectNames.add(path.toString());
+    // test absolute path, relative path.
+    for (String check : new String[]{".", "/", ""}) {
+      Path rootPath = fs.getPath(check);
+      List<String> objectNames = new ArrayList<>();
+      for (Path path : Files.newDirectoryStream(rootPath)) {
+        objectNames.add(path.toString());
+      }
+      assertWithMessage("Listing " + check + ": ").that(objectNames).containsExactly(BIG_FILE, SML_FILE);
     }
-    assertThat(objectNames).containsExactly(BIG_FILE, SML_FILE);
-    
-    // test relative path
-    rootPath = fs.getPath(".");
-    for (Path path : Files.newDirectoryStream(rootPath)) {
-      objectNames.add(path.toString());
-    }
-    assertThat(objectNames).containsExactly(BIG_FILE, SML_FILE);
   }
 
   @Test
@@ -586,14 +581,19 @@ public class ITGcsNio {
     try (FileSystem fs = getTestBucket()) {
       List<Path> paths = new ArrayList<>();
       paths.add(fs.getPath("dir/angel"));
+      paths.add(fs.getPath("dir/deepera"));
+      paths.add(fs.getPath("dir/deeperb"));
+      paths.add(fs.getPath("dir/deeper_"));
+      paths.add(fs.getPath("dir/deeper.sea/hasfish"));
       paths.add(fs.getPath("dir/deeper/fish"));
       for (Path path : paths) {
-        fillFile(storage, BUCKET, path.toString(), SML_SIZE);
+        Files.createFile(path);
       }
 
       // ends with slash, must be a directory
       assertThat(Files.isDirectory(fs.getPath("dir/"))).isTrue();
       // files are not directories
+      assertThat(Files.exists(fs.getPath("dir/angel"))).isTrue();
       assertThat(Files.isDirectory(fs.getPath("dir/angel"))).isFalse();
       // directories are recognized even without the trailing "/"
       assertThat(Files.isDirectory(fs.getPath("dir"))).isTrue();
@@ -610,6 +610,13 @@ public class ITGcsNio {
       assertThat(Files.isDirectory(fs.getPath("dir/deeper"))).isTrue();
       assertThat(Files.isDirectory(fs.getPath("/dir/deeper/"))).isTrue();
       assertThat(Files.isDirectory(fs.getPath("/dir/deeper"))).isTrue();
+      // dot and .. folders are directories
+      assertThat(Files.isDirectory(fs.getPath("dir/deeper/."))).isTrue();
+      assertThat(Files.isDirectory(fs.getPath("dir/deeper/.."))).isTrue();
+      // dots in the name are fine
+      assertThat(Files.isDirectory(fs.getPath("dir/deeper.sea/"))).isTrue();
+      assertThat(Files.isDirectory(fs.getPath("dir/deeper.sea"))).isTrue();
+      assertThat(Files.isDirectory(fs.getPath("dir/deeper.seax"))).isFalse();
       // the root folder is a directory
       assertThat(Files.isDirectory(fs.getPath("/"))).isTrue();
       assertThat(Files.isDirectory(fs.getPath(""))).isTrue();

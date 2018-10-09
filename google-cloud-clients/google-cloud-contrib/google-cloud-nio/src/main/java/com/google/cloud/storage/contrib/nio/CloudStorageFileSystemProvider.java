@@ -34,6 +34,7 @@ import com.google.cloud.storage.StorageException;
 import com.google.cloud.storage.StorageOptions;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.MoreObjects;
+import com.google.common.base.Strings;
 import com.google.common.collect.AbstractIterator;
 import com.google.common.net.UrlEscapers;
 import com.google.common.primitives.Ints;
@@ -665,9 +666,6 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
     while (true) {
       try {
         CloudStoragePath cloudPath = CloudStorageUtil.checkPath(path);
-        if ( cloudPath.seemsLikeADirectoryAndUsePseudoDirectories(storage) ) {
-          return;
-        }
         boolean nullId;
         if (isNullOrEmpty(userProject)) {
           nullId = storage.get(
@@ -682,6 +680,11 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
               == null;
         }
         if (nullId) {
+          if ( cloudPath.seemsLikeADirectoryAndUsePseudoDirectories(storage) ) {
+            // there is no such file, but we're not signalling error because the
+            // path is a pseudo-directory.
+            return;
+          }
           throw new NoSuchFileException(path.toString());
         }
         break;
@@ -689,6 +692,14 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
         // Will rethrow a StorageException if all retries/reopens are exhausted
         retryHandler.handleStorageException(exs);
         // we're being aggressive by retrying even on scenarios where we'd normally reopen.
+      } catch (IllegalArgumentException exs) {
+        if ( CloudStorageUtil.checkPath(path).seemsLikeADirectoryAndUsePseudoDirectories(storage) ) {
+          // there is no such file, but we're not signalling error because the
+          // path is a pseudo-directory.
+          return;
+        }
+        // Other cause for IAE, forward the exception.
+        throw exs;
       }
     }
   }
@@ -708,19 +719,34 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
     while (true) {
       try {
         CloudStoragePath cloudPath = CloudStorageUtil.checkPath(path);
-        if ( cloudPath.seemsLikeADirectoryAndUsePseudoDirectories(storage) ) {
-          @SuppressWarnings("unchecked")
-          A result = (A) new CloudStoragePseudoDirectoryAttributes(cloudPath);
-          return result;
-        }
-        BlobInfo blobInfo;
-        if (isNullOrEmpty(userProject)) {
-          blobInfo = storage.get(cloudPath.getBlobId());
-        } else {
-          blobInfo = storage.get(cloudPath.getBlobId(), BlobGetOption.userProject(userProject));
+        BlobInfo blobInfo = null;
+        try {
+          BlobId blobId = cloudPath.getBlobId();
+          // Null or empty name won't give us a file, so skip. But perhaps it's a pseudodir.
+          if (!Strings.isNullOrEmpty(blobId.getName())) {
+            if (isNullOrEmpty(userProject)) {
+              blobInfo = storage.get(blobId);
+            } else {
+              blobInfo = storage.get(blobId, BlobGetOption.userProject(userProject));
+            }
+          }
+        } catch (IllegalArgumentException ex) {
+          // the path may be invalid but look like a folder. In that case, return a folder.
+          if (cloudPath.seemsLikeADirectoryAndUsePseudoDirectories(storage)) {
+            @SuppressWarnings("unchecked")
+            A result = (A) new CloudStoragePseudoDirectoryAttributes(cloudPath);
+            return result;
+          }
+          // No? Propagate.
+          throw ex;
         }
         // null size indicate a file that we haven't closed yet, so GCS treats it as not there yet.
         if ( null == blobInfo || blobInfo.getSize() == null ) {
+          if (cloudPath.seemsLikeADirectoryAndUsePseudoDirectories(storage)) {
+            @SuppressWarnings("unchecked")
+            A result = (A) new CloudStoragePseudoDirectoryAttributes(cloudPath);
+            return result;
+          }
           throw new NoSuchFileException(
               "gs://" + cloudPath.getBlobId().getBucket() + "/" + cloudPath.getBlobId().getName());
         }
@@ -778,10 +804,10 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
     // Loop will terminate via an exception if all retries are exhausted
     while (true) {
       try {
-        String prePrefix = cloudPath.toRealPath().toString();
+        String prePrefix = cloudPath.normalize().toRealPath().toString();
         // we can recognize paths without the final "/" as folders,
         // but storage.list doesn't do the right thing with those, we need to append a "/".
-        if (!prePrefix.endsWith("/")) {
+        if (!prePrefix.isEmpty() && !prePrefix.endsWith("/")) {
           prePrefix = prePrefix + "/";
         }
         final String prefix = prePrefix;
