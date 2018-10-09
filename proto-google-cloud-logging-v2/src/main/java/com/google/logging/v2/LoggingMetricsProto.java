@@ -68,51 +68,52 @@ public final class LoggingMetricsProto {
       "ions.proto\032\035google/api/distribution.prot" +
       "o\032\027google/api/metric.proto\032\033google/proto" +
       "buf/empty.proto\032 google/protobuf/field_m" +
-      "ask.proto\"\261\003\n\tLogMetric\022\014\n\004name\030\001 \001(\t\022\023\n" +
-      "\013description\030\002 \001(\t\022\016\n\006filter\030\003 \001(\t\0227\n\021me" +
-      "tric_descriptor\030\005 \001(\0132\034.google.api.Metri" +
-      "cDescriptor\022\027\n\017value_extractor\030\006 \001(\t\022K\n\020" +
-      "label_extractors\030\007 \003(\01321.google.logging." +
-      "v2.LogMetric.LabelExtractorsEntry\022>\n\016buc" +
-      "ket_options\030\010 \001(\0132&.google.api.Distribut" +
-      "ion.BucketOptions\022<\n\007version\030\004 \001(\0162\'.goo" +
-      "gle.logging.v2.LogMetric.ApiVersionB\002\030\001\032" +
-      "6\n\024LabelExtractorsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005" +
-      "value\030\002 \001(\t:\0028\001\"\034\n\nApiVersion\022\006\n\002V2\020\000\022\006\n" +
-      "\002V1\020\001\"N\n\025ListLogMetricsRequest\022\016\n\006parent" +
-      "\030\001 \001(\t\022\022\n\npage_token\030\002 \001(\t\022\021\n\tpage_size\030" +
-      "\003 \001(\005\"`\n\026ListLogMetricsResponse\022-\n\007metri" +
-      "cs\030\001 \003(\0132\034.google.logging.v2.LogMetric\022\027" +
-      "\n\017next_page_token\030\002 \001(\t\"*\n\023GetLogMetricR" +
-      "equest\022\023\n\013metric_name\030\001 \001(\t\"V\n\026CreateLog" +
-      "MetricRequest\022\016\n\006parent\030\001 \001(\t\022,\n\006metric\030" +
-      "\002 \001(\0132\034.google.logging.v2.LogMetric\"[\n\026U" +
-      "pdateLogMetricRequest\022\023\n\013metric_name\030\001 \001" +
-      "(\t\022,\n\006metric\030\002 \001(\0132\034.google.logging.v2.L" +
-      "ogMetric\"-\n\026DeleteLogMetricRequest\022\023\n\013me" +
-      "tric_name\030\001 \001(\t2\324\005\n\020MetricsServiceV2\022\216\001\n" +
-      "\016ListLogMetrics\022(.google.logging.v2.List" +
-      "LogMetricsRequest\032).google.logging.v2.Li" +
-      "stLogMetricsResponse\"\'\202\323\344\223\002!\022\037/v2/{paren" +
-      "t=projects/*}/metrics\022\204\001\n\014GetLogMetric\022&" +
-      ".google.logging.v2.GetLogMetricRequest\032\034" +
-      ".google.logging.v2.LogMetric\".\202\323\344\223\002(\022&/v" +
-      "2/{metric_name=projects/*/metrics/*}\022\213\001\n" +
-      "\017CreateLogMetric\022).google.logging.v2.Cre" +
-      "ateLogMetricRequest\032\034.google.logging.v2." +
-      "LogMetric\"/\202\323\344\223\002)\"\037/v2/{parent=projects/" +
-      "*}/metrics:\006metric\022\222\001\n\017UpdateLogMetric\022)" +
-      ".google.logging.v2.UpdateLogMetricReques" +
-      "t\032\034.google.logging.v2.LogMetric\"6\202\323\344\223\0020\032" +
-      "&/v2/{metric_name=projects/*/metrics/*}:" +
-      "\006metric\022\204\001\n\017DeleteLogMetric\022).google.log" +
-      "ging.v2.DeleteLogMetricRequest\032\026.google." +
-      "protobuf.Empty\".\202\323\344\223\002(*&/v2/{metric_name" +
-      "=projects/*/metrics/*}B\237\001\n\025com.google.lo" +
-      "gging.v2B\023LoggingMetricsProtoP\001Z8google." +
-      "golang.org/genproto/googleapis/logging/v" +
-      "2;logging\370\001\001\252\002\027Google.Cloud.Logging.V2\312\002" +
-      "\027Google\\Cloud\\Logging\\V2b\006proto3"
+      "ask.proto\032\037google/protobuf/timestamp.pro" +
+      "to\"\261\003\n\tLogMetric\022\014\n\004name\030\001 \001(\t\022\023\n\013descri" +
+      "ption\030\002 \001(\t\022\016\n\006filter\030\003 \001(\t\0227\n\021metric_de" +
+      "scriptor\030\005 \001(\0132\034.google.api.MetricDescri" +
+      "ptor\022\027\n\017value_extractor\030\006 \001(\t\022K\n\020label_e" +
+      "xtractors\030\007 \003(\01321.google.logging.v2.LogM" +
+      "etric.LabelExtractorsEntry\022>\n\016bucket_opt" +
+      "ions\030\010 \001(\0132&.google.api.Distribution.Buc" +
+      "ketOptions\022<\n\007version\030\004 \001(\0162\'.google.log" +
+      "ging.v2.LogMetric.ApiVersionB\002\030\001\0326\n\024Labe" +
+      "lExtractorsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002" +
+      " \001(\t:\0028\001\"\034\n\nApiVersion\022\006\n\002V2\020\000\022\006\n\002V1\020\001\"N" +
+      "\n\025ListLogMetricsRequest\022\016\n\006parent\030\001 \001(\t\022" +
+      "\022\n\npage_token\030\002 \001(\t\022\021\n\tpage_size\030\003 \001(\005\"`" +
+      "\n\026ListLogMetricsResponse\022-\n\007metrics\030\001 \003(" +
+      "\0132\034.google.logging.v2.LogMetric\022\027\n\017next_" +
+      "page_token\030\002 \001(\t\"*\n\023GetLogMetricRequest\022" +
+      "\023\n\013metric_name\030\001 \001(\t\"V\n\026CreateLogMetricR" +
+      "equest\022\016\n\006parent\030\001 \001(\t\022,\n\006metric\030\002 \001(\0132\034" +
+      ".google.logging.v2.LogMetric\"[\n\026UpdateLo" +
+      "gMetricRequest\022\023\n\013metric_name\030\001 \001(\t\022,\n\006m" +
+      "etric\030\002 \001(\0132\034.google.logging.v2.LogMetri" +
+      "c\"-\n\026DeleteLogMetricRequest\022\023\n\013metric_na" +
+      "me\030\001 \001(\t2\324\005\n\020MetricsServiceV2\022\216\001\n\016ListLo" +
+      "gMetrics\022(.google.logging.v2.ListLogMetr" +
+      "icsRequest\032).google.logging.v2.ListLogMe" +
+      "tricsResponse\"\'\202\323\344\223\002!\022\037/v2/{parent=proje" +
+      "cts/*}/metrics\022\204\001\n\014GetLogMetric\022&.google" +
+      ".logging.v2.GetLogMetricRequest\032\034.google" +
+      ".logging.v2.LogMetric\".\202\323\344\223\002(\022&/v2/{metr" +
+      "ic_name=projects/*/metrics/*}\022\213\001\n\017Create" +
+      "LogMetric\022).google.logging.v2.CreateLogM" +
+      "etricRequest\032\034.google.logging.v2.LogMetr" +
+      "ic\"/\202\323\344\223\002)\"\037/v2/{parent=projects/*}/metr" +
+      "ics:\006metric\022\222\001\n\017UpdateLogMetric\022).google" +
+      ".logging.v2.UpdateLogMetricRequest\032\034.goo" +
+      "gle.logging.v2.LogMetric\"6\202\323\344\223\0020\032&/v2/{m" +
+      "etric_name=projects/*/metrics/*}:\006metric" +
+      "\022\204\001\n\017DeleteLogMetric\022).google.logging.v2" +
+      ".DeleteLogMetricRequest\032\026.google.protobu" +
+      "f.Empty\".\202\323\344\223\002(*&/v2/{metric_name=projec" +
+      "ts/*/metrics/*}B\237\001\n\025com.google.logging.v" +
+      "2B\023LoggingMetricsProtoP\001Z8google.golang." +
+      "org/genproto/googleapis/logging/v2;loggi" +
+      "ng\370\001\001\252\002\027Google.Cloud.Logging.V2\312\002\027Google" +
+      "\\Cloud\\Logging\\V2b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -130,6 +131,7 @@ public final class LoggingMetricsProto {
           com.google.api.MetricProto.getDescriptor(),
           com.google.protobuf.EmptyProto.getDescriptor(),
           com.google.protobuf.FieldMaskProto.getDescriptor(),
+          com.google.protobuf.TimestampProto.getDescriptor(),
         }, assigner);
     internal_static_google_logging_v2_LogMetric_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -189,6 +191,7 @@ public final class LoggingMetricsProto {
     com.google.api.MetricProto.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();
+    com.google.protobuf.TimestampProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

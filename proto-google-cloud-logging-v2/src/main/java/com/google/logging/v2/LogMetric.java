@@ -171,7 +171,7 @@ private static final long serialVersionUID = 0L;
 
   /**
    * <pre>
-   * Stackdriver Logging API version.
+   * Logging API version.
    * </pre>
    *
    * Protobuf enum {@code google.logging.v2.LogMetric.ApiVersion}
@@ -180,7 +180,7 @@ private static final long serialVersionUID = 0L;
       implements com.google.protobuf.ProtocolMessageEnum {
     /**
      * <pre>
-     * Stackdriver Logging API v2.
+     * Logging API v2.
      * </pre>
      *
      * <code>V2 = 0;</code>
@@ -188,7 +188,7 @@ private static final long serialVersionUID = 0L;
     V2(0),
     /**
      * <pre>
-     * Stackdriver Logging API v1.
+     * Logging API v1.
      * </pre>
      *
      * <code>V1 = 1;</code>
@@ -199,7 +199,7 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * Stackdriver Logging API v2.
+     * Logging API v2.
      * </pre>
      *
      * <code>V2 = 0;</code>
@@ -207,7 +207,7 @@ private static final long serialVersionUID = 0L;
     public static final int V2_VALUE = 0;
     /**
      * <pre>
-     * Stackdriver Logging API v1.
+     * Logging API v1.
      * </pre>
      *
      * <code>V1 = 1;</code>
