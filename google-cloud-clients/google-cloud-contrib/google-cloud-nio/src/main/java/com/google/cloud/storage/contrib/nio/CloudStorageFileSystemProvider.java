@@ -808,7 +808,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
         // we can recognize paths without the final "/" as folders,
         // but storage.list doesn't do the right thing with those, we need to append a "/".
         if (!prePrefix.isEmpty() && !prePrefix.endsWith("/")) {
-          prePrefix = prePrefix + "/";
+          prePrefix += "/";
         }
         final String prefix = prePrefix;
         Page<Blob> dirList;
