@@ -62,7 +62,7 @@ with the Cloud Storage using this Client Library.
 Getting Started
 ---------------
 #### Prerequisites
-For this tutorial, you will need a [Google Developers Console](https://console.developers.google.com/) project with "Google Cloud Storage" and "Google Cloud Storage JSON API" enabled via the console's API Manager. You will need to [enable billing](https://support.google.com/cloud/answer/6158867?hl=en) to use Google Cloud Storage. [Follow these instructions](https://cloud.google.com/docs/authentication#preparation) to get your project set up. You will also need to set up the local development environment by [installing the Google Cloud SDK](https://cloud.google.com/sdk/) and running the following commands in command line: `gcloud auth login` and `gcloud config set project [YOUR PROJECT ID]`.
+For this tutorial, you will need a [Google Developers Console](https://console.developers.google.com/) project with "Google Cloud Storage" and "Google Cloud Storage JSON API" enabled via the console's API Manager. You will need to [enable billing](https://support.google.com/cloud/answer/6158867?hl=en) to use Google Cloud Storage. [Follow these instructions](https://cloud.google.com/resource-manager/docs/creating-managing-projects) to get your project set up. You will also need to set up the local development environment by [installing the Google Cloud SDK](https://cloud.google.com/sdk/) and running the following commands in command line: `gcloud auth login` and `gcloud config set project [YOUR PROJECT ID]`.
 
 #### Installation and setup
 You'll need to obtain the `google-cloud-storage` library.  See the [Quickstart](#quickstart) section to add `google-cloud-storage` as a dependency in your code.

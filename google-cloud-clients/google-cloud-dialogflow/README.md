@@ -52,7 +52,7 @@ Getting Started
 ---------------
 #### Prerequisites
 You will need a [Google Developers Console](https://console.developers.google.com/) project with the Dialogflow API enabled.
-[Follow these instructions](https://cloud.google.com/docs/authentication#preparation) to get your project set up.
+[Follow these instructions](https://cloud.google.com/resource-manager/docs/creating-managing-projects) to get your project set up.
 
 #### Installation and setup
 You'll need to obtain the `google-cloud-dialogflow` library.  See the [Quickstart](#quickstart) section to add `google-cloud-dialogflow` as a dependency in your code.

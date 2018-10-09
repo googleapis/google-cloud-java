@@ -67,7 +67,7 @@ Getting Started
 #### Prerequisites
 For this tutorial, you will need a [Google Developers Console](https://console.developers.google.com/)
 project with the DNS API enabled. You will need to [enable billing](https://support.google.com/cloud/answer/6158867?hl=en)
-to use Google Cloud DNS. [Follow these instructions](https://cloud.google.com/docs/authentication#preparation)
+to use Google Cloud DNS. [Follow these instructions](https://cloud.google.com/resource-manager/docs/creating-managing-projects)
 to get your project set up. You will also need to set up the local development environment by
 [installing the Google Cloud SDK](https://cloud.google.com/sdk/) and running the following commands
 in command line: `gcloud auth login` and `gcloud config set project [YOUR PROJECT ID]`.

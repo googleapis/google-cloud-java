@@ -67,7 +67,7 @@ with the Cloud Datastore using this Client Library.
 Getting Started
 ---------------
 #### Prerequisites
-For this tutorial, you will need a [Google Developers Console](https://console.developers.google.com/) project with the Datastore API enabled. [Follow these instructions](https://cloud.google.com/docs/authentication#preparation) to get your project set up. You will also need to set up the local development environment by [installing the Google Cloud SDK](https://cloud.google.com/sdk/) and running the following commands in command line: `gcloud auth login` and `gcloud config set project [YOUR PROJECT ID]`.
+For this tutorial, you will need a [Google Developers Console](https://console.developers.google.com/) project with the Datastore API enabled. [Follow these instructions](https://cloud.google.com/resource-manager/docs/creating-managing-projects) to get your project set up. You will also need to set up the local development environment by [installing the Google Cloud SDK](https://cloud.google.com/sdk/) and running the following commands in command line: `gcloud auth login` and `gcloud config set project [YOUR PROJECT ID]`.
 
 #### Installation and setup
 You'll need to obtain the `google-cloud-datastore` library.  See the [Quickstart](#quickstart) section to add `google-cloud-datastore` as a dependency in your code.
