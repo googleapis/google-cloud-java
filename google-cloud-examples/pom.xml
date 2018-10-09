@@ -206,7 +206,7 @@
         <artifactId>nexus-staging-maven-plugin</artifactId>
         <version>1.6.6</version>
         <configuration>
-          <skip>true</skip>
+          <skipStaging>true</skipStaging>
         </configuration>
       </plugin>
     </plugins>
