@@ -306,7 +306,7 @@ public class StorageSnippets {
   }
 
   /**
-   * Example of udating a blob, only if the blob's metageneration matches a value, otherwise a
+   * Example of updating a blob, only if the blob's metageneration matches a value, otherwise a
    * {@link StorageException} is thrown.
    */
   // [TARGET update(BlobInfo, BlobTargetOption...)]
@@ -314,11 +314,13 @@ public class StorageSnippets {
   // [VARIABLE "my_blob_name"]
   public Blob updateBlobWithMetageneration(String bucketName, String blobName) {
     // [START updateBlobWithMetageneration]
+    Map<String, String> newMetadata = new HashMap<>();
+    newMetadata.put("key", "value");
     Blob blob = storage.get(bucketName, blobName);
-    BlobInfo updatedInfo = blob.toBuilder().setContentType("text/plain").build();
-    storage.update(updatedInfo, BlobTargetOption.metagenerationMatch());
+    BlobInfo updatedInfo = blob.toBuilder().setContentType("text/plain").setMetadata(newMetadata).build();
+    Blob updated = storage.update(updatedInfo, BlobTargetOption.metagenerationMatch());
     // [END updateBlobWithMetageneration]
-    return blob;
+    return updated;
   }
 
   /**
