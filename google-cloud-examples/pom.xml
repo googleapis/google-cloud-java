@@ -6,7 +6,7 @@
   <version>0.66.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-examples:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Examples</name>
-  <url>https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples</url>
+  <url>https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-examples</url>
   <description>
     Examples for google-cloud.
   </description>

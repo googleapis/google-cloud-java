@@ -9,7 +9,7 @@
   <packaging>pom</packaging>
 
   <name>Google Cloud Testing</name>
-  <url>https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-testing</url>
+  <url>https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-testing</url>
   <description>
     Contains packages used for testing google-cloud libraries on various platforms.
   </description>

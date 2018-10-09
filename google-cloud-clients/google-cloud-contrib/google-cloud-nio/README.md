@@ -11,8 +11,8 @@ for interacting with Google Cloud Storage.
 [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-nio.svg)]( https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-nio.svg)
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/google-cloud-java)
 
--  [Homepage](https://googlecloudplatform.github.io/google-cloud-java/)
--  [API Documentation](https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/storage/package-summary.html)
+-  [Homepage](https://googleapis.github.io/google-cloud-java/)
+-  [API Documentation](https://googleapis.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/storage/package-summary.html)
 
 > Note: This client is a work-in-progress, and may occasionally
 > make backwards-incompatible changes.
@@ -56,7 +56,7 @@ having to modify them.
 Authentication
 --------------
 
-See the [Authentication](https://github.com/GoogleCloudPlatform/google-cloud-java#authentication)
+See the [Authentication](https://github.com/googleapis/google-cloud-java#authentication)
 section in the base directory's README.
 
 About Google Cloud Storage
@@ -183,7 +183,7 @@ Contributing
 Contributions to this library are always welcome and highly encouraged.
 
 See `google-cloud`'s [CONTRIBUTING] documentation and the
-[shared documentation](https://github.com/GoogleCloudPlatform/gcloud-common/blob/master/contributing/readme.md#how-to-contribute-to-gcloud)
+[shared documentation](https://github.com/googleapis/google-cloud-common/blob/master/contributing/readme.md#how-to-contribute-to-gcloud)
 for more information on how to get started.
 
 Please note that this project is released with a Contributor Code of Conduct.
@@ -196,16 +196,16 @@ License
 Apache 2.0 - See [LICENSE] for more information.
 
 
-[CONTRIBUTING]:https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/CONTRIBUTING.md
-[code-of-conduct]:https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
-[LICENSE]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/LICENSE
-[TESTING]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/TESTING.md#testing-code-that-uses-storage
+[CONTRIBUTING]:https://github.com/googleapis/google-cloud-java/blob/master/CONTRIBUTING.md
+[code-of-conduct]:https://github.com/googleapis/google-cloud-java/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
+[LICENSE]: https://github.com/googleapis/google-cloud-java/blob/master/LICENSE
+[TESTING]: https://github.com/googleapis/google-cloud-java/blob/master/TESTING.md#testing-code-that-uses-storage
 [cloud-platform]: https://cloud.google.com/
 
 [cloud-storage]: https://cloud.google.com/storage/
 [cloud-storage-docs]: https://cloud.google.com/storage/docs/overview
 [cloud-storage-create-bucket]: https://cloud.google.com/storage/docs/cloud-console#_creatingbuckets
-[storage-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/storage/package-summary.html
+[storage-api]: https://googleapis.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/storage/package-summary.html
 [cloud-storage-activation]:https://cloud.google.com/storage/docs/signup?hl=en
 
 [java-file-api]: https://docs.oracle.com/javase/7/docs/api/java/nio/file/Files.html
