@@ -61,6 +61,9 @@ public interface PartitionQueryRequestOrBuilder extends
    * union operator conceptually divides one or more tables into multiple
    * splits, remotely evaluates a subquery independently on each split, and
    * then unions all results.
+   * This must not contain DML commands, such as INSERT, UPDATE, or
+   * DELETE. Use [ExecuteStreamingSql][google.spanner.v1.Spanner.ExecuteStreamingSql] with a
+   * PartitionedDml transaction for large, partition-friendly DML operations.
    * </pre>
    *
    * <code>string sql = 3;</code>
@@ -74,6 +77,9 @@ public interface PartitionQueryRequestOrBuilder extends
    * union operator conceptually divides one or more tables into multiple
    * splits, remotely evaluates a subquery independently on each split, and
    * then unions all results.
+   * This must not contain DML commands, such as INSERT, UPDATE, or
+   * DELETE. Use [ExecuteStreamingSql][google.spanner.v1.Spanner.ExecuteStreamingSql] with a
+   * PartitionedDml transaction for large, partition-friendly DML operations.
    * </pre>
    *
    * <code>string sql = 3;</code>

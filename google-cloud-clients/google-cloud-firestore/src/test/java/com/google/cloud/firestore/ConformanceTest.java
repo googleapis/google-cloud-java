@@ -331,11 +331,19 @@ public class ConformanceTest {
   }
 
   /** Helper function to convert test values in a list to Firestore API types. */
-  private List<Object> convertArray(List<Object> list) {
-    for (int i = 0; i < list.size(); ++i) {
-      list.set(i, convertValue(list.get(i)));
+  private Object convertArray(List<Object> list) {
+    if (!list.isEmpty() && list.get(0).equals("ArrayUnion")) {
+      return FieldValue.arrayUnion(
+          ((List<Object>) convertArray(list.subList(1, list.size()))).toArray());
+    } else if (!list.isEmpty() && list.get(0).equals("ArrayRemove")) {
+      return FieldValue.arrayRemove(
+          ((List<Object>) convertArray(list.subList(1, list.size()))).toArray());
+    } else {
+      for (int i = 0; i < list.size(); ++i) {
+        list.set(i, convertValue(list.get(i)));
+      }
+      return list;
     }
-    return list;
   }
 
   /** Reads the test definition from the Proto file. */

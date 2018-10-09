@@ -6,7 +6,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-clients</artifactId>
   <packaging>pom</packaging>
-  <version>0.57.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-clients:current} -->
+  <version>0.66.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-clients:current} -->
   <name>Google Cloud</name>
   <url>https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-clients</url>
   <description>
@@ -154,15 +154,15 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <github.global.server>github</github.global.server>
     <site.installationModule>google-cloud-clients</site.installationModule>
-    <bom.version>0.57.1-alpha-SNAPSHOT</bom.version><!-- {x-version-update:google-cloud-bom:current} -->
+    <bom.version>0.66.1-alpha-SNAPSHOT</bom.version><!-- {x-version-update:google-cloud-bom:current} -->
     <api-client.version>1.24.1</api-client.version>
-    <gax.version>1.30.0</gax.version>
-    <google.auth.version>0.10.0</google.auth.version>
+    <gax.version>1.31.0</gax.version>
+    <google.auth.version>0.11.0</google.auth.version>
     <grpc.version>1.13.1</grpc.version>
     <nettyssl.version>2.0.7.Final</nettyssl.version>
     <guava.version>20.0</guava.version>
     <http-client.version>1.24.1</http-client.version>
-    <protobuf.version>3.6.0</protobuf.version>
+    <protobuf.version>3.6.1</protobuf.version>
     <opencensus.version>0.15.0</opencensus.version>
     <!-- test dependency versions -->
     <easymock.version>3.4</easymock.version>
@@ -311,11 +311,6 @@
         <version>${http-client.version}</version>
       </dependency>
       <dependency>
-        <groupId>com.google.http-client</groupId>
-        <artifactId>google-http-client-jackson</artifactId>
-        <version>${http-client.version}</version>
-      </dependency>
-      <dependency>
         <groupId>com.google.oauth-client</groupId>
         <artifactId>google-oauth-client</artifactId>
         <version>1.24.1</version>
@@ -412,6 +407,7 @@
     </dependencies>
   </dependencyManagement>
   <modules>
+    <module>google-cloud-asset</module>
     <module>google-cloud-automl</module>
     <module>google-cloud-bigtable</module>
     <module>google-cloud-bigtable-admin</module>
@@ -419,6 +415,7 @@
     <module>google-cloud-bigquerydatatransfer</module>
     <module>google-cloud-compute</module>
     <module>google-cloud-container</module>
+    <module>google-cloud-containeranalysis</module>
     <module>google-cloud-contrib</module>
     <module>google-cloud-core</module>
     <module>google-cloud-core-http</module>
@@ -495,6 +492,7 @@
             <exclude>**/IT*.java</exclude>
             <exclude>**/*SmokeTest.java</exclude>
           </excludes>
+          <reportNameSuffix>sponge_log</reportNameSuffix>
         </configuration>
       </plugin>
       <plugin>
@@ -553,6 +551,10 @@
             </goals>
           </execution>
         </executions>
+        <configuration>
+          <forkedProcessTimeoutInSeconds>600</forkedProcessTimeoutInSeconds>
+          <reportNameSuffix>sponge_log</reportNameSuffix>
+        </configuration>
       </plugin>
       <plugin>
         <artifactId>maven-jar-plugin</artifactId>
@@ -659,7 +661,7 @@
           <dependency>
             <groupId>com.puppycrawl.tools</groupId>
             <artifactId>checkstyle</artifactId>
-            <version>6.15</version>
+            <version>6.16</version>
           </dependency>
         </dependencies>
         <executions>
@@ -768,7 +770,7 @@
           </groups>
           <links>
             <link>https://developers.google.com/protocol-buffers/docs/reference/java/</link>
-            <link>http://google.github.io/google-auth-library-java/releases/latest/apidocs/</link>
+            <link>http://googleapis.github.io/google-auth-library-java/releases/latest/apidocs/</link>
             <link>http://googleapis.github.io/gax-java/${gax.version}/apidocs/</link>
             <link>http://googleapis.github.io/googleapis/java/all/latest/apidocs/</link>
           </links>

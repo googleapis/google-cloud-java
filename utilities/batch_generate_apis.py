@@ -20,12 +20,14 @@
 # $ git clone https://github.com/googleapis/googleapis.git
 # $ git clone https://github.com/googleapis/discovery-artifact-manager.git
 #
-# Run this script:
+# Run this script from the top-level google-cloud-java directory:
 #
 # $ python utilities/batch_generate_apis.py PATH_TO_GOOGLEAPIS PATH_TO_DISCOVERY_ARTIFACT_MANAGER
 
 import argparse
 import os
+import sys
+from subprocess import check_output
 
 import generate_api
 
@@ -37,6 +39,7 @@ def run_gapic_gen(googleapis):
 
     generate('google/datastore/artman_datastore.yaml', generate_api.JAVA_PROTO)
 
+    generate('google/cloud/asset/artman_cloudasset_v1beta1.yaml')
     generate('google/cloud/automl/artman_automl_v1beta1.yaml')
     generate('google/cloud/bigquery/datatransfer/artman_bigquerydatatransfer.yaml')
     generate('google/bigtable/artman_bigtable.yaml')
@@ -50,21 +53,23 @@ def run_gapic_gen(googleapis):
     generate('google/privacy/dlp/artman_dlp_v2.yaml')
     generate('google/devtools/clouderrorreporting/artman_errorreporting.yaml')
     generate('google/firestore/artman_firestore.yaml')
-    generate('google/cloud/kms/artman_cloudkms.yaml')
     generate('google/cloud/iot/artman_cloudiot.yaml')
+    generate('google/cloud/kms/artman_cloudkms.yaml')
     generate('google/cloud/language/artman_language_v1.yaml')
     generate('google/cloud/language/artman_language_v1beta2.yaml')
     generate('google/logging/artman_logging.yaml')
     generate('google/monitoring/artman_monitoring.yaml')
     generate('google/pubsub/artman_pubsub.yaml')
     generate('google/cloud/oslogin/artman_oslogin_v1.yaml')
+    generate('google/cloud/redis/artman_redis_v1.yaml')
     generate('google/cloud/redis/artman_redis_v1beta1.yaml')
     generate('google/spanner/artman_spanner.yaml')
     generate('google/spanner/admin/database/artman_spanner_admin_database.yaml')
     generate('google/spanner/admin/instance/artman_spanner_admin_instance.yaml')
     generate('google/cloud/speech/artman_speech_v1.yaml')
     generate('google/cloud/speech/artman_speech_v1p1beta1.yaml')
-    generate('google/cloud/tasks/artman_cloudtasks.yaml')
+    generate('google/cloud/tasks/artman_cloudtasks_v2beta2.yaml')
+    generate('google/cloud/tasks/artman_cloudtasks_v2beta3.yaml')
     generate('google/cloud/texttospeech/artman_texttospeech_v1.yaml')
     generate('google/cloud/texttospeech/artman_texttospeech_v1beta1.yaml')
     generate('google/devtools/cloudtrace/artman_cloudtrace_v1.yaml')
@@ -72,6 +77,7 @@ def run_gapic_gen(googleapis):
     generate('google/cloud/videointelligence/artman_videointelligence_v1beta1.yaml')
     generate('google/cloud/videointelligence/artman_videointelligence_v1beta2.yaml')
     generate('google/cloud/videointelligence/artman_videointelligence_v1p1beta1.yaml')
+    generate('google/cloud/videointelligence/artman_videointelligence_v1p2beta1.yaml')
     generate('google/cloud/videointelligence/artman_videointelligence_v1.yaml')
     generate('google/cloud/vision/artman_vision_v1.yaml')
     generate('google/cloud/vision/artman_vision_v1p1beta1.yaml')
@@ -89,7 +95,27 @@ def run_discogapic_gen(discovery_repo):
     generate('gapic/google/compute/artman_compute.yaml')
 
 
+def verify_protoc_version():
+    protobuf_version_node = check_output(
+        ['grep', '-zohr', '--include=pom.xml',
+         '<protobuf.version>.*</protobuf.version>'])
+    version_start_index = protobuf_version_node.find('>') + 1
+    version_end_index = protobuf_version_node.rfind('<')
+    protobuf_version = protobuf_version_node[version_start_index : version_end_index].strip()
+
+    # This will be something like 'libprotoc 3.6.0'
+    protoc_version_str = check_output(['protoc', '--version'])
+
+    if not (protobuf_version in protoc_version_str):
+        sys.exit("ERROR: Local version of protoc is %s"
+                 " (see output of `which protoc`)."
+                 " Please use protoc version %s"
+                 " to match the version of protobuf-java used in this repo."
+                 % (protoc_version_str, protobuf_version))
+
+
 def main():
+    verify_protoc_version()
     # TODO Make the docker image the default, add --local option
     parser = argparse.ArgumentParser(description='Batch generate all APIs.')
     parser.add_argument('googleapis', help='The path to the googleapis repo')

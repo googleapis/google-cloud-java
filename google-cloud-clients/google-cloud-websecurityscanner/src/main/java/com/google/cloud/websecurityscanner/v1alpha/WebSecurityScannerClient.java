@@ -386,7 +386,7 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final void deleteScanConfig(DeleteScanConfigRequest request) {
+  public final void deleteScanConfig(DeleteScanConfigRequest request) {
     deleteScanConfigCallable().call(request);
   }
 
@@ -454,7 +454,7 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final ScanConfig getScanConfig(GetScanConfigRequest request) {
+  public final ScanConfig getScanConfig(GetScanConfigRequest request) {
     return getScanConfigCallable().call(request);
   }
 
@@ -710,7 +710,7 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final ScanRun startScanRun(StartScanRunRequest request) {
+  public final ScanRun startScanRun(StartScanRunRequest request) {
     return startScanRunCallable().call(request);
   }
 
@@ -778,7 +778,7 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final ScanRun getScanRun(GetScanRunRequest request) {
+  public final ScanRun getScanRun(GetScanRunRequest request) {
     return getScanRunCallable().call(request);
   }
 
@@ -952,7 +952,7 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final ScanRun stopScanRun(StopScanRunRequest request) {
+  public final ScanRun stopScanRun(StopScanRunRequest request) {
     return stopScanRunCallable().call(request);
   }
 
@@ -1128,7 +1128,7 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final Finding getFinding(GetFindingRequest request) {
+  public final Finding getFinding(GetFindingRequest request) {
     return getFindingCallable().call(request);
   }
 
@@ -1313,7 +1313,7 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final ListFindingTypeStatsResponse listFindingTypeStats(
+  public final ListFindingTypeStatsResponse listFindingTypeStats(
       ListFindingTypeStatsRequest request) {
     return listFindingTypeStatsCallable().call(request);
   }

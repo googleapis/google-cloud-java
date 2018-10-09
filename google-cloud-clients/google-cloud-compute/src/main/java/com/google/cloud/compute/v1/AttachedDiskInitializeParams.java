@@ -26,6 +26,7 @@ import javax.annotation.Nullable;
 @Generated("by GAPIC")
 @BetaApi
 public final class AttachedDiskInitializeParams implements ApiMessage {
+  private final String description;
   private final String diskName;
   private final String diskSizeGb;
   private final String diskType;
@@ -34,6 +35,7 @@ public final class AttachedDiskInitializeParams implements ApiMessage {
   private final CustomerEncryptionKey sourceImageEncryptionKey;
 
   private AttachedDiskInitializeParams() {
+    this.description = null;
     this.diskName = null;
     this.diskSizeGb = null;
     this.diskType = null;
@@ -43,12 +45,14 @@ public final class AttachedDiskInitializeParams implements ApiMessage {
   }
 
   private AttachedDiskInitializeParams(
+      String description,
       String diskName,
       String diskSizeGb,
       String diskType,
       Map<String, String> labels,
       String sourceImage,
       CustomerEncryptionKey sourceImageEncryptionKey) {
+    this.description = description;
     this.diskName = diskName;
     this.diskSizeGb = diskSizeGb;
     this.diskType = diskType;
@@ -59,6 +63,9 @@ public final class AttachedDiskInitializeParams implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
+    if (fieldName.equals("description")) {
+      return description;
+    }
     if (fieldName.equals("diskName")) {
       return diskName;
     }
@@ -90,6 +97,10 @@ public final class AttachedDiskInitializeParams implements ApiMessage {
   @Override
   public List<String> getFieldMask() {
     return null;
+  }
+
+  public String getDescription() {
+    return description;
   }
 
   public String getDiskName() {
@@ -139,6 +150,7 @@ public final class AttachedDiskInitializeParams implements ApiMessage {
   }
 
   public static class Builder {
+    private String description;
     private String diskName;
     private String diskSizeGb;
     private String diskType;
@@ -150,6 +162,9 @@ public final class AttachedDiskInitializeParams implements ApiMessage {
 
     public Builder mergeFrom(AttachedDiskInitializeParams other) {
       if (other == AttachedDiskInitializeParams.getDefaultInstance()) return this;
+      if (other.getDescription() != null) {
+        this.description = other.description;
+      }
       if (other.getDiskName() != null) {
         this.diskName = other.diskName;
       }
@@ -172,12 +187,22 @@ public final class AttachedDiskInitializeParams implements ApiMessage {
     }
 
     Builder(AttachedDiskInitializeParams source) {
+      this.description = source.description;
       this.diskName = source.diskName;
       this.diskSizeGb = source.diskSizeGb;
       this.diskType = source.diskType;
       this.labels = source.labels;
       this.sourceImage = source.sourceImage;
       this.sourceImageEncryptionKey = source.sourceImageEncryptionKey;
+    }
+
+    public String getDescription() {
+      return description;
+    }
+
+    public Builder setDescription(String description) {
+      this.description = description;
+      return this;
     }
 
     public String getDiskName() {
@@ -237,11 +262,18 @@ public final class AttachedDiskInitializeParams implements ApiMessage {
     public AttachedDiskInitializeParams build() {
 
       return new AttachedDiskInitializeParams(
-          diskName, diskSizeGb, diskType, labels, sourceImage, sourceImageEncryptionKey);
+          description,
+          diskName,
+          diskSizeGb,
+          diskType,
+          labels,
+          sourceImage,
+          sourceImageEncryptionKey);
     }
 
     public Builder clone() {
       Builder newBuilder = new Builder();
+      newBuilder.setDescription(this.description);
       newBuilder.setDiskName(this.diskName);
       newBuilder.setDiskSizeGb(this.diskSizeGb);
       newBuilder.setDiskType(this.diskType);
@@ -255,6 +287,9 @@ public final class AttachedDiskInitializeParams implements ApiMessage {
   @Override
   public String toString() {
     return "AttachedDiskInitializeParams{"
+        + "description="
+        + description
+        + ", "
         + "diskName="
         + diskName
         + ", "
@@ -282,7 +317,8 @@ public final class AttachedDiskInitializeParams implements ApiMessage {
     }
     if (o instanceof AttachedDiskInitializeParams) {
       AttachedDiskInitializeParams that = (AttachedDiskInitializeParams) o;
-      return Objects.equals(this.diskName, that.getDiskName())
+      return Objects.equals(this.description, that.getDescription())
+          && Objects.equals(this.diskName, that.getDiskName())
           && Objects.equals(this.diskSizeGb, that.getDiskSizeGb())
           && Objects.equals(this.diskType, that.getDiskType())
           && Objects.equals(this.labels, that.getLabelsMap())
@@ -295,6 +331,6 @@ public final class AttachedDiskInitializeParams implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-        diskName, diskSizeGb, diskType, labels, sourceImage, sourceImageEncryptionKey);
+        description, diskName, diskSizeGb, diskType, labels, sourceImage, sourceImageEncryptionKey);
   }
 }

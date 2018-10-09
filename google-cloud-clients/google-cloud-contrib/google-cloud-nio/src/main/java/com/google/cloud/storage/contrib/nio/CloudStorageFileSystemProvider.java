@@ -102,15 +102,19 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
     private final Filter<? super Path> filter;
     private final CloudStorageFileSystem fileSystem;
     private final String prefix;
+    // whether to make the paths absolute before returning them.
+    private final boolean absolutePaths;
 
     LazyPathIterator(CloudStorageFileSystem fileSystem,
                      String prefix,
                      Iterator<Blob> blobIterator,
-                     Filter<? super Path> filter) {
+                     Filter<? super Path> filter,
+                     boolean absolutePaths) {
       this.prefix = prefix;
       this.blobIterator = blobIterator;
       this.filter = filter;
       this.fileSystem = fileSystem;
+      this.absolutePaths = absolutePaths;
     }
 
     @Override
@@ -123,6 +127,9 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
             continue;
           }
           if (filter.accept(path)) {
+            if (absolutePaths) {
+              return path.toAbsolutePath();
+            }
             return path;
           }
         } catch (IOException ex) {
@@ -769,7 +776,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
   }
 
   @Override
-  public DirectoryStream<Path> newDirectoryStream(Path dir, final Filter<? super Path> filter) {
+  public DirectoryStream<Path> newDirectoryStream(final Path dir, final Filter<? super Path> filter) {
     final CloudStoragePath cloudPath = CloudStorageUtil.checkPath(dir);
     checkNotNull(filter);
     initStorage();
@@ -793,7 +800,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
         return new DirectoryStream<Path>() {
           @Override
           public Iterator<Path> iterator() {
-            return new LazyPathIterator(cloudPath.getFileSystem(), prefix, blobIterator, filter);
+            return new LazyPathIterator(cloudPath.getFileSystem(), prefix, blobIterator, filter, dir.isAbsolute());
           }
 
           @Override

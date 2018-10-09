@@ -189,6 +189,8 @@ public class RegionBackendServiceClientTest {
     String description = "description-1724546052";
     String loadBalancingScheme = "loadBalancingScheme1974502980";
     String portName = "portName1115276169";
+    ProjectGlobalSecurityPolicyName securityPolicy =
+        ProjectGlobalSecurityPolicyName.of("[PROJECT]", "[SECURITY_POLICY]");
     Integer timeoutSec = 2067488653;
     String selfLink = "selfLink-1691268851";
     String protocol = "protocol-989163880";
@@ -207,6 +209,7 @@ public class RegionBackendServiceClientTest {
             .setDescription(description)
             .setLoadBalancingScheme(loadBalancingScheme)
             .setPortName(portName)
+            .setSecurityPolicy(securityPolicy.toString())
             .setTimeoutSec(timeoutSec)
             .setSelfLink(selfLink)
             .setProtocol(protocol)

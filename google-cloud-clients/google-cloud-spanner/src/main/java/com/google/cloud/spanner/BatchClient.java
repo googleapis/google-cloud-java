@@ -38,6 +38,12 @@ public interface BatchClient {
    * {@link BatchReadOnlyTransaction}.
    *
    * @param bound the timestamp bound at which to perform the read
+   *
+   * <!--SNIPPET batch_client_strong_read-->
+   * <pre>{@code
+   * BatchReadOnlyTransaction txn = batchClient.batchReadOnlyTransaction(TimestampBound.strong());
+   * }</pre>
+   * <!--SNIPPET batch_client_strong_read-->
    */
   BatchReadOnlyTransaction batchReadOnlyTransaction(TimestampBound bound);
 
@@ -52,6 +58,7 @@ public interface BatchClient {
    *
    * @param batchTransactionId to re-initialize the transaction, re-using the timestamp for
    *     successive read/query.
+   *
    */
   BatchReadOnlyTransaction batchReadOnlyTransaction(BatchTransactionId batchTransactionId);
 }

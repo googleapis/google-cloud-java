@@ -9,7 +9,7 @@ public interface RecognizeResponseOrBuilder extends
 
   /**
    * <pre>
-   * *Output-only* Sequential list of transcription results corresponding to
+   * Output only. Sequential list of transcription results corresponding to
    * sequential portions of audio.
    * </pre>
    *
@@ -19,7 +19,7 @@ public interface RecognizeResponseOrBuilder extends
       getResultsList();
   /**
    * <pre>
-   * *Output-only* Sequential list of transcription results corresponding to
+   * Output only. Sequential list of transcription results corresponding to
    * sequential portions of audio.
    * </pre>
    *
@@ -28,7 +28,7 @@ public interface RecognizeResponseOrBuilder extends
   com.google.cloud.speech.v1.SpeechRecognitionResult getResults(int index);
   /**
    * <pre>
-   * *Output-only* Sequential list of transcription results corresponding to
+   * Output only. Sequential list of transcription results corresponding to
    * sequential portions of audio.
    * </pre>
    *
@@ -37,7 +37,7 @@ public interface RecognizeResponseOrBuilder extends
   int getResultsCount();
   /**
    * <pre>
-   * *Output-only* Sequential list of transcription results corresponding to
+   * Output only. Sequential list of transcription results corresponding to
    * sequential portions of audio.
    * </pre>
    *
@@ -47,7 +47,7 @@ public interface RecognizeResponseOrBuilder extends
       getResultsOrBuilderList();
   /**
    * <pre>
-   * *Output-only* Sequential list of transcription results corresponding to
+   * Output only. Sequential list of transcription results corresponding to
    * sequential portions of audio.
    * </pre>
    *

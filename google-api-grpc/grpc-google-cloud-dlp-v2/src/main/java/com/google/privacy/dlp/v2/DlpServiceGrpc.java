@@ -962,6 +962,191 @@ public final class DlpServiceGrpc {
      }
      return getCancelDlpJobMethod;
   }
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getCreateStoredInfoTypeMethod()} instead. 
+  public static final io.grpc.MethodDescriptor<com.google.privacy.dlp.v2.CreateStoredInfoTypeRequest,
+      com.google.privacy.dlp.v2.StoredInfoType> METHOD_CREATE_STORED_INFO_TYPE = getCreateStoredInfoTypeMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<com.google.privacy.dlp.v2.CreateStoredInfoTypeRequest,
+      com.google.privacy.dlp.v2.StoredInfoType> getCreateStoredInfoTypeMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<com.google.privacy.dlp.v2.CreateStoredInfoTypeRequest,
+      com.google.privacy.dlp.v2.StoredInfoType> getCreateStoredInfoTypeMethod() {
+    return getCreateStoredInfoTypeMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<com.google.privacy.dlp.v2.CreateStoredInfoTypeRequest,
+      com.google.privacy.dlp.v2.StoredInfoType> getCreateStoredInfoTypeMethodHelper() {
+    io.grpc.MethodDescriptor<com.google.privacy.dlp.v2.CreateStoredInfoTypeRequest, com.google.privacy.dlp.v2.StoredInfoType> getCreateStoredInfoTypeMethod;
+    if ((getCreateStoredInfoTypeMethod = DlpServiceGrpc.getCreateStoredInfoTypeMethod) == null) {
+      synchronized (DlpServiceGrpc.class) {
+        if ((getCreateStoredInfoTypeMethod = DlpServiceGrpc.getCreateStoredInfoTypeMethod) == null) {
+          DlpServiceGrpc.getCreateStoredInfoTypeMethod = getCreateStoredInfoTypeMethod = 
+              io.grpc.MethodDescriptor.<com.google.privacy.dlp.v2.CreateStoredInfoTypeRequest, com.google.privacy.dlp.v2.StoredInfoType>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "google.privacy.dlp.v2.DlpService", "CreateStoredInfoType"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.privacy.dlp.v2.CreateStoredInfoTypeRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.privacy.dlp.v2.StoredInfoType.getDefaultInstance()))
+                  .setSchemaDescriptor(new DlpServiceMethodDescriptorSupplier("CreateStoredInfoType"))
+                  .build();
+          }
+        }
+     }
+     return getCreateStoredInfoTypeMethod;
+  }
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getUpdateStoredInfoTypeMethod()} instead. 
+  public static final io.grpc.MethodDescriptor<com.google.privacy.dlp.v2.UpdateStoredInfoTypeRequest,
+      com.google.privacy.dlp.v2.StoredInfoType> METHOD_UPDATE_STORED_INFO_TYPE = getUpdateStoredInfoTypeMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<com.google.privacy.dlp.v2.UpdateStoredInfoTypeRequest,
+      com.google.privacy.dlp.v2.StoredInfoType> getUpdateStoredInfoTypeMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<com.google.privacy.dlp.v2.UpdateStoredInfoTypeRequest,
+      com.google.privacy.dlp.v2.StoredInfoType> getUpdateStoredInfoTypeMethod() {
+    return getUpdateStoredInfoTypeMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<com.google.privacy.dlp.v2.UpdateStoredInfoTypeRequest,
+      com.google.privacy.dlp.v2.StoredInfoType> getUpdateStoredInfoTypeMethodHelper() {
+    io.grpc.MethodDescriptor<com.google.privacy.dlp.v2.UpdateStoredInfoTypeRequest, com.google.privacy.dlp.v2.StoredInfoType> getUpdateStoredInfoTypeMethod;
+    if ((getUpdateStoredInfoTypeMethod = DlpServiceGrpc.getUpdateStoredInfoTypeMethod) == null) {
+      synchronized (DlpServiceGrpc.class) {
+        if ((getUpdateStoredInfoTypeMethod = DlpServiceGrpc.getUpdateStoredInfoTypeMethod) == null) {
+          DlpServiceGrpc.getUpdateStoredInfoTypeMethod = getUpdateStoredInfoTypeMethod = 
+              io.grpc.MethodDescriptor.<com.google.privacy.dlp.v2.UpdateStoredInfoTypeRequest, com.google.privacy.dlp.v2.StoredInfoType>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "google.privacy.dlp.v2.DlpService", "UpdateStoredInfoType"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.privacy.dlp.v2.UpdateStoredInfoTypeRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.privacy.dlp.v2.StoredInfoType.getDefaultInstance()))
+                  .setSchemaDescriptor(new DlpServiceMethodDescriptorSupplier("UpdateStoredInfoType"))
+                  .build();
+          }
+        }
+     }
+     return getUpdateStoredInfoTypeMethod;
+  }
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getGetStoredInfoTypeMethod()} instead. 
+  public static final io.grpc.MethodDescriptor<com.google.privacy.dlp.v2.GetStoredInfoTypeRequest,
+      com.google.privacy.dlp.v2.StoredInfoType> METHOD_GET_STORED_INFO_TYPE = getGetStoredInfoTypeMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<com.google.privacy.dlp.v2.GetStoredInfoTypeRequest,
+      com.google.privacy.dlp.v2.StoredInfoType> getGetStoredInfoTypeMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<com.google.privacy.dlp.v2.GetStoredInfoTypeRequest,
+      com.google.privacy.dlp.v2.StoredInfoType> getGetStoredInfoTypeMethod() {
+    return getGetStoredInfoTypeMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<com.google.privacy.dlp.v2.GetStoredInfoTypeRequest,
+      com.google.privacy.dlp.v2.StoredInfoType> getGetStoredInfoTypeMethodHelper() {
+    io.grpc.MethodDescriptor<com.google.privacy.dlp.v2.GetStoredInfoTypeRequest, com.google.privacy.dlp.v2.StoredInfoType> getGetStoredInfoTypeMethod;
+    if ((getGetStoredInfoTypeMethod = DlpServiceGrpc.getGetStoredInfoTypeMethod) == null) {
+      synchronized (DlpServiceGrpc.class) {
+        if ((getGetStoredInfoTypeMethod = DlpServiceGrpc.getGetStoredInfoTypeMethod) == null) {
+          DlpServiceGrpc.getGetStoredInfoTypeMethod = getGetStoredInfoTypeMethod = 
+              io.grpc.MethodDescriptor.<com.google.privacy.dlp.v2.GetStoredInfoTypeRequest, com.google.privacy.dlp.v2.StoredInfoType>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "google.privacy.dlp.v2.DlpService", "GetStoredInfoType"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.privacy.dlp.v2.GetStoredInfoTypeRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.privacy.dlp.v2.StoredInfoType.getDefaultInstance()))
+                  .setSchemaDescriptor(new DlpServiceMethodDescriptorSupplier("GetStoredInfoType"))
+                  .build();
+          }
+        }
+     }
+     return getGetStoredInfoTypeMethod;
+  }
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getListStoredInfoTypesMethod()} instead. 
+  public static final io.grpc.MethodDescriptor<com.google.privacy.dlp.v2.ListStoredInfoTypesRequest,
+      com.google.privacy.dlp.v2.ListStoredInfoTypesResponse> METHOD_LIST_STORED_INFO_TYPES = getListStoredInfoTypesMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<com.google.privacy.dlp.v2.ListStoredInfoTypesRequest,
+      com.google.privacy.dlp.v2.ListStoredInfoTypesResponse> getListStoredInfoTypesMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<com.google.privacy.dlp.v2.ListStoredInfoTypesRequest,
+      com.google.privacy.dlp.v2.ListStoredInfoTypesResponse> getListStoredInfoTypesMethod() {
+    return getListStoredInfoTypesMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<com.google.privacy.dlp.v2.ListStoredInfoTypesRequest,
+      com.google.privacy.dlp.v2.ListStoredInfoTypesResponse> getListStoredInfoTypesMethodHelper() {
+    io.grpc.MethodDescriptor<com.google.privacy.dlp.v2.ListStoredInfoTypesRequest, com.google.privacy.dlp.v2.ListStoredInfoTypesResponse> getListStoredInfoTypesMethod;
+    if ((getListStoredInfoTypesMethod = DlpServiceGrpc.getListStoredInfoTypesMethod) == null) {
+      synchronized (DlpServiceGrpc.class) {
+        if ((getListStoredInfoTypesMethod = DlpServiceGrpc.getListStoredInfoTypesMethod) == null) {
+          DlpServiceGrpc.getListStoredInfoTypesMethod = getListStoredInfoTypesMethod = 
+              io.grpc.MethodDescriptor.<com.google.privacy.dlp.v2.ListStoredInfoTypesRequest, com.google.privacy.dlp.v2.ListStoredInfoTypesResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "google.privacy.dlp.v2.DlpService", "ListStoredInfoTypes"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.privacy.dlp.v2.ListStoredInfoTypesRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.privacy.dlp.v2.ListStoredInfoTypesResponse.getDefaultInstance()))
+                  .setSchemaDescriptor(new DlpServiceMethodDescriptorSupplier("ListStoredInfoTypes"))
+                  .build();
+          }
+        }
+     }
+     return getListStoredInfoTypesMethod;
+  }
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getDeleteStoredInfoTypeMethod()} instead. 
+  public static final io.grpc.MethodDescriptor<com.google.privacy.dlp.v2.DeleteStoredInfoTypeRequest,
+      com.google.protobuf.Empty> METHOD_DELETE_STORED_INFO_TYPE = getDeleteStoredInfoTypeMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<com.google.privacy.dlp.v2.DeleteStoredInfoTypeRequest,
+      com.google.protobuf.Empty> getDeleteStoredInfoTypeMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<com.google.privacy.dlp.v2.DeleteStoredInfoTypeRequest,
+      com.google.protobuf.Empty> getDeleteStoredInfoTypeMethod() {
+    return getDeleteStoredInfoTypeMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<com.google.privacy.dlp.v2.DeleteStoredInfoTypeRequest,
+      com.google.protobuf.Empty> getDeleteStoredInfoTypeMethodHelper() {
+    io.grpc.MethodDescriptor<com.google.privacy.dlp.v2.DeleteStoredInfoTypeRequest, com.google.protobuf.Empty> getDeleteStoredInfoTypeMethod;
+    if ((getDeleteStoredInfoTypeMethod = DlpServiceGrpc.getDeleteStoredInfoTypeMethod) == null) {
+      synchronized (DlpServiceGrpc.class) {
+        if ((getDeleteStoredInfoTypeMethod = DlpServiceGrpc.getDeleteStoredInfoTypeMethod) == null) {
+          DlpServiceGrpc.getDeleteStoredInfoTypeMethod = getDeleteStoredInfoTypeMethod = 
+              io.grpc.MethodDescriptor.<com.google.privacy.dlp.v2.DeleteStoredInfoTypeRequest, com.google.protobuf.Empty>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "google.privacy.dlp.v2.DlpService", "DeleteStoredInfoType"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.privacy.dlp.v2.DeleteStoredInfoTypeRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.protobuf.Empty.getDefaultInstance()))
+                  .setSchemaDescriptor(new DlpServiceMethodDescriptorSupplier("DeleteStoredInfoType"))
+                  .build();
+          }
+        }
+     }
+     return getDeleteStoredInfoTypeMethod;
+  }
 
   /**
    * Creates a new async stub that supports all call types for the service
@@ -1313,6 +1498,67 @@ public final class DlpServiceGrpc {
       asyncUnimplementedUnaryCall(getCancelDlpJobMethodHelper(), responseObserver);
     }
 
+    /**
+     * <pre>
+     * Creates a pre-built stored infoType to be used for inspection.
+     * See https://cloud.google.com/dlp/docs/creating-stored-infotypes to
+     * learn more.
+     * </pre>
+     */
+    public void createStoredInfoType(com.google.privacy.dlp.v2.CreateStoredInfoTypeRequest request,
+        io.grpc.stub.StreamObserver<com.google.privacy.dlp.v2.StoredInfoType> responseObserver) {
+      asyncUnimplementedUnaryCall(getCreateStoredInfoTypeMethodHelper(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Updates the stored infoType by creating a new version. The existing version
+     * will continue to be used until the new version is ready.
+     * See https://cloud.google.com/dlp/docs/creating-stored-infotypes to
+     * learn more.
+     * </pre>
+     */
+    public void updateStoredInfoType(com.google.privacy.dlp.v2.UpdateStoredInfoTypeRequest request,
+        io.grpc.stub.StreamObserver<com.google.privacy.dlp.v2.StoredInfoType> responseObserver) {
+      asyncUnimplementedUnaryCall(getUpdateStoredInfoTypeMethodHelper(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Gets a stored infoType.
+     * See https://cloud.google.com/dlp/docs/creating-stored-infotypes to
+     * learn more.
+     * </pre>
+     */
+    public void getStoredInfoType(com.google.privacy.dlp.v2.GetStoredInfoTypeRequest request,
+        io.grpc.stub.StreamObserver<com.google.privacy.dlp.v2.StoredInfoType> responseObserver) {
+      asyncUnimplementedUnaryCall(getGetStoredInfoTypeMethodHelper(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Lists stored infoTypes.
+     * See https://cloud.google.com/dlp/docs/creating-stored-infotypes to
+     * learn more.
+     * </pre>
+     */
+    public void listStoredInfoTypes(com.google.privacy.dlp.v2.ListStoredInfoTypesRequest request,
+        io.grpc.stub.StreamObserver<com.google.privacy.dlp.v2.ListStoredInfoTypesResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getListStoredInfoTypesMethodHelper(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Deletes a stored infoType.
+     * See https://cloud.google.com/dlp/docs/creating-stored-infotypes to
+     * learn more.
+     * </pre>
+     */
+    public void deleteStoredInfoType(com.google.privacy.dlp.v2.DeleteStoredInfoTypeRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      asyncUnimplementedUnaryCall(getDeleteStoredInfoTypeMethodHelper(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -1490,6 +1736,41 @@ public final class DlpServiceGrpc {
                 com.google.privacy.dlp.v2.CancelDlpJobRequest,
                 com.google.protobuf.Empty>(
                   this, METHODID_CANCEL_DLP_JOB)))
+          .addMethod(
+            getCreateStoredInfoTypeMethodHelper(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.google.privacy.dlp.v2.CreateStoredInfoTypeRequest,
+                com.google.privacy.dlp.v2.StoredInfoType>(
+                  this, METHODID_CREATE_STORED_INFO_TYPE)))
+          .addMethod(
+            getUpdateStoredInfoTypeMethodHelper(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.google.privacy.dlp.v2.UpdateStoredInfoTypeRequest,
+                com.google.privacy.dlp.v2.StoredInfoType>(
+                  this, METHODID_UPDATE_STORED_INFO_TYPE)))
+          .addMethod(
+            getGetStoredInfoTypeMethodHelper(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.google.privacy.dlp.v2.GetStoredInfoTypeRequest,
+                com.google.privacy.dlp.v2.StoredInfoType>(
+                  this, METHODID_GET_STORED_INFO_TYPE)))
+          .addMethod(
+            getListStoredInfoTypesMethodHelper(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.google.privacy.dlp.v2.ListStoredInfoTypesRequest,
+                com.google.privacy.dlp.v2.ListStoredInfoTypesResponse>(
+                  this, METHODID_LIST_STORED_INFO_TYPES)))
+          .addMethod(
+            getDeleteStoredInfoTypeMethodHelper(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.google.privacy.dlp.v2.DeleteStoredInfoTypeRequest,
+                com.google.protobuf.Empty>(
+                  this, METHODID_DELETE_STORED_INFO_TYPE)))
           .build();
     }
   }
@@ -1859,6 +2140,72 @@ public final class DlpServiceGrpc {
       asyncUnaryCall(
           getChannel().newCall(getCancelDlpJobMethodHelper(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     * Creates a pre-built stored infoType to be used for inspection.
+     * See https://cloud.google.com/dlp/docs/creating-stored-infotypes to
+     * learn more.
+     * </pre>
+     */
+    public void createStoredInfoType(com.google.privacy.dlp.v2.CreateStoredInfoTypeRequest request,
+        io.grpc.stub.StreamObserver<com.google.privacy.dlp.v2.StoredInfoType> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getCreateStoredInfoTypeMethodHelper(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Updates the stored infoType by creating a new version. The existing version
+     * will continue to be used until the new version is ready.
+     * See https://cloud.google.com/dlp/docs/creating-stored-infotypes to
+     * learn more.
+     * </pre>
+     */
+    public void updateStoredInfoType(com.google.privacy.dlp.v2.UpdateStoredInfoTypeRequest request,
+        io.grpc.stub.StreamObserver<com.google.privacy.dlp.v2.StoredInfoType> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getUpdateStoredInfoTypeMethodHelper(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Gets a stored infoType.
+     * See https://cloud.google.com/dlp/docs/creating-stored-infotypes to
+     * learn more.
+     * </pre>
+     */
+    public void getStoredInfoType(com.google.privacy.dlp.v2.GetStoredInfoTypeRequest request,
+        io.grpc.stub.StreamObserver<com.google.privacy.dlp.v2.StoredInfoType> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getGetStoredInfoTypeMethodHelper(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Lists stored infoTypes.
+     * See https://cloud.google.com/dlp/docs/creating-stored-infotypes to
+     * learn more.
+     * </pre>
+     */
+    public void listStoredInfoTypes(com.google.privacy.dlp.v2.ListStoredInfoTypesRequest request,
+        io.grpc.stub.StreamObserver<com.google.privacy.dlp.v2.ListStoredInfoTypesResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getListStoredInfoTypesMethodHelper(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Deletes a stored infoType.
+     * See https://cloud.google.com/dlp/docs/creating-stored-infotypes to
+     * learn more.
+     * </pre>
+     */
+    public void deleteStoredInfoType(com.google.privacy.dlp.v2.DeleteStoredInfoTypeRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getDeleteStoredInfoTypeMethodHelper(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -2200,6 +2547,67 @@ public final class DlpServiceGrpc {
     public com.google.protobuf.Empty cancelDlpJob(com.google.privacy.dlp.v2.CancelDlpJobRequest request) {
       return blockingUnaryCall(
           getChannel(), getCancelDlpJobMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Creates a pre-built stored infoType to be used for inspection.
+     * See https://cloud.google.com/dlp/docs/creating-stored-infotypes to
+     * learn more.
+     * </pre>
+     */
+    public com.google.privacy.dlp.v2.StoredInfoType createStoredInfoType(com.google.privacy.dlp.v2.CreateStoredInfoTypeRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getCreateStoredInfoTypeMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Updates the stored infoType by creating a new version. The existing version
+     * will continue to be used until the new version is ready.
+     * See https://cloud.google.com/dlp/docs/creating-stored-infotypes to
+     * learn more.
+     * </pre>
+     */
+    public com.google.privacy.dlp.v2.StoredInfoType updateStoredInfoType(com.google.privacy.dlp.v2.UpdateStoredInfoTypeRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getUpdateStoredInfoTypeMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Gets a stored infoType.
+     * See https://cloud.google.com/dlp/docs/creating-stored-infotypes to
+     * learn more.
+     * </pre>
+     */
+    public com.google.privacy.dlp.v2.StoredInfoType getStoredInfoType(com.google.privacy.dlp.v2.GetStoredInfoTypeRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getGetStoredInfoTypeMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Lists stored infoTypes.
+     * See https://cloud.google.com/dlp/docs/creating-stored-infotypes to
+     * learn more.
+     * </pre>
+     */
+    public com.google.privacy.dlp.v2.ListStoredInfoTypesResponse listStoredInfoTypes(com.google.privacy.dlp.v2.ListStoredInfoTypesRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getListStoredInfoTypesMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Deletes a stored infoType.
+     * See https://cloud.google.com/dlp/docs/creating-stored-infotypes to
+     * learn more.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteStoredInfoType(com.google.privacy.dlp.v2.DeleteStoredInfoTypeRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getDeleteStoredInfoTypeMethodHelper(), getCallOptions(), request);
     }
   }
 
@@ -2568,6 +2976,72 @@ public final class DlpServiceGrpc {
       return futureUnaryCall(
           getChannel().newCall(getCancelDlpJobMethodHelper(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * Creates a pre-built stored infoType to be used for inspection.
+     * See https://cloud.google.com/dlp/docs/creating-stored-infotypes to
+     * learn more.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.privacy.dlp.v2.StoredInfoType> createStoredInfoType(
+        com.google.privacy.dlp.v2.CreateStoredInfoTypeRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getCreateStoredInfoTypeMethodHelper(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Updates the stored infoType by creating a new version. The existing version
+     * will continue to be used until the new version is ready.
+     * See https://cloud.google.com/dlp/docs/creating-stored-infotypes to
+     * learn more.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.privacy.dlp.v2.StoredInfoType> updateStoredInfoType(
+        com.google.privacy.dlp.v2.UpdateStoredInfoTypeRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getUpdateStoredInfoTypeMethodHelper(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Gets a stored infoType.
+     * See https://cloud.google.com/dlp/docs/creating-stored-infotypes to
+     * learn more.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.privacy.dlp.v2.StoredInfoType> getStoredInfoType(
+        com.google.privacy.dlp.v2.GetStoredInfoTypeRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getGetStoredInfoTypeMethodHelper(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Lists stored infoTypes.
+     * See https://cloud.google.com/dlp/docs/creating-stored-infotypes to
+     * learn more.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.privacy.dlp.v2.ListStoredInfoTypesResponse> listStoredInfoTypes(
+        com.google.privacy.dlp.v2.ListStoredInfoTypesRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getListStoredInfoTypesMethodHelper(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Deletes a stored infoType.
+     * See https://cloud.google.com/dlp/docs/creating-stored-infotypes to
+     * learn more.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteStoredInfoType(
+        com.google.privacy.dlp.v2.DeleteStoredInfoTypeRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getDeleteStoredInfoTypeMethodHelper(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_INSPECT_CONTENT = 0;
@@ -2595,6 +3069,11 @@ public final class DlpServiceGrpc {
   private static final int METHODID_GET_DLP_JOB = 22;
   private static final int METHODID_DELETE_DLP_JOB = 23;
   private static final int METHODID_CANCEL_DLP_JOB = 24;
+  private static final int METHODID_CREATE_STORED_INFO_TYPE = 25;
+  private static final int METHODID_UPDATE_STORED_INFO_TYPE = 26;
+  private static final int METHODID_GET_STORED_INFO_TYPE = 27;
+  private static final int METHODID_LIST_STORED_INFO_TYPES = 28;
+  private static final int METHODID_DELETE_STORED_INFO_TYPE = 29;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2713,6 +3192,26 @@ public final class DlpServiceGrpc {
           serviceImpl.cancelDlpJob((com.google.privacy.dlp.v2.CancelDlpJobRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
+        case METHODID_CREATE_STORED_INFO_TYPE:
+          serviceImpl.createStoredInfoType((com.google.privacy.dlp.v2.CreateStoredInfoTypeRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.privacy.dlp.v2.StoredInfoType>) responseObserver);
+          break;
+        case METHODID_UPDATE_STORED_INFO_TYPE:
+          serviceImpl.updateStoredInfoType((com.google.privacy.dlp.v2.UpdateStoredInfoTypeRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.privacy.dlp.v2.StoredInfoType>) responseObserver);
+          break;
+        case METHODID_GET_STORED_INFO_TYPE:
+          serviceImpl.getStoredInfoType((com.google.privacy.dlp.v2.GetStoredInfoTypeRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.privacy.dlp.v2.StoredInfoType>) responseObserver);
+          break;
+        case METHODID_LIST_STORED_INFO_TYPES:
+          serviceImpl.listStoredInfoTypes((com.google.privacy.dlp.v2.ListStoredInfoTypesRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.privacy.dlp.v2.ListStoredInfoTypesResponse>) responseObserver);
+          break;
+        case METHODID_DELETE_STORED_INFO_TYPE:
+          serviceImpl.deleteStoredInfoType((com.google.privacy.dlp.v2.DeleteStoredInfoTypeRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -2799,6 +3298,11 @@ public final class DlpServiceGrpc {
               .addMethod(getGetDlpJobMethodHelper())
               .addMethod(getDeleteDlpJobMethodHelper())
               .addMethod(getCancelDlpJobMethodHelper())
+              .addMethod(getCreateStoredInfoTypeMethodHelper())
+              .addMethod(getUpdateStoredInfoTypeMethodHelper())
+              .addMethod(getGetStoredInfoTypeMethodHelper())
+              .addMethod(getListStoredInfoTypesMethodHelper())
+              .addMethod(getDeleteStoredInfoTypeMethodHelper())
               .build();
         }
       }

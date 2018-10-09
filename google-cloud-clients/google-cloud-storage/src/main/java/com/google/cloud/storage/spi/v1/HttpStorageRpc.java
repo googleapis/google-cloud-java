@@ -36,7 +36,7 @@ import com.google.api.client.http.InputStreamContent;
 import com.google.api.client.http.LowLevelHttpResponse;
 import com.google.api.client.http.json.JsonHttpContent;
 import com.google.api.client.json.JsonFactory;
-import com.google.api.client.json.jackson.JacksonFactory;
+import com.google.api.client.json.jackson2.JacksonFactory;
 import com.google.api.client.util.IOUtils;
 import com.google.api.services.storage.Storage;
 import com.google.api.services.storage.Storage.Objects.Get;
@@ -1206,6 +1206,23 @@ public class HttpStorageRpc implements StorageRpc {
       scope.close();
       span.end();
     }
+  }
+
+  @Override
+  public Bucket lockRetentionPolicy(Bucket bucket, Map<Option, ?> options) {
+    Span span = startSpan(HttpStorageRpcSpans.SPAN_LOCK_RETENTION_POLICY);
+    Scope scope = tracer.withSpan(span);
+    try {
+      return storage.buckets().lockRetentionPolicy(bucket.getName(), Option.IF_METAGENERATION_MATCH.getLong(options))
+          .setUserProject(Option.USER_PROJECT.getString(options)).execute();
+    } catch (IOException ex) {
+      span.setStatus(Status.UNKNOWN.withDescription(ex.getMessage()));
+      throw translate(ex);
+    } finally {
+      scope.close();
+      span.end();
+    }
+
   }
 
   @Override

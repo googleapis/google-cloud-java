@@ -406,7 +406,6 @@ class Watch implements ApiStreamObserver<ListenResponse> {
               Preconditions.checkState(stream == null);
 
               current = false;
-              hasPushed = false;
               nextAttempt = backoff.createNextAttempt(nextAttempt);
 
               stream = firestore.streamRequest(Watch.this, firestore.getClient().listenCallable());

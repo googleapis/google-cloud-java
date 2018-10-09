@@ -60,7 +60,6 @@ import java.util.Map;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Semaphore;
-import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import javax.annotation.Nullable;
 import org.junit.After;
@@ -168,7 +167,7 @@ public class ITSystemTest {
   @Test
   public void mergeDocumentWithServerTimestamp() throws Exception {
     Map<String, Object> originalMap = LocalFirestoreHelper.<String, Object>map("a", "b");
-    Map<String, Object> updateMap = map("c", FieldValue.serverTimestamp());
+    Map<String, Object> updateMap = map("c", (Object) FieldValue.serverTimestamp());
     randomDoc.set(originalMap).get();
     randomDoc.set(updateMap, SetOptions.merge()).get();
     DocumentSnapshot documentSnapshot = randomDoc.get().get();
@@ -202,7 +201,8 @@ public class ITSystemTest {
 
   @Test
   public void timestampDoesntGetTruncatedDuringUpdate() throws Exception {
-    DocumentReference documentReference = addDocument("time", Timestamp.ofTimeSecondsAndNanos(0, 123000));
+    DocumentReference documentReference =
+        addDocument("time", Timestamp.ofTimeSecondsAndNanos(0, 123000));
     DocumentSnapshot documentSnapshot = documentReference.get().get();
 
     Timestamp timestamp = documentSnapshot.getTimestamp("time");
@@ -269,7 +269,7 @@ public class ITSystemTest {
   public void queryWithMicrosecondPrecision() throws Exception {
     Timestamp microsecondTimestamp = Timestamp.ofTimeSecondsAndNanos(0, 123000);
 
-    DocumentReference documentReference = addDocument("time",  microsecondTimestamp);
+    DocumentReference documentReference = addDocument("time", microsecondTimestamp);
     DocumentSnapshot documentSnapshot = documentReference.get().get();
 
     Query query = randomColl.whereEqualTo("time", microsecondTimestamp);
@@ -552,7 +552,7 @@ public class ITSystemTest {
   }
 
   @Test
-  public void getCollections() throws Exception {
+  public void listCollections() throws Exception {
     // We test with 21 collections since 20 collections are by default returned in a single paged
     // response.
     String[] collections =
@@ -568,13 +568,46 @@ public class ITSystemTest {
     }
     batch.commit().get();
 
-    Iterable<CollectionReference> collectionRefs = randomDoc.getCollections();
+    Iterable<CollectionReference> collectionRefs = randomDoc.listCollections();
 
     int count = 0;
     for (CollectionReference collectionRef : collectionRefs) {
       assertEquals(collections[count++], collectionRef.getId());
     }
     assertEquals(collections.length, count);
+  }
+
+  @Test
+  public void listDocuments() throws Exception {
+    // We test with 21 documents since 20 documents are by default returned in a single paged
+    // response.
+    String[] documents =
+        new String[] {
+          "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16",
+          "17", "18", "19", "20", "21"
+        };
+    Arrays.sort(documents); // Sort in alphabetical (non-numeric) order.
+
+    WriteBatch batch = firestore.batch();
+    for (String document : documents) {
+      batch.create(randomColl.document(document), SINGLE_FIELD_OBJECT);
+    }
+    batch.commit().get();
+
+    Iterable<DocumentReference> collectionRefs = randomColl.listDocuments();
+
+    int count = 0;
+    for (DocumentReference documentRef : collectionRefs) {
+      assertEquals(documents[count++], documentRef.getId());
+    }
+    assertEquals(documents.length, count);
+  }
+
+  @Test
+  public void listDocumentsListsMissingDocument() throws Exception {
+    randomColl.document("missing/foo/bar").set(SINGLE_FIELD_MAP).get();
+    Iterable<DocumentReference> collectionRefs = randomColl.listDocuments();
+    assertEquals(randomColl.document("missing"), collectionRefs.iterator().next());
   }
 
   @Test
@@ -915,5 +948,24 @@ public class ITSystemTest {
     int pageCount = paginateResults(query, results);
     assertEquals(3, pageCount);
     assertEquals(9, results.size());
+  }
+
+  @Test
+  public void arrayOperators() throws ExecutionException, InterruptedException {
+    Query containsQuery = randomColl.whereArrayContains("foo", "bar");
+
+    assertTrue(containsQuery.get().get().isEmpty());
+
+    DocumentReference doc1 = randomColl.document();
+    DocumentReference doc2 = randomColl.document();
+    doc1.set(Collections.singletonMap("foo", (Object) FieldValue.arrayUnion("bar"))).get();
+    doc2.set(Collections.singletonMap("foo", (Object) FieldValue.arrayUnion("baz"))).get();
+
+    assertEquals(1, containsQuery.get().get().size());
+
+    doc1.set(Collections.singletonMap("foo", (Object) FieldValue.arrayRemove("bar"))).get();
+    doc2.set(Collections.singletonMap("foo", (Object) FieldValue.arrayRemove("baz"))).get();
+
+    assertTrue(containsQuery.get().get().isEmpty());
   }
 }

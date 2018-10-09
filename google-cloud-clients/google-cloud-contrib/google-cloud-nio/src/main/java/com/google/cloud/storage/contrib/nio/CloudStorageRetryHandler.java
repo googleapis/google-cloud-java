@@ -144,7 +144,7 @@ public class CloudStorageRetryHandler {
    * @return true if exs is a retryable error, otherwise false
    */
   private static boolean isRetryable(final StorageException exs) {
-    return exs.isRetryable() || exs.getCode() == 500 || exs.getCode() == 503;
+    return exs.isRetryable() || exs.getCode() == 500 || exs.getCode() == 502 || exs.getCode() == 503;
   }
 
   /**
@@ -154,7 +154,7 @@ public class CloudStorageRetryHandler {
   private static boolean isReopenable(final StorageException exs) {
     Throwable throwable = exs;
     // ensures finite iteration
-    int maxDepth = 10;
+    int maxDepth = 20;
     while (throwable != null && maxDepth-- > 0) {
       if ((throwable.getMessage() != null
           && throwable.getMessage().contains("Connection closed prematurely"))

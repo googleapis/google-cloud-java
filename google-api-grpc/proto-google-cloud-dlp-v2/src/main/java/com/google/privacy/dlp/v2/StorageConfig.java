@@ -139,7 +139,7 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * Exclude files older than this value.
+     * Exclude files or rows older than this value.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 1;</code>
@@ -147,7 +147,7 @@ private static final long serialVersionUID = 0L;
     boolean hasStartTime();
     /**
      * <pre>
-     * Exclude files older than this value.
+     * Exclude files or rows older than this value.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 1;</code>
@@ -155,7 +155,7 @@ private static final long serialVersionUID = 0L;
     com.google.protobuf.Timestamp getStartTime();
     /**
      * <pre>
-     * Exclude files older than this value.
+     * Exclude files or rows older than this value.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 1;</code>
@@ -164,7 +164,7 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * Exclude files newer than this value.
+     * Exclude files or rows newer than this value.
      * If set to zero, no upper time limit is applied.
      * </pre>
      *
@@ -173,7 +173,7 @@ private static final long serialVersionUID = 0L;
     boolean hasEndTime();
     /**
      * <pre>
-     * Exclude files newer than this value.
+     * Exclude files or rows newer than this value.
      * If set to zero, no upper time limit is applied.
      * </pre>
      *
@@ -182,7 +182,7 @@ private static final long serialVersionUID = 0L;
     com.google.protobuf.Timestamp getEndTime();
     /**
      * <pre>
-     * Exclude files newer than this value.
+     * Exclude files or rows newer than this value.
      * If set to zero, no upper time limit is applied.
      * </pre>
      *
@@ -193,7 +193,9 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Specification of the field containing the timestamp of scanned items.
-     * Required for data sources like Datastore or BigQuery.
+     * Used for data sources like Datastore or BigQuery.
+     * If not specified for BigQuery, table last modification timestamp
+     * is checked against given time span.
      * The valid data types of the timestamp field are:
      * for BigQuery - timestamp, date, datetime;
      * for Datastore - timestamp.
@@ -207,7 +209,9 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Specification of the field containing the timestamp of scanned items.
-     * Required for data sources like Datastore or BigQuery.
+     * Used for data sources like Datastore or BigQuery.
+     * If not specified for BigQuery, table last modification timestamp
+     * is checked against given time span.
      * The valid data types of the timestamp field are:
      * for BigQuery - timestamp, date, datetime;
      * for Datastore - timestamp.
@@ -221,7 +225,9 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Specification of the field containing the timestamp of scanned items.
-     * Required for data sources like Datastore or BigQuery.
+     * Used for data sources like Datastore or BigQuery.
+     * If not specified for BigQuery, table last modification timestamp
+     * is checked against given time span.
      * The valid data types of the timestamp field are:
      * for BigQuery - timestamp, date, datetime;
      * for Datastore - timestamp.
@@ -370,7 +376,7 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.Timestamp startTime_;
     /**
      * <pre>
-     * Exclude files older than this value.
+     * Exclude files or rows older than this value.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 1;</code>
@@ -380,7 +386,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Exclude files older than this value.
+     * Exclude files or rows older than this value.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 1;</code>
@@ -390,7 +396,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Exclude files older than this value.
+     * Exclude files or rows older than this value.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 1;</code>
@@ -403,7 +409,7 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.Timestamp endTime_;
     /**
      * <pre>
-     * Exclude files newer than this value.
+     * Exclude files or rows newer than this value.
      * If set to zero, no upper time limit is applied.
      * </pre>
      *
@@ -414,7 +420,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Exclude files newer than this value.
+     * Exclude files or rows newer than this value.
      * If set to zero, no upper time limit is applied.
      * </pre>
      *
@@ -425,7 +431,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Exclude files newer than this value.
+     * Exclude files or rows newer than this value.
      * If set to zero, no upper time limit is applied.
      * </pre>
      *
@@ -440,7 +446,9 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Specification of the field containing the timestamp of scanned items.
-     * Required for data sources like Datastore or BigQuery.
+     * Used for data sources like Datastore or BigQuery.
+     * If not specified for BigQuery, table last modification timestamp
+     * is checked against given time span.
      * The valid data types of the timestamp field are:
      * for BigQuery - timestamp, date, datetime;
      * for Datastore - timestamp.
@@ -456,7 +464,9 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Specification of the field containing the timestamp of scanned items.
-     * Required for data sources like Datastore or BigQuery.
+     * Used for data sources like Datastore or BigQuery.
+     * If not specified for BigQuery, table last modification timestamp
+     * is checked against given time span.
      * The valid data types of the timestamp field are:
      * for BigQuery - timestamp, date, datetime;
      * for Datastore - timestamp.
@@ -472,7 +482,9 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Specification of the field containing the timestamp of scanned items.
-     * Required for data sources like Datastore or BigQuery.
+     * Used for data sources like Datastore or BigQuery.
+     * If not specified for BigQuery, table last modification timestamp
+     * is checked against given time span.
      * The valid data types of the timestamp field are:
      * for BigQuery - timestamp, date, datetime;
      * for Datastore - timestamp.
@@ -906,7 +918,7 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> startTimeBuilder_;
       /**
        * <pre>
-       * Exclude files older than this value.
+       * Exclude files or rows older than this value.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp start_time = 1;</code>
@@ -916,7 +928,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Exclude files older than this value.
+       * Exclude files or rows older than this value.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp start_time = 1;</code>
@@ -930,7 +942,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Exclude files older than this value.
+       * Exclude files or rows older than this value.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp start_time = 1;</code>
@@ -950,7 +962,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Exclude files older than this value.
+       * Exclude files or rows older than this value.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp start_time = 1;</code>
@@ -968,7 +980,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Exclude files older than this value.
+       * Exclude files or rows older than this value.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp start_time = 1;</code>
@@ -990,7 +1002,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Exclude files older than this value.
+       * Exclude files or rows older than this value.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp start_time = 1;</code>
@@ -1008,7 +1020,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Exclude files older than this value.
+       * Exclude files or rows older than this value.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp start_time = 1;</code>
@@ -1020,7 +1032,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Exclude files older than this value.
+       * Exclude files or rows older than this value.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp start_time = 1;</code>
@@ -1035,7 +1047,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Exclude files older than this value.
+       * Exclude files or rows older than this value.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp start_time = 1;</code>
@@ -1059,7 +1071,7 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> endTimeBuilder_;
       /**
        * <pre>
-       * Exclude files newer than this value.
+       * Exclude files or rows newer than this value.
        * If set to zero, no upper time limit is applied.
        * </pre>
        *
@@ -1070,7 +1082,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Exclude files newer than this value.
+       * Exclude files or rows newer than this value.
        * If set to zero, no upper time limit is applied.
        * </pre>
        *
@@ -1085,7 +1097,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Exclude files newer than this value.
+       * Exclude files or rows newer than this value.
        * If set to zero, no upper time limit is applied.
        * </pre>
        *
@@ -1106,7 +1118,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Exclude files newer than this value.
+       * Exclude files or rows newer than this value.
        * If set to zero, no upper time limit is applied.
        * </pre>
        *
@@ -1125,7 +1137,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Exclude files newer than this value.
+       * Exclude files or rows newer than this value.
        * If set to zero, no upper time limit is applied.
        * </pre>
        *
@@ -1148,7 +1160,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Exclude files newer than this value.
+       * Exclude files or rows newer than this value.
        * If set to zero, no upper time limit is applied.
        * </pre>
        *
@@ -1167,7 +1179,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Exclude files newer than this value.
+       * Exclude files or rows newer than this value.
        * If set to zero, no upper time limit is applied.
        * </pre>
        *
@@ -1180,7 +1192,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Exclude files newer than this value.
+       * Exclude files or rows newer than this value.
        * If set to zero, no upper time limit is applied.
        * </pre>
        *
@@ -1196,7 +1208,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Exclude files newer than this value.
+       * Exclude files or rows newer than this value.
        * If set to zero, no upper time limit is applied.
        * </pre>
        *
@@ -1222,7 +1234,9 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Specification of the field containing the timestamp of scanned items.
-       * Required for data sources like Datastore or BigQuery.
+       * Used for data sources like Datastore or BigQuery.
+       * If not specified for BigQuery, table last modification timestamp
+       * is checked against given time span.
        * The valid data types of the timestamp field are:
        * for BigQuery - timestamp, date, datetime;
        * for Datastore - timestamp.
@@ -1238,7 +1252,9 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Specification of the field containing the timestamp of scanned items.
-       * Required for data sources like Datastore or BigQuery.
+       * Used for data sources like Datastore or BigQuery.
+       * If not specified for BigQuery, table last modification timestamp
+       * is checked against given time span.
        * The valid data types of the timestamp field are:
        * for BigQuery - timestamp, date, datetime;
        * for Datastore - timestamp.
@@ -1258,7 +1274,9 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Specification of the field containing the timestamp of scanned items.
-       * Required for data sources like Datastore or BigQuery.
+       * Used for data sources like Datastore or BigQuery.
+       * If not specified for BigQuery, table last modification timestamp
+       * is checked against given time span.
        * The valid data types of the timestamp field are:
        * for BigQuery - timestamp, date, datetime;
        * for Datastore - timestamp.
@@ -1284,7 +1302,9 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Specification of the field containing the timestamp of scanned items.
-       * Required for data sources like Datastore or BigQuery.
+       * Used for data sources like Datastore or BigQuery.
+       * If not specified for BigQuery, table last modification timestamp
+       * is checked against given time span.
        * The valid data types of the timestamp field are:
        * for BigQuery - timestamp, date, datetime;
        * for Datastore - timestamp.
@@ -1308,7 +1328,9 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Specification of the field containing the timestamp of scanned items.
-       * Required for data sources like Datastore or BigQuery.
+       * Used for data sources like Datastore or BigQuery.
+       * If not specified for BigQuery, table last modification timestamp
+       * is checked against given time span.
        * The valid data types of the timestamp field are:
        * for BigQuery - timestamp, date, datetime;
        * for Datastore - timestamp.
@@ -1336,7 +1358,9 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Specification of the field containing the timestamp of scanned items.
-       * Required for data sources like Datastore or BigQuery.
+       * Used for data sources like Datastore or BigQuery.
+       * If not specified for BigQuery, table last modification timestamp
+       * is checked against given time span.
        * The valid data types of the timestamp field are:
        * for BigQuery - timestamp, date, datetime;
        * for Datastore - timestamp.
@@ -1360,7 +1384,9 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Specification of the field containing the timestamp of scanned items.
-       * Required for data sources like Datastore or BigQuery.
+       * Used for data sources like Datastore or BigQuery.
+       * If not specified for BigQuery, table last modification timestamp
+       * is checked against given time span.
        * The valid data types of the timestamp field are:
        * for BigQuery - timestamp, date, datetime;
        * for Datastore - timestamp.
@@ -1378,7 +1404,9 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Specification of the field containing the timestamp of scanned items.
-       * Required for data sources like Datastore or BigQuery.
+       * Used for data sources like Datastore or BigQuery.
+       * If not specified for BigQuery, table last modification timestamp
+       * is checked against given time span.
        * The valid data types of the timestamp field are:
        * for BigQuery - timestamp, date, datetime;
        * for Datastore - timestamp.
@@ -1399,7 +1427,9 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Specification of the field containing the timestamp of scanned items.
-       * Required for data sources like Datastore or BigQuery.
+       * Used for data sources like Datastore or BigQuery.
+       * If not specified for BigQuery, table last modification timestamp
+       * is checked against given time span.
        * The valid data types of the timestamp field are:
        * for BigQuery - timestamp, date, datetime;
        * for Datastore - timestamp.

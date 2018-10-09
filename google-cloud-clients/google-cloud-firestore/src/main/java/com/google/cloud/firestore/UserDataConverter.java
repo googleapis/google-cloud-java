@@ -35,23 +35,50 @@ class UserDataConverter {
   interface EncodingOptions {
     /** Returns whether a field delete at `fieldPath` is allowed. */
     boolean allowDelete(FieldPath fieldPath);
+
+    /** Returns whether a field transform (server timestamp, array ops) is allowed. */
+    boolean allowTransform();
   }
 
-  /** Rejects all field deletes. */
+  /** Rejects all field deletes and allows all field transforms */
   static final EncodingOptions NO_DELETES =
       new EncodingOptions() {
         @Override
         public boolean allowDelete(FieldPath fieldPath) {
           return false;
         }
+
+        @Override
+        public boolean allowTransform() {
+          return true;
+        }
       };
 
-  /** Allows all field deletes. */
+  /** Allows all field deletes and allows all field transforms. */
   static final EncodingOptions ALLOW_ALL_DELETES =
       new EncodingOptions() {
         @Override
         public boolean allowDelete(FieldPath fieldPath) {
           return true;
+        }
+
+        @Override
+        public boolean allowTransform() {
+          return true;
+        }
+      };
+
+  /** Rejects all field deletes and any field transform. */
+  static final EncodingOptions ARGUMENT =
+      new EncodingOptions() {
+        @Override
+        public boolean allowDelete(FieldPath fieldPath) {
+          return false;
+        }
+
+        @Override
+        public boolean allowTransform() {
+          return false;
         }
       };
 
@@ -71,9 +98,15 @@ class UserDataConverter {
       FieldPath path, @Nullable Object sanitizedObject, EncodingOptions options) {
     if (sanitizedObject == FieldValue.DELETE_SENTINEL) {
       Preconditions.checkArgument(
-          options.allowDelete(path), "Encountered unexpected delete sentinel at field '%s'.", path);
+          options.allowDelete(path), "FieldValue.delete() is not supported at field '%s'.", path);
       return null;
-    } else if (sanitizedObject == FieldValue.SERVER_TIMESTAMP_SENTINEL) {
+    } else if (sanitizedObject instanceof FieldValue) {
+      Preconditions.checkArgument(
+          options.allowTransform(),
+          "Cannot use "
+              + ((FieldValue) sanitizedObject).getMethodName()
+              + " as an argument at field '%s'.",
+          path);
       return null;
     } else if (sanitizedObject == null) {
       return Value.newBuilder().setNullValue(NullValue.NULL_VALUE).build();
