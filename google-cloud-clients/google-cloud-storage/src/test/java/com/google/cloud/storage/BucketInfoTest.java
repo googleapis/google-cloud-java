@@ -31,6 +31,8 @@ import com.google.cloud.storage.BucketInfo.DeleteRule.Type;
 import com.google.cloud.storage.BucketInfo.IsLiveDeleteRule;
 import com.google.cloud.storage.BucketInfo.NumNewerVersionsDeleteRule;
 import com.google.cloud.storage.BucketInfo.RawDeleteRule;
+import com.google.cloud.storage.BucketInfo.LifecycleRule;
+
 import com.google.common.collect.ImmutableList;
 
 import com.google.common.collect.ImmutableMap;
@@ -56,6 +58,9 @@ public class BucketInfoTest {
       Collections.singletonList(Acl.of(User.ofAllAuthenticatedUsers(), Role.WRITER));
   private static final List<? extends DeleteRule> DELETE_RULES =
       Collections.singletonList(new AgeDeleteRule(5));
+  private static final List<? extends BucketInfo.LifecycleRule> LIFECYCLE_RULES =
+          Collections.singletonList(new BucketInfo.LifecycleRule(new BucketInfo.LifecycleRule.DeleteLifecycleAction(),
+                  new BucketInfo.LifecycleRule.LifecycleCondition().setAge(5)));
   private static final String INDEX_PAGE = "index.html";
   private static final String NOT_FOUND_PAGE = "error.html";
   private static final String LOCATION = "ASIA";
@@ -79,6 +84,7 @@ public class BucketInfoTest {
       .setCreateTime(CREATE_TIME)
       .setDefaultAcl(DEFAULT_ACL)
       .setDeleteRules(DELETE_RULES)
+      .setLifecycleRules(LIFECYCLE_RULES)
       .setIndexPage(INDEX_PAGE)
       .setNotFoundPage(NOT_FOUND_PAGE)
       .setLocation(LOCATION)
@@ -162,6 +168,7 @@ public class BucketInfoTest {
     assertEquals(expected.getCors(), value.getCors());
     assertEquals(expected.getDefaultAcl(), value.getDefaultAcl());
     assertEquals(expected.getDeleteRules(), value.getDeleteRules());
+    assertEquals(expected.getLifecycleRules(), value.getLifecycleRules());
     assertEquals(expected.getIndexPage(), value.getIndexPage());
     assertEquals(expected.getNotFoundPage(), value.getNotFoundPage());
     assertEquals(expected.getLocation(), value.getLocation());
@@ -204,5 +211,22 @@ public class BucketInfoTest {
     for (DeleteRule delRule : rules) {
       assertEquals(delRule, DeleteRule.fromPb(delRule.toPb()));
     }
+  }
+
+  @Test
+  public void testLifecycleRules() {
+    Rule deleteLifecycleRule = new LifecycleRule(new LifecycleRule.DeleteLifecycleAction(),
+            new LifecycleRule.LifecycleCondition().setAge(10)).toPb();
+
+    assertEquals("Delete", deleteLifecycleRule.getAction().getType());
+    assertEquals(10, (long)deleteLifecycleRule.getCondition().getAge());
+
+    Rule setStorageClassLifecycleRule = new LifecycleRule(
+            new LifecycleRule.SetStorageClassLifecycleAction(StorageClass.COLDLINE),
+            new LifecycleRule.LifecycleCondition().setIsLive(true).setNumberOfNewerVersions(10)).toPb();
+
+    assertEquals("COLDLINE", setStorageClassLifecycleRule.getAction().getStorageClass());
+    assertTrue(setStorageClassLifecycleRule.getCondition().getIsLive());
+    assertEquals(10, (long)setStorageClassLifecycleRule.getCondition().getNumNewerVersions());
   }
 }
