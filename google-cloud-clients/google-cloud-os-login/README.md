@@ -55,7 +55,7 @@ For this tutorial, you will need a
 [Google Developers Console](https://console.developers.google.com/) project with the OS Login API
 enabled. You will need to [enable billing](https://support.google.com/cloud/answer/6158867?hl=en) to
 use Google Cloud OS Login.
-[Follow these instructions](https://cloud.google.com/docs/authentication#preparation) to get your
+[Follow these instructions](https://cloud.google.com/resource-manager/docs/creating-managing-projects) to get your
 project set up. [Set up authentication with a service account][auth] so you can access the
 API from your local workstation.
 
