@@ -727,7 +727,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
         try {
           BlobId blobId = cloudPath.getBlobId();
           // Null or empty name won't give us a file, so skip. But perhaps it's a pseudodir.
-          if (!Strings.isNullOrEmpty(blobId.getName())) {
+          if (!isNullOrEmpty(blobId.getName())) {
             if (isNullOrEmpty(userProject)) {
               blobInfo = storage.get(blobId);
             } else {
