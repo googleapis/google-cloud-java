@@ -44,6 +44,8 @@ public final class Mutation implements MutationApi<Mutation>, Serializable {
   @InternalApi("Visible for testing")
   static final int MAX_BYTE_SIZE = 200 * 1024 * 1024;
 
+  private final boolean allowServersideTimestamp;
+
   private transient ImmutableList.Builder<com.google.bigtable.v2.Mutation> mutations =
       ImmutableList.builder();
 
@@ -51,10 +53,20 @@ public final class Mutation implements MutationApi<Mutation>, Serializable {
   private long byteSize;
 
   public static Mutation create() {
-    return new Mutation();
+    return new Mutation(false);
   }
 
-  private Mutation() {}
+  /**
+   * Creates Mutation object which allows setCell operation to set server side timestamp.
+   * @return Mutation object.
+   */
+  public static Mutation createUnsafe() {
+    return new Mutation(true);
+  }
+
+  private Mutation(boolean allowServersideTimestamp) {
+    this.allowServersideTimestamp = allowServersideTimestamp;
+  }
 
   private void readObject(ObjectInputStream input) throws IOException, ClassNotFoundException {
     input.defaultReadObject();
@@ -102,7 +114,9 @@ public final class Mutation implements MutationApi<Mutation>, Serializable {
     Validations.validateFamily(familyName);
     Preconditions.checkNotNull(qualifier, "qualifier can't be null.");
     Preconditions.checkNotNull(value, "value can't be null.");
-    Preconditions.checkArgument(timestamp != -1, "Serverside timestamps are not supported");
+    if (!allowServersideTimestamp) {
+      Preconditions.checkArgument(timestamp != -1, "Serverside timestamps are not supported");
+    }
 
     addMutation(
         com.google.bigtable.v2.Mutation.newBuilder()
