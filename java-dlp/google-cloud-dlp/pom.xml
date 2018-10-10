@@ -5,7 +5,7 @@
   <version>0.66.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-dlp:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Data Loss Prevention API</name>
-  <url>https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-clients/google-cloud-dlp</url>
+  <url>https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-clients/google-cloud-dlp</url>
   <description>
     Java idiomatic client for Cloud Data Loss Prevention API v2.
   </description>
