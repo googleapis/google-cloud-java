@@ -521,17 +521,15 @@ public class ITGcsNio {
       }
 
       List<Path> got = new ArrayList<>();
-      for (Path path : Files.newDirectoryStream(fs.getPath("/dir/"))) {
-        got.add(path);
+      for (String folder : new String[]{"/dir/", "/dir", "dir/", "dir"}) {
+        got.clear();
+        for (Path path : Files.newDirectoryStream(fs.getPath(folder))) {
+          got.add(path);
+        }
+        assertWithMessage("Listing " + folder+": ").that(got).containsExactlyElementsIn(goodPaths);
       }
-      assertThat(got).containsExactlyElementsIn(goodPaths);
 
-      // Must also work with relative path
-      got.clear();
-      for (Path path : Files.newDirectoryStream(fs.getPath("dir/"))) {
-        got.add(path);
-      }
-      assertThat(got).containsExactlyElementsIn(goodPaths);
+
       // clean up
       for (Path path : paths) {
         Files.delete(path);
@@ -614,20 +612,67 @@ public class ITGcsNio {
       BUCKET, CloudStorageConfiguration.builder().permitEmptyPathComponents(true)
       .build(), storageOptions);
 
-    // test absolute path
-    Path rootPath = fs.getPath("");
-    List<String> objectNames = new ArrayList<String>();
-    for (Path path : Files.newDirectoryStream(rootPath)) {
-      objectNames.add(path.toString());
+    // test absolute path, relative path.
+    for (String check : new String[]{".", "/", ""}) {
+      Path rootPath = fs.getPath(check);
+      List<String> objectNames = new ArrayList<>();
+      for (Path path : Files.newDirectoryStream(rootPath)) {
+        objectNames.add(path.toString());
+      }
+      assertWithMessage("Listing " + check + ": ").that(objectNames).containsExactly(BIG_FILE, SML_FILE);
     }
-    assertThat(objectNames).containsExactly(BIG_FILE, SML_FILE);
-    
-    // test relative path
-    rootPath = fs.getPath(".");
-    for (Path path : Files.newDirectoryStream(rootPath)) {
-      objectNames.add(path.toString());
+  }
+
+  @Test
+  public void testFakeDirectories() throws IOException {
+    try (FileSystem fs = getTestBucket()) {
+      List<Path> paths = new ArrayList<>();
+      paths.add(fs.getPath("dir/angel"));
+      paths.add(fs.getPath("dir/deepera"));
+      paths.add(fs.getPath("dir/deeperb"));
+      paths.add(fs.getPath("dir/deeper_"));
+      paths.add(fs.getPath("dir/deeper.sea/hasfish"));
+      paths.add(fs.getPath("dir/deeper/fish"));
+      for (Path path : paths) {
+        Files.createFile(path);
+      }
+
+      // ends with slash, must be a directory
+      assertThat(Files.isDirectory(fs.getPath("dir/"))).isTrue();
+      // files are not directories
+      assertThat(Files.exists(fs.getPath("dir/angel"))).isTrue();
+      assertThat(Files.isDirectory(fs.getPath("dir/angel"))).isFalse();
+      // directories are recognized even without the trailing "/"
+      assertThat(Files.isDirectory(fs.getPath("dir"))).isTrue();
+      // also works for absolute paths
+      assertThat(Files.isDirectory(fs.getPath("/dir"))).isTrue();
+      // non-existent files are not directories (but they don't make us crash)
+      assertThat(Files.isDirectory(fs.getPath("di"))).isFalse();
+      assertThat(Files.isDirectory(fs.getPath("dirs"))).isFalse();
+      assertThat(Files.isDirectory(fs.getPath("dir/deep"))).isFalse();
+      assertThat(Files.isDirectory(fs.getPath("dir/deeper/fi"))).isFalse();
+      assertThat(Files.isDirectory(fs.getPath("/dir/deeper/fi"))).isFalse();
+      // also works for subdirectories
+      assertThat(Files.isDirectory(fs.getPath("dir/deeper/"))).isTrue();
+      assertThat(Files.isDirectory(fs.getPath("dir/deeper"))).isTrue();
+      assertThat(Files.isDirectory(fs.getPath("/dir/deeper/"))).isTrue();
+      assertThat(Files.isDirectory(fs.getPath("/dir/deeper"))).isTrue();
+      // dot and .. folders are directories
+      assertThat(Files.isDirectory(fs.getPath("dir/deeper/."))).isTrue();
+      assertThat(Files.isDirectory(fs.getPath("dir/deeper/.."))).isTrue();
+      // dots in the name are fine
+      assertThat(Files.isDirectory(fs.getPath("dir/deeper.sea/"))).isTrue();
+      assertThat(Files.isDirectory(fs.getPath("dir/deeper.sea"))).isTrue();
+      assertThat(Files.isDirectory(fs.getPath("dir/deeper.seax"))).isFalse();
+      // the root folder is a directory
+      assertThat(Files.isDirectory(fs.getPath("/"))).isTrue();
+      assertThat(Files.isDirectory(fs.getPath(""))).isTrue();
+
+      // clean up
+      for (Path path : paths) {
+        Files.delete(path);
+      }
     }
-    assertThat(objectNames).containsExactly(BIG_FILE, SML_FILE);
   }
 
   /**

@@ -124,6 +124,7 @@ class FakeStorageRpc implements StorageRpc {
       throws StorageException {
     String delimiter = null;
     String preprefix = "";
+    long maxResults = Long.MAX_VALUE;
     for (Map.Entry<Option, ?> e : options.entrySet()) {
       switch (e.getKey()) {
         case PREFIX:
@@ -137,6 +138,9 @@ class FakeStorageRpc implements StorageRpc {
           break;
         case FIELDS:
           // ignore and return all the fields
+          break;
+        case MAX_RESULTS:
+          maxResults = (Long) e.getValue();
           break;
         default:
           throw new UnsupportedOperationException("Unknown option: " + e.getKey());
@@ -156,6 +160,16 @@ class FakeStorageRpc implements StorageRpc {
       values.add(so);
     }
     values.addAll(folders.values());
+
+    // truncate to max allowed length
+    if (values.size() > maxResults) {
+      List<StorageObject> newValues = new ArrayList<>();
+      for (int i=0; i < maxResults; i++) {
+        newValues.add(values.get(i));
+      }
+      values = newValues;
+    }
+
     // null cursor to indicate there is no more data (empty string would cause us to be called again).
     // The type cast seems to be necessary to help Java's typesystem remember that collections are iterable.
     return Tuple.of(null, (Iterable<StorageObject>) values);
