@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# This scripts creates sites for `google-cloud-clients` and `google-api-grpc`
+# This script creates sites for `google-cloud-clients` and `google-api-grpc`
 # modules and commits (but does not push) them to gh-pages branch of
 # googleapis/google-cloud-java github repository.
 
