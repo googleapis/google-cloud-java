@@ -5,7 +5,7 @@
   <version>0.66.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-errorreporting:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Error Reporting</name>
-  <url>https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-clients/google-cloud-errorreporting</url>
+  <url>https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-clients/google-cloud-errorreporting</url>
   <description>
     Java idiomatic client for Google Cloud Error Reporting.
   </description>
