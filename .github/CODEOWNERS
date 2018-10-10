@@ -2,35 +2,21 @@
 # This file controls who is tagged for review for any given pull request.
 
 # For anything not explicitly taken by someone else.
-*                                     @pongad
+*                                     @googleapis/yoshi-java
 # Owners per module.
 google-cloud-bigquery/src/*           @vam-google @tswast
 google-cloud-bigtable/src/*           @igorbernstein2
 google-cloud-compute/src/*            @andreamlin
 google-cloud-contrib/src/*            @pongad @jean-philippe-martin
-google-cloud-core-grpc/src/*          @pongad
-google-cloud-core-http/src/*          @pongad
-google-cloud-core/src/*               @pongad
 google-cloud-datastore/src/*          @neozwu @vam-google
-google-cloud-dep-verification/src/*   @pongad
-google-cloud-dlp/src/*                @neozwu
-google-cloud-dns/src/*                @pongad
-google-cloud-errorreporting/src/*     @pongad
-google-cloud-examples/src/*           @pongad
 google-cloud-firestore/src/*          @schmidt-sebastian
-google-cloud-language/src/*           @pongad
 google-cloud-logging/src/*            @saicheems @andreamlin @jabubake
-google-cloud-monitoring/src/*         @pongad
-google-cloud-pubsub/src/*             @pongad
-google-cloud-resourcemanager/src/*    @pongad
+google-cloud-pubsub/src/*             @pongad @googleapis/yoshi-java
 google-cloud-spanner/src/*            @vam-google @vkedia
 google-cloud-speech/src/*             @vam-google
 google-cloud-storage/src/*            @andreamlin @neozwu
 google-cloud-testing/src/*            @vam-google
-google-cloud-trace/src/*              @pongad
 google-cloud-translate/src/*          @andreamlin @saicheems
-google-cloud-util/src/*               @pongad
 google-cloud-video-intelligence/src/* @vam-google
 google-cloud-vision/src/*             @vam-google
-google-cloud/src/*                    @pongad
 
