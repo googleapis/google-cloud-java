@@ -1,6 +1,6 @@
 Thanks for stopping by to let us know something could be better!
 
-Please be sure to include as much information as possible:
+Please include as much information as possible:
 
 #### Environment details
 
@@ -19,12 +19,18 @@ Please be sure to include as much information as possible:
 Any relevant stacktrace here.
 ```
 
+#### Code snippet
+
+```java
+Any relevant code snippet to help reproduce the issue.
+```
+
 #### External references such as API reference guides used
 
 - ?
 
 #### Any additional information below
 
-Making sure to follow these steps will guarantee the quickest resolution possible.
+Following these steps will guarantee the quickest resolution possible.
 
 Thanks!
