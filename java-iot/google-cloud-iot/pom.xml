@@ -5,7 +5,7 @@
   <version>0.66.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-iot:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud IoT</name>
-  <url>https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-clients/google-cloud-iot</url>
+  <url>https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-clients/google-cloud-iot</url>
   <description>
     Java idiomatic client for Google Cloud IoT Core
   </description>
