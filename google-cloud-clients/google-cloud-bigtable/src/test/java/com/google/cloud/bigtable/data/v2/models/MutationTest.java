@@ -104,10 +104,10 @@ public class MutationTest {
         .setCell(
             "fake-family",
             ByteString.copyFromUtf8("fake-qualifier"),
-            -1,
+            Mutation.SERVER_SIDE_TIMESTAMP,
             ByteString.copyFromUtf8("fake-value"));
     List<com.google.bigtable.v2.Mutation> actual = mutation.getMutations();
-    assertThat(actual.get(0).getSetCell().getTimestampMicros()).isEqualTo(-1);
+    assertThat(actual.get(0).getSetCell().getTimestampMicros()).isEqualTo(Mutation.SERVER_SIDE_TIMESTAMP);
   }
 
   @Test

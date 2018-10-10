@@ -15,6 +15,7 @@
  */
 package com.google.cloud.bigtable.data.v2.models;
 
+import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.bigtable.v2.Mutation.DeleteFromColumn;
 import com.google.bigtable.v2.Mutation.DeleteFromFamily;
@@ -43,6 +44,8 @@ public final class Mutation implements MutationApi<Mutation>, Serializable {
   static final int MAX_MUTATIONS = 100_000;
   @InternalApi("Visible for testing")
   static final int MAX_BYTE_SIZE = 200 * 1024 * 1024;
+  @InternalApi("Visible for testing")
+  static final long SERVER_SIDE_TIMESTAMP = -1;
 
   private final boolean allowServersideTimestamp;
 
@@ -52,14 +55,24 @@ public final class Mutation implements MutationApi<Mutation>, Serializable {
   private int numMutations;
   private long byteSize;
 
+  /**
+   * Creates new instance of Mutation object.
+   *
+   * @return Mutation object.
+   */
   public static Mutation create() {
     return new Mutation(false);
   }
 
   /**
-   * Creates Mutation object which allows setCell operation to set server side timestamp.
+   * Creates new instance of Mutation object which allows setCell operation to use server
+   * side timestamp. This is dangerous because mutations will no longer be idempotent, which
+   * might cause multiple duplicate values to be stored in Bigtable. This option should only
+   * be used for advanced usecases with extreme care.
+   *
    * @return Mutation object.
    */
+  @BetaApi
   public static Mutation createUnsafe() {
     return new Mutation(true);
   }
@@ -115,7 +128,7 @@ public final class Mutation implements MutationApi<Mutation>, Serializable {
     Preconditions.checkNotNull(qualifier, "qualifier can't be null.");
     Preconditions.checkNotNull(value, "value can't be null.");
     if (!allowServersideTimestamp) {
-      Preconditions.checkArgument(timestamp != -1, "Serverside timestamps are not supported");
+      Preconditions.checkArgument(timestamp != SERVER_SIDE_TIMESTAMP, "Serverside timestamps are not supported");
     }
 
     addMutation(
