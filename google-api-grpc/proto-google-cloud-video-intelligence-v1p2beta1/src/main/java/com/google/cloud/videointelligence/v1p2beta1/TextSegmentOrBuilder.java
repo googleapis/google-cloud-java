@@ -31,4 +31,58 @@ public interface TextSegmentOrBuilder extends
    * <code>.google.cloud.videointelligence.v1p2beta1.VideoSegment segment = 1;</code>
    */
   com.google.cloud.videointelligence.v1p2beta1.VideoSegmentOrBuilder getSegmentOrBuilder();
+
+  /**
+   * <pre>
+   * Confidence for the track of detected text. It is calculated as the highest
+   * over all frames where OCR detected text appears.
+   * </pre>
+   *
+   * <code>float confidence = 2;</code>
+   */
+  float getConfidence();
+
+  /**
+   * <pre>
+   * Information related to the frames where OCR detected text appears.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.videointelligence.v1p2beta1.TextFrame frames = 3;</code>
+   */
+  java.util.List<com.google.cloud.videointelligence.v1p2beta1.TextFrame> 
+      getFramesList();
+  /**
+   * <pre>
+   * Information related to the frames where OCR detected text appears.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.videointelligence.v1p2beta1.TextFrame frames = 3;</code>
+   */
+  com.google.cloud.videointelligence.v1p2beta1.TextFrame getFrames(int index);
+  /**
+   * <pre>
+   * Information related to the frames where OCR detected text appears.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.videointelligence.v1p2beta1.TextFrame frames = 3;</code>
+   */
+  int getFramesCount();
+  /**
+   * <pre>
+   * Information related to the frames where OCR detected text appears.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.videointelligence.v1p2beta1.TextFrame frames = 3;</code>
+   */
+  java.util.List<? extends com.google.cloud.videointelligence.v1p2beta1.TextFrameOrBuilder> 
+      getFramesOrBuilderList();
+  /**
+   * <pre>
+   * Information related to the frames where OCR detected text appears.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.videointelligence.v1p2beta1.TextFrame frames = 3;</code>
+   */
+  com.google.cloud.videointelligence.v1p2beta1.TextFrameOrBuilder getFramesOrBuilder(
+      int index);
 }
