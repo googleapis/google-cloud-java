@@ -57,8 +57,6 @@ public final class Mutation implements MutationApi<Mutation>, Serializable {
 
   /**
    * Creates new instance of Mutation object.
-   *
-   * @return Mutation object.
    */
   public static Mutation create() {
     return new Mutation(false);
@@ -69,8 +67,6 @@ public final class Mutation implements MutationApi<Mutation>, Serializable {
    * side timestamp. This is dangerous because mutations will no longer be idempotent, which
    * might cause multiple duplicate values to be stored in Bigtable. This option should only
    * be used for advanced usecases with extreme care.
-   *
-   * @return Mutation object.
    */
   @BetaApi
   public static Mutation createUnsafe() {
