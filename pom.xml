@@ -78,13 +78,29 @@
   </licenses>
   <modules>
     <module>google-api-grpc</module>
-    <module>google-cloud-bom</module>
     <module>google-cloud-clients</module>
     <module>google-cloud-examples</module>
     <module>google-cloud-testing</module>
     <module>google-cloud-util</module>
+    <!-- For deployment reasons, a deployable artifact must be the last one. -->
+    <module>google-cloud-bom</module>
   </modules>
   <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.sonatype.plugins</groupId>
+          <artifactId>nexus-staging-maven-plugin</artifactId>
+          <version>1.6.6</version>
+          <extensions>true</extensions>
+          <configuration>
+            <serverId>ossrh</serverId>
+            <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+            <autoReleaseAfterClose>false</autoReleaseAfterClose>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -99,17 +115,6 @@
         <artifactId>maven-deploy-plugin</artifactId>
         <version>2.7</version>
         <configuration>
-          <skip>true</skip>
-        </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.sonatype.plugins</groupId>
-        <artifactId>nexus-staging-maven-plugin</artifactId>
-        <version>1.6.6</version>
-        <configuration>
-          <serverId>sonatype-nexus-staging</serverId>
-          <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-          <autoReleaseAfterClose>false</autoReleaseAfterClose>
           <skip>true</skip>
         </configuration>
       </plugin>

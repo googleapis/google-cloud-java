@@ -103,37 +103,28 @@ To push a release version
    assumes that there is no directory called `tmp_gh-pages` in the repository root. If it is
    present, remove it before running the script.
 
-8. Locally edit the root `pom.xml` so that `mvn deploy` works:
-  1. Under `<modules>`, comment out `google-cloud-examples`, `google-cloud-testing`, and
-     `google-cloud-util`.
-  2. Comment out the `nexus-staging-maven-plugin` plugin definition at the end of the file.
-
-  **Don't commit these changes.**
-
-9. Check that you are not trying to release a SNAPSHOT build (the artifacts versions do not have
+8. Check that you are not trying to release a SNAPSHOT build (the artifacts versions do not have
    "-SNAPSHOT" suffix) and then run `mvn clean deploy -DskipTests=true --settings ~/.m2/settings.xml -P release`
    command. It will build and deploy artifacts to the staging repository.
 
   **Note:** you may need to specify the stagingProfileId with `-DstagingProfileId=3187e4f20d328b`
   **Note:** you may need to specify the GPG tty with `GPG_TTY=$(tty)`
 
-10. Uncomment the `nexus-staging-maven-plugin` plugin definition from step 8; This plugin is
-    needed to release the artifacts. Run `mvn nexus-staging:release` to release the artifacts.
+9. Run `mvn nexus-staging:release` to release the artifacts. If you wish to abort the release, run
+   `mvn nexus-staging:drop`.
 
-11. Revert the local edits to your `pom.xml` performed a couple steps above by running `git checkout pom.xml`.
+10. Run `cd tmp_gh-pages && git push && cd ..` to push the previously generated docs (step 7).
 
-12. Run `cd tmp_gh-pages && git push && cd ..` to push the previously generated docs (step 7).
+11. Run `rm -rf tmp_gh-pages` to remove the generated docs directory from your local machine.
 
-13. Run `rm -rf tmp_gh-pages` to remove the generated docs directory from your local machine.
-
-14. Run `releasetool tag` to publish a release on Github. It will list the last few merged PRs.
+12. Run `releasetool tag` to publish a release on Github. It will list the last few merged PRs.
     Select the newly merged release PR. Releasetool will create the GitHub release with notes
     extracted from the pull request and tag the new release.
 
-15. Run `releasetool start` to bump the next snapshot version. Select "snapshot" when prompted for
+13. Run `releasetool start` to bump the next snapshot version. Select "snapshot" when prompted for
     the release type. This will bump the artifact versions and create a pull request.
 
-16. Review and submit the PR.
+14. Review and submit the PR.
 
 Improvements
 ============
