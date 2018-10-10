@@ -37,7 +37,7 @@ libraryDependencies += "com.google.cloud" % "google-cloud-bigtable" % "0.66.0-al
 ## Authentication
 
 See the
-[Authentication](https://github.com/GoogleCloudPlatform/google-cloud-java#authentication)
+[Authentication](https://github.com/googleapis/google-cloud-java#authentication)
 section in the base directory's README.
 
 ## About Cloud Bigtable
@@ -136,7 +136,7 @@ try {
 ## Troubleshooting
 
 To get help, follow the instructions in the [shared Troubleshooting
-document](https://github.com/GoogleCloudPlatform/gcloud-common/blob/master/troubleshooting/readme.md#troubleshooting).
+document](https://github.com/googleapis/google-cloud-common/blob/master/troubleshooting/readme.md#troubleshooting).
 
 Transport
 ---------
@@ -164,9 +164,9 @@ codebase.
 
 Apache 2.0 - See [LICENSE] for more information.
 
-[CONTRIBUTING]:https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/CONTRIBUTING.md
-[LICENSE]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/LICENSE
+[CONTRIBUTING]:https://github.com/googleapis/google-cloud-java/blob/master/CONTRIBUTING.md
+[LICENSE]: https://github.com/googleapis/google-cloud-java/blob/master/LICENSE
 [cloud-platform]: https://cloud.google.com/
 [cloud-bigtable]: https://cloud.google.com/bigtable/
 [bigtable-product-docs]: https://cloud.google.com/bigtable/docs/
-[bigtable-client-lib-docs]: https://googlecloudplatform.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/bigtable/package-summary.html
+[bigtable-client-lib-docs]: https://googleapis.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/bigtable/package-summary.html

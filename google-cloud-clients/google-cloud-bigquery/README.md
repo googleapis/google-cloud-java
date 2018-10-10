@@ -34,12 +34,12 @@ libraryDependencies += "com.google.cloud" % "google-cloud-bigquery" % "1.48.0"
 Example Application
 -------------------
 - [`BigQueryExample`](../../google-cloud-examples/src/main/java/com/google/cloud/examples/bigquery/BigQueryExample.java) - A simple command line interface providing some of Cloud BigQuery's functionality.
-Read more about using this application on the [`BigQueryExample` docs page](https://googlecloudplatform.github.io/google-cloud-java/apidocs/?com/google/cloud/examples/bigquery/BigQueryExample.html).
+Read more about using this application on the [`BigQueryExample` docs page](https://googleapis.github.io/google-cloud-java/apidocs/?com/google/cloud/examples/bigquery/BigQueryExample.html).
 
 Authentication
 --------------
 
-See the [Authentication](https://github.com/GoogleCloudPlatform/google-cloud-java#authentication) section in the base directory's README.
+See the [Authentication](https://github.com/googleapis/google-cloud-java#authentication) section in the base directory's README.
 
 About Google Cloud BigQuery
 --------------------------
@@ -86,7 +86,7 @@ BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
 ```
 
 For other authentication options, see the
-[Authentication](https://github.com/GoogleCloudPlatform/google-cloud-java#authentication) page.
+[Authentication](https://github.com/googleapis/google-cloud-java#authentication) page.
 
 #### Creating a dataset
 With BigQuery you can create datasets. A dataset is a grouping mechanism that holds zero or more
@@ -195,7 +195,7 @@ display on your webpage.
 Troubleshooting
 ---------------
 
-To get help, follow the instructions in the [shared Troubleshooting document](https://github.com/GoogleCloudPlatform/gcloud-common/blob/master/troubleshooting/readme.md#troubleshooting).
+To get help, follow the instructions in the [shared Troubleshooting document](https://github.com/googleapis/google-cloud-common/blob/master/troubleshooting/readme.md#troubleshooting).
 
 Transport
 ---------
@@ -233,12 +233,12 @@ License
 Apache 2.0 - See [LICENSE] for more information.
 
 
-[CONTRIBUTING]:https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/CONTRIBUTING.md
-[LICENSE]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/LICENSE
-[TESTING]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/TESTING.md#testing-code-that-uses-bigquery
+[CONTRIBUTING]:https://github.com/googleapis/google-cloud-java/blob/master/CONTRIBUTING.md
+[LICENSE]: https://github.com/googleapis/google-cloud-java/blob/master/LICENSE
+[TESTING]: https://github.com/googleapis/google-cloud-java/blob/master/TESTING.md#testing-code-that-uses-bigquery
 [cloud-platform]: https://cloud.google.com/
 
 [cloud-bigquery]: https://cloud.google.com/bigquery/
 [cloud-storage]: https://cloud.google.com/storage/
 [bigquery-product-docs]: https://cloud.google.com/bigquery/docs/
-[bigquery-client-lib-docs]: https://googlecloudplatform.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/bigquery/package-summary.html
+[bigquery-client-lib-docs]: https://googleapis.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/bigquery/package-summary.html

@@ -96,7 +96,7 @@ try {
 ## Troubleshooting
 
 To get help, follow the instructions in the [shared Troubleshooting
-document](https://github.com/GoogleCloudPlatform/gcloud-common/blob/master/troubleshooting/readme.md#troubleshooting).
+document](https://github.com/googleapis/google-cloud-common/blob/master/troubleshooting/readme.md#troubleshooting).
 
 Transport
 ---------
@@ -129,4 +129,4 @@ Apache 2.0 - See [LICENSE] for more information.
 [cloud-platform]: https://cloud.google.com/
 [cloud-bigtable]: https://cloud.google.com/bigtable/
 [bigtable-product-docs]: https://cloud.google.com/bigtable/docs/
-[bigtable-admin-client-lib-docs]: https://googlecloudplatform.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/bigtable/admin/v2/package-summary.html
+[bigtable-admin-client-lib-docs]: https://googleapis.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/bigtable/admin/v2/package-summary.html

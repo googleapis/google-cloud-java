@@ -37,12 +37,12 @@ Example Application
 [`LoggingExample`](../../google-cloud-examples/src/main/java/com/google/cloud/examples/logging/LoggingExample.java)
 is a simple command line interface that provides some of Stackdriver Logging's functionality. Read
 more about using the application on the
-[`LoggingExample` docs page](https://googlecloudplatform.github.io/google-cloud-java/apidocs/?com/google/cloud/examples/logging/LoggingExample.html).
+[`LoggingExample` docs page](https://googleapis.github.io/google-cloud-java/apidocs/?com/google/cloud/examples/logging/LoggingExample.html).
 
 Authentication
 --------------
 
-See the [Authentication](https://github.com/GoogleCloudPlatform/google-cloud-java#authentication) section in the base directory's README.
+See the [Authentication](https://github.com/googleapis/google-cloud-java#authentication) section in the base directory's README.
 
 About Stackdriver Logging
 --------------------------
@@ -93,7 +93,7 @@ try(Logging logging = options.getService()) {
 ```
 
 For other authentication options, see the
-[Authentication](https://github.com/GoogleCloudPlatform/google-cloud-java#authentication) page.
+[Authentication](https://github.com/googleapis/google-cloud-java#authentication) page.
 
 #### Creating a metric
 With Logging you can create logs-based metrics. Logs-based metrics allow to keep track of the number
@@ -208,7 +208,7 @@ Contributing
 
 Contributions to this library are always welcome and highly encouraged.
 
-See `google-cloud`'s [CONTRIBUTING] documentation and the [shared documentation](https://github.com/GoogleCloudPlatform/gcloud-common/blob/master/contributing/readme.md#how-to-contribute-to-gcloud) for more information on how to get started.
+See `google-cloud`'s [CONTRIBUTING] documentation and the [shared documentation](https://github.com/googleapis/google-cloud-common/blob/master/contributing/readme.md#how-to-contribute-to-gcloud) for more information on how to get started.
 
 Please note that this project is released with a Contributor Code of Conduct. By participating in this project you agree to abide by its terms. See [Code of Conduct][code-of-conduct] for more information.
 
@@ -218,13 +218,13 @@ License
 Apache 2.0 - See [LICENSE] for more information.
 
 
-[CONTRIBUTING]:https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/CONTRIBUTING.md
-[code-of-conduct]:https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
-[LICENSE]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/LICENSE
-[TESTING]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/TESTING.md#testing-code-that-uses-logging
+[CONTRIBUTING]:https://github.com/googleapis/google-cloud-java/blob/master/CONTRIBUTING.md
+[code-of-conduct]:https://github.com/googleapis/google-cloud-java/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
+[LICENSE]: https://github.com/googleapis/google-cloud-java/blob/master/LICENSE
+[TESTING]: https://github.com/googleapis/google-cloud-java/blob/master/TESTING.md#testing-code-that-uses-logging
 
 
 [stackdriver-logging]: https://cloud.google.com/logging/
 [stackdriver-logging-quickstart]: https://cloud.google.com/logging/docs/quickstart-sdk
 [logging-product-docs]: https://cloud.google.com/logging/docs/
-[logging-client-lib-docs]: https://googlecloudplatform.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/logging/package-summary.html
+[logging-client-lib-docs]: https://googleapis.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/logging/package-summary.html

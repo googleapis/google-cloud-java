@@ -5,7 +5,7 @@
   <version>0.66.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-redis:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Redis</name>
-  <url>https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-clients/google-cloud-redis</url>
+  <url>https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-clients/google-cloud-redis</url>
   <description>
     Java idiomatic client for Google Cloud Redis.
   </description>

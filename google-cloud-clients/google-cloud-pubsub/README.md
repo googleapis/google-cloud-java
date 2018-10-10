@@ -35,7 +35,7 @@ libraryDependencies += "com.google.cloud" % "google-cloud-pubsub" % "1.48.0"
 Authentication
 --------------
 
-See the [Authentication](https://github.com/GoogleCloudPlatform/google-cloud-java#authentication) section in the base directory's README.
+See the [Authentication](https://github.com/googleapis/google-cloud-java#authentication) section in the base directory's README.
 
 About Google Cloud Pub/Sub
 --------------------------
@@ -77,7 +77,7 @@ simplest way to authenticate is to use
 These credentials are automatically inferred from your environment.
 
 For other authentication options, see the
-[Authentication](https://github.com/GoogleCloudPlatform/google-cloud-java#authentication) page.
+[Authentication](https://github.com/googleapis/google-cloud-java#authentication) page.
 
 #### Creating a topic
 With Pub/Sub you can create topics. A topic is a named resource to which messages are sent by
@@ -222,7 +222,7 @@ Contributing
 
 Contributions to this library are always welcome and highly encouraged.
 
-See `google-cloud`'s [CONTRIBUTING] documentation and the [shared documentation](https://github.com/GoogleCloudPlatform/gcloud-common/blob/master/contributing/readme.md#how-to-contribute-to-gcloud) for more information on how to get started.
+See `google-cloud`'s [CONTRIBUTING] documentation and the [shared documentation](https://github.com/googleapis/google-cloud-common/blob/master/contributing/readme.md#how-to-contribute-to-gcloud) for more information on how to get started.
 
 Please note that this project is released with a Contributor Code of Conduct. By participating in this project you agree to abide by its terms. See [Code of Conduct][code-of-conduct] for more information.
 
@@ -232,12 +232,12 @@ License
 Apache 2.0 - See [LICENSE] for more information.
 
 
-[CONTRIBUTING]:https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/CONTRIBUTING.md
-[code-of-conduct]:https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
-[LICENSE]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/LICENSE
-[TESTING]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/TESTING.md#testing-code-that-uses-pubsub
+[CONTRIBUTING]:https://github.com/googleapis/google-cloud-java/blob/master/CONTRIBUTING.md
+[code-of-conduct]:https://github.com/googleapis/google-cloud-java/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
+[LICENSE]: https://github.com/googleapis/google-cloud-java/blob/master/LICENSE
+[TESTING]: https://github.com/googleapis/google-cloud-java/blob/master/TESTING.md#testing-code-that-uses-pubsub
 
 [cloud-pubsub]: https://cloud.google.com/pubsub/
 [cloud-pubsub-quickstart]: https://cloud.google.com/pubsub/quickstart-console#before-you-begin
 [pubsub-product-docs]: https://cloud.google.com/pubsub/docs/
-[pubsub-client-lib-docs]: https://googlecloudplatform.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/pubsub/v1/package-summary.html
+[pubsub-client-lib-docs]: https://googleapis.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/pubsub/v1/package-summary.html

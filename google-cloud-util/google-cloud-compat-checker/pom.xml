@@ -5,7 +5,7 @@
   <version>0.66.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-compat-checker:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Java Compatibility Checker</name>
-  <url>https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-util/google-cloud-compat-checker</url>
+  <url>https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-util/google-cloud-compat-checker</url>
   <description>
     Compatibility checker for Google Cloud Java.
   </description>

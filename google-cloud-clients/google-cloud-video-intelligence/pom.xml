@@ -5,7 +5,7 @@
   <version>0.66.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-video-intelligence:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Video Intelligence</name>
-  <url>https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-clients/google-cloud-video-intelligence</url>
+  <url>https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-clients/google-cloud-video-intelligence</url>
   <description>
     Java idiomatic client for Cloud Video Intelligence v1beta1.
   </description>
