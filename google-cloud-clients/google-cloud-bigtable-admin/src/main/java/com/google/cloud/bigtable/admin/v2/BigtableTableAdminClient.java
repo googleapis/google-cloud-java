@@ -325,7 +325,7 @@ public final class BigtableTableAdminClient implements AutoCloseable {
   }
 
   /**
-   * Checks if the table exists
+   * Checks if the table specified by the tableId exists
    *
    * <p>Sample code:
    *
@@ -336,17 +336,20 @@ public final class BigtableTableAdminClient implements AutoCloseable {
    * }</pre>
    */
   public boolean exists(String tableId) {
-    List<TableName> tableNames = this.listTables();
-    for (TableName tableName : tableNames) {
-      String table = tableName.toString();
-      String separator = "/";
-      int index = table.lastIndexOf(separator);
-      String name = table.substring(index + separator.length());
-      if (name.equals(tableId)) {
-        return true;
+    return awaitFuture(existsAsync(tableId)).booleanValue();
+  }
+
+  public ApiFuture<Boolean> existsAsync(final String tableId) {
+    return ApiFutures.transform(listTablesAsync(), new ApiFunction<List<TableName>, Boolean>() {
+      @Override public Boolean apply(List<TableName> tableNames) {
+        for(TableName tableName : tableNames) {
+          if(tableName.getTable().equalsIgnoreCase(tableId)) {
+            return true;
+          }
+        }
+        return false;
       }
-    }
-    return false;
+    }, MoreExecutors.directExecutor());
   }
 
   /**
@@ -454,7 +457,11 @@ public final class BigtableTableAdminClient implements AutoCloseable {
   // TODO(igorbernstein2): consider changing this method to use relative table ids.
   @SuppressWarnings("WeakerAccess")
   public ApiFuture<List<TableName>> listTablesAsync() {
-    ListTablesRequest request = ListTablesRequest.newBuilder().setParent(instanceName.toString())
+    return listTablesAsync(com.google.bigtable.admin.v2.Table.View.NAME_ONLY);
+  }
+
+  public ApiFuture<List<TableName>> listTablesAsync(com.google.bigtable.admin.v2.Table.View view) {
+    ListTablesRequest request = ListTablesRequest.newBuilder().setParent(instanceName.toString()).setView(view)
         .build();
 
     // TODO(igorbernstein2): try to upstream pagination spooling or figure out a way to expose the

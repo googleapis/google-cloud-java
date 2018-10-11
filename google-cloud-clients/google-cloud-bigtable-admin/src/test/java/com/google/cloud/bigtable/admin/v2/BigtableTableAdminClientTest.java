@@ -40,7 +40,6 @@ import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -208,6 +207,7 @@ public class BigtableTableAdminClientTest {
     com.google.bigtable.admin.v2.ListTablesRequest expectedRequest =
         com.google.bigtable.admin.v2.ListTablesRequest.newBuilder()
             .setParent(INSTANCE_NAME.toString())
+            .setView(com.google.bigtable.admin.v2.Table.View.NAME_ONLY)
             .build();
 
     // 3 Tables spread across 2 pages
@@ -308,20 +308,9 @@ public class BigtableTableAdminClientTest {
   @Test
   public void testExistsTrue() {
     // Setup
-    com.google.bigtable.admin.v2.CreateTableRequest expectedRequest =
-        com.google.bigtable.admin.v2.CreateTableRequest.newBuilder()
-            .setParent(INSTANCE_NAME.toString()).setTableId(TABLE_NAME.getTable())
-            .setTable(com.google.bigtable.admin.v2.Table.getDefaultInstance()).build();
-
-    com.google.bigtable.admin.v2.Table expectedResponse =
-        com.google.bigtable.admin.v2.Table.newBuilder().setName(TABLE_NAME.toString()).build();
-
-    Mockito.when(mockCreateTableCallable.futureCall(expectedRequest))
-        .thenReturn(ApiFutures.immediateFuture(expectedResponse));
-
-    com.google.bigtable.admin.v2.ListTablesRequest listTablesRequest =
-        com.google.bigtable.admin.v2.ListTablesRequest.newBuilder()
-            .setParent(INSTANCE_NAME.toString()).build();
+    ListTablesRequest listTablesRequest =
+        ListTablesRequest.newBuilder().setParent(INSTANCE_NAME.toString())
+            .setView(com.google.bigtable.admin.v2.Table.View.NAME_ONLY).build();
 
     List<com.google.bigtable.admin.v2.Table> expectedProtos = Lists.newArrayList();
     expectedProtos.add(
@@ -338,15 +327,15 @@ public class BigtableTableAdminClientTest {
     boolean found = adminClient.exists(TABLE_NAME.getTable());
 
     // Verify
-    Assert.assertTrue(found);
+    assertThat(found).isTrue();
   }
 
   @Test
   public void testExistsFalse() {
     // Setup
-    com.google.bigtable.admin.v2.ListTablesRequest listTablesRequest =
-        com.google.bigtable.admin.v2.ListTablesRequest.newBuilder()
-            .setParent(INSTANCE_NAME.toString()).build();
+    ListTablesRequest listTablesRequest =
+        ListTablesRequest.newBuilder().setParent(INSTANCE_NAME.toString())
+            .setView(com.google.bigtable.admin.v2.Table.View.NAME_ONLY).build();
 
     List<com.google.bigtable.admin.v2.Table> expectedProtos = Lists.newArrayList();
 
@@ -361,6 +350,6 @@ public class BigtableTableAdminClientTest {
     boolean found = adminClient.exists(TABLE_NAME.getTable());
 
     // Verify
-    Assert.assertFalse(found);
+    assertThat(found).isFalse();
   }
 }
