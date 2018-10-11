@@ -98,6 +98,19 @@ public class MutationTest {
   }
 
   @Test
+  public void setCellWithServerSideTimestamp() {
+    Mutation mutation = Mutation.createUnsafe();
+    mutation
+        .setCell(
+            "fake-family",
+            ByteString.copyFromUtf8("fake-qualifier"),
+            Mutation.SERVER_SIDE_TIMESTAMP,
+            ByteString.copyFromUtf8("fake-value"));
+    List<com.google.bigtable.v2.Mutation> actual = mutation.getMutations();
+    assertThat(actual.get(0).getSetCell().getTimestampMicros()).isEqualTo(Mutation.SERVER_SIDE_TIMESTAMP);
+  }
+
+  @Test
   public void deleteColumnTest() {
     mutation
         .deleteCells("fake-family", "fake-qualifier")

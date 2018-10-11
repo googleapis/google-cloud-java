@@ -23,23 +23,23 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-dialogflow</artifactId>
-  <version>0.66.0-alpha</version>
+  <version>0.67.0-alpha</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-dialogflow:0.66.0-alpha'
+compile 'com.google.cloud:google-cloud-dialogflow:0.67.0-alpha'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-dialogflow" % "0.66.0-alpha"
+libraryDependencies += "com.google.cloud" % "google-cloud-dialogflow" % "0.67.0-alpha"
 ```
 [//]: # ({x-version-update-end})
 
 Authentication
 --------------
 
-See the [Authentication](https://github.com/GoogleCloudPlatform/google-cloud-java#authentication) section in the base directory's README.
+See the [Authentication](https://github.com/googleapis/google-cloud-java#authentication) section in the base directory's README.
 
 About Dialogflow
 ----------------
@@ -52,7 +52,7 @@ Getting Started
 ---------------
 #### Prerequisites
 You will need a [Google Developers Console](https://console.developers.google.com/) project with the Dialogflow API enabled.
-[Follow these instructions](https://cloud.google.com/docs/authentication#preparation) to get your project set up.
+[Follow these instructions](https://cloud.google.com/resource-manager/docs/creating-managing-projects) to get your project set up.
 
 #### Installation and setup
 You'll need to obtain the `google-cloud-dialogflow` library.  See the [Quickstart](#quickstart) section to add `google-cloud-dialogflow` as a dependency in your code.
@@ -60,7 +60,7 @@ You'll need to obtain the `google-cloud-dialogflow` library.  See the [Quickstar
 Troubleshooting
 ---------------
 
-To get help, follow the instructions in the [shared Troubleshooting document](https://github.com/GoogleCloudPlatform/gcloud-common/blob/master/troubleshooting/readme.md#troubleshooting).
+To get help, follow the instructions in the [shared Troubleshooting document](https://github.com/googleapis/google-cloud-common/blob/master/troubleshooting/readme.md#troubleshooting).
 
 Transport
 ---------
@@ -83,7 +83,7 @@ Contributing
 
 Contributions to this library are always welcome and highly encouraged.
 
-See `google-cloud`'s [CONTRIBUTING] documentation and the [shared documentation](https://github.com/GoogleCloudPlatform/gcloud-common/blob/master/contributing/readme.md#how-to-contribute-to-gcloud) for more information on how to get started.
+See `google-cloud`'s [CONTRIBUTING] documentation and the [shared documentation](https://github.com/googleapis/google-cloud-common/blob/master/contributing/readme.md#how-to-contribute-to-gcloud) for more information on how to get started.
 
 Please note that this project is released with a Contributor Code of Conduct. By participating in this project you agree to abide by its terms. See [Code of Conduct][code-of-conduct] for more information.
 
@@ -93,10 +93,10 @@ License
 Apache 2.0 - See [LICENSE] for more information.
 
 
-[CONTRIBUTING]:https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/CONTRIBUTING.md
-[code-of-conduct]:https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
-[LICENSE]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/LICENSE
+[CONTRIBUTING]:https://github.com/googleapis/google-cloud-java/blob/master/CONTRIBUTING.md
+[code-of-conduct]:https://github.com/googleapis/google-cloud-java/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
+[LICENSE]: https://github.com/googleapis/google-cloud-java/blob/master/LICENSE
 [dialogflow]: https://dialogflow.com/
 [dialogflow-standard-product-docs]: https://dialogflow.com/docs
 [dialogflow-enterprise-product-docs]: https://cloud.google.com/dialogflow-enterprise/docs/
-[dialogflow-client-lib-docs]: https://googlecloudplatform.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/dialogflow/v2beta1/package-summary.html
+[dialogflow-client-lib-docs]: https://googleapis.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/dialogflow/v2beta1/package-summary.html

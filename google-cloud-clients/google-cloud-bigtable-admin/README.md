@@ -21,16 +21,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-bigtable-admin</artifactId>
-  <version>0.66.0-alpha</version>
+  <version>0.67.0-alpha</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-bigtable-admin:0.66.0-alpha'
+compile 'com.google.cloud:google-cloud-bigtable-admin:0.67.0-alpha'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-bigtable-admin" % "0.66.0-alpha"
+libraryDependencies += "com.google.cloud" % "google-cloud-bigtable-admin" % "0.67.0-alpha"
 ```
 [//]: # ({x-version-update-end})
 
@@ -58,7 +58,7 @@ For this tutorial, you will need a
 [Google Developers Console](https://console.developers.google.com/) project with the Cloud Bigtable 
 API enabled. You will need to 
 [enable billing](https://support.google.com/cloud/answer/6158867?hl=en) to use Google Cloud Bigtable.
-[Follow these instructions](https://cloud.google.com/docs/authentication#preparation) to get your
+[Follow these instructions](https://cloud.google.com/resource-manager/docs/creating-managing-projects) to get your
 project set up. You will also need to set up the local development environment by [installing the
 Google Cloud SDK](https://cloud.google.com/sdk/) and running the following commands in command line:
 `gcloud auth login`.
@@ -96,7 +96,7 @@ try {
 ## Troubleshooting
 
 To get help, follow the instructions in the [shared Troubleshooting
-document](https://github.com/GoogleCloudPlatform/gcloud-common/blob/master/troubleshooting/readme.md#troubleshooting).
+document](https://github.com/googleapis/google-cloud-common/blob/master/troubleshooting/readme.md#troubleshooting).
 
 Transport
 ---------
@@ -129,4 +129,4 @@ Apache 2.0 - See [LICENSE] for more information.
 [cloud-platform]: https://cloud.google.com/
 [cloud-bigtable]: https://cloud.google.com/bigtable/
 [bigtable-product-docs]: https://cloud.google.com/bigtable/docs/
-[bigtable-admin-client-lib-docs]: https://googlecloudplatform.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/bigtable/admin/v2/package-summary.html
+[bigtable-admin-client-lib-docs]: https://googleapis.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/bigtable/admin/v2/package-summary.html

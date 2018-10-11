@@ -52,7 +52,11 @@ public abstract class CloudStorageConfiguration {
   public abstract boolean stripPrefixSlash();
 
   /**
-   * Returns {@code true} if paths with a trailing slash should be treated as fake directories.
+   * Returns {@code true} if directories and paths with a trailing slash should be treated as fake
+   * directories.
+   *
+   * <p>With this feature, if file "foo/bar.txt" exists then both "foo" and "foo/" will be
+   * treated as if they were existing directories.
    */
   public abstract boolean usePseudoDirectories();
 

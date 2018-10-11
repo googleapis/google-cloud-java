@@ -1448,7 +1448,7 @@ public class BigQueryImplTest {
 
   @Test
   public void testQueryDryRun() throws Exception {
-    // https://github.com/GoogleCloudPlatform/google-cloud-java/issues/2479
+    // https://github.com/googleapis/google-cloud-java/issues/2479
     EasyMock.replay(bigqueryRpcMock);
     thrown.expect(UnsupportedOperationException.class);
     options

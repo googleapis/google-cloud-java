@@ -89,7 +89,7 @@ public class FieldValueList extends AbstractList<FieldValue> implements Serializ
    * Creates an instance of {@code FieldValueList}, useful for testing.
    *
    * <p>This method is unstable. See <a
-   * href="https://github.com/GoogleCloudPlatform/google-cloud-java/pull/2891">this discussion</a>
+   * href="https://github.com/googleapis/google-cloud-java/pull/2891">this discussion</a>
    * for more context.
    */
   @BetaApi
@@ -101,7 +101,7 @@ public class FieldValueList extends AbstractList<FieldValue> implements Serializ
    * Creates an instance of {@code FieldValueList}, useful for testing.
    *
    * <p>This method is unstable. See <a
-   * href="https://github.com/GoogleCloudPlatform/google-cloud-java/pull/2891">this discussion</a>
+   * href="https://github.com/googleapis/google-cloud-java/pull/2891">this discussion</a>
    * for more context.
    */
   @BetaApi

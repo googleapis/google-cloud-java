@@ -5,10 +5,10 @@
   <modelVersion>4.0.0</modelVersion>
 
   <artifactId>google-cloud-logging-logback</artifactId>
-  <version>0.66.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-logging-logback:current} -->
+  <version>0.67.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-logging-logback:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Logging Logback Appender</name>
-  <url>https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-clients/google-cloud-contrib/google-cloud-logging-logback</url>
+  <url>https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-clients/google-cloud-contrib/google-cloud-logging-logback</url>
   <description>
     Logback support for Google Cloud Logging
   </description>
@@ -20,7 +20,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-contrib</artifactId>
-    <version>0.66.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-contrib:current} -->
+    <version>0.67.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-contrib:current} -->
   </parent>
   <dependencies>
     <dependency>

@@ -20,6 +20,8 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private TextSegment() {
+    confidence_ = 0F;
+    frames_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -59,6 +61,20 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 21: {
+
+            confidence_ = input.readFloat();
+            break;
+          }
+          case 26: {
+            if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+              frames_ = new java.util.ArrayList<com.google.cloud.videointelligence.v1p2beta1.TextFrame>();
+              mutable_bitField0_ |= 0x00000004;
+            }
+            frames_.add(
+                input.readMessage(com.google.cloud.videointelligence.v1p2beta1.TextFrame.parser(), extensionRegistry));
+            break;
+          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -74,6 +90,9 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+        frames_ = java.util.Collections.unmodifiableList(frames_);
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -91,6 +110,7 @@ private static final long serialVersionUID = 0L;
             com.google.cloud.videointelligence.v1p2beta1.TextSegment.class, com.google.cloud.videointelligence.v1p2beta1.TextSegment.Builder.class);
   }
 
+  private int bitField0_;
   public static final int SEGMENT_FIELD_NUMBER = 1;
   private com.google.cloud.videointelligence.v1p2beta1.VideoSegment segment_;
   /**
@@ -124,6 +144,75 @@ private static final long serialVersionUID = 0L;
     return getSegment();
   }
 
+  public static final int CONFIDENCE_FIELD_NUMBER = 2;
+  private float confidence_;
+  /**
+   * <pre>
+   * Confidence for the track of detected text. It is calculated as the highest
+   * over all frames where OCR detected text appears.
+   * </pre>
+   *
+   * <code>float confidence = 2;</code>
+   */
+  public float getConfidence() {
+    return confidence_;
+  }
+
+  public static final int FRAMES_FIELD_NUMBER = 3;
+  private java.util.List<com.google.cloud.videointelligence.v1p2beta1.TextFrame> frames_;
+  /**
+   * <pre>
+   * Information related to the frames where OCR detected text appears.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.videointelligence.v1p2beta1.TextFrame frames = 3;</code>
+   */
+  public java.util.List<com.google.cloud.videointelligence.v1p2beta1.TextFrame> getFramesList() {
+    return frames_;
+  }
+  /**
+   * <pre>
+   * Information related to the frames where OCR detected text appears.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.videointelligence.v1p2beta1.TextFrame frames = 3;</code>
+   */
+  public java.util.List<? extends com.google.cloud.videointelligence.v1p2beta1.TextFrameOrBuilder> 
+      getFramesOrBuilderList() {
+    return frames_;
+  }
+  /**
+   * <pre>
+   * Information related to the frames where OCR detected text appears.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.videointelligence.v1p2beta1.TextFrame frames = 3;</code>
+   */
+  public int getFramesCount() {
+    return frames_.size();
+  }
+  /**
+   * <pre>
+   * Information related to the frames where OCR detected text appears.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.videointelligence.v1p2beta1.TextFrame frames = 3;</code>
+   */
+  public com.google.cloud.videointelligence.v1p2beta1.TextFrame getFrames(int index) {
+    return frames_.get(index);
+  }
+  /**
+   * <pre>
+   * Information related to the frames where OCR detected text appears.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.videointelligence.v1p2beta1.TextFrame frames = 3;</code>
+   */
+  public com.google.cloud.videointelligence.v1p2beta1.TextFrameOrBuilder getFramesOrBuilder(
+      int index) {
+    return frames_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -141,6 +230,12 @@ private static final long serialVersionUID = 0L;
     if (segment_ != null) {
       output.writeMessage(1, getSegment());
     }
+    if (confidence_ != 0F) {
+      output.writeFloat(2, confidence_);
+    }
+    for (int i = 0; i < frames_.size(); i++) {
+      output.writeMessage(3, frames_.get(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -153,6 +248,14 @@ private static final long serialVersionUID = 0L;
     if (segment_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getSegment());
+    }
+    if (confidence_ != 0F) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeFloatSize(2, confidence_);
+    }
+    for (int i = 0; i < frames_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(3, frames_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -175,6 +278,12 @@ private static final long serialVersionUID = 0L;
       result = result && getSegment()
           .equals(other.getSegment());
     }
+    result = result && (
+        java.lang.Float.floatToIntBits(getConfidence())
+        == java.lang.Float.floatToIntBits(
+            other.getConfidence()));
+    result = result && getFramesList()
+        .equals(other.getFramesList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -189,6 +298,13 @@ private static final long serialVersionUID = 0L;
     if (hasSegment()) {
       hash = (37 * hash) + SEGMENT_FIELD_NUMBER;
       hash = (53 * hash) + getSegment().hashCode();
+    }
+    hash = (37 * hash) + CONFIDENCE_FIELD_NUMBER;
+    hash = (53 * hash) + java.lang.Float.floatToIntBits(
+        getConfidence());
+    if (getFramesCount() > 0) {
+      hash = (37 * hash) + FRAMES_FIELD_NUMBER;
+      hash = (53 * hash) + getFramesList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -322,6 +438,7 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
+        getFramesFieldBuilder();
       }
     }
     @java.lang.Override
@@ -332,6 +449,14 @@ private static final long serialVersionUID = 0L;
       } else {
         segment_ = null;
         segmentBuilder_ = null;
+      }
+      confidence_ = 0F;
+
+      if (framesBuilder_ == null) {
+        frames_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+      } else {
+        framesBuilder_.clear();
       }
       return this;
     }
@@ -359,11 +484,24 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.cloud.videointelligence.v1p2beta1.TextSegment buildPartial() {
       com.google.cloud.videointelligence.v1p2beta1.TextSegment result = new com.google.cloud.videointelligence.v1p2beta1.TextSegment(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (segmentBuilder_ == null) {
         result.segment_ = segment_;
       } else {
         result.segment_ = segmentBuilder_.build();
       }
+      result.confidence_ = confidence_;
+      if (framesBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) == 0x00000004)) {
+          frames_ = java.util.Collections.unmodifiableList(frames_);
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.frames_ = frames_;
+      } else {
+        result.frames_ = framesBuilder_.build();
+      }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -415,6 +553,35 @@ private static final long serialVersionUID = 0L;
       if (other.hasSegment()) {
         mergeSegment(other.getSegment());
       }
+      if (other.getConfidence() != 0F) {
+        setConfidence(other.getConfidence());
+      }
+      if (framesBuilder_ == null) {
+        if (!other.frames_.isEmpty()) {
+          if (frames_.isEmpty()) {
+            frames_ = other.frames_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+          } else {
+            ensureFramesIsMutable();
+            frames_.addAll(other.frames_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.frames_.isEmpty()) {
+          if (framesBuilder_.isEmpty()) {
+            framesBuilder_.dispose();
+            framesBuilder_ = null;
+            frames_ = other.frames_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+            framesBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getFramesFieldBuilder() : null;
+          } else {
+            framesBuilder_.addAllMessages(other.frames_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -443,6 +610,7 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0_;
 
     private com.google.cloud.videointelligence.v1p2beta1.VideoSegment segment_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -595,6 +763,359 @@ private static final long serialVersionUID = 0L;
         segment_ = null;
       }
       return segmentBuilder_;
+    }
+
+    private float confidence_ ;
+    /**
+     * <pre>
+     * Confidence for the track of detected text. It is calculated as the highest
+     * over all frames where OCR detected text appears.
+     * </pre>
+     *
+     * <code>float confidence = 2;</code>
+     */
+    public float getConfidence() {
+      return confidence_;
+    }
+    /**
+     * <pre>
+     * Confidence for the track of detected text. It is calculated as the highest
+     * over all frames where OCR detected text appears.
+     * </pre>
+     *
+     * <code>float confidence = 2;</code>
+     */
+    public Builder setConfidence(float value) {
+      
+      confidence_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Confidence for the track of detected text. It is calculated as the highest
+     * over all frames where OCR detected text appears.
+     * </pre>
+     *
+     * <code>float confidence = 2;</code>
+     */
+    public Builder clearConfidence() {
+      
+      confidence_ = 0F;
+      onChanged();
+      return this;
+    }
+
+    private java.util.List<com.google.cloud.videointelligence.v1p2beta1.TextFrame> frames_ =
+      java.util.Collections.emptyList();
+    private void ensureFramesIsMutable() {
+      if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+        frames_ = new java.util.ArrayList<com.google.cloud.videointelligence.v1p2beta1.TextFrame>(frames_);
+        bitField0_ |= 0x00000004;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.google.cloud.videointelligence.v1p2beta1.TextFrame, com.google.cloud.videointelligence.v1p2beta1.TextFrame.Builder, com.google.cloud.videointelligence.v1p2beta1.TextFrameOrBuilder> framesBuilder_;
+
+    /**
+     * <pre>
+     * Information related to the frames where OCR detected text appears.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.videointelligence.v1p2beta1.TextFrame frames = 3;</code>
+     */
+    public java.util.List<com.google.cloud.videointelligence.v1p2beta1.TextFrame> getFramesList() {
+      if (framesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(frames_);
+      } else {
+        return framesBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * Information related to the frames where OCR detected text appears.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.videointelligence.v1p2beta1.TextFrame frames = 3;</code>
+     */
+    public int getFramesCount() {
+      if (framesBuilder_ == null) {
+        return frames_.size();
+      } else {
+        return framesBuilder_.getCount();
+      }
+    }
+    /**
+     * <pre>
+     * Information related to the frames where OCR detected text appears.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.videointelligence.v1p2beta1.TextFrame frames = 3;</code>
+     */
+    public com.google.cloud.videointelligence.v1p2beta1.TextFrame getFrames(int index) {
+      if (framesBuilder_ == null) {
+        return frames_.get(index);
+      } else {
+        return framesBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * Information related to the frames where OCR detected text appears.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.videointelligence.v1p2beta1.TextFrame frames = 3;</code>
+     */
+    public Builder setFrames(
+        int index, com.google.cloud.videointelligence.v1p2beta1.TextFrame value) {
+      if (framesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureFramesIsMutable();
+        frames_.set(index, value);
+        onChanged();
+      } else {
+        framesBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Information related to the frames where OCR detected text appears.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.videointelligence.v1p2beta1.TextFrame frames = 3;</code>
+     */
+    public Builder setFrames(
+        int index, com.google.cloud.videointelligence.v1p2beta1.TextFrame.Builder builderForValue) {
+      if (framesBuilder_ == null) {
+        ensureFramesIsMutable();
+        frames_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        framesBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Information related to the frames where OCR detected text appears.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.videointelligence.v1p2beta1.TextFrame frames = 3;</code>
+     */
+    public Builder addFrames(com.google.cloud.videointelligence.v1p2beta1.TextFrame value) {
+      if (framesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureFramesIsMutable();
+        frames_.add(value);
+        onChanged();
+      } else {
+        framesBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Information related to the frames where OCR detected text appears.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.videointelligence.v1p2beta1.TextFrame frames = 3;</code>
+     */
+    public Builder addFrames(
+        int index, com.google.cloud.videointelligence.v1p2beta1.TextFrame value) {
+      if (framesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureFramesIsMutable();
+        frames_.add(index, value);
+        onChanged();
+      } else {
+        framesBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Information related to the frames where OCR detected text appears.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.videointelligence.v1p2beta1.TextFrame frames = 3;</code>
+     */
+    public Builder addFrames(
+        com.google.cloud.videointelligence.v1p2beta1.TextFrame.Builder builderForValue) {
+      if (framesBuilder_ == null) {
+        ensureFramesIsMutable();
+        frames_.add(builderForValue.build());
+        onChanged();
+      } else {
+        framesBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Information related to the frames where OCR detected text appears.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.videointelligence.v1p2beta1.TextFrame frames = 3;</code>
+     */
+    public Builder addFrames(
+        int index, com.google.cloud.videointelligence.v1p2beta1.TextFrame.Builder builderForValue) {
+      if (framesBuilder_ == null) {
+        ensureFramesIsMutable();
+        frames_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        framesBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Information related to the frames where OCR detected text appears.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.videointelligence.v1p2beta1.TextFrame frames = 3;</code>
+     */
+    public Builder addAllFrames(
+        java.lang.Iterable<? extends com.google.cloud.videointelligence.v1p2beta1.TextFrame> values) {
+      if (framesBuilder_ == null) {
+        ensureFramesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, frames_);
+        onChanged();
+      } else {
+        framesBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Information related to the frames where OCR detected text appears.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.videointelligence.v1p2beta1.TextFrame frames = 3;</code>
+     */
+    public Builder clearFrames() {
+      if (framesBuilder_ == null) {
+        frames_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+      } else {
+        framesBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Information related to the frames where OCR detected text appears.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.videointelligence.v1p2beta1.TextFrame frames = 3;</code>
+     */
+    public Builder removeFrames(int index) {
+      if (framesBuilder_ == null) {
+        ensureFramesIsMutable();
+        frames_.remove(index);
+        onChanged();
+      } else {
+        framesBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Information related to the frames where OCR detected text appears.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.videointelligence.v1p2beta1.TextFrame frames = 3;</code>
+     */
+    public com.google.cloud.videointelligence.v1p2beta1.TextFrame.Builder getFramesBuilder(
+        int index) {
+      return getFramesFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * Information related to the frames where OCR detected text appears.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.videointelligence.v1p2beta1.TextFrame frames = 3;</code>
+     */
+    public com.google.cloud.videointelligence.v1p2beta1.TextFrameOrBuilder getFramesOrBuilder(
+        int index) {
+      if (framesBuilder_ == null) {
+        return frames_.get(index);  } else {
+        return framesBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * Information related to the frames where OCR detected text appears.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.videointelligence.v1p2beta1.TextFrame frames = 3;</code>
+     */
+    public java.util.List<? extends com.google.cloud.videointelligence.v1p2beta1.TextFrameOrBuilder> 
+         getFramesOrBuilderList() {
+      if (framesBuilder_ != null) {
+        return framesBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(frames_);
+      }
+    }
+    /**
+     * <pre>
+     * Information related to the frames where OCR detected text appears.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.videointelligence.v1p2beta1.TextFrame frames = 3;</code>
+     */
+    public com.google.cloud.videointelligence.v1p2beta1.TextFrame.Builder addFramesBuilder() {
+      return getFramesFieldBuilder().addBuilder(
+          com.google.cloud.videointelligence.v1p2beta1.TextFrame.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * Information related to the frames where OCR detected text appears.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.videointelligence.v1p2beta1.TextFrame frames = 3;</code>
+     */
+    public com.google.cloud.videointelligence.v1p2beta1.TextFrame.Builder addFramesBuilder(
+        int index) {
+      return getFramesFieldBuilder().addBuilder(
+          index, com.google.cloud.videointelligence.v1p2beta1.TextFrame.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * Information related to the frames where OCR detected text appears.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.videointelligence.v1p2beta1.TextFrame frames = 3;</code>
+     */
+    public java.util.List<com.google.cloud.videointelligence.v1p2beta1.TextFrame.Builder> 
+         getFramesBuilderList() {
+      return getFramesFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.google.cloud.videointelligence.v1p2beta1.TextFrame, com.google.cloud.videointelligence.v1p2beta1.TextFrame.Builder, com.google.cloud.videointelligence.v1p2beta1.TextFrameOrBuilder> 
+        getFramesFieldBuilder() {
+      if (framesBuilder_ == null) {
+        framesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.videointelligence.v1p2beta1.TextFrame, com.google.cloud.videointelligence.v1p2beta1.TextFrame.Builder, com.google.cloud.videointelligence.v1p2beta1.TextFrameOrBuilder>(
+                frames_,
+                ((bitField0_ & 0x00000004) == 0x00000004),
+                getParentForChildren(),
+                isClean());
+        frames_ = null;
+      }
+      return framesBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
