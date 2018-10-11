@@ -85,14 +85,13 @@ InstanceName instanceName = InstanceName.of("my-project", "my-instance");
 
 BigtableTableAdminClient tableAdminClient = BigtableTableAdminClient.create(instanceName);
 
-  try {
-    Table createdTable = tableAdminClient.createTable(
-        CreateTableRequest.of("my-table")
-            .addFamily("cf2", GCRULES.maxVersions(10)
-            );
-  } finally {
-    tableAdminClient.close();
-  }
+try {
+  Table createdTable = tableAdminClient.createTable(
+    CreateTableRequest.of("my-table")
+      .addFamily("cf2", GCRULES.maxVersions(10));
+} finally {
+  tableAdminClient.close();
+}
 ```
 
 ## Troubleshooting
