@@ -521,7 +521,7 @@ public class BigtableDataClient implements AutoCloseable {
    *       RowMutation mutation = RowMutation.create("[TABLE]", "[ROW KEY]")
    *         .setCell("[FAMILY NAME]", "[QUALIFIER]", "[VALUE]");
    *
-   *       batcher.add(mutation);
+   *       ApiFuture<Void> entryFuture = batcher.add(mutation);
    *     }
    *   } catch (BulkMutationFailure failure) {
    *     // Handle error
@@ -547,9 +547,23 @@ public class BigtableDataClient implements AutoCloseable {
    * try (BigtableClient bigtableClient = BigtableClient.create(instanceName)) {
    *   BulkMutation batch = BulkMutation.create("[TABLE]");
    *   for (String someValue : someCollection) {
-   *     batch.add("[ROW KEY]", Mutation.create().setCell("[FAMILY NAME]", "[QUALIFIER]", "[VALUE]");
+   *     ApiFuture<Void> entryFuture = batch.add("[ROW KEY]",
+   *       Mutation.create().setCell("[FAMILY NAME]", "[QUALIFIER]", "[VALUE]"));
    *   }
-   *   ApiFuture<Void> result = bigtableClient.bulkMutateRowsAsync(batch);
+   *   ApiFuture<Void> resultFuture = bigtableClient.bulkMutateRowsAsync(batch);
+   *
+   *   ApiFutures.addCallback(future, new ApiFutureCallback<Void>() {
+   *     public void onFailure(Throwable t) {
+   *       if (t instanceof BulkMutationFailure) {
+   *         System.out.println("Some entries failed to apply");
+   *       } else {
+   *         t.printStackTrace();
+   *       }
+   *     }
+   *     public void onSuccess(Void ignored) {
+   *       System.out.println("Successfully applied all mutation");
+   *     }
+   *   }, MoreExecutors.directExecutor());
    * }
    * }</pre>
    */
@@ -569,7 +583,8 @@ public class BigtableDataClient implements AutoCloseable {
    * try (BigtableClient bigtableClient = BigtableClient.create(instanceName)) {
    *   BulkMutation batch = BulkMutation.create("[TABLE]");
    *   for (String someValue : someCollection) {
-   *     batch.add("[ROW KEY]", Mutation.create().setCell("[FAMILY NAME]", "[QUALIFIER]", "[VALUE]");
+   *     ApiFuture<Void> entryFuture = batch.add("[ROW KEY]",
+   *       Mutation.create().setCell("[FAMILY NAME]", "[QUALIFIER]", "[VALUE]");
    *   }
    *   bigtableClient.bulkMutateRowsCallable().call(batch);
    * }
