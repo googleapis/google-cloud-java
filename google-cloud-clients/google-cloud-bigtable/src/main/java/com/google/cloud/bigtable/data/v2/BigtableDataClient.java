@@ -610,6 +610,19 @@ public class BigtableDataClient implements AutoCloseable {
    *       );
    *
    *   ApiFuture<Boolean> future = bigtableClient.checkAndMutateRowAsync(mutation);
+   *
+   *   ApiFutures.addCallback(future, new ApiFutureCallback<Boolean>() {
+   *     public void onFailure(Throwable t) {
+   *       if (t instanceof NotFoundException) {
+   *         System.out.println("Tried to mutate a non-existent table");
+   *       } else {
+   *         t.printStackTrace();
+   *       }
+   *     }
+   *     public void onSuccess(Boolean wasApplied) {
+   *       System.out.println("Row was modified: " + wasApplied);
+   *     }
+   *   }, MoreExecutors.directExecutor());
    * }
    * }</pre>
    */
@@ -632,7 +645,14 @@ public class BigtableDataClient implements AutoCloseable {
    *         .setCell("[FAMILY]", "[QUALIFIER]", "[VALUE]")
    *       );
    *
-   *   boolean success = bigtableClient.checkAndMutateRowCallable().call(mutation);
+   *   // Sync style
+   *   try {
+   *     boolean success = bigtableClient.checkAndMutateRowCallable().call(mutation);
+   *   } catch (NotFoundException e) {
+   *     System.out.println("Tried to mutate a non-existent table");
+   *   } catch (RuntimeException e) {
+   *     e.printStackTrace();
+   *   }
    * }
    * }</pre>
    */
@@ -655,7 +675,20 @@ public class BigtableDataClient implements AutoCloseable {
    *     .increment("[FAMILY]", "[QUALIFIER]", 1)
    *     .append("[FAMILY2]", "[QUALIFIER2]", "suffix");
    *
-   *   ApiFuture<Row> success = bigtableClient.readModifyWriteRowAsync(mutation);
+   *   ApiFuture<Row> rowFuture = bigtableClient.readModifyWriteRowAsync(mutation);
+   *
+   *   ApiFutures.addCallback(rowFuture, new ApiFutureCallback<Row>() {
+   *     public void onFailure(Throwable t) {
+   *       if (t instanceof NotFoundException) {
+   *         System.out.println("Tried to mutate a non-existent table");
+   *       } else {
+   *         t.printStackTrace();
+   *       }
+   *     }
+   *     public void onSuccess(Row resultingRow) {
+   *       System.out.println("Resulting row: " + resultingRow);
+   *     }
+   *   }, MoreExecutors.directExecutor());
    * }
    * }</pre>
    */
@@ -678,7 +711,13 @@ public class BigtableDataClient implements AutoCloseable {
    *     .increment("[FAMILY]", "[QUALIFIER]", 1)
    *     .append("[FAMILY2]", "[QUALIFIER2]", "suffix");
    *
-   *   Row row = bigtableClient.readModifyWriteRowCallable().call(mutation);
+   *   try {
+   *     Row row = bigtableClient.readModifyWriteRowCallable().call(mutation);
+   *   } catch (NotFoundException e) {
+   *     System.out.println("Tried to mutate a non-existent table");
+   *   } catch (RuntimeException e) {
+   *     e.printStackTrace();
+   *   }
    * }
    * }</pre>
    */
