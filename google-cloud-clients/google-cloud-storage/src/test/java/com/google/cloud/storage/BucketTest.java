@@ -73,6 +73,9 @@ public class BucketTest {
       Collections.singletonList(Acl.of(User.ofAllAuthenticatedUsers(), WRITER));
   private static final List<? extends DeleteRule> DELETE_RULES =
       Collections.singletonList(new AgeDeleteRule(5));
+  private static final List<? extends BucketInfo.LifecycleRule> LIFECYCLE_RULES =
+          Collections.singletonList(new BucketInfo.LifecycleRule(new BucketInfo.LifecycleRule.DeleteLifecycleAction(),
+                  new BucketInfo.LifecycleRule.LifecycleCondition().setAge(5)));
   private static final String INDEX_PAGE = "index.html";
   private static final String NOT_FOUND_PAGE = "error.html";
   private static final String LOCATION = "ASIA";
@@ -97,6 +100,7 @@ public class BucketTest {
       .setCreateTime(CREATE_TIME)
       .setDefaultAcl(DEFAULT_ACL)
       .setDeleteRules(DELETE_RULES)
+      .setLifecycleRules(LIFECYCLE_RULES)
       .setIndexPage(INDEX_PAGE)
       .setNotFoundPage(NOT_FOUND_PAGE)
       .setLocation(LOCATION)
@@ -711,6 +715,7 @@ public class BucketTest {
         .setCreateTime(CREATE_TIME)
         .setDefaultAcl(DEFAULT_ACL)
         .setDeleteRules(DELETE_RULES)
+        .setLifecycleRules(LIFECYCLE_RULES)
         .setIndexPage(INDEX_PAGE)
         .setNotFoundPage(NOT_FOUND_PAGE)
         .setLocation(LOCATION)
@@ -735,6 +740,7 @@ public class BucketTest {
     assertEquals(CORS, bucket.getCors());
     assertEquals(DEFAULT_ACL, bucket.getDefaultAcl());
     assertEquals(DELETE_RULES, bucket.getDeleteRules());
+    assertEquals(LIFECYCLE_RULES, bucket.getLifecycleRules());
     assertEquals(INDEX_PAGE, bucket.getIndexPage());
     assertEquals(NOT_FOUND_PAGE, bucket.getNotFoundPage());
     assertEquals(LOCATION, bucket.getLocation());

@@ -27,6 +27,7 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import com.google.api.gax.paging.Page;
+import com.google.auth.ServiceAccountSigner;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.kms.v1.CreateCryptoKeyRequest;
 import com.google.cloud.kms.v1.CreateKeyRingRequest;
@@ -1604,6 +1605,11 @@ public class ITStorageTest {
 
   @Test
   public void testGetSignedUrl() throws IOException {
+    if (storage.getOptions().getCredentials() != null
+            && !(storage.getOptions().getCredentials() instanceof ServiceAccountSigner)) {
+      log.info("Skipping testGetSignedUrl() because provided credential is not capable of signing");
+      return;
+    }
     String blobName = "test-get-signed-url-blob/with/slashes/and?special=!#$&'()*+,:;=?@[]";
     BlobInfo blob = BlobInfo.newBuilder(BUCKET, blobName).build();
     Blob remoteBlob = storage.create(blob, BLOB_BYTE_CONTENT);
@@ -1619,6 +1625,11 @@ public class ITStorageTest {
 
   @Test
   public void testPostSignedUrl() throws IOException {
+    if (storage.getOptions().getCredentials() != null
+            && !(storage.getOptions().getCredentials() instanceof ServiceAccountSigner)) {
+      log.info("Skipping testPostSignedUrl() because provided credential is not capable of signing");
+      return;
+    }
     String blobName = "test-post-signed-url-blob";
     BlobInfo blob = BlobInfo.newBuilder(BUCKET, blobName).build();
     assertNotNull(storage.create(blob));
