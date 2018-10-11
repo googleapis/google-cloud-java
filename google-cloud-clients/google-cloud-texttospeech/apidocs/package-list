@@ -1,0 +1,4 @@
+com.google.cloud.texttospeech.v1
+com.google.cloud.texttospeech.v1.stub
+com.google.cloud.texttospeech.v1beta1
+com.google.cloud.texttospeech.v1beta1.stub

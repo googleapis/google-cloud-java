@@ -1,0 +1,4 @@
+com.google.cloud.redis.v1
+com.google.cloud.redis.v1.stub
+com.google.cloud.redis.v1beta1
+com.google.cloud.redis.v1beta1.stub

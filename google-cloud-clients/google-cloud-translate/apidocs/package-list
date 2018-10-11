@@ -1,0 +1,4 @@
+com.google.cloud.translate
+com.google.cloud.translate.spi
+com.google.cloud.translate.spi.v2
+com.google.cloud.translate.testing

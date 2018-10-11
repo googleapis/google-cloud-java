@@ -1,0 +1,6 @@
+com.google.cloud.logging
+com.google.cloud.logging.spi
+com.google.cloud.logging.spi.v2
+com.google.cloud.logging.testing
+com.google.cloud.logging.v2
+com.google.cloud.logging.v2.stub

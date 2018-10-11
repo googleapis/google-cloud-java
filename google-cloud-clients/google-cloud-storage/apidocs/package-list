@@ -1,0 +1,4 @@
+com.google.cloud.storage
+com.google.cloud.storage.spi
+com.google.cloud.storage.spi.v1
+com.google.cloud.storage.testing

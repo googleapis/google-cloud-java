@@ -1,0 +1,3 @@
+com.google.cloud.dns
+com.google.cloud.dns.spi
+com.google.cloud.dns.spi.v1

@@ -1,0 +1,6 @@
+com.google.cloud.compute.deprecated
+com.google.cloud.compute.deprecated.spi
+com.google.cloud.compute.deprecated.spi.v1
+com.google.cloud.compute.deprecated.testing
+com.google.cloud.compute.v1
+com.google.cloud.compute.v1.stub
