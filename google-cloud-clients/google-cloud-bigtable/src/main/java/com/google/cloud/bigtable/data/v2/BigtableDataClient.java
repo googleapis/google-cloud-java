@@ -179,7 +179,7 @@ public class BigtableDataClient implements AutoCloseable {
    * try (BigtableClient bigtableClient = BigtableClient.create(instanceName)) {
    *   String tableId = "[TABLE]";
    *
-   *   ApiFuture<Row> result = bigtableClient.readRow(tableId,  ByteString.copyFromUtf8("key"));
+   *   ApiFuture<Row> futureResult = bigtableClient.readRow(tableId,  ByteString.copyFromUtf8("key"));
    *
    *   ApiFutures.addCallback(futureResult, new ApiFutureCallback<Row>() {
    *     public void onFailure(Throwable t) {
@@ -552,7 +552,7 @@ public class BigtableDataClient implements AutoCloseable {
    *   }
    *   ApiFuture<Void> resultFuture = bigtableClient.bulkMutateRowsAsync(batch);
    *
-   *   ApiFutures.addCallback(future, new ApiFutureCallback<Void>() {
+   *   ApiFutures.addCallback(resultFuture, new ApiFutureCallback<Void>() {
    *     public void onFailure(Throwable t) {
    *       if (t instanceof BulkMutationFailure) {
    *         System.out.println("Some entries failed to apply");
@@ -648,6 +648,9 @@ public class BigtableDataClient implements AutoCloseable {
    *   // Sync style
    *   try {
    *     boolean success = bigtableClient.checkAndMutateRowCallable().call(mutation);
+   *     if (!success) {
+   *       System.out.println("Row did not match conditions");
+   *     }
    *   } catch (NotFoundException e) {
    *     System.out.println("Tried to mutate a non-existent table");
    *   } catch (RuntimeException e) {
