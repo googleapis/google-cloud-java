@@ -104,14 +104,26 @@ public class BucketInfo implements Serializable {
     private final LifecycleCondition lifecycleCondition;
 
     public LifecycleRule(LifecycleAction action, LifecycleCondition condition) {
-      if (condition.getIsLive() == null && condition.getAge() == null && condition.getCreatedBefore() == null
-              && condition.getMatchesStorageClass() == null && condition.getNumberOfNewerVersions() == null) {
-        throw new IllegalArgumentException("You must specify at least one condition to use object lifecycle "
+      if (condition.getIsLive() == null
+          && condition.getAge() == null
+          && condition.getCreatedBefore() == null
+          && condition.getMatchesStorageClass() == null
+          && condition.getNumberOfNewerVersions() == null) {
+        throw new IllegalArgumentException(
+            "You must specify at least one condition to use object lifecycle "
                 + "management. Please see https://cloud.google.com/storage/docs/lifecycle for details.");
       }
 
       this.lifecycleAction = action;
       this.lifecycleCondition = condition;
+    }
+
+    public LifecycleAction getAction() {
+      return lifecycleAction;
+    }
+
+    public LifecycleCondition getCondition() {
+      return lifecycleCondition;
     }
 
     @Override
@@ -135,20 +147,28 @@ public class BucketInfo implements Serializable {
       Rule rule = new Rule();
 
       Rule.Action action = new Rule.Action().setType(lifecycleAction.getActionType());
-      if(lifecycleAction instanceof SetStorageClassLifecycleAction) {
-        action.setStorageClass(((SetStorageClassLifecycleAction) lifecycleAction).getStorageClass().toString());
+      if (lifecycleAction instanceof SetStorageClassLifecycleAction) {
+        action.setStorageClass(
+            ((SetStorageClassLifecycleAction) lifecycleAction).getStorageClass().toString());
       }
 
       rule.setAction(action);
 
-      Rule.Condition condition = new Rule.Condition()
+      Rule.Condition condition =
+          new Rule.Condition()
               .setAge(lifecycleCondition.getAge())
-              .setCreatedBefore(lifecycleCondition.createdBefore)
+              .setCreatedBefore(
+                  lifecycleCondition.createdBefore == null
+                      ? null
+                      : new DateTime(true, lifecycleCondition.createdBefore.getValue(), 0))
               .setIsLive(lifecycleCondition.isLive)
               .setNumNewerVersions(lifecycleCondition.getNumberOfNewerVersions())
-              .setMatchesStorageClass(lifecycleCondition.getMatchesStorageClass() == null ? null :
-                      transform(lifecycleCondition.getMatchesStorageClass(),
-                      Functions.toStringFunction()));
+              .setMatchesStorageClass(
+                  lifecycleCondition.getMatchesStorageClass() == null
+                      ? null
+                      : transform(
+                          lifecycleCondition.getMatchesStorageClass(),
+                          Functions.toStringFunction()));
 
       rule.setCondition(condition);
 
@@ -160,19 +180,25 @@ public class BucketInfo implements Serializable {
 
       Rule.Action action = rule.getAction();
 
-      switch(action.getType()) {
-        case DeleteLifecycleAction.TYPE: {
-          lifecycleAction = new DeleteLifecycleAction();
-          break;
-        }
-        case SetStorageClassLifecycleAction.TYPE: {
-          lifecycleAction = new SetStorageClassLifecycleAction(StorageClass.valueOf(action.getStorageClass()));
-          break;
-        }
-        default : {
-          throw new UnsupportedOperationException("The specified lifecycle action " + action.getType()
-                  + " is not currently supported");
-        }
+      switch (action.getType()) {
+        case DeleteLifecycleAction.TYPE:
+          {
+            lifecycleAction = new DeleteLifecycleAction();
+            break;
+          }
+        case SetStorageClassLifecycleAction.TYPE:
+          {
+            lifecycleAction =
+                new SetStorageClassLifecycleAction(StorageClass.valueOf(action.getStorageClass()));
+            break;
+          }
+        default:
+          {
+            throw new UnsupportedOperationException(
+                "The specified lifecycle action "
+                    + action.getType()
+                    + " is not currently supported");
+          }
       }
 
       LifecycleCondition lifecycleCondition = new LifecycleCondition();
@@ -183,13 +209,16 @@ public class BucketInfo implements Serializable {
       lifecycleCondition.setCreatedBefore(condition.getCreatedBefore());
       lifecycleCondition.setIsLive(condition.getIsLive());
       lifecycleCondition.setNumberOfNewerVersions(condition.getNumNewerVersions());
-      lifecycleCondition.setMatchesStorageClass(condition.getMatchesStorageClass() == null ? null :
-              transform(condition.getMatchesStorageClass(),
-              new Function<String, StorageClass>() {
-                public StorageClass apply(String storageClass) {
-                  return StorageClass.valueOf(storageClass);
-                }
-              }));
+      lifecycleCondition.setMatchesStorageClass(
+          condition.getMatchesStorageClass() == null
+              ? null
+              : transform(
+                  condition.getMatchesStorageClass(),
+                  new Function<String, StorageClass>() {
+                    public StorageClass apply(String storageClass) {
+                      return StorageClass.valueOf(storageClass);
+                    }
+                  }));
 
       return new LifecycleRule(lifecycleAction, lifecycleCondition);
     }
@@ -198,7 +227,7 @@ public class BucketInfo implements Serializable {
       private static final long serialVersionUID = -6482314338394768785L;
       private Integer age;
       private DateTime createdBefore;
-      private Integer numberOfNewerVersions ;
+      private Integer numberOfNewerVersions;
       private Boolean isLive;
       private List<StorageClass> matchesStorageClass;
 
@@ -459,7 +488,7 @@ public class BucketInfo implements Serializable {
 
     @Override
     void populateCondition(Rule.Condition condition) {
-      condition.setCreatedBefore(new DateTime(timeMillis));
+      condition.setCreatedBefore(new DateTime(true, timeMillis, 0));
     }
   }
 
@@ -1221,16 +1250,14 @@ public class BucketInfo implements Serializable {
     }
     if (lifecycleRules != null) {
       rules.addAll(
-              transform(
-                      lifecycleRules,
-                      new Function<LifecycleRule, Rule>() {
-                        @Override
-                        public Rule apply(LifecycleRule lifecycleRule) {
-                          return lifecycleRule.toPb();
-                        }
-                      }
-              )
-      );
+          transform(
+              lifecycleRules,
+              new Function<LifecycleRule, Rule>() {
+                @Override
+                public Rule apply(LifecycleRule lifecycleRule) {
+                  return lifecycleRule.toPb();
+                }
+              }));
     }
     if (!rules.isEmpty()) {
       Lifecycle lifecycle = new Lifecycle();
@@ -1260,7 +1287,6 @@ public class BucketInfo implements Serializable {
           retentionPolicy.setIsLocked(retentionPolicyIsLocked);
         }
         bucketPb.setRetentionPolicy(retentionPolicy);
-
       }
     }
 
@@ -1347,14 +1373,14 @@ public class BucketInfo implements Serializable {
                 }
               }));
       builder.setDeleteRules(
-              transform(
-                      bucketPb.getLifecycle().getRule(),
-                      new Function<Rule, DeleteRule>() {
-                        @Override
-                        public DeleteRule apply(Rule rule) {
-                          return DeleteRule.fromPb(rule);
-                        }
-                      }));
+          transform(
+              bucketPb.getLifecycle().getRule(),
+              new Function<Rule, DeleteRule>() {
+                @Override
+                public DeleteRule apply(Rule rule) {
+                  return DeleteRule.fromPb(rule);
+                }
+              }));
     }
     if (bucketPb.getLabels() != null) {
       builder.setLabels(bucketPb.getLabels());
