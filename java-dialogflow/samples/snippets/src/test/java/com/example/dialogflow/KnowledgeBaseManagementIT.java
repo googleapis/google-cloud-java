@@ -53,7 +53,7 @@ public class KnowledgeBaseManagementIT {
   private static String KNOWLEDGE_BASE_NAME = "fake_knowledge_base_name";
   private static String DOCUMENT_BASE_NAME = "fake_document_name";
 
-  private static List<String> TEXTS = Collections.singletonList("Is my data redundant?");
+  private static List<String> TEXTS = Collections.singletonList("How do I sign up?");
 
   @Before
   public void setUp() {
