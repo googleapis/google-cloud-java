@@ -25,21 +25,27 @@ import javax.annotation.Nullable;
 @Generated("by GAPIC")
 @BetaApi
 public final class CustomerEncryptionKey implements ApiMessage {
+  private final String kmsKeyName;
   private final String rawKey;
   private final String sha256;
 
   private CustomerEncryptionKey() {
+    this.kmsKeyName = null;
     this.rawKey = null;
     this.sha256 = null;
   }
 
-  private CustomerEncryptionKey(String rawKey, String sha256) {
+  private CustomerEncryptionKey(String kmsKeyName, String rawKey, String sha256) {
+    this.kmsKeyName = kmsKeyName;
     this.rawKey = rawKey;
     this.sha256 = sha256;
   }
 
   @Override
   public Object getFieldValue(String fieldName) {
+    if (fieldName.equals("kmsKeyName")) {
+      return kmsKeyName;
+    }
     if (fieldName.equals("rawKey")) {
       return rawKey;
     }
@@ -59,6 +65,10 @@ public final class CustomerEncryptionKey implements ApiMessage {
   @Override
   public List<String> getFieldMask() {
     return null;
+  }
+
+  public String getKmsKeyName() {
+    return kmsKeyName;
   }
 
   public String getRawKey() {
@@ -92,6 +102,7 @@ public final class CustomerEncryptionKey implements ApiMessage {
   }
 
   public static class Builder {
+    private String kmsKeyName;
     private String rawKey;
     private String sha256;
 
@@ -99,6 +110,9 @@ public final class CustomerEncryptionKey implements ApiMessage {
 
     public Builder mergeFrom(CustomerEncryptionKey other) {
       if (other == CustomerEncryptionKey.getDefaultInstance()) return this;
+      if (other.getKmsKeyName() != null) {
+        this.kmsKeyName = other.kmsKeyName;
+      }
       if (other.getRawKey() != null) {
         this.rawKey = other.rawKey;
       }
@@ -109,8 +123,18 @@ public final class CustomerEncryptionKey implements ApiMessage {
     }
 
     Builder(CustomerEncryptionKey source) {
+      this.kmsKeyName = source.kmsKeyName;
       this.rawKey = source.rawKey;
       this.sha256 = source.sha256;
+    }
+
+    public String getKmsKeyName() {
+      return kmsKeyName;
+    }
+
+    public Builder setKmsKeyName(String kmsKeyName) {
+      this.kmsKeyName = kmsKeyName;
+      return this;
     }
 
     public String getRawKey() {
@@ -133,11 +157,12 @@ public final class CustomerEncryptionKey implements ApiMessage {
 
     public CustomerEncryptionKey build() {
 
-      return new CustomerEncryptionKey(rawKey, sha256);
+      return new CustomerEncryptionKey(kmsKeyName, rawKey, sha256);
     }
 
     public Builder clone() {
       Builder newBuilder = new Builder();
+      newBuilder.setKmsKeyName(this.kmsKeyName);
       newBuilder.setRawKey(this.rawKey);
       newBuilder.setSha256(this.sha256);
       return newBuilder;
@@ -146,7 +171,16 @@ public final class CustomerEncryptionKey implements ApiMessage {
 
   @Override
   public String toString() {
-    return "CustomerEncryptionKey{" + "rawKey=" + rawKey + ", " + "sha256=" + sha256 + "}";
+    return "CustomerEncryptionKey{"
+        + "kmsKeyName="
+        + kmsKeyName
+        + ", "
+        + "rawKey="
+        + rawKey
+        + ", "
+        + "sha256="
+        + sha256
+        + "}";
   }
 
   @Override
@@ -156,7 +190,8 @@ public final class CustomerEncryptionKey implements ApiMessage {
     }
     if (o instanceof CustomerEncryptionKey) {
       CustomerEncryptionKey that = (CustomerEncryptionKey) o;
-      return Objects.equals(this.rawKey, that.getRawKey())
+      return Objects.equals(this.kmsKeyName, that.getKmsKeyName())
+          && Objects.equals(this.rawKey, that.getRawKey())
           && Objects.equals(this.sha256, that.getSha256());
     }
     return false;
@@ -164,6 +199,6 @@ public final class CustomerEncryptionKey implements ApiMessage {
 
   @Override
   public int hashCode() {
-    return Objects.hash(rawKey, sha256);
+    return Objects.hash(kmsKeyName, rawKey, sha256);
   }
 }

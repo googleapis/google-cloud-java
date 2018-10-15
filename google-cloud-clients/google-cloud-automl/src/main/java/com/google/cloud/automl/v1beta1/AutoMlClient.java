@@ -342,7 +342,7 @@ public class AutoMlClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final Dataset getDataset(GetDatasetRequest request) {
+  public final Dataset getDataset(GetDatasetRequest request) {
     return getDatasetCallable().call(request);
   }
 
@@ -574,7 +574,7 @@ public class AutoMlClient implements BackgroundResource {
    */
   @BetaApi(
       "The surface for long-running operations is not stable yet and may change in the future.")
-  private final OperationFuture<Empty, OperationMetadata> deleteDatasetAsync(
+  public final OperationFuture<Empty, OperationMetadata> deleteDatasetAsync(
       DeleteDatasetRequest request) {
     return deleteDatasetOperationCallable().futureCall(request);
   }
@@ -1126,7 +1126,7 @@ public class AutoMlClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final Model getModel(GetModelRequest request) {
+  public final Model getModel(GetModelRequest request) {
     return getModelCallable().call(request);
   }
 
@@ -1358,7 +1358,7 @@ public class AutoMlClient implements BackgroundResource {
    */
   @BetaApi(
       "The surface for long-running operations is not stable yet and may change in the future.")
-  private final OperationFuture<Empty, OperationMetadata> deleteModelAsync(
+  public final OperationFuture<Empty, OperationMetadata> deleteModelAsync(
       DeleteModelRequest request) {
     return deleteModelOperationCallable().futureCall(request);
   }
@@ -1482,7 +1482,7 @@ public class AutoMlClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final Operation deployModel(DeployModelRequest request) {
+  public final Operation deployModel(DeployModelRequest request) {
     return deployModelCallable().call(request);
   }
 
@@ -1576,7 +1576,7 @@ public class AutoMlClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final Operation undeployModel(UndeployModelRequest request) {
+  public final Operation undeployModel(UndeployModelRequest request) {
     return undeployModelCallable().call(request);
   }
 
@@ -1670,7 +1670,7 @@ public class AutoMlClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final ModelEvaluation getModelEvaluation(GetModelEvaluationRequest request) {
+  public final ModelEvaluation getModelEvaluation(GetModelEvaluationRequest request) {
     return getModelEvaluationCallable().call(request);
   }
 

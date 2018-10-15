@@ -243,7 +243,7 @@ private static final long serialVersionUID = 0L;
    * At some point in the future, behavior will be removed and specifying an
    * empty updateMask will be an error.
    * For a detailed `FieldMask` definition, see
-   * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
+   * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.FieldMask
    * Example: `updateMask=filter`.
    * </pre>
    *
@@ -263,7 +263,7 @@ private static final long serialVersionUID = 0L;
    * At some point in the future, behavior will be removed and specifying an
    * empty updateMask will be an error.
    * For a detailed `FieldMask` definition, see
-   * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
+   * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.FieldMask
    * Example: `updateMask=filter`.
    * </pre>
    *
@@ -283,7 +283,7 @@ private static final long serialVersionUID = 0L;
    * At some point in the future, behavior will be removed and specifying an
    * empty updateMask will be an error.
    * For a detailed `FieldMask` definition, see
-   * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
+   * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.FieldMask
    * Example: `updateMask=filter`.
    * </pre>
    *
@@ -1041,7 +1041,7 @@ private static final long serialVersionUID = 0L;
      * At some point in the future, behavior will be removed and specifying an
      * empty updateMask will be an error.
      * For a detailed `FieldMask` definition, see
-     * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
+     * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.FieldMask
      * Example: `updateMask=filter`.
      * </pre>
      *
@@ -1061,7 +1061,7 @@ private static final long serialVersionUID = 0L;
      * At some point in the future, behavior will be removed and specifying an
      * empty updateMask will be an error.
      * For a detailed `FieldMask` definition, see
-     * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
+     * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.FieldMask
      * Example: `updateMask=filter`.
      * </pre>
      *
@@ -1085,7 +1085,7 @@ private static final long serialVersionUID = 0L;
      * At some point in the future, behavior will be removed and specifying an
      * empty updateMask will be an error.
      * For a detailed `FieldMask` definition, see
-     * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
+     * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.FieldMask
      * Example: `updateMask=filter`.
      * </pre>
      *
@@ -1115,7 +1115,7 @@ private static final long serialVersionUID = 0L;
      * At some point in the future, behavior will be removed and specifying an
      * empty updateMask will be an error.
      * For a detailed `FieldMask` definition, see
-     * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
+     * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.FieldMask
      * Example: `updateMask=filter`.
      * </pre>
      *
@@ -1143,7 +1143,7 @@ private static final long serialVersionUID = 0L;
      * At some point in the future, behavior will be removed and specifying an
      * empty updateMask will be an error.
      * For a detailed `FieldMask` definition, see
-     * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
+     * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.FieldMask
      * Example: `updateMask=filter`.
      * </pre>
      *
@@ -1175,7 +1175,7 @@ private static final long serialVersionUID = 0L;
      * At some point in the future, behavior will be removed and specifying an
      * empty updateMask will be an error.
      * For a detailed `FieldMask` definition, see
-     * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
+     * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.FieldMask
      * Example: `updateMask=filter`.
      * </pre>
      *
@@ -1203,7 +1203,7 @@ private static final long serialVersionUID = 0L;
      * At some point in the future, behavior will be removed and specifying an
      * empty updateMask will be an error.
      * For a detailed `FieldMask` definition, see
-     * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
+     * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.FieldMask
      * Example: `updateMask=filter`.
      * </pre>
      *
@@ -1225,7 +1225,7 @@ private static final long serialVersionUID = 0L;
      * At some point in the future, behavior will be removed and specifying an
      * empty updateMask will be an error.
      * For a detailed `FieldMask` definition, see
-     * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
+     * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.FieldMask
      * Example: `updateMask=filter`.
      * </pre>
      *
@@ -1250,7 +1250,7 @@ private static final long serialVersionUID = 0L;
      * At some point in the future, behavior will be removed and specifying an
      * empty updateMask will be an error.
      * For a detailed `FieldMask` definition, see
-     * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
+     * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.FieldMask
      * Example: `updateMask=filter`.
      * </pre>
      *

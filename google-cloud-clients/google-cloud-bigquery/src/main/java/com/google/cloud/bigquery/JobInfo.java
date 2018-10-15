@@ -180,7 +180,9 @@ public class JobInfo implements Serializable {
         this.statistics = JobStatistics.fromPb(jobPb);
       }
       this.userEmail = jobPb.getUserEmail();
-      this.configuration = JobConfiguration.fromPb(jobPb.getConfiguration());
+      if (jobPb.getConfiguration() != null) {
+        this.configuration = JobConfiguration.fromPb(jobPb.getConfiguration());
+      }
     }
 
     @Override
@@ -375,7 +377,9 @@ public class JobInfo implements Serializable {
     if (statistics != null) {
       jobPb.setStatistics(statistics.toPb());
     }
-    jobPb.setConfiguration(configuration.toPb());
+    if(configuration != null){
+      jobPb.setConfiguration(configuration.toPb());
+    }
     return jobPb;
   }
 

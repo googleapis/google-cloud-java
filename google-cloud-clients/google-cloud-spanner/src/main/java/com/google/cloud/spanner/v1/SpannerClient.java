@@ -286,7 +286,7 @@ public class SpannerClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final Session createSession(CreateSessionRequest request) {
+  public final Session createSession(CreateSessionRequest request) {
     return createSessionCallable().call(request);
   }
 
@@ -393,7 +393,7 @@ public class SpannerClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final Session getSession(GetSessionRequest request) {
+  public final Session getSession(GetSessionRequest request) {
     return getSessionCallable().call(request);
   }
 
@@ -588,7 +588,7 @@ public class SpannerClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final void deleteSession(DeleteSessionRequest request) {
+  public final void deleteSession(DeleteSessionRequest request) {
     deleteSessionCallable().call(request);
   }
 

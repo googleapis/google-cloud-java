@@ -149,9 +149,15 @@ class FirestoreImpl implements Firestore {
 
   @Nonnull
   @Override
-  public Iterable<CollectionReference> getCollections() {
+  public Iterable<CollectionReference> listCollections() {
     DocumentReference rootDocument = new DocumentReference(this, this.databasePath);
-    return rootDocument.getCollections();
+    return rootDocument.listCollections();
+  }
+
+  @Nonnull
+  @Override
+  public Iterable<CollectionReference> getCollections() {
+    return listCollections();
   }
 
   @Nonnull

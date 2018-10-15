@@ -30,6 +30,7 @@ public final class HttpSHealthCheck implements ApiMessage {
   private final String portName;
   private final String proxyHeader;
   private final String requestPath;
+  private final String response;
 
   private HttpSHealthCheck() {
     this.host = null;
@@ -37,15 +38,22 @@ public final class HttpSHealthCheck implements ApiMessage {
     this.portName = null;
     this.proxyHeader = null;
     this.requestPath = null;
+    this.response = null;
   }
 
   private HttpSHealthCheck(
-      String host, Integer port, String portName, String proxyHeader, String requestPath) {
+      String host,
+      Integer port,
+      String portName,
+      String proxyHeader,
+      String requestPath,
+      String response) {
     this.host = host;
     this.port = port;
     this.portName = portName;
     this.proxyHeader = proxyHeader;
     this.requestPath = requestPath;
+    this.response = response;
   }
 
   @Override
@@ -64,6 +72,9 @@ public final class HttpSHealthCheck implements ApiMessage {
     }
     if (fieldName.equals("requestPath")) {
       return requestPath;
+    }
+    if (fieldName.equals("response")) {
+      return response;
     }
     return null;
   }
@@ -100,6 +111,10 @@ public final class HttpSHealthCheck implements ApiMessage {
     return requestPath;
   }
 
+  public String getResponse() {
+    return response;
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
@@ -128,6 +143,7 @@ public final class HttpSHealthCheck implements ApiMessage {
     private String portName;
     private String proxyHeader;
     private String requestPath;
+    private String response;
 
     Builder() {}
 
@@ -148,6 +164,9 @@ public final class HttpSHealthCheck implements ApiMessage {
       if (other.getRequestPath() != null) {
         this.requestPath = other.requestPath;
       }
+      if (other.getResponse() != null) {
+        this.response = other.response;
+      }
       return this;
     }
 
@@ -157,6 +176,7 @@ public final class HttpSHealthCheck implements ApiMessage {
       this.portName = source.portName;
       this.proxyHeader = source.proxyHeader;
       this.requestPath = source.requestPath;
+      this.response = source.response;
     }
 
     public String getHost() {
@@ -204,9 +224,18 @@ public final class HttpSHealthCheck implements ApiMessage {
       return this;
     }
 
+    public String getResponse() {
+      return response;
+    }
+
+    public Builder setResponse(String response) {
+      this.response = response;
+      return this;
+    }
+
     public HttpSHealthCheck build() {
 
-      return new HttpSHealthCheck(host, port, portName, proxyHeader, requestPath);
+      return new HttpSHealthCheck(host, port, portName, proxyHeader, requestPath, response);
     }
 
     public Builder clone() {
@@ -216,6 +245,7 @@ public final class HttpSHealthCheck implements ApiMessage {
       newBuilder.setPortName(this.portName);
       newBuilder.setProxyHeader(this.proxyHeader);
       newBuilder.setRequestPath(this.requestPath);
+      newBuilder.setResponse(this.response);
       return newBuilder;
     }
   }
@@ -237,6 +267,9 @@ public final class HttpSHealthCheck implements ApiMessage {
         + ", "
         + "requestPath="
         + requestPath
+        + ", "
+        + "response="
+        + response
         + "}";
   }
 
@@ -251,13 +284,14 @@ public final class HttpSHealthCheck implements ApiMessage {
           && Objects.equals(this.port, that.getPort())
           && Objects.equals(this.portName, that.getPortName())
           && Objects.equals(this.proxyHeader, that.getProxyHeader())
-          && Objects.equals(this.requestPath, that.getRequestPath());
+          && Objects.equals(this.requestPath, that.getRequestPath())
+          && Objects.equals(this.response, that.getResponse());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(host, port, portName, proxyHeader, requestPath);
+    return Objects.hash(host, port, portName, proxyHeader, requestPath, response);
   }
 }
