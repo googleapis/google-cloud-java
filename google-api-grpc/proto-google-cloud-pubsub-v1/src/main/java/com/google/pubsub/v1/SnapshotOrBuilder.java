@@ -97,7 +97,7 @@ public interface SnapshotOrBuilder extends
 
   /**
    * <pre>
-   * User labels.
+   * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 4;</code>
@@ -105,7 +105,7 @@ public interface SnapshotOrBuilder extends
   int getLabelsCount();
   /**
    * <pre>
-   * User labels.
+   * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 4;</code>
@@ -120,7 +120,7 @@ public interface SnapshotOrBuilder extends
   getLabels();
   /**
    * <pre>
-   * User labels.
+   * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 4;</code>
@@ -129,7 +129,7 @@ public interface SnapshotOrBuilder extends
   getLabelsMap();
   /**
    * <pre>
-   * User labels.
+   * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 4;</code>
@@ -140,7 +140,7 @@ public interface SnapshotOrBuilder extends
       java.lang.String defaultValue);
   /**
    * <pre>
-   * User labels.
+   * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 4;</code>

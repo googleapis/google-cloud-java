@@ -1672,8 +1672,7 @@ public class ITStorageTest {
     try {
       bytes = unauthorizedStorage.readAllBytes(landsatBucket, landsatBlob);
     } catch (StorageException ex) {
-      assertTrue(ex.getCause() instanceof GoogleJsonResponseException);
-      assumeFalse(403 == ((GoogleJsonResponseException) ex.getCause()).getStatusCode());
+      assumeFalse(403 == ex.getCode());
       return;
     }
     assertThat(bytes.length).isEqualTo(7903);
