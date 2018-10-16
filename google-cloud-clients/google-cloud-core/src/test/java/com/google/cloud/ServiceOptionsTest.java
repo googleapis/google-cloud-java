@@ -171,7 +171,7 @@ public class ServiceOptionsTest {
     }
   }
 
-  private interface TestService extends Service<TestServiceOptions> {}
+  interface TestService extends Service<TestServiceOptions> {}
 
   private static class TestServiceImpl extends BaseService<TestServiceOptions>
       implements TestService {
@@ -180,7 +180,7 @@ public class ServiceOptionsTest {
     }
   }
 
-  private interface TestServiceFactory extends ServiceFactory<TestService, TestServiceOptions> {}
+  interface TestServiceFactory extends ServiceFactory<TestService, TestServiceOptions> {}
 
   private static class DefaultTestServiceFactory implements TestServiceFactory {
     private static final TestServiceFactory INSTANCE = new DefaultTestServiceFactory();
@@ -191,7 +191,7 @@ public class ServiceOptionsTest {
     }
   }
 
-  private interface TestServiceRpcFactory
+  interface TestServiceRpcFactory
       extends ServiceRpcFactory<TestServiceOptions> {}
 
   private static class DefaultTestServiceRpcFactory implements TestServiceRpcFactory {
@@ -209,7 +209,7 @@ public class ServiceOptionsTest {
     DefaultTestServiceRpc(TestServiceOptions options) {}
   }
 
-  private static class TestServiceOptions
+  static class TestServiceOptions
       extends ServiceOptions<TestService, TestServiceOptions> {
     private static class Builder
         extends ServiceOptions.Builder<TestService, TestServiceOptions, Builder> {
