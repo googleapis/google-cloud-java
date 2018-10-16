@@ -1661,7 +1661,7 @@ public class ITStorageTest {
 
   @Test
   public void testDownloadPublicBlobWithoutAuthentication() {
-    assumeFalse(isVpcTest);
+    assumeFalse(IS_VPC_TEST);
     // create an unauthorized user
     Storage unauthorizedStorage = StorageOptions.getUnauthenticatedInstance().getService();
 
