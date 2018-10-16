@@ -28,7 +28,6 @@ import static org.junit.Assert.fail;
 import static org.junit.Assume.assumeFalse;
 import static org.junit.Assume.assumeTrue;
 
-import com.google.api.client.googleapis.json.GoogleJsonResponseException;
 import com.google.api.gax.paging.Page;
 import com.google.auth.ServiceAccountSigner;
 import com.google.auth.oauth2.GoogleCredentials;
@@ -143,6 +142,7 @@ public class ITStorageTest {
   private static final String KMS_KEY_RING_LOCATION = "us";
   private static final String KMS_KEY_ONE_NAME = "gcs_kms_key_one";
   private static final String KMS_KEY_TWO_NAME = "gcs_kms_key_two";
+  private static final boolean isVpcTest = System.getenv("GOOGLE_CLOUD_TESTS_IN_VPCSC").equalsIgnoreCase("true");
 
   @BeforeClass
   public static void beforeClass() throws IOException {
@@ -1661,6 +1661,7 @@ public class ITStorageTest {
 
   @Test
   public void testDownloadPublicBlobWithoutAuthentication() {
+    assumeFalse(isVpcTest);
     // create an unauthorized user
     Storage unauthorizedStorage = StorageOptions.getUnauthenticatedInstance().getService();
 
@@ -1668,13 +1669,8 @@ public class ITStorageTest {
     String landsatBucket = "gcp-public-data-landsat";
     String landsatPrefix = "LC08/PRE/044/034/LC80440342016259LGN00/";
     String landsatBlob = landsatPrefix + "LC80440342016259LGN00_MTL.txt";
-    byte[] bytes;
-    try {
-      bytes = unauthorizedStorage.readAllBytes(landsatBucket, landsatBlob);
-    } catch (StorageException ex) {
-      assumeFalse(403 == ex.getCode());
-      return;
-    }
+    byte[] bytes = unauthorizedStorage.readAllBytes(landsatBucket, landsatBlob);
+
     assertThat(bytes.length).isEqualTo(7903);
     int numBlobs = 0;
     Iterator<Blob> blobIterator = unauthorizedStorage
