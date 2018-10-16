@@ -1661,6 +1661,7 @@ public class ITStorageTest {
 
   @Test
   public void testDownloadPublicBlobWithoutAuthentication() {
+    assumeFalse(System.getenv("GOOGLE_CLOUD_TESTS_IN_VPCSC").equalsIgnoreCase("true"));
     // create an unauthorized user
     Storage unauthorizedStorage = StorageOptions.getUnauthenticatedInstance().getService();
 
@@ -1668,13 +1669,8 @@ public class ITStorageTest {
     String landsatBucket = "gcp-public-data-landsat";
     String landsatPrefix = "LC08/PRE/044/034/LC80440342016259LGN00/";
     String landsatBlob = landsatPrefix + "LC80440342016259LGN00_MTL.txt";
-    byte[] bytes;
-    try {
-      bytes = unauthorizedStorage.readAllBytes(landsatBucket, landsatBlob);
-    } catch (StorageException ex) {
-      assumeFalse(403 == ex.getCode());
-      return;
-    }
+    byte[] bytes = unauthorizedStorage.readAllBytes(landsatBucket, landsatBlob);
+
     assertThat(bytes.length).isEqualTo(7903);
     int numBlobs = 0;
     Iterator<Blob> blobIterator = unauthorizedStorage
