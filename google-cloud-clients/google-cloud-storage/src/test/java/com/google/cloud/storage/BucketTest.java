@@ -75,7 +75,7 @@ public class BucketTest {
       Collections.singletonList(new AgeDeleteRule(5));
   private static final List<? extends BucketInfo.LifecycleRule> LIFECYCLE_RULES =
           Collections.singletonList(new BucketInfo.LifecycleRule(new BucketInfo.LifecycleRule.DeleteLifecycleAction(),
-                  new BucketInfo.LifecycleRule.LifecycleCondition().setAge(5)));
+                  new BucketInfo.LifecycleRule.LifecycleCondition.Builder().setAge(5).build()));
   private static final String INDEX_PAGE = "index.html";
   private static final String NOT_FOUND_PAGE = "error.html";
   private static final String LOCATION = "ASIA";

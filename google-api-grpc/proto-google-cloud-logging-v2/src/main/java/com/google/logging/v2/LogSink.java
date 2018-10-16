@@ -151,7 +151,7 @@ private static final long serialVersionUID = 0L;
 
   /**
    * <pre>
-   * Available log entry formats. Log entries can be written to Stackdriver
+   * Available log entry formats. Log entries can be written to
    * Logging in either format and can be exported in either format.
    * Version 2 is the preferred format.
    * </pre>
@@ -474,7 +474,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Output only. An IAM identity&amp;mdash;a service account or group&amp;mdash;under
-   * which Stackdriver Logging writes the exported log entries to the sink's
+   * which Logging writes the exported log entries to the sink's
    * destination.  This field is set by
    * [sinks.create](/logging/docs/api/reference/rest/v2/projects.sinks/create)
    * and
@@ -505,7 +505,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Output only. An IAM identity&amp;mdash;a service account or group&amp;mdash;under
-   * which Stackdriver Logging writes the exported log entries to the sink's
+   * which Logging writes the exported log entries to the sink's
    * destination.  This field is set by
    * [sinks.create](/logging/docs/api/reference/rest/v2/projects.sinks/create)
    * and
@@ -1497,7 +1497,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. An IAM identity&amp;mdash;a service account or group&amp;mdash;under
-     * which Stackdriver Logging writes the exported log entries to the sink's
+     * which Logging writes the exported log entries to the sink's
      * destination.  This field is set by
      * [sinks.create](/logging/docs/api/reference/rest/v2/projects.sinks/create)
      * and
@@ -1528,7 +1528,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. An IAM identity&amp;mdash;a service account or group&amp;mdash;under
-     * which Stackdriver Logging writes the exported log entries to the sink's
+     * which Logging writes the exported log entries to the sink's
      * destination.  This field is set by
      * [sinks.create](/logging/docs/api/reference/rest/v2/projects.sinks/create)
      * and
@@ -1560,7 +1560,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. An IAM identity&amp;mdash;a service account or group&amp;mdash;under
-     * which Stackdriver Logging writes the exported log entries to the sink's
+     * which Logging writes the exported log entries to the sink's
      * destination.  This field is set by
      * [sinks.create](/logging/docs/api/reference/rest/v2/projects.sinks/create)
      * and
@@ -1589,7 +1589,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. An IAM identity&amp;mdash;a service account or group&amp;mdash;under
-     * which Stackdriver Logging writes the exported log entries to the sink's
+     * which Logging writes the exported log entries to the sink's
      * destination.  This field is set by
      * [sinks.create](/logging/docs/api/reference/rest/v2/projects.sinks/create)
      * and
@@ -1614,7 +1614,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. An IAM identity&amp;mdash;a service account or group&amp;mdash;under
-     * which Stackdriver Logging writes the exported log entries to the sink's
+     * which Logging writes the exported log entries to the sink's
      * destination.  This field is set by
      * [sinks.create](/logging/docs/api/reference/rest/v2/projects.sinks/create)
      * and

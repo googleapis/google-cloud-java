@@ -147,7 +147,7 @@ public class BucketInfo implements Serializable {
       Rule rule = new Rule();
 
       Rule.Action action = new Rule.Action().setType(lifecycleAction.getActionType());
-      if (lifecycleAction instanceof SetStorageClassLifecycleAction) {
+      if (lifecycleAction.getActionType().equals(SetStorageClassLifecycleAction.TYPE)) {
         action.setStorageClass(
             ((SetStorageClassLifecycleAction) lifecycleAction).getStorageClass().toString());
       }
@@ -158,10 +158,10 @@ public class BucketInfo implements Serializable {
           new Rule.Condition()
               .setAge(lifecycleCondition.getAge())
               .setCreatedBefore(
-                  lifecycleCondition.createdBefore == null
+                  lifecycleCondition.getCreatedBefore() == null
                       ? null
-                      : new DateTime(true, lifecycleCondition.createdBefore.getValue(), 0))
-              .setIsLive(lifecycleCondition.isLive)
+                      : new DateTime(true, lifecycleCondition.getCreatedBefore().getValue(), 0))
+              .setIsLive(lifecycleCondition.getIsLive())
               .setNumNewerVersions(lifecycleCondition.getNumberOfNewerVersions())
               .setMatchesStorageClass(
                   lifecycleCondition.getMatchesStorageClass() == null
@@ -182,45 +182,37 @@ public class BucketInfo implements Serializable {
 
       switch (action.getType()) {
         case DeleteLifecycleAction.TYPE:
-          {
-            lifecycleAction = new DeleteLifecycleAction();
-            break;
-          }
+          lifecycleAction = new DeleteLifecycleAction();
+          break;
         case SetStorageClassLifecycleAction.TYPE:
-          {
-            lifecycleAction =
-                new SetStorageClassLifecycleAction(StorageClass.valueOf(action.getStorageClass()));
-            break;
-          }
+          lifecycleAction =
+              new SetStorageClassLifecycleAction(StorageClass.valueOf(action.getStorageClass()));
+          break;
         default:
-          {
-            throw new UnsupportedOperationException(
-                "The specified lifecycle action "
-                    + action.getType()
-                    + " is not currently supported");
-          }
+          throw new UnsupportedOperationException(
+              "The specified lifecycle action " + action.getType() + " is not currently supported");
       }
-
-      LifecycleCondition lifecycleCondition = new LifecycleCondition();
 
       Rule.Condition condition = rule.getCondition();
 
-      lifecycleCondition.setAge(condition.getAge());
-      lifecycleCondition.setCreatedBefore(condition.getCreatedBefore());
-      lifecycleCondition.setIsLive(condition.getIsLive());
-      lifecycleCondition.setNumberOfNewerVersions(condition.getNumNewerVersions());
-      lifecycleCondition.setMatchesStorageClass(
-          condition.getMatchesStorageClass() == null
-              ? null
-              : transform(
-                  condition.getMatchesStorageClass(),
-                  new Function<String, StorageClass>() {
-                    public StorageClass apply(String storageClass) {
-                      return StorageClass.valueOf(storageClass);
-                    }
-                  }));
+      LifecycleCondition.Builder conditionBuilder =
+          new LifecycleCondition.Builder()
+              .setAge(condition.getAge())
+              .setCreatedBefore(condition.getCreatedBefore())
+              .setIsLive(condition.getIsLive())
+              .setNumberOfNewerVersions(condition.getNumNewerVersions())
+              .setMatchesStorageClass(
+                  condition.getMatchesStorageClass() == null
+                      ? null
+                      : transform(
+                          condition.getMatchesStorageClass(),
+                          new Function<String, StorageClass>() {
+                            public StorageClass apply(String storageClass) {
+                              return StorageClass.valueOf(storageClass);
+                            }
+                          }));
 
-      return new LifecycleRule(lifecycleAction, lifecycleCondition);
+      return new LifecycleRule(lifecycleAction, conditionBuilder.build());
     }
 
     public static class LifecycleCondition implements Serializable {
@@ -231,49 +223,69 @@ public class BucketInfo implements Serializable {
       private Boolean isLive;
       private List<StorageClass> matchesStorageClass;
 
-      public Integer getAge() {
-        return age;
+      private LifecycleCondition(Builder builder) {
+        this.age = builder.age;
+        this.createdBefore = builder.createdBefore;
+        this.numberOfNewerVersions = builder.numberOfNewerVersions;
+        this.isLive = builder.isLive;
+        this.matchesStorageClass = builder.matchesStorageClass;
       }
 
-      public LifecycleCondition setAge(Integer age) {
-        this.age = age;
-        return this;
+      public Integer getAge() {
+        return age;
       }
 
       public DateTime getCreatedBefore() {
         return createdBefore;
       }
 
-      public LifecycleCondition setCreatedBefore(DateTime createdBefore) {
-        this.createdBefore = createdBefore;
-        return this;
-      }
-
       public Integer getNumberOfNewerVersions() {
         return numberOfNewerVersions;
-      }
-
-      public LifecycleCondition setNumberOfNewerVersions(Integer numberOfNewerVersions) {
-        this.numberOfNewerVersions = numberOfNewerVersions;
-        return this;
       }
 
       public Boolean getIsLive() {
         return isLive;
       }
 
-      public LifecycleCondition setIsLive(Boolean live) {
-        isLive = live;
-        return this;
-      }
-
       public List<StorageClass> getMatchesStorageClass() {
         return matchesStorageClass;
       }
 
-      public LifecycleCondition setMatchesStorageClass(List<StorageClass> matchesStorageClass) {
-        this.matchesStorageClass = matchesStorageClass;
-        return this;
+      public static class Builder {
+        private Integer age;
+        private DateTime createdBefore;
+        private Integer numberOfNewerVersions;
+        private Boolean isLive;
+        private List<StorageClass> matchesStorageClass;
+
+        public Builder setAge(Integer age) {
+          this.age = age;
+          return this;
+        }
+
+        public Builder setCreatedBefore(DateTime createdBefore) {
+          this.createdBefore = createdBefore;
+          return this;
+        }
+
+        public Builder setNumberOfNewerVersions(Integer numberOfNewerVersions) {
+          this.numberOfNewerVersions = numberOfNewerVersions;
+          return this;
+        }
+
+        public Builder setIsLive(Boolean live) {
+          this.isLive = live;
+          return this;
+        }
+
+        public Builder setMatchesStorageClass(List<StorageClass> matchesStorageClass) {
+          this.matchesStorageClass = matchesStorageClass;
+          return this;
+        }
+
+        public LifecycleCondition build() {
+          return new LifecycleCondition(this);
+        }
       }
     }
 

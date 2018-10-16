@@ -29,7 +29,6 @@ import static org.junit.Assert.fail;
 import com.google.api.client.util.DateTime;
 import com.google.api.gax.paging.Page;
 import com.google.auth.oauth2.GoogleCredentials;
-import com.google.cloud.Date;
 import com.google.cloud.kms.v1.CreateCryptoKeyRequest;
 import com.google.cloud.kms.v1.CreateKeyRingRequest;
 import com.google.cloud.kms.v1.CryptoKeyName;
@@ -154,14 +153,9 @@ public class ITStorageTest {
             .setLifecycleRules(
                 ImmutableList.of(
                     new BucketInfo.LifecycleRule(
-                        new BucketInfo.LifecycleRule.SetStorageClassLifecycleAction(
-                            StorageClass.NEARLINE),
-                        new BucketInfo.LifecycleRule.LifecycleCondition()
-                            .setNumberOfNewerVersions(3)
-                            .setCreatedBefore(new DateTime(System.currentTimeMillis()))
-                            .setAge(1)
-                            .setIsLive(false)
-                            .setMatchesStorageClass(ImmutableList.of(StorageClass.COLDLINE)))))
+                        new BucketInfo.LifecycleRule.DeleteLifecycleAction(),
+                        new BucketInfo.LifecycleRule.LifecycleCondition.Builder()
+                            .setAge(1).build())))
             .build());
 
     // Prepare KMS KeyRing for CMEK tests
@@ -356,17 +350,37 @@ public class ITStorageTest {
 
   @Test
   public void testGetBucketLifecycleRules() {
-    Bucket remoteBucket = storage.get(BUCKET, Storage.BucketGetOption.fields(BucketField.values()));
+    String lifecycleTestBucketName = RemoteStorageHelper.generateBucketName();
+    storage.create(
+            BucketInfo.newBuilder(lifecycleTestBucketName)
+                    .setLocation("us")
+                    .setLifecycleRules(
+                            ImmutableList.of(
+                                    new BucketInfo.LifecycleRule(
+                                            new BucketInfo.LifecycleRule.SetStorageClassLifecycleAction(
+                                                    StorageClass.COLDLINE),
+                                            new BucketInfo.LifecycleRule.LifecycleCondition.Builder()
+                                                    .setAge(1)
+                                                    .setNumberOfNewerVersions(3)
+                                                    .setIsLive(false)
+                                                    .setCreatedBefore(new DateTime(System.currentTimeMillis()))
+                                                    .setMatchesStorageClass(ImmutableList.of(StorageClass.COLDLINE))
+                                                    .build())))
+                    .build());
+    Bucket remoteBucket = storage.get(lifecycleTestBucketName, Storage.BucketGetOption.fields(BucketField.LIFECYCLE));
     BucketInfo.LifecycleRule lifecycleRule = remoteBucket.getLifecycleRules().get(0);
-
-    assertTrue(
-        lifecycleRule.getAction()
-            instanceof BucketInfo.LifecycleRule.SetStorageClassLifecycleAction);
-    assertEquals(3, (int) lifecycleRule.getCondition().getNumberOfNewerVersions());
-    assertNotNull(lifecycleRule.getCondition().getCreatedBefore());
-    assertFalse(lifecycleRule.getCondition().getIsLive());
-    assertEquals(1, (int) lifecycleRule.getCondition().getAge());
-    assertEquals(1, lifecycleRule.getCondition().getMatchesStorageClass().size());
+    try {
+      assertTrue(
+          lifecycleRule.getAction()
+              instanceof BucketInfo.LifecycleRule.SetStorageClassLifecycleAction);
+      assertEquals(3, (int) lifecycleRule.getCondition().getNumberOfNewerVersions());
+      assertNotNull(lifecycleRule.getCondition().getCreatedBefore());
+      assertFalse(lifecycleRule.getCondition().getIsLive());
+      assertEquals(1, (int) lifecycleRule.getCondition().getAge());
+      assertEquals(1, lifecycleRule.getCondition().getMatchesStorageClass().size());
+    } finally {
+      storage.delete(lifecycleTestBucketName);
+    }
   }
 
   @Test
@@ -2064,7 +2078,7 @@ public class ITStorageTest {
             StorageRoles.legacyBucketReader(),
             new HashSet<>(Collections.singleton(projectViewer)),
             StorageRoles.legacyObjectReader(),
-            (Set<Identity>) new HashSet<>(Collections.singleton((Identity.allUsers()))));
+            (Set<Identity>) new HashSet<>(Collections.singleton(Identity.allUsers())));
 
     // Validate getting policy.
     Policy currentPolicy = storage.getIamPolicy(BUCKET, bucketOptions);

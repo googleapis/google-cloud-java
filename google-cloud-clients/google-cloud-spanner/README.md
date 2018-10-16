@@ -20,23 +20,23 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-spanner</artifactId>
-  <version>0.65.0-beta</version>
+  <version>0.67.0-beta</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-spanner:0.65.0-beta'
+compile 'com.google.cloud:google-cloud-spanner:0.67.0-beta'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-spanner" % "0.65.0-beta"
+libraryDependencies += "com.google.cloud" % "google-cloud-spanner" % "0.67.0-beta"
 ```
 [//]: # ({x-version-update-end})
 
 ## Authentication
 
 See the
-[Authentication](https://github.com/GoogleCloudPlatform/google-cloud-java#authentication)
+[Authentication](https://github.com/googleapis/google-cloud-java#authentication)
 section in the base directory's README.
 
 ## About Cloud Spanner
@@ -104,7 +104,7 @@ In [DatabaseSelect.java](../../google-cloud-examples/src/main/java/com/google/cl
 ## Troubleshooting
 
 To get help, follow the instructions in the [shared Troubleshooting
-document](https://github.com/GoogleCloudPlatform/gcloud-common/blob/master/troubleshooting/readme.md#troubleshooting).
+document](https://github.com/googleapis/google-cloud-common/blob/master/troubleshooting/readme.md#troubleshooting).
 
 Transport
 ---------
@@ -137,10 +137,10 @@ See [CONTRIBUTING] for more information on how to get started.
 
 Apache 2.0 - See [LICENSE] for more information.
 
-[CONTRIBUTING]:https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/CONTRIBUTING.md
-[LICENSE]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/LICENSE
-[TESTING]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/TESTING.md#testing-code-that-uses-cloud-spanner
+[CONTRIBUTING]:https://github.com/googleapis/google-cloud-java/blob/master/CONTRIBUTING.md
+[LICENSE]: https://github.com/googleapis/google-cloud-java/blob/master/LICENSE
+[TESTING]: https://github.com/googleapis/google-cloud-java/blob/master/TESTING.md#testing-code-that-uses-cloud-spanner
 [cloud-platform]: https://cloud.google.com/
 [cloud-spanner]: https://cloud.google.com/spanner/
 [spanner-product-docs]: https://cloud.google.com/spanner/docs/
-[spanner-client-lib-docs]: https://googlecloudplatform.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/spanner/package-summary.html
+[spanner-client-lib-docs]: https://googleapis.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/spanner/package-summary.html

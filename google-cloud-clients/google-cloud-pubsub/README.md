@@ -19,23 +19,23 @@ Add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-pubsub</artifactId>
-  <version>1.47.0</version>
+  <version>1.49.0</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-pubsub:1.47.0'
+compile 'com.google.cloud:google-cloud-pubsub:1.49.0'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-pubsub" % "1.47.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-pubsub" % "1.49.0"
 ```
 [//]: # ({x-version-update-end})
 
 Authentication
 --------------
 
-See the [Authentication](https://github.com/GoogleCloudPlatform/google-cloud-java#authentication) section in the base directory's README.
+See the [Authentication](https://github.com/googleapis/google-cloud-java#authentication) section in the base directory's README.
 
 About Google Cloud Pub/Sub
 --------------------------
@@ -60,7 +60,7 @@ For this tutorial, you will need a
 [Google Developers Console](https://console.developers.google.com/) project with the Pub/Sub API
 enabled. You will need to [enable billing](https://support.google.com/cloud/answer/6158867?hl=en) to
 use Google Cloud Pub/Sub.
-[Follow these instructions](https://cloud.google.com/docs/authentication#preparation) to get your
+[Follow these instructions](https://cloud.google.com/resource-manager/docs/creating-managing-projects) to get your
 project set up. You will also need to set up the local development environment by [installing the
 Google Cloud SDK](https://cloud.google.com/sdk/) and running the following commands in command line:
 `gcloud auth login` and `gcloud config set project [YOUR PROJECT ID]`.
@@ -77,7 +77,7 @@ simplest way to authenticate is to use
 These credentials are automatically inferred from your environment.
 
 For other authentication options, see the
-[Authentication](https://github.com/GoogleCloudPlatform/google-cloud-java#authentication) page.
+[Authentication](https://github.com/googleapis/google-cloud-java#authentication) page.
 
 #### Creating a topic
 With Pub/Sub you can create topics. A topic is a named resource to which messages are sent by
@@ -222,7 +222,7 @@ Contributing
 
 Contributions to this library are always welcome and highly encouraged.
 
-See `google-cloud`'s [CONTRIBUTING] documentation and the [shared documentation](https://github.com/GoogleCloudPlatform/gcloud-common/blob/master/contributing/readme.md#how-to-contribute-to-gcloud) for more information on how to get started.
+See `google-cloud`'s [CONTRIBUTING] documentation and the [shared documentation](https://github.com/googleapis/google-cloud-common/blob/master/contributing/readme.md#how-to-contribute-to-gcloud) for more information on how to get started.
 
 Please note that this project is released with a Contributor Code of Conduct. By participating in this project you agree to abide by its terms. See [Code of Conduct][code-of-conduct] for more information.
 
@@ -232,12 +232,12 @@ License
 Apache 2.0 - See [LICENSE] for more information.
 
 
-[CONTRIBUTING]:https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/CONTRIBUTING.md
-[code-of-conduct]:https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
-[LICENSE]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/LICENSE
-[TESTING]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/TESTING.md#testing-code-that-uses-pubsub
+[CONTRIBUTING]:https://github.com/googleapis/google-cloud-java/blob/master/CONTRIBUTING.md
+[code-of-conduct]:https://github.com/googleapis/google-cloud-java/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
+[LICENSE]: https://github.com/googleapis/google-cloud-java/blob/master/LICENSE
+[TESTING]: https://github.com/googleapis/google-cloud-java/blob/master/TESTING.md#testing-code-that-uses-pubsub
 
 [cloud-pubsub]: https://cloud.google.com/pubsub/
 [cloud-pubsub-quickstart]: https://cloud.google.com/pubsub/quickstart-console#before-you-begin
 [pubsub-product-docs]: https://cloud.google.com/pubsub/docs/
-[pubsub-client-lib-docs]: https://googlecloudplatform.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/pubsub/v1/package-summary.html
+[pubsub-client-lib-docs]: https://googleapis.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/pubsub/v1/package-summary.html
