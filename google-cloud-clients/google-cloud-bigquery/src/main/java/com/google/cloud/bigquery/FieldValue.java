@@ -280,7 +280,7 @@ public class FieldValue implements Serializable {
    * respectively.
    *
    * <p>This method is unstable. See <a
-   * href="https://github.com/GoogleCloudPlatform/google-cloud-java/pull/2891">this discussion</a>
+   * href="https://github.com/googleapis/google-cloud-java/pull/2891">this discussion</a>
    * for more context.
    */
   @BetaApi

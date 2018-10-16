@@ -36,8 +36,7 @@
  *
  * ============ ConfigClient ============
  *
- * <p>Service Description: Service for configuring sinks used to export log entries outside of
- * Stackdriver Logging.
+ * <p>Service Description: Service for configuring sinks used to export log entries out of Logging.
  *
  * <p>Sample for ConfigClient:
  *

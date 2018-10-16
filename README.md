@@ -63,16 +63,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-storage</artifactId>
-  <version>1.47.0</version>
+  <version>1.49.0</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-storage:1.47.0'
+compile 'com.google.cloud:google-cloud-storage:1.49.0'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-storage" % "1.47.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-storage" % "1.49.0"
 ```
 [//]: # ({x-version-update-end})
 
@@ -132,7 +132,7 @@ details.
 
 To access Google Cloud services, you first need to ensure that the necessary Google Cloud APIs are
 enabled for your project. To do this, follow the instructions on the
-[authentication document](https://github.com/GoogleCloudPlatform/gcloud-common/blob/master/authentication/readme.md#authentication)
+[authentication document](https://github.com/googleapis/google-cloud-common/blob/master/authentication/readme.md#authentication)
 shared by all the Google Cloud language libraries.
 
 Next, choose a method for authenticating API requests from within your project:
@@ -184,7 +184,7 @@ Credentials in the following locations (in order):
 Troubleshooting
 ---------------
 
-To get help, follow the instructions in the [Troubleshooting document](https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/TROUBLESHOOTING.md).
+To get help, follow the instructions in the [Troubleshooting document](https://github.com/googleapis/google-cloud-java/blob/master/TROUBLESHOOTING.md).
 
 Using a proxy
 -------------
@@ -219,7 +219,11 @@ threading restrictions.
 
 Thus, the following are not supported:
 
-- Android
+- Android 
+  - Consider [Firebase](https://firebase.google.com), which includes many of these APIs.
+  - It is possible to use these libraries in many cases, although it is unsupported.
+    You can find examples, such as [this one](https://github.com/GoogleCloudPlatform/android-docs-samples/tree/master/speech/SpeechRecognitionClient),
+    in this [example repository](https://github.com/GoogleCloudPlatform/android-docs-samples) but consider the risks carefully before using these libraries in an application.
 - Alpine Linux (due to netty-tcnative requiring glibc, which is not present on Alpine)
 - Raspberry Pi (since it runs on the ARM architecture)
 - Google App Engine Standard Java 7
@@ -292,7 +296,7 @@ The easiest way to solve version conflicts is to use google-cloud's BOM. In Mave
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-bom</artifactId>
-        <version>0.65.0-alpha</version>
+        <version>0.67.0-alpha</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -342,7 +346,7 @@ Contributing
 
 Contributions to this library are always welcome and highly encouraged.
 
-See `google-cloud`'s [CONTRIBUTING] documentation and the [shared documentation](https://github.com/GoogleCloudPlatform/gcloud-common/blob/master/contributing/readme.md#how-to-contribute-to-gcloud) for more information on how to get started.
+See `google-cloud`'s [CONTRIBUTING] documentation and the [shared documentation](https://github.com/googleapis/google-cloud-common/blob/master/contributing/readme.md#how-to-contribute-to-gcloud) for more information on how to get started.
 
 Please note that this project is released with a Contributor Code of Conduct. By participating in this project you agree to abide by its terms. See [Code of Conduct][code-of-conduct] for more information.
 
@@ -352,12 +356,12 @@ License
 Apache 2.0 - See [LICENSE] for more information.
 
 
-[CONTRIBUTING]:https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/CONTRIBUTING.md
-[code-of-conduct]:https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
-[LICENSE]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/LICENSE
-[TESTING]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/TESTING.md
+[CONTRIBUTING]:https://github.com/googleapis/google-cloud-java/blob/master/CONTRIBUTING.md
+[code-of-conduct]:https://github.com/googleapis/google-cloud-java/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
+[LICENSE]: https://github.com/googleapis/google-cloud-java/blob/master/LICENSE
+[TESTING]: https://github.com/googleapis/google-cloud-java/blob/master/TESTING.md
 
 [cloud-platform]: https://cloud.google.com/
 [cloud-platform-docs]: https://cloud.google.com/docs/
-[client-lib-docs]: https://googlecloudplatform.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html
+[client-lib-docs]: https://googleapis.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html
 
