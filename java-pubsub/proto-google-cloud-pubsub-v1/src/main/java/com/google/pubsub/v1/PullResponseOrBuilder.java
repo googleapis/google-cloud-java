@@ -9,10 +9,10 @@ public interface PullResponseOrBuilder extends
 
   /**
    * <pre>
-   * Received Pub/Sub messages. The Pub/Sub system will return zero messages if
-   * there are no more available in the backlog. The Pub/Sub system may return
-   * fewer than the `maxMessages` requested even if there are more messages
-   * available in the backlog.
+   * Received Pub/Sub messages. The list will be empty if there are no more
+   * messages available in the backlog. For JSON, the response can be entirely
+   * empty. The Pub/Sub system may return fewer than the `maxMessages` requested
+   * even if there are more messages available in the backlog.
    * </pre>
    *
    * <code>repeated .google.pubsub.v1.ReceivedMessage received_messages = 1;</code>
@@ -21,10 +21,10 @@ public interface PullResponseOrBuilder extends
       getReceivedMessagesList();
   /**
    * <pre>
-   * Received Pub/Sub messages. The Pub/Sub system will return zero messages if
-   * there are no more available in the backlog. The Pub/Sub system may return
-   * fewer than the `maxMessages` requested even if there are more messages
-   * available in the backlog.
+   * Received Pub/Sub messages. The list will be empty if there are no more
+   * messages available in the backlog. For JSON, the response can be entirely
+   * empty. The Pub/Sub system may return fewer than the `maxMessages` requested
+   * even if there are more messages available in the backlog.
    * </pre>
    *
    * <code>repeated .google.pubsub.v1.ReceivedMessage received_messages = 1;</code>
@@ -32,10 +32,10 @@ public interface PullResponseOrBuilder extends
   com.google.pubsub.v1.ReceivedMessage getReceivedMessages(int index);
   /**
    * <pre>
-   * Received Pub/Sub messages. The Pub/Sub system will return zero messages if
-   * there are no more available in the backlog. The Pub/Sub system may return
-   * fewer than the `maxMessages` requested even if there are more messages
-   * available in the backlog.
+   * Received Pub/Sub messages. The list will be empty if there are no more
+   * messages available in the backlog. For JSON, the response can be entirely
+   * empty. The Pub/Sub system may return fewer than the `maxMessages` requested
+   * even if there are more messages available in the backlog.
    * </pre>
    *
    * <code>repeated .google.pubsub.v1.ReceivedMessage received_messages = 1;</code>
@@ -43,10 +43,10 @@ public interface PullResponseOrBuilder extends
   int getReceivedMessagesCount();
   /**
    * <pre>
-   * Received Pub/Sub messages. The Pub/Sub system will return zero messages if
-   * there are no more available in the backlog. The Pub/Sub system may return
-   * fewer than the `maxMessages` requested even if there are more messages
-   * available in the backlog.
+   * Received Pub/Sub messages. The list will be empty if there are no more
+   * messages available in the backlog. For JSON, the response can be entirely
+   * empty. The Pub/Sub system may return fewer than the `maxMessages` requested
+   * even if there are more messages available in the backlog.
    * </pre>
    *
    * <code>repeated .google.pubsub.v1.ReceivedMessage received_messages = 1;</code>
@@ -55,10 +55,10 @@ public interface PullResponseOrBuilder extends
       getReceivedMessagesOrBuilderList();
   /**
    * <pre>
-   * Received Pub/Sub messages. The Pub/Sub system will return zero messages if
-   * there are no more available in the backlog. The Pub/Sub system may return
-   * fewer than the `maxMessages` requested even if there are more messages
-   * available in the backlog.
+   * Received Pub/Sub messages. The list will be empty if there are no more
+   * messages available in the backlog. For JSON, the response can be entirely
+   * empty. The Pub/Sub system may return fewer than the `maxMessages` requested
+   * even if there are more messages available in the backlog.
    * </pre>
    *
    * <code>repeated .google.pubsub.v1.ReceivedMessage received_messages = 1;</code>

@@ -181,7 +181,7 @@ public interface SubscriptionOrBuilder extends
 
   /**
    * <pre>
-   * User labels.
+   * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 9;</code>
@@ -189,7 +189,7 @@ public interface SubscriptionOrBuilder extends
   int getLabelsCount();
   /**
    * <pre>
-   * User labels.
+   * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 9;</code>
@@ -204,7 +204,7 @@ public interface SubscriptionOrBuilder extends
   getLabels();
   /**
    * <pre>
-   * User labels.
+   * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 9;</code>
@@ -213,7 +213,7 @@ public interface SubscriptionOrBuilder extends
   getLabelsMap();
   /**
    * <pre>
-   * User labels.
+   * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 9;</code>
@@ -224,7 +224,7 @@ public interface SubscriptionOrBuilder extends
       java.lang.String defaultValue);
   /**
    * <pre>
-   * User labels.
+   * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 9;</code>
@@ -232,4 +232,53 @@ public interface SubscriptionOrBuilder extends
 
   java.lang.String getLabelsOrThrow(
       java.lang.String key);
+
+  /**
+   * <pre>
+   * A policy that specifies the conditions for this subscription's expiration.
+   * A subscription is considered active as long as any connected subscriber is
+   * successfully consuming messages from the subscription or is issuing
+   * operations on the subscription. If `expiration_policy` is not set, a
+   * *default policy* with `ttl` of 31 days will be used. The minimum allowed
+   * value for `expiration_policy.ttl` is 1 day.
+   * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
+   * changed in backward-incompatible ways and is not recommended for production
+   * use. It is not subject to any SLA or deprecation policy.
+   * </pre>
+   *
+   * <code>.google.pubsub.v1.ExpirationPolicy expiration_policy = 11;</code>
+   */
+  boolean hasExpirationPolicy();
+  /**
+   * <pre>
+   * A policy that specifies the conditions for this subscription's expiration.
+   * A subscription is considered active as long as any connected subscriber is
+   * successfully consuming messages from the subscription or is issuing
+   * operations on the subscription. If `expiration_policy` is not set, a
+   * *default policy* with `ttl` of 31 days will be used. The minimum allowed
+   * value for `expiration_policy.ttl` is 1 day.
+   * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
+   * changed in backward-incompatible ways and is not recommended for production
+   * use. It is not subject to any SLA or deprecation policy.
+   * </pre>
+   *
+   * <code>.google.pubsub.v1.ExpirationPolicy expiration_policy = 11;</code>
+   */
+  com.google.pubsub.v1.ExpirationPolicy getExpirationPolicy();
+  /**
+   * <pre>
+   * A policy that specifies the conditions for this subscription's expiration.
+   * A subscription is considered active as long as any connected subscriber is
+   * successfully consuming messages from the subscription or is issuing
+   * operations on the subscription. If `expiration_policy` is not set, a
+   * *default policy* with `ttl` of 31 days will be used. The minimum allowed
+   * value for `expiration_policy.ttl` is 1 day.
+   * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
+   * changed in backward-incompatible ways and is not recommended for production
+   * use. It is not subject to any SLA or deprecation policy.
+   * </pre>
+   *
+   * <code>.google.pubsub.v1.ExpirationPolicy expiration_policy = 11;</code>
+   */
+  com.google.pubsub.v1.ExpirationPolicyOrBuilder getExpirationPolicyOrBuilder();
 }

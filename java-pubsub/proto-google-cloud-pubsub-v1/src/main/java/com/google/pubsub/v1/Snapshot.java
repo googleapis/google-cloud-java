@@ -306,7 +306,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * User labels.
+   * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 4;</code>
@@ -326,7 +326,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * User labels.
+   * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 4;</code>
@@ -337,7 +337,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * User labels.
+   * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 4;</code>
@@ -353,7 +353,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * User labels.
+   * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 4;</code>
@@ -1220,7 +1220,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * User labels.
+     * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 4;</code>
@@ -1240,7 +1240,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * User labels.
+     * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 4;</code>
@@ -1251,7 +1251,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * User labels.
+     * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 4;</code>
@@ -1267,7 +1267,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * User labels.
+     * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 4;</code>
@@ -1291,7 +1291,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * User labels.
+     * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 4;</code>
@@ -1314,7 +1314,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * User labels.
+     * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 4;</code>
@@ -1330,7 +1330,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * User labels.
+     * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 4;</code>

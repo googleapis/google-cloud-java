@@ -567,8 +567,8 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param project The name of the cloud project that subscriptions belong to. Format is
-   *     `projects/{project}`.
+   * @param project The name of the project in which to list subscriptions. Format is
+   *     `projects/{project-id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListSubscriptionsPagedResponse listSubscriptions(ProjectName project) {
@@ -594,8 +594,8 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param project The name of the cloud project that subscriptions belong to. Format is
-   *     `projects/{project}`.
+   * @param project The name of the project in which to list subscriptions. Format is
+   *     `projects/{project-id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListSubscriptionsPagedResponse listSubscriptions(String project) {
@@ -1058,9 +1058,8 @@ public class SubscriptionAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Pulls messages from the server. Returns an empty list if there are no messages available in the
-   * backlog. The server may return `UNAVAILABLE` if there are too many concurrent pull requests
-   * pending for the given subscription.
+   * Pulls messages from the server. The server may return `UNAVAILABLE` if there are too many
+   * concurrent pull requests pending for the given subscription.
    *
    * <p>Sample code:
    *
@@ -1078,8 +1077,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * @param returnImmediately If this field set to true, the system will respond immediately even if
    *     it there are no messages available to return in the `Pull` response. Otherwise, the system
    *     may wait (for a bounded amount of time) until at least one message is available, rather
-   *     than returning no messages. The client may cancel the request if it does not wish to wait
-   *     any longer for the response.
+   *     than returning no messages.
    * @param maxMessages The maximum number of messages returned for this request. The Pub/Sub system
    *     may return fewer than the number specified.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1098,9 +1096,8 @@ public class SubscriptionAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Pulls messages from the server. Returns an empty list if there are no messages available in the
-   * backlog. The server may return `UNAVAILABLE` if there are too many concurrent pull requests
-   * pending for the given subscription.
+   * Pulls messages from the server. The server may return `UNAVAILABLE` if there are too many
+   * concurrent pull requests pending for the given subscription.
    *
    * <p>Sample code:
    *
@@ -1118,8 +1115,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * @param returnImmediately If this field set to true, the system will respond immediately even if
    *     it there are no messages available to return in the `Pull` response. Otherwise, the system
    *     may wait (for a bounded amount of time) until at least one message is available, rather
-   *     than returning no messages. The client may cancel the request if it does not wish to wait
-   *     any longer for the response.
+   *     than returning no messages.
    * @param maxMessages The maximum number of messages returned for this request. The Pub/Sub system
    *     may return fewer than the number specified.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1138,9 +1134,8 @@ public class SubscriptionAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Pulls messages from the server. Returns an empty list if there are no messages available in the
-   * backlog. The server may return `UNAVAILABLE` if there are too many concurrent pull requests
-   * pending for the given subscription.
+   * Pulls messages from the server. The server may return `UNAVAILABLE` if there are too many
+   * concurrent pull requests pending for the given subscription.
    *
    * <p>Sample code:
    *
@@ -1165,9 +1160,8 @@ public class SubscriptionAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Pulls messages from the server. Returns an empty list if there are no messages available in the
-   * backlog. The server may return `UNAVAILABLE` if there are too many concurrent pull requests
-   * pending for the given subscription.
+   * Pulls messages from the server. The server may return `UNAVAILABLE` if there are too many
+   * concurrent pull requests pending for the given subscription.
    *
    * <p>Sample code:
    *
@@ -1373,8 +1367,8 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param project The name of the cloud project that snapshots belong to. Format is
-   *     `projects/{project}`.
+   * @param project The name of the project in which to list snapshots. Format is
+   *     `projects/{project-id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListSnapshotsPagedResponse listSnapshots(ProjectName project) {
@@ -1402,8 +1396,8 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param project The name of the cloud project that snapshots belong to. Format is
-   *     `projects/{project}`.
+   * @param project The name of the project in which to list snapshots. Format is
+   *     `projects/{project-id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListSnapshotsPagedResponse listSnapshots(String project) {
@@ -1503,12 +1497,12 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * Creates a snapshot from the requested subscription.&lt;br&gt;&lt;br&gt;
    * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be changed
    * in backward-incompatible ways and is not recommended for production use. It is not subject to
-   * any SLA or deprecation policy. If the snapshot already exists, returns `ALREADY_EXISTS`. If the
-   * requested subscription doesn't exist, returns `NOT_FOUND`. If the backlog in the subscription
-   * is too old -- and the resulting snapshot would expire in less than 1 hour -- then
-   * `FAILED_PRECONDITION` is returned. See also the `Snapshot.expire_time` field. If the name is
-   * not provided in the request, the server will assign a random name for this snapshot on the same
-   * project as the subscription, conforming to the [resource name
+   * any SLA or deprecation policy.&lt;br&gt;&lt;br&gt; If the snapshot already exists, returns
+   * `ALREADY_EXISTS`. If the requested subscription doesn't exist, returns `NOT_FOUND`. If the
+   * backlog in the subscription is too old -- and the resulting snapshot would expire in less than
+   * 1 hour -- then `FAILED_PRECONDITION` is returned. See also the `Snapshot.expire_time` field. If
+   * the name is not provided in the request, the server will assign a random name for this snapshot
+   * on the same project as the subscription, conforming to the [resource name
    * format](https://cloud.google.com/pubsub/docs/overview#names). The generated name is populated
    * in the returned Snapshot object. Note that for REST API requests, you must specify a name in
    * the request.
@@ -1525,7 +1519,8 @@ public class SubscriptionAdminClient implements BackgroundResource {
    *
    * @param name Optional user-provided name for this snapshot. If the name is not provided in the
    *     request, the server will assign a random name for this snapshot on the same project as the
-   *     subscription. Note that for REST API requests, you must specify a name. Format is
+   *     subscription. Note that for REST API requests, you must specify a name. See the &lt;a
+   *     href="/pubsub/docs/admin#resource_names"&gt;resource name rules&lt;/a&gt;. Format is
    *     `projects/{project}/snapshots/{snap}`.
    * @param subscription The subscription whose backlog the snapshot retains. Specifically, the
    *     created snapshot is guaranteed to retain: (a) The existing backlog on the subscription.
@@ -1551,12 +1546,12 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * Creates a snapshot from the requested subscription.&lt;br&gt;&lt;br&gt;
    * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be changed
    * in backward-incompatible ways and is not recommended for production use. It is not subject to
-   * any SLA or deprecation policy. If the snapshot already exists, returns `ALREADY_EXISTS`. If the
-   * requested subscription doesn't exist, returns `NOT_FOUND`. If the backlog in the subscription
-   * is too old -- and the resulting snapshot would expire in less than 1 hour -- then
-   * `FAILED_PRECONDITION` is returned. See also the `Snapshot.expire_time` field. If the name is
-   * not provided in the request, the server will assign a random name for this snapshot on the same
-   * project as the subscription, conforming to the [resource name
+   * any SLA or deprecation policy.&lt;br&gt;&lt;br&gt; If the snapshot already exists, returns
+   * `ALREADY_EXISTS`. If the requested subscription doesn't exist, returns `NOT_FOUND`. If the
+   * backlog in the subscription is too old -- and the resulting snapshot would expire in less than
+   * 1 hour -- then `FAILED_PRECONDITION` is returned. See also the `Snapshot.expire_time` field. If
+   * the name is not provided in the request, the server will assign a random name for this snapshot
+   * on the same project as the subscription, conforming to the [resource name
    * format](https://cloud.google.com/pubsub/docs/overview#names). The generated name is populated
    * in the returned Snapshot object. Note that for REST API requests, you must specify a name in
    * the request.
@@ -1573,7 +1568,8 @@ public class SubscriptionAdminClient implements BackgroundResource {
    *
    * @param name Optional user-provided name for this snapshot. If the name is not provided in the
    *     request, the server will assign a random name for this snapshot on the same project as the
-   *     subscription. Note that for REST API requests, you must specify a name. Format is
+   *     subscription. Note that for REST API requests, you must specify a name. See the &lt;a
+   *     href="/pubsub/docs/admin#resource_names"&gt;resource name rules&lt;/a&gt;. Format is
    *     `projects/{project}/snapshots/{snap}`.
    * @param subscription The subscription whose backlog the snapshot retains. Specifically, the
    *     created snapshot is guaranteed to retain: (a) The existing backlog on the subscription.
@@ -1595,12 +1591,12 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * Creates a snapshot from the requested subscription.&lt;br&gt;&lt;br&gt;
    * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be changed
    * in backward-incompatible ways and is not recommended for production use. It is not subject to
-   * any SLA or deprecation policy. If the snapshot already exists, returns `ALREADY_EXISTS`. If the
-   * requested subscription doesn't exist, returns `NOT_FOUND`. If the backlog in the subscription
-   * is too old -- and the resulting snapshot would expire in less than 1 hour -- then
-   * `FAILED_PRECONDITION` is returned. See also the `Snapshot.expire_time` field. If the name is
-   * not provided in the request, the server will assign a random name for this snapshot on the same
-   * project as the subscription, conforming to the [resource name
+   * any SLA or deprecation policy.&lt;br&gt;&lt;br&gt; If the snapshot already exists, returns
+   * `ALREADY_EXISTS`. If the requested subscription doesn't exist, returns `NOT_FOUND`. If the
+   * backlog in the subscription is too old -- and the resulting snapshot would expire in less than
+   * 1 hour -- then `FAILED_PRECONDITION` is returned. See also the `Snapshot.expire_time` field. If
+   * the name is not provided in the request, the server will assign a random name for this snapshot
+   * on the same project as the subscription, conforming to the [resource name
    * format](https://cloud.google.com/pubsub/docs/overview#names). The generated name is populated
    * in the returned Snapshot object. Note that for REST API requests, you must specify a name in
    * the request.
@@ -1631,12 +1627,12 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * Creates a snapshot from the requested subscription.&lt;br&gt;&lt;br&gt;
    * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be changed
    * in backward-incompatible ways and is not recommended for production use. It is not subject to
-   * any SLA or deprecation policy. If the snapshot already exists, returns `ALREADY_EXISTS`. If the
-   * requested subscription doesn't exist, returns `NOT_FOUND`. If the backlog in the subscription
-   * is too old -- and the resulting snapshot would expire in less than 1 hour -- then
-   * `FAILED_PRECONDITION` is returned. See also the `Snapshot.expire_time` field. If the name is
-   * not provided in the request, the server will assign a random name for this snapshot on the same
-   * project as the subscription, conforming to the [resource name
+   * any SLA or deprecation policy.&lt;br&gt;&lt;br&gt; If the snapshot already exists, returns
+   * `ALREADY_EXISTS`. If the requested subscription doesn't exist, returns `NOT_FOUND`. If the
+   * backlog in the subscription is too old -- and the resulting snapshot would expire in less than
+   * 1 hour -- then `FAILED_PRECONDITION` is returned. See also the `Snapshot.expire_time` field. If
+   * the name is not provided in the request, the server will assign a random name for this snapshot
+   * on the same project as the subscription, conforming to the [resource name
    * format](https://cloud.google.com/pubsub/docs/overview#names). The generated name is populated
    * in the returned Snapshot object. Note that for REST API requests, you must specify a name in
    * the request.

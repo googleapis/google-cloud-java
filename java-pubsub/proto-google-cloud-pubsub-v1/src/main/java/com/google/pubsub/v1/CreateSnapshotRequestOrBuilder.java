@@ -12,7 +12,8 @@ public interface CreateSnapshotRequestOrBuilder extends
    * Optional user-provided name for this snapshot.
    * If the name is not provided in the request, the server will assign a random
    * name for this snapshot on the same project as the subscription.
-   * Note that for REST API requests, you must specify a name.
+   * Note that for REST API requests, you must specify a name.  See the
+   * &lt;a href="/pubsub/docs/admin#resource_names"&gt;resource name rules&lt;/a&gt;.
    * Format is `projects/{project}/snapshots/{snap}`.
    * </pre>
    *
@@ -24,7 +25,8 @@ public interface CreateSnapshotRequestOrBuilder extends
    * Optional user-provided name for this snapshot.
    * If the name is not provided in the request, the server will assign a random
    * name for this snapshot on the same project as the subscription.
-   * Note that for REST API requests, you must specify a name.
+   * Note that for REST API requests, you must specify a name.  See the
+   * &lt;a href="/pubsub/docs/admin#resource_names"&gt;resource name rules&lt;/a&gt;.
    * Format is `projects/{project}/snapshots/{snap}`.
    * </pre>
    *
@@ -69,7 +71,7 @@ public interface CreateSnapshotRequestOrBuilder extends
 
   /**
    * <pre>
-   * User labels.
+   * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 3;</code>
@@ -77,7 +79,7 @@ public interface CreateSnapshotRequestOrBuilder extends
   int getLabelsCount();
   /**
    * <pre>
-   * User labels.
+   * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 3;</code>
@@ -92,7 +94,7 @@ public interface CreateSnapshotRequestOrBuilder extends
   getLabels();
   /**
    * <pre>
-   * User labels.
+   * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 3;</code>
@@ -101,7 +103,7 @@ public interface CreateSnapshotRequestOrBuilder extends
   getLabelsMap();
   /**
    * <pre>
-   * User labels.
+   * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 3;</code>
@@ -112,7 +114,7 @@ public interface CreateSnapshotRequestOrBuilder extends
       java.lang.String defaultValue);
   /**
    * <pre>
-   * User labels.
+   * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 3;</code>

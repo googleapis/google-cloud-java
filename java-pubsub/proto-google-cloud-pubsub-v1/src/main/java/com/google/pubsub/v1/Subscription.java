@@ -111,6 +111,19 @@ private static final long serialVersionUID = 0L;
                 labels__.getKey(), labels__.getValue());
             break;
           }
+          case 90: {
+            com.google.pubsub.v1.ExpirationPolicy.Builder subBuilder = null;
+            if (expirationPolicy_ != null) {
+              subBuilder = expirationPolicy_.toBuilder();
+            }
+            expirationPolicy_ = input.readMessage(com.google.pubsub.v1.ExpirationPolicy.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(expirationPolicy_);
+              expirationPolicy_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -428,7 +441,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * User labels.
+   * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 9;</code>
@@ -448,7 +461,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * User labels.
+   * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 9;</code>
@@ -459,7 +472,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * User labels.
+   * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 9;</code>
@@ -475,7 +488,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * User labels.
+   * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 9;</code>
@@ -490,6 +503,63 @@ private static final long serialVersionUID = 0L;
       throw new java.lang.IllegalArgumentException();
     }
     return map.get(key);
+  }
+
+  public static final int EXPIRATION_POLICY_FIELD_NUMBER = 11;
+  private com.google.pubsub.v1.ExpirationPolicy expirationPolicy_;
+  /**
+   * <pre>
+   * A policy that specifies the conditions for this subscription's expiration.
+   * A subscription is considered active as long as any connected subscriber is
+   * successfully consuming messages from the subscription or is issuing
+   * operations on the subscription. If `expiration_policy` is not set, a
+   * *default policy* with `ttl` of 31 days will be used. The minimum allowed
+   * value for `expiration_policy.ttl` is 1 day.
+   * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
+   * changed in backward-incompatible ways and is not recommended for production
+   * use. It is not subject to any SLA or deprecation policy.
+   * </pre>
+   *
+   * <code>.google.pubsub.v1.ExpirationPolicy expiration_policy = 11;</code>
+   */
+  public boolean hasExpirationPolicy() {
+    return expirationPolicy_ != null;
+  }
+  /**
+   * <pre>
+   * A policy that specifies the conditions for this subscription's expiration.
+   * A subscription is considered active as long as any connected subscriber is
+   * successfully consuming messages from the subscription or is issuing
+   * operations on the subscription. If `expiration_policy` is not set, a
+   * *default policy* with `ttl` of 31 days will be used. The minimum allowed
+   * value for `expiration_policy.ttl` is 1 day.
+   * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
+   * changed in backward-incompatible ways and is not recommended for production
+   * use. It is not subject to any SLA or deprecation policy.
+   * </pre>
+   *
+   * <code>.google.pubsub.v1.ExpirationPolicy expiration_policy = 11;</code>
+   */
+  public com.google.pubsub.v1.ExpirationPolicy getExpirationPolicy() {
+    return expirationPolicy_ == null ? com.google.pubsub.v1.ExpirationPolicy.getDefaultInstance() : expirationPolicy_;
+  }
+  /**
+   * <pre>
+   * A policy that specifies the conditions for this subscription's expiration.
+   * A subscription is considered active as long as any connected subscriber is
+   * successfully consuming messages from the subscription or is issuing
+   * operations on the subscription. If `expiration_policy` is not set, a
+   * *default policy* with `ttl` of 31 days will be used. The minimum allowed
+   * value for `expiration_policy.ttl` is 1 day.
+   * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
+   * changed in backward-incompatible ways and is not recommended for production
+   * use. It is not subject to any SLA or deprecation policy.
+   * </pre>
+   *
+   * <code>.google.pubsub.v1.ExpirationPolicy expiration_policy = 11;</code>
+   */
+  public com.google.pubsub.v1.ExpirationPolicyOrBuilder getExpirationPolicyOrBuilder() {
+    return getExpirationPolicy();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -530,6 +600,9 @@ private static final long serialVersionUID = 0L;
         internalGetLabels(),
         LabelsDefaultEntryHolder.defaultEntry,
         9);
+    if (expirationPolicy_ != null) {
+      output.writeMessage(11, getExpirationPolicy());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -571,6 +644,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(9, labels__);
     }
+    if (expirationPolicy_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(11, getExpirationPolicy());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -607,6 +684,11 @@ private static final long serialVersionUID = 0L;
     }
     result = result && internalGetLabels().equals(
         other.internalGetLabels());
+    result = result && (hasExpirationPolicy() == other.hasExpirationPolicy());
+    if (hasExpirationPolicy()) {
+      result = result && getExpirationPolicy()
+          .equals(other.getExpirationPolicy());
+    }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -638,6 +720,10 @@ private static final long serialVersionUID = 0L;
     if (!internalGetLabels().getMap().isEmpty()) {
       hash = (37 * hash) + LABELS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetLabels().hashCode();
+    }
+    if (hasExpirationPolicy()) {
+      hash = (37 * hash) + EXPIRATION_POLICY_FIELD_NUMBER;
+      hash = (53 * hash) + getExpirationPolicy().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -819,6 +905,12 @@ private static final long serialVersionUID = 0L;
         messageRetentionDurationBuilder_ = null;
       }
       internalGetMutableLabels().clear();
+      if (expirationPolicyBuilder_ == null) {
+        expirationPolicy_ = null;
+      } else {
+        expirationPolicy_ = null;
+        expirationPolicyBuilder_ = null;
+      }
       return this;
     }
 
@@ -863,6 +955,11 @@ private static final long serialVersionUID = 0L;
       }
       result.labels_ = internalGetLabels();
       result.labels_.makeImmutable();
+      if (expirationPolicyBuilder_ == null) {
+        result.expirationPolicy_ = expirationPolicy_;
+      } else {
+        result.expirationPolicy_ = expirationPolicyBuilder_.build();
+      }
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -934,6 +1031,9 @@ private static final long serialVersionUID = 0L;
       }
       internalGetMutableLabels().mergeFrom(
           other.internalGetLabels());
+      if (other.hasExpirationPolicy()) {
+        mergeExpirationPolicy(other.getExpirationPolicy());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -1748,7 +1848,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * User labels.
+     * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 9;</code>
@@ -1768,7 +1868,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * User labels.
+     * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 9;</code>
@@ -1779,7 +1879,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * User labels.
+     * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 9;</code>
@@ -1795,7 +1895,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * User labels.
+     * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 9;</code>
@@ -1819,7 +1919,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * User labels.
+     * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 9;</code>
@@ -1842,7 +1942,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * User labels.
+     * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 9;</code>
@@ -1858,7 +1958,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * User labels.
+     * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 9;</code>
@@ -1869,6 +1969,231 @@ private static final long serialVersionUID = 0L;
       internalGetMutableLabels().getMutableMap()
           .putAll(values);
       return this;
+    }
+
+    private com.google.pubsub.v1.ExpirationPolicy expirationPolicy_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.pubsub.v1.ExpirationPolicy, com.google.pubsub.v1.ExpirationPolicy.Builder, com.google.pubsub.v1.ExpirationPolicyOrBuilder> expirationPolicyBuilder_;
+    /**
+     * <pre>
+     * A policy that specifies the conditions for this subscription's expiration.
+     * A subscription is considered active as long as any connected subscriber is
+     * successfully consuming messages from the subscription or is issuing
+     * operations on the subscription. If `expiration_policy` is not set, a
+     * *default policy* with `ttl` of 31 days will be used. The minimum allowed
+     * value for `expiration_policy.ttl` is 1 day.
+     * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
+     * changed in backward-incompatible ways and is not recommended for production
+     * use. It is not subject to any SLA or deprecation policy.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.ExpirationPolicy expiration_policy = 11;</code>
+     */
+    public boolean hasExpirationPolicy() {
+      return expirationPolicyBuilder_ != null || expirationPolicy_ != null;
+    }
+    /**
+     * <pre>
+     * A policy that specifies the conditions for this subscription's expiration.
+     * A subscription is considered active as long as any connected subscriber is
+     * successfully consuming messages from the subscription or is issuing
+     * operations on the subscription. If `expiration_policy` is not set, a
+     * *default policy* with `ttl` of 31 days will be used. The minimum allowed
+     * value for `expiration_policy.ttl` is 1 day.
+     * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
+     * changed in backward-incompatible ways and is not recommended for production
+     * use. It is not subject to any SLA or deprecation policy.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.ExpirationPolicy expiration_policy = 11;</code>
+     */
+    public com.google.pubsub.v1.ExpirationPolicy getExpirationPolicy() {
+      if (expirationPolicyBuilder_ == null) {
+        return expirationPolicy_ == null ? com.google.pubsub.v1.ExpirationPolicy.getDefaultInstance() : expirationPolicy_;
+      } else {
+        return expirationPolicyBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * A policy that specifies the conditions for this subscription's expiration.
+     * A subscription is considered active as long as any connected subscriber is
+     * successfully consuming messages from the subscription or is issuing
+     * operations on the subscription. If `expiration_policy` is not set, a
+     * *default policy* with `ttl` of 31 days will be used. The minimum allowed
+     * value for `expiration_policy.ttl` is 1 day.
+     * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
+     * changed in backward-incompatible ways and is not recommended for production
+     * use. It is not subject to any SLA or deprecation policy.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.ExpirationPolicy expiration_policy = 11;</code>
+     */
+    public Builder setExpirationPolicy(com.google.pubsub.v1.ExpirationPolicy value) {
+      if (expirationPolicyBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        expirationPolicy_ = value;
+        onChanged();
+      } else {
+        expirationPolicyBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * A policy that specifies the conditions for this subscription's expiration.
+     * A subscription is considered active as long as any connected subscriber is
+     * successfully consuming messages from the subscription or is issuing
+     * operations on the subscription. If `expiration_policy` is not set, a
+     * *default policy* with `ttl` of 31 days will be used. The minimum allowed
+     * value for `expiration_policy.ttl` is 1 day.
+     * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
+     * changed in backward-incompatible ways and is not recommended for production
+     * use. It is not subject to any SLA or deprecation policy.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.ExpirationPolicy expiration_policy = 11;</code>
+     */
+    public Builder setExpirationPolicy(
+        com.google.pubsub.v1.ExpirationPolicy.Builder builderForValue) {
+      if (expirationPolicyBuilder_ == null) {
+        expirationPolicy_ = builderForValue.build();
+        onChanged();
+      } else {
+        expirationPolicyBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * A policy that specifies the conditions for this subscription's expiration.
+     * A subscription is considered active as long as any connected subscriber is
+     * successfully consuming messages from the subscription or is issuing
+     * operations on the subscription. If `expiration_policy` is not set, a
+     * *default policy* with `ttl` of 31 days will be used. The minimum allowed
+     * value for `expiration_policy.ttl` is 1 day.
+     * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
+     * changed in backward-incompatible ways and is not recommended for production
+     * use. It is not subject to any SLA or deprecation policy.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.ExpirationPolicy expiration_policy = 11;</code>
+     */
+    public Builder mergeExpirationPolicy(com.google.pubsub.v1.ExpirationPolicy value) {
+      if (expirationPolicyBuilder_ == null) {
+        if (expirationPolicy_ != null) {
+          expirationPolicy_ =
+            com.google.pubsub.v1.ExpirationPolicy.newBuilder(expirationPolicy_).mergeFrom(value).buildPartial();
+        } else {
+          expirationPolicy_ = value;
+        }
+        onChanged();
+      } else {
+        expirationPolicyBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * A policy that specifies the conditions for this subscription's expiration.
+     * A subscription is considered active as long as any connected subscriber is
+     * successfully consuming messages from the subscription or is issuing
+     * operations on the subscription. If `expiration_policy` is not set, a
+     * *default policy* with `ttl` of 31 days will be used. The minimum allowed
+     * value for `expiration_policy.ttl` is 1 day.
+     * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
+     * changed in backward-incompatible ways and is not recommended for production
+     * use. It is not subject to any SLA or deprecation policy.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.ExpirationPolicy expiration_policy = 11;</code>
+     */
+    public Builder clearExpirationPolicy() {
+      if (expirationPolicyBuilder_ == null) {
+        expirationPolicy_ = null;
+        onChanged();
+      } else {
+        expirationPolicy_ = null;
+        expirationPolicyBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * A policy that specifies the conditions for this subscription's expiration.
+     * A subscription is considered active as long as any connected subscriber is
+     * successfully consuming messages from the subscription or is issuing
+     * operations on the subscription. If `expiration_policy` is not set, a
+     * *default policy* with `ttl` of 31 days will be used. The minimum allowed
+     * value for `expiration_policy.ttl` is 1 day.
+     * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
+     * changed in backward-incompatible ways and is not recommended for production
+     * use. It is not subject to any SLA or deprecation policy.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.ExpirationPolicy expiration_policy = 11;</code>
+     */
+    public com.google.pubsub.v1.ExpirationPolicy.Builder getExpirationPolicyBuilder() {
+      
+      onChanged();
+      return getExpirationPolicyFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * A policy that specifies the conditions for this subscription's expiration.
+     * A subscription is considered active as long as any connected subscriber is
+     * successfully consuming messages from the subscription or is issuing
+     * operations on the subscription. If `expiration_policy` is not set, a
+     * *default policy* with `ttl` of 31 days will be used. The minimum allowed
+     * value for `expiration_policy.ttl` is 1 day.
+     * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
+     * changed in backward-incompatible ways and is not recommended for production
+     * use. It is not subject to any SLA or deprecation policy.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.ExpirationPolicy expiration_policy = 11;</code>
+     */
+    public com.google.pubsub.v1.ExpirationPolicyOrBuilder getExpirationPolicyOrBuilder() {
+      if (expirationPolicyBuilder_ != null) {
+        return expirationPolicyBuilder_.getMessageOrBuilder();
+      } else {
+        return expirationPolicy_ == null ?
+            com.google.pubsub.v1.ExpirationPolicy.getDefaultInstance() : expirationPolicy_;
+      }
+    }
+    /**
+     * <pre>
+     * A policy that specifies the conditions for this subscription's expiration.
+     * A subscription is considered active as long as any connected subscriber is
+     * successfully consuming messages from the subscription or is issuing
+     * operations on the subscription. If `expiration_policy` is not set, a
+     * *default policy* with `ttl` of 31 days will be used. The minimum allowed
+     * value for `expiration_policy.ttl` is 1 day.
+     * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
+     * changed in backward-incompatible ways and is not recommended for production
+     * use. It is not subject to any SLA or deprecation policy.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.ExpirationPolicy expiration_policy = 11;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.pubsub.v1.ExpirationPolicy, com.google.pubsub.v1.ExpirationPolicy.Builder, com.google.pubsub.v1.ExpirationPolicyOrBuilder> 
+        getExpirationPolicyFieldBuilder() {
+      if (expirationPolicyBuilder_ == null) {
+        expirationPolicyBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.pubsub.v1.ExpirationPolicy, com.google.pubsub.v1.ExpirationPolicy.Builder, com.google.pubsub.v1.ExpirationPolicyOrBuilder>(
+                getExpirationPolicy(),
+                getParentForChildren(),
+                isClean());
+        expirationPolicy_ = null;
+      }
+      return expirationPolicyBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

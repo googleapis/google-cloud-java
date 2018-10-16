@@ -326,9 +326,7 @@ public class TopicAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Adds one or more messages to the topic. Returns `NOT_FOUND` if the topic does not exist. The
-   * message payload must not be empty; it must contain either a non-empty data field, or at least
-   * one attribute.
+   * Adds one or more messages to the topic. Returns `NOT_FOUND` if the topic does not exist.
    *
    * <p>Sample code:
    *
@@ -362,9 +360,7 @@ public class TopicAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Adds one or more messages to the topic. Returns `NOT_FOUND` if the topic does not exist. The
-   * message payload must not be empty; it must contain either a non-empty data field, or at least
-   * one attribute.
+   * Adds one or more messages to the topic. Returns `NOT_FOUND` if the topic does not exist.
    *
    * <p>Sample code:
    *
@@ -394,9 +390,7 @@ public class TopicAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Adds one or more messages to the topic. Returns `NOT_FOUND` if the topic does not exist. The
-   * message payload must not be empty; it must contain either a non-empty data field, or at least
-   * one attribute.
+   * Adds one or more messages to the topic. Returns `NOT_FOUND` if the topic does not exist.
    *
    * <p>Sample code:
    *
@@ -425,9 +419,7 @@ public class TopicAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Adds one or more messages to the topic. Returns `NOT_FOUND` if the topic does not exist. The
-   * message payload must not be empty; it must contain either a non-empty data field, or at least
-   * one attribute.
+   * Adds one or more messages to the topic. Returns `NOT_FOUND` if the topic does not exist.
    *
    * <p>Sample code:
    *
@@ -558,8 +550,8 @@ public class TopicAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param project The name of the cloud project that topics belong to. Format is
-   *     `projects/{project}`.
+   * @param project The name of the project in which to list topics. Format is
+   *     `projects/{project-id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListTopicsPagedResponse listTopics(ProjectName project) {
@@ -585,8 +577,8 @@ public class TopicAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param project The name of the cloud project that topics belong to. Format is
-   *     `projects/{project}`.
+   * @param project The name of the project in which to list topics. Format is
+   *     `projects/{project-id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListTopicsPagedResponse listTopics(String project) {
