@@ -193,12 +193,12 @@
         <artifactId>datastore-v1-proto-client</artifactId>
         <version>1.6.0</version>
       </dependency>
-
       <dependency>
         <groupId>com.google.apis</groupId>
         <artifactId>google-api-services-dns</artifactId>
         <version>v1-rev86-1.24.1</version>
       </dependency>
+
       <dependency>
         <groupId>commons-fileupload</groupId>
         <artifactId>commons-fileupload</artifactId>
