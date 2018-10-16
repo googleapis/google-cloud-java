@@ -142,7 +142,8 @@ public class ITStorageTest {
   private static final String KMS_KEY_RING_LOCATION = "us";
   private static final String KMS_KEY_ONE_NAME = "gcs_kms_key_one";
   private static final String KMS_KEY_TWO_NAME = "gcs_kms_key_two";
-  private static final boolean IS_VPC_TEST = System.getenv("GOOGLE_CLOUD_TESTS_IN_VPCSC").equalsIgnoreCase("true");
+  private static final boolean IS_VPC_TEST = System.getenv("GOOGLE_CLOUD_TESTS_IN_VPCSC") != null
+          && System.getenv("GOOGLE_CLOUD_TESTS_IN_VPCSC").equalsIgnoreCase("true");
 
   @BeforeClass
   public static void beforeClass() throws IOException {
@@ -1661,7 +1662,7 @@ public class ITStorageTest {
 
   @Test
   public void testDownloadPublicBlobWithoutAuthentication() {
-    assumeFalse(isVpcTest);
+    assumeFalse(IS_VPC_TEST);
     // create an unauthorized user
     Storage unauthorizedStorage = StorageOptions.getUnauthenticatedInstance().getService();
 
