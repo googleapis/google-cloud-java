@@ -53,8 +53,7 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND SERVICE
 /**
- * Service Description: Service for configuring sinks used to export log entries outside of
- * Stackdriver Logging.
+ * Service Description: Service for configuring sinks used to export log entries out of Logging.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -558,7 +557,7 @@ public class ConfigClient implements BackgroundResource {
    *     compatibility purposes: destination,filter,includeChildren At some point in the future,
    *     behavior will be removed and specifying an empty updateMask will be an error.
    *     <p>For a detailed `FieldMask` definition, see
-   *     https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
+   *     https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.FieldMask
    *     <p>Example: `updateMask=filter`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -606,7 +605,7 @@ public class ConfigClient implements BackgroundResource {
    *     compatibility purposes: destination,filter,includeChildren At some point in the future,
    *     behavior will be removed and specifying an empty updateMask will be an error.
    *     <p>For a detailed `FieldMask` definition, see
-   *     https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
+   *     https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.FieldMask
    *     <p>Example: `updateMask=filter`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */

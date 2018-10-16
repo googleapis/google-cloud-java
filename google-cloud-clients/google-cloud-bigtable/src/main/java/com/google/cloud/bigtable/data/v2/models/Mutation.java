@@ -15,6 +15,7 @@
  */
 package com.google.cloud.bigtable.data.v2.models;
 
+import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.bigtable.v2.Mutation.DeleteFromColumn;
 import com.google.bigtable.v2.Mutation.DeleteFromFamily;
@@ -43,6 +44,10 @@ public final class Mutation implements MutationApi<Mutation>, Serializable {
   static final int MAX_MUTATIONS = 100_000;
   @InternalApi("Visible for testing")
   static final int MAX_BYTE_SIZE = 200 * 1024 * 1024;
+  @InternalApi("Visible for testing")
+  static final long SERVER_SIDE_TIMESTAMP = -1;
+
+  private final boolean allowServersideTimestamp;
 
   private transient ImmutableList.Builder<com.google.bigtable.v2.Mutation> mutations =
       ImmutableList.builder();
@@ -50,11 +55,27 @@ public final class Mutation implements MutationApi<Mutation>, Serializable {
   private int numMutations;
   private long byteSize;
 
+  /**
+   * Creates new instance of Mutation object.
+   */
   public static Mutation create() {
-    return new Mutation();
+    return new Mutation(false);
   }
 
-  private Mutation() {}
+  /**
+   * Creates new instance of Mutation object which allows setCell operation to use server
+   * side timestamp. This is dangerous because mutations will no longer be idempotent, which
+   * might cause multiple duplicate values to be stored in Bigtable. This option should only
+   * be used for advanced usecases with extreme care.
+   */
+  @BetaApi
+  public static Mutation createUnsafe() {
+    return new Mutation(true);
+  }
+
+  private Mutation(boolean allowServersideTimestamp) {
+    this.allowServersideTimestamp = allowServersideTimestamp;
+  }
 
   private void readObject(ObjectInputStream input) throws IOException, ClassNotFoundException {
     input.defaultReadObject();
@@ -102,7 +123,9 @@ public final class Mutation implements MutationApi<Mutation>, Serializable {
     Validations.validateFamily(familyName);
     Preconditions.checkNotNull(qualifier, "qualifier can't be null.");
     Preconditions.checkNotNull(value, "value can't be null.");
-    Preconditions.checkArgument(timestamp != -1, "Serverside timestamps are not supported");
+    if (!allowServersideTimestamp) {
+      Preconditions.checkArgument(timestamp != SERVER_SIDE_TIMESTAMP, "Serverside timestamps are not supported");
+    }
 
     addMutation(
         com.google.bigtable.v2.Mutation.newBuilder()

@@ -15,11 +15,13 @@ public interface WriteLogEntriesRequestOrBuilder extends
    *     "organizations/[ORGANIZATION_ID]/logs/[LOG_ID]"
    *     "billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]"
    *     "folders/[FOLDER_ID]/logs/[LOG_ID]"
-   * `[LOG_ID]` must be URL-encoded. For example,
-   * `"projects/my-project-id/logs/syslog"` or
-   * `"organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"`.
-   * For more information about log names, see
-   * [LogEntry][google.logging.v2.LogEntry].
+   * `[LOG_ID]` must be URL-encoded. For example:
+   *     "projects/my-project-id/logs/syslog"
+   *     "organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"
+   * The permission &lt;code&gt;logging.logEntries.create&lt;/code&gt; is needed on each
+   * project, organization, billing account, or folder that is receiving
+   * new log entries, whether the resource is specified in
+   * &lt;code&gt;logName&lt;/code&gt; or in an individual log entry.
    * </pre>
    *
    * <code>string log_name = 1;</code>
@@ -33,11 +35,13 @@ public interface WriteLogEntriesRequestOrBuilder extends
    *     "organizations/[ORGANIZATION_ID]/logs/[LOG_ID]"
    *     "billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]"
    *     "folders/[FOLDER_ID]/logs/[LOG_ID]"
-   * `[LOG_ID]` must be URL-encoded. For example,
-   * `"projects/my-project-id/logs/syslog"` or
-   * `"organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"`.
-   * For more information about log names, see
-   * [LogEntry][google.logging.v2.LogEntry].
+   * `[LOG_ID]` must be URL-encoded. For example:
+   *     "projects/my-project-id/logs/syslog"
+   *     "organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"
+   * The permission &lt;code&gt;logging.logEntries.create&lt;/code&gt; is needed on each
+   * project, organization, billing account, or folder that is receiving
+   * new log entries, whether the resource is specified in
+   * &lt;code&gt;logName&lt;/code&gt; or in an individual log entry.
    * </pre>
    *
    * <code>string log_name = 1;</code>
@@ -156,7 +160,7 @@ public interface WriteLogEntriesRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. The log entries to send to Stackdriver Logging. The order of log
+   * Required. The log entries to send to Logging. The order of log
    * entries in this list does not matter. Values supplied in this method's
    * `log_name`, `resource`, and `labels` fields are copied into those log
    * entries in this list that do not include values for their corresponding
@@ -184,7 +188,7 @@ public interface WriteLogEntriesRequestOrBuilder extends
       getEntriesList();
   /**
    * <pre>
-   * Required. The log entries to send to Stackdriver Logging. The order of log
+   * Required. The log entries to send to Logging. The order of log
    * entries in this list does not matter. Values supplied in this method's
    * `log_name`, `resource`, and `labels` fields are copied into those log
    * entries in this list that do not include values for their corresponding
@@ -211,7 +215,7 @@ public interface WriteLogEntriesRequestOrBuilder extends
   com.google.logging.v2.LogEntry getEntries(int index);
   /**
    * <pre>
-   * Required. The log entries to send to Stackdriver Logging. The order of log
+   * Required. The log entries to send to Logging. The order of log
    * entries in this list does not matter. Values supplied in this method's
    * `log_name`, `resource`, and `labels` fields are copied into those log
    * entries in this list that do not include values for their corresponding
@@ -238,7 +242,7 @@ public interface WriteLogEntriesRequestOrBuilder extends
   int getEntriesCount();
   /**
    * <pre>
-   * Required. The log entries to send to Stackdriver Logging. The order of log
+   * Required. The log entries to send to Logging. The order of log
    * entries in this list does not matter. Values supplied in this method's
    * `log_name`, `resource`, and `labels` fields are copied into those log
    * entries in this list that do not include values for their corresponding
@@ -266,7 +270,7 @@ public interface WriteLogEntriesRequestOrBuilder extends
       getEntriesOrBuilderList();
   /**
    * <pre>
-   * Required. The log entries to send to Stackdriver Logging. The order of log
+   * Required. The log entries to send to Logging. The order of log
    * entries in this list does not matter. Values supplied in this method's
    * `log_name`, `resource`, and `labels` fields are copied into those log
    * entries in this list that do not include values for their corresponding

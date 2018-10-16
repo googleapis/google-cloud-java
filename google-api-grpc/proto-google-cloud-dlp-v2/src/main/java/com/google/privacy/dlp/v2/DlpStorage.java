@@ -90,6 +90,11 @@ public final class DlpStorage {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_privacy_dlp_v2_DatastoreOptions_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_google_privacy_dlp_v2_CloudStorageRegexFileSet_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_privacy_dlp_v2_CloudStorageRegexFileSet_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_google_privacy_dlp_v2_CloudStorageOptions_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -221,68 +226,73 @@ public final class DlpStorage {
       "\"\201\001\n\020DatastoreOptions\0228\n\014partition_id\030\001 " +
       "\001(\0132\".google.privacy.dlp.v2.PartitionId\022" +
       "3\n\004kind\030\002 \001(\0132%.google.privacy.dlp.v2.Ki" +
-      "ndExpression\"\243\003\n\023CloudStorageOptions\022D\n\010" +
-      "file_set\030\001 \001(\01322.google.privacy.dlp.v2.C" +
-      "loudStorageOptions.FileSet\022\034\n\024bytes_limi" +
-      "t_per_file\030\004 \001(\003\022$\n\034bytes_limit_per_file" +
-      "_percent\030\010 \001(\005\0223\n\nfile_types\030\005 \003(\0162\037.goo" +
-      "gle.privacy.dlp.v2.FileType\022N\n\rsample_me" +
-      "thod\030\006 \001(\01627.google.privacy.dlp.v2.Cloud" +
-      "StorageOptions.SampleMethod\022\033\n\023files_lim" +
-      "it_percent\030\007 \001(\005\032\026\n\007FileSet\022\013\n\003url\030\001 \001(\t" +
-      "\"H\n\014SampleMethod\022\035\n\031SAMPLE_METHOD_UNSPEC" +
-      "IFIED\020\000\022\007\n\003TOP\020\001\022\020\n\014RANDOM_START\020\002\"\"\n\023Cl" +
-      "oudStorageFileSet\022\013\n\003url\030\001 \001(\t\" \n\020CloudS" +
-      "toragePath\022\014\n\004path\030\001 \001(\t\"\322\002\n\017BigQueryOpt" +
-      "ions\022=\n\017table_reference\030\001 \001(\0132$.google.p" +
-      "rivacy.dlp.v2.BigQueryTable\022:\n\022identifyi" +
-      "ng_fields\030\002 \003(\0132\036.google.privacy.dlp.v2." +
-      "FieldId\022\022\n\nrows_limit\030\003 \001(\003\022\032\n\022rows_limi" +
-      "t_percent\030\006 \001(\005\022J\n\rsample_method\030\004 \001(\01623" +
-      ".google.privacy.dlp.v2.BigQueryOptions.S" +
-      "ampleMethod\"H\n\014SampleMethod\022\035\n\031SAMPLE_ME" +
-      "THOD_UNSPECIFIED\020\000\022\007\n\003TOP\020\001\022\020\n\014RANDOM_ST" +
-      "ART\020\002\"\232\004\n\rStorageConfig\022D\n\021datastore_opt" +
-      "ions\030\002 \001(\0132\'.google.privacy.dlp.v2.Datas" +
-      "toreOptionsH\000\022K\n\025cloud_storage_options\030\003" +
-      " \001(\0132*.google.privacy.dlp.v2.CloudStorag" +
-      "eOptionsH\000\022C\n\021big_query_options\030\004 \001(\0132&." +
-      "google.privacy.dlp.v2.BigQueryOptionsH\000\022" +
-      "L\n\017timespan_config\030\006 \001(\01323.google.privac" +
-      "y.dlp.v2.StorageConfig.TimespanConfig\032\332\001" +
-      "\n\016TimespanConfig\022.\n\nstart_time\030\001 \001(\0132\032.g" +
-      "oogle.protobuf.Timestamp\022,\n\010end_time\030\002 \001" +
-      "(\0132\032.google.protobuf.Timestamp\0227\n\017timest" +
-      "amp_field\030\003 \001(\0132\036.google.privacy.dlp.v2." +
-      "FieldId\0221\n)enable_auto_population_of_tim" +
-      "espan_config\030\004 \001(\010B\006\n\004type\"`\n\013BigQueryKe" +
-      "y\022=\n\017table_reference\030\001 \001(\0132$.google.priv" +
-      "acy.dlp.v2.BigQueryTable\022\022\n\nrow_number\030\002" +
-      " \001(\003\">\n\014DatastoreKey\022.\n\nentity_key\030\001 \001(\013" +
-      "2\032.google.privacy.dlp.v2.Key\"\273\001\n\003Key\0228\n\014" +
-      "partition_id\030\001 \001(\0132\".google.privacy.dlp." +
-      "v2.PartitionId\0224\n\004path\030\002 \003(\0132&.google.pr" +
-      "ivacy.dlp.v2.Key.PathElement\032D\n\013PathElem" +
-      "ent\022\014\n\004kind\030\001 \001(\t\022\014\n\002id\030\002 \001(\003H\000\022\016\n\004name\030" +
-      "\003 \001(\tH\000B\t\n\007id_type\"\216\001\n\tRecordKey\022<\n\rdata" +
-      "store_key\030\002 \001(\0132#.google.privacy.dlp.v2." +
-      "DatastoreKeyH\000\022;\n\rbig_query_key\030\003 \001(\0132\"." +
-      "google.privacy.dlp.v2.BigQueryKeyH\000B\006\n\004t" +
-      "ype\"I\n\rBigQueryTable\022\022\n\nproject_id\030\001 \001(\t" +
-      "\022\022\n\ndataset_id\030\002 \001(\t\022\020\n\010table_id\030\003 \001(\t\"s" +
-      "\n\rBigQueryField\0223\n\005table\030\001 \001(\0132$.google." +
-      "privacy.dlp.v2.BigQueryTable\022-\n\005field\030\002 " +
-      "\001(\0132\036.google.privacy.dlp.v2.FieldId\"9\n\010E" +
-      "ntityId\022-\n\005field\030\001 \001(\0132\036.google.privacy." +
-      "dlp.v2.FieldId*t\n\nLikelihood\022\032\n\026LIKELIHO" +
-      "OD_UNSPECIFIED\020\000\022\021\n\rVERY_UNLIKELY\020\001\022\014\n\010U" +
-      "NLIKELY\020\002\022\014\n\010POSSIBLE\020\003\022\n\n\006LIKELY\020\004\022\017\n\013V" +
-      "ERY_LIKELY\020\005*E\n\010FileType\022\031\n\025FILE_TYPE_UN" +
-      "SPECIFIED\020\000\022\017\n\013BINARY_FILE\020\001\022\r\n\tTEXT_FIL" +
-      "E\020\002B\217\001\n\031com.google.privacy.dlp.v2B\nDlpSt" +
-      "orageP\001Z8google.golang.org/genproto/goog" +
-      "leapis/privacy/dlp/v2;dlp\252\002\023Google.Cloud" +
-      ".Dlp.V2\312\002\023Google\\Cloud\\Dlp\\V2b\006proto3"
+      "ndExpression\"]\n\030CloudStorageRegexFileSet" +
+      "\022\023\n\013bucket_name\030\001 \001(\t\022\025\n\rinclude_regex\030\002" +
+      " \003(\t\022\025\n\rexclude_regex\030\003 \003(\t\"\354\003\n\023CloudSto" +
+      "rageOptions\022D\n\010file_set\030\001 \001(\01322.google.p" +
+      "rivacy.dlp.v2.CloudStorageOptions.FileSe" +
+      "t\022\034\n\024bytes_limit_per_file\030\004 \001(\003\022$\n\034bytes" +
+      "_limit_per_file_percent\030\010 \001(\005\0223\n\nfile_ty" +
+      "pes\030\005 \003(\0162\037.google.privacy.dlp.v2.FileTy" +
+      "pe\022N\n\rsample_method\030\006 \001(\01627.google.priva" +
+      "cy.dlp.v2.CloudStorageOptions.SampleMeth" +
+      "od\022\033\n\023files_limit_percent\030\007 \001(\005\032_\n\007FileS" +
+      "et\022\013\n\003url\030\001 \001(\t\022G\n\016regex_file_set\030\002 \001(\0132" +
+      "/.google.privacy.dlp.v2.CloudStorageRege" +
+      "xFileSet\"H\n\014SampleMethod\022\035\n\031SAMPLE_METHO" +
+      "D_UNSPECIFIED\020\000\022\007\n\003TOP\020\001\022\020\n\014RANDOM_START" +
+      "\020\002\"\"\n\023CloudStorageFileSet\022\013\n\003url\030\001 \001(\t\" " +
+      "\n\020CloudStoragePath\022\014\n\004path\030\001 \001(\t\"\322\002\n\017Big" +
+      "QueryOptions\022=\n\017table_reference\030\001 \001(\0132$." +
+      "google.privacy.dlp.v2.BigQueryTable\022:\n\022i" +
+      "dentifying_fields\030\002 \003(\0132\036.google.privacy" +
+      ".dlp.v2.FieldId\022\022\n\nrows_limit\030\003 \001(\003\022\032\n\022r" +
+      "ows_limit_percent\030\006 \001(\005\022J\n\rsample_method" +
+      "\030\004 \001(\01623.google.privacy.dlp.v2.BigQueryO" +
+      "ptions.SampleMethod\"H\n\014SampleMethod\022\035\n\031S" +
+      "AMPLE_METHOD_UNSPECIFIED\020\000\022\007\n\003TOP\020\001\022\020\n\014R" +
+      "ANDOM_START\020\002\"\232\004\n\rStorageConfig\022D\n\021datas" +
+      "tore_options\030\002 \001(\0132\'.google.privacy.dlp." +
+      "v2.DatastoreOptionsH\000\022K\n\025cloud_storage_o" +
+      "ptions\030\003 \001(\0132*.google.privacy.dlp.v2.Clo" +
+      "udStorageOptionsH\000\022C\n\021big_query_options\030" +
+      "\004 \001(\0132&.google.privacy.dlp.v2.BigQueryOp" +
+      "tionsH\000\022L\n\017timespan_config\030\006 \001(\01323.googl" +
+      "e.privacy.dlp.v2.StorageConfig.TimespanC" +
+      "onfig\032\332\001\n\016TimespanConfig\022.\n\nstart_time\030\001" +
+      " \001(\0132\032.google.protobuf.Timestamp\022,\n\010end_" +
+      "time\030\002 \001(\0132\032.google.protobuf.Timestamp\0227" +
+      "\n\017timestamp_field\030\003 \001(\0132\036.google.privacy" +
+      ".dlp.v2.FieldId\0221\n)enable_auto_populatio" +
+      "n_of_timespan_config\030\004 \001(\010B\006\n\004type\"`\n\013Bi" +
+      "gQueryKey\022=\n\017table_reference\030\001 \001(\0132$.goo" +
+      "gle.privacy.dlp.v2.BigQueryTable\022\022\n\nrow_" +
+      "number\030\002 \001(\003\">\n\014DatastoreKey\022.\n\nentity_k" +
+      "ey\030\001 \001(\0132\032.google.privacy.dlp.v2.Key\"\273\001\n" +
+      "\003Key\0228\n\014partition_id\030\001 \001(\0132\".google.priv" +
+      "acy.dlp.v2.PartitionId\0224\n\004path\030\002 \003(\0132&.g" +
+      "oogle.privacy.dlp.v2.Key.PathElement\032D\n\013" +
+      "PathElement\022\014\n\004kind\030\001 \001(\t\022\014\n\002id\030\002 \001(\003H\000\022" +
+      "\016\n\004name\030\003 \001(\tH\000B\t\n\007id_type\"\216\001\n\tRecordKey" +
+      "\022<\n\rdatastore_key\030\002 \001(\0132#.google.privacy" +
+      ".dlp.v2.DatastoreKeyH\000\022;\n\rbig_query_key\030" +
+      "\003 \001(\0132\".google.privacy.dlp.v2.BigQueryKe" +
+      "yH\000B\006\n\004type\"I\n\rBigQueryTable\022\022\n\nproject_" +
+      "id\030\001 \001(\t\022\022\n\ndataset_id\030\002 \001(\t\022\020\n\010table_id" +
+      "\030\003 \001(\t\"s\n\rBigQueryField\0223\n\005table\030\001 \001(\0132$" +
+      ".google.privacy.dlp.v2.BigQueryTable\022-\n\005" +
+      "field\030\002 \001(\0132\036.google.privacy.dlp.v2.Fiel" +
+      "dId\"9\n\010EntityId\022-\n\005field\030\001 \001(\0132\036.google." +
+      "privacy.dlp.v2.FieldId*t\n\nLikelihood\022\032\n\026" +
+      "LIKELIHOOD_UNSPECIFIED\020\000\022\021\n\rVERY_UNLIKEL" +
+      "Y\020\001\022\014\n\010UNLIKELY\020\002\022\014\n\010POSSIBLE\020\003\022\n\n\006LIKEL" +
+      "Y\020\004\022\017\n\013VERY_LIKELY\020\005*E\n\010FileType\022\031\n\025FILE" +
+      "_TYPE_UNSPECIFIED\020\000\022\017\n\013BINARY_FILE\020\001\022\r\n\t" +
+      "TEXT_FILE\020\002B\217\001\n\031com.google.privacy.dlp.v" +
+      "2B\nDlpStorageP\001Z8google.golang.org/genpr" +
+      "oto/googleapis/privacy/dlp/v2;dlp\252\002\023Goog" +
+      "le.Cloud.Dlp.V2\312\002\023Google\\Cloud\\Dlp\\V2b\006p" +
+      "roto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -388,8 +398,14 @@ public final class DlpStorage {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_privacy_dlp_v2_DatastoreOptions_descriptor,
         new java.lang.String[] { "PartitionId", "Kind", });
-    internal_static_google_privacy_dlp_v2_CloudStorageOptions_descriptor =
+    internal_static_google_privacy_dlp_v2_CloudStorageRegexFileSet_descriptor =
       getDescriptor().getMessageTypes().get(7);
+    internal_static_google_privacy_dlp_v2_CloudStorageRegexFileSet_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_google_privacy_dlp_v2_CloudStorageRegexFileSet_descriptor,
+        new java.lang.String[] { "BucketName", "IncludeRegex", "ExcludeRegex", });
+    internal_static_google_privacy_dlp_v2_CloudStorageOptions_descriptor =
+      getDescriptor().getMessageTypes().get(8);
     internal_static_google_privacy_dlp_v2_CloudStorageOptions_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_privacy_dlp_v2_CloudStorageOptions_descriptor,
@@ -399,27 +415,27 @@ public final class DlpStorage {
     internal_static_google_privacy_dlp_v2_CloudStorageOptions_FileSet_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_privacy_dlp_v2_CloudStorageOptions_FileSet_descriptor,
-        new java.lang.String[] { "Url", });
+        new java.lang.String[] { "Url", "RegexFileSet", });
     internal_static_google_privacy_dlp_v2_CloudStorageFileSet_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_google_privacy_dlp_v2_CloudStorageFileSet_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_privacy_dlp_v2_CloudStorageFileSet_descriptor,
         new java.lang.String[] { "Url", });
     internal_static_google_privacy_dlp_v2_CloudStoragePath_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_google_privacy_dlp_v2_CloudStoragePath_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_privacy_dlp_v2_CloudStoragePath_descriptor,
         new java.lang.String[] { "Path", });
     internal_static_google_privacy_dlp_v2_BigQueryOptions_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_google_privacy_dlp_v2_BigQueryOptions_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_privacy_dlp_v2_BigQueryOptions_descriptor,
         new java.lang.String[] { "TableReference", "IdentifyingFields", "RowsLimit", "RowsLimitPercent", "SampleMethod", });
     internal_static_google_privacy_dlp_v2_StorageConfig_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_google_privacy_dlp_v2_StorageConfig_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_privacy_dlp_v2_StorageConfig_descriptor,
@@ -431,19 +447,19 @@ public final class DlpStorage {
         internal_static_google_privacy_dlp_v2_StorageConfig_TimespanConfig_descriptor,
         new java.lang.String[] { "StartTime", "EndTime", "TimestampField", "EnableAutoPopulationOfTimespanConfig", });
     internal_static_google_privacy_dlp_v2_BigQueryKey_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_google_privacy_dlp_v2_BigQueryKey_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_privacy_dlp_v2_BigQueryKey_descriptor,
         new java.lang.String[] { "TableReference", "RowNumber", });
     internal_static_google_privacy_dlp_v2_DatastoreKey_descriptor =
-      getDescriptor().getMessageTypes().get(13);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_google_privacy_dlp_v2_DatastoreKey_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_privacy_dlp_v2_DatastoreKey_descriptor,
         new java.lang.String[] { "EntityKey", });
     internal_static_google_privacy_dlp_v2_Key_descriptor =
-      getDescriptor().getMessageTypes().get(14);
+      getDescriptor().getMessageTypes().get(15);
     internal_static_google_privacy_dlp_v2_Key_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_privacy_dlp_v2_Key_descriptor,
@@ -455,25 +471,25 @@ public final class DlpStorage {
         internal_static_google_privacy_dlp_v2_Key_PathElement_descriptor,
         new java.lang.String[] { "Kind", "Id", "Name", "IdType", });
     internal_static_google_privacy_dlp_v2_RecordKey_descriptor =
-      getDescriptor().getMessageTypes().get(15);
+      getDescriptor().getMessageTypes().get(16);
     internal_static_google_privacy_dlp_v2_RecordKey_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_privacy_dlp_v2_RecordKey_descriptor,
         new java.lang.String[] { "DatastoreKey", "BigQueryKey", "Type", });
     internal_static_google_privacy_dlp_v2_BigQueryTable_descriptor =
-      getDescriptor().getMessageTypes().get(16);
+      getDescriptor().getMessageTypes().get(17);
     internal_static_google_privacy_dlp_v2_BigQueryTable_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_privacy_dlp_v2_BigQueryTable_descriptor,
         new java.lang.String[] { "ProjectId", "DatasetId", "TableId", });
     internal_static_google_privacy_dlp_v2_BigQueryField_descriptor =
-      getDescriptor().getMessageTypes().get(17);
+      getDescriptor().getMessageTypes().get(18);
     internal_static_google_privacy_dlp_v2_BigQueryField_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_privacy_dlp_v2_BigQueryField_descriptor,
         new java.lang.String[] { "Table", "Field", });
     internal_static_google_privacy_dlp_v2_EntityId_descriptor =
-      getDescriptor().getMessageTypes().get(18);
+      getDescriptor().getMessageTypes().get(19);
     internal_static_google_privacy_dlp_v2_EntityId_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_privacy_dlp_v2_EntityId_descriptor,
