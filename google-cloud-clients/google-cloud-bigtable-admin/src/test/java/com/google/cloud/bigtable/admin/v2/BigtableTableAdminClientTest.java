@@ -19,14 +19,10 @@ import static com.google.common.truth.Truth.assertThat;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
+import com.google.api.gax.grpc.GrpcStatusCode;
+import com.google.api.gax.rpc.NotFoundException;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.bigtable.admin.v2.ColumnFamily;
-import com.google.bigtable.admin.v2.DeleteTableRequest;
-import com.google.bigtable.admin.v2.DropRowRangeRequest;
-import com.google.bigtable.admin.v2.GcRule;
-import com.google.bigtable.admin.v2.GetTableRequest;
-import com.google.bigtable.admin.v2.InstanceName;
-import com.google.bigtable.admin.v2.ListTablesRequest;
+import com.google.bigtable.admin.v2.*;
 import com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification;
 import com.google.bigtable.admin.v2.TableName;
 import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListTablesPage;
@@ -40,9 +36,12 @@ import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
+
+import io.grpc.Status;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.Matchers;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.invocation.InvocationOnMock;
@@ -184,6 +183,7 @@ public class BigtableTableAdminClientTest {
     // Setup
     GetTableRequest expectedRequest = GetTableRequest.newBuilder()
         .setName(TABLE_NAME.toString())
+        .setView(com.google.bigtable.admin.v2.Table.View.SCHEMA_VIEW)
         .build();
 
     com.google.bigtable.admin.v2.Table expectedResponse = com.google.bigtable.admin.v2.Table
@@ -207,7 +207,6 @@ public class BigtableTableAdminClientTest {
     com.google.bigtable.admin.v2.ListTablesRequest expectedRequest =
         com.google.bigtable.admin.v2.ListTablesRequest.newBuilder()
             .setParent(INSTANCE_NAME.toString())
-            .setView(com.google.bigtable.admin.v2.Table.View.NAME_ONLY)
             .build();
 
     // 3 Tables spread across 2 pages
@@ -308,20 +307,12 @@ public class BigtableTableAdminClientTest {
   @Test
   public void testExistsTrue() {
     // Setup
-    ListTablesRequest listTablesRequest =
-        ListTablesRequest.newBuilder().setParent(INSTANCE_NAME.toString())
-            .setView(com.google.bigtable.admin.v2.Table.View.NAME_ONLY).build();
+    com.google.bigtable.admin.v2.Table expectedResponse =
+                com.google.bigtable.admin.v2.Table.newBuilder()
+                    .setName(TABLE_NAME.toString())
+                    .build();
 
-    List<com.google.bigtable.admin.v2.Table> expectedProtos = Lists.newArrayList();
-    expectedProtos.add(
-        com.google.bigtable.admin.v2.Table.newBuilder().setName(TABLE_NAME.toString()).build());
-
-    ListTablesPage page0 = Mockito.mock(ListTablesPage.class);
-    Mockito.when(page0.getValues()).thenReturn(expectedProtos);
-    ListTablesPagedResponse response0 = Mockito.mock(ListTablesPagedResponse.class);
-    Mockito.when(response0.getPage()).thenReturn(page0);
-
-    Mockito.when(mockListTableCallable.futureCall(listTablesRequest)).thenReturn(ApiFutures.immediateFuture(response0));
+    Mockito.when(mockGetTableCallable.futureCall(Matchers.any(GetTableRequest.class))).thenReturn(ApiFutures.immediateFuture(expectedResponse));
 
     // Execute
     boolean found = adminClient.exists(TABLE_NAME.getTable());
@@ -333,18 +324,8 @@ public class BigtableTableAdminClientTest {
   @Test
   public void testExistsFalse() {
     // Setup
-    ListTablesRequest listTablesRequest =
-        ListTablesRequest.newBuilder().setParent(INSTANCE_NAME.toString())
-            .setView(com.google.bigtable.admin.v2.Table.View.NAME_ONLY).build();
-
-    List<com.google.bigtable.admin.v2.Table> expectedProtos = Lists.newArrayList();
-
-    ListTablesPage page0 = Mockito.mock(ListTablesPage.class);
-    Mockito.when(page0.getValues()).thenReturn(expectedProtos);
-    ListTablesPagedResponse response0 = Mockito.mock(ListTablesPagedResponse.class);
-    Mockito.when(response0.getPage()).thenReturn(page0);
-
-    Mockito.when(mockListTableCallable.futureCall(listTablesRequest)).thenReturn(ApiFutures.immediateFuture(response0));
+    NotFoundException exception = new NotFoundException("fake error", null, GrpcStatusCode.of(Status.Code.NOT_FOUND), false);
+    Mockito.when(mockGetTableCallable.futureCall(Matchers.any(GetTableRequest.class))).thenReturn(ApiFutures.immediateFailedFuture(exception));
 
     // Execute
     boolean found = adminClient.exists(TABLE_NAME.getTable());

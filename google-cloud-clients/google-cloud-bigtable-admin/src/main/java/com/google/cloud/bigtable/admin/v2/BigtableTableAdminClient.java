@@ -19,6 +19,7 @@ import com.google.api.core.ApiAsyncFunction;
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
+import com.google.api.gax.rpc.NotFoundException;
 import com.google.bigtable.admin.v2.DeleteTableRequest;
 import com.google.bigtable.admin.v2.DropRowRangeRequest;
 import com.google.bigtable.admin.v2.GetTableRequest;
@@ -339,14 +340,18 @@ public final class BigtableTableAdminClient implements AutoCloseable {
     return awaitFuture(existsAsync(tableId)).booleanValue();
   }
 
-  public ApiFuture<Boolean> existsAsync(final String tableId) {
-    return ApiFutures.transform(listTablesAsync(), new ApiFunction<List<TableName>, Boolean>() {
-      @Override public Boolean apply(List<TableName> tableNames) {
-        for(TableName tableName : tableNames) {
-          if(tableName.getTable().equalsIgnoreCase(tableId)) {
-            return true;
-          }
-        }
+  public ApiFuture<Boolean> existsAsync(String tableId) {
+
+    ApiFuture<Table> protoFuture = getTableAsync(tableId, com.google.bigtable.admin.v2.Table.View.NAME_ONLY);
+
+    ApiFuture<Boolean> existsFuture = ApiFutures.transform(protoFuture, new ApiFunction<Table, Boolean>() {
+      @Override public Boolean apply(Table ignored) {
+        return true;
+      }
+    }, MoreExecutors.directExecutor());
+
+    return ApiFutures.catching(existsFuture, NotFoundException.class, new ApiFunction<NotFoundException, Boolean>() {
+      @Override public Boolean apply(NotFoundException ignored) {
         return false;
       }
     }, MoreExecutors.directExecutor());
@@ -402,8 +407,13 @@ public final class BigtableTableAdminClient implements AutoCloseable {
    */
   @SuppressWarnings("WeakerAccess")
   public ApiFuture<Table> getTableAsync(String tableId) {
+    return getTableAsync(tableId, com.google.bigtable.admin.v2.Table.View.SCHEMA_VIEW);
+  }
+
+  private ApiFuture<Table> getTableAsync(String tableId, com.google.bigtable.admin.v2.Table.View view) {
     GetTableRequest request = GetTableRequest.newBuilder()
         .setName(getTableName(tableId))
+        .setView(view)
         .build();
 
     return transformToTableResponse(
@@ -457,11 +467,7 @@ public final class BigtableTableAdminClient implements AutoCloseable {
   // TODO(igorbernstein2): consider changing this method to use relative table ids.
   @SuppressWarnings("WeakerAccess")
   public ApiFuture<List<TableName>> listTablesAsync() {
-    return listTablesAsync(com.google.bigtable.admin.v2.Table.View.NAME_ONLY);
-  }
-
-  public ApiFuture<List<TableName>> listTablesAsync(com.google.bigtable.admin.v2.Table.View view) {
-    ListTablesRequest request = ListTablesRequest.newBuilder().setParent(instanceName.toString()).setView(view)
+    ListTablesRequest request = ListTablesRequest.newBuilder().setParent(instanceName.toString())
         .build();
 
     // TODO(igorbernstein2): try to upstream pagination spooling or figure out a way to expose the
