@@ -32,9 +32,7 @@ public interface PullRequestOrBuilder extends
    * If this field set to true, the system will respond immediately even if
    * it there are no messages available to return in the `Pull` response.
    * Otherwise, the system may wait (for a bounded amount of time) until at
-   * least one message is available, rather than returning no messages. The
-   * client may cancel the request if it does not wish to wait any longer for
-   * the response.
+   * least one message is available, rather than returning no messages.
    * </pre>
    *
    * <code>bool return_immediately = 2;</code>

@@ -9,8 +9,8 @@ public interface ListSnapshotsRequestOrBuilder extends
 
   /**
    * <pre>
-   * The name of the cloud project that snapshots belong to.
-   * Format is `projects/{project}`.
+   * The name of the project in which to list snapshots.
+   * Format is `projects/{project-id}`.
    * </pre>
    *
    * <code>string project = 1;</code>
@@ -18,8 +18,8 @@ public interface ListSnapshotsRequestOrBuilder extends
   java.lang.String getProject();
   /**
    * <pre>
-   * The name of the cloud project that snapshots belong to.
-   * Format is `projects/{project}`.
+   * The name of the project in which to list snapshots.
+   * Format is `projects/{project-id}`.
    * </pre>
    *
    * <code>string project = 1;</code>

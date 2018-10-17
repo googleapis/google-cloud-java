@@ -25,8 +25,12 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
+import static org.junit.Assume.assumeFalse;
+import static org.junit.Assume.assumeTrue;
 
+import com.google.api.client.googleapis.json.GoogleJsonResponseException;
 import com.google.api.gax.paging.Page;
+import com.google.auth.ServiceAccountSigner;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.kms.v1.CreateCryptoKeyRequest;
 import com.google.cloud.kms.v1.CreateKeyRingRequest;
@@ -1604,6 +1608,10 @@ public class ITStorageTest {
 
   @Test
   public void testGetSignedUrl() throws IOException {
+    if(storage.getOptions().getCredentials() != null) {
+      assumeTrue(storage.getOptions().getCredentials() instanceof ServiceAccountSigner);
+    }
+
     String blobName = "test-get-signed-url-blob/with/slashes/and?special=!#$&'()*+,:;=?@[]";
     BlobInfo blob = BlobInfo.newBuilder(BUCKET, blobName).build();
     Blob remoteBlob = storage.create(blob, BLOB_BYTE_CONTENT);
@@ -1619,6 +1627,9 @@ public class ITStorageTest {
 
   @Test
   public void testPostSignedUrl() throws IOException {
+    if (storage.getOptions().getCredentials() != null) {
+      assumeTrue(storage.getOptions().getCredentials() instanceof ServiceAccountSigner);
+    }
     String blobName = "test-post-signed-url-blob";
     BlobInfo blob = BlobInfo.newBuilder(BUCKET, blobName).build();
     assertNotNull(storage.create(blob));
@@ -1657,7 +1668,13 @@ public class ITStorageTest {
     String landsatBucket = "gcp-public-data-landsat";
     String landsatPrefix = "LC08/PRE/044/034/LC80440342016259LGN00/";
     String landsatBlob = landsatPrefix + "LC80440342016259LGN00_MTL.txt";
-    byte[] bytes = unauthorizedStorage.readAllBytes(landsatBucket, landsatBlob);
+    byte[] bytes;
+    try {
+      bytes = unauthorizedStorage.readAllBytes(landsatBucket, landsatBlob);
+    } catch (StorageException ex) {
+      assumeFalse(403 == ex.getCode());
+      return;
+    }
     assertThat(bytes.length).isEqualTo(7903);
     int numBlobs = 0;
     Iterator<Blob> blobIterator = unauthorizedStorage
