@@ -182,11 +182,11 @@ public class BucketInfo implements Serializable {
 
       switch (action.getType()) {
         case DeleteLifecycleAction.TYPE:
-          lifecycleAction = new DeleteLifecycleAction();
+          lifecycleAction = LifecycleAction.newDeleteLifecycleAction();
           break;
         case SetStorageClassLifecycleAction.TYPE:
           lifecycleAction =
-              new SetStorageClassLifecycleAction(StorageClass.valueOf(action.getStorageClass()));
+              LifecycleAction.newSetStorageClassLifecycleAction(StorageClass.valueOf(action.getStorageClass()));
           break;
         default:
           throw new UnsupportedOperationException(
@@ -196,7 +196,7 @@ public class BucketInfo implements Serializable {
       Rule.Condition condition = rule.getCondition();
 
       LifecycleCondition.Builder conditionBuilder =
-          new LifecycleCondition.Builder()
+          LifecycleCondition.newBuilder()
               .setAge(condition.getAge())
               .setCreatedBefore(condition.getCreatedBefore())
               .setIsLive(condition.getIsLive())
@@ -217,11 +217,11 @@ public class BucketInfo implements Serializable {
 
     public static class LifecycleCondition implements Serializable {
       private static final long serialVersionUID = -6482314338394768785L;
-      private Integer age;
-      private DateTime createdBefore;
-      private Integer numberOfNewerVersions;
-      private Boolean isLive;
-      private List<StorageClass> matchesStorageClass;
+      private final Integer age;
+      private final DateTime createdBefore;
+      private final Integer numberOfNewerVersions;
+      private final Boolean isLive;
+      private final List<StorageClass> matchesStorageClass;
 
       private LifecycleCondition(Builder builder) {
         this.age = builder.age;
@@ -229,6 +229,19 @@ public class BucketInfo implements Serializable {
         this.numberOfNewerVersions = builder.numberOfNewerVersions;
         this.isLive = builder.isLive;
         this.matchesStorageClass = builder.matchesStorageClass;
+      }
+
+      public Builder toBuilder() {
+        return newBuilder()
+                .setAge(this.age)
+                .setCreatedBefore(this.createdBefore)
+                .setNumberOfNewerVersions(this.numberOfNewerVersions)
+                .setIsLive(this.isLive)
+                .setMatchesStorageClass(this.matchesStorageClass);
+      }
+
+      public static Builder newBuilder() {
+        return new Builder();
       }
 
       public Integer getAge() {
@@ -257,6 +270,8 @@ public class BucketInfo implements Serializable {
         private Integer numberOfNewerVersions;
         private Boolean isLive;
         private List<StorageClass> matchesStorageClass;
+
+        private Builder() {}
 
         public Builder setAge(Integer age) {
           this.age = age;
@@ -292,15 +307,25 @@ public class BucketInfo implements Serializable {
     public abstract static class LifecycleAction implements Serializable {
       private static final long serialVersionUID = 5801228724709173284L;
 
-      abstract String getActionType();
+      public abstract String getActionType();
+
+      public static DeleteLifecycleAction newDeleteLifecycleAction() {
+        return new DeleteLifecycleAction();
+      }
+
+      public static SetStorageClassLifecycleAction newSetStorageClassLifecycleAction(StorageClass storageclass) {
+        return new SetStorageClassLifecycleAction(storageclass);
+      }
     }
 
     public static class DeleteLifecycleAction extends LifecycleAction {
       public static final String TYPE = "Delete";
       private static final long serialVersionUID = -2050986302222644873L;
 
+      private DeleteLifecycleAction() {}
+
       @Override
-      String getActionType() {
+      public String getActionType() {
         return TYPE;
       }
     }
@@ -311,12 +336,12 @@ public class BucketInfo implements Serializable {
 
       private final StorageClass storageClass;
 
-      public SetStorageClassLifecycleAction(StorageClass storageClass) {
+      private SetStorageClassLifecycleAction(StorageClass storageClass) {
         this.storageClass = storageClass;
       }
 
       @Override
-      String getActionType() {
+      public String getActionType() {
         return TYPE;
       }
 

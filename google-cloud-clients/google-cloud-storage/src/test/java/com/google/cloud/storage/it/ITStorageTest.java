@@ -25,9 +25,12 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
+import static org.junit.Assume.assumeFalse;
+import static org.junit.Assume.assumeTrue;
 
 import com.google.api.client.util.DateTime;
 import com.google.api.gax.paging.Page;
+import com.google.auth.ServiceAccountSigner;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.kms.v1.CreateCryptoKeyRequest;
 import com.google.cloud.kms.v1.CreateKeyRingRequest;
@@ -52,6 +55,9 @@ import com.google.cloud.storage.BlobId;
 import com.google.cloud.storage.BlobInfo;
 import com.google.cloud.storage.Bucket;
 import com.google.cloud.storage.BucketInfo;
+import com.google.cloud.storage.BucketInfo.LifecycleRule;
+import com.google.cloud.storage.BucketInfo.LifecycleRule.LifecycleAction;
+import com.google.cloud.storage.BucketInfo.LifecycleRule.LifecycleCondition;
 import com.google.cloud.storage.CopyWriter;
 import com.google.cloud.storage.HttpMethod;
 import com.google.cloud.storage.ServiceAccount;
@@ -142,6 +148,8 @@ public class ITStorageTest {
   private static final String KMS_KEY_RING_LOCATION = "us";
   private static final String KMS_KEY_ONE_NAME = "gcs_kms_key_one";
   private static final String KMS_KEY_TWO_NAME = "gcs_kms_key_two";
+  private static final boolean IS_VPC_TEST = System.getenv("GOOGLE_CLOUD_TESTS_IN_VPCSC") != null
+          && System.getenv("GOOGLE_CLOUD_TESTS_IN_VPCSC").equalsIgnoreCase("true");
 
   @BeforeClass
   public static void beforeClass() throws IOException {
@@ -152,10 +160,8 @@ public class ITStorageTest {
             .setLocation("us")
             .setLifecycleRules(
                 ImmutableList.of(
-                    new BucketInfo.LifecycleRule(
-                        new BucketInfo.LifecycleRule.DeleteLifecycleAction(),
-                        new BucketInfo.LifecycleRule.LifecycleCondition.Builder()
-                            .setAge(1).build())))
+                    new LifecycleRule(LifecycleAction.newDeleteLifecycleAction(),
+                            LifecycleCondition.newBuilder().setAge(1).build())))
             .build());
 
     // Prepare KMS KeyRing for CMEK tests
@@ -352,31 +358,30 @@ public class ITStorageTest {
   public void testGetBucketLifecycleRules() {
     String lifecycleTestBucketName = RemoteStorageHelper.generateBucketName();
     storage.create(
-            BucketInfo.newBuilder(lifecycleTestBucketName)
-                    .setLocation("us")
-                    .setLifecycleRules(
-                            ImmutableList.of(
-                                    new BucketInfo.LifecycleRule(
-                                            new BucketInfo.LifecycleRule.SetStorageClassLifecycleAction(
-                                                    StorageClass.COLDLINE),
-                                            new BucketInfo.LifecycleRule.LifecycleCondition.Builder()
-                                                    .setAge(1)
-                                                    .setNumberOfNewerVersions(3)
-                                                    .setIsLive(false)
-                                                    .setCreatedBefore(new DateTime(System.currentTimeMillis()))
-                                                    .setMatchesStorageClass(ImmutableList.of(StorageClass.COLDLINE))
-                                                    .build())))
-                    .build());
+        BucketInfo.newBuilder(lifecycleTestBucketName)
+            .setLocation("us")
+            .setLifecycleRules(
+                ImmutableList.of(
+                    new LifecycleRule(
+                        LifecycleAction.newSetStorageClassLifecycleAction(
+                            StorageClass.COLDLINE),
+                        LifecycleCondition.newBuilder()
+                            .setAge(1)
+                            .setNumberOfNewerVersions(3)
+                            .setIsLive(false)
+                            .setCreatedBefore(new DateTime(System.currentTimeMillis()))
+                            .setMatchesStorageClass(ImmutableList.of(StorageClass.COLDLINE))
+                            .build())))
+            .build());
     Bucket remoteBucket = storage.get(lifecycleTestBucketName, Storage.BucketGetOption.fields(BucketField.LIFECYCLE));
-    BucketInfo.LifecycleRule lifecycleRule = remoteBucket.getLifecycleRules().get(0);
+    LifecycleRule lifecycleRule = remoteBucket.getLifecycleRules().get(0);
     try {
       assertTrue(
-          lifecycleRule.getAction()
-              instanceof BucketInfo.LifecycleRule.SetStorageClassLifecycleAction);
-      assertEquals(3, (int) lifecycleRule.getCondition().getNumberOfNewerVersions());
+          lifecycleRule.getAction().getActionType().equals(LifecycleRule.SetStorageClassLifecycleAction.TYPE));
+      assertEquals(3,  lifecycleRule.getCondition().getNumberOfNewerVersions().intValue());
       assertNotNull(lifecycleRule.getCondition().getCreatedBefore());
       assertFalse(lifecycleRule.getCondition().getIsLive());
-      assertEquals(1, (int) lifecycleRule.getCondition().getAge());
+      assertEquals(1, lifecycleRule.getCondition().getAge().intValue());
       assertEquals(1, lifecycleRule.getCondition().getMatchesStorageClass().size());
     } finally {
       storage.delete(lifecycleTestBucketName);
@@ -1738,6 +1743,10 @@ public class ITStorageTest {
 
   @Test
   public void testGetSignedUrl() throws IOException {
+    if(storage.getOptions().getCredentials() != null) {
+      assumeTrue(storage.getOptions().getCredentials() instanceof ServiceAccountSigner);
+    }
+
     String blobName = "test-get-signed-url-blob/with/slashes/and?special=!#$&'()*+,:;=?@[]";
     BlobInfo blob = BlobInfo.newBuilder(BUCKET, blobName).build();
     Blob remoteBlob = storage.create(blob, BLOB_BYTE_CONTENT);
@@ -1753,6 +1762,9 @@ public class ITStorageTest {
 
   @Test
   public void testPostSignedUrl() throws IOException {
+    if (storage.getOptions().getCredentials() != null) {
+      assumeTrue(storage.getOptions().getCredentials() instanceof ServiceAccountSigner);
+    }
     String blobName = "test-post-signed-url-blob";
     BlobInfo blob = BlobInfo.newBuilder(BUCKET, blobName).build();
     assertNotNull(storage.create(blob));
@@ -1784,6 +1796,7 @@ public class ITStorageTest {
 
   @Test
   public void testDownloadPublicBlobWithoutAuthentication() {
+    assumeFalse(IS_VPC_TEST);
     // create an unauthorized user
     Storage unauthorizedStorage = StorageOptions.getUnauthenticatedInstance().getService();
 
@@ -1792,6 +1805,7 @@ public class ITStorageTest {
     String landsatPrefix = "LC08/PRE/044/034/LC80440342016259LGN00/";
     String landsatBlob = landsatPrefix + "LC80440342016259LGN00_MTL.txt";
     byte[] bytes = unauthorizedStorage.readAllBytes(landsatBucket, landsatBlob);
+
     assertThat(bytes.length).isEqualTo(7903);
     int numBlobs = 0;
     Iterator<Blob> blobIterator =

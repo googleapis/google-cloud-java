@@ -35,6 +35,9 @@ import com.google.cloud.storage.Acl.Role;
 import com.google.cloud.storage.Acl.User;
 import com.google.cloud.storage.BucketInfo.AgeDeleteRule;
 import com.google.cloud.storage.BucketInfo.DeleteRule;
+import com.google.cloud.storage.BucketInfo.LifecycleRule;
+import com.google.cloud.storage.BucketInfo.LifecycleRule.LifecycleAction;
+import com.google.cloud.storage.BucketInfo.LifecycleRule.LifecycleCondition;
 import com.google.common.base.Function;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -74,8 +77,8 @@ public class BucketTest {
   private static final List<? extends DeleteRule> DELETE_RULES =
       Collections.singletonList(new AgeDeleteRule(5));
   private static final List<? extends BucketInfo.LifecycleRule> LIFECYCLE_RULES =
-          Collections.singletonList(new BucketInfo.LifecycleRule(new BucketInfo.LifecycleRule.DeleteLifecycleAction(),
-                  new BucketInfo.LifecycleRule.LifecycleCondition.Builder().setAge(5).build()));
+          Collections.singletonList(new LifecycleRule(LifecycleAction.newDeleteLifecycleAction(),
+                  LifecycleCondition.newBuilder().setAge(5).build()));
   private static final String INDEX_PAGE = "index.html";
   private static final String NOT_FOUND_PAGE = "error.html";
   private static final String LOCATION = "ASIA";
