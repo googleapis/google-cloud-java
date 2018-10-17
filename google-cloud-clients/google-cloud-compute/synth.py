@@ -18,7 +18,6 @@ import synthtool as s
 import synthtool.gcp as gcp
 
 gapic = gcp.DiscoGAPICGenerator()
-common_templates = gcp.CommonTemplates()
 
 library = gapic.java_library(
     service='compute',
