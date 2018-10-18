@@ -63,7 +63,7 @@ public class BucketInfoTest {
   private static final List<? extends BucketInfo.LifecycleRule> LIFECYCLE_RULES =
       Collections.singletonList(
           new BucketInfo.LifecycleRule(
-              LifecycleAction.newDeleteLifecycleAction(),
+              LifecycleAction.newDeleteAction(),
               LifecycleCondition.newBuilder().setAge(5).build()));
   private static final String INDEX_PAGE = "index.html";
   private static final String NOT_FOUND_PAGE = "error.html";
@@ -221,19 +221,19 @@ public class BucketInfoTest {
   public void testLifecycleRules() {
     Rule deleteLifecycleRule =
         new LifecycleRule(
-                LifecycleAction.newDeleteLifecycleAction(),
+                LifecycleAction.newDeleteAction(),
                 LifecycleCondition.newBuilder().setAge(10).build())
             .toPb();
 
     assertEquals(LifecycleRule.DeleteLifecycleAction.TYPE, deleteLifecycleRule.getAction().getType());
-    assertEquals(10, (long)deleteLifecycleRule.getCondition().getAge());
+    assertEquals(10, deleteLifecycleRule.getCondition().getAge().intValue());
 
     Rule setStorageClassLifecycleRule = new LifecycleRule(
-            LifecycleAction.newSetStorageClassLifecycleAction(StorageClass.COLDLINE),
+            LifecycleAction.newSetStorageClassAction(StorageClass.COLDLINE),
             LifecycleCondition.newBuilder().setIsLive(true).setNumberOfNewerVersions(10).build()).toPb();
 
-    assertEquals(StorageClass.COLDLINE, setStorageClassLifecycleRule.getAction().getStorageClass());
+    assertEquals(StorageClass.COLDLINE.toString(), setStorageClassLifecycleRule.getAction().getStorageClass());
     assertTrue(setStorageClassLifecycleRule.getCondition().getIsLive());
-    assertEquals(10, (long)setStorageClassLifecycleRule.getCondition().getNumNewerVersions());
+    assertEquals(10, setStorageClassLifecycleRule.getCondition().getNumNewerVersions().intValue());
   }
 }

@@ -160,7 +160,7 @@ public class ITStorageTest {
             .setLocation("us")
             .setLifecycleRules(
                 ImmutableList.of(
-                    new LifecycleRule(LifecycleAction.newDeleteLifecycleAction(),
+                    new LifecycleRule(LifecycleAction.newDeleteAction(),
                             LifecycleCondition.newBuilder().setAge(1).build())))
             .build());
 
@@ -363,7 +363,7 @@ public class ITStorageTest {
             .setLifecycleRules(
                 ImmutableList.of(
                     new LifecycleRule(
-                        LifecycleAction.newSetStorageClassLifecycleAction(
+                        LifecycleAction.newSetStorageClassAction(
                             StorageClass.COLDLINE),
                         LifecycleCondition.newBuilder()
                             .setAge(1)

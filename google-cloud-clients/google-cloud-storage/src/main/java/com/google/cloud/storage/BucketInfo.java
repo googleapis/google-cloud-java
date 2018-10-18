@@ -97,6 +97,12 @@ public class BucketInfo implements Serializable {
   private final Boolean retentionPolicyIsLocked;
   private final Long retentionPeriod;
 
+  /**
+   * Lifecycle rule for a bucket. Allows supported Actions, such as deleting and changing storage class,
+   * to be executed when certain Conditions are met
+   *
+   * @see <a href="https://cloud.google.com/storage/docs/lifecycle">Object Lifecycle Management</a>
+   */
   public static class LifecycleRule implements Serializable {
 
     private static final long serialVersionUID = -5739807320148748613L;
@@ -182,11 +188,11 @@ public class BucketInfo implements Serializable {
 
       switch (action.getType()) {
         case DeleteLifecycleAction.TYPE:
-          lifecycleAction = LifecycleAction.newDeleteLifecycleAction();
+          lifecycleAction = LifecycleAction.newDeleteAction();
           break;
         case SetStorageClassLifecycleAction.TYPE:
           lifecycleAction =
-              LifecycleAction.newSetStorageClassLifecycleAction(StorageClass.valueOf(action.getStorageClass()));
+              LifecycleAction.newSetStorageClassAction(StorageClass.valueOf(action.getStorageClass()));
           break;
         default:
           throw new UnsupportedOperationException(
@@ -215,6 +221,11 @@ public class BucketInfo implements Serializable {
       return new LifecycleRule(lifecycleAction, conditionBuilder.build());
     }
 
+    /**
+     * Condition for a Lifecycle rule, specifies under what criteria an Action should be executed
+     *
+     * @see <a href="https://cloud.google.com/storage/docs/lifecycle">Object Lifecycle Management</a>
+     */
     public static class LifecycleCondition implements Serializable {
       private static final long serialVersionUID = -6482314338394768785L;
       private final Integer age;
@@ -264,6 +275,7 @@ public class BucketInfo implements Serializable {
         return matchesStorageClass;
       }
 
+      /** Builder for {@code LifecycleCondition}. */
       public static class Builder {
         private Integer age;
         private DateTime createdBefore;
@@ -273,47 +285,68 @@ public class BucketInfo implements Serializable {
 
         private Builder() {}
 
+        /** Sets the age in days a Blob should be for an Action to be executed **/
         public Builder setAge(Integer age) {
           this.age = age;
           return this;
         }
 
+        /** Sets the date a Blob should be created before for an Action to be executed. Note that only the date
+         * will be considered, if the time is specified it will be truncated **/
         public Builder setCreatedBefore(DateTime createdBefore) {
           this.createdBefore = createdBefore;
           return this;
         }
 
+        /** Sets the number of newer versions a Blob should have for an Action to be executed **/
         public Builder setNumberOfNewerVersions(Integer numberOfNewerVersions) {
           this.numberOfNewerVersions = numberOfNewerVersions;
           return this;
         }
 
+        /** Sets whether a Live Blob meets the Condition for an Action to be executed. If this is set to {@code false},
+         * the condition is met by Archived Blobs.
+         */
         public Builder setIsLive(Boolean live) {
           this.isLive = live;
           return this;
         }
 
+        /** Sets a list of Storage Classes ({@code StorageClass} objects) for a Blob to match for an Action to be executed **/
         public Builder setMatchesStorageClass(List<StorageClass> matchesStorageClass) {
           this.matchesStorageClass = matchesStorageClass;
           return this;
         }
 
+        /** Creates a {@code LifecycleCondition} object **/
         public LifecycleCondition build() {
           return new LifecycleCondition(this);
         }
       }
     }
 
+    /**
+     * Base class for the Action to take when a Lifecycle Condition is met. Specific Actions are expressed as subclasses
+     * of this class, accessed by static factory methods
+     */
     public abstract static class LifecycleAction implements Serializable {
       private static final long serialVersionUID = 5801228724709173284L;
 
       public abstract String getActionType();
 
-      public static DeleteLifecycleAction newDeleteLifecycleAction() {
+      /** Creates a new {@code DeleteLifecycleAction}. Blobs that meet the Condition associated with this action will be
+       * deleted
+       */
+      public static DeleteLifecycleAction newDeleteAction() {
         return new DeleteLifecycleAction();
       }
 
-      public static SetStorageClassLifecycleAction newSetStorageClassLifecycleAction(StorageClass storageclass) {
+      /** Creates a new {@code SetStorageClassLifecycleAction}. Blobs that meet the Condition associated with this
+       * action will have their Storage Class changed to the one specified
+       *
+       * @param storageclass The {@code StorageClass} to set Blobs that meet the condition to
+       */
+      public static SetStorageClassLifecycleAction newSetStorageClassAction(StorageClass storageclass) {
         return new SetStorageClassLifecycleAction(storageclass);
       }
     }
@@ -356,6 +389,8 @@ public class BucketInfo implements Serializable {
    * versions.
    *
    * @see <a href="https://cloud.google.com/storage/docs/lifecycle">Object Lifecycle Management</a>
+   *
+   * @deprecated Use a {@code LifecycleRule} with a {@code DeleteLifecycleAction} instead.
    */
   @Deprecated
   public abstract static class DeleteRule implements Serializable {
@@ -436,6 +471,9 @@ public class BucketInfo implements Serializable {
    * Delete rule class that sets a Time To Live for blobs in the bucket.
    *
    * @see <a href="https://cloud.google.com/storage/docs/lifecycle">Object Lifecycle Management</a>
+   *
+   * @deprecated Use a {@code LifecycleRule} with a {@code DeleteLifecycleAction} and use
+   * {@code LifecycleCondition.Builder.setAge} instead
    */
   @Deprecated
   public static class AgeDeleteRule extends DeleteRule {
@@ -501,6 +539,9 @@ public class BucketInfo implements Serializable {
    * Delete rule class for blobs in the bucket that have been created before a certain date.
    *
    * @see <a href="https://cloud.google.com/storage/docs/lifecycle">Object Lifecycle Management</a>
+   *
+   * @deprecated Use a {@code LifecycleRule} with a {@code DeleteLifecycleAction} and use
+   * {@code LifecycleCondition.Builder.setCreatedBefore} instead
    */
   @Deprecated
   public static class CreatedBeforeDeleteRule extends DeleteRule {
@@ -534,6 +575,9 @@ public class BucketInfo implements Serializable {
    * the number of available newer versions for that blob.
    *
    * @see <a href="https://cloud.google.com/storage/docs/lifecycle">Object Lifecycle Management</a>
+   *
+   * @deprecated Use a {@code LifecycleRule} with a {@code DeleteLifecycleAction} and use
+   * {@code LifecycleCondition.Builder.setNumberOfNewerVersions} instead
    */
   @Deprecated
   public static class NumNewerVersionsDeleteRule extends DeleteRule {
@@ -566,6 +610,9 @@ public class BucketInfo implements Serializable {
    * Delete rule class to distinguish between live and archived blobs.
    *
    * @see <a href="https://cloud.google.com/storage/docs/lifecycle">Object Lifecycle Management</a>
+   *
+   * @deprecated Use a {@code LifecycleRule} with a {@code DeleteLifecycleAction} and use
+   * {@code LifecycleCondition.Builder.setIsLive} instead
    */
   @Deprecated
   public static class IsLiveDeleteRule extends DeleteRule {
@@ -631,11 +678,17 @@ public class BucketInfo implements Serializable {
     /**
      * Sets the bucket's lifecycle configuration as a number of delete rules.
      *
-     * @see <a href="https://cloud.google.com/storage/docs/lifecycle">Lifecycle Management</a>
+     * @deprecated Use {@code setLifecycleRules} instead
      */
     @Deprecated
     public abstract Builder setDeleteRules(Iterable<? extends DeleteRule> rules);
 
+    /**
+     * Sets the bucket's lifecycle configuration as a number of lifecycle rules, consisting of an action and a
+     * condition.
+     *
+     * @see <a href="https://cloud.google.com/storage/docs/lifecycle">Lifecycle Management</a>
+     */
     public abstract Builder setLifecycleRules(Iterable<? extends LifecycleRule> rules);
 
     /**
@@ -818,6 +871,7 @@ public class BucketInfo implements Serializable {
       return this;
     }
 
+    /** @deprecated Use {@code setLifecycleRules} instead **/
     @Override
     @Deprecated
     public Builder setDeleteRules(Iterable<? extends DeleteRule> rules) {
