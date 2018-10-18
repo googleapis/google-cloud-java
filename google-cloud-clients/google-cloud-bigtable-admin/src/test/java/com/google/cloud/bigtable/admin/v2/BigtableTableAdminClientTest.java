@@ -24,7 +24,6 @@ import com.google.api.gax.rpc.NotFoundException;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.bigtable.admin.v2.*;
 import com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification;
-import com.google.bigtable.admin.v2.TableName;
 import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListTablesPage;
 import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListTablesPagedResponse;
 import com.google.cloud.bigtable.admin.v2.models.CreateTableRequest;
@@ -308,11 +307,12 @@ public class BigtableTableAdminClientTest {
   public void testExistsTrue() {
     // Setup
     com.google.bigtable.admin.v2.Table expectedResponse =
-                com.google.bigtable.admin.v2.Table.newBuilder()
-                    .setName(TABLE_NAME.toString())
-                    .build();
+        com.google.bigtable.admin.v2.Table.newBuilder()
+            .setName(TABLE_NAME.toString())
+            .build();
 
-    Mockito.when(mockGetTableCallable.futureCall(Matchers.any(GetTableRequest.class))).thenReturn(ApiFutures.immediateFuture(expectedResponse));
+    Mockito.when(mockGetTableCallable.futureCall(Matchers.any(GetTableRequest.class)))
+        .thenReturn(ApiFutures.immediateFuture(expectedResponse));
 
     // Execute
     boolean found = adminClient.exists(TABLE_NAME.getTable());
@@ -324,8 +324,11 @@ public class BigtableTableAdminClientTest {
   @Test
   public void testExistsFalse() {
     // Setup
-    NotFoundException exception = new NotFoundException("fake error", null, GrpcStatusCode.of(Status.Code.NOT_FOUND), false);
-    Mockito.when(mockGetTableCallable.futureCall(Matchers.any(GetTableRequest.class))).thenReturn(ApiFutures.immediateFailedFuture(exception));
+    NotFoundException exception =
+        new NotFoundException("fake error", null, GrpcStatusCode.of(Status.Code.NOT_FOUND), false);
+
+    Mockito.when(mockGetTableCallable.futureCall(Matchers.any(GetTableRequest.class)))
+        .thenReturn(ApiFutures.immediateFailedFuture(exception));
 
     // Execute
     boolean found = adminClient.exists(TABLE_NAME.getTable());

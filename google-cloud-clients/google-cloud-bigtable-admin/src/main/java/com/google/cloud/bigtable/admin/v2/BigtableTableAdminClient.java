@@ -332,7 +332,7 @@ public final class BigtableTableAdminClient implements AutoCloseable {
    *
    * <pre>{@code
    * if(client.exists("my-table")) {
-   *   "Table exists";
+   *   System.out.println("Table exists");
    * }
    * }</pre>
    */
@@ -340,6 +340,29 @@ public final class BigtableTableAdminClient implements AutoCloseable {
     return awaitFuture(existsAsync(tableId)).booleanValue();
   }
 
+  /**
+   * Asynchronously checks if the table specified by the tableId exists
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * ApiFuture<Boolean> found = client.existsAsync("my-table");
+   *
+   * ApiFutures.addCallback(
+   *  found,
+   *  new ApiFutureCallback<Boolean>() {
+   *    public void onSuccess(Boolean found) {
+   *      System.out.println("Table exists");
+   *    }
+   *
+   *    public void onFailure(Throwable t) {
+   *      t.printStackTrace();
+   *    }
+   *  },
+   *  MoreExecutors.directExecutor()
+   * );
+   * }</pre>
+   */
   public ApiFuture<Boolean> existsAsync(String tableId) {
 
     ApiFuture<Table> protoFuture = getTableAsync(tableId, com.google.bigtable.admin.v2.Table.View.NAME_ONLY);
