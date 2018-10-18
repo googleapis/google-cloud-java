@@ -25,8 +25,11 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
+import static org.junit.Assume.assumeFalse;
+import static org.junit.Assume.assumeTrue;
 
 import com.google.api.gax.paging.Page;
+import com.google.auth.ServiceAccountSigner;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.kms.v1.CreateCryptoKeyRequest;
 import com.google.cloud.kms.v1.CreateKeyRingRequest;
@@ -139,6 +142,8 @@ public class ITStorageTest {
   private static final String KMS_KEY_RING_LOCATION = "us";
   private static final String KMS_KEY_ONE_NAME = "gcs_kms_key_one";
   private static final String KMS_KEY_TWO_NAME = "gcs_kms_key_two";
+  private static final boolean IS_VPC_TEST = System.getenv("GOOGLE_CLOUD_TESTS_IN_VPCSC") != null
+          && System.getenv("GOOGLE_CLOUD_TESTS_IN_VPCSC").equalsIgnoreCase("true");
 
   @BeforeClass
   public static void beforeClass() throws IOException {
@@ -1604,6 +1609,10 @@ public class ITStorageTest {
 
   @Test
   public void testGetSignedUrl() throws IOException {
+    if(storage.getOptions().getCredentials() != null) {
+      assumeTrue(storage.getOptions().getCredentials() instanceof ServiceAccountSigner);
+    }
+
     String blobName = "test-get-signed-url-blob/with/slashes/and?special=!#$&'()*+,:;=?@[]";
     BlobInfo blob = BlobInfo.newBuilder(BUCKET, blobName).build();
     Blob remoteBlob = storage.create(blob, BLOB_BYTE_CONTENT);
@@ -1619,6 +1628,9 @@ public class ITStorageTest {
 
   @Test
   public void testPostSignedUrl() throws IOException {
+    if (storage.getOptions().getCredentials() != null) {
+      assumeTrue(storage.getOptions().getCredentials() instanceof ServiceAccountSigner);
+    }
     String blobName = "test-post-signed-url-blob";
     BlobInfo blob = BlobInfo.newBuilder(BUCKET, blobName).build();
     assertNotNull(storage.create(blob));
@@ -1650,6 +1662,7 @@ public class ITStorageTest {
 
   @Test
   public void testDownloadPublicBlobWithoutAuthentication() {
+    assumeFalse(IS_VPC_TEST);
     // create an unauthorized user
     Storage unauthorizedStorage = StorageOptions.getUnauthenticatedInstance().getService();
 
@@ -1658,6 +1671,7 @@ public class ITStorageTest {
     String landsatPrefix = "LC08/PRE/044/034/LC80440342016259LGN00/";
     String landsatBlob = landsatPrefix + "LC80440342016259LGN00_MTL.txt";
     byte[] bytes = unauthorizedStorage.readAllBytes(landsatBucket, landsatBlob);
+
     assertThat(bytes.length).isEqualTo(7903);
     int numBlobs = 0;
     Iterator<Blob> blobIterator = unauthorizedStorage
