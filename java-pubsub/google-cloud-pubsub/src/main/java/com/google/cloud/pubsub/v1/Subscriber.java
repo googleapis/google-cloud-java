@@ -188,6 +188,11 @@ public class Subscriber extends AbstractApiService {
     numChannels = builder.parallelPullCount;
     channels = new ArrayList<>(numChannels);
     streamingSubscriberConnections = new ArrayList<StreamingSubscriberConnection>(numChannels);
+
+    // We regularly look up the distribution for a good subscription deadline.
+    // So we seed the distribution with something reasonable to start with.
+    // Distribution is percentile-based, so this value will eventually lose importance.
+    ackLatencyDistribution.record(60);
   }
 
   /**
