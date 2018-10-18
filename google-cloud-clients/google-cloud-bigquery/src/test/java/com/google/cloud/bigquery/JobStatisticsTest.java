@@ -218,7 +218,7 @@ public class JobStatisticsTest {
 
   @Test
   public void testIncomplete() {
-    // https://github.com/GoogleCloudPlatform/google-cloud-java/issues/2357
+    // https://github.com/googleapis/google-cloud-java/issues/2357
     com.google.api.services.bigquery.model.Job job =
         new com.google.api.services.bigquery.model.Job()
             .setStatistics(

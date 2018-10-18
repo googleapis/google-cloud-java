@@ -441,7 +441,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * App Engine HTTP queue.
-   * An App Engine queue is a queue that has an [AppEngineHttpQeueue][] type.
+   * An App Engine queue is a queue that has an [AppEngineHttpQueue][google.cloud.tasks.v2beta3.AppEngineHttpQueue] type.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.AppEngineHttpQueue app_engine_http_queue = 3;</code>
@@ -452,7 +452,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * App Engine HTTP queue.
-   * An App Engine queue is a queue that has an [AppEngineHttpQeueue][] type.
+   * An App Engine queue is a queue that has an [AppEngineHttpQueue][google.cloud.tasks.v2beta3.AppEngineHttpQueue] type.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.AppEngineHttpQueue app_engine_http_queue = 3;</code>
@@ -466,7 +466,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * App Engine HTTP queue.
-   * An App Engine queue is a queue that has an [AppEngineHttpQeueue][] type.
+   * An App Engine queue is a queue that has an [AppEngineHttpQueue][google.cloud.tasks.v2beta3.AppEngineHttpQueue] type.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.AppEngineHttpQueue app_engine_http_queue = 3;</code>
@@ -1326,7 +1326,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * App Engine HTTP queue.
-     * An App Engine queue is a queue that has an [AppEngineHttpQeueue][] type.
+     * An App Engine queue is a queue that has an [AppEngineHttpQueue][google.cloud.tasks.v2beta3.AppEngineHttpQueue] type.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.AppEngineHttpQueue app_engine_http_queue = 3;</code>
@@ -1337,7 +1337,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * App Engine HTTP queue.
-     * An App Engine queue is a queue that has an [AppEngineHttpQeueue][] type.
+     * An App Engine queue is a queue that has an [AppEngineHttpQueue][google.cloud.tasks.v2beta3.AppEngineHttpQueue] type.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.AppEngineHttpQueue app_engine_http_queue = 3;</code>
@@ -1358,7 +1358,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * App Engine HTTP queue.
-     * An App Engine queue is a queue that has an [AppEngineHttpQeueue][] type.
+     * An App Engine queue is a queue that has an [AppEngineHttpQueue][google.cloud.tasks.v2beta3.AppEngineHttpQueue] type.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.AppEngineHttpQueue app_engine_http_queue = 3;</code>
@@ -1379,7 +1379,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * App Engine HTTP queue.
-     * An App Engine queue is a queue that has an [AppEngineHttpQeueue][] type.
+     * An App Engine queue is a queue that has an [AppEngineHttpQueue][google.cloud.tasks.v2beta3.AppEngineHttpQueue] type.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.AppEngineHttpQueue app_engine_http_queue = 3;</code>
@@ -1398,7 +1398,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * App Engine HTTP queue.
-     * An App Engine queue is a queue that has an [AppEngineHttpQeueue][] type.
+     * An App Engine queue is a queue that has an [AppEngineHttpQueue][google.cloud.tasks.v2beta3.AppEngineHttpQueue] type.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.AppEngineHttpQueue app_engine_http_queue = 3;</code>
@@ -1425,7 +1425,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * App Engine HTTP queue.
-     * An App Engine queue is a queue that has an [AppEngineHttpQeueue][] type.
+     * An App Engine queue is a queue that has an [AppEngineHttpQueue][google.cloud.tasks.v2beta3.AppEngineHttpQueue] type.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.AppEngineHttpQueue app_engine_http_queue = 3;</code>
@@ -1449,7 +1449,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * App Engine HTTP queue.
-     * An App Engine queue is a queue that has an [AppEngineHttpQeueue][] type.
+     * An App Engine queue is a queue that has an [AppEngineHttpQueue][google.cloud.tasks.v2beta3.AppEngineHttpQueue] type.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.AppEngineHttpQueue app_engine_http_queue = 3;</code>
@@ -1460,7 +1460,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * App Engine HTTP queue.
-     * An App Engine queue is a queue that has an [AppEngineHttpQeueue][] type.
+     * An App Engine queue is a queue that has an [AppEngineHttpQueue][google.cloud.tasks.v2beta3.AppEngineHttpQueue] type.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.AppEngineHttpQueue app_engine_http_queue = 3;</code>
@@ -1478,7 +1478,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * App Engine HTTP queue.
-     * An App Engine queue is a queue that has an [AppEngineHttpQeueue][] type.
+     * An App Engine queue is a queue that has an [AppEngineHttpQueue][google.cloud.tasks.v2beta3.AppEngineHttpQueue] type.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.AppEngineHttpQueue app_engine_http_queue = 3;</code>

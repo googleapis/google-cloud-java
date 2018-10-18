@@ -25,8 +25,11 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
+import static org.junit.Assume.assumeFalse;
+import static org.junit.Assume.assumeTrue;
 
 import com.google.api.gax.paging.Page;
+import com.google.auth.ServiceAccountSigner;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.kms.v1.CreateCryptoKeyRequest;
 import com.google.cloud.kms.v1.CreateKeyRingRequest;
@@ -132,11 +135,15 @@ public class ITStorageTest {
   private static final byte[] COMPRESSED_CONTENT = BaseEncoding.base64()
       .decode("H4sIAAAAAAAAAPNIzcnJV3DPz0/PSVVwzskvTVEILskvSkxPVQQA/LySchsAAAA=");
   private static final Map<String, String> BUCKET_LABELS = ImmutableMap.of("label1", "value1");
+  private static final Long RETENTION_PERIOD = 5L;
+  private static final Long RETENTION_PERIOD_IN_MILLISECONDS = RETENTION_PERIOD * 1000;
   private static final String SERVICE_ACCOUNT_EMAIL_SUFFIX = "@gs-project-accounts.iam.gserviceaccount.com";
   private static final String KMS_KEY_RING_NAME = "gcs_test_kms_key_ring";
   private static final String KMS_KEY_RING_LOCATION = "us";
   private static final String KMS_KEY_ONE_NAME = "gcs_kms_key_one";
   private static final String KMS_KEY_TWO_NAME = "gcs_kms_key_two";
+  private static final boolean IS_VPC_TEST = System.getenv("GOOGLE_CLOUD_TESTS_IN_VPCSC") != null
+          && System.getenv("GOOGLE_CLOUD_TESTS_IN_VPCSC").equalsIgnoreCase("true");
 
   @BeforeClass
   public static void beforeClass() throws IOException {
@@ -1602,6 +1609,10 @@ public class ITStorageTest {
 
   @Test
   public void testGetSignedUrl() throws IOException {
+    if(storage.getOptions().getCredentials() != null) {
+      assumeTrue(storage.getOptions().getCredentials() instanceof ServiceAccountSigner);
+    }
+
     String blobName = "test-get-signed-url-blob/with/slashes/and?special=!#$&'()*+,:;=?@[]";
     BlobInfo blob = BlobInfo.newBuilder(BUCKET, blobName).build();
     Blob remoteBlob = storage.create(blob, BLOB_BYTE_CONTENT);
@@ -1617,6 +1628,9 @@ public class ITStorageTest {
 
   @Test
   public void testPostSignedUrl() throws IOException {
+    if (storage.getOptions().getCredentials() != null) {
+      assumeTrue(storage.getOptions().getCredentials() instanceof ServiceAccountSigner);
+    }
     String blobName = "test-post-signed-url-blob";
     BlobInfo blob = BlobInfo.newBuilder(BUCKET, blobName).build();
     assertNotNull(storage.create(blob));
@@ -1648,6 +1662,7 @@ public class ITStorageTest {
 
   @Test
   public void testDownloadPublicBlobWithoutAuthentication() {
+    assumeFalse(IS_VPC_TEST);
     // create an unauthorized user
     Storage unauthorizedStorage = StorageOptions.getUnauthenticatedInstance().getService();
 
@@ -1656,6 +1671,7 @@ public class ITStorageTest {
     String landsatPrefix = "LC08/PRE/044/034/LC80440342016259LGN00/";
     String landsatBlob = landsatPrefix + "LC80440342016259LGN00_MTL.txt";
     byte[] bytes = unauthorizedStorage.readAllBytes(landsatBucket, landsatBlob);
+
     assertThat(bytes.length).isEqualTo(7903);
     int numBlobs = 0;
     Iterator<Blob> blobIterator = unauthorizedStorage
@@ -2038,7 +2054,155 @@ public class ITStorageTest {
   }
 
   @Test
-  public void testGetServiceAccount() throws InterruptedException {
+  public void testRetentionPolicyNoLock() throws ExecutionException, InterruptedException {
+    String bucketName = RemoteStorageHelper.generateBucketName();
+    Bucket remoteBucket = storage.create(BucketInfo.newBuilder(bucketName)
+        .setRetentionPeriod(RETENTION_PERIOD).build());
+    try {
+      assertEquals(RETENTION_PERIOD, remoteBucket.getRetentionPeriod());
+      assertNotNull(remoteBucket.getRetentionEffectiveTime());
+      assertNull(remoteBucket.retentionPolicyIsLocked());
+      remoteBucket = storage.get(bucketName, Storage.BucketGetOption.fields(BucketField.RETENTION_POLICY));
+      assertEquals(RETENTION_PERIOD, remoteBucket.getRetentionPeriod());
+      assertNotNull(remoteBucket.getRetentionEffectiveTime());
+      assertNull(remoteBucket.retentionPolicyIsLocked());
+      String blobName = "test-create-with-retention-policy-hold";
+      BlobInfo blobInfo = BlobInfo.newBuilder(bucketName, blobName).build();
+      Blob remoteBlob = storage.create(blobInfo);
+      assertNotNull(remoteBlob.getRetentionExpirationTime());
+      remoteBucket = remoteBucket.toBuilder().setRetentionPeriod(null).build().update();
+      assertNull(remoteBucket.getRetentionPeriod());
+      remoteBucket = remoteBucket.toBuilder().setRetentionPeriod(null).build().update();
+      assertNull(remoteBucket.getRetentionPeriod());
+    } finally {
+      RemoteStorageHelper.forceDelete(storage, bucketName, 5, TimeUnit.SECONDS);
+    }
+  }
+
+  @Test
+  public void testRetentionPolicyLock() throws ExecutionException, InterruptedException {
+    retentionPolicyLockRequesterPays(true);
+    retentionPolicyLockRequesterPays(false);
+  }
+
+  private void retentionPolicyLockRequesterPays(boolean requesterPays) throws ExecutionException, InterruptedException {
+    String projectId = remoteStorageHelper.getOptions().getProjectId();
+    String bucketName = RemoteStorageHelper.generateBucketName();
+    BucketInfo bucketInfo;
+    if (requesterPays) {
+      bucketInfo = BucketInfo.newBuilder(bucketName).setRetentionPeriod(RETENTION_PERIOD)
+          .setRequesterPays(true).build();
+    } else {
+      bucketInfo = BucketInfo.newBuilder(bucketName).setRetentionPeriod(RETENTION_PERIOD).build();
+    }
+    Bucket remoteBucket = storage.create(bucketInfo);
+    try {
+      assertNull(remoteBucket.retentionPolicyIsLocked());
+      assertNotNull(remoteBucket.getRetentionEffectiveTime());
+      assertNotNull(remoteBucket.getMetageneration());
+      if (requesterPays) {
+        remoteBucket = storage.lockRetentionPolicy(remoteBucket, Storage.BucketTargetOption.metagenerationMatch(),
+            Storage.BucketTargetOption.userProject(projectId));
+      } else {
+        remoteBucket = storage.lockRetentionPolicy(remoteBucket, Storage.BucketTargetOption.metagenerationMatch());
+      }
+      assertTrue(remoteBucket.retentionPolicyIsLocked());
+      assertNotNull(remoteBucket.getRetentionEffectiveTime());
+    } finally {
+      RemoteStorageHelper.forceDelete(storage, bucketName, 5, TimeUnit.SECONDS);
+    }
+  }
+
+  @Test
+  public void testAttemptObjectDeleteWithRetentionPolicy() throws ExecutionException, InterruptedException {
+    String bucketName = RemoteStorageHelper.generateBucketName();
+    Bucket remoteBucket = storage.create(BucketInfo.newBuilder(bucketName)
+        .setRetentionPeriod(RETENTION_PERIOD).build());
+    assertEquals(RETENTION_PERIOD, remoteBucket.getRetentionPeriod());
+    String blobName = "test-create-with-retention-policy";
+    BlobInfo blobInfo = BlobInfo.newBuilder(bucketName, blobName).build();
+    Blob remoteBlob = storage.create(blobInfo);
+    assertNotNull(remoteBlob.getRetentionExpirationTime());
+    try {
+      remoteBlob.delete();
+      fail("Expected failure on delete from retentionPolicy");
+    } catch (StorageException ex) {
+      // expected
+    } finally {
+      Thread.sleep(RETENTION_PERIOD_IN_MILLISECONDS);
+      RemoteStorageHelper.forceDelete(storage, bucketName, 5, TimeUnit.SECONDS);
+    }
+  }
+
+  @Test
+  public void testEnableDisableBucketDefaultEventBasedHold() throws ExecutionException, InterruptedException {
+    String bucketName = RemoteStorageHelper.generateBucketName();
+    Bucket remoteBucket = storage.create(BucketInfo.newBuilder(bucketName).setDefaultEventBasedHold(true).build());
+    try {
+      assertTrue(remoteBucket.getDefaultEventBasedHold());
+      remoteBucket = storage.get(bucketName, Storage.BucketGetOption.fields(BucketField.DEFAULT_EVENT_BASED_HOLD));
+      assertTrue(remoteBucket.getDefaultEventBasedHold());
+      String blobName = "test-create-with-event-based-hold";
+      BlobInfo blobInfo = BlobInfo.newBuilder(bucketName, blobName).build();
+      Blob remoteBlob = storage.create(blobInfo);
+      assertTrue(remoteBlob.getEventBasedHold());
+      remoteBlob = storage.get(blobInfo.getBlobId(), Storage.BlobGetOption.fields(BlobField.EVENT_BASED_HOLD));
+      assertTrue(remoteBlob.getEventBasedHold());
+      remoteBlob = remoteBlob.toBuilder().setEventBasedHold(false).build().update();
+      assertFalse(remoteBlob.getEventBasedHold());
+      remoteBucket = remoteBucket.toBuilder().setDefaultEventBasedHold(false).build().update();
+      assertFalse(remoteBucket.getDefaultEventBasedHold());
+    } finally {
+      RemoteStorageHelper.forceDelete(storage, bucketName, 5, TimeUnit.SECONDS);
+    }
+  }
+
+  @Test
+  public void testEnableDisableTemporaryHold() {
+    String blobName = "test-create-with-temporary-hold";
+    BlobInfo blobInfo = BlobInfo.newBuilder(BUCKET, blobName).setTemporaryHold(true).build();
+    Blob remoteBlob = storage.create(blobInfo);
+    assertTrue(remoteBlob.getTemporaryHold());
+    remoteBlob = storage.get(remoteBlob.getBlobId(), Storage.BlobGetOption.fields(BlobField.TEMPORARY_HOLD));
+    assertTrue(remoteBlob.getTemporaryHold());
+    remoteBlob = remoteBlob.toBuilder().setTemporaryHold(false).build().update();
+    assertFalse(remoteBlob.getTemporaryHold());
+  }
+
+  @Test
+  public void testAttemptObjectDeleteWithEventBasedHold() {
+    String blobName = "test-create-with-event-based-hold";
+    BlobInfo blobInfo = BlobInfo.newBuilder(BUCKET, blobName).setEventBasedHold(true).build();
+    Blob remoteBlob = storage.create(blobInfo);
+    assertTrue(remoteBlob.getEventBasedHold());
+    try {
+      remoteBlob.delete();
+      fail("Expected failure on delete from eventBasedHold");
+    } catch (StorageException ex) {
+      // expected
+    } finally {
+      remoteBlob.toBuilder().setEventBasedHold(false).build().update();
+    }
+  }
+
+  @Test
+  public void testAttemptDeletionObjectTemporaryHold() {
+    String blobName = "test-create-with-temporary-hold";
+    BlobInfo blobInfo = BlobInfo.newBuilder(BUCKET, blobName).setTemporaryHold(true).build();
+    Blob remoteBlob = storage.create(blobInfo);
+    assertTrue(remoteBlob.getTemporaryHold());
+    try {
+      remoteBlob.delete();
+      fail("Expected failure on delete from temporaryHold");
+    } catch (StorageException ex) {
+      // expected
+    } finally {
+      remoteBlob.toBuilder().setEventBasedHold(false).build().update();
+    }
+  }
+
+  @Test
+  public void testGetServiceAccount() {
     String projectId = remoteStorageHelper.getOptions().getProjectId();
     ServiceAccount serviceAccount = storage.getServiceAccount(projectId);
     assertNotNull(serviceAccount);

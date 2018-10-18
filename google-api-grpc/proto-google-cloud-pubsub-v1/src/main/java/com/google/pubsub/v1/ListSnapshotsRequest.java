@@ -105,8 +105,8 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object project_;
   /**
    * <pre>
-   * The name of the cloud project that snapshots belong to.
-   * Format is `projects/{project}`.
+   * The name of the project in which to list snapshots.
+   * Format is `projects/{project-id}`.
    * </pre>
    *
    * <code>string project = 1;</code>
@@ -125,8 +125,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The name of the cloud project that snapshots belong to.
-   * Format is `projects/{project}`.
+   * The name of the project in which to list snapshots.
+   * Format is `projects/{project-id}`.
    * </pre>
    *
    * <code>string project = 1;</code>
@@ -551,8 +551,8 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object project_ = "";
     /**
      * <pre>
-     * The name of the cloud project that snapshots belong to.
-     * Format is `projects/{project}`.
+     * The name of the project in which to list snapshots.
+     * Format is `projects/{project-id}`.
      * </pre>
      *
      * <code>string project = 1;</code>
@@ -571,8 +571,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The name of the cloud project that snapshots belong to.
-     * Format is `projects/{project}`.
+     * The name of the project in which to list snapshots.
+     * Format is `projects/{project-id}`.
      * </pre>
      *
      * <code>string project = 1;</code>
@@ -592,8 +592,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The name of the cloud project that snapshots belong to.
-     * Format is `projects/{project}`.
+     * The name of the project in which to list snapshots.
+     * Format is `projects/{project-id}`.
      * </pre>
      *
      * <code>string project = 1;</code>
@@ -610,8 +610,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The name of the cloud project that snapshots belong to.
-     * Format is `projects/{project}`.
+     * The name of the project in which to list snapshots.
+     * Format is `projects/{project-id}`.
      * </pre>
      *
      * <code>string project = 1;</code>
@@ -624,8 +624,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The name of the cloud project that snapshots belong to.
-     * Format is `projects/{project}`.
+     * The name of the project in which to list snapshots.
+     * Format is `projects/{project-id}`.
      * </pre>
      *
      * <code>string project = 1;</code>
