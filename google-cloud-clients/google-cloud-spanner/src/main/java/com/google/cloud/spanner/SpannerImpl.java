@@ -966,6 +966,10 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     @GuardedBy("lock")
     private boolean isClosed = false;
 
+    // A per-transaction sequence number used to identify this ExecuteSqlRequests. Required for DML,
+    // ignored for query by the server.
+    private AtomicLong seqNo = new AtomicLong();
+
     // Allow up to 512MB to be buffered (assuming 1MB chunks). In practice, restart tokens are sent
     // much more frequently.
     private static final int MAX_BUFFERED_CHUNKS = 512;
@@ -980,6 +984,10 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
       this.rpc = rpc;
       this.defaultPrefetchChunks = defaultPrefetchChunks;
       this.span = span;
+    }
+
+    long getSeqNo() {
+      return seqNo.incrementAndGet();
     }
 
     @Override
@@ -1062,6 +1070,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
       if (selector != null) {
         builder.setTransaction(selector);
       }
+      builder.setSeqno(getSeqNo());
       return builder;
     }
 
@@ -1462,10 +1471,6 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     @GuardedBy("lock")
     private long retryDelayInMillis = -1L;
 
-    // A per-transaction sequence number used to identify this ExecuteSqlRequests. Required for DML,
-    // ignored for query by the server.
-    private AtomicLong seqNo = new AtomicLong();
-
     private ByteString transactionId;
     private Timestamp commitTimestamp;
 
@@ -1587,10 +1592,6 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
       }
     }
 
-    long getSeqNo() {
-      return seqNo.incrementAndGet();
-    }
-
     @Nullable
     @Override
     TransactionSelector getTransactionSelector() {
@@ -1640,7 +1641,6 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
           getExecuteSqlRequestBuilder(
               statement,
               QueryMode.NORMAL);
-      builder.setSeqno(getSeqNo());
       com.google.spanner.v1.ResultSet resultSet =
           runWithRetries(
               new Callable<com.google.spanner.v1.ResultSet>() {

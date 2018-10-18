@@ -5,7 +5,7 @@ package com.google.logging.v2;
 
 /**
  * <pre>
- * Specifies a set of log entries that are not to be stored in Stackdriver
+ * Specifies a set of log entries that are not to be stored in
  * Logging. If your project receives a large volume of logs, you might be able
  * to use exclusions to reduce your chargeable logs. Exclusions are processed
  * after log sinks, so you can export log entries before they are excluded.
@@ -459,7 +459,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Specifies a set of log entries that are not to be stored in Stackdriver
+   * Specifies a set of log entries that are not to be stored in
    * Logging. If your project receives a large volume of logs, you might be able
    * to use exclusions to reduce your chargeable logs. Exclusions are processed
    * after log sinks, so you can export log entries before they are excluded.
