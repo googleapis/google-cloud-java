@@ -31,10 +31,13 @@ import com.google.api.services.cloudkms.v1.model.KeyRing;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
+import java.nio.charset.StandardCharsets;
 import java.security.NoSuchAlgorithmException;
 import java.security.NoSuchProviderException;
 import java.security.PublicKey;
 import java.security.spec.InvalidKeySpecException;
+import java.util.Arrays;
+import java.util.Base64;
 import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -56,6 +59,7 @@ public class AsymmetricIT {
   private static final String parent = "projects/" + projectId + "/locations/global";
   private static final String keyRing = "kms-asymmetric-sample";
   private static final String message = "test message 123";
+  private static final byte[] message_bytes = message.getBytes(StandardCharsets.UTF_8);
 
   private static final String rsaDecryptId = "rsa-decrypt";
   private static final String rsaSignId = "rsa-sign";
@@ -136,35 +140,39 @@ public class AsymmetricIT {
 
   @Test
   public void testRSAEncryptDecrypt() throws Exception {
-    String ciphertext = Asymmetric.encryptRSA(message, client, rsaDecrypt);
-    assertEquals("incorrect RSA ciphertext length.", 344, ciphertext.length());
-    assertEquals("incorrect ciphertext final character.", '=', ciphertext.charAt(343));
+    byte[] ciphertext = Asymmetric.encryptRSA(message_bytes, client, rsaDecrypt);
+    assertEquals("incorrect RSA ciphertext length.", 256, ciphertext.length);
 
-    String plaintext = Asymmetric.decryptRSA(ciphertext, client, rsaDecrypt);
+    byte[] plainbytes = Asymmetric.decryptRSA(ciphertext, client, rsaDecrypt);
+    assertTrue("decryption failed.", Arrays.equals(message_bytes, plainbytes));
+    String plaintext = new String(plainbytes);
     assertEquals("decryption failed.", message, plaintext);
   }
 
   @Test
   public void testRSASignVerify() throws Exception {
-    String sig = Asymmetric.signAsymmetric(message, client, rsaSign);
-    assertEquals("invalid ciphertext length", 344, sig.length());
-    assertEquals("incorrect ciphertext final character.", '=', sig.charAt(343));
+    byte[] sig = Asymmetric.signAsymmetric(message_bytes, client, rsaSign);
+    assertEquals("invalid ciphertext length", 256, sig.length);
 
-    boolean success = Asymmetric.verifySignatureRSA(sig, message, client, rsaSign);
-    assertTrue("RSA verification failed.", success);
-    boolean shouldFail = Asymmetric.verifySignatureRSA(sig, message + ".", client, rsaSign);
-    assertFalse("RSA verification failed.", shouldFail);
+    boolean success = Asymmetric.verifySignatureRSA(sig, message_bytes, client, rsaSign);
+    assertTrue("RSA verification failed. Valid message not accepted", success);
+    String changed = message + ".";
+    byte[] changedBytes = changed.getBytes(StandardCharsets.UTF_8);
+    boolean shouldFail = Asymmetric.verifySignatureRSA(sig, changedBytes, client, rsaSign);
+    assertFalse("RSA verification failed. Invalid message accepted", shouldFail);
   }
 
   @Test
   public void testECSignVerify() throws Exception {
-    String sig = Asymmetric.signAsymmetric(message, client, ecSign);
-    assertTrue("invalid ciphertext length", sig.length() > 50 && sig.length() < 300);
+    byte[] sig = Asymmetric.signAsymmetric(message_bytes, client, ecSign);
+    assertTrue("invalid ciphertext length", sig.length > 50 && sig.length < 300);
 
-    boolean success = Asymmetric.verifySignatureEC(sig, message, client, ecSign);
-    assertTrue("RSA verification failed.", success);
-    boolean shouldFail = Asymmetric.verifySignatureEC(sig, message + ".", client, ecSign);
-    assertFalse("RSA verification failed.", shouldFail);
+    boolean success = Asymmetric.verifySignatureEC(sig, message_bytes, client, ecSign);
+    assertTrue("EC verification failed. Valid message not accepted", success);
+    String changed = message + ".";
+    byte[] changedBytes = changed.getBytes(StandardCharsets.UTF_8);
+    boolean shouldFail = Asymmetric.verifySignatureEC(sig, changedBytes, client, ecSign);
+    assertFalse("EC verification failed. Invalid message accepted", shouldFail);
   }
 
 }
