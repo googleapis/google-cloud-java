@@ -471,8 +471,9 @@ public class NetworkClient implements BackgroundResource {
    * </code></pre>
    *
    * @param project Project ID for this request.
-   * @param networkResource Represents a Network resource. Read Networks and Firewalls for more
-   *     information. (== resource_for v1.networks ==) (== resource_for beta.networks ==)
+   * @param networkResource Represents a Network resource. Read Virtual Private Cloud (VPC) Network
+   *     Overview for more information. (== resource_for v1.networks ==) (== resource_for
+   *     beta.networks ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -501,8 +502,9 @@ public class NetworkClient implements BackgroundResource {
    * </code></pre>
    *
    * @param project Project ID for this request.
-   * @param networkResource Represents a Network resource. Read Networks and Firewalls for more
-   *     information. (== resource_for v1.networks ==) (== resource_for beta.networks ==)
+   * @param networkResource Represents a Network resource. Read Virtual Private Cloud (VPC) Network
+   *     Overview for more information. (== resource_for v1.networks ==) (== resource_for
+   *     beta.networks ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -720,8 +722,9 @@ public class NetworkClient implements BackgroundResource {
    * </code></pre>
    *
    * @param network Name of the network to update.
-   * @param networkResource Represents a Network resource. Read Networks and Firewalls for more
-   *     information. (== resource_for v1.networks ==) (== resource_for beta.networks ==)
+   * @param networkResource Represents a Network resource. Read Virtual Private Cloud (VPC) Network
+   *     Overview for more information. (== resource_for v1.networks ==) (== resource_for
+   *     beta.networks ==)
    * @param fieldMask
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -755,8 +758,9 @@ public class NetworkClient implements BackgroundResource {
    * </code></pre>
    *
    * @param network Name of the network to update.
-   * @param networkResource Represents a Network resource. Read Networks and Firewalls for more
-   *     information. (== resource_for v1.networks ==) (== resource_for beta.networks ==)
+   * @param networkResource Represents a Network resource. Read Virtual Private Cloud (VPC) Network
+   *     Overview for more information. (== resource_for v1.networks ==) (== resource_for
+   *     beta.networks ==)
    * @param fieldMask
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
