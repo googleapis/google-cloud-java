@@ -22,8 +22,16 @@ import com.google.api.core.ApiFutures;
 import com.google.api.gax.grpc.GrpcStatusCode;
 import com.google.api.gax.rpc.NotFoundException;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.bigtable.admin.v2.*;
+import com.google.bigtable.admin.v2.ColumnFamily;
+import com.google.bigtable.admin.v2.DeleteTableRequest;
+import com.google.bigtable.admin.v2.DropRowRangeRequest;
+import com.google.bigtable.admin.v2.GcRule;
+import com.google.bigtable.admin.v2.GetTableRequest;
+import com.google.bigtable.admin.v2.InstanceName;
+import com.google.bigtable.admin.v2.ListTablesRequest;
 import com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification;
+import com.google.bigtable.admin.v2.Table.View;
+import com.google.bigtable.admin.v2.TableName;
 import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListTablesPage;
 import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListTablesPagedResponse;
 import com.google.cloud.bigtable.admin.v2.models.CreateTableRequest;
@@ -182,7 +190,7 @@ public class BigtableTableAdminClientTest {
     // Setup
     GetTableRequest expectedRequest = GetTableRequest.newBuilder()
         .setName(TABLE_NAME.toString())
-        .setView(com.google.bigtable.admin.v2.Table.View.SCHEMA_VIEW)
+        .setView(View.SCHEMA_VIEW)
         .build();
 
     com.google.bigtable.admin.v2.Table expectedResponse = com.google.bigtable.admin.v2.Table
