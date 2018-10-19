@@ -92,6 +92,6 @@ Apache 2.0 - See [LICENSE] for more information.
 [code-of-conduct]:https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
 [LICENSE]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/LICENSE
 [cloud-platform]: https://cloud.google.com/
-[cloud-containeranalysis]: https://cloud.google.com/container-analysis/
+[cloud-containeranalysis]: https://cloud.google.com/container-registry/docs/container-analysis
 [containeranalysis-product-docs]: https://cloud.google.com/container-registry/docs/container-analysis
 [containeranalysis-client-lib-docs]: https://googleapis.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/devtools/containeranalysis/v1beta1/package-summary.html
