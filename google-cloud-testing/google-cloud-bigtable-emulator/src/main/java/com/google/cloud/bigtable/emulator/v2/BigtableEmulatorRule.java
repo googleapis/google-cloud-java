@@ -27,7 +27,7 @@ public class BigtableEmulatorRule extends ExternalResource {
     return new BigtableEmulatorRule();
   }
 
-  protected BigtableEmulatorRule() { }
+  BigtableEmulatorRule() { }
 
   @Override
   protected void before() throws Throwable {

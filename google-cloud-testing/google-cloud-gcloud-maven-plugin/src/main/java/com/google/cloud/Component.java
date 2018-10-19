@@ -8,12 +8,12 @@ import java.net.URL;
 
 /** Representation of a gcloud component */
 @AutoValue
-public abstract class Component {
-  public static Component create(String id, String checksum, URL source, String fileType) {
+abstract class Component {
+  static Component create(String id, String checksum, URL source, String fileType) {
     return new AutoValue_Component(id, checksum, source, fileType);
   }
 
-  public static Component fromJson(URL baseUrl, JsonObject componentObj) throws IOException {
+  static Component fromJson(URL baseUrl, JsonObject componentObj) throws IOException {
     String id = componentObj.get("id").getAsString();
 
     JsonElement data = componentObj.get("data");
@@ -29,8 +29,8 @@ public abstract class Component {
     );
   }
 
-  public abstract String getId();
-  public abstract String getChecksum();
-  public abstract URL getSource();
-  public abstract String getFileType();
+  abstract String getId();
+  abstract String getChecksum();
+  abstract URL getSource();
+  abstract String getFileType();
 }
