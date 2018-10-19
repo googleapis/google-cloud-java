@@ -50,7 +50,7 @@ public class Emulator {
 
   public static Emulator createBundled() throws IOException {
     String resourcePath = String.format(
-        "gcloud/bigtable-%s/platform/bigtable-emulator/cbtemulator", getPlatform());
+        "/gcloud/bigtable-%s/platform/bigtable-emulator/cbtemulator", getPlatform());
 
     URL packagedEmulator = Emulator.class.getResource(resourcePath);
 
@@ -155,7 +155,8 @@ public class Emulator {
       case "x86":
         arch = "x86";
         break;
-      case "xmd64":
+      case "x86_64":
+      case "amd64":
         arch = "x86_64";
         break;
       default:
