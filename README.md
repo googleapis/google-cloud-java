@@ -63,16 +63,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-storage</artifactId>
-  <version>1.48.0</version>
+  <version>1.49.0</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-storage:1.48.0'
+compile 'com.google.cloud:google-cloud-storage:1.49.0'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-storage" % "1.48.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-storage" % "1.49.0"
 ```
 [//]: # ({x-version-update-end})
 
@@ -219,7 +219,11 @@ threading restrictions.
 
 Thus, the following are not supported:
 
-- Android
+- Android 
+  - Consider [Firebase](https://firebase.google.com), which includes many of these APIs.
+  - It is possible to use these libraries in many cases, although it is unsupported.
+    You can find examples, such as [this one](https://github.com/GoogleCloudPlatform/android-docs-samples/tree/master/speech/SpeechRecognitionClient),
+    in this [example repository](https://github.com/GoogleCloudPlatform/android-docs-samples) but consider the risks carefully before using these libraries in an application.
 - Alpine Linux (due to netty-tcnative requiring glibc, which is not present on Alpine)
 - Raspberry Pi (since it runs on the ARM architecture)
 - Google App Engine Standard Java 7
@@ -292,7 +296,7 @@ The easiest way to solve version conflicts is to use google-cloud's BOM. In Mave
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-bom</artifactId>
-        <version>0.66.0-alpha</version>
+        <version>0.67.0-alpha</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>

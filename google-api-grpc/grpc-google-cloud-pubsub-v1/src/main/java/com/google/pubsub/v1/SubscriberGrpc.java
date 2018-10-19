@@ -752,8 +752,7 @@ public final class SubscriberGrpc {
 
     /**
      * <pre>
-     * Pulls messages from the server. Returns an empty list if there are no
-     * messages available in the backlog. The server may return `UNAVAILABLE` if
+     * Pulls messages from the server. The server may return `UNAVAILABLE` if
      * there are too many concurrent pull requests pending for the given
      * subscription.
      * </pre>
@@ -824,7 +823,7 @@ public final class SubscriberGrpc {
      * Creates a snapshot from the requested subscription.&lt;br&gt;&lt;br&gt;
      * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
      * changed in backward-incompatible ways and is not recommended for production
-     * use. It is not subject to any SLA or deprecation policy.
+     * use. It is not subject to any SLA or deprecation policy.&lt;br&gt;&lt;br&gt;
      * If the snapshot already exists, returns `ALREADY_EXISTS`.
      * If the requested subscription doesn't exist, returns `NOT_FOUND`.
      * If the backlog in the subscription is too old -- and the resulting snapshot
@@ -1131,8 +1130,7 @@ public final class SubscriberGrpc {
 
     /**
      * <pre>
-     * Pulls messages from the server. Returns an empty list if there are no
-     * messages available in the backlog. The server may return `UNAVAILABLE` if
+     * Pulls messages from the server. The server may return `UNAVAILABLE` if
      * there are too many concurrent pull requests pending for the given
      * subscription.
      * </pre>
@@ -1208,7 +1206,7 @@ public final class SubscriberGrpc {
      * Creates a snapshot from the requested subscription.&lt;br&gt;&lt;br&gt;
      * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
      * changed in backward-incompatible ways and is not recommended for production
-     * use. It is not subject to any SLA or deprecation policy.
+     * use. It is not subject to any SLA or deprecation policy.&lt;br&gt;&lt;br&gt;
      * If the snapshot already exists, returns `ALREADY_EXISTS`.
      * If the requested subscription doesn't exist, returns `NOT_FOUND`.
      * If the backlog in the subscription is too old -- and the resulting snapshot
@@ -1395,8 +1393,7 @@ public final class SubscriberGrpc {
 
     /**
      * <pre>
-     * Pulls messages from the server. Returns an empty list if there are no
-     * messages available in the backlog. The server may return `UNAVAILABLE` if
+     * Pulls messages from the server. The server may return `UNAVAILABLE` if
      * there are too many concurrent pull requests pending for the given
      * subscription.
      * </pre>
@@ -1451,7 +1448,7 @@ public final class SubscriberGrpc {
      * Creates a snapshot from the requested subscription.&lt;br&gt;&lt;br&gt;
      * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
      * changed in backward-incompatible ways and is not recommended for production
-     * use. It is not subject to any SLA or deprecation policy.
+     * use. It is not subject to any SLA or deprecation policy.&lt;br&gt;&lt;br&gt;
      * If the snapshot already exists, returns `ALREADY_EXISTS`.
      * If the requested subscription doesn't exist, returns `NOT_FOUND`.
      * If the backlog in the subscription is too old -- and the resulting snapshot
@@ -1641,8 +1638,7 @@ public final class SubscriberGrpc {
 
     /**
      * <pre>
-     * Pulls messages from the server. Returns an empty list if there are no
-     * messages available in the backlog. The server may return `UNAVAILABLE` if
+     * Pulls messages from the server. The server may return `UNAVAILABLE` if
      * there are too many concurrent pull requests pending for the given
      * subscription.
      * </pre>
@@ -1701,7 +1697,7 @@ public final class SubscriberGrpc {
      * Creates a snapshot from the requested subscription.&lt;br&gt;&lt;br&gt;
      * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
      * changed in backward-incompatible ways and is not recommended for production
-     * use. It is not subject to any SLA or deprecation policy.
+     * use. It is not subject to any SLA or deprecation policy.&lt;br&gt;&lt;br&gt;
      * If the snapshot already exists, returns `ALREADY_EXISTS`.
      * If the requested subscription doesn't exist, returns `NOT_FOUND`.
      * If the backlog in the subscription is too old -- and the resulting snapshot
