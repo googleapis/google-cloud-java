@@ -59,12 +59,6 @@ public interface BatchClient {
    * @param batchTransactionId to re-initialize the transaction, re-using the timestamp for
    *     successive read/query.
    *
-   * <!--SNIPPET batch_client_read_with_id-->
-   * <pre>{@code
-   * BatchTransactionId txnId = my_txn.getBatchTransactionId();
-   * BatchReadOnlyTransaction txn = batchClient.batchReadOnlyTransaction(txnId);
-   * }</pre>
-   * <!--SNIPPET batch_client_read_with_id-->
    */
   BatchReadOnlyTransaction batchReadOnlyTransaction(BatchTransactionId batchTransactionId);
 }

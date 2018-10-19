@@ -29,6 +29,13 @@ public interface ExecuteSqlRequestOrBuilder extends
    * <pre>
    * The transaction to use. If none is provided, the default is a
    * temporary read-only transaction with strong concurrency.
+   * The transaction to use.
+   * For queries, if none is provided, the default is a temporary read-only
+   * transaction with strong concurrency.
+   * Standard DML statements require a ReadWrite transaction. Single-use
+   * transactions are not supported (to avoid replay).  The caller must
+   * either supply an existing transaction ID or begin a new transaction.
+   * Partitioned DML requires an existing PartitionedDml transaction ID.
    * </pre>
    *
    * <code>.google.spanner.v1.TransactionSelector transaction = 2;</code>
@@ -38,6 +45,13 @@ public interface ExecuteSqlRequestOrBuilder extends
    * <pre>
    * The transaction to use. If none is provided, the default is a
    * temporary read-only transaction with strong concurrency.
+   * The transaction to use.
+   * For queries, if none is provided, the default is a temporary read-only
+   * transaction with strong concurrency.
+   * Standard DML statements require a ReadWrite transaction. Single-use
+   * transactions are not supported (to avoid replay).  The caller must
+   * either supply an existing transaction ID or begin a new transaction.
+   * Partitioned DML requires an existing PartitionedDml transaction ID.
    * </pre>
    *
    * <code>.google.spanner.v1.TransactionSelector transaction = 2;</code>
@@ -47,6 +61,13 @@ public interface ExecuteSqlRequestOrBuilder extends
    * <pre>
    * The transaction to use. If none is provided, the default is a
    * temporary read-only transaction with strong concurrency.
+   * The transaction to use.
+   * For queries, if none is provided, the default is a temporary read-only
+   * transaction with strong concurrency.
+   * Standard DML statements require a ReadWrite transaction. Single-use
+   * transactions are not supported (to avoid replay).  The caller must
+   * either supply an existing transaction ID or begin a new transaction.
+   * Partitioned DML requires an existing PartitionedDml transaction ID.
    * </pre>
    *
    * <code>.google.spanner.v1.TransactionSelector transaction = 2;</code>
@@ -55,7 +76,7 @@ public interface ExecuteSqlRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. The SQL query string.
+   * Required. The SQL string.
    * </pre>
    *
    * <code>string sql = 3;</code>
@@ -63,7 +84,7 @@ public interface ExecuteSqlRequestOrBuilder extends
   java.lang.String getSql();
   /**
    * <pre>
-   * Required. The SQL query string.
+   * Required. The SQL string.
    * </pre>
    *
    * <code>string sql = 3;</code>
@@ -73,14 +94,14 @@ public interface ExecuteSqlRequestOrBuilder extends
 
   /**
    * <pre>
-   * The SQL query string can contain parameter placeholders. A parameter
+   * The SQL string can contain parameter placeholders. A parameter
    * placeholder consists of `'&#64;'` followed by the parameter
    * name. Parameter names consist of any combination of letters,
    * numbers, and underscores.
    * Parameters can appear anywhere that a literal value is expected.  The same
    * parameter name can be used more than once, for example:
    *   `"WHERE id &gt; &#64;msg_id AND id &lt; &#64;msg_id + 100"`
-   * It is an error to execute an SQL query with unbound parameters.
+   * It is an error to execute an SQL statement with unbound parameters.
    * Parameter values are specified using `params`, which is a JSON
    * object whose keys are parameter names, and whose values are the
    * corresponding parameter values.
@@ -91,14 +112,14 @@ public interface ExecuteSqlRequestOrBuilder extends
   boolean hasParams();
   /**
    * <pre>
-   * The SQL query string can contain parameter placeholders. A parameter
+   * The SQL string can contain parameter placeholders. A parameter
    * placeholder consists of `'&#64;'` followed by the parameter
    * name. Parameter names consist of any combination of letters,
    * numbers, and underscores.
    * Parameters can appear anywhere that a literal value is expected.  The same
    * parameter name can be used more than once, for example:
    *   `"WHERE id &gt; &#64;msg_id AND id &lt; &#64;msg_id + 100"`
-   * It is an error to execute an SQL query with unbound parameters.
+   * It is an error to execute an SQL statement with unbound parameters.
    * Parameter values are specified using `params`, which is a JSON
    * object whose keys are parameter names, and whose values are the
    * corresponding parameter values.
@@ -109,14 +130,14 @@ public interface ExecuteSqlRequestOrBuilder extends
   com.google.protobuf.Struct getParams();
   /**
    * <pre>
-   * The SQL query string can contain parameter placeholders. A parameter
+   * The SQL string can contain parameter placeholders. A parameter
    * placeholder consists of `'&#64;'` followed by the parameter
    * name. Parameter names consist of any combination of letters,
    * numbers, and underscores.
    * Parameters can appear anywhere that a literal value is expected.  The same
    * parameter name can be used more than once, for example:
    *   `"WHERE id &gt; &#64;msg_id AND id &lt; &#64;msg_id + 100"`
-   * It is an error to execute an SQL query with unbound parameters.
+   * It is an error to execute an SQL statement with unbound parameters.
    * Parameter values are specified using `params`, which is a JSON
    * object whose keys are parameter names, and whose values are the
    * corresponding parameter values.
@@ -132,7 +153,7 @@ public interface ExecuteSqlRequestOrBuilder extends
    * from a JSON value.  For example, values of type `BYTES` and values
    * of type `STRING` both appear in [params][google.spanner.v1.ExecuteSqlRequest.params] as JSON strings.
    * In these cases, `param_types` can be used to specify the exact
-   * SQL type for some or all of the SQL query parameters. See the
+   * SQL type for some or all of the SQL statement parameters. See the
    * definition of [Type][google.spanner.v1.Type] for more information
    * about SQL types.
    * </pre>
@@ -146,7 +167,7 @@ public interface ExecuteSqlRequestOrBuilder extends
    * from a JSON value.  For example, values of type `BYTES` and values
    * of type `STRING` both appear in [params][google.spanner.v1.ExecuteSqlRequest.params] as JSON strings.
    * In these cases, `param_types` can be used to specify the exact
-   * SQL type for some or all of the SQL query parameters. See the
+   * SQL type for some or all of the SQL statement parameters. See the
    * definition of [Type][google.spanner.v1.Type] for more information
    * about SQL types.
    * </pre>
@@ -167,7 +188,7 @@ public interface ExecuteSqlRequestOrBuilder extends
    * from a JSON value.  For example, values of type `BYTES` and values
    * of type `STRING` both appear in [params][google.spanner.v1.ExecuteSqlRequest.params] as JSON strings.
    * In these cases, `param_types` can be used to specify the exact
-   * SQL type for some or all of the SQL query parameters. See the
+   * SQL type for some or all of the SQL statement parameters. See the
    * definition of [Type][google.spanner.v1.Type] for more information
    * about SQL types.
    * </pre>
@@ -182,7 +203,7 @@ public interface ExecuteSqlRequestOrBuilder extends
    * from a JSON value.  For example, values of type `BYTES` and values
    * of type `STRING` both appear in [params][google.spanner.v1.ExecuteSqlRequest.params] as JSON strings.
    * In these cases, `param_types` can be used to specify the exact
-   * SQL type for some or all of the SQL query parameters. See the
+   * SQL type for some or all of the SQL statement parameters. See the
    * definition of [Type][google.spanner.v1.Type] for more information
    * about SQL types.
    * </pre>
@@ -199,7 +220,7 @@ public interface ExecuteSqlRequestOrBuilder extends
    * from a JSON value.  For example, values of type `BYTES` and values
    * of type `STRING` both appear in [params][google.spanner.v1.ExecuteSqlRequest.params] as JSON strings.
    * In these cases, `param_types` can be used to specify the exact
-   * SQL type for some or all of the SQL query parameters. See the
+   * SQL type for some or all of the SQL statement parameters. See the
    * definition of [Type][google.spanner.v1.Type] for more information
    * about SQL types.
    * </pre>
@@ -212,10 +233,10 @@ public interface ExecuteSqlRequestOrBuilder extends
 
   /**
    * <pre>
-   * If this request is resuming a previously interrupted SQL query
+   * If this request is resuming a previously interrupted SQL statement
    * execution, `resume_token` should be copied from the last
    * [PartialResultSet][google.spanner.v1.PartialResultSet] yielded before the interruption. Doing this
-   * enables the new SQL query execution to resume where the last one left
+   * enables the new SQL statement execution to resume where the last one left
    * off. The rest of the request parameters must exactly match the
    * request that yielded this token.
    * </pre>
@@ -256,4 +277,20 @@ public interface ExecuteSqlRequestOrBuilder extends
    * <code>bytes partition_token = 8;</code>
    */
   com.google.protobuf.ByteString getPartitionToken();
+
+  /**
+   * <pre>
+   * A per-transaction sequence number used to identify this request. This
+   * makes each request idempotent such that if the request is received multiple
+   * times, at most one will succeed.
+   * The sequence number must be monotonically increasing within the
+   * transaction. If a request arrives for the first time with an out-of-order
+   * sequence number, the transaction may be aborted. Replays of previously
+   * handled requests will yield the same response as the first execution.
+   * Required for DML statements. Ignored for queries.
+   * </pre>
+   *
+   * <code>int64 seqno = 9;</code>
+   */
+  long getSeqno();
 }

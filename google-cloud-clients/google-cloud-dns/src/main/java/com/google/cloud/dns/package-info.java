@@ -22,7 +22,7 @@
  *
  * The first snippet shows how to create a zone resource. The complete source code can be found on
  * <a href=
- * "https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/dns/snippets/CreateAndListZones.java">
+ * "https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/dns/snippets/CreateAndListZones.java">
  * CreateAndListZones.java</a>. Note that you need to replace the {@code domainName} with a domain
  * name that you own and the ownership of which you verified with Google.
  *
@@ -38,7 +38,7 @@
  * <p>
  * The second example shows how to create records inside a zone. The complete code can be found on
  * <a href=
- * "https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/dns/snippets/CreateAndListDnsRecords.java">
+ * "https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/dns/snippets/CreateAndListDnsRecords.java">
  * CreateAndListDnsRecords.java</a>.
  *
  * <pre> {@code
@@ -56,9 +56,9 @@
  *
  * <p>
  * When using google-cloud from outside of App/Compute Engine, you have to
- * <a href="https://github.com/GoogleCloudPlatform/google-cloud-java#specifying-a-project-id">specify a
+ * <a href="https://github.com/googleapis/google-cloud-java#specifying-a-project-id">specify a
  * project ID</a> and
- * <a href="https://github.com/GoogleCloudPlatform/google-cloud-java#authentication">provide
+ * <a href="https://github.com/googleapis/google-cloud-java#authentication">provide
  * credentials</a>.
  *
  * @see <a href="https://cloud.google.com/dns/">Google Cloud DNS</a>

@@ -53,7 +53,7 @@ public class SpannerSnippets {
     final String instance = "test-instance";
     final String database = "example-db";
     DatabaseId db =
-        DatabaseId.of("span-cloud-testing", "nsujir-ins", "example-db");
+        DatabaseId.of(project, instance, database);
     DatabaseClient dbClient = spanner.getDatabaseClient(db);
     // [END get_db_client]
 
@@ -78,7 +78,7 @@ public class SpannerSnippets {
     final String instance = "test-instance";
     final String database = "example-db";
     DatabaseId db =
-        DatabaseId.of("span-cloud-testing", "nsujir-ins", "example-db");
+        DatabaseId.of(project, instance, database);
     BatchClient batchClient = spanner.getBatchClient(db);
     // [END get_batch_client]
 

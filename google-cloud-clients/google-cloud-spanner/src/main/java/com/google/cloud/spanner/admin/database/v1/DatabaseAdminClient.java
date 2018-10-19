@@ -263,7 +263,7 @@ public class DatabaseAdminClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final ListDatabasesPagedResponse listDatabases(ListDatabasesRequest request) {
+  public final ListDatabasesPagedResponse listDatabases(ListDatabasesRequest request) {
     return listDatabasesPagedCallable().call(request);
   }
 
@@ -569,7 +569,7 @@ public class DatabaseAdminClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final Database getDatabase(GetDatabaseRequest request) {
+  public final Database getDatabase(GetDatabaseRequest request) {
     return getDatabaseCallable().call(request);
   }
 
@@ -831,7 +831,7 @@ public class DatabaseAdminClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final void dropDatabase(DropDatabaseRequest request) {
+  public final void dropDatabase(DropDatabaseRequest request) {
     dropDatabaseCallable().call(request);
   }
 
@@ -930,7 +930,7 @@ public class DatabaseAdminClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final GetDatabaseDdlResponse getDatabaseDdl(GetDatabaseDdlRequest request) {
+  public final GetDatabaseDdlResponse getDatabaseDdl(GetDatabaseDdlRequest request) {
     return getDatabaseDdlCallable().call(request);
   }
 
@@ -1097,7 +1097,7 @@ public class DatabaseAdminClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final Policy getIamPolicy(GetIamPolicyRequest request) {
+  public final Policy getIamPolicy(GetIamPolicyRequest request) {
     return getIamPolicyCallable().call(request);
   }
 

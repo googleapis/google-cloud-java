@@ -57,7 +57,6 @@ public interface StorageRpc extends ServiceRpc {
     FIELDS("fields"),
     CUSTOMER_SUPPLIED_KEY("customerSuppliedKey"),
     USER_PROJECT("userProject"),
-    @GcpLaunchStage.Beta
     KMS_KEY_NAME("kmsKeyName");
 
     private final String value;
@@ -459,6 +458,14 @@ public interface StorageRpc extends ServiceRpc {
    * @throws StorageException upon failure
    */
   Notification createNotification(String bucket, Notification notification);
+
+  /**
+   * Lock retention policy for the provided bucket.
+   *
+   * @return a {@code Bucket} object of the locked bucket
+   * @throws StorageException upon failure
+   */
+  Bucket lockRetentionPolicy(Bucket bucket, Map<Option, ?> options);
 
   /**
    * Returns the service account associated with the given project.

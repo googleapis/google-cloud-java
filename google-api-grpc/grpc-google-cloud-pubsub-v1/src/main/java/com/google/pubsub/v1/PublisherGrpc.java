@@ -384,8 +384,7 @@ public final class PublisherGrpc {
     /**
      * <pre>
      * Adds one or more messages to the topic. Returns `NOT_FOUND` if the topic
-     * does not exist. The message payload must not be empty; it must contain
-     *  either a non-empty data field, or at least one attribute.
+     * does not exist.
      * </pre>
      */
     public void publish(com.google.pubsub.v1.PublishRequest request,
@@ -561,8 +560,7 @@ public final class PublisherGrpc {
     /**
      * <pre>
      * Adds one or more messages to the topic. Returns `NOT_FOUND` if the topic
-     * does not exist. The message payload must not be empty; it must contain
-     *  either a non-empty data field, or at least one attribute.
+     * does not exist.
      * </pre>
      */
     public void publish(com.google.pubsub.v1.PublishRequest request,
@@ -681,8 +679,7 @@ public final class PublisherGrpc {
     /**
      * <pre>
      * Adds one or more messages to the topic. Returns `NOT_FOUND` if the topic
-     * does not exist. The message payload must not be empty; it must contain
-     *  either a non-empty data field, or at least one attribute.
+     * does not exist.
      * </pre>
      */
     public com.google.pubsub.v1.PublishResponse publish(com.google.pubsub.v1.PublishRequest request) {
@@ -797,8 +794,7 @@ public final class PublisherGrpc {
     /**
      * <pre>
      * Adds one or more messages to the topic. Returns `NOT_FOUND` if the topic
-     * does not exist. The message payload must not be empty; it must contain
-     *  either a non-empty data field, or at least one attribute.
+     * does not exist.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.pubsub.v1.PublishResponse> publish(
