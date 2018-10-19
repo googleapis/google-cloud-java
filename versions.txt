@@ -144,6 +144,8 @@ google-cloud-storage:1.48.0:1.48.1-SNAPSHOT
 google-cloud-tasks:0.66.0-beta:0.66.1-beta-SNAPSHOT
 google-cloud-texttospeech:0.66.0-beta:0.66.1-beta-SNAPSHOT
 google-cloud-testing:0.66.0-alpha:0.66.1-alpha-SNAPSHOT
+google-cloud-gcloud-maven-plugin:0.66.0-alpha:0.66.1-alpha-SNAPSHOT
+google-cloud-bigtable-emulator:0.66.0-alpha:0.66.1-alpha-SNAPSHOT
 google-cloud-trace:0.66.0-beta:0.66.1-beta-SNAPSHOT
 google-cloud-translate:1.48.0:1.48.1-SNAPSHOT
 google-cloud-util:0.66.0-alpha:0.66.1-alpha-SNAPSHOT
