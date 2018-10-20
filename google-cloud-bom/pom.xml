@@ -167,36 +167,10 @@
       </dependency>
       <dependency>
         <groupId>com.google.api</groupId>
-        <artifactId>gax</artifactId>
-        <version>1.32.0</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api</groupId>
-        <artifactId>gax</artifactId>
-        <version>1.32.0</version>
-        <classifier>testlib</classifier>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api</groupId>
-        <artifactId>gax-grpc</artifactId>
-        <version>1.32.0</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api</groupId>
-        <artifactId>gax-grpc</artifactId>
-        <version>1.32.0</version>
-        <classifier>testlib</classifier>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api</groupId>
-        <artifactId>gax-httpjson</artifactId>
-        <version>0.49.0</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api</groupId>
-        <artifactId>gax-httpjson</artifactId>
-        <version>0.49.0</version>
-        <classifier>testlib</classifier>
+        <artifactId>gax-bom</artifactId>
+        <version>1.34.0</version>
+        <type>pom</type>
+        <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
