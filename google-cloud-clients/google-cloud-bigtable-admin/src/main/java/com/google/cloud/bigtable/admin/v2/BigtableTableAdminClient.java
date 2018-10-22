@@ -352,7 +352,11 @@ public final class BigtableTableAdminClient implements AutoCloseable {
    *  found,
    *  new ApiFutureCallback<Boolean>() {
    *    public void onSuccess(Boolean found) {
-   *      System.out.println("Table exists");
+   *      if (found) {
+   *        System.out.println("Table exists");
+   *      } else {
+   *        System.out.println("Table not found");
+   *      }
    *    }
    *
    *    public void onFailure(Throwable t) {
@@ -467,7 +471,7 @@ public final class BigtableTableAdminClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre>{@code
-   * ApiFuture<List<TableName>> listFuture = client.listTables();
+   * ApiFuture<List<TableName>> listFuture = client.listTablesAsync();
    *
    * ApiFutures.addCallback(
    *   listFuture,
