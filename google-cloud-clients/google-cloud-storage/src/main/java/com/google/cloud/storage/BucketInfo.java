@@ -99,7 +99,7 @@ public class BucketInfo implements Serializable {
 
   /**
    * Lifecycle rule for a bucket. Allows supported Actions, such as deleting and changing storage class,
-   * to be executed when certain Conditions are met
+   * to be executed when certain Conditions are met.
    *
    * @see <a href="https://cloud.google.com/storage/docs/lifecycle#actions">Object Lifecycle Management</a>
    */
