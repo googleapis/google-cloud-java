@@ -222,7 +222,7 @@ public class BucketInfo implements Serializable {
     }
 
     /**
-     * Condition for a Lifecycle rule, specifies under what criteria an Action should be executed
+     * Condition for a Lifecycle rule, specifies under what criteria an Action should be executed.
      *
      * @see <a href="https://cloud.google.com/storage/docs/lifecycle#conditions">Object Lifecycle Management</a>
      */
@@ -482,7 +482,9 @@ public class BucketInfo implements Serializable {
    *
    * @see <a href="https://cloud.google.com/storage/docs/lifecycle">Object Lifecycle Management</a>
    * @deprecated Use a {@code LifecycleRule} with a {@code DeleteLifecycleAction} and use {@code
-   *     LifecycleCondition.Builder.setAge} instead. For example, {@code new
+   *     LifecycleCondition.Builder.setAge} instead.
+   *
+   *     <p>For example, {@code new
    *     DeleteLifecycleAction(1)} is equivalent to {@code  new LifecycleRule(
    *     LifecycleAction.newDeleteAction(), LifecycleCondition.newBuilder().setAge(1).build()))}
    */
