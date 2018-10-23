@@ -2,21 +2,13 @@
 # This file controls who is tagged for review for any given pull request.
 
 # For anything not explicitly taken by someone else.
-*                                     @googleapis/yoshi-java
+*                                                 @googleapis/yoshi-java
 # Owners per module.
-google-cloud-bigquery/src/*           @vam-google @tswast
-google-cloud-bigtable/src/*           @igorbernstein2
-google-cloud-compute/src/*            @andreamlin
-google-cloud-contrib/src/*            @pongad @jean-philippe-martin
-google-cloud-datastore/src/*          @vam-google
-google-cloud-firestore/src/*          @schmidt-sebastian
-google-cloud-logging/src/*            @andreamlin
-google-cloud-pubsub/src/*             @pongad @googleapis/yoshi-java
-google-cloud-spanner/src/*            @vam-google @snehashah16
-google-cloud-speech/src/*             @vam-google
-google-cloud-storage/src/*            @andreamlin
-google-cloud-testing/src/*            @vam-google
-google-cloud-translate/src/*          @andreamlin
-google-cloud-video-intelligence/src/* @vam-google
-google-cloud-vision/src/*             @vam-google
+google-cloud-clients/google-cloud-bigquery/src/*  @tswast
+google-cloud-clients/google-cloud-bigtable/src/*  @igorbernstein2
+google-cloud-clients/google-cloud-compute/src/*   @andreamlin
+google-cloud-clients/google-cloud-contrib/src/*   @pongad @jean-philippe-martin
+google-cloud-clients/google-cloud-firestore/src/* @schmidt-sebastian
+google-cloud-clients/google-cloud-pubsub/src/*    @pongad @googleapis/yoshi-java
+google-cloud-clients/google-cloud-spanner/src/*   @snehashah16
 
