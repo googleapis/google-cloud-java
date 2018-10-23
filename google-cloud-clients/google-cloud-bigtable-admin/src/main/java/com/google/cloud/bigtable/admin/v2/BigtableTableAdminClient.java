@@ -20,6 +20,7 @@ import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.gax.rpc.ApiExceptions;
+import com.google.api.gax.rpc.NotFoundException;
 import com.google.bigtable.admin.v2.DeleteTableRequest;
 import com.google.bigtable.admin.v2.DropRowRangeRequest;
 import com.google.bigtable.admin.v2.GetTableRequest;
@@ -324,6 +325,65 @@ public final class BigtableTableAdminClient implements AutoCloseable {
   }
 
   /**
+   * Checks if the table specified by the tableId exists
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * if(client.exists("my-table")) {
+   *   System.out.println("Table exists");
+   * }
+   * }</pre>
+   */
+  public boolean exists(String tableId) {
+    return ApiExceptions.callAndTranslateApiException(existsAsync(tableId));
+  }
+
+  /**
+   * Asynchronously checks if the table specified by the tableId exists
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * ApiFuture<Boolean> found = client.existsAsync("my-table");
+   *
+   * ApiFutures.addCallback(
+   *  found,
+   *  new ApiFutureCallback<Boolean>() {
+   *    public void onSuccess(Boolean found) {
+   *      if (found) {
+   *        System.out.println("Table exists");
+   *      } else {
+   *        System.out.println("Table not found");
+   *      }
+   *    }
+   *
+   *    public void onFailure(Throwable t) {
+   *      t.printStackTrace();
+   *    }
+   *  },
+   *  MoreExecutors.directExecutor()
+   * );
+   * }</pre>
+   */
+  public ApiFuture<Boolean> existsAsync(String tableId) {
+
+    ApiFuture<Table> protoFuture = getTableAsync(tableId, com.google.bigtable.admin.v2.Table.View.NAME_ONLY);
+
+    ApiFuture<Boolean> existsFuture = ApiFutures.transform(protoFuture, new ApiFunction<Table, Boolean>() {
+      @Override public Boolean apply(Table ignored) {
+        return true;
+      }
+    }, MoreExecutors.directExecutor());
+
+    return ApiFutures.catching(existsFuture, NotFoundException.class, new ApiFunction<NotFoundException, Boolean>() {
+      @Override public Boolean apply(NotFoundException ignored) {
+        return false;
+      }
+    }, MoreExecutors.directExecutor());
+  }
+
+  /**
    * Gets the table metadata by tableId.
    *
    * <p>Sample code:
@@ -373,8 +433,13 @@ public final class BigtableTableAdminClient implements AutoCloseable {
    */
   @SuppressWarnings("WeakerAccess")
   public ApiFuture<Table> getTableAsync(String tableId) {
+    return getTableAsync(tableId, com.google.bigtable.admin.v2.Table.View.SCHEMA_VIEW);
+  }
+
+  private ApiFuture<Table> getTableAsync(String tableId, com.google.bigtable.admin.v2.Table.View view) {
     GetTableRequest request = GetTableRequest.newBuilder()
         .setName(getTableName(tableId))
+        .setView(view)
         .build();
 
     return transformToTableResponse(
