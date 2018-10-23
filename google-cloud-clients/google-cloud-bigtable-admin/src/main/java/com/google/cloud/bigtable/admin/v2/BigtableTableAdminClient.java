@@ -336,7 +336,7 @@ public final class BigtableTableAdminClient implements AutoCloseable {
    * }</pre>
    */
   public boolean exists(String tableId) {
-    return awaitFuture(existsAsync(tableId)).booleanValue();
+    return ApiExceptions.callAndTranslateApiException(existsAsync(tableId));
   }
 
   /**
