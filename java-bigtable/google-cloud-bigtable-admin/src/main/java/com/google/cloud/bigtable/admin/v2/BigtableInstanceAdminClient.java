@@ -19,6 +19,7 @@ import com.google.api.core.ApiAsyncFunction;
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
+import com.google.api.gax.rpc.ApiExceptions;
 import com.google.api.resourcenames.ResourceName;
 import com.google.bigtable.admin.v2.AppProfileName;
 import com.google.bigtable.admin.v2.ClusterName;
@@ -46,9 +47,7 @@ import com.google.cloud.bigtable.admin.v2.stub.BigtableInstanceAdminStub;
 import com.google.common.base.Verify;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
-import com.google.common.util.concurrent.Futures;
 import com.google.common.util.concurrent.MoreExecutors;
-import com.google.common.util.concurrent.UncheckedExecutionException;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
@@ -160,7 +159,7 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
    */
   @SuppressWarnings("WeakerAccess")
   public Instance createInstance(CreateInstanceRequest request) {
-    return awaitFuture(createInstanceAsync(request));
+    return ApiExceptions.callAndTranslateApiException(createInstanceAsync(request));
   }
 
   /**
@@ -208,7 +207,7 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
    */
   @SuppressWarnings("WeakerAccess")
   public Instance updateInstance(UpdateInstanceRequest request) {
-    return awaitFuture(updateInstanceAsync(request));
+    return ApiExceptions.callAndTranslateApiException(updateInstanceAsync(request));
   }
 
   /**
@@ -251,7 +250,7 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
    */
   @SuppressWarnings("WeakerAccess")
   public Instance getInstance(String id) {
-    return awaitFuture(getInstanceAsync(id));
+    return ApiExceptions.callAndTranslateApiException(getInstanceAsync(id));
   }
 
   /**
@@ -302,7 +301,7 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
    */
   @SuppressWarnings("WeakerAccess")
   public List<Instance> listInstances() {
-    return awaitFuture(listInstancesAsync());
+    return ApiExceptions.callAndTranslateApiException(listInstancesAsync());
   }
 
   /**
@@ -385,7 +384,7 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
    */
   @SuppressWarnings("WeakerAccess")
   public void deleteInstance(String instanceId) {
-    awaitFuture(deleteInstanceAsync(instanceId));
+    ApiExceptions.callAndTranslateApiException(deleteInstanceAsync(instanceId));
   }
 
   /**
@@ -434,7 +433,7 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
    */
   @SuppressWarnings("WeakerAccess")
   public Cluster createCluster(CreateClusterRequest request) {
-    return awaitFuture(createClusterAsync(request));
+    return ApiExceptions.callAndTranslateApiException(createClusterAsync(request));
   }
 
   /**
@@ -478,7 +477,7 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
    */
   @SuppressWarnings("WeakerAccess")
   public Cluster getCluster(String instanceId, String clusterId) {
-    return awaitFuture(getClusterAsync(instanceId, clusterId));
+    return ApiExceptions.callAndTranslateApiException(getClusterAsync(instanceId, clusterId));
   }
 
   /**
@@ -531,7 +530,7 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
    */
   @SuppressWarnings("WeakerAccess")
   public List<Cluster> listClusters(String instanceId) {
-    return awaitFuture(listClustersAsync(instanceId));
+    return ApiExceptions.callAndTranslateApiException(listClustersAsync(instanceId));
   }
 
   /**
@@ -615,7 +614,8 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
    */
   @SuppressWarnings("WeakerAccess")
   public Cluster resizeCluster(String instanceId, String clusterId, int numServeNodes) {
-    return awaitFuture(resizeClusterAsync(instanceId, clusterId, numServeNodes));
+    return ApiExceptions.callAndTranslateApiException(
+        resizeClusterAsync(instanceId, clusterId, numServeNodes));
   }
 
   /**
@@ -662,7 +662,7 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
    */
   @SuppressWarnings("WeakerAccess")
   public void deleteCluster(String instanceId, String clusterId) {
-    awaitFuture(deleteClusterAsync(instanceId, clusterId));
+    ApiExceptions.callAndTranslateApiException(deleteClusterAsync(instanceId, clusterId));
   }
 
   /**
@@ -713,7 +713,7 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
    */
   @SuppressWarnings("WeakerAccess")
   public AppProfile createAppProfile(CreateAppProfileRequest request) {
-    return awaitFuture(createAppProfileAsync(request));
+    return ApiExceptions.callAndTranslateApiException(createAppProfileAsync(request));
   }
 
   /**
@@ -759,7 +759,7 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
    */
   @SuppressWarnings("WeakerAccess")
   public AppProfile getAppProfile(String instanceId, String appProfileId) {
-    return awaitFuture(getAppProfileAsync(instanceId, appProfileId));
+    return ApiExceptions.callAndTranslateApiException(getAppProfileAsync(instanceId, appProfileId));
   }
 
   /**
@@ -808,7 +808,7 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
    */
   @SuppressWarnings("WeakerAccess")
   public List<AppProfile> listAppProfiles(String instanceId) {
-    return awaitFuture(listAppProfilesAsync(instanceId));
+    return ApiExceptions.callAndTranslateApiException(listAppProfilesAsync(instanceId));
   }
 
   /**
@@ -911,7 +911,7 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
    */
   @SuppressWarnings("WeakerAccess")
   public AppProfile updateAppProfile(UpdateAppProfileRequest request) {
-    return awaitFuture(updateAppProfileAsync(request));
+    return ApiExceptions.callAndTranslateApiException(updateAppProfileAsync(request));
   }
 
   /**
@@ -966,7 +966,7 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
    */
   @SuppressWarnings("WeakerAccess")
   public void deleteAppProfile(String instanceId, String appProfileId) {
-    awaitFuture(deleteAppProfileAsync(instanceId, appProfileId));
+    ApiExceptions.callAndTranslateApiException(deleteAppProfileAsync(instanceId, appProfileId));
   }
 
   /**
@@ -1016,7 +1016,7 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
    */
   @SuppressWarnings("WeakerAccess")
   public Policy getIamPolicy(String instanceId) {
-    return awaitFuture(getIamPolicyAsync(instanceId));
+    return ApiExceptions.callAndTranslateApiException(getIamPolicyAsync(instanceId));
   }
 
   /**
@@ -1083,7 +1083,7 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
    */
   @SuppressWarnings("WeakerAccess")
   public Policy setIamPolicy(String instanceId, Policy policy) {
-    return awaitFuture(setIamPolicyAsync(instanceId, policy));
+    return ApiExceptions.callAndTranslateApiException(setIamPolicyAsync(instanceId, policy));
   }
 
   /**
@@ -1210,7 +1210,8 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
    */
   @SuppressWarnings("WeakerAccess")
   public List<String> testIamPermission(ResourceName resourceName, String... permissions) {
-    return awaitFuture(testIamPermissionAsync(resourceName, permissions));
+    return ApiExceptions.callAndTranslateApiException(
+        testIamPermissionAsync(resourceName, permissions));
   }
 
 
@@ -1275,30 +1276,5 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
     public com.google.iam.v1.Policy toPb(Policy policy) {
       return super.toPb(policy);
     }
-  }
-
-  /**
-   * Awaits the result of a future, taking care to propagate errors while maintaining the call site
-   * in a suppressed exception. This allows semantic errors to be caught across threads, while
-   * preserving the call site in the error. The caller's stacktrace will be made available as a
-   * suppressed exception.
-   */
-  // TODO(igorbernstein2): try to move this into gax
-  private <T> T awaitFuture(ApiFuture<T> future) {
-    RuntimeException error;
-    try {
-      return Futures.getUnchecked(future);
-    } catch (UncheckedExecutionException e) {
-      if (e.getCause() instanceof RuntimeException) {
-        error = (RuntimeException) e.getCause();
-      } else {
-        error = e;
-      }
-    } catch (RuntimeException e) {
-      error = e;
-    }
-    // Add the caller's stack as a suppressed exception
-    error.addSuppressed(new RuntimeException("Encountered error while awaiting future"));
-    throw error;
   }
 }
