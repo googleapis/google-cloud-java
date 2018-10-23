@@ -405,7 +405,7 @@ public final class BigtableTableAdminClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre>{@code
-   * ApiFuture<List<TableName>> listFuture = client.listTables();
+   * ApiFuture<List<TableName>> listFuture = client.listTablesAsync();
    *
    * ApiFutures.addCallback(
    *   listFuture,

@@ -393,7 +393,7 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre>{@code
-   * ApiFuture<Void> deleteFuture = client.deleteInstance("my-instance");
+   * ApiFuture<Void> deleteFuture = client.deleteInstanceAsync("my-instance");
    * deleteFuture.get();
    * }</pre>
    */
@@ -521,7 +521,7 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
    *
    * <pre>{@code
    * try {
-   *   List<Cluster> clusters = cluster.listClusters("my-instance");
+   *   List<Cluster> clusters = client.listClusters("my-instance");
    * } catch (PartialListClustersException e) {
    *   System.out.println("The following zones are unavailable: " + e.getUnavailableZones());
    *   System.out.println("But the following clusters are reachable: " + e.getClusters())
@@ -609,7 +609,7 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre>{@code
-   * Cluster cluster = cluster.resizeCluster("my-instance", "my-cluster", 30);
+   * Cluster cluster = client.resizeCluster("my-instance", "my-cluster", 30);
    * }</pre>
    */
   @SuppressWarnings("WeakerAccess")
@@ -623,7 +623,7 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
    * a PRODUCTION instance can be resized.
    *
    * <pre>{@code
-   * ApiFuture<Cluster> clusterFuture = cluster.resizeCluster("my-instance", "my-cluster", 30);
+   * ApiFuture<Cluster> clusterFuture = client.resizeCluster("my-instance", "my-cluster", 30);
    * Cluster cluster = clusterFuture.get();
    * }</pre>
    */
@@ -1165,7 +1165,7 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre>{@code
-   * ApiFuture<List<String>> grantedPermissionsFuture = client.testIamPermission("my-instance",
+   * ApiFuture<List<String>> grantedPermissionsFuture = client.testIamPermissionAsync("my-instance",
    *   "bigtable.tables.readRows", "bigtable.tables.mutateRows");
    *
    * ApiFutures.addCallback(grantedPermissionsFuture,
@@ -1223,7 +1223,7 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre>{@code
-   * ApiFuture<List<String>> grantedPermissionsFuture = client.testIamPermission(
+   * ApiFuture<List<String>> grantedPermissionsFuture = client.testIamPermissionAsync(
    *   TableName.of("my-project", "my-instance", "my-table"),
    *   "bigtable.tables.readRows", "bigtable.tables.mutateRows");
    *
