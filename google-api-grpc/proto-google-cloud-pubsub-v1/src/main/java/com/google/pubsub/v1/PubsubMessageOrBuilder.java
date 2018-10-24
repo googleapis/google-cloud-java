@@ -9,7 +9,8 @@ public interface PubsubMessageOrBuilder extends
 
   /**
    * <pre>
-   * The message payload.
+   * The message data field. If this field is empty, the message must contain
+   * at least one attribute.
    * </pre>
    *
    * <code>bytes data = 1;</code>

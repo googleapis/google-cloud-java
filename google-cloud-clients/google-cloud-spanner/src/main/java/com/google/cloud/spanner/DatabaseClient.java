@@ -288,9 +288,10 @@ public interface DatabaseClient {
    * statements, such as an OLTP workload, should prefer using {@link
    * TransactionContext#executeUpdate(Statement)} with {@link #readWriteTransaction()}.
    *
+   * <p>That said, Partitioned DML is not a drop-in replacement for standard DML used in {@link
+   * #readWriteTransaction()}.</p>
+   *
    * <ul>
-   *   That said, Partitioned DML is not a drop-in replacement for standard DML used in {@link
-   *   #readWriteTransaction()}.
    *   <li>The DML statement must be fully-partitionable. Specifically, the statement must be
    *       expressible as the union of many statements which each access only a single row of the
    *       table.
@@ -311,6 +312,7 @@ public interface DatabaseClient {
    *       due to schema constraints), then the operation is stopped at that point and an error is
    *       returned. It is possible that at this point, some partitions have been committed (or even
    *       committed multiple times), and other partitions have not been run at all.
+   * </ul>
    *
    * <p>Given the above, Partitioned DML is good fit for large, database-wide, operations that are
    * idempotent, such as deleting old rows from a very large table.

@@ -173,8 +173,8 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The URL of the discovery document containing the resource's JSON schema.
-   * Example:
-   * "https://www.googleapis.com/discovery/v1/apis/compute/v1/rest".
+   * For example:
+   * `"https://www.googleapis.com/discovery/v1/apis/compute/v1/rest"`.
    * It will be left unspecified for resources without a discovery-based API,
    * such as Cloud Bigtable.
    * </pre>
@@ -196,8 +196,8 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The URL of the discovery document containing the resource's JSON schema.
-   * Example:
-   * "https://www.googleapis.com/discovery/v1/apis/compute/v1/rest".
+   * For example:
+   * `"https://www.googleapis.com/discovery/v1/apis/compute/v1/rest"`.
    * It will be left unspecified for resources without a discovery-based API,
    * such as Cloud Bigtable.
    * </pre>
@@ -318,11 +318,12 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object parent_;
   /**
    * <pre>
-   * The full name of the immediate parent of this resource. See:
-   * https://cloud.google.com/apis/design/resource_names#full_resource_name
-   * For GCP assets, it is the parent resource defined in the IAM policy
-   * hierarchy: https://cloud.google.com/iam/docs/overview#policy_hierarchy.
-   * Example: "//cloudresourcemanager.googleapis.com/projects/my_project_123".
+   * The full name of the immediate parent of this resource. See
+   * [Resource Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
+   * for more information.
+   * For GCP assets, it is the parent resource defined in the [Cloud IAM policy
+   * hierarchy](https://cloud.google.com/iam/docs/overview#policy_hierarchy).
+   * For example: `"//cloudresourcemanager.googleapis.com/projects/my_project_123"`.
    * For third-party assets, it is up to the users to define.
    * </pre>
    *
@@ -342,11 +343,12 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The full name of the immediate parent of this resource. See:
-   * https://cloud.google.com/apis/design/resource_names#full_resource_name
-   * For GCP assets, it is the parent resource defined in the IAM policy
-   * hierarchy: https://cloud.google.com/iam/docs/overview#policy_hierarchy.
-   * Example: "//cloudresourcemanager.googleapis.com/projects/my_project_123".
+   * The full name of the immediate parent of this resource. See
+   * [Resource Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
+   * for more information.
+   * For GCP assets, it is the parent resource defined in the [Cloud IAM policy
+   * hierarchy](https://cloud.google.com/iam/docs/overview#policy_hierarchy).
+   * For example: `"//cloudresourcemanager.googleapis.com/projects/my_project_123"`.
    * For third-party assets, it is up to the users to define.
    * </pre>
    *
@@ -900,8 +902,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The URL of the discovery document containing the resource's JSON schema.
-     * Example:
-     * "https://www.googleapis.com/discovery/v1/apis/compute/v1/rest".
+     * For example:
+     * `"https://www.googleapis.com/discovery/v1/apis/compute/v1/rest"`.
      * It will be left unspecified for resources without a discovery-based API,
      * such as Cloud Bigtable.
      * </pre>
@@ -923,8 +925,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The URL of the discovery document containing the resource's JSON schema.
-     * Example:
-     * "https://www.googleapis.com/discovery/v1/apis/compute/v1/rest".
+     * For example:
+     * `"https://www.googleapis.com/discovery/v1/apis/compute/v1/rest"`.
      * It will be left unspecified for resources without a discovery-based API,
      * such as Cloud Bigtable.
      * </pre>
@@ -947,8 +949,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The URL of the discovery document containing the resource's JSON schema.
-     * Example:
-     * "https://www.googleapis.com/discovery/v1/apis/compute/v1/rest".
+     * For example:
+     * `"https://www.googleapis.com/discovery/v1/apis/compute/v1/rest"`.
      * It will be left unspecified for resources without a discovery-based API,
      * such as Cloud Bigtable.
      * </pre>
@@ -968,8 +970,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The URL of the discovery document containing the resource's JSON schema.
-     * Example:
-     * "https://www.googleapis.com/discovery/v1/apis/compute/v1/rest".
+     * For example:
+     * `"https://www.googleapis.com/discovery/v1/apis/compute/v1/rest"`.
      * It will be left unspecified for resources without a discovery-based API,
      * such as Cloud Bigtable.
      * </pre>
@@ -985,8 +987,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The URL of the discovery document containing the resource's JSON schema.
-     * Example:
-     * "https://www.googleapis.com/discovery/v1/apis/compute/v1/rest".
+     * For example:
+     * `"https://www.googleapis.com/discovery/v1/apis/compute/v1/rest"`.
      * It will be left unspecified for resources without a discovery-based API,
      * such as Cloud Bigtable.
      * </pre>
@@ -1216,11 +1218,12 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object parent_ = "";
     /**
      * <pre>
-     * The full name of the immediate parent of this resource. See:
-     * https://cloud.google.com/apis/design/resource_names#full_resource_name
-     * For GCP assets, it is the parent resource defined in the IAM policy
-     * hierarchy: https://cloud.google.com/iam/docs/overview#policy_hierarchy.
-     * Example: "//cloudresourcemanager.googleapis.com/projects/my_project_123".
+     * The full name of the immediate parent of this resource. See
+     * [Resource Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
+     * for more information.
+     * For GCP assets, it is the parent resource defined in the [Cloud IAM policy
+     * hierarchy](https://cloud.google.com/iam/docs/overview#policy_hierarchy).
+     * For example: `"//cloudresourcemanager.googleapis.com/projects/my_project_123"`.
      * For third-party assets, it is up to the users to define.
      * </pre>
      *
@@ -1240,11 +1243,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The full name of the immediate parent of this resource. See:
-     * https://cloud.google.com/apis/design/resource_names#full_resource_name
-     * For GCP assets, it is the parent resource defined in the IAM policy
-     * hierarchy: https://cloud.google.com/iam/docs/overview#policy_hierarchy.
-     * Example: "//cloudresourcemanager.googleapis.com/projects/my_project_123".
+     * The full name of the immediate parent of this resource. See
+     * [Resource Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
+     * for more information.
+     * For GCP assets, it is the parent resource defined in the [Cloud IAM policy
+     * hierarchy](https://cloud.google.com/iam/docs/overview#policy_hierarchy).
+     * For example: `"//cloudresourcemanager.googleapis.com/projects/my_project_123"`.
      * For third-party assets, it is up to the users to define.
      * </pre>
      *
@@ -1265,11 +1269,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The full name of the immediate parent of this resource. See:
-     * https://cloud.google.com/apis/design/resource_names#full_resource_name
-     * For GCP assets, it is the parent resource defined in the IAM policy
-     * hierarchy: https://cloud.google.com/iam/docs/overview#policy_hierarchy.
-     * Example: "//cloudresourcemanager.googleapis.com/projects/my_project_123".
+     * The full name of the immediate parent of this resource. See
+     * [Resource Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
+     * for more information.
+     * For GCP assets, it is the parent resource defined in the [Cloud IAM policy
+     * hierarchy](https://cloud.google.com/iam/docs/overview#policy_hierarchy).
+     * For example: `"//cloudresourcemanager.googleapis.com/projects/my_project_123"`.
      * For third-party assets, it is up to the users to define.
      * </pre>
      *
@@ -1287,11 +1292,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The full name of the immediate parent of this resource. See:
-     * https://cloud.google.com/apis/design/resource_names#full_resource_name
-     * For GCP assets, it is the parent resource defined in the IAM policy
-     * hierarchy: https://cloud.google.com/iam/docs/overview#policy_hierarchy.
-     * Example: "//cloudresourcemanager.googleapis.com/projects/my_project_123".
+     * The full name of the immediate parent of this resource. See
+     * [Resource Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
+     * for more information.
+     * For GCP assets, it is the parent resource defined in the [Cloud IAM policy
+     * hierarchy](https://cloud.google.com/iam/docs/overview#policy_hierarchy).
+     * For example: `"//cloudresourcemanager.googleapis.com/projects/my_project_123"`.
      * For third-party assets, it is up to the users to define.
      * </pre>
      *
@@ -1305,11 +1311,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The full name of the immediate parent of this resource. See:
-     * https://cloud.google.com/apis/design/resource_names#full_resource_name
-     * For GCP assets, it is the parent resource defined in the IAM policy
-     * hierarchy: https://cloud.google.com/iam/docs/overview#policy_hierarchy.
-     * Example: "//cloudresourcemanager.googleapis.com/projects/my_project_123".
+     * The full name of the immediate parent of this resource. See
+     * [Resource Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
+     * for more information.
+     * For GCP assets, it is the parent resource defined in the [Cloud IAM policy
+     * hierarchy](https://cloud.google.com/iam/docs/overview#policy_hierarchy).
+     * For example: `"//cloudresourcemanager.googleapis.com/projects/my_project_123"`.
      * For third-party assets, it is up to the users to define.
      * </pre>
      *

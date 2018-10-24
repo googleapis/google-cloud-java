@@ -224,7 +224,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final DataSource getDataSource(GetDataSourceRequest request) {
+  public final DataSource getDataSource(GetDataSourceRequest request) {
     return getDataSourceCallable().call(request);
   }
 
@@ -642,7 +642,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final void deleteTransferConfig(DeleteTransferConfigRequest request) {
+  public final void deleteTransferConfig(DeleteTransferConfigRequest request) {
     deleteTransferConfigCallable().call(request);
   }
 
@@ -736,7 +736,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final TransferConfig getTransferConfig(GetTransferConfigRequest request) {
+  public final TransferConfig getTransferConfig(GetTransferConfigRequest request) {
     return getTransferConfigCallable().call(request);
   }
 
@@ -1096,7 +1096,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final TransferRun getTransferRun(GetTransferRunRequest request) {
+  public final TransferRun getTransferRun(GetTransferRunRequest request) {
     return getTransferRunCallable().call(request);
   }
 
@@ -1190,7 +1190,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final void deleteTransferRun(DeleteTransferRunRequest request) {
+  public final void deleteTransferRun(DeleteTransferRunRequest request) {
     deleteTransferRunCallable().call(request);
   }
 
@@ -1559,7 +1559,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final CheckValidCredsResponse checkValidCreds(CheckValidCredsRequest request) {
+  public final CheckValidCredsResponse checkValidCreds(CheckValidCredsRequest request) {
     return checkValidCredsCallable().call(request);
   }
 

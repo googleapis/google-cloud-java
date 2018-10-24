@@ -3,10 +3,10 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-util</artifactId>
-  <version>0.64.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-util:current} -->
+  <version>0.67.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-util:current} -->
   <packaging>pom</packaging>
   <name>Google Cloud Util</name>
-  <url>https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-util</url>
+  <url>https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-util</url>
   <description>
     Package that contains utility modules for Google Cloud Java.
   </description>
@@ -27,14 +27,6 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-deploy-plugin</artifactId>
         <version>2.7</version>
-        <configuration>
-          <skip>true</skip>
-        </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.sonatype.plugins</groupId>
-        <artifactId>nexus-staging-maven-plugin</artifactId>
-        <version>1.6.6</version>
         <configuration>
           <skip>true</skip>
         </configuration>

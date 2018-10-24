@@ -261,11 +261,10 @@ public final class LoggingServiceV2Grpc {
 
     /**
      * <pre>
-     * Writes log entries to Stackdriver Logging. This API method is the
-     * only way to send log entries to Stackdriver Logging. This method
-     * is used, directly or indirectly, by the Stackdriver Logging agent
-     * (fluentd) and all logging libraries configured to use Stackdriver
-     * Logging.
+     * Writes log entries to Logging. This API method is the
+     * only way to send log entries to Logging. This method
+     * is used, directly or indirectly, by the Logging agent
+     * (fluentd) and all logging libraries configured to use Logging.
      * A single request may contain log entries for a maximum of 1000
      * different resources (projects, organizations, billing accounts or
      * folders)
@@ -279,7 +278,7 @@ public final class LoggingServiceV2Grpc {
     /**
      * <pre>
      * Lists log entries.  Use this method to retrieve log entries from
-     * Stackdriver Logging.  For ways to export log entries, see
+     * Logging.  For ways to export log entries, see
      * [Exporting Logs](/logging/docs/export).
      * </pre>
      */
@@ -290,8 +289,7 @@ public final class LoggingServiceV2Grpc {
 
     /**
      * <pre>
-     * Lists the descriptors for monitored resource types used by Stackdriver
-     * Logging.
+     * Lists the descriptors for monitored resource types used by Logging.
      * </pre>
      */
     public void listMonitoredResourceDescriptors(com.google.logging.v2.ListMonitoredResourceDescriptorsRequest request,
@@ -388,11 +386,10 @@ public final class LoggingServiceV2Grpc {
 
     /**
      * <pre>
-     * Writes log entries to Stackdriver Logging. This API method is the
-     * only way to send log entries to Stackdriver Logging. This method
-     * is used, directly or indirectly, by the Stackdriver Logging agent
-     * (fluentd) and all logging libraries configured to use Stackdriver
-     * Logging.
+     * Writes log entries to Logging. This API method is the
+     * only way to send log entries to Logging. This method
+     * is used, directly or indirectly, by the Logging agent
+     * (fluentd) and all logging libraries configured to use Logging.
      * A single request may contain log entries for a maximum of 1000
      * different resources (projects, organizations, billing accounts or
      * folders)
@@ -407,7 +404,7 @@ public final class LoggingServiceV2Grpc {
     /**
      * <pre>
      * Lists log entries.  Use this method to retrieve log entries from
-     * Stackdriver Logging.  For ways to export log entries, see
+     * Logging.  For ways to export log entries, see
      * [Exporting Logs](/logging/docs/export).
      * </pre>
      */
@@ -419,8 +416,7 @@ public final class LoggingServiceV2Grpc {
 
     /**
      * <pre>
-     * Lists the descriptors for monitored resource types used by Stackdriver
-     * Logging.
+     * Lists the descriptors for monitored resource types used by Logging.
      * </pre>
      */
     public void listMonitoredResourceDescriptors(com.google.logging.v2.ListMonitoredResourceDescriptorsRequest request,
@@ -478,11 +474,10 @@ public final class LoggingServiceV2Grpc {
 
     /**
      * <pre>
-     * Writes log entries to Stackdriver Logging. This API method is the
-     * only way to send log entries to Stackdriver Logging. This method
-     * is used, directly or indirectly, by the Stackdriver Logging agent
-     * (fluentd) and all logging libraries configured to use Stackdriver
-     * Logging.
+     * Writes log entries to Logging. This API method is the
+     * only way to send log entries to Logging. This method
+     * is used, directly or indirectly, by the Logging agent
+     * (fluentd) and all logging libraries configured to use Logging.
      * A single request may contain log entries for a maximum of 1000
      * different resources (projects, organizations, billing accounts or
      * folders)
@@ -496,7 +491,7 @@ public final class LoggingServiceV2Grpc {
     /**
      * <pre>
      * Lists log entries.  Use this method to retrieve log entries from
-     * Stackdriver Logging.  For ways to export log entries, see
+     * Logging.  For ways to export log entries, see
      * [Exporting Logs](/logging/docs/export).
      * </pre>
      */
@@ -507,8 +502,7 @@ public final class LoggingServiceV2Grpc {
 
     /**
      * <pre>
-     * Lists the descriptors for monitored resource types used by Stackdriver
-     * Logging.
+     * Lists the descriptors for monitored resource types used by Logging.
      * </pre>
      */
     public com.google.logging.v2.ListMonitoredResourceDescriptorsResponse listMonitoredResourceDescriptors(com.google.logging.v2.ListMonitoredResourceDescriptorsRequest request) {
@@ -565,11 +559,10 @@ public final class LoggingServiceV2Grpc {
 
     /**
      * <pre>
-     * Writes log entries to Stackdriver Logging. This API method is the
-     * only way to send log entries to Stackdriver Logging. This method
-     * is used, directly or indirectly, by the Stackdriver Logging agent
-     * (fluentd) and all logging libraries configured to use Stackdriver
-     * Logging.
+     * Writes log entries to Logging. This API method is the
+     * only way to send log entries to Logging. This method
+     * is used, directly or indirectly, by the Logging agent
+     * (fluentd) and all logging libraries configured to use Logging.
      * A single request may contain log entries for a maximum of 1000
      * different resources (projects, organizations, billing accounts or
      * folders)
@@ -584,7 +577,7 @@ public final class LoggingServiceV2Grpc {
     /**
      * <pre>
      * Lists log entries.  Use this method to retrieve log entries from
-     * Stackdriver Logging.  For ways to export log entries, see
+     * Logging.  For ways to export log entries, see
      * [Exporting Logs](/logging/docs/export).
      * </pre>
      */
@@ -596,8 +589,7 @@ public final class LoggingServiceV2Grpc {
 
     /**
      * <pre>
-     * Lists the descriptors for monitored resource types used by Stackdriver
-     * Logging.
+     * Lists the descriptors for monitored resource types used by Logging.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.logging.v2.ListMonitoredResourceDescriptorsResponse> listMonitoredResourceDescriptors(

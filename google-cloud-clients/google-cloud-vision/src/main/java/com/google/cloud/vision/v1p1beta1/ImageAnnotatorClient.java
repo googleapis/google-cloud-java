@@ -190,8 +190,7 @@ public class ImageAnnotatorClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final BatchAnnotateImagesResponse batchAnnotateImages(
-      BatchAnnotateImagesRequest request) {
+  public final BatchAnnotateImagesResponse batchAnnotateImages(BatchAnnotateImagesRequest request) {
     return batchAnnotateImagesCallable().call(request);
   }
 
