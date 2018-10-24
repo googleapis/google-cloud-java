@@ -349,9 +349,8 @@ class MessageDispatcher {
         // putIfAbsent puts ackHandler if ackID isn't previously mapped, then return the previously-mapped element.
         // If the previous element is not null, we already have the message and the new one is definitely a duplicate.
         // Don't nack this, because that'd also nack the one we already have in queue.
-
-        // TODO(pongad): We could update the total expiration time, but I'm not 100% sure how that plays with
-        // various resources. Think about this more.
+        // Don't update the existing one's total expiration either. If the user "loses" the message, we want to eventually
+        // totally expire so that pubsub service sends us the message again.
         continue;
       }
       outstandingBatch.addMessage(message, ackHandler);
