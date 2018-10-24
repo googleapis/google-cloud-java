@@ -26,14 +26,45 @@ import com.google.cloud.Service;
  */
 public interface Spanner extends Service<SpannerOptions> {
   /** Returns a {@code DatabaseAdminClient} to do admin operations on Cloud Spanner databases. */
+  /*
+   * <!--SNIPPET get_dbadmin_client-->
+   * <pre>{@code
+   * SpannerOptions options = SpannerOptions.newBuilder().build();
+   * Spanner spanner = options.getService();
+   * DatabaseAdminClient dbAdminClient = spanner.getDatabaseAdminClient();
+   * }</pre>
+   * <!--SNIPPET get_dbadmin_client-->
+   */
   DatabaseAdminClient getDatabaseAdminClient();
 
   /** Returns an {@code InstanceAdminClient} to do admin operations on Cloud Spanner instances. */
+  /*
+   * <!--SNIPPET get_instance_admin_client-->
+   * <pre>{@code
+   * SpannerOptions options = SpannerOptions.newBuilder().build();
+   * Spanner spanner = options.getService();
+   * InstanceAdminClient instanceAdminClient = spanner.getInstanceAdminClient();
+   * }</pre>
+   * <!--SNIPPET get_instance_admin_client-->
+   */
   InstanceAdminClient getInstanceAdminClient();
 
   /**
    * Returns a {@code DatabaseClient} for the given database. It uses a pool of sessions to talk to
    * the database.
+   *
+   * <!--SNIPPET get_db_client-->
+   * <pre>{@code
+   * SpannerOptions options = SpannerOptions.newBuilder().build();
+   * Spanner spanner = options.getService();
+   * final String project = "test-project";
+   * final String instance = "test-instance";
+   * final String database = "example-db";
+   * DatabaseId db =
+   *     DatabaseId.of(project, instance, database);
+   * DatabaseClient dbClient = spanner.getDatabaseClient(db);
+   * }</pre>
+   * <!--SNIPPET get_db_client-->
    */
   DatabaseClient getDatabaseClient(DatabaseId db);
 
@@ -45,6 +76,19 @@ public interface Spanner extends Service<SpannerOptions> {
    * yet at the same snapshot.
    *
    * <p> For all other use cases, {@code DatabaseClient} is more appropriate and performant.
+   *
+   * <!--SNIPPET get_batch_client-->
+   * <pre>{@code
+   * SpannerOptions options = SpannerOptions.newBuilder().build();
+   * Spanner spanner = options.getService();
+   * final String project = "test-project";
+   * final String instance = "test-instance";
+   * final String database = "example-db";
+   * DatabaseId db =
+   *     DatabaseId.of(project, instance, database);
+   * BatchClient batchClient = spanner.getBatchClient(db);
+   * }</pre>
+   * <!--SNIPPET get_batch_client-->
    */
   BatchClient getBatchClient(DatabaseId db);
 

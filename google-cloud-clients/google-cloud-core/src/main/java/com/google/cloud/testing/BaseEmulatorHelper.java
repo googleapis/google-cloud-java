@@ -16,7 +16,10 @@
 
 package com.google.cloud.testing;
 
+import com.google.api.core.CurrentMillisClock;
 import com.google.api.core.InternalApi;
+import com.google.cloud.ExceptionHandler;
+import com.google.cloud.RetryHelper;
 import com.google.cloud.ServiceOptions;
 import com.google.common.io.CharStreams;
 import com.google.common.util.concurrent.SettableFuture;
@@ -46,6 +49,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
@@ -366,7 +370,15 @@ public abstract class BaseEmulatorHelper<T extends ServiceOptions> {
 
     @Override
     public void start() throws IOException {
-      Path emulatorPath = downloadEmulator();
+      ExceptionHandler retryOnAnythingExceptionHandler = ExceptionHandler.newBuilder().retryOn(Exception.class).build();
+
+      Path emulatorPath = RetryHelper.runWithRetries(new Callable<Path>() {
+          @Override
+          public Path call() throws IOException {
+              return downloadEmulator();
+          }
+        }, ServiceOptions.getDefaultRetrySettings(), retryOnAnythingExceptionHandler,
+              CurrentMillisClock.getDefaultClock());
       process = CommandWrapper.create()
           .setCommand(commandText)
           .setDirectory(emulatorPath)
@@ -404,8 +416,13 @@ public abstract class BaseEmulatorHelper<T extends ServiceOptions> {
           log.fine("Unzipping emulator");
         }
         ZipEntry entry = zipIn.getNextEntry();
-        while (entry != null) {
-          File filePath = new File(emulatorPath.toFile(), entry.getName());
+        while (entry != null) { 
+          File filePath = new File(emulatorFolder, entry.getName());
+          String canonicalEmulatorFolderPath = emulatorFolder.getCanonicalPath();
+          String canonicalFilePath = filePath.getCanonicalPath();
+          if (!canonicalFilePath.startsWith(canonicalEmulatorFolderPath + File.separator)) {
+            throw new IllegalStateException("Entry is outside of the target dir: " + entry.getName());
+          }
           if (!entry.isDirectory()) {
             extractFile(zipIn, filePath);
           } else {

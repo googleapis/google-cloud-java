@@ -97,7 +97,7 @@ public final class NotificationServiceProto {
       "\n)ListNotificationChannelDescriptorsRequ" +
       "est\022\014\n\004name\030\004 \001(\t\022\021\n\tpage_size\030\002 \001(\005\022\022\n\n" +
       "page_token\030\003 \001(\t\"\227\001\n*ListNotificationCha" +
-      "nnelDescriptorsResponse\022P\n\023channel_descr",
+      "nnelDescriptorsResponse\022P\n\023channel_descr" +
       "iptors\030\001 \003(\01323.google.monitoring.v3.Noti" +
       "ficationChannelDescriptor\022\027\n\017next_page_t" +
       "oken\030\002 \001(\t\"7\n\'GetNotificationChannelDesc" +
@@ -107,7 +107,7 @@ public final class NotificationServiceProto {
       "itoring.v3.NotificationChannel\"x\n\037ListNo" +
       "tificationChannelsRequest\022\014\n\004name\030\005 \001(\t\022" +
       "\016\n\006filter\030\006 \001(\t\022\020\n\010order_by\030\007 \001(\t\022\021\n\tpag" +
-      "e_size\030\003 \001(\005\022\022\n\npage_token\030\004 \001(\t\"\205\001\n Lis",
+      "e_size\030\003 \001(\005\022\022\n\npage_token\030\004 \001(\t\"\205\001\n Lis" +
       "tNotificationChannelsResponse\022H\n\025notific" +
       "ation_channels\030\003 \003(\0132).google.monitoring" +
       ".v3.NotificationChannel\022\027\n\017next_page_tok" +
@@ -117,7 +117,7 @@ public final class NotificationServiceProto {
       "le.protobuf.FieldMask\022G\n\024notification_ch" +
       "annel\030\003 \001(\0132).google.monitoring.v3.Notif" +
       "icationChannel\"?\n DeleteNotificationChan" +
-      "nelRequest\022\014\n\004name\030\003 \001(\t\022\r\n\005force\030\005 \001(\010\"",
+      "nelRequest\022\014\n\004name\030\003 \001(\t\022\r\n\005force\030\005 \001(\010\"" +
       ">\n.SendNotificationChannelVerificationCo" +
       "deRequest\022\014\n\004name\030\001 \001(\t\"n\n-GetNotificati" +
       "onChannelVerificationCodeRequest\022\014\n\004name" +
@@ -127,7 +127,7 @@ public final class NotificationServiceProto {
       "/\n\013expire_time\030\002 \001(\0132\032.google.protobuf.T" +
       "imestamp\">\n VerifyNotificationChannelReq" +
       "uest\022\014\n\004name\030\001 \001(\t\022\014\n\004code\030\002 \001(\t2\273\020\n\032Not" +
-      "ificationChannelService\022\345\001\n\"ListNotifica",
+      "ificationChannelService\022\345\001\n\"ListNotifica" +
       "tionChannelDescriptors\022?.google.monitori" +
       "ng.v3.ListNotificationChannelDescriptors" +
       "Request\032@.google.monitoring.v3.ListNotif" +
@@ -137,7 +137,7 @@ public final class NotificationServiceProto {
       "elDescriptor\022=.google.monitoring.v3.GetN" +
       "otificationChannelDescriptorRequest\0323.go" +
       "ogle.monitoring.v3.NotificationChannelDe" +
-      "scriptor\">\202\323\344\223\0028\0226/v3/{name=projects/*/n",
+      "scriptor\">\202\323\344\223\0028\0226/v3/{name=projects/*/n" +
       "otificationChannelDescriptors/*}\022\275\001\n\030Lis" +
       "tNotificationChannels\0225.google.monitorin" +
       "g.v3.ListNotificationChannelsRequest\0326.g" +
@@ -147,7 +147,7 @@ public final class NotificationServiceProto {
       "tionChannel\0223.google.monitoring.v3.GetNo" +
       "tificationChannelRequest\032).google.monito" +
       "ring.v3.NotificationChannel\"4\202\323\344\223\002.\022,/v3" +
-      "/{name=projects/*/notificationChannels/*",
+      "/{name=projects/*/notificationChannels/*" +
       "}\022\310\001\n\031CreateNotificationChannel\0226.google" +
       ".monitoring.v3.CreateNotificationChannel" +
       "Request\032).google.monitoring.v3.Notificat" +
@@ -157,7 +157,7 @@ public final class NotificationServiceProto {
       "gle.monitoring.v3.UpdateNotificationChan" +
       "nelRequest\032).google.monitoring.v3.Notifi" +
       "cationChannel\"_\202\323\344\223\002Y2A/v3/{notification" +
-      "_channel.name=projects/*/notificationCha",
+      "_channel.name=projects/*/notificationCha" +
       "nnels/*}:\024notification_channel\022\241\001\n\031Delet" +
       "eNotificationChannel\0226.google.monitoring" +
       ".v3.DeleteNotificationChannelRequest\032\026.g" +
@@ -167,7 +167,7 @@ public final class NotificationServiceProto {
       ".google.monitoring.v3.SendNotificationCh" +
       "annelVerificationCodeRequest\032\026.google.pr" +
       "otobuf.Empty\"L\202\323\344\223\002F\"A/v3/{name=projects" +
-      "/*/notificationChannels/*}:sendVerificat",
+      "/*/notificationChannels/*}:sendVerificat" +
       "ionCode:\001*\022\200\002\n&GetNotificationChannelVer" +
       "ificationCode\022C.google.monitoring.v3.Get" +
       "NotificationChannelVerificationCodeReque" +
@@ -177,7 +177,7 @@ public final class NotificationServiceProto {
       "els/*}:getVerificationCode:\001*\022\276\001\n\031Verify" +
       "NotificationChannel\0226.google.monitoring." +
       "v3.VerifyNotificationChannelRequest\032).go" +
-      "ogle.monitoring.v3.NotificationChannel\">",
+      "ogle.monitoring.v3.NotificationChannel\">" +
       "\202\323\344\223\0028\"3/v3/{name=projects/*/notificatio" +
       "nChannels/*}:verify:\001*B\260\001\n\030com.google.mo" +
       "nitoring.v3B\030NotificationServiceProtoP\001Z" +

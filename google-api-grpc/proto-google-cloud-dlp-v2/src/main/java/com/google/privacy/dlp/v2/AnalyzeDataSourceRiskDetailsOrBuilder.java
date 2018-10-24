@@ -122,5 +122,18 @@ public interface AnalyzeDataSourceRiskDetailsOrBuilder extends
    */
   com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResultOrBuilder getKMapEstimationResultOrBuilder();
 
+  /**
+   * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult delta_presence_estimation_result = 9;</code>
+   */
+  boolean hasDeltaPresenceEstimationResult();
+  /**
+   * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult delta_presence_estimation_result = 9;</code>
+   */
+  com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult getDeltaPresenceEstimationResult();
+  /**
+   * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult delta_presence_estimation_result = 9;</code>
+   */
+  com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResultOrBuilder getDeltaPresenceEstimationResultOrBuilder();
+
   public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.ResultCase getResultCase();
 }

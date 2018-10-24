@@ -22,6 +22,7 @@ private static final long serialVersionUID = 0L;
   private ListAppProfilesResponse() {
     appProfiles_ = java.util.Collections.emptyList();
     nextPageToken_ = "";
+    failedLocations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
@@ -34,6 +35,9 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -45,13 +49,6 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
           case 10: {
             if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
               appProfiles_ = new java.util.ArrayList<com.google.bigtable.admin.v2.AppProfile>();
@@ -67,6 +64,22 @@ private static final long serialVersionUID = 0L;
             nextPageToken_ = s;
             break;
           }
+          case 26: {
+            java.lang.String s = input.readStringRequireUtf8();
+            if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+              failedLocations_ = new com.google.protobuf.LazyStringArrayList();
+              mutable_bitField0_ |= 0x00000004;
+            }
+            failedLocations_.add(s);
+            break;
+          }
+          default: {
+            if (!parseUnknownFieldProto3(
+                input, unknownFields, extensionRegistry, tag)) {
+              done = true;
+            }
+            break;
+          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -78,6 +91,9 @@ private static final long serialVersionUID = 0L;
       if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
         appProfiles_ = java.util.Collections.unmodifiableList(appProfiles_);
       }
+      if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+        failedLocations_ = failedLocations_.getUnmodifiableView();
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -87,6 +103,7 @@ private static final long serialVersionUID = 0L;
     return com.google.bigtable.admin.v2.BigtableInstanceAdminProto.internal_static_google_bigtable_admin_v2_ListAppProfilesResponse_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.bigtable.admin.v2.BigtableInstanceAdminProto.internal_static_google_bigtable_admin_v2_ListAppProfilesResponse_fieldAccessorTable
@@ -196,7 +213,65 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int FAILED_LOCATIONS_FIELD_NUMBER = 3;
+  private com.google.protobuf.LazyStringList failedLocations_;
+  /**
+   * <pre>
+   * Locations from which AppProfile information could not be retrieved,
+   * due to an outage or some other transient condition.
+   * AppProfiles from these locations may be missing from `app_profiles`.
+   * Values are of the form `projects/&lt;project&gt;/locations/&lt;zone_id&gt;`
+   * </pre>
+   *
+   * <code>repeated string failed_locations = 3;</code>
+   */
+  public com.google.protobuf.ProtocolStringList
+      getFailedLocationsList() {
+    return failedLocations_;
+  }
+  /**
+   * <pre>
+   * Locations from which AppProfile information could not be retrieved,
+   * due to an outage or some other transient condition.
+   * AppProfiles from these locations may be missing from `app_profiles`.
+   * Values are of the form `projects/&lt;project&gt;/locations/&lt;zone_id&gt;`
+   * </pre>
+   *
+   * <code>repeated string failed_locations = 3;</code>
+   */
+  public int getFailedLocationsCount() {
+    return failedLocations_.size();
+  }
+  /**
+   * <pre>
+   * Locations from which AppProfile information could not be retrieved,
+   * due to an outage or some other transient condition.
+   * AppProfiles from these locations may be missing from `app_profiles`.
+   * Values are of the form `projects/&lt;project&gt;/locations/&lt;zone_id&gt;`
+   * </pre>
+   *
+   * <code>repeated string failed_locations = 3;</code>
+   */
+  public java.lang.String getFailedLocations(int index) {
+    return failedLocations_.get(index);
+  }
+  /**
+   * <pre>
+   * Locations from which AppProfile information could not be retrieved,
+   * due to an outage or some other transient condition.
+   * AppProfiles from these locations may be missing from `app_profiles`.
+   * Values are of the form `projects/&lt;project&gt;/locations/&lt;zone_id&gt;`
+   * </pre>
+   *
+   * <code>repeated string failed_locations = 3;</code>
+   */
+  public com.google.protobuf.ByteString
+      getFailedLocationsBytes(int index) {
+    return failedLocations_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -206,6 +281,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
+  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     for (int i = 0; i < appProfiles_.size(); i++) {
@@ -214,9 +290,13 @@ private static final long serialVersionUID = 0L;
     if (!getNextPageTokenBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, nextPageToken_);
     }
+    for (int i = 0; i < failedLocations_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, failedLocations_.getRaw(i));
+    }
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -228,6 +308,14 @@ private static final long serialVersionUID = 0L;
     }
     if (!getNextPageTokenBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, nextPageToken_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < failedLocations_.size(); i++) {
+        dataSize += computeStringSizeNoTag(failedLocations_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getFailedLocationsList().size();
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -249,6 +337,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getAppProfilesList());
     result = result && getNextPageToken()
         .equals(other.getNextPageToken());
+    result = result && getFailedLocationsList()
+        .equals(other.getFailedLocationsList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -266,6 +356,10 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + NEXT_PAGE_TOKEN_FIELD_NUMBER;
     hash = (53 * hash) + getNextPageToken().hashCode();
+    if (getFailedLocationsCount() > 0) {
+      hash = (37 * hash) + FAILED_LOCATIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getFailedLocationsList().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -341,6 +435,7 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
+  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
@@ -348,6 +443,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder(com.google.bigtable.admin.v2.ListAppProfilesResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
@@ -375,6 +471,7 @@ private static final long serialVersionUID = 0L;
       return com.google.bigtable.admin.v2.BigtableInstanceAdminProto.internal_static_google_bigtable_admin_v2_ListAppProfilesResponse_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.bigtable.admin.v2.BigtableInstanceAdminProto.internal_static_google_bigtable_admin_v2_ListAppProfilesResponse_fieldAccessorTable
@@ -398,6 +495,7 @@ private static final long serialVersionUID = 0L;
         getAppProfilesFieldBuilder();
       }
     }
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       if (appProfilesBuilder_ == null) {
@@ -408,18 +506,23 @@ private static final long serialVersionUID = 0L;
       }
       nextPageToken_ = "";
 
+      failedLocations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
+    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
       return com.google.bigtable.admin.v2.BigtableInstanceAdminProto.internal_static_google_bigtable_admin_v2_ListAppProfilesResponse_descriptor;
     }
 
+    @java.lang.Override
     public com.google.bigtable.admin.v2.ListAppProfilesResponse getDefaultInstanceForType() {
       return com.google.bigtable.admin.v2.ListAppProfilesResponse.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.bigtable.admin.v2.ListAppProfilesResponse build() {
       com.google.bigtable.admin.v2.ListAppProfilesResponse result = buildPartial();
       if (!result.isInitialized()) {
@@ -428,6 +531,7 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.bigtable.admin.v2.ListAppProfilesResponse buildPartial() {
       com.google.bigtable.admin.v2.ListAppProfilesResponse result = new com.google.bigtable.admin.v2.ListAppProfilesResponse(this);
       int from_bitField0_ = bitField0_;
@@ -442,37 +546,49 @@ private static final long serialVersionUID = 0L;
         result.appProfiles_ = appProfilesBuilder_.build();
       }
       result.nextPageToken_ = nextPageToken_;
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        failedLocations_ = failedLocations_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000004);
+      }
+      result.failedLocations_ = failedLocations_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.bigtable.admin.v2.ListAppProfilesResponse) {
         return mergeFrom((com.google.bigtable.admin.v2.ListAppProfilesResponse)other);
@@ -514,15 +630,27 @@ private static final long serialVersionUID = 0L;
         nextPageToken_ = other.nextPageToken_;
         onChanged();
       }
+      if (!other.failedLocations_.isEmpty()) {
+        if (failedLocations_.isEmpty()) {
+          failedLocations_ = other.failedLocations_;
+          bitField0_ = (bitField0_ & ~0x00000004);
+        } else {
+          ensureFailedLocationsIsMutable();
+          failedLocations_.addAll(other.failedLocations_);
+        }
+        onChanged();
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -952,11 +1080,170 @@ private static final long serialVersionUID = 0L;
       onChanged();
       return this;
     }
+
+    private com.google.protobuf.LazyStringList failedLocations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureFailedLocationsIsMutable() {
+      if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+        failedLocations_ = new com.google.protobuf.LazyStringArrayList(failedLocations_);
+        bitField0_ |= 0x00000004;
+       }
+    }
+    /**
+     * <pre>
+     * Locations from which AppProfile information could not be retrieved,
+     * due to an outage or some other transient condition.
+     * AppProfiles from these locations may be missing from `app_profiles`.
+     * Values are of the form `projects/&lt;project&gt;/locations/&lt;zone_id&gt;`
+     * </pre>
+     *
+     * <code>repeated string failed_locations = 3;</code>
+     */
+    public com.google.protobuf.ProtocolStringList
+        getFailedLocationsList() {
+      return failedLocations_.getUnmodifiableView();
+    }
+    /**
+     * <pre>
+     * Locations from which AppProfile information could not be retrieved,
+     * due to an outage or some other transient condition.
+     * AppProfiles from these locations may be missing from `app_profiles`.
+     * Values are of the form `projects/&lt;project&gt;/locations/&lt;zone_id&gt;`
+     * </pre>
+     *
+     * <code>repeated string failed_locations = 3;</code>
+     */
+    public int getFailedLocationsCount() {
+      return failedLocations_.size();
+    }
+    /**
+     * <pre>
+     * Locations from which AppProfile information could not be retrieved,
+     * due to an outage or some other transient condition.
+     * AppProfiles from these locations may be missing from `app_profiles`.
+     * Values are of the form `projects/&lt;project&gt;/locations/&lt;zone_id&gt;`
+     * </pre>
+     *
+     * <code>repeated string failed_locations = 3;</code>
+     */
+    public java.lang.String getFailedLocations(int index) {
+      return failedLocations_.get(index);
+    }
+    /**
+     * <pre>
+     * Locations from which AppProfile information could not be retrieved,
+     * due to an outage or some other transient condition.
+     * AppProfiles from these locations may be missing from `app_profiles`.
+     * Values are of the form `projects/&lt;project&gt;/locations/&lt;zone_id&gt;`
+     * </pre>
+     *
+     * <code>repeated string failed_locations = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getFailedLocationsBytes(int index) {
+      return failedLocations_.getByteString(index);
+    }
+    /**
+     * <pre>
+     * Locations from which AppProfile information could not be retrieved,
+     * due to an outage or some other transient condition.
+     * AppProfiles from these locations may be missing from `app_profiles`.
+     * Values are of the form `projects/&lt;project&gt;/locations/&lt;zone_id&gt;`
+     * </pre>
+     *
+     * <code>repeated string failed_locations = 3;</code>
+     */
+    public Builder setFailedLocations(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureFailedLocationsIsMutable();
+      failedLocations_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Locations from which AppProfile information could not be retrieved,
+     * due to an outage or some other transient condition.
+     * AppProfiles from these locations may be missing from `app_profiles`.
+     * Values are of the form `projects/&lt;project&gt;/locations/&lt;zone_id&gt;`
+     * </pre>
+     *
+     * <code>repeated string failed_locations = 3;</code>
+     */
+    public Builder addFailedLocations(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureFailedLocationsIsMutable();
+      failedLocations_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Locations from which AppProfile information could not be retrieved,
+     * due to an outage or some other transient condition.
+     * AppProfiles from these locations may be missing from `app_profiles`.
+     * Values are of the form `projects/&lt;project&gt;/locations/&lt;zone_id&gt;`
+     * </pre>
+     *
+     * <code>repeated string failed_locations = 3;</code>
+     */
+    public Builder addAllFailedLocations(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureFailedLocationsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, failedLocations_);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Locations from which AppProfile information could not be retrieved,
+     * due to an outage or some other transient condition.
+     * AppProfiles from these locations may be missing from `app_profiles`.
+     * Values are of the form `projects/&lt;project&gt;/locations/&lt;zone_id&gt;`
+     * </pre>
+     *
+     * <code>repeated string failed_locations = 3;</code>
+     */
+    public Builder clearFailedLocations() {
+      failedLocations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Locations from which AppProfile information could not be retrieved,
+     * due to an outage or some other transient condition.
+     * AppProfiles from these locations may be missing from `app_profiles`.
+     * Values are of the form `projects/&lt;project&gt;/locations/&lt;zone_id&gt;`
+     * </pre>
+     *
+     * <code>repeated string failed_locations = 3;</code>
+     */
+    public Builder addFailedLocationsBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      ensureFailedLocationsIsMutable();
+      failedLocations_.add(value);
+      onChanged();
+      return this;
+    }
+    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -978,11 +1265,12 @@ private static final long serialVersionUID = 0L;
 
   private static final com.google.protobuf.Parser<ListAppProfilesResponse>
       PARSER = new com.google.protobuf.AbstractParser<ListAppProfilesResponse>() {
+    @java.lang.Override
     public ListAppProfilesResponse parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ListAppProfilesResponse(input, extensionRegistry);
+      return new ListAppProfilesResponse(input, extensionRegistry);
     }
   };
 
@@ -995,6 +1283,7 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.bigtable.admin.v2.ListAppProfilesResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }

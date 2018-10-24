@@ -64,10 +64,10 @@ public class LoggingSnippets {
   // [VARIABLE "my_sink_name"]
   // [VARIABLE "my_dataset"]
   public Sink createSink(String sinkName, String datasetName) {
-    // [START createSink]
+    // [START logging_create_sink]
     SinkInfo sinkInfo = SinkInfo.of(sinkName, DatasetDestination.of(datasetName));
     Sink sink = logging.create(sinkInfo);
-    // [END createSink]
+    // [END logging_create_sink]
     return sink;
   }
 
@@ -96,13 +96,13 @@ public class LoggingSnippets {
   // [VARIABLE "my_sink_name"]
   // [VARIABLE "my_dataset"]
   public Sink updateSink(String sinkName, String datasetName) {
-    // [START updateSink]
+    // [START logging_update_sink]
     SinkInfo sinkInfo = SinkInfo.newBuilder(sinkName, DatasetDestination.of(datasetName))
         .setVersionFormat(SinkInfo.VersionFormat.V2)
         .setFilter("severity>=ERROR")
         .build();
     Sink sink = logging.update(sinkInfo);
-    // [END updateSink]
+    // [END logging_update_sink]
     return sink;
   }
 
@@ -163,12 +163,12 @@ public class LoggingSnippets {
    */
   // [TARGET listSinks(ListOption...)]
   public Page<Sink> listSinks() {
-    // [START listSinks]
+    // [START logging_list_sinks]
     Page<Sink> sinks = logging.listSinks(ListOption.pageSize(100));
     for (Sink sink : sinks.iterateAll()) {
       // do something with the sink
     }
-    // [END listSinks]
+    // [END logging_list_sinks]
     return sinks;
   }
 
@@ -194,14 +194,14 @@ public class LoggingSnippets {
   // [TARGET deleteSink(String)]
   // [VARIABLE "my_sink_name"]
   public boolean deleteSink(String sinkName) {
-    // [START deleteSink]
+    // [START logging_delete_sink]
     boolean deleted = logging.deleteSink(sinkName);
     if (deleted) {
       // the sink was deleted
     } else {
       // the sink was not found
     }
-    // [END deleteSink]
+    // [END logging_delete_sink]
     return deleted;
   }
 
@@ -230,14 +230,14 @@ public class LoggingSnippets {
   // [TARGET deleteLog(String)]
   // [VARIABLE "my_log_name"]
   public boolean deleteLog(String logName) {
-    // [START deleteLog]
+    // [START logging_delete_log]
     boolean deleted = logging.deleteLog(logName);
     if (deleted) {
       // the log was deleted
     } else {
       // the log was not found
     }
-    // [END deleteLog]
+    // [END logging_delete_log]
     return deleted;
   }
 
@@ -463,7 +463,7 @@ public class LoggingSnippets {
   // [TARGET write(Iterable, WriteOption...)]
   // [VARIABLE "my_log_name"]
   public void write(String logName) {
-    // [START write]
+    // [START logging_write_log_entry]
     List<LogEntry> entries = new ArrayList<>();
     entries.add(LogEntry.of(StringPayload.of("Entry payload")));
     Map<String, Object> jsonMap = new HashMap<>();
@@ -473,7 +473,7 @@ public class LoggingSnippets {
         entries,
         WriteOption.logName(logName),
         WriteOption.resource(MonitoredResource.newBuilder("global").build()));
-    // [END write]
+    // [END logging_write_log_entry]
   }
 
   /**
@@ -482,12 +482,12 @@ public class LoggingSnippets {
   // [TARGET listLogEntries(EntryListOption...)]
   // [VARIABLE "logName=projects/my_project_id/logs/my_log_name"]
   public Page<LogEntry> listLogEntries(String filter) {
-    // [START listLogEntries]
+    // [START logging_list_log_entries]
     Page<LogEntry> entries = logging.listLogEntries(EntryListOption.filter(filter));
     for (LogEntry entry : entries.iterateAll()) {
       // do something with the entry
     }
-    // [END listLogEntries]
+    // [END logging_list_log_entries]
     return entries;
   }
 

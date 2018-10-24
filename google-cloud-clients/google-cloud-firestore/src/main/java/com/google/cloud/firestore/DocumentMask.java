@@ -48,10 +48,10 @@ final class DocumentMask {
     for (Map.Entry<String, Object> entry : values.entrySet()) {
       Object value = entry.getValue();
       FieldPath childPath = path.append(FieldPath.of(entry.getKey()));
-      if (entry.getValue() == FieldValue.SERVER_TIMESTAMP_SENTINEL) {
-        // Ignore
-      } else if (entry.getValue() == FieldValue.DELETE_SENTINEL) {
-        fieldPaths.add(childPath);
+      if (entry.getValue() instanceof FieldValue) {
+        if (((FieldValue) entry.getValue()).includeInDocumentMask()) {
+          fieldPaths.add(childPath);
+        }
       } else if (value instanceof Map) {
         fieldPaths.addAll(extractFromMap((Map<String, Object>) value, childPath));
       } else {

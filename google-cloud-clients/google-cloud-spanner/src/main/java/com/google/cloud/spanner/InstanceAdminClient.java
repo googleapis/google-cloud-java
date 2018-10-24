@@ -26,9 +26,23 @@ import com.google.spanner.admin.instance.v1.UpdateInstanceMetadata;
 public interface InstanceAdminClient {
 
   /** Gets an instance config. */
+  /* <!--SNIPPET instance_admin_client_get_instance_config-->
+   * <pre>{@code
+   * final String configId = my_config_id;
+   * InstanceConfig instanceConfig = instanceAdminClient.getInstanceConfig(configId);
+   * }</pre>
+   * <!--SNIPPET instance_admin_client_get_instance_config-->
+   */
   InstanceConfig getInstanceConfig(String configId) throws SpannerException;
 
   /** Lists the supported instance configs for current project. */
+  /* <!--SNIPPET instance_admin_client_list_configs-->
+   * <pre>{@code
+   * List<InstanceConfig> configs =
+   *     Lists.newArrayList(instanceAdminClient.listInstanceConfigs(Options.pageSize(1)).iterateAll());
+   * }</pre>
+   * <!--SNIPPET instance_admin_client_list_configs-->
+   */
   Page<InstanceConfig> listInstanceConfigs(ListOption... options) throws SpannerException;
 
   /**
@@ -59,11 +73,35 @@ public interface InstanceAdminClient {
    *   <li> Databases can be created in the instance.
    *   <li> The instance's allocated resource levels are readable via the
    * </ul>
+   *
+   * <!--SNIPPET instance_admin_client_create_instance-->
+   * <pre>{@code
+   * final String instanceId = my_instance_id;
+   * final String configId = my_config_id;
+   * final String clientProject = my_client_project;
+   *
+   * Operation<Instance, CreateInstanceMetadata> op =
+   *     instanceAdminClient.createInstance(InstanceInfo
+   *         .newBuilder(InstanceId.of(clientProject, instanceId))
+   *         .setInstanceConfigId(InstanceConfigId.of(clientProject, configId))
+   *         .setDisplayName(instanceId)
+   *         .setNodeCount(1)
+   *         .build());
+   * op.waitFor();
+   * }</pre>
+   * <!--SNIPPET instance_admin_client_create_instance-->
    */
   OperationFuture<Instance, CreateInstanceMetadata> createInstance(InstanceInfo instance)
       throws SpannerException;
 
   /** Gets an instance. */
+  /* <!--SNIPPET instance_admin_client_get_instance-->
+   * <pre>{@code
+   * final String instanceId = my_instance_id;
+   * Instance ins = instanceAdminClient.getInstance(instanceId);
+   * }</pre>
+   * <!--SNIPPET instance_admin_client_get_instance-->
+   */
   Instance getInstance(String instanceId) throws SpannerException;
 
   /**
@@ -76,10 +114,25 @@ public interface InstanceAdminClient {
    *       <li> display_name
    *       <li> labels.key where key is the name of a label
    *     </ul>
+   *
+   * <!--SNIPPET instance_admin_client_list_instances-->
+   * <pre>{@code
+   * List<Instance> instances =
+   *     Lists.newArrayList(
+   *         instanceAdminClient.listInstances(Options.pageSize(1)).iterateAll());
+   * }</pre>
+   * <!--SNIPPET instance_admin_client_list_instances-->
    */
   Page<Instance> listInstances(ListOption... options) throws SpannerException;
 
   /** Deletes an instance. */
+  /* <!--SNIPPET instance_admin_client_delete_instance-->
+   * <pre>{@code
+   * final String instanceId = my_instance_id;
+   * instanceAdminClient.deleteInstance(instanceId);
+   * }</pre>
+   * <!--SNIPPET instance_admin_client_delete_instance-->
+   */
   void deleteInstance(String instanceId) throws SpannerException;
 
   /**
@@ -113,6 +166,26 @@ public interface InstanceAdminClient {
    *   <li> All newly-reserved resources are available for serving the instance's tables.
    *   <li> The instance's new resource levels are readable via the API.
    * </ul>
+   *
+   * <!--SNIPPET instance_admin_client_update_instance-->
+   * <pre>{@code
+   * Instance instance = my_instance;
+   * final String clientProject = my_client_project;
+   * final String instanceId = my_instance_id;
+   *
+   * final String newDisplayName = my_display_name;
+   *
+   * InstanceInfo toUpdate =
+   *     InstanceInfo.newBuilder(InstanceId.of(clientProject, instanceId))
+   *         .setDisplayName(newDisplayName)
+   *         .setNodeCount(instance.getNodeCount() + 1)
+   *         .build();
+   * // Only update display name
+   * Operation<Instance, UpdateInstanceMetadata> op =
+   *     instanceAdminClient.updateInstance(toUpdate, InstanceInfo.InstanceField.DISPLAY_NAME);
+   * op.waitFor().getResult();
+   * }</pre>
+   * <!--SNIPPET instance_admin_client_update_instance-->
    */
   OperationFuture<Instance, UpdateInstanceMetadata> updateInstance(
       InstanceInfo instance, InstanceInfo.InstanceField... fieldsToUpdate);

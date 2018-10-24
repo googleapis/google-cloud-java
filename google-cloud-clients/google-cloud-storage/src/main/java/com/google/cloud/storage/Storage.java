@@ -93,9 +93,10 @@ public interface Storage extends Service<StorageOptions> {
     CORS("cors"),
     STORAGE_CLASS("storageClass"),
     ETAG("etag"),
-    @GcpLaunchStage.Beta
     ENCRYPTION("encryption"),
-    BILLING("billing");
+    BILLING("billing"),
+    DEFAULT_EVENT_BASED_HOLD("defaultEventBasedHold"),
+    RETENTION_POLICY("retentionPolicy");
 
     static final List<? extends FieldSelector> REQUIRED_FIELDS = ImmutableList.of(NAME);
 
@@ -136,8 +137,11 @@ public interface Storage extends Service<StorageOptions> {
     SIZE("size"),
     STORAGE_CLASS("storageClass"),
     TIME_DELETED("timeDeleted"),
-    @GcpLaunchStage.Beta
+    TIME_CREATED("timeCreated"),
     KMS_KEY_NAME("kmsKeyName"),
+    EVENT_BASED_HOLD("eventBasedHold"),
+    TEMPORARY_HOLD("temporaryHold"),
+    RETENTION_EXPIRATION_TIME("retentionExpirationTime"),
     UPDATED("updated");
 
     static final List<? extends FieldSelector> REQUIRED_FIELDS = ImmutableList.of(BUCKET, NAME);
@@ -388,7 +392,6 @@ public interface Storage extends Service<StorageOptions> {
     /**
      * Returns an option to set a customer-managed key for server-side encryption of the blob.
      */
-    @GcpLaunchStage.Beta
     public static BlobTargetOption kmsKeyName(String kmsKeyName) {
       return new BlobTargetOption(StorageRpc.Option.KMS_KEY_NAME, kmsKeyName);
     }
@@ -550,7 +553,6 @@ public interface Storage extends Service<StorageOptions> {
      *
      * @param kmsKeyName the KMS key resource id
      */
-    @GcpLaunchStage.Beta
     public static BlobWriteOption kmsKeyName(String kmsKeyName) {
       return new BlobWriteOption(Option.KMS_KEY_NAME, kmsKeyName);
     }
@@ -1538,6 +1540,27 @@ public interface Storage extends Service<StorageOptions> {
   Bucket get(String bucket, BucketGetOption... options);
 
   /**
+   * Locks bucket retention policy. Requires a local metageneration value in the request. Review example below.
+   *
+   * <p>Accepts an optional userProject {@link BucketTargetOption} option which defines the project id
+   * to assign operational costs.
+   *
+   * <p>Warning: Once a retention policy is locked, it can't be unlocked, removed, or shortened.
+   *
+   * <p>Example of locking a retention policy on a bucket, only if its local metageneration value matches the bucket's
+   * service metageneration otherwise a {@link StorageException} is thrown.
+   * <pre> {@code
+   * String bucketName = "my_unique_bucket";
+   * Bucket bucket = storage.get(bucketName, BucketGetOption.fields(BucketField.METAGENERATION));
+   * storage.lockRetentionPolicy(bucket, BucketTargetOption.metagenerationMatch());
+   * }</pre>
+   *
+   * @return a {@code Bucket} object of the locked bucket
+   * @throws StorageException upon failure
+   */
+  Bucket lockRetentionPolicy(BucketInfo bucket, BucketTargetOption... options);
+
+  /**
    * Returns the requested blob or {@code null} if not found.
    *
    * Accepts an optional userProject {@link BlobGetOption} option which defines the project id
@@ -2043,10 +2066,9 @@ public interface Storage extends Service<StorageOptions> {
    * {@code GOOGLE_APPLICATION_CREDENTIALS} is set or your application is running in App Engine,
    * then {@code signUrl} will use that credentials to sign the URL. If the credentials passed to
    * {@link StorageOptions} do not implement {@link ServiceAccountSigner} (this is the case, for
-   * instance, for Compute Engine credentials and Google Cloud SDK credentials) then {@code signUrl}
-   * will throw an {@link IllegalStateException} unless an implementation of
-   * {@link ServiceAccountSigner} is passed using the
-   * {@link SignUrlOption#signWith(ServiceAccountSigner)} option.
+   * instance, for Google Cloud SDK credentials) then {@code signUrl} will throw an
+   * {@link IllegalStateException} unless an implementation of {@link ServiceAccountSigner} is
+   * passed using the {@link SignUrlOption#signWith(ServiceAccountSigner)} option.
    *
    * <p>A service account signer is looked for in the following order:
    * <ol>
@@ -2075,6 +2097,9 @@ public interface Storage extends Service<StorageOptions> {
    *     14, TimeUnit.DAYS, SignUrlOption.signWith(
    *         ServiceAccountCredentials.fromStream(new FileInputStream(keyPath))));
    * }</pre>
+   *
+   * <p>Note that the {@link ServiceAccountSigner} may require additional configuration to enable
+   * URL signing. See the documentation for the implementation for more details.</p>
    *
    * @param blobInfo the blob associated with the signed URL
    * @param duration time until the signed URL expires, expressed in {@code unit}. The finest

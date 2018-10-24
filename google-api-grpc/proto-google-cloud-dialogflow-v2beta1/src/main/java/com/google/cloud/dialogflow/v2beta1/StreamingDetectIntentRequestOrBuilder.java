@@ -13,13 +13,12 @@ public interface StreamingDetectIntentRequestOrBuilder extends
    * Format of the session name:
    * `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`, or
    * `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
-   * ID&gt;/sessions/&lt;Session ID&gt;`. Note: Environments and users are under
-   * construction and will be available soon. If &lt;Environment ID&gt; is not
-   * specified, we assume default 'draft' environment. If &lt;User ID&gt; is not
-   * specified, we are using "-". It’s up to the API caller to choose an
-   * appropriate &lt;Session ID&gt;. and &lt;User Id&gt;. They can be a random numbers or
-   * some type of user and session identifiers (preferably hashed). The length
-   * of the &lt;Session ID&gt; and &lt;User ID&gt; must not exceed 36 characters.
+   * ID&gt;/sessions/&lt;Session ID&gt;`. If `Environment ID` is not specified, we assume
+   * default 'draft' environment. If `User ID` is not specified, we are using
+   * "-". It’s up to the API caller to choose an appropriate `Session ID` and
+   * `User Id`. They can be a random numbers or some type of user and session
+   * identifiers (preferably hashed). The length of the `Session ID` and
+   * `User ID` must not exceed 36 characters.
    * </pre>
    *
    * <code>string session = 1;</code>
@@ -31,13 +30,12 @@ public interface StreamingDetectIntentRequestOrBuilder extends
    * Format of the session name:
    * `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`, or
    * `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
-   * ID&gt;/sessions/&lt;Session ID&gt;`. Note: Environments and users are under
-   * construction and will be available soon. If &lt;Environment ID&gt; is not
-   * specified, we assume default 'draft' environment. If &lt;User ID&gt; is not
-   * specified, we are using "-". It’s up to the API caller to choose an
-   * appropriate &lt;Session ID&gt;. and &lt;User Id&gt;. They can be a random numbers or
-   * some type of user and session identifiers (preferably hashed). The length
-   * of the &lt;Session ID&gt; and &lt;User ID&gt; must not exceed 36 characters.
+   * ID&gt;/sessions/&lt;Session ID&gt;`. If `Environment ID` is not specified, we assume
+   * default 'draft' environment. If `User ID` is not specified, we are using
+   * "-". It’s up to the API caller to choose an appropriate `Session ID` and
+   * `User Id`. They can be a random numbers or some type of user and session
+   * identifiers (preferably hashed). The length of the `Session ID` and
+   * `User ID` must not exceed 36 characters.
    * </pre>
    *
    * <code>string session = 1;</code>
@@ -122,6 +120,37 @@ public interface StreamingDetectIntentRequestOrBuilder extends
    * <code>bool single_utterance = 4;</code>
    */
   boolean getSingleUtterance();
+
+  /**
+   * <pre>
+   * Optional. Instructs the speech synthesizer how to generate the output
+   * audio. If this field is not set and agent-level speech synthesizer is not
+   * configured, no output audio is generated.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.OutputAudioConfig output_audio_config = 5;</code>
+   */
+  boolean hasOutputAudioConfig();
+  /**
+   * <pre>
+   * Optional. Instructs the speech synthesizer how to generate the output
+   * audio. If this field is not set and agent-level speech synthesizer is not
+   * configured, no output audio is generated.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.OutputAudioConfig output_audio_config = 5;</code>
+   */
+  com.google.cloud.dialogflow.v2beta1.OutputAudioConfig getOutputAudioConfig();
+  /**
+   * <pre>
+   * Optional. Instructs the speech synthesizer how to generate the output
+   * audio. If this field is not set and agent-level speech synthesizer is not
+   * configured, no output audio is generated.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.OutputAudioConfig output_audio_config = 5;</code>
+   */
+  com.google.cloud.dialogflow.v2beta1.OutputAudioConfigOrBuilder getOutputAudioConfigOrBuilder();
 
   /**
    * <pre>

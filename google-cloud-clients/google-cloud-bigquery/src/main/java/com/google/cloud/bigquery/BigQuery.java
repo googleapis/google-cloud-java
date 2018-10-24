@@ -560,22 +560,24 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * String sourceUri = "gs://cloud-samples-data/bigquery/us-states/us-states.json";
    * TableId tableId = TableId.of(datasetName, tableName);
    * // Table field definition
-   * Field[] fields = new Field[] {
-   *     Field.of("name", LegacySQLTypeName.STRING),
-   *     Field.of("post_abbr", LegacySQLTypeName.STRING)
-   * };
+   * Field[] fields =
+   *     new Field[] {
+   *       Field.of("name", LegacySQLTypeName.STRING),
+   *       Field.of("post_abbr", LegacySQLTypeName.STRING)
+   *     };
    * // Table schema definition
    * Schema schema = Schema.of(fields);
-   * LoadJobConfiguration configuration = LoadJobConfiguration.builder(tableId, sourceUri)
-   *     .setFormatOptions(FormatOptions.json())
-   *     .setCreateDisposition(CreateDisposition.CREATE_IF_NEEDED)
-   *     .setSchema(schema)
-   *     .build();
+   * LoadJobConfiguration configuration =
+   *     LoadJobConfiguration.builder(tableId, sourceUri)
+   *         .setFormatOptions(FormatOptions.json())
+   *         .setCreateDisposition(CreateDisposition.CREATE_IF_NEEDED)
+   *         .setSchema(schema)
+   *         .build();
    * // Load the table
-   * Job remoteLoadJob = bigquery.create(JobInfo.of(configuration));
-   * remoteLoadJob = remoteLoadJob.waitFor();
+   * Job loadJob = bigquery.create(JobInfo.of(configuration));
+   * loadJob = loadJob.waitFor();
    * // Check the table
-   * System.out.println("State: " + remoteLoadJob.getStatus().getState());
+   * System.out.println("State: " + loadJob.getStatus().getState());
    * return ((StandardTableDefinition) bigquery.getTable(tableId).getDefinition()).getNumRows();
    * }</pre>
    *
@@ -751,13 +753,19 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * Updates dataset information.
    *
    * <p>Example of updating a dataset by changing its description.
-   * <pre> {@code
-   * String datasetName = "my_dataset_name";
-   * String newDescription = "some_new_description";
-   * Dataset oldDataset = bigquery.getDataset(datasetName);
-   * DatasetInfo datasetInfo = oldDataset.toBuilder().setDescription(newDescription).build();
-   * Dataset newDataset = bigquery.update(datasetInfo);
-   * }</pre>
+   * <!--SNIPPET bigquery_update_table_description-->
+   * <pre>{@code
+   *    // String datasetName = "my_dataset_name";
+   *    // String tableName = "my_table_name";
+   *    // String newDescription = "new_description";
+   *
+   *    Table beforeTable = bigquery.getTable(datasetName, tableName);
+   *    TableInfo tableInfo = beforeTable.toBuilder()
+   *        .setDescription(newDescription)
+   *        .build();
+   *    Table afterTable = bigquery.update(tableInfo);
+   *     }</pre>
+   * <!--SNIPPET bigquery_update_table_description-->
    *
    * @throws BigQueryException upon failure
    */
@@ -771,9 +779,25 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * String datasetName = "my_dataset_name";
    * String tableName = "my_table_name";
    * String newDescription = "new_description";
-   * Table oldTable = bigquery.getTable(datasetName, tableName);
-   * TableInfo tableInfo = oldTable.toBuilder().setDescription(newDescription).build();
-   * Table newTable = bigquery.update(tableInfo);
+   * Table beforeTable = bigquery.getTable(datasetName, tableName);
+   * TableInfo tableInfo = beforeTable.toBuilder()
+   *     .setDescription(newDescription)
+   *     .build();
+   * Table afterTable = bigquery.update(tableInfo);
+   * }</pre>
+   *
+   * <p>Example of updating a table by changing its expiration.
+   * <pre> {@code
+   * String datasetName = "my_dataset_name";
+   * String tableName = "my_table_name";
+   * Table beforeTable = bigquery.getTable(datasetName, tableName);
+   *
+   * // Set table to expire 5 days from now.
+   * long expirationMillis = DateTime.now().plusDays(5).getMillis();
+   * TableInfo tableInfo = beforeTable.toBuilder()
+   *         .setExpirationTime(expirationMillis)
+   *         .build();
+   * Table afterTable = bigquery.update(tableInfo);
    * }</pre>
    *
    * @throws BigQueryException upon failure
@@ -869,10 +893,12 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * Map<String, Object> recordsContent = new HashMap<>();
    * recordsContent.put("stringField", "Hello, World!");
    * rowContent.put("recordField", recordsContent);
-   * InsertAllResponse response = bigquery.insertAll(InsertAllRequest.newBuilder(tableId)
-   *     .addRow("rowId", rowContent)
-   *     // More rows can be added in the same RPC by invoking .addRow() on the builder
-   *     .build());
+   * InsertAllResponse response =
+   *     bigquery.insertAll(
+   *         InsertAllRequest.newBuilder(tableId)
+   *             .addRow("rowId", rowContent)
+   *             // More rows can be added in the same RPC by invoking .addRow() on the builder
+   *             .build());
    * if (response.hasErrors()) {
    *   // If any of the insertions failed, this lets you inspect the errors
    *   for (Entry<Long, List<BigQueryError>> entry : response.getInsertErrors().entrySet()) {
@@ -936,8 +962,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * String tableName = "my_table_name";
    * Schema schema = ...;
    * String field = "field";
-   * TableResult tableData =
-   *     bigquery.listTableData(datasetName, tableName, schema);
+   * TableResult tableData = bigquery.listTableData(datasetName, tableName, schema);
    * for (FieldValueList row : tableData.iterateAll()) {
    *   row.get(field);
    * }
@@ -1083,11 +1108,9 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * <p>Example of running a query.
    * <pre> {@code
    * // BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
-   * String query =
-   *     "SELECT corpus FROM `bigquery-public-data.samples.shakespeare` GROUP BY corpus;";
-   * QueryJobConfiguration queryConfig =
-   *     QueryJobConfiguration.newBuilder(query).build();
-   * 
+   * String query = "SELECT corpus FROM `bigquery-public-data.samples.shakespeare` GROUP BY corpus;";
+   * QueryJobConfiguration queryConfig = QueryJobConfiguration.newBuilder(query).build();
+   *
    * // Print the results.
    * for (FieldValueList row : bigquery.query(queryConfig).iterateAll()) {
    *   for (FieldValue val : row) {
@@ -1145,9 +1168,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * String csvData = "StringValue1\nStringValue2\n";
    * TableId tableId = TableId.of(datasetName, tableName);
    * WriteChannelConfiguration writeChannelConfiguration =
-   *     WriteChannelConfiguration.newBuilder(tableId)
-   *         .setFormatOptions(FormatOptions.csv())
-   *         .build();
+   *     WriteChannelConfiguration.newBuilder(tableId).setFormatOptions(FormatOptions.csv()).build();
    * TableDataWriteChannel writer = bigquery.writer(writeChannelConfiguration);
    * // Write data to writer
    * try {
@@ -1170,9 +1191,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * String location = "us";
    * TableId tableId = TableId.of(datasetName, tableName);
    * WriteChannelConfiguration writeChannelConfiguration =
-   *     WriteChannelConfiguration.newBuilder(tableId)
-   *         .setFormatOptions(FormatOptions.csv())
-   *         .build();
+   *     WriteChannelConfiguration.newBuilder(tableId).setFormatOptions(FormatOptions.csv()).build();
    * // The location must be specified; other fields can be auto-detected.
    * JobId jobId = JobId.newBuilder().setLocation(location).build();
    * TableDataWriteChannel writer = bigquery.writer(jobId, writeChannelConfiguration);

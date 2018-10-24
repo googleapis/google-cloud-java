@@ -27,8 +27,10 @@ public interface InputAudioConfigOrBuilder extends
   /**
    * <pre>
    * Required. Sample rate (in Hertz) of the audio content sent in the query.
-   * Refer to [Cloud Speech API documentation](/speech/docs/basics) for more
-   * details.
+   * Refer to
+   * [Cloud Speech API
+   * documentation](https://cloud.google.com/speech-to-text/docs/basics) for
+   * more details.
    * </pre>
    *
    * <code>int32 sample_rate_hertz = 2;</code>
@@ -65,7 +67,9 @@ public interface InputAudioConfigOrBuilder extends
    * <pre>
    * Optional. The collection of phrase hints which are used to boost accuracy
    * of speech recognition.
-   * Refer to [Cloud Speech API documentation](/speech/docs/basics#phrase-hints)
+   * Refer to
+   * [Cloud Speech API
+   * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
    * for more details.
    * </pre>
    *
@@ -77,7 +81,9 @@ public interface InputAudioConfigOrBuilder extends
    * <pre>
    * Optional. The collection of phrase hints which are used to boost accuracy
    * of speech recognition.
-   * Refer to [Cloud Speech API documentation](/speech/docs/basics#phrase-hints)
+   * Refer to
+   * [Cloud Speech API
+   * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
    * for more details.
    * </pre>
    *
@@ -88,7 +94,9 @@ public interface InputAudioConfigOrBuilder extends
    * <pre>
    * Optional. The collection of phrase hints which are used to boost accuracy
    * of speech recognition.
-   * Refer to [Cloud Speech API documentation](/speech/docs/basics#phrase-hints)
+   * Refer to
+   * [Cloud Speech API
+   * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
    * for more details.
    * </pre>
    *
@@ -99,7 +107,9 @@ public interface InputAudioConfigOrBuilder extends
    * <pre>
    * Optional. The collection of phrase hints which are used to boost accuracy
    * of speech recognition.
-   * Refer to [Cloud Speech API documentation](/speech/docs/basics#phrase-hints)
+   * Refer to
+   * [Cloud Speech API
+   * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
    * for more details.
    * </pre>
    *
@@ -107,4 +117,42 @@ public interface InputAudioConfigOrBuilder extends
    */
   com.google.protobuf.ByteString
       getPhraseHintsBytes(int index);
+
+  /**
+   * <pre>
+   * Optional. Which Speech model to select for the given request. Select the
+   * model best suited to your domain to get best results. If a model is not
+   * explicitly specified, then we auto-select a model based on the parameters
+   * in the InputAudioConfig.
+   * If enhanced speech model is enabled for the agent and an enhanced
+   * version of the specified model for the language does not exist, then the
+   * speech is recognized using the standard version of the specified model.
+   * Refer to
+   * [Cloud Speech API
+   * documentation](https://cloud.google.com/speech-to-text/docs/basics#select-model)
+   * for more details.
+   * </pre>
+   *
+   * <code>string model = 7;</code>
+   */
+  java.lang.String getModel();
+  /**
+   * <pre>
+   * Optional. Which Speech model to select for the given request. Select the
+   * model best suited to your domain to get best results. If a model is not
+   * explicitly specified, then we auto-select a model based on the parameters
+   * in the InputAudioConfig.
+   * If enhanced speech model is enabled for the agent and an enhanced
+   * version of the specified model for the language does not exist, then the
+   * speech is recognized using the standard version of the specified model.
+   * Refer to
+   * [Cloud Speech API
+   * documentation](https://cloud.google.com/speech-to-text/docs/basics#select-model)
+   * for more details.
+   * </pre>
+   *
+   * <code>string model = 7;</code>
+   */
+  com.google.protobuf.ByteString
+      getModelBytes();
 }

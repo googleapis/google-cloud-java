@@ -26,6 +26,7 @@ import static org.junit.Assert.fail;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
+import com.google.cloud.Timestamp;
 import com.google.cloud.firestore.CollectionReference;
 import com.google.cloud.firestore.DocumentChange.Type;
 import com.google.cloud.firestore.DocumentReference;
@@ -52,7 +53,6 @@ import com.google.common.collect.ImmutableList;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -67,7 +67,6 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
-import org.threeten.bp.Instant;
 
 public class ITSystemTest {
 
@@ -86,7 +85,9 @@ public class ITSystemTest {
 
   @Before
   public void before() {
-    firestore = FirestoreOptions.getDefaultInstance().getService();
+    FirestoreOptions firestoreOptions =
+        FirestoreOptions.newBuilder().setTimestampsInSnapshotsEnabled(true).build();
+    firestore = firestoreOptions.getService();
     randomColl =
         firestore.collection(
             String.format("java-%s-%s", testName.getMethodName(), LocalFirestoreHelper.autoId()));
@@ -166,7 +167,7 @@ public class ITSystemTest {
   @Test
   public void mergeDocumentWithServerTimestamp() throws Exception {
     Map<String, Object> originalMap = LocalFirestoreHelper.<String, Object>map("a", "b");
-    Map<String, Object> updateMap = map("c", FieldValue.serverTimestamp());
+    Map<String, Object> updateMap = map("c", (Object) FieldValue.serverTimestamp());
     randomDoc.set(originalMap).get();
     randomDoc.set(updateMap, SetOptions.merge()).get();
     DocumentSnapshot documentSnapshot = randomDoc.get().get();
@@ -199,6 +200,20 @@ public class ITSystemTest {
   }
 
   @Test
+  public void timestampDoesntGetTruncatedDuringUpdate() throws Exception {
+    DocumentReference documentReference =
+        addDocument("time", Timestamp.ofTimeSecondsAndNanos(0, 123000));
+    DocumentSnapshot documentSnapshot = documentReference.get().get();
+
+    Timestamp timestamp = documentSnapshot.getTimestamp("time");
+    documentReference.update("time", timestamp);
+
+    documentSnapshot = documentReference.get().get();
+    timestamp = documentSnapshot.getTimestamp("time");
+    assertEquals(123000, timestamp.getNanos());
+  }
+
+  @Test
   public void fieldDelete() throws Exception {
     Map<String, Object> fields = new HashMap<>();
     fields.put("foo1", "bar1");
@@ -219,7 +234,7 @@ public class ITSystemTest {
     randomDoc.delete().get();
     WriteResult writeResult = randomDoc.set(ALL_SUPPORTED_TYPES_MAP).get();
     try {
-      randomDoc.delete(Precondition.updatedAt(Instant.ofEpochSecond(1))).get();
+      randomDoc.delete(Precondition.updatedAt(Timestamp.ofTimeSecondsAndNanos(1, 0))).get();
       fail();
     } catch (ExecutionException e) {
       assertTrue(e.getMessage().contains("FAILED_PRECONDITION"));
@@ -227,11 +242,11 @@ public class ITSystemTest {
     writeResult = randomDoc.delete(Precondition.updatedAt(writeResult.getUpdateTime())).get();
     DocumentSnapshot documentSnapshot = randomDoc.get().get();
     assertFalse(documentSnapshot.exists());
-    assertTrue(writeResult.getUpdateTime().getEpochSecond() > 0);
+    assertTrue(writeResult.getUpdateTime().getSeconds() > 0);
   }
 
   @Test
-  public void emptyQuery() throws Exception {
+  public void defaultQuery() throws Exception {
     addDocument("foo", "bar");
     addDocument("foo", "bar");
 
@@ -248,6 +263,23 @@ public class ITSystemTest {
     QuerySnapshot querySnapshot = randomColl.get().get();
     assertTrue(querySnapshot.isEmpty());
     assertNotNull(querySnapshot.getReadTime());
+  }
+
+  @Test
+  public void queryWithMicrosecondPrecision() throws Exception {
+    Timestamp microsecondTimestamp = Timestamp.ofTimeSecondsAndNanos(0, 123000);
+
+    DocumentReference documentReference = addDocument("time", microsecondTimestamp);
+    DocumentSnapshot documentSnapshot = documentReference.get().get();
+
+    Query query = randomColl.whereEqualTo("time", microsecondTimestamp);
+    QuerySnapshot querySnapshot = query.get().get();
+    assertEquals(1, querySnapshot.size());
+
+    // Using `.toDate()` truncates to millseconds, and hence the query doesn't match.
+    query = randomColl.whereEqualTo("time", microsecondTimestamp.toDate());
+    querySnapshot = query.get().get();
+    assertEquals(0, querySnapshot.size());
   }
 
   @Test
@@ -520,7 +552,7 @@ public class ITSystemTest {
   }
 
   @Test
-  public void getCollections() throws Exception {
+  public void listCollections() throws Exception {
     // We test with 21 collections since 20 collections are by default returned in a single paged
     // response.
     String[] collections =
@@ -536,13 +568,46 @@ public class ITSystemTest {
     }
     batch.commit().get();
 
-    Iterable<CollectionReference> collectionRefs = randomDoc.getCollections();
+    Iterable<CollectionReference> collectionRefs = randomDoc.listCollections();
 
     int count = 0;
     for (CollectionReference collectionRef : collectionRefs) {
       assertEquals(collections[count++], collectionRef.getId());
     }
     assertEquals(collections.length, count);
+  }
+
+  @Test
+  public void listDocuments() throws Exception {
+    // We test with 21 documents since 20 documents are by default returned in a single paged
+    // response.
+    String[] documents =
+        new String[] {
+          "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16",
+          "17", "18", "19", "20", "21"
+        };
+    Arrays.sort(documents); // Sort in alphabetical (non-numeric) order.
+
+    WriteBatch batch = firestore.batch();
+    for (String document : documents) {
+      batch.create(randomColl.document(document), SINGLE_FIELD_OBJECT);
+    }
+    batch.commit().get();
+
+    Iterable<DocumentReference> collectionRefs = randomColl.listDocuments();
+
+    int count = 0;
+    for (DocumentReference documentRef : collectionRefs) {
+      assertEquals(documents[count++], documentRef.getId());
+    }
+    assertEquals(documents.length, count);
+  }
+
+  @Test
+  public void listDocumentsListsMissingDocument() throws Exception {
+    randomColl.document("missing/foo/bar").set(SINGLE_FIELD_MAP).get();
+    Iterable<DocumentReference> collectionRefs = randomColl.listDocuments();
+    assertEquals(randomColl.document("missing"), collectionRefs.iterator().next());
   }
 
   @Test
@@ -652,7 +717,7 @@ public class ITSystemTest {
         .create(
             map("time", FieldValue.serverTimestamp(), "a", map("b", FieldValue.serverTimestamp())))
         .get();
-    Date time = (Date) getData().get("time");
+    Timestamp time = (Timestamp) getData().get("time");
     expected.put("time", time);
     expected.put("a", map("b", time));
     assertEquals(expected, getData());
@@ -697,9 +762,9 @@ public class ITSystemTest {
     assertEquals(expected, getData());
   }
 
-  private Date updateTime(Map<String, Object> dataWithTime)
+  private Timestamp updateTime(Map<String, Object> dataWithTime)
       throws ExecutionException, InterruptedException {
-    Date time = (Date) getData().get("time");
+    Timestamp time = (Timestamp) getData().get("time");
     dataWithTime.put("time", time);
     return time;
   }
@@ -883,5 +948,24 @@ public class ITSystemTest {
     int pageCount = paginateResults(query, results);
     assertEquals(3, pageCount);
     assertEquals(9, results.size());
+  }
+
+  @Test
+  public void arrayOperators() throws ExecutionException, InterruptedException {
+    Query containsQuery = randomColl.whereArrayContains("foo", "bar");
+
+    assertTrue(containsQuery.get().get().isEmpty());
+
+    DocumentReference doc1 = randomColl.document();
+    DocumentReference doc2 = randomColl.document();
+    doc1.set(Collections.singletonMap("foo", (Object) FieldValue.arrayUnion("bar"))).get();
+    doc2.set(Collections.singletonMap("foo", (Object) FieldValue.arrayUnion("baz"))).get();
+
+    assertEquals(1, containsQuery.get().get().size());
+
+    doc1.set(Collections.singletonMap("foo", (Object) FieldValue.arrayRemove("bar"))).get();
+    doc2.set(Collections.singletonMap("foo", (Object) FieldValue.arrayRemove("baz"))).get();
+
+    assertTrue(containsQuery.get().get().isEmpty());
   }
 }

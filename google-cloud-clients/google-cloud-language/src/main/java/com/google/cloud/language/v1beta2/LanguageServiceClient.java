@@ -189,7 +189,7 @@ public class LanguageServiceClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final AnalyzeSentimentResponse analyzeSentiment(AnalyzeSentimentRequest request) {
+  public final AnalyzeSentimentResponse analyzeSentiment(AnalyzeSentimentRequest request) {
     return analyzeSentimentCallable().call(request);
   }
 

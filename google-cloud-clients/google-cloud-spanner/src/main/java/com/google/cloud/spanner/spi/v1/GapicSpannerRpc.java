@@ -92,6 +92,7 @@ import com.google.spanner.v1.PartitionQueryRequest;
 import com.google.spanner.v1.PartitionReadRequest;
 import com.google.spanner.v1.PartitionResponse;
 import com.google.spanner.v1.ReadRequest;
+import com.google.spanner.v1.ResultSet;
 import com.google.spanner.v1.RollbackRequest;
 import com.google.spanner.v1.Session;
 import com.google.spanner.v1.Transaction;
@@ -444,6 +445,13 @@ public class GapicSpannerRpc implements SpannerRpc {
         controller.cancel();
       }
     };
+  }
+
+  @Override
+  public ResultSet executeQuery(
+      ExecuteSqlRequest request, @Nullable Map<Option, ?> options) {
+    GrpcCallContext context = newCallContext(options, request.getSession());
+    return get(spannerStub.executeSqlCallable().futureCall(request, context));
   }
 
   @Override

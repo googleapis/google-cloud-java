@@ -21,6 +21,7 @@ import static org.junit.Assert.assertEquals;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.gax.rpc.ApiStreamObserver;
+import com.google.cloud.Timestamp;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.firestore.v1beta1.ArrayValue;
@@ -50,7 +51,6 @@ import com.google.firestore.v1beta1.Write;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
 import com.google.protobuf.NullValue;
-import com.google.protobuf.Timestamp;
 import com.google.type.LatLng;
 import java.nio.charset.Charset;
 import java.text.ParseException;
@@ -64,10 +64,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.concurrent.TimeUnit;
 import javax.annotation.Nullable;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
-import org.threeten.bp.Instant;
 
 public final class LocalFirestoreHelper {
 
@@ -101,9 +101,10 @@ public final class LocalFirestoreHelper {
   public static final ApiFuture<CommitResponse> SINGLE_DELETE_COMMIT_RESPONSE;
   public static final ApiFuture<CommitResponse> SINGLE_WRITE_COMMIT_RESPONSE;
 
-  public static final ApiFuture<CommitResponse> SERVER_TIMESTAMP_COMMIT_RESPONSE;
+  public static final ApiFuture<CommitResponse> FIELD_TRANSFORM_COMMIT_RESPONSE;
 
   public static final Date DATE;
+  public static final Timestamp TIMESTAMP;
   public static final GeoPoint GEO_POINT;
   public static final Blob BLOB;
 
@@ -171,9 +172,13 @@ public final class LocalFirestoreHelper {
         name += i + 1;
       }
       BatchGetDocumentsResponse.Builder response = BatchGetDocumentsResponse.newBuilder();
-      response.getFoundBuilder().setCreateTime(Timestamp.newBuilder().setSeconds(1).setNanos(2));
-      response.getFoundBuilder().setUpdateTime(Timestamp.newBuilder().setSeconds(3).setNanos(4));
-      response.setReadTime(Timestamp.newBuilder().setSeconds(5).setNanos(6));
+      response
+          .getFoundBuilder()
+          .setCreateTime(com.google.protobuf.Timestamp.newBuilder().setSeconds(1).setNanos(2));
+      response
+          .getFoundBuilder()
+          .setUpdateTime(com.google.protobuf.Timestamp.newBuilder().setSeconds(3).setNanos(4));
+      response.setReadTime(com.google.protobuf.Timestamp.newBuilder().setSeconds(5).setNanos(6));
       response.getFoundBuilder().setName(name).putAllFields(fields[i]);
       responses[i] = response.build();
     }
@@ -196,7 +201,8 @@ public final class LocalFirestoreHelper {
       final RunQueryResponse.Builder runQueryResponse = RunQueryResponse.newBuilder();
       runQueryResponse.setDocument(
           Document.newBuilder().setName(documentNames[i]).putAllFields(SINGLE_FIELD_PROTO));
-      runQueryResponse.setReadTime(Timestamp.newBuilder().setSeconds(1).setNanos(2));
+      runQueryResponse.setReadTime(
+          com.google.protobuf.Timestamp.newBuilder().setSeconds(1).setNanos(2));
       responses[i] = runQueryResponse.build();
     }
     return streamingResponse(responses);
@@ -260,20 +266,44 @@ public final class LocalFirestoreHelper {
     return rollback.build();
   }
 
-  public static Write transform(String... fieldPaths) {
-    return transform(null, fieldPaths);
+  public static FieldTransform serverTimestamp() {
+    return FieldTransform.newBuilder()
+        .setSetToServerValue(FieldTransform.ServerValue.REQUEST_TIME)
+        .build();
   }
 
-  public static Write transform(@Nullable Precondition precondition, String... fieldPaths) {
-    Write.Builder write = Write.newBuilder();
-    DocumentTransform.Builder transform = write.getTransformBuilder();
-    transform.setDocument(DOCUMENT_NAME);
+  public static FieldTransform arrayUnion(Value... values) {
+    return FieldTransform.newBuilder()
+        .setAppendMissingElements(ArrayValue.newBuilder().addAllValues(Arrays.asList(values)))
+        .build();
+  }
 
-    for (String fieldPath : fieldPaths) {
-      transform
-          .addFieldTransformsBuilder()
-          .setFieldPath(fieldPath)
-          .setSetToServerValue(DocumentTransform.FieldTransform.ServerValue.REQUEST_TIME);
+  public static FieldTransform arrayRemove(Value... values) {
+    return FieldTransform.newBuilder()
+        .setRemoveAllFromArray(ArrayValue.newBuilder().addAllValues(Arrays.asList(values)))
+        .build();
+  }
+
+  public static Write transform(
+      String fieldPath, FieldTransform fieldTransform, Object... fieldPathOrTransform) {
+    return transform(null, fieldPath, fieldTransform, fieldPathOrTransform);
+  }
+
+  public static Write transform(
+      @Nullable Precondition precondition,
+      String fieldPath,
+      FieldTransform fieldTransform,
+      Object... fieldPathOrTransform) {
+    Write.Builder write = Write.newBuilder();
+    DocumentTransform.Builder documentTransform = write.getTransformBuilder();
+    documentTransform.setDocument(DOCUMENT_NAME);
+
+    documentTransform.addFieldTransformsBuilder().setFieldPath(fieldPath).mergeFrom(fieldTransform);
+
+    for (int i = 0; i < fieldPathOrTransform.length; i += 2) {
+      String path = (String) fieldPathOrTransform[i];
+      FieldTransform transform = (FieldTransform) fieldPathOrTransform[i + 1];
+      documentTransform.addFieldTransformsBuilder().setFieldPath(path).mergeFrom(transform);
     }
 
     if (precondition != null) {
@@ -568,6 +598,7 @@ public final class LocalFirestoreHelper {
     public boolean falseValue = false;
     public SingleField objectValue = new SingleField();
     public Date dateValue = DATE;
+    public Timestamp timestampValue = TIMESTAMP;
     public List<String> arrayValue = ImmutableList.of("foo");
     public String nullValue = null;
     public Blob bytesValue = BLOB;
@@ -592,6 +623,7 @@ public final class LocalFirestoreHelper {
           && Objects.equals(doubleValue, that.doubleValue)
           && Objects.equals(objectValue, that.objectValue)
           && Objects.equals(dateValue, that.dateValue)
+          && Objects.equals(timestampValue, that.timestampValue)
           && Objects.equals(arrayValue, that.arrayValue)
           && Objects.equals(nullValue, that.nullValue)
           && Objects.equals(bytesValue, that.bytesValue)
@@ -608,6 +640,10 @@ public final class LocalFirestoreHelper {
       throw new RuntimeException("Failed to parse date", e);
     }
 
+    TIMESTAMP =
+        Timestamp.ofTimeSecondsAndNanos(
+            TimeUnit.MILLISECONDS.toSeconds(DATE.getTime()),
+            123000); // Firestore truncates to microsecond precision.
     GEO_POINT = new GeoPoint(50.1430847, -122.9477780);
     BLOB = Blob.fromBytes(new byte[] {1, 2, 3});
 
@@ -630,9 +666,9 @@ public final class LocalFirestoreHelper {
                     DatabaseRootName.of("test-project", "(default)"),
                     ImmutableList.of("coll", "doc"))),
             SINGLE_FIELD_PROTO,
-            Instant.ofEpochSecond(5, 6),
-            Instant.ofEpochSecond(3, 4),
-            Instant.ofEpochSecond(1, 2));
+            Timestamp.ofTimeSecondsAndNanos(5, 6),
+            Timestamp.ofTimeSecondsAndNanos(3, 4),
+            Timestamp.ofTimeSecondsAndNanos(1, 2));
 
     UPDATED_FIELD_MAP = map("foo", (Object) "foobar");
     UPDATED_FIELD_PROTO = map("foo", Value.newBuilder().setStringValue("foobar").build());
@@ -647,7 +683,8 @@ public final class LocalFirestoreHelper {
     mapValue.getMapValueBuilder();
     SERVER_TIMESTAMP_PROTO = Collections.emptyMap();
     SERVER_TIMESTAMP_OBJECT = new ServerTimestamp();
-    SERVER_TIMESTAMP_TRANSFORM = transform("foo", "inner.bar");
+    SERVER_TIMESTAMP_TRANSFORM =
+        transform("foo", serverTimestamp(), "inner.bar", serverTimestamp());
 
     ALL_SUPPORTED_TYPES_MAP = new HashMap<>();
     ALL_SUPPORTED_TYPES_MAP.put("foo", "bar");
@@ -659,7 +696,8 @@ public final class LocalFirestoreHelper {
     ALL_SUPPORTED_TYPES_MAP.put("trueValue", true);
     ALL_SUPPORTED_TYPES_MAP.put("falseValue", false);
     ALL_SUPPORTED_TYPES_MAP.put("objectValue", map("foo", (Object) "bar"));
-    ALL_SUPPORTED_TYPES_MAP.put("dateValue", DATE);
+    ALL_SUPPORTED_TYPES_MAP.put("dateValue", Timestamp.of(DATE));
+    ALL_SUPPORTED_TYPES_MAP.put("timestampValue", TIMESTAMP);
     ALL_SUPPORTED_TYPES_MAP.put("arrayValue", ImmutableList.of("foo"));
     ALL_SUPPORTED_TYPES_MAP.put("nullValue", null);
     ALL_SUPPORTED_TYPES_MAP.put("bytesValue", BLOB);
@@ -684,7 +722,17 @@ public final class LocalFirestoreHelper {
                 "dateValue",
                 Value.newBuilder()
                     .setTimestampValue(
-                        Timestamp.newBuilder().setSeconds(479978400).setNanos(123000000))
+                        com.google.protobuf.Timestamp.newBuilder()
+                            .setSeconds(479978400)
+                            .setNanos(123000000)) // Dates only support millisecond precision.
+                    .build())
+            .put(
+                "timestampValue",
+                Value.newBuilder()
+                    .setTimestampValue(
+                        com.google.protobuf.Timestamp.newBuilder()
+                            .setSeconds(479978400)
+                            .setNanos(123000)) // Timestamps supports microsecond precision.
                     .build())
             .put(
                 "arrayValue",
@@ -707,7 +755,7 @@ public final class LocalFirestoreHelper {
     SINGLE_DELETE_COMMIT_RESPONSE = commitResponse(/* adds= */ 0, /* deletes= */ 1);
     SINGLE_CREATE_COMMIT_REQUEST = commit(create(SINGLE_FIELD_PROTO));
 
-    SERVER_TIMESTAMP_COMMIT_RESPONSE = commitResponse(/* adds= */ 2, /* deletes= */ 0);
+    FIELD_TRANSFORM_COMMIT_RESPONSE = commitResponse(/* adds= */ 2, /* deletes= */ 0);
 
     NESTED_CLASS_OBJECT = new NestedClass();
 

@@ -20,9 +20,15 @@ import com.google.api.client.util.Charsets;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.testing.BaseEmulatorHelper.EmulatorRunner;
 import com.google.common.collect.ImmutableList;
+
 import java.io.ByteArrayInputStream;
+import java.io.EOFException;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.URL;
+import java.net.URLConnection;
+import java.net.URLStreamHandler;
 import java.util.List;
 import java.util.concurrent.TimeoutException;
 import java.util.logging.Logger;
@@ -97,6 +103,41 @@ public class BaseEmulatorHelperTest {
   }
 
   @Test
+  public void testEmulatorHelperDownloadWithRetries() throws IOException, InterruptedException, TimeoutException {
+    String mockExternalForm = "mockExternalForm";
+    String mockInputStream = "mockInputStream";
+    String mockProtocol = "mockProtocol";
+    String mockFile = "mockFile";
+    String mockCommandText = "mockCommandText";
+
+    MockURLStreamHandler mockURLStreamHandler = EasyMock.createMock(MockURLStreamHandler.class);
+    URLConnection mockURLConnection = EasyMock.mock(URLConnection.class);
+
+    EasyMock.expect(mockURLStreamHandler.toExternalForm(EasyMock.anyObject(URL.class)))
+            .andReturn(mockExternalForm).anyTimes();
+    EasyMock.expect(mockURLConnection.getInputStream())
+            .andReturn(new ByteArrayInputStream(mockInputStream.getBytes())).anyTimes();
+    EasyMock.expect(mockURLStreamHandler.openConnection(EasyMock.anyObject(URL.class)))
+            .andThrow(new EOFException()).times(1);
+    EasyMock.expect(mockURLStreamHandler.openConnection(EasyMock.anyObject(URL.class)))
+            .andReturn(mockURLConnection).times(1);
+    EasyMock.replay(mockURLStreamHandler, mockURLConnection);
+
+    URL url = new URL(mockProtocol, null, 0, mockFile, mockURLStreamHandler);
+    BaseEmulatorHelper.DownloadableEmulatorRunner runner =
+            new BaseEmulatorHelper.DownloadableEmulatorRunner(ImmutableList.of(mockCommandText), url, null);
+
+    File cachedFile = new File(System.getProperty("java.io.tmpdir"), mockExternalForm);
+    cachedFile.delete(); //Clear the cached version so we're always testing the download
+
+    runner.start();
+
+    EasyMock.verify();
+
+    cachedFile.delete(); //Cleanup
+  }
+
+  @Test
   public void testEmulatorHelperMultipleRunners() throws IOException, InterruptedException, TimeoutException {
     Process process = EasyMock.createStrictMock(Process.class);
     InputStream stream = new ByteArrayInputStream(BLOCK_UNTIL.getBytes(Charsets.UTF_8));
@@ -116,5 +157,20 @@ public class BaseEmulatorHelperTest {
     helper.start();
     helper.stop(Duration.ofMinutes(1));
     EasyMock.verify();
+  }
+
+  /**
+   * URLStreamHandler has a protected method which needs to be mocked, so we need our own implementation in this package
+   */
+  private class MockURLStreamHandler extends URLStreamHandler {
+    @Override
+    protected URLConnection openConnection(URL u) throws IOException {
+      return null;
+    }
+
+    @Override
+    protected String toExternalForm(URL u) {
+      return null;
+    }
   }
 }

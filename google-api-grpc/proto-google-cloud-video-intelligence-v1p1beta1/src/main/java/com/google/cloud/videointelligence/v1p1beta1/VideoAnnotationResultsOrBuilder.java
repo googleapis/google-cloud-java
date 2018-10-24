@@ -9,7 +9,7 @@ public interface VideoAnnotationResultsOrBuilder extends
 
   /**
    * <pre>
-   * Video file location in
+   * Output only. Video file location in
    * [Google Cloud Storage](https://cloud.google.com/storage/).
    * </pre>
    *
@@ -18,7 +18,7 @@ public interface VideoAnnotationResultsOrBuilder extends
   java.lang.String getInputUri();
   /**
    * <pre>
-   * Video file location in
+   * Output only. Video file location in
    * [Google Cloud Storage](https://cloud.google.com/storage/).
    * </pre>
    *
@@ -289,8 +289,8 @@ public interface VideoAnnotationResultsOrBuilder extends
 
   /**
    * <pre>
-   * If set, indicates an error. Note that for a single `AnnotateVideoRequest`
-   * some videos may succeed and some may fail.
+   * Output only. If set, indicates an error. Note that for a single
+   * `AnnotateVideoRequest` some videos may succeed and some may fail.
    * </pre>
    *
    * <code>.google.rpc.Status error = 9;</code>
@@ -298,8 +298,8 @@ public interface VideoAnnotationResultsOrBuilder extends
   boolean hasError();
   /**
    * <pre>
-   * If set, indicates an error. Note that for a single `AnnotateVideoRequest`
-   * some videos may succeed and some may fail.
+   * Output only. If set, indicates an error. Note that for a single
+   * `AnnotateVideoRequest` some videos may succeed and some may fail.
    * </pre>
    *
    * <code>.google.rpc.Status error = 9;</code>
@@ -307,8 +307,8 @@ public interface VideoAnnotationResultsOrBuilder extends
   com.google.rpc.Status getError();
   /**
    * <pre>
-   * If set, indicates an error. Note that for a single `AnnotateVideoRequest`
-   * some videos may succeed and some may fail.
+   * Output only. If set, indicates an error. Note that for a single
+   * `AnnotateVideoRequest` some videos may succeed and some may fail.
    * </pre>
    *
    * <code>.google.rpc.Status error = 9;</code>

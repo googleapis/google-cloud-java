@@ -37,7 +37,7 @@ public interface TopicOrBuilder extends
 
   /**
    * <pre>
-   * User labels.
+   * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 2;</code>
@@ -45,7 +45,7 @@ public interface TopicOrBuilder extends
   int getLabelsCount();
   /**
    * <pre>
-   * User labels.
+   * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 2;</code>
@@ -60,7 +60,7 @@ public interface TopicOrBuilder extends
   getLabels();
   /**
    * <pre>
-   * User labels.
+   * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 2;</code>
@@ -69,7 +69,7 @@ public interface TopicOrBuilder extends
   getLabelsMap();
   /**
    * <pre>
-   * User labels.
+   * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 2;</code>
@@ -80,7 +80,7 @@ public interface TopicOrBuilder extends
       java.lang.String defaultValue);
   /**
    * <pre>
-   * User labels.
+   * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 2;</code>
@@ -88,4 +88,44 @@ public interface TopicOrBuilder extends
 
   java.lang.String getLabelsOrThrow(
       java.lang.String key);
+
+  /**
+   * <pre>
+   * Policy constraining how messages published to the topic may be stored. It
+   * is determined when the topic is created based on the policy configured at
+   * the project level. It must not be set by the caller in the request to
+   * CreateTopic or to UpdateTopic. This field will be populated in the
+   * responses for GetTopic, CreateTopic, and UpdateTopic: if not present in the
+   * response, then no constraints are in effect.
+   * </pre>
+   *
+   * <code>.google.pubsub.v1.MessageStoragePolicy message_storage_policy = 3;</code>
+   */
+  boolean hasMessageStoragePolicy();
+  /**
+   * <pre>
+   * Policy constraining how messages published to the topic may be stored. It
+   * is determined when the topic is created based on the policy configured at
+   * the project level. It must not be set by the caller in the request to
+   * CreateTopic or to UpdateTopic. This field will be populated in the
+   * responses for GetTopic, CreateTopic, and UpdateTopic: if not present in the
+   * response, then no constraints are in effect.
+   * </pre>
+   *
+   * <code>.google.pubsub.v1.MessageStoragePolicy message_storage_policy = 3;</code>
+   */
+  com.google.pubsub.v1.MessageStoragePolicy getMessageStoragePolicy();
+  /**
+   * <pre>
+   * Policy constraining how messages published to the topic may be stored. It
+   * is determined when the topic is created based on the policy configured at
+   * the project level. It must not be set by the caller in the request to
+   * CreateTopic or to UpdateTopic. This field will be populated in the
+   * responses for GetTopic, CreateTopic, and UpdateTopic: if not present in the
+   * response, then no constraints are in effect.
+   * </pre>
+   *
+   * <code>.google.pubsub.v1.MessageStoragePolicy message_storage_policy = 3;</code>
+   */
+  com.google.pubsub.v1.MessageStoragePolicyOrBuilder getMessageStoragePolicyOrBuilder();
 }

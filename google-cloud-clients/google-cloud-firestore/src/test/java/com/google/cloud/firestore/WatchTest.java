@@ -97,7 +97,11 @@ public class WatchTest {
   @Spy
   private FirestoreImpl firestoreMock =
       new FirestoreImpl(
-          FirestoreOptions.newBuilder().setProjectId("test-project").build(), firestoreRpc);
+          FirestoreOptions.newBuilder()
+              .setProjectId("test-project")
+              .setTimestampsInSnapshotsEnabled(true)
+              .build(),
+          firestoreRpc);
 
   @Captor private ArgumentCaptor<ApiStreamObserver<ListenResponse>> streamObserverCapture;
 
@@ -297,6 +301,35 @@ public class WatchTest {
     send(doc("coll/doc", SINGLE_FIELD_PROTO));
     send(snapshot());
 
+    awaitQuerySnapshot(new SnapshotDocument(ChangeType.ADDED, "coll/doc", SINGLE_FIELD_MAP));
+  }
+
+  @Test
+  public void queryWatchDoesntSendRaiseSnapshotOnReset() throws InterruptedException {
+    // This test is meant to reproduce https://github.com/googleapis/google-cloud-dotnet/issues/2542
+    addQueryListener();
+
+    awaitAddTarget();
+
+    send(addTarget());
+    send(current());
+    send(snapshot());
+
+    awaitQuerySnapshot();
+
+    close();
+    awaitClose();
+    awaitAddTarget();
+
+    send(addTarget());
+    send(current());
+    // This should not raise a snapshot, since nothing has changed since the last snapshot.
+    send(snapshot());
+
+    send(doc("coll/doc", SINGLE_FIELD_PROTO));
+    send(snapshot());
+
+    // Verify that we only receveived one snapshot.
     awaitQuerySnapshot(new SnapshotDocument(ChangeType.ADDED, "coll/doc", SINGLE_FIELD_MAP));
   }
 

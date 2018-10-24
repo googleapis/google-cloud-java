@@ -57,7 +57,7 @@ public final class WebDetectionProto {
       ".WebDetection.WebImage\022N\n\027partial_matchi" +
       "ng_images\030\003 \003(\0132-.google.cloud.vision.v1" +
       ".WebDetection.WebImage\022P\n\032pages_with_mat" +
-      "ching_images\030\004 \003(\0132,.google.cloud.vision",
+      "ching_images\030\004 \003(\0132,.google.cloud.vision" +
       ".v1.WebDetection.WebPage\022N\n\027visually_sim" +
       "ilar_images\030\006 \003(\0132-.google.cloud.vision." +
       "v1.WebDetection.WebImage\022H\n\021best_guess_l" +
@@ -67,14 +67,15 @@ public final class WebDetectionProto {
       "\030\003 \001(\t\032&\n\010WebImage\022\013\n\003url\030\001 \001(\t\022\r\n\005score" +
       "\030\002 \001(\002\032\326\001\n\007WebPage\022\013\n\003url\030\001 \001(\t\022\r\n\005score" +
       "\030\002 \001(\002\022\022\n\npage_title\030\003 \001(\t\022K\n\024full_match" +
-      "ing_images\030\004 \003(\0132-.google.cloud.vision.v",
+      "ing_images\030\004 \003(\0132-.google.cloud.vision.v" +
       "1.WebDetection.WebImage\022N\n\027partial_match" +
       "ing_images\030\005 \003(\0132-.google.cloud.vision.v" +
       "1.WebDetection.WebImage\0320\n\010WebLabel\022\r\n\005l" +
-      "abel\030\001 \001(\t\022\025\n\rlanguage_code\030\002 \001(\tBr\n\032com" +
+      "abel\030\001 \001(\t\022\025\n\rlanguage_code\030\002 \001(\tBy\n\032com" +
       ".google.cloud.vision.v1B\021WebDetectionPro" +
       "toP\001Z<google.golang.org/genproto/googlea" +
-      "pis/cloud/vision/v1;vision\370\001\001b\006proto3"
+      "pis/cloud/vision/v1;vision\370\001\001\242\002\004GCVNb\006pr" +
+      "oto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

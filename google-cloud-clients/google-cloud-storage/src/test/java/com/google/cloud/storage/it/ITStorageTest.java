@@ -25,13 +25,27 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
+import static org.junit.Assume.assumeFalse;
+import static org.junit.Assume.assumeTrue;
 
 import com.google.api.gax.paging.Page;
+import com.google.auth.ServiceAccountSigner;
+import com.google.auth.oauth2.GoogleCredentials;
+import com.google.cloud.kms.v1.CreateCryptoKeyRequest;
+import com.google.cloud.kms.v1.CreateKeyRingRequest;
+import com.google.cloud.kms.v1.CryptoKeyName;
+import com.google.cloud.kms.v1.CryptoKey;
+import com.google.cloud.kms.v1.GetCryptoKeyRequest;
+import com.google.cloud.kms.v1.GetKeyRingRequest;
+import com.google.cloud.kms.v1.KeyManagementServiceGrpc.KeyManagementServiceBlockingStub;
+import com.google.cloud.kms.v1.KeyManagementServiceGrpc;
+import com.google.cloud.kms.v1.KeyRingName;
 import com.google.cloud.Identity;
 import com.google.cloud.Policy;
 import com.google.cloud.ReadChannel;
 import com.google.cloud.RestorableState;
 import com.google.cloud.WriteChannel;
+import com.google.cloud.kms.v1.LocationName;
 import com.google.cloud.storage.Acl;
 import com.google.cloud.storage.Acl.Role;
 import com.google.cloud.storage.Acl.User;
@@ -60,6 +74,7 @@ import com.google.common.collect.Iterators;
 import com.google.common.collect.Lists;
 import com.google.common.io.BaseEncoding;
 import com.google.common.io.ByteStreams;
+import com.google.iam.v1.Binding;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -68,8 +83,6 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.nio.ByteBuffer;
 import java.security.Key;
-import java.security.NoSuchAlgorithmException;
-import java.security.spec.InvalidKeySpecException;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
@@ -85,6 +98,17 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.zip.GZIPInputStream;
 import javax.crypto.spec.SecretKeySpec;
+
+import com.google.iam.v1.IAMPolicyGrpc;
+import com.google.iam.v1.SetIamPolicyRequest;
+import io.grpc.auth.MoreCallCredentials;
+import io.grpc.ManagedChannel;
+import io.grpc.ManagedChannelBuilder;
+import io.grpc.Metadata;
+import io.grpc.Status;
+import io.grpc.StatusRuntimeException;
+import io.grpc.stub.MetadataUtils;
+
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -93,7 +117,11 @@ public class ITStorageTest {
 
   private static RemoteStorageHelper remoteStorageHelper;
   private static Storage storage;
-
+  private static String kmsKeyOneResourcePath;
+  private static String kmsKeyTwoResourcePath;
+  private static Metadata requestParamsHeader = new Metadata();
+  private static Metadata.Key<String> requestParamsKey =
+      Metadata.Key.of("x-goog-request-params", Metadata.ASCII_STRING_MARSHALLER);
   private static final Logger log = Logger.getLogger(ITStorageTest.class.getName());
   private static final String BUCKET = RemoteStorageHelper.generateBucketName();
   private static final String CONTENT_TYPE = "text/plain";
@@ -107,18 +135,27 @@ public class ITStorageTest {
   private static final byte[] COMPRESSED_CONTENT = BaseEncoding.base64()
       .decode("H4sIAAAAAAAAAPNIzcnJV3DPz0/PSVVwzskvTVEILskvSkxPVQQA/LySchsAAAA=");
   private static final Map<String, String> BUCKET_LABELS = ImmutableMap.of("label1", "value1");
-  private static final String SERVICE_ACCOUNT_EMAIL = "gcloud-devel@gs-project-accounts.iam.gserviceaccount.com";
-  private static final String KMS_KEY_NAME_1 = "projects/gcloud-devel/locations/us/keyRings/gcs_kms_key_ring_us/cryptoKeys/key";
-  private static final String KMS_KEY_NAME_2 = "projects/gcloud-devel/locations/us/keyRings/gcs_kms_key_ring_us/cryptoKeys/key2";
+  private static final Long RETENTION_PERIOD = 5L;
+  private static final Long RETENTION_PERIOD_IN_MILLISECONDS = RETENTION_PERIOD * 1000;
+  private static final String SERVICE_ACCOUNT_EMAIL_SUFFIX = "@gs-project-accounts.iam.gserviceaccount.com";
+  private static final String KMS_KEY_RING_NAME = "gcs_test_kms_key_ring";
+  private static final String KMS_KEY_RING_LOCATION = "us";
+  private static final String KMS_KEY_ONE_NAME = "gcs_kms_key_one";
+  private static final String KMS_KEY_TWO_NAME = "gcs_kms_key_two";
+  private static final boolean IS_VPC_TEST = System.getenv("GOOGLE_CLOUD_TESTS_IN_VPCSC") != null
+          && System.getenv("GOOGLE_CLOUD_TESTS_IN_VPCSC").equalsIgnoreCase("true");
 
   @BeforeClass
-  public static void beforeClass() throws NoSuchAlgorithmException, InvalidKeySpecException {
+  public static void beforeClass() throws IOException {
     remoteStorageHelper = RemoteStorageHelper.create();
     storage = remoteStorageHelper.getOptions().getService();
     storage.create(
         BucketInfo.newBuilder(BUCKET)
             .setDeleteRules(Collections.singleton(new BucketInfo.AgeDeleteRule(1)))
             .build());
+
+    // Prepare KMS KeyRing for CMEK tests
+    prepareKmsKeys();
   }
 
   @AfterClass
@@ -135,6 +172,98 @@ public class ITStorageTest {
         log.log(Level.WARNING, "Deletion of bucket {0} timed out, bucket is not empty", BUCKET);
       }
     }
+  }
+
+  private static void prepareKmsKeys() throws IOException {
+    String projectId = remoteStorageHelper.getOptions().getProjectId();
+    GoogleCredentials credentials = GoogleCredentials.getApplicationDefault();
+    ManagedChannel kmsChannel = ManagedChannelBuilder.forTarget("cloudkms.googleapis.com:443").build();
+    KeyManagementServiceBlockingStub kmsStub = KeyManagementServiceGrpc.newBlockingStub(kmsChannel)
+        .withCallCredentials(MoreCallCredentials.from(credentials));
+    IAMPolicyGrpc.IAMPolicyBlockingStub iamStub = IAMPolicyGrpc.newBlockingStub(kmsChannel)
+        .withCallCredentials(MoreCallCredentials.from(credentials));
+    ensureKmsKeyRingExistsForTests(kmsStub, projectId, KMS_KEY_RING_LOCATION, KMS_KEY_RING_NAME);
+    ensureKmsKeyRingIamPermissionsForTests(iamStub, projectId, KMS_KEY_RING_LOCATION, KMS_KEY_RING_NAME);
+    kmsKeyOneResourcePath = ensureKmsKeyExistsForTests(kmsStub, projectId, KMS_KEY_RING_LOCATION, KMS_KEY_RING_NAME,
+        KMS_KEY_ONE_NAME);
+    kmsKeyTwoResourcePath = ensureKmsKeyExistsForTests(kmsStub, projectId, KMS_KEY_RING_LOCATION, KMS_KEY_RING_NAME,
+        KMS_KEY_TWO_NAME);
+  }
+
+  private static String ensureKmsKeyRingExistsForTests(KeyManagementServiceBlockingStub kmsStub, String projectId,
+                                                       String location,
+                                                       String keyRingName) throws StatusRuntimeException {
+    String kmsKeyRingResourcePath = KeyRingName.of(projectId, location, keyRingName).toString();
+    try {
+      // Attempt to Get KeyRing
+      GetKeyRingRequest getKeyRingRequest = GetKeyRingRequest.newBuilder().setName(kmsKeyRingResourcePath)
+          .build();
+      requestParamsHeader.put(requestParamsKey, "name="+kmsKeyRingResourcePath);
+      KeyManagementServiceBlockingStub stubForGetKeyRing = MetadataUtils
+          .attachHeaders(kmsStub, requestParamsHeader);
+      stubForGetKeyRing.getKeyRing(getKeyRingRequest);
+    } catch (StatusRuntimeException ex) {
+      if (ex.getStatus().getCode() == Status.Code.NOT_FOUND) {
+        // Create KmsKeyRing
+        String keyRingParent = LocationName.of(projectId, location).toString();
+        CreateKeyRingRequest createKeyRingRequest = CreateKeyRingRequest.newBuilder()
+            .setParent(keyRingParent)
+            .setKeyRingId(keyRingName).build();
+        requestParamsHeader.put(requestParamsKey, "parent=" + keyRingParent);
+        KeyManagementServiceBlockingStub stubForCreateKeyRing = MetadataUtils
+            .attachHeaders(kmsStub, requestParamsHeader);
+        stubForCreateKeyRing.createKeyRing(createKeyRingRequest);
+      } else {
+        throw ex;
+      }
+    }
+
+    return kmsKeyRingResourcePath;
+  }
+
+  private static void ensureKmsKeyRingIamPermissionsForTests(IAMPolicyGrpc.IAMPolicyBlockingStub iamStub,
+                                                             String projectId, String location,
+                                                             String keyRingName) throws StatusRuntimeException {
+    ServiceAccount serviceAccount = storage.getServiceAccount(projectId);
+    String kmsKeyRingResourcePath = KeyRingName.of(projectId, location, keyRingName).toString();
+    Binding binding = Binding.newBuilder().setRole("roles/cloudkms.cryptoKeyEncrypterDecrypter")
+        .addMembers("serviceAccount:"+serviceAccount.getEmail()).build();
+    com.google.iam.v1.Policy policy = com.google.iam.v1.Policy.newBuilder().addBindings(binding).build();
+    SetIamPolicyRequest setIamPolicyRequest = SetIamPolicyRequest.newBuilder().setResource(kmsKeyRingResourcePath)
+        .setPolicy(policy).build();
+    requestParamsHeader.put(requestParamsKey, "parent=" + kmsKeyRingResourcePath);
+    iamStub = MetadataUtils.attachHeaders(iamStub, requestParamsHeader);
+    iamStub.setIamPolicy(setIamPolicyRequest);
+  }
+
+  private static String ensureKmsKeyExistsForTests(KeyManagementServiceBlockingStub kmsStub, String projectId,
+                                                   String location, String keyRingName,
+                                                   String keyName) throws StatusRuntimeException {
+    String kmsKeyResourcePath = CryptoKeyName.of(projectId, location, keyRingName, keyName).toString();
+    try {
+      // Attempt to Get CryptoKey
+      requestParamsHeader.put(requestParamsKey, "name=" + kmsKeyResourcePath);
+      GetCryptoKeyRequest getCryptoKeyRequest = GetCryptoKeyRequest.newBuilder()
+          .setName(kmsKeyResourcePath).build();
+      KeyManagementServiceGrpc.KeyManagementServiceBlockingStub stubForGetCryptoKey = MetadataUtils
+          .attachHeaders(kmsStub, requestParamsHeader);
+      stubForGetCryptoKey.getCryptoKey(getCryptoKeyRequest);
+    } catch(StatusRuntimeException ex) {
+      if (ex.getStatus().getCode() == Status.Code.NOT_FOUND) {
+        String kmsKeyRingResourcePath = KeyRingName.of(projectId, location, keyRingName).toString();
+        CryptoKey cryptoKey = CryptoKey.newBuilder().setPurpose(CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT).build();
+        CreateCryptoKeyRequest createCryptoKeyRequest = CreateCryptoKeyRequest.newBuilder()
+            .setCryptoKeyId(keyName).setParent(kmsKeyRingResourcePath).setCryptoKey(cryptoKey).build();
+
+        requestParamsHeader.put(requestParamsKey, "parent=" + kmsKeyRingResourcePath);
+        KeyManagementServiceGrpc.KeyManagementServiceBlockingStub stubForCreateCryptoKey = MetadataUtils
+            .attachHeaders(kmsStub, requestParamsHeader);
+        stubForCreateCryptoKey.createCryptoKey(createCryptoKeyRequest);
+      } else {
+        throw ex;
+      }
+    }
+    return kmsKeyResourcePath;
   }
 
   @Test(timeout = 5000)
@@ -183,10 +312,10 @@ public class ITStorageTest {
   public void testClearBucketDefaultKmsKeyName() throws ExecutionException, InterruptedException {
     String bucketName = RemoteStorageHelper.generateBucketName();
     Bucket remoteBucket = storage.create(BucketInfo.newBuilder(bucketName)
-            .setDefaultKmsKeyName(KMS_KEY_NAME_1).setLocation("US").build());
+            .setDefaultKmsKeyName(kmsKeyOneResourcePath).setLocation(KMS_KEY_RING_LOCATION).build());
 
     try {
-      assertEquals(KMS_KEY_NAME_1, remoteBucket.getDefaultKmsKeyName());
+      assertEquals(kmsKeyOneResourcePath, remoteBucket.getDefaultKmsKeyName());
       Bucket updatedBucket = remoteBucket.toBuilder().setDefaultKmsKeyName(null).build().update();
       assertNull(updatedBucket.getDefaultKmsKeyName());
     } finally {
@@ -198,12 +327,12 @@ public class ITStorageTest {
   public void testUpdateBucketDefaultKmsKeyName() throws ExecutionException, InterruptedException {
     String bucketName = RemoteStorageHelper.generateBucketName();
     Bucket remoteBucket = storage.create(BucketInfo.newBuilder(bucketName)
-            .setDefaultKmsKeyName(KMS_KEY_NAME_1).setLocation("US").build());
+            .setDefaultKmsKeyName(kmsKeyOneResourcePath).setLocation(KMS_KEY_RING_LOCATION).build());
 
     try {
-      assertEquals(KMS_KEY_NAME_1, remoteBucket.getDefaultKmsKeyName());
-      Bucket updatedBucket = remoteBucket.toBuilder().setDefaultKmsKeyName(KMS_KEY_NAME_2).build().update();
-      assertEquals(KMS_KEY_NAME_2, updatedBucket.getDefaultKmsKeyName());
+      assertEquals(kmsKeyOneResourcePath, remoteBucket.getDefaultKmsKeyName());
+      Bucket updatedBucket = remoteBucket.toBuilder().setDefaultKmsKeyName(kmsKeyTwoResourcePath).build().update();
+      assertEquals(kmsKeyTwoResourcePath, updatedBucket.getDefaultKmsKeyName());
     } finally {
       RemoteStorageHelper.forceDelete(storage, bucketName, 5, TimeUnit.SECONDS);
     }
@@ -240,12 +369,12 @@ public class ITStorageTest {
   public void testCreateBlobWithKmsKeyName() {
     String blobName = "test-create-with-kms-key-name-blob";
     BlobInfo blob = BlobInfo.newBuilder(BUCKET, blobName).build();
-    Blob remoteBlob = storage.create(blob, BLOB_BYTE_CONTENT, Storage.BlobTargetOption.kmsKeyName(KMS_KEY_NAME_1));
+    Blob remoteBlob = storage.create(blob, BLOB_BYTE_CONTENT, Storage.BlobTargetOption.kmsKeyName(kmsKeyOneResourcePath));
     assertNotNull(remoteBlob);
     assertEquals(blob.getBucket(), remoteBlob.getBucket());
     assertEquals(blob.getName(), remoteBlob.getName());
     assertNotNull(remoteBlob.getKmsKeyName());
-    assertTrue(remoteBlob.getKmsKeyName().startsWith(KMS_KEY_NAME_1));
+    assertTrue(remoteBlob.getKmsKeyName().startsWith(kmsKeyOneResourcePath));
     byte[] readBytes = storage.readAllBytes(BUCKET, blobName);
     assertArrayEquals(BLOB_BYTE_CONTENT, readBytes);
   }
@@ -256,7 +385,7 @@ public class ITStorageTest {
       String blobName = "test-create-with-kms-key-name-blob";
       BlobInfo blob = BlobInfo.newBuilder(BUCKET, blobName).build();
       storage.create(blob, BLOB_BYTE_CONTENT, Storage.BlobTargetOption.encryptionKey(KEY),
-              Storage.BlobTargetOption.kmsKeyName(KMS_KEY_NAME_1));
+              Storage.BlobTargetOption.kmsKeyName(kmsKeyOneResourcePath));
       fail("StorageException was expected"); // can't supply both.
     } catch (StorageException ex) {
       // expected
@@ -267,8 +396,8 @@ public class ITStorageTest {
   public void testCreateBlobWithDefaultKmsKeyName() throws ExecutionException, InterruptedException {
     String bucketName = RemoteStorageHelper.generateBucketName();
     Bucket bucket = storage.create(BucketInfo.newBuilder(bucketName)
-            .setDefaultKmsKeyName(KMS_KEY_NAME_1).setLocation("US").build());
-    assertEquals(bucket.getDefaultKmsKeyName(), KMS_KEY_NAME_1);
+            .setDefaultKmsKeyName(kmsKeyOneResourcePath).setLocation(KMS_KEY_RING_LOCATION).build());
+    assertEquals(bucket.getDefaultKmsKeyName(), kmsKeyOneResourcePath);
 
     try {
       String blobName = "test-create-with-default-kms-key-name-blob";
@@ -278,7 +407,7 @@ public class ITStorageTest {
       assertEquals(blob.getBucket(), remoteBlob.getBucket());
       assertEquals(blob.getName(), remoteBlob.getName());
       assertNotNull(remoteBlob.getKmsKeyName());
-      assertTrue(remoteBlob.getKmsKeyName().startsWith(KMS_KEY_NAME_1));
+      assertTrue(remoteBlob.getKmsKeyName().startsWith(kmsKeyOneResourcePath));
       byte[] readBytes = storage.readAllBytes(bucketName, blobName);
       assertArrayEquals(BLOB_BYTE_CONTENT, readBytes);
     } finally {
@@ -375,11 +504,11 @@ public class ITStorageTest {
     BlobInfo blob = BlobInfo.newBuilder(BUCKET, blobName)
             .setContentType(CONTENT_TYPE)
             .build();
-    assertNotNull(storage.create(blob, Storage.BlobTargetOption.kmsKeyName(KMS_KEY_NAME_1)));
+    assertNotNull(storage.create(blob, Storage.BlobTargetOption.kmsKeyName(kmsKeyOneResourcePath)));
     Blob remoteBlob = storage.get(blob.getBlobId(), Storage.BlobGetOption.fields(
             BlobField.KMS_KEY_NAME));
     assertEquals(blob.getBlobId(), remoteBlob.getBlobId());
-    assertTrue(remoteBlob.getKmsKeyName().startsWith(KMS_KEY_NAME_1));
+    assertTrue(remoteBlob.getKmsKeyName().startsWith(kmsKeyOneResourcePath));
     assertNull(remoteBlob.getContentType());
   }
 
@@ -479,8 +608,8 @@ public class ITStorageTest {
     BlobInfo blob2 = BlobInfo.newBuilder(BUCKET, blobNames[1])
             .setContentType(CONTENT_TYPE)
             .build();
-    Blob remoteBlob1 = storage.create(blob1, Storage.BlobTargetOption.kmsKeyName(KMS_KEY_NAME_1));
-    Blob remoteBlob2 = storage.create(blob2, Storage.BlobTargetOption.kmsKeyName(KMS_KEY_NAME_1));
+    Blob remoteBlob1 = storage.create(blob1, Storage.BlobTargetOption.kmsKeyName(kmsKeyOneResourcePath));
+    Blob remoteBlob2 = storage.create(blob2, Storage.BlobTargetOption.kmsKeyName(kmsKeyOneResourcePath));
     assertNotNull(remoteBlob1);
     assertNotNull(remoteBlob2);
     Page<Blob> page = storage.list(BUCKET,
@@ -500,7 +629,7 @@ public class ITStorageTest {
       Blob remoteBlob = iterator.next();
       assertEquals(BUCKET, remoteBlob.getBucket());
       assertTrue(blobSet.contains(remoteBlob.getName()));
-      assertTrue(remoteBlob.getKmsKeyName().startsWith(KMS_KEY_NAME_1));
+      assertTrue(remoteBlob.getKmsKeyName().startsWith(kmsKeyOneResourcePath));
       assertNull(remoteBlob.getContentType());
     }
   }
@@ -897,6 +1026,34 @@ public class ITStorageTest {
   }
 
   @Test
+  public void testCopyBlobWithPredefinedAcl() {
+    String sourceBlobName = "test-copy-blob-source";
+    BlobId source = BlobId.of(BUCKET, sourceBlobName);
+    ImmutableMap<String, String> metadata = ImmutableMap.of("k", "v");
+    BlobInfo blob = BlobInfo.newBuilder(source)
+            .setContentType(CONTENT_TYPE)
+            .setMetadata(metadata)
+            .build();
+    Blob remoteBlob = storage.create(blob, BLOB_BYTE_CONTENT);
+    assertNotNull(remoteBlob);
+    String targetBlobName = "test-copy-blob-target";
+    Storage.CopyRequest req = Storage.CopyRequest.newBuilder()
+            .setSource(source)
+            .setTarget(BlobId.of(BUCKET, targetBlobName),
+                    Storage.BlobTargetOption.predefinedAcl(Storage.PredefinedAcl.PUBLIC_READ))
+            .build();
+    CopyWriter copyWriter = storage.copy(req);
+    assertEquals(BUCKET, copyWriter.getResult().getBucket());
+    assertEquals(targetBlobName, copyWriter.getResult().getName());
+    assertEquals(CONTENT_TYPE, copyWriter.getResult().getContentType());
+    assertEquals(metadata, copyWriter.getResult().getMetadata());
+    assertNotNull(copyWriter.getResult().getAcl(User.ofAllUsers()));
+    assertTrue(copyWriter.isDone());
+    assertTrue(remoteBlob.delete());
+    assertTrue(storage.delete(BUCKET, targetBlobName));
+  }
+
+  @Test
   public void testCopyBlobWithEncryptionKeys() {
     String sourceBlobName = "test-copy-blob-encryption-key-source";
     BlobId source = BlobId.of(BUCKET, sourceBlobName);
@@ -954,14 +1111,14 @@ public class ITStorageTest {
     Storage.CopyRequest req = Storage.CopyRequest.newBuilder()
             .setSource(source)
             .setSourceOptions(Storage.BlobSourceOption.decryptionKey(BASE64_KEY))
-            .setTarget(target, Storage.BlobTargetOption.kmsKeyName(KMS_KEY_NAME_1))
+            .setTarget(target, Storage.BlobTargetOption.kmsKeyName(kmsKeyOneResourcePath))
             .build();
     CopyWriter copyWriter = storage.copy(req);
     assertEquals(BUCKET, copyWriter.getResult().getBucket());
     assertEquals(targetBlobName, copyWriter.getResult().getName());
     assertEquals(CONTENT_TYPE, copyWriter.getResult().getContentType());
     assertNotNull(copyWriter.getResult().getKmsKeyName());
-    assertTrue(copyWriter.getResult().getKmsKeyName().startsWith(KMS_KEY_NAME_1));
+    assertTrue(copyWriter.getResult().getKmsKeyName().startsWith(kmsKeyOneResourcePath));
     assertArrayEquals(BLOB_BYTE_CONTENT, copyWriter.getResult().getContent());
     assertEquals(metadata, copyWriter.getResult().getMetadata());
     assertTrue(copyWriter.isDone());
@@ -986,7 +1143,7 @@ public class ITStorageTest {
               .setSource(source)
               .setSourceOptions(Storage.BlobSourceOption.decryptionKey(BASE64_KEY))
               .setTarget(target, Storage.BlobTargetOption.encryptionKey(KEY),
-                      Storage.BlobTargetOption.kmsKeyName(KMS_KEY_NAME_1))
+                      Storage.BlobTargetOption.kmsKeyName(kmsKeyOneResourcePath))
               .build();
       storage.copy(req);
       fail("StorageException was expected");
@@ -1452,6 +1609,10 @@ public class ITStorageTest {
 
   @Test
   public void testGetSignedUrl() throws IOException {
+    if(storage.getOptions().getCredentials() != null) {
+      assumeTrue(storage.getOptions().getCredentials() instanceof ServiceAccountSigner);
+    }
+
     String blobName = "test-get-signed-url-blob/with/slashes/and?special=!#$&'()*+,:;=?@[]";
     BlobInfo blob = BlobInfo.newBuilder(BUCKET, blobName).build();
     Blob remoteBlob = storage.create(blob, BLOB_BYTE_CONTENT);
@@ -1467,6 +1628,9 @@ public class ITStorageTest {
 
   @Test
   public void testPostSignedUrl() throws IOException {
+    if (storage.getOptions().getCredentials() != null) {
+      assumeTrue(storage.getOptions().getCredentials() instanceof ServiceAccountSigner);
+    }
     String blobName = "test-post-signed-url-blob";
     BlobInfo blob = BlobInfo.newBuilder(BUCKET, blobName).build();
     assertNotNull(storage.create(blob));
@@ -1498,6 +1662,7 @@ public class ITStorageTest {
 
   @Test
   public void testDownloadPublicBlobWithoutAuthentication() {
+    assumeFalse(IS_VPC_TEST);
     // create an unauthorized user
     Storage unauthorizedStorage = StorageOptions.getUnauthenticatedInstance().getService();
 
@@ -1506,6 +1671,7 @@ public class ITStorageTest {
     String landsatPrefix = "LC08/PRE/044/034/LC80440342016259LGN00/";
     String landsatBlob = landsatPrefix + "LC80440342016259LGN00_MTL.txt";
     byte[] bytes = unauthorizedStorage.readAllBytes(landsatBucket, landsatBlob);
+
     assertThat(bytes.length).isEqualTo(7903);
     int numBlobs = 0;
     Iterator<Blob> blobIterator = unauthorizedStorage
@@ -1863,9 +2029,9 @@ public class ITStorageTest {
   public void testListBucketDefaultKmsKeyName() throws ExecutionException, InterruptedException {
     String bucketName = RemoteStorageHelper.generateBucketName();
     Bucket remoteBucket = storage.create(BucketInfo.newBuilder(bucketName)
-            .setDefaultKmsKeyName(KMS_KEY_NAME_1).setLocation("US").build());
+            .setDefaultKmsKeyName(kmsKeyOneResourcePath).setLocation(KMS_KEY_RING_LOCATION).build());
     assertNotNull(remoteBucket);
-    assertTrue(remoteBucket.getDefaultKmsKeyName().startsWith(KMS_KEY_NAME_1));
+    assertTrue(remoteBucket.getDefaultKmsKeyName().startsWith(kmsKeyOneResourcePath));
     try {
       Iterator<Bucket> bucketIterator = storage.list(Storage.BucketListOption.prefix(bucketName),
               Storage.BucketListOption.fields(BucketField.ENCRYPTION)).iterateAll().iterator();
@@ -1878,7 +2044,7 @@ public class ITStorageTest {
         Bucket bucket = bucketIterator.next();
         assertTrue(bucket.getName().startsWith(bucketName));
         assertNotNull(bucket.getDefaultKmsKeyName());
-        assertTrue(bucket.getDefaultKmsKeyName().startsWith(KMS_KEY_NAME_1));
+        assertTrue(bucket.getDefaultKmsKeyName().startsWith(kmsKeyOneResourcePath));
         assertNull(bucket.getCreateTime());
         assertNull(bucket.getSelfLink());
       }
@@ -1888,10 +2054,158 @@ public class ITStorageTest {
   }
 
   @Test
-  public void testGetServiceAccount() throws InterruptedException {
+  public void testRetentionPolicyNoLock() throws ExecutionException, InterruptedException {
+    String bucketName = RemoteStorageHelper.generateBucketName();
+    Bucket remoteBucket = storage.create(BucketInfo.newBuilder(bucketName)
+        .setRetentionPeriod(RETENTION_PERIOD).build());
+    try {
+      assertEquals(RETENTION_PERIOD, remoteBucket.getRetentionPeriod());
+      assertNotNull(remoteBucket.getRetentionEffectiveTime());
+      assertNull(remoteBucket.retentionPolicyIsLocked());
+      remoteBucket = storage.get(bucketName, Storage.BucketGetOption.fields(BucketField.RETENTION_POLICY));
+      assertEquals(RETENTION_PERIOD, remoteBucket.getRetentionPeriod());
+      assertNotNull(remoteBucket.getRetentionEffectiveTime());
+      assertNull(remoteBucket.retentionPolicyIsLocked());
+      String blobName = "test-create-with-retention-policy-hold";
+      BlobInfo blobInfo = BlobInfo.newBuilder(bucketName, blobName).build();
+      Blob remoteBlob = storage.create(blobInfo);
+      assertNotNull(remoteBlob.getRetentionExpirationTime());
+      remoteBucket = remoteBucket.toBuilder().setRetentionPeriod(null).build().update();
+      assertNull(remoteBucket.getRetentionPeriod());
+      remoteBucket = remoteBucket.toBuilder().setRetentionPeriod(null).build().update();
+      assertNull(remoteBucket.getRetentionPeriod());
+    } finally {
+      RemoteStorageHelper.forceDelete(storage, bucketName, 5, TimeUnit.SECONDS);
+    }
+  }
+
+  @Test
+  public void testRetentionPolicyLock() throws ExecutionException, InterruptedException {
+    retentionPolicyLockRequesterPays(true);
+    retentionPolicyLockRequesterPays(false);
+  }
+
+  private void retentionPolicyLockRequesterPays(boolean requesterPays) throws ExecutionException, InterruptedException {
+    String projectId = remoteStorageHelper.getOptions().getProjectId();
+    String bucketName = RemoteStorageHelper.generateBucketName();
+    BucketInfo bucketInfo;
+    if (requesterPays) {
+      bucketInfo = BucketInfo.newBuilder(bucketName).setRetentionPeriod(RETENTION_PERIOD)
+          .setRequesterPays(true).build();
+    } else {
+      bucketInfo = BucketInfo.newBuilder(bucketName).setRetentionPeriod(RETENTION_PERIOD).build();
+    }
+    Bucket remoteBucket = storage.create(bucketInfo);
+    try {
+      assertNull(remoteBucket.retentionPolicyIsLocked());
+      assertNotNull(remoteBucket.getRetentionEffectiveTime());
+      assertNotNull(remoteBucket.getMetageneration());
+      if (requesterPays) {
+        remoteBucket = storage.lockRetentionPolicy(remoteBucket, Storage.BucketTargetOption.metagenerationMatch(),
+            Storage.BucketTargetOption.userProject(projectId));
+      } else {
+        remoteBucket = storage.lockRetentionPolicy(remoteBucket, Storage.BucketTargetOption.metagenerationMatch());
+      }
+      assertTrue(remoteBucket.retentionPolicyIsLocked());
+      assertNotNull(remoteBucket.getRetentionEffectiveTime());
+    } finally {
+      RemoteStorageHelper.forceDelete(storage, bucketName, 5, TimeUnit.SECONDS);
+    }
+  }
+
+  @Test
+  public void testAttemptObjectDeleteWithRetentionPolicy() throws ExecutionException, InterruptedException {
+    String bucketName = RemoteStorageHelper.generateBucketName();
+    Bucket remoteBucket = storage.create(BucketInfo.newBuilder(bucketName)
+        .setRetentionPeriod(RETENTION_PERIOD).build());
+    assertEquals(RETENTION_PERIOD, remoteBucket.getRetentionPeriod());
+    String blobName = "test-create-with-retention-policy";
+    BlobInfo blobInfo = BlobInfo.newBuilder(bucketName, blobName).build();
+    Blob remoteBlob = storage.create(blobInfo);
+    assertNotNull(remoteBlob.getRetentionExpirationTime());
+    try {
+      remoteBlob.delete();
+      fail("Expected failure on delete from retentionPolicy");
+    } catch (StorageException ex) {
+      // expected
+    } finally {
+      Thread.sleep(RETENTION_PERIOD_IN_MILLISECONDS);
+      RemoteStorageHelper.forceDelete(storage, bucketName, 5, TimeUnit.SECONDS);
+    }
+  }
+
+  @Test
+  public void testEnableDisableBucketDefaultEventBasedHold() throws ExecutionException, InterruptedException {
+    String bucketName = RemoteStorageHelper.generateBucketName();
+    Bucket remoteBucket = storage.create(BucketInfo.newBuilder(bucketName).setDefaultEventBasedHold(true).build());
+    try {
+      assertTrue(remoteBucket.getDefaultEventBasedHold());
+      remoteBucket = storage.get(bucketName, Storage.BucketGetOption.fields(BucketField.DEFAULT_EVENT_BASED_HOLD));
+      assertTrue(remoteBucket.getDefaultEventBasedHold());
+      String blobName = "test-create-with-event-based-hold";
+      BlobInfo blobInfo = BlobInfo.newBuilder(bucketName, blobName).build();
+      Blob remoteBlob = storage.create(blobInfo);
+      assertTrue(remoteBlob.getEventBasedHold());
+      remoteBlob = storage.get(blobInfo.getBlobId(), Storage.BlobGetOption.fields(BlobField.EVENT_BASED_HOLD));
+      assertTrue(remoteBlob.getEventBasedHold());
+      remoteBlob = remoteBlob.toBuilder().setEventBasedHold(false).build().update();
+      assertFalse(remoteBlob.getEventBasedHold());
+      remoteBucket = remoteBucket.toBuilder().setDefaultEventBasedHold(false).build().update();
+      assertFalse(remoteBucket.getDefaultEventBasedHold());
+    } finally {
+      RemoteStorageHelper.forceDelete(storage, bucketName, 5, TimeUnit.SECONDS);
+    }
+  }
+
+  @Test
+  public void testEnableDisableTemporaryHold() {
+    String blobName = "test-create-with-temporary-hold";
+    BlobInfo blobInfo = BlobInfo.newBuilder(BUCKET, blobName).setTemporaryHold(true).build();
+    Blob remoteBlob = storage.create(blobInfo);
+    assertTrue(remoteBlob.getTemporaryHold());
+    remoteBlob = storage.get(remoteBlob.getBlobId(), Storage.BlobGetOption.fields(BlobField.TEMPORARY_HOLD));
+    assertTrue(remoteBlob.getTemporaryHold());
+    remoteBlob = remoteBlob.toBuilder().setTemporaryHold(false).build().update();
+    assertFalse(remoteBlob.getTemporaryHold());
+  }
+
+  @Test
+  public void testAttemptObjectDeleteWithEventBasedHold() {
+    String blobName = "test-create-with-event-based-hold";
+    BlobInfo blobInfo = BlobInfo.newBuilder(BUCKET, blobName).setEventBasedHold(true).build();
+    Blob remoteBlob = storage.create(blobInfo);
+    assertTrue(remoteBlob.getEventBasedHold());
+    try {
+      remoteBlob.delete();
+      fail("Expected failure on delete from eventBasedHold");
+    } catch (StorageException ex) {
+      // expected
+    } finally {
+      remoteBlob.toBuilder().setEventBasedHold(false).build().update();
+    }
+  }
+
+  @Test
+  public void testAttemptDeletionObjectTemporaryHold() {
+    String blobName = "test-create-with-temporary-hold";
+    BlobInfo blobInfo = BlobInfo.newBuilder(BUCKET, blobName).setTemporaryHold(true).build();
+    Blob remoteBlob = storage.create(blobInfo);
+    assertTrue(remoteBlob.getTemporaryHold());
+    try {
+      remoteBlob.delete();
+      fail("Expected failure on delete from temporaryHold");
+    } catch (StorageException ex) {
+      // expected
+    } finally {
+      remoteBlob.toBuilder().setEventBasedHold(false).build().update();
+    }
+  }
+
+  @Test
+  public void testGetServiceAccount() {
     String projectId = remoteStorageHelper.getOptions().getProjectId();
     ServiceAccount serviceAccount = storage.getServiceAccount(projectId);
     assertNotNull(serviceAccount);
-    assertEquals(SERVICE_ACCOUNT_EMAIL, serviceAccount.getEmail());
+    assertTrue(serviceAccount.getEmail().endsWith(SERVICE_ACCOUNT_EMAIL_SUFFIX));
   }
 }

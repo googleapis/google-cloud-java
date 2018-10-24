@@ -44,6 +44,7 @@ import com.google.api.core.ApiFutures;
 import com.google.api.gax.rpc.ApiStreamObserver;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.Timestamp;
 import com.google.cloud.firestore.spi.v1beta1.FirestoreRpc;
 import com.google.firestore.v1beta1.Write;
 import com.google.protobuf.ByteString;
@@ -65,7 +66,6 @@ import org.mockito.Matchers;
 import org.mockito.Mockito;
 import org.mockito.Spy;
 import org.mockito.runners.MockitoJUnitRunner;
-import org.threeten.bp.Instant;
 
 @RunWith(MockitoJUnitRunner.class)
 public class TransactionTest {
@@ -75,7 +75,11 @@ public class TransactionTest {
   @Spy
   private FirestoreImpl firestoreMock =
       new FirestoreImpl(
-          FirestoreOptions.newBuilder().setProjectId("test-project").build(), firestoreRpc);
+          FirestoreOptions.newBuilder()
+              .setProjectId("test-project")
+              .setTimestampsInSnapshotsEnabled(true)
+              .build(),
+          firestoreRpc);
 
   @Captor private ArgumentCaptor<Message> requestCapture;
   @Captor private ArgumentCaptor<ApiStreamObserver<Message>> streamObserverCapture;
@@ -535,7 +539,8 @@ public class TransactionTest {
               public String updateCallback(Transaction transaction) {
                 transaction.delete(documentReference);
                 transaction.delete(
-                    documentReference, Precondition.updatedAt(Instant.ofEpochSecond(1, 2)));
+                    documentReference,
+                    Precondition.updatedAt(Timestamp.ofTimeSecondsAndNanos(1, 2)));
                 return "foo";
               }
             },

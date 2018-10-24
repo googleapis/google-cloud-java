@@ -51,7 +51,8 @@ import javax.annotation.Generated;
  * conversation and match user input to predefined intents and actions.
  *
  * <p>You can create an agent using both Dialogflow Standard Edition and Dialogflow Enterprise
- * Edition. For details, see [Dialogflow Editions](/dialogflow-enterprise/docs/editions).
+ * Edition. For details, see [Dialogflow
+ * Editions](https://cloud.google.com/dialogflow-enterprise/docs/editions).
  *
  * <p>You can save your agent for backup or versioning by exporting the agent by using the
  * [ExportAgent][google.cloud.dialogflow.v2beta1.Agents.ExportAgent] method. You can import a saved
@@ -257,7 +258,7 @@ public class AgentsClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final Agent getAgent(GetAgentRequest request) {
+  public final Agent getAgent(GetAgentRequest request) {
     return getAgentCallable().call(request);
   }
 
@@ -521,7 +522,7 @@ public class AgentsClient implements BackgroundResource {
    */
   @BetaApi(
       "The surface for long-running operations is not stable yet and may change in the future.")
-  private final OperationFuture<Empty, Struct> trainAgentAsync(TrainAgentRequest request) {
+  public final OperationFuture<Empty, Struct> trainAgentAsync(TrainAgentRequest request) {
     return trainAgentOperationCallable().futureCall(request);
   }
 

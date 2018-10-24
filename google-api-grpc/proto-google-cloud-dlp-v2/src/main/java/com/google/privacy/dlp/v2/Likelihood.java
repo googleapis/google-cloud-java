@@ -15,7 +15,7 @@ public enum Likelihood
     implements com.google.protobuf.ProtocolMessageEnum {
   /**
    * <pre>
-   * Default value; information with all likelihoods is included.
+   * Default value; same as POSSIBLE.
    * </pre>
    *
    * <code>LIKELIHOOD_UNSPECIFIED = 0;</code>
@@ -58,7 +58,7 @@ public enum Likelihood
 
   /**
    * <pre>
-   * Default value; information with all likelihoods is included.
+   * Default value; same as POSSIBLE.
    * </pre>
    *
    * <code>LIKELIHOOD_UNSPECIFIED = 0;</code>

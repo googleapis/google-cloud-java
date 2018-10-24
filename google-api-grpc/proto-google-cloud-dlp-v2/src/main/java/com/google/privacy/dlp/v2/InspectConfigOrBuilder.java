@@ -10,7 +10,15 @@ public interface InspectConfigOrBuilder extends
   /**
    * <pre>
    * Restricts what info_types to look for. The values must correspond to
-   * InfoType values returned by ListInfoTypes or found in documentation.
+   * InfoType values returned by ListInfoTypes or listed at
+   * https://cloud.google.com/dlp/docs/infotypes-reference.
+   * When no InfoTypes or CustomInfoTypes are specified in a request, the
+   * system may automatically choose what detectors to run. By default this may
+   * be all types, but may change over time as detectors are updated.
+   * The special InfoType name "ALL_BASIC" can be used to trigger all detectors,
+   * but may change over time as new InfoTypes are added. If you need precise
+   * control and predictability as to what detectors are run you should specify
+   * specific InfoTypes listed in the reference.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
@@ -20,7 +28,15 @@ public interface InspectConfigOrBuilder extends
   /**
    * <pre>
    * Restricts what info_types to look for. The values must correspond to
-   * InfoType values returned by ListInfoTypes or found in documentation.
+   * InfoType values returned by ListInfoTypes or listed at
+   * https://cloud.google.com/dlp/docs/infotypes-reference.
+   * When no InfoTypes or CustomInfoTypes are specified in a request, the
+   * system may automatically choose what detectors to run. By default this may
+   * be all types, but may change over time as detectors are updated.
+   * The special InfoType name "ALL_BASIC" can be used to trigger all detectors,
+   * but may change over time as new InfoTypes are added. If you need precise
+   * control and predictability as to what detectors are run you should specify
+   * specific InfoTypes listed in the reference.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
@@ -29,7 +45,15 @@ public interface InspectConfigOrBuilder extends
   /**
    * <pre>
    * Restricts what info_types to look for. The values must correspond to
-   * InfoType values returned by ListInfoTypes or found in documentation.
+   * InfoType values returned by ListInfoTypes or listed at
+   * https://cloud.google.com/dlp/docs/infotypes-reference.
+   * When no InfoTypes or CustomInfoTypes are specified in a request, the
+   * system may automatically choose what detectors to run. By default this may
+   * be all types, but may change over time as detectors are updated.
+   * The special InfoType name "ALL_BASIC" can be used to trigger all detectors,
+   * but may change over time as new InfoTypes are added. If you need precise
+   * control and predictability as to what detectors are run you should specify
+   * specific InfoTypes listed in the reference.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
@@ -38,7 +62,15 @@ public interface InspectConfigOrBuilder extends
   /**
    * <pre>
    * Restricts what info_types to look for. The values must correspond to
-   * InfoType values returned by ListInfoTypes or found in documentation.
+   * InfoType values returned by ListInfoTypes or listed at
+   * https://cloud.google.com/dlp/docs/infotypes-reference.
+   * When no InfoTypes or CustomInfoTypes are specified in a request, the
+   * system may automatically choose what detectors to run. By default this may
+   * be all types, but may change over time as detectors are updated.
+   * The special InfoType name "ALL_BASIC" can be used to trigger all detectors,
+   * but may change over time as new InfoTypes are added. If you need precise
+   * control and predictability as to what detectors are run you should specify
+   * specific InfoTypes listed in the reference.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
@@ -48,7 +80,15 @@ public interface InspectConfigOrBuilder extends
   /**
    * <pre>
    * Restricts what info_types to look for. The values must correspond to
-   * InfoType values returned by ListInfoTypes or found in documentation.
+   * InfoType values returned by ListInfoTypes or listed at
+   * https://cloud.google.com/dlp/docs/infotypes-reference.
+   * When no InfoTypes or CustomInfoTypes are specified in a request, the
+   * system may automatically choose what detectors to run. By default this may
+   * be all types, but may change over time as detectors are updated.
+   * The special InfoType name "ALL_BASIC" can be used to trigger all detectors,
+   * but may change over time as new InfoTypes are added. If you need precise
+   * control and predictability as to what detectors are run you should specify
+   * specific InfoTypes listed in the reference.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
@@ -60,6 +100,7 @@ public interface InspectConfigOrBuilder extends
    * <pre>
    * Only returns findings equal or above this threshold. The default is
    * POSSIBLE.
+   * See https://cloud.google.com/dlp/docs/likelihood to learn more.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Likelihood min_likelihood = 2;</code>
@@ -69,6 +110,7 @@ public interface InspectConfigOrBuilder extends
    * <pre>
    * Only returns findings equal or above this threshold. The default is
    * POSSIBLE.
+   * See https://cloud.google.com/dlp/docs/likelihood to learn more.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Likelihood min_likelihood = 2;</code>
@@ -109,7 +151,8 @@ public interface InspectConfigOrBuilder extends
 
   /**
    * <pre>
-   * Custom infoTypes provided by the user.
+   * CustomInfoTypes provided by the user. See
+   * https://cloud.google.com/dlp/docs/creating-custom-infotypes to learn more.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.CustomInfoType custom_info_types = 6;</code>
@@ -118,7 +161,8 @@ public interface InspectConfigOrBuilder extends
       getCustomInfoTypesList();
   /**
    * <pre>
-   * Custom infoTypes provided by the user.
+   * CustomInfoTypes provided by the user. See
+   * https://cloud.google.com/dlp/docs/creating-custom-infotypes to learn more.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.CustomInfoType custom_info_types = 6;</code>
@@ -126,7 +170,8 @@ public interface InspectConfigOrBuilder extends
   com.google.privacy.dlp.v2.CustomInfoType getCustomInfoTypes(int index);
   /**
    * <pre>
-   * Custom infoTypes provided by the user.
+   * CustomInfoTypes provided by the user. See
+   * https://cloud.google.com/dlp/docs/creating-custom-infotypes to learn more.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.CustomInfoType custom_info_types = 6;</code>
@@ -134,7 +179,8 @@ public interface InspectConfigOrBuilder extends
   int getCustomInfoTypesCount();
   /**
    * <pre>
-   * Custom infoTypes provided by the user.
+   * CustomInfoTypes provided by the user. See
+   * https://cloud.google.com/dlp/docs/creating-custom-infotypes to learn more.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.CustomInfoType custom_info_types = 6;</code>
@@ -143,7 +189,8 @@ public interface InspectConfigOrBuilder extends
       getCustomInfoTypesOrBuilderList();
   /**
    * <pre>
-   * Custom infoTypes provided by the user.
+   * CustomInfoTypes provided by the user. See
+   * https://cloud.google.com/dlp/docs/creating-custom-infotypes to learn more.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.CustomInfoType custom_info_types = 6;</code>
@@ -197,4 +244,58 @@ public interface InspectConfigOrBuilder extends
    * <code>repeated .google.privacy.dlp.v2.ContentOption content_options = 8;</code>
    */
   int getContentOptionsValue(int index);
+
+  /**
+   * <pre>
+   * Set of rules to apply to the findings for this InspectConfig.
+   * Exclusion rules, contained in the set are executed in the end, other
+   * rules are executed in the order they are specified for each info type.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.InspectionRuleSet rule_set = 10;</code>
+   */
+  java.util.List<com.google.privacy.dlp.v2.InspectionRuleSet> 
+      getRuleSetList();
+  /**
+   * <pre>
+   * Set of rules to apply to the findings for this InspectConfig.
+   * Exclusion rules, contained in the set are executed in the end, other
+   * rules are executed in the order they are specified for each info type.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.InspectionRuleSet rule_set = 10;</code>
+   */
+  com.google.privacy.dlp.v2.InspectionRuleSet getRuleSet(int index);
+  /**
+   * <pre>
+   * Set of rules to apply to the findings for this InspectConfig.
+   * Exclusion rules, contained in the set are executed in the end, other
+   * rules are executed in the order they are specified for each info type.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.InspectionRuleSet rule_set = 10;</code>
+   */
+  int getRuleSetCount();
+  /**
+   * <pre>
+   * Set of rules to apply to the findings for this InspectConfig.
+   * Exclusion rules, contained in the set are executed in the end, other
+   * rules are executed in the order they are specified for each info type.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.InspectionRuleSet rule_set = 10;</code>
+   */
+  java.util.List<? extends com.google.privacy.dlp.v2.InspectionRuleSetOrBuilder> 
+      getRuleSetOrBuilderList();
+  /**
+   * <pre>
+   * Set of rules to apply to the findings for this InspectConfig.
+   * Exclusion rules, contained in the set are executed in the end, other
+   * rules are executed in the order they are specified for each info type.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.InspectionRuleSet rule_set = 10;</code>
+   */
+  com.google.privacy.dlp.v2.InspectionRuleSetOrBuilder getRuleSetOrBuilder(
+      int index);
 }

@@ -57,7 +57,7 @@ public final class CommonProto {
       "imestampH\000B\020\n\016condition_type\"\263\002\n\022Transac" +
       "tionOptions\022J\n\tread_only\030\002 \001(\01325.google." +
       "firestore.v1beta1.TransactionOptions.Rea" +
-      "dOnlyH\000\022L\n\nread_write\030\003 \001(\01326.google.fir",
+      "dOnlyH\000\022L\n\nread_write\030\003 \001(\01326.google.fir" +
       "estore.v1beta1.TransactionOptions.ReadWr" +
       "iteH\000\032&\n\tReadWrite\022\031\n\021retry_transaction\030" +
       "\001 \001(\014\032S\n\010ReadOnly\022/\n\tread_time\030\002 \001(\0132\032.g" +

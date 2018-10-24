@@ -24,6 +24,7 @@ import com.google.cloud.bigquery.JobInfo.CreateDisposition;
 import com.google.cloud.bigquery.JobInfo.WriteDisposition;
 import com.google.cloud.bigquery.JobInfo.SchemaUpdateOption;
 import com.google.cloud.bigquery.QueryJobConfiguration.Priority;
+import com.google.cloud.bigquery.TimePartitioning.Type;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import java.util.List;
@@ -78,6 +79,8 @@ public class QueryJobConfigurationTest {
       UserDefinedFunction.inline("Function"), UserDefinedFunction.fromUri("URI"));
   private static final EncryptionConfiguration JOB_ENCRYPTION_CONFIGURATION =
       EncryptionConfiguration.newBuilder().setKmsKeyName("KMS_KEY_1").build();
+  private static final TimePartitioning TIME_PARTITIONING = TimePartitioning.of(Type.DAY);
+  private static final Clustering CLUSTERING = Clustering.newBuilder().setFields(ImmutableList.of("Foo","Bar")).build();
   private static final QueryJobConfiguration QUERY_JOB_CONFIGURATION =
       QueryJobConfiguration.newBuilder(QUERY)
           .setUseQueryCache(USE_QUERY_CACHE)
@@ -95,6 +98,8 @@ public class QueryJobConfigurationTest {
           .setMaximumBillingTier(MAX_BILLING_TIER)
           .setSchemaUpdateOptions(SCHEMA_UPDATE_OPTIONS)
           .setDestinationEncryptionConfiguration(JOB_ENCRYPTION_CONFIGURATION)
+          .setTimePartitioning(TIME_PARTITIONING)
+          .setClustering(CLUSTERING)
           .build();
 
   @Test
@@ -166,5 +171,7 @@ public class QueryJobConfigurationTest {
     assertEquals(expected.getMaximumBillingTier(), value.getMaximumBillingTier());
     assertEquals(expected.getSchemaUpdateOptions(), value.getSchemaUpdateOptions());
     assertEquals(expected.getDestinationEncryptionConfiguration(), value.getDestinationEncryptionConfiguration());
+    assertEquals(expected.getTimePartitioning(), value.getTimePartitioning());
+    assertEquals(expected.getClustering(), value.getClustering());
   }
 }

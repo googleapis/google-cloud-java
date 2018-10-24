@@ -116,7 +116,6 @@ import javax.annotation.Generated;
  * </pre>
  */
 @Generated("by gapic-generator")
-@BetaApi
 public class AlertPolicyServiceClient implements BackgroundResource {
   private final AlertPolicyServiceSettings settings;
   private final AlertPolicyServiceStub stub;

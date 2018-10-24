@@ -124,7 +124,6 @@ import javax.annotation.Generated;
  * </pre>
  */
 @Generated("by gapic-generator")
-@BetaApi
 public class TopicAdminClient implements BackgroundResource {
   private final TopicAdminSettings settings;
   private final PublisherStub stub;
@@ -177,7 +176,8 @@ public class TopicAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates the given topic with the given name.
+   * Creates the given topic with the given name. See the &lt;a
+   * href="/pubsub/docs/admin#resource_names"&gt; resource name rules&lt;/a&gt;.
    *
    * <p>Sample code:
    *
@@ -203,7 +203,8 @@ public class TopicAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates the given topic with the given name.
+   * Creates the given topic with the given name. See the &lt;a
+   * href="/pubsub/docs/admin#resource_names"&gt; resource name rules&lt;/a&gt;.
    *
    * <p>Sample code:
    *
@@ -229,7 +230,8 @@ public class TopicAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates the given topic with the given name.
+   * Creates the given topic with the given name. See the &lt;a
+   * href="/pubsub/docs/admin#resource_names"&gt; resource name rules&lt;/a&gt;.
    *
    * <p>Sample code:
    *
@@ -246,13 +248,14 @@ public class TopicAdminClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final Topic createTopic(Topic request) {
+  public final Topic createTopic(Topic request) {
     return createTopicCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates the given topic with the given name.
+   * Creates the given topic with the given name. See the &lt;a
+   * href="/pubsub/docs/admin#resource_names"&gt; resource name rules&lt;/a&gt;.
    *
    * <p>Sample code:
    *
@@ -274,10 +277,7 @@ public class TopicAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates an existing topic. Note that certain properties of a topic are not modifiable. Options
-   * settings follow the style guide: NOTE: The style guide requires body: "topic" instead of body:
-   * "&#42;". Keeping the latter for internal consistency in V1, however it should be corrected in
-   * V2. See https://cloud.google.com/apis/design/standard_methods#update for details.
+   * Updates an existing topic. Note that certain properties of a topic are not modifiable.
    *
    * <p>Sample code:
    *
@@ -296,16 +296,13 @@ public class TopicAdminClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  /* package-private */ final Topic updateTopic(UpdateTopicRequest request) {
+  public final Topic updateTopic(UpdateTopicRequest request) {
     return updateTopicCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates an existing topic. Note that certain properties of a topic are not modifiable. Options
-   * settings follow the style guide: NOTE: The style guide requires body: "topic" instead of body:
-   * "&#42;". Keeping the latter for internal consistency in V1, however it should be corrected in
-   * V2. See https://cloud.google.com/apis/design/standard_methods#update for details.
+   * Updates an existing topic. Note that certain properties of a topic are not modifiable.
    *
    * <p>Sample code:
    *
@@ -323,15 +320,13 @@ public class TopicAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    */
-  /* package-private */ final UnaryCallable<UpdateTopicRequest, Topic> updateTopicCallable() {
+  public final UnaryCallable<UpdateTopicRequest, Topic> updateTopicCallable() {
     return stub.updateTopicCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Adds one or more messages to the topic. Returns `NOT_FOUND` if the topic does not exist. The
-   * message payload must not be empty; it must contain either a non-empty data field, or at least
-   * one attribute.
+   * Adds one or more messages to the topic. Returns `NOT_FOUND` if the topic does not exist.
    *
    * <p>Sample code:
    *
@@ -365,9 +360,7 @@ public class TopicAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Adds one or more messages to the topic. Returns `NOT_FOUND` if the topic does not exist. The
-   * message payload must not be empty; it must contain either a non-empty data field, or at least
-   * one attribute.
+   * Adds one or more messages to the topic. Returns `NOT_FOUND` if the topic does not exist.
    *
    * <p>Sample code:
    *
@@ -397,9 +390,7 @@ public class TopicAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Adds one or more messages to the topic. Returns `NOT_FOUND` if the topic does not exist. The
-   * message payload must not be empty; it must contain either a non-empty data field, or at least
-   * one attribute.
+   * Adds one or more messages to the topic. Returns `NOT_FOUND` if the topic does not exist.
    *
    * <p>Sample code:
    *
@@ -428,9 +419,7 @@ public class TopicAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Adds one or more messages to the topic. Returns `NOT_FOUND` if the topic does not exist. The
-   * message payload must not be empty; it must contain either a non-empty data field, or at least
-   * one attribute.
+   * Adds one or more messages to the topic. Returns `NOT_FOUND` if the topic does not exist.
    *
    * <p>Sample code:
    *
@@ -520,7 +509,7 @@ public class TopicAdminClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final Topic getTopic(GetTopicRequest request) {
+  public final Topic getTopic(GetTopicRequest request) {
     return getTopicCallable().call(request);
   }
 
@@ -561,8 +550,8 @@ public class TopicAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param project The name of the cloud project that topics belong to. Format is
-   *     `projects/{project}`.
+   * @param project The name of the project in which to list topics. Format is
+   *     `projects/{project-id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListTopicsPagedResponse listTopics(ProjectName project) {
@@ -588,8 +577,8 @@ public class TopicAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param project The name of the cloud project that topics belong to. Format is
-   *     `projects/{project}`.
+   * @param project The name of the project in which to list topics. Format is
+   *     `projects/{project-id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListTopicsPagedResponse listTopics(String project) {
@@ -679,7 +668,7 @@ public class TopicAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists the name of the subscriptions for this topic.
+   * Lists the names of the subscriptions on this topic.
    *
    * <p>Sample code:
    *
@@ -706,7 +695,7 @@ public class TopicAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists the name of the subscriptions for this topic.
+   * Lists the names of the subscriptions on this topic.
    *
    * <p>Sample code:
    *
@@ -731,7 +720,7 @@ public class TopicAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists the name of the subscriptions for this topic.
+   * Lists the names of the subscriptions on this topic.
    *
    * <p>Sample code:
    *
@@ -757,7 +746,7 @@ public class TopicAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists the name of the subscriptions for this topic.
+   * Lists the names of the subscriptions on this topic.
    *
    * <p>Sample code:
    *
@@ -782,7 +771,7 @@ public class TopicAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists the name of the subscriptions for this topic.
+   * Lists the names of the subscriptions on this topic.
    *
    * <p>Sample code:
    *
@@ -885,7 +874,7 @@ public class TopicAdminClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final void deleteTopic(DeleteTopicRequest request) {
+  public final void deleteTopic(DeleteTopicRequest request) {
     deleteTopicCallable().call(request);
   }
 
@@ -1037,7 +1026,7 @@ public class TopicAdminClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final Policy getIamPolicy(GetIamPolicyRequest request) {
+  public final Policy getIamPolicy(GetIamPolicyRequest request) {
     return getIamPolicyCallable().call(request);
   }
 

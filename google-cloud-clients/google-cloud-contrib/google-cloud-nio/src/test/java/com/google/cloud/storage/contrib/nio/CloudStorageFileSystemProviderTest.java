@@ -38,6 +38,7 @@ import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.URI;
@@ -54,6 +55,7 @@ import java.nio.file.NoSuchFileException;
 import java.nio.file.OpenOption;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -395,6 +397,53 @@ public class CloudStorageFileSystemProviderTest {
     try (CloudStorageFileSystem fs = forBucket("military", usePseudoDirectories(false))) {
       assertThat(Files.exists(fs.getPath("fashion/"))).isFalse();
     }
+  }
+
+  @Test
+  public void testFakeDirectories() throws IOException {
+    try (FileSystem fs = forBucket("military")) {
+      List<Path> paths = new ArrayList<>();
+      paths.add(fs.getPath("dir/angel"));
+      paths.add(fs.getPath("dir/deepera"));
+      paths.add(fs.getPath("dir/deeperb"));
+      paths.add(fs.getPath("dir/deeper_"));
+      paths.add(fs.getPath("dir/deeper.sea/hasfish"));
+      paths.add(fs.getPath("dir/deeper/fish"));
+      for (Path path : paths) {
+        Files.createFile(path);
+      }
+
+      // ends with slash, must be a directory
+      assertThat(Files.isDirectory(fs.getPath("dir/"))).isTrue();
+      // files are not directories
+      assertThat(Files.exists(fs.getPath("dir/angel"))).isTrue();
+      assertThat(Files.isDirectory(fs.getPath("dir/angel"))).isFalse();
+      // directories are recognized even without the trailing "/"
+      assertThat(Files.isDirectory(fs.getPath("dir"))).isTrue();
+      // also works for absolute paths
+      assertThat(Files.isDirectory(fs.getPath("/dir"))).isTrue();
+      // non-existent files are not directories (but they don't make us crash)
+      assertThat(Files.isDirectory(fs.getPath("di"))).isFalse();
+      assertThat(Files.isDirectory(fs.getPath("dirs"))).isFalse();
+      assertThat(Files.isDirectory(fs.getPath("dir/deep"))).isFalse();
+      assertThat(Files.isDirectory(fs.getPath("dir/deeper/fi"))).isFalse();
+      assertThat(Files.isDirectory(fs.getPath("/dir/deeper/fi"))).isFalse();
+      // also works for subdirectories
+      assertThat(Files.isDirectory(fs.getPath("dir/deeper/"))).isTrue();
+      assertThat(Files.isDirectory(fs.getPath("dir/deeper"))).isTrue();
+      assertThat(Files.isDirectory(fs.getPath("/dir/deeper/"))).isTrue();
+      assertThat(Files.isDirectory(fs.getPath("/dir/deeper"))).isTrue();
+      // dot and .. folders are directories
+      assertThat(Files.isDirectory(fs.getPath("dir/deeper/."))).isTrue();
+      assertThat(Files.isDirectory(fs.getPath("dir/deeper/.."))).isTrue();
+      // dots in the name are fine
+      assertThat(Files.isDirectory(fs.getPath("dir/deeper.sea/"))).isTrue();
+      assertThat(Files.isDirectory(fs.getPath("dir/deeper.sea"))).isTrue();
+      assertThat(Files.isDirectory(fs.getPath("dir/deeper.seax"))).isFalse();
+      // the root folder is a directory
+      assertThat(Files.isDirectory(fs.getPath("/"))).isTrue();
+      assertThat(Files.isDirectory(fs.getPath(""))).isTrue();
+      }
   }
 
   @Test

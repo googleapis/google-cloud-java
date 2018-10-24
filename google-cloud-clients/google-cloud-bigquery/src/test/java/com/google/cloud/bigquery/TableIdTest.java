@@ -50,7 +50,8 @@ public class TableIdTest {
 
   @Test
   public void testSetProjectId() {
-    assertEquals(TABLE_COMPLETE, TABLE.setProjectId("project"));
+    TableId differentProjectTable = TableId.of("differentProject", "dataset", "table");
+    assertEquals(differentProjectTable, TABLE.setProjectId("differentProject"));
   }
 
   private void compareTableIds(TableId expected, TableId value) {

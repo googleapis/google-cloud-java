@@ -258,4 +258,15 @@ public interface WebhookResponseOrBuilder extends
    * <code>.google.cloud.dialogflow.v2beta1.EventInput followup_event_input = 6;</code>
    */
   com.google.cloud.dialogflow.v2beta1.EventInputOrBuilder getFollowupEventInputOrBuilder();
+
+  /**
+   * <pre>
+   * Optional. Indicates that this intent ends an interaction. Some integrations
+   * (e.g., Actions on Google or Dialogflow phone gateway) use this information
+   * to close interaction with an end user. Default is false.
+   * </pre>
+   *
+   * <code>bool end_interaction = 8;</code>
+   */
+  boolean getEndInteraction();
 }

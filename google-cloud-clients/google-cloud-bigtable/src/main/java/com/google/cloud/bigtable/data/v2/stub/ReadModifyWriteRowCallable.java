@@ -30,6 +30,7 @@ import com.google.cloud.bigtable.data.v2.models.ReadModifyWriteRow;
 import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowCell;
 import com.google.common.collect.ImmutableList;
+import com.google.common.util.concurrent.MoreExecutors;
 
 /** Simple wrapper for ReadModifyWriteRow to wrap the request and response protobufs. */
 class ReadModifyWriteRowCallable extends UnaryCallable<ReadModifyWriteRow, Row> {
@@ -55,7 +56,8 @@ class ReadModifyWriteRowCallable extends UnaryCallable<ReadModifyWriteRow, Row> 
           public Row apply(ReadModifyWriteRowResponse readModifyWriteRowResponse) {
             return convertResponse(readModifyWriteRowResponse);
           }
-        });
+        },
+        MoreExecutors.directExecutor());
   }
 
   private Row convertResponse(ReadModifyWriteRowResponse response) {

@@ -102,7 +102,7 @@ public final class SpeechProto {
       "yncRecognizeRequest\022>\n\006config\030\001 \001(\0132..go" +
       "ogle.cloud.speech.v1beta1.RecognitionCon" +
       "fig\022<\n\005audio\030\002 \001(\0132-.google.cloud.speech" +
-      ".v1beta1.RecognitionAudio\"\225\001\n\025AsyncRecog",
+      ".v1beta1.RecognitionAudio\"\225\001\n\025AsyncRecog" +
       "nizeRequest\022>\n\006config\030\001 \001(\0132..google.clo" +
       "ud.speech.v1beta1.RecognitionConfig\022<\n\005a" +
       "udio\030\002 \001(\0132-.google.cloud.speech.v1beta1" +
@@ -112,7 +112,7 @@ public final class SpeechProto {
       "tionConfigH\000\022\027\n\raudio_content\030\002 \001(\014H\000B\023\n" +
       "\021streaming_request\"\217\001\n\032StreamingRecognit" +
       "ionConfig\022>\n\006config\030\001 \001(\0132..google.cloud" +
-      ".speech.v1beta1.RecognitionConfig\022\030\n\020sin",
+      ".speech.v1beta1.RecognitionConfig\022\030\n\020sin" +
       "gle_utterance\030\002 \001(\010\022\027\n\017interim_results\030\003" +
       " \001(\010\"\352\002\n\021RecognitionConfig\022N\n\010encoding\030\001" +
       " \001(\0162<.google.cloud.speech.v1beta1.Recog" +
@@ -122,7 +122,7 @@ public final class SpeechProto {
       "(\010\022B\n\016speech_context\030\006 \001(\0132*.google.clou" +
       "d.speech.v1beta1.SpeechContext\"a\n\rAudioE" +
       "ncoding\022\030\n\024ENCODING_UNSPECIFIED\020\000\022\014\n\010LIN" +
-      "EAR16\020\001\022\010\n\004FLAC\020\002\022\t\n\005MULAW\020\003\022\007\n\003AMR\020\004\022\n\n",
+      "EAR16\020\001\022\010\n\004FLAC\020\002\022\t\n\005MULAW\020\003\022\007\n\003AMR\020\004\022\n\n" +
       "\006AMR_WB\020\005\" \n\rSpeechContext\022\017\n\007phrases\030\001 " +
       "\003(\t\"D\n\020RecognitionAudio\022\021\n\007content\030\001 \001(\014" +
       "H\000\022\r\n\003uri\030\002 \001(\tH\000B\016\n\014audio_source\"^\n\025Syn" +
@@ -132,7 +132,7 @@ public final class SpeechProto {
       "esults\030\002 \003(\01324.google.cloud.speech.v1bet" +
       "a1.SpeechRecognitionResult\"\230\001\n\026AsyncReco" +
       "gnizeMetadata\022\030\n\020progress_percent\030\001 \001(\005\022" +
-      ".\n\nstart_time\030\002 \001(\0132\032.google.protobuf.Ti",
+      ".\n\nstart_time\030\002 \001(\0132\032.google.protobuf.Ti" +
       "mestamp\0224\n\020last_update_time\030\003 \001(\0132\032.goog" +
       "le.protobuf.Timestamp\"\205\003\n\032StreamingRecog" +
       "nizeResponse\022!\n\005error\030\001 \001(\0132\022.google.rpc" +
@@ -142,7 +142,7 @@ public final class SpeechProto {
       "pe\030\004 \001(\0162F.google.cloud.speech.v1beta1.S" +
       "treamingRecognizeResponse.EndpointerType" +
       "\"\202\001\n\016EndpointerType\022 \n\034ENDPOINTER_EVENT_" +
-      "UNSPECIFIED\020\000\022\023\n\017START_OF_SPEECH\020\001\022\021\n\rEN",
+      "UNSPECIFIED\020\000\022\023\n\017START_OF_SPEECH\020\001\022\021\n\rEN" +
       "D_OF_SPEECH\020\002\022\020\n\014END_OF_AUDIO\020\003\022\024\n\020END_O" +
       "F_UTTERANCE\020\004\"\222\001\n\032StreamingRecognitionRe" +
       "sult\022O\n\014alternatives\030\001 \003(\01329.google.clou" +
@@ -152,7 +152,7 @@ public final class SpeechProto {
       "tives\030\001 \003(\01329.google.cloud.speech.v1beta" +
       "1.SpeechRecognitionAlternative\"F\n\034Speech" +
       "RecognitionAlternative\022\022\n\ntranscript\030\001 \001" +
-      "(\t\022\022\n\nconfidence\030\002 \001(\0022\310\003\n\006Speech\022\240\001\n\rSy",
+      "(\t\022\022\n\nconfidence\030\002 \001(\0022\310\003\n\006Speech\022\240\001\n\rSy" +
       "ncRecognize\0221.google.cloud.speech.v1beta" +
       "1.SyncRecognizeRequest\0322.google.cloud.sp" +
       "eech.v1beta1.SyncRecognizeResponse\"(\202\323\344\223" +
@@ -162,7 +162,7 @@ public final class SpeechProto {
       "grunning.Operation\")\202\323\344\223\002#\"\036/v1beta1/spe" +
       "ech:asyncrecognize:\001*\022\211\001\n\022StreamingRecog" +
       "nize\0226.google.cloud.speech.v1beta1.Strea" +
-      "mingRecognizeRequest\0327.google.cloud.spee",
+      "mingRecognizeRequest\0327.google.cloud.spee" +
       "ch.v1beta1.StreamingRecognizeResponse(\0010" +
       "\001Bs\n\037com.google.cloud.speech.v1beta1B\013Sp" +
       "eechProtoP\001ZAgoogle.golang.org/genproto/" +

@@ -92,6 +92,9 @@ public class BlobTest {
   private static final BlobInfo.CustomerEncryption CUSTOMER_ENCRYPTION =
       new BlobInfo.CustomerEncryption(ENCRYPTION_ALGORITHM, KEY_SHA256);
   private static final String KMS_KEY_NAME = "projects/p/locations/kr-loc/keyRings/kr/cryptoKeys/key";
+  private static final Boolean EVENT_BASED_HOLD = true;
+  private static final Boolean TEMPORARY_HOLD = true;
+  private static final Long RETENTION_EXPIRATION_TIME = 10L;
   private static final BlobInfo FULL_BLOB_INFO = BlobInfo.newBuilder("b", "n", GENERATION)
       .setAcl(ACLS)
       .setComponentCount(COMPONENT_COUNT)
@@ -115,6 +118,9 @@ public class BlobTest {
       .setCreateTime(CREATE_TIME)
       .setCustomerEncryption(CUSTOMER_ENCRYPTION)
       .setKmsKeyName(KMS_KEY_NAME)
+      .setEventBasedHold(EVENT_BASED_HOLD)
+      .setTemporaryHold(TEMPORARY_HOLD)
+      .setRetentionExpirationTime(RETENTION_EXPIRATION_TIME)
       .build();
   private static final BlobInfo BLOB_INFO = BlobInfo.newBuilder("b", "n")
       .setMetageneration(42L)
@@ -472,6 +478,9 @@ public class BlobTest {
         .setCreateTime(CREATE_TIME)
         .setCustomerEncryption(CUSTOMER_ENCRYPTION)
         .setKmsKeyName(KMS_KEY_NAME)
+        .setEventBasedHold(EVENT_BASED_HOLD)
+        .setTemporaryHold(TEMPORARY_HOLD)
+        .setRetentionExpirationTime(RETENTION_EXPIRATION_TIME)
         .setDeleteTime(DELETE_TIME)
         .setEtag(ETAG)
         .setGeneratedId(GENERATED_ID)
@@ -496,6 +505,10 @@ public class BlobTest {
     assertEquals(CRC32, blob.getCrc32c());
     assertEquals(CREATE_TIME, blob.getCreateTime());
     assertEquals(CUSTOMER_ENCRYPTION, blob.getCustomerEncryption());
+    assertEquals(KMS_KEY_NAME, blob.getKmsKeyName());
+    assertEquals(EVENT_BASED_HOLD, blob.getEventBasedHold());
+    assertEquals(TEMPORARY_HOLD, blob.getTemporaryHold());
+    assertEquals(RETENTION_EXPIRATION_TIME, blob.getRetentionExpirationTime());
     assertEquals(DELETE_TIME, blob.getDeleteTime());
     assertEquals(ETAG, blob.getEtag());
     assertEquals(GENERATED_ID, blob.getGeneratedId());
@@ -527,6 +540,9 @@ public class BlobTest {
     assertNull(blob.getCreateTime());
     assertNull(blob.getCustomerEncryption());
     assertNull(blob.getKmsKeyName());
+    assertNull(blob.getEventBasedHold());
+    assertNull(blob.getTemporaryHold());
+    assertNull(blob.getRetentionExpirationTime());
     assertNull(blob.getDeleteTime());
     assertNull(blob.getEtag());
     assertNull(blob.getGeneratedId());

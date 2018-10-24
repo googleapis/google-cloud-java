@@ -27,6 +27,8 @@
  * includes methods for sensitive data redaction and scheduling of data scans on Google Cloud
  * Platform based data sets.
  *
+ * <p>To learn more about concepts and find how-to guides see https://cloud.google.com/dlp/docs/.
+ *
  * <p>Sample for DlpServiceClient:
  *
  * <pre>

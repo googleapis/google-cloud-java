@@ -16,9 +16,9 @@ public interface ListLogEntriesRequestOrBuilder extends
    * `resource_names`.
    * </pre>
    *
-   * <code>repeated string project_ids = 1;</code>
+   * <code>repeated string project_ids = 1 [deprecated = true];</code>
    */
-  java.util.List<java.lang.String>
+  @java.lang.Deprecated java.util.List<java.lang.String>
       getProjectIdsList();
   /**
    * <pre>
@@ -29,9 +29,9 @@ public interface ListLogEntriesRequestOrBuilder extends
    * `resource_names`.
    * </pre>
    *
-   * <code>repeated string project_ids = 1;</code>
+   * <code>repeated string project_ids = 1 [deprecated = true];</code>
    */
-  int getProjectIdsCount();
+  @java.lang.Deprecated int getProjectIdsCount();
   /**
    * <pre>
    * Deprecated. Use `resource_names` instead.  One or more project identifiers
@@ -41,9 +41,9 @@ public interface ListLogEntriesRequestOrBuilder extends
    * `resource_names`.
    * </pre>
    *
-   * <code>repeated string project_ids = 1;</code>
+   * <code>repeated string project_ids = 1 [deprecated = true];</code>
    */
-  java.lang.String getProjectIds(int index);
+  @java.lang.Deprecated java.lang.String getProjectIds(int index);
   /**
    * <pre>
    * Deprecated. Use `resource_names` instead.  One or more project identifiers
@@ -53,9 +53,9 @@ public interface ListLogEntriesRequestOrBuilder extends
    * `resource_names`.
    * </pre>
    *
-   * <code>repeated string project_ids = 1;</code>
+   * <code>repeated string project_ids = 1 [deprecated = true];</code>
    */
-  com.google.protobuf.ByteString
+  @java.lang.Deprecated com.google.protobuf.ByteString
       getProjectIdsBytes(int index);
 
   /**

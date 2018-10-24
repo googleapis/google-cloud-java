@@ -102,7 +102,6 @@ import org.threeten.bp.Duration;
  * </pre>
  */
 @Generated("by gapic-generator")
-@BetaApi
 public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -473,6 +472,12 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
       definitions.put(
+          "http_get",
+          ImmutableSet.copyOf(
+              Lists.<StatusCode.Code>newArrayList(
+                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
+      definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
           "one_plus_delivery",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
@@ -483,7 +488,6 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
                   StatusCode.Code.RESOURCE_EXHAUSTED,
                   StatusCode.Code.UNAVAILABLE,
                   StatusCode.Code.UNKNOWN)));
-      definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
