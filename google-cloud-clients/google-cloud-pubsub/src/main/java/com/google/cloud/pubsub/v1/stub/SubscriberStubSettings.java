@@ -267,8 +267,7 @@ public class SubscriberStubSettings extends StubSettings<SubscriberStubSettings>
 
   /** Returns a builder for the default ChannelProvider for this service. */
   public static InstantiatingGrpcChannelProvider.Builder defaultGrpcTransportProviderBuilder() {
-    return InstantiatingGrpcChannelProvider.newBuilder()
-            .setMaxInboundMessageSize(20<<20); // 20MB
+    return InstantiatingGrpcChannelProvider.newBuilder();
   }
 
   public static TransportChannelProvider defaultTransportChannelProvider() {
