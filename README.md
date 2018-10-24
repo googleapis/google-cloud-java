@@ -13,6 +13,7 @@ Java idiomatic client for [Google Cloud Platform][cloud-platform] services.
 This library supports the following Google Cloud Platform services with clients at a [GA](#versioning) quality level:
 -  [BigQuery](google-cloud-clients/google-cloud-bigquery) (GA)
 -  [Cloud Datastore](google-cloud-clients/google-cloud-datastore) (GA)
+-  [Cloud Memorystore for Redis](google-cloud-clients/google-cloud-redis) (GA)
 -  [Cloud Natural Language](google-cloud-clients/google-cloud-language) (GA)
 -  [Cloud Pub/Sub](google-cloud-clients/google-cloud-pubsub) (GA)
 -  [Cloud Storage](google-cloud-clients/google-cloud-storage) (GA)
@@ -47,7 +48,6 @@ This library supports the following Google Cloud Platform services with clients 
 -  [Cloud Dataproc](google-cloud-clients/google-cloud-dataproc) (Alpha)
 -  [Cloud DNS](google-cloud-clients/google-cloud-dns) (Alpha)
 -  [Cloud OS Login](google-cloud-clients/google-cloud-os-login) (Alpha)
--  [Cloud Memorystore for Redis](google-cloud-clients/google-cloud-redis) (Alpha)
 -  [Cloud Resource Manager](google-cloud-clients/google-cloud-resourcemanager) (Alpha)
 -  [Cloud Security Scanner](google-cloud-clients/google-cloud-websecurityscanner) (Alpha)
 -  [Dialogflow](google-cloud-clients/google-cloud-dialogflow) (Alpha)
