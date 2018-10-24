@@ -19,6 +19,8 @@ import com.google.api.core.ApiAsyncFunction;
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
+import com.google.api.gax.rpc.ApiExceptions;
+import com.google.api.gax.rpc.NotFoundException;
 import com.google.bigtable.admin.v2.DeleteTableRequest;
 import com.google.bigtable.admin.v2.DropRowRangeRequest;
 import com.google.bigtable.admin.v2.GetTableRequest;
@@ -33,9 +35,7 @@ import com.google.cloud.bigtable.admin.v2.models.Table;
 import com.google.cloud.bigtable.admin.v2.stub.EnhancedBigtableTableAdminStub;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.Lists;
-import com.google.common.util.concurrent.Futures;
 import com.google.common.util.concurrent.MoreExecutors;
-import com.google.common.util.concurrent.UncheckedExecutionException;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
 import java.io.IOException;
@@ -149,7 +149,7 @@ public final class BigtableTableAdminClient implements AutoCloseable {
    */
   @SuppressWarnings("WeakerAccess")
   public Table createTable(CreateTableRequest request) {
-    return awaitFuture(createTableAsync(request));
+    return ApiExceptions.callAndTranslateApiException(createTableAsync(request));
   }
 
   /**
@@ -222,7 +222,7 @@ public final class BigtableTableAdminClient implements AutoCloseable {
    */
   @SuppressWarnings("WeakerAccess")
   public Table modifyFamilies(ModifyColumnFamiliesRequest request) {
-    return awaitFuture(modifyFamiliesAsync(request));
+    return ApiExceptions.callAndTranslateApiException(modifyFamiliesAsync(request));
   }
 
   /**
@@ -289,7 +289,7 @@ public final class BigtableTableAdminClient implements AutoCloseable {
    */
   @SuppressWarnings("WeakerAccess")
   public void deleteTable(String tableId) {
-    awaitFuture(deleteTableAsync(tableId));
+    ApiExceptions.callAndTranslateApiException(deleteTableAsync(tableId));
   }
 
   /**
@@ -325,6 +325,65 @@ public final class BigtableTableAdminClient implements AutoCloseable {
   }
 
   /**
+   * Checks if the table specified by the tableId exists
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * if(client.exists("my-table")) {
+   *   System.out.println("Table exists");
+   * }
+   * }</pre>
+   */
+  public boolean exists(String tableId) {
+    return ApiExceptions.callAndTranslateApiException(existsAsync(tableId));
+  }
+
+  /**
+   * Asynchronously checks if the table specified by the tableId exists
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * ApiFuture<Boolean> found = client.existsAsync("my-table");
+   *
+   * ApiFutures.addCallback(
+   *  found,
+   *  new ApiFutureCallback<Boolean>() {
+   *    public void onSuccess(Boolean found) {
+   *      if (found) {
+   *        System.out.println("Table exists");
+   *      } else {
+   *        System.out.println("Table not found");
+   *      }
+   *    }
+   *
+   *    public void onFailure(Throwable t) {
+   *      t.printStackTrace();
+   *    }
+   *  },
+   *  MoreExecutors.directExecutor()
+   * );
+   * }</pre>
+   */
+  public ApiFuture<Boolean> existsAsync(String tableId) {
+
+    ApiFuture<Table> protoFuture = getTableAsync(tableId, com.google.bigtable.admin.v2.Table.View.NAME_ONLY);
+
+    ApiFuture<Boolean> existsFuture = ApiFutures.transform(protoFuture, new ApiFunction<Table, Boolean>() {
+      @Override public Boolean apply(Table ignored) {
+        return true;
+      }
+    }, MoreExecutors.directExecutor());
+
+    return ApiFutures.catching(existsFuture, NotFoundException.class, new ApiFunction<NotFoundException, Boolean>() {
+      @Override public Boolean apply(NotFoundException ignored) {
+        return false;
+      }
+    }, MoreExecutors.directExecutor());
+  }
+
+  /**
    * Gets the table metadata by tableId.
    *
    * <p>Sample code:
@@ -342,7 +401,7 @@ public final class BigtableTableAdminClient implements AutoCloseable {
    */
   @SuppressWarnings("WeakerAccess")
   public Table getTable(String tableId) {
-    return awaitFuture(getTableAsync(tableId));
+    return ApiExceptions.callAndTranslateApiException(getTableAsync(tableId));
   }
 
   /**
@@ -374,8 +433,13 @@ public final class BigtableTableAdminClient implements AutoCloseable {
    */
   @SuppressWarnings("WeakerAccess")
   public ApiFuture<Table> getTableAsync(String tableId) {
+    return getTableAsync(tableId, com.google.bigtable.admin.v2.Table.View.SCHEMA_VIEW);
+  }
+
+  private ApiFuture<Table> getTableAsync(String tableId, com.google.bigtable.admin.v2.Table.View view) {
     GetTableRequest request = GetTableRequest.newBuilder()
         .setName(getTableName(tableId))
+        .setView(view)
         .build();
 
     return transformToTableResponse(
@@ -397,7 +461,7 @@ public final class BigtableTableAdminClient implements AutoCloseable {
   // TODO(igorbernstein2): consider changing this method to use relative table ids.
   @SuppressWarnings("WeakerAccess")
   public List<TableName> listTables() {
-    return awaitFuture(listTablesAsync());
+    return ApiExceptions.callAndTranslateApiException(listTablesAsync());
   }
 
   /**
@@ -406,7 +470,7 @@ public final class BigtableTableAdminClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre>{@code
-   * ApiFuture<List<TableName>> listFuture = client.listTables();
+   * ApiFuture<List<TableName>> listFuture = client.listTablesAsync();
    *
    * ApiFutures.addCallback(
    *   listFuture,
@@ -506,7 +570,7 @@ public final class BigtableTableAdminClient implements AutoCloseable {
    */
   @SuppressWarnings("WeakerAccess")
   public void dropRowRange(String tableId, String rowKeyPrefix) {
-    awaitFuture(dropRowRangeAsync(tableId, rowKeyPrefix));
+    ApiExceptions.callAndTranslateApiException(dropRowRangeAsync(tableId, rowKeyPrefix));
   }
 
   /**
@@ -552,7 +616,7 @@ public final class BigtableTableAdminClient implements AutoCloseable {
    */
   @SuppressWarnings("WeakerAccess")
   public void dropRowRange(String tableId, ByteString rowKeyPrefix) {
-    awaitFuture(dropRowRangeAsync(tableId, rowKeyPrefix));
+    ApiExceptions.callAndTranslateApiException(dropRowRangeAsync(tableId, rowKeyPrefix));
   }
 
   /**
@@ -604,7 +668,7 @@ public final class BigtableTableAdminClient implements AutoCloseable {
    */
   @SuppressWarnings("WeakerAccess")
   public void dropAllRows(String tableId) {
-    awaitFuture(dropAllRowsAsync(tableId));
+    ApiExceptions.callAndTranslateApiException(dropAllRowsAsync(tableId));
   }
 
   /**
@@ -659,7 +723,8 @@ public final class BigtableTableAdminClient implements AutoCloseable {
   public void awaitReplication(String tableId) {
     TableName tableName = TableName
         .of(instanceName.getProject(), instanceName.getInstance(), tableId);
-    awaitFuture(stub.awaitReplicationCallable().futureCall(tableName));
+    ApiExceptions
+        .callAndTranslateApiException(stub.awaitReplicationCallable().futureCall(tableName));
   }
 
   /**
@@ -733,30 +798,5 @@ public final class BigtableTableAdminClient implements AutoCloseable {
           }
         },
         MoreExecutors.directExecutor());
-  }
-
-  /**
-   * Awaits the result of a future, taking care to propagate errors while maintaining the call site
-   * in a suppressed exception. This allows semantic errors to be caught across threads, while
-   * preserving the call site in the error. The caller's stacktrace will be made available as a
-   * suppressed exception.
-   */
-  // TODO(igorbernstein2): try to move this into gax
-  private <T> T awaitFuture(ApiFuture<T> future) {
-    RuntimeException error;
-    try {
-      return Futures.getUnchecked(future);
-    } catch (UncheckedExecutionException e) {
-      if (e.getCause() instanceof RuntimeException) {
-        error = (RuntimeException) e.getCause();
-      } else {
-        error = e;
-      }
-    } catch (RuntimeException e) {
-      error = e;
-    }
-    // Add the caller's stack as a suppressed exception
-    error.addSuppressed(new RuntimeException("Encountered error while awaiting future"));
-    throw error;
   }
 }
