@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-util</artifactId>
-  <version>0.68.0-alpha</version><!-- {x-version-update:google-cloud-util:current} -->
+  <version>0.68.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-util:current} -->
   <packaging>pom</packaging>
   <name>Google Cloud Util</name>
   <url>https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-util</url>
