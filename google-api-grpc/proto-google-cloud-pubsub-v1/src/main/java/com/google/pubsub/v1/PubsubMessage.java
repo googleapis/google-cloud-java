@@ -5,8 +5,10 @@ package com.google.pubsub.v1;
 
 /**
  * <pre>
- * A message data and its attributes. The message payload must not be empty;
- * it must contain either a non-empty data field, or at least one attribute.
+ * A message that is published by publishers and consumed by subscribers. The
+ * message must contain either a non-empty data field or at least one attribute.
+ * See &lt;a href="/pubsub/quotas"&gt;Quotas and limits&lt;/a&gt; for more information about
+ * message limits.
  * </pre>
  *
  * Protobuf type {@code google.pubsub.v1.PubsubMessage}
@@ -135,7 +137,8 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.ByteString data_;
   /**
    * <pre>
-   * The message payload.
+   * The message data field. If this field is empty, the message must contain
+   * at least one attribute.
    * </pre>
    *
    * <code>bytes data = 1;</code>
@@ -529,8 +532,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * A message data and its attributes. The message payload must not be empty;
-   * it must contain either a non-empty data field, or at least one attribute.
+   * A message that is published by publishers and consumed by subscribers. The
+   * message must contain either a non-empty data field or at least one attribute.
+   * See &lt;a href="/pubsub/quotas"&gt;Quotas and limits&lt;/a&gt; for more information about
+   * message limits.
    * </pre>
    *
    * Protobuf type {@code google.pubsub.v1.PubsubMessage}
@@ -734,7 +739,8 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.ByteString data_ = com.google.protobuf.ByteString.EMPTY;
     /**
      * <pre>
-     * The message payload.
+     * The message data field. If this field is empty, the message must contain
+     * at least one attribute.
      * </pre>
      *
      * <code>bytes data = 1;</code>
@@ -744,7 +750,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The message payload.
+     * The message data field. If this field is empty, the message must contain
+     * at least one attribute.
      * </pre>
      *
      * <code>bytes data = 1;</code>
@@ -760,7 +767,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The message payload.
+     * The message data field. If this field is empty, the message must contain
+     * at least one attribute.
      * </pre>
      *
      * <code>bytes data = 1;</code>
