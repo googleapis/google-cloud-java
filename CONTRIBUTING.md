@@ -1,4 +1,4 @@
-Contributing
+### Contributing
 ============
 
 1. **Please sign one of the contributor license agreements below.**
@@ -47,10 +47,12 @@ but new dependencies should be discussed).
 
 Adding Support for a New Service
 --------------------------------
+
 See [SUPPORTING_NEW_SERVICES](./SUPPORTING_NEW_SERVICES.md) for guidelines on how to add support for a new Google Cloud service to `google-cloud-java`.
 
 Coding Style
 ------------
+
 Maintain the coding style in the project and in particular the modified files.
 Follow the Google Java [style](https://google.github.io/styleguide/javaguide.html).
 
