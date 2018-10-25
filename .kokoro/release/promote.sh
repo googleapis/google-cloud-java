@@ -15,30 +15,11 @@
 
 set -eo pipefail
 
-cd github/google-cloud-java/
+source $(dirname "$0")/common.sh
+MAVEN_SETTINGS_FILE=$(realpath $(dirname "$0")/../)/settings.xml
+pushd $(dirname "$0")/../
 
-# Print out Java version
-java -version
-echo $JOB_TYPE
+setup_environment_secrets
+create_settings_xml_file "settings.xml"
 
-mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
-
-# prepend Kokoro root directory onto GOOGLE_APPLICATION_CREDENTIALS path
-if [ ! -z "$GOOGLE_APPLICATION_CREDENTIALS" ]; then
-    export GOOGLE_APPLICATION_CREDENTIALS=${KOKORO_ROOT}/src/${GOOGLE_APPLICATION_CREDENTIALS}
-fi
-
-case $JOB_TYPE in
-test)
-    mvn test -B
-    bash $KOKORO_GFILE_DIR/codecov.sh
-    ;;
-javadoc)
-    mvn javadoc:javadoc javadoc:test-javadoc
-    ;;
-integration)
-    ./utilities/verify_single_it.sh $INTEGRATION_TEST_ARGS
-    ;;
-*)
-    ;;
-esac
+mvn nexus-staging:release -P release

@@ -69,6 +69,14 @@ import java.util.List;
  *       service.
  * </ol>
  *
+ * <p>All RPC related errors are represented as subclasses of {@link com.google.api.gax.rpc.ApiException}.
+ * For example, a nonexistent table will trigger a {@link com.google.api.gax.rpc.NotFoundException}.
+ * Async methods will wrap the error inside the future. Synchronous methods will re-throw the async
+ * error but will try to preserve the caller's stacktrace by attaching a suppressed exception at the
+ * callsite. This allows callers to use typesafe exceptions, without losing their callsite.
+ * Streaming methods (ie. readRows) will re-throw the async exception (like sync methods) when
+ * starting iteration.
+ *
  * <p>See the individual methods for example code.
  *
  * <p>This class can be customized by passing in a custom instance of BigtableDataSettings to
@@ -103,7 +111,7 @@ public class BigtableDataClient implements AutoCloseable {
   private final EnhancedBigtableStub stub;
 
   /**
-   * Constructs an instance of BigtableClient with default settings.
+   * Constructs an instance of BigtableDataClient with default settings.
    *
    * @param instanceName The instance to connect to.
    * @return A new client.
@@ -185,10 +193,23 @@ public class BigtableDataClient implements AutoCloseable {
    *
    * <pre>{@code
    * InstanceName instanceName = InstanceName.of("[PROJECT]", "[INSTANCE]");
-   * try (BigtableClient bigtableClient = BigtableClient.create(instanceName)) {
+   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create(instanceName)) {
    *   String tableId = "[TABLE]";
    *
-   *   ApiFuture<Row> result = bigtableClient.readRow(tableId,  "key");
+   *   ApiFuture<Row> futureResult = bigtableDataClient.readRowAsync(tableId,  "key");
+   *
+   *   ApiFutures.addCallback(futureResult, new ApiFutureCallback<Row>() {
+   *     public void onFailure(Throwable t) {
+   *       if (t instanceof NotFoundException) {
+   *         System.out.println("Tried to read a non-existent table");
+   *       } else {
+   *         t.printStackTrace();
+   *       }
+   *     }
+   *     public void onSuccess(Row result) {
+   *       System.out.println("Got row: " + result);
+   *     }
+   *   }, MoreExecutors.directExecutor());
    * }
    * }</pre>
    */
@@ -204,10 +225,23 @@ public class BigtableDataClient implements AutoCloseable {
    *
    * <pre>{@code
    * InstanceName instanceName = InstanceName.of("[PROJECT]", "[INSTANCE]");
-   * try (BigtableClient bigtableClient = BigtableClient.create(instanceName)) {
+   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create(instanceName)) {
    *   String tableId = "[TABLE]";
    *
-   *   ApiFuture<Row> result = bigtableClient.readRow(tableId,  ByteString.copyFromUtf8("key"));
+   *   ApiFuture<Row> futureResult = bigtableDataClient.readRowAsync(tableId,  ByteString.copyFromUtf8("key"));
+   *
+   *   ApiFutures.addCallback(futureResult, new ApiFutureCallback<Row>() {
+   *     public void onFailure(Throwable t) {
+   *       if (t instanceof NotFoundException) {
+   *         System.out.println("Tried to read a non-existent table");
+   *       } else {
+   *         t.printStackTrace();
+   *       }
+   *     }
+   *     public void onSuccess(Row row) {
+   *       System.out.println("Got row: " + row);
+   *     }
+   *   }, MoreExecutors.directExecutor());
    * }
    * }</pre>
    */
@@ -225,7 +259,7 @@ public class BigtableDataClient implements AutoCloseable {
    * import static com.google.cloud.bigtable.data.v2.models.Filters.FILTERS;
    *
    * InstanceName instanceName = InstanceName.of("[PROJECT]", "[INSTANCE]");
-   * try (BigtableClient bigtableClient = BigtableClient.create(instanceName)) {
+   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create(instanceName)) {
    *   String tableId = "[TABLE]";
    *
    *   Query query = Query.create(tableId)
@@ -233,8 +267,14 @@ public class BigtableDataClient implements AutoCloseable {
    *          .filter(FILTERS.qualifier().regex("[COLUMN PREFIX].*"));
    *
    *   // Iterator style
-   *   for(Row row : bigtableClient.readRows(query)) {
-   *     // Do something with row
+   *   try {
+   *     for(Row row : bigtableDataClient.readRows(query)) {
+   *       // Do something with row
+   *     }
+   *   } catch (NotFoundException e) {
+   *     System.out.println("Tried to read a non-existent table");
+   *   } catch (RuntimeException e) {
+   *     e.printStackTrace();
    *   }
    * }
    * }</pre>
@@ -254,20 +294,24 @@ public class BigtableDataClient implements AutoCloseable {
    *
    * <pre>{@code
    * InstanceName instanceName = InstanceName.of("[PROJECT]", "[INSTANCE]");
-   * try (BigtableClient bigtableClient = BigtableClient.create(instanceName)) {
+   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create(instanceName)) {
    *   String tableId = "[TABLE]";
    *
    *   Query query = Query.create(tableId)
    *          .range("[START KEY]", "[END KEY]")
    *          .filter(FILTERS.qualifier().regex("[COLUMN PREFIX].*"));
    *
-   *   client.readRowsAsync(query, new ResponseObserver<Row>() {
+   *   bigtableDataClient.readRowsAsync(query, new ResponseObserver<Row>() {
    *     public void onStart(StreamController controller) { }
-   *     public void onResponse(Row response) {
+   *     public void onResponse(Row row) {
    *       // Do something with Row
    *     }
    *     public void onError(Throwable t) {
-   *       // Handle error before the stream completes
+   *       if (t instanceof NotFoundException) {
+   *         System.out.println("Tried to read a non-existent table");
+   *       } else {
+   *         t.printStackTrace();
+   *       }
    *     }
    *     public void onComplete() {
    *       // Handle stream completion
@@ -288,7 +332,7 @@ public class BigtableDataClient implements AutoCloseable {
    *
    * <pre>{@code
    * InstanceName instanceName = InstanceName.of("[PROJECT]", "[INSTANCE]");
-   * try (BigtableClient bigtableClient = BigtableClient.create(instanceName)) {
+   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create(instanceName)) {
    *   String tableId = "[TABLE]";
    *
    *   Query query = Query.create(tableId)
@@ -296,12 +340,40 @@ public class BigtableDataClient implements AutoCloseable {
    *          .filter(FILTERS.qualifier().regex("[COLUMN PREFIX].*"));
    *
    *   // Iterator style
-   *   for(Row row : bigtableClient.readRowsCallable().call(query)) {
-   *     // Do something with row
-   *   }
+   *   try {
+   *     for(Row row : bigtableDataClient.readRowsCallable().call(query)) {
+   *       // Do something with row
+   *     }
+   *   } catch (NotFoundException e) {
+   *     System.out.println("Tried to read a non-existent table");
+   *   } catch (RuntimeException e) {
+   *     e.printStackTrace();
+   *   }}
+   *
+   *   // Sync style
+   *   try {
+   *     List<Row> rows = bigtableDataClient.readRowsCallable().all().call(query);
+   *   } catch (NotFoundException e) {
+   *     System.out.println("Tried to read a non-existent table");
+   *   } catch (RuntimeException e) {
+   *     e.printStackTrace();
+   *   }}
    *
    *   // Point look up
-   *   ApiFuture<Row> rowFuture = bigtableClient.readRowsCallable().first().futureCall(query);
+   *   ApiFuture<Row> rowFuture = bigtableDataClient.readRowsCallable().first().futureCall(query);
+   *
+   *   ApiFutures.addCallback(rowFuture, new ApiFutureCallback<Row>() {
+   *     public void onFailure(Throwable t) {
+   *       if (t instanceof NotFoundException) {
+   *         System.out.println("Tried to read a non-existent table");
+   *       } else {
+   *         t.printStackTrace();
+   *       }
+   *     }
+   *     public void onSuccess(Row result) {
+   *       System.out.println("Got row: " + result);
+   *     }
+   *   }, MoreExecutors.directExecutor());
    *
    *   // etc
    * }
@@ -323,7 +395,7 @@ public class BigtableDataClient implements AutoCloseable {
    *
    * <pre>{@code
    * InstanceName instanceName = InstanceName.of("[PROJECT]", "[INSTANCE]");
-   * try (BigtableClient bigtableClient = BigtableClient.create(instanceName)) {
+   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create(instanceName)) {
    *   String tableId = "[TABLE]";
    *
    *   Query query = Query.create(tableId)
@@ -331,8 +403,14 @@ public class BigtableDataClient implements AutoCloseable {
    *          .filter(FILTERS.qualifier().regex("[COLUMN PREFIX].*"));
    *
    *   // Iterator style
-   *   for(CustomRow row : bigtableClient.readRowsCallable(new CustomRowAdapter()).call(query)) {
-   *     // Do something with row
+   *   try {
+   *     for(CustomRow row : bigtableDataClient.readRowsCallable(new CustomRowAdapter()).call(query)) {
+   *       // Do something with row
+   *     }
+   *   } catch (NotFoundException e) {
+   *     System.out.println("Tried to read a non-existent table");
+   *   } catch (RuntimeException e) {
+   *     e.printStackTrace();
    *   }
    * }
    * }</pre>
@@ -377,8 +455,21 @@ public class BigtableDataClient implements AutoCloseable {
    *
    * <pre>{@code
    * InstanceName instanceName = InstanceName.of("[PROJECT]", "[INSTANCE]");
-   * try (BigtableClient bigtableClient = BigtableClient.create(instanceName)) {
-   *   ApiFuture<List<KeyOffset>> keyOffsets = bigtableClient.sampleRowKeysAsync("[TABLE]");
+   * try (BigtableClient bigtableDataClient = BigtableClient.create(instanceName)) {
+   *   ApiFuture<List<KeyOffset>> keyOffsetsFuture = bigtableClient.sampleRowKeysAsync("[TABLE]");
+   *
+   *   ApiFutures.addCallback(keyOffsetsFuture, new ApiFutureCallback<List<KeyOffset>>() {
+   *     public void onFailure(Throwable t) {
+   *       if (t instanceof NotFoundException) {
+   *         System.out.println("Tried to sample keys of a non-existent table");
+   *       } else {
+   *         t.printStackTrace();
+   *       }
+   *     }
+   *     public void onSuccess(List<KeyOffset> keyOffsets) {
+   *       System.out.println("Got key offsets: " + keyOffsets);
+   *     }
+   *   }, MoreExecutors.directExecutor());
    * }
    * }</pre>
    */
@@ -396,12 +487,31 @@ public class BigtableDataClient implements AutoCloseable {
    *
    * <pre>{@code
    * InstanceName instanceName = InstanceName.of("[PROJECT]", "[INSTANCE]");
-   * try (BigtableClient bigtableClient = BigtableClient.create(instanceName)) {
+   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create(instanceName)) {
    *   // Synchronous invocation
-   *   List<KeyOffset> keyOffsets = bigtableClient.sampleRowKeysCallable().call("[TABLE]");
+   *   try {
+   *     List<KeyOffset> keyOffsets = bigtableDataClient.sampleRowKeysCallable().call("[TABLE]");
+   *   } catch (NotFoundException e) {
+   *     System.out.println("Tried to sample keys of a non-existent table");
+   *   } catch (RuntimeException e) {
+   *     e.printStackTrace();
+   *   }
    *
    *   // Asynchronous invocation
-   *   ApiFuture<List<KeyOffset>> keyOffsets = bigtableClient.sampleRowKeysCallable().futureCall("[TABLE]");
+   *   ApiFuture<List<KeyOffset>> keyOffsetsFuture = bigtableDataClient.sampleRowKeysCallable().futureCall("[TABLE]");
+   *
+   *   ApiFutures.addCallback(keyOffsetsFuture, new ApiFutureCallback<List<KeyOffset>>() {
+   *     public void onFailure(Throwable t) {
+   *       if (t instanceof NotFoundException) {
+   *         System.out.println("Tried to sample keys of a non-existent table");
+   *       } else {
+   *         t.printStackTrace();
+   *       }
+   *     }
+   *     public void onSuccess(List<KeyOffset> keyOffsets) {
+   *       System.out.println("Got key offsets: " + keyOffsets);
+   *     }
+   *   }, MoreExecutors.directExecutor());
    * }
    * }</pre>
    */
@@ -437,11 +547,24 @@ public class BigtableDataClient implements AutoCloseable {
    *
    * <pre>{@code
    * InstanceName instanceName = InstanceName.of("[PROJECT]", "[INSTANCE]");
-   * try (BigtableClient bigtableClient = BigtableClient.create(instanceName)) {
+   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create(instanceName)) {
    *   RowMutation mutation = RowMutation.create("[TABLE]", "[ROW KEY]")
    *     .setCell("[FAMILY NAME]", "[QUALIFIER]", "[VALUE]");
    *
-   *   ApitFuture<Void> future = bigtableClient.mutateRowAsync(mutation);
+   *   ApiFuture<Void> future = bigtableDataClient.mutateRowAsync(mutation);
+   *
+   *   ApiFutures.addCallback(future, new ApiFutureCallback<Void>() {
+   *     public void onFailure(Throwable t) {
+   *       if (t instanceof NotFoundException) {
+   *         System.out.println("Tried to mutate a non-existent table");
+   *       } else {
+   *         t.printStackTrace();
+   *       }
+   *     }
+   *     public void onSuccess(Void ignored) {
+   *       System.out.println("Successfully applied mutation");
+   *     }
+   *   }, MoreExecutors.directExecutor());
    * }
    * }</pre>
    */
@@ -457,11 +580,18 @@ public class BigtableDataClient implements AutoCloseable {
    *
    * <pre>{@code
    * InstanceName instanceName = InstanceName.of("[PROJECT]", "[INSTANCE]");
-   * try (BigtableClient bigtableClient = BigtableClient.create(instanceName)) {
+   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create(instanceName)) {
    *   RowMutation mutation = RowMutation.create("[TABLE]", "[ROW KEY]")
    *     .setCell("[FAMILY NAME]", "[QUALIFIER]", "[VALUE]");
    *
-   *   bigtableClient.mutateRowCallable().call(mutation);
+   *   // Sync style
+   *   try {
+   *     bigtableDataClient.mutateRowCallable().call(mutation);
+   *   } catch (NotFoundException e) {
+   *     System.out.println("Tried to mutate a non-existent table");
+   *   } catch (RuntimeException e) {
+   *     e.printStackTrace();
+   *   }
    * }
    * }</pre>
    */
@@ -477,13 +607,13 @@ public class BigtableDataClient implements AutoCloseable {
    *
    * <pre>{@code
    * InstanceName instanceName = InstanceName.of("[PROJECT]", "[INSTANCE]");
-   * try (BigtableClient bigtableClient = BigtableClient.create(instanceName)) {
-   *   try (BulkMutationBatcher batcher = bigtableClient.newBulkMutationBatcher()) {
+   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create(instanceName)) {
+   *   try (BulkMutationBatcher batcher = bigtableDataClient.newBulkMutationBatcher()) {
    *     for (String someValue : someCollection) {
    *       RowMutation mutation = RowMutation.create("[TABLE]", "[ROW KEY]")
    *         .setCell("[FAMILY NAME]", "[QUALIFIER]", "[VALUE]");
    *
-   *       batcher.add(mutation);
+   *       ApiFuture<Void> entryFuture = batcher.add(mutation);
    *     }
    *   } catch (BulkMutationFailure failure) {
    *     // Handle error
@@ -531,9 +661,23 @@ public class BigtableDataClient implements AutoCloseable {
    * try (BigtableClient bigtableClient = BigtableClient.create(instanceName)) {
    *   BulkMutation batch = BulkMutation.create("[TABLE]");
    *   for (String someValue : someCollection) {
-   *     batch.add("[ROW KEY]", Mutation.create().setCell("[FAMILY NAME]", "[QUALIFIER]", "[VALUE]"));
+   *     ApiFuture<Void> entryFuture = batch.add("[ROW KEY]",
+   *       Mutation.create().setCell("[FAMILY NAME]", "[QUALIFIER]", "[VALUE]"));
    *   }
-   *   ApiFuture<Void> result = bigtableClient.bulkMutateRowsAsync(batch);
+   *   ApiFuture<Void> resultFuture = bigtableDataClient.bulkMutateRowsAsync(batch);
+   *
+   *   ApiFutures.addCallback(resultFuture, new ApiFutureCallback<Void>() {
+   *     public void onFailure(Throwable t) {
+   *       if (t instanceof BulkMutationFailure) {
+   *         System.out.println("Some entries failed to apply");
+   *       } else {
+   *         t.printStackTrace();
+   *       }
+   *     }
+   *     public void onSuccess(Void ignored) {
+   *       System.out.println("Successfully applied all mutation");
+   *     }
+   *   }, MoreExecutors.directExecutor());
    * }
    * }</pre>
    */
@@ -550,12 +694,13 @@ public class BigtableDataClient implements AutoCloseable {
    *
    * <pre>{@code
    * InstanceName instanceName = InstanceName.of("[PROJECT]", "[INSTANCE]");
-   * try (BigtableClient bigtableClient = BigtableClient.create(instanceName)) {
+   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create(instanceName)) {
    *   BulkMutation batch = BulkMutation.create("[TABLE]");
    *   for (String someValue : someCollection) {
-   *     batch.add("[ROW KEY]", Mutation.create().setCell("[FAMILY NAME]", "[QUALIFIER]", "[VALUE]"));
+   *     ApiFuture<Void> entryFuture = batch.add("[ROW KEY]",
+   *       Mutation.create().setCell("[FAMILY NAME]", "[QUALIFIER]", "[VALUE]");
    *   }
-   *   bigtableClient.bulkMutateRowsCallable().call(batch);
+   *   bigtableDataClient.bulkMutationCallable().call(batch);
    * }
    * }</pre>
    */
@@ -593,7 +738,7 @@ public class BigtableDataClient implements AutoCloseable {
    *
    * <pre>{@code
    * InstanceName instanceName = InstanceName.of("[PROJECT]", "[INSTANCE]");
-   * try (BigtableClient bigtableClient = BigtableClient.create(instanceName)) {
+   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create(instanceName)) {
    *   ConditionalRowMutation mutation = ConditionalRowMutation.create("[TABLE]", "[KEY]")
    *     .condition(FILTERS.value().regex("old-value"))
    *     .then(
@@ -601,7 +746,20 @@ public class BigtableDataClient implements AutoCloseable {
    *         .setCell("[FAMILY]", "[QUALIFIER]", "[VALUE]")
    *       );
    *
-   *   ApiFuture<Boolean> future = bigtableClient.checkAndMutateRowAsync(mutation);
+   *   ApiFuture<Boolean> future = bigtableDataClient.checkAndMutateRowAsync(mutation);
+   *
+   *   ApiFutures.addCallback(future, new ApiFutureCallback<Boolean>() {
+   *     public void onFailure(Throwable t) {
+   *       if (t instanceof NotFoundException) {
+   *         System.out.println("Tried to mutate a non-existent table");
+   *       } else {
+   *         t.printStackTrace();
+   *       }
+   *     }
+   *     public void onSuccess(Boolean wasApplied) {
+   *       System.out.println("Row was modified: " + wasApplied);
+   *     }
+   *   }, MoreExecutors.directExecutor());
    * }
    * }</pre>
    */
@@ -616,7 +774,7 @@ public class BigtableDataClient implements AutoCloseable {
    *
    * <pre>{@code
    * InstanceName instanceName = InstanceName.of("[PROJECT]", "[INSTANCE]");
-   * try (BigtableClient bigtableClient = BigtableClient.create(instanceName)) {
+   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create(instanceName)) {
    *   ConditionalRowMutation mutation = ConditionalRowMutation.create("[TABLE]", "[KEY]")
    *     .condition(FILTERS.value().regex("old-value"))
    *     .then(
@@ -624,7 +782,17 @@ public class BigtableDataClient implements AutoCloseable {
    *         .setCell("[FAMILY]", "[QUALIFIER]", "[VALUE]")
    *       );
    *
-   *   boolean success = bigtableClient.checkAndMutateRowCallable().call(mutation);
+   *   // Sync style
+   *   try {
+   *     boolean success = bigtableDataClient.checkAndMutateRowCallable().call(mutation);
+   *     if (!success) {
+   *       System.out.println("Row did not match conditions");
+   *     }
+   *   } catch (NotFoundException e) {
+   *     System.out.println("Tried to mutate a non-existent table");
+   *   } catch (RuntimeException e) {
+   *     e.printStackTrace();
+   *   }
    * }
    * }</pre>
    */
@@ -665,12 +833,25 @@ public class BigtableDataClient implements AutoCloseable {
    *
    * <pre>{@code
    * InstanceName instanceName = InstanceName.of("[PROJECT]", "[INSTANCE]");
-   * try (BigtableClient bigtableClient = BigtableClient.create(instanceName)) {
+   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create(instanceName)) {
    *   ReadModifyWriteRow mutation = ReadModifyWriteRow.create("[TABLE]", "[KEY]")
    *     .increment("[FAMILY]", "[QUALIFIER]", 1)
    *     .append("[FAMILY2]", "[QUALIFIER2]", "suffix");
    *
-   *   ApiFuture<Row> success = bigtableClient.readModifyWriteRowAsync(mutation);
+   *   ApiFuture<Row> rowFuture = bigtableDataClient.readModifyWriteRowAsync(mutation);
+   *
+   *   ApiFutures.addCallback(rowFuture, new ApiFutureCallback<Row>() {
+   *     public void onFailure(Throwable t) {
+   *       if (t instanceof NotFoundException) {
+   *         System.out.println("Tried to mutate a non-existent table");
+   *       } else {
+   *         t.printStackTrace();
+   *       }
+   *     }
+   *     public void onSuccess(Row resultingRow) {
+   *       System.out.println("Resulting row: " + resultingRow);
+   *     }
+   *   }, MoreExecutors.directExecutor());
    * }
    * }</pre>
    */
@@ -688,12 +869,18 @@ public class BigtableDataClient implements AutoCloseable {
    *
    * <pre>{@code
    * InstanceName instanceName = InstanceName.of("[PROJECT]", "[INSTANCE]");
-   * try (BigtableClient bigtableClient = BigtableClient.create(instanceName)) {
+   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create(instanceName)) {
    *   ReadModifyWriteRow mutation = ReadModifyWriteRow.create("[TABLE]", "[KEY]")
    *     .increment("[FAMILY]", "[QUALIFIER]", 1)
    *     .append("[FAMILY2]", "[QUALIFIER2]", "suffix");
    *
-   *   Row row = bigtableClient.readModifyWriteRowCallable().call(mutation);
+   *   try {
+   *     Row row = bigtableDataClient.readModifyWriteRowCallable().call(mutation);
+   *   } catch (NotFoundException e) {
+   *     System.out.println("Tried to mutate a non-existent table");
+   *   } catch (RuntimeException e) {
+   *     e.printStackTrace();
+   *   }
    * }
    * }</pre>
    */
