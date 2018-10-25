@@ -24,6 +24,8 @@ nosetests.xml
 .settings
 .DS_Store
 .classpath
+.factorypath
+logging.properties
 
 # Built documentation
 docs/
