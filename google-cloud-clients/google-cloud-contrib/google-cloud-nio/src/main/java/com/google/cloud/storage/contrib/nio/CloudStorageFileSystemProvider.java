@@ -309,7 +309,6 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
       throws IOException {
     initStorage();
     int maxChannelReopens = CloudStorageUtil.getMaxChannelReopensFromPath(path);
-    int[] retriableHttpCodes = new int[]{};
     List<BlobSourceOption> blobSourceOptions = new ArrayList<>();
     for (OpenOption option : options) {
       if (option instanceof StandardOpenOption) {
