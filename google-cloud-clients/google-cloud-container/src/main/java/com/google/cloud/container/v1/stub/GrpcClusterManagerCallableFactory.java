@@ -31,13 +31,13 @@ import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.StreamingCallSettings;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.container.v1.Operation;
+import com.google.container.v1beta1.Operation;
 import com.google.longrunning.stub.OperationsStub;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 /**
- * gRPC callable factory implementation for Google Container Engine API.
+ * gRPC callable factory implementation for Kubernetes Engine API.
  *
  * <p>This class is for advanced usage.
  */

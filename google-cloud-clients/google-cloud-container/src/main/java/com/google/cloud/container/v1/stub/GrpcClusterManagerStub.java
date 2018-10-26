@@ -15,6 +15,8 @@
  */
 package com.google.cloud.container.v1.stub;
 
+import static com.google.cloud.container.v1.ClusterManagerClient.ListUsableSubnetworksPagedResponse;
+
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -22,43 +24,47 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.container.v1.CancelOperationRequest;
-import com.google.container.v1.Cluster;
-import com.google.container.v1.CompleteIPRotationRequest;
-import com.google.container.v1.CreateClusterRequest;
-import com.google.container.v1.CreateNodePoolRequest;
-import com.google.container.v1.DeleteClusterRequest;
-import com.google.container.v1.DeleteNodePoolRequest;
-import com.google.container.v1.GetClusterRequest;
-import com.google.container.v1.GetNodePoolRequest;
-import com.google.container.v1.GetOperationRequest;
-import com.google.container.v1.GetServerConfigRequest;
-import com.google.container.v1.ListClustersRequest;
-import com.google.container.v1.ListClustersResponse;
-import com.google.container.v1.ListNodePoolsRequest;
-import com.google.container.v1.ListNodePoolsResponse;
-import com.google.container.v1.ListOperationsRequest;
-import com.google.container.v1.ListOperationsResponse;
-import com.google.container.v1.NodePool;
-import com.google.container.v1.Operation;
-import com.google.container.v1.RollbackNodePoolUpgradeRequest;
-import com.google.container.v1.ServerConfig;
-import com.google.container.v1.SetAddonsConfigRequest;
-import com.google.container.v1.SetLabelsRequest;
-import com.google.container.v1.SetLegacyAbacRequest;
-import com.google.container.v1.SetLocationsRequest;
-import com.google.container.v1.SetLoggingServiceRequest;
-import com.google.container.v1.SetMaintenancePolicyRequest;
-import com.google.container.v1.SetMasterAuthRequest;
-import com.google.container.v1.SetMonitoringServiceRequest;
-import com.google.container.v1.SetNetworkPolicyRequest;
-import com.google.container.v1.SetNodePoolAutoscalingRequest;
-import com.google.container.v1.SetNodePoolManagementRequest;
-import com.google.container.v1.SetNodePoolSizeRequest;
-import com.google.container.v1.StartIPRotationRequest;
-import com.google.container.v1.UpdateClusterRequest;
-import com.google.container.v1.UpdateMasterRequest;
-import com.google.container.v1.UpdateNodePoolRequest;
+import com.google.container.v1beta1.CancelOperationRequest;
+import com.google.container.v1beta1.Cluster;
+import com.google.container.v1beta1.CompleteIPRotationRequest;
+import com.google.container.v1beta1.CreateClusterRequest;
+import com.google.container.v1beta1.CreateNodePoolRequest;
+import com.google.container.v1beta1.DeleteClusterRequest;
+import com.google.container.v1beta1.DeleteNodePoolRequest;
+import com.google.container.v1beta1.GetClusterRequest;
+import com.google.container.v1beta1.GetNodePoolRequest;
+import com.google.container.v1beta1.GetOperationRequest;
+import com.google.container.v1beta1.GetServerConfigRequest;
+import com.google.container.v1beta1.ListClustersRequest;
+import com.google.container.v1beta1.ListClustersResponse;
+import com.google.container.v1beta1.ListLocationsRequest;
+import com.google.container.v1beta1.ListLocationsResponse;
+import com.google.container.v1beta1.ListNodePoolsRequest;
+import com.google.container.v1beta1.ListNodePoolsResponse;
+import com.google.container.v1beta1.ListOperationsRequest;
+import com.google.container.v1beta1.ListOperationsResponse;
+import com.google.container.v1beta1.ListUsableSubnetworksRequest;
+import com.google.container.v1beta1.ListUsableSubnetworksResponse;
+import com.google.container.v1beta1.NodePool;
+import com.google.container.v1beta1.Operation;
+import com.google.container.v1beta1.RollbackNodePoolUpgradeRequest;
+import com.google.container.v1beta1.ServerConfig;
+import com.google.container.v1beta1.SetAddonsConfigRequest;
+import com.google.container.v1beta1.SetLabelsRequest;
+import com.google.container.v1beta1.SetLegacyAbacRequest;
+import com.google.container.v1beta1.SetLocationsRequest;
+import com.google.container.v1beta1.SetLoggingServiceRequest;
+import com.google.container.v1beta1.SetMaintenancePolicyRequest;
+import com.google.container.v1beta1.SetMasterAuthRequest;
+import com.google.container.v1beta1.SetMonitoringServiceRequest;
+import com.google.container.v1beta1.SetNetworkPolicyRequest;
+import com.google.container.v1beta1.SetNodePoolAutoscalingRequest;
+import com.google.container.v1beta1.SetNodePoolManagementRequest;
+import com.google.container.v1beta1.SetNodePoolSizeRequest;
+import com.google.container.v1beta1.StartIPRotationRequest;
+import com.google.container.v1beta1.UpdateClusterRequest;
+import com.google.container.v1beta1.UpdateMasterRequest;
+import com.google.container.v1beta1.UpdateNodePoolRequest;
 import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
@@ -68,7 +74,7 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 /**
- * gRPC stub implementation for Google Container Engine API.
+ * gRPC stub implementation for Kubernetes Engine API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
@@ -80,7 +86,7 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
       listClustersMethodDescriptor =
           MethodDescriptor.<ListClustersRequest, ListClustersResponse>newBuilder()
               .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.container.v1.ClusterManager/ListClusters")
+              .setFullMethodName("google.container.v1beta1.ClusterManager/ListClusters")
               .setRequestMarshaller(ProtoUtils.marshaller(ListClustersRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListClustersResponse.getDefaultInstance()))
@@ -88,7 +94,7 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
   private static final MethodDescriptor<GetClusterRequest, Cluster> getClusterMethodDescriptor =
       MethodDescriptor.<GetClusterRequest, Cluster>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName("google.container.v1.ClusterManager/GetCluster")
+          .setFullMethodName("google.container.v1beta1.ClusterManager/GetCluster")
           .setRequestMarshaller(ProtoUtils.marshaller(GetClusterRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Cluster.getDefaultInstance()))
           .build();
@@ -96,7 +102,7 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
       createClusterMethodDescriptor =
           MethodDescriptor.<CreateClusterRequest, Operation>newBuilder()
               .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.container.v1.ClusterManager/CreateCluster")
+              .setFullMethodName("google.container.v1beta1.ClusterManager/CreateCluster")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
@@ -105,7 +111,7 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
       updateClusterMethodDescriptor =
           MethodDescriptor.<UpdateClusterRequest, Operation>newBuilder()
               .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.container.v1.ClusterManager/UpdateCluster")
+              .setFullMethodName("google.container.v1beta1.ClusterManager/UpdateCluster")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
@@ -114,7 +120,7 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
       updateNodePoolMethodDescriptor =
           MethodDescriptor.<UpdateNodePoolRequest, Operation>newBuilder()
               .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.container.v1.ClusterManager/UpdateNodePool")
+              .setFullMethodName("google.container.v1beta1.ClusterManager/UpdateNodePool")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateNodePoolRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
@@ -123,7 +129,7 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
       setNodePoolAutoscalingMethodDescriptor =
           MethodDescriptor.<SetNodePoolAutoscalingRequest, Operation>newBuilder()
               .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.container.v1.ClusterManager/SetNodePoolAutoscaling")
+              .setFullMethodName("google.container.v1beta1.ClusterManager/SetNodePoolAutoscaling")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(SetNodePoolAutoscalingRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
@@ -132,7 +138,7 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
       setLoggingServiceMethodDescriptor =
           MethodDescriptor.<SetLoggingServiceRequest, Operation>newBuilder()
               .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.container.v1.ClusterManager/SetLoggingService")
+              .setFullMethodName("google.container.v1beta1.ClusterManager/SetLoggingService")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(SetLoggingServiceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
@@ -141,7 +147,7 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
       setMonitoringServiceMethodDescriptor =
           MethodDescriptor.<SetMonitoringServiceRequest, Operation>newBuilder()
               .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.container.v1.ClusterManager/SetMonitoringService")
+              .setFullMethodName("google.container.v1beta1.ClusterManager/SetMonitoringService")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(SetMonitoringServiceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
@@ -150,7 +156,7 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
       setAddonsConfigMethodDescriptor =
           MethodDescriptor.<SetAddonsConfigRequest, Operation>newBuilder()
               .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.container.v1.ClusterManager/SetAddonsConfig")
+              .setFullMethodName("google.container.v1beta1.ClusterManager/SetAddonsConfig")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(SetAddonsConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
@@ -159,7 +165,7 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
       setLocationsMethodDescriptor =
           MethodDescriptor.<SetLocationsRequest, Operation>newBuilder()
               .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.container.v1.ClusterManager/SetLocations")
+              .setFullMethodName("google.container.v1beta1.ClusterManager/SetLocations")
               .setRequestMarshaller(ProtoUtils.marshaller(SetLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
@@ -167,7 +173,7 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
       updateMasterMethodDescriptor =
           MethodDescriptor.<UpdateMasterRequest, Operation>newBuilder()
               .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.container.v1.ClusterManager/UpdateMaster")
+              .setFullMethodName("google.container.v1beta1.ClusterManager/UpdateMaster")
               .setRequestMarshaller(ProtoUtils.marshaller(UpdateMasterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
@@ -175,7 +181,7 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
       setMasterAuthMethodDescriptor =
           MethodDescriptor.<SetMasterAuthRequest, Operation>newBuilder()
               .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.container.v1.ClusterManager/SetMasterAuth")
+              .setFullMethodName("google.container.v1beta1.ClusterManager/SetMasterAuth")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(SetMasterAuthRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
@@ -184,7 +190,7 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
       deleteClusterMethodDescriptor =
           MethodDescriptor.<DeleteClusterRequest, Operation>newBuilder()
               .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.container.v1.ClusterManager/DeleteCluster")
+              .setFullMethodName("google.container.v1beta1.ClusterManager/DeleteCluster")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
@@ -193,7 +199,7 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
       listOperationsMethodDescriptor =
           MethodDescriptor.<ListOperationsRequest, ListOperationsResponse>newBuilder()
               .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.container.v1.ClusterManager/ListOperations")
+              .setFullMethodName("google.container.v1beta1.ClusterManager/ListOperations")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ListOperationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
@@ -203,7 +209,7 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
       getOperationMethodDescriptor =
           MethodDescriptor.<GetOperationRequest, Operation>newBuilder()
               .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.container.v1.ClusterManager/GetOperation")
+              .setFullMethodName("google.container.v1beta1.ClusterManager/GetOperation")
               .setRequestMarshaller(ProtoUtils.marshaller(GetOperationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
@@ -211,7 +217,7 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
       cancelOperationMethodDescriptor =
           MethodDescriptor.<CancelOperationRequest, Empty>newBuilder()
               .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.container.v1.ClusterManager/CancelOperation")
+              .setFullMethodName("google.container.v1beta1.ClusterManager/CancelOperation")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CancelOperationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
@@ -220,7 +226,7 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
       getServerConfigMethodDescriptor =
           MethodDescriptor.<GetServerConfigRequest, ServerConfig>newBuilder()
               .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.container.v1.ClusterManager/GetServerConfig")
+              .setFullMethodName("google.container.v1beta1.ClusterManager/GetServerConfig")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetServerConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ServerConfig.getDefaultInstance()))
@@ -229,7 +235,7 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
       listNodePoolsMethodDescriptor =
           MethodDescriptor.<ListNodePoolsRequest, ListNodePoolsResponse>newBuilder()
               .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.container.v1.ClusterManager/ListNodePools")
+              .setFullMethodName("google.container.v1beta1.ClusterManager/ListNodePools")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ListNodePoolsRequest.getDefaultInstance()))
               .setResponseMarshaller(
@@ -238,7 +244,7 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
   private static final MethodDescriptor<GetNodePoolRequest, NodePool> getNodePoolMethodDescriptor =
       MethodDescriptor.<GetNodePoolRequest, NodePool>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName("google.container.v1.ClusterManager/GetNodePool")
+          .setFullMethodName("google.container.v1beta1.ClusterManager/GetNodePool")
           .setRequestMarshaller(ProtoUtils.marshaller(GetNodePoolRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(NodePool.getDefaultInstance()))
           .build();
@@ -246,7 +252,7 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
       createNodePoolMethodDescriptor =
           MethodDescriptor.<CreateNodePoolRequest, Operation>newBuilder()
               .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.container.v1.ClusterManager/CreateNodePool")
+              .setFullMethodName("google.container.v1beta1.ClusterManager/CreateNodePool")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateNodePoolRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
@@ -255,7 +261,7 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
       deleteNodePoolMethodDescriptor =
           MethodDescriptor.<DeleteNodePoolRequest, Operation>newBuilder()
               .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.container.v1.ClusterManager/DeleteNodePool")
+              .setFullMethodName("google.container.v1beta1.ClusterManager/DeleteNodePool")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteNodePoolRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
@@ -264,7 +270,7 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
       rollbackNodePoolUpgradeMethodDescriptor =
           MethodDescriptor.<RollbackNodePoolUpgradeRequest, Operation>newBuilder()
               .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.container.v1.ClusterManager/RollbackNodePoolUpgrade")
+              .setFullMethodName("google.container.v1beta1.ClusterManager/RollbackNodePoolUpgrade")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(RollbackNodePoolUpgradeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
@@ -273,7 +279,7 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
       setNodePoolManagementMethodDescriptor =
           MethodDescriptor.<SetNodePoolManagementRequest, Operation>newBuilder()
               .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.container.v1.ClusterManager/SetNodePoolManagement")
+              .setFullMethodName("google.container.v1beta1.ClusterManager/SetNodePoolManagement")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(SetNodePoolManagementRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
@@ -281,7 +287,7 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
   private static final MethodDescriptor<SetLabelsRequest, Operation> setLabelsMethodDescriptor =
       MethodDescriptor.<SetLabelsRequest, Operation>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName("google.container.v1.ClusterManager/SetLabels")
+          .setFullMethodName("google.container.v1beta1.ClusterManager/SetLabels")
           .setRequestMarshaller(ProtoUtils.marshaller(SetLabelsRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
           .build();
@@ -289,7 +295,7 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
       setLegacyAbacMethodDescriptor =
           MethodDescriptor.<SetLegacyAbacRequest, Operation>newBuilder()
               .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.container.v1.ClusterManager/SetLegacyAbac")
+              .setFullMethodName("google.container.v1beta1.ClusterManager/SetLegacyAbac")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(SetLegacyAbacRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
@@ -298,7 +304,7 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
       startIPRotationMethodDescriptor =
           MethodDescriptor.<StartIPRotationRequest, Operation>newBuilder()
               .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.container.v1.ClusterManager/StartIPRotation")
+              .setFullMethodName("google.container.v1beta1.ClusterManager/StartIPRotation")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(StartIPRotationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
@@ -307,7 +313,7 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
       completeIPRotationMethodDescriptor =
           MethodDescriptor.<CompleteIPRotationRequest, Operation>newBuilder()
               .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.container.v1.ClusterManager/CompleteIPRotation")
+              .setFullMethodName("google.container.v1beta1.ClusterManager/CompleteIPRotation")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CompleteIPRotationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
@@ -316,7 +322,7 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
       setNodePoolSizeMethodDescriptor =
           MethodDescriptor.<SetNodePoolSizeRequest, Operation>newBuilder()
               .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.container.v1.ClusterManager/SetNodePoolSize")
+              .setFullMethodName("google.container.v1beta1.ClusterManager/SetNodePoolSize")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(SetNodePoolSizeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
@@ -325,7 +331,7 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
       setNetworkPolicyMethodDescriptor =
           MethodDescriptor.<SetNetworkPolicyRequest, Operation>newBuilder()
               .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.container.v1.ClusterManager/SetNetworkPolicy")
+              .setFullMethodName("google.container.v1beta1.ClusterManager/SetNetworkPolicy")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(SetNetworkPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
@@ -334,10 +340,30 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
       setMaintenancePolicyMethodDescriptor =
           MethodDescriptor.<SetMaintenancePolicyRequest, Operation>newBuilder()
               .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.container.v1.ClusterManager/SetMaintenancePolicy")
+              .setFullMethodName("google.container.v1beta1.ClusterManager/SetMaintenancePolicy")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(SetMaintenancePolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<ListUsableSubnetworksRequest, ListUsableSubnetworksResponse>
+      listUsableSubnetworksMethodDescriptor =
+          MethodDescriptor.<ListUsableSubnetworksRequest, ListUsableSubnetworksResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.container.v1beta1.ClusterManager/ListUsableSubnetworks")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListUsableSubnetworksRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListUsableSubnetworksResponse.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
+      listLocationsMethodDescriptor =
+          MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.container.v1beta1.ClusterManager/ListLocations")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
               .build();
 
   private final BackgroundResource backgroundResources;
@@ -375,6 +401,11 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
   private final UnaryCallable<SetNodePoolSizeRequest, Operation> setNodePoolSizeCallable;
   private final UnaryCallable<SetNetworkPolicyRequest, Operation> setNetworkPolicyCallable;
   private final UnaryCallable<SetMaintenancePolicyRequest, Operation> setMaintenancePolicyCallable;
+  private final UnaryCallable<ListUsableSubnetworksRequest, ListUsableSubnetworksResponse>
+      listUsableSubnetworksCallable;
+  private final UnaryCallable<ListUsableSubnetworksRequest, ListUsableSubnetworksPagedResponse>
+      listUsableSubnetworksPagedCallable;
+  private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
 
   private final GrpcStubCallableFactory callableFactory;
 
@@ -541,6 +572,16 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
         GrpcCallSettings.<SetMaintenancePolicyRequest, Operation>newBuilder()
             .setMethodDescriptor(setMaintenancePolicyMethodDescriptor)
             .build();
+    GrpcCallSettings<ListUsableSubnetworksRequest, ListUsableSubnetworksResponse>
+        listUsableSubnetworksTransportSettings =
+            GrpcCallSettings
+                .<ListUsableSubnetworksRequest, ListUsableSubnetworksResponse>newBuilder()
+                .setMethodDescriptor(listUsableSubnetworksMethodDescriptor)
+                .build();
+    GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
+        GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
+            .setMethodDescriptor(listLocationsMethodDescriptor)
+            .build();
 
     this.listClustersCallable =
         callableFactory.createUnaryCallable(
@@ -646,6 +687,19 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
             setMaintenancePolicyTransportSettings,
             settings.setMaintenancePolicySettings(),
             clientContext);
+    this.listUsableSubnetworksCallable =
+        callableFactory.createUnaryCallable(
+            listUsableSubnetworksTransportSettings,
+            settings.listUsableSubnetworksSettings(),
+            clientContext);
+    this.listUsableSubnetworksPagedCallable =
+        callableFactory.createPagedCallable(
+            listUsableSubnetworksTransportSettings,
+            settings.listUsableSubnetworksSettings(),
+            clientContext);
+    this.listLocationsCallable =
+        callableFactory.createUnaryCallable(
+            listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
@@ -769,6 +823,20 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
 
   public UnaryCallable<SetMaintenancePolicyRequest, Operation> setMaintenancePolicyCallable() {
     return setMaintenancePolicyCallable;
+  }
+
+  public UnaryCallable<ListUsableSubnetworksRequest, ListUsableSubnetworksPagedResponse>
+      listUsableSubnetworksPagedCallable() {
+    return listUsableSubnetworksPagedCallable;
+  }
+
+  public UnaryCallable<ListUsableSubnetworksRequest, ListUsableSubnetworksResponse>
+      listUsableSubnetworksCallable() {
+    return listUsableSubnetworksCallable;
+  }
+
+  public UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
+    return listLocationsCallable;
   }
 
   @Override

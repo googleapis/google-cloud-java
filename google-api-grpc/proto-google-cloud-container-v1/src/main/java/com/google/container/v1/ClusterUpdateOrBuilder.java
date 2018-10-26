@@ -10,8 +10,14 @@ public interface ClusterUpdateOrBuilder extends
   /**
    * <pre>
    * The Kubernetes version to change the nodes to (typically an
-   * upgrade). Use `-` to upgrade to the latest version supported by
-   * the server.
+   * upgrade).
+   * Users may specify either explicit versions offered by
+   * Kubernetes Engine or version aliases, which have the following behavior:
+   * - "latest": picks the highest valid Kubernetes version
+   * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
+   * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
+   * - "1.X.Y-gke.N": picks an explicit Kubernetes version
+   * - "-": picks the Kubernetes master version
    * </pre>
    *
    * <code>string desired_node_version = 4;</code>
@@ -20,8 +26,14 @@ public interface ClusterUpdateOrBuilder extends
   /**
    * <pre>
    * The Kubernetes version to change the nodes to (typically an
-   * upgrade). Use `-` to upgrade to the latest version supported by
-   * the server.
+   * upgrade).
+   * Users may specify either explicit versions offered by
+   * Kubernetes Engine or version aliases, which have the following behavior:
+   * - "latest": picks the highest valid Kubernetes version
+   * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
+   * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
+   * - "1.X.Y-gke.N": picks an explicit Kubernetes version
+   * - "-": picks the Kubernetes master version
    * </pre>
    *
    * <code>string desired_node_version = 4;</code>
@@ -213,7 +225,6 @@ public interface ClusterUpdateOrBuilder extends
 
   /**
    * <pre>
-   * Master authorized networks is a Beta feature.
    * The desired configuration options for master authorized networks feature.
    * </pre>
    *
@@ -222,7 +233,6 @@ public interface ClusterUpdateOrBuilder extends
   boolean hasDesiredMasterAuthorizedNetworksConfig();
   /**
    * <pre>
-   * Master authorized networks is a Beta feature.
    * The desired configuration options for master authorized networks feature.
    * </pre>
    *
@@ -231,7 +241,6 @@ public interface ClusterUpdateOrBuilder extends
   com.google.container.v1.MasterAuthorizedNetworksConfig getDesiredMasterAuthorizedNetworksConfig();
   /**
    * <pre>
-   * Master authorized networks is a Beta feature.
    * The desired configuration options for master authorized networks feature.
    * </pre>
    *
@@ -241,9 +250,14 @@ public interface ClusterUpdateOrBuilder extends
 
   /**
    * <pre>
-   * The Kubernetes version to change the master to. The only valid value is the
-   * latest supported version. Use "-" to have the server automatically select
-   * the latest version.
+   * The Kubernetes version to change the master to.
+   * Users may specify either explicit versions offered by
+   * Kubernetes Engine or version aliases, which have the following behavior:
+   * - "latest": picks the highest valid Kubernetes version
+   * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
+   * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
+   * - "1.X.Y-gke.N": picks an explicit Kubernetes version
+   * - "-": picks the default Kubernetes version
    * </pre>
    *
    * <code>string desired_master_version = 100;</code>
@@ -251,9 +265,14 @@ public interface ClusterUpdateOrBuilder extends
   java.lang.String getDesiredMasterVersion();
   /**
    * <pre>
-   * The Kubernetes version to change the master to. The only valid value is the
-   * latest supported version. Use "-" to have the server automatically select
-   * the latest version.
+   * The Kubernetes version to change the master to.
+   * Users may specify either explicit versions offered by
+   * Kubernetes Engine or version aliases, which have the following behavior:
+   * - "latest": picks the highest valid Kubernetes version
+   * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
+   * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
+   * - "1.X.Y-gke.N": picks an explicit Kubernetes version
+   * - "-": picks the default Kubernetes version
    * </pre>
    *
    * <code>string desired_master_version = 100;</code>

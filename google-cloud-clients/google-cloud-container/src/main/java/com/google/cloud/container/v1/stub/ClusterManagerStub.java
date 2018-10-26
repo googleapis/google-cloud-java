@@ -15,52 +15,58 @@
  */
 package com.google.cloud.container.v1.stub;
 
+import static com.google.cloud.container.v1.ClusterManagerClient.ListUsableSubnetworksPagedResponse;
+
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.container.v1.CancelOperationRequest;
-import com.google.container.v1.Cluster;
-import com.google.container.v1.CompleteIPRotationRequest;
-import com.google.container.v1.CreateClusterRequest;
-import com.google.container.v1.CreateNodePoolRequest;
-import com.google.container.v1.DeleteClusterRequest;
-import com.google.container.v1.DeleteNodePoolRequest;
-import com.google.container.v1.GetClusterRequest;
-import com.google.container.v1.GetNodePoolRequest;
-import com.google.container.v1.GetOperationRequest;
-import com.google.container.v1.GetServerConfigRequest;
-import com.google.container.v1.ListClustersRequest;
-import com.google.container.v1.ListClustersResponse;
-import com.google.container.v1.ListNodePoolsRequest;
-import com.google.container.v1.ListNodePoolsResponse;
-import com.google.container.v1.ListOperationsRequest;
-import com.google.container.v1.ListOperationsResponse;
-import com.google.container.v1.NodePool;
-import com.google.container.v1.Operation;
-import com.google.container.v1.RollbackNodePoolUpgradeRequest;
-import com.google.container.v1.ServerConfig;
-import com.google.container.v1.SetAddonsConfigRequest;
-import com.google.container.v1.SetLabelsRequest;
-import com.google.container.v1.SetLegacyAbacRequest;
-import com.google.container.v1.SetLocationsRequest;
-import com.google.container.v1.SetLoggingServiceRequest;
-import com.google.container.v1.SetMaintenancePolicyRequest;
-import com.google.container.v1.SetMasterAuthRequest;
-import com.google.container.v1.SetMonitoringServiceRequest;
-import com.google.container.v1.SetNetworkPolicyRequest;
-import com.google.container.v1.SetNodePoolAutoscalingRequest;
-import com.google.container.v1.SetNodePoolManagementRequest;
-import com.google.container.v1.SetNodePoolSizeRequest;
-import com.google.container.v1.StartIPRotationRequest;
-import com.google.container.v1.UpdateClusterRequest;
-import com.google.container.v1.UpdateMasterRequest;
-import com.google.container.v1.UpdateNodePoolRequest;
+import com.google.container.v1beta1.CancelOperationRequest;
+import com.google.container.v1beta1.Cluster;
+import com.google.container.v1beta1.CompleteIPRotationRequest;
+import com.google.container.v1beta1.CreateClusterRequest;
+import com.google.container.v1beta1.CreateNodePoolRequest;
+import com.google.container.v1beta1.DeleteClusterRequest;
+import com.google.container.v1beta1.DeleteNodePoolRequest;
+import com.google.container.v1beta1.GetClusterRequest;
+import com.google.container.v1beta1.GetNodePoolRequest;
+import com.google.container.v1beta1.GetOperationRequest;
+import com.google.container.v1beta1.GetServerConfigRequest;
+import com.google.container.v1beta1.ListClustersRequest;
+import com.google.container.v1beta1.ListClustersResponse;
+import com.google.container.v1beta1.ListLocationsRequest;
+import com.google.container.v1beta1.ListLocationsResponse;
+import com.google.container.v1beta1.ListNodePoolsRequest;
+import com.google.container.v1beta1.ListNodePoolsResponse;
+import com.google.container.v1beta1.ListOperationsRequest;
+import com.google.container.v1beta1.ListOperationsResponse;
+import com.google.container.v1beta1.ListUsableSubnetworksRequest;
+import com.google.container.v1beta1.ListUsableSubnetworksResponse;
+import com.google.container.v1beta1.NodePool;
+import com.google.container.v1beta1.Operation;
+import com.google.container.v1beta1.RollbackNodePoolUpgradeRequest;
+import com.google.container.v1beta1.ServerConfig;
+import com.google.container.v1beta1.SetAddonsConfigRequest;
+import com.google.container.v1beta1.SetLabelsRequest;
+import com.google.container.v1beta1.SetLegacyAbacRequest;
+import com.google.container.v1beta1.SetLocationsRequest;
+import com.google.container.v1beta1.SetLoggingServiceRequest;
+import com.google.container.v1beta1.SetMaintenancePolicyRequest;
+import com.google.container.v1beta1.SetMasterAuthRequest;
+import com.google.container.v1beta1.SetMonitoringServiceRequest;
+import com.google.container.v1beta1.SetNetworkPolicyRequest;
+import com.google.container.v1beta1.SetNodePoolAutoscalingRequest;
+import com.google.container.v1beta1.SetNodePoolManagementRequest;
+import com.google.container.v1beta1.SetNodePoolSizeRequest;
+import com.google.container.v1beta1.StartIPRotationRequest;
+import com.google.container.v1beta1.UpdateClusterRequest;
+import com.google.container.v1beta1.UpdateMasterRequest;
+import com.google.container.v1beta1.UpdateNodePoolRequest;
 import com.google.protobuf.Empty;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 /**
- * Base stub class for Google Container Engine API.
+ * Base stub class for Kubernetes Engine API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
@@ -187,6 +193,21 @@ public abstract class ClusterManagerStub implements BackgroundResource {
 
   public UnaryCallable<SetMaintenancePolicyRequest, Operation> setMaintenancePolicyCallable() {
     throw new UnsupportedOperationException("Not implemented: setMaintenancePolicyCallable()");
+  }
+
+  public UnaryCallable<ListUsableSubnetworksRequest, ListUsableSubnetworksPagedResponse>
+      listUsableSubnetworksPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listUsableSubnetworksPagedCallable()");
+  }
+
+  public UnaryCallable<ListUsableSubnetworksRequest, ListUsableSubnetworksResponse>
+      listUsableSubnetworksCallable() {
+    throw new UnsupportedOperationException("Not implemented: listUsableSubnetworksCallable()");
+  }
+
+  public UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listLocationsCallable()");
   }
 
   @Override

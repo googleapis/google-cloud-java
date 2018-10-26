@@ -553,7 +553,6 @@ public interface ClusterOrBuilder extends
 
   /**
    * <pre>
-   * Master authorized networks is a Beta feature.
    * The configuration options for master authorized networks feature.
    * </pre>
    *
@@ -562,7 +561,6 @@ public interface ClusterOrBuilder extends
   boolean hasMasterAuthorizedNetworksConfig();
   /**
    * <pre>
-   * Master authorized networks is a Beta feature.
    * The configuration options for master authorized networks feature.
    * </pre>
    *
@@ -571,7 +569,6 @@ public interface ClusterOrBuilder extends
   com.google.container.v1.MasterAuthorizedNetworksConfig getMasterAuthorizedNetworksConfig();
   /**
    * <pre>
-   * Master authorized networks is a Beta feature.
    * The configuration options for master authorized networks feature.
    * </pre>
    *
@@ -606,6 +603,31 @@ public interface ClusterOrBuilder extends
 
   /**
    * <pre>
+   * Configuration for cluster networking.
+   * </pre>
+   *
+   * <code>.google.container.v1.NetworkConfig network_config = 27;</code>
+   */
+  boolean hasNetworkConfig();
+  /**
+   * <pre>
+   * Configuration for cluster networking.
+   * </pre>
+   *
+   * <code>.google.container.v1.NetworkConfig network_config = 27;</code>
+   */
+  com.google.container.v1.NetworkConfig getNetworkConfig();
+  /**
+   * <pre>
+   * Configuration for cluster networking.
+   * </pre>
+   *
+   * <code>.google.container.v1.NetworkConfig network_config = 27;</code>
+   */
+  com.google.container.v1.NetworkConfigOrBuilder getNetworkConfigOrBuilder();
+
+  /**
+   * <pre>
    * [Output only] Server-defined URL for the resource.
    * </pre>
    *
@@ -627,21 +649,23 @@ public interface ClusterOrBuilder extends
    * [Output only] The name of the Google Compute Engine
    * [zone](/compute/docs/zones#available) in which the cluster
    * resides.
+   * This field is deprecated, use location instead.
    * </pre>
    *
-   * <code>string zone = 101;</code>
+   * <code>string zone = 101 [deprecated = true];</code>
    */
-  java.lang.String getZone();
+  @java.lang.Deprecated java.lang.String getZone();
   /**
    * <pre>
    * [Output only] The name of the Google Compute Engine
    * [zone](/compute/docs/zones#available) in which the cluster
    * resides.
+   * This field is deprecated, use location instead.
    * </pre>
    *
-   * <code>string zone = 101;</code>
+   * <code>string zone = 101 [deprecated = true];</code>
    */
-  com.google.protobuf.ByteString
+  @java.lang.Deprecated com.google.protobuf.ByteString
       getZoneBytes();
 
   /**
@@ -676,6 +700,13 @@ public interface ClusterOrBuilder extends
    * found in validMasterVersions returned by getServerConfig.  The version can
    * be upgraded over time; such upgrades are reflected in
    * currentMasterVersion and currentNodeVersion.
+   * Users may specify either explicit versions offered by
+   * Kubernetes Engine or version aliases, which have the following behavior:
+   * - "latest": picks the highest valid Kubernetes version
+   * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
+   * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
+   * - "1.X.Y-gke.N": picks an explicit Kubernetes version
+   * - "","-": picks the default Kubernetes version
    * </pre>
    *
    * <code>string initial_cluster_version = 103;</code>
@@ -687,6 +718,13 @@ public interface ClusterOrBuilder extends
    * found in validMasterVersions returned by getServerConfig.  The version can
    * be upgraded over time; such upgrades are reflected in
    * currentMasterVersion and currentNodeVersion.
+   * Users may specify either explicit versions offered by
+   * Kubernetes Engine or version aliases, which have the following behavior:
+   * - "latest": picks the highest valid Kubernetes version
+   * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
+   * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
+   * - "1.X.Y-gke.N": picks an explicit Kubernetes version
+   * - "","-": picks the default Kubernetes version
    * </pre>
    *
    * <code>string initial_cluster_version = 103;</code>
@@ -714,24 +752,28 @@ public interface ClusterOrBuilder extends
 
   /**
    * <pre>
-   * [Output only] The current version of the node software components.
-   * If they are currently at multiple versions because they're in the process
-   * of being upgraded, this reflects the minimum version of all nodes.
+   * [Output only] Deprecated, use
+   * [NodePool.version](/kubernetes-engine/docs/reference/rest/v1/projects.zones.clusters.nodePool)
+   * instead. The current version of the node software components. If they are
+   * currently at multiple versions because they're in the process of being
+   * upgraded, this reflects the minimum version of all nodes.
    * </pre>
    *
-   * <code>string current_node_version = 105;</code>
+   * <code>string current_node_version = 105 [deprecated = true];</code>
    */
-  java.lang.String getCurrentNodeVersion();
+  @java.lang.Deprecated java.lang.String getCurrentNodeVersion();
   /**
    * <pre>
-   * [Output only] The current version of the node software components.
-   * If they are currently at multiple versions because they're in the process
-   * of being upgraded, this reflects the minimum version of all nodes.
+   * [Output only] Deprecated, use
+   * [NodePool.version](/kubernetes-engine/docs/reference/rest/v1/projects.zones.clusters.nodePool)
+   * instead. The current version of the node software components. If they are
+   * currently at multiple versions because they're in the process of being
+   * upgraded, this reflects the minimum version of all nodes.
    * </pre>
    *
-   * <code>string current_node_version = 105;</code>
+   * <code>string current_node_version = 105 [deprecated = true];</code>
    */
-  com.google.protobuf.ByteString
+  @java.lang.Deprecated com.google.protobuf.ByteString
       getCurrentNodeVersionBytes();
 
   /**
@@ -833,34 +875,34 @@ public interface ClusterOrBuilder extends
    * Deprecated. Use node_pools.instance_group_urls.
    * </pre>
    *
-   * <code>repeated string instance_group_urls = 111;</code>
+   * <code>repeated string instance_group_urls = 111 [deprecated = true];</code>
    */
-  java.util.List<java.lang.String>
+  @java.lang.Deprecated java.util.List<java.lang.String>
       getInstanceGroupUrlsList();
   /**
    * <pre>
    * Deprecated. Use node_pools.instance_group_urls.
    * </pre>
    *
-   * <code>repeated string instance_group_urls = 111;</code>
+   * <code>repeated string instance_group_urls = 111 [deprecated = true];</code>
    */
-  int getInstanceGroupUrlsCount();
+  @java.lang.Deprecated int getInstanceGroupUrlsCount();
   /**
    * <pre>
    * Deprecated. Use node_pools.instance_group_urls.
    * </pre>
    *
-   * <code>repeated string instance_group_urls = 111;</code>
+   * <code>repeated string instance_group_urls = 111 [deprecated = true];</code>
    */
-  java.lang.String getInstanceGroupUrls(int index);
+  @java.lang.Deprecated java.lang.String getInstanceGroupUrls(int index);
   /**
    * <pre>
    * Deprecated. Use node_pools.instance_group_urls.
    * </pre>
    *
-   * <code>repeated string instance_group_urls = 111;</code>
+   * <code>repeated string instance_group_urls = 111 [deprecated = true];</code>
    */
-  com.google.protobuf.ByteString
+  @java.lang.Deprecated com.google.protobuf.ByteString
       getInstanceGroupUrlsBytes(int index);
 
   /**
@@ -891,4 +933,28 @@ public interface ClusterOrBuilder extends
    */
   com.google.protobuf.ByteString
       getExpireTimeBytes();
+
+  /**
+   * <pre>
+   * [Output only] The name of the Google Compute Engine
+   * [zone](/compute/docs/regions-zones/regions-zones#available) or
+   * [region](/compute/docs/regions-zones/regions-zones#available) in which
+   * the cluster resides.
+   * </pre>
+   *
+   * <code>string location = 114;</code>
+   */
+  java.lang.String getLocation();
+  /**
+   * <pre>
+   * [Output only] The name of the Google Compute Engine
+   * [zone](/compute/docs/regions-zones/regions-zones#available) or
+   * [region](/compute/docs/regions-zones/regions-zones#available) in which
+   * the cluster resides.
+   * </pre>
+   *
+   * <code>string location = 114;</code>
+   */
+  com.google.protobuf.ByteString
+      getLocationBytes();
 }

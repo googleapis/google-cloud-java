@@ -55,8 +55,9 @@ public interface MasterAuthOrBuilder extends
 
   /**
    * <pre>
-   * Configuration for client certificate authentication on the cluster.  If no
-   * configuration is specified, a client certificate is issued.
+   * Configuration for client certificate authentication on the cluster. For
+   * clusters before v1.12, if no configuration is specified, a client
+   * certificate is issued.
    * </pre>
    *
    * <code>.google.container.v1.ClientCertificateConfig client_certificate_config = 3;</code>
@@ -64,8 +65,9 @@ public interface MasterAuthOrBuilder extends
   boolean hasClientCertificateConfig();
   /**
    * <pre>
-   * Configuration for client certificate authentication on the cluster.  If no
-   * configuration is specified, a client certificate is issued.
+   * Configuration for client certificate authentication on the cluster. For
+   * clusters before v1.12, if no configuration is specified, a client
+   * certificate is issued.
    * </pre>
    *
    * <code>.google.container.v1.ClientCertificateConfig client_certificate_config = 3;</code>
@@ -73,8 +75,9 @@ public interface MasterAuthOrBuilder extends
   com.google.container.v1.ClientCertificateConfig getClientCertificateConfig();
   /**
    * <pre>
-   * Configuration for client certificate authentication on the cluster.  If no
-   * configuration is specified, a client certificate is issued.
+   * Configuration for client certificate authentication on the cluster. For
+   * clusters before v1.12, if no configuration is specified, a client
+   * certificate is issued.
    * </pre>
    *
    * <code>.google.container.v1.ClientCertificateConfig client_certificate_config = 3;</code>
