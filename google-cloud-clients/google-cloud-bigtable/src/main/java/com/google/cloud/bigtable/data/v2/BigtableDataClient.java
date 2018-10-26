@@ -348,7 +348,7 @@ public class BigtableDataClient implements AutoCloseable {
    *     System.out.println("Tried to read a non-existent table");
    *   } catch (RuntimeException e) {
    *     e.printStackTrace();
-   *   }}
+   *   }
    *
    *   // Sync style
    *   try {
@@ -357,7 +357,7 @@ public class BigtableDataClient implements AutoCloseable {
    *     System.out.println("Tried to read a non-existent table");
    *   } catch (RuntimeException e) {
    *     e.printStackTrace();
-   *   }}
+   *   }
    *
    *   // Point look up
    *   ApiFuture<Row> rowFuture = bigtableDataClient.readRowsCallable().first().futureCall(query);
