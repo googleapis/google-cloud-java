@@ -18,11 +18,6 @@ package com.google.cloud.storage.contrib.nio;
 
 import com.google.cloud.storage.StorageException;
 
-import java.io.EOFException;
-import java.net.SocketException;
-import java.net.SocketTimeoutException;
-import javax.net.ssl.SSLException;
-
 /**
  * Simple counter class to keep track of retry and reopen attempts when StorageExceptions are
  * encountered. Handles sleeping between retry/reopen attempts, as well as throwing an exception
@@ -34,15 +29,17 @@ public class CloudStorageRetryHandler {
   private long totalWaitTime; // in milliseconds
   private final int maxRetries;
   private final int maxReopens;
+  private final CloudStorageConfiguration config;
 
   /**
    * Create a CloudStorageRetryHandler with the maximum retries and reopens set to the same value.
    *
-   * @param maxRetriesAndReopens value for both maxRetries and maxReopens
+   * @param config - configuration for reopens and retriable codes.
    */
-  public CloudStorageRetryHandler(final int maxRetriesAndReopens) {
-    this.maxRetries = maxRetriesAndReopens;
-    this.maxReopens = maxRetriesAndReopens;
+  public CloudStorageRetryHandler(final CloudStorageConfiguration config) {
+    this.maxRetries = config.maxChannelReopens();
+    this.maxReopens = config.maxChannelReopens();
+    this.config = config;
   }
 
   /**
@@ -50,10 +47,12 @@ public class CloudStorageRetryHandler {
    *
    * @param maxRetries maximum number of retries
    * @param maxReopens maximum number of reopens
+   * @param config http codes we'll retry on, and exceptions we'll reopen on.
    */
-  public CloudStorageRetryHandler(final int maxRetries, final int maxReopens) {
+  public CloudStorageRetryHandler(final int maxRetries, final int maxReopens, final CloudStorageConfiguration config) {
     this.maxRetries = maxRetries;
     this.maxReopens = maxReopens;
+    this.config = config;
   }
 
   /**
@@ -141,27 +140,36 @@ public class CloudStorageRetryHandler {
 
   /**
    * @param exs StorageException to test
-   * @return true if exs is a retryable error, otherwise false
+   * @return true if exs is a retriable error, otherwise false
    */
-  private static boolean isRetryable(final StorageException exs) {
-    return exs.isRetryable() || exs.getCode() == 500 || exs.getCode() == 502 || exs.getCode() == 503;
+  private boolean isRetryable(final StorageException exs) {
+    if (exs.isRetryable()) {
+      return true;
+    }
+    for (int code : config.retriableHttpCodes()) {
+      if (exs.getCode() == code) {
+        return true;
+      }
+    }
+    return false;
   }
 
   /**
    * @param exs StorageException to test
    * @return true if exs is an error that can be resolved via a channel reopen, otherwise false
    */
-  private static boolean isReopenable(final StorageException exs) {
+  private boolean isReopenable(final StorageException exs) {
     Throwable throwable = exs;
     // ensures finite iteration
     int maxDepth = 20;
     while (throwable != null && maxDepth-- > 0) {
-      if ((throwable.getMessage() != null
-          && throwable.getMessage().contains("Connection closed prematurely"))
-          || throwable instanceof SSLException
-          || throwable instanceof EOFException
-          || throwable instanceof SocketException
-          || throwable instanceof SocketTimeoutException) {
+      for (Class<? extends Exception> retriableException : config.reopenableExceptions()) {
+        if (retriableException.isInstance(throwable)) {
+          return true;
+        }
+      }
+      if (throwable.getMessage() != null
+          && throwable.getMessage().contains("Connection closed prematurely")) {
         return true;
       }
       throwable = throwable.getCause();
