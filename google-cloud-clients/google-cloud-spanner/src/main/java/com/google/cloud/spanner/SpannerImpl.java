@@ -1088,6 +1088,9 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
       beforeReadOrQuery();
       final ExecuteSqlRequest.Builder request =
           getExecuteSqlRequestBuilder(statement, queryMode);
+      if (partitionToken != null) {
+        request.setPartitionToken(partitionToken);
+      }
       final int prefetchChunks =
           readOptions.hasPrefetchChunks() ? readOptions.prefetchChunks() : defaultPrefetchChunks;
       ResumableStreamIterator stream =
