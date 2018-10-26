@@ -35,6 +35,9 @@ import com.google.cloud.storage.Acl.Role;
 import com.google.cloud.storage.Acl.User;
 import com.google.cloud.storage.BucketInfo.AgeDeleteRule;
 import com.google.cloud.storage.BucketInfo.DeleteRule;
+import com.google.cloud.storage.BucketInfo.LifecycleRule;
+import com.google.cloud.storage.BucketInfo.LifecycleRule.LifecycleAction;
+import com.google.cloud.storage.BucketInfo.LifecycleRule.LifecycleCondition;
 import com.google.common.base.Function;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -73,6 +76,9 @@ public class BucketTest {
       Collections.singletonList(Acl.of(User.ofAllAuthenticatedUsers(), WRITER));
   private static final List<? extends DeleteRule> DELETE_RULES =
       Collections.singletonList(new AgeDeleteRule(5));
+  private static final List<? extends BucketInfo.LifecycleRule> LIFECYCLE_RULES =
+          Collections.singletonList(new LifecycleRule(LifecycleAction.newDeleteAction(),
+                  LifecycleCondition.newBuilder().setAge(5).build()));
   private static final String INDEX_PAGE = "index.html";
   private static final String NOT_FOUND_PAGE = "error.html";
   private static final String LOCATION = "ASIA";
@@ -97,6 +103,7 @@ public class BucketTest {
       .setCreateTime(CREATE_TIME)
       .setDefaultAcl(DEFAULT_ACL)
       .setDeleteRules(DELETE_RULES)
+      .setLifecycleRules(LIFECYCLE_RULES)
       .setIndexPage(INDEX_PAGE)
       .setNotFoundPage(NOT_FOUND_PAGE)
       .setLocation(LOCATION)
@@ -711,6 +718,7 @@ public class BucketTest {
         .setCreateTime(CREATE_TIME)
         .setDefaultAcl(DEFAULT_ACL)
         .setDeleteRules(DELETE_RULES)
+        .setLifecycleRules(LIFECYCLE_RULES)
         .setIndexPage(INDEX_PAGE)
         .setNotFoundPage(NOT_FOUND_PAGE)
         .setLocation(LOCATION)
@@ -735,6 +743,7 @@ public class BucketTest {
     assertEquals(CORS, bucket.getCors());
     assertEquals(DEFAULT_ACL, bucket.getDefaultAcl());
     assertEquals(DELETE_RULES, bucket.getDeleteRules());
+    assertEquals(LIFECYCLE_RULES, bucket.getLifecycleRules());
     assertEquals(INDEX_PAGE, bucket.getIndexPage());
     assertEquals(NOT_FOUND_PAGE, bucket.getNotFoundPage());
     assertEquals(LOCATION, bucket.getLocation());
