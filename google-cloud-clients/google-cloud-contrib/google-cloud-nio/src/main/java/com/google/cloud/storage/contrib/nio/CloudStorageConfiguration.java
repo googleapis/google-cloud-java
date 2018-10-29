@@ -96,9 +96,9 @@ public abstract class CloudStorageConfiguration {
 
   /**
    * Returns the set of HTTP error codes that will be retried, in addition to the normally
-   * retriable ones.
+   * retryable ones.
    */
-  public abstract ImmutableList<Integer> retriableHttpCodes();
+  public abstract ImmutableList<Integer> retryableHttpCodes();
 
   /**
    * Returns the set of exceptions for which we'll try a channel reopen if maxChannelReopens
@@ -134,7 +134,7 @@ public abstract class CloudStorageConfiguration {
     private @Nullable String userProject = null;
     // This of this as "clear userProject if not RequesterPays"
     private boolean useUserProjectOnlyForRequesterPaysBuckets = false;
-    private ImmutableList<Integer> retriableHttpCodes=ImmutableList.of(500, 502, 503);
+    private ImmutableList<Integer> retryableHttpCodes = ImmutableList.of(500, 502, 503);
     private ImmutableList<Class<? extends Exception>> reopenableExceptions =
         ImmutableList.<Class<? extends Exception>>of(
             SSLException.class, EOFException.class, SocketException.class, SocketTimeoutException.class);
@@ -206,8 +206,8 @@ public abstract class CloudStorageConfiguration {
       return this;
     }
 
-    public Builder retriableHttpCodes(ImmutableList<Integer> value) {
-      retriableHttpCodes = value;
+    public Builder retryableHttpCodes(ImmutableList<Integer> value) {
+      retryableHttpCodes = value;
       return this;
     }
 
@@ -229,7 +229,7 @@ public abstract class CloudStorageConfiguration {
           maxChannelReopens,
           userProject,
           useUserProjectOnlyForRequesterPaysBuckets,
-          retriableHttpCodes,
+          retryableHttpCodes,
           reopenableExceptions);
     }
 
@@ -242,7 +242,7 @@ public abstract class CloudStorageConfiguration {
       maxChannelReopens = toModify.maxChannelReopens();
       userProject = toModify.userProject();
       useUserProjectOnlyForRequesterPaysBuckets = toModify.useUserProjectOnlyForRequesterPaysBuckets();
-      retriableHttpCodes = toModify.retriableHttpCodes();
+      retryableHttpCodes = toModify.retryableHttpCodes();
       reopenableExceptions = toModify.reopenableExceptions();
     }
 
@@ -284,8 +284,8 @@ public abstract class CloudStorageConfiguration {
         case "useUserProjectOnlyForRequesterPaysBuckets":
           builder.autoDetectRequesterPays((Boolean) entry.getValue());
           break;
-        case "retriableHttpCodes":
-          builder.retriableHttpCodes((ImmutableList<Integer>) entry.getValue());
+        case "retryableHttpCodes":
+          builder.retryableHttpCodes((ImmutableList<Integer>) entry.getValue());
           break;
         case "reopenableExceptions":
           builder.reopenableExceptions((ImmutableList<Class<? extends Exception>>) entry.getValue());

@@ -17,6 +17,7 @@
 package com.google.cloud.storage.contrib.nio;
 
 import com.google.cloud.storage.StorageException;
+import com.google.common.annotations.VisibleForTesting;
 
 /**
  * Simple counter class to keep track of retry and reopen attempts when StorageExceptions are
@@ -34,7 +35,7 @@ public class CloudStorageRetryHandler {
   /**
    * Create a CloudStorageRetryHandler with the maximum retries and reopens set to the same value.
    *
-   * @param config - configuration for reopens and retriable codes.
+   * @param config - configuration for reopens and retryable codes.
    */
   public CloudStorageRetryHandler(final CloudStorageConfiguration config) {
     this.maxRetries = config.maxChannelReopens();
@@ -140,13 +141,14 @@ public class CloudStorageRetryHandler {
 
   /**
    * @param exs StorageException to test
-   * @return true if exs is a retriable error, otherwise false
+   * @return true if exs is a retryable error, otherwise false
    */
-  private boolean isRetryable(final StorageException exs) {
+  @VisibleForTesting
+  boolean isRetryable(final StorageException exs) {
     if (exs.isRetryable()) {
       return true;
     }
-    for (int code : config.retriableHttpCodes()) {
+    for (int code : config.retryableHttpCodes()) {
       if (exs.getCode() == code) {
         return true;
       }
@@ -158,13 +160,14 @@ public class CloudStorageRetryHandler {
    * @param exs StorageException to test
    * @return true if exs is an error that can be resolved via a channel reopen, otherwise false
    */
-  private boolean isReopenable(final StorageException exs) {
+  @VisibleForTesting
+  boolean isReopenable(final StorageException exs) {
     Throwable throwable = exs;
     // ensures finite iteration
     int maxDepth = 20;
     while (throwable != null && maxDepth-- > 0) {
-      for (Class<? extends Exception> retriableException : config.reopenableExceptions()) {
-        if (retriableException.isInstance(throwable)) {
+      for (Class<? extends Exception> reopenableException : config.reopenableExceptions()) {
+        if (reopenableException.isInstance(throwable)) {
           return true;
         }
       }

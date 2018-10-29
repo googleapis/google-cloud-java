@@ -46,7 +46,7 @@ public class CloudStorageConfigurationTest {
             .stripPrefixSlash(false)
             .usePseudoDirectories(false)
             .blockSize(666)
-            .retriableHttpCodes(ImmutableList.of(1,2,3))
+            .retryableHttpCodes(ImmutableList.of(1,2,3))
             .reopenableExceptions(ImmutableList.<Class<? extends Exception>>of(SocketTimeoutException.class))
             .build();
     assertThat(config.workingDirectory()).isEqualTo("/omg");
@@ -54,7 +54,7 @@ public class CloudStorageConfigurationTest {
     assertThat(config.stripPrefixSlash()).isFalse();
     assertThat(config.usePseudoDirectories()).isFalse();
     assertThat(config.blockSize()).isEqualTo(666);
-    assertThat(config.retriableHttpCodes()).isEqualTo(ImmutableList.of(1,2,3));
+    assertThat(config.retryableHttpCodes()).isEqualTo(ImmutableList.of(1,2,3));
     assertThat(config.reopenableExceptions()).isEqualTo(ImmutableList.<Class<? extends Exception>>of(SocketTimeoutException.class));
   }
 
@@ -68,7 +68,7 @@ public class CloudStorageConfigurationTest {
                 .put("stripPrefixSlash", false)
                 .put("usePseudoDirectories", false)
                 .put("blockSize", 666)
-                .put("retriableHttpCodes", ImmutableList.of(1,2,3))
+                .put("retryableHttpCodes", ImmutableList.of(1,2,3))
                 .put("reopenableExceptions", ImmutableList.<Class<? extends Exception>>of(SocketTimeoutException.class))
                 .build());
     assertThat(config.workingDirectory()).isEqualTo("/omg");
@@ -76,7 +76,7 @@ public class CloudStorageConfigurationTest {
     assertThat(config.stripPrefixSlash()).isFalse();
     assertThat(config.usePseudoDirectories()).isFalse();
     assertThat(config.blockSize()).isEqualTo(666);
-    assertThat(config.retriableHttpCodes()).isEqualTo(ImmutableList.of(1,2,3));
+    assertThat(config.retryableHttpCodes()).isEqualTo(ImmutableList.of(1,2,3));
     assertThat(config.reopenableExceptions()).isEqualTo(ImmutableList.<Class<? extends Exception>>of(SocketTimeoutException.class));
   }
 
@@ -84,5 +84,16 @@ public class CloudStorageConfigurationTest {
   public void testFromMap_badKey_throwsIae() {
     thrown.expect(IllegalArgumentException.class);
     CloudStorageConfiguration.fromMap(ImmutableMap.of("lol", "/omg"));
+  }
+
+  @Test
+  /**
+   * Spot check that our defaults are applied.
+   */
+  public void testSomeDefaults() {
+    for (CloudStorageConfiguration config : ImmutableList.of(CloudStorageConfiguration.DEFAULT, CloudStorageConfiguration.builder().build())) {
+      assertThat(config.retryableHttpCodes()).contains(503);
+      assertThat(config.reopenableExceptions()).contains(SocketTimeoutException.class);
+    }
   }
 }
