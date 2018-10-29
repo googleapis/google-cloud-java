@@ -131,6 +131,13 @@ public class LoggingHandlerTest {
       .addLabel("levelValue", String.valueOf(LoggingLevel.EMERGENCY.intValue()))
       .setTimestamp(123456789L)
       .build();
+  private static final LogEntry TRACE_ENTRY = LogEntry.newBuilder(StringPayload.of(MESSAGE))
+      .setSeverity(Severity.DEBUG)
+      .addLabel("levelName", "FINEST")
+      .addLabel("levelValue", String.valueOf(Level.FINEST.intValue()))
+      .setTrace("projects/projectId/traces/traceId")
+      .setTimestamp(123456789L)
+      .build();
   private static final String CONFIG_NAMESPACE = "com.google.cloud.logging.LoggingHandler";
   private static final ImmutableMap<String, String> CONFIG_MAP =
       ImmutableMap.<String, String>builder()
@@ -243,7 +250,7 @@ public class LoggingHandlerTest {
     logging.write(ImmutableList.of(EMERGENCY_ENTRY), DEFAULT_OPTIONS);
     expectLastCall().once();
     replay(options, logging);
-    Handler handler = new LoggingHandler(LOG_NAME, options);
+    Handler handler = new LoggingHandler(LOG_NAME, options, DEFAULT_RESOURCE);
     handler.setLevel(Level.ALL);
     handler.setFormatter(new TestFormatter());
     // default levels
@@ -315,6 +322,31 @@ public class LoggingHandlerTest {
   }
 
   @Test
+  public void testTraceEnhancedLogEntry() {
+    expect(options.getProjectId()).andReturn(PROJECT).anyTimes();
+    expect(options.getService()).andReturn(logging);
+    MonitoredResource resource = MonitoredResource.of("custom", ImmutableMap.<String, String>of());
+    logging.setFlushSeverity(Severity.ERROR);
+    expectLastCall().once();
+    logging.setWriteSynchronicity(Synchronicity.ASYNC);
+    expectLastCall().once();
+    logging.write(
+        ImmutableList.of(TRACE_ENTRY),
+        WriteOption.logName(LOG_NAME),
+        WriteOption.resource(resource),
+        WriteOption.labels(BASE_SEVERITY_MAP));
+    expectLastCall().once();
+    replay(options, logging);
+    LoggingEnhancer enhancer = new TraceLoggingEnhancer();
+    TraceLoggingEnhancer.setCurrentTraceId("projects/projectId/traces/traceId");
+    Handler handler =
+        new LoggingHandler(LOG_NAME, options, resource, Collections.singletonList(enhancer));
+    handler.setLevel(Level.ALL);
+    handler.setFormatter(new TestFormatter());
+    handler.publish(newLogRecord(Level.FINEST, MESSAGE));
+  }
+
+  @Test
   public void testReportWriteError() {
     expect(options.getProjectId()).andReturn(PROJECT).anyTimes();
     expect(options.getService()).andReturn(logging);
@@ -330,7 +362,7 @@ public class LoggingHandlerTest {
     errorManager.error(null, ex, ErrorManager.WRITE_FAILURE);
     expectLastCall().once();
     replay(errorManager);
-    Handler handler = new LoggingHandler(LOG_NAME, options);
+    Handler handler = new LoggingHandler(LOG_NAME, options, DEFAULT_RESOURCE);
     handler.setLevel(Level.ALL);
     handler.setErrorManager(errorManager);
     handler.setFormatter(new TestFormatter());
@@ -356,7 +388,7 @@ public class LoggingHandlerTest {
     expectLastCall().once();
     replay(options, logging, errorManager);
     LogRecord record = newLogRecord(Level.FINEST, MESSAGE);
-    Handler handler = new LoggingHandler(LOG_NAME, options);
+    Handler handler = new LoggingHandler(LOG_NAME, options, DEFAULT_RESOURCE);
     handler.setLevel(Level.ALL);
     handler.setErrorManager(errorManager);
     handler.setFormatter(new TestFormatter());
@@ -382,7 +414,7 @@ public class LoggingHandlerTest {
     LogRecord record = newLogRecord(Level.FINEST, MESSAGE);
     expect(formatter.format(record)).andThrow(ex);
     replay(errorManager, formatter);
-    Handler handler = new LoggingHandler(LOG_NAME, options);
+    Handler handler = new LoggingHandler(LOG_NAME, options, DEFAULT_RESOURCE);
     handler.setLevel(Level.ALL);
     handler.setErrorManager(errorManager);
     handler.setFormatter(formatter);
@@ -407,7 +439,7 @@ public class LoggingHandlerTest {
         DEFAULT_OPTIONS);
     expectLastCall().once();
     replay(options, logging);
-    LoggingHandler handler = new LoggingHandler(LOG_NAME, options);
+    LoggingHandler handler = new LoggingHandler(LOG_NAME, options, DEFAULT_RESOURCE);
     handler.setLevel(Level.ALL);
     handler.setFlushLevel(Level.WARNING);
     handler.setFormatter(new TestFormatter());
@@ -441,7 +473,7 @@ public class LoggingHandlerTest {
     expectLastCall().once();
     replay(options, logging);
 
-    LoggingHandler handler = new LoggingHandler(LOG_NAME, options);
+    LoggingHandler handler = new LoggingHandler(LOG_NAME, options, DEFAULT_RESOURCE);
     handler.setLevel(Level.ALL);
     handler.setSynchronicity(Synchronicity.SYNC);
     handler.setFormatter(new TestFormatter());
@@ -461,7 +493,7 @@ public class LoggingHandlerTest {
     logging.write(ImmutableList.of(FINEST_ENTRY), DEFAULT_OPTIONS);
     expectLastCall().once();
     replay(options, logging);
-    LoggingHandler handler = new LoggingHandler(LOG_NAME, options) {
+    LoggingHandler handler = new LoggingHandler(LOG_NAME, options, DEFAULT_RESOURCE) {
       @Override
       public void close() {
         // Make close NOOP to avoid mock close exception
@@ -488,7 +520,7 @@ public class LoggingHandlerTest {
     logging.close();
     expectLastCall().once();
     replay(options, logging);
-    Handler handler = new LoggingHandler(LOG_NAME, options);
+    Handler handler = new LoggingHandler(LOG_NAME, options, DEFAULT_RESOURCE);
     handler.setLevel(Level.ALL);
     handler.setFormatter(new TestFormatter());
     handler.publish(newLogRecord(Level.FINEST, MESSAGE));

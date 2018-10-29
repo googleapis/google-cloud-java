@@ -90,53 +90,60 @@ public final class LoggingProto {
       "le/protobuf/duration.proto\032\033google/proto" +
       "buf/empty.proto\032\037google/protobuf/timesta" +
       "mp.proto\032\027google/rpc/status.proto\"$\n\020Del" +
-      "eteLogRequest\022\020\n\010log_name\030\001 \001(\t\"\230\002\n\026Writ" +
+      "eteLogRequest\022\020\n\010log_name\030\001 \001(\t\"\251\002\n\026Writ" +
       "eLogEntriesRequest\022\020\n\010log_name\030\001 \001(\t\022/\n\010" +
-      "resource\030\002 \001(\0132\035.google.api.MonitoredRes",
+      "resource\030\002 \001(\0132\035.google.api.MonitoredRes" +
       "ource\022E\n\006labels\030\003 \003(\01325.google.logging.v" +
       "2.WriteLogEntriesRequest.LabelsEntry\022,\n\007" +
       "entries\030\004 \003(\0132\033.google.logging.v2.LogEnt" +
-      "ry\022\027\n\017partial_success\030\005 \001(\010\032-\n\013LabelsEnt" +
-      "ry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\031\n\027Wr" +
-      "iteLogEntriesResponse\"\310\001\n\034WriteLogEntrie" +
-      "sPartialErrors\022]\n\020log_entry_errors\030\001 \003(\013" +
-      "2C.google.logging.v2.WriteLogEntriesPart" +
-      "ialErrors.LogEntryErrorsEntry\032I\n\023LogEntr" +
-      "yErrorsEntry\022\013\n\003key\030\001 \001(\005\022!\n\005value\030\002 \001(\013",
-      "2\022.google.rpc.Status:\0028\001\"\215\001\n\025ListLogEntr" +
-      "iesRequest\022\023\n\013project_ids\030\001 \003(\t\022\026\n\016resou" +
-      "rce_names\030\010 \003(\t\022\016\n\006filter\030\002 \001(\t\022\020\n\010order" +
-      "_by\030\003 \001(\t\022\021\n\tpage_size\030\004 \001(\005\022\022\n\npage_tok" +
-      "en\030\005 \001(\t\"_\n\026ListLogEntriesResponse\022,\n\007en" +
-      "tries\030\001 \003(\0132\033.google.logging.v2.LogEntry" +
-      "\022\027\n\017next_page_token\030\002 \001(\t\"P\n\'ListMonitor" +
-      "edResourceDescriptorsRequest\022\021\n\tpage_siz" +
-      "e\030\001 \001(\005\022\022\n\npage_token\030\002 \001(\t\"\212\001\n(ListMoni" +
-      "toredResourceDescriptorsResponse\022E\n\024reso",
-      "urce_descriptors\030\001 \003(\0132\'.google.api.Moni" +
-      "toredResourceDescriptor\022\027\n\017next_page_tok" +
-      "en\030\002 \001(\t\"H\n\017ListLogsRequest\022\016\n\006parent\030\001 " +
-      "\001(\t\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001" +
-      "(\t\">\n\020ListLogsResponse\022\021\n\tlog_names\030\003 \003(" +
-      "\t\022\027\n\017next_page_token\030\002 \001(\t2\325\005\n\020LoggingSe" +
-      "rviceV2\022w\n\tDeleteLog\022#.google.logging.v2" +
-      ".DeleteLogRequest\032\026.google.protobuf.Empt" +
-      "y\"-\202\323\344\223\002\'*%/v2beta1/{log_name=projects/*" +
-      "/logs/*}\022\206\001\n\017WriteLogEntries\022).google.lo",
-      "gging.v2.WriteLogEntriesRequest\032*.google" +
-      ".logging.v2.WriteLogEntriesResponse\"\034\202\323\344" +
-      "\223\002\026\"\021/v2/entries:write:\001*\022\202\001\n\016ListLogEnt" +
-      "ries\022(.google.logging.v2.ListLogEntriesR" +
-      "equest\032).google.logging.v2.ListLogEntrie" +
-      "sResponse\"\033\202\323\344\223\002\025\"\020/v2/entries:list:\001*\022\305" +
-      "\001\n ListMonitoredResourceDescriptors\022:.go" +
-      "ogle.logging.v2.ListMonitoredResourceDes" +
-      "criptorsRequest\032;.google.logging.v2.List" +
-      "MonitoredResourceDescriptorsResponse\"(\202\323",
-      "\344\223\002\"\022 /v2/monitoredResourceDescriptors\022r" +
-      "\n\010ListLogs\022\".google.logging.v2.ListLogsR" +
-      "equest\032#.google.logging.v2.ListLogsRespo" +
-      "nse\"\035\202\323\344\223\002\027\022\025/v2/{parent=*/*}/logsB\230\001\n\025c" +
+      "ry\022\027\n\017partial_success\030\005 \001(\010\022\017\n\007dry_run\030\006" +
+      " \001(\010\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005valu" +
+      "e\030\002 \001(\t:\0028\001\"\031\n\027WriteLogEntriesResponse\"\310" +
+      "\001\n\034WriteLogEntriesPartialErrors\022]\n\020log_e" +
+      "ntry_errors\030\001 \003(\0132C.google.logging.v2.Wr" +
+      "iteLogEntriesPartialErrors.LogEntryError" +
+      "sEntry\032I\n\023LogEntryErrorsEntry\022\013\n\003key\030\001 \001" +
+      "(\005\022!\n\005value\030\002 \001(\0132\022.google.rpc.Status:\0028" +
+      "\001\"\221\001\n\025ListLogEntriesRequest\022\027\n\013project_i" +
+      "ds\030\001 \003(\tB\002\030\001\022\026\n\016resource_names\030\010 \003(\t\022\016\n\006" +
+      "filter\030\002 \001(\t\022\020\n\010order_by\030\003 \001(\t\022\021\n\tpage_s" +
+      "ize\030\004 \001(\005\022\022\n\npage_token\030\005 \001(\t\"_\n\026ListLog" +
+      "EntriesResponse\022,\n\007entries\030\001 \003(\0132\033.googl" +
+      "e.logging.v2.LogEntry\022\027\n\017next_page_token" +
+      "\030\002 \001(\t\"P\n\'ListMonitoredResourceDescripto" +
+      "rsRequest\022\021\n\tpage_size\030\001 \001(\005\022\022\n\npage_tok" +
+      "en\030\002 \001(\t\"\212\001\n(ListMonitoredResourceDescri" +
+      "ptorsResponse\022E\n\024resource_descriptors\030\001 " +
+      "\003(\0132\'.google.api.MonitoredResourceDescri" +
+      "ptor\022\027\n\017next_page_token\030\002 \001(\t\"H\n\017ListLog" +
+      "sRequest\022\016\n\006parent\030\001 \001(\t\022\021\n\tpage_size\030\002 " +
+      "\001(\005\022\022\n\npage_token\030\003 \001(\t\">\n\020ListLogsRespo" +
+      "nse\022\021\n\tlog_names\030\003 \003(\t\022\027\n\017next_page_toke" +
+      "n\030\002 \001(\t2\330\007\n\020LoggingServiceV2\022\353\001\n\tDeleteL" +
+      "og\022#.google.logging.v2.DeleteLogRequest\032" +
+      "\026.google.protobuf.Empty\"\240\001\202\323\344\223\002\231\001* /v2/{" +
+      "log_name=projects/*/logs/*}Z\'*%/v2/{log_" +
+      "name=organizations/*/logs/*}Z!*\037/v2/{log" +
+      "_name=folders/*/logs/*}Z)*\'/v2/{log_name" +
+      "=billingAccounts/*/logs/*}\022\206\001\n\017WriteLogE" +
+      "ntries\022).google.logging.v2.WriteLogEntri" +
+      "esRequest\032*.google.logging.v2.WriteLogEn" +
+      "triesResponse\"\034\202\323\344\223\002\026\"\021/v2/entries:write" +
+      ":\001*\022\202\001\n\016ListLogEntries\022(.google.logging." +
+      "v2.ListLogEntriesRequest\032).google.loggin" +
+      "g.v2.ListLogEntriesResponse\"\033\202\323\344\223\002\025\"\020/v2" +
+      "/entries:list:\001*\022\305\001\n ListMonitoredResour" +
+      "ceDescriptors\022:.google.logging.v2.ListMo" +
+      "nitoredResourceDescriptorsRequest\032;.goog" +
+      "le.logging.v2.ListMonitoredResourceDescr" +
+      "iptorsResponse\"(\202\323\344\223\002\"\022 /v2/monitoredRes" +
+      "ourceDescriptors\022\377\001\n\010ListLogs\022\".google.l" +
+      "ogging.v2.ListLogsRequest\032#.google.loggi" +
+      "ng.v2.ListLogsResponse\"\251\001\202\323\344\223\002\242\001\022\025/v2/{p" +
+      "arent=*/*}/logsZ\036\022\034/v2/{parent=projects/" +
+      "*}/logsZ#\022!/v2/{parent=organizations/*}/" +
+      "logsZ\035\022\033/v2/{parent=folders/*}/logsZ%\022#/" +
+      "v2/{parent=billingAccounts/*}/logsB\230\001\n\025c" +
       "om.google.logging.v2B\014LoggingProtoP\001Z8go" +
       "ogle.golang.org/genproto/googleapis/logg" +
       "ing/v2;logging\370\001\001\252\002\027Google.Cloud.Logging" +
@@ -172,7 +179,7 @@ public final class LoggingProto {
     internal_static_google_logging_v2_WriteLogEntriesRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_logging_v2_WriteLogEntriesRequest_descriptor,
-        new java.lang.String[] { "LogName", "Resource", "Labels", "Entries", "PartialSuccess", });
+        new java.lang.String[] { "LogName", "Resource", "Labels", "Entries", "PartialSuccess", "DryRun", });
     internal_static_google_logging_v2_WriteLogEntriesRequest_LabelsEntry_descriptor =
       internal_static_google_logging_v2_WriteLogEntriesRequest_descriptor.getNestedTypes().get(0);
     internal_static_google_logging_v2_WriteLogEntriesRequest_LabelsEntry_fieldAccessorTable = new

@@ -92,17 +92,17 @@ public interface IntentOrBuilder extends
    * taken into account during inference in `ML ONLY` match mode. Also,
    * auto-markup in the UI is turned off.
    * DEPRECATED! Please use `ml_disabled` field instead.
-   * NOTE: If neither `ml_enabled` nor `ml_disabled` field is set, then the
-   * default value is determined as follows:
+   * NOTE: If both `ml_enabled` and `ml_disabled` are either not set or false,
+   * then the default value is determined as follows:
    * - Before April 15th, 2018 the default is:
    *   ml_enabled = false / ml_disabled = true.
    * - After April 15th, 2018 the default is:
    *   ml_enabled = true / ml_disabled = false.
    * </pre>
    *
-   * <code>bool ml_enabled = 5;</code>
+   * <code>bool ml_enabled = 5 [deprecated = true];</code>
    */
-  boolean getMlEnabled();
+  @java.lang.Deprecated boolean getMlEnabled();
 
   /**
    * <pre>
@@ -115,6 +115,17 @@ public interface IntentOrBuilder extends
    * <code>bool ml_disabled = 19;</code>
    */
   boolean getMlDisabled();
+
+  /**
+   * <pre>
+   * Optional. Indicates that this intent ends an interaction. Some integrations
+   * (e.g., Actions on Google or Dialogflow phone gateway) use this information
+   * to close interaction with an end user. Default is false.
+   * </pre>
+   *
+   * <code>bool end_interaction = 21;</code>
+   */
+  boolean getEndInteraction();
 
   /**
    * <pre>
@@ -254,6 +265,7 @@ public interface IntentOrBuilder extends
   /**
    * <pre>
    * Optional. The name of the action associated with the intent.
+   * Note: The action name must not contain whitespaces.
    * </pre>
    *
    * <code>string action = 10;</code>
@@ -262,6 +274,7 @@ public interface IntentOrBuilder extends
   /**
    * <pre>
    * Optional. The name of the action associated with the intent.
+   * Note: The action name must not contain whitespaces.
    * </pre>
    *
    * <code>string action = 10;</code>

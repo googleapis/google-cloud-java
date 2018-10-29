@@ -83,7 +83,6 @@ import org.threeten.bp.Duration;
  * </pre>
  */
 @Generated("by gapic-generator")
-@BetaApi
 public class AlertPolicyServiceStubSettings extends StubSettings<AlertPolicyServiceStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =

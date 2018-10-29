@@ -897,7 +897,7 @@ public class IntentsClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final void deleteIntent(DeleteIntentRequest request) {
+  public final void deleteIntent(DeleteIntentRequest request) {
     deleteIntentCallable().call(request);
   }
 
@@ -934,7 +934,7 @@ public class IntentsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (IntentsClient intentsClient = IntentsClient.create()) {
-   *   AgentName parent = AgentName.of("[PROJECT]", "[AGENT]");
+   *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
    *   String languageCode = "";
    *   BatchUpdateIntentsRequest request = BatchUpdateIntentsRequest.newBuilder()
    *     .setParent(parent.toString())
@@ -965,7 +965,7 @@ public class IntentsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (IntentsClient intentsClient = IntentsClient.create()) {
-   *   AgentName parent = AgentName.of("[PROJECT]", "[AGENT]");
+   *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
    *   String languageCode = "";
    *   BatchUpdateIntentsRequest request = BatchUpdateIntentsRequest.newBuilder()
    *     .setParent(parent.toString())
@@ -994,7 +994,7 @@ public class IntentsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (IntentsClient intentsClient = IntentsClient.create()) {
-   *   AgentName parent = AgentName.of("[PROJECT]", "[AGENT]");
+   *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
    *   String languageCode = "";
    *   BatchUpdateIntentsRequest request = BatchUpdateIntentsRequest.newBuilder()
    *     .setParent(parent.toString())
@@ -1020,7 +1020,7 @@ public class IntentsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (IntentsClient intentsClient = IntentsClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
    *   List&lt;Intent&gt; intents = new ArrayList&lt;&gt;();
    *   Empty response = intentsClient.batchDeleteIntentsAsync(parent, intents).get();
    * }
@@ -1035,7 +1035,7 @@ public class IntentsClient implements BackgroundResource {
   @BetaApi(
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, Struct> batchDeleteIntentsAsync(
-      ProjectName parent, List<Intent> intents) {
+      ProjectAgentName parent, List<Intent> intents) {
 
     BatchDeleteIntentsRequest request =
         BatchDeleteIntentsRequest.newBuilder()
@@ -1055,7 +1055,7 @@ public class IntentsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (IntentsClient intentsClient = IntentsClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
    *   List&lt;Intent&gt; intents = new ArrayList&lt;&gt;();
    *   Empty response = intentsClient.batchDeleteIntentsAsync(parent.toString(), intents).get();
    * }
@@ -1087,7 +1087,7 @@ public class IntentsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (IntentsClient intentsClient = IntentsClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
    *   List&lt;Intent&gt; intents = new ArrayList&lt;&gt;();
    *   BatchDeleteIntentsRequest request = BatchDeleteIntentsRequest.newBuilder()
    *     .setParent(parent.toString())
@@ -1117,7 +1117,7 @@ public class IntentsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (IntentsClient intentsClient = IntentsClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
    *   List&lt;Intent&gt; intents = new ArrayList&lt;&gt;();
    *   BatchDeleteIntentsRequest request = BatchDeleteIntentsRequest.newBuilder()
    *     .setParent(parent.toString())
@@ -1145,7 +1145,7 @@ public class IntentsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (IntentsClient intentsClient = IntentsClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
    *   List&lt;Intent&gt; intents = new ArrayList&lt;&gt;();
    *   BatchDeleteIntentsRequest request = BatchDeleteIntentsRequest.newBuilder()
    *     .setParent(parent.toString())

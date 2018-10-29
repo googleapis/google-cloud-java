@@ -57,7 +57,15 @@ public interface UptimeCheckConfigOrBuilder extends
 
   /**
    * <pre>
-   * The monitored resource associated with the configuration.
+   * The [monitored
+   * resource](https://cloud.google.com/monitoring/api/resources) associated
+   * with the configuration.
+   * The following monitored resource types are supported for uptime checks:
+   *   uptime_url
+   *   gce_instance
+   *   gae_app
+   *   aws_ec2_instance
+   *   aws_elb_load_balancer
    * </pre>
    *
    * <code>.google.api.MonitoredResource monitored_resource = 3;</code>
@@ -65,7 +73,15 @@ public interface UptimeCheckConfigOrBuilder extends
   boolean hasMonitoredResource();
   /**
    * <pre>
-   * The monitored resource associated with the configuration.
+   * The [monitored
+   * resource](https://cloud.google.com/monitoring/api/resources) associated
+   * with the configuration.
+   * The following monitored resource types are supported for uptime checks:
+   *   uptime_url
+   *   gce_instance
+   *   gae_app
+   *   aws_ec2_instance
+   *   aws_elb_load_balancer
    * </pre>
    *
    * <code>.google.api.MonitoredResource monitored_resource = 3;</code>
@@ -73,7 +89,15 @@ public interface UptimeCheckConfigOrBuilder extends
   com.google.api.MonitoredResource getMonitoredResource();
   /**
    * <pre>
-   * The monitored resource associated with the configuration.
+   * The [monitored
+   * resource](https://cloud.google.com/monitoring/api/resources) associated
+   * with the configuration.
+   * The following monitored resource types are supported for uptime checks:
+   *   uptime_url
+   *   gce_instance
+   *   gae_app
+   *   aws_ec2_instance
+   *   aws_elb_load_balancer
    * </pre>
    *
    * <code>.google.api.MonitoredResource monitored_resource = 3;</code>
@@ -157,8 +181,10 @@ public interface UptimeCheckConfigOrBuilder extends
 
   /**
    * <pre>
-   * How often the uptime check is performed.
-   * Currently, only 1, 5, 10, and 15 minutes are supported. Required.
+   * How often, in seconds, the uptime check is performed.
+   * Currently, the only supported values are `60s` (1 minute), `300s`
+   * (5 minutes), `600s` (10 minutes), and `900s` (15 minutes). Optional,
+   * defaults to `300s`.
    * </pre>
    *
    * <code>.google.protobuf.Duration period = 7;</code>
@@ -166,8 +192,10 @@ public interface UptimeCheckConfigOrBuilder extends
   boolean hasPeriod();
   /**
    * <pre>
-   * How often the uptime check is performed.
-   * Currently, only 1, 5, 10, and 15 minutes are supported. Required.
+   * How often, in seconds, the uptime check is performed.
+   * Currently, the only supported values are `60s` (1 minute), `300s`
+   * (5 minutes), `600s` (10 minutes), and `900s` (15 minutes). Optional,
+   * defaults to `300s`.
    * </pre>
    *
    * <code>.google.protobuf.Duration period = 7;</code>
@@ -175,8 +203,10 @@ public interface UptimeCheckConfigOrBuilder extends
   com.google.protobuf.Duration getPeriod();
   /**
    * <pre>
-   * How often the uptime check is performed.
-   * Currently, only 1, 5, 10, and 15 minutes are supported. Required.
+   * How often, in seconds, the uptime check is performed.
+   * Currently, the only supported values are `60s` (1 minute), `300s`
+   * (5 minutes), `600s` (10 minutes), and `900s` (15 minutes). Optional,
+   * defaults to `300s`.
    * </pre>
    *
    * <code>.google.protobuf.Duration period = 7;</code>
@@ -339,46 +369,65 @@ public interface UptimeCheckConfigOrBuilder extends
 
   /**
    * <pre>
-   * The internal checkers that this check will egress from.
+   * Denotes whether this is a check that egresses from InternalCheckers.
    * </pre>
    *
-   * <code>repeated .google.monitoring.v3.UptimeCheckConfig.InternalChecker internal_checkers = 14;</code>
+   * <code>bool is_internal = 15;</code>
    */
-  java.util.List<com.google.monitoring.v3.UptimeCheckConfig.InternalChecker> 
+  boolean getIsInternal();
+
+  /**
+   * <pre>
+   * The internal checkers that this check will egress from. If `is_internal` is
+   * true and this list is empty, the check will egress from all
+   * InternalCheckers configured for the project that owns this CheckConfig.
+   * </pre>
+   *
+   * <code>repeated .google.monitoring.v3.InternalChecker internal_checkers = 14;</code>
+   */
+  java.util.List<com.google.monitoring.v3.InternalChecker> 
       getInternalCheckersList();
   /**
    * <pre>
-   * The internal checkers that this check will egress from.
+   * The internal checkers that this check will egress from. If `is_internal` is
+   * true and this list is empty, the check will egress from all
+   * InternalCheckers configured for the project that owns this CheckConfig.
    * </pre>
    *
-   * <code>repeated .google.monitoring.v3.UptimeCheckConfig.InternalChecker internal_checkers = 14;</code>
+   * <code>repeated .google.monitoring.v3.InternalChecker internal_checkers = 14;</code>
    */
-  com.google.monitoring.v3.UptimeCheckConfig.InternalChecker getInternalCheckers(int index);
+  com.google.monitoring.v3.InternalChecker getInternalCheckers(int index);
   /**
    * <pre>
-   * The internal checkers that this check will egress from.
+   * The internal checkers that this check will egress from. If `is_internal` is
+   * true and this list is empty, the check will egress from all
+   * InternalCheckers configured for the project that owns this CheckConfig.
    * </pre>
    *
-   * <code>repeated .google.monitoring.v3.UptimeCheckConfig.InternalChecker internal_checkers = 14;</code>
+   * <code>repeated .google.monitoring.v3.InternalChecker internal_checkers = 14;</code>
    */
   int getInternalCheckersCount();
   /**
    * <pre>
-   * The internal checkers that this check will egress from.
+   * The internal checkers that this check will egress from. If `is_internal` is
+   * true and this list is empty, the check will egress from all
+   * InternalCheckers configured for the project that owns this CheckConfig.
    * </pre>
    *
-   * <code>repeated .google.monitoring.v3.UptimeCheckConfig.InternalChecker internal_checkers = 14;</code>
+   * <code>repeated .google.monitoring.v3.InternalChecker internal_checkers = 14;</code>
    */
-  java.util.List<? extends com.google.monitoring.v3.UptimeCheckConfig.InternalCheckerOrBuilder> 
+  java.util.List<? extends com.google.monitoring.v3.InternalCheckerOrBuilder> 
       getInternalCheckersOrBuilderList();
   /**
    * <pre>
-   * The internal checkers that this check will egress from.
+   * The internal checkers that this check will egress from. If `is_internal` is
+   * true and this list is empty, the check will egress from all
+   * InternalCheckers configured for the project that owns this CheckConfig.
    * </pre>
    *
-   * <code>repeated .google.monitoring.v3.UptimeCheckConfig.InternalChecker internal_checkers = 14;</code>
+   * <code>repeated .google.monitoring.v3.InternalChecker internal_checkers = 14;</code>
    */
-  com.google.monitoring.v3.UptimeCheckConfig.InternalCheckerOrBuilder getInternalCheckersOrBuilder(
+  com.google.monitoring.v3.InternalCheckerOrBuilder getInternalCheckersOrBuilder(
       int index);
 
   public com.google.monitoring.v3.UptimeCheckConfig.ResourceCase getResourceCase();

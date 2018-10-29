@@ -27,7 +27,8 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  * and actions.
  * You can create an agent using both Dialogflow Standard Edition and
  * Dialogflow Enterprise Edition. For details, see
- * [Dialogflow Editions](/dialogflow-enterprise/docs/editions).
+ * [Dialogflow
+ * Editions](https://cloud.google.com/dialogflow-enterprise/docs/editions).
  * You can save your agent for backup or versioning by exporting the agent by
  * using the [ExportAgent][google.cloud.dialogflow.v2beta1.Agents.ExportAgent] method. You can import a saved
  * agent by using the [ImportAgent][google.cloud.dialogflow.v2beta1.Agents.ImportAgent] method.
@@ -307,7 +308,8 @@ public final class AgentsGrpc {
    * and actions.
    * You can create an agent using both Dialogflow Standard Edition and
    * Dialogflow Enterprise Edition. For details, see
-   * [Dialogflow Editions](/dialogflow-enterprise/docs/editions).
+   * [Dialogflow
+   * Editions](https://cloud.google.com/dialogflow-enterprise/docs/editions).
    * You can save your agent for backup or versioning by exporting the agent by
    * using the [ExportAgent][google.cloud.dialogflow.v2beta1.Agents.ExportAgent] method. You can import a saved
    * agent by using the [ImportAgent][google.cloud.dialogflow.v2beta1.Agents.ImportAgent] method.
@@ -459,7 +461,8 @@ public final class AgentsGrpc {
    * and actions.
    * You can create an agent using both Dialogflow Standard Edition and
    * Dialogflow Enterprise Edition. For details, see
-   * [Dialogflow Editions](/dialogflow-enterprise/docs/editions).
+   * [Dialogflow
+   * Editions](https://cloud.google.com/dialogflow-enterprise/docs/editions).
    * You can save your agent for backup or versioning by exporting the agent by
    * using the [ExportAgent][google.cloud.dialogflow.v2beta1.Agents.ExportAgent] method. You can import a saved
    * agent by using the [ImportAgent][google.cloud.dialogflow.v2beta1.Agents.ImportAgent] method.
@@ -584,7 +587,8 @@ public final class AgentsGrpc {
    * and actions.
    * You can create an agent using both Dialogflow Standard Edition and
    * Dialogflow Enterprise Edition. For details, see
-   * [Dialogflow Editions](/dialogflow-enterprise/docs/editions).
+   * [Dialogflow
+   * Editions](https://cloud.google.com/dialogflow-enterprise/docs/editions).
    * You can save your agent for backup or versioning by exporting the agent by
    * using the [ExportAgent][google.cloud.dialogflow.v2beta1.Agents.ExportAgent] method. You can import a saved
    * agent by using the [ImportAgent][google.cloud.dialogflow.v2beta1.Agents.ImportAgent] method.
@@ -703,7 +707,8 @@ public final class AgentsGrpc {
    * and actions.
    * You can create an agent using both Dialogflow Standard Edition and
    * Dialogflow Enterprise Edition. For details, see
-   * [Dialogflow Editions](/dialogflow-enterprise/docs/editions).
+   * [Dialogflow
+   * Editions](https://cloud.google.com/dialogflow-enterprise/docs/editions).
    * You can save your agent for backup or versioning by exporting the agent by
    * using the [ExportAgent][google.cloud.dialogflow.v2beta1.Agents.ExportAgent] method. You can import a saved
    * agent by using the [ImportAgent][google.cloud.dialogflow.v2beta1.Agents.ImportAgent] method.

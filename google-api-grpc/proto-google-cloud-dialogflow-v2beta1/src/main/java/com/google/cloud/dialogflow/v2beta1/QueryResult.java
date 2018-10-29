@@ -42,6 +42,9 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -53,13 +56,6 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
           case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
@@ -175,6 +171,39 @@ private static final long serialVersionUID = 0L;
             languageCode_ = s;
             break;
           }
+          case 138: {
+            com.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult.Builder subBuilder = null;
+            if (sentimentAnalysisResult_ != null) {
+              subBuilder = sentimentAnalysisResult_.toBuilder();
+            }
+            sentimentAnalysisResult_ = input.readMessage(com.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(sentimentAnalysisResult_);
+              sentimentAnalysisResult_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 146: {
+            com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Builder subBuilder = null;
+            if (knowledgeAnswers_ != null) {
+              subBuilder = knowledgeAnswers_.toBuilder();
+            }
+            knowledgeAnswers_ = input.readMessage(com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(knowledgeAnswers_);
+              knowledgeAnswers_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          default: {
+            if (!parseUnknownFieldProto3(
+                input, unknownFields, extensionRegistry, tag)) {
+              done = true;
+            }
+            break;
+          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -198,6 +227,7 @@ private static final long serialVersionUID = 0L;
     return com.google.cloud.dialogflow.v2beta1.SessionProto.internal_static_google_cloud_dialogflow_v2beta1_QueryResult_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.dialogflow.v2beta1.SessionProto.internal_static_google_cloud_dialogflow_v2beta1_QueryResult_fieldAccessorTable
@@ -314,10 +344,10 @@ private static final long serialVersionUID = 0L;
    * indicates an estimated greater likelihood that the recognized words are
    * correct. The default of 0.0 is a sentinel value indicating that confidence
    * was not set.
-   * You should not rely on this field as it isn't guaranteed to be accurate, or
-   * even set. In particular this field isn't set in Webhook calls and for
-   * StreamingDetectIntent since the streaming endpoint has separate confidence
-   * estimates per portion of the audio in StreamingRecognitionResult.
+   * This field is not guaranteed to be accurate or set. In particular this
+   * field isn't set for StreamingDetectIntent since the streaming endpoint has
+   * separate confidence estimates per portion of the audio in
+   * StreamingRecognitionResult.
    * </pre>
    *
    * <code>float speech_recognition_confidence = 2;</code>
@@ -710,6 +740,8 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * The intent detection confidence. Values range from 0.0
    * (completely uncertain) to 1.0 (completely certain).
+   * If there are `multiple knowledge_answers` messages, this value is set to
+   * the greatest `knowledgeAnswers.match_confidence` value in the list.
    * </pre>
    *
    * <code>float intent_detection_confidence = 12;</code>
@@ -754,7 +786,80 @@ private static final long serialVersionUID = 0L;
     return getDiagnosticInfo();
   }
 
+  public static final int SENTIMENT_ANALYSIS_RESULT_FIELD_NUMBER = 17;
+  private com.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult sentimentAnalysisResult_;
+  /**
+   * <pre>
+   * The sentiment analysis result, which depends on the
+   * `sentiment_analysis_request_config` specified in the request.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult sentiment_analysis_result = 17;</code>
+   */
+  public boolean hasSentimentAnalysisResult() {
+    return sentimentAnalysisResult_ != null;
+  }
+  /**
+   * <pre>
+   * The sentiment analysis result, which depends on the
+   * `sentiment_analysis_request_config` specified in the request.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult sentiment_analysis_result = 17;</code>
+   */
+  public com.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult getSentimentAnalysisResult() {
+    return sentimentAnalysisResult_ == null ? com.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult.getDefaultInstance() : sentimentAnalysisResult_;
+  }
+  /**
+   * <pre>
+   * The sentiment analysis result, which depends on the
+   * `sentiment_analysis_request_config` specified in the request.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult sentiment_analysis_result = 17;</code>
+   */
+  public com.google.cloud.dialogflow.v2beta1.SentimentAnalysisResultOrBuilder getSentimentAnalysisResultOrBuilder() {
+    return getSentimentAnalysisResult();
+  }
+
+  public static final int KNOWLEDGE_ANSWERS_FIELD_NUMBER = 18;
+  private com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers knowledgeAnswers_;
+  /**
+   * <pre>
+   * The result from Knowledge Connector (if any), ordered by decreasing
+   * `KnowledgeAnswers.match_confidence`.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.KnowledgeAnswers knowledge_answers = 18;</code>
+   */
+  public boolean hasKnowledgeAnswers() {
+    return knowledgeAnswers_ != null;
+  }
+  /**
+   * <pre>
+   * The result from Knowledge Connector (if any), ordered by decreasing
+   * `KnowledgeAnswers.match_confidence`.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.KnowledgeAnswers knowledge_answers = 18;</code>
+   */
+  public com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers getKnowledgeAnswers() {
+    return knowledgeAnswers_ == null ? com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.getDefaultInstance() : knowledgeAnswers_;
+  }
+  /**
+   * <pre>
+   * The result from Knowledge Connector (if any), ordered by decreasing
+   * `KnowledgeAnswers.match_confidence`.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.KnowledgeAnswers knowledge_answers = 18;</code>
+   */
+  public com.google.cloud.dialogflow.v2beta1.KnowledgeAnswersOrBuilder getKnowledgeAnswersOrBuilder() {
+    return getKnowledgeAnswers();
+  }
+
   private byte memoizedIsInitialized = -1;
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -764,6 +869,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
+  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (!getQueryTextBytes().isEmpty()) {
@@ -808,9 +914,16 @@ private static final long serialVersionUID = 0L;
     if (!getLanguageCodeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 15, languageCode_);
     }
+    if (sentimentAnalysisResult_ != null) {
+      output.writeMessage(17, getSentimentAnalysisResult());
+    }
+    if (knowledgeAnswers_ != null) {
+      output.writeMessage(18, getKnowledgeAnswers());
+    }
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -866,6 +979,14 @@ private static final long serialVersionUID = 0L;
     }
     if (!getLanguageCodeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, languageCode_);
+    }
+    if (sentimentAnalysisResult_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(17, getSentimentAnalysisResult());
+    }
+    if (knowledgeAnswers_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(18, getKnowledgeAnswers());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -927,6 +1048,16 @@ private static final long serialVersionUID = 0L;
       result = result && getDiagnosticInfo()
           .equals(other.getDiagnosticInfo());
     }
+    result = result && (hasSentimentAnalysisResult() == other.hasSentimentAnalysisResult());
+    if (hasSentimentAnalysisResult()) {
+      result = result && getSentimentAnalysisResult()
+          .equals(other.getSentimentAnalysisResult());
+    }
+    result = result && (hasKnowledgeAnswers() == other.hasKnowledgeAnswers());
+    if (hasKnowledgeAnswers()) {
+      result = result && getKnowledgeAnswers()
+          .equals(other.getKnowledgeAnswers());
+    }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -980,6 +1111,14 @@ private static final long serialVersionUID = 0L;
     if (hasDiagnosticInfo()) {
       hash = (37 * hash) + DIAGNOSTIC_INFO_FIELD_NUMBER;
       hash = (53 * hash) + getDiagnosticInfo().hashCode();
+    }
+    if (hasSentimentAnalysisResult()) {
+      hash = (37 * hash) + SENTIMENT_ANALYSIS_RESULT_FIELD_NUMBER;
+      hash = (53 * hash) + getSentimentAnalysisResult().hashCode();
+    }
+    if (hasKnowledgeAnswers()) {
+      hash = (37 * hash) + KNOWLEDGE_ANSWERS_FIELD_NUMBER;
+      hash = (53 * hash) + getKnowledgeAnswers().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -1056,6 +1195,7 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
+  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
@@ -1063,6 +1203,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder(com.google.cloud.dialogflow.v2beta1.QueryResult prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
@@ -1090,6 +1231,7 @@ private static final long serialVersionUID = 0L;
       return com.google.cloud.dialogflow.v2beta1.SessionProto.internal_static_google_cloud_dialogflow_v2beta1_QueryResult_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.dialogflow.v2beta1.SessionProto.internal_static_google_cloud_dialogflow_v2beta1_QueryResult_fieldAccessorTable
@@ -1114,6 +1256,7 @@ private static final long serialVersionUID = 0L;
         getOutputContextsFieldBuilder();
       }
     }
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       queryText_ = "";
@@ -1168,18 +1311,33 @@ private static final long serialVersionUID = 0L;
         diagnosticInfo_ = null;
         diagnosticInfoBuilder_ = null;
       }
+      if (sentimentAnalysisResultBuilder_ == null) {
+        sentimentAnalysisResult_ = null;
+      } else {
+        sentimentAnalysisResult_ = null;
+        sentimentAnalysisResultBuilder_ = null;
+      }
+      if (knowledgeAnswersBuilder_ == null) {
+        knowledgeAnswers_ = null;
+      } else {
+        knowledgeAnswers_ = null;
+        knowledgeAnswersBuilder_ = null;
+      }
       return this;
     }
 
+    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
       return com.google.cloud.dialogflow.v2beta1.SessionProto.internal_static_google_cloud_dialogflow_v2beta1_QueryResult_descriptor;
     }
 
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2beta1.QueryResult getDefaultInstanceForType() {
       return com.google.cloud.dialogflow.v2beta1.QueryResult.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2beta1.QueryResult build() {
       com.google.cloud.dialogflow.v2beta1.QueryResult result = buildPartial();
       if (!result.isInitialized()) {
@@ -1188,6 +1346,7 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2beta1.QueryResult buildPartial() {
       com.google.cloud.dialogflow.v2beta1.QueryResult result = new com.google.cloud.dialogflow.v2beta1.QueryResult(this);
       int from_bitField0_ = bitField0_;
@@ -1238,37 +1397,54 @@ private static final long serialVersionUID = 0L;
       } else {
         result.diagnosticInfo_ = diagnosticInfoBuilder_.build();
       }
+      if (sentimentAnalysisResultBuilder_ == null) {
+        result.sentimentAnalysisResult_ = sentimentAnalysisResult_;
+      } else {
+        result.sentimentAnalysisResult_ = sentimentAnalysisResultBuilder_.build();
+      }
+      if (knowledgeAnswersBuilder_ == null) {
+        result.knowledgeAnswers_ = knowledgeAnswers_;
+      } else {
+        result.knowledgeAnswers_ = knowledgeAnswersBuilder_.build();
+      }
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.dialogflow.v2beta1.QueryResult) {
         return mergeFrom((com.google.cloud.dialogflow.v2beta1.QueryResult)other);
@@ -1373,15 +1549,23 @@ private static final long serialVersionUID = 0L;
       if (other.hasDiagnosticInfo()) {
         mergeDiagnosticInfo(other.getDiagnosticInfo());
       }
+      if (other.hasSentimentAnalysisResult()) {
+        mergeSentimentAnalysisResult(other.getSentimentAnalysisResult());
+      }
+      if (other.hasKnowledgeAnswers()) {
+        mergeKnowledgeAnswers(other.getKnowledgeAnswers());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1626,10 +1810,10 @@ private static final long serialVersionUID = 0L;
      * indicates an estimated greater likelihood that the recognized words are
      * correct. The default of 0.0 is a sentinel value indicating that confidence
      * was not set.
-     * You should not rely on this field as it isn't guaranteed to be accurate, or
-     * even set. In particular this field isn't set in Webhook calls and for
-     * StreamingDetectIntent since the streaming endpoint has separate confidence
-     * estimates per portion of the audio in StreamingRecognitionResult.
+     * This field is not guaranteed to be accurate or set. In particular this
+     * field isn't set for StreamingDetectIntent since the streaming endpoint has
+     * separate confidence estimates per portion of the audio in
+     * StreamingRecognitionResult.
      * </pre>
      *
      * <code>float speech_recognition_confidence = 2;</code>
@@ -1643,10 +1827,10 @@ private static final long serialVersionUID = 0L;
      * indicates an estimated greater likelihood that the recognized words are
      * correct. The default of 0.0 is a sentinel value indicating that confidence
      * was not set.
-     * You should not rely on this field as it isn't guaranteed to be accurate, or
-     * even set. In particular this field isn't set in Webhook calls and for
-     * StreamingDetectIntent since the streaming endpoint has separate confidence
-     * estimates per portion of the audio in StreamingRecognitionResult.
+     * This field is not guaranteed to be accurate or set. In particular this
+     * field isn't set for StreamingDetectIntent since the streaming endpoint has
+     * separate confidence estimates per portion of the audio in
+     * StreamingRecognitionResult.
      * </pre>
      *
      * <code>float speech_recognition_confidence = 2;</code>
@@ -1663,10 +1847,10 @@ private static final long serialVersionUID = 0L;
      * indicates an estimated greater likelihood that the recognized words are
      * correct. The default of 0.0 is a sentinel value indicating that confidence
      * was not set.
-     * You should not rely on this field as it isn't guaranteed to be accurate, or
-     * even set. In particular this field isn't set in Webhook calls and for
-     * StreamingDetectIntent since the streaming endpoint has separate confidence
-     * estimates per portion of the audio in StreamingRecognitionResult.
+     * This field is not guaranteed to be accurate or set. In particular this
+     * field isn't set for StreamingDetectIntent since the streaming endpoint has
+     * separate confidence estimates per portion of the audio in
+     * StreamingRecognitionResult.
      * </pre>
      *
      * <code>float speech_recognition_confidence = 2;</code>
@@ -3169,6 +3353,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The intent detection confidence. Values range from 0.0
      * (completely uncertain) to 1.0 (completely certain).
+     * If there are `multiple knowledge_answers` messages, this value is set to
+     * the greatest `knowledgeAnswers.match_confidence` value in the list.
      * </pre>
      *
      * <code>float intent_detection_confidence = 12;</code>
@@ -3180,6 +3366,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The intent detection confidence. Values range from 0.0
      * (completely uncertain) to 1.0 (completely certain).
+     * If there are `multiple knowledge_answers` messages, this value is set to
+     * the greatest `knowledgeAnswers.match_confidence` value in the list.
      * </pre>
      *
      * <code>float intent_detection_confidence = 12;</code>
@@ -3194,6 +3382,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The intent detection confidence. Values range from 0.0
      * (completely uncertain) to 1.0 (completely certain).
+     * If there are `multiple knowledge_answers` messages, this value is set to
+     * the greatest `knowledgeAnswers.match_confidence` value in the list.
      * </pre>
      *
      * <code>float intent_detection_confidence = 12;</code>
@@ -3366,11 +3556,337 @@ private static final long serialVersionUID = 0L;
       }
       return diagnosticInfoBuilder_;
     }
+
+    private com.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult sentimentAnalysisResult_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult, com.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult.Builder, com.google.cloud.dialogflow.v2beta1.SentimentAnalysisResultOrBuilder> sentimentAnalysisResultBuilder_;
+    /**
+     * <pre>
+     * The sentiment analysis result, which depends on the
+     * `sentiment_analysis_request_config` specified in the request.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult sentiment_analysis_result = 17;</code>
+     */
+    public boolean hasSentimentAnalysisResult() {
+      return sentimentAnalysisResultBuilder_ != null || sentimentAnalysisResult_ != null;
+    }
+    /**
+     * <pre>
+     * The sentiment analysis result, which depends on the
+     * `sentiment_analysis_request_config` specified in the request.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult sentiment_analysis_result = 17;</code>
+     */
+    public com.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult getSentimentAnalysisResult() {
+      if (sentimentAnalysisResultBuilder_ == null) {
+        return sentimentAnalysisResult_ == null ? com.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult.getDefaultInstance() : sentimentAnalysisResult_;
+      } else {
+        return sentimentAnalysisResultBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * The sentiment analysis result, which depends on the
+     * `sentiment_analysis_request_config` specified in the request.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult sentiment_analysis_result = 17;</code>
+     */
+    public Builder setSentimentAnalysisResult(com.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult value) {
+      if (sentimentAnalysisResultBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        sentimentAnalysisResult_ = value;
+        onChanged();
+      } else {
+        sentimentAnalysisResultBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The sentiment analysis result, which depends on the
+     * `sentiment_analysis_request_config` specified in the request.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult sentiment_analysis_result = 17;</code>
+     */
+    public Builder setSentimentAnalysisResult(
+        com.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult.Builder builderForValue) {
+      if (sentimentAnalysisResultBuilder_ == null) {
+        sentimentAnalysisResult_ = builderForValue.build();
+        onChanged();
+      } else {
+        sentimentAnalysisResultBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The sentiment analysis result, which depends on the
+     * `sentiment_analysis_request_config` specified in the request.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult sentiment_analysis_result = 17;</code>
+     */
+    public Builder mergeSentimentAnalysisResult(com.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult value) {
+      if (sentimentAnalysisResultBuilder_ == null) {
+        if (sentimentAnalysisResult_ != null) {
+          sentimentAnalysisResult_ =
+            com.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult.newBuilder(sentimentAnalysisResult_).mergeFrom(value).buildPartial();
+        } else {
+          sentimentAnalysisResult_ = value;
+        }
+        onChanged();
+      } else {
+        sentimentAnalysisResultBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The sentiment analysis result, which depends on the
+     * `sentiment_analysis_request_config` specified in the request.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult sentiment_analysis_result = 17;</code>
+     */
+    public Builder clearSentimentAnalysisResult() {
+      if (sentimentAnalysisResultBuilder_ == null) {
+        sentimentAnalysisResult_ = null;
+        onChanged();
+      } else {
+        sentimentAnalysisResult_ = null;
+        sentimentAnalysisResultBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The sentiment analysis result, which depends on the
+     * `sentiment_analysis_request_config` specified in the request.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult sentiment_analysis_result = 17;</code>
+     */
+    public com.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult.Builder getSentimentAnalysisResultBuilder() {
+      
+      onChanged();
+      return getSentimentAnalysisResultFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * The sentiment analysis result, which depends on the
+     * `sentiment_analysis_request_config` specified in the request.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult sentiment_analysis_result = 17;</code>
+     */
+    public com.google.cloud.dialogflow.v2beta1.SentimentAnalysisResultOrBuilder getSentimentAnalysisResultOrBuilder() {
+      if (sentimentAnalysisResultBuilder_ != null) {
+        return sentimentAnalysisResultBuilder_.getMessageOrBuilder();
+      } else {
+        return sentimentAnalysisResult_ == null ?
+            com.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult.getDefaultInstance() : sentimentAnalysisResult_;
+      }
+    }
+    /**
+     * <pre>
+     * The sentiment analysis result, which depends on the
+     * `sentiment_analysis_request_config` specified in the request.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult sentiment_analysis_result = 17;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult, com.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult.Builder, com.google.cloud.dialogflow.v2beta1.SentimentAnalysisResultOrBuilder> 
+        getSentimentAnalysisResultFieldBuilder() {
+      if (sentimentAnalysisResultBuilder_ == null) {
+        sentimentAnalysisResultBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult, com.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult.Builder, com.google.cloud.dialogflow.v2beta1.SentimentAnalysisResultOrBuilder>(
+                getSentimentAnalysisResult(),
+                getParentForChildren(),
+                isClean());
+        sentimentAnalysisResult_ = null;
+      }
+      return sentimentAnalysisResultBuilder_;
+    }
+
+    private com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers knowledgeAnswers_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers, com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Builder, com.google.cloud.dialogflow.v2beta1.KnowledgeAnswersOrBuilder> knowledgeAnswersBuilder_;
+    /**
+     * <pre>
+     * The result from Knowledge Connector (if any), ordered by decreasing
+     * `KnowledgeAnswers.match_confidence`.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.KnowledgeAnswers knowledge_answers = 18;</code>
+     */
+    public boolean hasKnowledgeAnswers() {
+      return knowledgeAnswersBuilder_ != null || knowledgeAnswers_ != null;
+    }
+    /**
+     * <pre>
+     * The result from Knowledge Connector (if any), ordered by decreasing
+     * `KnowledgeAnswers.match_confidence`.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.KnowledgeAnswers knowledge_answers = 18;</code>
+     */
+    public com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers getKnowledgeAnswers() {
+      if (knowledgeAnswersBuilder_ == null) {
+        return knowledgeAnswers_ == null ? com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.getDefaultInstance() : knowledgeAnswers_;
+      } else {
+        return knowledgeAnswersBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * The result from Knowledge Connector (if any), ordered by decreasing
+     * `KnowledgeAnswers.match_confidence`.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.KnowledgeAnswers knowledge_answers = 18;</code>
+     */
+    public Builder setKnowledgeAnswers(com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers value) {
+      if (knowledgeAnswersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        knowledgeAnswers_ = value;
+        onChanged();
+      } else {
+        knowledgeAnswersBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The result from Knowledge Connector (if any), ordered by decreasing
+     * `KnowledgeAnswers.match_confidence`.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.KnowledgeAnswers knowledge_answers = 18;</code>
+     */
+    public Builder setKnowledgeAnswers(
+        com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Builder builderForValue) {
+      if (knowledgeAnswersBuilder_ == null) {
+        knowledgeAnswers_ = builderForValue.build();
+        onChanged();
+      } else {
+        knowledgeAnswersBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The result from Knowledge Connector (if any), ordered by decreasing
+     * `KnowledgeAnswers.match_confidence`.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.KnowledgeAnswers knowledge_answers = 18;</code>
+     */
+    public Builder mergeKnowledgeAnswers(com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers value) {
+      if (knowledgeAnswersBuilder_ == null) {
+        if (knowledgeAnswers_ != null) {
+          knowledgeAnswers_ =
+            com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.newBuilder(knowledgeAnswers_).mergeFrom(value).buildPartial();
+        } else {
+          knowledgeAnswers_ = value;
+        }
+        onChanged();
+      } else {
+        knowledgeAnswersBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The result from Knowledge Connector (if any), ordered by decreasing
+     * `KnowledgeAnswers.match_confidence`.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.KnowledgeAnswers knowledge_answers = 18;</code>
+     */
+    public Builder clearKnowledgeAnswers() {
+      if (knowledgeAnswersBuilder_ == null) {
+        knowledgeAnswers_ = null;
+        onChanged();
+      } else {
+        knowledgeAnswers_ = null;
+        knowledgeAnswersBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The result from Knowledge Connector (if any), ordered by decreasing
+     * `KnowledgeAnswers.match_confidence`.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.KnowledgeAnswers knowledge_answers = 18;</code>
+     */
+    public com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Builder getKnowledgeAnswersBuilder() {
+      
+      onChanged();
+      return getKnowledgeAnswersFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * The result from Knowledge Connector (if any), ordered by decreasing
+     * `KnowledgeAnswers.match_confidence`.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.KnowledgeAnswers knowledge_answers = 18;</code>
+     */
+    public com.google.cloud.dialogflow.v2beta1.KnowledgeAnswersOrBuilder getKnowledgeAnswersOrBuilder() {
+      if (knowledgeAnswersBuilder_ != null) {
+        return knowledgeAnswersBuilder_.getMessageOrBuilder();
+      } else {
+        return knowledgeAnswers_ == null ?
+            com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.getDefaultInstance() : knowledgeAnswers_;
+      }
+    }
+    /**
+     * <pre>
+     * The result from Knowledge Connector (if any), ordered by decreasing
+     * `KnowledgeAnswers.match_confidence`.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.KnowledgeAnswers knowledge_answers = 18;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers, com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Builder, com.google.cloud.dialogflow.v2beta1.KnowledgeAnswersOrBuilder> 
+        getKnowledgeAnswersFieldBuilder() {
+      if (knowledgeAnswersBuilder_ == null) {
+        knowledgeAnswersBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers, com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Builder, com.google.cloud.dialogflow.v2beta1.KnowledgeAnswersOrBuilder>(
+                getKnowledgeAnswers(),
+                getParentForChildren(),
+                isClean());
+        knowledgeAnswers_ = null;
+      }
+      return knowledgeAnswersBuilder_;
+    }
+    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -3392,11 +3908,12 @@ private static final long serialVersionUID = 0L;
 
   private static final com.google.protobuf.Parser<QueryResult>
       PARSER = new com.google.protobuf.AbstractParser<QueryResult>() {
+    @java.lang.Override
     public QueryResult parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-        return new QueryResult(input, extensionRegistry);
+      return new QueryResult(input, extensionRegistry);
     }
   };
 
@@ -3409,6 +3926,7 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.QueryResult getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }

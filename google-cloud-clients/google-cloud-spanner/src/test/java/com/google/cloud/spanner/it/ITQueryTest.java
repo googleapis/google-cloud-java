@@ -19,6 +19,7 @@ package com.google.cloud.spanner.it;
 import static com.google.cloud.spanner.SpannerMatchers.isSpannerException;
 import static com.google.cloud.spanner.Type.StructField;
 import static com.google.common.truth.Truth.assertThat;
+import static java.util.Arrays.asList;
 
 import com.google.cloud.ByteArray;
 import com.google.cloud.Date;
@@ -35,9 +36,11 @@ import com.google.cloud.spanner.Statement;
 import com.google.cloud.spanner.Struct;
 import com.google.cloud.spanner.TimestampBound;
 import com.google.cloud.spanner.Type;
+import com.google.cloud.spanner.Value;
 import com.google.common.base.Joiner;
 import com.google.common.collect.Iterables;
 import com.google.spanner.v1.ResultSetStats;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import org.junit.BeforeClass;
@@ -104,11 +107,12 @@ public class ITQueryTest {
     // a manually constructed Struct.
     Struct expectedRow =
         Struct.newBuilder()
-            .add(
-                "",
-                Arrays.asList(
-                    StructField.of("C1", Type.string()), StructField.of("C2", Type.int64())),
-                Arrays.asList(
+            .set("")
+            .toStructArray(
+                Type.struct(
+                    asList(
+                        StructField.of("C1", Type.string()), StructField.of("C2", Type.int64()))),
+                asList(
                     Struct.newBuilder().set("C1").to("a").set("C2").to(1).build(),
                     Struct.newBuilder().set("C1").to("b").set("C2").to(2).build()))
             .build();
@@ -265,9 +269,7 @@ public class ITQueryTest {
   public void bindBoolArray() {
     Struct row =
         execute(
-            Statement.newBuilder("SELECT @v")
-                .bind("v")
-                .toBoolArray(Arrays.asList(true, null, false)),
+            Statement.newBuilder("SELECT @v").bind("v").toBoolArray(asList(true, null, false)),
             Type.array(Type.bool()));
     assertThat(row.isNull(0)).isFalse();
     assertThat(row.getBooleanList(0)).containsExactly(true, null, false).inOrder();
@@ -296,7 +298,7 @@ public class ITQueryTest {
   public void bindInt64Array() {
     Struct row =
         execute(
-            Statement.newBuilder("SELECT @v").bind("v").toInt64Array(Arrays.asList(null, 1L, 2L)),
+            Statement.newBuilder("SELECT @v").bind("v").toInt64Array(asList(null, 1L, 2L)),
             Type.array(Type.int64()));
     assertThat(row.isNull(0)).isFalse();
     assertThat(row.getLongList(0)).containsExactly(null, 1L, 2L).inOrder();
@@ -328,7 +330,7 @@ public class ITQueryTest {
             Statement.newBuilder("SELECT @v")
                 .bind("v")
                 .toFloat64Array(
-                    Arrays.asList(
+                    asList(
                         null,
                         1.0,
                         2.0,
@@ -366,9 +368,7 @@ public class ITQueryTest {
   public void bindStringArray() {
     Struct row =
         execute(
-            Statement.newBuilder("SELECT @v")
-                .bind("v")
-                .toStringArray(Arrays.asList("a", "b", null)),
+            Statement.newBuilder("SELECT @v").bind("v").toStringArray(asList("a", "b", null)),
             Type.array(Type.string()));
     assertThat(row.isNull(0)).isFalse();
     assertThat(row.getStringList(0)).containsExactly("a", "b", null).inOrder();
@@ -400,7 +400,7 @@ public class ITQueryTest {
     ByteArray e3 = null;
     Struct row =
         execute(
-            Statement.newBuilder("SELECT @v").bind("v").toBytesArray(Arrays.asList(e1, e2, e3)),
+            Statement.newBuilder("SELECT @v").bind("v").toBytesArray(asList(e1, e2, e3)),
             Type.array(Type.bytes()));
     assertThat(row.isNull(0)).isFalse();
     assertThat(row.getBytesList(0)).containsExactly(e1, e2, e3).inOrder();
@@ -432,9 +432,7 @@ public class ITQueryTest {
 
     Struct row =
         execute(
-            Statement.newBuilder("SELECT @v")
-                .bind("v")
-                .toTimestampArray(Arrays.asList(t1, t2, null)),
+            Statement.newBuilder("SELECT @v").bind("v").toTimestampArray(asList(t1, t2, null)),
             Type.array(Type.timestamp()));
     assertThat(row.isNull(0)).isFalse();
     assertThat(row.getTimestampList(0)).containsExactly(t1, t2, null).inOrder();
@@ -468,7 +466,7 @@ public class ITQueryTest {
 
     Struct row =
         execute(
-            Statement.newBuilder("SELECT @v").bind("v").toDateArray(Arrays.asList(d1, d2, null)),
+            Statement.newBuilder("SELECT @v").bind("v").toDateArray(asList(d1, d2, null)),
             Type.array(Type.date()));
     assertThat(row.isNull(0)).isFalse();
     assertThat(row.getDateList(0)).containsExactly(d1, d2, null).inOrder();
@@ -490,6 +488,228 @@ public class ITQueryTest {
         execute(
             Statement.newBuilder("SELECT @v").bind("v").toDateArray(null), Type.array(Type.date()));
     assertThat(row.isNull(0)).isTrue();
+  }
+
+  @Test
+  public void unsupportedSelectStructValue() {
+    Struct p = structValue();
+    expectedException.expect(isSpannerException(ErrorCode.UNIMPLEMENTED));
+    expectedException.expectMessage(
+        "Unsupported query shape: " + "A struct value cannot be returned as a column value.");
+    execute(Statement.newBuilder("SELECT @p").bind("p").to(p).build(), p.getType());
+  }
+
+  @Test
+  public void unsupportedSelectArrayStructValue() {
+    Struct p = structValue();
+    expectedException.expect(isSpannerException(ErrorCode.UNIMPLEMENTED));
+    expectedException.expectMessage(
+        "Unsupported query shape: "
+            + "This query can return a null-valued array of struct, "
+            + "which is not supported by Spanner.");
+    execute(
+        Statement.newBuilder("SELECT @p")
+            .bind("p")
+            .toStructArray(p.getType(), asList(p))
+            .build(),
+        p.getType());
+  }
+
+  @Test
+  public void invalidAmbiguousFieldAccess() {
+    Struct p = Struct.newBuilder().set("f1").to(20).set("f1").to("abc").build();
+
+    expectedException.expect(isSpannerException(ErrorCode.INVALID_ARGUMENT));
+    expectedException.expectMessage("Struct field name f1 is ambiguous");
+    execute(Statement.newBuilder("SELECT @p.f1").bind("p").to(p).build(), Type.int64());
+  }
+
+  private Struct structValue() {
+    return Struct.newBuilder()
+        .set("f_int")
+        .to(10)
+        .set("f_bool")
+        .to(false)
+        .set("f_double")
+        .to(3.4)
+        .set("f_timestamp")
+        .to(Timestamp.ofTimeMicroseconds(20))
+        .set("f_date")
+        .to(Date.fromYearMonthDay(1, 3, 1))
+        .set("f_string")
+        .to("hello")
+        .set("f_bytes")
+        .to(ByteArray.copyFrom("bytes"))
+        .build();
+  }
+
+  @Test
+  public void bindStruct() {
+    Struct p = structValue();
+    String query =
+        "SELECT "
+            + "@p.f_int,"
+            + "@p.f_bool,"
+            + "@p.f_double,"
+            + "@p.f_timestamp,"
+            + "@p.f_date,"
+            + "@p.f_string,"
+            + "@p.f_bytes";
+
+    Struct row =
+        executeWithRowResultType(Statement.newBuilder(query).bind("p").to(p).build(), p.getType());
+    assertThat(row).isEqualTo(p);
+  }
+
+  @Test
+  public void bindArrayOfStruct() {
+    Struct arrayElement = structValue();
+    List<Struct> p = asList(arrayElement, null);
+
+    List<Struct> rows =
+        resultRows(
+            Statement.newBuilder("SELECT * FROM UNNEST(@p)")
+                .bind("p")
+                .toStructArray(arrayElement.getType(), p)
+                .build(),
+            arrayElement.getType());
+
+    assertThat(rows).hasSize(p.size());
+    assertThat(rows.get(0)).isEqualTo(p.get(0));
+
+    // Field accesses on a null struct element (because of SELECT *) return null values.
+    Struct structElementFromNull = rows.get(1);
+    // assertThat(structElementFromNull.isNull()).isFalse();
+    for (int i = 0; i < arrayElement.getType().getStructFields().size(); ++i) {
+      assertThat(structElementFromNull.isNull(i)).isTrue();
+    }
+  }
+
+  @Test
+  public void bindStructNull() {
+    Struct row =
+        execute(
+            Statement.newBuilder("SELECT @p IS NULL")
+                .bind("p")
+                .to(
+                    Type.struct(
+                        asList(
+                            Type.StructField.of("f1", Type.string()),
+                            Type.StructField.of("f2", Type.float64()))),
+                    null)
+                .build(),
+            Type.bool());
+    assertThat(row.getBoolean(0)).isTrue();
+  }
+
+  @Test
+  public void bindArrayOfStructNull() {
+    Type elementType =
+        Type.struct(
+            asList(
+                Type.StructField.of("f1", Type.string()),
+                Type.StructField.of("f2", Type.float64())));
+
+    Struct row =
+        execute(
+            Statement.newBuilder("SELECT @p IS NULL")
+                .bind("p")
+                .toStructArray(elementType, null)
+                .build(),
+            Type.bool());
+    assertThat(row.getBoolean(0)).isTrue();
+  }
+
+  @Test
+  public void bindEmptyStruct() {
+    Struct p = Struct.newBuilder().build();
+    Struct row =
+        execute(Statement.newBuilder("SELECT @p IS NULL").bind("p").to(p).build(), Type.bool());
+    assertThat(row.getBoolean(0)).isFalse();
+  }
+
+  @Test
+  public void bindStructWithUnnamedFields() {
+    Struct p = Struct.newBuilder().add(Value.int64(1337)).add(Value.int64(7331)).build();
+    Struct row =
+        executeWithRowResultType(
+            Statement.newBuilder("SELECT * FROM UNNEST([@p])").bind("p").to(p).build(),
+            p.getType());
+    assertThat(row.getLong(0)).isEqualTo(1337);
+    assertThat(row.getLong(1)).isEqualTo(7331);
+  }
+
+  @Test
+  public void bindStructWithDuplicateFieldNames() {
+    Struct p =
+        Struct.newBuilder()
+            .set("f1")
+            .to(Value.int64(1337))
+            .set("f1")
+            .to(Value.string("1337"))
+            .build();
+    Struct row =
+        executeWithRowResultType(
+            Statement.newBuilder("SELECT * FROM UNNEST([@p])").bind("p").to(p).build(),
+            p.getType());
+    assertThat(row.getLong(0)).isEqualTo(1337);
+    assertThat(row.getString(1)).isEqualTo("1337");
+  }
+
+  @Test
+  public void bindEmptyArrayOfStruct() {
+    Type elementType = Type.struct(asList(Type.StructField.of("f1", Type.date())));
+    List<Struct> p = asList();
+    assertThat(p).isEmpty();
+
+    List<Struct> rows =
+        resultRows(
+            Statement.newBuilder("SELECT * FROM UNNEST(@p)")
+                .bind("p")
+                .toStructArray(elementType, p)
+                .build(),
+            elementType);
+    assertThat(rows).isEmpty();
+  }
+
+  @Test
+  public void bindStructWithNullStructField() {
+    Type emptyStructType = Type.struct(new ArrayList<StructField>());
+    Struct p = Struct.newBuilder().set("f1").to(emptyStructType, null).build();
+
+    Struct row =
+        execute(Statement.newBuilder("SELECT @p.f1 IS NULL").bind("p").to(p).build(), Type.bool());
+    assertThat(row.getBoolean(0)).isTrue();
+  }
+
+  @Test
+  public void bindStructWithStructField() {
+    Struct nestedStruct = Struct.newBuilder().set("ff1").to("abc").build();
+    Struct p = Struct.newBuilder().set("f1").to(nestedStruct).build();
+
+    Struct row =
+        executeWithRowResultType(
+            Statement.newBuilder("SELECT @p.f1.ff1").bind("p").to(p).build(),
+            nestedStruct.getType());
+    assertThat(row.getString(0)).isEqualTo("abc");
+  }
+
+  @Test
+  public void bindStructWithArrayOfStructField() {
+    Struct arrayElement1 = Struct.newBuilder().set("ff1").to("abc").build();
+    Struct arrayElement2 = Struct.newBuilder().set("ff1").to("def").build();
+    Struct p =
+        Struct.newBuilder()
+            .set("f1")
+            .toStructArray(arrayElement1.getType(), asList(arrayElement1, arrayElement2))
+            .build();
+
+    List<Struct> rows =
+        resultRows(
+            Statement.newBuilder("SELECT * FROM UNNEST(@p.f1)").bind("p").to(p).build(),
+            arrayElement1.getType());
+    assertThat(rows.get(0).getString(0)).isEqualTo("abc");
+    assertThat(rows.get(1).getString(0)).isEqualTo("def");
   }
 
   @Test
@@ -556,7 +776,7 @@ public class ITQueryTest {
                 "CREATE TABLE T ( K STRING(MAX) NOT NULL, V STRING(MAX) ) PRIMARY KEY (K)");
     DatabaseClient client = env.getTestHelper().getDatabaseClient(populatedDb);
     client.writeAtLeastOnce(
-        Arrays.asList(
+        asList(
             Mutation.newInsertBuilder("T").set("K").to("k1").set("V").to("v1").build(),
             Mutation.newInsertBuilder("T").set("K").to("k2").set("V").to("v2").build(),
             Mutation.newInsertBuilder("T").set("K").to("k3").set("V").to("v3").build(),
@@ -613,21 +833,33 @@ public class ITQueryTest {
     assertThat(receivedStats.hasQueryStats()).isTrue();
   }
 
-  private Struct execute(Statement statement, Type expectedType) {
+  private List<Struct> resultRows(Statement statement, Type expectedRowType) {
+    ArrayList<Struct> results = new ArrayList<>();
     ResultSet resultSet = statement.executeQuery(client.singleUse(TimestampBound.strong()));
-    return checkSingleValueOfType(resultSet, expectedType);
+    while (resultSet.next()) {
+      Struct row = resultSet.getCurrentRowAsStruct();
+      results.add(row);
+    }
+    assertThat(resultSet.getType()).isEqualTo(expectedRowType);
+    assertThat(resultSet.next()).isFalse();
+    return results;
   }
 
-  private Struct execute(Statement.Builder builder, Type expectedType) {
-    return execute(builder.build(), expectedType);
-  }
-
-  private Struct checkSingleValueOfType(ResultSet resultSet, Type expectedType) {
+  private Struct executeWithRowResultType(Statement statement, Type expectedRowType) {
+    ResultSet resultSet = statement.executeQuery(client.singleUse(TimestampBound.strong()));
     assertThat(resultSet.next()).isTrue();
-    assertThat(resultSet.getType().getStructFields()).hasSize(1);
-    assertThat(resultSet.getType().getStructFields().get(0).getType()).isEqualTo(expectedType);
+    assertThat(resultSet.getType()).isEqualTo(expectedRowType);
     Struct row = resultSet.getCurrentRowAsStruct();
     assertThat(resultSet.next()).isFalse();
     return row;
+  }
+
+  private Struct execute(Statement statement, Type expectedColumnType) {
+    Type rowType = Type.struct(StructField.of("", expectedColumnType));
+    return executeWithRowResultType(statement, rowType);
+  }
+
+  private Struct execute(Statement.Builder builder, Type expectedColumnType) {
+    return execute(builder.build(), expectedColumnType);
   }
 }

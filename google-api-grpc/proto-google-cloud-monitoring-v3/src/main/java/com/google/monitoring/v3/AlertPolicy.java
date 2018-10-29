@@ -40,6 +40,9 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -51,13 +54,6 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
           case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
@@ -159,6 +155,13 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          default: {
+            if (!parseUnknownFieldProto3(
+                input, unknownFields, extensionRegistry, tag)) {
+              done = true;
+            }
+            break;
+          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -183,6 +186,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
   protected com.google.protobuf.MapField internalGetMapField(
       int number) {
     switch (number) {
@@ -193,6 +197,7 @@ private static final long serialVersionUID = 0L;
             "Invalid map field number: " + number);
     }
   }
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.monitoring.v3.AlertProto.internal_static_google_monitoring_v3_AlertPolicy_fieldAccessorTable
@@ -446,6 +451,9 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -457,13 +465,6 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -474,6 +475,13 @@ private static final long serialVersionUID = 0L;
               java.lang.String s = input.readStringRequireUtf8();
 
               mimeType_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -493,6 +501,7 @@ private static final long serialVersionUID = 0L;
       return com.google.monitoring.v3.AlertProto.internal_static_google_monitoring_v3_AlertPolicy_Documentation_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.monitoring.v3.AlertProto.internal_static_google_monitoring_v3_AlertPolicy_Documentation_fieldAccessorTable
@@ -595,6 +604,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -604,6 +614,7 @@ private static final long serialVersionUID = 0L;
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getContentBytes().isEmpty()) {
@@ -615,6 +626,7 @@ private static final long serialVersionUID = 0L;
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -736,6 +748,7 @@ private static final long serialVersionUID = 0L;
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -743,6 +756,7 @@ private static final long serialVersionUID = 0L;
     public static Builder newBuilder(com.google.monitoring.v3.AlertPolicy.Documentation prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -771,6 +785,7 @@ private static final long serialVersionUID = 0L;
         return com.google.monitoring.v3.AlertProto.internal_static_google_monitoring_v3_AlertPolicy_Documentation_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.monitoring.v3.AlertProto.internal_static_google_monitoring_v3_AlertPolicy_Documentation_fieldAccessorTable
@@ -793,6 +808,7 @@ private static final long serialVersionUID = 0L;
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         content_ = "";
@@ -802,15 +818,18 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return com.google.monitoring.v3.AlertProto.internal_static_google_monitoring_v3_AlertPolicy_Documentation_descriptor;
       }
 
+      @java.lang.Override
       public com.google.monitoring.v3.AlertPolicy.Documentation getDefaultInstanceForType() {
         return com.google.monitoring.v3.AlertPolicy.Documentation.getDefaultInstance();
       }
 
+      @java.lang.Override
       public com.google.monitoring.v3.AlertPolicy.Documentation build() {
         com.google.monitoring.v3.AlertPolicy.Documentation result = buildPartial();
         if (!result.isInitialized()) {
@@ -819,6 +838,7 @@ private static final long serialVersionUID = 0L;
         return result;
       }
 
+      @java.lang.Override
       public com.google.monitoring.v3.AlertPolicy.Documentation buildPartial() {
         com.google.monitoring.v3.AlertPolicy.Documentation result = new com.google.monitoring.v3.AlertPolicy.Documentation(this);
         result.content_ = content_;
@@ -827,32 +847,39 @@ private static final long serialVersionUID = 0L;
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.google.monitoring.v3.AlertPolicy.Documentation) {
           return mergeFrom((com.google.monitoring.v3.AlertPolicy.Documentation)other);
@@ -877,10 +904,12 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1101,11 +1130,13 @@ private static final long serialVersionUID = 0L;
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -1127,11 +1158,12 @@ private static final long serialVersionUID = 0L;
 
     private static final com.google.protobuf.Parser<Documentation>
         PARSER = new com.google.protobuf.AbstractParser<Documentation>() {
+      @java.lang.Override
       public Documentation parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Documentation(input, extensionRegistry);
+        return new Documentation(input, extensionRegistry);
       }
     };
 
@@ -1144,6 +1176,7 @@ private static final long serialVersionUID = 0L;
       return PARSER;
     }
 
+    @java.lang.Override
     public com.google.monitoring.v3.AlertPolicy.Documentation getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -1320,6 +1353,9 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -1331,13 +1367,6 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               com.google.monitoring.v3.AlertPolicy.Condition.MetricThreshold.Builder subBuilder = null;
               if (conditionCase_ == 1) {
@@ -1378,6 +1407,13 @@ private static final long serialVersionUID = 0L;
               name_ = s;
               break;
             }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -1395,6 +1431,7 @@ private static final long serialVersionUID = 0L;
       return com.google.monitoring.v3.AlertProto.internal_static_google_monitoring_v3_AlertPolicy_Condition_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.monitoring.v3.AlertProto.internal_static_google_monitoring_v3_AlertPolicy_Condition_fieldAccessorTable
@@ -1458,6 +1495,9 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -1469,13 +1509,6 @@ private static final long serialVersionUID = 0L;
               case 0:
                 done = true;
                 break;
-              default: {
-                if (!parseUnknownFieldProto3(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
               case 8: {
                 typeCase_ = 1;
                 type_ = input.readInt32();
@@ -1484,6 +1517,13 @@ private static final long serialVersionUID = 0L;
               case 17: {
                 typeCase_ = 2;
                 type_ = input.readDouble();
+                break;
+              }
+              default: {
+                if (!parseUnknownFieldProto3(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
                 break;
               }
             }
@@ -1503,6 +1543,7 @@ private static final long serialVersionUID = 0L;
         return com.google.monitoring.v3.AlertProto.internal_static_google_monitoring_v3_AlertPolicy_Condition_Trigger_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.monitoring.v3.AlertProto.internal_static_google_monitoring_v3_AlertPolicy_Condition_Trigger_fieldAccessorTable
@@ -1581,6 +1622,7 @@ private static final long serialVersionUID = 0L;
       }
 
       private byte memoizedIsInitialized = -1;
+      @java.lang.Override
       public final boolean isInitialized() {
         byte isInitialized = memoizedIsInitialized;
         if (isInitialized == 1) return true;
@@ -1590,6 +1632,7 @@ private static final long serialVersionUID = 0L;
         return true;
       }
 
+      @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
         if (typeCase_ == 1) {
@@ -1603,6 +1646,7 @@ private static final long serialVersionUID = 0L;
         unknownFields.writeTo(output);
       }
 
+      @java.lang.Override
       public int getSerializedSize() {
         int size = memoizedSize;
         if (size != -1) return size;
@@ -1750,6 +1794,7 @@ private static final long serialVersionUID = 0L;
             .parseWithIOException(PARSER, input, extensionRegistry);
       }
 
+      @java.lang.Override
       public Builder newBuilderForType() { return newBuilder(); }
       public static Builder newBuilder() {
         return DEFAULT_INSTANCE.toBuilder();
@@ -1757,6 +1802,7 @@ private static final long serialVersionUID = 0L;
       public static Builder newBuilder(com.google.monitoring.v3.AlertPolicy.Condition.Trigger prototype) {
         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
       }
+      @java.lang.Override
       public Builder toBuilder() {
         return this == DEFAULT_INSTANCE
             ? new Builder() : new Builder().mergeFrom(this);
@@ -1785,6 +1831,7 @@ private static final long serialVersionUID = 0L;
           return com.google.monitoring.v3.AlertProto.internal_static_google_monitoring_v3_AlertPolicy_Condition_Trigger_descriptor;
         }
 
+        @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
           return com.google.monitoring.v3.AlertProto.internal_static_google_monitoring_v3_AlertPolicy_Condition_Trigger_fieldAccessorTable
@@ -1807,6 +1854,7 @@ private static final long serialVersionUID = 0L;
                   .alwaysUseFieldBuilders) {
           }
         }
+        @java.lang.Override
         public Builder clear() {
           super.clear();
           typeCase_ = 0;
@@ -1814,15 +1862,18 @@ private static final long serialVersionUID = 0L;
           return this;
         }
 
+        @java.lang.Override
         public com.google.protobuf.Descriptors.Descriptor
             getDescriptorForType() {
           return com.google.monitoring.v3.AlertProto.internal_static_google_monitoring_v3_AlertPolicy_Condition_Trigger_descriptor;
         }
 
+        @java.lang.Override
         public com.google.monitoring.v3.AlertPolicy.Condition.Trigger getDefaultInstanceForType() {
           return com.google.monitoring.v3.AlertPolicy.Condition.Trigger.getDefaultInstance();
         }
 
+        @java.lang.Override
         public com.google.monitoring.v3.AlertPolicy.Condition.Trigger build() {
           com.google.monitoring.v3.AlertPolicy.Condition.Trigger result = buildPartial();
           if (!result.isInitialized()) {
@@ -1831,6 +1882,7 @@ private static final long serialVersionUID = 0L;
           return result;
         }
 
+        @java.lang.Override
         public com.google.monitoring.v3.AlertPolicy.Condition.Trigger buildPartial() {
           com.google.monitoring.v3.AlertPolicy.Condition.Trigger result = new com.google.monitoring.v3.AlertPolicy.Condition.Trigger(this);
           if (typeCase_ == 1) {
@@ -1844,32 +1896,39 @@ private static final long serialVersionUID = 0L;
           return result;
         }
 
+        @java.lang.Override
         public Builder clone() {
           return (Builder) super.clone();
         }
+        @java.lang.Override
         public Builder setField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             java.lang.Object value) {
           return (Builder) super.setField(field, value);
         }
+        @java.lang.Override
         public Builder clearField(
             com.google.protobuf.Descriptors.FieldDescriptor field) {
           return (Builder) super.clearField(field);
         }
+        @java.lang.Override
         public Builder clearOneof(
             com.google.protobuf.Descriptors.OneofDescriptor oneof) {
           return (Builder) super.clearOneof(oneof);
         }
+        @java.lang.Override
         public Builder setRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             int index, java.lang.Object value) {
           return (Builder) super.setRepeatedField(field, index, value);
         }
+        @java.lang.Override
         public Builder addRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             java.lang.Object value) {
           return (Builder) super.addRepeatedField(field, value);
         }
+        @java.lang.Override
         public Builder mergeFrom(com.google.protobuf.Message other) {
           if (other instanceof com.google.monitoring.v3.AlertPolicy.Condition.Trigger) {
             return mergeFrom((com.google.monitoring.v3.AlertPolicy.Condition.Trigger)other);
@@ -1899,10 +1958,12 @@ private static final long serialVersionUID = 0L;
           return this;
         }
 
+        @java.lang.Override
         public final boolean isInitialized() {
           return true;
         }
 
+        @java.lang.Override
         public Builder mergeFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -2025,11 +2086,13 @@ private static final long serialVersionUID = 0L;
           }
           return this;
         }
+        @java.lang.Override
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
           return super.setUnknownFieldsProto3(unknownFields);
         }
 
+        @java.lang.Override
         public final Builder mergeUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
           return super.mergeUnknownFields(unknownFields);
@@ -2051,11 +2114,12 @@ private static final long serialVersionUID = 0L;
 
       private static final com.google.protobuf.Parser<Trigger>
           PARSER = new com.google.protobuf.AbstractParser<Trigger>() {
+        @java.lang.Override
         public Trigger parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-            return new Trigger(input, extensionRegistry);
+          return new Trigger(input, extensionRegistry);
         }
       };
 
@@ -2068,6 +2132,7 @@ private static final long serialVersionUID = 0L;
         return PARSER;
       }
 
+      @java.lang.Override
       public com.google.monitoring.v3.AlertPolicy.Condition.Trigger getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
       }
@@ -2383,15 +2448,14 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * The amount of time that a time series must violate the
        * threshold to be considered failing. Currently, only values
-       * that are a multiple of a minute--e.g.  60, 120, or 300
+       * that are a multiple of a minute--e.g., 0, 60, 120, or 300
        * seconds--are supported. If an invalid value is given, an
-       * error will be returned. The `Duration.nanos` field is
-       * ignored. When choosing a duration, it is useful to keep in mind the
-       * frequency of the underlying time series data (which may also be
-       * affected by any alignments specified in the `aggregation` field);
-       * a good duration is long enough so that a single outlier does not
-       * generate spurious alerts, but short enough that unhealthy states
-       * are detected and alerted on quickly.
+       * error will be returned. When choosing a duration, it is useful to
+       * keep in mind the frequency of the underlying time series data
+       * (which may also be affected by any alignments specified in the
+       * `aggregations` field); a good duration is long enough so that a single
+       * outlier does not generate spurious alerts, but short enough that
+       * unhealthy states are detected and alerted on quickly.
        * </pre>
        *
        * <code>.google.protobuf.Duration duration = 6;</code>
@@ -2401,15 +2465,14 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * The amount of time that a time series must violate the
        * threshold to be considered failing. Currently, only values
-       * that are a multiple of a minute--e.g.  60, 120, or 300
+       * that are a multiple of a minute--e.g., 0, 60, 120, or 300
        * seconds--are supported. If an invalid value is given, an
-       * error will be returned. The `Duration.nanos` field is
-       * ignored. When choosing a duration, it is useful to keep in mind the
-       * frequency of the underlying time series data (which may also be
-       * affected by any alignments specified in the `aggregation` field);
-       * a good duration is long enough so that a single outlier does not
-       * generate spurious alerts, but short enough that unhealthy states
-       * are detected and alerted on quickly.
+       * error will be returned. When choosing a duration, it is useful to
+       * keep in mind the frequency of the underlying time series data
+       * (which may also be affected by any alignments specified in the
+       * `aggregations` field); a good duration is long enough so that a single
+       * outlier does not generate spurious alerts, but short enough that
+       * unhealthy states are detected and alerted on quickly.
        * </pre>
        *
        * <code>.google.protobuf.Duration duration = 6;</code>
@@ -2419,15 +2482,14 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * The amount of time that a time series must violate the
        * threshold to be considered failing. Currently, only values
-       * that are a multiple of a minute--e.g.  60, 120, or 300
+       * that are a multiple of a minute--e.g., 0, 60, 120, or 300
        * seconds--are supported. If an invalid value is given, an
-       * error will be returned. The `Duration.nanos` field is
-       * ignored. When choosing a duration, it is useful to keep in mind the
-       * frequency of the underlying time series data (which may also be
-       * affected by any alignments specified in the `aggregation` field);
-       * a good duration is long enough so that a single outlier does not
-       * generate spurious alerts, but short enough that unhealthy states
-       * are detected and alerted on quickly.
+       * error will be returned. When choosing a duration, it is useful to
+       * keep in mind the frequency of the underlying time series data
+       * (which may also be affected by any alignments specified in the
+       * `aggregations` field); a good duration is long enough so that a single
+       * outlier does not generate spurious alerts, but short enough that
+       * unhealthy states are detected and alerted on quickly.
        * </pre>
        *
        * <code>.google.protobuf.Duration duration = 6;</code>
@@ -2510,6 +2572,9 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -2521,13 +2586,6 @@ private static final long serialVersionUID = 0L;
               case 0:
                 done = true;
                 break;
-              default: {
-                if (!parseUnknownFieldProto3(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
               case 18: {
                 java.lang.String s = input.readStringRequireUtf8();
 
@@ -2595,6 +2653,13 @@ private static final long serialVersionUID = 0L;
                     input.readMessage(com.google.monitoring.v3.Aggregation.parser(), extensionRegistry));
                 break;
               }
+              default: {
+                if (!parseUnknownFieldProto3(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
             }
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -2618,6 +2683,7 @@ private static final long serialVersionUID = 0L;
         return com.google.monitoring.v3.AlertProto.internal_static_google_monitoring_v3_AlertPolicy_Condition_MetricThreshold_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.monitoring.v3.AlertProto.internal_static_google_monitoring_v3_AlertPolicy_Condition_MetricThreshold_fieldAccessorTable
@@ -2991,6 +3057,7 @@ private static final long serialVersionUID = 0L;
        * <code>.google.monitoring.v3.ComparisonType comparison = 4;</code>
        */
       public com.google.monitoring.v3.ComparisonType getComparison() {
+        @SuppressWarnings("deprecation")
         com.google.monitoring.v3.ComparisonType result = com.google.monitoring.v3.ComparisonType.valueOf(comparison_);
         return result == null ? com.google.monitoring.v3.ComparisonType.UNRECOGNIZED : result;
       }
@@ -3014,15 +3081,14 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * The amount of time that a time series must violate the
        * threshold to be considered failing. Currently, only values
-       * that are a multiple of a minute--e.g.  60, 120, or 300
+       * that are a multiple of a minute--e.g., 0, 60, 120, or 300
        * seconds--are supported. If an invalid value is given, an
-       * error will be returned. The `Duration.nanos` field is
-       * ignored. When choosing a duration, it is useful to keep in mind the
-       * frequency of the underlying time series data (which may also be
-       * affected by any alignments specified in the `aggregation` field);
-       * a good duration is long enough so that a single outlier does not
-       * generate spurious alerts, but short enough that unhealthy states
-       * are detected and alerted on quickly.
+       * error will be returned. When choosing a duration, it is useful to
+       * keep in mind the frequency of the underlying time series data
+       * (which may also be affected by any alignments specified in the
+       * `aggregations` field); a good duration is long enough so that a single
+       * outlier does not generate spurious alerts, but short enough that
+       * unhealthy states are detected and alerted on quickly.
        * </pre>
        *
        * <code>.google.protobuf.Duration duration = 6;</code>
@@ -3034,15 +3100,14 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * The amount of time that a time series must violate the
        * threshold to be considered failing. Currently, only values
-       * that are a multiple of a minute--e.g.  60, 120, or 300
+       * that are a multiple of a minute--e.g., 0, 60, 120, or 300
        * seconds--are supported. If an invalid value is given, an
-       * error will be returned. The `Duration.nanos` field is
-       * ignored. When choosing a duration, it is useful to keep in mind the
-       * frequency of the underlying time series data (which may also be
-       * affected by any alignments specified in the `aggregation` field);
-       * a good duration is long enough so that a single outlier does not
-       * generate spurious alerts, but short enough that unhealthy states
-       * are detected and alerted on quickly.
+       * error will be returned. When choosing a duration, it is useful to
+       * keep in mind the frequency of the underlying time series data
+       * (which may also be affected by any alignments specified in the
+       * `aggregations` field); a good duration is long enough so that a single
+       * outlier does not generate spurious alerts, but short enough that
+       * unhealthy states are detected and alerted on quickly.
        * </pre>
        *
        * <code>.google.protobuf.Duration duration = 6;</code>
@@ -3054,15 +3119,14 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * The amount of time that a time series must violate the
        * threshold to be considered failing. Currently, only values
-       * that are a multiple of a minute--e.g.  60, 120, or 300
+       * that are a multiple of a minute--e.g., 0, 60, 120, or 300
        * seconds--are supported. If an invalid value is given, an
-       * error will be returned. The `Duration.nanos` field is
-       * ignored. When choosing a duration, it is useful to keep in mind the
-       * frequency of the underlying time series data (which may also be
-       * affected by any alignments specified in the `aggregation` field);
-       * a good duration is long enough so that a single outlier does not
-       * generate spurious alerts, but short enough that unhealthy states
-       * are detected and alerted on quickly.
+       * error will be returned. When choosing a duration, it is useful to
+       * keep in mind the frequency of the underlying time series data
+       * (which may also be affected by any alignments specified in the
+       * `aggregations` field); a good duration is long enough so that a single
+       * outlier does not generate spurious alerts, but short enough that
+       * unhealthy states are detected and alerted on quickly.
        * </pre>
        *
        * <code>.google.protobuf.Duration duration = 6;</code>
@@ -3120,6 +3184,7 @@ private static final long serialVersionUID = 0L;
       }
 
       private byte memoizedIsInitialized = -1;
+      @java.lang.Override
       public final boolean isInitialized() {
         byte isInitialized = memoizedIsInitialized;
         if (isInitialized == 1) return true;
@@ -3129,6 +3194,7 @@ private static final long serialVersionUID = 0L;
         return true;
       }
 
+      @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
         if (!getFilterBytes().isEmpty()) {
@@ -3158,6 +3224,7 @@ private static final long serialVersionUID = 0L;
         unknownFields.writeTo(output);
       }
 
+      @java.lang.Override
       public int getSerializedSize() {
         int size = memoizedSize;
         if (size != -1) return size;
@@ -3343,6 +3410,7 @@ private static final long serialVersionUID = 0L;
             .parseWithIOException(PARSER, input, extensionRegistry);
       }
 
+      @java.lang.Override
       public Builder newBuilderForType() { return newBuilder(); }
       public static Builder newBuilder() {
         return DEFAULT_INSTANCE.toBuilder();
@@ -3350,6 +3418,7 @@ private static final long serialVersionUID = 0L;
       public static Builder newBuilder(com.google.monitoring.v3.AlertPolicy.Condition.MetricThreshold prototype) {
         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
       }
+      @java.lang.Override
       public Builder toBuilder() {
         return this == DEFAULT_INSTANCE
             ? new Builder() : new Builder().mergeFrom(this);
@@ -3378,6 +3447,7 @@ private static final long serialVersionUID = 0L;
           return com.google.monitoring.v3.AlertProto.internal_static_google_monitoring_v3_AlertPolicy_Condition_MetricThreshold_descriptor;
         }
 
+        @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
           return com.google.monitoring.v3.AlertProto.internal_static_google_monitoring_v3_AlertPolicy_Condition_MetricThreshold_fieldAccessorTable
@@ -3402,6 +3472,7 @@ private static final long serialVersionUID = 0L;
             getDenominatorAggregationsFieldBuilder();
           }
         }
+        @java.lang.Override
         public Builder clear() {
           super.clear();
           filter_ = "";
@@ -3439,15 +3510,18 @@ private static final long serialVersionUID = 0L;
           return this;
         }
 
+        @java.lang.Override
         public com.google.protobuf.Descriptors.Descriptor
             getDescriptorForType() {
           return com.google.monitoring.v3.AlertProto.internal_static_google_monitoring_v3_AlertPolicy_Condition_MetricThreshold_descriptor;
         }
 
+        @java.lang.Override
         public com.google.monitoring.v3.AlertPolicy.Condition.MetricThreshold getDefaultInstanceForType() {
           return com.google.monitoring.v3.AlertPolicy.Condition.MetricThreshold.getDefaultInstance();
         }
 
+        @java.lang.Override
         public com.google.monitoring.v3.AlertPolicy.Condition.MetricThreshold build() {
           com.google.monitoring.v3.AlertPolicy.Condition.MetricThreshold result = buildPartial();
           if (!result.isInitialized()) {
@@ -3456,6 +3530,7 @@ private static final long serialVersionUID = 0L;
           return result;
         }
 
+        @java.lang.Override
         public com.google.monitoring.v3.AlertPolicy.Condition.MetricThreshold buildPartial() {
           com.google.monitoring.v3.AlertPolicy.Condition.MetricThreshold result = new com.google.monitoring.v3.AlertPolicy.Condition.MetricThreshold(this);
           int from_bitField0_ = bitField0_;
@@ -3497,32 +3572,39 @@ private static final long serialVersionUID = 0L;
           return result;
         }
 
+        @java.lang.Override
         public Builder clone() {
           return (Builder) super.clone();
         }
+        @java.lang.Override
         public Builder setField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             java.lang.Object value) {
           return (Builder) super.setField(field, value);
         }
+        @java.lang.Override
         public Builder clearField(
             com.google.protobuf.Descriptors.FieldDescriptor field) {
           return (Builder) super.clearField(field);
         }
+        @java.lang.Override
         public Builder clearOneof(
             com.google.protobuf.Descriptors.OneofDescriptor oneof) {
           return (Builder) super.clearOneof(oneof);
         }
+        @java.lang.Override
         public Builder setRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             int index, java.lang.Object value) {
           return (Builder) super.setRepeatedField(field, index, value);
         }
+        @java.lang.Override
         public Builder addRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             java.lang.Object value) {
           return (Builder) super.addRepeatedField(field, value);
         }
+        @java.lang.Override
         public Builder mergeFrom(com.google.protobuf.Message other) {
           if (other instanceof com.google.monitoring.v3.AlertPolicy.Condition.MetricThreshold) {
             return mergeFrom((com.google.monitoring.v3.AlertPolicy.Condition.MetricThreshold)other);
@@ -3611,10 +3693,12 @@ private static final long serialVersionUID = 0L;
           return this;
         }
 
+        @java.lang.Override
         public final boolean isInitialized() {
           return true;
         }
 
+        @java.lang.Override
         public Builder mergeFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -4952,6 +5036,7 @@ private static final long serialVersionUID = 0L;
          * <code>.google.monitoring.v3.ComparisonType comparison = 4;</code>
          */
         public com.google.monitoring.v3.ComparisonType getComparison() {
+          @SuppressWarnings("deprecation")
           com.google.monitoring.v3.ComparisonType result = com.google.monitoring.v3.ComparisonType.valueOf(comparison_);
           return result == null ? com.google.monitoring.v3.ComparisonType.UNRECOGNIZED : result;
         }
@@ -5038,15 +5123,14 @@ private static final long serialVersionUID = 0L;
          * <pre>
          * The amount of time that a time series must violate the
          * threshold to be considered failing. Currently, only values
-         * that are a multiple of a minute--e.g.  60, 120, or 300
+         * that are a multiple of a minute--e.g., 0, 60, 120, or 300
          * seconds--are supported. If an invalid value is given, an
-         * error will be returned. The `Duration.nanos` field is
-         * ignored. When choosing a duration, it is useful to keep in mind the
-         * frequency of the underlying time series data (which may also be
-         * affected by any alignments specified in the `aggregation` field);
-         * a good duration is long enough so that a single outlier does not
-         * generate spurious alerts, but short enough that unhealthy states
-         * are detected and alerted on quickly.
+         * error will be returned. When choosing a duration, it is useful to
+         * keep in mind the frequency of the underlying time series data
+         * (which may also be affected by any alignments specified in the
+         * `aggregations` field); a good duration is long enough so that a single
+         * outlier does not generate spurious alerts, but short enough that
+         * unhealthy states are detected and alerted on quickly.
          * </pre>
          *
          * <code>.google.protobuf.Duration duration = 6;</code>
@@ -5058,15 +5142,14 @@ private static final long serialVersionUID = 0L;
          * <pre>
          * The amount of time that a time series must violate the
          * threshold to be considered failing. Currently, only values
-         * that are a multiple of a minute--e.g.  60, 120, or 300
+         * that are a multiple of a minute--e.g., 0, 60, 120, or 300
          * seconds--are supported. If an invalid value is given, an
-         * error will be returned. The `Duration.nanos` field is
-         * ignored. When choosing a duration, it is useful to keep in mind the
-         * frequency of the underlying time series data (which may also be
-         * affected by any alignments specified in the `aggregation` field);
-         * a good duration is long enough so that a single outlier does not
-         * generate spurious alerts, but short enough that unhealthy states
-         * are detected and alerted on quickly.
+         * error will be returned. When choosing a duration, it is useful to
+         * keep in mind the frequency of the underlying time series data
+         * (which may also be affected by any alignments specified in the
+         * `aggregations` field); a good duration is long enough so that a single
+         * outlier does not generate spurious alerts, but short enough that
+         * unhealthy states are detected and alerted on quickly.
          * </pre>
          *
          * <code>.google.protobuf.Duration duration = 6;</code>
@@ -5082,15 +5165,14 @@ private static final long serialVersionUID = 0L;
          * <pre>
          * The amount of time that a time series must violate the
          * threshold to be considered failing. Currently, only values
-         * that are a multiple of a minute--e.g.  60, 120, or 300
+         * that are a multiple of a minute--e.g., 0, 60, 120, or 300
          * seconds--are supported. If an invalid value is given, an
-         * error will be returned. The `Duration.nanos` field is
-         * ignored. When choosing a duration, it is useful to keep in mind the
-         * frequency of the underlying time series data (which may also be
-         * affected by any alignments specified in the `aggregation` field);
-         * a good duration is long enough so that a single outlier does not
-         * generate spurious alerts, but short enough that unhealthy states
-         * are detected and alerted on quickly.
+         * error will be returned. When choosing a duration, it is useful to
+         * keep in mind the frequency of the underlying time series data
+         * (which may also be affected by any alignments specified in the
+         * `aggregations` field); a good duration is long enough so that a single
+         * outlier does not generate spurious alerts, but short enough that
+         * unhealthy states are detected and alerted on quickly.
          * </pre>
          *
          * <code>.google.protobuf.Duration duration = 6;</code>
@@ -5112,15 +5194,14 @@ private static final long serialVersionUID = 0L;
          * <pre>
          * The amount of time that a time series must violate the
          * threshold to be considered failing. Currently, only values
-         * that are a multiple of a minute--e.g.  60, 120, or 300
+         * that are a multiple of a minute--e.g., 0, 60, 120, or 300
          * seconds--are supported. If an invalid value is given, an
-         * error will be returned. The `Duration.nanos` field is
-         * ignored. When choosing a duration, it is useful to keep in mind the
-         * frequency of the underlying time series data (which may also be
-         * affected by any alignments specified in the `aggregation` field);
-         * a good duration is long enough so that a single outlier does not
-         * generate spurious alerts, but short enough that unhealthy states
-         * are detected and alerted on quickly.
+         * error will be returned. When choosing a duration, it is useful to
+         * keep in mind the frequency of the underlying time series data
+         * (which may also be affected by any alignments specified in the
+         * `aggregations` field); a good duration is long enough so that a single
+         * outlier does not generate spurious alerts, but short enough that
+         * unhealthy states are detected and alerted on quickly.
          * </pre>
          *
          * <code>.google.protobuf.Duration duration = 6;</code>
@@ -5140,15 +5221,14 @@ private static final long serialVersionUID = 0L;
          * <pre>
          * The amount of time that a time series must violate the
          * threshold to be considered failing. Currently, only values
-         * that are a multiple of a minute--e.g.  60, 120, or 300
+         * that are a multiple of a minute--e.g., 0, 60, 120, or 300
          * seconds--are supported. If an invalid value is given, an
-         * error will be returned. The `Duration.nanos` field is
-         * ignored. When choosing a duration, it is useful to keep in mind the
-         * frequency of the underlying time series data (which may also be
-         * affected by any alignments specified in the `aggregation` field);
-         * a good duration is long enough so that a single outlier does not
-         * generate spurious alerts, but short enough that unhealthy states
-         * are detected and alerted on quickly.
+         * error will be returned. When choosing a duration, it is useful to
+         * keep in mind the frequency of the underlying time series data
+         * (which may also be affected by any alignments specified in the
+         * `aggregations` field); a good duration is long enough so that a single
+         * outlier does not generate spurious alerts, but short enough that
+         * unhealthy states are detected and alerted on quickly.
          * </pre>
          *
          * <code>.google.protobuf.Duration duration = 6;</code>
@@ -5172,15 +5252,14 @@ private static final long serialVersionUID = 0L;
          * <pre>
          * The amount of time that a time series must violate the
          * threshold to be considered failing. Currently, only values
-         * that are a multiple of a minute--e.g.  60, 120, or 300
+         * that are a multiple of a minute--e.g., 0, 60, 120, or 300
          * seconds--are supported. If an invalid value is given, an
-         * error will be returned. The `Duration.nanos` field is
-         * ignored. When choosing a duration, it is useful to keep in mind the
-         * frequency of the underlying time series data (which may also be
-         * affected by any alignments specified in the `aggregation` field);
-         * a good duration is long enough so that a single outlier does not
-         * generate spurious alerts, but short enough that unhealthy states
-         * are detected and alerted on quickly.
+         * error will be returned. When choosing a duration, it is useful to
+         * keep in mind the frequency of the underlying time series data
+         * (which may also be affected by any alignments specified in the
+         * `aggregations` field); a good duration is long enough so that a single
+         * outlier does not generate spurious alerts, but short enough that
+         * unhealthy states are detected and alerted on quickly.
          * </pre>
          *
          * <code>.google.protobuf.Duration duration = 6;</code>
@@ -5200,15 +5279,14 @@ private static final long serialVersionUID = 0L;
          * <pre>
          * The amount of time that a time series must violate the
          * threshold to be considered failing. Currently, only values
-         * that are a multiple of a minute--e.g.  60, 120, or 300
+         * that are a multiple of a minute--e.g., 0, 60, 120, or 300
          * seconds--are supported. If an invalid value is given, an
-         * error will be returned. The `Duration.nanos` field is
-         * ignored. When choosing a duration, it is useful to keep in mind the
-         * frequency of the underlying time series data (which may also be
-         * affected by any alignments specified in the `aggregation` field);
-         * a good duration is long enough so that a single outlier does not
-         * generate spurious alerts, but short enough that unhealthy states
-         * are detected and alerted on quickly.
+         * error will be returned. When choosing a duration, it is useful to
+         * keep in mind the frequency of the underlying time series data
+         * (which may also be affected by any alignments specified in the
+         * `aggregations` field); a good duration is long enough so that a single
+         * outlier does not generate spurious alerts, but short enough that
+         * unhealthy states are detected and alerted on quickly.
          * </pre>
          *
          * <code>.google.protobuf.Duration duration = 6;</code>
@@ -5222,15 +5300,14 @@ private static final long serialVersionUID = 0L;
          * <pre>
          * The amount of time that a time series must violate the
          * threshold to be considered failing. Currently, only values
-         * that are a multiple of a minute--e.g.  60, 120, or 300
+         * that are a multiple of a minute--e.g., 0, 60, 120, or 300
          * seconds--are supported. If an invalid value is given, an
-         * error will be returned. The `Duration.nanos` field is
-         * ignored. When choosing a duration, it is useful to keep in mind the
-         * frequency of the underlying time series data (which may also be
-         * affected by any alignments specified in the `aggregation` field);
-         * a good duration is long enough so that a single outlier does not
-         * generate spurious alerts, but short enough that unhealthy states
-         * are detected and alerted on quickly.
+         * error will be returned. When choosing a duration, it is useful to
+         * keep in mind the frequency of the underlying time series data
+         * (which may also be affected by any alignments specified in the
+         * `aggregations` field); a good duration is long enough so that a single
+         * outlier does not generate spurious alerts, but short enough that
+         * unhealthy states are detected and alerted on quickly.
          * </pre>
          *
          * <code>.google.protobuf.Duration duration = 6;</code>
@@ -5247,15 +5324,14 @@ private static final long serialVersionUID = 0L;
          * <pre>
          * The amount of time that a time series must violate the
          * threshold to be considered failing. Currently, only values
-         * that are a multiple of a minute--e.g.  60, 120, or 300
+         * that are a multiple of a minute--e.g., 0, 60, 120, or 300
          * seconds--are supported. If an invalid value is given, an
-         * error will be returned. The `Duration.nanos` field is
-         * ignored. When choosing a duration, it is useful to keep in mind the
-         * frequency of the underlying time series data (which may also be
-         * affected by any alignments specified in the `aggregation` field);
-         * a good duration is long enough so that a single outlier does not
-         * generate spurious alerts, but short enough that unhealthy states
-         * are detected and alerted on quickly.
+         * error will be returned. When choosing a duration, it is useful to
+         * keep in mind the frequency of the underlying time series data
+         * (which may also be affected by any alignments specified in the
+         * `aggregations` field); a good duration is long enough so that a single
+         * outlier does not generate spurious alerts, but short enough that
+         * unhealthy states are detected and alerted on quickly.
          * </pre>
          *
          * <code>.google.protobuf.Duration duration = 6;</code>
@@ -5471,11 +5547,13 @@ private static final long serialVersionUID = 0L;
           }
           return triggerBuilder_;
         }
+        @java.lang.Override
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
           return super.setUnknownFieldsProto3(unknownFields);
         }
 
+        @java.lang.Override
         public final Builder mergeUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
           return super.mergeUnknownFields(unknownFields);
@@ -5497,11 +5575,12 @@ private static final long serialVersionUID = 0L;
 
       private static final com.google.protobuf.Parser<MetricThreshold>
           PARSER = new com.google.protobuf.AbstractParser<MetricThreshold>() {
+        @java.lang.Override
         public MetricThreshold parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-            return new MetricThreshold(input, extensionRegistry);
+          return new MetricThreshold(input, extensionRegistry);
         }
       };
 
@@ -5514,6 +5593,7 @@ private static final long serialVersionUID = 0L;
         return PARSER;
       }
 
+      @java.lang.Override
       public com.google.monitoring.v3.AlertPolicy.Condition.MetricThreshold getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
       }
@@ -5751,6 +5831,9 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -5762,13 +5845,6 @@ private static final long serialVersionUID = 0L;
               case 0:
                 done = true;
                 break;
-              default: {
-                if (!parseUnknownFieldProto3(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
               case 10: {
                 java.lang.String s = input.readStringRequireUtf8();
 
@@ -5810,6 +5886,13 @@ private static final long serialVersionUID = 0L;
                     input.readMessage(com.google.monitoring.v3.Aggregation.parser(), extensionRegistry));
                 break;
               }
+              default: {
+                if (!parseUnknownFieldProto3(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
             }
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -5830,6 +5913,7 @@ private static final long serialVersionUID = 0L;
         return com.google.monitoring.v3.AlertProto.internal_static_google_monitoring_v3_AlertPolicy_Condition_MetricAbsence_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.monitoring.v3.AlertProto.internal_static_google_monitoring_v3_AlertPolicy_Condition_MetricAbsence_fieldAccessorTable
@@ -6082,6 +6166,7 @@ private static final long serialVersionUID = 0L;
       }
 
       private byte memoizedIsInitialized = -1;
+      @java.lang.Override
       public final boolean isInitialized() {
         byte isInitialized = memoizedIsInitialized;
         if (isInitialized == 1) return true;
@@ -6091,6 +6176,7 @@ private static final long serialVersionUID = 0L;
         return true;
       }
 
+      @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
         if (!getFilterBytes().isEmpty()) {
@@ -6108,6 +6194,7 @@ private static final long serialVersionUID = 0L;
         unknownFields.writeTo(output);
       }
 
+      @java.lang.Override
       public int getSerializedSize() {
         int size = memoizedSize;
         if (size != -1) return size;
@@ -6258,6 +6345,7 @@ private static final long serialVersionUID = 0L;
             .parseWithIOException(PARSER, input, extensionRegistry);
       }
 
+      @java.lang.Override
       public Builder newBuilderForType() { return newBuilder(); }
       public static Builder newBuilder() {
         return DEFAULT_INSTANCE.toBuilder();
@@ -6265,6 +6353,7 @@ private static final long serialVersionUID = 0L;
       public static Builder newBuilder(com.google.monitoring.v3.AlertPolicy.Condition.MetricAbsence prototype) {
         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
       }
+      @java.lang.Override
       public Builder toBuilder() {
         return this == DEFAULT_INSTANCE
             ? new Builder() : new Builder().mergeFrom(this);
@@ -6296,6 +6385,7 @@ private static final long serialVersionUID = 0L;
           return com.google.monitoring.v3.AlertProto.internal_static_google_monitoring_v3_AlertPolicy_Condition_MetricAbsence_descriptor;
         }
 
+        @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
           return com.google.monitoring.v3.AlertProto.internal_static_google_monitoring_v3_AlertPolicy_Condition_MetricAbsence_fieldAccessorTable
@@ -6319,6 +6409,7 @@ private static final long serialVersionUID = 0L;
             getAggregationsFieldBuilder();
           }
         }
+        @java.lang.Override
         public Builder clear() {
           super.clear();
           filter_ = "";
@@ -6344,15 +6435,18 @@ private static final long serialVersionUID = 0L;
           return this;
         }
 
+        @java.lang.Override
         public com.google.protobuf.Descriptors.Descriptor
             getDescriptorForType() {
           return com.google.monitoring.v3.AlertProto.internal_static_google_monitoring_v3_AlertPolicy_Condition_MetricAbsence_descriptor;
         }
 
+        @java.lang.Override
         public com.google.monitoring.v3.AlertPolicy.Condition.MetricAbsence getDefaultInstanceForType() {
           return com.google.monitoring.v3.AlertPolicy.Condition.MetricAbsence.getDefaultInstance();
         }
 
+        @java.lang.Override
         public com.google.monitoring.v3.AlertPolicy.Condition.MetricAbsence build() {
           com.google.monitoring.v3.AlertPolicy.Condition.MetricAbsence result = buildPartial();
           if (!result.isInitialized()) {
@@ -6361,6 +6455,7 @@ private static final long serialVersionUID = 0L;
           return result;
         }
 
+        @java.lang.Override
         public com.google.monitoring.v3.AlertPolicy.Condition.MetricAbsence buildPartial() {
           com.google.monitoring.v3.AlertPolicy.Condition.MetricAbsence result = new com.google.monitoring.v3.AlertPolicy.Condition.MetricAbsence(this);
           int from_bitField0_ = bitField0_;
@@ -6390,32 +6485,39 @@ private static final long serialVersionUID = 0L;
           return result;
         }
 
+        @java.lang.Override
         public Builder clone() {
           return (Builder) super.clone();
         }
+        @java.lang.Override
         public Builder setField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             java.lang.Object value) {
           return (Builder) super.setField(field, value);
         }
+        @java.lang.Override
         public Builder clearField(
             com.google.protobuf.Descriptors.FieldDescriptor field) {
           return (Builder) super.clearField(field);
         }
+        @java.lang.Override
         public Builder clearOneof(
             com.google.protobuf.Descriptors.OneofDescriptor oneof) {
           return (Builder) super.clearOneof(oneof);
         }
+        @java.lang.Override
         public Builder setRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             int index, java.lang.Object value) {
           return (Builder) super.setRepeatedField(field, index, value);
         }
+        @java.lang.Override
         public Builder addRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             java.lang.Object value) {
           return (Builder) super.addRepeatedField(field, value);
         }
+        @java.lang.Override
         public Builder mergeFrom(com.google.protobuf.Message other) {
           if (other instanceof com.google.monitoring.v3.AlertPolicy.Condition.MetricAbsence) {
             return mergeFrom((com.google.monitoring.v3.AlertPolicy.Condition.MetricAbsence)other);
@@ -6468,10 +6570,12 @@ private static final long serialVersionUID = 0L;
           return this;
         }
 
+        @java.lang.Override
         public final boolean isInitialized() {
           return true;
         }
 
+        @java.lang.Override
         public Builder mergeFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -7453,11 +7557,13 @@ private static final long serialVersionUID = 0L;
           }
           return triggerBuilder_;
         }
+        @java.lang.Override
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
           return super.setUnknownFieldsProto3(unknownFields);
         }
 
+        @java.lang.Override
         public final Builder mergeUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
           return super.mergeUnknownFields(unknownFields);
@@ -7479,11 +7585,12 @@ private static final long serialVersionUID = 0L;
 
       private static final com.google.protobuf.Parser<MetricAbsence>
           PARSER = new com.google.protobuf.AbstractParser<MetricAbsence>() {
+        @java.lang.Override
         public MetricAbsence parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-            return new MetricAbsence(input, extensionRegistry);
+          return new MetricAbsence(input, extensionRegistry);
         }
       };
 
@@ -7496,6 +7603,7 @@ private static final long serialVersionUID = 0L;
         return PARSER;
       }
 
+      @java.lang.Override
       public com.google.monitoring.v3.AlertPolicy.Condition.MetricAbsence getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
       }
@@ -7746,6 +7854,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -7755,6 +7864,7 @@ private static final long serialVersionUID = 0L;
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (conditionCase_ == 1) {
@@ -7772,6 +7882,7 @@ private static final long serialVersionUID = 0L;
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -7928,6 +8039,7 @@ private static final long serialVersionUID = 0L;
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -7935,6 +8047,7 @@ private static final long serialVersionUID = 0L;
     public static Builder newBuilder(com.google.monitoring.v3.AlertPolicy.Condition prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -7964,6 +8077,7 @@ private static final long serialVersionUID = 0L;
         return com.google.monitoring.v3.AlertProto.internal_static_google_monitoring_v3_AlertPolicy_Condition_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.monitoring.v3.AlertProto.internal_static_google_monitoring_v3_AlertPolicy_Condition_fieldAccessorTable
@@ -7986,6 +8100,7 @@ private static final long serialVersionUID = 0L;
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         name_ = "";
@@ -7997,15 +8112,18 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return com.google.monitoring.v3.AlertProto.internal_static_google_monitoring_v3_AlertPolicy_Condition_descriptor;
       }
 
+      @java.lang.Override
       public com.google.monitoring.v3.AlertPolicy.Condition getDefaultInstanceForType() {
         return com.google.monitoring.v3.AlertPolicy.Condition.getDefaultInstance();
       }
 
+      @java.lang.Override
       public com.google.monitoring.v3.AlertPolicy.Condition build() {
         com.google.monitoring.v3.AlertPolicy.Condition result = buildPartial();
         if (!result.isInitialized()) {
@@ -8014,6 +8132,7 @@ private static final long serialVersionUID = 0L;
         return result;
       }
 
+      @java.lang.Override
       public com.google.monitoring.v3.AlertPolicy.Condition buildPartial() {
         com.google.monitoring.v3.AlertPolicy.Condition result = new com.google.monitoring.v3.AlertPolicy.Condition(this);
         result.name_ = name_;
@@ -8037,32 +8156,39 @@ private static final long serialVersionUID = 0L;
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.google.monitoring.v3.AlertPolicy.Condition) {
           return mergeFrom((com.google.monitoring.v3.AlertPolicy.Condition)other);
@@ -8100,10 +8226,12 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -8772,11 +8900,13 @@ private static final long serialVersionUID = 0L;
         onChanged();;
         return conditionAbsentBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -8798,11 +8928,12 @@ private static final long serialVersionUID = 0L;
 
     private static final com.google.protobuf.Parser<Condition>
         PARSER = new com.google.protobuf.AbstractParser<Condition>() {
+      @java.lang.Override
       public Condition parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Condition(input, extensionRegistry);
+        return new Condition(input, extensionRegistry);
       }
     };
 
@@ -8815,6 +8946,7 @@ private static final long serialVersionUID = 0L;
       return PARSER;
     }
 
+    @java.lang.Override
     public com.google.monitoring.v3.AlertPolicy.Condition getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -9175,6 +9307,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.monitoring.v3.AlertPolicy.ConditionCombinerType combiner = 6;</code>
    */
   public com.google.monitoring.v3.AlertPolicy.ConditionCombinerType getCombiner() {
+    @SuppressWarnings("deprecation")
     com.google.monitoring.v3.AlertPolicy.ConditionCombinerType result = com.google.monitoring.v3.AlertPolicy.ConditionCombinerType.valueOf(combiner_);
     return result == null ? com.google.monitoring.v3.AlertPolicy.ConditionCombinerType.UNRECOGNIZED : result;
   }
@@ -9374,6 +9507,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -9383,6 +9517,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
+  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (!getNameBytes().isEmpty()) {
@@ -9421,6 +9556,7 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -9641,6 +9777,7 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
+  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
@@ -9648,6 +9785,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder(com.google.monitoring.v3.AlertPolicy prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
@@ -9700,6 +9838,7 @@ private static final long serialVersionUID = 0L;
               "Invalid map field number: " + number);
       }
     }
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.monitoring.v3.AlertProto.internal_static_google_monitoring_v3_AlertPolicy_fieldAccessorTable
@@ -9723,6 +9862,7 @@ private static final long serialVersionUID = 0L;
         getConditionsFieldBuilder();
       }
     }
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       name_ = "";
@@ -9767,15 +9907,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
       return com.google.monitoring.v3.AlertProto.internal_static_google_monitoring_v3_AlertPolicy_descriptor;
     }
 
+    @java.lang.Override
     public com.google.monitoring.v3.AlertPolicy getDefaultInstanceForType() {
       return com.google.monitoring.v3.AlertPolicy.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.monitoring.v3.AlertPolicy build() {
       com.google.monitoring.v3.AlertPolicy result = buildPartial();
       if (!result.isInitialized()) {
@@ -9784,6 +9927,7 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.monitoring.v3.AlertPolicy buildPartial() {
       com.google.monitoring.v3.AlertPolicy result = new com.google.monitoring.v3.AlertPolicy(this);
       int from_bitField0_ = bitField0_;
@@ -9832,32 +9976,39 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.monitoring.v3.AlertPolicy) {
         return mergeFrom((com.google.monitoring.v3.AlertPolicy)other);
@@ -9935,10 +10086,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -10961,6 +11114,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.monitoring.v3.AlertPolicy.ConditionCombinerType combiner = 6;</code>
      */
     public com.google.monitoring.v3.AlertPolicy.ConditionCombinerType getCombiner() {
+      @SuppressWarnings("deprecation")
       com.google.monitoring.v3.AlertPolicy.ConditionCombinerType result = com.google.monitoring.v3.AlertPolicy.ConditionCombinerType.valueOf(combiner_);
       return result == null ? com.google.monitoring.v3.AlertPolicy.ConditionCombinerType.UNRECOGNIZED : result;
     }
@@ -11710,11 +11864,13 @@ private static final long serialVersionUID = 0L;
       }
       return mutationRecordBuilder_;
     }
+    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -11736,11 +11892,12 @@ private static final long serialVersionUID = 0L;
 
   private static final com.google.protobuf.Parser<AlertPolicy>
       PARSER = new com.google.protobuf.AbstractParser<AlertPolicy>() {
+    @java.lang.Override
     public AlertPolicy parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-        return new AlertPolicy(input, extensionRegistry);
+      return new AlertPolicy(input, extensionRegistry);
     }
   };
 
@@ -11753,6 +11910,7 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.monitoring.v3.AlertPolicy getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }

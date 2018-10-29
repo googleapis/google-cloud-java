@@ -66,6 +66,7 @@ public class LogEntry implements Serializable {
   private final Map<String, String> labels;
   private final Operation operation;
   private final String trace;
+  private final String spanId;
   private final SourceLocation sourceLocation;
   private final Payload<?> payload;
 
@@ -84,6 +85,7 @@ public class LogEntry implements Serializable {
     private Map<String, String> labels = new HashMap<>();
     private Operation operation;
     private String trace;
+    private String spanId;
     private SourceLocation sourceLocation;
     private Payload<?> payload;
 
@@ -102,6 +104,7 @@ public class LogEntry implements Serializable {
       this.labels = new HashMap<>(entry.labels);
       this.operation = entry.operation;
       this.trace = entry.trace;
+      this.spanId = entry.spanId;
       this.sourceLocation = entry.sourceLocation;
       this.payload = entry.payload;
     }
@@ -229,6 +232,15 @@ public class LogEntry implements Serializable {
 
 
     /**
+     * Sets the ID of the trace span associated with the log entry, if any.
+     */
+    public Builder setSpanId(String spanId) {
+      this.spanId = spanId;
+      return this;
+    }
+
+
+    /**
      * Sets the source code location information associated with the log entry if any.
      */
     public Builder setSourceLocation(SourceLocation sourceLocation) {
@@ -268,6 +280,7 @@ public class LogEntry implements Serializable {
     this.labels = ImmutableMap.copyOf(builder.labels);
     this.operation = builder.operation;
     this.trace = builder.trace;
+    this.spanId = builder.spanId;
     this.sourceLocation = builder.sourceLocation;
     this.payload = builder.payload;
   }
@@ -364,6 +377,14 @@ public class LogEntry implements Serializable {
 
 
   /**
+   * Returns the ID of the trace span associated with the log entry, if any.
+   */
+  public String getSpanId() {
+    return spanId;
+  }
+
+
+  /**
    * Returns the source code location information associated with the log entry, if any.
    */
   public SourceLocation getSourceLocation() {
@@ -386,7 +407,7 @@ public class LogEntry implements Serializable {
   @Override
   public int hashCode() {
     return Objects.hash(logName, resource, timestamp, receiveTimestamp, severity, insertId,
-        httpRequest, labels, operation, trace, sourceLocation, payload);
+        httpRequest, labels, operation, trace, spanId, sourceLocation, payload);
   }
 
   @Override
@@ -408,6 +429,7 @@ public class LogEntry implements Serializable {
         && Objects.equals(labels, other.labels)
         && Objects.equals(operation, other.operation)
         && Objects.equals(trace, other.trace)
+        && Objects.equals(spanId, other.spanId)
         && Objects.equals(sourceLocation, other.sourceLocation)
         && Objects.equals(payload, other.payload);
   }
@@ -425,6 +447,7 @@ public class LogEntry implements Serializable {
         .add("labels", labels)
         .add("operation", operation)
         .add("trace", trace)
+        .add("spanId", spanId)
         .add("sourceLocation", sourceLocation)
         .add("payload", payload)
         .toString();
@@ -478,6 +501,9 @@ public class LogEntry implements Serializable {
     }
     if (trace != null) {
       builder.setTrace(trace);
+    }
+    if (spanId != null) {
+      builder.setSpanId(spanId);
     }
     if (sourceLocation != null) {
       builder.setSourceLocation(sourceLocation.toPb());
@@ -542,6 +568,9 @@ public class LogEntry implements Serializable {
     }
     if (!entryPb.getTrace().equals("")) {
       builder.setTrace(entryPb.getTrace());
+    }
+    if (!entryPb.getSpanId().equals("")) {
+      builder.setSpanId(entryPb.getSpanId());
     }
     if (!entryPb.getSourceLocation().equals(LogEntrySourceLocation.getDefaultInstance())) {
       builder.setSourceLocation(SourceLocation.fromPb(entryPb.getSourceLocation()));

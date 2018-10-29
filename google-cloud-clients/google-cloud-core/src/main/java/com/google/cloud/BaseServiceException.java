@@ -254,11 +254,13 @@ public class BaseServiceException extends RuntimeException {
 
   @InternalApi
   public static boolean isRetryable(boolean idempotent, IOException exception) {
-    boolean exceptionIsRetryable = exception instanceof SocketTimeoutException
-        || exception instanceof SocketException
-        || (exception instanceof SSLHandshakeException
-        && !(exception.getCause() instanceof CertificateException))
-        || "insufficient data written".equals(exception.getMessage());
+    boolean exceptionIsRetryable =
+        exception instanceof SocketTimeoutException
+            || exception instanceof SocketException
+            || (exception instanceof SSLHandshakeException
+                && !(exception.getCause() instanceof CertificateException))
+            || "insufficient data written".equals(exception.getMessage())
+            || "Error writing request body to server".equals(exception.getMessage());
     return idempotent && exceptionIsRetryable;
   }
 

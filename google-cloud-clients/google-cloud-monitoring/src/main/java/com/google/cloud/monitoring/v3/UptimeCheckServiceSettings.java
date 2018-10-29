@@ -71,7 +71,6 @@ import javax.annotation.Generated;
  * </pre>
  */
 @Generated("by gapic-generator")
-@BetaApi
 public class UptimeCheckServiceSettings extends ClientSettings<UptimeCheckServiceSettings> {
   /** Returns the object with the settings used for calls to listUptimeCheckConfigs. */
   public PagedCallSettings<

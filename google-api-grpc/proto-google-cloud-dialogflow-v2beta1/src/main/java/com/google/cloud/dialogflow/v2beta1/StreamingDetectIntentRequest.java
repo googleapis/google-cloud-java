@@ -9,7 +9,9 @@ package com.google.cloud.dialogflow.v2beta1;
  * `StreamingDetectIntent` method.
  * Multiple request messages should be sent in order:
  * 1.  The first message must contain `session`, `query_input` plus optionally
- *     `query_params` and/or `single_utterance`. The message must not contain `input_audio`.
+ *     `query_params` and/or `single_utterance`. If the client wants to receive
+ *     an audio response, it should also contain `output_audio_config`.
+ *     The message must not contain `input_audio`.
  * 2.  If `query_input` was set to a streaming input audio config,
  *     all subsequent messages must contain only `input_audio`.
  *     Otherwise, finish the request stream.
@@ -42,6 +44,9 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -53,13 +58,6 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
           case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
@@ -97,9 +95,29 @@ private static final long serialVersionUID = 0L;
             singleUtterance_ = input.readBool();
             break;
           }
+          case 42: {
+            com.google.cloud.dialogflow.v2beta1.OutputAudioConfig.Builder subBuilder = null;
+            if (outputAudioConfig_ != null) {
+              subBuilder = outputAudioConfig_.toBuilder();
+            }
+            outputAudioConfig_ = input.readMessage(com.google.cloud.dialogflow.v2beta1.OutputAudioConfig.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(outputAudioConfig_);
+              outputAudioConfig_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           case 50: {
 
             inputAudio_ = input.readBytes();
+            break;
+          }
+          default: {
+            if (!parseUnknownFieldProto3(
+                input, unknownFields, extensionRegistry, tag)) {
+              done = true;
+            }
             break;
           }
         }
@@ -119,6 +137,7 @@ private static final long serialVersionUID = 0L;
     return com.google.cloud.dialogflow.v2beta1.SessionProto.internal_static_google_cloud_dialogflow_v2beta1_StreamingDetectIntentRequest_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.dialogflow.v2beta1.SessionProto.internal_static_google_cloud_dialogflow_v2beta1_StreamingDetectIntentRequest_fieldAccessorTable
@@ -134,13 +153,12 @@ private static final long serialVersionUID = 0L;
    * Format of the session name:
    * `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`, or
    * `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
-   * ID&gt;/sessions/&lt;Session ID&gt;`. Note: Environments and users are under
-   * construction and will be available soon. If &lt;Environment ID&gt; is not
-   * specified, we assume default 'draft' environment. If &lt;User ID&gt; is not
-   * specified, we are using "-". It’s up to the API caller to choose an
-   * appropriate &lt;Session ID&gt;. and &lt;User Id&gt;. They can be a random numbers or
-   * some type of user and session identifiers (preferably hashed). The length
-   * of the &lt;Session ID&gt; and &lt;User ID&gt; must not exceed 36 characters.
+   * ID&gt;/sessions/&lt;Session ID&gt;`. If `Environment ID` is not specified, we assume
+   * default 'draft' environment. If `User ID` is not specified, we are using
+   * "-". It’s up to the API caller to choose an appropriate `Session ID` and
+   * `User Id`. They can be a random numbers or some type of user and session
+   * identifiers (preferably hashed). The length of the `Session ID` and
+   * `User ID` must not exceed 36 characters.
    * </pre>
    *
    * <code>string session = 1;</code>
@@ -163,13 +181,12 @@ private static final long serialVersionUID = 0L;
    * Format of the session name:
    * `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`, or
    * `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
-   * ID&gt;/sessions/&lt;Session ID&gt;`. Note: Environments and users are under
-   * construction and will be available soon. If &lt;Environment ID&gt; is not
-   * specified, we assume default 'draft' environment. If &lt;User ID&gt; is not
-   * specified, we are using "-". It’s up to the API caller to choose an
-   * appropriate &lt;Session ID&gt;. and &lt;User Id&gt;. They can be a random numbers or
-   * some type of user and session identifiers (preferably hashed). The length
-   * of the &lt;Session ID&gt; and &lt;User ID&gt; must not exceed 36 characters.
+   * ID&gt;/sessions/&lt;Session ID&gt;`. If `Environment ID` is not specified, we assume
+   * default 'draft' environment. If `User ID` is not specified, we are using
+   * "-". It’s up to the API caller to choose an appropriate `Session ID` and
+   * `User Id`. They can be a random numbers or some type of user and session
+   * identifiers (preferably hashed). The length of the `Session ID` and
+   * `User ID` must not exceed 36 characters.
    * </pre>
    *
    * <code>string session = 1;</code>
@@ -286,6 +303,45 @@ private static final long serialVersionUID = 0L;
     return singleUtterance_;
   }
 
+  public static final int OUTPUT_AUDIO_CONFIG_FIELD_NUMBER = 5;
+  private com.google.cloud.dialogflow.v2beta1.OutputAudioConfig outputAudioConfig_;
+  /**
+   * <pre>
+   * Optional. Instructs the speech synthesizer how to generate the output
+   * audio. If this field is not set and agent-level speech synthesizer is not
+   * configured, no output audio is generated.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.OutputAudioConfig output_audio_config = 5;</code>
+   */
+  public boolean hasOutputAudioConfig() {
+    return outputAudioConfig_ != null;
+  }
+  /**
+   * <pre>
+   * Optional. Instructs the speech synthesizer how to generate the output
+   * audio. If this field is not set and agent-level speech synthesizer is not
+   * configured, no output audio is generated.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.OutputAudioConfig output_audio_config = 5;</code>
+   */
+  public com.google.cloud.dialogflow.v2beta1.OutputAudioConfig getOutputAudioConfig() {
+    return outputAudioConfig_ == null ? com.google.cloud.dialogflow.v2beta1.OutputAudioConfig.getDefaultInstance() : outputAudioConfig_;
+  }
+  /**
+   * <pre>
+   * Optional. Instructs the speech synthesizer how to generate the output
+   * audio. If this field is not set and agent-level speech synthesizer is not
+   * configured, no output audio is generated.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.OutputAudioConfig output_audio_config = 5;</code>
+   */
+  public com.google.cloud.dialogflow.v2beta1.OutputAudioConfigOrBuilder getOutputAudioConfigOrBuilder() {
+    return getOutputAudioConfig();
+  }
+
   public static final int INPUT_AUDIO_FIELD_NUMBER = 6;
   private com.google.protobuf.ByteString inputAudio_;
   /**
@@ -302,6 +358,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -311,6 +368,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
+  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (!getSessionBytes().isEmpty()) {
@@ -325,12 +383,16 @@ private static final long serialVersionUID = 0L;
     if (singleUtterance_ != false) {
       output.writeBool(4, singleUtterance_);
     }
+    if (outputAudioConfig_ != null) {
+      output.writeMessage(5, getOutputAudioConfig());
+    }
     if (!inputAudio_.isEmpty()) {
       output.writeBytes(6, inputAudio_);
     }
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -350,6 +412,10 @@ private static final long serialVersionUID = 0L;
     if (singleUtterance_ != false) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(4, singleUtterance_);
+    }
+    if (outputAudioConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(5, getOutputAudioConfig());
     }
     if (!inputAudio_.isEmpty()) {
       size += com.google.protobuf.CodedOutputStream
@@ -385,6 +451,11 @@ private static final long serialVersionUID = 0L;
     }
     result = result && (getSingleUtterance()
         == other.getSingleUtterance());
+    result = result && (hasOutputAudioConfig() == other.hasOutputAudioConfig());
+    if (hasOutputAudioConfig()) {
+      result = result && getOutputAudioConfig()
+          .equals(other.getOutputAudioConfig());
+    }
     result = result && getInputAudio()
         .equals(other.getInputAudio());
     result = result && unknownFields.equals(other.unknownFields);
@@ -411,6 +482,10 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + SINGLE_UTTERANCE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getSingleUtterance());
+    if (hasOutputAudioConfig()) {
+      hash = (37 * hash) + OUTPUT_AUDIO_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getOutputAudioConfig().hashCode();
+    }
     hash = (37 * hash) + INPUT_AUDIO_FIELD_NUMBER;
     hash = (53 * hash) + getInputAudio().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
@@ -488,6 +563,7 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
+  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
@@ -495,6 +571,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder(com.google.cloud.dialogflow.v2beta1.StreamingDetectIntentRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
@@ -512,7 +589,9 @@ private static final long serialVersionUID = 0L;
    * `StreamingDetectIntent` method.
    * Multiple request messages should be sent in order:
    * 1.  The first message must contain `session`, `query_input` plus optionally
-   *     `query_params` and/or `single_utterance`. The message must not contain `input_audio`.
+   *     `query_params` and/or `single_utterance`. If the client wants to receive
+   *     an audio response, it should also contain `output_audio_config`.
+   *     The message must not contain `input_audio`.
    * 2.  If `query_input` was set to a streaming input audio config,
    *     all subsequent messages must contain only `input_audio`.
    *     Otherwise, finish the request stream.
@@ -529,6 +608,7 @@ private static final long serialVersionUID = 0L;
       return com.google.cloud.dialogflow.v2beta1.SessionProto.internal_static_google_cloud_dialogflow_v2beta1_StreamingDetectIntentRequest_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.dialogflow.v2beta1.SessionProto.internal_static_google_cloud_dialogflow_v2beta1_StreamingDetectIntentRequest_fieldAccessorTable
@@ -551,6 +631,7 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
       }
     }
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       session_ = "";
@@ -569,20 +650,29 @@ private static final long serialVersionUID = 0L;
       }
       singleUtterance_ = false;
 
+      if (outputAudioConfigBuilder_ == null) {
+        outputAudioConfig_ = null;
+      } else {
+        outputAudioConfig_ = null;
+        outputAudioConfigBuilder_ = null;
+      }
       inputAudio_ = com.google.protobuf.ByteString.EMPTY;
 
       return this;
     }
 
+    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
       return com.google.cloud.dialogflow.v2beta1.SessionProto.internal_static_google_cloud_dialogflow_v2beta1_StreamingDetectIntentRequest_descriptor;
     }
 
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2beta1.StreamingDetectIntentRequest getDefaultInstanceForType() {
       return com.google.cloud.dialogflow.v2beta1.StreamingDetectIntentRequest.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2beta1.StreamingDetectIntentRequest build() {
       com.google.cloud.dialogflow.v2beta1.StreamingDetectIntentRequest result = buildPartial();
       if (!result.isInitialized()) {
@@ -591,6 +681,7 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2beta1.StreamingDetectIntentRequest buildPartial() {
       com.google.cloud.dialogflow.v2beta1.StreamingDetectIntentRequest result = new com.google.cloud.dialogflow.v2beta1.StreamingDetectIntentRequest(this);
       result.session_ = session_;
@@ -605,37 +696,49 @@ private static final long serialVersionUID = 0L;
         result.queryInput_ = queryInputBuilder_.build();
       }
       result.singleUtterance_ = singleUtterance_;
+      if (outputAudioConfigBuilder_ == null) {
+        result.outputAudioConfig_ = outputAudioConfig_;
+      } else {
+        result.outputAudioConfig_ = outputAudioConfigBuilder_.build();
+      }
       result.inputAudio_ = inputAudio_;
       onBuilt();
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.dialogflow.v2beta1.StreamingDetectIntentRequest) {
         return mergeFrom((com.google.cloud.dialogflow.v2beta1.StreamingDetectIntentRequest)other);
@@ -660,6 +763,9 @@ private static final long serialVersionUID = 0L;
       if (other.getSingleUtterance() != false) {
         setSingleUtterance(other.getSingleUtterance());
       }
+      if (other.hasOutputAudioConfig()) {
+        mergeOutputAudioConfig(other.getOutputAudioConfig());
+      }
       if (other.getInputAudio() != com.google.protobuf.ByteString.EMPTY) {
         setInputAudio(other.getInputAudio());
       }
@@ -668,10 +774,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -697,13 +805,12 @@ private static final long serialVersionUID = 0L;
      * Format of the session name:
      * `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`, or
      * `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
-     * ID&gt;/sessions/&lt;Session ID&gt;`. Note: Environments and users are under
-     * construction and will be available soon. If &lt;Environment ID&gt; is not
-     * specified, we assume default 'draft' environment. If &lt;User ID&gt; is not
-     * specified, we are using "-". It’s up to the API caller to choose an
-     * appropriate &lt;Session ID&gt;. and &lt;User Id&gt;. They can be a random numbers or
-     * some type of user and session identifiers (preferably hashed). The length
-     * of the &lt;Session ID&gt; and &lt;User ID&gt; must not exceed 36 characters.
+     * ID&gt;/sessions/&lt;Session ID&gt;`. If `Environment ID` is not specified, we assume
+     * default 'draft' environment. If `User ID` is not specified, we are using
+     * "-". It’s up to the API caller to choose an appropriate `Session ID` and
+     * `User Id`. They can be a random numbers or some type of user and session
+     * identifiers (preferably hashed). The length of the `Session ID` and
+     * `User ID` must not exceed 36 characters.
      * </pre>
      *
      * <code>string session = 1;</code>
@@ -726,13 +833,12 @@ private static final long serialVersionUID = 0L;
      * Format of the session name:
      * `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`, or
      * `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
-     * ID&gt;/sessions/&lt;Session ID&gt;`. Note: Environments and users are under
-     * construction and will be available soon. If &lt;Environment ID&gt; is not
-     * specified, we assume default 'draft' environment. If &lt;User ID&gt; is not
-     * specified, we are using "-". It’s up to the API caller to choose an
-     * appropriate &lt;Session ID&gt;. and &lt;User Id&gt;. They can be a random numbers or
-     * some type of user and session identifiers (preferably hashed). The length
-     * of the &lt;Session ID&gt; and &lt;User ID&gt; must not exceed 36 characters.
+     * ID&gt;/sessions/&lt;Session ID&gt;`. If `Environment ID` is not specified, we assume
+     * default 'draft' environment. If `User ID` is not specified, we are using
+     * "-". It’s up to the API caller to choose an appropriate `Session ID` and
+     * `User Id`. They can be a random numbers or some type of user and session
+     * identifiers (preferably hashed). The length of the `Session ID` and
+     * `User ID` must not exceed 36 characters.
      * </pre>
      *
      * <code>string session = 1;</code>
@@ -756,13 +862,12 @@ private static final long serialVersionUID = 0L;
      * Format of the session name:
      * `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`, or
      * `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
-     * ID&gt;/sessions/&lt;Session ID&gt;`. Note: Environments and users are under
-     * construction and will be available soon. If &lt;Environment ID&gt; is not
-     * specified, we assume default 'draft' environment. If &lt;User ID&gt; is not
-     * specified, we are using "-". It’s up to the API caller to choose an
-     * appropriate &lt;Session ID&gt;. and &lt;User Id&gt;. They can be a random numbers or
-     * some type of user and session identifiers (preferably hashed). The length
-     * of the &lt;Session ID&gt; and &lt;User ID&gt; must not exceed 36 characters.
+     * ID&gt;/sessions/&lt;Session ID&gt;`. If `Environment ID` is not specified, we assume
+     * default 'draft' environment. If `User ID` is not specified, we are using
+     * "-". It’s up to the API caller to choose an appropriate `Session ID` and
+     * `User Id`. They can be a random numbers or some type of user and session
+     * identifiers (preferably hashed). The length of the `Session ID` and
+     * `User ID` must not exceed 36 characters.
      * </pre>
      *
      * <code>string session = 1;</code>
@@ -783,13 +888,12 @@ private static final long serialVersionUID = 0L;
      * Format of the session name:
      * `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`, or
      * `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
-     * ID&gt;/sessions/&lt;Session ID&gt;`. Note: Environments and users are under
-     * construction and will be available soon. If &lt;Environment ID&gt; is not
-     * specified, we assume default 'draft' environment. If &lt;User ID&gt; is not
-     * specified, we are using "-". It’s up to the API caller to choose an
-     * appropriate &lt;Session ID&gt;. and &lt;User Id&gt;. They can be a random numbers or
-     * some type of user and session identifiers (preferably hashed). The length
-     * of the &lt;Session ID&gt; and &lt;User ID&gt; must not exceed 36 characters.
+     * ID&gt;/sessions/&lt;Session ID&gt;`. If `Environment ID` is not specified, we assume
+     * default 'draft' environment. If `User ID` is not specified, we are using
+     * "-". It’s up to the API caller to choose an appropriate `Session ID` and
+     * `User Id`. They can be a random numbers or some type of user and session
+     * identifiers (preferably hashed). The length of the `Session ID` and
+     * `User ID` must not exceed 36 characters.
      * </pre>
      *
      * <code>string session = 1;</code>
@@ -806,13 +910,12 @@ private static final long serialVersionUID = 0L;
      * Format of the session name:
      * `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`, or
      * `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
-     * ID&gt;/sessions/&lt;Session ID&gt;`. Note: Environments and users are under
-     * construction and will be available soon. If &lt;Environment ID&gt; is not
-     * specified, we assume default 'draft' environment. If &lt;User ID&gt; is not
-     * specified, we are using "-". It’s up to the API caller to choose an
-     * appropriate &lt;Session ID&gt;. and &lt;User Id&gt;. They can be a random numbers or
-     * some type of user and session identifiers (preferably hashed). The length
-     * of the &lt;Session ID&gt; and &lt;User ID&gt; must not exceed 36 characters.
+     * ID&gt;/sessions/&lt;Session ID&gt;`. If `Environment ID` is not specified, we assume
+     * default 'draft' environment. If `User ID` is not specified, we are using
+     * "-". It’s up to the API caller to choose an appropriate `Session ID` and
+     * `User Id`. They can be a random numbers or some type of user and session
+     * identifiers (preferably hashed). The length of the `Session ID` and
+     * `User ID` must not exceed 36 characters.
      * </pre>
      *
      * <code>string session = 1;</code>
@@ -1230,6 +1333,177 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private com.google.cloud.dialogflow.v2beta1.OutputAudioConfig outputAudioConfig_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.dialogflow.v2beta1.OutputAudioConfig, com.google.cloud.dialogflow.v2beta1.OutputAudioConfig.Builder, com.google.cloud.dialogflow.v2beta1.OutputAudioConfigOrBuilder> outputAudioConfigBuilder_;
+    /**
+     * <pre>
+     * Optional. Instructs the speech synthesizer how to generate the output
+     * audio. If this field is not set and agent-level speech synthesizer is not
+     * configured, no output audio is generated.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.OutputAudioConfig output_audio_config = 5;</code>
+     */
+    public boolean hasOutputAudioConfig() {
+      return outputAudioConfigBuilder_ != null || outputAudioConfig_ != null;
+    }
+    /**
+     * <pre>
+     * Optional. Instructs the speech synthesizer how to generate the output
+     * audio. If this field is not set and agent-level speech synthesizer is not
+     * configured, no output audio is generated.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.OutputAudioConfig output_audio_config = 5;</code>
+     */
+    public com.google.cloud.dialogflow.v2beta1.OutputAudioConfig getOutputAudioConfig() {
+      if (outputAudioConfigBuilder_ == null) {
+        return outputAudioConfig_ == null ? com.google.cloud.dialogflow.v2beta1.OutputAudioConfig.getDefaultInstance() : outputAudioConfig_;
+      } else {
+        return outputAudioConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Optional. Instructs the speech synthesizer how to generate the output
+     * audio. If this field is not set and agent-level speech synthesizer is not
+     * configured, no output audio is generated.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.OutputAudioConfig output_audio_config = 5;</code>
+     */
+    public Builder setOutputAudioConfig(com.google.cloud.dialogflow.v2beta1.OutputAudioConfig value) {
+      if (outputAudioConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        outputAudioConfig_ = value;
+        onChanged();
+      } else {
+        outputAudioConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Instructs the speech synthesizer how to generate the output
+     * audio. If this field is not set and agent-level speech synthesizer is not
+     * configured, no output audio is generated.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.OutputAudioConfig output_audio_config = 5;</code>
+     */
+    public Builder setOutputAudioConfig(
+        com.google.cloud.dialogflow.v2beta1.OutputAudioConfig.Builder builderForValue) {
+      if (outputAudioConfigBuilder_ == null) {
+        outputAudioConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        outputAudioConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Instructs the speech synthesizer how to generate the output
+     * audio. If this field is not set and agent-level speech synthesizer is not
+     * configured, no output audio is generated.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.OutputAudioConfig output_audio_config = 5;</code>
+     */
+    public Builder mergeOutputAudioConfig(com.google.cloud.dialogflow.v2beta1.OutputAudioConfig value) {
+      if (outputAudioConfigBuilder_ == null) {
+        if (outputAudioConfig_ != null) {
+          outputAudioConfig_ =
+            com.google.cloud.dialogflow.v2beta1.OutputAudioConfig.newBuilder(outputAudioConfig_).mergeFrom(value).buildPartial();
+        } else {
+          outputAudioConfig_ = value;
+        }
+        onChanged();
+      } else {
+        outputAudioConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Instructs the speech synthesizer how to generate the output
+     * audio. If this field is not set and agent-level speech synthesizer is not
+     * configured, no output audio is generated.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.OutputAudioConfig output_audio_config = 5;</code>
+     */
+    public Builder clearOutputAudioConfig() {
+      if (outputAudioConfigBuilder_ == null) {
+        outputAudioConfig_ = null;
+        onChanged();
+      } else {
+        outputAudioConfig_ = null;
+        outputAudioConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Instructs the speech synthesizer how to generate the output
+     * audio. If this field is not set and agent-level speech synthesizer is not
+     * configured, no output audio is generated.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.OutputAudioConfig output_audio_config = 5;</code>
+     */
+    public com.google.cloud.dialogflow.v2beta1.OutputAudioConfig.Builder getOutputAudioConfigBuilder() {
+      
+      onChanged();
+      return getOutputAudioConfigFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Optional. Instructs the speech synthesizer how to generate the output
+     * audio. If this field is not set and agent-level speech synthesizer is not
+     * configured, no output audio is generated.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.OutputAudioConfig output_audio_config = 5;</code>
+     */
+    public com.google.cloud.dialogflow.v2beta1.OutputAudioConfigOrBuilder getOutputAudioConfigOrBuilder() {
+      if (outputAudioConfigBuilder_ != null) {
+        return outputAudioConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return outputAudioConfig_ == null ?
+            com.google.cloud.dialogflow.v2beta1.OutputAudioConfig.getDefaultInstance() : outputAudioConfig_;
+      }
+    }
+    /**
+     * <pre>
+     * Optional. Instructs the speech synthesizer how to generate the output
+     * audio. If this field is not set and agent-level speech synthesizer is not
+     * configured, no output audio is generated.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.OutputAudioConfig output_audio_config = 5;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.dialogflow.v2beta1.OutputAudioConfig, com.google.cloud.dialogflow.v2beta1.OutputAudioConfig.Builder, com.google.cloud.dialogflow.v2beta1.OutputAudioConfigOrBuilder> 
+        getOutputAudioConfigFieldBuilder() {
+      if (outputAudioConfigBuilder_ == null) {
+        outputAudioConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.v2beta1.OutputAudioConfig, com.google.cloud.dialogflow.v2beta1.OutputAudioConfig.Builder, com.google.cloud.dialogflow.v2beta1.OutputAudioConfigOrBuilder>(
+                getOutputAudioConfig(),
+                getParentForChildren(),
+                isClean());
+        outputAudioConfig_ = null;
+      }
+      return outputAudioConfigBuilder_;
+    }
+
     private com.google.protobuf.ByteString inputAudio_ = com.google.protobuf.ByteString.EMPTY;
     /**
      * <pre>
@@ -1276,11 +1550,13 @@ private static final long serialVersionUID = 0L;
       onChanged();
       return this;
     }
+    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -1302,11 +1578,12 @@ private static final long serialVersionUID = 0L;
 
   private static final com.google.protobuf.Parser<StreamingDetectIntentRequest>
       PARSER = new com.google.protobuf.AbstractParser<StreamingDetectIntentRequest>() {
+    @java.lang.Override
     public StreamingDetectIntentRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-        return new StreamingDetectIntentRequest(input, extensionRegistry);
+      return new StreamingDetectIntentRequest(input, extensionRegistry);
     }
   };
 
@@ -1319,6 +1596,7 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.StreamingDetectIntentRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }

@@ -21,7 +21,6 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.grpc.GrpcCallContext;
 import com.google.api.gax.grpc.GrpcTransportChannel;
-import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.HeaderProvider;
@@ -34,10 +33,11 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.NoCredentials;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.firestore.FirestoreOptions;
-import com.google.cloud.firestore.v1beta1.FirestoreSettings;
-import com.google.cloud.firestore.v1beta1.stub.FirestoreStubSettings;
 import com.google.cloud.firestore.v1beta1.FirestoreClient.ListCollectionIdsPagedResponse;
+import com.google.cloud.firestore.v1beta1.FirestoreClient.ListDocumentsPagedResponse;
+import com.google.cloud.firestore.v1beta1.FirestoreSettings;
 import com.google.cloud.firestore.v1beta1.stub.FirestoreStub;
+import com.google.cloud.firestore.v1beta1.stub.FirestoreStubSettings;
 import com.google.cloud.firestore.v1beta1.stub.GrpcFirestoreStub;
 import com.google.cloud.grpc.GrpcTransportOptions;
 import com.google.cloud.grpc.GrpcTransportOptions.ExecutorFactory;
@@ -49,6 +49,7 @@ import com.google.firestore.v1beta1.CommitRequest;
 import com.google.firestore.v1beta1.CommitResponse;
 import com.google.firestore.v1beta1.DatabaseRootName;
 import com.google.firestore.v1beta1.ListCollectionIdsRequest;
+import com.google.firestore.v1beta1.ListDocumentsRequest;
 import com.google.firestore.v1beta1.ListenRequest;
 import com.google.firestore.v1beta1.ListenResponse;
 import com.google.firestore.v1beta1.RollbackRequest;
@@ -60,7 +61,6 @@ import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import java.io.IOException;
 import java.util.Collections;
-import java.util.concurrent.Executor;
 import java.util.concurrent.ScheduledExecutorService;
 
 /**
@@ -105,11 +105,8 @@ public class GrpcFirestoreRpc implements FirestoreRpc {
         DatabaseRootName databaseName =
             DatabaseRootName.of(options.getProjectId(), options.getDatabaseId());
 
-        settingsBuilder.setCredentialsProvider(
-            GrpcTransportOptions.setUpCredentialsProvider(options));
-        settingsBuilder.setTransportChannelProvider(
-            GrpcTransportOptions.setUpChannelProvider(
-                FirestoreSettings.defaultGrpcTransportProviderBuilder(), options));
+        settingsBuilder.setCredentialsProvider(options.getCredentialsProvider());
+        settingsBuilder.setTransportChannelProvider(options.getTransportChannelProvider());
 
         HeaderProvider internalHeaderProvider =
             FirestoreSettings.defaultApiClientHeaderProviderBuilder()
@@ -133,7 +130,8 @@ public class GrpcFirestoreRpc implements FirestoreRpc {
             }
           };
       FirestoreStubSettings.Builder firestoreBuilder =
-          FirestoreStubSettings.newBuilder(clientContext).applyToAllUnaryMethods(retrySettingsSetter);
+          FirestoreStubSettings.newBuilder(clientContext)
+              .applyToAllUnaryMethods(retrySettingsSetter);
       firestoreStub = GrpcFirestoreStub.create(firestoreBuilder.build());
     } catch (Exception e) {
       throw new IOException(e);
@@ -189,6 +187,12 @@ public class GrpcFirestoreRpc implements FirestoreRpc {
   public UnaryCallable<ListCollectionIdsRequest, ListCollectionIdsPagedResponse>
       listCollectionIdsPagedCallable() {
     return firestoreStub.listCollectionIdsPagedCallable();
+  }
+
+  @Override
+  public UnaryCallable<ListDocumentsRequest, ListDocumentsPagedResponse>
+      listDocumentsPagedCallable() {
+    return firestoreStub.listDocumentsPagedCallable();
   }
 
   @Override

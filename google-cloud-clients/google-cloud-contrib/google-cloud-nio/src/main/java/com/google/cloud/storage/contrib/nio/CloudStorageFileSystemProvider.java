@@ -20,6 +20,7 @@ import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 import static com.google.common.base.Strings.isNullOrEmpty;
 
+import com.google.api.gax.paging.Page;
 import com.google.auto.service.AutoService;
 import com.google.cloud.storage.Acl;
 import com.google.cloud.storage.Blob;
@@ -27,11 +28,13 @@ import com.google.cloud.storage.BlobId;
 import com.google.cloud.storage.BlobInfo;
 import com.google.cloud.storage.CopyWriter;
 import com.google.cloud.storage.Storage;
+import com.google.cloud.storage.Storage.BlobGetOption;
+import com.google.cloud.storage.Storage.BlobSourceOption;
 import com.google.cloud.storage.StorageException;
 import com.google.cloud.storage.StorageOptions;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.MoreObjects;
-import com.google.common.base.Throwables;
+import com.google.common.base.Strings;
 import com.google.common.collect.AbstractIterator;
 import com.google.common.net.UrlEscapers;
 import com.google.common.primitives.Ints;
@@ -88,7 +91,9 @@ import javax.inject.Singleton;
 public final class CloudStorageFileSystemProvider extends FileSystemProvider {
 
   private Storage storage;
-  private StorageOptions storageOptions;
+  final private StorageOptions storageOptions;
+  // if non-null, we pay via this project.
+  final private @Nullable String userProject;
 
   // used only when we create a new instance of CloudStorageFileSystemProvider.
   private static StorageOptions futureStorageOptions;
@@ -98,15 +103,19 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
     private final Filter<? super Path> filter;
     private final CloudStorageFileSystem fileSystem;
     private final String prefix;
+    // whether to make the paths absolute before returning them.
+    private final boolean absolutePaths;
 
     LazyPathIterator(CloudStorageFileSystem fileSystem,
                      String prefix,
                      Iterator<Blob> blobIterator,
-                     Filter<? super Path> filter) {
+                     Filter<? super Path> filter,
+                     boolean absolutePaths) {
       this.prefix = prefix;
       this.blobIterator = blobIterator;
       this.filter = filter;
       this.fileSystem = fileSystem;
+      this.absolutePaths = absolutePaths;
     }
 
     @Override
@@ -119,6 +128,9 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
             continue;
           }
           if (filter.accept(path)) {
+            if (absolutePaths) {
+              return path.toAbsolutePath();
+            }
             return path;
           }
         } catch (IOException ex) {
@@ -168,11 +180,28 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
    * @see CloudStorageFileSystem#forBucket(String)
    */
   public CloudStorageFileSystemProvider() {
-    this(futureStorageOptions);
+    this(
+        CloudStorageFileSystem
+            .getDefaultCloudStorageConfiguration()
+            .userProject(),
+        futureStorageOptions
+    );
   }
 
-  CloudStorageFileSystemProvider(@Nullable StorageOptions gcsStorageOptions) {
+  /**
+   * Internal constructor to use the user-provided default config, and a given userProject setting.
+   */
+  CloudStorageFileSystemProvider(@Nullable String userProject) {
+    this(userProject, futureStorageOptions);
+  }
+
+  /**
+   * Internal constructor, fully configurable. Note that null options means
+   * to use the system defaults (NOT the user-provided ones).
+   */
+  CloudStorageFileSystemProvider(@Nullable String userProject, @Nullable StorageOptions gcsStorageOptions) {
     this.storageOptions = gcsStorageOptions;
+    this.userProject = userProject;
   }
 
   // Initialize this.storage, once. This may throw an exception if default authentication
@@ -252,6 +281,16 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
     return getPath(URI.create(escaped));
   }
 
+  /**
+   * Open a file for reading or writing.
+   * To read receiver-pays buckets, specify the BlobSourceOption.userProject option.
+   *
+   * @param path: the path to the file to open or create
+   * @param options: options specifying how the file is opened, e.g. StandardOpenOption.WRITE or BlobSourceOption.userProject
+   * @param attrs: (not supported, values will be ignored)
+   * @return
+   * @throws IOException
+   */
   @Override
   public SeekableByteChannel newByteChannel(
       Path path, Set<? extends OpenOption> options, FileAttribute<?>... attrs) throws IOException {
@@ -270,6 +309,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
       throws IOException {
     initStorage();
     int maxChannelReopens = CloudStorageUtil.getMaxChannelReopensFromPath(path);
+    List<BlobSourceOption> blobSourceOptions = new ArrayList<>();
     for (OpenOption option : options) {
       if (option instanceof StandardOpenOption) {
         switch ((StandardOpenOption) option) {
@@ -293,22 +333,31 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
         }
       } else if (option instanceof OptionMaxChannelReopens) {
         maxChannelReopens = ((OptionMaxChannelReopens) option).maxChannelReopens();
+      } else if (option instanceof BlobSourceOption) {
+          blobSourceOptions.add((BlobSourceOption)option);
       } else {
         throw new UnsupportedOperationException(option.toString());
       }
     }
     CloudStoragePath cloudPath = CloudStorageUtil.checkPath(path);
-    if (cloudPath.seemsLikeADirectoryAndUsePseudoDirectories()) {
+    // passing false since we just want to check if it ends with /
+    if (cloudPath.seemsLikeADirectoryAndUsePseudoDirectories(null)) {
       throw new CloudStoragePseudoDirectoryException(cloudPath);
     }
-    return CloudStorageReadChannel.create(storage, cloudPath.getBlobId(), 0, maxChannelReopens);
+    return CloudStorageReadChannel.create(
+        storage,
+        cloudPath.getBlobId(),
+        0,
+        maxChannelReopens,
+        userProject,
+        blobSourceOptions.toArray(new BlobSourceOption[blobSourceOptions.size()]));
   }
 
   private SeekableByteChannel newWriteChannel(Path path, Set<? extends OpenOption> options)
       throws IOException {
     initStorage();
     CloudStoragePath cloudPath = CloudStorageUtil.checkPath(path);
-    if (cloudPath.seemsLikeADirectoryAndUsePseudoDirectories()) {
+    if (cloudPath.seemsLikeADirectoryAndUsePseudoDirectories(null)) {
       throw new CloudStoragePseudoDirectoryException(cloudPath);
     }
     BlobId file = cloudPath.getBlobId();
@@ -361,6 +410,9 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
         throw new UnsupportedOperationException(option.toString());
       }
     }
+    if (!isNullOrEmpty(userProject)) {
+      writeOptions.add(Storage.BlobWriteOption.userProject(userProject));
+    }
 
     if (!metas.isEmpty()) {
       infoBuilder.setMetadata(metas);
@@ -396,7 +448,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
   public boolean deleteIfExists(Path path) throws IOException {
     initStorage();
     CloudStoragePath cloudPath = CloudStorageUtil.checkPath(path);
-    if (cloudPath.seemsLikeADirectoryAndUsePseudoDirectories()) {
+    if (cloudPath.seemsLikeADirectoryAndUsePseudoDirectories(storage)) {
       // if the "folder" is empty then we're fine, otherwise complain
       // that we cannot act on folders.
       try (DirectoryStream<Path> paths = Files.newDirectoryStream(path)) {
@@ -413,7 +465,11 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
     // Loop will terminate via an exception if all retries are exhausted
     while (true) {
       try {
-        return storage.delete(cloudPath.getBlobId());
+        if (isNullOrEmpty(userProject)) {
+          return storage.delete(cloudPath.getBlobId());
+        } else {
+          return storage.delete(cloudPath.getBlobId(), Storage.BlobSourceOption.userProject(userProject));
+        }
       } catch (StorageException exs) {
         // Will rethrow a StorageException if all retries/reopens are exhausted
         retryHandler.handleStorageException(exs);
@@ -520,10 +576,13 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
             "File systems associated with paths don't agree on pseudo-directories.");
       }
     }
-    if (fromPath.seemsLikeADirectoryAndUsePseudoDirectories()) {
+    // We refuse to use paths that end in '/'. If the user puts a folder name
+    // but without the '/', they'll get whatever error GCS will return normally
+    // (if any).
+    if (fromPath.seemsLikeADirectoryAndUsePseudoDirectories(null)) {
       throw new CloudStoragePseudoDirectoryException(fromPath);
     }
-    if (toPath.seemsLikeADirectoryAndUsePseudoDirectories()) {
+    if (toPath.seemsLikeADirectoryAndUsePseudoDirectories(null)) {
       throw new CloudStoragePseudoDirectoryException(toPath);
     }
 
@@ -532,7 +591,12 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
     while (true) {
       try {
         if ( wantCopyAttributes ) {
-          BlobInfo blobInfo = storage.get(fromPath.getBlobId());
+          BlobInfo blobInfo;
+          if (isNullOrEmpty(userProject)) {
+            blobInfo = storage.get(fromPath.getBlobId());
+          } else {
+            blobInfo = storage.get(fromPath.getBlobId(), BlobGetOption.userProject(userProject));
+          }
           if ( null == blobInfo ) {
             throw new NoSuchFileException(fromPath.toString());
           }
@@ -559,6 +623,11 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
           copyReqBuilder = copyReqBuilder.setTarget(tgtInfo);
         } else {
           copyReqBuilder = copyReqBuilder.setTarget(tgtInfo, Storage.BlobTargetOption.doesNotExist());
+        }
+        if (!isNullOrEmpty(fromPath.getFileSystem().config().userProject())) {
+          copyReqBuilder = copyReqBuilder.setSourceOptions(BlobSourceOption.userProject(fromPath.getFileSystem().config().userProject()));
+        } else if (!isNullOrEmpty(toPath.getFileSystem().config().userProject())) {
+          copyReqBuilder = copyReqBuilder.setSourceOptions(BlobSourceOption.userProject(toPath.getFileSystem().config().userProject()));
         }
         CopyWriter copyWriter = storage.copy(copyReqBuilder.build());
         copyWriter.getResult();
@@ -608,11 +677,25 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
     while (true) {
       try {
         CloudStoragePath cloudPath = CloudStorageUtil.checkPath(path);
-        if ( cloudPath.seemsLikeADirectoryAndUsePseudoDirectories() ) {
-          return;
+        boolean nullId;
+        if (isNullOrEmpty(userProject)) {
+          nullId = storage.get(
+              cloudPath.getBlobId(),
+              Storage.BlobGetOption.fields(Storage.BlobField.ID))
+              == null;
+        } else {
+          nullId = storage.get(
+              cloudPath.getBlobId(),
+              Storage.BlobGetOption.fields(Storage.BlobField.ID),
+              Storage.BlobGetOption.userProject(userProject))
+              == null;
         }
-        if ( storage.get(cloudPath.getBlobId(), Storage.BlobGetOption.fields(Storage.BlobField.ID))
-                == null ) {
+        if (nullId) {
+          if ( cloudPath.seemsLikeADirectoryAndUsePseudoDirectories(storage) ) {
+            // there is no such file, but we're not signalling error because the
+            // path is a pseudo-directory.
+            return;
+          }
           throw new NoSuchFileException(path.toString());
         }
         break;
@@ -620,6 +703,14 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
         // Will rethrow a StorageException if all retries/reopens are exhausted
         retryHandler.handleStorageException(exs);
         // we're being aggressive by retrying even on scenarios where we'd normally reopen.
+      } catch (IllegalArgumentException exs) {
+        if ( CloudStorageUtil.checkPath(path).seemsLikeADirectoryAndUsePseudoDirectories(storage) ) {
+          // there is no such file, but we're not signalling error because the
+          // path is a pseudo-directory.
+          return;
+        }
+        // Other cause for IAE, forward the exception.
+        throw exs;
       }
     }
   }
@@ -639,14 +730,34 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
     while (true) {
       try {
         CloudStoragePath cloudPath = CloudStorageUtil.checkPath(path);
-        if ( cloudPath.seemsLikeADirectoryAndUsePseudoDirectories() ) {
-          @SuppressWarnings("unchecked")
-          A result = (A) new CloudStoragePseudoDirectoryAttributes(cloudPath);
-          return result;
+        BlobInfo blobInfo = null;
+        try {
+          BlobId blobId = cloudPath.getBlobId();
+          // Null or empty name won't give us a file, so skip. But perhaps it's a pseudodir.
+          if (!isNullOrEmpty(blobId.getName())) {
+            if (isNullOrEmpty(userProject)) {
+              blobInfo = storage.get(blobId);
+            } else {
+              blobInfo = storage.get(blobId, BlobGetOption.userProject(userProject));
+            }
+          }
+        } catch (IllegalArgumentException ex) {
+          // the path may be invalid but look like a folder. In that case, return a folder.
+          if (cloudPath.seemsLikeADirectoryAndUsePseudoDirectories(storage)) {
+            @SuppressWarnings("unchecked")
+            A result = (A) new CloudStoragePseudoDirectoryAttributes(cloudPath);
+            return result;
+          }
+          // No? Propagate.
+          throw ex;
         }
-        BlobInfo blobInfo = storage.get(cloudPath.getBlobId());
         // null size indicate a file that we haven't closed yet, so GCS treats it as not there yet.
         if ( null == blobInfo || blobInfo.getSize() == null ) {
+          if (cloudPath.seemsLikeADirectoryAndUsePseudoDirectories(storage)) {
+            @SuppressWarnings("unchecked")
+            A result = (A) new CloudStoragePseudoDirectoryAttributes(cloudPath);
+            return result;
+          }
           throw new NoSuchFileException(
               "gs://" + cloudPath.getBlobId().getBucket() + "/" + cloudPath.getBlobId().getName());
         }
@@ -695,7 +806,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
   }
 
   @Override
-  public DirectoryStream<Path> newDirectoryStream(Path dir, final Filter<? super Path> filter) {
+  public DirectoryStream<Path> newDirectoryStream(final Path dir, final Filter<? super Path> filter) {
     final CloudStoragePath cloudPath = CloudStorageUtil.checkPath(dir);
     checkNotNull(filter);
     initStorage();
@@ -704,14 +815,28 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
     // Loop will terminate via an exception if all retries are exhausted
     while (true) {
       try {
-        final String prefix = cloudPath.toRealPath().toString();
-        final Iterator<Blob> blobIterator = storage.list(cloudPath.bucket(),
-                Storage.BlobListOption.prefix(prefix), Storage.BlobListOption.currentDirectory(),
-                Storage.BlobListOption.fields()).iterateAll().iterator();
+        String prePrefix = cloudPath.normalize().toRealPath().toString();
+        // we can recognize paths without the final "/" as folders,
+        // but storage.list doesn't do the right thing with those, we need to append a "/".
+        if (!prePrefix.isEmpty() && !prePrefix.endsWith("/")) {
+          prePrefix += "/";
+        }
+        final String prefix = prePrefix;
+        Page<Blob> dirList;
+        if (isNullOrEmpty(userProject)) {
+          dirList = storage.list(cloudPath.bucket(),
+              Storage.BlobListOption.prefix(prefix), Storage.BlobListOption.currentDirectory(),
+              Storage.BlobListOption.fields());
+        } else {
+          dirList = storage.list(cloudPath.bucket(),
+              Storage.BlobListOption.prefix(prefix), Storage.BlobListOption.currentDirectory(),
+              Storage.BlobListOption.fields(), Storage.BlobListOption.userProject(userProject));
+        }
+        final Iterator<Blob> blobIterator = dirList.iterateAll().iterator();
         return new DirectoryStream<Path>() {
           @Override
           public Iterator<Path> iterator() {
-            return new LazyPathIterator(cloudPath.getFileSystem(), prefix, blobIterator, filter);
+            return new LazyPathIterator(cloudPath.getFileSystem(), prefix, blobIterator, filter, dir.isAbsolute());
           }
 
           @Override
@@ -761,6 +886,35 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
     return MoreObjects.toStringHelper(this).add("storage", storage).toString();
   }
 
+  /**
+   * @param bucketName the name of the bucket to check
+   * @return whether requester pays is enabled for that bucket
+   */
+  public boolean requesterPays(String bucketName) {
+    initStorage();
+    try {
+      // instead of true/false, this method returns true/null.
+      Boolean isRP = storage.get(bucketName).requesterPays();
+      return isRP != null && isRP.booleanValue();
+    } catch (StorageException sex) {
+      if (sex.getCode() == 400 && sex.getMessage().contains("Bucket is requester pays")) {
+        return true;
+      }
+      throw sex;
+    }
+  }
+
+  /**
+   * Returns a NEW CloudStorageFileSystemProvider identical to this one, but with
+   * userProject removed.
+   *
+   * Perhaps you want to call this is you realize you'll be working on a bucket that is
+   * not requester-pays.
+   */
+  public CloudStorageFileSystemProvider withNoUserProject() {
+    return new CloudStorageFileSystemProvider("", this.storageOptions);
+  }
+
   private IOException asIoException(StorageException oops) {
     // RPC API can only throw StorageException, but CloudStorageFileSystemProvider
     // can only throw IOException. Square peg, round hole.
@@ -775,7 +929,9 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
         throw new FileAlreadyExistsException(((FileAlreadyExistsException) cause).getReason());
       }
       // fallback
-      Throwables.propagateIfInstanceOf(oops.getCause(), IOException.class);
+      if (cause != null && cause instanceof IOException) {
+        return (IOException)cause;
+      }
     } catch (IOException okEx) {
       return okEx;
     }

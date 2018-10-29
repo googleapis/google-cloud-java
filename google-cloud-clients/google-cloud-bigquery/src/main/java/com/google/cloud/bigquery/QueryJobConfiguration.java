@@ -62,6 +62,8 @@ public final class QueryJobConfiguration extends JobConfiguration {
   private final Integer maximumBillingTier;
   private final List<SchemaUpdateOption> schemaUpdateOptions;
   private final EncryptionConfiguration destinationEncryptionConfiguration;
+  private final TimePartitioning timePartitioning;
+  private final Clustering clustering;
 
   /**
    * Priority levels for a query. If not specified the priority is assumed to be
@@ -104,6 +106,8 @@ public final class QueryJobConfiguration extends JobConfiguration {
     private Integer maximumBillingTier;
     private List<SchemaUpdateOption> schemaUpdateOptions;
     private EncryptionConfiguration destinationEncryptionConfiguration;
+    private TimePartitioning timePartitioning;
+    private Clustering clustering;
 
     private Builder() {
       super(Type.QUERY);
@@ -129,6 +133,8 @@ public final class QueryJobConfiguration extends JobConfiguration {
       this.maximumBillingTier = jobConfiguration.maximumBillingTier;
       this.schemaUpdateOptions = jobConfiguration.schemaUpdateOptions;
       this.destinationEncryptionConfiguration = jobConfiguration.destinationEncryptionConfiguration;
+      this.timePartitioning = jobConfiguration.timePartitioning;
+      this.clustering = jobConfiguration.clustering;
     }
 
     private Builder(com.google.api.services.bigquery.model.JobConfiguration configurationPb) {
@@ -194,6 +200,12 @@ public final class QueryJobConfiguration extends JobConfiguration {
       if (queryConfigurationPb.getDestinationEncryptionConfiguration() != null) {
         this.destinationEncryptionConfiguration = new EncryptionConfiguration.Builder(
             queryConfigurationPb.getDestinationEncryptionConfiguration()).build();
+      }
+      if (queryConfigurationPb.getTimePartitioning() != null) {
+        this.timePartitioning = TimePartitioning.fromPb(queryConfigurationPb.getTimePartitioning());
+      }
+      if (queryConfigurationPb.getClustering() != null) {
+        this.clustering = Clustering.fromPb(queryConfigurationPb.getClustering());
       }
     }
 
@@ -488,6 +500,22 @@ public final class QueryJobConfiguration extends JobConfiguration {
       return this;
     }
 
+    /**
+     * Sets the time partitioning specification for the destination table.
+     */
+    public Builder setTimePartitioning(TimePartitioning timePartitioning) {
+      this.timePartitioning = timePartitioning;
+      return this;
+    }
+
+    /**
+     * Sets the clustering specification for the destination table.
+     */
+    public Builder setClustering(Clustering clustering) {
+      this.clustering = clustering;
+      return this;
+    }
+
     public QueryJobConfiguration build() {
       return new QueryJobConfiguration(this);
     }
@@ -522,6 +550,8 @@ public final class QueryJobConfiguration extends JobConfiguration {
     this.maximumBillingTier = builder.maximumBillingTier;
     this.schemaUpdateOptions = builder.schemaUpdateOptions;
     this.destinationEncryptionConfiguration = builder.destinationEncryptionConfiguration;
+    this.timePartitioning = builder.timePartitioning;
+    this.clustering = builder.clustering;
   }
 
   /**
@@ -693,6 +723,16 @@ public final class QueryJobConfiguration extends JobConfiguration {
     return schemaUpdateOptions;
   }
 
+  /**
+   * Returns the time partitioning specification for the destination table.
+   */
+  public TimePartitioning getTimePartitioning() { return timePartitioning; }
+
+  /**
+   * Returns the clustering specification for the destination table.
+   */
+  public Clustering getClustering() { return clustering; }
+
   @Override
   public Builder toBuilder() {
     return new Builder(this);
@@ -718,7 +758,9 @@ public final class QueryJobConfiguration extends JobConfiguration {
         .add("dryRun", dryRun)
         .add("useLegacySql", useLegacySql)
         .add("maximumBillingTier", maximumBillingTier)
-        .add("schemaUpdateOptions", schemaUpdateOptions);
+        .add("schemaUpdateOptions", schemaUpdateOptions)
+        .add("timePartitioning", timePartitioning)
+        .add("clustering", clustering);
   }
 
   @Override
@@ -734,7 +776,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
         defaultDataset, flattenResults, priority, query, positionalParameters,
         namedParameters, tableDefinitions, useQueryCache,
         userDefinedFunctions, writeDisposition, dryRun, useLegacySql, maximumBillingTier,
-        schemaUpdateOptions);
+        schemaUpdateOptions, timePartitioning, clustering);
   }
 
   @Override
@@ -812,6 +854,12 @@ public final class QueryJobConfiguration extends JobConfiguration {
     }
     if (destinationEncryptionConfiguration != null) {
       queryConfigurationPb.setDestinationEncryptionConfiguration(destinationEncryptionConfiguration.toPb());
+    }
+    if (timePartitioning != null) {
+      queryConfigurationPb.setTimePartitioning(timePartitioning.toPb());
+    }
+    if (clustering != null) {
+      queryConfigurationPb.setClustering(clustering.toPb());
     }
     return configurationPb.setQuery(queryConfigurationPb);
   }

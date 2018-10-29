@@ -64,6 +64,21 @@ To use the `prod` environment:
       -Dbigtable.table=projects/my-project/instances/my-instance/tables/my-table
     ```
 
+### Testing code that uses Bigtable Admin
+
+Bigtable Admin integration tests are run against a real Bigtable instance.
+
+To run the tests:
+1. Set up the target table using `google-cloud-bigtable/scripts/setup-test-table.sh`
+2. Download the [JSON service account credentials file][create-service-account] from the Google
+   Developer's Console.
+3. Set the environment variable `GOOGLE_APPLICATION_CREDENTIALS` to the path of the credentials file
+4. Set the system property `bigtable.instance` to the full instance name you
+    created earlier. Example:
+    ```shell
+    mvn verify -am -pl google-cloud-bigtable-admin \
+      -Dbigtable.instance=projects/my-project/instances/my-instance
+    ```
 
 ### Testing code that uses Compute
 
@@ -333,4 +348,4 @@ Here is an example that uses the `RemoteSpannerHelper` to create a database.
 [cloud-platform-authentication]:https://cloud.google.com/docs/authentication/getting-started
 [cloud-platform-storage-authentication]:https://cloud.google.com/storage/docs/authentication?hl=en#service_accounts
 [create-service-account]:https://developers.google.com/identity/protocols/OAuth2ServiceAccount#creatinganaccount
-[cloud-nio]:https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-contrib/google-cloud-nio
+[cloud-nio]:https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-clients/google-cloud-contrib/google-cloud-nio

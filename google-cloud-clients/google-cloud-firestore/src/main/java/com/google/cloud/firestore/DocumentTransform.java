@@ -46,11 +46,11 @@ final class DocumentTransform {
     for (Map.Entry<FieldPath, Object> entry : values.entrySet()) {
       FieldPath path = entry.getKey();
       Object value = entry.getValue();
-      if (value == FieldValue.SERVER_TIMESTAMP_SENTINEL) {
-        FieldTransform.Builder fieldTransform = FieldTransform.newBuilder();
-        fieldTransform.setFieldPath(path.getEncodedPath());
-        fieldTransform.setSetToServerValue(FieldTransform.ServerValue.REQUEST_TIME);
-        transforms.put(path, fieldTransform.build());
+      if (value instanceof FieldValue) {
+        FieldValue fieldValue = (FieldValue) value;
+        if (fieldValue.includeInDocumentTransform()) {
+          transforms.put(path, fieldValue.toProto(path));
+        }
       } else if (value instanceof Map) {
         transforms.putAll(
             extractFromMap((Map<String, Object>) value, path, /* allowTransforms= */ true));
@@ -71,15 +71,15 @@ final class DocumentTransform {
     for (Map.Entry<String, Object> entry : values.entrySet()) {
       Object value = entry.getValue();
       path = path.append(FieldPath.of(entry.getKey()));
-      if (value == FieldValue.SERVER_TIMESTAMP_SENTINEL) {
+      if (value instanceof FieldValue) {
+        FieldValue fieldValue = (FieldValue) value;
         if (allowTransforms) {
-          FieldTransform.Builder fieldTransform = FieldTransform.newBuilder();
-          fieldTransform.setFieldPath(path.getEncodedPath());
-          fieldTransform.setSetToServerValue(FieldTransform.ServerValue.REQUEST_TIME);
-          transforms.put(path, fieldTransform.build());
+          if (fieldValue.includeInDocumentTransform()) {
+            transforms.put(path, fieldValue.toProto(path));
+          }
         } else {
           throw FirestoreException.invalidState(
-              "Server timestamps are not supported as Array values.");
+              fieldValue.getMethodName() + " is not supported inside of an array.");
         }
       } else if (value instanceof Map) {
         transforms.putAll(extractFromMap((Map<String, Object>) value, path, allowTransforms));
@@ -96,9 +96,9 @@ final class DocumentTransform {
     for (int i = 0; i < values.size(); ++i) {
       Object value = values.get(i);
       path = path.append(FieldPath.of(Integer.toString(i)));
-      if (value == FieldValue.SERVER_TIMESTAMP_SENTINEL) {
+      if (value instanceof FieldValue) {
         throw FirestoreException.invalidState(
-            "Server timestamps are not supported as Array values.");
+            ((FieldValue) value).getMethodName() + " is not supported inside of an array.");
       } else if (value instanceof Map) {
         extractFromMap((Map<String, Object>) value, path, false);
       } else if (value instanceof List) {

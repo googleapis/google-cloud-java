@@ -107,6 +107,11 @@ class OperationFutureUtil {
       public StatusCode getErrorCode() {
         return FakeStatusCode.of(StatusCode.Code.OK);
       }
+
+      @Override
+      public String getErrorMessage() {
+        return null;
+      }
     };
   }
 

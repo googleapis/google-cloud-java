@@ -46,6 +46,8 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
   private final Boolean ignoreUnknownValues;
   private final List<JobInfo.SchemaUpdateOption> schemaUpdateOptions;
   private final Boolean autodetect;
+  private final TimePartitioning timePartitioning;
+  private final Clustering clustering;
 
   public static final class Builder
       extends JobConfiguration.Builder<LoadJobConfiguration, Builder>
@@ -64,6 +66,8 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
     private List<String> projectionFields;
     private List<JobInfo.SchemaUpdateOption> schemaUpdateOptions;
     private Boolean autodetect;
+    private TimePartitioning timePartitioning;
+    private Clustering clustering;
 
     private Builder() {
       super(Type.LOAD);
@@ -84,6 +88,8 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
       this.autodetect = loadConfiguration.autodetect;
       this.destinationEncryptionConfiguration =
           loadConfiguration.destinationEncryptionConfiguration;
+      this.timePartitioning = loadConfiguration.timePartitioning;
+      this.clustering = loadConfiguration.clustering;
     }
 
     private Builder(com.google.api.services.bigquery.model.JobConfiguration configurationPb) {
@@ -140,6 +146,12 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
           schemaUpdateOptionsBuilder.add(JobInfo.SchemaUpdateOption.valueOf(rawSchemaUpdateOption));
         }
         this.schemaUpdateOptions = schemaUpdateOptionsBuilder.build();
+      }
+      if (loadConfigurationPb.getTimePartitioning() != null) {
+        this.timePartitioning = TimePartitioning.fromPb(loadConfigurationPb.getTimePartitioning());
+      }
+      if (loadConfigurationPb.getClustering() != null) {
+        this.clustering = Clustering.fromPb(loadConfigurationPb.getClustering());
       }
       this.autodetect = loadConfigurationPb.getAutodetect();
       if (loadConfigurationPb.getDestinationEncryptionConfiguration() != null) {
@@ -211,6 +223,18 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
       return this;
     }
 
+    @Override
+    public Builder setTimePartitioning(TimePartitioning timePartitioning) {
+      this.timePartitioning = timePartitioning;
+      return this;
+    }
+
+    @Override
+    public Builder setClustering(Clustering clustering) {
+      this.clustering = clustering;
+      return this;
+    }
+
     /**
      * Sets the fully-qualified URIs that point to source data in Google Cloud Storage (e.g.
      * gs://bucket/path). Each URI can contain one '*' wildcard character and it must come after the
@@ -253,6 +277,8 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
     this.schemaUpdateOptions = builder.schemaUpdateOptions;
     this.autodetect = builder.autodetect;
     this.destinationEncryptionConfiguration = builder.destinationEncryptionConfiguration;
+    this.timePartitioning = builder.timePartitioning;
+    this.clustering = builder.clustering;
   }
 
 
@@ -334,6 +360,12 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
   }
 
   @Override
+  public TimePartitioning getTimePartitioning() { return timePartitioning; }
+
+  @Override
+  public Clustering getClustering() { return clustering; }
+
+  @Override
   public List<JobInfo.SchemaUpdateOption> getSchemaUpdateOptions() {
     return schemaUpdateOptions;
   }
@@ -357,7 +389,9 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
         .add("ignoreUnknownValue", ignoreUnknownValues)
         .add("sourceUris", sourceUris)
         .add("schemaUpdateOptions", schemaUpdateOptions)
-        .add("autodetect", autodetect);
+        .add("autodetect", autodetect)
+        .add("timePartitioning", timePartitioning)
+        .add("clustering", clustering);
   }
 
   @Override
@@ -428,6 +462,12 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
     if (destinationEncryptionConfiguration != null) {
       loadConfigurationPb.setDestinationEncryptionConfiguration(
           destinationEncryptionConfiguration.toPb());
+    }
+    if (timePartitioning != null) {
+      loadConfigurationPb.setTimePartitioning(timePartitioning.toPb());
+    }
+    if (clustering != null) {
+      loadConfigurationPb.setClustering(clustering.toPb());
     }
     return new com.google.api.services.bigquery.model.JobConfiguration()
         .setLoad(loadConfigurationPb);

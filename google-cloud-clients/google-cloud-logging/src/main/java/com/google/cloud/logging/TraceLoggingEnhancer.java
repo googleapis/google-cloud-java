@@ -35,7 +35,7 @@ public class TraceLoggingEnhancer implements LoggingEnhancer {
   /**
    * Set the Trace ID associated with any logging done by the current thread.
    *
-   * @param id The traceID
+   * @param id The traceID, in the form projects/[PROJECT_ID]/traces/[TRACE_ID]
    */
   public static void setCurrentTraceId(String id) {
     if (id == null) {
@@ -58,7 +58,7 @@ public class TraceLoggingEnhancer implements LoggingEnhancer {
   public void enhanceLogEntry(com.google.cloud.logging.LogEntry.Builder builder) {
     String traceId = getCurrentTraceId();
     if (traceId != null) {
-      builder.addLabel(traceIdLabel, traceId);
+      builder.setTrace(traceId);
     }
   }
 }

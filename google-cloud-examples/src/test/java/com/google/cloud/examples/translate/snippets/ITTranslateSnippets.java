@@ -22,6 +22,7 @@ import static org.junit.Assert.assertTrue;
 
 import com.google.cloud.translate.Detection;
 import com.google.cloud.translate.Language;
+import com.google.cloud.translate.Translate;
 import com.google.cloud.translate.Translation;
 import com.google.cloud.translate.testing.RemoteTranslateHelper;
 
@@ -29,12 +30,21 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
+/**
+ * This class contains a number of snippets for the {@link Translate} interface.
+ *
+ * <p>After modifying snippets in this file, run {@code ./utilities/snippets
+ * ./google-cloud-examples/src/test/java/com/google/cloud/examples/translate/snippets/ITTranslateSnippets.java
+ * ./google-cloud-clients/google-cloud-translate/src/main/java/com/google/cloud/translate/Translate.java}
+ * to include the snippets in the Javadoc.
+ */
 public class ITTranslateSnippets {
 
-  private static TranslateSnippets translateSnippets;
+  private static Translate translate;
 
   private static final String[] LANGUAGES = {"af", "sq", "ar", "hy", "az", "eu", "be", "bn", "bs",
       "bg", "ca", "ceb", "ny", "zh-TW", "hr", "cs", "da", "nl", "en", "eo", "et", "tl", "fi", "fr",
@@ -47,13 +57,24 @@ public class ITTranslateSnippets {
   @BeforeClass
   public static void beforeClass() {
     RemoteTranslateHelper helper = RemoteTranslateHelper.create();
-    translateSnippets = new TranslateSnippets(helper.getOptions().getService());
+    translate = helper.getOptions().getService();
   }
 
   @Test
   public void testListSupportedLanguages() {
+    // [START translate_list_codes]
+    // TODO(developer): Uncomment these lines.
+    // import com.google.cloud.translate.*;
+    // Translate translate = TranslateOptions.getDefaultInstance().getService();
+
+    List<Language> languages = translate.listSupportedLanguages();
+
+    for (Language language : languages) {
+      System.out.printf("Name: %s, Code: %s\n", language.getName(), language.getCode());
+    }
+    // [END translate_list_codes]
+
     Set<String> supportedLanguages = new HashSet<>();
-    List<Language> languages = translateSnippets.listSupportedLanguages();
     for (Language language : languages) {
       supportedLanguages.add(language.getCode());
       assertNotNull(language.getName());
@@ -65,8 +86,20 @@ public class ITTranslateSnippets {
 
   @Test
   public void testListSupportedLanguagesWithTarget() {
+    // [START translate_list_language_names]
+    // TODO(developer): Uncomment these lines.
+    // import com.google.cloud.translate.*;
+    // Translate translate = TranslateOptions.getDefaultInstance().getService();
+
+    List<Language> languages = translate.listSupportedLanguages(
+            Translate.LanguageListOption.targetLanguage("es"));
+
+    for (Language language : languages) {
+      System.out.printf("Name: %s, Code: %s\n", language.getName(), language.getCode());
+    }
+    // [END translate_list_language_names]
+
     Set<String> supportedLanguages = new HashSet<>();
-    List<Language> languages = translateSnippets.listSupportedLanguagesWithTarget();
     for (Language language : languages) {
       supportedLanguages.add(language.getCode());
       assertNotNull(language.getName());
@@ -78,7 +111,10 @@ public class ITTranslateSnippets {
 
   @Test
   public void testDetectLanguageOfTexts() {
-    List<Detection> detections = translateSnippets.detectLanguageOfTexts();
+    // SNIPPET translate_detect_language_array
+    List<Detection> detections = translate.detect("Hello, World!", "¡Hola Mundo!");
+    // SNIPPET translate_detect_language_array
+
     Detection detection = detections.get(0);
     assertEquals("en", detection.getLanguage());
     detection = detections.get(1);
@@ -87,7 +123,22 @@ public class ITTranslateSnippets {
 
   @Test
   public void testDetectLanguageOfTextList() {
-    List<Detection> detections = translateSnippets.detectLanguageOfTextList();
+    // [START translate_detect_language]
+    // TODO(developer): Uncomment these lines.
+    // import com.google.cloud.translate.*;
+    // Translate translate = TranslateOptions.getDefaultInstance().getService();
+
+    List<String> texts = new LinkedList<>();
+    texts.add("Hello, World!");
+    texts.add("¡Hola Mundo!");
+    List<Detection> detections = translate.detect(texts);
+
+    System.out.println("Language(s) detected:");
+    for (Detection detection : detections) {
+      System.out.printf("\t%s\n", detection);
+    }
+    // [END translate_detect_language]
+
     Detection detection = detections.get(0);
     assertEquals("en", detection.getLanguage());
     detection = detections.get(1);
@@ -96,13 +147,21 @@ public class ITTranslateSnippets {
 
   @Test
   public void testDetectLanguageOfText() {
-    Detection detection = translateSnippets.detectLanguageOfText();
+    // SNIPPET translate_detect_language_string
+    Detection detection = translate.detect("Hello, World!");
+    // SNIPPET translate_detect_language_string
     assertEquals("en", detection.getLanguage());
   }
 
   @Test
   public void testTranslateTextList() {
-    List<Translation> translations = translateSnippets.translateTexts();
+    // SNIPPET translateTexts
+    List<String> texts = new LinkedList<>();
+    texts.add("Hello, World!");
+    texts.add("¡Hola Mundo!");
+    List<Translation> translations = translate.translate(texts);
+    // SNIPPET translateTexts
+
     Translation translation = translations.get(0);
     assertEquals("Hello, World!", translation.getTranslatedText());
     assertEquals("en", translation.getSourceLanguage());
@@ -112,15 +171,48 @@ public class ITTranslateSnippets {
   }
 
   @Test
+  public void testTranslateTextListWithOptions() {
+    // SNIPPET translateTextsWithOptions
+    List<String> texts = new LinkedList<>();
+    texts.add("¡Hola Mundo!");
+    List<Translation> translations = translate.translate(
+        texts,
+        Translate.TranslateOption.sourceLanguage("es"),
+        Translate.TranslateOption.targetLanguage("de"));
+    // SNIPPET translateTextsWithOptions
+    Translation translation = translations.get(0);
+    assertEquals("Hallo Welt!", translation.getTranslatedText());
+    assertEquals("es", translation.getSourceLanguage());
+  }
+
+  @Test
   public void testTranslateText() {
-    Translation translation = translateSnippets.translateText();
+    // [START translate_translate_text]
+    // TODO(developer): Uncomment these lines.
+    // import com.google.cloud.translate.*;
+    // Translate translate = TranslateOptions.getDefaultInstance().getService();
+
+    Translation translation = translate.translate("¡Hola Mundo!");
+    System.out.printf("Translated Text:\n\t%s\n", translation.getTranslatedText());
+    // [END translate_translate_text]
     assertEquals("Hello World!", translation.getTranslatedText());
     assertEquals("es", translation.getSourceLanguage());
   }
 
   @Test
-  public void testTranslateTextWithOptions() {
-    Translation translation = translateSnippets.translateTextWithOptions();
+  public void testTranslateTextWithModel() {
+    // [START translate_text_with_model]
+    Translation translation = translate.translate(
+        "Hola Mundo!",
+        Translate.TranslateOption.sourceLanguage("es"),
+        Translate.TranslateOption.targetLanguage("de"),
+        // Use "base" for standard edition, "nmt" for the premium model.
+        Translate.TranslateOption.model("nmt"));
+
+    System.out.printf(
+        "TranslatedText:\nText: %s\n",
+        translation.getTranslatedText());
+    // [END translate_text_with_model]
     assertEquals("Hallo Welt!", translation.getTranslatedText());
     assertEquals("es", translation.getSourceLanguage());
   }

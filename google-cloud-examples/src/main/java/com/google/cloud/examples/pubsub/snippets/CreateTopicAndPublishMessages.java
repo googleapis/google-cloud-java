@@ -25,10 +25,10 @@ import com.google.cloud.pubsub.v1.TopicAdminClient;
 import com.google.protobuf.ByteString;
 import com.google.pubsub.v1.ProjectTopicName;
 import com.google.pubsub.v1.PubsubMessage;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 /**
  * A snippet for Google Cloud Pub/Sub showing how to create a Pub/Sub topic and asynchronously
@@ -75,6 +75,7 @@ public class CreateTopicAndPublishMessages {
       if (publisher != null) {
         // When finished with the publisher, shutdown to free up resources.
         publisher.shutdown();
+        publisher.awaitTermination(1, TimeUnit.MINUTES);
       }
     }
     // [END pubsub_publish]
@@ -123,11 +124,12 @@ public class CreateTopicAndPublishMessages {
       if (publisher != null) {
         // When finished with the publisher, shutdown to free up resources.
         publisher.shutdown();
+        publisher.awaitTermination(1, TimeUnit.MINUTES);
       }
     }
     // [END pubsub_publish_error_handler]
   }
-  
+
   public static void main(String... args) throws Exception {
     createTopic();
     publishMessages();

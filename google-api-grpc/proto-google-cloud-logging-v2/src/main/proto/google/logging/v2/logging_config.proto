@@ -1,4 +1,4 @@
-// Copyright 2017 Google Inc.
+// Copyright 2018 Google LLC.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -11,6 +11,7 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
+//
 
 syntax = "proto3";
 
@@ -30,17 +31,45 @@ option java_package = "com.google.logging.v2";
 option php_namespace = "Google\\Cloud\\Logging\\V2";
 
 
-// Service for configuring sinks used to export log entries outside of
-// Stackdriver Logging.
+// Service for configuring sinks used to export log entries out of
+// Logging.
 service ConfigServiceV2 {
   // Lists sinks.
   rpc ListSinks(ListSinksRequest) returns (ListSinksResponse) {
-    option (google.api.http) = { get: "/v2/{parent=*/*}/sinks" };
+    option (google.api.http) = {
+      get: "/v2/{parent=*/*}/sinks"
+      additional_bindings {
+        get: "/v2/{parent=projects/*}/sinks"
+      }
+      additional_bindings {
+        get: "/v2/{parent=organizations/*}/sinks"
+      }
+      additional_bindings {
+        get: "/v2/{parent=folders/*}/sinks"
+      }
+      additional_bindings {
+        get: "/v2/{parent=billingAccounts/*}/sinks"
+      }
+    };
   }
 
   // Gets a sink.
   rpc GetSink(GetSinkRequest) returns (LogSink) {
-    option (google.api.http) = { get: "/v2/{sink_name=*/*/sinks/*}" };
+    option (google.api.http) = {
+      get: "/v2/{sink_name=*/*/sinks/*}"
+      additional_bindings {
+        get: "/v2/{sink_name=projects/*/sinks/*}"
+      }
+      additional_bindings {
+        get: "/v2/{sink_name=organizations/*/sinks/*}"
+      }
+      additional_bindings {
+        get: "/v2/{sink_name=folders/*/sinks/*}"
+      }
+      additional_bindings {
+        get: "/v2/{sink_name=billingAccounts/*/sinks/*}"
+      }
+    };
   }
 
   // Creates a sink that exports specified log entries to a destination.  The
@@ -48,7 +77,26 @@ service ConfigServiceV2 {
   // `writer_identity` is not permitted to write to the destination.  A sink can
   // export log entries only from the resource owning the sink.
   rpc CreateSink(CreateSinkRequest) returns (LogSink) {
-    option (google.api.http) = { post: "/v2/{parent=*/*}/sinks" body: "sink" };
+    option (google.api.http) = {
+      post: "/v2/{parent=*/*}/sinks"
+      body: "sink"
+      additional_bindings {
+        post: "/v2/{parent=projects/*}/sinks"
+        body: "sink"
+      }
+      additional_bindings {
+        post: "/v2/{parent=organizations/*}/sinks"
+        body: "sink"
+      }
+      additional_bindings {
+        post: "/v2/{parent=folders/*}/sinks"
+        body: "sink"
+      }
+      additional_bindings {
+        post: "/v2/{parent=billingAccounts/*}/sinks"
+        body: "sink"
+      }
+    };
   }
 
   // Updates a sink.  This method replaces the following fields in the existing
@@ -56,40 +104,169 @@ service ConfigServiceV2 {
   // The updated sink might also have a new `writer_identity`; see the
   // `unique_writer_identity` field.
   rpc UpdateSink(UpdateSinkRequest) returns (LogSink) {
-    option (google.api.http) = { put: "/v2/{sink_name=*/*/sinks/*}" body: "sink" };
+    option (google.api.http) = {
+      put: "/v2/{sink_name=*/*/sinks/*}"
+      body: "sink"
+      additional_bindings {
+        put: "/v2/{sink_name=projects/*/sinks/*}"
+        body: "sink"
+      }
+      additional_bindings {
+        put: "/v2/{sink_name=organizations/*/sinks/*}"
+        body: "sink"
+      }
+      additional_bindings {
+        put: "/v2/{sink_name=folders/*/sinks/*}"
+        body: "sink"
+      }
+      additional_bindings {
+        put: "/v2/{sink_name=billingAccounts/*/sinks/*}"
+        body: "sink"
+      }
+      additional_bindings {
+        patch: "/v2/{sink_name=projects/*/sinks/*}"
+        body: "sink"
+      }
+      additional_bindings {
+        patch: "/v2/{sink_name=organizations/*/sinks/*}"
+        body: "sink"
+      }
+      additional_bindings {
+        patch: "/v2/{sink_name=folders/*/sinks/*}"
+        body: "sink"
+      }
+      additional_bindings {
+        patch: "/v2/{sink_name=billingAccounts/*/sinks/*}"
+        body: "sink"
+      }
+    };
   }
 
   // Deletes a sink. If the sink has a unique `writer_identity`, then that
   // service account is also deleted.
   rpc DeleteSink(DeleteSinkRequest) returns (google.protobuf.Empty) {
-    option (google.api.http) = { delete: "/v2/{sink_name=*/*/sinks/*}" };
+    option (google.api.http) = {
+      delete: "/v2/{sink_name=*/*/sinks/*}"
+      additional_bindings {
+        delete: "/v2/{sink_name=projects/*/sinks/*}"
+      }
+      additional_bindings {
+        delete: "/v2/{sink_name=organizations/*/sinks/*}"
+      }
+      additional_bindings {
+        delete: "/v2/{sink_name=folders/*/sinks/*}"
+      }
+      additional_bindings {
+        delete: "/v2/{sink_name=billingAccounts/*/sinks/*}"
+      }
+    };
   }
 
   // Lists all the exclusions in a parent resource.
   rpc ListExclusions(ListExclusionsRequest) returns (ListExclusionsResponse) {
-    option (google.api.http) = { get: "/v2/{parent=*/*}/exclusions" };
+    option (google.api.http) = {
+      get: "/v2/{parent=*/*}/exclusions"
+      additional_bindings {
+        get: "/v2/{parent=projects/*}/exclusions"
+      }
+      additional_bindings {
+        get: "/v2/{parent=organizations/*}/exclusions"
+      }
+      additional_bindings {
+        get: "/v2/{parent=folders/*}/exclusions"
+      }
+      additional_bindings {
+        get: "/v2/{parent=billingAccounts/*}/exclusions"
+      }
+    };
   }
 
   // Gets the description of an exclusion.
   rpc GetExclusion(GetExclusionRequest) returns (LogExclusion) {
-    option (google.api.http) = { get: "/v2/{name=*/*/exclusions/*}" };
+    option (google.api.http) = {
+      get: "/v2/{name=*/*/exclusions/*}"
+      additional_bindings {
+        get: "/v2/{name=projects/*/exclusions/*}"
+      }
+      additional_bindings {
+        get: "/v2/{name=organizations/*/exclusions/*}"
+      }
+      additional_bindings {
+        get: "/v2/{name=folders/*/exclusions/*}"
+      }
+      additional_bindings {
+        get: "/v2/{name=billingAccounts/*/exclusions/*}"
+      }
+    };
   }
 
   // Creates a new exclusion in a specified parent resource.
   // Only log entries belonging to that resource can be excluded.
   // You can have up to 10 exclusions in a resource.
   rpc CreateExclusion(CreateExclusionRequest) returns (LogExclusion) {
-    option (google.api.http) = { post: "/v2/{parent=*/*}/exclusions" body: "exclusion" };
+    option (google.api.http) = {
+      post: "/v2/{parent=*/*}/exclusions"
+      body: "exclusion"
+      additional_bindings {
+        post: "/v2/{parent=projects/*}/exclusions"
+        body: "exclusion"
+      }
+      additional_bindings {
+        post: "/v2/{parent=organizations/*}/exclusions"
+        body: "exclusion"
+      }
+      additional_bindings {
+        post: "/v2/{parent=folders/*}/exclusions"
+        body: "exclusion"
+      }
+      additional_bindings {
+        post: "/v2/{parent=billingAccounts/*}/exclusions"
+        body: "exclusion"
+      }
+    };
   }
 
   // Changes one or more properties of an existing exclusion.
   rpc UpdateExclusion(UpdateExclusionRequest) returns (LogExclusion) {
-    option (google.api.http) = { patch: "/v2/{name=*/*/exclusions/*}" body: "exclusion" };
+    option (google.api.http) = {
+      patch: "/v2/{name=*/*/exclusions/*}"
+      body: "exclusion"
+      additional_bindings {
+        patch: "/v2/{name=projects/*/exclusions/*}"
+        body: "exclusion"
+      }
+      additional_bindings {
+        patch: "/v2/{name=organizations/*/exclusions/*}"
+        body: "exclusion"
+      }
+      additional_bindings {
+        patch: "/v2/{name=folders/*/exclusions/*}"
+        body: "exclusion"
+      }
+      additional_bindings {
+        patch: "/v2/{name=billingAccounts/*/exclusions/*}"
+        body: "exclusion"
+      }
+    };
   }
 
   // Deletes an exclusion.
   rpc DeleteExclusion(DeleteExclusionRequest) returns (google.protobuf.Empty) {
-    option (google.api.http) = { delete: "/v2/{name=*/*/exclusions/*}" };
+    option (google.api.http) = {
+      delete: "/v2/{name=*/*/exclusions/*}"
+      additional_bindings {
+        delete: "/v2/{name=projects/*/exclusions/*}"
+      }
+      additional_bindings {
+        delete: "/v2/{name=organizations/*/exclusions/*}"
+      }
+      additional_bindings {
+        delete: "/v2/{name=folders/*/exclusions/*}"
+      }
+      additional_bindings {
+        delete: "/v2/{name=billingAccounts/*/exclusions/*}"
+      }
+    };
   }
 }
 
@@ -99,7 +276,7 @@ service ConfigServiceV2 {
 // exported. The sink must be created within a project, organization, billing
 // account, or folder.
 message LogSink {
-  // Available log entry formats. Log entries can be written to Stackdriver
+  // Available log entry formats. Log entries can be written to
   // Logging in either format and can be exported in either format.
   // Version 2 is the preferred format.
   enum VersionFormat {
@@ -142,10 +319,10 @@ message LogSink {
 
   // Deprecated. The log entry format to use for this sink's exported log
   // entries.  The v2 format is used by default and cannot be changed.
-  VersionFormat output_version_format = 6;
+  VersionFormat output_version_format = 6 [deprecated = true];
 
   // Output only. An IAM identity&mdash;a service account or group&mdash;under
-  // which Stackdriver Logging writes the exported log entries to the sink's
+  // which Logging writes the exported log entries to the sink's
   // destination.  This field is set by
   // [sinks.create](/logging/docs/api/reference/rest/v2/projects.sinks/create)
   // and
@@ -176,10 +353,10 @@ message LogSink {
   bool include_children = 9;
 
   // Deprecated. This field is ignored when creating or updating sinks.
-  google.protobuf.Timestamp start_time = 10;
+  google.protobuf.Timestamp start_time = 10 [deprecated = true];
 
   // Deprecated. This field is ignored when creating or updating sinks.
-  google.protobuf.Timestamp end_time = 11;
+  google.protobuf.Timestamp end_time = 11 [deprecated = true];
 }
 
 // The parameters to `ListSinks`.
@@ -247,7 +424,7 @@ message CreateSinkRequest {
   // Optional. Determines the kind of IAM identity returned as `writer_identity`
   // in the new sink.  If this value is omitted or set to false, and if the
   // sink's parent is a project, then the value returned as `writer_identity` is
-  // the same group or service account used by Stackdriver Logging before the
+  // the same group or service account used by Logging before the
   // addition of writer identities to this API. The sink's destination must be
   // in the same project as the sink itself.
   //
@@ -300,7 +477,7 @@ message UpdateSinkRequest {
   // empty updateMask will be an error.
   //
   // For a detailed `FieldMask` definition, see
-  // https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
+  // https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.FieldMask
   //
   // Example: `updateMask=filter`.
   google.protobuf.FieldMask update_mask = 4;
@@ -320,7 +497,7 @@ message DeleteSinkRequest {
   string sink_name = 1;
 }
 
-// Specifies a set of log entries that are not to be stored in Stackdriver
+// Specifies a set of log entries that are not to be stored in
 // Logging. If your project receives a large volume of logs, you might be able
 // to use exclusions to reduce your chargeable logs. Exclusions are processed
 // after log sinks, so you can export log entries before they are excluded.
@@ -343,12 +520,12 @@ message LogExclusion {
   // For example, the following filter matches 99% of low-severity log
   // entries from load balancers:
   //
-  //     "resource.type=http_load_balancer severity<ERROR sample(insertId, 0.99)"
+  // `"resource.type=http_load_balancer severity<ERROR sample(insertId, 0.99)"`
   string filter = 3;
 
   // Optional. If set to True, then this exclusion is disabled and it does not
   // exclude any log entries. You can use
-  // [exclusions.patch](/logging/docs/alpha-exclusion/docs/reference/v2/rest/v2/projects.exclusions/patch)
+  // [exclusions.patch](/logging/docs/reference/v2/rest/v2/projects.exclusions/patch)
   // to change the value of this field.
   bool disabled = 4;
 }

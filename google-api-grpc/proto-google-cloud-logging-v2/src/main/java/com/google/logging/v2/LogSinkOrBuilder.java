@@ -97,23 +97,23 @@ public interface LogSinkOrBuilder extends
    * entries.  The v2 format is used by default and cannot be changed.
    * </pre>
    *
-   * <code>.google.logging.v2.LogSink.VersionFormat output_version_format = 6;</code>
+   * <code>.google.logging.v2.LogSink.VersionFormat output_version_format = 6 [deprecated = true];</code>
    */
-  int getOutputVersionFormatValue();
+  @java.lang.Deprecated int getOutputVersionFormatValue();
   /**
    * <pre>
    * Deprecated. The log entry format to use for this sink's exported log
    * entries.  The v2 format is used by default and cannot be changed.
    * </pre>
    *
-   * <code>.google.logging.v2.LogSink.VersionFormat output_version_format = 6;</code>
+   * <code>.google.logging.v2.LogSink.VersionFormat output_version_format = 6 [deprecated = true];</code>
    */
-  com.google.logging.v2.LogSink.VersionFormat getOutputVersionFormat();
+  @java.lang.Deprecated com.google.logging.v2.LogSink.VersionFormat getOutputVersionFormat();
 
   /**
    * <pre>
    * Output only. An IAM identity&amp;mdash;a service account or group&amp;mdash;under
-   * which Stackdriver Logging writes the exported log entries to the sink's
+   * which Logging writes the exported log entries to the sink's
    * destination.  This field is set by
    * [sinks.create](/logging/docs/api/reference/rest/v2/projects.sinks/create)
    * and
@@ -133,7 +133,7 @@ public interface LogSinkOrBuilder extends
   /**
    * <pre>
    * Output only. An IAM identity&amp;mdash;a service account or group&amp;mdash;under
-   * which Stackdriver Logging writes the exported log entries to the sink's
+   * which Logging writes the exported log entries to the sink's
    * destination.  This field is set by
    * [sinks.create](/logging/docs/api/reference/rest/v2/projects.sinks/create)
    * and
@@ -177,48 +177,48 @@ public interface LogSinkOrBuilder extends
    * Deprecated. This field is ignored when creating or updating sinks.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp start_time = 10;</code>
+   * <code>.google.protobuf.Timestamp start_time = 10 [deprecated = true];</code>
    */
-  boolean hasStartTime();
+  @java.lang.Deprecated boolean hasStartTime();
   /**
    * <pre>
    * Deprecated. This field is ignored when creating or updating sinks.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp start_time = 10;</code>
+   * <code>.google.protobuf.Timestamp start_time = 10 [deprecated = true];</code>
    */
-  com.google.protobuf.Timestamp getStartTime();
+  @java.lang.Deprecated com.google.protobuf.Timestamp getStartTime();
   /**
    * <pre>
    * Deprecated. This field is ignored when creating or updating sinks.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp start_time = 10;</code>
+   * <code>.google.protobuf.Timestamp start_time = 10 [deprecated = true];</code>
    */
-  com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder();
+  @java.lang.Deprecated com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder();
 
   /**
    * <pre>
    * Deprecated. This field is ignored when creating or updating sinks.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp end_time = 11;</code>
+   * <code>.google.protobuf.Timestamp end_time = 11 [deprecated = true];</code>
    */
-  boolean hasEndTime();
+  @java.lang.Deprecated boolean hasEndTime();
   /**
    * <pre>
    * Deprecated. This field is ignored when creating or updating sinks.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp end_time = 11;</code>
+   * <code>.google.protobuf.Timestamp end_time = 11 [deprecated = true];</code>
    */
-  com.google.protobuf.Timestamp getEndTime();
+  @java.lang.Deprecated com.google.protobuf.Timestamp getEndTime();
   /**
    * <pre>
    * Deprecated. This field is ignored when creating or updating sinks.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp end_time = 11;</code>
+   * <code>.google.protobuf.Timestamp end_time = 11 [deprecated = true];</code>
    */
-  com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder();
+  @java.lang.Deprecated com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder();
 }

@@ -25,6 +25,7 @@ private static final long serialVersionUID = 0L;
     pageSize_ = 0;
     pageToken_ = "";
     type_ = 0;
+    orderBy_ = "";
   }
 
   @java.lang.Override
@@ -37,6 +38,9 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -48,13 +52,6 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
           case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
@@ -84,6 +81,19 @@ private static final long serialVersionUID = 0L;
             type_ = rawValue;
             break;
           }
+          case 50: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            orderBy_ = s;
+            break;
+          }
+          default: {
+            if (!parseUnknownFieldProto3(
+                input, unknownFields, extensionRegistry, tag)) {
+              done = true;
+            }
+            break;
+          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -101,6 +111,7 @@ private static final long serialVersionUID = 0L;
     return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_ListDlpJobsRequest_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_ListDlpJobsRequest_fieldAccessorTable
@@ -301,11 +312,73 @@ private static final long serialVersionUID = 0L;
    * <code>.google.privacy.dlp.v2.DlpJobType type = 5;</code>
    */
   public com.google.privacy.dlp.v2.DlpJobType getType() {
+    @SuppressWarnings("deprecation")
     com.google.privacy.dlp.v2.DlpJobType result = com.google.privacy.dlp.v2.DlpJobType.valueOf(type_);
     return result == null ? com.google.privacy.dlp.v2.DlpJobType.UNRECOGNIZED : result;
   }
 
+  public static final int ORDER_BY_FIELD_NUMBER = 6;
+  private volatile java.lang.Object orderBy_;
+  /**
+   * <pre>
+   * Optional comma separated list of fields to order by,
+   * followed by `asc` or `desc` postfix. This list is case-insensitive,
+   * default sorting order is ascending, redundant space characters are
+   * insignificant.
+   * Example: `name asc, end_time asc, create_time desc`
+   * Supported fields are:
+   * - `create_time`: corresponds to time the job was created.
+   * - `end_time`: corresponds to time the job ended.
+   * - `name`: corresponds to job's name.
+   * - `state`: corresponds to `state`
+   * </pre>
+   *
+   * <code>string order_by = 6;</code>
+   */
+  public java.lang.String getOrderBy() {
+    java.lang.Object ref = orderBy_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      orderBy_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Optional comma separated list of fields to order by,
+   * followed by `asc` or `desc` postfix. This list is case-insensitive,
+   * default sorting order is ascending, redundant space characters are
+   * insignificant.
+   * Example: `name asc, end_time asc, create_time desc`
+   * Supported fields are:
+   * - `create_time`: corresponds to time the job was created.
+   * - `end_time`: corresponds to time the job ended.
+   * - `name`: corresponds to job's name.
+   * - `state`: corresponds to `state`
+   * </pre>
+   *
+   * <code>string order_by = 6;</code>
+   */
+  public com.google.protobuf.ByteString
+      getOrderByBytes() {
+    java.lang.Object ref = orderBy_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      orderBy_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -315,6 +388,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
+  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (!getFilterBytes().isEmpty()) {
@@ -332,9 +406,13 @@ private static final long serialVersionUID = 0L;
     if (type_ != com.google.privacy.dlp.v2.DlpJobType.DLP_JOB_TYPE_UNSPECIFIED.getNumber()) {
       output.writeEnum(5, type_);
     }
+    if (!getOrderByBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, orderBy_);
+    }
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -356,6 +434,9 @@ private static final long serialVersionUID = 0L;
     if (type_ != com.google.privacy.dlp.v2.DlpJobType.DLP_JOB_TYPE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(5, type_);
+    }
+    if (!getOrderByBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, orderBy_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -382,6 +463,8 @@ private static final long serialVersionUID = 0L;
     result = result && getPageToken()
         .equals(other.getPageToken());
     result = result && type_ == other.type_;
+    result = result && getOrderBy()
+        .equals(other.getOrderBy());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -403,6 +486,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getPageToken().hashCode();
     hash = (37 * hash) + TYPE_FIELD_NUMBER;
     hash = (53 * hash) + type_;
+    hash = (37 * hash) + ORDER_BY_FIELD_NUMBER;
+    hash = (53 * hash) + getOrderBy().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -478,6 +563,7 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
+  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
@@ -485,6 +571,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder(com.google.privacy.dlp.v2.ListDlpJobsRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
@@ -512,6 +599,7 @@ private static final long serialVersionUID = 0L;
       return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_ListDlpJobsRequest_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_ListDlpJobsRequest_fieldAccessorTable
@@ -534,6 +622,7 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
       }
     }
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       parent_ = "";
@@ -546,18 +635,23 @@ private static final long serialVersionUID = 0L;
 
       type_ = 0;
 
+      orderBy_ = "";
+
       return this;
     }
 
+    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
       return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_ListDlpJobsRequest_descriptor;
     }
 
+    @java.lang.Override
     public com.google.privacy.dlp.v2.ListDlpJobsRequest getDefaultInstanceForType() {
       return com.google.privacy.dlp.v2.ListDlpJobsRequest.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.privacy.dlp.v2.ListDlpJobsRequest build() {
       com.google.privacy.dlp.v2.ListDlpJobsRequest result = buildPartial();
       if (!result.isInitialized()) {
@@ -566,6 +660,7 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.privacy.dlp.v2.ListDlpJobsRequest buildPartial() {
       com.google.privacy.dlp.v2.ListDlpJobsRequest result = new com.google.privacy.dlp.v2.ListDlpJobsRequest(this);
       result.parent_ = parent_;
@@ -573,36 +668,44 @@ private static final long serialVersionUID = 0L;
       result.pageSize_ = pageSize_;
       result.pageToken_ = pageToken_;
       result.type_ = type_;
+      result.orderBy_ = orderBy_;
       onBuilt();
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.privacy.dlp.v2.ListDlpJobsRequest) {
         return mergeFrom((com.google.privacy.dlp.v2.ListDlpJobsRequest)other);
@@ -632,15 +735,21 @@ private static final long serialVersionUID = 0L;
       if (other.type_ != 0) {
         setTypeValue(other.getTypeValue());
       }
+      if (!other.getOrderBy().isEmpty()) {
+        orderBy_ = other.orderBy_;
+        onChanged();
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1080,6 +1189,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.privacy.dlp.v2.DlpJobType type = 5;</code>
      */
     public com.google.privacy.dlp.v2.DlpJobType getType() {
+      @SuppressWarnings("deprecation")
       com.google.privacy.dlp.v2.DlpJobType result = com.google.privacy.dlp.v2.DlpJobType.valueOf(type_);
       return result == null ? com.google.privacy.dlp.v2.DlpJobType.UNRECOGNIZED : result;
     }
@@ -1112,11 +1222,147 @@ private static final long serialVersionUID = 0L;
       onChanged();
       return this;
     }
+
+    private java.lang.Object orderBy_ = "";
+    /**
+     * <pre>
+     * Optional comma separated list of fields to order by,
+     * followed by `asc` or `desc` postfix. This list is case-insensitive,
+     * default sorting order is ascending, redundant space characters are
+     * insignificant.
+     * Example: `name asc, end_time asc, create_time desc`
+     * Supported fields are:
+     * - `create_time`: corresponds to time the job was created.
+     * - `end_time`: corresponds to time the job ended.
+     * - `name`: corresponds to job's name.
+     * - `state`: corresponds to `state`
+     * </pre>
+     *
+     * <code>string order_by = 6;</code>
+     */
+    public java.lang.String getOrderBy() {
+      java.lang.Object ref = orderBy_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        orderBy_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Optional comma separated list of fields to order by,
+     * followed by `asc` or `desc` postfix. This list is case-insensitive,
+     * default sorting order is ascending, redundant space characters are
+     * insignificant.
+     * Example: `name asc, end_time asc, create_time desc`
+     * Supported fields are:
+     * - `create_time`: corresponds to time the job was created.
+     * - `end_time`: corresponds to time the job ended.
+     * - `name`: corresponds to job's name.
+     * - `state`: corresponds to `state`
+     * </pre>
+     *
+     * <code>string order_by = 6;</code>
+     */
+    public com.google.protobuf.ByteString
+        getOrderByBytes() {
+      java.lang.Object ref = orderBy_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        orderBy_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Optional comma separated list of fields to order by,
+     * followed by `asc` or `desc` postfix. This list is case-insensitive,
+     * default sorting order is ascending, redundant space characters are
+     * insignificant.
+     * Example: `name asc, end_time asc, create_time desc`
+     * Supported fields are:
+     * - `create_time`: corresponds to time the job was created.
+     * - `end_time`: corresponds to time the job ended.
+     * - `name`: corresponds to job's name.
+     * - `state`: corresponds to `state`
+     * </pre>
+     *
+     * <code>string order_by = 6;</code>
+     */
+    public Builder setOrderBy(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      orderBy_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional comma separated list of fields to order by,
+     * followed by `asc` or `desc` postfix. This list is case-insensitive,
+     * default sorting order is ascending, redundant space characters are
+     * insignificant.
+     * Example: `name asc, end_time asc, create_time desc`
+     * Supported fields are:
+     * - `create_time`: corresponds to time the job was created.
+     * - `end_time`: corresponds to time the job ended.
+     * - `name`: corresponds to job's name.
+     * - `state`: corresponds to `state`
+     * </pre>
+     *
+     * <code>string order_by = 6;</code>
+     */
+    public Builder clearOrderBy() {
+      
+      orderBy_ = getDefaultInstance().getOrderBy();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional comma separated list of fields to order by,
+     * followed by `asc` or `desc` postfix. This list is case-insensitive,
+     * default sorting order is ascending, redundant space characters are
+     * insignificant.
+     * Example: `name asc, end_time asc, create_time desc`
+     * Supported fields are:
+     * - `create_time`: corresponds to time the job was created.
+     * - `end_time`: corresponds to time the job ended.
+     * - `name`: corresponds to job's name.
+     * - `state`: corresponds to `state`
+     * </pre>
+     *
+     * <code>string order_by = 6;</code>
+     */
+    public Builder setOrderByBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      orderBy_ = value;
+      onChanged();
+      return this;
+    }
+    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -1138,11 +1384,12 @@ private static final long serialVersionUID = 0L;
 
   private static final com.google.protobuf.Parser<ListDlpJobsRequest>
       PARSER = new com.google.protobuf.AbstractParser<ListDlpJobsRequest>() {
+    @java.lang.Override
     public ListDlpJobsRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ListDlpJobsRequest(input, extensionRegistry);
+      return new ListDlpJobsRequest(input, extensionRegistry);
     }
   };
 
@@ -1155,6 +1402,7 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.privacy.dlp.v2.ListDlpJobsRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }

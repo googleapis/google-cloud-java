@@ -69,6 +69,9 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -80,13 +83,6 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
           case 10: {
             com.google.rpc.Status.Builder subBuilder = null;
             if (error_ != null) {
@@ -115,6 +111,13 @@ private static final long serialVersionUID = 0L;
             speechEventType_ = rawValue;
             break;
           }
+          default: {
+            if (!parseUnknownFieldProto3(
+                input, unknownFields, extensionRegistry, tag)) {
+              done = true;
+            }
+            break;
+          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -135,6 +138,7 @@ private static final long serialVersionUID = 0L;
     return com.google.cloud.speech.v1.SpeechProto.internal_static_google_cloud_speech_v1_StreamingRecognizeResponse_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.speech.v1.SpeechProto.internal_static_google_cloud_speech_v1_StreamingRecognizeResponse_fieldAccessorTable
@@ -277,7 +281,7 @@ private static final long serialVersionUID = 0L;
   private com.google.rpc.Status error_;
   /**
    * <pre>
-   * *Output-only* If set, returns a [google.rpc.Status][google.rpc.Status] message that
+   * Output only. If set, returns a [google.rpc.Status][google.rpc.Status] message that
    * specifies the error for the operation.
    * </pre>
    *
@@ -288,7 +292,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * *Output-only* If set, returns a [google.rpc.Status][google.rpc.Status] message that
+   * Output only. If set, returns a [google.rpc.Status][google.rpc.Status] message that
    * specifies the error for the operation.
    * </pre>
    *
@@ -299,7 +303,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * *Output-only* If set, returns a [google.rpc.Status][google.rpc.Status] message that
+   * Output only. If set, returns a [google.rpc.Status][google.rpc.Status] message that
    * specifies the error for the operation.
    * </pre>
    *
@@ -313,10 +317,10 @@ private static final long serialVersionUID = 0L;
   private java.util.List<com.google.cloud.speech.v1.StreamingRecognitionResult> results_;
   /**
    * <pre>
-   * *Output-only* This repeated list contains zero or more results that
+   * Output only. This repeated list contains zero or more results that
    * correspond to consecutive portions of the audio currently being processed.
-   * It contains zero or more `is_final=false` results followed by zero or one
-   * `is_final=true` result (the newly settled portion).
+   * It contains zero or one `is_final=true` result (the newly settled portion),
+   * followed by zero or more `is_final=false` results (the interim results).
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v1.StreamingRecognitionResult results = 2;</code>
@@ -326,10 +330,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * *Output-only* This repeated list contains zero or more results that
+   * Output only. This repeated list contains zero or more results that
    * correspond to consecutive portions of the audio currently being processed.
-   * It contains zero or more `is_final=false` results followed by zero or one
-   * `is_final=true` result (the newly settled portion).
+   * It contains zero or one `is_final=true` result (the newly settled portion),
+   * followed by zero or more `is_final=false` results (the interim results).
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v1.StreamingRecognitionResult results = 2;</code>
@@ -340,10 +344,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * *Output-only* This repeated list contains zero or more results that
+   * Output only. This repeated list contains zero or more results that
    * correspond to consecutive portions of the audio currently being processed.
-   * It contains zero or more `is_final=false` results followed by zero or one
-   * `is_final=true` result (the newly settled portion).
+   * It contains zero or one `is_final=true` result (the newly settled portion),
+   * followed by zero or more `is_final=false` results (the interim results).
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v1.StreamingRecognitionResult results = 2;</code>
@@ -353,10 +357,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * *Output-only* This repeated list contains zero or more results that
+   * Output only. This repeated list contains zero or more results that
    * correspond to consecutive portions of the audio currently being processed.
-   * It contains zero or more `is_final=false` results followed by zero or one
-   * `is_final=true` result (the newly settled portion).
+   * It contains zero or one `is_final=true` result (the newly settled portion),
+   * followed by zero or more `is_final=false` results (the interim results).
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v1.StreamingRecognitionResult results = 2;</code>
@@ -366,10 +370,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * *Output-only* This repeated list contains zero or more results that
+   * Output only. This repeated list contains zero or more results that
    * correspond to consecutive portions of the audio currently being processed.
-   * It contains zero or more `is_final=false` results followed by zero or one
-   * `is_final=true` result (the newly settled portion).
+   * It contains zero or one `is_final=true` result (the newly settled portion),
+   * followed by zero or more `is_final=false` results (the interim results).
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v1.StreamingRecognitionResult results = 2;</code>
@@ -383,7 +387,7 @@ private static final long serialVersionUID = 0L;
   private int speechEventType_;
   /**
    * <pre>
-   * *Output-only* Indicates the type of speech event.
+   * Output only. Indicates the type of speech event.
    * </pre>
    *
    * <code>.google.cloud.speech.v1.StreamingRecognizeResponse.SpeechEventType speech_event_type = 4;</code>
@@ -393,17 +397,19 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * *Output-only* Indicates the type of speech event.
+   * Output only. Indicates the type of speech event.
    * </pre>
    *
    * <code>.google.cloud.speech.v1.StreamingRecognizeResponse.SpeechEventType speech_event_type = 4;</code>
    */
   public com.google.cloud.speech.v1.StreamingRecognizeResponse.SpeechEventType getSpeechEventType() {
+    @SuppressWarnings("deprecation")
     com.google.cloud.speech.v1.StreamingRecognizeResponse.SpeechEventType result = com.google.cloud.speech.v1.StreamingRecognizeResponse.SpeechEventType.valueOf(speechEventType_);
     return result == null ? com.google.cloud.speech.v1.StreamingRecognizeResponse.SpeechEventType.UNRECOGNIZED : result;
   }
 
   private byte memoizedIsInitialized = -1;
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -413,6 +419,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
+  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (error_ != null) {
@@ -427,6 +434,7 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -564,6 +572,7 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
+  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
@@ -571,6 +580,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder(com.google.cloud.speech.v1.StreamingRecognizeResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
@@ -633,6 +643,7 @@ private static final long serialVersionUID = 0L;
       return com.google.cloud.speech.v1.SpeechProto.internal_static_google_cloud_speech_v1_StreamingRecognizeResponse_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.speech.v1.SpeechProto.internal_static_google_cloud_speech_v1_StreamingRecognizeResponse_fieldAccessorTable
@@ -656,6 +667,7 @@ private static final long serialVersionUID = 0L;
         getResultsFieldBuilder();
       }
     }
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       if (errorBuilder_ == null) {
@@ -675,15 +687,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
       return com.google.cloud.speech.v1.SpeechProto.internal_static_google_cloud_speech_v1_StreamingRecognizeResponse_descriptor;
     }
 
+    @java.lang.Override
     public com.google.cloud.speech.v1.StreamingRecognizeResponse getDefaultInstanceForType() {
       return com.google.cloud.speech.v1.StreamingRecognizeResponse.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.cloud.speech.v1.StreamingRecognizeResponse build() {
       com.google.cloud.speech.v1.StreamingRecognizeResponse result = buildPartial();
       if (!result.isInitialized()) {
@@ -692,6 +707,7 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.cloud.speech.v1.StreamingRecognizeResponse buildPartial() {
       com.google.cloud.speech.v1.StreamingRecognizeResponse result = new com.google.cloud.speech.v1.StreamingRecognizeResponse(this);
       int from_bitField0_ = bitField0_;
@@ -716,32 +732,39 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.speech.v1.StreamingRecognizeResponse) {
         return mergeFrom((com.google.cloud.speech.v1.StreamingRecognizeResponse)other);
@@ -790,10 +813,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -818,7 +843,7 @@ private static final long serialVersionUID = 0L;
         com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder> errorBuilder_;
     /**
      * <pre>
-     * *Output-only* If set, returns a [google.rpc.Status][google.rpc.Status] message that
+     * Output only. If set, returns a [google.rpc.Status][google.rpc.Status] message that
      * specifies the error for the operation.
      * </pre>
      *
@@ -829,7 +854,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * *Output-only* If set, returns a [google.rpc.Status][google.rpc.Status] message that
+     * Output only. If set, returns a [google.rpc.Status][google.rpc.Status] message that
      * specifies the error for the operation.
      * </pre>
      *
@@ -844,7 +869,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * *Output-only* If set, returns a [google.rpc.Status][google.rpc.Status] message that
+     * Output only. If set, returns a [google.rpc.Status][google.rpc.Status] message that
      * specifies the error for the operation.
      * </pre>
      *
@@ -865,7 +890,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * *Output-only* If set, returns a [google.rpc.Status][google.rpc.Status] message that
+     * Output only. If set, returns a [google.rpc.Status][google.rpc.Status] message that
      * specifies the error for the operation.
      * </pre>
      *
@@ -884,7 +909,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * *Output-only* If set, returns a [google.rpc.Status][google.rpc.Status] message that
+     * Output only. If set, returns a [google.rpc.Status][google.rpc.Status] message that
      * specifies the error for the operation.
      * </pre>
      *
@@ -907,7 +932,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * *Output-only* If set, returns a [google.rpc.Status][google.rpc.Status] message that
+     * Output only. If set, returns a [google.rpc.Status][google.rpc.Status] message that
      * specifies the error for the operation.
      * </pre>
      *
@@ -926,7 +951,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * *Output-only* If set, returns a [google.rpc.Status][google.rpc.Status] message that
+     * Output only. If set, returns a [google.rpc.Status][google.rpc.Status] message that
      * specifies the error for the operation.
      * </pre>
      *
@@ -939,7 +964,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * *Output-only* If set, returns a [google.rpc.Status][google.rpc.Status] message that
+     * Output only. If set, returns a [google.rpc.Status][google.rpc.Status] message that
      * specifies the error for the operation.
      * </pre>
      *
@@ -955,7 +980,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * *Output-only* If set, returns a [google.rpc.Status][google.rpc.Status] message that
+     * Output only. If set, returns a [google.rpc.Status][google.rpc.Status] message that
      * specifies the error for the operation.
      * </pre>
      *
@@ -989,10 +1014,10 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * *Output-only* This repeated list contains zero or more results that
+     * Output only. This repeated list contains zero or more results that
      * correspond to consecutive portions of the audio currently being processed.
-     * It contains zero or more `is_final=false` results followed by zero or one
-     * `is_final=true` result (the newly settled portion).
+     * It contains zero or one `is_final=true` result (the newly settled portion),
+     * followed by zero or more `is_final=false` results (the interim results).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1.StreamingRecognitionResult results = 2;</code>
@@ -1006,10 +1031,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * *Output-only* This repeated list contains zero or more results that
+     * Output only. This repeated list contains zero or more results that
      * correspond to consecutive portions of the audio currently being processed.
-     * It contains zero or more `is_final=false` results followed by zero or one
-     * `is_final=true` result (the newly settled portion).
+     * It contains zero or one `is_final=true` result (the newly settled portion),
+     * followed by zero or more `is_final=false` results (the interim results).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1.StreamingRecognitionResult results = 2;</code>
@@ -1023,10 +1048,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * *Output-only* This repeated list contains zero or more results that
+     * Output only. This repeated list contains zero or more results that
      * correspond to consecutive portions of the audio currently being processed.
-     * It contains zero or more `is_final=false` results followed by zero or one
-     * `is_final=true` result (the newly settled portion).
+     * It contains zero or one `is_final=true` result (the newly settled portion),
+     * followed by zero or more `is_final=false` results (the interim results).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1.StreamingRecognitionResult results = 2;</code>
@@ -1040,10 +1065,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * *Output-only* This repeated list contains zero or more results that
+     * Output only. This repeated list contains zero or more results that
      * correspond to consecutive portions of the audio currently being processed.
-     * It contains zero or more `is_final=false` results followed by zero or one
-     * `is_final=true` result (the newly settled portion).
+     * It contains zero or one `is_final=true` result (the newly settled portion),
+     * followed by zero or more `is_final=false` results (the interim results).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1.StreamingRecognitionResult results = 2;</code>
@@ -1064,10 +1089,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * *Output-only* This repeated list contains zero or more results that
+     * Output only. This repeated list contains zero or more results that
      * correspond to consecutive portions of the audio currently being processed.
-     * It contains zero or more `is_final=false` results followed by zero or one
-     * `is_final=true` result (the newly settled portion).
+     * It contains zero or one `is_final=true` result (the newly settled portion),
+     * followed by zero or more `is_final=false` results (the interim results).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1.StreamingRecognitionResult results = 2;</code>
@@ -1085,10 +1110,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * *Output-only* This repeated list contains zero or more results that
+     * Output only. This repeated list contains zero or more results that
      * correspond to consecutive portions of the audio currently being processed.
-     * It contains zero or more `is_final=false` results followed by zero or one
-     * `is_final=true` result (the newly settled portion).
+     * It contains zero or one `is_final=true` result (the newly settled portion),
+     * followed by zero or more `is_final=false` results (the interim results).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1.StreamingRecognitionResult results = 2;</code>
@@ -1108,10 +1133,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * *Output-only* This repeated list contains zero or more results that
+     * Output only. This repeated list contains zero or more results that
      * correspond to consecutive portions of the audio currently being processed.
-     * It contains zero or more `is_final=false` results followed by zero or one
-     * `is_final=true` result (the newly settled portion).
+     * It contains zero or one `is_final=true` result (the newly settled portion),
+     * followed by zero or more `is_final=false` results (the interim results).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1.StreamingRecognitionResult results = 2;</code>
@@ -1132,10 +1157,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * *Output-only* This repeated list contains zero or more results that
+     * Output only. This repeated list contains zero or more results that
      * correspond to consecutive portions of the audio currently being processed.
-     * It contains zero or more `is_final=false` results followed by zero or one
-     * `is_final=true` result (the newly settled portion).
+     * It contains zero or one `is_final=true` result (the newly settled portion),
+     * followed by zero or more `is_final=false` results (the interim results).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1.StreamingRecognitionResult results = 2;</code>
@@ -1153,10 +1178,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * *Output-only* This repeated list contains zero or more results that
+     * Output only. This repeated list contains zero or more results that
      * correspond to consecutive portions of the audio currently being processed.
-     * It contains zero or more `is_final=false` results followed by zero or one
-     * `is_final=true` result (the newly settled portion).
+     * It contains zero or one `is_final=true` result (the newly settled portion),
+     * followed by zero or more `is_final=false` results (the interim results).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1.StreamingRecognitionResult results = 2;</code>
@@ -1174,10 +1199,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * *Output-only* This repeated list contains zero or more results that
+     * Output only. This repeated list contains zero or more results that
      * correspond to consecutive portions of the audio currently being processed.
-     * It contains zero or more `is_final=false` results followed by zero or one
-     * `is_final=true` result (the newly settled portion).
+     * It contains zero or one `is_final=true` result (the newly settled portion),
+     * followed by zero or more `is_final=false` results (the interim results).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1.StreamingRecognitionResult results = 2;</code>
@@ -1196,10 +1221,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * *Output-only* This repeated list contains zero or more results that
+     * Output only. This repeated list contains zero or more results that
      * correspond to consecutive portions of the audio currently being processed.
-     * It contains zero or more `is_final=false` results followed by zero or one
-     * `is_final=true` result (the newly settled portion).
+     * It contains zero or one `is_final=true` result (the newly settled portion),
+     * followed by zero or more `is_final=false` results (the interim results).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1.StreamingRecognitionResult results = 2;</code>
@@ -1216,10 +1241,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * *Output-only* This repeated list contains zero or more results that
+     * Output only. This repeated list contains zero or more results that
      * correspond to consecutive portions of the audio currently being processed.
-     * It contains zero or more `is_final=false` results followed by zero or one
-     * `is_final=true` result (the newly settled portion).
+     * It contains zero or one `is_final=true` result (the newly settled portion),
+     * followed by zero or more `is_final=false` results (the interim results).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1.StreamingRecognitionResult results = 2;</code>
@@ -1236,10 +1261,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * *Output-only* This repeated list contains zero or more results that
+     * Output only. This repeated list contains zero or more results that
      * correspond to consecutive portions of the audio currently being processed.
-     * It contains zero or more `is_final=false` results followed by zero or one
-     * `is_final=true` result (the newly settled portion).
+     * It contains zero or one `is_final=true` result (the newly settled portion),
+     * followed by zero or more `is_final=false` results (the interim results).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1.StreamingRecognitionResult results = 2;</code>
@@ -1250,10 +1275,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * *Output-only* This repeated list contains zero or more results that
+     * Output only. This repeated list contains zero or more results that
      * correspond to consecutive portions of the audio currently being processed.
-     * It contains zero or more `is_final=false` results followed by zero or one
-     * `is_final=true` result (the newly settled portion).
+     * It contains zero or one `is_final=true` result (the newly settled portion),
+     * followed by zero or more `is_final=false` results (the interim results).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1.StreamingRecognitionResult results = 2;</code>
@@ -1267,10 +1292,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * *Output-only* This repeated list contains zero or more results that
+     * Output only. This repeated list contains zero or more results that
      * correspond to consecutive portions of the audio currently being processed.
-     * It contains zero or more `is_final=false` results followed by zero or one
-     * `is_final=true` result (the newly settled portion).
+     * It contains zero or one `is_final=true` result (the newly settled portion),
+     * followed by zero or more `is_final=false` results (the interim results).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1.StreamingRecognitionResult results = 2;</code>
@@ -1285,10 +1310,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * *Output-only* This repeated list contains zero or more results that
+     * Output only. This repeated list contains zero or more results that
      * correspond to consecutive portions of the audio currently being processed.
-     * It contains zero or more `is_final=false` results followed by zero or one
-     * `is_final=true` result (the newly settled portion).
+     * It contains zero or one `is_final=true` result (the newly settled portion),
+     * followed by zero or more `is_final=false` results (the interim results).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1.StreamingRecognitionResult results = 2;</code>
@@ -1299,10 +1324,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * *Output-only* This repeated list contains zero or more results that
+     * Output only. This repeated list contains zero or more results that
      * correspond to consecutive portions of the audio currently being processed.
-     * It contains zero or more `is_final=false` results followed by zero or one
-     * `is_final=true` result (the newly settled portion).
+     * It contains zero or one `is_final=true` result (the newly settled portion),
+     * followed by zero or more `is_final=false` results (the interim results).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1.StreamingRecognitionResult results = 2;</code>
@@ -1314,10 +1339,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * *Output-only* This repeated list contains zero or more results that
+     * Output only. This repeated list contains zero or more results that
      * correspond to consecutive portions of the audio currently being processed.
-     * It contains zero or more `is_final=false` results followed by zero or one
-     * `is_final=true` result (the newly settled portion).
+     * It contains zero or one `is_final=true` result (the newly settled portion),
+     * followed by zero or more `is_final=false` results (the interim results).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1.StreamingRecognitionResult results = 2;</code>
@@ -1344,7 +1369,7 @@ private static final long serialVersionUID = 0L;
     private int speechEventType_ = 0;
     /**
      * <pre>
-     * *Output-only* Indicates the type of speech event.
+     * Output only. Indicates the type of speech event.
      * </pre>
      *
      * <code>.google.cloud.speech.v1.StreamingRecognizeResponse.SpeechEventType speech_event_type = 4;</code>
@@ -1354,7 +1379,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * *Output-only* Indicates the type of speech event.
+     * Output only. Indicates the type of speech event.
      * </pre>
      *
      * <code>.google.cloud.speech.v1.StreamingRecognizeResponse.SpeechEventType speech_event_type = 4;</code>
@@ -1366,18 +1391,19 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * *Output-only* Indicates the type of speech event.
+     * Output only. Indicates the type of speech event.
      * </pre>
      *
      * <code>.google.cloud.speech.v1.StreamingRecognizeResponse.SpeechEventType speech_event_type = 4;</code>
      */
     public com.google.cloud.speech.v1.StreamingRecognizeResponse.SpeechEventType getSpeechEventType() {
+      @SuppressWarnings("deprecation")
       com.google.cloud.speech.v1.StreamingRecognizeResponse.SpeechEventType result = com.google.cloud.speech.v1.StreamingRecognizeResponse.SpeechEventType.valueOf(speechEventType_);
       return result == null ? com.google.cloud.speech.v1.StreamingRecognizeResponse.SpeechEventType.UNRECOGNIZED : result;
     }
     /**
      * <pre>
-     * *Output-only* Indicates the type of speech event.
+     * Output only. Indicates the type of speech event.
      * </pre>
      *
      * <code>.google.cloud.speech.v1.StreamingRecognizeResponse.SpeechEventType speech_event_type = 4;</code>
@@ -1393,7 +1419,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * *Output-only* Indicates the type of speech event.
+     * Output only. Indicates the type of speech event.
      * </pre>
      *
      * <code>.google.cloud.speech.v1.StreamingRecognizeResponse.SpeechEventType speech_event_type = 4;</code>
@@ -1404,11 +1430,13 @@ private static final long serialVersionUID = 0L;
       onChanged();
       return this;
     }
+    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -1430,11 +1458,12 @@ private static final long serialVersionUID = 0L;
 
   private static final com.google.protobuf.Parser<StreamingRecognizeResponse>
       PARSER = new com.google.protobuf.AbstractParser<StreamingRecognizeResponse>() {
+    @java.lang.Override
     public StreamingRecognizeResponse parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-        return new StreamingRecognizeResponse(input, extensionRegistry);
+      return new StreamingRecognizeResponse(input, extensionRegistry);
     }
   };
 
@@ -1447,6 +1476,7 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.cloud.speech.v1.StreamingRecognizeResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }

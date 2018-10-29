@@ -25,7 +25,7 @@
  * Compute compute = computeHelper.getOptions().getService();
  * } </pre>
  *
- * @see <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/TESTING.md#testing-code-that-uses-compute">
+ * @see <a href="https://github.com/googleapis/google-cloud-java/blob/master/TESTING.md#testing-code-that-uses-compute">
  *     Google Cloud Java tools for testing</a>
  */
 package com.google.cloud.compute.deprecated.testing;

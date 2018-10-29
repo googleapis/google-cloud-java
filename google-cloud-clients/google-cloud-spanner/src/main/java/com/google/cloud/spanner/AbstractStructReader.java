@@ -331,6 +331,12 @@ public abstract class AbstractStructReader implements StructReader {
     return getType().getFieldIndex(columnName);
   }
 
+  protected void checkNonNull(int columnIndex, Object columnNameForError) {
+    if (isNull(columnIndex)) {
+      throw new NullPointerException("Column " + columnNameForError + " contains NULL value");
+    }
+  }
+
   private void checkNonNullOfType(int columnIndex, Type expectedType, Object columnNameForError) {
     Type actualType = getColumnType(columnIndex);
     checkState(
@@ -353,9 +359,4 @@ public abstract class AbstractStructReader implements StructReader {
     checkNonNull(columnIndex, columnNameForError);
   }
 
-  private void checkNonNull(int columnIndex, Object columnNameForError) {
-    if (isNull(columnIndex)) {
-      throw new NullPointerException("Column " + columnNameForError + " contains NULL value");
-    }
-  }
 }

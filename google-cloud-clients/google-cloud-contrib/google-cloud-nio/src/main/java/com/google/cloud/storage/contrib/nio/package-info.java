@@ -29,7 +29,7 @@
  * }</pre>
  *
  * <p>For the complete source code see
- * <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/nio/snippets/ReadAllLines.java">
+ * <a href="https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/nio/snippets/ReadAllLines.java">
  * ReadAllLines.java</a>.
  *
  * <p>If you want to configure the bucket per-environment, it might make more sense to use the
@@ -43,7 +43,7 @@
  * }</pre>
  *
  * <p>For the complete source code see
- * <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/nio/snippets/GetFileSystem.java">
+ * <a href="https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/nio/snippets/GetFileSystem.java">
  * GetFileSystem.java</a>.
  *
  * <p>You can also use {@code InputStream} and {@code OutputStream} for streaming:
@@ -55,7 +55,7 @@
  * </pre>
  *
  * <p>For the complete source code see
- * <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/nio/snippets/CreateInputStream.java">
+ * <a href="https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/nio/snippets/CreateInputStream.java">
  * CreateInputStream.java</a>.
  *
  * <p>You can set various attributes using
@@ -69,7 +69,7 @@
  * </pre>
  *
  * <p>For the complete source code see
- * <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/nio/snippets/WriteFileWithAttributes.java">
+ * <a href="https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/nio/snippets/WriteFileWithAttributes.java">
  * WriteFileWithAttributes.java</a>.
  *
  * <p><b>NOTE:</b> Cloud Storage uses a flat namespace and therefore doesn't support real
@@ -93,7 +93,7 @@
  * </pre>
  *
  * <p>For the complete source code see
- * <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/nio/snippets/CreateCloudStorageFileSystem.java">
+ * <a href="https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/nio/snippets/CreateCloudStorageFileSystem.java">
  * CreateCloudStorageFileSystem.java</a>.
  */
 @javax.annotation.ParametersAreNonnullByDefault

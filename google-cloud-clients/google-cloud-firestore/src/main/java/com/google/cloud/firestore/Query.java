@@ -16,6 +16,7 @@
 
 package com.google.cloud.firestore;
 
+import static com.google.firestore.v1beta1.StructuredQuery.FieldFilter.Operator.ARRAY_CONTAINS;
 import static com.google.firestore.v1beta1.StructuredQuery.FieldFilter.Operator.EQUAL;
 import static com.google.firestore.v1beta1.StructuredQuery.FieldFilter.Operator.GREATER_THAN;
 import static com.google.firestore.v1beta1.StructuredQuery.FieldFilter.Operator.GREATER_THAN_OR_EQUAL;
@@ -25,6 +26,7 @@ import static com.google.firestore.v1beta1.StructuredQuery.FieldFilter.Operator.
 import com.google.api.core.ApiFuture;
 import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.rpc.ApiStreamObserver;
+import com.google.cloud.Timestamp;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
 import com.google.firestore.v1beta1.Cursor;
@@ -49,7 +51,6 @@ import java.util.Objects;
 import java.util.concurrent.Executor;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
-import org.threeten.bp.Instant;
 
 /**
  * A Query which you can read or listen to. You can also construct refined Query objects by adding
@@ -89,7 +90,7 @@ public class Query {
     Value encodeValue() {
       Object sanitizedObject = CustomClassMapper.serialize(value);
       Value encodedValue =
-          UserDataConverter.encodeValue(fieldPath, sanitizedObject, UserDataConverter.NO_DELETES);
+          UserDataConverter.encodeValue(fieldPath, sanitizedObject, UserDataConverter.ARGUMENT);
 
       if (encodedValue == null) {
         throw FirestoreException.invalidState("Cannot use Firestore Sentinels in FieldFilter");
@@ -254,7 +255,10 @@ public class Query {
     this(firestore, path, new QueryOptions());
   }
 
-  private Query(FirestoreImpl firestore, ResourcePath path, QueryOptions queryOptions) {
+  protected Query(
+      FirestoreImpl firestore,
+      ResourcePath path,
+      QueryOptions queryOptions) { // Elevated access level for mocking.
     Preconditions.checkArgument(
         path.isCollection(), "Invalid path specified. Path should point to a collection");
 
@@ -351,7 +355,7 @@ public class Query {
       }
 
       Value encodedValue =
-          UserDataConverter.encodeValue(fieldPath, sanitizedValue, UserDataConverter.NO_DELETES);
+          UserDataConverter.encodeValue(fieldPath, sanitizedValue, UserDataConverter.ARGUMENT);
 
       if (encodedValue == null) {
         throw FirestoreException.invalidState(
@@ -564,6 +568,44 @@ public class Query {
             + "startAfter(), endBefore() or endAt().");
     QueryOptions newOptions = new QueryOptions(options);
     newOptions.fieldFilters.add(new ComparisonFilter(fieldPath, GREATER_THAN_OR_EQUAL, value));
+    return new Query(firestore, path, newOptions);
+  }
+
+  /**
+   * Creates and returns a new Query with the additional filter that documents must contain the
+   * specified field, the value must be an array, and that the array must contain the provided
+   * value.
+   *
+   * <p>A Query can have only one whereArrayContains() filter.
+   *
+   * @param field The name of the field containing an array to search
+   * @param value The value that must be contained in the array
+   * @return The created Query.
+   */
+  @Nonnull
+  public Query whereArrayContains(@Nonnull String field, @Nonnull Object value) {
+    return whereArrayContains(FieldPath.fromDotSeparatedString(field), value);
+  }
+
+  /**
+   * Creates and returns a new Query with the additional filter that documents must contain the
+   * specified field, the value must be an array, and that the array must contain the provided
+   * value.
+   *
+   * <p>A Query can have only one whereArrayContains() filter.
+   *
+   * @param fieldPath The path of the field containing an array to search
+   * @param value The value that must be contained in the array
+   * @return The created Query.
+   */
+  @Nonnull
+  public Query whereArrayContains(@Nonnull FieldPath fieldPath, @Nonnull Object value) {
+    Preconditions.checkState(
+        options.startCursor == null && options.endCursor == null,
+        "Cannot call whereArrayContains() after defining a boundary with startAt(), "
+            + "startAfter(), endBefore() or endAt().");
+    QueryOptions newOptions = new QueryOptions(options);
+    newOptions.fieldFilters.add(new ComparisonFilter(fieldPath, ARRAY_CONTAINS, value));
     return new Query(firestore, path, newOptions);
   }
 
@@ -903,14 +945,14 @@ public class Query {
   private abstract static class QuerySnapshotObserver
       implements ApiStreamObserver<QueryDocumentSnapshot> {
 
-    private Instant readTime;
+    private Timestamp readTime;
 
-    void onCompleted(Instant readTime) {
+    void onCompleted(Timestamp readTime) {
       this.readTime = readTime;
       this.onCompleted();
     }
 
-    Instant getReadTime() {
+    Timestamp getReadTime() {
       return readTime;
     }
   }
@@ -933,7 +975,7 @@ public class Query {
 
     ApiStreamObserver<RunQueryResponse> observer =
         new ApiStreamObserver<RunQueryResponse>() {
-          Instant readTime;
+          Timestamp readTime;
           boolean firstResponse;
           int numDocuments;
 
@@ -952,14 +994,13 @@ public class Query {
               }
               Document document = response.getDocument();
               QueryDocumentSnapshot documentSnapshot =
-                  QueryDocumentSnapshot.fromDocument(firestore, response.getReadTime(), document);
+                  QueryDocumentSnapshot.fromDocument(
+                      firestore, Timestamp.fromProto(response.getReadTime()), document);
               documentObserver.onNext(documentSnapshot);
             }
 
             if (readTime == null) {
-              readTime =
-                  Instant.ofEpochSecond(
-                      response.getReadTime().getSeconds(), response.getReadTime().getNanos());
+              readTime = Timestamp.fromProto(response.getReadTime());
             }
           }
 

@@ -57,7 +57,7 @@ public final class WebDetectionProto {
       "oogle.cloud.vision.v1p1beta1.WebDetectio" +
       "n.WebImage\022U\n\027partial_matching_images\030\003 " +
       "\003(\01324.google.cloud.vision.v1p1beta1.WebD" +
-      "etection.WebImage\022W\n\032pages_with_matching",
+      "etection.WebImage\022W\n\032pages_with_matching" +
       "_images\030\004 \003(\01323.google.cloud.vision.v1p1" +
       "beta1.WebDetection.WebPage\022U\n\027visually_s" +
       "imilar_images\030\006 \003(\01324.google.cloud.visio" +
@@ -67,7 +67,7 @@ public final class WebDetectionProto {
       "bEntity\022\021\n\tentity_id\030\001 \001(\t\022\r\n\005score\030\002 \001(" +
       "\002\022\023\n\013description\030\003 \001(\t\032&\n\010WebImage\022\013\n\003ur" +
       "l\030\001 \001(\t\022\r\n\005score\030\002 \001(\002\032\344\001\n\007WebPage\022\013\n\003ur" +
-      "l\030\001 \001(\t\022\r\n\005score\030\002 \001(\002\022\022\n\npage_title\030\003 \001",
+      "l\030\001 \001(\t\022\r\n\005score\030\002 \001(\002\022\022\n\npage_title\030\003 \001" +
       "(\t\022R\n\024full_matching_images\030\004 \003(\01324.googl" +
       "e.cloud.vision.v1p1beta1.WebDetection.We" +
       "bImage\022U\n\027partial_matching_images\030\005 \003(\0132" +

@@ -9,8 +9,8 @@ public interface DeleteUptimeCheckConfigRequestOrBuilder extends
 
   /**
    * <pre>
-   * The uptime check configuration to delete. The format is
-   *   `projects/[PROJECT_ID]/uptimeCheckConfigs/[UPTIME_CHECK_ID]`.
+   * The uptime check configuration to delete. The format
+   *   is `projects/[PROJECT_ID]/uptimeCheckConfigs/[UPTIME_CHECK_ID]`.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -18,8 +18,8 @@ public interface DeleteUptimeCheckConfigRequestOrBuilder extends
   java.lang.String getName();
   /**
    * <pre>
-   * The uptime check configuration to delete. The format is
-   *   `projects/[PROJECT_ID]/uptimeCheckConfigs/[UPTIME_CHECK_ID]`.
+   * The uptime check configuration to delete. The format
+   *   is `projects/[PROJECT_ID]/uptimeCheckConfigs/[UPTIME_CHECK_ID]`.
    * </pre>
    *
    * <code>string name = 1;</code>

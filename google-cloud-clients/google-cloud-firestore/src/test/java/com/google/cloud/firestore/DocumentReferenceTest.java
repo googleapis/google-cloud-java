@@ -24,9 +24,9 @@ import static com.google.cloud.firestore.LocalFirestoreHelper.CREATE_PRECONDITIO
 import static com.google.cloud.firestore.LocalFirestoreHelper.DATE;
 import static com.google.cloud.firestore.LocalFirestoreHelper.DOCUMENT_NAME;
 import static com.google.cloud.firestore.LocalFirestoreHelper.DOCUMENT_PATH;
+import static com.google.cloud.firestore.LocalFirestoreHelper.FIELD_TRANSFORM_COMMIT_RESPONSE;
 import static com.google.cloud.firestore.LocalFirestoreHelper.GEO_POINT;
 import static com.google.cloud.firestore.LocalFirestoreHelper.NESTED_CLASS_OBJECT;
-import static com.google.cloud.firestore.LocalFirestoreHelper.SERVER_TIMESTAMP_COMMIT_RESPONSE;
 import static com.google.cloud.firestore.LocalFirestoreHelper.SERVER_TIMESTAMP_PROTO;
 import static com.google.cloud.firestore.LocalFirestoreHelper.SERVER_TIMESTAMP_TRANSFORM;
 import static com.google.cloud.firestore.LocalFirestoreHelper.SINGLE_DELETE_COMMIT_RESPONSE;
@@ -34,7 +34,10 @@ import static com.google.cloud.firestore.LocalFirestoreHelper.SINGLE_FIELD_MAP;
 import static com.google.cloud.firestore.LocalFirestoreHelper.SINGLE_FIELD_OBJECT;
 import static com.google.cloud.firestore.LocalFirestoreHelper.SINGLE_FIELD_PROTO;
 import static com.google.cloud.firestore.LocalFirestoreHelper.SINGLE_WRITE_COMMIT_RESPONSE;
+import static com.google.cloud.firestore.LocalFirestoreHelper.TIMESTAMP;
 import static com.google.cloud.firestore.LocalFirestoreHelper.UPDATE_PRECONDITION;
+import static com.google.cloud.firestore.LocalFirestoreHelper.arrayRemove;
+import static com.google.cloud.firestore.LocalFirestoreHelper.arrayUnion;
 import static com.google.cloud.firestore.LocalFirestoreHelper.assertCommitEquals;
 import static com.google.cloud.firestore.LocalFirestoreHelper.commit;
 import static com.google.cloud.firestore.LocalFirestoreHelper.create;
@@ -43,6 +46,7 @@ import static com.google.cloud.firestore.LocalFirestoreHelper.get;
 import static com.google.cloud.firestore.LocalFirestoreHelper.getAllResponse;
 import static com.google.cloud.firestore.LocalFirestoreHelper.map;
 import static com.google.cloud.firestore.LocalFirestoreHelper.object;
+import static com.google.cloud.firestore.LocalFirestoreHelper.serverTimestamp;
 import static com.google.cloud.firestore.LocalFirestoreHelper.set;
 import static com.google.cloud.firestore.LocalFirestoreHelper.streamingResponse;
 import static com.google.cloud.firestore.LocalFirestoreHelper.string;
@@ -60,6 +64,7 @@ import static org.mockito.Mockito.doReturn;
 import com.google.api.gax.rpc.ApiStreamObserver;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.Timestamp;
 import com.google.cloud.firestore.spi.v1beta1.FirestoreRpc;
 import com.google.common.collect.ImmutableList;
 import com.google.firestore.v1beta1.BatchGetDocumentsRequest;
@@ -67,7 +72,6 @@ import com.google.firestore.v1beta1.BatchGetDocumentsResponse;
 import com.google.firestore.v1beta1.CommitRequest;
 import com.google.firestore.v1beta1.CommitResponse;
 import com.google.firestore.v1beta1.Value;
-import com.google.protobuf.Timestamp;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -83,7 +87,6 @@ import org.mockito.Matchers;
 import org.mockito.Mockito;
 import org.mockito.Spy;
 import org.mockito.runners.MockitoJUnitRunner;
-import org.threeten.bp.Instant;
 
 @RunWith(MockitoJUnitRunner.class)
 public class DocumentReferenceTest {
@@ -91,7 +94,10 @@ public class DocumentReferenceTest {
   @Spy
   private FirestoreImpl firestoreMock =
       new FirestoreImpl(
-          FirestoreOptions.newBuilder().setProjectId("test-project").build(),
+          FirestoreOptions.newBuilder()
+              .setProjectId("test-project")
+              .setTimestampsInSnapshotsEnabled(true)
+              .build(),
           Mockito.mock(FirestoreRpc.class));
 
   @Captor private ArgumentCaptor<CommitRequest> commitCapture;
@@ -171,6 +177,8 @@ public class DocumentReferenceTest {
             streamObserverCapture.capture(),
             Matchers.<ServerStreamingCallable>any());
 
+    doReturn(true).when(firestoreMock).areTimestampsInSnapshotsEnabled();
+
     DocumentSnapshot snapshot = documentReference.get().get();
     assertEquals(snapshot.getData(), ALL_SUPPORTED_TYPES_MAP);
 
@@ -191,6 +199,7 @@ public class DocumentReferenceTest {
     assertEquals((Long) 0L, snapshot.getLong("longValue"));
     assertEquals(true, snapshot.getBoolean("trueValue"));
     assertEquals(DATE, snapshot.getDate("dateValue"));
+    assertEquals(TIMESTAMP, snapshot.getTimestamp("timestampValue"));
 
     assertEquals(BLOB, snapshot.getBlob("bytesValue"));
     assertEquals(BLOB.hashCode(), snapshot.getBlob("bytesValue").hashCode());
@@ -208,9 +217,9 @@ public class DocumentReferenceTest {
     assertFalse(snapshot.contains("objectValue.bar"));
     assertTrue(snapshot.exists());
 
-    assertEquals(Instant.ofEpochSecond(1, 2), snapshot.getCreateTime());
-    assertEquals(Instant.ofEpochSecond(3, 4), snapshot.getUpdateTime());
-    assertEquals(Instant.ofEpochSecond(5, 6), snapshot.getReadTime());
+    assertEquals(Timestamp.ofTimeSecondsAndNanos(1, 2), snapshot.getCreateTime());
+    assertEquals(Timestamp.ofTimeSecondsAndNanos(3, 4), snapshot.getUpdateTime());
+    assertEquals(Timestamp.ofTimeSecondsAndNanos(5, 6), snapshot.getReadTime());
 
     assertEquals(get(), getAllCapture.getValue());
   }
@@ -232,11 +241,38 @@ public class DocumentReferenceTest {
   }
 
   @Test
+  public void deserializesDates() throws Exception {
+    doAnswer(getAllResponse(ALL_SUPPORTED_TYPES_PROTO))
+        .when(firestoreMock)
+        .streamRequest(
+            getAllCapture.capture(),
+            streamObserverCapture.capture(),
+            Matchers.<ServerStreamingCallable>any());
+
+    DocumentSnapshot snapshot = documentReference.get().get();
+
+    doReturn(false).when(firestoreMock).areTimestampsInSnapshotsEnabled();
+
+    assertEquals(DATE, snapshot.get("dateValue"));
+    assertEquals(TIMESTAMP.toDate(), snapshot.get("timestampValue"));
+    assertEquals(DATE, snapshot.getData().get("dateValue"));
+    assertEquals(TIMESTAMP.toDate(), snapshot.getData().get("timestampValue"));
+
+    doReturn(true).when(firestoreMock).areTimestampsInSnapshotsEnabled();
+
+    assertEquals(Timestamp.of(DATE), snapshot.get("dateValue"));
+    assertEquals(TIMESTAMP, snapshot.get("timestampValue"));
+    assertEquals(Timestamp.of(DATE), snapshot.getData().get("dateValue"));
+    assertEquals(TIMESTAMP, snapshot.getData().get("timestampValue"));
+  }
+
+  @Test
   public void notFound() throws Exception {
     final BatchGetDocumentsResponse.Builder getDocumentResponse =
         BatchGetDocumentsResponse.newBuilder();
     getDocumentResponse.setMissing(DOCUMENT_NAME);
-    getDocumentResponse.setReadTime(Timestamp.newBuilder().setSeconds(5).setNanos(6));
+    getDocumentResponse.setReadTime(
+        com.google.protobuf.Timestamp.newBuilder().setSeconds(5).setNanos(6));
 
     doAnswer(streamingResponse(getDocumentResponse.build()))
         .when(firestoreMock)
@@ -248,7 +284,7 @@ public class DocumentReferenceTest {
     DocumentSnapshot snapshot = documentReference.get().get();
     assertEquals(documentReference, snapshot.getReference());
     assertFalse(snapshot.exists());
-    assertEquals(snapshot.getReadTime(), Instant.ofEpochSecond(5, 6));
+    assertEquals(snapshot.getReadTime(), Timestamp.ofTimeSecondsAndNanos(5, 6));
     assertNull(snapshot.getData());
   }
 
@@ -261,7 +297,7 @@ public class DocumentReferenceTest {
 
     documentReference.delete().get();
     documentReference
-        .delete(Precondition.updatedAt(Instant.ofEpochSecond(479978400, 123000000)))
+        .delete(Precondition.updatedAt(Timestamp.ofTimeSecondsAndNanos(479978400, 123000000)))
         .get();
 
     List<CommitRequest> commitRequests = commitCapture.getAllValues();
@@ -300,7 +336,10 @@ public class DocumentReferenceTest {
     documentReference.create(LocalFirestoreHelper.SERVER_TIMESTAMP_MAP).get();
     documentReference.create(LocalFirestoreHelper.SERVER_TIMESTAMP_OBJECT).get();
 
-    CommitRequest create = commit(transform(CREATE_PRECONDITION, "foo", "inner.bar"));
+    CommitRequest create =
+        commit(
+            transform(
+                CREATE_PRECONDITION, "foo", serverTimestamp(), "inner.bar", serverTimestamp()));
 
     List<CommitRequest> commitRequests = commitCapture.getAllValues();
     assertCommitEquals(create, commitRequests.get(0));
@@ -309,7 +348,7 @@ public class DocumentReferenceTest {
 
   @Test
   public void setWithServerTimestamp() throws Exception {
-    doReturn(SERVER_TIMESTAMP_COMMIT_RESPONSE)
+    doReturn(FIELD_TRANSFORM_COMMIT_RESPONSE)
         .when(firestoreMock)
         .sendRequest(
             commitCapture.capture(), Matchers.<UnaryCallable<CommitRequest, CommitResponse>>any());
@@ -326,7 +365,7 @@ public class DocumentReferenceTest {
 
   @Test
   public void updateWithServerTimestamp() throws Exception {
-    doReturn(SERVER_TIMESTAMP_COMMIT_RESPONSE)
+    doReturn(FIELD_TRANSFORM_COMMIT_RESPONSE)
         .when(firestoreMock)
         .sendRequest(
             commitCapture.capture(), Matchers.<UnaryCallable<CommitRequest, CommitResponse>>any());
@@ -343,7 +382,10 @@ public class DocumentReferenceTest {
     documentReference.update(
         "foo", FieldValue.serverTimestamp(), "inner.bar", FieldValue.serverTimestamp());
 
-    update = commit(transform(UPDATE_PRECONDITION, "foo", "inner.bar"));
+    update =
+        commit(
+            transform(
+                UPDATE_PRECONDITION, "foo", serverTimestamp(), "inner.bar", serverTimestamp()));
 
     assertCommitEquals(update, commitCapture.getValue());
   }
@@ -362,7 +404,7 @@ public class DocumentReferenceTest {
         .set(LocalFirestoreHelper.SERVER_TIMESTAMP_OBJECT, SetOptions.mergeFields("inner.bar"))
         .get();
 
-    CommitRequest set = commit(transform("inner.bar"));
+    CommitRequest set = commit(transform("inner.bar", serverTimestamp()));
 
     List<CommitRequest> commitRequests = commitCapture.getAllValues();
     assertCommitEquals(set, commitRequests.get(0));
@@ -370,7 +412,47 @@ public class DocumentReferenceTest {
   }
 
   @Test
-  public void serverTimestampInArray() throws Exception {
+  public void setWithArrayUnion() throws Exception {
+    doReturn(FIELD_TRANSFORM_COMMIT_RESPONSE)
+        .when(firestoreMock)
+        .sendRequest(
+            commitCapture.capture(), Matchers.<UnaryCallable<CommitRequest, CommitResponse>>any());
+
+    documentReference
+        .set(map("foo", FieldValue.arrayUnion("bar", map("foo", "baz"))))
+        .get();
+
+    CommitRequest set =
+        commit(
+            set(Collections.<String, Value>emptyMap()),
+            transform("foo", arrayUnion(string("bar"), object("foo", string("baz")))));
+
+    CommitRequest commitRequest = commitCapture.getValue();
+    assertCommitEquals(set, commitRequest);
+  }
+
+  @Test
+  public void setWithArrayRemove() throws Exception {
+    doReturn(FIELD_TRANSFORM_COMMIT_RESPONSE)
+        .when(firestoreMock)
+        .sendRequest(
+            commitCapture.capture(), Matchers.<UnaryCallable<CommitRequest, CommitResponse>>any());
+
+    documentReference
+        .set(map("foo", FieldValue.arrayRemove("bar", map("foo", "baz"))))
+        .get();
+
+    CommitRequest set =
+        commit(
+            set(Collections.<String, Value>emptyMap()),
+            transform("foo", arrayRemove(string("bar"), object("foo", string("baz")))));
+
+    CommitRequest commitRequest = commitCapture.getValue();
+    assertCommitEquals(set, commitRequest);
+  }
+
+  @Test
+  public void serverTimestampInArray() {
     Map<String, Object> list = new HashMap<>();
     list.put("foo", ImmutableList.of(FieldValue.serverTimestamp()));
 
@@ -378,7 +460,9 @@ public class DocumentReferenceTest {
       documentReference.create(list);
       fail();
     } catch (FirestoreException e) {
-      assertTrue(e.getMessage().endsWith("Server timestamps are not supported as Array values."));
+      assertTrue(
+          e.getMessage()
+              .endsWith("FieldValue.serverTimestamp() is not supported inside of an array."));
     }
 
     list.clear();
@@ -388,7 +472,112 @@ public class DocumentReferenceTest {
       documentReference.create(list);
       fail();
     } catch (FirestoreException e) {
-      assertTrue(e.getMessage().endsWith("Server timestamps are not supported as Array values."));
+      assertTrue(
+          e.getMessage()
+              .endsWith("FieldValue.serverTimestamp() is not supported inside of an array."));
+    }
+  }
+
+  @Test
+  public void deleteInArray() {
+    Map<String, Object> list = new HashMap<>();
+    list.put("foo", ImmutableList.of(FieldValue.delete()));
+
+    try {
+      documentReference.create(list);
+      fail();
+    } catch (IllegalArgumentException e) {
+      assertTrue(
+          e.getMessage().endsWith("FieldValue.delete() is not supported at field 'foo.`0`'."));
+    }
+
+    list.clear();
+    list.put("a", ImmutableList.of(ImmutableList.of("b", map("c", FieldValue.delete()))));
+
+    try {
+      documentReference.create(list);
+      fail();
+    } catch (IllegalArgumentException e) {
+      assertTrue(
+          e.getMessage().endsWith("FieldValue.delete() is not supported at field 'a.`0`.`1`.c'."));
+    }
+  }
+
+  @Test
+  public void arrayUnionInArray() {
+    Map<String, Object> list = new HashMap<>();
+    list.put("foo", ImmutableList.of(FieldValue.arrayUnion("foo")));
+
+    try {
+      documentReference.create(list);
+      fail();
+    } catch (FirestoreException e) {
+      assertTrue(
+          e.getMessage().endsWith("FieldValue.arrayUnion() is not supported inside of an array."));
+    }
+
+    list.clear();
+    list.put("a", ImmutableList.of(ImmutableList.of("b", map("c", FieldValue.arrayUnion("foo")))));
+
+    try {
+      documentReference.create(list);
+      fail();
+    } catch (FirestoreException e) {
+      assertTrue(
+          e.getMessage().endsWith("FieldValue.arrayUnion() is not supported inside of an array."));
+    }
+  }
+
+  @Test
+  public void arrayUnionInArrayUnion() {
+    Map<String, Object> data = new HashMap<>();
+    data.put("foo", FieldValue.arrayUnion(FieldValue.arrayUnion("foo")));
+
+    try {
+      documentReference.create(data);
+      fail();
+    } catch (IllegalArgumentException e) {
+      assertTrue(
+          e.getMessage()
+              .endsWith("Cannot use FieldValue.arrayUnion() as an argument at field 'foo'."));
+    }
+  }
+
+  @Test
+  public void deleteInArrayUnion() {
+    Map<String, Object> data = new HashMap<>();
+    data.put("foo", FieldValue.arrayUnion(FieldValue.delete()));
+
+    try {
+      documentReference.set(data, SetOptions.merge());
+      fail();
+    } catch (IllegalArgumentException e) {
+      assertTrue(e.getMessage().endsWith("FieldValue.delete() is not supported at field 'foo'."));
+    }
+  }
+
+  @Test
+  public void arrayRemoveInArray() {
+    Map<String, Object> list = new HashMap<>();
+    list.put("foo", ImmutableList.of(FieldValue.arrayRemove("foo")));
+
+    try {
+      documentReference.create(list);
+      fail();
+    } catch (FirestoreException e) {
+      assertTrue(
+          e.getMessage().endsWith("FieldValue.arrayRemove() is not supported inside of an array."));
+    }
+
+    list.clear();
+    list.put("a", ImmutableList.of(ImmutableList.of("b", map("c", FieldValue.arrayRemove("foo")))));
+
+    try {
+      documentReference.create(list);
+      fail();
+    } catch (FirestoreException e) {
+      assertTrue(
+          e.getMessage().endsWith("FieldValue.arrayRemove() is not supported inside of an array."));
     }
   }
 
@@ -565,6 +754,7 @@ public class DocumentReferenceTest {
             "second.negInfValue",
             "second.nullValue",
             "second.objectValue.foo",
+            "second.timestampValue",
             "second.trueValue");
 
     CommitRequest expectedCommit = commit(set(nestedUpdate, updateMask));
@@ -737,7 +927,8 @@ public class DocumentReferenceTest {
         .sendRequest(
             commitCapture.capture(), Matchers.<UnaryCallable<CommitRequest, CommitResponse>>any());
 
-    Precondition options = Precondition.updatedAt(Instant.ofEpochSecond(479978400, 123000000));
+    Precondition options =
+        Precondition.updatedAt(Timestamp.ofTimeSecondsAndNanos(479978400, 123000000));
 
     documentReference.update(SINGLE_FIELD_MAP, options).get();
     documentReference.update(options, "foo", "bar").get();

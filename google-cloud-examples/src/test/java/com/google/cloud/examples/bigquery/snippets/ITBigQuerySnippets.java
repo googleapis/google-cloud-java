@@ -123,7 +123,9 @@ public class ITBigQuerySnippets {
     TableId tableId = TableId.of(bigquery.getOptions().getProjectId(), DATASET, tableName);
     assertEquals(
         tableId, bigquerySnippets.getTable(tableId.getDataset(), tableId.getTable()).getTableId());
-    assertNotNull(bigquerySnippets.updateTable(DATASET, tableName, "new description"));
+    assertNotNull(bigquerySnippets.updateTableDescription(DATASET, tableName, "new description"));
+    table = bigquerySnippets.updateTableExpiration(DATASET, tableName);
+    assertNotNull(table.getExpirationTime());
     assertEquals(
         "new description",
         bigquerySnippets

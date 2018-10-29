@@ -19,6 +19,7 @@ package com.google.cloud.spanner;
 import com.google.cloud.ByteArray;
 import com.google.cloud.Date;
 import com.google.cloud.Timestamp;
+import com.google.cloud.spanner.Type.Code;
 import com.google.common.base.Joiner;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.Iterables;
@@ -66,7 +67,7 @@ public abstract class Value implements Serializable {
    * corresponding to the commit time of the transaction, which has no relation to this placeholder.
    *
    * @see <a href="https://cloud.google.com/spanner/docs/transactions#rw_transaction_semantics">
-   *   Transaction Semantics</a>
+   *     Transaction Semantics</a>
    */
   public static final Timestamp COMMIT_TIMESTAMP = Timestamp.ofTimeMicroseconds(0L);
 
@@ -152,7 +153,32 @@ public abstract class Value implements Serializable {
     return new DateImpl(v == null, v);
   }
 
-  // TODO(user): Implement struct()/structArray().
+  /** Returns a non-{@code NULL} {#code STRUCT} value. */
+  public static Value struct(Struct v) {
+    Preconditions.checkNotNull(v, "Illegal call to create a NULL struct value.");
+    return new StructImpl(v);
+  }
+
+  /**
+   * Returns a {@code STRUCT} value of {@code Type} type.
+   *
+   * @param type the type of the {@code STRUCT} value
+   * @param v the struct {@code STRUCT} value. This may be {@code null} to produce a value for which
+   *     {@code isNull()} is {@code true}. If non-{@code null}, {@link Struct#getType()} must match
+   *     type.
+   */
+  public static Value struct(Type type, @Nullable Struct v) {
+    if (v == null) {
+      Preconditions.checkArgument(
+          type.getCode() == Code.STRUCT,
+          "Illegal call to create a NULL struct with a non-struct type.");
+      return new StructImpl(type);
+    } else {
+      Preconditions.checkArgument(
+          type.equals(v.getType()), "Mismatch between struct value and type.");
+      return new StructImpl(v);
+    }
+  }
 
   /**
    * Returns an {@code ARRAY<BOOL>} value.
@@ -299,6 +325,33 @@ public abstract class Value implements Serializable {
     return new DateArrayImpl(v == null, v == null ? null : immutableCopyOf(v));
   }
 
+  /**
+   * Returns an {@code ARRAY<STRUCT<...>>} value.
+   *
+   * @param elementType
+   * @param v the source of element values. This may be {@code null} to produce a value for which
+   *     {@code isNull()} is {@code true}. Individual elements may also be {@code null}.
+   */
+  public static Value structArray(Type elementType, @Nullable Iterable<Struct> v) {
+    if (v == null) {
+      Preconditions.checkArgument(
+          elementType.getCode() == Code.STRUCT,
+          "Illegal call to create a NULL array-of-struct with a non-struct element type.");
+      return new StructArrayImpl(elementType, null);
+    }
+    List<Struct> values = immutableCopyOf(v);
+    for (Struct value : values) {
+      if (value != null) {
+        Preconditions.checkArgument(
+            value.getType().equals(elementType),
+            "Members of v must have type %s (found %s)",
+            elementType,
+            value.getType());
+      }
+    }
+    return new StructArrayImpl(elementType, values);
+  }
+
   private Value() {}
 
   /** Returns the type of this value. This will return a type even if {@code isNull()} is true. */
@@ -361,6 +414,13 @@ public abstract class Value implements Serializable {
   public abstract Date getDate();
 
   /**
+   * Returns the value of a {@code STRUCT}-typed instance.
+   *
+   * @throws IllegalStateException if {@code isNull()} or the value is not of the expected type
+   */
+  public abstract Struct getStruct();
+
+  /**
    * Returns the value of an {@code ARRAY<BOOL>}-typed instance. While the returned list itself will
    * never be {@code null}, elements of that list may be null.
    *
@@ -416,6 +476,14 @@ public abstract class Value implements Serializable {
    */
   public abstract List<Date> getDateArray();
 
+  /**
+   * Returns the value of an {@code ARRAY<STRUCT<...>>}-typed instance. While the returned list
+   * itself will never be {@code null}, elements of that list may be null.
+   *
+   * @throws IllegalStateException if {@code isNull()} or the value is not of the expected type
+   */
+  abstract List<Struct> getStructArray();
+
   @Override
   public String toString() {
     StringBuilder b = new StringBuilder();
@@ -424,43 +492,6 @@ public abstract class Value implements Serializable {
   }
 
   // END OF PUBLIC API.
-
-  /**
-   * Returns an {@code ARRAY<STRUCT<...>>} value.
-   *
-   * <p>This method is intentionally not in the public API for Value: {@code ARRAY<STRUCT<...>>}
-   * values are not accepted by the backend.
-   *
-   * @param fieldTypes the types of the fields in the array elements. All non-null elements must
-   *     conform to this type.
-   * @param v the source of element values. This may be {@code null} to produce a value for which
-   *     {@code isNull()} is {@code true}. Individual elements may also be {@code null}.
-   */
-  static Value structArray(Iterable<Type.StructField> fieldTypes, @Nullable Iterable<Struct> v) {
-    Type elementType = Type.struct(fieldTypes);
-    if (v == null) {
-      return new StructArrayImpl(elementType, null);
-    }
-    List<Struct> values = immutableCopyOf(v);
-    for (Struct value : values) {
-      if (value != null && !value.getType().equals(elementType)) {
-        throw new IllegalArgumentException(
-            "Members of v must have type " + elementType + " (found " + value.getType() + ")");
-      }
-    }
-    return new StructArrayImpl(elementType, values);
-  }
-
-  /**
-   * Returns the value of an {@code ARRAY<STRUCT<...>>}-typed instance. While the returned list
-   * itself will never be {@code null}, elements of that list may be null.
-   *
-   * <p>This method is intentionally not in the public API for Value: {@code ARRAY<STRUCT<...>>}
-   * values are not accepted by the backend.
-   *
-   * @throws IllegalStateException if {@code isNull()} or the value is not of the expected type
-   */
-  abstract List<Struct> getStructArray();
 
   abstract void toString(StringBuilder b);
 
@@ -639,6 +670,15 @@ public abstract class Value implements Serializable {
     }
 
     @Override
+    public Struct getStruct() {
+      if (getType().getCode() != Type.Code.STRUCT) {
+        throw new IllegalStateException(
+            "Illegal call to getter of incorrect type. Expected: STRUCT<...> actual: " + getType());
+      }
+      throw new AssertionError("Should have been overridden");
+    }
+
+    @Override
     public List<Boolean> getBoolArray() {
       throw defaultGetter(Type.array(Type.bool()));
     }
@@ -674,7 +714,7 @@ public abstract class Value implements Serializable {
     }
 
     @Override
-    List<Struct> getStructArray() {
+    public List<Struct> getStructArray() {
       if (getType().getCode() != Type.Code.ARRAY
           || getType().getArrayElementType().getCode() != Type.Code.STRUCT) {
         throw new IllegalStateException(
@@ -941,9 +981,7 @@ public abstract class Value implements Serializable {
 
     @Override
     com.google.protobuf.Value valueToProto() {
-      return com.google.protobuf.Value.newBuilder()
-          .setStringValue(value.toBase64())
-          .build();
+      return com.google.protobuf.Value.newBuilder().setStringValue(value.toBase64()).build();
     }
 
     @Override
@@ -1343,43 +1381,155 @@ public abstract class Value implements Serializable {
     }
   }
 
-  private static class StructArrayImpl extends AbstractValue {
+  private static class StructImpl extends AbstractObjectValue<Struct> {
+
+    // Constructor for non-NULL struct values.
+    private StructImpl(Struct value) {
+      super(false, value.getType(), value);
+    }
+
+    // Constructor for NULL struct values.
+    private StructImpl(Type structType) {
+      super(true, structType, null);
+    }
+
+    @Override
+    public Struct getStruct() {
+      checkType(getType());
+      checkNotNull();
+      return value;
+    }
+
+    @Override
+    void valueToString(StringBuilder b) {
+      b.append(value);
+    }
+
+    @Override
+    int valueHash() {
+      return value.hashCode();
+    }
+
+    @Override
+    boolean valueEquals(Value v) {
+      return ((StructImpl) v).value.equals(value);
+    }
+
+    private Value getValue(int fieldIndex) {
+      Type fieldType = value.getColumnType(fieldIndex);
+      switch (fieldType.getCode()) {
+        case BOOL:
+          return Value.bool(value.getBoolean(fieldIndex));
+        case INT64:
+          return Value.int64(value.getLong(fieldIndex));
+        case STRING:
+          return Value.string(value.getString(fieldIndex));
+        case BYTES:
+          return Value.bytes(value.getBytes(fieldIndex));
+        case FLOAT64:
+          return Value.float64(value.getDouble(fieldIndex));
+        case DATE:
+          return Value.date(value.getDate(fieldIndex));
+        case TIMESTAMP:
+          return Value.timestamp(value.getTimestamp(fieldIndex));
+        case STRUCT:
+          return Value.struct(value.getStruct(fieldIndex));
+        case ARRAY:
+          {
+            Type elementType = fieldType.getArrayElementType();
+            switch (elementType.getCode()) {
+              case BOOL:
+                return Value.boolArray(value.getBooleanArray(fieldIndex));
+              case INT64:
+                return Value.int64Array(value.getLongArray(fieldIndex));
+              case STRING:
+                return Value.stringArray(value.getStringList(fieldIndex));
+              case BYTES:
+                return Value.bytesArray(value.getBytesList(fieldIndex));
+              case FLOAT64:
+                return Value.float64Array(value.getDoubleArray(fieldIndex));
+              case DATE:
+                return Value.dateArray(value.getDateList(fieldIndex));
+              case TIMESTAMP:
+                return Value.timestampArray(value.getTimestampList(fieldIndex));
+              case STRUCT:
+                return Value.structArray(elementType, value.getStructList(fieldIndex));
+              case ARRAY:
+                throw new UnsupportedOperationException(
+                    "ARRAY<ARRAY...> field types are not "
+                        + "supported inside STRUCT-typed values.");
+              default:
+                throw new IllegalArgumentException(
+                    "Unrecognized array element type : " + fieldType);
+            }
+          }
+        default:
+          throw new IllegalArgumentException("Unrecognized field type : " + fieldType);
+      }
+    }
+
+    @Override
+    com.google.protobuf.Value valueToProto() {
+      checkNotNull();
+      ListValue.Builder struct = ListValue.newBuilder();
+      for (int fieldIndex = 0; fieldIndex < value.getColumnCount(); ++fieldIndex) {
+        if (value.isNull(fieldIndex)) {
+          struct.addValues(NULL_PROTO);
+        } else {
+          struct.addValues(getValue(fieldIndex).toProto());
+        }
+      }
+      return com.google.protobuf.Value.newBuilder().setListValue(struct).build();
+    }
+  }
+
+  private static class StructArrayImpl extends AbstractArrayValue<Struct> {
     private static final Joiner joiner = Joiner.on(LIST_SEPERATOR).useForNull(NULL_STRING);
 
-    private final List<Struct> values;
-
     private StructArrayImpl(Type elementType, @Nullable List<Struct> values) {
-      super(values == null, Type.array(elementType));
-      this.values = values;
+      super(values == null, elementType, values);
     }
 
     @Override
     public List<Struct> getStructArray() {
       checkType(getType());
       checkNotNull();
-      return values;
+      return value;
     }
 
     @Override
     com.google.protobuf.Value valueToProto() {
-      throw new UnsupportedOperationException("ARRAY<STRUCT<...>> cannot be serialized to proto");
+      ListValue.Builder list = ListValue.newBuilder();
+      for (Struct element : value) {
+        if (element == null) {
+          list.addValues(NULL_PROTO);
+        } else {
+          list.addValues(Value.struct(element).toProto());
+        }
+      }
+      return com.google.protobuf.Value.newBuilder().setListValue(list).build();
+    }
+
+    @Override
+    void appendElement(StringBuilder b, Struct element) {
+      b.append(element);
     }
 
     @Override
     void valueToString(StringBuilder b) {
       b.append(LIST_OPEN);
-      joiner.appendTo(b, values);
+      joiner.appendTo(b, value);
       b.append(LIST_CLOSE);
     }
 
     @Override
     boolean valueEquals(Value v) {
-      return ((StructArrayImpl) v).values.equals(values);
+      return ((StructArrayImpl) v).value.equals(value);
     }
 
     @Override
     int valueHash() {
-      return values.hashCode();
+      return value.hashCode();
     }
   }
 }

@@ -313,6 +313,18 @@ final class SessionPool {
     }
 
     @Override
+    public long executePartitionedUpdate(Statement stmt) throws SpannerException {
+      try {
+        markUsed();
+        return delegate.executePartitionedUpdate(stmt);
+      } catch (SpannerException e) {
+        throw lastException = e;
+      } finally {
+        close();
+      }
+    }
+
+    @Override
     public Timestamp writeAtLeastOnce(Iterable<Mutation> mutations) throws SpannerException {
       try {
         markUsed();
@@ -407,6 +419,12 @@ final class SessionPool {
         @Override
         public Timestamp getCommitTimestamp() {
           return runner.getCommitTimestamp();
+        }
+
+        @Override
+        public TransactionRunner allowNestedTransaction() {
+          runner.allowNestedTransaction();
+          return runner;
         }
       };
     }

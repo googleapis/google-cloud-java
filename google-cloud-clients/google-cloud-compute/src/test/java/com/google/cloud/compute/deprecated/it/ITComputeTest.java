@@ -90,6 +90,7 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.Timeout;
 
+@Ignore("Intermittent errors in this deprecated integration test.")
 public class ITComputeTest {
 
   private static final String REGION = "us-central1";
@@ -199,6 +200,7 @@ public class ITComputeTest {
     }
   }
 
+  @Ignore("Aggregate list method returns region scope instead of zone scope #3312")
   @Test
   public void testAggregatedListDiskTypes() {
     Page<DiskType> diskPage = compute.listDiskTypes();
@@ -215,6 +217,7 @@ public class ITComputeTest {
     }
   }
 
+  @Ignore("Aggregate list method returns region scope instead of zone scope #3312")
   @Test
   public void testAggregatedListDiskTypesWithFilter() {
     Page<DiskType> diskPage = compute.listDiskTypes(Compute.DiskTypeAggregatedListOption.filter(

@@ -17,16 +17,16 @@
 package com.google.cloud.pubsub.v1;
 
 import com.google.api.core.ApiClock;
+import com.google.api.core.ApiFutureCallback;
+import com.google.api.core.ApiFutures;
 import com.google.api.core.InternalApi;
+import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.batching.FlowController;
 import com.google.api.gax.batching.FlowController.FlowControlException;
 import com.google.api.gax.core.Distribution;
 import com.google.cloud.pubsub.v1.MessageDispatcher.OutstandingMessageBatch.OutstandingMessage;
-import com.google.common.collect.ArrayListMultimap;
 import com.google.common.primitives.Ints;
-import com.google.common.util.concurrent.FutureCallback;
-import com.google.common.util.concurrent.Futures;
-import com.google.common.util.concurrent.SettableFuture;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.ReceivedMessage;
 import java.util.ArrayList;
@@ -78,7 +78,7 @@ class MessageDispatcher {
   private final MessageWaiter messagesWaiter;
 
   // Maps ID to "total expiration time". If it takes longer than this, stop extending.
-  private final ConcurrentMap<String, Instant> pendingMessages = new ConcurrentHashMap<>();
+  private final ConcurrentMap<String, AckHandler> pendingMessages = new ConcurrentHashMap<>();
 
   private final LinkedBlockingQueue<String> pendingAcks = new LinkedBlockingQueue<>();
   private final LinkedBlockingQueue<String> pendingNacks = new LinkedBlockingQueue<>();
@@ -129,20 +129,29 @@ class MessageDispatcher {
   }
 
   /** Handles callbacks for acking/nacking messages from the {@link MessageReceiver}. */
-  private class AckHandler implements FutureCallback<AckReply> {
+  private class AckHandler implements ApiFutureCallback<AckReply> {
     private final String ackId;
     private final int outstandingBytes;
     private final long receivedTimeMillis;
+    private final Instant totalExpiration;
 
-    AckHandler(String ackId, int outstandingBytes) {
+    AckHandler(String ackId, int outstandingBytes, Instant totalExpiration) {
       this.ackId = ackId;
       this.outstandingBytes = outstandingBytes;
-      receivedTimeMillis = clock.millisTime();
+      this.receivedTimeMillis = clock.millisTime();
+      this.totalExpiration = totalExpiration;
     }
 
-    private void onBoth(LinkedBlockingQueue<String> destination) {
-      pendingMessages.remove(ackId);
-      destination.add(ackId);
+    /** Stop extending deadlines for this message and free flow control. */
+    private void forget() {
+      if (pendingMessages.remove(ackId) == null) {
+        /*
+         * We're forgetting the message for the second time. Probably because we ran out of total
+         * expiration, forget the message, then the user finishes working on the message, and forget
+         * again. Turn the second forget into a no-op so we don't free twice.
+         */
+        return;
+      }
       flowController.release(1, outstandingBytes);
       messagesWaiter.incrementPendingMessages(-1);
       processOutstandingBatches();
@@ -154,7 +163,8 @@ class MessageDispatcher {
           Level.WARNING,
           "MessageReceiver failed to processes ack ID: " + ackId + ", the message will be nacked.",
           t);
-      onBoth(pendingNacks);
+      pendingNacks.add(ackId);
+      forget();
     }
 
     @Override
@@ -174,7 +184,8 @@ class MessageDispatcher {
         default:
           throw new IllegalArgumentException(String.format("AckReply: %s not supported", reply));
       }
-      onBoth(destination);
+      destination.add(ackId);
+      forget();
     }
   }
 
@@ -327,20 +338,31 @@ class MessageDispatcher {
       doneCallback.run();
       return;
     }
-    messagesWaiter.incrementPendingMessages(messages.size());
 
     Instant totalExpiration = now().plus(maxAckExtensionPeriod);
-    for (ReceivedMessage message : messages) {
-      pendingReceipts.add(message.getAckId());
-      pendingMessages.put(message.getAckId(), totalExpiration);
-    }
-
     OutstandingMessageBatch outstandingBatch = new OutstandingMessageBatch(doneCallback);
     for (ReceivedMessage message : messages) {
       AckHandler ackHandler =
-          new AckHandler(message.getAckId(), message.getMessage().getSerializedSize());
+          new AckHandler(
+              message.getAckId(), message.getMessage().getSerializedSize(), totalExpiration);
+      if (pendingMessages.putIfAbsent(message.getAckId(), ackHandler) != null){
+        // putIfAbsent puts ackHandler if ackID isn't previously mapped, then return the previously-mapped element.
+        // If the previous element is not null, we already have the message and the new one is definitely a duplicate.
+        // Don't nack this, because that'd also nack the one we already have in queue.
+        // Don't update the existing one's total expiration either. If the user "loses" the message, we want to eventually
+        // totally expire so that pubsub service sends us the message again.
+        continue;
+      }
       outstandingBatch.addMessage(message, ackHandler);
+      pendingReceipts.add(message.getAckId());
     }
+
+    if (outstandingBatch.messages.isEmpty()) {
+      doneCallback.run();
+      return;
+    }
+
+    messagesWaiter.incrementPendingMessages(outstandingBatch.messages.size());
     synchronized (outstandingMessageBatches) {
       outstandingMessageBatches.add(outstandingBatch);
     }
@@ -381,7 +403,7 @@ class MessageDispatcher {
 
       final PubsubMessage message = outstandingMessage.receivedMessage().getMessage();
       final AckHandler ackHandler = outstandingMessage.ackHandler();
-      final SettableFuture<AckReply> response = SettableFuture.create();
+      final SettableApiFuture<AckReply> response = SettableApiFuture.create();
       final AckReplyConsumer consumer =
           new AckReplyConsumer() {
             @Override
@@ -394,12 +416,20 @@ class MessageDispatcher {
               response.set(AckReply.NACK);
             }
           };
-      Futures.addCallback(response, ackHandler);
+      ApiFutures.addCallback(response, ackHandler, MoreExecutors.directExecutor());
       executor.execute(
           new Runnable() {
             @Override
             public void run() {
               try {
+                if (ackHandler.totalExpiration.plusSeconds(messageDeadlineSeconds.get()).isBefore(now())) {
+                  // Message expired while waiting. We don't extend these messages anymore,
+                  // so it was probably sent to someone else. Don't work on it.
+                  // Don't nack it either, because we'd be nacking someone else's message.
+                  ackHandler.forget();
+                  return;
+                }
+
                 receiver.receiveMessage(message, consumer);
               } catch (Exception e) {
                 response.setException(e);
@@ -435,32 +465,26 @@ class MessageDispatcher {
     Instant now = now();
     Instant extendTo = now.plusSeconds(extendSeconds);
 
-    int count = 0;
-    Iterator<Map.Entry<String, Instant>> it = pendingMessages.entrySet().iterator();
-    while (it.hasNext()) {
-      Map.Entry<String, Instant> entry = it.next();
+    for (Map.Entry<String, AckHandler> entry : pendingMessages.entrySet()) {
       String ackId = entry.getKey();
-      Instant totalExpiration = entry.getValue();
-      // TODO(pongad): PendingModifyAckDeadline is created to dance around polling pull,
-      // since one modack RPC only takes one expiration.
-      // Whenever we delete polling pull, we should also delete PendingModifyAckDeadline,
-      // and just construct StreamingPullRequest directly.
+      Instant totalExpiration = entry.getValue().totalExpiration;
       if (totalExpiration.isAfter(extendTo)) {
         modack.ackIds.add(ackId);
-        count++;
         continue;
       }
-      it.remove();
+
+      // forget removes from pendingMessages; this is OK, concurrent maps can
+      // handle concurrent iterations and modifications.
+      entry.getValue().forget();
       if (totalExpiration.isAfter(now)) {
         int sec = Math.max(1, (int) now.until(totalExpiration, ChronoUnit.SECONDS));
         modacks.add(new PendingModifyAckDeadline(sec, ackId));
-        count++;
       }
     }
+    logger.log(Level.FINER, "Sending {0} modacks", modack.ackIds.size() + modacks.size());
     modacks.add(modack);
-    logger.log(Level.FINER, "Sending {0} modacks", count);
 
-    List<String> acksToSend = Collections.<String>emptyList();
+    List<String> acksToSend = Collections.emptyList();
     ackProcessor.sendAckOperations(acksToSend, modacks);
   }
 

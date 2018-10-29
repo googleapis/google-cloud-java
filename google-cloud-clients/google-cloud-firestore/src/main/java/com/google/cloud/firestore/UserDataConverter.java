@@ -16,12 +16,12 @@
 
 package com.google.cloud.firestore;
 
+import com.google.cloud.Timestamp;
 import com.google.common.base.Preconditions;
 import com.google.firestore.v1beta1.ArrayValue;
 import com.google.firestore.v1beta1.MapValue;
 import com.google.firestore.v1beta1.Value;
 import com.google.protobuf.NullValue;
-import com.google.protobuf.Timestamp;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -35,23 +35,50 @@ class UserDataConverter {
   interface EncodingOptions {
     /** Returns whether a field delete at `fieldPath` is allowed. */
     boolean allowDelete(FieldPath fieldPath);
+
+    /** Returns whether a field transform (server timestamp, array ops) is allowed. */
+    boolean allowTransform();
   }
 
-  /** Rejects all field deletes. */
+  /** Rejects all field deletes and allows all field transforms */
   static final EncodingOptions NO_DELETES =
       new EncodingOptions() {
         @Override
         public boolean allowDelete(FieldPath fieldPath) {
           return false;
         }
+
+        @Override
+        public boolean allowTransform() {
+          return true;
+        }
       };
 
-  /** Allows all field deletes. */
+  /** Allows all field deletes and allows all field transforms. */
   static final EncodingOptions ALLOW_ALL_DELETES =
       new EncodingOptions() {
         @Override
         public boolean allowDelete(FieldPath fieldPath) {
           return true;
+        }
+
+        @Override
+        public boolean allowTransform() {
+          return true;
+        }
+      };
+
+  /** Rejects all field deletes and any field transform. */
+  static final EncodingOptions ARGUMENT =
+      new EncodingOptions() {
+        @Override
+        public boolean allowDelete(FieldPath fieldPath) {
+          return false;
+        }
+
+        @Override
+        public boolean allowTransform() {
+          return false;
         }
       };
 
@@ -71,9 +98,15 @@ class UserDataConverter {
       FieldPath path, @Nullable Object sanitizedObject, EncodingOptions options) {
     if (sanitizedObject == FieldValue.DELETE_SENTINEL) {
       Preconditions.checkArgument(
-          options.allowDelete(path), "Encountered unexpected delete sentinel at field '%s'.", path);
+          options.allowDelete(path), "FieldValue.delete() is not supported at field '%s'.", path);
       return null;
-    } else if (sanitizedObject == FieldValue.SERVER_TIMESTAMP_SENTINEL) {
+    } else if (sanitizedObject instanceof FieldValue) {
+      Preconditions.checkArgument(
+          options.allowTransform(),
+          "Cannot use "
+              + ((FieldValue) sanitizedObject).getMethodName()
+              + " as an argument at field '%s'.",
+          path);
       return null;
     } else if (sanitizedObject == null) {
       return Value.newBuilder().setNullValue(NullValue.NULL_VALUE).build();
@@ -91,10 +124,14 @@ class UserDataConverter {
       Date date = (Date) sanitizedObject;
       long epochSeconds = TimeUnit.MILLISECONDS.toSeconds(date.getTime());
       long msOffset = date.getTime() - TimeUnit.SECONDS.toMillis(epochSeconds);
-      Timestamp.Builder timestampBuilder = Timestamp.newBuilder();
+      com.google.protobuf.Timestamp.Builder timestampBuilder =
+          com.google.protobuf.Timestamp.newBuilder();
       timestampBuilder.setSeconds(epochSeconds);
       timestampBuilder.setNanos((int) TimeUnit.MILLISECONDS.toNanos(msOffset));
       return Value.newBuilder().setTimestampValue(timestampBuilder.build()).build();
+    } else if (sanitizedObject instanceof Timestamp) {
+      Timestamp timestamp = (Timestamp) sanitizedObject;
+      return Value.newBuilder().setTimestampValue(timestamp.toProto()).build();
     } else if (sanitizedObject instanceof List) {
       ArrayValue.Builder res = ArrayValue.newBuilder();
       int i = 0;

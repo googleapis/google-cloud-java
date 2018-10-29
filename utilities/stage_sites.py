@@ -12,9 +12,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# This scripts creates sites for `google-cloud-clients` and `google-api-grpc`
+# This script creates sites for `google-cloud-clients` and `google-api-grpc`
 # modules and commits (but does not push) them to gh-pages branch of
-# GoogleCloudPlatform/google-cloud-java github repository.
+# googleapis/google-cloud-java github repository.
 
 # Usage:
 #   python utilities/stage_sites.py
@@ -52,5 +52,5 @@ def _run(command, cwd=None):
 
 if __name__ == '__main__':
   stage_sites(['google-api-grpc', 'google-cloud-clients'], 'tmp_gh-pages',
-              'git@github.com:GoogleCloudPlatform/google-cloud-java.git',
-              'https://googlecloudplatform.github.io/google-cloud-java')
+              'git@github.com:googleapis/google-cloud-java.git',
+              'https://googleapis.github.io/google-cloud-java')
