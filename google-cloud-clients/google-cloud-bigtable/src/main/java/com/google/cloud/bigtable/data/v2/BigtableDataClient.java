@@ -157,8 +157,8 @@ public class BigtableDataClient implements AutoCloseable {
    *     }
    *   }
    * } catch(ApiException e) {
-   *    e.printStackTrace();
-   *    }
+   *   e.printStackTrace();
+   * }
    * }</pre>
    *
    * @throws com.google.api.gax.rpc.ApiException when a serverside error occurs
@@ -187,8 +187,8 @@ public class BigtableDataClient implements AutoCloseable {
    *      }
    *   }
    * } catch(ApiException e) {
-   *    e.printStackTrace();
-   *    }
+   *   e.printStackTrace();
+   * }
    * }</pre>
    *
    * @throws com.google.api.gax.rpc.ApiException when a serverside error occurs
@@ -219,7 +219,9 @@ public class BigtableDataClient implements AutoCloseable {
    *       }
    *     }
    *     public void onSuccess(Row result) {
-   *       System.out.println("Got row: " + result);
+   *       if (result != null) {
+   *          System.out.println("Got row: " + result);
+   *       }
    *     }
    *   }, MoreExecutors.directExecutor());
    * }
@@ -251,7 +253,9 @@ public class BigtableDataClient implements AutoCloseable {
    *       }
    *     }
    *     public void onSuccess(Row row) {
-   *       System.out.println("Got row: " + row);
+   *       if (result != null) {
+   *          System.out.println("Got row: " + result);
+   *       }
    *     }
    *   }, MoreExecutors.directExecutor());
    * }
@@ -452,8 +456,8 @@ public class BigtableDataClient implements AutoCloseable {
    *   // Do something with keyOffset
    *   }
    * } catch(ApiException e) {
-   *    e.printStackTrace();
-   *   }
+   *   e.printStackTrace();
+   * }
    * }</pre>
    *
    * @throws com.google.api.gax.rpc.ApiException when a serverside error occurs
@@ -549,8 +553,8 @@ public class BigtableDataClient implements AutoCloseable {
    *
    *   bigtableDataClient.mutateRow(mutation);
    * } catch(ApiException e) {
-   *    e.printStackTrace();
-   *   }
+   *   e.printStackTrace();
+   * }
    * }</pre>
    *
    * @throws com.google.api.gax.rpc.ApiException when a serverside error occurs
@@ -663,11 +667,10 @@ public class BigtableDataClient implements AutoCloseable {
    *   }
    *   bigtableDataClient.bulkMutateRows(batch);
    * } catch(ApiException e) {
-   *    e.printStackTrace();
-   *   }
-   *   catch(MutateRowsException e) {
-   *    e.printStackTrace();
-   *   }
+   *   e.printStackTrace();
+   * } catch(MutateRowsException e) {
+   *   e.printStackTrace();
+   * }
    * }</pre>
    *
    * @throws com.google.api.gax.rpc.ApiException when a serverside error occurs
@@ -753,8 +756,8 @@ public class BigtableDataClient implements AutoCloseable {
    *
    *   Boolean result = bigtableDataClient.checkAndMutateRow(mutation);
    * } catch(ApiException e) {
-   *    e.printStackTrace();
-   *   }
+   *   e.printStackTrace();
+   * }
    * }</pre>
    *
    * @throws com.google.api.gax.rpc.ApiException when a serverside error occurs
@@ -849,8 +852,8 @@ public class BigtableDataClient implements AutoCloseable {
    *
    *   Row success = bigtableDataClient.readModifyWriteRow(mutation);
    * } catch(ApiException e) {
-   *    e.printStackTrace();
-   *   }
+   *   e.printStackTrace();
+   * }
    * }</pre>
    *
    * @throws com.google.api.gax.rpc.ApiException when a serverside error occurs

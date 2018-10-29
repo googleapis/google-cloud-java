@@ -139,7 +139,8 @@ public class BigtableDataClientTest {
   @Test
   public void readRowTest() {
     Mockito.when(mockReadRowsCallable.first().futureCall(any(Query.class)))
-            .thenReturn(ApiFutures.immediateFuture(Row.create(ByteString.copyFromUtf8("fake-row-key"), Collections.emptyList())));
+        .thenReturn(ApiFutures.immediateFuture(
+            Row.create(ByteString.copyFromUtf8("fake-row-key"), Collections.emptyList())));
     bigtableDataClient.readRow("fake-table", ByteString.copyFromUtf8("fake-row-key"));
 
     ArgumentCaptor<Query> requestCaptor = ArgumentCaptor.forClass(Query.class);
@@ -160,7 +161,8 @@ public class BigtableDataClientTest {
   @Test
   public void readRowStrTest() {
     Mockito.when(mockReadRowsCallable.first().futureCall(any(Query.class)))
-            .thenReturn(ApiFutures.immediateFuture(Row.create(ByteString.copyFromUtf8("fake-row-key"), Collections.emptyList())));
+        .thenReturn(ApiFutures.immediateFuture(
+            Row.create(ByteString.copyFromUtf8("fake-row-key"), Collections.emptyList())));
     bigtableDataClient.readRow("fake-table", "fake-row-key");
 
     ArgumentCaptor<Query> requestCaptor = ArgumentCaptor.forClass(Query.class);
@@ -209,7 +211,8 @@ public class BigtableDataClientTest {
 
   @Test
   public void sampleRowKeysTest() {
-    Mockito.when(mockSampleRowKeysCallable.futureCall(any(String.class))).thenReturn(ApiFutures.immediateFuture(Collections.emptyList()));
+    Mockito.when(mockSampleRowKeysCallable.futureCall(any(String.class)))
+        .thenReturn(ApiFutures.immediateFuture(Collections.emptyList()));
     bigtableDataClient.sampleRowKeys("fake-table");
     Mockito.verify(mockSampleRowKeysCallable).futureCall("fake-table");
   }
