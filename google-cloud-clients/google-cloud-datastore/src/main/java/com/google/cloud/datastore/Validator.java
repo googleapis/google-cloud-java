@@ -40,7 +40,7 @@ final class Validator {
   static String validateDatabase(String projectId) {
     checkArgument(!Strings.isNullOrEmpty(projectId), "projectId can't be empty or null");
     checkArgument(PROJECT_ID_PATTERN.matcher(projectId).matches(),
-        "projectId must match the following pattern: " + PROJECT_ID_PATTERN.pattern());
+    	"projectId " + projectId + " does not match the required pattern: " + PROJECT_ID_PATTERN.pattern());
     return projectId;
   }
 
