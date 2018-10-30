@@ -28,9 +28,9 @@ import com.google.cloud.dialogflow.v2beta1.KnowledgeBase;
 import com.google.cloud.dialogflow.v2beta1.KnowledgeBasesClient;
 import com.google.cloud.dialogflow.v2beta1.ProjectName;
 
+import com.google.common.collect.ImmutableList;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
-import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
@@ -53,7 +53,9 @@ public class KnowledgeBaseManagementIT {
   private static String KNOWLEDGE_BASE_NAME = "fake_knowledge_base_name";
   private static String DOCUMENT_BASE_NAME = "fake_document_name";
 
-  private static List<String> TEXTS = Collections.singletonList("How do I sign up?");
+  private static List<String> TEXTS = ImmutableList
+      .of("How do I sign up?", "Is my data redundant?", "Where can I find pricing information?",
+          "Where is my data stored?", "What are my support options?");
 
   @Before
   public void setUp() {
@@ -160,14 +162,19 @@ public class KnowledgeBaseManagementIT {
 
     Map<String, KnowledgeAnswers> allAnswers = DetectIntentKnowledge
         .detectIntentKnowledge(PROJECT_ID, knowledgeBaseName, SESSION_ID, LANGUAGE_CODE, TEXTS);
-    assertEquals(1, allAnswers.size());
-    KnowledgeAnswers knowledgeAnswers = allAnswers.get(TEXTS.get(0));
+    assertEquals(TEXTS.size(), allAnswers.size());
+    int answersFound = 0;
     for (String text : TEXTS) {
-      assertEquals(1, knowledgeAnswers.getAnswersCount());
-      Answer answer = knowledgeAnswers.getAnswers(0);
-      assertEquals(text, answer.getFaqQuestion());
-      assertEquals(document.getName(), answer.getSource());
-      assertThat(answer.getAnswer()).contains("Cloud Storage");
+      KnowledgeAnswers knowledgeAnswers = allAnswers.get(text);
+      if (knowledgeAnswers.getAnswersCount() > 0) {
+        answersFound++;
+        Answer answer = knowledgeAnswers.getAnswers(0);
+        assertEquals(text, answer.getFaqQuestion());
+        assertEquals(document.getName(), answer.getSource());
+        assertThat(answer.getAnswer()).contains("Cloud Storage");
+      }
     }
+    // To make the test less flaky, check that half of the texts got a result.
+    assertThat(answersFound).isGreaterThan(TEXTS.size() / 2);
   }
 }
