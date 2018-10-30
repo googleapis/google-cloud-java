@@ -19,36 +19,36 @@ import static com.google.common.truth.Truth.assertThat;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
+import com.google.api.gax.grpc.GrpcStatusCode;
+import com.google.api.gax.rpc.NotFoundException;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.bigtable.admin.v2.CheckConsistencyRequest;
-import com.google.bigtable.admin.v2.CheckConsistencyResponse;
 import com.google.bigtable.admin.v2.ColumnFamily;
 import com.google.bigtable.admin.v2.DeleteTableRequest;
 import com.google.bigtable.admin.v2.DropRowRangeRequest;
 import com.google.bigtable.admin.v2.GcRule;
-import com.google.bigtable.admin.v2.GenerateConsistencyTokenRequest;
-import com.google.bigtable.admin.v2.GenerateConsistencyTokenResponse;
 import com.google.bigtable.admin.v2.GetTableRequest;
 import com.google.bigtable.admin.v2.InstanceName;
 import com.google.bigtable.admin.v2.ListTablesRequest;
 import com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification;
+import com.google.bigtable.admin.v2.Table.View;
 import com.google.bigtable.admin.v2.TableName;
 import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListTablesPage;
 import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListTablesPagedResponse;
-import com.google.cloud.bigtable.admin.v2.models.ConsistencyToken;
 import com.google.cloud.bigtable.admin.v2.models.CreateTableRequest;
 import com.google.cloud.bigtable.admin.v2.models.ModifyColumnFamiliesRequest;
 import com.google.cloud.bigtable.admin.v2.models.Table;
-import com.google.cloud.bigtable.admin.v2.stub.BigtableTableAdminStub;
 import com.google.cloud.bigtable.admin.v2.stub.EnhancedBigtableTableAdminStub;
 import com.google.common.collect.Lists;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
+
+import io.grpc.Status;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.Matchers;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.invocation.InvocationOnMock;
@@ -78,14 +78,8 @@ public class BigtableTableAdminClientTest {
   private UnaryCallable<ListTablesRequest, ListTablesPagedResponse> mockListTableCallable;
   @Mock
   private UnaryCallable<DropRowRangeRequest, Empty> mockDropRowRangeCallable;
-
   @Mock
-  private UnaryCallable<GenerateConsistencyTokenRequest, GenerateConsistencyTokenResponse>
-      mockGenerateConsistencyTokenCallable;
-
-  @Mock
-  private UnaryCallable<CheckConsistencyRequest, CheckConsistencyResponse>
-      mockCheckConsistencyCallable;
+  private UnaryCallable<TableName, Void> mockAwaitReplicationCallable;
 
   @Before
   public void setUp() {
@@ -97,9 +91,7 @@ public class BigtableTableAdminClientTest {
     Mockito.when(mockStub.getTableCallable()).thenReturn(mockGetTableCallable);
     Mockito.when(mockStub.listTablesPagedCallable()).thenReturn(mockListTableCallable);
     Mockito.when(mockStub.dropRowRangeCallable()).thenReturn(mockDropRowRangeCallable);
-    Mockito.when(mockStub.generateConsistencyTokenCallable())
-        .thenReturn(mockGenerateConsistencyTokenCallable);
-    Mockito.when(mockStub.checkConsistencyCallable()).thenReturn(mockCheckConsistencyCallable);
+    Mockito.when(mockStub.awaitReplicationCallable()).thenReturn(mockAwaitReplicationCallable);
   }
 
   @Test
@@ -198,6 +190,7 @@ public class BigtableTableAdminClientTest {
     // Setup
     GetTableRequest expectedRequest = GetTableRequest.newBuilder()
         .setName(TABLE_NAME.toString())
+        .setView(View.SCHEMA_VIEW)
         .build();
 
     com.google.bigtable.admin.v2.Table expectedResponse = com.google.bigtable.admin.v2.Table
@@ -295,48 +288,60 @@ public class BigtableTableAdminClientTest {
   }
 
   @Test
-  public void testGenerateConsistencyToken() {
+  public void testAwaitReplication() {
     // Setup
-    GenerateConsistencyTokenRequest expectedRequest = GenerateConsistencyTokenRequest.newBuilder()
-        .setName(TABLE_NAME.toString())
-        .build();
+    @SuppressWarnings("UnnecessaryLocalVariable")
+    TableName expectedRequest = TABLE_NAME;
 
-    GenerateConsistencyTokenResponse expectedResponse =
-        GenerateConsistencyTokenResponse.newBuilder()
-            .setConsistencyToken("fakeToken")
-            .build();
+    final AtomicBoolean wasCalled = new AtomicBoolean(false);
 
-    Mockito.when(mockGenerateConsistencyTokenCallable.futureCall(expectedRequest))
-        .thenReturn(ApiFutures.immediateFuture(expectedResponse));
+    Mockito.when(mockAwaitReplicationCallable.futureCall(expectedRequest))
+        .thenAnswer(new Answer<ApiFuture<Void>>() {
+          @Override
+          public ApiFuture<Void> answer(InvocationOnMock invocationOnMock) throws Throwable {
+            wasCalled.set(true);
+            return ApiFutures.immediateFuture(null);
+          }
+        });
 
     // Execute
-    ConsistencyToken actualResult = adminClient.generateConsistencyToken(TABLE_NAME.getTable());
+    adminClient.awaitReplication(TABLE_NAME.getTable());
 
     // Verify
-    assertThat(actualResult).isEqualTo(ConsistencyToken.of(TABLE_NAME, "fakeToken"));
+    assertThat(wasCalled.get()).isTrue();
   }
 
   @Test
-  public void testCheckConsistencyToken() {
+  public void testExistsTrue() {
     // Setup
-    CheckConsistencyRequest expectedRequest = CheckConsistencyRequest.newBuilder()
-        .setName(TABLE_NAME.toString())
-        .setConsistencyToken("fakeToken")
-        .build();
+    com.google.bigtable.admin.v2.Table expectedResponse =
+        com.google.bigtable.admin.v2.Table.newBuilder()
+            .setName(TABLE_NAME.toString())
+            .build();
 
-    CheckConsistencyResponse expectedResponse = CheckConsistencyResponse.newBuilder()
-        .setConsistent(true)
-        .build();
-
-    Mockito.when(mockCheckConsistencyCallable.futureCall(expectedRequest))
+    Mockito.when(mockGetTableCallable.futureCall(Matchers.any(GetTableRequest.class)))
         .thenReturn(ApiFutures.immediateFuture(expectedResponse));
 
     // Execute
-    ConsistencyToken actualToken = ConsistencyToken.of(TABLE_NAME, "fakeToken");
-
-    boolean actualResult = adminClient.isConsistent(actualToken);
+    boolean found = adminClient.exists(TABLE_NAME.getTable());
 
     // Verify
-    assertThat(actualResult).isTrue();
+    assertThat(found).isTrue();
+  }
+
+  @Test
+  public void testExistsFalse() {
+    // Setup
+    NotFoundException exception =
+        new NotFoundException("fake error", null, GrpcStatusCode.of(Status.Code.NOT_FOUND), false);
+
+    Mockito.when(mockGetTableCallable.futureCall(Matchers.any(GetTableRequest.class)))
+            .thenReturn(ApiFutures.<com.google.bigtable.admin.v2.Table>immediateFailedFuture(exception));
+
+    // Execute
+    boolean found = adminClient.exists(TABLE_NAME.getTable());
+
+    // Verify
+    assertThat(found).isFalse();
   }
 }

@@ -317,7 +317,7 @@ public class GroupServiceClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final Group getGroup(GetGroupRequest request) {
+  public final Group getGroup(GetGroupRequest request) {
     return getGroupCallable().call(request);
   }
 
@@ -583,7 +583,7 @@ public class GroupServiceClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final void deleteGroup(DeleteGroupRequest request) {
+  public final void deleteGroup(DeleteGroupRequest request) {
     deleteGroupCallable().call(request);
   }
 

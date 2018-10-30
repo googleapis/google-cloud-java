@@ -356,7 +356,7 @@ public class KnowledgeBasesClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final KnowledgeBase getKnowledgeBase(GetKnowledgeBaseRequest request) {
+  public final KnowledgeBase getKnowledgeBase(GetKnowledgeBaseRequest request) {
     return getKnowledgeBaseCallable().call(request);
   }
 
@@ -559,7 +559,7 @@ public class KnowledgeBasesClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final void deleteKnowledgeBase(DeleteKnowledgeBaseRequest request) {
+  public final void deleteKnowledgeBase(DeleteKnowledgeBaseRequest request) {
     deleteKnowledgeBaseCallable().call(request);
   }
 

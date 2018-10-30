@@ -549,10 +549,12 @@ private static final long serialVersionUID = 0L;
   private com.google.spanner.v1.ResultSetStats stats_;
   /**
    * <pre>
-   * Query plan and execution statistics for the query that produced this
+   * Query plan and execution statistics for the statement that produced this
    * streaming result set. These can be requested by setting
    * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode] and are sent
    * only once with the last response in the stream.
+   * This field will also be present in the last response for DML
+   * statements.
    * </pre>
    *
    * <code>.google.spanner.v1.ResultSetStats stats = 5;</code>
@@ -562,10 +564,12 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Query plan and execution statistics for the query that produced this
+   * Query plan and execution statistics for the statement that produced this
    * streaming result set. These can be requested by setting
    * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode] and are sent
    * only once with the last response in the stream.
+   * This field will also be present in the last response for DML
+   * statements.
    * </pre>
    *
    * <code>.google.spanner.v1.ResultSetStats stats = 5;</code>
@@ -575,10 +579,12 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Query plan and execution statistics for the query that produced this
+   * Query plan and execution statistics for the statement that produced this
    * streaming result set. These can be requested by setting
    * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode] and are sent
    * only once with the last response in the stream.
+   * This field will also be present in the last response for DML
+   * statements.
    * </pre>
    *
    * <code>.google.spanner.v1.ResultSetStats stats = 5;</code>
@@ -2653,10 +2659,12 @@ private static final long serialVersionUID = 0L;
         com.google.spanner.v1.ResultSetStats, com.google.spanner.v1.ResultSetStats.Builder, com.google.spanner.v1.ResultSetStatsOrBuilder> statsBuilder_;
     /**
      * <pre>
-     * Query plan and execution statistics for the query that produced this
+     * Query plan and execution statistics for the statement that produced this
      * streaming result set. These can be requested by setting
      * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode] and are sent
      * only once with the last response in the stream.
+     * This field will also be present in the last response for DML
+     * statements.
      * </pre>
      *
      * <code>.google.spanner.v1.ResultSetStats stats = 5;</code>
@@ -2666,10 +2674,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Query plan and execution statistics for the query that produced this
+     * Query plan and execution statistics for the statement that produced this
      * streaming result set. These can be requested by setting
      * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode] and are sent
      * only once with the last response in the stream.
+     * This field will also be present in the last response for DML
+     * statements.
      * </pre>
      *
      * <code>.google.spanner.v1.ResultSetStats stats = 5;</code>
@@ -2683,10 +2693,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Query plan and execution statistics for the query that produced this
+     * Query plan and execution statistics for the statement that produced this
      * streaming result set. These can be requested by setting
      * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode] and are sent
      * only once with the last response in the stream.
+     * This field will also be present in the last response for DML
+     * statements.
      * </pre>
      *
      * <code>.google.spanner.v1.ResultSetStats stats = 5;</code>
@@ -2706,10 +2718,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Query plan and execution statistics for the query that produced this
+     * Query plan and execution statistics for the statement that produced this
      * streaming result set. These can be requested by setting
      * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode] and are sent
      * only once with the last response in the stream.
+     * This field will also be present in the last response for DML
+     * statements.
      * </pre>
      *
      * <code>.google.spanner.v1.ResultSetStats stats = 5;</code>
@@ -2727,10 +2741,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Query plan and execution statistics for the query that produced this
+     * Query plan and execution statistics for the statement that produced this
      * streaming result set. These can be requested by setting
      * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode] and are sent
      * only once with the last response in the stream.
+     * This field will also be present in the last response for DML
+     * statements.
      * </pre>
      *
      * <code>.google.spanner.v1.ResultSetStats stats = 5;</code>
@@ -2752,10 +2768,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Query plan and execution statistics for the query that produced this
+     * Query plan and execution statistics for the statement that produced this
      * streaming result set. These can be requested by setting
      * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode] and are sent
      * only once with the last response in the stream.
+     * This field will also be present in the last response for DML
+     * statements.
      * </pre>
      *
      * <code>.google.spanner.v1.ResultSetStats stats = 5;</code>
@@ -2773,10 +2791,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Query plan and execution statistics for the query that produced this
+     * Query plan and execution statistics for the statement that produced this
      * streaming result set. These can be requested by setting
      * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode] and are sent
      * only once with the last response in the stream.
+     * This field will also be present in the last response for DML
+     * statements.
      * </pre>
      *
      * <code>.google.spanner.v1.ResultSetStats stats = 5;</code>
@@ -2788,10 +2808,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Query plan and execution statistics for the query that produced this
+     * Query plan and execution statistics for the statement that produced this
      * streaming result set. These can be requested by setting
      * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode] and are sent
      * only once with the last response in the stream.
+     * This field will also be present in the last response for DML
+     * statements.
      * </pre>
      *
      * <code>.google.spanner.v1.ResultSetStats stats = 5;</code>
@@ -2806,10 +2828,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Query plan and execution statistics for the query that produced this
+     * Query plan and execution statistics for the statement that produced this
      * streaming result set. These can be requested by setting
      * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode] and are sent
      * only once with the last response in the stream.
+     * This field will also be present in the last response for DML
+     * statements.
      * </pre>
      *
      * <code>.google.spanner.v1.ResultSetStats stats = 5;</code>

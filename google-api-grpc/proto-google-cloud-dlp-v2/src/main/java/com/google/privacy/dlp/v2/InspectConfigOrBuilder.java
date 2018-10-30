@@ -244,4 +244,58 @@ public interface InspectConfigOrBuilder extends
    * <code>repeated .google.privacy.dlp.v2.ContentOption content_options = 8;</code>
    */
   int getContentOptionsValue(int index);
+
+  /**
+   * <pre>
+   * Set of rules to apply to the findings for this InspectConfig.
+   * Exclusion rules, contained in the set are executed in the end, other
+   * rules are executed in the order they are specified for each info type.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.InspectionRuleSet rule_set = 10;</code>
+   */
+  java.util.List<com.google.privacy.dlp.v2.InspectionRuleSet> 
+      getRuleSetList();
+  /**
+   * <pre>
+   * Set of rules to apply to the findings for this InspectConfig.
+   * Exclusion rules, contained in the set are executed in the end, other
+   * rules are executed in the order they are specified for each info type.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.InspectionRuleSet rule_set = 10;</code>
+   */
+  com.google.privacy.dlp.v2.InspectionRuleSet getRuleSet(int index);
+  /**
+   * <pre>
+   * Set of rules to apply to the findings for this InspectConfig.
+   * Exclusion rules, contained in the set are executed in the end, other
+   * rules are executed in the order they are specified for each info type.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.InspectionRuleSet rule_set = 10;</code>
+   */
+  int getRuleSetCount();
+  /**
+   * <pre>
+   * Set of rules to apply to the findings for this InspectConfig.
+   * Exclusion rules, contained in the set are executed in the end, other
+   * rules are executed in the order they are specified for each info type.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.InspectionRuleSet rule_set = 10;</code>
+   */
+  java.util.List<? extends com.google.privacy.dlp.v2.InspectionRuleSetOrBuilder> 
+      getRuleSetOrBuilderList();
+  /**
+   * <pre>
+   * Set of rules to apply to the findings for this InspectConfig.
+   * Exclusion rules, contained in the set are executed in the end, other
+   * rules are executed in the order they are specified for each info type.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.InspectionRuleSet rule_set = 10;</code>
+   */
+  com.google.privacy.dlp.v2.InspectionRuleSetOrBuilder getRuleSetOrBuilder(
+      int index);
 }

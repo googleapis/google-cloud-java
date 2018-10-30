@@ -523,6 +523,16 @@ public class JobTest {
     compareJob(expectedJob, Job.fromPb(serviceMockReturnsOptions, expectedJob.toPb()));
   }
 
+  @Test
+  public void testToAndFromPbWithoutConfiguration() {
+    JobInfo jobInfo =
+        JobInfo.newBuilder(null)
+            .build();
+    initializeExpectedJob(4, jobInfo);
+    replay(bigquery);
+    compareJob(expectedJob, Job.fromPb(serviceMockReturnsOptions, expectedJob.toPb()));
+  }
+
   private void compareJob(Job expected, Job value) {
     assertEquals(expected, value);
     compareJobInfo(expected, value);

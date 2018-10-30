@@ -366,7 +366,7 @@ public class DocumentsClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final Document getDocument(GetDocumentRequest request) {
+  public final Document getDocument(GetDocumentRequest request) {
     return getDocumentCallable().call(request);
   }
 
@@ -628,7 +628,7 @@ public class DocumentsClient implements BackgroundResource {
    */
   @BetaApi(
       "The surface for long-running operations is not stable yet and may change in the future.")
-  private final OperationFuture<Empty, KnowledgeOperationMetadata> deleteDocumentAsync(
+  public final OperationFuture<Empty, KnowledgeOperationMetadata> deleteDocumentAsync(
       DeleteDocumentRequest request) {
     return deleteDocumentOperationCallable().futureCall(request);
   }

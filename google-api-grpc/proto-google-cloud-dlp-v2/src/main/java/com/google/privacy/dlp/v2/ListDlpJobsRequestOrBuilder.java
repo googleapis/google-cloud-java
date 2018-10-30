@@ -120,4 +120,40 @@ public interface ListDlpJobsRequestOrBuilder extends
    * <code>.google.privacy.dlp.v2.DlpJobType type = 5;</code>
    */
   com.google.privacy.dlp.v2.DlpJobType getType();
+
+  /**
+   * <pre>
+   * Optional comma separated list of fields to order by,
+   * followed by `asc` or `desc` postfix. This list is case-insensitive,
+   * default sorting order is ascending, redundant space characters are
+   * insignificant.
+   * Example: `name asc, end_time asc, create_time desc`
+   * Supported fields are:
+   * - `create_time`: corresponds to time the job was created.
+   * - `end_time`: corresponds to time the job ended.
+   * - `name`: corresponds to job's name.
+   * - `state`: corresponds to `state`
+   * </pre>
+   *
+   * <code>string order_by = 6;</code>
+   */
+  java.lang.String getOrderBy();
+  /**
+   * <pre>
+   * Optional comma separated list of fields to order by,
+   * followed by `asc` or `desc` postfix. This list is case-insensitive,
+   * default sorting order is ascending, redundant space characters are
+   * insignificant.
+   * Example: `name asc, end_time asc, create_time desc`
+   * Supported fields are:
+   * - `create_time`: corresponds to time the job was created.
+   * - `end_time`: corresponds to time the job ended.
+   * - `name`: corresponds to job's name.
+   * - `state`: corresponds to `state`
+   * </pre>
+   *
+   * <code>string order_by = 6;</code>
+   */
+  com.google.protobuf.ByteString
+      getOrderByBytes();
 }

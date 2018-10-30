@@ -305,6 +305,35 @@ public class WatchTest {
   }
 
   @Test
+  public void queryWatchDoesntSendRaiseSnapshotOnReset() throws InterruptedException {
+    // This test is meant to reproduce https://github.com/googleapis/google-cloud-dotnet/issues/2542
+    addQueryListener();
+
+    awaitAddTarget();
+
+    send(addTarget());
+    send(current());
+    send(snapshot());
+
+    awaitQuerySnapshot();
+
+    close();
+    awaitClose();
+    awaitAddTarget();
+
+    send(addTarget());
+    send(current());
+    // This should not raise a snapshot, since nothing has changed since the last snapshot.
+    send(snapshot());
+
+    send(doc("coll/doc", SINGLE_FIELD_PROTO));
+    send(snapshot());
+
+    // Verify that we only receveived one snapshot.
+    awaitQuerySnapshot(new SnapshotDocument(ChangeType.ADDED, "coll/doc", SINGLE_FIELD_MAP));
+  }
+
+  @Test
   public void queryWatchDoesntReopenInactiveStream() throws InterruptedException {
     addQueryListener();
 

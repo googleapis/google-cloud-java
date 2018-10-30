@@ -28,6 +28,7 @@ private static final long serialVersionUID = 0L;
     excludeInfoTypes_ = false;
     customInfoTypes_ = java.util.Collections.emptyList();
     contentOptions_ = java.util.Collections.emptyList();
+    ruleSet_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -124,6 +125,15 @@ private static final long serialVersionUID = 0L;
             input.popLimit(oldLimit);
             break;
           }
+          case 82: {
+            if (!((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
+              ruleSet_ = new java.util.ArrayList<com.google.privacy.dlp.v2.InspectionRuleSet>();
+              mutable_bitField0_ |= 0x00000080;
+            }
+            ruleSet_.add(
+                input.readMessage(com.google.privacy.dlp.v2.InspectionRuleSet.parser(), extensionRegistry));
+            break;
+          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -147,6 +157,9 @@ private static final long serialVersionUID = 0L;
       }
       if (((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
         contentOptions_ = java.util.Collections.unmodifiableList(contentOptions_);
+      }
+      if (((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
+        ruleSet_ = java.util.Collections.unmodifiableList(ruleSet_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -2367,6 +2380,71 @@ private static final long serialVersionUID = 0L;
   }
   private int contentOptionsMemoizedSerializedSize;
 
+  public static final int RULE_SET_FIELD_NUMBER = 10;
+  private java.util.List<com.google.privacy.dlp.v2.InspectionRuleSet> ruleSet_;
+  /**
+   * <pre>
+   * Set of rules to apply to the findings for this InspectConfig.
+   * Exclusion rules, contained in the set are executed in the end, other
+   * rules are executed in the order they are specified for each info type.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.InspectionRuleSet rule_set = 10;</code>
+   */
+  public java.util.List<com.google.privacy.dlp.v2.InspectionRuleSet> getRuleSetList() {
+    return ruleSet_;
+  }
+  /**
+   * <pre>
+   * Set of rules to apply to the findings for this InspectConfig.
+   * Exclusion rules, contained in the set are executed in the end, other
+   * rules are executed in the order they are specified for each info type.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.InspectionRuleSet rule_set = 10;</code>
+   */
+  public java.util.List<? extends com.google.privacy.dlp.v2.InspectionRuleSetOrBuilder> 
+      getRuleSetOrBuilderList() {
+    return ruleSet_;
+  }
+  /**
+   * <pre>
+   * Set of rules to apply to the findings for this InspectConfig.
+   * Exclusion rules, contained in the set are executed in the end, other
+   * rules are executed in the order they are specified for each info type.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.InspectionRuleSet rule_set = 10;</code>
+   */
+  public int getRuleSetCount() {
+    return ruleSet_.size();
+  }
+  /**
+   * <pre>
+   * Set of rules to apply to the findings for this InspectConfig.
+   * Exclusion rules, contained in the set are executed in the end, other
+   * rules are executed in the order they are specified for each info type.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.InspectionRuleSet rule_set = 10;</code>
+   */
+  public com.google.privacy.dlp.v2.InspectionRuleSet getRuleSet(int index) {
+    return ruleSet_.get(index);
+  }
+  /**
+   * <pre>
+   * Set of rules to apply to the findings for this InspectConfig.
+   * Exclusion rules, contained in the set are executed in the end, other
+   * rules are executed in the order they are specified for each info type.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.InspectionRuleSet rule_set = 10;</code>
+   */
+  public com.google.privacy.dlp.v2.InspectionRuleSetOrBuilder getRuleSetOrBuilder(
+      int index) {
+    return ruleSet_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -2406,6 +2484,9 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < contentOptions_.size(); i++) {
       output.writeEnumNoTag(contentOptions_.get(i));
+    }
+    for (int i = 0; i < ruleSet_.size(); i++) {
+      output.writeMessage(10, ruleSet_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -2452,6 +2533,10 @@ private static final long serialVersionUID = 0L;
           .computeUInt32SizeNoTag(dataSize);
       }contentOptionsMemoizedSerializedSize = dataSize;
     }
+    for (int i = 0; i < ruleSet_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(10, ruleSet_.get(i));
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2483,6 +2568,8 @@ private static final long serialVersionUID = 0L;
     result = result && getCustomInfoTypesList()
         .equals(other.getCustomInfoTypesList());
     result = result && contentOptions_.equals(other.contentOptions_);
+    result = result && getRuleSetList()
+        .equals(other.getRuleSetList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -2517,6 +2604,10 @@ private static final long serialVersionUID = 0L;
     if (getContentOptionsCount() > 0) {
       hash = (37 * hash) + CONTENT_OPTIONS_FIELD_NUMBER;
       hash = (53 * hash) + contentOptions_.hashCode();
+    }
+    if (getRuleSetCount() > 0) {
+      hash = (37 * hash) + RULE_SET_FIELD_NUMBER;
+      hash = (53 * hash) + getRuleSetList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -2654,6 +2745,7 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
         getInfoTypesFieldBuilder();
         getCustomInfoTypesFieldBuilder();
+        getRuleSetFieldBuilder();
       }
     }
     @java.lang.Override
@@ -2685,6 +2777,12 @@ private static final long serialVersionUID = 0L;
       }
       contentOptions_ = java.util.Collections.emptyList();
       bitField0_ = (bitField0_ & ~0x00000040);
+      if (ruleSetBuilder_ == null) {
+        ruleSet_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000080);
+      } else {
+        ruleSetBuilder_.clear();
+      }
       return this;
     }
 
@@ -2744,6 +2842,15 @@ private static final long serialVersionUID = 0L;
         bitField0_ = (bitField0_ & ~0x00000040);
       }
       result.contentOptions_ = contentOptions_;
+      if (ruleSetBuilder_ == null) {
+        if (((bitField0_ & 0x00000080) == 0x00000080)) {
+          ruleSet_ = java.util.Collections.unmodifiableList(ruleSet_);
+          bitField0_ = (bitField0_ & ~0x00000080);
+        }
+        result.ruleSet_ = ruleSet_;
+      } else {
+        result.ruleSet_ = ruleSetBuilder_.build();
+      }
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -2866,6 +2973,32 @@ private static final long serialVersionUID = 0L;
           contentOptions_.addAll(other.contentOptions_);
         }
         onChanged();
+      }
+      if (ruleSetBuilder_ == null) {
+        if (!other.ruleSet_.isEmpty()) {
+          if (ruleSet_.isEmpty()) {
+            ruleSet_ = other.ruleSet_;
+            bitField0_ = (bitField0_ & ~0x00000080);
+          } else {
+            ensureRuleSetIsMutable();
+            ruleSet_.addAll(other.ruleSet_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.ruleSet_.isEmpty()) {
+          if (ruleSetBuilder_.isEmpty()) {
+            ruleSetBuilder_.dispose();
+            ruleSetBuilder_ = null;
+            ruleSet_ = other.ruleSet_;
+            bitField0_ = (bitField0_ & ~0x00000080);
+            ruleSetBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getRuleSetFieldBuilder() : null;
+          } else {
+            ruleSetBuilder_.addAllMessages(other.ruleSet_);
+          }
+        }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -4148,6 +4281,354 @@ private static final long serialVersionUID = 0L;
       }
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.google.privacy.dlp.v2.InspectionRuleSet> ruleSet_ =
+      java.util.Collections.emptyList();
+    private void ensureRuleSetIsMutable() {
+      if (!((bitField0_ & 0x00000080) == 0x00000080)) {
+        ruleSet_ = new java.util.ArrayList<com.google.privacy.dlp.v2.InspectionRuleSet>(ruleSet_);
+        bitField0_ |= 0x00000080;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.google.privacy.dlp.v2.InspectionRuleSet, com.google.privacy.dlp.v2.InspectionRuleSet.Builder, com.google.privacy.dlp.v2.InspectionRuleSetOrBuilder> ruleSetBuilder_;
+
+    /**
+     * <pre>
+     * Set of rules to apply to the findings for this InspectConfig.
+     * Exclusion rules, contained in the set are executed in the end, other
+     * rules are executed in the order they are specified for each info type.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.InspectionRuleSet rule_set = 10;</code>
+     */
+    public java.util.List<com.google.privacy.dlp.v2.InspectionRuleSet> getRuleSetList() {
+      if (ruleSetBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(ruleSet_);
+      } else {
+        return ruleSetBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * Set of rules to apply to the findings for this InspectConfig.
+     * Exclusion rules, contained in the set are executed in the end, other
+     * rules are executed in the order they are specified for each info type.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.InspectionRuleSet rule_set = 10;</code>
+     */
+    public int getRuleSetCount() {
+      if (ruleSetBuilder_ == null) {
+        return ruleSet_.size();
+      } else {
+        return ruleSetBuilder_.getCount();
+      }
+    }
+    /**
+     * <pre>
+     * Set of rules to apply to the findings for this InspectConfig.
+     * Exclusion rules, contained in the set are executed in the end, other
+     * rules are executed in the order they are specified for each info type.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.InspectionRuleSet rule_set = 10;</code>
+     */
+    public com.google.privacy.dlp.v2.InspectionRuleSet getRuleSet(int index) {
+      if (ruleSetBuilder_ == null) {
+        return ruleSet_.get(index);
+      } else {
+        return ruleSetBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * Set of rules to apply to the findings for this InspectConfig.
+     * Exclusion rules, contained in the set are executed in the end, other
+     * rules are executed in the order they are specified for each info type.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.InspectionRuleSet rule_set = 10;</code>
+     */
+    public Builder setRuleSet(
+        int index, com.google.privacy.dlp.v2.InspectionRuleSet value) {
+      if (ruleSetBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureRuleSetIsMutable();
+        ruleSet_.set(index, value);
+        onChanged();
+      } else {
+        ruleSetBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Set of rules to apply to the findings for this InspectConfig.
+     * Exclusion rules, contained in the set are executed in the end, other
+     * rules are executed in the order they are specified for each info type.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.InspectionRuleSet rule_set = 10;</code>
+     */
+    public Builder setRuleSet(
+        int index, com.google.privacy.dlp.v2.InspectionRuleSet.Builder builderForValue) {
+      if (ruleSetBuilder_ == null) {
+        ensureRuleSetIsMutable();
+        ruleSet_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        ruleSetBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Set of rules to apply to the findings for this InspectConfig.
+     * Exclusion rules, contained in the set are executed in the end, other
+     * rules are executed in the order they are specified for each info type.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.InspectionRuleSet rule_set = 10;</code>
+     */
+    public Builder addRuleSet(com.google.privacy.dlp.v2.InspectionRuleSet value) {
+      if (ruleSetBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureRuleSetIsMutable();
+        ruleSet_.add(value);
+        onChanged();
+      } else {
+        ruleSetBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Set of rules to apply to the findings for this InspectConfig.
+     * Exclusion rules, contained in the set are executed in the end, other
+     * rules are executed in the order they are specified for each info type.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.InspectionRuleSet rule_set = 10;</code>
+     */
+    public Builder addRuleSet(
+        int index, com.google.privacy.dlp.v2.InspectionRuleSet value) {
+      if (ruleSetBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureRuleSetIsMutable();
+        ruleSet_.add(index, value);
+        onChanged();
+      } else {
+        ruleSetBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Set of rules to apply to the findings for this InspectConfig.
+     * Exclusion rules, contained in the set are executed in the end, other
+     * rules are executed in the order they are specified for each info type.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.InspectionRuleSet rule_set = 10;</code>
+     */
+    public Builder addRuleSet(
+        com.google.privacy.dlp.v2.InspectionRuleSet.Builder builderForValue) {
+      if (ruleSetBuilder_ == null) {
+        ensureRuleSetIsMutable();
+        ruleSet_.add(builderForValue.build());
+        onChanged();
+      } else {
+        ruleSetBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Set of rules to apply to the findings for this InspectConfig.
+     * Exclusion rules, contained in the set are executed in the end, other
+     * rules are executed in the order they are specified for each info type.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.InspectionRuleSet rule_set = 10;</code>
+     */
+    public Builder addRuleSet(
+        int index, com.google.privacy.dlp.v2.InspectionRuleSet.Builder builderForValue) {
+      if (ruleSetBuilder_ == null) {
+        ensureRuleSetIsMutable();
+        ruleSet_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        ruleSetBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Set of rules to apply to the findings for this InspectConfig.
+     * Exclusion rules, contained in the set are executed in the end, other
+     * rules are executed in the order they are specified for each info type.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.InspectionRuleSet rule_set = 10;</code>
+     */
+    public Builder addAllRuleSet(
+        java.lang.Iterable<? extends com.google.privacy.dlp.v2.InspectionRuleSet> values) {
+      if (ruleSetBuilder_ == null) {
+        ensureRuleSetIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, ruleSet_);
+        onChanged();
+      } else {
+        ruleSetBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Set of rules to apply to the findings for this InspectConfig.
+     * Exclusion rules, contained in the set are executed in the end, other
+     * rules are executed in the order they are specified for each info type.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.InspectionRuleSet rule_set = 10;</code>
+     */
+    public Builder clearRuleSet() {
+      if (ruleSetBuilder_ == null) {
+        ruleSet_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000080);
+        onChanged();
+      } else {
+        ruleSetBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Set of rules to apply to the findings for this InspectConfig.
+     * Exclusion rules, contained in the set are executed in the end, other
+     * rules are executed in the order they are specified for each info type.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.InspectionRuleSet rule_set = 10;</code>
+     */
+    public Builder removeRuleSet(int index) {
+      if (ruleSetBuilder_ == null) {
+        ensureRuleSetIsMutable();
+        ruleSet_.remove(index);
+        onChanged();
+      } else {
+        ruleSetBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Set of rules to apply to the findings for this InspectConfig.
+     * Exclusion rules, contained in the set are executed in the end, other
+     * rules are executed in the order they are specified for each info type.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.InspectionRuleSet rule_set = 10;</code>
+     */
+    public com.google.privacy.dlp.v2.InspectionRuleSet.Builder getRuleSetBuilder(
+        int index) {
+      return getRuleSetFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * Set of rules to apply to the findings for this InspectConfig.
+     * Exclusion rules, contained in the set are executed in the end, other
+     * rules are executed in the order they are specified for each info type.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.InspectionRuleSet rule_set = 10;</code>
+     */
+    public com.google.privacy.dlp.v2.InspectionRuleSetOrBuilder getRuleSetOrBuilder(
+        int index) {
+      if (ruleSetBuilder_ == null) {
+        return ruleSet_.get(index);  } else {
+        return ruleSetBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * Set of rules to apply to the findings for this InspectConfig.
+     * Exclusion rules, contained in the set are executed in the end, other
+     * rules are executed in the order they are specified for each info type.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.InspectionRuleSet rule_set = 10;</code>
+     */
+    public java.util.List<? extends com.google.privacy.dlp.v2.InspectionRuleSetOrBuilder> 
+         getRuleSetOrBuilderList() {
+      if (ruleSetBuilder_ != null) {
+        return ruleSetBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(ruleSet_);
+      }
+    }
+    /**
+     * <pre>
+     * Set of rules to apply to the findings for this InspectConfig.
+     * Exclusion rules, contained in the set are executed in the end, other
+     * rules are executed in the order they are specified for each info type.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.InspectionRuleSet rule_set = 10;</code>
+     */
+    public com.google.privacy.dlp.v2.InspectionRuleSet.Builder addRuleSetBuilder() {
+      return getRuleSetFieldBuilder().addBuilder(
+          com.google.privacy.dlp.v2.InspectionRuleSet.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * Set of rules to apply to the findings for this InspectConfig.
+     * Exclusion rules, contained in the set are executed in the end, other
+     * rules are executed in the order they are specified for each info type.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.InspectionRuleSet rule_set = 10;</code>
+     */
+    public com.google.privacy.dlp.v2.InspectionRuleSet.Builder addRuleSetBuilder(
+        int index) {
+      return getRuleSetFieldBuilder().addBuilder(
+          index, com.google.privacy.dlp.v2.InspectionRuleSet.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * Set of rules to apply to the findings for this InspectConfig.
+     * Exclusion rules, contained in the set are executed in the end, other
+     * rules are executed in the order they are specified for each info type.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.InspectionRuleSet rule_set = 10;</code>
+     */
+    public java.util.List<com.google.privacy.dlp.v2.InspectionRuleSet.Builder> 
+         getRuleSetBuilderList() {
+      return getRuleSetFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.google.privacy.dlp.v2.InspectionRuleSet, com.google.privacy.dlp.v2.InspectionRuleSet.Builder, com.google.privacy.dlp.v2.InspectionRuleSetOrBuilder> 
+        getRuleSetFieldBuilder() {
+      if (ruleSetBuilder_ == null) {
+        ruleSetBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.privacy.dlp.v2.InspectionRuleSet, com.google.privacy.dlp.v2.InspectionRuleSet.Builder, com.google.privacy.dlp.v2.InspectionRuleSetOrBuilder>(
+                ruleSet_,
+                ((bitField0_ & 0x00000080) == 0x00000080),
+                getParentForChildren(),
+                isClean());
+        ruleSet_ = null;
+      }
+      return ruleSetBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

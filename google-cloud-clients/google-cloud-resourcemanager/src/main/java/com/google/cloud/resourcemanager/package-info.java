@@ -20,7 +20,7 @@
  *
  * <p>Here's a simple usage example for using google-cloud from App/Compute Engine. This example
  * creates a project if it does not exist. For the complete source code see
- * <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/resourcemanager/snippets/GetOrCreateProject.java">
+ * <a href="https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/resourcemanager/snippets/GetOrCreateProject.java">
  * GetOrCreateProject.java</a>.
  * <pre> {@code
  * ResourceManager resourceManager = ResourceManagerOptions.getDefaultInstance().getService();
@@ -34,7 +34,7 @@
  * <p>
  * This second example shows how to update a project if it exists and list all projects the user has
  * permission to view. For the complete source code see
- * <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/resourcemanager/snippets/UpdateAndListProjects.java">
+ * <a href="https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/resourcemanager/snippets/UpdateAndListProjects.java">
  * UpdateAndListProjects.java</a>.
  * <pre> {@code
  * ResourceManager resourceManager = ResourceManagerOptions.getDefaultInstance().getService();
@@ -53,7 +53,7 @@
  *   System.out.println(projectIterator.next().getProjectId());
  * }}</pre>
  * <p>Remember that you must authenticate using the Google Cloud SDK. See more about
- * <a href="https://github.com/GoogleCloudPlatform/google-cloud-java#specifying-a-project-id">providing
+ * <a href="https://github.com/googleapis/google-cloud-java#specifying-a-project-id">providing
  * credentials here</a>.
  *
  * @see <a href="https://cloud.google.com/resource-manager/">Google Cloud Resource Manager</a>

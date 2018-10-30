@@ -9,7 +9,7 @@ public interface OutputConfigOrBuilder extends
 
   /**
    * <pre>
-   * Destination on Google Cloud Storage (GCS).
+   * Destination on Cloud Storage.
    * </pre>
    *
    * <code>.google.cloud.asset.v1beta1.GcsDestination gcs_destination = 1;</code>
@@ -17,7 +17,7 @@ public interface OutputConfigOrBuilder extends
   boolean hasGcsDestination();
   /**
    * <pre>
-   * Destination on Google Cloud Storage (GCS).
+   * Destination on Cloud Storage.
    * </pre>
    *
    * <code>.google.cloud.asset.v1beta1.GcsDestination gcs_destination = 1;</code>
@@ -25,7 +25,7 @@ public interface OutputConfigOrBuilder extends
   com.google.cloud.asset.v1beta1.GcsDestination getGcsDestination();
   /**
    * <pre>
-   * Destination on Google Cloud Storage (GCS).
+   * Destination on Cloud Storage.
    * </pre>
    *
    * <code>.google.cloud.asset.v1beta1.GcsDestination gcs_destination = 1;</code>

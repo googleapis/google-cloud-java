@@ -60,14 +60,16 @@ public final class ResultSetProto {
       "google.spanner.v1.ResultSetStats\"y\n\021Resu" +
       "ltSetMetadata\022/\n\010row_type\030\001 \001(\0132\035.google" +
       ".spanner.v1.StructType\0223\n\013transaction\030\002 " +
-      "\001(\0132\036.google.spanner.v1.Transaction\"p\n\016R" +
-      "esultSetStats\0220\n\nquery_plan\030\001 \001(\0132\034.goog" +
-      "le.spanner.v1.QueryPlan\022,\n\013query_stats\030\002" +
-      " \001(\0132\027.google.protobuf.StructB\232\001\n\025com.go" +
-      "ogle.spanner.v1B\016ResultSetProtoP\001Z8googl" +
-      "e.golang.org/genproto/googleapis/spanner" +
-      "/v1;spanner\370\001\001\252\002\027Google.Cloud.Spanner.V1" +
-      "\312\002\027Google\\Cloud\\Spanner\\V1b\006proto3"
+      "\001(\0132\036.google.spanner.v1.Transaction\"\271\001\n\016" +
+      "ResultSetStats\0220\n\nquery_plan\030\001 \001(\0132\034.goo" +
+      "gle.spanner.v1.QueryPlan\022,\n\013query_stats\030" +
+      "\002 \001(\0132\027.google.protobuf.Struct\022\031\n\017row_co" +
+      "unt_exact\030\003 \001(\003H\000\022\037\n\025row_count_lower_bou" +
+      "nd\030\004 \001(\003H\000B\013\n\trow_countB\232\001\n\025com.google.s" +
+      "panner.v1B\016ResultSetProtoP\001Z8google.gola" +
+      "ng.org/genproto/googleapis/spanner/v1;sp" +
+      "anner\370\001\001\252\002\027Google.Cloud.Spanner.V1\312\002\027Goo" +
+      "gle\\Cloud\\Spanner\\V1b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -109,7 +111,7 @@ public final class ResultSetProto {
     internal_static_google_spanner_v1_ResultSetStats_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_spanner_v1_ResultSetStats_descriptor,
-        new java.lang.String[] { "QueryPlan", "QueryStats", });
+        new java.lang.String[] { "QueryPlan", "QueryStats", "RowCountExact", "RowCountLowerBound", "RowCount", });
     com.google.api.AnnotationsProto.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
     com.google.spanner.v1.QueryPlanProto.getDescriptor();

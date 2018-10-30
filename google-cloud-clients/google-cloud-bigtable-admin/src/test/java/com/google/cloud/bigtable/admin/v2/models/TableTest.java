@@ -15,13 +15,14 @@
  */
 package com.google.cloud.bigtable.admin.v2.models;
 
+import static com.google.common.truth.Truth.assertThat;
+
 import com.google.bigtable.admin.v2.ColumnFamily;
 import com.google.bigtable.admin.v2.GcRule;
-import com.google.bigtable.admin.v2.Table.ClusterState;
-import com.google.bigtable.admin.v2.Table.ClusterState.ReplicationState;
 import com.google.bigtable.admin.v2.Table.TimestampGranularity;
 import com.google.bigtable.admin.v2.TableName;
-import com.google.common.truth.Truth;
+import com.google.common.collect.Lists;
+import java.util.List;
 import java.util.Map.Entry;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -39,12 +40,18 @@ public class TableTest {
             .setGranularity(TimestampGranularity.MILLIS)
             .putClusterStates(
                 "cluster1",
-                ClusterState.newBuilder().setReplicationState(ReplicationState.READY).build())
+                com.google.bigtable.admin.v2.Table.ClusterState.newBuilder()
+                    .setReplicationState(
+                        com.google.bigtable.admin.v2.Table.ClusterState.ReplicationState.READY
+                    ).build()
+            )
             .putClusterStates(
                 "cluster2",
-                ClusterState.newBuilder()
-                    .setReplicationState(ReplicationState.INITIALIZING)
-                    .build())
+                com.google.bigtable.admin.v2.Table.ClusterState.newBuilder()
+                    .setReplicationState(
+                        com.google.bigtable.admin.v2.Table.ClusterState.ReplicationState.INITIALIZING
+                    ).build()
+            )
             .putColumnFamilies("cf1", ColumnFamily.newBuilder().build())
             .putColumnFamilies(
                 "cf2",
@@ -65,18 +72,38 @@ public class TableTest {
 
     Table result = Table.fromProto(proto);
 
-    Truth.assertThat(result.getInstanceId()).isEqualTo("my-instance");
-    Truth.assertThat(result.getId()).isEqualTo("my-table");
-    Truth.assertThat(result.getReplicationStatesByClusterId()).containsExactly(
-        "cluster1", ReplicationState.READY,
-        "cluster2", ReplicationState.INITIALIZING
+    assertThat(result.getInstanceId()).isEqualTo("my-instance");
+    assertThat(result.getId()).isEqualTo("my-table");
+    assertThat(result.getReplicationStatesByClusterId()).containsExactly(
+        "cluster1", Table.ReplicationState.READY,
+        "cluster2", Table.ReplicationState.INITIALIZING
     );
-    Truth.assertThat(result.getColumnFamilies()).hasSize(3);
+    assertThat(result.getColumnFamilies()).hasSize(3);
 
     for (Entry<String, ColumnFamily> entry : proto.getColumnFamiliesMap().entrySet()) {
-      Truth.assertThat(result.getColumnFamilies()).contains(
-          com.google.cloud.bigtable.admin.v2.models.ColumnFamily.fromProto(entry.getKey(), entry.getValue())
+      assertThat(result.getColumnFamilies()).contains(
+          com.google.cloud.bigtable.admin.v2.models.ColumnFamily
+              .fromProto(entry.getKey(), entry.getValue())
       );
     }
+  }
+
+  @Test
+  public void testReplicationStateEnumUpToDate() {
+    List<com.google.bigtable.admin.v2.Table.ClusterState.ReplicationState> validProtoValues =
+        Lists.newArrayList(
+            com.google.bigtable.admin.v2.Table.ClusterState.ReplicationState.values());
+
+    List<Table.ReplicationState> validModelValues = Lists
+        .newArrayList(Table.ReplicationState.values());
+
+    List<Table.ReplicationState> actualModelValues = Lists.newArrayList();
+
+    for (com.google.bigtable.admin.v2.Table.ClusterState.ReplicationState protoValue : validProtoValues) {
+      Table.ReplicationState modelValue = Table.ReplicationState.fromProto(protoValue);
+      actualModelValues.add(modelValue);
+    }
+
+    assertThat(actualModelValues).containsExactlyElementsIn(validModelValues);
   }
 }

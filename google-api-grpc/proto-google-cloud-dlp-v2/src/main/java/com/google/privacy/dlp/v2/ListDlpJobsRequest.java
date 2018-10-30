@@ -25,6 +25,7 @@ private static final long serialVersionUID = 0L;
     pageSize_ = 0;
     pageToken_ = "";
     type_ = 0;
+    orderBy_ = "";
   }
 
   @java.lang.Override
@@ -78,6 +79,12 @@ private static final long serialVersionUID = 0L;
             int rawValue = input.readEnum();
 
             type_ = rawValue;
+            break;
+          }
+          case 50: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            orderBy_ = s;
             break;
           }
           default: {
@@ -310,6 +317,66 @@ private static final long serialVersionUID = 0L;
     return result == null ? com.google.privacy.dlp.v2.DlpJobType.UNRECOGNIZED : result;
   }
 
+  public static final int ORDER_BY_FIELD_NUMBER = 6;
+  private volatile java.lang.Object orderBy_;
+  /**
+   * <pre>
+   * Optional comma separated list of fields to order by,
+   * followed by `asc` or `desc` postfix. This list is case-insensitive,
+   * default sorting order is ascending, redundant space characters are
+   * insignificant.
+   * Example: `name asc, end_time asc, create_time desc`
+   * Supported fields are:
+   * - `create_time`: corresponds to time the job was created.
+   * - `end_time`: corresponds to time the job ended.
+   * - `name`: corresponds to job's name.
+   * - `state`: corresponds to `state`
+   * </pre>
+   *
+   * <code>string order_by = 6;</code>
+   */
+  public java.lang.String getOrderBy() {
+    java.lang.Object ref = orderBy_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      orderBy_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Optional comma separated list of fields to order by,
+   * followed by `asc` or `desc` postfix. This list is case-insensitive,
+   * default sorting order is ascending, redundant space characters are
+   * insignificant.
+   * Example: `name asc, end_time asc, create_time desc`
+   * Supported fields are:
+   * - `create_time`: corresponds to time the job was created.
+   * - `end_time`: corresponds to time the job ended.
+   * - `name`: corresponds to job's name.
+   * - `state`: corresponds to `state`
+   * </pre>
+   *
+   * <code>string order_by = 6;</code>
+   */
+  public com.google.protobuf.ByteString
+      getOrderByBytes() {
+    java.lang.Object ref = orderBy_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      orderBy_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -339,6 +406,9 @@ private static final long serialVersionUID = 0L;
     if (type_ != com.google.privacy.dlp.v2.DlpJobType.DLP_JOB_TYPE_UNSPECIFIED.getNumber()) {
       output.writeEnum(5, type_);
     }
+    if (!getOrderByBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, orderBy_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -365,6 +435,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(5, type_);
     }
+    if (!getOrderByBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, orderBy_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -390,6 +463,8 @@ private static final long serialVersionUID = 0L;
     result = result && getPageToken()
         .equals(other.getPageToken());
     result = result && type_ == other.type_;
+    result = result && getOrderBy()
+        .equals(other.getOrderBy());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -411,6 +486,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getPageToken().hashCode();
     hash = (37 * hash) + TYPE_FIELD_NUMBER;
     hash = (53 * hash) + type_;
+    hash = (37 * hash) + ORDER_BY_FIELD_NUMBER;
+    hash = (53 * hash) + getOrderBy().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -558,6 +635,8 @@ private static final long serialVersionUID = 0L;
 
       type_ = 0;
 
+      orderBy_ = "";
+
       return this;
     }
 
@@ -589,6 +668,7 @@ private static final long serialVersionUID = 0L;
       result.pageSize_ = pageSize_;
       result.pageToken_ = pageToken_;
       result.type_ = type_;
+      result.orderBy_ = orderBy_;
       onBuilt();
       return result;
     }
@@ -654,6 +734,10 @@ private static final long serialVersionUID = 0L;
       }
       if (other.type_ != 0) {
         setTypeValue(other.getTypeValue());
+      }
+      if (!other.getOrderBy().isEmpty()) {
+        orderBy_ = other.orderBy_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1135,6 +1219,140 @@ private static final long serialVersionUID = 0L;
     public Builder clearType() {
       
       type_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object orderBy_ = "";
+    /**
+     * <pre>
+     * Optional comma separated list of fields to order by,
+     * followed by `asc` or `desc` postfix. This list is case-insensitive,
+     * default sorting order is ascending, redundant space characters are
+     * insignificant.
+     * Example: `name asc, end_time asc, create_time desc`
+     * Supported fields are:
+     * - `create_time`: corresponds to time the job was created.
+     * - `end_time`: corresponds to time the job ended.
+     * - `name`: corresponds to job's name.
+     * - `state`: corresponds to `state`
+     * </pre>
+     *
+     * <code>string order_by = 6;</code>
+     */
+    public java.lang.String getOrderBy() {
+      java.lang.Object ref = orderBy_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        orderBy_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Optional comma separated list of fields to order by,
+     * followed by `asc` or `desc` postfix. This list is case-insensitive,
+     * default sorting order is ascending, redundant space characters are
+     * insignificant.
+     * Example: `name asc, end_time asc, create_time desc`
+     * Supported fields are:
+     * - `create_time`: corresponds to time the job was created.
+     * - `end_time`: corresponds to time the job ended.
+     * - `name`: corresponds to job's name.
+     * - `state`: corresponds to `state`
+     * </pre>
+     *
+     * <code>string order_by = 6;</code>
+     */
+    public com.google.protobuf.ByteString
+        getOrderByBytes() {
+      java.lang.Object ref = orderBy_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        orderBy_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Optional comma separated list of fields to order by,
+     * followed by `asc` or `desc` postfix. This list is case-insensitive,
+     * default sorting order is ascending, redundant space characters are
+     * insignificant.
+     * Example: `name asc, end_time asc, create_time desc`
+     * Supported fields are:
+     * - `create_time`: corresponds to time the job was created.
+     * - `end_time`: corresponds to time the job ended.
+     * - `name`: corresponds to job's name.
+     * - `state`: corresponds to `state`
+     * </pre>
+     *
+     * <code>string order_by = 6;</code>
+     */
+    public Builder setOrderBy(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      orderBy_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional comma separated list of fields to order by,
+     * followed by `asc` or `desc` postfix. This list is case-insensitive,
+     * default sorting order is ascending, redundant space characters are
+     * insignificant.
+     * Example: `name asc, end_time asc, create_time desc`
+     * Supported fields are:
+     * - `create_time`: corresponds to time the job was created.
+     * - `end_time`: corresponds to time the job ended.
+     * - `name`: corresponds to job's name.
+     * - `state`: corresponds to `state`
+     * </pre>
+     *
+     * <code>string order_by = 6;</code>
+     */
+    public Builder clearOrderBy() {
+      
+      orderBy_ = getDefaultInstance().getOrderBy();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional comma separated list of fields to order by,
+     * followed by `asc` or `desc` postfix. This list is case-insensitive,
+     * default sorting order is ascending, redundant space characters are
+     * insignificant.
+     * Example: `name asc, end_time asc, create_time desc`
+     * Supported fields are:
+     * - `create_time`: corresponds to time the job was created.
+     * - `end_time`: corresponds to time the job ended.
+     * - `name`: corresponds to job's name.
+     * - `state`: corresponds to `state`
+     * </pre>
+     *
+     * <code>string order_by = 6;</code>
+     */
+    public Builder setOrderByBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      orderBy_ = value;
       onChanged();
       return this;
     }

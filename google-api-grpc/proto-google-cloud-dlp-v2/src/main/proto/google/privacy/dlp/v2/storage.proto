@@ -1,4 +1,4 @@
-// Copyright 2018 Google LLC
+// Copyright 2018 Google LLC.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -11,6 +11,7 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
+//
 
 syntax = "proto3";
 
@@ -95,7 +96,9 @@ message CustomInfoType {
 
   // Message defining a custom regular expression.
   message Regex {
-    // Pattern defining the regular expression.
+    // Pattern defining the regular expression. Its syntax
+    // (https://github.com/google/re2/wiki/Syntax) can be found under the
+    // google/re2 repository on GitHub.
     string pattern = 1;
   }
 
@@ -170,8 +173,21 @@ message CustomInfoType {
     }
   }
 
-  // All CustomInfoTypes must have a name
-  // that does not conflict with built-in InfoTypes or other CustomInfoTypes.
+  enum ExclusionType {
+    // A finding of this custom info type will not be excluded from results.
+    EXCLUSION_TYPE_UNSPECIFIED = 0;
+
+    // A finding of this custom info type will be excluded from final results,
+    // but can still affect rule execution.
+    EXCLUSION_TYPE_EXCLUDE = 1;
+  }
+
+  // CustomInfoType can either be a new infoType, or an extension of built-in
+  // infoType, when the name matches one of existing infoTypes and that infoType
+  // is specified in `InspectContent.info_types` field. Specifying the latter
+  // adds findings to the one detected by the system. If built-in info type is
+  // not specified in `InspectContent.info_types` list then the name is treated
+  // as a custom info type.
   InfoType info_type = 1;
 
   // Likelihood to return for this CustomInfoType. This base value can be
@@ -199,6 +215,10 @@ message CustomInfoType {
   // Rules are applied in order that they are specified. Not supported for the
   // `surrogate_type` CustomInfoType.
   repeated DetectionRule detection_rules = 7;
+
+  // If set to EXCLUSION_TYPE_EXCLUDE this infoType will not cause a finding
+  // to be returned. It still can be used for rules matching.
+  ExclusionType exclusion_type = 8;
 }
 
 // General identifier of a data field in a storage service.
@@ -237,14 +257,76 @@ message DatastoreOptions {
   KindExpression kind = 2;
 }
 
-// Options defining a file or a set of files (path ending with *) within
-// a Google Cloud Storage bucket.
+// Message representing a set of files in a Cloud Storage bucket. Regular
+// expressions are used to allow fine-grained control over which files in the
+// bucket to include.
+//
+// Included files are those that match at least one item in `include_regex` and
+// do not match any items in `exclude_regex`. Note that a file that matches
+// items from both lists will _not_ be included. For a match to occur, the
+// entire file path (i.e., everything in the url after the bucket name) must
+// match the regular expression.
+//
+// For example, given the input `{bucket_name: "mybucket", include_regex:
+// ["directory1/.*"], exclude_regex:
+// ["directory1/excluded.*"]}`:
+//
+// * `gs://mybucket/directory1/myfile` will be included
+// * `gs://mybucket/directory1/directory2/myfile` will be included (`.*` matches
+// across `/`)
+// * `gs://mybucket/directory0/directory1/myfile` will _not_ be included (the
+// full path doesn't match any items in `include_regex`)
+// * `gs://mybucket/directory1/excludedfile` will _not_ be included (the path
+// matches an item in `exclude_regex`)
+//
+// If `include_regex` is left empty, it will match all files by default
+// (this is equivalent to setting `include_regex: [".*"]`).
+//
+// Some other common use cases:
+//
+// * `{bucket_name: "mybucket", exclude_regex: [".*\.pdf"]}` will include all
+// files in `mybucket` except for .pdf files
+// * `{bucket_name: "mybucket", include_regex: ["directory/[^/]+"]}` will
+// include all files directly under `gs://mybucket/directory/`, without matching
+// across `/`
+message CloudStorageRegexFileSet {
+  // The name of a Cloud Storage bucket. Required.
+  string bucket_name = 1;
+
+  // A list of regular expressions matching file paths to include. All files in
+  // the bucket that match at least one of these regular expressions will be
+  // included in the set of files, except for those that also match an item in
+  // `exclude_regex`. Leaving this field empty will match all files by default
+  // (this is equivalent to including `.*` in the list).
+  //
+  // Regular expressions use RE2
+  // [syntax](https://github.com/google/re2/wiki/Syntax); a guide can be found
+  // under the google/re2 repository on GitHub.
+  repeated string include_regex = 2;
+
+  // A list of regular expressions matching file paths to exclude. All files in
+  // the bucket that match at least one of these regular expressions will be
+  // excluded from the scan.
+  //
+  // Regular expressions use RE2
+  // [syntax](https://github.com/google/re2/wiki/Syntax); a guide can be found
+  // under the google/re2 repository on GitHub.
+  repeated string exclude_regex = 3;
+}
+
+// Options defining a file or a set of files within a Google Cloud Storage
+// bucket.
 message CloudStorageOptions {
   // Set of files to scan.
   message FileSet {
-    // The url, in the format `gs://<bucket>/<path>`. Trailing wildcard in the
-    // path is allowed.
+    // The Cloud Storage url of the file(s) to scan, in the format
+    // `gs://<bucket>/<path>`. Trailing wildcard in the path is allowed. Exactly
+    // one of `url` or `regex_file_set` must be set.
     string url = 1;
+
+    // The regex-filtered set of files to scan. Exactly one of `url` or
+    // `regex_file_set` must be set.
+    CloudStorageRegexFileSet regex_file_set = 2;
   }
 
   // How to sample bytes if not all bytes are scanned. Meaningful only when used
@@ -261,6 +343,7 @@ message CloudStorageOptions {
     RANDOM_START = 2;
   }
 
+  // The set of one or more files to scan.
   FileSet file_set = 1;
 
   // Max number of bytes to scan from a file. If a scanned file's size is bigger

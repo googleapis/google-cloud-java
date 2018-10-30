@@ -358,7 +358,7 @@ public class DocumentReference {
    * @throws FirestoreException if the Iterable could not be initialized.
    * @return An Iterable that can be used to fetch all subcollections.
    */
-  public Iterable<CollectionReference> getCollections() {
+  public Iterable<CollectionReference> listCollections() {
     ListCollectionIdsRequest.Builder request = ListCollectionIdsRequest.newBuilder();
     request.setParent(path.toString());
     final ListCollectionIdsPagedResponse response;
@@ -395,6 +395,18 @@ public class DocumentReference {
         };
       }
     };
+  }
+
+  /**
+   * Fetches the subcollections that are direct children of this document.
+   *
+   * @deprecated Use `listCollections()`.
+   *
+   * @throws FirestoreException if the Iterable could not be initialized.
+   * @return An Iterable that can be used to fetch all subcollections.
+   */
+  public Iterable<CollectionReference> getCollections() {
+    return listCollections();
   }
 
   /**
