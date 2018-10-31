@@ -26,6 +26,7 @@ grpc-google-cloud-os-login-v1:0.33.0:0.33.1-SNAPSHOT
 grpc-google-cloud-pubsub-v1:1.32.0:1.32.1-SNAPSHOT
 grpc-google-cloud-redis-v1:0.33.0:0.33.1-SNAPSHOT
 grpc-google-cloud-redis-v1beta1:0.33.0:0.33.1-SNAPSHOT
+grpc-google-cloud-securitycenter-v1beta1:0.33.0:0.33.1-SNAPSHOT
 grpc-google-cloud-spanner-admin-database-v1:0.33.0:0.33.1-SNAPSHOT
 grpc-google-cloud-spanner-admin-instance-v1:0.33.0:0.33.1-SNAPSHOT
 grpc-google-cloud-spanner-v1:0.33.0:0.33.1-SNAPSHOT
@@ -73,6 +74,7 @@ proto-google-cloud-os-login-v1:0.33.0:0.33.1-SNAPSHOT
 proto-google-cloud-pubsub-v1:1.32.0:1.32.1-SNAPSHOT
 proto-google-cloud-redis-v1:0.33.0:0.33.1-SNAPSHOT
 proto-google-cloud-redis-v1beta1:0.33.0:0.33.1-SNAPSHOT
+proto-google-cloud-securitycenter-v1beta1:0.33.0:0.33.1-SNAPSHOT
 proto-google-cloud-spanner-admin-database-v1:0.33.0:0.33.1-SNAPSHOT
 proto-google-cloud-spanner-admin-instance-v1:0.33.0:0.33.1-SNAPSHOT
 proto-google-cloud-spanner-v1:0.33.0:0.33.1-SNAPSHOT
@@ -138,6 +140,7 @@ google-cloud-os-login:0.68.0-alpha:0.68.1-alpha-SNAPSHOT
 google-cloud-pubsub:1.50.0:1.50.1-SNAPSHOT
 google-cloud-redis:0.68.0-alpha:0.68.1-alpha-SNAPSHOT
 google-cloud-resourcemanager:0.68.0-alpha:0.68.1-alpha-SNAPSHOT
+google-cloud-securitycenter:0.68.0-alpha:0.68.1-alpha-SNAPSHOT
 google-cloud-spanner:0.68.0-beta:0.68.1-beta-SNAPSHOT
 google-cloud-speech:0.68.0-beta:0.68.1-beta-SNAPSHOT
 google-cloud-storage:1.50.0:1.50.1-SNAPSHOT
