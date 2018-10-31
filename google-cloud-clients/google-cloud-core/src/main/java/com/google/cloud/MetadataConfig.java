@@ -57,6 +57,14 @@ public class MetadataConfig {
     return getAttribute("instance/attributes/cluster-name");
   }
 
+  public static String getContainerName(){
+	return getAttribute("instance/attributes/container-name");
+  }
+
+  public static String getNamespaceId(){
+	return getAttribute("instance/attributes/namespace-id");  
+  }
+
   public static String getAttribute(String attributeName) {
     try {
       URL url = new URL(METADATA_URL + attributeName);
