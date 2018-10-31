@@ -43,9 +43,17 @@
   </build>
 
   <dependencies>
+    <!-- grpc deps are provided by the client -->
     <dependency>
       <groupId>io.grpc</groupId>
       <artifactId>grpc-core</artifactId>
+      <version>1.13.1</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>io.grpc</groupId>
+      <artifactId>grpc-netty-shaded</artifactId>
       <version>1.13.1</version>
       <scope>provided</scope>
     </dependency>
@@ -63,14 +71,14 @@
     </dependency>
 
     <dependency>
-      <groupId>com.google.cloud</groupId>
-      <artifactId>google-cloud-bigtable-admin</artifactId>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>grpc-google-cloud-bigtable-v2</artifactId>
       <scope>test</scope>
     </dependency>
 
     <dependency>
-      <groupId>com.google.cloud</groupId>
-      <artifactId>google-cloud-bigtable</artifactId>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>grpc-google-cloud-bigtable-admin-v2</artifactId>
       <scope>test</scope>
     </dependency>
 

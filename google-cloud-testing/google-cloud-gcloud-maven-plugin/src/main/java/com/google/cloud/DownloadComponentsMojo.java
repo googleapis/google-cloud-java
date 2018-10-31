@@ -47,6 +47,7 @@ import org.apache.commons.compress.archivers.ArchiveEntry;
 import org.apache.commons.compress.archivers.tar.TarArchiveInputStream;
 import org.apache.commons.compress.compressors.gzip.GzipCompressorInputStream;
 import org.apache.commons.compress.utils.IOUtils;
+import org.apache.maven.execution.MavenSession;
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugins.annotations.Mojo;
@@ -55,7 +56,9 @@ import org.codehaus.plexus.util.FileUtils;
 
 /**
  * Goal that downloads gcloud components and embeds them as resources in a jar. This is mainly
- * intended to be used to wrapped native emulators in jars.
+ * intended to be used to wrapped native emulators in jars. This Mojo makes extensive use of caching
+ * which makes it ok to include in the regular build cycle. The initial manifest fetch is cached for
+ * 2 hours and the actual binaries are downloaded only when their checksum changed in the manifest.
  */
 @Mojo(name = "download")
 public class DownloadComponentsMojo extends AbstractMojo {
@@ -71,10 +74,17 @@ public class DownloadComponentsMojo extends AbstractMojo {
   @Parameter(defaultValue = "${project.build.outputDirectory}/gcloud", required = true)
   private File destinationDir;
 
-  @Parameter(defaultValue = "true", required = true, property = "gcloud.download.force")
+  @Parameter(defaultValue = "false", required = true, property = "gcloud.download.force")
   private boolean forceRefresh;
 
+  @Parameter(defaultValue = "${session}", readonly = true)
+  private MavenSession session;
+
   public void execute() throws MojoExecutionException {
+    if (session.isOffline() && forceRefresh) {
+      throw new MojoExecutionException("Can't force refresh when offline");
+    }
+
     // Ensure that the output directory exists
     destinationDir.mkdirs();
 
@@ -147,11 +157,22 @@ public class DownloadComponentsMojo extends AbstractMojo {
     URL manifestUrl = getManifestUrl();
     File localCache = getManifestCache();
 
-    if (!forceRefresh && localCache.exists()
-        && new Date().getTime() - localCache.lastModified() < STALE_MS) {
+    boolean isStale = !localCache.exists()
+        || new Date().getTime() - localCache.lastModified() < STALE_MS;
 
+    if (localCache.exists() && session.isOffline()) {
+      if (isStale) {
+        getLog().info("Using stale manifest because offline mode is enabled");
+      }
+    }
+
+    if (!forceRefresh && !isStale) {
       getLog().debug("Manifest is up to date, skipping manifest download");
       return;
+    }
+
+    if (session.isOffline()) {
+      throw new IllegalStateException("Can't download manifest in offline mode");
     }
 
     getLog().debug("Downloading fresh manifest");

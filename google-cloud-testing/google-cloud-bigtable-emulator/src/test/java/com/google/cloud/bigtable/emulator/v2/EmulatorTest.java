@@ -17,20 +17,20 @@ package com.google.cloud.bigtable.emulator.v2;
 
 import static com.google.common.truth.Truth.assertThat;
 
-import com.google.api.gax.core.NoCredentialsProvider;
-import com.google.api.gax.grpc.GrpcTransportChannel;
-import com.google.api.gax.rpc.FixedTransportChannelProvider;
-import com.google.bigtable.admin.v2.InstanceName;
-import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient;
-import com.google.cloud.bigtable.admin.v2.BigtableTableAdminSettings;
-import com.google.cloud.bigtable.admin.v2.models.CreateTableRequest;
-import com.google.cloud.bigtable.admin.v2.models.Table;
-import com.google.cloud.bigtable.data.v2.BigtableDataClient;
-import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
-import com.google.cloud.bigtable.data.v2.models.Row;
-import com.google.cloud.bigtable.data.v2.models.RowMutation;
+import com.google.bigtable.admin.v2.BigtableTableAdminGrpc;
+import com.google.bigtable.admin.v2.BigtableTableAdminGrpc.BigtableTableAdminBlockingStub;
+import com.google.bigtable.admin.v2.ColumnFamily;
+import com.google.bigtable.admin.v2.CreateTableRequest;
+import com.google.bigtable.admin.v2.Table;
+import com.google.bigtable.v2.BigtableGrpc;
+import com.google.bigtable.v2.BigtableGrpc.BigtableBlockingStub;
+import com.google.bigtable.v2.MutateRowRequest;
+import com.google.bigtable.v2.Mutation;
+import com.google.bigtable.v2.Mutation.SetCell;
+import com.google.bigtable.v2.ReadRowsRequest;
+import com.google.bigtable.v2.ReadRowsResponse;
 import com.google.protobuf.ByteString;
-import java.io.IOException;
+import java.util.Iterator;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -41,84 +41,76 @@ import org.junit.runners.JUnit4;
 public class EmulatorTest {
 
   private Emulator emulator;
-  private BigtableTableAdminClient tableAdminClient;
-  private BigtableDataClient dataClient;
+  private BigtableTableAdminBlockingStub tableAdminStub;
+  private BigtableBlockingStub dataStub;
 
 
   @Before
   public void setUp() throws Exception {
     emulator = Emulator.createBundled();
     emulator.start();
-    tableAdminClient = createTableAdminClient();
-    dataClient = createDataClient();
+    tableAdminStub = BigtableTableAdminGrpc.newBlockingStub(emulator.getAdminChannel());
+    dataStub = BigtableGrpc.newBlockingStub(emulator.getDataChannel());
   }
 
   @After
-  public void tearDown() throws Exception {
-    tableAdminClient.close();
-    dataClient.close();
+  public void tearDown() {
     emulator.stop();
     emulator = null;
   }
 
-  private BigtableTableAdminClient createTableAdminClient() throws IOException {
-    BigtableTableAdminSettings.Builder settingsBuilder = BigtableTableAdminSettings.newBuilder()
-        .setInstanceName(InstanceName.of("fake-project", "fake-instance"));
-
-    settingsBuilder.stubSettings()
-        .setTransportChannelProvider(
-            FixedTransportChannelProvider.create(
-                GrpcTransportChannel.create(emulator.getAdminChannel())
-            )
-        )
-        .setCredentialsProvider(NoCredentialsProvider.create());
-
-    BigtableTableAdminSettings settings = settingsBuilder.build();
-
-    return BigtableTableAdminClient.create(settings);
-  }
-
-  private BigtableDataClient createDataClient() throws IOException {
-    BigtableDataSettings.Builder settingsBuilder = BigtableDataSettings.newBuilder()
-        .setInstanceName(com.google.cloud.bigtable.data.v2.models.InstanceName
-            .of("fake-project", "fake-instance"));
-
-    settingsBuilder
-        .setTransportChannelProvider(
-            FixedTransportChannelProvider.create(
-                GrpcTransportChannel.create(emulator.getAdminChannel())
-            )
-        )
-        .setCredentialsProvider(NoCredentialsProvider.create());
-
-    BigtableDataSettings settings = settingsBuilder.build();
-
-    return BigtableDataClient.create(settings);
-  }
-
   @Test
   public void testTableAdminClient() {
-    Table table = tableAdminClient.createTable(
-        CreateTableRequest.of("fake-table")
+    Table table = tableAdminStub.createTable(
+        CreateTableRequest.newBuilder()
+            .setParent("projects/fake-project/instances/fake-instance")
+            .setTableId("fake-table")
+            .setTable(
+                Table.newBuilder()
+                    .putColumnFamilies("cf", ColumnFamily.getDefaultInstance())
+            )
+            .build()
     );
 
-    assertThat(table.getId()).isEqualTo("fake-table");
+    assertThat(table.getName())
+        .isEqualTo("projects/fake-project/instances/fake-instance/tables/fake-table");
   }
 
   @Test
-  public void testDataClient() throws Exception {
-    tableAdminClient.createTable(
-        CreateTableRequest.of("fake-table")
-            .addFamily("cf")
+  public void testDataClient() {
+    tableAdminStub.createTable(
+        CreateTableRequest.newBuilder()
+            .setParent("projects/fake-project/instances/fake-instance")
+            .setTableId("fake-table")
+            .setTable(
+                Table.newBuilder()
+                    .putColumnFamilies("cf", ColumnFamily.getDefaultInstance())
+            )
+            .build()
     );
 
-    dataClient.mutateRowCallable().call(
-        RowMutation.create("fake-table", "test")
-            .setCell("cf", "qualifier", "value")
+    dataStub.mutateRow(
+        MutateRowRequest.newBuilder()
+            .setTableName("projects/fake-project/instances/fake-instance/tables/fake-table")
+            .setRowKey(ByteString.copyFromUtf8("fake-key"))
+            .addMutations(
+                Mutation.newBuilder().setSetCell(
+                    SetCell.newBuilder()
+                      .setFamilyName("cf")
+                      .setColumnQualifier(ByteString.EMPTY)
+                      .setValue(ByteString.copyFromUtf8("value"))
+                )
+            )
+            .build()
     );
 
-    Row row = dataClient.readRowAsync("fake-table", "test").get();
-    assertThat(row.getCells().get(0).getValue()).isEqualTo(ByteString.copyFromUtf8("value"));
+    Iterator<ReadRowsResponse> results = dataStub.readRows(
+        ReadRowsRequest.newBuilder()
+            .setTableName("projects/fake-project/instances/fake-instance/tables/fake-table")
+            .build()
+    );
+
+    ReadRowsResponse row = results.next();
+    assertThat(row.getChunks(0).getValue()).isEqualTo(ByteString.copyFromUtf8("value"));
   }
-
 }
