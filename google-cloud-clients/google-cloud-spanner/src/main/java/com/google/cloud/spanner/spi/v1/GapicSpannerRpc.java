@@ -112,6 +112,7 @@ public class GapicSpannerRpc implements SpannerRpc {
   private static final PathTemplate OPERATION_NAME_TEMPLATE =
       PathTemplate.create("{database=projects/*/instances/*/databases/*}/operations/{operation}");
   private static final int MAX_MESSAGE_SIZE = 100 * 1024 * 1024;
+  private static final int MAX_METADATA_SIZE = 32 * 1024; //bytes
 
   private final SpannerStub spannerStub;
   private final InstanceAdminStub instanceAdminStub;
@@ -156,6 +157,7 @@ public class GapicSpannerRpc implements SpannerRpc {
             InstantiatingGrpcChannelProvider.newBuilder()
                 .setEndpoint(options.getEndpoint())
                 .setMaxInboundMessageSize(MAX_MESSAGE_SIZE)
+                .setMaxInboundMetadataSize(MAX_METADATA_SIZE)
                 .setPoolSize(options.getNumChannels())
 
                 // Then check if SpannerOptions provides an InterceptorProvider. Create a default

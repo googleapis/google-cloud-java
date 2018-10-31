@@ -17,7 +17,6 @@
 package com.google.cloud.spanner;
 
 import com.google.api.gax.grpc.GrpcInterceptorProvider;
-import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.cloud.ServiceDefaults;
 import com.google.cloud.ServiceOptions;
@@ -55,8 +54,6 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
           "https://www.googleapis.com/auth/spanner.admin",
           "https://www.googleapis.com/auth/spanner.data");
   private static final int MAX_CHANNELS = 256;
-  private static final int MAX_MESSAGE_SIZE = 100 * 1024 * 1024;
-  private static final int MAX_HEADER_LIST_SIZE = 32 * 1024; //bytes
 
   /** Default implementation of {@code SpannerFactory}. */
   private static class DefaultSpannerFactory implements SpannerFactory {

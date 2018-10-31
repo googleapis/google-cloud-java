@@ -21,7 +21,6 @@ import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.longrunning.OperationSnapshot;
 import com.google.api.gax.retrying.RetryingFuture;
 import com.google.api.gax.retrying.TimedAttemptSettings;
-import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.common.base.Preconditions;
 import com.google.protobuf.Any;

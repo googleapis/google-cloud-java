@@ -23,7 +23,6 @@ import com.google.cloud.spanner.Options.ReadOption;
 import com.google.cloud.spanner.SpannerImpl.MultiUseReadOnlyTransaction;
 import com.google.cloud.spanner.SpannerImpl.SessionImpl;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
-import com.google.cloud.spanner.spi.v1.GapicSpannerRpc;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import com.google.protobuf.Struct;

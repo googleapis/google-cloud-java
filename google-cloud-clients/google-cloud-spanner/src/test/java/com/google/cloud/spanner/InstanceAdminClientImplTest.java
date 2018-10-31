@@ -22,8 +22,6 @@ import static org.mockito.Mockito.when;
 import static org.mockito.MockitoAnnotations.initMocks;
 
 import com.google.api.gax.longrunning.OperationFuture;
-import com.google.api.gax.longrunning.OperationFutures;
-import com.google.api.gax.longrunning.OperationSnapshot;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import com.google.cloud.spanner.spi.v1.SpannerRpc.Paginated;
 import com.google.common.collect.ImmutableList;

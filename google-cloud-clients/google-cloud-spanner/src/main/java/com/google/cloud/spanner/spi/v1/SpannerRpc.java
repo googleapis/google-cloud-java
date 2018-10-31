@@ -17,7 +17,6 @@
 package com.google.cloud.spanner.spi.v1;
 
 import com.google.api.gax.longrunning.OperationFuture;
-import com.google.api.gax.rpc.ServerStream;
 import com.google.cloud.ServiceRpc;
 import com.google.cloud.spanner.SpannerException;
 import com.google.cloud.spanner.spi.v1.SpannerRpc.Option;
