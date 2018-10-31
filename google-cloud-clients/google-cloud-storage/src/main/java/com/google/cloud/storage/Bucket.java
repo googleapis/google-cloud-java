@@ -569,8 +569,15 @@ public class Bucket extends BucketInfo {
     }
 
     @Override
+    @Deprecated
     public Builder setDeleteRules(Iterable<? extends DeleteRule> rules) {
       infoBuilder.setDeleteRules(rules);
+      return this;
+    }
+
+    @Override
+    public Builder setLifecycleRules(Iterable<? extends LifecycleRule> rules) {
+      infoBuilder.setLifecycleRules(rules);
       return this;
     }
 

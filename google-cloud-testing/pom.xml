@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-testing</artifactId>
-  <version>0.67.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-testing:current} -->
+  <version>0.68.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-testing:current} -->
   <packaging>pom</packaging>
 
   <name>Google Cloud Testing</name>
@@ -30,7 +30,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-bom</artifactId>
-        <version>0.67.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-bom:current} -->
+        <version>0.68.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-bom:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -107,6 +107,14 @@
         <version>2.7</version>
         <configuration>
           <skip>true</skip>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.sonatype.plugins</groupId>
+        <artifactId>nexus-staging-maven-plugin</artifactId>
+        <version>1.6.6</version>
+        <configuration>
+          <skipNexusStagingDeployMojo>true</skipNexusStagingDeployMojo>
         </configuration>
       </plugin>
     </plugins>
