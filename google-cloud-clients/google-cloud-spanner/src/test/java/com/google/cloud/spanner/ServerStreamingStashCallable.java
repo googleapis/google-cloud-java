@@ -33,7 +33,7 @@ import java.util.concurrent.CancellationException;
  */
 public class ServerStreamingStashCallable<RequestT, ResponseT>
       extends ServerStreamingCallable<RequestT, ResponseT> {
-  private List<ResponseT> responseList;
+  private final List<ResponseT> responseList;
 
   public ServerStreamingStashCallable() {
     responseList = new ArrayList<>();

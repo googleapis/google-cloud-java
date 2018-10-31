@@ -222,7 +222,7 @@ public class GapicSpannerRpc implements SpannerRpc {
                       })
                   .build());
     } catch (Exception e) {
-      throw SpannerExceptionFactory.newSpannerException(e);
+      throw newSpannerException(e);
     }
   }
 
@@ -354,7 +354,7 @@ public class GapicSpannerRpc implements SpannerRpc {
     try {
       operationFuture.getInitialFuture().get();
     } catch (InterruptedException e) {
-      throw SpannerExceptionFactory.newSpannerException(e);
+      throw newSpannerException(e);
     } catch (ExecutionException e) {
       Throwable t = e.getCause();
       if (t instanceof AlreadyExistsException) {
@@ -549,7 +549,7 @@ public class GapicSpannerRpc implements SpannerRpc {
    */
   private static class SpannerResponseObserver implements ResponseObserver<PartialResultSet> {
     private StreamController controller;
-    private ResultStreamConsumer consumer;
+    private final ResultStreamConsumer consumer;
 
     public SpannerResponseObserver(ResultStreamConsumer consumer) {
       this.consumer = consumer;
@@ -571,7 +571,7 @@ public class GapicSpannerRpc implements SpannerRpc {
 
     @Override
     public void onError(Throwable t) {
-      consumer.onError(SpannerExceptionFactory.newSpannerException(t));
+      consumer.onError(newSpannerException(t));
     }
 
     @Override
