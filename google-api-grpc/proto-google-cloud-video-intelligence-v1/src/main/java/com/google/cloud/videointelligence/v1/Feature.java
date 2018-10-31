@@ -52,6 +52,14 @@ public enum Feature
    * <code>FACE_DETECTION = 4;</code>
    */
   FACE_DETECTION(4),
+  /**
+   * <pre>
+   * Speech transcription.
+   * </pre>
+   *
+   * <code>SPEECH_TRANSCRIPTION = 6;</code>
+   */
+  SPEECH_TRANSCRIPTION(6),
   UNRECOGNIZED(-1),
   ;
 
@@ -95,6 +103,14 @@ public enum Feature
    * <code>FACE_DETECTION = 4;</code>
    */
   public static final int FACE_DETECTION_VALUE = 4;
+  /**
+   * <pre>
+   * Speech transcription.
+   * </pre>
+   *
+   * <code>SPEECH_TRANSCRIPTION = 6;</code>
+   */
+  public static final int SPEECH_TRANSCRIPTION_VALUE = 6;
 
 
   public final int getNumber() {
@@ -120,6 +136,7 @@ public enum Feature
       case 2: return SHOT_CHANGE_DETECTION;
       case 3: return EXPLICIT_CONTENT_DETECTION;
       case 4: return FACE_DETECTION;
+      case 6: return SPEECH_TRANSCRIPTION;
       default: return null;
     }
   }
