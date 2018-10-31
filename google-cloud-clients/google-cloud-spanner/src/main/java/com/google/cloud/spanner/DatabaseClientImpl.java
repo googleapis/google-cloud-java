@@ -58,7 +58,7 @@ class DatabaseClientImpl implements DatabaseClient {
   public Timestamp writeAtLeastOnce(Iterable<Mutation> mutations) throws SpannerException {
     Span span = tracer.spanBuilder(READ_WRITE_TRANSACTION).startSpan();
     try (Scope s = tracer.withSpan(span)) {
-      return pool.getReadSession().writeAtLeastOnce(mutations);
+      return pool.getReadWriteSession().writeAtLeastOnce(mutations);
     } catch (RuntimeException e) {
       TraceUtil.endSpanWithFailure(span, e);
       throw e;
