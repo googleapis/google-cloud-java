@@ -34,6 +34,7 @@ import com.google.api.services.storage.model.Bucket.Versioning;
 import com.google.api.services.storage.model.Bucket.Website;
 import com.google.cloud.storage.Acl.Entity;
 import com.google.common.base.Function;
+import com.google.common.base.Functions;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -42,9 +43,11 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Set;
 
 /**
  * Google Storage bucket metadata;
@@ -78,6 +81,7 @@ public class BucketInfo implements Serializable {
   private final String indexPage;
   private final String notFoundPage;
   private final List<DeleteRule> deleteRules;
+  private final List<LifecycleRule> lifecycleRules;
   private final String etag;
   private final Long createTime;
   private final Long metageneration;
@@ -94,11 +98,325 @@ public class BucketInfo implements Serializable {
   private final Long retentionPeriod;
 
   /**
+   * Lifecycle rule for a bucket. Allows supported Actions, such as deleting and changing storage
+   * class, to be executed when certain Conditions are met.
+   *
+   * @see <a href="https://cloud.google.com/storage/docs/lifecycle#actions">Object Lifecycle
+   *     Management</a>
+   */
+  public static class LifecycleRule implements Serializable {
+
+    private static final long serialVersionUID = -5739807320148748613L;
+    private final LifecycleAction lifecycleAction;
+    private final LifecycleCondition lifecycleCondition;
+
+    public LifecycleRule(LifecycleAction action, LifecycleCondition condition) {
+      if (condition.getIsLive() == null
+          && condition.getAge() == null
+          && condition.getCreatedBefore() == null
+          && condition.getMatchesStorageClass() == null
+          && condition.getNumberOfNewerVersions() == null) {
+        throw new IllegalArgumentException(
+            "You must specify at least one condition to use object lifecycle "
+                + "management. Please see https://cloud.google.com/storage/docs/lifecycle for details.");
+      }
+
+      this.lifecycleAction = action;
+      this.lifecycleCondition = condition;
+    }
+
+    public LifecycleAction getAction() {
+      return lifecycleAction;
+    }
+
+    public LifecycleCondition getCondition() {
+      return lifecycleCondition;
+    }
+
+    @Override
+    public int hashCode() {
+      return Objects.hash(lifecycleAction, lifecycleCondition);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+      if (this == obj) {
+        return true;
+      }
+      if (obj == null || getClass() != obj.getClass()) {
+        return false;
+      }
+      final LifecycleRule other = (LifecycleRule) obj;
+      return Objects.equals(toPb(), other.toPb());
+    }
+
+    Rule toPb() {
+      Rule rule = new Rule();
+
+      Rule.Action action = new Rule.Action().setType(lifecycleAction.getActionType());
+      if (lifecycleAction.getActionType().equals(SetStorageClassLifecycleAction.TYPE)) {
+        action.setStorageClass(
+            ((SetStorageClassLifecycleAction) lifecycleAction).getStorageClass().toString());
+      }
+
+      rule.setAction(action);
+
+      Rule.Condition condition =
+          new Rule.Condition()
+              .setAge(lifecycleCondition.getAge())
+              .setCreatedBefore(
+                  lifecycleCondition.getCreatedBefore() == null
+                      ? null
+                      : new DateTime(true, lifecycleCondition.getCreatedBefore().getValue(), 0))
+              .setIsLive(lifecycleCondition.getIsLive())
+              .setNumNewerVersions(lifecycleCondition.getNumberOfNewerVersions())
+              .setMatchesStorageClass(
+                  lifecycleCondition.getMatchesStorageClass() == null
+                      ? null
+                      : transform(
+                          lifecycleCondition.getMatchesStorageClass(),
+                          Functions.toStringFunction()));
+
+      rule.setCondition(condition);
+
+      return rule;
+    }
+
+    static LifecycleRule fromPb(Rule rule) {
+      LifecycleAction lifecycleAction;
+
+      Rule.Action action = rule.getAction();
+
+      switch (action.getType()) {
+        case DeleteLifecycleAction.TYPE:
+          lifecycleAction = LifecycleAction.newDeleteAction();
+          break;
+        case SetStorageClassLifecycleAction.TYPE:
+          lifecycleAction =
+              LifecycleAction.newSetStorageClassAction(
+                  StorageClass.valueOf(action.getStorageClass()));
+          break;
+        default:
+          throw new UnsupportedOperationException(
+              "The specified lifecycle action " + action.getType() + " is not currently supported");
+      }
+
+      Rule.Condition condition = rule.getCondition();
+
+      LifecycleCondition.Builder conditionBuilder =
+          LifecycleCondition.newBuilder()
+              .setAge(condition.getAge())
+              .setCreatedBefore(condition.getCreatedBefore())
+              .setIsLive(condition.getIsLive())
+              .setNumberOfNewerVersions(condition.getNumNewerVersions())
+              .setMatchesStorageClass(
+                  condition.getMatchesStorageClass() == null
+                      ? null
+                      : transform(
+                          condition.getMatchesStorageClass(),
+                          new Function<String, StorageClass>() {
+                            public StorageClass apply(String storageClass) {
+                              return StorageClass.valueOf(storageClass);
+                            }
+                          }));
+
+      return new LifecycleRule(lifecycleAction, conditionBuilder.build());
+    }
+
+    /**
+     * Condition for a Lifecycle rule, specifies under what criteria an Action should be executed.
+     *
+     * @see <a href="https://cloud.google.com/storage/docs/lifecycle#conditions">Object Lifecycle
+     *     Management</a>
+     */
+    public static class LifecycleCondition implements Serializable {
+      private static final long serialVersionUID = -6482314338394768785L;
+      private final Integer age;
+      private final DateTime createdBefore;
+      private final Integer numberOfNewerVersions;
+      private final Boolean isLive;
+      private final List<StorageClass> matchesStorageClass;
+
+      private LifecycleCondition(Builder builder) {
+        this.age = builder.age;
+        this.createdBefore = builder.createdBefore;
+        this.numberOfNewerVersions = builder.numberOfNewerVersions;
+        this.isLive = builder.isLive;
+        this.matchesStorageClass = builder.matchesStorageClass;
+      }
+
+      public Builder toBuilder() {
+        return newBuilder()
+            .setAge(this.age)
+            .setCreatedBefore(this.createdBefore)
+            .setNumberOfNewerVersions(this.numberOfNewerVersions)
+            .setIsLive(this.isLive)
+            .setMatchesStorageClass(this.matchesStorageClass);
+      }
+
+      public static Builder newBuilder() {
+        return new Builder();
+      }
+
+      public Integer getAge() {
+        return age;
+      }
+
+      public DateTime getCreatedBefore() {
+        return createdBefore;
+      }
+
+      public Integer getNumberOfNewerVersions() {
+        return numberOfNewerVersions;
+      }
+
+      public Boolean getIsLive() {
+        return isLive;
+      }
+
+      public List<StorageClass> getMatchesStorageClass() {
+        return matchesStorageClass;
+      }
+
+      /** Builder for {@code LifecycleCondition}. */
+      public static class Builder {
+        private Integer age;
+        private DateTime createdBefore;
+        private Integer numberOfNewerVersions;
+        private Boolean isLive;
+        private List<StorageClass> matchesStorageClass;
+
+        private Builder() {}
+
+        /**
+         * Sets the age in days. This condition is satisfied when a Blob reaches the specified age
+         * (in days). When you specify the Age condition, you are specifying a Time to Live (TTL)
+         * for objects in a bucket with lifecycle management configured. The time when the Age
+         * condition is considered to be satisfied is calculated by adding the specified value to
+         * the object creation time.
+         */
+        public Builder setAge(Integer age) {
+          this.age = age;
+          return this;
+        }
+
+        /**
+         * Sets the date a Blob should be created before for an Action to be executed. Note that
+         * only the date will be considered, if the time is specified it will be truncated. This
+         * condition is satisfied when an object is created before midnight of the specified date in
+         * UTC. *
+         */
+        public Builder setCreatedBefore(DateTime createdBefore) {
+          this.createdBefore = createdBefore;
+          return this;
+        }
+
+        /**
+         * Sets the number of newer versions a Blob should have for an Action to be executed.
+         * Relevant only when versioning is enabled on a bucket. *
+         */
+        public Builder setNumberOfNewerVersions(Integer numberOfNewerVersions) {
+          this.numberOfNewerVersions = numberOfNewerVersions;
+          return this;
+        }
+
+        /**
+         * Sets an isLive Boolean condition. If the value is true, this lifecycle condition matches
+         * only live Blobs; if the value is false, it matches only archived objects. For the
+         * purposes of this condition, Blobs in non-versioned buckets are considered live.
+         */
+        public Builder setIsLive(Boolean live) {
+          this.isLive = live;
+          return this;
+        }
+
+        /**
+         * Sets a list of Storage Classes for a objects that satisfy the condition to execute the
+         * Action. *
+         */
+        public Builder setMatchesStorageClass(List<StorageClass> matchesStorageClass) {
+          this.matchesStorageClass = matchesStorageClass;
+          return this;
+        }
+
+        /** Builds a {@code LifecycleCondition} object. * */
+        public LifecycleCondition build() {
+          return new LifecycleCondition(this);
+        }
+      }
+    }
+
+    /**
+     * Base class for the Action to take when a Lifecycle Condition is met. Specific Actions are
+     * expressed as subclasses of this class, accessed by static factory methods.
+     */
+    public abstract static class LifecycleAction implements Serializable {
+      private static final long serialVersionUID = 5801228724709173284L;
+
+      public abstract String getActionType();
+
+      /**
+       * Creates a new {@code DeleteLifecycleAction}. Blobs that meet the Condition associated with
+       * this action will be deleted.
+       */
+      public static DeleteLifecycleAction newDeleteAction() {
+        return new DeleteLifecycleAction();
+      }
+
+      /**
+       * Creates a new {@code SetStorageClassLifecycleAction}. A Blob's storage class that meets the
+       * action's conditions will be changed to the specified storage class.
+       *
+       * @param storageClass The new storage class to use when conditions are met for this action.
+       */
+      public static SetStorageClassLifecycleAction newSetStorageClassAction(
+          StorageClass storageClass) {
+        return new SetStorageClassLifecycleAction(storageClass);
+      }
+    }
+
+    public static class DeleteLifecycleAction extends LifecycleAction {
+      public static final String TYPE = "Delete";
+      private static final long serialVersionUID = -2050986302222644873L;
+
+      private DeleteLifecycleAction() {}
+
+      @Override
+      public String getActionType() {
+        return TYPE;
+      }
+    }
+
+    public static class SetStorageClassLifecycleAction extends LifecycleAction {
+      public static final String TYPE = "SetStorageClass";
+      private static final long serialVersionUID = -62615467186000899L;
+
+      private final StorageClass storageClass;
+
+      private SetStorageClassLifecycleAction(StorageClass storageClass) {
+        this.storageClass = storageClass;
+      }
+
+      @Override
+      public String getActionType() {
+        return TYPE;
+      }
+
+      StorageClass getStorageClass() {
+        return storageClass;
+      }
+    }
+  }
+
+  /**
    * Base class for bucket's delete rules. Allows to configure automatic deletion of blobs and blobs
    * versions.
    *
    * @see <a href="https://cloud.google.com/storage/docs/lifecycle">Object Lifecycle Management</a>
+   * @deprecated Use a {@code LifecycleRule} with a {@code DeleteLifecycleAction} and a {@code
+   *     LifecycleCondition} which is equivalent to a subclass of DeleteRule instead.
    */
+  @Deprecated
   public abstract static class DeleteRule implements Serializable {
 
     private static final long serialVersionUID = 3137971668395933033L;
@@ -177,7 +495,13 @@ public class BucketInfo implements Serializable {
    * Delete rule class that sets a Time To Live for blobs in the bucket.
    *
    * @see <a href="https://cloud.google.com/storage/docs/lifecycle">Object Lifecycle Management</a>
+   * @deprecated Use a {@code LifecycleRule} with a {@code DeleteLifecycleAction} and use {@code
+   *     LifecycleCondition.Builder.setAge} instead.
+   *     <p>For example, {@code new DeleteLifecycleAction(1)} is equivalent to {@code new
+   *     LifecycleRule( LifecycleAction.newDeleteAction(),
+   *     LifecycleCondition.newBuilder().setAge(1).build()))}
    */
+  @Deprecated
   public static class AgeDeleteRule extends DeleteRule {
 
     private static final long serialVersionUID = 5697166940712116380L;
@@ -241,7 +565,10 @@ public class BucketInfo implements Serializable {
    * Delete rule class for blobs in the bucket that have been created before a certain date.
    *
    * @see <a href="https://cloud.google.com/storage/docs/lifecycle">Object Lifecycle Management</a>
+   * @deprecated Use a {@code LifecycleRule} with an action {@code DeleteLifecycleAction} and a
+   *     condition {@code LifecycleCondition.Builder.setCreatedBefore} instead.
    */
+  @Deprecated
   public static class CreatedBeforeDeleteRule extends DeleteRule {
 
     private static final long serialVersionUID = 881692650279195867L;
@@ -264,7 +591,7 @@ public class BucketInfo implements Serializable {
 
     @Override
     void populateCondition(Rule.Condition condition) {
-      condition.setCreatedBefore(new DateTime(timeMillis));
+      condition.setCreatedBefore(new DateTime(true, timeMillis, 0));
     }
   }
 
@@ -273,7 +600,10 @@ public class BucketInfo implements Serializable {
    * the number of available newer versions for that blob.
    *
    * @see <a href="https://cloud.google.com/storage/docs/lifecycle">Object Lifecycle Management</a>
+   * @deprecated Use a {@code LifecycleRule} with a {@code DeleteLifecycleAction} and a condition
+   *     {@code LifecycleCondition.Builder.setNumberOfNewerVersions} instead.
    */
+  @Deprecated
   public static class NumNewerVersionsDeleteRule extends DeleteRule {
 
     private static final long serialVersionUID = -1955554976528303894L;
@@ -304,7 +634,10 @@ public class BucketInfo implements Serializable {
    * Delete rule class to distinguish between live and archived blobs.
    *
    * @see <a href="https://cloud.google.com/storage/docs/lifecycle">Object Lifecycle Management</a>
+   * @deprecated Use a {@code LifecycleRule} with a {@code DeleteLifecycleAction} and a condition
+   *     {@code LifecycleCondition.Builder.setIsLive} instead.
    */
+  @Deprecated
   public static class IsLiveDeleteRule extends DeleteRule {
 
     private static final long serialVersionUID = -3502994563121313364L;
@@ -368,9 +701,21 @@ public class BucketInfo implements Serializable {
     /**
      * Sets the bucket's lifecycle configuration as a number of delete rules.
      *
-     * @see <a href="https://cloud.google.com/storage/docs/lifecycle">Lifecycle Management</a>
+     * @deprecated Use {@code setLifecycleRules} instead, as in {@code
+     *     setLifecycleRules(Collections.singletonList( new BucketInfo.LifecycleRule(
+     *     LifecycleAction.newDeleteAction(), LifecycleCondition.newBuilder().setAge(5).build())));}
      */
+    @Deprecated
     public abstract Builder setDeleteRules(Iterable<? extends DeleteRule> rules);
+
+    /**
+     * Sets the bucket's lifecycle configuration as a number of lifecycle rules, consisting of an
+     * action and a condition.
+     *
+     * @see <a href="https://cloud.google.com/storage/docs/lifecycle">Object Lifecycle
+     *     Management</a>
+     */
+    public abstract Builder setLifecycleRules(Iterable<? extends LifecycleRule> rules);
 
     /**
      * Sets the bucket's storage class. This defines how blobs in the bucket are stored and
@@ -457,6 +802,7 @@ public class BucketInfo implements Serializable {
     private String indexPage;
     private String notFoundPage;
     private List<DeleteRule> deleteRules;
+    private List<LifecycleRule> lifecycleRules;
     private StorageClass storageClass;
     private String location;
     private String etag;
@@ -493,6 +839,7 @@ public class BucketInfo implements Serializable {
       indexPage = bucketInfo.indexPage;
       notFoundPage = bucketInfo.notFoundPage;
       deleteRules = bucketInfo.deleteRules;
+      lifecycleRules = bucketInfo.lifecycleRules;
       labels = bucketInfo.labels;
       requesterPays = bucketInfo.requesterPays;
       defaultKmsKeyName = bucketInfo.defaultKmsKeyName;
@@ -550,9 +897,17 @@ public class BucketInfo implements Serializable {
       return this;
     }
 
+    /** @deprecated Use {@code setLifecycleRules} method instead. * */
     @Override
+    @Deprecated
     public Builder setDeleteRules(Iterable<? extends DeleteRule> rules) {
       this.deleteRules = rules != null ? ImmutableList.copyOf(rules) : null;
+      return this;
+    }
+
+    @Override
+    public Builder setLifecycleRules(Iterable<? extends LifecycleRule> rules) {
+      this.lifecycleRules = rules != null ? ImmutableList.copyOf(rules) : null;
       return this;
     }
 
@@ -668,6 +1023,7 @@ public class BucketInfo implements Serializable {
     indexPage = builder.indexPage;
     notFoundPage = builder.notFoundPage;
     deleteRules = builder.deleteRules;
+    lifecycleRules = builder.lifecycleRules;
     labels = builder.labels;
     requesterPays = builder.requesterPays;
     defaultKmsKeyName = builder.defaultKmsKeyName;
@@ -760,8 +1116,13 @@ public class BucketInfo implements Serializable {
    *
    * @see <a href="https://cloud.google.com/storage/docs/lifecycle">Lifecycle Management</a>
    */
+  @Deprecated
   public List<? extends DeleteRule> getDeleteRules() {
     return deleteRules;
+  }
+
+  public List<? extends LifecycleRule> getLifecycleRules() {
+    return lifecycleRules;
   }
 
   /**
@@ -992,9 +1353,9 @@ public class BucketInfo implements Serializable {
       website.setNotFoundPage(notFoundPage);
       bucketPb.setWebsite(website);
     }
+    Set<Rule> rules = new HashSet<>();
     if (deleteRules != null) {
-      Lifecycle lifecycle = new Lifecycle();
-      lifecycle.setRule(
+      rules.addAll(
           transform(
               deleteRules,
               new Function<DeleteRule, Rule>() {
@@ -1003,6 +1364,21 @@ public class BucketInfo implements Serializable {
                   return deleteRule.toPb();
                 }
               }));
+    }
+    if (lifecycleRules != null) {
+      rules.addAll(
+          transform(
+              lifecycleRules,
+              new Function<LifecycleRule, Rule>() {
+                @Override
+                public Rule apply(LifecycleRule lifecycleRule) {
+                  return lifecycleRule.toPb();
+                }
+              }));
+    }
+    if (!rules.isEmpty()) {
+      Lifecycle lifecycle = new Lifecycle();
+      lifecycle.setRule(ImmutableList.copyOf(rules));
       bucketPb.setLifecycle(lifecycle);
     }
     if (labels != null) {
@@ -1028,7 +1404,6 @@ public class BucketInfo implements Serializable {
           retentionPolicy.setIsLocked(retentionPolicyIsLocked);
         }
         bucketPb.setRetentionPolicy(retentionPolicy);
-
       }
     }
 
@@ -1105,6 +1480,15 @@ public class BucketInfo implements Serializable {
       builder.setNotFoundPage(website.getNotFoundPage());
     }
     if (bucketPb.getLifecycle() != null && bucketPb.getLifecycle().getRule() != null) {
+      builder.setLifecycleRules(
+          transform(
+              bucketPb.getLifecycle().getRule(),
+              new Function<Rule, LifecycleRule>() {
+                @Override
+                public LifecycleRule apply(Rule rule) {
+                  return LifecycleRule.fromPb(rule);
+                }
+              }));
       builder.setDeleteRules(
           transform(
               bucketPb.getLifecycle().getRule(),
