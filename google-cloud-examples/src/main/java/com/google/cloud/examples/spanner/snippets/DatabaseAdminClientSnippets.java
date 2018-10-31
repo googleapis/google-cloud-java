@@ -22,12 +22,13 @@
 
 package com.google.cloud.examples.spanner.snippets;
 
-import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.Page;
+import com.google.api.gax.longrunning.OperationFuture;
 import com.google.common.collect.Iterables;
 import com.google.cloud.spanner.DatabaseAdminClient;
 import com.google.cloud.spanner.Options;
 import com.google.cloud.spanner.Database;
+import com.google.cloud.spanner.SpannerException;
 import com.google.cloud.spanner.SpannerExceptionFactory;
 import com.google.spanner.admin.database.v1.CreateDatabaseMetadata;
 
@@ -72,13 +73,16 @@ public class DatabaseAdminClientSnippets {
                     + "  AlbumTitle   STRING(MAX)\n"
                     + ") PRIMARY KEY (SingerId, AlbumId),\n"
                     + "  INTERLEAVE IN PARENT Singers ON DELETE CASCADE"));
+    Database db;
     try {
-      return op.get();
-      // [END createDatabase]
-    } catch (ExecutionException | InterruptedException e) {
-      // DO error handing
+      db = op.get();
+    } catch(ExecutionException e) {
+      throw (SpannerException) e.getCause();
+    } catch(InterruptedException e) {
+      throw SpannerExceptionFactory.propagateInterrupt(e);
     }
-    return null;
+    // [END createDatabase]
+    return db;
   }
 
   /**
@@ -107,8 +111,10 @@ public class DatabaseAdminClientSnippets {
         databaseId, 
         Arrays.asList("ALTER TABLE Albums ADD COLUMN MarketingBudget INT64"), 
         null).get();
-    } catch (ExecutionException | InterruptedException e) {
-      // DO error handling
+    } catch (ExecutionException e) {
+      throw (SpannerException) e.getCause();
+    } catch (InterruptedException e) {
+      throw SpannerExceptionFactory.propagateInterrupt(e);
     }
     // [END updateDatabaseDdl]
   }
