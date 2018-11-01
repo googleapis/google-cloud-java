@@ -177,10 +177,11 @@ public class DownloadComponentsMojo extends AbstractMojo {
 
     getLog().debug("Downloading fresh manifest");
 
-    File tempFile = File.createTempFile(localCache.getName(), "");
+    File tempFile = new File(localCache.toString() + ".tmp");
+    tempFile.createNewFile();
 
     try (BufferedInputStream in = new BufferedInputStream(manifestUrl.openStream());
-        FileOutputStream fileOutputStream = new FileOutputStream(tempFile)) {
+        FileOutputStream fileOutputStream = new FileOutputStream(tempFile, false)) {
       byte dataBuffer[] = new byte[1024];
       int bytesRead;
       while ((bytesRead = in.read(dataBuffer, 0, 1024)) != -1) {
