@@ -460,7 +460,7 @@ public final class BigtableTableAdminClient implements AutoCloseable {
    */
   @SuppressWarnings("WeakerAccess")
   public List<String> listTables() {
-    return awaitFuture(listTablesAsync());
+    return ApiExceptions.callAndTranslateApiException(listTablesAsync());
   }
 
   /**
