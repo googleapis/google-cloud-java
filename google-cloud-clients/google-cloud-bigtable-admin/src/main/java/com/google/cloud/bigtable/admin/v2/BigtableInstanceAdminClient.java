@@ -20,6 +20,7 @@ import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.gax.rpc.ApiExceptions;
+import com.google.api.gax.rpc.NotFoundException;
 import com.google.api.resourcenames.ResourceName;
 import com.google.bigtable.admin.v2.AppProfileName;
 import com.google.bigtable.admin.v2.ClusterName;
@@ -415,6 +416,68 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
         },
         MoreExecutors.directExecutor()
     );
+  }
+
+  /**
+   * Checks if the instance specified by the instanceId exists
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * if(client.exists("my-instance")) {
+   *   System.out.println("Instance exists");
+   * }
+   * }</pre>
+   */
+  public boolean exists(String instanceId) {
+    return ApiExceptions.callAndTranslateApiException(existsAsync(instanceId));
+  }
+
+  /**
+   * Asynchronously checks if the instance specified by the instanceId exists
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * ApiFuture<Boolean> found = client.existsAsync("my-instance");
+   *
+   * ApiFutures.addCallback(
+   *  found,
+   *  new ApiFutureCallback<Boolean>() {
+   *    public void onSuccess(Boolean found) {
+   *      if (found) {
+   *        System.out.println("Instance exists");
+   *      } else {
+   *        System.out.println("Instance not found");
+   *      }
+   *    }
+   *
+   *    public void onFailure(Throwable t) {
+   *      t.printStackTrace();
+   *    }
+   *  },
+   *  MoreExecutors.directExecutor()
+   * );
+   * }</pre>
+   */
+  public ApiFuture<Boolean> existsAsync(String instanceId) {
+    ApiFuture<Instance> protoFuture = getInstanceAsync(instanceId);
+
+    ApiFuture<Boolean> existsFuture = ApiFutures
+        .transform(protoFuture, new ApiFunction<Instance, Boolean>() {
+          @Override
+          public Boolean apply(Instance ignored) {
+            return true;
+          }
+        }, MoreExecutors.directExecutor());
+
+    return ApiFutures.catching(existsFuture, NotFoundException.class,
+        new ApiFunction<NotFoundException, Boolean>() {
+          @Override
+          public Boolean apply(NotFoundException ignored) {
+            return false;
+          }
+        }, MoreExecutors.directExecutor());
   }
 
   /**
