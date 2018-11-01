@@ -91,6 +91,7 @@ public interface Storage extends Service<StorageOptions> {
     WEBSITE("website"),
     VERSIONING("versioning"),
     CORS("cors"),
+    LIFECYCLE("lifecycle"),
     STORAGE_CLASS("storageClass"),
     ETAG("etag"),
     ENCRYPTION("encryption"),
@@ -908,7 +909,7 @@ public interface Storage extends Service<StorageOptions> {
     }
 
     /**
-     * The HTTP method to be used with the signed URL. 
+     * The HTTP method to be used with the signed URL.
      * If this method is not called, defaults to GET.
      */
     public static SignUrlOption httpMethod(HttpMethod httpMethod) {
@@ -931,7 +932,7 @@ public interface Storage extends Service<StorageOptions> {
     public static SignUrlOption withMd5() {
       return new SignUrlOption(Option.MD5, true);
     }
-    
+
     /**
      * Use it if signature should include the blob's canonicalized extended headers.
      * When used, users of the signed URL should include the canonicalized extended headers with

@@ -89,6 +89,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
     EXTERNAL_DATA_CONFIGURATION("externalDataConfiguration"),
     FRIENDLY_NAME("friendlyName"),
     ID("id"),
+    LABELS("labels"),
     LAST_MODIFIED_TIME("lastModifiedTime"),
     LOCATION("location"),
     NUM_BYTES("numBytes"),
