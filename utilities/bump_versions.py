@@ -89,13 +89,13 @@ def bump_versions(next_version_type, bump_type):
     newlines = []
     with open('versions.txt') as f:
         for line in f:
-            if line.startswith('#'):
+            version_line = line.strip()
+            if not version_line or version_line.startswith('#'):
                 newlines.append(line)
                 continue
 
-            (module, released_version_str, current_version_str) = line.split(':')
+            (module, released_version_str, current_version_str) = version_line.split(':')
             released_version = Version(released_version_str)
-            current_version = Version(current_version_str)
 
             if next_version_type == 'next_release':
                 released_version.bump(bump_type)

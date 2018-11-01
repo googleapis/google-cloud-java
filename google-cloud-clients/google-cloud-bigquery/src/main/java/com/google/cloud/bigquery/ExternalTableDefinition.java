@@ -1,0 +1,404 @@
+/*
+ * Copyright 2016 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *       http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.google.cloud.bigquery;
+
+import com.google.api.services.bigquery.model.ExternalDataConfiguration;
+import com.google.api.services.bigquery.model.Table;
+import com.google.auto.value.AutoValue;
+import com.google.common.base.Function;
+import com.google.common.collect.ImmutableList;
+import java.util.List;
+import javax.annotation.Nullable;
+
+/**
+ * Google BigQuery external table definition. BigQuery's external tables are tables whose data
+ * reside outside of BigQuery but can be queried as normal BigQuery tables. External tables are
+ * experimental and might be subject to change or removed.
+ *
+ * @see <a href="https://cloud.google.com/bigquery/federated-data-sources">Federated Data Sources
+ *     </a>
+ */
+@AutoValue
+public abstract class ExternalTableDefinition extends TableDefinition {
+
+  static final Function<ExternalDataConfiguration, ExternalTableDefinition>
+      FROM_EXTERNAL_DATA_FUNCTION =
+      new Function<ExternalDataConfiguration, ExternalTableDefinition>() {
+        @Override
+        public ExternalTableDefinition apply(ExternalDataConfiguration pb) {
+          return ExternalTableDefinition.fromExternalDataConfiguration(pb);
+        }
+      };
+  static final Function<ExternalTableDefinition, ExternalDataConfiguration>
+      TO_EXTERNAL_DATA_FUNCTION =
+      new Function<ExternalTableDefinition, ExternalDataConfiguration>() {
+        @Override
+        public ExternalDataConfiguration apply(ExternalTableDefinition tableInfo) {
+          return tableInfo.toExternalDataConfigurationPb();
+        }
+      };
+
+  private static final long serialVersionUID = -5951580238459622025L;
+
+  @AutoValue.Builder
+  public abstract static class Builder
+      extends TableDefinition.Builder<ExternalTableDefinition, Builder> {
+
+    /**
+     * Sets the fully-qualified URIs that point to your data in Google Cloud Storage (e.g.
+     * gs://bucket/path). Each URI can contain one '*' wildcard character that must come after the
+     * bucket's name. Size limits related to load jobs apply to external data sources, plus an
+     * additional limit of 10 GB maximum size across all URIs.
+     *
+     * For Google Cloud Bigtable URIs:
+     *   Exactly one URI can be specified and it has be a fully specified and valid
+     *   HTTPS URL for a Google Cloud Bigtable table.
+     *
+     * For Google Cloud Datastore backup URIs:
+     *   Exactly one URI can be specified. Also, the '*' wildcard character is not allowed.
+     *
+     * @see <a href="https://cloud.google.com/bigquery/loading-data-into-bigquery#quota">Quota</a>
+     *
+     */
+    public Builder setSourceUris(List<String> sourceUris) {
+      return setSourceUrisImmut(ImmutableList.copyOf(sourceUris));
+    }
+
+    abstract Builder setSourceUrisImmut(ImmutableList<String> sourceUris);
+
+    /**
+     * Sets the source format, and possibly some parsing options, of the external data. Supported
+     * formats are {@code CSV} and {@code NEWLINE_DELIMITED_JSON}.
+     *
+     * <a href="https://cloud.google.com/bigquery/docs/reference/v2/tables#externalDataConfiguration.sourceFormat">
+     *     Source Format</a>
+     */
+    public Builder setFormatOptions(FormatOptions formatOptions) {
+      return setFormatOptionsInner(formatOptions);
+    }
+
+    abstract Builder setFormatOptionsInner(FormatOptions formatOptions);
+
+    /**
+     * Sets the maximum number of bad records that BigQuery can ignore when reading data. If the
+     * number of bad records exceeds this value, an invalid error is returned in the job result. The
+     * default value is 0, which requires that all records are valid.
+     */
+    public abstract Builder setMaxBadRecords(Integer maxBadRecords);
+
+    /**
+     * Sets whether BigQuery should allow extra values that are not represented in the table schema.
+     * If true, the extra values are ignored. If false, records with extra columns are treated as
+     * bad records, and if there are too many bad records, an invalid error is returned in the job
+     * result. The default value is false. The value set with {@link
+     * #setFormatOptions(FormatOptions)} property determines what BigQuery treats as an extra value.
+     *
+     * @see <a
+     *     href="https://cloud.google.com/bigquery/docs/reference/v2/tables#externalDataConfiguration.ignoreUnknownValues">
+     *     Ignore Unknown Values</a>
+     */
+    public abstract Builder setIgnoreUnknownValues(Boolean ignoreUnknownValues);
+
+    /**
+     * Sets compression type of the data source. By default no compression is assumed.
+     *
+     * @see <a
+     *     href="https://cloud.google.com/bigquery/docs/reference/v2/tables#externalDataConfiguration.compression">
+     *     Compression</a>
+     */
+    public abstract Builder setCompression(String compression);
+
+    /**
+     * [Experimental] Sets detection of schema and format options automatically. Any option
+     * specified explicitly will be honored.
+     */
+    public abstract Builder setAutodetect(Boolean autodetect);
+
+    public abstract Builder setType(Type type);
+
+    /** Sets the table schema. */
+    public abstract Builder setSchema(Schema schema);
+
+    /** Creates an {@code ExternalTableDefinition} object. */
+    @Override
+    public abstract ExternalTableDefinition build();
+  }
+
+  /**
+   * Returns the compression type of the data source.
+   *
+   * @see <a
+   *     href="https://cloud.google.com/bigquery/docs/reference/v2/tables#externalDataConfiguration.compression">
+   *     Compression</a>
+   */
+  @Nullable
+  public abstract String getCompression();
+
+  /**
+   * Returns whether BigQuery should allow extra values that are not represented in the table
+   * schema. If true, the extra values are ignored. If false, records with extra columns are treated
+   * as bad records, and if there are too many bad records, an invalid error is returned in the job
+   * result. The default value is false. The value of {@link #getFormatOptions()} determines what
+   * BigQuery treats as an extra value.
+   *
+   * @see <a
+   *     href="https://cloud.google.com/bigquery/docs/reference/v2/tables#externalDataConfiguration.ignoreUnknownValues">
+   *     Ignore Unknown Values</a>
+   */
+  @Nullable
+  public Boolean ignoreUnknownValues() {
+    return getIgnoreUnknownValues();
+  };
+
+  @Nullable
+  public abstract Boolean getIgnoreUnknownValues();
+
+  /**
+   * Returns the maximum number of bad records that BigQuery can ignore when reading data. If the
+   * number of bad records exceeds this value, an invalid error is returned in the job result.
+   */
+  @Nullable
+  public abstract Integer getMaxBadRecords();
+
+  /**
+   * Returns the fully-qualified URIs that point to your data in Google Cloud Storage. Each URI can
+   * contain one '*' wildcard character that must come after the bucket's name. Size limits related
+   * to load jobs apply to external data sources, plus an additional limit of 10 GB maximum size
+   * across all URIs.
+   *
+   * @see <a href="https://cloud.google.com/bigquery/loading-data-into-bigquery#quota">Quota</a>
+   */
+  @Nullable
+  public List<String> getSourceUris() {
+    return getSourceUrisImmut();
+  }
+
+  @Nullable
+  public abstract ImmutableList<String> getSourceUrisImmut();
+
+  /**
+   * Returns the source format, and possibly some parsing options, of the external data. Supported
+   * formats are {@code CSV} and {@code NEWLINE_DELIMITED_JSON}.
+   */
+  @SuppressWarnings("unchecked")
+  @Nullable
+  public <F extends FormatOptions> F getFormatOptions() {
+    return (F) getFormatOptionsInner();
+  }
+
+  @Nullable
+  abstract FormatOptions getFormatOptionsInner();
+
+  /**
+   * [Experimental] Returns whether automatic detection of schema and format options should be
+   * performed.
+   */
+  @Nullable
+  public abstract Boolean getAutodetect();
+
+  /** Returns a builder for the {@code ExternalTableDefinition} object. */
+  public abstract Builder toBuilder();
+
+  @Override
+  com.google.api.services.bigquery.model.Table toPb() {
+    Table tablePb = super.toPb();
+    tablePb.setExternalDataConfiguration(toExternalDataConfigurationPb());
+    return tablePb;
+  }
+
+  com.google.api.services.bigquery.model.ExternalDataConfiguration toExternalDataConfigurationPb() {
+    com.google.api.services.bigquery.model.ExternalDataConfiguration externalConfigurationPb =
+        new com.google.api.services.bigquery.model.ExternalDataConfiguration();
+    if (getCompression() != null) {
+      externalConfigurationPb.setCompression(getCompression());
+    }
+    if (ignoreUnknownValues() != null) {
+      externalConfigurationPb.setIgnoreUnknownValues(ignoreUnknownValues());
+    }
+    if (getMaxBadRecords() != null) {
+      externalConfigurationPb.setMaxBadRecords(getMaxBadRecords());
+    }
+    if (getSchema() != null) {
+      externalConfigurationPb.setSchema(getSchema().toPb());
+    }
+    if (getFormatOptions() != null) {
+      externalConfigurationPb.setSourceFormat(getFormatOptions().getType());
+    }
+    if (getSourceUris() != null) {
+      externalConfigurationPb.setSourceUris(getSourceUris());
+    }
+    if (getFormatOptions() != null && FormatOptions.CSV.equals(getFormatOptions().getType())) {
+      externalConfigurationPb.setCsvOptions(((CsvOptions) getFormatOptions()).toPb());
+    }
+    if (getFormatOptions() != null && FormatOptions.GOOGLE_SHEETS.equals(getFormatOptions().getType())) {
+      externalConfigurationPb.setGoogleSheetsOptions(((GoogleSheetsOptions) getFormatOptions()).toPb());
+    }
+    if (getFormatOptions() != null && FormatOptions.BIGTABLE.equals(getFormatOptions().getType())) {
+      externalConfigurationPb.setBigtableOptions(((BigtableOptions) getFormatOptions()).toPb());
+    }
+    if (getAutodetect() != null) {
+      externalConfigurationPb.setAutodetect(getAutodetect());
+    }
+    return externalConfigurationPb;
+  }
+
+  static Builder newBuilder() {
+    return new AutoValue_ExternalTableDefinition.Builder().setType(Type.EXTERNAL);
+  }
+
+  /**
+   * Creates a builder for an ExternalTableDefinition object.
+   *
+   * @param sourceUris the fully-qualified URIs that point to your data in Google Cloud Storage.
+   *     Each URI can contain one '*' wildcard character that must come after the bucket's name.
+   *     Size limits related to load jobs apply to external data sources, plus an additional limit
+   *     of 10 GB maximum size across all URIs.
+   * @param schema the schema for the external data
+   * @param format the source format of the external data
+   * @return a builder for an ExternalTableDefinition object given source URIs, schema and format
+   *
+   * @see <a href="https://cloud.google.com/bigquery/loading-data-into-bigquery#quota">Quota</a>
+   * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/tables#externalDataConfiguration.sourceFormat">
+   *     Source Format</a>
+   */
+  public static Builder newBuilder(List<String> sourceUris, Schema schema, FormatOptions format) {
+    return newBuilder().setSourceUris(sourceUris).setSchema(schema).setFormatOptions(format);
+  }
+
+
+  /**
+   * Creates a builder for an ExternalTableDefinition object.
+   *
+   * @param sourceUri a fully-qualified URI that points to your data in Google Cloud Storage. The
+   *     URI can contain one '*' wildcard character that must come after the bucket's name. Size
+   *     limits related to load jobs apply to external data sources.
+   * @param schema the schema for the external data
+   * @param format the source format of the external data
+   * @return a builder for an ExternalTableDefinition object given source URI, schema and format
+   *
+   * @see <a href="https://cloud.google.com/bigquery/loading-data-into-bigquery#quota">Quota</a>
+   * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/tables#externalDataConfiguration.sourceFormat">
+   *     Source Format</a>
+   */
+  public static Builder newBuilder(String sourceUri, Schema schema, FormatOptions format) {
+    return newBuilder(ImmutableList.of(sourceUri), schema, format);
+  }
+
+  /**
+   * Creates an ExternalTableDefinition object.
+   *
+   * @param sourceUris the fully-qualified URIs that point to your data in Google Cloud Storage.
+   *     Each URI can contain one '*' wildcard character that must come after the bucket's name.
+   *     Size limits related to load jobs apply to external data sources, plus an additional limit
+   *     of 10 GB maximum size across all URIs.
+   * @param schema the schema for the external data
+   * @param format the source format of the external data
+   * @return an ExternalTableDefinition object given source URIs, schema and format
+   *
+   * @see <a href="https://cloud.google.com/bigquery/loading-data-into-bigquery#quota">Quota</a>
+   * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/tables#externalDataConfiguration.sourceFormat">
+   *     Source Format</a>
+   */
+  public static ExternalTableDefinition of(List<String> sourceUris, Schema schema,
+      FormatOptions format) {
+    return newBuilder(sourceUris, schema, format).build();
+  }
+
+  /**
+   * Creates an ExternalTableDefinition object.
+   *
+   * @param sourceUri a fully-qualified URI that points to your data in Google Cloud Storage. The
+   *     URI can contain one '*' wildcard character that must come after the bucket's name. Size
+   *     limits related to load jobs apply to external data sources.
+   * @param schema the schema for the external data
+   * @param format the source format of the external data
+   * @return an ExternalTableDefinition object given source URIs, schema and format
+   *
+   * @see <a href="https://cloud.google.com/bigquery/loading-data-into-bigquery#quota">Quota</a>
+   * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/tables#externalDataConfiguration.sourceFormat">
+   *     Source Format</a>
+   */
+  public static ExternalTableDefinition of(String sourceUri, Schema schema, FormatOptions format) {
+    return newBuilder(sourceUri, schema, format).build();
+  }
+
+  @SuppressWarnings("unchecked")
+  static ExternalTableDefinition fromPb(Table tablePb) {
+    Builder builder = newBuilder().table(tablePb);
+
+    com.google.api.services.bigquery.model.ExternalDataConfiguration externalDataConfiguration =
+        tablePb.getExternalDataConfiguration();
+    if (externalDataConfiguration != null) {
+      if (externalDataConfiguration.getSourceUris() != null) {
+        builder.setSourceUris(ImmutableList.copyOf(externalDataConfiguration.getSourceUris()));
+      }
+      if (externalDataConfiguration.getSourceFormat() != null) {
+        builder.setFormatOptions(FormatOptions.of(externalDataConfiguration.getSourceFormat()));
+      }
+      builder.setCompression(externalDataConfiguration.getCompression());
+      builder.setIgnoreUnknownValues(externalDataConfiguration.getIgnoreUnknownValues());
+      if (externalDataConfiguration.getCsvOptions() != null) {
+        builder.setFormatOptions(CsvOptions.fromPb(externalDataConfiguration.getCsvOptions()));
+      }
+      if (externalDataConfiguration.getGoogleSheetsOptions() != null) {
+        builder.setFormatOptions(GoogleSheetsOptions.fromPb(externalDataConfiguration.getGoogleSheetsOptions()));
+      }
+      if (externalDataConfiguration.getBigtableOptions() != null) {
+        builder.setFormatOptions(BigtableOptions.fromPb(externalDataConfiguration.getBigtableOptions()));
+      }
+      builder.setMaxBadRecords(externalDataConfiguration.getMaxBadRecords());
+      builder.setAutodetect(externalDataConfiguration.getAutodetect());
+    }
+    return builder.build();
+  }
+
+  static ExternalTableDefinition fromExternalDataConfiguration(
+      ExternalDataConfiguration externalDataConfiguration) {
+    Builder builder = newBuilder();
+    if (externalDataConfiguration.getSourceUris() != null) {
+      builder.setSourceUris(externalDataConfiguration.getSourceUris());
+    }
+    if (externalDataConfiguration.getSchema() != null) {
+      builder.setSchema(Schema.fromPb(externalDataConfiguration.getSchema()));
+    }
+    if (externalDataConfiguration.getSourceFormat() != null) {
+      builder.setFormatOptions(FormatOptions.of(externalDataConfiguration.getSourceFormat()));
+    }
+    if (externalDataConfiguration.getCompression() != null) {
+      builder.setCompression(externalDataConfiguration.getCompression());
+    }
+    if (externalDataConfiguration.getIgnoreUnknownValues() != null) {
+      builder.setIgnoreUnknownValues(externalDataConfiguration.getIgnoreUnknownValues());
+    }
+    if (externalDataConfiguration.getCsvOptions() != null) {
+      builder.setFormatOptions(CsvOptions.fromPb(externalDataConfiguration.getCsvOptions()));
+    }
+    if (externalDataConfiguration.getGoogleSheetsOptions() != null) {
+      builder.setFormatOptions(GoogleSheetsOptions.fromPb(externalDataConfiguration.getGoogleSheetsOptions()));
+    }
+    if (externalDataConfiguration.getBigtableOptions() != null) {
+      builder.setFormatOptions(BigtableOptions.fromPb(externalDataConfiguration.getBigtableOptions()));
+    }
+    if (externalDataConfiguration.getMaxBadRecords() != null) {
+      builder.setMaxBadRecords(externalDataConfiguration.getMaxBadRecords());
+    }
+    if (externalDataConfiguration.getAutodetect() != null) {
+      builder.setAutodetect(externalDataConfiguration.getAutodetect());
+    }
+    return builder.build();
+  }
+}

@@ -8,8 +8,10 @@ Cloud Java (e.g. Pub/Sub, Vision, Speech, and others).
 Usage:
 
 ```
-git clone https://github.com/GoogleCloudPlatform/google-cloud-java.git
-cd google-cloud-java/google-cloud-util/google-cloud-compat-checker
+git clone https://github.com/googleapis/google-cloud-java.git
+cd google-cloud-java/google-cloud-bom
+mvn install
+cd ../google-cloud-util/google-cloud-compat-checker
 mvn install
 mvn exec:java
 ```

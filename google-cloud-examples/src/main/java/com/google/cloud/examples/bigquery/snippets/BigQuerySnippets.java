@@ -59,6 +59,8 @@ import com.google.cloud.bigquery.TableId;
 import com.google.cloud.bigquery.TableInfo;
 import com.google.cloud.bigquery.TableResult;
 import com.google.cloud.bigquery.WriteChannelConfiguration;
+import org.joda.time.DateTime;
+
 import java.io.IOException;
 import java.io.OutputStream;
 import java.nio.ByteBuffer;
@@ -119,17 +121,39 @@ public class BigQuerySnippets {
   /**
    * Example of updating a table by changing its description.
    */
+  public Table updateTableDescription(String datasetName, String tableName, String newDescription) {
+    // [START bigquery_update_table_description]
+    // String datasetName = "my_dataset_name";
+    // String tableName = "my_table_name";
+    // String newDescription = "new_description";
+
+    Table beforeTable = bigquery.getTable(datasetName, tableName);
+    TableInfo tableInfo = beforeTable.toBuilder()
+        .setDescription(newDescription)
+        .build();
+    Table afterTable = bigquery.update(tableInfo);
+    // [END bigquery_update_table_description]
+    return afterTable;
+  }
+
+  /**
+   * Example of updating a table by changing its expiration.
+   */
   // [TARGET update(TableInfo, TableOption...)]
   // [VARIABLE "my_dataset_name"]
   // [VARIABLE "my_table_name"]
-  // [VARIABLE "new_description"]
-  public Table updateTable(String datasetName, String tableName, String newDescription) {
-    // [START bigquery_update_table_description]
-    Table oldTable = bigquery.getTable(datasetName, tableName);
-    TableInfo tableInfo = oldTable.toBuilder().setDescription(newDescription).build();
-    Table newTable = bigquery.update(tableInfo);
-    // [END bigquery_update_table_description]
-    return newTable;
+  public Table updateTableExpiration(String datasetName, String tableName) {
+    // [START bigquery_update_table_expiration]
+    Table beforeTable = bigquery.getTable(datasetName, tableName);
+
+    // Set table to expire 5 days from now.
+    long expirationMillis = DateTime.now().plusDays(5).getMillis();
+    TableInfo tableInfo = beforeTable.toBuilder()
+            .setExpirationTime(expirationMillis)
+            .build();
+    Table afterTable = bigquery.update(tableInfo);
+    // [END bigquery_update_table_expiration]
+    return afterTable;
   }
 
   /**
@@ -168,9 +192,9 @@ public class BigQuerySnippets {
    */
   // [TARGET delete(String, DatasetDeleteOption...)]
   // [VARIABLE "my_dataset_name"]
-  public Boolean deleteDataset(String datasetName) {
+  public boolean deleteDataset(String datasetName) {
     // [START ]
-    Boolean deleted = bigquery.delete(datasetName, DatasetDeleteOption.deleteContents());
+    boolean deleted = bigquery.delete(datasetName, DatasetDeleteOption.deleteContents());
     if (deleted) {
       // the dataset was deleted
     } else {
@@ -186,10 +210,10 @@ public class BigQuerySnippets {
   // [TARGET delete(DatasetId, DatasetDeleteOption...)]
   // [VARIABLE "my_project_id"]
   // [VARIABLE "my_dataset_name"]
-  public Boolean deleteDatasetFromId(String projectId, String datasetName) {
+  public boolean deleteDatasetFromId(String projectId, String datasetName) {
     // [START bigquery_delete_dataset]
     DatasetId datasetId = DatasetId.of(projectId, datasetName);
-    Boolean deleted = bigquery.delete(datasetId, DatasetDeleteOption.deleteContents());
+    boolean deleted = bigquery.delete(datasetId, DatasetDeleteOption.deleteContents());
     if (deleted) {
       // the dataset was deleted
     } else {
@@ -205,9 +229,9 @@ public class BigQuerySnippets {
   // [TARGET delete(String, String)]
   // [VARIABLE "my_dataset_name"]
   // [VARIABLE "my_table_name"]
-  public Boolean deleteTable(String datasetName, String tableName) {
+  public boolean deleteTable(String datasetName, String tableName) {
     // [START ]
-    Boolean deleted = bigquery.delete(datasetName, tableName);
+    boolean deleted = bigquery.delete(datasetName, tableName);
     if (deleted) {
       // the table was deleted
     } else {
@@ -224,10 +248,10 @@ public class BigQuerySnippets {
   // [VARIABLE "my_project_id"]
   // [VARIABLE "my_dataset_name"]
   // [VARIABLE "my_table_name"]
-  public Boolean deleteTableFromId(String projectId, String datasetName, String tableName) {
+  public boolean deleteTableFromId(String projectId, String datasetName, String tableName) {
     // [START bigquery_delete_table]
     TableId tableId = TableId.of(projectId, datasetName, tableName);
-    Boolean deleted = bigquery.delete(tableId);
+    boolean deleted = bigquery.delete(tableId);
     if (deleted) {
       // the table was deleted
     } else {
@@ -438,10 +462,10 @@ public class BigQuerySnippets {
             .setSchema(schema)
             .build();
     // Load the table
-    Job remoteLoadJob = bigquery.create(JobInfo.of(configuration));
-    remoteLoadJob = remoteLoadJob.waitFor();
+    Job loadJob = bigquery.create(JobInfo.of(configuration));
+    loadJob = loadJob.waitFor();
     // Check the table
-    System.out.println("State: " + remoteLoadJob.getStatus().getState());
+    System.out.println("State: " + loadJob.getStatus().getState());
     return ((StandardTableDefinition) bigquery.getTable(tableId).getDefinition()).getNumRows();
     // [END bigquery_load_table_gcs_json]
   }

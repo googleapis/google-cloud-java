@@ -14,16 +14,24 @@
  * limitations under the License.
  */
 
-package com.google.cloud.examples.bigquery.cloudsnippets;
+package com.google.cloud.examples.bigquery.snippets;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQuery.DatasetDeleteOption;
 import com.google.cloud.bigquery.DatasetInfo;
+import com.google.cloud.bigquery.FieldValueList;
+import com.google.cloud.bigquery.Job;
+import com.google.cloud.bigquery.JobInfo;
+import com.google.cloud.bigquery.QueryJobConfiguration;
+import com.google.cloud.bigquery.TableResult;
 import com.google.cloud.bigquery.testing.RemoteBigQueryHelper;
+import com.google.common.collect.Lists;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeoutException;
 import org.junit.AfterClass;
@@ -63,13 +71,6 @@ public class ITCloudSnippets {
   }
 
   @Test
-  public void testRunStandardSqlQuery() throws InterruptedException {
-    cloudSnippets.runStandardSqlQuery();
-    String got = bout.toString();
-    assertTrue(got.contains("romeoandjuliet"));
-  }
-
-  @Test
   public void testRunQueryPermanentTable() throws InterruptedException {
     String tableName = "test_destination_table";
     cloudSnippets.runQueryPermanentTable(DATASET, tableName);
@@ -96,7 +97,7 @@ public class ITCloudSnippets {
   public void testRunBatchQuery() throws TimeoutException, InterruptedException {
     cloudSnippets.runBatchQuery();
     String got = bout.toString();
-    assertTrue(got.contains("romeoandjuliet"));
+    assertTrue(got.contains("in location US currently in state:"));
   }
 
   @Test
@@ -118,5 +119,81 @@ public class ITCloudSnippets {
     cloudSnippets.runQueryWithTimestampParameters();
     String got = bout.toString();
     assertTrue(got.contains("2016-12-07T09:00:00Z"));
+  }
+
+  @Test
+  public void testLoadTableGcsParquet() throws InterruptedException {
+    cloudSnippets.loadTableGcsParquet(DATASET);
+    String got = bout.toString();
+    assertTrue(got.contains("DONE"));
+    assertTrue(got.contains("Loaded 50 rows."));
+  }
+
+  @Test
+  public void testCopyTables() throws InterruptedException {
+    cloudSnippets.copyTables(DATASET, "copytablesdestination");
+    String got = bout.toString();
+    assertTrue(got.contains("DONE"));
+  }
+
+  @Test
+  public void testUndeleteTable() throws InterruptedException {
+    cloudSnippets.undeleteTable(DATASET);
+    String got = bout.toString();
+    assertTrue(got.contains("DONE"));
+  }
+
+  @Test
+  public void testQueryDdlCreateView() throws InterruptedException {
+    String projectId = bigquery.getOptions().getProjectId();
+    String datasetId = DATASET;
+    String tableId = "query_ddl_create_view";
+
+    // [START bigquery_ddl_create_view]
+    // import com.google.cloud.bigquery.*;
+    // String projectId = "my-project";
+    // String datasetId = "my_dataset";
+    // String tableId = "new_view";
+    // BigQuery bigquery = BigQueryOptions.getDefaultInstance().toBuilder()
+    //     .setProjectId(projectId)
+    //     .build().getService();
+
+    String sql =
+        String.format(
+            "CREATE VIEW `%s.%s.%s`\n"
+                + "OPTIONS(\n"
+                + "  expiration_timestamp=TIMESTAMP_ADD(\n"
+                + "    CURRENT_TIMESTAMP(), INTERVAL 48 HOUR),\n"
+                + "  friendly_name=\"new_view\",\n"
+                + "  description=\"a view that expires in 2 days\",\n"
+                + "  labels=[(\"org_unit\", \"development\")]\n"
+                + ")\n"
+                + "AS SELECT name, state, year, number\n"
+                + "  FROM `bigquery-public-data.usa_names.usa_1910_current`\n"
+                + "  WHERE state LIKE 'W%%';\n",
+            projectId, datasetId, tableId);
+
+    // Make an API request to run the query job.
+    Job job = bigquery.create(JobInfo.of(QueryJobConfiguration.newBuilder(sql).build()));
+
+    // Wait for the query to finish.
+    job = job.waitFor();
+
+    QueryJobConfiguration jobConfig = (QueryJobConfiguration) job.getConfiguration();
+    System.out.printf(
+        "Created new view \"%s.%s.%s\".\n",
+        jobConfig.getDestinationTable().getProject(),
+        jobConfig.getDestinationTable().getDataset(),
+        jobConfig.getDestinationTable().getTable());
+    // [END bigquery_ddl_create_view]
+
+    String got = bout.toString();
+    assertTrue(got.contains("Created new view "));
+
+    // Test that listing query result rows succeeds so that generic query
+    // processing tools work with DDL statements.
+    TableResult results = job.getQueryResults();
+    List<FieldValueList> rows = Lists.newArrayList(results.iterateAll());
+    assertEquals(rows.size(), 0);
   }
 }

@@ -8,8 +8,8 @@ If you see exceptions related to `ALPN is not configured properly`, such as:
 Caused by: java.lang.IllegalArgumentException: ALPN is not configured properly. See https://github.com/grpc/grpc-java/blob/master/SECURITY.md#troubleshooting for more information.
 ```
 
-This can mean that:
-- You are not on a [supported platform](https://github.com/GoogleCloudPlatform/google-cloud-java/#supported-platforms)
+Please use the [compatibility checker](https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-util/google-cloud-compat-checker) to see if your environment is compatible with grpc-based clients. The incompatibility can mean that:
+- You are not on a [supported platform](https://github.com/googleapis/google-cloud-java/#supported-platforms)
 - There are classpath conflicts with `netty`
 - Or, you are seeing any of the conflicts specified in [gRPC Troubleshooting guide](https://github.com/grpc/grpc-java/blob/master/SECURITY.md#troubleshooting).
 
@@ -52,7 +52,7 @@ There may be multiple sources for classpath conflicts:
 
 For example, if you have a direct or a transitive dependency on Guava version 10.0, and also `google-cloud-java` uses Guava version 20.0, then `google-cloud-java` could be using Guava methods that don't exist in Guava 10.0, and could cause `NoSuchMethodError`.
 
-Similarily, if your classpath has an older version of `protobuf-java`, but `google-cloud-java` requires newer version, then you may see `NoClassDefFoundError` that fails to initialize `google-cloud-java` classes, e.g.:
+Similarily, if your classpath has an older version of `protobuf-java`, but `google-cloud-java` requires a newer version, then you may see `NoClassDefFoundError` that fails to initialize `google-cloud-java` classes, e.g.:
 
 ```
 java.lang.NoClassDefFoundError: Could not initialize class com.google.pubsub.v1.PubsubMessage$AttributesDefaultEntryHolder
@@ -72,7 +72,7 @@ If you experience the error only during runtime, then it means that your runtime
 
 ### Detecting the conflict early during build
 
-To detect dependnecy version conflicts early, use the [Enforcer Plugin](https://maven.apache.org/enforcer/maven-enforcer-plugin/index.html) in your Maven configuration to enforce dependency convergence:
+To detect dependency version conflicts early, use the [Enforcer Plugin](https://maven.apache.org/enforcer/maven-enforcer-plugin/index.html) in your Maven configuration to enforce dependency convergence:
 
 ```
 <plugin>
