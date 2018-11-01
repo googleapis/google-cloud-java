@@ -39,6 +39,7 @@ import com.google.cloud.bigquery.InsertAllRequest.RowToInsert;
 import com.google.cloud.bigquery.spi.v2.BigQueryRpc;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Function;
+import com.google.common.base.Strings;
 import com.google.common.base.Supplier;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
@@ -401,7 +402,12 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
 
   @Override
   public Table getTable(TableId tableId, TableOption... options) {
-    final TableId completeTableId = tableId.setProjectId(getOptions().getProjectId());
+    // More context about why this: https://github.com/googleapis/google-cloud-java/issues/3808
+    final TableId completeTableId = tableId.setProjectId(
+        Strings.isNullOrEmpty(tableId.getProject())
+            ? getOptions().getProjectId()
+            : tableId.getProject()
+    );
     final Map<BigQueryRpc.Option, ?> optionsMap = optionMap(options);
     try {
       com.google.api.services.bigquery.model.Table answer =
