@@ -55,6 +55,7 @@ import org.mockito.Answers;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
 import org.mockito.Mockito;
+import org.mockito.invocation.InvocationOnMock;
 import org.mockito.runners.MockitoJUnitRunner;
 import org.mockito.stubbing.Answer;
 import org.threeten.bp.Duration;
@@ -235,7 +236,12 @@ public class BigtableDataClientTest {
   @Test
   public void mutateRowTest() {
     Mockito.when(mockMutateRowCallable.futureCall(any(RowMutation.class)))
-            .thenAnswer((Answer) (invocationOnMock) -> ApiFutures.immediateFuture(Empty.getDefaultInstance()));
+        .thenAnswer(new Answer() {
+          @Override
+          public Object answer(InvocationOnMock invocationOnMock) throws Throwable {
+            return ApiFutures.immediateFuture(Empty.getDefaultInstance());
+          }
+        });
 
     RowMutation request =
             RowMutation.create("fake-table", "some-key")
@@ -260,7 +266,12 @@ public class BigtableDataClientTest {
   @Test
   public void bulkMutatesRowTest() {
     Mockito.when(mockBulkMutateRowsCallable.futureCall(any(BulkMutation.class)))
-            .thenAnswer((Answer) (invocationOnMock) -> ApiFutures.immediateFuture(Empty.getDefaultInstance()));
+        .thenAnswer(new Answer() {
+          @Override
+          public Object answer(InvocationOnMock invocationOnMock) throws Throwable {
+            return ApiFutures.immediateFuture(Empty.getDefaultInstance());
+          }
+        });
 
     BulkMutation request =
             BulkMutation.create("fake-table")
