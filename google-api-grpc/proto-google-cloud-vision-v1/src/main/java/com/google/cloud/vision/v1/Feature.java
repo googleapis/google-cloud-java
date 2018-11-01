@@ -204,6 +204,14 @@ private static final long serialVersionUID = 0L;
     WEB_DETECTION(10),
     /**
      * <pre>
+     * Run Product Search.
+     * </pre>
+     *
+     * <code>PRODUCT_SEARCH = 12;</code>
+     */
+    PRODUCT_SEARCH(12),
+    /**
+     * <pre>
      * Run localizer for object detection.
      * </pre>
      *
@@ -308,6 +316,14 @@ private static final long serialVersionUID = 0L;
     public static final int WEB_DETECTION_VALUE = 10;
     /**
      * <pre>
+     * Run Product Search.
+     * </pre>
+     *
+     * <code>PRODUCT_SEARCH = 12;</code>
+     */
+    public static final int PRODUCT_SEARCH_VALUE = 12;
+    /**
+     * <pre>
      * Run localizer for object detection.
      * </pre>
      *
@@ -345,6 +361,7 @@ private static final long serialVersionUID = 0L;
         case 7: return IMAGE_PROPERTIES;
         case 9: return CROP_HINTS;
         case 10: return WEB_DETECTION;
+        case 12: return PRODUCT_SEARCH;
         case 19: return OBJECT_LOCALIZATION;
         default: return null;
       }
