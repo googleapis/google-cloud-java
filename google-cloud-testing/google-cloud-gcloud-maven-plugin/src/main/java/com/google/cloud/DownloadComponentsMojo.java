@@ -47,12 +47,12 @@ import org.apache.commons.compress.archivers.ArchiveEntry;
 import org.apache.commons.compress.archivers.tar.TarArchiveInputStream;
 import org.apache.commons.compress.compressors.gzip.GzipCompressorInputStream;
 import org.apache.commons.compress.utils.IOUtils;
+import org.apache.commons.io.FileUtils;
 import org.apache.maven.execution.MavenSession;
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugins.annotations.Mojo;
 import org.apache.maven.plugins.annotations.Parameter;
-import org.codehaus.plexus.util.FileUtils;
 
 /**
  * Goal that downloads gcloud components and embeds them as resources in a jar. This is mainly
@@ -191,9 +191,7 @@ public class DownloadComponentsMojo extends AbstractMojo {
     @SuppressWarnings("unused")
     boolean ignored = localCache.delete();
 
-    if (!tempFile.renameTo(localCache)) {
-      throw new RuntimeException("Failed to move the updated cache into place");
-    }
+    FileUtils.moveFile(tempFile, localCache);
   }
 
   /**
@@ -307,10 +305,7 @@ public class DownloadComponentsMojo extends AbstractMojo {
     // Move it into place
     File localPath = getComponentPath(component);
     FileUtils.deleteDirectory(localPath);
-
-    if (!tmpPath.renameTo(localPath)) {
-      throw new IOException("Failed to move the extracted component into place");
-    }
+    FileUtils.moveDirectory(tmpPath, localPath);
   }
 
   private static String byteArrayToHex(byte[] a) {
