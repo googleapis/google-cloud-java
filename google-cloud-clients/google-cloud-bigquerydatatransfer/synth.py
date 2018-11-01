@@ -24,7 +24,7 @@ library = gapic.java_library(
     service='bigquerydatatransfer',
     version='v1',
     config_path='/google/cloud/bigquery/datatransfer/artman_bigquerydatatransfer.yaml',
-    artman_output_name='google-cloud-bigquerydatatransfer-v1')
+    artman_output_name='')
 
 s.copy(library / 'gapic-google-cloud-bigquerydatatransfer-v1/src', 'src')
 s.copy(library / 'grpc-google-cloud-bigquerydatatransfer-v1/src', '../../google-api-grpc/grpc-google-cloud-bigquerydatatransfer-v1/src')
