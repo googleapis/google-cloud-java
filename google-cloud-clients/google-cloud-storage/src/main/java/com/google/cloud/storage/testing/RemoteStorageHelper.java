@@ -31,6 +31,7 @@ import com.google.cloud.storage.StorageOptions;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
@@ -121,8 +122,29 @@ public class RemoteStorageHelper {
    */
   public static Boolean forceDelete(Storage storage, String bucket, long timeout, TimeUnit unit)
       throws InterruptedException, ExecutionException {
+    return forceDelete(storage, bucket, timeout, unit, "");
+  }
+
+  /**
+   * Deletes a bucket, even if non-empty. Objects in the bucket are listed and deleted until bucket
+   * deletion succeeds or {@code timeout} expires. To allow for the timeout, this method uses a
+   * separate thread to send the delete requests. Use
+   * {@link #forceDelete(Storage storage, String bucket)} if spawning an additional thread is
+   * undesirable, such as in the App Engine production runtime.
+   *
+   * @param storage the storage service to be used to issue requests
+   * @param bucket the bucket to be deleted
+   * @param timeout the maximum time to wait
+   * @param unit the time unit of the timeout argument
+   * @param userProject the project to bill for requester-pays buckets (or "")
+   * @return true if deletion succeeded, false if timeout expired
+   * @throws InterruptedException if the thread deleting the bucket is interrupted while waiting
+   * @throws ExecutionException if an exception was thrown while deleting bucket or bucket objects
+   */
+  public static Boolean forceDelete(Storage storage, String bucket, long timeout, TimeUnit unit, String userProject)
+      throws InterruptedException, ExecutionException {
     ExecutorService executor = Executors.newSingleThreadExecutor();
-    Future<Boolean> future = executor.submit(new DeleteBucketTask(storage, bucket));
+    Future<Boolean> future = executor.submit(new DeleteBucketTask(storage, bucket, userProject));
     try {
       return future.get(timeout, unit);
     } catch (TimeoutException ex) {
@@ -210,26 +232,40 @@ public class RemoteStorageHelper {
 
   private static class DeleteBucketTask implements Callable<Boolean> {
 
-    private Storage storage;
-    private String bucket;
+    private final Storage storage;
+    private final String bucket;
+    private final String userProject;
 
     public DeleteBucketTask(Storage storage, String bucket) {
       this.storage = storage;
       this.bucket = bucket;
+      this.userProject = "";
+    }
+
+    public DeleteBucketTask(Storage storage, String bucket, String userProject) {
+      this.storage = storage;
+      this.bucket = bucket;
+      this.userProject = userProject;
     }
 
     @Override
     public Boolean call() {
       while (true) {
         ArrayList<BlobId> ids = new ArrayList<>();
-        for (BlobInfo info : storage.list(bucket, BlobListOption.versions(true)).getValues()) {
+        for (BlobInfo info : storage.list(bucket, BlobListOption.versions(true), BlobListOption.userProject(userProject)).getValues()) {
           ids.add(info.getBlobId());
         }
         if (!ids.isEmpty()) {
-          storage.delete(ids);
+          List<Boolean> results = storage.delete(ids);
+          for (int i=0; i<results.size(); i++) {
+            if (!results.get(i)) {
+              // deleting that blob failed. Let's try in a different way.
+              storage.delete(bucket, ids.get(i).getName(), Storage.BlobSourceOption.userProject(userProject));
+            }
+          }
         }
         try {
-          storage.delete(bucket);
+          storage.delete(bucket, Storage.BucketSourceOption.userProject(userProject));
           return true;
         } catch (StorageException e) {
           if (e.getCode() == 409) {
