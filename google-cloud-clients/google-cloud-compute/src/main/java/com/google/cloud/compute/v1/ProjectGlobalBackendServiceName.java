@@ -31,8 +31,7 @@ public final class ProjectGlobalBackendServiceName implements ResourceName {
   private final String backendService;
   private final String project;
   private static final PathTemplate PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding(
-          "projects/{project}/global/backendServices/{backendService}");
+      PathTemplate.createWithoutUrlEncoding("{project}/global/backendServices/{backendService}");
 
   private volatile Map<String, String> fieldValuesMap;
 

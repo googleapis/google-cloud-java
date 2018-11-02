@@ -31,7 +31,7 @@ public final class ProjectGlobalOperationName implements ResourceName {
   private final String operation;
   private final String project;
   private static final PathTemplate PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}/global/operations/{operation}");
+      PathTemplate.createWithoutUrlEncoding("{project}/global/operations/{operation}");
 
   private volatile Map<String, String> fieldValuesMap;
 

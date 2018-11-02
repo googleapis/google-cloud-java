@@ -31,7 +31,7 @@ public final class ProjectGlobalImageName implements ResourceName {
   private final String image;
   private final String project;
   private static final PathTemplate PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}/global/images/{image}");
+      PathTemplate.createWithoutUrlEncoding("{project}/global/images/{image}");
 
   private volatile Map<String, String> fieldValuesMap;
 

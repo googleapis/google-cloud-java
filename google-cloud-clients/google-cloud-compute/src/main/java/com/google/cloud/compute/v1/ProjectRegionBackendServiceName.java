@@ -33,7 +33,7 @@ public final class ProjectRegionBackendServiceName implements ResourceName {
   private final String region;
   private static final PathTemplate PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding(
-          "projects/{project}/regions/{region}/backendServices/{backendService}");
+          "{project}/regions/{region}/backendServices/{backendService}");
 
   private volatile Map<String, String> fieldValuesMap;
 

@@ -33,7 +33,7 @@ public final class ProjectRegionTargetVpnGatewayName implements ResourceName {
   private final String targetVpnGateway;
   private static final PathTemplate PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding(
-          "projects/{project}/regions/{region}/targetVpnGateways/{targetVpnGateway}");
+          "{project}/regions/{region}/targetVpnGateways/{targetVpnGateway}");
 
   private volatile Map<String, String> fieldValuesMap;
 

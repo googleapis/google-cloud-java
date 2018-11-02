@@ -31,8 +31,7 @@ public final class ProjectGlobalBackendBucketName implements ResourceName {
   private final String backendBucket;
   private final String project;
   private static final PathTemplate PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding(
-          "projects/{project}/global/backendBuckets/{backendBucket}");
+      PathTemplate.createWithoutUrlEncoding("{project}/global/backendBuckets/{backendBucket}");
 
   private volatile Map<String, String> fieldValuesMap;
 

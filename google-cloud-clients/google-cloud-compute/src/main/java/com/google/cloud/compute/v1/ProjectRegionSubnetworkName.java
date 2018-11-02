@@ -32,8 +32,7 @@ public final class ProjectRegionSubnetworkName implements ResourceName {
   private final String region;
   private final String subnetwork;
   private static final PathTemplate PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding(
-          "projects/{project}/regions/{region}/subnetworks/{subnetwork}");
+      PathTemplate.createWithoutUrlEncoding("{project}/regions/{region}/subnetworks/{subnetwork}");
 
   private volatile Map<String, String> fieldValuesMap;
 

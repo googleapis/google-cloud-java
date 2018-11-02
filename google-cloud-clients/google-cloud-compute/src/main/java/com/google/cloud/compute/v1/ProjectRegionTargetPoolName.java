@@ -32,8 +32,7 @@ public final class ProjectRegionTargetPoolName implements ResourceName {
   private final String region;
   private final String targetPool;
   private static final PathTemplate PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding(
-          "projects/{project}/regions/{region}/targetPools/{targetPool}");
+      PathTemplate.createWithoutUrlEncoding("{project}/regions/{region}/targetPools/{targetPool}");
 
   private volatile Map<String, String> fieldValuesMap;
 

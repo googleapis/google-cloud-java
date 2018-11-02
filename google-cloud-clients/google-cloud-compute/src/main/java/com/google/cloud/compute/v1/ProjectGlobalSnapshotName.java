@@ -31,7 +31,7 @@ public final class ProjectGlobalSnapshotName implements ResourceName {
   private final String project;
   private final String snapshot;
   private static final PathTemplate PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}/global/snapshots/{snapshot}");
+      PathTemplate.createWithoutUrlEncoding("{project}/global/snapshots/{snapshot}");
 
   private volatile Map<String, String> fieldValuesMap;
 

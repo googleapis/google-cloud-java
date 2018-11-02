@@ -33,7 +33,7 @@ public final class ProjectZoneInstanceGroupName implements ResourceName {
   private final String zone;
   private static final PathTemplate PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding(
-          "projects/{project}/zones/{zone}/instanceGroups/{instanceGroup}");
+          "{project}/zones/{zone}/instanceGroups/{instanceGroup}");
 
   private volatile Map<String, String> fieldValuesMap;
 

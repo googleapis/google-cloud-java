@@ -32,7 +32,7 @@ public final class ProjectZoneDiskTypeName implements ResourceName {
   private final String project;
   private final String zone;
   private static final PathTemplate PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}/zones/{zone}/diskTypes/{diskType}");
+      PathTemplate.createWithoutUrlEncoding("{project}/zones/{zone}/diskTypes/{diskType}");
 
   private volatile Map<String, String> fieldValuesMap;
 

@@ -31,7 +31,7 @@ public final class ProjectGlobalSslPolicyName implements ResourceName {
   private final String project;
   private final String sslPolicy;
   private static final PathTemplate PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}/global/sslPolicies/{sslPolicy}");
+      PathTemplate.createWithoutUrlEncoding("{project}/global/sslPolicies/{sslPolicy}");
 
   private volatile Map<String, String> fieldValuesMap;
 

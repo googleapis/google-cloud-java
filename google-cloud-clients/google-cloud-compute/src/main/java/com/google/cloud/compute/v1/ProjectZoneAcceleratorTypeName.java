@@ -33,7 +33,7 @@ public final class ProjectZoneAcceleratorTypeName implements ResourceName {
   private final String zone;
   private static final PathTemplate PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding(
-          "projects/{project}/zones/{zone}/acceleratorTypes/{acceleratorType}");
+          "{project}/zones/{zone}/acceleratorTypes/{acceleratorType}");
 
   private volatile Map<String, String> fieldValuesMap;
 

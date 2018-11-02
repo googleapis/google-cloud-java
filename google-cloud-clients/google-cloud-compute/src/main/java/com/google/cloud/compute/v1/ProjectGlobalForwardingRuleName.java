@@ -31,8 +31,7 @@ public final class ProjectGlobalForwardingRuleName implements ResourceName {
   private final String forwardingRule;
   private final String project;
   private static final PathTemplate PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding(
-          "projects/{project}/global/forwardingRules/{forwardingRule}");
+      PathTemplate.createWithoutUrlEncoding("{project}/global/forwardingRules/{forwardingRule}");
 
   private volatile Map<String, String> fieldValuesMap;
 

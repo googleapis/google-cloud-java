@@ -31,8 +31,7 @@ public final class ProjectGlobalInterconnectName implements ResourceName {
   private final String interconnect;
   private final String project;
   private static final PathTemplate PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding(
-          "projects/{project}/global/interconnects/{interconnect}");
+      PathTemplate.createWithoutUrlEncoding("{project}/global/interconnects/{interconnect}");
 
   private volatile Map<String, String> fieldValuesMap;
 

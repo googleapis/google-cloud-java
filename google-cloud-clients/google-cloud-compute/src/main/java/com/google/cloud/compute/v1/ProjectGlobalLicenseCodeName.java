@@ -31,7 +31,7 @@ public final class ProjectGlobalLicenseCodeName implements ResourceName {
   private final String licenseCode;
   private final String project;
   private static final PathTemplate PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}/global/licenseCodes/{licenseCode}");
+      PathTemplate.createWithoutUrlEncoding("{project}/global/licenseCodes/{licenseCode}");
 
   private volatile Map<String, String> fieldValuesMap;
 

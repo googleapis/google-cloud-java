@@ -32,7 +32,7 @@ public final class ProjectGlobalHttpsHealthCheckName implements ResourceName {
   private final String project;
   private static final PathTemplate PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding(
-          "projects/{project}/global/httpsHealthChecks/{httpsHealthCheck}");
+          "{project}/global/httpsHealthChecks/{httpsHealthCheck}");
 
   private volatile Map<String, String> fieldValuesMap;
 

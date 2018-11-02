@@ -32,8 +32,7 @@ public final class ProjectZoneMachineTypeName implements ResourceName {
   private final String project;
   private final String zone;
   private static final PathTemplate PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding(
-          "projects/{project}/zones/{zone}/machineTypes/{machineType}");
+      PathTemplate.createWithoutUrlEncoding("{project}/zones/{zone}/machineTypes/{machineType}");
 
   private volatile Map<String, String> fieldValuesMap;
 

@@ -31,7 +31,7 @@ public final class ProjectGlobalAddressName implements ResourceName {
   private final String address;
   private final String project;
   private static final PathTemplate PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}/global/addresses/{address}");
+      PathTemplate.createWithoutUrlEncoding("{project}/global/addresses/{address}");
 
   private volatile Map<String, String> fieldValuesMap;
 

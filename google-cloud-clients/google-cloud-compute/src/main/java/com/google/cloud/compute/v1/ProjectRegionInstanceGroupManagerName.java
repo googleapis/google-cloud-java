@@ -33,7 +33,7 @@ public final class ProjectRegionInstanceGroupManagerName implements ResourceName
   private final String region;
   private static final PathTemplate PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding(
-          "projects/{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}");
+          "{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}");
 
   private volatile Map<String, String> fieldValuesMap;
 

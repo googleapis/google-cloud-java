@@ -33,7 +33,7 @@ public final class ProjectRegionForwardingRuleName implements ResourceName {
   private final String region;
   private static final PathTemplate PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding(
-          "projects/{project}/regions/{region}/forwardingRules/{forwardingRule}");
+          "{project}/regions/{region}/forwardingRules/{forwardingRule}");
 
   private volatile Map<String, String> fieldValuesMap;
 

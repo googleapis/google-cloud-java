@@ -33,7 +33,7 @@ public final class ProjectRegionInterconnectAttachmentName implements ResourceNa
   private final String region;
   private static final PathTemplate PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding(
-          "projects/{project}/regions/{region}/interconnectAttachments/{interconnectAttachment}");
+          "{project}/regions/{region}/interconnectAttachments/{interconnectAttachment}");
 
   private volatile Map<String, String> fieldValuesMap;
 

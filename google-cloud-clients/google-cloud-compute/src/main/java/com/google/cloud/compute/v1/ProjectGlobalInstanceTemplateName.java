@@ -32,7 +32,7 @@ public final class ProjectGlobalInstanceTemplateName implements ResourceName {
   private final String project;
   private static final PathTemplate PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding(
-          "projects/{project}/global/instanceTemplates/{instanceTemplate}");
+          "{project}/global/instanceTemplates/{instanceTemplate}");
 
   private volatile Map<String, String> fieldValuesMap;
 

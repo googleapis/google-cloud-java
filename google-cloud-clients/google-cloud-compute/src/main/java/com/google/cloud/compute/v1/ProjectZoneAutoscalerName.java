@@ -32,8 +32,7 @@ public final class ProjectZoneAutoscalerName implements ResourceName {
   private final String project;
   private final String zone;
   private static final PathTemplate PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding(
-          "projects/{project}/zones/{zone}/autoscalers/{autoscaler}");
+      PathTemplate.createWithoutUrlEncoding("{project}/zones/{zone}/autoscalers/{autoscaler}");
 
   private volatile Map<String, String> fieldValuesMap;
 

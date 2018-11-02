@@ -31,8 +31,7 @@ public final class ProjectTargetHttpsProxyName implements ResourceName {
   private final String project;
   private final String targetHttpsProxy;
   private static final PathTemplate PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding(
-          "projects/{project}/targetHttpsProxies/{targetHttpsProxy}");
+      PathTemplate.createWithoutUrlEncoding("{project}/targetHttpsProxies/{targetHttpsProxy}");
 
   private volatile Map<String, String> fieldValuesMap;
 

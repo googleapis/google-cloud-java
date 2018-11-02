@@ -31,7 +31,7 @@ public final class ProjectGlobalFirewallName implements ResourceName {
   private final String firewall;
   private final String project;
   private static final PathTemplate PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}/global/firewalls/{firewall}");
+      PathTemplate.createWithoutUrlEncoding("{project}/global/firewalls/{firewall}");
 
   private volatile Map<String, String> fieldValuesMap;
 

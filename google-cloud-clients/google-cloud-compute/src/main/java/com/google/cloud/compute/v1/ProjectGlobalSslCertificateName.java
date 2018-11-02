@@ -31,8 +31,7 @@ public final class ProjectGlobalSslCertificateName implements ResourceName {
   private final String project;
   private final String sslCertificate;
   private static final PathTemplate PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding(
-          "projects/{project}/global/sslCertificates/{sslCertificate}");
+      PathTemplate.createWithoutUrlEncoding("{project}/global/sslCertificates/{sslCertificate}");
 
   private volatile Map<String, String> fieldValuesMap;
 

@@ -31,8 +31,7 @@ public final class ProjectGlobalTargetTcpProxyName implements ResourceName {
   private final String project;
   private final String targetTcpProxy;
   private static final PathTemplate PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding(
-          "projects/{project}/global/targetTcpProxies/{targetTcpProxy}");
+      PathTemplate.createWithoutUrlEncoding("{project}/global/targetTcpProxies/{targetTcpProxy}");
 
   private volatile Map<String, String> fieldValuesMap;
 
