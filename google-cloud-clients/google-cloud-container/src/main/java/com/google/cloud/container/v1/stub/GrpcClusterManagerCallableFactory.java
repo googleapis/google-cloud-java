@@ -37,7 +37,7 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 /**
- * gRPC callable factory implementation for Google Container Engine API.
+ * gRPC callable factory implementation for Kubernetes Engine API.
  *
  * <p>This class is for advanced usage.
  */

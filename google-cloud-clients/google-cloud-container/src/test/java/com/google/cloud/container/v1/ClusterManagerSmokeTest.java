@@ -45,10 +45,11 @@ public class ClusterManagerSmokeTest {
 
   public static void executeNoCatch(String projectId) throws Exception {
     try (ClusterManagerClient client = ClusterManagerClient.create()) {
+      String formattedParent = ClusterManagerClient.formatLocationName("[PROJECT]", "[LOCATION]");
       String projectId2 = projectId;
       String zone = "us-central1-a";
 
-      ListClustersResponse response = client.listClusters(projectId2, zone);
+      ListClustersResponse response = client.listClusters(formattedParent, projectId2, zone);
     }
   }
 
