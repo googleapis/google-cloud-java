@@ -22,6 +22,9 @@ import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
+import com.google.api.gax.rpc.StatusCode;
+import com.google.longrunning.Operation;
+import com.google.protobuf.Any;
 import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
@@ -29,6 +32,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -108,6 +112,55 @@ public class ImageAnnotatorClientTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void asyncBatchAnnotateFilesTest() throws Exception {
+    AsyncBatchAnnotateFilesResponse expectedResponse =
+        AsyncBatchAnnotateFilesResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("asyncBatchAnnotateFilesTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockImageAnnotator.addResponse(resultOperation);
+
+    List<AsyncAnnotateFileRequest> requests = new ArrayList<>();
+
+    AsyncBatchAnnotateFilesResponse actualResponse =
+        client.asyncBatchAnnotateFilesAsync(requests).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<GeneratedMessageV3> actualRequests = mockImageAnnotator.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    AsyncBatchAnnotateFilesRequest actualRequest =
+        (AsyncBatchAnnotateFilesRequest) actualRequests.get(0);
+
+    Assert.assertEquals(requests, actualRequest.getRequestsList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void asyncBatchAnnotateFilesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockImageAnnotator.addException(exception);
+
+    try {
+      List<AsyncAnnotateFileRequest> requests = new ArrayList<>();
+
+      client.asyncBatchAnnotateFilesAsync(requests).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 }

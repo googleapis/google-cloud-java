@@ -34,7 +34,8 @@ public interface PageOrBuilder extends
 
   /**
    * <pre>
-   * Page width in pixels.
+   * Page width. For PDFs the unit is points. For images (including
+   * TIFFs) the unit is pixels.
    * </pre>
    *
    * <code>int32 width = 2;</code>
@@ -43,7 +44,8 @@ public interface PageOrBuilder extends
 
   /**
    * <pre>
-   * Page height in pixels.
+   * Page height. For PDFs the unit is points. For images (including
+   * TIFFs) the unit is pixels.
    * </pre>
    *
    * <code>int32 height = 3;</code>

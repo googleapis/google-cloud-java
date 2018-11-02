@@ -9,14 +9,14 @@ public interface PointOrBuilder extends
 
   /**
    * <pre>
-   * The time interval to which the data point applies.  For GAUGE metrics, only
-   * the end time of the interval is used.  For DELTA metrics, the start and end
-   * time should specify a non-zero interval, with subsequent points specifying
-   * contiguous and non-overlapping intervals.  For CUMULATIVE metrics, the
-   * start and end time should specify a non-zero interval, with subsequent
-   * points specifying the same start time and increasing end times, until an
-   * event resets the cumulative value to zero and sets a new start time for the
-   * following points.
+   * The time interval to which the data point applies.  For `GAUGE` metrics,
+   * only the end time of the interval is used.  For `DELTA` metrics, the start
+   * and end time should specify a non-zero interval, with subsequent points
+   * specifying contiguous and non-overlapping intervals.  For `CUMULATIVE`
+   * metrics, the start and end time should specify a non-zero interval, with
+   * subsequent points specifying the same start time and increasing end times,
+   * until an event resets the cumulative value to zero and sets a new start
+   * time for the following points.
    * </pre>
    *
    * <code>.google.monitoring.v3.TimeInterval interval = 1;</code>
@@ -24,14 +24,14 @@ public interface PointOrBuilder extends
   boolean hasInterval();
   /**
    * <pre>
-   * The time interval to which the data point applies.  For GAUGE metrics, only
-   * the end time of the interval is used.  For DELTA metrics, the start and end
-   * time should specify a non-zero interval, with subsequent points specifying
-   * contiguous and non-overlapping intervals.  For CUMULATIVE metrics, the
-   * start and end time should specify a non-zero interval, with subsequent
-   * points specifying the same start time and increasing end times, until an
-   * event resets the cumulative value to zero and sets a new start time for the
-   * following points.
+   * The time interval to which the data point applies.  For `GAUGE` metrics,
+   * only the end time of the interval is used.  For `DELTA` metrics, the start
+   * and end time should specify a non-zero interval, with subsequent points
+   * specifying contiguous and non-overlapping intervals.  For `CUMULATIVE`
+   * metrics, the start and end time should specify a non-zero interval, with
+   * subsequent points specifying the same start time and increasing end times,
+   * until an event resets the cumulative value to zero and sets a new start
+   * time for the following points.
    * </pre>
    *
    * <code>.google.monitoring.v3.TimeInterval interval = 1;</code>
@@ -39,14 +39,14 @@ public interface PointOrBuilder extends
   com.google.monitoring.v3.TimeInterval getInterval();
   /**
    * <pre>
-   * The time interval to which the data point applies.  For GAUGE metrics, only
-   * the end time of the interval is used.  For DELTA metrics, the start and end
-   * time should specify a non-zero interval, with subsequent points specifying
-   * contiguous and non-overlapping intervals.  For CUMULATIVE metrics, the
-   * start and end time should specify a non-zero interval, with subsequent
-   * points specifying the same start time and increasing end times, until an
-   * event resets the cumulative value to zero and sets a new start time for the
-   * following points.
+   * The time interval to which the data point applies.  For `GAUGE` metrics,
+   * only the end time of the interval is used.  For `DELTA` metrics, the start
+   * and end time should specify a non-zero interval, with subsequent points
+   * specifying contiguous and non-overlapping intervals.  For `CUMULATIVE`
+   * metrics, the start and end time should specify a non-zero interval, with
+   * subsequent points specifying the same start time and increasing end times,
+   * until an event resets the cumulative value to zero and sets a new start
+   * time for the following points.
    * </pre>
    *
    * <code>.google.monitoring.v3.TimeInterval interval = 1;</code>

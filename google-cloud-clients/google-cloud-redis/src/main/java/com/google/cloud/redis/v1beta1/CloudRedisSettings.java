@@ -83,6 +83,8 @@ public class CloudRedisSettings extends ClientSettings<CloudRedisSettings> {
   }
 
   /** Returns the object with the settings used for calls to createInstance. */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<CreateInstanceRequest, Instance, Any>
       createInstanceOperationSettings() {
     return ((CloudRedisStubSettings) getStubSettings()).createInstanceOperationSettings();
@@ -94,6 +96,8 @@ public class CloudRedisSettings extends ClientSettings<CloudRedisSettings> {
   }
 
   /** Returns the object with the settings used for calls to updateInstance. */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<UpdateInstanceRequest, Instance, Any>
       updateInstanceOperationSettings() {
     return ((CloudRedisStubSettings) getStubSettings()).updateInstanceOperationSettings();
@@ -105,6 +109,8 @@ public class CloudRedisSettings extends ClientSettings<CloudRedisSettings> {
   }
 
   /** Returns the object with the settings used for calls to deleteInstance. */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<DeleteInstanceRequest, Empty, Any>
       deleteInstanceOperationSettings() {
     return ((CloudRedisStubSettings) getStubSettings()).deleteInstanceOperationSettings();
@@ -224,6 +230,8 @@ public class CloudRedisSettings extends ClientSettings<CloudRedisSettings> {
     }
 
     /** Returns the builder for the settings used for calls to createInstance. */
+    @BetaApi(
+        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateInstanceRequest, Instance, Any>
         createInstanceOperationSettings() {
       return getStubSettingsBuilder().createInstanceOperationSettings();
@@ -235,6 +243,8 @@ public class CloudRedisSettings extends ClientSettings<CloudRedisSettings> {
     }
 
     /** Returns the builder for the settings used for calls to updateInstance. */
+    @BetaApi(
+        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateInstanceRequest, Instance, Any>
         updateInstanceOperationSettings() {
       return getStubSettingsBuilder().updateInstanceOperationSettings();
@@ -246,6 +256,8 @@ public class CloudRedisSettings extends ClientSettings<CloudRedisSettings> {
     }
 
     /** Returns the builder for the settings used for calls to deleteInstance. */
+    @BetaApi(
+        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteInstanceRequest, Empty, Any>
         deleteInstanceOperationSettings() {
       return getStubSettingsBuilder().deleteInstanceOperationSettings();

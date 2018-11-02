@@ -9,7 +9,7 @@ public interface ImageContextOrBuilder extends
 
   /**
    * <pre>
-   * lat/long rectangle that specifies the location of the image.
+   * Not used.
    * </pre>
    *
    * <code>.google.cloud.vision.v1.LatLongRect lat_long_rect = 1;</code>
@@ -17,7 +17,7 @@ public interface ImageContextOrBuilder extends
   boolean hasLatLongRect();
   /**
    * <pre>
-   * lat/long rectangle that specifies the location of the image.
+   * Not used.
    * </pre>
    *
    * <code>.google.cloud.vision.v1.LatLongRect lat_long_rect = 1;</code>
@@ -25,7 +25,7 @@ public interface ImageContextOrBuilder extends
   com.google.cloud.vision.v1.LatLongRect getLatLongRect();
   /**
    * <pre>
-   * lat/long rectangle that specifies the location of the image.
+   * Not used.
    * </pre>
    *
    * <code>.google.cloud.vision.v1.LatLongRect lat_long_rect = 1;</code>

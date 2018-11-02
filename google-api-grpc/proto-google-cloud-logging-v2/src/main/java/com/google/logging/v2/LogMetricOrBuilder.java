@@ -362,16 +362,16 @@ public interface LogMetricOrBuilder extends
    * The v2 format is used by default and cannot be changed.
    * </pre>
    *
-   * <code>.google.logging.v2.LogMetric.ApiVersion version = 4;</code>
+   * <code>.google.logging.v2.LogMetric.ApiVersion version = 4 [deprecated = true];</code>
    */
-  int getVersionValue();
+  @java.lang.Deprecated int getVersionValue();
   /**
    * <pre>
    * Deprecated. The API version that created or updated this metric.
    * The v2 format is used by default and cannot be changed.
    * </pre>
    *
-   * <code>.google.logging.v2.LogMetric.ApiVersion version = 4;</code>
+   * <code>.google.logging.v2.LogMetric.ApiVersion version = 4 [deprecated = true];</code>
    */
-  com.google.logging.v2.LogMetric.ApiVersion getVersion();
+  @java.lang.Deprecated com.google.logging.v2.LogMetric.ApiVersion getVersion();
 }

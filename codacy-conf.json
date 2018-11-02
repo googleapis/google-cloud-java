@@ -698,7 +698,7 @@
     },
     {
       "patternId": "design_FieldDeclarationsShouldBeAtStartOfClass",
-      "enabled": true
+      "enabled": false
     },
     {
       "patternId": "unnecessary_UnnecessaryConversionTemporary",
@@ -986,7 +986,7 @@
     },
     {
       "patternId": "unnecessary_UselessParentheses",
-      "enabled": true
+      "enabled": false
     },
     {
       "patternId": "design_IdempotentOperations",
@@ -994,7 +994,7 @@
     },
     {
       "patternId": "braces_IfStmtsMustUseBraces",
-      "enabled": true
+      "enabled": false
     },
     {
       "patternId": "strings_UseIndexOfChar",

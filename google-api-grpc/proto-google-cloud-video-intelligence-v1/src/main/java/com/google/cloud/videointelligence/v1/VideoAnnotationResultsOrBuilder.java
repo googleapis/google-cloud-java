@@ -289,6 +289,50 @@ public interface VideoAnnotationResultsOrBuilder extends
 
   /**
    * <pre>
+   * Speech transcription.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.videointelligence.v1.SpeechTranscription speech_transcriptions = 11;</code>
+   */
+  java.util.List<com.google.cloud.videointelligence.v1.SpeechTranscription> 
+      getSpeechTranscriptionsList();
+  /**
+   * <pre>
+   * Speech transcription.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.videointelligence.v1.SpeechTranscription speech_transcriptions = 11;</code>
+   */
+  com.google.cloud.videointelligence.v1.SpeechTranscription getSpeechTranscriptions(int index);
+  /**
+   * <pre>
+   * Speech transcription.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.videointelligence.v1.SpeechTranscription speech_transcriptions = 11;</code>
+   */
+  int getSpeechTranscriptionsCount();
+  /**
+   * <pre>
+   * Speech transcription.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.videointelligence.v1.SpeechTranscription speech_transcriptions = 11;</code>
+   */
+  java.util.List<? extends com.google.cloud.videointelligence.v1.SpeechTranscriptionOrBuilder> 
+      getSpeechTranscriptionsOrBuilderList();
+  /**
+   * <pre>
+   * Speech transcription.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.videointelligence.v1.SpeechTranscription speech_transcriptions = 11;</code>
+   */
+  com.google.cloud.videointelligence.v1.SpeechTranscriptionOrBuilder getSpeechTranscriptionsOrBuilder(
+      int index);
+
+  /**
+   * <pre>
    * If set, indicates an error. Note that for a single `AnnotateVideoRequest`
    * some videos may succeed and some may fail.
    * </pre>

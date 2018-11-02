@@ -21,6 +21,8 @@ private static final long serialVersionUID = 0L;
   }
   private WordInfo() {
     word_ = "";
+    confidence_ = 0F;
+    speakerTag_ = 0;
   }
 
   @java.lang.Override
@@ -47,13 +49,6 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
           case 10: {
             com.google.protobuf.Duration.Builder subBuilder = null;
             if (startTime_ != null) {
@@ -86,6 +81,23 @@ private static final long serialVersionUID = 0L;
             word_ = s;
             break;
           }
+          case 37: {
+
+            confidence_ = input.readFloat();
+            break;
+          }
+          case 40: {
+
+            speakerTag_ = input.readInt32();
+            break;
+          }
+          default: {
+            if (!parseUnknownFieldProto3(
+                input, unknownFields, extensionRegistry, tag)) {
+              done = true;
+            }
+            break;
+          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -103,6 +115,7 @@ private static final long serialVersionUID = 0L;
     return com.google.cloud.speech.v1p1beta1.SpeechProto.internal_static_google_cloud_speech_v1p1beta1_WordInfo_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.speech.v1p1beta1.SpeechProto.internal_static_google_cloud_speech_v1p1beta1_WordInfo_fieldAccessorTable
@@ -248,7 +261,44 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int CONFIDENCE_FIELD_NUMBER = 4;
+  private float confidence_;
+  /**
+   * <pre>
+   * Output only. The confidence estimate between 0.0 and 1.0. A higher number
+   * indicates an estimated greater likelihood that the recognized words are
+   * correct. This field is set only for the top alternative of a non-streaming
+   * result or, of a streaming result where `is_final=true`.
+   * This field is not guaranteed to be accurate and users should not rely on it
+   * to be always provided.
+   * The default of 0.0 is a sentinel value indicating `confidence` was not set.
+   * </pre>
+   *
+   * <code>float confidence = 4;</code>
+   */
+  public float getConfidence() {
+    return confidence_;
+  }
+
+  public static final int SPEAKER_TAG_FIELD_NUMBER = 5;
+  private int speakerTag_;
+  /**
+   * <pre>
+   * Output only. A distinct integer value is assigned for every speaker within
+   * the audio. This field specifies which one of those speakers was detected to
+   * have spoken this word. Value ranges from '1' to diarization_speaker_count.
+   * speaker_tag is set if enable_speaker_diarization = 'true' and only in the
+   * top alternative.
+   * </pre>
+   *
+   * <code>int32 speaker_tag = 5;</code>
+   */
+  public int getSpeakerTag() {
+    return speakerTag_;
+  }
+
   private byte memoizedIsInitialized = -1;
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -258,6 +308,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
+  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (startTime_ != null) {
@@ -269,9 +320,16 @@ private static final long serialVersionUID = 0L;
     if (!getWordBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, word_);
     }
+    if (confidence_ != 0F) {
+      output.writeFloat(4, confidence_);
+    }
+    if (speakerTag_ != 0) {
+      output.writeInt32(5, speakerTag_);
+    }
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -287,6 +345,14 @@ private static final long serialVersionUID = 0L;
     }
     if (!getWordBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, word_);
+    }
+    if (confidence_ != 0F) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeFloatSize(4, confidence_);
+    }
+    if (speakerTag_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(5, speakerTag_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -316,6 +382,12 @@ private static final long serialVersionUID = 0L;
     }
     result = result && getWord()
         .equals(other.getWord());
+    result = result && (
+        java.lang.Float.floatToIntBits(getConfidence())
+        == java.lang.Float.floatToIntBits(
+            other.getConfidence()));
+    result = result && (getSpeakerTag()
+        == other.getSpeakerTag());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -337,6 +409,11 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + WORD_FIELD_NUMBER;
     hash = (53 * hash) + getWord().hashCode();
+    hash = (37 * hash) + CONFIDENCE_FIELD_NUMBER;
+    hash = (53 * hash) + java.lang.Float.floatToIntBits(
+        getConfidence());
+    hash = (37 * hash) + SPEAKER_TAG_FIELD_NUMBER;
+    hash = (53 * hash) + getSpeakerTag();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -412,6 +489,7 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
+  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
@@ -419,6 +497,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder(com.google.cloud.speech.v1p1beta1.WordInfo prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
@@ -446,6 +525,7 @@ private static final long serialVersionUID = 0L;
       return com.google.cloud.speech.v1p1beta1.SpeechProto.internal_static_google_cloud_speech_v1p1beta1_WordInfo_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.speech.v1p1beta1.SpeechProto.internal_static_google_cloud_speech_v1p1beta1_WordInfo_fieldAccessorTable
@@ -468,6 +548,7 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
       }
     }
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       if (startTimeBuilder_ == null) {
@@ -484,18 +565,25 @@ private static final long serialVersionUID = 0L;
       }
       word_ = "";
 
+      confidence_ = 0F;
+
+      speakerTag_ = 0;
+
       return this;
     }
 
+    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
       return com.google.cloud.speech.v1p1beta1.SpeechProto.internal_static_google_cloud_speech_v1p1beta1_WordInfo_descriptor;
     }
 
+    @java.lang.Override
     public com.google.cloud.speech.v1p1beta1.WordInfo getDefaultInstanceForType() {
       return com.google.cloud.speech.v1p1beta1.WordInfo.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.cloud.speech.v1p1beta1.WordInfo build() {
       com.google.cloud.speech.v1p1beta1.WordInfo result = buildPartial();
       if (!result.isInitialized()) {
@@ -504,6 +592,7 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.cloud.speech.v1p1beta1.WordInfo buildPartial() {
       com.google.cloud.speech.v1p1beta1.WordInfo result = new com.google.cloud.speech.v1p1beta1.WordInfo(this);
       if (startTimeBuilder_ == null) {
@@ -517,36 +606,45 @@ private static final long serialVersionUID = 0L;
         result.endTime_ = endTimeBuilder_.build();
       }
       result.word_ = word_;
+      result.confidence_ = confidence_;
+      result.speakerTag_ = speakerTag_;
       onBuilt();
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.speech.v1p1beta1.WordInfo) {
         return mergeFrom((com.google.cloud.speech.v1p1beta1.WordInfo)other);
@@ -568,15 +666,23 @@ private static final long serialVersionUID = 0L;
         word_ = other.word_;
         onChanged();
       }
+      if (other.getConfidence() != 0F) {
+        setConfidence(other.getConfidence());
+      }
+      if (other.getSpeakerTag() != 0) {
+        setSpeakerTag(other.getSpeakerTag());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1079,11 +1185,119 @@ private static final long serialVersionUID = 0L;
       onChanged();
       return this;
     }
+
+    private float confidence_ ;
+    /**
+     * <pre>
+     * Output only. The confidence estimate between 0.0 and 1.0. A higher number
+     * indicates an estimated greater likelihood that the recognized words are
+     * correct. This field is set only for the top alternative of a non-streaming
+     * result or, of a streaming result where `is_final=true`.
+     * This field is not guaranteed to be accurate and users should not rely on it
+     * to be always provided.
+     * The default of 0.0 is a sentinel value indicating `confidence` was not set.
+     * </pre>
+     *
+     * <code>float confidence = 4;</code>
+     */
+    public float getConfidence() {
+      return confidence_;
+    }
+    /**
+     * <pre>
+     * Output only. The confidence estimate between 0.0 and 1.0. A higher number
+     * indicates an estimated greater likelihood that the recognized words are
+     * correct. This field is set only for the top alternative of a non-streaming
+     * result or, of a streaming result where `is_final=true`.
+     * This field is not guaranteed to be accurate and users should not rely on it
+     * to be always provided.
+     * The default of 0.0 is a sentinel value indicating `confidence` was not set.
+     * </pre>
+     *
+     * <code>float confidence = 4;</code>
+     */
+    public Builder setConfidence(float value) {
+      
+      confidence_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. The confidence estimate between 0.0 and 1.0. A higher number
+     * indicates an estimated greater likelihood that the recognized words are
+     * correct. This field is set only for the top alternative of a non-streaming
+     * result or, of a streaming result where `is_final=true`.
+     * This field is not guaranteed to be accurate and users should not rely on it
+     * to be always provided.
+     * The default of 0.0 is a sentinel value indicating `confidence` was not set.
+     * </pre>
+     *
+     * <code>float confidence = 4;</code>
+     */
+    public Builder clearConfidence() {
+      
+      confidence_ = 0F;
+      onChanged();
+      return this;
+    }
+
+    private int speakerTag_ ;
+    /**
+     * <pre>
+     * Output only. A distinct integer value is assigned for every speaker within
+     * the audio. This field specifies which one of those speakers was detected to
+     * have spoken this word. Value ranges from '1' to diarization_speaker_count.
+     * speaker_tag is set if enable_speaker_diarization = 'true' and only in the
+     * top alternative.
+     * </pre>
+     *
+     * <code>int32 speaker_tag = 5;</code>
+     */
+    public int getSpeakerTag() {
+      return speakerTag_;
+    }
+    /**
+     * <pre>
+     * Output only. A distinct integer value is assigned for every speaker within
+     * the audio. This field specifies which one of those speakers was detected to
+     * have spoken this word. Value ranges from '1' to diarization_speaker_count.
+     * speaker_tag is set if enable_speaker_diarization = 'true' and only in the
+     * top alternative.
+     * </pre>
+     *
+     * <code>int32 speaker_tag = 5;</code>
+     */
+    public Builder setSpeakerTag(int value) {
+      
+      speakerTag_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. A distinct integer value is assigned for every speaker within
+     * the audio. This field specifies which one of those speakers was detected to
+     * have spoken this word. Value ranges from '1' to diarization_speaker_count.
+     * speaker_tag is set if enable_speaker_diarization = 'true' and only in the
+     * top alternative.
+     * </pre>
+     *
+     * <code>int32 speaker_tag = 5;</code>
+     */
+    public Builder clearSpeakerTag() {
+      
+      speakerTag_ = 0;
+      onChanged();
+      return this;
+    }
+    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -1105,6 +1319,7 @@ private static final long serialVersionUID = 0L;
 
   private static final com.google.protobuf.Parser<WordInfo>
       PARSER = new com.google.protobuf.AbstractParser<WordInfo>() {
+    @java.lang.Override
     public WordInfo parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1122,6 +1337,7 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.cloud.speech.v1p1beta1.WordInfo getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }

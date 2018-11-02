@@ -37,7 +37,7 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 /**
- * gRPC callable factory implementation for Google Cloud Speech API.
+ * gRPC callable factory implementation for Cloud Speech API.
  *
  * <p>This class is for advanced usage.
  */
@@ -71,6 +71,8 @@ public class GrpcSpeechCallableFactory implements GrpcStubCallableFactory {
         grpcCallSettings, batchingCallSettings, clientContext);
   }
 
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   @Override
   public <RequestT, ResponseT, MetadataT>
       OperationCallable<RequestT, ResponseT, MetadataT> createOperationCallable(

@@ -21,6 +21,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.client.util.Data;
 import com.google.api.client.util.DateTime;
+import com.google.api.core.BetaApi;
 import com.google.api.services.storage.model.ObjectAccessControl;
 import com.google.api.services.storage.model.StorageObject;
 import com.google.api.services.storage.model.StorageObject.Owner;
@@ -46,7 +47,7 @@ import java.util.Set;
  * Google Storage object metadata.
  *
  * @see <a href="https://cloud.google.com/storage/docs/concepts-techniques#concepts">Concepts and
- *      Terminology</a>
+ *     Terminology</a>
  */
 public class BlobInfo implements Serializable {
 
@@ -83,10 +84,12 @@ public class BlobInfo implements Serializable {
   private final Integer componentCount;
   private final boolean isDirectory;
   private final CustomerEncryption customerEncryption;
+  private final String kmsKeyName;
+  private final Boolean eventBasedHold;
+  private final Boolean temporaryHold;
+  private final Long retentionExpirationTime;
 
-  /**
-   * This class is meant for internal use only. Users are discouraged from using this class.
-   */
+  /** This class is meant for internal use only. Users are discouraged from using this class. */
   public static final class ImmutableEmptyMap<K, V> extends AbstractMap<K, V> {
 
     @Override
@@ -111,16 +114,12 @@ public class BlobInfo implements Serializable {
       this.keySha256 = keySha256;
     }
 
-    /**
-     * Returns the algorithm used to encrypt the blob.
-     */
+    /** Returns the algorithm used to encrypt the blob. */
     public String getEncryptionAlgorithm() {
       return encryptionAlgorithm;
     }
 
-    /**
-     * Returns the SHA256 hash of the encryption key.
-     */
+    /** Returns the SHA256 hash of the encryption key. */
     public String getKeySha256() {
       return keySha256;
     }
@@ -142,8 +141,8 @@ public class BlobInfo implements Serializable {
     public final boolean equals(Object obj) {
       return obj == this
           || obj != null
-          && obj.getClass().equals(CustomerEncryption.class)
-          && Objects.equals(toPb(), ((CustomerEncryption) obj).toPb());
+              && obj.getClass().equals(CustomerEncryption.class)
+              && Objects.equals(toPb(), ((CustomerEncryption) obj).toPb());
     }
 
     StorageObject.CustomerEncryption toPb() {
@@ -153,19 +152,15 @@ public class BlobInfo implements Serializable {
     }
 
     static CustomerEncryption fromPb(StorageObject.CustomerEncryption customerEncryptionPb) {
-      return new CustomerEncryption(customerEncryptionPb.getEncryptionAlgorithm(),
-          customerEncryptionPb.getKeySha256());
+      return new CustomerEncryption(
+          customerEncryptionPb.getEncryptionAlgorithm(), customerEncryptionPb.getKeySha256());
     }
   }
 
-  /**
-   * Builder for {@code BlobInfo}.
-   */
+  /** Builder for {@code BlobInfo}. */
   public abstract static class Builder {
 
-    /**
-     * Sets the blob identity.
-     */
+    /** Sets the blob identity. */
     public abstract Builder setBlobId(BlobId blobId);
 
     abstract Builder setGeneratedId(String generatedId);
@@ -211,7 +206,7 @@ public class BlobInfo implements Serializable {
      * Sets the blob's access control configuration.
      *
      * @see <a
-     * href="https://cloud.google.com/storage/docs/access-control#About-Access-Control-Lists">
+     *     href="https://cloud.google.com/storage/docs/access-control#About-Access-Control-Lists">
      *     About Access Control Lists</a>
      */
     public abstract Builder setAcl(List<Acl> acl);
@@ -227,31 +222,27 @@ public class BlobInfo implements Serializable {
     /**
      * Sets the MD5 hash of blob's data. MD5 value must be encoded in base64.
      *
-     * @see <a href="https://cloud.google.com/storage/docs/hashes-etags#_JSONAPI">
-     *     Hashes and ETags: Best Practices</a>
+     * @see <a href="https://cloud.google.com/storage/docs/hashes-etags#_JSONAPI">Hashes and ETags:
+     *     Best Practices</a>
      */
     public abstract Builder setMd5(String md5);
 
     /**
-     * Sets the CRC32C checksum of blob's data as described in
-     * <a href="http://tools.ietf.org/html/rfc4960#appendix-B">RFC 4960, Appendix B;</a> encoded in
+     * Sets the CRC32C checksum of blob's data as described in <a
+     * href="http://tools.ietf.org/html/rfc4960#appendix-B">RFC 4960, Appendix B;</a> encoded in
      * base64 in big-endian order.
      *
-     * @see <a href="https://cloud.google.com/storage/docs/hashes-etags#_JSONAPI">
-     *     Hashes and ETags: Best Practices</a>
+     * @see <a href="https://cloud.google.com/storage/docs/hashes-etags#_JSONAPI">Hashes and ETags:
+     *     Best Practices</a>
      */
     public abstract Builder setCrc32c(String crc32c);
 
     abstract Builder setMediaLink(String mediaLink);
 
-    /**
-     * Sets the blob's storage class.
-     */
+    /** Sets the blob's storage class. */
     public abstract Builder setStorageClass(StorageClass storageClass);
 
-    /**
-     * Sets the blob's user provided metadata.
-     */
+    /** Sets the blob's user provided metadata. */
     public abstract Builder setMetadata(Map<String, String> metadata);
 
     abstract Builder setMetageneration(Long metageneration);
@@ -266,9 +257,20 @@ public class BlobInfo implements Serializable {
 
     abstract Builder setCustomerEncryption(CustomerEncryption customerEncryption);
 
-    /**
-     * Creates a {@code BlobInfo} object.
-     */
+    abstract Builder setKmsKeyName(String kmsKeyName);
+
+    /** Sets the blob's event-based hold. */
+    @BetaApi
+    public abstract Builder setEventBasedHold(Boolean eventBasedHold);
+
+    /** Sets the blob's temporary hold. */
+    @BetaApi
+    public abstract Builder setTemporaryHold(Boolean temporaryHold);
+
+    @BetaApi
+    abstract Builder setRetentionExpirationTime(Long retentionExpirationTime);
+
+    /** Creates a {@code BlobInfo} object. */
     public abstract BlobInfo build();
   }
 
@@ -298,6 +300,10 @@ public class BlobInfo implements Serializable {
     private Boolean isDirectory;
     private CustomerEncryption customerEncryption;
     private StorageClass storageClass;
+    private String kmsKeyName;
+    private Boolean eventBasedHold;
+    private Boolean temporaryHold;
+    private Long retentionExpirationTime;
 
     BuilderImpl(BlobId blobId) {
       this.blobId = blobId;
@@ -328,6 +334,10 @@ public class BlobInfo implements Serializable {
       createTime = blobInfo.createTime;
       isDirectory = blobInfo.isDirectory;
       storageClass = blobInfo.storageClass;
+      kmsKeyName = blobInfo.kmsKeyName;
+      eventBasedHold = blobInfo.eventBasedHold;
+      temporaryHold = blobInfo.temporaryHold;
+      retentionExpirationTime = blobInfo.retentionExpirationTime;
     }
 
     @Override
@@ -428,8 +438,10 @@ public class BlobInfo implements Serializable {
 
     @Override
     public Builder setMetadata(Map<String, String> metadata) {
-      this.metadata = metadata != null
-          ? new HashMap<>(metadata) : Data.<Map<String, String>>nullOf(ImmutableEmptyMap.class);
+      this.metadata =
+          metadata != null
+              ? new HashMap<>(metadata)
+              : Data.<Map<String, String>>nullOf(ImmutableEmptyMap.class);
       return this;
     }
 
@@ -476,6 +488,30 @@ public class BlobInfo implements Serializable {
     }
 
     @Override
+    Builder setKmsKeyName(String kmsKeyName) {
+      this.kmsKeyName = kmsKeyName;
+      return this;
+    }
+
+    @Override
+    public Builder setEventBasedHold(Boolean eventBasedHold) {
+      this.eventBasedHold = eventBasedHold;
+      return this;
+    }
+
+    @Override
+    public Builder setTemporaryHold(Boolean temporaryHold) {
+      this.temporaryHold = temporaryHold;
+      return this;
+    }
+
+    @Override
+    Builder setRetentionExpirationTime(Long retentionExpirationTime) {
+      this.retentionExpirationTime = retentionExpirationTime;
+      return this;
+    }
+
+    @Override
     public BlobInfo build() {
       checkNotNull(blobId);
       return new BlobInfo(this);
@@ -507,32 +543,28 @@ public class BlobInfo implements Serializable {
     createTime = builder.createTime;
     isDirectory = firstNonNull(builder.isDirectory, Boolean.FALSE);
     storageClass = builder.storageClass;
+    kmsKeyName = builder.kmsKeyName;
+    eventBasedHold = builder.eventBasedHold;
+    temporaryHold = builder.temporaryHold;
+    retentionExpirationTime = builder.retentionExpirationTime;
   }
 
-    /**
-   * Returns the blob's identity.
-   */
+  /** Returns the blob's identity. */
   public BlobId getBlobId() {
     return blobId;
   }
 
-    /**
-   * Returns the name of the containing bucket.
-   */
+  /** Returns the name of the containing bucket. */
   public String getBucket() {
     return getBlobId().getBucket();
   }
 
-    /**
-   * Returns the service-generated for the blob.
-   */
+  /** Returns the service-generated for the blob. */
   public String getGeneratedId() {
     return generatedId;
   }
 
-    /**
-   * Returns the blob's name.
-   */
+  /** Returns the blob's name. */
   public String getName() {
     return getBlobId().getName();
   }
@@ -556,9 +588,7 @@ public class BlobInfo implements Serializable {
     return acl;
   }
 
-  /**
-   * Returns the blob's owner. This will always be the uploader of the blob.
-   */
+  /** Returns the blob's owner. This will always be the uploader of the blob. */
   public Acl.Entity getOwner() {
     return owner;
   }
@@ -609,9 +639,9 @@ public class BlobInfo implements Serializable {
   }
 
   /**
-   * Returns the number of components that make up this blob. Components are accumulated through
-   * the {@link Storage#compose(Storage.ComposeRequest)} operation and are limited to a count of
-   * 1024, counting 1 for each non-composite component blob and componentCount for each composite
+   * Returns the number of components that make up this blob. Components are accumulated through the
+   * {@link Storage#compose(Storage.ComposeRequest)} operation and are limited to a count of 1024,
+   * counting 1 for each non-composite component blob and componentCount for each composite
    * component blob. This value is set only for composite blobs.
    *
    * @see <a href="https://cloud.google.com/storage/docs/composite-objects#_Count">Component Count
@@ -630,9 +660,7 @@ public class BlobInfo implements Serializable {
     return etag;
   }
 
-  /**
-   * Returns the URI of this blob as a string.
-   */
+  /** Returns the URI of this blob as a string. */
   public String getSelfLink() {
     return selfLink;
   }
@@ -640,83 +668,71 @@ public class BlobInfo implements Serializable {
   /**
    * Returns the MD5 hash of blob's data encoded in base64.
    *
-   * @see <a href="https://cloud.google.com/storage/docs/hashes-etags#_JSONAPI">
-   *     Hashes and ETags: Best Practices</a>
+   * @see <a href="https://cloud.google.com/storage/docs/hashes-etags#_JSONAPI">Hashes and ETags:
+   *     Best Practices</a>
    */
   public String getMd5() {
     return Data.isNull(md5) ? null : md5;
   }
 
   /**
-   * Returns the CRC32C checksum of blob's data as described in
-   * <a href="http://tools.ietf.org/html/rfc4960#appendix-B">RFC 4960, Appendix B;</a> encoded in
+   * Returns the CRC32C checksum of blob's data as described in <a
+   * href="http://tools.ietf.org/html/rfc4960#appendix-B">RFC 4960, Appendix B;</a> encoded in
    * base64 in big-endian order.
    *
-   * @see <a href="https://cloud.google.com/storage/docs/hashes-etags#_JSONAPI">
-   *     Hashes and ETags: Best Practices</a>
+   * @see <a href="https://cloud.google.com/storage/docs/hashes-etags#_JSONAPI">Hashes and ETags:
+   *     Best Practices</a>
    */
   public String getCrc32c() {
     return Data.isNull(crc32c) ? null : crc32c;
   }
 
-  /**
-   * Returns the blob's media download link.
-   */
+  /** Returns the blob's media download link. */
   public String getMediaLink() {
     return mediaLink;
   }
 
-  /**
-   * Returns blob's user provided metadata.
-   */
+  /** Returns blob's user provided metadata. */
   public Map<String, String> getMetadata() {
     return metadata == null || Data.isNull(metadata) ? null : Collections.unmodifiableMap(metadata);
   }
 
-  /**
-   * Returns blob's data generation. Used for blob versioning.
-   */
+  /** Returns blob's data generation. Used for blob versioning. */
   public Long getGeneration() {
     return getBlobId().getGeneration();
   }
 
   /**
-   * Returns blob's metageneration. Used for preconditions and for detecting changes in metadata.
-   * A metageneration number is only meaningful in the context of a particular generation of a
+   * Returns blob's metageneration. Used for preconditions and for detecting changes in metadata. A
+   * metageneration number is only meaningful in the context of a particular generation of a
    * particular blob.
    */
   public Long getMetageneration() {
     return metageneration;
   }
 
-  /**
-   * Returns the deletion time of the blob.
-   */
+  /** Returns the deletion time of the blob. */
   public Long getDeleteTime() {
     return deleteTime;
   }
 
-    /**
-   * Returns the last modification time of the blob's metadata.
-   */
+  /** Returns the last modification time of the blob's metadata. */
   public Long getUpdateTime() {
     return updateTime;
   }
 
-    /**
-   * Returns the creation time of the blob.
-   */
+  /** Returns the creation time of the blob. */
   public Long getCreateTime() {
     return createTime;
   }
 
   /**
    * Returns {@code true} if the current blob represents a directory. This can only happen if the
-   * blob is returned by {@link Storage#list(String, Storage.BlobListOption...)} when the
-   * {@link Storage.BlobListOption#currentDirectory()} option is used. When this is the case only
-   * {@link #getBlobId()} and {@link #getSize()} are set for the current blob:
-   * {@link BlobId#getName()} ends with the '/' character, {@link BlobId#getGeneration()} returns
-   * {@code null} and {@link #getSize()} is {@code 0}.
+   * blob is returned by {@link Storage#list(String, Storage.BlobListOption...)} when the {@link
+   * Storage.BlobListOption#currentDirectory()} option is used. When this is the case only {@link
+   * #getBlobId()} and {@link #getSize()} are set for the current blob: {@link BlobId#getName()}
+   * ends with the '/' character, {@link BlobId#getGeneration()} returns {@code null} and {@link
+   * #getSize()} is {@code 0}.
    */
   public boolean isDirectory() {
     return isDirectory;
@@ -730,16 +746,80 @@ public class BlobInfo implements Serializable {
     return customerEncryption;
   }
 
-  /**
-   * Returns the storage class of the blob.
-   */
+  /** Returns the storage class of the blob. */
   public StorageClass getStorageClass() {
     return storageClass;
   }
 
+  /** Returns the Cloud KMS key used to encrypt the blob, if any. */
+  public String getKmsKeyName() {
+    return kmsKeyName;
+  }
+
   /**
-   * Returns a builder for the current blob.
+   * Returns a {@code Boolean} with either {@code true}, {@code null} and in certain cases {@code
+   * false}.
+   *
+   * <p>Case 1: {@code true} the field {@link
+   * com.google.cloud.storage.Storage.BlobField#EVENT_BASED_HOLD} is selected in a {@link
+   * Storage#get(BlobId, Storage.BlobGetOption...)} and event-based hold for the blob is enabled.
+   *
+   * <p>Case 2.1: {@code null} the field {@link
+   * com.google.cloud.storage.Storage.BlobField#EVENT_BASED_HOLD} is selected in a {@link
+   * Storage#get(BlobId, Storage.BlobGetOption...)}, but event-based hold for the blob is not
+   * enabled. This case can be considered implicitly {@code false}.
+   *
+   * <p>Case 2.2: {@code null} the field {@link
+   * com.google.cloud.storage.Storage.BlobField#EVENT_BASED_HOLD} is not selected in a {@link
+   * Storage#get(BlobId, Storage.BlobGetOption...)}, and the state for this field is unknown.
+   *
+   * <p>Case 3: {@code false} event-based hold is explicitly set to false using in a {@link
+   * Builder#setEventBasedHold(Boolean)} client side for a follow-up request e.g. {@link
+   * Storage#update(BlobInfo, Storage.BlobTargetOption...)} in which case the value of event-based
+   * hold will remain {@code false} for the given instance.
    */
+  @BetaApi
+  public Boolean getEventBasedHold() {
+    return Data.<Boolean>isNull(eventBasedHold) ? null : eventBasedHold;
+  }
+
+  /**
+   * Returns a {@code Boolean} with either {@code true}, {@code null} and in certain cases {@code
+   * false}.
+   *
+   * <p>Case 1: {@code true} the field {@link
+   * com.google.cloud.storage.Storage.BlobField#TEMPORARY_HOLD} is selected in a {@link
+   * Storage#get(BlobId, Storage.BlobGetOption...)} and temporary hold for the blob is enabled.
+   *
+   * <p>Case 2.1: {@code null} the field {@link
+   * com.google.cloud.storage.Storage.BlobField#TEMPORARY_HOLD} is selected in a {@link
+   * Storage#get(BlobId, Storage.BlobGetOption...)}, but temporary hold for the blob is not enabled.
+   * This case can be considered implicitly {@code false}.
+   *
+   * <p>Case 2.2: {@code null} the field {@link
+   * com.google.cloud.storage.Storage.BlobField#TEMPORARY_HOLD} is not selected in a {@link
+   * Storage#get(BlobId, Storage.BlobGetOption...)}, and the state for this field is unknown.
+   *
+   * <p>Case 3: {@code false} event-based hold is explicitly set to false using in a {@link
+   * Builder#setEventBasedHold(Boolean)} client side for a follow-up request e.g. {@link
+   * Storage#update(BlobInfo, Storage.BlobTargetOption...)} in which case the value of temporary
+   * hold will remain {@code false} for the given instance.
+   */
+  @BetaApi
+  public Boolean getTemporaryHold() {
+    return Data.<Boolean>isNull(temporaryHold) ? null : temporaryHold;
+  }
+
+  /**
+   * Returns the retention expiration time of the blob as {@code Long}, if a retention period is
+   * defined. If retention period is not defined this value returns {@code null}
+   */
+  @BetaApi
+  public Long getRetentionExpirationTime() {
+    return Data.<Long>isNull(retentionExpirationTime) ? null : retentionExpirationTime;
+  }
+
+  /** Returns a builder for the current blob. */
   public Builder toBuilder() {
     return new BuilderImpl(this);
   }
@@ -765,19 +845,22 @@ public class BlobInfo implements Serializable {
   public boolean equals(Object obj) {
     return obj == this
         || obj != null
-        && obj.getClass().equals(BlobInfo.class)
-        && Objects.equals(toPb(), ((BlobInfo) obj).toPb());
+            && obj.getClass().equals(BlobInfo.class)
+            && Objects.equals(toPb(), ((BlobInfo) obj).toPb());
   }
 
   StorageObject toPb() {
     StorageObject storageObject = blobId.toPb();
     if (acl != null) {
-      storageObject.setAcl(Lists.transform(acl, new Function<Acl, ObjectAccessControl>() {
-        @Override
-        public ObjectAccessControl apply(Acl acl) {
-          return acl.toObjectPb();
-        }
-      }));
+      storageObject.setAcl(
+          Lists.transform(
+              acl,
+              new Function<Acl, ObjectAccessControl>() {
+                @Override
+                public ObjectAccessControl apply(Acl acl) {
+                  return acl.toObjectPb();
+                }
+              }));
     }
     if (deleteTime != null) {
       storageObject.setTimeDeleted(new DateTime(deleteTime));
@@ -802,13 +885,20 @@ public class BlobInfo implements Serializable {
     if (metadata != null && !Data.isNull(metadata)) {
       pbMetadata = Maps.newHashMapWithExpectedSize(metadata.size());
       for (Map.Entry<String, String> entry : metadata.entrySet()) {
-        pbMetadata.put(entry.getKey(),
-            firstNonNull(entry.getValue(), Data.<String>nullOf(String.class)));
+        pbMetadata.put(
+            entry.getKey(), firstNonNull(entry.getValue(), Data.<String>nullOf(String.class)));
       }
     }
     if (customerEncryption != null) {
       storageObject.setCustomerEncryption(customerEncryption.toPb());
     }
+    if (retentionExpirationTime != null) {
+      storageObject.setRetentionExpirationTime(new DateTime(retentionExpirationTime));
+    }
+
+    storageObject.setKmsKeyName(kmsKeyName);
+    storageObject.setEventBasedHold(eventBasedHold);
+    storageObject.setTemporaryHold(temporaryHold);
     storageObject.setMetadata(pbMetadata);
     storageObject.setCacheControl(cacheControl);
     storageObject.setContentEncoding(contentEncoding);
@@ -826,37 +916,27 @@ public class BlobInfo implements Serializable {
     return storageObject;
   }
 
-  /**
-   * Returns a {@code BlobInfo} builder where blob identity is set using the provided values.
-   */
+  /** Returns a {@code BlobInfo} builder where blob identity is set using the provided values. */
   public static Builder newBuilder(BucketInfo bucketInfo, String name) {
     return newBuilder(bucketInfo.getName(), name);
   }
 
-  /**
-   * Returns a {@code BlobInfo} builder where blob identity is set using the provided values.
-   */
+  /** Returns a {@code BlobInfo} builder where blob identity is set using the provided values. */
   public static Builder newBuilder(String bucket, String name) {
     return newBuilder(BlobId.of(bucket, name));
   }
 
-  /**
-   * Returns a {@code BlobInfo} builder where blob identity is set using the provided values.
-   */
+  /** Returns a {@code BlobInfo} builder where blob identity is set using the provided values. */
   public static Builder newBuilder(BucketInfo bucketInfo, String name, Long generation) {
     return newBuilder(bucketInfo.getName(), name, generation);
   }
 
-  /**
-   * Returns a {@code BlobInfo} builder where blob identity is set using the provided values.
-   */
+  /** Returns a {@code BlobInfo} builder where blob identity is set using the provided values. */
   public static Builder newBuilder(String bucket, String name, Long generation) {
     return newBuilder(BlobId.of(bucket, name, generation));
   }
 
-  /**
-   * Returns a {@code BlobInfo} builder where blob identity is set using the provided value.
-   */
+  /** Returns a {@code BlobInfo} builder where blob identity is set using the provided value. */
   public static Builder newBuilder(BlobId blobId) {
     return new BuilderImpl(blobId);
   }
@@ -921,13 +1001,15 @@ public class BlobInfo implements Serializable {
       builder.setOwner(Acl.Entity.fromPb(storageObject.getOwner().getEntity()));
     }
     if (storageObject.getAcl() != null) {
-      builder.setAcl(Lists.transform(storageObject.getAcl(),
-          new Function<ObjectAccessControl, Acl>() {
-            @Override
-            public Acl apply(ObjectAccessControl objectAccessControl) {
-              return Acl.fromPb(objectAccessControl);
-            }
-          }));
+      builder.setAcl(
+          Lists.transform(
+              storageObject.getAcl(),
+              new Function<ObjectAccessControl, Acl>() {
+                @Override
+                public Acl apply(ObjectAccessControl objectAccessControl) {
+                  return Acl.fromPb(objectAccessControl);
+                }
+              }));
     }
     if (storageObject.containsKey("isDirectory")) {
       builder.setIsDirectory(Boolean.TRUE);
@@ -938,6 +1020,18 @@ public class BlobInfo implements Serializable {
     }
     if (storageObject.getStorageClass() != null) {
       builder.setStorageClass(StorageClass.valueOf(storageObject.getStorageClass()));
+    }
+    if (storageObject.getKmsKeyName() != null) {
+      builder.setKmsKeyName(storageObject.getKmsKeyName());
+    }
+    if (storageObject.getEventBasedHold() != null) {
+      builder.setEventBasedHold(storageObject.getEventBasedHold());
+    }
+    if (storageObject.getTemporaryHold() != null) {
+      builder.setTemporaryHold(storageObject.getTemporaryHold());
+    }
+    if (storageObject.getRetentionExpirationTime() != null) {
+      builder.setRetentionExpirationTime(storageObject.getRetentionExpirationTime().getValue());
     }
     return builder.build();
   }

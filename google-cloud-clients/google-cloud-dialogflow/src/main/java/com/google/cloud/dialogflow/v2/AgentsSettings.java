@@ -83,6 +83,8 @@ public class AgentsSettings extends ClientSettings<AgentsSettings> {
   }
 
   /** Returns the object with the settings used for calls to trainAgent. */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<TrainAgentRequest, Empty, Struct> trainAgentOperationSettings() {
     return ((AgentsStubSettings) getStubSettings()).trainAgentOperationSettings();
   }
@@ -93,6 +95,8 @@ public class AgentsSettings extends ClientSettings<AgentsSettings> {
   }
 
   /** Returns the object with the settings used for calls to exportAgent. */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<ExportAgentRequest, ExportAgentResponse, Struct>
       exportAgentOperationSettings() {
     return ((AgentsStubSettings) getStubSettings()).exportAgentOperationSettings();
@@ -104,6 +108,8 @@ public class AgentsSettings extends ClientSettings<AgentsSettings> {
   }
 
   /** Returns the object with the settings used for calls to importAgent. */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<ImportAgentRequest, Empty, Struct> importAgentOperationSettings() {
     return ((AgentsStubSettings) getStubSettings()).importAgentOperationSettings();
   }
@@ -114,6 +120,8 @@ public class AgentsSettings extends ClientSettings<AgentsSettings> {
   }
 
   /** Returns the object with the settings used for calls to restoreAgent. */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<RestoreAgentRequest, Empty, Struct> restoreAgentOperationSettings() {
     return ((AgentsStubSettings) getStubSettings()).restoreAgentOperationSettings();
   }
@@ -232,6 +240,8 @@ public class AgentsSettings extends ClientSettings<AgentsSettings> {
     }
 
     /** Returns the builder for the settings used for calls to trainAgent. */
+    @BetaApi(
+        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<TrainAgentRequest, Empty, Struct>
         trainAgentOperationSettings() {
       return getStubSettingsBuilder().trainAgentOperationSettings();
@@ -243,6 +253,8 @@ public class AgentsSettings extends ClientSettings<AgentsSettings> {
     }
 
     /** Returns the builder for the settings used for calls to exportAgent. */
+    @BetaApi(
+        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<ExportAgentRequest, ExportAgentResponse, Struct>
         exportAgentOperationSettings() {
       return getStubSettingsBuilder().exportAgentOperationSettings();
@@ -254,6 +266,8 @@ public class AgentsSettings extends ClientSettings<AgentsSettings> {
     }
 
     /** Returns the builder for the settings used for calls to importAgent. */
+    @BetaApi(
+        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<ImportAgentRequest, Empty, Struct>
         importAgentOperationSettings() {
       return getStubSettingsBuilder().importAgentOperationSettings();
@@ -265,6 +279,8 @@ public class AgentsSettings extends ClientSettings<AgentsSettings> {
     }
 
     /** Returns the builder for the settings used for calls to restoreAgent. */
+    @BetaApi(
+        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<RestoreAgentRequest, Empty, Struct>
         restoreAgentOperationSettings() {
       return getStubSettingsBuilder().restoreAgentOperationSettings();

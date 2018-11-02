@@ -47,8 +47,7 @@ public interface CryptoReplaceFfxFpeConfigOrBuilder extends
    * The tweak is constructed as a sequence of bytes in big endian byte order
    * such that:
    * - a 64 bit integer is encoded followed by a single byte of value 1
-   * - a string is encoded in UTF-8 format followed by a single byte of value
-   *  å 2
+   * - a string is encoded in UTF-8 format followed by a single byte of value 2
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.FieldId context = 2;</code>
@@ -69,8 +68,7 @@ public interface CryptoReplaceFfxFpeConfigOrBuilder extends
    * The tweak is constructed as a sequence of bytes in big endian byte order
    * such that:
    * - a 64 bit integer is encoded followed by a single byte of value 1
-   * - a string is encoded in UTF-8 format followed by a single byte of value
-   *  å 2
+   * - a string is encoded in UTF-8 format followed by a single byte of value 2
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.FieldId context = 2;</code>
@@ -91,8 +89,7 @@ public interface CryptoReplaceFfxFpeConfigOrBuilder extends
    * The tweak is constructed as a sequence of bytes in big endian byte order
    * such that:
    * - a 64 bit integer is encoded followed by a single byte of value 1
-   * - a string is encoded in UTF-8 format followed by a single byte of value
-   *  å 2
+   * - a string is encoded in UTF-8 format followed by a single byte of value 2
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.FieldId context = 2;</code>

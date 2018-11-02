@@ -165,6 +165,8 @@ public class SpeechClient implements BackgroundResource {
    * Returns the OperationsClient that can be used to query the status of a long-running operation
    * returned by another API method call.
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationsClient getOperationsClient() {
     return operationsClient;
   }
@@ -308,6 +310,8 @@ public class SpeechClient implements BackgroundResource {
    * @param audio &#42;Required&#42; The audio data to be recognized.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<LongRunningRecognizeResponse, LongRunningRecognizeMetadata>
       longRunningRecognizeAsync(RecognitionConfig config, RecognitionAudio audio) {
 
@@ -349,6 +353,8 @@ public class SpeechClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<LongRunningRecognizeResponse, LongRunningRecognizeMetadata>
       longRunningRecognizeAsync(LongRunningRecognizeRequest request) {
     return longRunningRecognizeOperationCallable().futureCall(request);
@@ -386,6 +392,7 @@ public class SpeechClient implements BackgroundResource {
    * }
    * </code></pre>
    */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<
           LongRunningRecognizeRequest, LongRunningRecognizeResponse, LongRunningRecognizeMetadata>
       longRunningRecognizeOperationCallable() {
@@ -438,28 +445,14 @@ public class SpeechClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SpeechClient speechClient = SpeechClient.create()) {
-   *   ApiStreamObserver&lt;StreamingRecognizeResponse&gt; responseObserver =
-   *       new ApiStreamObserver&lt;StreamingRecognizeResponse&gt;() {
-   *         {@literal @}Override
-   *         public void onNext(StreamingRecognizeResponse response) {
-   *           // Do something when receive a response
-   *         }
-   *
-   *         {@literal @}Override
-   *         public void onError(Throwable t) {
-   *           // Add error-handling
-   *         }
-   *
-   *         {@literal @}Override
-   *         public void onCompleted() {
-   *           // Do something when complete.
-   *         }
-   *       };
-   *   ApiStreamObserver&lt;StreamingRecognizeRequest&gt; requestObserver =
-   *       speechClient.streamingRecognizeCallable().bidiStreamingCall(responseObserver));
+   *   BidiStream&lt;StreamingRecognizeRequest, StreamingRecognizeResponse&gt; bidiStream =
+   *       speechClient.streamingRecognizeCallable().call();
    *
    *   StreamingRecognizeRequest request = StreamingRecognizeRequest.newBuilder().build();
-   *   requestObserver.onNext(request);
+   *   bidiStream.send(request);
+   *   for (StreamingRecognizeResponse response : bidiStream) {
+   *     // Do something when receive a response
+   *   }
    * }
    * </code></pre>
    */

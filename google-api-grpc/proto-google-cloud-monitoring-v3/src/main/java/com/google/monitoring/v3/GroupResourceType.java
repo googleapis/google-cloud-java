@@ -6,8 +6,10 @@ package com.google.monitoring.v3;
 /**
  * <pre>
  * The supported resource types that can be used as values of
- * group_resource.resource_type. gae_app and uptime_url are not allowed
- * because group checks on App Engine modules and URLs are not allowed.
+ * `group_resource.resource_type`.
+ * `INSTANCE` includes `gce_instance` and `aws_ec2_instance` resource types.
+ * The resource types `gae_app` and `uptime_url` are not valid here because
+ * group checks on App Engine modules and URLs are not allowed.
  * </pre>
  *
  * Protobuf enum {@code google.monitoring.v3.GroupResourceType}
@@ -24,7 +26,8 @@ public enum GroupResourceType
   RESOURCE_TYPE_UNSPECIFIED(0),
   /**
    * <pre>
-   * A group of instances (could be either GCE or AWS_EC2).
+   * A group of instances from Google Cloud Platform (GCP) or
+   * Amazon Web Services (AWS).
    * </pre>
    *
    * <code>INSTANCE = 1;</code>
@@ -32,7 +35,7 @@ public enum GroupResourceType
   INSTANCE(1),
   /**
    * <pre>
-   * A group of AWS load balancers.
+   * A group of Amazon ELB load balancers.
    * </pre>
    *
    * <code>AWS_ELB_LOAD_BALANCER = 2;</code>
@@ -51,7 +54,8 @@ public enum GroupResourceType
   public static final int RESOURCE_TYPE_UNSPECIFIED_VALUE = 0;
   /**
    * <pre>
-   * A group of instances (could be either GCE or AWS_EC2).
+   * A group of instances from Google Cloud Platform (GCP) or
+   * Amazon Web Services (AWS).
    * </pre>
    *
    * <code>INSTANCE = 1;</code>
@@ -59,7 +63,7 @@ public enum GroupResourceType
   public static final int INSTANCE_VALUE = 1;
   /**
    * <pre>
-   * A group of AWS load balancers.
+   * A group of Amazon ELB load balancers.
    * </pre>
    *
    * <code>AWS_ELB_LOAD_BALANCER = 2;</code>

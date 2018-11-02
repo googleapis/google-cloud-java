@@ -221,7 +221,7 @@ public class OsLoginServiceClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final void deletePosixAccount(DeletePosixAccountRequest request) {
+  public final void deletePosixAccount(DeletePosixAccountRequest request) {
     deletePosixAccountCallable().call(request);
   }
 
@@ -318,7 +318,7 @@ public class OsLoginServiceClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final void deleteSshPublicKey(DeleteSshPublicKeyRequest request) {
+  public final void deleteSshPublicKey(DeleteSshPublicKeyRequest request) {
     deleteSshPublicKeyCallable().call(request);
   }
 
@@ -411,7 +411,7 @@ public class OsLoginServiceClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final LoginProfile getLoginProfile(GetLoginProfileRequest request) {
+  public final LoginProfile getLoginProfile(GetLoginProfileRequest request) {
     return getLoginProfileCallable().call(request);
   }
 
@@ -506,7 +506,7 @@ public class OsLoginServiceClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final SshPublicKey getSshPublicKey(GetSshPublicKeyRequest request) {
+  public final SshPublicKey getSshPublicKey(GetSshPublicKeyRequest request) {
     return getSshPublicKeyCallable().call(request);
   }
 

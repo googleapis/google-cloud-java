@@ -77,4 +77,25 @@ public interface ResultSetStatsOrBuilder extends
    * <code>.google.protobuf.Struct query_stats = 2;</code>
    */
   com.google.protobuf.StructOrBuilder getQueryStatsOrBuilder();
+
+  /**
+   * <pre>
+   * Standard DML returns an exact count of rows that were modified.
+   * </pre>
+   *
+   * <code>int64 row_count_exact = 3;</code>
+   */
+  long getRowCountExact();
+
+  /**
+   * <pre>
+   * Partitioned DML does not offer exactly-once semantics, so it
+   * returns a lower bound of the rows modified.
+   * </pre>
+   *
+   * <code>int64 row_count_lower_bound = 4;</code>
+   */
+  long getRowCountLowerBound();
+
+  public com.google.spanner.v1.ResultSetStats.RowCountCase getRowCountCase();
 }

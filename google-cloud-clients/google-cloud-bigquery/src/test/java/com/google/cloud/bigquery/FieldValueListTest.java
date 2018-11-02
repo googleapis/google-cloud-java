@@ -48,7 +48,8 @@ public class FieldValueListTest {
               "ninth",
               LegacySQLTypeName.RECORD,
               Field.of("first", LegacySQLTypeName.FLOAT),
-              Field.of("second", LegacySQLTypeName.TIMESTAMP)));
+              Field.of("second", LegacySQLTypeName.TIMESTAMP)),
+          Field.of("tenth", LegacySQLTypeName.NUMERIC));
 
   private final Map<String, String> integerPb = ImmutableMap.of("v", "1");
   private final Map<String, String> floatPb = ImmutableMap.of("v", "1.5");
@@ -60,6 +61,7 @@ public class FieldValueListTest {
       ImmutableMap.<String, Object>of("v", ImmutableList.<Object>of(integerPb, integerPb));
   private final Map<String, Object> recordPb =
       ImmutableMap.<String, Object>of("f", ImmutableList.<Object>of(floatPb, timestampPb));
+  private final Map<String, String> numericPb = ImmutableMap.of("v", "123456789.123456789");
 
   private final FieldValue booleanFv = FieldValue.of(Attribute.PRIMITIVE, "false");
   private final FieldValue integerFv = FieldValue.of(Attribute.PRIMITIVE, "1");
@@ -75,6 +77,7 @@ public class FieldValueListTest {
           Attribute.RECORD,
           FieldValueList.of(
               ImmutableList.of(floatFv, timestampFv), schema.get("ninth").getSubFields()));
+  private final FieldValue numericFv = FieldValue.of(Attribute.PRIMITIVE, "123456789.123456789");
 
   private final List<?> fieldValuesPb =
       ImmutableList.of(
@@ -86,7 +89,8 @@ public class FieldValueListTest {
           bytesPb,
           nullPb,
           repeatedPb,
-          recordPb);
+          recordPb,
+          numericPb);
 
   private final FieldValueList fieldValues =
       FieldValueList.of(
@@ -99,7 +103,8 @@ public class FieldValueListTest {
               bytesFv,
               nullFv,
               repeatedFv,
-              recordFv),
+              recordFv,
+              numericFv),
           schema);
 
   @Test
@@ -111,7 +116,7 @@ public class FieldValueListTest {
 
   @Test
   public void testGetByIndex() {
-    assertEquals(9, fieldValues.size());
+    assertEquals(10, fieldValues.size());
     assertEquals(booleanFv, fieldValues.get(0));
     assertEquals(integerFv, fieldValues.get(1));
     assertEquals(floatFv, fieldValues.get(2));
@@ -127,11 +132,12 @@ public class FieldValueListTest {
     assertEquals(2, fieldValues.get(8).getRecordValue().size());
     assertEquals(floatFv, fieldValues.get(8).getRecordValue().get(0));
     assertEquals(timestampFv, fieldValues.get(8).getRecordValue().get(1));
+    assertEquals(numericFv, fieldValues.get(9));
   }
 
   @Test
   public void testGetByName() {
-    assertEquals(9, fieldValues.size());
+    assertEquals(10, fieldValues.size());
     assertEquals(booleanFv, fieldValues.get("first"));
     assertEquals(integerFv, fieldValues.get("second"));
     assertEquals(floatFv, fieldValues.get("third"));
@@ -147,6 +153,7 @@ public class FieldValueListTest {
     assertEquals(2, fieldValues.get("ninth").getRecordValue().size());
     assertEquals(floatFv, fieldValues.get("ninth").getRecordValue().get("first"));
     assertEquals(timestampFv, fieldValues.get("ninth").getRecordValue().get("second"));
+    assertEquals(numericFv, fieldValues.get("tenth"));
   }
 
   @Test
@@ -161,7 +168,8 @@ public class FieldValueListTest {
             bytesFv,
             nullFv,
             repeatedFv,
-            recordFv));
+            recordFv,
+            numericFv));
 
     assertEquals(fieldValues, fieldValuesNoSchema);
 

@@ -22,6 +22,7 @@ private static final long serialVersionUID = 0L;
   }
   private OriginalDetectIntentRequest() {
     source_ = "";
+    version_ = "";
   }
 
   @java.lang.Override
@@ -48,17 +49,16 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
           case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
             source_ = s;
+            break;
+          }
+          case 18: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            version_ = s;
             break;
           }
           case 26: {
@@ -72,6 +72,13 @@ private static final long serialVersionUID = 0L;
               payload_ = subBuilder.buildPartial();
             }
 
+            break;
+          }
+          default: {
+            if (!parseUnknownFieldProto3(
+                input, unknownFields, extensionRegistry, tag)) {
+              done = true;
+            }
             break;
           }
         }
@@ -91,6 +98,7 @@ private static final long serialVersionUID = 0L;
     return com.google.cloud.dialogflow.v2beta1.WebhookProto.internal_static_google_cloud_dialogflow_v2beta1_OriginalDetectIntentRequest_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.dialogflow.v2beta1.WebhookProto.internal_static_google_cloud_dialogflow_v2beta1_OriginalDetectIntentRequest_fieldAccessorTable
@@ -142,12 +150,68 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int VERSION_FIELD_NUMBER = 2;
+  private volatile java.lang.Object version_;
+  /**
+   * <pre>
+   * Optional. The version of the protocol used for this request.
+   * This field is AoG-specific.
+   * </pre>
+   *
+   * <code>string version = 2;</code>
+   */
+  public java.lang.String getVersion() {
+    java.lang.Object ref = version_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      version_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Optional. The version of the protocol used for this request.
+   * This field is AoG-specific.
+   * </pre>
+   *
+   * <code>string version = 2;</code>
+   */
+  public com.google.protobuf.ByteString
+      getVersionBytes() {
+    java.lang.Object ref = version_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      version_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int PAYLOAD_FIELD_NUMBER = 3;
   private com.google.protobuf.Struct payload_;
   /**
    * <pre>
    * Optional. This field is set to the value of `QueryParameters.payload` field
    * passed in the request.
+   * This field is used for the telephony gateway. It should have a
+   * structure similar to this JSON message:
+   * &lt;pre&gt;{
+   *  "telephony": {
+   *    "caller_id": "+18558363987"
+   *  }
+   * }&lt;/pre&gt;
+   * Note: The caller ID field (`caller_id`) will be in
+   * [E.164 format](https://en.wikipedia.org/wiki/E.164) and is only supported
+   * for Enterprise Edition and not for Standard Edition agents. When the
+   * telephony gateway is used with a standard tier agent the `caller_id` field
+   * above will have a value of `REDACTED_IN_STANDARD_TIER_AGENT`.
    * </pre>
    *
    * <code>.google.protobuf.Struct payload = 3;</code>
@@ -159,6 +223,18 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Optional. This field is set to the value of `QueryParameters.payload` field
    * passed in the request.
+   * This field is used for the telephony gateway. It should have a
+   * structure similar to this JSON message:
+   * &lt;pre&gt;{
+   *  "telephony": {
+   *    "caller_id": "+18558363987"
+   *  }
+   * }&lt;/pre&gt;
+   * Note: The caller ID field (`caller_id`) will be in
+   * [E.164 format](https://en.wikipedia.org/wiki/E.164) and is only supported
+   * for Enterprise Edition and not for Standard Edition agents. When the
+   * telephony gateway is used with a standard tier agent the `caller_id` field
+   * above will have a value of `REDACTED_IN_STANDARD_TIER_AGENT`.
    * </pre>
    *
    * <code>.google.protobuf.Struct payload = 3;</code>
@@ -170,6 +246,18 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Optional. This field is set to the value of `QueryParameters.payload` field
    * passed in the request.
+   * This field is used for the telephony gateway. It should have a
+   * structure similar to this JSON message:
+   * &lt;pre&gt;{
+   *  "telephony": {
+   *    "caller_id": "+18558363987"
+   *  }
+   * }&lt;/pre&gt;
+   * Note: The caller ID field (`caller_id`) will be in
+   * [E.164 format](https://en.wikipedia.org/wiki/E.164) and is only supported
+   * for Enterprise Edition and not for Standard Edition agents. When the
+   * telephony gateway is used with a standard tier agent the `caller_id` field
+   * above will have a value of `REDACTED_IN_STANDARD_TIER_AGENT`.
    * </pre>
    *
    * <code>.google.protobuf.Struct payload = 3;</code>
@@ -179,6 +267,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -188,10 +277,14 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
+  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (!getSourceBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, source_);
+    }
+    if (!getVersionBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, version_);
     }
     if (payload_ != null) {
       output.writeMessage(3, getPayload());
@@ -199,6 +292,7 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -206,6 +300,9 @@ private static final long serialVersionUID = 0L;
     size = 0;
     if (!getSourceBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, source_);
+    }
+    if (!getVersionBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, version_);
     }
     if (payload_ != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -229,6 +326,8 @@ private static final long serialVersionUID = 0L;
     boolean result = true;
     result = result && getSource()
         .equals(other.getSource());
+    result = result && getVersion()
+        .equals(other.getVersion());
     result = result && (hasPayload() == other.hasPayload());
     if (hasPayload()) {
       result = result && getPayload()
@@ -247,6 +346,8 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + SOURCE_FIELD_NUMBER;
     hash = (53 * hash) + getSource().hashCode();
+    hash = (37 * hash) + VERSION_FIELD_NUMBER;
+    hash = (53 * hash) + getVersion().hashCode();
     if (hasPayload()) {
       hash = (37 * hash) + PAYLOAD_FIELD_NUMBER;
       hash = (53 * hash) + getPayload().hashCode();
@@ -326,6 +427,7 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
+  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
@@ -333,6 +435,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder(com.google.cloud.dialogflow.v2beta1.OriginalDetectIntentRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
@@ -361,6 +464,7 @@ private static final long serialVersionUID = 0L;
       return com.google.cloud.dialogflow.v2beta1.WebhookProto.internal_static_google_cloud_dialogflow_v2beta1_OriginalDetectIntentRequest_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.dialogflow.v2beta1.WebhookProto.internal_static_google_cloud_dialogflow_v2beta1_OriginalDetectIntentRequest_fieldAccessorTable
@@ -383,9 +487,12 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
       }
     }
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       source_ = "";
+
+      version_ = "";
 
       if (payloadBuilder_ == null) {
         payload_ = null;
@@ -396,15 +503,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
       return com.google.cloud.dialogflow.v2beta1.WebhookProto.internal_static_google_cloud_dialogflow_v2beta1_OriginalDetectIntentRequest_descriptor;
     }
 
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2beta1.OriginalDetectIntentRequest getDefaultInstanceForType() {
       return com.google.cloud.dialogflow.v2beta1.OriginalDetectIntentRequest.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2beta1.OriginalDetectIntentRequest build() {
       com.google.cloud.dialogflow.v2beta1.OriginalDetectIntentRequest result = buildPartial();
       if (!result.isInitialized()) {
@@ -413,9 +523,11 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2beta1.OriginalDetectIntentRequest buildPartial() {
       com.google.cloud.dialogflow.v2beta1.OriginalDetectIntentRequest result = new com.google.cloud.dialogflow.v2beta1.OriginalDetectIntentRequest(this);
       result.source_ = source_;
+      result.version_ = version_;
       if (payloadBuilder_ == null) {
         result.payload_ = payload_;
       } else {
@@ -425,32 +537,39 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.dialogflow.v2beta1.OriginalDetectIntentRequest) {
         return mergeFrom((com.google.cloud.dialogflow.v2beta1.OriginalDetectIntentRequest)other);
@@ -466,6 +585,10 @@ private static final long serialVersionUID = 0L;
         source_ = other.source_;
         onChanged();
       }
+      if (!other.getVersion().isEmpty()) {
+        version_ = other.version_;
+        onChanged();
+      }
       if (other.hasPayload()) {
         mergePayload(other.getPayload());
       }
@@ -474,10 +597,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -590,6 +715,100 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private java.lang.Object version_ = "";
+    /**
+     * <pre>
+     * Optional. The version of the protocol used for this request.
+     * This field is AoG-specific.
+     * </pre>
+     *
+     * <code>string version = 2;</code>
+     */
+    public java.lang.String getVersion() {
+      java.lang.Object ref = version_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        version_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Optional. The version of the protocol used for this request.
+     * This field is AoG-specific.
+     * </pre>
+     *
+     * <code>string version = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getVersionBytes() {
+      java.lang.Object ref = version_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        version_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Optional. The version of the protocol used for this request.
+     * This field is AoG-specific.
+     * </pre>
+     *
+     * <code>string version = 2;</code>
+     */
+    public Builder setVersion(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      version_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. The version of the protocol used for this request.
+     * This field is AoG-specific.
+     * </pre>
+     *
+     * <code>string version = 2;</code>
+     */
+    public Builder clearVersion() {
+      
+      version_ = getDefaultInstance().getVersion();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. The version of the protocol used for this request.
+     * This field is AoG-specific.
+     * </pre>
+     *
+     * <code>string version = 2;</code>
+     */
+    public Builder setVersionBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      version_ = value;
+      onChanged();
+      return this;
+    }
+
     private com.google.protobuf.Struct payload_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> payloadBuilder_;
@@ -597,6 +816,18 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Optional. This field is set to the value of `QueryParameters.payload` field
      * passed in the request.
+     * This field is used for the telephony gateway. It should have a
+     * structure similar to this JSON message:
+     * &lt;pre&gt;{
+     *  "telephony": {
+     *    "caller_id": "+18558363987"
+     *  }
+     * }&lt;/pre&gt;
+     * Note: The caller ID field (`caller_id`) will be in
+     * [E.164 format](https://en.wikipedia.org/wiki/E.164) and is only supported
+     * for Enterprise Edition and not for Standard Edition agents. When the
+     * telephony gateway is used with a standard tier agent the `caller_id` field
+     * above will have a value of `REDACTED_IN_STANDARD_TIER_AGENT`.
      * </pre>
      *
      * <code>.google.protobuf.Struct payload = 3;</code>
@@ -608,6 +839,18 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Optional. This field is set to the value of `QueryParameters.payload` field
      * passed in the request.
+     * This field is used for the telephony gateway. It should have a
+     * structure similar to this JSON message:
+     * &lt;pre&gt;{
+     *  "telephony": {
+     *    "caller_id": "+18558363987"
+     *  }
+     * }&lt;/pre&gt;
+     * Note: The caller ID field (`caller_id`) will be in
+     * [E.164 format](https://en.wikipedia.org/wiki/E.164) and is only supported
+     * for Enterprise Edition and not for Standard Edition agents. When the
+     * telephony gateway is used with a standard tier agent the `caller_id` field
+     * above will have a value of `REDACTED_IN_STANDARD_TIER_AGENT`.
      * </pre>
      *
      * <code>.google.protobuf.Struct payload = 3;</code>
@@ -623,6 +866,18 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Optional. This field is set to the value of `QueryParameters.payload` field
      * passed in the request.
+     * This field is used for the telephony gateway. It should have a
+     * structure similar to this JSON message:
+     * &lt;pre&gt;{
+     *  "telephony": {
+     *    "caller_id": "+18558363987"
+     *  }
+     * }&lt;/pre&gt;
+     * Note: The caller ID field (`caller_id`) will be in
+     * [E.164 format](https://en.wikipedia.org/wiki/E.164) and is only supported
+     * for Enterprise Edition and not for Standard Edition agents. When the
+     * telephony gateway is used with a standard tier agent the `caller_id` field
+     * above will have a value of `REDACTED_IN_STANDARD_TIER_AGENT`.
      * </pre>
      *
      * <code>.google.protobuf.Struct payload = 3;</code>
@@ -644,6 +899,18 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Optional. This field is set to the value of `QueryParameters.payload` field
      * passed in the request.
+     * This field is used for the telephony gateway. It should have a
+     * structure similar to this JSON message:
+     * &lt;pre&gt;{
+     *  "telephony": {
+     *    "caller_id": "+18558363987"
+     *  }
+     * }&lt;/pre&gt;
+     * Note: The caller ID field (`caller_id`) will be in
+     * [E.164 format](https://en.wikipedia.org/wiki/E.164) and is only supported
+     * for Enterprise Edition and not for Standard Edition agents. When the
+     * telephony gateway is used with a standard tier agent the `caller_id` field
+     * above will have a value of `REDACTED_IN_STANDARD_TIER_AGENT`.
      * </pre>
      *
      * <code>.google.protobuf.Struct payload = 3;</code>
@@ -663,6 +930,18 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Optional. This field is set to the value of `QueryParameters.payload` field
      * passed in the request.
+     * This field is used for the telephony gateway. It should have a
+     * structure similar to this JSON message:
+     * &lt;pre&gt;{
+     *  "telephony": {
+     *    "caller_id": "+18558363987"
+     *  }
+     * }&lt;/pre&gt;
+     * Note: The caller ID field (`caller_id`) will be in
+     * [E.164 format](https://en.wikipedia.org/wiki/E.164) and is only supported
+     * for Enterprise Edition and not for Standard Edition agents. When the
+     * telephony gateway is used with a standard tier agent the `caller_id` field
+     * above will have a value of `REDACTED_IN_STANDARD_TIER_AGENT`.
      * </pre>
      *
      * <code>.google.protobuf.Struct payload = 3;</code>
@@ -686,6 +965,18 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Optional. This field is set to the value of `QueryParameters.payload` field
      * passed in the request.
+     * This field is used for the telephony gateway. It should have a
+     * structure similar to this JSON message:
+     * &lt;pre&gt;{
+     *  "telephony": {
+     *    "caller_id": "+18558363987"
+     *  }
+     * }&lt;/pre&gt;
+     * Note: The caller ID field (`caller_id`) will be in
+     * [E.164 format](https://en.wikipedia.org/wiki/E.164) and is only supported
+     * for Enterprise Edition and not for Standard Edition agents. When the
+     * telephony gateway is used with a standard tier agent the `caller_id` field
+     * above will have a value of `REDACTED_IN_STANDARD_TIER_AGENT`.
      * </pre>
      *
      * <code>.google.protobuf.Struct payload = 3;</code>
@@ -705,6 +996,18 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Optional. This field is set to the value of `QueryParameters.payload` field
      * passed in the request.
+     * This field is used for the telephony gateway. It should have a
+     * structure similar to this JSON message:
+     * &lt;pre&gt;{
+     *  "telephony": {
+     *    "caller_id": "+18558363987"
+     *  }
+     * }&lt;/pre&gt;
+     * Note: The caller ID field (`caller_id`) will be in
+     * [E.164 format](https://en.wikipedia.org/wiki/E.164) and is only supported
+     * for Enterprise Edition and not for Standard Edition agents. When the
+     * telephony gateway is used with a standard tier agent the `caller_id` field
+     * above will have a value of `REDACTED_IN_STANDARD_TIER_AGENT`.
      * </pre>
      *
      * <code>.google.protobuf.Struct payload = 3;</code>
@@ -718,6 +1021,18 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Optional. This field is set to the value of `QueryParameters.payload` field
      * passed in the request.
+     * This field is used for the telephony gateway. It should have a
+     * structure similar to this JSON message:
+     * &lt;pre&gt;{
+     *  "telephony": {
+     *    "caller_id": "+18558363987"
+     *  }
+     * }&lt;/pre&gt;
+     * Note: The caller ID field (`caller_id`) will be in
+     * [E.164 format](https://en.wikipedia.org/wiki/E.164) and is only supported
+     * for Enterprise Edition and not for Standard Edition agents. When the
+     * telephony gateway is used with a standard tier agent the `caller_id` field
+     * above will have a value of `REDACTED_IN_STANDARD_TIER_AGENT`.
      * </pre>
      *
      * <code>.google.protobuf.Struct payload = 3;</code>
@@ -734,6 +1049,18 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Optional. This field is set to the value of `QueryParameters.payload` field
      * passed in the request.
+     * This field is used for the telephony gateway. It should have a
+     * structure similar to this JSON message:
+     * &lt;pre&gt;{
+     *  "telephony": {
+     *    "caller_id": "+18558363987"
+     *  }
+     * }&lt;/pre&gt;
+     * Note: The caller ID field (`caller_id`) will be in
+     * [E.164 format](https://en.wikipedia.org/wiki/E.164) and is only supported
+     * for Enterprise Edition and not for Standard Edition agents. When the
+     * telephony gateway is used with a standard tier agent the `caller_id` field
+     * above will have a value of `REDACTED_IN_STANDARD_TIER_AGENT`.
      * </pre>
      *
      * <code>.google.protobuf.Struct payload = 3;</code>
@@ -751,11 +1078,13 @@ private static final long serialVersionUID = 0L;
       }
       return payloadBuilder_;
     }
+    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -777,6 +1106,7 @@ private static final long serialVersionUID = 0L;
 
   private static final com.google.protobuf.Parser<OriginalDetectIntentRequest>
       PARSER = new com.google.protobuf.AbstractParser<OriginalDetectIntentRequest>() {
+    @java.lang.Override
     public OriginalDetectIntentRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -794,6 +1124,7 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.OriginalDetectIntentRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }

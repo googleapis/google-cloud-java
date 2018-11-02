@@ -20,6 +20,8 @@ import "google/api/annotations.proto";
 import "google/cloud/vision/v1/geometry.proto";
 import "google/cloud/vision/v1/text_annotation.proto";
 import "google/cloud/vision/v1/web_detection.proto";
+import "google/longrunning/operations.proto";
+import "google/protobuf/timestamp.proto";
 import "google/rpc/status.proto";
 import "google/type/color.proto";
 import "google/type/latlng.proto";
@@ -29,7 +31,7 @@ option go_package = "google.golang.org/genproto/googleapis/cloud/vision/v1;visio
 option java_multiple_files = true;
 option java_outer_classname = "ImageAnnotatorProto";
 option java_package = "com.google.cloud.vision.v1";
-
+option objc_class_prefix = "GCVN";
 
 // Service that performs Google Cloud Vision API detection tasks over client
 // images, such as face, landmark, logo, label, and text detection. The
@@ -37,7 +39,24 @@ option java_package = "com.google.cloud.vision.v1";
 service ImageAnnotator {
   // Run image detection and annotation for a batch of images.
   rpc BatchAnnotateImages(BatchAnnotateImagesRequest) returns (BatchAnnotateImagesResponse) {
-    option (google.api.http) = { post: "/v1/images:annotate" body: "*" };
+    option (google.api.http) = {
+      post: "/v1/images:annotate"
+      body: "*"
+    };
+  }
+
+  // Run asynchronous image detection and annotation for a list of generic
+  // files, such as PDF files, which may contain multiple pages and multiple
+  // images per page. Progress and results can be retrieved through the
+  // `google.longrunning.Operations` interface.
+  // `Operation.metadata` contains `OperationMetadata` (metadata).
+  // `Operation.response` contains `AsyncBatchAnnotateFilesResponse` (results).
+  rpc AsyncBatchAnnotateFiles(AsyncBatchAnnotateFilesRequest)
+      returns (google.longrunning.Operation) {
+    option (google.api.http) = {
+      post: "/v1/files:asyncBatchAnnotate"
+      body: "*"
+    };
   }
 }
 
@@ -84,6 +103,9 @@ message Feature {
 
     // Run web detection.
     WEB_DETECTION = 10;
+
+    // Run localizer for object detection.
+    OBJECT_LOCALIZATION = 19;
   }
 
   // The feature type.
@@ -391,6 +413,26 @@ message EntityAnnotation {
   repeated Property properties = 9;
 }
 
+// Set of detected objects with bounding boxes.
+message LocalizedObjectAnnotation {
+  // Object ID that should align with EntityAnnotation mid.
+  string mid = 1;
+
+  // The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+  // information, see
+  // http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+  string language_code = 2;
+
+  // Object name, expressed in its `language_code` language.
+  string name = 3;
+
+  // Score of the result. Range [0, 1].
+  float score = 4;
+
+  // Image region to which this object belongs. This must be populated.
+  BoundingPoly bounding_poly = 5;
+}
+
 // Set of features pertaining to the image, computed by computer vision
 // methods over safe-search verticals (for example, adult, spoof, medical,
 // violence).
@@ -492,7 +534,7 @@ message WebDetectionParams {
 
 // Image context and/or feature-specific parameters.
 message ImageContext {
-  // lat/long rectangle that specifies the location of the image.
+  // Not used.
   LatLongRect lat_long_rect = 1;
 
   // List of languages to use for TEXT_DETECTION. In most cases, an empty value
@@ -525,6 +567,17 @@ message AnnotateImageRequest {
   ImageContext image_context = 3;
 }
 
+// If an image was produced from a file (e.g. a PDF), this message gives
+// information about the source of that image.
+message ImageAnnotationContext {
+  // The URI of the file used to produce the image.
+  string uri = 1;
+
+  // If the file was a PDF or TIFF, this field gives the page number within
+  // the file used to produce the image.
+  int32 page_number = 2;
+}
+
 // Response to an image annotation request.
 message AnnotateImageResponse {
   // If present, face detection has completed successfully.
@@ -538,6 +591,10 @@ message AnnotateImageResponse {
 
   // If present, label detection has completed successfully.
   repeated EntityAnnotation label_annotations = 4;
+
+  // If present, localized object detection has completed successfully.
+  // This will be sorted descending by confidence score.
+  repeated LocalizedObjectAnnotation localized_object_annotations = 22;
 
   // If present, text (OCR) detection has completed successfully.
   repeated EntityAnnotation text_annotations = 5;
@@ -564,6 +621,20 @@ message AnnotateImageResponse {
   // Note that filled-in image annotations are guaranteed to be
   // correct, even when `error` is set.
   google.rpc.Status error = 9;
+
+  // If present, contextual information is needed to understand where this image
+  // comes from.
+  ImageAnnotationContext context = 21;
+}
+
+// Response to a single file annotation request. A file may contain one or more
+// images, which individually have their own responses.
+message AnnotateFileResponse {
+  // Information about the file for which this response is generated.
+  InputConfig input_config = 1;
+
+  // Individual responses to images found within the file.
+  repeated AnnotateImageResponse responses = 2;
 }
 
 // Multiple image annotation requests are batched into a single service call.
@@ -576,6 +647,127 @@ message BatchAnnotateImagesRequest {
 message BatchAnnotateImagesResponse {
   // Individual responses to image annotation requests within the batch.
   repeated AnnotateImageResponse responses = 1;
+}
+
+// An offline file annotation request.
+message AsyncAnnotateFileRequest {
+  // Required. Information about the input file.
+  InputConfig input_config = 1;
+
+  // Required. Requested features.
+  repeated Feature features = 2;
+
+  // Additional context that may accompany the image(s) in the file.
+  ImageContext image_context = 3;
+
+  // Required. The desired output location and metadata (e.g. format).
+  OutputConfig output_config = 4;
+}
+
+// The response for a single offline file annotation request.
+message AsyncAnnotateFileResponse {
+  // The output location and metadata from AsyncAnnotateFileRequest.
+  OutputConfig output_config = 1;
+}
+
+// Multiple async file annotation requests are batched into a single service
+// call.
+message AsyncBatchAnnotateFilesRequest {
+  // Individual async file annotation requests for this batch.
+  repeated AsyncAnnotateFileRequest requests = 1;
+}
+
+// Response to an async batch file annotation request.
+message AsyncBatchAnnotateFilesResponse {
+  // The list of file annotation responses, one for each request in
+  // AsyncBatchAnnotateFilesRequest.
+  repeated AsyncAnnotateFileResponse responses = 1;
+}
+
+// The desired input location and metadata.
+message InputConfig {
+  // The Google Cloud Storage location to read the input from.
+  GcsSource gcs_source = 1;
+
+  // The type of the file. Currently only "application/pdf" and "image/tiff"
+  // are supported. Wildcards are not supported.
+  string mime_type = 2;
+}
+
+// The desired output location and metadata.
+message OutputConfig {
+  // The Google Cloud Storage location to write the output(s) to.
+  GcsDestination gcs_destination = 1;
+
+  // The max number of response protos to put into each output JSON file on
+  // Google Cloud Storage.
+  // The valid range is [1, 100]. If not specified, the default value is 20.
+  //
+  // For example, for one pdf file with 100 pages, 100 response protos will
+  // be generated. If `batch_size` = 20, then 5 json files each
+  // containing 20 response protos will be written under the prefix
+  // `gcs_destination`.`uri`.
+  //
+  // Currently, batch_size only applies to GcsDestination, with potential future
+  // support for other output configurations.
+  int32 batch_size = 2;
+}
+
+// The Google Cloud Storage location where the input will be read from.
+message GcsSource {
+  // Google Cloud Storage URI for the input file. This must only be a
+  // Google Cloud Storage object. Wildcards are not currently supported.
+  string uri = 1;
+}
+
+// The Google Cloud Storage location where the output will be written to.
+message GcsDestination {
+  // Google Cloud Storage URI where the results will be stored. Results will
+  // be in JSON format and preceded by its corresponding input URI. This field
+  // can either represent a single file, or a prefix for multiple outputs.
+  // Prefixes must end in a `/`.
+  //
+  // Examples:
+  //
+  // *    File: gs://bucket-name/filename.json
+  // *    Prefix: gs://bucket-name/prefix/here/
+  // *    File: gs://bucket-name/prefix/here
+  //
+  // If multiple outputs, each response is still AnnotateFileResponse, each of
+  // which contains some subset of the full list of AnnotateImageResponse.
+  // Multiple outputs can happen if, for example, the output JSON is too large
+  // and overflows into multiple sharded files.
+  string uri = 1;
+}
+
+// Contains metadata for the BatchAnnotateImages operation.
+message OperationMetadata {
+  // Batch operation states.
+  enum State {
+    // Invalid.
+    STATE_UNSPECIFIED = 0;
+
+    // Request is received.
+    CREATED = 1;
+
+    // Request is actively being processed.
+    RUNNING = 2;
+
+    // The batch processing is done.
+    DONE = 3;
+
+    // The batch processing was cancelled.
+    CANCELLED = 4;
+  }
+
+  // Current state of the batch operation.
+  State state = 1;
+
+  // The time when the batch request was received.
+  google.protobuf.Timestamp create_time = 5;
+
+  // The time when the operation result was last updated.
+  google.protobuf.Timestamp update_time = 6;
 }
 
 // A bucketized representation of likelihood, which is intended to give clients

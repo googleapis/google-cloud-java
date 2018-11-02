@@ -161,6 +161,8 @@ public class VideoIntelligenceServiceClient implements BackgroundResource {
    * Returns the OperationsClient that can be used to query the status of a long-running operation
    * returned by another API method call.
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationsClient getOperationsClient() {
     return operationsClient;
   }
@@ -194,6 +196,8 @@ public class VideoIntelligenceServiceClient implements BackgroundResource {
    * @param features Requested video annotation features.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<AnnotateVideoResponse, AnnotateVideoProgress> annotateVideoAsync(
       String inputUri, List<Feature> features) {
 
@@ -227,6 +231,8 @@ public class VideoIntelligenceServiceClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<AnnotateVideoResponse, AnnotateVideoProgress> annotateVideoAsync(
       AnnotateVideoRequest request) {
     return annotateVideoOperationCallable().futureCall(request);
@@ -256,6 +262,7 @@ public class VideoIntelligenceServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<AnnotateVideoRequest, AnnotateVideoResponse, AnnotateVideoProgress>
       annotateVideoOperationCallable() {
     return stub.annotateVideoOperationCallable();

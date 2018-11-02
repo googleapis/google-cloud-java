@@ -52,13 +52,6 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
@@ -120,6 +113,13 @@ private static final long serialVersionUID = 0L;
             name_ = s;
             break;
           }
+          default: {
+            if (!parseUnknownFieldProto3(
+                input, unknownFields, extensionRegistry, tag)) {
+              done = true;
+            }
+            break;
+          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -137,6 +137,7 @@ private static final long serialVersionUID = 0L;
     return com.google.monitoring.v3.MetricServiceProto.internal_static_google_monitoring_v3_ListTimeSeriesRequest_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.monitoring.v3.MetricServiceProto.internal_static_google_monitoring_v3_ListTimeSeriesRequest_fieldAccessorTable
@@ -444,9 +445,8 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object orderBy_;
   /**
    * <pre>
-   * Specifies the order in which the points of the time series should
-   * be returned.  By default, results are not ordered.  Currently,
-   * this field must be left blank.
+   * Unsupported: must be left blank. The points in each time series are
+   * returned in reverse time order.
    * </pre>
    *
    * <code>string order_by = 6;</code>
@@ -465,9 +465,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Specifies the order in which the points of the time series should
-   * be returned.  By default, results are not ordered.  Currently,
-   * this field must be left blank.
+   * Unsupported: must be left blank. The points in each time series are
+   * returned in reverse time order.
    * </pre>
    *
    * <code>string order_by = 6;</code>
@@ -506,6 +505,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.monitoring.v3.ListTimeSeriesRequest.TimeSeriesView view = 7;</code>
    */
   public com.google.monitoring.v3.ListTimeSeriesRequest.TimeSeriesView getView() {
+    @SuppressWarnings("deprecation")
     com.google.monitoring.v3.ListTimeSeriesRequest.TimeSeriesView result = com.google.monitoring.v3.ListTimeSeriesRequest.TimeSeriesView.valueOf(view_);
     return result == null ? com.google.monitoring.v3.ListTimeSeriesRequest.TimeSeriesView.UNRECOGNIZED : result;
   }
@@ -514,10 +514,11 @@ private static final long serialVersionUID = 0L;
   private int pageSize_;
   /**
    * <pre>
-   * A positive number that is the maximum number of results to return.
-   * When `view` field sets to `FULL`, it limits the number of `Points` server
-   * will return; if `view` field is `HEADERS`, it limits the number of
-   * `TimeSeries` server will return.
+   * A positive number that is the maximum number of results to return. If
+   * `page_size` is empty or more than 100,000 results, the effective
+   * `page_size` is 100,000 results. If `view` is set to `FULL`, this is the
+   * maximum number of `Points` returned. If `view` is set to `HEADERS`, this is
+   * the maximum number of `TimeSeries` returned.
    * </pre>
    *
    * <code>int32 page_size = 8;</code>
@@ -573,6 +574,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -582,6 +584,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
+  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (!getFilterBytes().isEmpty()) {
@@ -611,6 +614,7 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -787,6 +791,7 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
+  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
@@ -794,6 +799,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder(com.google.monitoring.v3.ListTimeSeriesRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
@@ -821,6 +827,7 @@ private static final long serialVersionUID = 0L;
       return com.google.monitoring.v3.MetricServiceProto.internal_static_google_monitoring_v3_ListTimeSeriesRequest_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.monitoring.v3.MetricServiceProto.internal_static_google_monitoring_v3_ListTimeSeriesRequest_fieldAccessorTable
@@ -843,6 +850,7 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
       }
     }
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       name_ = "";
@@ -872,15 +880,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
       return com.google.monitoring.v3.MetricServiceProto.internal_static_google_monitoring_v3_ListTimeSeriesRequest_descriptor;
     }
 
+    @java.lang.Override
     public com.google.monitoring.v3.ListTimeSeriesRequest getDefaultInstanceForType() {
       return com.google.monitoring.v3.ListTimeSeriesRequest.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.monitoring.v3.ListTimeSeriesRequest build() {
       com.google.monitoring.v3.ListTimeSeriesRequest result = buildPartial();
       if (!result.isInitialized()) {
@@ -889,6 +900,7 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.monitoring.v3.ListTimeSeriesRequest buildPartial() {
       com.google.monitoring.v3.ListTimeSeriesRequest result = new com.google.monitoring.v3.ListTimeSeriesRequest(this);
       result.name_ = name_;
@@ -911,32 +923,39 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.monitoring.v3.ListTimeSeriesRequest) {
         return mergeFrom((com.google.monitoring.v3.ListTimeSeriesRequest)other);
@@ -981,10 +1000,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1556,9 +1577,8 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object orderBy_ = "";
     /**
      * <pre>
-     * Specifies the order in which the points of the time series should
-     * be returned.  By default, results are not ordered.  Currently,
-     * this field must be left blank.
+     * Unsupported: must be left blank. The points in each time series are
+     * returned in reverse time order.
      * </pre>
      *
      * <code>string order_by = 6;</code>
@@ -1577,9 +1597,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Specifies the order in which the points of the time series should
-     * be returned.  By default, results are not ordered.  Currently,
-     * this field must be left blank.
+     * Unsupported: must be left blank. The points in each time series are
+     * returned in reverse time order.
      * </pre>
      *
      * <code>string order_by = 6;</code>
@@ -1599,9 +1618,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Specifies the order in which the points of the time series should
-     * be returned.  By default, results are not ordered.  Currently,
-     * this field must be left blank.
+     * Unsupported: must be left blank. The points in each time series are
+     * returned in reverse time order.
      * </pre>
      *
      * <code>string order_by = 6;</code>
@@ -1618,9 +1636,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Specifies the order in which the points of the time series should
-     * be returned.  By default, results are not ordered.  Currently,
-     * this field must be left blank.
+     * Unsupported: must be left blank. The points in each time series are
+     * returned in reverse time order.
      * </pre>
      *
      * <code>string order_by = 6;</code>
@@ -1633,9 +1650,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Specifies the order in which the points of the time series should
-     * be returned.  By default, results are not ordered.  Currently,
-     * this field must be left blank.
+     * Unsupported: must be left blank. The points in each time series are
+     * returned in reverse time order.
      * </pre>
      *
      * <code>string order_by = 6;</code>
@@ -1683,6 +1699,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.monitoring.v3.ListTimeSeriesRequest.TimeSeriesView view = 7;</code>
      */
     public com.google.monitoring.v3.ListTimeSeriesRequest.TimeSeriesView getView() {
+      @SuppressWarnings("deprecation")
       com.google.monitoring.v3.ListTimeSeriesRequest.TimeSeriesView result = com.google.monitoring.v3.ListTimeSeriesRequest.TimeSeriesView.valueOf(view_);
       return result == null ? com.google.monitoring.v3.ListTimeSeriesRequest.TimeSeriesView.UNRECOGNIZED : result;
     }
@@ -1719,10 +1736,11 @@ private static final long serialVersionUID = 0L;
     private int pageSize_ ;
     /**
      * <pre>
-     * A positive number that is the maximum number of results to return.
-     * When `view` field sets to `FULL`, it limits the number of `Points` server
-     * will return; if `view` field is `HEADERS`, it limits the number of
-     * `TimeSeries` server will return.
+     * A positive number that is the maximum number of results to return. If
+     * `page_size` is empty or more than 100,000 results, the effective
+     * `page_size` is 100,000 results. If `view` is set to `FULL`, this is the
+     * maximum number of `Points` returned. If `view` is set to `HEADERS`, this is
+     * the maximum number of `TimeSeries` returned.
      * </pre>
      *
      * <code>int32 page_size = 8;</code>
@@ -1732,10 +1750,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A positive number that is the maximum number of results to return.
-     * When `view` field sets to `FULL`, it limits the number of `Points` server
-     * will return; if `view` field is `HEADERS`, it limits the number of
-     * `TimeSeries` server will return.
+     * A positive number that is the maximum number of results to return. If
+     * `page_size` is empty or more than 100,000 results, the effective
+     * `page_size` is 100,000 results. If `view` is set to `FULL`, this is the
+     * maximum number of `Points` returned. If `view` is set to `HEADERS`, this is
+     * the maximum number of `TimeSeries` returned.
      * </pre>
      *
      * <code>int32 page_size = 8;</code>
@@ -1748,10 +1767,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A positive number that is the maximum number of results to return.
-     * When `view` field sets to `FULL`, it limits the number of `Points` server
-     * will return; if `view` field is `HEADERS`, it limits the number of
-     * `TimeSeries` server will return.
+     * A positive number that is the maximum number of results to return. If
+     * `page_size` is empty or more than 100,000 results, the effective
+     * `page_size` is 100,000 results. If `view` is set to `FULL`, this is the
+     * maximum number of `Points` returned. If `view` is set to `HEADERS`, this is
+     * the maximum number of `TimeSeries` returned.
      * </pre>
      *
      * <code>int32 page_size = 8;</code>
@@ -1861,11 +1881,13 @@ private static final long serialVersionUID = 0L;
       onChanged();
       return this;
     }
+    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -1887,6 +1909,7 @@ private static final long serialVersionUID = 0L;
 
   private static final com.google.protobuf.Parser<ListTimeSeriesRequest>
       PARSER = new com.google.protobuf.AbstractParser<ListTimeSeriesRequest>() {
+    @java.lang.Override
     public ListTimeSeriesRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1904,6 +1927,7 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.monitoring.v3.ListTimeSeriesRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }

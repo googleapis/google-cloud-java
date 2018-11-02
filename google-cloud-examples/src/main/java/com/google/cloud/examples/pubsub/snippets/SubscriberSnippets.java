@@ -100,7 +100,7 @@ public class SubscriberSnippets {
   }
 
   private void createSubscriber() throws Exception {
-    // [START pubsub_pull]
+    // [START pubsub_subscriber_async_pull]
     String projectId = "my-project-id";
     String subscriptionId = "my-subscription-id";
 
@@ -129,7 +129,7 @@ public class SubscriberSnippets {
         subscriber.stopAsync();
       }
     }
-    // [END pubsub_pull]
+    // [END pubsub_subscriber_async_pull]
   }
 
   private Subscriber createSubscriberWithErrorListener(Subscriber subscriber) throws Exception {
@@ -146,7 +146,7 @@ public class SubscriberSnippets {
   }
 
   private Subscriber createSingleThreadedSubscriber() throws Exception {
-    // [START pubsub_subscriber_single_threaded]
+    // [START pubsub_subscriber_concurrency_control]
     // provide a separate executor service for polling
     ExecutorProvider executorProvider =
         InstantiatingExecutorProvider.newBuilder().setExecutorThreadCount(1).build();
@@ -155,7 +155,7 @@ public class SubscriberSnippets {
         Subscriber.newBuilder(subscriptionName, receiver)
             .setExecutorProvider(executorProvider)
             .build();
-    // [END pubsub_subscriber_single_threaded]
+    // [END pubsub_subscriber_concurrency_control]
     return subscriber;
   }
 
@@ -184,15 +184,22 @@ public class SubscriberSnippets {
         Subscriber.newBuilder(subscriptionName, receiver)
             .setCredentialsProvider(credentialsProvider)
             .build();
-    // [START pubsub_subscriber_custom_credentials]
+    // [END pubsub_subscriber_custom_credentials]
     return subscriber;
   }
 
   static List<ReceivedMessage> createSubscriberWithSyncPull(
       String projectId, String subscriptionId, int numOfMessages) throws Exception {
-    // [START subscriber_sync_pull]
+    // [START pubsub_subscriber_sync_pull]
     SubscriberStubSettings subscriberStubSettings =
-        SubscriberStubSettings.newBuilder().build();
+        SubscriberStubSettings.newBuilder()
+            .setTransportChannelProvider(
+                SubscriberStubSettings.defaultGrpcTransportProviderBuilder()
+                    .setMaxInboundMessageSize(20<<20) // 20MB
+                    .build()
+            )
+            .build();
+
     try (SubscriberStub subscriber = GrpcSubscriberStub.create(subscriberStubSettings)) {
       // String projectId = "my-project-id";
       // String subscriptionId = "my-subscription-id";
@@ -223,6 +230,6 @@ public class SubscriberSnippets {
       subscriber.acknowledgeCallable().call(acknowledgeRequest);
       return pullResponse.getReceivedMessagesList();
     }
-    // [END subscriber_sync_pull]
+    // [END pubsub_subscriber_sync_pull]
   }
 }

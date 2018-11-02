@@ -14,7 +14,7 @@ package com.google.privacy.dlp.v2;
  * replaced with the same surrogate.
  * Identifiers must be at least two characters long.
  * In the case that the identifier is the empty string, it will be skipped.
- * See [Pseudonymization](/dlp/docs/pseudonymization) for example usage.
+ * See https://cloud.google.com/dlp/docs/pseudonymization to learn more.
  * </pre>
  *
  * Protobuf type {@code google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig}
@@ -55,13 +55,6 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
           case 10: {
             com.google.privacy.dlp.v2.CryptoKey.Builder subBuilder = null;
             if (cryptoKey_ != null) {
@@ -118,6 +111,13 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          default: {
+            if (!parseUnknownFieldProto3(
+                input, unknownFields, extensionRegistry, tag)) {
+              done = true;
+            }
+            break;
+          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -135,6 +135,7 @@ private static final long serialVersionUID = 0L;
     return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_CryptoReplaceFfxFpeConfig_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_CryptoReplaceFfxFpeConfig_fieldAccessorTable
@@ -395,8 +396,7 @@ private static final long serialVersionUID = 0L;
    * The tweak is constructed as a sequence of bytes in big endian byte order
    * such that:
    * - a 64 bit integer is encoded followed by a single byte of value 1
-   * - a string is encoded in UTF-8 format followed by a single byte of value
-   *  å 2
+   * - a string is encoded in UTF-8 format followed by a single byte of value 2
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.FieldId context = 2;</code>
@@ -419,8 +419,7 @@ private static final long serialVersionUID = 0L;
    * The tweak is constructed as a sequence of bytes in big endian byte order
    * such that:
    * - a 64 bit integer is encoded followed by a single byte of value 1
-   * - a string is encoded in UTF-8 format followed by a single byte of value
-   *  å 2
+   * - a string is encoded in UTF-8 format followed by a single byte of value 2
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.FieldId context = 2;</code>
@@ -443,8 +442,7 @@ private static final long serialVersionUID = 0L;
    * The tweak is constructed as a sequence of bytes in big endian byte order
    * such that:
    * - a 64 bit integer is encoded followed by a single byte of value 1
-   * - a string is encoded in UTF-8 format followed by a single byte of value
-   *  å 2
+   * - a string is encoded in UTF-8 format followed by a single byte of value 2
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.FieldId context = 2;</code>
@@ -468,6 +466,7 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet getCommonAlphabet() {
     if (alphabetCase_ == 4) {
+      @SuppressWarnings("deprecation")
       com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet result = com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet.valueOf(
           (java.lang.Integer) alphabet_);
       return result == null ? com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet.UNRECOGNIZED : result;
@@ -650,6 +649,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -659,6 +659,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
+  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (cryptoKey_ != null) {
@@ -683,6 +684,7 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -876,6 +878,7 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
+  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
@@ -883,6 +886,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder(com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
@@ -905,7 +909,7 @@ private static final long serialVersionUID = 0L;
    * replaced with the same surrogate.
    * Identifiers must be at least two characters long.
    * In the case that the identifier is the empty string, it will be skipped.
-   * See [Pseudonymization](/dlp/docs/pseudonymization) for example usage.
+   * See https://cloud.google.com/dlp/docs/pseudonymization to learn more.
    * </pre>
    *
    * Protobuf type {@code google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig}
@@ -919,6 +923,7 @@ private static final long serialVersionUID = 0L;
       return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_CryptoReplaceFfxFpeConfig_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_CryptoReplaceFfxFpeConfig_fieldAccessorTable
@@ -941,6 +946,7 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
       }
     }
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       if (cryptoKeyBuilder_ == null) {
@@ -966,15 +972,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
       return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_CryptoReplaceFfxFpeConfig_descriptor;
     }
 
+    @java.lang.Override
     public com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig getDefaultInstanceForType() {
       return com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig build() {
       com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig result = buildPartial();
       if (!result.isInitialized()) {
@@ -983,6 +992,7 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig buildPartial() {
       com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig result = new com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig(this);
       if (cryptoKeyBuilder_ == null) {
@@ -1014,32 +1024,39 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig) {
         return mergeFrom((com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig)other);
@@ -1084,10 +1101,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1292,8 +1311,7 @@ private static final long serialVersionUID = 0L;
      * The tweak is constructed as a sequence of bytes in big endian byte order
      * such that:
      * - a 64 bit integer is encoded followed by a single byte of value 1
-     * - a string is encoded in UTF-8 format followed by a single byte of value
-     *  å 2
+     * - a string is encoded in UTF-8 format followed by a single byte of value 2
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.FieldId context = 2;</code>
@@ -1316,8 +1334,7 @@ private static final long serialVersionUID = 0L;
      * The tweak is constructed as a sequence of bytes in big endian byte order
      * such that:
      * - a 64 bit integer is encoded followed by a single byte of value 1
-     * - a string is encoded in UTF-8 format followed by a single byte of value
-     *  å 2
+     * - a string is encoded in UTF-8 format followed by a single byte of value 2
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.FieldId context = 2;</code>
@@ -1344,8 +1361,7 @@ private static final long serialVersionUID = 0L;
      * The tweak is constructed as a sequence of bytes in big endian byte order
      * such that:
      * - a 64 bit integer is encoded followed by a single byte of value 1
-     * - a string is encoded in UTF-8 format followed by a single byte of value
-     *  å 2
+     * - a string is encoded in UTF-8 format followed by a single byte of value 2
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.FieldId context = 2;</code>
@@ -1378,8 +1394,7 @@ private static final long serialVersionUID = 0L;
      * The tweak is constructed as a sequence of bytes in big endian byte order
      * such that:
      * - a 64 bit integer is encoded followed by a single byte of value 1
-     * - a string is encoded in UTF-8 format followed by a single byte of value
-     *  å 2
+     * - a string is encoded in UTF-8 format followed by a single byte of value 2
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.FieldId context = 2;</code>
@@ -1410,8 +1425,7 @@ private static final long serialVersionUID = 0L;
      * The tweak is constructed as a sequence of bytes in big endian byte order
      * such that:
      * - a 64 bit integer is encoded followed by a single byte of value 1
-     * - a string is encoded in UTF-8 format followed by a single byte of value
-     *  å 2
+     * - a string is encoded in UTF-8 format followed by a single byte of value 2
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.FieldId context = 2;</code>
@@ -1446,8 +1460,7 @@ private static final long serialVersionUID = 0L;
      * The tweak is constructed as a sequence of bytes in big endian byte order
      * such that:
      * - a 64 bit integer is encoded followed by a single byte of value 1
-     * - a string is encoded in UTF-8 format followed by a single byte of value
-     *  å 2
+     * - a string is encoded in UTF-8 format followed by a single byte of value 2
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.FieldId context = 2;</code>
@@ -1478,8 +1491,7 @@ private static final long serialVersionUID = 0L;
      * The tweak is constructed as a sequence of bytes in big endian byte order
      * such that:
      * - a 64 bit integer is encoded followed by a single byte of value 1
-     * - a string is encoded in UTF-8 format followed by a single byte of value
-     *  å 2
+     * - a string is encoded in UTF-8 format followed by a single byte of value 2
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.FieldId context = 2;</code>
@@ -1504,8 +1516,7 @@ private static final long serialVersionUID = 0L;
      * The tweak is constructed as a sequence of bytes in big endian byte order
      * such that:
      * - a 64 bit integer is encoded followed by a single byte of value 1
-     * - a string is encoded in UTF-8 format followed by a single byte of value
-     *  å 2
+     * - a string is encoded in UTF-8 format followed by a single byte of value 2
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.FieldId context = 2;</code>
@@ -1533,8 +1544,7 @@ private static final long serialVersionUID = 0L;
      * The tweak is constructed as a sequence of bytes in big endian byte order
      * such that:
      * - a 64 bit integer is encoded followed by a single byte of value 1
-     * - a string is encoded in UTF-8 format followed by a single byte of value
-     *  å 2
+     * - a string is encoded in UTF-8 format followed by a single byte of value 2
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.FieldId context = 2;</code>
@@ -1576,6 +1586,7 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet getCommonAlphabet() {
       if (alphabetCase_ == 4) {
+        @SuppressWarnings("deprecation")
         com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet result = com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet.valueOf(
             (java.lang.Integer) alphabet_);
         return result == null ? com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet.UNRECOGNIZED : result;
@@ -2119,11 +2130,13 @@ private static final long serialVersionUID = 0L;
       }
       return surrogateInfoTypeBuilder_;
     }
+    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -2145,6 +2158,7 @@ private static final long serialVersionUID = 0L;
 
   private static final com.google.protobuf.Parser<CryptoReplaceFfxFpeConfig>
       PARSER = new com.google.protobuf.AbstractParser<CryptoReplaceFfxFpeConfig>() {
+    @java.lang.Override
     public CryptoReplaceFfxFpeConfig parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -2162,6 +2176,7 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }

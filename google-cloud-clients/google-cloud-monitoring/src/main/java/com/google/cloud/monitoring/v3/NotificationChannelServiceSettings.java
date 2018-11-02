@@ -73,7 +73,6 @@ import javax.annotation.Generated;
  * </pre>
  */
 @Generated("by gapic-generator")
-@BetaApi
 public class NotificationChannelServiceSettings
     extends ClientSettings<NotificationChannelServiceSettings> {
   /** Returns the object with the settings used for calls to listNotificationChannelDescriptors. */

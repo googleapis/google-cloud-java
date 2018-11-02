@@ -17,8 +17,8 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
- * Service for configuring sinks used to export log entries outside of
- * Stackdriver Logging.
+ * Service for configuring sinks used to export log entries out of
+ * Logging.
  * </pre>
  */
 @javax.annotation.Generated(
@@ -427,8 +427,8 @@ public final class ConfigServiceV2Grpc {
 
   /**
    * <pre>
-   * Service for configuring sinks used to export log entries outside of
-   * Stackdriver Logging.
+   * Service for configuring sinks used to export log entries out of
+   * Logging.
    * </pre>
    */
   public static abstract class ConfigServiceV2ImplBase implements io.grpc.BindableService {
@@ -620,8 +620,8 @@ public final class ConfigServiceV2Grpc {
 
   /**
    * <pre>
-   * Service for configuring sinks used to export log entries outside of
-   * Stackdriver Logging.
+   * Service for configuring sinks used to export log entries out of
+   * Logging.
    * </pre>
    */
   public static final class ConfigServiceV2Stub extends io.grpc.stub.AbstractStub<ConfigServiceV2Stub> {
@@ -762,8 +762,8 @@ public final class ConfigServiceV2Grpc {
 
   /**
    * <pre>
-   * Service for configuring sinks used to export log entries outside of
-   * Stackdriver Logging.
+   * Service for configuring sinks used to export log entries out of
+   * Logging.
    * </pre>
    */
   public static final class ConfigServiceV2BlockingStub extends io.grpc.stub.AbstractStub<ConfigServiceV2BlockingStub> {
@@ -894,8 +894,8 @@ public final class ConfigServiceV2Grpc {
 
   /**
    * <pre>
-   * Service for configuring sinks used to export log entries outside of
-   * Stackdriver Logging.
+   * Service for configuring sinks used to export log entries out of
+   * Logging.
    * </pre>
    */
   public static final class ConfigServiceV2FutureStub extends io.grpc.stub.AbstractStub<ConfigServiceV2FutureStub> {

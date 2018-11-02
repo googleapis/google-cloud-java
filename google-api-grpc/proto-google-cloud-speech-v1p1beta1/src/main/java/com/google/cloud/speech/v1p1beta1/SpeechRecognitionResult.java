@@ -21,6 +21,8 @@ private static final long serialVersionUID = 0L;
   }
   private SpeechRecognitionResult() {
     alternatives_ = java.util.Collections.emptyList();
+    channelTag_ = 0;
+    languageCode_ = "";
   }
 
   @java.lang.Override
@@ -47,13 +49,6 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
           case 10: {
             if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
               alternatives_ = new java.util.ArrayList<com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative>();
@@ -61,6 +56,24 @@ private static final long serialVersionUID = 0L;
             }
             alternatives_.add(
                 input.readMessage(com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative.parser(), extensionRegistry));
+            break;
+          }
+          case 16: {
+
+            channelTag_ = input.readInt32();
+            break;
+          }
+          case 42: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            languageCode_ = s;
+            break;
+          }
+          default: {
+            if (!parseUnknownFieldProto3(
+                input, unknownFields, extensionRegistry, tag)) {
+              done = true;
+            }
             break;
           }
         }
@@ -83,6 +96,7 @@ private static final long serialVersionUID = 0L;
     return com.google.cloud.speech.v1p1beta1.SpeechProto.internal_static_google_cloud_speech_v1p1beta1_SpeechRecognitionResult_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.speech.v1p1beta1.SpeechProto.internal_static_google_cloud_speech_v1p1beta1_SpeechRecognitionResult_fieldAccessorTable
@@ -90,6 +104,7 @@ private static final long serialVersionUID = 0L;
             com.google.cloud.speech.v1p1beta1.SpeechRecognitionResult.class, com.google.cloud.speech.v1p1beta1.SpeechRecognitionResult.Builder.class);
   }
 
+  private int bitField0_;
   public static final int ALTERNATIVES_FIELD_NUMBER = 1;
   private java.util.List<com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative> alternatives_;
   /**
@@ -160,7 +175,71 @@ private static final long serialVersionUID = 0L;
     return alternatives_.get(index);
   }
 
+  public static final int CHANNEL_TAG_FIELD_NUMBER = 2;
+  private int channelTag_;
+  /**
+   * <pre>
+   * For multi-channel audio, this is the channel number corresponding to the
+   * recognized result for the audio from that channel.
+   * For audio_channel_count = N, its output values can range from '1' to 'N'.
+   * </pre>
+   *
+   * <code>int32 channel_tag = 2;</code>
+   */
+  public int getChannelTag() {
+    return channelTag_;
+  }
+
+  public static final int LANGUAGE_CODE_FIELD_NUMBER = 5;
+  private volatile java.lang.Object languageCode_;
+  /**
+   * <pre>
+   * Output only. The
+   * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag of the
+   * language in this result. This language code was detected to have the most
+   * likelihood of being spoken in the audio.
+   * </pre>
+   *
+   * <code>string language_code = 5;</code>
+   */
+  public java.lang.String getLanguageCode() {
+    java.lang.Object ref = languageCode_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      languageCode_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Output only. The
+   * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag of the
+   * language in this result. This language code was detected to have the most
+   * likelihood of being spoken in the audio.
+   * </pre>
+   *
+   * <code>string language_code = 5;</code>
+   */
+  public com.google.protobuf.ByteString
+      getLanguageCodeBytes() {
+    java.lang.Object ref = languageCode_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      languageCode_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -170,14 +249,22 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
+  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     for (int i = 0; i < alternatives_.size(); i++) {
       output.writeMessage(1, alternatives_.get(i));
     }
+    if (channelTag_ != 0) {
+      output.writeInt32(2, channelTag_);
+    }
+    if (!getLanguageCodeBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, languageCode_);
+    }
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -186,6 +273,13 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < alternatives_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, alternatives_.get(i));
+    }
+    if (channelTag_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(2, channelTag_);
+    }
+    if (!getLanguageCodeBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, languageCode_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -205,6 +299,10 @@ private static final long serialVersionUID = 0L;
     boolean result = true;
     result = result && getAlternativesList()
         .equals(other.getAlternativesList());
+    result = result && (getChannelTag()
+        == other.getChannelTag());
+    result = result && getLanguageCode()
+        .equals(other.getLanguageCode());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -220,6 +318,10 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + ALTERNATIVES_FIELD_NUMBER;
       hash = (53 * hash) + getAlternativesList().hashCode();
     }
+    hash = (37 * hash) + CHANNEL_TAG_FIELD_NUMBER;
+    hash = (53 * hash) + getChannelTag();
+    hash = (37 * hash) + LANGUAGE_CODE_FIELD_NUMBER;
+    hash = (53 * hash) + getLanguageCode().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -295,6 +397,7 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
+  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
@@ -302,6 +405,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder(com.google.cloud.speech.v1p1beta1.SpeechRecognitionResult prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
@@ -329,6 +433,7 @@ private static final long serialVersionUID = 0L;
       return com.google.cloud.speech.v1p1beta1.SpeechProto.internal_static_google_cloud_speech_v1p1beta1_SpeechRecognitionResult_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.speech.v1p1beta1.SpeechProto.internal_static_google_cloud_speech_v1p1beta1_SpeechRecognitionResult_fieldAccessorTable
@@ -352,6 +457,7 @@ private static final long serialVersionUID = 0L;
         getAlternativesFieldBuilder();
       }
     }
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       if (alternativesBuilder_ == null) {
@@ -360,18 +466,25 @@ private static final long serialVersionUID = 0L;
       } else {
         alternativesBuilder_.clear();
       }
+      channelTag_ = 0;
+
+      languageCode_ = "";
+
       return this;
     }
 
+    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
       return com.google.cloud.speech.v1p1beta1.SpeechProto.internal_static_google_cloud_speech_v1p1beta1_SpeechRecognitionResult_descriptor;
     }
 
+    @java.lang.Override
     public com.google.cloud.speech.v1p1beta1.SpeechRecognitionResult getDefaultInstanceForType() {
       return com.google.cloud.speech.v1p1beta1.SpeechRecognitionResult.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.cloud.speech.v1p1beta1.SpeechRecognitionResult build() {
       com.google.cloud.speech.v1p1beta1.SpeechRecognitionResult result = buildPartial();
       if (!result.isInitialized()) {
@@ -380,9 +493,11 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.cloud.speech.v1p1beta1.SpeechRecognitionResult buildPartial() {
       com.google.cloud.speech.v1p1beta1.SpeechRecognitionResult result = new com.google.cloud.speech.v1p1beta1.SpeechRecognitionResult(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (alternativesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) == 0x00000001)) {
           alternatives_ = java.util.Collections.unmodifiableList(alternatives_);
@@ -392,36 +507,46 @@ private static final long serialVersionUID = 0L;
       } else {
         result.alternatives_ = alternativesBuilder_.build();
       }
+      result.channelTag_ = channelTag_;
+      result.languageCode_ = languageCode_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.speech.v1p1beta1.SpeechRecognitionResult) {
         return mergeFrom((com.google.cloud.speech.v1p1beta1.SpeechRecognitionResult)other);
@@ -459,15 +584,24 @@ private static final long serialVersionUID = 0L;
           }
         }
       }
+      if (other.getChannelTag() != 0) {
+        setChannelTag(other.getChannelTag());
+      }
+      if (!other.getLanguageCode().isEmpty()) {
+        languageCode_ = other.languageCode_;
+        onChanged();
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -852,11 +986,161 @@ private static final long serialVersionUID = 0L;
       }
       return alternativesBuilder_;
     }
+
+    private int channelTag_ ;
+    /**
+     * <pre>
+     * For multi-channel audio, this is the channel number corresponding to the
+     * recognized result for the audio from that channel.
+     * For audio_channel_count = N, its output values can range from '1' to 'N'.
+     * </pre>
+     *
+     * <code>int32 channel_tag = 2;</code>
+     */
+    public int getChannelTag() {
+      return channelTag_;
+    }
+    /**
+     * <pre>
+     * For multi-channel audio, this is the channel number corresponding to the
+     * recognized result for the audio from that channel.
+     * For audio_channel_count = N, its output values can range from '1' to 'N'.
+     * </pre>
+     *
+     * <code>int32 channel_tag = 2;</code>
+     */
+    public Builder setChannelTag(int value) {
+      
+      channelTag_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * For multi-channel audio, this is the channel number corresponding to the
+     * recognized result for the audio from that channel.
+     * For audio_channel_count = N, its output values can range from '1' to 'N'.
+     * </pre>
+     *
+     * <code>int32 channel_tag = 2;</code>
+     */
+    public Builder clearChannelTag() {
+      
+      channelTag_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object languageCode_ = "";
+    /**
+     * <pre>
+     * Output only. The
+     * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag of the
+     * language in this result. This language code was detected to have the most
+     * likelihood of being spoken in the audio.
+     * </pre>
+     *
+     * <code>string language_code = 5;</code>
+     */
+    public java.lang.String getLanguageCode() {
+      java.lang.Object ref = languageCode_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        languageCode_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Output only. The
+     * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag of the
+     * language in this result. This language code was detected to have the most
+     * likelihood of being spoken in the audio.
+     * </pre>
+     *
+     * <code>string language_code = 5;</code>
+     */
+    public com.google.protobuf.ByteString
+        getLanguageCodeBytes() {
+      java.lang.Object ref = languageCode_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        languageCode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Output only. The
+     * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag of the
+     * language in this result. This language code was detected to have the most
+     * likelihood of being spoken in the audio.
+     * </pre>
+     *
+     * <code>string language_code = 5;</code>
+     */
+    public Builder setLanguageCode(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      languageCode_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. The
+     * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag of the
+     * language in this result. This language code was detected to have the most
+     * likelihood of being spoken in the audio.
+     * </pre>
+     *
+     * <code>string language_code = 5;</code>
+     */
+    public Builder clearLanguageCode() {
+      
+      languageCode_ = getDefaultInstance().getLanguageCode();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. The
+     * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag of the
+     * language in this result. This language code was detected to have the most
+     * likelihood of being spoken in the audio.
+     * </pre>
+     *
+     * <code>string language_code = 5;</code>
+     */
+    public Builder setLanguageCodeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      languageCode_ = value;
+      onChanged();
+      return this;
+    }
+    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -878,6 +1162,7 @@ private static final long serialVersionUID = 0L;
 
   private static final com.google.protobuf.Parser<SpeechRecognitionResult>
       PARSER = new com.google.protobuf.AbstractParser<SpeechRecognitionResult>() {
+    @java.lang.Override
     public SpeechRecognitionResult parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -895,6 +1180,7 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.cloud.speech.v1p1beta1.SpeechRecognitionResult getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }

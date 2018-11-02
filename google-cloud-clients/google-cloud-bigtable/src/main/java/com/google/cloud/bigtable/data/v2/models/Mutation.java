@@ -15,6 +15,8 @@
  */
 package com.google.cloud.bigtable.data.v2.models;
 
+import com.google.api.core.BetaApi;
+import com.google.api.core.InternalApi;
 import com.google.bigtable.v2.Mutation.DeleteFromColumn;
 import com.google.bigtable.v2.Mutation.DeleteFromFamily;
 import com.google.bigtable.v2.Mutation.DeleteFromRow;
@@ -36,16 +38,44 @@ import javax.annotation.Nonnull;
  * encapsulate a list of mutations that will to be applied to a single row.
  */
 public final class Mutation implements MutationApi<Mutation>, Serializable {
-  private static final long serialVersionUID = 5893216644683374339L;
+  private static final long serialVersionUID = 5893216644683374340L;
+
+  @InternalApi("Visible for testing")
+  static final int MAX_MUTATIONS = 100_000;
+  @InternalApi("Visible for testing")
+  static final int MAX_BYTE_SIZE = 200 * 1024 * 1024;
+  @InternalApi("Visible for testing")
+  static final long SERVER_SIDE_TIMESTAMP = -1;
+
+  private final boolean allowServersideTimestamp;
 
   private transient ImmutableList.Builder<com.google.bigtable.v2.Mutation> mutations =
       ImmutableList.builder();
 
+  private int numMutations;
+  private long byteSize;
+
+  /**
+   * Creates new instance of Mutation object.
+   */
   public static Mutation create() {
-    return new Mutation();
+    return new Mutation(false);
   }
 
-  private Mutation() {}
+  /**
+   * Creates new instance of Mutation object which allows setCell operation to use server
+   * side timestamp. This is dangerous because mutations will no longer be idempotent, which
+   * might cause multiple duplicate values to be stored in Bigtable. This option should only
+   * be used for advanced usecases with extreme care.
+   */
+  @BetaApi
+  public static Mutation createUnsafe() {
+    return new Mutation(true);
+  }
+
+  private Mutation(boolean allowServersideTimestamp) {
+    this.allowServersideTimestamp = allowServersideTimestamp;
+  }
 
   private void readObject(ObjectInputStream input) throws IOException, ClassNotFoundException {
     input.defaultReadObject();
@@ -93,9 +123,11 @@ public final class Mutation implements MutationApi<Mutation>, Serializable {
     Validations.validateFamily(familyName);
     Preconditions.checkNotNull(qualifier, "qualifier can't be null.");
     Preconditions.checkNotNull(value, "value can't be null.");
-    Preconditions.checkArgument(timestamp != -1, "Serverside timestamps are not supported");
+    if (!allowServersideTimestamp) {
+      Preconditions.checkArgument(timestamp != SERVER_SIDE_TIMESTAMP, "Serverside timestamps are not supported");
+    }
 
-    com.google.bigtable.v2.Mutation mutation =
+    addMutation(
         com.google.bigtable.v2.Mutation.newBuilder()
             .setSetCell(
                 SetCell.newBuilder()
@@ -104,9 +136,8 @@ public final class Mutation implements MutationApi<Mutation>, Serializable {
                     .setTimestampMicros(timestamp)
                     .setValue(value)
                     .build())
-            .build();
+            .build());
 
-    mutations.add(mutation);
     return this;
   }
 
@@ -161,9 +192,8 @@ public final class Mutation implements MutationApi<Mutation>, Serializable {
         throw new IllegalArgumentException("Unknown end bound: " + timestampRange.getEndBound());
     }
 
-    com.google.bigtable.v2.Mutation mutation =
-        com.google.bigtable.v2.Mutation.newBuilder().setDeleteFromColumn(builder.build()).build();
-    mutations.add(mutation);
+    addMutation(
+        com.google.bigtable.v2.Mutation.newBuilder().setDeleteFromColumn(builder.build()).build());
 
     return this;
   }
@@ -172,24 +202,34 @@ public final class Mutation implements MutationApi<Mutation>, Serializable {
   public Mutation deleteFamily(@Nonnull String familyName) {
     Validations.validateFamily(familyName);
 
-    com.google.bigtable.v2.Mutation mutation =
+    addMutation(
         com.google.bigtable.v2.Mutation.newBuilder()
             .setDeleteFromFamily(DeleteFromFamily.newBuilder().setFamilyName(familyName).build())
-            .build();
-    mutations.add(mutation);
+            .build());
 
     return this;
   }
 
   @Override
   public Mutation deleteRow() {
-    com.google.bigtable.v2.Mutation mutation =
+    addMutation(
         com.google.bigtable.v2.Mutation.newBuilder()
             .setDeleteFromRow(DeleteFromRow.getDefaultInstance())
-            .build();
-    mutations.add(mutation);
+            .build());
 
     return this;
+  }
+
+  private void addMutation(com.google.bigtable.v2.Mutation mutation) {
+    Preconditions.checkState(numMutations + 1 <= MAX_MUTATIONS,
+        "Too many mutations per row");
+    Preconditions.checkState(byteSize + mutation.getSerializedSize() <= MAX_BYTE_SIZE,
+        "Byte size of mutations is too large");
+
+    numMutations++;
+    byteSize += mutation.getSerializedSize();
+
+    mutations.add(mutation);
   }
 
   private static ByteString wrapByteString(String str) {

@@ -19,6 +19,7 @@ package com.google.cloud.bigquery;
 import static com.google.common.truth.Truth.assertThat;
 
 import com.google.api.services.bigquery.model.QueryParameterType;
+import java.math.BigDecimal;
 import java.util.List;
 import org.junit.Test;
 
@@ -65,6 +66,15 @@ public class QueryParameterValueTest {
     QueryParameterValue value = QueryParameterValue.float64(1.2f);
     assertThat(value.getValue()).isEqualTo("1.2");
     assertThat(value.getType()).isEqualTo(StandardSQLTypeName.FLOAT64);
+    assertThat(value.getArrayType()).isNull();
+    assertThat(value.getArrayValues()).isNull();
+  }
+
+  @Test
+  public void testNumeric() {
+    QueryParameterValue value = QueryParameterValue.numeric(new BigDecimal("123.456"));
+    assertThat(value.getValue()).isEqualTo("123.456");
+    assertThat(value.getType()).isEqualTo(StandardSQLTypeName.NUMERIC);
     assertThat(value.getArrayType()).isNull();
     assertThat(value.getArrayValues()).isNull();
   }
@@ -130,6 +140,16 @@ public class QueryParameterValueTest {
     assertThat(value.getType()).isEqualTo(StandardSQLTypeName.ARRAY);
     assertThat(value.getArrayType()).isEqualTo(StandardSQLTypeName.FLOAT64);
     assertArrayDataEquals(new String[]{"2.6", "5.4"}, StandardSQLTypeName.FLOAT64, value.getArrayValues());
+  }
+
+  @Test
+  public void testNumericArray() {
+    QueryParameterValue value = QueryParameterValue.array(
+        new BigDecimal[] {new BigDecimal("3.14"), new BigDecimal("1.59")}, BigDecimal.class);
+    assertThat(value.getValue()).isNull();
+    assertThat(value.getType()).isEqualTo(StandardSQLTypeName.ARRAY);
+    assertThat(value.getArrayType()).isEqualTo(StandardSQLTypeName.NUMERIC);
+    assertArrayDataEquals(new String[]{"3.14", "1.59"}, StandardSQLTypeName.NUMERIC, value.getArrayValues());
   }
 
   @Test

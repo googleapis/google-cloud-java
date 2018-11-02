@@ -51,7 +51,8 @@ import javax.annotation.Generated;
  * conversation and match user input to predefined intents and actions.
  *
  * <p>You can create an agent using both Dialogflow Standard Edition and Dialogflow Enterprise
- * Edition. For details, see [Dialogflow Editions](/dialogflow-enterprise/docs/editions).
+ * Edition. For details, see [Dialogflow
+ * Editions](https://cloud.google.com/dialogflow-enterprise/docs/editions).
  *
  * <p>You can save your agent for backup or versioning by exporting the agent by using the
  * [ExportAgent][google.cloud.dialogflow.v2beta1.Agents.ExportAgent] method. You can import a saved
@@ -185,6 +186,8 @@ public class AgentsClient implements BackgroundResource {
    * Returns the OperationsClient that can be used to query the status of a long-running operation
    * returned by another API method call.
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationsClient getOperationsClient() {
     return operationsClient;
   }
@@ -255,7 +258,7 @@ public class AgentsClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final Agent getAgent(GetAgentRequest request) {
+  public final Agent getAgent(GetAgentRequest request) {
     return getAgentCallable().call(request);
   }
 
@@ -458,6 +461,8 @@ public class AgentsClient implements BackgroundResource {
    *     `projects/&lt;Project ID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, Struct> trainAgentAsync(ProjectName parent) {
 
     TrainAgentRequest request =
@@ -485,6 +490,8 @@ public class AgentsClient implements BackgroundResource {
    *     `projects/&lt;Project ID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, Struct> trainAgentAsync(String parent) {
 
     TrainAgentRequest request = TrainAgentRequest.newBuilder().setParent(parent).build();
@@ -513,7 +520,9 @@ public class AgentsClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final OperationFuture<Empty, Struct> trainAgentAsync(TrainAgentRequest request) {
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Empty, Struct> trainAgentAsync(TrainAgentRequest request) {
     return trainAgentOperationCallable().futureCall(request);
   }
 
@@ -538,6 +547,7 @@ public class AgentsClient implements BackgroundResource {
    * }
    * </code></pre>
    */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<TrainAgentRequest, Empty, Struct> trainAgentOperationCallable() {
     return stub.trainAgentOperationCallable();
   }
@@ -588,6 +598,8 @@ public class AgentsClient implements BackgroundResource {
    *     `projects/&lt;Project ID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<ExportAgentResponse, Struct> exportAgentAsync(ProjectName parent) {
 
     ExportAgentRequest request =
@@ -618,6 +630,8 @@ public class AgentsClient implements BackgroundResource {
    *     `projects/&lt;Project ID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<ExportAgentResponse, Struct> exportAgentAsync(String parent) {
 
     ExportAgentRequest request = ExportAgentRequest.newBuilder().setParent(parent).build();
@@ -647,6 +661,8 @@ public class AgentsClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<ExportAgentResponse, Struct> exportAgentAsync(
       ExportAgentRequest request) {
     return exportAgentOperationCallable().futureCall(request);
@@ -674,6 +690,7 @@ public class AgentsClient implements BackgroundResource {
    * }
    * </code></pre>
    */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<ExportAgentRequest, ExportAgentResponse, Struct>
       exportAgentOperationCallable() {
     return stub.exportAgentOperationCallable();
@@ -730,6 +747,8 @@ public class AgentsClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, Struct> importAgentAsync(ImportAgentRequest request) {
     return importAgentOperationCallable().futureCall(request);
   }
@@ -758,6 +777,7 @@ public class AgentsClient implements BackgroundResource {
    * }
    * </code></pre>
    */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<ImportAgentRequest, Empty, Struct> importAgentOperationCallable() {
     return stub.importAgentOperationCallable();
   }
@@ -815,6 +835,8 @@ public class AgentsClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, Struct> restoreAgentAsync(RestoreAgentRequest request) {
     return restoreAgentOperationCallable().futureCall(request);
   }
@@ -843,6 +865,7 @@ public class AgentsClient implements BackgroundResource {
    * }
    * </code></pre>
    */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<RestoreAgentRequest, Empty, Struct>
       restoreAgentOperationCallable() {
     return stub.restoreAgentOperationCallable();

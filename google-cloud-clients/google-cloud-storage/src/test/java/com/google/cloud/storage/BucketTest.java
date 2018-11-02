@@ -35,6 +35,9 @@ import com.google.cloud.storage.Acl.Role;
 import com.google.cloud.storage.Acl.User;
 import com.google.cloud.storage.BucketInfo.AgeDeleteRule;
 import com.google.cloud.storage.BucketInfo.DeleteRule;
+import com.google.cloud.storage.BucketInfo.LifecycleRule;
+import com.google.cloud.storage.BucketInfo.LifecycleRule.LifecycleAction;
+import com.google.cloud.storage.BucketInfo.LifecycleRule.LifecycleCondition;
 import com.google.common.base.Function;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -73,14 +76,22 @@ public class BucketTest {
       Collections.singletonList(Acl.of(User.ofAllAuthenticatedUsers(), WRITER));
   private static final List<? extends DeleteRule> DELETE_RULES =
       Collections.singletonList(new AgeDeleteRule(5));
+  private static final List<? extends BucketInfo.LifecycleRule> LIFECYCLE_RULES =
+          Collections.singletonList(new LifecycleRule(LifecycleAction.newDeleteAction(),
+                  LifecycleCondition.newBuilder().setAge(5).build()));
   private static final String INDEX_PAGE = "index.html";
   private static final String NOT_FOUND_PAGE = "error.html";
   private static final String LOCATION = "ASIA";
   private static final StorageClass STORAGE_CLASS = StorageClass.STANDARD;
+  private static final String DEFAULT_KMS_KEY_NAME = "projects/p/locations/kr-loc/keyRings/kr/cryptoKeys/key";
   private static final Boolean VERSIONING_ENABLED = true;
   private static final Map<String, String> BUCKET_LABELS = ImmutableMap.of("label1", "value1");
   private static final Boolean REQUESTER_PAYS = true;
   private static final String USER_PROJECT = "test-project";
+  private static final Boolean DEFAULT_EVENT_BASED_HOLD = true;
+  private static final Long RETENTION_EFFECTIVE_TIME = 10L;
+  private static final Long RETENTION_PERIOD = 10L;
+  private static final Boolean RETENTION_POLICY_IS_LOCKED = false;
   private static final BucketInfo FULL_BUCKET_INFO = BucketInfo.newBuilder("b")
       .setAcl(ACLS)
       .setEtag(ETAG)
@@ -92,6 +103,7 @@ public class BucketTest {
       .setCreateTime(CREATE_TIME)
       .setDefaultAcl(DEFAULT_ACL)
       .setDeleteRules(DELETE_RULES)
+      .setLifecycleRules(LIFECYCLE_RULES)
       .setIndexPage(INDEX_PAGE)
       .setNotFoundPage(NOT_FOUND_PAGE)
       .setLocation(LOCATION)
@@ -99,6 +111,11 @@ public class BucketTest {
       .setVersioningEnabled(VERSIONING_ENABLED)
       .setLabels(BUCKET_LABELS)
       .setRequesterPays(REQUESTER_PAYS)
+      .setDefaultKmsKeyName(DEFAULT_KMS_KEY_NAME)
+      .setDefaultEventBasedHold(DEFAULT_EVENT_BASED_HOLD)
+      .setRetentionEffectiveTime(RETENTION_EFFECTIVE_TIME)
+      .setRetentionPeriod(RETENTION_PERIOD)
+      .setRetentionPolicyIsLocked(RETENTION_POLICY_IS_LOCKED)
       .build();
   private static final BucketInfo BUCKET_INFO =
       BucketInfo.newBuilder("b").setMetageneration(42L).build();
@@ -361,6 +378,22 @@ public class BucketTest {
     initializeBucket();
     Blob blob =
         bucket.create("n", content, CONTENT_TYPE, Bucket.BlobTargetOption.encryptionKey(KEY));
+    assertEquals(expectedBlob, blob);
+  }
+
+  @Test
+  public void testCreateWithKmsKeyName() throws Exception {
+    initializeExpectedBucket(5);
+    BlobInfo info = BlobInfo.newBuilder(BlobId.of("b", "n")).setContentType(CONTENT_TYPE).build();
+    Blob expectedBlob = new Blob(serviceMockReturnsOptions, new BlobInfo.BuilderImpl(info));
+    byte[] content = {0xD, 0xE, 0xA, 0xD};
+    expect(storage.getOptions()).andReturn(mockOptions);
+    expect(storage.create(info, content, Storage.BlobTargetOption.kmsKeyName(DEFAULT_KMS_KEY_NAME)))
+            .andReturn(expectedBlob);
+    replay(storage);
+    initializeBucket();
+    Blob blob =
+            bucket.create("n", content, CONTENT_TYPE, Bucket.BlobTargetOption.kmsKeyName(DEFAULT_KMS_KEY_NAME));
     assertEquals(expectedBlob, blob);
   }
 
@@ -642,6 +675,23 @@ public class BucketTest {
   }
 
   @Test
+  public void testLockRetention() throws Exception {
+    initializeExpectedBucket(5);
+    Bucket expectedRetentionLockedBucket = expectedBucket.toBuilder().setRetentionPeriod(RETENTION_PERIOD)
+        .setRetentionPolicyIsLocked(true).build();
+    expect(storage.getOptions()).andReturn(mockOptions).times(2);
+    expect(storage.lockRetentionPolicy(expectedRetentionLockedBucket, Storage.BucketTargetOption.metagenerationMatch(),
+        Storage.BucketTargetOption.userProject(USER_PROJECT))).andReturn(expectedRetentionLockedBucket);
+    replay(storage);
+    initializeBucket();
+    Bucket lockedRetentionPolicyBucket = new Bucket(storage, new BucketInfo.BuilderImpl(expectedRetentionLockedBucket));
+    Bucket actualRetentionLockedBucket = lockedRetentionPolicyBucket
+        .lockRetentionPolicy(Storage.BucketTargetOption.metagenerationMatch(),
+            Storage.BucketTargetOption.userProject(USER_PROJECT));
+    assertEquals(expectedRetentionLockedBucket, actualRetentionLockedBucket);
+  }
+
+  @Test
   public void testToBuilder() {
     expect(storage.getOptions()).andReturn(mockOptions).times(4);
     replay(storage);
@@ -668,6 +718,7 @@ public class BucketTest {
         .setCreateTime(CREATE_TIME)
         .setDefaultAcl(DEFAULT_ACL)
         .setDeleteRules(DELETE_RULES)
+        .setLifecycleRules(LIFECYCLE_RULES)
         .setIndexPage(INDEX_PAGE)
         .setNotFoundPage(NOT_FOUND_PAGE)
         .setLocation(LOCATION)
@@ -675,6 +726,11 @@ public class BucketTest {
         .setVersioningEnabled(VERSIONING_ENABLED)
         .setLabels(BUCKET_LABELS)
         .setRequesterPays(REQUESTER_PAYS)
+        .setDefaultKmsKeyName(DEFAULT_KMS_KEY_NAME)
+        .setDefaultEventBasedHold(DEFAULT_EVENT_BASED_HOLD)
+        .setRetentionEffectiveTime(RETENTION_EFFECTIVE_TIME)
+        .setRetentionPeriod(RETENTION_PERIOD)
+        .setRetentionPolicyIsLocked(RETENTION_POLICY_IS_LOCKED)
         .build();
     assertEquals("b", bucket.getName());
     assertEquals(ACLS, bucket.getAcl());
@@ -687,6 +743,7 @@ public class BucketTest {
     assertEquals(CORS, bucket.getCors());
     assertEquals(DEFAULT_ACL, bucket.getDefaultAcl());
     assertEquals(DELETE_RULES, bucket.getDeleteRules());
+    assertEquals(LIFECYCLE_RULES, bucket.getLifecycleRules());
     assertEquals(INDEX_PAGE, bucket.getIndexPage());
     assertEquals(NOT_FOUND_PAGE, bucket.getNotFoundPage());
     assertEquals(LOCATION, bucket.getLocation());
@@ -694,6 +751,11 @@ public class BucketTest {
     assertEquals(VERSIONING_ENABLED, bucket.versioningEnabled());
     assertEquals(BUCKET_LABELS, bucket.getLabels());
     assertEquals(REQUESTER_PAYS, bucket.requesterPays());
+    assertEquals(DEFAULT_KMS_KEY_NAME, bucket.getDefaultKmsKeyName());
+    assertEquals(DEFAULT_EVENT_BASED_HOLD, bucket.getDefaultEventBasedHold());
+    assertEquals(RETENTION_EFFECTIVE_TIME, bucket.getRetentionEffectiveTime());
+    assertEquals(RETENTION_PERIOD, bucket.getRetentionPeriod());
+    assertEquals(RETENTION_POLICY_IS_LOCKED, bucket.retentionPolicyIsLocked());
     assertEquals(storage.getOptions(), bucket.getStorage().getOptions());
   }
 }

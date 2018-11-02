@@ -78,9 +78,12 @@ public final class Timestamp implements Comparable<Timestamp>, Serializable {
    * @throws IllegalArgumentException if the timestamp is outside the representable range
    */
   public static Timestamp ofTimeMicroseconds(long microseconds) {
-    long seconds = TimeUnit.MICROSECONDS.toSeconds(microseconds);
-    int nanos =
-        (int) TimeUnit.MICROSECONDS.toNanos(microseconds - TimeUnit.SECONDS.toMicros(seconds));
+    long seconds = microseconds / 1_000_000;
+    int nanos = (int)(microseconds % 1_000_000 * 1000);
+    if (nanos < 0) {
+      seconds--;
+      nanos += 1_000_000_000;
+    }
     checkArgument(
         Timestamps.isValid(seconds, nanos), "timestamp out of range: %s, %s", seconds, nanos);
     return new Timestamp(seconds, nanos);
@@ -128,6 +131,18 @@ public final class Timestamp implements Comparable<Timestamp>, Serializable {
     java.sql.Timestamp ts = new java.sql.Timestamp(seconds * 1000);
     ts.setNanos(nanos);
     return ts;
+  }
+
+  /**
+   * Returns a new {@code java.util.Date} corresponding to this {@code timestamp}. Any
+   * sub-millisecond precision will be stripped.
+   *
+   * @return An approximate {@code java.util.Date} representation of this {@code timestamp}.
+   */
+  public Date toDate() {
+    long secondsInMilliseconds = TimeUnit.SECONDS.toMillis(this.seconds);
+    long nanosInMilliseconds = TimeUnit.NANOSECONDS.toMillis(this.nanos);
+    return new Date(secondsInMilliseconds + nanosInMilliseconds);
   }
 
   @Override

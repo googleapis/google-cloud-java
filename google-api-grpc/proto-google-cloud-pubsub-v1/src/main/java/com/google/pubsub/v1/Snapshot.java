@@ -5,7 +5,10 @@ package com.google.pubsub.v1;
 
 /**
  * <pre>
- * A snapshot resource.
+ * A snapshot resource.&lt;br&gt;&lt;br&gt;
+ * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
+ * changed in backward-incompatible ways and is not recommended for production
+ * use. It is not subject to any SLA or deprecation policy.
  * </pre>
  *
  * Protobuf type {@code google.pubsub.v1.Snapshot}
@@ -48,13 +51,6 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
           case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
@@ -93,6 +89,13 @@ private static final long serialVersionUID = 0L;
                 labels__.getKey(), labels__.getValue());
             break;
           }
+          default: {
+            if (!parseUnknownFieldProto3(
+                input, unknownFields, extensionRegistry, tag)) {
+              done = true;
+            }
+            break;
+          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -111,6 +114,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
   protected com.google.protobuf.MapField internalGetMapField(
       int number) {
     switch (number) {
@@ -121,6 +125,7 @@ private static final long serialVersionUID = 0L;
             "Invalid map field number: " + number);
     }
   }
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.pubsub.v1.PubsubProto.internal_static_google_pubsub_v1_Snapshot_fieldAccessorTable
@@ -225,7 +230,8 @@ private static final long serialVersionUID = 0L;
    * For example, consider a subscription whose oldest unacked message is 3 days
    * old. If a snapshot is created from this subscription, the snapshot -- which
    * will always capture this 3-day-old backlog as long as the snapshot
-   * exists -- will expire in 4 days.
+   * exists -- will expire in 4 days. The service will refuse to create a
+   * snapshot that would expire in less than 1 hour after creation.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 3;</code>
@@ -243,7 +249,8 @@ private static final long serialVersionUID = 0L;
    * For example, consider a subscription whose oldest unacked message is 3 days
    * old. If a snapshot is created from this subscription, the snapshot -- which
    * will always capture this 3-day-old backlog as long as the snapshot
-   * exists -- will expire in 4 days.
+   * exists -- will expire in 4 days. The service will refuse to create a
+   * snapshot that would expire in less than 1 hour after creation.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 3;</code>
@@ -261,7 +268,8 @@ private static final long serialVersionUID = 0L;
    * For example, consider a subscription whose oldest unacked message is 3 days
    * old. If a snapshot is created from this subscription, the snapshot -- which
    * will always capture this 3-day-old backlog as long as the snapshot
-   * exists -- will expire in 4 days.
+   * exists -- will expire in 4 days. The service will refuse to create a
+   * snapshot that would expire in less than 1 hour after creation.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 3;</code>
@@ -298,7 +306,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * User labels.
+   * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 4;</code>
@@ -318,7 +326,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * User labels.
+   * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 4;</code>
@@ -329,7 +337,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * User labels.
+   * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 4;</code>
@@ -345,7 +353,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * User labels.
+   * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 4;</code>
@@ -363,6 +371,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -372,6 +381,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
+  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (!getNameBytes().isEmpty()) {
@@ -392,6 +402,7 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -542,6 +553,7 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
+  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
@@ -549,6 +561,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder(com.google.pubsub.v1.Snapshot prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
@@ -562,7 +575,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * A snapshot resource.
+   * A snapshot resource.&lt;br&gt;&lt;br&gt;
+   * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
+   * changed in backward-incompatible ways and is not recommended for production
+   * use. It is not subject to any SLA or deprecation policy.
    * </pre>
    *
    * Protobuf type {@code google.pubsub.v1.Snapshot}
@@ -598,6 +614,7 @@ private static final long serialVersionUID = 0L;
               "Invalid map field number: " + number);
       }
     }
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.pubsub.v1.PubsubProto.internal_static_google_pubsub_v1_Snapshot_fieldAccessorTable
@@ -620,6 +637,7 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
       }
     }
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       name_ = "";
@@ -636,15 +654,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
       return com.google.pubsub.v1.PubsubProto.internal_static_google_pubsub_v1_Snapshot_descriptor;
     }
 
+    @java.lang.Override
     public com.google.pubsub.v1.Snapshot getDefaultInstanceForType() {
       return com.google.pubsub.v1.Snapshot.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.pubsub.v1.Snapshot build() {
       com.google.pubsub.v1.Snapshot result = buildPartial();
       if (!result.isInitialized()) {
@@ -653,6 +674,7 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.pubsub.v1.Snapshot buildPartial() {
       com.google.pubsub.v1.Snapshot result = new com.google.pubsub.v1.Snapshot(this);
       int from_bitField0_ = bitField0_;
@@ -671,32 +693,39 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.pubsub.v1.Snapshot) {
         return mergeFrom((com.google.pubsub.v1.Snapshot)other);
@@ -726,10 +755,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -940,7 +971,8 @@ private static final long serialVersionUID = 0L;
      * For example, consider a subscription whose oldest unacked message is 3 days
      * old. If a snapshot is created from this subscription, the snapshot -- which
      * will always capture this 3-day-old backlog as long as the snapshot
-     * exists -- will expire in 4 days.
+     * exists -- will expire in 4 days. The service will refuse to create a
+     * snapshot that would expire in less than 1 hour after creation.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expire_time = 3;</code>
@@ -958,7 +990,8 @@ private static final long serialVersionUID = 0L;
      * For example, consider a subscription whose oldest unacked message is 3 days
      * old. If a snapshot is created from this subscription, the snapshot -- which
      * will always capture this 3-day-old backlog as long as the snapshot
-     * exists -- will expire in 4 days.
+     * exists -- will expire in 4 days. The service will refuse to create a
+     * snapshot that would expire in less than 1 hour after creation.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expire_time = 3;</code>
@@ -980,7 +1013,8 @@ private static final long serialVersionUID = 0L;
      * For example, consider a subscription whose oldest unacked message is 3 days
      * old. If a snapshot is created from this subscription, the snapshot -- which
      * will always capture this 3-day-old backlog as long as the snapshot
-     * exists -- will expire in 4 days.
+     * exists -- will expire in 4 days. The service will refuse to create a
+     * snapshot that would expire in less than 1 hour after creation.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expire_time = 3;</code>
@@ -1008,7 +1042,8 @@ private static final long serialVersionUID = 0L;
      * For example, consider a subscription whose oldest unacked message is 3 days
      * old. If a snapshot is created from this subscription, the snapshot -- which
      * will always capture this 3-day-old backlog as long as the snapshot
-     * exists -- will expire in 4 days.
+     * exists -- will expire in 4 days. The service will refuse to create a
+     * snapshot that would expire in less than 1 hour after creation.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expire_time = 3;</code>
@@ -1034,7 +1069,8 @@ private static final long serialVersionUID = 0L;
      * For example, consider a subscription whose oldest unacked message is 3 days
      * old. If a snapshot is created from this subscription, the snapshot -- which
      * will always capture this 3-day-old backlog as long as the snapshot
-     * exists -- will expire in 4 days.
+     * exists -- will expire in 4 days. The service will refuse to create a
+     * snapshot that would expire in less than 1 hour after creation.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expire_time = 3;</code>
@@ -1064,7 +1100,8 @@ private static final long serialVersionUID = 0L;
      * For example, consider a subscription whose oldest unacked message is 3 days
      * old. If a snapshot is created from this subscription, the snapshot -- which
      * will always capture this 3-day-old backlog as long as the snapshot
-     * exists -- will expire in 4 days.
+     * exists -- will expire in 4 days. The service will refuse to create a
+     * snapshot that would expire in less than 1 hour after creation.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expire_time = 3;</code>
@@ -1090,7 +1127,8 @@ private static final long serialVersionUID = 0L;
      * For example, consider a subscription whose oldest unacked message is 3 days
      * old. If a snapshot is created from this subscription, the snapshot -- which
      * will always capture this 3-day-old backlog as long as the snapshot
-     * exists -- will expire in 4 days.
+     * exists -- will expire in 4 days. The service will refuse to create a
+     * snapshot that would expire in less than 1 hour after creation.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expire_time = 3;</code>
@@ -1110,7 +1148,8 @@ private static final long serialVersionUID = 0L;
      * For example, consider a subscription whose oldest unacked message is 3 days
      * old. If a snapshot is created from this subscription, the snapshot -- which
      * will always capture this 3-day-old backlog as long as the snapshot
-     * exists -- will expire in 4 days.
+     * exists -- will expire in 4 days. The service will refuse to create a
+     * snapshot that would expire in less than 1 hour after creation.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expire_time = 3;</code>
@@ -1133,7 +1172,8 @@ private static final long serialVersionUID = 0L;
      * For example, consider a subscription whose oldest unacked message is 3 days
      * old. If a snapshot is created from this subscription, the snapshot -- which
      * will always capture this 3-day-old backlog as long as the snapshot
-     * exists -- will expire in 4 days.
+     * exists -- will expire in 4 days. The service will refuse to create a
+     * snapshot that would expire in less than 1 hour after creation.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expire_time = 3;</code>
@@ -1180,7 +1220,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * User labels.
+     * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 4;</code>
@@ -1200,7 +1240,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * User labels.
+     * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 4;</code>
@@ -1211,7 +1251,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * User labels.
+     * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 4;</code>
@@ -1227,7 +1267,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * User labels.
+     * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 4;</code>
@@ -1251,7 +1291,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * User labels.
+     * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 4;</code>
@@ -1274,7 +1314,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * User labels.
+     * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 4;</code>
@@ -1290,7 +1330,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * User labels.
+     * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 4;</code>
@@ -1302,11 +1342,13 @@ private static final long serialVersionUID = 0L;
           .putAll(values);
       return this;
     }
+    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -1328,6 +1370,7 @@ private static final long serialVersionUID = 0L;
 
   private static final com.google.protobuf.Parser<Snapshot>
       PARSER = new com.google.protobuf.AbstractParser<Snapshot>() {
+    @java.lang.Override
     public Snapshot parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1345,6 +1388,7 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.pubsub.v1.Snapshot getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }

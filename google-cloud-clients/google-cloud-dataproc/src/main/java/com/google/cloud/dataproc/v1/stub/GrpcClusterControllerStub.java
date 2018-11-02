@@ -243,10 +243,12 @@ public class GrpcClusterControllerStub extends ClusterControllerStub {
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public GrpcOperationsStub getOperationsStub() {
     return operationsStub;
   }
 
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<CreateClusterRequest, Cluster, ClusterOperationMetadata>
       createClusterOperationCallable() {
     return createClusterOperationCallable;
@@ -256,6 +258,7 @@ public class GrpcClusterControllerStub extends ClusterControllerStub {
     return createClusterCallable;
   }
 
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<UpdateClusterRequest, Cluster, ClusterOperationMetadata>
       updateClusterOperationCallable() {
     return updateClusterOperationCallable;
@@ -265,6 +268,7 @@ public class GrpcClusterControllerStub extends ClusterControllerStub {
     return updateClusterCallable;
   }
 
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<DeleteClusterRequest, Empty, ClusterOperationMetadata>
       deleteClusterOperationCallable() {
     return deleteClusterOperationCallable;
@@ -286,6 +290,7 @@ public class GrpcClusterControllerStub extends ClusterControllerStub {
     return listClustersCallable;
   }
 
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<DiagnoseClusterRequest, Empty, DiagnoseClusterResults>
       diagnoseClusterOperationCallable() {
     return diagnoseClusterOperationCallable;

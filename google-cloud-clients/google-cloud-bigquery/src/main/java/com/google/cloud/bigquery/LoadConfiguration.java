@@ -119,6 +119,16 @@ public interface LoadConfiguration {
      */
     Builder setAutodetect(Boolean autodetect);
 
+    /**
+     * Sets the time partitioning specification for the destination table.
+     */
+    Builder setTimePartitioning(TimePartitioning timePartitioning);
+
+    /**
+     * Sets the clustering specification for the destination table.
+     */
+    Builder setClustering(Clustering clustering);
+
     LoadConfiguration build();
   }
 
@@ -210,6 +220,16 @@ public interface LoadConfiguration {
    * [Experimental] Returns whether automatic inference of the options and schema for CSV and JSON sources is set.
    */
   Boolean getAutodetect();
+
+  /**
+   * Returns the time partitioning specification defined for the destination table.
+   */
+  TimePartitioning getTimePartitioning();
+
+  /**
+   * Returns the clustering specification for the definition table.
+   */
+  Clustering getClustering();
 
   /**
    * Returns a builder for the load configuration object.

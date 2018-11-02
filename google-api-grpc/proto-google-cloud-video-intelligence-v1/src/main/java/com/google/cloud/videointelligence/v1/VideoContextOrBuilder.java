@@ -10,8 +10,8 @@ public interface VideoContextOrBuilder extends
   /**
    * <pre>
    * Video segments to annotate. The segments may overlap and are not required
-   * to be contiguous or span the whole video. If unspecified, each video
-   * is treated as a single segment.
+   * to be contiguous or span the whole video. If unspecified, each video is
+   * treated as a single segment.
    * </pre>
    *
    * <code>repeated .google.cloud.videointelligence.v1.VideoSegment segments = 1;</code>
@@ -21,8 +21,8 @@ public interface VideoContextOrBuilder extends
   /**
    * <pre>
    * Video segments to annotate. The segments may overlap and are not required
-   * to be contiguous or span the whole video. If unspecified, each video
-   * is treated as a single segment.
+   * to be contiguous or span the whole video. If unspecified, each video is
+   * treated as a single segment.
    * </pre>
    *
    * <code>repeated .google.cloud.videointelligence.v1.VideoSegment segments = 1;</code>
@@ -31,8 +31,8 @@ public interface VideoContextOrBuilder extends
   /**
    * <pre>
    * Video segments to annotate. The segments may overlap and are not required
-   * to be contiguous or span the whole video. If unspecified, each video
-   * is treated as a single segment.
+   * to be contiguous or span the whole video. If unspecified, each video is
+   * treated as a single segment.
    * </pre>
    *
    * <code>repeated .google.cloud.videointelligence.v1.VideoSegment segments = 1;</code>
@@ -41,8 +41,8 @@ public interface VideoContextOrBuilder extends
   /**
    * <pre>
    * Video segments to annotate. The segments may overlap and are not required
-   * to be contiguous or span the whole video. If unspecified, each video
-   * is treated as a single segment.
+   * to be contiguous or span the whole video. If unspecified, each video is
+   * treated as a single segment.
    * </pre>
    *
    * <code>repeated .google.cloud.videointelligence.v1.VideoSegment segments = 1;</code>
@@ -52,8 +52,8 @@ public interface VideoContextOrBuilder extends
   /**
    * <pre>
    * Video segments to annotate. The segments may overlap and are not required
-   * to be contiguous or span the whole video. If unspecified, each video
-   * is treated as a single segment.
+   * to be contiguous or span the whole video. If unspecified, each video is
+   * treated as a single segment.
    * </pre>
    *
    * <code>repeated .google.cloud.videointelligence.v1.VideoSegment segments = 1;</code>
@@ -160,4 +160,29 @@ public interface VideoContextOrBuilder extends
    * <code>.google.cloud.videointelligence.v1.FaceDetectionConfig face_detection_config = 5;</code>
    */
   com.google.cloud.videointelligence.v1.FaceDetectionConfigOrBuilder getFaceDetectionConfigOrBuilder();
+
+  /**
+   * <pre>
+   * Config for SPEECH_TRANSCRIPTION.
+   * </pre>
+   *
+   * <code>.google.cloud.videointelligence.v1.SpeechTranscriptionConfig speech_transcription_config = 6;</code>
+   */
+  boolean hasSpeechTranscriptionConfig();
+  /**
+   * <pre>
+   * Config for SPEECH_TRANSCRIPTION.
+   * </pre>
+   *
+   * <code>.google.cloud.videointelligence.v1.SpeechTranscriptionConfig speech_transcription_config = 6;</code>
+   */
+  com.google.cloud.videointelligence.v1.SpeechTranscriptionConfig getSpeechTranscriptionConfig();
+  /**
+   * <pre>
+   * Config for SPEECH_TRANSCRIPTION.
+   * </pre>
+   *
+   * <code>.google.cloud.videointelligence.v1.SpeechTranscriptionConfig speech_transcription_config = 6;</code>
+   */
+  com.google.cloud.videointelligence.v1.SpeechTranscriptionConfigOrBuilder getSpeechTranscriptionConfigOrBuilder();
 }

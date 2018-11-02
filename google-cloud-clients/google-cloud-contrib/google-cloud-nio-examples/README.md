@@ -6,7 +6,7 @@ application that uses Java NIO without the need to recompile.
 
 Note that whenever possible, you instead want to recompile the app and use the normal
 dependency mechanism to add a dependency to google-cloud-nio. You can see examples of
-this in the [google-cloud-examples](../../google-cloud-examples) project.
+this in the [google-cloud-examples](../../../google-cloud-examples) project.
 
 To run this example:
 
@@ -23,12 +23,12 @@ To run this example:
 
 [//]: # ({x-version-update-start:google-cloud-nio:current})
     ```
-    java -cp google-cloud-contrib/google-cloud-nio/target/google-cloud-nio-0.47.1-alpha-SNAPSHOT.jar:google-cloud-contrib/google-cloud-nio-examples/target/google-cloud-nio-examples-0.47.1-alpha-SNAPSHOT.jar com.google.cloud.nio.examples.ListFilesystems
+    java -cp google-cloud-clients/google-cloud-contrib/google-cloud-nio/target/google-cloud-nio-0.69.1-alpha-SNAPSHOT.jar:google-cloud-clients/google-cloud-contrib/google-cloud-nio-examples/target/google-cloud-nio-examples-0.69.1-alpha-SNAPSHOT.jar com.google.cloud.nio.examples.ListFilesystems
     ```
 
     Notice that it lists Google Cloud Storage, which it wouldn't if you ran it without the NIO jar:
     ```
-    java -cp google-cloud-contrib/google-cloud-nio-examples/target/google-cloud-nio-examples-0.47.1-alpha-SNAPSHOT.jar com.google.cloud.nio.examples.ListFilesystems
+    java -cp google-cloud-clients/google-cloud-contrib/google-cloud-nio-examples/target/google-cloud-nio-examples-0.69.1-alpha-SNAPSHOT.jar com.google.cloud.nio.examples.ListFilesystems
     ```
 [//]: # ({x-version-update-end})
 

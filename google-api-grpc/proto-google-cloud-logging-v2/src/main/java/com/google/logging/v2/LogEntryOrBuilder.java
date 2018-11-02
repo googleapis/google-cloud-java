@@ -61,7 +61,7 @@ public interface LogEntryOrBuilder extends
 
   /**
    * <pre>
-   * Required. The monitored resource associated with this log entry.
+   * Required. The primary monitored resource associated with this log entry.
    * Example: a log entry that reports a database error would be
    * associated with the monitored resource designating the particular
    * database that reported the error.
@@ -72,7 +72,7 @@ public interface LogEntryOrBuilder extends
   boolean hasResource();
   /**
    * <pre>
-   * Required. The monitored resource associated with this log entry.
+   * Required. The primary monitored resource associated with this log entry.
    * Example: a log entry that reports a database error would be
    * associated with the monitored resource designating the particular
    * database that reported the error.
@@ -83,7 +83,7 @@ public interface LogEntryOrBuilder extends
   com.google.api.MonitoredResource getResource();
   /**
    * <pre>
-   * Required. The monitored resource associated with this log entry.
+   * Required. The primary monitored resource associated with this log entry.
    * Example: a log entry that reports a database error would be
    * associated with the monitored resource designating the particular
    * database that reported the error.
@@ -175,11 +175,15 @@ public interface LogEntryOrBuilder extends
    * Optional. The time the event described by the log entry occurred.
    * This time is used to compute the log entry's age and to enforce
    * the logs retention period. If this field is omitted in a new log
-   * entry, then Stackdriver Logging assigns it the current time.
+   * entry, then Logging assigns it the current time.
+   * Timestamps have nanosecond accuracy, but trailing zeros in the fractional
+   * seconds might be omitted when the timestamp is displayed.
    * Incoming log entries should have timestamps that are no more than
-   * the [logs retention period](/logging/quota-policy) in the past,
-   * and no more than 24 hours in the future.
-   * See the `entries.write` API method for more information.
+   * the [logs retention period](/logging/quotas) in the past,
+   * and no more than 24 hours in the future. Log entries outside those time
+   * boundaries will not be available when calling `entries.list`, but
+   * those log entries can still be exported with
+   * [LogSinks](/logging/docs/api/tasks/exporting-logs).
    * </pre>
    *
    * <code>.google.protobuf.Timestamp timestamp = 9;</code>
@@ -190,11 +194,15 @@ public interface LogEntryOrBuilder extends
    * Optional. The time the event described by the log entry occurred.
    * This time is used to compute the log entry's age and to enforce
    * the logs retention period. If this field is omitted in a new log
-   * entry, then Stackdriver Logging assigns it the current time.
+   * entry, then Logging assigns it the current time.
+   * Timestamps have nanosecond accuracy, but trailing zeros in the fractional
+   * seconds might be omitted when the timestamp is displayed.
    * Incoming log entries should have timestamps that are no more than
-   * the [logs retention period](/logging/quota-policy) in the past,
-   * and no more than 24 hours in the future.
-   * See the `entries.write` API method for more information.
+   * the [logs retention period](/logging/quotas) in the past,
+   * and no more than 24 hours in the future. Log entries outside those time
+   * boundaries will not be available when calling `entries.list`, but
+   * those log entries can still be exported with
+   * [LogSinks](/logging/docs/api/tasks/exporting-logs).
    * </pre>
    *
    * <code>.google.protobuf.Timestamp timestamp = 9;</code>
@@ -205,11 +213,15 @@ public interface LogEntryOrBuilder extends
    * Optional. The time the event described by the log entry occurred.
    * This time is used to compute the log entry's age and to enforce
    * the logs retention period. If this field is omitted in a new log
-   * entry, then Stackdriver Logging assigns it the current time.
+   * entry, then Logging assigns it the current time.
+   * Timestamps have nanosecond accuracy, but trailing zeros in the fractional
+   * seconds might be omitted when the timestamp is displayed.
    * Incoming log entries should have timestamps that are no more than
-   * the [logs retention period](/logging/quota-policy) in the past,
-   * and no more than 24 hours in the future.
-   * See the `entries.write` API method for more information.
+   * the [logs retention period](/logging/quotas) in the past,
+   * and no more than 24 hours in the future. Log entries outside those time
+   * boundaries will not be available when calling `entries.list`, but
+   * those log entries can still be exported with
+   * [LogSinks](/logging/docs/api/tasks/exporting-logs).
    * </pre>
    *
    * <code>.google.protobuf.Timestamp timestamp = 9;</code>
@@ -218,7 +230,7 @@ public interface LogEntryOrBuilder extends
 
   /**
    * <pre>
-   * Output only. The time the log entry was received by Stackdriver Logging.
+   * Output only. The time the log entry was received by Logging.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp receive_timestamp = 24;</code>
@@ -226,7 +238,7 @@ public interface LogEntryOrBuilder extends
   boolean hasReceiveTimestamp();
   /**
    * <pre>
-   * Output only. The time the log entry was received by Stackdriver Logging.
+   * Output only. The time the log entry was received by Logging.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp receive_timestamp = 24;</code>
@@ -234,7 +246,7 @@ public interface LogEntryOrBuilder extends
   com.google.protobuf.Timestamp getReceiveTimestamp();
   /**
    * <pre>
-   * Output only. The time the log entry was received by Stackdriver Logging.
+   * Output only. The time the log entry was received by Logging.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp receive_timestamp = 24;</code>
@@ -263,9 +275,9 @@ public interface LogEntryOrBuilder extends
   /**
    * <pre>
    * Optional. A unique identifier for the log entry. If you provide a value,
-   * then Stackdriver Logging considers other log entries in the same project,
+   * then Logging considers other log entries in the same project,
    * with the same `timestamp`, and with the same `insert_id` to be duplicates
-   * which can be removed.  If omitted in new log entries, then Stackdriver
+   * which can be removed.  If omitted in new log entries, then
    * Logging assigns its own unique identifier. The `insert_id` is also used
    * to order log entries that have the same `timestamp` value.
    * </pre>
@@ -276,9 +288,9 @@ public interface LogEntryOrBuilder extends
   /**
    * <pre>
    * Optional. A unique identifier for the log entry. If you provide a value,
-   * then Stackdriver Logging considers other log entries in the same project,
+   * then Logging considers other log entries in the same project,
    * with the same `timestamp`, and with the same `insert_id` to be duplicates
-   * which can be removed.  If omitted in new log entries, then Stackdriver
+   * which can be removed.  If omitted in new log entries, then
    * Logging assigns its own unique identifier. The `insert_id` is also used
    * to order log entries that have the same `timestamp` value.
    * </pre>
@@ -377,6 +389,37 @@ public interface LogEntryOrBuilder extends
 
   /**
    * <pre>
+   * Output only. Additional metadata about the monitored resource.
+   * Only `k8s_container`, `k8s_pod`, and `k8s_node` MonitoredResources have
+   * this field populated.
+   * </pre>
+   *
+   * <code>.google.api.MonitoredResourceMetadata metadata = 25;</code>
+   */
+  boolean hasMetadata();
+  /**
+   * <pre>
+   * Output only. Additional metadata about the monitored resource.
+   * Only `k8s_container`, `k8s_pod`, and `k8s_node` MonitoredResources have
+   * this field populated.
+   * </pre>
+   *
+   * <code>.google.api.MonitoredResourceMetadata metadata = 25;</code>
+   */
+  com.google.api.MonitoredResourceMetadata getMetadata();
+  /**
+   * <pre>
+   * Output only. Additional metadata about the monitored resource.
+   * Only `k8s_container`, `k8s_pod`, and `k8s_node` MonitoredResources have
+   * this field populated.
+   * </pre>
+   *
+   * <code>.google.api.MonitoredResourceMetadata metadata = 25;</code>
+   */
+  com.google.api.MonitoredResourceMetadataOrBuilder getMetadataOrBuilder();
+
+  /**
+   * <pre>
    * Optional. Information about an operation associated with the log entry, if
    * applicable.
    * </pre>
@@ -429,11 +472,10 @@ public interface LogEntryOrBuilder extends
 
   /**
    * <pre>
-   * Optional. Id of the span within the trace associated with the log entry.
-   * e.g. "0000000000000042"
-   * For Stackdriver trace spans, this is the same format that the Stackdriver
-   * trace API uses.
-   * The ID is a 16-character hexadecimal encoding of an 8-byte array.
+   * Optional. The span ID within the trace associated with the log entry.
+   * For Trace spans, this is the same format that the Trace
+   * API v2 uses: a 16-character hexadecimal encoding of an 8-byte array, such
+   * as &lt;code&gt;"000000000000004a"&lt;/code&gt;.
    * </pre>
    *
    * <code>string span_id = 27;</code>
@@ -441,17 +483,30 @@ public interface LogEntryOrBuilder extends
   java.lang.String getSpanId();
   /**
    * <pre>
-   * Optional. Id of the span within the trace associated with the log entry.
-   * e.g. "0000000000000042"
-   * For Stackdriver trace spans, this is the same format that the Stackdriver
-   * trace API uses.
-   * The ID is a 16-character hexadecimal encoding of an 8-byte array.
+   * Optional. The span ID within the trace associated with the log entry.
+   * For Trace spans, this is the same format that the Trace
+   * API v2 uses: a 16-character hexadecimal encoding of an 8-byte array, such
+   * as &lt;code&gt;"000000000000004a"&lt;/code&gt;.
    * </pre>
    *
    * <code>string span_id = 27;</code>
    */
   com.google.protobuf.ByteString
       getSpanIdBytes();
+
+  /**
+   * <pre>
+   * Optional. The sampling decision of the trace associated with the log entry.
+   * True means that the trace resource name in the `trace` field was sampled
+   * for storage in a trace backend. False means that the trace was not sampled
+   * for storage when this log entry was written, or the sampling decision was
+   * unknown at the time. A non-sampled `trace` value is still useful as a
+   * request correlation identifier. The default is False.
+   * </pre>
+   *
+   * <code>bool trace_sampled = 30;</code>
+   */
+  boolean getTraceSampled();
 
   /**
    * <pre>

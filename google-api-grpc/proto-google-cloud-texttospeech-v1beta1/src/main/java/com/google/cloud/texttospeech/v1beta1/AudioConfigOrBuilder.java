@@ -76,4 +76,47 @@ public interface AudioConfigOrBuilder extends
    * <code>int32 sample_rate_hertz = 5;</code>
    */
   int getSampleRateHertz();
+
+  /**
+   * <pre>
+   * An identifier which selects 'audio effects' profiles that are applied on
+   * (post synthesized) text to speech.
+   * Effects are applied on top of each other in the order they are given.
+   * </pre>
+   *
+   * <code>repeated string effects_profile_id = 6;</code>
+   */
+  java.util.List<java.lang.String>
+      getEffectsProfileIdList();
+  /**
+   * <pre>
+   * An identifier which selects 'audio effects' profiles that are applied on
+   * (post synthesized) text to speech.
+   * Effects are applied on top of each other in the order they are given.
+   * </pre>
+   *
+   * <code>repeated string effects_profile_id = 6;</code>
+   */
+  int getEffectsProfileIdCount();
+  /**
+   * <pre>
+   * An identifier which selects 'audio effects' profiles that are applied on
+   * (post synthesized) text to speech.
+   * Effects are applied on top of each other in the order they are given.
+   * </pre>
+   *
+   * <code>repeated string effects_profile_id = 6;</code>
+   */
+  java.lang.String getEffectsProfileId(int index);
+  /**
+   * <pre>
+   * An identifier which selects 'audio effects' profiles that are applied on
+   * (post synthesized) text to speech.
+   * Effects are applied on top of each other in the order they are given.
+   * </pre>
+   *
+   * <code>repeated string effects_profile_id = 6;</code>
+   */
+  com.google.protobuf.ByteString
+      getEffectsProfileIdBytes(int index);
 }

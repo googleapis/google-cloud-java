@@ -11,11 +11,9 @@ The Cloud Bigtable client is composed of two layers:
 ### Generated GAPIC base layer
 
 The GAPIC layer is generated from a combination of protobuf and GAPIC yaml definitions found in 
-[googleapis](https://github.com/googleapis/googleapis/tree/master/google/bigtable). This layer is 
-split into 2 parts: admin and data apis. The admin part is straightforward enough to be consumed 
-directly by the consumer. However the data client is too protocol focused and is too low level to 
-be consumed by an application directly. Instead, it's intended to be an implementation detail of the
-handwritten layer.
+[googleapis](https://github.com/googleapis/googleapis/tree/master/google/bigtable). However the
+API is too protocol focused and is too low level to  be consumed by an application directly.
+Instead, it's intended to be an implementation detail of the handwritten layer.
 
 
 ### Handwritten layer

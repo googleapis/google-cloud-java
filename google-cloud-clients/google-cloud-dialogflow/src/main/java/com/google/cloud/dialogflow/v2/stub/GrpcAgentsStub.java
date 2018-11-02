@@ -228,6 +228,7 @@ public class GrpcAgentsStub extends AgentsStub {
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public GrpcOperationsStub getOperationsStub() {
     return operationsStub;
   }
@@ -244,6 +245,7 @@ public class GrpcAgentsStub extends AgentsStub {
     return searchAgentsCallable;
   }
 
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<TrainAgentRequest, Empty, Struct> trainAgentOperationCallable() {
     return trainAgentOperationCallable;
   }
@@ -252,6 +254,7 @@ public class GrpcAgentsStub extends AgentsStub {
     return trainAgentCallable;
   }
 
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<ExportAgentRequest, ExportAgentResponse, Struct>
       exportAgentOperationCallable() {
     return exportAgentOperationCallable;
@@ -261,6 +264,7 @@ public class GrpcAgentsStub extends AgentsStub {
     return exportAgentCallable;
   }
 
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<ImportAgentRequest, Empty, Struct> importAgentOperationCallable() {
     return importAgentOperationCallable;
   }
@@ -269,6 +273,7 @@ public class GrpcAgentsStub extends AgentsStub {
     return importAgentCallable;
   }
 
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<RestoreAgentRequest, Empty, Struct> restoreAgentOperationCallable() {
     return restoreAgentOperationCallable;
   }

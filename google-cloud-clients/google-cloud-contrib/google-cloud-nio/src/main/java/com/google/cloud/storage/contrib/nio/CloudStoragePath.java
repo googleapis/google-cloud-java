@@ -19,7 +19,10 @@ package com.google.cloud.storage.contrib.nio;
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.api.gax.paging.Page;
+import com.google.cloud.storage.Blob;
 import com.google.cloud.storage.BlobId;
+import com.google.cloud.storage.Storage;
 import com.google.common.collect.UnmodifiableIterator;
 
 import java.io.File;
@@ -83,8 +86,50 @@ public final class CloudStoragePath implements Path {
     return path.seemsLikeADirectory();
   }
 
-  boolean seemsLikeADirectoryAndUsePseudoDirectories() {
-    return path.seemsLikeADirectory() && fileSystem.config().usePseudoDirectories();
+  // True if this path may be a directory (and pseudo-directories are enabled)
+  // Checks:
+  // 1) does the path end in / ?
+  // 2) (optional, if storage is set) is there a file whose name starts with path+/ ?
+  boolean seemsLikeADirectoryAndUsePseudoDirectories(Storage storage) {
+    if (!fileSystem.config().usePseudoDirectories()) {
+      return false;
+    }
+    if (path.seemsLikeADirectory()) {
+      return true;
+    }
+    // fancy case: the file name doesn't end in slash, but we've been asked to have pseudo dirs.
+    // Let's see if there are any files with this prefix.
+    if (storage == null) {
+      // we are in a context where we don't want to access the storage, so we conservatively
+      // say this isn't a directory.
+      return false;
+    }
+    // Using the provided path + "/" as a prefix, can we find one file? If so, the path
+    // is a directory.
+    String prefix = path.removeBeginningSeparator().toString();
+    if (!prefix.endsWith("/")) {
+      prefix += "/";
+    }
+    Page<Blob> list = storage.list(
+        this.bucket(),
+        Storage.BlobListOption.prefix(prefix),
+        // we only look at the first result, so no need for a bigger page.
+        Storage.BlobListOption.pageSize(1));
+    for (Blob b : list.getValues()) {
+      // if this blob starts with our prefix and then a slash, then prefix is indeed a folder!
+      if (b.getBlobId() == null) {
+        continue;
+      }
+      String name = b.getBlobId().getName();
+      if (name == null) {
+        continue;
+      }
+      if (("/" + name).startsWith(this.path.toAbsolutePath() + "/")) {
+        return true;
+      }
+    }
+    // no match, so it's not a directory
+    return false;
   }
 
   @Override

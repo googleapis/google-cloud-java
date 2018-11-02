@@ -168,6 +168,8 @@ public class ClusterControllerClient implements BackgroundResource {
    * Returns the OperationsClient that can be used to query the status of a long-running operation
    * returned by another API method call.
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationsClient getOperationsClient() {
     return operationsClient;
   }
@@ -193,6 +195,8 @@ public class ClusterControllerClient implements BackgroundResource {
    * @param cluster Required. The cluster to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Cluster, ClusterOperationMetadata> createClusterAsync(
       String projectId, String region, Cluster cluster) {
 
@@ -228,6 +232,8 @@ public class ClusterControllerClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Cluster, ClusterOperationMetadata> createClusterAsync(
       CreateClusterRequest request) {
     return createClusterOperationCallable().futureCall(request);
@@ -255,6 +261,7 @@ public class ClusterControllerClient implements BackgroundResource {
    * }
    * </code></pre>
    */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<CreateClusterRequest, Cluster, ClusterOperationMetadata>
       createClusterOperationCallable() {
     return stub.createClusterOperationCallable();
@@ -313,6 +320,8 @@ public class ClusterControllerClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Cluster, ClusterOperationMetadata> updateClusterAsync(
       UpdateClusterRequest request) {
     return updateClusterOperationCallable().futureCall(request);
@@ -344,6 +353,7 @@ public class ClusterControllerClient implements BackgroundResource {
    * }
    * </code></pre>
    */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<UpdateClusterRequest, Cluster, ClusterOperationMetadata>
       updateClusterOperationCallable() {
     return stub.updateClusterOperationCallable();
@@ -400,6 +410,8 @@ public class ClusterControllerClient implements BackgroundResource {
    * @param clusterName Required. The cluster name.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, ClusterOperationMetadata> deleteClusterAsync(
       String projectId, String region, String clusterName) {
 
@@ -435,6 +447,8 @@ public class ClusterControllerClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, ClusterOperationMetadata> deleteClusterAsync(
       DeleteClusterRequest request) {
     return deleteClusterOperationCallable().futureCall(request);
@@ -462,6 +476,7 @@ public class ClusterControllerClient implements BackgroundResource {
    * }
    * </code></pre>
    */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<DeleteClusterRequest, Empty, ClusterOperationMetadata>
       deleteClusterOperationCallable() {
     return stub.deleteClusterOperationCallable();
@@ -714,6 +729,8 @@ public class ClusterControllerClient implements BackgroundResource {
    * @param clusterName Required. The cluster name.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, DiagnoseClusterResults> diagnoseClusterAsync(
       String projectId, String region, String clusterName) {
 
@@ -750,6 +767,8 @@ public class ClusterControllerClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, DiagnoseClusterResults> diagnoseClusterAsync(
       DiagnoseClusterRequest request) {
     return diagnoseClusterOperationCallable().futureCall(request);
@@ -778,6 +797,7 @@ public class ClusterControllerClient implements BackgroundResource {
    * }
    * </code></pre>
    */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<DiagnoseClusterRequest, Empty, DiagnoseClusterResults>
       diagnoseClusterOperationCallable() {
     return stub.diagnoseClusterOperationCallable();

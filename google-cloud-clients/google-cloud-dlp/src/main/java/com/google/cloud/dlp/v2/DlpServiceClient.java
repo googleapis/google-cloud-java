@@ -79,6 +79,8 @@ import javax.annotation.Generated;
  * includes methods for sensitive data redaction and scheduling of data scans on Google Cloud
  * Platform based data sets.
  *
+ * <p>To learn more about concepts and find how-to guides see https://cloud.google.com/dlp/docs/.
+ *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
@@ -199,8 +201,14 @@ public class DlpServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Finds potentially sensitive info in content. This method has limits on input size, processing
-   * time, and output size. [How-to guide for text](/dlp/docs/inspecting-text), [How-to guide for
-   * images](/dlp/docs/inspecting-images)
+   * time, and output size.
+   *
+   * <p>When no InfoTypes or CustomInfoTypes are specified in this request, the system will
+   * automatically choose what detectors to run. By default this may be all types, but may change
+   * over time as detectors are updated.
+   *
+   * <p>For how to guides, see https://cloud.google.com/dlp/docs/inspecting-images and
+   * https://cloud.google.com/dlp/docs/inspecting-text,
    *
    * <p>Sample code:
    *
@@ -224,8 +232,14 @@ public class DlpServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Finds potentially sensitive info in content. This method has limits on input size, processing
-   * time, and output size. [How-to guide for text](/dlp/docs/inspecting-text), [How-to guide for
-   * images](/dlp/docs/inspecting-images)
+   * time, and output size.
+   *
+   * <p>When no InfoTypes or CustomInfoTypes are specified in this request, the system will
+   * automatically choose what detectors to run. By default this may be all types, but may change
+   * over time as detectors are updated.
+   *
+   * <p>For how to guides, see https://cloud.google.com/dlp/docs/inspecting-images and
+   * https://cloud.google.com/dlp/docs/inspecting-text,
    *
    * <p>Sample code:
    *
@@ -249,7 +263,12 @@ public class DlpServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Redacts potentially sensitive info from an image. This method has limits on input size,
-   * processing time, and output size. [How-to guide](/dlp/docs/redacting-sensitive-data-images)
+   * processing time, and output size. See
+   * https://cloud.google.com/dlp/docs/redacting-sensitive-data-images to learn more.
+   *
+   * <p>When no InfoTypes or CustomInfoTypes are specified in this request, the system will
+   * automatically choose what detectors to run. By default this may be all types, but may change
+   * over time as detectors are updated.
    *
    * <p>Sample code:
    *
@@ -273,7 +292,12 @@ public class DlpServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Redacts potentially sensitive info from an image. This method has limits on input size,
-   * processing time, and output size. [How-to guide](/dlp/docs/redacting-sensitive-data-images)
+   * processing time, and output size. See
+   * https://cloud.google.com/dlp/docs/redacting-sensitive-data-images to learn more.
+   *
+   * <p>When no InfoTypes or CustomInfoTypes are specified in this request, the system will
+   * automatically choose what detectors to run. By default this may be all types, but may change
+   * over time as detectors are updated.
    *
    * <p>Sample code:
    *
@@ -296,7 +320,12 @@ public class DlpServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * De-identifies potentially sensitive info from a ContentItem. This method has limits on input
-   * size and output size. [How-to guide](/dlp/docs/deidentify-sensitive-data)
+   * size and output size. See https://cloud.google.com/dlp/docs/deidentify-sensitive-data to learn
+   * more.
+   *
+   * <p>When no InfoTypes or CustomInfoTypes are specified in this request, the system will
+   * automatically choose what detectors to run. By default this may be all types, but may change
+   * over time as detectors are updated.
    *
    * <p>Sample code:
    *
@@ -320,7 +349,12 @@ public class DlpServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * De-identifies potentially sensitive info from a ContentItem. This method has limits on input
-   * size and output size. [How-to guide](/dlp/docs/deidentify-sensitive-data)
+   * size and output size. See https://cloud.google.com/dlp/docs/deidentify-sensitive-data to learn
+   * more.
+   *
+   * <p>When no InfoTypes or CustomInfoTypes are specified in this request, the system will
+   * automatically choose what detectors to run. By default this may be all types, but may change
+   * over time as detectors are updated.
    *
    * <p>Sample code:
    *
@@ -343,7 +377,9 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Re-identifies content that has been de-identified.
+   * Re-identifies content that has been de-identified. See
+   * https://cloud.google.com/dlp/docs/pseudonymization#re-identification_in_free_text_code_example
+   * to learn more.
    *
    * <p>Sample code:
    *
@@ -366,7 +402,9 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Re-identifies content that has been de-identified.
+   * Re-identifies content that has been de-identified. See
+   * https://cloud.google.com/dlp/docs/pseudonymization#re-identification_in_free_text_code_example
+   * to learn more.
    *
    * <p>Sample code:
    *
@@ -389,8 +427,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns a list of the sensitive information types that the DLP API supports. For more
-   * information, see [Listing supported predefined infoTypes](/dlp/docs/listing-infotypes).
+   * Returns a list of the sensitive information types that the DLP API supports. See
+   * https://cloud.google.com/dlp/docs/infotypes-reference to learn more.
    *
    * <p>Sample code:
    *
@@ -410,8 +448,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns a list of the sensitive information types that the DLP API supports. For more
-   * information, see [Listing supported predefined infoTypes](/dlp/docs/listing-infotypes).
+   * Returns a list of the sensitive information types that the DLP API supports. See
+   * https://cloud.google.com/dlp/docs/infotypes-reference to learn more.
    *
    * <p>Sample code:
    *
@@ -431,7 +469,7 @@ public class DlpServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates an InspectTemplate for re-using frequently used configuration for inspecting content,
-   * images, and storage.
+   * images, and storage. See https://cloud.google.com/dlp/docs/creating-templates to learn more.
    *
    * <p>Sample code:
    *
@@ -455,7 +493,7 @@ public class DlpServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates an InspectTemplate for re-using frequently used configuration for inspecting content,
-   * images, and storage.
+   * images, and storage. See https://cloud.google.com/dlp/docs/creating-templates to learn more.
    *
    * <p>Sample code:
    *
@@ -478,7 +516,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates the InspectTemplate.
+   * Updates the InspectTemplate. See https://cloud.google.com/dlp/docs/creating-templates to learn
+   * more.
    *
    * <p>Sample code:
    *
@@ -501,7 +540,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates the InspectTemplate.
+   * Updates the InspectTemplate. See https://cloud.google.com/dlp/docs/creating-templates to learn
+   * more.
    *
    * <p>Sample code:
    *
@@ -524,7 +564,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Gets an InspectTemplate.
+   * Gets an InspectTemplate. See https://cloud.google.com/dlp/docs/creating-templates to learn
+   * more.
    *
    * <p>Sample code:
    *
@@ -544,7 +585,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Gets an InspectTemplate.
+   * Gets an InspectTemplate. See https://cloud.google.com/dlp/docs/creating-templates to learn
+   * more.
    *
    * <p>Sample code:
    *
@@ -564,7 +606,7 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists InspectTemplates.
+   * Lists InspectTemplates. See https://cloud.google.com/dlp/docs/creating-templates to learn more.
    *
    * <p>Sample code:
    *
@@ -590,7 +632,7 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists InspectTemplates.
+   * Lists InspectTemplates. See https://cloud.google.com/dlp/docs/creating-templates to learn more.
    *
    * <p>Sample code:
    *
@@ -615,7 +657,7 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists InspectTemplates.
+   * Lists InspectTemplates. See https://cloud.google.com/dlp/docs/creating-templates to learn more.
    *
    * <p>Sample code:
    *
@@ -647,7 +689,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes an InspectTemplate.
+   * Deletes an InspectTemplate. See https://cloud.google.com/dlp/docs/creating-templates to learn
+   * more.
    *
    * <p>Sample code:
    *
@@ -670,7 +713,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes an InspectTemplate.
+   * Deletes an InspectTemplate. See https://cloud.google.com/dlp/docs/creating-templates to learn
+   * more.
    *
    * <p>Sample code:
    *
@@ -693,7 +737,8 @@ public class DlpServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a DeidentifyTemplate for re-using frequently used configuration for de-identifying
-   * content, images, and storage.
+   * content, images, and storage. See https://cloud.google.com/dlp/docs/creating-templates-deid to
+   * learn more.
    *
    * <p>Sample code:
    *
@@ -718,7 +763,8 @@ public class DlpServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a DeidentifyTemplate for re-using frequently used configuration for de-identifying
-   * content, images, and storage.
+   * content, images, and storage. See https://cloud.google.com/dlp/docs/creating-templates-deid to
+   * learn more.
    *
    * <p>Sample code:
    *
@@ -741,7 +787,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates the DeidentifyTemplate.
+   * Updates the DeidentifyTemplate. See https://cloud.google.com/dlp/docs/creating-templates-deid
+   * to learn more.
    *
    * <p>Sample code:
    *
@@ -765,7 +812,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates the DeidentifyTemplate.
+   * Updates the DeidentifyTemplate. See https://cloud.google.com/dlp/docs/creating-templates-deid
+   * to learn more.
    *
    * <p>Sample code:
    *
@@ -788,7 +836,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Gets a DeidentifyTemplate.
+   * Gets a DeidentifyTemplate. See https://cloud.google.com/dlp/docs/creating-templates-deid to
+   * learn more.
    *
    * <p>Sample code:
    *
@@ -811,7 +860,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Gets a DeidentifyTemplate.
+   * Gets a DeidentifyTemplate. See https://cloud.google.com/dlp/docs/creating-templates-deid to
+   * learn more.
    *
    * <p>Sample code:
    *
@@ -834,7 +884,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists DeidentifyTemplates.
+   * Lists DeidentifyTemplates. See https://cloud.google.com/dlp/docs/creating-templates-deid to
+   * learn more.
    *
    * <p>Sample code:
    *
@@ -860,7 +911,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists DeidentifyTemplates.
+   * Lists DeidentifyTemplates. See https://cloud.google.com/dlp/docs/creating-templates-deid to
+   * learn more.
    *
    * <p>Sample code:
    *
@@ -885,7 +937,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists DeidentifyTemplates.
+   * Lists DeidentifyTemplates. See https://cloud.google.com/dlp/docs/creating-templates-deid to
+   * learn more.
    *
    * <p>Sample code:
    *
@@ -917,7 +970,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes a DeidentifyTemplate.
+   * Deletes a DeidentifyTemplate. See https://cloud.google.com/dlp/docs/creating-templates-deid to
+   * learn more.
    *
    * <p>Sample code:
    *
@@ -940,7 +994,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes a DeidentifyTemplate.
+   * Deletes a DeidentifyTemplate. See https://cloud.google.com/dlp/docs/creating-templates-deid to
+   * learn more.
    *
    * <p>Sample code:
    *
@@ -963,8 +1018,13 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a new job to inspect storage or calculate risk metrics. [How-to
-   * guide](/dlp/docs/compute-risk-analysis).
+   * Creates a new job to inspect storage or calculate risk metrics. See
+   * https://cloud.google.com/dlp/docs/inspecting-storage and
+   * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
+   *
+   * <p>When no InfoTypes or CustomInfoTypes are specified in inspect jobs, the system will
+   * automatically choose what detectors to run. By default this may be all types, but may change
+   * over time as detectors are updated.
    *
    * <p>Sample code:
    *
@@ -987,8 +1047,13 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a new job to inspect storage or calculate risk metrics. [How-to
-   * guide](/dlp/docs/compute-risk-analysis).
+   * Creates a new job to inspect storage or calculate risk metrics. See
+   * https://cloud.google.com/dlp/docs/inspecting-storage and
+   * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
+   *
+   * <p>When no InfoTypes or CustomInfoTypes are specified in inspect jobs, the system will
+   * automatically choose what detectors to run. By default this may be all types, but may change
+   * over time as detectors are updated.
    *
    * <p>Sample code:
    *
@@ -1010,7 +1075,9 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists DlpJobs that match the specified filter in the request.
+   * Lists DlpJobs that match the specified filter in the request. See
+   * https://cloud.google.com/dlp/docs/inspecting-storage and
+   * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
    *
    * <p>Sample code:
    *
@@ -1035,7 +1102,9 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists DlpJobs that match the specified filter in the request.
+   * Lists DlpJobs that match the specified filter in the request. See
+   * https://cloud.google.com/dlp/docs/inspecting-storage and
+   * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
    *
    * <p>Sample code:
    *
@@ -1060,7 +1129,9 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists DlpJobs that match the specified filter in the request.
+   * Lists DlpJobs that match the specified filter in the request. See
+   * https://cloud.google.com/dlp/docs/inspecting-storage and
+   * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
    *
    * <p>Sample code:
    *
@@ -1091,7 +1162,9 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Gets the latest state of a long-running DlpJob.
+   * Gets the latest state of a long-running DlpJob. See
+   * https://cloud.google.com/dlp/docs/inspecting-storage and
+   * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
    *
    * <p>Sample code:
    *
@@ -1114,7 +1187,9 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Gets the latest state of a long-running DlpJob.
+   * Gets the latest state of a long-running DlpJob. See
+   * https://cloud.google.com/dlp/docs/inspecting-storage and
+   * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
    *
    * <p>Sample code:
    *
@@ -1137,7 +1212,9 @@ public class DlpServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Deletes a long-running DlpJob. This method indicates that the client is no longer interested in
-   * the DlpJob result. The job will be cancelled if possible.
+   * the DlpJob result. The job will be cancelled if possible. See
+   * https://cloud.google.com/dlp/docs/inspecting-storage and
+   * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
    *
    * <p>Sample code:
    *
@@ -1161,7 +1238,9 @@ public class DlpServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Deletes a long-running DlpJob. This method indicates that the client is no longer interested in
-   * the DlpJob result. The job will be cancelled if possible.
+   * the DlpJob result. The job will be cancelled if possible. See
+   * https://cloud.google.com/dlp/docs/inspecting-storage and
+   * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
    *
    * <p>Sample code:
    *
@@ -1184,7 +1263,9 @@ public class DlpServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Starts asynchronous cancellation on a long-running DlpJob. The server makes a best effort to
-   * cancel the DlpJob, but success is not guaranteed.
+   * cancel the DlpJob, but success is not guaranteed. See
+   * https://cloud.google.com/dlp/docs/inspecting-storage and
+   * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
    *
    * <p>Sample code:
    *
@@ -1208,7 +1289,9 @@ public class DlpServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Starts asynchronous cancellation on a long-running DlpJob. The server makes a best effort to
-   * cancel the DlpJob, but success is not guaranteed.
+   * cancel the DlpJob, but success is not guaranteed. See
+   * https://cloud.google.com/dlp/docs/inspecting-storage and
+   * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
    *
    * <p>Sample code:
    *
@@ -1230,7 +1313,7 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists job triggers.
+   * Lists job triggers. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
    *
    * <p>Sample code:
    *
@@ -1255,7 +1338,7 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists job triggers.
+   * Lists job triggers. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
    *
    * <p>Sample code:
    *
@@ -1280,7 +1363,7 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists job triggers.
+   * Lists job triggers. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
    *
    * <p>Sample code:
    *
@@ -1312,7 +1395,7 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Gets a job trigger.
+   * Gets a job trigger. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
    *
    * <p>Sample code:
    *
@@ -1335,7 +1418,7 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Gets a job trigger.
+   * Gets a job trigger. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
    *
    * <p>Sample code:
    *
@@ -1357,7 +1440,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes a job trigger.
+   * Deletes a job trigger. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn
+   * more.
    *
    * <p>Sample code:
    *
@@ -1380,7 +1464,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes a job trigger.
+   * Deletes a job trigger. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn
+   * more.
    *
    * <p>Sample code:
    *
@@ -1402,7 +1487,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates a job trigger.
+   * Updates a job trigger. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn
+   * more.
    *
    * <p>Sample code:
    *
@@ -1425,7 +1511,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates a job trigger.
+   * Updates a job trigger. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn
+   * more.
    *
    * <p>Sample code:
    *
@@ -1448,7 +1535,7 @@ public class DlpServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a job trigger to run DLP actions such as scanning storage for sensitive information on
-   * a set schedule.
+   * a set schedule. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
    *
    * <p>Sample code:
    *
@@ -1472,7 +1559,7 @@ public class DlpServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a job trigger to run DLP actions such as scanning storage for sensitive information on
-   * a set schedule.
+   * a set schedule. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
    *
    * <p>Sample code:
    *

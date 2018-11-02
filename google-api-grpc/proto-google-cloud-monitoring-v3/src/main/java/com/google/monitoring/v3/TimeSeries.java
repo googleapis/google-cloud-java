@@ -52,13 +52,6 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
           case 10: {
             com.google.api.Metric.Builder subBuilder = null;
             if (metric_ != null) {
@@ -98,12 +91,32 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 42: {
-            if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+            if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
               points_ = new java.util.ArrayList<com.google.monitoring.v3.Point>();
-              mutable_bitField0_ |= 0x00000010;
+              mutable_bitField0_ |= 0x00000020;
             }
             points_.add(
                 input.readMessage(com.google.monitoring.v3.Point.parser(), extensionRegistry));
+            break;
+          }
+          case 58: {
+            com.google.api.MonitoredResourceMetadata.Builder subBuilder = null;
+            if (metadata_ != null) {
+              subBuilder = metadata_.toBuilder();
+            }
+            metadata_ = input.readMessage(com.google.api.MonitoredResourceMetadata.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(metadata_);
+              metadata_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          default: {
+            if (!parseUnknownFieldProto3(
+                input, unknownFields, extensionRegistry, tag)) {
+              done = true;
+            }
             break;
           }
         }
@@ -114,7 +127,7 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+      if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
         points_ = java.util.Collections.unmodifiableList(points_);
       }
       this.unknownFields = unknownFields.build();
@@ -126,6 +139,7 @@ private static final long serialVersionUID = 0L;
     return com.google.monitoring.v3.MetricProto.internal_static_google_monitoring_v3_TimeSeries_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.monitoring.v3.MetricProto.internal_static_google_monitoring_v3_TimeSeries_fieldAccessorTable
@@ -174,8 +188,8 @@ private static final long serialVersionUID = 0L;
   private com.google.api.MonitoredResource resource_;
   /**
    * <pre>
-   * The associated resource. A fully-specified monitored resource used to
-   * identify the time series.
+   * The associated monitored resource.  Custom metrics can use only certain
+   * monitored resource types in their time series data.
    * </pre>
    *
    * <code>.google.api.MonitoredResource resource = 2;</code>
@@ -185,8 +199,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The associated resource. A fully-specified monitored resource used to
-   * identify the time series.
+   * The associated monitored resource.  Custom metrics can use only certain
+   * monitored resource types in their time series data.
    * </pre>
    *
    * <code>.google.api.MonitoredResource resource = 2;</code>
@@ -196,14 +210,53 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The associated resource. A fully-specified monitored resource used to
-   * identify the time series.
+   * The associated monitored resource.  Custom metrics can use only certain
+   * monitored resource types in their time series data.
    * </pre>
    *
    * <code>.google.api.MonitoredResource resource = 2;</code>
    */
   public com.google.api.MonitoredResourceOrBuilder getResourceOrBuilder() {
     return getResource();
+  }
+
+  public static final int METADATA_FIELD_NUMBER = 7;
+  private com.google.api.MonitoredResourceMetadata metadata_;
+  /**
+   * <pre>
+   * Output only. The associated monitored resource metadata. When reading a
+   * a timeseries, this field will include metadata labels that are explicitly
+   * named in the reduction. When creating a timeseries, this field is ignored.
+   * </pre>
+   *
+   * <code>.google.api.MonitoredResourceMetadata metadata = 7;</code>
+   */
+  public boolean hasMetadata() {
+    return metadata_ != null;
+  }
+  /**
+   * <pre>
+   * Output only. The associated monitored resource metadata. When reading a
+   * a timeseries, this field will include metadata labels that are explicitly
+   * named in the reduction. When creating a timeseries, this field is ignored.
+   * </pre>
+   *
+   * <code>.google.api.MonitoredResourceMetadata metadata = 7;</code>
+   */
+  public com.google.api.MonitoredResourceMetadata getMetadata() {
+    return metadata_ == null ? com.google.api.MonitoredResourceMetadata.getDefaultInstance() : metadata_;
+  }
+  /**
+   * <pre>
+   * Output only. The associated monitored resource metadata. When reading a
+   * a timeseries, this field will include metadata labels that are explicitly
+   * named in the reduction. When creating a timeseries, this field is ignored.
+   * </pre>
+   *
+   * <code>.google.api.MonitoredResourceMetadata metadata = 7;</code>
+   */
+  public com.google.api.MonitoredResourceMetadataOrBuilder getMetadataOrBuilder() {
+    return getMetadata();
   }
 
   public static final int METRIC_KIND_FIELD_NUMBER = 3;
@@ -240,6 +293,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.api.MetricDescriptor.MetricKind metric_kind = 3;</code>
    */
   public com.google.api.MetricDescriptor.MetricKind getMetricKind() {
+    @SuppressWarnings("deprecation")
     com.google.api.MetricDescriptor.MetricKind result = com.google.api.MetricDescriptor.MetricKind.valueOf(metricKind_);
     return result == null ? com.google.api.MetricDescriptor.MetricKind.UNRECOGNIZED : result;
   }
@@ -272,6 +326,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.api.MetricDescriptor.ValueType value_type = 4;</code>
    */
   public com.google.api.MetricDescriptor.ValueType getValueType() {
+    @SuppressWarnings("deprecation")
     com.google.api.MetricDescriptor.ValueType result = com.google.api.MetricDescriptor.ValueType.valueOf(valueType_);
     return result == null ? com.google.api.MetricDescriptor.ValueType.UNRECOGNIZED : result;
   }
@@ -280,8 +335,8 @@ private static final long serialVersionUID = 0L;
   private java.util.List<com.google.monitoring.v3.Point> points_;
   /**
    * <pre>
-   * The data points of this time series. When listing time series, the order of
-   * the points is specified by the list method.
+   * The data points of this time series. When listing time series, points are
+   * returned in reverse time order.
    * When creating a time series, this field must contain exactly one point and
    * the point's type must be the same as the value type of the associated
    * metric. If the associated metric's descriptor must be auto-created, then
@@ -296,8 +351,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The data points of this time series. When listing time series, the order of
-   * the points is specified by the list method.
+   * The data points of this time series. When listing time series, points are
+   * returned in reverse time order.
    * When creating a time series, this field must contain exactly one point and
    * the point's type must be the same as the value type of the associated
    * metric. If the associated metric's descriptor must be auto-created, then
@@ -313,8 +368,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The data points of this time series. When listing time series, the order of
-   * the points is specified by the list method.
+   * The data points of this time series. When listing time series, points are
+   * returned in reverse time order.
    * When creating a time series, this field must contain exactly one point and
    * the point's type must be the same as the value type of the associated
    * metric. If the associated metric's descriptor must be auto-created, then
@@ -329,8 +384,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The data points of this time series. When listing time series, the order of
-   * the points is specified by the list method.
+   * The data points of this time series. When listing time series, points are
+   * returned in reverse time order.
    * When creating a time series, this field must contain exactly one point and
    * the point's type must be the same as the value type of the associated
    * metric. If the associated metric's descriptor must be auto-created, then
@@ -345,8 +400,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The data points of this time series. When listing time series, the order of
-   * the points is specified by the list method.
+   * The data points of this time series. When listing time series, points are
+   * returned in reverse time order.
    * When creating a time series, this field must contain exactly one point and
    * the point's type must be the same as the value type of the associated
    * metric. If the associated metric's descriptor must be auto-created, then
@@ -362,6 +417,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -371,6 +427,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
+  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (metric_ != null) {
@@ -388,9 +445,13 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < points_.size(); i++) {
       output.writeMessage(5, points_.get(i));
     }
+    if (metadata_ != null) {
+      output.writeMessage(7, getMetadata());
+    }
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -415,6 +476,10 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < points_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(5, points_.get(i));
+    }
+    if (metadata_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(7, getMetadata());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -442,6 +507,11 @@ private static final long serialVersionUID = 0L;
       result = result && getResource()
           .equals(other.getResource());
     }
+    result = result && (hasMetadata() == other.hasMetadata());
+    if (hasMetadata()) {
+      result = result && getMetadata()
+          .equals(other.getMetadata());
+    }
     result = result && metricKind_ == other.metricKind_;
     result = result && valueType_ == other.valueType_;
     result = result && getPointsList()
@@ -464,6 +534,10 @@ private static final long serialVersionUID = 0L;
     if (hasResource()) {
       hash = (37 * hash) + RESOURCE_FIELD_NUMBER;
       hash = (53 * hash) + getResource().hashCode();
+    }
+    if (hasMetadata()) {
+      hash = (37 * hash) + METADATA_FIELD_NUMBER;
+      hash = (53 * hash) + getMetadata().hashCode();
     }
     hash = (37 * hash) + METRIC_KIND_FIELD_NUMBER;
     hash = (53 * hash) + metricKind_;
@@ -548,6 +622,7 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
+  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
@@ -555,6 +630,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder(com.google.monitoring.v3.TimeSeries prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
@@ -585,6 +661,7 @@ private static final long serialVersionUID = 0L;
       return com.google.monitoring.v3.MetricProto.internal_static_google_monitoring_v3_TimeSeries_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.monitoring.v3.MetricProto.internal_static_google_monitoring_v3_TimeSeries_fieldAccessorTable
@@ -608,6 +685,7 @@ private static final long serialVersionUID = 0L;
         getPointsFieldBuilder();
       }
     }
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       if (metricBuilder_ == null) {
@@ -622,28 +700,37 @@ private static final long serialVersionUID = 0L;
         resource_ = null;
         resourceBuilder_ = null;
       }
+      if (metadataBuilder_ == null) {
+        metadata_ = null;
+      } else {
+        metadata_ = null;
+        metadataBuilder_ = null;
+      }
       metricKind_ = 0;
 
       valueType_ = 0;
 
       if (pointsBuilder_ == null) {
         points_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000020);
       } else {
         pointsBuilder_.clear();
       }
       return this;
     }
 
+    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
       return com.google.monitoring.v3.MetricProto.internal_static_google_monitoring_v3_TimeSeries_descriptor;
     }
 
+    @java.lang.Override
     public com.google.monitoring.v3.TimeSeries getDefaultInstanceForType() {
       return com.google.monitoring.v3.TimeSeries.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.monitoring.v3.TimeSeries build() {
       com.google.monitoring.v3.TimeSeries result = buildPartial();
       if (!result.isInitialized()) {
@@ -652,6 +739,7 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.monitoring.v3.TimeSeries buildPartial() {
       com.google.monitoring.v3.TimeSeries result = new com.google.monitoring.v3.TimeSeries(this);
       int from_bitField0_ = bitField0_;
@@ -666,12 +754,17 @@ private static final long serialVersionUID = 0L;
       } else {
         result.resource_ = resourceBuilder_.build();
       }
+      if (metadataBuilder_ == null) {
+        result.metadata_ = metadata_;
+      } else {
+        result.metadata_ = metadataBuilder_.build();
+      }
       result.metricKind_ = metricKind_;
       result.valueType_ = valueType_;
       if (pointsBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        if (((bitField0_ & 0x00000020) == 0x00000020)) {
           points_ = java.util.Collections.unmodifiableList(points_);
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000020);
         }
         result.points_ = points_;
       } else {
@@ -682,32 +775,39 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.monitoring.v3.TimeSeries) {
         return mergeFrom((com.google.monitoring.v3.TimeSeries)other);
@@ -725,6 +825,9 @@ private static final long serialVersionUID = 0L;
       if (other.hasResource()) {
         mergeResource(other.getResource());
       }
+      if (other.hasMetadata()) {
+        mergeMetadata(other.getMetadata());
+      }
       if (other.metricKind_ != 0) {
         setMetricKindValue(other.getMetricKindValue());
       }
@@ -735,7 +838,7 @@ private static final long serialVersionUID = 0L;
         if (!other.points_.isEmpty()) {
           if (points_.isEmpty()) {
             points_ = other.points_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000020);
           } else {
             ensurePointsIsMutable();
             points_.addAll(other.points_);
@@ -748,7 +851,7 @@ private static final long serialVersionUID = 0L;
             pointsBuilder_.dispose();
             pointsBuilder_ = null;
             points_ = other.points_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000020);
             pointsBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getPointsFieldBuilder() : null;
@@ -762,10 +865,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -952,8 +1057,8 @@ private static final long serialVersionUID = 0L;
         com.google.api.MonitoredResource, com.google.api.MonitoredResource.Builder, com.google.api.MonitoredResourceOrBuilder> resourceBuilder_;
     /**
      * <pre>
-     * The associated resource. A fully-specified monitored resource used to
-     * identify the time series.
+     * The associated monitored resource.  Custom metrics can use only certain
+     * monitored resource types in their time series data.
      * </pre>
      *
      * <code>.google.api.MonitoredResource resource = 2;</code>
@@ -963,8 +1068,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The associated resource. A fully-specified monitored resource used to
-     * identify the time series.
+     * The associated monitored resource.  Custom metrics can use only certain
+     * monitored resource types in their time series data.
      * </pre>
      *
      * <code>.google.api.MonitoredResource resource = 2;</code>
@@ -978,8 +1083,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The associated resource. A fully-specified monitored resource used to
-     * identify the time series.
+     * The associated monitored resource.  Custom metrics can use only certain
+     * monitored resource types in their time series data.
      * </pre>
      *
      * <code>.google.api.MonitoredResource resource = 2;</code>
@@ -999,8 +1104,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The associated resource. A fully-specified monitored resource used to
-     * identify the time series.
+     * The associated monitored resource.  Custom metrics can use only certain
+     * monitored resource types in their time series data.
      * </pre>
      *
      * <code>.google.api.MonitoredResource resource = 2;</code>
@@ -1018,8 +1123,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The associated resource. A fully-specified monitored resource used to
-     * identify the time series.
+     * The associated monitored resource.  Custom metrics can use only certain
+     * monitored resource types in their time series data.
      * </pre>
      *
      * <code>.google.api.MonitoredResource resource = 2;</code>
@@ -1041,8 +1146,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The associated resource. A fully-specified monitored resource used to
-     * identify the time series.
+     * The associated monitored resource.  Custom metrics can use only certain
+     * monitored resource types in their time series data.
      * </pre>
      *
      * <code>.google.api.MonitoredResource resource = 2;</code>
@@ -1060,8 +1165,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The associated resource. A fully-specified monitored resource used to
-     * identify the time series.
+     * The associated monitored resource.  Custom metrics can use only certain
+     * monitored resource types in their time series data.
      * </pre>
      *
      * <code>.google.api.MonitoredResource resource = 2;</code>
@@ -1073,8 +1178,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The associated resource. A fully-specified monitored resource used to
-     * identify the time series.
+     * The associated monitored resource.  Custom metrics can use only certain
+     * monitored resource types in their time series data.
      * </pre>
      *
      * <code>.google.api.MonitoredResource resource = 2;</code>
@@ -1089,8 +1194,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The associated resource. A fully-specified monitored resource used to
-     * identify the time series.
+     * The associated monitored resource.  Custom metrics can use only certain
+     * monitored resource types in their time series data.
      * </pre>
      *
      * <code>.google.api.MonitoredResource resource = 2;</code>
@@ -1107,6 +1212,177 @@ private static final long serialVersionUID = 0L;
         resource_ = null;
       }
       return resourceBuilder_;
+    }
+
+    private com.google.api.MonitoredResourceMetadata metadata_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.api.MonitoredResourceMetadata, com.google.api.MonitoredResourceMetadata.Builder, com.google.api.MonitoredResourceMetadataOrBuilder> metadataBuilder_;
+    /**
+     * <pre>
+     * Output only. The associated monitored resource metadata. When reading a
+     * a timeseries, this field will include metadata labels that are explicitly
+     * named in the reduction. When creating a timeseries, this field is ignored.
+     * </pre>
+     *
+     * <code>.google.api.MonitoredResourceMetadata metadata = 7;</code>
+     */
+    public boolean hasMetadata() {
+      return metadataBuilder_ != null || metadata_ != null;
+    }
+    /**
+     * <pre>
+     * Output only. The associated monitored resource metadata. When reading a
+     * a timeseries, this field will include metadata labels that are explicitly
+     * named in the reduction. When creating a timeseries, this field is ignored.
+     * </pre>
+     *
+     * <code>.google.api.MonitoredResourceMetadata metadata = 7;</code>
+     */
+    public com.google.api.MonitoredResourceMetadata getMetadata() {
+      if (metadataBuilder_ == null) {
+        return metadata_ == null ? com.google.api.MonitoredResourceMetadata.getDefaultInstance() : metadata_;
+      } else {
+        return metadataBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Output only. The associated monitored resource metadata. When reading a
+     * a timeseries, this field will include metadata labels that are explicitly
+     * named in the reduction. When creating a timeseries, this field is ignored.
+     * </pre>
+     *
+     * <code>.google.api.MonitoredResourceMetadata metadata = 7;</code>
+     */
+    public Builder setMetadata(com.google.api.MonitoredResourceMetadata value) {
+      if (metadataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        metadata_ = value;
+        onChanged();
+      } else {
+        metadataBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. The associated monitored resource metadata. When reading a
+     * a timeseries, this field will include metadata labels that are explicitly
+     * named in the reduction. When creating a timeseries, this field is ignored.
+     * </pre>
+     *
+     * <code>.google.api.MonitoredResourceMetadata metadata = 7;</code>
+     */
+    public Builder setMetadata(
+        com.google.api.MonitoredResourceMetadata.Builder builderForValue) {
+      if (metadataBuilder_ == null) {
+        metadata_ = builderForValue.build();
+        onChanged();
+      } else {
+        metadataBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. The associated monitored resource metadata. When reading a
+     * a timeseries, this field will include metadata labels that are explicitly
+     * named in the reduction. When creating a timeseries, this field is ignored.
+     * </pre>
+     *
+     * <code>.google.api.MonitoredResourceMetadata metadata = 7;</code>
+     */
+    public Builder mergeMetadata(com.google.api.MonitoredResourceMetadata value) {
+      if (metadataBuilder_ == null) {
+        if (metadata_ != null) {
+          metadata_ =
+            com.google.api.MonitoredResourceMetadata.newBuilder(metadata_).mergeFrom(value).buildPartial();
+        } else {
+          metadata_ = value;
+        }
+        onChanged();
+      } else {
+        metadataBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. The associated monitored resource metadata. When reading a
+     * a timeseries, this field will include metadata labels that are explicitly
+     * named in the reduction. When creating a timeseries, this field is ignored.
+     * </pre>
+     *
+     * <code>.google.api.MonitoredResourceMetadata metadata = 7;</code>
+     */
+    public Builder clearMetadata() {
+      if (metadataBuilder_ == null) {
+        metadata_ = null;
+        onChanged();
+      } else {
+        metadata_ = null;
+        metadataBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. The associated monitored resource metadata. When reading a
+     * a timeseries, this field will include metadata labels that are explicitly
+     * named in the reduction. When creating a timeseries, this field is ignored.
+     * </pre>
+     *
+     * <code>.google.api.MonitoredResourceMetadata metadata = 7;</code>
+     */
+    public com.google.api.MonitoredResourceMetadata.Builder getMetadataBuilder() {
+      
+      onChanged();
+      return getMetadataFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Output only. The associated monitored resource metadata. When reading a
+     * a timeseries, this field will include metadata labels that are explicitly
+     * named in the reduction. When creating a timeseries, this field is ignored.
+     * </pre>
+     *
+     * <code>.google.api.MonitoredResourceMetadata metadata = 7;</code>
+     */
+    public com.google.api.MonitoredResourceMetadataOrBuilder getMetadataOrBuilder() {
+      if (metadataBuilder_ != null) {
+        return metadataBuilder_.getMessageOrBuilder();
+      } else {
+        return metadata_ == null ?
+            com.google.api.MonitoredResourceMetadata.getDefaultInstance() : metadata_;
+      }
+    }
+    /**
+     * <pre>
+     * Output only. The associated monitored resource metadata. When reading a
+     * a timeseries, this field will include metadata labels that are explicitly
+     * named in the reduction. When creating a timeseries, this field is ignored.
+     * </pre>
+     *
+     * <code>.google.api.MonitoredResourceMetadata metadata = 7;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.api.MonitoredResourceMetadata, com.google.api.MonitoredResourceMetadata.Builder, com.google.api.MonitoredResourceMetadataOrBuilder> 
+        getMetadataFieldBuilder() {
+      if (metadataBuilder_ == null) {
+        metadataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.api.MonitoredResourceMetadata, com.google.api.MonitoredResourceMetadata.Builder, com.google.api.MonitoredResourceMetadataOrBuilder>(
+                getMetadata(),
+                getParentForChildren(),
+                isClean());
+        metadata_ = null;
+      }
+      return metadataBuilder_;
     }
 
     private int metricKind_ = 0;
@@ -1161,6 +1437,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.api.MetricDescriptor.MetricKind metric_kind = 3;</code>
      */
     public com.google.api.MetricDescriptor.MetricKind getMetricKind() {
+      @SuppressWarnings("deprecation")
       com.google.api.MetricDescriptor.MetricKind result = com.google.api.MetricDescriptor.MetricKind.valueOf(metricKind_);
       return result == null ? com.google.api.MetricDescriptor.MetricKind.UNRECOGNIZED : result;
     }
@@ -1251,6 +1528,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.api.MetricDescriptor.ValueType value_type = 4;</code>
      */
     public com.google.api.MetricDescriptor.ValueType getValueType() {
+      @SuppressWarnings("deprecation")
       com.google.api.MetricDescriptor.ValueType result = com.google.api.MetricDescriptor.ValueType.valueOf(valueType_);
       return result == null ? com.google.api.MetricDescriptor.ValueType.UNRECOGNIZED : result;
     }
@@ -1295,9 +1573,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.google.monitoring.v3.Point> points_ =
       java.util.Collections.emptyList();
     private void ensurePointsIsMutable() {
-      if (!((bitField0_ & 0x00000010) == 0x00000010)) {
+      if (!((bitField0_ & 0x00000020) == 0x00000020)) {
         points_ = new java.util.ArrayList<com.google.monitoring.v3.Point>(points_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
        }
     }
 
@@ -1306,8 +1584,8 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * The data points of this time series. When listing time series, the order of
-     * the points is specified by the list method.
+     * The data points of this time series. When listing time series, points are
+     * returned in reverse time order.
      * When creating a time series, this field must contain exactly one point and
      * the point's type must be the same as the value type of the associated
      * metric. If the associated metric's descriptor must be auto-created, then
@@ -1326,8 +1604,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The data points of this time series. When listing time series, the order of
-     * the points is specified by the list method.
+     * The data points of this time series. When listing time series, points are
+     * returned in reverse time order.
      * When creating a time series, this field must contain exactly one point and
      * the point's type must be the same as the value type of the associated
      * metric. If the associated metric's descriptor must be auto-created, then
@@ -1346,8 +1624,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The data points of this time series. When listing time series, the order of
-     * the points is specified by the list method.
+     * The data points of this time series. When listing time series, points are
+     * returned in reverse time order.
      * When creating a time series, this field must contain exactly one point and
      * the point's type must be the same as the value type of the associated
      * metric. If the associated metric's descriptor must be auto-created, then
@@ -1366,8 +1644,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The data points of this time series. When listing time series, the order of
-     * the points is specified by the list method.
+     * The data points of this time series. When listing time series, points are
+     * returned in reverse time order.
      * When creating a time series, this field must contain exactly one point and
      * the point's type must be the same as the value type of the associated
      * metric. If the associated metric's descriptor must be auto-created, then
@@ -1393,8 +1671,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The data points of this time series. When listing time series, the order of
-     * the points is specified by the list method.
+     * The data points of this time series. When listing time series, points are
+     * returned in reverse time order.
      * When creating a time series, this field must contain exactly one point and
      * the point's type must be the same as the value type of the associated
      * metric. If the associated metric's descriptor must be auto-created, then
@@ -1417,8 +1695,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The data points of this time series. When listing time series, the order of
-     * the points is specified by the list method.
+     * The data points of this time series. When listing time series, points are
+     * returned in reverse time order.
      * When creating a time series, this field must contain exactly one point and
      * the point's type must be the same as the value type of the associated
      * metric. If the associated metric's descriptor must be auto-created, then
@@ -1443,8 +1721,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The data points of this time series. When listing time series, the order of
-     * the points is specified by the list method.
+     * The data points of this time series. When listing time series, points are
+     * returned in reverse time order.
      * When creating a time series, this field must contain exactly one point and
      * the point's type must be the same as the value type of the associated
      * metric. If the associated metric's descriptor must be auto-created, then
@@ -1470,8 +1748,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The data points of this time series. When listing time series, the order of
-     * the points is specified by the list method.
+     * The data points of this time series. When listing time series, points are
+     * returned in reverse time order.
      * When creating a time series, this field must contain exactly one point and
      * the point's type must be the same as the value type of the associated
      * metric. If the associated metric's descriptor must be auto-created, then
@@ -1494,8 +1772,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The data points of this time series. When listing time series, the order of
-     * the points is specified by the list method.
+     * The data points of this time series. When listing time series, points are
+     * returned in reverse time order.
      * When creating a time series, this field must contain exactly one point and
      * the point's type must be the same as the value type of the associated
      * metric. If the associated metric's descriptor must be auto-created, then
@@ -1518,8 +1796,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The data points of this time series. When listing time series, the order of
-     * the points is specified by the list method.
+     * The data points of this time series. When listing time series, points are
+     * returned in reverse time order.
      * When creating a time series, this field must contain exactly one point and
      * the point's type must be the same as the value type of the associated
      * metric. If the associated metric's descriptor must be auto-created, then
@@ -1543,8 +1821,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The data points of this time series. When listing time series, the order of
-     * the points is specified by the list method.
+     * The data points of this time series. When listing time series, points are
+     * returned in reverse time order.
      * When creating a time series, this field must contain exactly one point and
      * the point's type must be the same as the value type of the associated
      * metric. If the associated metric's descriptor must be auto-created, then
@@ -1557,7 +1835,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearPoints() {
       if (pointsBuilder_ == null) {
         points_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
       } else {
         pointsBuilder_.clear();
@@ -1566,8 +1844,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The data points of this time series. When listing time series, the order of
-     * the points is specified by the list method.
+     * The data points of this time series. When listing time series, points are
+     * returned in reverse time order.
      * When creating a time series, this field must contain exactly one point and
      * the point's type must be the same as the value type of the associated
      * metric. If the associated metric's descriptor must be auto-created, then
@@ -1589,8 +1867,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The data points of this time series. When listing time series, the order of
-     * the points is specified by the list method.
+     * The data points of this time series. When listing time series, points are
+     * returned in reverse time order.
      * When creating a time series, this field must contain exactly one point and
      * the point's type must be the same as the value type of the associated
      * metric. If the associated metric's descriptor must be auto-created, then
@@ -1606,8 +1884,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The data points of this time series. When listing time series, the order of
-     * the points is specified by the list method.
+     * The data points of this time series. When listing time series, points are
+     * returned in reverse time order.
      * When creating a time series, this field must contain exactly one point and
      * the point's type must be the same as the value type of the associated
      * metric. If the associated metric's descriptor must be auto-created, then
@@ -1626,8 +1904,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The data points of this time series. When listing time series, the order of
-     * the points is specified by the list method.
+     * The data points of this time series. When listing time series, points are
+     * returned in reverse time order.
      * When creating a time series, this field must contain exactly one point and
      * the point's type must be the same as the value type of the associated
      * metric. If the associated metric's descriptor must be auto-created, then
@@ -1647,8 +1925,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The data points of this time series. When listing time series, the order of
-     * the points is specified by the list method.
+     * The data points of this time series. When listing time series, points are
+     * returned in reverse time order.
      * When creating a time series, this field must contain exactly one point and
      * the point's type must be the same as the value type of the associated
      * metric. If the associated metric's descriptor must be auto-created, then
@@ -1664,8 +1942,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The data points of this time series. When listing time series, the order of
-     * the points is specified by the list method.
+     * The data points of this time series. When listing time series, points are
+     * returned in reverse time order.
      * When creating a time series, this field must contain exactly one point and
      * the point's type must be the same as the value type of the associated
      * metric. If the associated metric's descriptor must be auto-created, then
@@ -1682,8 +1960,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The data points of this time series. When listing time series, the order of
-     * the points is specified by the list method.
+     * The data points of this time series. When listing time series, points are
+     * returned in reverse time order.
      * When creating a time series, this field must contain exactly one point and
      * the point's type must be the same as the value type of the associated
      * metric. If the associated metric's descriptor must be auto-created, then
@@ -1704,18 +1982,20 @@ private static final long serialVersionUID = 0L;
         pointsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.google.monitoring.v3.Point, com.google.monitoring.v3.Point.Builder, com.google.monitoring.v3.PointOrBuilder>(
                 points_,
-                ((bitField0_ & 0x00000010) == 0x00000010),
+                ((bitField0_ & 0x00000020) == 0x00000020),
                 getParentForChildren(),
                 isClean());
         points_ = null;
       }
       return pointsBuilder_;
     }
+    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -1737,6 +2017,7 @@ private static final long serialVersionUID = 0L;
 
   private static final com.google.protobuf.Parser<TimeSeries>
       PARSER = new com.google.protobuf.AbstractParser<TimeSeries>() {
+    @java.lang.Override
     public TimeSeries parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1754,6 +2035,7 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.monitoring.v3.TimeSeries getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }

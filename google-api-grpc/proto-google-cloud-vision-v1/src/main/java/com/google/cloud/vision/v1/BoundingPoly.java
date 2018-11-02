@@ -21,6 +21,7 @@ private static final long serialVersionUID = 0L;
   }
   private BoundingPoly() {
     vertices_ = java.util.Collections.emptyList();
+    normalizedVertices_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -47,13 +48,6 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
           case 10: {
             if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
               vertices_ = new java.util.ArrayList<com.google.cloud.vision.v1.Vertex>();
@@ -61,6 +55,22 @@ private static final long serialVersionUID = 0L;
             }
             vertices_.add(
                 input.readMessage(com.google.cloud.vision.v1.Vertex.parser(), extensionRegistry));
+            break;
+          }
+          case 18: {
+            if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+              normalizedVertices_ = new java.util.ArrayList<com.google.cloud.vision.v1.NormalizedVertex>();
+              mutable_bitField0_ |= 0x00000002;
+            }
+            normalizedVertices_.add(
+                input.readMessage(com.google.cloud.vision.v1.NormalizedVertex.parser(), extensionRegistry));
+            break;
+          }
+          default: {
+            if (!parseUnknownFieldProto3(
+                input, unknownFields, extensionRegistry, tag)) {
+              done = true;
+            }
             break;
           }
         }
@@ -74,6 +84,9 @@ private static final long serialVersionUID = 0L;
       if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
         vertices_ = java.util.Collections.unmodifiableList(vertices_);
       }
+      if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+        normalizedVertices_ = java.util.Collections.unmodifiableList(normalizedVertices_);
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -83,6 +96,7 @@ private static final long serialVersionUID = 0L;
     return com.google.cloud.vision.v1.GeometryProto.internal_static_google_cloud_vision_v1_BoundingPoly_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.vision.v1.GeometryProto.internal_static_google_cloud_vision_v1_BoundingPoly_fieldAccessorTable
@@ -145,7 +159,63 @@ private static final long serialVersionUID = 0L;
     return vertices_.get(index);
   }
 
+  public static final int NORMALIZED_VERTICES_FIELD_NUMBER = 2;
+  private java.util.List<com.google.cloud.vision.v1.NormalizedVertex> normalizedVertices_;
+  /**
+   * <pre>
+   * The bounding polygon normalized vertices.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.vision.v1.NormalizedVertex normalized_vertices = 2;</code>
+   */
+  public java.util.List<com.google.cloud.vision.v1.NormalizedVertex> getNormalizedVerticesList() {
+    return normalizedVertices_;
+  }
+  /**
+   * <pre>
+   * The bounding polygon normalized vertices.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.vision.v1.NormalizedVertex normalized_vertices = 2;</code>
+   */
+  public java.util.List<? extends com.google.cloud.vision.v1.NormalizedVertexOrBuilder> 
+      getNormalizedVerticesOrBuilderList() {
+    return normalizedVertices_;
+  }
+  /**
+   * <pre>
+   * The bounding polygon normalized vertices.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.vision.v1.NormalizedVertex normalized_vertices = 2;</code>
+   */
+  public int getNormalizedVerticesCount() {
+    return normalizedVertices_.size();
+  }
+  /**
+   * <pre>
+   * The bounding polygon normalized vertices.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.vision.v1.NormalizedVertex normalized_vertices = 2;</code>
+   */
+  public com.google.cloud.vision.v1.NormalizedVertex getNormalizedVertices(int index) {
+    return normalizedVertices_.get(index);
+  }
+  /**
+   * <pre>
+   * The bounding polygon normalized vertices.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.vision.v1.NormalizedVertex normalized_vertices = 2;</code>
+   */
+  public com.google.cloud.vision.v1.NormalizedVertexOrBuilder getNormalizedVerticesOrBuilder(
+      int index) {
+    return normalizedVertices_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -155,14 +225,19 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
+  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     for (int i = 0; i < vertices_.size(); i++) {
       output.writeMessage(1, vertices_.get(i));
     }
+    for (int i = 0; i < normalizedVertices_.size(); i++) {
+      output.writeMessage(2, normalizedVertices_.get(i));
+    }
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -171,6 +246,10 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < vertices_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, vertices_.get(i));
+    }
+    for (int i = 0; i < normalizedVertices_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(2, normalizedVertices_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -190,6 +269,8 @@ private static final long serialVersionUID = 0L;
     boolean result = true;
     result = result && getVerticesList()
         .equals(other.getVerticesList());
+    result = result && getNormalizedVerticesList()
+        .equals(other.getNormalizedVerticesList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -204,6 +285,10 @@ private static final long serialVersionUID = 0L;
     if (getVerticesCount() > 0) {
       hash = (37 * hash) + VERTICES_FIELD_NUMBER;
       hash = (53 * hash) + getVerticesList().hashCode();
+    }
+    if (getNormalizedVerticesCount() > 0) {
+      hash = (37 * hash) + NORMALIZED_VERTICES_FIELD_NUMBER;
+      hash = (53 * hash) + getNormalizedVerticesList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -280,6 +365,7 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
+  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
@@ -287,6 +373,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder(com.google.cloud.vision.v1.BoundingPoly prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
@@ -314,6 +401,7 @@ private static final long serialVersionUID = 0L;
       return com.google.cloud.vision.v1.GeometryProto.internal_static_google_cloud_vision_v1_BoundingPoly_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.vision.v1.GeometryProto.internal_static_google_cloud_vision_v1_BoundingPoly_fieldAccessorTable
@@ -335,8 +423,10 @@ private static final long serialVersionUID = 0L;
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
         getVerticesFieldBuilder();
+        getNormalizedVerticesFieldBuilder();
       }
     }
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       if (verticesBuilder_ == null) {
@@ -345,18 +435,27 @@ private static final long serialVersionUID = 0L;
       } else {
         verticesBuilder_.clear();
       }
+      if (normalizedVerticesBuilder_ == null) {
+        normalizedVertices_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      } else {
+        normalizedVerticesBuilder_.clear();
+      }
       return this;
     }
 
+    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
       return com.google.cloud.vision.v1.GeometryProto.internal_static_google_cloud_vision_v1_BoundingPoly_descriptor;
     }
 
+    @java.lang.Override
     public com.google.cloud.vision.v1.BoundingPoly getDefaultInstanceForType() {
       return com.google.cloud.vision.v1.BoundingPoly.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.cloud.vision.v1.BoundingPoly build() {
       com.google.cloud.vision.v1.BoundingPoly result = buildPartial();
       if (!result.isInitialized()) {
@@ -365,6 +464,7 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.cloud.vision.v1.BoundingPoly buildPartial() {
       com.google.cloud.vision.v1.BoundingPoly result = new com.google.cloud.vision.v1.BoundingPoly(this);
       int from_bitField0_ = bitField0_;
@@ -377,36 +477,52 @@ private static final long serialVersionUID = 0L;
       } else {
         result.vertices_ = verticesBuilder_.build();
       }
+      if (normalizedVerticesBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+          normalizedVertices_ = java.util.Collections.unmodifiableList(normalizedVertices_);
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.normalizedVertices_ = normalizedVertices_;
+      } else {
+        result.normalizedVertices_ = normalizedVerticesBuilder_.build();
+      }
       onBuilt();
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.vision.v1.BoundingPoly) {
         return mergeFrom((com.google.cloud.vision.v1.BoundingPoly)other);
@@ -444,15 +560,43 @@ private static final long serialVersionUID = 0L;
           }
         }
       }
+      if (normalizedVerticesBuilder_ == null) {
+        if (!other.normalizedVertices_.isEmpty()) {
+          if (normalizedVertices_.isEmpty()) {
+            normalizedVertices_ = other.normalizedVertices_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureNormalizedVerticesIsMutable();
+            normalizedVertices_.addAll(other.normalizedVertices_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.normalizedVertices_.isEmpty()) {
+          if (normalizedVerticesBuilder_.isEmpty()) {
+            normalizedVerticesBuilder_.dispose();
+            normalizedVerticesBuilder_ = null;
+            normalizedVertices_ = other.normalizedVertices_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+            normalizedVerticesBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getNormalizedVerticesFieldBuilder() : null;
+          } else {
+            normalizedVerticesBuilder_.addAllMessages(other.normalizedVertices_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -783,11 +927,325 @@ private static final long serialVersionUID = 0L;
       }
       return verticesBuilder_;
     }
+
+    private java.util.List<com.google.cloud.vision.v1.NormalizedVertex> normalizedVertices_ =
+      java.util.Collections.emptyList();
+    private void ensureNormalizedVerticesIsMutable() {
+      if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+        normalizedVertices_ = new java.util.ArrayList<com.google.cloud.vision.v1.NormalizedVertex>(normalizedVertices_);
+        bitField0_ |= 0x00000002;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.google.cloud.vision.v1.NormalizedVertex, com.google.cloud.vision.v1.NormalizedVertex.Builder, com.google.cloud.vision.v1.NormalizedVertexOrBuilder> normalizedVerticesBuilder_;
+
+    /**
+     * <pre>
+     * The bounding polygon normalized vertices.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.vision.v1.NormalizedVertex normalized_vertices = 2;</code>
+     */
+    public java.util.List<com.google.cloud.vision.v1.NormalizedVertex> getNormalizedVerticesList() {
+      if (normalizedVerticesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(normalizedVertices_);
+      } else {
+        return normalizedVerticesBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * The bounding polygon normalized vertices.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.vision.v1.NormalizedVertex normalized_vertices = 2;</code>
+     */
+    public int getNormalizedVerticesCount() {
+      if (normalizedVerticesBuilder_ == null) {
+        return normalizedVertices_.size();
+      } else {
+        return normalizedVerticesBuilder_.getCount();
+      }
+    }
+    /**
+     * <pre>
+     * The bounding polygon normalized vertices.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.vision.v1.NormalizedVertex normalized_vertices = 2;</code>
+     */
+    public com.google.cloud.vision.v1.NormalizedVertex getNormalizedVertices(int index) {
+      if (normalizedVerticesBuilder_ == null) {
+        return normalizedVertices_.get(index);
+      } else {
+        return normalizedVerticesBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * The bounding polygon normalized vertices.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.vision.v1.NormalizedVertex normalized_vertices = 2;</code>
+     */
+    public Builder setNormalizedVertices(
+        int index, com.google.cloud.vision.v1.NormalizedVertex value) {
+      if (normalizedVerticesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureNormalizedVerticesIsMutable();
+        normalizedVertices_.set(index, value);
+        onChanged();
+      } else {
+        normalizedVerticesBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * The bounding polygon normalized vertices.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.vision.v1.NormalizedVertex normalized_vertices = 2;</code>
+     */
+    public Builder setNormalizedVertices(
+        int index, com.google.cloud.vision.v1.NormalizedVertex.Builder builderForValue) {
+      if (normalizedVerticesBuilder_ == null) {
+        ensureNormalizedVerticesIsMutable();
+        normalizedVertices_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        normalizedVerticesBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * The bounding polygon normalized vertices.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.vision.v1.NormalizedVertex normalized_vertices = 2;</code>
+     */
+    public Builder addNormalizedVertices(com.google.cloud.vision.v1.NormalizedVertex value) {
+      if (normalizedVerticesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureNormalizedVerticesIsMutable();
+        normalizedVertices_.add(value);
+        onChanged();
+      } else {
+        normalizedVerticesBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * The bounding polygon normalized vertices.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.vision.v1.NormalizedVertex normalized_vertices = 2;</code>
+     */
+    public Builder addNormalizedVertices(
+        int index, com.google.cloud.vision.v1.NormalizedVertex value) {
+      if (normalizedVerticesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureNormalizedVerticesIsMutable();
+        normalizedVertices_.add(index, value);
+        onChanged();
+      } else {
+        normalizedVerticesBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * The bounding polygon normalized vertices.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.vision.v1.NormalizedVertex normalized_vertices = 2;</code>
+     */
+    public Builder addNormalizedVertices(
+        com.google.cloud.vision.v1.NormalizedVertex.Builder builderForValue) {
+      if (normalizedVerticesBuilder_ == null) {
+        ensureNormalizedVerticesIsMutable();
+        normalizedVertices_.add(builderForValue.build());
+        onChanged();
+      } else {
+        normalizedVerticesBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * The bounding polygon normalized vertices.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.vision.v1.NormalizedVertex normalized_vertices = 2;</code>
+     */
+    public Builder addNormalizedVertices(
+        int index, com.google.cloud.vision.v1.NormalizedVertex.Builder builderForValue) {
+      if (normalizedVerticesBuilder_ == null) {
+        ensureNormalizedVerticesIsMutable();
+        normalizedVertices_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        normalizedVerticesBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * The bounding polygon normalized vertices.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.vision.v1.NormalizedVertex normalized_vertices = 2;</code>
+     */
+    public Builder addAllNormalizedVertices(
+        java.lang.Iterable<? extends com.google.cloud.vision.v1.NormalizedVertex> values) {
+      if (normalizedVerticesBuilder_ == null) {
+        ensureNormalizedVerticesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, normalizedVertices_);
+        onChanged();
+      } else {
+        normalizedVerticesBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * The bounding polygon normalized vertices.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.vision.v1.NormalizedVertex normalized_vertices = 2;</code>
+     */
+    public Builder clearNormalizedVertices() {
+      if (normalizedVerticesBuilder_ == null) {
+        normalizedVertices_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+      } else {
+        normalizedVerticesBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * The bounding polygon normalized vertices.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.vision.v1.NormalizedVertex normalized_vertices = 2;</code>
+     */
+    public Builder removeNormalizedVertices(int index) {
+      if (normalizedVerticesBuilder_ == null) {
+        ensureNormalizedVerticesIsMutable();
+        normalizedVertices_.remove(index);
+        onChanged();
+      } else {
+        normalizedVerticesBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * The bounding polygon normalized vertices.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.vision.v1.NormalizedVertex normalized_vertices = 2;</code>
+     */
+    public com.google.cloud.vision.v1.NormalizedVertex.Builder getNormalizedVerticesBuilder(
+        int index) {
+      return getNormalizedVerticesFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * The bounding polygon normalized vertices.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.vision.v1.NormalizedVertex normalized_vertices = 2;</code>
+     */
+    public com.google.cloud.vision.v1.NormalizedVertexOrBuilder getNormalizedVerticesOrBuilder(
+        int index) {
+      if (normalizedVerticesBuilder_ == null) {
+        return normalizedVertices_.get(index);  } else {
+        return normalizedVerticesBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * The bounding polygon normalized vertices.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.vision.v1.NormalizedVertex normalized_vertices = 2;</code>
+     */
+    public java.util.List<? extends com.google.cloud.vision.v1.NormalizedVertexOrBuilder> 
+         getNormalizedVerticesOrBuilderList() {
+      if (normalizedVerticesBuilder_ != null) {
+        return normalizedVerticesBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(normalizedVertices_);
+      }
+    }
+    /**
+     * <pre>
+     * The bounding polygon normalized vertices.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.vision.v1.NormalizedVertex normalized_vertices = 2;</code>
+     */
+    public com.google.cloud.vision.v1.NormalizedVertex.Builder addNormalizedVerticesBuilder() {
+      return getNormalizedVerticesFieldBuilder().addBuilder(
+          com.google.cloud.vision.v1.NormalizedVertex.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * The bounding polygon normalized vertices.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.vision.v1.NormalizedVertex normalized_vertices = 2;</code>
+     */
+    public com.google.cloud.vision.v1.NormalizedVertex.Builder addNormalizedVerticesBuilder(
+        int index) {
+      return getNormalizedVerticesFieldBuilder().addBuilder(
+          index, com.google.cloud.vision.v1.NormalizedVertex.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * The bounding polygon normalized vertices.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.vision.v1.NormalizedVertex normalized_vertices = 2;</code>
+     */
+    public java.util.List<com.google.cloud.vision.v1.NormalizedVertex.Builder> 
+         getNormalizedVerticesBuilderList() {
+      return getNormalizedVerticesFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.google.cloud.vision.v1.NormalizedVertex, com.google.cloud.vision.v1.NormalizedVertex.Builder, com.google.cloud.vision.v1.NormalizedVertexOrBuilder> 
+        getNormalizedVerticesFieldBuilder() {
+      if (normalizedVerticesBuilder_ == null) {
+        normalizedVerticesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.vision.v1.NormalizedVertex, com.google.cloud.vision.v1.NormalizedVertex.Builder, com.google.cloud.vision.v1.NormalizedVertexOrBuilder>(
+                normalizedVertices_,
+                ((bitField0_ & 0x00000002) == 0x00000002),
+                getParentForChildren(),
+                isClean());
+        normalizedVertices_ = null;
+      }
+      return normalizedVerticesBuilder_;
+    }
+    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -809,6 +1267,7 @@ private static final long serialVersionUID = 0L;
 
   private static final com.google.protobuf.Parser<BoundingPoly>
       PARSER = new com.google.protobuf.AbstractParser<BoundingPoly>() {
+    @java.lang.Override
     public BoundingPoly parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -826,6 +1285,7 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.cloud.vision.v1.BoundingPoly getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }

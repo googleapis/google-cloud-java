@@ -25,13 +25,28 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
+import static org.junit.Assume.assumeFalse;
+import static org.junit.Assume.assumeTrue;
 
+import com.google.api.client.util.DateTime;
 import com.google.api.gax.paging.Page;
+import com.google.auth.ServiceAccountSigner;
+import com.google.auth.oauth2.GoogleCredentials;
+import com.google.cloud.kms.v1.CreateCryptoKeyRequest;
+import com.google.cloud.kms.v1.CreateKeyRingRequest;
+import com.google.cloud.kms.v1.CryptoKeyName;
+import com.google.cloud.kms.v1.CryptoKey;
+import com.google.cloud.kms.v1.GetCryptoKeyRequest;
+import com.google.cloud.kms.v1.GetKeyRingRequest;
+import com.google.cloud.kms.v1.KeyManagementServiceGrpc.KeyManagementServiceBlockingStub;
+import com.google.cloud.kms.v1.KeyManagementServiceGrpc;
+import com.google.cloud.kms.v1.KeyRingName;
 import com.google.cloud.Identity;
 import com.google.cloud.Policy;
 import com.google.cloud.ReadChannel;
 import com.google.cloud.RestorableState;
 import com.google.cloud.WriteChannel;
+import com.google.cloud.kms.v1.LocationName;
 import com.google.cloud.storage.Acl;
 import com.google.cloud.storage.Acl.Role;
 import com.google.cloud.storage.Acl.User;
@@ -40,6 +55,9 @@ import com.google.cloud.storage.BlobId;
 import com.google.cloud.storage.BlobInfo;
 import com.google.cloud.storage.Bucket;
 import com.google.cloud.storage.BucketInfo;
+import com.google.cloud.storage.BucketInfo.LifecycleRule;
+import com.google.cloud.storage.BucketInfo.LifecycleRule.LifecycleAction;
+import com.google.cloud.storage.BucketInfo.LifecycleRule.LifecycleCondition;
 import com.google.cloud.storage.CopyWriter;
 import com.google.cloud.storage.HttpMethod;
 import com.google.cloud.storage.ServiceAccount;
@@ -60,6 +78,7 @@ import com.google.common.collect.Iterators;
 import com.google.common.collect.Lists;
 import com.google.common.io.BaseEncoding;
 import com.google.common.io.ByteStreams;
+import com.google.iam.v1.Binding;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -68,8 +87,6 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.nio.ByteBuffer;
 import java.security.Key;
-import java.security.NoSuchAlgorithmException;
-import java.security.spec.InvalidKeySpecException;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
@@ -85,6 +102,17 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.zip.GZIPInputStream;
 import javax.crypto.spec.SecretKeySpec;
+
+import com.google.iam.v1.IAMPolicyGrpc;
+import com.google.iam.v1.SetIamPolicyRequest;
+import io.grpc.auth.MoreCallCredentials;
+import io.grpc.ManagedChannel;
+import io.grpc.ManagedChannelBuilder;
+import io.grpc.Metadata;
+import io.grpc.Status;
+import io.grpc.StatusRuntimeException;
+import io.grpc.stub.MetadataUtils;
+
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -93,7 +121,11 @@ public class ITStorageTest {
 
   private static RemoteStorageHelper remoteStorageHelper;
   private static Storage storage;
-
+  private static String kmsKeyOneResourcePath;
+  private static String kmsKeyTwoResourcePath;
+  private static Metadata requestParamsHeader = new Metadata();
+  private static Metadata.Key<String> requestParamsKey =
+      Metadata.Key.of("x-goog-request-params", Metadata.ASCII_STRING_MARSHALLER);
   private static final Logger log = Logger.getLogger(ITStorageTest.class.getName());
   private static final String BUCKET = RemoteStorageHelper.generateBucketName();
   private static final String CONTENT_TYPE = "text/plain";
@@ -104,19 +136,36 @@ public class ITStorageTest {
   private static final String OTHER_BASE64_KEY = "IcOIQGlliNr5pr3vJb63l+XMqc7NjXqjfw/deBoNxPA=";
   private static final Key KEY =
       new SecretKeySpec(BaseEncoding.base64().decode(BASE64_KEY), "AES256");
-  private static final byte[] COMPRESSED_CONTENT = BaseEncoding.base64()
-      .decode("H4sIAAAAAAAAAPNIzcnJV3DPz0/PSVVwzskvTVEILskvSkxPVQQA/LySchsAAAA=");
+  private static final byte[] COMPRESSED_CONTENT =
+      BaseEncoding.base64()
+          .decode("H4sIAAAAAAAAAPNIzcnJV3DPz0/PSVVwzskvTVEILskvSkxPVQQA/LySchsAAAA=");
   private static final Map<String, String> BUCKET_LABELS = ImmutableMap.of("label1", "value1");
-  private static final String SERVICE_ACCOUNT_EMAIL = "gcloud-devel@gs-project-accounts.iam.gserviceaccount.com";
+  private static final Long RETENTION_PERIOD = 5L;
+  private static final Long RETENTION_PERIOD_IN_MILLISECONDS = RETENTION_PERIOD * 1000;
+  private static final String SERVICE_ACCOUNT_EMAIL_SUFFIX =
+      "@gs-project-accounts.iam.gserviceaccount.com";
+  private static final String KMS_KEY_RING_NAME = "gcs_test_kms_key_ring";
+  private static final String KMS_KEY_RING_LOCATION = "us";
+  private static final String KMS_KEY_ONE_NAME = "gcs_kms_key_one";
+  private static final String KMS_KEY_TWO_NAME = "gcs_kms_key_two";
+  private static final boolean IS_VPC_TEST = System.getenv("GOOGLE_CLOUD_TESTS_IN_VPCSC") != null
+          && System.getenv("GOOGLE_CLOUD_TESTS_IN_VPCSC").equalsIgnoreCase("true");
 
   @BeforeClass
-  public static void beforeClass() throws NoSuchAlgorithmException, InvalidKeySpecException {
+  public static void beforeClass() throws IOException {
     remoteStorageHelper = RemoteStorageHelper.create();
     storage = remoteStorageHelper.getOptions().getService();
     storage.create(
         BucketInfo.newBuilder(BUCKET)
-            .setDeleteRules(Collections.singleton(new BucketInfo.AgeDeleteRule(1)))
+            .setLocation("us")
+            .setLifecycleRules(
+                ImmutableList.of(
+                    new LifecycleRule(LifecycleAction.newDeleteAction(),
+                            LifecycleCondition.newBuilder().setAge(1).build())))
             .build());
+
+    // Prepare KMS KeyRing for CMEK tests
+    prepareKmsKeys();
   }
 
   @AfterClass
@@ -135,14 +184,143 @@ public class ITStorageTest {
     }
   }
 
+  private static void prepareKmsKeys() throws IOException {
+    String projectId = remoteStorageHelper.getOptions().getProjectId();
+    GoogleCredentials credentials = GoogleCredentials.getApplicationDefault();
+    ManagedChannel kmsChannel =
+        ManagedChannelBuilder.forTarget("cloudkms.googleapis.com:443").build();
+    KeyManagementServiceBlockingStub kmsStub =
+        KeyManagementServiceGrpc.newBlockingStub(kmsChannel)
+            .withCallCredentials(MoreCallCredentials.from(credentials));
+    IAMPolicyGrpc.IAMPolicyBlockingStub iamStub =
+        IAMPolicyGrpc.newBlockingStub(kmsChannel)
+            .withCallCredentials(MoreCallCredentials.from(credentials));
+    ensureKmsKeyRingExistsForTests(kmsStub, projectId, KMS_KEY_RING_LOCATION, KMS_KEY_RING_NAME);
+    ensureKmsKeyRingIamPermissionsForTests(
+        iamStub, projectId, KMS_KEY_RING_LOCATION, KMS_KEY_RING_NAME);
+    kmsKeyOneResourcePath =
+        ensureKmsKeyExistsForTests(
+            kmsStub, projectId, KMS_KEY_RING_LOCATION, KMS_KEY_RING_NAME, KMS_KEY_ONE_NAME);
+    kmsKeyTwoResourcePath =
+        ensureKmsKeyExistsForTests(
+            kmsStub, projectId, KMS_KEY_RING_LOCATION, KMS_KEY_RING_NAME, KMS_KEY_TWO_NAME);
+  }
+
+  private static String ensureKmsKeyRingExistsForTests(
+      KeyManagementServiceBlockingStub kmsStub,
+      String projectId,
+      String location,
+      String keyRingName)
+      throws StatusRuntimeException {
+    String kmsKeyRingResourcePath = KeyRingName.of(projectId, location, keyRingName).toString();
+    try {
+      // Attempt to Get KeyRing
+      GetKeyRingRequest getKeyRingRequest =
+          GetKeyRingRequest.newBuilder().setName(kmsKeyRingResourcePath).build();
+      requestParamsHeader.put(requestParamsKey, "name=" + kmsKeyRingResourcePath);
+      KeyManagementServiceBlockingStub stubForGetKeyRing =
+          MetadataUtils.attachHeaders(kmsStub, requestParamsHeader);
+      stubForGetKeyRing.getKeyRing(getKeyRingRequest);
+    } catch (StatusRuntimeException ex) {
+      if (ex.getStatus().getCode() == Status.Code.NOT_FOUND) {
+        // Create KmsKeyRing
+        String keyRingParent = LocationName.of(projectId, location).toString();
+        CreateKeyRingRequest createKeyRingRequest =
+            CreateKeyRingRequest.newBuilder()
+                .setParent(keyRingParent)
+                .setKeyRingId(keyRingName)
+                .build();
+        requestParamsHeader.put(requestParamsKey, "parent=" + keyRingParent);
+        KeyManagementServiceBlockingStub stubForCreateKeyRing =
+            MetadataUtils.attachHeaders(kmsStub, requestParamsHeader);
+        stubForCreateKeyRing.createKeyRing(createKeyRingRequest);
+      } else {
+        throw ex;
+      }
+    }
+
+    return kmsKeyRingResourcePath;
+  }
+
+  private static void ensureKmsKeyRingIamPermissionsForTests(
+      IAMPolicyGrpc.IAMPolicyBlockingStub iamStub,
+      String projectId,
+      String location,
+      String keyRingName)
+      throws StatusRuntimeException {
+    ServiceAccount serviceAccount = storage.getServiceAccount(projectId);
+    String kmsKeyRingResourcePath = KeyRingName.of(projectId, location, keyRingName).toString();
+    Binding binding =
+        Binding.newBuilder()
+            .setRole("roles/cloudkms.cryptoKeyEncrypterDecrypter")
+            .addMembers("serviceAccount:" + serviceAccount.getEmail())
+            .build();
+    com.google.iam.v1.Policy policy =
+        com.google.iam.v1.Policy.newBuilder().addBindings(binding).build();
+    SetIamPolicyRequest setIamPolicyRequest =
+        SetIamPolicyRequest.newBuilder()
+            .setResource(kmsKeyRingResourcePath)
+            .setPolicy(policy)
+            .build();
+    requestParamsHeader.put(requestParamsKey, "parent=" + kmsKeyRingResourcePath);
+    iamStub = MetadataUtils.attachHeaders(iamStub, requestParamsHeader);
+    iamStub.setIamPolicy(setIamPolicyRequest);
+  }
+
+  private static String ensureKmsKeyExistsForTests(
+      KeyManagementServiceBlockingStub kmsStub,
+      String projectId,
+      String location,
+      String keyRingName,
+      String keyName)
+      throws StatusRuntimeException {
+    String kmsKeyResourcePath =
+        CryptoKeyName.of(projectId, location, keyRingName, keyName).toString();
+    try {
+      // Attempt to Get CryptoKey
+      requestParamsHeader.put(requestParamsKey, "name=" + kmsKeyResourcePath);
+      GetCryptoKeyRequest getCryptoKeyRequest =
+          GetCryptoKeyRequest.newBuilder().setName(kmsKeyResourcePath).build();
+      KeyManagementServiceGrpc.KeyManagementServiceBlockingStub stubForGetCryptoKey =
+          MetadataUtils.attachHeaders(kmsStub, requestParamsHeader);
+      stubForGetCryptoKey.getCryptoKey(getCryptoKeyRequest);
+    } catch (StatusRuntimeException ex) {
+      if (ex.getStatus().getCode() == Status.Code.NOT_FOUND) {
+        String kmsKeyRingResourcePath = KeyRingName.of(projectId, location, keyRingName).toString();
+        CryptoKey cryptoKey =
+            CryptoKey.newBuilder().setPurpose(CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT).build();
+        CreateCryptoKeyRequest createCryptoKeyRequest =
+            CreateCryptoKeyRequest.newBuilder()
+                .setCryptoKeyId(keyName)
+                .setParent(kmsKeyRingResourcePath)
+                .setCryptoKey(cryptoKey)
+                .build();
+
+        requestParamsHeader.put(requestParamsKey, "parent=" + kmsKeyRingResourcePath);
+        KeyManagementServiceGrpc.KeyManagementServiceBlockingStub stubForCreateCryptoKey =
+            MetadataUtils.attachHeaders(kmsStub, requestParamsHeader);
+        stubForCreateCryptoKey.createCryptoKey(createCryptoKeyRequest);
+      } else {
+        throw ex;
+      }
+    }
+    return kmsKeyResourcePath;
+  }
+
   @Test(timeout = 5000)
   public void testListBuckets() throws InterruptedException {
-    Iterator<Bucket> bucketIterator = storage.list(Storage.BucketListOption.prefix(BUCKET),
-        Storage.BucketListOption.fields()).iterateAll().iterator();
+    Iterator<Bucket> bucketIterator =
+        storage
+            .list(Storage.BucketListOption.prefix(BUCKET), Storage.BucketListOption.fields())
+            .iterateAll()
+            .iterator();
     while (!bucketIterator.hasNext()) {
       Thread.sleep(500);
-      bucketIterator = storage.list(Storage.BucketListOption.prefix(BUCKET),
-          Storage.BucketListOption.fields()).iterateAll().iterator();
+      bucketIterator =
+          storage
+              .list(Storage.BucketListOption.prefix(BUCKET), Storage.BucketListOption.fields())
+              .iterateAll()
+              .iterator();
     }
     while (bucketIterator.hasNext()) {
       Bucket remoteBucket = bucketIterator.next();
@@ -162,8 +340,7 @@ public class ITStorageTest {
 
   @Test
   public void testGetBucketAllSelectedFields() {
-    Bucket remoteBucket = storage.get(BUCKET,
-        Storage.BucketGetOption.fields(BucketField.values()));
+    Bucket remoteBucket = storage.get(BUCKET, Storage.BucketGetOption.fields(BucketField.values()));
     assertEquals(BUCKET, remoteBucket.getName());
     assertNotNull(remoteBucket.getCreateTime());
     assertNotNull(remoteBucket.getSelfLink());
@@ -175,6 +352,79 @@ public class ITStorageTest {
     assertEquals(BUCKET, remoteBucket.getName());
     assertNull(remoteBucket.getCreateTime());
     assertNull(remoteBucket.getSelfLink());
+  }
+
+  @Test
+  public void testGetBucketLifecycleRules() {
+    String lifecycleTestBucketName = RemoteStorageHelper.generateBucketName();
+    storage.create(
+        BucketInfo.newBuilder(lifecycleTestBucketName)
+            .setLocation("us")
+            .setLifecycleRules(
+                ImmutableList.of(
+                    new LifecycleRule(
+                        LifecycleAction.newSetStorageClassAction(
+                            StorageClass.COLDLINE),
+                        LifecycleCondition.newBuilder()
+                            .setAge(1)
+                            .setNumberOfNewerVersions(3)
+                            .setIsLive(false)
+                            .setCreatedBefore(new DateTime(System.currentTimeMillis()))
+                            .setMatchesStorageClass(ImmutableList.of(StorageClass.COLDLINE))
+                            .build())))
+            .build());
+    Bucket remoteBucket = storage.get(lifecycleTestBucketName, Storage.BucketGetOption.fields(BucketField.LIFECYCLE));
+    LifecycleRule lifecycleRule = remoteBucket.getLifecycleRules().get(0);
+    try {
+      assertTrue(
+          lifecycleRule.getAction().getActionType().equals(LifecycleRule.SetStorageClassLifecycleAction.TYPE));
+      assertEquals(3,  lifecycleRule.getCondition().getNumberOfNewerVersions().intValue());
+      assertNotNull(lifecycleRule.getCondition().getCreatedBefore());
+      assertFalse(lifecycleRule.getCondition().getIsLive());
+      assertEquals(1, lifecycleRule.getCondition().getAge().intValue());
+      assertEquals(1, lifecycleRule.getCondition().getMatchesStorageClass().size());
+    } finally {
+      storage.delete(lifecycleTestBucketName);
+    }
+  }
+
+  @Test
+  public void testClearBucketDefaultKmsKeyName() throws ExecutionException, InterruptedException {
+    String bucketName = RemoteStorageHelper.generateBucketName();
+    Bucket remoteBucket =
+        storage.create(
+            BucketInfo.newBuilder(bucketName)
+                .setDefaultKmsKeyName(kmsKeyOneResourcePath)
+                .setLocation(KMS_KEY_RING_LOCATION)
+                .build());
+
+    try {
+      assertEquals(kmsKeyOneResourcePath, remoteBucket.getDefaultKmsKeyName());
+      Bucket updatedBucket = remoteBucket.toBuilder().setDefaultKmsKeyName(null).build().update();
+      assertNull(updatedBucket.getDefaultKmsKeyName());
+    } finally {
+      RemoteStorageHelper.forceDelete(storage, bucketName, 5, TimeUnit.SECONDS);
+    }
+  }
+
+  @Test
+  public void testUpdateBucketDefaultKmsKeyName() throws ExecutionException, InterruptedException {
+    String bucketName = RemoteStorageHelper.generateBucketName();
+    Bucket remoteBucket =
+        storage.create(
+            BucketInfo.newBuilder(bucketName)
+                .setDefaultKmsKeyName(kmsKeyOneResourcePath)
+                .setLocation(KMS_KEY_RING_LOCATION)
+                .build());
+
+    try {
+      assertEquals(kmsKeyOneResourcePath, remoteBucket.getDefaultKmsKeyName());
+      Bucket updatedBucket =
+          remoteBucket.toBuilder().setDefaultKmsKeyName(kmsKeyTwoResourcePath).build().update();
+      assertEquals(kmsKeyTwoResourcePath, updatedBucket.getDefaultKmsKeyName());
+    } finally {
+      RemoteStorageHelper.forceDelete(storage, bucketName, 5, TimeUnit.SECONDS);
+    }
   }
 
   @Test
@@ -202,6 +452,66 @@ public class ITStorageTest {
     byte[] readBytes =
         storage.readAllBytes(BUCKET, blobName, Storage.BlobSourceOption.decryptionKey(BASE64_KEY));
     assertArrayEquals(BLOB_BYTE_CONTENT, readBytes);
+  }
+
+  @Test
+  public void testCreateBlobWithKmsKeyName() {
+    String blobName = "test-create-with-kms-key-name-blob";
+    BlobInfo blob = BlobInfo.newBuilder(BUCKET, blobName).build();
+    Blob remoteBlob =
+        storage.create(
+            blob, BLOB_BYTE_CONTENT, Storage.BlobTargetOption.kmsKeyName(kmsKeyOneResourcePath));
+    assertNotNull(remoteBlob);
+    assertEquals(blob.getBucket(), remoteBlob.getBucket());
+    assertEquals(blob.getName(), remoteBlob.getName());
+    assertNotNull(remoteBlob.getKmsKeyName());
+    assertTrue(remoteBlob.getKmsKeyName().startsWith(kmsKeyOneResourcePath));
+    byte[] readBytes = storage.readAllBytes(BUCKET, blobName);
+    assertArrayEquals(BLOB_BYTE_CONTENT, readBytes);
+  }
+
+  @Test
+  public void testCreateBlobWithKmsKeyNameAndCustomerSuppliedKey() {
+    try {
+      String blobName = "test-create-with-kms-key-name-blob";
+      BlobInfo blob = BlobInfo.newBuilder(BUCKET, blobName).build();
+      storage.create(
+          blob,
+          BLOB_BYTE_CONTENT,
+          Storage.BlobTargetOption.encryptionKey(KEY),
+          Storage.BlobTargetOption.kmsKeyName(kmsKeyOneResourcePath));
+      fail("StorageException was expected"); // can't supply both.
+    } catch (StorageException ex) {
+      // expected
+    }
+  }
+
+  @Test
+  public void testCreateBlobWithDefaultKmsKeyName()
+      throws ExecutionException, InterruptedException {
+    String bucketName = RemoteStorageHelper.generateBucketName();
+    Bucket bucket =
+        storage.create(
+            BucketInfo.newBuilder(bucketName)
+                .setDefaultKmsKeyName(kmsKeyOneResourcePath)
+                .setLocation(KMS_KEY_RING_LOCATION)
+                .build());
+    assertEquals(bucket.getDefaultKmsKeyName(), kmsKeyOneResourcePath);
+
+    try {
+      String blobName = "test-create-with-default-kms-key-name-blob";
+      BlobInfo blob = BlobInfo.newBuilder(bucket, blobName).build();
+      Blob remoteBlob = storage.create(blob, BLOB_BYTE_CONTENT);
+      assertNotNull(remoteBlob);
+      assertEquals(blob.getBucket(), remoteBlob.getBucket());
+      assertEquals(blob.getName(), remoteBlob.getName());
+      assertNotNull(remoteBlob.getKmsKeyName());
+      assertTrue(remoteBlob.getKmsKeyName().startsWith(kmsKeyOneResourcePath));
+      byte[] readBytes = storage.readAllBytes(bucketName, blobName);
+      assertArrayEquals(BLOB_BYTE_CONTENT, readBytes);
+    } finally {
+      RemoteStorageHelper.forceDelete(storage, bucketName, 5, TimeUnit.SECONDS);
+    }
   }
 
   @Test
@@ -238,8 +548,8 @@ public class ITStorageTest {
     assertNotNull(remoteBlob);
     BlobInfo wrongGenerationBlob = BlobInfo.newBuilder(BUCKET, blobName, -1L).build();
     try {
-      storage.create(wrongGenerationBlob, BLOB_BYTE_CONTENT,
-          Storage.BlobTargetOption.generationMatch());
+      storage.create(
+          wrongGenerationBlob, BLOB_BYTE_CONTENT, Storage.BlobTargetOption.generationMatch());
       fail("StorageException was expected");
     } catch (StorageException ex) {
       // expected
@@ -249,10 +559,11 @@ public class ITStorageTest {
   @Test
   public void testCreateBlobMd5Fail() {
     String blobName = "test-create-blob-md5-fail";
-    BlobInfo blob = BlobInfo.newBuilder(BUCKET, blobName)
-        .setContentType(CONTENT_TYPE)
-        .setMd5("O1R4G1HJSDUISJjoIYmVhQ==")
-        .build();
+    BlobInfo blob =
+        BlobInfo.newBuilder(BUCKET, blobName)
+            .setContentType(CONTENT_TYPE)
+            .setMd5("O1R4G1HJSDUISJjoIYmVhQ==")
+            .build();
     ByteArrayInputStream stream = new ByteArrayInputStream(BLOB_STRING_CONTENT.getBytes(UTF_8));
     try {
       storage.create(blob, stream, Storage.BlobWriteOption.md5Match());
@@ -275,28 +586,42 @@ public class ITStorageTest {
   @Test
   public void testGetBlobSelectedFields() {
     String blobName = "test-get-selected-fields-blob";
-    BlobInfo blob = BlobInfo.newBuilder(BUCKET, blobName)
-        .setContentType(CONTENT_TYPE)
-        .setMetadata(ImmutableMap.of("k", "v"))
-        .build();
+    BlobInfo blob =
+        BlobInfo.newBuilder(BUCKET, blobName)
+            .setContentType(CONTENT_TYPE)
+            .setMetadata(ImmutableMap.of("k", "v"))
+            .build();
     assertNotNull(storage.create(blob));
-    Blob remoteBlob = storage.get(blob.getBlobId(), Storage.BlobGetOption.fields(
-        BlobField.METADATA));
+    Blob remoteBlob =
+        storage.get(blob.getBlobId(), Storage.BlobGetOption.fields(BlobField.METADATA));
     assertEquals(blob.getBlobId(), remoteBlob.getBlobId());
     assertEquals(ImmutableMap.of("k", "v"), remoteBlob.getMetadata());
     assertNull(remoteBlob.getContentType());
   }
 
   @Test
+  public void testGetBlobKmsKeyNameField() {
+    String blobName = "test-get-selected-kms-key-name-field-blob";
+    BlobInfo blob = BlobInfo.newBuilder(BUCKET, blobName).setContentType(CONTENT_TYPE).build();
+    assertNotNull(storage.create(blob, Storage.BlobTargetOption.kmsKeyName(kmsKeyOneResourcePath)));
+    Blob remoteBlob =
+        storage.get(blob.getBlobId(), Storage.BlobGetOption.fields(BlobField.KMS_KEY_NAME));
+    assertEquals(blob.getBlobId(), remoteBlob.getBlobId());
+    assertTrue(remoteBlob.getKmsKeyName().startsWith(kmsKeyOneResourcePath));
+    assertNull(remoteBlob.getContentType());
+  }
+
+  @Test
   public void testGetBlobAllSelectedFields() {
     String blobName = "test-get-all-selected-fields-blob";
-    BlobInfo blob = BlobInfo.newBuilder(BUCKET, blobName)
-        .setContentType(CONTENT_TYPE)
-        .setMetadata(ImmutableMap.of("k", "v"))
-        .build();
+    BlobInfo blob =
+        BlobInfo.newBuilder(BUCKET, blobName)
+            .setContentType(CONTENT_TYPE)
+            .setMetadata(ImmutableMap.of("k", "v"))
+            .build();
     assertNotNull(storage.create(blob));
-    Blob remoteBlob = storage.get(blob.getBlobId(),
-        Storage.BlobGetOption.fields(BlobField.values()));
+    Blob remoteBlob =
+        storage.get(blob.getBlobId(), Storage.BlobGetOption.fields(BlobField.values()));
     assertEquals(blob.getBucket(), remoteBlob.getBucket());
     assertEquals(blob.getName(), remoteBlob.getName());
     assertEquals(ImmutableMap.of("k", "v"), remoteBlob.getMetadata());
@@ -336,31 +661,38 @@ public class ITStorageTest {
 
   @Test(timeout = 5000)
   public void testListBlobsSelectedFields() throws InterruptedException {
-    String[] blobNames = {"test-list-blobs-selected-fields-blob1",
-        "test-list-blobs-selected-fields-blob2"};
+    String[] blobNames = {
+      "test-list-blobs-selected-fields-blob1", "test-list-blobs-selected-fields-blob2"
+    };
     ImmutableMap<String, String> metadata = ImmutableMap.of("k", "v");
-    BlobInfo blob1 = BlobInfo.newBuilder(BUCKET, blobNames[0])
-        .setContentType(CONTENT_TYPE)
-        .setMetadata(metadata)
-        .build();
-    BlobInfo blob2 = BlobInfo.newBuilder(BUCKET, blobNames[1])
-        .setContentType(CONTENT_TYPE)
-        .setMetadata(metadata)
-        .build();
+    BlobInfo blob1 =
+        BlobInfo.newBuilder(BUCKET, blobNames[0])
+            .setContentType(CONTENT_TYPE)
+            .setMetadata(metadata)
+            .build();
+    BlobInfo blob2 =
+        BlobInfo.newBuilder(BUCKET, blobNames[1])
+            .setContentType(CONTENT_TYPE)
+            .setMetadata(metadata)
+            .build();
     Blob remoteBlob1 = storage.create(blob1);
     Blob remoteBlob2 = storage.create(blob2);
     assertNotNull(remoteBlob1);
     assertNotNull(remoteBlob2);
-    Page<Blob> page = storage.list(BUCKET,
-        Storage.BlobListOption.prefix("test-list-blobs-selected-fields-blob"),
-        Storage.BlobListOption.fields(BlobField.METADATA));
+    Page<Blob> page =
+        storage.list(
+            BUCKET,
+            Storage.BlobListOption.prefix("test-list-blobs-selected-fields-blob"),
+            Storage.BlobListOption.fields(BlobField.METADATA));
     // Listing blobs is eventually consistent, we loop until the list is of the expected size. The
     // test fails if timeout is reached.
     while (Iterators.size(page.iterateAll().iterator()) != 2) {
       Thread.sleep(500);
-      page = storage.list(BUCKET,
-          Storage.BlobListOption.prefix("test-list-blobs-selected-fields-blob"),
-          Storage.BlobListOption.fields(BlobField.METADATA));
+      page =
+          storage.list(
+              BUCKET,
+              Storage.BlobListOption.prefix("test-list-blobs-selected-fields-blob"),
+              Storage.BlobListOption.fields(BlobField.METADATA));
     }
     Set<String> blobSet = ImmutableSet.of(blobNames[0], blobNames[1]);
     Iterator<Blob> iterator = page.iterateAll().iterator();
@@ -374,29 +706,70 @@ public class ITStorageTest {
   }
 
   @Test(timeout = 5000)
-  public void testListBlobsEmptySelectedFields() throws InterruptedException {
-    String[] blobNames = {"test-list-blobs-empty-selected-fields-blob1",
-        "test-list-blobs-empty-selected-fields-blob2"};
-    BlobInfo blob1 = BlobInfo.newBuilder(BUCKET, blobNames[0])
-        .setContentType(CONTENT_TYPE)
-        .build();
-    BlobInfo blob2 = BlobInfo.newBuilder(BUCKET, blobNames[1])
-        .setContentType(CONTENT_TYPE)
-        .build();
-    Blob remoteBlob1 = storage.create(blob1);
-    Blob remoteBlob2 = storage.create(blob2);
+  public void testListBlobsKmsKeySelectedFields() throws InterruptedException {
+    String[] blobNames = {
+      "test-list-blobs-selected-field-kms-key-name-blob1",
+      "test-list-blobs-selected-field-kms-key-name-blob2"
+    };
+    BlobInfo blob1 = BlobInfo.newBuilder(BUCKET, blobNames[0]).setContentType(CONTENT_TYPE).build();
+    BlobInfo blob2 = BlobInfo.newBuilder(BUCKET, blobNames[1]).setContentType(CONTENT_TYPE).build();
+    Blob remoteBlob1 =
+        storage.create(blob1, Storage.BlobTargetOption.kmsKeyName(kmsKeyOneResourcePath));
+    Blob remoteBlob2 =
+        storage.create(blob2, Storage.BlobTargetOption.kmsKeyName(kmsKeyOneResourcePath));
     assertNotNull(remoteBlob1);
     assertNotNull(remoteBlob2);
-    Page<Blob> page = storage.list(BUCKET,
-        Storage.BlobListOption.prefix("test-list-blobs-empty-selected-fields-blob"),
-        Storage.BlobListOption.fields());
+    Page<Blob> page =
+        storage.list(
+            BUCKET,
+            Storage.BlobListOption.prefix("test-list-blobs-selected-field-kms-key-name-blob"),
+            Storage.BlobListOption.fields(BlobField.KMS_KEY_NAME));
     // Listing blobs is eventually consistent, we loop until the list is of the expected size. The
     // test fails if timeout is reached.
     while (Iterators.size(page.iterateAll().iterator()) != 2) {
       Thread.sleep(500);
-      page = storage.list(BUCKET,
-          Storage.BlobListOption.prefix("test-list-blobs-empty-selected-fields-blob"),
-          Storage.BlobListOption.fields());
+      page =
+          storage.list(
+              BUCKET,
+              Storage.BlobListOption.prefix("test-list-blobs-selected-field-kms-key-name-blob"),
+              Storage.BlobListOption.fields(BlobField.KMS_KEY_NAME));
+    }
+    Set<String> blobSet = ImmutableSet.of(blobNames[0], blobNames[1]);
+    Iterator<Blob> iterator = page.iterateAll().iterator();
+    while (iterator.hasNext()) {
+      Blob remoteBlob = iterator.next();
+      assertEquals(BUCKET, remoteBlob.getBucket());
+      assertTrue(blobSet.contains(remoteBlob.getName()));
+      assertTrue(remoteBlob.getKmsKeyName().startsWith(kmsKeyOneResourcePath));
+      assertNull(remoteBlob.getContentType());
+    }
+  }
+
+  @Test(timeout = 5000)
+  public void testListBlobsEmptySelectedFields() throws InterruptedException {
+    String[] blobNames = {
+      "test-list-blobs-empty-selected-fields-blob1", "test-list-blobs-empty-selected-fields-blob2"
+    };
+    BlobInfo blob1 = BlobInfo.newBuilder(BUCKET, blobNames[0]).setContentType(CONTENT_TYPE).build();
+    BlobInfo blob2 = BlobInfo.newBuilder(BUCKET, blobNames[1]).setContentType(CONTENT_TYPE).build();
+    Blob remoteBlob1 = storage.create(blob1);
+    Blob remoteBlob2 = storage.create(blob2);
+    assertNotNull(remoteBlob1);
+    assertNotNull(remoteBlob2);
+    Page<Blob> page =
+        storage.list(
+            BUCKET,
+            Storage.BlobListOption.prefix("test-list-blobs-empty-selected-fields-blob"),
+            Storage.BlobListOption.fields());
+    // Listing blobs is eventually consistent, we loop until the list is of the expected size. The
+    // test fails if timeout is reached.
+    while (Iterators.size(page.iterateAll().iterator()) != 2) {
+      Thread.sleep(500);
+      page =
+          storage.list(
+              BUCKET,
+              Storage.BlobListOption.prefix("test-list-blobs-empty-selected-fields-blob"),
+              Storage.BlobListOption.fields());
     }
     Set<String> blobSet = ImmutableSet.of(blobNames[0], blobNames[1]);
     Iterator<Blob> iterator = page.iterateAll().iterator();
@@ -459,28 +832,30 @@ public class ITStorageTest {
         storage.create(BucketInfo.newBuilder(bucketName).setVersioningEnabled(true).build());
     try {
       String[] blobNames = {"test-list-blobs-versioned-blob1", "test-list-blobs-versioned-blob2"};
-      BlobInfo blob1 = BlobInfo.newBuilder(bucket, blobNames[0])
-          .setContentType(CONTENT_TYPE)
-          .build();
-      BlobInfo blob2 = BlobInfo.newBuilder(bucket, blobNames[1])
-          .setContentType(CONTENT_TYPE)
-          .build();
+      BlobInfo blob1 =
+          BlobInfo.newBuilder(bucket, blobNames[0]).setContentType(CONTENT_TYPE).build();
+      BlobInfo blob2 =
+          BlobInfo.newBuilder(bucket, blobNames[1]).setContentType(CONTENT_TYPE).build();
       Blob remoteBlob1 = storage.create(blob1);
       Blob remoteBlob2 = storage.create(blob2);
       Blob remoteBlob3 = storage.create(blob2);
       assertNotNull(remoteBlob1);
       assertNotNull(remoteBlob2);
       assertNotNull(remoteBlob3);
-      Page<Blob> page = storage.list(bucketName,
-          Storage.BlobListOption.prefix("test-list-blobs-versioned-blob"),
-          Storage.BlobListOption.versions(true));
+      Page<Blob> page =
+          storage.list(
+              bucketName,
+              Storage.BlobListOption.prefix("test-list-blobs-versioned-blob"),
+              Storage.BlobListOption.versions(true));
       // Listing blobs is eventually consistent, we loop until the list is of the expected size. The
       // test fails if timeout is reached.
       while (Iterators.size(page.iterateAll().iterator()) != 3) {
         Thread.sleep(500);
-        page = storage.list(bucketName,
-            Storage.BlobListOption.prefix("test-list-blobs-versioned-blob"),
-            Storage.BlobListOption.versions(true));
+        page =
+            storage.list(
+                bucketName,
+                Storage.BlobListOption.prefix("test-list-blobs-versioned-blob"),
+                Storage.BlobListOption.versions(true));
       }
       Set<String> blobSet = ImmutableSet.of(blobNames[0], blobNames[1]);
       Iterator<Blob> iterator = page.iterateAll().iterator();
@@ -499,28 +874,27 @@ public class ITStorageTest {
   public void testListBlobsCurrentDirectory() throws InterruptedException {
     String directoryName = "test-list-blobs-current-directory/";
     String subdirectoryName = "subdirectory/";
-    String[] blobNames = {directoryName + subdirectoryName + "blob1",
-        directoryName + "blob2"};
-    BlobInfo blob1 = BlobInfo.newBuilder(BUCKET, blobNames[0])
-        .setContentType(CONTENT_TYPE)
-        .build();
-    BlobInfo blob2 = BlobInfo.newBuilder(BUCKET, blobNames[1])
-        .setContentType(CONTENT_TYPE)
-        .build();
+    String[] blobNames = {directoryName + subdirectoryName + "blob1", directoryName + "blob2"};
+    BlobInfo blob1 = BlobInfo.newBuilder(BUCKET, blobNames[0]).setContentType(CONTENT_TYPE).build();
+    BlobInfo blob2 = BlobInfo.newBuilder(BUCKET, blobNames[1]).setContentType(CONTENT_TYPE).build();
     Blob remoteBlob1 = storage.create(blob1, BLOB_BYTE_CONTENT);
     Blob remoteBlob2 = storage.create(blob2, BLOB_BYTE_CONTENT);
     assertNotNull(remoteBlob1);
     assertNotNull(remoteBlob2);
-    Page<Blob> page = storage.list(BUCKET,
-        Storage.BlobListOption.prefix("test-list-blobs-current-directory/"),
-        Storage.BlobListOption.currentDirectory());
+    Page<Blob> page =
+        storage.list(
+            BUCKET,
+            Storage.BlobListOption.prefix("test-list-blobs-current-directory/"),
+            Storage.BlobListOption.currentDirectory());
     // Listing blobs is eventually consistent, we loop until the list is of the expected size. The
     // test fails if timeout is reached.
     while (Iterators.size(page.iterateAll().iterator()) != 2) {
       Thread.sleep(500);
-      page = storage.list(BUCKET,
-          Storage.BlobListOption.prefix("test-list-blobs-current-directory/"),
-          Storage.BlobListOption.currentDirectory());
+      page =
+          storage.list(
+              BUCKET,
+              Storage.BlobListOption.prefix("test-list-blobs-current-directory/"),
+              Storage.BlobListOption.currentDirectory());
     }
     Iterator<Blob> iterator = page.iterateAll().iterator();
     while (iterator.hasNext()) {
@@ -557,10 +931,11 @@ public class ITStorageTest {
     String blobName = "test-update-blob-replace-metadata";
     ImmutableMap<String, String> metadata = ImmutableMap.of("k1", "a");
     ImmutableMap<String, String> newMetadata = ImmutableMap.of("k2", "b");
-    BlobInfo blob = BlobInfo.newBuilder(BUCKET, blobName)
-        .setContentType(CONTENT_TYPE)
-        .setMetadata(metadata)
-        .build();
+    BlobInfo blob =
+        BlobInfo.newBuilder(BUCKET, blobName)
+            .setContentType(CONTENT_TYPE)
+            .setMetadata(metadata)
+            .build();
     Blob remoteBlob = storage.create(blob);
     assertNotNull(remoteBlob);
     Blob updatedBlob = remoteBlob.toBuilder().setMetadata(null).build().update();
@@ -578,10 +953,11 @@ public class ITStorageTest {
     ImmutableMap<String, String> metadata = ImmutableMap.of("k1", "a");
     ImmutableMap<String, String> newMetadata = ImmutableMap.of("k2", "b");
     ImmutableMap<String, String> expectedMetadata = ImmutableMap.of("k1", "a", "k2", "b");
-    BlobInfo blob = BlobInfo.newBuilder(BUCKET, blobName)
-        .setContentType(CONTENT_TYPE)
-        .setMetadata(metadata)
-        .build();
+    BlobInfo blob =
+        BlobInfo.newBuilder(BUCKET, blobName)
+            .setContentType(CONTENT_TYPE)
+            .setMetadata(metadata)
+            .build();
     Blob remoteBlob = storage.create(blob);
     assertNotNull(remoteBlob);
     Blob updatedBlob = remoteBlob.toBuilder().setMetadata(newMetadata).build().update();
@@ -599,10 +975,11 @@ public class ITStorageTest {
     newMetadata.put("k1", "a");
     newMetadata.put("k2", null);
     ImmutableMap<String, String> expectedMetadata = ImmutableMap.of("k1", "a");
-    BlobInfo blob = BlobInfo.newBuilder(BUCKET, blobName)
-        .setContentType(CONTENT_TYPE)
-        .setMetadata(metadata)
-        .build();
+    BlobInfo blob =
+        BlobInfo.newBuilder(BUCKET, blobName)
+            .setContentType(CONTENT_TYPE)
+            .setMetadata(metadata)
+            .build();
     Blob remoteBlob = storage.create(blob);
     assertNotNull(remoteBlob);
     Blob updatedBlob = remoteBlob.toBuilder().setMetadata(newMetadata).build().update();
@@ -618,9 +995,8 @@ public class ITStorageTest {
     BlobInfo blob = BlobInfo.newBuilder(BUCKET, blobName).build();
     Blob remoteBlob = storage.create(blob);
     assertNotNull(remoteBlob);
-    BlobInfo wrongGenerationBlob = BlobInfo.newBuilder(BUCKET, blobName, -1L)
-        .setContentType(CONTENT_TYPE)
-        .build();
+    BlobInfo wrongGenerationBlob =
+        BlobInfo.newBuilder(BUCKET, blobName, -1L).setContentType(CONTENT_TYPE).build();
     try {
       storage.update(wrongGenerationBlob, Storage.BlobTargetOption.generationMatch());
       fail("StorageException was expected");
@@ -684,8 +1060,8 @@ public class ITStorageTest {
     assertNull(remoteTargetBlob.getContentType());
     byte[] readBytes = storage.readAllBytes(BUCKET, targetBlobName);
     byte[] composedBytes = Arrays.copyOf(BLOB_BYTE_CONTENT, BLOB_BYTE_CONTENT.length * 2);
-    System.arraycopy(BLOB_BYTE_CONTENT, 0, composedBytes, BLOB_BYTE_CONTENT.length,
-        BLOB_BYTE_CONTENT.length);
+    System.arraycopy(
+        BLOB_BYTE_CONTENT, 0, composedBytes, BLOB_BYTE_CONTENT.length, BLOB_BYTE_CONTENT.length);
     assertArrayEquals(composedBytes, readBytes);
   }
 
@@ -711,8 +1087,8 @@ public class ITStorageTest {
     assertEquals(CONTENT_TYPE, remoteTargetBlob.getContentType());
     byte[] readBytes = storage.readAllBytes(BUCKET, targetBlobName);
     byte[] composedBytes = Arrays.copyOf(BLOB_BYTE_CONTENT, BLOB_BYTE_CONTENT.length * 2);
-    System.arraycopy(BLOB_BYTE_CONTENT, 0, composedBytes, BLOB_BYTE_CONTENT.length,
-        BLOB_BYTE_CONTENT.length);
+    System.arraycopy(
+        BLOB_BYTE_CONTENT, 0, composedBytes, BLOB_BYTE_CONTENT.length, BLOB_BYTE_CONTENT.length);
     assertArrayEquals(composedBytes, readBytes);
   }
 
@@ -728,11 +1104,12 @@ public class ITStorageTest {
     assertNotNull(remoteSourceBlob2);
     String targetBlobName = "test-compose-blob-fail-target";
     BlobInfo targetBlob = BlobInfo.newBuilder(BUCKET, targetBlobName).build();
-    Storage.ComposeRequest req = Storage.ComposeRequest.newBuilder()
-        .addSource(sourceBlobName1, -1L)
-        .addSource(sourceBlobName2, -1L)
-        .setTarget(targetBlob)
-        .build();
+    Storage.ComposeRequest req =
+        Storage.ComposeRequest.newBuilder()
+            .addSource(sourceBlobName1, -1L)
+            .addSource(sourceBlobName2, -1L)
+            .setTarget(targetBlob)
+            .build();
     try {
       storage.compose(req);
       fail("StorageException was expected");
@@ -746,10 +1123,8 @@ public class ITStorageTest {
     String sourceBlobName = "test-copy-blob-source";
     BlobId source = BlobId.of(BUCKET, sourceBlobName);
     ImmutableMap<String, String> metadata = ImmutableMap.of("k", "v");
-    BlobInfo blob = BlobInfo.newBuilder(source)
-        .setContentType(CONTENT_TYPE)
-        .setMetadata(metadata)
-        .build();
+    BlobInfo blob =
+        BlobInfo.newBuilder(source).setContentType(CONTENT_TYPE).setMetadata(metadata).build();
     Blob remoteBlob = storage.create(blob, BLOB_BYTE_CONTENT);
     assertNotNull(remoteBlob);
     String targetBlobName = "test-copy-blob-target";
@@ -765,36 +1140,71 @@ public class ITStorageTest {
   }
 
   @Test
-  public void testCopyBlobWithEncryptionKeys() {
-    String sourceBlobName = "test-copy-blob-encryption-key-source";
+  public void testCopyBlobWithPredefinedAcl() {
+    String sourceBlobName = "test-copy-blob-source";
     BlobId source = BlobId.of(BUCKET, sourceBlobName);
     ImmutableMap<String, String> metadata = ImmutableMap.of("k", "v");
-    Blob remoteBlob = storage.create(BlobInfo.newBuilder(source).build(), BLOB_BYTE_CONTENT,
-        Storage.BlobTargetOption.encryptionKey(KEY));
+    BlobInfo blob =
+        BlobInfo.newBuilder(source).setContentType(CONTENT_TYPE).setMetadata(metadata).build();
+    Blob remoteBlob = storage.create(blob, BLOB_BYTE_CONTENT);
     assertNotNull(remoteBlob);
-    String targetBlobName = "test-copy-blob-encryption-key-target";
-    BlobInfo target = BlobInfo.newBuilder(BUCKET, targetBlobName)
-        .setContentType(CONTENT_TYPE)
-        .setMetadata(metadata)
-        .build();
-    Storage.CopyRequest req = Storage.CopyRequest.newBuilder()
-        .setSource(source)
-        .setTarget(target, Storage.BlobTargetOption.encryptionKey(OTHER_BASE64_KEY))
-        .setSourceOptions(Storage.BlobSourceOption.decryptionKey(BASE64_KEY))
-        .build();
+    String targetBlobName = "test-copy-blob-target";
+    Storage.CopyRequest req =
+        Storage.CopyRequest.newBuilder()
+            .setSource(source)
+            .setTarget(
+                BlobId.of(BUCKET, targetBlobName),
+                Storage.BlobTargetOption.predefinedAcl(Storage.PredefinedAcl.PUBLIC_READ))
+            .build();
     CopyWriter copyWriter = storage.copy(req);
     assertEquals(BUCKET, copyWriter.getResult().getBucket());
     assertEquals(targetBlobName, copyWriter.getResult().getName());
     assertEquals(CONTENT_TYPE, copyWriter.getResult().getContentType());
-    assertArrayEquals(BLOB_BYTE_CONTENT,
+    assertEquals(metadata, copyWriter.getResult().getMetadata());
+    assertNotNull(copyWriter.getResult().getAcl(User.ofAllUsers()));
+    assertTrue(copyWriter.isDone());
+    assertTrue(remoteBlob.delete());
+    assertTrue(storage.delete(BUCKET, targetBlobName));
+  }
+
+  @Test
+  public void testCopyBlobWithEncryptionKeys() {
+    String sourceBlobName = "test-copy-blob-encryption-key-source";
+    BlobId source = BlobId.of(BUCKET, sourceBlobName);
+    ImmutableMap<String, String> metadata = ImmutableMap.of("k", "v");
+    Blob remoteBlob =
+        storage.create(
+            BlobInfo.newBuilder(source).build(),
+            BLOB_BYTE_CONTENT,
+            Storage.BlobTargetOption.encryptionKey(KEY));
+    assertNotNull(remoteBlob);
+    String targetBlobName = "test-copy-blob-encryption-key-target";
+    BlobInfo target =
+        BlobInfo.newBuilder(BUCKET, targetBlobName)
+            .setContentType(CONTENT_TYPE)
+            .setMetadata(metadata)
+            .build();
+    Storage.CopyRequest req =
+        Storage.CopyRequest.newBuilder()
+            .setSource(source)
+            .setTarget(target, Storage.BlobTargetOption.encryptionKey(OTHER_BASE64_KEY))
+            .setSourceOptions(Storage.BlobSourceOption.decryptionKey(BASE64_KEY))
+            .build();
+    CopyWriter copyWriter = storage.copy(req);
+    assertEquals(BUCKET, copyWriter.getResult().getBucket());
+    assertEquals(targetBlobName, copyWriter.getResult().getName());
+    assertEquals(CONTENT_TYPE, copyWriter.getResult().getContentType());
+    assertArrayEquals(
+        BLOB_BYTE_CONTENT,
         copyWriter.getResult().getContent(Blob.BlobSourceOption.decryptionKey(OTHER_BASE64_KEY)));
     assertEquals(metadata, copyWriter.getResult().getMetadata());
     assertTrue(copyWriter.isDone());
-    req = Storage.CopyRequest.newBuilder()
-        .setSource(source)
-        .setTarget(target)
-        .setSourceOptions(Storage.BlobSourceOption.decryptionKey(BASE64_KEY))
-        .build();
+    req =
+        Storage.CopyRequest.newBuilder()
+            .setSource(source)
+            .setTarget(target)
+            .setSourceOptions(Storage.BlobSourceOption.decryptionKey(BASE64_KEY))
+            .build();
     copyWriter = storage.copy(req);
     assertEquals(BUCKET, copyWriter.getResult().getBucket());
     assertEquals(targetBlobName, copyWriter.getResult().getName());
@@ -807,6 +1217,75 @@ public class ITStorageTest {
   }
 
   @Test
+  public void testRotateFromCustomerEncryptionToKmsKey() {
+    String sourceBlobName = "test-copy-blob-encryption-key-source";
+    BlobId source = BlobId.of(BUCKET, sourceBlobName);
+    ImmutableMap<String, String> metadata = ImmutableMap.of("k", "v");
+    Blob remoteBlob =
+        storage.create(
+            BlobInfo.newBuilder(source).build(),
+            BLOB_BYTE_CONTENT,
+            Storage.BlobTargetOption.encryptionKey(KEY));
+    assertNotNull(remoteBlob);
+    String targetBlobName = "test-copy-blob-kms-key-target";
+    BlobInfo target =
+        BlobInfo.newBuilder(BUCKET, targetBlobName)
+            .setContentType(CONTENT_TYPE)
+            .setMetadata(metadata)
+            .build();
+    Storage.CopyRequest req =
+        Storage.CopyRequest.newBuilder()
+            .setSource(source)
+            .setSourceOptions(Storage.BlobSourceOption.decryptionKey(BASE64_KEY))
+            .setTarget(target, Storage.BlobTargetOption.kmsKeyName(kmsKeyOneResourcePath))
+            .build();
+    CopyWriter copyWriter = storage.copy(req);
+    assertEquals(BUCKET, copyWriter.getResult().getBucket());
+    assertEquals(targetBlobName, copyWriter.getResult().getName());
+    assertEquals(CONTENT_TYPE, copyWriter.getResult().getContentType());
+    assertNotNull(copyWriter.getResult().getKmsKeyName());
+    assertTrue(copyWriter.getResult().getKmsKeyName().startsWith(kmsKeyOneResourcePath));
+    assertArrayEquals(BLOB_BYTE_CONTENT, copyWriter.getResult().getContent());
+    assertEquals(metadata, copyWriter.getResult().getMetadata());
+    assertTrue(copyWriter.isDone());
+    assertTrue(storage.delete(BUCKET, targetBlobName));
+  }
+
+  @Test
+  public void testRotateFromCustomerEncryptionToKmsKeyWithCustomerEncrytion() {
+    String sourceBlobName = "test-copy-blob-encryption-key-source";
+    BlobId source = BlobId.of(BUCKET, sourceBlobName);
+    ImmutableMap<String, String> metadata = ImmutableMap.of("k", "v");
+    Blob remoteBlob =
+        storage.create(
+            BlobInfo.newBuilder(source).build(),
+            BLOB_BYTE_CONTENT,
+            Storage.BlobTargetOption.encryptionKey(KEY));
+    assertNotNull(remoteBlob);
+    String targetBlobName = "test-copy-blob-kms-key-target";
+    BlobInfo target =
+        BlobInfo.newBuilder(BUCKET, targetBlobName)
+            .setContentType(CONTENT_TYPE)
+            .setMetadata(metadata)
+            .build();
+    try {
+      Storage.CopyRequest req =
+          Storage.CopyRequest.newBuilder()
+              .setSource(source)
+              .setSourceOptions(Storage.BlobSourceOption.decryptionKey(BASE64_KEY))
+              .setTarget(
+                  target,
+                  Storage.BlobTargetOption.encryptionKey(KEY),
+                  Storage.BlobTargetOption.kmsKeyName(kmsKeyOneResourcePath))
+              .build();
+      storage.copy(req);
+      fail("StorageException was expected");
+    } catch (StorageException ex) {
+      // expected
+    }
+  }
+
+  @Test
   public void testCopyBlobUpdateMetadata() {
     String sourceBlobName = "test-copy-blob-update-metadata-source";
     BlobId source = BlobId.of(BUCKET, sourceBlobName);
@@ -814,10 +1293,11 @@ public class ITStorageTest {
     assertNotNull(remoteSourceBlob);
     String targetBlobName = "test-copy-blob-update-metadata-target";
     ImmutableMap<String, String> metadata = ImmutableMap.of("k", "v");
-    BlobInfo target = BlobInfo.newBuilder(BUCKET, targetBlobName)
-        .setContentType(CONTENT_TYPE)
-        .setMetadata(metadata)
-        .build();
+    BlobInfo target =
+        BlobInfo.newBuilder(BUCKET, targetBlobName)
+            .setContentType(CONTENT_TYPE)
+            .setMetadata(metadata)
+            .build();
     Storage.CopyRequest req = Storage.CopyRequest.of(source, target);
     CopyWriter copyWriter = storage.copy(req);
     assertEquals(BUCKET, copyWriter.getResult().getBucket());
@@ -829,8 +1309,8 @@ public class ITStorageTest {
     assertTrue(storage.delete(BUCKET, targetBlobName));
   }
 
-  //Re-enable this test when it stops failing
-  //@Test
+  // Re-enable this test when it stops failing
+  // @Test
   public void testCopyBlobUpdateStorageClass() {
     String sourceBlobName = "test-copy-blob-update-storage-class-source";
     BlobId source = BlobId.of(BUCKET, sourceBlobName);
@@ -841,8 +1321,8 @@ public class ITStorageTest {
     assertEquals(StorageClass.STANDARD, remoteSourceBlob.getStorageClass());
 
     String targetBlobName = "test-copy-blob-update-storage-class-target";
-    BlobInfo targetInfo = BlobInfo
-        .newBuilder(BUCKET, targetBlobName).setStorageClass(StorageClass.COLDLINE).build();
+    BlobInfo targetInfo =
+        BlobInfo.newBuilder(BUCKET, targetBlobName).setStorageClass(StorageClass.COLDLINE).build();
     Storage.CopyRequest req = Storage.CopyRequest.of(source, targetInfo);
     CopyWriter copyWriter = storage.copy(req);
     assertEquals(BUCKET, copyWriter.getResult().getBucket());
@@ -882,22 +1362,24 @@ public class ITStorageTest {
     String targetBlobName = "test-copy-blob-target-fail";
     BlobInfo target =
         BlobInfo.newBuilder(BUCKET, targetBlobName).setContentType(CONTENT_TYPE).build();
-    Storage.CopyRequest req = Storage.CopyRequest.newBuilder()
-        .setSource(BUCKET, sourceBlobName)
-        .setSourceOptions(Storage.BlobSourceOption.generationMatch(-1L))
-        .setTarget(target)
-        .build();
+    Storage.CopyRequest req =
+        Storage.CopyRequest.newBuilder()
+            .setSource(BUCKET, sourceBlobName)
+            .setSourceOptions(Storage.BlobSourceOption.generationMatch(-1L))
+            .setTarget(target)
+            .build();
     try {
       storage.copy(req);
       fail("StorageException was expected");
     } catch (StorageException ex) {
       // expected
     }
-    Storage.CopyRequest req2 = Storage.CopyRequest.newBuilder()
-        .setSource(source)
-        .setSourceOptions(Storage.BlobSourceOption.generationMatch())
-        .setTarget(target)
-        .build();
+    Storage.CopyRequest req2 =
+        Storage.CopyRequest.newBuilder()
+            .setSource(source)
+            .setSourceOptions(Storage.BlobSourceOption.generationMatch())
+            .setTarget(target)
+            .build();
     try {
       storage.copy(req2);
       fail("StorageException was expected");
@@ -954,8 +1436,7 @@ public class ITStorageTest {
   public void testBatchRequestManyOperations() {
     List<StorageBatchResult<Boolean>> deleteResults =
         Lists.newArrayListWithCapacity(MAX_BATCH_SIZE);
-    List<StorageBatchResult<Blob>> getResults =
-        Lists.newArrayListWithCapacity(MAX_BATCH_SIZE / 2);
+    List<StorageBatchResult<Blob>> getResults = Lists.newArrayListWithCapacity(MAX_BATCH_SIZE / 2);
     List<StorageBatchResult<Blob>> updateResults =
         Lists.newArrayListWithCapacity(MAX_BATCH_SIZE / 2);
     StorageBatch batch = storage.batch();
@@ -1013,7 +1494,6 @@ public class ITStorageTest {
     assertEquals(sourceBlob2.getBucket(), remoteUpdatedBlob2.getBucket());
     assertEquals(sourceBlob2.getName(), remoteUpdatedBlob2.getName());
     assertEquals(updatedBlob2.getContentType(), remoteUpdatedBlob2.getContentType());
-
   }
 
   @Test
@@ -1092,8 +1572,8 @@ public class ITStorageTest {
     String blobName = "test-read-write-channel-with-customer-key-blob";
     BlobInfo blob = BlobInfo.newBuilder(BUCKET, blobName).build();
     byte[] stringBytes;
-    try (WriteChannel writer = storage.writer(blob,
-        Storage.BlobWriteOption.encryptionKey(BASE64_KEY))) {
+    try (WriteChannel writer =
+        storage.writer(blob, Storage.BlobWriteOption.encryptionKey(BASE64_KEY))) {
       stringBytes = BLOB_STRING_CONTENT.getBytes(UTF_8);
       writer.write(ByteBuffer.wrap(BLOB_BYTE_CONTENT));
       writer.write(ByteBuffer.wrap(stringBytes));
@@ -1101,7 +1581,7 @@ public class ITStorageTest {
     ByteBuffer readBytes;
     ByteBuffer readStringBytes;
     try (ReadChannel reader =
-             storage.reader(blob.getBlobId(), Storage.BlobSourceOption.decryptionKey(KEY))) {
+        storage.reader(blob.getBlobId(), Storage.BlobSourceOption.decryptionKey(KEY))) {
       readBytes = ByteBuffer.allocate(BLOB_BYTE_CONTENT.length);
       readStringBytes = ByteBuffer.allocate(stringBytes.length);
       reader.read(readBytes);
@@ -1182,7 +1662,7 @@ public class ITStorageTest {
       // expected
     }
     try (ReadChannel reader =
-             storage.reader(blob.getBlobId(), Storage.BlobSourceOption.generationMatch(-1L))) {
+        storage.reader(blob.getBlobId(), Storage.BlobSourceOption.generationMatch(-1L))) {
       reader.read(ByteBuffer.allocate(42));
       fail("StorageException was expected");
     } catch (StorageException ex) {
@@ -1190,7 +1670,7 @@ public class ITStorageTest {
     }
     BlobId blobIdWrongGeneration = BlobId.of(BUCKET, blobName, -1L);
     try (ReadChannel reader =
-             storage.reader(blobIdWrongGeneration, Storage.BlobSourceOption.generationMatch())) {
+        storage.reader(blobIdWrongGeneration, Storage.BlobSourceOption.generationMatch())) {
       reader.read(ByteBuffer.allocate(42));
       fail("StorageException was expected");
     } catch (StorageException ex) {
@@ -1263,6 +1743,10 @@ public class ITStorageTest {
 
   @Test
   public void testGetSignedUrl() throws IOException {
+    if(storage.getOptions().getCredentials() != null) {
+      assumeTrue(storage.getOptions().getCredentials() instanceof ServiceAccountSigner);
+    }
+
     String blobName = "test-get-signed-url-blob/with/slashes/and?special=!#$&'()*+,:;=?@[]";
     BlobInfo blob = BlobInfo.newBuilder(BUCKET, blobName).build();
     Blob remoteBlob = storage.create(blob, BLOB_BYTE_CONTENT);
@@ -1278,6 +1762,9 @@ public class ITStorageTest {
 
   @Test
   public void testPostSignedUrl() throws IOException {
+    if (storage.getOptions().getCredentials() != null) {
+      assumeTrue(storage.getOptions().getCredentials() instanceof ServiceAccountSigner);
+    }
     String blobName = "test-post-signed-url-blob";
     BlobInfo blob = BlobInfo.newBuilder(BUCKET, blobName).build();
     assertNotNull(storage.create(blob));
@@ -1309,6 +1796,7 @@ public class ITStorageTest {
 
   @Test
   public void testDownloadPublicBlobWithoutAuthentication() {
+    assumeFalse(IS_VPC_TEST);
     // create an unauthorized user
     Storage unauthorizedStorage = StorageOptions.getUnauthenticatedInstance().getService();
 
@@ -1317,11 +1805,14 @@ public class ITStorageTest {
     String landsatPrefix = "LC08/PRE/044/034/LC80440342016259LGN00/";
     String landsatBlob = landsatPrefix + "LC80440342016259LGN00_MTL.txt";
     byte[] bytes = unauthorizedStorage.readAllBytes(landsatBucket, landsatBlob);
+
     assertThat(bytes.length).isEqualTo(7903);
     int numBlobs = 0;
-    Iterator<Blob> blobIterator = unauthorizedStorage
-      .list(landsatBucket, Storage.BlobListOption.prefix(landsatPrefix))
-      .iterateAll().iterator();
+    Iterator<Blob> blobIterator =
+        unauthorizedStorage
+            .list(landsatBucket, Storage.BlobListOption.prefix(landsatPrefix))
+            .iterateAll()
+            .iterator();
     while (blobIterator.hasNext()) {
       numBlobs++;
       blobIterator.next();
@@ -1404,9 +1895,10 @@ public class ITStorageTest {
     Blob remoteBlob2 = storage.create(sourceBlob2);
     assertNotNull(remoteBlob1);
     assertNotNull(remoteBlob2);
-    List<Blob> updatedBlobs = storage.update(
-        remoteBlob1.toBuilder().setContentType(CONTENT_TYPE).build(),
-        remoteBlob2.toBuilder().setContentType(CONTENT_TYPE).build());
+    List<Blob> updatedBlobs =
+        storage.update(
+            remoteBlob1.toBuilder().setContentType(CONTENT_TYPE).build(),
+            remoteBlob2.toBuilder().setContentType(CONTENT_TYPE).build());
     assertEquals(sourceBlob1.getBucket(), updatedBlobs.get(0).getBucket());
     assertEquals(sourceBlob1.getName(), updatedBlobs.get(0).getName());
     assertEquals(CONTENT_TYPE, updatedBlobs.get(0).getContentType());
@@ -1423,9 +1915,10 @@ public class ITStorageTest {
     BlobInfo sourceBlob2 = BlobInfo.newBuilder(BUCKET, sourceBlobName2).build();
     BlobInfo remoteBlob1 = storage.create(sourceBlob1);
     assertNotNull(remoteBlob1);
-    List<Blob> updatedBlobs = storage.update(
-        remoteBlob1.toBuilder().setContentType(CONTENT_TYPE).build(),
-        sourceBlob2.toBuilder().setContentType(CONTENT_TYPE).build());
+    List<Blob> updatedBlobs =
+        storage.update(
+            remoteBlob1.toBuilder().setContentType(CONTENT_TYPE).build(),
+            sourceBlob2.toBuilder().setContentType(CONTENT_TYPE).build());
     assertEquals(sourceBlob1.getBucket(), updatedBlobs.get(0).getBucket());
     assertEquals(sourceBlob1.getName(), updatedBlobs.get(0).getName());
     assertEquals(CONTENT_TYPE, updatedBlobs.get(0).getContentType());
@@ -1449,15 +1942,17 @@ public class ITStorageTest {
 
     String projectId = remoteStorageHelper.getOptions().getProjectId();
 
-    Storage.BucketSourceOption[] bucketOptions = requesterPays
-        ? new Storage.BucketSourceOption[] {Storage.BucketSourceOption.userProject(projectId)}
-        : new Storage.BucketSourceOption[] {};
+    Storage.BucketSourceOption[] bucketOptions =
+        requesterPays
+            ? new Storage.BucketSourceOption[] {Storage.BucketSourceOption.userProject(projectId)}
+            : new Storage.BucketSourceOption[] {};
 
     assertNull(storage.getAcl(BUCKET, User.ofAllAuthenticatedUsers(), bucketOptions));
     assertFalse(storage.deleteAcl(BUCKET, User.ofAllAuthenticatedUsers(), bucketOptions));
     Acl acl = Acl.of(User.ofAllAuthenticatedUsers(), Role.READER);
     assertNotNull(storage.createAcl(BUCKET, acl, bucketOptions));
-    Acl updatedAcl = storage.updateAcl(BUCKET, acl.toBuilder().setRole(Role.WRITER).build(), bucketOptions);
+    Acl updatedAcl =
+        storage.updateAcl(BUCKET, acl.toBuilder().setRole(Role.WRITER).build(), bucketOptions);
     assertEquals(Role.WRITER, updatedAcl.getRole());
     Set<Acl> acls = new HashSet<>();
     acls.addAll(storage.listAcls(BUCKET, bucketOptions));
@@ -1534,10 +2029,11 @@ public class ITStorageTest {
   @Test
   public void testReadCompressedBlob() throws IOException {
     String blobName = "test-read-compressed-blob";
-    BlobInfo blobInfo = BlobInfo.newBuilder(BlobId.of(BUCKET, blobName))
-        .setContentType("text/plain")
-        .setContentEncoding("gzip")
-        .build();
+    BlobInfo blobInfo =
+        BlobInfo.newBuilder(BlobId.of(BUCKET, blobName))
+            .setContentType("text/plain")
+            .setContentEncoding("gzip")
+            .build();
     Blob blob = storage.create(blobInfo, COMPRESSED_CONTENT);
     try (ByteArrayOutputStream output = new ByteArrayOutputStream()) {
       try (ReadChannel reader = storage.reader(BlobId.of(BUCKET, blobName))) {
@@ -1549,11 +2045,11 @@ public class ITStorageTest {
           buffer.clear();
         }
       }
-      assertArrayEquals(BLOB_STRING_CONTENT.getBytes(UTF_8),
-          storage.readAllBytes(BUCKET, blobName));
+      assertArrayEquals(
+          BLOB_STRING_CONTENT.getBytes(UTF_8), storage.readAllBytes(BUCKET, blobName));
       assertArrayEquals(COMPRESSED_CONTENT, output.toByteArray());
       try (GZIPInputStream zipInput =
-               new GZIPInputStream(new ByteArrayInputStream(output.toByteArray()))) {
+          new GZIPInputStream(new ByteArrayInputStream(output.toByteArray()))) {
         assertArrayEquals(BLOB_STRING_CONTENT.getBytes(UTF_8), ByteStreams.toByteArray(zipInput));
       }
     }
@@ -1576,9 +2072,10 @@ public class ITStorageTest {
 
     String projectId = remoteStorageHelper.getOptions().getProjectId();
 
-    Storage.BucketSourceOption[] bucketOptions = requesterPays
-        ? new Storage.BucketSourceOption[] {Storage.BucketSourceOption.userProject(projectId)}
-        : new Storage.BucketSourceOption[] {};
+    Storage.BucketSourceOption[] bucketOptions =
+        requesterPays
+            ? new Storage.BucketSourceOption[] {Storage.BucketSourceOption.userProject(projectId)}
+            : new Storage.BucketSourceOption[] {};
     Identity projectOwner = Identity.projectOwner(projectId);
     Identity projectEditor = Identity.projectEditor(projectId);
     Identity projectViewer = Identity.projectViewer(projectId);
@@ -1586,13 +2083,16 @@ public class ITStorageTest {
         ImmutableMap.of(
             StorageRoles.legacyBucketOwner(),
             new HashSet<>(Arrays.asList(projectOwner, projectEditor)),
-            StorageRoles.legacyBucketReader(), (Set<Identity>) new HashSet<>(Collections.singleton(projectViewer)));
+            StorageRoles.legacyBucketReader(),
+            (Set<Identity>) new HashSet<>(Collections.singleton(projectViewer)));
     Map<com.google.cloud.Role, Set<Identity>> bindingsWithPublicRead =
         ImmutableMap.of(
             StorageRoles.legacyBucketOwner(),
             new HashSet<>(Arrays.asList(projectOwner, projectEditor)),
-            StorageRoles.legacyBucketReader(), new HashSet<>(Collections.singleton(projectViewer)),
-            StorageRoles.legacyObjectReader(), (Set<Identity>) new HashSet<>(Collections.singleton((Identity.allUsers()))));
+            StorageRoles.legacyBucketReader(),
+            new HashSet<>(Collections.singleton(projectViewer)),
+            StorageRoles.legacyObjectReader(),
+            (Set<Identity>) new HashSet<>(Collections.singleton(Identity.allUsers())));
 
     // Validate getting policy.
     Policy currentPolicy = storage.getIamPolicy(BUCKET, bucketOptions);
@@ -1602,7 +2102,8 @@ public class ITStorageTest {
     Policy updatedPolicy =
         storage.setIamPolicy(
             BUCKET,
-            currentPolicy.toBuilder()
+            currentPolicy
+                .toBuilder()
                 .addIdentity(StorageRoles.legacyObjectReader(), Identity.allUsers())
                 .build(),
             bucketOptions);
@@ -1610,7 +2111,8 @@ public class ITStorageTest {
     Policy revertedPolicy =
         storage.setIamPolicy(
             BUCKET,
-            updatedPolicy.toBuilder()
+            updatedPolicy
+                .toBuilder()
                 .removeIdentity(StorageRoles.legacyObjectReader(), Identity.allUsers())
                 .build(),
             bucketOptions);
@@ -1655,12 +2157,21 @@ public class ITStorageTest {
   @Test
   public void testListBucketRequesterPaysFails() throws InterruptedException {
     String projectId = remoteStorageHelper.getOptions().getProjectId();
-    Iterator<Bucket> bucketIterator = storage.list(Storage.BucketListOption.prefix(BUCKET),
-        Storage.BucketListOption.fields(), Storage.BucketListOption.userProject(projectId)).iterateAll().iterator();
+    Iterator<Bucket> bucketIterator =
+        storage
+            .list(
+                Storage.BucketListOption.prefix(BUCKET),
+                Storage.BucketListOption.fields(),
+                Storage.BucketListOption.userProject(projectId))
+            .iterateAll()
+            .iterator();
     while (!bucketIterator.hasNext()) {
       Thread.sleep(500);
-      bucketIterator = storage.list(Storage.BucketListOption.prefix(BUCKET),
-          Storage.BucketListOption.fields()).iterateAll().iterator();
+      bucketIterator =
+          storage
+              .list(Storage.BucketListOption.prefix(BUCKET), Storage.BucketListOption.fields())
+              .iterateAll()
+              .iterator();
     }
     while (bucketIterator.hasNext()) {
       Bucket remoteBucket = bucketIterator.next();
@@ -1671,10 +2182,220 @@ public class ITStorageTest {
   }
 
   @Test
-  public void testGetServiceAccount() throws InterruptedException {
+  public void testListBucketDefaultKmsKeyName() throws ExecutionException, InterruptedException {
+    String bucketName = RemoteStorageHelper.generateBucketName();
+    Bucket remoteBucket =
+        storage.create(
+            BucketInfo.newBuilder(bucketName)
+                .setDefaultKmsKeyName(kmsKeyOneResourcePath)
+                .setLocation(KMS_KEY_RING_LOCATION)
+                .build());
+    assertNotNull(remoteBucket);
+    assertTrue(remoteBucket.getDefaultKmsKeyName().startsWith(kmsKeyOneResourcePath));
+    try {
+      Iterator<Bucket> bucketIterator =
+          storage
+              .list(
+                  Storage.BucketListOption.prefix(bucketName),
+                  Storage.BucketListOption.fields(BucketField.ENCRYPTION))
+              .iterateAll()
+              .iterator();
+      while (!bucketIterator.hasNext()) {
+        Thread.sleep(500);
+        bucketIterator =
+            storage
+                .list(
+                    Storage.BucketListOption.prefix(bucketName),
+                    Storage.BucketListOption.fields(BucketField.ENCRYPTION))
+                .iterateAll()
+                .iterator();
+      }
+      while (bucketIterator.hasNext()) {
+        Bucket bucket = bucketIterator.next();
+        assertTrue(bucket.getName().startsWith(bucketName));
+        assertNotNull(bucket.getDefaultKmsKeyName());
+        assertTrue(bucket.getDefaultKmsKeyName().startsWith(kmsKeyOneResourcePath));
+        assertNull(bucket.getCreateTime());
+        assertNull(bucket.getSelfLink());
+      }
+    } finally {
+      RemoteStorageHelper.forceDelete(storage, bucketName, 5, TimeUnit.SECONDS);
+    }
+  }
+
+  @Test
+  public void testRetentionPolicyNoLock() throws ExecutionException, InterruptedException {
+    String bucketName = RemoteStorageHelper.generateBucketName();
+    Bucket remoteBucket =
+        storage.create(
+            BucketInfo.newBuilder(bucketName).setRetentionPeriod(RETENTION_PERIOD).build());
+    try {
+      assertEquals(RETENTION_PERIOD, remoteBucket.getRetentionPeriod());
+      assertNotNull(remoteBucket.getRetentionEffectiveTime());
+      assertNull(remoteBucket.retentionPolicyIsLocked());
+      remoteBucket =
+          storage.get(bucketName, Storage.BucketGetOption.fields(BucketField.RETENTION_POLICY));
+      assertEquals(RETENTION_PERIOD, remoteBucket.getRetentionPeriod());
+      assertNotNull(remoteBucket.getRetentionEffectiveTime());
+      assertNull(remoteBucket.retentionPolicyIsLocked());
+      String blobName = "test-create-with-retention-policy-hold";
+      BlobInfo blobInfo = BlobInfo.newBuilder(bucketName, blobName).build();
+      Blob remoteBlob = storage.create(blobInfo);
+      assertNotNull(remoteBlob.getRetentionExpirationTime());
+      remoteBucket = remoteBucket.toBuilder().setRetentionPeriod(null).build().update();
+      assertNull(remoteBucket.getRetentionPeriod());
+      remoteBucket = remoteBucket.toBuilder().setRetentionPeriod(null).build().update();
+      assertNull(remoteBucket.getRetentionPeriod());
+    } finally {
+      RemoteStorageHelper.forceDelete(storage, bucketName, 5, TimeUnit.SECONDS);
+    }
+  }
+
+  @Test
+  public void testRetentionPolicyLock() throws ExecutionException, InterruptedException {
+    retentionPolicyLockRequesterPays(true);
+    retentionPolicyLockRequesterPays(false);
+  }
+
+  private void retentionPolicyLockRequesterPays(boolean requesterPays)
+      throws ExecutionException, InterruptedException {
+    String projectId = remoteStorageHelper.getOptions().getProjectId();
+    String bucketName = RemoteStorageHelper.generateBucketName();
+    BucketInfo bucketInfo;
+    if (requesterPays) {
+      bucketInfo =
+          BucketInfo.newBuilder(bucketName)
+              .setRetentionPeriod(RETENTION_PERIOD)
+              .setRequesterPays(true)
+              .build();
+    } else {
+      bucketInfo = BucketInfo.newBuilder(bucketName).setRetentionPeriod(RETENTION_PERIOD).build();
+    }
+    Bucket remoteBucket = storage.create(bucketInfo);
+    try {
+      assertNull(remoteBucket.retentionPolicyIsLocked());
+      assertNotNull(remoteBucket.getRetentionEffectiveTime());
+      assertNotNull(remoteBucket.getMetageneration());
+      if (requesterPays) {
+        remoteBucket =
+            storage.lockRetentionPolicy(
+                remoteBucket,
+                Storage.BucketTargetOption.metagenerationMatch(),
+                Storage.BucketTargetOption.userProject(projectId));
+      } else {
+        remoteBucket =
+            storage.lockRetentionPolicy(
+                remoteBucket, Storage.BucketTargetOption.metagenerationMatch());
+      }
+      assertTrue(remoteBucket.retentionPolicyIsLocked());
+      assertNotNull(remoteBucket.getRetentionEffectiveTime());
+    } finally {
+      RemoteStorageHelper.forceDelete(storage, bucketName, 5, TimeUnit.SECONDS);
+    }
+  }
+
+  @Test
+  public void testAttemptObjectDeleteWithRetentionPolicy()
+      throws ExecutionException, InterruptedException {
+    String bucketName = RemoteStorageHelper.generateBucketName();
+    Bucket remoteBucket =
+        storage.create(
+            BucketInfo.newBuilder(bucketName).setRetentionPeriod(RETENTION_PERIOD).build());
+    assertEquals(RETENTION_PERIOD, remoteBucket.getRetentionPeriod());
+    String blobName = "test-create-with-retention-policy";
+    BlobInfo blobInfo = BlobInfo.newBuilder(bucketName, blobName).build();
+    Blob remoteBlob = storage.create(blobInfo);
+    assertNotNull(remoteBlob.getRetentionExpirationTime());
+    try {
+      remoteBlob.delete();
+      fail("Expected failure on delete from retentionPolicy");
+    } catch (StorageException ex) {
+      // expected
+    } finally {
+      Thread.sleep(RETENTION_PERIOD_IN_MILLISECONDS);
+      RemoteStorageHelper.forceDelete(storage, bucketName, 5, TimeUnit.SECONDS);
+    }
+  }
+
+  @Test
+  public void testEnableDisableBucketDefaultEventBasedHold()
+      throws ExecutionException, InterruptedException {
+    String bucketName = RemoteStorageHelper.generateBucketName();
+    Bucket remoteBucket =
+        storage.create(BucketInfo.newBuilder(bucketName).setDefaultEventBasedHold(true).build());
+    try {
+      assertTrue(remoteBucket.getDefaultEventBasedHold());
+      remoteBucket =
+          storage.get(
+              bucketName, Storage.BucketGetOption.fields(BucketField.DEFAULT_EVENT_BASED_HOLD));
+      assertTrue(remoteBucket.getDefaultEventBasedHold());
+      String blobName = "test-create-with-event-based-hold";
+      BlobInfo blobInfo = BlobInfo.newBuilder(bucketName, blobName).build();
+      Blob remoteBlob = storage.create(blobInfo);
+      assertTrue(remoteBlob.getEventBasedHold());
+      remoteBlob =
+          storage.get(
+              blobInfo.getBlobId(), Storage.BlobGetOption.fields(BlobField.EVENT_BASED_HOLD));
+      assertTrue(remoteBlob.getEventBasedHold());
+      remoteBlob = remoteBlob.toBuilder().setEventBasedHold(false).build().update();
+      assertFalse(remoteBlob.getEventBasedHold());
+      remoteBucket = remoteBucket.toBuilder().setDefaultEventBasedHold(false).build().update();
+      assertFalse(remoteBucket.getDefaultEventBasedHold());
+    } finally {
+      RemoteStorageHelper.forceDelete(storage, bucketName, 5, TimeUnit.SECONDS);
+    }
+  }
+
+  @Test
+  public void testEnableDisableTemporaryHold() {
+    String blobName = "test-create-with-temporary-hold";
+    BlobInfo blobInfo = BlobInfo.newBuilder(BUCKET, blobName).setTemporaryHold(true).build();
+    Blob remoteBlob = storage.create(blobInfo);
+    assertTrue(remoteBlob.getTemporaryHold());
+    remoteBlob =
+        storage.get(remoteBlob.getBlobId(), Storage.BlobGetOption.fields(BlobField.TEMPORARY_HOLD));
+    assertTrue(remoteBlob.getTemporaryHold());
+    remoteBlob = remoteBlob.toBuilder().setTemporaryHold(false).build().update();
+    assertFalse(remoteBlob.getTemporaryHold());
+  }
+
+  @Test
+  public void testAttemptObjectDeleteWithEventBasedHold() {
+    String blobName = "test-create-with-event-based-hold";
+    BlobInfo blobInfo = BlobInfo.newBuilder(BUCKET, blobName).setEventBasedHold(true).build();
+    Blob remoteBlob = storage.create(blobInfo);
+    assertTrue(remoteBlob.getEventBasedHold());
+    try {
+      remoteBlob.delete();
+      fail("Expected failure on delete from eventBasedHold");
+    } catch (StorageException ex) {
+      // expected
+    } finally {
+      remoteBlob.toBuilder().setEventBasedHold(false).build().update();
+    }
+  }
+
+  @Test
+  public void testAttemptDeletionObjectTemporaryHold() {
+    String blobName = "test-create-with-temporary-hold";
+    BlobInfo blobInfo = BlobInfo.newBuilder(BUCKET, blobName).setTemporaryHold(true).build();
+    Blob remoteBlob = storage.create(blobInfo);
+    assertTrue(remoteBlob.getTemporaryHold());
+    try {
+      remoteBlob.delete();
+      fail("Expected failure on delete from temporaryHold");
+    } catch (StorageException ex) {
+      // expected
+    } finally {
+      remoteBlob.toBuilder().setEventBasedHold(false).build().update();
+    }
+  }
+
+  @Test
+  public void testGetServiceAccount() {
     String projectId = remoteStorageHelper.getOptions().getProjectId();
     ServiceAccount serviceAccount = storage.getServiceAccount(projectId);
     assertNotNull(serviceAccount);
-    assertEquals(SERVICE_ACCOUNT_EMAIL, serviceAccount.getEmail());
+    assertTrue(serviceAccount.getEmail().endsWith(SERVICE_ACCOUNT_EMAIL_SUFFIX));
   }
 }

@@ -81,7 +81,6 @@ import io.opencensus.trace.AttributeValue;
 import io.opencensus.trace.Span;
 import io.opencensus.trace.Tracer;
 import io.opencensus.trace.Tracing;
-
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.AbstractList;
@@ -103,6 +102,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executor;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicLong;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.Nullable;
@@ -128,6 +128,19 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
   private static final String COMMIT = "CloudSpannerOperation.Commit";
   private static final String QUERY = "CloudSpannerOperation.ExecuteStreamingQuery";
   private static final String READ = "CloudSpannerOperation.ExecuteStreamingRead";
+
+  private static final ThreadLocal<Boolean> hasPendingTransaction = new ThreadLocal<Boolean>() {
+    @Override
+    protected Boolean initialValue() {
+      return false;
+    }
+  };
+
+  private static void throwIfTransactionsPending() {
+    if (hasPendingTransaction.get() == Boolean.TRUE) {
+        throw newSpannerException(ErrorCode.INTERNAL, "Nested transactions are not supported");
+    }
+  }
 
   static {
     TraceUtil.exportSpans(CREATE_SESSION, DELETE_SESSION, BEGIN_TRANSACTION, COMMIT, QUERY, READ);
@@ -757,6 +770,13 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     }
 
     @Override
+    public long executePartitionedUpdate(Statement stmt) {
+      setActive(null);
+      PartitionedDMLTransaction txn = new PartitionedDMLTransaction(this, rpc);
+      return txn.executePartitionedUpdate(stmt);
+    }
+
+    @Override
     public Timestamp write(Iterable<Mutation> mutations) throws SpannerException {
       TransactionRunner runner = readWriteTransaction();
       final Collection<Mutation> finalMutations =
@@ -905,6 +925,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     }
     
     <T extends SessionTransaction> T setActive(@Nullable T ctx) {
+      throwIfTransactionsPending();
+
       if (activeTransaction != null) {
         activeTransaction.invalidate();
       }
@@ -943,6 +965,11 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
 
     @GuardedBy("lock")
     private boolean isClosed = false;
+
+    // A per-transaction sequence number used to identify this ExecuteSqlRequests. Required for DML,
+    // ignored for query by the server.
+    private AtomicLong seqNo = new AtomicLong();
+
     // Allow up to 512MB to be buffered (assuming 1MB chunks). In practice, restart tokens are sent
     // much more frequently.
     private static final int MAX_BUFFERED_CHUNKS = 512;
@@ -957,6 +984,10 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
       this.rpc = rpc;
       this.defaultPrefetchChunks = defaultPrefetchChunks;
       this.span = span;
+    }
+
+    long getSeqNo() {
+      return seqNo.incrementAndGet();
     }
 
     @Override
@@ -1019,17 +1050,14 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
           statement, queryMode, readOptions, null /*partitionToken*/);
     }
 
-    ResultSet executeQueryInternalWithOptions(
+    ExecuteSqlRequest.Builder getExecuteSqlRequestBuilder(
         Statement statement,
-        com.google.spanner.v1.ExecuteSqlRequest.QueryMode queryMode,
-        Options readOptions,
-        ByteString partitionToken) {
-      beforeReadOrQuery();
+        QueryMode queryMode) {
       ExecuteSqlRequest.Builder builder =
           ExecuteSqlRequest.newBuilder()
               .setSql(statement.getSql())
               .setQueryMode(queryMode)
-              .setSession(session.getName());
+              .setSession(session.name);
       Map<String, Value> stmtParameters = statement.getParameters();
       if (!stmtParameters.isEmpty()) {
         com.google.protobuf.Struct.Builder paramsBuilder = builder.getParamsBuilder();
@@ -1042,24 +1070,33 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
       if (selector != null) {
         builder.setTransaction(selector);
       }
+      builder.setSeqno(getSeqNo());
+      return builder;
+    }
+
+    ResultSet executeQueryInternalWithOptions(
+        Statement statement,
+        com.google.spanner.v1.ExecuteSqlRequest.QueryMode queryMode,
+        Options readOptions,
+        ByteString partitionToken) {
+      beforeReadOrQuery();
+      final ExecuteSqlRequest.Builder request =
+          getExecuteSqlRequestBuilder(statement, queryMode);
       if (partitionToken != null) {
-        builder.setPartitionToken(partitionToken);
+        request.setPartitionToken(partitionToken);
       }
-      final ExecuteSqlRequest request = builder.build();
       final int prefetchChunks =
           readOptions.hasPrefetchChunks() ? readOptions.prefetchChunks() : defaultPrefetchChunks;
       ResumableStreamIterator stream =
-          new ResumableStreamIterator(MAX_BUFFERED_CHUNKS, QUERY) {
+          new ResumableStreamIterator(MAX_BUFFERED_CHUNKS, QUERY, span) {
             @Override
             CloseableIterator<PartialResultSet> startStream(@Nullable ByteString resumeToken) {
               GrpcStreamIterator stream = new GrpcStreamIterator(prefetchChunks);
+              if (resumeToken != null) {
+                request.setResumeToken(resumeToken);
+              }
               SpannerRpc.StreamingCall call =
-                  rpc.executeQuery(
-                      resumeToken == null
-                          ? request
-                          : request.toBuilder().setResumeToken(resumeToken).build(),
-                      stream.consumer(),
-                      session.options);
+                  rpc.executeQuery(request.build(), stream.consumer(), session.options);
               // We get one message for free.
               if (prefetchChunks > 1) {
                 call.request(prefetchChunks - 1);
@@ -1069,7 +1106,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
             }
           };
       return new GrpcResultSet(stream, this, queryMode);
-    }
+    } 
 
     /**
      * Called before any read or query is started to perform state checks and initializations.
@@ -1138,7 +1175,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
         Options readOptions,
         ByteString partitionToken) {
       beforeReadOrQuery();
-      ReadRequest.Builder builder =
+      final ReadRequest.Builder builder =
           ReadRequest.newBuilder()
               .setSession(session.name)
               .setTable(checkNotNull(table))
@@ -1158,21 +1195,18 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
       if (partitionToken != null) {
         builder.setPartitionToken(partitionToken);
       }
-      final ReadRequest request = builder.build();
       final int prefetchChunks =
           readOptions.hasPrefetchChunks() ? readOptions.prefetchChunks() : defaultPrefetchChunks;
       ResumableStreamIterator stream =
-          new ResumableStreamIterator(MAX_BUFFERED_CHUNKS, READ) {
+          new ResumableStreamIterator(MAX_BUFFERED_CHUNKS, READ, span) {
             @Override
             CloseableIterator<PartialResultSet> startStream(@Nullable ByteString resumeToken) {
               GrpcStreamIterator stream = new GrpcStreamIterator(prefetchChunks);
+              if (resumeToken != null) {
+                builder.setResumeToken(resumeToken);
+              }
               SpannerRpc.StreamingCall call =
-                  rpc.read(
-                      resumeToken == null
-                          ? request
-                          : request.toBuilder().setResumeToken(resumeToken).build(),
-                      stream.consumer(),
-                      session.options);
+                  rpc.read(builder.build(), stream.consumer(), session.options);
               // We get one message for free.
               if (prefetchChunks > 1) {
                 call.request(prefetchChunks - 1);
@@ -1209,6 +1243,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
 
   @VisibleForTesting
   static class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
+    private boolean blockNestedTxn = true;
 
     /** Allow for testing of backoff logic */
     static class Sleeper {
@@ -1222,6 +1257,11 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     private final Span span;
     private TransactionContextImpl txn;
     private volatile boolean isValid = true;
+
+    public TransactionRunner allowNestedTransaction() {
+      blockNestedTxn = false;
+      return this;
+    }
 
     TransactionRunnerImpl(
         SessionImpl session, SpannerRpc rpc, Sleeper sleeper, int defaultPrefetchChunks) {
@@ -1239,11 +1279,19 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     @Override
     public <T> T run(TransactionCallable<T> callable) {
       try (Scope s = tracer.withSpan(span)) {
+        if (blockNestedTxn) {
+          hasPendingTransaction.set(Boolean.TRUE);
+        }
+
         return runInternal(callable);
       } catch (RuntimeException e) {
         TraceUtil.endSpanWithFailure(span, e);
         throw e;
       } finally {
+        // Remove threadLocal rather than set to FALSE to avoid a possible memory leak.
+        // We also do this unconditionally in case a user has modified the flag when the transaction
+        // was running.
+        hasPendingTransaction.remove();
         span.end();
       }
     }
@@ -1334,6 +1382,83 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     }
   }
 
+  static class PartitionedDMLTransaction implements SessionTransaction {
+    private final ByteString transactionId;
+    private final SessionImpl session;
+    private final SpannerRpc rpc;
+    private volatile boolean isValid = true;
+
+    PartitionedDMLTransaction(
+        SessionImpl session,
+        SpannerRpc rpc) {
+      this.session = session;
+      this.rpc = rpc;
+      this.transactionId = initTransaction();
+    }
+
+    ByteString initTransaction() {
+      final BeginTransactionRequest request =
+          BeginTransactionRequest.newBuilder()
+              .setSession(session.getName())
+              .setOptions(
+                  TransactionOptions.newBuilder()
+                      .setPartitionedDml(TransactionOptions.PartitionedDml.getDefaultInstance()))
+              .build();
+      Transaction txn =
+          runWithRetries(
+              new Callable<Transaction>() {
+                @Override
+                public Transaction call() throws Exception {
+                  return rpc.beginTransaction(request, session.options);
+                }
+              });
+      if (txn.getId().isEmpty()) {
+        throw SpannerExceptionFactory.newSpannerException(
+            ErrorCode.INTERNAL,
+            "Failed to init transaction, missing transaction id\n" + session.getName());
+      }
+      return txn.getId();
+    }
+
+    public long executePartitionedUpdate(Statement statement) {
+      checkState(
+            isValid, "Partitioned DML has been invalidated by a new operation on the session");
+      final ExecuteSqlRequest.Builder builder =
+          ExecuteSqlRequest.newBuilder()
+              .setSql(statement.getSql())
+              .setQueryMode(QueryMode.NORMAL)
+              .setSession(session.name)
+              .setTransaction(TransactionSelector.newBuilder().setId(transactionId).build());
+      Map<String, Value> stmtParameters = statement.getParameters();
+      if (!stmtParameters.isEmpty()) {
+        com.google.protobuf.Struct.Builder paramsBuilder = builder.getParamsBuilder();
+        for (Map.Entry<String, Value> param : stmtParameters.entrySet()) {
+          paramsBuilder.putFields(param.getKey(), param.getValue().toProto());
+          builder.putParamTypes(param.getKey(), param.getValue().getType().toProto());
+        }
+      }
+      com.google.spanner.v1.ResultSet resultSet =
+          runWithRetries(
+              new Callable<com.google.spanner.v1.ResultSet>() {
+                @Override
+                public com.google.spanner.v1.ResultSet call() throws Exception {
+                  return rpc.executeQuery(builder.build(), session.options);
+                }
+              });
+      if (!resultSet.hasStats()) {
+        throw new IllegalArgumentException(
+            "Partitioned DML response missing stats possibly due to non-DML statement as input");
+      }
+      // For partitioned DML, using the row count lower bound.
+      return resultSet.getStats().getRowCountLowerBound();
+    }
+
+    @Override
+    public void invalidate() {
+      isValid = false;
+    }
+  }
+
   @VisibleForTesting
   static class TransactionContextImpl extends AbstractReadContext implements TransactionContext {
     @GuardedBy("lock")
@@ -1398,7 +1523,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
         mutations = null;
       }
       final CommitRequest commitRequest = builder.build();
-      Span opSpan = tracer.spanBuilder(COMMIT).startSpan();
+      Span opSpan = tracer.spanBuilderWithExplicitParent(COMMIT, span).startSpan();
       try (Scope s = tracer.withSpan(opSpan)) {
         CommitResponse commitResponse =
             runWithRetries(
@@ -1508,6 +1633,29 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
         }
       }
     }
+
+    @Override
+    public long executeUpdate(Statement statement) {
+      beforeReadOrQuery();
+      final ExecuteSqlRequest.Builder builder =
+          getExecuteSqlRequestBuilder(
+              statement,
+              QueryMode.NORMAL);
+      com.google.spanner.v1.ResultSet resultSet =
+          runWithRetries(
+              new Callable<com.google.spanner.v1.ResultSet>() {
+                @Override
+                public com.google.spanner.v1.ResultSet call() throws Exception {
+                  return rpc.executeQuery(builder.build(), session.options);
+                }
+              });
+      if (!resultSet.hasStats()) {
+        throw new IllegalArgumentException(
+            "DML response missing stats possibly due to non-DML statement as input");
+      }
+      // For standard DML, using the exact row count.
+      return resultSet.getStats().getRowCountExact();
+    } 
   }
 
   /**
@@ -1660,6 +1808,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     }
 
     void initTransaction() {
+      throwIfTransactionsPending();
+
       // Since we only support synchronous calls, just block on "txnLock" while the RPC is in
       // flight.  Note that we use the strategy of sending an explicit BeginTransaction() RPC,
       // rather than using the first read in the transaction to begin it implicitly.  The chosen
@@ -1871,7 +2021,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
           currRow = new GrpcStruct(iterator.type(), new ArrayList<>());
         }
         boolean hasNext = currRow.consumeRow(iterator);
-        if (queryMode != QueryMode.NORMAL && !hasNext) {
+        if (!hasNext) {
           statistics = iterator.getStats();
         }
         return hasNext;
@@ -1881,13 +2031,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     }
 
     @Override
+    @Nullable
     public ResultSetStats getStats() {
-      if (queryMode == QueryMode.NORMAL) {
-        throw new UnsupportedOperationException(
-            "ResultSetStats are available only in PLAN and PROFILE execution modes");
-      }
-      checkState(
-          statistics != null, "ResultSetStats requested before consuming the entire ResultSet");
       return statistics;
     }
 
@@ -1973,14 +2118,22 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
                 builder.set(fieldName).toDateArray((Iterable<Date>) value);
                 break;
               case STRUCT:
-                builder.add(fieldName, fieldType.getArrayElementType().getStructFields(), (Iterable<Struct>) value);
+                builder
+                    .set(fieldName)
+                    .toStructArray(fieldType.getArrayElementType(), (Iterable<Struct>) value);
                 break;
               default:
                 throw new AssertionError(
                     "Unhandled array type code: " + fieldType.getArrayElementType());
             }
             break;
-          case STRUCT: // Not a legal top-level field type.
+          case STRUCT:
+            if (value == null) {
+              builder.set(fieldName).to(fieldType, null);
+            } else {
+              builder.set(fieldName).to((Struct) value);
+            }
+            break;
           default:
             throw new AssertionError("Unhandled type code: " + fieldType.getCode());
         }
@@ -1992,6 +2145,11 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     GrpcStruct(Type type, List<Object> rowData) {
       this.type = type;
       this.rowData = rowData;
+    }
+
+    @Override
+    public String toString() {
+      return this.rowData.toString();
     }
 
     boolean consumeRow(Iterator<com.google.protobuf.Value> iterator) {
@@ -2040,10 +2198,26 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
           checkType(fieldType, proto, KindCase.LIST_VALUE);
           ListValue listValue = proto.getListValue();
           return decodeArrayValue(fieldType.getArrayElementType(), listValue);
-        case STRUCT: // Not a legal top-level field type.
+        case STRUCT:
+          checkType(fieldType, proto, KindCase.LIST_VALUE);
+          ListValue structValue = proto.getListValue();
+          return decodeStructValue(fieldType, structValue);
         default:
           throw new AssertionError("Unhandled type code: " + fieldType.getCode());
       }
+    }
+
+    private static Struct decodeStructValue(Type structType, ListValue structValue) {
+      List<Type.StructField> fieldTypes = structType.getStructFields();
+      checkArgument(
+          structValue.getValuesCount() == fieldTypes.size(),
+          "Size mismatch between type descriptor and actual values.");
+      List<Object> fields = new ArrayList<>(fieldTypes.size());
+      List<com.google.protobuf.Value> fieldValues = structValue.getValuesList();
+      for (int i = 0; i < fieldTypes.size(); ++i) {
+        fields.add(decodeValue(fieldTypes.get(i).getType(), fieldValues.get(i)));
+      }
+      return new GrpcStruct(structType, fields);
     }
 
     private static Object decodeArrayValue(Type elementType, ListValue listValue) {
@@ -2117,16 +2291,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
               if (value.getKindCase() == KindCase.NULL_VALUE) {
                 list.add(null);
               } else {
-                List<Type.StructField> fieldTypes = elementType.getStructFields();
-                List<Object> fields = new ArrayList<>(fieldTypes.size());
-                ListValue structValues = value.getListValue();
-                checkArgument(
-                    structValues.getValuesCount() == fieldTypes.size(),
-                    "Size mismatch between type descriptor and actual values.");
-                for (int i = 0; i < fieldTypes.size(); ++i) {
-                  fields.add(decodeValue(fieldTypes.get(i).getType(), structValues.getValues(i)));
-                }
-                list.add(new GrpcStruct(elementType, fields));
+                ListValue structValue = value.getListValue();
+                list.add(decodeStructValue(elementType, structValue));
               }
             }
             return list;
@@ -2197,6 +2363,11 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     @Override
     protected Date getDateInternal(int columnIndex) {
       return (Date) rowData.get(columnIndex);
+    }
+
+    @Override
+    protected Struct getStructInternal(int columnIndex) {
+      return (Struct) rowData.get(columnIndex);
     }
 
     @Override
@@ -2396,20 +2567,20 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
      */
     private boolean safeToRetry = true;
 
-    protected ResumableStreamIterator(int maxBufferSize, String streamName) {
+    protected ResumableStreamIterator(int maxBufferSize, String streamName, Span parent) {
       checkArgument(maxBufferSize >= 0);
       this.maxBufferSize = maxBufferSize;
-      this.span = tracer.spanBuilder(streamName).startSpan();
+      this.span = tracer.spanBuilderWithExplicitParent(streamName, parent).startSpan();
     }
 
     abstract CloseableIterator<PartialResultSet> startStream(@Nullable ByteString resumeToken);
 
     @Override
     public void close(@Nullable String message) {
-      span.end();
       if (stream != null) {
         stream.close(message);
       }
+      span.end();
     }
 
     @Override
@@ -2422,7 +2593,11 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
               ImmutableMap.of("ResumeToken",
                   AttributeValue.stringAttributeValue(
                       resumeToken == null ? "null" : resumeToken.toStringUtf8())));
-          stream = checkNotNull(startStream(resumeToken));
+          try (Scope s = tracer.withSpan(span)) {
+            // When start a new stream set the Span as current to make the gRPC Span a child of
+            // this Span.
+            stream = checkNotNull(startStream(resumeToken));
+          }
         }
         // Buffer contains items up to a resume token or has reached capacity: flush.
         if (!buffer.isEmpty()
@@ -2577,13 +2752,10 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     /*
      * Get the query statistics. Query statistics are delivered with the last PartialResultSet
      * in the stream. Any attempt to call this method before the caller has finished consuming the
-     * results will throw an exception.
+     * results will return null.
      */
-    ResultSetStats getStats() {
-      if (statistics == null) {
-        throw newSpannerException(
-            ErrorCode.INTERNAL, "Stream closed without sending query statistics");
-      }
+    @Nullable
+    ResultSetStats getStats() { 
       return statistics;
     }
 

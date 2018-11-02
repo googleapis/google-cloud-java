@@ -202,6 +202,8 @@ public class InstanceAdminClient implements BackgroundResource {
    * Returns the OperationsClient that can be used to query the status of a long-running operation
    * returned by another API method call.
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationsClient getOperationsClient() {
     return operationsClient;
   }
@@ -279,7 +281,7 @@ public class InstanceAdminClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final ListInstanceConfigsPagedResponse listInstanceConfigs(
+  public final ListInstanceConfigsPagedResponse listInstanceConfigs(
       ListInstanceConfigsRequest request) {
     return listInstanceConfigsPagedCallable().call(request);
   }
@@ -409,7 +411,7 @@ public class InstanceAdminClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final InstanceConfig getInstanceConfig(GetInstanceConfigRequest request) {
+  public final InstanceConfig getInstanceConfig(GetInstanceConfigRequest request) {
     return getInstanceConfigCallable().call(request);
   }
 
@@ -633,7 +635,7 @@ public class InstanceAdminClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final Instance getInstance(GetInstanceRequest request) {
+  public final Instance getInstance(GetInstanceRequest request) {
     return getInstanceCallable().call(request);
   }
 
@@ -710,6 +712,8 @@ public class InstanceAdminClient implements BackgroundResource {
    *     must be `&lt;parent&gt;/instances/&lt;instance_id&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Instance, CreateInstanceMetadata> createInstanceAsync(
       ProjectName parent, InstanceName instanceId, Instance instance) {
 
@@ -773,6 +777,8 @@ public class InstanceAdminClient implements BackgroundResource {
    *     must be `&lt;parent&gt;/instances/&lt;instance_id&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Instance, CreateInstanceMetadata> createInstanceAsync(
       String parent, String instanceId, Instance instance) {
 
@@ -836,6 +842,8 @@ public class InstanceAdminClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Instance, CreateInstanceMetadata> createInstanceAsync(
       CreateInstanceRequest request) {
     return createInstanceOperationCallable().futureCall(request);
@@ -891,6 +899,7 @@ public class InstanceAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<CreateInstanceRequest, Instance, CreateInstanceMetadata>
       createInstanceOperationCallable() {
     return stub.createInstanceOperationCallable();
@@ -1006,6 +1015,8 @@ public class InstanceAdminClient implements BackgroundResource {
    *     that do not know about them.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Instance, UpdateInstanceMetadata> updateInstanceAsync(
       Instance instance, FieldMask fieldMask) {
 
@@ -1067,6 +1078,8 @@ public class InstanceAdminClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Instance, UpdateInstanceMetadata> updateInstanceAsync(
       UpdateInstanceRequest request) {
     return updateInstanceOperationCallable().futureCall(request);
@@ -1124,6 +1137,7 @@ public class InstanceAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<UpdateInstanceRequest, Instance, UpdateInstanceMetadata>
       updateInstanceOperationCallable() {
     return stub.updateInstanceOperationCallable();
@@ -1278,7 +1292,7 @@ public class InstanceAdminClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final void deleteInstance(DeleteInstanceRequest request) {
+  public final void deleteInstance(DeleteInstanceRequest request) {
     deleteInstanceCallable().call(request);
   }
 
@@ -1451,7 +1465,7 @@ public class InstanceAdminClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final Policy getIamPolicy(GetIamPolicyRequest request) {
+  public final Policy getIamPolicy(GetIamPolicyRequest request) {
     return getIamPolicyCallable().call(request);
   }
 

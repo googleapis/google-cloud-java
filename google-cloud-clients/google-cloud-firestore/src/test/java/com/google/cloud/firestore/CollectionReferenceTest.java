@@ -43,7 +43,10 @@ public class CollectionReferenceTest {
   @Spy
   private FirestoreImpl firestoreMock =
       new FirestoreImpl(
-          FirestoreOptions.newBuilder().setProjectId("test-project").build(),
+          FirestoreOptions.newBuilder()
+              .setProjectId("test-project")
+              .setTimestampsInSnapshotsEnabled(true)
+              .build(),
           Mockito.mock(FirestoreRpc.class));
 
   @Captor private ArgumentCaptor<CommitRequest> argCaptor;

@@ -35,9 +35,9 @@ import com.google.cloud.pubsub.v1.Publisher;
 import com.google.protobuf.ByteString;
 import com.google.pubsub.v1.ProjectTopicName;
 import com.google.pubsub.v1.PubsubMessage;
-import org.threeten.bp.Duration;
-
 import java.io.FileInputStream;
+import java.util.concurrent.TimeUnit;
+import org.threeten.bp.Duration;
 
 /** This class contains snippets for the {@link Publisher} interface. */
 public class PublisherSnippets {
@@ -78,6 +78,7 @@ public class PublisherSnippets {
     } finally {
       // When finished with the publisher, make sure to shutdown to free up resources.
       publisher.shutdown();
+      publisher.awaitTermination(1, TimeUnit.MINUTES);
     }
   }
 
@@ -108,11 +109,17 @@ public class PublisherSnippets {
     Duration retryDelay = Duration.ofMillis(100); // default : 1 ms
     double retryDelayMultiplier = 2.0; // back off for repeated failures
     Duration maxRetryDelay = Duration.ofSeconds(5); // default : 10 seconds
+    Duration totalTimeout = Duration.ofSeconds(1); // default: 0
+    Duration initialRpcTimeout = Duration.ofSeconds(1); // default: 0
+    Duration maxRpcTimeout = Duration.ofSeconds(10); // default: 0
 
     RetrySettings retrySettings = RetrySettings.newBuilder()
         .setInitialRetryDelay(retryDelay)
         .setRetryDelayMultiplier(retryDelayMultiplier)
         .setMaxRetryDelay(maxRetryDelay)
+        .setTotalTimeout(totalTimeout)
+        .setInitialRpcTimeout(initialRpcTimeout)
+        .setMaxRpcTimeout(maxRpcTimeout)
         .build();
 
     Publisher publisher = Publisher.newBuilder(topicName)
@@ -122,13 +129,13 @@ public class PublisherSnippets {
   }
 
   public Publisher getSingleThreadedPublisher(ProjectTopicName topicName) throws Exception {
-    // [START pubsub_publisher_single_threaded]
+    // [START pubsub_publisher_concurrency_control]
     // create a publisher with a single threaded executor
     ExecutorProvider executorProvider = InstantiatingExecutorProvider.newBuilder()
         .setExecutorThreadCount(1).build();
     Publisher publisher = Publisher.newBuilder(topicName)
         .setExecutorProvider(executorProvider).build();
-    // [END pubsub_publisher_single_threaded]
+    // [END pubsub_publisher_concurrency_control]
     return publisher;
   }
 

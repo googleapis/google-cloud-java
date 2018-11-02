@@ -8,14 +8,26 @@ public interface CloudStorageOptionsOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * The set of one or more files to scan.
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.CloudStorageOptions.FileSet file_set = 1;</code>
    */
   boolean hasFileSet();
   /**
+   * <pre>
+   * The set of one or more files to scan.
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.CloudStorageOptions.FileSet file_set = 1;</code>
    */
   com.google.privacy.dlp.v2.CloudStorageOptions.FileSet getFileSet();
   /**
+   * <pre>
+   * The set of one or more files to scan.
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.CloudStorageOptions.FileSet file_set = 1;</code>
    */
   com.google.privacy.dlp.v2.CloudStorageOptions.FileSetOrBuilder getFileSetOrBuilder();
@@ -23,12 +35,25 @@ public interface CloudStorageOptionsOrBuilder extends
   /**
    * <pre>
    * Max number of bytes to scan from a file. If a scanned file's size is bigger
-   * than this value then the rest of the bytes are omitted.
+   * than this value then the rest of the bytes are omitted. Only one
+   * of bytes_limit_per_file and bytes_limit_per_file_percent can be specified.
    * </pre>
    *
    * <code>int64 bytes_limit_per_file = 4;</code>
    */
   long getBytesLimitPerFile();
+
+  /**
+   * <pre>
+   * Max percentage of bytes to scan from a file. The rest are omitted. The
+   * number of bytes scanned is rounded down. Must be between 0 and 100,
+   * inclusively. Both 0 and 100 means no limit. Defaults to 0. Only one
+   * of bytes_limit_per_file and bytes_limit_per_file_percent can be specified.
+   * </pre>
+   *
+   * <code>int32 bytes_limit_per_file_percent = 8;</code>
+   */
+  int getBytesLimitPerFilePercent();
 
   /**
    * <pre>
@@ -81,4 +106,24 @@ public interface CloudStorageOptionsOrBuilder extends
    * <code>repeated .google.privacy.dlp.v2.FileType file_types = 5;</code>
    */
   int getFileTypesValue(int index);
+
+  /**
+   * <code>.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod sample_method = 6;</code>
+   */
+  int getSampleMethodValue();
+  /**
+   * <code>.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod sample_method = 6;</code>
+   */
+  com.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod getSampleMethod();
+
+  /**
+   * <pre>
+   * Limits the number of files to scan to this percentage of the input FileSet.
+   * Number of files scanned is rounded down. Must be between 0 and 100,
+   * inclusively. Both 0 and 100 means no limit. Defaults to 0.
+   * </pre>
+   *
+   * <code>int32 files_limit_percent = 7;</code>
+   */
+  int getFilesLimitPercent();
 }

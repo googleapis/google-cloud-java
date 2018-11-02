@@ -32,12 +32,22 @@ public class JobStatisticsTest {
 
   private static final Integer BILLING_TIER = 42;
   private static final Boolean CACHE_HIT = true;
+  private static final String DDL_OPERATION_PERFORMED = "SKIP";
+  private static final TableId DDL_TARGET_TABLE = TableId.of("foo", "bar", "baz");
+  private static final Long ESTIMATE_BYTES_PROCESSED = 101L;
+  private static final Long NUM_DML_AFFECTED_ROWS = 88L;
+  private static final QueryStatistics.StatementType STATEMENT_TYPE = QueryStatistics.StatementType.SELECT;
   private static final Long TOTAL_BYTES_BILLED = 24L;
   private static final Long TOTAL_BYTES_PROCESSED = 42L;
+  private static final Long TOTAL_PARTITION_PROCESSED = 63L;
+  private static final Long TOTAL_SLOT_MS = 10202L;
   private static final Long INPUT_BYTES = 1L;
   private static final Long INPUT_FILES = 2L;
   private static final Long OUTPUT_BYTES = 3L;
   private static final Long OUTPUT_ROWS = 4L;
+  private static final List<TableId> REFERENCED_TABLES = ImmutableList.of(
+      TableId.of("foo", "bar", "table1"),
+      TableId.of("foo","bar","table2"));
   private static final List<Long> FILE_COUNT = ImmutableList.of(1L, 2L, 3L);
   private static final Long CREATION_TIME = 10L;
   private static final Long END_TIME = 20L;
@@ -112,8 +122,16 @@ public class JobStatisticsTest {
       .setStartTime(START_TIME)
       .setBillingTier(BILLING_TIER)
       .setCacheHit(CACHE_HIT)
+      .setDDLOperationPerformed(DDL_OPERATION_PERFORMED)
+      .setDDLTargetTable(DDL_TARGET_TABLE)
+      .setEstimatedBytesProcessed(ESTIMATE_BYTES_PROCESSED)
+      .setNumDmlAffectedRows(NUM_DML_AFFECTED_ROWS)
+      .setReferenceTables(REFERENCED_TABLES)
+      .setStatementType(STATEMENT_TYPE)
       .setTotalBytesBilled(TOTAL_BYTES_BILLED)
       .setTotalBytesProcessed(TOTAL_BYTES_PROCESSED)
+      .setTotalPartitionsProcessed(TOTAL_PARTITION_PROCESSED)
+      .setTotalSlotMs(TOTAL_SLOT_MS)
       .setQueryPlan(QUERY_PLAN)
       .setTimeline(TIMELINE)
       .setSchema(SCHEMA)
@@ -146,9 +164,16 @@ public class JobStatisticsTest {
     assertEquals(END_TIME, QUERY_STATISTICS.getEndTime());
     assertEquals(BILLING_TIER, QUERY_STATISTICS.getBillingTier());
     assertEquals(CACHE_HIT, QUERY_STATISTICS.getCacheHit());
+    assertEquals(DDL_OPERATION_PERFORMED, QUERY_STATISTICS.getDdlOperationPerformed());
+    assertEquals(DDL_TARGET_TABLE, QUERY_STATISTICS.getDdlTargetTable());
+    assertEquals(ESTIMATE_BYTES_PROCESSED, QUERY_STATISTICS.getEstimatedBytesProcessed());
+    assertEquals(NUM_DML_AFFECTED_ROWS, QUERY_STATISTICS.getNumDmlAffectedRows());
+    assertEquals(REFERENCED_TABLES, QUERY_STATISTICS.getReferencedTables());
+    assertEquals(STATEMENT_TYPE, QUERY_STATISTICS.getStatementType());
     assertEquals(TOTAL_BYTES_BILLED, QUERY_STATISTICS.getTotalBytesBilled());
     assertEquals(TOTAL_BYTES_PROCESSED, QUERY_STATISTICS.getTotalBytesProcessed());
-    assertEquals(TOTAL_BYTES_PROCESSED, QUERY_STATISTICS.getTotalBytesProcessed());
+    assertEquals(TOTAL_PARTITION_PROCESSED, QUERY_STATISTICS.getTotalPartitionsProcessed());
+    assertEquals(TOTAL_SLOT_MS, QUERY_STATISTICS.getTotalSlotMs());
     assertEquals(QUERY_PLAN, QUERY_STATISTICS.getQueryPlan());
     assertEquals(TIMELINE, QUERY_STATISTICS.getTimeline());
 
@@ -165,8 +190,15 @@ public class JobStatisticsTest {
     assertEquals(END_TIME, QUERY_STATISTICS_INCOMPLETE.getEndTime());
     assertEquals(BILLING_TIER, QUERY_STATISTICS_INCOMPLETE.getBillingTier());
     assertEquals(CACHE_HIT, QUERY_STATISTICS_INCOMPLETE.getCacheHit());
+    assertEquals(null, QUERY_STATISTICS_INCOMPLETE.getDdlOperationPerformed());
+    assertEquals(null, QUERY_STATISTICS_INCOMPLETE.getDdlTargetTable());
+    assertEquals(null, QUERY_STATISTICS_INCOMPLETE.getEstimatedBytesProcessed());
+    assertEquals(null, QUERY_STATISTICS_INCOMPLETE.getNumDmlAffectedRows());
     assertEquals(null, QUERY_STATISTICS_INCOMPLETE.getTotalBytesBilled());
     assertEquals(null, QUERY_STATISTICS_INCOMPLETE.getTotalBytesProcessed());
+    assertEquals(null, QUERY_STATISTICS_INCOMPLETE.getTotalPartitionsProcessed());
+    assertEquals(null, QUERY_STATISTICS_INCOMPLETE.getTotalSlotMs());
+    assertEquals(null, QUERY_STATISTICS_INCOMPLETE.getReferencedTables());
     assertEquals(null, QUERY_STATISTICS_INCOMPLETE.getQueryPlan());
   }
 
@@ -186,7 +218,7 @@ public class JobStatisticsTest {
 
   @Test
   public void testIncomplete() {
-    // https://github.com/GoogleCloudPlatform/google-cloud-java/issues/2357
+    // https://github.com/googleapis/google-cloud-java/issues/2357
     com.google.api.services.bigquery.model.Job job =
         new com.google.api.services.bigquery.model.Job()
             .setStatistics(
@@ -235,10 +267,18 @@ public class JobStatisticsTest {
     compareStatistics(expected, value);
     assertEquals(expected.getBillingTier(), value.getBillingTier());
     assertEquals(expected.getCacheHit(), value.getCacheHit());
+    assertEquals(expected.getDdlOperationPerformed(), value.getDdlOperationPerformed());
+    assertEquals(expected.getDdlTargetTable(), value.getDdlTargetTable());
+    assertEquals(expected.getEstimatedBytesProcessed(), value.getEstimatedBytesProcessed());
     assertEquals(expected.getTotalBytesBilled(), value.getTotalBytesBilled());
     assertEquals(expected.getTotalBytesProcessed(), value.getTotalBytesProcessed());
+    assertEquals(expected.getTotalPartitionsProcessed(), value.getTotalPartitionsProcessed());
+    assertEquals(expected.getTotalSlotMs(), value.getTotalSlotMs());
     assertEquals(expected.getQueryPlan(), value.getQueryPlan());
+    assertEquals(expected.getReferencedTables(), value.getReferencedTables());
     assertEquals(expected.getSchema(), value.getSchema());
+    assertEquals(expected.getStatementType(), value.getStatementType());
+    assertEquals(expected.getTimeline(), value.getTimeline());
   }
 
   private void compareStatistics(JobStatistics expected, JobStatistics value) {

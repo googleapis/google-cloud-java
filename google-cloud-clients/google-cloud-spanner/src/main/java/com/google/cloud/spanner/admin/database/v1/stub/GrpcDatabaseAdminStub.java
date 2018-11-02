@@ -287,6 +287,7 @@ public class GrpcDatabaseAdminStub extends DatabaseAdminStub {
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public GrpcOperationsStub getOperationsStub() {
     return operationsStub;
   }
@@ -300,6 +301,7 @@ public class GrpcDatabaseAdminStub extends DatabaseAdminStub {
     return listDatabasesCallable;
   }
 
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<CreateDatabaseRequest, Database, CreateDatabaseMetadata>
       createDatabaseOperationCallable() {
     return createDatabaseOperationCallable;
@@ -313,6 +315,7 @@ public class GrpcDatabaseAdminStub extends DatabaseAdminStub {
     return getDatabaseCallable;
   }
 
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<UpdateDatabaseDdlRequest, Empty, UpdateDatabaseDdlMetadata>
       updateDatabaseDdlOperationCallable() {
     return updateDatabaseDdlOperationCallable;

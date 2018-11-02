@@ -190,6 +190,8 @@ public class IntentsClient implements BackgroundResource {
    * Returns the OperationsClient that can be used to query the status of a long-running operation
    * returned by another API method call.
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationsClient getOperationsClient() {
     return operationsClient;
   }
@@ -895,7 +897,7 @@ public class IntentsClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final void deleteIntent(DeleteIntentRequest request) {
+  public final void deleteIntent(DeleteIntentRequest request) {
     deleteIntentCallable().call(request);
   }
 
@@ -932,7 +934,7 @@ public class IntentsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (IntentsClient intentsClient = IntentsClient.create()) {
-   *   AgentName parent = AgentName.of("[PROJECT]", "[AGENT]");
+   *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
    *   String languageCode = "";
    *   BatchUpdateIntentsRequest request = BatchUpdateIntentsRequest.newBuilder()
    *     .setParent(parent.toString())
@@ -945,6 +947,8 @@ public class IntentsClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<BatchUpdateIntentsResponse, Struct> batchUpdateIntentsAsync(
       BatchUpdateIntentsRequest request) {
     return batchUpdateIntentsOperationCallable().futureCall(request);
@@ -961,7 +965,7 @@ public class IntentsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (IntentsClient intentsClient = IntentsClient.create()) {
-   *   AgentName parent = AgentName.of("[PROJECT]", "[AGENT]");
+   *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
    *   String languageCode = "";
    *   BatchUpdateIntentsRequest request = BatchUpdateIntentsRequest.newBuilder()
    *     .setParent(parent.toString())
@@ -973,6 +977,7 @@ public class IntentsClient implements BackgroundResource {
    * }
    * </code></pre>
    */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<BatchUpdateIntentsRequest, BatchUpdateIntentsResponse, Struct>
       batchUpdateIntentsOperationCallable() {
     return stub.batchUpdateIntentsOperationCallable();
@@ -989,7 +994,7 @@ public class IntentsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (IntentsClient intentsClient = IntentsClient.create()) {
-   *   AgentName parent = AgentName.of("[PROJECT]", "[AGENT]");
+   *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
    *   String languageCode = "";
    *   BatchUpdateIntentsRequest request = BatchUpdateIntentsRequest.newBuilder()
    *     .setParent(parent.toString())
@@ -1015,7 +1020,7 @@ public class IntentsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (IntentsClient intentsClient = IntentsClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
    *   List&lt;Intent&gt; intents = new ArrayList&lt;&gt;();
    *   Empty response = intentsClient.batchDeleteIntentsAsync(parent, intents).get();
    * }
@@ -1027,8 +1032,10 @@ public class IntentsClient implements BackgroundResource {
    *     in.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, Struct> batchDeleteIntentsAsync(
-      ProjectName parent, List<Intent> intents) {
+      ProjectAgentName parent, List<Intent> intents) {
 
     BatchDeleteIntentsRequest request =
         BatchDeleteIntentsRequest.newBuilder()
@@ -1048,7 +1055,7 @@ public class IntentsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (IntentsClient intentsClient = IntentsClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
    *   List&lt;Intent&gt; intents = new ArrayList&lt;&gt;();
    *   Empty response = intentsClient.batchDeleteIntentsAsync(parent.toString(), intents).get();
    * }
@@ -1060,6 +1067,8 @@ public class IntentsClient implements BackgroundResource {
    *     in.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, Struct> batchDeleteIntentsAsync(
       String parent, List<Intent> intents) {
 
@@ -1078,7 +1087,7 @@ public class IntentsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (IntentsClient intentsClient = IntentsClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
    *   List&lt;Intent&gt; intents = new ArrayList&lt;&gt;();
    *   BatchDeleteIntentsRequest request = BatchDeleteIntentsRequest.newBuilder()
    *     .setParent(parent.toString())
@@ -1091,6 +1100,8 @@ public class IntentsClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, Struct> batchDeleteIntentsAsync(
       BatchDeleteIntentsRequest request) {
     return batchDeleteIntentsOperationCallable().futureCall(request);
@@ -1106,7 +1117,7 @@ public class IntentsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (IntentsClient intentsClient = IntentsClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
    *   List&lt;Intent&gt; intents = new ArrayList&lt;&gt;();
    *   BatchDeleteIntentsRequest request = BatchDeleteIntentsRequest.newBuilder()
    *     .setParent(parent.toString())
@@ -1118,6 +1129,7 @@ public class IntentsClient implements BackgroundResource {
    * }
    * </code></pre>
    */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<BatchDeleteIntentsRequest, Empty, Struct>
       batchDeleteIntentsOperationCallable() {
     return stub.batchDeleteIntentsOperationCallable();
@@ -1133,7 +1145,7 @@ public class IntentsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (IntentsClient intentsClient = IntentsClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
    *   List&lt;Intent&gt; intents = new ArrayList&lt;&gt;();
    *   BatchDeleteIntentsRequest request = BatchDeleteIntentsRequest.newBuilder()
    *     .setParent(parent.toString())

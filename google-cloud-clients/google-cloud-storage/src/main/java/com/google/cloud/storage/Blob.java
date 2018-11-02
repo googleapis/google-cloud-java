@@ -184,7 +184,6 @@ public class Blob extends BlobInfo {
      * Returns an option for blob's billing user project. This option is used only if the blob's
      * bucket has requester_pays flag enabled.
      */
-    @GcpLaunchStage.Alpha
     public static BlobSourceOption userProject(String userProject) {
       return new BlobSourceOption(StorageRpc.Option.USER_PROJECT, userProject);
     }
@@ -400,6 +399,30 @@ public class Blob extends BlobInfo {
     @Override
     Builder setCustomerEncryption(CustomerEncryption customerEncryption) {
       infoBuilder.setCustomerEncryption(customerEncryption);
+      return this;
+    }
+
+    @Override
+    Builder setKmsKeyName(String kmsKeyName) {
+      infoBuilder.setKmsKeyName(kmsKeyName);
+      return this;
+    }
+
+    @Override
+    public Builder setEventBasedHold(Boolean eventBasedHold) {
+      infoBuilder.setEventBasedHold(eventBasedHold);
+      return this;
+    }
+
+    @Override
+    public Builder setTemporaryHold(Boolean temporaryHold) {
+      infoBuilder.setTemporaryHold(temporaryHold);
+      return this;
+    }
+
+    @Override
+    Builder setRetentionExpirationTime(Long retentionExpirationTime) {
+      infoBuilder.setRetentionExpirationTime(retentionExpirationTime);
       return this;
     }
 

@@ -24,6 +24,7 @@ private static final long serialVersionUID = 0L;
     landmarkAnnotations_ = java.util.Collections.emptyList();
     logoAnnotations_ = java.util.Collections.emptyList();
     labelAnnotations_ = java.util.Collections.emptyList();
+    localizedObjectAnnotations_ = java.util.Collections.emptyList();
     textAnnotations_ = java.util.Collections.emptyList();
   }
 
@@ -51,13 +52,6 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
           case 10: {
             if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
               faceAnnotations_ = new java.util.ArrayList<com.google.cloud.vision.v1.FaceAnnotation>();
@@ -95,9 +89,9 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 42: {
-            if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+            if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
               textAnnotations_ = new java.util.ArrayList<com.google.cloud.vision.v1.EntityAnnotation>();
-              mutable_bitField0_ |= 0x00000010;
+              mutable_bitField0_ |= 0x00000020;
             }
             textAnnotations_.add(
                 input.readMessage(com.google.cloud.vision.v1.EntityAnnotation.parser(), extensionRegistry));
@@ -181,6 +175,35 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 170: {
+            com.google.cloud.vision.v1.ImageAnnotationContext.Builder subBuilder = null;
+            if (context_ != null) {
+              subBuilder = context_.toBuilder();
+            }
+            context_ = input.readMessage(com.google.cloud.vision.v1.ImageAnnotationContext.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(context_);
+              context_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 178: {
+            if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+              localizedObjectAnnotations_ = new java.util.ArrayList<com.google.cloud.vision.v1.LocalizedObjectAnnotation>();
+              mutable_bitField0_ |= 0x00000010;
+            }
+            localizedObjectAnnotations_.add(
+                input.readMessage(com.google.cloud.vision.v1.LocalizedObjectAnnotation.parser(), extensionRegistry));
+            break;
+          }
+          default: {
+            if (!parseUnknownFieldProto3(
+                input, unknownFields, extensionRegistry, tag)) {
+              done = true;
+            }
+            break;
+          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -201,8 +224,11 @@ private static final long serialVersionUID = 0L;
       if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
         labelAnnotations_ = java.util.Collections.unmodifiableList(labelAnnotations_);
       }
-      if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+      if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
         textAnnotations_ = java.util.Collections.unmodifiableList(textAnnotations_);
+      }
+      if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+        localizedObjectAnnotations_ = java.util.Collections.unmodifiableList(localizedObjectAnnotations_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -213,6 +239,7 @@ private static final long serialVersionUID = 0L;
     return com.google.cloud.vision.v1.ImageAnnotatorProto.internal_static_google_cloud_vision_v1_AnnotateImageResponse_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.vision.v1.ImageAnnotatorProto.internal_static_google_cloud_vision_v1_AnnotateImageResponse_fieldAccessorTable
@@ -439,6 +466,66 @@ private static final long serialVersionUID = 0L;
   public com.google.cloud.vision.v1.EntityAnnotationOrBuilder getLabelAnnotationsOrBuilder(
       int index) {
     return labelAnnotations_.get(index);
+  }
+
+  public static final int LOCALIZED_OBJECT_ANNOTATIONS_FIELD_NUMBER = 22;
+  private java.util.List<com.google.cloud.vision.v1.LocalizedObjectAnnotation> localizedObjectAnnotations_;
+  /**
+   * <pre>
+   * If present, localized object detection has completed successfully.
+   * This will be sorted descending by confidence score.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.vision.v1.LocalizedObjectAnnotation localized_object_annotations = 22;</code>
+   */
+  public java.util.List<com.google.cloud.vision.v1.LocalizedObjectAnnotation> getLocalizedObjectAnnotationsList() {
+    return localizedObjectAnnotations_;
+  }
+  /**
+   * <pre>
+   * If present, localized object detection has completed successfully.
+   * This will be sorted descending by confidence score.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.vision.v1.LocalizedObjectAnnotation localized_object_annotations = 22;</code>
+   */
+  public java.util.List<? extends com.google.cloud.vision.v1.LocalizedObjectAnnotationOrBuilder> 
+      getLocalizedObjectAnnotationsOrBuilderList() {
+    return localizedObjectAnnotations_;
+  }
+  /**
+   * <pre>
+   * If present, localized object detection has completed successfully.
+   * This will be sorted descending by confidence score.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.vision.v1.LocalizedObjectAnnotation localized_object_annotations = 22;</code>
+   */
+  public int getLocalizedObjectAnnotationsCount() {
+    return localizedObjectAnnotations_.size();
+  }
+  /**
+   * <pre>
+   * If present, localized object detection has completed successfully.
+   * This will be sorted descending by confidence score.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.vision.v1.LocalizedObjectAnnotation localized_object_annotations = 22;</code>
+   */
+  public com.google.cloud.vision.v1.LocalizedObjectAnnotation getLocalizedObjectAnnotations(int index) {
+    return localizedObjectAnnotations_.get(index);
+  }
+  /**
+   * <pre>
+   * If present, localized object detection has completed successfully.
+   * This will be sorted descending by confidence score.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.vision.v1.LocalizedObjectAnnotation localized_object_annotations = 22;</code>
+   */
+  public com.google.cloud.vision.v1.LocalizedObjectAnnotationOrBuilder getLocalizedObjectAnnotationsOrBuilder(
+      int index) {
+    return localizedObjectAnnotations_.get(index);
   }
 
   public static final int TEXT_ANNOTATIONS_FIELD_NUMBER = 5;
@@ -709,7 +796,44 @@ private static final long serialVersionUID = 0L;
     return getError();
   }
 
+  public static final int CONTEXT_FIELD_NUMBER = 21;
+  private com.google.cloud.vision.v1.ImageAnnotationContext context_;
+  /**
+   * <pre>
+   * If present, contextual information is needed to understand where this image
+   * comes from.
+   * </pre>
+   *
+   * <code>.google.cloud.vision.v1.ImageAnnotationContext context = 21;</code>
+   */
+  public boolean hasContext() {
+    return context_ != null;
+  }
+  /**
+   * <pre>
+   * If present, contextual information is needed to understand where this image
+   * comes from.
+   * </pre>
+   *
+   * <code>.google.cloud.vision.v1.ImageAnnotationContext context = 21;</code>
+   */
+  public com.google.cloud.vision.v1.ImageAnnotationContext getContext() {
+    return context_ == null ? com.google.cloud.vision.v1.ImageAnnotationContext.getDefaultInstance() : context_;
+  }
+  /**
+   * <pre>
+   * If present, contextual information is needed to understand where this image
+   * comes from.
+   * </pre>
+   *
+   * <code>.google.cloud.vision.v1.ImageAnnotationContext context = 21;</code>
+   */
+  public com.google.cloud.vision.v1.ImageAnnotationContextOrBuilder getContextOrBuilder() {
+    return getContext();
+  }
+
   private byte memoizedIsInitialized = -1;
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -719,6 +843,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
+  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     for (int i = 0; i < faceAnnotations_.size(); i++) {
@@ -754,9 +879,16 @@ private static final long serialVersionUID = 0L;
     if (webDetection_ != null) {
       output.writeMessage(13, getWebDetection());
     }
+    if (context_ != null) {
+      output.writeMessage(21, getContext());
+    }
+    for (int i = 0; i < localizedObjectAnnotations_.size(); i++) {
+      output.writeMessage(22, localizedObjectAnnotations_.get(i));
+    }
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -806,6 +938,14 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(13, getWebDetection());
     }
+    if (context_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(21, getContext());
+    }
+    for (int i = 0; i < localizedObjectAnnotations_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(22, localizedObjectAnnotations_.get(i));
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -830,6 +970,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getLogoAnnotationsList());
     result = result && getLabelAnnotationsList()
         .equals(other.getLabelAnnotationsList());
+    result = result && getLocalizedObjectAnnotationsList()
+        .equals(other.getLocalizedObjectAnnotationsList());
     result = result && getTextAnnotationsList()
         .equals(other.getTextAnnotationsList());
     result = result && (hasFullTextAnnotation() == other.hasFullTextAnnotation());
@@ -862,6 +1004,11 @@ private static final long serialVersionUID = 0L;
       result = result && getError()
           .equals(other.getError());
     }
+    result = result && (hasContext() == other.hasContext());
+    if (hasContext()) {
+      result = result && getContext()
+          .equals(other.getContext());
+    }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -888,6 +1035,10 @@ private static final long serialVersionUID = 0L;
     if (getLabelAnnotationsCount() > 0) {
       hash = (37 * hash) + LABEL_ANNOTATIONS_FIELD_NUMBER;
       hash = (53 * hash) + getLabelAnnotationsList().hashCode();
+    }
+    if (getLocalizedObjectAnnotationsCount() > 0) {
+      hash = (37 * hash) + LOCALIZED_OBJECT_ANNOTATIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getLocalizedObjectAnnotationsList().hashCode();
     }
     if (getTextAnnotationsCount() > 0) {
       hash = (37 * hash) + TEXT_ANNOTATIONS_FIELD_NUMBER;
@@ -916,6 +1067,10 @@ private static final long serialVersionUID = 0L;
     if (hasError()) {
       hash = (37 * hash) + ERROR_FIELD_NUMBER;
       hash = (53 * hash) + getError().hashCode();
+    }
+    if (hasContext()) {
+      hash = (37 * hash) + CONTEXT_FIELD_NUMBER;
+      hash = (53 * hash) + getContext().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -992,6 +1147,7 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
+  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
@@ -999,6 +1155,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder(com.google.cloud.vision.v1.AnnotateImageResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
@@ -1026,6 +1183,7 @@ private static final long serialVersionUID = 0L;
       return com.google.cloud.vision.v1.ImageAnnotatorProto.internal_static_google_cloud_vision_v1_AnnotateImageResponse_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.vision.v1.ImageAnnotatorProto.internal_static_google_cloud_vision_v1_AnnotateImageResponse_fieldAccessorTable
@@ -1050,9 +1208,11 @@ private static final long serialVersionUID = 0L;
         getLandmarkAnnotationsFieldBuilder();
         getLogoAnnotationsFieldBuilder();
         getLabelAnnotationsFieldBuilder();
+        getLocalizedObjectAnnotationsFieldBuilder();
         getTextAnnotationsFieldBuilder();
       }
     }
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       if (faceAnnotationsBuilder_ == null) {
@@ -1079,9 +1239,15 @@ private static final long serialVersionUID = 0L;
       } else {
         labelAnnotationsBuilder_.clear();
       }
+      if (localizedObjectAnnotationsBuilder_ == null) {
+        localizedObjectAnnotations_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000010);
+      } else {
+        localizedObjectAnnotationsBuilder_.clear();
+      }
       if (textAnnotationsBuilder_ == null) {
         textAnnotations_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000020);
       } else {
         textAnnotationsBuilder_.clear();
       }
@@ -1121,18 +1287,27 @@ private static final long serialVersionUID = 0L;
         error_ = null;
         errorBuilder_ = null;
       }
+      if (contextBuilder_ == null) {
+        context_ = null;
+      } else {
+        context_ = null;
+        contextBuilder_ = null;
+      }
       return this;
     }
 
+    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
       return com.google.cloud.vision.v1.ImageAnnotatorProto.internal_static_google_cloud_vision_v1_AnnotateImageResponse_descriptor;
     }
 
+    @java.lang.Override
     public com.google.cloud.vision.v1.AnnotateImageResponse getDefaultInstanceForType() {
       return com.google.cloud.vision.v1.AnnotateImageResponse.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.cloud.vision.v1.AnnotateImageResponse build() {
       com.google.cloud.vision.v1.AnnotateImageResponse result = buildPartial();
       if (!result.isInitialized()) {
@@ -1141,6 +1316,7 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.cloud.vision.v1.AnnotateImageResponse buildPartial() {
       com.google.cloud.vision.v1.AnnotateImageResponse result = new com.google.cloud.vision.v1.AnnotateImageResponse(this);
       int from_bitField0_ = bitField0_;
@@ -1181,10 +1357,19 @@ private static final long serialVersionUID = 0L;
       } else {
         result.labelAnnotations_ = labelAnnotationsBuilder_.build();
       }
-      if (textAnnotationsBuilder_ == null) {
+      if (localizedObjectAnnotationsBuilder_ == null) {
         if (((bitField0_ & 0x00000010) == 0x00000010)) {
-          textAnnotations_ = java.util.Collections.unmodifiableList(textAnnotations_);
+          localizedObjectAnnotations_ = java.util.Collections.unmodifiableList(localizedObjectAnnotations_);
           bitField0_ = (bitField0_ & ~0x00000010);
+        }
+        result.localizedObjectAnnotations_ = localizedObjectAnnotations_;
+      } else {
+        result.localizedObjectAnnotations_ = localizedObjectAnnotationsBuilder_.build();
+      }
+      if (textAnnotationsBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) == 0x00000020)) {
+          textAnnotations_ = java.util.Collections.unmodifiableList(textAnnotations_);
+          bitField0_ = (bitField0_ & ~0x00000020);
         }
         result.textAnnotations_ = textAnnotations_;
       } else {
@@ -1220,37 +1405,49 @@ private static final long serialVersionUID = 0L;
       } else {
         result.error_ = errorBuilder_.build();
       }
+      if (contextBuilder_ == null) {
+        result.context_ = context_;
+      } else {
+        result.context_ = contextBuilder_.build();
+      }
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.vision.v1.AnnotateImageResponse) {
         return mergeFrom((com.google.cloud.vision.v1.AnnotateImageResponse)other);
@@ -1366,11 +1563,37 @@ private static final long serialVersionUID = 0L;
           }
         }
       }
+      if (localizedObjectAnnotationsBuilder_ == null) {
+        if (!other.localizedObjectAnnotations_.isEmpty()) {
+          if (localizedObjectAnnotations_.isEmpty()) {
+            localizedObjectAnnotations_ = other.localizedObjectAnnotations_;
+            bitField0_ = (bitField0_ & ~0x00000010);
+          } else {
+            ensureLocalizedObjectAnnotationsIsMutable();
+            localizedObjectAnnotations_.addAll(other.localizedObjectAnnotations_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.localizedObjectAnnotations_.isEmpty()) {
+          if (localizedObjectAnnotationsBuilder_.isEmpty()) {
+            localizedObjectAnnotationsBuilder_.dispose();
+            localizedObjectAnnotationsBuilder_ = null;
+            localizedObjectAnnotations_ = other.localizedObjectAnnotations_;
+            bitField0_ = (bitField0_ & ~0x00000010);
+            localizedObjectAnnotationsBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getLocalizedObjectAnnotationsFieldBuilder() : null;
+          } else {
+            localizedObjectAnnotationsBuilder_.addAllMessages(other.localizedObjectAnnotations_);
+          }
+        }
+      }
       if (textAnnotationsBuilder_ == null) {
         if (!other.textAnnotations_.isEmpty()) {
           if (textAnnotations_.isEmpty()) {
             textAnnotations_ = other.textAnnotations_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000020);
           } else {
             ensureTextAnnotationsIsMutable();
             textAnnotations_.addAll(other.textAnnotations_);
@@ -1383,7 +1606,7 @@ private static final long serialVersionUID = 0L;
             textAnnotationsBuilder_.dispose();
             textAnnotationsBuilder_ = null;
             textAnnotations_ = other.textAnnotations_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000020);
             textAnnotationsBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getTextAnnotationsFieldBuilder() : null;
@@ -1410,15 +1633,20 @@ private static final long serialVersionUID = 0L;
       if (other.hasError()) {
         mergeError(other.getError());
       }
+      if (other.hasContext()) {
+        mergeContext(other.getContext());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -2686,12 +2914,342 @@ private static final long serialVersionUID = 0L;
       return labelAnnotationsBuilder_;
     }
 
+    private java.util.List<com.google.cloud.vision.v1.LocalizedObjectAnnotation> localizedObjectAnnotations_ =
+      java.util.Collections.emptyList();
+    private void ensureLocalizedObjectAnnotationsIsMutable() {
+      if (!((bitField0_ & 0x00000010) == 0x00000010)) {
+        localizedObjectAnnotations_ = new java.util.ArrayList<com.google.cloud.vision.v1.LocalizedObjectAnnotation>(localizedObjectAnnotations_);
+        bitField0_ |= 0x00000010;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.google.cloud.vision.v1.LocalizedObjectAnnotation, com.google.cloud.vision.v1.LocalizedObjectAnnotation.Builder, com.google.cloud.vision.v1.LocalizedObjectAnnotationOrBuilder> localizedObjectAnnotationsBuilder_;
+
+    /**
+     * <pre>
+     * If present, localized object detection has completed successfully.
+     * This will be sorted descending by confidence score.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.vision.v1.LocalizedObjectAnnotation localized_object_annotations = 22;</code>
+     */
+    public java.util.List<com.google.cloud.vision.v1.LocalizedObjectAnnotation> getLocalizedObjectAnnotationsList() {
+      if (localizedObjectAnnotationsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(localizedObjectAnnotations_);
+      } else {
+        return localizedObjectAnnotationsBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * If present, localized object detection has completed successfully.
+     * This will be sorted descending by confidence score.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.vision.v1.LocalizedObjectAnnotation localized_object_annotations = 22;</code>
+     */
+    public int getLocalizedObjectAnnotationsCount() {
+      if (localizedObjectAnnotationsBuilder_ == null) {
+        return localizedObjectAnnotations_.size();
+      } else {
+        return localizedObjectAnnotationsBuilder_.getCount();
+      }
+    }
+    /**
+     * <pre>
+     * If present, localized object detection has completed successfully.
+     * This will be sorted descending by confidence score.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.vision.v1.LocalizedObjectAnnotation localized_object_annotations = 22;</code>
+     */
+    public com.google.cloud.vision.v1.LocalizedObjectAnnotation getLocalizedObjectAnnotations(int index) {
+      if (localizedObjectAnnotationsBuilder_ == null) {
+        return localizedObjectAnnotations_.get(index);
+      } else {
+        return localizedObjectAnnotationsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * If present, localized object detection has completed successfully.
+     * This will be sorted descending by confidence score.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.vision.v1.LocalizedObjectAnnotation localized_object_annotations = 22;</code>
+     */
+    public Builder setLocalizedObjectAnnotations(
+        int index, com.google.cloud.vision.v1.LocalizedObjectAnnotation value) {
+      if (localizedObjectAnnotationsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureLocalizedObjectAnnotationsIsMutable();
+        localizedObjectAnnotations_.set(index, value);
+        onChanged();
+      } else {
+        localizedObjectAnnotationsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * If present, localized object detection has completed successfully.
+     * This will be sorted descending by confidence score.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.vision.v1.LocalizedObjectAnnotation localized_object_annotations = 22;</code>
+     */
+    public Builder setLocalizedObjectAnnotations(
+        int index, com.google.cloud.vision.v1.LocalizedObjectAnnotation.Builder builderForValue) {
+      if (localizedObjectAnnotationsBuilder_ == null) {
+        ensureLocalizedObjectAnnotationsIsMutable();
+        localizedObjectAnnotations_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        localizedObjectAnnotationsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * If present, localized object detection has completed successfully.
+     * This will be sorted descending by confidence score.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.vision.v1.LocalizedObjectAnnotation localized_object_annotations = 22;</code>
+     */
+    public Builder addLocalizedObjectAnnotations(com.google.cloud.vision.v1.LocalizedObjectAnnotation value) {
+      if (localizedObjectAnnotationsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureLocalizedObjectAnnotationsIsMutable();
+        localizedObjectAnnotations_.add(value);
+        onChanged();
+      } else {
+        localizedObjectAnnotationsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * If present, localized object detection has completed successfully.
+     * This will be sorted descending by confidence score.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.vision.v1.LocalizedObjectAnnotation localized_object_annotations = 22;</code>
+     */
+    public Builder addLocalizedObjectAnnotations(
+        int index, com.google.cloud.vision.v1.LocalizedObjectAnnotation value) {
+      if (localizedObjectAnnotationsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureLocalizedObjectAnnotationsIsMutable();
+        localizedObjectAnnotations_.add(index, value);
+        onChanged();
+      } else {
+        localizedObjectAnnotationsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * If present, localized object detection has completed successfully.
+     * This will be sorted descending by confidence score.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.vision.v1.LocalizedObjectAnnotation localized_object_annotations = 22;</code>
+     */
+    public Builder addLocalizedObjectAnnotations(
+        com.google.cloud.vision.v1.LocalizedObjectAnnotation.Builder builderForValue) {
+      if (localizedObjectAnnotationsBuilder_ == null) {
+        ensureLocalizedObjectAnnotationsIsMutable();
+        localizedObjectAnnotations_.add(builderForValue.build());
+        onChanged();
+      } else {
+        localizedObjectAnnotationsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * If present, localized object detection has completed successfully.
+     * This will be sorted descending by confidence score.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.vision.v1.LocalizedObjectAnnotation localized_object_annotations = 22;</code>
+     */
+    public Builder addLocalizedObjectAnnotations(
+        int index, com.google.cloud.vision.v1.LocalizedObjectAnnotation.Builder builderForValue) {
+      if (localizedObjectAnnotationsBuilder_ == null) {
+        ensureLocalizedObjectAnnotationsIsMutable();
+        localizedObjectAnnotations_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        localizedObjectAnnotationsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * If present, localized object detection has completed successfully.
+     * This will be sorted descending by confidence score.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.vision.v1.LocalizedObjectAnnotation localized_object_annotations = 22;</code>
+     */
+    public Builder addAllLocalizedObjectAnnotations(
+        java.lang.Iterable<? extends com.google.cloud.vision.v1.LocalizedObjectAnnotation> values) {
+      if (localizedObjectAnnotationsBuilder_ == null) {
+        ensureLocalizedObjectAnnotationsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, localizedObjectAnnotations_);
+        onChanged();
+      } else {
+        localizedObjectAnnotationsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * If present, localized object detection has completed successfully.
+     * This will be sorted descending by confidence score.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.vision.v1.LocalizedObjectAnnotation localized_object_annotations = 22;</code>
+     */
+    public Builder clearLocalizedObjectAnnotations() {
+      if (localizedObjectAnnotationsBuilder_ == null) {
+        localizedObjectAnnotations_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000010);
+        onChanged();
+      } else {
+        localizedObjectAnnotationsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * If present, localized object detection has completed successfully.
+     * This will be sorted descending by confidence score.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.vision.v1.LocalizedObjectAnnotation localized_object_annotations = 22;</code>
+     */
+    public Builder removeLocalizedObjectAnnotations(int index) {
+      if (localizedObjectAnnotationsBuilder_ == null) {
+        ensureLocalizedObjectAnnotationsIsMutable();
+        localizedObjectAnnotations_.remove(index);
+        onChanged();
+      } else {
+        localizedObjectAnnotationsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * If present, localized object detection has completed successfully.
+     * This will be sorted descending by confidence score.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.vision.v1.LocalizedObjectAnnotation localized_object_annotations = 22;</code>
+     */
+    public com.google.cloud.vision.v1.LocalizedObjectAnnotation.Builder getLocalizedObjectAnnotationsBuilder(
+        int index) {
+      return getLocalizedObjectAnnotationsFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * If present, localized object detection has completed successfully.
+     * This will be sorted descending by confidence score.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.vision.v1.LocalizedObjectAnnotation localized_object_annotations = 22;</code>
+     */
+    public com.google.cloud.vision.v1.LocalizedObjectAnnotationOrBuilder getLocalizedObjectAnnotationsOrBuilder(
+        int index) {
+      if (localizedObjectAnnotationsBuilder_ == null) {
+        return localizedObjectAnnotations_.get(index);  } else {
+        return localizedObjectAnnotationsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * If present, localized object detection has completed successfully.
+     * This will be sorted descending by confidence score.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.vision.v1.LocalizedObjectAnnotation localized_object_annotations = 22;</code>
+     */
+    public java.util.List<? extends com.google.cloud.vision.v1.LocalizedObjectAnnotationOrBuilder> 
+         getLocalizedObjectAnnotationsOrBuilderList() {
+      if (localizedObjectAnnotationsBuilder_ != null) {
+        return localizedObjectAnnotationsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(localizedObjectAnnotations_);
+      }
+    }
+    /**
+     * <pre>
+     * If present, localized object detection has completed successfully.
+     * This will be sorted descending by confidence score.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.vision.v1.LocalizedObjectAnnotation localized_object_annotations = 22;</code>
+     */
+    public com.google.cloud.vision.v1.LocalizedObjectAnnotation.Builder addLocalizedObjectAnnotationsBuilder() {
+      return getLocalizedObjectAnnotationsFieldBuilder().addBuilder(
+          com.google.cloud.vision.v1.LocalizedObjectAnnotation.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * If present, localized object detection has completed successfully.
+     * This will be sorted descending by confidence score.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.vision.v1.LocalizedObjectAnnotation localized_object_annotations = 22;</code>
+     */
+    public com.google.cloud.vision.v1.LocalizedObjectAnnotation.Builder addLocalizedObjectAnnotationsBuilder(
+        int index) {
+      return getLocalizedObjectAnnotationsFieldBuilder().addBuilder(
+          index, com.google.cloud.vision.v1.LocalizedObjectAnnotation.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * If present, localized object detection has completed successfully.
+     * This will be sorted descending by confidence score.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.vision.v1.LocalizedObjectAnnotation localized_object_annotations = 22;</code>
+     */
+    public java.util.List<com.google.cloud.vision.v1.LocalizedObjectAnnotation.Builder> 
+         getLocalizedObjectAnnotationsBuilderList() {
+      return getLocalizedObjectAnnotationsFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.google.cloud.vision.v1.LocalizedObjectAnnotation, com.google.cloud.vision.v1.LocalizedObjectAnnotation.Builder, com.google.cloud.vision.v1.LocalizedObjectAnnotationOrBuilder> 
+        getLocalizedObjectAnnotationsFieldBuilder() {
+      if (localizedObjectAnnotationsBuilder_ == null) {
+        localizedObjectAnnotationsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.vision.v1.LocalizedObjectAnnotation, com.google.cloud.vision.v1.LocalizedObjectAnnotation.Builder, com.google.cloud.vision.v1.LocalizedObjectAnnotationOrBuilder>(
+                localizedObjectAnnotations_,
+                ((bitField0_ & 0x00000010) == 0x00000010),
+                getParentForChildren(),
+                isClean());
+        localizedObjectAnnotations_ = null;
+      }
+      return localizedObjectAnnotationsBuilder_;
+    }
+
     private java.util.List<com.google.cloud.vision.v1.EntityAnnotation> textAnnotations_ =
       java.util.Collections.emptyList();
     private void ensureTextAnnotationsIsMutable() {
-      if (!((bitField0_ & 0x00000010) == 0x00000010)) {
+      if (!((bitField0_ & 0x00000020) == 0x00000020)) {
         textAnnotations_ = new java.util.ArrayList<com.google.cloud.vision.v1.EntityAnnotation>(textAnnotations_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
        }
     }
 
@@ -2885,7 +3443,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearTextAnnotations() {
       if (textAnnotationsBuilder_ == null) {
         textAnnotations_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
       } else {
         textAnnotationsBuilder_.clear();
@@ -2990,7 +3548,7 @@ private static final long serialVersionUID = 0L;
         textAnnotationsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.google.cloud.vision.v1.EntityAnnotation, com.google.cloud.vision.v1.EntityAnnotation.Builder, com.google.cloud.vision.v1.EntityAnnotationOrBuilder>(
                 textAnnotations_,
-                ((bitField0_ & 0x00000010) == 0x00000010),
+                ((bitField0_ & 0x00000020) == 0x00000020),
                 getParentForChildren(),
                 isClean());
         textAnnotations_ = null;
@@ -3960,11 +4518,175 @@ private static final long serialVersionUID = 0L;
       }
       return errorBuilder_;
     }
+
+    private com.google.cloud.vision.v1.ImageAnnotationContext context_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.vision.v1.ImageAnnotationContext, com.google.cloud.vision.v1.ImageAnnotationContext.Builder, com.google.cloud.vision.v1.ImageAnnotationContextOrBuilder> contextBuilder_;
+    /**
+     * <pre>
+     * If present, contextual information is needed to understand where this image
+     * comes from.
+     * </pre>
+     *
+     * <code>.google.cloud.vision.v1.ImageAnnotationContext context = 21;</code>
+     */
+    public boolean hasContext() {
+      return contextBuilder_ != null || context_ != null;
+    }
+    /**
+     * <pre>
+     * If present, contextual information is needed to understand where this image
+     * comes from.
+     * </pre>
+     *
+     * <code>.google.cloud.vision.v1.ImageAnnotationContext context = 21;</code>
+     */
+    public com.google.cloud.vision.v1.ImageAnnotationContext getContext() {
+      if (contextBuilder_ == null) {
+        return context_ == null ? com.google.cloud.vision.v1.ImageAnnotationContext.getDefaultInstance() : context_;
+      } else {
+        return contextBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * If present, contextual information is needed to understand where this image
+     * comes from.
+     * </pre>
+     *
+     * <code>.google.cloud.vision.v1.ImageAnnotationContext context = 21;</code>
+     */
+    public Builder setContext(com.google.cloud.vision.v1.ImageAnnotationContext value) {
+      if (contextBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        context_ = value;
+        onChanged();
+      } else {
+        contextBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * If present, contextual information is needed to understand where this image
+     * comes from.
+     * </pre>
+     *
+     * <code>.google.cloud.vision.v1.ImageAnnotationContext context = 21;</code>
+     */
+    public Builder setContext(
+        com.google.cloud.vision.v1.ImageAnnotationContext.Builder builderForValue) {
+      if (contextBuilder_ == null) {
+        context_ = builderForValue.build();
+        onChanged();
+      } else {
+        contextBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * If present, contextual information is needed to understand where this image
+     * comes from.
+     * </pre>
+     *
+     * <code>.google.cloud.vision.v1.ImageAnnotationContext context = 21;</code>
+     */
+    public Builder mergeContext(com.google.cloud.vision.v1.ImageAnnotationContext value) {
+      if (contextBuilder_ == null) {
+        if (context_ != null) {
+          context_ =
+            com.google.cloud.vision.v1.ImageAnnotationContext.newBuilder(context_).mergeFrom(value).buildPartial();
+        } else {
+          context_ = value;
+        }
+        onChanged();
+      } else {
+        contextBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * If present, contextual information is needed to understand where this image
+     * comes from.
+     * </pre>
+     *
+     * <code>.google.cloud.vision.v1.ImageAnnotationContext context = 21;</code>
+     */
+    public Builder clearContext() {
+      if (contextBuilder_ == null) {
+        context_ = null;
+        onChanged();
+      } else {
+        context_ = null;
+        contextBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * If present, contextual information is needed to understand where this image
+     * comes from.
+     * </pre>
+     *
+     * <code>.google.cloud.vision.v1.ImageAnnotationContext context = 21;</code>
+     */
+    public com.google.cloud.vision.v1.ImageAnnotationContext.Builder getContextBuilder() {
+      
+      onChanged();
+      return getContextFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * If present, contextual information is needed to understand where this image
+     * comes from.
+     * </pre>
+     *
+     * <code>.google.cloud.vision.v1.ImageAnnotationContext context = 21;</code>
+     */
+    public com.google.cloud.vision.v1.ImageAnnotationContextOrBuilder getContextOrBuilder() {
+      if (contextBuilder_ != null) {
+        return contextBuilder_.getMessageOrBuilder();
+      } else {
+        return context_ == null ?
+            com.google.cloud.vision.v1.ImageAnnotationContext.getDefaultInstance() : context_;
+      }
+    }
+    /**
+     * <pre>
+     * If present, contextual information is needed to understand where this image
+     * comes from.
+     * </pre>
+     *
+     * <code>.google.cloud.vision.v1.ImageAnnotationContext context = 21;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.vision.v1.ImageAnnotationContext, com.google.cloud.vision.v1.ImageAnnotationContext.Builder, com.google.cloud.vision.v1.ImageAnnotationContextOrBuilder> 
+        getContextFieldBuilder() {
+      if (contextBuilder_ == null) {
+        contextBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.vision.v1.ImageAnnotationContext, com.google.cloud.vision.v1.ImageAnnotationContext.Builder, com.google.cloud.vision.v1.ImageAnnotationContextOrBuilder>(
+                getContext(),
+                getParentForChildren(),
+                isClean());
+        context_ = null;
+      }
+      return contextBuilder_;
+    }
+    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -3986,6 +4708,7 @@ private static final long serialVersionUID = 0L;
 
   private static final com.google.protobuf.Parser<AnnotateImageResponse>
       PARSER = new com.google.protobuf.AbstractParser<AnnotateImageResponse>() {
+    @java.lang.Override
     public AnnotateImageResponse parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -4003,6 +4726,7 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.cloud.vision.v1.AnnotateImageResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }

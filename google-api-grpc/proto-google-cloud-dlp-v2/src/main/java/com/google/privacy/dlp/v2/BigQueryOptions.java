@@ -22,6 +22,8 @@ private static final long serialVersionUID = 0L;
   private BigQueryOptions() {
     identifyingFields_ = java.util.Collections.emptyList();
     rowsLimit_ = 0L;
+    rowsLimitPercent_ = 0;
+    sampleMethod_ = 0;
   }
 
   @java.lang.Override
@@ -48,13 +50,6 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
           case 10: {
             com.google.privacy.dlp.v2.BigQueryTable.Builder subBuilder = null;
             if (tableReference_ != null) {
@@ -82,6 +77,24 @@ private static final long serialVersionUID = 0L;
             rowsLimit_ = input.readInt64();
             break;
           }
+          case 32: {
+            int rawValue = input.readEnum();
+
+            sampleMethod_ = rawValue;
+            break;
+          }
+          case 48: {
+
+            rowsLimitPercent_ = input.readInt32();
+            break;
+          }
+          default: {
+            if (!parseUnknownFieldProto3(
+                input, unknownFields, extensionRegistry, tag)) {
+              done = true;
+            }
+            break;
+          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -102,11 +115,141 @@ private static final long serialVersionUID = 0L;
     return com.google.privacy.dlp.v2.DlpStorage.internal_static_google_privacy_dlp_v2_BigQueryOptions_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.privacy.dlp.v2.DlpStorage.internal_static_google_privacy_dlp_v2_BigQueryOptions_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.privacy.dlp.v2.BigQueryOptions.class, com.google.privacy.dlp.v2.BigQueryOptions.Builder.class);
+  }
+
+  /**
+   * <pre>
+   * How to sample rows if not all rows are scanned. Meaningful only when used
+   * in conjunction with rows_limit. If not specified, scanning would start
+   * from the top.
+   * </pre>
+   *
+   * Protobuf enum {@code google.privacy.dlp.v2.BigQueryOptions.SampleMethod}
+   */
+  public enum SampleMethod
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>SAMPLE_METHOD_UNSPECIFIED = 0;</code>
+     */
+    SAMPLE_METHOD_UNSPECIFIED(0),
+    /**
+     * <pre>
+     * Scan from the top (default).
+     * </pre>
+     *
+     * <code>TOP = 1;</code>
+     */
+    TOP(1),
+    /**
+     * <pre>
+     * Randomly pick the row to start scanning. The scanned rows are contiguous.
+     * </pre>
+     *
+     * <code>RANDOM_START = 2;</code>
+     */
+    RANDOM_START(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <code>SAMPLE_METHOD_UNSPECIFIED = 0;</code>
+     */
+    public static final int SAMPLE_METHOD_UNSPECIFIED_VALUE = 0;
+    /**
+     * <pre>
+     * Scan from the top (default).
+     * </pre>
+     *
+     * <code>TOP = 1;</code>
+     */
+    public static final int TOP_VALUE = 1;
+    /**
+     * <pre>
+     * Randomly pick the row to start scanning. The scanned rows are contiguous.
+     * </pre>
+     *
+     * <code>RANDOM_START = 2;</code>
+     */
+    public static final int RANDOM_START_VALUE = 2;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static SampleMethod valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static SampleMethod forNumber(int value) {
+      switch (value) {
+        case 0: return SAMPLE_METHOD_UNSPECIFIED;
+        case 1: return TOP;
+        case 2: return RANDOM_START;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<SampleMethod>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        SampleMethod> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<SampleMethod>() {
+            public SampleMethod findValueByNumber(int number) {
+              return SampleMethod.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.google.privacy.dlp.v2.BigQueryOptions.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final SampleMethod[] VALUES = values();
+
+    public static SampleMethod valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private SampleMethod(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.privacy.dlp.v2.BigQueryOptions.SampleMethod)
   }
 
   private int bitField0_;
@@ -209,7 +352,8 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Max number of rows to scan. If the table has more rows than this value, the
    * rest of the rows are omitted. If not set, or if set to 0, all rows will be
-   * scanned. Cannot be used in conjunction with TimespanConfig.
+   * scanned. Only one of rows_limit and rows_limit_percent can be specified.
+   * Cannot be used in conjunction with TimespanConfig.
    * </pre>
    *
    * <code>int64 rows_limit = 3;</code>
@@ -218,7 +362,42 @@ private static final long serialVersionUID = 0L;
     return rowsLimit_;
   }
 
+  public static final int ROWS_LIMIT_PERCENT_FIELD_NUMBER = 6;
+  private int rowsLimitPercent_;
+  /**
+   * <pre>
+   * Max percentage of rows to scan. The rest are omitted. The number of rows
+   * scanned is rounded down. Must be between 0 and 100, inclusively. Both 0 and
+   * 100 means no limit. Defaults to 0. Only one of rows_limit and
+   * rows_limit_percent can be specified. Cannot be used in conjunction with
+   * TimespanConfig.
+   * </pre>
+   *
+   * <code>int32 rows_limit_percent = 6;</code>
+   */
+  public int getRowsLimitPercent() {
+    return rowsLimitPercent_;
+  }
+
+  public static final int SAMPLE_METHOD_FIELD_NUMBER = 4;
+  private int sampleMethod_;
+  /**
+   * <code>.google.privacy.dlp.v2.BigQueryOptions.SampleMethod sample_method = 4;</code>
+   */
+  public int getSampleMethodValue() {
+    return sampleMethod_;
+  }
+  /**
+   * <code>.google.privacy.dlp.v2.BigQueryOptions.SampleMethod sample_method = 4;</code>
+   */
+  public com.google.privacy.dlp.v2.BigQueryOptions.SampleMethod getSampleMethod() {
+    @SuppressWarnings("deprecation")
+    com.google.privacy.dlp.v2.BigQueryOptions.SampleMethod result = com.google.privacy.dlp.v2.BigQueryOptions.SampleMethod.valueOf(sampleMethod_);
+    return result == null ? com.google.privacy.dlp.v2.BigQueryOptions.SampleMethod.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -228,6 +407,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
+  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (tableReference_ != null) {
@@ -239,9 +419,16 @@ private static final long serialVersionUID = 0L;
     if (rowsLimit_ != 0L) {
       output.writeInt64(3, rowsLimit_);
     }
+    if (sampleMethod_ != com.google.privacy.dlp.v2.BigQueryOptions.SampleMethod.SAMPLE_METHOD_UNSPECIFIED.getNumber()) {
+      output.writeEnum(4, sampleMethod_);
+    }
+    if (rowsLimitPercent_ != 0) {
+      output.writeInt32(6, rowsLimitPercent_);
+    }
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -258,6 +445,14 @@ private static final long serialVersionUID = 0L;
     if (rowsLimit_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(3, rowsLimit_);
+    }
+    if (sampleMethod_ != com.google.privacy.dlp.v2.BigQueryOptions.SampleMethod.SAMPLE_METHOD_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(4, sampleMethod_);
+    }
+    if (rowsLimitPercent_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(6, rowsLimitPercent_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -284,6 +479,9 @@ private static final long serialVersionUID = 0L;
         .equals(other.getIdentifyingFieldsList());
     result = result && (getRowsLimit()
         == other.getRowsLimit());
+    result = result && (getRowsLimitPercent()
+        == other.getRowsLimitPercent());
+    result = result && sampleMethod_ == other.sampleMethod_;
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -306,6 +504,10 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + ROWS_LIMIT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getRowsLimit());
+    hash = (37 * hash) + ROWS_LIMIT_PERCENT_FIELD_NUMBER;
+    hash = (53 * hash) + getRowsLimitPercent();
+    hash = (37 * hash) + SAMPLE_METHOD_FIELD_NUMBER;
+    hash = (53 * hash) + sampleMethod_;
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -381,6 +583,7 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
+  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
@@ -388,6 +591,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder(com.google.privacy.dlp.v2.BigQueryOptions prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
@@ -415,6 +619,7 @@ private static final long serialVersionUID = 0L;
       return com.google.privacy.dlp.v2.DlpStorage.internal_static_google_privacy_dlp_v2_BigQueryOptions_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.privacy.dlp.v2.DlpStorage.internal_static_google_privacy_dlp_v2_BigQueryOptions_fieldAccessorTable
@@ -438,6 +643,7 @@ private static final long serialVersionUID = 0L;
         getIdentifyingFieldsFieldBuilder();
       }
     }
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       if (tableReferenceBuilder_ == null) {
@@ -454,18 +660,25 @@ private static final long serialVersionUID = 0L;
       }
       rowsLimit_ = 0L;
 
+      rowsLimitPercent_ = 0;
+
+      sampleMethod_ = 0;
+
       return this;
     }
 
+    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
       return com.google.privacy.dlp.v2.DlpStorage.internal_static_google_privacy_dlp_v2_BigQueryOptions_descriptor;
     }
 
+    @java.lang.Override
     public com.google.privacy.dlp.v2.BigQueryOptions getDefaultInstanceForType() {
       return com.google.privacy.dlp.v2.BigQueryOptions.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.privacy.dlp.v2.BigQueryOptions build() {
       com.google.privacy.dlp.v2.BigQueryOptions result = buildPartial();
       if (!result.isInitialized()) {
@@ -474,6 +687,7 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.privacy.dlp.v2.BigQueryOptions buildPartial() {
       com.google.privacy.dlp.v2.BigQueryOptions result = new com.google.privacy.dlp.v2.BigQueryOptions(this);
       int from_bitField0_ = bitField0_;
@@ -493,37 +707,46 @@ private static final long serialVersionUID = 0L;
         result.identifyingFields_ = identifyingFieldsBuilder_.build();
       }
       result.rowsLimit_ = rowsLimit_;
+      result.rowsLimitPercent_ = rowsLimitPercent_;
+      result.sampleMethod_ = sampleMethod_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.privacy.dlp.v2.BigQueryOptions) {
         return mergeFrom((com.google.privacy.dlp.v2.BigQueryOptions)other);
@@ -567,15 +790,23 @@ private static final long serialVersionUID = 0L;
       if (other.getRowsLimit() != 0L) {
         setRowsLimit(other.getRowsLimit());
       }
+      if (other.getRowsLimitPercent() != 0) {
+        setRowsLimitPercent(other.getRowsLimitPercent());
+      }
+      if (other.sampleMethod_ != 0) {
+        setSampleMethodValue(other.getSampleMethodValue());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1083,7 +1314,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Max number of rows to scan. If the table has more rows than this value, the
      * rest of the rows are omitted. If not set, or if set to 0, all rows will be
-     * scanned. Cannot be used in conjunction with TimespanConfig.
+     * scanned. Only one of rows_limit and rows_limit_percent can be specified.
+     * Cannot be used in conjunction with TimespanConfig.
      * </pre>
      *
      * <code>int64 rows_limit = 3;</code>
@@ -1095,7 +1327,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Max number of rows to scan. If the table has more rows than this value, the
      * rest of the rows are omitted. If not set, or if set to 0, all rows will be
-     * scanned. Cannot be used in conjunction with TimespanConfig.
+     * scanned. Only one of rows_limit and rows_limit_percent can be specified.
+     * Cannot be used in conjunction with TimespanConfig.
      * </pre>
      *
      * <code>int64 rows_limit = 3;</code>
@@ -1110,7 +1343,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Max number of rows to scan. If the table has more rows than this value, the
      * rest of the rows are omitted. If not set, or if set to 0, all rows will be
-     * scanned. Cannot be used in conjunction with TimespanConfig.
+     * scanned. Only one of rows_limit and rows_limit_percent can be specified.
+     * Cannot be used in conjunction with TimespanConfig.
      * </pre>
      *
      * <code>int64 rows_limit = 3;</code>
@@ -1121,11 +1355,108 @@ private static final long serialVersionUID = 0L;
       onChanged();
       return this;
     }
+
+    private int rowsLimitPercent_ ;
+    /**
+     * <pre>
+     * Max percentage of rows to scan. The rest are omitted. The number of rows
+     * scanned is rounded down. Must be between 0 and 100, inclusively. Both 0 and
+     * 100 means no limit. Defaults to 0. Only one of rows_limit and
+     * rows_limit_percent can be specified. Cannot be used in conjunction with
+     * TimespanConfig.
+     * </pre>
+     *
+     * <code>int32 rows_limit_percent = 6;</code>
+     */
+    public int getRowsLimitPercent() {
+      return rowsLimitPercent_;
+    }
+    /**
+     * <pre>
+     * Max percentage of rows to scan. The rest are omitted. The number of rows
+     * scanned is rounded down. Must be between 0 and 100, inclusively. Both 0 and
+     * 100 means no limit. Defaults to 0. Only one of rows_limit and
+     * rows_limit_percent can be specified. Cannot be used in conjunction with
+     * TimespanConfig.
+     * </pre>
+     *
+     * <code>int32 rows_limit_percent = 6;</code>
+     */
+    public Builder setRowsLimitPercent(int value) {
+      
+      rowsLimitPercent_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Max percentage of rows to scan. The rest are omitted. The number of rows
+     * scanned is rounded down. Must be between 0 and 100, inclusively. Both 0 and
+     * 100 means no limit. Defaults to 0. Only one of rows_limit and
+     * rows_limit_percent can be specified. Cannot be used in conjunction with
+     * TimespanConfig.
+     * </pre>
+     *
+     * <code>int32 rows_limit_percent = 6;</code>
+     */
+    public Builder clearRowsLimitPercent() {
+      
+      rowsLimitPercent_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int sampleMethod_ = 0;
+    /**
+     * <code>.google.privacy.dlp.v2.BigQueryOptions.SampleMethod sample_method = 4;</code>
+     */
+    public int getSampleMethodValue() {
+      return sampleMethod_;
+    }
+    /**
+     * <code>.google.privacy.dlp.v2.BigQueryOptions.SampleMethod sample_method = 4;</code>
+     */
+    public Builder setSampleMethodValue(int value) {
+      sampleMethod_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.privacy.dlp.v2.BigQueryOptions.SampleMethod sample_method = 4;</code>
+     */
+    public com.google.privacy.dlp.v2.BigQueryOptions.SampleMethod getSampleMethod() {
+      @SuppressWarnings("deprecation")
+      com.google.privacy.dlp.v2.BigQueryOptions.SampleMethod result = com.google.privacy.dlp.v2.BigQueryOptions.SampleMethod.valueOf(sampleMethod_);
+      return result == null ? com.google.privacy.dlp.v2.BigQueryOptions.SampleMethod.UNRECOGNIZED : result;
+    }
+    /**
+     * <code>.google.privacy.dlp.v2.BigQueryOptions.SampleMethod sample_method = 4;</code>
+     */
+    public Builder setSampleMethod(com.google.privacy.dlp.v2.BigQueryOptions.SampleMethod value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      sampleMethod_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.privacy.dlp.v2.BigQueryOptions.SampleMethod sample_method = 4;</code>
+     */
+    public Builder clearSampleMethod() {
+      
+      sampleMethod_ = 0;
+      onChanged();
+      return this;
+    }
+    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -1147,6 +1478,7 @@ private static final long serialVersionUID = 0L;
 
   private static final com.google.protobuf.Parser<BigQueryOptions>
       PARSER = new com.google.protobuf.AbstractParser<BigQueryOptions>() {
+    @java.lang.Override
     public BigQueryOptions parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1164,6 +1496,7 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.privacy.dlp.v2.BigQueryOptions getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }

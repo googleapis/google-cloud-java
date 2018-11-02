@@ -53,8 +53,7 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND SERVICE
 /**
- * Service Description: Service for configuring sinks used to export log entries outside of
- * Stackdriver Logging.
+ * Service Description: Service for configuring sinks used to export log entries out of Logging.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -377,7 +376,7 @@ public class ConfigClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final LogSink getSink(GetSinkRequest request) {
+  public final LogSink getSink(GetSinkRequest request) {
     return getSinkCallable().call(request);
   }
 
@@ -523,6 +522,102 @@ public class ConfigClient implements BackgroundResource {
    */
   public final UnaryCallable<CreateSinkRequest, LogSink> createSinkCallable() {
     return stub.createSinkCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates a sink. This method replaces the following fields in the existing sink with values from
+   * the new sink: `destination`, and `filter`. The updated sink might also have a new
+   * `writer_identity`; see the `unique_writer_identity` field.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   SinkName sinkName = ProjectSinkName.of("[PROJECT]", "[SINK]");
+   *   LogSink sink = LogSink.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   LogSink response = configClient.updateSink(sinkName, sink, updateMask);
+   * }
+   * </code></pre>
+   *
+   * @param sinkName Required. The full resource name of the sink to update, including the parent
+   *     resource and the sink identifier:
+   *     <p>"projects/[PROJECT_ID]/sinks/[SINK_ID]"
+   *     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
+   *     "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]"
+   *     "folders/[FOLDER_ID]/sinks/[SINK_ID]"
+   *     <p>Example: `"projects/my-project-id/sinks/my-sink-id"`.
+   * @param sink Required. The updated sink, whose name is the same identifier that appears as part
+   *     of `sink_name`.
+   * @param updateMask Optional. Field mask that specifies the fields in `sink` that need an update.
+   *     A sink field will be overwritten if, and only if, it is in the update mask. `name` and
+   *     output only fields cannot be updated.
+   *     <p>An empty updateMask is temporarily treated as using the following mask for backwards
+   *     compatibility purposes: destination,filter,includeChildren At some point in the future,
+   *     behavior will be removed and specifying an empty updateMask will be an error.
+   *     <p>For a detailed `FieldMask` definition, see
+   *     https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.FieldMask
+   *     <p>Example: `updateMask=filter`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final LogSink updateSink(SinkName sinkName, LogSink sink, FieldMask updateMask) {
+
+    UpdateSinkRequest request =
+        UpdateSinkRequest.newBuilder()
+            .setSinkName(sinkName == null ? null : sinkName.toString())
+            .setSink(sink)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateSink(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates a sink. This method replaces the following fields in the existing sink with values from
+   * the new sink: `destination`, and `filter`. The updated sink might also have a new
+   * `writer_identity`; see the `unique_writer_identity` field.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   SinkName sinkName = ProjectSinkName.of("[PROJECT]", "[SINK]");
+   *   LogSink sink = LogSink.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   LogSink response = configClient.updateSink(sinkName.toString(), sink, updateMask);
+   * }
+   * </code></pre>
+   *
+   * @param sinkName Required. The full resource name of the sink to update, including the parent
+   *     resource and the sink identifier:
+   *     <p>"projects/[PROJECT_ID]/sinks/[SINK_ID]"
+   *     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
+   *     "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]"
+   *     "folders/[FOLDER_ID]/sinks/[SINK_ID]"
+   *     <p>Example: `"projects/my-project-id/sinks/my-sink-id"`.
+   * @param sink Required. The updated sink, whose name is the same identifier that appears as part
+   *     of `sink_name`.
+   * @param updateMask Optional. Field mask that specifies the fields in `sink` that need an update.
+   *     A sink field will be overwritten if, and only if, it is in the update mask. `name` and
+   *     output only fields cannot be updated.
+   *     <p>An empty updateMask is temporarily treated as using the following mask for backwards
+   *     compatibility purposes: destination,filter,includeChildren At some point in the future,
+   *     behavior will be removed and specifying an empty updateMask will be an error.
+   *     <p>For a detailed `FieldMask` definition, see
+   *     https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.FieldMask
+   *     <p>Example: `updateMask=filter`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final LogSink updateSink(String sinkName, LogSink sink, FieldMask updateMask) {
+
+    UpdateSinkRequest request =
+        UpdateSinkRequest.newBuilder()
+            .setSinkName(sinkName)
+            .setSink(sink)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateSink(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -730,7 +825,7 @@ public class ConfigClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final void deleteSink(DeleteSinkRequest request) {
+  public final void deleteSink(DeleteSinkRequest request) {
     deleteSinkCallable().call(request);
   }
 
@@ -966,7 +1061,7 @@ public class ConfigClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final LogExclusion getExclusion(GetExclusionRequest request) {
+  public final LogExclusion getExclusion(GetExclusionRequest request) {
     return getExclusionCallable().call(request);
   }
 
@@ -1319,7 +1414,7 @@ public class ConfigClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final void deleteExclusion(DeleteExclusionRequest request) {
+  public final void deleteExclusion(DeleteExclusionRequest request) {
     deleteExclusionCallable().call(request);
   }
 

@@ -19,7 +19,6 @@ import com.google.api.core.InternalApi;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.ApiStreamObserver;
-import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.ClientStreamingCallable;
 import com.google.api.gax.rpc.ResponseObserver;
 import com.google.api.gax.rpc.ServerStreamingCallable;
@@ -36,84 +35,6 @@ import java.util.concurrent.TimeUnit;
 
 @InternalApi("for testing")
 public class FakeStreamingApi {
-
-  public static class BidiStreamingStashCallable<RequestT, ResponseT>
-      extends BidiStreamingCallable<RequestT, ResponseT> {
-    private ApiCallContext context;
-    private ApiStreamObserver<ResponseT> responseObserver;
-    private AccumulatingStreamObserver<RequestT> requestObserver;
-    private List<ResponseT> responseList;
-
-    public BidiStreamingStashCallable() {
-      responseList = new ArrayList<>();
-    }
-
-    public BidiStreamingStashCallable(List<ResponseT> responseList) {
-      this.responseList = responseList;
-    }
-
-    @Override
-    public ApiStreamObserver<RequestT> bidiStreamingCall(
-        ApiStreamObserver<ResponseT> responseObserver, ApiCallContext context) {
-      Preconditions.checkNotNull(responseObserver);
-      this.responseObserver = responseObserver;
-      this.context = context;
-      this.requestObserver = new AccumulatingStreamObserver<>();
-      return requestObserver;
-    }
-
-    public ApiCallContext getContext() {
-      return context;
-    }
-
-    public ApiStreamObserver<ResponseT> getActualObserver() {
-      return responseObserver;
-    }
-
-    public List<RequestT> getActualRequests() {
-      return requestObserver.getValues();
-    }
-
-    private void sendResponses() {
-      for (ResponseT response : responseList) {
-        responseObserver.onNext(response);
-      }
-      responseObserver.onCompleted();
-    }
-
-    private class AccumulatingStreamObserver<T> implements ApiStreamObserver<T> {
-      private List<T> requestList = new ArrayList<>();
-      private Throwable error;
-      private boolean completed = false;
-
-      @Override
-      public void onNext(T value) {
-        requestList.add(value);
-      }
-
-      @Override
-      public void onError(Throwable t) {
-        error = t;
-      }
-
-      @Override
-      public void onCompleted() {
-        completed = true;
-        BidiStreamingStashCallable.this.sendResponses();
-      }
-
-      public List<T> getValues() {
-        if (!completed) {
-          throw new IllegalStateException("Stream not completed.");
-        }
-        if (error != null) {
-          throw ApiExceptionFactory.createException(error, FakeStatusCode.of(Code.UNKNOWN), false);
-        }
-        return requestList;
-      }
-    }
-  }
-
   public static class ServerStreamingStashCallable<RequestT, ResponseT>
       extends ServerStreamingCallable<RequestT, ResponseT> {
     private ApiCallContext context;

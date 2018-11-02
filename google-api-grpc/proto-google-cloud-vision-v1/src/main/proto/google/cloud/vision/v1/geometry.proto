@@ -21,6 +21,7 @@ option go_package = "google.golang.org/genproto/googleapis/cloud/vision/v1;visio
 option java_multiple_files = true;
 option java_outer_classname = "GeometryProto";
 option java_package = "com.google.cloud.vision.v1";
+option objc_class_prefix = "GCVN";
 
 
 // A vertex represents a 2D point in the image.
@@ -33,10 +34,24 @@ message Vertex {
   int32 y = 2;
 }
 
+// A vertex represents a 2D point in the image.
+// NOTE: the normalized vertex coordinates are relative to the original image
+// and range from 0 to 1.
+message NormalizedVertex {
+  // X coordinate.
+  float x = 1;
+
+  // Y coordinate.
+  float y = 2;
+};
+
 // A bounding polygon for the detected image annotation.
 message BoundingPoly {
   // The bounding polygon vertices.
   repeated Vertex vertices = 1;
+
+  // The bounding polygon normalized vertices.
+  repeated NormalizedVertex normalized_vertices = 2;
 }
 
 // A 3D position in the image, used primarily for Face detection landmarks.

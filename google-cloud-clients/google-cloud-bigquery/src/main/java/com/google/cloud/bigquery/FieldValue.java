@@ -24,6 +24,7 @@ import com.google.api.core.BetaApi;
 import com.google.common.base.MoreObjects;
 import com.google.common.io.BaseEncoding;
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
@@ -48,7 +49,8 @@ public class FieldValue implements Serializable {
      * A primitive field value. A {@code FieldValue} is primitive when the corresponding field has
      * type {@link LegacySQLTypeName#BYTES}, {@link LegacySQLTypeName#BOOLEAN},
      * {@link LegacySQLTypeName#STRING}, {@link LegacySQLTypeName#FLOAT},
-     * {@link LegacySQLTypeName#INTEGER}, {@link LegacySQLTypeName#TIMESTAMP} or the value is set to
+     * {@link LegacySQLTypeName#INTEGER}, {@link LegacySQLTypeName#NUMERIC},
+     * {@link LegacySQLTypeName#TIMESTAMP}, or the value is set to
      * {@code null}.
      */
     PRIMITIVE,
@@ -76,7 +78,8 @@ public class FieldValue implements Serializable {
    * @return {@link Attribute#PRIMITIVE} if the field is a primitive type
    *     ({@link LegacySQLTypeName#BYTES}, {@link LegacySQLTypeName#BOOLEAN}, {@link LegacySQLTypeName#STRING},
    *     {@link LegacySQLTypeName#FLOAT}, {@link LegacySQLTypeName#INTEGER},
-   *     {@link LegacySQLTypeName#TIMESTAMP}) or is {@code null}. Returns {@link Attribute#REPEATED} if
+   *     {@link LegacySQLTypeName#NUMERIC}, {@link LegacySQLTypeName#TIMESTAMP})
+   *     or is {@code null}. Returns {@link Attribute#REPEATED} if
    *     the corresponding field has ({@link Field.Mode#REPEATED}) mode. Returns
    *     {@link Attribute#RECORD} if the corresponding field is a
    *     {@link LegacySQLTypeName#RECORD} type.
@@ -107,7 +110,7 @@ public class FieldValue implements Serializable {
    * corresponding field has primitive type ({@link LegacySQLTypeName#BYTES},
    * {@link LegacySQLTypeName#BOOLEAN}, {@link LegacySQLTypeName#STRING},
    * {@link LegacySQLTypeName#FLOAT}, {@link LegacySQLTypeName#INTEGER},
-   * {@link LegacySQLTypeName#TIMESTAMP}).
+   * {@link LegacySQLTypeName#NUMERIC} {@link LegacySQLTypeName#TIMESTAMP}).
    *
    * @throws ClassCastException if the field is not a primitive type
    * @throws NullPointerException if {@link #isNull()} returns {@code true}
@@ -199,6 +202,21 @@ public class FieldValue implements Serializable {
 
 
   /**
+   * Returns this field's value as a {@link java.math.BigDecimal}. This method should only be used if the
+   * corresponding field has {@link LegacySQLTypeName#NUMERIC} type.
+   *
+   * @throws ClassCastException if the field is not a primitive type
+   * @throws NumberFormatException if the field's value could not be converted to
+   *   {@link java.math.BigDecimal}
+   * @throws NullPointerException if {@link #isNull()} returns {@code true}
+   */
+  @SuppressWarnings("unchecked")
+  public BigDecimal getNumericValue() {
+    return new BigDecimal(getStringValue());
+  }
+
+
+  /**
    * Returns this field's value as a list of {@link FieldValue}. This method should only be used if
    * the corresponding field has {@link Field.Mode#REPEATED} mode (i.e. {@link #getAttribute()} is
    * {@link Attribute#REPEATED}).
@@ -262,7 +280,7 @@ public class FieldValue implements Serializable {
    * respectively.
    *
    * <p>This method is unstable. See <a
-   * href="https://github.com/GoogleCloudPlatform/google-cloud-java/pull/2891">this discussion</a>
+   * href="https://github.com/googleapis/google-cloud-java/pull/2891">this discussion</a>
    * for more context.
    */
   @BetaApi

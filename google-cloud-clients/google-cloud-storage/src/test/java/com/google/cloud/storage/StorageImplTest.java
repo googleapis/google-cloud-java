@@ -92,6 +92,7 @@ public class StorageImplTest {
 
   private static final String BUCKET_NAME1 = "b1";
   private static final String BUCKET_NAME2 = "b2";
+  private static final String BUCKET_NAME3 = "b3";
   private static final String BLOB_NAME1 = "n1";
   private static final String BLOB_NAME2 = "n2";
   private static final String BLOB_NAME3 = "n3";
@@ -102,11 +103,17 @@ public class StorageImplTest {
   private static final String BASE64_KEY = "JVzfVl8NLD9FjedFuStegjRfES5ll5zc59CIXw572OA=";
   private static final Key KEY =
       new SecretKeySpec(BaseEncoding.base64().decode(BASE64_KEY), "AES256");
+  private static final String KMS_KEY_NAME =
+      "projects/gcloud-devel/locations/us/keyRings/gcs_kms_key_ring_us/cryptoKeys/key";
+  private static final Long RETENTION_PERIOD = 10L;
+  private static final String USER_PROJECT = "test-project";
 
   // BucketInfo objects
   private static final BucketInfo BUCKET_INFO1 =
       BucketInfo.newBuilder(BUCKET_NAME1).setMetageneration(42L).build();
   private static final BucketInfo BUCKET_INFO2 = BucketInfo.newBuilder(BUCKET_NAME2).build();
+  private static final BucketInfo BUCKET_INFO3 = BucketInfo.newBuilder(BUCKET_NAME3)
+      .setRetentionPeriod(RETENTION_PERIOD).setRetentionPolicyIsLocked(true).setMetageneration(42L).build();
 
   // BlobInfo objects
   private static final BlobInfo BLOB_INFO1 =
@@ -126,10 +133,16 @@ public class StorageImplTest {
       Storage.BucketTargetOption.metagenerationMatch();
   private static final Storage.BucketTargetOption BUCKET_TARGET_PREDEFINED_ACL =
       Storage.BucketTargetOption.predefinedAcl(Storage.PredefinedAcl.PRIVATE);
+  private static final Storage.BucketTargetOption BUCKET_TARGET_USER_PROJECT =
+      Storage.BucketTargetOption.userProject(USER_PROJECT);
   private static final Map<StorageRpc.Option, ?> BUCKET_TARGET_OPTIONS =
       ImmutableMap.of(
           StorageRpc.Option.IF_METAGENERATION_MATCH, BUCKET_INFO1.getMetageneration(),
           StorageRpc.Option.PREDEFINED_ACL, BUCKET_TARGET_PREDEFINED_ACL.getValue());
+  private static final Map<StorageRpc.Option, ?> BUCKET_TARGET_OPTIONS_LOCK_RETENTION_POLICY =
+      ImmutableMap.of(
+          StorageRpc.Option.IF_METAGENERATION_MATCH, BUCKET_INFO3.getMetageneration(),
+          StorageRpc.Option.USER_PROJECT, USER_PROJECT);
 
   // Blob target options (create, update, compose)
   private static final BlobTargetOption BLOB_TARGET_GENERATION = BlobTargetOption.generationMatch();
@@ -245,6 +258,9 @@ public class StorageImplTest {
   private static final Map<StorageRpc.Option, ?> ENCRYPTION_KEY_OPTIONS =
       ImmutableMap.of(StorageRpc.Option.CUSTOMER_SUPPLIED_KEY, BASE64_KEY);
 
+  // Customer managed encryption key options
+  private static final Map<StorageRpc.Option, ?> KMS_KEY_NAME_OPTIONS =
+      ImmutableMap.of(StorageRpc.Option.KMS_KEY_NAME, KMS_KEY_NAME);
   // IAM policies
   private static final String POLICY_ETAG1 = "CAE=";
   private static final String POLICY_ETAG2 = "CAI=";
@@ -315,7 +331,7 @@ public class StorageImplTest {
   private Storage storage;
 
   private Blob expectedBlob1, expectedBlob2, expectedBlob3;
-  private Bucket expectedBucket1, expectedBucket2;
+  private Bucket expectedBucket1, expectedBucket2, expectedBucket3;
 
   @Rule public ExpectedException thrown = ExpectedException.none();
 
@@ -362,6 +378,7 @@ public class StorageImplTest {
     expectedBlob3 = new Blob(storage, new BlobInfo.BuilderImpl(BLOB_INFO3));
     expectedBucket1 = new Bucket(storage, new BucketInfo.BuilderImpl(BUCKET_INFO1));
     expectedBucket2 = new Bucket(storage, new BucketInfo.BuilderImpl(BUCKET_INFO2));
+    expectedBucket3 = new Bucket(storage, new BucketInfo.BuilderImpl(BUCKET_INFO3));
   }
 
   @Test
@@ -553,6 +570,40 @@ public class StorageImplTest {
     assertArrayEquals(BLOB_CONTENT, streamBytes);
     assertEquals(-1, byteStream.read(streamBytes));
     blob = storage.create(BLOB_INFO1, BLOB_CONTENT, BlobTargetOption.encryptionKey(BASE64_KEY));
+    assertEquals(expectedBlob1, blob);
+    byteStream = capturedStream.getValue();
+    streamBytes = new byte[BLOB_CONTENT.length];
+    assertEquals(BLOB_CONTENT.length, byteStream.read(streamBytes));
+    assertArrayEquals(BLOB_CONTENT, streamBytes);
+    assertEquals(-1, byteStream.read(streamBytes));
+  }
+
+  @Test
+  public void testCreateBlobWithKmsKeyName() throws IOException {
+    Capture<ByteArrayInputStream> capturedStream = Capture.newInstance();
+    EasyMock.expect(
+            storageRpcMock.create(
+                    EasyMock.eq(
+                            BLOB_INFO1
+                                    .toBuilder()
+                                    .setMd5(CONTENT_MD5)
+                                    .setCrc32c(CONTENT_CRC32C)
+                                    .build()
+                                    .toPb()),
+                    EasyMock.capture(capturedStream),
+                    EasyMock.eq(KMS_KEY_NAME_OPTIONS)))
+            .andReturn(BLOB_INFO1.toPb())
+            .times(2);
+    EasyMock.replay(storageRpcMock);
+    initializeService();
+    Blob blob = storage.create(BLOB_INFO1, BLOB_CONTENT, BlobTargetOption.kmsKeyName(KMS_KEY_NAME));
+    assertEquals(expectedBlob1, blob);
+    ByteArrayInputStream byteStream = capturedStream.getValue();
+    byte[] streamBytes = new byte[BLOB_CONTENT.length];
+    assertEquals(BLOB_CONTENT.length, byteStream.read(streamBytes));
+    assertArrayEquals(BLOB_CONTENT, streamBytes);
+    assertEquals(-1, byteStream.read(streamBytes));
+    blob = storage.create(BLOB_INFO1, BLOB_CONTENT, BlobTargetOption.kmsKeyName(KMS_KEY_NAME));
     assertEquals(expectedBlob1, blob);
     byteStream = capturedStream.getValue();
     streamBytes = new byte[BLOB_CONTENT.length];
@@ -1239,6 +1290,43 @@ public class StorageImplTest {
   }
 
   @Test
+  public void testCopyFromEncryptionKeyToKmsKeyName() {
+    CopyRequest request =
+            Storage.CopyRequest.newBuilder()
+                    .setSource(BLOB_INFO2.getBlobId())
+                    .setSourceOptions(BlobSourceOption.decryptionKey(KEY))
+                    .setTarget(BLOB_INFO1, BlobTargetOption.kmsKeyName(KMS_KEY_NAME))
+                    .build();
+    StorageRpc.RewriteRequest rpcRequest =
+            new StorageRpc.RewriteRequest(
+                    request.getSource().toPb(),
+                    ENCRYPTION_KEY_OPTIONS,
+                    true,
+                    request.getTarget().toPb(),
+                    KMS_KEY_NAME_OPTIONS,
+                    null);
+    StorageRpc.RewriteResponse rpcResponse =
+            new StorageRpc.RewriteResponse(rpcRequest, null, 42L, false, "token", 21L);
+    EasyMock.expect(storageRpcMock.openRewrite(rpcRequest)).andReturn(rpcResponse).times(2);
+    EasyMock.replay(storageRpcMock);
+    initializeService();
+    CopyWriter writer = storage.copy(request);
+    assertEquals(42L, writer.getBlobSize());
+    assertEquals(21L, writer.getTotalBytesCopied());
+    assertTrue(!writer.isDone());
+    request =
+            Storage.CopyRequest.newBuilder()
+                    .setSource(BLOB_INFO2.getBlobId())
+                    .setSourceOptions(BlobSourceOption.decryptionKey(BASE64_KEY))
+                    .setTarget(BLOB_INFO1, BlobTargetOption.kmsKeyName(KMS_KEY_NAME))
+                    .build();
+    writer = storage.copy(request);
+    assertEquals(42L, writer.getBlobSize());
+    assertEquals(21L, writer.getTotalBytesCopied());
+    assertTrue(!writer.isDone());
+  }
+
+  @Test
   public void testCopyWithOptionsFromBlobId() {
     CopyRequest request =
         Storage.CopyRequest.newBuilder()
@@ -1485,6 +1573,22 @@ public class StorageImplTest {
     assertNotNull(channel);
     assertTrue(channel.isOpen());
     channel = storage.writer(info, BlobWriteOption.encryptionKey(BASE64_KEY));
+    assertNotNull(channel);
+    assertTrue(channel.isOpen());
+  }
+
+  @Test
+  public void testWriterWithKmsKeyName() {
+    BlobInfo info = BLOB_INFO1.toBuilder().setMd5(null).setCrc32c(null).build();
+    EasyMock.expect(storageRpcMock.open(info.toPb(), KMS_KEY_NAME_OPTIONS))
+            .andReturn("upload-id")
+            .times(2);
+    EasyMock.replay(storageRpcMock);
+    initializeService();
+    WriteChannel channel = storage.writer(info, BlobWriteOption.kmsKeyName(KMS_KEY_NAME));
+    assertNotNull(channel);
+    assertTrue(channel.isOpen());
+    channel = storage.writer(info, BlobWriteOption.kmsKeyName(KMS_KEY_NAME));
     assertNotNull(channel);
     assertTrue(channel.isOpen());
   }
@@ -2231,6 +2335,17 @@ public class StorageImplTest {
     EasyMock.replay(storageRpcMock);
     initializeService();
     assertEquals(expectedPermissions, storage.testIamPermissions(BUCKET_NAME1, checkedPermissions));
+  }
+
+  @Test
+  public void testLockRetentionPolicy() {
+    EasyMock.expect(storageRpcMock
+        .lockRetentionPolicy(BUCKET_INFO3.toPb(), BUCKET_TARGET_OPTIONS_LOCK_RETENTION_POLICY))
+        .andReturn(BUCKET_INFO3.toPb());
+    EasyMock.replay(storageRpcMock);
+    initializeService();
+    Bucket bucket = storage.lockRetentionPolicy(BUCKET_INFO3, BUCKET_TARGET_METAGENERATION, BUCKET_TARGET_USER_PROJECT);
+    assertEquals(expectedBucket3, bucket);
   }
 
   @Test

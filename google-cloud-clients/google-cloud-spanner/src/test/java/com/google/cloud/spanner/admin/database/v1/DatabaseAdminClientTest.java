@@ -149,8 +149,8 @@ public class DatabaseAdminClientTest {
   @Test
   @SuppressWarnings("all")
   public void createDatabaseTest() throws Exception {
-    String name = "name3373707";
-    Database expectedResponse = Database.newBuilder().setName(name).build();
+    DatabaseName name = DatabaseName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]");
+    Database expectedResponse = Database.newBuilder().setName(name.toString()).build();
     Operation resultOperation =
         Operation.newBuilder()
             .setName("createDatabaseTest")
@@ -199,8 +199,8 @@ public class DatabaseAdminClientTest {
   @Test
   @SuppressWarnings("all")
   public void getDatabaseTest() {
-    String name2 = "name2-1052831874";
-    Database expectedResponse = Database.newBuilder().setName(name2).build();
+    DatabaseName name2 = DatabaseName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]");
+    Database expectedResponse = Database.newBuilder().setName(name2.toString()).build();
     mockDatabaseAdmin.addResponse(expectedResponse);
 
     DatabaseName name = DatabaseName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]");

@@ -46,13 +46,6 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
           case 10: {
             com.google.privacy.dlp.v2.PrivacyMetric.Builder subBuilder = null;
             if (requestedPrivacyMetric_ != null) {
@@ -149,6 +142,27 @@ private static final long serialVersionUID = 0L;
             resultCase_ = 7;
             break;
           }
+          case 74: {
+            com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.Builder subBuilder = null;
+            if (resultCase_ == 9) {
+              subBuilder = ((com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult) result_).toBuilder();
+            }
+            result_ =
+                input.readMessage(com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult) result_);
+              result_ = subBuilder.buildPartial();
+            }
+            resultCase_ = 9;
+            break;
+          }
+          default: {
+            if (!parseUnknownFieldProto3(
+                input, unknownFields, extensionRegistry, tag)) {
+              done = true;
+            }
+            break;
+          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -166,6 +180,7 @@ private static final long serialVersionUID = 0L;
     return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_fieldAccessorTable
@@ -320,13 +335,6 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               com.google.privacy.dlp.v2.Value.Builder subBuilder = null;
               if (minValue_ != null) {
@@ -362,6 +370,13 @@ private static final long serialVersionUID = 0L;
                   input.readMessage(com.google.privacy.dlp.v2.Value.parser(), extensionRegistry));
               break;
             }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -382,6 +397,7 @@ private static final long serialVersionUID = 0L;
       return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_NumericalStatsResult_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_NumericalStatsResult_fieldAccessorTable
@@ -517,6 +533,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -526,6 +543,7 @@ private static final long serialVersionUID = 0L;
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (minValue_ != null) {
@@ -540,6 +558,7 @@ private static final long serialVersionUID = 0L;
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -683,6 +702,7 @@ private static final long serialVersionUID = 0L;
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -690,6 +710,7 @@ private static final long serialVersionUID = 0L;
     public static Builder newBuilder(com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.NumericalStatsResult prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -717,6 +738,7 @@ private static final long serialVersionUID = 0L;
         return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_NumericalStatsResult_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_NumericalStatsResult_fieldAccessorTable
@@ -740,6 +762,7 @@ private static final long serialVersionUID = 0L;
           getQuantileValuesFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (minValueBuilder_ == null) {
@@ -763,15 +786,18 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_NumericalStatsResult_descriptor;
       }
 
+      @java.lang.Override
       public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.NumericalStatsResult getDefaultInstanceForType() {
         return com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.NumericalStatsResult.getDefaultInstance();
       }
 
+      @java.lang.Override
       public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.NumericalStatsResult build() {
         com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.NumericalStatsResult result = buildPartial();
         if (!result.isInitialized()) {
@@ -780,6 +806,7 @@ private static final long serialVersionUID = 0L;
         return result;
       }
 
+      @java.lang.Override
       public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.NumericalStatsResult buildPartial() {
         com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.NumericalStatsResult result = new com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.NumericalStatsResult(this);
         int from_bitField0_ = bitField0_;
@@ -808,32 +835,39 @@ private static final long serialVersionUID = 0L;
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.NumericalStatsResult) {
           return mergeFrom((com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.NumericalStatsResult)other);
@@ -882,10 +916,12 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1540,11 +1576,13 @@ private static final long serialVersionUID = 0L;
         }
         return quantileValuesBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -1566,6 +1604,7 @@ private static final long serialVersionUID = 0L;
 
     private static final com.google.protobuf.Parser<NumericalStatsResult>
         PARSER = new com.google.protobuf.AbstractParser<NumericalStatsResult>() {
+      @java.lang.Override
       public NumericalStatsResult parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1583,6 +1622,7 @@ private static final long serialVersionUID = 0L;
       return PARSER;
     }
 
+    @java.lang.Override
     public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.NumericalStatsResult getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -1681,13 +1721,6 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 42: {
               if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
                 valueFrequencyHistogramBuckets_ = new java.util.ArrayList<com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult.CategoricalStatsHistogramBucket>();
@@ -1695,6 +1728,13 @@ private static final long serialVersionUID = 0L;
               }
               valueFrequencyHistogramBuckets_.add(
                   input.readMessage(com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult.CategoricalStatsHistogramBucket.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -1717,6 +1757,7 @@ private static final long serialVersionUID = 0L;
       return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_CategoricalStatsResult_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_CategoricalStatsResult_fieldAccessorTable
@@ -1857,13 +1898,6 @@ private static final long serialVersionUID = 0L;
               case 0:
                 done = true;
                 break;
-              default: {
-                if (!parseUnknownFieldProto3(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
               case 8: {
 
                 valueFrequencyLowerBound_ = input.readInt64();
@@ -1893,6 +1927,13 @@ private static final long serialVersionUID = 0L;
                 bucketValueCount_ = input.readInt64();
                 break;
               }
+              default: {
+                if (!parseUnknownFieldProto3(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
             }
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -1913,6 +1954,7 @@ private static final long serialVersionUID = 0L;
         return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_CategoricalStatsResult_CategoricalStatsHistogramBucket_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_CategoricalStatsResult_CategoricalStatsHistogramBucket_fieldAccessorTable
@@ -2034,6 +2076,7 @@ private static final long serialVersionUID = 0L;
       }
 
       private byte memoizedIsInitialized = -1;
+      @java.lang.Override
       public final boolean isInitialized() {
         byte isInitialized = memoizedIsInitialized;
         if (isInitialized == 1) return true;
@@ -2043,6 +2086,7 @@ private static final long serialVersionUID = 0L;
         return true;
       }
 
+      @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
         if (valueFrequencyLowerBound_ != 0L) {
@@ -2063,6 +2107,7 @@ private static final long serialVersionUID = 0L;
         unknownFields.writeTo(output);
       }
 
+      @java.lang.Override
       public int getSerializedSize() {
         int size = memoizedSize;
         if (size != -1) return size;
@@ -2216,6 +2261,7 @@ private static final long serialVersionUID = 0L;
             .parseWithIOException(PARSER, input, extensionRegistry);
       }
 
+      @java.lang.Override
       public Builder newBuilderForType() { return newBuilder(); }
       public static Builder newBuilder() {
         return DEFAULT_INSTANCE.toBuilder();
@@ -2223,6 +2269,7 @@ private static final long serialVersionUID = 0L;
       public static Builder newBuilder(com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult.CategoricalStatsHistogramBucket prototype) {
         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
       }
+      @java.lang.Override
       public Builder toBuilder() {
         return this == DEFAULT_INSTANCE
             ? new Builder() : new Builder().mergeFrom(this);
@@ -2246,6 +2293,7 @@ private static final long serialVersionUID = 0L;
           return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_CategoricalStatsResult_CategoricalStatsHistogramBucket_descriptor;
         }
 
+        @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
           return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_CategoricalStatsResult_CategoricalStatsHistogramBucket_fieldAccessorTable
@@ -2269,6 +2317,7 @@ private static final long serialVersionUID = 0L;
             getBucketValuesFieldBuilder();
           }
         }
+        @java.lang.Override
         public Builder clear() {
           super.clear();
           valueFrequencyLowerBound_ = 0L;
@@ -2288,15 +2337,18 @@ private static final long serialVersionUID = 0L;
           return this;
         }
 
+        @java.lang.Override
         public com.google.protobuf.Descriptors.Descriptor
             getDescriptorForType() {
           return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_CategoricalStatsResult_CategoricalStatsHistogramBucket_descriptor;
         }
 
+        @java.lang.Override
         public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult.CategoricalStatsHistogramBucket getDefaultInstanceForType() {
           return com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult.CategoricalStatsHistogramBucket.getDefaultInstance();
         }
 
+        @java.lang.Override
         public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult.CategoricalStatsHistogramBucket build() {
           com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult.CategoricalStatsHistogramBucket result = buildPartial();
           if (!result.isInitialized()) {
@@ -2305,6 +2357,7 @@ private static final long serialVersionUID = 0L;
           return result;
         }
 
+        @java.lang.Override
         public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult.CategoricalStatsHistogramBucket buildPartial() {
           com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult.CategoricalStatsHistogramBucket result = new com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult.CategoricalStatsHistogramBucket(this);
           int from_bitField0_ = bitField0_;
@@ -2327,32 +2380,39 @@ private static final long serialVersionUID = 0L;
           return result;
         }
 
+        @java.lang.Override
         public Builder clone() {
           return (Builder) super.clone();
         }
+        @java.lang.Override
         public Builder setField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             java.lang.Object value) {
           return (Builder) super.setField(field, value);
         }
+        @java.lang.Override
         public Builder clearField(
             com.google.protobuf.Descriptors.FieldDescriptor field) {
           return (Builder) super.clearField(field);
         }
+        @java.lang.Override
         public Builder clearOneof(
             com.google.protobuf.Descriptors.OneofDescriptor oneof) {
           return (Builder) super.clearOneof(oneof);
         }
+        @java.lang.Override
         public Builder setRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             int index, java.lang.Object value) {
           return (Builder) super.setRepeatedField(field, index, value);
         }
+        @java.lang.Override
         public Builder addRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             java.lang.Object value) {
           return (Builder) super.addRepeatedField(field, value);
         }
+        @java.lang.Override
         public Builder mergeFrom(com.google.protobuf.Message other) {
           if (other instanceof com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult.CategoricalStatsHistogramBucket) {
             return mergeFrom((com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult.CategoricalStatsHistogramBucket)other);
@@ -2407,10 +2467,12 @@ private static final long serialVersionUID = 0L;
           return this;
         }
 
+        @java.lang.Override
         public final boolean isInitialized() {
           return true;
         }
 
+        @java.lang.Override
         public Builder mergeFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -2911,11 +2973,13 @@ private static final long serialVersionUID = 0L;
           onChanged();
           return this;
         }
+        @java.lang.Override
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
           return super.setUnknownFieldsProto3(unknownFields);
         }
 
+        @java.lang.Override
         public final Builder mergeUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
           return super.mergeUnknownFields(unknownFields);
@@ -2937,6 +3001,7 @@ private static final long serialVersionUID = 0L;
 
       private static final com.google.protobuf.Parser<CategoricalStatsHistogramBucket>
           PARSER = new com.google.protobuf.AbstractParser<CategoricalStatsHistogramBucket>() {
+        @java.lang.Override
         public CategoricalStatsHistogramBucket parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -2954,6 +3019,7 @@ private static final long serialVersionUID = 0L;
         return PARSER;
       }
 
+      @java.lang.Override
       public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult.CategoricalStatsHistogramBucket getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
       }
@@ -3016,6 +3082,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -3025,6 +3092,7 @@ private static final long serialVersionUID = 0L;
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < valueFrequencyHistogramBuckets_.size(); i++) {
@@ -3033,6 +3101,7 @@ private static final long serialVersionUID = 0L;
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -3150,6 +3219,7 @@ private static final long serialVersionUID = 0L;
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -3157,6 +3227,7 @@ private static final long serialVersionUID = 0L;
     public static Builder newBuilder(com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -3184,6 +3255,7 @@ private static final long serialVersionUID = 0L;
         return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_CategoricalStatsResult_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_CategoricalStatsResult_fieldAccessorTable
@@ -3207,6 +3279,7 @@ private static final long serialVersionUID = 0L;
           getValueFrequencyHistogramBucketsFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (valueFrequencyHistogramBucketsBuilder_ == null) {
@@ -3218,15 +3291,18 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_CategoricalStatsResult_descriptor;
       }
 
+      @java.lang.Override
       public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult getDefaultInstanceForType() {
         return com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult.getDefaultInstance();
       }
 
+      @java.lang.Override
       public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult build() {
         com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult result = buildPartial();
         if (!result.isInitialized()) {
@@ -3235,6 +3311,7 @@ private static final long serialVersionUID = 0L;
         return result;
       }
 
+      @java.lang.Override
       public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult buildPartial() {
         com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult result = new com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult(this);
         int from_bitField0_ = bitField0_;
@@ -3251,32 +3328,39 @@ private static final long serialVersionUID = 0L;
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult) {
           return mergeFrom((com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult)other);
@@ -3319,10 +3403,12 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -3653,11 +3739,13 @@ private static final long serialVersionUID = 0L;
         }
         return valueFrequencyHistogramBucketsBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -3679,6 +3767,7 @@ private static final long serialVersionUID = 0L;
 
     private static final com.google.protobuf.Parser<CategoricalStatsResult>
         PARSER = new com.google.protobuf.AbstractParser<CategoricalStatsResult>() {
+      @java.lang.Override
       public CategoricalStatsResult parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -3696,6 +3785,7 @@ private static final long serialVersionUID = 0L;
       return PARSER;
     }
 
+    @java.lang.Override
     public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -3794,13 +3884,6 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 42: {
               if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
                 equivalenceClassHistogramBuckets_ = new java.util.ArrayList<com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult.KAnonymityHistogramBucket>();
@@ -3808,6 +3891,13 @@ private static final long serialVersionUID = 0L;
               }
               equivalenceClassHistogramBuckets_.add(
                   input.readMessage(com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult.KAnonymityHistogramBucket.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -3830,6 +3920,7 @@ private static final long serialVersionUID = 0L;
       return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_KAnonymityResult_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_KAnonymityResult_fieldAccessorTable
@@ -3950,13 +4041,6 @@ private static final long serialVersionUID = 0L;
               case 0:
                 done = true;
                 break;
-              default: {
-                if (!parseUnknownFieldProto3(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
               case 10: {
                 if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
                   quasiIdsValues_ = new java.util.ArrayList<com.google.privacy.dlp.v2.Value>();
@@ -3969,6 +4053,13 @@ private static final long serialVersionUID = 0L;
               case 16: {
 
                 equivalenceClassSize_ = input.readInt64();
+                break;
+              }
+              default: {
+                if (!parseUnknownFieldProto3(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
                 break;
               }
             }
@@ -3991,6 +4082,7 @@ private static final long serialVersionUID = 0L;
         return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_KAnonymityResult_KAnonymityEquivalenceClass_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_KAnonymityResult_KAnonymityEquivalenceClass_fieldAccessorTable
@@ -4079,6 +4171,7 @@ private static final long serialVersionUID = 0L;
       }
 
       private byte memoizedIsInitialized = -1;
+      @java.lang.Override
       public final boolean isInitialized() {
         byte isInitialized = memoizedIsInitialized;
         if (isInitialized == 1) return true;
@@ -4088,6 +4181,7 @@ private static final long serialVersionUID = 0L;
         return true;
       }
 
+      @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
         for (int i = 0; i < quasiIdsValues_.size(); i++) {
@@ -4099,6 +4193,7 @@ private static final long serialVersionUID = 0L;
         unknownFields.writeTo(output);
       }
 
+      @java.lang.Override
       public int getSerializedSize() {
         int size = memoizedSize;
         if (size != -1) return size;
@@ -4225,6 +4320,7 @@ private static final long serialVersionUID = 0L;
             .parseWithIOException(PARSER, input, extensionRegistry);
       }
 
+      @java.lang.Override
       public Builder newBuilderForType() { return newBuilder(); }
       public static Builder newBuilder() {
         return DEFAULT_INSTANCE.toBuilder();
@@ -4232,6 +4328,7 @@ private static final long serialVersionUID = 0L;
       public static Builder newBuilder(com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult.KAnonymityEquivalenceClass prototype) {
         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
       }
+      @java.lang.Override
       public Builder toBuilder() {
         return this == DEFAULT_INSTANCE
             ? new Builder() : new Builder().mergeFrom(this);
@@ -4259,6 +4356,7 @@ private static final long serialVersionUID = 0L;
           return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_KAnonymityResult_KAnonymityEquivalenceClass_descriptor;
         }
 
+        @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
           return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_KAnonymityResult_KAnonymityEquivalenceClass_fieldAccessorTable
@@ -4282,6 +4380,7 @@ private static final long serialVersionUID = 0L;
             getQuasiIdsValuesFieldBuilder();
           }
         }
+        @java.lang.Override
         public Builder clear() {
           super.clear();
           if (quasiIdsValuesBuilder_ == null) {
@@ -4295,15 +4394,18 @@ private static final long serialVersionUID = 0L;
           return this;
         }
 
+        @java.lang.Override
         public com.google.protobuf.Descriptors.Descriptor
             getDescriptorForType() {
           return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_KAnonymityResult_KAnonymityEquivalenceClass_descriptor;
         }
 
+        @java.lang.Override
         public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult.KAnonymityEquivalenceClass getDefaultInstanceForType() {
           return com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult.KAnonymityEquivalenceClass.getDefaultInstance();
         }
 
+        @java.lang.Override
         public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult.KAnonymityEquivalenceClass build() {
           com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult.KAnonymityEquivalenceClass result = buildPartial();
           if (!result.isInitialized()) {
@@ -4312,6 +4414,7 @@ private static final long serialVersionUID = 0L;
           return result;
         }
 
+        @java.lang.Override
         public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult.KAnonymityEquivalenceClass buildPartial() {
           com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult.KAnonymityEquivalenceClass result = new com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult.KAnonymityEquivalenceClass(this);
           int from_bitField0_ = bitField0_;
@@ -4331,32 +4434,39 @@ private static final long serialVersionUID = 0L;
           return result;
         }
 
+        @java.lang.Override
         public Builder clone() {
           return (Builder) super.clone();
         }
+        @java.lang.Override
         public Builder setField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             java.lang.Object value) {
           return (Builder) super.setField(field, value);
         }
+        @java.lang.Override
         public Builder clearField(
             com.google.protobuf.Descriptors.FieldDescriptor field) {
           return (Builder) super.clearField(field);
         }
+        @java.lang.Override
         public Builder clearOneof(
             com.google.protobuf.Descriptors.OneofDescriptor oneof) {
           return (Builder) super.clearOneof(oneof);
         }
+        @java.lang.Override
         public Builder setRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             int index, java.lang.Object value) {
           return (Builder) super.setRepeatedField(field, index, value);
         }
+        @java.lang.Override
         public Builder addRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             java.lang.Object value) {
           return (Builder) super.addRepeatedField(field, value);
         }
+        @java.lang.Override
         public Builder mergeFrom(com.google.protobuf.Message other) {
           if (other instanceof com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult.KAnonymityEquivalenceClass) {
             return mergeFrom((com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult.KAnonymityEquivalenceClass)other);
@@ -4402,10 +4512,12 @@ private static final long serialVersionUID = 0L;
           return this;
         }
 
+        @java.lang.Override
         public final boolean isInitialized() {
           return true;
         }
 
+        @java.lang.Override
         public Builder mergeFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -4813,11 +4925,13 @@ private static final long serialVersionUID = 0L;
           onChanged();
           return this;
         }
+        @java.lang.Override
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
           return super.setUnknownFieldsProto3(unknownFields);
         }
 
+        @java.lang.Override
         public final Builder mergeUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
           return super.mergeUnknownFields(unknownFields);
@@ -4839,6 +4953,7 @@ private static final long serialVersionUID = 0L;
 
       private static final com.google.protobuf.Parser<KAnonymityEquivalenceClass>
           PARSER = new com.google.protobuf.AbstractParser<KAnonymityEquivalenceClass>() {
+        @java.lang.Override
         public KAnonymityEquivalenceClass parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -4856,6 +4971,7 @@ private static final long serialVersionUID = 0L;
         return PARSER;
       }
 
+      @java.lang.Override
       public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult.KAnonymityEquivalenceClass getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
       }
@@ -4995,13 +5111,6 @@ private static final long serialVersionUID = 0L;
               case 0:
                 done = true;
                 break;
-              default: {
-                if (!parseUnknownFieldProto3(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
               case 8: {
 
                 equivalenceClassSizeLowerBound_ = input.readInt64();
@@ -5031,6 +5140,13 @@ private static final long serialVersionUID = 0L;
                 bucketValueCount_ = input.readInt64();
                 break;
               }
+              default: {
+                if (!parseUnknownFieldProto3(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
             }
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -5051,6 +5167,7 @@ private static final long serialVersionUID = 0L;
         return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_KAnonymityResult_KAnonymityHistogramBucket_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_KAnonymityResult_KAnonymityHistogramBucket_fieldAccessorTable
@@ -5172,6 +5289,7 @@ private static final long serialVersionUID = 0L;
       }
 
       private byte memoizedIsInitialized = -1;
+      @java.lang.Override
       public final boolean isInitialized() {
         byte isInitialized = memoizedIsInitialized;
         if (isInitialized == 1) return true;
@@ -5181,6 +5299,7 @@ private static final long serialVersionUID = 0L;
         return true;
       }
 
+      @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
         if (equivalenceClassSizeLowerBound_ != 0L) {
@@ -5201,6 +5320,7 @@ private static final long serialVersionUID = 0L;
         unknownFields.writeTo(output);
       }
 
+      @java.lang.Override
       public int getSerializedSize() {
         int size = memoizedSize;
         if (size != -1) return size;
@@ -5354,6 +5474,7 @@ private static final long serialVersionUID = 0L;
             .parseWithIOException(PARSER, input, extensionRegistry);
       }
 
+      @java.lang.Override
       public Builder newBuilderForType() { return newBuilder(); }
       public static Builder newBuilder() {
         return DEFAULT_INSTANCE.toBuilder();
@@ -5361,6 +5482,7 @@ private static final long serialVersionUID = 0L;
       public static Builder newBuilder(com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult.KAnonymityHistogramBucket prototype) {
         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
       }
+      @java.lang.Override
       public Builder toBuilder() {
         return this == DEFAULT_INSTANCE
             ? new Builder() : new Builder().mergeFrom(this);
@@ -5384,6 +5506,7 @@ private static final long serialVersionUID = 0L;
           return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_KAnonymityResult_KAnonymityHistogramBucket_descriptor;
         }
 
+        @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
           return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_KAnonymityResult_KAnonymityHistogramBucket_fieldAccessorTable
@@ -5407,6 +5530,7 @@ private static final long serialVersionUID = 0L;
             getBucketValuesFieldBuilder();
           }
         }
+        @java.lang.Override
         public Builder clear() {
           super.clear();
           equivalenceClassSizeLowerBound_ = 0L;
@@ -5426,15 +5550,18 @@ private static final long serialVersionUID = 0L;
           return this;
         }
 
+        @java.lang.Override
         public com.google.protobuf.Descriptors.Descriptor
             getDescriptorForType() {
           return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_KAnonymityResult_KAnonymityHistogramBucket_descriptor;
         }
 
+        @java.lang.Override
         public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult.KAnonymityHistogramBucket getDefaultInstanceForType() {
           return com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult.KAnonymityHistogramBucket.getDefaultInstance();
         }
 
+        @java.lang.Override
         public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult.KAnonymityHistogramBucket build() {
           com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult.KAnonymityHistogramBucket result = buildPartial();
           if (!result.isInitialized()) {
@@ -5443,6 +5570,7 @@ private static final long serialVersionUID = 0L;
           return result;
         }
 
+        @java.lang.Override
         public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult.KAnonymityHistogramBucket buildPartial() {
           com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult.KAnonymityHistogramBucket result = new com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult.KAnonymityHistogramBucket(this);
           int from_bitField0_ = bitField0_;
@@ -5465,32 +5593,39 @@ private static final long serialVersionUID = 0L;
           return result;
         }
 
+        @java.lang.Override
         public Builder clone() {
           return (Builder) super.clone();
         }
+        @java.lang.Override
         public Builder setField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             java.lang.Object value) {
           return (Builder) super.setField(field, value);
         }
+        @java.lang.Override
         public Builder clearField(
             com.google.protobuf.Descriptors.FieldDescriptor field) {
           return (Builder) super.clearField(field);
         }
+        @java.lang.Override
         public Builder clearOneof(
             com.google.protobuf.Descriptors.OneofDescriptor oneof) {
           return (Builder) super.clearOneof(oneof);
         }
+        @java.lang.Override
         public Builder setRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             int index, java.lang.Object value) {
           return (Builder) super.setRepeatedField(field, index, value);
         }
+        @java.lang.Override
         public Builder addRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             java.lang.Object value) {
           return (Builder) super.addRepeatedField(field, value);
         }
+        @java.lang.Override
         public Builder mergeFrom(com.google.protobuf.Message other) {
           if (other instanceof com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult.KAnonymityHistogramBucket) {
             return mergeFrom((com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult.KAnonymityHistogramBucket)other);
@@ -5545,10 +5680,12 @@ private static final long serialVersionUID = 0L;
           return this;
         }
 
+        @java.lang.Override
         public final boolean isInitialized() {
           return true;
         }
 
+        @java.lang.Override
         public Builder mergeFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -6049,11 +6186,13 @@ private static final long serialVersionUID = 0L;
           onChanged();
           return this;
         }
+        @java.lang.Override
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
           return super.setUnknownFieldsProto3(unknownFields);
         }
 
+        @java.lang.Override
         public final Builder mergeUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
           return super.mergeUnknownFields(unknownFields);
@@ -6075,6 +6214,7 @@ private static final long serialVersionUID = 0L;
 
       private static final com.google.protobuf.Parser<KAnonymityHistogramBucket>
           PARSER = new com.google.protobuf.AbstractParser<KAnonymityHistogramBucket>() {
+        @java.lang.Override
         public KAnonymityHistogramBucket parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -6092,6 +6232,7 @@ private static final long serialVersionUID = 0L;
         return PARSER;
       }
 
+      @java.lang.Override
       public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult.KAnonymityHistogramBucket getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
       }
@@ -6154,6 +6295,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -6163,6 +6305,7 @@ private static final long serialVersionUID = 0L;
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < equivalenceClassHistogramBuckets_.size(); i++) {
@@ -6171,6 +6314,7 @@ private static final long serialVersionUID = 0L;
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -6288,6 +6432,7 @@ private static final long serialVersionUID = 0L;
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -6295,6 +6440,7 @@ private static final long serialVersionUID = 0L;
     public static Builder newBuilder(com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -6322,6 +6468,7 @@ private static final long serialVersionUID = 0L;
         return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_KAnonymityResult_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_KAnonymityResult_fieldAccessorTable
@@ -6345,6 +6492,7 @@ private static final long serialVersionUID = 0L;
           getEquivalenceClassHistogramBucketsFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (equivalenceClassHistogramBucketsBuilder_ == null) {
@@ -6356,15 +6504,18 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_KAnonymityResult_descriptor;
       }
 
+      @java.lang.Override
       public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult getDefaultInstanceForType() {
         return com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult.getDefaultInstance();
       }
 
+      @java.lang.Override
       public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult build() {
         com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult result = buildPartial();
         if (!result.isInitialized()) {
@@ -6373,6 +6524,7 @@ private static final long serialVersionUID = 0L;
         return result;
       }
 
+      @java.lang.Override
       public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult buildPartial() {
         com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult result = new com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult(this);
         int from_bitField0_ = bitField0_;
@@ -6389,32 +6541,39 @@ private static final long serialVersionUID = 0L;
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult) {
           return mergeFrom((com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult)other);
@@ -6457,10 +6616,12 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -6791,11 +6952,13 @@ private static final long serialVersionUID = 0L;
         }
         return equivalenceClassHistogramBucketsBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -6817,6 +6980,7 @@ private static final long serialVersionUID = 0L;
 
     private static final com.google.protobuf.Parser<KAnonymityResult>
         PARSER = new com.google.protobuf.AbstractParser<KAnonymityResult>() {
+      @java.lang.Override
       public KAnonymityResult parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -6834,6 +6998,7 @@ private static final long serialVersionUID = 0L;
       return PARSER;
     }
 
+    @java.lang.Override
     public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -6932,13 +7097,6 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 42: {
               if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
                 sensitiveValueFrequencyHistogramBuckets_ = new java.util.ArrayList<com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult.LDiversityHistogramBucket>();
@@ -6946,6 +7104,13 @@ private static final long serialVersionUID = 0L;
               }
               sensitiveValueFrequencyHistogramBuckets_.add(
                   input.readMessage(com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult.LDiversityHistogramBucket.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -6968,6 +7133,7 @@ private static final long serialVersionUID = 0L;
       return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_LDiversityResult_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_LDiversityResult_fieldAccessorTable
@@ -7137,13 +7303,6 @@ private static final long serialVersionUID = 0L;
               case 0:
                 done = true;
                 break;
-              default: {
-                if (!parseUnknownFieldProto3(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
               case 10: {
                 if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
                   quasiIdsValues_ = new java.util.ArrayList<com.google.privacy.dlp.v2.Value>();
@@ -7172,6 +7331,13 @@ private static final long serialVersionUID = 0L;
                     input.readMessage(com.google.privacy.dlp.v2.ValueFrequency.parser(), extensionRegistry));
                 break;
               }
+              default: {
+                if (!parseUnknownFieldProto3(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
             }
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -7195,6 +7361,7 @@ private static final long serialVersionUID = 0L;
         return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_LDiversityResult_LDiversityEquivalenceClass_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_LDiversityResult_LDiversityEquivalenceClass_fieldAccessorTable
@@ -7345,6 +7512,7 @@ private static final long serialVersionUID = 0L;
       }
 
       private byte memoizedIsInitialized = -1;
+      @java.lang.Override
       public final boolean isInitialized() {
         byte isInitialized = memoizedIsInitialized;
         if (isInitialized == 1) return true;
@@ -7354,6 +7522,7 @@ private static final long serialVersionUID = 0L;
         return true;
       }
 
+      @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
         for (int i = 0; i < quasiIdsValues_.size(); i++) {
@@ -7371,6 +7540,7 @@ private static final long serialVersionUID = 0L;
         unknownFields.writeTo(output);
       }
 
+      @java.lang.Override
       public int getSerializedSize() {
         int size = memoizedSize;
         if (size != -1) return size;
@@ -7516,6 +7686,7 @@ private static final long serialVersionUID = 0L;
             .parseWithIOException(PARSER, input, extensionRegistry);
       }
 
+      @java.lang.Override
       public Builder newBuilderForType() { return newBuilder(); }
       public static Builder newBuilder() {
         return DEFAULT_INSTANCE.toBuilder();
@@ -7523,6 +7694,7 @@ private static final long serialVersionUID = 0L;
       public static Builder newBuilder(com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult.LDiversityEquivalenceClass prototype) {
         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
       }
+      @java.lang.Override
       public Builder toBuilder() {
         return this == DEFAULT_INSTANCE
             ? new Builder() : new Builder().mergeFrom(this);
@@ -7550,6 +7722,7 @@ private static final long serialVersionUID = 0L;
           return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_LDiversityResult_LDiversityEquivalenceClass_descriptor;
         }
 
+        @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
           return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_LDiversityResult_LDiversityEquivalenceClass_fieldAccessorTable
@@ -7574,6 +7747,7 @@ private static final long serialVersionUID = 0L;
             getTopSensitiveValuesFieldBuilder();
           }
         }
+        @java.lang.Override
         public Builder clear() {
           super.clear();
           if (quasiIdsValuesBuilder_ == null) {
@@ -7595,15 +7769,18 @@ private static final long serialVersionUID = 0L;
           return this;
         }
 
+        @java.lang.Override
         public com.google.protobuf.Descriptors.Descriptor
             getDescriptorForType() {
           return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_LDiversityResult_LDiversityEquivalenceClass_descriptor;
         }
 
+        @java.lang.Override
         public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult.LDiversityEquivalenceClass getDefaultInstanceForType() {
           return com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult.LDiversityEquivalenceClass.getDefaultInstance();
         }
 
+        @java.lang.Override
         public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult.LDiversityEquivalenceClass build() {
           com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult.LDiversityEquivalenceClass result = buildPartial();
           if (!result.isInitialized()) {
@@ -7612,6 +7789,7 @@ private static final long serialVersionUID = 0L;
           return result;
         }
 
+        @java.lang.Override
         public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult.LDiversityEquivalenceClass buildPartial() {
           com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult.LDiversityEquivalenceClass result = new com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult.LDiversityEquivalenceClass(this);
           int from_bitField0_ = bitField0_;
@@ -7641,32 +7819,39 @@ private static final long serialVersionUID = 0L;
           return result;
         }
 
+        @java.lang.Override
         public Builder clone() {
           return (Builder) super.clone();
         }
+        @java.lang.Override
         public Builder setField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             java.lang.Object value) {
           return (Builder) super.setField(field, value);
         }
+        @java.lang.Override
         public Builder clearField(
             com.google.protobuf.Descriptors.FieldDescriptor field) {
           return (Builder) super.clearField(field);
         }
+        @java.lang.Override
         public Builder clearOneof(
             com.google.protobuf.Descriptors.OneofDescriptor oneof) {
           return (Builder) super.clearOneof(oneof);
         }
+        @java.lang.Override
         public Builder setRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             int index, java.lang.Object value) {
           return (Builder) super.setRepeatedField(field, index, value);
         }
+        @java.lang.Override
         public Builder addRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             java.lang.Object value) {
           return (Builder) super.addRepeatedField(field, value);
         }
+        @java.lang.Override
         public Builder mergeFrom(com.google.protobuf.Message other) {
           if (other instanceof com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult.LDiversityEquivalenceClass) {
             return mergeFrom((com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult.LDiversityEquivalenceClass)other);
@@ -7741,10 +7926,12 @@ private static final long serialVersionUID = 0L;
           return this;
         }
 
+        @java.lang.Override
         public final boolean isInitialized() {
           return true;
         }
 
+        @java.lang.Override
         public Builder mergeFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -8481,11 +8668,13 @@ private static final long serialVersionUID = 0L;
           }
           return topSensitiveValuesBuilder_;
         }
+        @java.lang.Override
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
           return super.setUnknownFieldsProto3(unknownFields);
         }
 
+        @java.lang.Override
         public final Builder mergeUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
           return super.mergeUnknownFields(unknownFields);
@@ -8507,6 +8696,7 @@ private static final long serialVersionUID = 0L;
 
       private static final com.google.protobuf.Parser<LDiversityEquivalenceClass>
           PARSER = new com.google.protobuf.AbstractParser<LDiversityEquivalenceClass>() {
+        @java.lang.Override
         public LDiversityEquivalenceClass parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -8524,6 +8714,7 @@ private static final long serialVersionUID = 0L;
         return PARSER;
       }
 
+      @java.lang.Override
       public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult.LDiversityEquivalenceClass getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
       }
@@ -8665,13 +8856,6 @@ private static final long serialVersionUID = 0L;
               case 0:
                 done = true;
                 break;
-              default: {
-                if (!parseUnknownFieldProto3(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
               case 8: {
 
                 sensitiveValueFrequencyLowerBound_ = input.readInt64();
@@ -8701,6 +8885,13 @@ private static final long serialVersionUID = 0L;
                 bucketValueCount_ = input.readInt64();
                 break;
               }
+              default: {
+                if (!parseUnknownFieldProto3(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
             }
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -8721,6 +8912,7 @@ private static final long serialVersionUID = 0L;
         return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_LDiversityResult_LDiversityHistogramBucket_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_LDiversityResult_LDiversityHistogramBucket_fieldAccessorTable
@@ -8844,6 +9036,7 @@ private static final long serialVersionUID = 0L;
       }
 
       private byte memoizedIsInitialized = -1;
+      @java.lang.Override
       public final boolean isInitialized() {
         byte isInitialized = memoizedIsInitialized;
         if (isInitialized == 1) return true;
@@ -8853,6 +9046,7 @@ private static final long serialVersionUID = 0L;
         return true;
       }
 
+      @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
         if (sensitiveValueFrequencyLowerBound_ != 0L) {
@@ -8873,6 +9067,7 @@ private static final long serialVersionUID = 0L;
         unknownFields.writeTo(output);
       }
 
+      @java.lang.Override
       public int getSerializedSize() {
         int size = memoizedSize;
         if (size != -1) return size;
@@ -9026,6 +9221,7 @@ private static final long serialVersionUID = 0L;
             .parseWithIOException(PARSER, input, extensionRegistry);
       }
 
+      @java.lang.Override
       public Builder newBuilderForType() { return newBuilder(); }
       public static Builder newBuilder() {
         return DEFAULT_INSTANCE.toBuilder();
@@ -9033,6 +9229,7 @@ private static final long serialVersionUID = 0L;
       public static Builder newBuilder(com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult.LDiversityHistogramBucket prototype) {
         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
       }
+      @java.lang.Override
       public Builder toBuilder() {
         return this == DEFAULT_INSTANCE
             ? new Builder() : new Builder().mergeFrom(this);
@@ -9056,6 +9253,7 @@ private static final long serialVersionUID = 0L;
           return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_LDiversityResult_LDiversityHistogramBucket_descriptor;
         }
 
+        @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
           return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_LDiversityResult_LDiversityHistogramBucket_fieldAccessorTable
@@ -9079,6 +9277,7 @@ private static final long serialVersionUID = 0L;
             getBucketValuesFieldBuilder();
           }
         }
+        @java.lang.Override
         public Builder clear() {
           super.clear();
           sensitiveValueFrequencyLowerBound_ = 0L;
@@ -9098,15 +9297,18 @@ private static final long serialVersionUID = 0L;
           return this;
         }
 
+        @java.lang.Override
         public com.google.protobuf.Descriptors.Descriptor
             getDescriptorForType() {
           return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_LDiversityResult_LDiversityHistogramBucket_descriptor;
         }
 
+        @java.lang.Override
         public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult.LDiversityHistogramBucket getDefaultInstanceForType() {
           return com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult.LDiversityHistogramBucket.getDefaultInstance();
         }
 
+        @java.lang.Override
         public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult.LDiversityHistogramBucket build() {
           com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult.LDiversityHistogramBucket result = buildPartial();
           if (!result.isInitialized()) {
@@ -9115,6 +9317,7 @@ private static final long serialVersionUID = 0L;
           return result;
         }
 
+        @java.lang.Override
         public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult.LDiversityHistogramBucket buildPartial() {
           com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult.LDiversityHistogramBucket result = new com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult.LDiversityHistogramBucket(this);
           int from_bitField0_ = bitField0_;
@@ -9137,32 +9340,39 @@ private static final long serialVersionUID = 0L;
           return result;
         }
 
+        @java.lang.Override
         public Builder clone() {
           return (Builder) super.clone();
         }
+        @java.lang.Override
         public Builder setField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             java.lang.Object value) {
           return (Builder) super.setField(field, value);
         }
+        @java.lang.Override
         public Builder clearField(
             com.google.protobuf.Descriptors.FieldDescriptor field) {
           return (Builder) super.clearField(field);
         }
+        @java.lang.Override
         public Builder clearOneof(
             com.google.protobuf.Descriptors.OneofDescriptor oneof) {
           return (Builder) super.clearOneof(oneof);
         }
+        @java.lang.Override
         public Builder setRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             int index, java.lang.Object value) {
           return (Builder) super.setRepeatedField(field, index, value);
         }
+        @java.lang.Override
         public Builder addRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             java.lang.Object value) {
           return (Builder) super.addRepeatedField(field, value);
         }
+        @java.lang.Override
         public Builder mergeFrom(com.google.protobuf.Message other) {
           if (other instanceof com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult.LDiversityHistogramBucket) {
             return mergeFrom((com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult.LDiversityHistogramBucket)other);
@@ -9217,10 +9427,12 @@ private static final long serialVersionUID = 0L;
           return this;
         }
 
+        @java.lang.Override
         public final boolean isInitialized() {
           return true;
         }
 
+        @java.lang.Override
         public Builder mergeFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -9727,11 +9939,13 @@ private static final long serialVersionUID = 0L;
           onChanged();
           return this;
         }
+        @java.lang.Override
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
           return super.setUnknownFieldsProto3(unknownFields);
         }
 
+        @java.lang.Override
         public final Builder mergeUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
           return super.mergeUnknownFields(unknownFields);
@@ -9753,6 +9967,7 @@ private static final long serialVersionUID = 0L;
 
       private static final com.google.protobuf.Parser<LDiversityHistogramBucket>
           PARSER = new com.google.protobuf.AbstractParser<LDiversityHistogramBucket>() {
+        @java.lang.Override
         public LDiversityHistogramBucket parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -9770,6 +9985,7 @@ private static final long serialVersionUID = 0L;
         return PARSER;
       }
 
+      @java.lang.Override
       public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult.LDiversityHistogramBucket getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
       }
@@ -9832,6 +10048,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -9841,6 +10058,7 @@ private static final long serialVersionUID = 0L;
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < sensitiveValueFrequencyHistogramBuckets_.size(); i++) {
@@ -9849,6 +10067,7 @@ private static final long serialVersionUID = 0L;
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -9966,6 +10185,7 @@ private static final long serialVersionUID = 0L;
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -9973,6 +10193,7 @@ private static final long serialVersionUID = 0L;
     public static Builder newBuilder(com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -10000,6 +10221,7 @@ private static final long serialVersionUID = 0L;
         return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_LDiversityResult_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_LDiversityResult_fieldAccessorTable
@@ -10023,6 +10245,7 @@ private static final long serialVersionUID = 0L;
           getSensitiveValueFrequencyHistogramBucketsFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (sensitiveValueFrequencyHistogramBucketsBuilder_ == null) {
@@ -10034,15 +10257,18 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_LDiversityResult_descriptor;
       }
 
+      @java.lang.Override
       public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult getDefaultInstanceForType() {
         return com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult.getDefaultInstance();
       }
 
+      @java.lang.Override
       public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult build() {
         com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult result = buildPartial();
         if (!result.isInitialized()) {
@@ -10051,6 +10277,7 @@ private static final long serialVersionUID = 0L;
         return result;
       }
 
+      @java.lang.Override
       public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult buildPartial() {
         com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult result = new com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult(this);
         int from_bitField0_ = bitField0_;
@@ -10067,32 +10294,39 @@ private static final long serialVersionUID = 0L;
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult) {
           return mergeFrom((com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult)other);
@@ -10135,10 +10369,12 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -10469,11 +10705,13 @@ private static final long serialVersionUID = 0L;
         }
         return sensitiveValueFrequencyHistogramBucketsBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -10495,6 +10733,7 @@ private static final long serialVersionUID = 0L;
 
     private static final com.google.protobuf.Parser<LDiversityResult>
         PARSER = new com.google.protobuf.AbstractParser<LDiversityResult>() {
+      @java.lang.Override
       public LDiversityResult parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -10512,6 +10751,7 @@ private static final long serialVersionUID = 0L;
       return PARSER;
     }
 
+    @java.lang.Override
     public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -10646,13 +10886,6 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
                 kMapEstimationHistogram_ = new java.util.ArrayList<com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult.KMapEstimationHistogramBucket>();
@@ -10660,6 +10893,13 @@ private static final long serialVersionUID = 0L;
               }
               kMapEstimationHistogram_.add(
                   input.readMessage(com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult.KMapEstimationHistogramBucket.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -10682,6 +10922,7 @@ private static final long serialVersionUID = 0L;
       return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_KMapEstimationResult_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_KMapEstimationResult_fieldAccessorTable
@@ -10791,13 +11032,6 @@ private static final long serialVersionUID = 0L;
               case 0:
                 done = true;
                 break;
-              default: {
-                if (!parseUnknownFieldProto3(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
               case 10: {
                 if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
                   quasiIdsValues_ = new java.util.ArrayList<com.google.privacy.dlp.v2.Value>();
@@ -10810,6 +11044,13 @@ private static final long serialVersionUID = 0L;
               case 16: {
 
                 estimatedAnonymity_ = input.readInt64();
+                break;
+              }
+              default: {
+                if (!parseUnknownFieldProto3(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
                 break;
               }
             }
@@ -10832,6 +11073,7 @@ private static final long serialVersionUID = 0L;
         return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_KMapEstimationResult_KMapEstimationQuasiIdValues_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_KMapEstimationResult_KMapEstimationQuasiIdValues_fieldAccessorTable
@@ -10909,6 +11151,7 @@ private static final long serialVersionUID = 0L;
       }
 
       private byte memoizedIsInitialized = -1;
+      @java.lang.Override
       public final boolean isInitialized() {
         byte isInitialized = memoizedIsInitialized;
         if (isInitialized == 1) return true;
@@ -10918,6 +11161,7 @@ private static final long serialVersionUID = 0L;
         return true;
       }
 
+      @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
         for (int i = 0; i < quasiIdsValues_.size(); i++) {
@@ -10929,6 +11173,7 @@ private static final long serialVersionUID = 0L;
         unknownFields.writeTo(output);
       }
 
+      @java.lang.Override
       public int getSerializedSize() {
         int size = memoizedSize;
         if (size != -1) return size;
@@ -11055,6 +11300,7 @@ private static final long serialVersionUID = 0L;
             .parseWithIOException(PARSER, input, extensionRegistry);
       }
 
+      @java.lang.Override
       public Builder newBuilderForType() { return newBuilder(); }
       public static Builder newBuilder() {
         return DEFAULT_INSTANCE.toBuilder();
@@ -11062,6 +11308,7 @@ private static final long serialVersionUID = 0L;
       public static Builder newBuilder(com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult.KMapEstimationQuasiIdValues prototype) {
         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
       }
+      @java.lang.Override
       public Builder toBuilder() {
         return this == DEFAULT_INSTANCE
             ? new Builder() : new Builder().mergeFrom(this);
@@ -11089,6 +11336,7 @@ private static final long serialVersionUID = 0L;
           return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_KMapEstimationResult_KMapEstimationQuasiIdValues_descriptor;
         }
 
+        @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
           return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_KMapEstimationResult_KMapEstimationQuasiIdValues_fieldAccessorTable
@@ -11112,6 +11360,7 @@ private static final long serialVersionUID = 0L;
             getQuasiIdsValuesFieldBuilder();
           }
         }
+        @java.lang.Override
         public Builder clear() {
           super.clear();
           if (quasiIdsValuesBuilder_ == null) {
@@ -11125,15 +11374,18 @@ private static final long serialVersionUID = 0L;
           return this;
         }
 
+        @java.lang.Override
         public com.google.protobuf.Descriptors.Descriptor
             getDescriptorForType() {
           return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_KMapEstimationResult_KMapEstimationQuasiIdValues_descriptor;
         }
 
+        @java.lang.Override
         public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult.KMapEstimationQuasiIdValues getDefaultInstanceForType() {
           return com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult.KMapEstimationQuasiIdValues.getDefaultInstance();
         }
 
+        @java.lang.Override
         public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult.KMapEstimationQuasiIdValues build() {
           com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult.KMapEstimationQuasiIdValues result = buildPartial();
           if (!result.isInitialized()) {
@@ -11142,6 +11394,7 @@ private static final long serialVersionUID = 0L;
           return result;
         }
 
+        @java.lang.Override
         public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult.KMapEstimationQuasiIdValues buildPartial() {
           com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult.KMapEstimationQuasiIdValues result = new com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult.KMapEstimationQuasiIdValues(this);
           int from_bitField0_ = bitField0_;
@@ -11161,32 +11414,39 @@ private static final long serialVersionUID = 0L;
           return result;
         }
 
+        @java.lang.Override
         public Builder clone() {
           return (Builder) super.clone();
         }
+        @java.lang.Override
         public Builder setField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             java.lang.Object value) {
           return (Builder) super.setField(field, value);
         }
+        @java.lang.Override
         public Builder clearField(
             com.google.protobuf.Descriptors.FieldDescriptor field) {
           return (Builder) super.clearField(field);
         }
+        @java.lang.Override
         public Builder clearOneof(
             com.google.protobuf.Descriptors.OneofDescriptor oneof) {
           return (Builder) super.clearOneof(oneof);
         }
+        @java.lang.Override
         public Builder setRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             int index, java.lang.Object value) {
           return (Builder) super.setRepeatedField(field, index, value);
         }
+        @java.lang.Override
         public Builder addRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             java.lang.Object value) {
           return (Builder) super.addRepeatedField(field, value);
         }
+        @java.lang.Override
         public Builder mergeFrom(com.google.protobuf.Message other) {
           if (other instanceof com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult.KMapEstimationQuasiIdValues) {
             return mergeFrom((com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult.KMapEstimationQuasiIdValues)other);
@@ -11232,10 +11492,12 @@ private static final long serialVersionUID = 0L;
           return this;
         }
 
+        @java.lang.Override
         public final boolean isInitialized() {
           return true;
         }
 
+        @java.lang.Override
         public Builder mergeFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -11604,11 +11866,13 @@ private static final long serialVersionUID = 0L;
           onChanged();
           return this;
         }
+        @java.lang.Override
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
           return super.setUnknownFieldsProto3(unknownFields);
         }
 
+        @java.lang.Override
         public final Builder mergeUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
           return super.mergeUnknownFields(unknownFields);
@@ -11630,6 +11894,7 @@ private static final long serialVersionUID = 0L;
 
       private static final com.google.protobuf.Parser<KMapEstimationQuasiIdValues>
           PARSER = new com.google.protobuf.AbstractParser<KMapEstimationQuasiIdValues>() {
+        @java.lang.Override
         public KMapEstimationQuasiIdValues parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -11647,6 +11912,7 @@ private static final long serialVersionUID = 0L;
         return PARSER;
       }
 
+      @java.lang.Override
       public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult.KMapEstimationQuasiIdValues getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
       }
@@ -11797,13 +12063,6 @@ private static final long serialVersionUID = 0L;
               case 0:
                 done = true;
                 break;
-              default: {
-                if (!parseUnknownFieldProto3(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
               case 8: {
 
                 minAnonymity_ = input.readInt64();
@@ -11833,6 +12092,13 @@ private static final long serialVersionUID = 0L;
                 bucketValueCount_ = input.readInt64();
                 break;
               }
+              default: {
+                if (!parseUnknownFieldProto3(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
             }
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -11853,6 +12119,7 @@ private static final long serialVersionUID = 0L;
         return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_KMapEstimationResult_KMapEstimationHistogramBucket_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_KMapEstimationResult_KMapEstimationHistogramBucket_fieldAccessorTable
@@ -11974,6 +12241,7 @@ private static final long serialVersionUID = 0L;
       }
 
       private byte memoizedIsInitialized = -1;
+      @java.lang.Override
       public final boolean isInitialized() {
         byte isInitialized = memoizedIsInitialized;
         if (isInitialized == 1) return true;
@@ -11983,6 +12251,7 @@ private static final long serialVersionUID = 0L;
         return true;
       }
 
+      @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
         if (minAnonymity_ != 0L) {
@@ -12003,6 +12272,7 @@ private static final long serialVersionUID = 0L;
         unknownFields.writeTo(output);
       }
 
+      @java.lang.Override
       public int getSerializedSize() {
         int size = memoizedSize;
         if (size != -1) return size;
@@ -12156,6 +12426,7 @@ private static final long serialVersionUID = 0L;
             .parseWithIOException(PARSER, input, extensionRegistry);
       }
 
+      @java.lang.Override
       public Builder newBuilderForType() { return newBuilder(); }
       public static Builder newBuilder() {
         return DEFAULT_INSTANCE.toBuilder();
@@ -12163,6 +12434,7 @@ private static final long serialVersionUID = 0L;
       public static Builder newBuilder(com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult.KMapEstimationHistogramBucket prototype) {
         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
       }
+      @java.lang.Override
       public Builder toBuilder() {
         return this == DEFAULT_INSTANCE
             ? new Builder() : new Builder().mergeFrom(this);
@@ -12197,6 +12469,7 @@ private static final long serialVersionUID = 0L;
           return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_KMapEstimationResult_KMapEstimationHistogramBucket_descriptor;
         }
 
+        @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
           return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_KMapEstimationResult_KMapEstimationHistogramBucket_fieldAccessorTable
@@ -12220,6 +12493,7 @@ private static final long serialVersionUID = 0L;
             getBucketValuesFieldBuilder();
           }
         }
+        @java.lang.Override
         public Builder clear() {
           super.clear();
           minAnonymity_ = 0L;
@@ -12239,15 +12513,18 @@ private static final long serialVersionUID = 0L;
           return this;
         }
 
+        @java.lang.Override
         public com.google.protobuf.Descriptors.Descriptor
             getDescriptorForType() {
           return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_KMapEstimationResult_KMapEstimationHistogramBucket_descriptor;
         }
 
+        @java.lang.Override
         public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult.KMapEstimationHistogramBucket getDefaultInstanceForType() {
           return com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult.KMapEstimationHistogramBucket.getDefaultInstance();
         }
 
+        @java.lang.Override
         public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult.KMapEstimationHistogramBucket build() {
           com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult.KMapEstimationHistogramBucket result = buildPartial();
           if (!result.isInitialized()) {
@@ -12256,6 +12533,7 @@ private static final long serialVersionUID = 0L;
           return result;
         }
 
+        @java.lang.Override
         public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult.KMapEstimationHistogramBucket buildPartial() {
           com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult.KMapEstimationHistogramBucket result = new com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult.KMapEstimationHistogramBucket(this);
           int from_bitField0_ = bitField0_;
@@ -12278,32 +12556,39 @@ private static final long serialVersionUID = 0L;
           return result;
         }
 
+        @java.lang.Override
         public Builder clone() {
           return (Builder) super.clone();
         }
+        @java.lang.Override
         public Builder setField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             java.lang.Object value) {
           return (Builder) super.setField(field, value);
         }
+        @java.lang.Override
         public Builder clearField(
             com.google.protobuf.Descriptors.FieldDescriptor field) {
           return (Builder) super.clearField(field);
         }
+        @java.lang.Override
         public Builder clearOneof(
             com.google.protobuf.Descriptors.OneofDescriptor oneof) {
           return (Builder) super.clearOneof(oneof);
         }
+        @java.lang.Override
         public Builder setRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             int index, java.lang.Object value) {
           return (Builder) super.setRepeatedField(field, index, value);
         }
+        @java.lang.Override
         public Builder addRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             java.lang.Object value) {
           return (Builder) super.addRepeatedField(field, value);
         }
+        @java.lang.Override
         public Builder mergeFrom(com.google.protobuf.Message other) {
           if (other instanceof com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult.KMapEstimationHistogramBucket) {
             return mergeFrom((com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult.KMapEstimationHistogramBucket)other);
@@ -12358,10 +12643,12 @@ private static final long serialVersionUID = 0L;
           return this;
         }
 
+        @java.lang.Override
         public final boolean isInitialized() {
           return true;
         }
 
+        @java.lang.Override
         public Builder mergeFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -12862,11 +13149,13 @@ private static final long serialVersionUID = 0L;
           onChanged();
           return this;
         }
+        @java.lang.Override
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
           return super.setUnknownFieldsProto3(unknownFields);
         }
 
+        @java.lang.Override
         public final Builder mergeUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
           return super.mergeUnknownFields(unknownFields);
@@ -12888,6 +13177,7 @@ private static final long serialVersionUID = 0L;
 
       private static final com.google.protobuf.Parser<KMapEstimationHistogramBucket>
           PARSER = new com.google.protobuf.AbstractParser<KMapEstimationHistogramBucket>() {
+        @java.lang.Override
         public KMapEstimationHistogramBucket parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -12905,6 +13195,7 @@ private static final long serialVersionUID = 0L;
         return PARSER;
       }
 
+      @java.lang.Override
       public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult.KMapEstimationHistogramBucket getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
       }
@@ -13002,6 +13293,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -13011,6 +13303,7 @@ private static final long serialVersionUID = 0L;
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < kMapEstimationHistogram_.size(); i++) {
@@ -13019,6 +13312,7 @@ private static final long serialVersionUID = 0L;
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -13136,6 +13430,7 @@ private static final long serialVersionUID = 0L;
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -13143,6 +13438,7 @@ private static final long serialVersionUID = 0L;
     public static Builder newBuilder(com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -13171,6 +13467,7 @@ private static final long serialVersionUID = 0L;
         return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_KMapEstimationResult_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_KMapEstimationResult_fieldAccessorTable
@@ -13194,6 +13491,7 @@ private static final long serialVersionUID = 0L;
           getKMapEstimationHistogramFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (kMapEstimationHistogramBuilder_ == null) {
@@ -13205,15 +13503,18 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_KMapEstimationResult_descriptor;
       }
 
+      @java.lang.Override
       public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult getDefaultInstanceForType() {
         return com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult.getDefaultInstance();
       }
 
+      @java.lang.Override
       public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult build() {
         com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult result = buildPartial();
         if (!result.isInitialized()) {
@@ -13222,6 +13523,7 @@ private static final long serialVersionUID = 0L;
         return result;
       }
 
+      @java.lang.Override
       public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult buildPartial() {
         com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult result = new com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult(this);
         int from_bitField0_ = bitField0_;
@@ -13238,32 +13540,39 @@ private static final long serialVersionUID = 0L;
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult) {
           return mergeFrom((com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult)other);
@@ -13306,10 +13615,12 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -13766,11 +14077,13 @@ private static final long serialVersionUID = 0L;
         }
         return kMapEstimationHistogramBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -13792,6 +14105,7 @@ private static final long serialVersionUID = 0L;
 
     private static final com.google.protobuf.Parser<KMapEstimationResult>
         PARSER = new com.google.protobuf.AbstractParser<KMapEstimationResult>() {
+      @java.lang.Override
       public KMapEstimationResult parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -13809,7 +14123,3423 @@ private static final long serialVersionUID = 0L;
       return PARSER;
     }
 
+    @java.lang.Override
     public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface DeltaPresenceEstimationResultOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * The intervals [min_probability, max_probability) do not overlap. If a
+     * value doesn't correspond to any such interval, the associated frequency
+     * is zero. For example, the following records:
+     *   {min_probability: 0, max_probability: 0.1, frequency: 17}
+     *   {min_probability: 0.2, max_probability: 0.3, frequency: 42}
+     *   {min_probability: 0.3, max_probability: 0.4, frequency: 99}
+     * mean that there are no record with an estimated probability in [0.1, 0.2)
+     * nor larger or equal to 0.4.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket delta_presence_estimation_histogram = 1;</code>
+     */
+    java.util.List<com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket> 
+        getDeltaPresenceEstimationHistogramList();
+    /**
+     * <pre>
+     * The intervals [min_probability, max_probability) do not overlap. If a
+     * value doesn't correspond to any such interval, the associated frequency
+     * is zero. For example, the following records:
+     *   {min_probability: 0, max_probability: 0.1, frequency: 17}
+     *   {min_probability: 0.2, max_probability: 0.3, frequency: 42}
+     *   {min_probability: 0.3, max_probability: 0.4, frequency: 99}
+     * mean that there are no record with an estimated probability in [0.1, 0.2)
+     * nor larger or equal to 0.4.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket delta_presence_estimation_histogram = 1;</code>
+     */
+    com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket getDeltaPresenceEstimationHistogram(int index);
+    /**
+     * <pre>
+     * The intervals [min_probability, max_probability) do not overlap. If a
+     * value doesn't correspond to any such interval, the associated frequency
+     * is zero. For example, the following records:
+     *   {min_probability: 0, max_probability: 0.1, frequency: 17}
+     *   {min_probability: 0.2, max_probability: 0.3, frequency: 42}
+     *   {min_probability: 0.3, max_probability: 0.4, frequency: 99}
+     * mean that there are no record with an estimated probability in [0.1, 0.2)
+     * nor larger or equal to 0.4.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket delta_presence_estimation_histogram = 1;</code>
+     */
+    int getDeltaPresenceEstimationHistogramCount();
+    /**
+     * <pre>
+     * The intervals [min_probability, max_probability) do not overlap. If a
+     * value doesn't correspond to any such interval, the associated frequency
+     * is zero. For example, the following records:
+     *   {min_probability: 0, max_probability: 0.1, frequency: 17}
+     *   {min_probability: 0.2, max_probability: 0.3, frequency: 42}
+     *   {min_probability: 0.3, max_probability: 0.4, frequency: 99}
+     * mean that there are no record with an estimated probability in [0.1, 0.2)
+     * nor larger or equal to 0.4.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket delta_presence_estimation_histogram = 1;</code>
+     */
+    java.util.List<? extends com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucketOrBuilder> 
+        getDeltaPresenceEstimationHistogramOrBuilderList();
+    /**
+     * <pre>
+     * The intervals [min_probability, max_probability) do not overlap. If a
+     * value doesn't correspond to any such interval, the associated frequency
+     * is zero. For example, the following records:
+     *   {min_probability: 0, max_probability: 0.1, frequency: 17}
+     *   {min_probability: 0.2, max_probability: 0.3, frequency: 42}
+     *   {min_probability: 0.3, max_probability: 0.4, frequency: 99}
+     * mean that there are no record with an estimated probability in [0.1, 0.2)
+     * nor larger or equal to 0.4.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket delta_presence_estimation_histogram = 1;</code>
+     */
+    com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucketOrBuilder getDeltaPresenceEstimationHistogramOrBuilder(
+        int index);
+  }
+  /**
+   * <pre>
+   * Result of the δ-presence computation. Note that these results are an
+   * estimation, not exact values.
+   * </pre>
+   *
+   * Protobuf type {@code google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult}
+   */
+  public  static final class DeltaPresenceEstimationResult extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult)
+      DeltaPresenceEstimationResultOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use DeltaPresenceEstimationResult.newBuilder() to construct.
+    private DeltaPresenceEstimationResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private DeltaPresenceEstimationResult() {
+      deltaPresenceEstimationHistogram_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private DeltaPresenceEstimationResult(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                deltaPresenceEstimationHistogram_ = new java.util.ArrayList<com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              deltaPresenceEstimationHistogram_.add(
+                  input.readMessage(com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+          deltaPresenceEstimationHistogram_ = java.util.Collections.unmodifiableList(deltaPresenceEstimationHistogram_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_DeltaPresenceEstimationResult_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_DeltaPresenceEstimationResult_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.class, com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.Builder.class);
+    }
+
+    public interface DeltaPresenceEstimationQuasiIdValuesOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       * <pre>
+       * The quasi-identifier values.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.Value quasi_ids_values = 1;</code>
+       */
+      java.util.List<com.google.privacy.dlp.v2.Value> 
+          getQuasiIdsValuesList();
+      /**
+       * <pre>
+       * The quasi-identifier values.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.Value quasi_ids_values = 1;</code>
+       */
+      com.google.privacy.dlp.v2.Value getQuasiIdsValues(int index);
+      /**
+       * <pre>
+       * The quasi-identifier values.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.Value quasi_ids_values = 1;</code>
+       */
+      int getQuasiIdsValuesCount();
+      /**
+       * <pre>
+       * The quasi-identifier values.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.Value quasi_ids_values = 1;</code>
+       */
+      java.util.List<? extends com.google.privacy.dlp.v2.ValueOrBuilder> 
+          getQuasiIdsValuesOrBuilderList();
+      /**
+       * <pre>
+       * The quasi-identifier values.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.Value quasi_ids_values = 1;</code>
+       */
+      com.google.privacy.dlp.v2.ValueOrBuilder getQuasiIdsValuesOrBuilder(
+          int index);
+
+      /**
+       * <pre>
+       * The estimated probability that a given individual sharing these
+       * quasi-identifier values is in the dataset. This value, typically called
+       * δ, is the ratio between the number of records in the dataset with these
+       * quasi-identifier values, and the total number of individuals (inside
+       * *and* outside the dataset) with these quasi-identifier values.
+       * For example, if there are 15 individuals in the dataset who share the
+       * same quasi-identifier values, and an estimated 100 people in the entire
+       * population with these values, then δ is 0.15.
+       * </pre>
+       *
+       * <code>double estimated_probability = 2;</code>
+       */
+      double getEstimatedProbability();
+    }
+    /**
+     * <pre>
+     * A tuple of values for the quasi-identifier columns.
+     * </pre>
+     *
+     * Protobuf type {@code google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues}
+     */
+    public  static final class DeltaPresenceEstimationQuasiIdValues extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues)
+        DeltaPresenceEstimationQuasiIdValuesOrBuilder {
+    private static final long serialVersionUID = 0L;
+      // Use DeltaPresenceEstimationQuasiIdValues.newBuilder() to construct.
+      private DeltaPresenceEstimationQuasiIdValues(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+      private DeltaPresenceEstimationQuasiIdValues() {
+        quasiIdsValues_ = java.util.Collections.emptyList();
+        estimatedProbability_ = 0D;
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+      getUnknownFields() {
+        return this.unknownFields;
+      }
+      private DeltaPresenceEstimationQuasiIdValues(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        int mutable_bitField0_ = 0;
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                  quasiIdsValues_ = new java.util.ArrayList<com.google.privacy.dlp.v2.Value>();
+                  mutable_bitField0_ |= 0x00000001;
+                }
+                quasiIdsValues_.add(
+                    input.readMessage(com.google.privacy.dlp.v2.Value.parser(), extensionRegistry));
+                break;
+              }
+              case 17: {
+
+                estimatedProbability_ = input.readDouble();
+                break;
+              }
+              default: {
+                if (!parseUnknownFieldProto3(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e).setUnfinishedMessage(this);
+        } finally {
+          if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+            quasiIdsValues_ = java.util.Collections.unmodifiableList(quasiIdsValues_);
+          }
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_DeltaPresenceEstimationResult_DeltaPresenceEstimationQuasiIdValues_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_DeltaPresenceEstimationResult_DeltaPresenceEstimationQuasiIdValues_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues.class, com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues.Builder.class);
+      }
+
+      private int bitField0_;
+      public static final int QUASI_IDS_VALUES_FIELD_NUMBER = 1;
+      private java.util.List<com.google.privacy.dlp.v2.Value> quasiIdsValues_;
+      /**
+       * <pre>
+       * The quasi-identifier values.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.Value quasi_ids_values = 1;</code>
+       */
+      public java.util.List<com.google.privacy.dlp.v2.Value> getQuasiIdsValuesList() {
+        return quasiIdsValues_;
+      }
+      /**
+       * <pre>
+       * The quasi-identifier values.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.Value quasi_ids_values = 1;</code>
+       */
+      public java.util.List<? extends com.google.privacy.dlp.v2.ValueOrBuilder> 
+          getQuasiIdsValuesOrBuilderList() {
+        return quasiIdsValues_;
+      }
+      /**
+       * <pre>
+       * The quasi-identifier values.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.Value quasi_ids_values = 1;</code>
+       */
+      public int getQuasiIdsValuesCount() {
+        return quasiIdsValues_.size();
+      }
+      /**
+       * <pre>
+       * The quasi-identifier values.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.Value quasi_ids_values = 1;</code>
+       */
+      public com.google.privacy.dlp.v2.Value getQuasiIdsValues(int index) {
+        return quasiIdsValues_.get(index);
+      }
+      /**
+       * <pre>
+       * The quasi-identifier values.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.Value quasi_ids_values = 1;</code>
+       */
+      public com.google.privacy.dlp.v2.ValueOrBuilder getQuasiIdsValuesOrBuilder(
+          int index) {
+        return quasiIdsValues_.get(index);
+      }
+
+      public static final int ESTIMATED_PROBABILITY_FIELD_NUMBER = 2;
+      private double estimatedProbability_;
+      /**
+       * <pre>
+       * The estimated probability that a given individual sharing these
+       * quasi-identifier values is in the dataset. This value, typically called
+       * δ, is the ratio between the number of records in the dataset with these
+       * quasi-identifier values, and the total number of individuals (inside
+       * *and* outside the dataset) with these quasi-identifier values.
+       * For example, if there are 15 individuals in the dataset who share the
+       * same quasi-identifier values, and an estimated 100 people in the entire
+       * population with these values, then δ is 0.15.
+       * </pre>
+       *
+       * <code>double estimated_probability = 2;</code>
+       */
+      public double getEstimatedProbability() {
+        return estimatedProbability_;
+      }
+
+      private byte memoizedIsInitialized = -1;
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        for (int i = 0; i < quasiIdsValues_.size(); i++) {
+          output.writeMessage(1, quasiIdsValues_.get(i));
+        }
+        if (estimatedProbability_ != 0D) {
+          output.writeDouble(2, estimatedProbability_);
+        }
+        unknownFields.writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        for (int i = 0; i < quasiIdsValues_.size(); i++) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(1, quasiIdsValues_.get(i));
+        }
+        if (estimatedProbability_ != 0D) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeDoubleSize(2, estimatedProbability_);
+        }
+        size += unknownFields.getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+         return true;
+        }
+        if (!(obj instanceof com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues)) {
+          return super.equals(obj);
+        }
+        com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues other = (com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues) obj;
+
+        boolean result = true;
+        result = result && getQuasiIdsValuesList()
+            .equals(other.getQuasiIdsValuesList());
+        result = result && (
+            java.lang.Double.doubleToLongBits(getEstimatedProbability())
+            == java.lang.Double.doubleToLongBits(
+                other.getEstimatedProbability()));
+        result = result && unknownFields.equals(other.unknownFields);
+        return result;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        if (getQuasiIdsValuesCount() > 0) {
+          hash = (37 * hash) + QUASI_IDS_VALUES_FIELD_NUMBER;
+          hash = (53 * hash) + getQuasiIdsValuesList().hashCode();
+        }
+        hash = (37 * hash) + ESTIMATED_PROBABILITY_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            java.lang.Double.doubleToLongBits(getEstimatedProbability()));
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues parseFrom(
+          java.nio.ByteBuffer data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues parseFrom(
+          java.nio.ByteBuffer data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input);
+      }
+      public static com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+      public static Builder newBuilder(com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+            ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * <pre>
+       * A tuple of values for the quasi-identifier columns.
+       * </pre>
+       *
+       * Protobuf type {@code google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues)
+          com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValuesOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_DeltaPresenceEstimationResult_DeltaPresenceEstimationQuasiIdValues_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_DeltaPresenceEstimationResult_DeltaPresenceEstimationQuasiIdValues_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues.class, com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues.Builder.class);
+        }
+
+        // Construct using com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3
+                  .alwaysUseFieldBuilders) {
+            getQuasiIdsValuesFieldBuilder();
+          }
+        }
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          if (quasiIdsValuesBuilder_ == null) {
+            quasiIdsValues_ = java.util.Collections.emptyList();
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            quasiIdsValuesBuilder_.clear();
+          }
+          estimatedProbability_ = 0D;
+
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_DeltaPresenceEstimationResult_DeltaPresenceEstimationQuasiIdValues_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues getDefaultInstanceForType() {
+          return com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues build() {
+          com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues buildPartial() {
+          com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues result = new com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues(this);
+          int from_bitField0_ = bitField0_;
+          int to_bitField0_ = 0;
+          if (quasiIdsValuesBuilder_ == null) {
+            if (((bitField0_ & 0x00000001) == 0x00000001)) {
+              quasiIdsValues_ = java.util.Collections.unmodifiableList(quasiIdsValues_);
+              bitField0_ = (bitField0_ & ~0x00000001);
+            }
+            result.quasiIdsValues_ = quasiIdsValues_;
+          } else {
+            result.quasiIdsValues_ = quasiIdsValuesBuilder_.build();
+          }
+          result.estimatedProbability_ = estimatedProbability_;
+          result.bitField0_ = to_bitField0_;
+          onBuilt();
+          return result;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return (Builder) super.clone();
+        }
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return (Builder) super.setField(field, value);
+        }
+        @java.lang.Override
+        public Builder clearField(
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return (Builder) super.clearField(field);
+        }
+        @java.lang.Override
+        public Builder clearOneof(
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return (Builder) super.clearOneof(oneof);
+        }
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index, java.lang.Object value) {
+          return (Builder) super.setRepeatedField(field, index, value);
+        }
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return (Builder) super.addRepeatedField(field, value);
+        }
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues) {
+            return mergeFrom((com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues other) {
+          if (other == com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues.getDefaultInstance()) return this;
+          if (quasiIdsValuesBuilder_ == null) {
+            if (!other.quasiIdsValues_.isEmpty()) {
+              if (quasiIdsValues_.isEmpty()) {
+                quasiIdsValues_ = other.quasiIdsValues_;
+                bitField0_ = (bitField0_ & ~0x00000001);
+              } else {
+                ensureQuasiIdsValuesIsMutable();
+                quasiIdsValues_.addAll(other.quasiIdsValues_);
+              }
+              onChanged();
+            }
+          } else {
+            if (!other.quasiIdsValues_.isEmpty()) {
+              if (quasiIdsValuesBuilder_.isEmpty()) {
+                quasiIdsValuesBuilder_.dispose();
+                quasiIdsValuesBuilder_ = null;
+                quasiIdsValues_ = other.quasiIdsValues_;
+                bitField0_ = (bitField0_ & ~0x00000001);
+                quasiIdsValuesBuilder_ = 
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                     getQuasiIdsValuesFieldBuilder() : null;
+              } else {
+                quasiIdsValuesBuilder_.addAllMessages(other.quasiIdsValues_);
+              }
+            }
+          }
+          if (other.getEstimatedProbability() != 0D) {
+            setEstimatedProbability(other.getEstimatedProbability());
+          }
+          this.mergeUnknownFields(other.unknownFields);
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues) e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+        private int bitField0_;
+
+        private java.util.List<com.google.privacy.dlp.v2.Value> quasiIdsValues_ =
+          java.util.Collections.emptyList();
+        private void ensureQuasiIdsValuesIsMutable() {
+          if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+            quasiIdsValues_ = new java.util.ArrayList<com.google.privacy.dlp.v2.Value>(quasiIdsValues_);
+            bitField0_ |= 0x00000001;
+           }
+        }
+
+        private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.privacy.dlp.v2.Value, com.google.privacy.dlp.v2.Value.Builder, com.google.privacy.dlp.v2.ValueOrBuilder> quasiIdsValuesBuilder_;
+
+        /**
+         * <pre>
+         * The quasi-identifier values.
+         * </pre>
+         *
+         * <code>repeated .google.privacy.dlp.v2.Value quasi_ids_values = 1;</code>
+         */
+        public java.util.List<com.google.privacy.dlp.v2.Value> getQuasiIdsValuesList() {
+          if (quasiIdsValuesBuilder_ == null) {
+            return java.util.Collections.unmodifiableList(quasiIdsValues_);
+          } else {
+            return quasiIdsValuesBuilder_.getMessageList();
+          }
+        }
+        /**
+         * <pre>
+         * The quasi-identifier values.
+         * </pre>
+         *
+         * <code>repeated .google.privacy.dlp.v2.Value quasi_ids_values = 1;</code>
+         */
+        public int getQuasiIdsValuesCount() {
+          if (quasiIdsValuesBuilder_ == null) {
+            return quasiIdsValues_.size();
+          } else {
+            return quasiIdsValuesBuilder_.getCount();
+          }
+        }
+        /**
+         * <pre>
+         * The quasi-identifier values.
+         * </pre>
+         *
+         * <code>repeated .google.privacy.dlp.v2.Value quasi_ids_values = 1;</code>
+         */
+        public com.google.privacy.dlp.v2.Value getQuasiIdsValues(int index) {
+          if (quasiIdsValuesBuilder_ == null) {
+            return quasiIdsValues_.get(index);
+          } else {
+            return quasiIdsValuesBuilder_.getMessage(index);
+          }
+        }
+        /**
+         * <pre>
+         * The quasi-identifier values.
+         * </pre>
+         *
+         * <code>repeated .google.privacy.dlp.v2.Value quasi_ids_values = 1;</code>
+         */
+        public Builder setQuasiIdsValues(
+            int index, com.google.privacy.dlp.v2.Value value) {
+          if (quasiIdsValuesBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureQuasiIdsValuesIsMutable();
+            quasiIdsValues_.set(index, value);
+            onChanged();
+          } else {
+            quasiIdsValuesBuilder_.setMessage(index, value);
+          }
+          return this;
+        }
+        /**
+         * <pre>
+         * The quasi-identifier values.
+         * </pre>
+         *
+         * <code>repeated .google.privacy.dlp.v2.Value quasi_ids_values = 1;</code>
+         */
+        public Builder setQuasiIdsValues(
+            int index, com.google.privacy.dlp.v2.Value.Builder builderForValue) {
+          if (quasiIdsValuesBuilder_ == null) {
+            ensureQuasiIdsValuesIsMutable();
+            quasiIdsValues_.set(index, builderForValue.build());
+            onChanged();
+          } else {
+            quasiIdsValuesBuilder_.setMessage(index, builderForValue.build());
+          }
+          return this;
+        }
+        /**
+         * <pre>
+         * The quasi-identifier values.
+         * </pre>
+         *
+         * <code>repeated .google.privacy.dlp.v2.Value quasi_ids_values = 1;</code>
+         */
+        public Builder addQuasiIdsValues(com.google.privacy.dlp.v2.Value value) {
+          if (quasiIdsValuesBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureQuasiIdsValuesIsMutable();
+            quasiIdsValues_.add(value);
+            onChanged();
+          } else {
+            quasiIdsValuesBuilder_.addMessage(value);
+          }
+          return this;
+        }
+        /**
+         * <pre>
+         * The quasi-identifier values.
+         * </pre>
+         *
+         * <code>repeated .google.privacy.dlp.v2.Value quasi_ids_values = 1;</code>
+         */
+        public Builder addQuasiIdsValues(
+            int index, com.google.privacy.dlp.v2.Value value) {
+          if (quasiIdsValuesBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureQuasiIdsValuesIsMutable();
+            quasiIdsValues_.add(index, value);
+            onChanged();
+          } else {
+            quasiIdsValuesBuilder_.addMessage(index, value);
+          }
+          return this;
+        }
+        /**
+         * <pre>
+         * The quasi-identifier values.
+         * </pre>
+         *
+         * <code>repeated .google.privacy.dlp.v2.Value quasi_ids_values = 1;</code>
+         */
+        public Builder addQuasiIdsValues(
+            com.google.privacy.dlp.v2.Value.Builder builderForValue) {
+          if (quasiIdsValuesBuilder_ == null) {
+            ensureQuasiIdsValuesIsMutable();
+            quasiIdsValues_.add(builderForValue.build());
+            onChanged();
+          } else {
+            quasiIdsValuesBuilder_.addMessage(builderForValue.build());
+          }
+          return this;
+        }
+        /**
+         * <pre>
+         * The quasi-identifier values.
+         * </pre>
+         *
+         * <code>repeated .google.privacy.dlp.v2.Value quasi_ids_values = 1;</code>
+         */
+        public Builder addQuasiIdsValues(
+            int index, com.google.privacy.dlp.v2.Value.Builder builderForValue) {
+          if (quasiIdsValuesBuilder_ == null) {
+            ensureQuasiIdsValuesIsMutable();
+            quasiIdsValues_.add(index, builderForValue.build());
+            onChanged();
+          } else {
+            quasiIdsValuesBuilder_.addMessage(index, builderForValue.build());
+          }
+          return this;
+        }
+        /**
+         * <pre>
+         * The quasi-identifier values.
+         * </pre>
+         *
+         * <code>repeated .google.privacy.dlp.v2.Value quasi_ids_values = 1;</code>
+         */
+        public Builder addAllQuasiIdsValues(
+            java.lang.Iterable<? extends com.google.privacy.dlp.v2.Value> values) {
+          if (quasiIdsValuesBuilder_ == null) {
+            ensureQuasiIdsValuesIsMutable();
+            com.google.protobuf.AbstractMessageLite.Builder.addAll(
+                values, quasiIdsValues_);
+            onChanged();
+          } else {
+            quasiIdsValuesBuilder_.addAllMessages(values);
+          }
+          return this;
+        }
+        /**
+         * <pre>
+         * The quasi-identifier values.
+         * </pre>
+         *
+         * <code>repeated .google.privacy.dlp.v2.Value quasi_ids_values = 1;</code>
+         */
+        public Builder clearQuasiIdsValues() {
+          if (quasiIdsValuesBuilder_ == null) {
+            quasiIdsValues_ = java.util.Collections.emptyList();
+            bitField0_ = (bitField0_ & ~0x00000001);
+            onChanged();
+          } else {
+            quasiIdsValuesBuilder_.clear();
+          }
+          return this;
+        }
+        /**
+         * <pre>
+         * The quasi-identifier values.
+         * </pre>
+         *
+         * <code>repeated .google.privacy.dlp.v2.Value quasi_ids_values = 1;</code>
+         */
+        public Builder removeQuasiIdsValues(int index) {
+          if (quasiIdsValuesBuilder_ == null) {
+            ensureQuasiIdsValuesIsMutable();
+            quasiIdsValues_.remove(index);
+            onChanged();
+          } else {
+            quasiIdsValuesBuilder_.remove(index);
+          }
+          return this;
+        }
+        /**
+         * <pre>
+         * The quasi-identifier values.
+         * </pre>
+         *
+         * <code>repeated .google.privacy.dlp.v2.Value quasi_ids_values = 1;</code>
+         */
+        public com.google.privacy.dlp.v2.Value.Builder getQuasiIdsValuesBuilder(
+            int index) {
+          return getQuasiIdsValuesFieldBuilder().getBuilder(index);
+        }
+        /**
+         * <pre>
+         * The quasi-identifier values.
+         * </pre>
+         *
+         * <code>repeated .google.privacy.dlp.v2.Value quasi_ids_values = 1;</code>
+         */
+        public com.google.privacy.dlp.v2.ValueOrBuilder getQuasiIdsValuesOrBuilder(
+            int index) {
+          if (quasiIdsValuesBuilder_ == null) {
+            return quasiIdsValues_.get(index);  } else {
+            return quasiIdsValuesBuilder_.getMessageOrBuilder(index);
+          }
+        }
+        /**
+         * <pre>
+         * The quasi-identifier values.
+         * </pre>
+         *
+         * <code>repeated .google.privacy.dlp.v2.Value quasi_ids_values = 1;</code>
+         */
+        public java.util.List<? extends com.google.privacy.dlp.v2.ValueOrBuilder> 
+             getQuasiIdsValuesOrBuilderList() {
+          if (quasiIdsValuesBuilder_ != null) {
+            return quasiIdsValuesBuilder_.getMessageOrBuilderList();
+          } else {
+            return java.util.Collections.unmodifiableList(quasiIdsValues_);
+          }
+        }
+        /**
+         * <pre>
+         * The quasi-identifier values.
+         * </pre>
+         *
+         * <code>repeated .google.privacy.dlp.v2.Value quasi_ids_values = 1;</code>
+         */
+        public com.google.privacy.dlp.v2.Value.Builder addQuasiIdsValuesBuilder() {
+          return getQuasiIdsValuesFieldBuilder().addBuilder(
+              com.google.privacy.dlp.v2.Value.getDefaultInstance());
+        }
+        /**
+         * <pre>
+         * The quasi-identifier values.
+         * </pre>
+         *
+         * <code>repeated .google.privacy.dlp.v2.Value quasi_ids_values = 1;</code>
+         */
+        public com.google.privacy.dlp.v2.Value.Builder addQuasiIdsValuesBuilder(
+            int index) {
+          return getQuasiIdsValuesFieldBuilder().addBuilder(
+              index, com.google.privacy.dlp.v2.Value.getDefaultInstance());
+        }
+        /**
+         * <pre>
+         * The quasi-identifier values.
+         * </pre>
+         *
+         * <code>repeated .google.privacy.dlp.v2.Value quasi_ids_values = 1;</code>
+         */
+        public java.util.List<com.google.privacy.dlp.v2.Value.Builder> 
+             getQuasiIdsValuesBuilderList() {
+          return getQuasiIdsValuesFieldBuilder().getBuilderList();
+        }
+        private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.privacy.dlp.v2.Value, com.google.privacy.dlp.v2.Value.Builder, com.google.privacy.dlp.v2.ValueOrBuilder> 
+            getQuasiIdsValuesFieldBuilder() {
+          if (quasiIdsValuesBuilder_ == null) {
+            quasiIdsValuesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.privacy.dlp.v2.Value, com.google.privacy.dlp.v2.Value.Builder, com.google.privacy.dlp.v2.ValueOrBuilder>(
+                    quasiIdsValues_,
+                    ((bitField0_ & 0x00000001) == 0x00000001),
+                    getParentForChildren(),
+                    isClean());
+            quasiIdsValues_ = null;
+          }
+          return quasiIdsValuesBuilder_;
+        }
+
+        private double estimatedProbability_ ;
+        /**
+         * <pre>
+         * The estimated probability that a given individual sharing these
+         * quasi-identifier values is in the dataset. This value, typically called
+         * δ, is the ratio between the number of records in the dataset with these
+         * quasi-identifier values, and the total number of individuals (inside
+         * *and* outside the dataset) with these quasi-identifier values.
+         * For example, if there are 15 individuals in the dataset who share the
+         * same quasi-identifier values, and an estimated 100 people in the entire
+         * population with these values, then δ is 0.15.
+         * </pre>
+         *
+         * <code>double estimated_probability = 2;</code>
+         */
+        public double getEstimatedProbability() {
+          return estimatedProbability_;
+        }
+        /**
+         * <pre>
+         * The estimated probability that a given individual sharing these
+         * quasi-identifier values is in the dataset. This value, typically called
+         * δ, is the ratio between the number of records in the dataset with these
+         * quasi-identifier values, and the total number of individuals (inside
+         * *and* outside the dataset) with these quasi-identifier values.
+         * For example, if there are 15 individuals in the dataset who share the
+         * same quasi-identifier values, and an estimated 100 people in the entire
+         * population with these values, then δ is 0.15.
+         * </pre>
+         *
+         * <code>double estimated_probability = 2;</code>
+         */
+        public Builder setEstimatedProbability(double value) {
+          
+          estimatedProbability_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * The estimated probability that a given individual sharing these
+         * quasi-identifier values is in the dataset. This value, typically called
+         * δ, is the ratio between the number of records in the dataset with these
+         * quasi-identifier values, and the total number of individuals (inside
+         * *and* outside the dataset) with these quasi-identifier values.
+         * For example, if there are 15 individuals in the dataset who share the
+         * same quasi-identifier values, and an estimated 100 people in the entire
+         * population with these values, then δ is 0.15.
+         * </pre>
+         *
+         * <code>double estimated_probability = 2;</code>
+         */
+        public Builder clearEstimatedProbability() {
+          
+          estimatedProbability_ = 0D;
+          onChanged();
+          return this;
+        }
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFieldsProto3(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+
+        // @@protoc_insertion_point(builder_scope:google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues)
+      private static final com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues DEFAULT_INSTANCE;
+      static {
+        DEFAULT_INSTANCE = new com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues();
+      }
+
+      public static com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<DeltaPresenceEstimationQuasiIdValues>
+          PARSER = new com.google.protobuf.AbstractParser<DeltaPresenceEstimationQuasiIdValues>() {
+        @java.lang.Override
+        public DeltaPresenceEstimationQuasiIdValues parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new DeltaPresenceEstimationQuasiIdValues(input, extensionRegistry);
+        }
+      };
+
+      public static com.google.protobuf.Parser<DeltaPresenceEstimationQuasiIdValues> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<DeltaPresenceEstimationQuasiIdValues> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+
+    }
+
+    public interface DeltaPresenceEstimationHistogramBucketOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       * <pre>
+       * Between 0 and 1.
+       * </pre>
+       *
+       * <code>double min_probability = 1;</code>
+       */
+      double getMinProbability();
+
+      /**
+       * <pre>
+       * Always greater than or equal to min_probability.
+       * </pre>
+       *
+       * <code>double max_probability = 2;</code>
+       */
+      double getMaxProbability();
+
+      /**
+       * <pre>
+       * Number of records within these probability bounds.
+       * </pre>
+       *
+       * <code>int64 bucket_size = 5;</code>
+       */
+      long getBucketSize();
+
+      /**
+       * <pre>
+       * Sample of quasi-identifier tuple values in this bucket. The total
+       * number of classes returned per bucket is capped at 20.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues bucket_values = 6;</code>
+       */
+      java.util.List<com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues> 
+          getBucketValuesList();
+      /**
+       * <pre>
+       * Sample of quasi-identifier tuple values in this bucket. The total
+       * number of classes returned per bucket is capped at 20.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues bucket_values = 6;</code>
+       */
+      com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues getBucketValues(int index);
+      /**
+       * <pre>
+       * Sample of quasi-identifier tuple values in this bucket. The total
+       * number of classes returned per bucket is capped at 20.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues bucket_values = 6;</code>
+       */
+      int getBucketValuesCount();
+      /**
+       * <pre>
+       * Sample of quasi-identifier tuple values in this bucket. The total
+       * number of classes returned per bucket is capped at 20.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues bucket_values = 6;</code>
+       */
+      java.util.List<? extends com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValuesOrBuilder> 
+          getBucketValuesOrBuilderList();
+      /**
+       * <pre>
+       * Sample of quasi-identifier tuple values in this bucket. The total
+       * number of classes returned per bucket is capped at 20.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues bucket_values = 6;</code>
+       */
+      com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValuesOrBuilder getBucketValuesOrBuilder(
+          int index);
+
+      /**
+       * <pre>
+       * Total number of distinct quasi-identifier tuple values in this bucket.
+       * </pre>
+       *
+       * <code>int64 bucket_value_count = 7;</code>
+       */
+      long getBucketValueCount();
+    }
+    /**
+     * <pre>
+     * A DeltaPresenceEstimationHistogramBucket message with the following
+     * values:
+     *   min_probability: 0.1
+     *   max_probability: 0.2
+     *   frequency: 42
+     * means that there are 42 records for which δ is in [0.1, 0.2). An
+     * important particular case is when min_probability = max_probability = 1:
+     * then, every individual who shares this quasi-identifier combination is in
+     * the dataset.
+     * </pre>
+     *
+     * Protobuf type {@code google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket}
+     */
+    public  static final class DeltaPresenceEstimationHistogramBucket extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket)
+        DeltaPresenceEstimationHistogramBucketOrBuilder {
+    private static final long serialVersionUID = 0L;
+      // Use DeltaPresenceEstimationHistogramBucket.newBuilder() to construct.
+      private DeltaPresenceEstimationHistogramBucket(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+      private DeltaPresenceEstimationHistogramBucket() {
+        minProbability_ = 0D;
+        maxProbability_ = 0D;
+        bucketSize_ = 0L;
+        bucketValues_ = java.util.Collections.emptyList();
+        bucketValueCount_ = 0L;
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+      getUnknownFields() {
+        return this.unknownFields;
+      }
+      private DeltaPresenceEstimationHistogramBucket(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        int mutable_bitField0_ = 0;
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 9: {
+
+                minProbability_ = input.readDouble();
+                break;
+              }
+              case 17: {
+
+                maxProbability_ = input.readDouble();
+                break;
+              }
+              case 40: {
+
+                bucketSize_ = input.readInt64();
+                break;
+              }
+              case 50: {
+                if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+                  bucketValues_ = new java.util.ArrayList<com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues>();
+                  mutable_bitField0_ |= 0x00000008;
+                }
+                bucketValues_.add(
+                    input.readMessage(com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues.parser(), extensionRegistry));
+                break;
+              }
+              case 56: {
+
+                bucketValueCount_ = input.readInt64();
+                break;
+              }
+              default: {
+                if (!parseUnknownFieldProto3(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e).setUnfinishedMessage(this);
+        } finally {
+          if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+            bucketValues_ = java.util.Collections.unmodifiableList(bucketValues_);
+          }
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_DeltaPresenceEstimationResult_DeltaPresenceEstimationHistogramBucket_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_DeltaPresenceEstimationResult_DeltaPresenceEstimationHistogramBucket_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket.class, com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket.Builder.class);
+      }
+
+      private int bitField0_;
+      public static final int MIN_PROBABILITY_FIELD_NUMBER = 1;
+      private double minProbability_;
+      /**
+       * <pre>
+       * Between 0 and 1.
+       * </pre>
+       *
+       * <code>double min_probability = 1;</code>
+       */
+      public double getMinProbability() {
+        return minProbability_;
+      }
+
+      public static final int MAX_PROBABILITY_FIELD_NUMBER = 2;
+      private double maxProbability_;
+      /**
+       * <pre>
+       * Always greater than or equal to min_probability.
+       * </pre>
+       *
+       * <code>double max_probability = 2;</code>
+       */
+      public double getMaxProbability() {
+        return maxProbability_;
+      }
+
+      public static final int BUCKET_SIZE_FIELD_NUMBER = 5;
+      private long bucketSize_;
+      /**
+       * <pre>
+       * Number of records within these probability bounds.
+       * </pre>
+       *
+       * <code>int64 bucket_size = 5;</code>
+       */
+      public long getBucketSize() {
+        return bucketSize_;
+      }
+
+      public static final int BUCKET_VALUES_FIELD_NUMBER = 6;
+      private java.util.List<com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues> bucketValues_;
+      /**
+       * <pre>
+       * Sample of quasi-identifier tuple values in this bucket. The total
+       * number of classes returned per bucket is capped at 20.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues bucket_values = 6;</code>
+       */
+      public java.util.List<com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues> getBucketValuesList() {
+        return bucketValues_;
+      }
+      /**
+       * <pre>
+       * Sample of quasi-identifier tuple values in this bucket. The total
+       * number of classes returned per bucket is capped at 20.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues bucket_values = 6;</code>
+       */
+      public java.util.List<? extends com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValuesOrBuilder> 
+          getBucketValuesOrBuilderList() {
+        return bucketValues_;
+      }
+      /**
+       * <pre>
+       * Sample of quasi-identifier tuple values in this bucket. The total
+       * number of classes returned per bucket is capped at 20.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues bucket_values = 6;</code>
+       */
+      public int getBucketValuesCount() {
+        return bucketValues_.size();
+      }
+      /**
+       * <pre>
+       * Sample of quasi-identifier tuple values in this bucket. The total
+       * number of classes returned per bucket is capped at 20.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues bucket_values = 6;</code>
+       */
+      public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues getBucketValues(int index) {
+        return bucketValues_.get(index);
+      }
+      /**
+       * <pre>
+       * Sample of quasi-identifier tuple values in this bucket. The total
+       * number of classes returned per bucket is capped at 20.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues bucket_values = 6;</code>
+       */
+      public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValuesOrBuilder getBucketValuesOrBuilder(
+          int index) {
+        return bucketValues_.get(index);
+      }
+
+      public static final int BUCKET_VALUE_COUNT_FIELD_NUMBER = 7;
+      private long bucketValueCount_;
+      /**
+       * <pre>
+       * Total number of distinct quasi-identifier tuple values in this bucket.
+       * </pre>
+       *
+       * <code>int64 bucket_value_count = 7;</code>
+       */
+      public long getBucketValueCount() {
+        return bucketValueCount_;
+      }
+
+      private byte memoizedIsInitialized = -1;
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        if (minProbability_ != 0D) {
+          output.writeDouble(1, minProbability_);
+        }
+        if (maxProbability_ != 0D) {
+          output.writeDouble(2, maxProbability_);
+        }
+        if (bucketSize_ != 0L) {
+          output.writeInt64(5, bucketSize_);
+        }
+        for (int i = 0; i < bucketValues_.size(); i++) {
+          output.writeMessage(6, bucketValues_.get(i));
+        }
+        if (bucketValueCount_ != 0L) {
+          output.writeInt64(7, bucketValueCount_);
+        }
+        unknownFields.writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (minProbability_ != 0D) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeDoubleSize(1, minProbability_);
+        }
+        if (maxProbability_ != 0D) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeDoubleSize(2, maxProbability_);
+        }
+        if (bucketSize_ != 0L) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeInt64Size(5, bucketSize_);
+        }
+        for (int i = 0; i < bucketValues_.size(); i++) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(6, bucketValues_.get(i));
+        }
+        if (bucketValueCount_ != 0L) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeInt64Size(7, bucketValueCount_);
+        }
+        size += unknownFields.getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+         return true;
+        }
+        if (!(obj instanceof com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket)) {
+          return super.equals(obj);
+        }
+        com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket other = (com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket) obj;
+
+        boolean result = true;
+        result = result && (
+            java.lang.Double.doubleToLongBits(getMinProbability())
+            == java.lang.Double.doubleToLongBits(
+                other.getMinProbability()));
+        result = result && (
+            java.lang.Double.doubleToLongBits(getMaxProbability())
+            == java.lang.Double.doubleToLongBits(
+                other.getMaxProbability()));
+        result = result && (getBucketSize()
+            == other.getBucketSize());
+        result = result && getBucketValuesList()
+            .equals(other.getBucketValuesList());
+        result = result && (getBucketValueCount()
+            == other.getBucketValueCount());
+        result = result && unknownFields.equals(other.unknownFields);
+        return result;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + MIN_PROBABILITY_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            java.lang.Double.doubleToLongBits(getMinProbability()));
+        hash = (37 * hash) + MAX_PROBABILITY_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            java.lang.Double.doubleToLongBits(getMaxProbability()));
+        hash = (37 * hash) + BUCKET_SIZE_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            getBucketSize());
+        if (getBucketValuesCount() > 0) {
+          hash = (37 * hash) + BUCKET_VALUES_FIELD_NUMBER;
+          hash = (53 * hash) + getBucketValuesList().hashCode();
+        }
+        hash = (37 * hash) + BUCKET_VALUE_COUNT_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            getBucketValueCount());
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket parseFrom(
+          java.nio.ByteBuffer data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket parseFrom(
+          java.nio.ByteBuffer data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input);
+      }
+      public static com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+      public static Builder newBuilder(com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+            ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * <pre>
+       * A DeltaPresenceEstimationHistogramBucket message with the following
+       * values:
+       *   min_probability: 0.1
+       *   max_probability: 0.2
+       *   frequency: 42
+       * means that there are 42 records for which δ is in [0.1, 0.2). An
+       * important particular case is when min_probability = max_probability = 1:
+       * then, every individual who shares this quasi-identifier combination is in
+       * the dataset.
+       * </pre>
+       *
+       * Protobuf type {@code google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket)
+          com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucketOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_DeltaPresenceEstimationResult_DeltaPresenceEstimationHistogramBucket_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_DeltaPresenceEstimationResult_DeltaPresenceEstimationHistogramBucket_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket.class, com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket.Builder.class);
+        }
+
+        // Construct using com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3
+                  .alwaysUseFieldBuilders) {
+            getBucketValuesFieldBuilder();
+          }
+        }
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          minProbability_ = 0D;
+
+          maxProbability_ = 0D;
+
+          bucketSize_ = 0L;
+
+          if (bucketValuesBuilder_ == null) {
+            bucketValues_ = java.util.Collections.emptyList();
+            bitField0_ = (bitField0_ & ~0x00000008);
+          } else {
+            bucketValuesBuilder_.clear();
+          }
+          bucketValueCount_ = 0L;
+
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_DeltaPresenceEstimationResult_DeltaPresenceEstimationHistogramBucket_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket getDefaultInstanceForType() {
+          return com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket build() {
+          com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket buildPartial() {
+          com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket result = new com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket(this);
+          int from_bitField0_ = bitField0_;
+          int to_bitField0_ = 0;
+          result.minProbability_ = minProbability_;
+          result.maxProbability_ = maxProbability_;
+          result.bucketSize_ = bucketSize_;
+          if (bucketValuesBuilder_ == null) {
+            if (((bitField0_ & 0x00000008) == 0x00000008)) {
+              bucketValues_ = java.util.Collections.unmodifiableList(bucketValues_);
+              bitField0_ = (bitField0_ & ~0x00000008);
+            }
+            result.bucketValues_ = bucketValues_;
+          } else {
+            result.bucketValues_ = bucketValuesBuilder_.build();
+          }
+          result.bucketValueCount_ = bucketValueCount_;
+          result.bitField0_ = to_bitField0_;
+          onBuilt();
+          return result;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return (Builder) super.clone();
+        }
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return (Builder) super.setField(field, value);
+        }
+        @java.lang.Override
+        public Builder clearField(
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return (Builder) super.clearField(field);
+        }
+        @java.lang.Override
+        public Builder clearOneof(
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return (Builder) super.clearOneof(oneof);
+        }
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index, java.lang.Object value) {
+          return (Builder) super.setRepeatedField(field, index, value);
+        }
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return (Builder) super.addRepeatedField(field, value);
+        }
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket) {
+            return mergeFrom((com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket other) {
+          if (other == com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket.getDefaultInstance()) return this;
+          if (other.getMinProbability() != 0D) {
+            setMinProbability(other.getMinProbability());
+          }
+          if (other.getMaxProbability() != 0D) {
+            setMaxProbability(other.getMaxProbability());
+          }
+          if (other.getBucketSize() != 0L) {
+            setBucketSize(other.getBucketSize());
+          }
+          if (bucketValuesBuilder_ == null) {
+            if (!other.bucketValues_.isEmpty()) {
+              if (bucketValues_.isEmpty()) {
+                bucketValues_ = other.bucketValues_;
+                bitField0_ = (bitField0_ & ~0x00000008);
+              } else {
+                ensureBucketValuesIsMutable();
+                bucketValues_.addAll(other.bucketValues_);
+              }
+              onChanged();
+            }
+          } else {
+            if (!other.bucketValues_.isEmpty()) {
+              if (bucketValuesBuilder_.isEmpty()) {
+                bucketValuesBuilder_.dispose();
+                bucketValuesBuilder_ = null;
+                bucketValues_ = other.bucketValues_;
+                bitField0_ = (bitField0_ & ~0x00000008);
+                bucketValuesBuilder_ = 
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                     getBucketValuesFieldBuilder() : null;
+              } else {
+                bucketValuesBuilder_.addAllMessages(other.bucketValues_);
+              }
+            }
+          }
+          if (other.getBucketValueCount() != 0L) {
+            setBucketValueCount(other.getBucketValueCount());
+          }
+          this.mergeUnknownFields(other.unknownFields);
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket) e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+        private int bitField0_;
+
+        private double minProbability_ ;
+        /**
+         * <pre>
+         * Between 0 and 1.
+         * </pre>
+         *
+         * <code>double min_probability = 1;</code>
+         */
+        public double getMinProbability() {
+          return minProbability_;
+        }
+        /**
+         * <pre>
+         * Between 0 and 1.
+         * </pre>
+         *
+         * <code>double min_probability = 1;</code>
+         */
+        public Builder setMinProbability(double value) {
+          
+          minProbability_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * Between 0 and 1.
+         * </pre>
+         *
+         * <code>double min_probability = 1;</code>
+         */
+        public Builder clearMinProbability() {
+          
+          minProbability_ = 0D;
+          onChanged();
+          return this;
+        }
+
+        private double maxProbability_ ;
+        /**
+         * <pre>
+         * Always greater than or equal to min_probability.
+         * </pre>
+         *
+         * <code>double max_probability = 2;</code>
+         */
+        public double getMaxProbability() {
+          return maxProbability_;
+        }
+        /**
+         * <pre>
+         * Always greater than or equal to min_probability.
+         * </pre>
+         *
+         * <code>double max_probability = 2;</code>
+         */
+        public Builder setMaxProbability(double value) {
+          
+          maxProbability_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * Always greater than or equal to min_probability.
+         * </pre>
+         *
+         * <code>double max_probability = 2;</code>
+         */
+        public Builder clearMaxProbability() {
+          
+          maxProbability_ = 0D;
+          onChanged();
+          return this;
+        }
+
+        private long bucketSize_ ;
+        /**
+         * <pre>
+         * Number of records within these probability bounds.
+         * </pre>
+         *
+         * <code>int64 bucket_size = 5;</code>
+         */
+        public long getBucketSize() {
+          return bucketSize_;
+        }
+        /**
+         * <pre>
+         * Number of records within these probability bounds.
+         * </pre>
+         *
+         * <code>int64 bucket_size = 5;</code>
+         */
+        public Builder setBucketSize(long value) {
+          
+          bucketSize_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * Number of records within these probability bounds.
+         * </pre>
+         *
+         * <code>int64 bucket_size = 5;</code>
+         */
+        public Builder clearBucketSize() {
+          
+          bucketSize_ = 0L;
+          onChanged();
+          return this;
+        }
+
+        private java.util.List<com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues> bucketValues_ =
+          java.util.Collections.emptyList();
+        private void ensureBucketValuesIsMutable() {
+          if (!((bitField0_ & 0x00000008) == 0x00000008)) {
+            bucketValues_ = new java.util.ArrayList<com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues>(bucketValues_);
+            bitField0_ |= 0x00000008;
+           }
+        }
+
+        private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues, com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues.Builder, com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValuesOrBuilder> bucketValuesBuilder_;
+
+        /**
+         * <pre>
+         * Sample of quasi-identifier tuple values in this bucket. The total
+         * number of classes returned per bucket is capped at 20.
+         * </pre>
+         *
+         * <code>repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues bucket_values = 6;</code>
+         */
+        public java.util.List<com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues> getBucketValuesList() {
+          if (bucketValuesBuilder_ == null) {
+            return java.util.Collections.unmodifiableList(bucketValues_);
+          } else {
+            return bucketValuesBuilder_.getMessageList();
+          }
+        }
+        /**
+         * <pre>
+         * Sample of quasi-identifier tuple values in this bucket. The total
+         * number of classes returned per bucket is capped at 20.
+         * </pre>
+         *
+         * <code>repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues bucket_values = 6;</code>
+         */
+        public int getBucketValuesCount() {
+          if (bucketValuesBuilder_ == null) {
+            return bucketValues_.size();
+          } else {
+            return bucketValuesBuilder_.getCount();
+          }
+        }
+        /**
+         * <pre>
+         * Sample of quasi-identifier tuple values in this bucket. The total
+         * number of classes returned per bucket is capped at 20.
+         * </pre>
+         *
+         * <code>repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues bucket_values = 6;</code>
+         */
+        public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues getBucketValues(int index) {
+          if (bucketValuesBuilder_ == null) {
+            return bucketValues_.get(index);
+          } else {
+            return bucketValuesBuilder_.getMessage(index);
+          }
+        }
+        /**
+         * <pre>
+         * Sample of quasi-identifier tuple values in this bucket. The total
+         * number of classes returned per bucket is capped at 20.
+         * </pre>
+         *
+         * <code>repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues bucket_values = 6;</code>
+         */
+        public Builder setBucketValues(
+            int index, com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues value) {
+          if (bucketValuesBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureBucketValuesIsMutable();
+            bucketValues_.set(index, value);
+            onChanged();
+          } else {
+            bucketValuesBuilder_.setMessage(index, value);
+          }
+          return this;
+        }
+        /**
+         * <pre>
+         * Sample of quasi-identifier tuple values in this bucket. The total
+         * number of classes returned per bucket is capped at 20.
+         * </pre>
+         *
+         * <code>repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues bucket_values = 6;</code>
+         */
+        public Builder setBucketValues(
+            int index, com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues.Builder builderForValue) {
+          if (bucketValuesBuilder_ == null) {
+            ensureBucketValuesIsMutable();
+            bucketValues_.set(index, builderForValue.build());
+            onChanged();
+          } else {
+            bucketValuesBuilder_.setMessage(index, builderForValue.build());
+          }
+          return this;
+        }
+        /**
+         * <pre>
+         * Sample of quasi-identifier tuple values in this bucket. The total
+         * number of classes returned per bucket is capped at 20.
+         * </pre>
+         *
+         * <code>repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues bucket_values = 6;</code>
+         */
+        public Builder addBucketValues(com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues value) {
+          if (bucketValuesBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureBucketValuesIsMutable();
+            bucketValues_.add(value);
+            onChanged();
+          } else {
+            bucketValuesBuilder_.addMessage(value);
+          }
+          return this;
+        }
+        /**
+         * <pre>
+         * Sample of quasi-identifier tuple values in this bucket. The total
+         * number of classes returned per bucket is capped at 20.
+         * </pre>
+         *
+         * <code>repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues bucket_values = 6;</code>
+         */
+        public Builder addBucketValues(
+            int index, com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues value) {
+          if (bucketValuesBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureBucketValuesIsMutable();
+            bucketValues_.add(index, value);
+            onChanged();
+          } else {
+            bucketValuesBuilder_.addMessage(index, value);
+          }
+          return this;
+        }
+        /**
+         * <pre>
+         * Sample of quasi-identifier tuple values in this bucket. The total
+         * number of classes returned per bucket is capped at 20.
+         * </pre>
+         *
+         * <code>repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues bucket_values = 6;</code>
+         */
+        public Builder addBucketValues(
+            com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues.Builder builderForValue) {
+          if (bucketValuesBuilder_ == null) {
+            ensureBucketValuesIsMutable();
+            bucketValues_.add(builderForValue.build());
+            onChanged();
+          } else {
+            bucketValuesBuilder_.addMessage(builderForValue.build());
+          }
+          return this;
+        }
+        /**
+         * <pre>
+         * Sample of quasi-identifier tuple values in this bucket. The total
+         * number of classes returned per bucket is capped at 20.
+         * </pre>
+         *
+         * <code>repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues bucket_values = 6;</code>
+         */
+        public Builder addBucketValues(
+            int index, com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues.Builder builderForValue) {
+          if (bucketValuesBuilder_ == null) {
+            ensureBucketValuesIsMutable();
+            bucketValues_.add(index, builderForValue.build());
+            onChanged();
+          } else {
+            bucketValuesBuilder_.addMessage(index, builderForValue.build());
+          }
+          return this;
+        }
+        /**
+         * <pre>
+         * Sample of quasi-identifier tuple values in this bucket. The total
+         * number of classes returned per bucket is capped at 20.
+         * </pre>
+         *
+         * <code>repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues bucket_values = 6;</code>
+         */
+        public Builder addAllBucketValues(
+            java.lang.Iterable<? extends com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues> values) {
+          if (bucketValuesBuilder_ == null) {
+            ensureBucketValuesIsMutable();
+            com.google.protobuf.AbstractMessageLite.Builder.addAll(
+                values, bucketValues_);
+            onChanged();
+          } else {
+            bucketValuesBuilder_.addAllMessages(values);
+          }
+          return this;
+        }
+        /**
+         * <pre>
+         * Sample of quasi-identifier tuple values in this bucket. The total
+         * number of classes returned per bucket is capped at 20.
+         * </pre>
+         *
+         * <code>repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues bucket_values = 6;</code>
+         */
+        public Builder clearBucketValues() {
+          if (bucketValuesBuilder_ == null) {
+            bucketValues_ = java.util.Collections.emptyList();
+            bitField0_ = (bitField0_ & ~0x00000008);
+            onChanged();
+          } else {
+            bucketValuesBuilder_.clear();
+          }
+          return this;
+        }
+        /**
+         * <pre>
+         * Sample of quasi-identifier tuple values in this bucket. The total
+         * number of classes returned per bucket is capped at 20.
+         * </pre>
+         *
+         * <code>repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues bucket_values = 6;</code>
+         */
+        public Builder removeBucketValues(int index) {
+          if (bucketValuesBuilder_ == null) {
+            ensureBucketValuesIsMutable();
+            bucketValues_.remove(index);
+            onChanged();
+          } else {
+            bucketValuesBuilder_.remove(index);
+          }
+          return this;
+        }
+        /**
+         * <pre>
+         * Sample of quasi-identifier tuple values in this bucket. The total
+         * number of classes returned per bucket is capped at 20.
+         * </pre>
+         *
+         * <code>repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues bucket_values = 6;</code>
+         */
+        public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues.Builder getBucketValuesBuilder(
+            int index) {
+          return getBucketValuesFieldBuilder().getBuilder(index);
+        }
+        /**
+         * <pre>
+         * Sample of quasi-identifier tuple values in this bucket. The total
+         * number of classes returned per bucket is capped at 20.
+         * </pre>
+         *
+         * <code>repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues bucket_values = 6;</code>
+         */
+        public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValuesOrBuilder getBucketValuesOrBuilder(
+            int index) {
+          if (bucketValuesBuilder_ == null) {
+            return bucketValues_.get(index);  } else {
+            return bucketValuesBuilder_.getMessageOrBuilder(index);
+          }
+        }
+        /**
+         * <pre>
+         * Sample of quasi-identifier tuple values in this bucket. The total
+         * number of classes returned per bucket is capped at 20.
+         * </pre>
+         *
+         * <code>repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues bucket_values = 6;</code>
+         */
+        public java.util.List<? extends com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValuesOrBuilder> 
+             getBucketValuesOrBuilderList() {
+          if (bucketValuesBuilder_ != null) {
+            return bucketValuesBuilder_.getMessageOrBuilderList();
+          } else {
+            return java.util.Collections.unmodifiableList(bucketValues_);
+          }
+        }
+        /**
+         * <pre>
+         * Sample of quasi-identifier tuple values in this bucket. The total
+         * number of classes returned per bucket is capped at 20.
+         * </pre>
+         *
+         * <code>repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues bucket_values = 6;</code>
+         */
+        public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues.Builder addBucketValuesBuilder() {
+          return getBucketValuesFieldBuilder().addBuilder(
+              com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues.getDefaultInstance());
+        }
+        /**
+         * <pre>
+         * Sample of quasi-identifier tuple values in this bucket. The total
+         * number of classes returned per bucket is capped at 20.
+         * </pre>
+         *
+         * <code>repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues bucket_values = 6;</code>
+         */
+        public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues.Builder addBucketValuesBuilder(
+            int index) {
+          return getBucketValuesFieldBuilder().addBuilder(
+              index, com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues.getDefaultInstance());
+        }
+        /**
+         * <pre>
+         * Sample of quasi-identifier tuple values in this bucket. The total
+         * number of classes returned per bucket is capped at 20.
+         * </pre>
+         *
+         * <code>repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues bucket_values = 6;</code>
+         */
+        public java.util.List<com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues.Builder> 
+             getBucketValuesBuilderList() {
+          return getBucketValuesFieldBuilder().getBuilderList();
+        }
+        private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues, com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues.Builder, com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValuesOrBuilder> 
+            getBucketValuesFieldBuilder() {
+          if (bucketValuesBuilder_ == null) {
+            bucketValuesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues, com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues.Builder, com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValuesOrBuilder>(
+                    bucketValues_,
+                    ((bitField0_ & 0x00000008) == 0x00000008),
+                    getParentForChildren(),
+                    isClean());
+            bucketValues_ = null;
+          }
+          return bucketValuesBuilder_;
+        }
+
+        private long bucketValueCount_ ;
+        /**
+         * <pre>
+         * Total number of distinct quasi-identifier tuple values in this bucket.
+         * </pre>
+         *
+         * <code>int64 bucket_value_count = 7;</code>
+         */
+        public long getBucketValueCount() {
+          return bucketValueCount_;
+        }
+        /**
+         * <pre>
+         * Total number of distinct quasi-identifier tuple values in this bucket.
+         * </pre>
+         *
+         * <code>int64 bucket_value_count = 7;</code>
+         */
+        public Builder setBucketValueCount(long value) {
+          
+          bucketValueCount_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * Total number of distinct quasi-identifier tuple values in this bucket.
+         * </pre>
+         *
+         * <code>int64 bucket_value_count = 7;</code>
+         */
+        public Builder clearBucketValueCount() {
+          
+          bucketValueCount_ = 0L;
+          onChanged();
+          return this;
+        }
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFieldsProto3(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+
+        // @@protoc_insertion_point(builder_scope:google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket)
+      private static final com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket DEFAULT_INSTANCE;
+      static {
+        DEFAULT_INSTANCE = new com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket();
+      }
+
+      public static com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<DeltaPresenceEstimationHistogramBucket>
+          PARSER = new com.google.protobuf.AbstractParser<DeltaPresenceEstimationHistogramBucket>() {
+        @java.lang.Override
+        public DeltaPresenceEstimationHistogramBucket parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new DeltaPresenceEstimationHistogramBucket(input, extensionRegistry);
+        }
+      };
+
+      public static com.google.protobuf.Parser<DeltaPresenceEstimationHistogramBucket> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<DeltaPresenceEstimationHistogramBucket> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+
+    }
+
+    public static final int DELTA_PRESENCE_ESTIMATION_HISTOGRAM_FIELD_NUMBER = 1;
+    private java.util.List<com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket> deltaPresenceEstimationHistogram_;
+    /**
+     * <pre>
+     * The intervals [min_probability, max_probability) do not overlap. If a
+     * value doesn't correspond to any such interval, the associated frequency
+     * is zero. For example, the following records:
+     *   {min_probability: 0, max_probability: 0.1, frequency: 17}
+     *   {min_probability: 0.2, max_probability: 0.3, frequency: 42}
+     *   {min_probability: 0.3, max_probability: 0.4, frequency: 99}
+     * mean that there are no record with an estimated probability in [0.1, 0.2)
+     * nor larger or equal to 0.4.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket delta_presence_estimation_histogram = 1;</code>
+     */
+    public java.util.List<com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket> getDeltaPresenceEstimationHistogramList() {
+      return deltaPresenceEstimationHistogram_;
+    }
+    /**
+     * <pre>
+     * The intervals [min_probability, max_probability) do not overlap. If a
+     * value doesn't correspond to any such interval, the associated frequency
+     * is zero. For example, the following records:
+     *   {min_probability: 0, max_probability: 0.1, frequency: 17}
+     *   {min_probability: 0.2, max_probability: 0.3, frequency: 42}
+     *   {min_probability: 0.3, max_probability: 0.4, frequency: 99}
+     * mean that there are no record with an estimated probability in [0.1, 0.2)
+     * nor larger or equal to 0.4.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket delta_presence_estimation_histogram = 1;</code>
+     */
+    public java.util.List<? extends com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucketOrBuilder> 
+        getDeltaPresenceEstimationHistogramOrBuilderList() {
+      return deltaPresenceEstimationHistogram_;
+    }
+    /**
+     * <pre>
+     * The intervals [min_probability, max_probability) do not overlap. If a
+     * value doesn't correspond to any such interval, the associated frequency
+     * is zero. For example, the following records:
+     *   {min_probability: 0, max_probability: 0.1, frequency: 17}
+     *   {min_probability: 0.2, max_probability: 0.3, frequency: 42}
+     *   {min_probability: 0.3, max_probability: 0.4, frequency: 99}
+     * mean that there are no record with an estimated probability in [0.1, 0.2)
+     * nor larger or equal to 0.4.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket delta_presence_estimation_histogram = 1;</code>
+     */
+    public int getDeltaPresenceEstimationHistogramCount() {
+      return deltaPresenceEstimationHistogram_.size();
+    }
+    /**
+     * <pre>
+     * The intervals [min_probability, max_probability) do not overlap. If a
+     * value doesn't correspond to any such interval, the associated frequency
+     * is zero. For example, the following records:
+     *   {min_probability: 0, max_probability: 0.1, frequency: 17}
+     *   {min_probability: 0.2, max_probability: 0.3, frequency: 42}
+     *   {min_probability: 0.3, max_probability: 0.4, frequency: 99}
+     * mean that there are no record with an estimated probability in [0.1, 0.2)
+     * nor larger or equal to 0.4.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket delta_presence_estimation_histogram = 1;</code>
+     */
+    public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket getDeltaPresenceEstimationHistogram(int index) {
+      return deltaPresenceEstimationHistogram_.get(index);
+    }
+    /**
+     * <pre>
+     * The intervals [min_probability, max_probability) do not overlap. If a
+     * value doesn't correspond to any such interval, the associated frequency
+     * is zero. For example, the following records:
+     *   {min_probability: 0, max_probability: 0.1, frequency: 17}
+     *   {min_probability: 0.2, max_probability: 0.3, frequency: 42}
+     *   {min_probability: 0.3, max_probability: 0.4, frequency: 99}
+     * mean that there are no record with an estimated probability in [0.1, 0.2)
+     * nor larger or equal to 0.4.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket delta_presence_estimation_histogram = 1;</code>
+     */
+    public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucketOrBuilder getDeltaPresenceEstimationHistogramOrBuilder(
+        int index) {
+      return deltaPresenceEstimationHistogram_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < deltaPresenceEstimationHistogram_.size(); i++) {
+        output.writeMessage(1, deltaPresenceEstimationHistogram_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < deltaPresenceEstimationHistogram_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, deltaPresenceEstimationHistogram_.get(i));
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult)) {
+        return super.equals(obj);
+      }
+      com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult other = (com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult) obj;
+
+      boolean result = true;
+      result = result && getDeltaPresenceEstimationHistogramList()
+          .equals(other.getDeltaPresenceEstimationHistogramList());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getDeltaPresenceEstimationHistogramCount() > 0) {
+        hash = (37 * hash) + DELTA_PRESENCE_ESTIMATION_HISTOGRAM_FIELD_NUMBER;
+        hash = (53 * hash) + getDeltaPresenceEstimationHistogramList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * Result of the δ-presence computation. Note that these results are an
+     * estimation, not exact values.
+     * </pre>
+     *
+     * Protobuf type {@code google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult)
+        com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResultOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_DeltaPresenceEstimationResult_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_DeltaPresenceEstimationResult_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.class, com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.Builder.class);
+      }
+
+      // Construct using com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getDeltaPresenceEstimationHistogramFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (deltaPresenceEstimationHistogramBuilder_ == null) {
+          deltaPresenceEstimationHistogram_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          deltaPresenceEstimationHistogramBuilder_.clear();
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_DeltaPresenceEstimationResult_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult getDefaultInstanceForType() {
+        return com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult build() {
+        com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult buildPartial() {
+        com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult result = new com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult(this);
+        int from_bitField0_ = bitField0_;
+        if (deltaPresenceEstimationHistogramBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+            deltaPresenceEstimationHistogram_ = java.util.Collections.unmodifiableList(deltaPresenceEstimationHistogram_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.deltaPresenceEstimationHistogram_ = deltaPresenceEstimationHistogram_;
+        } else {
+          result.deltaPresenceEstimationHistogram_ = deltaPresenceEstimationHistogramBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult) {
+          return mergeFrom((com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult other) {
+        if (other == com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.getDefaultInstance()) return this;
+        if (deltaPresenceEstimationHistogramBuilder_ == null) {
+          if (!other.deltaPresenceEstimationHistogram_.isEmpty()) {
+            if (deltaPresenceEstimationHistogram_.isEmpty()) {
+              deltaPresenceEstimationHistogram_ = other.deltaPresenceEstimationHistogram_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureDeltaPresenceEstimationHistogramIsMutable();
+              deltaPresenceEstimationHistogram_.addAll(other.deltaPresenceEstimationHistogram_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.deltaPresenceEstimationHistogram_.isEmpty()) {
+            if (deltaPresenceEstimationHistogramBuilder_.isEmpty()) {
+              deltaPresenceEstimationHistogramBuilder_.dispose();
+              deltaPresenceEstimationHistogramBuilder_ = null;
+              deltaPresenceEstimationHistogram_ = other.deltaPresenceEstimationHistogram_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              deltaPresenceEstimationHistogramBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getDeltaPresenceEstimationHistogramFieldBuilder() : null;
+            } else {
+              deltaPresenceEstimationHistogramBuilder_.addAllMessages(other.deltaPresenceEstimationHistogram_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket> deltaPresenceEstimationHistogram_ =
+        java.util.Collections.emptyList();
+      private void ensureDeltaPresenceEstimationHistogramIsMutable() {
+        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+          deltaPresenceEstimationHistogram_ = new java.util.ArrayList<com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket>(deltaPresenceEstimationHistogram_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket, com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket.Builder, com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucketOrBuilder> deltaPresenceEstimationHistogramBuilder_;
+
+      /**
+       * <pre>
+       * The intervals [min_probability, max_probability) do not overlap. If a
+       * value doesn't correspond to any such interval, the associated frequency
+       * is zero. For example, the following records:
+       *   {min_probability: 0, max_probability: 0.1, frequency: 17}
+       *   {min_probability: 0.2, max_probability: 0.3, frequency: 42}
+       *   {min_probability: 0.3, max_probability: 0.4, frequency: 99}
+       * mean that there are no record with an estimated probability in [0.1, 0.2)
+       * nor larger or equal to 0.4.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket delta_presence_estimation_histogram = 1;</code>
+       */
+      public java.util.List<com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket> getDeltaPresenceEstimationHistogramList() {
+        if (deltaPresenceEstimationHistogramBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(deltaPresenceEstimationHistogram_);
+        } else {
+          return deltaPresenceEstimationHistogramBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * The intervals [min_probability, max_probability) do not overlap. If a
+       * value doesn't correspond to any such interval, the associated frequency
+       * is zero. For example, the following records:
+       *   {min_probability: 0, max_probability: 0.1, frequency: 17}
+       *   {min_probability: 0.2, max_probability: 0.3, frequency: 42}
+       *   {min_probability: 0.3, max_probability: 0.4, frequency: 99}
+       * mean that there are no record with an estimated probability in [0.1, 0.2)
+       * nor larger or equal to 0.4.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket delta_presence_estimation_histogram = 1;</code>
+       */
+      public int getDeltaPresenceEstimationHistogramCount() {
+        if (deltaPresenceEstimationHistogramBuilder_ == null) {
+          return deltaPresenceEstimationHistogram_.size();
+        } else {
+          return deltaPresenceEstimationHistogramBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * The intervals [min_probability, max_probability) do not overlap. If a
+       * value doesn't correspond to any such interval, the associated frequency
+       * is zero. For example, the following records:
+       *   {min_probability: 0, max_probability: 0.1, frequency: 17}
+       *   {min_probability: 0.2, max_probability: 0.3, frequency: 42}
+       *   {min_probability: 0.3, max_probability: 0.4, frequency: 99}
+       * mean that there are no record with an estimated probability in [0.1, 0.2)
+       * nor larger or equal to 0.4.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket delta_presence_estimation_histogram = 1;</code>
+       */
+      public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket getDeltaPresenceEstimationHistogram(int index) {
+        if (deltaPresenceEstimationHistogramBuilder_ == null) {
+          return deltaPresenceEstimationHistogram_.get(index);
+        } else {
+          return deltaPresenceEstimationHistogramBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * The intervals [min_probability, max_probability) do not overlap. If a
+       * value doesn't correspond to any such interval, the associated frequency
+       * is zero. For example, the following records:
+       *   {min_probability: 0, max_probability: 0.1, frequency: 17}
+       *   {min_probability: 0.2, max_probability: 0.3, frequency: 42}
+       *   {min_probability: 0.3, max_probability: 0.4, frequency: 99}
+       * mean that there are no record with an estimated probability in [0.1, 0.2)
+       * nor larger or equal to 0.4.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket delta_presence_estimation_histogram = 1;</code>
+       */
+      public Builder setDeltaPresenceEstimationHistogram(
+          int index, com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket value) {
+        if (deltaPresenceEstimationHistogramBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDeltaPresenceEstimationHistogramIsMutable();
+          deltaPresenceEstimationHistogram_.set(index, value);
+          onChanged();
+        } else {
+          deltaPresenceEstimationHistogramBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * The intervals [min_probability, max_probability) do not overlap. If a
+       * value doesn't correspond to any such interval, the associated frequency
+       * is zero. For example, the following records:
+       *   {min_probability: 0, max_probability: 0.1, frequency: 17}
+       *   {min_probability: 0.2, max_probability: 0.3, frequency: 42}
+       *   {min_probability: 0.3, max_probability: 0.4, frequency: 99}
+       * mean that there are no record with an estimated probability in [0.1, 0.2)
+       * nor larger or equal to 0.4.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket delta_presence_estimation_histogram = 1;</code>
+       */
+      public Builder setDeltaPresenceEstimationHistogram(
+          int index, com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket.Builder builderForValue) {
+        if (deltaPresenceEstimationHistogramBuilder_ == null) {
+          ensureDeltaPresenceEstimationHistogramIsMutable();
+          deltaPresenceEstimationHistogram_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          deltaPresenceEstimationHistogramBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * The intervals [min_probability, max_probability) do not overlap. If a
+       * value doesn't correspond to any such interval, the associated frequency
+       * is zero. For example, the following records:
+       *   {min_probability: 0, max_probability: 0.1, frequency: 17}
+       *   {min_probability: 0.2, max_probability: 0.3, frequency: 42}
+       *   {min_probability: 0.3, max_probability: 0.4, frequency: 99}
+       * mean that there are no record with an estimated probability in [0.1, 0.2)
+       * nor larger or equal to 0.4.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket delta_presence_estimation_histogram = 1;</code>
+       */
+      public Builder addDeltaPresenceEstimationHistogram(com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket value) {
+        if (deltaPresenceEstimationHistogramBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDeltaPresenceEstimationHistogramIsMutable();
+          deltaPresenceEstimationHistogram_.add(value);
+          onChanged();
+        } else {
+          deltaPresenceEstimationHistogramBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * The intervals [min_probability, max_probability) do not overlap. If a
+       * value doesn't correspond to any such interval, the associated frequency
+       * is zero. For example, the following records:
+       *   {min_probability: 0, max_probability: 0.1, frequency: 17}
+       *   {min_probability: 0.2, max_probability: 0.3, frequency: 42}
+       *   {min_probability: 0.3, max_probability: 0.4, frequency: 99}
+       * mean that there are no record with an estimated probability in [0.1, 0.2)
+       * nor larger or equal to 0.4.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket delta_presence_estimation_histogram = 1;</code>
+       */
+      public Builder addDeltaPresenceEstimationHistogram(
+          int index, com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket value) {
+        if (deltaPresenceEstimationHistogramBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDeltaPresenceEstimationHistogramIsMutable();
+          deltaPresenceEstimationHistogram_.add(index, value);
+          onChanged();
+        } else {
+          deltaPresenceEstimationHistogramBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * The intervals [min_probability, max_probability) do not overlap. If a
+       * value doesn't correspond to any such interval, the associated frequency
+       * is zero. For example, the following records:
+       *   {min_probability: 0, max_probability: 0.1, frequency: 17}
+       *   {min_probability: 0.2, max_probability: 0.3, frequency: 42}
+       *   {min_probability: 0.3, max_probability: 0.4, frequency: 99}
+       * mean that there are no record with an estimated probability in [0.1, 0.2)
+       * nor larger or equal to 0.4.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket delta_presence_estimation_histogram = 1;</code>
+       */
+      public Builder addDeltaPresenceEstimationHistogram(
+          com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket.Builder builderForValue) {
+        if (deltaPresenceEstimationHistogramBuilder_ == null) {
+          ensureDeltaPresenceEstimationHistogramIsMutable();
+          deltaPresenceEstimationHistogram_.add(builderForValue.build());
+          onChanged();
+        } else {
+          deltaPresenceEstimationHistogramBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * The intervals [min_probability, max_probability) do not overlap. If a
+       * value doesn't correspond to any such interval, the associated frequency
+       * is zero. For example, the following records:
+       *   {min_probability: 0, max_probability: 0.1, frequency: 17}
+       *   {min_probability: 0.2, max_probability: 0.3, frequency: 42}
+       *   {min_probability: 0.3, max_probability: 0.4, frequency: 99}
+       * mean that there are no record with an estimated probability in [0.1, 0.2)
+       * nor larger or equal to 0.4.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket delta_presence_estimation_histogram = 1;</code>
+       */
+      public Builder addDeltaPresenceEstimationHistogram(
+          int index, com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket.Builder builderForValue) {
+        if (deltaPresenceEstimationHistogramBuilder_ == null) {
+          ensureDeltaPresenceEstimationHistogramIsMutable();
+          deltaPresenceEstimationHistogram_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          deltaPresenceEstimationHistogramBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * The intervals [min_probability, max_probability) do not overlap. If a
+       * value doesn't correspond to any such interval, the associated frequency
+       * is zero. For example, the following records:
+       *   {min_probability: 0, max_probability: 0.1, frequency: 17}
+       *   {min_probability: 0.2, max_probability: 0.3, frequency: 42}
+       *   {min_probability: 0.3, max_probability: 0.4, frequency: 99}
+       * mean that there are no record with an estimated probability in [0.1, 0.2)
+       * nor larger or equal to 0.4.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket delta_presence_estimation_histogram = 1;</code>
+       */
+      public Builder addAllDeltaPresenceEstimationHistogram(
+          java.lang.Iterable<? extends com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket> values) {
+        if (deltaPresenceEstimationHistogramBuilder_ == null) {
+          ensureDeltaPresenceEstimationHistogramIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, deltaPresenceEstimationHistogram_);
+          onChanged();
+        } else {
+          deltaPresenceEstimationHistogramBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * The intervals [min_probability, max_probability) do not overlap. If a
+       * value doesn't correspond to any such interval, the associated frequency
+       * is zero. For example, the following records:
+       *   {min_probability: 0, max_probability: 0.1, frequency: 17}
+       *   {min_probability: 0.2, max_probability: 0.3, frequency: 42}
+       *   {min_probability: 0.3, max_probability: 0.4, frequency: 99}
+       * mean that there are no record with an estimated probability in [0.1, 0.2)
+       * nor larger or equal to 0.4.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket delta_presence_estimation_histogram = 1;</code>
+       */
+      public Builder clearDeltaPresenceEstimationHistogram() {
+        if (deltaPresenceEstimationHistogramBuilder_ == null) {
+          deltaPresenceEstimationHistogram_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          deltaPresenceEstimationHistogramBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * The intervals [min_probability, max_probability) do not overlap. If a
+       * value doesn't correspond to any such interval, the associated frequency
+       * is zero. For example, the following records:
+       *   {min_probability: 0, max_probability: 0.1, frequency: 17}
+       *   {min_probability: 0.2, max_probability: 0.3, frequency: 42}
+       *   {min_probability: 0.3, max_probability: 0.4, frequency: 99}
+       * mean that there are no record with an estimated probability in [0.1, 0.2)
+       * nor larger or equal to 0.4.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket delta_presence_estimation_histogram = 1;</code>
+       */
+      public Builder removeDeltaPresenceEstimationHistogram(int index) {
+        if (deltaPresenceEstimationHistogramBuilder_ == null) {
+          ensureDeltaPresenceEstimationHistogramIsMutable();
+          deltaPresenceEstimationHistogram_.remove(index);
+          onChanged();
+        } else {
+          deltaPresenceEstimationHistogramBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * The intervals [min_probability, max_probability) do not overlap. If a
+       * value doesn't correspond to any such interval, the associated frequency
+       * is zero. For example, the following records:
+       *   {min_probability: 0, max_probability: 0.1, frequency: 17}
+       *   {min_probability: 0.2, max_probability: 0.3, frequency: 42}
+       *   {min_probability: 0.3, max_probability: 0.4, frequency: 99}
+       * mean that there are no record with an estimated probability in [0.1, 0.2)
+       * nor larger or equal to 0.4.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket delta_presence_estimation_histogram = 1;</code>
+       */
+      public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket.Builder getDeltaPresenceEstimationHistogramBuilder(
+          int index) {
+        return getDeltaPresenceEstimationHistogramFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * The intervals [min_probability, max_probability) do not overlap. If a
+       * value doesn't correspond to any such interval, the associated frequency
+       * is zero. For example, the following records:
+       *   {min_probability: 0, max_probability: 0.1, frequency: 17}
+       *   {min_probability: 0.2, max_probability: 0.3, frequency: 42}
+       *   {min_probability: 0.3, max_probability: 0.4, frequency: 99}
+       * mean that there are no record with an estimated probability in [0.1, 0.2)
+       * nor larger or equal to 0.4.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket delta_presence_estimation_histogram = 1;</code>
+       */
+      public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucketOrBuilder getDeltaPresenceEstimationHistogramOrBuilder(
+          int index) {
+        if (deltaPresenceEstimationHistogramBuilder_ == null) {
+          return deltaPresenceEstimationHistogram_.get(index);  } else {
+          return deltaPresenceEstimationHistogramBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * The intervals [min_probability, max_probability) do not overlap. If a
+       * value doesn't correspond to any such interval, the associated frequency
+       * is zero. For example, the following records:
+       *   {min_probability: 0, max_probability: 0.1, frequency: 17}
+       *   {min_probability: 0.2, max_probability: 0.3, frequency: 42}
+       *   {min_probability: 0.3, max_probability: 0.4, frequency: 99}
+       * mean that there are no record with an estimated probability in [0.1, 0.2)
+       * nor larger or equal to 0.4.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket delta_presence_estimation_histogram = 1;</code>
+       */
+      public java.util.List<? extends com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucketOrBuilder> 
+           getDeltaPresenceEstimationHistogramOrBuilderList() {
+        if (deltaPresenceEstimationHistogramBuilder_ != null) {
+          return deltaPresenceEstimationHistogramBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(deltaPresenceEstimationHistogram_);
+        }
+      }
+      /**
+       * <pre>
+       * The intervals [min_probability, max_probability) do not overlap. If a
+       * value doesn't correspond to any such interval, the associated frequency
+       * is zero. For example, the following records:
+       *   {min_probability: 0, max_probability: 0.1, frequency: 17}
+       *   {min_probability: 0.2, max_probability: 0.3, frequency: 42}
+       *   {min_probability: 0.3, max_probability: 0.4, frequency: 99}
+       * mean that there are no record with an estimated probability in [0.1, 0.2)
+       * nor larger or equal to 0.4.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket delta_presence_estimation_histogram = 1;</code>
+       */
+      public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket.Builder addDeltaPresenceEstimationHistogramBuilder() {
+        return getDeltaPresenceEstimationHistogramFieldBuilder().addBuilder(
+            com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * The intervals [min_probability, max_probability) do not overlap. If a
+       * value doesn't correspond to any such interval, the associated frequency
+       * is zero. For example, the following records:
+       *   {min_probability: 0, max_probability: 0.1, frequency: 17}
+       *   {min_probability: 0.2, max_probability: 0.3, frequency: 42}
+       *   {min_probability: 0.3, max_probability: 0.4, frequency: 99}
+       * mean that there are no record with an estimated probability in [0.1, 0.2)
+       * nor larger or equal to 0.4.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket delta_presence_estimation_histogram = 1;</code>
+       */
+      public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket.Builder addDeltaPresenceEstimationHistogramBuilder(
+          int index) {
+        return getDeltaPresenceEstimationHistogramFieldBuilder().addBuilder(
+            index, com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * The intervals [min_probability, max_probability) do not overlap. If a
+       * value doesn't correspond to any such interval, the associated frequency
+       * is zero. For example, the following records:
+       *   {min_probability: 0, max_probability: 0.1, frequency: 17}
+       *   {min_probability: 0.2, max_probability: 0.3, frequency: 42}
+       *   {min_probability: 0.3, max_probability: 0.4, frequency: 99}
+       * mean that there are no record with an estimated probability in [0.1, 0.2)
+       * nor larger or equal to 0.4.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket delta_presence_estimation_histogram = 1;</code>
+       */
+      public java.util.List<com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket.Builder> 
+           getDeltaPresenceEstimationHistogramBuilderList() {
+        return getDeltaPresenceEstimationHistogramFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket, com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket.Builder, com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucketOrBuilder> 
+          getDeltaPresenceEstimationHistogramFieldBuilder() {
+        if (deltaPresenceEstimationHistogramBuilder_ == null) {
+          deltaPresenceEstimationHistogramBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket, com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket.Builder, com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucketOrBuilder>(
+                  deltaPresenceEstimationHistogram_,
+                  ((bitField0_ & 0x00000001) == 0x00000001),
+                  getParentForChildren(),
+                  isClean());
+          deltaPresenceEstimationHistogram_ = null;
+        }
+        return deltaPresenceEstimationHistogramBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult)
+    private static final com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult();
+    }
+
+    public static com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<DeltaPresenceEstimationResult>
+        PARSER = new com.google.protobuf.AbstractParser<DeltaPresenceEstimationResult>() {
+      @java.lang.Override
+      public DeltaPresenceEstimationResult parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new DeltaPresenceEstimationResult(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<DeltaPresenceEstimationResult> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DeltaPresenceEstimationResult> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -13824,6 +17554,7 @@ private static final long serialVersionUID = 0L;
     K_ANONYMITY_RESULT(5),
     L_DIVERSITY_RESULT(6),
     K_MAP_ESTIMATION_RESULT(7),
+    DELTA_PRESENCE_ESTIMATION_RESULT(9),
     RESULT_NOT_SET(0);
     private final int value;
     private ResultCase(int value) {
@@ -13844,6 +17575,7 @@ private static final long serialVersionUID = 0L;
         case 5: return K_ANONYMITY_RESULT;
         case 6: return L_DIVERSITY_RESULT;
         case 7: return K_MAP_ESTIMATION_RESULT;
+        case 9: return DELTA_PRESENCE_ESTIMATION_RESULT;
         case 0: return RESULT_NOT_SET;
         default: return null;
       }
@@ -14055,7 +17787,34 @@ private static final long serialVersionUID = 0L;
     return com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult.getDefaultInstance();
   }
 
+  public static final int DELTA_PRESENCE_ESTIMATION_RESULT_FIELD_NUMBER = 9;
+  /**
+   * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult delta_presence_estimation_result = 9;</code>
+   */
+  public boolean hasDeltaPresenceEstimationResult() {
+    return resultCase_ == 9;
+  }
+  /**
+   * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult delta_presence_estimation_result = 9;</code>
+   */
+  public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult getDeltaPresenceEstimationResult() {
+    if (resultCase_ == 9) {
+       return (com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult) result_;
+    }
+    return com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.getDefaultInstance();
+  }
+  /**
+   * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult delta_presence_estimation_result = 9;</code>
+   */
+  public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResultOrBuilder getDeltaPresenceEstimationResultOrBuilder() {
+    if (resultCase_ == 9) {
+       return (com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult) result_;
+    }
+    return com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -14065,6 +17824,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
+  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (requestedPrivacyMetric_ != null) {
@@ -14088,9 +17848,13 @@ private static final long serialVersionUID = 0L;
     if (resultCase_ == 7) {
       output.writeMessage(7, (com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult) result_);
     }
+    if (resultCase_ == 9) {
+      output.writeMessage(9, (com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult) result_);
+    }
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -14123,6 +17887,10 @@ private static final long serialVersionUID = 0L;
     if (resultCase_ == 7) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(7, (com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult) result_);
+    }
+    if (resultCase_ == 9) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(9, (com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult) result_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -14174,6 +17942,10 @@ private static final long serialVersionUID = 0L;
         result = result && getKMapEstimationResult()
             .equals(other.getKMapEstimationResult());
         break;
+      case 9:
+        result = result && getDeltaPresenceEstimationResult()
+            .equals(other.getDeltaPresenceEstimationResult());
+        break;
       case 0:
       default:
     }
@@ -14216,6 +17988,10 @@ private static final long serialVersionUID = 0L;
       case 7:
         hash = (37 * hash) + K_MAP_ESTIMATION_RESULT_FIELD_NUMBER;
         hash = (53 * hash) + getKMapEstimationResult().hashCode();
+        break;
+      case 9:
+        hash = (37 * hash) + DELTA_PRESENCE_ESTIMATION_RESULT_FIELD_NUMBER;
+        hash = (53 * hash) + getDeltaPresenceEstimationResult().hashCode();
         break;
       case 0:
       default:
@@ -14295,6 +18071,7 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
+  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
@@ -14302,6 +18079,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder(com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
@@ -14329,6 +18107,7 @@ private static final long serialVersionUID = 0L;
       return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_fieldAccessorTable
@@ -14351,6 +18130,7 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
       }
     }
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       if (requestedPrivacyMetricBuilder_ == null) {
@@ -14370,15 +18150,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
       return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_descriptor;
     }
 
+    @java.lang.Override
     public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails getDefaultInstanceForType() {
       return com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails build() {
       com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails result = buildPartial();
       if (!result.isInitialized()) {
@@ -14387,6 +18170,7 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails buildPartial() {
       com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails result = new com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails(this);
       if (requestedPrivacyMetricBuilder_ == null) {
@@ -14434,37 +18218,51 @@ private static final long serialVersionUID = 0L;
           result.result_ = kMapEstimationResultBuilder_.build();
         }
       }
+      if (resultCase_ == 9) {
+        if (deltaPresenceEstimationResultBuilder_ == null) {
+          result.result_ = result_;
+        } else {
+          result.result_ = deltaPresenceEstimationResultBuilder_.build();
+        }
+      }
       result.resultCase_ = resultCase_;
       onBuilt();
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails) {
         return mergeFrom((com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails)other);
@@ -14503,6 +18301,10 @@ private static final long serialVersionUID = 0L;
           mergeKMapEstimationResult(other.getKMapEstimationResult());
           break;
         }
+        case DELTA_PRESENCE_ESTIMATION_RESULT: {
+          mergeDeltaPresenceEstimationResult(other.getDeltaPresenceEstimationResult());
+          break;
+        }
         case RESULT_NOT_SET: {
           break;
         }
@@ -14512,10 +18314,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -15534,11 +19338,149 @@ private static final long serialVersionUID = 0L;
       onChanged();;
       return kMapEstimationResultBuilder_;
     }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult, com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.Builder, com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResultOrBuilder> deltaPresenceEstimationResultBuilder_;
+    /**
+     * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult delta_presence_estimation_result = 9;</code>
+     */
+    public boolean hasDeltaPresenceEstimationResult() {
+      return resultCase_ == 9;
+    }
+    /**
+     * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult delta_presence_estimation_result = 9;</code>
+     */
+    public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult getDeltaPresenceEstimationResult() {
+      if (deltaPresenceEstimationResultBuilder_ == null) {
+        if (resultCase_ == 9) {
+          return (com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult) result_;
+        }
+        return com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.getDefaultInstance();
+      } else {
+        if (resultCase_ == 9) {
+          return deltaPresenceEstimationResultBuilder_.getMessage();
+        }
+        return com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult delta_presence_estimation_result = 9;</code>
+     */
+    public Builder setDeltaPresenceEstimationResult(com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult value) {
+      if (deltaPresenceEstimationResultBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        result_ = value;
+        onChanged();
+      } else {
+        deltaPresenceEstimationResultBuilder_.setMessage(value);
+      }
+      resultCase_ = 9;
+      return this;
+    }
+    /**
+     * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult delta_presence_estimation_result = 9;</code>
+     */
+    public Builder setDeltaPresenceEstimationResult(
+        com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.Builder builderForValue) {
+      if (deltaPresenceEstimationResultBuilder_ == null) {
+        result_ = builderForValue.build();
+        onChanged();
+      } else {
+        deltaPresenceEstimationResultBuilder_.setMessage(builderForValue.build());
+      }
+      resultCase_ = 9;
+      return this;
+    }
+    /**
+     * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult delta_presence_estimation_result = 9;</code>
+     */
+    public Builder mergeDeltaPresenceEstimationResult(com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult value) {
+      if (deltaPresenceEstimationResultBuilder_ == null) {
+        if (resultCase_ == 9 &&
+            result_ != com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.getDefaultInstance()) {
+          result_ = com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.newBuilder((com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult) result_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          result_ = value;
+        }
+        onChanged();
+      } else {
+        if (resultCase_ == 9) {
+          deltaPresenceEstimationResultBuilder_.mergeFrom(value);
+        }
+        deltaPresenceEstimationResultBuilder_.setMessage(value);
+      }
+      resultCase_ = 9;
+      return this;
+    }
+    /**
+     * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult delta_presence_estimation_result = 9;</code>
+     */
+    public Builder clearDeltaPresenceEstimationResult() {
+      if (deltaPresenceEstimationResultBuilder_ == null) {
+        if (resultCase_ == 9) {
+          resultCase_ = 0;
+          result_ = null;
+          onChanged();
+        }
+      } else {
+        if (resultCase_ == 9) {
+          resultCase_ = 0;
+          result_ = null;
+        }
+        deltaPresenceEstimationResultBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult delta_presence_estimation_result = 9;</code>
+     */
+    public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.Builder getDeltaPresenceEstimationResultBuilder() {
+      return getDeltaPresenceEstimationResultFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult delta_presence_estimation_result = 9;</code>
+     */
+    public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResultOrBuilder getDeltaPresenceEstimationResultOrBuilder() {
+      if ((resultCase_ == 9) && (deltaPresenceEstimationResultBuilder_ != null)) {
+        return deltaPresenceEstimationResultBuilder_.getMessageOrBuilder();
+      } else {
+        if (resultCase_ == 9) {
+          return (com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult) result_;
+        }
+        return com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult delta_presence_estimation_result = 9;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult, com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.Builder, com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResultOrBuilder> 
+        getDeltaPresenceEstimationResultFieldBuilder() {
+      if (deltaPresenceEstimationResultBuilder_ == null) {
+        if (!(resultCase_ == 9)) {
+          result_ = com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.getDefaultInstance();
+        }
+        deltaPresenceEstimationResultBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult, com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.Builder, com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResultOrBuilder>(
+                (com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult) result_,
+                getParentForChildren(),
+                isClean());
+        result_ = null;
+      }
+      resultCase_ = 9;
+      onChanged();;
+      return deltaPresenceEstimationResultBuilder_;
+    }
+    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -15560,6 +19502,7 @@ private static final long serialVersionUID = 0L;
 
   private static final com.google.protobuf.Parser<AnalyzeDataSourceRiskDetails>
       PARSER = new com.google.protobuf.AbstractParser<AnalyzeDataSourceRiskDetails>() {
+    @java.lang.Override
     public AnalyzeDataSourceRiskDetails parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -15577,6 +19520,7 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }

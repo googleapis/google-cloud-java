@@ -24,6 +24,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import com.google.common.io.BaseEncoding;
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.Nullable;
@@ -47,6 +48,7 @@ import org.joda.time.format.DateTimeFormatter;
  *   <li>Long: StandardSQLTypeName.INT64
  *   <li>Double: StandardSQLTypeName.FLOAT64
  *   <li>Float: StandardSQLTypeName.FLOAT64
+ *   <li>BigDecimal: StandardSQLTypeName.NUMERIC
  * </ul>
  *
  * <p>No other types are supported through that entry point. The other types can be created by
@@ -164,6 +166,11 @@ public abstract class QueryParameterValue implements Serializable {
     return of(value, StandardSQLTypeName.FLOAT64);
   }
 
+  /** Creates a {@code QueryParameterValue} object with a type of NUMERIC. */
+  public static QueryParameterValue numeric(BigDecimal value) {
+    return of(value, StandardSQLTypeName.NUMERIC);
+  }
+
   /** Creates a {@code QueryParameterValue} object with a type of STRING. */
   public static QueryParameterValue string(String value) {
     return of(value, StandardSQLTypeName.STRING);
@@ -245,6 +252,8 @@ public abstract class QueryParameterValue implements Serializable {
       return StandardSQLTypeName.FLOAT64;
     } else if (Float.class.isAssignableFrom(type)) {
       return StandardSQLTypeName.FLOAT64;
+    } else if (BigDecimal.class.isAssignableFrom(type)) {
+      return StandardSQLTypeName.NUMERIC;
     }
     throw new IllegalArgumentException("Unsupported object type for QueryParameter: " + type);
   }
@@ -266,6 +275,11 @@ public abstract class QueryParameterValue implements Serializable {
         break;
       case FLOAT64:
         if (value instanceof Double || value instanceof Float) {
+          return value.toString();
+        }
+        break;
+      case NUMERIC:
+        if (value instanceof BigDecimal) {
           return value.toString();
         }
         break;

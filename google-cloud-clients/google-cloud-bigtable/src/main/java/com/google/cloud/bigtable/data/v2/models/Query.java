@@ -18,15 +18,22 @@ package com.google.cloud.bigtable.data.v2.models;
 import com.google.api.core.InternalApi;
 import com.google.bigtable.v2.ReadRowsRequest;
 import com.google.bigtable.v2.RowRange;
+import com.google.bigtable.v2.RowSet;
 import com.google.bigtable.v2.TableName;
+import com.google.cloud.bigtable.data.v2.internal.ByteStringComparator;
 import com.google.cloud.bigtable.data.v2.internal.RequestContext;
+import com.google.cloud.bigtable.data.v2.internal.RowSetUtil;
 import com.google.cloud.bigtable.data.v2.models.Range.ByteStringRange;
 import com.google.common.base.Preconditions;
+import com.google.common.collect.ImmutableSortedSet;
+import com.google.common.collect.Lists;
 import com.google.protobuf.ByteString;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
+import java.util.List;
+import java.util.SortedSet;
 
 /** A simple wrapper to construct a query for the ReadRows RPC. */
 public final class Query implements Serializable {
@@ -161,6 +168,76 @@ public final class Query implements Serializable {
     Preconditions.checkArgument(limit > 0, "Limit must be greater than 0.");
     builder.setRowsLimit(limit);
     return this;
+  }
+
+  /**
+   * Split this query into multiple queries that can be evenly distributed across Bigtable nodes and
+   * be run in parallel. This method takes the results from {@link
+   * com.google.cloud.bigtable.data.v2.BigtableDataClient#sampleRowKeysAsync(String)} to divide this
+   * query into a set of disjoint queries that logically combine into form this query.
+   *
+   * <p>Expected Usage:
+   *
+   * <pre>{@code
+   * List<KeyOffset> keyOffsets = dataClient.sampleRowKeysAsync("my-table").get();
+   * List<Query> queryShards = myQuery.shard(keyOffsets);
+   * List<ApiFuture<List<Row>>> futures = new ArrayList();
+   * for (Query subQuery : queryShards) {
+   *   futures.add(dataClient.readRowsCallable().all().futureCall(subQuery));
+   * }
+   * List<List<Row>> results = ApiFutures.allAsList(futures).get();
+   * }</pre>
+   */
+  public List<Query> shard(List<KeyOffset> sampledRowKeys) {
+    Preconditions.checkState(builder.getRowsLimit() == 0, "Can't shard query with row limits");
+
+    ImmutableSortedSet.Builder<ByteString> splitPoints =
+        ImmutableSortedSet.orderedBy(ByteStringComparator.INSTANCE);
+
+    for (KeyOffset keyOffset : sampledRowKeys) {
+      if (!keyOffset.geyKey().isEmpty()) {
+        splitPoints.add(keyOffset.geyKey());
+      }
+    }
+
+    return shard(splitPoints.build());
+  }
+
+  /**
+   * Split this query into multiple queries that logically combine into this query. This is intended
+   * to be used by map reduce style frameworks like Beam to split a query across multiple workers.
+   *
+   * <p>Expected Usage:
+   *
+   * <pre>{@code
+   * List<ByteString> splitPoints = ...;
+   * List<Query> queryShards = myQuery.shard(splitPoints);
+   * List<ApiFuture<List<Row>>> futures = new ArrayList();
+   * for (Query subQuery : queryShards) {
+   *   futures.add(dataClient.readRowsCallable().all().futureCall(subQuery));
+   * }
+   * List<List<Row>> results = ApiFutures.allAsList(futures).get();
+   * }</pre>
+   */
+  public List<Query> shard(SortedSet<ByteString> splitPoints) {
+    Preconditions.checkState(builder.getRowsLimit() == 0, "Can't shard a query with a row limit");
+
+    List<RowSet> shardedRowSets = RowSetUtil.shard(builder.getRows(), splitPoints);
+    List<Query> shards = Lists.newArrayListWithCapacity(shardedRowSets.size());
+
+    for (RowSet rowSet : shardedRowSets) {
+      Query queryShard = new Query(tableId);
+      queryShard.builder.mergeFrom(this.builder.build());
+      queryShard.builder.setRows(rowSet);
+      shards.add(queryShard);
+    }
+
+    return shards;
+  }
+
+  /** Get the minimal range that encloses all of the row keys and ranges in this Query. */
+  public ByteStringRange getBound() {
+    return RowSetUtil.getBound(builder.getRows());
   }
 
   /**

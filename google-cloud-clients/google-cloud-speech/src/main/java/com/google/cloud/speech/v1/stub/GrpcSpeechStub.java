@@ -41,7 +41,7 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 /**
- * gRPC stub implementation for Google Cloud Speech API.
+ * gRPC stub implementation for Cloud Speech API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
@@ -162,6 +162,7 @@ public class GrpcSpeechStub extends SpeechStub {
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public GrpcOperationsStub getOperationsStub() {
     return operationsStub;
   }
@@ -170,6 +171,7 @@ public class GrpcSpeechStub extends SpeechStub {
     return recognizeCallable;
   }
 
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<
           LongRunningRecognizeRequest, LongRunningRecognizeResponse, LongRunningRecognizeMetadata>
       longRunningRecognizeOperationCallable() {

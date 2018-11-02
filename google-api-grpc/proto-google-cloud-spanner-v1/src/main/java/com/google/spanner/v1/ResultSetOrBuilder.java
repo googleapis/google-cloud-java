@@ -103,8 +103,13 @@ public interface ResultSetOrBuilder extends
 
   /**
    * <pre>
-   * Query plan and execution statistics for the query that produced this
-   * result set. These can be requested by setting
+   * Query plan and execution statistics for the SQL statement that
+   * produced this result set. These can be requested by setting
+   * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
+   * DML statements always produce stats containing the number of rows
+   * modified, unless executed using the
+   * [ExecuteSqlRequest.QueryMode.PLAN][google.spanner.v1.ExecuteSqlRequest.QueryMode.PLAN] [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
+   * Other fields may or may not be populated, based on the
    * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
    * </pre>
    *
@@ -113,8 +118,13 @@ public interface ResultSetOrBuilder extends
   boolean hasStats();
   /**
    * <pre>
-   * Query plan and execution statistics for the query that produced this
-   * result set. These can be requested by setting
+   * Query plan and execution statistics for the SQL statement that
+   * produced this result set. These can be requested by setting
+   * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
+   * DML statements always produce stats containing the number of rows
+   * modified, unless executed using the
+   * [ExecuteSqlRequest.QueryMode.PLAN][google.spanner.v1.ExecuteSqlRequest.QueryMode.PLAN] [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
+   * Other fields may or may not be populated, based on the
    * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
    * </pre>
    *
@@ -123,8 +133,13 @@ public interface ResultSetOrBuilder extends
   com.google.spanner.v1.ResultSetStats getStats();
   /**
    * <pre>
-   * Query plan and execution statistics for the query that produced this
-   * result set. These can be requested by setting
+   * Query plan and execution statistics for the SQL statement that
+   * produced this result set. These can be requested by setting
+   * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
+   * DML statements always produce stats containing the number of rows
+   * modified, unless executed using the
+   * [ExecuteSqlRequest.QueryMode.PLAN][google.spanner.v1.ExecuteSqlRequest.QueryMode.PLAN] [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
+   * Other fields may or may not be populated, based on the
    * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
    * </pre>
    *

@@ -16,17 +16,16 @@
 
 package com.google.cloud.firestore;
 
-import com.google.protobuf.Timestamp;
+import com.google.cloud.Timestamp;
 import java.util.Objects;
 import javax.annotation.Nonnull;
-import org.threeten.bp.Instant;
 
 /** A WriteResult exposes the update time set by the server. */
 public final class WriteResult {
 
-  private final Instant updateTime;
+  private final Timestamp updateTime;
 
-  private WriteResult(Instant updateTime) {
+  private WriteResult(Timestamp updateTime) {
     this.updateTime = updateTime;
   }
 
@@ -36,15 +35,16 @@ public final class WriteResult {
    * @return The update time of the corresponding write.
    */
   @Nonnull
-  public Instant getUpdateTime() {
+  public Timestamp getUpdateTime() {
     return this.updateTime;
   }
 
   static WriteResult fromProto(
-      com.google.firestore.v1beta1.WriteResult writeResult, Timestamp commitTime) {
-    Timestamp timestamp = writeResult.hasUpdateTime() ? writeResult.getUpdateTime() : commitTime;
-    Instant instant = Instant.ofEpochSecond(timestamp.getSeconds(), timestamp.getNanos());
-    return new WriteResult(instant);
+      com.google.firestore.v1beta1.WriteResult writeResult,
+      com.google.protobuf.Timestamp commitTime) {
+    Timestamp timestamp =
+        Timestamp.fromProto(writeResult.hasUpdateTime() ? writeResult.getUpdateTime() : commitTime);
+    return new WriteResult(timestamp);
   }
 
   /**

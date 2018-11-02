@@ -166,12 +166,11 @@ public class SessionsClient implements BackgroundResource {
    * @param session Required. The name of the session this query is sent to. Format:
    *     `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`, or `projects/&lt;Project
    *     ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User ID&gt;/sessions/&lt;Session
-   *     ID&gt;`. Note: Environments and users are under construction and will be available soon. If
-   *     &lt;Environment ID&gt; is not specified, we assume default 'draft' environment. If &lt;User
-   *     ID&gt; is not specified, we are using "-". It’s up to the API caller to choose an
-   *     appropriate &lt;Session ID&gt;. and &lt;User Id&gt;. They can be a random numbers or some
-   *     type of user and session identifiers (preferably hashed). The length of the &lt;Session
-   *     ID&gt; and &lt;User ID&gt; must not exceed 36 characters.
+   *     ID&gt;`. If `Environment ID` is not specified, we assume default 'draft' environment. If
+   *     `User ID` is not specified, we are using "-". It’s up to the API caller to choose an
+   *     appropriate `Session ID` and `User Id`. They can be a random numbers or some type of user
+   *     and session identifiers (preferably hashed). The length of the `Session ID` and `User ID`
+   *     must not exceed 36 characters.
    * @param queryInput Required. The input specification. It can be set to:
    *     <p>1. an audio config which instructs the speech recognizer how to process the speech
    *     audio,
@@ -208,12 +207,11 @@ public class SessionsClient implements BackgroundResource {
    * @param session Required. The name of the session this query is sent to. Format:
    *     `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`, or `projects/&lt;Project
    *     ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User ID&gt;/sessions/&lt;Session
-   *     ID&gt;`. Note: Environments and users are under construction and will be available soon. If
-   *     &lt;Environment ID&gt; is not specified, we assume default 'draft' environment. If &lt;User
-   *     ID&gt; is not specified, we are using "-". It’s up to the API caller to choose an
-   *     appropriate &lt;Session ID&gt;. and &lt;User Id&gt;. They can be a random numbers or some
-   *     type of user and session identifiers (preferably hashed). The length of the &lt;Session
-   *     ID&gt; and &lt;User ID&gt; must not exceed 36 characters.
+   *     ID&gt;`. If `Environment ID` is not specified, we assume default 'draft' environment. If
+   *     `User ID` is not specified, we are using "-". It’s up to the API caller to choose an
+   *     appropriate `Session ID` and `User Id`. They can be a random numbers or some type of user
+   *     and session identifiers (preferably hashed). The length of the `Session ID` and `User ID`
+   *     must not exceed 36 characters.
    * @param queryInput Required. The input specification. It can be set to:
    *     <p>1. an audio config which instructs the speech recognizer how to process the speech
    *     audio,
@@ -291,25 +289,8 @@ public class SessionsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SessionsClient sessionsClient = SessionsClient.create()) {
-   *   ApiStreamObserver&lt;StreamingDetectIntentResponse&gt; responseObserver =
-   *       new ApiStreamObserver&lt;StreamingDetectIntentResponse&gt;() {
-   *         {@literal @}Override
-   *         public void onNext(StreamingDetectIntentResponse response) {
-   *           // Do something when receive a response
-   *         }
-   *
-   *         {@literal @}Override
-   *         public void onError(Throwable t) {
-   *           // Add error-handling
-   *         }
-   *
-   *         {@literal @}Override
-   *         public void onCompleted() {
-   *           // Do something when complete.
-   *         }
-   *       };
-   *   ApiStreamObserver&lt;StreamingRecognizeRequest&gt; requestObserver =
-   *       sessionsClient.streamingDetectIntentCallable().bidiStreamingCall(responseObserver));
+   *   BidiStream&lt;StreamingDetectIntentRequest, StreamingDetectIntentResponse&gt; bidiStream =
+   *       sessionsClient.streamingDetectIntentCallable().call();
    *
    *   String session = "";
    *   QueryInput queryInput = QueryInput.newBuilder().build();
@@ -317,7 +298,10 @@ public class SessionsClient implements BackgroundResource {
    *     .setSession(session)
    *     .setQueryInput(queryInput)
    *     .build();
-   *   requestObserver.onNext(request);
+   *   bidiStream.send(request);
+   *   for (StreamingDetectIntentResponse response : bidiStream) {
+   *     // Do something when receive a response
+   *   }
    * }
    * </code></pre>
    */

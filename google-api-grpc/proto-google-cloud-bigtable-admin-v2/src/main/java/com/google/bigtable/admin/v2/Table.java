@@ -49,13 +49,6 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
           case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
@@ -94,6 +87,13 @@ private static final long serialVersionUID = 0L;
             granularity_ = rawValue;
             break;
           }
+          default: {
+            if (!parseUnknownFieldProto3(
+                input, unknownFields, extensionRegistry, tag)) {
+              done = true;
+            }
+            break;
+          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -112,6 +112,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
   protected com.google.protobuf.MapField internalGetMapField(
       int number) {
     switch (number) {
@@ -124,6 +125,7 @@ private static final long serialVersionUID = 0L;
             "Invalid map field number: " + number);
     }
   }
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.bigtable.admin.v2.TableProto.internal_static_google_bigtable_admin_v2_Table_fieldAccessorTable
@@ -287,11 +289,6 @@ private static final long serialVersionUID = 0L;
     SCHEMA_VIEW(2),
     /**
      * <pre>
-     * This is a private alpha release of Cloud Bigtable replication. This
-     * feature is not currently available to most Cloud Bigtable customers. This
-     * feature might be changed in backward-incompatible ways and is not
-     * recommended for production use. It is not subject to any SLA or
-     * deprecation policy.
      * Only populates `name` and fields related to the table's
      * replication state.
      * </pre>
@@ -336,11 +333,6 @@ private static final long serialVersionUID = 0L;
     public static final int SCHEMA_VIEW_VALUE = 2;
     /**
      * <pre>
-     * This is a private alpha release of Cloud Bigtable replication. This
-     * feature is not currently available to most Cloud Bigtable customers. This
-     * feature might be changed in backward-incompatible ways and is not
-     * recommended for production use. It is not subject to any SLA or
-     * deprecation policy.
      * Only populates `name` and fields related to the table's
      * replication state.
      * </pre>
@@ -458,10 +450,6 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * This is a private alpha release of Cloud Bigtable replication. This feature
-   * is not currently available to most Cloud Bigtable customers. This feature
-   * might be changed in backward-incompatible ways and is not recommended for
-   * production use. It is not subject to any SLA or deprecation policy.
    * The state of a table's data in a particular cluster.
    * </pre>
    *
@@ -504,17 +492,17 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
+            case 8: {
+              int rawValue = input.readEnum();
+
+              replicationState_ = rawValue;
+              break;
+            }
             default: {
               if (!parseUnknownFieldProto3(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
-              break;
-            }
-            case 8: {
-              int rawValue = input.readEnum();
-
-              replicationState_ = rawValue;
               break;
             }
           }
@@ -534,6 +522,7 @@ private static final long serialVersionUID = 0L;
       return com.google.bigtable.admin.v2.TableProto.internal_static_google_bigtable_admin_v2_Table_ClusterState_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.bigtable.admin.v2.TableProto.internal_static_google_bigtable_admin_v2_Table_ClusterState_fieldAccessorTable
@@ -562,8 +551,7 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * The cluster was recently created, and the table must finish copying
        * over pre-existing data from other clusters before it can begin
-       * receiving live replication updates and serving
-       * [Data API][google.bigtable.v2.Bigtable] requests.
+       * receiving live replication updates and serving Data API requests.
        * </pre>
        *
        * <code>INITIALIZING = 1;</code>
@@ -571,8 +559,7 @@ private static final long serialVersionUID = 0L;
       INITIALIZING(1),
       /**
        * <pre>
-       * The table is temporarily unable to serve
-       * [Data API][google.bigtable.v2.Bigtable] requests from this
+       * The table is temporarily unable to serve Data API requests from this
        * cluster due to planned internal maintenance.
        * </pre>
        *
@@ -581,8 +568,7 @@ private static final long serialVersionUID = 0L;
       PLANNED_MAINTENANCE(2),
       /**
        * <pre>
-       * The table is temporarily unable to serve
-       * [Data API][google.bigtable.v2.Bigtable] requests from this
+       * The table is temporarily unable to serve Data API requests from this
        * cluster due to unplanned or emergency maintenance.
        * </pre>
        *
@@ -591,10 +577,9 @@ private static final long serialVersionUID = 0L;
       UNPLANNED_MAINTENANCE(3),
       /**
        * <pre>
-       * The table can serve
-       * [Data API][google.bigtable.v2.Bigtable] requests from this
-       * cluster. Depending on replication delay, reads may not immediately
-       * reflect the state of the table in other clusters.
+       * The table can serve Data API requests from this cluster. Depending on
+       * replication delay, reads may not immediately reflect the state of the
+       * table in other clusters.
        * </pre>
        *
        * <code>READY = 4;</code>
@@ -615,8 +600,7 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * The cluster was recently created, and the table must finish copying
        * over pre-existing data from other clusters before it can begin
-       * receiving live replication updates and serving
-       * [Data API][google.bigtable.v2.Bigtable] requests.
+       * receiving live replication updates and serving Data API requests.
        * </pre>
        *
        * <code>INITIALIZING = 1;</code>
@@ -624,8 +608,7 @@ private static final long serialVersionUID = 0L;
       public static final int INITIALIZING_VALUE = 1;
       /**
        * <pre>
-       * The table is temporarily unable to serve
-       * [Data API][google.bigtable.v2.Bigtable] requests from this
+       * The table is temporarily unable to serve Data API requests from this
        * cluster due to planned internal maintenance.
        * </pre>
        *
@@ -634,8 +617,7 @@ private static final long serialVersionUID = 0L;
       public static final int PLANNED_MAINTENANCE_VALUE = 2;
       /**
        * <pre>
-       * The table is temporarily unable to serve
-       * [Data API][google.bigtable.v2.Bigtable] requests from this
+       * The table is temporarily unable to serve Data API requests from this
        * cluster due to unplanned or emergency maintenance.
        * </pre>
        *
@@ -644,10 +626,9 @@ private static final long serialVersionUID = 0L;
       public static final int UNPLANNED_MAINTENANCE_VALUE = 3;
       /**
        * <pre>
-       * The table can serve
-       * [Data API][google.bigtable.v2.Bigtable] requests from this
-       * cluster. Depending on replication delay, reads may not immediately
-       * reflect the state of the table in other clusters.
+       * The table can serve Data API requests from this cluster. Depending on
+       * replication delay, reads may not immediately reflect the state of the
+       * table in other clusters.
        * </pre>
        *
        * <code>READY = 4;</code>
@@ -752,11 +733,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.bigtable.admin.v2.Table.ClusterState.ReplicationState replication_state = 1;</code>
      */
     public com.google.bigtable.admin.v2.Table.ClusterState.ReplicationState getReplicationState() {
+      @SuppressWarnings("deprecation")
       com.google.bigtable.admin.v2.Table.ClusterState.ReplicationState result = com.google.bigtable.admin.v2.Table.ClusterState.ReplicationState.valueOf(replicationState_);
       return result == null ? com.google.bigtable.admin.v2.Table.ClusterState.ReplicationState.UNRECOGNIZED : result;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -766,6 +749,7 @@ private static final long serialVersionUID = 0L;
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (replicationState_ != com.google.bigtable.admin.v2.Table.ClusterState.ReplicationState.STATE_NOT_KNOWN.getNumber()) {
@@ -774,6 +758,7 @@ private static final long serialVersionUID = 0L;
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -888,6 +873,7 @@ private static final long serialVersionUID = 0L;
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -895,6 +881,7 @@ private static final long serialVersionUID = 0L;
     public static Builder newBuilder(com.google.bigtable.admin.v2.Table.ClusterState prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -908,10 +895,6 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * This is a private alpha release of Cloud Bigtable replication. This feature
-     * is not currently available to most Cloud Bigtable customers. This feature
-     * might be changed in backward-incompatible ways and is not recommended for
-     * production use. It is not subject to any SLA or deprecation policy.
      * The state of a table's data in a particular cluster.
      * </pre>
      *
@@ -926,6 +909,7 @@ private static final long serialVersionUID = 0L;
         return com.google.bigtable.admin.v2.TableProto.internal_static_google_bigtable_admin_v2_Table_ClusterState_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.bigtable.admin.v2.TableProto.internal_static_google_bigtable_admin_v2_Table_ClusterState_fieldAccessorTable
@@ -948,6 +932,7 @@ private static final long serialVersionUID = 0L;
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         replicationState_ = 0;
@@ -955,15 +940,18 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return com.google.bigtable.admin.v2.TableProto.internal_static_google_bigtable_admin_v2_Table_ClusterState_descriptor;
       }
 
+      @java.lang.Override
       public com.google.bigtable.admin.v2.Table.ClusterState getDefaultInstanceForType() {
         return com.google.bigtable.admin.v2.Table.ClusterState.getDefaultInstance();
       }
 
+      @java.lang.Override
       public com.google.bigtable.admin.v2.Table.ClusterState build() {
         com.google.bigtable.admin.v2.Table.ClusterState result = buildPartial();
         if (!result.isInitialized()) {
@@ -972,6 +960,7 @@ private static final long serialVersionUID = 0L;
         return result;
       }
 
+      @java.lang.Override
       public com.google.bigtable.admin.v2.Table.ClusterState buildPartial() {
         com.google.bigtable.admin.v2.Table.ClusterState result = new com.google.bigtable.admin.v2.Table.ClusterState(this);
         result.replicationState_ = replicationState_;
@@ -979,32 +968,39 @@ private static final long serialVersionUID = 0L;
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.google.bigtable.admin.v2.Table.ClusterState) {
           return mergeFrom((com.google.bigtable.admin.v2.Table.ClusterState)other);
@@ -1024,10 +1020,12 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1080,6 +1078,7 @@ private static final long serialVersionUID = 0L;
        * <code>.google.bigtable.admin.v2.Table.ClusterState.ReplicationState replication_state = 1;</code>
        */
       public com.google.bigtable.admin.v2.Table.ClusterState.ReplicationState getReplicationState() {
+        @SuppressWarnings("deprecation")
         com.google.bigtable.admin.v2.Table.ClusterState.ReplicationState result = com.google.bigtable.admin.v2.Table.ClusterState.ReplicationState.valueOf(replicationState_);
         return result == null ? com.google.bigtable.admin.v2.Table.ClusterState.ReplicationState.UNRECOGNIZED : result;
       }
@@ -1114,11 +1113,13 @@ private static final long serialVersionUID = 0L;
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -1140,6 +1141,7 @@ private static final long serialVersionUID = 0L;
 
     private static final com.google.protobuf.Parser<ClusterState>
         PARSER = new com.google.protobuf.AbstractParser<ClusterState>() {
+      @java.lang.Override
       public ClusterState parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1157,6 +1159,7 @@ private static final long serialVersionUID = 0L;
       return PARSER;
     }
 
+    @java.lang.Override
     public com.google.bigtable.admin.v2.Table.ClusterState getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -1171,7 +1174,7 @@ private static final long serialVersionUID = 0L;
    * (`OutputOnly`)
    * The unique name of the table. Values are of the form
    * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/[_a-zA-Z0-9][-_.a-zA-Z0-9]*`.
-   * Views: `NAME_ONLY`, `SCHEMA_VIEW`, `FULL`
+   * Views: `NAME_ONLY`, `SCHEMA_VIEW`, `REPLICATION_VIEW`, `FULL`
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -1193,7 +1196,7 @@ private static final long serialVersionUID = 0L;
    * (`OutputOnly`)
    * The unique name of the table. Values are of the form
    * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/[_a-zA-Z0-9][-_.a-zA-Z0-9]*`.
-   * Views: `NAME_ONLY`, `SCHEMA_VIEW`, `FULL`
+   * Views: `NAME_ONLY`, `SCHEMA_VIEW`, `REPLICATION_VIEW`, `FULL`
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -1240,16 +1243,12 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * This is a private alpha release of Cloud Bigtable replication. This feature
-   * is not currently available to most Cloud Bigtable customers. This feature
-   * might be changed in backward-incompatible ways and is not recommended for
-   * production use. It is not subject to any SLA or deprecation policy.
    * (`OutputOnly`)
    * Map from cluster ID to per-cluster table state.
    * If it could not be determined whether or not the table has data in a
    * particular cluster (for example, if its zone is unavailable), then
    * there will be an entry for the cluster with UNKNOWN `replication_status`.
-   * Views: `FULL`
+   * Views: `REPLICATION_VIEW`, `FULL`
    * </pre>
    *
    * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;</code>
@@ -1269,16 +1268,12 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * This is a private alpha release of Cloud Bigtable replication. This feature
-   * is not currently available to most Cloud Bigtable customers. This feature
-   * might be changed in backward-incompatible ways and is not recommended for
-   * production use. It is not subject to any SLA or deprecation policy.
    * (`OutputOnly`)
    * Map from cluster ID to per-cluster table state.
    * If it could not be determined whether or not the table has data in a
    * particular cluster (for example, if its zone is unavailable), then
    * there will be an entry for the cluster with UNKNOWN `replication_status`.
-   * Views: `FULL`
+   * Views: `REPLICATION_VIEW`, `FULL`
    * </pre>
    *
    * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;</code>
@@ -1289,16 +1284,12 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * This is a private alpha release of Cloud Bigtable replication. This feature
-   * is not currently available to most Cloud Bigtable customers. This feature
-   * might be changed in backward-incompatible ways and is not recommended for
-   * production use. It is not subject to any SLA or deprecation policy.
    * (`OutputOnly`)
    * Map from cluster ID to per-cluster table state.
    * If it could not be determined whether or not the table has data in a
    * particular cluster (for example, if its zone is unavailable), then
    * there will be an entry for the cluster with UNKNOWN `replication_status`.
-   * Views: `FULL`
+   * Views: `REPLICATION_VIEW`, `FULL`
    * </pre>
    *
    * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;</code>
@@ -1314,16 +1305,12 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * This is a private alpha release of Cloud Bigtable replication. This feature
-   * is not currently available to most Cloud Bigtable customers. This feature
-   * might be changed in backward-incompatible ways and is not recommended for
-   * production use. It is not subject to any SLA or deprecation policy.
    * (`OutputOnly`)
    * Map from cluster ID to per-cluster table state.
    * If it could not be determined whether or not the table has data in a
    * particular cluster (for example, if its zone is unavailable), then
    * there will be an entry for the cluster with UNKNOWN `replication_status`.
-   * Views: `FULL`
+   * Views: `REPLICATION_VIEW`, `FULL`
    * </pre>
    *
    * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;</code>
@@ -1445,7 +1432,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * (`CreationOnly`)
-   * The granularity (e.g. `MILLIS`, `MICROS`) at which timestamps are stored in
+   * The granularity (i.e. `MILLIS`) at which timestamps are stored in
    * this table. Timestamps not matching the granularity will be rejected.
    * If unspecified at creation time, the value will be set to `MILLIS`.
    * Views: `SCHEMA_VIEW`, `FULL`
@@ -1459,7 +1446,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * (`CreationOnly`)
-   * The granularity (e.g. `MILLIS`, `MICROS`) at which timestamps are stored in
+   * The granularity (i.e. `MILLIS`) at which timestamps are stored in
    * this table. Timestamps not matching the granularity will be rejected.
    * If unspecified at creation time, the value will be set to `MILLIS`.
    * Views: `SCHEMA_VIEW`, `FULL`
@@ -1468,11 +1455,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.bigtable.admin.v2.Table.TimestampGranularity granularity = 4;</code>
    */
   public com.google.bigtable.admin.v2.Table.TimestampGranularity getGranularity() {
+    @SuppressWarnings("deprecation")
     com.google.bigtable.admin.v2.Table.TimestampGranularity result = com.google.bigtable.admin.v2.Table.TimestampGranularity.valueOf(granularity_);
     return result == null ? com.google.bigtable.admin.v2.Table.TimestampGranularity.UNRECOGNIZED : result;
   }
 
   private byte memoizedIsInitialized = -1;
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -1482,6 +1471,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
+  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (!getNameBytes().isEmpty()) {
@@ -1505,6 +1495,7 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -1658,6 +1649,7 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
+  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
@@ -1665,6 +1657,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder(com.google.bigtable.admin.v2.Table prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
@@ -1719,6 +1712,7 @@ private static final long serialVersionUID = 0L;
               "Invalid map field number: " + number);
       }
     }
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.bigtable.admin.v2.TableProto.internal_static_google_bigtable_admin_v2_Table_fieldAccessorTable
@@ -1741,6 +1735,7 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
       }
     }
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       name_ = "";
@@ -1752,15 +1747,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
       return com.google.bigtable.admin.v2.TableProto.internal_static_google_bigtable_admin_v2_Table_descriptor;
     }
 
+    @java.lang.Override
     public com.google.bigtable.admin.v2.Table getDefaultInstanceForType() {
       return com.google.bigtable.admin.v2.Table.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.bigtable.admin.v2.Table build() {
       com.google.bigtable.admin.v2.Table result = buildPartial();
       if (!result.isInitialized()) {
@@ -1769,6 +1767,7 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.bigtable.admin.v2.Table buildPartial() {
       com.google.bigtable.admin.v2.Table result = new com.google.bigtable.admin.v2.Table(this);
       int from_bitField0_ = bitField0_;
@@ -1784,32 +1783,39 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.bigtable.admin.v2.Table) {
         return mergeFrom((com.google.bigtable.admin.v2.Table)other);
@@ -1837,10 +1843,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1866,7 +1874,7 @@ private static final long serialVersionUID = 0L;
      * (`OutputOnly`)
      * The unique name of the table. Values are of the form
      * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/[_a-zA-Z0-9][-_.a-zA-Z0-9]*`.
-     * Views: `NAME_ONLY`, `SCHEMA_VIEW`, `FULL`
+     * Views: `NAME_ONLY`, `SCHEMA_VIEW`, `REPLICATION_VIEW`, `FULL`
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1888,7 +1896,7 @@ private static final long serialVersionUID = 0L;
      * (`OutputOnly`)
      * The unique name of the table. Values are of the form
      * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/[_a-zA-Z0-9][-_.a-zA-Z0-9]*`.
-     * Views: `NAME_ONLY`, `SCHEMA_VIEW`, `FULL`
+     * Views: `NAME_ONLY`, `SCHEMA_VIEW`, `REPLICATION_VIEW`, `FULL`
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1911,7 +1919,7 @@ private static final long serialVersionUID = 0L;
      * (`OutputOnly`)
      * The unique name of the table. Values are of the form
      * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/[_a-zA-Z0-9][-_.a-zA-Z0-9]*`.
-     * Views: `NAME_ONLY`, `SCHEMA_VIEW`, `FULL`
+     * Views: `NAME_ONLY`, `SCHEMA_VIEW`, `REPLICATION_VIEW`, `FULL`
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1931,7 +1939,7 @@ private static final long serialVersionUID = 0L;
      * (`OutputOnly`)
      * The unique name of the table. Values are of the form
      * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/[_a-zA-Z0-9][-_.a-zA-Z0-9]*`.
-     * Views: `NAME_ONLY`, `SCHEMA_VIEW`, `FULL`
+     * Views: `NAME_ONLY`, `SCHEMA_VIEW`, `REPLICATION_VIEW`, `FULL`
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1947,7 +1955,7 @@ private static final long serialVersionUID = 0L;
      * (`OutputOnly`)
      * The unique name of the table. Values are of the form
      * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/[_a-zA-Z0-9][-_.a-zA-Z0-9]*`.
-     * Views: `NAME_ONLY`, `SCHEMA_VIEW`, `FULL`
+     * Views: `NAME_ONLY`, `SCHEMA_VIEW`, `REPLICATION_VIEW`, `FULL`
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1992,16 +2000,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * This is a private alpha release of Cloud Bigtable replication. This feature
-     * is not currently available to most Cloud Bigtable customers. This feature
-     * might be changed in backward-incompatible ways and is not recommended for
-     * production use. It is not subject to any SLA or deprecation policy.
      * (`OutputOnly`)
      * Map from cluster ID to per-cluster table state.
      * If it could not be determined whether or not the table has data in a
      * particular cluster (for example, if its zone is unavailable), then
      * there will be an entry for the cluster with UNKNOWN `replication_status`.
-     * Views: `FULL`
+     * Views: `REPLICATION_VIEW`, `FULL`
      * </pre>
      *
      * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;</code>
@@ -2021,16 +2025,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * This is a private alpha release of Cloud Bigtable replication. This feature
-     * is not currently available to most Cloud Bigtable customers. This feature
-     * might be changed in backward-incompatible ways and is not recommended for
-     * production use. It is not subject to any SLA or deprecation policy.
      * (`OutputOnly`)
      * Map from cluster ID to per-cluster table state.
      * If it could not be determined whether or not the table has data in a
      * particular cluster (for example, if its zone is unavailable), then
      * there will be an entry for the cluster with UNKNOWN `replication_status`.
-     * Views: `FULL`
+     * Views: `REPLICATION_VIEW`, `FULL`
      * </pre>
      *
      * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;</code>
@@ -2041,16 +2041,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * This is a private alpha release of Cloud Bigtable replication. This feature
-     * is not currently available to most Cloud Bigtable customers. This feature
-     * might be changed in backward-incompatible ways and is not recommended for
-     * production use. It is not subject to any SLA or deprecation policy.
      * (`OutputOnly`)
      * Map from cluster ID to per-cluster table state.
      * If it could not be determined whether or not the table has data in a
      * particular cluster (for example, if its zone is unavailable), then
      * there will be an entry for the cluster with UNKNOWN `replication_status`.
-     * Views: `FULL`
+     * Views: `REPLICATION_VIEW`, `FULL`
      * </pre>
      *
      * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;</code>
@@ -2066,16 +2062,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * This is a private alpha release of Cloud Bigtable replication. This feature
-     * is not currently available to most Cloud Bigtable customers. This feature
-     * might be changed in backward-incompatible ways and is not recommended for
-     * production use. It is not subject to any SLA or deprecation policy.
      * (`OutputOnly`)
      * Map from cluster ID to per-cluster table state.
      * If it could not be determined whether or not the table has data in a
      * particular cluster (for example, if its zone is unavailable), then
      * there will be an entry for the cluster with UNKNOWN `replication_status`.
-     * Views: `FULL`
+     * Views: `REPLICATION_VIEW`, `FULL`
      * </pre>
      *
      * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;</code>
@@ -2099,16 +2091,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * This is a private alpha release of Cloud Bigtable replication. This feature
-     * is not currently available to most Cloud Bigtable customers. This feature
-     * might be changed in backward-incompatible ways and is not recommended for
-     * production use. It is not subject to any SLA or deprecation policy.
      * (`OutputOnly`)
      * Map from cluster ID to per-cluster table state.
      * If it could not be determined whether or not the table has data in a
      * particular cluster (for example, if its zone is unavailable), then
      * there will be an entry for the cluster with UNKNOWN `replication_status`.
-     * Views: `FULL`
+     * Views: `REPLICATION_VIEW`, `FULL`
      * </pre>
      *
      * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;</code>
@@ -2131,16 +2119,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * This is a private alpha release of Cloud Bigtable replication. This feature
-     * is not currently available to most Cloud Bigtable customers. This feature
-     * might be changed in backward-incompatible ways and is not recommended for
-     * production use. It is not subject to any SLA or deprecation policy.
      * (`OutputOnly`)
      * Map from cluster ID to per-cluster table state.
      * If it could not be determined whether or not the table has data in a
      * particular cluster (for example, if its zone is unavailable), then
      * there will be an entry for the cluster with UNKNOWN `replication_status`.
-     * Views: `FULL`
+     * Views: `REPLICATION_VIEW`, `FULL`
      * </pre>
      *
      * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;</code>
@@ -2156,16 +2140,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * This is a private alpha release of Cloud Bigtable replication. This feature
-     * is not currently available to most Cloud Bigtable customers. This feature
-     * might be changed in backward-incompatible ways and is not recommended for
-     * production use. It is not subject to any SLA or deprecation policy.
      * (`OutputOnly`)
      * Map from cluster ID to per-cluster table state.
      * If it could not be determined whether or not the table has data in a
      * particular cluster (for example, if its zone is unavailable), then
      * there will be an entry for the cluster with UNKNOWN `replication_status`.
-     * Views: `FULL`
+     * Views: `REPLICATION_VIEW`, `FULL`
      * </pre>
      *
      * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;</code>
@@ -2347,7 +2327,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * (`CreationOnly`)
-     * The granularity (e.g. `MILLIS`, `MICROS`) at which timestamps are stored in
+     * The granularity (i.e. `MILLIS`) at which timestamps are stored in
      * this table. Timestamps not matching the granularity will be rejected.
      * If unspecified at creation time, the value will be set to `MILLIS`.
      * Views: `SCHEMA_VIEW`, `FULL`
@@ -2361,7 +2341,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * (`CreationOnly`)
-     * The granularity (e.g. `MILLIS`, `MICROS`) at which timestamps are stored in
+     * The granularity (i.e. `MILLIS`) at which timestamps are stored in
      * this table. Timestamps not matching the granularity will be rejected.
      * If unspecified at creation time, the value will be set to `MILLIS`.
      * Views: `SCHEMA_VIEW`, `FULL`
@@ -2377,7 +2357,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * (`CreationOnly`)
-     * The granularity (e.g. `MILLIS`, `MICROS`) at which timestamps are stored in
+     * The granularity (i.e. `MILLIS`) at which timestamps are stored in
      * this table. Timestamps not matching the granularity will be rejected.
      * If unspecified at creation time, the value will be set to `MILLIS`.
      * Views: `SCHEMA_VIEW`, `FULL`
@@ -2386,13 +2366,14 @@ private static final long serialVersionUID = 0L;
      * <code>.google.bigtable.admin.v2.Table.TimestampGranularity granularity = 4;</code>
      */
     public com.google.bigtable.admin.v2.Table.TimestampGranularity getGranularity() {
+      @SuppressWarnings("deprecation")
       com.google.bigtable.admin.v2.Table.TimestampGranularity result = com.google.bigtable.admin.v2.Table.TimestampGranularity.valueOf(granularity_);
       return result == null ? com.google.bigtable.admin.v2.Table.TimestampGranularity.UNRECOGNIZED : result;
     }
     /**
      * <pre>
      * (`CreationOnly`)
-     * The granularity (e.g. `MILLIS`, `MICROS`) at which timestamps are stored in
+     * The granularity (i.e. `MILLIS`) at which timestamps are stored in
      * this table. Timestamps not matching the granularity will be rejected.
      * If unspecified at creation time, the value will be set to `MILLIS`.
      * Views: `SCHEMA_VIEW`, `FULL`
@@ -2412,7 +2393,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * (`CreationOnly`)
-     * The granularity (e.g. `MILLIS`, `MICROS`) at which timestamps are stored in
+     * The granularity (i.e. `MILLIS`) at which timestamps are stored in
      * this table. Timestamps not matching the granularity will be rejected.
      * If unspecified at creation time, the value will be set to `MILLIS`.
      * Views: `SCHEMA_VIEW`, `FULL`
@@ -2426,11 +2407,13 @@ private static final long serialVersionUID = 0L;
       onChanged();
       return this;
     }
+    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -2452,6 +2435,7 @@ private static final long serialVersionUID = 0L;
 
   private static final com.google.protobuf.Parser<Table>
       PARSER = new com.google.protobuf.AbstractParser<Table>() {
+    @java.lang.Override
     public Table parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -2469,6 +2453,7 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.bigtable.admin.v2.Table getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }

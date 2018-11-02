@@ -25,6 +25,7 @@ import com.google.api.services.storage.model.Policy;
 import com.google.api.services.storage.model.ServiceAccount;
 import com.google.api.services.storage.model.StorageObject;
 import com.google.api.services.storage.model.TestIamPermissionsResponse;
+import com.google.cloud.GcpLaunchStage;
 import com.google.cloud.ServiceRpc;
 import com.google.cloud.Tuple;
 import com.google.cloud.storage.StorageException;
@@ -55,7 +56,8 @@ public interface StorageRpc extends ServiceRpc {
     VERSIONS("versions"),
     FIELDS("fields"),
     CUSTOMER_SUPPLIED_KEY("customerSuppliedKey"),
-    USER_PROJECT("userProject");
+    USER_PROJECT("userProject"),
+    KMS_KEY_NAME("kmsKeyName");
 
     private final String value;
 
@@ -456,6 +458,14 @@ public interface StorageRpc extends ServiceRpc {
    * @throws StorageException upon failure
    */
   Notification createNotification(String bucket, Notification notification);
+
+  /**
+   * Lock retention policy for the provided bucket.
+   *
+   * @return a {@code Bucket} object of the locked bucket
+   * @throws StorageException upon failure
+   */
+  Bucket lockRetentionPolicy(Bucket bucket, Map<Option, ?> options);
 
   /**
    * Returns the service account associated with the given project.

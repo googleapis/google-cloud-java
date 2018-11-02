@@ -29,6 +29,7 @@ import com.google.common.io.BaseEncoding;
 
 import org.junit.Test;
 
+import java.math.BigDecimal;
 import java.util.Map;
 
 public class FieldValueTest {
@@ -38,6 +39,8 @@ public class FieldValueTest {
   private static final TableCell BOOLEAN_FIELD = new TableCell().setV("false");
   private static final Map<String, String> INTEGER_FIELD = ImmutableMap.of("v", "1");
   private static final Map<String, String> FLOAT_FIELD = ImmutableMap.of("v", "1.5");
+  private static final Map<String, String> NUMERIC_FIELD =
+      ImmutableMap.of("v", "123456789.123456789");
   private static final Map<String, String> STRING_FIELD = ImmutableMap.of("v", "string");
   private static final Map<String, String> TIMESTAMP_FIELD = ImmutableMap.of("v", "42");
   private static final Map<String, String> BYTES_FIELD = ImmutableMap.of("v", BYTES_BASE64);
@@ -59,6 +62,9 @@ public class FieldValueTest {
     value = FieldValue.fromPb(FLOAT_FIELD);
     assertEquals(FieldValue.Attribute.PRIMITIVE, value.getAttribute());
     assertEquals(1.5, value.getDoubleValue(), 0);
+    value = FieldValue.fromPb(NUMERIC_FIELD);
+    assertEquals(FieldValue.Attribute.PRIMITIVE, value.getAttribute());
+    assertEquals(new BigDecimal("123456789.123456789"), value.getNumericValue());
     value = FieldValue.fromPb(STRING_FIELD);
     assertEquals(FieldValue.Attribute.PRIMITIVE, value.getAttribute());
     assertEquals("string", value.getStringValue());
@@ -94,6 +100,11 @@ public class FieldValueTest {
     FieldValue floatValue = FieldValue.of(FieldValue.Attribute.PRIMITIVE, "1.5");
     assertEquals(floatValue, FieldValue.fromPb(FLOAT_FIELD));
     assertEquals(floatValue.hashCode(), FieldValue.fromPb(FLOAT_FIELD).hashCode());
+
+    FieldValue numericValue =
+        FieldValue.of(FieldValue.Attribute.PRIMITIVE, "123456789.123456789");
+    assertEquals(numericValue, FieldValue.fromPb(NUMERIC_FIELD));
+    assertEquals(numericValue.hashCode(), FieldValue.fromPb(NUMERIC_FIELD).hashCode());
 
     FieldValue stringValue = FieldValue.of(FieldValue.Attribute.PRIMITIVE, "string");
     assertEquals(stringValue, FieldValue.fromPb(STRING_FIELD));

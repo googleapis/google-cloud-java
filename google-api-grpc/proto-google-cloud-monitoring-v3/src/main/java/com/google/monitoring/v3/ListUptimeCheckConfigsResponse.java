@@ -22,6 +22,7 @@ private static final long serialVersionUID = 0L;
   private ListUptimeCheckConfigsResponse() {
     uptimeCheckConfigs_ = java.util.Collections.emptyList();
     nextPageToken_ = "";
+    totalSize_ = 0;
   }
 
   @java.lang.Override
@@ -48,13 +49,6 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
           case 10: {
             if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
               uptimeCheckConfigs_ = new java.util.ArrayList<com.google.monitoring.v3.UptimeCheckConfig>();
@@ -68,6 +62,18 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             nextPageToken_ = s;
+            break;
+          }
+          case 24: {
+
+            totalSize_ = input.readInt32();
+            break;
+          }
+          default: {
+            if (!parseUnknownFieldProto3(
+                input, unknownFields, extensionRegistry, tag)) {
+              done = true;
+            }
             break;
           }
         }
@@ -90,6 +96,7 @@ private static final long serialVersionUID = 0L;
     return com.google.monitoring.v3.UptimeServiceProto.internal_static_google_monitoring_v3_ListUptimeCheckConfigsResponse_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.monitoring.v3.UptimeServiceProto.internal_static_google_monitoring_v3_ListUptimeCheckConfigsResponse_fieldAccessorTable
@@ -203,7 +210,22 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int TOTAL_SIZE_FIELD_NUMBER = 3;
+  private int totalSize_;
+  /**
+   * <pre>
+   * The total number of uptime check configurations for the project,
+   * irrespective of any pagination.
+   * </pre>
+   *
+   * <code>int32 total_size = 3;</code>
+   */
+  public int getTotalSize() {
+    return totalSize_;
+  }
+
   private byte memoizedIsInitialized = -1;
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -213,6 +235,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
+  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     for (int i = 0; i < uptimeCheckConfigs_.size(); i++) {
@@ -221,9 +244,13 @@ private static final long serialVersionUID = 0L;
     if (!getNextPageTokenBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, nextPageToken_);
     }
+    if (totalSize_ != 0) {
+      output.writeInt32(3, totalSize_);
+    }
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -235,6 +262,10 @@ private static final long serialVersionUID = 0L;
     }
     if (!getNextPageTokenBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, nextPageToken_);
+    }
+    if (totalSize_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(3, totalSize_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -256,6 +287,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getUptimeCheckConfigsList());
     result = result && getNextPageToken()
         .equals(other.getNextPageToken());
+    result = result && (getTotalSize()
+        == other.getTotalSize());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -273,6 +306,8 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + NEXT_PAGE_TOKEN_FIELD_NUMBER;
     hash = (53 * hash) + getNextPageToken().hashCode();
+    hash = (37 * hash) + TOTAL_SIZE_FIELD_NUMBER;
+    hash = (53 * hash) + getTotalSize();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -348,6 +383,7 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
+  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
@@ -355,6 +391,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder(com.google.monitoring.v3.ListUptimeCheckConfigsResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
@@ -382,6 +419,7 @@ private static final long serialVersionUID = 0L;
       return com.google.monitoring.v3.UptimeServiceProto.internal_static_google_monitoring_v3_ListUptimeCheckConfigsResponse_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.monitoring.v3.UptimeServiceProto.internal_static_google_monitoring_v3_ListUptimeCheckConfigsResponse_fieldAccessorTable
@@ -405,6 +443,7 @@ private static final long serialVersionUID = 0L;
         getUptimeCheckConfigsFieldBuilder();
       }
     }
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       if (uptimeCheckConfigsBuilder_ == null) {
@@ -415,18 +454,23 @@ private static final long serialVersionUID = 0L;
       }
       nextPageToken_ = "";
 
+      totalSize_ = 0;
+
       return this;
     }
 
+    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
       return com.google.monitoring.v3.UptimeServiceProto.internal_static_google_monitoring_v3_ListUptimeCheckConfigsResponse_descriptor;
     }
 
+    @java.lang.Override
     public com.google.monitoring.v3.ListUptimeCheckConfigsResponse getDefaultInstanceForType() {
       return com.google.monitoring.v3.ListUptimeCheckConfigsResponse.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.monitoring.v3.ListUptimeCheckConfigsResponse build() {
       com.google.monitoring.v3.ListUptimeCheckConfigsResponse result = buildPartial();
       if (!result.isInitialized()) {
@@ -435,6 +479,7 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.monitoring.v3.ListUptimeCheckConfigsResponse buildPartial() {
       com.google.monitoring.v3.ListUptimeCheckConfigsResponse result = new com.google.monitoring.v3.ListUptimeCheckConfigsResponse(this);
       int from_bitField0_ = bitField0_;
@@ -449,37 +494,45 @@ private static final long serialVersionUID = 0L;
         result.uptimeCheckConfigs_ = uptimeCheckConfigsBuilder_.build();
       }
       result.nextPageToken_ = nextPageToken_;
+      result.totalSize_ = totalSize_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.monitoring.v3.ListUptimeCheckConfigsResponse) {
         return mergeFrom((com.google.monitoring.v3.ListUptimeCheckConfigsResponse)other);
@@ -521,15 +574,20 @@ private static final long serialVersionUID = 0L;
         nextPageToken_ = other.nextPageToken_;
         onChanged();
       }
+      if (other.getTotalSize() != 0) {
+        setTotalSize(other.getTotalSize());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -969,11 +1027,54 @@ private static final long serialVersionUID = 0L;
       onChanged();
       return this;
     }
+
+    private int totalSize_ ;
+    /**
+     * <pre>
+     * The total number of uptime check configurations for the project,
+     * irrespective of any pagination.
+     * </pre>
+     *
+     * <code>int32 total_size = 3;</code>
+     */
+    public int getTotalSize() {
+      return totalSize_;
+    }
+    /**
+     * <pre>
+     * The total number of uptime check configurations for the project,
+     * irrespective of any pagination.
+     * </pre>
+     *
+     * <code>int32 total_size = 3;</code>
+     */
+    public Builder setTotalSize(int value) {
+      
+      totalSize_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The total number of uptime check configurations for the project,
+     * irrespective of any pagination.
+     * </pre>
+     *
+     * <code>int32 total_size = 3;</code>
+     */
+    public Builder clearTotalSize() {
+      
+      totalSize_ = 0;
+      onChanged();
+      return this;
+    }
+    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -995,6 +1096,7 @@ private static final long serialVersionUID = 0L;
 
   private static final com.google.protobuf.Parser<ListUptimeCheckConfigsResponse>
       PARSER = new com.google.protobuf.AbstractParser<ListUptimeCheckConfigsResponse>() {
+    @java.lang.Override
     public ListUptimeCheckConfigsResponse parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1012,6 +1114,7 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.monitoring.v3.ListUptimeCheckConfigsResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }

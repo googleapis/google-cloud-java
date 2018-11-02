@@ -50,6 +50,7 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class EntityTypesStub implements BackgroundResource {
 
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationsStub getOperationsStub() {
     throw new UnsupportedOperationException("Not implemented: getOperationsStub()");
   }
@@ -79,6 +80,7 @@ public abstract class EntityTypesStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: deleteEntityTypeCallable()");
   }
 
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<BatchUpdateEntityTypesRequest, BatchUpdateEntityTypesResponse, Struct>
       batchUpdateEntityTypesOperationCallable() {
     throw new UnsupportedOperationException(
@@ -89,6 +91,7 @@ public abstract class EntityTypesStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: batchUpdateEntityTypesCallable()");
   }
 
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<BatchDeleteEntityTypesRequest, Empty, Struct>
       batchDeleteEntityTypesOperationCallable() {
     throw new UnsupportedOperationException(
@@ -99,6 +102,7 @@ public abstract class EntityTypesStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: batchDeleteEntityTypesCallable()");
   }
 
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<BatchCreateEntitiesRequest, Empty, Struct>
       batchCreateEntitiesOperationCallable() {
     throw new UnsupportedOperationException(
@@ -109,6 +113,7 @@ public abstract class EntityTypesStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: batchCreateEntitiesCallable()");
   }
 
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<BatchUpdateEntitiesRequest, Empty, Struct>
       batchUpdateEntitiesOperationCallable() {
     throw new UnsupportedOperationException(
@@ -119,6 +124,7 @@ public abstract class EntityTypesStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: batchUpdateEntitiesCallable()");
   }
 
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<BatchDeleteEntitiesRequest, Empty, Struct>
       batchDeleteEntitiesOperationCallable() {
     throw new UnsupportedOperationException(

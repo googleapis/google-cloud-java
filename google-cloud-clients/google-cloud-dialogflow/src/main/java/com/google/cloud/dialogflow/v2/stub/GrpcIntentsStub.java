@@ -238,6 +238,7 @@ public class GrpcIntentsStub extends IntentsStub {
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public GrpcOperationsStub getOperationsStub() {
     return operationsStub;
   }
@@ -266,6 +267,7 @@ public class GrpcIntentsStub extends IntentsStub {
     return deleteIntentCallable;
   }
 
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<BatchUpdateIntentsRequest, BatchUpdateIntentsResponse, Struct>
       batchUpdateIntentsOperationCallable() {
     return batchUpdateIntentsOperationCallable;
@@ -275,6 +277,7 @@ public class GrpcIntentsStub extends IntentsStub {
     return batchUpdateIntentsCallable;
   }
 
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<BatchDeleteIntentsRequest, Empty, Struct>
       batchDeleteIntentsOperationCallable() {
     return batchDeleteIntentsOperationCallable;

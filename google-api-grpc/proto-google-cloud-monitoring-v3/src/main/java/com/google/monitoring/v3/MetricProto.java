@@ -34,23 +34,26 @@ public final class MetricProto {
   static {
     java.lang.String[] descriptorData = {
       "\n!google/monitoring/v3/metric.proto\022\024goo" +
-      "gle.monitoring.v3\032\027google/api/metric.pro" +
-      "to\032#google/api/monitored_resource.proto\032" +
-      "!google/monitoring/v3/common.proto\"n\n\005Po" +
-      "int\0224\n\010interval\030\001 \001(\0132\".google.monitorin" +
-      "g.v3.TimeInterval\022/\n\005value\030\002 \001(\0132 .googl" +
-      "e.monitoring.v3.TypedValue\"\210\002\n\nTimeSerie" +
-      "s\022\"\n\006metric\030\001 \001(\0132\022.google.api.Metric\022/\n" +
-      "\010resource\030\002 \001(\0132\035.google.api.MonitoredRe" +
-      "source\022<\n\013metric_kind\030\003 \001(\0162\'.google.api" +
-      ".MetricDescriptor.MetricKind\022:\n\nvalue_ty" +
-      "pe\030\004 \001(\0162&.google.api.MetricDescriptor.V" +
-      "alueType\022+\n\006points\030\005 \003(\0132\033.google.monito" +
-      "ring.v3.PointB\243\001\n\030com.google.monitoring." +
-      "v3B\013MetricProtoP\001Z>google.golang.org/gen" +
-      "proto/googleapis/monitoring/v3;monitorin" +
-      "g\252\002\032Google.Cloud.Monitoring.V3\312\002\032Google\\" +
-      "Cloud\\Monitoring\\V3b\006proto3"
+      "gle.monitoring.v3\032\034google/api/annotation" +
+      "s.proto\032\026google/api/label.proto\032\027google/" +
+      "api/metric.proto\032#google/api/monitored_r" +
+      "esource.proto\032!google/monitoring/v3/comm" +
+      "on.proto\"n\n\005Point\0224\n\010interval\030\001 \001(\0132\".go" +
+      "ogle.monitoring.v3.TimeInterval\022/\n\005value" +
+      "\030\002 \001(\0132 .google.monitoring.v3.TypedValue" +
+      "\"\301\002\n\nTimeSeries\022\"\n\006metric\030\001 \001(\0132\022.google" +
+      ".api.Metric\022/\n\010resource\030\002 \001(\0132\035.google.a" +
+      "pi.MonitoredResource\0227\n\010metadata\030\007 \001(\0132%" +
+      ".google.api.MonitoredResourceMetadata\022<\n" +
+      "\013metric_kind\030\003 \001(\0162\'.google.api.MetricDe" +
+      "scriptor.MetricKind\022:\n\nvalue_type\030\004 \001(\0162" +
+      "&.google.api.MetricDescriptor.ValueType\022" +
+      "+\n\006points\030\005 \003(\0132\033.google.monitoring.v3.P" +
+      "ointB\243\001\n\030com.google.monitoring.v3B\013Metri" +
+      "cProtoP\001Z>google.golang.org/genproto/goo" +
+      "gleapis/monitoring/v3;monitoring\252\002\032Googl" +
+      "e.Cloud.Monitoring.V3\312\002\032Google\\Cloud\\Mon" +
+      "itoring\\V3b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -63,6 +66,8 @@ public final class MetricProto {
     com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          com.google.api.AnnotationsProto.getDescriptor(),
+          com.google.api.LabelProto.getDescriptor(),
           com.google.api.MetricProto.getDescriptor(),
           com.google.api.MonitoredResourceProto.getDescriptor(),
           com.google.monitoring.v3.CommonProto.getDescriptor(),
@@ -78,7 +83,9 @@ public final class MetricProto {
     internal_static_google_monitoring_v3_TimeSeries_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_monitoring_v3_TimeSeries_descriptor,
-        new java.lang.String[] { "Metric", "Resource", "MetricKind", "ValueType", "Points", });
+        new java.lang.String[] { "Metric", "Resource", "Metadata", "MetricKind", "ValueType", "Points", });
+    com.google.api.AnnotationsProto.getDescriptor();
+    com.google.api.LabelProto.getDescriptor();
     com.google.api.MetricProto.getDescriptor();
     com.google.api.MonitoredResourceProto.getDescriptor();
     com.google.monitoring.v3.CommonProto.getDescriptor();

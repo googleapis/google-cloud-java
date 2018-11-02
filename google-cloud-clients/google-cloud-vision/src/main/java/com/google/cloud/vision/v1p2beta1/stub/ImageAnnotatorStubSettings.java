@@ -76,6 +76,7 @@ import org.threeten.bp.Duration;
  * </pre>
  */
 @Generated("by gapic-generator")
+@BetaApi
 public class ImageAnnotatorStubSettings extends StubSettings<ImageAnnotatorStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -105,6 +106,7 @@ public class ImageAnnotatorStubSettings extends StubSettings<ImageAnnotatorStubS
   }
 
   /** Returns the object with the settings used for calls to asyncBatchAnnotateFiles. */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallSettings<
           AsyncBatchAnnotateFilesRequest, AsyncBatchAnnotateFilesResponse, OperationMetadata>
       asyncBatchAnnotateFilesOperationSettings() {
@@ -341,6 +343,8 @@ public class ImageAnnotatorStubSettings extends StubSettings<ImageAnnotatorStubS
     }
 
     /** Returns the builder for the settings used for calls to asyncBatchAnnotateFiles. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             AsyncBatchAnnotateFilesRequest, AsyncBatchAnnotateFilesResponse, OperationMetadata>
         asyncBatchAnnotateFilesOperationSettings() {

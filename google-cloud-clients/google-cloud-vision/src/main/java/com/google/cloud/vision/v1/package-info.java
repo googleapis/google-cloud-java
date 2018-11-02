@@ -15,7 +15,7 @@
  */
 
 /**
- * A client to Google Cloud Vision API.
+ * A client to Cloud Vision API.
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *

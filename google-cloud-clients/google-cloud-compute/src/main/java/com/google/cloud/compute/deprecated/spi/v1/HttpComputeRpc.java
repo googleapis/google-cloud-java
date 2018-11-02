@@ -20,7 +20,7 @@ import static java.net.HttpURLConnection.HTTP_NOT_FOUND;
 
 import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.client.http.HttpTransport;
-import com.google.api.client.json.jackson.JacksonFactory;
+import com.google.api.client.json.jackson2.JacksonFactory;
 import com.google.api.services.compute.Compute;
 import com.google.api.services.compute.model.AccessConfig;
 import com.google.api.services.compute.model.Address;

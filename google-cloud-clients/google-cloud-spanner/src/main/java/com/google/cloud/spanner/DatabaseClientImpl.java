@@ -28,10 +28,11 @@ import io.opencensus.trace.Tracing;
 class DatabaseClientImpl implements DatabaseClient {
   private static final String READ_WRITE_TRANSACTION = "CloudSpanner.ReadWriteTransaction";
   private static final String READ_ONLY_TRANSACTION = "CloudSpanner.ReadOnlyTransaction";
+  private static final String PARTITION_DML_TRANSACTION = "CloudSpanner.PartitionDMLTransaction";
   private static final Tracer tracer = Tracing.getTracer();
   
   static {
-    TraceUtil.exportSpans(READ_WRITE_TRANSACTION, READ_ONLY_TRANSACTION);
+    TraceUtil.exportSpans(READ_WRITE_TRANSACTION, READ_ONLY_TRANSACTION, PARTITION_DML_TRANSACTION);
   }
   
   private final SessionPool pool;
@@ -57,7 +58,7 @@ class DatabaseClientImpl implements DatabaseClient {
   public Timestamp writeAtLeastOnce(Iterable<Mutation> mutations) throws SpannerException {
     Span span = tracer.spanBuilder(READ_WRITE_TRANSACTION).startSpan();
     try (Scope s = tracer.withSpan(span)) {
-      return pool.getReadSession().writeAtLeastOnce(mutations);
+      return pool.getReadWriteSession().writeAtLeastOnce(mutations);
     } catch (RuntimeException e) {
       TraceUtil.endSpanWithFailure(span, e);
       throw e;
@@ -149,6 +150,17 @@ class DatabaseClientImpl implements DatabaseClient {
     Span span = tracer.spanBuilder(READ_WRITE_TRANSACTION).startSpan();
     try (Scope s = tracer.withSpan(span)) {
       return pool.getReadWriteSession().transactionManager();
+    } catch (RuntimeException e) {
+      TraceUtil.endSpanWithFailure(span, e);
+      throw e;
+    }
+  }
+
+  @Override
+  public long executePartitionedUpdate(Statement stmt) {
+    Span span = tracer.spanBuilder(PARTITION_DML_TRANSACTION).startSpan();
+    try (Scope s = tracer.withSpan(span)) {
+      return pool.getReadWriteSession().executePartitionedUpdate(stmt);
     } catch (RuntimeException e) {
       TraceUtil.endSpanWithFailure(span, e);
       throw e;

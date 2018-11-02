@@ -24,6 +24,7 @@ private static final long serialVersionUID = 0L;
     sampleRateHertz_ = 0;
     languageCode_ = "";
     phraseHints_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    model_ = "";
   }
 
   @java.lang.Override
@@ -50,13 +51,6 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
           case 8: {
             int rawValue = input.readEnum();
 
@@ -83,6 +77,19 @@ private static final long serialVersionUID = 0L;
             phraseHints_.add(s);
             break;
           }
+          case 58: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            model_ = s;
+            break;
+          }
+          default: {
+            if (!parseUnknownFieldProto3(
+                input, unknownFields, extensionRegistry, tag)) {
+              done = true;
+            }
+            break;
+          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -103,6 +110,7 @@ private static final long serialVersionUID = 0L;
     return com.google.cloud.dialogflow.v2beta1.SessionProto.internal_static_google_cloud_dialogflow_v2beta1_InputAudioConfig_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.dialogflow.v2beta1.SessionProto.internal_static_google_cloud_dialogflow_v2beta1_InputAudioConfig_fieldAccessorTable
@@ -131,6 +139,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.cloud.dialogflow.v2beta1.AudioEncoding audio_encoding = 1;</code>
    */
   public com.google.cloud.dialogflow.v2beta1.AudioEncoding getAudioEncoding() {
+    @SuppressWarnings("deprecation")
     com.google.cloud.dialogflow.v2beta1.AudioEncoding result = com.google.cloud.dialogflow.v2beta1.AudioEncoding.valueOf(audioEncoding_);
     return result == null ? com.google.cloud.dialogflow.v2beta1.AudioEncoding.UNRECOGNIZED : result;
   }
@@ -140,8 +149,10 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Required. Sample rate (in Hertz) of the audio content sent in the query.
-   * Refer to [Cloud Speech API documentation](/speech/docs/basics) for more
-   * details.
+   * Refer to
+   * [Cloud Speech API
+   * documentation](https://cloud.google.com/speech-to-text/docs/basics) for
+   * more details.
    * </pre>
    *
    * <code>int32 sample_rate_hertz = 2;</code>
@@ -206,7 +217,9 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Optional. The collection of phrase hints which are used to boost accuracy
    * of speech recognition.
-   * Refer to [Cloud Speech API documentation](/speech/docs/basics#phrase-hints)
+   * Refer to
+   * [Cloud Speech API
+   * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
    * for more details.
    * </pre>
    *
@@ -220,7 +233,9 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Optional. The collection of phrase hints which are used to boost accuracy
    * of speech recognition.
-   * Refer to [Cloud Speech API documentation](/speech/docs/basics#phrase-hints)
+   * Refer to
+   * [Cloud Speech API
+   * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
    * for more details.
    * </pre>
    *
@@ -233,7 +248,9 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Optional. The collection of phrase hints which are used to boost accuracy
    * of speech recognition.
-   * Refer to [Cloud Speech API documentation](/speech/docs/basics#phrase-hints)
+   * Refer to
+   * [Cloud Speech API
+   * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
    * for more details.
    * </pre>
    *
@@ -246,7 +263,9 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Optional. The collection of phrase hints which are used to boost accuracy
    * of speech recognition.
-   * Refer to [Cloud Speech API documentation](/speech/docs/basics#phrase-hints)
+   * Refer to
+   * [Cloud Speech API
+   * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
    * for more details.
    * </pre>
    *
@@ -257,7 +276,70 @@ private static final long serialVersionUID = 0L;
     return phraseHints_.getByteString(index);
   }
 
+  public static final int MODEL_FIELD_NUMBER = 7;
+  private volatile java.lang.Object model_;
+  /**
+   * <pre>
+   * Optional. Which Speech model to select for the given request. Select the
+   * model best suited to your domain to get best results. If a model is not
+   * explicitly specified, then we auto-select a model based on the parameters
+   * in the InputAudioConfig.
+   * If enhanced speech model is enabled for the agent and an enhanced
+   * version of the specified model for the language does not exist, then the
+   * speech is recognized using the standard version of the specified model.
+   * Refer to
+   * [Cloud Speech API
+   * documentation](https://cloud.google.com/speech-to-text/docs/basics#select-model)
+   * for more details.
+   * </pre>
+   *
+   * <code>string model = 7;</code>
+   */
+  public java.lang.String getModel() {
+    java.lang.Object ref = model_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      model_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Optional. Which Speech model to select for the given request. Select the
+   * model best suited to your domain to get best results. If a model is not
+   * explicitly specified, then we auto-select a model based on the parameters
+   * in the InputAudioConfig.
+   * If enhanced speech model is enabled for the agent and an enhanced
+   * version of the specified model for the language does not exist, then the
+   * speech is recognized using the standard version of the specified model.
+   * Refer to
+   * [Cloud Speech API
+   * documentation](https://cloud.google.com/speech-to-text/docs/basics#select-model)
+   * for more details.
+   * </pre>
+   *
+   * <code>string model = 7;</code>
+   */
+  public com.google.protobuf.ByteString
+      getModelBytes() {
+    java.lang.Object ref = model_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      model_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -267,6 +349,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
+  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (audioEncoding_ != com.google.cloud.dialogflow.v2beta1.AudioEncoding.AUDIO_ENCODING_UNSPECIFIED.getNumber()) {
@@ -281,9 +364,13 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < phraseHints_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, phraseHints_.getRaw(i));
     }
+    if (!getModelBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, model_);
+    }
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -308,6 +395,9 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getPhraseHintsList().size();
     }
+    if (!getModelBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, model_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -331,6 +421,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getLanguageCode());
     result = result && getPhraseHintsList()
         .equals(other.getPhraseHintsList());
+    result = result && getModel()
+        .equals(other.getModel());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -352,6 +444,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + PHRASE_HINTS_FIELD_NUMBER;
       hash = (53 * hash) + getPhraseHintsList().hashCode();
     }
+    hash = (37 * hash) + MODEL_FIELD_NUMBER;
+    hash = (53 * hash) + getModel().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -427,6 +521,7 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
+  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
@@ -434,6 +529,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder(com.google.cloud.dialogflow.v2beta1.InputAudioConfig prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
@@ -461,6 +557,7 @@ private static final long serialVersionUID = 0L;
       return com.google.cloud.dialogflow.v2beta1.SessionProto.internal_static_google_cloud_dialogflow_v2beta1_InputAudioConfig_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.dialogflow.v2beta1.SessionProto.internal_static_google_cloud_dialogflow_v2beta1_InputAudioConfig_fieldAccessorTable
@@ -483,6 +580,7 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
       }
     }
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       audioEncoding_ = 0;
@@ -493,18 +591,23 @@ private static final long serialVersionUID = 0L;
 
       phraseHints_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000008);
+      model_ = "";
+
       return this;
     }
 
+    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
       return com.google.cloud.dialogflow.v2beta1.SessionProto.internal_static_google_cloud_dialogflow_v2beta1_InputAudioConfig_descriptor;
     }
 
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2beta1.InputAudioConfig getDefaultInstanceForType() {
       return com.google.cloud.dialogflow.v2beta1.InputAudioConfig.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2beta1.InputAudioConfig build() {
       com.google.cloud.dialogflow.v2beta1.InputAudioConfig result = buildPartial();
       if (!result.isInitialized()) {
@@ -513,6 +616,7 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2beta1.InputAudioConfig buildPartial() {
       com.google.cloud.dialogflow.v2beta1.InputAudioConfig result = new com.google.cloud.dialogflow.v2beta1.InputAudioConfig(this);
       int from_bitField0_ = bitField0_;
@@ -525,37 +629,45 @@ private static final long serialVersionUID = 0L;
         bitField0_ = (bitField0_ & ~0x00000008);
       }
       result.phraseHints_ = phraseHints_;
+      result.model_ = model_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.dialogflow.v2beta1.InputAudioConfig) {
         return mergeFrom((com.google.cloud.dialogflow.v2beta1.InputAudioConfig)other);
@@ -587,15 +699,21 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       }
+      if (!other.getModel().isEmpty()) {
+        model_ = other.model_;
+        onChanged();
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -646,6 +764,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.dialogflow.v2beta1.AudioEncoding audio_encoding = 1;</code>
      */
     public com.google.cloud.dialogflow.v2beta1.AudioEncoding getAudioEncoding() {
+      @SuppressWarnings("deprecation")
       com.google.cloud.dialogflow.v2beta1.AudioEncoding result = com.google.cloud.dialogflow.v2beta1.AudioEncoding.valueOf(audioEncoding_);
       return result == null ? com.google.cloud.dialogflow.v2beta1.AudioEncoding.UNRECOGNIZED : result;
     }
@@ -683,8 +802,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. Sample rate (in Hertz) of the audio content sent in the query.
-     * Refer to [Cloud Speech API documentation](/speech/docs/basics) for more
-     * details.
+     * Refer to
+     * [Cloud Speech API
+     * documentation](https://cloud.google.com/speech-to-text/docs/basics) for
+     * more details.
      * </pre>
      *
      * <code>int32 sample_rate_hertz = 2;</code>
@@ -695,8 +816,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. Sample rate (in Hertz) of the audio content sent in the query.
-     * Refer to [Cloud Speech API documentation](/speech/docs/basics) for more
-     * details.
+     * Refer to
+     * [Cloud Speech API
+     * documentation](https://cloud.google.com/speech-to-text/docs/basics) for
+     * more details.
      * </pre>
      *
      * <code>int32 sample_rate_hertz = 2;</code>
@@ -710,8 +833,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. Sample rate (in Hertz) of the audio content sent in the query.
-     * Refer to [Cloud Speech API documentation](/speech/docs/basics) for more
-     * details.
+     * Refer to
+     * [Cloud Speech API
+     * documentation](https://cloud.google.com/speech-to-text/docs/basics) for
+     * more details.
      * </pre>
      *
      * <code>int32 sample_rate_hertz = 2;</code>
@@ -843,7 +968,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Optional. The collection of phrase hints which are used to boost accuracy
      * of speech recognition.
-     * Refer to [Cloud Speech API documentation](/speech/docs/basics#phrase-hints)
+     * Refer to
+     * [Cloud Speech API
+     * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
      * for more details.
      * </pre>
      *
@@ -857,7 +984,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Optional. The collection of phrase hints which are used to boost accuracy
      * of speech recognition.
-     * Refer to [Cloud Speech API documentation](/speech/docs/basics#phrase-hints)
+     * Refer to
+     * [Cloud Speech API
+     * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
      * for more details.
      * </pre>
      *
@@ -870,7 +999,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Optional. The collection of phrase hints which are used to boost accuracy
      * of speech recognition.
-     * Refer to [Cloud Speech API documentation](/speech/docs/basics#phrase-hints)
+     * Refer to
+     * [Cloud Speech API
+     * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
      * for more details.
      * </pre>
      *
@@ -883,7 +1014,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Optional. The collection of phrase hints which are used to boost accuracy
      * of speech recognition.
-     * Refer to [Cloud Speech API documentation](/speech/docs/basics#phrase-hints)
+     * Refer to
+     * [Cloud Speech API
+     * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
      * for more details.
      * </pre>
      *
@@ -897,7 +1030,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Optional. The collection of phrase hints which are used to boost accuracy
      * of speech recognition.
-     * Refer to [Cloud Speech API documentation](/speech/docs/basics#phrase-hints)
+     * Refer to
+     * [Cloud Speech API
+     * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
      * for more details.
      * </pre>
      *
@@ -917,7 +1052,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Optional. The collection of phrase hints which are used to boost accuracy
      * of speech recognition.
-     * Refer to [Cloud Speech API documentation](/speech/docs/basics#phrase-hints)
+     * Refer to
+     * [Cloud Speech API
+     * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
      * for more details.
      * </pre>
      *
@@ -937,7 +1074,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Optional. The collection of phrase hints which are used to boost accuracy
      * of speech recognition.
-     * Refer to [Cloud Speech API documentation](/speech/docs/basics#phrase-hints)
+     * Refer to
+     * [Cloud Speech API
+     * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
      * for more details.
      * </pre>
      *
@@ -955,7 +1094,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Optional. The collection of phrase hints which are used to boost accuracy
      * of speech recognition.
-     * Refer to [Cloud Speech API documentation](/speech/docs/basics#phrase-hints)
+     * Refer to
+     * [Cloud Speech API
+     * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
      * for more details.
      * </pre>
      *
@@ -971,7 +1112,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Optional. The collection of phrase hints which are used to boost accuracy
      * of speech recognition.
-     * Refer to [Cloud Speech API documentation](/speech/docs/basics#phrase-hints)
+     * Refer to
+     * [Cloud Speech API
+     * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
      * for more details.
      * </pre>
      *
@@ -988,11 +1131,152 @@ private static final long serialVersionUID = 0L;
       onChanged();
       return this;
     }
+
+    private java.lang.Object model_ = "";
+    /**
+     * <pre>
+     * Optional. Which Speech model to select for the given request. Select the
+     * model best suited to your domain to get best results. If a model is not
+     * explicitly specified, then we auto-select a model based on the parameters
+     * in the InputAudioConfig.
+     * If enhanced speech model is enabled for the agent and an enhanced
+     * version of the specified model for the language does not exist, then the
+     * speech is recognized using the standard version of the specified model.
+     * Refer to
+     * [Cloud Speech API
+     * documentation](https://cloud.google.com/speech-to-text/docs/basics#select-model)
+     * for more details.
+     * </pre>
+     *
+     * <code>string model = 7;</code>
+     */
+    public java.lang.String getModel() {
+      java.lang.Object ref = model_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        model_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Optional. Which Speech model to select for the given request. Select the
+     * model best suited to your domain to get best results. If a model is not
+     * explicitly specified, then we auto-select a model based on the parameters
+     * in the InputAudioConfig.
+     * If enhanced speech model is enabled for the agent and an enhanced
+     * version of the specified model for the language does not exist, then the
+     * speech is recognized using the standard version of the specified model.
+     * Refer to
+     * [Cloud Speech API
+     * documentation](https://cloud.google.com/speech-to-text/docs/basics#select-model)
+     * for more details.
+     * </pre>
+     *
+     * <code>string model = 7;</code>
+     */
+    public com.google.protobuf.ByteString
+        getModelBytes() {
+      java.lang.Object ref = model_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        model_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Optional. Which Speech model to select for the given request. Select the
+     * model best suited to your domain to get best results. If a model is not
+     * explicitly specified, then we auto-select a model based on the parameters
+     * in the InputAudioConfig.
+     * If enhanced speech model is enabled for the agent and an enhanced
+     * version of the specified model for the language does not exist, then the
+     * speech is recognized using the standard version of the specified model.
+     * Refer to
+     * [Cloud Speech API
+     * documentation](https://cloud.google.com/speech-to-text/docs/basics#select-model)
+     * for more details.
+     * </pre>
+     *
+     * <code>string model = 7;</code>
+     */
+    public Builder setModel(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      model_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Which Speech model to select for the given request. Select the
+     * model best suited to your domain to get best results. If a model is not
+     * explicitly specified, then we auto-select a model based on the parameters
+     * in the InputAudioConfig.
+     * If enhanced speech model is enabled for the agent and an enhanced
+     * version of the specified model for the language does not exist, then the
+     * speech is recognized using the standard version of the specified model.
+     * Refer to
+     * [Cloud Speech API
+     * documentation](https://cloud.google.com/speech-to-text/docs/basics#select-model)
+     * for more details.
+     * </pre>
+     *
+     * <code>string model = 7;</code>
+     */
+    public Builder clearModel() {
+      
+      model_ = getDefaultInstance().getModel();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Which Speech model to select for the given request. Select the
+     * model best suited to your domain to get best results. If a model is not
+     * explicitly specified, then we auto-select a model based on the parameters
+     * in the InputAudioConfig.
+     * If enhanced speech model is enabled for the agent and an enhanced
+     * version of the specified model for the language does not exist, then the
+     * speech is recognized using the standard version of the specified model.
+     * Refer to
+     * [Cloud Speech API
+     * documentation](https://cloud.google.com/speech-to-text/docs/basics#select-model)
+     * for more details.
+     * </pre>
+     *
+     * <code>string model = 7;</code>
+     */
+    public Builder setModelBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      model_ = value;
+      onChanged();
+      return this;
+    }
+    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -1014,6 +1298,7 @@ private static final long serialVersionUID = 0L;
 
   private static final com.google.protobuf.Parser<InputAudioConfig>
       PARSER = new com.google.protobuf.AbstractParser<InputAudioConfig>() {
+    @java.lang.Override
     public InputAudioConfig parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1031,6 +1316,7 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.InputAudioConfig getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }

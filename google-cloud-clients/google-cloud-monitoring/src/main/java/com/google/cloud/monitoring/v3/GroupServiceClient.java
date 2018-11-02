@@ -48,7 +48,7 @@ import javax.annotation.Generated;
 // AUTO-GENERATED DOCUMENTATION AND SERVICE
 /**
  * Service Description: The Group API lets you inspect and manage your
- * [groups](google.monitoring.v3.Group).
+ * [groups](#google.monitoring.v3.Group).
  *
  * <p>A group is a named filter that is used to identify a collection of monitored resources. Groups
  * are typically used to mirror the physical and/or logical topology of the environment. Because
@@ -120,7 +120,6 @@ import javax.annotation.Generated;
  * </pre>
  */
 @Generated("by gapic-generator")
-@BetaApi
 public class GroupServiceClient implements BackgroundResource {
   private final GroupServiceSettings settings;
   private final GroupServiceStub stub;
@@ -318,7 +317,7 @@ public class GroupServiceClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final Group getGroup(GetGroupRequest request) {
+  public final Group getGroup(GetGroupRequest request) {
     return getGroupCallable().call(request);
   }
 
@@ -584,7 +583,7 @@ public class GroupServiceClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final void deleteGroup(DeleteGroupRequest request) {
+  public final void deleteGroup(DeleteGroupRequest request) {
     deleteGroupCallable().call(request);
   }
 

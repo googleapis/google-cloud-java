@@ -18,7 +18,6 @@ import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.resourcenames.ResourceName;
-import com.google.api.resourcenames.ResourceNameType;
 import java.util.Map;
 import java.util.ArrayList;
 import java.util.List;
@@ -120,14 +119,6 @@ public class LocationName implements ResourceName {
 
   public String getFieldValue(String fieldName) {
     return getFieldValuesMap().get(fieldName);
-  }
-
-  /**
-   * @deprecated This method is only present to satisfy the ResourceName interface.
-   */
-  @Deprecated
-  public ResourceNameType getType() {
-    throw new UnsupportedOperationException("LocationName.getType() not supported");
   }
 
   @Override

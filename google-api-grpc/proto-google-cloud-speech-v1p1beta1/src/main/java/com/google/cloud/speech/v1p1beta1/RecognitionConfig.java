@@ -23,12 +23,18 @@ private static final long serialVersionUID = 0L;
   private RecognitionConfig() {
     encoding_ = 0;
     sampleRateHertz_ = 0;
+    audioChannelCount_ = 0;
+    enableSeparateRecognitionPerChannel_ = false;
     languageCode_ = "";
+    alternativeLanguageCodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     maxAlternatives_ = 0;
     profanityFilter_ = false;
     speechContexts_ = java.util.Collections.emptyList();
     enableWordTimeOffsets_ = false;
+    enableWordConfidence_ = false;
     enableAutomaticPunctuation_ = false;
+    enableSpeakerDiarization_ = false;
+    diarizationSpeakerCount_ = 0;
     model_ = "";
     useEnhanced_ = false;
   }
@@ -57,13 +63,6 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
           case 8: {
             int rawValue = input.readEnum();
 
@@ -92,12 +91,17 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 50: {
-            if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+            if (!((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
               speechContexts_ = new java.util.ArrayList<com.google.cloud.speech.v1p1beta1.SpeechContext>();
-              mutable_bitField0_ |= 0x00000020;
+              mutable_bitField0_ |= 0x00000100;
             }
             speechContexts_.add(
                 input.readMessage(com.google.cloud.speech.v1p1beta1.SpeechContext.parser(), extensionRegistry));
+            break;
+          }
+          case 56: {
+
+            audioChannelCount_ = input.readInt32();
             break;
           }
           case 64: {
@@ -123,6 +127,11 @@ private static final long serialVersionUID = 0L;
             enableAutomaticPunctuation_ = input.readBool();
             break;
           }
+          case 96: {
+
+            enableSeparateRecognitionPerChannel_ = input.readBool();
+            break;
+          }
           case 106: {
             java.lang.String s = input.readStringRequireUtf8();
 
@@ -134,6 +143,37 @@ private static final long serialVersionUID = 0L;
             useEnhanced_ = input.readBool();
             break;
           }
+          case 120: {
+
+            enableWordConfidence_ = input.readBool();
+            break;
+          }
+          case 128: {
+
+            enableSpeakerDiarization_ = input.readBool();
+            break;
+          }
+          case 136: {
+
+            diarizationSpeakerCount_ = input.readInt32();
+            break;
+          }
+          case 146: {
+            java.lang.String s = input.readStringRequireUtf8();
+            if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+              alternativeLanguageCodes_ = new com.google.protobuf.LazyStringArrayList();
+              mutable_bitField0_ |= 0x00000020;
+            }
+            alternativeLanguageCodes_.add(s);
+            break;
+          }
+          default: {
+            if (!parseUnknownFieldProto3(
+                input, unknownFields, extensionRegistry, tag)) {
+              done = true;
+            }
+            break;
+          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -142,8 +182,11 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+      if (((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
         speechContexts_ = java.util.Collections.unmodifiableList(speechContexts_);
+      }
+      if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+        alternativeLanguageCodes_ = alternativeLanguageCodes_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -154,6 +197,7 @@ private static final long serialVersionUID = 0L;
     return com.google.cloud.speech.v1p1beta1.SpeechProto.internal_static_google_cloud_speech_v1p1beta1_RecognitionConfig_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.speech.v1p1beta1.SpeechProto.internal_static_google_cloud_speech_v1p1beta1_RecognitionConfig_fieldAccessorTable
@@ -460,6 +504,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding encoding = 1;</code>
    */
   public com.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding getEncoding() {
+    @SuppressWarnings("deprecation")
     com.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding result = com.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding.valueOf(encoding_);
     return result == null ? com.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding.UNRECOGNIZED : result;
   }
@@ -481,6 +526,45 @@ private static final long serialVersionUID = 0L;
    */
   public int getSampleRateHertz() {
     return sampleRateHertz_;
+  }
+
+  public static final int AUDIO_CHANNEL_COUNT_FIELD_NUMBER = 7;
+  private int audioChannelCount_;
+  /**
+   * <pre>
+   * *Optional* The number of channels in the input audio data.
+   * ONLY set this for MULTI-CHANNEL recognition.
+   * Valid values for LINEAR16 and FLAC are `1`-`8`.
+   * Valid values for OGG_OPUS are '1'-'254'.
+   * Valid value for MULAW, AMR, AMR_WB and SPEEX_WITH_HEADER_BYTE is only `1`.
+   * If `0` or omitted, defaults to one channel (mono).
+   * NOTE: We only recognize the first channel by default.
+   * To perform independent recognition on each channel set
+   * enable_separate_recognition_per_channel to 'true'.
+   * </pre>
+   *
+   * <code>int32 audio_channel_count = 7;</code>
+   */
+  public int getAudioChannelCount() {
+    return audioChannelCount_;
+  }
+
+  public static final int ENABLE_SEPARATE_RECOGNITION_PER_CHANNEL_FIELD_NUMBER = 12;
+  private boolean enableSeparateRecognitionPerChannel_;
+  /**
+   * <pre>
+   * This needs to be set to ‘true’ explicitly and audio_channel_count &gt; 1
+   * to get each channel recognized separately. The recognition result will
+   * contain a channel_tag field to state which channel that result belongs to.
+   * If this is not ‘true’, we will only recognize the first channel.
+   * NOTE: The request is also billed cumulatively for all channels recognized:
+   *     (audio_channel_count times the audio length)
+   * </pre>
+   *
+   * <code>bool enable_separate_recognition_per_channel = 12;</code>
+   */
+  public boolean getEnableSeparateRecognitionPerChannel() {
+    return enableSeparateRecognitionPerChannel_;
   }
 
   public static final int LANGUAGE_CODE_FIELD_NUMBER = 3;
@@ -531,6 +615,95 @@ private static final long serialVersionUID = 0L;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int ALTERNATIVE_LANGUAGE_CODES_FIELD_NUMBER = 18;
+  private com.google.protobuf.LazyStringList alternativeLanguageCodes_;
+  /**
+   * <pre>
+   * *Optional* A list of up to 3 additional
+   * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tags,
+   * listing possible alternative languages of the supplied audio.
+   * See [Language Support](https://cloud.google.com/speech/docs/languages)
+   * for a list of the currently supported language codes.
+   * If alternative languages are listed, recognition result will contain
+   * recognition in the most likely language detected including the main
+   * language_code. The recognition result will include the language tag
+   * of the language detected in the audio.
+   * NOTE: This feature is only supported for Voice Command and Voice Search
+   * use cases and performance may vary for other use cases (e.g., phone call
+   * transcription).
+   * </pre>
+   *
+   * <code>repeated string alternative_language_codes = 18;</code>
+   */
+  public com.google.protobuf.ProtocolStringList
+      getAlternativeLanguageCodesList() {
+    return alternativeLanguageCodes_;
+  }
+  /**
+   * <pre>
+   * *Optional* A list of up to 3 additional
+   * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tags,
+   * listing possible alternative languages of the supplied audio.
+   * See [Language Support](https://cloud.google.com/speech/docs/languages)
+   * for a list of the currently supported language codes.
+   * If alternative languages are listed, recognition result will contain
+   * recognition in the most likely language detected including the main
+   * language_code. The recognition result will include the language tag
+   * of the language detected in the audio.
+   * NOTE: This feature is only supported for Voice Command and Voice Search
+   * use cases and performance may vary for other use cases (e.g., phone call
+   * transcription).
+   * </pre>
+   *
+   * <code>repeated string alternative_language_codes = 18;</code>
+   */
+  public int getAlternativeLanguageCodesCount() {
+    return alternativeLanguageCodes_.size();
+  }
+  /**
+   * <pre>
+   * *Optional* A list of up to 3 additional
+   * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tags,
+   * listing possible alternative languages of the supplied audio.
+   * See [Language Support](https://cloud.google.com/speech/docs/languages)
+   * for a list of the currently supported language codes.
+   * If alternative languages are listed, recognition result will contain
+   * recognition in the most likely language detected including the main
+   * language_code. The recognition result will include the language tag
+   * of the language detected in the audio.
+   * NOTE: This feature is only supported for Voice Command and Voice Search
+   * use cases and performance may vary for other use cases (e.g., phone call
+   * transcription).
+   * </pre>
+   *
+   * <code>repeated string alternative_language_codes = 18;</code>
+   */
+  public java.lang.String getAlternativeLanguageCodes(int index) {
+    return alternativeLanguageCodes_.get(index);
+  }
+  /**
+   * <pre>
+   * *Optional* A list of up to 3 additional
+   * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tags,
+   * listing possible alternative languages of the supplied audio.
+   * See [Language Support](https://cloud.google.com/speech/docs/languages)
+   * for a list of the currently supported language codes.
+   * If alternative languages are listed, recognition result will contain
+   * recognition in the most likely language detected including the main
+   * language_code. The recognition result will include the language tag
+   * of the language detected in the audio.
+   * NOTE: This feature is only supported for Voice Command and Voice Search
+   * use cases and performance may vary for other use cases (e.g., phone call
+   * transcription).
+   * </pre>
+   *
+   * <code>repeated string alternative_language_codes = 18;</code>
+   */
+  public com.google.protobuf.ByteString
+      getAlternativeLanguageCodesBytes(int index) {
+    return alternativeLanguageCodes_.getByteString(index);
   }
 
   public static final int MAX_ALTERNATIVES_FIELD_NUMBER = 4;
@@ -638,6 +811,21 @@ private static final long serialVersionUID = 0L;
     return enableWordTimeOffsets_;
   }
 
+  public static final int ENABLE_WORD_CONFIDENCE_FIELD_NUMBER = 15;
+  private boolean enableWordConfidence_;
+  /**
+   * <pre>
+   * *Optional* If `true`, the top result includes a list of words and the
+   * confidence for those words. If `false`, no word-level confidence
+   * information is returned. The default is `false`.
+   * </pre>
+   *
+   * <code>bool enable_word_confidence = 15;</code>
+   */
+  public boolean getEnableWordConfidence() {
+    return enableWordConfidence_;
+  }
+
   public static final int ENABLE_AUTOMATIC_PUNCTUATION_FIELD_NUMBER = 11;
   private boolean enableAutomaticPunctuation_;
   /**
@@ -655,6 +843,41 @@ private static final long serialVersionUID = 0L;
    */
   public boolean getEnableAutomaticPunctuation() {
     return enableAutomaticPunctuation_;
+  }
+
+  public static final int ENABLE_SPEAKER_DIARIZATION_FIELD_NUMBER = 16;
+  private boolean enableSpeakerDiarization_;
+  /**
+   * <pre>
+   * *Optional* If 'true', enables speaker detection for each recognized word in
+   * the top alternative of the recognition result using a speaker_tag provided
+   * in the WordInfo.
+   * Note: When this is true, we send all the words from the beginning of the
+   * audio for the top alternative in every consecutive responses.
+   * This is done in order to improve our speaker tags as our models learn to
+   * identify the speakers in the conversation over time.
+   * </pre>
+   *
+   * <code>bool enable_speaker_diarization = 16;</code>
+   */
+  public boolean getEnableSpeakerDiarization() {
+    return enableSpeakerDiarization_;
+  }
+
+  public static final int DIARIZATION_SPEAKER_COUNT_FIELD_NUMBER = 17;
+  private int diarizationSpeakerCount_;
+  /**
+   * <pre>
+   * *Optional*
+   * If set, specifies the estimated number of speakers in the conversation.
+   * If not set, defaults to '2'.
+   * Ignored unless enable_speaker_diarization is set to true."
+   * </pre>
+   *
+   * <code>int32 diarization_speaker_count = 17;</code>
+   */
+  public int getDiarizationSpeakerCount() {
+    return diarizationSpeakerCount_;
   }
 
   public static final int METADATA_FIELD_NUMBER = 9;
@@ -817,6 +1040,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -826,6 +1050,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
+  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (encoding_ != com.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding.ENCODING_UNSPECIFIED.getNumber()) {
@@ -846,6 +1071,9 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < speechContexts_.size(); i++) {
       output.writeMessage(6, speechContexts_.get(i));
     }
+    if (audioChannelCount_ != 0) {
+      output.writeInt32(7, audioChannelCount_);
+    }
     if (enableWordTimeOffsets_ != false) {
       output.writeBool(8, enableWordTimeOffsets_);
     }
@@ -855,15 +1083,31 @@ private static final long serialVersionUID = 0L;
     if (enableAutomaticPunctuation_ != false) {
       output.writeBool(11, enableAutomaticPunctuation_);
     }
+    if (enableSeparateRecognitionPerChannel_ != false) {
+      output.writeBool(12, enableSeparateRecognitionPerChannel_);
+    }
     if (!getModelBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 13, model_);
     }
     if (useEnhanced_ != false) {
       output.writeBool(14, useEnhanced_);
     }
+    if (enableWordConfidence_ != false) {
+      output.writeBool(15, enableWordConfidence_);
+    }
+    if (enableSpeakerDiarization_ != false) {
+      output.writeBool(16, enableSpeakerDiarization_);
+    }
+    if (diarizationSpeakerCount_ != 0) {
+      output.writeInt32(17, diarizationSpeakerCount_);
+    }
+    for (int i = 0; i < alternativeLanguageCodes_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 18, alternativeLanguageCodes_.getRaw(i));
+    }
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -892,6 +1136,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(6, speechContexts_.get(i));
     }
+    if (audioChannelCount_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(7, audioChannelCount_);
+    }
     if (enableWordTimeOffsets_ != false) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(8, enableWordTimeOffsets_);
@@ -904,12 +1152,36 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(11, enableAutomaticPunctuation_);
     }
+    if (enableSeparateRecognitionPerChannel_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(12, enableSeparateRecognitionPerChannel_);
+    }
     if (!getModelBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, model_);
     }
     if (useEnhanced_ != false) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(14, useEnhanced_);
+    }
+    if (enableWordConfidence_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(15, enableWordConfidence_);
+    }
+    if (enableSpeakerDiarization_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(16, enableSpeakerDiarization_);
+    }
+    if (diarizationSpeakerCount_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(17, diarizationSpeakerCount_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < alternativeLanguageCodes_.size(); i++) {
+        dataSize += computeStringSizeNoTag(alternativeLanguageCodes_.getRaw(i));
+      }
+      size += dataSize;
+      size += 2 * getAlternativeLanguageCodesList().size();
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -930,8 +1202,14 @@ private static final long serialVersionUID = 0L;
     result = result && encoding_ == other.encoding_;
     result = result && (getSampleRateHertz()
         == other.getSampleRateHertz());
+    result = result && (getAudioChannelCount()
+        == other.getAudioChannelCount());
+    result = result && (getEnableSeparateRecognitionPerChannel()
+        == other.getEnableSeparateRecognitionPerChannel());
     result = result && getLanguageCode()
         .equals(other.getLanguageCode());
+    result = result && getAlternativeLanguageCodesList()
+        .equals(other.getAlternativeLanguageCodesList());
     result = result && (getMaxAlternatives()
         == other.getMaxAlternatives());
     result = result && (getProfanityFilter()
@@ -940,8 +1218,14 @@ private static final long serialVersionUID = 0L;
         .equals(other.getSpeechContextsList());
     result = result && (getEnableWordTimeOffsets()
         == other.getEnableWordTimeOffsets());
+    result = result && (getEnableWordConfidence()
+        == other.getEnableWordConfidence());
     result = result && (getEnableAutomaticPunctuation()
         == other.getEnableAutomaticPunctuation());
+    result = result && (getEnableSpeakerDiarization()
+        == other.getEnableSpeakerDiarization());
+    result = result && (getDiarizationSpeakerCount()
+        == other.getDiarizationSpeakerCount());
     result = result && (hasMetadata() == other.hasMetadata());
     if (hasMetadata()) {
       result = result && getMetadata()
@@ -966,8 +1250,17 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + encoding_;
     hash = (37 * hash) + SAMPLE_RATE_HERTZ_FIELD_NUMBER;
     hash = (53 * hash) + getSampleRateHertz();
+    hash = (37 * hash) + AUDIO_CHANNEL_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + getAudioChannelCount();
+    hash = (37 * hash) + ENABLE_SEPARATE_RECOGNITION_PER_CHANNEL_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getEnableSeparateRecognitionPerChannel());
     hash = (37 * hash) + LANGUAGE_CODE_FIELD_NUMBER;
     hash = (53 * hash) + getLanguageCode().hashCode();
+    if (getAlternativeLanguageCodesCount() > 0) {
+      hash = (37 * hash) + ALTERNATIVE_LANGUAGE_CODES_FIELD_NUMBER;
+      hash = (53 * hash) + getAlternativeLanguageCodesList().hashCode();
+    }
     hash = (37 * hash) + MAX_ALTERNATIVES_FIELD_NUMBER;
     hash = (53 * hash) + getMaxAlternatives();
     hash = (37 * hash) + PROFANITY_FILTER_FIELD_NUMBER;
@@ -980,9 +1273,17 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + ENABLE_WORD_TIME_OFFSETS_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getEnableWordTimeOffsets());
+    hash = (37 * hash) + ENABLE_WORD_CONFIDENCE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getEnableWordConfidence());
     hash = (37 * hash) + ENABLE_AUTOMATIC_PUNCTUATION_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getEnableAutomaticPunctuation());
+    hash = (37 * hash) + ENABLE_SPEAKER_DIARIZATION_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getEnableSpeakerDiarization());
+    hash = (37 * hash) + DIARIZATION_SPEAKER_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + getDiarizationSpeakerCount();
     if (hasMetadata()) {
       hash = (37 * hash) + METADATA_FIELD_NUMBER;
       hash = (53 * hash) + getMetadata().hashCode();
@@ -1067,6 +1368,7 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
+  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
@@ -1074,6 +1376,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder(com.google.cloud.speech.v1p1beta1.RecognitionConfig prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
@@ -1102,6 +1405,7 @@ private static final long serialVersionUID = 0L;
       return com.google.cloud.speech.v1p1beta1.SpeechProto.internal_static_google_cloud_speech_v1p1beta1_RecognitionConfig_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.speech.v1p1beta1.SpeechProto.internal_static_google_cloud_speech_v1p1beta1_RecognitionConfig_fieldAccessorTable
@@ -1125,27 +1429,40 @@ private static final long serialVersionUID = 0L;
         getSpeechContextsFieldBuilder();
       }
     }
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       encoding_ = 0;
 
       sampleRateHertz_ = 0;
 
+      audioChannelCount_ = 0;
+
+      enableSeparateRecognitionPerChannel_ = false;
+
       languageCode_ = "";
 
+      alternativeLanguageCodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000020);
       maxAlternatives_ = 0;
 
       profanityFilter_ = false;
 
       if (speechContextsBuilder_ == null) {
         speechContexts_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000100);
       } else {
         speechContextsBuilder_.clear();
       }
       enableWordTimeOffsets_ = false;
 
+      enableWordConfidence_ = false;
+
       enableAutomaticPunctuation_ = false;
+
+      enableSpeakerDiarization_ = false;
+
+      diarizationSpeakerCount_ = 0;
 
       if (metadataBuilder_ == null) {
         metadata_ = null;
@@ -1160,15 +1477,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
       return com.google.cloud.speech.v1p1beta1.SpeechProto.internal_static_google_cloud_speech_v1p1beta1_RecognitionConfig_descriptor;
     }
 
+    @java.lang.Override
     public com.google.cloud.speech.v1p1beta1.RecognitionConfig getDefaultInstanceForType() {
       return com.google.cloud.speech.v1p1beta1.RecognitionConfig.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.cloud.speech.v1p1beta1.RecognitionConfig build() {
       com.google.cloud.speech.v1p1beta1.RecognitionConfig result = buildPartial();
       if (!result.isInitialized()) {
@@ -1177,26 +1497,37 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.cloud.speech.v1p1beta1.RecognitionConfig buildPartial() {
       com.google.cloud.speech.v1p1beta1.RecognitionConfig result = new com.google.cloud.speech.v1p1beta1.RecognitionConfig(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       result.encoding_ = encoding_;
       result.sampleRateHertz_ = sampleRateHertz_;
+      result.audioChannelCount_ = audioChannelCount_;
+      result.enableSeparateRecognitionPerChannel_ = enableSeparateRecognitionPerChannel_;
       result.languageCode_ = languageCode_;
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        alternativeLanguageCodes_ = alternativeLanguageCodes_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000020);
+      }
+      result.alternativeLanguageCodes_ = alternativeLanguageCodes_;
       result.maxAlternatives_ = maxAlternatives_;
       result.profanityFilter_ = profanityFilter_;
       if (speechContextsBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        if (((bitField0_ & 0x00000100) == 0x00000100)) {
           speechContexts_ = java.util.Collections.unmodifiableList(speechContexts_);
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000100);
         }
         result.speechContexts_ = speechContexts_;
       } else {
         result.speechContexts_ = speechContextsBuilder_.build();
       }
       result.enableWordTimeOffsets_ = enableWordTimeOffsets_;
+      result.enableWordConfidence_ = enableWordConfidence_;
       result.enableAutomaticPunctuation_ = enableAutomaticPunctuation_;
+      result.enableSpeakerDiarization_ = enableSpeakerDiarization_;
+      result.diarizationSpeakerCount_ = diarizationSpeakerCount_;
       if (metadataBuilder_ == null) {
         result.metadata_ = metadata_;
       } else {
@@ -1209,32 +1540,39 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.speech.v1p1beta1.RecognitionConfig) {
         return mergeFrom((com.google.cloud.speech.v1p1beta1.RecognitionConfig)other);
@@ -1252,8 +1590,24 @@ private static final long serialVersionUID = 0L;
       if (other.getSampleRateHertz() != 0) {
         setSampleRateHertz(other.getSampleRateHertz());
       }
+      if (other.getAudioChannelCount() != 0) {
+        setAudioChannelCount(other.getAudioChannelCount());
+      }
+      if (other.getEnableSeparateRecognitionPerChannel() != false) {
+        setEnableSeparateRecognitionPerChannel(other.getEnableSeparateRecognitionPerChannel());
+      }
       if (!other.getLanguageCode().isEmpty()) {
         languageCode_ = other.languageCode_;
+        onChanged();
+      }
+      if (!other.alternativeLanguageCodes_.isEmpty()) {
+        if (alternativeLanguageCodes_.isEmpty()) {
+          alternativeLanguageCodes_ = other.alternativeLanguageCodes_;
+          bitField0_ = (bitField0_ & ~0x00000020);
+        } else {
+          ensureAlternativeLanguageCodesIsMutable();
+          alternativeLanguageCodes_.addAll(other.alternativeLanguageCodes_);
+        }
         onChanged();
       }
       if (other.getMaxAlternatives() != 0) {
@@ -1266,7 +1620,7 @@ private static final long serialVersionUID = 0L;
         if (!other.speechContexts_.isEmpty()) {
           if (speechContexts_.isEmpty()) {
             speechContexts_ = other.speechContexts_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000100);
           } else {
             ensureSpeechContextsIsMutable();
             speechContexts_.addAll(other.speechContexts_);
@@ -1279,7 +1633,7 @@ private static final long serialVersionUID = 0L;
             speechContextsBuilder_.dispose();
             speechContextsBuilder_ = null;
             speechContexts_ = other.speechContexts_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000100);
             speechContextsBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getSpeechContextsFieldBuilder() : null;
@@ -1291,8 +1645,17 @@ private static final long serialVersionUID = 0L;
       if (other.getEnableWordTimeOffsets() != false) {
         setEnableWordTimeOffsets(other.getEnableWordTimeOffsets());
       }
+      if (other.getEnableWordConfidence() != false) {
+        setEnableWordConfidence(other.getEnableWordConfidence());
+      }
       if (other.getEnableAutomaticPunctuation() != false) {
         setEnableAutomaticPunctuation(other.getEnableAutomaticPunctuation());
+      }
+      if (other.getEnableSpeakerDiarization() != false) {
+        setEnableSpeakerDiarization(other.getEnableSpeakerDiarization());
+      }
+      if (other.getDiarizationSpeakerCount() != 0) {
+        setDiarizationSpeakerCount(other.getDiarizationSpeakerCount());
       }
       if (other.hasMetadata()) {
         mergeMetadata(other.getMetadata());
@@ -1309,10 +1672,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1369,6 +1734,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding encoding = 1;</code>
      */
     public com.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding getEncoding() {
+      @SuppressWarnings("deprecation")
       com.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding result = com.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding.valueOf(encoding_);
       return result == null ? com.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding.UNRECOGNIZED : result;
     }
@@ -1458,6 +1824,121 @@ private static final long serialVersionUID = 0L;
     public Builder clearSampleRateHertz() {
       
       sampleRateHertz_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int audioChannelCount_ ;
+    /**
+     * <pre>
+     * *Optional* The number of channels in the input audio data.
+     * ONLY set this for MULTI-CHANNEL recognition.
+     * Valid values for LINEAR16 and FLAC are `1`-`8`.
+     * Valid values for OGG_OPUS are '1'-'254'.
+     * Valid value for MULAW, AMR, AMR_WB and SPEEX_WITH_HEADER_BYTE is only `1`.
+     * If `0` or omitted, defaults to one channel (mono).
+     * NOTE: We only recognize the first channel by default.
+     * To perform independent recognition on each channel set
+     * enable_separate_recognition_per_channel to 'true'.
+     * </pre>
+     *
+     * <code>int32 audio_channel_count = 7;</code>
+     */
+    public int getAudioChannelCount() {
+      return audioChannelCount_;
+    }
+    /**
+     * <pre>
+     * *Optional* The number of channels in the input audio data.
+     * ONLY set this for MULTI-CHANNEL recognition.
+     * Valid values for LINEAR16 and FLAC are `1`-`8`.
+     * Valid values for OGG_OPUS are '1'-'254'.
+     * Valid value for MULAW, AMR, AMR_WB and SPEEX_WITH_HEADER_BYTE is only `1`.
+     * If `0` or omitted, defaults to one channel (mono).
+     * NOTE: We only recognize the first channel by default.
+     * To perform independent recognition on each channel set
+     * enable_separate_recognition_per_channel to 'true'.
+     * </pre>
+     *
+     * <code>int32 audio_channel_count = 7;</code>
+     */
+    public Builder setAudioChannelCount(int value) {
+      
+      audioChannelCount_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * *Optional* The number of channels in the input audio data.
+     * ONLY set this for MULTI-CHANNEL recognition.
+     * Valid values for LINEAR16 and FLAC are `1`-`8`.
+     * Valid values for OGG_OPUS are '1'-'254'.
+     * Valid value for MULAW, AMR, AMR_WB and SPEEX_WITH_HEADER_BYTE is only `1`.
+     * If `0` or omitted, defaults to one channel (mono).
+     * NOTE: We only recognize the first channel by default.
+     * To perform independent recognition on each channel set
+     * enable_separate_recognition_per_channel to 'true'.
+     * </pre>
+     *
+     * <code>int32 audio_channel_count = 7;</code>
+     */
+    public Builder clearAudioChannelCount() {
+      
+      audioChannelCount_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private boolean enableSeparateRecognitionPerChannel_ ;
+    /**
+     * <pre>
+     * This needs to be set to ‘true’ explicitly and audio_channel_count &gt; 1
+     * to get each channel recognized separately. The recognition result will
+     * contain a channel_tag field to state which channel that result belongs to.
+     * If this is not ‘true’, we will only recognize the first channel.
+     * NOTE: The request is also billed cumulatively for all channels recognized:
+     *     (audio_channel_count times the audio length)
+     * </pre>
+     *
+     * <code>bool enable_separate_recognition_per_channel = 12;</code>
+     */
+    public boolean getEnableSeparateRecognitionPerChannel() {
+      return enableSeparateRecognitionPerChannel_;
+    }
+    /**
+     * <pre>
+     * This needs to be set to ‘true’ explicitly and audio_channel_count &gt; 1
+     * to get each channel recognized separately. The recognition result will
+     * contain a channel_tag field to state which channel that result belongs to.
+     * If this is not ‘true’, we will only recognize the first channel.
+     * NOTE: The request is also billed cumulatively for all channels recognized:
+     *     (audio_channel_count times the audio length)
+     * </pre>
+     *
+     * <code>bool enable_separate_recognition_per_channel = 12;</code>
+     */
+    public Builder setEnableSeparateRecognitionPerChannel(boolean value) {
+      
+      enableSeparateRecognitionPerChannel_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * This needs to be set to ‘true’ explicitly and audio_channel_count &gt; 1
+     * to get each channel recognized separately. The recognition result will
+     * contain a channel_tag field to state which channel that result belongs to.
+     * If this is not ‘true’, we will only recognize the first channel.
+     * NOTE: The request is also billed cumulatively for all channels recognized:
+     *     (audio_channel_count times the audio length)
+     * </pre>
+     *
+     * <code>bool enable_separate_recognition_per_channel = 12;</code>
+     */
+    public Builder clearEnableSeparateRecognitionPerChannel() {
+      
+      enableSeparateRecognitionPerChannel_ = false;
       onChanged();
       return this;
     }
@@ -1571,6 +2052,235 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private com.google.protobuf.LazyStringList alternativeLanguageCodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureAlternativeLanguageCodesIsMutable() {
+      if (!((bitField0_ & 0x00000020) == 0x00000020)) {
+        alternativeLanguageCodes_ = new com.google.protobuf.LazyStringArrayList(alternativeLanguageCodes_);
+        bitField0_ |= 0x00000020;
+       }
+    }
+    /**
+     * <pre>
+     * *Optional* A list of up to 3 additional
+     * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tags,
+     * listing possible alternative languages of the supplied audio.
+     * See [Language Support](https://cloud.google.com/speech/docs/languages)
+     * for a list of the currently supported language codes.
+     * If alternative languages are listed, recognition result will contain
+     * recognition in the most likely language detected including the main
+     * language_code. The recognition result will include the language tag
+     * of the language detected in the audio.
+     * NOTE: This feature is only supported for Voice Command and Voice Search
+     * use cases and performance may vary for other use cases (e.g., phone call
+     * transcription).
+     * </pre>
+     *
+     * <code>repeated string alternative_language_codes = 18;</code>
+     */
+    public com.google.protobuf.ProtocolStringList
+        getAlternativeLanguageCodesList() {
+      return alternativeLanguageCodes_.getUnmodifiableView();
+    }
+    /**
+     * <pre>
+     * *Optional* A list of up to 3 additional
+     * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tags,
+     * listing possible alternative languages of the supplied audio.
+     * See [Language Support](https://cloud.google.com/speech/docs/languages)
+     * for a list of the currently supported language codes.
+     * If alternative languages are listed, recognition result will contain
+     * recognition in the most likely language detected including the main
+     * language_code. The recognition result will include the language tag
+     * of the language detected in the audio.
+     * NOTE: This feature is only supported for Voice Command and Voice Search
+     * use cases and performance may vary for other use cases (e.g., phone call
+     * transcription).
+     * </pre>
+     *
+     * <code>repeated string alternative_language_codes = 18;</code>
+     */
+    public int getAlternativeLanguageCodesCount() {
+      return alternativeLanguageCodes_.size();
+    }
+    /**
+     * <pre>
+     * *Optional* A list of up to 3 additional
+     * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tags,
+     * listing possible alternative languages of the supplied audio.
+     * See [Language Support](https://cloud.google.com/speech/docs/languages)
+     * for a list of the currently supported language codes.
+     * If alternative languages are listed, recognition result will contain
+     * recognition in the most likely language detected including the main
+     * language_code. The recognition result will include the language tag
+     * of the language detected in the audio.
+     * NOTE: This feature is only supported for Voice Command and Voice Search
+     * use cases and performance may vary for other use cases (e.g., phone call
+     * transcription).
+     * </pre>
+     *
+     * <code>repeated string alternative_language_codes = 18;</code>
+     */
+    public java.lang.String getAlternativeLanguageCodes(int index) {
+      return alternativeLanguageCodes_.get(index);
+    }
+    /**
+     * <pre>
+     * *Optional* A list of up to 3 additional
+     * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tags,
+     * listing possible alternative languages of the supplied audio.
+     * See [Language Support](https://cloud.google.com/speech/docs/languages)
+     * for a list of the currently supported language codes.
+     * If alternative languages are listed, recognition result will contain
+     * recognition in the most likely language detected including the main
+     * language_code. The recognition result will include the language tag
+     * of the language detected in the audio.
+     * NOTE: This feature is only supported for Voice Command and Voice Search
+     * use cases and performance may vary for other use cases (e.g., phone call
+     * transcription).
+     * </pre>
+     *
+     * <code>repeated string alternative_language_codes = 18;</code>
+     */
+    public com.google.protobuf.ByteString
+        getAlternativeLanguageCodesBytes(int index) {
+      return alternativeLanguageCodes_.getByteString(index);
+    }
+    /**
+     * <pre>
+     * *Optional* A list of up to 3 additional
+     * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tags,
+     * listing possible alternative languages of the supplied audio.
+     * See [Language Support](https://cloud.google.com/speech/docs/languages)
+     * for a list of the currently supported language codes.
+     * If alternative languages are listed, recognition result will contain
+     * recognition in the most likely language detected including the main
+     * language_code. The recognition result will include the language tag
+     * of the language detected in the audio.
+     * NOTE: This feature is only supported for Voice Command and Voice Search
+     * use cases and performance may vary for other use cases (e.g., phone call
+     * transcription).
+     * </pre>
+     *
+     * <code>repeated string alternative_language_codes = 18;</code>
+     */
+    public Builder setAlternativeLanguageCodes(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureAlternativeLanguageCodesIsMutable();
+      alternativeLanguageCodes_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * *Optional* A list of up to 3 additional
+     * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tags,
+     * listing possible alternative languages of the supplied audio.
+     * See [Language Support](https://cloud.google.com/speech/docs/languages)
+     * for a list of the currently supported language codes.
+     * If alternative languages are listed, recognition result will contain
+     * recognition in the most likely language detected including the main
+     * language_code. The recognition result will include the language tag
+     * of the language detected in the audio.
+     * NOTE: This feature is only supported for Voice Command and Voice Search
+     * use cases and performance may vary for other use cases (e.g., phone call
+     * transcription).
+     * </pre>
+     *
+     * <code>repeated string alternative_language_codes = 18;</code>
+     */
+    public Builder addAlternativeLanguageCodes(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureAlternativeLanguageCodesIsMutable();
+      alternativeLanguageCodes_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * *Optional* A list of up to 3 additional
+     * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tags,
+     * listing possible alternative languages of the supplied audio.
+     * See [Language Support](https://cloud.google.com/speech/docs/languages)
+     * for a list of the currently supported language codes.
+     * If alternative languages are listed, recognition result will contain
+     * recognition in the most likely language detected including the main
+     * language_code. The recognition result will include the language tag
+     * of the language detected in the audio.
+     * NOTE: This feature is only supported for Voice Command and Voice Search
+     * use cases and performance may vary for other use cases (e.g., phone call
+     * transcription).
+     * </pre>
+     *
+     * <code>repeated string alternative_language_codes = 18;</code>
+     */
+    public Builder addAllAlternativeLanguageCodes(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureAlternativeLanguageCodesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, alternativeLanguageCodes_);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * *Optional* A list of up to 3 additional
+     * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tags,
+     * listing possible alternative languages of the supplied audio.
+     * See [Language Support](https://cloud.google.com/speech/docs/languages)
+     * for a list of the currently supported language codes.
+     * If alternative languages are listed, recognition result will contain
+     * recognition in the most likely language detected including the main
+     * language_code. The recognition result will include the language tag
+     * of the language detected in the audio.
+     * NOTE: This feature is only supported for Voice Command and Voice Search
+     * use cases and performance may vary for other use cases (e.g., phone call
+     * transcription).
+     * </pre>
+     *
+     * <code>repeated string alternative_language_codes = 18;</code>
+     */
+    public Builder clearAlternativeLanguageCodes() {
+      alternativeLanguageCodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * *Optional* A list of up to 3 additional
+     * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tags,
+     * listing possible alternative languages of the supplied audio.
+     * See [Language Support](https://cloud.google.com/speech/docs/languages)
+     * for a list of the currently supported language codes.
+     * If alternative languages are listed, recognition result will contain
+     * recognition in the most likely language detected including the main
+     * language_code. The recognition result will include the language tag
+     * of the language detected in the audio.
+     * NOTE: This feature is only supported for Voice Command and Voice Search
+     * use cases and performance may vary for other use cases (e.g., phone call
+     * transcription).
+     * </pre>
+     *
+     * <code>repeated string alternative_language_codes = 18;</code>
+     */
+    public Builder addAlternativeLanguageCodesBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      ensureAlternativeLanguageCodesIsMutable();
+      alternativeLanguageCodes_.add(value);
+      onChanged();
+      return this;
+    }
+
     private int maxAlternatives_ ;
     /**
      * <pre>
@@ -1674,9 +2384,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.google.cloud.speech.v1p1beta1.SpeechContext> speechContexts_ =
       java.util.Collections.emptyList();
     private void ensureSpeechContextsIsMutable() {
-      if (!((bitField0_ & 0x00000020) == 0x00000020)) {
+      if (!((bitField0_ & 0x00000100) == 0x00000100)) {
         speechContexts_ = new java.util.ArrayList<com.google.cloud.speech.v1p1beta1.SpeechContext>(speechContexts_);
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000100;
        }
     }
 
@@ -1870,7 +2580,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearSpeechContexts() {
       if (speechContextsBuilder_ == null) {
         speechContexts_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000100);
         onChanged();
       } else {
         speechContextsBuilder_.clear();
@@ -1975,7 +2685,7 @@ private static final long serialVersionUID = 0L;
         speechContextsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.google.cloud.speech.v1p1beta1.SpeechContext, com.google.cloud.speech.v1p1beta1.SpeechContext.Builder, com.google.cloud.speech.v1p1beta1.SpeechContextOrBuilder>(
                 speechContexts_,
-                ((bitField0_ & 0x00000020) == 0x00000020),
+                ((bitField0_ & 0x00000100) == 0x00000100),
                 getParentForChildren(),
                 isClean());
         speechContexts_ = null;
@@ -2026,6 +2736,50 @@ private static final long serialVersionUID = 0L;
     public Builder clearEnableWordTimeOffsets() {
       
       enableWordTimeOffsets_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean enableWordConfidence_ ;
+    /**
+     * <pre>
+     * *Optional* If `true`, the top result includes a list of words and the
+     * confidence for those words. If `false`, no word-level confidence
+     * information is returned. The default is `false`.
+     * </pre>
+     *
+     * <code>bool enable_word_confidence = 15;</code>
+     */
+    public boolean getEnableWordConfidence() {
+      return enableWordConfidence_;
+    }
+    /**
+     * <pre>
+     * *Optional* If `true`, the top result includes a list of words and the
+     * confidence for those words. If `false`, no word-level confidence
+     * information is returned. The default is `false`.
+     * </pre>
+     *
+     * <code>bool enable_word_confidence = 15;</code>
+     */
+    public Builder setEnableWordConfidence(boolean value) {
+      
+      enableWordConfidence_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * *Optional* If `true`, the top result includes a list of words and the
+     * confidence for those words. If `false`, no word-level confidence
+     * information is returned. The default is `false`.
+     * </pre>
+     *
+     * <code>bool enable_word_confidence = 15;</code>
+     */
+    public Builder clearEnableWordConfidence() {
+      
+      enableWordConfidence_ = false;
       onChanged();
       return this;
     }
@@ -2082,6 +2836,109 @@ private static final long serialVersionUID = 0L;
     public Builder clearEnableAutomaticPunctuation() {
       
       enableAutomaticPunctuation_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean enableSpeakerDiarization_ ;
+    /**
+     * <pre>
+     * *Optional* If 'true', enables speaker detection for each recognized word in
+     * the top alternative of the recognition result using a speaker_tag provided
+     * in the WordInfo.
+     * Note: When this is true, we send all the words from the beginning of the
+     * audio for the top alternative in every consecutive responses.
+     * This is done in order to improve our speaker tags as our models learn to
+     * identify the speakers in the conversation over time.
+     * </pre>
+     *
+     * <code>bool enable_speaker_diarization = 16;</code>
+     */
+    public boolean getEnableSpeakerDiarization() {
+      return enableSpeakerDiarization_;
+    }
+    /**
+     * <pre>
+     * *Optional* If 'true', enables speaker detection for each recognized word in
+     * the top alternative of the recognition result using a speaker_tag provided
+     * in the WordInfo.
+     * Note: When this is true, we send all the words from the beginning of the
+     * audio for the top alternative in every consecutive responses.
+     * This is done in order to improve our speaker tags as our models learn to
+     * identify the speakers in the conversation over time.
+     * </pre>
+     *
+     * <code>bool enable_speaker_diarization = 16;</code>
+     */
+    public Builder setEnableSpeakerDiarization(boolean value) {
+      
+      enableSpeakerDiarization_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * *Optional* If 'true', enables speaker detection for each recognized word in
+     * the top alternative of the recognition result using a speaker_tag provided
+     * in the WordInfo.
+     * Note: When this is true, we send all the words from the beginning of the
+     * audio for the top alternative in every consecutive responses.
+     * This is done in order to improve our speaker tags as our models learn to
+     * identify the speakers in the conversation over time.
+     * </pre>
+     *
+     * <code>bool enable_speaker_diarization = 16;</code>
+     */
+    public Builder clearEnableSpeakerDiarization() {
+      
+      enableSpeakerDiarization_ = false;
+      onChanged();
+      return this;
+    }
+
+    private int diarizationSpeakerCount_ ;
+    /**
+     * <pre>
+     * *Optional*
+     * If set, specifies the estimated number of speakers in the conversation.
+     * If not set, defaults to '2'.
+     * Ignored unless enable_speaker_diarization is set to true."
+     * </pre>
+     *
+     * <code>int32 diarization_speaker_count = 17;</code>
+     */
+    public int getDiarizationSpeakerCount() {
+      return diarizationSpeakerCount_;
+    }
+    /**
+     * <pre>
+     * *Optional*
+     * If set, specifies the estimated number of speakers in the conversation.
+     * If not set, defaults to '2'.
+     * Ignored unless enable_speaker_diarization is set to true."
+     * </pre>
+     *
+     * <code>int32 diarization_speaker_count = 17;</code>
+     */
+    public Builder setDiarizationSpeakerCount(int value) {
+      
+      diarizationSpeakerCount_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * *Optional*
+     * If set, specifies the estimated number of speakers in the conversation.
+     * If not set, defaults to '2'.
+     * Ignored unless enable_speaker_diarization is set to true."
+     * </pre>
+     *
+     * <code>int32 diarization_speaker_count = 17;</code>
+     */
+    public Builder clearDiarizationSpeakerCount() {
+      
+      diarizationSpeakerCount_ = 0;
       onChanged();
       return this;
     }
@@ -2547,11 +3404,13 @@ private static final long serialVersionUID = 0L;
       onChanged();
       return this;
     }
+    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -2573,6 +3432,7 @@ private static final long serialVersionUID = 0L;
 
   private static final com.google.protobuf.Parser<RecognitionConfig>
       PARSER = new com.google.protobuf.AbstractParser<RecognitionConfig>() {
+    @java.lang.Override
     public RecognitionConfig parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -2590,6 +3450,7 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.cloud.speech.v1p1beta1.RecognitionConfig getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
