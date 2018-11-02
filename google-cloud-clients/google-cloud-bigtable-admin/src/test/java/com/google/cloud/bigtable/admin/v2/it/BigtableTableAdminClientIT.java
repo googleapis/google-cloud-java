@@ -67,9 +67,9 @@ public class BigtableTableAdminClientIT {
 
     // Cleanup old tables, under normal circumstances this will do nothing
     String stalePrefix = String.format("020%d", System.currentTimeMillis() - TimeUnit.DAYS.toMillis(1));
-    for (TableName tableName : tableAdmin.listTables()) {
-      if (stalePrefix.compareTo(tableName.getTable()) > 0) {
-        tableAdmin.deleteTable(tableName.getTable());
+    for (String tableId: tableAdmin.listTables()) {
+      if (stalePrefix.compareTo(tableId) > 0) {
+        tableAdmin.deleteTable(tableId);
       }
     }
   }
