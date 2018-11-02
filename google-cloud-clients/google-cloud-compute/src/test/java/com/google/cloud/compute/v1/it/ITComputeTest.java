@@ -154,6 +154,6 @@ public class ITComputeTest {
 
   /** For a given resource's URI, trim the path until it contains only the PathTemplate string. */
   private static String trimUrl(String url) {
-    return url.replaceFirst("^https://www.googleapis.com/compute/v1/", "");
+    return url.replaceFirst("^https://www.googleapis.com/compute/v1/projects/", "");
   }
 }
