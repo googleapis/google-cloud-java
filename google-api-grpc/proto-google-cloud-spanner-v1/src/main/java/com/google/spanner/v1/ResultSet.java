@@ -236,8 +236,13 @@ private static final long serialVersionUID = 0L;
   private com.google.spanner.v1.ResultSetStats stats_;
   /**
    * <pre>
-   * Query plan and execution statistics for the query that produced this
-   * result set. These can be requested by setting
+   * Query plan and execution statistics for the SQL statement that
+   * produced this result set. These can be requested by setting
+   * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
+   * DML statements always produce stats containing the number of rows
+   * modified, unless executed using the
+   * [ExecuteSqlRequest.QueryMode.PLAN][google.spanner.v1.ExecuteSqlRequest.QueryMode.PLAN] [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
+   * Other fields may or may not be populated, based on the
    * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
    * </pre>
    *
@@ -248,8 +253,13 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Query plan and execution statistics for the query that produced this
-   * result set. These can be requested by setting
+   * Query plan and execution statistics for the SQL statement that
+   * produced this result set. These can be requested by setting
+   * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
+   * DML statements always produce stats containing the number of rows
+   * modified, unless executed using the
+   * [ExecuteSqlRequest.QueryMode.PLAN][google.spanner.v1.ExecuteSqlRequest.QueryMode.PLAN] [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
+   * Other fields may or may not be populated, based on the
    * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
    * </pre>
    *
@@ -260,8 +270,13 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Query plan and execution statistics for the query that produced this
-   * result set. These can be requested by setting
+   * Query plan and execution statistics for the SQL statement that
+   * produced this result set. These can be requested by setting
+   * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
+   * DML statements always produce stats containing the number of rows
+   * modified, unless executed using the
+   * [ExecuteSqlRequest.QueryMode.PLAN][google.spanner.v1.ExecuteSqlRequest.QueryMode.PLAN] [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
+   * Other fields may or may not be populated, based on the
    * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
    * </pre>
    *
@@ -1241,8 +1256,13 @@ private static final long serialVersionUID = 0L;
         com.google.spanner.v1.ResultSetStats, com.google.spanner.v1.ResultSetStats.Builder, com.google.spanner.v1.ResultSetStatsOrBuilder> statsBuilder_;
     /**
      * <pre>
-     * Query plan and execution statistics for the query that produced this
-     * result set. These can be requested by setting
+     * Query plan and execution statistics for the SQL statement that
+     * produced this result set. These can be requested by setting
+     * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
+     * DML statements always produce stats containing the number of rows
+     * modified, unless executed using the
+     * [ExecuteSqlRequest.QueryMode.PLAN][google.spanner.v1.ExecuteSqlRequest.QueryMode.PLAN] [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
+     * Other fields may or may not be populated, based on the
      * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
      * </pre>
      *
@@ -1253,8 +1273,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Query plan and execution statistics for the query that produced this
-     * result set. These can be requested by setting
+     * Query plan and execution statistics for the SQL statement that
+     * produced this result set. These can be requested by setting
+     * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
+     * DML statements always produce stats containing the number of rows
+     * modified, unless executed using the
+     * [ExecuteSqlRequest.QueryMode.PLAN][google.spanner.v1.ExecuteSqlRequest.QueryMode.PLAN] [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
+     * Other fields may or may not be populated, based on the
      * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
      * </pre>
      *
@@ -1269,8 +1294,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Query plan and execution statistics for the query that produced this
-     * result set. These can be requested by setting
+     * Query plan and execution statistics for the SQL statement that
+     * produced this result set. These can be requested by setting
+     * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
+     * DML statements always produce stats containing the number of rows
+     * modified, unless executed using the
+     * [ExecuteSqlRequest.QueryMode.PLAN][google.spanner.v1.ExecuteSqlRequest.QueryMode.PLAN] [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
+     * Other fields may or may not be populated, based on the
      * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
      * </pre>
      *
@@ -1291,8 +1321,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Query plan and execution statistics for the query that produced this
-     * result set. These can be requested by setting
+     * Query plan and execution statistics for the SQL statement that
+     * produced this result set. These can be requested by setting
+     * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
+     * DML statements always produce stats containing the number of rows
+     * modified, unless executed using the
+     * [ExecuteSqlRequest.QueryMode.PLAN][google.spanner.v1.ExecuteSqlRequest.QueryMode.PLAN] [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
+     * Other fields may or may not be populated, based on the
      * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
      * </pre>
      *
@@ -1311,8 +1346,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Query plan and execution statistics for the query that produced this
-     * result set. These can be requested by setting
+     * Query plan and execution statistics for the SQL statement that
+     * produced this result set. These can be requested by setting
+     * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
+     * DML statements always produce stats containing the number of rows
+     * modified, unless executed using the
+     * [ExecuteSqlRequest.QueryMode.PLAN][google.spanner.v1.ExecuteSqlRequest.QueryMode.PLAN] [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
+     * Other fields may or may not be populated, based on the
      * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
      * </pre>
      *
@@ -1335,8 +1375,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Query plan and execution statistics for the query that produced this
-     * result set. These can be requested by setting
+     * Query plan and execution statistics for the SQL statement that
+     * produced this result set. These can be requested by setting
+     * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
+     * DML statements always produce stats containing the number of rows
+     * modified, unless executed using the
+     * [ExecuteSqlRequest.QueryMode.PLAN][google.spanner.v1.ExecuteSqlRequest.QueryMode.PLAN] [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
+     * Other fields may or may not be populated, based on the
      * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
      * </pre>
      *
@@ -1355,8 +1400,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Query plan and execution statistics for the query that produced this
-     * result set. These can be requested by setting
+     * Query plan and execution statistics for the SQL statement that
+     * produced this result set. These can be requested by setting
+     * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
+     * DML statements always produce stats containing the number of rows
+     * modified, unless executed using the
+     * [ExecuteSqlRequest.QueryMode.PLAN][google.spanner.v1.ExecuteSqlRequest.QueryMode.PLAN] [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
+     * Other fields may or may not be populated, based on the
      * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
      * </pre>
      *
@@ -1369,8 +1419,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Query plan and execution statistics for the query that produced this
-     * result set. These can be requested by setting
+     * Query plan and execution statistics for the SQL statement that
+     * produced this result set. These can be requested by setting
+     * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
+     * DML statements always produce stats containing the number of rows
+     * modified, unless executed using the
+     * [ExecuteSqlRequest.QueryMode.PLAN][google.spanner.v1.ExecuteSqlRequest.QueryMode.PLAN] [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
+     * Other fields may or may not be populated, based on the
      * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
      * </pre>
      *
@@ -1386,8 +1441,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Query plan and execution statistics for the query that produced this
-     * result set. These can be requested by setting
+     * Query plan and execution statistics for the SQL statement that
+     * produced this result set. These can be requested by setting
+     * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
+     * DML statements always produce stats containing the number of rows
+     * modified, unless executed using the
+     * [ExecuteSqlRequest.QueryMode.PLAN][google.spanner.v1.ExecuteSqlRequest.QueryMode.PLAN] [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
+     * Other fields may or may not be populated, based on the
      * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
      * </pre>
      *

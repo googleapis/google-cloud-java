@@ -37,7 +37,7 @@ public interface TopicOrBuilder extends
 
   /**
    * <pre>
-   * User labels.
+   * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 2;</code>
@@ -45,7 +45,7 @@ public interface TopicOrBuilder extends
   int getLabelsCount();
   /**
    * <pre>
-   * User labels.
+   * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 2;</code>
@@ -60,7 +60,7 @@ public interface TopicOrBuilder extends
   getLabels();
   /**
    * <pre>
-   * User labels.
+   * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 2;</code>
@@ -69,7 +69,7 @@ public interface TopicOrBuilder extends
   getLabelsMap();
   /**
    * <pre>
-   * User labels.
+   * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 2;</code>
@@ -80,7 +80,7 @@ public interface TopicOrBuilder extends
       java.lang.String defaultValue);
   /**
    * <pre>
-   * User labels.
+   * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 2;</code>

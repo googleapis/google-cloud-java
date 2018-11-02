@@ -31,6 +31,7 @@ fi
 case $JOB_TYPE in
 test)
     mvn test -B
+    bash $KOKORO_GFILE_DIR/codecov.sh
     ;;
 javadoc)
     mvn javadoc:javadoc javadoc:test-javadoc

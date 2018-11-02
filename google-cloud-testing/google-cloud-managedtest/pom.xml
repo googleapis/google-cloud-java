@@ -4,13 +4,13 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <artifactId>google-cloud-managedtest</artifactId>
-  <version>0.62.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-managedtest:current} -->
+  <version>0.69.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-managedtest:current} -->
   <packaging>jar</packaging>
 
   <parent>
     <artifactId>google-cloud-testing</artifactId>
     <groupId>com.google.cloud</groupId>
-    <version>0.62.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-testing:current} -->
+    <version>0.69.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-testing:current} -->
   </parent>
 
   <dependencies>
@@ -18,30 +18,15 @@
       <groupId>${project.groupId}</groupId>
       <artifactId>google-cloud-bigquery</artifactId>
     </dependency>
-    <dependency>
-      <groupId>${project.groupId}</groupId>
-      <artifactId>google-cloud-bigquery</artifactId>
-      <type>test-jar</type>
-    </dependency>
 
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>google-cloud-compute</artifactId>
     </dependency>
-    <dependency>
-      <groupId>${project.groupId}</groupId>
-      <artifactId>google-cloud-compute</artifactId>
-      <type>test-jar</type>
-    </dependency>
 
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>google-cloud-nio</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>${project.groupId}</groupId>
-      <artifactId>google-cloud-nio</artifactId>
-      <type>test-jar</type>
     </dependency>
 
     <dependency>
@@ -58,141 +43,70 @@
       <groupId>${project.groupId}</groupId>
       <artifactId>google-cloud-datastore</artifactId>
     </dependency>
-    <dependency>
-      <groupId>${project.groupId}</groupId>
-      <artifactId>google-cloud-datastore</artifactId>
-      <type>test-jar</type>
-    </dependency>
 
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>google-cloud-dns</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>${project.groupId}</groupId>
-      <artifactId>google-cloud-dns</artifactId>
-      <type>test-jar</type>
     </dependency>
 
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>google-cloud-errorreporting</artifactId>
     </dependency>
-    <dependency>
-      <groupId>${project.groupId}</groupId>
-      <artifactId>google-cloud-errorreporting</artifactId>
-      <type>test-jar</type>
-    </dependency>
 
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>google-cloud-language</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>${project.groupId}</groupId>
-      <artifactId>google-cloud-language</artifactId>
-      <type>test-jar</type>
     </dependency>
 
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>google-cloud-logging</artifactId>
     </dependency>
-    <dependency>
-      <groupId>${project.groupId}</groupId>
-      <artifactId>google-cloud-logging</artifactId>
-      <type>test-jar</type>
-    </dependency>
 
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>google-cloud-monitoring</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>${project.groupId}</groupId>
-      <artifactId>google-cloud-monitoring</artifactId>
-      <type>test-jar</type>
     </dependency>
 
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>google-cloud-pubsub</artifactId>
     </dependency>
-    <dependency>
-      <groupId>${project.groupId}</groupId>
-      <artifactId>google-cloud-pubsub</artifactId>
-      <type>test-jar</type>
-    </dependency>
 
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>google-cloud-resourcemanager</artifactId>
     </dependency>
-    <dependency>
-      <groupId>${project.groupId}</groupId>
-      <artifactId>google-cloud-resourcemanager</artifactId>
-      <type>test-jar</type>
-    </dependency>
-
 
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>google-cloud-speech</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>${project.groupId}</groupId>
-      <artifactId>google-cloud-speech</artifactId>
-      <type>test-jar</type>
     </dependency>
 
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>google-cloud-spanner</artifactId>
     </dependency>
-    <dependency>
-      <groupId>${project.groupId}</groupId>
-      <artifactId>google-cloud-spanner</artifactId>
-      <type>test-jar</type>
-    </dependency>
 
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>google-cloud-storage</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>${project.groupId}</groupId>
-      <artifactId>google-cloud-storage</artifactId>
-      <type>test-jar</type>
     </dependency>
 
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>google-cloud-trace</artifactId>
     </dependency>
-    <dependency>
-      <groupId>${project.groupId}</groupId>
-      <artifactId>google-cloud-trace</artifactId>
-      <type>test-jar</type>
-    </dependency>
 
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>google-cloud-translate</artifactId>
     </dependency>
-    <dependency>
-      <groupId>${project.groupId}</groupId>
-      <artifactId>google-cloud-translate</artifactId>
-      <type>test-jar</type>
-    </dependency>
 
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>google-cloud-vision</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>${project.groupId}</groupId>
-      <artifactId>google-cloud-vision</artifactId>
-      <type>test-jar</type>
     </dependency>
 
     <dependency>

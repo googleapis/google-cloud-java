@@ -66,6 +66,7 @@ import com.google.spanner.v1.PartitionQueryRequest;
 import com.google.spanner.v1.PartitionReadRequest;
 import com.google.spanner.v1.PartitionResponse;
 import com.google.spanner.v1.ReadRequest;
+import com.google.spanner.v1.ResultSet;
 import com.google.spanner.v1.RollbackRequest;
 import com.google.spanner.v1.Session;
 import com.google.spanner.v1.SpannerGrpc;
@@ -375,6 +376,17 @@ public class GrpcSpannerRpc implements SpannerRpc {
         consumer,
         request.getSession(),
         Option.CHANNEL_HINT.getLong(options));
+  }
+
+  @Override
+  public ResultSet executeQuery(
+      ExecuteSqlRequest request, @Nullable Map<Option, ?> options) {
+    return get(
+        doUnaryCall(
+            SpannerGrpc.METHOD_EXECUTE_SQL,
+            request,
+            request.getSession(),
+            Option.CHANNEL_HINT.getLong(options)));
   }
 
   @Override

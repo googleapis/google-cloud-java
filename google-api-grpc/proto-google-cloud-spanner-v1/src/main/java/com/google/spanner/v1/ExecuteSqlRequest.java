@@ -26,6 +26,7 @@ private static final long serialVersionUID = 0L;
     resumeToken_ = com.google.protobuf.ByteString.EMPTY;
     queryMode_ = 0;
     partitionToken_ = com.google.protobuf.ByteString.EMPTY;
+    seqno_ = 0L;
   }
 
   @java.lang.Override
@@ -119,6 +120,11 @@ private static final long serialVersionUID = 0L;
             partitionToken_ = input.readBytes();
             break;
           }
+          case 72: {
+
+            seqno_ = input.readInt64();
+            break;
+          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -165,7 +171,7 @@ private static final long serialVersionUID = 0L;
 
   /**
    * <pre>
-   * Mode in which the query must be processed.
+   * Mode in which the statement must be processed.
    * </pre>
    *
    * Protobuf enum {@code google.spanner.v1.ExecuteSqlRequest.QueryMode}
@@ -174,8 +180,7 @@ private static final long serialVersionUID = 0L;
       implements com.google.protobuf.ProtocolMessageEnum {
     /**
      * <pre>
-     * The default mode where only the query result, without any information
-     * about the query plan is returned.
+     * The default mode. Only the statement results are returned.
      * </pre>
      *
      * <code>NORMAL = 0;</code>
@@ -183,7 +188,7 @@ private static final long serialVersionUID = 0L;
     NORMAL(0),
     /**
      * <pre>
-     * This mode returns only the query plan, without any result rows or
+     * This mode returns only the query plan, without any results or
      * execution statistics information.
      * </pre>
      *
@@ -193,7 +198,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * This mode returns both the query plan and the execution statistics along
-     * with the result rows.
+     * with the results.
      * </pre>
      *
      * <code>PROFILE = 2;</code>
@@ -204,8 +209,7 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * The default mode where only the query result, without any information
-     * about the query plan is returned.
+     * The default mode. Only the statement results are returned.
      * </pre>
      *
      * <code>NORMAL = 0;</code>
@@ -213,7 +217,7 @@ private static final long serialVersionUID = 0L;
     public static final int NORMAL_VALUE = 0;
     /**
      * <pre>
-     * This mode returns only the query plan, without any result rows or
+     * This mode returns only the query plan, without any results or
      * execution statistics information.
      * </pre>
      *
@@ -223,7 +227,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * This mode returns both the query plan and the execution statistics along
-     * with the result rows.
+     * with the results.
      * </pre>
      *
      * <code>PROFILE = 2;</code>
@@ -353,6 +357,13 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * The transaction to use. If none is provided, the default is a
    * temporary read-only transaction with strong concurrency.
+   * The transaction to use.
+   * For queries, if none is provided, the default is a temporary read-only
+   * transaction with strong concurrency.
+   * Standard DML statements require a ReadWrite transaction. Single-use
+   * transactions are not supported (to avoid replay).  The caller must
+   * either supply an existing transaction ID or begin a new transaction.
+   * Partitioned DML requires an existing PartitionedDml transaction ID.
    * </pre>
    *
    * <code>.google.spanner.v1.TransactionSelector transaction = 2;</code>
@@ -364,6 +375,13 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * The transaction to use. If none is provided, the default is a
    * temporary read-only transaction with strong concurrency.
+   * The transaction to use.
+   * For queries, if none is provided, the default is a temporary read-only
+   * transaction with strong concurrency.
+   * Standard DML statements require a ReadWrite transaction. Single-use
+   * transactions are not supported (to avoid replay).  The caller must
+   * either supply an existing transaction ID or begin a new transaction.
+   * Partitioned DML requires an existing PartitionedDml transaction ID.
    * </pre>
    *
    * <code>.google.spanner.v1.TransactionSelector transaction = 2;</code>
@@ -375,6 +393,13 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * The transaction to use. If none is provided, the default is a
    * temporary read-only transaction with strong concurrency.
+   * The transaction to use.
+   * For queries, if none is provided, the default is a temporary read-only
+   * transaction with strong concurrency.
+   * Standard DML statements require a ReadWrite transaction. Single-use
+   * transactions are not supported (to avoid replay).  The caller must
+   * either supply an existing transaction ID or begin a new transaction.
+   * Partitioned DML requires an existing PartitionedDml transaction ID.
    * </pre>
    *
    * <code>.google.spanner.v1.TransactionSelector transaction = 2;</code>
@@ -387,7 +412,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object sql_;
   /**
    * <pre>
-   * Required. The SQL query string.
+   * Required. The SQL string.
    * </pre>
    *
    * <code>string sql = 3;</code>
@@ -406,7 +431,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The SQL query string.
+   * Required. The SQL string.
    * </pre>
    *
    * <code>string sql = 3;</code>
@@ -429,14 +454,14 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.Struct params_;
   /**
    * <pre>
-   * The SQL query string can contain parameter placeholders. A parameter
+   * The SQL string can contain parameter placeholders. A parameter
    * placeholder consists of `'&#64;'` followed by the parameter
    * name. Parameter names consist of any combination of letters,
    * numbers, and underscores.
    * Parameters can appear anywhere that a literal value is expected.  The same
    * parameter name can be used more than once, for example:
    *   `"WHERE id &gt; &#64;msg_id AND id &lt; &#64;msg_id + 100"`
-   * It is an error to execute an SQL query with unbound parameters.
+   * It is an error to execute an SQL statement with unbound parameters.
    * Parameter values are specified using `params`, which is a JSON
    * object whose keys are parameter names, and whose values are the
    * corresponding parameter values.
@@ -449,14 +474,14 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The SQL query string can contain parameter placeholders. A parameter
+   * The SQL string can contain parameter placeholders. A parameter
    * placeholder consists of `'&#64;'` followed by the parameter
    * name. Parameter names consist of any combination of letters,
    * numbers, and underscores.
    * Parameters can appear anywhere that a literal value is expected.  The same
    * parameter name can be used more than once, for example:
    *   `"WHERE id &gt; &#64;msg_id AND id &lt; &#64;msg_id + 100"`
-   * It is an error to execute an SQL query with unbound parameters.
+   * It is an error to execute an SQL statement with unbound parameters.
    * Parameter values are specified using `params`, which is a JSON
    * object whose keys are parameter names, and whose values are the
    * corresponding parameter values.
@@ -469,14 +494,14 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The SQL query string can contain parameter placeholders. A parameter
+   * The SQL string can contain parameter placeholders. A parameter
    * placeholder consists of `'&#64;'` followed by the parameter
    * name. Parameter names consist of any combination of letters,
    * numbers, and underscores.
    * Parameters can appear anywhere that a literal value is expected.  The same
    * parameter name can be used more than once, for example:
    *   `"WHERE id &gt; &#64;msg_id AND id &lt; &#64;msg_id + 100"`
-   * It is an error to execute an SQL query with unbound parameters.
+   * It is an error to execute an SQL statement with unbound parameters.
    * Parameter values are specified using `params`, which is a JSON
    * object whose keys are parameter names, and whose values are the
    * corresponding parameter values.
@@ -520,7 +545,7 @@ private static final long serialVersionUID = 0L;
    * from a JSON value.  For example, values of type `BYTES` and values
    * of type `STRING` both appear in [params][google.spanner.v1.ExecuteSqlRequest.params] as JSON strings.
    * In these cases, `param_types` can be used to specify the exact
-   * SQL type for some or all of the SQL query parameters. See the
+   * SQL type for some or all of the SQL statement parameters. See the
    * definition of [Type][google.spanner.v1.Type] for more information
    * about SQL types.
    * </pre>
@@ -546,7 +571,7 @@ private static final long serialVersionUID = 0L;
    * from a JSON value.  For example, values of type `BYTES` and values
    * of type `STRING` both appear in [params][google.spanner.v1.ExecuteSqlRequest.params] as JSON strings.
    * In these cases, `param_types` can be used to specify the exact
-   * SQL type for some or all of the SQL query parameters. See the
+   * SQL type for some or all of the SQL statement parameters. See the
    * definition of [Type][google.spanner.v1.Type] for more information
    * about SQL types.
    * </pre>
@@ -563,7 +588,7 @@ private static final long serialVersionUID = 0L;
    * from a JSON value.  For example, values of type `BYTES` and values
    * of type `STRING` both appear in [params][google.spanner.v1.ExecuteSqlRequest.params] as JSON strings.
    * In these cases, `param_types` can be used to specify the exact
-   * SQL type for some or all of the SQL query parameters. See the
+   * SQL type for some or all of the SQL statement parameters. See the
    * definition of [Type][google.spanner.v1.Type] for more information
    * about SQL types.
    * </pre>
@@ -585,7 +610,7 @@ private static final long serialVersionUID = 0L;
    * from a JSON value.  For example, values of type `BYTES` and values
    * of type `STRING` both appear in [params][google.spanner.v1.ExecuteSqlRequest.params] as JSON strings.
    * In these cases, `param_types` can be used to specify the exact
-   * SQL type for some or all of the SQL query parameters. See the
+   * SQL type for some or all of the SQL statement parameters. See the
    * definition of [Type][google.spanner.v1.Type] for more information
    * about SQL types.
    * </pre>
@@ -608,10 +633,10 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.ByteString resumeToken_;
   /**
    * <pre>
-   * If this request is resuming a previously interrupted SQL query
+   * If this request is resuming a previously interrupted SQL statement
    * execution, `resume_token` should be copied from the last
    * [PartialResultSet][google.spanner.v1.PartialResultSet] yielded before the interruption. Doing this
-   * enables the new SQL query execution to resume where the last one left
+   * enables the new SQL statement execution to resume where the last one left
    * off. The rest of the request parameters must exactly match the
    * request that yielded this token.
    * </pre>
@@ -667,6 +692,26 @@ private static final long serialVersionUID = 0L;
     return partitionToken_;
   }
 
+  public static final int SEQNO_FIELD_NUMBER = 9;
+  private long seqno_;
+  /**
+   * <pre>
+   * A per-transaction sequence number used to identify this request. This
+   * makes each request idempotent such that if the request is received multiple
+   * times, at most one will succeed.
+   * The sequence number must be monotonically increasing within the
+   * transaction. If a request arrives for the first time with an out-of-order
+   * sequence number, the transaction may be aborted. Replays of previously
+   * handled requests will yield the same response as the first execution.
+   * Required for DML statements. Ignored for queries.
+   * </pre>
+   *
+   * <code>int64 seqno = 9;</code>
+   */
+  public long getSeqno() {
+    return seqno_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -707,6 +752,9 @@ private static final long serialVersionUID = 0L;
     }
     if (!partitionToken_.isEmpty()) {
       output.writeBytes(8, partitionToken_);
+    }
+    if (seqno_ != 0L) {
+      output.writeInt64(9, seqno_);
     }
     unknownFields.writeTo(output);
   }
@@ -753,6 +801,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBytesSize(8, partitionToken_);
     }
+    if (seqno_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(9, seqno_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -790,6 +842,8 @@ private static final long serialVersionUID = 0L;
     result = result && queryMode_ == other.queryMode_;
     result = result && getPartitionToken()
         .equals(other.getPartitionToken());
+    result = result && (getSeqno()
+        == other.getSeqno());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -823,6 +877,9 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + queryMode_;
     hash = (37 * hash) + PARTITION_TOKEN_FIELD_NUMBER;
     hash = (53 * hash) + getPartitionToken().hashCode();
+    hash = (37 * hash) + SEQNO_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getSeqno());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1006,6 +1063,8 @@ private static final long serialVersionUID = 0L;
 
       partitionToken_ = com.google.protobuf.ByteString.EMPTY;
 
+      seqno_ = 0L;
+
       return this;
     }
 
@@ -1051,6 +1110,7 @@ private static final long serialVersionUID = 0L;
       result.resumeToken_ = resumeToken_;
       result.queryMode_ = queryMode_;
       result.partitionToken_ = partitionToken_;
+      result.seqno_ = seqno_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -1124,6 +1184,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getPartitionToken() != com.google.protobuf.ByteString.EMPTY) {
         setPartitionToken(other.getPartitionToken());
+      }
+      if (other.getSeqno() != 0L) {
+        setSeqno(other.getSeqno());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1251,6 +1314,13 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The transaction to use. If none is provided, the default is a
      * temporary read-only transaction with strong concurrency.
+     * The transaction to use.
+     * For queries, if none is provided, the default is a temporary read-only
+     * transaction with strong concurrency.
+     * Standard DML statements require a ReadWrite transaction. Single-use
+     * transactions are not supported (to avoid replay).  The caller must
+     * either supply an existing transaction ID or begin a new transaction.
+     * Partitioned DML requires an existing PartitionedDml transaction ID.
      * </pre>
      *
      * <code>.google.spanner.v1.TransactionSelector transaction = 2;</code>
@@ -1262,6 +1332,13 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The transaction to use. If none is provided, the default is a
      * temporary read-only transaction with strong concurrency.
+     * The transaction to use.
+     * For queries, if none is provided, the default is a temporary read-only
+     * transaction with strong concurrency.
+     * Standard DML statements require a ReadWrite transaction. Single-use
+     * transactions are not supported (to avoid replay).  The caller must
+     * either supply an existing transaction ID or begin a new transaction.
+     * Partitioned DML requires an existing PartitionedDml transaction ID.
      * </pre>
      *
      * <code>.google.spanner.v1.TransactionSelector transaction = 2;</code>
@@ -1277,6 +1354,13 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The transaction to use. If none is provided, the default is a
      * temporary read-only transaction with strong concurrency.
+     * The transaction to use.
+     * For queries, if none is provided, the default is a temporary read-only
+     * transaction with strong concurrency.
+     * Standard DML statements require a ReadWrite transaction. Single-use
+     * transactions are not supported (to avoid replay).  The caller must
+     * either supply an existing transaction ID or begin a new transaction.
+     * Partitioned DML requires an existing PartitionedDml transaction ID.
      * </pre>
      *
      * <code>.google.spanner.v1.TransactionSelector transaction = 2;</code>
@@ -1298,6 +1382,13 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The transaction to use. If none is provided, the default is a
      * temporary read-only transaction with strong concurrency.
+     * The transaction to use.
+     * For queries, if none is provided, the default is a temporary read-only
+     * transaction with strong concurrency.
+     * Standard DML statements require a ReadWrite transaction. Single-use
+     * transactions are not supported (to avoid replay).  The caller must
+     * either supply an existing transaction ID or begin a new transaction.
+     * Partitioned DML requires an existing PartitionedDml transaction ID.
      * </pre>
      *
      * <code>.google.spanner.v1.TransactionSelector transaction = 2;</code>
@@ -1317,6 +1408,13 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The transaction to use. If none is provided, the default is a
      * temporary read-only transaction with strong concurrency.
+     * The transaction to use.
+     * For queries, if none is provided, the default is a temporary read-only
+     * transaction with strong concurrency.
+     * Standard DML statements require a ReadWrite transaction. Single-use
+     * transactions are not supported (to avoid replay).  The caller must
+     * either supply an existing transaction ID or begin a new transaction.
+     * Partitioned DML requires an existing PartitionedDml transaction ID.
      * </pre>
      *
      * <code>.google.spanner.v1.TransactionSelector transaction = 2;</code>
@@ -1340,6 +1438,13 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The transaction to use. If none is provided, the default is a
      * temporary read-only transaction with strong concurrency.
+     * The transaction to use.
+     * For queries, if none is provided, the default is a temporary read-only
+     * transaction with strong concurrency.
+     * Standard DML statements require a ReadWrite transaction. Single-use
+     * transactions are not supported (to avoid replay).  The caller must
+     * either supply an existing transaction ID or begin a new transaction.
+     * Partitioned DML requires an existing PartitionedDml transaction ID.
      * </pre>
      *
      * <code>.google.spanner.v1.TransactionSelector transaction = 2;</code>
@@ -1359,6 +1464,13 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The transaction to use. If none is provided, the default is a
      * temporary read-only transaction with strong concurrency.
+     * The transaction to use.
+     * For queries, if none is provided, the default is a temporary read-only
+     * transaction with strong concurrency.
+     * Standard DML statements require a ReadWrite transaction. Single-use
+     * transactions are not supported (to avoid replay).  The caller must
+     * either supply an existing transaction ID or begin a new transaction.
+     * Partitioned DML requires an existing PartitionedDml transaction ID.
      * </pre>
      *
      * <code>.google.spanner.v1.TransactionSelector transaction = 2;</code>
@@ -1372,6 +1484,13 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The transaction to use. If none is provided, the default is a
      * temporary read-only transaction with strong concurrency.
+     * The transaction to use.
+     * For queries, if none is provided, the default is a temporary read-only
+     * transaction with strong concurrency.
+     * Standard DML statements require a ReadWrite transaction. Single-use
+     * transactions are not supported (to avoid replay).  The caller must
+     * either supply an existing transaction ID or begin a new transaction.
+     * Partitioned DML requires an existing PartitionedDml transaction ID.
      * </pre>
      *
      * <code>.google.spanner.v1.TransactionSelector transaction = 2;</code>
@@ -1388,6 +1507,13 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The transaction to use. If none is provided, the default is a
      * temporary read-only transaction with strong concurrency.
+     * The transaction to use.
+     * For queries, if none is provided, the default is a temporary read-only
+     * transaction with strong concurrency.
+     * Standard DML statements require a ReadWrite transaction. Single-use
+     * transactions are not supported (to avoid replay).  The caller must
+     * either supply an existing transaction ID or begin a new transaction.
+     * Partitioned DML requires an existing PartitionedDml transaction ID.
      * </pre>
      *
      * <code>.google.spanner.v1.TransactionSelector transaction = 2;</code>
@@ -1409,7 +1535,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object sql_ = "";
     /**
      * <pre>
-     * Required. The SQL query string.
+     * Required. The SQL string.
      * </pre>
      *
      * <code>string sql = 3;</code>
@@ -1428,7 +1554,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The SQL query string.
+     * Required. The SQL string.
      * </pre>
      *
      * <code>string sql = 3;</code>
@@ -1448,7 +1574,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The SQL query string.
+     * Required. The SQL string.
      * </pre>
      *
      * <code>string sql = 3;</code>
@@ -1465,7 +1591,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The SQL query string.
+     * Required. The SQL string.
      * </pre>
      *
      * <code>string sql = 3;</code>
@@ -1478,7 +1604,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The SQL query string.
+     * Required. The SQL string.
      * </pre>
      *
      * <code>string sql = 3;</code>
@@ -1500,14 +1626,14 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> paramsBuilder_;
     /**
      * <pre>
-     * The SQL query string can contain parameter placeholders. A parameter
+     * The SQL string can contain parameter placeholders. A parameter
      * placeholder consists of `'&#64;'` followed by the parameter
      * name. Parameter names consist of any combination of letters,
      * numbers, and underscores.
      * Parameters can appear anywhere that a literal value is expected.  The same
      * parameter name can be used more than once, for example:
      *   `"WHERE id &gt; &#64;msg_id AND id &lt; &#64;msg_id + 100"`
-     * It is an error to execute an SQL query with unbound parameters.
+     * It is an error to execute an SQL statement with unbound parameters.
      * Parameter values are specified using `params`, which is a JSON
      * object whose keys are parameter names, and whose values are the
      * corresponding parameter values.
@@ -1520,14 +1646,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The SQL query string can contain parameter placeholders. A parameter
+     * The SQL string can contain parameter placeholders. A parameter
      * placeholder consists of `'&#64;'` followed by the parameter
      * name. Parameter names consist of any combination of letters,
      * numbers, and underscores.
      * Parameters can appear anywhere that a literal value is expected.  The same
      * parameter name can be used more than once, for example:
      *   `"WHERE id &gt; &#64;msg_id AND id &lt; &#64;msg_id + 100"`
-     * It is an error to execute an SQL query with unbound parameters.
+     * It is an error to execute an SQL statement with unbound parameters.
      * Parameter values are specified using `params`, which is a JSON
      * object whose keys are parameter names, and whose values are the
      * corresponding parameter values.
@@ -1544,14 +1670,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The SQL query string can contain parameter placeholders. A parameter
+     * The SQL string can contain parameter placeholders. A parameter
      * placeholder consists of `'&#64;'` followed by the parameter
      * name. Parameter names consist of any combination of letters,
      * numbers, and underscores.
      * Parameters can appear anywhere that a literal value is expected.  The same
      * parameter name can be used more than once, for example:
      *   `"WHERE id &gt; &#64;msg_id AND id &lt; &#64;msg_id + 100"`
-     * It is an error to execute an SQL query with unbound parameters.
+     * It is an error to execute an SQL statement with unbound parameters.
      * Parameter values are specified using `params`, which is a JSON
      * object whose keys are parameter names, and whose values are the
      * corresponding parameter values.
@@ -1574,14 +1700,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The SQL query string can contain parameter placeholders. A parameter
+     * The SQL string can contain parameter placeholders. A parameter
      * placeholder consists of `'&#64;'` followed by the parameter
      * name. Parameter names consist of any combination of letters,
      * numbers, and underscores.
      * Parameters can appear anywhere that a literal value is expected.  The same
      * parameter name can be used more than once, for example:
      *   `"WHERE id &gt; &#64;msg_id AND id &lt; &#64;msg_id + 100"`
-     * It is an error to execute an SQL query with unbound parameters.
+     * It is an error to execute an SQL statement with unbound parameters.
      * Parameter values are specified using `params`, which is a JSON
      * object whose keys are parameter names, and whose values are the
      * corresponding parameter values.
@@ -1602,14 +1728,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The SQL query string can contain parameter placeholders. A parameter
+     * The SQL string can contain parameter placeholders. A parameter
      * placeholder consists of `'&#64;'` followed by the parameter
      * name. Parameter names consist of any combination of letters,
      * numbers, and underscores.
      * Parameters can appear anywhere that a literal value is expected.  The same
      * parameter name can be used more than once, for example:
      *   `"WHERE id &gt; &#64;msg_id AND id &lt; &#64;msg_id + 100"`
-     * It is an error to execute an SQL query with unbound parameters.
+     * It is an error to execute an SQL statement with unbound parameters.
      * Parameter values are specified using `params`, which is a JSON
      * object whose keys are parameter names, and whose values are the
      * corresponding parameter values.
@@ -1634,14 +1760,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The SQL query string can contain parameter placeholders. A parameter
+     * The SQL string can contain parameter placeholders. A parameter
      * placeholder consists of `'&#64;'` followed by the parameter
      * name. Parameter names consist of any combination of letters,
      * numbers, and underscores.
      * Parameters can appear anywhere that a literal value is expected.  The same
      * parameter name can be used more than once, for example:
      *   `"WHERE id &gt; &#64;msg_id AND id &lt; &#64;msg_id + 100"`
-     * It is an error to execute an SQL query with unbound parameters.
+     * It is an error to execute an SQL statement with unbound parameters.
      * Parameter values are specified using `params`, which is a JSON
      * object whose keys are parameter names, and whose values are the
      * corresponding parameter values.
@@ -1662,14 +1788,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The SQL query string can contain parameter placeholders. A parameter
+     * The SQL string can contain parameter placeholders. A parameter
      * placeholder consists of `'&#64;'` followed by the parameter
      * name. Parameter names consist of any combination of letters,
      * numbers, and underscores.
      * Parameters can appear anywhere that a literal value is expected.  The same
      * parameter name can be used more than once, for example:
      *   `"WHERE id &gt; &#64;msg_id AND id &lt; &#64;msg_id + 100"`
-     * It is an error to execute an SQL query with unbound parameters.
+     * It is an error to execute an SQL statement with unbound parameters.
      * Parameter values are specified using `params`, which is a JSON
      * object whose keys are parameter names, and whose values are the
      * corresponding parameter values.
@@ -1684,14 +1810,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The SQL query string can contain parameter placeholders. A parameter
+     * The SQL string can contain parameter placeholders. A parameter
      * placeholder consists of `'&#64;'` followed by the parameter
      * name. Parameter names consist of any combination of letters,
      * numbers, and underscores.
      * Parameters can appear anywhere that a literal value is expected.  The same
      * parameter name can be used more than once, for example:
      *   `"WHERE id &gt; &#64;msg_id AND id &lt; &#64;msg_id + 100"`
-     * It is an error to execute an SQL query with unbound parameters.
+     * It is an error to execute an SQL statement with unbound parameters.
      * Parameter values are specified using `params`, which is a JSON
      * object whose keys are parameter names, and whose values are the
      * corresponding parameter values.
@@ -1709,14 +1835,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The SQL query string can contain parameter placeholders. A parameter
+     * The SQL string can contain parameter placeholders. A parameter
      * placeholder consists of `'&#64;'` followed by the parameter
      * name. Parameter names consist of any combination of letters,
      * numbers, and underscores.
      * Parameters can appear anywhere that a literal value is expected.  The same
      * parameter name can be used more than once, for example:
      *   `"WHERE id &gt; &#64;msg_id AND id &lt; &#64;msg_id + 100"`
-     * It is an error to execute an SQL query with unbound parameters.
+     * It is an error to execute an SQL statement with unbound parameters.
      * Parameter values are specified using `params`, which is a JSON
      * object whose keys are parameter names, and whose values are the
      * corresponding parameter values.
@@ -1770,7 +1896,7 @@ private static final long serialVersionUID = 0L;
      * from a JSON value.  For example, values of type `BYTES` and values
      * of type `STRING` both appear in [params][google.spanner.v1.ExecuteSqlRequest.params] as JSON strings.
      * In these cases, `param_types` can be used to specify the exact
-     * SQL type for some or all of the SQL query parameters. See the
+     * SQL type for some or all of the SQL statement parameters. See the
      * definition of [Type][google.spanner.v1.Type] for more information
      * about SQL types.
      * </pre>
@@ -1796,7 +1922,7 @@ private static final long serialVersionUID = 0L;
      * from a JSON value.  For example, values of type `BYTES` and values
      * of type `STRING` both appear in [params][google.spanner.v1.ExecuteSqlRequest.params] as JSON strings.
      * In these cases, `param_types` can be used to specify the exact
-     * SQL type for some or all of the SQL query parameters. See the
+     * SQL type for some or all of the SQL statement parameters. See the
      * definition of [Type][google.spanner.v1.Type] for more information
      * about SQL types.
      * </pre>
@@ -1813,7 +1939,7 @@ private static final long serialVersionUID = 0L;
      * from a JSON value.  For example, values of type `BYTES` and values
      * of type `STRING` both appear in [params][google.spanner.v1.ExecuteSqlRequest.params] as JSON strings.
      * In these cases, `param_types` can be used to specify the exact
-     * SQL type for some or all of the SQL query parameters. See the
+     * SQL type for some or all of the SQL statement parameters. See the
      * definition of [Type][google.spanner.v1.Type] for more information
      * about SQL types.
      * </pre>
@@ -1835,7 +1961,7 @@ private static final long serialVersionUID = 0L;
      * from a JSON value.  For example, values of type `BYTES` and values
      * of type `STRING` both appear in [params][google.spanner.v1.ExecuteSqlRequest.params] as JSON strings.
      * In these cases, `param_types` can be used to specify the exact
-     * SQL type for some or all of the SQL query parameters. See the
+     * SQL type for some or all of the SQL statement parameters. See the
      * definition of [Type][google.spanner.v1.Type] for more information
      * about SQL types.
      * </pre>
@@ -1865,7 +1991,7 @@ private static final long serialVersionUID = 0L;
      * from a JSON value.  For example, values of type `BYTES` and values
      * of type `STRING` both appear in [params][google.spanner.v1.ExecuteSqlRequest.params] as JSON strings.
      * In these cases, `param_types` can be used to specify the exact
-     * SQL type for some or all of the SQL query parameters. See the
+     * SQL type for some or all of the SQL statement parameters. See the
      * definition of [Type][google.spanner.v1.Type] for more information
      * about SQL types.
      * </pre>
@@ -1894,7 +2020,7 @@ private static final long serialVersionUID = 0L;
      * from a JSON value.  For example, values of type `BYTES` and values
      * of type `STRING` both appear in [params][google.spanner.v1.ExecuteSqlRequest.params] as JSON strings.
      * In these cases, `param_types` can be used to specify the exact
-     * SQL type for some or all of the SQL query parameters. See the
+     * SQL type for some or all of the SQL statement parameters. See the
      * definition of [Type][google.spanner.v1.Type] for more information
      * about SQL types.
      * </pre>
@@ -1916,7 +2042,7 @@ private static final long serialVersionUID = 0L;
      * from a JSON value.  For example, values of type `BYTES` and values
      * of type `STRING` both appear in [params][google.spanner.v1.ExecuteSqlRequest.params] as JSON strings.
      * In these cases, `param_types` can be used to specify the exact
-     * SQL type for some or all of the SQL query parameters. See the
+     * SQL type for some or all of the SQL statement parameters. See the
      * definition of [Type][google.spanner.v1.Type] for more information
      * about SQL types.
      * </pre>
@@ -1934,10 +2060,10 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.ByteString resumeToken_ = com.google.protobuf.ByteString.EMPTY;
     /**
      * <pre>
-     * If this request is resuming a previously interrupted SQL query
+     * If this request is resuming a previously interrupted SQL statement
      * execution, `resume_token` should be copied from the last
      * [PartialResultSet][google.spanner.v1.PartialResultSet] yielded before the interruption. Doing this
-     * enables the new SQL query execution to resume where the last one left
+     * enables the new SQL statement execution to resume where the last one left
      * off. The rest of the request parameters must exactly match the
      * request that yielded this token.
      * </pre>
@@ -1949,10 +2075,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * If this request is resuming a previously interrupted SQL query
+     * If this request is resuming a previously interrupted SQL statement
      * execution, `resume_token` should be copied from the last
      * [PartialResultSet][google.spanner.v1.PartialResultSet] yielded before the interruption. Doing this
-     * enables the new SQL query execution to resume where the last one left
+     * enables the new SQL statement execution to resume where the last one left
      * off. The rest of the request parameters must exactly match the
      * request that yielded this token.
      * </pre>
@@ -1970,10 +2096,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * If this request is resuming a previously interrupted SQL query
+     * If this request is resuming a previously interrupted SQL statement
      * execution, `resume_token` should be copied from the last
      * [PartialResultSet][google.spanner.v1.PartialResultSet] yielded before the interruption. Doing this
-     * enables the new SQL query execution to resume where the last one left
+     * enables the new SQL statement execution to resume where the last one left
      * off. The rest of the request parameters must exactly match the
      * request that yielded this token.
      * </pre>
@@ -2108,6 +2234,65 @@ private static final long serialVersionUID = 0L;
     public Builder clearPartitionToken() {
       
       partitionToken_ = getDefaultInstance().getPartitionToken();
+      onChanged();
+      return this;
+    }
+
+    private long seqno_ ;
+    /**
+     * <pre>
+     * A per-transaction sequence number used to identify this request. This
+     * makes each request idempotent such that if the request is received multiple
+     * times, at most one will succeed.
+     * The sequence number must be monotonically increasing within the
+     * transaction. If a request arrives for the first time with an out-of-order
+     * sequence number, the transaction may be aborted. Replays of previously
+     * handled requests will yield the same response as the first execution.
+     * Required for DML statements. Ignored for queries.
+     * </pre>
+     *
+     * <code>int64 seqno = 9;</code>
+     */
+    public long getSeqno() {
+      return seqno_;
+    }
+    /**
+     * <pre>
+     * A per-transaction sequence number used to identify this request. This
+     * makes each request idempotent such that if the request is received multiple
+     * times, at most one will succeed.
+     * The sequence number must be monotonically increasing within the
+     * transaction. If a request arrives for the first time with an out-of-order
+     * sequence number, the transaction may be aborted. Replays of previously
+     * handled requests will yield the same response as the first execution.
+     * Required for DML statements. Ignored for queries.
+     * </pre>
+     *
+     * <code>int64 seqno = 9;</code>
+     */
+    public Builder setSeqno(long value) {
+      
+      seqno_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * A per-transaction sequence number used to identify this request. This
+     * makes each request idempotent such that if the request is received multiple
+     * times, at most one will succeed.
+     * The sequence number must be monotonically increasing within the
+     * transaction. If a request arrives for the first time with an out-of-order
+     * sequence number, the transaction may be aborted. Replays of previously
+     * handled requests will yield the same response as the first execution.
+     * Required for DML statements. Ignored for queries.
+     * </pre>
+     *
+     * <code>int64 seqno = 9;</code>
+     */
+    public Builder clearSeqno() {
+      
+      seqno_ = 0L;
       onChanged();
       return this;
     }

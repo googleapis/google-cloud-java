@@ -21,6 +21,7 @@ import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.ServiceRpc;
 import com.google.cloud.firestore.v1beta1.FirestoreClient.ListCollectionIdsPagedResponse;
+import com.google.cloud.firestore.v1beta1.FirestoreClient.ListDocumentsPagedResponse;
 import com.google.firestore.v1beta1.BatchGetDocumentsRequest;
 import com.google.firestore.v1beta1.BatchGetDocumentsResponse;
 import com.google.firestore.v1beta1.BeginTransactionRequest;
@@ -28,13 +29,13 @@ import com.google.firestore.v1beta1.BeginTransactionResponse;
 import com.google.firestore.v1beta1.CommitRequest;
 import com.google.firestore.v1beta1.CommitResponse;
 import com.google.firestore.v1beta1.ListCollectionIdsRequest;
+import com.google.firestore.v1beta1.ListDocumentsRequest;
 import com.google.firestore.v1beta1.ListenRequest;
 import com.google.firestore.v1beta1.ListenResponse;
 import com.google.firestore.v1beta1.RollbackRequest;
 import com.google.firestore.v1beta1.RunQueryRequest;
 import com.google.firestore.v1beta1.RunQueryResponse;
 import com.google.protobuf.Empty;
-import java.util.concurrent.Executor;
 import java.util.concurrent.ScheduledExecutorService;
 
 /** Contains the RPC stubs used by the manual Cloud Firestore client. */
@@ -62,6 +63,9 @@ public interface FirestoreRpc extends AutoCloseable, ServiceRpc {
   /** Returns a list of collections IDs. */
   UnaryCallable<ListCollectionIdsRequest, ListCollectionIdsPagedResponse>
       listCollectionIdsPagedCallable();
+
+  /** Returns a list of documents. */
+  UnaryCallable<ListDocumentsRequest, ListDocumentsPagedResponse> listDocumentsPagedCallable();
 
   /** Returns a bi-directional watch stream. */
   BidiStreamingCallable<ListenRequest, ListenResponse> listenCallable();

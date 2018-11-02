@@ -5,11 +5,11 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-testing</artifactId>
-  <version>0.62.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-testing:current} -->
+  <version>0.69.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-testing:current} -->
   <packaging>pom</packaging>
 
   <name>Google Cloud Testing</name>
-  <url>https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-testing</url>
+  <url>https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-testing</url>
   <description>
     Contains packages used for testing google-cloud libraries on various platforms.
   </description>
@@ -30,7 +30,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-bom</artifactId>
-        <version>0.62.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-bom:current} -->
+        <version>0.69.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-bom:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -114,7 +114,7 @@
         <artifactId>nexus-staging-maven-plugin</artifactId>
         <version>1.6.6</version>
         <configuration>
-          <skip>true</skip>
+          <skipNexusStagingDeployMojo>true</skipNexusStagingDeployMojo>
         </configuration>
       </plugin>
     </plugins>

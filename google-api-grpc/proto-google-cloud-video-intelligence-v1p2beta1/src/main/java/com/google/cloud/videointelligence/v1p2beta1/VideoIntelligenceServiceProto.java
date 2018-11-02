@@ -239,16 +239,16 @@ public final class VideoIntelligenceServiceProto {
       "\n\001x\030\001 \001(\002\022\t\n\001y\030\002 \001(\002\"f\n\026NormalizedBoundi" +
       "ngPoly\022L\n\010vertices\030\001 \003(\0132:.google.cloud." +
       "videointelligence.v1p2beta1.NormalizedVe" +
-      "rtex\"V\n\013TextSegment\022G\n\007segment\030\001 \001(\01326.g" +
-      "oogle.cloud.videointelligence.v1p2beta1." +
-      "VideoSegment\"\233\001\n\tTextFrame\022^\n\024rotated_bo" +
-      "unding_box\030\001 \001(\0132@.google.cloud.videoint" +
-      "elligence.v1p2beta1.NormalizedBoundingPo" +
-      "ly\022.\n\013time_offset\030\002 \001(\0132\031.google.protobu" +
-      "f.Duration\"\300\001\n\016TextAnnotation\022\014\n\004text\030\001 " +
-      "\001(\t\022\022\n\nconfidence\030\002 \001(\002\022C\n\006frames\030\003 \003(\0132" +
-      "3.google.cloud.videointelligence.v1p2bet" +
-      "a1.TextFrame\022G\n\010segments\030\004 \003(\01325.google." +
+      "rtex\"\257\001\n\013TextSegment\022G\n\007segment\030\001 \001(\01326." +
+      "google.cloud.videointelligence.v1p2beta1" +
+      ".VideoSegment\022\022\n\nconfidence\030\002 \001(\002\022C\n\006fra" +
+      "mes\030\003 \003(\01323.google.cloud.videointelligen" +
+      "ce.v1p2beta1.TextFrame\"\233\001\n\tTextFrame\022^\n\024" +
+      "rotated_bounding_box\030\001 \001(\0132@.google.clou" +
+      "d.videointelligence.v1p2beta1.Normalized" +
+      "BoundingPoly\022.\n\013time_offset\030\002 \001(\0132\031.goog" +
+      "le.protobuf.Duration\"g\n\016TextAnnotation\022\014" +
+      "\n\004text\030\001 \001(\t\022G\n\010segments\030\002 \003(\01325.google." +
       "cloud.videointelligence.v1p2beta1.TextSe" +
       "gment\"\247\001\n\023ObjectTrackingFrame\022`\n\027normali" +
       "zed_bounding_box\030\001 \001(\0132?.google.cloud.vi" +
@@ -426,7 +426,7 @@ public final class VideoIntelligenceServiceProto {
     internal_static_google_cloud_videointelligence_v1p2beta1_TextSegment_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_cloud_videointelligence_v1p2beta1_TextSegment_descriptor,
-        new java.lang.String[] { "Segment", });
+        new java.lang.String[] { "Segment", "Confidence", "Frames", });
     internal_static_google_cloud_videointelligence_v1p2beta1_TextFrame_descriptor =
       getDescriptor().getMessageTypes().get(21);
     internal_static_google_cloud_videointelligence_v1p2beta1_TextFrame_fieldAccessorTable = new
@@ -438,7 +438,7 @@ public final class VideoIntelligenceServiceProto {
     internal_static_google_cloud_videointelligence_v1p2beta1_TextAnnotation_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_cloud_videointelligence_v1p2beta1_TextAnnotation_descriptor,
-        new java.lang.String[] { "Text", "Confidence", "Frames", "Segments", });
+        new java.lang.String[] { "Text", "Segments", });
     internal_static_google_cloud_videointelligence_v1p2beta1_ObjectTrackingFrame_descriptor =
       getDescriptor().getMessageTypes().get(23);
     internal_static_google_cloud_videointelligence_v1p2beta1_ObjectTrackingFrame_fieldAccessorTable = new

@@ -604,6 +604,20 @@ public class BigQueryImplTest {
   }
 
   @Test
+  public void testGetTableFromTableIdWithoutProject() {
+    TableInfo tableInfo = TABLE_INFO.setProjectId(PROJECT);
+    TableId tableId = TableId.of("", TABLE_ID.getDataset(), TABLE_ID.getTable());
+    EasyMock.expect(bigqueryRpcMock.getTable(PROJECT, DATASET, TABLE, EMPTY_RPC_OPTIONS))
+        .andReturn(tableInfo.toPb());
+    EasyMock.replay(bigqueryRpcMock);
+    BigQueryOptions bigQueryOptions =
+        createBigQueryOptionsForProject(PROJECT, rpcFactoryMock);
+    bigquery = bigQueryOptions.getService();
+    Table table = bigquery.getTable(tableId);
+    assertEquals(new Table(bigquery, new TableInfo.BuilderImpl(tableInfo)), table);
+  }
+
+  @Test
   public void testGetTableWithSelectedFields() {
     Capture<Map<BigQueryRpc.Option, Object>> capturedOptions = Capture.newInstance();
     EasyMock.expect(
@@ -1448,7 +1462,7 @@ public class BigQueryImplTest {
 
   @Test
   public void testQueryDryRun() throws Exception {
-    // https://github.com/GoogleCloudPlatform/google-cloud-java/issues/2479
+    // https://github.com/googleapis/google-cloud-java/issues/2479
     EasyMock.replay(bigqueryRpcMock);
     thrown.expect(UnsupportedOperationException.class);
     options

@@ -334,7 +334,7 @@ private static final long serialVersionUID = 0L;
   private boolean cancelRequested_;
   /**
    * <pre>
-   * Specifies if cancellation was requested for the operaiton.
+   * Specifies if cancellation was requested for the operation.
    * </pre>
    *
    * <code>bool cancel_requested = 6;</code>
@@ -1397,7 +1397,7 @@ private static final long serialVersionUID = 0L;
     private boolean cancelRequested_ ;
     /**
      * <pre>
-     * Specifies if cancellation was requested for the operaiton.
+     * Specifies if cancellation was requested for the operation.
      * </pre>
      *
      * <code>bool cancel_requested = 6;</code>
@@ -1407,7 +1407,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Specifies if cancellation was requested for the operaiton.
+     * Specifies if cancellation was requested for the operation.
      * </pre>
      *
      * <code>bool cancel_requested = 6;</code>
@@ -1420,7 +1420,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Specifies if cancellation was requested for the operaiton.
+     * Specifies if cancellation was requested for the operation.
      * </pre>
      *
      * <code>bool cancel_requested = 6;</code>

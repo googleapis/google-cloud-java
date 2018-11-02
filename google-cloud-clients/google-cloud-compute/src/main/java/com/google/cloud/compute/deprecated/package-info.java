@@ -19,7 +19,7 @@
  *
  * <p>Here's a simple usage example for using google-cloud from App/Compute Engine. This example
  * shows how to create a snapshot from an existing disk. For the complete source code see
- * <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/compute/snippets/CreateSnapshot.java">
+ * <a href="https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/compute/snippets/CreateSnapshot.java">
  * CreateSnapshot.java</a>.
  * <pre> {@code
  * Compute compute = ComputeOptions.getDefaultInstance().getService();
@@ -36,7 +36,7 @@
  * }}</pre>
  * <p>This second example shows how to create a virtual machine instance. Complete source code can
  * be found at
- * <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/compute/snippets/CreateInstance.java">
+ * <a href="https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/compute/snippets/CreateInstance.java">
  * CreateInstance.java</a>.
  * <pre> {@code
  * Compute compute = ComputeOptions.getDefaultInstance().getService();

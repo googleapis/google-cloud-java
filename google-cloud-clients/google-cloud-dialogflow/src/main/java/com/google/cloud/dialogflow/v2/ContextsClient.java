@@ -363,7 +363,7 @@ public class ContextsClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final Context getContext(GetContextRequest request) {
+  public final Context getContext(GetContextRequest request) {
     return getContextCallable().call(request);
   }
 
@@ -626,7 +626,7 @@ public class ContextsClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final void deleteContext(DeleteContextRequest request) {
+  public final void deleteContext(DeleteContextRequest request) {
     deleteContextCallable().call(request);
   }
 
@@ -721,7 +721,7 @@ public class ContextsClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final void deleteAllContexts(DeleteAllContextsRequest request) {
+  public final void deleteAllContexts(DeleteAllContextsRequest request) {
     deleteAllContextsCallable().call(request);
   }
 
