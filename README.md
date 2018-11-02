@@ -67,7 +67,7 @@ If you are using Maven, add this to your pom.xml file
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-bom</artifactId>
-        <version>0.66.0-alpha</version>
+        <version>0.69.0-alpha</version>
         <type>pom</type>
         <scope>import</scope>
        </dependency>
