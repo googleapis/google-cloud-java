@@ -63,7 +63,7 @@ import org.apache.maven.plugins.annotations.Parameter;
 @Mojo(name = "download")
 public class DownloadComponentsMojo extends AbstractMojo {
 
-  private static long STALE_MS = TimeUnit.HOURS.toMillis(2);
+  private static final long STALE_MS = TimeUnit.HOURS.toMillis(2);
 
   @Parameter(defaultValue = "https://dl.google.com/dl/cloudsdk/channels/rapid/", required = true)
   private URL baseUrl;
@@ -160,10 +160,13 @@ public class DownloadComponentsMojo extends AbstractMojo {
     boolean isStale = !localCache.exists()
         || new Date().getTime() - localCache.lastModified() < STALE_MS;
 
-    if (localCache.exists() && session.isOffline()) {
-      if (isStale) {
-        getLog().info("Using stale manifest because offline mode is enabled");
-      }
+    if (forceRefresh && session.isOffline()) {
+      throw new IllegalStateException("Can't force manifest refresh while offline");
+    }
+
+    if (session.isOffline() && localCache.exists() && isStale) {
+      getLog().info("Using stale manifest because offline mode is enabled");
+      return;
     }
 
     if (!forceRefresh && !isStale) {
@@ -310,8 +313,9 @@ public class DownloadComponentsMojo extends AbstractMojo {
 
   private static String byteArrayToHex(byte[] a) {
     StringBuilder sb = new StringBuilder(a.length * 2);
-    for(byte b: a)
+    for (byte b : a) {
       sb.append(String.format("%02x", b));
+    }
     return sb.toString();
   }
 

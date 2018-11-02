@@ -48,7 +48,7 @@ public class BigtableEmulatorRule extends ExternalResource {
     return new BigtableEmulatorRule();
   }
 
-  BigtableEmulatorRule() { }
+  private BigtableEmulatorRule() { }
 
   /** Initializes the Bigtable emulator before a test runs. */
   @Override

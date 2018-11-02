@@ -96,7 +96,7 @@ public class Emulator {
     }
     this.port = getAvailablePort();
 
-    process = Runtime.getRuntime().exec(executable + " -port " + "" + port);
+    process = Runtime.getRuntime().exec(String.format("%s -port %d", executable, port));
     pipeStreamToLog(process.getInputStream(), Level.INFO);
     pipeStreamToLog(process.getErrorStream(), Level.WARNING);
     isStopped = false;
@@ -191,11 +191,11 @@ public class Emulator {
     String unformattedOs = System.getProperty("os.name", "unknown").toLowerCase(Locale.ENGLISH);
     String os;
 
-    if ((unformattedOs.indexOf("mac") >= 0) || (unformattedOs.indexOf("darwin") >= 0)) {
+    if (unformattedOs.contains("mac") || unformattedOs.contains("darwin")) {
       os = "darwin";
-    } else if (unformattedOs.indexOf("win") >= 0) {
+    } else if (unformattedOs.contains("win")) {
       os = "windows";
-    } else if (unformattedOs.indexOf("linux") >= 0) {
+    } else if (unformattedOs.contains("linux")) {
       os = "linux";
     } else {
       throw new UnsupportedOperationException(
@@ -214,7 +214,7 @@ public class Emulator {
         arch = "x86_64";
         break;
       default:
-        throw new UnsupportedOperationException("Unsupport architecture: " + unformattedArch);
+        throw new UnsupportedOperationException("Unsupported architecture: " + unformattedArch);
     }
 
     return os + "-" + arch;
