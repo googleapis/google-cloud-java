@@ -106,6 +106,9 @@ public class ConformanceTest {
   /** If non-empty, only runs tests included in this set. */
   private final Set<String> includedTests = Collections.emptySet();
 
+  /** If true, prints debug information to System.out. */
+  private final boolean DEBUG_MODE = !includedTests.isEmpty();
+
   @Captor private ArgumentCaptor<CommitRequest> commitCapture;
 
   @Captor private ArgumentCaptor<BatchGetDocumentsRequest> getAllCapture;
@@ -331,11 +334,19 @@ public class ConformanceTest {
   }
 
   /** Helper function to convert test values in a list to Firestore API types. */
-  private List<Object> convertArray(List<Object> list) {
-    for (int i = 0; i < list.size(); ++i) {
-      list.set(i, convertValue(list.get(i)));
+  private Object convertArray(List<Object> list) {
+    if (!list.isEmpty() && list.get(0).equals("ArrayUnion")) {
+      return FieldValue.arrayUnion(
+          ((List<Object>) convertArray(list.subList(1, list.size()))).toArray());
+    } else if (!list.isEmpty() && list.get(0).equals("ArrayRemove")) {
+      return FieldValue.arrayRemove(
+          ((List<Object>) convertArray(list.subList(1, list.size()))).toArray());
+    } else {
+      for (int i = 0; i < list.size(); ++i) {
+        list.set(i, convertValue(list.get(i)));
+      }
+      return list;
     }
-    return list;
   }
 
   /** Reads the test definition from the Proto file. */
@@ -378,8 +389,9 @@ public class ConformanceTest {
             new Protectable() {
               @Override
               public void protect() throws Throwable {
-                // Uncomment to print the test protobuf:
-                // System.out.println(testDefinition);
+                if (DEBUG_MODE) {
+                  System.out.println(testDefinition);
+                }
 
                 switch (testDefinition.getTestCase()) {
                   case GET:
