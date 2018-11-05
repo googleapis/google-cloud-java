@@ -23,6 +23,7 @@ import com.google.common.testing.EqualsTester;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
+import org.threeten.bp.LocalDate;
 
 /** Unit tests for {@link Date}. */
 @RunWith(JUnit4.class)
@@ -70,6 +71,40 @@ public class DateTest {
   public void serialization() {
     reserializeAndAssert(Date.fromYearMonthDay(2017, 4, 20));
   }
+  
+  @Test
+  public void toLocalDate(){
+	LocalDate localDate = Date.toDate(Date.parseDate("2016-09-18"));
+	assertThat(localDate.getYear()).isEqualTo(2016);
+	assertThat(localDate.getMonth().getValue()).isEqualTo(9);
+	assertThat(localDate.getDayOfMonth()).isEqualTo(18);
+  }
+  
+  @Test
+  public void toDate(){
+	Date date = Date.toDate(LocalDate.of(2016, 9, 18));
+	assertThat(date.getYear()).isEqualTo(2016);
+	assertThat(date.getMonth()).isEqualTo(9);
+	assertThat(date.getDayOfMonth()).isEqualTo(18);  
+	
+  }
+  
+  @Test
+  public void fromLocalDate(){
+	LocalDate localDate = Date.fromDate(Date.parseDate("2016-09-18"));
+	assertThat(localDate.getYear()).isEqualTo(2016);
+	assertThat(localDate.getMonth().getValue()).isEqualTo(9);
+	assertThat(localDate.getDayOfMonth()).isEqualTo(18);
+  }
+  
+  @Test
+  public void fromDate(){
+	Date date = Date.fromDate(LocalDate.of(2016, 9, 18));
+	assertThat(date.getYear()).isEqualTo(2016);
+	assertThat(date.getMonth()).isEqualTo(9);
+	assertThat(date.getDayOfMonth()).isEqualTo(18);  
+  }
+  
 
   private void assertDescending(Date... dates) {
     for (int i = 0; i < dates.length - 1; i++) {

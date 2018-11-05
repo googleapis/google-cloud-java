@@ -24,6 +24,8 @@ import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.threeten.bp.LocalDate;
+
 /**
  * Represents a Date without time, such as 2017-03-17. Date is timezone independent.
  */
@@ -68,7 +70,39 @@ public final class Date implements Comparable<Date>, Serializable {
     int dayOfMonth = Integer.parseInt(matcher.group(3));
     return new Date(year, month, dayOfMonth);
   }
+  
+  /**
+  * @param date
+  * @return LocalDate
+  */
+  public static LocalDate toDate(Date date){
+	return LocalDate.of(date.year, date.month, date.dayOfMonth);  
+  }
+   
+  /**
+  * @param date
+  * @return Date
+  */
+  public static Date toDate(LocalDate date){
+    return new Date(date.getDayOfYear(), date.getMonthValue(), date.getDayOfMonth());
+  }
 
+  /**
+  * @param date
+  * @return LocalDate
+  */
+  public static LocalDate fromDate(Date date){
+ 	return LocalDate.of(date.year, date.month, date.dayOfMonth);  
+  }
+   
+  /**
+  * @param date
+  * @return Date 
+  */
+  public static Date fromDate(LocalDate date){
+    return new Date(date.getDayOfYear(), date.getMonthValue(), date.getDayOfMonth());  
+  }
+   
   /** Returns the year. */
   public int getYear() {
     return year;
