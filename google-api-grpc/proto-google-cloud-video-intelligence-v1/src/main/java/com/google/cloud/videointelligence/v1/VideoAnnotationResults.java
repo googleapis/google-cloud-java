@@ -26,6 +26,7 @@ private static final long serialVersionUID = 0L;
     frameLabelAnnotations_ = java.util.Collections.emptyList();
     faceAnnotations_ = java.util.Collections.emptyList();
     shotAnnotations_ = java.util.Collections.emptyList();
+    speechTranscriptions_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -129,6 +130,15 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 90: {
+            if (!((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
+              speechTranscriptions_ = new java.util.ArrayList<com.google.cloud.videointelligence.v1.SpeechTranscription>();
+              mutable_bitField0_ |= 0x00000080;
+            }
+            speechTranscriptions_.add(
+                input.readMessage(com.google.cloud.videointelligence.v1.SpeechTranscription.parser(), extensionRegistry));
+            break;
+          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -158,6 +168,9 @@ private static final long serialVersionUID = 0L;
       }
       if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
         shotAnnotations_ = java.util.Collections.unmodifiableList(shotAnnotations_);
+      }
+      if (((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
+        speechTranscriptions_ = java.util.Collections.unmodifiableList(speechTranscriptions_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -544,6 +557,61 @@ private static final long serialVersionUID = 0L;
     return getExplicitAnnotation();
   }
 
+  public static final int SPEECH_TRANSCRIPTIONS_FIELD_NUMBER = 11;
+  private java.util.List<com.google.cloud.videointelligence.v1.SpeechTranscription> speechTranscriptions_;
+  /**
+   * <pre>
+   * Speech transcription.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.videointelligence.v1.SpeechTranscription speech_transcriptions = 11;</code>
+   */
+  public java.util.List<com.google.cloud.videointelligence.v1.SpeechTranscription> getSpeechTranscriptionsList() {
+    return speechTranscriptions_;
+  }
+  /**
+   * <pre>
+   * Speech transcription.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.videointelligence.v1.SpeechTranscription speech_transcriptions = 11;</code>
+   */
+  public java.util.List<? extends com.google.cloud.videointelligence.v1.SpeechTranscriptionOrBuilder> 
+      getSpeechTranscriptionsOrBuilderList() {
+    return speechTranscriptions_;
+  }
+  /**
+   * <pre>
+   * Speech transcription.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.videointelligence.v1.SpeechTranscription speech_transcriptions = 11;</code>
+   */
+  public int getSpeechTranscriptionsCount() {
+    return speechTranscriptions_.size();
+  }
+  /**
+   * <pre>
+   * Speech transcription.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.videointelligence.v1.SpeechTranscription speech_transcriptions = 11;</code>
+   */
+  public com.google.cloud.videointelligence.v1.SpeechTranscription getSpeechTranscriptions(int index) {
+    return speechTranscriptions_.get(index);
+  }
+  /**
+   * <pre>
+   * Speech transcription.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.videointelligence.v1.SpeechTranscription speech_transcriptions = 11;</code>
+   */
+  public com.google.cloud.videointelligence.v1.SpeechTranscriptionOrBuilder getSpeechTranscriptionsOrBuilder(
+      int index) {
+    return speechTranscriptions_.get(index);
+  }
+
   public static final int ERROR_FIELD_NUMBER = 9;
   private com.google.rpc.Status error_;
   /**
@@ -618,6 +686,9 @@ private static final long serialVersionUID = 0L;
     if (error_ != null) {
       output.writeMessage(9, getError());
     }
+    for (int i = 0; i < speechTranscriptions_.size(); i++) {
+      output.writeMessage(11, speechTranscriptions_.get(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -658,6 +729,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(9, getError());
     }
+    for (int i = 0; i < speechTranscriptions_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(11, speechTranscriptions_.get(i));
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -691,6 +766,8 @@ private static final long serialVersionUID = 0L;
       result = result && getExplicitAnnotation()
           .equals(other.getExplicitAnnotation());
     }
+    result = result && getSpeechTranscriptionsList()
+        .equals(other.getSpeechTranscriptionsList());
     result = result && (hasError() == other.hasError());
     if (hasError()) {
       result = result && getError()
@@ -732,6 +809,10 @@ private static final long serialVersionUID = 0L;
     if (hasExplicitAnnotation()) {
       hash = (37 * hash) + EXPLICIT_ANNOTATION_FIELD_NUMBER;
       hash = (53 * hash) + getExplicitAnnotation().hashCode();
+    }
+    if (getSpeechTranscriptionsCount() > 0) {
+      hash = (37 * hash) + SPEECH_TRANSCRIPTIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getSpeechTranscriptionsList().hashCode();
     }
     if (hasError()) {
       hash = (37 * hash) + ERROR_FIELD_NUMBER;
@@ -874,6 +955,7 @@ private static final long serialVersionUID = 0L;
         getFrameLabelAnnotationsFieldBuilder();
         getFaceAnnotationsFieldBuilder();
         getShotAnnotationsFieldBuilder();
+        getSpeechTranscriptionsFieldBuilder();
       }
     }
     @java.lang.Override
@@ -916,6 +998,12 @@ private static final long serialVersionUID = 0L;
       } else {
         explicitAnnotation_ = null;
         explicitAnnotationBuilder_ = null;
+      }
+      if (speechTranscriptionsBuilder_ == null) {
+        speechTranscriptions_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000080);
+      } else {
+        speechTranscriptionsBuilder_.clear();
       }
       if (errorBuilder_ == null) {
         error_ = null;
@@ -1001,6 +1089,15 @@ private static final long serialVersionUID = 0L;
         result.explicitAnnotation_ = explicitAnnotation_;
       } else {
         result.explicitAnnotation_ = explicitAnnotationBuilder_.build();
+      }
+      if (speechTranscriptionsBuilder_ == null) {
+        if (((bitField0_ & 0x00000080) == 0x00000080)) {
+          speechTranscriptions_ = java.util.Collections.unmodifiableList(speechTranscriptions_);
+          bitField0_ = (bitField0_ & ~0x00000080);
+        }
+        result.speechTranscriptions_ = speechTranscriptions_;
+      } else {
+        result.speechTranscriptions_ = speechTranscriptionsBuilder_.build();
       }
       if (errorBuilder_ == null) {
         result.error_ = error_;
@@ -1192,6 +1289,32 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasExplicitAnnotation()) {
         mergeExplicitAnnotation(other.getExplicitAnnotation());
+      }
+      if (speechTranscriptionsBuilder_ == null) {
+        if (!other.speechTranscriptions_.isEmpty()) {
+          if (speechTranscriptions_.isEmpty()) {
+            speechTranscriptions_ = other.speechTranscriptions_;
+            bitField0_ = (bitField0_ & ~0x00000080);
+          } else {
+            ensureSpeechTranscriptionsIsMutable();
+            speechTranscriptions_.addAll(other.speechTranscriptions_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.speechTranscriptions_.isEmpty()) {
+          if (speechTranscriptionsBuilder_.isEmpty()) {
+            speechTranscriptionsBuilder_.dispose();
+            speechTranscriptionsBuilder_ = null;
+            speechTranscriptions_ = other.speechTranscriptions_;
+            bitField0_ = (bitField0_ & ~0x00000080);
+            speechTranscriptionsBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getSpeechTranscriptionsFieldBuilder() : null;
+          } else {
+            speechTranscriptionsBuilder_.addAllMessages(other.speechTranscriptions_);
+          }
+        }
       }
       if (other.hasError()) {
         mergeError(other.getError());
@@ -3085,6 +3208,318 @@ private static final long serialVersionUID = 0L;
         explicitAnnotation_ = null;
       }
       return explicitAnnotationBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.videointelligence.v1.SpeechTranscription> speechTranscriptions_ =
+      java.util.Collections.emptyList();
+    private void ensureSpeechTranscriptionsIsMutable() {
+      if (!((bitField0_ & 0x00000080) == 0x00000080)) {
+        speechTranscriptions_ = new java.util.ArrayList<com.google.cloud.videointelligence.v1.SpeechTranscription>(speechTranscriptions_);
+        bitField0_ |= 0x00000080;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.google.cloud.videointelligence.v1.SpeechTranscription, com.google.cloud.videointelligence.v1.SpeechTranscription.Builder, com.google.cloud.videointelligence.v1.SpeechTranscriptionOrBuilder> speechTranscriptionsBuilder_;
+
+    /**
+     * <pre>
+     * Speech transcription.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.videointelligence.v1.SpeechTranscription speech_transcriptions = 11;</code>
+     */
+    public java.util.List<com.google.cloud.videointelligence.v1.SpeechTranscription> getSpeechTranscriptionsList() {
+      if (speechTranscriptionsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(speechTranscriptions_);
+      } else {
+        return speechTranscriptionsBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * Speech transcription.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.videointelligence.v1.SpeechTranscription speech_transcriptions = 11;</code>
+     */
+    public int getSpeechTranscriptionsCount() {
+      if (speechTranscriptionsBuilder_ == null) {
+        return speechTranscriptions_.size();
+      } else {
+        return speechTranscriptionsBuilder_.getCount();
+      }
+    }
+    /**
+     * <pre>
+     * Speech transcription.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.videointelligence.v1.SpeechTranscription speech_transcriptions = 11;</code>
+     */
+    public com.google.cloud.videointelligence.v1.SpeechTranscription getSpeechTranscriptions(int index) {
+      if (speechTranscriptionsBuilder_ == null) {
+        return speechTranscriptions_.get(index);
+      } else {
+        return speechTranscriptionsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * Speech transcription.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.videointelligence.v1.SpeechTranscription speech_transcriptions = 11;</code>
+     */
+    public Builder setSpeechTranscriptions(
+        int index, com.google.cloud.videointelligence.v1.SpeechTranscription value) {
+      if (speechTranscriptionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSpeechTranscriptionsIsMutable();
+        speechTranscriptions_.set(index, value);
+        onChanged();
+      } else {
+        speechTranscriptionsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Speech transcription.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.videointelligence.v1.SpeechTranscription speech_transcriptions = 11;</code>
+     */
+    public Builder setSpeechTranscriptions(
+        int index, com.google.cloud.videointelligence.v1.SpeechTranscription.Builder builderForValue) {
+      if (speechTranscriptionsBuilder_ == null) {
+        ensureSpeechTranscriptionsIsMutable();
+        speechTranscriptions_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        speechTranscriptionsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Speech transcription.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.videointelligence.v1.SpeechTranscription speech_transcriptions = 11;</code>
+     */
+    public Builder addSpeechTranscriptions(com.google.cloud.videointelligence.v1.SpeechTranscription value) {
+      if (speechTranscriptionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSpeechTranscriptionsIsMutable();
+        speechTranscriptions_.add(value);
+        onChanged();
+      } else {
+        speechTranscriptionsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Speech transcription.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.videointelligence.v1.SpeechTranscription speech_transcriptions = 11;</code>
+     */
+    public Builder addSpeechTranscriptions(
+        int index, com.google.cloud.videointelligence.v1.SpeechTranscription value) {
+      if (speechTranscriptionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSpeechTranscriptionsIsMutable();
+        speechTranscriptions_.add(index, value);
+        onChanged();
+      } else {
+        speechTranscriptionsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Speech transcription.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.videointelligence.v1.SpeechTranscription speech_transcriptions = 11;</code>
+     */
+    public Builder addSpeechTranscriptions(
+        com.google.cloud.videointelligence.v1.SpeechTranscription.Builder builderForValue) {
+      if (speechTranscriptionsBuilder_ == null) {
+        ensureSpeechTranscriptionsIsMutable();
+        speechTranscriptions_.add(builderForValue.build());
+        onChanged();
+      } else {
+        speechTranscriptionsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Speech transcription.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.videointelligence.v1.SpeechTranscription speech_transcriptions = 11;</code>
+     */
+    public Builder addSpeechTranscriptions(
+        int index, com.google.cloud.videointelligence.v1.SpeechTranscription.Builder builderForValue) {
+      if (speechTranscriptionsBuilder_ == null) {
+        ensureSpeechTranscriptionsIsMutable();
+        speechTranscriptions_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        speechTranscriptionsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Speech transcription.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.videointelligence.v1.SpeechTranscription speech_transcriptions = 11;</code>
+     */
+    public Builder addAllSpeechTranscriptions(
+        java.lang.Iterable<? extends com.google.cloud.videointelligence.v1.SpeechTranscription> values) {
+      if (speechTranscriptionsBuilder_ == null) {
+        ensureSpeechTranscriptionsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, speechTranscriptions_);
+        onChanged();
+      } else {
+        speechTranscriptionsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Speech transcription.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.videointelligence.v1.SpeechTranscription speech_transcriptions = 11;</code>
+     */
+    public Builder clearSpeechTranscriptions() {
+      if (speechTranscriptionsBuilder_ == null) {
+        speechTranscriptions_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000080);
+        onChanged();
+      } else {
+        speechTranscriptionsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Speech transcription.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.videointelligence.v1.SpeechTranscription speech_transcriptions = 11;</code>
+     */
+    public Builder removeSpeechTranscriptions(int index) {
+      if (speechTranscriptionsBuilder_ == null) {
+        ensureSpeechTranscriptionsIsMutable();
+        speechTranscriptions_.remove(index);
+        onChanged();
+      } else {
+        speechTranscriptionsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Speech transcription.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.videointelligence.v1.SpeechTranscription speech_transcriptions = 11;</code>
+     */
+    public com.google.cloud.videointelligence.v1.SpeechTranscription.Builder getSpeechTranscriptionsBuilder(
+        int index) {
+      return getSpeechTranscriptionsFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * Speech transcription.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.videointelligence.v1.SpeechTranscription speech_transcriptions = 11;</code>
+     */
+    public com.google.cloud.videointelligence.v1.SpeechTranscriptionOrBuilder getSpeechTranscriptionsOrBuilder(
+        int index) {
+      if (speechTranscriptionsBuilder_ == null) {
+        return speechTranscriptions_.get(index);  } else {
+        return speechTranscriptionsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * Speech transcription.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.videointelligence.v1.SpeechTranscription speech_transcriptions = 11;</code>
+     */
+    public java.util.List<? extends com.google.cloud.videointelligence.v1.SpeechTranscriptionOrBuilder> 
+         getSpeechTranscriptionsOrBuilderList() {
+      if (speechTranscriptionsBuilder_ != null) {
+        return speechTranscriptionsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(speechTranscriptions_);
+      }
+    }
+    /**
+     * <pre>
+     * Speech transcription.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.videointelligence.v1.SpeechTranscription speech_transcriptions = 11;</code>
+     */
+    public com.google.cloud.videointelligence.v1.SpeechTranscription.Builder addSpeechTranscriptionsBuilder() {
+      return getSpeechTranscriptionsFieldBuilder().addBuilder(
+          com.google.cloud.videointelligence.v1.SpeechTranscription.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * Speech transcription.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.videointelligence.v1.SpeechTranscription speech_transcriptions = 11;</code>
+     */
+    public com.google.cloud.videointelligence.v1.SpeechTranscription.Builder addSpeechTranscriptionsBuilder(
+        int index) {
+      return getSpeechTranscriptionsFieldBuilder().addBuilder(
+          index, com.google.cloud.videointelligence.v1.SpeechTranscription.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * Speech transcription.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.videointelligence.v1.SpeechTranscription speech_transcriptions = 11;</code>
+     */
+    public java.util.List<com.google.cloud.videointelligence.v1.SpeechTranscription.Builder> 
+         getSpeechTranscriptionsBuilderList() {
+      return getSpeechTranscriptionsFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.google.cloud.videointelligence.v1.SpeechTranscription, com.google.cloud.videointelligence.v1.SpeechTranscription.Builder, com.google.cloud.videointelligence.v1.SpeechTranscriptionOrBuilder> 
+        getSpeechTranscriptionsFieldBuilder() {
+      if (speechTranscriptionsBuilder_ == null) {
+        speechTranscriptionsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.videointelligence.v1.SpeechTranscription, com.google.cloud.videointelligence.v1.SpeechTranscription.Builder, com.google.cloud.videointelligence.v1.SpeechTranscriptionOrBuilder>(
+                speechTranscriptions_,
+                ((bitField0_ & 0x00000080) == 0x00000080),
+                getParentForChildren(),
+                isClean());
+        speechTranscriptions_ = null;
+      }
+      return speechTranscriptionsBuilder_;
     }
 
     private com.google.rpc.Status error_ = null;
