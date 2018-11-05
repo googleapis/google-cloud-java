@@ -420,16 +420,19 @@ public class ITBigQueryTest {
     String tableName = "test_create_and_get_selected_fields_table";
     TableId tableId = TableId.of(DATASET, tableName);
     StandardTableDefinition tableDefinition = StandardTableDefinition.of(TABLE_SCHEMA);
-    Table createdTable = bigquery.create(TableInfo.of(tableId, tableDefinition));
+    Table createdTable = bigquery.create(TableInfo.newBuilder(tableId, tableDefinition)
+            .setLabels(Collections.singletonMap("a", "b"))
+            .build());
     assertNotNull(createdTable);
     assertEquals(DATASET, createdTable.getTableId().getDataset());
     assertEquals(tableName, createdTable.getTableId().getTable());
     Table remoteTable = bigquery.getTable(DATASET, tableName,
-        TableOption.fields(TableField.CREATION_TIME));
+        TableOption.fields(TableField.CREATION_TIME, TableField.LABELS));
     assertNotNull(remoteTable);
     assertTrue(remoteTable.getDefinition() instanceof StandardTableDefinition);
     assertEquals(createdTable.getTableId(), remoteTable.getTableId());
     assertEquals(TableDefinition.Type.TABLE, remoteTable.getDefinition().getType());
+    assertThat(remoteTable.getLabels()).containsExactly("a", "b");
     assertNotNull(remoteTable.getCreationTime());
     assertNull(remoteTable.getDefinition().getSchema());
     assertNull(remoteTable.getLastModifiedTime());

@@ -165,8 +165,8 @@ private static final long serialVersionUID = 0L;
   private int progressPercent_;
   /**
    * <pre>
-   * Approximate percentage processed thus far.
-   * Guaranteed to be 100 when fully processed.
+   * Approximate percentage processed thus far. Guaranteed to be
+   * 100 when fully processed.
    * </pre>
    *
    * <code>int32 progress_percent = 2;</code>
@@ -722,8 +722,8 @@ private static final long serialVersionUID = 0L;
     private int progressPercent_ ;
     /**
      * <pre>
-     * Approximate percentage processed thus far.
-     * Guaranteed to be 100 when fully processed.
+     * Approximate percentage processed thus far. Guaranteed to be
+     * 100 when fully processed.
      * </pre>
      *
      * <code>int32 progress_percent = 2;</code>
@@ -733,8 +733,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Approximate percentage processed thus far.
-     * Guaranteed to be 100 when fully processed.
+     * Approximate percentage processed thus far. Guaranteed to be
+     * 100 when fully processed.
      * </pre>
      *
      * <code>int32 progress_percent = 2;</code>
@@ -747,8 +747,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Approximate percentage processed thus far.
-     * Guaranteed to be 100 when fully processed.
+     * Approximate percentage processed thus far. Guaranteed to be
+     * 100 when fully processed.
      * </pre>
      *
      * <code>int32 progress_percent = 2;</code>

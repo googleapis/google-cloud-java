@@ -29,8 +29,8 @@ public interface VideoAnnotationProgressOrBuilder extends
 
   /**
    * <pre>
-   * Approximate percentage processed thus far.
-   * Guaranteed to be 100 when fully processed.
+   * Approximate percentage processed thus far. Guaranteed to be
+   * 100 when fully processed.
    * </pre>
    *
    * <code>int32 progress_percent = 2;</code>
