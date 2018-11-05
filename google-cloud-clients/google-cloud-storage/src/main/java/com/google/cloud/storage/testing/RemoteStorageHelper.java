@@ -42,6 +42,8 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import com.google.common.base.Strings;
 import org.threeten.bp.Duration;
 
 /**
@@ -252,20 +254,32 @@ public class RemoteStorageHelper {
     public Boolean call() {
       while (true) {
         ArrayList<BlobId> ids = new ArrayList<>();
-        for (BlobInfo info : storage.list(bucket, BlobListOption.versions(true), BlobListOption.userProject(userProject)).getValues()) {
+        Page<Blob> listedBlobs;
+        if (Strings.isNullOrEmpty(userProject)) {
+          listedBlobs = storage.list(bucket, BlobListOption.versions(true));
+        } else {
+          listedBlobs = storage.list(bucket, BlobListOption.versions(true), BlobListOption.userProject(userProject));
+        }
+        for (BlobInfo info : listedBlobs.getValues()) {
           ids.add(info.getBlobId());
         }
         if (!ids.isEmpty()) {
           List<Boolean> results = storage.delete(ids);
-          for (int i=0; i<results.size(); i++) {
-            if (!results.get(i)) {
-              // deleting that blob failed. Let's try in a different way.
-              storage.delete(bucket, ids.get(i).getName(), Storage.BlobSourceOption.userProject(userProject));
+          if (!Strings.isNullOrEmpty(userProject)) {
+            for (int i=0; i<results.size(); i++) {
+              if (!results.get(i)) {
+                // deleting that blob failed. Let's try in a different way.
+                storage.delete(bucket, ids.get(i).getName(), Storage.BlobSourceOption.userProject(userProject));
+              }
             }
           }
         }
         try {
-          storage.delete(bucket, Storage.BucketSourceOption.userProject(userProject));
+          if (Strings.isNullOrEmpty(userProject)) {
+            storage.delete(bucket);
+          } else {
+            storage.delete(bucket, Storage.BucketSourceOption.userProject(userProject));
+          }
           return true;
         } catch (StorageException e) {
           if (e.getCode() == 409) {
