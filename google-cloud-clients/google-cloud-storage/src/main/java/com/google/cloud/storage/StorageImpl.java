@@ -84,6 +84,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
   private static final String EMPTY_BYTE_ARRAY_MD5 = "1B2M2Y8AsgTpgAmY7PhCfg==";
   private static final String EMPTY_BYTE_ARRAY_CRC32C = "AAAAAA==";
   private static final String PATH_DELIMITER = "/";
+  private static final String DEFAULT_STORAGE_HOST = "https://storage.googleapis.com";
 
   private static final Function<Tuple<Storage, Boolean>, Boolean> DELETE_FUNCTION =
       new Function<Tuple<Storage, Boolean>, Boolean>() {
@@ -499,54 +500,63 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
 
   @Override
   public URL signUrl(BlobInfo blobInfo, long duration, TimeUnit unit, SignUrlOption... options) {
-    EnumMap<SignUrlOption.Option, Object> optionMap = Maps.newEnumMap(SignUrlOption.Option.class);
-    for (SignUrlOption option : options) {
-      optionMap.put(option.getOption(), option.getValue());
-    }
-    ServiceAccountSigner credentials =
-        (ServiceAccountSigner) optionMap.get(SignUrlOption.Option.SERVICE_ACCOUNT_CRED);
-    if (credentials == null) {
-      checkState(this.getOptions().getCredentials() instanceof ServiceAccountSigner,
-          "Signing key was not provided and could not be derived");
-      credentials = (ServiceAccountSigner) this.getOptions().getCredentials();
-    }
-    
-    long expiration = TimeUnit.SECONDS.convert(
-            getOptions().getClock().millisTime() + unit.toMillis(duration), TimeUnit.MILLISECONDS);
-    
-    StringBuilder stPath = new StringBuilder();
-    if (!blobInfo.getBucket().startsWith(PATH_DELIMITER)) {
-      stPath.append(PATH_DELIMITER);
-    }
-    stPath.append(blobInfo.getBucket());
-    if (!blobInfo.getBucket().endsWith(PATH_DELIMITER)) {
-      stPath.append(PATH_DELIMITER);
-    }
-    if (blobInfo.getName().startsWith(PATH_DELIMITER)) {
-      stPath.setLength(stPath.length() - 1);
-    }
-    
-    String escapedName = UrlEscapers.urlFragmentEscaper().escape(blobInfo.getName());
-    stPath.append(escapedName.replace("?", "%3F"));
-    
-    URI path = URI.create(stPath.toString());
-    
-    try {
-      SignatureInfo signatureInfo = buildSignatureInfo(optionMap, blobInfo, expiration, path);
-      byte[] signatureBytes =
-          credentials.sign(signatureInfo.constructUnsignedPayload().getBytes(UTF_8));
-      StringBuilder stBuilder = new StringBuilder("https://storage.googleapis.com").append(path);
-      String signature =
-          URLEncoder.encode(BaseEncoding.base64().encode(signatureBytes), UTF_8.name());
-      stBuilder.append("?GoogleAccessId=").append(credentials.getAccount());
-      stBuilder.append("&Expires=").append(expiration);
-      stBuilder.append("&Signature=").append(signature);
-      
-      return new URL(stBuilder.toString());
-    
-    } catch (MalformedURLException | UnsupportedEncodingException ex) {
-      throw new IllegalStateException(ex);
-    }
+	 return signUrlOptions(DEFAULT_STORAGE_HOST, blobInfo, duration, unit, options);  		
+  }
+  
+  @Override
+  public URL signUrl(String url, BlobInfo blobInfo, long duration, TimeUnit unit, SignUrlOption... options) {
+  	return signUrlOptions(url, blobInfo, duration, unit, options);
+  }
+  
+  private URL signUrlOptions(String url, BlobInfo blobInfo, long duration, TimeUnit unit, SignUrlOption... options){
+	EnumMap<SignUrlOption.Option, Object> optionMap = Maps.newEnumMap(SignUrlOption.Option.class);
+	  for (SignUrlOption option : options) {
+	     optionMap.put(option.getOption(), option.getValue());
+	  }
+	  ServiceAccountSigner credentials =
+	       (ServiceAccountSigner) optionMap.get(SignUrlOption.Option.SERVICE_ACCOUNT_CRED);
+	  if (credentials == null) {
+	     checkState(this.getOptions().getCredentials() instanceof ServiceAccountSigner,
+	          "Signing key was not provided and could not be derived");
+	     credentials = (ServiceAccountSigner) this.getOptions().getCredentials();
+	  }
+	    
+	  long expiration = TimeUnit.SECONDS.convert(
+	            getOptions().getClock().millisTime() + unit.toMillis(duration), TimeUnit.MILLISECONDS);
+	    
+	  StringBuilder stPath = new StringBuilder();
+	  if (!blobInfo.getBucket().startsWith(PATH_DELIMITER)) {
+	     stPath.append(PATH_DELIMITER);
+	  }
+	  stPath.append(blobInfo.getBucket());
+	    if (!blobInfo.getBucket().endsWith(PATH_DELIMITER)) {
+	     stPath.append(PATH_DELIMITER);
+	  }
+	  if (blobInfo.getName().startsWith(PATH_DELIMITER)) {
+	     stPath.setLength(stPath.length() - 1);
+	  }
+	    
+	  String escapedName = UrlEscapers.urlFragmentEscaper().escape(blobInfo.getName());
+	  stPath.append(escapedName.replace("?", "%3F"));
+	    
+	  URI path = URI.create(stPath.toString());
+	    
+	  try {
+	     SignatureInfo signatureInfo = buildSignatureInfo(optionMap, blobInfo, expiration, path);
+	     byte[] signatureBytes =
+	          credentials.sign(signatureInfo.constructUnsignedPayload().getBytes(UTF_8));
+	     StringBuilder stBuilder = new StringBuilder(url).append(path);
+	     String signature =
+	          URLEncoder.encode(BaseEncoding.base64().encode(signatureBytes), UTF_8.name());
+	     stBuilder.append("?GoogleAccessId=").append(credentials.getAccount());
+	     stBuilder.append("&Expires=").append(expiration);
+	     stBuilder.append("&Signature=").append(signature);
+	      
+	     return new URL(stBuilder.toString());
+	    
+	    } catch (MalformedURLException | UnsupportedEncodingException ex) {
+	      throw new IllegalStateException(ex);
+	    }  
   }
   
   /**

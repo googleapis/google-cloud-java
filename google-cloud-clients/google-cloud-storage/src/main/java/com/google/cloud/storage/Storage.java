@@ -2120,6 +2120,70 @@ public interface Storage extends Service<StorageOptions> {
   URL signUrl(BlobInfo blobInfo, long duration, TimeUnit unit, SignUrlOption... options);
 
   /**
+   * Generates a signed URL for a blob. If you have a blob that you want to allow access to for a
+   * fixed amount of time, you can use this method to generate a URL that is only valid within a
+   * certain time period. This is particularly useful if you don't want publicly accessible blobs,
+   * but also don't want to require users to explicitly log in. Signing a URL requires
+   * a service account signer. If an instance of {@link com.google.auth.ServiceAccountSigner} was
+   * passed to {@link StorageOptions}' builder via {@code setCredentials(Credentials)} or the
+   * default credentials are being used and the environment variable
+   * {@code GOOGLE_APPLICATION_CREDENTIALS} is set or your application is running in App Engine,
+   * then {@code signUrl} will use that credentials to sign the URL. If the credentials passed to
+   * {@link StorageOptions} do not implement {@link ServiceAccountSigner} (this is the case, for
+   * instance, for Google Cloud SDK credentials) then {@code signUrl} will throw an
+   * {@link IllegalStateException} unless an implementation of {@link ServiceAccountSigner} is
+   * passed using the {@link SignUrlOption#signWith(ServiceAccountSigner)} option.
+   *
+   * <p>A service account signer is looked for in the following order:
+   * <ol>
+   *   <li>The signer passed with the option {@link SignUrlOption#signWith(ServiceAccountSigner)}
+   *   <li>The credentials passed to {@link StorageOptions}
+   *   <li>The default credentials, if no credentials were passed to {@link StorageOptions}
+   * </ol>
+   *
+   * <p>Example of creating a signed URL that is valid for 2 weeks, using the default credentials
+   * for signing the URL.
+   * <pre> {@code
+   * String bucketName = "my_unique_bucket";
+   * String blobName = "my_blob_name";
+   * URL signedUrl = storage.signUrl(BlobInfo.newBuilder(bucketName, blobName).build(), 14,
+   *     TimeUnit.DAYS);
+   * }</pre>
+   *
+   * <p>Example of creating a signed URL passing the
+   * {@link SignUrlOption#signWith(ServiceAccountSigner)} option, that will be used for signing the
+   * URL.
+   * <pre> {@code
+   * String bucketName = "my_unique_bucket";
+   * String blobName = "my_blob_name";
+   * String keyPath = "/path/to/key.json";
+   * URL signedUrl = storage.signUrl(BlobInfo.newBuilder(bucketName, blobName).build(),
+   *     14, TimeUnit.DAYS, SignUrlOption.signWith(
+   *         ServiceAccountCredentials.fromStream(new FileInputStream(keyPath))));
+   * }</pre>
+   *
+   * <p>Note that the {@link ServiceAccountSigner} may require additional configuration to enable
+   * URL signing. See the documentation for the implementation for more details.</p>
+   *
+   * @param url can be customize 
+   * @param blobInfo the blob associated with the signed URL
+   * @param duration time until the signed URL expires, expressed in {@code unit}. The finest
+   *     granularity supported is 1 second, finer granularities will be truncated
+   * @param unit time unit of the {@code duration} parameter
+   * @param options optional URL signing options
+   * @throws IllegalStateException if {@link SignUrlOption#signWith(ServiceAccountSigner)} was not
+   *     used and no implementation of {@link ServiceAccountSigner} was provided to
+   *     {@link StorageOptions}
+   * @throws IllegalArgumentException if {@code SignUrlOption.withMd5()} option is used and
+   *     {@code blobInfo.md5()} is {@code null}
+   * @throws IllegalArgumentException if {@code SignUrlOption.withContentType()} option is used and
+   *     {@code blobInfo.contentType()} is {@code null}
+   * @throws SigningException if the attempt to sign the URL failed
+   * @see <a href="https://cloud.google.com/storage/docs/access-control#Signed-URLs">Signed-URLs</a>
+   */
+  URL signUrl(String url, BlobInfo blobInfo, long duration, TimeUnit unit, SignUrlOption... options);
+
+  /**
    * Gets the requested blobs. A batch request is used to perform this call.
    *
    *
