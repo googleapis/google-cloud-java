@@ -70,6 +70,7 @@ import com.google.protobuf.Empty;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.easymock.EasyMock;
 import org.junit.After;
@@ -1485,6 +1486,43 @@ public class LoggingImplTest {
       threads[i].join();
     }
     assertSame(0, exceptions.get());
+  }
+
+  @Test
+  public void testAutoClosable() throws InterruptedException {
+    SettableApiFuture<WriteLogEntriesResponse> mockRpcResponse = SettableApiFuture.create();
+    replay(rpcFactoryMock);
+
+    WriteLogEntriesRequest request = WriteLogEntriesRequest.newBuilder().addAllEntries(Iterables
+        .transform(ImmutableList.of(LOG_ENTRY1, LOG_ENTRY2), LogEntry.toPbFunction(PROJECT)))
+        .build();
+    EasyMock.expect(loggingRpcMock.write(request)).andReturn(mockRpcResponse);
+    EasyMock.replay(loggingRpcMock);
+
+    final AtomicBoolean hasException = new AtomicBoolean(false);
+    Thread flushWaiter = new Thread(new Runnable() {
+      @Override
+      public void run() {
+        try (Logging autoclosableLogging = options.getService()) {
+          autoclosableLogging.write(ImmutableList.of(LOG_ENTRY1, LOG_ENTRY2));
+        } catch (Exception e) {
+          hasException.set(true);
+        }
+      }
+    });
+
+    flushWaiter.start();
+
+    // flushWaiter should be waiting for mockRpc to complete.
+    flushWaiter.join(1000);
+    assertTrue(flushWaiter.isAlive());
+
+    // With the RPC completed, flush should return, and the thread should terminate.
+    mockRpcResponse.set(null);
+    flushWaiter.join(1000);
+    assertFalse(flushWaiter.isAlive());
+
+    assertSame(false, hasException.get());
   }
 
 }
