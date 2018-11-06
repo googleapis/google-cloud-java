@@ -652,7 +652,11 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
       return;
     }
     closed = true;
-    rpc.close();
+    try {
+      flush();
+    } finally {
+      rpc.close();
+    }
   }
 
   static <T extends Option.OptionType> Map<Option.OptionType, ?> optionMap(Option... options) {
