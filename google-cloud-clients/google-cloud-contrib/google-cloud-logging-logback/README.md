@@ -6,8 +6,8 @@ Logback appender `com.google.cloud.logging.logback.LoggingAppender` for
 
 This library allows you to use [Logback](https://logback.qos.ch/) configuration and the [Slf4j](https://www.slf4j.org/) interface to log via Google Cloud logging.
 
--  [Homepage](https://googlecloudplatform.github.io/google-cloud-java/)
--  [API Documentation](https://googlecloudplatform.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/logging/logback/LoggingAppender.html)
+-  [Homepage](https://googleapis.github.io/google-cloud-java/)
+-  [API Documentation](https://googleapis.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/logging/logback/LoggingAppender.html)
 
 > Note: This client is a work-in-progress, and may occasionally
 > make backwards-incompatible changes.
@@ -21,16 +21,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-logging-logback</artifactId>
-  <version>0.59.0-alpha</version>
+  <version>0.69.0-alpha</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-logging-logback:0.59.0-alpha'
+compile 'com.google.cloud:google-cloud-logging-logback:0.69.0-alpha'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-logging-logback" % "0.59.0-alpha"
+libraryDependencies += "com.google.cloud" % "google-cloud-logging-logback" % "0.69.0-alpha"
 ```
 [//]: # ({x-version-update-end})
 
@@ -85,7 +85,7 @@ public class TestLogger {
 Authentication
 --------------
 
-See the [Authentication](https://github.com/GoogleCloudPlatform/google-cloud-java#authentication)
+See the [Authentication](https://github.com/googleapis/google-cloud-java#authentication)
 section in the base directory's README.
 
 
@@ -93,7 +93,7 @@ Limitations
 -----------
 
 This library is usable, but not yet complete.
-Open issues [here](https://github.com/GoogleCloudPlatform/google-cloud-java/issues?q=is%3Aissue+is%3Aopen+label%3A%22logging-logback%22).
+Open issues [here](https://github.com/googleapis/google-cloud-java/issues?q=is%3Aissue+is%3Aopen+label%3A%22logging-logback%22).
 
 
 Java Versions
@@ -116,7 +116,7 @@ Contributing
 Contributions to this library are always welcome and highly encouraged.
 
 See `google-cloud`'s [CONTRIBUTING] documentation and the
-[shared documentation](https://github.com/GoogleCloudPlatform/gcloud-common/blob/master/contributing/readme.md#how-to-contribute-to-gcloud)
+[shared documentation](https://github.com/googleapis/google-cloud-common/blob/master/contributing/readme.md#how-to-contribute-to-gcloud)
 for more information on how to get started.
 
 Please note that this project is released with a Contributor Code of Conduct.
@@ -128,10 +128,10 @@ License
 Apache 2.0 - See [LICENSE] for more information.
 
 
-[CONTRIBUTING]:https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/CONTRIBUTING.md
-[code-of-conduct]:https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
-[LICENSE]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/LICENSE
-[TESTING]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/TESTING.md#testing-code-that-uses-storage
+[CONTRIBUTING]:https://github.com/googleapis/google-cloud-java/blob/master/CONTRIBUTING.md
+[code-of-conduct]:https://github.com/googleapis/google-cloud-java/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
+[LICENSE]: https://github.com/googleapis/google-cloud-java/blob/master/LICENSE
+[TESTING]: https://github.com/googleapis/google-cloud-java/blob/master/TESTING.md#testing-code-that-uses-storage
 [cloud-platform]: https://cloud.google.com/
 
 [cloud-logging]: https://cloud.google.com/logging/

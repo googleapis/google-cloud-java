@@ -235,7 +235,7 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * @param clusters The clusters to be created within the instance, mapped by desired cluster ID,
    *     e.g., just `mycluster` rather than
    *     `projects/myproject/instances/myinstance/clusters/mycluster`. Fields marked `OutputOnly`
-   *     must be left blank. Currently exactly one cluster must be specified.
+   *     must be left blank. Currently, at most two clusters can be specified.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi(
@@ -277,7 +277,7 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * @param clusters The clusters to be created within the instance, mapped by desired cluster ID,
    *     e.g., just `mycluster` rather than
    *     `projects/myproject/instances/myinstance/clusters/mycluster`. Fields marked `OutputOnly`
-   *     must be left blank. Currently exactly one cluster must be specified.
+   *     must be left blank. Currently, at most two clusters can be specified.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi(
@@ -451,7 +451,7 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final Instance getInstance(GetInstanceRequest request) {
+  public final Instance getInstance(GetInstanceRequest request) {
     return getInstanceCallable().call(request);
   }
 
@@ -748,7 +748,7 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final void deleteInstance(DeleteInstanceRequest request) {
+  public final void deleteInstance(DeleteInstanceRequest request) {
     deleteInstanceCallable().call(request);
   }
 
@@ -996,7 +996,7 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final Cluster getCluster(GetClusterRequest request) {
+  public final Cluster getCluster(GetClusterRequest request) {
     return getClusterCallable().call(request);
   }
 
@@ -1263,7 +1263,7 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final void deleteCluster(DeleteClusterRequest request) {
+  public final void deleteCluster(DeleteClusterRequest request) {
     deleteClusterCallable().call(request);
   }
 
@@ -1478,7 +1478,7 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final AppProfile getAppProfile(GetAppProfileRequest request) {
+  public final AppProfile getAppProfile(GetAppProfileRequest request) {
     return getAppProfileCallable().call(request);
   }
 
@@ -1520,7 +1520,9 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * </code></pre>
    *
    * @param parent The unique name of the instance for which a list of app profiles is requested.
-   *     Values are of the form `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
+   *     Values are of the form `projects/&lt;project&gt;/instances/&lt;instance&gt;`. Use
+   *     `&lt;instance&gt; = '-'` to list AppProfiles for all Instances in a project, e.g.,
+   *     `projects/myproject/instances/-`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListAppProfilesPagedResponse listAppProfiles(InstanceName parent) {
@@ -1547,7 +1549,9 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * </code></pre>
    *
    * @param parent The unique name of the instance for which a list of app profiles is requested.
-   *     Values are of the form `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
+   *     Values are of the form `projects/&lt;project&gt;/instances/&lt;instance&gt;`. Use
+   *     `&lt;instance&gt; = '-'` to list AppProfiles for all Instances in a project, e.g.,
+   *     `projects/myproject/instances/-`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListAppProfilesPagedResponse listAppProfiles(String parent) {
@@ -1888,7 +1892,7 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final Policy getIamPolicy(GetIamPolicyRequest request) {
+  public final Policy getIamPolicy(GetIamPolicyRequest request) {
     return getIamPolicyCallable().call(request);
   }
 

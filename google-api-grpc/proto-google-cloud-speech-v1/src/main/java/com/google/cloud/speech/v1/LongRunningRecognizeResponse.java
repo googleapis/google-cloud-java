@@ -99,7 +99,7 @@ private static final long serialVersionUID = 0L;
   private java.util.List<com.google.cloud.speech.v1.SpeechRecognitionResult> results_;
   /**
    * <pre>
-   * *Output-only* Sequential list of transcription results corresponding to
+   * Output only. Sequential list of transcription results corresponding to
    * sequential portions of audio.
    * </pre>
    *
@@ -110,7 +110,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * *Output-only* Sequential list of transcription results corresponding to
+   * Output only. Sequential list of transcription results corresponding to
    * sequential portions of audio.
    * </pre>
    *
@@ -122,7 +122,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * *Output-only* Sequential list of transcription results corresponding to
+   * Output only. Sequential list of transcription results corresponding to
    * sequential portions of audio.
    * </pre>
    *
@@ -133,7 +133,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * *Output-only* Sequential list of transcription results corresponding to
+   * Output only. Sequential list of transcription results corresponding to
    * sequential portions of audio.
    * </pre>
    *
@@ -144,7 +144,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * *Output-only* Sequential list of transcription results corresponding to
+   * Output only. Sequential list of transcription results corresponding to
    * sequential portions of audio.
    * </pre>
    *
@@ -520,7 +520,7 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * *Output-only* Sequential list of transcription results corresponding to
+     * Output only. Sequential list of transcription results corresponding to
      * sequential portions of audio.
      * </pre>
      *
@@ -535,7 +535,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * *Output-only* Sequential list of transcription results corresponding to
+     * Output only. Sequential list of transcription results corresponding to
      * sequential portions of audio.
      * </pre>
      *
@@ -550,7 +550,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * *Output-only* Sequential list of transcription results corresponding to
+     * Output only. Sequential list of transcription results corresponding to
      * sequential portions of audio.
      * </pre>
      *
@@ -565,7 +565,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * *Output-only* Sequential list of transcription results corresponding to
+     * Output only. Sequential list of transcription results corresponding to
      * sequential portions of audio.
      * </pre>
      *
@@ -587,7 +587,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * *Output-only* Sequential list of transcription results corresponding to
+     * Output only. Sequential list of transcription results corresponding to
      * sequential portions of audio.
      * </pre>
      *
@@ -606,7 +606,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * *Output-only* Sequential list of transcription results corresponding to
+     * Output only. Sequential list of transcription results corresponding to
      * sequential portions of audio.
      * </pre>
      *
@@ -627,7 +627,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * *Output-only* Sequential list of transcription results corresponding to
+     * Output only. Sequential list of transcription results corresponding to
      * sequential portions of audio.
      * </pre>
      *
@@ -649,7 +649,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * *Output-only* Sequential list of transcription results corresponding to
+     * Output only. Sequential list of transcription results corresponding to
      * sequential portions of audio.
      * </pre>
      *
@@ -668,7 +668,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * *Output-only* Sequential list of transcription results corresponding to
+     * Output only. Sequential list of transcription results corresponding to
      * sequential portions of audio.
      * </pre>
      *
@@ -687,7 +687,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * *Output-only* Sequential list of transcription results corresponding to
+     * Output only. Sequential list of transcription results corresponding to
      * sequential portions of audio.
      * </pre>
      *
@@ -707,7 +707,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * *Output-only* Sequential list of transcription results corresponding to
+     * Output only. Sequential list of transcription results corresponding to
      * sequential portions of audio.
      * </pre>
      *
@@ -725,7 +725,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * *Output-only* Sequential list of transcription results corresponding to
+     * Output only. Sequential list of transcription results corresponding to
      * sequential portions of audio.
      * </pre>
      *
@@ -743,7 +743,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * *Output-only* Sequential list of transcription results corresponding to
+     * Output only. Sequential list of transcription results corresponding to
      * sequential portions of audio.
      * </pre>
      *
@@ -755,7 +755,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * *Output-only* Sequential list of transcription results corresponding to
+     * Output only. Sequential list of transcription results corresponding to
      * sequential portions of audio.
      * </pre>
      *
@@ -770,7 +770,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * *Output-only* Sequential list of transcription results corresponding to
+     * Output only. Sequential list of transcription results corresponding to
      * sequential portions of audio.
      * </pre>
      *
@@ -786,7 +786,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * *Output-only* Sequential list of transcription results corresponding to
+     * Output only. Sequential list of transcription results corresponding to
      * sequential portions of audio.
      * </pre>
      *
@@ -798,7 +798,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * *Output-only* Sequential list of transcription results corresponding to
+     * Output only. Sequential list of transcription results corresponding to
      * sequential portions of audio.
      * </pre>
      *
@@ -811,7 +811,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * *Output-only* Sequential list of transcription results corresponding to
+     * Output only. Sequential list of transcription results corresponding to
      * sequential portions of audio.
      * </pre>
      *

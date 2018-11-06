@@ -4,6 +4,10 @@
 package com.google.pubsub.v1;
 
 /**
+ * <pre>
+ * Response for the `Seek` method (this response is empty).
+ * </pre>
+ *
  * Protobuf type {@code google.pubsub.v1.SeekResponse}
  */
 public  final class SeekResponse extends
@@ -219,6 +223,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * Response for the `Seek` method (this response is empty).
+   * </pre>
+   *
    * Protobuf type {@code google.pubsub.v1.SeekResponse}
    */
   public static final class Builder extends

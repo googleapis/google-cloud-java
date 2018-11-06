@@ -546,7 +546,7 @@ public class ErrorStatsServiceClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final DeleteEventsResponse deleteEvents(DeleteEventsRequest request) {
+  public final DeleteEventsResponse deleteEvents(DeleteEventsRequest request) {
     return deleteEventsCallable().call(request);
   }
 

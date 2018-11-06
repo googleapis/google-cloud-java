@@ -250,7 +250,7 @@ public class LoggingHandlerTest {
     logging.write(ImmutableList.of(EMERGENCY_ENTRY), DEFAULT_OPTIONS);
     expectLastCall().once();
     replay(options, logging);
-    Handler handler = new LoggingHandler(LOG_NAME, options);
+    Handler handler = new LoggingHandler(LOG_NAME, options, DEFAULT_RESOURCE);
     handler.setLevel(Level.ALL);
     handler.setFormatter(new TestFormatter());
     // default levels
@@ -362,7 +362,7 @@ public class LoggingHandlerTest {
     errorManager.error(null, ex, ErrorManager.WRITE_FAILURE);
     expectLastCall().once();
     replay(errorManager);
-    Handler handler = new LoggingHandler(LOG_NAME, options);
+    Handler handler = new LoggingHandler(LOG_NAME, options, DEFAULT_RESOURCE);
     handler.setLevel(Level.ALL);
     handler.setErrorManager(errorManager);
     handler.setFormatter(new TestFormatter());
@@ -388,7 +388,7 @@ public class LoggingHandlerTest {
     expectLastCall().once();
     replay(options, logging, errorManager);
     LogRecord record = newLogRecord(Level.FINEST, MESSAGE);
-    Handler handler = new LoggingHandler(LOG_NAME, options);
+    Handler handler = new LoggingHandler(LOG_NAME, options, DEFAULT_RESOURCE);
     handler.setLevel(Level.ALL);
     handler.setErrorManager(errorManager);
     handler.setFormatter(new TestFormatter());
@@ -414,7 +414,7 @@ public class LoggingHandlerTest {
     LogRecord record = newLogRecord(Level.FINEST, MESSAGE);
     expect(formatter.format(record)).andThrow(ex);
     replay(errorManager, formatter);
-    Handler handler = new LoggingHandler(LOG_NAME, options);
+    Handler handler = new LoggingHandler(LOG_NAME, options, DEFAULT_RESOURCE);
     handler.setLevel(Level.ALL);
     handler.setErrorManager(errorManager);
     handler.setFormatter(formatter);
@@ -439,7 +439,7 @@ public class LoggingHandlerTest {
         DEFAULT_OPTIONS);
     expectLastCall().once();
     replay(options, logging);
-    LoggingHandler handler = new LoggingHandler(LOG_NAME, options);
+    LoggingHandler handler = new LoggingHandler(LOG_NAME, options, DEFAULT_RESOURCE);
     handler.setLevel(Level.ALL);
     handler.setFlushLevel(Level.WARNING);
     handler.setFormatter(new TestFormatter());
@@ -473,7 +473,7 @@ public class LoggingHandlerTest {
     expectLastCall().once();
     replay(options, logging);
 
-    LoggingHandler handler = new LoggingHandler(LOG_NAME, options);
+    LoggingHandler handler = new LoggingHandler(LOG_NAME, options, DEFAULT_RESOURCE);
     handler.setLevel(Level.ALL);
     handler.setSynchronicity(Synchronicity.SYNC);
     handler.setFormatter(new TestFormatter());
@@ -493,7 +493,7 @@ public class LoggingHandlerTest {
     logging.write(ImmutableList.of(FINEST_ENTRY), DEFAULT_OPTIONS);
     expectLastCall().once();
     replay(options, logging);
-    LoggingHandler handler = new LoggingHandler(LOG_NAME, options) {
+    LoggingHandler handler = new LoggingHandler(LOG_NAME, options, DEFAULT_RESOURCE) {
       @Override
       public void close() {
         // Make close NOOP to avoid mock close exception
@@ -520,7 +520,7 @@ public class LoggingHandlerTest {
     logging.close();
     expectLastCall().once();
     replay(options, logging);
-    Handler handler = new LoggingHandler(LOG_NAME, options);
+    Handler handler = new LoggingHandler(LOG_NAME, options, DEFAULT_RESOURCE);
     handler.setLevel(Level.ALL);
     handler.setFormatter(new TestFormatter());
     handler.publish(newLogRecord(Level.FINEST, MESSAGE));

@@ -9,7 +9,7 @@ public interface ExportAssetsResponseOrBuilder extends
 
   /**
    * <pre>
-   * Required. Time the snapshot was taken.
+   * Time the snapshot was taken.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp read_time = 1;</code>
@@ -17,7 +17,7 @@ public interface ExportAssetsResponseOrBuilder extends
   boolean hasReadTime();
   /**
    * <pre>
-   * Required. Time the snapshot was taken.
+   * Time the snapshot was taken.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp read_time = 1;</code>
@@ -25,7 +25,7 @@ public interface ExportAssetsResponseOrBuilder extends
   com.google.protobuf.Timestamp getReadTime();
   /**
    * <pre>
-   * Required. Time the snapshot was taken.
+   * Time the snapshot was taken.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp read_time = 1;</code>
@@ -34,7 +34,7 @@ public interface ExportAssetsResponseOrBuilder extends
 
   /**
    * <pre>
-   * Required. Output configuration indicating where the results were output to.
+   * Output configuration indicating where the results were output to.
    * All results are in JSON format.
    * </pre>
    *
@@ -43,7 +43,7 @@ public interface ExportAssetsResponseOrBuilder extends
   boolean hasOutputConfig();
   /**
    * <pre>
-   * Required. Output configuration indicating where the results were output to.
+   * Output configuration indicating where the results were output to.
    * All results are in JSON format.
    * </pre>
    *
@@ -52,7 +52,7 @@ public interface ExportAssetsResponseOrBuilder extends
   com.google.cloud.asset.v1beta1.OutputConfig getOutputConfig();
   /**
    * <pre>
-   * Required. Output configuration indicating where the results were output to.
+   * Output configuration indicating where the results were output to.
    * All results are in JSON format.
    * </pre>
    *

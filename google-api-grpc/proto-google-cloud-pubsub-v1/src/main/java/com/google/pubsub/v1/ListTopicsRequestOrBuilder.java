@@ -9,8 +9,8 @@ public interface ListTopicsRequestOrBuilder extends
 
   /**
    * <pre>
-   * The name of the cloud project that topics belong to.
-   * Format is `projects/{project}`.
+   * The name of the project in which to list topics.
+   * Format is `projects/{project-id}`.
    * </pre>
    *
    * <code>string project = 1;</code>
@@ -18,8 +18,8 @@ public interface ListTopicsRequestOrBuilder extends
   java.lang.String getProject();
   /**
    * <pre>
-   * The name of the cloud project that topics belong to.
-   * Format is `projects/{project}`.
+   * The name of the project in which to list topics.
+   * Format is `projects/{project-id}`.
    * </pre>
    *
    * <code>string project = 1;</code>

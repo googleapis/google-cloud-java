@@ -104,7 +104,7 @@ public enum InfoTypeSupportedBy
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return com.google.privacy.dlp.v2.DlpProto.getDescriptor().getEnumTypes().get(1);
+    return com.google.privacy.dlp.v2.DlpProto.getDescriptor().getEnumTypes().get(2);
   }
 
   private static final InfoTypeSupportedBy[] VALUES = values();

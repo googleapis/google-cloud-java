@@ -39,7 +39,14 @@ import javax.annotation.Generated;
  * <code>
  * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
  *   ProjectName parent = ProjectName.of("[PROJECT]");
- *   BatchGetAssetsHistoryResponse response = assetServiceClient.batchGetAssetsHistory(parent);
+ *   ContentType contentType = ContentType.CONTENT_TYPE_UNSPECIFIED;
+ *   TimeWindow readTimeWindow = TimeWindow.newBuilder().build();
+ *   BatchGetAssetsHistoryRequest request = BatchGetAssetsHistoryRequest.newBuilder()
+ *     .setParent(parent.toString())
+ *     .setContentType(contentType)
+ *     .setReadTimeWindow(readTimeWindow)
+ *     .build();
+ *   BatchGetAssetsHistoryResponse response = assetServiceClient.batchGetAssetsHistory(request);
  * }
  * </code>
  * </pre>
@@ -162,21 +169,19 @@ public class AssetServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Exports assets with time and resource types to a given Google Cloud Storage location. The
-   * output format is newline delimited JSON. This API implements the
-   * [google.longrunning.Operation][google.longrunning.Operation] API allowing users to keep track
-   * of the export.
+   * Exports assets with time and resource types to a given Cloud Storage location. The output
+   * format is newline-delimited JSON. This API implements the
+   * [google.longrunning.Operation][google.longrunning.Operation] API allowing you to keep track of
+   * the export.
    *
    * <p>Sample code:
    *
    * <pre><code>
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   List&lt;ContentType&gt; contentTypes = new ArrayList&lt;&gt;();
    *   OutputConfig outputConfig = OutputConfig.newBuilder().build();
    *   ExportAssetsRequest request = ExportAssetsRequest.newBuilder()
    *     .setParent(parent.toString())
-   *     .addAllContentTypes(contentTypes)
    *     .setOutputConfig(outputConfig)
    *     .build();
    *   ExportAssetsResponse response = assetServiceClient.exportAssetsAsync(request).get();
@@ -195,21 +200,19 @@ public class AssetServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Exports assets with time and resource types to a given Google Cloud Storage location. The
-   * output format is newline delimited JSON. This API implements the
-   * [google.longrunning.Operation][google.longrunning.Operation] API allowing users to keep track
-   * of the export.
+   * Exports assets with time and resource types to a given Cloud Storage location. The output
+   * format is newline-delimited JSON. This API implements the
+   * [google.longrunning.Operation][google.longrunning.Operation] API allowing you to keep track of
+   * the export.
    *
    * <p>Sample code:
    *
    * <pre><code>
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   List&lt;ContentType&gt; contentTypes = new ArrayList&lt;&gt;();
    *   OutputConfig outputConfig = OutputConfig.newBuilder().build();
    *   ExportAssetsRequest request = ExportAssetsRequest.newBuilder()
    *     .setParent(parent.toString())
-   *     .addAllContentTypes(contentTypes)
    *     .setOutputConfig(outputConfig)
    *     .build();
    *   OperationFuture&lt;Operation&gt; future = assetServiceClient.exportAssetsOperationCallable().futureCall(request);
@@ -226,21 +229,19 @@ public class AssetServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Exports assets with time and resource types to a given Google Cloud Storage location. The
-   * output format is newline delimited JSON. This API implements the
-   * [google.longrunning.Operation][google.longrunning.Operation] API allowing users to keep track
-   * of the export.
+   * Exports assets with time and resource types to a given Cloud Storage location. The output
+   * format is newline-delimited JSON. This API implements the
+   * [google.longrunning.Operation][google.longrunning.Operation] API allowing you to keep track of
+   * the export.
    *
    * <p>Sample code:
    *
    * <pre><code>
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   List&lt;ContentType&gt; contentTypes = new ArrayList&lt;&gt;();
    *   OutputConfig outputConfig = OutputConfig.newBuilder().build();
    *   ExportAssetsRequest request = ExportAssetsRequest.newBuilder()
    *     .setParent(parent.toString())
-   *     .addAllContentTypes(contentTypes)
    *     .setOutputConfig(outputConfig)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = assetServiceClient.exportAssetsCallable().futureCall(request);
@@ -255,9 +256,9 @@ public class AssetServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Batch gets assets update history that overlaps a time window. For RESOURCE content, this API
-   * outputs history with asset in both non-delete or deleted status. For IAM_POLICY content, this
-   * API only outputs history when asset and its attached IAM POLICY both exist. So there may be
+   * Batch gets the update history of assets that overlap a time window. For RESOURCE content, this
+   * API outputs history with asset in both non-delete or deleted status. For IAM_POLICY content,
+   * this API outputs history when the asset and its attached IAM POLICY both exist. This can create
    * gaps in the output history.
    *
    * <p>Sample code:
@@ -265,68 +266,10 @@ public class AssetServiceClient implements BackgroundResource {
    * <pre><code>
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   BatchGetAssetsHistoryResponse response = assetServiceClient.batchGetAssetsHistory(parent);
-   * }
-   * </code></pre>
-   *
-   * @param parent Required. The relative name of the root asset. It can only be an organization ID
-   *     (e.g. "organizations/123") or a project ID (e.g. "projects/12345").
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final BatchGetAssetsHistoryResponse batchGetAssetsHistory(ProjectName parent) {
-
-    BatchGetAssetsHistoryRequest request =
-        BatchGetAssetsHistoryRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
-            .build();
-    return batchGetAssetsHistory(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Batch gets assets update history that overlaps a time window. For RESOURCE content, this API
-   * outputs history with asset in both non-delete or deleted status. For IAM_POLICY content, this
-   * API only outputs history when asset and its attached IAM POLICY both exist. So there may be
-   * gaps in the output history.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   BatchGetAssetsHistoryResponse response = assetServiceClient.batchGetAssetsHistory(parent.toString());
-   * }
-   * </code></pre>
-   *
-   * @param parent Required. The relative name of the root asset. It can only be an organization ID
-   *     (e.g. "organizations/123") or a project ID (e.g. "projects/12345").
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final BatchGetAssetsHistoryResponse batchGetAssetsHistory(String parent) {
-
-    BatchGetAssetsHistoryRequest request =
-        BatchGetAssetsHistoryRequest.newBuilder().setParent(parent).build();
-    return batchGetAssetsHistory(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Batch gets assets update history that overlaps a time window. For RESOURCE content, this API
-   * outputs history with asset in both non-delete or deleted status. For IAM_POLICY content, this
-   * API only outputs history when asset and its attached IAM POLICY both exist. So there may be
-   * gaps in the output history.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   List&lt;String&gt; assetNames = new ArrayList&lt;&gt;();
    *   ContentType contentType = ContentType.CONTENT_TYPE_UNSPECIFIED;
    *   TimeWindow readTimeWindow = TimeWindow.newBuilder().build();
    *   BatchGetAssetsHistoryRequest request = BatchGetAssetsHistoryRequest.newBuilder()
    *     .setParent(parent.toString())
-   *     .addAllAssetNames(assetNames)
    *     .setContentType(contentType)
    *     .setReadTimeWindow(readTimeWindow)
    *     .build();
@@ -344,9 +287,9 @@ public class AssetServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Batch gets assets update history that overlaps a time window. For RESOURCE content, this API
-   * outputs history with asset in both non-delete or deleted status. For IAM_POLICY content, this
-   * API only outputs history when asset and its attached IAM POLICY both exist. So there may be
+   * Batch gets the update history of assets that overlap a time window. For RESOURCE content, this
+   * API outputs history with asset in both non-delete or deleted status. For IAM_POLICY content,
+   * this API outputs history when the asset and its attached IAM POLICY both exist. This can create
    * gaps in the output history.
    *
    * <p>Sample code:
@@ -354,12 +297,10 @@ public class AssetServiceClient implements BackgroundResource {
    * <pre><code>
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   List&lt;String&gt; assetNames = new ArrayList&lt;&gt;();
    *   ContentType contentType = ContentType.CONTENT_TYPE_UNSPECIFIED;
    *   TimeWindow readTimeWindow = TimeWindow.newBuilder().build();
    *   BatchGetAssetsHistoryRequest request = BatchGetAssetsHistoryRequest.newBuilder()
    *     .setParent(parent.toString())
-   *     .addAllAssetNames(assetNames)
    *     .setContentType(contentType)
    *     .setReadTimeWindow(readTimeWindow)
    *     .build();

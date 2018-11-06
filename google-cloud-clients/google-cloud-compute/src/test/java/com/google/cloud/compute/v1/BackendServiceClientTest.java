@@ -26,6 +26,7 @@ import static com.google.cloud.compute.v1.stub.HttpJsonBackendServiceStub.getHea
 import static com.google.cloud.compute.v1.stub.HttpJsonBackendServiceStub.insertBackendServiceMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonBackendServiceStub.listBackendServicesMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonBackendServiceStub.patchBackendServiceMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonBackendServiceStub.setSecurityPolicyBackendServiceMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonBackendServiceStub.updateBackendServiceMethodDescriptor;
 
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -68,6 +69,7 @@ public class BackendServiceClientTest {
               insertBackendServiceMethodDescriptor,
               listBackendServicesMethodDescriptor,
               patchBackendServiceMethodDescriptor,
+              setSecurityPolicyBackendServiceMethodDescriptor,
               updateBackendServiceMethodDescriptor));
   private static final MockHttpService mockService =
       new MockHttpService(METHOD_DESCRIPTORS, BackendServiceStubSettings.getDefaultEndpoint());
@@ -445,6 +447,8 @@ public class BackendServiceClientTest {
     String description = "description-1724546052";
     String loadBalancingScheme = "loadBalancingScheme1974502980";
     String portName = "portName1115276169";
+    ProjectGlobalSecurityPolicyName securityPolicy =
+        ProjectGlobalSecurityPolicyName.of("[PROJECT]", "[SECURITY_POLICY]");
     Integer timeoutSec = 2067488653;
     String selfLink = "selfLink-1691268851";
     String protocol = "protocol-989163880";
@@ -463,6 +467,7 @@ public class BackendServiceClientTest {
             .setDescription(description)
             .setLoadBalancingScheme(loadBalancingScheme)
             .setPortName(portName)
+            .setSecurityPolicy(securityPolicy.toString())
             .setTimeoutSec(timeoutSec)
             .setSelfLink(selfLink)
             .setProtocol(protocol)
@@ -808,6 +813,101 @@ public class BackendServiceClientTest {
       List<String> fieldMask = new ArrayList<>();
 
       client.patchBackendService(backendService, backendServiceResource, fieldMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void setSecurityPolicyBackendServiceTest() {
+    String httpErrorMessage = "httpErrorMessage1276263769";
+    String targetId = "targetId-815576439";
+    String kind = "kind3292052";
+    String description = "description-1724546052";
+    String statusMessage = "statusMessage-239442758";
+    String selfLink = "selfLink-1691268851";
+    String insertTime = "insertTime-103148397";
+    Integer httpErrorStatusCode = 1386087020;
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
+    String targetLink = "targetLink-2084812312";
+    String creationTimestamp = "creationTimestamp567396278";
+    String name = "name3373707";
+    Integer progress = 1001078227;
+    String operationType = "operationType-1432962286";
+    String startTime = "startTime-1573145462";
+    String endTime = "endTime1725551537";
+    String id = "id3355";
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+    String clientOperationId = "clientOperationId-239630617";
+    String user = "user3599307";
+    String status = "status-892481550";
+    Operation expectedResponse =
+        Operation.newBuilder()
+            .setHttpErrorMessage(httpErrorMessage)
+            .setTargetId(targetId)
+            .setKind(kind)
+            .setDescription(description)
+            .setStatusMessage(statusMessage)
+            .setSelfLink(selfLink)
+            .setInsertTime(insertTime)
+            .setHttpErrorStatusCode(httpErrorStatusCode)
+            .setZone(zone.toString())
+            .setTargetLink(targetLink)
+            .setCreationTimestamp(creationTimestamp)
+            .setName(name)
+            .setProgress(progress)
+            .setOperationType(operationType)
+            .setStartTime(startTime)
+            .setEndTime(endTime)
+            .setId(id)
+            .setRegion(region.toString())
+            .setClientOperationId(clientOperationId)
+            .setUser(user)
+            .setStatus(status)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ProjectGlobalBackendServiceName backendService =
+        ProjectGlobalBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
+    SecurityPolicyReference securityPolicyReferenceResource =
+        SecurityPolicyReference.newBuilder().build();
+
+    Operation actualResponse =
+        client.setSecurityPolicyBackendService(backendService, securityPolicyReferenceResource);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void setSecurityPolicyBackendServiceExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ProjectGlobalBackendServiceName backendService =
+          ProjectGlobalBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
+      SecurityPolicyReference securityPolicyReferenceResource =
+          SecurityPolicyReference.newBuilder().build();
+
+      client.setSecurityPolicyBackendService(backendService, securityPolicyReferenceResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

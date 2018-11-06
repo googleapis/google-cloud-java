@@ -7,13 +7,12 @@ package com.google.cloud.kms.v1;
  * <pre>
  * A [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] represents an individual cryptographic key, and the
  * associated key material.
- * It can be used for cryptographic operations either directly, or via its
- * parent [CryptoKey][google.cloud.kms.v1.CryptoKey], in which case the server will choose the appropriate
- * version for the operation.
+ * An [ENABLED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.ENABLED] version can be
+ * used for cryptographic operations.
  * For security reasons, the raw cryptographic key material represented by a
  * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] can never be viewed or exported. It can only be used to
- * encrypt or decrypt data when an authorized user or application invokes Cloud
- * KMS.
+ * encrypt, decrypt, or sign data when an authorized user or application invokes
+ * Cloud KMS.
  * </pre>
  *
  * Protobuf type {@code google.cloud.kms.v1.CryptoKeyVersion}
@@ -30,6 +29,8 @@ private static final long serialVersionUID = 0L;
   private CryptoKeyVersion() {
     name_ = "";
     state_ = 0;
+    protectionLevel_ = 0;
+    algorithm_ = 0;
   }
 
   @java.lang.Override
@@ -107,6 +108,44 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 56: {
+            int rawValue = input.readEnum();
+
+            protectionLevel_ = rawValue;
+            break;
+          }
+          case 66: {
+            com.google.cloud.kms.v1.KeyOperationAttestation.Builder subBuilder = null;
+            if (attestation_ != null) {
+              subBuilder = attestation_.toBuilder();
+            }
+            attestation_ = input.readMessage(com.google.cloud.kms.v1.KeyOperationAttestation.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(attestation_);
+              attestation_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 80: {
+            int rawValue = input.readEnum();
+
+            algorithm_ = rawValue;
+            break;
+          }
+          case 90: {
+            com.google.protobuf.Timestamp.Builder subBuilder = null;
+            if (generateTime_ != null) {
+              subBuilder = generateTime_.toBuilder();
+            }
+            generateTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(generateTime_);
+              generateTime_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -141,6 +180,333 @@ private static final long serialVersionUID = 0L;
 
   /**
    * <pre>
+   * The algorithm of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion], indicating what
+   * parameters must be used for each cryptographic operation.
+   * The
+   * [GOOGLE_SYMMETRIC_ENCRYPTION][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm.GOOGLE_SYMMETRIC_ENCRYPTION]
+   * algorithm is usable with [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose]
+   * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
+   * Algorithms beginning with "RSA_SIGN_" are usable with [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose]
+   * [ASYMMETRIC_SIGN][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ASYMMETRIC_SIGN].
+   * The fields in the name after "RSA_SIGN_" correspond to the following
+   * parameters: padding algorithm, modulus bit length, and digest algorithm.
+   * For PSS, the salt length used is equal to the length of digest
+   * algorithm. For example,
+   * [RSA_SIGN_PSS_2048_SHA256][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm.RSA_SIGN_PSS_2048_SHA256]
+   * will use PSS with a salt length of 256 bits or 32 bytes.
+   * Algorithms beginning with "RSA_DECRYPT_" are usable with
+   * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose]
+   * [ASYMMETRIC_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ASYMMETRIC_DECRYPT].
+   * The fields in the name after "RSA_DECRYPT_" correspond to the following
+   * parameters: padding algorithm, modulus bit length, and digest algorithm.
+   * Algorithms beginning with "EC_SIGN_" are usable with [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose]
+   * [ASYMMETRIC_SIGN][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ASYMMETRIC_SIGN].
+   * The fields in the name after "EC_SIGN_" correspond to the following
+   * parameters: elliptic curve, digest algorithm.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm}
+   */
+  public enum CryptoKeyVersionAlgorithm
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <pre>
+     * Not specified.
+     * </pre>
+     *
+     * <code>CRYPTO_KEY_VERSION_ALGORITHM_UNSPECIFIED = 0;</code>
+     */
+    CRYPTO_KEY_VERSION_ALGORITHM_UNSPECIFIED(0),
+    /**
+     * <pre>
+     * Creates symmetric encryption keys.
+     * </pre>
+     *
+     * <code>GOOGLE_SYMMETRIC_ENCRYPTION = 1;</code>
+     */
+    GOOGLE_SYMMETRIC_ENCRYPTION(1),
+    /**
+     * <pre>
+     * RSASSA-PSS 2048 bit key with a SHA256 digest.
+     * </pre>
+     *
+     * <code>RSA_SIGN_PSS_2048_SHA256 = 2;</code>
+     */
+    RSA_SIGN_PSS_2048_SHA256(2),
+    /**
+     * <pre>
+     * RSASSA-PSS 3072 bit key with a SHA256 digest.
+     * </pre>
+     *
+     * <code>RSA_SIGN_PSS_3072_SHA256 = 3;</code>
+     */
+    RSA_SIGN_PSS_3072_SHA256(3),
+    /**
+     * <pre>
+     * RSASSA-PSS 4096 bit key with a SHA256 digest.
+     * </pre>
+     *
+     * <code>RSA_SIGN_PSS_4096_SHA256 = 4;</code>
+     */
+    RSA_SIGN_PSS_4096_SHA256(4),
+    /**
+     * <pre>
+     * RSASSA-PKCS1-v1_5 with a 2048 bit key and a SHA256 digest.
+     * </pre>
+     *
+     * <code>RSA_SIGN_PKCS1_2048_SHA256 = 5;</code>
+     */
+    RSA_SIGN_PKCS1_2048_SHA256(5),
+    /**
+     * <pre>
+     * RSASSA-PKCS1-v1_5 with a 3072 bit key and a SHA256 digest.
+     * </pre>
+     *
+     * <code>RSA_SIGN_PKCS1_3072_SHA256 = 6;</code>
+     */
+    RSA_SIGN_PKCS1_3072_SHA256(6),
+    /**
+     * <pre>
+     * RSASSA-PKCS1-v1_5 with a 4096 bit key and a SHA256 digest.
+     * </pre>
+     *
+     * <code>RSA_SIGN_PKCS1_4096_SHA256 = 7;</code>
+     */
+    RSA_SIGN_PKCS1_4096_SHA256(7),
+    /**
+     * <pre>
+     * RSAES-OAEP 2048 bit key with a SHA256 digest.
+     * </pre>
+     *
+     * <code>RSA_DECRYPT_OAEP_2048_SHA256 = 8;</code>
+     */
+    RSA_DECRYPT_OAEP_2048_SHA256(8),
+    /**
+     * <pre>
+     * RSAES-OAEP 3072 bit key with a SHA256 digest.
+     * </pre>
+     *
+     * <code>RSA_DECRYPT_OAEP_3072_SHA256 = 9;</code>
+     */
+    RSA_DECRYPT_OAEP_3072_SHA256(9),
+    /**
+     * <pre>
+     * RSAES-OAEP 4096 bit key with a SHA256 digest.
+     * </pre>
+     *
+     * <code>RSA_DECRYPT_OAEP_4096_SHA256 = 10;</code>
+     */
+    RSA_DECRYPT_OAEP_4096_SHA256(10),
+    /**
+     * <pre>
+     * ECDSA on the NIST P-256 curve with a SHA256 digest.
+     * </pre>
+     *
+     * <code>EC_SIGN_P256_SHA256 = 12;</code>
+     */
+    EC_SIGN_P256_SHA256(12),
+    /**
+     * <pre>
+     * ECDSA on the NIST P-384 curve with a SHA384 digest.
+     * </pre>
+     *
+     * <code>EC_SIGN_P384_SHA384 = 13;</code>
+     */
+    EC_SIGN_P384_SHA384(13),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <pre>
+     * Not specified.
+     * </pre>
+     *
+     * <code>CRYPTO_KEY_VERSION_ALGORITHM_UNSPECIFIED = 0;</code>
+     */
+    public static final int CRYPTO_KEY_VERSION_ALGORITHM_UNSPECIFIED_VALUE = 0;
+    /**
+     * <pre>
+     * Creates symmetric encryption keys.
+     * </pre>
+     *
+     * <code>GOOGLE_SYMMETRIC_ENCRYPTION = 1;</code>
+     */
+    public static final int GOOGLE_SYMMETRIC_ENCRYPTION_VALUE = 1;
+    /**
+     * <pre>
+     * RSASSA-PSS 2048 bit key with a SHA256 digest.
+     * </pre>
+     *
+     * <code>RSA_SIGN_PSS_2048_SHA256 = 2;</code>
+     */
+    public static final int RSA_SIGN_PSS_2048_SHA256_VALUE = 2;
+    /**
+     * <pre>
+     * RSASSA-PSS 3072 bit key with a SHA256 digest.
+     * </pre>
+     *
+     * <code>RSA_SIGN_PSS_3072_SHA256 = 3;</code>
+     */
+    public static final int RSA_SIGN_PSS_3072_SHA256_VALUE = 3;
+    /**
+     * <pre>
+     * RSASSA-PSS 4096 bit key with a SHA256 digest.
+     * </pre>
+     *
+     * <code>RSA_SIGN_PSS_4096_SHA256 = 4;</code>
+     */
+    public static final int RSA_SIGN_PSS_4096_SHA256_VALUE = 4;
+    /**
+     * <pre>
+     * RSASSA-PKCS1-v1_5 with a 2048 bit key and a SHA256 digest.
+     * </pre>
+     *
+     * <code>RSA_SIGN_PKCS1_2048_SHA256 = 5;</code>
+     */
+    public static final int RSA_SIGN_PKCS1_2048_SHA256_VALUE = 5;
+    /**
+     * <pre>
+     * RSASSA-PKCS1-v1_5 with a 3072 bit key and a SHA256 digest.
+     * </pre>
+     *
+     * <code>RSA_SIGN_PKCS1_3072_SHA256 = 6;</code>
+     */
+    public static final int RSA_SIGN_PKCS1_3072_SHA256_VALUE = 6;
+    /**
+     * <pre>
+     * RSASSA-PKCS1-v1_5 with a 4096 bit key and a SHA256 digest.
+     * </pre>
+     *
+     * <code>RSA_SIGN_PKCS1_4096_SHA256 = 7;</code>
+     */
+    public static final int RSA_SIGN_PKCS1_4096_SHA256_VALUE = 7;
+    /**
+     * <pre>
+     * RSAES-OAEP 2048 bit key with a SHA256 digest.
+     * </pre>
+     *
+     * <code>RSA_DECRYPT_OAEP_2048_SHA256 = 8;</code>
+     */
+    public static final int RSA_DECRYPT_OAEP_2048_SHA256_VALUE = 8;
+    /**
+     * <pre>
+     * RSAES-OAEP 3072 bit key with a SHA256 digest.
+     * </pre>
+     *
+     * <code>RSA_DECRYPT_OAEP_3072_SHA256 = 9;</code>
+     */
+    public static final int RSA_DECRYPT_OAEP_3072_SHA256_VALUE = 9;
+    /**
+     * <pre>
+     * RSAES-OAEP 4096 bit key with a SHA256 digest.
+     * </pre>
+     *
+     * <code>RSA_DECRYPT_OAEP_4096_SHA256 = 10;</code>
+     */
+    public static final int RSA_DECRYPT_OAEP_4096_SHA256_VALUE = 10;
+    /**
+     * <pre>
+     * ECDSA on the NIST P-256 curve with a SHA256 digest.
+     * </pre>
+     *
+     * <code>EC_SIGN_P256_SHA256 = 12;</code>
+     */
+    public static final int EC_SIGN_P256_SHA256_VALUE = 12;
+    /**
+     * <pre>
+     * ECDSA on the NIST P-384 curve with a SHA384 digest.
+     * </pre>
+     *
+     * <code>EC_SIGN_P384_SHA384 = 13;</code>
+     */
+    public static final int EC_SIGN_P384_SHA384_VALUE = 13;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static CryptoKeyVersionAlgorithm valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static CryptoKeyVersionAlgorithm forNumber(int value) {
+      switch (value) {
+        case 0: return CRYPTO_KEY_VERSION_ALGORITHM_UNSPECIFIED;
+        case 1: return GOOGLE_SYMMETRIC_ENCRYPTION;
+        case 2: return RSA_SIGN_PSS_2048_SHA256;
+        case 3: return RSA_SIGN_PSS_3072_SHA256;
+        case 4: return RSA_SIGN_PSS_4096_SHA256;
+        case 5: return RSA_SIGN_PKCS1_2048_SHA256;
+        case 6: return RSA_SIGN_PKCS1_3072_SHA256;
+        case 7: return RSA_SIGN_PKCS1_4096_SHA256;
+        case 8: return RSA_DECRYPT_OAEP_2048_SHA256;
+        case 9: return RSA_DECRYPT_OAEP_3072_SHA256;
+        case 10: return RSA_DECRYPT_OAEP_4096_SHA256;
+        case 12: return EC_SIGN_P256_SHA256;
+        case 13: return EC_SIGN_P384_SHA384;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<CryptoKeyVersionAlgorithm>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        CryptoKeyVersionAlgorithm> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<CryptoKeyVersionAlgorithm>() {
+            public CryptoKeyVersionAlgorithm findValueByNumber(int number) {
+              return CryptoKeyVersionAlgorithm.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.google.cloud.kms.v1.CryptoKeyVersion.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final CryptoKeyVersionAlgorithm[] VALUES = values();
+
+    public static CryptoKeyVersionAlgorithm valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private CryptoKeyVersionAlgorithm(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm)
+  }
+
+  /**
+   * <pre>
    * The state of a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion], indicating if it can be used.
    * </pre>
    *
@@ -158,8 +524,17 @@ private static final long serialVersionUID = 0L;
     CRYPTO_KEY_VERSION_STATE_UNSPECIFIED(0),
     /**
      * <pre>
-     * This version may be used in [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt] and
-     * [Decrypt][google.cloud.kms.v1.KeyManagementService.Decrypt] requests.
+     * This version is still being generated. It may not be used, enabled,
+     * disabled, or destroyed yet. Cloud KMS will automatically mark this
+     * version [ENABLED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.ENABLED] as soon as the version is ready.
+     * </pre>
+     *
+     * <code>PENDING_GENERATION = 5;</code>
+     */
+    PENDING_GENERATION(5),
+    /**
+     * <pre>
+     * This version may be used for cryptographic operations.
      * </pre>
      *
      * <code>ENABLED = 1;</code>
@@ -207,8 +582,17 @@ private static final long serialVersionUID = 0L;
     public static final int CRYPTO_KEY_VERSION_STATE_UNSPECIFIED_VALUE = 0;
     /**
      * <pre>
-     * This version may be used in [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt] and
-     * [Decrypt][google.cloud.kms.v1.KeyManagementService.Decrypt] requests.
+     * This version is still being generated. It may not be used, enabled,
+     * disabled, or destroyed yet. Cloud KMS will automatically mark this
+     * version [ENABLED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.ENABLED] as soon as the version is ready.
+     * </pre>
+     *
+     * <code>PENDING_GENERATION = 5;</code>
+     */
+    public static final int PENDING_GENERATION_VALUE = 5;
+    /**
+     * <pre>
+     * This version may be used for cryptographic operations.
      * </pre>
      *
      * <code>ENABLED = 1;</code>
@@ -264,6 +648,7 @@ private static final long serialVersionUID = 0L;
     public static CryptoKeyVersionState forNumber(int value) {
       switch (value) {
         case 0: return CRYPTO_KEY_VERSION_STATE_UNSPECIFIED;
+        case 5: return PENDING_GENERATION;
         case 1: return ENABLED;
         case 2: return DISABLED;
         case 3: return DESTROYED;
@@ -294,7 +679,7 @@ private static final long serialVersionUID = 0L;
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.google.cloud.kms.v1.CryptoKeyVersion.getDescriptor().getEnumTypes().get(0);
+      return com.google.cloud.kms.v1.CryptoKeyVersion.getDescriptor().getEnumTypes().get(1);
     }
 
     private static final CryptoKeyVersionState[] VALUES = values();
@@ -318,6 +703,131 @@ private static final long serialVersionUID = 0L;
     }
 
     // @@protoc_insertion_point(enum_scope:google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState)
+  }
+
+  /**
+   * <pre>
+   * A view for [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]s. Controls the level of detail returned
+   * for [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion] in
+   * [KeyManagementService.ListCryptoKeyVersions][google.cloud.kms.v1.KeyManagementService.ListCryptoKeyVersions] and
+   * [KeyManagementService.ListCryptoKeys][google.cloud.kms.v1.KeyManagementService.ListCryptoKeys].
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionView}
+   */
+  public enum CryptoKeyVersionView
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <pre>
+     * Default view for each [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]. Does not include
+     * the [attestation][google.cloud.kms.v1.CryptoKeyVersion.attestation] field.
+     * </pre>
+     *
+     * <code>CRYPTO_KEY_VERSION_VIEW_UNSPECIFIED = 0;</code>
+     */
+    CRYPTO_KEY_VERSION_VIEW_UNSPECIFIED(0),
+    /**
+     * <pre>
+     * Provides all fields in each [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion], including the
+     * [attestation][google.cloud.kms.v1.CryptoKeyVersion.attestation].
+     * </pre>
+     *
+     * <code>FULL = 1;</code>
+     */
+    FULL(1),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <pre>
+     * Default view for each [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]. Does not include
+     * the [attestation][google.cloud.kms.v1.CryptoKeyVersion.attestation] field.
+     * </pre>
+     *
+     * <code>CRYPTO_KEY_VERSION_VIEW_UNSPECIFIED = 0;</code>
+     */
+    public static final int CRYPTO_KEY_VERSION_VIEW_UNSPECIFIED_VALUE = 0;
+    /**
+     * <pre>
+     * Provides all fields in each [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion], including the
+     * [attestation][google.cloud.kms.v1.CryptoKeyVersion.attestation].
+     * </pre>
+     *
+     * <code>FULL = 1;</code>
+     */
+    public static final int FULL_VALUE = 1;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static CryptoKeyVersionView valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static CryptoKeyVersionView forNumber(int value) {
+      switch (value) {
+        case 0: return CRYPTO_KEY_VERSION_VIEW_UNSPECIFIED;
+        case 1: return FULL;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<CryptoKeyVersionView>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        CryptoKeyVersionView> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<CryptoKeyVersionView>() {
+            public CryptoKeyVersionView findValueByNumber(int number) {
+              return CryptoKeyVersionView.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.google.cloud.kms.v1.CryptoKeyVersion.getDescriptor().getEnumTypes().get(2);
+    }
+
+    private static final CryptoKeyVersionView[] VALUES = values();
+
+    public static CryptoKeyVersionView valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private CryptoKeyVersionView(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionView)
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -389,6 +899,102 @@ private static final long serialVersionUID = 0L;
     return result == null ? com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.UNRECOGNIZED : result;
   }
 
+  public static final int PROTECTION_LEVEL_FIELD_NUMBER = 7;
+  private int protectionLevel_;
+  /**
+   * <pre>
+   * Output only. The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] describing how crypto operations are
+   * performed with this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
+   * </pre>
+   *
+   * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 7;</code>
+   */
+  public int getProtectionLevelValue() {
+    return protectionLevel_;
+  }
+  /**
+   * <pre>
+   * Output only. The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] describing how crypto operations are
+   * performed with this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
+   * </pre>
+   *
+   * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 7;</code>
+   */
+  public com.google.cloud.kms.v1.ProtectionLevel getProtectionLevel() {
+    @SuppressWarnings("deprecation")
+    com.google.cloud.kms.v1.ProtectionLevel result = com.google.cloud.kms.v1.ProtectionLevel.valueOf(protectionLevel_);
+    return result == null ? com.google.cloud.kms.v1.ProtectionLevel.UNRECOGNIZED : result;
+  }
+
+  public static final int ALGORITHM_FIELD_NUMBER = 10;
+  private int algorithm_;
+  /**
+   * <pre>
+   * Output only. The [CryptoKeyVersionAlgorithm][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm] that this
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] supports.
+   * </pre>
+   *
+   * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm algorithm = 10;</code>
+   */
+  public int getAlgorithmValue() {
+    return algorithm_;
+  }
+  /**
+   * <pre>
+   * Output only. The [CryptoKeyVersionAlgorithm][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm] that this
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] supports.
+   * </pre>
+   *
+   * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm algorithm = 10;</code>
+   */
+  public com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm getAlgorithm() {
+    @SuppressWarnings("deprecation")
+    com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm result = com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm.valueOf(algorithm_);
+    return result == null ? com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm.UNRECOGNIZED : result;
+  }
+
+  public static final int ATTESTATION_FIELD_NUMBER = 8;
+  private com.google.cloud.kms.v1.KeyOperationAttestation attestation_;
+  /**
+   * <pre>
+   * Output only. Statement that was generated and signed by the HSM at key
+   * creation time. Use this statement to verify attributes of the key as stored
+   * on the HSM, independently of Google. Only provided for key versions with
+   * [protection_level][google.cloud.kms.v1.CryptoKeyVersion.protection_level] [HSM][google.cloud.kms.v1.ProtectionLevel.HSM].
+   * </pre>
+   *
+   * <code>.google.cloud.kms.v1.KeyOperationAttestation attestation = 8;</code>
+   */
+  public boolean hasAttestation() {
+    return attestation_ != null;
+  }
+  /**
+   * <pre>
+   * Output only. Statement that was generated and signed by the HSM at key
+   * creation time. Use this statement to verify attributes of the key as stored
+   * on the HSM, independently of Google. Only provided for key versions with
+   * [protection_level][google.cloud.kms.v1.CryptoKeyVersion.protection_level] [HSM][google.cloud.kms.v1.ProtectionLevel.HSM].
+   * </pre>
+   *
+   * <code>.google.cloud.kms.v1.KeyOperationAttestation attestation = 8;</code>
+   */
+  public com.google.cloud.kms.v1.KeyOperationAttestation getAttestation() {
+    return attestation_ == null ? com.google.cloud.kms.v1.KeyOperationAttestation.getDefaultInstance() : attestation_;
+  }
+  /**
+   * <pre>
+   * Output only. Statement that was generated and signed by the HSM at key
+   * creation time. Use this statement to verify attributes of the key as stored
+   * on the HSM, independently of Google. Only provided for key versions with
+   * [protection_level][google.cloud.kms.v1.CryptoKeyVersion.protection_level] [HSM][google.cloud.kms.v1.ProtectionLevel.HSM].
+   * </pre>
+   *
+   * <code>.google.cloud.kms.v1.KeyOperationAttestation attestation = 8;</code>
+   */
+  public com.google.cloud.kms.v1.KeyOperationAttestationOrBuilder getAttestationOrBuilder() {
+    return getAttestation();
+  }
+
   public static final int CREATE_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp createTime_;
   /**
@@ -420,6 +1026,42 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
     return getCreateTime();
+  }
+
+  public static final int GENERATE_TIME_FIELD_NUMBER = 11;
+  private com.google.protobuf.Timestamp generateTime_;
+  /**
+   * <pre>
+   * Output only. The time this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material was
+   * generated.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp generate_time = 11;</code>
+   */
+  public boolean hasGenerateTime() {
+    return generateTime_ != null;
+  }
+  /**
+   * <pre>
+   * Output only. The time this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material was
+   * generated.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp generate_time = 11;</code>
+   */
+  public com.google.protobuf.Timestamp getGenerateTime() {
+    return generateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : generateTime_;
+  }
+  /**
+   * <pre>
+   * Output only. The time this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material was
+   * generated.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp generate_time = 11;</code>
+   */
+  public com.google.protobuf.TimestampOrBuilder getGenerateTimeOrBuilder() {
+    return getGenerateTime();
   }
 
   public static final int DESTROY_TIME_FIELD_NUMBER = 5;
@@ -529,6 +1171,18 @@ private static final long serialVersionUID = 0L;
     if (destroyEventTime_ != null) {
       output.writeMessage(6, getDestroyEventTime());
     }
+    if (protectionLevel_ != com.google.cloud.kms.v1.ProtectionLevel.PROTECTION_LEVEL_UNSPECIFIED.getNumber()) {
+      output.writeEnum(7, protectionLevel_);
+    }
+    if (attestation_ != null) {
+      output.writeMessage(8, getAttestation());
+    }
+    if (algorithm_ != com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm.CRYPTO_KEY_VERSION_ALGORITHM_UNSPECIFIED.getNumber()) {
+      output.writeEnum(10, algorithm_);
+    }
+    if (generateTime_ != null) {
+      output.writeMessage(11, getGenerateTime());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -557,6 +1211,22 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(6, getDestroyEventTime());
     }
+    if (protectionLevel_ != com.google.cloud.kms.v1.ProtectionLevel.PROTECTION_LEVEL_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(7, protectionLevel_);
+    }
+    if (attestation_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(8, getAttestation());
+    }
+    if (algorithm_ != com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm.CRYPTO_KEY_VERSION_ALGORITHM_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(10, algorithm_);
+    }
+    if (generateTime_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(11, getGenerateTime());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -576,10 +1246,22 @@ private static final long serialVersionUID = 0L;
     result = result && getName()
         .equals(other.getName());
     result = result && state_ == other.state_;
+    result = result && protectionLevel_ == other.protectionLevel_;
+    result = result && algorithm_ == other.algorithm_;
+    result = result && (hasAttestation() == other.hasAttestation());
+    if (hasAttestation()) {
+      result = result && getAttestation()
+          .equals(other.getAttestation());
+    }
     result = result && (hasCreateTime() == other.hasCreateTime());
     if (hasCreateTime()) {
       result = result && getCreateTime()
           .equals(other.getCreateTime());
+    }
+    result = result && (hasGenerateTime() == other.hasGenerateTime());
+    if (hasGenerateTime()) {
+      result = result && getGenerateTime()
+          .equals(other.getGenerateTime());
     }
     result = result && (hasDestroyTime() == other.hasDestroyTime());
     if (hasDestroyTime()) {
@@ -606,9 +1288,21 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + STATE_FIELD_NUMBER;
     hash = (53 * hash) + state_;
+    hash = (37 * hash) + PROTECTION_LEVEL_FIELD_NUMBER;
+    hash = (53 * hash) + protectionLevel_;
+    hash = (37 * hash) + ALGORITHM_FIELD_NUMBER;
+    hash = (53 * hash) + algorithm_;
+    if (hasAttestation()) {
+      hash = (37 * hash) + ATTESTATION_FIELD_NUMBER;
+      hash = (53 * hash) + getAttestation().hashCode();
+    }
     if (hasCreateTime()) {
       hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getCreateTime().hashCode();
+    }
+    if (hasGenerateTime()) {
+      hash = (37 * hash) + GENERATE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getGenerateTime().hashCode();
     }
     if (hasDestroyTime()) {
       hash = (37 * hash) + DESTROY_TIME_FIELD_NUMBER;
@@ -717,13 +1411,12 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * A [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] represents an individual cryptographic key, and the
    * associated key material.
-   * It can be used for cryptographic operations either directly, or via its
-   * parent [CryptoKey][google.cloud.kms.v1.CryptoKey], in which case the server will choose the appropriate
-   * version for the operation.
+   * An [ENABLED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.ENABLED] version can be
+   * used for cryptographic operations.
    * For security reasons, the raw cryptographic key material represented by a
    * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] can never be viewed or exported. It can only be used to
-   * encrypt or decrypt data when an authorized user or application invokes Cloud
-   * KMS.
+   * encrypt, decrypt, or sign data when an authorized user or application invokes
+   * Cloud KMS.
    * </pre>
    *
    * Protobuf type {@code google.cloud.kms.v1.CryptoKeyVersion}
@@ -767,11 +1460,27 @@ private static final long serialVersionUID = 0L;
 
       state_ = 0;
 
+      protectionLevel_ = 0;
+
+      algorithm_ = 0;
+
+      if (attestationBuilder_ == null) {
+        attestation_ = null;
+      } else {
+        attestation_ = null;
+        attestationBuilder_ = null;
+      }
       if (createTimeBuilder_ == null) {
         createTime_ = null;
       } else {
         createTime_ = null;
         createTimeBuilder_ = null;
+      }
+      if (generateTimeBuilder_ == null) {
+        generateTime_ = null;
+      } else {
+        generateTime_ = null;
+        generateTimeBuilder_ = null;
       }
       if (destroyTimeBuilder_ == null) {
         destroyTime_ = null;
@@ -813,10 +1522,22 @@ private static final long serialVersionUID = 0L;
       com.google.cloud.kms.v1.CryptoKeyVersion result = new com.google.cloud.kms.v1.CryptoKeyVersion(this);
       result.name_ = name_;
       result.state_ = state_;
+      result.protectionLevel_ = protectionLevel_;
+      result.algorithm_ = algorithm_;
+      if (attestationBuilder_ == null) {
+        result.attestation_ = attestation_;
+      } else {
+        result.attestation_ = attestationBuilder_.build();
+      }
       if (createTimeBuilder_ == null) {
         result.createTime_ = createTime_;
       } else {
         result.createTime_ = createTimeBuilder_.build();
+      }
+      if (generateTimeBuilder_ == null) {
+        result.generateTime_ = generateTime_;
+      } else {
+        result.generateTime_ = generateTimeBuilder_.build();
       }
       if (destroyTimeBuilder_ == null) {
         result.destroyTime_ = destroyTime_;
@@ -883,8 +1604,20 @@ private static final long serialVersionUID = 0L;
       if (other.state_ != 0) {
         setStateValue(other.getStateValue());
       }
+      if (other.protectionLevel_ != 0) {
+        setProtectionLevelValue(other.getProtectionLevelValue());
+      }
+      if (other.algorithm_ != 0) {
+        setAlgorithmValue(other.getAlgorithmValue());
+      }
+      if (other.hasAttestation()) {
+        mergeAttestation(other.getAttestation());
+      }
       if (other.hasCreateTime()) {
         mergeCreateTime(other.getCreateTime());
+      }
+      if (other.hasGenerateTime()) {
+        mergeGenerateTime(other.getGenerateTime());
       }
       if (other.hasDestroyTime()) {
         mergeDestroyTime(other.getDestroyTime());
@@ -1080,6 +1813,326 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private int protectionLevel_ = 0;
+    /**
+     * <pre>
+     * Output only. The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] describing how crypto operations are
+     * performed with this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
+     * </pre>
+     *
+     * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 7;</code>
+     */
+    public int getProtectionLevelValue() {
+      return protectionLevel_;
+    }
+    /**
+     * <pre>
+     * Output only. The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] describing how crypto operations are
+     * performed with this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
+     * </pre>
+     *
+     * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 7;</code>
+     */
+    public Builder setProtectionLevelValue(int value) {
+      protectionLevel_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] describing how crypto operations are
+     * performed with this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
+     * </pre>
+     *
+     * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 7;</code>
+     */
+    public com.google.cloud.kms.v1.ProtectionLevel getProtectionLevel() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.kms.v1.ProtectionLevel result = com.google.cloud.kms.v1.ProtectionLevel.valueOf(protectionLevel_);
+      return result == null ? com.google.cloud.kms.v1.ProtectionLevel.UNRECOGNIZED : result;
+    }
+    /**
+     * <pre>
+     * Output only. The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] describing how crypto operations are
+     * performed with this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
+     * </pre>
+     *
+     * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 7;</code>
+     */
+    public Builder setProtectionLevel(com.google.cloud.kms.v1.ProtectionLevel value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      protectionLevel_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] describing how crypto operations are
+     * performed with this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
+     * </pre>
+     *
+     * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 7;</code>
+     */
+    public Builder clearProtectionLevel() {
+      
+      protectionLevel_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int algorithm_ = 0;
+    /**
+     * <pre>
+     * Output only. The [CryptoKeyVersionAlgorithm][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm] that this
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] supports.
+     * </pre>
+     *
+     * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm algorithm = 10;</code>
+     */
+    public int getAlgorithmValue() {
+      return algorithm_;
+    }
+    /**
+     * <pre>
+     * Output only. The [CryptoKeyVersionAlgorithm][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm] that this
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] supports.
+     * </pre>
+     *
+     * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm algorithm = 10;</code>
+     */
+    public Builder setAlgorithmValue(int value) {
+      algorithm_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. The [CryptoKeyVersionAlgorithm][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm] that this
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] supports.
+     * </pre>
+     *
+     * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm algorithm = 10;</code>
+     */
+    public com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm getAlgorithm() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm result = com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm.valueOf(algorithm_);
+      return result == null ? com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm.UNRECOGNIZED : result;
+    }
+    /**
+     * <pre>
+     * Output only. The [CryptoKeyVersionAlgorithm][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm] that this
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] supports.
+     * </pre>
+     *
+     * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm algorithm = 10;</code>
+     */
+    public Builder setAlgorithm(com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      algorithm_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. The [CryptoKeyVersionAlgorithm][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm] that this
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] supports.
+     * </pre>
+     *
+     * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm algorithm = 10;</code>
+     */
+    public Builder clearAlgorithm() {
+      
+      algorithm_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.kms.v1.KeyOperationAttestation attestation_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.kms.v1.KeyOperationAttestation, com.google.cloud.kms.v1.KeyOperationAttestation.Builder, com.google.cloud.kms.v1.KeyOperationAttestationOrBuilder> attestationBuilder_;
+    /**
+     * <pre>
+     * Output only. Statement that was generated and signed by the HSM at key
+     * creation time. Use this statement to verify attributes of the key as stored
+     * on the HSM, independently of Google. Only provided for key versions with
+     * [protection_level][google.cloud.kms.v1.CryptoKeyVersion.protection_level] [HSM][google.cloud.kms.v1.ProtectionLevel.HSM].
+     * </pre>
+     *
+     * <code>.google.cloud.kms.v1.KeyOperationAttestation attestation = 8;</code>
+     */
+    public boolean hasAttestation() {
+      return attestationBuilder_ != null || attestation_ != null;
+    }
+    /**
+     * <pre>
+     * Output only. Statement that was generated and signed by the HSM at key
+     * creation time. Use this statement to verify attributes of the key as stored
+     * on the HSM, independently of Google. Only provided for key versions with
+     * [protection_level][google.cloud.kms.v1.CryptoKeyVersion.protection_level] [HSM][google.cloud.kms.v1.ProtectionLevel.HSM].
+     * </pre>
+     *
+     * <code>.google.cloud.kms.v1.KeyOperationAttestation attestation = 8;</code>
+     */
+    public com.google.cloud.kms.v1.KeyOperationAttestation getAttestation() {
+      if (attestationBuilder_ == null) {
+        return attestation_ == null ? com.google.cloud.kms.v1.KeyOperationAttestation.getDefaultInstance() : attestation_;
+      } else {
+        return attestationBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Output only. Statement that was generated and signed by the HSM at key
+     * creation time. Use this statement to verify attributes of the key as stored
+     * on the HSM, independently of Google. Only provided for key versions with
+     * [protection_level][google.cloud.kms.v1.CryptoKeyVersion.protection_level] [HSM][google.cloud.kms.v1.ProtectionLevel.HSM].
+     * </pre>
+     *
+     * <code>.google.cloud.kms.v1.KeyOperationAttestation attestation = 8;</code>
+     */
+    public Builder setAttestation(com.google.cloud.kms.v1.KeyOperationAttestation value) {
+      if (attestationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        attestation_ = value;
+        onChanged();
+      } else {
+        attestationBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. Statement that was generated and signed by the HSM at key
+     * creation time. Use this statement to verify attributes of the key as stored
+     * on the HSM, independently of Google. Only provided for key versions with
+     * [protection_level][google.cloud.kms.v1.CryptoKeyVersion.protection_level] [HSM][google.cloud.kms.v1.ProtectionLevel.HSM].
+     * </pre>
+     *
+     * <code>.google.cloud.kms.v1.KeyOperationAttestation attestation = 8;</code>
+     */
+    public Builder setAttestation(
+        com.google.cloud.kms.v1.KeyOperationAttestation.Builder builderForValue) {
+      if (attestationBuilder_ == null) {
+        attestation_ = builderForValue.build();
+        onChanged();
+      } else {
+        attestationBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. Statement that was generated and signed by the HSM at key
+     * creation time. Use this statement to verify attributes of the key as stored
+     * on the HSM, independently of Google. Only provided for key versions with
+     * [protection_level][google.cloud.kms.v1.CryptoKeyVersion.protection_level] [HSM][google.cloud.kms.v1.ProtectionLevel.HSM].
+     * </pre>
+     *
+     * <code>.google.cloud.kms.v1.KeyOperationAttestation attestation = 8;</code>
+     */
+    public Builder mergeAttestation(com.google.cloud.kms.v1.KeyOperationAttestation value) {
+      if (attestationBuilder_ == null) {
+        if (attestation_ != null) {
+          attestation_ =
+            com.google.cloud.kms.v1.KeyOperationAttestation.newBuilder(attestation_).mergeFrom(value).buildPartial();
+        } else {
+          attestation_ = value;
+        }
+        onChanged();
+      } else {
+        attestationBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. Statement that was generated and signed by the HSM at key
+     * creation time. Use this statement to verify attributes of the key as stored
+     * on the HSM, independently of Google. Only provided for key versions with
+     * [protection_level][google.cloud.kms.v1.CryptoKeyVersion.protection_level] [HSM][google.cloud.kms.v1.ProtectionLevel.HSM].
+     * </pre>
+     *
+     * <code>.google.cloud.kms.v1.KeyOperationAttestation attestation = 8;</code>
+     */
+    public Builder clearAttestation() {
+      if (attestationBuilder_ == null) {
+        attestation_ = null;
+        onChanged();
+      } else {
+        attestation_ = null;
+        attestationBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. Statement that was generated and signed by the HSM at key
+     * creation time. Use this statement to verify attributes of the key as stored
+     * on the HSM, independently of Google. Only provided for key versions with
+     * [protection_level][google.cloud.kms.v1.CryptoKeyVersion.protection_level] [HSM][google.cloud.kms.v1.ProtectionLevel.HSM].
+     * </pre>
+     *
+     * <code>.google.cloud.kms.v1.KeyOperationAttestation attestation = 8;</code>
+     */
+    public com.google.cloud.kms.v1.KeyOperationAttestation.Builder getAttestationBuilder() {
+      
+      onChanged();
+      return getAttestationFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Output only. Statement that was generated and signed by the HSM at key
+     * creation time. Use this statement to verify attributes of the key as stored
+     * on the HSM, independently of Google. Only provided for key versions with
+     * [protection_level][google.cloud.kms.v1.CryptoKeyVersion.protection_level] [HSM][google.cloud.kms.v1.ProtectionLevel.HSM].
+     * </pre>
+     *
+     * <code>.google.cloud.kms.v1.KeyOperationAttestation attestation = 8;</code>
+     */
+    public com.google.cloud.kms.v1.KeyOperationAttestationOrBuilder getAttestationOrBuilder() {
+      if (attestationBuilder_ != null) {
+        return attestationBuilder_.getMessageOrBuilder();
+      } else {
+        return attestation_ == null ?
+            com.google.cloud.kms.v1.KeyOperationAttestation.getDefaultInstance() : attestation_;
+      }
+    }
+    /**
+     * <pre>
+     * Output only. Statement that was generated and signed by the HSM at key
+     * creation time. Use this statement to verify attributes of the key as stored
+     * on the HSM, independently of Google. Only provided for key versions with
+     * [protection_level][google.cloud.kms.v1.CryptoKeyVersion.protection_level] [HSM][google.cloud.kms.v1.ProtectionLevel.HSM].
+     * </pre>
+     *
+     * <code>.google.cloud.kms.v1.KeyOperationAttestation attestation = 8;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.kms.v1.KeyOperationAttestation, com.google.cloud.kms.v1.KeyOperationAttestation.Builder, com.google.cloud.kms.v1.KeyOperationAttestationOrBuilder> 
+        getAttestationFieldBuilder() {
+      if (attestationBuilder_ == null) {
+        attestationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.kms.v1.KeyOperationAttestation, com.google.cloud.kms.v1.KeyOperationAttestation.Builder, com.google.cloud.kms.v1.KeyOperationAttestationOrBuilder>(
+                getAttestation(),
+                getParentForChildren(),
+                isClean());
+        attestation_ = null;
+      }
+      return attestationBuilder_;
+    }
+
     private com.google.protobuf.Timestamp createTime_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> createTimeBuilder_;
@@ -1231,6 +2284,168 @@ private static final long serialVersionUID = 0L;
         createTime_ = null;
       }
       return createTimeBuilder_;
+    }
+
+    private com.google.protobuf.Timestamp generateTime_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> generateTimeBuilder_;
+    /**
+     * <pre>
+     * Output only. The time this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material was
+     * generated.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp generate_time = 11;</code>
+     */
+    public boolean hasGenerateTime() {
+      return generateTimeBuilder_ != null || generateTime_ != null;
+    }
+    /**
+     * <pre>
+     * Output only. The time this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material was
+     * generated.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp generate_time = 11;</code>
+     */
+    public com.google.protobuf.Timestamp getGenerateTime() {
+      if (generateTimeBuilder_ == null) {
+        return generateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : generateTime_;
+      } else {
+        return generateTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Output only. The time this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material was
+     * generated.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp generate_time = 11;</code>
+     */
+    public Builder setGenerateTime(com.google.protobuf.Timestamp value) {
+      if (generateTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        generateTime_ = value;
+        onChanged();
+      } else {
+        generateTimeBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. The time this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material was
+     * generated.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp generate_time = 11;</code>
+     */
+    public Builder setGenerateTime(
+        com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (generateTimeBuilder_ == null) {
+        generateTime_ = builderForValue.build();
+        onChanged();
+      } else {
+        generateTimeBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. The time this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material was
+     * generated.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp generate_time = 11;</code>
+     */
+    public Builder mergeGenerateTime(com.google.protobuf.Timestamp value) {
+      if (generateTimeBuilder_ == null) {
+        if (generateTime_ != null) {
+          generateTime_ =
+            com.google.protobuf.Timestamp.newBuilder(generateTime_).mergeFrom(value).buildPartial();
+        } else {
+          generateTime_ = value;
+        }
+        onChanged();
+      } else {
+        generateTimeBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. The time this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material was
+     * generated.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp generate_time = 11;</code>
+     */
+    public Builder clearGenerateTime() {
+      if (generateTimeBuilder_ == null) {
+        generateTime_ = null;
+        onChanged();
+      } else {
+        generateTime_ = null;
+        generateTimeBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. The time this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material was
+     * generated.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp generate_time = 11;</code>
+     */
+    public com.google.protobuf.Timestamp.Builder getGenerateTimeBuilder() {
+      
+      onChanged();
+      return getGenerateTimeFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Output only. The time this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material was
+     * generated.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp generate_time = 11;</code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getGenerateTimeOrBuilder() {
+      if (generateTimeBuilder_ != null) {
+        return generateTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return generateTime_ == null ?
+            com.google.protobuf.Timestamp.getDefaultInstance() : generateTime_;
+      }
+    }
+    /**
+     * <pre>
+     * Output only. The time this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material was
+     * generated.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp generate_time = 11;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+        getGenerateTimeFieldBuilder() {
+      if (generateTimeBuilder_ == null) {
+        generateTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                getGenerateTime(),
+                getParentForChildren(),
+                isClean());
+        generateTime_ = null;
+      }
+      return generateTimeBuilder_;
     }
 
     private com.google.protobuf.Timestamp destroyTime_ = null;

@@ -199,7 +199,7 @@ private static final long serialVersionUID = 0L;
    * Optional. Determines the kind of IAM identity returned as `writer_identity`
    * in the new sink.  If this value is omitted or set to false, and if the
    * sink's parent is a project, then the value returned as `writer_identity` is
-   * the same group or service account used by Stackdriver Logging before the
+   * the same group or service account used by Logging before the
    * addition of writer identities to this API. The sink's destination must be
    * in the same project as the sink itself.
    * If this field is set to true, or if the sink is owned by a non-project
@@ -851,7 +851,7 @@ private static final long serialVersionUID = 0L;
      * Optional. Determines the kind of IAM identity returned as `writer_identity`
      * in the new sink.  If this value is omitted or set to false, and if the
      * sink's parent is a project, then the value returned as `writer_identity` is
-     * the same group or service account used by Stackdriver Logging before the
+     * the same group or service account used by Logging before the
      * addition of writer identities to this API. The sink's destination must be
      * in the same project as the sink itself.
      * If this field is set to true, or if the sink is owned by a non-project
@@ -870,7 +870,7 @@ private static final long serialVersionUID = 0L;
      * Optional. Determines the kind of IAM identity returned as `writer_identity`
      * in the new sink.  If this value is omitted or set to false, and if the
      * sink's parent is a project, then the value returned as `writer_identity` is
-     * the same group or service account used by Stackdriver Logging before the
+     * the same group or service account used by Logging before the
      * addition of writer identities to this API. The sink's destination must be
      * in the same project as the sink itself.
      * If this field is set to true, or if the sink is owned by a non-project
@@ -892,7 +892,7 @@ private static final long serialVersionUID = 0L;
      * Optional. Determines the kind of IAM identity returned as `writer_identity`
      * in the new sink.  If this value is omitted or set to false, and if the
      * sink's parent is a project, then the value returned as `writer_identity` is
-     * the same group or service account used by Stackdriver Logging before the
+     * the same group or service account used by Logging before the
      * addition of writer identities to this API. The sink's destination must be
      * in the same project as the sink itself.
      * If this field is set to true, or if the sink is owned by a non-project

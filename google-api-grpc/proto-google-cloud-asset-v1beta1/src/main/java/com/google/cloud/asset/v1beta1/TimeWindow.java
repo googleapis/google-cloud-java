@@ -109,7 +109,6 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Start time of the time window (inclusive).
-   * Infinite past if not specified.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 1;</code>
@@ -120,7 +119,6 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Start time of the time window (inclusive).
-   * Infinite past if not specified.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 1;</code>
@@ -131,7 +129,6 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Start time of the time window (inclusive).
-   * Infinite past if not specified.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 1;</code>
@@ -145,7 +142,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * End time of the time window (exclusive).
-   * Infinite future if not specified.
+   * Current timestamp if not specified.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 2;</code>
@@ -156,7 +153,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * End time of the time window (exclusive).
-   * Infinite future if not specified.
+   * Current timestamp if not specified.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 2;</code>
@@ -167,7 +164,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * End time of the time window (exclusive).
-   * Infinite future if not specified.
+   * Current timestamp if not specified.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 2;</code>
@@ -532,7 +529,6 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Start time of the time window (inclusive).
-     * Infinite past if not specified.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 1;</code>
@@ -543,7 +539,6 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Start time of the time window (inclusive).
-     * Infinite past if not specified.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 1;</code>
@@ -558,7 +553,6 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Start time of the time window (inclusive).
-     * Infinite past if not specified.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 1;</code>
@@ -579,7 +573,6 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Start time of the time window (inclusive).
-     * Infinite past if not specified.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 1;</code>
@@ -598,7 +591,6 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Start time of the time window (inclusive).
-     * Infinite past if not specified.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 1;</code>
@@ -621,7 +613,6 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Start time of the time window (inclusive).
-     * Infinite past if not specified.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 1;</code>
@@ -640,7 +631,6 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Start time of the time window (inclusive).
-     * Infinite past if not specified.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 1;</code>
@@ -653,7 +643,6 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Start time of the time window (inclusive).
-     * Infinite past if not specified.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 1;</code>
@@ -669,7 +658,6 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Start time of the time window (inclusive).
-     * Infinite past if not specified.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 1;</code>
@@ -694,7 +682,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * End time of the time window (exclusive).
-     * Infinite future if not specified.
+     * Current timestamp if not specified.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 2;</code>
@@ -705,7 +693,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * End time of the time window (exclusive).
-     * Infinite future if not specified.
+     * Current timestamp if not specified.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 2;</code>
@@ -720,7 +708,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * End time of the time window (exclusive).
-     * Infinite future if not specified.
+     * Current timestamp if not specified.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 2;</code>
@@ -741,7 +729,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * End time of the time window (exclusive).
-     * Infinite future if not specified.
+     * Current timestamp if not specified.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 2;</code>
@@ -760,7 +748,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * End time of the time window (exclusive).
-     * Infinite future if not specified.
+     * Current timestamp if not specified.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 2;</code>
@@ -783,7 +771,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * End time of the time window (exclusive).
-     * Infinite future if not specified.
+     * Current timestamp if not specified.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 2;</code>
@@ -802,7 +790,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * End time of the time window (exclusive).
-     * Infinite future if not specified.
+     * Current timestamp if not specified.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 2;</code>
@@ -815,7 +803,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * End time of the time window (exclusive).
-     * Infinite future if not specified.
+     * Current timestamp if not specified.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 2;</code>
@@ -831,7 +819,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * End time of the time window (exclusive).
-     * Infinite future if not specified.
+     * Current timestamp if not specified.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 2;</code>

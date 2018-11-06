@@ -22,7 +22,7 @@ private static final long serialVersionUID = 0L;
   private ExportAssetsRequest() {
     parent_ = "";
     assetTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    contentTypes_ = java.util.Collections.emptyList();
+    contentType_ = 0;
   }
 
   @java.lang.Override
@@ -79,25 +79,8 @@ private static final long serialVersionUID = 0L;
           }
           case 32: {
             int rawValue = input.readEnum();
-            if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-              contentTypes_ = new java.util.ArrayList<java.lang.Integer>();
-              mutable_bitField0_ |= 0x00000008;
-            }
-            contentTypes_.add(rawValue);
-            break;
-          }
-          case 34: {
-            int length = input.readRawVarint32();
-            int oldLimit = input.pushLimit(length);
-            while(input.getBytesUntilLimit() > 0) {
-              int rawValue = input.readEnum();
-              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-                contentTypes_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00000008;
-              }
-              contentTypes_.add(rawValue);
-            }
-            input.popLimit(oldLimit);
+
+            contentType_ = rawValue;
             break;
           }
           case 42: {
@@ -131,9 +114,6 @@ private static final long serialVersionUID = 0L;
       if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
         assetTypes_ = assetTypes_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-        contentTypes_ = java.util.Collections.unmodifiableList(contentTypes_);
-      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -156,9 +136,9 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object parent_;
   /**
    * <pre>
-   * Required. The relative name of the root asset. It can only be an
-   * organization number (e.g. "organizations/123") or a project number
-   * (e.g. "projects/12345").
+   * Required. The relative name of the root asset. This can only be an organization
+   * number (such as "organizations/123"), a project ID (such as
+   * "projects/my-project-id"), or a project number (such as "projects/12345").
    * </pre>
    *
    * <code>string parent = 1;</code>
@@ -177,9 +157,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The relative name of the root asset. It can only be an
-   * organization number (e.g. "organizations/123") or a project number
-   * (e.g. "projects/12345").
+   * Required. The relative name of the root asset. This can only be an organization
+   * number (such as "organizations/123"), a project ID (such as
+   * "projects/my-project-id"), or a project number (such as "projects/12345").
    * </pre>
    *
    * <code>string parent = 1;</code>
@@ -202,10 +182,11 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.Timestamp readTime_;
   /**
    * <pre>
-   * Timestamp to take an asset snapshot. This can only be current or past
-   * time. If not specified, the current time will be used. Due to delays in
-   * resource data collection and indexing, there is a volatile window during
-   * which running the same query may get different results.
+   * Timestamp to take an asset snapshot. This can only be set to a timestamp in
+   * the past or of the current time. If not specified, the current time will be
+   * used. Due to delays in resource data collection and indexing, there is a
+   * volatile window during which running the same query may get different
+   * results.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp read_time = 2;</code>
@@ -215,10 +196,11 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Timestamp to take an asset snapshot. This can only be current or past
-   * time. If not specified, the current time will be used. Due to delays in
-   * resource data collection and indexing, there is a volatile window during
-   * which running the same query may get different results.
+   * Timestamp to take an asset snapshot. This can only be set to a timestamp in
+   * the past or of the current time. If not specified, the current time will be
+   * used. Due to delays in resource data collection and indexing, there is a
+   * volatile window during which running the same query may get different
+   * results.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp read_time = 2;</code>
@@ -228,10 +210,11 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Timestamp to take an asset snapshot. This can only be current or past
-   * time. If not specified, the current time will be used. Due to delays in
-   * resource data collection and indexing, there is a volatile window during
-   * which running the same query may get different results.
+   * Timestamp to take an asset snapshot. This can only be set to a timestamp in
+   * the past or of the current time. If not specified, the current time will be
+   * used. Due to delays in resource data collection and indexing, there is a
+   * volatile window during which running the same query may get different
+   * results.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp read_time = 2;</code>
@@ -244,7 +227,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.LazyStringList assetTypes_;
   /**
    * <pre>
-   * A list of asset types to take a snapshot for. Example:
+   * A list of asset types of which to take a snapshot for. For example:
    * "google.compute.disk". If specified, only matching assets will be returned.
    * </pre>
    *
@@ -256,7 +239,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * A list of asset types to take a snapshot for. Example:
+   * A list of asset types of which to take a snapshot for. For example:
    * "google.compute.disk". If specified, only matching assets will be returned.
    * </pre>
    *
@@ -267,7 +250,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * A list of asset types to take a snapshot for. Example:
+   * A list of asset types of which to take a snapshot for. For example:
    * "google.compute.disk". If specified, only matching assets will be returned.
    * </pre>
    *
@@ -278,7 +261,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * A list of asset types to take a snapshot for. Example:
+   * A list of asset types of which to take a snapshot for. For example:
    * "google.compute.disk". If specified, only matching assets will be returned.
    * </pre>
    *
@@ -289,76 +272,32 @@ private static final long serialVersionUID = 0L;
     return assetTypes_.getByteString(index);
   }
 
-  public static final int CONTENT_TYPES_FIELD_NUMBER = 4;
-  private java.util.List<java.lang.Integer> contentTypes_;
-  private static final com.google.protobuf.Internal.ListAdapter.Converter<
-      java.lang.Integer, com.google.cloud.asset.v1beta1.ContentType> contentTypes_converter_ =
-          new com.google.protobuf.Internal.ListAdapter.Converter<
-              java.lang.Integer, com.google.cloud.asset.v1beta1.ContentType>() {
-            public com.google.cloud.asset.v1beta1.ContentType convert(java.lang.Integer from) {
-              @SuppressWarnings("deprecation")
-              com.google.cloud.asset.v1beta1.ContentType result = com.google.cloud.asset.v1beta1.ContentType.valueOf(from);
-              return result == null ? com.google.cloud.asset.v1beta1.ContentType.UNRECOGNIZED : result;
-            }
-          };
+  public static final int CONTENT_TYPE_FIELD_NUMBER = 4;
+  private int contentType_;
   /**
    * <pre>
-   * A list of asset content types. If specified, only matching content will be
-   * returned. Otherwise, no content but the asset name will be returned.
+   * Asset content type. If not specified, no content but the asset name will be
+   * returned.
    * </pre>
    *
-   * <code>repeated .google.cloud.asset.v1beta1.ContentType content_types = 4;</code>
+   * <code>.google.cloud.asset.v1beta1.ContentType content_type = 4;</code>
    */
-  public java.util.List<com.google.cloud.asset.v1beta1.ContentType> getContentTypesList() {
-    return new com.google.protobuf.Internal.ListAdapter<
-        java.lang.Integer, com.google.cloud.asset.v1beta1.ContentType>(contentTypes_, contentTypes_converter_);
+  public int getContentTypeValue() {
+    return contentType_;
   }
   /**
    * <pre>
-   * A list of asset content types. If specified, only matching content will be
-   * returned. Otherwise, no content but the asset name will be returned.
+   * Asset content type. If not specified, no content but the asset name will be
+   * returned.
    * </pre>
    *
-   * <code>repeated .google.cloud.asset.v1beta1.ContentType content_types = 4;</code>
+   * <code>.google.cloud.asset.v1beta1.ContentType content_type = 4;</code>
    */
-  public int getContentTypesCount() {
-    return contentTypes_.size();
+  public com.google.cloud.asset.v1beta1.ContentType getContentType() {
+    @SuppressWarnings("deprecation")
+    com.google.cloud.asset.v1beta1.ContentType result = com.google.cloud.asset.v1beta1.ContentType.valueOf(contentType_);
+    return result == null ? com.google.cloud.asset.v1beta1.ContentType.UNRECOGNIZED : result;
   }
-  /**
-   * <pre>
-   * A list of asset content types. If specified, only matching content will be
-   * returned. Otherwise, no content but the asset name will be returned.
-   * </pre>
-   *
-   * <code>repeated .google.cloud.asset.v1beta1.ContentType content_types = 4;</code>
-   */
-  public com.google.cloud.asset.v1beta1.ContentType getContentTypes(int index) {
-    return contentTypes_converter_.convert(contentTypes_.get(index));
-  }
-  /**
-   * <pre>
-   * A list of asset content types. If specified, only matching content will be
-   * returned. Otherwise, no content but the asset name will be returned.
-   * </pre>
-   *
-   * <code>repeated .google.cloud.asset.v1beta1.ContentType content_types = 4;</code>
-   */
-  public java.util.List<java.lang.Integer>
-  getContentTypesValueList() {
-    return contentTypes_;
-  }
-  /**
-   * <pre>
-   * A list of asset content types. If specified, only matching content will be
-   * returned. Otherwise, no content but the asset name will be returned.
-   * </pre>
-   *
-   * <code>repeated .google.cloud.asset.v1beta1.ContentType content_types = 4;</code>
-   */
-  public int getContentTypesValue(int index) {
-    return contentTypes_.get(index);
-  }
-  private int contentTypesMemoizedSerializedSize;
 
   public static final int OUTPUT_CONFIG_FIELD_NUMBER = 5;
   private com.google.cloud.asset.v1beta1.OutputConfig outputConfig_;
@@ -410,7 +349,6 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    getSerializedSize();
     if (!getParentBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, parent_);
     }
@@ -420,12 +358,8 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < assetTypes_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, assetTypes_.getRaw(i));
     }
-    if (getContentTypesList().size() > 0) {
-      output.writeUInt32NoTag(34);
-      output.writeUInt32NoTag(contentTypesMemoizedSerializedSize);
-    }
-    for (int i = 0; i < contentTypes_.size(); i++) {
-      output.writeEnumNoTag(contentTypes_.get(i));
+    if (contentType_ != com.google.cloud.asset.v1beta1.ContentType.CONTENT_TYPE_UNSPECIFIED.getNumber()) {
+      output.writeEnum(4, contentType_);
     }
     if (outputConfig_ != null) {
       output.writeMessage(5, getOutputConfig());
@@ -454,17 +388,9 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getAssetTypesList().size();
     }
-    {
-      int dataSize = 0;
-      for (int i = 0; i < contentTypes_.size(); i++) {
-        dataSize += com.google.protobuf.CodedOutputStream
-          .computeEnumSizeNoTag(contentTypes_.get(i));
-      }
-      size += dataSize;
-      if (!getContentTypesList().isEmpty()) {  size += 1;
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32SizeNoTag(dataSize);
-      }contentTypesMemoizedSerializedSize = dataSize;
+    if (contentType_ != com.google.cloud.asset.v1beta1.ContentType.CONTENT_TYPE_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(4, contentType_);
     }
     if (outputConfig_ != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -495,7 +421,7 @@ private static final long serialVersionUID = 0L;
     }
     result = result && getAssetTypesList()
         .equals(other.getAssetTypesList());
-    result = result && contentTypes_.equals(other.contentTypes_);
+    result = result && contentType_ == other.contentType_;
     result = result && (hasOutputConfig() == other.hasOutputConfig());
     if (hasOutputConfig()) {
       result = result && getOutputConfig()
@@ -522,10 +448,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + ASSET_TYPES_FIELD_NUMBER;
       hash = (53 * hash) + getAssetTypesList().hashCode();
     }
-    if (getContentTypesCount() > 0) {
-      hash = (37 * hash) + CONTENT_TYPES_FIELD_NUMBER;
-      hash = (53 * hash) + contentTypes_.hashCode();
-    }
+    hash = (37 * hash) + CONTENT_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + contentType_;
     if (hasOutputConfig()) {
       hash = (37 * hash) + OUTPUT_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getOutputConfig().hashCode();
@@ -677,8 +601,8 @@ private static final long serialVersionUID = 0L;
       }
       assetTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000004);
-      contentTypes_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      contentType_ = 0;
+
       if (outputConfigBuilder_ == null) {
         outputConfig_ = null;
       } else {
@@ -724,11 +648,7 @@ private static final long serialVersionUID = 0L;
         bitField0_ = (bitField0_ & ~0x00000004);
       }
       result.assetTypes_ = assetTypes_;
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        contentTypes_ = java.util.Collections.unmodifiableList(contentTypes_);
-        bitField0_ = (bitField0_ & ~0x00000008);
-      }
-      result.contentTypes_ = contentTypes_;
+      result.contentType_ = contentType_;
       if (outputConfigBuilder_ == null) {
         result.outputConfig_ = outputConfig_;
       } else {
@@ -800,15 +720,8 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       }
-      if (!other.contentTypes_.isEmpty()) {
-        if (contentTypes_.isEmpty()) {
-          contentTypes_ = other.contentTypes_;
-          bitField0_ = (bitField0_ & ~0x00000008);
-        } else {
-          ensureContentTypesIsMutable();
-          contentTypes_.addAll(other.contentTypes_);
-        }
-        onChanged();
+      if (other.contentType_ != 0) {
+        setContentTypeValue(other.getContentTypeValue());
       }
       if (other.hasOutputConfig()) {
         mergeOutputConfig(other.getOutputConfig());
@@ -846,9 +759,9 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object parent_ = "";
     /**
      * <pre>
-     * Required. The relative name of the root asset. It can only be an
-     * organization number (e.g. "organizations/123") or a project number
-     * (e.g. "projects/12345").
+     * Required. The relative name of the root asset. This can only be an organization
+     * number (such as "organizations/123"), a project ID (such as
+     * "projects/my-project-id"), or a project number (such as "projects/12345").
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -867,9 +780,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The relative name of the root asset. It can only be an
-     * organization number (e.g. "organizations/123") or a project number
-     * (e.g. "projects/12345").
+     * Required. The relative name of the root asset. This can only be an organization
+     * number (such as "organizations/123"), a project ID (such as
+     * "projects/my-project-id"), or a project number (such as "projects/12345").
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -889,9 +802,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The relative name of the root asset. It can only be an
-     * organization number (e.g. "organizations/123") or a project number
-     * (e.g. "projects/12345").
+     * Required. The relative name of the root asset. This can only be an organization
+     * number (such as "organizations/123"), a project ID (such as
+     * "projects/my-project-id"), or a project number (such as "projects/12345").
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -908,9 +821,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The relative name of the root asset. It can only be an
-     * organization number (e.g. "organizations/123") or a project number
-     * (e.g. "projects/12345").
+     * Required. The relative name of the root asset. This can only be an organization
+     * number (such as "organizations/123"), a project ID (such as
+     * "projects/my-project-id"), or a project number (such as "projects/12345").
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -923,9 +836,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The relative name of the root asset. It can only be an
-     * organization number (e.g. "organizations/123") or a project number
-     * (e.g. "projects/12345").
+     * Required. The relative name of the root asset. This can only be an organization
+     * number (such as "organizations/123"), a project ID (such as
+     * "projects/my-project-id"), or a project number (such as "projects/12345").
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -947,10 +860,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> readTimeBuilder_;
     /**
      * <pre>
-     * Timestamp to take an asset snapshot. This can only be current or past
-     * time. If not specified, the current time will be used. Due to delays in
-     * resource data collection and indexing, there is a volatile window during
-     * which running the same query may get different results.
+     * Timestamp to take an asset snapshot. This can only be set to a timestamp in
+     * the past or of the current time. If not specified, the current time will be
+     * used. Due to delays in resource data collection and indexing, there is a
+     * volatile window during which running the same query may get different
+     * results.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp read_time = 2;</code>
@@ -960,10 +874,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Timestamp to take an asset snapshot. This can only be current or past
-     * time. If not specified, the current time will be used. Due to delays in
-     * resource data collection and indexing, there is a volatile window during
-     * which running the same query may get different results.
+     * Timestamp to take an asset snapshot. This can only be set to a timestamp in
+     * the past or of the current time. If not specified, the current time will be
+     * used. Due to delays in resource data collection and indexing, there is a
+     * volatile window during which running the same query may get different
+     * results.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp read_time = 2;</code>
@@ -977,10 +892,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Timestamp to take an asset snapshot. This can only be current or past
-     * time. If not specified, the current time will be used. Due to delays in
-     * resource data collection and indexing, there is a volatile window during
-     * which running the same query may get different results.
+     * Timestamp to take an asset snapshot. This can only be set to a timestamp in
+     * the past or of the current time. If not specified, the current time will be
+     * used. Due to delays in resource data collection and indexing, there is a
+     * volatile window during which running the same query may get different
+     * results.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp read_time = 2;</code>
@@ -1000,10 +916,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Timestamp to take an asset snapshot. This can only be current or past
-     * time. If not specified, the current time will be used. Due to delays in
-     * resource data collection and indexing, there is a volatile window during
-     * which running the same query may get different results.
+     * Timestamp to take an asset snapshot. This can only be set to a timestamp in
+     * the past or of the current time. If not specified, the current time will be
+     * used. Due to delays in resource data collection and indexing, there is a
+     * volatile window during which running the same query may get different
+     * results.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp read_time = 2;</code>
@@ -1021,10 +938,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Timestamp to take an asset snapshot. This can only be current or past
-     * time. If not specified, the current time will be used. Due to delays in
-     * resource data collection and indexing, there is a volatile window during
-     * which running the same query may get different results.
+     * Timestamp to take an asset snapshot. This can only be set to a timestamp in
+     * the past or of the current time. If not specified, the current time will be
+     * used. Due to delays in resource data collection and indexing, there is a
+     * volatile window during which running the same query may get different
+     * results.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp read_time = 2;</code>
@@ -1046,10 +964,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Timestamp to take an asset snapshot. This can only be current or past
-     * time. If not specified, the current time will be used. Due to delays in
-     * resource data collection and indexing, there is a volatile window during
-     * which running the same query may get different results.
+     * Timestamp to take an asset snapshot. This can only be set to a timestamp in
+     * the past or of the current time. If not specified, the current time will be
+     * used. Due to delays in resource data collection and indexing, there is a
+     * volatile window during which running the same query may get different
+     * results.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp read_time = 2;</code>
@@ -1067,10 +986,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Timestamp to take an asset snapshot. This can only be current or past
-     * time. If not specified, the current time will be used. Due to delays in
-     * resource data collection and indexing, there is a volatile window during
-     * which running the same query may get different results.
+     * Timestamp to take an asset snapshot. This can only be set to a timestamp in
+     * the past or of the current time. If not specified, the current time will be
+     * used. Due to delays in resource data collection and indexing, there is a
+     * volatile window during which running the same query may get different
+     * results.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp read_time = 2;</code>
@@ -1082,10 +1002,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Timestamp to take an asset snapshot. This can only be current or past
-     * time. If not specified, the current time will be used. Due to delays in
-     * resource data collection and indexing, there is a volatile window during
-     * which running the same query may get different results.
+     * Timestamp to take an asset snapshot. This can only be set to a timestamp in
+     * the past or of the current time. If not specified, the current time will be
+     * used. Due to delays in resource data collection and indexing, there is a
+     * volatile window during which running the same query may get different
+     * results.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp read_time = 2;</code>
@@ -1100,10 +1021,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Timestamp to take an asset snapshot. This can only be current or past
-     * time. If not specified, the current time will be used. Due to delays in
-     * resource data collection and indexing, there is a volatile window during
-     * which running the same query may get different results.
+     * Timestamp to take an asset snapshot. This can only be set to a timestamp in
+     * the past or of the current time. If not specified, the current time will be
+     * used. Due to delays in resource data collection and indexing, there is a
+     * volatile window during which running the same query may get different
+     * results.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp read_time = 2;</code>
@@ -1131,7 +1053,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of asset types to take a snapshot for. Example:
+     * A list of asset types of which to take a snapshot for. For example:
      * "google.compute.disk". If specified, only matching assets will be returned.
      * </pre>
      *
@@ -1143,7 +1065,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of asset types to take a snapshot for. Example:
+     * A list of asset types of which to take a snapshot for. For example:
      * "google.compute.disk". If specified, only matching assets will be returned.
      * </pre>
      *
@@ -1154,7 +1076,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of asset types to take a snapshot for. Example:
+     * A list of asset types of which to take a snapshot for. For example:
      * "google.compute.disk". If specified, only matching assets will be returned.
      * </pre>
      *
@@ -1165,7 +1087,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of asset types to take a snapshot for. Example:
+     * A list of asset types of which to take a snapshot for. For example:
      * "google.compute.disk". If specified, only matching assets will be returned.
      * </pre>
      *
@@ -1177,7 +1099,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of asset types to take a snapshot for. Example:
+     * A list of asset types of which to take a snapshot for. For example:
      * "google.compute.disk". If specified, only matching assets will be returned.
      * </pre>
      *
@@ -1195,7 +1117,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of asset types to take a snapshot for. Example:
+     * A list of asset types of which to take a snapshot for. For example:
      * "google.compute.disk". If specified, only matching assets will be returned.
      * </pre>
      *
@@ -1213,7 +1135,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of asset types to take a snapshot for. Example:
+     * A list of asset types of which to take a snapshot for. For example:
      * "google.compute.disk". If specified, only matching assets will be returned.
      * </pre>
      *
@@ -1229,7 +1151,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of asset types to take a snapshot for. Example:
+     * A list of asset types of which to take a snapshot for. For example:
      * "google.compute.disk". If specified, only matching assets will be returned.
      * </pre>
      *
@@ -1243,7 +1165,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of asset types to take a snapshot for. Example:
+     * A list of asset types of which to take a snapshot for. For example:
      * "google.compute.disk". If specified, only matching assets will be returned.
      * </pre>
      *
@@ -1261,180 +1183,72 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.util.List<java.lang.Integer> contentTypes_ =
-      java.util.Collections.emptyList();
-    private void ensureContentTypesIsMutable() {
-      if (!((bitField0_ & 0x00000008) == 0x00000008)) {
-        contentTypes_ = new java.util.ArrayList<java.lang.Integer>(contentTypes_);
-        bitField0_ |= 0x00000008;
-      }
+    private int contentType_ = 0;
+    /**
+     * <pre>
+     * Asset content type. If not specified, no content but the asset name will be
+     * returned.
+     * </pre>
+     *
+     * <code>.google.cloud.asset.v1beta1.ContentType content_type = 4;</code>
+     */
+    public int getContentTypeValue() {
+      return contentType_;
     }
     /**
      * <pre>
-     * A list of asset content types. If specified, only matching content will be
-     * returned. Otherwise, no content but the asset name will be returned.
+     * Asset content type. If not specified, no content but the asset name will be
+     * returned.
      * </pre>
      *
-     * <code>repeated .google.cloud.asset.v1beta1.ContentType content_types = 4;</code>
+     * <code>.google.cloud.asset.v1beta1.ContentType content_type = 4;</code>
      */
-    public java.util.List<com.google.cloud.asset.v1beta1.ContentType> getContentTypesList() {
-      return new com.google.protobuf.Internal.ListAdapter<
-          java.lang.Integer, com.google.cloud.asset.v1beta1.ContentType>(contentTypes_, contentTypes_converter_);
+    public Builder setContentTypeValue(int value) {
+      contentType_ = value;
+      onChanged();
+      return this;
     }
     /**
      * <pre>
-     * A list of asset content types. If specified, only matching content will be
-     * returned. Otherwise, no content but the asset name will be returned.
+     * Asset content type. If not specified, no content but the asset name will be
+     * returned.
      * </pre>
      *
-     * <code>repeated .google.cloud.asset.v1beta1.ContentType content_types = 4;</code>
+     * <code>.google.cloud.asset.v1beta1.ContentType content_type = 4;</code>
      */
-    public int getContentTypesCount() {
-      return contentTypes_.size();
+    public com.google.cloud.asset.v1beta1.ContentType getContentType() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.asset.v1beta1.ContentType result = com.google.cloud.asset.v1beta1.ContentType.valueOf(contentType_);
+      return result == null ? com.google.cloud.asset.v1beta1.ContentType.UNRECOGNIZED : result;
     }
     /**
      * <pre>
-     * A list of asset content types. If specified, only matching content will be
-     * returned. Otherwise, no content but the asset name will be returned.
+     * Asset content type. If not specified, no content but the asset name will be
+     * returned.
      * </pre>
      *
-     * <code>repeated .google.cloud.asset.v1beta1.ContentType content_types = 4;</code>
+     * <code>.google.cloud.asset.v1beta1.ContentType content_type = 4;</code>
      */
-    public com.google.cloud.asset.v1beta1.ContentType getContentTypes(int index) {
-      return contentTypes_converter_.convert(contentTypes_.get(index));
-    }
-    /**
-     * <pre>
-     * A list of asset content types. If specified, only matching content will be
-     * returned. Otherwise, no content but the asset name will be returned.
-     * </pre>
-     *
-     * <code>repeated .google.cloud.asset.v1beta1.ContentType content_types = 4;</code>
-     */
-    public Builder setContentTypes(
-        int index, com.google.cloud.asset.v1beta1.ContentType value) {
+    public Builder setContentType(com.google.cloud.asset.v1beta1.ContentType value) {
       if (value == null) {
         throw new NullPointerException();
       }
-      ensureContentTypesIsMutable();
-      contentTypes_.set(index, value.getNumber());
+      
+      contentType_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * A list of asset content types. If specified, only matching content will be
-     * returned. Otherwise, no content but the asset name will be returned.
+     * Asset content type. If not specified, no content but the asset name will be
+     * returned.
      * </pre>
      *
-     * <code>repeated .google.cloud.asset.v1beta1.ContentType content_types = 4;</code>
+     * <code>.google.cloud.asset.v1beta1.ContentType content_type = 4;</code>
      */
-    public Builder addContentTypes(com.google.cloud.asset.v1beta1.ContentType value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      ensureContentTypesIsMutable();
-      contentTypes_.add(value.getNumber());
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * A list of asset content types. If specified, only matching content will be
-     * returned. Otherwise, no content but the asset name will be returned.
-     * </pre>
-     *
-     * <code>repeated .google.cloud.asset.v1beta1.ContentType content_types = 4;</code>
-     */
-    public Builder addAllContentTypes(
-        java.lang.Iterable<? extends com.google.cloud.asset.v1beta1.ContentType> values) {
-      ensureContentTypesIsMutable();
-      for (com.google.cloud.asset.v1beta1.ContentType value : values) {
-        contentTypes_.add(value.getNumber());
-      }
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * A list of asset content types. If specified, only matching content will be
-     * returned. Otherwise, no content but the asset name will be returned.
-     * </pre>
-     *
-     * <code>repeated .google.cloud.asset.v1beta1.ContentType content_types = 4;</code>
-     */
-    public Builder clearContentTypes() {
-      contentTypes_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000008);
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * A list of asset content types. If specified, only matching content will be
-     * returned. Otherwise, no content but the asset name will be returned.
-     * </pre>
-     *
-     * <code>repeated .google.cloud.asset.v1beta1.ContentType content_types = 4;</code>
-     */
-    public java.util.List<java.lang.Integer>
-    getContentTypesValueList() {
-      return java.util.Collections.unmodifiableList(contentTypes_);
-    }
-    /**
-     * <pre>
-     * A list of asset content types. If specified, only matching content will be
-     * returned. Otherwise, no content but the asset name will be returned.
-     * </pre>
-     *
-     * <code>repeated .google.cloud.asset.v1beta1.ContentType content_types = 4;</code>
-     */
-    public int getContentTypesValue(int index) {
-      return contentTypes_.get(index);
-    }
-    /**
-     * <pre>
-     * A list of asset content types. If specified, only matching content will be
-     * returned. Otherwise, no content but the asset name will be returned.
-     * </pre>
-     *
-     * <code>repeated .google.cloud.asset.v1beta1.ContentType content_types = 4;</code>
-     */
-    public Builder setContentTypesValue(
-        int index, int value) {
-      ensureContentTypesIsMutable();
-      contentTypes_.set(index, value);
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * A list of asset content types. If specified, only matching content will be
-     * returned. Otherwise, no content but the asset name will be returned.
-     * </pre>
-     *
-     * <code>repeated .google.cloud.asset.v1beta1.ContentType content_types = 4;</code>
-     */
-    public Builder addContentTypesValue(int value) {
-      ensureContentTypesIsMutable();
-      contentTypes_.add(value);
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * A list of asset content types. If specified, only matching content will be
-     * returned. Otherwise, no content but the asset name will be returned.
-     * </pre>
-     *
-     * <code>repeated .google.cloud.asset.v1beta1.ContentType content_types = 4;</code>
-     */
-    public Builder addAllContentTypesValue(
-        java.lang.Iterable<java.lang.Integer> values) {
-      ensureContentTypesIsMutable();
-      for (int value : values) {
-        contentTypes_.add(value);
-      }
+    public Builder clearContentType() {
+      
+      contentType_ = 0;
       onChanged();
       return this;
     }

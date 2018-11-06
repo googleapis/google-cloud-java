@@ -115,12 +115,12 @@ public class GrafeasV1Beta1ClientTest {
   @Test
   @SuppressWarnings("all")
   public void getOccurrenceTest() {
-    OccurrenceName name2 = OccurrenceName.of("[PROJECT]", "[OCCURRENCE]");
+    String name2 = "name2-1052831874";
     String noteName = "noteName1780787896";
     String remediation = "remediation779381797";
     Occurrence expectedResponse =
         Occurrence.newBuilder()
-            .setName(name2.toString())
+            .setName(name2)
             .setNoteName(noteName)
             .setRemediation(remediation)
             .build();
@@ -171,11 +171,10 @@ public class GrafeasV1Beta1ClientTest {
             .build();
     mockGrafeasV1Beta1.addResponse(expectedResponse);
 
-    String formattedParent = ProjectName.format("[PROJECT]");
+    ProjectName parent = ProjectName.of("[PROJECT]");
     String filter = "filter-1274492040";
 
-    ListOccurrencesPagedResponse pagedListResponse =
-        client.listOccurrences(formattedParent, filter);
+    ListOccurrencesPagedResponse pagedListResponse = client.listOccurrences(parent, filter);
 
     List<Occurrence> resources = Lists.newArrayList(pagedListResponse.iterateAll());
     Assert.assertEquals(1, resources.size());
@@ -185,7 +184,7 @@ public class GrafeasV1Beta1ClientTest {
     Assert.assertEquals(1, actualRequests.size());
     ListOccurrencesRequest actualRequest = (ListOccurrencesRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedParent, actualRequest.getParent());
+    Assert.assertEquals(parent, ProjectName.parse(actualRequest.getParent()));
     Assert.assertEquals(filter, actualRequest.getFilter());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -200,10 +199,10 @@ public class GrafeasV1Beta1ClientTest {
     mockGrafeasV1Beta1.addException(exception);
 
     try {
-      String formattedParent = ProjectName.format("[PROJECT]");
+      ProjectName parent = ProjectName.of("[PROJECT]");
       String filter = "filter-1274492040";
 
-      client.listOccurrences(formattedParent, filter);
+      client.listOccurrences(parent, filter);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -250,12 +249,12 @@ public class GrafeasV1Beta1ClientTest {
   @Test
   @SuppressWarnings("all")
   public void createOccurrenceTest() {
-    OccurrenceName name = OccurrenceName.of("[PROJECT]", "[OCCURRENCE]");
+    String name = "name3373707";
     String noteName = "noteName1780787896";
     String remediation = "remediation779381797";
     Occurrence expectedResponse =
         Occurrence.newBuilder()
-            .setName(name.toString())
+            .setName(name)
             .setNoteName(noteName)
             .setRemediation(remediation)
             .build();
@@ -343,12 +342,12 @@ public class GrafeasV1Beta1ClientTest {
   @Test
   @SuppressWarnings("all")
   public void updateOccurrenceTest() {
-    OccurrenceName name2 = OccurrenceName.of("[PROJECT]", "[OCCURRENCE]");
+    String name2 = "name2-1052831874";
     String noteName = "noteName1780787896";
     String remediation = "remediation779381797";
     Occurrence expectedResponse =
         Occurrence.newBuilder()
-            .setName(name2.toString())
+            .setName(name2)
             .setNoteName(noteName)
             .setRemediation(remediation)
             .build();
@@ -395,12 +394,12 @@ public class GrafeasV1Beta1ClientTest {
   @Test
   @SuppressWarnings("all")
   public void getOccurrenceNoteTest() {
-    NoteName name2 = NoteName.of("[PROJECT]", "[NOTE]");
+    String name2 = "name2-1052831874";
     String shortDescription = "shortDescription-235369287";
     String longDescription = "longDescription-1747792199";
     Note expectedResponse =
         Note.newBuilder()
-            .setName(name2.toString())
+            .setName(name2)
             .setShortDescription(shortDescription)
             .setLongDescription(longDescription)
             .build();
@@ -441,12 +440,12 @@ public class GrafeasV1Beta1ClientTest {
   @Test
   @SuppressWarnings("all")
   public void getNoteTest() {
-    NoteName name2 = NoteName.of("[PROJECT]", "[NOTE]");
+    String name2 = "name2-1052831874";
     String shortDescription = "shortDescription-235369287";
     String longDescription = "longDescription-1747792199";
     Note expectedResponse =
         Note.newBuilder()
-            .setName(name2.toString())
+            .setName(name2)
             .setShortDescription(shortDescription)
             .setLongDescription(longDescription)
             .build();
@@ -572,12 +571,12 @@ public class GrafeasV1Beta1ClientTest {
   @Test
   @SuppressWarnings("all")
   public void createNoteTest() {
-    NoteName name = NoteName.of("[PROJECT]", "[NOTE]");
+    String name = "name3373707";
     String shortDescription = "shortDescription-235369287";
     String longDescription = "longDescription-1747792199";
     Note expectedResponse =
         Note.newBuilder()
-            .setName(name.toString())
+            .setName(name)
             .setShortDescription(shortDescription)
             .setLongDescription(longDescription)
             .build();
@@ -665,12 +664,12 @@ public class GrafeasV1Beta1ClientTest {
   @Test
   @SuppressWarnings("all")
   public void updateNoteTest() {
-    NoteName name2 = NoteName.of("[PROJECT]", "[NOTE]");
+    String name2 = "name2-1052831874";
     String shortDescription = "shortDescription-235369287";
     String longDescription = "longDescription-1747792199";
     Note expectedResponse =
         Note.newBuilder()
-            .setName(name2.toString())
+            .setName(name2)
             .setShortDescription(shortDescription)
             .setLongDescription(longDescription)
             .build();

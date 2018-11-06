@@ -31,6 +31,10 @@ import com.google.cloud.storage.BucketInfo.DeleteRule.Type;
 import com.google.cloud.storage.BucketInfo.IsLiveDeleteRule;
 import com.google.cloud.storage.BucketInfo.NumNewerVersionsDeleteRule;
 import com.google.cloud.storage.BucketInfo.RawDeleteRule;
+import com.google.cloud.storage.BucketInfo.LifecycleRule;
+import com.google.cloud.storage.BucketInfo.LifecycleRule.LifecycleAction;
+import com.google.cloud.storage.BucketInfo.LifecycleRule.LifecycleCondition;
+
 import com.google.common.collect.ImmutableList;
 
 import com.google.common.collect.ImmutableMap;
@@ -56,6 +60,11 @@ public class BucketInfoTest {
       Collections.singletonList(Acl.of(User.ofAllAuthenticatedUsers(), Role.WRITER));
   private static final List<? extends DeleteRule> DELETE_RULES =
       Collections.singletonList(new AgeDeleteRule(5));
+  private static final List<? extends BucketInfo.LifecycleRule> LIFECYCLE_RULES =
+      Collections.singletonList(
+          new BucketInfo.LifecycleRule(
+              LifecycleAction.newDeleteAction(),
+              LifecycleCondition.newBuilder().setAge(5).build()));
   private static final String INDEX_PAGE = "index.html";
   private static final String NOT_FOUND_PAGE = "error.html";
   private static final String LOCATION = "ASIA";
@@ -64,6 +73,10 @@ public class BucketInfoTest {
   private static final Boolean VERSIONING_ENABLED = true;
   private static final Map<String, String> BUCKET_LABELS = ImmutableMap.of("label1", "value1");
   private static final Boolean REQUESTER_PAYS = true;
+  private static final Boolean DEFAULT_EVENT_BASED_HOLD = true;
+  private static final Long RETENTION_EFFECTIVE_TIME = 10L;
+  private static final Long RETENTION_PERIOD = 10L;
+  private static final Boolean RETENTION_POLICY_IS_LOCKED = false;
   private static final BucketInfo BUCKET_INFO = BucketInfo.newBuilder("b")
       .setAcl(ACL)
       .setEtag(ETAG)
@@ -75,6 +88,7 @@ public class BucketInfoTest {
       .setCreateTime(CREATE_TIME)
       .setDefaultAcl(DEFAULT_ACL)
       .setDeleteRules(DELETE_RULES)
+      .setLifecycleRules(LIFECYCLE_RULES)
       .setIndexPage(INDEX_PAGE)
       .setNotFoundPage(NOT_FOUND_PAGE)
       .setLocation(LOCATION)
@@ -83,6 +97,10 @@ public class BucketInfoTest {
       .setLabels(BUCKET_LABELS)
       .setRequesterPays(REQUESTER_PAYS)
       .setDefaultKmsKeyName(DEFAULT_KMS_KEY_NAME)
+      .setDefaultEventBasedHold(DEFAULT_EVENT_BASED_HOLD)
+      .setRetentionEffectiveTime(RETENTION_EFFECTIVE_TIME)
+      .setRetentionPeriod(RETENTION_PERIOD)
+      .setRetentionPolicyIsLocked(RETENTION_POLICY_IS_LOCKED)
       .build();
 
   @Test
@@ -128,6 +146,10 @@ public class BucketInfoTest {
     assertEquals(VERSIONING_ENABLED, BUCKET_INFO.versioningEnabled());
     assertEquals(BUCKET_LABELS, BUCKET_INFO.getLabels());
     assertEquals(REQUESTER_PAYS, BUCKET_INFO.requesterPays());
+    assertEquals(DEFAULT_EVENT_BASED_HOLD, BUCKET_INFO.getDefaultEventBasedHold());
+    assertEquals(RETENTION_EFFECTIVE_TIME, BUCKET_INFO.getRetentionEffectiveTime());
+    assertEquals(RETENTION_PERIOD, BUCKET_INFO.getRetentionPeriod());
+    assertEquals(RETENTION_POLICY_IS_LOCKED, BUCKET_INFO.retentionPolicyIsLocked());
   }
 
   @Test
@@ -150,6 +172,7 @@ public class BucketInfoTest {
     assertEquals(expected.getCors(), value.getCors());
     assertEquals(expected.getDefaultAcl(), value.getDefaultAcl());
     assertEquals(expected.getDeleteRules(), value.getDeleteRules());
+    assertEquals(expected.getLifecycleRules(), value.getLifecycleRules());
     assertEquals(expected.getIndexPage(), value.getIndexPage());
     assertEquals(expected.getNotFoundPage(), value.getNotFoundPage());
     assertEquals(expected.getLocation(), value.getLocation());
@@ -158,6 +181,10 @@ public class BucketInfoTest {
     assertEquals(expected.versioningEnabled(), value.versioningEnabled());
     assertEquals(expected.getLabels(), value.getLabels());
     assertEquals(expected.requesterPays(), value.requesterPays());
+    assertEquals(expected.getDefaultEventBasedHold(), value.getDefaultEventBasedHold());
+    assertEquals(expected.getRetentionEffectiveTime(), value.getRetentionEffectiveTime());
+    assertEquals(expected.getRetentionPeriod(), value.getRetentionPeriod());
+    assertEquals(expected.retentionPolicyIsLocked(), value.retentionPolicyIsLocked());
   }
 
   @Test
@@ -188,5 +215,25 @@ public class BucketInfoTest {
     for (DeleteRule delRule : rules) {
       assertEquals(delRule, DeleteRule.fromPb(delRule.toPb()));
     }
+  }
+
+  @Test
+  public void testLifecycleRules() {
+    Rule deleteLifecycleRule =
+        new LifecycleRule(
+                LifecycleAction.newDeleteAction(),
+                LifecycleCondition.newBuilder().setAge(10).build())
+            .toPb();
+
+    assertEquals(LifecycleRule.DeleteLifecycleAction.TYPE, deleteLifecycleRule.getAction().getType());
+    assertEquals(10, deleteLifecycleRule.getCondition().getAge().intValue());
+
+    Rule setStorageClassLifecycleRule = new LifecycleRule(
+            LifecycleAction.newSetStorageClassAction(StorageClass.COLDLINE),
+            LifecycleCondition.newBuilder().setIsLive(true).setNumberOfNewerVersions(10).build()).toPb();
+
+    assertEquals(StorageClass.COLDLINE.toString(), setStorageClassLifecycleRule.getAction().getStorageClass());
+    assertTrue(setStorageClassLifecycleRule.getCondition().getIsLive());
+    assertEquals(10, setStorageClassLifecycleRule.getCondition().getNumNewerVersions().intValue());
   }
 }

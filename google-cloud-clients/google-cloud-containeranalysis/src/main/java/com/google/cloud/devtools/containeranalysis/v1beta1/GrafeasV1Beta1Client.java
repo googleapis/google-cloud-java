@@ -258,7 +258,7 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final Occurrence getOccurrence(GetOccurrenceRequest request) {
+  public final Occurrence getOccurrence(GetOccurrenceRequest request) {
     return getOccurrenceCallable().call(request);
   }
 
@@ -292,9 +292,39 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
    *
    * <pre><code>
    * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
-   *   String formattedParent = ProjectName.format("[PROJECT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   String filter = "";
-   *   for (Occurrence element : grafeasV1Beta1Client.listOccurrences(formattedParent, filter).iterateAll()) {
+   *   for (Occurrence element : grafeasV1Beta1Client.listOccurrences(parent, filter).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent The name of the project to list occurrences for in the form of
+   *     `projects/[PROJECT_ID]`.
+   * @param filter The filter expression.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListOccurrencesPagedResponse listOccurrences(ProjectName parent, String filter) {
+    ListOccurrencesRequest request =
+        ListOccurrencesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setFilter(filter)
+            .build();
+    return listOccurrences(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists occurrences for the specified project.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   String filter = "";
+   *   for (Occurrence element : grafeasV1Beta1Client.listOccurrences(parent.toString(), filter).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -319,9 +349,9 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
    *
    * <pre><code>
    * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
-   *   String formattedParent = ProjectName.format("[PROJECT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   ListOccurrencesRequest request = ListOccurrencesRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .build();
    *   for (Occurrence element : grafeasV1Beta1Client.listOccurrences(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -344,9 +374,9 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
    *
    * <pre><code>
    * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
-   *   String formattedParent = ProjectName.format("[PROJECT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   ListOccurrencesRequest request = ListOccurrencesRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .build();
    *   ApiFuture&lt;ListOccurrencesPagedResponse&gt; future = grafeasV1Beta1Client.listOccurrencesPagedCallable().futureCall(request);
    *   // Do something
@@ -369,9 +399,9 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
    *
    * <pre><code>
    * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
-   *   String formattedParent = ProjectName.format("[PROJECT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   ListOccurrencesRequest request = ListOccurrencesRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .build();
    *   while (true) {
    *     ListOccurrencesResponse response = grafeasV1Beta1Client.listOccurrencesCallable().call(request);
@@ -462,7 +492,7 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final void deleteOccurrence(DeleteOccurrenceRequest request) {
+  public final void deleteOccurrence(DeleteOccurrenceRequest request) {
     deleteOccurrenceCallable().call(request);
   }
 
@@ -890,7 +920,7 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final Note getOccurrenceNote(GetOccurrenceNoteRequest request) {
+  public final Note getOccurrenceNote(GetOccurrenceNoteRequest request) {
     return getOccurrenceNoteCallable().call(request);
   }
 
@@ -981,7 +1011,7 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final Note getNote(GetNoteRequest request) {
+  public final Note getNote(GetNoteRequest request) {
     return getNoteCallable().call(request);
   }
 
@@ -1206,7 +1236,7 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final void deleteNote(DeleteNoteRequest request) {
+  public final void deleteNote(DeleteNoteRequest request) {
     deleteNoteCallable().call(request);
   }
 

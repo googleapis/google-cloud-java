@@ -122,6 +122,13 @@ public class BackendServiceSettings extends ClientSettings<BackendServiceSetting
     return ((BackendServiceStubSettings) getStubSettings()).patchBackendServiceSettings();
   }
 
+  /** Returns the object with the settings used for calls to setSecurityPolicyBackendService. */
+  public UnaryCallSettings<SetSecurityPolicyBackendServiceHttpRequest, Operation>
+      setSecurityPolicyBackendServiceSettings() {
+    return ((BackendServiceStubSettings) getStubSettings())
+        .setSecurityPolicyBackendServiceSettings();
+  }
+
   /** Returns the object with the settings used for calls to updateBackendService. */
   public UnaryCallSettings<UpdateBackendServiceHttpRequest, Operation>
       updateBackendServiceSettings() {
@@ -285,6 +292,12 @@ public class BackendServiceSettings extends ClientSettings<BackendServiceSetting
     public UnaryCallSettings.Builder<PatchBackendServiceHttpRequest, Operation>
         patchBackendServiceSettings() {
       return getStubSettingsBuilder().patchBackendServiceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setSecurityPolicyBackendService. */
+    public UnaryCallSettings.Builder<SetSecurityPolicyBackendServiceHttpRequest, Operation>
+        setSecurityPolicyBackendServiceSettings() {
+      return getStubSettingsBuilder().setSecurityPolicyBackendServiceSettings();
     }
 
     /** Returns the builder for the settings used for calls to updateBackendService. */

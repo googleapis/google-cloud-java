@@ -323,7 +323,7 @@ public class UptimeCheckServiceClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final UptimeCheckConfig getUptimeCheckConfig(GetUptimeCheckConfigRequest request) {
+  public final UptimeCheckConfig getUptimeCheckConfig(GetUptimeCheckConfigRequest request) {
     return getUptimeCheckConfigCallable().call(request);
   }
 
@@ -559,7 +559,7 @@ public class UptimeCheckServiceClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final void deleteUptimeCheckConfig(DeleteUptimeCheckConfigRequest request) {
+  public final void deleteUptimeCheckConfig(DeleteUptimeCheckConfigRequest request) {
     deleteUptimeCheckConfigCallable().call(request);
   }
 

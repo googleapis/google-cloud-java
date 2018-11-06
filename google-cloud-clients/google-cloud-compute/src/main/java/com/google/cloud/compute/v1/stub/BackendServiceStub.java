@@ -35,6 +35,7 @@ import com.google.cloud.compute.v1.InsertBackendServiceHttpRequest;
 import com.google.cloud.compute.v1.ListBackendServicesHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchBackendServiceHttpRequest;
+import com.google.cloud.compute.v1.SetSecurityPolicyBackendServiceHttpRequest;
 import com.google.cloud.compute.v1.UpdateBackendServiceHttpRequest;
 import javax.annotation.Generated;
 
@@ -113,6 +114,13 @@ public abstract class BackendServiceStub implements BackgroundResource {
   @BetaApi
   public UnaryCallable<PatchBackendServiceHttpRequest, Operation> patchBackendServiceCallable() {
     throw new UnsupportedOperationException("Not implemented: patchBackendServiceCallable()");
+  }
+
+  @BetaApi
+  public UnaryCallable<SetSecurityPolicyBackendServiceHttpRequest, Operation>
+      setSecurityPolicyBackendServiceCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: setSecurityPolicyBackendServiceCallable()");
   }
 
   @BetaApi

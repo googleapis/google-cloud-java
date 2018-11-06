@@ -563,7 +563,7 @@ public class ProductSearchClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final ProductSet getProductSet(GetProductSetRequest request) {
+  public final ProductSet getProductSet(GetProductSetRequest request) {
     return getProductSetCallable().call(request);
   }
 
@@ -777,7 +777,7 @@ public class ProductSearchClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final void deleteProductSet(DeleteProductSetRequest request) {
+  public final void deleteProductSet(DeleteProductSetRequest request) {
     deleteProductSetCallable().call(request);
   }
 
@@ -1187,7 +1187,7 @@ public class ProductSearchClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final Product getProduct(GetProductRequest request) {
+  public final Product getProduct(GetProductRequest request) {
     return getProductCallable().call(request);
   }
 
@@ -1420,7 +1420,7 @@ public class ProductSearchClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final void deleteProduct(DeleteProductRequest request) {
+  public final void deleteProduct(DeleteProductRequest request) {
     deleteProductCallable().call(request);
   }
 
@@ -1744,7 +1744,7 @@ public class ProductSearchClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final void deleteReferenceImage(DeleteReferenceImageRequest request) {
+  public final void deleteReferenceImage(DeleteReferenceImageRequest request) {
     deleteReferenceImageCallable().call(request);
   }
 
@@ -2021,7 +2021,7 @@ public class ProductSearchClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final ReferenceImage getReferenceImage(GetReferenceImageRequest request) {
+  public final ReferenceImage getReferenceImage(GetReferenceImageRequest request) {
     return getReferenceImageCallable().call(request);
   }
 

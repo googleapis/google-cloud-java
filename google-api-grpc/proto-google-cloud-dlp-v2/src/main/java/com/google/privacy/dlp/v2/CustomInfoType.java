@@ -23,6 +23,7 @@ private static final long serialVersionUID = 0L;
   private CustomInfoType() {
     likelihood_ = 0;
     detectionRules_ = java.util.Collections.emptyList();
+    exclusionType_ = 0;
   }
 
   @java.lang.Override
@@ -133,6 +134,12 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.parser(), extensionRegistry));
             break;
           }
+          case 64: {
+            int rawValue = input.readEnum();
+
+            exclusionType_ = rawValue;
+            break;
+          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -166,6 +173,122 @@ private static final long serialVersionUID = 0L;
     return com.google.privacy.dlp.v2.DlpStorage.internal_static_google_privacy_dlp_v2_CustomInfoType_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.privacy.dlp.v2.CustomInfoType.class, com.google.privacy.dlp.v2.CustomInfoType.Builder.class);
+  }
+
+  /**
+   * Protobuf enum {@code google.privacy.dlp.v2.CustomInfoType.ExclusionType}
+   */
+  public enum ExclusionType
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <pre>
+     * A finding of this custom info type will not be excluded from results.
+     * </pre>
+     *
+     * <code>EXCLUSION_TYPE_UNSPECIFIED = 0;</code>
+     */
+    EXCLUSION_TYPE_UNSPECIFIED(0),
+    /**
+     * <pre>
+     * A finding of this custom info type will be excluded from final results,
+     * but can still affect rule execution.
+     * </pre>
+     *
+     * <code>EXCLUSION_TYPE_EXCLUDE = 1;</code>
+     */
+    EXCLUSION_TYPE_EXCLUDE(1),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <pre>
+     * A finding of this custom info type will not be excluded from results.
+     * </pre>
+     *
+     * <code>EXCLUSION_TYPE_UNSPECIFIED = 0;</code>
+     */
+    public static final int EXCLUSION_TYPE_UNSPECIFIED_VALUE = 0;
+    /**
+     * <pre>
+     * A finding of this custom info type will be excluded from final results,
+     * but can still affect rule execution.
+     * </pre>
+     *
+     * <code>EXCLUSION_TYPE_EXCLUDE = 1;</code>
+     */
+    public static final int EXCLUSION_TYPE_EXCLUDE_VALUE = 1;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ExclusionType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static ExclusionType forNumber(int value) {
+      switch (value) {
+        case 0: return EXCLUSION_TYPE_UNSPECIFIED;
+        case 1: return EXCLUSION_TYPE_EXCLUDE;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<ExclusionType>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        ExclusionType> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<ExclusionType>() {
+            public ExclusionType findValueByNumber(int number) {
+              return ExclusionType.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.google.privacy.dlp.v2.CustomInfoType.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final ExclusionType[] VALUES = values();
+
+    public static ExclusionType valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private ExclusionType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.privacy.dlp.v2.CustomInfoType.ExclusionType)
   }
 
   public interface DictionaryOrBuilder extends
@@ -1988,7 +2111,9 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * Pattern defining the regular expression.
+     * Pattern defining the regular expression. Its syntax
+     * (https://github.com/google/re2/wiki/Syntax) can be found under the
+     * google/re2 repository on GitHub.
      * </pre>
      *
      * <code>string pattern = 1;</code>
@@ -1996,7 +2121,9 @@ private static final long serialVersionUID = 0L;
     java.lang.String getPattern();
     /**
      * <pre>
-     * Pattern defining the regular expression.
+     * Pattern defining the regular expression. Its syntax
+     * (https://github.com/google/re2/wiki/Syntax) can be found under the
+     * google/re2 repository on GitHub.
      * </pre>
      *
      * <code>string pattern = 1;</code>
@@ -2090,7 +2217,9 @@ private static final long serialVersionUID = 0L;
     private volatile java.lang.Object pattern_;
     /**
      * <pre>
-     * Pattern defining the regular expression.
+     * Pattern defining the regular expression. Its syntax
+     * (https://github.com/google/re2/wiki/Syntax) can be found under the
+     * google/re2 repository on GitHub.
      * </pre>
      *
      * <code>string pattern = 1;</code>
@@ -2109,7 +2238,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Pattern defining the regular expression.
+     * Pattern defining the regular expression. Its syntax
+     * (https://github.com/google/re2/wiki/Syntax) can be found under the
+     * google/re2 repository on GitHub.
      * </pre>
      *
      * <code>string pattern = 1;</code>
@@ -2438,7 +2569,9 @@ private static final long serialVersionUID = 0L;
       private java.lang.Object pattern_ = "";
       /**
        * <pre>
-       * Pattern defining the regular expression.
+       * Pattern defining the regular expression. Its syntax
+       * (https://github.com/google/re2/wiki/Syntax) can be found under the
+       * google/re2 repository on GitHub.
        * </pre>
        *
        * <code>string pattern = 1;</code>
@@ -2457,7 +2590,9 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Pattern defining the regular expression.
+       * Pattern defining the regular expression. Its syntax
+       * (https://github.com/google/re2/wiki/Syntax) can be found under the
+       * google/re2 repository on GitHub.
        * </pre>
        *
        * <code>string pattern = 1;</code>
@@ -2477,7 +2612,9 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Pattern defining the regular expression.
+       * Pattern defining the regular expression. Its syntax
+       * (https://github.com/google/re2/wiki/Syntax) can be found under the
+       * google/re2 repository on GitHub.
        * </pre>
        *
        * <code>string pattern = 1;</code>
@@ -2494,7 +2631,9 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Pattern defining the regular expression.
+       * Pattern defining the regular expression. Its syntax
+       * (https://github.com/google/re2/wiki/Syntax) can be found under the
+       * google/re2 repository on GitHub.
        * </pre>
        *
        * <code>string pattern = 1;</code>
@@ -2507,7 +2646,9 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Pattern defining the regular expression.
+       * Pattern defining the regular expression. Its syntax
+       * (https://github.com/google/re2/wiki/Syntax) can be found under the
+       * google/re2 repository on GitHub.
        * </pre>
        *
        * <code>string pattern = 1;</code>
@@ -6485,8 +6626,12 @@ private static final long serialVersionUID = 0L;
   private com.google.privacy.dlp.v2.InfoType infoType_;
   /**
    * <pre>
-   * All CustomInfoTypes must have a name
-   * that does not conflict with built-in InfoTypes or other CustomInfoTypes.
+   * CustomInfoType can either be a new infoType, or an extension of built-in
+   * infoType, when the name matches one of existing infoTypes and that infoType
+   * is specified in `InspectContent.info_types` field. Specifying the latter
+   * adds findings to the one detected by the system. If built-in info type is
+   * not specified in `InspectContent.info_types` list then the name is treated
+   * as a custom info type.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
@@ -6496,8 +6641,12 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * All CustomInfoTypes must have a name
-   * that does not conflict with built-in InfoTypes or other CustomInfoTypes.
+   * CustomInfoType can either be a new infoType, or an extension of built-in
+   * infoType, when the name matches one of existing infoTypes and that infoType
+   * is specified in `InspectContent.info_types` field. Specifying the latter
+   * adds findings to the one detected by the system. If built-in info type is
+   * not specified in `InspectContent.info_types` list then the name is treated
+   * as a custom info type.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
@@ -6507,8 +6656,12 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * All CustomInfoTypes must have a name
-   * that does not conflict with built-in InfoTypes or other CustomInfoTypes.
+   * CustomInfoType can either be a new infoType, or an extension of built-in
+   * infoType, when the name matches one of existing infoTypes and that infoType
+   * is specified in `InspectContent.info_types` field. Specifying the latter
+   * adds findings to the one detected by the system. If built-in info type is
+   * not specified in `InspectContent.info_types` list then the name is treated
+   * as a custom info type.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
@@ -6769,6 +6922,33 @@ private static final long serialVersionUID = 0L;
     return detectionRules_.get(index);
   }
 
+  public static final int EXCLUSION_TYPE_FIELD_NUMBER = 8;
+  private int exclusionType_;
+  /**
+   * <pre>
+   * If set to EXCLUSION_TYPE_EXCLUDE this infoType will not cause a finding
+   * to be returned. It still can be used for rules matching.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.CustomInfoType.ExclusionType exclusion_type = 8;</code>
+   */
+  public int getExclusionTypeValue() {
+    return exclusionType_;
+  }
+  /**
+   * <pre>
+   * If set to EXCLUSION_TYPE_EXCLUDE this infoType will not cause a finding
+   * to be returned. It still can be used for rules matching.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.CustomInfoType.ExclusionType exclusion_type = 8;</code>
+   */
+  public com.google.privacy.dlp.v2.CustomInfoType.ExclusionType getExclusionType() {
+    @SuppressWarnings("deprecation")
+    com.google.privacy.dlp.v2.CustomInfoType.ExclusionType result = com.google.privacy.dlp.v2.CustomInfoType.ExclusionType.valueOf(exclusionType_);
+    return result == null ? com.google.privacy.dlp.v2.CustomInfoType.ExclusionType.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -6803,6 +6983,9 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < detectionRules_.size(); i++) {
       output.writeMessage(7, detectionRules_.get(i));
+    }
+    if (exclusionType_ != com.google.privacy.dlp.v2.CustomInfoType.ExclusionType.EXCLUSION_TYPE_UNSPECIFIED.getNumber()) {
+      output.writeEnum(8, exclusionType_);
     }
     unknownFields.writeTo(output);
   }
@@ -6841,6 +7024,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(7, detectionRules_.get(i));
     }
+    if (exclusionType_ != com.google.privacy.dlp.v2.CustomInfoType.ExclusionType.EXCLUSION_TYPE_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(8, exclusionType_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -6865,6 +7052,7 @@ private static final long serialVersionUID = 0L;
     result = result && likelihood_ == other.likelihood_;
     result = result && getDetectionRulesList()
         .equals(other.getDetectionRulesList());
+    result = result && exclusionType_ == other.exclusionType_;
     result = result && getTypeCase().equals(
         other.getTypeCase());
     if (!result) return false;
@@ -6909,6 +7097,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + DETECTION_RULES_FIELD_NUMBER;
       hash = (53 * hash) + getDetectionRulesList().hashCode();
     }
+    hash = (37 * hash) + EXCLUSION_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + exclusionType_;
     switch (typeCase_) {
       case 2:
         hash = (37 * hash) + DICTIONARY_FIELD_NUMBER;
@@ -7082,6 +7272,8 @@ private static final long serialVersionUID = 0L;
       } else {
         detectionRulesBuilder_.clear();
       }
+      exclusionType_ = 0;
+
       typeCase_ = 0;
       type_ = null;
       return this;
@@ -7155,6 +7347,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.detectionRules_ = detectionRulesBuilder_.build();
       }
+      result.exclusionType_ = exclusionType_;
       result.bitField0_ = to_bitField0_;
       result.typeCase_ = typeCase_;
       onBuilt();
@@ -7237,6 +7430,9 @@ private static final long serialVersionUID = 0L;
           }
         }
       }
+      if (other.exclusionType_ != 0) {
+        setExclusionTypeValue(other.getExclusionTypeValue());
+      }
       switch (other.getTypeCase()) {
         case DICTIONARY: {
           mergeDictionary(other.getDictionary());
@@ -7308,8 +7504,12 @@ private static final long serialVersionUID = 0L;
         com.google.privacy.dlp.v2.InfoType, com.google.privacy.dlp.v2.InfoType.Builder, com.google.privacy.dlp.v2.InfoTypeOrBuilder> infoTypeBuilder_;
     /**
      * <pre>
-     * All CustomInfoTypes must have a name
-     * that does not conflict with built-in InfoTypes or other CustomInfoTypes.
+     * CustomInfoType can either be a new infoType, or an extension of built-in
+     * infoType, when the name matches one of existing infoTypes and that infoType
+     * is specified in `InspectContent.info_types` field. Specifying the latter
+     * adds findings to the one detected by the system. If built-in info type is
+     * not specified in `InspectContent.info_types` list then the name is treated
+     * as a custom info type.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
@@ -7319,8 +7519,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * All CustomInfoTypes must have a name
-     * that does not conflict with built-in InfoTypes or other CustomInfoTypes.
+     * CustomInfoType can either be a new infoType, or an extension of built-in
+     * infoType, when the name matches one of existing infoTypes and that infoType
+     * is specified in `InspectContent.info_types` field. Specifying the latter
+     * adds findings to the one detected by the system. If built-in info type is
+     * not specified in `InspectContent.info_types` list then the name is treated
+     * as a custom info type.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
@@ -7334,8 +7538,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * All CustomInfoTypes must have a name
-     * that does not conflict with built-in InfoTypes or other CustomInfoTypes.
+     * CustomInfoType can either be a new infoType, or an extension of built-in
+     * infoType, when the name matches one of existing infoTypes and that infoType
+     * is specified in `InspectContent.info_types` field. Specifying the latter
+     * adds findings to the one detected by the system. If built-in info type is
+     * not specified in `InspectContent.info_types` list then the name is treated
+     * as a custom info type.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
@@ -7355,8 +7563,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * All CustomInfoTypes must have a name
-     * that does not conflict with built-in InfoTypes or other CustomInfoTypes.
+     * CustomInfoType can either be a new infoType, or an extension of built-in
+     * infoType, when the name matches one of existing infoTypes and that infoType
+     * is specified in `InspectContent.info_types` field. Specifying the latter
+     * adds findings to the one detected by the system. If built-in info type is
+     * not specified in `InspectContent.info_types` list then the name is treated
+     * as a custom info type.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
@@ -7374,8 +7586,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * All CustomInfoTypes must have a name
-     * that does not conflict with built-in InfoTypes or other CustomInfoTypes.
+     * CustomInfoType can either be a new infoType, or an extension of built-in
+     * infoType, when the name matches one of existing infoTypes and that infoType
+     * is specified in `InspectContent.info_types` field. Specifying the latter
+     * adds findings to the one detected by the system. If built-in info type is
+     * not specified in `InspectContent.info_types` list then the name is treated
+     * as a custom info type.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
@@ -7397,8 +7613,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * All CustomInfoTypes must have a name
-     * that does not conflict with built-in InfoTypes or other CustomInfoTypes.
+     * CustomInfoType can either be a new infoType, or an extension of built-in
+     * infoType, when the name matches one of existing infoTypes and that infoType
+     * is specified in `InspectContent.info_types` field. Specifying the latter
+     * adds findings to the one detected by the system. If built-in info type is
+     * not specified in `InspectContent.info_types` list then the name is treated
+     * as a custom info type.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
@@ -7416,8 +7636,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * All CustomInfoTypes must have a name
-     * that does not conflict with built-in InfoTypes or other CustomInfoTypes.
+     * CustomInfoType can either be a new infoType, or an extension of built-in
+     * infoType, when the name matches one of existing infoTypes and that infoType
+     * is specified in `InspectContent.info_types` field. Specifying the latter
+     * adds findings to the one detected by the system. If built-in info type is
+     * not specified in `InspectContent.info_types` list then the name is treated
+     * as a custom info type.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
@@ -7429,8 +7653,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * All CustomInfoTypes must have a name
-     * that does not conflict with built-in InfoTypes or other CustomInfoTypes.
+     * CustomInfoType can either be a new infoType, or an extension of built-in
+     * infoType, when the name matches one of existing infoTypes and that infoType
+     * is specified in `InspectContent.info_types` field. Specifying the latter
+     * adds findings to the one detected by the system. If built-in info type is
+     * not specified in `InspectContent.info_types` list then the name is treated
+     * as a custom info type.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
@@ -7445,8 +7673,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * All CustomInfoTypes must have a name
-     * that does not conflict with built-in InfoTypes or other CustomInfoTypes.
+     * CustomInfoType can either be a new infoType, or an extension of built-in
+     * infoType, when the name matches one of existing infoTypes and that infoType
+     * is specified in `InspectContent.info_types` field. Specifying the latter
+     * adds findings to the one detected by the system. If built-in info type is
+     * not specified in `InspectContent.info_types` list then the name is treated
+     * as a custom info type.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
@@ -8592,6 +8824,76 @@ private static final long serialVersionUID = 0L;
         detectionRules_ = null;
       }
       return detectionRulesBuilder_;
+    }
+
+    private int exclusionType_ = 0;
+    /**
+     * <pre>
+     * If set to EXCLUSION_TYPE_EXCLUDE this infoType will not cause a finding
+     * to be returned. It still can be used for rules matching.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.CustomInfoType.ExclusionType exclusion_type = 8;</code>
+     */
+    public int getExclusionTypeValue() {
+      return exclusionType_;
+    }
+    /**
+     * <pre>
+     * If set to EXCLUSION_TYPE_EXCLUDE this infoType will not cause a finding
+     * to be returned. It still can be used for rules matching.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.CustomInfoType.ExclusionType exclusion_type = 8;</code>
+     */
+    public Builder setExclusionTypeValue(int value) {
+      exclusionType_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * If set to EXCLUSION_TYPE_EXCLUDE this infoType will not cause a finding
+     * to be returned. It still can be used for rules matching.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.CustomInfoType.ExclusionType exclusion_type = 8;</code>
+     */
+    public com.google.privacy.dlp.v2.CustomInfoType.ExclusionType getExclusionType() {
+      @SuppressWarnings("deprecation")
+      com.google.privacy.dlp.v2.CustomInfoType.ExclusionType result = com.google.privacy.dlp.v2.CustomInfoType.ExclusionType.valueOf(exclusionType_);
+      return result == null ? com.google.privacy.dlp.v2.CustomInfoType.ExclusionType.UNRECOGNIZED : result;
+    }
+    /**
+     * <pre>
+     * If set to EXCLUSION_TYPE_EXCLUDE this infoType will not cause a finding
+     * to be returned. It still can be used for rules matching.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.CustomInfoType.ExclusionType exclusion_type = 8;</code>
+     */
+    public Builder setExclusionType(com.google.privacy.dlp.v2.CustomInfoType.ExclusionType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      exclusionType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * If set to EXCLUSION_TYPE_EXCLUDE this infoType will not cause a finding
+     * to be returned. It still can be used for rules matching.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.CustomInfoType.ExclusionType exclusion_type = 8;</code>
+     */
+    public Builder clearExclusionType() {
+      
+      exclusionType_ = 0;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

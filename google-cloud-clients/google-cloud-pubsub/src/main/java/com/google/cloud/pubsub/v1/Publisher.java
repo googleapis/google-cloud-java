@@ -27,10 +27,7 @@ import com.google.api.gax.core.ExecutorAsBackgroundResource;
 import com.google.api.gax.core.ExecutorProvider;
 import com.google.api.gax.core.FixedExecutorProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
-import com.google.api.gax.grpc.GrpcStatusCode;
 import com.google.api.gax.retrying.RetrySettings;
-import com.google.api.gax.rpc.ApiException;
-import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.HeaderProvider;
 import com.google.api.gax.rpc.NoHeaderProvider;
 import com.google.api.gax.rpc.StatusCode;
@@ -46,7 +43,6 @@ import com.google.pubsub.v1.PublishResponse;
 import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.TopicName;
 import com.google.pubsub.v1.TopicNames;
-import io.grpc.Status;
 import java.io.IOException;
 import java.util.Collections;
 import java.util.Iterator;
@@ -424,6 +420,16 @@ public class Publisher {
     publisherStub.shutdown();
   }
 
+  /**
+   * Wait for all work has completed execution after a {@link #shutdown()} request, or the timeout
+   * occurs, or the current thread is interrupted.
+   *
+   * <p>Call this method to make sure all resources are freed properly.
+   */
+  public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
+    return publisherStub.awaitTermination(duration, unit);
+  }
+
   private boolean hasBatchingBytes() {
     return getMaxBatchBytes() > 0;
   }
@@ -443,6 +449,7 @@ public class Publisher {
    * } finally {
    *   // When finished with the publisher, make sure to shutdown to free up resources.
    *   publisher.shutdown();
+   *   publisher.awaitTermination(1, TimeUnit.MINUTES);
    * }
    * }</pre>
    */
@@ -463,6 +470,7 @@ public class Publisher {
    * } finally {
    *   // When finished with the publisher, make sure to shutdown to free up resources.
    *   publisher.shutdown();
+   *   publisher.awaitTermination(1, TimeUnit.MINUTES);
    * }
    * }</pre>
    */

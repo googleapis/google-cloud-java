@@ -92,6 +92,7 @@ public class StorageImplTest {
 
   private static final String BUCKET_NAME1 = "b1";
   private static final String BUCKET_NAME2 = "b2";
+  private static final String BUCKET_NAME3 = "b3";
   private static final String BLOB_NAME1 = "n1";
   private static final String BLOB_NAME2 = "n2";
   private static final String BLOB_NAME3 = "n3";
@@ -104,11 +105,15 @@ public class StorageImplTest {
       new SecretKeySpec(BaseEncoding.base64().decode(BASE64_KEY), "AES256");
   private static final String KMS_KEY_NAME =
       "projects/gcloud-devel/locations/us/keyRings/gcs_kms_key_ring_us/cryptoKeys/key";
+  private static final Long RETENTION_PERIOD = 10L;
+  private static final String USER_PROJECT = "test-project";
 
   // BucketInfo objects
   private static final BucketInfo BUCKET_INFO1 =
       BucketInfo.newBuilder(BUCKET_NAME1).setMetageneration(42L).build();
   private static final BucketInfo BUCKET_INFO2 = BucketInfo.newBuilder(BUCKET_NAME2).build();
+  private static final BucketInfo BUCKET_INFO3 = BucketInfo.newBuilder(BUCKET_NAME3)
+      .setRetentionPeriod(RETENTION_PERIOD).setRetentionPolicyIsLocked(true).setMetageneration(42L).build();
 
   // BlobInfo objects
   private static final BlobInfo BLOB_INFO1 =
@@ -128,10 +133,16 @@ public class StorageImplTest {
       Storage.BucketTargetOption.metagenerationMatch();
   private static final Storage.BucketTargetOption BUCKET_TARGET_PREDEFINED_ACL =
       Storage.BucketTargetOption.predefinedAcl(Storage.PredefinedAcl.PRIVATE);
+  private static final Storage.BucketTargetOption BUCKET_TARGET_USER_PROJECT =
+      Storage.BucketTargetOption.userProject(USER_PROJECT);
   private static final Map<StorageRpc.Option, ?> BUCKET_TARGET_OPTIONS =
       ImmutableMap.of(
           StorageRpc.Option.IF_METAGENERATION_MATCH, BUCKET_INFO1.getMetageneration(),
           StorageRpc.Option.PREDEFINED_ACL, BUCKET_TARGET_PREDEFINED_ACL.getValue());
+  private static final Map<StorageRpc.Option, ?> BUCKET_TARGET_OPTIONS_LOCK_RETENTION_POLICY =
+      ImmutableMap.of(
+          StorageRpc.Option.IF_METAGENERATION_MATCH, BUCKET_INFO3.getMetageneration(),
+          StorageRpc.Option.USER_PROJECT, USER_PROJECT);
 
   // Blob target options (create, update, compose)
   private static final BlobTargetOption BLOB_TARGET_GENERATION = BlobTargetOption.generationMatch();
@@ -320,7 +331,7 @@ public class StorageImplTest {
   private Storage storage;
 
   private Blob expectedBlob1, expectedBlob2, expectedBlob3;
-  private Bucket expectedBucket1, expectedBucket2;
+  private Bucket expectedBucket1, expectedBucket2, expectedBucket3;
 
   @Rule public ExpectedException thrown = ExpectedException.none();
 
@@ -367,6 +378,7 @@ public class StorageImplTest {
     expectedBlob3 = new Blob(storage, new BlobInfo.BuilderImpl(BLOB_INFO3));
     expectedBucket1 = new Bucket(storage, new BucketInfo.BuilderImpl(BUCKET_INFO1));
     expectedBucket2 = new Bucket(storage, new BucketInfo.BuilderImpl(BUCKET_INFO2));
+    expectedBucket3 = new Bucket(storage, new BucketInfo.BuilderImpl(BUCKET_INFO3));
   }
 
   @Test
@@ -2323,6 +2335,17 @@ public class StorageImplTest {
     EasyMock.replay(storageRpcMock);
     initializeService();
     assertEquals(expectedPermissions, storage.testIamPermissions(BUCKET_NAME1, checkedPermissions));
+  }
+
+  @Test
+  public void testLockRetentionPolicy() {
+    EasyMock.expect(storageRpcMock
+        .lockRetentionPolicy(BUCKET_INFO3.toPb(), BUCKET_TARGET_OPTIONS_LOCK_RETENTION_POLICY))
+        .andReturn(BUCKET_INFO3.toPb());
+    EasyMock.replay(storageRpcMock);
+    initializeService();
+    Bucket bucket = storage.lockRetentionPolicy(BUCKET_INFO3, BUCKET_TARGET_METAGENERATION, BUCKET_TARGET_USER_PROJECT);
+    assertEquals(expectedBucket3, bucket);
   }
 
   @Test

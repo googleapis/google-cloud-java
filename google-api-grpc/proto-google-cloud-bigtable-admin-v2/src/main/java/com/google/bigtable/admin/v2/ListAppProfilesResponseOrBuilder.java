@@ -72,4 +72,51 @@ public interface ListAppProfilesResponseOrBuilder extends
    */
   com.google.protobuf.ByteString
       getNextPageTokenBytes();
+
+  /**
+   * <pre>
+   * Locations from which AppProfile information could not be retrieved,
+   * due to an outage or some other transient condition.
+   * AppProfiles from these locations may be missing from `app_profiles`.
+   * Values are of the form `projects/&lt;project&gt;/locations/&lt;zone_id&gt;`
+   * </pre>
+   *
+   * <code>repeated string failed_locations = 3;</code>
+   */
+  java.util.List<java.lang.String>
+      getFailedLocationsList();
+  /**
+   * <pre>
+   * Locations from which AppProfile information could not be retrieved,
+   * due to an outage or some other transient condition.
+   * AppProfiles from these locations may be missing from `app_profiles`.
+   * Values are of the form `projects/&lt;project&gt;/locations/&lt;zone_id&gt;`
+   * </pre>
+   *
+   * <code>repeated string failed_locations = 3;</code>
+   */
+  int getFailedLocationsCount();
+  /**
+   * <pre>
+   * Locations from which AppProfile information could not be retrieved,
+   * due to an outage or some other transient condition.
+   * AppProfiles from these locations may be missing from `app_profiles`.
+   * Values are of the form `projects/&lt;project&gt;/locations/&lt;zone_id&gt;`
+   * </pre>
+   *
+   * <code>repeated string failed_locations = 3;</code>
+   */
+  java.lang.String getFailedLocations(int index);
+  /**
+   * <pre>
+   * Locations from which AppProfile information could not be retrieved,
+   * due to an outage or some other transient condition.
+   * AppProfiles from these locations may be missing from `app_profiles`.
+   * Values are of the form `projects/&lt;project&gt;/locations/&lt;zone_id&gt;`
+   * </pre>
+   *
+   * <code>repeated string failed_locations = 3;</code>
+   */
+  com.google.protobuf.ByteString
+      getFailedLocationsBytes(int index);
 }
