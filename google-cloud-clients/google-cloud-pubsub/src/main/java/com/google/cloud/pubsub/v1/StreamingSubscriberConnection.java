@@ -192,7 +192,7 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
 
   private void initialize() {
     final SettableApiFuture<Void> errorFuture = SettableApiFuture.create();
-    final ClientResponseObserver<StreamingPullRequest, StreamingPullResponse> responseObserver =
+    final ResponseObserver<StreamingPullResponse> responseObserver =
         new StreamingPullResponseObserver(errorFuture);
     ClientStream<StreamingPullRequest> initClientStream =
         stub.streamingPullCallable()
