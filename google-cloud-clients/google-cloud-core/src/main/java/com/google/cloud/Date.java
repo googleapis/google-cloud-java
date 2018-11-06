@@ -84,7 +84,7 @@ public final class Date implements Comparable<Date>, Serializable {
   * @return Date
   */
   public static Date toDate(LocalDate date){
-    return new Date(date.getDayOfYear(), date.getMonthValue(), date.getDayOfMonth());
+    return new Date(date.getYear(), date.getMonthValue(), date.getDayOfMonth());
   }
 
   /**
@@ -100,7 +100,7 @@ public final class Date implements Comparable<Date>, Serializable {
   * @return Date 
   */
   public static Date fromDate(LocalDate date){
-    return new Date(date.getDayOfYear(), date.getMonthValue(), date.getDayOfMonth());  
+    return new Date(date.getYear(), date.getMonthValue(), date.getDayOfMonth());  
   }
    
   /** Returns the year. */
