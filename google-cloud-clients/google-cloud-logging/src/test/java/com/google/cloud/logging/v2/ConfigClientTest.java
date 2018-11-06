@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.resourcenames.ResourceName;
 import com.google.common.collect.Lists;
+import com.google.logging.v2.BillingName;
 import com.google.logging.v2.CreateExclusionRequest;
 import com.google.logging.v2.CreateSinkRequest;
 import com.google.logging.v2.DeleteExclusionRequest;
@@ -158,7 +159,7 @@ public class ConfigClientTest {
   @SuppressWarnings("all")
   public void getSinkTest() {
     String name = "name3373707";
-    ResourceName destination = ProjectName.of("[PROJECT]");
+    ResourceName destination = BillingName.of("[BILLING_ACCOUNT]");
     String filter = "filter-1274492040";
     String writerIdentity = "writerIdentity775638794";
     boolean includeChildren = true;
@@ -208,7 +209,7 @@ public class ConfigClientTest {
   @SuppressWarnings("all")
   public void createSinkTest() {
     String name = "name3373707";
-    ResourceName destination = ProjectName.of("[PROJECT]");
+    ResourceName destination = BillingName.of("[BILLING_ACCOUNT]");
     String filter = "filter-1274492040";
     String writerIdentity = "writerIdentity775638794";
     boolean includeChildren = true;
@@ -261,7 +262,7 @@ public class ConfigClientTest {
   @SuppressWarnings("all")
   public void updateSinkTest() {
     String name = "name3373707";
-    ResourceName destination = ProjectName.of("[PROJECT]");
+    ResourceName destination = BillingName.of("[BILLING_ACCOUNT]");
     String filter = "filter-1274492040";
     String writerIdentity = "writerIdentity775638794";
     boolean includeChildren = true;
@@ -317,7 +318,7 @@ public class ConfigClientTest {
   @SuppressWarnings("all")
   public void updateSinkTest2() {
     String name = "name3373707";
-    ResourceName destination = ProjectName.of("[PROJECT]");
+    ResourceName destination = BillingName.of("[BILLING_ACCOUNT]");
     String filter = "filter-1274492040";
     String writerIdentity = "writerIdentity775638794";
     boolean includeChildren = true;
