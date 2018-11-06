@@ -140,6 +140,7 @@ google-cloud-os-login:0.69.0-alpha:0.69.1-alpha-SNAPSHOT
 google-cloud-pubsub:1.51.0:1.51.1-SNAPSHOT
 google-cloud-redis:0.69.0-alpha:0.69.1-alpha-SNAPSHOT
 google-cloud-resourcemanager:0.69.0-alpha:0.69.1-alpha-SNAPSHOT
+google-cloud-scheduler:0.69.0-alpha:0.69.1-alpha-SNAPSHOT
 google-cloud-spanner:0.69.0-beta:0.69.1-beta-SNAPSHOT
 google-cloud-speech:0.69.0-beta:0.69.1-beta-SNAPSHOT
 google-cloud-storage:1.51.0:1.51.1-SNAPSHOT

@@ -437,6 +437,7 @@
     <module>google-cloud-pubsub</module>
     <module>google-cloud-redis</module>
     <module>google-cloud-resourcemanager</module>
+    <module>google-cloud-scheduler</module>
     <module>google-cloud-spanner</module>
     <module>google-cloud-speech</module>
     <module>google-cloud-storage</module>
