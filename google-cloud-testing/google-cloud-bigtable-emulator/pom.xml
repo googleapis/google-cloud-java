@@ -63,11 +63,18 @@
       <artifactId>api-common</artifactId>
     </dependency>
 
+    <!-- junit is optional because the emulator can be used w/o the junit Rule. -->
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <scope>compile</scope>
       <optional>true</optional>
+    </dependency>
+
+    <dependency>
+      <groupId>com.google.truth</groupId>
+      <artifactId>truth</artifactId>
+      <scope>test</scope>
     </dependency>
 
     <dependency>
@@ -80,11 +87,6 @@
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-bigtable-admin-v2</artifactId>
       <scope>test</scope>
-    </dependency>
-
-    <dependency>
-      <groupId>com.google.truth</groupId>
-      <artifactId>truth</artifactId>
     </dependency>
   </dependencies>
 </project>
