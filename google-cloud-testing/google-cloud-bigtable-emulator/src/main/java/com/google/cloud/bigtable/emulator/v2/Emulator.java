@@ -21,13 +21,13 @@ import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.net.URL;
 import java.nio.file.Path;
 import java.util.Locale;
 import java.util.concurrent.TimeUnit;
@@ -62,16 +62,17 @@ public class Emulator {
    * creating it.
    */
   public static Emulator createBundled() throws IOException {
-    String resourcePath = String.format(
-        "/gcloud/bigtable-%s/platform/bigtable-emulator/cbtemulator", getPlatform());
-
-    URL packagedEmulator = Emulator.class.getResource(resourcePath);
+    String resourcePath = getBundledResourcePath();
 
     File tmpEmulator = File.createTempFile("cbtemulator", "");
     tmpEmulator.deleteOnExit();
 
-    try (InputStream is = packagedEmulator.openStream();
+    try (InputStream is = Emulator.class.getResourceAsStream(resourcePath);
         FileOutputStream os = new FileOutputStream(tmpEmulator)) {
+
+      if (is == null) {
+        throw new FileNotFoundException("Failed to find the bundled emulator binary: " + resourcePath);
+      }
 
       byte[] buff = new byte[2048];
       int length;
@@ -187,14 +188,16 @@ public class Emulator {
   // <editor-fold desc="Helpers">
 
   /** Gets the current platform, which will be used to select the appropriate emulator binary. */
-  private static String getPlatform() {
+  private static String getBundledResourcePath() {
     String unformattedOs = System.getProperty("os.name", "unknown").toLowerCase(Locale.ENGLISH);
     String os;
+    String suffix = "";
 
     if (unformattedOs.contains("mac") || unformattedOs.contains("darwin")) {
       os = "darwin";
     } else if (unformattedOs.contains("win")) {
       os = "windows";
+      suffix = ".exe";
     } else if (unformattedOs.contains("linux")) {
       os = "linux";
     } else {
@@ -217,7 +220,8 @@ public class Emulator {
         throw new UnsupportedOperationException("Unsupported architecture: " + unformattedArch);
     }
 
-    return os + "-" + arch;
+    return String.format(
+        "/gcloud/bigtable-%s-%s/platform/bigtable-emulator/cbtemulator%s", os, arch, suffix);
   }
 
   /** Gets a random open port number. */
