@@ -26,6 +26,7 @@ grpc-google-cloud-os-login-v1:0.34.0:0.34.1-SNAPSHOT
 grpc-google-cloud-pubsub-v1:1.33.0:1.33.1-SNAPSHOT
 grpc-google-cloud-redis-v1:0.34.0:0.34.1-SNAPSHOT
 grpc-google-cloud-redis-v1beta1:0.34.0:0.34.1-SNAPSHOT
+grpc-google-cloud-scheduler-v1beta1:0.34.0:0.34.1-SNAPSHOT
 grpc-google-cloud-spanner-admin-database-v1:0.34.0:0.34.1-SNAPSHOT
 grpc-google-cloud-spanner-admin-instance-v1:0.34.0:0.34.1-SNAPSHOT
 grpc-google-cloud-spanner-v1:0.34.0:0.34.1-SNAPSHOT
@@ -73,6 +74,7 @@ proto-google-cloud-os-login-v1:0.34.0:0.34.1-SNAPSHOT
 proto-google-cloud-pubsub-v1:1.33.0:1.33.1-SNAPSHOT
 proto-google-cloud-redis-v1:0.34.0:0.34.1-SNAPSHOT
 proto-google-cloud-redis-v1beta1:0.34.0:0.34.1-SNAPSHOT
+proto-google-cloud-scheduler-v1beta1:0.34.0:0.34.1-SNAPSHOT
 proto-google-cloud-spanner-admin-database-v1:0.34.0:0.34.1-SNAPSHOT
 proto-google-cloud-spanner-admin-instance-v1:0.34.0:0.34.1-SNAPSHOT
 proto-google-cloud-spanner-v1:0.34.0:0.34.1-SNAPSHOT

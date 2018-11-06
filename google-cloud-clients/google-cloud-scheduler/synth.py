@@ -28,5 +28,5 @@ for version in ["v1beta1"]:
       artman_output_name='')
 
   s.copy(library / f'gapic-google-cloud-cloudscheduler-{version}/src', 'src')
-  s.copy(library / f'grpc-google-cloud-cloudscheduler-{version}/src', f'../../google-api-grpc/grpc-google-cloud-cloudscheduler-{version}/src')
-  s.copy(library / f'proto-google-cloud-cloudscheduler-{version}/src', f'../../google-api-grpc/proto-google-cloud-cloudscheduler-{version}/src')
+  s.copy(library / f'grpc-google-cloud-cloudscheduler-{version}/src', f'../../google-api-grpc/grpc-google-cloud-scheduler-{version}/src')
+  s.copy(library / f'proto-google-cloud-cloudscheduler-{version}/src', f'../../google-api-grpc/proto-google-cloud-scheduler-{version}/src')
