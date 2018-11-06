@@ -26,6 +26,40 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.net.URL;
+import java.net.URLDecoder;
+import java.nio.ByteBuffer;
+import java.security.InvalidKeyException;
+import java.security.Key;
+import java.security.KeyFactory;
+import java.security.NoSuchAlgorithmException;
+import java.security.PrivateKey;
+import java.security.PublicKey;
+import java.security.Signature;
+import java.security.SignatureException;
+import java.security.spec.EncodedKeySpec;
+import java.security.spec.InvalidKeySpecException;
+import java.security.spec.PKCS8EncodedKeySpec;
+import java.security.spec.X509EncodedKeySpec;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.TimeUnit;
+
+import javax.crypto.spec.SecretKeySpec;
+
+import org.easymock.Capture;
+import org.easymock.EasyMock;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.rules.ExpectedException;
+
 import com.google.api.client.googleapis.json.GoogleJsonError;
 import com.google.api.core.ApiClock;
 import com.google.api.gax.paging.Page;
@@ -56,37 +90,6 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Iterables;
 import com.google.common.io.BaseEncoding;
 import com.google.common.net.UrlEscapers;
-import java.io.ByteArrayInputStream;
-import java.io.IOException;
-import java.io.UnsupportedEncodingException;
-import java.net.URL;
-import java.net.URLDecoder;
-import java.nio.ByteBuffer;
-import java.security.InvalidKeyException;
-import java.security.Key;
-import java.security.KeyFactory;
-import java.security.NoSuchAlgorithmException;
-import java.security.PrivateKey;
-import java.security.PublicKey;
-import java.security.Signature;
-import java.security.SignatureException;
-import java.security.spec.EncodedKeySpec;
-import java.security.spec.InvalidKeySpecException;
-import java.security.spec.PKCS8EncodedKeySpec;
-import java.security.spec.X509EncodedKeySpec;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.concurrent.TimeUnit;
-import javax.crypto.spec.SecretKeySpec;
-import org.easymock.Capture;
-import org.easymock.EasyMock;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.rules.ExpectedException;
 
 public class StorageImplTest {
 
@@ -1633,6 +1636,47 @@ public class StorageImplTest {
     assertTrue(
         signer.verify(BaseEncoding.base64().decode(URLDecoder.decode(signature, UTF_8.name()))));
   }
+  
+  @Test
+  public void testSignUrlWithCustomUrl()
+      throws NoSuchAlgorithmException, InvalidKeyException, SignatureException,
+          UnsupportedEncodingException {
+    EasyMock.replay(storageRpcMock);
+    ServiceAccountCredentials credentials =
+        new ServiceAccountCredentials(null, ACCOUNT, privateKey, null, null);
+    storage = options.toBuilder().setCredentials(credentials).build().getService();
+    URL url = storage.signUrl("https://custom.host.com",BLOB_INFO1, 14, TimeUnit.DAYS);
+    String stringUrl = url.toString();
+    String expectedUrl =
+        new StringBuilder("https://custom.host.com/")
+            .append(BUCKET_NAME1)
+            .append('/')
+            .append(BLOB_NAME1)
+            .append("?GoogleAccessId=")
+            .append(ACCOUNT)
+            .append("&Expires=")
+            .append(42L + 1209600)
+            .append("&Signature=")
+            .toString();
+    assertTrue(stringUrl.startsWith(expectedUrl));
+    String signature = stringUrl.substring(expectedUrl.length());
+
+    StringBuilder signedMessageBuilder = new StringBuilder();
+    signedMessageBuilder
+        .append(HttpMethod.GET)
+        .append("\n\n\n")
+        .append(42L + 1209600)
+        .append("\n/")
+        .append(BUCKET_NAME1)
+        .append('/')
+        .append(BLOB_NAME1);
+
+    Signature signer = Signature.getInstance("SHA256withRSA");
+    signer.initVerify(publicKey);
+    signer.update(signedMessageBuilder.toString().getBytes(UTF_8));
+    assertTrue(
+        signer.verify(BaseEncoding.base64().decode(URLDecoder.decode(signature, UTF_8.name()))));
+  }
 
   @Test
   public void testSignUrlLeadingSlash()
@@ -1649,6 +1693,48 @@ public class StorageImplTest {
     String stringUrl = url.toString();
     String expectedUrl =
         new StringBuilder("https://storage.googleapis.com/")
+            .append(BUCKET_NAME1)
+            .append(escapedBlobName)
+            .append("?GoogleAccessId=")
+            .append(ACCOUNT)
+            .append("&Expires=")
+            .append(42L + 1209600)
+            .append("&Signature=")
+            .toString();
+    assertTrue(stringUrl.startsWith(expectedUrl));
+    String signature = stringUrl.substring(expectedUrl.length());
+
+    StringBuilder signedMessageBuilder = new StringBuilder();
+    signedMessageBuilder
+        .append(HttpMethod.GET)
+        .append("\n\n\n")
+        .append(42L + 1209600)
+        .append("\n/")
+        .append(BUCKET_NAME1)
+        .append(escapedBlobName);
+
+    Signature signer = Signature.getInstance("SHA256withRSA");
+    signer.initVerify(publicKey);
+    signer.update(signedMessageBuilder.toString().getBytes(UTF_8));
+    assertTrue(
+        signer.verify(BaseEncoding.base64().decode(URLDecoder.decode(signature, UTF_8.name()))));
+  }
+  
+  @Test
+  public void testSignUrlLeadingSlashWithCustomUrl()
+      throws NoSuchAlgorithmException, InvalidKeyException, SignatureException,
+          UnsupportedEncodingException {
+    String blobName = "/b1";
+    EasyMock.replay(storageRpcMock);
+    ServiceAccountCredentials credentials =
+        new ServiceAccountCredentials(null, ACCOUNT, privateKey, null, null);
+    storage = options.toBuilder().setCredentials(credentials).build().getService();
+    URL url =
+        storage.signUrl("https://custom.host.com",BlobInfo.newBuilder(BUCKET_NAME1, blobName).build(), 14, TimeUnit.DAYS);
+    String escapedBlobName = UrlEscapers.urlFragmentEscaper().escape(blobName);
+    String stringUrl = url.toString();
+    String expectedUrl =
+        new StringBuilder("https://custom.host.com/")
             .append(BUCKET_NAME1)
             .append(escapedBlobName)
             .append("?GoogleAccessId=")
@@ -1695,6 +1781,59 @@ public class StorageImplTest {
     String stringUrl = url.toString();
     String expectedUrl =
         new StringBuilder("https://storage.googleapis.com/")
+            .append(BUCKET_NAME1)
+            .append('/')
+            .append(BLOB_NAME1)
+            .append("?GoogleAccessId=")
+            .append(ACCOUNT)
+            .append("&Expires=")
+            .append(42L + 1209600)
+            .append("&Signature=")
+            .toString();
+    assertTrue(stringUrl.startsWith(expectedUrl));
+    String signature = stringUrl.substring(expectedUrl.length());
+
+    StringBuilder signedMessageBuilder = new StringBuilder();
+    signedMessageBuilder
+        .append(HttpMethod.POST)
+        .append('\n')
+        .append(BLOB_INFO1.getMd5())
+        .append('\n')
+        .append(BLOB_INFO1.getContentType())
+        .append('\n')
+        .append(42L + 1209600)
+        .append("\n/")
+        .append(BUCKET_NAME1)
+        .append('/')
+        .append(BLOB_NAME1);
+
+    Signature signer = Signature.getInstance("SHA256withRSA");
+    signer.initVerify(publicKey);
+    signer.update(signedMessageBuilder.toString().getBytes(UTF_8));
+    assertTrue(
+        signer.verify(BaseEncoding.base64().decode(URLDecoder.decode(signature, UTF_8.name()))));
+  }
+  
+  @Test
+  public void testSignUrlWithOptionsAndCustomUrl()
+      throws NoSuchAlgorithmException, InvalidKeyException, SignatureException,
+          UnsupportedEncodingException {
+    EasyMock.replay(storageRpcMock);
+    ServiceAccountCredentials credentials =
+        new ServiceAccountCredentials(null, ACCOUNT, privateKey, null, null);
+    storage = options.toBuilder().setCredentials(credentials).build().getService();
+    URL url =
+        storage.signUrl(
+        	"https://custom.host.com",	
+            BLOB_INFO1,
+            14,
+            TimeUnit.DAYS,
+            Storage.SignUrlOption.httpMethod(HttpMethod.POST),
+            Storage.SignUrlOption.withContentType(),
+            Storage.SignUrlOption.withMd5());
+    String stringUrl = url.toString();
+    String expectedUrl =
+        new StringBuilder("https://custom.host.com/")
             .append(BUCKET_NAME1)
             .append('/')
             .append(BLOB_NAME1)
@@ -1781,6 +1920,58 @@ public class StorageImplTest {
   }
   
   @Test
+  public void testSignUrlForBlobWithSpecialCharsAndCustomUrl()
+      throws NoSuchAlgorithmException, InvalidKeyException, SignatureException,
+          UnsupportedEncodingException {
+    // List of chars under test were taken from
+    // https://en.wikipedia.org/wiki/Percent-encoding#Percent-encoding_reserved_characters
+    char[] specialChars =
+        new char[] {
+          '!', '#', '$', '&', '\'', '(', ')', '*', '+', ',', ':', ';', '=', '?', '@', '[', ']'
+        };
+    EasyMock.replay(storageRpcMock);
+    ServiceAccountCredentials credentials =
+        new ServiceAccountCredentials(null, ACCOUNT, privateKey, null, null);
+    storage = options.toBuilder().setCredentials(credentials).build().getService();
+
+    for (char specialChar : specialChars) {
+      String blobName = "/a" + specialChar + "b";
+      URL url =
+          storage.signUrl("https://custom.host.com",BlobInfo.newBuilder(BUCKET_NAME1, blobName).build(), 14, TimeUnit.DAYS);
+      String escapedBlobName =
+          UrlEscapers.urlFragmentEscaper().escape(blobName).replace("?", "%3F");
+      String stringUrl = url.toString();
+      String expectedUrl =
+          new StringBuilder("https://custom.host.com/")
+              .append(BUCKET_NAME1)
+              .append(escapedBlobName)
+              .append("?GoogleAccessId=")
+              .append(ACCOUNT)
+              .append("&Expires=")
+              .append(42L + 1209600)
+              .append("&Signature=")
+              .toString();
+      assertTrue(stringUrl.startsWith(expectedUrl));
+      String signature = stringUrl.substring(expectedUrl.length());
+
+      StringBuilder signedMessageBuilder = new StringBuilder();
+      signedMessageBuilder
+          .append(HttpMethod.GET)
+          .append("\n\n\n")
+          .append(42L + 1209600)
+          .append("\n/")
+          .append(BUCKET_NAME1)
+          .append(escapedBlobName);
+
+      Signature signer = Signature.getInstance("SHA256withRSA");
+      signer.initVerify(publicKey);
+      signer.update(signedMessageBuilder.toString().getBytes(UTF_8));
+      assertTrue(
+          signer.verify(BaseEncoding.base64().decode(URLDecoder.decode(signature, UTF_8.name()))));
+    }
+  }
+  
+  @Test
   public void testSignUrlWithExtHeaders()
       throws NoSuchAlgorithmException, InvalidKeyException, SignatureException,
           UnsupportedEncodingException {
@@ -1836,7 +2027,65 @@ public class StorageImplTest {
     assertTrue(
         signer.verify(BaseEncoding.base64().decode(URLDecoder.decode(signature, UTF_8.name()))));
   }
+  
+  @Test
+  public void testSignUrlWithExtHeadersAndCustomUrl()
+      throws NoSuchAlgorithmException, InvalidKeyException, SignatureException,
+          UnsupportedEncodingException {
+    EasyMock.replay(storageRpcMock);
+    ServiceAccountCredentials credentials =
+        new ServiceAccountCredentials(null, ACCOUNT, privateKey, null, null);
+    storage = options.toBuilder().setCredentials(credentials).build().getService();
+    Map<String, String> extHeaders = new HashMap<String, String>();
+    extHeaders.put("x-goog-acl", "public-read");
+    extHeaders.put("x-goog-meta-owner", "myself");
+    URL url =
+        storage.signUrl(
+        	"https://custom.host.com",	
+            BLOB_INFO1,
+            14,
+            TimeUnit.DAYS,
+            Storage.SignUrlOption.httpMethod(HttpMethod.PUT),
+            Storage.SignUrlOption.withContentType(),
+            Storage.SignUrlOption.withExtHeaders(extHeaders));
+    String stringUrl = url.toString();
+    String expectedUrl =
+        new StringBuilder("https://custom.host.com/")
+            .append(BUCKET_NAME1)
+            .append('/')
+            .append(BLOB_NAME1)
+            .append("?GoogleAccessId=")
+            .append(ACCOUNT)
+            .append("&Expires=")
+            .append(42L + 1209600)
+            .append("&Signature=")
+            .toString();
+    assertTrue(stringUrl.startsWith(expectedUrl));
+    String signature = stringUrl.substring(expectedUrl.length());
 
+    StringBuilder signedMessageBuilder = new StringBuilder();
+    signedMessageBuilder
+        .append(HttpMethod.PUT)
+        .append('\n')
+        .append('\n')
+        .append(BLOB_INFO1.getContentType())
+        .append('\n')
+        .append(42L + 1209600)
+        .append('\n')
+        .append("x-goog-acl:public-read\n")
+        .append("x-goog-meta-owner:myself\n")
+        .append('/')
+        .append(BUCKET_NAME1)
+        .append('/')
+        .append(BLOB_NAME1);
+
+    Signature signer = Signature.getInstance("SHA256withRSA");
+    signer.initVerify(publicKey);
+    signer.update(signedMessageBuilder.toString().getBytes(UTF_8));
+    assertTrue(
+        signer.verify(BaseEncoding.base64().decode(URLDecoder.decode(signature, UTF_8.name()))));
+  }
+  
   @Test
   public void testSignUrlForBlobWithSlashes()
       throws NoSuchAlgorithmException, InvalidKeyException, SignatureException,
@@ -1853,6 +2102,49 @@ public class StorageImplTest {
     String stringUrl = url.toString();
     String expectedUrl =
         new StringBuilder("https://storage.googleapis.com/")
+            .append(BUCKET_NAME1)
+            .append(escapedBlobName)
+            .append("?GoogleAccessId=")
+            .append(ACCOUNT)
+            .append("&Expires=")
+            .append(42L + 1209600)
+            .append("&Signature=")
+            .toString();
+    assertTrue(stringUrl.startsWith(expectedUrl));
+    String signature = stringUrl.substring(expectedUrl.length());
+
+    StringBuilder signedMessageBuilder = new StringBuilder();
+    signedMessageBuilder
+        .append(HttpMethod.GET)
+        .append("\n\n\n")
+        .append(42L + 1209600)
+        .append("\n/")
+        .append(BUCKET_NAME1)
+        .append(escapedBlobName);
+
+    Signature signer = Signature.getInstance("SHA256withRSA");
+    signer.initVerify(publicKey);
+    signer.update(signedMessageBuilder.toString().getBytes(UTF_8));
+    assertTrue(
+        signer.verify(BaseEncoding.base64().decode(URLDecoder.decode(signature, UTF_8.name()))));
+  }
+  
+  @Test
+  public void testSignUrlForBlobWithSlashesAndCustomUrl()
+      throws NoSuchAlgorithmException, InvalidKeyException, SignatureException,
+          UnsupportedEncodingException {
+    EasyMock.replay(storageRpcMock);
+    ServiceAccountCredentials credentials =
+        new ServiceAccountCredentials(null, ACCOUNT, privateKey, null, null);
+    storage = options.toBuilder().setCredentials(credentials).build().getService();
+
+    String blobName = "/foo/bar/baz #%20other cool stuff.txt";
+    URL url =
+        storage.signUrl("https://custom.host.com", BlobInfo.newBuilder(BUCKET_NAME1, blobName).build(), 14, TimeUnit.DAYS);
+    String escapedBlobName = UrlEscapers.urlFragmentEscaper().escape(blobName);
+    String stringUrl = url.toString();
+    String expectedUrl =
+        new StringBuilder("https://custom.host.com/")
             .append(BUCKET_NAME1)
             .append(escapedBlobName)
             .append("?GoogleAccessId=")
