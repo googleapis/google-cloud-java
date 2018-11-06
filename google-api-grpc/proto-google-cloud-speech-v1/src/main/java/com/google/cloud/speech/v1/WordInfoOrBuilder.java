@@ -9,7 +9,7 @@ public interface WordInfoOrBuilder extends
 
   /**
    * <pre>
-   * *Output-only* Time offset relative to the beginning of the audio,
+   * Output only. Time offset relative to the beginning of the audio,
    * and corresponding to the start of the spoken word.
    * This field is only set if `enable_word_time_offsets=true` and only
    * in the top hypothesis.
@@ -22,7 +22,7 @@ public interface WordInfoOrBuilder extends
   boolean hasStartTime();
   /**
    * <pre>
-   * *Output-only* Time offset relative to the beginning of the audio,
+   * Output only. Time offset relative to the beginning of the audio,
    * and corresponding to the start of the spoken word.
    * This field is only set if `enable_word_time_offsets=true` and only
    * in the top hypothesis.
@@ -35,7 +35,7 @@ public interface WordInfoOrBuilder extends
   com.google.protobuf.Duration getStartTime();
   /**
    * <pre>
-   * *Output-only* Time offset relative to the beginning of the audio,
+   * Output only. Time offset relative to the beginning of the audio,
    * and corresponding to the start of the spoken word.
    * This field is only set if `enable_word_time_offsets=true` and only
    * in the top hypothesis.
@@ -49,7 +49,7 @@ public interface WordInfoOrBuilder extends
 
   /**
    * <pre>
-   * *Output-only* Time offset relative to the beginning of the audio,
+   * Output only. Time offset relative to the beginning of the audio,
    * and corresponding to the end of the spoken word.
    * This field is only set if `enable_word_time_offsets=true` and only
    * in the top hypothesis.
@@ -62,7 +62,7 @@ public interface WordInfoOrBuilder extends
   boolean hasEndTime();
   /**
    * <pre>
-   * *Output-only* Time offset relative to the beginning of the audio,
+   * Output only. Time offset relative to the beginning of the audio,
    * and corresponding to the end of the spoken word.
    * This field is only set if `enable_word_time_offsets=true` and only
    * in the top hypothesis.
@@ -75,7 +75,7 @@ public interface WordInfoOrBuilder extends
   com.google.protobuf.Duration getEndTime();
   /**
    * <pre>
-   * *Output-only* Time offset relative to the beginning of the audio,
+   * Output only. Time offset relative to the beginning of the audio,
    * and corresponding to the end of the spoken word.
    * This field is only set if `enable_word_time_offsets=true` and only
    * in the top hypothesis.
@@ -89,7 +89,7 @@ public interface WordInfoOrBuilder extends
 
   /**
    * <pre>
-   * *Output-only* The word corresponding to this set of information.
+   * Output only. The word corresponding to this set of information.
    * </pre>
    *
    * <code>string word = 3;</code>
@@ -97,7 +97,7 @@ public interface WordInfoOrBuilder extends
   java.lang.String getWord();
   /**
    * <pre>
-   * *Output-only* The word corresponding to this set of information.
+   * Output only. The word corresponding to this set of information.
    * </pre>
    *
    * <code>string word = 3;</code>

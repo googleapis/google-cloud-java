@@ -26,6 +26,7 @@ import com.google.bigtable.v2.TableName;
 import com.google.cloud.bigtable.data.v2.internal.RequestContext;
 import com.google.cloud.bigtable.data.v2.models.KeyOffset;
 import com.google.common.collect.ImmutableList;
+import com.google.common.util.concurrent.MoreExecutors;
 import java.util.List;
 
 /** Simple wrapper for SampleRowKeys to wrap the request and response protobufs. */
@@ -64,7 +65,8 @@ class SampleRowKeysCallable extends UnaryCallable<String, List<KeyOffset>> {
           public List<KeyOffset> apply(List<SampleRowKeysResponse> rawResponse) {
             return convert(rawResponse);
           }
-        });
+        },
+        MoreExecutors.directExecutor());
   }
 
   private static List<KeyOffset> convert(List<SampleRowKeysResponse> rawResponse) {

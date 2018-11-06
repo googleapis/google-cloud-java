@@ -22,6 +22,7 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutureCallback;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.InternalApi;
+import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.batching.FlowController;
 import com.google.api.gax.core.Distribution;
 import com.google.api.gax.grpc.GrpcCallContext;
@@ -35,9 +36,7 @@ import com.google.cloud.pubsub.v1.MessageDispatcher.AckProcessor;
 import com.google.cloud.pubsub.v1.MessageDispatcher.PendingModifyAckDeadline;
 import com.google.cloud.pubsub.v1.stub.SubscriberStub;
 import com.google.common.collect.Lists;
-import com.google.common.util.concurrent.FutureCallback;
-import com.google.common.util.concurrent.Futures;
-import com.google.common.util.concurrent.SettableFuture;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.protobuf.Empty;
 import com.google.pubsub.v1.AcknowledgeRequest;
 import com.google.pubsub.v1.ModifyAckDeadlineRequest;
@@ -132,7 +131,7 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
 
   private class StreamingPullResponseObserver implements ResponseObserver<StreamingPullResponse> {
 
-    final SettableFuture<Void> errorFuture;
+    final SettableApiFuture<Void> errorFuture;
 
     /**
      * When a batch finsihes processing, we want to request one more batch from the server. But by
@@ -143,7 +142,7 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
      */
     StreamController thisController;
 
-    StreamingPullResponseObserver(SettableFuture<Void> errorFuture) {
+    StreamingPullResponseObserver(SettableApiFuture<Void> errorFuture) {
       this.errorFuture = errorFuture;
     }
 
@@ -192,9 +191,8 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
   }
 
   private void initialize() {
-    final SettableFuture<Void> errorFuture = SettableFuture.create();
-
-    final ResponseObserver<StreamingPullResponse> responseObserver =
+    final SettableApiFuture<Void> errorFuture = SettableApiFuture.create();
+    final ClientResponseObserver<StreamingPullRequest, StreamingPullResponse> responseObserver =
         new StreamingPullResponseObserver(errorFuture);
     ClientStream<StreamingPullRequest> initClientStream =
         stub.streamingPullCallable()
@@ -223,9 +221,9 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
       lock.unlock();
     }
 
-    Futures.addCallback(
+    ApiFutures.addCallback(
         errorFuture,
-        new FutureCallback<Void>() {
+        new ApiFutureCallback<Void>() {
           @Override
           public void onSuccess(@Nullable Void result) {
             if (!isAlive()) {
@@ -268,7 +266,8 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
                 backoffMillis,
                 TimeUnit.MILLISECONDS);
           }
-        });
+        },
+        MoreExecutors.directExecutor());
   }
 
   private boolean isAlive() {

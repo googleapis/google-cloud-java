@@ -185,6 +185,7 @@ public class FirewallClientTest {
     String selfLink = "selfLink-1691268851";
     String creationTimestamp = "creationTimestamp567396278";
     String name = "name3373707";
+    Boolean disabled = true;
     String id = "id3355";
     String direction = "direction-962590849";
     Firewall expectedResponse =
@@ -196,6 +197,7 @@ public class FirewallClientTest {
             .setSelfLink(selfLink)
             .setCreationTimestamp(creationTimestamp)
             .setName(name)
+            .setDisabled(disabled)
             .setId(id)
             .setDirection(direction)
             .build();

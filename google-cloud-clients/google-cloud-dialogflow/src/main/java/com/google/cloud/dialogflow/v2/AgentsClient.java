@@ -257,7 +257,7 @@ public class AgentsClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final Agent getAgent(GetAgentRequest request) {
+  public final Agent getAgent(GetAgentRequest request) {
     return getAgentCallable().call(request);
   }
 
@@ -521,7 +521,7 @@ public class AgentsClient implements BackgroundResource {
    */
   @BetaApi(
       "The surface for long-running operations is not stable yet and may change in the future.")
-  private final OperationFuture<Empty, Struct> trainAgentAsync(TrainAgentRequest request) {
+  public final OperationFuture<Empty, Struct> trainAgentAsync(TrainAgentRequest request) {
     return trainAgentOperationCallable().futureCall(request);
   }
 

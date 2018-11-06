@@ -395,10 +395,12 @@ public interface PartialResultSetOrBuilder extends
 
   /**
    * <pre>
-   * Query plan and execution statistics for the query that produced this
+   * Query plan and execution statistics for the statement that produced this
    * streaming result set. These can be requested by setting
    * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode] and are sent
    * only once with the last response in the stream.
+   * This field will also be present in the last response for DML
+   * statements.
    * </pre>
    *
    * <code>.google.spanner.v1.ResultSetStats stats = 5;</code>
@@ -406,10 +408,12 @@ public interface PartialResultSetOrBuilder extends
   boolean hasStats();
   /**
    * <pre>
-   * Query plan and execution statistics for the query that produced this
+   * Query plan and execution statistics for the statement that produced this
    * streaming result set. These can be requested by setting
    * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode] and are sent
    * only once with the last response in the stream.
+   * This field will also be present in the last response for DML
+   * statements.
    * </pre>
    *
    * <code>.google.spanner.v1.ResultSetStats stats = 5;</code>
@@ -417,10 +421,12 @@ public interface PartialResultSetOrBuilder extends
   com.google.spanner.v1.ResultSetStats getStats();
   /**
    * <pre>
-   * Query plan and execution statistics for the query that produced this
+   * Query plan and execution statistics for the statement that produced this
    * streaming result set. These can be requested by setting
    * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode] and are sent
    * only once with the last response in the stream.
+   * This field will also be present in the last response for DML
+   * statements.
    * </pre>
    *
    * <code>.google.spanner.v1.ResultSetStats stats = 5;</code>

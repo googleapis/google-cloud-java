@@ -16,88 +16,82 @@
 package com.google.cloud.bigtable.admin.v2;
 
 import static com.google.common.truth.Truth.assertThat;
-import static org.junit.Assert.assertEquals;
-import static org.mockito.Matchers.any;
-import java.util.List;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.mockito.ArgumentCaptor;
-import org.mockito.Mock;
-import org.mockito.Mockito;
-import org.mockito.runners.MockitoJUnitRunner;
+
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
+import com.google.api.gax.grpc.GrpcStatusCode;
+import com.google.api.gax.rpc.NotFoundException;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.bigtable.admin.v2.CheckConsistencyRequest;
-import com.google.bigtable.admin.v2.CheckConsistencyResponse;
+import com.google.bigtable.admin.v2.ColumnFamily;
 import com.google.bigtable.admin.v2.DeleteTableRequest;
 import com.google.bigtable.admin.v2.DropRowRangeRequest;
-import com.google.bigtable.admin.v2.GenerateConsistencyTokenRequest;
-import com.google.bigtable.admin.v2.GenerateConsistencyTokenResponse;
+import com.google.bigtable.admin.v2.GcRule;
 import com.google.bigtable.admin.v2.GetTableRequest;
 import com.google.bigtable.admin.v2.InstanceName;
 import com.google.bigtable.admin.v2.ListTablesRequest;
-import com.google.bigtable.admin.v2.ListTablesResponse;
-import com.google.bigtable.admin.v2.Table;
+import com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification;
+import com.google.bigtable.admin.v2.Table.View;
 import com.google.bigtable.admin.v2.TableName;
+import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListTablesPage;
+import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListTablesPagedResponse;
 import com.google.cloud.bigtable.admin.v2.models.CreateTableRequest;
 import com.google.cloud.bigtable.admin.v2.models.ModifyColumnFamiliesRequest;
-import com.google.cloud.bigtable.admin.v2.models.ConsistencyToken;
-import com.google.cloud.bigtable.admin.v2.stub.BigtableTableAdminStub;
+import com.google.cloud.bigtable.admin.v2.models.Table;
+import com.google.cloud.bigtable.admin.v2.stub.EnhancedBigtableTableAdminStub;
+import com.google.common.collect.Lists;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
+import java.util.List;
+import java.util.concurrent.atomic.AtomicBoolean;
+
+import io.grpc.Status;
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.Matchers;
+import org.mockito.Mock;
+import org.mockito.Mockito;
+import org.mockito.invocation.InvocationOnMock;
+import org.mockito.runners.MockitoJUnitRunner;
+import org.mockito.stubbing.Answer;
 
 @RunWith(MockitoJUnitRunner.class)
 public class BigtableTableAdminClientTest {
+
+  private static final InstanceName INSTANCE_NAME = InstanceName.of("my-project", "my-instance");
+  private static final TableName TABLE_NAME = TableName
+      .of(INSTANCE_NAME.getProject(), INSTANCE_NAME.getInstance(), "my-table");
+
   private BigtableTableAdminClient adminClient;
-  @Mock private BigtableTableAdminStub mockStub;
-
-  @Mock private UnaryCallable<com.google.bigtable.admin.v2.CreateTableRequest, Table> mockCreateTableCallable;
-  @Mock private UnaryCallable<com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest, Table> mockModifyTableCallable;
-  @Mock private UnaryCallable<DeleteTableRequest, Empty> mockDeleteTableCallable;
-  @Mock private UnaryCallable<GetTableRequest, Table> mockGetTableCallable;
-  @Mock private UnaryCallable<ListTablesRequest, ListTablesResponse> mockListTableCallable;
-  @Mock private UnaryCallable<DropRowRangeRequest, Empty> mockDropRowRangeCallable;
+  @Mock
+  private EnhancedBigtableTableAdminStub mockStub;
 
   @Mock
-  private UnaryCallable<GenerateConsistencyTokenRequest, GenerateConsistencyTokenResponse>
-      mockGenerateConsistencyTokenCallable;
-
+  private UnaryCallable<com.google.bigtable.admin.v2.CreateTableRequest, com.google.bigtable.admin.v2.Table> mockCreateTableCallable;
   @Mock
-  private UnaryCallable<CheckConsistencyRequest, CheckConsistencyResponse>
-      mockCheckConsistencyCallable;
+  private UnaryCallable<com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest, com.google.bigtable.admin.v2.Table> mockModifyTableCallable;
+  @Mock
+  private UnaryCallable<DeleteTableRequest, Empty> mockDeleteTableCallable;
+  @Mock
+  private UnaryCallable<GetTableRequest, com.google.bigtable.admin.v2.Table> mockGetTableCallable;
+  @Mock
+  private UnaryCallable<ListTablesRequest, ListTablesPagedResponse> mockListTableCallable;
+  @Mock
+  private UnaryCallable<DropRowRangeRequest, Empty> mockDropRowRangeCallable;
+  @Mock
+  private UnaryCallable<TableName, Void> mockAwaitReplicationCallable;
 
   @Before
-  public void setUp() throws Exception {
-    adminClient = BigtableTableAdminClient
-        .create(InstanceName.of("[PROJECT]", "[INSTANCE]"), mockStub);
+  public void setUp() {
+    adminClient = BigtableTableAdminClient.create(INSTANCE_NAME, mockStub);
 
     Mockito.when(mockStub.createTableCallable()).thenReturn(mockCreateTableCallable);
     Mockito.when(mockStub.modifyColumnFamiliesCallable()).thenReturn(mockModifyTableCallable);
     Mockito.when(mockStub.deleteTableCallable()).thenReturn(mockDeleteTableCallable);
     Mockito.when(mockStub.getTableCallable()).thenReturn(mockGetTableCallable);
-    Mockito.when(mockStub.listTablesCallable()).thenReturn(mockListTableCallable);
+    Mockito.when(mockStub.listTablesPagedCallable()).thenReturn(mockListTableCallable);
     Mockito.when(mockStub.dropRowRangeCallable()).thenReturn(mockDropRowRangeCallable);
-    Mockito.when(mockStub.generateConsistencyTokenCallable())
-        .thenReturn(mockGenerateConsistencyTokenCallable);
-    Mockito.when(mockStub.checkConsistencyCallable()).thenReturn(mockCheckConsistencyCallable);
-
-    Table table = Table.newBuilder().build();
-    ApiFuture<Table> futureTable = ApiFutures.immediateFuture(table);
-    Mockito.when(mockCreateTableCallable.call(any(com.google.bigtable.admin.v2.CreateTableRequest.class))).thenReturn(table);
-    Mockito.when(mockCreateTableCallable.futureCall(any(
-        com.google.bigtable.admin.v2.CreateTableRequest.class)))
-        .thenReturn(futureTable);
-    Mockito.when(mockModifyTableCallable.call(any(
-        com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.class)))
-        .thenReturn(table);
-    Mockito.when(mockModifyTableCallable.futureCall(any(
-        com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.class)))
-        .thenReturn(futureTable);
-    Mockito.when(mockGetTableCallable.call(any(GetTableRequest.class))).thenReturn(table);
-    Mockito.when(mockGetTableCallable.futureCall(any(GetTableRequest.class)))
-        .thenReturn(futureTable);
+    Mockito.when(mockStub.awaitReplicationCallable()).thenReturn(mockAwaitReplicationCallable);
   }
 
   @Test
@@ -107,199 +101,247 @@ public class BigtableTableAdminClientTest {
   }
 
   @Test
-  public void createTable() {
-    CreateTableRequest createTableReq = CreateTableRequest.of("tableId");
-    adminClient.createTable(createTableReq);
-    Mockito.verify(mockCreateTableCallable)
-        .call(createTableReq.toProto(adminClient.getInstanceName()));
-  }
-
-  @Test
-  public void createTableAsync() {
-    CreateTableRequest createTableReq = CreateTableRequest.of("tableId");
-    adminClient.createTableAsync(createTableReq);
-    Mockito.verify(mockCreateTableCallable)
-        .futureCall(createTableReq.toProto(adminClient.getInstanceName()));
-  }
-
-  @Test
-  public void modifyFamilies() {
-    ModifyColumnFamiliesRequest modifyFamReq = ModifyColumnFamiliesRequest.of("tableId");
-    adminClient.modifyFamilies(modifyFamReq);
-    Mockito.verify(mockModifyTableCallable)
-        .call(modifyFamReq.toProto(adminClient.getInstanceName()));
-  }
-
-  @Test
-  public void modifyFamiliesAsync() {
-    ModifyColumnFamiliesRequest modifyFamReq = ModifyColumnFamiliesRequest.of("tableId");
-    adminClient.modifyFamiliesAsync(modifyFamReq);
-    Mockito.verify(mockModifyTableCallable)
-        .futureCall(modifyFamReq.toProto(adminClient.getInstanceName()));
-  }
-
-  @Test
-  public void deleteTable() {
-    adminClient.deleteTable("tableId");
-    Mockito.verify(mockDeleteTableCallable).call(adminClient.composeDeleteTableRequest("tableId"));
-  }
-
-  @Test
-  public void deleteTableAsync() {
-    ApiFuture<Empty> empty = ApiFutures.immediateFuture(Empty.newBuilder().build());
-    Mockito.when(mockDeleteTableCallable.futureCall(any(DeleteTableRequest.class)))
-        .thenReturn(empty);
-
-    adminClient.deleteTableAsync("tableId");
-    Mockito.verify(mockDeleteTableCallable)
-        .futureCall(adminClient.composeDeleteTableRequest("tableId"));
-  }
-
-  @Test
-  public void getTable() {
-    adminClient.getTable("tableId");
-    Mockito.verify(mockGetTableCallable).call(adminClient.composeGetTableRequest("tableId"));
-  }
-
-  @Test
-  public void getTableAsync() {
-    adminClient.getTableAsync("tableId");
-    Mockito.verify(mockGetTableCallable).futureCall(adminClient.composeGetTableRequest("tableId"));
-  }
-
-  @Test
-  public void listTables() {
-    ListTablesResponse listTablesResponse = ListTablesResponse.newBuilder().build();
-    Mockito.when(mockListTableCallable.call(adminClient.composeListTableRequest()))
-        .thenReturn(listTablesResponse);
-
-    adminClient.listTables();
-    Mockito.verify(mockListTableCallable).call(adminClient.composeListTableRequest());
-  }
-
-  @Test
-  public void listTablesAsync() {
-    ApiFuture<ListTablesResponse> listTablesResponse =
-        ApiFutures.immediateFuture(ListTablesResponse.newBuilder().build());
-    Mockito.when(mockListTableCallable.futureCall(adminClient.composeListTableRequest()))
-        .thenReturn(listTablesResponse);
-
-    adminClient.listTablesAsync();
-    Mockito.verify(mockListTableCallable).futureCall(adminClient.composeListTableRequest());
-  }
-
-  @Test
-  public void dropRowRange() {
-    adminClient.dropRowRange("tableId", "rowKeyPrefix");
-    Mockito.verify(mockDropRowRangeCallable)
-        .call(
-            adminClient.composeDropRowRangeRequest(
-                "tableId", ByteString.copyFromUtf8("rowKeyPrefix"), false));
-  }
-
-  @Test
-  public void getDropRowRangeRequest() {
-    DropRowRangeRequest actual =
-        adminClient.composeDropRowRangeRequest(
-            "tableId", ByteString.copyFromUtf8("rowKeyPrefix"), false);
-
-    DropRowRangeRequest expected =
-        DropRowRangeRequest.newBuilder()
-            .setName(adminClient.getTableName("tableId"))
-            .setRowKeyPrefix(ByteString.copyFromUtf8("rowKeyPrefix"))
+  public void testCreateTable() {
+    // Setup
+    com.google.bigtable.admin.v2.CreateTableRequest expectedRequest =
+        com.google.bigtable.admin.v2.CreateTableRequest
+            .newBuilder()
+            .setParent(INSTANCE_NAME.toString())
+            .setTableId(TABLE_NAME.getTable())
+            .setTable(com.google.bigtable.admin.v2.Table.getDefaultInstance())
             .build();
 
-    assertThat(actual).isEqualTo(expected);
+    com.google.bigtable.admin.v2.Table expectedResponse = com.google.bigtable.admin.v2.Table
+        .newBuilder()
+        .setName(TABLE_NAME.toString())
+        .build();
+
+    Mockito.when(mockCreateTableCallable.futureCall(expectedRequest))
+        .thenReturn(ApiFutures.immediateFuture(expectedResponse));
+
+    // Execute
+    Table result = adminClient.createTable(CreateTableRequest.of(TABLE_NAME.getTable()));
+
+    // Verify
+    assertThat(result).isEqualTo(Table.fromProto(expectedResponse));
   }
 
   @Test
-  public void getDropRowRangeRequestDropAllData() {
-    DropRowRangeRequest actual = adminClient.composeDropRowRangeRequest("tableId", null, true);
-
-    DropRowRangeRequest expected =
-        DropRowRangeRequest.newBuilder()
-            .setName(adminClient.getTableName("tableId"))
-            .setDeleteAllDataFromTable(true)
+  public void testModifyFamilies() {
+    // Setup
+    com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest expectedRequest =
+        com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest
+            .newBuilder()
+            .setName(TABLE_NAME.toString())
+            .addModifications(
+                Modification.newBuilder()
+                    .setId("cf")
+                    .setCreate(ColumnFamily.newBuilder().setGcRule(GcRule.getDefaultInstance())))
             .build();
 
-    assertThat(actual).isEqualTo(expected);
+    com.google.bigtable.admin.v2.Table fakeResponse = com.google.bigtable.admin.v2.Table
+        .newBuilder()
+        .setName(TABLE_NAME.toString())
+        .putColumnFamilies("cf",
+            ColumnFamily.newBuilder().setGcRule(GcRule.getDefaultInstance()).build())
+        .build();
+
+    Mockito.when(mockModifyTableCallable.futureCall(expectedRequest))
+        .thenReturn(ApiFutures.immediateFuture(fakeResponse));
+
+    // Execute
+    Table actualResult = adminClient.modifyFamilies(
+        ModifyColumnFamiliesRequest
+            .of(TABLE_NAME.getTable())
+            .addFamily("cf")
+    );
+
+    // Verify
+    assertThat(actualResult).isEqualTo(Table.fromProto(fakeResponse));
   }
 
   @Test
-  public void dropRowRangeAsync() {
-    ApiFuture<Empty> empty = ApiFutures.immediateFuture(Empty.newBuilder().build());
-    Mockito.when(mockDropRowRangeCallable.futureCall(any(DropRowRangeRequest.class)))
-        .thenReturn(empty);
+  public void testDeleteTable() {
+    // Setup
+    DeleteTableRequest expectedRequest = DeleteTableRequest.newBuilder()
+        .setName(TABLE_NAME.toString())
+        .build();
 
-    adminClient.dropRowRangeAsync("tableId", "rowKeyPrefix");
-    Mockito.verify(mockDropRowRangeCallable)
-        .futureCall(
-            adminClient.composeDropRowRangeRequest(
-                "tableId", ByteString.copyFromUtf8("rowKeyPrefix"), false));
+    final AtomicBoolean wasCalled = new AtomicBoolean(false);
+
+    Mockito.when(mockDeleteTableCallable.futureCall(expectedRequest))
+        .thenAnswer(new Answer<ApiFuture<Empty>>() {
+          @Override
+          public ApiFuture<Empty> answer(InvocationOnMock invocationOnMock) {
+            wasCalled.set(true);
+            return ApiFutures.immediateFuture(Empty.getDefaultInstance());
+          }
+        });
+
+    // Execute
+    adminClient.deleteTable(TABLE_NAME.getTable());
+
+    // Verify
+    assertThat(wasCalled.get()).isTrue();
   }
 
   @Test
-  public void generateAndCheckConsistency() {
-    GenerateConsistencyTokenResponse genResp =
-        GenerateConsistencyTokenResponse.newBuilder().build();
-    Mockito.when(
-            mockGenerateConsistencyTokenCallable.call(
-                adminClient.composeGenerateConsistencyTokenRequest("tableId")))
-        .thenReturn(genResp);
+  public void testGetTable() {
+    // Setup
+    GetTableRequest expectedRequest = GetTableRequest.newBuilder()
+        .setName(TABLE_NAME.toString())
+        .setView(View.SCHEMA_VIEW)
+        .build();
 
-    ConsistencyToken consistencyToken = adminClient.generateConsistencyToken("tableId");
-    Mockito.verify(mockGenerateConsistencyTokenCallable)
-        .call(adminClient.composeGenerateConsistencyTokenRequest("tableId"));
+    com.google.bigtable.admin.v2.Table expectedResponse = com.google.bigtable.admin.v2.Table
+        .newBuilder()
+        .setName(TABLE_NAME.toString())
+        .build();
 
-    ArgumentCaptor<CheckConsistencyRequest> requestCaptor =
-        ArgumentCaptor.forClass(CheckConsistencyRequest.class);
-    CheckConsistencyResponse consistencyResp = CheckConsistencyResponse.newBuilder().build();
-    Mockito.when(mockCheckConsistencyCallable.call(any(CheckConsistencyRequest.class)))
-        .thenReturn(consistencyResp);
+    Mockito.when(mockGetTableCallable.futureCall(expectedRequest))
+        .thenReturn(ApiFutures.immediateFuture(expectedResponse));
 
-    adminClient.isConsistent("tableId", consistencyToken);
-    Mockito.verify(mockCheckConsistencyCallable).call(requestCaptor.capture());
+    // Execute
+    Table actualResult = adminClient.getTable(TABLE_NAME.getTable());
+
+    // Verify
+    assertThat(actualResult).isEqualTo(Table.fromProto(expectedResponse));
   }
 
   @Test
-  public void generateAndCheckConsistencyAsync() throws Exception {
-    ApiFuture<GenerateConsistencyTokenResponse> genResp =
-        ApiFutures.immediateFuture(GenerateConsistencyTokenResponse.newBuilder().build());
-    Mockito.when(
-            mockGenerateConsistencyTokenCallable.futureCall(
-                adminClient.composeGenerateConsistencyTokenRequest("tableId")))
-        .thenReturn(genResp);
-
-    ApiFuture<ConsistencyToken> consistencyTokenFuture =
-        adminClient.generateConsistencyTokenAsync("tableId");
-    Mockito.verify(mockGenerateConsistencyTokenCallable)
-        .futureCall(adminClient.composeGenerateConsistencyTokenRequest("tableId"));
-
-    ArgumentCaptor<CheckConsistencyRequest> requestCaptor =
-        ArgumentCaptor.forClass(CheckConsistencyRequest.class);
-    ApiFuture<CheckConsistencyResponse> consistencyResp =
-        ApiFutures.immediateFuture(CheckConsistencyResponse.newBuilder().build());
-    Mockito.when(mockCheckConsistencyCallable.futureCall(any(CheckConsistencyRequest.class)))
-        .thenReturn(consistencyResp);
-
-    adminClient.isConsistentAsync("tableId", consistencyTokenFuture.get());
-    Mockito.verify(mockCheckConsistencyCallable).futureCall(requestCaptor.capture());
-  }
-
-  @Test
-  public void convertToTableNames() {
-    ListTablesResponse listTablesResponse =
-        ListTablesResponse.newBuilder()
-            .addTables(Table.newBuilder().setName("projects/p/instances/i/tables/t1"))
-            .addTables(Table.newBuilder().setName("projects/p/instances/i/tables/t2"))
+  public void testListTables() {
+    // Setup
+    com.google.bigtable.admin.v2.ListTablesRequest expectedRequest =
+        com.google.bigtable.admin.v2.ListTablesRequest.newBuilder()
+            .setParent(INSTANCE_NAME.toString())
             .build();
 
-    List<TableName> tableNames = BigtableTableAdminClient.convertToTableNames(listTablesResponse);
-    assertEquals(2, tableNames.size());
-    assertEquals("projects/p/instances/i/tables/t1", tableNames.get(0).toString());
-    assertEquals("projects/p/instances/i/tables/t2", tableNames.get(1).toString());
+    // 3 Tables spread across 2 pages
+    List<com.google.bigtable.admin.v2.Table> expectedProtos = Lists.newArrayList();
+    for (int i = 0; i < 3; i++) {
+      expectedProtos.add(
+          com.google.bigtable.admin.v2.Table.newBuilder()
+              .setName(TABLE_NAME.toString() + i)
+              .build());
+    }
+    // 2 on the first page
+    ListTablesPage page0 = Mockito.mock(ListTablesPage.class);
+    Mockito.when(page0.getValues()).thenReturn(expectedProtos.subList(0, 2));
+    Mockito.when(page0.getNextPageToken()).thenReturn("next-page");
+    Mockito.when(page0.hasNextPage()).thenReturn(true);
 
-    listTablesResponse = ListTablesResponse.newBuilder().build();
-    assertEquals(0, BigtableTableAdminClient.convertToTableNames(listTablesResponse).size());
+    // 1 on the last page
+    ListTablesPage page1 = Mockito.mock(ListTablesPage.class);
+    Mockito.when(page1.getValues()).thenReturn(expectedProtos.subList(2, 3));
+
+    // Link page0 to page1
+    Mockito.when(page0.getNextPageAsync()).thenReturn(
+        ApiFutures.immediateFuture(page1)
+    );
+
+    // Link page to the response
+    ListTablesPagedResponse response0 = Mockito.mock(ListTablesPagedResponse.class);
+    Mockito.when(response0.getPage()).thenReturn(page0);
+
+    Mockito.when(mockListTableCallable.futureCall(expectedRequest)).thenReturn(
+        ApiFutures.immediateFuture(response0)
+    );
+
+    // Execute
+    List<TableName> actualResults = adminClient.listTables();
+
+    // Verify
+    List<TableName> expectedResults = Lists.newArrayList();
+    for (com.google.bigtable.admin.v2.Table expectedProto : expectedProtos) {
+      expectedResults.add(TableName.parse(expectedProto.getName()));
+    }
+
+    assertThat(actualResults).containsExactlyElementsIn(expectedResults);
+  }
+
+  @Test
+  public void testDropRowRange() {
+    // Setup
+    DropRowRangeRequest expectedRequest = DropRowRangeRequest.newBuilder()
+        .setName(TABLE_NAME.toString())
+        .setRowKeyPrefix(ByteString.copyFromUtf8("rowKeyPrefix"))
+        .build();
+
+    final Empty expectedResponse = Empty.getDefaultInstance();
+
+    final AtomicBoolean wasCalled = new AtomicBoolean(false);
+
+    Mockito.when(mockDropRowRangeCallable.futureCall(expectedRequest))
+        .thenAnswer(new Answer<ApiFuture<Empty>>() {
+          @Override
+          public ApiFuture<Empty> answer(InvocationOnMock invocationOnMock) {
+            wasCalled.set(true);
+            return ApiFutures.immediateFuture(expectedResponse);
+          }
+        });
+
+    // Execute
+    adminClient.dropRowRange(TABLE_NAME.getTable(), "rowKeyPrefix");
+
+    // Verify
+    assertThat(wasCalled.get()).isTrue();
+  }
+
+  @Test
+  public void testAwaitReplication() {
+    // Setup
+    @SuppressWarnings("UnnecessaryLocalVariable")
+    TableName expectedRequest = TABLE_NAME;
+
+    final AtomicBoolean wasCalled = new AtomicBoolean(false);
+
+    Mockito.when(mockAwaitReplicationCallable.futureCall(expectedRequest))
+        .thenAnswer(new Answer<ApiFuture<Void>>() {
+          @Override
+          public ApiFuture<Void> answer(InvocationOnMock invocationOnMock) throws Throwable {
+            wasCalled.set(true);
+            return ApiFutures.immediateFuture(null);
+          }
+        });
+
+    // Execute
+    adminClient.awaitReplication(TABLE_NAME.getTable());
+
+    // Verify
+    assertThat(wasCalled.get()).isTrue();
+  }
+
+  @Test
+  public void testExistsTrue() {
+    // Setup
+    com.google.bigtable.admin.v2.Table expectedResponse =
+        com.google.bigtable.admin.v2.Table.newBuilder()
+            .setName(TABLE_NAME.toString())
+            .build();
+
+    Mockito.when(mockGetTableCallable.futureCall(Matchers.any(GetTableRequest.class)))
+        .thenReturn(ApiFutures.immediateFuture(expectedResponse));
+
+    // Execute
+    boolean found = adminClient.exists(TABLE_NAME.getTable());
+
+    // Verify
+    assertThat(found).isTrue();
+  }
+
+  @Test
+  public void testExistsFalse() {
+    // Setup
+    NotFoundException exception =
+        new NotFoundException("fake error", null, GrpcStatusCode.of(Status.Code.NOT_FOUND), false);
+
+    Mockito.when(mockGetTableCallable.futureCall(Matchers.any(GetTableRequest.class)))
+            .thenReturn(ApiFutures.<com.google.bigtable.admin.v2.Table>immediateFailedFuture(exception));
+
+    // Execute
+    boolean found = adminClient.exists(TABLE_NAME.getTable());
+
+    // Verify
+    assertThat(found).isFalse();
   }
 }

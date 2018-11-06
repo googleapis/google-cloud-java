@@ -22,10 +22,10 @@ import com.google.bigtable.admin.v2.GcRule;
 import com.google.bigtable.admin.v2.GcRule.RuleCase;
 import com.google.cloud.bigtable.admin.v2.models.GCRules.GCRule;
 import com.google.common.base.MoreObjects;
+import com.google.common.base.Objects;
 
 /** Wrapper for {@link ColumnFamily} protocol buffer object */
 public final class ColumnFamily {
-  // TODO(igorbernstein2): rename this to `name`
   private final String id;
   private final GCRule rule;
 
@@ -43,24 +43,42 @@ public final class ColumnFamily {
   }
 
   /**
-   * Gets the columnfamily name
+   * Gets the column family's id.
    */
   public String getId() {
     return id;
   }
 
   /**
-   * Get's the GCRule configured for the columnfamily
+   * Get's the GCRule configured for the column family.
    */
   public GCRule getGCRule() {
     return rule;
   }
 
   /**
-   * Returns true if a GCRule has been configured for the family
+   * Returns true if a GCRule has been configured for the family.
    */
   public boolean hasGCRule() {
     return !RuleCase.RULE_NOT_SET.equals(rule.toProto().getRuleCase());
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    ColumnFamily that = (ColumnFamily) o;
+    return Objects.equal(id, that.id) &&
+        Objects.equal(rule, that.rule);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hashCode(id, rule);
   }
 
   @Override

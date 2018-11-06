@@ -59,4 +59,21 @@ public interface ListCryptoKeyVersionsRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getPageTokenBytes();
+
+  /**
+   * <pre>
+   * The fields to include in the response.
+   * </pre>
+   *
+   * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionView view = 4;</code>
+   */
+  int getViewValue();
+  /**
+   * <pre>
+   * The fields to include in the response.
+   * </pre>
+   *
+   * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionView view = 4;</code>
+   */
+  com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionView getView();
 }

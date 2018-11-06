@@ -19,7 +19,7 @@
  *
  * <p>Here's a simple usage example for using google-cloud from Compute Engine/App Engine Flexible.
  * This example shows how to write and list log entries. For the complete source code see
- * <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/logging/snippets/WriteAndListLogEntries.java">
+ * <a href="https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/logging/snippets/WriteAndListLogEntries.java">
  * WriteAndListLogEntries.java</a>.
  * <pre> {@code
  * LoggingOptions options = LoggingOptions.getDefaultInstance();
@@ -49,7 +49,7 @@
  * {@code com.google.cloud.examples.logging.snippets.AddLoggingHandler.handlers=com.google.cloud.logging.LoggingHandler}
  * </pre>
  * For the complete source code see
- * <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/logging/snippets/AddLoggingHandler.java">
+ * <a href="https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/logging/snippets/AddLoggingHandler.java">
  * AddLoggingHandler.java</a>.
  * <pre> {@code
  * Logger logger = Logger.getLogger(AddLoggingHandler.class.getName());

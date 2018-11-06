@@ -225,7 +225,7 @@ public class ErrorGroupServiceClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final ErrorGroup getGroup(GetGroupRequest request) {
+  public final ErrorGroup getGroup(GetGroupRequest request) {
     return getGroupCallable().call(request);
   }
 
@@ -292,7 +292,7 @@ public class ErrorGroupServiceClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final ErrorGroup updateGroup(UpdateGroupRequest request) {
+  public final ErrorGroup updateGroup(UpdateGroupRequest request) {
     return updateGroupCallable().call(request);
   }
 

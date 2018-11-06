@@ -32,6 +32,7 @@ public final class Firewall implements ApiMessage {
   private final String description;
   private final List<String> destinationRanges;
   private final String direction;
+  private final Boolean disabled;
   private final String id;
   private final String kind;
   private final String name;
@@ -51,6 +52,7 @@ public final class Firewall implements ApiMessage {
     this.description = null;
     this.destinationRanges = null;
     this.direction = null;
+    this.disabled = null;
     this.id = null;
     this.kind = null;
     this.name = null;
@@ -71,6 +73,7 @@ public final class Firewall implements ApiMessage {
       String description,
       List<String> destinationRanges,
       String direction,
+      Boolean disabled,
       String id,
       String kind,
       String name,
@@ -88,6 +91,7 @@ public final class Firewall implements ApiMessage {
     this.description = description;
     this.destinationRanges = destinationRanges;
     this.direction = direction;
+    this.disabled = disabled;
     this.id = id;
     this.kind = kind;
     this.name = name;
@@ -120,6 +124,9 @@ public final class Firewall implements ApiMessage {
     }
     if (fieldName.equals("direction")) {
       return direction;
+    }
+    if (fieldName.equals("disabled")) {
+      return disabled;
     }
     if (fieldName.equals("id")) {
       return id;
@@ -191,6 +198,10 @@ public final class Firewall implements ApiMessage {
 
   public String getDirection() {
     return direction;
+  }
+
+  public Boolean getDisabled() {
+    return disabled;
   }
 
   public String getId() {
@@ -266,6 +277,7 @@ public final class Firewall implements ApiMessage {
     private String description;
     private List<String> destinationRanges;
     private String direction;
+    private Boolean disabled;
     private String id;
     private String kind;
     private String name;
@@ -299,6 +311,9 @@ public final class Firewall implements ApiMessage {
       }
       if (other.getDirection() != null) {
         this.direction = other.direction;
+      }
+      if (other.getDisabled() != null) {
+        this.disabled = other.disabled;
       }
       if (other.getId() != null) {
         this.id = other.id;
@@ -343,6 +358,7 @@ public final class Firewall implements ApiMessage {
       this.description = source.description;
       this.destinationRanges = source.destinationRanges;
       this.direction = source.direction;
+      this.disabled = source.disabled;
       this.id = source.id;
       this.kind = source.kind;
       this.name = source.name;
@@ -440,6 +456,15 @@ public final class Firewall implements ApiMessage {
 
     public Builder setDirection(String direction) {
       this.direction = direction;
+      return this;
+    }
+
+    public Boolean getDisabled() {
+      return disabled;
+    }
+
+    public Builder setDisabled(Boolean disabled) {
+      this.disabled = disabled;
       return this;
     }
 
@@ -606,6 +631,7 @@ public final class Firewall implements ApiMessage {
           description,
           destinationRanges,
           direction,
+          disabled,
           id,
           kind,
           name,
@@ -627,6 +653,7 @@ public final class Firewall implements ApiMessage {
       newBuilder.setDescription(this.description);
       newBuilder.addAllDestinationRanges(this.destinationRanges);
       newBuilder.setDirection(this.direction);
+      newBuilder.setDisabled(this.disabled);
       newBuilder.setId(this.id);
       newBuilder.setKind(this.kind);
       newBuilder.setName(this.name);
@@ -662,6 +689,9 @@ public final class Firewall implements ApiMessage {
         + ", "
         + "direction="
         + direction
+        + ", "
+        + "disabled="
+        + disabled
         + ", "
         + "id="
         + id
@@ -711,6 +741,7 @@ public final class Firewall implements ApiMessage {
           && Objects.equals(this.description, that.getDescription())
           && Objects.equals(this.destinationRanges, that.getDestinationRangesList())
           && Objects.equals(this.direction, that.getDirection())
+          && Objects.equals(this.disabled, that.getDisabled())
           && Objects.equals(this.id, that.getId())
           && Objects.equals(this.kind, that.getKind())
           && Objects.equals(this.name, that.getName())
@@ -735,6 +766,7 @@ public final class Firewall implements ApiMessage {
         description,
         destinationRanges,
         direction,
+        disabled,
         id,
         kind,
         name,

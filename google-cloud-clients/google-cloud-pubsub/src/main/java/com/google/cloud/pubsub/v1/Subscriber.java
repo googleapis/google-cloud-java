@@ -198,6 +198,11 @@ public class Subscriber extends AbstractApiService {
     }
 
     streamingSubscriberConnections = new ArrayList<StreamingSubscriberConnection>(numPullers);
+
+    // We regularly look up the distribution for a good subscription deadline.
+    // So we seed the distribution with something reasonable to start with.
+    // Distribution is percentile-based, so this value will eventually lose importance.
+    ackLatencyDistribution.record(60);
   }
 
   /**
@@ -578,8 +583,7 @@ public class Subscriber extends AbstractApiService {
     }
 
     /**
-     * Sets the number of pullers used to pull messages from the subscription. Defaults to the
-     * number of available processors.
+     * Sets the number of pullers used to pull messages from the subscription. Defaults to one.
      */
     public Builder setParallelPullCount(int parallelPullCount) {
       this.parallelPullCount = parallelPullCount;

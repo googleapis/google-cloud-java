@@ -9,7 +9,7 @@ public interface SpeechRecognitionResultOrBuilder extends
 
   /**
    * <pre>
-   * *Output-only* May contain one or more recognition hypotheses (up to the
+   * Output only. May contain one or more recognition hypotheses (up to the
    * maximum specified in `max_alternatives`).
    * These alternatives are ordered in terms of accuracy, with the top (first)
    * alternative being the most probable, as ranked by the recognizer.
@@ -21,7 +21,7 @@ public interface SpeechRecognitionResultOrBuilder extends
       getAlternativesList();
   /**
    * <pre>
-   * *Output-only* May contain one or more recognition hypotheses (up to the
+   * Output only. May contain one or more recognition hypotheses (up to the
    * maximum specified in `max_alternatives`).
    * These alternatives are ordered in terms of accuracy, with the top (first)
    * alternative being the most probable, as ranked by the recognizer.
@@ -32,7 +32,7 @@ public interface SpeechRecognitionResultOrBuilder extends
   com.google.cloud.speech.v1.SpeechRecognitionAlternative getAlternatives(int index);
   /**
    * <pre>
-   * *Output-only* May contain one or more recognition hypotheses (up to the
+   * Output only. May contain one or more recognition hypotheses (up to the
    * maximum specified in `max_alternatives`).
    * These alternatives are ordered in terms of accuracy, with the top (first)
    * alternative being the most probable, as ranked by the recognizer.
@@ -43,7 +43,7 @@ public interface SpeechRecognitionResultOrBuilder extends
   int getAlternativesCount();
   /**
    * <pre>
-   * *Output-only* May contain one or more recognition hypotheses (up to the
+   * Output only. May contain one or more recognition hypotheses (up to the
    * maximum specified in `max_alternatives`).
    * These alternatives are ordered in terms of accuracy, with the top (first)
    * alternative being the most probable, as ranked by the recognizer.
@@ -55,7 +55,7 @@ public interface SpeechRecognitionResultOrBuilder extends
       getAlternativesOrBuilderList();
   /**
    * <pre>
-   * *Output-only* May contain one or more recognition hypotheses (up to the
+   * Output only. May contain one or more recognition hypotheses (up to the
    * maximum specified in `max_alternatives`).
    * These alternatives are ordered in terms of accuracy, with the top (first)
    * alternative being the most probable, as ranked by the recognizer.

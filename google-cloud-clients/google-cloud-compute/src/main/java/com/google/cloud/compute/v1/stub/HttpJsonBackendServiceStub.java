@@ -47,6 +47,7 @@ import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchBackendServiceHttpRequest;
 import com.google.cloud.compute.v1.ProjectGlobalBackendServiceName;
 import com.google.cloud.compute.v1.ProjectName;
+import com.google.cloud.compute.v1.SetSecurityPolicyBackendServiceHttpRequest;
 import com.google.cloud.compute.v1.UpdateBackendServiceHttpRequest;
 import com.google.common.collect.Sets;
 import java.io.IOException;
@@ -252,6 +253,28 @@ public class HttpJsonBackendServiceStub extends BackendServiceStub {
               .build();
 
   @InternalApi
+  public static final ApiMethodDescriptor<SetSecurityPolicyBackendServiceHttpRequest, Operation>
+      setSecurityPolicyBackendServiceMethodDescriptor =
+          ApiMethodDescriptor.<SetSecurityPolicyBackendServiceHttpRequest, Operation>newBuilder()
+              .setFullMethodName("compute.backendServices.setSecurityPolicy")
+              .setHttpMethod(HttpMethods.POST)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter
+                      .<SetSecurityPolicyBackendServiceHttpRequest>newBuilder()
+                      .setPathTemplate(
+                          PathTemplate.create(
+                              "{project}/global/backendServices/{backendService}/setSecurityPolicy"))
+                      .setQueryParams(Sets.<String>newHashSet("requestId"))
+                      .setResourceNameFactory(ProjectGlobalBackendServiceName.newFactory())
+                      .setResourceNameField("backendService")
+                      .build())
+              .setResponseParser(
+                  ApiMessageHttpResponseParser.<Operation>newBuilder()
+                      .setResponseInstance(Operation.getDefaultInstance())
+                      .build())
+              .build();
+
+  @InternalApi
   public static final ApiMethodDescriptor<UpdateBackendServiceHttpRequest, Operation>
       updateBackendServiceMethodDescriptor =
           ApiMethodDescriptor.<UpdateBackendServiceHttpRequest, Operation>newBuilder()
@@ -297,6 +320,8 @@ public class HttpJsonBackendServiceStub extends BackendServiceStub {
       listBackendServicesPagedCallable;
   private final UnaryCallable<PatchBackendServiceHttpRequest, Operation>
       patchBackendServiceCallable;
+  private final UnaryCallable<SetSecurityPolicyBackendServiceHttpRequest, Operation>
+      setSecurityPolicyBackendServiceCallable;
   private final UnaryCallable<UpdateBackendServiceHttpRequest, Operation>
       updateBackendServiceCallable;
 
@@ -390,6 +415,11 @@ public class HttpJsonBackendServiceStub extends BackendServiceStub {
             HttpJsonCallSettings.<PatchBackendServiceHttpRequest, Operation>newBuilder()
                 .setMethodDescriptor(patchBackendServiceMethodDescriptor)
                 .build();
+    HttpJsonCallSettings<SetSecurityPolicyBackendServiceHttpRequest, Operation>
+        setSecurityPolicyBackendServiceTransportSettings =
+            HttpJsonCallSettings.<SetSecurityPolicyBackendServiceHttpRequest, Operation>newBuilder()
+                .setMethodDescriptor(setSecurityPolicyBackendServiceMethodDescriptor)
+                .build();
     HttpJsonCallSettings<UpdateBackendServiceHttpRequest, Operation>
         updateBackendServiceTransportSettings =
             HttpJsonCallSettings.<UpdateBackendServiceHttpRequest, Operation>newBuilder()
@@ -450,6 +480,11 @@ public class HttpJsonBackendServiceStub extends BackendServiceStub {
         callableFactory.createUnaryCallable(
             patchBackendServiceTransportSettings,
             settings.patchBackendServiceSettings(),
+            clientContext);
+    this.setSecurityPolicyBackendServiceCallable =
+        callableFactory.createUnaryCallable(
+            setSecurityPolicyBackendServiceTransportSettings,
+            settings.setSecurityPolicyBackendServiceSettings(),
             clientContext);
     this.updateBackendServiceCallable =
         callableFactory.createUnaryCallable(
@@ -521,6 +556,12 @@ public class HttpJsonBackendServiceStub extends BackendServiceStub {
   @BetaApi
   public UnaryCallable<PatchBackendServiceHttpRequest, Operation> patchBackendServiceCallable() {
     return patchBackendServiceCallable;
+  }
+
+  @BetaApi
+  public UnaryCallable<SetSecurityPolicyBackendServiceHttpRequest, Operation>
+      setSecurityPolicyBackendServiceCallable() {
+    return setSecurityPolicyBackendServiceCallable;
   }
 
   @BetaApi

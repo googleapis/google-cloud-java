@@ -185,6 +185,55 @@ public interface AnnotateImageResponseOrBuilder extends
 
   /**
    * <pre>
+   * If present, localized object detection has completed successfully.
+   * This will be sorted descending by confidence score.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.vision.v1.LocalizedObjectAnnotation localized_object_annotations = 22;</code>
+   */
+  java.util.List<com.google.cloud.vision.v1.LocalizedObjectAnnotation> 
+      getLocalizedObjectAnnotationsList();
+  /**
+   * <pre>
+   * If present, localized object detection has completed successfully.
+   * This will be sorted descending by confidence score.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.vision.v1.LocalizedObjectAnnotation localized_object_annotations = 22;</code>
+   */
+  com.google.cloud.vision.v1.LocalizedObjectAnnotation getLocalizedObjectAnnotations(int index);
+  /**
+   * <pre>
+   * If present, localized object detection has completed successfully.
+   * This will be sorted descending by confidence score.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.vision.v1.LocalizedObjectAnnotation localized_object_annotations = 22;</code>
+   */
+  int getLocalizedObjectAnnotationsCount();
+  /**
+   * <pre>
+   * If present, localized object detection has completed successfully.
+   * This will be sorted descending by confidence score.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.vision.v1.LocalizedObjectAnnotation localized_object_annotations = 22;</code>
+   */
+  java.util.List<? extends com.google.cloud.vision.v1.LocalizedObjectAnnotationOrBuilder> 
+      getLocalizedObjectAnnotationsOrBuilderList();
+  /**
+   * <pre>
+   * If present, localized object detection has completed successfully.
+   * This will be sorted descending by confidence score.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.vision.v1.LocalizedObjectAnnotation localized_object_annotations = 22;</code>
+   */
+  com.google.cloud.vision.v1.LocalizedObjectAnnotationOrBuilder getLocalizedObjectAnnotationsOrBuilder(
+      int index);
+
+  /**
+   * <pre>
    * If present, text (OCR) detection has completed successfully.
    * </pre>
    *
@@ -360,6 +409,31 @@ public interface AnnotateImageResponseOrBuilder extends
    * <code>.google.cloud.vision.v1.WebDetection web_detection = 13;</code>
    */
   com.google.cloud.vision.v1.WebDetectionOrBuilder getWebDetectionOrBuilder();
+
+  /**
+   * <pre>
+   * If present, product search has completed successfully.
+   * </pre>
+   *
+   * <code>.google.cloud.vision.v1.ProductSearchResults product_search_results = 14;</code>
+   */
+  boolean hasProductSearchResults();
+  /**
+   * <pre>
+   * If present, product search has completed successfully.
+   * </pre>
+   *
+   * <code>.google.cloud.vision.v1.ProductSearchResults product_search_results = 14;</code>
+   */
+  com.google.cloud.vision.v1.ProductSearchResults getProductSearchResults();
+  /**
+   * <pre>
+   * If present, product search has completed successfully.
+   * </pre>
+   *
+   * <code>.google.cloud.vision.v1.ProductSearchResults product_search_results = 14;</code>
+   */
+  com.google.cloud.vision.v1.ProductSearchResultsOrBuilder getProductSearchResultsOrBuilder();
 
   /**
    * <pre>

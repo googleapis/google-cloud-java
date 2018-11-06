@@ -207,8 +207,7 @@ public class ImageAnnotatorClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final BatchAnnotateImagesResponse batchAnnotateImages(
-      BatchAnnotateImagesRequest request) {
+  public final BatchAnnotateImagesResponse batchAnnotateImages(BatchAnnotateImagesRequest request) {
     return batchAnnotateImagesCallable().call(request);
   }
 
@@ -290,7 +289,7 @@ public class ImageAnnotatorClient implements BackgroundResource {
    */
   @BetaApi(
       "The surface for long-running operations is not stable yet and may change in the future.")
-  private final OperationFuture<AsyncBatchAnnotateFilesResponse, OperationMetadata>
+  public final OperationFuture<AsyncBatchAnnotateFilesResponse, OperationMetadata>
       asyncBatchAnnotateFilesAsync(AsyncBatchAnnotateFilesRequest request) {
     return asyncBatchAnnotateFilesOperationCallable().futureCall(request);
   }

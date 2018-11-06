@@ -291,7 +291,7 @@ public class TraceServiceClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final Trace getTrace(GetTraceRequest request) {
+  public final Trace getTrace(GetTraceRequest request) {
     return getTraceCallable().call(request);
   }
 

@@ -19,6 +19,7 @@ import static com.google.cloud.dlp.v2.DlpServiceClient.ListDeidentifyTemplatesPa
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListDlpJobsPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListInspectTemplatesPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListJobTriggersPagedResponse;
+import static com.google.cloud.dlp.v2.DlpServiceClient.ListStoredInfoTypesPagedResponse;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -28,6 +29,7 @@ import com.google.privacy.dlp.v2.CreateDeidentifyTemplateRequest;
 import com.google.privacy.dlp.v2.CreateDlpJobRequest;
 import com.google.privacy.dlp.v2.CreateInspectTemplateRequest;
 import com.google.privacy.dlp.v2.CreateJobTriggerRequest;
+import com.google.privacy.dlp.v2.CreateStoredInfoTypeRequest;
 import com.google.privacy.dlp.v2.DeidentifyContentRequest;
 import com.google.privacy.dlp.v2.DeidentifyContentResponse;
 import com.google.privacy.dlp.v2.DeidentifyTemplate;
@@ -35,11 +37,13 @@ import com.google.privacy.dlp.v2.DeleteDeidentifyTemplateRequest;
 import com.google.privacy.dlp.v2.DeleteDlpJobRequest;
 import com.google.privacy.dlp.v2.DeleteInspectTemplateRequest;
 import com.google.privacy.dlp.v2.DeleteJobTriggerRequest;
+import com.google.privacy.dlp.v2.DeleteStoredInfoTypeRequest;
 import com.google.privacy.dlp.v2.DlpJob;
 import com.google.privacy.dlp.v2.GetDeidentifyTemplateRequest;
 import com.google.privacy.dlp.v2.GetDlpJobRequest;
 import com.google.privacy.dlp.v2.GetInspectTemplateRequest;
 import com.google.privacy.dlp.v2.GetJobTriggerRequest;
+import com.google.privacy.dlp.v2.GetStoredInfoTypeRequest;
 import com.google.privacy.dlp.v2.InspectContentRequest;
 import com.google.privacy.dlp.v2.InspectContentResponse;
 import com.google.privacy.dlp.v2.InspectTemplate;
@@ -54,13 +58,17 @@ import com.google.privacy.dlp.v2.ListInspectTemplatesRequest;
 import com.google.privacy.dlp.v2.ListInspectTemplatesResponse;
 import com.google.privacy.dlp.v2.ListJobTriggersRequest;
 import com.google.privacy.dlp.v2.ListJobTriggersResponse;
+import com.google.privacy.dlp.v2.ListStoredInfoTypesRequest;
+import com.google.privacy.dlp.v2.ListStoredInfoTypesResponse;
 import com.google.privacy.dlp.v2.RedactImageRequest;
 import com.google.privacy.dlp.v2.RedactImageResponse;
 import com.google.privacy.dlp.v2.ReidentifyContentRequest;
 import com.google.privacy.dlp.v2.ReidentifyContentResponse;
+import com.google.privacy.dlp.v2.StoredInfoType;
 import com.google.privacy.dlp.v2.UpdateDeidentifyTemplateRequest;
 import com.google.privacy.dlp.v2.UpdateInspectTemplateRequest;
 import com.google.privacy.dlp.v2.UpdateJobTriggerRequest;
+import com.google.privacy.dlp.v2.UpdateStoredInfoTypeRequest;
 import com.google.protobuf.Empty;
 import javax.annotation.Generated;
 
@@ -201,6 +209,32 @@ public abstract class DlpServiceStub implements BackgroundResource {
 
   public UnaryCallable<CreateJobTriggerRequest, JobTrigger> createJobTriggerCallable() {
     throw new UnsupportedOperationException("Not implemented: createJobTriggerCallable()");
+  }
+
+  public UnaryCallable<CreateStoredInfoTypeRequest, StoredInfoType> createStoredInfoTypeCallable() {
+    throw new UnsupportedOperationException("Not implemented: createStoredInfoTypeCallable()");
+  }
+
+  public UnaryCallable<UpdateStoredInfoTypeRequest, StoredInfoType> updateStoredInfoTypeCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateStoredInfoTypeCallable()");
+  }
+
+  public UnaryCallable<GetStoredInfoTypeRequest, StoredInfoType> getStoredInfoTypeCallable() {
+    throw new UnsupportedOperationException("Not implemented: getStoredInfoTypeCallable()");
+  }
+
+  public UnaryCallable<ListStoredInfoTypesRequest, ListStoredInfoTypesPagedResponse>
+      listStoredInfoTypesPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listStoredInfoTypesPagedCallable()");
+  }
+
+  public UnaryCallable<ListStoredInfoTypesRequest, ListStoredInfoTypesResponse>
+      listStoredInfoTypesCallable() {
+    throw new UnsupportedOperationException("Not implemented: listStoredInfoTypesCallable()");
+  }
+
+  public UnaryCallable<DeleteStoredInfoTypeRequest, Empty> deleteStoredInfoTypeCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteStoredInfoTypeCallable()");
   }
 
   @Override
