@@ -45,7 +45,13 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
           "https://www.googleapis.com/auth/spanner.admin",
           "https://www.googleapis.com/auth/spanner.data");
   private static final int MAX_CHANNELS = 256;
-
+  private final TransportChannelProvider channelProvider;
+  private final GrpcInterceptorProvider interceptorProvider;
+  private final SessionPoolOptions sessionPoolOptions;
+  private final int prefetchChunks;
+  private final int numChannels;
+  private final ImmutableMap<String, String> sessionLabels;
+  
   /** Default implementation of {@code SpannerFactory}. */
   private static class DefaultSpannerFactory implements SpannerFactory {
     private static final DefaultSpannerFactory INSTANCE = new DefaultSpannerFactory();
@@ -65,13 +71,6 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
       return new GapicSpannerRpc(options);
     }
   }
-
-  private final TransportChannelProvider channelProvider;
-  private final GrpcInterceptorProvider interceptorProvider;
-  private final SessionPoolOptions sessionPoolOptions;
-  private final int prefetchChunks;
-  private final int numChannels;
-  private final ImmutableMap<String, String> sessionLabels;
 
   private SpannerOptions(Builder builder) {
     super(SpannerFactory.class, SpannerRpcFactory.class, builder, new SpannerDefaults());
