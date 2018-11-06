@@ -21,7 +21,6 @@ import com.google.cloud.spanner.BatchClient;
 import com.google.cloud.spanner.Database;
 import com.google.cloud.spanner.DatabaseClient;
 import com.google.cloud.spanner.InstanceId;
-import com.google.cloud.spanner.Operation;
 import com.google.cloud.spanner.Spanner;
 import com.google.cloud.spanner.SpannerException;
 import com.google.cloud.spanner.SpannerExceptionFactory;
@@ -99,11 +98,13 @@ public class RemoteSpannerHelper {
     String dbId = getUniqueDatabaseId();
     try {
       OperationFuture<Database, CreateDatabaseMetadata> op =
-        client.getDatabaseAdminClient().createDatabase(instanceId.getInstance(), dbId, statements);
+          client
+              .getDatabaseAdminClient()
+              .createDatabase(instanceId.getInstance(), dbId, statements);
       Database db = op.get();
       logger.log(Level.FINE, "Created test database {0}", db.getId());
       dbs.add(db);
-    return db;
+      return db;
     } catch (Exception e) {
       throw SpannerExceptionFactory.newSpannerException(e);
     }
