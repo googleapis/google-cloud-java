@@ -1103,9 +1103,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
               }
               SpannerRpc.StreamingCall call =
                   rpc.executeQuery(
-                      resumeToken == null
-                          ? request.build()
-                          : request.setResumeToken(resumeToken).build(),
+                      request.build(),
                       stream.consumer(),
                       session.options);
               call.request(prefetchChunks);
@@ -1203,7 +1201,6 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
       if (partitionToken != null) {
         builder.setPartitionToken(partitionToken);
       }
-      final ReadRequest request = builder.build();
       final int prefetchChunks =
           readOptions.hasPrefetchChunks() ? readOptions.prefetchChunks() : defaultPrefetchChunks;
       ResumableStreamIterator stream =
@@ -1216,9 +1213,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
               }
               SpannerRpc.StreamingCall call =
                   rpc.read(
-                      resumeToken == null
-                          ? request
-                          : request.toBuilder().setResumeToken(resumeToken).build(),
+                      builder.build(),
                       stream.consumer(),
                       session.options);
               call.request(prefetchChunks);
